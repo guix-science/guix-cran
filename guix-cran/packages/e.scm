@@ -15665,6 +15665,32 @@ data and visualizing results.  Supports binary, ordinal, and continuous
 measurement methods.")
     (license license:gpl3+)))
 
+(define-public r-emend
+  (package
+    (name "r-emend")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "emend" version))
+       (sha256
+        (base32 "1h77apxp7i3vdl3grcckxsipq3zbvavplpcvlqprjickic3x72la"))))
+    (properties `((upstream-name . "emend")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-jsonlite r-ellmer r-cli))
+    (home-page "https://github.com/anuopensci/emend")
+    (synopsis "Cleaning Text Data with an AI Assistant")
+    (description
+     "This package provides functions to clean and standardize messy data, including
+textual categories and free-text addresses, using Large Language Models.  The
+package corrects typos, expands abbreviations, and maps inconsistent entries to
+standardized values.  Ideal for Bioinformatics, business, and general data
+cleaning tasks.")
+    (license license:expat)))
+
 (define-public r-emdsvrhybrid
   (package
     (name "r-emdsvrhybrid")

@@ -5494,13 +5494,13 @@ fitting process, a range of optimization methods are implemented in
 (define-public r-brainr
   (package
     (name "r-brainr")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brainR" version))
        (sha256
-        (base32 "1l5rm6grslc6mivwh2fv3pznhy2cw16fz5695pmyfamzvsjggir1"))))
+        (base32 "11cmcc8ck97lix1mjd7v0jpdmdb4xmlzcnzw9nw32c3i8p1zmsq7"))))
     (properties `((upstream-name . "brainR")))
     (build-system r-build-system)
     (arguments
@@ -14174,6 +14174,31 @@ purchased as asreml-R from VSNi <https://vsni.co.uk/>, who will supply a zip
 file for local installation/updating (see <https://asreml.kb.vsni.co.uk/>).")
     (license license:expat)))
 
+(define-public r-biometrics
+  (package
+    (name "r-biometrics")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "biometrics" version))
+       (sha256
+        (base32 "102lm58gj58m87zhbcnkclnk5i0q5d540wwf0pkjvx7y3zhgks02"))))
+    (properties `((upstream-name . "biometrics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lattice r-ggplot2 r-datana))
+    (home-page "https://eljatib.com")
+    (synopsis "Functions and Datasets for Forest Biometrics and Modelling")
+    (description
+     "This package provides a system of functions and data aiming to apply
+quantitative analyses to forest ecology, silviculture and decision-support
+systems.  Besides, the package helps to carry out data management, exploratory
+analysis, and model assessment.")
+    (license license:gpl3)))
+
 (define-public r-biomass
   (package
     (name "r-biomass")
@@ -22751,49 +22776,6 @@ More details about this method can be found in Jiehuan Sun, et al. (2017)
 <doi:10.1002/sim.7374>.")
     (license license:gpl2)))
 
-(define-public r-bchron
-  (package
-    (name "r-bchron")
-    (version "4.7.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Bchron" version))
-       (sha256
-        (base32 "1s8bx9a5rpcrw0msnjf565crz3d2fykvy5fj1chbqxzjh7qm865w"))))
-    (properties `((upstream-name . "Bchron")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-scales
-                             r-purrr
-                             r-mclust
-                             r-mass
-                             r-magrittr
-                             r-ggridges
-                             r-ggplot2
-                             r-ggforce
-                             r-dplyr
-                             r-coda
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://andrewcparnell.github.io/Bchron/")
-    (synopsis
-     "Radiocarbon Dating, Age-Depth Modelling, Relative Sea Level Rate Estimation, and Non-Parametric Phase Modelling")
-    (description
-     "Enables quick calibration of radiocarbon dates under various calibration curves
-(including user generated ones); age-depth modelling as per the algorithm of
-Haslett and Parnell (2008) <DOI:10.1111/j.1467-9876.2008.00623.x>; Relative sea
-level rate estimation incorporating time uncertainty in polynomial regression
-models (Parnell and Gehrels 2015) <DOI:10.1002/9781118452547.ch32>;
-non-parametric phase modelling via Gaussian mixtures as a means to determine the
-activity of a site (and as an alternative to the Oxcal function SUM; currently
-unpublished), and reverse calibration of dates from calibrated into
-un-calibrated years (also unpublished).")
-    (license license:gpl2+)))
-
 (define-public r-bchm
   (package
     (name "r-bchm")
@@ -27641,35 +27623,6 @@ results from @code{historic_sim()} and @code{simple_sim()} can be printed with
 considered are Gaussian, Poisson, Bernoulli, Lognormal, Weibull, and Piecewise
 Exponential.  The methods are described in Eggleston et al. (2021)
 <doi:10.18637/jss.v100.i21>.")
-    (license license:gpl3)))
-
-(define-public r-bayesct
-  (package
-    (name "r-bayesct")
-    (version "0.99.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bayesCT" version))
-       (sha256
-        (base32 "0ragig1x34syhsnbnd58l2s7g23j7fb0cl9wkasvxq8cicw5hqgn"))))
-    (properties `((upstream-name . "bayesCT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-purrr r-magrittr r-dplyr r-bayesdp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/thevaachandereng/bayesCT/")
-    (synopsis "Simulation and Analysis of Adaptive Bayesian Clinical Trials")
-    (description
-     "Simulation and analysis of Bayesian adaptive clinical trials for binomial,
-Gaussian, and time-to-event data types, incorporates historical data and allows
-early stopping for futility or early success.  The package uses novel and
-efficient Monte Carlo methods for estimating Bayesian posterior probabilities,
-evaluation of loss to follow up, and imputation of incomplete data.  The package
-has the functionality for dynamically incorporating historical data into the
-analysis via the power prior or non-informative priors.")
     (license license:gpl3)))
 
 (define-public r-bayescr

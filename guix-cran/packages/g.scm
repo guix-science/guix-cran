@@ -4822,13 +4822,13 @@ the C++ code file from John Burkardt and John Denker (Brent, 2002).")
 (define-public r-groupedhyperframe
   (package
     (name "r-groupedhyperframe")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupedHyperframe" version))
        (sha256
-        (base32 "0kb56vkcdx5gcgf1xlpcwwfrx2sj0jkw6f33mnglp3qf9s3pf3dm"))))
+        (base32 "0xzxhyc4wnc1rkb3p44xs2gm35ivyif1ny29rpq1h896jjkjpkjd"))))
     (properties `((upstream-name . "groupedHyperframe")))
     (build-system r-build-system)
     (arguments
@@ -9755,19 +9755,25 @@ Poisson regression model\".  Communications in Statistics - Theory and Methods,
 (define-public r-goxygen
   (package
     (name "r-goxygen")
-    (version "1.0.3")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goxygen" version))
        (sha256
-        (base32 "0825zl16ap0k3jqhrjw4hfsw97ils77jmf4yqq347k3bb8i3dm79"))))
+        (base32 "1hzm2a6s34yxqfcvlblj7lyz7w4x36z9cb76w2db2lm0gwjwn2ib"))))
     (properties `((upstream-name . "goxygen")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml r-stringi r-pander r-gms r-citation))
+    (inputs (list pandoc pandoc))
+    (propagated-inputs (list r-yaml
+                             r-withr
+                             r-stringi
+                             r-pander
+                             r-gms
+                             r-citation))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pik-piam/goxygen")
     (synopsis "In-Code Documentation for 'GAMS'")
@@ -10056,13 +10062,13 @@ cell probabilities can be non-linear.")
 (define-public r-goric
   (package
     (name "r-goric")
-    (version "1.1-2")
+    (version "1.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goric" version))
        (sha256
-        (base32 "004nx29wz191rp0naa73r762bf6lap931lwrxifhz7izl47jzfj0"))))
+        (base32 "18sqvwpw69x6v79jl6pc1pyx6rhdd0697sybbq4hl8bqrrg1k6q4"))))
     (properties `((upstream-name . "goric")))
     (build-system r-build-system)
     (arguments
@@ -14536,13 +14542,13 @@ this package can be found in Watson, Hemming, and Girling (2023)
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.11.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrBase" version))
        (sha256
-        (base32 "1k31ls4agxq63cpjm2xzk5vls7lqgbpy62kniqq2w1r1banh1784"))))
+        (base32 "1qyv2idi60ql428wqvvwcpp89bsdfpj5xq8r276xzbivaa2wf26w"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (arguments
@@ -15225,20 +15231,19 @@ generated.")
 (define-public r-gllvm
   (package
     (name "r-gllvm")
-    (version "2.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gllvm" version))
        (sha256
-        (base32 "00pyfylc75aaidk0qq8avls2dzghym7yvkx4xmjna16k9cz5vfl3"))))
+        (base32 "0byic007qvdy5qspwdj97ayxhc01pv1ay6b0w2y3x9z93ra92qwi"))))
     (properties `((upstream-name . "gllvm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tmb
-                             r-statmod
                              r-rcppeigen
                              r-nloptr
                              r-mgcv
@@ -15500,13 +15505,13 @@ positive when needed.")
 (define-public r-glassdoor
   (package
     (name "r-glassdoor")
-    (version "0.8.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glassdoor" version))
        (sha256
-        (base32 "0r85k1fyk8979ahfmd4vmzkhyvrlnpkgjwg1yi7092kpx8877lj0"))))
+        (base32 "03m7shrf1mr90v5ggjjz1dvlry5lwc745varskbqixl3vykqh8rv"))))
     (properties `((upstream-name . "glassdoor")))
     (build-system r-build-system)
     (arguments
@@ -20949,13 +20954,13 @@ object.")
 (define-public r-gglm
   (package
     (name "r-gglm")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gglm" version))
        (sha256
-        (base32 "1fybwxgsdwvl4d9ixicfgr1sgrzkwndmvp91zhhfhjlf0yy4qdaj"))))
+        (base32 "1y9n3ylwp1cbl0ls7pm6vmm98fiqqq7pq6ghail3bjl41y852iz2"))))
     (properties `((upstream-name . "gglm")))
     (build-system r-build-system)
     (arguments
@@ -20971,6 +20976,7 @@ object.")
                              r-metafor
                              r-ggplot2
                              r-dplyr
+                             r-cli
                              r-broom-mixed
                              r-broom))
     (home-page "https://github.com/graysonwhite/gglm")
@@ -25223,33 +25229,6 @@ Brunsdon et al., 2002 <doi:10.1016/s0198-9715(01)00009-6>, Harris et al., 2011
 <doi:10.1080/13658816.2011.554838>, Brunsdon et al., 2007
 <doi:10.1111/j.1538-4632.2007.00709.x>.")
     (license license:gpl3)))
-
-(define-public r-geovol
-  (package
-    (name "r-geovol")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geovol" version))
-       (sha256
-        (base32 "13ll9jyh1fadm2rpfvja0fnqnpr6haivz1vmmpi6yc95rpl4234b"))))
-    (properties `((upstream-name . "geovol")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo))
-    (home-page "https://sites.google.com/site/susanacamposmartins/")
-    (synopsis "Geopolitical Volatility (GEOVOL) Modelling")
-    (description
-     "Simulation, estimation and inference for the geopolitical volatility (GEOVOL)
-model of Engle and Campos-Martins (2020) <doi:10.2139/ssrn.3685213>, where
-GEOVOL is modelled as a latent multiplicative volatility factor with
-heterogeneous factor loadings.  Estimation is carried out as a
-maximization-maximization procedure, where GEOVOL and the GEOVOL loadings are
-estimated iteratively until convergence.")
-    (license license:gpl2+)))
 
 (define-public r-geouy
   (package
@@ -30101,6 +30080,31 @@ See <https://activinsights.com/technology/geneactiv/> for more details on the
 GENEActiv device.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-geneacore
+  (package
+    (name "r-geneacore")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GENEAcore" version))
+       (sha256
+        (base32 "1515p1bji8j1kw0m3fsdgkvwki5gjhwygc684l3pa60iaryiy30n"))))
+    (properties `((upstream-name . "GENEAcore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-signal r-changepoint))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GENEAcore")
+    (synopsis "Pre-Processing of 'GENEActiv' Data")
+    (description
+     "Analytics to read in and segment raw GENEActiv accelerometer data into epochs
+and events.  For more details on the GENEActiv device, see
+<https://activinsights.com/resources/geneactiv-support-1-2/>.")
+    (license license:gpl2+)))
+
 (define-public r-geneaclassify
   (package
     (name "r-geneaclassify")
@@ -32513,13 +32517,13 @@ Description of the method is available from: Han and @code{DeOliveira} (2018)
 (define-public r-gcite
   (package
     (name "r-gcite")
-    (version "0.10.1")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gcite" version))
        (sha256
-        (base32 "0ljgzzl4yy1in5iz42iqkrsq6da4qx838anwdlvbdy96dyafl4ad"))))
+        (base32 "1qi6znkx6rxwkfar1zkwm2a19fh6dcqr86mpd157iks6md2z2gd4"))))
     (properties `((upstream-name . "gcite")))
     (build-system r-build-system)
     (arguments

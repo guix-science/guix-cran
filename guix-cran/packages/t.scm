@@ -1084,30 +1084,6 @@ utilities for time series preprocessing and visualization.")
 terrestrial water cycle data across various spatio-temporal scales.")
     (license license:gpl3)))
 
-(define-public r-twangrdc
-  (package
-    (name "r-twangrdc")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "twangRDC" version))
-       (sha256
-        (base32 "03z2c18nq6iwwb3si7wjc56npdyray3xsy6k6ifvbalib2ibv2f1"))))
-    (properties `((upstream-name . "twangRDC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost r-matrixmodels r-ggplot2 r-data-table))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=twangRDC")
-    (synopsis "Gradient Boosting for Linkage Failure in FSRDCs")
-    (description
-     "This package provides functions for gradient boosted weighting to correct
-linkage failures or generate comparison groups.")
-    (license license:gpl3)))
-
 (define-public r-twangmediation
   (package
     (name "r-twangmediation")
@@ -2107,21 +2083,32 @@ out Tucker Models.")
 (define-public r-tuber
   (package
     (name "r-tuber")
-    (version "0.9.9")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tuber" version))
        (sha256
-        (base32 "1nnjwn3c0rr90jvkwlh9xs5vc2nl6qzjj958hbddfrkny0w88mnp"))))
+        (base32 "1591r2yi5287cawb6535yip0l52lb3mmmqhnrp9g8803xf6648z2"))))
     (properties `((upstream-name . "tuber")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-purrr r-plyr r-jsonlite r-httr r-dplyr))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-purrr
+                             r-plyr
+                             r-mime
+                             r-magrittr
+                             r-jsonlite
+                             r-httr2
+                             r-httr
+                             r-dplyr
+                             r-askpass))
     (native-inputs (list r-knitr))
-    (home-page "http://github.com/soodoku/tuber")
+    (home-page "https://gojiplus.github.io/tuber/")
     (synopsis "Client for the YouTube API")
     (description
      "Get comments posted on @code{YouTube} videos, information on how many times a
@@ -16956,43 +16943,6 @@ among the sample sequences.  Citations: Gadala-Maria, et al (2015)
 <doi:10.3389/fimmu.2019.00129>.")
     (license license:agpl3)))
 
-(define-public r-tigerstats
-  (package
-    (name "r-tigerstats")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tigerstats" version))
-       (sha256
-        (base32 "0p5z4qh0aznj03rnhk4lpqfkwnsa5zgvj51rddkzligg9zx73xwl"))))
-    (properties `((upstream-name . "tigerstats")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-mosaicdata
-                             r-mosaic
-                             r-mass
-                             r-manipulate
-                             r-lattice
-                             r-ggplot2
-                             r-abd))
-    (home-page "https://cran.r-project.org/package=tigerstats")
-    (synopsis "R Functions for Elementary Statistics")
-    (description
-     "This package provides a collection of data sets and functions that are useful in
-the teaching of statistics at an elementary level to students who may have
-little or no previous experience with the command line.  The functions for
-elementary inferential procedures follow a uniform interface for user input.
-Some of the functions are instructional applets that can only be run on the R
-Studio integrated development environment with package manipulate installed.
-Other instructional applets are Shiny apps that may be run locally.  In teaching
-the package is used alongside of package mosaic', @code{mosaicData} and abd',
-which are therefore listed as dependencies.")
-    (license license:gpl3+)))
-
 (define-public r-tigers
   (package
     (name "r-tigers")
@@ -22556,19 +22506,19 @@ vectors in data frames for joint analysis of functional and scalar variables.")
 (define-public r-textutils
   (package
     (name "r-textutils")
-    (version "0.4-1")
+    (version "0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textutils" version))
        (sha256
-        (base32 "0li2arblc1542sadk7sjdg0avjwavvvy2rrvlh28wznj8vxc3xy3"))))
+        (base32 "05505vxg2r71bw6iknvy9n9sks6vj4mhq9jirqmlfcw01h7rah5d"))))
     (properties `((upstream-name . "textutils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "http://enricoschumann.net/R/packages/textutils/")
+    (home-page "https://enricoschumann.net/R/packages/textutils/")
     (synopsis "Utilities for Handling Strings and Text")
     (description
      "Utilities for handling character vectors that store human-readable text (either
@@ -23628,13 +23578,13 @@ discriminant analyses.")
 (define-public r-texor
   (package
     (name "r-texor")
-    (version "1.5.3")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "texor" version))
        (sha256
-        (base32 "1d62c35faq3hjgdc750pvrinx33j7350b10w5mkwih3gxwfm55g3"))))
+        (base32 "15g3h6qrps96f92njxqmrffkza80dmsfsc5915wrs6p00ajxqzyb"))))
     (properties `((upstream-name . "texor")))
     (build-system r-build-system)
     (arguments
@@ -26705,13 +26655,13 @@ supporting reproducible research and analysis.")
 (define-public r-teal-modules-general
   (package
     (name "r-teal-modules-general")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.modules.general" version))
        (sha256
-        (base32 "1ym17lx8m83wca3j57j54zn9134ya3fzzsvqny3w6kavkvhcvg31"))))
+        (base32 "1pimw2kmhzg1sx8jia8xc3qqyc06q70ma1ri0m5yja7n2f9jrjnb"))))
     (properties `((upstream-name . "teal.modules.general")))
     (build-system r-build-system)
     (arguments
@@ -30716,53 +30666,6 @@ the package.")
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
 
-(define-public r-tabnet
-  (package
-    (name "r-tabnet")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tabnet" version))
-       (sha256
-        (base32 "1bvbl1b4i3mx2qf6hjbkk114s1bq76gnhpfasy4c5q2f9k6z33c7"))))
-    (properties `((upstream-name . "tabnet")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zeallot
-                             r-withr
-                             r-vctrs
-                             r-tune
-                             r-torch
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-progress
-                             r-parsnip
-                             r-matrix
-                             r-magrittr
-                             r-hardhat
-                             r-ggplot2
-                             r-dplyr
-                             r-dials
-                             r-data-tree
-                             r-coro))
-    (native-inputs (list r-knitr))
-    (home-page "https://mlverse.github.io/tabnet/")
-    (synopsis "Fit 'TabNet' Models for Classification and Regression")
-    (description
-     "This package implements the @code{TabNet} model by Sercan O. Arik et al. (2019)
-<doi:10.48550/@code{arXiv.1908.07442>} with Coherent Hierarchical Multi-label
-Classification Networks by Giunchiglia et al.
-<doi:10.48550/@code{arXiv.2010.10151>} and provides a consistent interface for
-fitting and creating predictions.  It's also fully compatible with the
-tidymodels ecosystem.")
-    (license license:expat)))
-
 (define-public r-tablexlsx
   (package
     (name "r-tablexlsx")
@@ -31407,13 +31310,13 @@ use linear, logistic, or Poisson regression to modify the specified variable.")
 (define-public r-tab2xml
   (package
     (name "r-tab2xml")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tab2xml" version))
        (sha256
-        (base32 "00d5rjj1hl3wj4qzk4b7ygpdmn7jc9a8jkrrj79b3g5z5p5l7ybq"))))
+        (base32 "0vlvkw1bnb6wi0bs2bwbjb358s8sf16wq95dp3aza0hy0vrriyhp"))))
     (properties `((upstream-name . "tab2xml")))
     (build-system r-build-system)
     (arguments

@@ -6310,13 +6310,13 @@ system.  Bai, Lumsdaine, and Stock (1998) <doi:10.1111/1467-937X.00051>.")
 (define-public r-multiblock
   (package
     (name "r-multiblock")
-    (version "0.8.9.0")
+    (version "0.8.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiblock" version))
        (sha256
-        (base32 "08z8klbhhdidnf0psy6wmimknm2wxmy87c4lls7xqyc86ar8cpny"))))
+        (base32 "110z68vzhdd1b5nz9psrd54sbvvdxc5cjvjlqwjgjml4rzj5ixn0"))))
     (properties `((upstream-name . "multiblock")))
     (build-system r-build-system)
     (arguments
@@ -14955,13 +14955,13 @@ the database.")
 (define-public r-mongolite
   (package
     (name "r-mongolite")
-    (version "3.1.2")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mongolite" version))
        (sha256
-        (base32 "1pbbq80dcjqlbjhq0hax0g11h2c8gxin8hm6g4k3lbscrh09q4pr"))))
+        (base32 "14i8gp8g03k03541kqm80bv4db0i6r9igri2visrp9xdd0f8r009"))))
     (properties `((upstream-name . "mongolite")))
     (build-system r-build-system)
     (arguments
@@ -14979,28 +14979,6 @@ enterprise authentication, and @code{GridFS}.  The online user manual provides
 an overview of the available methods in the package:
 <https://jeroen.github.io/mongolite/>.")
     (license license:asl2.0)))
-
-(define-public r-monetdb-r
-  (package
-    (name "r-monetdb-r")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MonetDB.R" version))
-       (sha256
-        (base32 "0b5flc9l4nshy2fmwxbzcsn7pdivwy3x6kic94ppyyiqzz41h0b1"))))
-    (properties `((upstream-name . "MonetDB.R")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-testthat r-digest r-dbi r-codetools))
-    (home-page "http://www.monetdb.org")
-    (synopsis "Connect MonetDB to R")
-    (description "Allows to pull data from @code{MonetDB} into R.")
-    (license (license:fsdg-compatible "MPL (== 2.0)"))))
 
 (define-public r-mondrian
   (package
@@ -18512,34 +18490,6 @@ restricted or standard maximum likelihood inference, perform hypothesis testing
 with Satterthwaite or Kenward-Roger adjustment, and extract least square means
 estimates by using emmeans'.")
     (license license:asl2.0)))
-
-(define-public r-mmrcaseselection
-  (package
-    (name "r-mmrcaseselection")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MMRcaseselection" version))
-       (sha256
-        (base32 "093bp2c988p82wqz0cq9ra4bd06647v12n6yk1rgr2bvvygg1i8f"))))
-    (properties `((upstream-name . "MMRcaseselection")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ingorohlfing/MMRcaseselection")
-    (synopsis "Case Classification and Selection Based on Regression Results")
-    (description
-     "Researchers doing a mixed-methods analysis (nested analysis as developed by
-Lieberman (2005) <doi:10.1017/S0003055405051762>) can use the package for the
-classification of cases and case selection using results of a linear regression.
- One can designate cases as typical, deviant, extreme and pathway case and use
-different case selection strategies for the choice of a case belonging to one of
-these types.")
-    (license license:gpl3)))
 
 (define-public r-mmr
   (package
@@ -51060,13 +51010,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "105rl92073rd36y2689pk7kr4847hb2yaw3g0vgcviv8j8zx7mb0"))))
+        (base32 "11xcrwakh8x5rlqkj1m9j7l2ajwsn9arw9n9yyr09fnhjys5c88z"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (arguments

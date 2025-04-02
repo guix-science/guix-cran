@@ -934,33 +934,27 @@ Methods are given for loglikelihood computation, forecasting and simulation.")
 (define-public r-ltrctrees
   (package
     (name "r-ltrctrees")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LTRCtrees" version))
        (sha256
-        (base32 "1k16m2fpwn8m4dvm1b82srf3bgkvkwf6kcjpwjgkdappifc7p5m8"))))
+        (base32 "0qf3dlks1aq5xjsjrs37d3636hhiinxh52c2hfl7p04z49pz8nax"))))
     (properties `((upstream-name . "LTRCtrees")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-rpart
-                             r-partykit
-                             r-inum
-                             r-interval
-                             r-icens
-                             r-icenreg))
+    (propagated-inputs (list r-survival r-rpart r-partykit r-inum r-icenreg))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=LTRCtrees")
     (synopsis
      "Survival Trees to Fit Left-Truncated and Right-Censored and Interval-Censored Survival Data")
     (description
-     "Recursive partition algorithms designed for fitting survival tree with
-left-truncated and right censored (LTRC) data, as well as interval-censored
-data.  The LTRC trees can also be used to fit survival tree with time-varying
+     "Recursive partition algorithms designed for fitting survival trees with
+left-truncated and right-censored (LTRC) data, as well as interval-censored
+data.  The LTRC trees can also be used to fit survival trees with time-varying
 covariates.")
     (license license:gpl3)))
 
@@ -5297,6 +5291,75 @@ is helpful to detect patients that may present cognitive decline.")
     (synopsis "Binary Dimensionality Reduction")
     (description
      "Dimensionality reduction techniques for binary data including logistic PCA.")
+    (license license:expat)))
+
+(define-public r-logisticensembles
+  (package
+    (name "r-logisticensembles")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LogisticEnsembles" version))
+       (sha256
+        (base32 "04n2541kcy84jiwm03bw1ccz2gbhv6f3bjlsy0insydq18ry7lhr"))))
+    (properties `((upstream-name . "LogisticEnsembles")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-tree
+                             r-tidyr
+                             r-scales
+                             r-rpart
+                             r-readr
+                             r-reactablefmtr
+                             r-reactable
+                             r-ranger
+                             r-randomforest
+                             r-purrr
+                             r-proc
+                             r-pls
+                             r-mda
+                             r-mass
+                             r-magrittr
+                             r-machineshop
+                             r-klar
+                             r-ipred
+                             r-gt
+                             r-gridextra
+                             r-ggplotify
+                             r-ggplot2
+                             r-gbm
+                             r-gam
+                             r-e1071
+                             r-dplyr
+                             r-doparallel
+                             r-cubist
+                             r-corrplot
+                             r-car
+                             r-c50
+                             r-brnn
+                             r-arm
+                             r-adabag))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/InfiniteCuriosity/LogisticEnsembles")
+    (synopsis
+     "Automatically Runs 36 Logistic Models (Individual and Ensembles)")
+    (description
+     "Automatically returns 36 logistic models including 23 individual models and 13
+ensembles of models of logistic data.  The package also returns 10 plots, 5
+tables, and a summary report.  The package automatically builds all 36 models,
+reports all results, and provides graphics to show how the models performed.
+This can be used for a wide range of data sets.  The package includes medical
+data (the Pima Indians data set), and information about the performance of
+Lebron James.  The package can be used to analyze many other examples, such as
+stock market data.  The package automatically returns many values for each
+model, such as True Positive Rate, True Negative Rate, False Positive Rate,
+False Negative Rate, Positive Predictive Value, Negative Predictive Value, F1
+Score, Area Under the Curve.  The package also returns 36 Receiver Operating
+Characteristic (ROC) curves for each of the 36 models.")
     (license license:expat)))
 
 (define-public r-logisticcurvefitting
@@ -14438,19 +14501,19 @@ Rumsey et al. (2023 <doi:10.1002/sta4.576>).")
 (define-public r-leanpubr
   (package
     (name "r-leanpubr")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leanpubr" version))
        (sha256
-        (base32 "0c8pmzn25cwv0wccf30zrrqrs5amlk8iqyyva9vp9976wzwgbxrx"))))
+        (base32 "0shx5mg7m38zn46ra6v8bxkg72kkzcfcc7srw2xzs90j2sqz4bqz"))))
     (properties `((upstream-name . "leanpubr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-jsonlite r-httr))
+    (propagated-inputs (list r-xml2 r-jsonlite r-httr r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/muschellij2/leanpubr")
     (synopsis "'Leanpub' API Interface")

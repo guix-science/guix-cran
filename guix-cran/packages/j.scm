@@ -2620,13 +2620,13 @@ well.")
 (define-public r-jobqueue
   (package
     (name "r-jobqueue")
-    (version "1.5.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jobqueue" version))
        (sha256
-        (base32 "0ci716axgkmmfg1vyicwn1wlniqrzi43289967nl6rhn0mxaap7s"))))
+        (base32 "1xjr0fw4jhifqiqsbg4lwqfzdjajndwfg0azr143wif6gqy0wwjh"))))
     (properties `((upstream-name . "jobqueue")))
     (build-system r-build-system)
     (arguments

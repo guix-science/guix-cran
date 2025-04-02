@@ -6,6 +6,7 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics)
+  #:use-module (gnu packages python)
   #:use-module (gnu packages web)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
@@ -17,7 +18,6 @@
   #:use-module (gnu packages image)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages python)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bioinformatics)
@@ -142,6 +142,46 @@ selected clusters in a 1-/2-/3-simplex space.  Velocity information can be added
 as an additional layer.  See Liu J, Wang Y et al (2023)
 <doi:10.1101/2023.12.07.570655> for more details.")
     (license license:gpl3)))
+
+(define-public r-cytopt
+  (package
+    (name "r-cytopt")
+    (version "0.9.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CytOpT" version))
+       (sha256
+        (base32 "116vfwnwbmhramczw5v5486wyfvzvnxaadvmkcmpfwbcljj2bxmg"))))
+    (properties `((upstream-name . "CytOpT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python))
+    (propagated-inputs (list r-testthat
+                             r-reticulate
+                             r-reshape2
+                             r-patchwork
+                             r-metbrewer
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://sistm.github.io/CytOpT-R/")
+    (synopsis
+     "Optimal Transport for Gating Transfer in Cytometry Data with Domain Adaptation")
+    (description
+     "Supervised learning from a source distribution (with known segmentation into
+cell sub-populations) to fit a target distribution with unknown segmentation.
+It relies regularized optimal transport to directly estimate the different cell
+population proportions from a biological sample characterized with flow
+cytometry measurements.  It is based on the regularized Wasserstein metric to
+compare cytometry measurements from different samples, thus accounting for
+possible mis-alignment of a given cell population across sample (due to
+technical variability from the technology of measurements).  Supervised learning
+technique based on the Wasserstein metric that is used to estimate an optimal
+re-weighting of class proportions in a mixture model Details are presented in
+Freulon P, Bigot J and Hejblum BP (2023) <doi:10.1214/22-AOAS1660>.")
+    (license license:gpl2+)))
 
 (define-public r-cytominer
   (package
@@ -2885,13 +2925,13 @@ types while checking for values outside the type limits, NA values, etc.")
 (define-public r-ctxr
   (package
     (name "r-ctxr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctxR" version))
        (sha256
-        (base32 "19lz6sg45980v25qhpg2s5p0dv5gn6mk1wcqq954kxwmxjr5b99k"))))
+        (base32 "1wyjl7s1mhrxbl8ah2zb439hs0iz11ra3c6x7xpi3fjqq7xkndpc"))))
     (properties `((upstream-name . "ctxR")))
     (build-system r-build-system)
     (arguments
@@ -29990,34 +30030,6 @@ cluster bootstrap.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-clusterability
-  (package
-    (name "r-clusterability")
-    (version "0.1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clusterability" version))
-       (sha256
-        (base32 "15gimcs6wrasafg1ys7id0mkg9fvacxbwpgg9d4b5avk4gff39bs"))))
-    (properties `((upstream-name . "clusterability")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-diptest))
-    (home-page "https://cran.r-project.org/package=clusterability")
-    (synopsis "Performs Tests for Cluster Tendency of a Data Set")
-    (description
-     "Test for cluster tendency (clusterability) of a data set.  The methods
-implemented - reducing the data set to a single dimension using principal
-component analysis or computing pairwise distances, and performing a
-multimodality test like the Dip Test or Silverman's Critical Bandwidth Test -
-are described in Adolfsson, Ackerman, and Brownstein (2019)
-<doi:10.1016/j.patcog.2018.10.026>.  Such methods can inform whether clustering
-algorithms are appropriate for a data set.")
-    (license license:gpl2)))
-
 (define-public r-cluster-obeu
   (package
     (name "r-cluster-obeu")
@@ -33398,6 +33410,57 @@ diagnostic plots with just one function call.  Includes ROC curves, prediction
 density, accuracy, precision, recall and calibration plots, all using ggplot2
 for easy modification.  Debug your binary classifiers faster and easier!")
     (license (license:fsdg-compatible "BSD 3-clause License + file LICENSE"))))
+
+(define-public r-classificationensembles
+  (package
+    (name "r-classificationensembles")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ClassificationEnsembles" version))
+       (sha256
+        (base32 "0ihagai3dd0fdczvg21j7f8623pzs4bf4q80nn31q7nqa0kaz6vk"))))
+    (properties `((upstream-name . "ClassificationEnsembles")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tree
+                             r-tidyr
+                             r-scales
+                             r-reactablefmtr
+                             r-reactable
+                             r-ranger
+                             r-randomforest
+                             r-purrr
+                             r-pls
+                             r-magrittr
+                             r-machineshop
+                             r-ipred
+                             r-gt
+                             r-ggplot2
+                             r-e1071
+                             r-dplyr
+                             r-doparallel
+                             r-corrplot
+                             r-caret
+                             r-car
+                             r-c50))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/InfiniteCuriosity/ClassificationEnsembles")
+    (synopsis "Automatically Builds 20 Classification Models")
+    (description
+     "Automatically builds 20 classification models from data.  The package returns 26
+plots, 5 tables and a summary report.  The package automatically builds 12
+individual classification models, including error (RMSE) and predictions.  That
+data is used to create an ensemble, which is then modeled using 8 methods.  The
+process is repeated as many times as the user requests.  The mean of the results
+are presented in a summary table.  The package returns the confusion matrices
+for all 20 models, tables of the correlation of the numeric data, the results of
+the variance inflation process, the head of the ensemble and the head of the
+data frame.")
+    (license license:expat)))
 
 (define-public r-classicaltest
   (package
@@ -40346,13 +40409,13 @@ Nishiura et al. (2009) <doi:10.1371/journal.pone.0006852>.")
 (define-public r-cforward
   (package
     (name "r-cforward")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cforward" version))
        (sha256
-        (base32 "1vhac0669f20ckx7qi5v8rnbmscb87gw8rfn555xazdfbvri6m0w"))))
+        (base32 "0jn1z4bk9i0v03vzz2z0pfkrgzrklkv60p2rmc80kbj4vv1x11pa"))))
     (properties `((upstream-name . "cforward")))
     (build-system r-build-system)
     (arguments
@@ -50694,6 +50757,33 @@ SSD values they can append them to the pesticide_info table to include them in
 estimates.")
     (license license:gpl3+)))
 
+(define-public r-calcite
+  (package
+    (name "r-calcite")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "calcite" version))
+       (sha256
+        (base32 "1ralgay6f6dw537d70x93ia2i2zz5fklaq9gl9an12z99ms33b5f"))))
+    (properties `((upstream-name . "calcite")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-rlang r-htmltools))
+    (home-page "https://cran.r-project.org/package=calcite")
+    (synopsis
+     "Bindings to the Calcite Design System 'JavaScript' Component Library")
+    (description
+     "This package provides access to the Calcite Design System javascript components
+via integration with the htmltools and shiny packages.  Pre-built and
+interactive components can be used to generate either static html or interactive
+web applications.  Learn more about the Calcite Design System at
+<https://developers.arcgis.com/calcite-design-system/>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-calango
   (package
     (name "r-calango")
@@ -50839,13 +50929,13 @@ Alberti 2015 <doi:10.1016/j.softx.2015.07.001>.")
 (define-public r-cagr
   (package
     (name "r-cagr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CAGR" version))
        (sha256
-        (base32 "1qyk43x8i0z2bl0ahj34d02zinsnp11716385y209l7c0ws9ynaa"))))
+        (base32 "0v791lsfmhbymm92aa8xy7i6nfhch7dpn31dbs0y8jiskmsrnviz"))))
     (properties `((upstream-name . "CAGR")))
     (build-system r-build-system)
     (arguments
@@ -50895,13 +50985,13 @@ described in Lee, Kim, Perera, @code{McLachlan} and Bae (2015)
 (define-public r-caesar-suite
   (package
     (name "r-caesar-suite")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CAESAR.Suite" version))
        (sha256
-        (base32 "1wkj0sgh66pspf5522jqg90q7c31np1ki3f8lr7jqg7kd9n8nsvk"))))
+        (base32 "1ww3s6gl8lb7g3xlykzgnlc7lrnnc7wvn1kip90yv84j09i096kx"))))
     (properties `((upstream-name . "CAESAR.Suite")))
     (build-system r-build-system)
     (arguments

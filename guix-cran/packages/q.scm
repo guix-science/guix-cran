@@ -6566,46 +6566,6 @@ introducing power estimation for QCA is: Rohlfing, Ingo (2018)
 <doi:10.1017/pan.2017.30> (ungated version: <doi:10.17605/OSF.IO/PC4DF>).")
     (license license:gpl3)))
 
-(define-public r-qcacluster
-  (package
-    (name "r-qcacluster")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "QCAcluster" version))
-       (sha256
-        (base32 "094p11c9arry793zibr8x3xhpbrym9bfky95nds53g3yliprdd63"))))
-    (properties `((upstream-name . "QCAcluster")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-upsetr
-                             r-testit
-                             r-stringi
-                             r-rlist
-                             r-qca
-                             r-purrr
-                             r-plyr
-                             r-magrittr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ingorohlfing/QCAcluster")
-    (synopsis "Tools for the Analysis of Clustered Data in QCA")
-    (description
-     "Clustered set-relational data in Qualitative Comparative Analysis (QCA) can have
-a hierarchical structure, a panel structure or repeated cross sections.
-QCAcluster allows QCA researchers to supplement the analysis of pooled the data
-with a disaggregated perspective focusing on selected partitions of the data.
-The pooled data can be partitioned along the dimensions of the clustered data
-(individual cross sections or time series) to perform partition-specific truth
-table minimizations.  Empirical researchers can further calculate the weight
-that each partition has on the parameters of the pooled solution and the
-diversity of the cases under analysis within and across partitions (see
-<https://ingorohlfing.github.io/QCAcluster/>).")
-    (license license:gpl3)))
-
 (define-public r-qca
   (package
     (name "r-qca")

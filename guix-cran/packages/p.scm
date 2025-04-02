@@ -33597,43 +33597,6 @@ methods.  It also provides means for addressing issues related with the
 statistical significance of the observed differences.")
     (license license:gpl2+)))
 
-(define-public r-perfit
-  (package
-    (name "r-perfit")
-    (version "1.4.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PerFit" version))
-       (sha256
-        (base32 "13917nvxii8pg69h1wcpmlv45sdrdldd3zxdrypr4mn456ff74k4"))))
-    (properties `((upstream-name . "PerFit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mirt
-                             r-matrix
-                             r-mass
-                             r-ltm
-                             r-irtoys
-                             r-hmisc
-                             r-fda))
-    (home-page "https://cran.r-project.org/package=PerFit")
-    (synopsis "Person Fit")
-    (description
-     "Several person-fit statistics (PFSs; Meijer and Sijtsma, 2001,
-<doi:10.1177/01466210122031957>) are offered.  These statistics allow assessing
-whether individual response patterns to tests or questionnaires are
-(im)plausible given the other respondents in the sample or given a specified
-item response theory model.  Some PFSs apply to dichotomous data, such as the
-likelihood-based PFSs (lz, lz*) and the group-based PFSs (personal biserial
-correlation, caution index, (normed) number of Guttman errors,
-agreement/disagreement/dependability statistics, U3, ZU3, NCI, Ht).  PFSs
-suitable to polytomous data include extensions of lz, U3, and (normed) number of
-Guttman errors.")
-    (license license:gpl2+)))
-
 (define-public r-perccalc
   (package
     (name "r-perccalc")
@@ -35205,13 +35168,13 @@ from the CRAN archive <https://cran.r-project.org/src/contrib/Archive/>.")
 (define-public r-pedmut
   (package
     (name "r-pedmut")
-    (version "0.7.1")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedmut" version))
        (sha256
-        (base32 "1wjz0mqwwvxn44lyrdnns0zsadglfs50np8sy6b0w07bpr6izlii"))))
+        (base32 "1i2lgls7x3fwazdnb0b1spplc4v7cdcs0cvw5s9784va1i4mqk98"))))
     (properties `((upstream-name . "pedmut")))
     (build-system r-build-system)
     (arguments
@@ -42215,13 +42178,13 @@ experiment.")
 (define-public r-paper
   (package
     (name "r-paper")
-    (version "1.0-5")
+    (version "1.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "papeR" version))
        (sha256
-        (base32 "095qfgv6h3sl5p69gm1v0qh9axap8gq2a9a3v95688fia2ppym4x"))))
+        (base32 "1nd015pv54qyb9avr6wmv58p5gq7waa40m1z5m51nj2h6vqhxs9b"))))
     (properties `((upstream-name . "papeR")))
     (build-system r-build-system)
     (arguments

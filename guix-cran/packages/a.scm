@@ -8753,6 +8753,48 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
 <doi:10.3390/e21040394>.")
     (license license:gpl2+)))
 
+(define-public r-archeoviz
+  (package
+    (name "r-archeoviz")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "archeoViz" version))
+       (sha256
+        (base32 "1992vpk0qjf0hbzpq27p0w0r2zlfj15yix7qqn9i8hl9bajamp9c"))))
+    (properties `((upstream-name . "archeoViz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-svglite
+                             r-shinythemes
+                             r-shiny
+                             r-reshape2
+                             r-plotly
+                             r-mgcv
+                             r-knitr
+                             r-htmlwidgets
+                             r-ggplot2
+                             r-geometry))
+    (native-inputs (list r-knitr))
+    (home-page "https://archeoviz.hypotheses.org")
+    (synopsis
+     "Visualisation, Exploration, and Web Communication of Archaeological Spatial Data")
+    (description
+     "An R Shiny application for visual and statistical exploration and web
+communication of archaeological spatial data, either remains or sites.  It
+offers interactive 3D and 2D visualisations (cross sections and maps of remains,
+timeline of the work made in a site) which can be exported in SVG and HTML
+formats.  It performs simple spatial statistics (convex hull, regression
+surfaces, 2D kernel density estimation) and allows exporting data to other
+online applications for more complex methods. @code{archeoViz} can be used
+offline locally or deployed on a server, either with interactive input of data
+or with a static data set.  Example is provided at
+<https://analytics.huma-num.fr/archeoviz/en>.")
+    (license license:gpl3)))
+
 (define-public r-archeofrag-gui
   (package
     (name "r-archeofrag-gui")
@@ -13380,13 +13422,13 @@ See Ackerman (2018)
 (define-public r-anim-plots
   (package
     (name "r-anim-plots")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anim.plots" version))
        (sha256
-        (base32 "0j786k5kkc1d33q52ki6fp3hnddjv7fv3ss6zjm9hqqgkq34vwqh"))))
+        (base32 "1dl33mf6c9z20ilfzlz2d1fcsa14n9arh8k6nn55ddd6ajdf6sbj"))))
     (properties `((upstream-name . "anim.plots")))
     (build-system r-build-system)
     (arguments

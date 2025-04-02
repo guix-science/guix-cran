@@ -10639,13 +10639,13 @@ and fisheries.  8pp.")
 (define-public r-stratest
   (package
     (name "r-stratest")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stratEst" version))
        (sha256
-        (base32 "0m41866xr21h4mih4z98y6pcrp2ws0mxxx157vdhbv7rhlh5djvp"))))
+        (base32 "0g5zz7vv5gjli0v49m5xzgzpqfb6ay368bxh513v9j3y84vlm2m8"))))
     (properties `((upstream-name . "stratEst")))
     (build-system r-build-system)
     (arguments
@@ -16320,13 +16320,13 @@ individual pages; splits single input PDF document into parts from given points.
 (define-public r-stapler
   (package
     (name "r-stapler")
-    (version "0.7.1")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stapler" version))
        (sha256
-        (base32 "1bzhahn72fzm2bjpis76hphv8whnkp2jq8bm1qldadhng4z1nsak"))))
+        (base32 "11yms7jaz9p1icmyqzpsm4bl8gfyhngpnmlx2z97dg2252x2p60d"))))
     (properties `((upstream-name . "stapler")))
     (build-system r-build-system)
     (arguments
@@ -17483,13 +17483,13 @@ Practices in Psychological Science 3(1), 66-80 <DOI:10.1177/2515245919885617>.")
 (define-public r-sstvars
   (package
     (name "r-sstvars")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sstvars" version))
        (sha256
-        (base32 "0dv6smbsyn02dqqmniwgb5fn1kkg9n6pnj1mcsva7v5r54qajqz7"))))
+        (base32 "1xcyw3si3cnvm9azsv8rwrisqp8z7qz8fidgrfdl4h214556b51v"))))
     (properties `((upstream-name . "sstvars")))
     (build-system r-build-system)
     (arguments
@@ -21039,60 +21039,6 @@ percolation clusters on 2D & 3D square lattices with various lattice sizes,
 occupation probabilities, von Neumann & Moore (1,d)-neighborhoods, and random
 variables weighting the percolation lattice sites.")
     (license license:gpl3)))
-
-(define-public r-spsh
-  (package
-    (name "r-spsh")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spsh" version))
-       (sha256
-        (base32 "1rmsgp0mrb4153v5f5xby7r3izvgz1a0vi63g5p9q5jd6z0gd2i1"))))
-    (properties `((upstream-name . "spsh")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack
-                             r-pracma
-                             r-lhs
-                             r-hypergeo
-                             r-fme
-                             r-deoptim))
-    (home-page "https://cran.r-project.org/package=spsh")
-    (synopsis
-     "Estimation and Prediction of Parameters of Various Soil Hydraulic Property Models")
-    (description
-     "Estimates model parameters of soil hydraulic property functions by inverting
-measured data.  A wide range of hydraulic models, weighting schemes, global
-optimization algorithms, Markov chain Monte Carlo samplers, and extended
-statistical analyses of results are provided.  Prediction of soil hydraulic
-property model parameters and common soil properties using pedotransfer
-functions is facilitated.  Parameter estimation is based on identically and
-independentally distributed (weighted) model residuals, and simple model
-selection criteria (Hoege, M., Woehling, T., and Nowak, W. (2018)
-<doi:10.1002/2017WR021902>) can be calculated.  The included models are the van
-Genuchten-Mualem in its unimodal, bimodal and trimodal form, the the Kosugi 2
-parametric-Mualem model, and the Fredlund-Xing model.  All models can be
-extended to account for non-capillary water storage and conductivity (Weber,
-T.K.D., Durner, W., Streck, T. and Diamantopoulos, E. (2019)
-<doi:10.1029/2018WR024584>.  The isothermal vapour conductivity (Saito, H.,
-Simunek, J. and Mohanty, B.P. (2006) <doi:10.2136/vzj2006.0007>) is calculated
-based on volumetric air space and a selection of different tortuosity models:
-(Grable, A.R., Siemer, E.G. (1968)
-<doi:10.2136/sssaj1968.03615995003200020011x>, Lai, S.H., Tiedje J.M., Erickson,
-E. (1976) <doi:10.2136/sssaj1976.03615995004000010006x>, Moldrup, P., Olesen,
-T., Rolston, D.E., and Yamaguchi, T. (1997)
-<doi:10.1097/00010694-199709000-00004>, Moldrup, P., Olesen, T., Yoshikawa, S.,
-Komatsu, T., and Rolston, D.E. (2004) <doi:10.2136/sssaj2004.7500>, Moldrup, P.,
-Olesen, T., Yoshikawa, S., Komatsu, T., and Rolston, D.E. (2005)
-<doi:10.1097/01.ss.0000196768.44165.1f>, Millington, R.J., Quirk, J.P. (1961)
-<doi:10.1039/TF9615701200>, Penman, H.L. (1940) <doi:10.1017/S0021859600048164>,
-and Xu, X, Nieber, J.L. Gupta, S.C. (1992)
-<doi:10.2136/sssaj1992.03615995005600060014x>).")
-    (license license:gpl2+)))
 
 (define-public r-spselect
   (package
@@ -28496,36 +28442,6 @@ default, the heavier-tailed Laplace density is used.  Formal derivations of the
 algorithms and asymptotic consistency results may be found in Kolyan Ray and
 Botond Szabo (JASA 2020) and Kolyan Ray, Botond Szabo, and Gabriel Clara
 (@code{NeurIPS} 2020).")
-    (license license:gpl3+)))
-
-(define-public r-sparsetscgm
-  (package
-    (name "r-sparsetscgm")
-    (version "4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SparseTSCGM" version))
-       (sha256
-        (base32 "01lfb3j907244hgapb85kba7zdmgzhw452gri208qgrjzfv2x9yh"))))
-    (properties `((upstream-name . "SparseTSCGM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-network
-                             r-mvtnorm
-                             r-mass
-                             r-longitudinal
-                             r-huge
-                             r-glasso
-                             r-abind))
-    (home-page "https://cran.r-project.org/package=SparseTSCGM")
-    (synopsis "Sparse Time Series Chain Graphical Models")
-    (description
-     "Computes sparse vector autoregressive 				coefficients and precision matrices
-for time series 		chain graphical models.  Fentaw Abegaz and Ernst Wit
-(2013)	<doi:10.1093/biostatistics/kxt005>.")
     (license license:gpl3+)))
 
 (define-public r-sparsesvm
@@ -58426,6 +58342,32 @@ which extend the fitting procedures of the	'SEMgraph R package
 <doi:10.32614/CRAN.package.SEMgraph>.")
     (license license:gpl3+)))
 
+(define-public r-semboottools
+  (package
+    (name "r-semboottools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "semboottools" version))
+       (sha256
+        (base32 "13rh0amnbv65r8k3pimqqahwmr8hfyphj71yrb9l8kx03fmkisq4"))))
+    (properties `((upstream-name . "semboottools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-psych r-lavaan-printer r-lavaan r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://Yangzhen1999.github.io/semboottools/")
+    (synopsis "Bootstrapping Helpers for Structural Equation Modelling")
+    (description
+     "This package provides a collection of helper functions for forming bootstrapping
+confidence intervals and examining bootstrap estimates in structural equation
+modelling.  Currently supports models fitted by the lavaan package by Rosseel
+(2012) <doi:10.18637/jss.v048.i02>.")
+    (license license:gpl3+)))
+
 (define-public r-semblance
   (package
     (name "r-semblance")
@@ -61681,13 +61623,13 @@ viewer pane during their execution.")
 (define-public r-sdmtmb
   (package
     (name "r-sdmtmb")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdmTMB" version))
        (sha256
-        (base32 "0v2kmyppax5f1g1jji7l2m6v49kxj65r81giv84hnkwmcqdzsic8"))))
+        (base32 "0122891lkfzl8crbk4f03vlgknq0dl1ncj75p8mn2aivdjgi9vzv"))))
     (properties `((upstream-name . "sdmTMB")))
     (build-system r-build-system)
     (arguments
@@ -61705,9 +61647,9 @@ viewer pane during their execution.")
                              r-generics
                              r-fmesher
                              r-fishmod
-                             r-clisymbols
                              r-cli
-                             r-assertthat))
+                             r-assertthat
+                             r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://pbs-assess.github.io/sdmTMB/")
     (synopsis "Spatial and Spatiotemporal SPDE-Based GLMMs with 'TMB'")
@@ -72542,13 +72484,13 @@ which based on Wilcox (1979) <doi:10.1177/001316447903900302> and Kleinman
 (define-public r-sae4health
   (package
     (name "r-sae4health")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sae4health" version))
        (sha256
-        (base32 "1gmkp8m6f6na13670443szadh6cny6jdwn4wvn803v7lr7rf4ikm"))))
+        (base32 "1isysgdjc3l7xl0mh7av5g81lw3azpmsap1csc94sshasg3zybqn"))))
     (properties `((upstream-name . "sae4health")))
     (build-system r-build-system)
     (arguments

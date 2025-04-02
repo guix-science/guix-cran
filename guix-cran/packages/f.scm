@@ -9030,6 +9030,49 @@ series prediction\" <doi:10.1016/j.csda.2017.11.003>.")
 examining the local second order structure of the time series.")
     (license license:gpl2)))
 
+(define-public r-forecastingensembles
+  (package
+    (name "r-forecastingensembles")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ForecastingEnsembles" version))
+       (sha256
+        (base32 "16sz8finpi4q2nay0rhacdmy16wh0dvfhz4z9lgpaf70n27j7gs4"))))
+    (properties `((upstream-name . "ForecastingEnsembles")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-urca
+                             r-tsibble
+                             r-tidyr
+                             r-tibble
+                             r-readr
+                             r-magrittr
+                             r-gt
+                             r-ggplot2
+                             r-fracdiff
+                             r-feasts
+                             r-fabletools
+                             r-fable-prophet
+                             r-fable
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/InfiniteCuriosity/ForecastingEnsembles")
+    (synopsis "Time Series Forecasting Using 23 Individual Models")
+    (description
+     "Runs multiple individual time series models, and combines them into an ensembles
+of time series models.  This is mainly used to predict the results of the
+monthly labor market report from the United States Bureau of Labor Statistics
+for virtually any part of the economy reported by the Bureau of Labor
+Statistics, but it can be easily modified to work with other types of time
+series data.  For example, the package was used to predict the winning men's and
+women's time for the 2024 London Marathon.")
+    (license license:expat)))
+
 (define-public r-forecasthybrid
   (package
     (name "r-forecasthybrid")
@@ -16335,13 +16378,13 @@ convenient file sharing on the web.")
 (define-public r-filearray
   (package
     (name "r-filearray")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filearray" version))
        (sha256
-        (base32 "16caqi2il8qghhicjgy9nh9nf0x4xbyad0mf3yyyvdr8ng0rrxcl"))))
+        (base32 "0scm5yaqfck1jpxpr5542i33vn7lxg6n453qrwzwdx0m0ig790hb"))))
     (properties `((upstream-name . "filearray")))
     (build-system r-build-system)
     (arguments

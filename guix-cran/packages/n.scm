@@ -610,6 +610,81 @@ case functions that are named in a way that is consistent with usage, making
 their names easy to remember and easy to deploy.")
     (license license:gpl2)))
 
+(define-public r-numericensembles
+  (package
+    (name "r-numericensembles")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NumericEnsembles" version))
+       (sha256
+        (base32 "1qigy2vndwkvgp1j8nsgj8n6b7ns1xhkz5wczxyjiyv684q7b37s"))))
+    (properties `((upstream-name . "NumericEnsembles")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-tree
+                             r-tidyr
+                             r-rpart
+                             r-readr
+                             r-reactablefmtr
+                             r-reactable
+                             r-randomforest
+                             r-purrr
+                             r-pls
+                             r-nnet
+                             r-metrics
+                             r-leaps
+                             r-ipred
+                             r-gridextra
+                             r-glmnet
+                             r-ggplot2
+                             r-gbm
+                             r-gam
+                             r-earth
+                             r-e1071
+                             r-dplyr
+                             r-doparallel
+                             r-cubist
+                             r-corrplot
+                             r-caret
+                             r-car
+                             r-broom
+                             r-brnn
+                             r-arm))
+    (native-inputs (list r-knitr))
+    (home-page "http://www.NumericEnsembles.com")
+    (synopsis "Automatically Runs 23 Individual and 17 Ensembles of Models")
+    (description
+     "Automatically runs 23 individual models and 17 ensembles on numeric data.  The
+package automatically returns complete results on all 40 models, 25 charts,
+multiple tables.  The user simply provides the data, and answers a few questions
+(for example, how many times would you like to resample the data).  From there
+the package randomly splits the data into train, test and validation sets,
+builds models on the training data, makes predictions on the test and validation
+sets, measures root mean squared error (RMSE), removes features above a user-set
+level of Variance Inflation Factor, and has several optional features including
+scaling all numeric data, four different ways to handle strings in the data.
+Perhaps the most significant feature is the package's ability to make
+predictions using the 40 pre trained models on totally new (untrained) data if
+the user selects that feature.  This feature alone represents a very effective
+solution to the issue of reproducibility of models in data science.  The package
+can also randomly resample the data as many times as the user sets, thus giving
+more accurate results than a single run.  The graphs provide many results that
+are not typically found.  For example, the package automatically calculates the
+Kolmogorov-Smirnov test for each of the 40 models and plots a bar chart of the
+results, a bias bar chart of each of the 40 models, as well as several plots for
+exploratory data analysis (automatic histograms of the numeric data, automatic
+histograms of the numeric data).  The package also automatically creates a
+summary report that can be both sorted and searched for each of the 40 models,
+including RMSE, bias, train RMSE, test RMSE, validation RMSE, overfitting and
+duration.  The best results on the holdout data typically beat the best results
+in data science competitions and published results for the same data set.")
+    (license license:expat)))
+
 (define-public r-numbersbr
   (package
     (name "r-numbersbr")
@@ -4534,6 +4609,40 @@ equilibrium along a one-dimensional space.")
      "This package provides a non-parametric test for multi-observer concordance and
 differences between concordances in (un)balanced data.")
     (license license:gpl3+)))
+
+(define-public r-nonstat
+  (package
+    (name "r-nonstat")
+    (version "0.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonstat" version))
+       (sha256
+        (base32 "1c0hj676i3m6ggnd174ynnvj2zsfms4zlg5sd01fz2460ldgrvxb"))))
+    (properties `((upstream-name . "nonstat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=nonstat")
+    (synopsis "Detecting Nonstationarity in Time Series")
+    (description
+     "This package provides a nonvisual procedure for screening time series for
+nonstationarity in the context of intensive longitudinal designs, such as
+ecological momentary assessments.  The method combines two diagnostics: one for
+detecting trends (based on the split R-hat statistic from Bayesian convergence
+diagnostics) and one for detecting changes in variance (a novel extension
+inspired by Levene's test).  This approach allows researchers to efficiently and
+reproducibly detect violations of the stationarity assumption, especially when
+visual inspection of many individual time series is impractical.  The procedure
+is suitable for use in all areas of research where time series analysis is
+central.  For a detailed description of the method and its validation through
+simulations and empirical application, see Zitzmann, S., Lindner, C., Lohmann,
+J. F., & Hecht, M. (2024) \"A Novel Nonvisual Procedure for Screening for
+Nonstationarity in Time Series as Obtained from Intensive Longitudinal Designs\"
+<https://www.researchgate.net/publication/384354932_A_Novel_Nonvisual_Procedure_for_Screening_for_Nonstationarity_in_Time_Series_as_Obtained_from_Intensive_Longitudinal_Designs>.")
+    (license license:gpl3)))
 
 (define-public r-nonsmooth
   (package
@@ -11444,13 +11553,13 @@ files and limited support for reading AFNI files.")
 (define-public r-neurohcp
   (package
     (name "r-neurohcp")
-    (version "0.9.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neurohcp" version))
        (sha256
-        (base32 "02z0lhmw2mr2fk8d8wp7nfcrfl8izds68zskm5j0xfabfb4dwkbx"))))
+        (base32 "1bm4ygycxgk8w1f3ayg6dfd0j02sb6bmmlfbmgnsc1wvpkzadr9j"))))
     (properties `((upstream-name . "neurohcp")))
     (build-system r-build-system)
     (arguments

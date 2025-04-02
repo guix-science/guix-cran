@@ -2800,31 +2800,31 @@ model summary as a modifiable object.")
 (define-public r-orloca-es
   (package
     (name "r-orloca-es")
-    (version "4.9")
+    (version "5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orloca.es" version))
        (sha256
-        (base32 "00zb08dqcsh1ljl4f2djm1pwbrfbaddgapn3v8nascmwxlhb2hkw"))))
+        (base32 "0zcp9vp8qr02cbkb4nqadmyfbkmxkdjah3r3fdlwfipz5q87zvg9"))))
     (properties `((upstream-name . "orloca.es")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-orloca))
-    (home-page "http://knuth.uca.es/orloca")
+    (home-page "http://knuth.uca.es/orloca/")
     (synopsis
      "Spanish version of orloca package. Modelos de localizacion en investigacion operativa")
     (description
-     "Help and demo in Spanish of the orloca package. (Ayuda y demo en espanol del
-paquete orloca.) Objetos y metodos para manejar y resolver el problema de
+     "Help and demo in Spanish of the orloca package.  Ayuda y demo en espanol del
+paquete orloca.  Objetos y metodos para manejar y resolver el problema de
 localizacion de suma minima, tambien conocido como problema de Fermat-Weber.  El
 problema de localizacion de suma minima busca un punto tal que la suma ponderada
 de las distancias a los puntos de demanda se minimice.  Vease \"The Fermat-Weber
 location problem revisited\" por Brimberg, Mathematical Programming, 1, pag.
 71-76, 1995. <DOI: 10.1007/BF01592245>.  Se usan algoritmos generales de
-optimizacion global para resolver el problema, junto con el metodo adhoc
+optimizacion global para resolver el problema, junto con el metodo especifico
 Weiszfeld, vease \"Sur le point pour lequel la Somme des distance de n points
 donnes est minimum\", por Weiszfeld, Tohoku Mathematical Journal, First Series,
 43, pag.  355-386, 1937 o \"On the point for which the sum of the distances to n
@@ -4462,13 +4462,13 @@ variable selection for generalized linear models.")
 (define-public r-optrf
   (package
     (name "r-optrf")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optRF" version))
        (sha256
-        (base32 "0330lvmx46k1jqs432yhfg1nwlpc1nhm4jpvbv14x8ig9959nhys"))))
+        (base32 "19lszrk7i722lj23s7kcgjv276hwf3v10var913fzavvcj7iliba"))))
     (properties `((upstream-name . "optRF")))
     (build-system r-build-system)
     (arguments
@@ -10102,19 +10102,23 @@ algorithm are provided with flexible parameters for dataset customization.")
 (define-public r-omicspls
   (package
     (name "r-omicspls")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmicsPLS" version))
        (sha256
-        (base32 "08vx4925j5ln366h7nzhf1ra5ciplrqw911258chi9di7gpm8g50"))))
+        (base32 "1mvw6qxrrgsnfszcibhlhprc6ggfgimxg05an19nwy730kwsjspy"))))
     (properties `((upstream-name . "OmicsPLS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-softimpute r-magrittr r-ggplot2
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-softimpute
+                             r-magrittr
+                             r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=OmicsPLS")

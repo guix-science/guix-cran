@@ -789,13 +789,13 @@ Operating Policy (SOP).")
 (define-public r-wrproteo
   (package
     (name "r-wrproteo")
-    (version "1.13.0")
+    (version "1.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrProteo" version))
        (sha256
-        (base32 "0dv3s7dn9d1ssm6al4fsjr6702hlmlcw8z60qgsvzi3m226rpv5s"))))
+        (base32 "0disi2ylkhqxwcz1q6sgq3l14373wjamwk0qfnxp924ylspp1nyk"))))
     (properties `((upstream-name . "wrProteo")))
     (build-system r-build-system)
     (arguments
@@ -849,13 +849,13 @@ heterologous spike-in proteins.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "1.15.2")
+    (version "1.15.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrMisc" version))
        (sha256
-        (base32 "0pp1m2ijvkdyagc6rzfafgq2348lxdi5rplnsslg5wx0j88g5m92"))))
+        (base32 "0ahs0rr7k9vspizcahwisnlx5lkrbwymw5cjgl1wq6yy5444snng"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (arguments
@@ -1022,13 +1022,13 @@ Wasserstein autoregressive models.")
 (define-public r-wrgraph
   (package
     (name "r-wrgraph")
-    (version "1.3.8")
+    (version "1.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrGraph" version))
        (sha256
-        (base32 "13wnj9260nchac59spg7k9vw073pa50kj98hvq5snr1j33nrxzgr"))))
+        (base32 "04qjy29l4qjpq3f0w2mq050lg84hi6brfvpxl4mwdv07iw0c4d47"))))
     (properties `((upstream-name . "wrGraph")))
     (build-system r-build-system)
     (arguments
@@ -3716,13 +3716,13 @@ for rarefaction, interpolation, and masking as described in Bishop et al. (2023)
 (define-public r-winfapreader
   (package
     (name "r-winfapreader")
-    (version "0.1-5.1")
+    (version "0.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "winfapReader" version))
        (sha256
-        (base32 "08b3311vw6cf9y9spzvd7pl7q53ik5alkxq4j5d6w8a4kd7bbwaf"))))
+        (base32 "0jni53gswr4amln87c6kksrb54apdacw3mdcg0dgz2107f9l0a4g"))))
     (properties `((upstream-name . "winfapReader")))
     (build-system r-build-system)
     (arguments
@@ -3735,8 +3735,8 @@ for rarefaction, interpolation, and masking as described in Bishop et al. (2023)
     (description
      "Obtain information on peak flow data from the National River Flow Archive (NRFA)
 in the United Kingdom, either from the Peak Flow Dataset files
-<https://nrfa.ceh.ac.uk/peak-flow-dataset> once these have been downloaded to
-the user's computer or using the NRFA's API. These files are in a format
+<https://nrfa.ceh.ac.uk/data/peak-flow-dataset> once these have been downloaded
+to the user's computer or using the NRFA's API. These files are in a format
 suitable for direct use in the WINFAP software, hence the name of the package.")
     (license license:gpl3)))
 

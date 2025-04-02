@@ -8815,39 +8815,6 @@ access to City of Vancouver open data.  Functionality to list the data catalogue
 and access data and geographic records.")
     (license license:expat)))
 
-(define-public r-vampyr
-  (package
-    (name "r-vampyr")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vampyr" version))
-       (sha256
-        (base32 "137sdv4shmjg1cpndjknrys2jkvyq3p9l11nrdh0bzp9xxc1wkh1"))))
-    (properties `((upstream-name . "vampyr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-semplot
-                             r-psych
-                             r-pcovr
-                             r-moments
-                             r-lavaan
-                             r-gparotation
-                             r-fungible
-                             r-efa-mrfa
-                             r-corpcor))
-    (home-page "https://cran.r-project.org/package=vampyr")
-    (synopsis "Factor Analysis Controlling the Effects of Response Bias")
-    (description
-     "Vampirize the response biases from a dataset! Performs factor analysis
-controlling the effects of social desirability and acquiescence using the method
-described in Ferrando, Lorenzo-Seva & Chico (2009)
-<doi:10.1080/10705510902751374>.")
-    (license license:gpl3)))
-
 (define-public r-vamc
   (package
     (name "r-vamc")

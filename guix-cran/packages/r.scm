@@ -7398,13 +7398,13 @@ version of the package is documented in Journal of Statistical Software
 (define-public r-rskey
   (package
     (name "r-rskey")
-    (version "0.4.4")
+    (version "0.4.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rskey" version))
        (sha256
-        (base32 "1la3apypp1kk425r753vqwm3nk9zmynp9gix6db0ckkssw0fjxpw"))))
+        (base32 "001vc7pfxhg62c6jqdhljyy41l00s6fx28n4fh2azsqjb2y7si5a"))))
     (properties `((upstream-name . "rskey")))
     (build-system r-build-system)
     (arguments
@@ -9476,6 +9476,52 @@ knowledge of the R syntax.  Note, this package is a part of the rrisk project.")
      "Testing and inference for regression models using residual randomization
 methods.  The basis of inference is an invariance assumption on the regression
 errors, e.g., clustered errors, or doubly-clustered errors.")
+    (license license:gpl2)))
+
+(define-public r-rrgeo
+  (package
+    (name "r-rrgeo")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RRgeo" version))
+       (sha256
+        (base32 "1clarffwzjljpp9b3n7zn159w8zk0claj1x1nc3gmn3771z551hr"))))
+    (properties `((upstream-name . "RRgeo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sp
+                             r-sf
+                             r-scales
+                             r-rrphylo
+                             r-rphylopars
+                             r-presenceabsence
+                             r-pbapply
+                             r-leastcostpath
+                             r-ks
+                             r-gtools
+                             r-foreach
+                             r-ecospat
+                             r-dosnow
+                             r-doparallel
+                             r-dismo
+                             r-biomod2
+                             r-ape
+                             r-adehabitatma
+                             r-ade4))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RRgeo")
+    (synopsis "Species Distribution Modelling for Rare Species")
+    (description
+     "This package performs species distribution modeling for rare species with
+unprecedented accuracy (Mondanaro et al., 2023 <doi:10.1111/2041-210X.14066>)
+and finds the area of origin of species and past contact between them taking
+climatic variability in full consideration (Mondanaro et al., 2025
+<doi:10.1111/2041-210X.14478>).")
     (license license:gpl2)))
 
 (define-public r-rres
@@ -26317,6 +26363,34 @@ in plots or for fun!")
 (<https://imagej.net>) Region of Interest (ROI) files, to plot the ROIs and to
 convert them to spatstat (<https://spatstat.org/>) spatial patterns.")
     (license license:gpl3)))
+
+(define-public r-rim
+  (package
+    (name "r-rim")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rim" version))
+       (sha256
+        (base32 "1dv7vic2f4khyd9k7wk95gan89s4klvlb474r0j931pp3icj23jq"))))
+    (properties `((upstream-name . "rim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list maxima))
+    (propagated-inputs (list r-rcpp r-r6 r-knitr r-globaloptions))
+    (home-page "https://rcst.github.io/rim/")
+    (synopsis "Interface to 'Maxima', Enabling Symbolic Computation")
+    (description
+     "An interface to the powerful and fairly complete computer algebra system
+Maxima'.  It can be used to start and control Maxima from within R by entering
+Maxima commands.  Results from Maxima can be parsed and evaluated in R. It
+facilitates outputting results from Maxima in @code{LaTeX} and @code{MathML}'.
+2D and 3D plots can be displayed directly.  This package also registers a
+knitr'-engine enabling Maxima code chunks to be written in RMarkdown documents.")
+    (license license:gpl3+)))
 
 (define-public r-rilostat
   (package

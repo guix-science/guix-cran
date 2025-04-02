@@ -3382,13 +3382,13 @@ check <https://apiportal.koreainvestment.com/>.")
 (define-public r-kirby21-t1
   (package
     (name "r-kirby21-t1")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kirby21.t1" version))
        (sha256
-        (base32 "0bv8rrk9jh02h3gill1g2w246j4zv98cjchz7i2c092lvqps8szs"))))
+        (base32 "0sx23sngjxi7bhzc27snml2fab1l9xwfggm82pk1g2rqrvkgd06s"))))
     (properties `((upstream-name . "kirby21.t1")))
     (build-system r-build-system)
     (arguments
@@ -3406,13 +3406,13 @@ reproducibility study <doi:10.1016/j.neuroimage.2010.11.047>.")
 (define-public r-kirby21-fmri
   (package
     (name "r-kirby21-fmri")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kirby21.fmri" version))
        (sha256
-        (base32 "1z2l6bn53mwkll9ki4169lqlz6wcfp29xzdrqyw606j2xrs4wc22"))))
+        (base32 "1r6vczgkv6k6zq3qjps96v5db1i42fyzvhcm1kpvirb7dpmcgcpf"))))
     (properties `((upstream-name . "kirby21.fmri")))
     (build-system r-build-system)
     (arguments
@@ -3867,57 +3867,6 @@ B. kidney.epi: Kidney-Related Functions for Clinical and Epidemiological
 Research.  Scientific-Tools.Org, <https://Scientific-Tools.Org>.
 <doi:10.32614/CRAN.package.kidney.epi>.")
     (license license:lgpl2.0+)))
-
-(define-public r-kibior
-  (package
-    (name "r-kibior")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kibior" version))
-       (sha256
-        (base32 "1acrdlqbklhhd69i1gija8r3nsdgcnfvk5ngz7b2ndy2f58w5ynf"))))
-    (properties `((upstream-name . "kibior")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rtracklayer
-                             r-rsamtools
-                             r-rio
-                             r-r6
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-elastic
-                             r-dplyr
-                             r-data-table
-                             r-biostrings))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/regisoc/kibior")
-    (synopsis "Simple Data Management and Sharing Tool")
-    (description
-     "An interface to store, retrieve, search, join and share datasets, based on
-Elasticsearch (ES) API. As a decentralized, FAIR and collaborative search engine
-and database effort, it proposes a simple push/pull/search mechanism only based
-on ES, a tool which can be deployed on nearly any hardware.  It is a high-level
-R-ES binding to ease data usage using elastic package (S. Chamberlain (2020))
-<https://docs.ropensci.org/elastic/>, extends joins from dplyr package (H.
-Wickham et al. (2020)) <https://dplyr.tidyverse.org/> and integrates specific
-biological format importation with Bioconductor packages such as rtracklayer (M.
-Lawrence and al. (2009) <doi:10.1093/bioinformatics/btp328>)
-<http://bioconductor.org/packages/rtracklayer>, Biostrings (H. PagÃ¨s and al.
-(2020) <doi:10.18129/B9.bioc.Biostrings>)
-<http://bioconductor.org/packages/Biostrings>, and Rsamtools (M. Morgan and al.
-(2020) <doi:10.18129/B9.bioc.Rsamtools>)
-<http://bioconductor.org/packages/Rsamtools>, but also a long list of more
-common ones with rio (C-h.  Chan and al. (2018))
-<https://cran.r-project.org/package=rio>.")
-    (license license:gpl2)))
 
 (define-public r-khroma
   (package

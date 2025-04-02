@@ -11076,31 +11076,6 @@ time.  It includes parametric and non-parametric tests to study independence,
 and functions for generating and analysing different types of dependence.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-indisc
-  (package
-    (name "r-indisc")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "InDisc" version))
-       (sha256
-        (base32 "0halx4m503b9d4vk5y0qmx6qyvc6lwjr4ys4xdcj6bnzv8wi8ymw"))))
-    (properties `((upstream-name . "InDisc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-psych r-matrixstats))
-    (home-page "https://cran.r-project.org/package=InDisc")
-    (synopsis
-     "Obtaining and Estimating Unidimensional and Multidimensional IRT Dual Models")
-    (description
-     "This package performs a unified approach for obtaining and estimating
-unidimensional and multidimensional Item Response Theory (IRT) Dual Models
-(DMs), proposed by Ferrando (2019 <doi:10.1177/0146621618817779>).")
-    (license license:gpl3)))
-
 (define-public r-indirect
   (package
     (name "r-indirect")
@@ -13213,6 +13188,46 @@ Percentage Error (PER).  By storing and visualizing the best performing models,
 it provides a comprehensive solution for precise and efficient regression
 modeling making it an invaluable tool for data scientists and researchers aiming
 to harness AI for predictive analytics.")
+    (license license:gpl3+)))
+
+(define-public r-immunogenetr
+  (package
+    (name "r-immunogenetr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "immunogenetr" version))
+       (sha256
+        (base32 "1y8y0yh2hflhhm3qlxrs4mn71xr655zknyd420514vw6gkca0bqh"))))
+    (properties `((upstream-name . "immunogenetr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/k96nb01/immunogenetr_package")
+    (synopsis "Comprehensive Toolkit for Clinical HLA Informatics")
+    (description
+     "This package provides a comprehensive toolkit for clinical Human Leukocyte
+Antigen (HLA) informatics, built on tidyverse <https://tidyverse.tidyverse.org/>
+principles and making use of genotype list string (GL string, Mack et al. (2023)
+<doi:10.1111/tan.15126>) for storing and computing HLA genotype data.  Specific
+functionalities include: coercion of HLA data in tabular format to and from GL
+string; calculation of matching and mismatching in all directions, with multiple
+output formats; automatic formatting of HLA data for searching within a GL
+string; truncation of molecular HLA data to a specific number of fields; and
+reading HLA genotypes in HML files and extracting the GL string.")
     (license license:gpl3+)))
 
 (define-public r-immunesim
@@ -20565,13 +20580,13 @@ the bootstrap bias correction technique.")
 (define-public r-iatscores
   (package
     (name "r-iatscores")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IATscores" version))
        (sha256
-        (base32 "1dmcwkylq6zazjycjsmbxnzvkav19w13j69gnm1f558wsdxpvhx1"))))
+        (base32 "1g5ym45zdj0jy4v8v1w89z5kpacn2i0ys55ld4hz2ba23cvzfi1f"))))
     (properties `((upstream-name . "IATscores")))
     (build-system r-build-system)
     (arguments

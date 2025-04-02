@@ -3520,13 +3520,13 @@ periodontal disease from Rosenbaum (2017) <doi:10.1214/17-STS621>.")
 (define-public r-dstarm
   (package
     (name "r-dstarm")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DstarM" version))
        (sha256
-        (base32 "0wm5kr2pkgbvh9svjq8zq46zn50hwf58rs3y1ybnwcfjc2q75h1s"))))
+        (base32 "0dincdw8lpjjwr0yirhwc6spi3yfipp79377yjlwaphddp8wbav8"))))
     (properties `((upstream-name . "DstarM")))
     (build-system r-build-system)
     (arguments
@@ -12914,13 +12914,13 @@ distance surface.  But the workhorse is distance_to.")
 (define-public r-distances
   (package
     (name "r-distances")
-    (version "0.1.11")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distances" version))
        (sha256
-        (base32 "0v2i1q16kcxr1v988zcgpqgrwvagzfcafzxjkkz06x72j8s63jrd"))))
+        (base32 "0wnq54smpjqixwf532yyk6fzwl5c2r76gayp2g7fhz1fl60dz0cr"))))
     (properties `((upstream-name . "distances")))
     (build-system r-build-system)
     (arguments
@@ -16248,13 +16248,13 @@ and Islam (2006) <doi:10.1016/j.ijforecast.2006.01.005>.")
 (define-public r-diffr
   (package
     (name "r-diffr")
-    (version "0.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diffr" version))
        (sha256
-        (base32 "0ydwnpyzirynffsnvip667y0jqzy7yfqlfpqhb38xvmd9rmwfbp8"))))
+        (base32 "06mkid7iiwj56jh1flrmyg4n3d70834g2kckrn5z9s5lcag91jk0"))))
     (properties `((upstream-name . "diffr")))
     (build-system r-build-system)
     (arguments
@@ -28433,19 +28433,19 @@ one data frame column.")
 (define-public r-datetimeutils
   (package
     (name "r-datetimeutils")
-    (version "0.6-4")
+    (version "0.6-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datetimeutils" version))
        (sha256
-        (base32 "0k8zgr3dpba967p12fygrbrcgnbm51ghhnh7cb1w1gd7jqc42nhk"))))
+        (base32 "1yqp525xy6saplsk19r6zh9i3b6ryj9ssdsnkaql2my0zgvi6fmf"))))
     (properties `((upstream-name . "datetimeutils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "http://enricoschumann.net/R/packages/datetimeutils/")
+    (home-page "https://enricoschumann.net/R/packages/datetimeutils/")
     (synopsis "Utilities for Dates and Times")
     (description
      "Utilities for handling dates and times, such as selecting particular days of the
