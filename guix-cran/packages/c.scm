@@ -7,8 +7,8 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages web)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages java)
   #:use-module (gnu packages cmake)
@@ -181,6 +181,54 @@ technical variability from the technology of measurements).  Supervised learning
 technique based on the Wasserstein metric that is used to estimate an optimal
 re-weighting of class proportions in a mixture model Details are presented in
 Freulon P, Bigot J and Hejblum BP (2023) <doi:10.1214/22-AOAS1660>.")
+    (license license:gpl2+)))
+
+(define-public r-cytoprofile
+  (package
+    (name "r-cytoprofile")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CytoProfile" version))
+       (sha256
+        (base32 "1qmdndic3ghql80r4lih038fwychqca5mxya8ajigwvp8li171c6"))))
+    (properties `((upstream-name . "CytoProfile")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-tidyr
+                             r-reshape2
+                             r-randomforest
+                             r-prodlim
+                             r-proc
+                             r-plot3d
+                             r-mixomics
+                             r-gridextra
+                             r-gplots
+                             r-ggrepel
+                             r-ggplot2
+                             r-e1071
+                             r-dplyr
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/saraswatsh/CytoProfile")
+    (synopsis "Cytokine Profiling Analysis Tool")
+    (description
+     "This package provides comprehensive cytokine profiling analysis through quality
+control using biologically meaningful cutoffs on raw cytokine measurements and
+by testing for distributional symmetry to recommend appropriate transformations.
+ Offers exploratory data analysis with summary statistics, enhanced boxplots,
+and barplots, along with univariate and multivariate analytical capabilities for
+in-depth cytokine profiling such as Principal Component Analysis based on
+Andrzej MaÄkiewicz and Waldemar Ratajczak (1993)
+<doi:10.1016/0098-3004(93)90090-R>, Sparse Partial Least Squares Discriminant
+Analysis based on LÃª Cao K-A, Boitard S, and Besse P (2011)
+<doi:10.1186/1471-2105-12-253>, Random Forest based on Breiman, L. (2001)
+<doi:10.1023/A:1010933404324>, and Extreme Gradient Boosting based on Tianqi
+Chen and Carlos Guestrin (2016) <doi:10.1145/2939672.2939785>.")
     (license license:gpl2+)))
 
 (define-public r-cytominer
@@ -6280,45 +6328,6 @@ cross-recurrence plot, Please refer to Coco and others (2021)
 and Wallot (2018) <doi: 10.1080/00273171.2018.1512846> for further details about
 the method.")
     (license license:gpl3+)))
-
-(define-public r-crplyr
-  (package
-    (name "r-crplyr")
-    (version "0.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "crplyr" version))
-       (sha256
-        (base32 "098i4c86vjgpnip5q8ns6ra4g0q8fpwn71pq35rgnxgzq5cbz72p"))))
-    (properties `((upstream-name . "crplyr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridislite
-                             r-tidyselect
-                             r-tibble
-                             r-stringr
-                             r-scales
-                             r-rlang
-                             r-purrr
-                             r-lifecycle
-                             r-lazyeval
-                             r-httptest
-                             r-ggplot2
-                             r-dplyr
-                             r-crunch))
-    (native-inputs (list r-knitr))
-    (home-page "https://crunch.io/r/crplyr/")
-    (synopsis "'dplyr' Interface for Crunch")
-    (description
-     "In order to facilitate analysis of datasets hosted on the Crunch data platform
-<https://crunch.io/>, the crplyr package implements dplyr methods on top of the
-Crunch backend.  The usual methods select', filter', group_by', summarize', and
-collect are implemented in such a way as to perform as much computation on the
-server and pull as little data locally as possible.")
-    (license license:lgpl3+)))
 
 (define-public r-crov
   (package
@@ -24728,13 +24737,13 @@ Common Data Model.")
 (define-public r-cohortsurvival
   (package
     (name "r-cohortsurvival")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSurvival" version))
        (sha256
-        (base32 "0fjwr7rd5nnlj2ac4qls4x3h8z0i11avwn297yv66jclvzffbllc"))))
+        (base32 "1w6qp6wkjkg3zb06x3i9jy7hymnyshq5mg25kxmsazwf6lh8gi2m"))))
     (properties `((upstream-name . "CohortSurvival")))
     (build-system r-build-system)
     (arguments
@@ -24749,6 +24758,7 @@ Common Data Model.")
                              r-patientprofiles
                              r-omopgenerics
                              r-magrittr
+                             r-glue
                              r-dplyr
                              r-dbi
                              r-clock
@@ -28884,13 +28894,13 @@ classification.")
 (define-public r-clustvarsel
   (package
     (name "r-clustvarsel")
-    (version "2.3.4")
+    (version "2.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustvarsel" version))
        (sha256
-        (base32 "0hzvfcjs1k13j695jx6m0fgmcxy284gp4d59b7zmnvqib153x89x"))))
+        (base32 "1mq7xpdxnxpzcknnaa3fbqa1cy3fva1glddvpnshp66rxq8jikf7"))))
     (properties `((upstream-name . "clustvarsel")))
     (build-system r-build-system)
     (arguments
@@ -46864,6 +46874,35 @@ Implements methods from Schafer, JL, Analysis of Incomplete Multivariate Data,
 Chapman and Hall.")
     (license (license:fsdg-compatible "file://LICENSE"))))
 
+(define-public r-castgen
+  (package
+    (name "r-castgen")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "castgen" version))
+       (sha256
+        (base32 "01i53dl191im1qllsb1p7qi7lcrnjfqn9j5pq67pcs5apxf2gz8a"))))
+    (properties `((upstream-name . "castgen")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vcfr r-rdpack r-foreach r-dplyr r-doparallel))
+    (home-page "https://github.com/alex-sandercock/castgen")
+    (synopsis "Estimate Sample Size for Population Genomic Studies")
+    (description
+     "Estimate sample sizes needed to capture target levels of genetic diversity from
+a population (multivariate allele frequencies) for applications like germplasm
+conservation and breeding efforts.  Compares bootstrap samples to a full
+population using linear regression, employing the R-squared value to represent
+the proportion of diversity captured.  Iteratively increases sample size until a
+user-defined target R-squared is met.  Offers a parallelized R implementation of
+a previously developed python method.  All ploidy levels are supported.  For
+more details, see Sandercock et al. (2024) <doi:10.1073/pnas.2403505121>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-cast
   (package
     (name "r-cast")
@@ -48691,13 +48730,13 @@ symbolic sums and other important quantities.")
 (define-public r-capybara
   (package
     (name "r-capybara")
-    (version "0.9.1")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "capybara" version))
        (sha256
-        (base32 "1n1z8zlviaxji34slascyric6rmfqksj9wznxamwcdl2d3pf8xxm"))))
+        (base32 "1wiafcrx1zdi0ravfnzxcygbqd6ynfzi7r1zyyjyasim4iq2bq0f"))))
     (properties `((upstream-name . "capybara")))
     (build-system r-build-system)
     (arguments
@@ -51348,13 +51387,13 @@ symmetrical ca and three-way ordered non-symmetrical ca.")
 (define-public r-c50
   (package
     (name "r-c50")
-    (version "0.1.8")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "C50" version))
        (sha256
-        (base32 "05cwvapd84b40v90kfkhjhawhhaq5bm7nscnjd95flpds1gbvldv"))))
+        (base32 "1rhm6inyrq0bmfla60myd8mqs3lhdz51j99b7lb6d4a9cpabfw26"))))
     (properties `((upstream-name . "C50")))
     (build-system r-build-system)
     (arguments

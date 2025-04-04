@@ -6030,6 +6030,38 @@ functions for accessing the national data are provided.")
 Stata commands (both inline and from a .do file) from R.")
     (license license:gpl3)))
 
+(define-public r-rstantva
+  (package
+    (name "r-rstantva")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RStanTVA" version))
+       (sha256
+        (base32 "02yss5sv8kzqfl566kkkasbkx4yypin8z24b8wm0128fv4znxdxq"))))
+    (properties `((upstream-name . "RStanTVA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rstan
+                             r-rlang
+                             r-readr
+                             r-lme4
+                             r-dplyr
+                             r-cli
+                             r-brms))
+    (home-page "https://github.com/mmrabe/RStanTVA")
+    (synopsis "TVA Models in 'Stan' using 'R' and 'StanTVA'")
+    (description
+     "Stan implementation of the Theory of Visual Attention (TVA; Bundesen, 1990;
+<doi:10.1037/0033-295X.97.4.523>) and numerous convenience functions for
+generating, compiling, fitting, and analyzing TVA models.")
+    (license license:gpl3+)))
+
 (define-public r-rstanemax
   (package
     (name "r-rstanemax")
@@ -8327,13 +8359,13 @@ function call.  An API key from the U.S. Department of Education is required.")
 (define-public r-rscopus
   (package
     (name "r-rscopus")
-    (version "0.6.6")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rscopus" version))
        (sha256
-        (base32 "0kl6rv0j2396b8izvy0lp1f588il6w3yhq6d4swv8x8z14rsgcpw"))))
+        (base32 "1cqgidnr8w20cs6l4rgaddj4n5n3zamqf6bvh9pzd2f616hl1nfv"))))
     (properties `((upstream-name . "rscopus")))
     (build-system r-build-system)
     (arguments
@@ -8341,6 +8373,7 @@ function call.  An API key from the U.S. Department of Education is required.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-plyr
+                             r-magrittr
                              r-jsonlite
                              r-httr
                              r-glue
@@ -14015,40 +14048,6 @@ forecast weather for 5 days with data for every 3 hours.")
      "An R package for the @code{OpenSecrets.org} web services API.")
     (license license:lgpl3)))
 
-(define-public r-ropenmeteo
-  (package
-    (name "r-ropenmeteo")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ropenmeteo" version))
-       (sha256
-        (base32 "1haxvr6gcpzjh3p7vnr1imgrzir8r5h0xm9h8qpvdn4qmmi2qwiv"))))
-    (properties `((upstream-name . "ropenmeteo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-purrr
-                             r-lubridate
-                             r-jsonlite
-                             r-imputets
-                             r-httr2
-                             r-glue
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "http://flare-forecast.org/ropenmeteo/")
-    (synopsis "Wrappers for 'Open-Meteo' API")
-    (description
-     "Wrappers for the Application Programming Interface from the
-<https://open-meteo.com> project along with helper functions.  The
-<https://open-meteo.com> project streamlines access to a range of publicly
-historical and forecast meteorology data from agencies across the world.")
-    (license license:expat)))
-
 (define-public r-ropenfigi
   (package
     (name "r-ropenfigi")
@@ -14731,13 +14730,13 @@ detection of events or structural breaks.")
 (define-public r-rolldown
   (package
     (name "r-rolldown")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolldown" version))
        (sha256
-        (base32 "1awr8lcxz7y9mjhia4p85jvixc72gj525gk2jjl13njgq6shp0b5"))))
+        (base32 "086s03bj750lgwv4kdn1xlsyxg27imixl0sa14w70b3rdrgz4vkm"))))
     (properties `((upstream-name . "rolldown")))
     (build-system r-build-system)
     (arguments
@@ -14759,11 +14758,11 @@ detection of events or structural breaks.")
                                   '())))))))
     (propagated-inputs (list r-jsonlite r-htmltools r-bookdown))
     (native-inputs (list r-knitr esbuild))
-    (home-page "https://cran.r-project.org/package=rolldown")
+    (home-page "https://github.com/yihui/rolldown")
     (synopsis "R Markdown Output Formats for Storytelling")
     (description
      "R Markdown output formats based on @code{JavaScript} libraries such as Scrollama
-(<https://github.com/russellgoldenberg/scrollama>) for storytelling.")
+(<https://github.com/russellsamora/scrollama>) for storytelling.")
     (license license:expat)))
 
 (define-public r-rollbar
@@ -18169,6 +18168,41 @@ retrieving investment statistics and quotes, placing and canceling orders,
 getting market trading hours, searching investments by popular tag, and
 interacting with watch lists.")
     (license license:gpl3)))
+
+(define-public r-robincar2
+  (package
+    (name "r-robincar2")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RobinCar2" version))
+       (sha256
+        (base32 "1mw89wm8j4ib450a833fgrznmpbaah84cwp590m8fzvfrm69ql05"))))
+    (properties `((upstream-name . "RobinCar2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich r-numderiv r-mass r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/openpharma/RobinCar2/")
+    (synopsis
+     "ROBust INference for Covariate Adjustment in Randomized Clinical Trials")
+    (description
+     "This package performs robust estimation and inference when using covariate
+adjustment and/or covariate-adaptive randomization in randomized controlled
+trials.  This package is trimmed to reduce the dependencies and validated to be
+used across industry.  See \"FDA's final guidance on covariate
+adjustment\"<https://www.regulations.gov/docket/FDA-2019-D-0934>, Tsiatis (2008)
+<doi:10.1002/sim.3113>, Bugni et al. (2018) <doi:10.1080/01621459.2017.1375934>,
+Ye, Shao, Yi, and Zhao (2023)<doi:10.1080/01621459.2022.2049278>, Ye, Shao, and
+Yi (2022)<doi:10.1093/biomet/asab015>, Rosenblum and van der Laan
+(2010)<doi:10.2202/1557-4679.1138>, Wang et al.
+(2021)<doi:10.1080/01621459.2021.1981338>, Ye, Bannick, Yi, and Shao
+(2023)<doi:10.1080/24754269.2023.2205802>, and Bannick, Shao, Liu, Du, Yi, and
+Ye (2024)<doi:10.48550/@code{arXiv.2306.10213>}.")
+    (license license:asl2.0)))
 
 (define-public r-robincar
   (package
@@ -24029,6 +24063,39 @@ free indexing or for indexing with a controlled vocabulary.  For more
 information see <http://www.nzdl.org/Kea/>.")
     (license license:gpl2)))
 
+(define-public r-rkaggle
+  (package
+    (name "r-rkaggle")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RKaggle" version))
+       (sha256
+        (base32 "143fkkabfhkdvv8f7pcfvhdd4rm9l77msxwsgpb8ilf6jp48a0s8"))))
+    (properties `((upstream-name . "RKaggle")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-readxl
+                             r-readr
+                             r-readods
+                             r-jsonlite
+                             r-httr
+                             r-arrow))
+    (home-page "https://github.com/benyamindsmith/RKaggle")
+    (synopsis "'Kaggle' Dataset Downloader 'API'")
+    (description
+     "Easily download datasets from Kaggle <https://www.kaggle.com/> directly into
+your R environment using RKaggle'.  Streamline your data analysis workflows by
+importing datasets effortlessly and focusing on insights rather than manual data
+handling.  Perfect for data enthusiasts and professionals looking to integrate
+Kaggle datasets into their R projects with minimal hassle.")
+    (license license:expat)))
+
 (define-public r-rkafkajars
   (package
     (name "r-rkafkajars")
@@ -24219,13 +24286,13 @@ implemented here.")
 (define-public r-rjsdmx
   (package
     (name "r-rjsdmx")
-    (version "3.5-0")
+    (version "3.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RJSDMX" version))
        (sha256
-        (base32 "0qz94v1v8dhijmjvqv78zb45s5ayfnd4syfjqpjbpcl5c6q582vp"))))
+        (base32 "053vlazy0sf0jn6jjwhi11hmrnwby1w1fpdm69hqbad3c6szvp3n"))))
     (properties `((upstream-name . "RJSDMX")))
     (build-system r-build-system)
     (arguments
@@ -27842,13 +27909,13 @@ Monte Carlo.  Automatic parameter selection is not supported.")
 (define-public r-rhino
   (package
     (name "r-rhino")
-    (version "1.10.1")
+    (version "1.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rhino" version))
        (sha256
-        (base32 "15lbn4ymhjqhhklprs2zxx8qm1gy0vx54zycn25jpq633i7jczsf"))))
+        (base32 "0z0grgx9n2jq7zzd3k9s7ik0sksh39j04a2fhrz9ihq1fqkj88w1"))))
     (properties `((upstream-name . "rhino")))
     (build-system r-build-system)
     (arguments
@@ -27873,6 +27940,7 @@ Monte Carlo.  Automatic parameter selection is not supported.")
                              r-fs
                              r-config
                              r-cli
+                             r-callr
                              r-box-lsp
                              r-box-linters
                              r-box))
@@ -31566,34 +31634,19 @@ has substantial potentials for microbial community ecological analysis.")
 (define-public r-revealjs
   (package
     (name "r-revealjs")
-    (version "0.9")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "revealjs" version))
        (sha256
-        (base32 "0h4csxrcl1rzmj3g01nf0mr990zc8swrf4jvmxwqsyzx9v2cqbnc"))))
+        (base32 "1wwgwi32wwpx2c16bcpl5zcrwnr4lkf3q4frfcmkaxh02y1drc5p"))))
     (properties `((upstream-name . "revealjs")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
+      #:tests? #f))
     (propagated-inputs (list r-rmarkdown))
-    (native-inputs (list esbuild))
     (home-page "https://github.com/rstudio/revealjs")
     (synopsis "R Markdown Format for 'reveal.js' Presentations")
     (description
@@ -39368,13 +39421,13 @@ obtain updated taxonomic details, and explore the dataset.")
 (define-public r-redatamx
   (package
     (name "r-redatamx")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redatamx" version))
        (sha256
-        (base32 "0924yw0lwzfk7v57kmslazg3mz5c7di4q7b6j5yxqba1s5m9s6h4"))))
+        (base32 "19qlm5pq3cyc2rb069pd2ygxic964q5zzkhsr7749vbbgx5ydvx8"))))
     (properties `((upstream-name . "redatamx")))
     (build-system r-build-system)
     (arguments
@@ -43317,13 +43370,13 @@ Repertoire Dissimilarity Index.  Citation: Bolen and Rubelt, et al (2017)
 (define-public r-rdhte
   (package
     (name "r-rdhte")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdhte" version))
        (sha256
-        (base32 "0h619q940l9k7li3iyhw4fkq0b9zf8s65kpd1znwm1av3xi3zhlw"))))
+        (base32 "0v38i7hjxqdw801gfd3hlb485v8sb1pkl240qvhjr4qn72fhszf4"))))
     (properties `((upstream-name . "rdhte")))
     (build-system r-build-system)
     (arguments
@@ -49700,13 +49753,13 @@ with the coda package, and for running @code{LibBi} to conduct inference.")
 (define-public r-rbgm
   (package
     (name "r-rbgm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbgm" version))
        (sha256
-        (base32 "0jw7p6l0il0fz5rq7ra731xzj06aqqvm9s1r0hwa4rd74lkg198n"))))
+        (base32 "0pl3wqz9hpimdh0vqxkwcn3zd8zmcs8mmxl0gg0gvfh3c43zmfwz"))))
     (properties `((upstream-name . "rbgm")))
     (build-system r-build-system)
     (arguments
@@ -51952,13 +52005,13 @@ model tests.")
 (define-public r-rartrials
   (package
     (name "r-rartrials")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RARtrials" version))
        (sha256
-        (base32 "03hfbr08f4wbb8apfdqg32118615zzyaihvriqsfr7q2qxy4byla"))))
+        (base32 "1q1hpghvkn7yzg2gil1sr1w5mz7q5zrnp96c0pc4ff30l44shxcl"))))
     (properties `((upstream-name . "RARtrials")))
     (build-system r-build-system)
     (arguments
@@ -56938,13 +56991,13 @@ Idzorek T., Kaplan P. (2024, ISBN:9781952927379).")
 (define-public r-r4ds-tutorials
   (package
     (name "r-r4ds-tutorials")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r4ds.tutorials" version))
        (sha256
-        (base32 "05wy99n3i43wgzpqd4gsj1skz1jgp2q4q8s99q0ia453xig49shm"))))
+        (base32 "1g9ccgycxvjds32kqn24x2lkh1fn93c0nw9xrha560wk1kbrd66q"))))
     (properties `((upstream-name . "r4ds.tutorials")))
     (build-system r-build-system)
     (arguments

@@ -1055,13 +1055,13 @@ utilities for time series preprocessing and visualization.")
 (define-public r-twc
   (package
     (name "r-twc")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twc" version))
        (sha256
-        (base32 "0v6vnbsgiqgfsy0qcmwkrjkii39fg3cvd3wqhgxh4m57b4190dwy"))))
+        (base32 "0qjmkvrx934ll1fk87ai2cirl1mbyvq9gc8jilyjb0m67jvjx6bh"))))
     (properties `((upstream-name . "twc")))
     (build-system r-build-system)
     (arguments
@@ -6464,13 +6464,13 @@ direction of the stop. @code{TriMet} has catalogued these stops, 6880 in total."
 (define-public r-trimatch
   (package
     (name "r-trimatch")
-    (version "0.9.9")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TriMatch" version))
        (sha256
-        (base32 "17v8hdm594i9qs5hvrzb1k94wrzvx07479rmvbk4314fim27mabg"))))
+        (base32 "19s9i070r1dlvbsd601fi92h6hz6s7pi2mgii5zf4w36np3vrr4c"))))
     (properties `((upstream-name . "TriMatch")))
     (build-system r-build-system)
     (arguments
@@ -6484,7 +6484,8 @@ direction of the stop. @code{TriMet} has catalogued these stops, 6880 in total."
                              r-gridextra
                              r-ggplot2
                              r-ez))
-    (home-page "http://jason.bryer.org/TriMatch")
+    (native-inputs (list r-knitr))
+    (home-page "https://jbryer.github.io/TriMatch/")
     (synopsis "Propensity Score Matching of Non-Binary Treatments")
     (description "Propensity score matching for non-binary treatments.")
     (license license:gpl2+)))
@@ -10539,6 +10540,44 @@ are derived from Anderson et al. (2001) <doi:10.1016/S0047-2727(00)00085-2> and
 Froeb et al. (2003) <doi:10.1016/S0304-4076(02)00166-5>.")
     (license license:cc0)))
 
+(define-public r-tractortsbox
+  (package
+    (name "r-tractortsbox")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TractorTsbox" version))
+       (sha256
+        (base32 "05xqmpcdmlnn5x0jx4cgqddcmfbf3y79lam65l6c3zlsf39m8iia"))))
+    (properties `((upstream-name . "TractorTsbox")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-checkmate))
+    (home-page "https://github.com/TractorTom/TractorTsbox")
+    (synopsis
+     "Wrangle and Modify Ts Object with Classic Frequencies and Exact Dates")
+    (description
+     "The ts objects in R are managed using a very specific date format (in the form
+c(2022, 9) for September 2022 or c(2021, 2) for the second quarter of 2021,
+depending on the frequency, for example).  We focus solely on monthly and
+quarterly series to manage the dates of ts objects.  The general idea is to
+offer a set of functions to manage this date format without it being too
+restrictive or too imprecise depending on the rounding.  This is a compromise
+between simplicity, precision and use of the basic stats functions for creating
+and managing time series @code{(ts()}, @code{window()}).  Les objets ts en R
+sont gÃ©rÃ©s par un format de date trÃ¨s particulier (sous la forme c(2022, 9)
+pour septembre 2022 ou c(2021, 2) pour le deuxiÃ¨me trimestre 2021 selon la
+frÃ©quence par exemple).  On se concentre uniquement sur les sÃ©ries mensuelles
+et trimestrielles pour gÃ©rer les dates des objets ts.  LidÃ©e gÃ©nÃ©rale est de
+proposer un ensemble de fonctions pour gÃ©rer ce format de date sans que ce soit
+trop contraignant ou trop imprÃ©cis selon les arrondis.  Cest un compromis entre
+simplicitÃ©, prÃ©cision et utilisation des fonctions du package stats de
+crÃ©ation et de gestion des sÃ©ries temporelles @code{(ts()}, @code{window()}).")
+    (license license:gpl3+)))
+
 (define-public r-trackreconstruction
   (package
     (name "r-trackreconstruction")
@@ -13329,13 +13368,13 @@ contingency table for each threshold (Pontius Jr., R.G., Si, K. 2014.
 (define-public r-toastui
   (package
     (name "r-toastui")
-    (version "0.3.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toastui" version))
        (sha256
-        (base32 "1pyrw9wnrnkfxdyjq5k8n4brk6l2mrhqdbqb3y1ayfnby82n154v"))))
+        (base32 "18n3b98c9q772fb1icyrybb5qjqm1rpfwmp41q79rlqq0w6cwvks"))))
     (properties `((upstream-name . "toastui")))
     (build-system r-build-system)
     (arguments
@@ -13352,8 +13391,8 @@ contingency table for each threshold (Pontius Jr., R.G., Si, K. 2014.
     (home-page "https://dreamrs.github.io/toastui/")
     (synopsis "Interactive Tables, Calendars and Charts for the Web")
     (description
-     "Create interactive tables, calendars and charts with TOAST UI
-<https://ui.toast.com/> libraries to integrate in shiny applications or
+     "Create interactive tables, calendars, charts and markdown WYSIWYG editor with
+TOAST UI <https://ui.toast.com/> libraries to integrate in shiny applications or
 rmarkdown HTML documents.")
     (license license:expat)))
 
@@ -20287,13 +20326,13 @@ algorithm.")
 (define-public r-tican
   (package
     (name "r-tican")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tican" version))
        (sha256
-        (base32 "0mh4x7qa8q5jgvf0zbdqmgv0qqj338b2878ngik98d5jz7iwy138"))))
+        (base32 "0bic4n7jgbj74ca849cklvjasgdv1rym2bry24zpad6q42jjkmg7"))))
     (properties `((upstream-name . "tican")))
     (build-system r-build-system)
     (arguments
@@ -27358,13 +27397,13 @@ Guangchuang Yu (2022, ISBN:9781032233574).")
 (define-public r-tdavec
   (package
     (name "r-tdavec")
-    (version "0.1.4")
+    (version "0.1.41")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDAvec" version))
        (sha256
-        (base32 "0xzs201gir73a044p1is2zzmsnbn3n6wabl49nll08swqw1wxjvj"))))
+        (base32 "1swcjy29rhwmbpzxnd4yvqy0n0in8bx2dx8vjq7q6facfhd47maz"))))
     (properties `((upstream-name . "TDAvec")))
     (build-system r-build-system)
     (arguments
@@ -28153,13 +28192,13 @@ types) and it allows to detect cell-type-specific statistical relations
 (define-public r-tbrf
   (package
     (name "r-tbrf")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tbrf" version))
        (sha256
-        (base32 "1mxfvgb18a62igdh3af4m8x6fl69s25j4x7isd70w744w6jvch3h"))))
+        (base32 "04pqgmxknnhrxfx8976l3jvnnjbarnfyfjc2q1iaaxrgahnb92ff"))))
     (properties `((upstream-name . "tbrf")))
     (build-system r-build-system)
     (arguments
@@ -29650,13 +29689,13 @@ contours represent shaded topography.  See Tanaka (1950) <doi:10.2307/211219>.")
 (define-public r-tame
   (package
     (name "r-tame")
-    (version "0.0.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tame" version))
        (sha256
-        (base32 "183s8mxy1wvqkwick5gzrf5ijx8frwk2b8bpb4hh5rwvlqwm6p4h"))))
+        (base32 "077vnr8jb6qzxdy4vszlpx8327z7bsyva401c5xwj3kd213qfpak"))))
     (properties `((upstream-name . "tame")))
     (build-system r-build-system)
     (arguments
@@ -29666,11 +29705,13 @@ contours represent shaded topography.  See Tanaka (1950) <doi:10.2307/211219>.")
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-scales
                              r-rlang
                              r-rfast
                              r-rcpp
                              r-purrr
                              r-magrittr
+                             r-ggplot2
                              r-fuzzyjoin
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=tame")
@@ -29682,7 +29723,8 @@ medication similarities in the Anatomical Therapeutic Chemical Classification
 System, medication timing and medication amount or dosage.  Tools for
 summarizing, illustrating and manipulating the cluster objects are also
 available.")
-    (license license:expat)))
+    (license (list license:gpl3+
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-tall
   (package
@@ -30506,13 +30548,13 @@ retrieval.")
 (define-public r-tabula
   (package
     (name "r-tabula")
-    (version "3.2.0")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabula" version))
        (sha256
-        (base32 "13m13527s57awp4qnfh49lriiwazdc1qv6wy8in8if99aafgjy8z"))))
+        (base32 "0bk38q7afx3ffpb70wg9sffa5vrm8ay3bkl4d7dhy1aalmzx23nr"))))
     (properties `((upstream-name . "tabula")))
     (build-system r-build-system)
     (arguments
@@ -30520,7 +30562,7 @@ retrieval.")
       #:tests? #f))
     (propagated-inputs (list r-khroma r-arkhe))
     (native-inputs (list r-knitr))
-    (home-page "https://packages.tesselle.org/tabula/")
+    (home-page "https://codeberg.org/tesselle/tabula")
     (synopsis "Analysis and Visualization of Archaeological Count Data")
     (description
      "An easy way to examine archaeological count data.  This package provides several
@@ -30592,6 +30634,52 @@ form, where packages such as tidyr could be used for reshaping.  The schema
 description documents the arrangement of input tables and is used to reshape
 them into a standardised (tidy) output format.")
     (license license:gpl3)))
+
+(define-public r-tabs
+  (package
+    (name "r-tabs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tabs" version))
+       (sha256
+        (base32 "0zqgi89lsix9gq5b30ibx1j4xl7wd4ihwinm0bqhx7j8cg2c1jws"))))
+    (properties `((upstream-name . "tabs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-stringi
+                             r-sf
+                             r-rsqlite
+                             r-rlang
+                             r-qs2
+                             r-mapedit
+                             r-leaftime
+                             r-leaflet-extras
+                             r-leaflet
+                             r-jsonlite
+                             r-httr
+                             r-htmlwidgets
+                             r-htmltools
+                             r-gpkg
+                             r-geojsonio
+                             r-dplyr
+                             r-ape))
+    (home-page "https://uva_ibed_piac.gitlab.io/tabs/")
+    (synopsis "Temporal Altitudinal Biogeographic Shifts")
+    (description
+     "This package provides a standardized workflow to reconstruct spatial
+configurations of altitude-bounded biogeographic systems over time.  For
+example, tabs can model how island archipelagos expand or contract with changing
+sea levels or how alpine biomes shift in response to tree line movements.  It
+provides functionality to account for various geophysical processes such as
+crustal deformation and other tectonic changes, allowing for a more accurate
+representation of biogeographic system dynamics.  For more information see De
+Groeve et al. (2025) <doi:10.3897/arphapreprints.e151900>.")
+    (license license:gpl3+)))
 
 (define-public r-tabr
   (package

@@ -7797,6 +7797,38 @@ interpolated data are not necessarily gridded.  The algorithms are performed by
 the C++ library CGAL (<https://www.cgal.org/>).")
     (license license:gpl3)))
 
+(define-public r-interpolater
+  (package
+    (name "r-interpolater")
+    (version "1.2-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InterpolateR" version))
+       (sha256
+        (base32 "0q6h6wm5dfbc9whi1lvh9bsrw287p11vc97hqqqnbz2ms1sa4zaj"))))
+    (properties `((upstream-name . "InterpolateR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-randomforest
+                             r-qmap
+                             r-pbapply
+                             r-hydrogof
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Jonnathan-Landi/InterpolateR")
+    (synopsis
+     "Comprehensive Toolkit for Fast and Efficient Spatial Interpolation")
+    (description
+     "Spatial interpolation toolkit designed for environmental and geospatial
+applications.  It includes a range of methods, from traditional techniques to
+advanced machine learning approaches, ensuring accurate and efficient estimation
+of values in unobserved locations.")
+    (license license:gpl3+)))
+
 (define-public r-interplot
   (package
     (name "r-interplot")
@@ -12734,13 +12766,13 @@ created by Instituto Nacional de Estadistica y Geografia (INEGI).  See
 (define-public r-importexport
   (package
     (name "r-importexport")
-    (version "1.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ImportExport" version))
        (sha256
-        (base32 "07i7p9xha1f23r07lw87ak13hd4wavdvwh8vb8sg2gyvnpa5njwp"))))
+        (base32 "0j8yf9aidrqvnjsayj783k6dl6w3ckk4ybrrfp1jkdvg4k78ji9q"))))
     (properties `((upstream-name . "ImportExport")))
     (build-system r-build-system)
     (arguments
@@ -16177,6 +16209,38 @@ software is described in Pritikin & Falk (2020) <doi:10.1177/0146621620929431>."
 Includes a wrapper to make generic calls to the API, plus convenience functions
 for specific queries.")
     (license license:expat)))
+
+(define-public r-ietest
+  (package
+    (name "r-ietest")
+    (version "2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ieTest" version))
+       (sha256
+        (base32 "010grx4l73r5dn87sds9ipabph6vvvsfjiklwdwwrb3rbqljzcrx"))))
+    (properties `((upstream-name . "ieTest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-twosamples r-rcppdist r-rcpparmadillo r-rcpp
+                             r-mass))
+    (home-page "https://cran.r-project.org/package=ieTest")
+    (synopsis "Indirect Effects Testing Methods in Mediation Analysis")
+    (description
+     "Used in testing if the indirect effect from linear regression mediation analysis
+is equal to 0.  Includes established methods such as the Sobel Test, Joint
+Significant test (@code{maxP}), and tests based off the distribution of the
+Product or Normal Random Variables.  Additionally, this package adds more
+powerful tests based on Intersection-Union theory.  These tests are the S-Test,
+the ps-test, and the ascending squares test.  These new methods are uniformly
+more powerful than @code{maxP}, which is more powerful than Sobel and less
+anti-conservative than the Product of Normal Random Variables.  These methods
+are explored by Kidd and Lin, (2024) <doi:10.1007/s12561-023-09386-6> and Kidd
+et al., (2025) <doi:10.1007/s10260-024-00777-7>.")
+    (license license:gpl2+)))
 
 (define-public r-ietd
   (package

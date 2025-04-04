@@ -9789,13 +9789,13 @@ estimates of the regression coefficients.")
 (define-public r-dndr
   (package
     (name "r-dndr")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dndR" version))
        (sha256
-        (base32 "1m1s48acsdfa5sn4ikqx4kp804q7v2a5w93qxz3pr5a9g1s57yng"))))
+        (base32 "1jxkixav0rc69sfj614c1k2hgybr3z3zrg6aljjn7dy3fa47sdac"))))
     (properties `((upstream-name . "dndR")))
     (build-system r-build-system)
     (arguments
@@ -9813,9 +9813,9 @@ estimates of the regression coefficients.")
     (description
      "The goal of @code{dndR} is to provide a suite of Dungeons & Dragons related
 functions.  This package is meant to be useful both to players and Dungeon
-Masters (DMs).  All functions currently focus on Fifth Edition (a.k.a. \"5e\") but
-once the next edition is published functions will likely be expanded to include
-any rule changes.")
+Masters (DMs).  Some functions apply to many tabletop role-playing games (e.g.,
+dice rolling), but others are focused on Fifth Edition (a.k.a. \"5e\") and where
+possible both there 2014 and 2024 versions are supported.")
     (license license:expat)))
 
 (define-public r-dnatools
@@ -15213,13 +15213,13 @@ the documentation for Rmosek'.")
 (define-public r-dipsaus
   (package
     (name "r-dipsaus")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dipsaus" version))
        (sha256
-        (base32 "0xqza66p4lr8kmw9h8v2vzzhjynlqsmcfqkbsdc2w6c56i20vxik"))))
+        (base32 "0k0ykgkjsmdj5wpln80xvsn4brrkpklv2dyq93dhg4szj8lxsrax"))))
     (properties `((upstream-name . "dipsaus")))
     (build-system r-build-system)
     (arguments
@@ -15429,13 +15429,13 @@ handle weights and/or missings.")
 (define-public r-dinamic-duo
   (package
     (name "r-dinamic-duo")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiNAMIC.Duo" version))
        (sha256
-        (base32 "06cgc0cfdkg5g9ybxb7nnz50vngyh2sssj3bmzsw7rmrbjvfsg8p"))))
+        (base32 "0h0hvbshmhysllsbagw1j3x1dayrlhqc45n908nnnzvzrkdsr06w"))))
     (properties `((upstream-name . "DiNAMIC.Duo")))
     (build-system r-build-system)
     (arguments
@@ -15446,7 +15446,7 @@ handle weights and/or missings.")
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
     (inputs (list python))
-    (propagated-inputs (list r-plyr r-dinamic r-biomart))
+    (propagated-inputs (list r-plyr r-dinamic r-curl r-biomart))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=DiNAMIC.Duo")
     (synopsis "Finding Recurrent DNA Copy Number Alterations and Differences")
@@ -15692,13 +15692,13 @@ Digital Science Dimensions using DSL API
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dimensio" version))
        (sha256
-        (base32 "02zh6vs1yyp03sagx510mz8qxrrijhj4gbsjp20f1vrqnqk5qycx"))))
+        (base32 "0k8674cz8lz2lhwhjg02wxlbzf8jrj4d7yk8a8aa5ihi8r5cm7wx"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
     (arguments
@@ -28009,13 +28009,13 @@ classification step.")
 (define-public r-dbarts
   (package
     (name "r-dbarts")
-    (version "0.9-30")
+    (version "0.9-32")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbarts" version))
        (sha256
-        (base32 "13r7r9rnm90j26dmmhljg84jrj9g57iijhbj71i8fi2h6fc8bdlr"))))
+        (base32 "1yd2ykcj7kwa4xywdg646cmy637fxk222qlfw142b9zzqwkyv3nf"))))
     (properties `((upstream-name . "dbarts")))
     (build-system r-build-system)
     (arguments
@@ -31784,6 +31784,45 @@ construction, facilitating comparative analysis and informed infrastructure
 investments.")
     (license license:gpl3+)))
 
+(define-public r-damagedetective
+  (package
+    (name "r-damagedetective")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DamageDetective" version))
+       (sha256
+        (base32 "0xcqvpmdl8zl0a8cin8lgxanrmdi4l9igj40pmlwfdblx6al7k9z"))))
+    (properties `((upstream-name . "DamageDetective")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-scales
+                             r-rlang
+                             r-rcpphnsw
+                             r-patchwork
+                             r-matrix
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://alicenjoyhenning.github.io/DamageDetective/")
+    (synopsis "Detecting Damaged Cells in Single-Cell RNA Sequencing Data")
+    (description
+     "Detects and filters damaged cells in single-cell RNA sequencing
+(@code{scRNA-seq}) data using a novel approach inspired by
+@code{DoubletFinder}'.  Damage is detected by measuring the extent to which
+cells deviate from artificially damaged profiles of themselves, simulated
+through the probabilistic escape of cytoplasmic RNA. As output, a damage score
+ranging from 0 to 1 is given for each cell providing an intuitive scale for
+filtering that is standardised across cell types, samples, and experiments.")
+    (license license:agpl3+)))
+
 (define-public r-dam
   (package
     (name "r-dam")
@@ -32782,6 +32821,41 @@ Components (LFDAKPC) and Kernel Local (Fisher) Discriminant Analysis (KLFDA).
 These discriminant analyses can be used to do ecological and evolutionary
 inference, including demography inference, species identification, and
 population/community structure inference.")
+    (license license:gpl3)))
+
+(define-public r-d4talink-light
+  (package
+    (name "r-d4talink-light")
+    (version "2.1.18")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "D4TAlink.light" version))
+       (sha256
+        (base32 "161vklfn22skrbxf4xglz71w6lw6i03lz30vj928ri36cbf2047i"))))
+    (properties `((upstream-name . "D4TAlink.light")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rmarkdown
+                             r-reticulate
+                             r-openxlsx
+                             r-openssl
+                             r-officedown
+                             r-jsonlite
+                             r-getpass
+                             r-feather
+                             r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://bitbucket.org/SQ4/d4talink.light")
+    (synopsis "GDP - Workflow Management")
+    (description
+     "Tools, methods and processes for the management of analysis workflows.  These
+lightweight solutions facilitate structuring R&D activities.  These solutions
+were developed to comply with Good Documentation Practice (GDP), with ALCOA+
+principles as proposed by the U.S. FDA, and with FAIR principles as discussed by
+Jacobsen et al. (2017) <doi:10.1162/dint_r_00024>.")
     (license license:gpl3)))
 
 (define-public r-d4storagehub4r

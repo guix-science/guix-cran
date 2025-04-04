@@ -7092,6 +7092,44 @@ protocol.")
 client populations and workload definitions.")
     (license license:gpl3)))
 
+(define-public r-weathr
+  (package
+    (name "r-weathr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "weathR" version))
+       (sha256
+        (base32 "1v7wshidg5l5znyr7lb92ixhidx64rq3p89171h3na2wdwf77dq3"))))
+    (properties `((upstream-name . "weathR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-sf
+                             r-purrr
+                             r-magrittr
+                             r-lutz
+                             r-lubridate
+                             r-jsonlite
+                             r-janitor
+                             r-httr2
+                             r-dplyr))
+    (home-page "https://github.com/JeffreyFowler/weathR")
+    (synopsis "Interact with the U.S. National Weather Service API")
+    (description
+     "Enables interaction with the National Weather Service application programming
+web-interface for fetching of real-time and forecast meteorological data.  Users
+can provide latitude and longitude, Automated Surface Observing System
+identifier, or Automated Weather Observing System identifier to fetch recent
+weather observations and recent forecasts for the given location or station.
+Additionally, auxiliary functions exist to identify stations nearest to a point,
+convert wind direction from character to degrees, and fetch active warnings.
+Results are returned as simple feature objects whenever possible.")
+    (license license:expat)))
+
 (define-public r-weathersentiment
   (package
     (name "r-weathersentiment")

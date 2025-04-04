@@ -2604,20 +2604,19 @@ better task related brain activity models in a quick and efficient manner.")
 (define-public r-autoharp
   (package
     (name "r-autoharp")
-    (version "0.0.10")
+    (version "0.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoharp" version))
        (sha256
-        (base32 "0jn7nya4lb1pvdy7yyimxga4gn042jqwl3w82m6c244kqydm5fi0"))))
+        (base32 "02sh0gvvgf3y6wwrhd00pgl65zixyhmmwjx04z24swbdham48knp"))))
     (properties `((upstream-name . "autoharp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
+    (propagated-inputs (list r-tibble
                              r-stringr
                              r-shiny
                              r-rmarkdown
@@ -9161,13 +9160,13 @@ preprint <@code{arXiv:2110.00224>}.")
 (define-public r-arc
   (package
     (name "r-arc")
-    (version "1.4")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arc" version))
        (sha256
-        (base32 "0wlp6c2mbsa5fygc4iy0ixgqz49zzcz2mr66sapy1nm0wri1dvdr"))))
+        (base32 "02637qmv301iy6fg3j3v0hmpcyw32372xd7adjajwymzdnwklzh6"))))
     (properties `((upstream-name . "arc")))
     (build-system r-build-system)
     (arguments
@@ -15064,19 +15063,19 @@ dimensions.")
 (define-public r-amberr
   (package
     (name "r-amberr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amberr" version))
        (sha256
-        (base32 "0fqn79lw4zf2yip6qbn3wkcdz44zrf9awq3kjw8smhbv84dcddll"))))
+        (base32 "0wdnnfclyvakb7als3m0v17r0qclrvj6118mr32fkfbn4scrr02c"))))
     (properties `((upstream-name . "amberr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr r-dplyr))
+    (propagated-inputs (list r-tidyjson r-jsonlite r-httr r-dplyr))
     (home-page "https://github.com/obiba/amberr/")
     (synopsis "'Amber' Electronic Data Capture Client")
     (description
@@ -16401,13 +16400,13 @@ regression: @code{all_glm()}, and Cox proportional hazards regression:
 (define-public r-allelicseries
   (package
     (name "r-allelicseries")
-    (version "0.1.1.2")
+    (version "0.1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AllelicSeries" version))
        (sha256
-        (base32 "08kvj731m0jvdh8ay7hgnijdj5bzhk5jzwz52gg8s69cilsql410"))))
+        (base32 "1mwwm45zhw08n9bidknaxajjggll88afxayjy7j316wgy2arrhzb"))))
     (properties `((upstream-name . "AllelicSeries")))
     (build-system r-build-system)
     (arguments
@@ -23414,33 +23413,6 @@ such as quantifying uncertainties in estimation, hypothesis testing, and
 predictions.  Publicly available datasets are provided illustrations.  More
 details can be found in Jin et al. (2017).")
     (license license:gpl2)))
-
-(define-public r-addscales
-  (package
-    (name "r-addscales")
-    (version "1.0-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "addScales" version))
-       (sha256
-        (base32 "1bw4ljyyswdhqyir9i6lj0mg9lm6ry4zpqp2h6w2bpk37rvs1w38"))))
-    (properties `((upstream-name . "addScales")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lattice))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=addScales")
-    (synopsis
-     "Adds Labeled Center Line and Scale Lines/Regions to Trellis Plots")
-    (description
-     "Modifies trellis objects by adding horizontal and/or vertical reference lines or
-shaded regions that provide visual scaling information.  This is mostly useful
-in multi-panel plots that use the relation = free option in their scales
-argument list.")
-    (license license:expat)))
 
 (define-public r-addreg
   (package

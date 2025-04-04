@@ -9800,6 +9800,33 @@ explain the Null Hypothesis Significance Testing process, its use and/or
 shortcomings.")
     (license license:gpl3)))
 
+(define-public r-nhsrwaitinglist
+  (package
+    (name "r-nhsrwaitinglist")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NHSRwaitinglist" version))
+       (sha256
+        (base32 "0w1dpk5p2h40pa36fn3zg8irrkp7ki19s2bg6qc1cj4aw872cmki"))))
+    (properties `((upstream-name . "NHSRwaitinglist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-randomnames r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://nhs-r-community.github.io/NHSRwaitinglist/")
+    (synopsis "Waiting List Metrics Using Queuing Theory")
+    (description
+     "Waiting list management using queuing theory to analyse, predict and manage
+queues, based on the approach described in Fong et al. (2022)
+<doi:10.1101/2022.08.23.22279117>.  Aimed at UK National Health Service (NHS)
+applications, waiting list summary statistics, target-value calculations,
+waiting list simulation, and scheduling functions are included.")
+    (license license:expat)))
+
 (define-public r-nhsrplotthedots
   (package
     (name "r-nhsrplotthedots")

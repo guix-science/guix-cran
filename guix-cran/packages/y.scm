@@ -1191,13 +1191,13 @@ or the classification.")
 (define-public r-yaconsensus
   (package
     (name "r-yaconsensus")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yaConsensus" version))
        (sha256
-        (base32 "1srph1yc8lr00yvx6sjm0br9h2cq94xqb9yjxfb0bqvvmskp6s2s"))))
+        (base32 "1p961y1x1a5hp7dw7fhmq6phnh4xybjbh0m90s6p48mg62kan6pk"))))
     (properties `((upstream-name . "yaConsensus")))
     (build-system r-build-system)
     (arguments

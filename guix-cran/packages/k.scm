@@ -309,13 +309,13 @@ and Zamar (2019) <arxiv:1906.08198>).")
 (define-public r-kstmatrix
   (package
     (name "r-kstmatrix")
-    (version "1.1-0")
+    (version "1.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kstMatrix" version))
        (sha256
-        (base32 "0gmdjv7cdvc6yb2my1v3q6197h6qv1gkkv5jph5mwqsnfpl5n0ln"))))
+        (base32 "0jjayikrg4910mmxycxla7lklb87v74mgybyp149h9alh7xlimp9"))))
     (properties `((upstream-name . "kstMatrix")))
     (build-system r-build-system)
     (arguments
@@ -6735,13 +6735,13 @@ Switching: Classical and Gibbs-Sampling Approaches with Applications\"
 (define-public r-kairos
   (package
     (name "r-kairos")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kairos" version))
        (sha256
-        (base32 "1j590bbbnji5yrwq464xmykgsipcq82y4l5inna9dja3nw49bxlv"))))
+        (base32 "1jj2kd41hx13lkjf3hn59aqsmd6ld65a81qak52lmn5z2l3c32v6"))))
     (properties `((upstream-name . "kairos")))
     (build-system r-build-system)
     (arguments
@@ -6749,7 +6749,7 @@ Switching: Classical and Gibbs-Sampling Approaches with Applications\"
       #:tests? #f))
     (propagated-inputs (list r-extradistr r-dimensio r-arkhe r-aion))
     (native-inputs (list r-knitr))
-    (home-page "https://packages.tesselle.org/kairos/")
+    (home-page "https://codeberg.org/tesselle/kairos")
     (synopsis
      "Analysis of Chronological Patterns from Archaeological Count Data")
     (description

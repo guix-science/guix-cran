@@ -2554,13 +2554,13 @@ the Standard Deviaton?, Nepalese Journal of Statistics, Vol.  3, 1-10.")
 (define-public r-quadprogxt
   (package
     (name "r-quadprogxt")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quadprogXT" version))
        (sha256
-        (base32 "1yna2kx9pr58vyy6f4mwx4a6avjz84wwhcary88v1k0ihhv9swcz"))))
+        (base32 "0jpv30i84n74bchg676vy62wzdlqidk3p51vnnfrdaqg77rs6zyr"))))
     (properties `((upstream-name . "quadprogXT")))
     (build-system r-build-system)
     (arguments
@@ -4270,13 +4270,13 @@ functions.  Sottile G, Frumento P, Chiodi M and Bottai M (2020)
 (define-public r-qrcm
   (package
     (name "r-qrcm")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrcm" version))
        (sha256
-        (base32 "0ia1dbb6yfaagpkb90qhdfni1qizysvw7sapbfff2mkd569hin6y"))))
+        (base32 "0ci6949nkqhcn8d7mf5wb4c2wlnpi5qj3g7394c1q723grmaj5lh"))))
     (properties `((upstream-name . "qrcm")))
     (build-system r-build-system)
     (arguments
@@ -5253,13 +5253,13 @@ rule [Mohammed, Worthington, Woodall (2008) <doi:10.1136/qshc.2004.012047>].")
 (define-public r-qicharts
   (package
     (name "r-qicharts")
-    (version "0.5.8")
+    (version "0.5.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qicharts" version))
        (sha256
-        (base32 "1n8jvb9dfb2k60zi9z99sncpwqbbj0h8zngmqq2k795zpa79gf1d"))))
+        (base32 "02ydz2mcf0rx4xwm4lx7g4g4qxx00mqb8ad191qg70r2frmmbizd"))))
     (properties `((upstream-name . "qicharts")))
     (build-system r-build-system)
     (arguments
@@ -6433,13 +6433,13 @@ and EWMA charts.  Operating characteristic curves.  Process capability analysis.
 (define-public r-qcba
   (package
     (name "r-qcba")
-    (version "1.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qCBA" version))
        (sha256
-        (base32 "0dayvrhy3y0ksslgxiwwv330k0x7cqmpjjz2l4z6c8s2mjz0j9iv"))))
+        (base32 "1a6329x3zd8mgf5l38rrs9cz1yzmsf6whfa6h37iprpcxsmzz9n0"))))
     (properties `((upstream-name . "qCBA")))
     (build-system r-build-system)
     (arguments

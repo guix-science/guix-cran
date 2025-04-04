@@ -8632,13 +8632,13 @@ testing, prediction for stationary vector autoregressive models.")
 (define-public r-vapour
   (package
     (name "r-vapour")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vapour" version))
        (sha256
-        (base32 "18icwn62mpjjrfn7y19svyipq1xziz3vag5vmgp7wxy5i8q5kvch"))))
+        (base32 "0cl51zij80pjmrsnpgryl4piqcffnm0s9vppwzyq9mmyk8hfybn6"))))
     (properties `((upstream-name . "vapour")))
     (build-system r-build-system)
     (arguments
@@ -8651,10 +8651,11 @@ testing, prediction for stationary vector autoregressive models.")
                   openssh
                   gdal
                   curl))
-    (propagated-inputs (list r-rcpp r-jsonlite))
+    (propagated-inputs (list r-wk r-rcpp r-nanoarrow r-jsonlite))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/hypertidy/vapour")
-    (synopsis "Access to the 'Geospatial Data Abstraction Library' ('GDAL')")
+    (synopsis
+     "Lightweight Access to the 'Geospatial Data Abstraction Library' ('GDAL')")
     (description
      "This package provides low-level access to GDAL functionality.  GDAL is the
 Geospatial Data Abstraction Library a translator for raster and vector

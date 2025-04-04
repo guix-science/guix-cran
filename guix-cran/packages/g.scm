@@ -4210,13 +4210,13 @@ growth curves) at isolated time points.")
 (define-public r-growthpheno
   (package
     (name "r-growthpheno")
-    (version "3.1.10")
+    (version "3.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growthPheno" version))
        (sha256
-        (base32 "01kj8ka0wy8grin5v76bhlxkfdf5zyf3qv71pdlrycfp6vkfarih"))))
+        (base32 "13xyd98s514fviry78ira2mq8a9wlqhy7jigp2d0fb9vay11isqq"))))
     (properties `((upstream-name . "growthPheno")))
     (build-system r-build-system)
     (arguments
@@ -15977,13 +15977,13 @@ that all targets remain up to date.")
 (define-public r-gitstats
   (package
     (name "r-gitstats")
-    (version "2.2.2")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitStats" version))
        (sha256
-        (base32 "1rdnnp84y9193f8brd2a2frblm26wnhqij0sq4jk5dwq5qcr2ndm"))))
+        (base32 "0vxb00bpghmbsyvjdxpigzjb6kf8x83d7s08fyvvsrjqq4dbjpdk"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
     (arguments
@@ -30032,13 +30032,13 @@ pages 187-194, Springer Protocols, 2021, <doi:10.1007/978-1-0716-1839-4_12>.")
 (define-public r-genecycle
   (package
     (name "r-genecycle")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeneCycle" version))
        (sha256
-        (base32 "08pr8xgcznm04c4lhvzv2qnzij5vj7pjzyj9pr1pqpmc977h8dvg"))))
+        (base32 "14c5kyir4gqgvb26gs6qdqg951bgs65dgdz8jj669nc82x7pxydl"))))
     (properties `((upstream-name . "GeneCycle")))
     (build-system r-build-system)
     (arguments
@@ -31514,13 +31514,13 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
 (define-public r-gdverse
   (package
     (name "r-gdverse")
-    (version "1.3-2")
+    (version "1.3-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdverse" version))
        (sha256
-        (base32 "0gml0dml32bpmsibxszpqm838xrv9sxlx16nshsh7995kxw2rh9r"))))
+        (base32 "0w2cf2lkx67601ddvfmsrq0r76iaczs62kyw0f0v18xynsh6ixph"))))
     (properties `((upstream-name . "gdverse")))
     (build-system r-build-system)
     (arguments
@@ -31544,11 +31544,10 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
     (home-page "https://stscl.github.io/gdverse/")
     (synopsis "Analysis of Spatial Stratified Heterogeneity")
     (description
-     "Analyzing spatial factors and exploring spatial associations based on the
-concept of spatial stratified heterogeneity, while also taking into account
-local spatial dependencies, spatial interpretability, complex spatial
-interactions, and robust spatial stratification.  Additionally, it supports the
-spatial stratified heterogeneity family established in academic literature.")
+     "Detecting spatial associations via spatial stratified heterogeneity, accounting
+for spatial dependencies, interpretability, complex interactions, and robust
+stratification.  In addition, it supports the spatial stratified heterogeneity
+family described in Lv et al. (2025)<doi:10.1111/tgis.70032>.")
     (license license:gpl3)))
 
 (define-public r-gdsarm
@@ -35252,13 +35251,13 @@ also included.")
 (define-public r-gamcopula
   (package
     (name "r-gamcopula")
-    (version "0.0-7")
+    (version "0.0-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamCopula" version))
        (sha256
-        (base32 "0zi9g2vxkn1hxc2qyyr1x8p1f9w7fc1j5dmm2mmm333gixkkz9nb"))))
+        (base32 "121dz8mch8mjnzx8mgigkrs6qa84w7y6kqq6d4rlx0q6r2ikkrcm"))))
     (properties `((upstream-name . "gamCopula")))
     (build-system r-build-system)
     (arguments

@@ -4381,6 +4381,30 @@ may depend on packages with priority base').")
 this package to practice data wrangling, text analysis and network analysis.")
     (license license:expat)))
 
+(define-public r-friendlynumber
+  (package
+    (name "r-friendlynumber")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "friendlynumber" version))
+       (sha256
+        (base32 "02rs7iksz30fwc5p2hh2c5wzp4jz7fh13mwm2p9pq51appzpa3jb"))))
+    (properties `((upstream-name . "friendlynumber")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/EthanSansom/friendlynumber")
+    (synopsis "Translate Numbers into Number Words")
+    (description
+     "Converts vectors of numbers into character vectors of numerals, including
+cardinals (one, two, three) and ordinals (first, second, third).  Supports
+negative numbers, fractions, and arbitrary-precision integer and high-precision
+floating-point vectors provided by the bignum package.")
+    (license license:expat)))
+
 (define-public r-frictionless
   (package
     (name "r-frictionless")
@@ -8620,6 +8644,43 @@ generalization of RFDisc discretization method initially proposed by Berrado and
 Runger (2009) <doi:10.1109/AICCSA.2009.5069327>, and improved by Berrado et al.
 in 2012 by adopting the idea of moment matching optimization related by Hoyland
 and Wallace (2001) <doi: 10.1287/mnsc.47.2.295.9834>.")
+    (license license:gpl3+)))
+
+(define-public r-forestdata
+  (package
+    (name "r-forestdata")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forestdata" version))
+       (sha256
+        (base32 "0bjj129jlls5iwamf5nfq1p1hq1950zfw3jrmzxk0azgh5g3jv8p"))))
+    (properties `((upstream-name . "forestdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-terra
+                             r-stringr
+                             r-stringi
+                             r-sf
+                             r-purrr
+                             r-lifecycle
+                             r-glue
+                             r-foreign
+                             r-dplyr
+                             r-cli
+                             r-archive))
+    (home-page "https://cidree.github.io/forestdata/")
+    (synopsis "Download Forestry Data")
+    (description
+     "This package provides functions for downloading forestry and land use data for
+use in spatial analysis.  This packages offers a user-friendly solution to
+quickly obtain datasets such as forest height, forest types, tree species under
+various climate change scenarios, or land use data among others.")
     (license license:gpl3+)))
 
 (define-public r-forestcontrol
@@ -15049,13 +15110,13 @@ information about 5-digit or 2-digit US FIPS codes.")
 (define-public r-fio
   (package
     (name "r-fio")
-    (version "0.1.2")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fio" version))
        (sha256
-        (base32 "1m8xmfzxz41rhawy9kcrl6krjb05xv4mrxn7yfcjkk5xs77inx7d"))))
+        (base32 "1zzrpk9jqnmfqalkqac8xp7x2z6apcx6c63hw0ngqz6l7f0gykb8"))))
     (properties `((upstream-name . "fio")))
     (build-system r-build-system)
     (arguments
@@ -17260,13 +17321,13 @@ Rico (<https://forestgeo.si.edu/sites/north-america/luquillo>).")
 (define-public r-fgeo-tool
   (package
     (name "r-fgeo-tool")
-    (version "1.2.9")
+    (version "1.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fgeo.tool" version))
        (sha256
-        (base32 "1sslx635xr3ll3040dzqhv4n270b7pbfdg563f9yn5dx3kpmx03y"))))
+        (base32 "0nwzja6icm99r8g1511ljqrwidd6r24dr384xaz21cw5b595mm8v"))))
     (properties `((upstream-name . "fgeo.tool")))
     (build-system r-build-system)
     (arguments
@@ -17326,13 +17387,13 @@ more about @code{ForestGEO} visit <https://forestgeo.si.edu/>.")
 (define-public r-fgeo-analyze
   (package
     (name "r-fgeo-analyze")
-    (version "1.1.14")
+    (version "1.1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fgeo.analyze" version))
        (sha256
-        (base32 "0pnmvq6imnffvr4qlmygmmw18g33s81f5jrrs7n4ahwi0qmf5qaj"))))
+        (base32 "1w2wzjkd6kba22a3jlf66pgwjlp75nz1rcj654a3i4gd4ca5mnda"))))
     (properties `((upstream-name . "fgeo.analyze")))
     (build-system r-build-system)
     (arguments
@@ -23642,6 +23703,47 @@ regressions, see Lederer & Vogt (2021, JMLR)
 (2023) <@code{arXiv:2307.13364>}.")
     (license license:gpl2+)))
 
+(define-public r-fars
+  (package
+    (name "r-fars")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FARS" version))
+       (sha256
+        (base32 "0bghvfilk877igl1i59nzxmbmlns7jqpfdil685165j21wrv9nps"))))
+    (properties `((upstream-name . "FARS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-syscselection
+                             r-sn
+                             r-reshape2
+                             r-quantreg
+                             r-plotly
+                             r-nloptr
+                             r-mass
+                             r-ggplot2
+                             r-forcats
+                             r-ellipse
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=FARS")
+    (synopsis "Factor-Augmented Regression Scenarios")
+    (description
+     "This package provides a comprehensive framework in R for modeling and
+forecasting economic scenarios based on multi-level dynamic factor model.  The
+package enables users to: (i) extract global and block-specific factors using a
+flexible multilevel factor structure; (ii) compute asymptotically valid
+confidence regions for the estimated factors, accounting for uncertainty in the
+factor loadings; (iii) estimate factor-augmented quantile regressions; (iv)
+recover full predictive densities from these quantile forecasts; and (v)
+estimate the density when the factors are stressed.")
+    (license license:gpl2+)))
+
 (define-public r-farrell
   (package
     (name "r-farrell")
@@ -23884,13 +23986,13 @@ covariance operator in a subspace, ...")
 (define-public r-faoutlier
   (package
     (name "r-faoutlier")
-    (version "0.7.6")
+    (version "0.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "faoutlier" version))
        (sha256
-        (base32 "0dd8k5s0yv047p10jisqz13nflby4y0dg97r0nbjygzcq1ryx2bs"))))
+        (base32 "0wrmxkmadv4x7gpmbz4m9pswiy0f4jxk6664l8cr1faqcm5mw8y0"))))
     (properties `((upstream-name . "faoutlier")))
     (build-system r-build-system)
     (arguments

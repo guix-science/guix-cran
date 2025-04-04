@@ -7317,13 +7317,13 @@ the JSON file.")
 (define-public r-opendatatoronto
   (package
     (name "r-opendatatoronto")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opendatatoronto" version))
        (sha256
-        (base32 "1fiviazs0ydxvmsqaayhwnxf4wl4sx1psn8i5mpis7218d9ihagy"))))
+        (base32 "108b416qds8sxm2cky4mpm3q1n5q3z8kip93vi67cmwm4rh9ds86"))))
     (properties `((upstream-name . "opendatatoronto")))
     (build-system r-build-system)
     (arguments
@@ -9936,13 +9936,13 @@ types of omics data or samples with two types.")
 (define-public r-omnibus
   (package
     (name "r-omnibus")
-    (version "1.2.14")
+    (version "1.2.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omnibus" version))
        (sha256
-        (base32 "16lzx1acbl6nbjg21dv2g3n934bvial7nkbbs15pm00aliclws7p"))))
+        (base32 "0g1h8jag9gypp7iyczjhfb36c0y6g60bw2qcii2c5n2wr0py0d13"))))
     (properties `((upstream-name . "omnibus")))
     (build-system r-build-system)
     (arguments

@@ -3051,6 +3051,46 @@ and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
 2827-2851, <@code{arXiv:1405.3319>}.")
     (license license:gpl3)))
 
+(define-public r-htgm
+  (package
+    (name "r-htgm")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HTGM" version))
+       (sha256
+        (base32 "1scis0yb0b9djcvirz2rsqh78hk39c5k937m7mssld94lwdav567"))))
+    (properties `((upstream-name . "HTGM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-minimalistgodb r-gplots r-gominer))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=HTGM")
+    (synopsis "High Throughput 'GoMiner'")
+    (description
+     "Two papers published in the early 2000's (Zeeberg, B.R., Feng, W., Wang, G. et
+al. (2003) <doi:10.1186/gb-2003-4-4-r28>) and (Zeeberg, B.R., Qin, H.,
+Narashimhan, S., et al. (2005) <doi:10.1186/1471-2105-6-168>) implement
+@code{GoMiner} and High Throughput @code{GoMiner} ('HTGM') to map lists of genes
+to the Gene Ontology (GO) <https://geneontology.org>.  Until recently, these
+were hosted on a server at The National Cancer Institute (NCI).  In order to
+continue providing these services to the bio-medical community, I have developed
+stand-alone versions.  The current package HTGM builds upon my recent package
+@code{GoMiner}'.  The output of @code{GoMiner} is a heatmap showing the
+relationship of a single list of genes and the significant categories into which
+they map.  High Throughput @code{GoMiner} ('HTGM') integrates the results of the
+individual @code{GoMiner} analyses.  The output of HTGM is a heatmap showing the
+relationship of the significant categories derived from each gene list.  The
+heatmap has only 2 axes, so the identity of the genes are unfortunately
+\"integrated out of the equation.\" Because the graphic for the heatmap is
+implemented in Scalable Vector Graphics (SVG) technology, it is relatively easy
+to hyperlink each picture element to the relevant list of genes.  By clicking on
+the desired picture element, the user can recover the \"lost\" genes.")
+    (license license:gpl2+)))
+
 (define-public r-htetree
   (package
     (name "r-htetree")
@@ -13088,13 +13128,13 @@ available at <https://gateway.prod.wekeo2.eu/hda-broker/docs>.")
 (define-public r-hdanova
   (package
     (name "r-hdanova")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDANOVA" version))
        (sha256
-        (base32 "1iy7bbz2z7cjj514ifzxp9dl5r9hwqgsg7jfrgmbsy55rx71svkc"))))
+        (base32 "0jwndfyryy86sa7kr838pmcqjbfir4gzvlhk3lsqk203hniswq23"))))
     (properties `((upstream-name . "HDANOVA")))
     (build-system r-build-system)
     (arguments

@@ -1541,6 +1541,40 @@ are computed in parallel via @code{OpenMP}'.")
 (<https://water.data.sa.gov.au> hydrological data).")
     (license license:gpl3)))
 
+(define-public r-swpcindex
+  (package
+    (name "r-swpcindex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SwPcIndex" version))
+       (sha256
+        (base32 "1w7qz1jzrfmzdqz49110anww4zc4v1g8wy87da7cb7w166n1ybci"))))
+    (properties `((upstream-name . "SwPcIndex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=SwPcIndex")
+    (synopsis "Computation of Survey Weighted PC Based Composite Index")
+    (description
+     "An index is created using a mathematical model that transforms multi-dimensional
+variables into a single value.  These variables are often correlated, and while
+PCA-based indices can address the issue of multicollinearity, they typically do
+not account for survey weights, which can lead to inaccurate rankings of survey
+units such as households, districts, or states.  To resolve this, the current
+package facilitates the development of a principal component analysis-based
+composite index by incorporating survey weights for each sample observation.
+This ensures the generation of a survey-weighted principal component-based
+normalized composite index.  Additionally, the package provides a normalized
+principal component-based composite index and ranks the sample observations
+based on the values of the composite indices.  For method details see, Skinner,
+C. J., Holmes, D. J. and Smith, T. M. F. (1986)
+<DOI:10.1080/01621459.1986.10478336>, Singh, D., Basak, P., Kumar, R. and Ahmad,
+T. (2023) <DOI:10.3389/fams.2023.1274530>.")
+    (license license:gpl2+)))
+
 (define-public r-swmprextension
   (package
     (name "r-swmprextension")
@@ -10868,13 +10902,13 @@ determining the p-values.")
 (define-public r-strata
   (package
     (name "r-strata")
-    (version "1.4.3")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "strata" version))
        (sha256
-        (base32 "07ddw2i1lf8gsgl9ydp6aiyrvbgzw5khz2qdra4w9w6jhrfn2xrq"))))
+        (base32 "0yqj8wqadkj0r21nj0mlw12p46dan9fynjzh1h5hi2s8ryy16p6l"))))
     (properties `((upstream-name . "strata")))
     (build-system r-build-system)
     (arguments
@@ -12116,6 +12150,37 @@ marine ornithologists who are working in the offshore wind industry,
 particularly in UK waters.  However, many of the species included in the
 stochastic collision risk models can also be found in the North Atlantic in the
 United States and Canada, and could be applied there.")
+    (license license:gpl3+)))
+
+(define-public r-stochcorr
+  (package
+    (name "r-stochcorr")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stochcorr" version))
+       (sha256
+        (base32 "1am7va4y07ajn5psa84809vbvj61d2f6kq363gw6kwnf9k3ayi9i"))))
+    (properties `((upstream-name . "stochcorr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-snow
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progress
+                             r-nloptr
+                             r-foreach
+                             r-dosnow))
+    (home-page "https://cran.r-project.org/package=stochcorr")
+    (synopsis "Stochastic Correlation Modelling via Circular Diffusion")
+    (description
+     "This package performs simulation and inference of diffusion processes on circle.
+ Stochastic correlation models based on circular diffusion models are provided.
+For details see Majumdar, S. and Laha, A.K. (2024) \"Diffusion on the circle and
+a stochastic correlation model\" <doi:10.48550/@code{arXiv.2412.06343>}.")
     (license license:gpl3+)))
 
 (define-public r-stochblock
@@ -13863,50 +13928,6 @@ used to retrieve tree height and diameter at breast height (DBH).
      "Manages and display stellar tracks and isochrones from Pisa low-mass database.
 Includes tools for isochrones construction and tracks interpolation.")
     (license license:gpl2+)))
-
-(define-public r-stelfi
-  (package
-    (name "r-stelfi")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stelfi" version))
-       (sha256
-        (base32 "06sj1az5803xh1ikkawdrp0c8yc1kh8iqky6vazxr516hc3b0f9w"))))
-    (properties `((upstream-name . "stelfi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tmb
-                             r-sf
-                             r-rcppeigen
-                             r-matrix
-                             r-gridextra
-                             r-ggplot2
-                             r-fmesher
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/cmjt/stelfi/")
-    (synopsis
-     "Hawkes and Log-Gaussian Cox Point Processes Using Template Model Builder")
-    (description
-     "Fit Hawkes and log-Gaussian Cox process models with extensions.  Introduced in
-Hawkes (1971) <doi:10.2307/2334319> a Hawkes process is a self-exciting temporal
-point process where the occurrence of an event immediately increases the chance
-of another.  We extend this to consider self-inhibiting process and a
-non-homogeneous background rate.  A log-Gaussian Cox process is a Poisson point
-process where the log-intensity is given by a Gaussian random field.  We extend
-this to a joint likelihood formulation fitting a marked log-Gaussian Cox model.
-In addition, the package offers functionality to fit self-exciting
-spatiotemporal point processes.  Models are fitted via maximum likelihood using
-TMB (Template Model Builder).  Where included 1) random fields are assumed to be
-Gaussian and are integrated over using the Laplace approximation and 2) a
-stochastic partial differential equation model, introduced by Lindgren, Rue, and
-LindstrÃ¶m. (2011) <doi:10.1111/j.1467-9868.2011.00777.x>, is defined for the
-field(s).")
-    (license license:gpl3+)))
 
 (define-public r-steiniv
   (package
@@ -21477,19 +21498,20 @@ in publications please use Hankin (2022) <doi:10.48550/ARXIV.2210.10848>.")
 (define-public r-spqdep
   (package
     (name "r-spqdep")
-    (version "0.1.3.5")
+    (version "0.1.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spqdep" version))
        (sha256
-        (base32 "0crjvakadimhbcywbl1m50gba3gzz5rbbdd9g5lgg7900yfjbss3"))))
+        (base32 "1vwdzfzxzalik79prisk7kzndfgnl68i82ljwcippjqcdchi71sx"))))
     (properties `((upstream-name . "spqdep")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-units
+                             r-tidyr
                              r-spdep
                              r-spatialreg
                              r-sp
@@ -21497,6 +21519,7 @@ in publications please use Hankin (2022) <doi:10.48550/ARXIV.2210.10848>.")
                              r-rsample
                              r-purrr
                              r-matrix
+                             r-magrittr
                              r-igraph
                              r-gtools
                              r-gt
@@ -25768,13 +25791,13 @@ designed to bring reproducible phonetic research into R.")
 (define-public r-speakeasyr
   (package
     (name "r-speakeasyr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "speakeasyR" version))
        (sha256
-        (base32 "0jrndx1cjxg7f0p7v5z7frpfi8bs6nxpdv21v8ld6n4ffl0vvrbq"))))
+        (base32 "1vj2i3pb5z6gvrya73i8f85p06rq9d8sry13jrcrim5q480r7anq"))))
     (properties `((upstream-name . "speakeasyR")))
     (build-system r-build-system)
     (arguments
@@ -27869,35 +27892,6 @@ Includes the locations and some characteristics of major public hospitals in
 Greece.")
     (license license:gpl2+)))
 
-(define-public r-spaths
-  (package
-    (name "r-spaths")
-    (version "1.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spaths" version))
-       (sha256
-        (base32 "1637y3ws9ivjkc5k4r3cwza485ynyjya1wgk866g0h6v7rpfx7xq"))))
-    (properties `((upstream-name . "spaths")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/cdueben/spaths")
-    (synopsis "Shortest Paths Between Points in Grids")
-    (description
-     "Shortest paths between points in grids.  Optional barriers and custom transition
-functions.  Applications regarding planet Earth, as well as generally spheres
-and planes.  Optimized for computational performance, customizability, and user
-friendliness.  Graph-theoretical implementation tailored to gridded data.
-Currently focused on Dijkstra's (1959) <doi:10.1007/BF01386390> algorithm.
-Future updates broaden the scope to other least cost path algorithms and to
-centrality measures.")
-    (license license:expat)))
-
 (define-public r-spatgrid
   (package
     (name "r-spatgrid")
@@ -28110,6 +28104,44 @@ references for all measures can be found under the topic @code{SpatEntropy}'.
 The package is able to work with lattice and point data.  The updated version
 works with the updated spatstat package (>= 3.0-2).")
     (license license:gpl3)))
+
+(define-public r-spatemr
+  (package
+    (name "r-spatemr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spatemR" version))
+       (sha256
+        (base32 "1y1hyg8qs7hi6ay5qxj9kglivv4pb79a5w35m3irfdidw5666x9w"))))
+    (properties `((upstream-name . "spatemR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gamlss-dist r-gamlss))
+    (home-page "https://cran.r-project.org/package=spatemR")
+    (synopsis "Generalized Spatial Autoregresive Models for Mean and Variance")
+    (description
+     "Modeling spatial dependencies in dependent variables, extending traditional
+spatial regression approaches.  It allows for the joint modeling of both the
+mean and the variance of the dependent variable, incorporating semiparametric
+effects in both models.  Based on generalized additive models (GAM), the package
+enables the inclusion of non-parametric terms while maintaining the classical
+theoretical framework of spatial regression.  Additionally, it implements the
+Generalized Spatial Autoregression (GSAR) model, which extends classical methods
+like logistic Spatial Autoregresive Models (SAR), probit Spatial Autoregresive
+Models (SAR), and Poisson Spatial Autoregresive Models (SAR), offering greater
+flexibility in modeling spatial dependencies and significantly improving
+computational efficiency and the statistical properties of the estimators.
+Related work includes: a) J.D. Toloza-Delgado, Melo O.O., Cruz N.A. (2024).
+\"Joint spatial modeling of mean and non-homogeneous variance combining
+semiparametric SAR and GAMLSS models for hedonic prices\".
+<doi:10.1016/j.spasta.2024.100864>.  b) Cruz, N. A., Toloza-Delgado, J. D.,
+Melo, O. O. (2024). \"Generalized spatial autoregressive model\".
+<doi:10.48550/@code{arXiv.2412.00945>}.")
+    (license license:gpl3+)))
 
 (define-public r-spate
   (package
@@ -35537,13 +35569,13 @@ cross validation for selection of the regularization parameter is provided.")
 (define-public r-smooth
   (package
     (name "r-smooth")
-    (version "4.1.1")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smooth" version))
        (sha256
-        (base32 "1zfn5rwjrwy775pa7d7ij71f1y42nxiy8ry1p7z56zrbfqb77p4n"))))
+        (base32 "1wf7203fryj8gi4kivfhax092i9mh2ikk3wzcb4wvv8r2yg0kngv"))))
     (properties `((upstream-name . "smooth")))
     (build-system r-build-system)
     (arguments
@@ -42089,13 +42121,13 @@ available that fit this standard.")
 (define-public r-simsem
   (package
     (name "r-simsem")
-    (version "0.5-16")
+    (version "0.5-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simsem" version))
        (sha256
-        (base32 "0scjb308pb8ivy5blbk1wj9d1yxcqknhvh95a3728crfq2xcqnh0"))))
+        (base32 "0y19nri9i4wm9wd2f1xq4a106qr52gvi7yibw1iigzvsx8kfwdzi"))))
     (properties `((upstream-name . "simsem")))
     (build-system r-build-system)
     (arguments
@@ -45006,13 +45038,13 @@ useful indices for measuring diversity.")
 (define-public r-simbiid
   (package
     (name "r-simbiid")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimBIID" version))
        (sha256
-        (base32 "01gkkgxx5x9pkwsmpmf1rg4i0ls7fl6yv6pcg8gscr51bnxsrwpp"))))
+        (base32 "1651b9n7v4ifn0kvv3frmdw5b7w11vl27rjk2w49ky431zns55r2"))))
     (properties `((upstream-name . "SimBIID")))
     (build-system r-build-system)
     (arguments
@@ -45242,13 +45274,13 @@ an end-to-end application using this package.")
 (define-public r-silp
   (package
     (name "r-silp")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "silp" version))
        (sha256
-        (base32 "1fwf25vqsxgqd139niy3pz9lwr7myyhgslmd251m4k7dbp4f572w"))))
+        (base32 "1nhfwb203lkapky4j3jp61xmnk6lrm1s4h1li4f5g24d6z92wx1m"))))
     (properties `((upstream-name . "silp")))
     (build-system r-build-system)
     (arguments
@@ -56296,13 +56328,13 @@ derive time series of topical sentiment.")
 (define-public r-sentometrics
   (package
     (name "r-sentometrics")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sentometrics" version))
        (sha256
-        (base32 "06qvwfgshr70n1qgf2zqjvycwwrak8d5hfyn3v5k2qzkfaxkihmm"))))
+        (base32 "0frpvxkq8j03g2b88k0ialr8ikc08i23704s97m5l1vrkm21yr9x"))))
     (properties `((upstream-name . "sentometrics")))
     (build-system r-build-system)
     (arguments
@@ -60418,6 +60450,30 @@ providing two numeric keys used to define the encryption algorithm.  The
 resulting text can be decoded using @code{decode()} function and the two numeric
 keys specified during encryption.")
     (license license:expat)))
+
+(define-public r-secretsprovider
+  (package
+    (name "r-secretsprovider")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SecretsProvider" version))
+       (sha256
+        (base32 "1da3pvdfjkf5899wgxx64xw9s2zwkpb1w0c5hkf45bli5md1sph3"))))
+    (properties `((upstream-name . "SecretsProvider")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=SecretsProvider")
+    (synopsis "Save and Retrieve Name-Value Pairs to and from a File")
+    (description
+     "Facilitates secret management by storing credentials in a dedicated file,
+keeping them out of your code base.  The secrets are stored without encryption.
+This package is compatible with secrets stored by the @code{SecretsProvider}
+Python package <https://pypi.org/project/@code{SecretsProvider/>}.")
+    (license license:asl2.0)))
 
 (define-public r-secret
   (package
@@ -66025,13 +66081,13 @@ visualization functions.")
 (define-public r-scdeco
   (package
     (name "r-scdeco")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scDECO" version))
        (sha256
-        (base32 "0gm7xlkv3rr6mzwbgggyaby75ia1avrflasrsszniph13bcndb9g"))))
+        (base32 "15fsh4n7qc61xnmdjsqq9jf78sm9jwn41iarnq832vmr1hlslyl8"))))
     (properties `((upstream-name . "scDECO")))
     (build-system r-build-system)
     (arguments

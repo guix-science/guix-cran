@@ -5939,6 +5939,33 @@ more convenience functions to reproduce the analyses of the corresponding paper
 (<https://github.com/alexvolkmann/@code{multifammPaper>}).")
     (license license:gpl2+)))
 
+(define-public r-multidoe
+  (package
+    (name "r-multidoe")
+    (version "0.9.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multiDoE" version))
+       (sha256
+        (base32 "0ambj3dsql0vnmc5j4b89bv8aza709i6yfhrhzmr9yvnx1wwyycd"))))
+    (properties `((upstream-name . "multiDoE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pracma r-plotly r-magrittr r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/andreamelloncelli/multiDoE")
+    (synopsis "Multi-Criteria Design of Experiments for Optimal Design")
+    (description
+     "Multi-criteria design of experiments algorithm that simultaneously optimizes up
+to six different criteria ('I', Id', D', Ds', A and As').  The algorithm finds
+the optimal Pareto front and, if requested, selects a possible symmetrical
+design on it.  The symmetrical design is selected based on two techniques:
+minimum distance with the Utopia point or the TOPSIS approach.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-multidimbio
   (package
     (name "r-multidimbio")
@@ -13352,13 +13379,13 @@ provide widely-used tables out of the box.")
 (define-public r-mortalitylaws
   (package
     (name "r-mortalitylaws")
-    (version "2.1.0")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MortalityLaws" version))
        (sha256
-        (base32 "1jczy0brmma71cn2xhhnl1g2k9nr6l3zf5zw6bvwn10l1gid4908"))))
+        (base32 "1n8mi4fad6amq8s4820vvq9bqch8f2i5zznxgw4cckm7irslnzwm"))))
     (properties `((upstream-name . "MortalityLaws")))
     (build-system r-build-system)
     (arguments
@@ -13386,19 +13413,19 @@ are provided as well.")
 (define-public r-mortalitygaps
   (package
     (name "r-mortalitygaps")
-    (version "1.0.0")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MortalityGaps" version))
        (sha256
-        (base32 "0nfm8xa7gnshrl8hsvmvr3za8nbppp7f7i5h4ni204w7xwvh8jxc"))))
+        (base32 "1ndw95sl21ajb7sy15ml2im4842ffifx7v4rkj01cfwhalk6pcdw"))))
     (properties `((upstream-name . "MortalityGaps")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pbapply r-mass r-forecast r-crch))
+    (propagated-inputs (list r-rdpack r-pbapply r-mass r-forecast r-crch))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mpascariu/MortalityGaps")
     (synopsis "The Double-Gap Life Expectancy Forecasting Model")
@@ -13410,7 +13437,7 @@ the gap between female life expectancy in a country compared with the record
 level of female life expectancy in the world.  Second, to forecast male life
 expectancy, the gap between male life expectancy and female life expectancy in a
 country is analysed.  We named this method the Double-Gap model.  For a detailed
-description of the method see Pascariu et al. (2017).
+description of the method see Pascariu et al. (2018).
 <doi:10.1016/j.insmatheco.2017.09.011>.")
     (license license:gpl3)))
 
@@ -14379,13 +14406,13 @@ based on Dette, Holger, Neumeyer, and Pilz (2006) <doi:10.3150/bj/1151525131>.")
 (define-public r-monotonicitytest
   (package
     (name "r-monotonicitytest")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MonotonicityTest" version))
        (sha256
-        (base32 "1zx7bimxa72alm1ghiwj7kykkzgig679ql2g21fbcdksv1kk8rgn"))))
+        (base32 "18qla9kvf0ywvhw2dd5lpl4dagv9rs8l5vn7lj4b9bjvy8dxp20b"))))
     (properties `((upstream-name . "MonotonicityTest")))
     (build-system r-build-system)
     (arguments
@@ -16482,13 +16509,13 @@ into R and the Tidyverse\" available at <https://moderndive.com/>.")
 (define-public r-moderate-mediation
   (package
     (name "r-moderate-mediation")
-    (version "0.0.10")
+    (version "0.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moderate.mediation" version))
        (sha256
-        (base32 "1xpyjrp5mxlca9naiz7npa2gqqx9py74w8k4c81djwjxqgn93g60"))))
+        (base32 "0vva539nnjqhj30wjifhvn1adx4lmlprm469c6i544w6irqpldsn"))))
     (properties `((upstream-name . "moderate.mediation")))
     (build-system r-build-system)
     (arguments
@@ -21675,13 +21702,13 @@ increments (BAI) was described by JevÅ¡enak and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.20.4")
+    (version "2.21.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "15wkwq8fysgfaj3mg01xprrb16zjdbdv9gnzvy760psbl00mcy5j"))))
+        (base32 "0cphbin5xqkhns7yg811m3344n524jclrvmr2q5jghdx17fr1vkx"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (arguments
@@ -21998,20 +22025,19 @@ maximum likelihood estimate(s) via Cox-Snell Methodology.")
 (define-public r-mle
   (package
     (name "r-mle")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLE" version))
        (sha256
-        (base32 "1yknbj0qgkz709nh4q90ck3l110vbaz25k55a07d0y9vvcpcin55"))))
+        (base32 "060c2lm2h6vrfpc0qbvkj41371r93afih63fqcx7sfrqx78k5x8g"))))
     (properties `((upstream-name . "MLE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-skellam
-                             r-rfast2
+    (propagated-inputs (list r-rfast2
                              r-rfast
                              r-mn
                              r-gp
@@ -41543,13 +41569,13 @@ detailed description, see Meila, M. (2005) <doi:10.1145/1102351.1102424>.")
 (define-public r-mclustaddons
   (package
     (name "r-mclustaddons")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mclustAddons" version))
        (sha256
-        (base32 "1h68l64xjbn94scxlwiv0lzv3wvh06hzi7vb74v5vni1gk4dpdr6"))))
+        (base32 "0vjymwmapi9vcl47icc2qhrnwv4fyw3m983npkk9jr5hxnngl6yf"))))
     (properties `((upstream-name . "mclustAddons")))
     (build-system r-build-system)
     (arguments
@@ -42934,6 +42960,44 @@ al. (in press).  Additional information about the package use itself is given in
 Foster (2021) <doi:10.1111/2041-210X.13535>.")
     (license license:gpl2+)))
 
+(define-public r-mbg
+  (package
+    (name "r-mbg")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mbg" version))
+       (sha256
+        (base32 "09hi0n1agk7n8rkqx5w7kxw8jcg6s777si3ivj2hi4kyprb9hh7x"))))
+    (properties `((upstream-name . "mbg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tictoc
+                             r-terra
+                             r-sf
+                             r-r6
+                             r-purrr
+                             r-matrixstats
+                             r-matrix
+                             r-glue
+                             r-data-table
+                             r-caret
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://henryspatialanalysis.github.io/mbg/")
+    (synopsis "Model-Based Geostatistics")
+    (description
+     "Modern model-based geostatistics for point-referenced data.  This package
+provides a simple interface to run spatial machine learning models and
+geostatistical models that estimate a continuous (raster) surface from
+point-referenced outcomes and, optionally, a set of raster covariates.  The
+package also includes functions to summarize raster outcomes by (polygon) region
+while preserving uncertainty.")
+    (license license:expat)))
+
 (define-public r-mbend
   (package
     (name "r-mbend")
@@ -43879,6 +43943,31 @@ models using a variety of metrics.  The package is described in Mayer, C., Tan,
 A., Zuraw, K. (in press)
 <https://sites.socsci.uci.edu/~cjmayer/papers/cmayer_et_al_maxent_ot_accepted.pdf>.")
     (license license:gpl3+)))
+
+(define-public r-maxeff
+  (package
+    (name "r-maxeff")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "maxEff" version))
+       (sha256
+        (base32 "0yl06y3j89853qc0jc2zks0plgy55kqxv62zq112fkhkgsg7isn5"))))
+    (properties `((upstream-name . "maxEff")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spatstat-geom r-rpart r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=maxEff")
+    (synopsis "Additional Predictor with Maximum Effect Size")
+    (description
+     "This package provides methods of selecting one from many numeric predictors for
+a regression model, to ensure that the additional predictor has the maximum
+effect size.")
+    (license license:gpl2)))
 
 (define-public r-maxcombo
   (package

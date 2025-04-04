@@ -703,13 +703,13 @@ bugs.")
 (define-public r-lucid
   (package
     (name "r-lucid")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lucid" version))
        (sha256
-        (base32 "1dhbyr0l7cp5r0r7xdgqqxlix5hhk0v4v0zghd904dvfyaz2zdwi"))))
+        (base32 "02jn3zgcsw8wqab3cdp5s4h1lfrx72xfnh7ypi8rcd9gmsbcaf5q"))))
     (properties `((upstream-name . "lucid")))
     (build-system r-build-system)
     (arguments
@@ -727,7 +727,7 @@ decimal point are dropped.  See: Wright (2016).  Lucid: An R Package for
 Pretty-Printing Floating Point Numbers.  In JSM Proceedings, Statistical
 Computing Section.  Alexandria, VA: American Statistical Association.
 2270-2279.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-lucas
   (package
@@ -2238,13 +2238,13 @@ zur VerfÃ¼gung.")
 (define-public r-lsafun
   (package
     (name "r-lsafun")
-    (version "0.7.1")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSAfun" version))
        (sha256
-        (base32 "1mnma1mq199vl1japv68s1prfwpi85mlfkibrrjl6abkw80cf5bn"))))
+        (base32 "1h1pbrjgxdvzvjnkcfs19d78f0n31bc0f77aysay0pn3wqxdkdds"))))
     (properties `((upstream-name . "LSAfun")))
     (build-system r-build-system)
     (arguments
@@ -5837,13 +5837,13 @@ of Royal Statistical Society Series B, <doi:10.1111/j.1467-9868.2010.00753.x>)."
 (define-public r-logbin
   (package
     (name "r-logbin")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logbin" version))
        (sha256
-        (base32 "1v8bzhh8bm8704sv68k7dmbs0m7f656s91jhc0p7a6w7vqlmv803"))))
+        (base32 "1ya1ll7lq7ygajz1nw12gramw2ixa0q1hb3hjrip4sh2j6gswzsc"))))
     (properties `((upstream-name . "logbin")))
     (build-system r-build-system)
     (arguments
@@ -7017,13 +7017,13 @@ and panel-to-key synchronization/management.")
 (define-public r-lnpar
   (package
     (name "r-lnpar")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LNPar" version))
        (sha256
-        (base32 "0fiaamhyb7hacww3sn0h5nqk1m69qjnnnwgh075ibbmm6qgsz8gw"))))
+        (base32 "0y2v5kshbqhinyfjx9iri3zp04wzmfx6csxjn6pqzja21g07z063"))))
     (properties `((upstream-name . "LNPar")))
     (build-system r-build-system)
     (arguments
@@ -7033,9 +7033,10 @@ and panel-to-key synchronization/management.")
     (home-page "https://cran.r-project.org/package=LNPar")
     (synopsis "Estimation and Testing for a Lognormal-Pareto Mixture")
     (description
-     "Estimates a lognormal-Pareto mixture by maximizing the profile likelihood
-function.  A likelihood ratio test for discriminating between lognormal and
-Pareto tail is also implemented.  See Bee, M. (2022)
+     "Estimates a lognormal-Pareto mixture by means of the
+Expectation-Conditional-Maximization-Either algorithm and by maximizing the
+profile likelihood function.  A likelihood ratio test for discriminating between
+lognormal and Pareto tail is also implemented.  See Bee, M. (2022)
 <doi:10.1007/s11634-022-00497-4>.")
     (license license:expat)))
 
@@ -16769,13 +16770,13 @@ designed for compositional data.")
 (define-public r-lazyweave
   (package
     (name "r-lazyweave")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lazyWeave" version))
        (sha256
-        (base32 "1a7l0rgkp3xq2s6bikciq778fwyr282baa6jk9ip4a71s931p2ag"))))
+        (base32 "1zzj6jp230pby7qnnk31yikcgjpsrq6i68h5vq32dz5wphc4says"))))
     (properties `((upstream-name . "lazyWeave")))
     (build-system r-build-system)
     (arguments
@@ -16863,13 +16864,13 @@ will be added as required.")
 (define-public r-lazysf
   (package
     (name "r-lazysf")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lazysf" version))
        (sha256
-        (base32 "19g0qzm0dxsa8m4dj4zmz8r674dw43pqs5gg6n3xfgm5dl9772jb"))))
+        (base32 "0648ds8xdw9jmdlljg7732fpcyk5gb7cagcp84ix6f2rqfqn8say"))))
     (properties `((upstream-name . "lazysf")))
     (build-system r-build-system)
     (arguments
@@ -16882,7 +16883,7 @@ will be added as required.")
                              r-dbplyr
                              r-dbi))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/mdsumner/lazysf")
+    (home-page "https://github.com/hypertidy/lazysf")
     (synopsis "Delayed Read for 'GDAL' Vector Data Sources")
     (description
      "Lazy read for drawings.  A dplyr back end for data sources supported by GDAL

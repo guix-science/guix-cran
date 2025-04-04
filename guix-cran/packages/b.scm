@@ -3380,13 +3380,13 @@ ability to export the figures in SVG or PNG formats.")
 (define-public r-bsamgp
   (package
     (name "r-bsamgp")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsamGP" version))
        (sha256
-        (base32 "1792kksvpzinap83asyz6iz7mp7xyi0a7lppxx1m8as7jwnk2nsk"))))
+        (base32 "1x41ppc0j6rkh3lqimihkbvsxfb9p2yyi1v95mqh0sywi636x73v"))))
     (properties `((upstream-name . "bsamGP")))
     (build-system r-build-system)
     (arguments
@@ -3394,7 +3394,7 @@ ability to export the figures in SVG or PNG formats.")
       #:tests? #f))
     (propagated-inputs (list r-mass r-gridextra r-ggplot2))
     (native-inputs (list gfortran))
-    (home-page "http://statlab2.korea.ac.kr/software/bsamgp")
+    (home-page "https://cran.r-project.org/package=bsamGP")
     (synopsis
      "Bayesian Spectral Analysis Models using Gaussian Process Priors")
     (description
@@ -3687,39 +3687,6 @@ analysts, and developers working with Bruneiâs geographic and demographic
 data, offering a quick and accessible foundation for creating maps and
 conducting spatial studies.")
     (license license:gpl3+)))
-
-(define-public r-brulee
-  (package
-    (name "r-brulee")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "brulee" version))
-       (sha256
-        (base32 "17aw58jlmhh8f1qgslr7ywyl8f29x2bmrz2wflsh474nxq5bq7l2"))))
-    (properties `((upstream-name . "brulee")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-torch
-                             r-tibble
-                             r-rlang
-                             r-hardhat
-                             r-glue
-                             r-ggplot2
-                             r-generics
-                             r-dplyr
-                             r-coro
-                             r-cli))
-    (home-page "https://github.com/tidymodels/brulee")
-    (synopsis "High-Level Modeling Functions with 'torch'")
-    (description
-     "This package provides high-level modeling functions to define and train models
-using the torch R package.  Models include linear, logistic, and multinomial
-regression as well as multilayer perceptrons.")
-    (license license:expat)))
 
 (define-public r-brucer
   (package
@@ -11596,13 +11563,13 @@ estimates the loglinear cognitive diagnosis model of Henson, Templin, and Willse
 (define-public r-blastula
   (package
     (name "r-blastula")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blastula" version))
        (sha256
-        (base32 "1ppn3lyzdrarcq1laz0r8b018p0yxzs2ji1q82lg9nnmghqzs24b"))))
+        (base32 "102n4j5pbclb73g7yxifss0q6048mzy7921bmlwagk3rqdmqbj03"))))
     (properties `((upstream-name . "blastula")))
     (build-system r-build-system)
     (arguments
@@ -11631,7 +11598,7 @@ estimates the loglinear cognitive diagnosis model of Henson, Templin, and Willse
      "Compose and send out responsive HTML email messages that render perfectly across
 a range of email clients and device sizes.  Helper functions let the user insert
 embedded images, web link buttons, and ggplot2 plot objects into the message
-body.  Messages can be sent through an SMTP server, through the RStudio Connect
+body.  Messages can be sent through an SMTP server, through the Posit Connect
 service, or through the Mailgun API service <https://www.mailgun.com/>.")
     (license license:expat)))
 
@@ -13335,13 +13302,13 @@ IDs.  In SVG mode, text and numbers can be dragged and dropped.  Based on the
 (define-public r-biotools
   (package
     (name "r-biotools")
-    (version "4.2")
+    (version "4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biotools" version))
        (sha256
-        (base32 "1dyy9mk2afjbc8g1qygy6h1aksbhndm53c4sb5mfzriydl03ibxv"))))
+        (base32 "0f6qm1dq1pbgxk5l0bdbbscr0is0zrk0fk2hvi15k745gzgpvnyf"))))
     (properties `((upstream-name . "biotools")))
     (build-system r-build-system)
     (arguments
@@ -14642,13 +14609,13 @@ extract estimates of ultimate yield and kinetic constants.")
 (define-public r-biodry
   (package
     (name "r-biodry")
-    (version "0.9")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BIOdry" version))
        (sha256
-        (base32 "1j6fbrvhiaz04fpybdldjk2prg3n5ayzvxqbx0g0vbna54kd1vz6"))))
+        (base32 "1mgq1xl5nm9ciciacic881i1p32h21mzqs8fc441khsccb44fw89"))))
     (properties `((upstream-name . "BIOdry")))
     (build-system r-build-system)
     (arguments
@@ -17248,13 +17215,13 @@ as described by Hollenbach JA, Mack SJ, Thomson G, Gourraud PA (2012)
 (define-public r-bigdatape
   (package
     (name "r-bigdatape")
-    (version "0.0.95")
+    (version "0.0.96")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BigDataPE" version))
        (sha256
-        (base32 "0mg3644hsj0m5bbd9sjpq7k1p62sfyh668pvbl2144q1llyk1dxr"))))
+        (base32 "1p6jppmm1zapa1w2r1dn9nx174q3n84p6aawzi6xam9r4a2qki4k"))))
     (properties `((upstream-name . "BigDataPE")))
     (build-system r-build-system)
     (arguments
@@ -17303,13 +17270,13 @@ et al (2018, submitted); Martos et al (2018, submitted).")
 (define-public r-bigd
   (package
     (name "r-bigd")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigD" version))
        (sha256
-        (base32 "1807m3ma7h7k7m7c8g7qrjf77limvy6q4mkfkn4nrv1rgsnq7kbq"))))
+        (base32 "1lc8c3g22sb3mkmr0vjw6x92cs04gdfsny1iii0v3xj9337v1cc6"))))
     (properties `((upstream-name . "bigD")))
     (build-system r-build-system)
     (arguments
@@ -17583,6 +17550,44 @@ package is an R version of the Excel based Bifactor Indices Calculator (Dueber,
 utilizing output from several programs that can fit confirmatory factor analysis
 or item response models.")
     (license license:gpl3+)))
+
+(define-public r-bidsr
+  (package
+    (name "r-bidsr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bidsr" version))
+       (sha256
+        (base32 "1c3p6bnn27f11mv28fm50gfm03k81y6lfm1lnnh6pw5wsagzzjbn"))))
+    (properties `((upstream-name . "bidsr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uuid
+                             r-s7
+                             r-nanotime
+                             r-jsonlite
+                             r-fs
+                             r-fastmap
+                             r-data-table
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://dipterix.org/bidsr/")
+    (synopsis "Brain Imaging Data Structure ('BIDS') Parser")
+    (description
+     "Parse and read the files that comply with the brain imaging data structure, or
+BIDS format, see the publication from Gorgolewski, K., Auer, T., Calhoun, V. et
+al. (2016) <doi:10.1038/sdata.2016.44>.  Provides query functions to extract and
+check the BIDS entity information (such as subject, session, task, etc.) from
+the file paths and suffixes according to the specification.  The package is
+developed and used in the reproducible analysis and visualization of
+intracranial electroencephalography, or RAVE', see Magnotti, J. F., Wang, Z.,
+and Beauchamp, M. S. (2020) <doi:10.1016/j.neuroimage.2020.117341>; see
+citation(\"bidsr\") for details and attributions.")
+    (license license:expat)))
 
 (define-public r-bidimregression
   (package
@@ -18656,13 +18661,13 @@ Knowledge, Journal of Statistical Software <doi:10.18637/jss.v047.i03>.")
 (define-public r-bgmisc
   (package
     (name "r-bgmisc")
-    (version "1.3.3")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGmisc" version))
        (sha256
-        (base32 "0qrgwmmmvdm3rwgcrljyjqiyk79cc5iim0s76fzj1xa6axw1fg86"))))
+        (base32 "1w7mym07v0apzgzkw1y0bm6pry8bj5ap4ixs2w1pb3990k2c26vh"))))
     (properties `((upstream-name . "BGmisc")))
     (build-system r-build-system)
     (arguments
@@ -18681,7 +18686,7 @@ path-tracing methods [Wright (1922) <doi:10.1086/279872>; @code{McArdle} &
 @code{McDonald} (1984) <doi:10.1111/j.2044-8317.1984.tb00802.x>], inference of
 relatedness, pedigree conversion, and simulation of multi-generational family
 data [Lyu et al. (2024) <doi:10.1101/2024.12.19.629449>].  For a full overview,
-see Garrison et al. (2025) <doi:10.21105/joss.06203>.")
+see Garrison et al. (2024) <doi:10.21105/joss.06203>.")
     (license license:gpl3)))
 
 (define-public r-bgmfiles
@@ -20265,13 +20270,13 @@ complementarity of the primal and dual variables.")
 (define-public r-bespatial
   (package
     (name "r-bespatial")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bespatial" version))
        (sha256
-        (base32 "1sbgi4dcddjwgs4dzwn3zf91kx07kr5vc9dblvijgfasqhpfjv5m"))))
+        (base32 "11lis4nn84199jcdhlkpasxvkh7w8z8mimdblkszbn161b5p6amg"))))
     (properties `((upstream-name . "bespatial")))
     (build-system r-build-system)
     (arguments
@@ -29181,13 +29186,13 @@ Isaque; VICENTE, FÃ¡bio; PEREIRA, Felipe; LOPES, FabrÃ­cio, 2018)
 (define-public r-basifor
   (package
     (name "r-basifor")
-    (version "0.4")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basifoR" version))
        (sha256
-        (base32 "1clnmb57g7aclgw8ibj92pfixaism0af85w4kn0208nbm75c1kvf"))))
+        (base32 "0nlv8ym8wwqvh5ri3cg3qj51wm3mz3xpw0s3qjn07lxijq5si6zg"))))
     (properties `((upstream-name . "basifoR")))
     (build-system r-build-system)
     (arguments
@@ -29204,7 +29209,7 @@ Isaque; VICENTE, FÃ¡bio; PEREIRA, Felipe; LOPES, FabrÃ­cio, 2018)
      "Retrieval and Processing of the Spanish National Forest Inventory")
     (description
      "Data sets of the Spanish National Forest Inventory
-<https://www.miteco.gob.es/es/biodiversidad/servicios/banco-datos-naturaleza/informacion-disponible/>
+<https://www.miteco.gob.es/es/biodiversidad/servicios/banco-datos-naturaleza/informacion-disponible.html>
 are processed to compute tree metrics and statistics.  Function
 @code{metrics2Vol()} controls most of the routines.")
     (license license:gpl3)))

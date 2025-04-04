@@ -4002,13 +4002,13 @@ functions.  The methods are largely described by Nocedal and Wright (2006)
 (define-public r-pspower
   (package
     (name "r-pspower")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PSpower" version))
        (sha256
-        (base32 "1528jc65fy39jkb328w1wpp56la99r2mvsaarkav2mmb8xjjssvd"))))
+        (base32 "02h0k4sx1jly3ms2c9lj53ca4s9vsf06kwcsz8xvznbfxc6hww65"))))
     (properties `((upstream-name . "PSpower")))
     (build-system r-build-system)
     (arguments
@@ -7772,13 +7772,13 @@ translated from MATLAB ('SOM Toolbox 2.0) to R.")
 (define-public r-proj
   (package
     (name "r-proj")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PROJ" version))
        (sha256
-        (base32 "16wcr1p2rp9d5y14n9km0d24zhvja3qj5d34lx9mv9l969licqzs"))))
+        (base32 "13h91iqkbwwvkzgsn7blvzfk089faibk92p9anpp74rynb92asd6"))))
     (properties `((upstream-name . "PROJ")))
     (build-system r-build-system)
     (arguments
@@ -12707,13 +12707,13 @@ on the work of Rothman and Greenland (2018).")
 (define-public r-precipe
   (package
     (name "r-precipe")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pRecipe" version))
        (sha256
-        (base32 "0kiwc4zs3xbi6r6f1symrf5kcw85nz71av9h5krj4850y8w0knrn"))))
+        (base32 "0mrl76vwmrfhlkp2xf8gry5an1gpgnlbdi201hkg1hsvbhgd2sz3"))))
     (properties `((upstream-name . "pRecipe")))
     (build-system r-build-system)
     (arguments
@@ -13196,19 +13196,20 @@ described in Nagraj and Turner (2023) <doi:10.48550/@code{arXiv.2303.07876>}.")
 (define-public r-praatpicture
   (package
     (name "r-praatpicture")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "praatpicture" version))
        (sha256
-        (base32 "1bizcha6k8vp7z7bij1fk4q0slhs0f1jm8qs784ca54y7fiz0in9"))))
+        (base32 "1fnbgn37nlsp3pg25kmvrv1xjfndxripl4lvj5rw0y2mrkvn368l"))))
     (properties `((upstream-name . "praatpicture")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-wrassp
+    (propagated-inputs (list r-zoo
+                             r-wrassp
                              r-tuner
                              r-soundgen
                              r-shinyjs
@@ -20891,13 +20892,13 @@ using package survey'.")
 (define-public r-pnd
   (package
     (name "r-pnd")
-    (version "0.0.9")
+    (version "0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pnd" version))
        (sha256
-        (base32 "13sfg9ndjrp8x07kgsi2b4m03slj1kw80dy8av8g5p9xhxyv0hwk"))))
+        (base32 "0mkrvzpfci1shdjz9rad1gqrjxj8yxc55yfn19020rghfm0kf3ig"))))
     (properties `((upstream-name . "pnd")))
     (build-system r-build-system)
     (arguments
@@ -25433,40 +25434,6 @@ AUCs with linear or log interpolation method * Reference: Gabrielsson J, Weiner
 D. Pharmacokinetic and Pharmacodynamic Data Analysis - Concepts and
 Applications.  5th ed.  2016. (ISBN:9198299107).")
     (license license:gpl3)))
-
-(define-public r-pkpdsim
-  (package
-    (name "r-pkpdsim")
-    (version "1.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PKPDsim" version))
-       (sha256
-        (base32 "0pzpr2lqgcssz5mgsb27z48x8sf9plbsd2m8rmkha1926fxks6na"))))
-    (properties `((upstream-name . "PKPDsim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-rcpp
-                             r-randtoolbox
-                             r-mass
-                             r-magrittr
-                             r-jsonlite
-                             r-data-table
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/InsightRX/PKPDsim")
-    (synopsis
-     "Tools for Performing Pharmacokinetic-Pharmacodynamic Simulations")
-    (description
-     "Simulate dose regimens for pharmacokinetic-pharmacodynamic (PK-PD) models
-described by differential equation (DE) systems.  Simulation using ADVAN-style
-analytical equations is also supported (Abuhelwa et al. (2015)
-<doi:10.1016/j.vascn.2015.03.004>).")
-    (license license:expat)))
 
 (define-public r-pknca
   (package
@@ -33597,6 +33564,43 @@ methods.  It also provides means for addressing issues related with the
 statistical significance of the observed differences.")
     (license license:gpl2+)))
 
+(define-public r-perfit
+  (package
+    (name "r-perfit")
+    (version "1.4.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PerFit" version))
+       (sha256
+        (base32 "1bs94yk8433x6a69ww2dnqcl8gx2infdiplgls0pv6p6byy9x086"))))
+    (properties `((upstream-name . "PerFit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mirt
+                             r-matrix
+                             r-mass
+                             r-ltm
+                             r-irtoys
+                             r-hmisc
+                             r-fda))
+    (home-page "https://cran.r-project.org/package=PerFit")
+    (synopsis "Person Fit")
+    (description
+     "Several person-fit statistics (PFSs; Meijer and Sijtsma, 2001,
+<doi:10.1177/01466210122031957>) are offered.  These statistics allow assessing
+whether individual response patterns to tests or questionnaires are
+(im)plausible given the other respondents in the sample or given a specified
+item response theory model.  Some PFSs apply to dichotomous data, such as the
+likelihood-based PFSs (lz, lz*) and the group-based PFSs (personal biserial
+correlation, caution index, (normed) number of Guttman errors,
+agreement/disagreement/dependability statistics, U3, ZU3, NCI, Ht).  PFSs
+suitable to polytomous data include extensions of lz, U3, and (normed) number of
+Guttman errors.")
+    (license license:gpl2+)))
+
 (define-public r-perccalc
   (package
     (name "r-perccalc")
@@ -34298,13 +34302,13 @@ penalties include lasso, adaptive lasso, scad, mcp, and ridge.")
 (define-public r-penetrance
   (package
     (name "r-penetrance")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "penetrance" version))
        (sha256
-        (base32 "0sb2nbas097lhshaajh6rr7hxbnm2y024ycsnvfv324bvyfg5wkz"))))
+        (base32 "041cyvasm3qa9bpwkk9v64hi8rjgwlpfvv1rj71v87lia2d5ap4p"))))
     (properties `((upstream-name . "penetrance")))
     (build-system r-build-system)
     (arguments
@@ -42661,19 +42665,19 @@ generalized linear model extension thereof using GEE.")
 (define-public r-panelpomp
   (package
     (name "r-panelpomp")
-    (version "1.5.0.0")
+    (version "1.6.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "panelPomp" version))
        (sha256
-        (base32 "0apsnji5xg0w8r0ry6k29drr32lv8vjsgz1xap3y1jykrpwdkw4k"))))
+        (base32 "1c590gr7aiwcndz2c0n0plic5cspcp1k4ydla6m2hn58dyraijdp"))))
     (properties `((upstream-name . "panelPomp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pomp r-lifecycle))
+    (propagated-inputs (list r-pomp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=panelPomp")
     (synopsis "Inference for Panel Partially Observed Markov Processes")
@@ -42988,20 +42992,22 @@ personalized oncology.  Bioinformatics <doi:10.1093/bioinformatics/btad022>.")
 (define-public r-pamscapes
   (package
     (name "r-pamscapes")
-    (version "0.10.0")
+    (version "0.11.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMscapes" version))
        (sha256
-        (base32 "1vjzzhp8pzgclpmf8hrnn4n4flfhgrdnz10fyydh72lyzcz4dib5"))))
+        (base32 "03pzyy1lvaqapdk669mij6nv6j432ilki17dndh4jnrbr2nm492x"))))
     (properties `((upstream-name . "PAMscapes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tuner
+                             r-tidyr
                              r-tdigest
+                             r-signal
                              r-shiny
                              r-sf
                              r-scales
@@ -43014,6 +43020,7 @@ personalized oncology.  Bioinformatics <doi:10.1093/bioinformatics/btad022>.")
                              r-ggplot2
                              r-geosphere
                              r-future-apply
+                             r-dt
                              r-dplyr
                              r-data-table))
     (home-page "https://cran.r-project.org/package=PAMscapes")
@@ -44483,13 +44490,13 @@ planning and analysis across various fields.")
 (define-public r-paknacc
   (package
     (name "r-paknacc")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PakNAcc" version))
        (sha256
-        (base32 "11lhjjayjk5516gjgj6czg10prl21yyaslb4idj7r7x01l6qaghc"))))
+        (base32 "0dfq68djapvr89qcbi7m44nvimq2i2rg6abpjhs9ascdi9r4mvjb"))))
     (properties `((upstream-name . "PakNAcc")))
     (build-system r-build-system)
     (arguments
