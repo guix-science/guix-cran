@@ -1322,13 +1322,13 @@ Shiny input or output.")
 (define-public r-pursuit
   (package
     (name "r-pursuit")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Pursuit" version))
        (sha256
-        (base32 "1wg1ix466zcbcgr2qqa6sbh9blx5g8hjqmagf9z3ig06qgxf1zrr"))))
+        (base32 "0hx9pn9bv9z4bgg9m3vz0256b6wgkdz3d1fbjvk1kwbnddmh5dv3"))))
     (properties `((upstream-name . "Pursuit")))
     (build-system r-build-system)
     (arguments
@@ -22731,13 +22731,13 @@ the base graphics plotting tools; and manipulate irregular polygons.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "06p690c3sr3smnmbpry95p0h2kcq4vgmmzc29p190kq071f5vxb3"))))
+        (base32 "19sw62pclbxnrs9snbl5fl9psh741v6lvgk0w5bznw86986m54ai"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments
@@ -23835,13 +23835,13 @@ Tardella (2017) <doi.org/10.1007/s11336-016-9530-0> and Mollica and Tardella
 (define-public r-plm
   (package
     (name "r-plm")
-    (version "2.6-5")
+    (version "2.6-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plm" version))
        (sha256
-        (base32 "1aya449l2cp7xv41rdyggybpzqhy9z8gpb5s71f9a040nchcp24v"))))
+        (base32 "1cq0hj6csfxsrm6k4qw5rds018div26mw6m34wjj45gj34l87a9m"))))
     (properties `((upstream-name . "plm")))
     (build-system r-build-system)
     (arguments

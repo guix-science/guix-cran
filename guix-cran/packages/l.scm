@@ -2842,13 +2842,13 @@ arboreal plants.")
 (define-public r-lpl
   (package
     (name "r-lpl")
-    (version "0.11")
+    (version "0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpl" version))
        (sha256
-        (base32 "11w2cr5n72p4wds5dm039rdinhvxjfqvrmisksfpf47jddjxhm42"))))
+        (base32 "0rx0zl3vxza5bjq9564l4gvscbj2wg1b4k2lpfb6m08cslllykiy"))))
     (properties `((upstream-name . "lpl")))
     (build-system r-build-system)
     (arguments
@@ -11070,29 +11070,27 @@ Travers Ching, Xun Zhu, Lana X. Garmire (2018)
 (define-public r-likertmaker
   (package
     (name "r-likertmaker")
-    (version "0.4.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LikertMakeR" version))
        (sha256
-        (base32 "0ilj94vr7wga1aal0z7x6s3g977b6p7r4wwzc3x8irnwwsimzjcm"))))
+        (base32 "1glvkxca4wb7jbgi24irmrky9rpq8lfs8r2ihjnj4m7a6c3fz1fa"))))
     (properties `((upstream-name . "LikertMakeR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-gtools r-dplyr))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-gtools r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/WinzarH/LikertMakeR")
     (synopsis
-     "Synthesise and Correlate Likert Scale and Related Rating-Scale Data")
+     "Synthesise and Correlate Likert Scale and Rating-Scale Data Based on Summary Statistics Only")
     (description
-     "Synthesise Likert scale and related rating-scale data with predefined first and
-second moments (mean and standard deviation), and, optionally, correlate
-multiple vectors using a predefined correlation matrix.  Additionally, generate
-synthetic rating-scale items with a predefined Cronbach's Alpha, or create
-rating-scale items based on a predefined summated scale.")
+     "Generate and correlate synthetic Likert and rating-scale data with predefined
+means, standard deviations, _Cronbach's Alpha_, _Factor Loading table_, and
+other summary statistics.")
     (license license:expat)))
 
 (define-public r-likertez

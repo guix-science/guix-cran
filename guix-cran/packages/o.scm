@@ -2226,33 +2226,6 @@ For additional detail see: Haneuse S, Saegusa T and Lumley T
 (2011)<doi:10.18637/jss.v043.i11>.")
     (license license:gpl3+)))
 
-(define-public r-osdatahub
-  (package
-    (name "r-osdatahub")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "osdatahub" version))
-       (sha256
-        (base32 "00pk0c9v3r0kdgin4gg4hk3hhf0274pw283919pr9kg926nddc3r"))))
-    (properties `((upstream-name . "osdatahub")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr r-geos r-geojsonsf))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=osdatahub")
-    (synopsis "Easier Interaction with the Ordnance Survey Data Hub")
-    (description
-     "Ordnance Survey ('OS') is the national mapping agency for Great Britain and
-produces a large variety of mapping and geospatial products.  Much of OS's data
-is available via the OS Data Hub <https://osdatahub.os.uk/>, a platform that
-hosts both free and premium data products.  osdatahub provides a user-friendly
-way to access, query, and download these data.")
-    (license license:expat)))
-
 (define-public r-osd
   (package
     (name "r-osd")

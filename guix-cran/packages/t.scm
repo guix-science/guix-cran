@@ -8674,13 +8674,13 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "04q0clbzqbyzqrk4xjwva2dqkldsa3xai5f3hiy3vq9dxb1w2f2b"))))
+        (base32 "02v6kadwy47m2h68in1k6fcvxbalka633z2jc40jn7p8v4h0jjg8"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (arguments
@@ -11187,13 +11187,13 @@ function, and maximum likelihood estimation.")
 (define-public r-tpn
   (package
     (name "r-tpn")
-    (version "1.9")
+    (version "1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tpn" version))
        (sha256
-        (base32 "0zw7973dpm71l6ncvh1n2wapfkvgpks9afkzpih690qdda7p4nmm"))))
+        (base32 "0abn89z2bca9fnzsswjw3qwgqbm176zkyk9ncrrx3w26f2qlxrjs"))))
     (properties `((upstream-name . "tpn")))
     (build-system r-build-system)
     (arguments

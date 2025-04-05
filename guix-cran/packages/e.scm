@@ -8987,13 +8987,13 @@ functions for hazard calculation and timing calibration.")
 (define-public r-ergmargins
   (package
     (name "r-ergmargins")
-    (version "1.3")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergMargins" version))
        (sha256
-        (base32 "0mr01ckxn8l8fjxlld05ag18d04h17wbnrgpry46hz38axl41zzj"))))
+        (base32 "1m1x2fqgpjins4bvh1jn2rli9s0knpsbdxdbfyhjiz8439zmk863"))))
     (properties `((upstream-name . "ergMargins")))
     (build-system r-build-system)
     (arguments

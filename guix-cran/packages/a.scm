@@ -6620,37 +6620,6 @@ data, and other miscellaneous tools that are helpful when using ggplot2 for
 generative art.")
     (license license:expat)))
 
-(define-public r-artool
-  (package
-    (name "r-artool")
-    (version "0.11.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ARTool" version))
-       (sha256
-        (base32 "16awxcncyhry0ygk8gdvlff787837rr8qsyg1pxd11w4v1llrqrf"))))
-    (properties `((upstream-name . "ARTool")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plyr
-                             r-magrittr
-                             r-lme4
-                             r-emmeans
-                             r-dplyr
-                             r-car))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mjskay/ARTool/")
-    (synopsis "Aligned Rank Transform")
-    (description
-     "The aligned rank transform for nonparametric factorial ANOVAs as described by
-Wobbrock, Findlater, Gergle, and Higgins (2011) <doi:10.1145/1978942.1978963>.
-Also supports aligned rank transform contrasts as described by Elkin, Kay,
-Higgins, and Wobbrock (2021) <doi:10.1145/3472749.3474784>.")
-    (license license:gpl2+)))
-
 (define-public r-artofr
   (package
     (name "r-artofr")
@@ -8322,13 +8291,13 @@ and Tzeremes (2022) <doi:10.1002/jae.2919>.")
 (define-public r-ardeco
   (package
     (name "r-ardeco")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ARDECO" version))
        (sha256
-        (base32 "0y6npim17k8vy05ix06j6kwza8n7149zz93cvcjrshjqlwkxd0w8"))))
+        (base32 "0m1lwcgp3bpv4xw2mj8m5hwmfr5i3qdhg011izzwaacziq8f44sv"))))
     (properties `((upstream-name . "ARDECO")))
     (build-system r-build-system)
     (arguments
@@ -8339,7 +8308,9 @@ and Tzeremes (2022) <doi:10.1002/jae.2919>.")
                              r-jsonlite
                              r-httr
                              r-ghql
-                             r-dplyr))
+                             r-dplyr
+                             r-arrow))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ARDECO")
     (synopsis "Annual Regional Database of the European Commission (ARDECO)")
     (description
@@ -13837,13 +13808,13 @@ feature analysis, missing value imputation methods, and correlation analysis.")
 (define-public r-analogue
   (package
     (name "r-analogue")
-    (version "0.17-7")
+    (version "0.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "analogue" version))
        (sha256
-        (base32 "0l8q2nyl03l1vcm6gy8ax287vh8jy0rd9cc7rwzjv8lfjq1dv2zh"))))
+        (base32 "03zxiayrp26kfv1blp7vlbc6j9ff5cjd24fsppp57f27rqag5mnk"))))
     (properties `((upstream-name . "analogue")))
     (build-system r-build-system)
     (arguments
@@ -18048,13 +18019,13 @@ models integrating human infrastructures and their managements.")
 (define-public r-airgrdatassim
   (package
     (name "r-airgrdatassim")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "airGRdatassim" version))
        (sha256
-        (base32 "05c108rcj4rlzrbabai95abxhyjsrrrsgvds4zamvyzpjl64f9ps"))))
+        (base32 "06i3wilkqw77kchypcs71xdjq3x88hqb5k3cj3f63n19j3am7qvm"))))
     (properties `((upstream-name . "airGRdatassim")))
     (build-system r-build-system)
     (arguments

@@ -1144,13 +1144,13 @@ Rcpp package which ensures great performance of the code.")
 (define-public r-symengine
   (package
     (name "r-symengine")
-    (version "0.2.6")
+    (version "0.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "symengine" version))
        (sha256
-        (base32 "1vwgd3bclsc93s1688xnf65f1hy2l7qn3g25rqsyqshdd5w2hzw9"))))
+        (base32 "16rckkhbbg80ggpq5grhpd3n6ycnnwfvw6ciwa8riwv3j10b1703"))))
     (properties `((upstream-name . "symengine")))
     (build-system r-build-system)
     (arguments
@@ -4647,24 +4647,19 @@ confidence interval under Weibull distribution.")
 (define-public r-survivalsvm
   (package
     (name "r-survivalsvm")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivalsvm" version))
        (sha256
-        (base32 "1b4hrdrqq1z0kfn8vpdwg54388m25df2s6w9i574x3mkxkmkjkga"))))
+        (base32 "0ypbzlzpfkgfdpyk8bj0fgj8ay1qm2c4j78assa8pmxs2gx8yjl0"))))
     (properties `((upstream-name . "survivalsvm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-quadprog
-                             r-pracma
-                             r-matrix
-                             r-kernlab
-                             r-hmisc))
+    (propagated-inputs (list r-survival r-pracma r-matrix r-kernlab r-hmisc))
     (home-page "https://github.com/imbs-hl/survivalsvm")
     (synopsis "Survival Support Vector Analysis")
     (description
@@ -19036,13 +19031,13 @@ needed to pre-installed.  Hanzelmann, S., Castelo, R., and Guinney, J. (2013)
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "1.5.39")
+    (version "1.5.40")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDforR" version))
        (sha256
-        (base32 "1v9kvsl2ms0w7sh4kghblmvv9zc02ydb964xw91znzwh0lkyi6lh"))))
+        (base32 "0pqv45avh6x9xb2rpq64qls942j0r8c72k9j7yq3agbmqrbhihq2"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (arguments
@@ -22791,28 +22786,6 @@ casualizado e delineamento em blocos casualizados.  Com resultados e possÃ­vel
 obter a ANOVA, testes de medias e anÃ¡lise de regressao)
 <https://www.expstat.com/pacotes-do-r>.")
     (license license:gpl3)))
-
-(define-public r-splitsoftening
-  (package
-    (name "r-splitsoftening")
-    (version "2.1-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SplitSoftening" version))
-       (sha256
-        (base32 "12hg2cm3y50rcqqa1fk40xf4z99cwc5x411lgp0w204qdzgfjddj"))))
-    (properties `((upstream-name . "SplitSoftening")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=SplitSoftening")
-    (synopsis "Softening Splits in Decision Trees")
-    (description
-     "Allows to produce and use classification trees with soft (probability) splits,
-as described in: DvoÅÃ¡k, J. (2019), <doi:10.1007/s00180-019-00867-1>.")
-    (license license:gpl2+)))
 
 (define-public r-splitselect
   (package
@@ -27892,6 +27865,35 @@ Includes the locations and some characteristics of major public hospitals in
 Greece.")
     (license license:gpl2+)))
 
+(define-public r-spaths
+  (package
+    (name "r-spaths")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spaths" version))
+       (sha256
+        (base32 "14jfa6liblhf0mb0870dnz1dy9amigh5mjjlk9ls5vkfl0fmh5j4"))))
+    (properties `((upstream-name . "spaths")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cdueben/spaths")
+    (synopsis "Shortest Paths Between Points in Grids")
+    (description
+     "Shortest paths between points in grids.  Optional barriers and custom transition
+functions.  Applications regarding planet Earth, as well as generally spheres
+and planes.  Optimized for computational performance, customizability, and user
+friendliness.  Graph-theoretical implementation tailored to gridded data.
+Currently focused on Dijkstra's (1959) <doi:10.1007/BF01386390> algorithm.
+Future updates broaden the scope to other least cost path algorithms and to
+centrality measures.")
+    (license license:expat)))
+
 (define-public r-spatgrid
   (package
     (name "r-spatgrid")
@@ -31853,13 +31855,13 @@ For more details see: <doi:10.5281/zenodo.10137768>.")
 (define-public r-sommer
   (package
     (name "r-sommer")
-    (version "4.3.7")
+    (version "4.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sommer" version))
        (sha256
-        (base32 "1rnrskgvnfzwvdjqanr42xa3jms9g0ngv5sgk7kn470w90n3v3z9"))))
+        (base32 "1j5cldirqjq8357wl0i9jx4m9p135v1z516p1m164yqyfh2p3h0v"))))
     (properties `((upstream-name . "sommer")))
     (build-system r-build-system)
     (arguments
@@ -39807,13 +39809,13 @@ measurements from forensic glass evidence\", Science & Justice, 37(4), 241--244)
 (define-public r-sjtable2df
   (package
     (name "r-sjtable2df")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sjtable2df" version))
        (sha256
-        (base32 "1vb2wr122pfn6qald36mn1dkz6gygp81skl11halrwa7cvxwkl7z"))))
+        (base32 "1nw2mpkgglrw9al63ffnf2zw6clip5jci1cwjy6k546cxlq0f96v"))))
     (properties `((upstream-name . "sjtable2df")))
     (build-system r-build-system)
     (arguments
@@ -39825,7 +39827,7 @@ measurements from forensic glass evidence\", Science & Justice, 37(4), 241--244)
                              r-magrittr
                              r-kableextra
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://github.com/kapsner/sjtable2df")
     (synopsis "Convert 'sjPlot' HTML-Tables to R 'data.frame'")
     (description
@@ -44887,13 +44889,13 @@ form.")
 (define-public r-simcomp
   (package
     (name "r-simcomp")
-    (version "3.3")
+    (version "3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimComp" version))
        (sha256
-        (base32 "04qkis20zk0z42bv4nznffqlpwby0y0ij27gj4sa0ha864pg0hi5"))))
+        (base32 "1lkrwkqk1hhn95n9vngrsghx01h17xzwz08n0z68daj91dwgj5q3"))))
     (properties `((upstream-name . "SimComp")))
     (build-system r-build-system)
     (arguments

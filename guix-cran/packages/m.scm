@@ -2326,13 +2326,13 @@ facilitate the model interpretation.")
 (define-public r-mvar-pt
   (package
     (name "r-mvar-pt")
-    (version "2.2.5")
+    (version "2.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar.pt" version))
        (sha256
-        (base32 "1zw9md0yhzc4sljignl87q40mpshbdj6shm8j7clis51c0i7dhhp"))))
+        (base32 "1cz2l1ljhwp6k9k47di1mwigshycz028dyq1bszihr2zxmz7i03n"))))
     (properties `((upstream-name . "MVar.pt")))
     (build-system r-build-system)
     (arguments
@@ -2356,13 +2356,13 @@ multivariada.")
 (define-public r-mvar
   (package
     (name "r-mvar")
-    (version "2.2.5")
+    (version "2.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar" version))
        (sha256
-        (base32 "0bkjc8a491f42gbq5k2ysipa03n34g0jd1gmy0zlhyix35zidz1j"))))
+        (base32 "1jyd94016xli0xljvrz9khjgjky811z4dzy91qn08m0nrd3h9wvp"))))
     (properties `((upstream-name . "MVar")))
     (build-system r-build-system)
     (arguments
@@ -5267,13 +5267,13 @@ effects models based on Johnson (2014) <doi:10.1111/2041-210X.12225>.")
 (define-public r-multilevelpsa
   (package
     (name "r-multilevelpsa")
-    (version "1.2.5")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevelPSA" version))
        (sha256
-        (base32 "0926jaicdxk846vyfphb2hyg3zan3wal44x1bwamws0zf4flc4hj"))))
+        (base32 "03mvnihj6d9rlywlkhw10vmi9zl44iag5l5mmkvrxqa67wc8cxjh"))))
     (properties `((upstream-name . "multilevelPSA")))
     (build-system r-build-system)
     (arguments
@@ -5287,7 +5287,8 @@ effects models based on Johnson (2014) <doi:10.1111/2041-210X.12225>.")
                              r-party
                              r-mass
                              r-ggplot2))
-    (home-page "http://github.com/jbryer/multilevelPSA")
+    (native-inputs (list r-knitr))
+    (home-page "https://jbryer.github.io/multilevelPSA/")
     (synopsis "Multilevel Propensity Score Analysis")
     (description
      "Conducts and visualizes propensity score analysis for multilevel, or clustered
@@ -32002,13 +32003,13 @@ see: Chao et al. (2018) <doi:10.1002/ecm.1343>, Maire et al. (2015)
 (define-public r-mfag
   (package
     (name "r-mfag")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MFAg" version))
        (sha256
-        (base32 "1lciq1drbd2p71k1svn4a4q7p0j3am9nsd4nmvmwikpihyqswgfv"))))
+        (base32 "1ryds61cjhfc25650vzppsa4qly59gzhw3vxs13ikqc8wzm0p1wa"))))
     (properties `((upstream-name . "MFAg")))
     (build-system r-build-system)
     (arguments

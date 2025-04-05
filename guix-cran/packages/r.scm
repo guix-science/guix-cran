@@ -13,7 +13,6 @@
   #:use-module (gnu packages spreadsheet)
   #:use-module (gnu packages image)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages tls)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages web)
   #:use-module (gnu packages cmake)
@@ -21,6 +20,7 @@
   #:use-module (gnu packages xml)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages tls)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages tcl)
   #:use-module (gnu packages python)
@@ -3132,36 +3132,6 @@ interface.  Also provides functions for downloading your results.")
     (description
      "This package provides a strong type system for R which supports symbol
 declaration and assignment with type checking and condition checking.")
-    (license license:expat)))
-
-(define-public r-rtwobitlib
-  (package
-    (name "r-rtwobitlib")
-    (version "0.3.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rtwobitlib" version))
-       (sha256
-        (base32 "1cvnsl323zm96fajin1x8cvs8snl4wlh60w5xgy98yc8zv4d18kq"))))
-    (properties `((upstream-name . "Rtwobitlib")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list openssl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/hpages/Rtwobitlib")
-    (synopsis "'2bit' 'C' Library")
-    (description
-     "This package provides a trimmed down copy of the \"kent-core source tree\" turned
-into a C library for manipulation of .2bit files.  See
-<https://genome.ucsc.edu/FAQ/FAQformat.html#format7> for a quick overview of the
-2bit format.  The \"kent-core source tree\" can be found here:
-<https://github.com/@code{ucscGenomeBrowser/kent-core/>}.  Only the .c and .h
-files from the source tree that are related to manipulation of .2bit files were
-kept.  Note that the package is primarily useful to developers of other R
-packages who wish to use the 2bit C library in their own C'/'C++ code.")
     (license license:expat)))
 
 (define-public r-rtwig
@@ -24560,13 +24530,13 @@ citation(\"RJcluster\")'.")
 (define-public r-rjavaenv
   (package
     (name "r-rjavaenv")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rJavaEnv" version))
        (sha256
-        (base32 "1shh4w3lw5lgjqxwbkggafsa9kj2fdfsymd4jjfs9vm7kzz8l75d"))))
+        (base32 "1nh58c73xf00i791xb97fxnx623hs79d5cc0anygz2wffsfnm7fv"))))
     (properties `((upstream-name . "rJavaEnv")))
     (build-system r-build-system)
     (arguments
@@ -26094,13 +26064,13 @@ Algorithms and Applications, for a reference.")
 (define-public r-rintcal
   (package
     (name "r-rintcal")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rintcal" version))
        (sha256
-        (base32 "052hniclar2h6rz5z8vcibj3c3d8fcz6ka2d2jcbkcbxklw0f2wr"))))
+        (base32 "1v7wgg14ikz6y86rvlv7jc559i9pwzagd94dkzb3p89kxlqa2j41"))))
     (properties `((upstream-name . "rintcal")))
     (build-system r-build-system)
     (arguments
@@ -44728,39 +44698,6 @@ Reference: Carroll RJ, Ruppert D, Stefanski L, Crainiceanu CM (2006)
 <doi:10.1201/9781420010138>.")
     (license license:gpl3)))
 
-(define-public r-rcrawler
-  (package
-    (name "r-rcrawler")
-    (version "0.1.9-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rcrawler" version))
-       (sha256
-        (base32 "1m6b1h72h8qjqcg3lzw6im6lpnkxhjg65g9fdjjqay6vy52ynznj"))))
-    (properties `((upstream-name . "Rcrawler")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-webdriver
-                             r-selectr
-                             r-jsonlite
-                             r-httr
-                             r-foreach
-                             r-doparallel
-                             r-data-table
-                             r-callr))
-    (home-page "https://github.com/salimk/Rcrawler/")
-    (synopsis "Web Crawler and Scraper")
-    (description
-     "This package performs parallel web crawling and web scraping.  It is designed to
-crawl, parse and store web pages to produce data that can be directly used for
-analysis application.  For details see Khalil and Fakir (2017)
-<DOI:10.1016/j.softx.2017.04.004>.")
-    (license license:gpl2+)))
-
 (define-public r-rcprd
   (package
     (name "r-rcprd")
@@ -46022,58 +45959,6 @@ objects from the Matrix package class hierarchy.")
 Edwards<https://edge.sagepub.com/pollock>, \"An R Companion to Political
 Analysis, 3rd Edition,\" Thousand Oaks, CA: Sage Publications.")
     (license license:cc0)))
-
-(define-public r-rcpa
-  (package
-    (name "r-rcpa")
-    (version "0.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RCPA" version))
-       (sha256
-        (base32 "0lihpwycp1xm9m1kb6xbr7ingw1qabgdn9za3f8prkqzpg223dg7"))))
-    (properties `((upstream-name . "RCPA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-summarizedexperiment
-                             r-stringr
-                             r-scales
-                             r-robustrankaggreg
-                             r-rlang
-                             r-limma
-                             r-jsonlite
-                             r-irdisplay
-                             r-httr
-                             r-graph
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggpattern
-                             r-ggnewscale
-                             r-geoquery
-                             r-edger
-                             r-dplyr
-                             r-deseq2
-                             r-biocmanager
-                             r-biobase
-                             r-annotationdbi))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=RCPA")
-    (synopsis "Consensus Pathway Analysis")
-    (description
-     "This package provides a set of functions to perform pathway analysis and
-meta-analysis from multiple gene expression datasets, as well as visualization
-of the results.  This package wraps functionality from the following packages:
-Ritchie et al. (2015) <doi:10.1093/nar/gkv007>, Love et al. (2014)
-<doi:10.1186/s13059-014-0550-8>, Robinson et al. (2010)
-<doi:10.1093/bioinformatics/btp616>, Korotkevich et al. (2016)
-<arxiv:10.1101/060012>, Efron et al. (2015)
-<https://CRAN.R-project.org/package=GSA>, and Gu et al. (2012)
-<https://CRAN.R-project.org/package=@code{CePa>}.")
-    (license license:gpl3)))
 
 (define-public r-rcorpora
   (package

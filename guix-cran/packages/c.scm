@@ -2626,13 +2626,13 @@ of GPU-accelerated machine learning libraries powered by CUDA
 (define-public r-cucumber
   (package
     (name "r-cucumber")
-    (version "1.2.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cucumber" version))
        (sha256
-        (base32 "0iym9xqi133imiaw4kfn22ifk4zmq04k0hlyw2iahqv3y80mnabp"))))
+        (base32 "0swsx0kmgs2vc53c27sfk3yzqbsqrnrj67vrycpcpjmydj94j6r6"))))
     (properties `((upstream-name . "cucumber")))
     (build-system r-build-system)
     (arguments
@@ -26503,13 +26503,13 @@ product model.")
 (define-public r-cocorresp
   (package
     (name "r-cocorresp")
-    (version "0.4-5")
+    (version "0.4-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cocorresp" version))
        (sha256
-        (base32 "02qzcaf9i55ncr71l9iapzdziqd76s9hljvn819kpvgscdhxdfhn"))))
+        (base32 "1m0z7i7vlj1iwpqrnv7gkzb2rd6q1nbhjf32vy6ycxnsbzlprp4l"))))
     (properties `((upstream-name . "cocorresp")))
     (build-system r-build-system)
     (arguments
@@ -27485,13 +27485,13 @@ and cables.  Results are visualized in an easy-to-understand risk matrix.")
 (define-public r-cna
   (package
     (name "r-cna")
-    (version "3.6.2")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cna" version))
        (sha256
-        (base32 "1jjq77a2zzzkzv6sgl7274c8chznwc59cv8gnph3xya2ysmybspq"))))
+        (base32 "14agpky8x1wx4n33xyldxs6qfpy622811qbhpgr6qj27g2ny62lb"))))
     (properties `((upstream-name . "cna")))
     (build-system r-build-system)
     (arguments
@@ -27504,13 +27504,15 @@ and cables.  Results are visualized in an easy-to-understand risk matrix.")
      "This package provides comprehensive functionalities for causal modeling with
 Coincidence Analysis (CNA), which is a configurational comparative method of
 causal data analysis that was first introduced in Baumgartner (2009)
-<doi:10.1177/0049124109339369>, and generalized in Baumgartner & Ambuehl (2018)
+<doi:10.1177/0049124109339369>, and generalized in Baumgartner & Ambuehl (2020)
 <doi:10.1017/psrm.2018.45>.  CNA is designed to recover INUS-causation from
 data, which is particularly relevant for analyzing processes featuring
 conjunctural causation (component causation) and equifinality (alternative
 causation).  CNA is currently the only method for INUS-discovery that allows for
 multiple effects (outcomes/endogenous factors), meaning it can analyze
-common-cause and causal chain structures.")
+common-cause and causal chain structures.  Moreover, as of version 4.0, it is
+the only method of its kind that provides measures for model evaluation and
+selection that are custom-made for the problem of INUS-discovery.")
     (license license:gpl2+)))
 
 (define-public r-cmvnorm
@@ -49859,13 +49861,13 @@ mrgsolve'.")
 (define-public r-campsis
   (package
     (name "r-campsis")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsis" version))
        (sha256
-        (base32 "0n2m57g7zrwbb2m6hjlx2n0rhxj325lpmjwhb107l67lqws0fbh1"))))
+        (base32 "0hz44hzdh9qd2k3bpvkxb2y4g9dp38p932vd26yf6pc66chf6kjk"))))
     (properties `((upstream-name . "campsis")))
     (build-system r-build-system)
     (arguments

@@ -341,13 +341,13 @@ experts.")
 (define-public r-kstio
   (package
     (name "r-kstio")
-    (version "0.4-1")
+    (version "0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kstIO" version))
        (sha256
-        (base32 "1g661k00cijlvz6gi7y48h0qqhphckcyn7r2321svn0pd1xslhwi"))))
+        (base32 "16ra4vrp12z60l4i95sjg5sj72ri2niwh39ahbxam3qhy5apj22l"))))
     (properties `((upstream-name . "kstIO")))
     (build-system r-build-system)
     (arguments

@@ -1999,13 +1999,13 @@ predictors.")
 (define-public r-unsystation
   (package
     (name "r-unsystation")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unsystation" version))
        (sha256
-        (base32 "02da7wzzk5bwd475i67v5x04ay2bn5yd5xffl1asqcqxcc5sy0m8"))))
+        (base32 "0j928sh0z0rnd43i1n3y4ywps3hwy8pvd8xnqvp8nxf6kk5pknjy"))))
     (properties `((upstream-name . "unsystation")))
     (build-system r-build-system)
     (arguments

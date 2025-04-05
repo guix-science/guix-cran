@@ -5816,13 +5816,13 @@ details see Hsu, L. and Wang, C. (2007). <doi:10.1016/j.techfore.2006.02.005>.")
 (define-public r-greybox
   (package
     (name "r-greybox")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greybox" version))
        (sha256
-        (base32 "0mykacbfj27ms7q89nqhisyvdrxkd0h1xiq8x7v64xvvkmp19nzn"))))
+        (base32 "0d5wwmxj2w6r5217wlgs5sa03l2yibar339p0z9qv3aa81a7piyy"))))
     (properties `((upstream-name . "greybox")))
     (build-system r-build-system)
     (arguments
@@ -9782,43 +9782,6 @@ Poisson regression model\".  Communications in Statistics - Theory and Methods,
 from GAMS code and comments.  In order to use the package you need to install
 pandoc and pandoc-citeproc first (<https://pandoc.org/>).")
     (license license:bsd-2)))
-
-(define-public r-goxplorer
-  (package
-    (name "r-goxplorer")
-    (version "1.2.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GOxploreR" version))
-       (sha256
-        (base32 "0878czn9fyjh52a8qwmffl47x1jy8pw4m35wzicxj7k7ck58ws9k"))))
-    (properties `((upstream-name . "GOxploreR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-network
-                             r-igraph
-                             r-gontr
-                             r-go-db
-                             r-ggraph
-                             r-ggplot2
-                             r-dplyr
-                             r-biomart
-                             r-annotate))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GOxploreR")
-    (synopsis
-     "Structural Exploration of the Gene Ontology (GO) Knowledge Base")
-    (description
-     "It provides an effective, efficient, and fast way to explore the Gene Ontology
-(GO).  Given a set of genes, the package contains functions to assess the GO and
-obtain the terms associated with the genes and the levels of the GO terms.  The
-package provides functions for the three different GO ontology.  We discussed
-the methods explicitly in the following article
-<doi:10.1038/s41598-020-73326-3>.")
-    (license license:gpl2)))
 
 (define-public r-goweragreement
   (package

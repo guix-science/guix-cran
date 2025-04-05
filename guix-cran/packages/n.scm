@@ -7813,13 +7813,13 @@ examples.")
 (define-public r-nlpwavelet
   (package
     (name "r-nlpwavelet")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NLPwavelet" version))
        (sha256
-        (base32 "1mlcn3aaw22x29bsy52n3j3n5ain95800y66m4lnvf9piq6c5lyc"))))
+        (base32 "0rfrvsp1i69fnpk7l8hy9nyvzdw23bvnc4khn86yqm3hdmsjq8by"))))
     (properties `((upstream-name . "NLPwavelet")))
     (build-system r-build-system)
     (arguments

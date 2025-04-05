@@ -26556,13 +26556,13 @@ regression coefficients by Hoff and Yu <DOI:10.1214/18-EJS1517>.")
 (define-public r-faasr
   (package
     (name "r-faasr")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FaaSr" version))
        (sha256
-        (base32 "1g75nkxj66wridz9lxy94w28fv89lk23q40n4m1id45fvs9bl2sk"))))
+        (base32 "0sfcbgad6ywylc51m2z9caqv5z9pij3gig0n6r0cpyrx8i3igfl1"))))
     (properties `((upstream-name . "FaaSr")))
     (build-system r-build-system)
     (arguments

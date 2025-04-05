@@ -852,13 +852,13 @@ information published on J-STAGE <https://www.jstage.jst.go.jp/browse/-char/ja>.
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.3.9")
+    (version "1.3.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstable" version))
        (sha256
-        (base32 "03wa1yvawm7czp4izga5bp2flzdh5iprvipk6k2r33fads4n853y"))))
+        (base32 "0w3vs6xdsvb3hbc9my3qn1sgl0r0nl9k4y3ajqzk0k5a4xpljjk1"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (arguments

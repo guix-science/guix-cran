@@ -11273,13 +11273,13 @@ Absolute Concentration Index) also accept individual and survey data.")
 (define-public r-healthdb
   (package
     (name "r-healthdb")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthdb" version))
        (sha256
-        (base32 "0d42g2jza57d2nmlydcvz84cxxl9hmj7hw776zg88r8z1ivw1byv"))))
+        (base32 "0i575r1jfxfddsx684m70c2dpz463jx2apqc2x2qic6lkv4fdc79"))))
     (properties `((upstream-name . "healthdb")))
     (build-system r-build-system)
     (arguments
@@ -15483,36 +15483,6 @@ sample GSEA\" of Barbie et al. (2009) <doi:10.1038/nature08460> and the
 \"singscore\" of Foroutan et al. (2018) <doi:10.1186/s12859-018-2435-4>.  The
 @code{get_sig_info()} function can be used to retrieve information about each
 signature implemented.")
-    (license license:expat)))
-
-(define-public r-hacksaw
-  (package
-    (name "r-hacksaw")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hacksaw" version))
-       (sha256
-        (base32 "1ls4l53bsaxyd6lwka9z9sb6ypa2ymbxpfxhsj9k966031jv2vk3"))))
-    (properties `((upstream-name . "hacksaw")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zeallot
-                             r-tidyselect
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=hacksaw")
-    (synopsis "Additional Tools for Splitting and Cleaning Data")
-    (description
-     "Move between data frames and lists more efficiently with precision splitting via
-dplyr verbs.  Easily cast variables to different data types.  Keep rows with
-NAs.  Shift row values.")
     (license license:expat)))
 
 (define-public r-hackernews

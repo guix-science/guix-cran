@@ -8087,13 +8087,13 @@ an implementation of multi-scale assessment as described in Riemann et al'.
 (define-public r-waypoint
   (package
     (name "r-waypoint")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Waypoint" version))
        (sha256
-        (base32 "1dixn8pnyhgf3blkg62yzhx3679nwbcsfrl8vnsz37fnk73gqkq8"))))
+        (base32 "0m2wvszszip0h5h8cymprcmvv33dk72hyi6vlpmn5p9594g8h3sp"))))
     (properties `((upstream-name . "Waypoint")))
     (build-system r-build-system)
     (arguments
@@ -9489,13 +9489,13 @@ Georgia Institute of Technology.
 (define-public r-warden
   (package
     (name "r-warden")
-    (version "0.99.1")
+    (version "0.99.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WARDEN" version))
        (sha256
-        (base32 "1aw6pd7lbn35fl2fdjgwbhjk5y44vx13xzxs34binic0gy03nqxg"))))
+        (base32 "1j0nll5d7fmb5h9bccf9fr16s5v2q7v421xr33c4bz4ahwr4sj8s"))))
     (properties `((upstream-name . "WARDEN")))
     (build-system r-build-system)
     (arguments
