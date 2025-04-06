@@ -15797,13 +15797,13 @@ disequilibrium.  For details see Manipur et al (2023)
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusMarine" version))
        (sha256
-        (base32 "06jx1lq3f2w1iyw500q8da9i8vbwqj5cqjb6i9cnm0syvcsqpixc"))))
+        (base32 "0nhrjwp3xav2hsaiiivyi9z6yqmhpwynnv6rgyxhw8rm1clkhwsx"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (arguments
@@ -43013,13 +43013,13 @@ is in no way officially related to or endorsed by Copernicus.")
 (define-public r-cdsampling
   (package
     (name "r-cdsampling")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDsampling" version))
        (sha256
-        (base32 "047k20c6vz1bhaja7hramz6kz4wsils0kcq9s7si001y695hcbp2"))))
+        (base32 "0s786ain5zk8la9kcvbv56c5w1rr9mxnxl19wgn3439i0da34kmn"))))
     (properties `((upstream-name . "CDsampling")))
     (build-system r-build-system)
     (arguments
@@ -43028,7 +43028,7 @@ is in no way officially related to or endorsed by Copernicus.")
     (propagated-inputs (list r-rglpk r-lpsolve))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=CDsampling")
-    (synopsis "'CDsampling': Constraint Sampling in Paid Research Studies")
+    (synopsis "Constrained Sampling in Paid Research Studies")
     (description
      "In the context of paid research studies and clinical trials, budget
 considerations and patient sampling from available populations are subject to

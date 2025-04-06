@@ -29975,13 +29975,13 @@ and to manipulate them after that.")
 (define-public r-datametprocess
   (package
     (name "r-datametprocess")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataMetProcess" version))
        (sha256
-        (base32 "0xg0g6rj46m99gkk3xp7h0la96hzp2ykli2pq7aim9fdjgzqyz05"))))
+        (base32 "0qhrjbaqzffwakm6iivzw8qyclmhni37z9c1nz3mbsp0xi7z0cph"))))
     (properties `((upstream-name . "DataMetProcess")))
     (build-system r-build-system)
     (arguments
@@ -29994,7 +29994,7 @@ and to manipulate them after that.")
     (description
      "Set of tools aimed at processing meteorological data, converting hourly recorded
 data to daily, monthly and annual data.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-datameta
   (package

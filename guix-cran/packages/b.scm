@@ -13850,13 +13850,13 @@ non-hierarchical clustering algorithms (Kreft & Jetz (2010)
 (define-public r-biorad
   (package
     (name "r-biorad")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioRad" version))
        (sha256
-        (base32 "15h5av72ynpcbcdn0vlyvika7q6i0jhj6mji453dhldmwp9pygga"))))
+        (base32 "19qngdvpsbfv2swmyfjy85mqkmp3wh88kckm769zj58wish0fmkk"))))
     (properties `((upstream-name . "bioRad")))
     (build-system r-build-system)
     (arguments
@@ -14570,40 +14570,41 @@ implications for the growth and form of living organisms.  Please see Shi et al.
 (define-public r-biogas
   (package
     (name "r-biogas")
-    (version "1.61")
+    (version "1.64.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biogas" version))
        (sha256
-        (base32 "18c3dn7a4gq6rlwq3wv28infrf11w7dzsb74map6n2cdvs9lf757"))))
+        (base32 "1a4l2916yifh7apy61scjycyr9na69dcxr98y9d6fsdvly9hffx4"))))
     (properties `((upstream-name . "biogas")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=biogas")
+    (home-page "https://github.com/sashahafner/biogas/")
     (synopsis "Process Biogas Data and Predict Biogas Production")
     (description
-     "High- and low-level functions for processing biogas data and predicting biogas
-production.  Molar mass and calculated oxygen demand (COD') can be determined
-from a chemical formula.  Measured gas volume can be corrected for water vapor
-and to (possibly user-defined) standard temperature and pressure.  Gas quantity
-can be converted between volume, mass, and moles.  Gas composition, cumulative
-production, or other variables can be interpolated to a specified time.
-Cumulative biogas and methane production (and rates) can be calculated from raw
-data obtained using volumetric, manometric, gravimetric, or gas density methods
-for any number of bottles.  With cumulative methane production data and data on
-bottle contents, biochemical methane potential (BMP) or specific methane
-production (SMP) can be calculated and summarized, including subtraction of the
-inoculum contribution and normalization by substrate mass.  Cumulative
-production and production rates can be summarized in several different ways
-(e.g., omitting normalization) using the same function.  Biogas quantity and
-composition can be predicted from substrate composition and additional, optional
-data.  Inoculum and substrate mass can be determined for planning BMP
-experiments.  Finally, first-order models can be fit to measurements in order to
-extract estimates of ultimate yield and kinetic constants.")
+     "This package provides functions for calculating biochemical methane potential
+(BMP) from laboratory measurements and other types of data processing and
+prediction useful for biogas research.  Raw laboratory measurements for diverse
+methods (volumetric, manometric, gravimetric, gas density) can be processed to
+calculate BMP. Theoretical maximum BMP or methane or biogas yield can be
+predicted from various measures of substrate composition.  Molar mass and
+calculated oxygen demand (COD') can be determined from a chemical formula.
+Measured gas volume can be corrected for water vapor and to standard (or
+user-defined) temperature and pressure.  Gas quantity can be converted between
+volume, mass, and moles.  A function for planning BMP experiments can consider
+multiple constraints in suggesting substrate or inoculum quantities, and check
+for problems.  Inoculum and substrate mass can be determined for planning BMP
+experiments.  Finally, a set of first-order models can be fit to measured
+methane production rate or cumulative yield in order to extract estimates of
+ultimate yield and kinetic constants.  See Hafner et al. (2018)
+<doi:10.1016/j.softx.2018.06.005> for details.  OBA is a web application that
+provides access to some of the package functionality:
+<https://biotransformers.shinyapps.io/oba1/>.  The Standard BMP Methods website
+documents the calculations in detail: <https://www.dbfz.de/en/BMP>.")
     (license license:gpl2)))
 
 (define-public r-biodry

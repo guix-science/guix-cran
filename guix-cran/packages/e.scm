@@ -1313,13 +1313,13 @@ those values that are true.")
 (define-public r-extrafrail
   (package
     (name "r-extrafrail")
-    (version "1.12")
+    (version "1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extrafrail" version))
        (sha256
-        (base32 "1j2i21mqqim3x8bn4fs7kb9dvzzvkjyhmwfgj459h4x39ih5pbmb"))))
+        (base32 "145xibidkkzfs0255nsngq01hjqdjc4s1zqg6yzmwqwwwmnd0i3k"))))
     (properties `((upstream-name . "extrafrail")))
     (build-system r-build-system)
     (arguments
@@ -1332,12 +1332,12 @@ those values that are true.")
     (description
      "Provide estimation and data generation tools for some new multivariate frailty
 models.  This version includes the gamma, inverse Gaussian, weighted Lindley,
-Birnbaum-Saunders, truncated normal, mixture of inverse Gaussian and mixture of
-Birnbaum-Saunders as the distribution for the frailty terms.  For the basal
-model, it is considered a parametric approach based on the exponential, Weibull
-and the piecewise exponential distributions as well as a semiparametric
-approach.  For details, see Gallardo and Bourguignon (2022)
-<doi:10.48550/@code{arXiv.2206.12973>} and Gallardo et al. (2024)
+Birnbaum-Saunders, truncated normal, mixture of inverse Gaussian, mixture of
+Birnbaum-Saunders and generalized exponential as the distribution for the
+frailty terms.  For the basal model, it is considered a parametric approach
+based on the exponential, Weibull and the piecewise exponential distributions as
+well as a semiparametric approach.  For details, see Gallardo and Bourguignon
+(2025) <doi:10.1002/bimj.70044> and Gallardo et al. (2024)
 <doi:10.1007/s11222-024-10458-w>.")
     (license license:gpl2+)))
 
@@ -5857,45 +5857,6 @@ evaluating a model.  Just by giving the real and predicted class, measures such
 as accuracy, sensitivity, specificity, ppv, npv, fmeasure, mcc and ...  will be
 returned.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-evaluatecore
-  (package
-    (name "r-evaluatecore")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EvaluateCore" version))
-       (sha256
-        (base32 "1cmway61p2cfl9101x30hvvvmzvg2asnf6378dkinr7dr5ymnkxm"))))
-    (properties `((upstream-name . "EvaluateCore")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-reshape2
-                             r-rdpack
-                             r-psych
-                             r-mathjaxr
-                             r-ksamples
-                             r-gridextra
-                             r-ggplot2
-                             r-ggcorrplot
-                             r-entropy
-                             r-dplyr
-                             r-cluster
-                             r-car
-                             r-boot
-                             r-agricolae))
-    (home-page "https://cran.r-project.org/package=EvaluateCore")
-    (synopsis "Quality Evaluation of Core Collections")
-    (description
-     "This package implements various quality evaluation statistics to assess the
-value of plant germplasm core collections using qualitative and quantitative
-phenotypic trait data according to Odong et al. (2015)
-<doi:10.1007/s00122-012-1971-y>.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-evalr
   (package
@@ -23030,13 +22991,13 @@ change.  Described in O'Brien et al. (2021), <doi:10.1016/j.ecoinf.2021.101374>.
 (define-public r-ecochange
   (package
     (name "r-ecochange")
-    (version "2.9.3.2")
+    (version "2.9.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecochange" version))
        (sha256
-        (base32 "0rrls354f45r7x5lrj3qk0pk02brjsndallhpfhxs3l5bsgg8d54"))))
+        (base32 "1hm1fqqs6zzxl9dwlfwwixrqn20561h8fdlzfnafkq18s16g3dgp"))))
     (properties `((upstream-name . "ecochange")))
     (build-system r-build-system)
     (arguments

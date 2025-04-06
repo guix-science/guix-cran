@@ -12428,13 +12428,13 @@ al (2016) <doi:10.1111/tpj.13242>; Xu S (2017) <doi:10.1534/g3.116.038059>).")
 (define-public r-predhy
   (package
     (name "r-predhy")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predhy" version))
        (sha256
-        (base32 "0s38gzbynvllf4fi1mrjd2yj24sc091gi5cd8vbj63pl8qkbfjjc"))))
+        (base32 "1hxssaa6fr2ag82lw1l4gy40gc2n6viill76yiilxzi7wrr2dq7s"))))
     (properties `((upstream-name . "predhy")))
     (build-system r-build-system)
     (arguments
@@ -12450,11 +12450,12 @@ al (2016) <doi:10.1111/tpj.13242>; Xu S (2017) <doi:10.1534/g3.116.038059>).")
     (home-page "https://cran.r-project.org/package=predhy")
     (synopsis "Genomic Prediction of Hybrid Performance")
     (description
-     "This package performs genomic prediction of hybrid performance using eight GS
-methods including GBLUP, @code{BayesB}, RKHS, PLS, LASSO, Elastic net,
-@code{LightGBM} and XGBoost.  It also provides fast cross-validation and mating
-design scheme for training population (Xu S et al (2016)
-<doi:10.1111/tpj.13242>; Xu S (2017) <doi:10.1534/g3.116.038059>).")
+     "This package performs genomic prediction of hybrid performance using eight
+statistical methods including GBLUP, @code{BayesB}, RKHS, PLS, LASSO, EN,
+@code{LightGBM} and XGBoost along with additive and additive-dominance models.
+Users are able to incorporate parental phenotypic information in all methods
+based on their specific needs. (Xu S et al(2017) <doi:10.1534/g3.116.038059>; Xu
+Y et al (2021) <doi: 10.1111/pbi.13458>).")
     (license license:gpl3)))
 
 (define-public r-predfairness
@@ -41927,30 +41928,6 @@ Tukey g-&-h distributions are supported, for now.")
     (description
      "Create a parallel coordinates plot, using `htmlwidgets` package and `d3.js`.")
     (license license:expat)))
-
-(define-public r-parallelpc
-  (package
-    (name "r-parallelpc")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ParallelPC" version))
-       (sha256
-        (base32 "07y7xb16865khxkvwsk1yglzyy7ja4aj2wpkipaz48i77c3x8bi2"))))
-    (properties `((upstream-name . "ParallelPC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=ParallelPC")
-    (synopsis
-     "Paralellised Versions of Constraint Based Causal Discovery Algorithms")
-    (description
-     "Parallelise constraint based causality discovery and causal inference methods.
-The parallelised algorithms in the package will generate the same results as
-that of the pcalg package but will be much more efficient.")
-    (license license:gpl2+)))
 
 (define-public r-parallelpam
   (package

@@ -3364,35 +3364,6 @@ functionalities for interfacing with Julia from R powered by the
 @code{JuliaConnectoR} package.")
     (license license:expat)))
 
-(define-public r-jlme
-  (package
-    (name "r-jlme")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jlme" version))
-       (sha256
-        (base32 "1xfz8x6vxfcia12vwyzfz4zwyh75fd37bjwwykwa8ap3hidf85zj"))))
-    (properties `((upstream-name . "jlme")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list julia))
-    (propagated-inputs (list r-mass r-juliaformulae r-juliaconnector
-                             r-generics))
-    (home-page "https://yjunechoe.github.io/jlme/")
-    (synopsis
-     "Regression Modelling with 'GLM.jl' and 'MixedModels.jl' in 'Julia'")
-    (description
-     "Bindings to Julia packages GLM.jl <doi:10.5281/zenodo.3376013> and
-@code{MixedModels.jl} <doi:10.5281/zenodo.12575371>, powered by
-@code{JuliaConnectoR}'.  Fits (generalized) linear (mixed-effects) regression
-models in Julia using familiar model fitting syntax from R. Offers broom'-style
-data frame summary functionalities for Julia regression models.")
-    (license license:expat)))
-
 (define-public r-jlctree
   (package
     (name "r-jlctree")

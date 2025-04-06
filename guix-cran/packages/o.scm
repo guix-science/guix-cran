@@ -2226,6 +2226,33 @@ For additional detail see: Haneuse S, Saegusa T and Lumley T
 (2011)<doi:10.18637/jss.v043.i11>.")
     (license license:gpl3+)))
 
+(define-public r-osdatahub
+  (package
+    (name "r-osdatahub")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osdatahub" version))
+       (sha256
+        (base32 "1hnj8m8sdmi339gxl4pn87gpib9l1kn8ry0zlh7lncx0vjz77mnf"))))
+    (properties `((upstream-name . "osdatahub")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr r-geos r-geojsonsf))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=osdatahub")
+    (synopsis "Easier Interaction with the Ordnance Survey Data Hub")
+    (description
+     "Ordnance Survey ('OS') is the national mapping agency for Great Britain and
+produces a large variety of mapping and geospatial products.  Much of OS's data
+is available via the OS Data Hub <https://osdatahub.os.uk/>, a platform that
+hosts both free and premium data products.  osdatahub provides a user-friendly
+way to access, query, and download these data.")
+    (license license:expat)))
+
 (define-public r-osd
   (package
     (name "r-osd")
@@ -4178,13 +4205,13 @@ classification.")
 (define-public r-orcamentobr
   (package
     (name "r-orcamentobr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orcamentoBR" version))
        (sha256
-        (base32 "0hpc3paw6vd01j4066l8mk26k5ybnpqqbvqlpmp2g4yjby0762nq"))))
+        (base32 "1fjscbhhf6p8mhp50rm77yczpq4jfsh3g36zhlyzj3bzmfspg49m"))))
     (properties `((upstream-name . "orcamentoBR")))
     (build-system r-build-system)
     (arguments
@@ -7560,19 +7587,19 @@ into R.")
 (define-public r-openalexr
   (package
     (name "r-openalexr")
-    (version "1.4.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openalexR" version))
        (sha256
-        (base32 "14bhwbkwxaj8vjrix7klhqqxrfkaybd83dxkvxhpnsfr7yqhls3q"))))
+        (base32 "0kbd1zfky5rvz6f2nji86m4r7m35i4gi4vih1aqyfv7wdnah47dp"))))
     (properties `((upstream-name . "openalexR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-progress r-jsonlite r-httr))
+    (propagated-inputs (list r-tibble r-rlang r-progress r-jsonlite r-httr))
     (home-page "https://github.com/ropensci/openalexR")
     (synopsis
      "Getting Bibliographic Records from 'OpenAlex' Database Using 'DSL' API")

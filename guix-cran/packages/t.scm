@@ -7994,19 +7994,20 @@ performance converting to polynomials and calculating distances.")
 (define-public r-treeminer
   (package
     (name "r-treeminer")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeMineR" version))
        (sha256
-        (base32 "0i3zwr2gx09zpa77cmc6h5cyahdch97bpvyhbfn5l67fxmyjm7l9"))))
+        (base32 "18d1y5sf871sbp1yhsc9ji27a8hly5g7qv0jxy2apml44i1003iw"))))
     (properties `((upstream-name . "TreeMineR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-future-apply r-future r-data-table r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://entjos.github.io/TreeMineR/")
     (synopsis "Tree-Based Scan Statistics")
     (description
@@ -15559,13 +15560,13 @@ of lenses, see the lens package wiki:
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
-    (version "0.5.4")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinycodet" version))
        (sha256
-        (base32 "0346swvcaiwvik30j5fcmbp4d9hxx4c7fkfbv3war17p81kmphxx"))))
+        (base32 "0sz2j3n8cidqlflphlk4x4mwhw0n8jw69zzpqjl596j9rx6fbc5b"))))
     (properties `((upstream-name . "tinycodet")))
     (build-system r-build-system)
     (arguments

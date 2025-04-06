@@ -12334,40 +12334,6 @@ custom requests, thereby enhancing usability and flexibility for researchers.")
 files and perform some structural manipulations.")
     (license license:gpl3+)))
 
-(define-public r-rpcss
-  (package
-    (name "r-rpcss")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rpcss" version))
-       (sha256
-        (base32 "111ya5cqdwhp0rl24cghsi2gc6wa685k5kcznj1pjbgr0z18gbrz"))))
-    (properties `((upstream-name . "rpcss")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rdpack
-                             r-mathjaxr
-                             r-gslnls
-                             r-ggrepel
-                             r-ggplot2
-                             r-factominer
-                             r-dplyr))
-    (home-page "https://github.com/aravind-j/rpcss")
-    (synopsis
-     "Constitution of Core Collections by Principal Component Scoring Strategy")
-    (description
-     "Generate a Core Collection with Principal Component Scoring Strategy (PCSS)
-using qualitative and/or quantitative trait data according to Hamon and Noirot
-(1990) <https://www.documentation.ird.fr/hor/fdi:36506>, Noirot et al. (1996)
-<doi:10.2307/2527837> and Noirot et al. (2003)
-<https://www.documentation.ird.fr/hor/fdi:010031886>.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-rpca
   (package
     (name "r-rpca")
@@ -34237,13 +34203,13 @@ Marie-Sainte and is included in the package.")
 (define-public r-reporttools
   (package
     (name "r-reporttools")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reporttools" version))
        (sha256
-        (base32 "0sx89qb66lczmzcsybxac4razcncf2xcxr0vfkvb3f8jqc7xwcik"))))
+        (base32 "13xch49mzjjvydm52p6kqf7vgby1s28gn8xcig3i33fgb0d2v50v"))))
     (properties `((upstream-name . "reporttools")))
     (build-system r-build-system)
     (arguments
@@ -39391,13 +39357,13 @@ obtain updated taxonomic details, and explore the dataset.")
 (define-public r-redatamx
   (package
     (name "r-redatamx")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redatamx" version))
        (sha256
-        (base32 "19qlm5pq3cyc2rb069pd2ygxic964q5zzkhsr7749vbbgx5ydvx8"))))
+        (base32 "1yiws2szcnakl05wb0vs51rpz0isvxk6g6nln4hlhgzpnqj3y9ma"))))
     (properties `((upstream-name . "redatamx")))
     (build-system r-build-system)
     (arguments
@@ -49547,13 +49513,13 @@ methods.  References: Siddiqi, N. (2006) <doi:10.1002/9781119201731.biblio>.")
 (define-public r-rbiascorrection
   (package
     (name "r-rbiascorrection")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rBiasCorrection" version))
        (sha256
-        (base32 "1ivxxw7jf1s95abjwc794mqklkvlgvgyyb6ii99x6mnga6flh11n"))))
+        (base32 "1xyr11jmx1lphim0825a6dgxzc9mx6p14s32lqdalsrzx4pkd0wa"))))
     (properties `((upstream-name . "rBiasCorrection")))
     (build-system r-build-system)
     (arguments
@@ -49561,12 +49527,13 @@ methods.  References: Siddiqi, N. (2006) <doi:10.1002/9781119201731.biblio>.")
       #:tests? #f))
     (propagated-inputs (list r-polynom
                              r-nls2
+                             r-minpack-lm
                              r-magrittr
                              r-ggplot2
                              r-future-apply
                              r-future
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://github.com/kapsner/rBiasCorrection")
     (synopsis "Correct Bias in DNA Methylation Analyses")
     (description
@@ -49574,7 +49541,7 @@ methods.  References: Siddiqi, N. (2006) <doi:10.1002/9781119201731.biblio>.")
 quantitative DNA methylation analyses as described by Moskalev et al. (2011)
 <doi:10.1093/nar/gkr213>.  Publication: Kapsner et al. (2021)
 <doi:10.1002/ijc.33681>.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-rbi-helpers
   (package
@@ -54599,42 +54566,6 @@ specified by robust adaptive Metropolis algorithm by Vihola (2012)
 rank-one Cholesky update and downdate.  These functions can be used directly
 from R or the corresponding C++ header files can be easily linked to other R
 packages.")
-    (license license:gpl2+)))
-
-(define-public r-ramclustr
-  (package
-    (name "r-ramclustr")
-    (version "1.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RAMClustR" version))
-       (sha256
-        (base32 "0mlizk0rga6mprp4n2ff12yamvfsfk9v46d94ra6ld0i2jxm84fd"))))
-    (properties `((upstream-name . "RAMClustR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-webchem
-                             r-stringr
-                             r-pcamethods
-                             r-jsonlite
-                             r-httr
-                             r-gplots
-                             r-ggplot2
-                             r-fastcluster
-                             r-e1071
-                             r-dynamictreecut))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/cbroeckl/RAMClustR")
-    (synopsis
-     "Mass Spectrometry Metabolomics Feature Clustering and Interpretation")
-    (description
-     "This package provides a feature clustering algorithm for non-targeted mass
-spectrometric metabolomics data.  This method is compatible with gas and liquid
-chromatography coupled mass spectrometry, including indiscriminant tandem mass
-spectrometry data <DOI: 10.1021/ac501530d>.")
     (license license:gpl2+)))
 
 (define-public r-ramchoice

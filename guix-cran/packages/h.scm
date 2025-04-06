@@ -3054,13 +3054,13 @@ and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
 (define-public r-htgm
   (package
     (name "r-htgm")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HTGM" version))
        (sha256
-        (base32 "1scis0yb0b9djcvirz2rsqh78hk39c5k937m7mssld94lwdav567"))))
+        (base32 "183q7rdygkymv6glf668f7yql41fmk0a2dq4f04kbw5qvjf393y7"))))
     (properties `((upstream-name . "HTGM")))
     (build-system r-build-system)
     (arguments
@@ -3338,13 +3338,13 @@ Bivand and Piras, (2015) <doi:10.18637/jss.v063.i18>, Drukker et al., (2013)
 (define-public r-hsphase
   (package
     (name "r-hsphase")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hsphase" version))
        (sha256
-        (base32 "18fd5g79m0d2f5b7j289wz6z5ypq2404vhnvv9jk45897f5mc4lf"))))
+        (base32 "077cdnd9d2d8jdjcbvp494asbxk2pckvrznd2341lg4yp6kx5g17"))))
     (properties `((upstream-name . "hsphase")))
     (build-system r-build-system)
     (arguments

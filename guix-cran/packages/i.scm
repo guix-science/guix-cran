@@ -14888,13 +14888,13 @@ and recoding data.")
 (define-public r-ijtiff
   (package
     (name "r-ijtiff")
-    (version "3.1.1")
+    (version "3.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ijtiff" version))
        (sha256
-        (base32 "1w51ql8l3hgyjfajpx0nn8qb7mq4w88srn182dssapgk85cmwis3"))))
+        (base32 "0m7fz4mpwkha2bgfbvc6x7kk5xarvnv14gfy62kdjkcnmf5awsq0"))))
     (properties `((upstream-name . "ijtiff")))
     (build-system r-build-system)
     (arguments

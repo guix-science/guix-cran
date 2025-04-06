@@ -24318,13 +24318,13 @@ details see Saad M and Wijsman EM (2014) <doi:10.1002/gepi.21844>.")
 (define-public r-famos
   (package
     (name "r-famos")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAMoS" version))
        (sha256
-        (base32 "14gr9wv9bpibk0rrzzwijvdncx1fgnpbv55nqzbb4jhq7fdckmsa"))))
+        (base32 "1dfpn8lldcck5ib5dqc6xh6vwi77576ydx21f7f2r1x8dr65h5h8"))))
     (properties `((upstream-name . "FAMoS")))
     (build-system r-build-system)
     (arguments

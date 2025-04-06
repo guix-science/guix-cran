@@ -13479,49 +13479,6 @@ implements the methodological developments in Behrouzi and Wit (2017)
 <doi:10.1093/bioinformatics/bty777>.")
     (license license:gpl3)))
 
-(define-public r-netfacs
-  (package
-    (name "r-netfacs")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NetFACS" version))
-       (sha256
-        (base32 "05lqfawirdw4fh0hawm815hjdpyli7025dz3a5fsm6jh3l906z9i"))))
-    (properties `((upstream-name . "NetFACS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-tidyr
-                             r-tidygraph
-                             r-tibble
-                             r-rlang
-                             r-rfast
-                             r-picante
-                             r-patchwork
-                             r-magrittr
-                             r-igraph
-                             r-ggraph
-                             r-ggplot2
-                             r-dplyr
-                             r-doparallel
-                             r-arrangements))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=NetFACS")
-    (synopsis "Network Applications to Facial Communication Data")
-    (description
-     "This package provides functions to analyze and visualize communication data,
-based on network theory and resampling methods.  Farine, D. R. (2017)
-<doi:10.1111/2041-210X.12772>; Carsey, T., & Harden, J. (2014)
-<doi:10.4135/9781483319605>.  Primarily targeted at datasets of facial
-expressions coded with the Facial Action Coding System.  Ekman, P., Friesen, W.
-V., & Hager, J. C. (2002). \"Facial action coding system - investigator's guide\"
-<https://www.paulekman.com/facial-action-coding-system/>.")
-    (license license:asl2.0)))
-
 (define-public r-netexplorer
   (package
     (name "r-netexplorer")

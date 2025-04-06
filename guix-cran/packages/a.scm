@@ -18195,13 +18195,13 @@ must provision your own key for the @code{OpenAI} API
 (define-public r-aipw
   (package
     (name "r-aipw")
-    (version "0.6.3.2")
+    (version "0.6.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AIPW" version))
        (sha256
-        (base32 "1iqq665qigw9dmc62x2dz1nvrk8s65ph0a3k2p7mkznr9frshhi2"))))
+        (base32 "01nggnpdlzzwd9vcfgivn5qdsr2s7810b7zqzwpg10j10bj9qfi1"))))
     (properties `((upstream-name . "AIPW")))
     (build-system r-build-system)
     (arguments
@@ -18217,12 +18217,12 @@ must provision your own key for the @code{OpenAI} API
     (home-page "https://github.com/yqzhong7/AIPW")
     (synopsis "Augmented Inverse Probability Weighting")
     (description
-     "The AIPW pacakge implements the augmented inverse probability weighting, a
+     "The AIPW package implements the augmented inverse probability weighting, a
 doubly robust estimator, for average causal effect estimation with user-defined
 stacked machine learning algorithms.  To cite the AIPW package, please use:
-\"Yongqi Zhong, Edward H. Kennedy, Lisa M. Bodnar, Ashley I. Naimi (2021, In
-Press).  AIPW: An R Package for Augmented Inverse Probability Weighted
-Estimation of Average Causal Effects.  American Journal of Epidemiology\".
+\"Yongqi Zhong, Edward H. Kennedy, Lisa M. Bodnar, Ashley I. Naimi (2021).  AIPW:
+An R Package for Augmented Inverse Probability Weighted Estimation of Average
+Causal Effects.  American Journal of Epidemiology. <doi:10.1093/aje/kwab207>\".
 Visit: <https://yqzhong7.github.io/AIPW/> for more information.")
     (license license:gpl3)))
 
@@ -25927,13 +25927,13 @@ toolkit in your work, please cite the paper.")
 (define-public r-abms
   (package
     (name "r-abms")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "abms" version))
        (sha256
-        (base32 "01vhj27yv411w8rf6k38giwmmzc81knwqnlk65a12gpmcpx8r86f"))))
+        (base32 "1v5pc5sacw3yb0r7x55iaf14pf5ck7h2mm07ssp92lxm2ivh58f6"))))
     (properties `((upstream-name . "abms")))
     (build-system r-build-system)
     (arguments
@@ -26140,13 +26140,13 @@ original MATLAB routine proposed in Wang (2012) <doi:10.1214/12-BA729>.")
 (define-public r-abess
   (package
     (name "r-abess")
-    (version "0.4.9")
+    (version "0.4.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "abess" version))
        (sha256
-        (base32 "19zw9f5z4m6951gm9bg03lilbpnxz6yi0sf14gqw3aym60r49wm4"))))
+        (base32 "0bhqj744bgdhxvrz6pbkl1rn792sa8grcxl7g125plv11rq05psa"))))
     (properties `((upstream-name . "abess")))
     (build-system r-build-system)
     (arguments

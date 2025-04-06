@@ -2440,13 +2440,13 @@ as Kendall tau correlation or sensitivity.")
 (define-public r-gt
   (package
     (name "r-gt")
-    (version "0.11.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gt" version))
        (sha256
-        (base32 "0njzpj57afvbi7jsbpb0j1mgm1nz01bd25668gsmvpd7lajm7ig0"))))
+        (base32 "06sq5gscf16nkygnfmchg0kjbrd07qyybyg7mqzz0m3a0g81pskf"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
     (arguments
@@ -8674,13 +8674,13 @@ relevant local GPs.")
 (define-public r-gptr
   (package
     (name "r-gptr")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gptr" version))
        (sha256
-        (base32 "17kf5azrm8xhc26pkv7fsqlfw1430h6024n3nz01kfmjyjqs348m"))))
+        (base32 "01a09sfn1mhxfpz5jq4cc5mig1jhsil9kzb1ybixnn7xxy3q71r4"))))
     (properties `((upstream-name . "gptr")))
     (build-system r-build-system)
     (arguments
@@ -9782,6 +9782,43 @@ Poisson regression model\".  Communications in Statistics - Theory and Methods,
 from GAMS code and comments.  In order to use the package you need to install
 pandoc and pandoc-citeproc first (<https://pandoc.org/>).")
     (license license:bsd-2)))
+
+(define-public r-goxplorer
+  (package
+    (name "r-goxplorer")
+    (version "1.2.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GOxploreR" version))
+       (sha256
+        (base32 "1i1sx4rm6qddxl4pgdpi43xdzjc274j91md2br53075fa0s6hk1k"))))
+    (properties `((upstream-name . "GOxploreR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-network
+                             r-igraph
+                             r-gontr
+                             r-go-db
+                             r-ggraph
+                             r-ggplot2
+                             r-dplyr
+                             r-biomart
+                             r-annotate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GOxploreR")
+    (synopsis
+     "Structural Exploration of the Gene Ontology (GO) Knowledge Base")
+    (description
+     "It provides an effective, efficient, and fast way to explore the Gene Ontology
+(GO).  Given a set of genes, the package contains functions to assess the GO and
+obtain the terms associated with the genes and the levels of the GO terms.  The
+package provides functions for the three different GO ontology.  We discussed
+the methods explicitly in the following article
+<doi:10.1038/s41598-020-73326-3>.")
+    (license license:gpl2)))
 
 (define-public r-goweragreement
   (package
@@ -21336,26 +21373,32 @@ system.")
 (define-public r-gghourglass
   (package
     (name "r-gghourglass")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gghourglass" version))
        (sha256
-        (base32 "10gbc9fxdgx5nxi9ca4w99bdr2b04rzli9iw5waxf6k3yj3g4m99"))))
+        (base32 "1ymn39yll2hrdpf051xkbi9qs07xiv8gqp909cm8r6fsy0v68kmx"))))
     (properties `((upstream-name . "gghourglass")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-suncalc r-rlang r-lubridate r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-suncalc
+                             r-rlang
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://pepijn-devries.github.io/gghourglass/")
     (synopsis "Plot Records per Time of Day")
     (description
      "Splits date and time of day components from continuous datetime objects, then
 plots them using grammar of graphics ('ggplot2').  Plots can also be decorated
 with solar cycle information (e.g., sunset, sunrise, etc.).  This is useful for
-data that are associated with the solar cycle.")
+visualising data that are associated with the solar cycle.")
     (license license:gpl3+)))
 
 (define-public r-gghoriplot

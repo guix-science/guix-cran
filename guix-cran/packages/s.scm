@@ -32584,13 +32584,13 @@ Collaborative Research on Sustainable Intensification (SIIL) projects.")
 (define-public r-soiltaxonomy
   (package
     (name "r-soiltaxonomy")
-    (version "0.2.4")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SoilTaxonomy" version))
        (sha256
-        (base32 "19rm7gmp6ya1fq1plmajjp8w8hf5q0j0va5flvpj39i2by3w3xrc"))))
+        (base32 "057hcd7013y0s1xg0x3233phy0wrz4cp565djdyynm8pkhx4wiq7"))))
     (properties `((upstream-name . "SoilTaxonomy")))
     (build-system r-build-system)
     (arguments
@@ -32922,13 +32922,13 @@ distribution by Perfect et al. (1992)
 (define-public r-soildb
   (package
     (name "r-soildb")
-    (version "2.8.8")
+    (version "2.8.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilDB" version))
        (sha256
-        (base32 "16g9bkjk4cxpyawca9apssvv1cpr9crh0nwri1sfcbdzlw57mlc2"))))
+        (base32 "19vsikdm05l7w3q6k0mzgfirwbch0px2jwkqkpaami34phkw28yb"))))
     (properties `((upstream-name . "soilDB")))
     (build-system r-build-system)
     (arguments
@@ -35284,13 +35284,13 @@ permutations\" <@code{arXiv:2111.04681>}.")
 (define-public r-smoothtail
   (package
     (name "r-smoothtail")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smoothtail" version))
        (sha256
-        (base32 "1sqkwniz9m03k23nba9ndmdm0g03mdshzm8risr6wz98jcqjilrk"))))
+        (base32 "0xwng36cv569nj7x2gg8w1j93r3jhn6gyrg462vvfi91f9cfa14j"))))
     (properties `((upstream-name . "smoothtail")))
     (build-system r-build-system)
     (arguments
@@ -39348,13 +39348,13 @@ Gamma regression.")
 (define-public r-skewmlrm
   (package
     (name "r-skewmlrm")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skewMLRM" version))
        (sha256
-        (base32 "16gr0haag0pqw7k7nvfqlc6s5i92lkpd0ghkgvlwgql8jzw7zmlk"))))
+        (base32 "09jx1hj9s83blg0rywjpyxks5hijg4yn456286ycam64w0cj0fcj"))))
     (properties `((upstream-name . "skewMLRM")))
     (build-system r-build-system)
     (arguments
@@ -58741,13 +58741,13 @@ goodness of fit.")
 (define-public r-selectmeta
   (package
     (name "r-selectmeta")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "selectMeta" version))
        (sha256
-        (base32 "0i0wzx5ggd60y26lnn4qk4n8h27ahll9732026ppks1djx14cdy0"))))
+        (base32 "1baj6fm8152dpwdkyfyfl346p6xndqzkq390h7h5kj09mm8dnr14"))))
     (properties `((upstream-name . "selectMeta")))
     (build-system r-build-system)
     (arguments
@@ -72677,19 +72677,20 @@ using modified approach proposed by Haris F and Ubaidillah A
 (define-public r-sae-projection
   (package
     (name "r-sae-projection")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sae.projection" version))
        (sha256
-        (base32 "0vs4hdv2kpfkjxqpp1ml5vbvs7x0s07i93al38j7vb8k6ghg6f67"))))
+        (base32 "0qbpr5xc9a2mlflncc3wq73ciim823dmxxljawcmml8pf6lhihh8"))))
     (properties `((upstream-name . "sae.projection")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-yardstick
+                             r-xgboost
                              r-workflows
                              r-tune
                              r-tidymodels
@@ -72702,6 +72703,8 @@ using modified approach proposed by Haris F and Ubaidillah A
                              r-randomforest
                              r-parsnip
                              r-lightgbm
+                             r-glmnet
+                             r-fselector
                              r-dplyr
                              r-doparallel
                              r-cli
