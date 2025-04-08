@@ -16319,35 +16319,6 @@ electrode Fz restricted to the 100 to 175 millisecond time window; and (3)
 plotting data generated from a linear mixed-effects model.")
     (license license:gpl2)))
 
-(define-public r-lcf
-  (package
-    (name "r-lcf")
-    (version "1.7.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LCF" version))
-       (sha256
-        (base32 "1n5gwnkj26b7w6bzapda049bd4aqb317cip05nf0vy04xjc8giyc"))))
-    (properties `((upstream-name . "LCF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-quadprog))
-    (home-page "https://cran.r-project.org/package=LCF")
-    (synopsis "Linear Combination Fitting")
-    (description
-     "Baseline correction, normalization and linear combination fitting (LCF) of X-ray
-absorption near edge structure (XANES) spectra.  The package includes data
-loading of .xmu files exported from ATHENA (Ravel and Newville, 2005)
-<doi:10.1107/S0909049505012719>.  Loaded spectra can be background corrected and
-all standards can be fitted at once.  Two linear combination fitting functions
-can be used: (1) @code{fit_athena()}: Simply fitting combinations of standards
-as in ATHENA, (2) @code{fit_float()}: Fitting all standards with changing
-baseline correction and edge-step normalization parameters.")
-    (license license:gpl3)))
-
 (define-public r-lcda
   (package
     (name "r-lcda")

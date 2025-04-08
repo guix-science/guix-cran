@@ -32,6 +32,9 @@
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages databases)
   #:use-module (gnu packages documentation)
+  #:use-module (gnu packages version-control)
+  #:use-module (gnu packages mpi)
+  #:use-module (gnu packages base)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages tbb)
   #:use-module (guix-cran packages z)
@@ -2375,13 +2378,13 @@ queues, local caching, and sophisticated error handling.")
 (define-public r-runuran
   (package
     (name "r-runuran")
-    (version "0.40")
+    (version "0.41")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Runuran" version))
        (sha256
-        (base32 "1ws0za51p3w9ky8f763b0x82iil21cd01w4334jb2daxjhl58071"))))
+        (base32 "0vvrgf4ig6g84xpx840d5lb1d3kq78v43z71yxkr1g0z0888khdm"))))
     (properties `((upstream-name . "Runuran")))
     (build-system r-build-system)
     (arguments
@@ -7656,13 +7659,13 @@ rstac'.")
 (define-public r-rshift
   (package
     (name "r-rshift")
-    (version "3.1.1")
+    (version "3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rshift" version))
        (sha256
-        (base32 "103sadb3fz6xysxmz1i3zvjawvb8wsdr2632f5m1rqibknjb6l94"))))
+        (base32 "14wj66zhw7ff6zbhsl0hwmfh925bzr0hg2wd4nmds9pjl3jspqb7"))))
     (properties `((upstream-name . "rshift")))
     (build-system r-build-system)
     (arguments
@@ -25852,25 +25855,27 @@ ensures findability, accessibility, interoperability, and reusability of data.")
 (define-public r-ripserr
   (package
     (name "r-ripserr")
-    (version "0.1.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ripserr" version))
        (sha256
-        (base32 "1rwsd1yi5vrzdscjgr27fw0d1a6nkc8g2w5hqgqijiwm25h4wl17"))))
+        (base32 "1w663pfhbna3j90cnhb1agp5ppkbyl3rlbqsa52inc93bcpr3ias"))))
     (properties `((upstream-name . "ripserr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp))
-    (home-page "https://rrrlw.github.io/ripserr/")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tdaverse/ripserr/")
     (synopsis "Calculate Persistent Homology with Ripser-Based Engines")
     (description
-     "Ports the Ripser <@code{arXiv:1908.02518>} and Cubical Ripser
-<@code{arXiv:2005.12692>} persistent homology calculation engines from C++.  Can
-be used as a rapid calculation tool in topological data analysis pipelines.")
+     "Ports the Ripser <doi:10.48550/@code{arXiv.1908.02518>} and Cubical Ripser
+<doi:10.48550/@code{arXiv.2005.12692>} persistent homology calculation engines
+from C++.  Can be used as a rapid calculation tool in topological data analysis
+pipelines.")
     (license license:gpl3)))
 
 (define-public r-ripc
@@ -41874,13 +41879,13 @@ false discovery rate.")
 (define-public r-reactran
   (package
     (name "r-reactran")
-    (version "1.4.3.1")
+    (version "1.4.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReacTran" version))
        (sha256
-        (base32 "05c9jfvj134gy3by7m3r1fbar0m39vaydr7d2py9cakzs44fqfpj"))))
+        (base32 "0nh13v1v3568dp39sl4imv69wpf8mqpzf3773q7c6qx0dlf3d1pn"))))
     (properties `((upstream-name . "ReacTran")))
     (build-system r-build-system)
     (arguments
@@ -44955,6 +44960,37 @@ the header-only Quantuccia project (put together initially by Peter Caspers)
 offering an essential subset of @code{QuantLib} (and now maintained separately
 for the calendaring subset).  See the included file AUTHORS for a full list of
 contributors to both @code{QuantLib} and Quantuccia'.")
+    (license license:gpl2+)))
+
+(define-public r-rcppplanc
+  (package
+    (name "r-rcppplanc")
+    (version "2.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RcppPlanc" version))
+       (sha256
+        (base32 "0nd87vzya49gmvbbl65cxx8dcf5xiliwblqlbh1g15djmi0i3xk6"))))
+    (properties `((upstream-name . "RcppPlanc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list patch hwloc hdf5 git))
+    (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-matrix
+                             r-hdf5r-extra))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RcppPlanc")
+    (synopsis "Parallel Low-Rank Approximation with Nonnegativity Constraints")
+    (description
+     "Rcpp bindings for PLANC', a highly parallel and extensible NMF/NTF (Non-negative
+Matrix/Tensor Factorization) library.  Wraps algorithms described in Kannan et.
+al (2018) <doi:10.1109/TKDE.2017.2767592> and Eswar et.  al (2021)
+<doi:10.1145/3432185>.  Implements algorithms described in Welch et al. (2019)
+<doi:10.1016/j.cell.2019.05.006>, Gao et al. (2021)
+<doi:10.1038/s41587-021-00867-x>, and Kriebel & Welch (2022)
+<doi:10.1038/s41467-022-28431-4>.")
     (license license:gpl2+)))
 
 (define-public r-rcppnloptexample
@@ -52375,13 +52411,13 @@ designed to create, modify and run apsimx files in the APSIM Next Generation
 (define-public r-rapport
   (package
     (name "r-rapport")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rapport" version))
        (sha256
-        (base32 "14cbi3yag91lnr1yrbk8ra6j615z5a6h136dj3r6v628qahrhmsg"))))
+        (base32 "1b8mmc4js045yjfrm16djc0rkh4l18axs2cg4wjjwlqsnif6jdd4"))))
     (properties `((upstream-name . "rapport")))
     (build-system r-build-system)
     (arguments
@@ -53129,13 +53165,13 @@ monotonically-transformed data.")
 (define-public r-rankcorr
   (package
     (name "r-rankcorr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rankCorr" version))
        (sha256
-        (base32 "1xrb4550lbzmw5n1mm2lagf32h723f9njpp622bz417gzc99m3s9"))))
+        (base32 "0iv2bq0z4y7za6976bx329nrwgc0kjh6zdqddcnansq4msgjwqq8"))))
     (properties `((upstream-name . "rankCorr")))
     (build-system r-build-system)
     (arguments

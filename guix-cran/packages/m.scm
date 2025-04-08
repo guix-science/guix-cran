@@ -12,8 +12,6 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages cmake)
-  #:use-module (gnu packages version-control)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
@@ -6975,13 +6973,13 @@ depict the origin of successors of OTUs.")
 (define-public r-mulgar
   (package
     (name "r-mulgar")
-    (version "1.0.2")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mulgar" version))
        (sha256
-        (base32 "00yaxi14x7g0pzdj65hgs2xm9m7w1w6xjhparbhcjz1jd34ga30y"))))
+        (base32 "04d59ax979px44yxi3bdli0ayc08rmagiwxzzxpwd3c92a6753ya"))))
     (properties `((upstream-name . "mulgar")))
     (build-system r-build-system)
     (arguments
@@ -12127,45 +12125,6 @@ Pasaniuc, WJ Gauderman, JS Witte (2020) <doi:10.1101/2020.07.06.190256>.")
      "Data sets and scripts for Modeling Psychophysical Data in R (Springer).")
     (license license:gpl2)))
 
-(define-public r-mpcr
-  (package
-    (name "r-mpcr")
-    (version "1.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MPCR" version))
-       (sha256
-        (base32 "157614jz041imn2clbrq9wf6chhcgg4gvx37xm5kcy5rv2abjkqh"))))
-    (properties `((upstream-name . "MPCR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list git cmake))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/stsds/MPCR")
-    (synopsis "Multi- And Mixed-Precision Computations")
-    (description
-     "Designed for multi- and mixed-precision computations, accommodating 64-bit and
-32-bit data structures.  This flexibility enables fast execution across various
-applications.  The package enhances performance by optimizing operations in both
-precision levels, which is achieved by integrating with high-speed BLAS and
-LAPACK libraries like MKL and @code{OpenBLAS}'.  Including a 32-bit option
-caters to applications where high precision is unnecessary, accelerating
-computational processes whenever feasible.  The package also provides support
-for tile-based algorithms in three linear algebra operations: @code{CHOL()},
-@code{TRSM()}, and @code{GEMM()}.  The tile-based algorithm splits the matrix
-into smaller tiles, facilitating parallelization through a predefined Directed
-Acyclic Graph (DAG) for each operation.  Enabling @code{OpenMP} enhances the
-efficiency of these operations, leveraging multi-core parallelism.  In this
-case, MPCR facilitates mixed-precision execution by permitting varying precision
-levels for different tiles.  This approach is advantageous in numerous
-applications, as it maintains the accuracy of the application while accelerating
-execution in scenarios where single-precision alone does not significantly
-affect the accuracy of the application.")
-    (license license:gpl3+)))
-
 (define-public r-mpci
   (package
     (name "r-mpci")
@@ -12566,13 +12525,13 @@ Eerola et al. (2018) <doi:10.1098/rsos.171520>.")
 (define-public r-movehmm
   (package
     (name "r-movehmm")
-    (version "1.9")
+    (version "1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moveHMM" version))
        (sha256
-        (base32 "0dq6p13rfv0dryl323zqc0ix12vzn0qaykb9qnxiipwvj0j3qmz2"))))
+        (base32 "011g8hjiv5kd5z5m1k0m9nigln1k2xzd7rm7s5abqcx5b4br4cvg"))))
     (properties `((upstream-name . "moveHMM")))
     (build-system r-build-system)
     (arguments
@@ -14962,13 +14921,13 @@ the database.")
 (define-public r-mongopipe
   (package
     (name "r-mongopipe")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mongopipe" version))
        (sha256
-        (base32 "081l6d1kwh30wq5kwz9dd2a9221x9139x1xbvfiqixwv0g9sjjy0"))))
+        (base32 "129rmqwfm7ky0ajyszbj4mpyzls4ql2mpxfz2nzklpxki4nyswha"))))
     (properties `((upstream-name . "mongopipe")))
     (build-system r-build-system)
     (arguments
@@ -14976,7 +14935,7 @@ the database.")
       #:tests? #f))
     (propagated-inputs (list r-rlang r-magrittr r-jsonlite))
     (home-page "https://rpkgs.gitlab.io/mongopipe")
-    (synopsis "Query MongoDB Documents with R")
+    (synopsis "Write MongoDB Queries with R")
     (description "Translate R code into @code{MongoDB} aggregation pipelines.")
     (license license:expat)))
 
@@ -15011,13 +14970,13 @@ an overview of the available methods in the package:
 (define-public r-mondrian
   (package
     (name "r-mondrian")
-    (version "1.1-1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Mondrian" version))
        (sha256
-        (base32 "0di35qc1hgx3l8gnr2l6gv87yhqsw9b7wi2wc497ydby6c9m3307"))))
+        (base32 "134z0ai0c5nf47hg6m8ss8h8x2bkfi4865p49qdb0wgr6ldhv614"))))
     (properties `((upstream-name . "Mondrian")))
     (build-system r-build-system)
     (arguments
@@ -17130,13 +17089,13 @@ with easy-to-remember syntax.")
 (define-public r-modeler
   (package
     (name "r-modeler")
-    (version "3.4.7")
+    (version "3.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Modeler" version))
        (sha256
-        (base32 "1drfdcj7vd9a0a83wn39i4lz8n6dgb0m9qip3p5ky2rplzmncx59"))))
+        (base32 "1ar6cbffbjf51wrx6dzqlfw1rklzx1zpygb3v70g9kxrbbfby785"))))
     (properties `((upstream-name . "Modeler")))
     (build-system r-build-system)
     (arguments
@@ -20966,13 +20925,13 @@ studies.")
 (define-public r-mlpack
   (package
     (name "r-mlpack")
-    (version "4.5.1")
+    (version "4.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlpack" version))
        (sha256
-        (base32 "0dg1pva7nwshb3zsv6wabiy8js75jrg8a8fszqhf3m9936d194dw"))))
+        (base32 "0dsbk12vk88qa4zjhrwhp35av56safypw4ghx9xq2klgmair9xbv"))))
     (properties `((upstream-name . "mlpack")))
     (build-system r-build-system)
     (arguments
@@ -23893,13 +23852,13 @@ be found at <doi:10.18637/jss.v098.i03>.")
 (define-public r-mixgb
   (package
     (name "r-mixgb")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixgb" version))
        (sha256
-        (base32 "0j2rsm7mjv1hsh6xqx5s05ivsdqdlll3q46lvgqr30zdnavh7lyk"))))
+        (base32 "1ibx16v7jjmfic3b5s75kdjvb4acwwf6rlg0aj1zj1qmqszrqbyz"))))
     (properties `((upstream-name . "mixgb")))
     (build-system r-build-system)
     (arguments
@@ -28492,13 +28451,13 @@ are based on Siddique / Belin 2008's MIDAS.")
 (define-public r-midasr
   (package
     (name "r-midasr")
-    (version "0.8")
+    (version "0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "midasr" version))
        (sha256
-        (base32 "0mzyxf8q2wmbsiczkhhgigy7jmi8zr4w4a83f97va35vfhxi217k"))))
+        (base32 "1w9jbg7r4p58birzc925qj4xd95icmhpyy3jddc36ag1rz1r8lav"))))
     (properties `((upstream-name . "midasr")))
     (build-system r-build-system)
     (arguments
@@ -39904,13 +39863,13 @@ providing the scientific species name.")
 (define-public r-mddc
   (package
     (name "r-mddc")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MDDC" version))
        (sha256
-        (base32 "1c02qzf8hpvjpjqkkcmxw0c3vb7wv0hnq6cwpfyfj1ry7a1phfiw"))))
+        (base32 "15d83wff8chih6k8vriq4jspwp6lnis45y237m628s9qg81mcrgh"))))
     (properties `((upstream-name . "MDDC")))
     (build-system r-build-system)
     (arguments
@@ -47235,13 +47194,13 @@ regression models.")
 (define-public r-mareymap
   (package
     (name "r-mareymap")
-    (version "1.3.7")
+    (version "1.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MareyMap" version))
        (sha256
-        (base32 "0d98pammyqa69cqgihinfbg2zay7akzvh92fy77s3vbdfnk8svg5"))))
+        (base32 "1j6hp91v6gs6k3ilwmgvax2czip6b6zka0xxhkvn52mb0clrb13d"))))
     (properties `((upstream-name . "MareyMap")))
     (build-system r-build-system)
     (arguments

@@ -4436,13 +4436,13 @@ CÃ¡ceres, T. StÃ¼tzle, and M. Birattari (2016) <doi:10.1016/j.orp.2016.09.00
 (define-public r-ir
   (package
     (name "r-ir")
-    (version "0.2.1")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ir" version))
        (sha256
-        (base32 "1ck5247w5lxffd2x3jrslfx13jigik48xmcnkr7my2kzjmnqiyr1"))))
+        (base32 "0mmn8pyg1lr2q7jrmlm7q8yq57xz87sliafbz1g9z1b8gaykgpmh"))))
     (properties `((upstream-name . "ir")))
     (build-system r-build-system)
     (arguments
@@ -4452,7 +4452,6 @@ CÃ¡ceres, T. StÃ¼tzle, and M. Birattari (2016) <doi:10.1016/j.orp.2016.09.00
                              r-tidyr
                              r-tibble
                              r-stringr
-                             r-signal
                              r-rlang
                              r-rdpack
                              r-purrr
@@ -4460,9 +4459,7 @@ CÃ¡ceres, T. StÃ¼tzle, and M. Birattari (2016) <doi:10.1016/j.orp.2016.09.00
                              r-lifecycle
                              r-hyperspec
                              r-ggplot2
-                             r-dplyr
-                             r-chemospec
-                             r-baseline))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://henningte.github.io/ir/")
     (synopsis "Functions to Handle and Preprocess Infrared Spectra")
@@ -4470,7 +4467,7 @@ CÃ¡ceres, T. StÃ¼tzle, and M. Birattari (2016) <doi:10.1016/j.orp.2016.09.00
      "This package provides functions to import and handle infrared spectra (import
 from .csv and Thermo Galactic's .spc', baseline correction, binning, clipping,
 interpolating, smoothing, averaging, adding, subtracting, dividing, multiplying,
-plotting).")
+atmospheric correction, tidyverse methods, plotting).")
     (license license:gpl3)))
 
 (define-public r-iqcc

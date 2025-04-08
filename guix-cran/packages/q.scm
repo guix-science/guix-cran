@@ -3889,13 +3889,13 @@ practice.")
 (define-public r-qrm
   (package
     (name "r-qrm")
-    (version "0.4-31")
+    (version "0.4-35")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QRM" version))
        (sha256
-        (base32 "15dyk3zfy92vj4xny04dh5mqcyb8qh61566m313qs17mxwibvn2a"))))
+        (base32 "05b4jp451d7qk45s1bhp2q71bfaaqkazyc69aiss9h3qnjng2zrj"))))
     (properties `((upstream-name . "QRM")))
     (build-system r-build-system)
     (arguments
@@ -4381,6 +4381,37 @@ functions that may be considered, checks on fitted models, and alternative
 choices of error family.  Note in particular the betabinomial error family.  See
 also Maindonald, Waddell, and Petry (2001) <doi:10.1016/S0925-5214(01)00082-5>.")
     (license license:gpl3)))
+
+(define-public r-qr-break
+  (package
+    (name "r-qr-break")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QR.break" version))
+       (sha256
+        (base32 "0x2psvmgmzgl3l26vkzj4926m14yv287rk3mpds7ryp4giifjajy"))))
+    (properties `((upstream-name . "QR.break")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg))
+    (home-page "https://cran.r-project.org/package=QR.break")
+    (synopsis "Structural Breaks in Quantile Regression")
+    (description
+     "This package provides methods for detecting structural breaks, determining the
+number of breaks, and estimating break locations in linear quantile regression,
+using one or multiple quantiles, based on Qu (2008) and Oka and Qu (2011).
+Applicable to both time series and repeated cross-sectional data.  The main
+function is @code{rq.break()}. .  References for detailed theoretical and
+empirical explanations: . (1) Qu, Z. (2008).  Testing for Structural Change in
+Regression Quantiles.  Journal of Econometrics, 146(1), 170-184
+<doi:10.1016/j.jeconom.2008.08.006> . (2) Oka, T., and Qu, Z. (2011).
+Estimating Structural Changes in Regression Quantiles.  Journal of Econometrics,
+162(2), 248-267 <doi:10.1016/j.jeconom.2011.01.005>.")
+    (license license:gpl3+)))
 
 (define-public r-qr
   (package

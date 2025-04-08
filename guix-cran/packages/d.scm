@@ -20,7 +20,6 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages tls)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages version-control)
@@ -961,13 +960,13 @@ and Xie (2021) <@code{arXiv:1906.07757v2>} and Li, Sung and Xie (2021)
 (define-public r-dynaspec
   (package
     (name "r-dynaspec")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynaSpec" version))
        (sha256
-        (base32 "1mkc74jd25ydfl3ssl5kvcwjrvi6wdlm76v1m4sf4fm3vag37jyc"))))
+        (base32 "07k3s2nd17i8gakp1jagx9dvj7ra1wi1byqbg92xnj7qryxfcb9p"))))
     (properties `((upstream-name . "dynaSpec")))
     (build-system r-build-system)
     (arguments
@@ -1048,13 +1047,13 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
 (define-public r-dynamite
   (package
     (name "r-dynamite")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynamite" version))
        (sha256
-        (base32 "1fby4z8xxz7qy3hyn016c4fap5wwsj0h6p9azk5ld51kb5blk2zh"))))
+        (base32 "1isjj2aviw3r4ky0m3kczxjd32z3nbqjm16c7x18sqbvgp0pzsxs"))))
     (properties `((upstream-name . "dynamite")))
     (build-system r-build-system)
     (arguments
@@ -6594,13 +6593,13 @@ Zhang YW, Zuo JF, Liu JY, Zhang YM (2022, <doi: 10.1016/j.xplc.2022.100319>).")
 (define-public r-dqastats
   (package
     (name "r-dqastats")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DQAstats" version))
        (sha256
-        (base32 "0rn7nylqgr9bafji6andcbbqfsxi282713vsvwnav815r5caxg8f"))))
+        (base32 "02y6gljf4f8i91qdf4hda9k6jl2cr1i761i6r7jjwj82h9y90w7s"))))
     (properties `((upstream-name . "DQAstats")))
     (build-system r-build-system)
     (arguments
@@ -14270,25 +14269,29 @@ for carrying out inference on them.")
 (define-public r-discord
   (package
     (name "r-discord")
-    (version "1.1.0")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "discord" version))
        (sha256
-        (base32 "0is9gwj09zj25hklsxgi3k7ypq2qp2yx0vir6wgpnd30wa11zs5h"))))
+        (base32 "09ymb84457k6apwb8nnpjq90anh62kyffphhv2vwwxgiyr1z8dgk"))))
     (properties `((upstream-name . "discord")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/R-Computing-Lab/discord")
     (synopsis "Functions for Discordant Kinship Modeling")
     (description
      "This package provides functions for discordant kinship modeling (and other
-sibling-based quasi-experimental designs).  Currently, the package contains data
-restructuring functions and functions for generating biometrically informed data
-for kin pairs.")
+sibling-based quasi-experimental designs).  Contains data restructuring
+functions and functions for generating biometrically informed data for kin
+pairs.  See [Garrison and Rodgers, 2016 <doi:10.1016/j.intell.2016.08.008>],
+[Sims, Trattner, and Garrison, 2024 <doi:10.3389/fpsyg.2024.1430978>] for
+empirical examples, and Garrison et al for theoretical work
+<https://osf.io/zpdwt/>.")
     (license license:gpl3)))
 
 (define-public r-discnorm
@@ -19555,13 +19558,13 @@ educational and psychological tests.")
 (define-public r-dexter
   (package
     (name "r-dexter")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dexter" version))
        (sha256
-        (base32 "1sppaqnv9nkxww0bw0x2sp51fl4v7845npvmhwwdh4yrnrmzbd07"))))
+        (base32 "0a8w1njv8av04jkcii6ww2ghnnrhzx2mk9gypgw59bngwy4mmwwa"))))
     (properties `((upstream-name . "dexter")))
     (build-system r-build-system)
     (arguments
@@ -20668,33 +20671,6 @@ other functionality, we provide an implementation for OSAT score by Yan et al.
 prototype UI, being able to drag and drop UI components before being able to
 save or download the equivalent R code.")
     (license license:expat)))
-
-(define-public r-designctpb
-  (package
-    (name "r-designctpb")
-    (version "1.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DesignCTPB" version))
-       (sha256
-        (base32 "1872spxzi5mxxz68nw3ahh6yj50yybrpff4q1xpx0xk89yks13hg"))))
-    (properties `((upstream-name . "DesignCTPB")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list openssl))
-    (propagated-inputs (list r-reticulate r-plotly r-mnormt r-fields r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ubcxzhang/DesignCTPB")
-    (synopsis "Design Clinical Trials with Potential Biomarker Effect")
-    (description
-     "Applying CUDA GPUs via Numba for optimal clinical design.  It allows the user to
-utilize a reticulate Python environment and run intensive Monte Carlo simulation
-to get the optimal cutoff for the clinical design with potential biomarker
-effect, which can guide the realistic clinical trials.")
-    (license license:gpl2+)))
 
 (define-public r-design-parameters
   (package
@@ -22676,25 +22652,25 @@ fertility rates, net migration numbers; and stochastic population forecasting.")
 (define-public r-demographictable
   (package
     (name "r-demographictable")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DemographicTable" version))
        (sha256
-        (base32 "075l3lls92rhpnamwz1da82sw299f345vlw7lmw5p73s4phlqys8"))))
+        (base32 "0s7dvsqywhqc2ww5qwkcvsnh1kn4fnxidmrbsqjlgia238f1cj3f"))))
     (properties `((upstream-name . "DemographicTable")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-scales r-officer r-flextable r-cli))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://cran.r-project.org/package=DemographicTable")
     (synopsis "Create Demographic Table")
     (description
-     "This package provides functions for creating demographic table of simple summary
-statistics and comparison(s) over one or more groups.")
+     "To create demographic table with simple summary statistics, with optional
+comparison(s) over one or more groups.")
     (license license:gpl2)))
 
 (define-public r-demographic
@@ -24253,13 +24229,13 @@ networks course to help me with the problem set.")
 (define-public r-dedupewider
   (package
     (name "r-dedupewider")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dedupewider" version))
        (sha256
-        (base32 "18s8m0nzmx8ai4gcv5rv3rvmngw1q0pxj013v433xj76z2drqdaz"))))
+        (base32 "1y1h6wm2nix2zxsr13d62ja24ik5ggj0gnyhb7w7mrr37mh5zadb"))))
     (properties `((upstream-name . "dedupewider")))
     (build-system r-build-system)
     (arguments
@@ -30865,6 +30841,42 @@ J.T. Ritchie (2003) <doi:10.1016/S1161-0301(02)00107-7>.")
 using the shinydashboard package.  Removes the need to change the underlying css
 code by wrapping it into a set of convenient R functions.")
     (license license:expat)))
+
+(define-public r-dasguptr
+  (package
+    (name "r-dasguptr")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DasGuptR" version))
+       (sha256
+        (base32 "0hl6mgyvkndwl3xlnp9600mn3109wgg3gk8l63zmbfkgix7d4nfv"))))
+    (properties `((upstream-name . "DasGuptR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://github.com/josiahpjking/DasGuptR")
+    (synopsis "Das Gupta Standardisation and Decomposition")
+    (description
+     "Implementation of Das Gupta's standardisation and decomposition of population
+rates, as set out \"Standardization and decomposition of rates: A userâs
+manual\", Das Gupta (1993)
+<https://www2.census.gov/library/publications/1993/demographics/p23-186.pdf>.
+The goal of these methods is to calculate adjusted rates based on compositional
+factors and quantify the contribution of each factor to the difference in crude
+rates between populations.  The package offers functionality to handle various
+scenarios for any number of factors and populations, where said factors can be
+comprised of vectors across sub-populations (including cross-classified
+population breakdowns), and with the option to specify user-defined rate
+functions.")
+    (license license:gpl3+)))
 
 (define-public r-dartrverse
   (package

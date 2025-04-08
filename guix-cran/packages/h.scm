@@ -3051,6 +3051,42 @@ and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
 2827-2851, <@code{arXiv:1405.3319>}.")
     (license license:gpl3)))
 
+(define-public r-htgm2d
+  (package
+    (name "r-htgm2d")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HTGM2D" version))
+       (sha256
+        (base32 "0lnjyld4kqxzdb02qzccx6s3rbc8b1wmmv57mp9gm3bi5xszw7qp"))))
+    (properties `((upstream-name . "HTGM2D")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-minimalistgodb r-jaccard r-htgm r-gplots
+                             r-gominer))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=HTGM2D")
+    (synopsis "Two Dimensional High Throughput 'GoMiner'")
+    (description
+     "The Gene Ontology (GO) Consortium <https://geneontology.org/> organizes genes
+into hierarchical categories based on biological process (BP), molecular
+function (MF) and cellular component (CC, i.e., subcellular localization).
+Tools such as @code{GoMiner} (see Zeeberg, B.R., Feng, W., Wang, G. et al.
+(2003) <doi:10.1186/gb-2003-4-4-r28>) can leverage GO to perform ontological
+analysis of microarray and proteomics studies, typically generating a list of
+significant functional categories.  Microarray studies are usually analyzed with
+BP, whereas proteomics researchers often prefer CC. To capture the benefit of
+both of those ontologies, I developed a two-dimensional version of
+High-Throughput @code{GoMiner} ('HTGM2D').  I generate a 2D heat map whose axes
+are any two of BP, MF, or CC, and the value within a picture element of the heat
+map reflects the Jaccard metric p-value for the number of genes in common for
+the corresponding pair.")
+    (license license:gpl2+)))
+
 (define-public r-htgm
   (package
     (name "r-htgm")
@@ -10180,13 +10216,13 @@ space when there are more than a few response variables.")
 (define-public r-hemispher
   (package
     (name "r-hemispher")
-    (version "1.1.4")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hemispheR" version))
        (sha256
-        (base32 "1x372rbi112l5hdmlkbn5x90h8a6y71zngdlfn1p27c10klwaspy"))))
+        (base32 "1bpkjhdf4dx95wxw8p2b80mpwr0p6b26qx2wm0ha9s33f27bvpgw"))))
     (properties `((upstream-name . "hemispheR")))
     (build-system r-build-system)
     (arguments

@@ -2691,13 +2691,13 @@ supported: DNF, APT, ALPM.")
 (define-public r-bsplus
   (package
     (name "r-bsplus")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsplus" version))
        (sha256
-        (base32 "0bf8qvj7pk3xn7g4p89as1xzx56c75n842g27rj6lcgsf9rdmv9g"))))
+        (base32 "13d2pvcb96kx1i1jjrj8a6l78ikp6iqna4v17xpjwp0gqm534pgg"))))
     (properties `((upstream-name . "bsplus")))
     (build-system r-build-system)
     (arguments
@@ -2711,7 +2711,7 @@ supported: DNF, APT, ALPM.")
                              r-jsonlite
                              r-htmltools
                              r-glue))
-    (home-page "https://github.com/ijlyttle/bsplus")
+    (home-page "https://ijlyttle.github.io/bsplus/")
     (synopsis
      "Adds Functionality to the R Markdown + Shiny Bootstrap Framework")
     (description
@@ -3687,6 +3687,39 @@ analysts, and developers working with Bruneiâs geographic and demographic
 data, offering a quick and accessible foundation for creating maps and
 conducting spatial studies.")
     (license license:gpl3+)))
+
+(define-public r-brulee
+  (package
+    (name "r-brulee")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "brulee" version))
+       (sha256
+        (base32 "0s8nbm17hdfghqkdanx5sw1bnvxs7xkv1lhwvy4ds12h6mfdsfd1"))))
+    (properties `((upstream-name . "brulee")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch
+                             r-tibble
+                             r-rlang
+                             r-hardhat
+                             r-glue
+                             r-ggplot2
+                             r-generics
+                             r-dplyr
+                             r-coro
+                             r-cli))
+    (home-page "https://github.com/tidymodels/brulee")
+    (synopsis "High-Level Modeling Functions with 'torch'")
+    (description
+     "This package provides high-level modeling functions to define and train models
+using the torch R package.  Models include linear, logistic, and multinomial
+regression as well as multilayer perceptrons.")
+    (license license:expat)))
 
 (define-public r-brucer
   (package
@@ -14374,13 +14407,13 @@ expression analysis.")
 (define-public r-bioinactivation
   (package
     (name "r-bioinactivation")
-    (version "1.2.3")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioinactivation" version))
        (sha256
-        (base32 "0gz1bbakf6b23jsbvrr8314yxajxcr1akm5srgm883lrf1p5ax13"))))
+        (base32 "1m1j68xgcxw1bjfpbwbfbac7b8z977d30f6yhpq5kvvahb8wb5hx"))))
     (properties `((upstream-name . "bioinactivation")))
     (build-system r-build-system)
     (arguments
@@ -16121,13 +16154,13 @@ portfolio management and trading:
 (define-public r-bimodalindex
   (package
     (name "r-bimodalindex")
-    (version "1.1.9")
+    (version "1.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BimodalIndex" version))
        (sha256
-        (base32 "1m1dcj0ryjicaqjlkch7aymsklmvjvn2dvnbssi1cpi54bzn8l7g"))))
+        (base32 "1lms0xq4s8p83f86jqbxd196bcvhaqjas5j25h5iz2p2qxaax5r7"))))
     (properties `((upstream-name . "BimodalIndex")))
     (build-system r-build-system)
     (arguments
@@ -16138,7 +16171,7 @@ portfolio management and trading:
     (synopsis "The Bimodality Index")
     (description
      "Defines the functions used to compute the bimodal index as defined by Wang et
-al. (2009) <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2730180/>,
+al. (2009) <https://pmc.ncbi.nlm.nih.gov/articles/PMC2730180/>,
 <doi:10.4137/CIN.S2846>.")
     (license license:asl2.0)))
 
@@ -25114,13 +25147,13 @@ tool including JAGS', BUGS', MCMCpack', and Stan'.")
 (define-public r-bayespop
   (package
     (name "r-bayespop")
-    (version "11.0-2")
+    (version "11.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesPop" version))
        (sha256
-        (base32 "1i35fy02in69rr2l700kjcxpfz31ira6w028a94n1da61ff21i3a"))))
+        (base32 "10nwivdg16ak17zmvc5jchrn6ip9krv0bns5cv5x07sfc9ih70lv"))))
     (properties `((upstream-name . "bayesPop")))
     (build-system r-build-system)
     (arguments
@@ -29910,13 +29943,13 @@ features for data analysis and visualization.")
 (define-public r-bartcs
   (package
     (name "r-bartcs")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bartcs" version))
        (sha256
-        (base32 "0kajw5phkymvkilwb7bf3qdc24h369yvb1zmc49kk6k7bdpbxcrr"))))
+        (base32 "0yzbv9d1armlwhnvk1qqhdxgynbamjy2m8n13y69i20m354skar4"))))
     (properties `((upstream-name . "bartcs")))
     (build-system r-build-system)
     (arguments
@@ -32406,13 +32439,13 @@ fragment counts given @code{mRNA} counts.")
 (define-public r-b64
   (package
     (name "r-b64")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "b64" version))
        (sha256
-        (base32 "079gcxwbsjq4dkqvg00mlpj4jmq0vp3pv8wws140qgr177sshlj7"))))
+        (base32 "15ff2j23x9jh00j81fn6vmp7yjn1hj0lpjk92wqk9isffk9y5q3w"))))
     (properties `((upstream-name . "b64")))
     (build-system r-build-system)
     (arguments

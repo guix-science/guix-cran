@@ -779,50 +779,6 @@ dashboards.")
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
 
-(define-public r-twitmo
-  (package
-    (name "r-twitmo")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Twitmo" version))
-       (sha256
-        (base32 "0hr2gndrcsd4r4jxyzg1jbjbn1zslv8z5ny3xh42hda93866909d"))))
-    (properties `((upstream-name . "Twitmo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-topicmodels
-                             r-tm
-                             r-tidyr
-                             r-stringr
-                             r-stringi
-                             r-stopwords
-                             r-stm
-                             r-rtweet
-                             r-rlang
-                             r-readr
-                             r-quanteda-textstats
-                             r-quanteda
-                             r-plyr
-                             r-maps
-                             r-magrittr
-                             r-leaflet
-                             r-ldavis
-                             r-ldatuning
-                             r-jsonlite
-                             r-dplyr))
-    (home-page "https://github.com/abuchmueller/Twitmo")
-    (synopsis "Twitter Topic Modeling and Visualization for R")
-    (description
-     "Tailored for topic modeling with tweets and fit for visualization tasks in R.
-Collect, pre-process and analyze the contents of tweets using LDA and structural
-topic models (STM).  Comes with visualizing capabilities like tweet and hashtag
-maps and built-in support for LDAvis'.")
-    (license license:expat)))
-
 (define-public r-twinning
   (package
     (name "r-twinning")
@@ -1492,6 +1448,32 @@ software is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 PARTICULAR PURPOSE. See the GNU General Public License for more details.")
     (license license:gpl2+)))
+
+(define-public r-tvcure
+  (package
+    (name "r-tvcure")
+    (version "0.6.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tvcure" version))
+       (sha256
+        (base32 "05b8c7ymf3xwy348kdjy6ary4pg2jkbhcq3s9hg9q7jw1vz3ps9k"))))
+    (properties `((upstream-name . "tvcure")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast r-mgcv r-matrix r-mass r-cubicbsplines))
+    (home-page "<https://github.com/plambertULiege/tvcure>")
+    (synopsis "Additive Cure Survival Model with Time-Varying Covariates")
+    (description
+     "Fit of a double additive cure survival model with time-varying covariates.  The
+additive terms in the long- and short-term survival submodels, modelling the
+cure probability and the event timing for susceptible units, are estimated using
+Laplace P-splines.  For more details, see Lambert and Kreyenfeld (2025)
+<doi:10.1093/jrsssa/qnaf035>.")
+    (license license:gpl3)))
 
 (define-public r-tv
   (package
@@ -5622,13 +5604,13 @@ Bhattacharya, Gourab Mukherjee Ann.  Appl.  Stat.  14(4): 1777-1805 (December
 (define-public r-trueskillthroughtime
   (package
     (name "r-trueskillthroughtime")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrueSkillThroughTime" version))
        (sha256
-        (base32 "0d5zq3aniqm06qq9pzns5q8223gp33gp0f5273z01xd43mn6ggjn"))))
+        (base32 "0xmq40zarj1shghnczkmwlds1j0f5b5ap6im7mahn3ir54x6mwrh"))))
     (properties `((upstream-name . "TrueSkillThroughTime")))
     (build-system r-build-system)
     (arguments
@@ -5644,10 +5626,11 @@ initial estimates nor guarantee comparability between distant estimates.
 history of activities using a single Bayesian network allowing the information
 to propagate correctly throughout the system.  This algorithm requires only a
 few iterations to converge, allowing millions of observations to be analyzed
-using any low-end computer.  The core ideas implemented in this project were
-developed by Dangauthier P, Herbrich R, Minka T, Graepel T (2007). \"Trueskill
-through time: Revisiting the history of chess.\"
-<https://dl.acm.org/doi/10.5555/2981562.2981605>.")
+using any low-end computer.  Landfried G, Mocskos E (2025). \"@code{TrueSkill}
+Through Time: Reliable Initial Skill Estimates and Historical Comparability with
+Julia, Python, and R.\" <doi:10.18637/jss.v112.i06>.  The core ideas implemented
+in this project were developed by Dangauthier P, Herbrich R, Minka T, Graepel T
+(2007). \"Trueskill through time: Revisiting the history of chess.\".")
     (license license:gpl3+)))
 
 (define-public r-truelies
@@ -7493,13 +7476,13 @@ package.")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "1.13.0")
+    (version "1.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeTools" version))
        (sha256
-        (base32 "0kdyn0vm265fha76gad3rvsznqpipbr8pp5h3979ml115y0xbgnk"))))
+        (base32 "0wxyz575rmd4bjmvg94ib5i1v4kmvm1i69zj4qhi39dwq5z0h4b3"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (arguments
@@ -16483,13 +16466,13 @@ time-dependent model parameters, in preparation.")
 (define-public r-timedepfrail
   (package
     (name "r-timedepfrail")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TimeDepFrail" version))
        (sha256
-        (base32 "0jqvd40k9lab0lrmbxb64pi9kmzmf4vxg5dygkxf1ahk3d8gz2an"))))
+        (base32 "0v7xc7cqxjzljq7prrnlayzh8f8qz0riz21r8zxxvs640ih94wkr"))))
     (properties `((upstream-name . "TimeDepFrail")))
     (build-system r-build-system)
     (arguments
@@ -17439,13 +17422,13 @@ checks, saving to PDF and PNG from a pipe and various small utilities.")
 (define-public r-tidyterra
   (package
     (name "r-tidyterra")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyterra" version))
        (sha256
-        (base32 "1hlri8rbisi41k9kxa93sl9qdqad72523b50l75ww61w131g0hkc"))))
+        (base32 "14c8vlqsc0gp43gdxx8ddzn6zfji8chbxr6a95k8g0rf5jb6v1kv"))))
     (properties `((upstream-name . "tidyterra")))
     (build-system r-build-system)
     (arguments
@@ -17589,13 +17572,13 @@ based on the morphological tagset from the Universal Dependencies.")
 (define-public r-tidystats
   (package
     (name "r-tidystats")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidystats" version))
        (sha256
-        (base32 "0y9l72915cq7dkdw7c4l931niq9rdadjvgr8w33s05a5vawg3w40"))))
+        (base32 "1dzsd8f7g55xsf4sw8cza82w4md4iydzl1pb56iw294pmsn0ddvd"))))
     (properties `((upstream-name . "tidystats")))
     (build-system r-build-system)
     (arguments
@@ -20660,13 +20643,13 @@ The statistical methodology used here can be found in Perez-Jaume et al (2017)
 (define-public r-thresher
   (package
     (name "r-thresher")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Thresher" version))
        (sha256
-        (base32 "01rjm3j1zxx7gc0m8cr5jgcbr6pz11mqxr5sw0bgh6kdc5n0by0n"))))
+        (base32 "15ddl0dny2pzrk0r6ccppfd62rfs5gd0svc3xbhzn7dzw6nrvi8w"))))
     (properties `((upstream-name . "Thresher")))
     (build-system r-build-system)
     (arguments
@@ -25442,33 +25425,6 @@ Gaussian Linear Models ('Lopez-Cruz et al., 2024')
 <doi:10.1093/g3journal/jkae001>.")
     (license license:gpl3)))
 
-(define-public r-tensorcomplete
-  (package
-    (name "r-tensorcomplete")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TensorComplete" version))
-       (sha256
-        (base32 "1phjdcmp74i2d79p2lhm40qb5ind6iyqbkhkb1khw7i46r5f8zd6"))))
-    (properties `((upstream-name . "TensorComplete")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tensorregress r-pracma r-mass))
-    (home-page "https://cran.r-project.org/package=TensorComplete")
-    (synopsis "Tensor Noise Reduction and Completion Methods")
-    (description
-     "Efficient algorithms for tensor noise reduction and completion.  This package
-includes a suite of parametric and nonparametric tools for estimating tensor
-signals from noisy, possibly incomplete observations.  The methods allow a broad
-range of data types, including continuous, binary, and ordinal-valued tensor
-entries.  The algorithms employ the alternating optimization.  The detailed
-algorithm description can be found in the following three references.")
-    (license license:gpl2+)))
-
 (define-public r-tensorclustering
   (package
     (name "r-tensorclustering")
@@ -29922,13 +29878,13 @@ Rosenbaum (2022) <doi:10.1080/00031305.2022.2063944>.")
 (define-public r-tailrank
   (package
     (name "r-tailrank")
-    (version "3.2.2")
+    (version "3.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TailRank" version))
        (sha256
-        (base32 "02cxfdrc2pncw7pivg00414rzy27jp57pbg2ibq5a4fj8zm9bv91"))))
+        (base32 "06zmr9alizs5196gqbpwpv21p3z68blcl6mkb3v876ga4c8s3qac"))))
     (properties `((upstream-name . "TailRank")))
     (build-system r-build-system)
     (arguments

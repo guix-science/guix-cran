@@ -3995,13 +3995,13 @@ simplex.")
 (define-public r-ulrb
   (package
     (name "r-ulrb")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ulrb" version))
        (sha256
-        (base32 "044gais5550wbr4gbfskm861hanwxmqyv53ghyhdr5868kqx127m"))))
+        (base32 "1xksj1gzh44fa5xdxxd4y099zpbk8hdzj95mbkdxikwbilixfzs7"))))
     (properties `((upstream-name . "ulrb")))
     (build-system r-build-system)
     (arguments
@@ -4024,9 +4024,9 @@ simplex.")
 of the definition of rarity by replacing arbitrary thresholds with an
 unsupervised machine learning algorithm (partitioning around medoids, or
 k-medoids).  This algorithm works for any type of microbiome data, provided
-there is a species abundance table.  For validation of this method to different
-species abundance tables see Pascoal et al, 2024 (in peer-review).  This method
-also works for non-microbiome data.")
+there is an abundance table.  For validation of this method to different
+abundance tables, see Pascoal et al, 2025.  This method also works for
+non-microbiome data.")
     (license license:gpl3+)))
 
 (define-public r-ulid
@@ -4570,13 +4570,13 @@ Shape.")
 (define-public r-ugmar
   (package
     (name "r-ugmar")
-    (version "3.5.1")
+    (version "3.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uGMAR" version))
        (sha256
-        (base32 "1a8krmhpi6pd79rbgdiqigz4dvgknx05wzs95qa11giz433d5r6y"))))
+        (base32 "12n7rwpw6sabb53985vlgcq7bjqh7f6dy0p60mp8smcdw9qhl7sg"))))
     (properties `((upstream-name . "uGMAR")))
     (build-system r-build-system)
     (arguments

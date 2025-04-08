@@ -11462,13 +11462,13 @@ annotated story data.  To learn more about the project visit
 (define-public r-stortingscrape
   (package
     (name "r-stortingscrape")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stortingscrape" version))
        (sha256
-        (base32 "0mckh0l8rdd1ijfn4py9dzg3x6j8ksgsgb2vm8q1pwby8ihcdnww"))))
+        (base32 "15mdy6x7vscy864z70frri14r58c9hg32xwhgq3lzgl928v2srxf"))))
     (properties `((upstream-name . "stortingscrape")))
     (build-system r-build-system)
     (arguments
@@ -12685,34 +12685,6 @@ Model.  The Stability Informed Model integrates stability information (how much
 a variable correlates with itself in the future) into cross-sectional estimates.
  Wysocki and Rhemtulla (2022) <https://psyarxiv.com/vg5as>.")
     (license license:expat)))
-
-(define-public r-stilt
-  (package
-    (name "r-stilt")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stilt" version))
-       (sha256
-        (base32 "0b1bs849hw2wcvaldybxk8h8wgwl6p7x4i7winncvngmhplgrvx4"))))
-    (properties `((upstream-name . "stilt")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-fields))
-    (home-page "https://cran.r-project.org/package=stilt")
-    (synopsis "Separable Gaussian Process Interpolation (Emulation)")
-    (description
-     "This package provides functions for simplified emulation of time series computer
-model output in model parameter space using Gaussian processes.  Stilt can be
-used more generally for Kriging of spatio-temporal fields.  There are functions
-to predict at new parameter settings, to test the emulator using
-cross-validation (which includes information on 95% confidence interval
-empirical coverage), and to produce contour plots over 2D slices in model
-parameter space.")
-    (license license:gpl3)))
 
 (define-public r-sticsrfiles
   (package
@@ -14347,6 +14319,33 @@ components or dendrograms with data points colored based on group information,
 or visualizing volcano plots to check the results of whole genome analyses for
 gene differential expression.")
     (license license:gpl2+)))
+
+(define-public r-stattools
+  (package
+    (name "r-stattools")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StatTools" version))
+       (sha256
+        (base32 "1w8r59hdvi69wpxr5bq8ir7gzm4b6403ljy2lryh6y77n8gz65i6"))))
+    (properties `((upstream-name . "StatTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=StatTools")
+    (synopsis "All-in-One Chi Distribution CI")
+    (description
+     "Computes confidence intervals for variance using the Chi-Square distribution,
+without requiring raw data.  Wikipedia (2025)
+<https://en.wikipedia.org/wiki/Chi-squared_distribution>.  All-in-One Chi
+Distribution CI provides functions to calculate confidence intervals for the
+population variance based on a chi-squared distribution, utilizing a sample
+variance and sample size.  It offers only a simple all-in-one method for quick
+calculations to find the CI for Chi Distribution.")
+    (license license:expat)))
 
 (define-public r-statswalesr
   (package
@@ -21569,13 +21568,13 @@ spatially generated data.")
 (define-public r-spphpr
   (package
     (name "r-spphpr")
-    (version "1.0.0")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spphpr" version))
        (sha256
-        (base32 "0j3axmahyww6wpj797184b884frjq35ly8y1v29s2zs547pwabf2"))))
+        (base32 "0z583awsx0ickcx3mag7bm9i9a967xh3d131cd7hpww10nj8y4sx"))))
     (properties `((upstream-name . "spphpr")))
     (build-system r-build-system)
     (arguments
@@ -31615,19 +31614,20 @@ citation and provenance details.")
 (define-public r-sono
   (package
     (name "r-sono")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SONO" version))
        (sha256
-        (base32 "0slmrknvrq9albxs08rrmrrxcakhh1ijf0fwvyjgzrnidxyv96av"))))
+        (base32 "1qk47f8cym5m2pl5i59slvhd8c4sw2l89lqlqhf00gmss791pwjc"))))
     (properties `((upstream-name . "SONO")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rje r-rdpack r-ggplot2 r-desctools r-data-table))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SONO")
     (synopsis "Scores of Nominal Outlyingness (SONO)")
     (description
@@ -39585,20 +39585,20 @@ enables users to write @code{JavaScript} applications using the syntax of R.")
 (define-public r-skellam
   (package
     (name "r-skellam")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skellam" version))
        (sha256
-        (base32 "0hmms6709v7mzp6qgcxljjxq4nccqiwphn1nk3jh6mp2n0zvaqjd"))))
+        (base32 "10yxwgrq36mn2n3lh5gpg9jpnzhib979m4avc0x2m7lqyj4qhy71"))))
     (properties `((upstream-name . "skellam")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https//r-forge.r-project.org/projects/healthqueues/")
+    (home-page "https://github.com/monty-se/skellam")
     (synopsis "Densities and Sampling for the Skellam Distribution")
     (description
      "This package provides functions for the Skellam distribution, including: density
@@ -45276,13 +45276,13 @@ an end-to-end application using this package.")
 (define-public r-silp
   (package
     (name "r-silp")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "silp" version))
        (sha256
-        (base32 "1nhfwb203lkapky4j3jp61xmnk6lrm1s4h1li4f5g24d6z92wx1m"))))
+        (base32 "13vs2ar1h1f5gr7nypxi47yd3c5bqhc1lcb5rrizcmzcc45cg8g9"))))
     (properties `((upstream-name . "silp")))
     (build-system r-build-system)
     (arguments
@@ -61311,6 +61311,30 @@ Tabulation Model (SDTM) datasets.  These checks are intended to be
 generalizable, actionable, and meaningful for analysis.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-sdtm-terminology
+  (package
+    (name "r-sdtm-terminology")
+    (version "2025-3-25")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sdtm.terminology" version))
+       (sha256
+        (base32 "17vazlm55cypwxns14pp6bvf3r8yycpq3vmi67hzigffj36ap8y2"))))
+    (properties `((upstream-name . "sdtm.terminology")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-dplyr))
+    (home-page "https://github.com/patterninstitute/sdtm.terminology")
+    (synopsis "CDISC SDTM Controlled Terminology")
+    (description
+     "Clinical Data Interchange Standards Consortium (CDISC) Standard Data Tabulation
+Model (SDTM) controlled terminology, 2025-03-25.  Source:
+<https://evs.nci.nih.gov/ftp1/CDISC/SDTM/>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-sdtm-oak
   (package
     (name "r-sdtm-oak")
@@ -69230,48 +69254,6 @@ are known.  For paired groups, it uses paired t-test under normal data sets.  If
 data does not come from the normal distribution, the package uses the Wilcoxon
 test for independent and paired cases.")
     (license license:gpl2)))
-
-(define-public r-saotd
-  (package
-    (name "r-saotd")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "saotd" version))
-       (sha256
-        (base32 "1x3zpzhs11bgxa8zhjdwr7n9fi55glhrif43zblh55ih3cqpcfc1"))))
-    (properties `((upstream-name . "saotd")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list mpfr gsl))
-    (propagated-inputs (list r-widyr
-                             r-topicmodels
-                             r-tidytext
-                             r-tidyr
-                             r-stringr
-                             r-scales
-                             r-rtweet
-                             r-reshape2
-                             r-magrittr
-                             r-lubridate
-                             r-ldatuning
-                             r-igraph
-                             r-ggraph
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/evan-l-munson/saotd")
-    (synopsis "Sentiment Analysis of Twitter Data")
-    (description
-     "This analytic is an in initial foray into sentiment analysis.  This analytic
-will allow a user to access the Twitter API (once they create their own
-developer account), ingest tweets of their interest, clean / tidy data, perform
-topic modeling if interested, compute sentiment scores utilizing the Bing
-Lexicon, and output visualizations.")
-    (license license:gpl2+)))
 
 (define-public r-sanzo
   (package

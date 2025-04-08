@@ -5474,13 +5474,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.4.46")
+    (version "4.4.48")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asremlPlus" version))
        (sha256
-        (base32 "0rg50mcrha21lzvl64zsw6zvzn9l5d48y8yawa4lkpfxy2g3v61g"))))
+        (base32 "0vxv7018ygs11hzya290365i02h55xfnxsxnkv32bb3rf2d2p5w5"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (arguments
@@ -5833,13 +5833,13 @@ clustering and optimal marker ordering using MSTmap (see Wu et al.,2008).")
 (define-public r-asm
   (package
     (name "r-asm")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asm" version))
        (sha256
-        (base32 "0gsv9kz2mh6ma7vxxhr0kwzxrw2rrgic9cmj2g0jrjvdrk8j5n0a"))))
+        (base32 "06ldb2dzp4vhyk6hy368bf5vnpjxn1f6zs13p7qmaknp97xfzzsd"))))
     (properties `((upstream-name . "asm")))
     (build-system r-build-system)
     (arguments
@@ -7230,20 +7230,20 @@ tumor-normal SNP data.")
 (define-public r-aroma-apd
   (package
     (name "r-aroma-apd")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aroma.apd" version))
        (sha256
-        (base32 "1xni6zyrrhh0vaq9gyckls9hinmd4898h51g2y6vzdzd8z9flq4x"))))
+        (base32 "1ffrs77ik12gjb6f0r7gdgz0av395z4fl7ia3k34krw3jjga2b9x"))))
     (properties `((upstream-name . "aroma.apd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-r-utils r-r-oo r-r-methodss3 r-r-huge))
-    (home-page "https://github.com/HenrikBengtsson/aroma.apd")
+    (home-page "https://www.aroma-project.org/")
     (synopsis
      "Probe-Level Data File Format Used by 'aroma.affymetrix' [deprecated]")
     (description
@@ -23264,13 +23264,13 @@ range.")
 (define-public r-adegraphics
   (package
     (name "r-adegraphics")
-    (version "1.0-21")
+    (version "1.0-22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adegraphics" version))
        (sha256
-        (base32 "1a7bz9j06sc09kvynzss71dxffp40vsl35azj0gzs81jl2rr4ap0"))))
+        (base32 "0zl2rnjs99kajfxg34dfyfkg8dyfr6nq5njyawr9pgzf6gpbsz77"))))
     (properties `((upstream-name . "adegraphics")))
     (build-system r-build-system)
     (arguments

@@ -366,19 +366,19 @@ disseminate PC-Axis files.")
 (define-public r-pxr
   (package
     (name "r-pxr")
-    (version "0.42.7")
+    (version "0.42.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pxR" version))
        (sha256
-        (base32 "05i1cg35hq0z37xnh2qfcp8mnrphadrg7av5d0mcgi9nx6c1w80j"))))
+        (base32 "131cfma3d29azxh8wal5rr50bvfsap5aw7q9w3zdsvp6bs64isyw"))))
     (properties `((upstream-name . "pxR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-rjsonio r-reshape2 r-plyr))
+    (propagated-inputs (list r-stringr r-reshape2 r-plyr r-jsonlite))
     (home-page "https://github.com/cjgb/pxR")
     (synopsis "PC-Axis with R")
     (description
@@ -390,13 +390,13 @@ dissemination.")
 (define-public r-pxmake
   (package
     (name "r-pxmake")
-    (version "0.16.0")
+    (version "0.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pxmake" version))
        (sha256
-        (base32 "0dwmn6fc77kydlvfv3g8zjik2dg9lwn785pgx3rmp1gych3w4hqp"))))
+        (base32 "1mysmr16gykfhm8m16v9vlgqhxhmda5mhy5pczkqgwfvwrvh6r6l"))))
     (properties `((upstream-name . "pxmake")))
     (build-system r-build-system)
     (arguments
@@ -410,7 +410,6 @@ dissemination.")
                              r-rlang
                              r-readxl
                              r-purrr
-                             r-pillar
                              r-openxlsx
                              r-magrittr
                              r-furrr
@@ -11466,13 +11465,13 @@ Standardization, Unitization, Cubitization and adaptive intervals are offered.")
 (define-public r-preprocess
   (package
     (name "r-preprocess")
-    (version "3.1.7")
+    (version "3.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PreProcess" version))
        (sha256
-        (base32 "1fxzkmrj76mc94xdj7a0nq450021i1jxkigmh5jhrmamkp5581jf"))))
+        (base32 "1046lvnrybjrlv3q3w1q93vyjazcd44pi48x0ngjppapyqv52rvx"))))
     (properties `((upstream-name . "PreProcess")))
     (build-system r-build-system)
     (arguments
@@ -13997,6 +13996,36 @@ categories, consistent with OMB (Office of Management and Budget)
 classifications.  Functions exist for downloading and linking to existing
 sources of privacy protected microdata.")
     (license license:expat)))
+
+(define-public r-pplot
+  (package
+    (name "r-pplot")
+    (version "0.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pplot" version))
+       (sha256
+        (base32 "1j9l6gswri0in4zswqdpcfk5ki9r885ngk9883zdxp0p7k4d37fp"))))
+    (properties `((upstream-name . "pplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=pplot")
+    (synopsis "Chronological and Ordered p-Plots for Empirical Data")
+    (description
+     "Generates chronological and ordered p-plots for data vectors or vectors of
+p-values.  The p-plot visualizes the evolution of the p-value of a significance
+test across the sampled data.  It allows for assessing the consistency of the
+observed effects, for detecting the presence of potential moderator variables,
+and for estimating the influence of outlier values on the observed results.  For
+non-significant findings, it can diagnose patterns indicative of underpowered
+study designs.  The p-plot can thus either back the binary accept-vs-reject
+decision of common null-hypothesis significance tests, or it can qualify this
+decision and stimulate additional empirical work to arrive at more robust and
+replicable statistical inferences.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-pplasso
   (package
@@ -22732,13 +22761,13 @@ the base graphics plotting tools; and manipulate irregular polygons.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "19sw62pclbxnrs9snbl5fl9psh741v6lvgk0w5bznw86986m54ai"))))
+        (base32 "0fj5v7rzx8hcc8l2s6zfvrgwzmiw2pwrs34qbpxh4kmmxz8i14gk"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments
@@ -24776,13 +24805,13 @@ to the measured PER in control samples.")
 (define-public r-plasma
   (package
     (name "r-plasma")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plasma" version))
        (sha256
-        (base32 "02ygj3sjjds6iyh1d2jz8ifqc4m31zslplsmf88c8q8l67ilvrhl"))))
+        (base32 "14bp3l9rys0yfjl8lkbn0yw2qivldwfk9j5ka63bps5l2bw9m1b5"))))
     (properties `((upstream-name . "plasma")))
     (build-system r-build-system)
     (arguments
@@ -37966,13 +37995,13 @@ functional time series <@code{arXiv:1612.00040>}.")
 (define-public r-pcdimension
   (package
     (name "r-pcdimension")
-    (version "1.1.13")
+    (version "1.1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PCDimension" version))
        (sha256
-        (base32 "0mpf7m4daqaip18yfsyanrmbjq4ib9fw1b65ajdazicm400bw6gb"))))
+        (base32 "067yxfaz6rjwnf3hr53llwzfd5pdz8jdqls42bxy7c1y3jm9ay3k"))))
     (properties `((upstream-name . "PCDimension")))
     (build-system r-build-system)
     (arguments
@@ -38045,13 +38074,13 @@ flexibility and reduces computational requirements.  Methods:
 (define-public r-pcatsapiclientr
   (package
     (name "r-pcatsapiclientr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcatsAPIclientR" version))
        (sha256
-        (base32 "1ci0ppql2vkcpmri0dc419by3qy56rygm77xqx444dzfyn8ksv00"))))
+        (base32 "16h6vf7b1zjs02whkkxf8j93p55q7bfyxq0vgs5h0pw26c6p4qxp"))))
     (properties `((upstream-name . "pcatsAPIclientR")))
     (build-system r-build-system)
     (arguments
@@ -41929,6 +41958,30 @@ Tukey g-&-h distributions are supported, for now.")
      "Create a parallel coordinates plot, using `htmlwidgets` package and `d3.js`.")
     (license license:expat)))
 
+(define-public r-parallelpc
+  (package
+    (name "r-parallelpc")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ParallelPC" version))
+       (sha256
+        (base32 "07y7xb16865khxkvwsk1yglzyy7ja4aj2wpkipaz48i77c3x8bi2"))))
+    (properties `((upstream-name . "ParallelPC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=ParallelPC")
+    (synopsis
+     "Paralellised Versions of Constraint Based Causal Discovery Algorithms")
+    (description
+     "Parallelise constraint based causality discovery and causal inference methods.
+The parallelised algorithms in the package will generate the same results as
+that of the pcalg package but will be much more efficient.")
+    (license license:gpl2+)))
+
 (define-public r-parallelpam
   (package
     (name "r-parallelpam")
@@ -42377,6 +42430,47 @@ Box-Tidwell transformations.  In contrast to the classic power-transformations,
 the methods in this package allows for theoretical driven user input and the
 possibility to compare with a non-parametric transformation.")
     (license license:gpl2+)))
+
+(define-public r-pangoling
+  (package
+    (name "r-pangoling")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pangoling" version))
+       (sha256
+        (base32 "0q9dkxii7bs14dxdsrinxd5xfzszi29mqmq1gp938z04livip668"))))
+    (properties `((upstream-name . "pangoling")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidytable
+                             r-tidyselect
+                             r-rstudioapi
+                             r-reticulate
+                             r-memoise
+                             r-data-table
+                             r-cachem))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/pangoling/")
+    (synopsis "Access to Large Language Model Predictions")
+    (description
+     "This package provides access to word predictability estimates using large
+language models (LLMs) based on transformer architectures via integration with
+the Hugging Face ecosystem <https://huggingface.co/>.  The package interfaces
+with pre-trained neural networks and supports both causal/auto-regressive LLMs
+(e.g., GPT-2') and masked/bidirectional LLMs (e.g., BERT') to compute the
+probability of words, phrases, or tokens given their linguistic context.  For
+details on GPT-2 and causal models, see Radford et al. (2019)
+<https://storage.prod.researchhub.com/uploads/papers/2020/06/01/language-models.pdf>,
+for details on BERT and masked models, see Devlin et al. (2019)
+<doi:10.48550/@code{arXiv.1810.04805>}.  By enabling a straightforward
+estimation of word predictability, the package facilitates research in
+psycholinguistics, computational linguistics, and natural language processing
+(NLP).")
+    (license license:expat)))
 
 (define-public r-pangaear
   (package

@@ -3181,19 +3181,19 @@ Mike Bostock.")
 (define-public r-exclusiontable
   (package
     (name "r-exclusiontable")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExclusionTable" version))
        (sha256
-        (base32 "01f4gklvrzglwg2ck0qr1d9l467bb4rsklv5bz4afrdk9snxgwz7"))))
+        (base32 "0qg64mw1n6np4z17i7s38w4gi9jlfd2sm9qqfi2psh0fw88m2m5m"))))
     (properties `((upstream-name . "ExclusionTable")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-magrittr r-dplyr r-cli))
+    (propagated-inputs (list r-data-table r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/entjos/ExclusionTable/")
     (synopsis "Creating Tables of Excluded Observations")
@@ -3247,13 +3247,13 @@ Qualtrics datasets.")
 (define-public r-excessmort
   (package
     (name "r-excessmort")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "excessmort" version))
        (sha256
-        (base32 "0jpwvni5x066d9hb0fjiq212rmrl5mfb1dmvasv5xvn013j9qbm0"))))
+        (base32 "09pxm60vwaxxa2n6m4zha893dwmijcj1g8d6qw2mznnlln51n4c5"))))
     (properties `((upstream-name . "excessmort")))
     (build-system r-build-system)
     (arguments
@@ -3796,44 +3796,6 @@ and Lefebvre (2018) <doi:10.1353/obs.2018.0013>; Samoilenko, Lefebvre (2021)
 <doi:10.1093/aje/kwab055>; and Samoilenko, Lefebvre (2023)
 <doi:10.1002/sim.9621>.")
     (license license:gpl3)))
-
-(define-public r-exactltre
-  (package
-    (name "r-exactltre")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "exactLTRE" version))
-       (sha256
-        (base32 "0fhzymvsmp1hcq32nwka745jhbf51iyb9hp6ix9rm88kyclcwhrl"))))
-    (properties `((upstream-name . "exactLTRE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-popdemo r-matrixcalc))
-    (home-page "https://cran.r-project.org/package=exactLTRE")
-    (synopsis
-     "An Exact Method for Life Table Response Experiment (LTRE) Analysis")
-    (description
-     "Life Table Response Experiments (LTREs) are a method of comparative demographic
-analysis.  The purpose is to quantify how the difference or variance in vital
-rates (stage-specific survival, growth, and fertility) among populations
-contributes to difference or variance in the population growth rate, \"lambda.\"
-We provide functions for one-way fixed design and random design LTRE, using
-either the classical methods that have been in use for several decades, or an
-@code{fANOVA-based} exact method that directly calculates the impact on lambda
-of changes in matrix elements, for matrix elements and their interactions.  The
-equations and descriptions for the classical methods of LTRE analysis can be
-found in \"Matrix Population Models: Construction, Analysis, and Interpretation
-(2nd edition)\" Caswell (2001, ISBN: 0878930965), and the @code{fANOVA-based}
-exact methods will be published in a forthcoming paper.  We also provide some
-demographic functions, including generation time from Bienvenu and Legendre
-(2015) <doi:10.1086/681104>.  For implementation of @code{exactLTRE} where all
-possible interactions are calculated, we use an operator matrix presented in
-Poelwijk, Krishna, and Ranganathan (2016) <doi:10.1371/journal.pcbi.1004771>.")
-    (license license:expat)))
 
 (define-public r-exactcox
   (package
@@ -10727,68 +10689,6 @@ Furthermore, @code{epiworldR} is ideal for simulation studies featuring large
 populations.")
     (license license:expat)))
 
-(define-public r-epitweetr
-  (package
-    (name "r-epitweetr")
-    (version "2.2.16")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "epitweetr" version))
-       (sha256
-        (base32 "0xniwd6r1jyn2ifw8y4d9c3dl4maik6p4lw0nghb9z9q9xigjlak"))))
-    (properties `((upstream-name . "epitweetr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xtable
-                             r-xml2
-                             r-tidyverse
-                             r-tidytext
-                             r-tibble
-                             r-stringr
-                             r-sp
-                             r-shiny
-                             r-rtweet
-                             r-rnaturalearthdata
-                             r-rmarkdown
-                             r-rlang
-                             r-readxl
-                             r-processx
-                             r-plyr
-                             r-plotly
-                             r-openxlsx
-                             r-magrittr
-                             r-lifecycle
-                             r-knitr
-                             r-keyring
-                             r-jsonlite
-                             r-janitor
-                             r-httr
-                             r-httpuv
-                             r-htmltools
-                             r-ggplot2
-                             r-future
-                             r-emayili
-                             r-dt
-                             r-dplyr
-                             r-curl
-                             r-crul
-                             r-bit64))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/EU-ECDC/epitweetr")
-    (synopsis "Early Detection of Public Health Threats from 'Twitter' Data")
-    (description
-     "It allows you to automatically monitor trends of tweets by time, place and topic
-aiming at detecting public health threats early through the detection of signals
-(e.g. an unusual increase in the number of tweets).  It was designed to focus on
-infectious diseases, and it can be extended to all hazards or other fields of
-study by modifying the topics and keywords.  More information is available in
-the epitweetr peer-review publication
-(doi:10.2807/1560-7917.ES.2022.27.39.2200177).")
-    (license (license:fsdg-compatible "EUPL"))))
-
 (define-public r-epitrix
   (package
     (name "r-epitrix")
@@ -15851,13 +15751,13 @@ cocktails.")
 (define-public r-emc2
   (package
     (name "r-emc2")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMC2" version))
        (sha256
-        (base32 "1l4q9qdgnvrrzixm8lhz6awdys3brgcmyvlfrzz6z1jm9ih0s4fq"))))
+        (base32 "1vfkf91vrzkdl4d0mvp8ci9wrgifjs3wd2ajm23rp4blczlrbap5"))))
     (properties `((upstream-name . "EMC2")))
     (build-system r-build-system)
     (arguments
@@ -16901,13 +16801,13 @@ itself.")
 (define-public r-elisatools
   (package
     (name "r-elisatools")
-    (version "0.1.5")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ELISAtools" version))
        (sha256
-        (base32 "18f2adhw85f0hsz5gb6xhi0w2phcq364xy9y1jri6ckzs8g0pny7"))))
+        (base32 "1w3db1c9az4gx5dy2h8q1zvp41161k72jlb6sw82x4i2dpmsikp1"))))
     (properties `((upstream-name . "ELISAtools")))
     (build-system r-build-system)
     (arguments

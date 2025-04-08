@@ -10912,13 +10912,13 @@ error of the regression coeffcient (sescree); 8.  Nelson R2; 9.  Bartlett khi-2;
 (define-public r-nexus
   (package
     (name "r-nexus")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nexus" version))
        (sha256
-        (base32 "0vaw9b83znz9wxrbf2m6xf1k14sqnq4x25fywrmmp2q4j29mdkfr"))))
+        (base32 "1vsri865x7k69l10b4xw5yjh8rrjl3x3zqc5f6ssascmc3hiascd"))))
     (properties `((upstream-name . "nexus")))
     (build-system r-build-system)
     (arguments
@@ -10926,7 +10926,7 @@ error of the regression coeffcient (sescree); 8.  Nelson R2; 9.  Bartlett khi-2;
       #:tests? #f))
     (propagated-inputs (list r-mass r-khroma r-isopleuros r-dimensio r-arkhe))
     (native-inputs (list r-knitr))
-    (home-page "https://packages.tesselle.org/nexus/")
+    (home-page "https://codeberg.org/tesselle/nexus")
     (synopsis "Sourcing Archaeological Materials by Chemical Composition")
     (description
      "Exploration and analysis of compositional data in the framework of Aitchison
@@ -15013,38 +15013,6 @@ outcomes.")
 auto-installation.")
     (license license:expat)))
 
-(define-public r-needmining
-  (package
-    (name "r-needmining")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "needmining" version))
-       (sha256
-        (base32 "0qsj0ihjchrnl4s44rpsizbcz033z00dmzvic2y1msv0bnfawl6p"))))
-    (properties `((upstream-name . "needmining")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tm
-                             r-tau
-                             r-stringr
-                             r-sparsem
-                             r-snowballc
-                             r-rtweet
-                             r-randomforest))
-    (home-page "https://cran.r-project.org/package=needmining")
-    (synopsis "Simple Needmining Implementation")
-    (description
-     "Showcasing needmining (the semi-automatic extraction of customer needs from
-social media data) with Twitter data.  It uses the handling of the Twitter API
-provided by the package rtweet and the textmining algorithms provided by the
-package tm'.  Niklas Kuehl (2016) <doi:10.1007/978-3-319-32689-4_14> wrote an
-introduction to the topic of needmining.")
-    (license license:gpl3)))
-
 (define-public r-necountries
   (package
     (name "r-necountries")
@@ -17376,21 +17344,20 @@ automatic bases aic and bic lags selection of independent variables proposed by
 (define-public r-naptime
   (package
     (name "r-naptime")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naptime" version))
        (sha256
-        (base32 "1cadfv5sdsmz61kf96hf2gbnghf24q40g5c3h9b8prvkxslap691"))))
+        (base32 "1dr6hbh3sizy44vxwsya4iyia19svwja4qgc5r70h08ix2v51n5x"))))
     (properties `((upstream-name . "naptime")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-lubridate))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=naptime")
+    (home-page "https://github.com/russellpierce/naptime")
     (synopsis "Flexible and Robust Sys.sleep() Replacement")
     (description
      "This package provides a near drop-in replacement for @code{base::Sys.sleep()}

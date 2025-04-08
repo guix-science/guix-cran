@@ -6565,30 +6565,6 @@ Athanasopoulos <https://otexts.com/fpp2/>.  All packages required to run the
 examples are also loaded.")
     (license license:gpl3)))
 
-(define-public r-fpp
-  (package
-    (name "r-fpp")
-    (version "0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fpp" version))
-       (sha256
-        (base32 "1jqnx6bgpvnbbj2fa2b6m6aj8jd5cb9kz877r8kp7a5qj62xv1ww"))))
-    (properties `((upstream-name . "fpp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tseries r-lmtest r-forecast r-fma r-expsmooth))
-    (home-page "http://otexts.com/fpp/")
-    (synopsis "Data for \"Forecasting: principles and practice\"")
-    (description
-     "All data sets required for the examples and exercises in the book \"Forecasting:
-principles and practice\" by Rob J Hyndman and George Athanasopoulos.  All
-packages required to run the examples are also loaded.")
-    (license license:gpl2+)))
-
 (define-public r-fpow
   (package
     (name "r-fpow")
@@ -14760,13 +14736,13 @@ Kirkkojarvi, Finland\".")
 (define-public r-fishgrowth
   (package
     (name "r-fishgrowth")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fishgrowth" version))
        (sha256
-        (base32 "01vk40wlqws0nvljjs7japbrjrdy0crsxm0cbm4p6wvxy28xbdwd"))))
+        (base32 "0x43998j7i0m1933syz8nrl1sf874ilxrz18l52lywlscz13r8mp"))))
     (properties `((upstream-name . "fishgrowth")))
     (build-system r-build-system)
     (arguments
@@ -15110,13 +15086,13 @@ information about 5-digit or 2-digit US FIPS codes.")
 (define-public r-fio
   (package
     (name "r-fio")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fio" version))
        (sha256
-        (base32 "1zzrpk9jqnmfqalkqac8xp7x2z6apcx6c63hw0ngqz6l7f0gykb8"))))
+        (base32 "0k51a2swr76c98lvg4ajk4srqwqp82439m2k8lrhcb79anqpqziy"))))
     (properties `((upstream-name . "fio")))
     (build-system r-build-system)
     (arguments
@@ -17085,19 +17061,24 @@ Software) <doi:10.18637/jss.v109.i09>.")
 (define-public r-fhircrackr
   (package
     (name "r-fhircrackr")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fhircrackr" version))
        (sha256
-        (base32 "1r1bgk77qmh5mxarpjahvfbncxn47k4n7miqghz4rnda08hhc4rk"))))
+        (base32 "00v405p302cmiigb9xfcs0arwliiab3fx4zhdzrgb3889476wnk4"))))
     (properties `((upstream-name . "fhircrackr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-stringr r-lifecycle r-httr r-data-table))
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-rlang
+                             r-lifecycle
+                             r-httr
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=fhircrackr")
     (synopsis "Handling HL7 FHIRÂ® Resources in R")

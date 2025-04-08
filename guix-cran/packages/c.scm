@@ -2973,13 +2973,13 @@ types while checking for values outside the type limits, NA values, etc.")
 (define-public r-ctxr
   (package
     (name "r-ctxr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctxR" version))
        (sha256
-        (base32 "1wyjl7s1mhrxbl8ah2zb439hs0iz11ra3c6x7xpi3fjqq7xkndpc"))))
+        (base32 "1zhkrrqx5h1jx0hvfgnmiq6k5hhfp57ca7dhdi154gajv04drmx7"))))
     (properties `((upstream-name . "ctxR")))
     (build-system r-build-system)
     (arguments
@@ -6442,13 +6442,13 @@ are available.  It also includes our own implementation of the COPPS procedure
 (define-public r-crossvalidate
   (package
     (name "r-crossvalidate")
-    (version "2.3.4")
+    (version "2.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CrossValidate" version))
        (sha256
-        (base32 "1q5wnw2llvlw3hbjg0zccipk3ns31m2339x1aj6m526zhvgl2wvx"))))
+        (base32 "154jg0gdgjivvqca64c346820wng1p7br8bd91ns5ia37bndc46r"))))
     (properties `((upstream-name . "CrossValidate")))
     (build-system r-build-system)
     (arguments
@@ -31181,6 +31181,46 @@ efficiently.")
 model.")
     (license license:gpl2+)))
 
+(define-public r-clocksim
+  (package
+    (name "r-clocksim")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clockSim" version))
+       (sha256
+        (base32 "0v4cj7x7rcgj44hsc16zxrlpcx28iywqbi3jnxrp7s5wahz6imcs"))))
+    (properties `((upstream-name . "clockSim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-odin
+                             r-matrixstats
+                             r-lomb
+                             r-ggplot2
+                             r-dplyr
+                             r-dde
+                             r-bench))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yeyuan98/clockSim")
+    (synopsis "Streamlined Simulation of Circadian Gene Networks")
+    (description
+     "This package provides a user-friendly workflow for simulating circadian clock
+gene networks.  Despite decades of advances in modeling circadian clock
+dynamics, the lack of accessible tools for reproducible simulation workflows
+hinders the integration of computational modeling with experimental studies.
+@code{clockSim} addresses this gap by providing models and helper functions with
+step-by-step vignettes.  This package opens up system-level exploration of the
+circadian clock to wet-lab experimentalists, and future development will include
+additional clock architectures and other gene circuit models.  Currently
+implemented models are based on Leloup and Goldbeter (1998)
+<doi:10.1177/074873098128999934>.")
+    (license license:gpl3+)))
+
 (define-public r-clockify
   (package
     (name "r-clockify")
@@ -40008,13 +40048,13 @@ for analyzing continuous glucose monitoring studies'.")
 (define-public r-cgmanalysis
   (package
     (name "r-cgmanalysis")
-    (version "3.0.2")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgmanalysis" version))
        (sha256
-        (base32 "1shvjy8km2xsi4qx3309c20iiwmd8hkyg0g7ajp261yg8fzbcd3r"))))
+        (base32 "1r668xicc9qm713svmaik4yyygpmics9rl78naslgxh5d25zbg7a"))))
     (properties `((upstream-name . "cgmanalysis")))
     (build-system r-build-system)
     (arguments
@@ -45097,13 +45137,13 @@ in Jeong et al. (2019) <doi:10.1101/gr.245571.118> and Baggerly et al. (2003)
 (define-public r-caviarpd
   (package
     (name "r-caviarpd")
-    (version "0.3.14")
+    (version "0.3.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caviarpd" version))
        (sha256
-        (base32 "0drhhgv7pacvxcpf4kmk4b2dasjqrhzl5laibi9l5gdi724irgg4"))))
+        (base32 "1cf85q0ldikpgxcwz75k5ainiyka0drk2ailc12r9wnrwlrly9jj"))))
     (properties `((upstream-name . "caviarpd")))
     (build-system r-build-system)
     (arguments
@@ -48247,6 +48287,37 @@ to put statistical results in the ARD format.  These objects are used and
 re-used to construct summary tables, visualizations, and written reports.")
     (license license:asl2.0)))
 
+(define-public r-cardiocurver
+  (package
+    (name "r-cardiocurver")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CardioCurveR" version))
+       (sha256
+        (base32 "1hn8b49fha9z39m6s4ah0gkipw0hi4c6ff6kc5pidy4k5h90qyy1"))))
+    (properties `((upstream-name . "CardioCurveR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-signal r-gridextra r-ggplot2 r-data-table))
+    (home-page "https://github.com/matcasti/CardioCurveR")
+    (synopsis "Nonlinear Modeling of R-R Interval Dynamics")
+    (description
+     "Automated and robust framework for analyzing R-R interval (RRi) signals using
+advanced nonlinear modeling and preprocessing techniques.  The package
+implements a dual-logistic model to capture the rapid drop and subsequent
+recovery of RRi during exercise, as described by Castillo-Aguilar et al. (2025)
+<doi:10.1038/s41598-025-93654-6>.  In addition, @code{CardioCurveR} includes
+tools for filtering RRi signals using zero-phase Butterworth low-pass filtering
+and for cleaning ectopic beats via adaptive outlier replacement using local
+regression and robust statistics.  These integrated methods preserve the dynamic
+features of RRi signals and facilitate accurate cardiovascular monitoring and
+clinical research.")
+    (license license:expat)))
+
 (define-public r-cardinalr
   (package
     (name "r-cardinalr")
@@ -48453,13 +48524,13 @@ applications and community-driven extensions.")
 (define-public r-carbondate
   (package
     (name "r-carbondate")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "carbondate" version))
        (sha256
-        (base32 "03hsss66gxkxp8zpjg6qy6mvjlcy5bchw0idzmwj37ls79g0zczr"))))
+        (base32 "0xlb2wzw18hc2gl3wn9j7zlb1mbqfpw67hg065lhg9vqm7wa2s2l"))))
     (properties `((upstream-name . "carbondate")))
     (build-system r-build-system)
     (arguments
@@ -48478,39 +48549,6 @@ Also models the occurrence of radiocarbon samples as a variable-rate
 occurrence rate of the samples over calendar time, and providing information
 about potential change points.")
     (license license:gpl3+)))
-
-(define-public r-carbonate
-  (package
-    (name "r-carbonate")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "carbonate" version))
-       (sha256
-        (base32 "01k8c49v8ybgcwdr9ipw319lxw4p14w9bzl54j1ljbajdzgzcgwk"))))
-    (properties `((upstream-name . "carbonate")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-wdman
-                             r-rtweet
-                             r-rselenium
-                             r-r6
-                             r-magick
-                             r-jsonlite
-                             r-httr
-                             r-httpuv
-                             r-details
-                             r-clipr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/yonicd/carbonate")
-    (synopsis "Interact with 'carbon.js'")
-    (description "Create beautiful images of source code using
-carbon.js'<https://carbon.now.sh/about>.")
-    (license license:expat)))
 
 (define-public r-carbayesst
   (package

@@ -2999,19 +2999,20 @@ also many practical uses under the XAI paradigm.")
 (define-public r-visualizesimon2stage
   (package
     (name "r-visualizesimon2stage")
-    (version "0.1.7")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VisualizeSimon2Stage" version))
        (sha256
-        (base32 "11jxgbb5hgz3i3mk01rv1vy0m2x103ilxzq8adjpcxsy5p3d1qfp"))))
+        (base32 "06r97sx1pvssk8ab9ims7h5dmga740k4ka7nnizjid9amim5p8ig"))))
     (properties `((upstream-name . "VisualizeSimon2Stage")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-officer r-ggplot2 r-flextable))
+    (native-inputs (list r-quarto))
     (home-page "https://cran.r-project.org/package=VisualizeSimon2Stage")
     (synopsis "Visualize Simon's Two-Stage Design")
     (description
@@ -3334,6 +3335,31 @@ generated.")
 the fit of regression models arising from a wide variety of models in R ('lm',
 glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.).")
     (license license:gpl3)))
+
+(define-public r-visor
+  (package
+    (name "r-visor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visor" version))
+       (sha256
+        (base32 "1f05za1p7nfiyn5av6a1iahc7hax1xjmvsx9bsqplrwjka5f8mjh"))))
+    (properties `((upstream-name . "visor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sfheaders r-sf))
+    (native-inputs (list r-knitr))
+    (home-page "https://cityriverspaces.github.io/visor/")
+    (synopsis "Geospatial Tools for Visibility Analysis")
+    (description
+     "This package provides tools for visibility analysis in geospatial data.  It
+offers functionality to perform isovist calculations, using arbitrary geometries
+as both viewpoints and occluders.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-visomopresults
   (package
