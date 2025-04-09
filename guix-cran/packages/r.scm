@@ -8626,13 +8626,13 @@ Send and retrieve files from @code{SauceLabs} and manage tunnels associated with
 (define-public r-rsatscan
   (package
     (name "r-rsatscan")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsatscan" version))
        (sha256
-        (base32 "018958mln4gfqk9xmiqma2gp5drysf9z17ilraf4wlaxi7dm7qf6"))))
+        (base32 "03s48fhzdz6hd0829sxl75rqdnhfana4ygrz9s7mj8853qaqapzr"))))
     (properties `((upstream-name . "rsatscan")))
     (build-system r-build-system)
     (arguments
@@ -30781,20 +30781,25 @@ Steve Horvath (2006) <doi:10.1198/106186006X94072> & Monti et al (2003)
 (define-public r-rfast2
   (package
     (name "r-rfast2")
-    (version "0.1.5.2")
+    (version "0.1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rfast2" version))
        (sha256
-        (base32 "125j6qk405i2wjpcyq0x6dmabns8iybqk9g3f43mk6j08n7fgfp1"))))
+        (base32 "08zxd28ch1j37mnx16fqz9sa9kjpri115ab317cf1pyc1v1jfsa6"))))
     (properties `((upstream-name . "Rfast2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rnanoflann r-rfast r-rcppparallel
-                             r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-zigg
+                             r-rnanoflann
+                             r-rfast
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-bh))
     (home-page "https://github.com/RfastOfficial/Rfast2")
     (synopsis "Collection of Efficient and Extremely Fast R Functions II")
     (description
@@ -44056,13 +44061,13 @@ into a markdown version of the package reference manual.")
 (define-public r-rcytogps
   (package
     (name "r-rcytogps")
-    (version "1.2.7")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCytoGPS" version))
        (sha256
-        (base32 "1xix60ch4zmx60nvyjb69ihg2axqbvdsphw5my68g17am0gk41bd"))))
+        (base32 "0k77gd5b6q2zdc2wypyqsvsrvjc0327jf6r4cpkwjjv5hpsc53k7"))))
     (properties `((upstream-name . "RCytoGPS")))
     (build-system r-build-system)
     (arguments

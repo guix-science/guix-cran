@@ -8187,6 +8187,41 @@ includes a function for estimating standardized mean difference effect sizes
 on fitted lme or gls models.")
     (license license:gpl3)))
 
+(define-public r-lme4gs
+  (package
+    (name "r-lme4gs")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lme4GS" version))
+       (sha256
+        (base32 "1lwd0vgg3f4p5zvjfbr88fp530ymir3yl3zby9i1dc6isdb48h5v"))))
+    (properties `((upstream-name . "lme4GS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-lme4))
+    (home-page "https://cran.r-project.org/package=lme4GS")
+    (synopsis "'lme4' for Genomic Selection")
+    (description
+     "Flexible functions that use lme4 as computational engine for fitting models used
+in Genomic Selection (GS).  GS is a technology used for genetic improvement, and
+it has many advantages over phenotype-based selection.  There are several
+statistical models that adequately approach the statistical challenges in GS,
+such as in linear mixed models (LMMs).  The lme4 is the standard package for
+fitting linear and generalized LMMs in the R-package, but its use for genetic
+analysis is limited because it does not allow the correlation between
+individuals or groups of individuals to be defined.  The lme4GS package is
+focused on fitting LMMs with covariance structures defined by the user,
+bandwidth selection, and genomic prediction.  The new package is focused on
+genomic prediction of the models used in GS and can fit LMMs using different
+variance-covariance matrices.  Several examples of GS models are presented using
+this package as well as the analysis using real data.  For more details see
+Caamal-Pat et.al. (2021) <doi:10.3389/fgene.2021.680569>.")
+    (license license:gpl2+)))
+
 (define-public r-lme4breeding
   (package
     (name "r-lme4breeding")
@@ -17867,13 +17902,13 @@ interpolation originally implemented in the R package
 (define-public r-latentbma
   (package
     (name "r-latentbma")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LatentBMA" version))
        (sha256
-        (base32 "0gkcmc87ikq4n3zhga9pi2s3gdcf9h450xm8z4i855kf2h8ib2ky"))))
+        (base32 "0i2nfcbjiml6pzr0prbhwf5ywa1qxscrnbchsrs5gpwym3s9vibl"))))
     (properties `((upstream-name . "LatentBMA")))
     (build-system r-build-system)
     (arguments

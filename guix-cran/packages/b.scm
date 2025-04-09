@@ -29495,6 +29495,35 @@ several data structures.")
 surrounding the central dogma of molecular biology.")
     (license license:gpl3)))
 
+(define-public r-basepenguins
+  (package
+    (name "r-basepenguins")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "basepenguins" version))
+       (sha256
+        (base32 "131m19jjvjzjck12n529lbi969xk16m17v1jrjrks4vv2jvv94ka"))))
+    (properties `((upstream-name . "basepenguins")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EllaKaye/basepenguins")
+    (synopsis
+     "Convert Files that Use 'palmerpenguins' to Work with 'datasets'")
+    (description
+     "From R 4.5.0, the datasets package includes the penguins and penguins_raw data
+sets popularised in the palmerpenguins package.  basepenguins takes files that
+use the palmerpenguins package and converts them to work with the versions from
+datasets ('R >= 4.5.0).  It does this by removing calls to
+library(palmerpenguins) and making the necessary changes to column names.
+Additionally, it provides helper functions to define new files paths for saving
+the output and a directory of example files to experiment with.")
+    (license license:expat)))
+
 (define-public r-basemodels
   (package
     (name "r-basemodels")

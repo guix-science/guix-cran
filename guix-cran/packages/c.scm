@@ -310,13 +310,13 @@ Thiebaut (2018) <doi: 10.1002/cyto.a.23601>.")
 (define-public r-cytofan
   (package
     (name "r-cytofan")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cytofan" version))
        (sha256
-        (base32 "0gqs98mnwiawnyfb9hs5nlin8d1fj64bszn4b40gs8ajyh36r9pp"))))
+        (base32 "1isbwyzj64f0m8w768k5bl6wj4imcjbg3wdrc5khgkxaa5dmdg8k"))))
     (properties `((upstream-name . "cytofan")))
     (build-system r-build-system)
     (arguments
@@ -3157,6 +3157,56 @@ dichotomous and polytomous data.  Functions provide reliability analyses
 (alpha), item statistics, disctractor analyses, disattenuated correlations,
 scoring routines, and empirical ICCs.")
     (license license:gpl2+)))
+
+(define-public r-ctsmtmb
+  (package
+    (name "r-ctsmtmb")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ctsmTMB" version))
+       (sha256
+        (base32 "1n2d2wrc3wrj88p1n4nsml76d14gv0b8hc1ixbsk6nzh3ikl4ax5"))))
+    (properties `((upstream-name . "ctsmTMB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmb
+                             r-stringr
+                             r-rtmb
+                             r-rcppziggurat
+                             r-rcppxptrutils
+                             r-rcppeigen
+                             r-rcpp
+                             r-r6
+                             r-patchwork
+                             r-matrix
+                             r-ggplot2
+                             r-ggfortify
+                             r-desolve
+                             r-deriv))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/phillipbvetter/ctsmTMB")
+    (synopsis
+     "Continuous Time Stochastic Modelling using Template Model Builder")
+    (description
+     "Perform state and parameter inference, and forecasting, in stochastic
+state-space systems using the @code{ctsmTMB} class.  This class, built with the
+R6 package, provides a user-friendly interface for defining and handling
+state-space models.  Inference is based on maximum likelihood estimation, with
+derivatives efficiently computed through automatic differentiation enabled by
+the TMB'/'RTMB packages (Kristensen et al., 2016) <doi:10.18637/jss.v070.i05>.
+The available inference methods include Kalman filters, in addition to a Laplace
+approximation-based smoothing method.  For further details of these methods
+refer to the documentation of the CTSMR package
+<https://ctsm.info/ctsmr-reference.pdf> and Thygesen (2025)
+<doi:10.48550/@code{arXiv.2503.21358>}.  Forecasting capabilities include moment
+predictions and stochastic path simulations, both implemented in C++ using Rcpp
+(Eddelbuettel et al., 2018) <doi:10.1080/00031305.2017.1375990> for
+computational efficiency.")
+    (license license:gpl3)))
 
 (define-public r-ctshiny2
   (package
@@ -6518,13 +6568,13 @@ Bloomberg Data for Health Initiative.")
 (define-public r-crossurr
   (package
     (name "r-crossurr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crossurr" version))
        (sha256
-        (base32 "1g4nr9x93ykq6qy5236vydkcbjyfzdz81kwgjv7mph3m0b862rdw"))))
+        (base32 "148bicid49i26fpqpl8p9wnaj9sajsybimlwn80aw7c40pd71fbr"))))
     (properties `((upstream-name . "crossurr")))
     (build-system r-build-system)
     (arguments
@@ -26390,6 +26440,30 @@ regression for both, cross-sectional and longitudinal studies, and for binary
 and continuous outcomes.")
     (license license:expat)))
 
+(define-public r-coda-plot
+  (package
+    (name "r-coda-plot")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coda.plot" version))
+       (sha256
+        (base32 "1kwkla9mhb61g61gczhp99hx2rav6wp7wgjsn550hsxdmp41cww4"))))
+    (properties `((upstream-name . "coda.plot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggtern r-ggplot2 r-coda-base))
+    (home-page "https://cran.r-project.org/package=coda.plot")
+    (synopsis "Plots for Compositional Data")
+    (description
+     "This package provides a collection of easy-to-use functions for creating
+visualizations of compositional data using ggplot2'.  Includes support for
+common plotting techniques in compositional data analysis.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-coda-base
   (package
     (name "r-coda-base")
@@ -27716,13 +27790,13 @@ provided on the CM SAF webpage (<http://www.cmsaf.eu/R_toolbox>).")
 (define-public r-cmsafops
   (package
     (name "r-cmsafops")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmsafops" version))
        (sha256
-        (base32 "118msgfysvbg08nvzrx5nmffvszn1cfx91lzd2hkd6la8sivk10h"))))
+        (base32 "0sam7m3z5b8wcla10p58x4vnn6wlnaa92rdi2bw6lsssqkybq48l"))))
     (properties `((upstream-name . "cmsafops")))
     (build-system r-build-system)
     (arguments
@@ -31072,13 +31146,13 @@ et al. (2014) <doi:10.1186/s13059-014-0439-6>; Carreira et al. (2014)
 (define-public r-cloneseeker
   (package
     (name "r-cloneseeker")
-    (version "1.0.11")
+    (version "1.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CloneSeeker" version))
        (sha256
-        (base32 "19aj4c2q3wp4vp08j72700wwyqmkqxwml2fwmz0wsxdam8vp1ydi"))))
+        (base32 "1yq694gamsrkqszk0bj98lk74rxaixq3cf2y4k3fc8a98gwrpqjf"))))
     (properties `((upstream-name . "CloneSeeker")))
     (build-system r-build-system)
     (arguments
@@ -37773,6 +37847,42 @@ uses Neal & Neal's (2024) \"A Framework for Studying Adults who Neither have Nor
 Want Children\" <doi:10.1177/10664807231198869>; A pre-print is available at
 <doi:10.31234/osf.io/fa89m>.")
     (license license:gpl3)))
+
+(define-public r-childeswordfreq
+  (package
+    (name "r-childeswordfreq")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "childeswordfreq" version))
+       (sha256
+        (base32 "1byshms0wgy7591fzjxjjw7p2qc146vhhalcq7f75k2nyi80zx37"))))
+    (properties `((upstream-name . "childeswordfreq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl
+                             r-tidyr
+                             r-rlang
+                             r-readr
+                             r-magrittr
+                             r-dplyr
+                             r-childesr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/n-albudoor/childeswordfreq")
+    (synopsis "Word Frequency Extraction and Summarization")
+    (description
+     "This package provides tools to extract word frequencies from the CHILDES (Child
+Language Data Exchange System) corpus.  The main function allows users to input
+a list of words and receive speaker-role-specific frequency counts and a summary
+of the dataset.  The output includes Excel-formatted tables of word counts and
+metadata summaries such as number of speakers, transcripts, children, and token
+counts.  Useful for researchers studying early language acquisition, corpus
+linguistics, and speaker role variation.  The CHILDES database is maintained at
+<https://childes.talkbank.org/>.")
+    (license license:expat)))
 
 (define-public r-childesr
   (package
@@ -49193,13 +49303,13 @@ Arias-Pulido H et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS
 (define-public r-canvasxpress
   (package
     (name "r-canvasxpress")
-    (version "1.55.9")
+    (version "1.56.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "canvasXpress" version))
        (sha256
-        (base32 "0rb32ak8jm0qgngwjdjj2jb724hqr2f1d055qhl91pkcjankh3jb"))))
+        (base32 "1x4k7h0vvpn628yy3nqwnq2n53mb09iqzglx6s65m7arjc7wjbgh"))))
     (properties `((upstream-name . "canvasXpress")))
     (build-system r-build-system)
     (arguments

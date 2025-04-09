@@ -4855,6 +4855,29 @@ ISBN:978-3-319-24520-1).  The package was developed essentially as an extension
 to igraph'.")
     (license license:gpl3)))
 
+(define-public r-multinet
+  (package
+    (name "r-multinet")
+    (version "4.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multinet" version))
+       (sha256
+        (base32 "1v2jr9ppp2i33mhmc5qidbcar1i0gr6cn7z2c3fafd9bhbnkw4qj"))))
+    (properties `((upstream-name . "multinet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-rcolorbrewer r-igraph))
+    (home-page "https://cran.r-project.org/package=multinet")
+    (synopsis "Analysis and Mining of Multilayer Social Networks")
+    (description
+     "This package provides functions for the creation/generation and analysis of
+multilayer social networks <doi:10.18637/jss.v098.i08>.")
+    (license license:asl2.0)))
+
 (define-public r-multiness
   (package
     (name "r-multiness")
@@ -6445,13 +6468,13 @@ attenuate the results to the null or by a given amount?")
 (define-public r-multibias
   (package
     (name "r-multibias")
-    (version "1.6.3")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multibias" version))
        (sha256
-        (base32 "13n7xp4hxrqdk6ajsaw2hawaw7w4v5nlv4rw3pazi4hrrkyhzfpw"))))
+        (base32 "14sadwywxwsawf8smfh9i4c5jmhj9lkndgy6asga0rfgwsxyh90j"))))
     (properties `((upstream-name . "multibias")))
     (build-system r-build-system)
     (arguments
@@ -23151,13 +23174,13 @@ distribution within the Bayesian framework.")
 (define-public r-mixspe
   (package
     (name "r-mixspe")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixSPE" version))
        (sha256
-        (base32 "1fcafsvnv9hgh0cnjqwfj09y4fw3scm888fnnax3pjialklzmxh7"))))
+        (base32 "18xadxbyz3lh6d7jm3gh6x3i8sjjalsv170mb3vamqv4x9gh9jp2"))))
     (properties `((upstream-name . "mixSPE")))
     (build-system r-build-system)
     (arguments
@@ -28170,13 +28193,13 @@ details on some of these methods.")
 (define-public r-mig
   (package
     (name "r-mig")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mig" version))
        (sha256
-        (base32 "1l7p2bbcz888s3m339p63i6490savjqvv5g4awznzpfbllp0zi4i"))))
+        (base32 "0xdiv4623qmnqydf4f20qf8bjpm2bgyi690pzg9l3d5csjqrh4f2"))))
     (properties `((upstream-name . "mig")))
     (build-system r-build-system)
     (arguments
@@ -29068,13 +29091,13 @@ incorporated and updated over a discrete time step.")
 (define-public r-micromapst
   (package
     (name "r-micromapst")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micromapST" version))
        (sha256
-        (base32 "0nr66hna3y9p1qw967jhmkphs9g8zd1ksq3ijky201yl9skdwi8a"))))
+        (base32 "1r7isqb7m35f95sn9qdmd72h336r22wmqjslwl6a00vn2dwg8yv7"))))
     (properties `((upstream-name . "micromapST")))
     (build-system r-build-system)
     (arguments
@@ -29114,12 +29137,17 @@ table between area names, abbreviations, numeric identification and alias
 matching strings for the specific geographic area.  By specifying a border
 group, the package create linked micromap plots for any geographic region.  The
 user can create and provide their own border group dataset for any area beyond
-the areas contained within the package.  In version 3.0.0, the
-@code{BuildBorderGroup} function was upgraded to not use the retiring maptools',
-rgdal', and rgeos packages.  References: Carr and Pickle, Chapman and Hall/CRC,
-Visualizing Data Patterns with Micromaps, CRC Press, 2010.  Pickle, Pearson, and
-Carr (2015), @code{micromapST}: Exploring and Communicating Geospatial Patterns
-in US State Data., Journal of Statistical Software, 63(3), 1-25.,
+the areas contained within the package with the @code{BuildBorderGroup}
+function.  In April of 2022, it was announced that maptools', rgdal', and rgeos
+R packages would be retired in middle to end of 2023 and removed from the CRAN
+libraries.  The @code{BuildBorderGroup} function was dependent on these
+packages. @code{micromapST} functions were not impacted by the retired R
+packages.  Upgrading of @code{BuildBorderGroup} function was completed and
+released with version 3.0.0 on August 10, 2023 using the sf R package.
+References: Carr and Pickle, Chapman and Hall/CRC, Visualizing Data Patterns
+with Micromaps, CRC Press, 2010.  Pickle, Pearson, and Carr (2015),
+@code{micromapST}: Exploring and Communicating Geospatial Patterns in US State
+Data., Journal of Statistical Software, 63(3), 1-25.,
 <https://www.jstatsoft.org/v63/i03/>.  Copyrighted 2013, 2014, 2015, 2016, 2022,
 2023, 2024, and 2025 by Carr, Pearson and Pickle.")
     (license license:gpl2+)))
@@ -36798,13 +36826,13 @@ Science Foundation under Grant Number 1460719.")
 (define-public r-mercator
   (package
     (name "r-mercator")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Mercator" version))
        (sha256
-        (base32 "14am6xkgbiwx453qi362c3b1l3nfnigy7wdx1m01078zgff9cl5l"))))
+        (base32 "0skazqgl58jb916xyc0lasxajnli6ydkrsb01cvw82jlr4v2mfpl"))))
     (properties `((upstream-name . "Mercator")))
     (build-system r-build-system)
     (arguments

@@ -10621,13 +10621,13 @@ as asymmetrical factorial designs.")
 (define-public r-fmat
   (package
     (name "r-fmat")
-    (version "2025.3")
+    (version "2025.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FMAT" version))
        (sha256
-        (base32 "021fbbvzvvczd6g3sl9qifkp574ykigzjfca7ygbrym73xbzf9mc"))))
+        (base32 "07r25dn7cbid28y9xry35jwir1zwxafg3mmyld4bhifzy7wsncab"))))
     (properties `((upstream-name . "FMAT")))
     (build-system r-build-system)
     (arguments

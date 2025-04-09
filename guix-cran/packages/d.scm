@@ -10848,6 +10848,31 @@ can be evaluated with management strategy evaluation with the MSEtool package,
 or applied to fishery data to provide management recommendations.")
     (license license:gpl3)))
 
+(define-public r-dlmrmv
+  (package
+    (name "r-dlmrmv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DLMRMV" version))
+       (sha256
+        (base32 "0h130bsn203wi6lym8d2439v89ilpmrapkpnb36x7cfsi9y8nbdw"))))
+    (properties `((upstream-name . "DLMRMV")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=DLMRMV")
+    (synopsis
+     "Distributed Linear Regression Models with Response Missing Variables")
+    (description
+     "As a distributed imputation strategy, the Distributed full information Multiple
+Imputation method is developed to impute missing response variables in
+distributed linear regression.  The philosophy of the package is described in
+Guo (2025) <doi:10.1038/s41598-025-93333-6>.")
+    (license license:asl2.0)))
+
 (define-public r-dll
   (package
     (name "r-dll")

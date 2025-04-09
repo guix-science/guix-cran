@@ -5267,13 +5267,13 @@ included.  The VF analysis methods could be found in -- Musch et al. (1999)
 (define-public r-vfp
   (package
     (name "r-vfp")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VFP" version))
        (sha256
-        (base32 "11fgfwr4p0a9sqiclidgpzv29x4976yvr22924hpp1shszx2z2nl"))))
+        (base32 "01varrrd2x2m7mbsc22hz7mdfp9s72qaxj4ns5zviy5mjjpmhgsn"))))
     (properties `((upstream-name . "VFP")))
     (build-system r-build-system)
     (arguments
@@ -7903,39 +7903,6 @@ package.  See Kemal DinÃ§er DingeÃ§ & Wolfgang HÃ¶rmann (2012)
 <doi:10.1016/j.ejor.2012.03.046>.")
     (license license:gpl2)))
 
-(define-public r-varrank
-  (package
-    (name "r-varrank")
-    (version "0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "varrank" version))
-       (sha256
-        (base32 "0f2k18v6ygb5cwd6jri9ws97zq47znrqacv2adkd2yqp3jhwd24f"))))
-    (properties `((upstream-name . "varrank")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-fnn))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.math.uzh.ch/pages/varrank/")
-    (synopsis
-     "Heuristics Tools Based on Mutual Information for Variable Ranking")
-    (description
-     "This package provides a computational toolbox of heuristics approaches for
-performing variable ranking and feature selection based on mutual information
-well adapted for multivariate system epidemiology datasets.  The core function
-is a general implementation of the minimum redundancy maximum relevance model.
-R. Battiti (1994) <doi:10.1109/72.298224>.  Continuous variables are discretized
-using a large choice of rule.  Variables ranking can be learned with a
-sequential forward/backward search algorithm.  The two main problems that can be
-addressed by this package is the selection of the most representative variable
-within a group of variables of interest (i.e.  dimension reduction) and variable
-ranking with respect to a set of features of interest.")
-    (license license:gpl3)))
-
 (define-public r-varoc
   (package
     (name "r-varoc")
@@ -8723,13 +8690,13 @@ support vector machine, the contamination of a sample can be detected.")
 (define-public r-vannstats
   (package
     (name "r-vannstats")
-    (version "1.5.1.8")
+    (version "1.5.4.07")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vannstats" version))
        (sha256
-        (base32 "1qmrvkh5hc9glna9911i8m8c5ywd6iz7x96ibg9ba3kgh70q9537"))))
+        (base32 "1gzmigzg39m03njahyxvvlvc8wljra4qgfw21f20pxnqa91rh4bx"))))
     (properties `((upstream-name . "vannstats")))
     (build-system r-build-system)
     (arguments

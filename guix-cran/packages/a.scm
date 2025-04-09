@@ -4765,36 +4765,6 @@ Information by Banerjee, Mukherjee and Sun (JASA 2020).")
     (description "Miscellaneous astronomy functions, utilities, and data.")
     (license license:gpl2+)))
 
-(define-public r-astrodatr
-  (package
-    (name "r-astrodatr")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "astrodatR" version))
-       (sha256
-        (base32 "00689px4znwmlp6qbj6z2a51b7ylx1yrrjpv6zjkvrwpv6lyj9fw"))))
-    (properties `((upstream-name . "astrodatR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=astrodatR")
-    (synopsis "Astronomical Data")
-    (description
-     "This package provides a collection of 19 datasets from contemporary astronomical
-research.  They are described the textbook `Modern Statistical Methods for
-Astronomy with R Applications by Eric D. Feigelson and G. Jogesh Babu (Cambridge
-University Press, 2012, Appendix C) or on the website of Penn State's Center for
-Astrostatistics (http://astrostatistics.psu.edu/datasets).  These datasets can
-be used to exercise methodology involving: density estimation; heteroscedastic
-measurement errors; contingency tables; two-sample hypothesis tests; spatial
-point processes; nonlinear regression; mixture models; censoring and truncation;
-multivariate analysis; classification and clustering; inhomogeneous Poisson
-processes; periodic and stochastic time series analysis.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-astrochron
   (package
     (name "r-astrochron")
@@ -21890,39 +21860,6 @@ A., Barberena R., Thomas M. G., Mendez C., Manning K. (2020)
      "Estimate age-depth models from stratigraphic and sedimentological data, and
 transform data between the time and stratigraphic domain.")
     (license license:gpl3+)))
-
-(define-public r-admmsigma
-  (package
-    (name "r-admmsigma")
-    (version "2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ADMMsigma" version))
-       (sha256
-        (base32 "1943dza086s22pr0yz41wzn9cdg11x7fl9zr3w012865yj219m7l"))))
-    (properties `((upstream-name . "ADMMsigma")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/MGallow/ADMMsigma")
-    (synopsis "Penalized Precision Matrix Estimation via ADMM")
-    (description
-     "Estimates a penalized precision matrix via the alternating direction method of
-multipliers (ADMM) algorithm.  It currently supports a general elastic-net
-penalty that allows for both ridge and lasso-type penalties as special cases.
-This package is an alternative to the glasso package.  See Boyd et al (2010)
-<doi:10.1561/2200000016> for details regarding the estimation method.")
-    (license license:gpl2+)))
 
 (define-public r-admmdensestsubmatrix
   (package

@@ -12018,13 +12018,13 @@ Smith-Miles, K., et al. (2019) <doi:10.1080/10618600.2019.1617160>.")
 (define-public r-oddsratio
   (package
     (name "r-oddsratio")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oddsratio" version))
        (sha256
-        (base32 "1db0pxi5j18rvi8dyc2xx1im3l269775vpjjavapjcv2pylfg5r0"))))
+        (base32 "09kpab2zr5hjhgk51z9zhdjxssjpa03dyds9gg1f39j8vvpgnb7b"))))
     (properties `((upstream-name . "oddsratio")))
     (build-system r-build-system)
     (arguments

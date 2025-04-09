@@ -10843,13 +10843,13 @@ global and local influence for four possible perturbation schema.")
 (define-public r-heck
   (package
     (name "r-heck")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heck" version))
        (sha256
-        (base32 "0kr4ch84j0fnj9zhmfnvwn24kfnz8kcykg0vhqvw5grnx7971sq9"))))
+        (base32 "1vw2v72b9pcr0s4qss7af0dpi8b9ncvzmvypi8bpw15x3n6hwv04"))))
     (properties `((upstream-name . "heck")))
     (build-system r-build-system)
     (arguments
@@ -15524,25 +15524,25 @@ signature implemented.")
 (define-public r-hackernews
   (package
     (name "r-hackernews")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hackeRnews" version))
        (sha256
-        (base32 "0vrdbk4dxbykb3hs35nxkl3s2ds92gs5qz66p85w8j5zjmwbw2x6"))))
+        (base32 "02fj1l0kb9jhhf2rjh3l0c0pp89y4819mv4gg1zzkdwvyks7x5wr"))))
     (properties `((upstream-name . "hackeRnews")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-jsonlite r-httr r-future-apply))
+    (propagated-inputs (list r-httr2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/szymanskir/hackeRnews")
     (synopsis "Wrapper for the 'Official Hacker News' API")
     (description
-     "Use the <https://hacker-news.firebaseio.com/v0/> API through R. Retrieve posts,
-articles and other items in form of convenient R objects.")
+     "Use the Official Hacker News API through R. Retrieve posts, articles and other
+items in form of convenient R objects.")
     (license license:expat)))
 
 (define-public r-hac

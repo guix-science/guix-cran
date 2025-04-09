@@ -767,13 +767,13 @@ related according to a provided pedigree.")
 (define-public r-numberize
   (package
     (name "r-numberize")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "numberize" version))
        (sha256
-        (base32 "1mvr9lnlph054j343rjqlfiagpfx5f1sx3pbrmbhd2fw6vnv1pz2"))))
+        (base32 "0p84143a63zwbaajzx6rngz1pv6jrm3bp2xwrcvby53r7nv25hws"))))
     (properties `((upstream-name . "numberize")))
     (build-system r-build-system)
     (arguments
@@ -782,8 +782,8 @@ related according to a provided pedigree.")
     (home-page "https://github.com/epiverse-trace/numberize")
     (synopsis "Convert Words to Numbers in Multiple Languages")
     (description
-     "Converts written out numbers into their equivalent numbers.  Supports numbers
-written out in English, French, or Spanish.")
+     "Converts number spellings into their equivalent numbers.  Supports numbers
+written in English, French, or Spanish.")
     (license license:expat)))
 
 (define-public r-nullabor
@@ -11093,13 +11093,13 @@ of the <https://github.com/kotartemiy/newscatcher> Python module.")
 (define-public r-newmanomics
   (package
     (name "r-newmanomics")
-    (version "1.0.13")
+    (version "1.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NewmanOmics" version))
        (sha256
-        (base32 "1c9r7k2ilyfb9dj9hzfkk9cl712blay81qhk7l3486i9kdl6wwzv"))))
+        (base32 "06k5scs11b31gbs400sb2q9nid70cywp73kcbjs799z8p6iij0sq"))))
     (properties `((upstream-name . "NewmanOmics")))
     (build-system r-build-system)
     (arguments
@@ -17615,13 +17615,13 @@ Markov model which is described in Strakova J., Straka M. and Hajic J. (2013)
 (define-public r-nameneedle
   (package
     (name "r-nameneedle")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NameNeedle" version))
        (sha256
-        (base32 "14w8amhaar6wksnpkssdgjlmyqb4n7qxda29vy6rps2dxfvi6klc"))))
+        (base32 "0g7mvwzbygin41wp7g7dhc284sydd5l4sqlba7ksqm32h97zvrk7"))))
     (properties `((upstream-name . "NameNeedle")))
     (build-system r-build-system)
     (arguments

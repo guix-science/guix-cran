@@ -6879,13 +6879,13 @@ Weinberg, C.R.")
 (define-public r-triact
   (package
     (name "r-triact")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "triact" version))
        (sha256
-        (base32 "1ndxqrs1mg6ch99cksd7gnrjvhsklwfrjwrdxns099a3n16m3r0h"))))
+        (base32 "0s6i54qcam036hbcc14b26sh4ydcpi68n0jk62s4xgspfnr3c83l"))))
     (properties `((upstream-name . "triact")))
     (build-system r-build-system)
     (arguments
@@ -6893,7 +6893,7 @@ Weinberg, C.R.")
       #:tests? #f))
     (propagated-inputs (list r-r6 r-lubridate r-data-table r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=triact")
+    (home-page "https://github.com/agroscope-ch/triact")
     (synopsis "Analyzing the Lying Behavior of Cows from Accelerometer Data")
     (description
      "Assists in analyzing the lying behavior of cows from raw data recorded with a
@@ -6902,8 +6902,7 @@ determination of common measures for lying behavior including total lying
 duration, the number of lying bouts, and the mean duration of lying bouts.
 Further capabilities are the description of lying laterality and the calculation
 of proxies for the level of physical activity of the cow.  Reference: Simmler
-M., Brouwers S. P. (2023)
-<https://gitlab.com/@code{AgroSimi/triact_manuscript>}.")
+M., Brouwers S. P. (2024) <doi:10.7717/peerj.17036>.")
     (license license:gpl3+)))
 
 (define-public r-tri-hierarchical-ibds
@@ -7701,13 +7700,13 @@ the source file is edited.")
 (define-public r-treesitter
   (package
     (name "r-treesitter")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treesitter" version))
        (sha256
-        (base32 "1yppwpayv4krwyxzqcg9aisdlascksym603ad0a9qpjrsivqyhh9"))))
+        (base32 "1mri1sfl96di94v3b76mfkh6ipq9dfaj6jhsslqw755j10bjbcib"))))
     (properties `((upstream-name . "treesitter")))
     (build-system r-build-system)
     (arguments

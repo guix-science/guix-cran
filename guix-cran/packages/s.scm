@@ -5424,13 +5424,13 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
 (define-public r-surveydown
   (package
     (name "r-surveydown")
-    (version "0.9.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveydown" version))
        (sha256
-        (base32 "0yjqymwhfl8vp9cfqgkr1f9gsrc39fh0v88nyd7j67zmpdd7g4yb"))))
+        (base32 "0fy66xaccvjpxamml70l2xcncmzixgksx97v7ffdvpggyj1902n7"))))
     (properties `((upstream-name . "surveydown")))
     (build-system r-build-system)
     (arguments
@@ -5438,7 +5438,6 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
       #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-xml2
-                             r-usethis
                              r-shinywidgets
                              r-shinyjs
                              r-shiny
@@ -5447,6 +5446,7 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
                              r-rpostgres
                              r-quarto
                              r-pool
+                             r-miniui
                              r-markdown
                              r-jsonlite
                              r-htmltools
@@ -5457,21 +5457,21 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
                              r-cli
                              r-bslib))
     (home-page "https://pkg.surveydown.org")
-    (synopsis "Markdown-Based Surveys Using 'Quarto' and 'shiny'")
+    (synopsis "Markdown-Based Programmable Surveys Using 'Quarto' and 'shiny'")
     (description
-     "Generate surveys using markdown and R code chunks.  Surveys are composed of two
-files: a survey.qmd Quarto file defining the survey content (pages, questions,
-etc), and an app.R file defining a shiny app with global settings (libraries,
-database configuration, etc.) and server configuration options (e.g.,
-conditional skipping / display, etc.).  Survey data collected from respondents
-is stored in a @code{PostgreSQL} database.  Features include controls for
-conditional skip logic (skip to a page based on an answer to a question),
-conditional display logic (display a question based on an answer to a question),
-a customizable progress bar, and a wide variety of question types, including
-multiple choice (single choice and multiple choices), select, text, numeric,
-multiple choice buttons, text area, and dates.  Because the surveys render into
-a shiny app, designers can also leverage the reactive capabilities of shiny to
-create dynamic and interactive surveys.")
+     "Generate programmable surveys using markdown and R code chunks.  Surveys are
+composed of two files: a survey.qmd Quarto file defining the survey content
+(pages, questions, etc), and an app.R file defining a shiny app with global
+settings (libraries, database configuration, etc.) and server configuration
+options (e.g., conditional skipping / display, etc.).  Survey data collected
+from respondents is stored in a @code{PostgreSQL} database.  Features include
+controls for conditional skip logic (skip to a page based on an answer to a
+question), conditional display logic (display a question based on an answer to a
+question), a customizable progress bar, and a wide variety of question types,
+including multiple choice (single choice and multiple choices), select, text,
+numeric, multiple choice buttons, text area, and dates.  Because the surveys
+render into a shiny app, designers can also leverage the reactive capabilities
+of shiny to create dynamic and interactive surveys.")
     (license license:expat)))
 
 (define-public r-surveydefense
@@ -13876,19 +13876,19 @@ used to retrieve tree height and diameter at breast height (DBH).
 (define-public r-stellar
   (package
     (name "r-stellar")
-    (version "0.3-4")
+    (version "0.3-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stellaR" version))
        (sha256
-        (base32 "0spn25fbsfswx2rshzk34pqkicynyl256a4f7xrh51bhyh9qff44"))))
+        (base32 "071523mqcm5vkr9n1nzw35rbirmr6q10jrcgvp6j2lr7lhw3w8rh"))))
     (properties `((upstream-name . "stellaR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=stellaR")
+    (home-page "http://astro.df.unipi.it/stellar-models/")
     (synopsis
      "Evolutionary Tracks and Isochrones from Pisa Stellar Evolution Database")
     (description
@@ -17498,13 +17498,13 @@ Practices in Psychological Science 3(1), 66-80 <DOI:10.1177/2515245919885617>.")
 (define-public r-sstvars
   (package
     (name "r-sstvars")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sstvars" version))
        (sha256
-        (base32 "1xcyw3si3cnvm9azsv8rwrisqp8z7qz8fidgrfdl4h214556b51v"))))
+        (base32 "05i457r3fbzr0qhgq0hwb3sais6jhmxcwdq4j6y0sdlhrjav93a4"))))
     (properties `((upstream-name . "sstvars")))
     (build-system r-build-system)
     (arguments
@@ -18354,13 +18354,13 @@ interface that is easy to use.")
 (define-public r-ssizerna
   (package
     (name "r-ssizerna")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssizeRNA" version))
        (sha256
-        (base32 "1qw10yswzpg28fhvr6rsq0gh7xivfapw64gxc0hakb1nc31jf8ky"))))
+        (base32 "139s5sbw0ax612b71qcfc3h969j89f5jbxm9s7qvz5w2yfps353p"))))
     (properties `((upstream-name . "ssizeRNA")))
     (build-system r-build-system)
     (arguments
@@ -25378,6 +25378,46 @@ image for just the area of interest based on selected spectral bands.")
     (description
      "Stores and eases the manipulation of spectra and associated data, with dedicated
 classes for spatial and soil-related data.")
+    (license license:gpl3)))
+
+(define-public r-spect
+  (package
+    (name "r-spect")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spect" version))
+       (sha256
+        (base32 "0z53z8xyz003f95w87m3d0xmlvs313jjqh8s8n32wgipy827l794"))))
+    (properties `((upstream-name . "spect")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survminer
+                             r-survival
+                             r-rlang
+                             r-riskregression
+                             r-ggplot2
+                             r-futile-logger
+                             r-dplyr
+                             r-doparallel
+                             r-caretensemble
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dawdawdo/spect")
+    (synopsis "Survival Prediction Ensemble Classification Tool")
+    (description
+     "This package provides a tool for survival analysis using a discrete time
+approach with ensemble binary classification.  spect provides a simple interface
+consistent with commonly used R data analysis packages, such as caret', a
+variety of parameter options to help facilitate search automation, a high degree
+of transparency to the end-user - all intermediate data sets and parameters are
+made available for further analysis and useful, out-of-the-box visualizations of
+model performance.  Methods for transforming survival data into discrete-time
+are adapted from the autosurv package by Suresh et al., (2022)
+<doi:10.1186/s12874-022-01679-6>.")
     (license license:gpl3)))
 
 (define-public r-specsverification
@@ -43292,13 +43332,13 @@ parameter estimates for nonlinear least squares optimization.  Dattner & Yaari
 (define-public r-simnph
   (package
     (name "r-simnph")
-    (version "0.5.6")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimNPH" version))
        (sha256
-        (base32 "003fcw2xii9j5327lqph0rbh5w1z1z90gkcjr4fhqgy5fn8zkcnk"))))
+        (base32 "0wd1iqv933nk0w5kydw5n39xmikjpf9sa7g2rq8vajpfdj8grk6y"))))
     (properties `((upstream-name . "SimNPH")))
     (build-system r-build-system)
     (arguments
@@ -45338,13 +45378,13 @@ described by Zhang, X., and Cheng, G. (2017)
 (define-public r-sillyputty
   (package
     (name "r-sillyputty")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SillyPutty" version))
        (sha256
-        (base32 "18qc7dwd29zghx9klsslvr2pianbf3av0pvc0wc09781hiv3xksg"))))
+        (base32 "06nf0zgdikfcg1vlsr4jbzy29g2ms8w7f16hddmb4bf5hqhbqkxg"))))
     (properties `((upstream-name . "SillyPutty")))
     (build-system r-build-system)
     (arguments
@@ -46728,13 +46768,13 @@ Analysis in R\".")
 (define-public r-siberg
   (package
     (name "r-siberg")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIBERG" version))
        (sha256
-        (base32 "1d8kx5m86qil50d8fhwn7lwaigdnppzk0cwyh4hv54lwffpclnki"))))
+        (base32 "0ak6gm6llr6bpvflmf2p56dc257x2lj5j6rj39bqmr7b6p9mzpq0"))))
     (properties `((upstream-name . "SIBERG")))
     (build-system r-build-system)
     (arguments
@@ -61848,6 +61888,34 @@ time.  For more information, please check the following paper: Naimi, B.,
 Araujo, M.B. (2016) <doi:10.1111/ecog.01881>.")
     (license license:gpl3+)))
 
+(define-public r-sdlrm
+  (package
+    (name "r-sdlrm")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sdlrm" version))
+       (sha256
+        (base32 "1bih26khbwq0mbd5f65mxi0s627a2ch499d5bqa8hgm8ir55hsbl"))))
+    (properties `((upstream-name . "sdlrm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast r-formula))
+    (home-page "https://github.com/rdmatheus/sdlrm")
+    (synopsis
+     "Modified Skew Discrete Laplace Regression for Integer-Valued and Paired Discrete Data")
+    (description
+     "Implementation of the modified skew discrete Laplace (SDL) regression model.
+The package provides a set of functions for a complete analysis of
+integer-valued data, where the dependent variable is assumed to follow a
+modified SDL distribution.  This regression model is useful for the analysis of
+integer-valued data and experimental studies in which paired discrete
+observations are collected.")
+    (license license:gpl3)))
+
 (define-public r-sdlfilter
   (package
     (name "r-sdlfilter")
@@ -62386,13 +62454,13 @@ Design and Analysis, Duxbury.")
 (define-public r-sda
   (package
     (name "r-sda")
-    (version "1.3.8")
+    (version "1.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sda" version))
        (sha256
-        (base32 "14cpl7zj9aamdwyc8c9s7hnf660srvjv66lpnsm837d4r7k19icv"))))
+        (base32 "021bydhadmvk78qmjyspaqk4xg476y0ns2wcl9igv1jzi621r0my"))))
     (properties `((upstream-name . "sda")))
     (build-system r-build-system)
     (arguments

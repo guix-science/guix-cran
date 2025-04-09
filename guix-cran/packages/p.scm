@@ -2432,20 +2432,20 @@ and access detailed annotations.")
 (define-public r-ptycho
   (package
     (name "r-ptycho")
-    (version "1.1-4")
+    (version "1.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ptycho" version))
        (sha256
-        (base32 "1llk3rpk0lf80vwvs23d6dqhgyic3a6sfjc393csj69hh01nrdvc"))))
+        (base32 "096zfmxl12j6abqj2jqzsmk3sxdnrkx3x3rj7qc751x4rx2jmj2y"))))
     (properties `((upstream-name . "ptycho")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-reshape2 r-plyr r-coda))
-    (home-page "web.stanford.edu/~lstell/ptycho/")
+    (home-page "http://web.stanford.edu/~lstell/ptycho/")
     (synopsis "Bayesian Variable Selection with Hierarchical Priors")
     (description
      "Bayesian variable selection for linear regression models using hierarchical
@@ -4729,13 +4729,13 @@ are discussed in Vignette.")
 (define-public r-pseval
   (package
     (name "r-pseval")
-    (version "1.3.1")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pseval" version))
        (sha256
-        (base32 "1jgnv1l9adhwrmkmp6wkzz7jf7w1hyqy47ajr29l21p4g037py45"))))
+        (base32 "0k4mhvss38g7chp2h688bf3pjh8gwp4f1qcxpyyskm04nqmpscd6"))))
     (properties `((upstream-name . "pseval")))
     (build-system r-build-system)
     (arguments
@@ -4743,7 +4743,7 @@ are discussed in Vignette.")
       #:tests? #f))
     (propagated-inputs (list r-survival))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=pseval")
+    (home-page "https://sachsmc.github.io/pseval/")
     (synopsis
      "Methods for Evaluating Principal Surrogates of Treatment Response")
     (description
@@ -16066,6 +16066,49 @@ post code.  API wrapper around <https://postcodes.io>.")
     (description
      "This package provides a collection of R Markdown templates for creating simple
 and easy to personalize single page websites.")
+    (license license:expat)))
+
+(define-public r-postcard
+  (package
+    (name "r-postcard")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "postcard" version))
+       (sha256
+        (base32 "1k9sar32rb46qa2i5qkng93v5ysbfd597ih5gpdr9b98m5cn0vbj"))))
+    (properties `((upstream-name . "postcard")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-xgboost
+                             r-workflowsets
+                             r-tune
+                             r-tidyselect
+                             r-stringr
+                             r-rsample
+                             r-rlang
+                             r-parsnip
+                             r-options
+                             r-magrittr
+                             r-generics
+                             r-earth
+                             r-dplyr
+                             r-deriv
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://novonordisk-opensource.github.io/postcard/")
+    (synopsis
+     "Estimating Marginal Effects with Prognostic Covariate Adjustment")
+    (description
+     "Conduct power analyses and inference of marginal effects.  Uses plug-in
+estimation and influence functions to perform robust inference, optionally
+leveraging historical data to increase precision with prognostic covariate
+adjustment.  The methods are described in HÃ¸jbjerre-Frandsen et al. (2025)
+<doi:10.48550/@code{arXiv.2503.22284>}.")
     (license license:expat)))
 
 (define-public r-possa
@@ -29103,6 +29146,31 @@ geocoding API <https://photon.komoot.io/>.  Facilitates the setup of local
 photon instances to enable offline geocoding.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-photogea
+  (package
+    (name "r-photogea")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PhotoGEA" version))
+       (sha256
+        (base32 "1yasd435x1ns18zpqyh2qrgkhbgpyfc3r0jni3mbcp6lcijad67n"))))
+    (properties `((upstream-name . "PhotoGEA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-openxlsx r-lattice r-dfoptim r-deoptim))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/eloch216/PhotoGEA")
+    (synopsis "Photosynthetic Gas Exchange Analysis")
+    (description
+     "Read, process, fit, and analyze photosynthetic gas exchange measurements.
+Documentation is provided by several vignettes; also see Lochocki,
+Salesse-Smith, & @code{McGrath} (2025) <doi:10.1111/pce.15501>.")
+    (license license:expat)))
+
 (define-public r-photobiologywavebands
   (package
     (name "r-photobiologywavebands")
@@ -34863,20 +34931,19 @@ parameters are included.")
 (define-public r-peiman2
   (package
     (name "r-peiman2")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PEIMAN2" version))
        (sha256
-        (base32 "01jsyp9yk576v3bc0a33y0f8w9v4b47g5hc0zahf3zl4bkp8i4wv"))))
+        (base32 "0nx3hsbb66667fywypwv8g3aji558nj7za33fy81ak61yj607zc4"))))
     (properties `((upstream-name . "PEIMAN2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyverse
-                             r-stringr
+    (propagated-inputs (list r-stringr
                              r-rlang
                              r-purrr
                              r-magrittr
@@ -34892,9 +34959,9 @@ parameters are included.")
     (description
      "This package provides functions and mined database from @code{UniProt} focusing
 on post-translational modifications to do single enrichment analysis (SEA) and
-protein set enrichment analysis (PSEA).  Payman Nickchi, Mehdi Mirzaie, Marc
-Baumann, Amir Ata Saei, Mohieddin Jafari (2022)
-<@code{bioRxiv:10.1101/2022.11.09.515610>}.")
+protein set enrichment analysis (PSEA).  Payman Nickchi, Uladzislau Vadadokhau,
+Mehdi Mirzaie, Marc Baumann, Amir Ata Saei, Mohieddin Jafari (2025)
+<doi:10.1002/pmic.202400238>.")
     (license license:gpl3+)))
 
 (define-public r-pegrouptesting
@@ -39494,13 +39561,13 @@ biomarker of prognostic and predictive for cancer immunotherapy.")
 (define-public r-pathwayspace
   (package
     (name "r-pathwayspace")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PathwaySpace" version))
        (sha256
-        (base32 "1mf76xclm2qqg10m23nybdadlq5z44qhp21r6h0fjs8n9aqygb5q"))))
+        (base32 "0a91984f5zkvkcd0vkpr10h5ji6v3ls2451lmcsj5wfzcxxr94gn"))))
     (properties `((upstream-name . "PathwaySpace")))
     (build-system r-build-system)
     (arguments
@@ -39509,6 +39576,7 @@ biomarker of prognostic and predictive for cancer immunotherapy.")
     (propagated-inputs (list r-scales
                              r-rgraphspace
                              r-rann
+                             r-lifecycle
                              r-igraph
                              r-ggrepel
                              r-ggplot2))
@@ -44598,13 +44666,13 @@ decisions based on timely and detailed economic insights.")
 (define-public r-pak
   (package
     (name "r-pak")
-    (version "0.8.0.1")
+    (version "0.8.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pak" version))
        (sha256
-        (base32 "0il9yyhbx9yk3wwmzwbqhqx19czwskswfrzszs5a69p9659ka9df"))))
+        (base32 "07jfylf87cqb20cfczy369nlhmz8s3kdmyaz9sl7dp35vc8jy1bj"))))
     (properties `((upstream-name . "pak")))
     (build-system r-build-system)
     (arguments

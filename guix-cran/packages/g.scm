@@ -15258,13 +15258,13 @@ generated.")
 (define-public r-gllvm
   (package
     (name "r-gllvm")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gllvm" version))
        (sha256
-        (base32 "0byic007qvdy5qspwdj97ayxhc01pv1ay6b0w2y3x9z93ra92qwi"))))
+        (base32 "1la0wpds8s65739lbqhp4cx198yq6msliy447nri4jf4bqcsjl8z"))))
     (properties `((upstream-name . "gllvm")))
     (build-system r-build-system)
     (arguments
@@ -33603,13 +33603,13 @@ Existence in the journal Ecology and Evolution.")
 (define-public r-gaupro
   (package
     (name "r-gaupro")
-    (version "0.2.14")
+    (version "0.2.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GauPro" version))
        (sha256
-        (base32 "1q1bjzi14873x673am1m3zgisildajcb73r951alm9glaihszxj1"))))
+        (base32 "1s0wwwdnfh0fpzl0d8bfiyvwqlhi0yx820fs6cwlj507qwggkhln"))))
     (properties `((upstream-name . "GauPro")))
     (build-system r-build-system)
     (arguments

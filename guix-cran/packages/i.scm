@@ -8696,13 +8696,13 @@ references, see the webpage of Aleks Jakulin
 (define-public r-integirty
   (package
     (name "r-integirty")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "integIRTy" version))
        (sha256
-        (base32 "15f04p97fvqdq971adyafm3ljirfxz90lv096fdqn2vk0sq5dwyj"))))
+        (base32 "1pch6jwlj4yg006jmgd78xfx92rwxynmdmxwpvzp3vzpgjx09rbz"))))
     (properties `((upstream-name . "integIRTy")))
     (build-system r-build-system)
     (arguments
@@ -13299,6 +13299,40 @@ repertoire dimensions and can be analyzed using provided repertoire analysis
 functions.  Preprint is available at @code{bioRxiv} (Weber et al., 2019
 <doi:10.1101/759795>).")
     (license license:gpl3)))
+
+(define-public r-immundata
+  (package
+    (name "r-immundata")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "immundata" version))
+       (sha256
+        (base32 "0y2hafdasgj8j2rcbf8mas1xvrv8pzwwdy49wk958l7cz8xqpzc4"))))
+    (properties `((upstream-name . "immundata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-readr
+                             r-r6
+                             r-lifecycle
+                             r-glue
+                             r-duckplyr
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (home-page "https://cran.r-project.org/package=immundata")
+    (synopsis
+     "Unified Data Layer for Single-Cell, Spatial and Bulk Immunomics")
+    (description
+     "This package provides a unified data layer for single-cell, spatial and bulk
+T-cell and B-cell immune receptor repertoire data, integrating diverse data
+formats such as AIRR and raw sequencing files.  Includes utilities for receptor
+aggregation, metadata normalization, and clonotype filtering.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-immunaut
   (package

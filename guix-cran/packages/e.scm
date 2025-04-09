@@ -340,13 +340,13 @@ entire set of isolates using the drc package.")
 (define-public r-ezcutoffs
   (package
     (name "r-ezcutoffs")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ezCutoffs" version))
        (sha256
-        (base32 "04ah9dbfwl89xi0di0dslaf8a39nynxymm8lbacgd88al5dg7y1n"))))
+        (base32 "175wh04ll0kjihirk4zyd5r0igj3vlglm6afmqryk3jl7nm830nj"))))
     (properties `((upstream-name . "ezCutoffs")))
     (build-system r-build-system)
     (arguments
@@ -11018,35 +11018,6 @@ Gradient Boosting approach to predict the sequences with 6@code{mA} sites in it.
 <doi:10.1093/bioinformatics/btz015>.")
     (license license:gpl3)))
 
-(define-public r-episcan
-  (package
-    (name "r-episcan")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "episcan" version))
-       (sha256
-        (base32 "02687f8gpc2czn19lapvazd6mnm8902ay0lhgi3wdrzfhir42m4r"))))
-    (properties `((upstream-name . "episcan")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=episcan")
-    (synopsis "Scan Pairwise Epistasis")
-    (description
-     "Searching genomic interactions with linear/logistic regression in a
-high-dimensional dataset is a time-consuming task.  This package provides some
-efficient ways to scan epistasis in genome-wide interaction studies (GWIS).
-Both case-control status (binary outcome) and quantitative phenotype (continuous
-outcome) are supported (the main references: 1.  Kam-Thong, T., D. Czamara, K.
-Tsuda, K. Borgwardt, C. M. Lewis, A. Erhardt-Lehmann, B. Hemmer, et al. (2011).
-<doi:10.1038/ejhg.2010.196>.  2.  Kam-Thong, T., B. PÃ¼tz, N. Karbalai, B.
-MÃ¼ller-Myhsok, and K. Borgwardt. (2011). <doi:10.1093/bioinformatics/btr218>.).")
-    (license license:gpl2+)))
-
 (define-public r-epireport
   (package
     (name "r-epireport")
@@ -21696,13 +21667,13 @@ respect to reference conditions [Sturbois et al. (2023) ].")
 (define-public r-ecotoxr
   (package
     (name "r-ecotoxr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ECOTOXr" version))
        (sha256
-        (base32 "0g4smd0lk5430cqn17w8hnx29gsmv8hla98lvh3nxb8kzkkgn4b0"))))
+        (base32 "19dzgvrixlv5m2q266pqm66xmv1sfqnvwdi340vn2hc74c64ffwg"))))
     (properties `((upstream-name . "ECOTOXr")))
     (build-system r-build-system)
     (arguments
