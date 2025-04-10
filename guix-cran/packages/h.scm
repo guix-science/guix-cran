@@ -4911,13 +4911,13 @@ The included vignettes demonstrate the encryption procedures.")
 (define-public r-homomorpher
   (package
     (name "r-homomorpher")
-    (version "0.2-2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "homomorpheR" version))
        (sha256
-        (base32 "1iahq16nswlc3b87598206xdp24bg9v8acyjp1jivybl3fr4k3pq"))))
+        (base32 "1apmk29j8ijcxsbriw69zhc3pif9i5cbdy42qpxa6l2y1n4d9qp2"))))
     (properties `((upstream-name . "homomorpheR")))
     (build-system r-build-system)
     (arguments
@@ -4925,7 +4925,7 @@ The included vignettes demonstrate the encryption procedures.")
       #:tests? #f))
     (propagated-inputs (list r-sodium r-r6 r-gmp))
     (native-inputs (list r-knitr))
-    (home-page "http://github.com/bnaras/homomorpheR")
+    (home-page "https://github.com/bnaras/homomorpheR")
     (synopsis "Homomorphic Computations in R")
     (description
      "Homomorphic computations in R for privacy-preserving applications.  Currently
@@ -7026,13 +7026,13 @@ series.  An introducing paper is Irpino A. Verde R. (2015) <doi:
 (define-public r-histdata
   (package
     (name "r-histdata")
-    (version "0.9-1")
+    (version "0.9-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HistData" version))
        (sha256
-        (base32 "1c005rmzbxcc4m7rxnbxna4dlg3vrn5fhkj4vrkak3xrxbcfkafw"))))
+        (base32 "0y244i2swjn8jcmr7dvlmqpxd2dr9154xv97lxwpmv8421cpji8n"))))
     (properties `((upstream-name . "HistData")))
     (build-system r-build-system)
     (arguments

@@ -732,6 +732,42 @@ all-possible-subsets regression, dominance analysis, commonality analysis, and
 adjusted effect sizes.")
     (license license:gpl2+)))
 
+(define-public r-yfscreen
+  (package
+    (name "r-yfscreen")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yfscreen" version))
+       (sha256
+        (base32 "0rsgnjq0y748wyv2w6dwn9hyj2a1xppmrv888mbf1dr10av994m6"))))
+    (properties `((upstream-name . "yfscreen")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-curl))
+    (home-page "https://github.com/jasonjfoster/screen")
+    (synopsis "Yahoo Finance 'screener' API")
+    (description
+     "Simple and efficient access to Yahoo Finance's screener API
+<https://finance.yahoo.com/research-hub/screener/> for querying and retrieval of
+financial data.  The core functionality abstracts the complexities of
+interacting with Yahoo Finance APIs, such as session management, crumb and
+cookie handling, query construction, pagination, and JSON payload generation.
+This abstraction allows users to focus on filtering and retrieving data rather
+than managing API details.  Use cases include screening across a range of
+security types including equities, mutual funds, ETFs, indices, and futures.
+The package supports advanced query capabilities, including logical operators,
+nested filters, and customizable payloads.  It automatically handles pagination
+to ensure efficient retrieval of large datasets by fetching results in batches
+of up to 250 entries per request.  Filters can be dynamically defined to
+accommodate a wide range of screening needs.  The implementation leverages
+standard HTTP libraries to handle API interactions efficiently and provides
+support for both R and Python to ensure accessibility for a broad audience.")
+    (license license:gpl2+)))
+
 (define-public r-yfr
   (package
     (name "r-yfr")

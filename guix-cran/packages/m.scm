@@ -7336,13 +7336,13 @@ including cloud forests and seasonal (wet) forests above 1500 m a.s.l.")
 (define-public r-mtsdi
   (package
     (name "r-mtsdi")
-    (version "0.3.5")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mtsdi" version))
        (sha256
-        (base32 "0j4hl690n8x7zfpygw5qv0m0jyl8dnz1d3r4314w06h7c578n2kp"))))
+        (base32 "11rz9glfr177nd3iswr56iav9daph195h05fr8abyly7m3al4gbk"))))
     (properties `((upstream-name . "mtsdi")))
     (build-system r-build-system)
     (arguments
@@ -13427,13 +13427,13 @@ description of the method see Pascariu et al. (2018).
 (define-public r-mortaar
   (package
     (name "r-mortaar")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mortAAR" version))
        (sha256
-        (base32 "0xw904x458lnmlajrz2arzjd2w5npcbxgifjawswdwcnjli6q6p5"))))
+        (base32 "0jr74r5y01wi05zqlxzgiv4fjqabrk3av8ra5kd1k1zdvfhrbl86"))))
     (properties `((upstream-name . "mortAAR")))
     (build-system r-build-system)
     (arguments
@@ -20551,13 +20551,13 @@ framework.")
 (define-public r-mlr3resampling
   (package
     (name "r-mlr3resampling")
-    (version "2024.9.6")
+    (version "2025.3.30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3resampling" version))
        (sha256
-        (base32 "0mw30yhin2j4r695xn14mnnsyf7mrih96r6vx4dycdpq6lzrprj7"))))
+        (base32 "01nql7q4mv430kv7qjnz9wyipdnd0zgph9mrp319hd6b5gl93ljx"))))
     (properties `((upstream-name . "mlr3resampling")))
     (build-system r-build-system)
     (arguments
@@ -20575,21 +20575,16 @@ framework.")
     (description
      "This package provides a supervised learning algorithm inputs a train set, and
 outputs a prediction function, which can be used on a test set.  If each data
-point belongs to a group (such as geographic region, year, etc), then how do we
-know if it is possible to train on one group, and predict accurately on another
-group? Cross-validation can be used to determine the extent to which this is
-possible, by first assigning fold IDs from 1 to K to all data (possibly using
-stratification, usually by group and label).  Then we loop over test sets
-(group/fold combinations), train sets (same group, other groups, all groups),
-and compute test/prediction accuracy for each combination.  Comparing
-test/prediction accuracy between same and other, we can determine the extent to
-which it is possible (perfect if same/other have similar test accuracy for each
-group; other is usually somewhat less accurate than same; other can be just as
-bad as featureless baseline when the groups have different patterns).  For more
-information, <https://tdhock.github.io/blog/2023/R-gen-new-subsets/> describes
-the method in depth.  How many train samples are required to get accurate
-predictions on a test set? Cross-validation can be used to answer this question,
-with variable size train sets.")
+point belongs to a subset (such as geographic region, year, etc), then how do we
+know if subsets are similar enough so that we can get accurate predictions on
+one subset, after training on Other subsets? And how do we know if training on
+All subsets would improve prediction accuracy, relative to training on the Same
+subset? SOAK, Same/Other/All K-fold cross-validation,
+<doi:10.48550/@code{arXiv.2410.08643>} can be used to answer these question, by
+fixing a test subset, training models on Same/Other/All subsets, and then
+comparing test error rates (Same versus Other and Same versus All).  Also
+provides code for estimating how many train samples are required to get accurate
+predictions on a test set.")
     (license license:gpl3)))
 
 (define-public r-mlr3oml
@@ -26782,13 +26777,13 @@ family, but computationally a lot more tractible.")
 (define-public r-minimapr
   (package
     (name "r-minimapr")
-    (version "0.0.1.1")
+    (version "0.0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minimapR" version))
        (sha256
-        (base32 "0axaki27bdsj1m1416cr69jsfgz97j3cg83kfxrgp5mgh0l2xqz0"))))
+        (base32 "1kj2yr17jq5pawx23n8sf8g3fxm1y7g16694rln3gyc3j15gdvl6"))))
     (properties `((upstream-name . "minimapR")))
     (build-system r-build-system)
     (arguments
@@ -26803,9 +26798,11 @@ family, but computationally a lot more tractible.")
 Pacbio and Oxford Nanopore Technologies sequencing platforms. @code{minimapR} is
 an R wrapper for minimap2 which was developed by Heng Li <me@@liheng.org>.
 *SPECIAL NOTES 1.  Examples can only be run from @code{GitHub} installation.  2.
- conda or mamba must be used to install @code{minimapR} on your system.  Li,
-Heng (2018) <doi:10.1093/bioinformatics/bty191> \"Minimap2: pairwise alignment
-for nucleotide sequences\".")
+ conda or mamba must be used to install @code{minimapR} on your system.  3.  For
+Windows users, minimap2 and samtools can be installed via MSYS2, instructions
+are provided when @code{minimap2_installation()} is run.  Li, Heng (2018)
+<doi:10.1093/bioinformatics/bty191> \"Minimap2: pairwise alignment for nucleotide
+sequences\".")
     (license license:expat)))
 
 (define-public r-minimap

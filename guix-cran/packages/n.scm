@@ -3050,6 +3050,36 @@ known bounds (such as percentages that lie in [0,100].  These bounds are part of
 the input.")
     (license license:gpl2)))
 
+(define-public r-npdsim
+  (package
+    (name "r-npdsim")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npdsim" version))
+       (sha256
+        (base32 "0d95fwhjgb1l7fzc2gbhlnp8sk7a1n2ndcs0f24ppdx66yyycj9m"))))
+    (properties `((upstream-name . "npdsim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mohammedhichame/npdsim")
+    (synopsis "Simulate Demand and Attributes for New Products")
+    (description
+     "Simulate demand and attributes for ready to launch new products during their
+life cycle, or during their introduction and growth phases.  You provide the
+number of products, attributes, time periods and/or other parameters and npdsim
+can simulate for you the demand for each product during the considered time
+periods, and the attributes of each product.  The simulation for the demand is
+based on the idea that each product has a shape and a level, where the level is
+the cumulative demand over the considered time periods, and the shape is the
+normalized demand across those time periods.")
+    (license license:expat)))
+
 (define-public r-npdoseresponse
   (package
     (name "r-npdoseresponse")
@@ -7351,13 +7381,13 @@ hazard - proportional odds.")
 (define-public r-nlt
   (package
     (name "r-nlt")
-    (version "2.2-1")
+    (version "2.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlt" version))
        (sha256
-        (base32 "10wf00qzf28dxjfvv12wsqxlfn6xz15wk8njrzgsgm9px1g6s21f"))))
+        (base32 "1s8dhq6vbbxknylaaxw9r9vk41rpyxc5psdrd5kq13bslaf0xsw0"))))
     (properties `((upstream-name . "nlt")))
     (build-system r-build-system)
     (arguments
@@ -9023,6 +9053,45 @@ the presented methods could be applied to other variables.")
 Least Squares or weighted Expectation Maximization PCA with Gram-Schmidt
 orthogonalization of the scores and loadings.  Optimized for speed.  See
 Andrecut (2009) <doi:10.1089/cmb.2008.0221>.")
+    (license license:expat)))
+
+(define-public r-nimblewomble
+  (package
+    (name "r-nimblewomble")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nimblewomble" version))
+       (sha256
+        (base32 "1c2y7i4ii1qsdqfq4g57h8b39bqkvn1hgrybd0a9bw9lrab9lr1q"))))
+    (properties `((upstream-name . "nimblewomble")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sp
+                             r-sf
+                             r-nimble
+                             r-metr
+                             r-mba
+                             r-ggspatial
+                             r-ggplot2
+                             r-coda))
+    (home-page "https://cran.r-project.org/package=nimblewomble")
+    (synopsis "Bayesian Wombling using 'nimble'")
+    (description
+     "This package provides a software package to perform Wombling, or boundary
+analysis, using the nimble Bayesian hierarchical modeling environment.  Wombling
+is used widely to track regions of rapid change within the spatial reference
+domain.  Specific functions in the package implement Gaussian process models for
+point-referenced spatial data followed by predictive inference on rates of
+change over curves using line integrals.  We demonstrate model based Bayesian
+inference using posterior distributions featuring simple analytic forms while
+offering uncertainty quantification over curves.  For more details on wombling
+please see, Banerjee and Gelfand (2006) <doi:10.1198/016214506000000041> and
+Halder, Banerjee and Dey (2024) <doi:10.1080/01621459.2023.2177166>.")
     (license license:expat)))
 
 (define-public r-nimblesmc
@@ -16044,13 +16113,13 @@ or output).  A quick start guide for using this package can be found here:
 (define-public r-nc
   (package
     (name "r-nc")
-    (version "2025.1.21")
+    (version "2025.3.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nc" version))
        (sha256
-        (base32 "0z3v46k6mjg79ffkj0zxw5bh5mw683fv58dy3ncs073l8gc0n25p"))))
+        (base32 "12msx21j91pf3531r1bpx3xvqqmhgc4i76ipd29fly5485fnc25q"))))
     (properties `((upstream-name . "nc")))
     (build-system r-build-system)
     (arguments
@@ -17934,13 +18003,13 @@ provides a name to the latent variable.")
 (define-public r-naijr
   (package
     (name "r-naijr")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naijR" version))
        (sha256
-        (base32 "189sqj8dfjyphhg5dys58lixhhqfvy9d2ycrv1qaj7p4ikl6bgpi"))))
+        (base32 "1aaqzpx8r93lb5gd2ykr7fclh1lgips66jrm1clvmrxb54j3blxi"))))
     (properties `((upstream-name . "naijR")))
     (build-system r-build-system)
     (arguments

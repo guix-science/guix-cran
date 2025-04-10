@@ -4142,13 +4142,13 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2025.1.21")
+    (version "2025.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "1qqmww4yfycw0qi7s4m8ydkav4arcrdj2z1g1q0kbl3cqgmsys09"))))
+        (base32 "0yphwp1f267qqgnj4q9rvddf6qpc87a4lq8l84h0al0051m0pgk3"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (arguments
@@ -8738,13 +8738,13 @@ or with a static data set.  Example is provided at
 (define-public r-archeofrag-gui
   (package
     (name "r-archeofrag-gui")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archeofrag.gui" version))
        (sha256
-        (base32 "0zsawxxyz9mfhsz4yic4jngbldbk1b2w3bs6g6qm0j83pzs3pszw"))))
+        (base32 "1f3kqdch312la3mlklxfc4nig1h5r7y1qca4j60i2nh9jrl528ks"))))
     (properties `((upstream-name . "archeofrag.gui")))
     (build-system r-build-system)
     (arguments
@@ -8767,11 +8767,11 @@ or with a static data set.  Example is provided at
 datasets of the archeofrag package for spatial analysis in archaeology from
 refitting data.  Quick and seamless exploration of archaeological refitting
 datasets, focusing on physical refits only.  Features include: built-in
-documentation and convenient workflow, plot generation and exports, support of
-parallel computing when simulating archaeological site formation processes, R
-code generation to re-execute simulations and ensure reproducibility, code
-generation for the @code{openMOLE} model exploration software.  A demonstration
-of the app is available at
+documentation and convenient workflow, plot generation and exports, exploration
+of spatial units merging solutions, simulation of archaeological site formation
+processes, support for parallel computing, R code generation to re-execute
+simulations and ensure reproducibility, code generation for the @code{openMOLE}
+model exploration software.  A demonstration of the app is available at
 <https://analytics.huma-num.fr/Sebastien.Plutniak/archeofrag/>.")
     (license license:gpl3)))
 
@@ -16952,36 +16952,34 @@ Dependence (PD) plots, given a fitted supervised learning model.")
 (define-public r-ale
   (package
     (name "r-ale")
-    (version "0.3.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ale" version))
        (sha256
-        (base32 "1irz78alhqhs1j8vv7y8gg5dd838hpvpp593yrbx5p0783vdzdq6"))))
+        (base32 "19yp1zlhjbzb0qszzc6kszg4mr6cyi7zzllpkzw7q3spjcq7kmpw"))))
     (properties `((upstream-name . "ale")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaimpute
-                             r-univariateml
+    (propagated-inputs (list r-univariateml
                              r-tidyr
                              r-stringr
+                             r-staccuracy
+                             r-s7
                              r-rlang
                              r-purrr
                              r-progressr
-                             r-labeling
+                             r-patchwork
                              r-insight
-                             r-glue
-                             r-ggpubr
                              r-ggplot2
                              r-future
                              r-furrr
-                             r-ellipsis
                              r-dplyr
-                             r-broom
-                             r-assertthat))
+                             r-cli
+                             r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tripartio/ale")
     (synopsis
@@ -16994,14 +16992,14 @@ dependency plots (PDP) and SHapley Additive @code{exPlanations} (SHAP): its
 values represent a clean functional decomposition of the model.  As such, ALE
 values are not affected by the presence or absence of interactions among
 variables in a mode.  Moreover, its computation is relatively rapid.  This
-package rewrites the original code from the ALEPlot package for calculating ALE
-data and it completely reimplements the plotting of ALE values.  It also extends
-the original ALE concept to add bootstrap-based confidence intervals and
-ALE-based statistics that can be used for statistical inference.  For more
-details, see Okoli, Chitu.  2023.  âStatistical Inference Using Machine
-Learning and Classical Techniques Based on Accumulated Local Effects (ALE).â
-@code{arXiv}. <doi:10.48550/@code{arXiv.2310.09877>}.")
-    (license license:gpl2)))
+package reimplements the algorithms for calculating ALE data and develops highly
+interpretable visualizations for plotting these ALE values.  It also extends the
+original ALE concept to add bootstrap-based confidence intervals and ALE-based
+statistics that can be used for statistical inference.  For more details, see
+Okoli, Chitu.  2023.  âStatistical Inference Using Machine Learning and
+Classical Techniques Based on Accumulated Local Effects (ALE).â @code{arXiv}.
+<doi:10.48550/@code{arXiv.2310.09877>}.")
+    (license license:expat)))
 
 (define-public r-aldvmm
   (package
@@ -20978,38 +20976,44 @@ analysis.\"Adverse event enrichment tests using VAERS\" Shuoran Li, Lili Zhao
 (define-public r-aedseo
   (package
     (name "r-aedseo")
-    (version "0.1.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aedseo" version))
        (sha256
-        (base32 "1sy3j78lawa10rf22fa3wsbal2mv64hs1k5v7yqf9hx11jib26sz"))))
+        (base32 "18000ghr4wkbpxkmvnaqbg47z3nmhazwpf1rxmwn5qd1n8b84dxr"))))
     (properties `((upstream-name . "aedseo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-scales
                              r-rlang
                              r-purrr
-                             r-magrittr
+                             r-pracma
+                             r-plyr
+                             r-lubridate
                              r-lifecycle
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ssi-dk/aedseo")
-    (synopsis "Automated and Early Detection of Seasonal Epidemic Onset")
+    (synopsis
+     "Automated and Early Detection of Seasonal Epidemic Onset and Burden Levels")
     (description
      "This package provides a powerful tool for automating the early detection of
 seasonal epidemic onsets in time series data.  It offers the ability to estimate
-growth rates for consecutive time intervals and calculate the sum of cases
-(@code{SoC}) within those intervals.  It is particularly useful for
-epidemiologists, public health professionals, and researchers seeking to
-identify and respond to seasonal epidemics in a timely fashion.  For reference
-on growth rate estimation, see Walling and Lipstich (2007)
-<doi:10.1098/rspb.2006.3754> and Obadia et al. (2012)
-<doi:10.1186/1472-6947-12-147>.")
+growth rates across consecutive time intervals, calculate the sum of cases
+(@code{SoC}) within those intervals, and estimate seasonal onsets within user
+defined seasons.  With use of a disease-specific threshold it also offers the
+possibility to estimate seasonal onset of epidemics.  Additionally it offers the
+ability to estimate burden levels for seasons based on historical data.  It is
+aimed towards epidemiologists, public health professionals, and researchers
+seeking to identify and respond to seasonal epidemics in a timely fashion.")
     (license license:expat)))
 
 (define-public r-aedforecasting
@@ -21415,6 +21419,35 @@ spectrum, computes cross-correlations between two time series, computes
 bandwidth for any time series, and performs autocorrelation frequency analysis.
 It also calculates the periodicity of a time series.")
     (license license:gpl3)))
+
+(define-public r-adsorpr
+  (package
+    (name "r-adsorpr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AdsorpR" version))
+       (sha256
+        (base32 "0253mwvdf4zdq4xnayprfh8c4ippcq24135g4w79cx6nqcbi1r7g"))))
+    (properties `((upstream-name . "AdsorpR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=AdsorpR")
+    (synopsis "Adsorption Isotherm Models")
+    (description
+     "Model adsorption behavior using classical isotherms, including Langmuir,
+Freundlich, BrunauerâEmmettâTeller (BET), and Temkin models.  The package
+supports parameter estimation through both linearized and non-linear fitting
+techniques and generates high-quality plots for model diagnostics.  It is
+intended for environmental scientists, chemists, and researchers working on
+adsorption phenomena in soils, water treatment, and material sciences.
+Functions are compatible with base R and ggplot2 for visualization.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-adsiht
   (package
@@ -22374,13 +22407,13 @@ Xian A (2023) \"Ensemble distributional forecasting for insurance loss reserving
 (define-public r-adlift
   (package
     (name "r-adlift")
-    (version "1.4-5")
+    (version "1.4-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adlift" version))
        (sha256
-        (base32 "0kf1akx5c4c7mdy9ysfdik2xi810jcysw9ynmvxlgw2zykqxvqdk"))))
+        (base32 "0cmv60fr5s3qjzymx2p1v821432prvkljs3d97lkjbsimsz098vn"))))
     (properties `((upstream-name . "adlift")))
     (build-system r-build-system)
     (arguments

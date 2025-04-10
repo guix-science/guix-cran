@@ -11064,13 +11064,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.80")
+    (version "2.0.81")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "0bdlpi568q4j9ca6sn8d02rp9nkix3xf909qcj2jf0b5jynhg0x2"))))
+        (base32 "10kqlg5mxhzmarczh8jg3fvx5dcyn5dwla9rb99lb1304ahshx38"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (arguments
@@ -18818,13 +18818,13 @@ root tests are supported, and an improved unit root test is included.")
 (define-public r-eganet
   (package
     (name "r-eganet")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EGAnet" version))
        (sha256
-        (base32 "0602ykkv3s714q73da8if4w9cxcfa2wp9vxhypww3jnrxvmrg39g"))))
+        (base32 "0r2v7d1f2vhab0wgrgp1f7yqsjwzyzpybjjklr7616v2igkdcbiw"))))
     (properties `((upstream-name . "EGAnet")))
     (build-system r-build-system)
     (arguments

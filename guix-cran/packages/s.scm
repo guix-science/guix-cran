@@ -6469,13 +6469,13 @@ Duan and Parast (2023) <doi:10.1002/sim.9986>.")
 (define-public r-surrogate
   (package
     (name "r-surrogate")
-    (version "3.3.3")
+    (version "3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Surrogate" version))
        (sha256
-        (base32 "10j9zh9a9v18ib66qn1zfjihp14pw415l7lbzbazm8dxcnchq3ak"))))
+        (base32 "10xwbbals8ms9bslrnv5gg211ik2vdk0xzwbl11nbm0xan1fydxd"))))
     (properties `((upstream-name . "Surrogate")))
     (build-system r-build-system)
     (arguments
@@ -12685,6 +12685,34 @@ Model.  The Stability Informed Model integrates stability information (how much
 a variable correlates with itself in the future) into cross-sectional estimates.
  Wysocki and Rhemtulla (2022) <https://psyarxiv.com/vg5as>.")
     (license license:expat)))
+
+(define-public r-stilt
+  (package
+    (name "r-stilt")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stilt" version))
+       (sha256
+        (base32 "0kvzzvj00lmhrjz5xzmcsgh7xwrvs17wz4ciaac5ljwi7jd89fgf"))))
+    (properties `((upstream-name . "stilt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fields))
+    (home-page "https://cran.r-project.org/package=stilt")
+    (synopsis "Separable Gaussian Process Interpolation (Emulation)")
+    (description
+     "This package provides functions for simplified emulation of time series computer
+model output in model parameter space using Gaussian processes.  Stilt can be
+used more generally for Kriging of spatio-temporal fields.  There are functions
+to predict at new parameter settings, to test the emulator using
+cross-validation (which includes information on 95% confidence interval
+empirical coverage), and to produce contour plots over 2D slices in model
+parameter space.")
+    (license license:gpl3)))
 
 (define-public r-sticsrfiles
   (package
@@ -24231,13 +24259,13 @@ handle sequences stored as @code{SeqFastadna} objects from the seqinr package.")
 (define-public r-spgarch
   (package
     (name "r-spgarch")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spGARCH" version))
        (sha256
-        (base32 "1wrmk2ybgysvibfy8vvp7pyqda5apqp0jxjfp3hlb416fza52966"))))
+        (base32 "0ppihb0mcr4bczn0ipw1j99px4cl6p7zy9pfz0qkbw9xgpjbz32x"))))
     (properties `((upstream-name . "spGARCH")))
     (build-system r-build-system)
     (arguments
@@ -24249,15 +24277,16 @@ handle sequences stored as @code{SeqFastadna} objects from the seqinr package.")
                              r-rcppeigen
                              r-rcpp
                              r-nleqslv
-                             r-matrix))
+                             r-matrix
+                             r-crayon))
     (home-page "https://cran.r-project.org/package=spGARCH")
     (synopsis "Spatial ARCH and GARCH Models (spGARCH)")
     (description
      "This package provides a collection of functions to deal with spatial and
 spatiotemporal autoregressive conditional heteroscedasticity (spatial ARCH and
 GARCH models) by Otto, Schmid, Garthoff (2018, Spatial Statistics)
-<@code{arXiv:1609.00711>}: simulation of spatial ARCH-type processes
-(@code{spARCH}, exponential @code{spARCH}, complex @code{spARCH});
+<doi:10.1016/j.spasta.2018.07.005>: simulation of spatial ARCH-type processes
+(@code{spARCH}, log/exponential-@code{spARCH}, complex-@code{spARCH});
 quasi-maximum-likelihood estimation of the parameters of @code{spARCH} models
 and spatial autoregressive models with @code{spARCH} disturbances, diagnostic
 checks, visualizations.")
@@ -29504,13 +29533,13 @@ F. Bithell (1991) <doi:10.1002/sim.4780101112>.")
 (define-public r-sparrafairness
   (package
     (name "r-sparrafairness")
-    (version "0.0.0.2")
+    (version "0.1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPARRAfairness" version))
        (sha256
-        (base32 "1kfjrwbwqigzjpzczqm6vm7yirkz46p054iic4q1yidv9m4xa3pf"))))
+        (base32 "079xrx6sb86pr7swds4gwdw2m2cjbpgjgihn0vs9man614nhfsz2"))))
     (properties `((upstream-name . "SPARRAfairness")))
     (build-system r-build-system)
     (arguments
@@ -29537,7 +29566,8 @@ the score, focusing particularly on differential performance over
 demographically-defined groups.  It includes useful utility functions to plot
 receiver-operator-characteristic, precision-recall and calibration curves, draw
 stock human figures, estimate counterfactual quantities without the need to
-re-compute risk scores, to simulate a semi-realistic dataset.")
+re-compute risk scores, to simulate a semi-realistic dataset.  Our manuscript
+can be found at: <doi:10.1371/journal.pdig.0000675>.")
     (license license:gpl3+)))
 
 (define-public r-sparr
@@ -30030,13 +30060,13 @@ Scott-Knott.")
 (define-public r-spanishoddata
   (package
     (name "r-spanishoddata")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spanishoddata" version))
        (sha256
-        (base32 "1fwj6568g199m1fjblw8ypfmfy0922sh62zhn417j19y5f7i18v9"))))
+        (base32 "1hglg1kvvqbxkxhsihfv4c3z0gnfwry1s3kgiyy0dwgwba6sxvnv"))))
     (properties `((upstream-name . "spanishoddata")))
     (build-system r-build-system)
     (arguments
@@ -30052,6 +30082,7 @@ Scott-Knott.")
                              r-parallelly
                              r-memuse
                              r-lubridate
+                             r-lifecycle
                              r-httr2
                              r-here
                              r-glue
@@ -32418,20 +32449,20 @@ including shading effects and solar angle calculations.")
 (define-public r-solar
   (package
     (name "r-solar")
-    (version "0.46")
+    (version "0.47")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "solaR" version))
        (sha256
-        (base32 "1hv9rj8kvqh5i77s6cls7hknz43scdsi5zjh04mjg0gynb265f4p"))))
+        (base32 "06nf1qyxnxyr1rasbskmmn97j9l9y8p6iga6cx35d45vyiy9a0i0"))))
     (properties `((upstream-name . "solaR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zoo r-rcolorbrewer r-latticeextra r-lattice))
-    (home-page "https://oscarperpinan.github.io/solar/")
+    (home-page "https://oscarperpinan.codeberg.page/solar/")
     (synopsis "Radiation and Photovoltaic Systems")
     (description
      "Calculation methods of solar radiation and performance of photovoltaic systems
@@ -37588,6 +37619,30 @@ cluster objects spanning multiple nodes that can be used with the parallel
 package.")
     (license license:expat)))
 
+(define-public r-slurm
+  (package
+    (name "r-slurm")
+    (version "2025.4.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "slurm" version))
+       (sha256
+        (base32 "0y92zpa8jgv8arhx5jql11dwwk67spzh9zg9ybgwwb959w7si6r7"))))
+    (properties `((upstream-name . "slurm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nc r-data-table))
+    (home-page "https://cran.r-project.org/package=slurm")
+    (synopsis "Running and Parsing Slurm Commands")
+    (description
+     "User-friendly functions which parse output of command line programs used to
+query Slurm.  Morris A. Jette and Tim Wickberg (2023)
+<doi:10.1007/978-3-031-43943-8_1> describe Slurm in detail.")
+    (license license:gpl3)))
+
 (define-public r-sltca
   (package
     (name "r-sltca")
@@ -41750,13 +41805,13 @@ guide users through implementation and interpretation of results.")
 (define-public r-simtool
   (package
     (name "r-simtool")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simTool" version))
        (sha256
-        (base32 "0q093dlfj23zq3w4schn1ycff79vgzr2s3wgbz2qz4s3b7fddk70"))))
+        (base32 "1cpz43nx98ybzvvdfqbf4gp4w4cr6mvc06sxla5gzrqa32z8accl"))))
     (properties `((upstream-name . "simTool")))
     (build-system r-build-system)
     (arguments
@@ -41764,7 +41819,7 @@ guide users through implementation and interpretation of results.")
       #:tests? #f))
     (propagated-inputs (list r-vctrs r-tidyr r-tibble r-purrr r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/MarselScheer/simTool")
+    (home-page "https://marselscheer.github.io/simTool/")
     (synopsis
      "Conduct Simulation Studies with a Minimal Amount of Source Code")
     (description
@@ -45118,13 +45173,13 @@ provides functions to plot and summarise the outputs.")
 (define-public r-simaerep
   (package
     (name "r-simaerep")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simaerep" version))
        (sha256
-        (base32 "0sjq6lrs9fawgwpyr8p97c36m9a6yw16ww247kw86qncnb1ya4vx"))))
+        (base32 "1bcrb23iaxhhg2xhd4aagiagjw5n7zk81nldy7q1rdvbws6xgxmg"))))
     (properties `((upstream-name . "simaerep")))
     (build-system r-build-system)
     (arguments
@@ -55043,24 +55098,26 @@ and descriptive tools.  For details on the implemented penalty method, see Ugba
 (define-public r-serosv
   (package
     (name "r-serosv")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "serosv" version))
        (sha256
-        (base32 "11nwpbbzcp6lch79kfz2v63l899dvjdg58qdlc4z2r1c68yxk4vp"))))
+        (base32 "0qh6xmr28z2wwnkkrx3w3bqgsh2ilr1fx288qf5n9yjpg47q7i68"))))
     (properties `((upstream-name . "serosv")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stanheaders
+    (propagated-inputs (list r-stringr
+                             r-stanheaders
                              r-rstantools
                              r-rstan
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
+                             r-purrr
                              r-patchwork
                              r-mixdist
                              r-mgcv
@@ -55070,7 +55127,8 @@ and descriptive tools.  For details on the implemented penalty method, see Ugba
                              r-dplyr
                              r-desolve
                              r-boot
-                             r-bh))
+                             r-bh
+                             r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://oucru-modelling.github.io/serosv/")
     (synopsis "Model Infectious Disease Parameters from Serosurveys")
@@ -59243,6 +59301,35 @@ negative rate and symptom based administration of diagnostic tests.
 <doi:10.1101/2020.09.24.20200238>.")
     (license license:gpl2)))
 
+(define-public r-seinfitr
+  (package
+    (name "r-seinfitr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "seinfitR" version))
+       (sha256
+        (base32 "0l58iqm2gjc28j73a572qnwhhpgy7hcrlp7hm5rv71d6g0d76h2r"))))
+    (properties `((upstream-name . "seinfitR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-minpack-lm))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dslabcena/seinfitR")
+    (synopsis
+     "Modeling the Relationship Between Nematode Densities and Plant Growth")
+    (description
+     "This package implements the Seinhorst model to analyze the relationship between
+initial nematode densities and plant growth response using nonlinear least
+squares estimation.  The package provides tools for model fitting, prediction,
+and visualization, facilitating the study of plant-nematode interactions.  Model
+parameters can be estimated or set to predefined values based on Seinhorst
+(1986) <doi:10.1007/978-1-4613-2251-1_11>.")
+    (license license:gpl3+)))
+
 (define-public r-sei
   (package
     (name "r-sei")
@@ -61813,13 +61900,13 @@ MARSPEC <http://www.marspec.org/>.")
 (define-public r-sdmodels
   (package
     (name "r-sdmodels")
-    (version "1.0.4")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SDModels" version))
        (sha256
-        (base32 "1psb06x9xvk2ybmmifbfpg6k0avja5jl9c8p3kdvzvzmc6g8qyam"))))
+        (base32 "0x0f94iqvn3mvf6j3ibgnrvcjknwp0spim0wmzykxm5m1cfcv9h6"))))
     (properties `((upstream-name . "SDModels")))
     (build-system r-build-system)
     (arguments
@@ -61839,7 +61926,7 @@ MARSPEC <http://www.marspec.org/>.")
                              r-diagrammer
                              r-data-tree))
     (native-inputs (list r-knitr))
-    (home-page "https://markusul.github.io/SDModels/")
+    (home-page "https://www.markus-ulmer.ch/SDModels/")
     (synopsis "Spectrally Deconfounded Models")
     (description
      "Screen for and analyze non-linear sparse direct effects in the presence of

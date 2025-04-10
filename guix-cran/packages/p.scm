@@ -22272,13 +22272,13 @@ important implications for the correct interpretation of these models.")
 (define-public r-plsvarsel
   (package
     (name "r-plsvarsel")
-    (version "0.9.12")
+    (version "0.9.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plsVarSel" version))
        (sha256
-        (base32 "0130hqnjwgm2l7sacxh5m98gm35qxgqwylbk42jnlp03azwqdbax"))))
+        (base32 "0i697h84apqjm42f07b892iwh320br00mglkl7gw2kyysxmada8y"))))
     (properties `((upstream-name . "plsVarSel")))
     (build-system r-build-system)
     (arguments
@@ -27415,6 +27415,54 @@ Pijavski method, which was published in Pijavski (1972)
 disability status, and geo-coordinates.")
     (license license:expat)))
 
+(define-public r-piglet
+  (package
+    (name "r-piglet")
+    (version "1.0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "piglet" version))
+       (sha256
+        (base32 "10zvjsbcf5i43s18jadlvqnr3za4hjlb8pd7kamf1p0m475v1j8n"))))
+    (properties `((upstream-name . "piglet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zen4r
+                             r-tigger
+                             r-rlang
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-r6
+                             r-magrittr
+                             r-jsonlite
+                             r-ggplot2
+                             r-dplyr
+                             r-dendextend
+                             r-decipher
+                             r-data-table
+                             r-complexheatmap
+                             r-circlize
+                             r-biostrings
+                             r-alakazam))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=piglet")
+    (synopsis
+     "Program for Inferring Immunoglobulin Allele Similarity Clusters and Genotypes")
+    (description
+     "Improves genotype inference and downstream Adaptive Immune Receptor Repertoire
+Sequence data analysis.  Inference of allele similarity clusters, an alternative
+naming scheme and genotype inference for immunoglobulin heavy chain repertoires.
+ The main tools are allele similarity clusters, and allele based genotype.  The
+first tool is designed to reduce the ambiguity within the immunoglobulin heavy
+chain V alleles.  The ambiguity is caused by duplicated or similar alleles which
+are shared among different genes.  The second tool is an allele based genotype,
+that determined the presence of an allele based on a threshold derived from a
+naive population.  See Peres et al. (2023) <doi:10.1093/nar/gkad603>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-piggyback
   (package
     (name "r-piggyback")
@@ -28222,13 +28270,13 @@ trees in NEXUS and Newick formats, while preserving annotations.")
 (define-public r-phylospatial
   (package
     (name "r-phylospatial")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylospatial" version))
        (sha256
-        (base32 "06p68mcdcl8m7dgk1hadsvb7924pwrxqkcr0a05zmis4r7yjiv7l"))))
+        (base32 "1585ci8wdj8swzrnyqk7rsf8k3w05ann3kdpxzb9kypvqk8scbrp"))))
     (properties `((upstream-name . "phylospatial")))
     (build-system r-build-system)
     (arguments
@@ -28239,12 +28287,12 @@ trees in NEXUS and Newick formats, while preserving annotations.")
     (home-page "https://matthewkling.github.io/phylospatial/")
     (synopsis "Spatial Phylogenetic Analysis")
     (description
-     "Conduct various analyses on spatial phylogenetics.  Use your data on an
-evolutionary tree and geographic distributions of the terminal taxa to compute
-diversity and endemism metrics, test significance with null model randomization,
-analyze community turnover and biotic regionalization, and perform spatial
-conservation prioritizations.  All functions support quantitative community data
-in addition to binary data.")
+     "Conduct various analyses on spatial phylogenetic diversity patterns.  Use your
+data on an evolutionary tree and geographic distributions of the terminal taxa
+to compute diversity and endemism metrics, test significance with null model
+randomization, analyze community turnover and biotic regionalization, and
+perform spatial conservation prioritizations.  All functions support
+quantitative community data in addition to binary data.")
     (license license:expat)))
 
 (define-public r-phylosignaldb
@@ -29149,13 +29197,13 @@ photon instances to enable offline geocoding.")
 (define-public r-photogea
   (package
     (name "r-photogea")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhotoGEA" version))
        (sha256
-        (base32 "1yasd435x1ns18zpqyh2qrgkhbgpyfc3r0jni3mbcp6lcijad67n"))))
+        (base32 "0v33l77m40pdzs58k1w4bix50z8yxbsqvbb2ar364a582sca0vkc"))))
     (properties `((upstream-name . "PhotoGEA")))
     (build-system r-build-system)
     (arguments

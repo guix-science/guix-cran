@@ -1918,13 +1918,13 @@ map projection.")
 (define-public r-osmextract
   (package
     (name "r-osmextract")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osmextract" version))
        (sha256
-        (base32 "0n0c5zq7r5gckblxsrf5a1bc841dakhfgzhpf7ny9vfpk7zdla68"))))
+        (base32 "1ghkv4p3kmy4lsxq480hw8yylxfrasplv6n3l91h7r9nrnqwbss5"))))
     (properties `((upstream-name . "osmextract")))
     (build-system r-build-system)
     (arguments
@@ -5620,13 +5620,13 @@ al. (2022) <doi:10.1186/s12874-021-01471-y> for a description of our methods.")
 (define-public r-optholdoutsize
   (package
     (name "r-optholdoutsize")
-    (version "0.1.0.0")
+    (version "0.1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OptHoldoutSize" version))
        (sha256
-        (base32 "0ab0vvbg1nmpbbhq5a5nkwv7ap0fq4542l5da7g8qlwc23h6sfs5"))))
+        (base32 "1yrgwnl6192rnbq79yq9ppbf3hdfgk8kn4inmm1skvai1629bcd4"))))
     (properties `((upstream-name . "OptHoldoutSize")))
     (build-system r-build-system)
     (arguments
@@ -5645,8 +5645,8 @@ holdout set is a straightforward way to manage this problem: a proportion of the
 population is held-out from computation of the previous risk score.  This
 package provides tools to estimate a size for this holdout set and associated
 errors.  Comprehensive vignettes are included.  Please see: Haidar-Wehbe S,
-Emerson SR, Aslett LJM, Liley J (2022) <@code{arXiv:2202.06374>} for details of
-methods.")
+Emerson SR, Aslett LJM, Liley J (2022) <doi:10.48550/@code{arXiv.2202.06374>}
+(to appear in Annals of Applied Statistics) for details of methods.")
     (license license:gpl3+)))
 
 (define-public r-opthedging
@@ -6224,13 +6224,13 @@ Universidad Torcuato Di Tella.")
 (define-public r-opi
   (package
     (name "r-opi")
-    (version "3.0.2")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPI" version))
        (sha256
-        (base32 "19fgfkd8zf8r7cqmkqvhzkv8lwnbg33cvm8kapqp7sb6g4i3qk1x"))))
+        (base32 "1hbkvqgnncy6lv5ps2hjvk00q97qx3qjjwaszkfkm6hi303z1px5"))))
     (properties `((upstream-name . "OPI")))
     (build-system r-build-system)
     (arguments
@@ -9394,13 +9394,13 @@ Neuenschwander et al. (2008) <doi:10.1002/sim.3230> and Neuenschwander et al.
 (define-public r-oncmap
   (package
     (name "r-oncmap")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oncmap" version))
        (sha256
-        (base32 "0xnzb4jn2h0xs1xprxy74wv6wy92bzg1k3jfmc6zf6zyygqk8nmk"))))
+        (base32 "0f9xh40z4vxwi1rip9jnxhpcninpyai9jr43wvpirs4a4w287fmd"))))
     (properties `((upstream-name . "oncmap")))
     (build-system r-build-system)
     (arguments

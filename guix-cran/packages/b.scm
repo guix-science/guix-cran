@@ -9104,13 +9104,13 @@ Exact Test on significant parameters.")
 (define-public r-bnrep
   (package
     (name "r-bnrep")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnRep" version))
        (sha256
-        (base32 "09ri3ms49w6qxck78cj5qw48jqd8vs544yw46fmz4vhq9ng08m7w"))))
+        (base32 "0dh9p07v6p5ndqbq52aizwggmpasw2p7k91ia87w19v38dqn2z88"))))
     (properties `((upstream-name . "bnRep")))
     (build-system r-build-system)
     (arguments
@@ -9135,7 +9135,7 @@ repository and the package documentation includes details about the variables in
 each network.  A Shiny app to explore the repository can be launched with
 @code{bnRep_app()} and is available online at
 <https://manueleleonelli.shinyapps.io/@code{bnRep>}.  Reference: M. Leonelli
-(2024) <doi:10.48550/@code{arXiv.2409.19158>}.")
+(2025) <doi:10.1016/j.neucom.2025.129502>.")
     (license license:expat)))
 
 (define-public r-bnptsclust
@@ -17097,13 +17097,13 @@ Bie Verbist & Hugo Ceulemans (2017) <doi:10.1038/s41598-017-18068-5>.")
 (define-public r-biggp
   (package
     (name "r-biggp")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigGP" version))
        (sha256
-        (base32 "0awsskpdky56llqc7flgwzs6646cvvn8q50x8gj0hkknfm8fs1rz"))))
+        (base32 "1g0n7i76abwz7bm88azgpkxfsl2g1dh6lsm7xdjx9p1cm39lhakf"))))
     (properties `((upstream-name . "bigGP")))
     (build-system r-build-system)
     (arguments

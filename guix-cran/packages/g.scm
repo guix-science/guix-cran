@@ -14402,13 +14402,13 @@ glmnet'\" and \"The Relaxed Lasso\" being especially useful in this regard.")
 (define-public r-glmnetcr
   (package
     (name "r-glmnetcr")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmnetcr" version))
        (sha256
-        (base32 "0cs0yj2js0920iggcw2vci5y9hnsm3hd7wpd7mwnx8mszwrklawg"))))
+        (base32 "1zi3h5vrblfvb7r80nz9zgpyiqpcsshralwcxr1zijvbs9kn756i"))))
     (properties `((upstream-name . "glmnetcr")))
     (build-system r-build-system)
     (arguments
@@ -18532,20 +18532,20 @@ use epicurves can be found on the US CDC website (2012,
 (define-public r-ggstudent
   (package
     (name "r-ggstudent")
-    (version "0.1.1-1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggstudent" version))
        (sha256
-        (base32 "0qs27b4lksaaaspavkycbzf8cfjxjli7xrfjby71sl0lca3fwm1g"))))
+        (base32 "19h46a55x06ixv6h4731rjpc9jqi5cnfhjs17zlxks5khvxkg84n"))))
     (properties `((upstream-name . "ggstudent")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-dplyr))
-    (home-page "https://cran.r-project.org/package=ggstudent")
+    (home-page "https://github.com/helske/ggstudent")
     (synopsis "Continuous Confidence Interval Plots using t-Distribution")
     (description
      "This package provides an extension to ggplot2 (Wickham, 2016,
@@ -18556,7 +18556,9 @@ colours, defined by the underlying t-distribution used to compute standard
 confidence intervals for the mean of the normal distribution when the variance
 is unknown.  Two types of plots are available, a gradient plot with rectangular
 areas, and a violin plot where the shape (horizontal width) is defined by the
-probability density function of the t-distribution.")
+probability density function of the t-distribution.  These visualizations are
+studied in (Helske, Helske, Cooper, Ynnerman, and Besancon, 2021)
+<doi:10.1109/TVCG.2021.3073466>.")
     (license license:gpl2+)))
 
 (define-public r-ggstream
@@ -30116,13 +30118,13 @@ GENEActiv device.")
 (define-public r-geneacore
   (package
     (name "r-geneacore")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GENEAcore" version))
        (sha256
-        (base32 "1515p1bji8j1kw0m3fsdgkvwki5gjhwygc684l3pa60iaryiy30n"))))
+        (base32 "0rm2q2dnwphg3iakirrm2fq511hkiadz3qqyfiwv12bbhn6pdl69"))))
     (properties `((upstream-name . "GENEAcore")))
     (build-system r-build-system)
     (arguments
@@ -32925,6 +32927,50 @@ rectangular-shaped bin j = 1, .. , m is specified similarly by length l_j, depth
 d_j, height h_j, and weight limit w_j.  The item can be rotated into any
 orthogonal direction, and no further restrictions implied.")
     (license license:expat)))
+
+(define-public r-gbop2
+  (package
+    (name "r-gbop2")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GBOP2" version))
+       (sha256
+        (base32 "16q2xjxb7dy8sfvglawfygb01z5lirzz6j66ymrcmha7lipx6vrc"))))
+    (properties `((upstream-name . "GBOP2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-tidyr
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r6
+                             r-globpso
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=GBOP2")
+    (synopsis "Generalized Bayesian Optimal Phase II Design (G-BOP2)")
+    (description
+     "This package provides functions for implementing the Generalized Bayesian
+Optimal Phase II (G-BOP2) design using various Particle Swarm Optimization (PSO)
+algorithms, including: - PSO-Default, based on Kennedy and Eberhart (1995)
+<doi:10.1109/ICNN.1995.488968>, \"Particle Swarm Optimization\"; - PSO-Quantum,
+based on Sun, Xu, and Feng (2004) <doi:10.1109/ICCIS.2004.1460396>, \"A Global
+Search Strategy of Quantum-Behaved Particle Swarm Optimization\"; - PSO-Dexp,
+based on StehlÃ­k et al. (2024) <doi:10.1016/j.asoc.2024.111913>, \"A Double
+Exponential Particle Swarm Optimization with Non-Uniform Variates as Stochastic
+Tuning and Guaranteed Convergence to a Global Optimum with Sample Applications
+to Finding Optimal Exact Designs in Biostatistics\"; - and PSO-GO.")
+    (license license:gpl2)))
 
 (define-public r-gbmt
   (package

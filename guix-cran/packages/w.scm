@@ -8114,26 +8114,33 @@ datasets.")
 (define-public r-wayfindr
   (package
     (name "r-wayfindr")
-    (version "0.1.2")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WayFindR" version))
        (sha256
-        (base32 "1j54374vk8y2f28lka03qwz5hyvpb0fyrbfn20pj1hbbnvymsxrm"))))
+        (base32 "0361qhf7s4ram98zc7y8zv9xhr8d31azgdpa56z0m8xibb1d6b2s"))))
     (properties `((upstream-name . "WayFindR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml r-igraph))
+    (propagated-inputs (list r-xml
+                             r-rgraphviz
+                             r-pubchemr
+                             r-org-hs-eg-db
+                             r-keggrest
+                             r-igraph
+                             r-desctools
+                             r-annotationdbi))
     (native-inputs (list r-knitr))
     (home-page "http://oompa.r-forge.r-project.org/")
     (synopsis "Computing Graph Structures on WikiPathways")
     (description
-     "Converts pathways from @code{WikiPathways} GPML format into igraph objects.
-Includes tools to find all cycles in the resulting graphs and determine which
-ones involve negative feedback (inhibition).")
+     "Converts pathways from @code{WikiPathways} GPML format or KEGG KGML format into
+igraph objects.  Includes tools to find all cycles in the resulting graphs and
+determine which ones involve negative feedback (inhibition).")
     (license license:artistic2.0)))
 
 (define-public r-waydown
@@ -9145,13 +9152,13 @@ data, addresses some common data problems, and calculates and plots anomalies.")
 (define-public r-watcher
   (package
     (name "r-watcher")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "watcher" version))
        (sha256
-        (base32 "02y9gcr5zqlkcjqsfa994xfl5hi48gnm26z75q58z761pcfs1ipx"))))
+        (base32 "09rm08i0zkzpdgjqcdi67sikcy25gmszi5xmdh0i8ji80w4bx4zw"))))
     (properties `((upstream-name . "watcher")))
     (build-system r-build-system)
     (arguments

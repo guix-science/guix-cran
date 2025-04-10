@@ -875,13 +875,13 @@ magnitude quicker than other methods.")
 (define-public r-quickcode
   (package
     (name "r-quickcode")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickcode" version))
        (sha256
-        (base32 "09kl9h0yqrh75w6dqqyby8d2awf3rxwdqz79h0kpf90pdhz5m8vp"))))
+        (base32 "0f6d5g3k0qd1fiy26nl1i3i0j93cnj6haqw85ld1g0s46qgqmrk3"))))
     (properties `((upstream-name . "quickcode")))
     (build-system r-build-system)
     (arguments
@@ -4561,13 +4561,13 @@ extend to the Q-Q boxplot.")
 (define-public r-qpraentry
   (package
     (name "r-qpraentry")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qPRAentry" version))
        (sha256
-        (base32 "1nqhwim7irm8n64a3fjjaqhvzajz8dxh6rbnq43nwvd2ih42s5mv"))))
+        (base32 "15cslh53cmx24xc4lwhwh48389kris3k14a4vn07fwi2m2l5a0ab"))))
     (properties `((upstream-name . "qPRAentry")))
     (build-system r-build-system)
     (arguments
@@ -4589,7 +4589,7 @@ extend to the Q-Q boxplot.")
                              r-dplyr
                              r-bsplus))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=qPRAentry")
+    (home-page "https://github.com/mcendoya/qPRAentry")
     (synopsis "Quantitative Pest Risk Assessment at the Entry Step")
     (description
      "Supports risk assessors in performing the entry step of the quantitative Pest
@@ -5832,13 +5832,13 @@ fatty acid signature analysis (QFASA) to study predator diets.")
 (define-public r-qfa
   (package
     (name "r-qfa")
-    (version "4.0")
+    (version "4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qfa" version))
        (sha256
-        (base32 "1jp1b4vd8p3fkbfddxi67zli11rvi6f9zc1jxpw93czi5ird51bf"))))
+        (base32 "04yd9sdfhyzg5b9j2i16gpqm4yni8a0dlsl25djk1li82gn2cgm5"))))
     (properties `((upstream-name . "qfa")))
     (build-system r-build-system)
     (arguments
@@ -5859,16 +5859,17 @@ fatty acid signature analysis (QFASA) to study predator diets.")
     (description
      "Quantile-frequency analysis (QFA) of time series based on trigonometric quantile
 regression.  Spline quantile regression (SQR) for regression coefficient
-estimation.  References: [1] Li, T.-H. (2012) \"Quantile periodograms\", Journal
+estimation.  References: [1] Li, T.-H. (2012) \"Quantile periodograms,\" Journal
 of the American Statistical Association, 107, 765â776,
 <doi:10.1080/01621459.2012.682815>. [2] Li, T.-H. (2014) Time Series with Mixed
 Spectra, CRC Press, <doi:10.1201/b15154> [3] Li, T.-H. (2022) \"Quantile Fourier
-transform, quantile series, and nonparametric estimation of quantile spectra\",
+transform, quantile series, and nonparametric estimation of quantile spectra,\"
 <doi:10.48550/@code{arXiv.2211.05844>}. [4] Li, T.-H. (2024) \"Quantile crossing
 spectrum and spline autoregression estimation,\"
 <doi:10.48550/@code{arXiv.2412.02513>}. [5] Li, T.-H. (2024) \"Spline
-autoregression method for estimation of quantile spectrum\",
-<doi:10.48550/@code{arXiv.2412.17163>}.")
+autoregression method for estimation of quantile spectrum,\"
+<doi:10.48550/@code{arXiv.2412.17163>}. [6] Li, T.-H., and Megiddo, N. (2025)
+\"Spline quantile regression,\" <doi:10.48550/@code{arXiv.2501.03883>}.")
     (license license:gpl2+)))
 
 (define-public r-qf

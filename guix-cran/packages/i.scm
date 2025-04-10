@@ -5817,13 +5817,13 @@ free database download.")
 (define-public r-ip2locationio
   (package
     (name "r-ip2locationio")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ip2locationio" version))
        (sha256
-        (base32 "1wkyb3655n0ly9whgpnad3p1xwksn07b54jcpjcni8daqqjwlcv8"))))
+        (base32 "0m63brpxb8vfg9sv7smbas5v457pp0m16wl1sdnm1fg6hbwhp9x1"))))
     (properties `((upstream-name . "ip2locationio")))
     (build-system r-build-system)
     (arguments
@@ -5837,9 +5837,10 @@ free database download.")
      "Query for enriched data such as country, region, city, latitude & longitude, ZIP
 code, time zone, Autonomous System, Internet Service Provider, domain, net
 speed, International direct dialing (IDD) code, area code, weather station data,
-mobile data, elevation, usage type, address type, advertisement category, and
-proxy data with an IP address.  This package uses the IP2Location.io API to
-query this data.  To get started with a free API key, sign up here
+mobile data, elevation, usage type, address type, advertisement category, fraud
+score, and proxy data with an IP address.  You can also query a list of hosted
+domain names for the IP address too.  This package uses the IP2Location.io API
+to query this data.  To get started with a free API key, sign up here
 <https://www.ip2location.io/sign-up?ref=1>.")
     (license license:expat)))
 
@@ -13337,13 +13338,13 @@ aggregation, metadata normalization, and clonotype filtering.")
 (define-public r-immunaut
   (package
     (name "r-immunaut")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "immunaut" version))
        (sha256
-        (base32 "0vnc32v7igazyn63jm2lrp27arrg6dgyv73pvw482rnfc2cyxy7s"))))
+        (base32 "0llp4zzlpahhdgzmnd26z53113634pmwi2pbmwlxmz3jm4024agx"))))
     (properties `((upstream-name . "immunaut")))
     (build-system r-build-system)
     (arguments

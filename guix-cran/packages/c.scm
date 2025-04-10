@@ -6439,13 +6439,13 @@ ordinal predictor.")
 (define-public r-crosswalkr
   (package
     (name "r-crosswalkr")
-    (version "0.2.6")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crosswalkr" version))
        (sha256
-        (base32 "1rxd6vy7vdrawmg7zkydl1f2wwklnzgh9dsnxbg966xrr3l9x1n9"))))
+        (base32 "075x9xk271vnvkhbsyqzwhacz35aw86jynz7cjhzkrsmslrsc5j1"))))
     (properties `((upstream-name . "crosswalkr")))
     (build-system r-build-system)
     (arguments
@@ -11088,19 +11088,19 @@ Tests for separability in nonparametric covariance operators of random surfaces.
 (define-public r-covsel
   (package
     (name "r-covsel")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CovSel" version))
        (sha256
-        (base32 "02fsiykbg96ynqw25vfyrams7fs39xjmfhvb23zjbqb7ql6d0xdk"))))
+        (base32 "0c6mxqkifsjkjlhcibpp9818ld9hcb28p6dcw67kj2vqaym408mk"))))
     (properties `((upstream-name . "CovSel")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-np r-mass r-dr))
+    (propagated-inputs (list r-np r-mass))
     (home-page "https://cran.r-project.org/package=CovSel")
     (synopsis "Model-Free Covariate Selection")
     (description
@@ -32233,13 +32233,13 @@ agricultural models.")
 (define-public r-climclass
   (package
     (name "r-climclass")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClimClass" version))
        (sha256
-        (base32 "1r836md31z2r5d9xckkbalzbhm4kf5paljv71kxpy53q92k7yi91"))))
+        (base32 "1yap4sc6xk1xw8kkf692pkw4q7iaialcl0kwa6z7hljhbj3k3ca7"))))
     (properties `((upstream-name . "ClimClass")))
     (build-system r-build-system)
     (arguments
@@ -32363,13 +32363,13 @@ of censoring and missingness.")
 (define-public r-cliftlrd
   (package
     (name "r-cliftlrd")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CliftLRD" version))
        (sha256
-        (base32 "0qsdv568klxg6chgw329jbfjmf6w61hly2vxp90yzdfkca03z2s4"))))
+        (base32 "12mwirnylzj8h5z24hasf7rp92c195x8bqv3ma9m25qrqyhabpg8"))))
     (properties `((upstream-name . "CliftLRD")))
     (build-system r-build-system)
     (arguments
@@ -38306,13 +38306,13 @@ two-sided Brownian motion minus quadratic drift.  That is, Z = argmax
 (define-public r-chemospec2d
   (package
     (name "r-chemospec2d")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChemoSpec2D" version))
        (sha256
-        (base32 "05k46fn2i0ipn14zignxvykr8018wxql26x2r5b479hbkg1rk5s4"))))
+        (base32 "01i35qf0627k2bpihbbsmzxyqyvx88nfjy14g8jvcydnqz92zipr"))))
     (properties `((upstream-name . "ChemoSpec2D")))
     (build-system r-build-system)
     (arguments
@@ -47716,19 +47716,20 @@ by other packages (or your own code).")
 (define-public r-cartogramr
   (package
     (name "r-cartogramr")
-    (version "1.2-0")
+    (version "1.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cartogramR" version))
        (sha256
-        (base32 "16xa989hiaq17qgys14p68z2jdn79pyylzhnd5y5cqd43hiixkn0"))))
+        (base32 "11gv7dp5zwmbp8gwmxl0c5n6m3h4ra1pqfgw210m3lki302czh86"))))
     (properties `((upstream-name . "cartogramR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sf r-data-table r-cleancall))
+    (native-inputs (list pkg-config))
     (home-page "https://cran.r-project.org/package=cartogramR")
     (synopsis "Continuous Cartogram")
     (description

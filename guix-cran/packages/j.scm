@@ -230,13 +230,13 @@ it will be skipped.")
 (define-public r-junctions
   (package
     (name "r-junctions")
-    (version "2.1.1")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "junctions" version))
        (sha256
-        (base32 "0zg1jmvm8kacn1iivpr69b8q2ssj51ryqy42k45f8p1l77d9pgnf"))))
+        (base32 "0pmh7993fh8f7f6q1g5djcpv1b6mmhigk1k2222rzh46m4zp1ciq"))))
     (properties `((upstream-name . "junctions")))
     (build-system r-build-system)
     (arguments
@@ -244,7 +244,7 @@ it will be skipped.")
       #:tests? #f))
     (propagated-inputs (list r-tibble r-rcppparallel r-rcpp r-nloptr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/thijsjanzen/junctions")
+    (home-page "https://thijsjanzen.github.io/junctions/")
     (synopsis "The Breakdown of Genomic Ancestry Blocks in Hybrid Lineages")
     (description
      "Individual based simulations of hybridizing populations, where the accumulation

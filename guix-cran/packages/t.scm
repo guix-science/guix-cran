@@ -7842,13 +7842,13 @@ models in polynomial time.  Currently supported models include gbm',
 (define-public r-treesearch
   (package
     (name "r-treesearch")
-    (version "1.5.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeSearch" version))
        (sha256
-        (base32 "0nxzjv4q052nsfrib3i95b92alxipds5bll1aldh88dabhn3c0v5"))))
+        (base32 "0n2z3y3kjcx9mi5z72fv3yvnqc520rzzyvwvs92a1nf72q8a4lgf"))))
     (properties `((upstream-name . "TreeSearch")))
     (build-system r-build-system)
     (arguments
@@ -13133,13 +13133,13 @@ particular for Canadian census data from different censuses.")
 (define-public r-tomledit
   (package
     (name "r-tomledit")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tomledit" version))
        (sha256
-        (base32 "0vyhz02gwcl7qclkwvk64y1wlkvbyl0pqjlgs68s6fsqjm3dic00"))))
+        (base32 "0a5bc206av93k6dyhab6fhbkg7s2fqr69bsxasj83kj26sgc69r6"))))
     (properties `((upstream-name . "tomledit")))
     (build-system r-build-system)
     (arguments
@@ -13147,7 +13147,7 @@ particular for Canadian census data from different censuses.")
       #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-rlang))
-    (home-page "https://josiahparry.github.io/tomledit/")
+    (home-page "https://extendr.github.io/tomledit/")
     (synopsis "Parse, Read, and Edit 'TOML'")
     (description
      "This package provides a toolkit for working with TOML files in R while
@@ -27685,13 +27685,13 @@ independently to support analysis for diverse chemical screening efforts.")
 (define-public r-tcpl
   (package
     (name "r-tcpl")
-    (version "3.2.0")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tcpl" version))
        (sha256
-        (base32 "0ah6yb7pi7h4hkkmp475p84dsaqnq9ni5cvwjy8j8pqak4g4w1nz"))))
+        (base32 "0nbgc46kwgkjr9p84chrkhvhdzklc076j4kw8r590pac3vlg7p3k"))))
     (properties `((upstream-name . "tcpl")))
     (build-system r-build-system)
     (arguments
@@ -28260,13 +28260,13 @@ distribution along with clinical trials based on the Bayesian distribution.")
 (define-public r-tbm
   (package
     (name "r-tbm")
-    (version "0.3-6")
+    (version "0.3-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tbm" version))
        (sha256
-        (base32 "1d9ny184b5lbjxaxbm1qzrkpar1l5ggh8g92yq2kc46kall04cxh"))))
+        (base32 "0hzw5zaiicvvh8knbbycszkkrma474l2891rgx3zi5h7pv45s4si"))))
     (properties `((upstream-name . "tbm")))
     (build-system r-build-system)
     (arguments
@@ -28283,7 +28283,7 @@ distribution along with clinical trials based on the Bayesian distribution.")
     (synopsis "Transformation Boosting Machines")
     (description
      "Boosting the likelihood of conditional and shift transformation models as
-introduced in \\doi{10.1007/s11222-019-09870-4}.")
+introduced in <DOI:10.1007/s11222-019-09870-4>.")
     (license license:gpl2)))
 
 (define-public r-tbl2xts

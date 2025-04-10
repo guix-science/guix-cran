@@ -2487,13 +2487,13 @@ for model comparison and goodness-of-fit p-values for model diagnosis).")
 (define-public r-runjags
   (package
     (name "r-runjags")
-    (version "2.2.2-4")
+    (version "2.2.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "runjags" version))
        (sha256
-        (base32 "0ks2dw575mmzzjcscbf02zn38ickqgz4pnvdb5p81h100r6nwrbg"))))
+        (base32 "0l9q9lpn612w1ll045axdf6iic5xmc8iicnh7yrag90mp23cdd0f"))))
     (properties `((upstream-name . "runjags")))
     (build-system r-build-system)
     (arguments
@@ -8298,13 +8298,13 @@ linear models.")
 (define-public r-rscorecard
   (package
     (name "r-rscorecard")
-    (version "0.30.0")
+    (version "0.31.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rscorecard" version))
        (sha256
-        (base32 "0vlm35ibaam4zasdya7b3jkgil1ysigq54rva8zzsn14cn6r7992"))))
+        (base32 "0wdzj23zg1dqky5z8w6vddbpmcpszd0nmp7305y48kyzvmhwp7wm"))))
     (properties `((upstream-name . "rscorecard")))
     (build-system r-build-system)
     (arguments
@@ -18395,6 +18395,42 @@ computation.  The Markov chain Monte Carlo algorithms of the proposed and
 alternative methods are efficiently implemented in C++.")
     (license license:gpl2)))
 
+(define-public r-robcp
+  (package
+    (name "r-robcp")
+    (version "0.3.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "robcp" version))
+       (sha256
+        (base32 "0gl75k2lzk16v4ahksdis07y3l1x78x2jyfisw6k48svcmhpsdv5"))))
+    (properties `((upstream-name . "robcp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=robcp")
+    (synopsis "Robust Change-Point Tests")
+    (description
+     "This package provides robust methods to detect change-points in uni- or
+multivariate time series.  They can cope with corrupted data and heavy tails.
+Focus is on the detection of abrupt changes in location, but changes in the
+scale or dependence structure can be detected as well.  This package provides
+tests for change detection in uni- and multivariate time series based on
+Huberized versions of CUSUM tests proposed in Duerre and Fried (2019)
+<DOI:10.48550/@code{arXiv.1905.06201>}, and tests for change detection in
+univariate time series based on 2-sample U-statistics or 2-sample U-quantiles as
+proposed by Dehling et al. (2015) <DOI:10.1007/978-1-4939-3076-0_12> and
+Dehling, Fried and Wendler (2020) <DOI:10.1093/biomet/asaa004>.  Furthermore,
+the packages provides tests on changes in the scale or the correlation as
+proposed in Gerstenberger, Vogel and Wendler (2020)
+<DOI:10.1080/01621459.2019.1629938>, Dehling et al. (2017)
+<DOI:10.1017/S026646661600044X>, and Wied et al. (2014)
+<DOI:10.1016/j.csda.2013.03.005>.")
+    (license license:gpl3)))
+
 (define-public r-robcor
   (package
     (name "r-robcor")
@@ -23030,13 +23066,13 @@ Tsz Nam Chan, Leong Hou U, Reynold Cheng, Man Lung Yiu, Shivansh Mittal (2020)
 (define-public r-rlibeemd
   (package
     (name "r-rlibeemd")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rlibeemd" version))
        (sha256
-        (base32 "1r3yqs9pc1mllwvw8asppr59kxvmw8dd15wbvn57ngij7kq6aj1l"))))
+        (base32 "0jz88kvynz5f9b97r5plshfbdxp9cbmx108mzw3pf3a0nz07wamy"))))
     (properties `((upstream-name . "Rlibeemd")))
     (build-system r-build-system)
     (arguments
@@ -23053,8 +23089,8 @@ Tsz Nam Chan, Leong Hou U, Reynold Cheng, Man Lung Yiu, Shivansh Mittal (2020)
 functions for performing the ensemble empirical mode decomposition (EEMD), its
 complete variant (CEEMDAN), the regular empirical mode decomposition (EMD), and
 bivariate EMD (BEMD).  Due to the possible portability issues CRAN version no
-longer supports @code{OpenMP}, you can install @code{OpenMP-supported} version
-from @code{GitHub}: <https://github.com/helske/Rlibeemd/>.")
+longer supports @code{OpenMP}, but you can install @code{OpenMP-supported}
+version from @code{GitHub}: <https://github.com/helske/Rlibeemd/>.")
     (license license:gpl3)))
 
 (define-public r-rlgt
@@ -24657,13 +24693,13 @@ others discovered during ongoing testing and code simplification.")
 (define-public r-rjaf
   (package
     (name "r-rjaf")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjaf" version))
        (sha256
-        (base32 "1rc8a3876hxrp83ancnl3h736lwm39bi5cl219x80q47w83jyzif"))))
+        (base32 "0pxb00cm40689w69wawf70pn34ix8dg1cyp9pmv8za7isg2q1rp1"))))
     (properties `((upstream-name . "rjaf")))
     (build-system r-build-system)
     (arguments
@@ -27133,24 +27169,19 @@ position type and the chromosome number.")
 (define-public r-rice
   (package
     (name "r-rice")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rice" version))
        (sha256
-        (base32 "1j0n1pxvvxa6q0bqqpch1ycycni4jb3zcww8w8sa685g7ybcm4rs"))))
+        (base32 "0ik8myr1xzi30gcgcmgv9sqciwx9g7k4fj8h26h9kyjp7qj7pgnn"))))
     (properties `((upstream-name . "rice")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf
-                             r-rnaturalearth
-                             r-rlang
-                             r-rintcal
-                             r-maps
-                             r-ggplot2))
+    (propagated-inputs (list r-rlang r-rintcal r-maps r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rice")
     (synopsis "Radiocarbon Equations")
@@ -32547,13 +32578,13 @@ on id.")
 (define-public r-restatis
   (package
     (name "r-restatis")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restatis" version))
        (sha256
-        (base32 "0n55gn2srd6m4a62bv6c6dcnfxy4lb4zhk7i2ggg8vz9xhxxwhnd"))))
+        (base32 "1ris3c3j51mb4psnwb0q937fhvd5sh7i4nvl91bxh8aq275p7xhd"))))
     (properties `((upstream-name . "restatis")))
     (build-system r-build-system)
     (arguments

@@ -1988,13 +1988,13 @@ series.")
 (define-public r-funkyheatmap
   (package
     (name "r-funkyheatmap")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funkyheatmap" version))
        (sha256
-        (base32 "062f2n1jja7qkrd5k9izmpli6q7sz52aph1b6wp50497bmsb7g4w"))))
+        (base32 "0rqjqwsqsp0d1lsfmidkfqfj961djfzzp0xaz62m12jjsak9w1a0"))))
     (properties `((upstream-name . "funkyheatmap")))
     (build-system r-build-system)
     (arguments
@@ -6864,19 +6864,19 @@ with a set tolerance.")
 (define-public r-fpcdpca
   (package
     (name "r-fpcdpca")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FPCdpca" version))
        (sha256
-        (base32 "0hrciisfnr3b0gs3szjy46fjl8mxpyclmv6ids5mq71spqzaxccp"))))
+        (base32 "1zmpq0jcjj4xm52lvh38f51597bz8ap3j021cbpj9r4kynpa14xz"))))
     (properties `((upstream-name . "FPCdpca")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rsvd r-rdimtools r-matrixcalc))
+    (propagated-inputs (list r-rsvd r-matrixcalc))
     (home-page "https://cran.r-project.org/package=FPCdpca")
     (synopsis
      "The FPCdpca Criterion on Distributed Principal Component Analysis")
@@ -6886,7 +6886,7 @@ one data subset to represent the whole data set with minimum information loss,
 and devise a novel intersection-based criterion on selecting optimal subset,
 called as the FPC criterion, to handle with the optimal sub-estimator in
 distributed principal component analysis; That is, the FPCdpca.  The philosophy
-of the package is described in Guo G. (2020) <doi:10.1007/s00180-020-00974-4>.")
+of the package is described in Guo G. (2025) <doi:10.1016/j.physa.2024.130308>.")
     (license license:asl2.0)))
 
 (define-public r-fpcb
@@ -7718,13 +7718,13 @@ react and interact as well as generate code to create reproducible analyses.")
 (define-public r-formatters
   (package
     (name "r-formatters")
-    (version "0.5.10")
+    (version "0.5.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formatters" version))
        (sha256
-        (base32 "07bxb8579i9rs3f2anx0c9g1frchl3pccsk1cw8f1jvy1bkz09l7"))))
+        (base32 "1m7cqjh0gr5c1vr4wx8pg5y3yq0pla7af7851b2ifhkidy4sv2i1"))))
     (properties `((upstream-name . "formatters")))
     (build-system r-build-system)
     (arguments
@@ -12471,6 +12471,32 @@ splines.  These curves allow for comparison against a specified reference value,
 aiding in the interpretation of the predictor's effect.")
     (license license:gpl3)))
 
+(define-public r-flexoki
+  (package
+    (name "r-flexoki")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flexoki" version))
+       (sha256
+        (base32 "1fmc8j1vpa30gnybdy9fxk675ncrbs7x90cqg402wchd0gp7magg"))))
+    (properties `((upstream-name . "flexoki")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-palette r-ggplot2))
+    (home-page "https://github.com/christopherkenny/flexoki")
+    (synopsis "Inky Color Schemes")
+    (description
+     "This package provides color palettes designed to be reminiscent of text on
+paper.  The color schemes were taken from <https://stephango.com/flexoki>.
+Includes discrete, continuous, and binned scales that are not necessarily
+color-blind friendly.  Simple scale and theme functions are available for use
+with ggplot2'.")
+    (license license:expat)))
+
 (define-public r-flexmsm
   (package
     (name "r-flexmsm")
@@ -12915,13 +12941,13 @@ function names.")
 (define-public r-flashmm
   (package
     (name "r-flashmm")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FLASHMM" version))
        (sha256
-        (base32 "0hscl560acsc9qrcpyc53w0svqd1c0h3abximkzy6nw9sls6jyvw"))))
+        (base32 "0vm3s7b1hbkim48qdibcg5pipkbyz5zkd5g522ia5si2bvapbsvf"))))
     (properties `((upstream-name . "FLASHMM")))
     (build-system r-build-system)
     (arguments
@@ -16307,13 +16333,13 @@ time modified, etc.) of a folder's top level contents.")
 (define-public r-filenamer
   (package
     (name "r-filenamer")
-    (version "0.2.4")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filenamer" version))
        (sha256
-        (base32 "0z4x5v5xjxic3bvarsx8p8k64xlhbibd9rhv2b7ihv36dz6qh490"))))
+        (base32 "10q2a26396dp17sypgsm39svp3p32qkkma2vqqwgsyd48yl2d769"))))
     (properties `((upstream-name . "filenamer")))
     (build-system r-build-system)
     (arguments

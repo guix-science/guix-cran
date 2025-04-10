@@ -402,6 +402,32 @@ assignments, grades, users, and other resources available through the Canvas
 API.")
     (license license:expat)))
 
+(define-public r-vvbitwarden
+  (package
+    (name "r-vvbitwarden")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vvbitwarden" version))
+       (sha256
+        (base32 "0zg5sxbvi3zrhw8nw8dzk91d6gl9p7xga5qwhsw98cikffhh7ajv"))))
+    (properties `((upstream-name . "vvbitwarden")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-processx r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=vvbitwarden")
+    (synopsis "Interacts with 'Bitwarden Secrets Manager'")
+    (description
+     "This package provides functions to securely retrieve secrets from a Bitwarden
+Secrets Manager vault using the Bitwarden CLI', enabling secret and
+configuration management within R packages and workflows.  For more information
+visit <https://bitwarden.com/products/secrets-manager/>.")
+    (license license:expat)))
+
 (define-public r-vvauditor
   (package
     (name "r-vvauditor")
@@ -3562,13 +3588,13 @@ from Kraemer H.C. & Kupfer D.J. (2006) <doi:10.1016/j.biopsych.2005.09.014>.")
 (define-public r-viscov
   (package
     (name "r-viscov")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VisCov" version))
        (sha256
-        (base32 "1vxal6kqryawg5z6vanggbrxyk7qkm7091lcir3smwdi6qakwm4z"))))
+        (base32 "1sd2p2d4v7qwpziy61588b6q44rypri1qhm1l2mkpb0h9za9a977"))))
     (properties `((upstream-name . "VisCov")))
     (build-system r-build-system)
     (arguments
@@ -3582,7 +3608,7 @@ from Kraemer H.C. & Kupfer D.J. (2006) <doi:10.1016/j.biopsych.2005.09.014>.")
      "Visualizing of distributions of covariance matrices.  The package implements the
 methodology described in Tokuda, T., Goodrich, B., Van Mechelen, I., Gelman, A.,
 & Tuerlinckx, F. (2012)
-<https://stat.columbia.edu/~gelman/research/unpublished/Visualization.pdf>.")
+<https://sites.stat.columbia.edu/gelman/research/unpublished/Visualization.pdf>.")
     (license license:gpl3+)))
 
 (define-public r-viscomplexr
@@ -9316,6 +9342,33 @@ analyses.  Also includes several user-friendly functions for plotting outputs,
 and strives to follow \"tidy\" design principles.  Please note that this package
 requires access to a running instance of Valhalla', which is open source and can
 be downloaded from <https://github.com/valhalla/valhalla>.")
+    (license license:gpl3+)))
+
+(define-public r-valh
+  (package
+    (name "r-valh")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valh" version))
+       (sha256
+        (base32 "0y91hvln9d8wgs5i1hn977k98wdsk5qn137l1nfdvw1xhij0rc7j"))))
+    (properties `((upstream-name . "valh")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-jsonlite r-googlepolylines r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/riatelab/valh")
+    (synopsis
+     "Interface Between R and the OpenStreetMap-Based Routing Service Valhalla")
+    (description
+     "An interface between R and the Valhalla API. Valhalla is a routing service based
+on @code{OpenStreetMap} data.  See <https://valhalla.github.io/valhalla/> for
+more information.  This package enables the computation of routes, trips,
+isochrones and travel distances matrices (travel time and kilometer distance).")
     (license license:gpl3+)))
 
 (define-public r-valet
