@@ -2448,13 +2448,13 @@ depends on the observed states themselves.  See Zambom, Kim, and Garcia (2022)
 (define-public r-vlf
   (package
     (name "r-vlf")
-    (version "1.1")
+    (version "1.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VLF" version))
        (sha256
-        (base32 "096a7nx60qm4b7fil4s3r4mlp8fq60v0lq893jh3ij6gm63mfcim"))))
+        (base32 "0lc1hrmmkjy7zp4pl4vnqyflp77rcic8k2gf44wxvfm62x2gs4lw"))))
     (properties `((upstream-name . "VLF")))
     (build-system r-build-system)
     (arguments
@@ -2471,7 +2471,8 @@ multiple members of a species, shared VLFs.  The amino acid and nucleotide VLFs
 are then compared to see if they are concordant with one another.  Amino acid
 VLFs are also assessed to determine if they lead to a change in amino acid
 residue type, and potential changes to protein structures.  Based on Stoeckle
-and Kerr (2012) <doi:10.1371/journal.pone.0043992>.")
+and Kerr (2012) <doi:10.1371/journal.pone.0043992> and Phillips et al. (2023)
+<doi:10.3897/BDJ.11.e96480>.")
     (license license:gpl3+)))
 
 (define-public r-vkr

@@ -1909,6 +1909,34 @@ transformation, as well as the letter-value based estimates (Hoaglin 1985), are
 also provided.")
     (license license:gpl2)))
 
+(define-public r-tukeyc
+  (package
+    (name "r-tukeyc")
+    (version "1.3-43")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TukeyC" version))
+       (sha256
+        (base32 "03hyj4yixlgp8gzryh7sp3hgpiyhznw6bc0dw6z0f4nnaj5hyxba"))))
+    (properties `((upstream-name . "TukeyC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xtable r-doby))
+    (home-page "https://github.com/jcfaria/TukeyC")
+    (synopsis "Conventional Tukey Test")
+    (description
+     "This package provides tools to perform multiple comparison analyses, based on
+the well-known Tukey's \"Honestly Significant Difference\" (HSD) test.  In models
+involving interactions, @code{TukeyC} stands out from other R packages by
+implementing intuitive and easy-to-use functions.  In addition to accommodating
+traditional R methods such as @code{lm()} and @code{aov()}, it has also been
+extended to objects of the @code{lmer()} class, that is, mixed models with fixed
+effects.  For more details see Tukey (1949) <doi:10.2307/3001913>.")
+    (license license:gpl2+)))
+
 (define-public r-tugboat
   (package
     (name "r-tugboat")
@@ -5453,13 +5481,13 @@ package additionally allows for a doubly truncated normal distribution.")
 (define-public r-truncexpfam
   (package
     (name "r-truncexpfam")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TruncExpFam" version))
        (sha256
-        (base32 "0lqx04pzj66b0x6wa4rswrlrlk0zyi0zzybk370h9gz1zdzzdjy6"))))
+        (base32 "1vnw5b788jz8hjgp05i8rrsdag4rhs4zvvs0ynqisd4sp393qi6j"))))
     (properties `((upstream-name . "TruncExpFam")))
     (build-system r-build-system)
     (arguments
@@ -20306,6 +20334,30 @@ or AI players.  Various levels of AI players are trained through the Q-learning
 algorithm.")
     (license license:expat)))
 
+(define-public r-tickr
+  (package
+    (name "r-tickr")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tickr" version))
+       (sha256
+        (base32 "104jlwhd8wjqw693sfilxcsjxl764dgnsllr6gr6prszkfaj1gqs"))))
+    (properties `((upstream-name . "tickr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-magrittr r-ggplot2))
+    (home-page "https://github.com/ben-williams/tickr")
+    (synopsis "Consistent Axis Tick Marks")
+    (description
+     "This is a small package to provide consistent tick marks for plotting ggplot2
+figures.  It provides breaks and labels for ggplot2 without requiring ggplot2 to
+be installed.")
+    (license license:expat)))
+
 (define-public r-tican
   (package
     (name "r-tican")
@@ -21067,13 +21119,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-this-path
   (package
     (name "r-this-path")
-    (version "2.6.0")
+    (version "2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "this.path" version))
        (sha256
-        (base32 "193a97z3v7zjvdj92nwl6j2s3fn9zakmcyd85cxa1v7qlygm4y51"))))
+        (base32 "0wg51vyhw2dl6ycm7q6ygpkb56bihi734dmpb061yw99x6qfanbi"))))
     (properties `((upstream-name . "this.path")))
     (build-system r-build-system)
     (arguments
@@ -28367,13 +28419,13 @@ optionally with generalized Pareto p-value estimation.")
 (define-public r-tbea
   (package
     (name "r-tbea")
-    (version "1.5.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tbea" version))
        (sha256
-        (base32 "0h2v6h93r36h9v7g6w4jrj38rln9qqck5xnwcljdrhnd8r5x3v29"))))
+        (base32 "0nkmrw8l0xka0hvcmgdf654aq0jvmqsgkx3m9kzsw9k437r5ja49"))))
     (properties `((upstream-name . "tbea")))
     (build-system r-build-system)
     (arguments

@@ -43109,13 +43109,13 @@ subcommunities.  Richard Reeve, et al. (2016) <@code{arXiv:1404.6520v3>}.")
 (define-public r-rdistance
   (package
     (name "r-rdistance")
-    (version "4.0.3")
+    (version "4.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdistance" version))
        (sha256
-        (base32 "1jdk8ldcsqphx39vplsvcmwd4dnbkd4q9gpc3b3afw6x5bmycm27"))))
+        (base32 "1rbi2jnz9wsi8s6rf2mbxqbv2drwymybag47vh4n1bg0ydqfyl16"))))
     (properties `((upstream-name . "Rdistance")))
     (build-system r-build-system)
     (arguments
@@ -46481,13 +46481,13 @@ based normal karyotype ranges, and calculation of feature score.  Cutoffs for
 (define-public r-rcmsize
   (package
     (name "r-rcmsize")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCMsize" version))
        (sha256
-        (base32 "1i148vlg3y9w6abnzzic8773s4r7ly5js1h9klj2gh66raybzrw6"))))
+        (base32 "0ldwf7y7scic0s1vzkfy78ank6crs3jgpp68r7zfzl5z96pkj0xb"))))
     (properties `((upstream-name . "RCMsize")))
     (build-system r-build-system)
     (arguments
@@ -46495,7 +46495,7 @@ based normal karyotype ranges, and calculation of feature score.  Cutoffs for
       #:tests? #f))
     (propagated-inputs (list r-binom))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/marciagraca/RCMsize")
+    (home-page "https://CRAN.R-project.org/package=RCMsize")
     (synopsis "Sample Size Calculation in Reversible Catalytic Models")
     (description
      "Sample size and confidence interval calculations in reversible catalytic models,
@@ -57196,13 +57196,13 @@ by incorporating HTML hex codes.")
 (define-public r-r2sundials
   (package
     (name "r-r2sundials")
-    (version "6.5.0-5")
+    (version "7.2.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2sundials" version))
        (sha256
-        (base32 "0zbaqfml3f778zip3aggy17l1wzn26z41bzx9mk0wbgzx2mi0dwf"))))
+        (base32 "1y05lr0ghadl584s8j99did5br0q22rgw64lxa9fgs5sp4mwllyz"))))
     (properties `((upstream-name . "r2sundials")))
     (build-system r-build-system)
     (arguments

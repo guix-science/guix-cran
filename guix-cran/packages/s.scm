@@ -20309,13 +20309,13 @@ formatting SQL statements.")
 (define-public r-sqlove
   (package
     (name "r-sqlove")
-    (version "0.0.4")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SQLove" version))
        (sha256
-        (base32 "0k746spnhi07rdw8lbblsxgabqlzr3h368svxhs7987r333wlsyh"))))
+        (base32 "00qazplc08rj7l9bs0cvq54jw53csnj53i1rsgk5yp5l9czs7l7x"))))
     (properties `((upstream-name . "SQLove")))
     (build-system r-build-system)
     (arguments
@@ -48058,13 +48058,13 @@ hoc structure of the shiny App.")
 (define-public r-shinytest2
   (package
     (name "r-shinytest2")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinytest2" version))
        (sha256
-        (base32 "1qrnh9cfgi67szv1yiaqkv10vf1r70i9l88h6dssgiv1q2fw8yx1"))))
+        (base32 "1s6w03xy36dbqwmilkmrmzlk0sb4mg7bcz717hb3s5gdq1wchq1a"))))
     (properties `((upstream-name . "shinytest2")))
     (build-system r-build-system)
     (arguments
@@ -48077,12 +48077,13 @@ hoc structure of the shiny App.")
                              r-rlang
                              r-r6
                              r-pingr
+                             r-lifecycle
                              r-jsonlite
                              r-httr
                              r-globals
                              r-fs
-                             r-crayon
                              r-cpp11
+                             r-cli
                              r-chromote
                              r-checkmate
                              r-callr))
@@ -71238,13 +71239,13 @@ within the constrained space.")
 (define-public r-salso
   (package
     (name "r-salso")
-    (version "0.3.51")
+    (version "0.3.53")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "salso" version))
        (sha256
-        (base32 "0rf5va7fffylrw0dnv73m1xrrnf1yb9y10n411k9khcqihskqlzk"))))
+        (base32 "0dn3z0nxm70ji07fcilfy99vgvag44bkb62184vygkvkgywmlscc"))))
     (properties `((upstream-name . "salso")))
     (build-system r-build-system)
     (arguments

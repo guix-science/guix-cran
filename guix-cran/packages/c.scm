@@ -186,13 +186,13 @@ Freulon P, Bigot J and Hejblum BP (2023) <doi:10.1214/22-AOAS1660>.")
 (define-public r-cytoprofile
   (package
     (name "r-cytoprofile")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CytoProfile" version))
        (sha256
-        (base32 "1qmdndic3ghql80r4lih038fwychqca5mxya8ajigwvp8li171c6"))))
+        (base32 "1wixb72avvb222akw56q2632mjb9jhqfxs86bfniwk4f5mipf56a"))))
     (properties `((upstream-name . "CytoProfile")))
     (build-system r-build-system)
     (arguments
@@ -202,7 +202,6 @@ Freulon P, Bigot J and Hejblum BP (2023) <doi:10.1214/22-AOAS1660>.")
                              r-tidyr
                              r-reshape2
                              r-randomforest
-                             r-prodlim
                              r-proc
                              r-plot3d
                              r-mixomics
@@ -8138,13 +8137,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew" version))
        (sha256
-        (base32 "14cizn1xkcbphjx9kx4x1vrl1zmln72g1sw5r25blvsvq146zywc"))))
+        (base32 "0ayyi5z8pvqg73z937d3gs4sm238s4flyllq2v3jg170gbhc8wpd"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (arguments
@@ -13839,6 +13838,30 @@ specifying whether the calculation approach to be used is from Witt (2014)
 <doi:10.1046/j.1467-9876.2003.05369.x>.  The output is a (trials+1)-dimensional
 vector containing the likelihoods of 0, 1, ..., trials successes.")
     (license license:gpl3+)))
+
+(define-public r-correlationr
+  (package
+    (name "r-correlationr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "correlationr" version))
+       (sha256
+        (base32 "17b655jnfslhv6ln0f1xrx95s1gcil6x40csf1qba0dx90w4rmkc"))))
+    (properties `((upstream-name . "correlationr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://liqas.org/1-correlationr-package/")
+    (synopsis "Conduct Robust Correlations on Non-Normal Data")
+    (description
+     "Allows you to conduct robust correlations on your non-normal data set.  The
+robust correlations included in the package are median-absolute-deviation and
+median-based correlations.  Li, J.C.H. (2022) <doi:10.5964/meth.8467>.")
+    (license license:gpl3)))
 
 (define-public r-correlationfunnel
   (package
@@ -25141,30 +25164,37 @@ cohorts and create new cohorts.")
 (define-public r-cohetsurr
   (package
     (name "r-cohetsurr")
-    (version "1.1")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cohetsurr" version))
        (sha256
-        (base32 "1rhkqs1slw3y5ndw40d2d5x50sf9mb5svng24nh8gsy62li4jsz5"))))
+        (base32 "0vpkhiz7vjchsz9yyf5am4fcri9c71wcqh6dwcsknm7f6gzplci4"))))
     (properties `((upstream-name . "cohetsurr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-matrixstats))
+    (propagated-inputs (list r-mvtnorm r-mgcv r-matrixstats r-grf))
     (home-page "https://cran.r-project.org/package=cohetsurr")
     (synopsis "Assessing Complex Heterogeneity in Surrogacy")
     (description
-     "This package provides functions to assess and test for complex heterogeneity in
-the utility of a surrogate marker with respect to multiple baseline covariates,
-using both a parametric model and a semiparametric two-step model.  More details
-are available in: Knowlton, R., Tian, L., & Parast, L. (2025). \"A General
-Framework to Assess Complex Heterogeneity in the Strength of a Surrogate
-Marker,\" Statistics in Medicine, 44(5), e70001 <doi:10.1002/sim.70001>.  A
-tutorial for this package can be found at
-<https://laylaparast.com/home/cohetsurr.html>.")
+     "This package provides functions to assess complex heterogeneity in the strength
+of a surrogate marker with respect to multiple baseline covariates, in either a
+randomized treatment setting or observational setting.  For a randomized
+treatment setting, the functions assess and test for heterogeneity using both a
+parametric model and a semiparametric two-step model.  More details for the
+randomized setting are available in: Knowlton, R., Tian, L., & Parast, L.
+(2025). \"A General Framework to Assess Complex Heterogeneity in the Strength of
+a Surrogate Marker,\" Statistics in Medicine, 44(5), e70001
+<doi:10.1002/sim.70001>.  For an observational setting, functions in this
+package assess complex heterogeneity in the strength of a surrogate marker using
+meta-learners, with options for different base learners.  More details for the
+observational setting will be available in the future in: Knowlton, R., Parast,
+L. (2025) \"Assessing Surrogate Heterogeneity in Real World Data Using
+Meta-Learners.\" A tutorial for this package can be found at
+<https://www.laylaparast.com/cohetsurr>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-cohensdplibrary
@@ -25975,13 +26005,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "3.4.1")
+    (version "3.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "1a9d46p12w9pg5msh1q32vq0jdk2waaa6mdg6qhmc7cvpn98dmhl"))))
+        (base32 "0cmahczw7wixc1k7mhw25wq4s9ni3j17wmfi4pwp5c8j3qq9cx50"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (arguments
@@ -25995,13 +26025,13 @@ utilities to generate this metadata with a minimum of dependencies.")
                              r-purrr
                              r-patientprofiles
                              r-omopgenerics
-                             r-lubridate
+                             r-lifecycle
                              r-jsonlite
                              r-glue
                              r-dplyr
                              r-dbi
-                             r-cli
-                             r-checkmate))
+                             r-clock
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://darwin-eu.github.io/CodelistGenerator/")
     (synopsis "Identify Relevant Clinical Codes and Evaluate Their Use")
@@ -31111,6 +31141,33 @@ and covariance matrix with parallel processing option.  Moreover, the proposed
 surrogate residual, which extends the results of Liu and Zhang (2017) <doi:
 10.1080/01621459.2017.1292915>, can act as a useful tool for model diagnostics.")
     (license license:gpl2)))
+
+(define-public r-clootl
+  (package
+    (name "r-clootl")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clootl" version))
+       (sha256
+        (base32 "0qxi7m1acqxvz4xpnasqg7yjq5y2m05yl9skcqp64ln1lg9jbbq6"))))
+    (properties `((upstream-name . "clootl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcurl r-jsonlite r-dplyr r-ape))
+    (home-page "https://github.com/eliotmiller/clootl")
+    (synopsis
+     "Fetch and Explore the Cornell Lab of Ornithology Open Tree of Life Avian Phylogeny")
+    (description
+     "Fetches the Cornell Lab of Ornithology Open Tree of Life (clootl) tree in a
+specified taxonomy.  Optionally prune it to a given set of study taxa.  Provide
+a recommended citation list for the studies that informed the extracted tree.
+Tree generated as described in @code{McTavish} et al. (2024)
+<doi:10.1101/2024.05.20.595017>.")
+    (license license:gpl3)))
 
 (define-public r-clonetv2
   (package

@@ -10175,6 +10175,38 @@ alerts at a specific location from the Destination Weather API. Locations,
 routes and isolines are returned as sf objects.")
     (license license:gpl3)))
 
+(define-public r-hera
+  (package
+    (name "r-hera")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hera" version))
+       (sha256
+        (base32 "1hmx6qxn8rnr2p1mamplqpg1pn3fsp880m65h6zi5wlwrxx95xc5"))))
+    (properties `((upstream-name . "hera")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-repr
+                             r-r6
+                             r-jsonlite
+                             r-irdisplay
+                             r-glue
+                             r-evaluate
+                             r-cli))
+    (home-page "https://github.com/jupyter-xeus/xeus-r")
+    (synopsis "Companion to the 'xeus-r' 'jupyter' Kernel")
+    (description
+     "Set of R functions to be coupled with the xeus-r jupyter kernel in order to
+drive execution of code in notebook input cells, how R objects are to be
+displayed in output cells, and handle two way communication with the front end
+through comms.")
+    (license license:expat)))
+
 (define-public r-heplots
   (package
     (name "r-heplots")
@@ -10868,26 +10900,23 @@ case conversion for R'.")
 (define-public r-heatwaver
   (package
     (name "r-heatwaver")
-    (version "0.4.6")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heatwaveR" version))
        (sha256
-        (base32 "172qg8dgyn5lbwmyq8dxdccxr4aqaq6iixn5dqb4fy99ahgdbhyv"))))
+        (base32 "1piss45bhm8r6h3x72w7l0s2hg42sb84l08bfwbxb3jvnx47k5iq"))))
     (properties `((upstream-name . "heatwaveR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rcpproll
+    (propagated-inputs (list r-rcpproll
                              r-rcpparmadillo
                              r-rcpp
-                             r-plyr
-                             r-lubridate
                              r-ggplot2
-                             r-dplyr
+                             r-fasttime
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://robwschlegel.github.io/heatwaveR/index.html")

@@ -240,6 +240,42 @@ Quantitative and Qualitative Factors\" by Qian Xiao, Abhyuday Mandal, C. Devon
 Lin, and Xinwei Deng (2022) <doi:10.1137/19M1288462>.")
     (license license:gpl2)))
 
+(define-public r-ezfragility
+  (package
+    (name "r-ezfragility")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EZFragility" version))
+       (sha256
+        (base32 "117p4vsfb5l6zrya4zs9cgxqmp3zccjbdhsq54rpdnk0lqqb3al3"))))
+    (properties `((upstream-name . "EZFragility")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-rlang
+                             r-reshape2
+                             r-ramify
+                             r-progress
+                             r-glue
+                             r-ggtext
+                             r-ggplot2
+                             r-foreach))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=EZFragility")
+    (synopsis "Compute Neural Fragility for Ictal iEEG Time Series")
+    (description
+     "This package provides tools to compute the neural fragility matrix from
+intracranial electrocorticographic (@code{iEEG}) recordings, enabling the
+analysis of brain dynamics during seizures.  The package implements the method
+described by Li et al. (2017) <doi:10.23919/ACC.2017.7963378> and includes
+functions for data preprocessing (`Epoch`), fragility computation
+(`@code{calcAdjFrag`}), and visualization.")
+    (license license:gpl3+)))
+
 (define-public r-ezeda
   (package
     (name "r-ezeda")
@@ -1043,13 +1079,13 @@ contexts.  This is the implementation of the index in Taillardat et al. (2019)
 (define-public r-extremefit
   (package
     (name "r-extremefit")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extremefit" version))
        (sha256
-        (base32 "07gx6dp0kz4y1jn90hsfvkhn6k7i4flh7ghdz9v5nwda86f55q2s"))))
+        (base32 "1apv26dvzd9ak8lzrcvykgnpwxi6zf9l07b70i1mqwpqhmkqszx1"))))
     (properties `((upstream-name . "extremefit")))
     (build-system r-build-system)
     (arguments
@@ -5723,21 +5759,21 @@ Penman-Monteith FAO 56, Priestley-Taylor and Morton formulations.")
 (define-public r-evapore
   (package
     (name "r-evapore")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evapoRe" version))
        (sha256
-        (base32 "1a50pi9vch15cl5c3jb43slfdb7k0aa4s4pdx75va9icg738fiby"))))
+        (base32 "0np16i5zghnr9vzf2vcyfn829ihwls4d5z5nmvhn4nz7i97yg46s"))))
     (properties `((upstream-name . "evapoRe")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list proj gdal))
-    (propagated-inputs (list r-raster
-                             r-precipe
+    (propagated-inputs (list r-twc
+                             r-raster
                              r-lubridate
                              r-foreach
                              r-doparallel
@@ -5750,12 +5786,13 @@ Penman-Monteith FAO 56, Priestley-Taylor and Morton formulations.")
 @code{EvapoTranspiration} (ET) datasets. @code{evapoRe} enables users to
 download, validate, visualize, and analyze multi-source ET data across various
 spatio-temporal scales.  Also, the package offers calculation methods for
-estimating potential ET (PET), including temperature-based approaches described
-in : Oudin et al., (2005) <doi:10.1016/j.jhydrol.2004.08.026>. @code{evapoRe}
-supports hydrological modeling, climate studies, agricultural research, and
-other data-driven fields by facilitating access to ET data and offering powerful
-analysis capabilities.  Users can seamlessly integrate the package into their
-research applications and explore diverse ET data at different resolutions.")
+estimating potential ET (PET), including temperature-based, combined type, and
+radiation-based approaches described in : Oudin et al., (2005)
+<doi:10.1016/j.jhydrol.2004.08.026>. @code{evapoRe} supports hydrological
+modeling, climate studies, agricultural research, and other data-driven fields
+by facilitating access to ET data and offering powerful analysis capabilities.
+Users can seamlessly integrate the package into their research applications and
+explore diverse ET data at different resolutions.")
     (license license:gpl3)))
 
 (define-public r-evalue
@@ -8725,6 +8762,40 @@ among tests and combines adaptively the estimation of the signal and the
 updating of the dependence modelling (see Sheu et al., 2016,
 <DOI:10.1214/15-AOAS888> for further details).")
     (license license:gpl2+)))
+
+(define-public r-ernm
+  (package
+    (name "r-ernm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ernm" version))
+       (sha256
+        (base32 "1hqzx92pn13brmq4bsrsainam52c6f3x6a8n2vsll01bhwc8fhh0"))))
+    (properties `((upstream-name . "ernm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-trust
+                             r-tidyr
+                             r-rlang
+                             r-rcpp
+                             r-network
+                             r-moments
+                             r-ggplot2
+                             r-dplyr
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=ernm")
+    (synopsis "Exponential-Family Random Network Models")
+    (description
+     "Estimation of fully and partially observed Exponential-Family Random Network
+Models (ERNM).  Exponential-family Random Graph Models (ERGM) and Gibbs Fields
+are special cases of ERNMs and can also be estimated with the package.  Please
+cite Fellows and Handcock (2012), \"Exponential-family Random Network Models\"
+available at <doi:10.48550/@code{arXiv.1208.0121>}.")
+    (license license:lgpl2.1)))
 
 (define-public r-ern
   (package

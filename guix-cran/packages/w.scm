@@ -6576,13 +6576,13 @@ Stier et al., 2022 <doi:10.1017/S0003055421001222>).")
 (define-public r-websocket
   (package
     (name "r-websocket")
-    (version "1.4.2")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "websocket" version))
        (sha256
-        (base32 "040kawypkkim5scjp86immcqn42jj8s591hvypx1anyf7d8nls4w"))))
+        (base32 "0bhlyh8qxx0x288zq8q194jr334zbwaq7vsavbgcj7j63qkh1kcz"))))
     (properties `((upstream-name . "websocket")))
     (build-system r-build-system)
     (arguments

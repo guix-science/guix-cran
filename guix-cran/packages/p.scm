@@ -889,6 +889,32 @@ et al. <doi:10.1007/s40009-023-01218-x> and Yeasin and Paul (2024)
 <doi:10.1007/s11227-023-05542-3>.")
     (license license:gpl3)))
 
+(define-public r-pwepred
+  (package
+    (name "r-pwepred")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PwePred" version))
+       (sha256
+        (base32 "05q5mwpj191nb7h7jpqyxfhf66qnqc4mcfas7xzlnw4w0ha835s6"))))
+    (properties `((upstream-name . "PwePred")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-segmented r-foreach r-fastmatch
+                             r-dosnow))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PwePred")
+    (synopsis "Event/Timeline Prediction Model Based on Piecewise Exponential")
+    (description
+     "Efficient algorithm for estimating piecewise exponential hazard models for
+right-censored data, and is useful for reliable power calculation, study design,
+and event/timeline prediction for study monitoring.")
+    (license license:expat)))
+
 (define-public r-pweall
   (package
     (name "r-pweall")
@@ -1937,6 +1963,43 @@ correlation matrix is included as a function.  The methodologies are described
 in Cavicchia, Vichi, Zaccaria (2024) <doi:10.1007/s11222-024-10405-9>,
 Cavicchia, Vichi, Zaccaria (2022) <doi:10.1007/s11634-021-00488-x> and
 Cavicchia, Vichi, Zaccaria (2020) <doi:10.1007/s11634-020-00400-z>.")
+    (license license:expat)))
+
+(define-public r-puff
+  (package
+    (name "r-puff")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "puff" version))
+       (sha256
+        (base32 "02rwv4in5zq3yb8ml0g0nh7h310gpwfpvmc3jd2qpqgwwl601d71"))))
+    (properties `((upstream-name . "puff")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-scales
+                             r-plotly
+                             r-patchwork
+                             r-magrittr
+                             r-htmlwidgets
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Hammerling-Research-Group/puff")
+    (synopsis
+     "Simulate and Visualize the Gaussian Puff Forward Atmospheric Model")
+    (description
+     "Simulate and run the Gaussian puff forward atmospheric model in sensor (specific
+sensor coordinates) or grid (across the grid of a full oil and gas operations
+site) modes, following Jia, M., Fish, R., Daniels, W., Sprinkle, B. and
+Hammerling, D. (2024) <doi:10.26434/chemrxiv-2023-hc95q-v3>.  Numerous
+visualization options, including static and animated, 2D and 3D, and a site map
+generator based on sensor and source coordinates.")
     (license license:expat)))
 
 (define-public r-pudu
@@ -5081,13 +5144,13 @@ the Healthy Hearts formula.")
 (define-public r-psc
   (package
     (name "r-psc")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psc" version))
        (sha256
-        (base32 "1pb1jbdkh4vpvggvhmc7slvxy0fbfz4mm1il0rh0qbk85xakg0d3"))))
+        (base32 "10np3kr0kfly1rv9v0xvwg6ddrzpjhhhn8cmjvsr2rqn8is99v11"))))
     (properties `((upstream-name . "psc")))
     (build-system r-build-system)
     (arguments
@@ -9651,13 +9714,13 @@ visualizations are also provided.")
 (define-public r-priorsense
   (package
     (name "r-priorsense")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorsense" version))
        (sha256
-        (base32 "0a3jpacd1560jb26rhm0yq2swdhwh8l2h069y0r5fgj6bv7ydigp"))))
+        (base32 "1s3fcb34aa1hg5cmkpr5ar7sa4ccr9z5na43npr1gadbd9dpllaa"))))
     (properties `((upstream-name . "priorsense")))
     (build-system r-build-system)
     (arguments
@@ -9671,8 +9734,8 @@ visualizations are also provided.")
                              r-ggh4x
                              r-ggdist
                              r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://n-kall.github.io/priorsense/")
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/n-kall/priorsense")
     (synopsis "Prior Diagnostics and Sensitivity Analysis")
     (description
      "This package provides functions for prior and likelihood sensitivity analysis in
@@ -27391,6 +27454,32 @@ creation directly within the R environment.")
 Pijavski method, which was published in Pijavski (1972)
 <DOI:10.1016/0041-5553(72)90115-2>.")
     (license license:lgpl3)))
+
+(define-public r-piir
+  (package
+    (name "r-piir")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "piiR" version))
+       (sha256
+        (base32 "16ayyva9xgsd64hyqf9kvp5dj0kygbg30mf60akc2jkfjpc1gh8y"))))
+    (properties `((upstream-name . "piiR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-proc r-infotheo))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=piiR")
+    (synopsis "Predictive Information Index ('PII')")
+    (description
+     "This package provides a simple implementation of the Predictive Information
+Index ('PII') using mutual information and entropy from the infotheo package.
+For related methodology, see Wells (2025)
+<https://github.com/@code{TheotherDrWells/piiR>}.")
+    (license license:expat)))
 
 (define-public r-pii
   (package

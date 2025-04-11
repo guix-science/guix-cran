@@ -5789,19 +5789,20 @@ aggregator.  Its use is illustrated with a simple example.")
 (define-public r-bradleyterry2
   (package
     (name "r-bradleyterry2")
-    (version "1.1-2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BradleyTerry2" version))
        (sha256
-        (base32 "0vss3ib74cz2zn1afmrvllawghj9z2ay4x1ysvk4rqvjmiia4a2i"))))
+        (base32 "1whjc5cawmgkcm7qvhyvyq3bw4pcxd78vbjbibhsr35fdwf0cvq6"))))
     (properties `((upstream-name . "BradleyTerry2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-qvcalc r-lme4 r-gtools r-brglm))
+    (native-inputs (list r-litedown r-knitr))
     (home-page "https://github.com/hturner/BradleyTerry2")
     (synopsis "Bradley-Terry Models")
     (description

@@ -34,6 +34,30 @@
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
 
+(define-public r-ztils
+  (package
+    (name "r-ztils")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ztils" version))
+       (sha256
+        (base32 "0zm0rm4gshqnr3q4fz27d9f7mjj996lnsf14j7fqrjviy3c9c4c5"))))
+    (properties `((upstream-name . "ztils")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan r-scico r-mass r-ggplot2))
+    (home-page "https://zachpeagler.github.io/ztils/")
+    (synopsis "Various Common Statistical Utilities")
+    (description
+     "Utilities for simplifying common statistical operations including probability
+density functions, cumulative distribution functions, Kolmogorov-Smirnov tests,
+principal component analysis plots, and prediction plots.")
+    (license license:expat)))
+
 (define-public r-zoomr
   (package
     (name "r-zoomr")

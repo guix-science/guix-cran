@@ -3340,6 +3340,31 @@ In addition to cell-density count, it can derive statistics of intercellular
 spatial distance for each cell-type.")
     (license license:gpl2)))
 
+(define-public r-isard
+  (package
+    (name "r-isard")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isard" version))
+       (sha256
+        (base32 "1fclf4sbbww1d3ybadi6pb5d38ngqrcszb5q25nx81m4408yqsm5"))))
+    (properties `((upstream-name . "isard")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=isard")
+    (synopsis "Overflow Data for Quantitative Peace Science Research")
+    (description
+     "These are data and functions to support quantitative peace science research.
+The data are important state-year information on democracy and wealth, which
+require periodic updates and regular maintenance.  The functions permit some
+exploratory and diagnostic assessment of the kinds of data in demand by the
+community, but do not impose many dependencies on the user.")
+    (license license:gpl2)))
+
 (define-public r-isar
   (package
     (name "r-isar")
@@ -14806,13 +14831,13 @@ multilevel regressions.")
 (define-public r-ilsamerge
   (package
     (name "r-ilsamerge")
-    (version "1.3.6")
+    (version "1.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ILSAmerge" version))
        (sha256
-        (base32 "0y7860n3570djv7582iqw17li8r96vsd1djh94w235g9xzanx78v"))))
+        (base32 "0hclpbzhc0pssb51ld0abyzicvmrzq1azbqm2vvl9ns5bwwz5ywm"))))
     (properties `((upstream-name . "ILSAmerge")))
     (build-system r-build-system)
     (arguments

@@ -5729,19 +5729,19 @@ selection of columns via tidyselect'.")
 (define-public r-frair
   (package
     (name "r-frair")
-    (version "0.5.100")
+    (version "0.5.203")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frair" version))
        (sha256
-        (base32 "1j557dqvc5xiz7xbl4h7vp55pc3hly8ci01qy36p02vlxhzf4hj3"))))
+        (base32 "1ilj9q9r369xwfdisjscjmpzmblhn06v34cwacrfz7wls9qknzhm"))))
     (properties `((upstream-name . "frair")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lamw r-boot r-bbmle))
+    (propagated-inputs (list r-rcppparallel r-lamw r-boot r-bbmle))
     (home-page "https://github.com/dpritchard/frair")
     (synopsis "Tools for Functional Response Analysis")
     (description
@@ -24181,13 +24181,13 @@ For further information on the method see Fruth, J., Roustant, O., Kuhnt, S.
 (define-public r-fangs
   (package
     (name "r-fangs")
-    (version "0.2.18")
+    (version "0.2.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fangs" version))
        (sha256
-        (base32 "176lvzx6r0ff238d99vf1jdryq6h4vqgcbnpga9ilm1zlv6myr8h"))))
+        (base32 "1rn315gxdk4hs73c30srz29yhhl93yaalai3vy65zcscbav8l745"))))
     (properties `((upstream-name . "fangs")))
     (build-system r-build-system)
     (arguments
@@ -24200,8 +24200,8 @@ For further information on the method see Fruth, J., Roustant, O., Kuhnt, S.
      "This package provides a neighborhood-based, greedy search algorithm is performed
 to estimate a feature allocation by minimizing the expected loss based on
 posterior samples from the feature allocation distribution.  The method is
-currently under peer review but an earlier draft is available in Dahl, Johnson,
-and Andros (2022+) <doi:10.48550/@code{arXiv.2207.13824>}.")
+described in Dahl, Johnson, and Andros (2023) \"Comparison and Bayesian
+Estimation of Feature Allocations\" <doi:10.1080/10618600.2023.2204136>.")
     (license (list license:expat license:asl2.0))))
 
 (define-public r-fancycut

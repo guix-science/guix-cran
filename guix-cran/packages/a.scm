@@ -6590,6 +6590,37 @@ data, and other miscellaneous tools that are helpful when using ggplot2 for
 generative art.")
     (license license:expat)))
 
+(define-public r-artool
+  (package
+    (name "r-artool")
+    (version "0.11.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ARTool" version))
+       (sha256
+        (base32 "0jnkpi9vw9cn3qp7rp7fis3ys76w3jgmczd840baw99d1sqn6f9w"))))
+    (properties `((upstream-name . "ARTool")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plyr
+                             r-magrittr
+                             r-lme4
+                             r-emmeans
+                             r-dplyr
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mjskay/ARTool/")
+    (synopsis "Aligned Rank Transform")
+    (description
+     "The aligned rank transform for nonparametric factorial ANOVAs as described by
+Wobbrock, Findlater, Gergle, and Higgins (2011) <doi:10.1145/1978942.1978963>.
+Also supports aligned rank transform contrasts as described by Elkin, Kay,
+Higgins, and Wobbrock (2021) <doi:10.1145/3472749.3474784>.")
+    (license license:gpl2+)))
+
 (define-public r-artofr
   (package
     (name "r-artofr")
@@ -8414,13 +8445,13 @@ queries.  This package was neither produced nor is maintained by Esri.")
 (define-public r-arcpbf
   (package
     (name "r-arcpbf")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcpbf" version))
        (sha256
-        (base32 "1csy9jwdgr5anhp7cd5dxwadvskv1ky3f1wkq8vyjww1kxjxhz1s"))))
+        (base32 "00q0jgfcd9cjnsmga8fd6p7yg8292x8ylvkyjnrrw356cgs2vk7m"))))
     (properties `((upstream-name . "arcpbf")))
     (build-system r-build-system)
     (arguments
@@ -8893,13 +8924,13 @@ as described in Philippe and Vibet (2020) <doi:10.18637/jss.v093.c01>.")
 (define-public r-arcgisutils
   (package
     (name "r-arcgisutils")
-    (version "0.3.1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgisutils" version))
        (sha256
-        (base32 "0da7m2fw3hfqd2wj2lrm1l9dw0zqiqqaxbip0h05g4vj9rcr5vw3"))))
+        (base32 "1awf5mjlrdv0wflvzyb7rpwsdw6wq7750frm1c3ggncv4cbb9ra4"))))
     (properties `((upstream-name . "arcgisutils")))
     (build-system r-build-system)
     (arguments
@@ -8921,19 +8952,19 @@ functionality for authorization, Esri JSON construction and parsing, as well as
 other utilities pertaining to geometry and Esri type conversions.  To support
 @code{ArcGIS} Pro users, authorization can be done via arcgisbinding'.
 Installation instructions for arcgisbinding can be found at
-<https://r.esri.com/r-bridge-site/docs/installation.html>.")
+<https://developers.arcgis.com/r-bridge/installation/>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-arcgisplaces
   (package
     (name "r-arcgisplaces")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgisplaces" version))
        (sha256
-        (base32 "0g4aidz4vw4l1zg3ym795wlh7m1f4gg88y5sgwrfmqfd6nhlqwrc"))))
+        (base32 "11c9n6xbficrixflila3hzfbsy6jrv84wgw6z62c30aj3h42chgk"))))
     (properties `((upstream-name . "arcgisplaces")))
     (build-system r-build-system)
     (arguments

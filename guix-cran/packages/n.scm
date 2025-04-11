@@ -613,13 +613,13 @@ their names easy to remember and easy to deploy.")
 (define-public r-numericensembles
   (package
     (name "r-numericensembles")
-    (version "0.5.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NumericEnsembles" version))
        (sha256
-        (base32 "1qigy2vndwkvgp1j8nsgj8n6b7ns1xhkz5wczxyjiyv684q7b37s"))))
+        (base32 "1pcwc7mnix3xjsf4ylzhl7n5ar9nyphjyy2i1d2lr3k0psfa87x4"))))
     (properties `((upstream-name . "NumericEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -11611,6 +11611,54 @@ visualization functions that generate summary plots and 2-dimensional
 visualizations of regional brain measures.  Mowinckel (2020).")
     (license license:gpl3+)))
 
+(define-public r-neuroim2
+  (package
+    (name "r-neuroim2")
+    (version "0.8.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neuroim2" version))
+       (sha256
+        (base32 "1zq2pgj9p8dc5386yx6rmch2yx34xcp24gm29bmhp2nl02ns7zm0"))))
+    (properties `((upstream-name . "neuroim2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-rniftyreg
+                             r-rnifti
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-mmap
+                             r-matrix
+                             r-magrittr
+                             r-ggplot2
+                             r-future-apply
+                             r-deflist
+                             r-dbscan
+                             r-crayon
+                             r-colorplane
+                             r-bigstatsr
+                             r-assertthat))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/bbuchsbaum/neuroim2")
+    (synopsis "Data Structures for Brain Imaging Data")
+    (description
+     "This package provides a collection of data structures and methods for handling
+volumetric brain imaging data, with a focus on functional magnetic resonance
+imaging (@code{fMRI}).  Provides efficient representations for three-dimensional
+and four-dimensional neuroimaging data through sparse and dense array
+implementations, memory-mapped file access for large datasets, and spatial
+transformation capabilities.  Implements methods for image resampling, spatial
+filtering, region of interest analysis, and connected component labeling.
+General introduction to @code{fMRI} analysis can be found in Poldrack et al.
+(2024, \"Handbook of functional MRI data analysis\", <ISBN:9781108795760>).")
+    (license license:expat)))
+
 (define-public r-neuroim
   (package
     (name "r-neuroim")
@@ -13216,13 +13264,13 @@ call @code{NetMHCIIpan} from R.")
 (define-public r-netmeta
   (package
     (name "r-netmeta")
-    (version "3.1-1")
+    (version "3.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmeta" version))
        (sha256
-        (base32 "100pljm1gx21p8rjlgnhfnzj83hcdgjzjfs2d1q1alplk9xk4zxc"))))
+        (base32 "0w7l7k4996jx6iy6idqmasv6xrc7ak4qcp5vfx5yw3pqkyr3pd22"))))
     (properties `((upstream-name . "netmeta")))
     (build-system r-build-system)
     (arguments
@@ -13274,7 +13322,8 @@ of treatment rankings ('poset') and Hasse diagram for poset (Carlsen &
 Bruggemann, 2014) <doi:10.1002/cem.2569>; (RÃ¼cker & Schwarzer, 2017)
 <doi:10.1002/jrsm.1270>; - contribution matrix as described in Papakonstantinou
 et al. (2018) <doi:10.12688/f1000research.14770.3> and Davies et al. (2022)
-<doi:10.1002/sim.9346>; - subgroup network meta-analysis.")
+<doi:10.1002/sim.9346>; - network meta-regression with a single continuous or
+binary covariate; - subgroup network meta-analysis.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 

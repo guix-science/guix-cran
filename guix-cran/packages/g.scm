@@ -12178,13 +12178,13 @@ diagnostic plots, for the underlying manuscript see Fischer, Oja (2015)
 (define-public r-gmwmx2
   (package
     (name "r-gmwmx2")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmwmx2" version))
        (sha256
-        (base32 "0abl57bqaz3iv9aiyph2zi9jix1fs44gi2vfy2v5fn43nysm0qwi"))))
+        (base32 "1701q7f3l873wx7ak0lk2sj5gskaydhv6ifl42m4shsfbnl22pqw"))))
     (properties `((upstream-name . "gmwmx2")))
     (build-system r-build-system)
     (arguments
@@ -23211,13 +23211,13 @@ other available packages.")
 (define-public r-ggalign
   (package
     (name "r-ggalign")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggalign" version))
        (sha256
-        (base32 "0s7n436rysb9sg20gc5zf360j5r8ls95v90rh552hpih32rhkr5d"))))
+        (base32 "1c9n3zr8ffw0xp6w6p6gam02mgiqmphahan124mg8wlmv10y708i"))))
     (properties `((upstream-name . "ggalign")))
     (build-system r-build-system)
     (arguments
@@ -23238,7 +23238,7 @@ it provides intuitive tools to align and organize plots, making it ideal for
 complex visualizations.  It excels in multi-omics researchâsuch as genomics
 and microbiomesâby simplifying the visualization of intricate relationships
 between datasets, for example, linking genes to pathways.  Whether you need to
-stack plots, arrange them around a central figure, or use a circular layout,
+stack plots, arrange them around a central figure, or create a circular layout,
 ggalign delivers flexibility and accuracy with minimal effort.")
     (license license:expat)))
 
@@ -25960,6 +25960,31 @@ degree cells occupied.")
 methods.  Software companion for Diggle and Ribeiro (2007)
 <doi:10.1007/978-0-387-48536-2>.")
     (license license:gpl2+)))
+
+(define-public r-geoprofiler
+  (package
+    (name "r-geoprofiler")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geoprofiler" version))
+       (sha256
+        (base32 "1icxzrgblc5kmcbym00fq8qhdrqf19bkg07yzyr7d1w3mqi15cli"))))
+    (properties `((upstream-name . "geoprofiler")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units r-terra r-tectonicr r-sf r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://tobiste.github.io/geoprofiler/")
+    (synopsis "Perpendicular Line Transects for Geosciences")
+    (description
+     "Toolset to create perpendicular profile graphs and swath profiles.  Method are
+based on coordinate rotation algorithm by Schaeben et al. (2024)
+<doi:10.1002/mma.9823>.")
+    (license license:gpl3+)))
 
 (define-public r-geoperu
   (package
@@ -30732,13 +30757,13 @@ quantitative trait locus studies.")
 (define-public r-gemini-r
   (package
     (name "r-gemini-r")
-    (version "0.11.0")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gemini.R" version))
        (sha256
-        (base32 "1861j4pramgdq8pzq027qqx89gr9h5gyb2cq5fdrjv4rnkcbpfjg"))))
+        (base32 "0jhj5xlccbcfyx3a3rc53qj52yb0s6kc27b0lvcrkcm9m5b60mhc"))))
     (properties `((upstream-name . "gemini.R")))
     (build-system r-build-system)
     (arguments

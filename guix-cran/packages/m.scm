@@ -21680,13 +21680,13 @@ increments (BAI) was described by JevÅ¡enak and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.21.2")
+    (version "2.21.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "0cphbin5xqkhns7yg811m3344n524jclrvmr2q5jghdx17fr1vkx"))))
+        (base32 "0a8bb88c645nf7wcz4kcrlkrga7hbf3xw0i7dz06n4dvfdyvcjsb"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (arguments
@@ -34263,13 +34263,13 @@ provides a layout method applicable for large trophic networks.")
 (define-public r-metanet
   (package
     (name "r-metanet")
-    (version "0.1.2")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetaNet" version))
        (sha256
-        (base32 "0r3id0ap91g948a10yka1lz82jib3ww91n24vlk4pbik7flxbqpk"))))
+        (base32 "05wc8lzjbj87pj289y4s5m3szxrxnmd7b5rzpsg2r2bwjk1gm46g"))))
     (properties `((upstream-name . "MetaNet")))
     (build-system r-build-system)
     (arguments
@@ -34278,7 +34278,6 @@ provides a layout method applicable for large trophic networks.")
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-reshape2
-                             r-rcolorbrewer
                              r-pcutils
                              r-magrittr
                              r-igraph
@@ -40347,6 +40346,33 @@ of test 	statistics from a variety of common statistical tests.  With only a few
 keystrokes, 	the user can conduct a hypothesis test and visualize the test
 statistic and 		corresponding p-value through the shading of its sampling
 distribution.  Initially 	created for statistics at Middlebury College.")
+    (license license:gpl3)))
+
+(define-public r-mcsimmod
+  (package
+    (name "r-mcsimmod")
+    (version "0.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MCSimMod" version))
+       (sha256
+        (base32 "1hpznc2mzc7s0z0qsncsl3499sm5v4g2gj7ha32hmi0a681c8hga"))))
+    (properties `((upstream-name . "MCSimMod")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-desolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://CRAN.R-project.org/package=MCSimMod")
+    (synopsis "Working with 'MCSim' Models")
+    (description
+     "This package provides tools that facilitate ordinary differential equation (ODE)
+modeling in R'.  This package allows one to perform simulations for ODE models
+that are encoded in the GNU MCSim model specification language (Bois, 2009)
+<doi:10.1093/bioinformatics/btp162> using ODE solvers from the R package
+@code{deSolve} (Soetaert et al., 2010) <doi:10.18637/jss.v033.i09>.")
     (license license:gpl3)))
 
 (define-public r-mcsim
@@ -47268,6 +47294,36 @@ coefficients, the Coriolis force and gravity; (4) thermophysical properties of
 the seawater, as from the UNESCO polynomial or from the more recent derivation
 based on a Gibbs function.")
     (license license:gpl2+)))
+
+(define-public r-marcox
+  (package
+    (name "r-marcox")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "marcox" version))
+       (sha256
+        (base32 "1hgvgadxxag2ildcjch3sjmhyzc8z0yndvqxpgi9qxpp6x166rpf"))))
+    (properties `((upstream-name . "marcox")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-rcppeigen r-rcpp r-matrix r-ggplot2))
+    (home-page "https://cran.r-project.org/package=marcox")
+    (synopsis
+     "Marginal Hazard Ratio Estimation in Clustered Failure Time Data")
+    (description
+     "Estimation of marginal hazard ratios in clustered failure time data.  It
+implements the weighted generalized estimating equation approach based on a
+semiparametric marginal proportional hazards model (See Niu, Y. Peng, Y.(2015).
+\"A new estimating equation approach for marginal hazard ratio estimation\"),
+accounting for within-cluster correlations.  5 different correlation structures
+are supported.  The package is designed for researchers in biostatistics and
+epidemiology who require accurate and efficient estimation methods for survival
+analysis in clustered data settings.")
+    (license license:gpl3)))
 
 (define-public r-marcher
   (package
