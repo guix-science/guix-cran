@@ -2384,13 +2384,13 @@ methodologies used in the package can be found in Sharma, A., Mehrotra, R.
 (define-public r-npphen
   (package
     (name "r-npphen")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npphen" version))
        (sha256
-        (base32 "17q9zhh7abpsddb25km1y6kyijlf6lh8j43lqv58jsjig98rrk6w"))))
+        (base32 "0fklz6pd855rdpq1h85dsrn50sra0zlilj3slvv4fg1f1l2fg227"))))
     (properties `((upstream-name . "npphen")))
     (build-system r-build-system)
     (arguments
@@ -12375,20 +12375,20 @@ cascading effects, described in Dunne et al. (2002)
 (define-public r-networkdynamicdata
   (package
     (name "r-networkdynamicdata")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "networkDynamicData" version))
        (sha256
-        (base32 "176al8jp0gha6yzhyn5flmyackmmdnh1h8sasqrdcmba7ha7cya6"))))
+        (base32 "1k6598318pmyx53m95m273yiah36mwsnbdiks06b3rc5z7a9913b"))))
     (properties `((upstream-name . "networkDynamicData")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-networkdynamic r-network))
-    (home-page "http://statnet.org")
+    (home-page "https://statnet.org")
     (synopsis "Dynamic (Longitudinal) Network Datasets")
     (description
      "This package provides a collection of dynamic network data sets from various

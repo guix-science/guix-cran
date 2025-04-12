@@ -17538,13 +17538,13 @@ risk of treating patients at subtherapeutic or overly toxic doses.")
 (define-public r-popdemo
   (package
     (name "r-popdemo")
-    (version "1.3-1")
+    (version "1.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "popdemo" version))
        (sha256
-        (base32 "0xvqp71spqh5khi2gdzxmj8pp71i6l2qpcgcw8s9xbqwx9w905mq"))))
+        (base32 "1z1v2v5rrhijhg68k683ysrhwnm460w3r03krlqcy97q3jsl3q72"))))
     (properties `((upstream-name . "popdemo")))
     (build-system r-build-system)
     (arguments
@@ -40839,13 +40839,13 @@ framework discussed in Millstein et al. (2020)
 (define-public r-partimeroc
   (package
     (name "r-partimeroc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parTimeROC" version))
        (sha256
-        (base32 "0rshkjckv0llzgp2yywrbz55ahbzcq140k78wwwsjlwymjfxim9f"))))
+        (base32 "15khi8zfjr2lxr4839nd8b80m2r7lh01vpggakq5wkv734rj445w"))))
     (properties `((upstream-name . "parTimeROC")))
     (build-system r-build-system)
     (arguments
@@ -40863,11 +40863,12 @@ framework discussed in Millstein et al. (2020)
                              r-mvtnorm
                              r-moments
                              r-matrix
+                             r-gofcens
                              r-flexsurv
                              r-desctools
                              r-cubature
                              r-bh))
-    (home-page "https://cran.r-project.org/package=parTimeROC")
+    (home-page "https://github.com/FaizAzhar/parTimeROC")
     (synopsis "Parametric Time-Dependent Receiver Operating Characteristic")
     (description
      "Producing the time-dependent receiver operating characteristic (ROC) curve

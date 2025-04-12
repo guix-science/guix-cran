@@ -13272,13 +13272,13 @@ GPL-3).")
 (define-public r-biovizseq
   (package
     (name "r-biovizseq")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioVizSeq" version))
        (sha256
-        (base32 "1mlf1lrcpd216dnjpjvdfxy6wzr9v0bs0aja1di52qq0plnhjb64"))))
+        (base32 "05sw51g3yqmn5m9r1dcwlqdbw490yrgzd7d0jk4vwk4kq0viphsq"))))
     (properties `((upstream-name . "BioVizSeq")))
     (build-system r-build-system)
     (arguments
@@ -13294,6 +13294,7 @@ GPL-3).")
                              r-httr
                              r-ggtree
                              r-ggplot2
+                             r-ggh4x
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=BioVizSeq")
     (synopsis "Visualizing the Elements Within Bio-Sequences")
@@ -21716,6 +21717,37 @@ used to find clinically meaningful groups of genomic features, such as genes or
 pathways.  A manuscript describing this method is in preparation.")
     (license license:gpl3+)))
 
+(define-public r-beam
+  (package
+    (name "r-beam")
+    (version "2.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "beam" version))
+       (sha256
+        (base32 "0lffayzfqdr29nmaq44wyjgc8vz2y5bz8dhy3g04gzc9v14ykik9"))))
+    (properties `((upstream-name . "beam")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-knitr
+                             r-igraph
+                             r-fdrtool
+                             r-bh
+                             r-assertthat))
+    (home-page "https://github.com/gleday/beam")
+    (synopsis "Fast Bayesian Inference in Large Gaussian Graphical Models")
+    (description
+     "Fast Bayesian inference of marginal and conditional independence structures from
+high-dimensional data.  Leday and Richardson (2019), Biometrics,
+<doi:10.1111/biom.13064>.")
+    (license license:gpl2+)))
+
 (define-public r-beakr
   (package
     (name "r-beakr")
@@ -22720,13 +22752,13 @@ vignette.")
 (define-public r-bcmixed
   (package
     (name "r-bcmixed")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bcmixed" version))
        (sha256
-        (base32 "0am6amk1axfxkxgp9nmfys4fp4snplfncwkzh02im7a6zr3v1m63"))))
+        (base32 "0idli87qx3aj22kcbr1bx5hrv9aw0180vywa1641vdq1477v652c"))))
     (properties `((upstream-name . "bcmixed")))
     (build-system r-build-system)
     (arguments

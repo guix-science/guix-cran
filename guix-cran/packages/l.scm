@@ -2954,13 +2954,13 @@ polynomial method.")
 (define-public r-lphom
   (package
     (name "r-lphom")
-    (version "0.3.5-5")
+    (version "0.3.5-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lphom" version))
        (sha256
-        (base32 "08rnymy72p0c06mx6n70s2xirigp21d7g3dwnapad7w7iajw7iqf"))))
+        (base32 "1jn6cjg7q1w8aaqxh0zfa14h2bd2mn4zjgsg0xm0rx995j81p3an"))))
     (properties `((upstream-name . "lphom")))
     (build-system r-build-system)
     (arguments
@@ -2973,15 +2973,16 @@ polynomial method.")
      "This package provides a bunch of algorithms based on linear programming for
 estimating, under the homogeneity hypothesis, @code{RxC} ecological contingency
 tables (or vote transition matrices) using mainly aggregate data (from voting
-units).  References: PavÃ­a and Romero (2022) <doi:10.1177/00491241221092725>.
-PavÃ­a (2023) <doi:10.1007/s43545-023-00658-y>.  PavÃ­a and Romero (2024)
-<doi:10.1093/jrsssa/qnae013>.  PavÃ­a (2024) A local convergent ecological
-inference algorithm for @code{RxC} tables.  PavÃ­a and PenadÃ©s (2024).  A
-bottom-up approach for ecological inference.  Romero, PavÃ­a, MartÃ­n and Romero
-(2020) <doi:10.1080/02664763.2020.1804842>.  Acknowledgements: The authors wish
-to thank ConsellerÃ­a de EducaciÃ³n, Universidades y Empleo, Generalitat
-Valenciana (grant AICO/2021/257) and Ministerio de EconomÃ­a e InnovaciÃ³n
-(grant PID2021-128228NB-I00) for supporting this research.")
+units).  References: PavÃ­a and Romero (2024) <doi:10.1177/00491241221092725>.
+PavÃ­a and Romero (2024) <doi:10.1093/jrsssa/qnae013>.  PavÃ­a (2023)
+<doi:10.1007/s43545-023-00658-y>.  PavÃ­a (2024)
+<doi:10.1080/0022250X.2024.2423943>.  PavÃ­a (2024)
+<doi:10.1177/07591063241277064>.  PavÃ­a and PenadÃ©s (2024).  A bottom-up
+approach for ecological inference.  Romero, PavÃ­a, MartÃ­n and Romero (2020)
+<doi:10.1080/02664763.2020.1804842>.  Acknowledgements: The authors wish to
+thank ConsellerÃ­a de EducaciÃ³n, Universidades y Empleo, Generalitat Valenciana
+(grants AICO/2021/257, CIAICO/2023/031) and Ministerio de EconomÃ­a e
+InnovaciÃ³n (grant PID2021-128228NB-I00) for supporting this research.")
     (license (list (license:fsdg-compatible "EPL")
                    (license:fsdg-compatible "file://LICENSE")))))
 

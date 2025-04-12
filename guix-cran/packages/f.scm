@@ -14521,13 +14521,13 @@ fossil calibrations, and diversification rate information for ray-finned fishes.
 (define-public r-fishstat
   (package
     (name "r-fishstat")
-    (version "2024.1.0.1")
+    (version "2025.1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fishstat" version))
        (sha256
-        (base32 "1kgl25svfkcgk74jd2897l3hkhrdsmmh1hn7d78crrxc42s03c8q"))))
+        (base32 "0xnmmpfhy79yck30rwvm7qlkjg04xn7h2w9an67lsy2715rp0cns"))))
     (properties `((upstream-name . "fishstat")))
     (build-system r-build-system)
     (arguments

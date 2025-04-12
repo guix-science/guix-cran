@@ -9021,13 +9021,13 @@ via @code{ArcGIS} location services REST API endpoints
 (define-public r-arcgisgeocode
   (package
     (name "r-arcgisgeocode")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgisgeocode" version))
        (sha256
-        (base32 "1ld880zppwz9wrwjhyhgdrh8hx8s0azv3iyv3kvjndhfai4psiz7"))))
+        (base32 "0g3cipci6s38xzb1pfz124ngi29l9zdjw79zzzv4w4k71cbckbnr"))))
     (properties `((upstream-name . "arcgisgeocode")))
     (build-system r-build-system)
     (arguments

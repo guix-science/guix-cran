@@ -3985,13 +3985,13 @@ realism.")
 (define-public r-virtualpop
   (package
     (name "r-virtualpop")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VirtualPop" version))
        (sha256
-        (base32 "1miwljsr6r6i94q9pdpqzhapnfgg3vjv2ikwvc56cpw6k1iw9h39"))))
+        (base32 "19wv6mxl8p9rcs85nj993hz4pdm8clyqbv13kkmvsyps33bbnm9q"))))
     (properties `((upstream-name . "VirtualPop")))
     (build-system r-build-system)
     (arguments

@@ -47223,19 +47223,20 @@ priors are used for the penalty parameters lambda^2 (Mulder and Pericchi, 2018
 (define-public r-shrinkdsm
   (package
     (name "r-shrinkdsm")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shrinkDSM" version))
        (sha256
-        (base32 "0vl3cl9njl0irz9hsli7xkf49jawkywww91j5gxlmz5vdrxnwz9c"))))
+        (base32 "0dy3apmrbmzf4mr28y8wyfc7cyfdg8bsbb38gljfs8jh7bx71sh9"))))
     (properties `((upstream-name . "shrinkDSM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stochvol
+    (propagated-inputs (list r-survival
+                             r-stochvol
                              r-shrinktvp
                              r-rcppprogress
                              r-rcpparmadillo
@@ -48058,13 +48059,13 @@ hoc structure of the shiny App.")
 (define-public r-shinytest2
   (package
     (name "r-shinytest2")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinytest2" version))
        (sha256
-        (base32 "1s6w03xy36dbqwmilkmrmzlk0sb4mg7bcz717hb3s5gdq1wchq1a"))))
+        (base32 "1r2lg6hdnl1vip984d7ck4rdicl95kwlmn9m39lqg072ya839izl"))))
     (properties `((upstream-name . "shinytest2")))
     (build-system r-build-system)
     (arguments
@@ -52283,13 +52284,13 @@ illustrate function usage.")
 (define-public r-sharp
   (package
     (name "r-sharp")
-    (version "1.4.6")
+    (version "1.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sharp" version))
        (sha256
-        (base32 "0sa0l5bnglmbm4ykmna1z1b1janggpah8g29505n4pfabw0r4lpl"))))
+        (base32 "1fx9kj6316pd04wpfd1dz76wf56jp2rax172f2x7r7ymmqj1p5sk"))))
     (properties `((upstream-name . "sharp")))
     (build-system r-build-system)
     (arguments
@@ -52314,10 +52315,11 @@ illustrate function usage.")
      "In stability selection (N Meinshausen, P BÃ¼hlmann (2010)
 <doi:10.1111/j.1467-9868.2010.00740.x>) and consensus clustering (S Monti et al
 (2003) <doi:10.1023/A:1023949509487>), resampling techniques are used to enhance
-the reliability of the results.  In this package, hyper-parameters are
-calibrated by maximising model stability, which is measured under the null
-hypothesis that all selection (or co-membership) probabilities are identical (B
-Bodinier et al (2023a) <doi:10.1093/jrsssc/qlad058> and B Bodinier et al (2023b)
+the reliability of the results.  In this package (B Bodinier et al (2025)
+<doi:10.18637/jss.v112.i05>), hyper-parameters are calibrated by maximising
+model stability, which is measured under the null hypothesis that all selection
+(or co-membership) probabilities are identical (B Bodinier et al (2023a)
+<doi:10.1093/jrsssc/qlad058> and B Bodinier et al (2023b)
 <doi:10.1093/bioinformatics/btad635>).  Functions are readily implemented for
 the use of LASSO regression, sparse PCA, sparse (group) PLS or graphical LASSO
 in stability selection, and hierarchical clustering, partitioning around
@@ -61715,13 +61717,13 @@ Yang, Z (2018) <doi:10.1016/j.jeconom.2017.08.019>.  Wu, J., Matsuda, Y (2021)
 (define-public r-sdpdmod
   (package
     (name "r-sdpdmod")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SDPDmod" version))
        (sha256
-        (base32 "1f136nb32y3lnnhyri03y8p5akc2c06g9rynx53w702fyi72bgy6"))))
+        (base32 "11s04pbv6cs1v6kd6vv0r64qymqvldmvz3bjg9nn7syxmy6mmkvy"))))
     (properties `((upstream-name . "SDPDmod")))
     (build-system r-build-system)
     (arguments

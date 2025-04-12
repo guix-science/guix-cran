@@ -7677,13 +7677,13 @@ approach in detail will follow.")
 (define-public r-doubleml
   (package
     (name "r-doubleml")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DoubleML" version))
        (sha256
-        (base32 "0qk7zjpzz0dpzvczssfbp4gbqxazyxn0dsc8h9jnqb3syzdscc27"))))
+        (base32 "1x7k67fiicy8iawi0p7an0afmlpnm6rzsvfi93m96g7pyg5sm1pm"))))
     (properties `((upstream-name . "DoubleML")))
     (build-system r-build-system)
     (arguments
@@ -13102,32 +13102,6 @@ algorithm was published by Malone et al. (2012)
 Chao et al.  2008 <doi:10/fcvn63>) for a set of species assemblages or
 interaction networks.")
     (license license:gpl3+)))
-
-(define-public r-disprose
-  (package
-    (name "r-disprose")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "disprose" version))
-       (sha256
-        (base32 "0jmn8xjwfr3dhrsmx3lq8kz7lq9pnk95mgr97gi72c86c7rap935"))))
-    (properties `((upstream-name . "disprose")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=disprose")
-    (synopsis "Discriminating Probes Selection")
-    (description
-     "Set of tools for molecular probes selection and design of a microarray, e.g. the
-assessment of physical and chemical properties, blast performance, selection
-according to sensitivity and selectivity.  Methods used in package are described
-in: Lorenz R., Stephan H.B., HÃ¶ner zu Siederdissen C. et al. (2011)
-<doi:10.1186/1748-7188-6-26>; Camacho C., Coulouris G., Avagyan V. et al. (2009)
-<doi:10.1186/1471-2105-10-421>.")
-    (license license:gpl3)))
 
 (define-public r-disprofas
   (package

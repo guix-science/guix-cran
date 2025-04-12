@@ -25097,13 +25097,13 @@ mcmc.list objects.")
 (define-public r-tergo
   (package
     (name "r-tergo")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tergo" version))
        (sha256
-        (base32 "1s2ils0wf5m1bxai6fksb48a84rhybgxgv6nzbbm9ay75wldhy0y"))))
+        (base32 "08ak3kljay35jczcpyk048pgb5amysmjr6wiphknk9165jirxlip"))))
     (properties `((upstream-name . "tergo")))
     (build-system r-build-system)
     (arguments

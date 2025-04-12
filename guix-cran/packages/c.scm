@@ -569,13 +569,13 @@ modular functions and modular curves.")
 (define-public r-cyclops
   (package
     (name "r-cyclops")
-    (version "3.5.0")
+    (version "3.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Cyclops" version))
        (sha256
-        (base32 "01kr39m0z1jmc08klvyzqzm6ja682rgxb4ahliy3v66c1243ixfg"))))
+        (base32 "1nrx8rd107nhza0ccgg2ipg54arg5d2zhyvc8mp6lyjqn1g1mrlb"))))
     (properties `((upstream-name . "Cyclops")))
     (build-system r-build-system)
     (arguments
@@ -10581,13 +10581,13 @@ gradient descent algorithm for batch data.")
 (define-public r-coxphm
   (package
     (name "r-coxphm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coxphm" version))
        (sha256
-        (base32 "0q1vzpqh1cijv1x7n16p7mnbdspbd17h9q6lhhklrk00lcyhinbd"))))
+        (base32 "1xiymqskxvi9vxq9zi3hzpxfjb97d5dagwzvdg46imzxv8bbzaia"))))
     (properties `((upstream-name . "coxphm")))
     (build-system r-build-system)
     (arguments
@@ -10597,8 +10597,8 @@ gradient descent algorithm for batch data.")
     (home-page "https://cran.r-project.org/package=coxphm")
     (synopsis "Time-to-Event Data Analysis with Missing Survival Times")
     (description
-     "Fits a pseudo Cox proprotional hazards model that allow us to analyze
-time-to-event data when survival times are missing for control groups.")
+     "Fits a pseudo Cox proprotional hazards model when survival times are missing for
+control groups.")
     (license license:gpl2+)))
 
 (define-public r-coxphf
@@ -26756,13 +26756,13 @@ Tsay (1992) <doi:10.2307/2347612>.")
 (define-public r-coclust
   (package
     (name "r-coclust")
-    (version "0.3-2")
+    (version "1.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoClust" version))
        (sha256
-        (base32 "04xv807785xv9kdspsspx1302ardv8gda06kd590lgawjixai7dh"))))
+        (base32 "0ank82ljxk15s1ap651qiiifl85id0rjiaqzwwnijl754ixahj6k"))))
     (properties `((upstream-name . "CoClust")))
     (build-system r-build-system)
     (arguments
@@ -26770,13 +26770,13 @@ Tsay (1992) <doi:10.2307/2347612>.")
       #:tests? #f))
     (propagated-inputs (list r-gtools r-copula))
     (home-page "https://cran.r-project.org/package=CoClust")
-    (synopsis "Copula Based Cluster Analysis")
+    (synopsis "Copula-Based Clustering Algorithm")
     (description
      "This package provides a copula based clustering algorithm that finds clusters
 according to the complex multivariate dependence structure of the data
 generating process.  The updated version of the algorithm is described in Di
-Lascio, F.M.L. and Giannerini, S. (2016). \"Clustering dependent observations
-with copula functions\".  Statistical Papers, p.1-17.
+Lascio, F.M.L. and Giannerini, S. (2019). \"Clustering dependent observations
+with copula functions\".  Statistical Papers, 60, p.35-51.
 <doi:10.1007/s00362-016-0822-3>.")
     (license license:gpl2+)))
 
@@ -26972,13 +26972,13 @@ methods.")
 (define-public r-coarsedatatools
   (package
     (name "r-coarsedatatools")
-    (version "0.6-6")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coarseDataTools" version))
        (sha256
-        (base32 "1g9hxyp2vdhq1zr18qlf2aqwp9d9hr07k6grmvblj2xrwlzfvc1p"))))
+        (base32 "0nh717vry7p9h51sjk0lbwh3lfpbyr9wzkw12ckzlx4inpa6xyln"))))
     (properties `((upstream-name . "coarseDataTools")))
     (build-system r-build-system)
     (arguments
@@ -26986,7 +26986,7 @@ methods.")
       #:tests? #f))
     (propagated-inputs (list r-mcmcpack))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=coarseDataTools")
+    (home-page "http://nickreich.github.io/coarseDataTools/")
     (synopsis "Analysis of Coarsely Observed Data")
     (description
      "This package provides functions to analyze coarse data.  Specifically, it
@@ -27424,19 +27424,19 @@ smoothing irregularly sampled signals, see Hamilton et al (2018)
 (define-public r-cnid
   (package
     (name "r-cnid")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CNID" version))
        (sha256
-        (base32 "00ivs2a8r5crvxfrhci48gj1b12wa23y7zilq4kxblfll2778mm4"))))
+        (base32 "05q9n4pswx128zc55zws861kgyjac7nc2wrn8298czkmh0wnr3y9"))))
     (properties `((upstream-name . "CNID")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://gitlab.com/chuxinyuan/cnid")
+    (home-page "https://github.com/chuxinyuan/cnid")
     (synopsis "Get Basic Information from Chinese ID Number")
     (description
      "The Chinese ID number contains a lot of information, this package helps you get
@@ -32032,6 +32032,69 @@ and Heatherington(2017) <doi:10.1177/0962280216684528> are included in the
 package.  The prior distributions for the Bayesian analyses default to the
 posterior predictive distributions derived from these references.")
     (license license:gpl2+)))
+
+(define-public r-clindatareview
+  (package
+    (name "r-clindatareview")
+    (version "1.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clinDataReview" version))
+       (sha256
+        (base32 "026lsk7r25chh8r6c8y2cbip2dpr83n4r1x0sp1g2faynna9x938"))))
+    (properties `((upstream-name . "clinDataReview")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (inputs (list pandoc))
+    (propagated-inputs (list r-yaml
+                             r-xml2
+                             r-xfun
+                             r-stringr
+                             r-rmarkdown
+                             r-plyr
+                             r-plotly
+                             r-knitr
+                             r-jsonvalidate
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-htmltools
+                             r-haven
+                             r-ggplot2
+                             r-data-table
+                             r-crosstalk
+                             r-clinutils
+                             r-bookdown
+                             r-base64enc))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://github.com/openanalytics/clinDataReview")
+    (synopsis "Clinical Data Review Tool")
+    (description
+     "Creation of interactive tables, listings and figures ('TLFs') and associated
+report for exploratory analysis of data in a clinical trial, e.g. for clinical
+oversight activities.  Interactive figures include sunburst, treemap,
+scatterplot, line plot and barplot of counts data.  Interactive tables include
+table of summary statistics (as counts of adverse events, enrollment table) and
+listings.  Possibility to compare data (summary table or listing) across two
+data batches/sets.  A clinical data review report is created via study-specific
+configuration files and template R Markdown reports contained in the package.")
+    (license license:expat)))
 
 (define-public r-climwin
   (package
@@ -36970,6 +37033,47 @@ subdivision of a country.  This package was created for use with the choroplethr
 package.")
     (license license:bsd-3)))
 
+(define-public r-choroplethr
+  (package
+    (name "r-choroplethr")
+    (version "4.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "choroplethr" version))
+       (sha256
+        (base32 "124j1add7fjdrldw1brm4a2z5zn1v9jv0nm0cjgwj5ildkpwry5k"))))
+    (properties `((upstream-name . "choroplethr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-wdi
+                             r-tigris
+                             r-tidyr
+                             r-tidycensus
+                             r-stringr
+                             r-rvest
+                             r-rgooglemaps
+                             r-r6
+                             r-hmisc
+                             r-gridextra
+                             r-ggplot2
+                             r-ggmap
+                             r-dplyr))
+    (home-page "https://github.com/eastnile/choroplethr")
+    (synopsis "Simplify the Creation of Choropleth Maps")
+    (description
+     "Choropleths are thematic maps where geographic regions, such as states, are
+colored according to some metric, such as the number of people who live in that
+state.  This package simplifies this process by 1.  Providing ready-made
+functions for creating choropleths of common maps.  2.  Providing data and API
+connections to interesting data sources for making choropleths.  3.  Providing a
+framework for creating choropleths from arbitrary shapefiles.  4.  Overlaying
+those maps over reference maps from Google Maps'.")
+    (license license:bsd-3)))
+
 (define-public r-chores
   (package
     (name "r-chores")
@@ -40393,23 +40497,26 @@ variables with respect to this measure.")
 (define-public r-cgam
   (package
     (name "r-cgam")
-    (version "1.23")
+    (version "1.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgam" version))
        (sha256
-        (base32 "1rs5wryfw1ynxdvn7c7x4qdc661nh0k7w8y1j597mv58996ifdb1"))))
+        (base32 "10sdadvw6ywy6b2fcld2vdisyv2zdiy72cw0k08a10v6iw9cjb67"))))
     (properties `((upstream-name . "cgam")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-svdialogs
+    (propagated-inputs (list r-zeallot
+                             r-svdialogs
                              r-statmod
                              r-splines2
                              r-matrix
                              r-lme4
+                             r-ggplot2
+                             r-dplyr
                              r-coneproj))
     (home-page "https://cran.r-project.org/package=cgam")
     (synopsis "Constrained Generalized Additive Model")
@@ -42517,13 +42624,13 @@ Beyene and El Ghouch (2020)<doi:10.1002/sim.8671> and Beyene and El Ghouch
 (define-public r-cengam
   (package
     (name "r-cengam")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cenGAM" version))
        (sha256
-        (base32 "0qic2g2bq24k9jimxdk8g7bsmi4br2r6159ipdhh5ym81ji3sf5p"))))
+        (base32 "06g7zhhhhliiiwrxc535s5qail55d3nr8b358bavq29gmg4m1ysb"))))
     (properties `((upstream-name . "cenGAM")))
     (build-system r-build-system)
     (arguments
@@ -43161,13 +43268,13 @@ package has been developed using concept of Shankar et al.
 (define-public r-cdss
   (package
     (name "r-cdss")
-    (version "0.2-0")
+    (version "0.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDSS" version))
        (sha256
-        (base32 "13p5vg07lv1vbwpsd33x4mc8pvwf6s6yqikrbyakrfsjlznzw5gj"))))
+        (base32 "0w1i5vr5fbh1mra5w7dfq7fyy5gz1alx315zc28lxlsadz5c9vyh"))))
     (properties `((upstream-name . "CDSS")))
     (build-system r-build-system)
     (arguments
@@ -45766,13 +45873,13 @@ each model are given with the standard error and a 95% Wald confidence interval
 (define-public r-causalmetar
   (package
     (name "r-causalmetar")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalMetaR" version))
        (sha256
-        (base32 "03y973ph52qxh9kyiybrvgrk5b1kd6i1lynkmmmv40vbnx59fs7y"))))
+        (base32 "1ssmnhbw8yqzb8lm8wz1hgp443dssgrqh9nym5vgwh7dclpxb3rp"))))
     (properties `((upstream-name . "CausalMetaR")))
     (build-system r-build-system)
     (arguments
@@ -45792,9 +45899,8 @@ collection of trials, observational studies, or a combination of both, which
 have the same data structure (outcome, treatment, and covariates).  The target
 population can be based on an internal dataset or an external dataset where only
 covariate information is available.  The causal estimands available are average
-treatment effects and subgroup treatment effects.  See Wang et al. (2024)
-<doi:10.48550/@code{arXiv.2402.04341>} for a detailed guide on using the
-package.")
+treatment effects and subgroup treatment effects.  See Wang et al. (2025)
+<doi:10.1017/rsm.2025.5> for a detailed guide on using the package.")
     (license license:gpl3+)))
 
 (define-public r-causalmbsts
@@ -48427,13 +48533,13 @@ coefficients.  Both shrinkage as well as empirical estimators are available.")
 (define-public r-cardx
   (package
     (name "r-cardx")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cardx" version))
        (sha256
-        (base32 "0hbr3rb2zhgz7f4h4r6hw1jqdnykhwdalivk62c4n8y0c2v04s2p"))))
+        (base32 "1qbfa2kbxbc7lnrajj79dgz2nkjf4616ngha1yk9fl6f10qmsk24"))))
     (properties `((upstream-name . "cardx")))
     (build-system r-build-system)
     (arguments
@@ -48446,7 +48552,7 @@ coefficients.  Both shrinkage as well as empirical estimators are available.")
                              r-dplyr
                              r-cli
                              r-cards))
-    (home-page "https://insightsengineering.github.io/cardx/")
+    (home-page "https://github.com/insightsengineering/cardx")
     (synopsis "Extra Analysis Results Data Utilities")
     (description
      "Create extra Analysis Results Data (ARD) summary objects.  The package

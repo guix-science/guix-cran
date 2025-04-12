@@ -5244,13 +5244,13 @@ related to the Microsoft Office software suite, including Microsoft Word
 (define-public r-rtables
   (package
     (name "r-rtables")
-    (version "0.6.11")
+    (version "0.6.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtables" version))
        (sha256
-        (base32 "1h7wr7r6s5x87m71xr1mn17crd7mk4d89pkdgizpplr7d01cdh4d"))))
+        (base32 "1ma4vybabfsrajdfrvn4zqbdrpqh4vf3cmy98jdmdvg6jzlavvzh"))))
     (properties `((upstream-name . "rtables")))
     (build-system r-build-system)
     (arguments
@@ -22909,13 +22909,13 @@ regarding homoscedastic framework.")
 (define-public r-rlistings
   (package
     (name "r-rlistings")
-    (version "0.2.10")
+    (version "0.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlistings" version))
        (sha256
-        (base32 "0zyn0clfl772m2w983rfm7p0jf1f6zflw94c6r60rid8qfigb9xh"))))
+        (base32 "04ym0mfpfznbsirz50ckg9h8ypmmzdb791aagn3r9j14d0wbflmv"))))
     (properties `((upstream-name . "rlistings")))
     (build-system r-build-system)
     (arguments
@@ -28099,23 +28099,23 @@ process likelihood approximation algorithm proposed in Stindl and Chen (2021)
 (define-public r-rh2
   (package
     (name "r-rh2")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RH2" version))
        (sha256
-        (base32 "14590l3a2znd56nrq1zfbfv7fgii4672qy1xfwiynrh3mjad217k"))))
+        (base32 "0vpjwl48zcvchmyfqxnq3vv5v9rwrwz0j0a68609ycq01w1yi7d2"))))
     (properties `((upstream-name . "RH2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rjdbc r-rjava r-chron))
-    (home-page "https://github.com/dmkaplan2000/RH2.git")
+    (home-page "https://github.com/dmkaplan2000/RH2")
     (synopsis "DBI/RJDBC Interface to H2 Database")
     (description
-     "DBI/RJDBC interface to h2 database.  h2 version 1.3.175 is included.")
+     "DBI/RJDBC interface to h2 database.  h2 version 2.3.232 is included.")
     (license (license:fsdg-compatible "Mozilla Public License 1.1"))))
 
 (define-public r-rgw
@@ -45490,13 +45490,13 @@ approximation.")
 (define-public r-rcppcwb
   (package
     (name "r-rcppcwb")
-    (version "0.6.6")
+    (version "0.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCWB" version))
        (sha256
-        (base32 "04yhfqs3zhmjapx8q5r6p4rs5nimal50bcmniwmm5036yxypddsd"))))
+        (base32 "0n2npdr7cvvch0667f3axx4an08vrp9rmb5dr0apg4wpannai5zf"))))
     (properties `((upstream-name . "RcppCWB")))
     (build-system r-build-system)
     (arguments
@@ -48150,13 +48150,13 @@ more information.")
 (define-public r-rcensuspkg
   (package
     (name "r-rcensuspkg")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcensusPkg" version))
        (sha256
-        (base32 "0d7xdanhc1bgccrqd8srdwn0jy0133ljhc3yxymywns014wbgjha"))))
+        (base32 "02hxr7z158ni6a9dh9n2xbm77vdbbqq5f12nqmfxdmj8l91yp3ab"))))
     (properties `((upstream-name . "RcensusPkg")))
     (build-system r-build-system)
     (arguments
@@ -48167,10 +48167,11 @@ more information.")
                              r-rplotterpkg
                              r-purrr
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-gtable
                              r-ggplotify
                              r-ggplot2
+                             r-downloader
                              r-data-table))
     (home-page "https://github.com/deandevl/RcensusPkg")
     (synopsis "Easily Access US Census Bureau Survey and Geographic Data")
@@ -49115,13 +49116,13 @@ restricted LASSO, restricted RIDGE and restricted Elastic Net estimators.")
 (define-public r-rbpcurve
   (package
     (name "r-rbpcurve")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RBPcurve" version))
        (sha256
-        (base32 "0zkfvnhm780vid4qqdrx9mnc6jxxrmrnq47pqvk35rm3m4l96782"))))
+        (base32 "0dmyk75wr463prc0fi0n9cmyvdzcs50q7pndwqz5d9qv7vh8ny7h"))))
     (properties `((upstream-name . "RBPcurve")))
     (build-system r-build-system)
     (arguments

@@ -4310,13 +4310,13 @@ the inflection point.  Method described in Sprouffske and Wagner (2016)
 (define-public r-growthcurveme
   (package
     (name "r-growthcurveme")
-    (version "0.1.0")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GrowthCurveME" version))
        (sha256
-        (base32 "1awrfr71rfimmm57v5pvs583hr5v7rbbcvz2igd6j0iyyih99a4g"))))
+        (base32 "0n30s39xd14gk4jp8br4w5bn1lkhm6hmxpplzvzk7y5lsb1j4l6l"))))
     (properties `((upstream-name . "GrowthCurveME")))
     (build-system r-build-system)
     (arguments
@@ -18488,20 +18488,19 @@ and hexplots of survey data.")
 (define-public r-ggsurveillance
   (package
     (name "r-ggsurveillance")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsurveillance" version))
        (sha256
-        (base32 "1yyk58f60ggsc32i48sdqrpymbs5rbf5xsysknr1ic1syskzrjxp"))))
+        (base32 "1nlj04x9nnvz45acdbkn0mns8y61wwakla8l5d4gagzax6fa9h53"))))
     (properties `((upstream-name . "ggsurveillance")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tsibble
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
                              r-scales
@@ -30051,25 +30050,19 @@ regression or order restricted hypothesis testing.  Based on: Y. Lai (2011)
 (define-public r-geneexpressionfromgeo
   (package
     (name "r-geneexpressionfromgeo")
-    (version "0.9")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geneExpressionFromGEO" version))
        (sha256
-        (base32 "15dvx2f4nsmw1mgjfpcdcfnx8335fd043xb4hdnqcbjzf9h228bp"))))
+        (base32 "1amn6bk8i5p3bx0c2z3mgyxdl1yhq6612v16l4dpkfyysjpsqsgp"))))
     (properties `((upstream-name . "geneExpressionFromGEO")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-r-utils
-                             r-markdown
-                             r-geoquery
-                             r-biocmanager
-                             r-biobase
-                             r-annotate))
+    (propagated-inputs (list r-xml2 r-qpdf r-geoquery r-biobase r-annotate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/davidechicco/geneExpressionFromGEO")
     (synopsis

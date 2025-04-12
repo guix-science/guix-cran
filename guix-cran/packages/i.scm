@@ -5117,20 +5117,20 @@ the composite performance of an individual.")
 (define-public r-ipkg
   (package
     (name "r-ipkg")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipkg" version))
        (sha256
-        (base32 "1f67zxm1bl9884ndhi1m1jpva3awlbh5fwfh65v2943ahwpbd9i9"))))
+        (base32 "1sqfnqy0s3rr2s7ddziwwnxs3gy4iksnyr86h1sdiccl3878wn9l"))))
     (properties `((upstream-name . "ipkg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-remotes r-httr))
-    (home-page "https://gitlab.com/chuxinyuan/ipkg")
+    (home-page "https://github.com/chuxinyuan/ipkg")
     (synopsis
      "Install R Packages or Download File from GitHub via the Proxy Site")
     (description
@@ -15376,13 +15376,13 @@ the three approaches can be applied to both binary and continuous phenotypes.")
 (define-public r-igrf
   (package
     (name "r-igrf")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "igrf" version))
        (sha256
-        (base32 "1287mx1fpbq9y8jbyb43hlignkqg313rn3kc52pm6b2n77ipkrc6"))))
+        (base32 "01wwd57z0xrx7wpp4m8vhfinralnciv7agi637iqsl4av1imjmp0"))))
     (properties `((upstream-name . "igrf")))
     (build-system r-build-system)
     (arguments
@@ -15392,7 +15392,7 @@ the three approaches can be applied to both binary and continuous phenotypes.")
     (home-page "https://github.com/bluegreen-labs/igrf")
     (synopsis "International Geomagnetic Reference Field")
     (description
-     "The 13th generation International Geomagnetic Reference Field (IGRF).  A
+     "The 14th generation International Geomagnetic Reference Field (IGRF).  A
 standard spherical harmonic representation of the Earth's main field.")
     (license license:agpl3)))
 

@@ -4107,13 +4107,13 @@ individual measurements.")
 (define-public r-qreport
   (package
     (name "r-qreport")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qreport" version))
        (sha256
-        (base32 "1d3dlpcf6w4bj6bwmydr3rlnscfdqyad6j2cm1rda7565q7k9iyf"))))
+        (base32 "1szi0fs3mcw9qrgfb0pviyzcvn38824rjdq9sfa1jf3p0j7rysnm"))))
     (properties `((upstream-name . "qreport")))
     (build-system r-build-system)
     (arguments
@@ -4973,13 +4973,13 @@ Statistics, 16, 2206-2251.")
 (define-public r-qlifetable
   (package
     (name "r-qlifetable")
-    (version "0.0.2-5")
+    (version "0.0.2-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qlifetable" version))
        (sha256
-        (base32 "1r1pxj35k5vyvq3gc7nzp7q2zwvvqjzs9xzw3i8pv5sixmaqv47a"))))
+        (base32 "1sda7wdagy7b32r4ibv4x1kcs26y0ii4xr8far717wipkj79dbzb"))))
     (properties `((upstream-name . "qlifetable")))
     (build-system r-build-system)
     (arguments
@@ -4992,11 +4992,12 @@ Statistics, 16, 2206-2251.")
 quarterly (sub-annual) life tables by exploiting micro-data from either a
 general or an insured population.  References: PavÃ­a and LledÃ³ (2022)
 <doi:10.1111/rssa.12769>.  PavÃ­a and LledÃ³ (2023) <doi:10.1017/asb.2023.16>.
-Acknowledgements: The authors wish to thank ConsellerÃ­a de EducaciÃ³n,
-Universidades y Empleo, Generalitat Valenciana (grant AICO/2021/257), Ministerio
-de Ciencia e InnovaciÃ³n (grant PID2021-128228NB-I00) and FundaciÃ³n Mapfre
-(grant ModelizaciÃ³n espacial e intra-anual de la mortalidad en EspaÃ±a.  Una
-herramienta automÃ¡tica para el cÃ¡lculo de productos de vida') for supporting
+PavÃ­a and LledÃ³ (2025) <doi:10.1371/journal.pone.0315937>.  Acknowledgements:
+The authors wish to thank Conselleria de EducaciÃ³n, Universidades y Empleo,
+Generalitat Valenciana (grants AICO/2021/257; CIAICO/2024/031), Ministerio de
+Ciencia e InnovaciÃ³n (grant PID2021-128228NB-I00) and FundaciÃ³n Mapfre (grant
+ModelizaciÃ³n espacial e intra-anual de la mortalidad en EspaÃ±a.  Una
+herramienta automÃ¡tica para el calculo de productos de vida') for supporting
 this research.")
     (license (license:fsdg-compatible "EPL"))))
 

@@ -14917,13 +14917,13 @@ error rate.")
 (define-public r-monitor
   (package
     (name "r-monitor")
-    (version "1.0.7")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "monitoR" version))
        (sha256
-        (base32 "1h1g0m1j13mz37xxwck4s7a0bfqvi0nrzfw60j7bkzaah8zxcc9n"))))
+        (base32 "1gp3ljmz0gaxl5ma9afms5sqkr1q5jcg9rcyqa711m2hcpgzkjkj"))))
     (properties `((upstream-name . "monitoR")))
     (build-system r-build-system)
     (arguments
@@ -14931,7 +14931,7 @@ error rate.")
       #:tests? #f))
     (propagated-inputs (list r-tuner))
     (native-inputs (list r-knitr))
-    (home-page "http://www.uvm.edu/rsenr/vtcfwru/R/?Page=monitoR/monitoR.htm")
+    (home-page "https://github.com/jonkatz2/monitor")
     (synopsis "Acoustic Template Detection in R")
     (description
      "Acoustic template detection and monitoring database interface.  Create, modify,
@@ -24300,13 +24300,13 @@ o1-preview for code structure and documentation.")
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "1c3bbsml04kwqm7wa14axpnkzkna0ppq2nf7lpgcxiqdkhbh2lzh"))))
+        (base32 "12m731k637xnnlf2kafh7wrqzpfirqqwp0gwd8swnig5aqrf1r11"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (arguments
@@ -31320,13 +31320,13 @@ CRISPR homing dynamics in Marshall et al. (2017)
 (define-public r-mgcviz
   (package
     (name "r-mgcviz")
-    (version "0.1.11")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mgcViz" version))
        (sha256
-        (base32 "14n9l10rcr9nar71lyw1qmk9xar2zixcx4s9rdnz5dr4jr7330y3"))))
+        (base32 "0lnp2m1z3hs2wrnfp7wpp70gg2gqzi8ak0c2xp1gc48y79pgp3g2"))))
     (properties `((upstream-name . "mgcViz")))
     (build-system r-build-system)
     (arguments
@@ -32843,6 +32843,45 @@ techniques used in this package are published in Gamble, Granger, & Mannion
      "Evaluate bias and precision in method comparison studies.  One provides
 measurements for each method and it takes care of the estimates.  Multiple plots
 to evaluate bias, precision and compare methods.")
+    (license license:gpl3+)))
+
+(define-public r-methevolsim
+  (package
+    (name "r-methevolsim")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MethEvolSIM" version))
+       (sha256
+        (base32 "1vji8k4f27biwfj56k41j3y1wsh6jxfj490y1kcm75k4nmjy94xi"))))
+    (properties `((upstream-name . "MethEvolSIM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MethEvolSIM")
+    (synopsis
+     "Simulate DNA Methylation Dynamics on Different Genomic Structures along Genealogies")
+    (description
+     "DNA methylation is an epigenetic modification involved in genomic stability,
+gene regulation, development and disease.  DNA methylation occurs mainly through
+the addition of a methyl group to cytosines, for example to cytosines in a
+@code{CpG} dinucleotide context (@code{CpG} stands for a cytosine followed by a
+guanine).  Tissue-specific methylation patterns lead to genomic regions with
+different characteristic methylation levels.  E.g.  in vertebrates @code{CpG}
+islands (regions with high @code{CpG} content) that are associated to promoter
+regions of expressed genes tend to be unmethylated. @code{MethEvolSIM} is a
+model-based simulation software for the generation and modification of cytosine
+methylation patterns along a given tree, which can be a genealogy of cells
+within an organism, a coalescent tree of DNA sequences sampled from a
+population, or a species tree.  The simulations are based on an extension of the
+model of Grosser & Metzler (2020) <doi:10.1186/s12859-020-3438-5> and allows for
+changes of the methylation states at single cytosine positions as well as
+simultaneous changes of methylation frequencies in genomic structures like
+@code{CpG} islands.")
     (license license:gpl3+)))
 
 (define-public r-methcon5
@@ -35410,13 +35449,13 @@ clinical programming workflow.")
 (define-public r-metaconvert
   (package
     (name "r-metaconvert")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaConvert" version))
        (sha256
-        (base32 "0h2gr1ixcbjykhs0f9i09l910ixj4x9jsa393c8x7jffprxcvjy7"))))
+        (base32 "1bycmz2sxv0249ybnc19qrrr26f8b45wd6p7mgh26ijcg17l7n2x"))))
     (properties `((upstream-name . "metaConvert")))
     (build-system r-build-system)
     (arguments

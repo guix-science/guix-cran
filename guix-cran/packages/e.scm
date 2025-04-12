@@ -7784,13 +7784,13 @@ formats, and retrieve the code to reproduce the plot.")
 (define-public r-espadon
   (package
     (name "r-espadon")
-    (version "1.10.0")
+    (version "1.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "espadon" version))
        (sha256
-        (base32 "09px03xp2q300hpj2h4rh0k5i8ib4mz8405d5hf3clbbqp456whb"))))
+        (base32 "1pr7q0as14jpn6437mhrb55icpcfy9jcy5aippj9bkdlprq9xsmc"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
     (arguments
@@ -18087,13 +18087,13 @@ topology.")
 (define-public r-eicircles
   (package
     (name "r-eicircles")
-    (version "0.0.1-7")
+    (version "0.0.1-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eiCircles" version))
        (sha256
-        (base32 "11id675g2j36xq8c1fmsbh7djbcdgbyvq0hrnhahsmiy1nnrxncd"))))
+        (base32 "01sp4ja0cfhq6kyldksf27s12lidxvphgn02g5xysknalqsqcrq9"))))
     (properties `((upstream-name . "eiCircles")))
     (build-system r-build-system)
     (arguments
@@ -23753,13 +23753,13 @@ and some multivariate extensions are given.")
 (define-public r-ecce
   (package
     (name "r-ecce")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecce" version))
        (sha256
-        (base32 "1rxvcix414w9hmv9snmndq1ivg27njvvqh9zk7xjxlnf0d8ffc81"))))
+        (base32 "1pg2wrqd9if5j50bqrf7r1qw5p6qs1pwp7b99wnl836xsp9aa2gj"))))
     (properties `((upstream-name . "ecce")))
     (build-system r-build-system)
     (arguments
