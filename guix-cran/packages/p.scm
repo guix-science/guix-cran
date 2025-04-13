@@ -6566,6 +6566,39 @@ analysis methods, and display results as, described in the associated article
 Marie Chion and Arthur Leroy (2023) <@code{arXiv:2307.08975>}.")
     (license license:expat)))
 
+(define-public r-proteinpca
+  (package
+    (name "r-proteinpca")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ProteinPCA" version))
+       (sha256
+        (base32 "06gb4ihdryb8dvp0a812p6i32szxip6m4c4frphrsizp301z0mbn"))))
+    (properties `((upstream-name . "ProteinPCA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gridextra r-ggplot2))
+    (home-page "https://cran.r-project.org/package=ProteinPCA")
+    (synopsis
+     "Principal Component Analysis (PCA) Tool on Protein Expression Data")
+    (description
+     "Analysis of protein expression data can be done through Principal Component
+Analysis (PCA), and this R package is designed to streamline the analysis.  This
+package enables users to perform PCA and it generates biplot and scree plot for
+advanced graphical visualization.  Optionally, it supports grouping/clustering
+visualization with PCA loadings and confidence ellipses.  With this R package,
+researchers can quickly explore complex protein datasets, interpret variance
+contributions, and visualize sample clustering through intuitive biplots.  For
+more details, see Jolliffe (2001) <doi:10.1007/b98835>, Gabriel (1971)
+<doi:10.1093/biomet/58.3.453>, Zhang et al. (2024)
+<doi:10.1038/s41467-024-53239-9>, and Anandan et al. (2022)
+<doi:10.1038/s41598-022-07781-5>.")
+    (license license:gpl3)))
+
 (define-public r-protein8k
   (package
     (name "r-protein8k")
@@ -15327,13 +15360,13 @@ bioequivalence studies in Two-Stage Designs (TSD) via simulations.")
 (define-public r-power-transform
   (package
     (name "r-power-transform")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "power.transform" version))
        (sha256
-        (base32 "0jfpza0bvjgn4zh5shzi6lhcqv0z9dz0qlsad9kdvankjn1l24kr"))))
+        (base32 "10gils58mpfw8z46bfjga0dc3a1l1g4jc2kvgcsidhc9wvkb8d2r"))))
     (properties `((upstream-name . "power.transform")))
     (build-system r-build-system)
     (arguments
@@ -21224,13 +21257,13 @@ summarized in: Prybylski, (2024) <doi:10.1007/s40262-023-01343-2>.")
 (define-public r-pmxcode
   (package
     (name "r-pmxcode")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmxcode" version))
        (sha256
-        (base32 "0339i3sialp81f5p7236jz1z17sx455dzigyh3flh0q7syrwfknl"))))
+        (base32 "0nycb95vhzkbhw86n1xwjaqlj4qx49a3lfv9c5pqmfag12n74cq9"))))
     (properties `((upstream-name . "pmxcode")))
     (build-system r-build-system)
     (arguments
@@ -21238,6 +21271,7 @@ summarized in: Prybylski, (2024) <doi:10.1007/s40262-023-01343-2>.")
       #:tests? #f))
     (propagated-inputs (list r-xfun
                              r-tidyr
+                             r-shinyjs
                              r-shinyfiles
                              r-shinybs
                              r-shinyace
@@ -21247,6 +21281,7 @@ summarized in: Prybylski, (2024) <doi:10.1007/s40262-023-01343-2>.")
                              r-readr
                              r-rclipboard
                              r-pillar
+                             r-officer
                              r-markdown
                              r-magrittr
                              r-jsonlite
@@ -21254,12 +21289,13 @@ summarized in: Prybylski, (2024) <doi:10.1007/s40262-023-01343-2>.")
                              r-htmltools
                              r-golem
                              r-glue
+                             r-flextable
                              r-dplyr
                              r-config
                              r-bslib
                              r-bsicons))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=pmxcode")
+    (home-page "https://github.com/sbihorel/pmxcode")
     (synopsis "Create Pharmacometric Models")
     (description
      "This package provides a user interface to create or modify pharmacometric models
@@ -25686,13 +25722,13 @@ package directory, and/or a vector of verbs implement via the usethis
 (define-public r-pkgsearch
   (package
     (name "r-pkgsearch")
-    (version "3.1.4")
+    (version "3.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgsearch" version))
        (sha256
-        (base32 "00hymwv23myqzkn66vmmxvf0mzy8yrc02mhaiz4fg8h43pimn5jm"))))
+        (base32 "15njf0xgjw7inb7lfk04bhz7ccpk05lsghyq33dlwz9xh4mm0iyi"))))
     (properties `((upstream-name . "pkgsearch")))
     (build-system r-build-system)
     (arguments
@@ -41804,13 +41840,13 @@ to fully utilize the computing resources available to the user.")
 (define-public r-paran
   (package
     (name "r-paran")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paran" version))
        (sha256
-        (base32 "0lfhizz1vdmlwwcnm3y1nm127rm02icdk56x2p0m7vrcqbxybyqp"))))
+        (base32 "0yz1gxhf8af64k20smrdc11nzkvllv76w86cw07c6i7fnw0niw79"))))
     (properties `((upstream-name . "paran")))
     (build-system r-build-system)
     (arguments

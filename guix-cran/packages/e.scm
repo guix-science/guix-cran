@@ -14176,6 +14176,33 @@ Okhrin and Y.F. Xu (2017)
 <https://github.com/@code{YafeiXu/working_paper/raw/master/CPM102.pdf>}.")
     (license license:gpl3+)))
 
+(define-public r-energymethod
+  (package
+    (name "r-energymethod")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "energymethod" version))
+       (sha256
+        (base32 "1767hh5cpn9k26ynncpz6c18qhry07nb04khxbvnms1fm8ys9fld"))))
+    (properties `((upstream-name . "energymethod")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=energymethod")
+    (synopsis
+     "Two-Sample Test of many Functional Means using the Energy Method")
+    (description
+     "Given two samples of size n_1 and n_2 from a data set where each sample consists
+of K functional observations (channels), each recorded on T grid points, the
+function energy method implements a hypothesis test of equality of channel-wise
+mean at each channel using the bootstrapped distribution of maximum energy to
+control family wise error.")
+    (license license:gpl3)))
+
 (define-public r-endtoend
   (package
     (name "r-endtoend")
@@ -26161,5 +26188,44 @@ EDA data stream, but other streams will be added soon.  The Empatica E4 is a
 wearable physiological monitor made by Empatica (Empatica is not associated with
 any of this code).  You can find more information about the E4 at Empatica's
 website <https://www.empatica.com/research/e4/>.")
+    (license license:expat)))
+
+(define-public r-e2tree
+  (package
+    (name "r-e2tree")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "e2tree" version))
+       (sha256
+        (base32 "0q1djx2x832s59xzn1dkx5224iqq2wzxndfa8ahw85y61kkahm9r"))))
+    (properties `((upstream-name . "e2tree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rspectra
+                             r-rpart-plot
+                             r-rcpp
+                             r-randomforest
+                             r-purrr
+                             r-partitions
+                             r-matrix
+                             r-ggplot2
+                             r-future-apply
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-ape))
+    (home-page "https://github.com/massimoaria/e2tree")
+    (synopsis "Explainable Ensemble Trees")
+    (description
+     "The Explainable Ensemble Trees e2tree approach has been proposed by Aria et al.
+(2024) <doi:10.1007/s00180-022-01312-6>.  It aims to explain and interpret
+decision tree ensemble models using a single tree-like structure.  e2tree is a
+new way of explaining an ensemble tree trained through @code{randomForest} or
+xgboost packages.")
     (license license:expat)))
 

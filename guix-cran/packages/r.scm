@@ -22079,20 +22079,20 @@ interval estimates.")
 (define-public r-rmawgen
   (package
     (name "r-rmawgen")
-    (version "1.3.7")
+    (version "1.3.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMAWGEN" version))
        (sha256
-        (base32 "10hgssy59fcjbv333grpf6f3m7924hav66xxqhdlsdnwix19q7sb"))))
+        (base32 "1yn0dwx3ccfjsqs0k9cmpnkia0h4icbx13gj9i2h7wn9crvfv5h5"))))
     (properties `((upstream-name . "RMAWGEN")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vars r-date r-chron))
-    (home-page "https://github.com/ecor/RMAWGEN")
+    (propagated-inputs (list r-vars r-matrix r-date r-chron))
+    (home-page "https://ecor.github.io/RMAWGEN/")
     (synopsis "Multi-Site Auto-Regressive Weather GENerator")
     (description
      "S3 and S4 functions are implemented for spatial multi-site stochastic generation
@@ -35604,13 +35604,13 @@ analyses into a single, correlated test of the map-scale hypotheses.")
 (define-public r-remote
   (package
     (name "r-remote")
-    (version "1.2.1")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "remote" version))
        (sha256
-        (base32 "1ihzjxbvas7396cwsi9am4pl94naxa9dnhbnh8k0l5p4a50mk33w"))))
+        (base32 "1qv34rv5mn5p2rpivxx400xdgg40gqp4hrnjn9lfhs6hxbcm6dbv"))))
     (properties `((upstream-name . "remote")))
     (build-system r-build-system)
     (arguments
@@ -35838,13 +35838,13 @@ framework (Stadtfeld, C., & Block, P., 2017, <doi:10.15195/v4.a14>).")
 (define-public r-remfpca
   (package
     (name "r-remfpca")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReMFPCA" version))
        (sha256
-        (base32 "0q7jzya5is4ik8cjirnhixcpgda5s9a450pyksyzc05fmn7rw3rc"))))
+        (base32 "05vp4ylb6h269js23528n2k60m80y9rik6kx81gjnn55qkmq60kz"))))
     (properties `((upstream-name . "ReMFPCA")))
     (build-system r-build-system)
     (arguments
@@ -47237,13 +47237,13 @@ the DS and TAD methods.")
 (define-public r-rcmdrplugin-dce
   (package
     (name "r-rcmdrplugin-dce")
-    (version "0.2-3")
+    (version "0.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.DCE" version))
        (sha256
-        (base32 "181iww86gvbr6n5wnjqyfqzzpxiv9wyvwx560bw4g55rfnzck67w"))))
+        (base32 "01hxh68zvbxk461yinz0dip5khv2531x2cq8j6bybmx5cxphhsxp"))))
     (properties `((upstream-name . "RcmdrPlugin.DCE")))
     (build-system r-build-system)
     (arguments
@@ -47988,13 +47988,13 @@ change-points is not required.  The code is written in Go and interfaced with R.
 (define-public r-rcheology
   (package
     (name "r-rcheology")
-    (version "4.4.3.0")
+    (version "4.5.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcheology" version))
        (sha256
-        (base32 "1rkhwckkhx8ddbj3zq1bcmalgl4g3wsrzmlrqymzarap32jvb41n"))))
+        (base32 "1kijqma4gpi868czw99hkjgldylj5kmxdkgkjy5j9cz5n0ckkibc"))))
     (properties `((upstream-name . "rcheology")))
     (build-system r-build-system)
     (arguments

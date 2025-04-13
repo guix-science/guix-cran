@@ -32475,13 +32475,13 @@ analysis.")
 (define-public r-metricsweighted
   (package
     (name "r-metricsweighted")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetricsWeighted" version))
        (sha256
-        (base32 "084zvfh66daz9g7cwn4bzx3cvydzwf83r2lzy6xga7qd4d89q0j6"))))
+        (base32 "06g7gz5zjgjbzy4qj44f24sw868fnb47f2q9h16gxf3ywj2rjcp0"))))
     (properties `((upstream-name . "MetricsWeighted")))
     (build-system r-build-system)
     (arguments
@@ -49454,46 +49454,6 @@ as a heatmap, which is binned using -log10(p-value) and chromosome position.
 Annotation currently supported is minor allele frequency and gene function high
 impact variants.")
     (license license:gpl2+)))
-
-(define-public r-manhattanly
-  (package
-    (name "r-manhattanly")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "manhattanly" version))
-       (sha256
-        (base32 "007qvfzq8fyvnirywfpl6n1gqxxizz32z4xbgnnx7riyb7nxl1qh"))))
-    (properties `((upstream-name . "manhattanly")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plotly r-magrittr r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sahirbhatnagar/manhattanly/")
-    (synopsis "Interactive Q-Q and Manhattan Plots Using 'plotly.js'")
-    (description
-     "Create interactive manhattan, Q-Q and volcano plots that are usable from the R
-console, in Dash apps, in the RStudio viewer pane, in R Markdown documents, and
-in Shiny apps.  Hover the mouse pointer over a point to show details or drag a
-rectangle to zoom.  A manhattan plot is a popular graphical method for
-visualizing results from high-dimensional data analysis such as a (epi)genome
-wide association study (GWAS or EWAS), in which p-values, Z-scores, test
-statistics are plotted on a scatter plot against their genomic position.
-Manhattan plots are used for visualizing potential regions of interest in the
-genome that are associated with a phenotype.  Interactive manhattan plots allow
-the inspection of specific value (e.g. rs number or gene name) by hovering the
-mouse over a cell, as well as zooming into a region of the genome (e.g. a
-chromosome) by dragging a rectangle around the relevant area.  This work is
-based on the qqman package and the plotly.js engine.  It produces similar
-manhattan and Q-Q plots as the manhattan and qq functions in the qqman package,
-with the advantage of including extra annotation information and interactive
-web-based visualizations directly from R. Once uploaded to a plotly account,
-plotly graphs (and the data behind them) can be viewed and modified in a web
-browser.")
-    (license license:expat)))
 
 (define-public r-mangrove
   (package

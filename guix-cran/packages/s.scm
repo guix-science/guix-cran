@@ -19058,13 +19058,13 @@ needed to pre-installed.  Hanzelmann, S., Castelo, R., and Guinney, J. (2013)
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "1.5.40")
+    (version "1.5.41")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDforR" version))
        (sha256
-        (base32 "0pqv45avh6x9xb2rpq64qls942j0r8c72k9j7yq3agbmqrbhihq2"))))
+        (base32 "0my98hchki5mqxvb8h1bliac9sdx4yy110nsnfgi1xy11ldjsp10"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (arguments
@@ -69193,13 +69193,13 @@ Environmental Management Lab (CIAD, A.C.).")
 (define-public r-sar
   (package
     (name "r-sar")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAR" version))
        (sha256
-        (base32 "1cnf0hsq82lzssvz5xs2abvnrjxda0g6mjx70a1j223zdwjqmw64"))))
+        (base32 "0ljl39xh31zngyb34vs6yfpm9yah8myi448zf1mi526a85ff607f"))))
     (properties `((upstream-name . "SAR")))
     (build-system r-build-system)
     (arguments

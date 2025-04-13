@@ -13266,6 +13266,36 @@ topic: <https://sdmx.org/wp-content/uploads/CL_OBS_STATUS_v2_1.docx>,
 <https://sdmx.org/wp-content/uploads/CL_OBS_STATUS_implementation_20-10-2014.pdf>.")
     (license (license:fsdg-compatible "EUPL-1.1"))))
 
+(define-public r-flag
+  (package
+    (name "r-flag")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FLAG" version))
+       (sha256
+        (base32 "0cfv7hz3fl4536dzld1gjkrrw0dbl40y3b20y8940dsmwmady0ac"))))
+    (properties `((upstream-name . "FLAG")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (home-page "https://github.com/YangLabHKUST/FLAG")
+    (synopsis "Flexible and Accurate Gaussian Graphical Models")
+    (description
+     "In order to achieve accurate estimation without sparsity assumption on the
+precision matrix, element-wise inference on the precision matrix, and joint
+estimation of multiple Gaussian graphical models, a novel method is proposed and
+efficient algorithm is implemented. @code{FLAG()} is the main function given a
+data matrix, and @code{FlagOneEdge()} will be used when one pair of random
+variables are interested where their indices should be given.  Flexible and
+Accurate Methods for Estimation and Inference of Gaussian Graphical Models with
+Applications, see Qian Y (2023) <doi:10.14711/thesis-991013223054603412>, Qian
+Y, Hu X, Yang C (2023) <doi:10.48550/@code{arXiv.2306.17584>}.")
+    (license license:expat)))
+
 (define-public r-flacco
   (package
     (name "r-flacco")
@@ -18609,13 +18639,13 @@ application is included.")
 (define-public r-feddata
   (package
     (name "r-feddata")
-    (version "4.2.0")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FedData" version))
        (sha256
-        (base32 "0lq3mrbqhkhdn6r97yc5il11hqv3nryns84rr75hcc5m2y9xj30c"))))
+        (base32 "11q8j6ahk6qrpkqs4snxsfs0vjac2119zj5kp2wwhdb1jw13ixzb"))))
     (properties `((upstream-name . "FedData")))
     (build-system r-build-system)
     (arguments

@@ -16039,13 +16039,13 @@ to access repository data.")
 (define-public r-gitr
   (package
     (name "r-gitr")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gitr" version))
        (sha256
-        (base32 "09l22wv2r7l1ax17y1q1xmasibyqm71jk0nyvmvlawavkw6by658"))))
+        (base32 "135adqixwz7g8kl235y2qlv11yvpkiq4kvs0qmm547871csjpib6"))))
     (properties `((upstream-name . "gitr")))
     (build-system r-build-system)
     (arguments
@@ -16057,9 +16057,10 @@ to access repository data.")
     (description
      "This package provides a light-weight, dependency-free, application programming
 interface (API) to access system-level Git commands from within R'.  Contains
-wrappers and defaults for common data science workflows as well as Zsh plugin
-aliases.  A generalized API syntax is also available.  A system installation of
-Git <https://git-scm.com/downloads> is required.")
+wrappers and defaults for common data science workflows as well as Zsh
+<https://github.com/ohmyzsh/ohmyzsh> plugin aliases.  A generalized API syntax
+is also available.  A system installation of Git <https://git-scm.com/downloads>
+is required.")
     (license license:expat)))
 
 (define-public r-gitlink
@@ -24552,13 +24553,13 @@ possible concurrence of treatment pairs.")
 (define-public r-getbcbdata
   (package
     (name "r-getbcbdata")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GetBCBData" version))
        (sha256
-        (base32 "0bc1ar1cx7vxvlld2dishi46a9bxs075vgby1xs8kbxlllknvcsi"))))
+        (base32 "02wi3b8wh7l2qknpdf8k4k04jipfv97aan53v29kwrcjkplcayfl"))))
     (properties `((upstream-name . "GetBCBData")))
     (build-system r-build-system)
     (arguments
@@ -24571,7 +24572,8 @@ possible concurrence of treatment pairs.")
                              r-future
                              r-furrr
                              r-dplyr
-                             r-curl))
+                             r-curl
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/msperlin/GetBCBData/")
     (synopsis

@@ -19466,20 +19466,20 @@ Tutor'(<https://tidydatatutor.com/>) web application.")
 (define-public r-tidydann
   (package
     (name "r-tidydann")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidydann" version))
        (sha256
-        (base32 "12j00iw12v68cq4jnpqcp2gidawz75g706y0vsmyqvz99cjzmj97"))))
+        (base32 "1l8ii2r2jxjxq0k0f07b9l3q6vrmh2wiyqvdjfl50al4r9gs552i"))))
     (properties `((upstream-name . "tidydann")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble r-parsnip r-generics r-dials))
-    (home-page "https://cran.r-project.org/package=tidydann")
+    (home-page "https://github.com/gmcmacran/tidydann")
     (synopsis
      "Add the 'dann' Model and the 'sub_dann' Model to the Tidymodels Ecosystem")
     (description

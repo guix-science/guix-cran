@@ -2746,13 +2746,13 @@ is tested with yeast genome and gene expression data of Yassour, et al. (2009)
 (define-public r-cubeview
   (package
     (name "r-cubeview")
-    (version "0.2.0")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cubeview" version))
        (sha256
-        (base32 "1352hi2j9x9rx4iy3xvsca86nsh39x1vnymd17f5qc8c3plfm8db"))))
+        (base32 "0d9dg3mmdqfbh209g318k6qax5a8i9059ih0qaf3w5xgxms3mxqx"))))
     (properties `((upstream-name . "cubeview")))
     (build-system r-build-system)
     (arguments
@@ -2773,6 +2773,7 @@ is tested with yeast genome and gene expression data of Yassour, et al. (2009)
                                                                #:target target)))
                                   '())))))))
     (propagated-inputs (list r-viridislite
+                             r-svglite
                              r-stars
                              r-raster
                              r-lattice
@@ -38443,13 +38444,13 @@ two-sided Brownian motion minus quadratic drift.  That is, Z = argmax
 (define-public r-chemospecutils
   (package
     (name "r-chemospecutils")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChemoSpecUtils" version))
        (sha256
-        (base32 "1s62xf621prln3pv748kmif38fzxqh9vih63fpz783n7nzm94ka9"))))
+        (base32 "07p8rir53j4v0gdiphz5qqawmg6r2k240s4xjwvm10h4rvshkq29"))))
     (properties `((upstream-name . "ChemoSpecUtils")))
     (build-system r-build-system)
     (arguments
@@ -40640,13 +40641,13 @@ displays of results are emphasized.")
 (define-public r-cftime
   (package
     (name "r-cftime")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFtime" version))
        (sha256
-        (base32 "1bxhlfng3501zpfb8072hwxcm6zbrcdv98z01vgam0z0yr5aa995"))))
+        (base32 "169pw3dz61736v7dymym50alsvaj5dxn863d3l2nrr75dn48ynqw"))))
     (properties `((upstream-name . "CFtime")))
     (build-system r-build-system)
     (arguments

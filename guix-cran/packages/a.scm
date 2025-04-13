@@ -342,13 +342,13 @@ database principals.  Part of the @code{AzureR} family of packages.")
 (define-public r-azurekeyvault
   (package
     (name "r-azurekeyvault")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AzureKeyVault" version))
        (sha256
-        (base32 "15x0mkgn7pq2yk05l5vwvd744gxkz28nb5azc1yz502ayr1s6hnm"))))
+        (base32 "0g1a9hkpx5782k5ixhqic8nmm3vm9pv7z2j0fk91rf7j4mvidfdi"))))
     (properties `((upstream-name . "AzureKeyVault")))
     (build-system r-build-system)
     (arguments
@@ -367,7 +367,7 @@ database principals.  Part of the @code{AzureR} family of packages.")
     (synopsis "Key and Secret Management in 'Azure'")
     (description
      "Manage keys, certificates, secrets, and storage accounts in Microsoft's Key
-Vault service: <https://azure.microsoft.com/services/key-vault/>.  Provides
+Vault service: <https://azure.microsoft.com/products/key-vault/>.  Provides
 facilities to store and retrieve secrets, use keys to encrypt, decrypt, sign and
 verify data, and manage certificates.  Integrates with the @code{AzureAuth}
 package to enable authentication with a certificate, and with the openssl
@@ -447,13 +447,13 @@ and attachments in Cosmos DB'.  Part of the @code{AzureR} family of packages.")
 (define-public r-azurecontainers
   (package
     (name "r-azurecontainers")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AzureContainers" version))
        (sha256
-        (base32 "0lykvf4kk1q7b7ln4l8jlrxgqyvrg1cfnap4ak8zkhxmrgzqpc5f"))))
+        (base32 "18nh13sq1jnwnspmyrf2jfjz24viaf0dkcbdx163mkrvm8ibyksc"))))
     (properties `((upstream-name . "AzureContainers")))
     (build-system r-build-system)
     (arguments
@@ -471,24 +471,24 @@ and attachments in Cosmos DB'.  Part of the @code{AzureR} family of packages.")
      "Interface to 'Container Instances', 'Docker Registry' and 'Kubernetes' in 'Azure'")
     (description
      "An interface to container functionality in Microsoft's Azure cloud:
-<https://azure.microsoft.com/en-us/product-categories/containers/>.  Manage
-Azure Container Instance (ACI), Azure Container Registry (ACR) and Azure
-Kubernetes Service (AKS) resources, push and pull images, and deploy services.
-On the client side, lightweight shells to the docker', docker-compose', kubectl
-and helm commandline tools are provided.  Part of the @code{AzureR} family of
+<https://azure.microsoft.com/en-us/products/category/containers/>.  Manage Azure
+Container Instance (ACI), Azure Container Registry (ACR) and Azure Kubernetes
+Service (AKS) resources, push and pull images, and deploy services.  On the
+client side, lightweight shells to the docker', docker-compose', kubectl and
+helm commandline tools are provided.  Part of the @code{AzureR} family of
 packages.")
     (license license:expat)))
 
 (define-public r-azurecognitive
   (package
     (name "r-azurecognitive")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AzureCognitive" version))
        (sha256
-        (base32 "1mn3qw5g77x24qyhybhn1p3h4s9ymdafrj35i24f32ncr5abnd2f"))))
+        (base32 "0rkgkg9ic9m3cyl9prfjfnswvj8jkfxkyqdav8b99wm4p7nk39wj"))))
     (properties `((upstream-name . "AzureCognitive")))
     (build-system r-build-system)
     (arguments
@@ -500,7 +500,7 @@ packages.")
     (synopsis "Interface to Azure Cognitive Services")
     (description
      "An interface to Azure Cognitive Services
-<https://docs.microsoft.com/en-us/azure/cognitive-services/>.  Both an Azure
+<https://learn.microsoft.com/en-us/azure/cognitive-services/>.  Both an Azure
 Resource Manager interface, for deploying Cognitive Services resources, and a
 client framework are supplied.  While @code{AzureCognitive} can be called by the
 end-user, it is meant to provide a foundation for other packages that will
@@ -6646,6 +6646,45 @@ a wrapper of @code{bannerCommenter}', for inserting neat comments, headers and
 dividers.")
     (license license:expat)))
 
+(define-public r-artma
+  (package
+    (name "r-artma")
+    (version "0.1.19")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "artma" version))
+       (sha256
+        (base32 "1ssjx6j0sgadn19cbyybjzwqjdf9axbh68k23bs7db2za13wll3v"))))
+    (properties `((upstream-name . "artma")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-withr
+                             r-stringr
+                             r-rlang
+                             r-metafor
+                             r-logger
+                             r-lintr
+                             r-lifecycle
+                             r-glue
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PetrCala/artma")
+    (synopsis "Automatic Replication Tools for Meta-Analysis")
+    (description
+     "This package provides a unified and straightforward interface for performing a
+variety of meta-analysis methods directly from user data.  Users can input a
+data frame, specify key parameters, and effortlessly execute and compare
+multiple common meta-analytic models.  Designed for immediate usability, the
+package facilitates transparent, reproducible research without manual
+implementation of each analytical method.  Ideal for researchers aiming for
+efficiency and reproducibility, it streamlines workflows from data preparation
+to results interpretation.")
+    (license license:gpl3)))
+
 (define-public r-arthistory
   (package
     (name "r-arthistory")
@@ -7775,13 +7814,13 @@ for system behavior analysis.")
 (define-public r-argondash
   (package
     (name "r-argondash")
-    (version "0.2.0")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "argonDash" version))
        (sha256
-        (base32 "1wykr7y5375g1nb18ynybccxmd948xrr0gdwxxqsfjf782vlgd2d"))))
+        (base32 "1s01gf8fpmj73rkslbw56fzqjqijw188bg1f67h8dqrvilf9rfpz"))))
     (properties `((upstream-name . "argonDash")))
     (build-system r-build-system)
     (arguments
@@ -7805,9 +7844,7 @@ for system behavior analysis.")
     (native-inputs (list esbuild))
     (home-page "https://github.com/RinteRface/argonDash")
     (synopsis "Argon Shiny Dashboard Template")
-    (description
-     "Create awesome Bootstrap 4 dashboards powered by Argon'.  See more here
-<https://rinterface.github.io/@code{argonDash/>}.")
+    (description "Create awesome Bootstrap 4 dashboards powered by Argon'.")
     (license license:gpl2)))
 
 (define-public r-argofloats

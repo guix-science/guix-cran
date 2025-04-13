@@ -31475,13 +31475,13 @@ to match the functionality of the API endpoints.")
 (define-public r-dann
   (package
     (name "r-dann")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dann" version))
        (sha256
-        (base32 "0hmmkzv3cq0yl8kgcj08557zx086ablh6ngmyxhb1chig7kmmb4x"))))
+        (base32 "0bi2xwl27lwnmqmb2m2drqz0qk83wf4kk9jc8fkin35z2mj0znki"))))
     (properties `((upstream-name . "dann")))
     (build-system r-build-system)
     (arguments
@@ -31496,9 +31496,8 @@ to match the functionality of the API endpoints.")
                              r-mass
                              r-hardhat
                              r-ggplot2
-                             r-fpc
-                             r-ellipsis))
-    (home-page "https://cran.r-project.org/package=dann")
+                             r-fpc))
+    (home-page "https://github.com/gmcmacran/dann")
     (synopsis "Discriminant Adaptive Nearest Neighbor Classification")
     (description
      "Discriminant Adaptive Nearest Neighbor Classification is a variation of k

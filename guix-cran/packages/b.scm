@@ -680,6 +680,37 @@ Guy Cohen (âThe Bible of Options Strategies (2nd ed.)â, 2015, ISBN:
 Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
     (license license:gpl3)))
 
+(define-public r-butterfly
+  (package
+    (name "r-butterfly")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "butterfly" version))
+       (sha256
+        (base32 "19fryp6b6rd9vi8k42argjaylz9m90jh82685zmahnaha5m8s5x6"))))
+    (properties `((upstream-name . "butterfly")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-waldo r-rlang r-lifecycle r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/butterfly/")
+    (synopsis "Verification for Continually Updating Time Series Data")
+    (description
+     "Verification of continually updating time series data where we expect new
+values, but want to ensure previous data remains unchanged.  Data previously
+recorded could change for a number of reasons, such as discovery of an error in
+model code, a change in methodology or instrument recalibration.  Monitoring
+data sources for these changes is not always possible.  Other unnoticed changes
+could include a jump in time or measurement frequency, due to instrument failure
+or software updates.  Functionality is provided that can be used to check and
+flag changes to previous data to prevent changes going unnoticed, as well as
+unexpected jumps in time.")
+    (license license:expat)))
+
 (define-public r-businessplanr
   (package
     (name "r-businessplanr")
