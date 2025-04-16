@@ -5144,13 +5144,13 @@ for a Markov model, as often done by modellers and practitioners).
 (define-public r-surveyvoi
   (package
     (name "r-surveyvoi")
-    (version "1.0.6")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveyvoi" version))
        (sha256
-        (base32 "0lkws90jlvr4l40l8h7fkck0skpf9yp4989a3bsqvm670l8qvc1w"))))
+        (base32 "0i84lw9b2r1myk042p7kpxs6bnarhjvqzcmm8q8i2s4d1w9p8rrj"))))
     (properties `((upstream-name . "surveyvoi")))
     (build-system r-build-system)
     (arguments
@@ -5197,7 +5197,7 @@ evaluated using conditions) and maximizing value of information.  Please note
 that several functions depend on the Gurobi optimization software (available
 from <https://www.gurobi.com>).  Additionally, the JAGS software (available from
 <https://mcmc-jags.sourceforge.io/>) is required to fit hierarchical generalized
-linear models.  For further details, see Hanson et al. (2022)
+linear models.  For further details, see Hanson et al. (2023)
 <doi:10.1111/1365-2664.14309>.")
     (license license:gpl3)))
 
@@ -7795,28 +7795,39 @@ to sum their own low level functions as well.  Based on the paper by Braden
 (define-public r-sumo
   (package
     (name "r-sumo")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SUMO" version))
        (sha256
-        (base32 "0gs9rq18bwxmysmpvwpwc9r01ky7c8gr52hlag1m1d8dmxfb7aq5"))))
+        (base32 "08r46wxk5fidys57ngimfgpr5pkdlh25m4dxq450smknfv7y2249"))))
     (properties `((upstream-name . "SUMO")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-gridextra r-ggplot2))
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-officer
+                             r-magrittr
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
     (home-page "https://cran.r-project.org/package=SUMO")
-    (synopsis "Generating Multi-Omics Datasets")
+    (synopsis "Generating Multi-Omics Datasets for Testing and Benchmarking")
     (description
-     "Designed to generate multi-omics datasets that closely reflect biological
-complexity, the package allows for testing, validation, and benchmarking of
-multi-omics integrative methods.  The simulated data includes one or multiple
-predefined signals (latent/unobserved factors), giving users complete control
-over the data-generated characteristics.  Tini, Giulia, et al (2019)
-<doi:10.1093/bib/bbx167>.")
+     "This package provides tools to simulate multi-omics datasets with predefined
+signal structures.  The generated data can be used for testing, validating, and
+benchmarking integrative analysis methods such as factor models and clustering
+approaches.  This version includes enhanced signal customization, visualization
+tools (scatter, histogram, 3D), MOFA-based analysis pipelines, @code{PowerPoint}
+export, and statistical profiling of datasets.  Designed for both method
+development and teaching, SUMO supports real and synthetic data pipelines with
+interpretable outputs.  Tini, Giulia, et al (2019) <doi:10.1093/bib/bbx167>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-summer
@@ -11515,13 +11526,13 @@ describing the methodology will be released soon.")
 (define-public r-storr
   (package
     (name "r-storr")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "storr" version))
        (sha256
-        (base32 "0qszdq16bf0dbss33zi63ciwmkgjsyc0c3akrr2kl14w3ncw6922"))))
+        (base32 "1spfnizyjdn1idl293k07zcgb32h2wi444vas8hwvm7ngbc6m9y5"))))
     (properties `((upstream-name . "storr")))
     (build-system r-build-system)
     (arguments
@@ -11529,7 +11540,7 @@ describing the methodology will be released soon.")
       #:tests? #f))
     (propagated-inputs (list r-r6 r-digest))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/richfitz/storr")
+    (home-page "https://richfitz.github.io/storr/")
     (synopsis "Simple Key Value Stores")
     (description
      "This package creates and manages simple key-value stores.  These can use a
@@ -18966,13 +18977,13 @@ proportions are produced by bootstrapping.")
 (define-public r-ssdm
   (package
     (name "r-ssdm")
-    (version "0.2.9")
+    (version "0.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDM" version))
        (sha256
-        (base32 "03w1rkzpkhhz251pcy57fmyq0jdf4cplv3ns0h7j76fs2v9pfn3x"))))
+        (base32 "11k6ibcwb8z94p3aw9ff5d52cx0xq18dbbp1srndq30c9xl1iqa8"))))
     (properties `((upstream-name . "SSDM")))
     (build-system r-build-system)
     (arguments
@@ -20445,13 +20456,13 @@ may be defined with YAML and accessed by name.")
 (define-public r-sqlformatter
   (package
     (name "r-sqlformatter")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SQLFormatteR" version))
        (sha256
-        (base32 "1al8ndlpg2482mwrx88kg76q9pzjajnfd2had2waqmfwrijsvbgn"))))
+        (base32 "1xqlpn0kbkibimssfddl5i5s01dx37wsvb1hj509h264zz7sr2nl"))))
     (properties `((upstream-name . "SQLFormatteR")))
     (build-system r-build-system)
     (arguments
@@ -28490,13 +28501,13 @@ translated from the Matlab functions in <https://github.com/jiayi-ma/VFC>.")
 (define-public r-sparsevctrs
   (package
     (name "r-sparsevctrs")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparsevctrs" version))
        (sha256
-        (base32 "1p39sx3byfq5gpjimri26iwz4gl7ryzj081hacsph1azr8f2sydq"))))
+        (base32 "14r3w74xycsbs7am8ff8mb06m75nf0scscmishdh8mhkjhi5nni6"))))
     (properties `((upstream-name . "sparsevctrs")))
     (build-system r-build-system)
     (arguments
@@ -28677,13 +28688,13 @@ variable analysis.")
 (define-public r-sparser
   (package
     (name "r-sparser")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparseR" version))
        (sha256
-        (base32 "166140mb4d63z59whg8c8478n5zx8jlmw7m4ji77ma9wws4pr6ww"))))
+        (base32 "15c5v3wy74k8658zx02jhd9isasbhr215120c7q8wy58gbwr1h49"))))
     (properties `((upstream-name . "sparseR")))
     (build-system r-build-system)
     (arguments
@@ -29224,13 +29235,13 @@ misalignment (see Vitelli, 2019, <doi:10.48550/@code{arXiv.1912.00687>}).")
 (define-public r-sparseflmm
   (package
     (name "r-sparseflmm")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparseFLMM" version))
        (sha256
-        (base32 "174lnhqig7m6fjfsj114ld059z9mjih3jzm5cq8iscxnhr9m11lr"))))
+        (base32 "09nyl1nrynzjxxk30azcqbljpx19ab8f6gnfi4l0661glvri4qaf"))))
     (properties `((upstream-name . "sparseFLMM")))
     (build-system r-build-system)
     (arguments
@@ -44645,21 +44656,21 @@ avoid copy and paste) and aims to improve readability and re-usability of code."
 (define-public r-simdnamixtures
   (package
     (name "r-simdnamixtures")
-    (version "1.0.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simDNAmixtures" version))
        (sha256
-        (base32 "17865ihl8bv3nqhsqy3dpi82x4q1q5dzff6r3qygdnmh0ymhr7d2"))))
+        (base32 "1r4lii3mw94wvszq4z58h180skv52sxaw9rk6d0v0c3mcarfsbqd"))))
     (properties `((upstream-name . "simDNAmixtures")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-readr r-pedtools r-dplyr))
+    (propagated-inputs (list r-xml2 r-pedprobr r-naturalsort r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=simDNAmixtures")
+    (home-page "https://mkruijver.github.io/simDNAmixtures/")
     (synopsis "Simulate Forensic DNA Mixtures")
     (description
      "Mixed DNA profiles can be sampled according to models for probabilistic
@@ -44959,26 +44970,27 @@ specification.")
 (define-public r-simcop
   (package
     (name "r-simcop")
-    (version "0.7.0")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimCop" version))
        (sha256
-        (base32 "1yrdy77a9h14v92c63ng8phi2ig73wy4xjjdb75322grc0bd3jq6"))))
+        (base32 "1s3589ph9kbdry8wpyfjlj99bvzj13gcrrl8c748n6rvsy78dgks"))))
     (properties `((upstream-name . "SimCop")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-quadprog))
+    (propagated-inputs (list r-rgl r-quadprog))
     (home-page "https://cran.r-project.org/package=SimCop")
     (synopsis "Simulate from Arbitrary Copulae")
     (description
      "This package provides a framework to generating random variates from arbitrary
 multivariate copulae, while concentrating on (bivariate) extreme value copulae.
 Particularly useful if the multivariate copulae are not available in closed
-form.")
+form.  Detailed discussion of the methodologies used can be found in Tajvidi and
+Turlach (2018) <doi:10.1111/anzs.12209>.")
     (license license:gpl2+)))
 
 (define-public r-simcomp
@@ -47428,19 +47440,19 @@ this package is based on the works of Furusawa K, Hill AV, Parkinson JL (1927)
 (define-public r-shortr
   (package
     (name "r-shortr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shortr" version))
        (sha256
-        (base32 "1m2jmflw4a1yfaifnz0yzd37pdg1gyq58zh6hl0gcabhpxaaf768"))))
+        (base32 "0hy73p76xqi2hqxvn1g5i53r0bqf0lsghlnil3yrsyryjv62llz2"))))
     (properties `((upstream-name . "shortr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://github.com/lfourni2/shortr")
+    (home-page "https://doi.org/10.32614/CRAN.package.shortr")
     (synopsis
      "Optimal Subset Identification in Undirected Weighted Network Models")
     (description
@@ -53688,13 +53700,13 @@ individual variables and groups.")
 (define-public r-sgbj
   (package
     (name "r-sgbj")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sGBJ" version))
        (sha256
-        (base32 "145mxfpl8gpycz8fl1ddlxy61rwpcqlfdrva6yhwzv4awwsv1fvn"))))
+        (base32 "08qp8xvjff8c97d00kn3wn2qf2kpnkc8k9xc3vfs33pcx2vzsr6y"))))
     (properties `((upstream-name . "sGBJ")))
     (build-system r-build-system)
     (arguments
@@ -54041,13 +54053,13 @@ analysis package tidygraph and the spatial analysis package sf'.")
 (define-public r-sfm
   (package
     (name "r-sfm")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SFM" version))
        (sha256
-        (base32 "1j2cis62lj2ldbj01b0mzg05099i9rm4rpjgh29b5zx53p1nfg0b"))))
+        (base32 "1b1d8a1xdw89kdm33mpw63df51h3izkyjlh41wgv26iynvyl07aw"))))
     (properties `((upstream-name . "SFM")))
     (build-system r-build-system)
     (arguments
@@ -66708,19 +66720,19 @@ means, feature variances, or more general differences.")
 (define-public r-scatterdensity
   (package
     (name "r-scatterdensity")
-    (version "0.0.4")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ScatterDensity" version))
        (sha256
-        (base32 "126jvjgfja6vyjadl3a7ahpb8z99hazijai4ymvnr1g1wcnx1z19"))))
+        (base32 "0qdsk8091ahxzp3irfl13aigim9ccbbxb3c2v977plf2llh7g1n2"))))
     (properties `((upstream-name . "ScatterDensity")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pracma))
+    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp r-pracma))
     (home-page "https://www.deepbionics.org/")
     (synopsis "Density Estimation and Visualization of 2D Scatter Plots")
     (description
@@ -68814,13 +68826,13 @@ readers for sas7bdat files.")
 (define-public r-sarsop
   (package
     (name "r-sarsop")
-    (version "0.6.15")
+    (version "0.6.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sarsop" version))
        (sha256
-        (base32 "0793pvfldbxnqsm0gzpwr792xvvzcr35yj75s5wc4hbv2adv9mvn"))))
+        (base32 "1jm9wn0xg5kgzd0ih7sxmdd9w873v7a0rfwj5q00w33m1ybsm4kq"))))
     (properties `((upstream-name . "sarsop")))
     (build-system r-build-system)
     (arguments

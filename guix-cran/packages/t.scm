@@ -1698,13 +1698,13 @@ representations based on these election results.")
 (define-public r-turboem
   (package
     (name "r-turboem")
-    (version "2021.1")
+    (version "2025.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "turboEM" version))
        (sha256
-        (base32 "17j308qla2680k0j8cf2c4v1jlsm21z93zglncmw3n0isa7cwjly"))))
+        (base32 "1c5045sg1y2ljnsizj4qn5l69v5gn4kn56j9xji0n302h7bk4xz0"))))
     (properties `((upstream-name . "turboEM")))
     (build-system r-build-system)
     (arguments
@@ -1712,8 +1712,7 @@ representations based on these election results.")
       #:tests? #f))
     (propagated-inputs (list r-quantreg r-numderiv r-iterators r-foreach
                              r-doparallel))
-    (home-page
-     "https://coah.jhu.edu/people/Faculty_personal_Pages/Varadhan.html")
+    (home-page "https://cran.r-project.org/package=turboEM")
     (synopsis
      "Suite of Convergence Acceleration Schemes for EM, MM and Other Fixed-Point Algorithms")
     (description
@@ -10405,13 +10404,13 @@ traffic speed or the car entries for a selected time date.")
 (define-public r-trading
   (package
     (name "r-trading")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Trading" version))
        (sha256
-        (base32 "01s1da5bramqacrqlly3gql6c8pvnd568lrpzhc13igmjwy3hs0f"))))
+        (base32 "0bhrsghba01aiqr4ji25r0h3ll32nwxhmqkfqgla7w42ngnwqbpi"))))
     (properties `((upstream-name . "Trading")))
     (build-system r-build-system)
     (arguments
@@ -12270,13 +12269,13 @@ on a third order response surface model.")
 (define-public r-torchvisionlib
   (package
     (name "r-torchvisionlib")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "torchvisionlib" version))
        (sha256
-        (base32 "1n9gvidi3lvcq730c70mzh94w42asv903708fqyqp2wrs68884na"))))
+        (base32 "05zxkiwgslvnkvk798ifasb7rgng9hapxbc98xysbbkmkqgfhffk"))))
     (properties `((upstream-name . "torchvisionlib")))
     (build-system r-build-system)
     (arguments
@@ -17449,13 +17448,13 @@ checks, saving to PDF and PNG from a pipe and various small utilities.")
 (define-public r-tidyterra
   (package
     (name "r-tidyterra")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyterra" version))
        (sha256
-        (base32 "14c8vlqsc0gp43gdxx8ddzn6zfji8chbxr6a95k8g0rf5jb6v1kv"))))
+        (base32 "0pwbyza90izmd283lawkn9v0ic5yqs9h4610n50navk8fa29gz54"))))
     (properties `((upstream-name . "tidyterra")))
     (build-system r-build-system)
     (arguments
@@ -23629,13 +23628,13 @@ in the RStudio viewer pane, Shiny apps and RMarkdown documents.")
 (define-public r-texposition
   (package
     (name "r-texposition")
-    (version "2.6.10.1")
+    (version "2.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TExPosition" version))
        (sha256
-        (base32 "0psdm35g7h7d8cr3xlyq8akr0qrbl44d5pnsaf535cs5pmqdp87b"))))
+        (base32 "0d88n315gxnnchbbfj7gza9z50804slmdgx3j6argyalqsgq47bc"))))
     (properties `((upstream-name . "TExPosition")))
     (build-system r-build-system)
     (arguments
@@ -24992,13 +24991,13 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
 (define-public r-tern
   (package
     (name "r-tern")
-    (version "0.9.7")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern" version))
        (sha256
-        (base32 "0a7rl7k08m75l97q5gz95926ii994p1nvh50x9v8gxv77y0p8950"))))
+        (base32 "03h3v1as96w96gdknxnjacqxc2yp6vxkakwaxjr79shh9dhsww4r"))))
     (properties `((upstream-name . "tern")))
     (build-system r-build-system)
     (arguments

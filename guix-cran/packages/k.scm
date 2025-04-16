@@ -5494,13 +5494,13 @@ in Vargas Sepulveda (2024) <doi:10.48550/@code{arXiv.2408.09618>}.")
 (define-public r-kelvin
   (package
     (name "r-kelvin")
-    (version "2.0-2")
+    (version "2.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kelvin" version))
        (sha256
-        (base32 "0hjycqga3yjrzpgc911nk64nsjrpim4v7219f7iwi1snx0ydhqzf"))))
+        (base32 "0wbrbyq33hjqnml369iljijwslwr8gzphkissnfx15q68f8zcffp"))))
     (properties `((upstream-name . "kelvin")))
     (build-system r-build-system)
     (arguments

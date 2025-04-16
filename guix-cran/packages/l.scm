@@ -18443,13 +18443,13 @@ powerful language detection API.")
 (define-public r-langevitour
   (package
     (name "r-langevitour")
-    (version "0.7")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "langevitour" version))
        (sha256
-        (base32 "1q1g2rz5z7wpk5fb0d2rcxw8hi8frs9360n2z6zv8d376r9i1lfr"))))
+        (base32 "17194spqad0aqqglqxxm57l25196frs1x2l9fj2h9xb67187w7ki"))))
     (properties `((upstream-name . "langevitour")))
     (build-system r-build-system)
     (arguments

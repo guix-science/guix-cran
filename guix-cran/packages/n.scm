@@ -2241,13 +2241,13 @@ adaptive way and compare different NP classifiers.")
 (define-public r-nprobust
   (package
     (name "r-nprobust")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nprobust" version))
        (sha256
-        (base32 "1vry64r3xms6xls6bqq918prjyhs5svhl2yjvq0jxycaaqw2sgyp"))))
+        (base32 "08ms4jcy9h9yp1vrvj7vabilykhdx5v03wcy3z945xvbi2g1s4xi"))))
     (properties `((upstream-name . "nprobust")))
     (build-system r-build-system)
     (arguments
@@ -12898,13 +12898,13 @@ H. French. (2013) <doi:10.1109/ACCESS.2013.2267611>.")
 (define-public r-netseg
   (package
     (name "r-netseg")
-    (version "1.0-2")
+    (version "1.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netseg" version))
        (sha256
-        (base32 "1idj5xgd3yacy92qf4836vl18d93g4xn0za6qk722qbxa069mfyi"))))
+        (base32 "17q6slmnb6cgssvzsywrs3pkc3ganw0hsx64zyjx5wjfbm8fp1a3"))))
     (properties `((upstream-name . "netseg")))
     (build-system r-build-system)
     (arguments
@@ -14618,13 +14618,13 @@ considered experimental and unsupported.")
 (define-public r-neojags
   (package
     (name "r-neojags")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neojags" version))
        (sha256
-        (base32 "095m133almpw84yaw0sh1qngjsf30gl6yxp83gyaaysrjmz3i9yq"))))
+        (base32 "09mgz2zbhqnflq23h89r66b16fbmmx495alqi77sjb6ski3jj3nk"))))
     (properties `((upstream-name . "neojags")))
     (build-system r-build-system)
     (arguments

@@ -95,13 +95,13 @@ package is not supported by Zoom (owner of the software).")
 (define-public r-zoomerjoin
   (package
     (name "r-zoomerjoin")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zoomerjoin" version))
        (sha256
-        (base32 "0bj5rmagm9f7qz0d6y698ipwcns4l2iz1mwcvn6dccpj2fnhn6m6"))))
+        (base32 "0z5nvpxmmawbjbw2iiah74h9pwn3p6s7lfn4apkz2ay0f9ynkwf8"))))
     (properties `((upstream-name . "zoomerjoin")))
     (build-system r-build-system)
     (arguments

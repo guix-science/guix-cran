@@ -526,13 +526,13 @@ likelihoods or log-predictive likelihoods as in Ando, T., & Tsay, R. (2010)
 (define-public r-ympes
   (package
     (name "r-ympes")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ympes" version))
        (sha256
-        (base32 "1180vmgicjzysd8lxgq5m17f3mchgj41n8g4yf2903s33sxkmb8c"))))
+        (base32 "1v0kbi3arfxlhdhcn6yrnkviwdg03p4hn5k2kcf3kg1jkagykzdp"))))
     (properties `((upstream-name . "ympes")))
     (build-system r-build-system)
     (arguments
@@ -612,13 +612,13 @@ compute Asymmetry Index (AI) and bilateral (L+R) measures and reshape the data."
 (define-public r-ymd
   (package
     (name "r-ymd")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ymd" version))
        (sha256
-        (base32 "0xw8qf9dzih6jwrld45dhy47pmvsphk9fwkccygmm153x724aama"))))
+        (base32 "009br3vjv816iazdxxhwl2773zi6pbfqycc86k1xar85qjgl04ir"))))
     (properties `((upstream-name . "ymd")))
     (build-system r-build-system)
     (arguments

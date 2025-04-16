@@ -1108,13 +1108,13 @@ switching between week-based date definitions.")
 (define-public r-awdb
   (package
     (name "r-awdb")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "awdb" version))
        (sha256
-        (base32 "1avkxh5y5h5bj7733s00c4f13z1fcdwscwkvhq62rssh7mqd22br"))))
+        (base32 "0bpq4w17f4zx9r9awfyc0h5gdlb18kzwrnnxsk3f2ad7qbkxlh8i"))))
     (properties `((upstream-name . "awdb")))
     (build-system r-build-system)
     (arguments
@@ -9024,13 +9024,13 @@ API reference <https://developers.arcgis.com/rest/places/>.")
 (define-public r-arcgislayers
   (package
     (name "r-arcgislayers")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgislayers" version))
        (sha256
-        (base32 "1bzrnkrj08zv7sb2phpnpimmb224g5z9jm5s067l8ajbxp7gainv"))))
+        (base32 "0nn2pw3ms44sv5ijijqppwpkd7bfdpml8k1f36lpw5bxxi0kcjnj"))))
     (properties `((upstream-name . "arcgislayers")))
     (build-system r-build-system)
     (arguments
@@ -9046,7 +9046,7 @@ API reference <https://developers.arcgis.com/rest/places/>.")
                              r-cli
                              r-arcpbf
                              r-arcgisutils))
-    (home-page "https://r.esri.com/arcgislayers/")
+    (home-page "https://developers.arcgis.com/r-bridge")
     (synopsis "An Interface to ArcGIS Data Services")
     (description
      "Enables users of @code{ArcGIS} Enterprise', @code{ArcGIS} Online', or
@@ -9444,13 +9444,13 @@ shark and ray growth studies: strengths, weaknesses and the future\"
 (define-public r-aquality
   (package
     (name "r-aquality")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AQuality" version))
        (sha256
-        (base32 "09ikijjbgh8gk5glh2w79879f2cq3a65f3injrylafzgww5677i4"))))
+        (base32 "1a74w1yv058bzy3cxw75hcd3bry0v3n3f0j7sjzi807yhf7vm3sd"))))
     (properties `((upstream-name . "AQuality")))
     (build-system r-build-system)
     (arguments
@@ -9465,8 +9465,10 @@ measurement of the chemical components of water numerically or graphically.
 quality of measurements of chemical components of a sample of water.  If one or
 more measurements include an error, the generated graph will indicate it with a
 position of the point that represents the sample outside the confidence
-interval.  The function CI allows to evaluate the possibility of contamination
-of a water sample after being obtained.")
+interval.  The function @code{CI()} allows to evaluate the possibility of
+contamination of a water sample after being obtained. @code{Validation()} is a
+function that allows to calculate the quality parameters of a technique for the
+measurement of a chemical component.")
     (license license:gpl2)))
 
 (define-public r-aquaenv

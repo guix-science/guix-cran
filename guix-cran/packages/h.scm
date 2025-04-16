@@ -788,6 +788,37 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
 <doi:10.18637/jss.v109.i08>.")
     (license license:gpl2+)))
 
+(define-public r-hyper-gam
+  (package
+    (name "r-hyper-gam")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hyper.gam" version))
+       (sha256
+        (base32 "02qh6rk4pkad5nyz02q65j6wgdr6l0xn47axk26lgama6dbzgah4"))))
+    (properties `((upstream-name . "hyper.gam")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plotly
+                             r-nlme
+                             r-mgcv
+                             r-groupedhyperframe
+                             r-cli
+                             r-caret))
+    (native-inputs (list r-quarto))
+    (home-page "https://cran.r-project.org/package=hyper.gam")
+    (synopsis "Generalized Additive Models with Hyper Column")
+    (description
+     "Generalized additive models with a numeric hyper column tabulated on a common
+grid.  Sign-adjustment based on the correlation of model prediction and a
+selected slice of the hyper column.  Visualization of the integrand surface over
+the hyper column.")
+    (license license:gpl2)))
+
 (define-public r-hyper-fit
   (package
     (name "r-hyper-fit")
@@ -5476,13 +5507,13 @@ using the targetscan.org API.")
 (define-public r-hnp
   (package
     (name "r-hnp")
-    (version "1.2-6")
+    (version "1.2-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hnp" version))
        (sha256
-        (base32 "12cbc353ipr2rcc93skf1766g38j1pvpdkqk3cswv0cxsjl2x7pl"))))
+        (base32 "0wwk50ncw2ryv9b3km1fafaf87q6b0wa6qlmkpbn59j0mq8jjf02"))))
     (properties `((upstream-name . "hnp")))
     (build-system r-build-system)
     (arguments
@@ -10981,6 +11012,31 @@ same data set, e.g., clustered and ordered by a supervised clustering method.")
 dependent variables, and calculates the related heatmap fit statistic described
 in Esarey and Pierce (2012) <DOI:10.1093/pan/mps026>.")
     (license license:gpl2+)))
+
+(define-public r-heatindex
+  (package
+    (name "r-heatindex")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heatindex" version))
+       (sha256
+        (base32 "0xncg2kkvxghyhpbwbpldwz5f91xjcqsidk16wj5nbvx44hrl89c"))))
+    (properties `((upstream-name . "heatindex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://heatindex.org")
+    (synopsis "Calculating Heat Stress")
+    (description
+     "This package implements the simpler and faster heat index, which matches the
+values of the original 1979 heat index and its 2022 extension for air
+temperatures above 300 K (27 C, 80 F) and with only minor differences at lower
+temperatures.")
+    (license license:expat)))
 
 (define-public r-heatex
   (package

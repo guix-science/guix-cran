@@ -12482,13 +12482,13 @@ models (glm) and local polynomial regression fittings (loess).")
 (define-public r-predhy-gui
   (package
     (name "r-predhy-gui")
-    (version "2.0.1")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predhy.GUI" version))
        (sha256
-        (base32 "04grfxb18vqhdh3ylq7dm3z3kal21nkr33pgj9698lzy1gn6ki22"))))
+        (base32 "1cpdh7d7h6d03wbhrrgfx01q1n998dq07jrk0702ydvq4zqga0ia"))))
     (properties `((upstream-name . "predhy.GUI")))
     (build-system r-build-system)
     (arguments
@@ -16093,13 +16093,13 @@ randomized objective functions\" <@code{arXiv:1806.11544>}.")
 (define-public r-postdoc
   (package
     (name "r-postdoc")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "postdoc" version))
        (sha256
-        (base32 "0169wgld7snnfm447nw3hsjxy8sw9vkvlh6cmvdz30wpb869c8xm"))))
+        (base32 "1605yy7rh5vn1sydwawjb2p586i1zh6j4ibj3srb2rjij0pn4xil"))))
     (properties `((upstream-name . "postdoc")))
     (build-system r-build-system)
     (arguments
@@ -19022,13 +19022,13 @@ Liao et al. (2021) <doi:10.1007/s00122-021-03834-x>.")
 (define-public r-polykde
   (package
     (name "r-polykde")
-    (version "1.0.0")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polykde" version))
        (sha256
-        (base32 "1w9i24g42arxzwiy8pv52dj86p3ym3cf7pknzn2481frdihij10k"))))
+        (base32 "10qymk31iq7c9ia41ycgbrmgbk9nvgyqhpvdgz6phxzzmydv75kx"))))
     (properties `((upstream-name . "polykde")))
     (build-system r-build-system)
     (arguments
@@ -19049,10 +19049,10 @@ Liao et al. (2021) <doi:10.1007/s00122-021-03834-x>.")
     (home-page "https://github.com/egarpor/polykde")
     (synopsis "Polyspherical Kernel Density Estimation")
     (description
-     "Kernel density estimation on the polysphere, hypersphere, and circle.  Includes
-functions for density estimation, regression estimation, ridge estimation,
-bandwidth selection, kernels, samplers, and homogeneity tests.  Companion
-package to GarcÃ­a-PortuguÃ©s and MeilÃ¡n-Vila (2024)
+     "Kernel density estimation on the polysphere, (hyper)sphere, and circle.
+Includes functions for density estimation, regression estimation, ridge
+estimation, bandwidth selection, kernels, samplers, and homogeneity tests.
+Companion package to GarcÃ­a-PortuguÃ©s and MeilÃ¡n-Vila (2024)
 <doi:10.48550/@code{arXiv.2411.04166>} and GarcÃ­a-PortuguÃ©s and MeilÃ¡n-Vila
 (2023) <doi:10.1007/978-3-031-32729-2_4>.")
     (license license:gpl3)))
@@ -26012,13 +26012,13 @@ Network (CRAN).")
 (define-public r-pkgdiff
   (package
     (name "r-pkgdiff")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgdiff" version))
        (sha256
-        (base32 "1pzddz10zd75rd1gy5h2rzz6zl0gmlg3mkrpm399wabm2w02whba"))))
+        (base32 "0m9m012sslr60wgji4gp8bjrj3665zvc9xfyfa9d84qpmfl2zvda"))))
     (properties `((upstream-name . "pkgdiff")))
     (build-system r-build-system)
     (arguments
@@ -33686,13 +33686,13 @@ Barden R. and Kasprzyk-Hordern B. (2022)
 (define-public r-periscope2
   (package
     (name "r-periscope2")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "periscope2" version))
        (sha256
-        (base32 "00zjap5l8aqyn6ykf3vmhsgiahkkgzkakjzc7z0wlm5ksv0cskdm"))))
+        (base32 "17ajm827qq7x7w6gskg66zvkq49bxfvpwj0a7ynd7agk4vrhlfyj"))))
     (properties `((upstream-name . "periscope2")))
     (build-system r-build-system)
     (arguments
@@ -36646,19 +36646,20 @@ extracted data.")
 (define-public r-pdfsearch
   (package
     (name "r-pdfsearch")
-    (version "0.3.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdfsearch" version))
        (sha256
-        (base32 "0mk1s8b7cdz025xn9kg5xnw388sndhjm80ckf71daxviknrzcscf"))))
+        (base32 "02kz05zxsb8x9ldfk57rvy41ga4iq03qv0v78dpnaqz2xfq45g5c"))))
     (properties `((upstream-name . "pdfsearch")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tokenizers r-tibble r-stringi r-pdftools))
+    (propagated-inputs (list r-tokenizers r-tibble r-stringi r-readr
+                             r-pdftools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lebebr01/pdfsearch")
     (synopsis "Search Tools for PDF Files")

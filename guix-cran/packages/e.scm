@@ -13175,13 +13175,13 @@ available).")
 (define-public r-envcpt
   (package
     (name "r-envcpt")
-    (version "1.1.3")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EnvCpt" version))
        (sha256
-        (base32 "1zv2x3svlqrfchr9j4bk2w2sx75zl4886pqk1c1sx5glqrkdbfki"))))
+        (base32 "0fdiklp87b8p1k6m83lhyyhvsda2094a10a6yvlpa0yd89bfd8jg"))))
     (properties `((upstream-name . "EnvCpt")))
     (build-system r-build-system)
     (arguments
@@ -19953,13 +19953,13 @@ the UCI Machine Learning Repository.")
 (define-public r-eegkit
   (package
     (name "r-eegkit")
-    (version "1.0-4")
+    (version "1.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eegkit" version))
        (sha256
-        (base32 "1r1lack4ps9hwqq56rq37431rcxf3x79zgvda6vrmh4s0ziy6v4x"))))
+        (base32 "0xlgc963aicb7m1qc261g047qp2vpqmbwh633w8q3k72jlzgnv9q"))))
     (properties `((upstream-name . "eegkit")))
     (build-system r-build-system)
     (arguments
@@ -22629,13 +22629,13 @@ Approach to Ecological Analysis and Inference''.  Politica, Aarhus, Denmark.")
 (define-public r-ecolottery
   (package
     (name "r-ecolottery")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecolottery" version))
        (sha256
-        (base32 "0w5aq1aaqzz74vlj8hgnmn60l8rdrchx022dpspqnpvpzdlh65z5"))))
+        (base32 "0286c12ri07z28w345iji52gqx9xxxc6ni4f7nr2g2wamr4il7jb"))))
     (properties `((upstream-name . "ecolottery")))
     (build-system r-build-system)
     (arguments
@@ -22647,7 +22647,7 @@ Approach to Ecological Analysis and Inference''.  Politica, Aarhus, Denmark.")
     (synopsis "Coalescent-Based Simulation of Ecological Communities")
     (description
      "Coalescent-Based Simulation of Ecological Communities as proposed by Munoz et
-al. (2017) <doi:10.13140/RG.2.2.31737.26728>.  The package includes a tool for
+al. (2018) <doi:10.1111/2041-210X.12918>.  The package includes a tool for
 estimating parameters of community assembly by using Approximate Bayesian
 Computation.")
     (license license:gpl2+)))
@@ -23343,29 +23343,29 @@ described in Hardt and Kurz (2020) <doi:10.2139/ssrn.3418383>.")
 (define-public r-echogram
   (package
     (name "r-echogram")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echogram" version))
        (sha256
-        (base32 "0kir7x32fk3fc63kr3b2j0hfkmivs2pwrlxyjvdg7xqc59hjp3ma"))))
+        (base32 "0px5i1daa16x23knc7jzhy65p4gqhqvgqp0rs74jc5rs59wkjn4p"))))
     (properties `((upstream-name . "echogram")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-readhac r-geosphere))
+    (propagated-inputs (list r-readhac r-pals r-geosphere))
     (home-page "https://github.com/hvillalo/echogram")
     (synopsis "Echogram Visualisation and Analysis")
     (description
      "Easily import multi-frequency acoustic data stored in HAC files (see
-<http://biblio.uqar.ca/archives/30005500.pdf> for more information on the
-format), and produce echogram visualisations with predefined or customized color
-palettes.  It is also possible to merge consecutive echograms; mask or delete
-unwanted echogram areas; model and subtract background noise; and more
-important, develop, test and interpret different combinations of frequencies in
-order to perform acoustic filtering of the echogram's data.")
+<doi:10.17895/ices.pub.5482> for more information on the format), and produce
+echogram visualisations with predefined or customized color palettes.  It is
+also possible to merge consecutive echograms; mask or delete unwanted echogram
+areas; model and subtract background noise; and more important, develop, test
+and interpret different combinations of frequencies in order to perform acoustic
+filtering of the echogram's data.")
     (license license:gpl3)))
 
 (define-public r-echo-find

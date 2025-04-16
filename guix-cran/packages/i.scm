@@ -4113,13 +4113,13 @@ rate of green (IRG) according to methods described in Bischoff et al. (2012)
 (define-public r-irfcb
   (package
     (name "r-irfcb")
-    (version "0.4.3")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iRfcb" version))
        (sha256
-        (base32 "0prmsr4slgwdfv7qri6h2k40504jswdnp6kghi35i2vkak35fd6k"))))
+        (base32 "0sq6m8ns6fxk2g069qcykyhpgiqqiwmqslriq7m6a3a3hqjvfbm5"))))
     (properties `((upstream-name . "iRfcb")))
     (build-system r-build-system)
     (arguments
@@ -9516,13 +9516,13 @@ series (e.g. the ECA&D station data).")
 (define-public r-inposition
   (package
     (name "r-inposition")
-    (version "0.12.7.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "InPosition" version))
        (sha256
-        (base32 "0d9c7dwaa1v0j8p5ff9223fc2gkbmbvyqylma2d8l4x5m92jmkv0"))))
+        (base32 "1vnpslffnq4wabqw35i4gvcyf7c0hdxs1a8s36bx3x2c8vdqwqln"))))
     (properties `((upstream-name . "InPosition")))
     (build-system r-build-system)
     (arguments
@@ -11837,13 +11837,13 @@ cohort.")
 (define-public r-incidence2
   (package
     (name "r-incidence2")
-    (version "2.6.1")
+    (version "2.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incidence2" version))
        (sha256
-        (base32 "0m5h0jpg7c32gi29a7d8xwqgmg2z4jypiw40l7kgz6qzdp87qhgz"))))
+        (base32 "1lb7x11lriw3q3rdk3fl4cvw9f9i9cn9j07igr7vyphmg645l1hb"))))
     (properties `((upstream-name . "incidence2")))
     (build-system r-build-system)
     (arguments

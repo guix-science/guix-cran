@@ -43,13 +43,13 @@
 (define-public r-qz
   (package
     (name "r-qz")
-    (version "0.2-3")
+    (version "0.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QZ" version))
        (sha256
-        (base32 "14szpp8yv315wjn4d35l858bzkv2pd4s720ib921wsvpgn3xfx5d"))))
+        (base32 "1czsppcd2b81ylx1spzmphv6fdi9k17wbszvw9nsdkdqq1vbl4q7"))))
     (properties `((upstream-name . "QZ")))
     (build-system r-build-system)
     (arguments

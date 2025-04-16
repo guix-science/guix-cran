@@ -3650,13 +3650,13 @@ for more information about TRIM.")
 (define-public r-rtriangle
   (package
     (name "r-rtriangle")
-    (version "1.6-0.14")
+    (version "1.6-0.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTriangle" version))
        (sha256
-        (base32 "04x7xyyrh2hz556iv133iynf0vy17g8m4bli9jb6b1inrq6bdg9v"))))
+        (base32 "01j3xpz0if82km6q2x7ya80lg8i8vbyqz0vclka2h6rc2p3wbidi"))))
     (properties `((upstream-name . "RTriangle")))
     (build-system r-build-system)
     (arguments
@@ -4328,13 +4328,13 @@ statistics on income and living conditions surveys.")
 (define-public r-rtiktoken
   (package
     (name "r-rtiktoken")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtiktoken" version))
        (sha256
-        (base32 "0ykrwhf9h8mqy434w32gind3xfcvkrk5msk5f5i642l6nd6phcw5"))))
+        (base32 "1rcmbpd1r614cr220civrysvi8va8vs8xpxqydknhx4kqdzhg6s3"))))
     (properties `((upstream-name . "rtiktoken")))
     (build-system r-build-system)
     (arguments
@@ -14616,13 +14616,13 @@ functions, please refer to \"Enhanced Aggregation, Cube, Grouping and Rollup\"
 (define-public r-rollmatch
   (package
     (name "r-rollmatch")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rollmatch" version))
        (sha256
-        (base32 "099nc02gxcd8vma9lpdiw449bcq7shp8p5z5ldj9bawll32k91sz"))))
+        (base32 "1khbzazg23ccjbjv02zhg2448vzc60zywjg4xnqn09i49ycnv854"))))
     (properties `((upstream-name . "rollmatch")))
     (build-system r-build-system)
     (arguments
@@ -19333,13 +19333,13 @@ to the @code{NetLogo} Mathematica Link
 (define-public r-rnetcdf
   (package
     (name "r-rnetcdf")
-    (version "2.9-2")
+    (version "2.10-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNetCDF" version))
        (sha256
-        (base32 "0cdksiaai9wc4dyk3k01f9q9ki19r94p77rwpy4kr55hvwnrqx8m"))))
+        (base32 "0llk4s0bf3r3knsn7ih2b6rym20wg13nsdfvv5v9hxvkyyl7yfa0"))))
     (properties `((upstream-name . "RNetCDF")))
     (build-system r-build-system)
     (arguments
@@ -20483,13 +20483,13 @@ Wada, Kawano & Tsubaki (2020) <doi:10.17713/ajs.v49i2.872>.")
 (define-public r-rmsb
   (package
     (name "r-rmsb")
-    (version "1.1-1")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmsb" version))
        (sha256
-        (base32 "1f33wv5bjqp59r4sdz8c3ckxhv4xz3clnsswpqxx6zagm7v572vp"))))
+        (base32 "005zlbffcma0vlcp3q0g45432mrl0xz0hb3sg3l62ix5nncmpnx6"))))
     (properties `((upstream-name . "rmsb")))
     (build-system r-build-system)
     (arguments
@@ -23479,6 +23479,44 @@ management, fuel modeling, ecology, natural resource management, climate,
 conservation, etc., via the LANDFIRE (<https://www.landfire.gov/index.php>)
 Product Service ('LFPS') API.")
     (license license:expat)))
+
+(define-public r-rlakehabitat
+  (package
+    (name "r-rlakehabitat")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rLakeHabitat" version))
+       (sha256
+        (base32 "1i6dkh0dv4fhnflsfyg96yi318yx2g7l5kpvlg3bllhmhsax3dbc"))))
+    (properties `((upstream-name . "rLakeHabitat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyterra
+                             r-terra
+                             r-sf
+                             r-rlakeanalyzer
+                             r-isoband
+                             r-gstat
+                             r-ggplot2
+                             r-gganimate
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/tristanblechinger/rlakehabitat")
+    (synopsis "Interpolate Bathymetry and Quantify Physical Aquatic Habitat")
+    (description
+     "Offers bathymetric interpolation using Inverse Distance Weighted and Ordinary
+Kriging via the gstat and terra packages.  Other functions focus on quantifying
+physical aquatic habitats (e.g., littoral, epliminion, metalimnion, hypolimnion)
+from interpolated digital elevation models (DEMs).  Functions were designed to
+calculate these metrics across water levels for use in reservoirs but can be
+applied to any DEM and will provide values for fixed conditions.  Parameters
+like Secchi disk depth or estimated photic zone, thermocline depth, and water
+level fluctuation depth are included in most functions.")
+    (license license:gpl3+)))
 
 (define-public r-rlakeanalyzer
   (package
@@ -34998,26 +35036,36 @@ following page: <https://ideas.repec.org/api.html>.")
 (define-public r-repeatedhighdim
   (package
     (name "r-repeatedhighdim")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RepeatedHighDim" version))
        (sha256
-        (base32 "17zgmw78lz6ymz8371g03kasfnrj5z9dhhfpgjpfq4ba3g0mvxlx"))))
+        (base32 "0ww3x65nflhfy4p2k5vgbiqnnxbzszrqsnn3ikpcbyfd298v5bm5"))))
     (properties `((upstream-name . "RepeatedHighDim")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rgl
+    (propagated-inputs (list r-seuratobject
+                             r-seurat
+                             r-scales
+                             r-rlang
+                             r-rgl
+                             r-rcolorbrewer
                              r-progress
+                             r-patchwork
                              r-nlme
                              r-netmeta
                              r-mvtnorm
                              r-mass
+                             r-ggplot2
                              r-geometry
-                             r-ddalpha))
+                             r-ddalpha
+                             r-complexheatmap
+                             r-circlize
+                             r-alphahull))
     (home-page "https://software.klausjung-lab.de")
     (synopsis "Methods for High-Dimensional Repeated Measures Data")
     (description
@@ -38196,13 +38244,13 @@ multi-rater coding of CRT-2 items.")
 (define-public r-refitme
   (package
     (name "r-refitme")
-    (version "1.2.2")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refitME" version))
        (sha256
-        (base32 "125hxp24vlwg3g0v1rlhi3zbvnnzyj95a6d9f52f98hf6bp05yhb"))))
+        (base32 "1mxj0yly4z4nn5dp34m5s7g02v1lfpn3b3qgc9dkvrlvq25ki0wm"))))
     (properties `((upstream-name . "refitME")))
     (build-system r-build-system)
     (arguments
@@ -38210,7 +38258,6 @@ multi-rater coding of CRT-2 items.")
       #:tests? #f))
     (propagated-inputs (list r-vgamdata
                              r-vgam
-                             r-semipar
                              r-scales
                              r-sandwich
                              r-mvtnorm
@@ -45001,13 +45048,13 @@ contributors to both @code{QuantLib} and Quantuccia'.")
 (define-public r-rcppplanc
   (package
     (name "r-rcppplanc")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppPlanc" version))
        (sha256
-        (base32 "0nd87vzya49gmvbbl65cxx8dcf5xiliwblqlbh1g15djmi0i3xk6"))))
+        (base32 "1pfq5ykfyx654r76srwbp5gy0bjkmzvnv2x83vr79pflafnvdrnf"))))
     (properties `((upstream-name . "RcppPlanc")))
     (build-system r-build-system)
     (arguments
@@ -46584,13 +46631,13 @@ in teaching statistics at University of Cadiz (UCA).")
 (define-public r-rcmdrplugin-temis
   (package
     (name "r-rcmdrplugin-temis")
-    (version "0.7.10")
+    (version "0.7.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.temis" version))
        (sha256
-        (base32 "02rs5xdj6g57frndc87fly0ans16584j4d0rfpy1h72655cz66ab"))))
+        (base32 "01yjab45fwkzncix7wqh8ym5afgrf5vgh16ipqkhd0bdv96pfd0p"))))
     (properties `((upstream-name . "RcmdrPlugin.temis")))
     (build-system r-build-system)
     (arguments
@@ -46616,8 +46663,8 @@ text mining tasks such as importing and cleaning a corpus, and analyses like
 terms and documents counts, vocabulary tables, terms co-occurrences and
 documents similarity measures, time series analysis, correspondence analysis and
 hierarchical clustering.  Corpora can be imported from spreadsheet-like files,
-directories of raw text files, Twitter queries, as well as from Dow Jones
-Factiva', @code{LexisNexis}', Europresse and Alceste files.")
+directories of raw text files, as well as from Dow Jones Factiva',
+@code{LexisNexis}', Europresse and Alceste files.")
     (license license:gpl2+)))
 
 (define-public r-rcmdrplugin-teachstat
@@ -49337,13 +49384,13 @@ Roeder, A. Ngonga (2019) <@code{arXiv:1903.10326>}.")
 (define-public r-rbm25
   (package
     (name "r-rbm25")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbm25" version))
        (sha256
-        (base32 "0iz2knnva5zbw5gpmfqgshk3v6xsnxsfk180q1pqqrcm134fh31j"))))
+        (base32 "191qi8fqmkmmayjdh15m4v9wzn2vf0iigvvavy0qw3snhfp31ad3"))))
     (properties `((upstream-name . "rbm25")))
     (build-system r-build-system)
     (arguments
@@ -57071,13 +57118,13 @@ the visualization into R. Based on the 3dmol.js and the htmlwidgets R package.")
 (define-public r-r311
   (package
     (name "r-r311")
-    (version "0.3.7")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r311" version))
        (sha256
-        (base32 "1gnyccin2f6wg7g2knnzsckkf3wrfb6xrkw8cg2z9db61nxacdrq"))))
+        (base32 "07x3b5d36chvrqxcrs923sriwyhpks16imf0lpfnmrmzm9cgsiis"))))
     (properties `((upstream-name . "r311")))
     (build-system r-build-system)
     (arguments
@@ -57085,7 +57132,7 @@ the visualization into R. Based on the 3dmol.js and the htmlwidgets R package.")
       #:tests? #f))
     (propagated-inputs (list r-jsonlite r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/jslth/r311")
+    (home-page "https://ropengov.github.io/r311/")
     (synopsis "Interface to the 'open311' Standard")
     (description
      "Access and handle APIs that use the international open311 @code{GeoReport} v2

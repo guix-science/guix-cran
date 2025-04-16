@@ -2008,13 +2008,13 @@ Krantz (2023) <https://www.ssrn.com/abstract=4537867>.")
 (define-public r-osmapir
   (package
     (name "r-osmapir")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osmapiR" version))
        (sha256
-        (base32 "0ws9dvcnc3zmdgzyx01bhhix2c6fackgzivkhypipybb9m8z6cc1"))))
+        (base32 "1rnzzpf30f124yvgzws7k7aiga29gkqcx20n0d1ig0j4qdqd5iq8"))))
     (properties `((upstream-name . "osmapiR")))
     (build-system r-build-system)
     (arguments
@@ -9756,13 +9756,13 @@ more information, documentation and examples.")
 (define-public r-omopviewer
   (package
     (name "r-omopviewer")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopViewer" version))
        (sha256
-        (base32 "18s9k2fc9lzzn3skyfvsl8w3lqgwl902isy02qixwpas1qdv285v"))))
+        (base32 "1kjya9mrjwi7g71b3s22gl0bgb0l0j5wfmgvznwmhqkaga33fkp3"))))
     (properties `((upstream-name . "OmopViewer")))
     (build-system r-build-system)
     (arguments
@@ -9784,7 +9784,6 @@ more information, documentation and examples.")
                              r-purrr
                              r-omopgenerics
                              r-markdown
-                             r-lifecycle
                              r-gt
                              r-glue
                              r-dt
@@ -9802,13 +9801,13 @@ Medical Outcomes Partnership (OMOP) common data model using shiny applications."
 (define-public r-omopsketch
   (package
     (name "r-omopsketch")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopSketch" version))
        (sha256
-        (base32 "0i095f93vapmvc7qz56n9w0ab0bhk4b1vcc7527nknycp3zzb72h"))))
+        (base32 "13013g6p714jxm4dzr2yrjnhvrgy7jrn1lvqs4am6fv4rjlr6yjl"))))
     (properties `((upstream-name . "OmopSketch")))
     (build-system r-build-system)
     (arguments

@@ -8061,13 +8061,13 @@ data.")
 (define-public r-crew-cluster
   (package
     (name "r-crew-cluster")
-    (version "0.3.4")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.cluster" version))
        (sha256
-        (base32 "1mc04hsh704088b8qs9gyz7cj3j1k509wxbb5zcac9w9flx7bxi9"))))
+        (base32 "1vfq13v6cjv0fn2hq4h684ra17k2m1b6jz1viccnpn1fvyrylvh6"))))
     (properties `((upstream-name . "crew.cluster")))
     (build-system r-build-system)
     (arguments
@@ -8090,7 +8090,7 @@ scientists asynchronously deploy long-running tasks to distributed systems,
 ranging from traditional clusters to cloud services.  The crew.cluster package
 extends the mirai'-powered crew package with worker launcher plugins for
 traditional high-performance computing systems.  Inspiration also comes from
-packages mirai by Gao (2023) <https://github.com/shikokuchuo/mirai>, future by
+packages mirai by Gao (2023) <https://github.com/r-lib/mirai>, future by
 Bengtsson (2021) <doi:10.32614/RJ-2021-048>, rrq by @code{FitzJohn} and Ashton
 (2023) <https://github.com/mrc-ide/rrq>, clustermq by Schubert (2019)
 <doi:10.1093/bioinformatics/btz284>), and batchtools by Lang, Bischl, and
@@ -8100,13 +8100,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew-aws-batch
   (package
     (name "r-crew-aws-batch")
-    (version "0.0.8")
+    (version "0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.aws.batch" version))
        (sha256
-        (base32 "0dsh2j7szxgsiphb0rq8l715g2xsp68my8nmlvwg1cbq55hm1mbp"))))
+        (base32 "0586jl73apxxiw9wxdga83zzki44a3gc3f76dnm6ry6p1kkmfhsn"))))
     (properties `((upstream-name . "crew.aws.batch")))
     (build-system r-build-system)
     (arguments
@@ -8128,7 +8128,7 @@ scientists asynchronously deploy long-running tasks to distributed systems,
 ranging from traditional clusters to cloud services.  The crew.aws.batch package
 extends the mirai'-powered crew package with a worker launcher plugin for AWS
 Batch.  Inspiration also comes from packages mirai by Gao (2023)
-<https://github.com/shikokuchuo/mirai>, future by Bengtsson (2021)
+<https://github.com/r-lib/mirai>, future by Bengtsson (2021)
 <doi:10.32614/RJ-2021-048>, rrq by @code{FitzJohn} and Ashton (2023)
 <https://github.com/mrc-ide/rrq>, clustermq by Schubert (2019)
 <doi:10.1093/bioinformatics/btz284>), and batchtools by Lang, Bischl, and
@@ -10048,13 +10048,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.1-7")
+    (version "1.1-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "1z67s3jhjsb6fna1ra72jh1d02qjpf80k4c2h5yq5f21z7s3311d"))))
+        (base32 "1zz097apm6i2b4q93ilvfgk5a29amxkrs97fdi8xnf0ss9c9xxi9"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (arguments
@@ -19743,13 +19743,13 @@ for more details.")
 (define-public r-condmvnorm
   (package
     (name "r-condmvnorm")
-    (version "2020.1")
+    (version "2025.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "condMVNorm" version))
        (sha256
-        (base32 "115pxnff2ckdxx0avbs0hfdhh1sljiz1y6h7ggd5hidrxd3559m4"))))
+        (base32 "0lgpfrsqr1q6z7vri7fdy8ncq7gf6jgggsh32g2fbqklwg4mnv96"))))
     (properties `((upstream-name . "condMVNorm")))
     (build-system r-build-system)
     (arguments
@@ -21156,13 +21156,13 @@ practitioners guide\". <DOI:10.1101/2024.03.03.24303677>.")
 (define-public r-complmrob
   (package
     (name "r-complmrob")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "complmrob" version))
        (sha256
-        (base32 "0dvkc5y53041agkjz3rl898hkq686pxzr6flf2qx1g3jbza3pk1y"))))
+        (base32 "0r7ai5mmjd6chcq634nwcwqiprpr85k5x9lcm5lqdgpbflq7jw8j"))))
     (properties `((upstream-name . "complmrob")))
     (build-system r-build-system)
     (arguments
@@ -26873,16 +26873,46 @@ overdispersed count data.  It is a Gamma-Poisson Latent Block Model.  It also
 implements two selection criteria in order to select the number of biclusters.")
     (license license:gpl3)))
 
+(define-public r-cobenrich
+  (package
+    (name "r-cobenrich")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cobenrich" version))
+       (sha256
+        (base32 "1jw1rxmlrbmpsa8129ffpm8bl4mq23a2cxib1bbrsn36zz1137mr"))))
+    (properties `((upstream-name . "cobenrich")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmvtnorm))
+    (home-page "https://cran.r-project.org/package=cobenrich")
+    (synopsis
+     "Using Multiple Continuous Biomarkers for Patient Enrichment in Two-Stage Clinical Designs")
+    (description
+     "Enrichment strategies play a critical role in modern clinical trial design,
+especially as precision medicine advances the focus on patient-specific
+efficacy.  Recent developments in enrichment design have introduced biomarker
+randomness and accounted for the correlation structure between treatment effect
+and biomarker, resulting in a two-stage threshold enrichment design.  We propose
+novel two-stage enrichment designs capable of handling two or more continuous
+biomarkers.  See Zhang, F. and Gou, J. (2025).  Using multiple biomarkers for
+patient enrichment in two-stage clinical designs.  Technical Report.")
+    (license license:gpl3)))
+
 (define-public r-cobalt
   (package
     (name "r-cobalt")
-    (version "4.5.5")
+    (version "4.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cobalt" version))
        (sha256
-        (base32 "1h1fyv2x4wjvwqjxh0hdvh1y355jbkq7n8n6bbnkskd2w5b1jv07"))))
+        (base32 "0af5zw0by6jj4hi5094gn9mskfp9v15rlrkj7p7z6aippdyhqp29"))))
     (properties `((upstream-name . "cobalt")))
     (build-system r-build-system)
     (arguments
@@ -26893,8 +26923,7 @@ implements two selection criteria in order to select the number of biclusters.")
                              r-gridextra
                              r-ggplot2
                              r-crayon
-                             r-chk
-                             r-backports))
+                             r-chk))
     (native-inputs (list r-knitr))
     (home-page "https://ngreifer.github.io/cobalt/")
     (synopsis "Covariate Balance Tables and Plots")
@@ -29063,13 +29092,13 @@ sparse latent variables can also be defined.")
 (define-public r-clustur
   (package
     (name "r-clustur")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustur" version))
        (sha256
-        (base32 "0pm8jzzd4002j8fkfni23h9506rbwb1scqw4ijd4ivmsxn1nd4sm"))))
+        (base32 "07czqkm4k0cx1h50fkviip21h65bg5xs712p5k5mp9kc7011grvw"))))
     (properties `((upstream-name . "clustur")))
     (build-system r-build-system)
     (arguments
@@ -29090,7 +29119,7 @@ Units, and you can learn more here, (Westcott SL, Schloss PD (2017)
 <doi:10.1128/mspheredirect.00073-17>).  The @code{make.shared()} command is
 always applied at the end of the clustering command.  This functionality allows
 us to generate and create clustering and abundance data efficiently.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-clusttmb
   (package
@@ -38167,13 +38196,13 @@ package.")
 (define-public r-chevron
   (package
     (name "r-chevron")
-    (version "0.2.10")
+    (version "0.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chevron" version))
        (sha256
-        (base32 "1qh0rc2bwh3m7gifrc9naa79zk9nbsk6m8bzk6k3phfbw0amn4kb"))))
+        (base32 "0vly5cpwknn41kf5lm42flrzv7f5q566cc38bn157dq4jlm46pij"))))
     (properties `((upstream-name . "chevron")))
     (build-system r-build-system)
     (arguments
@@ -38502,13 +38531,13 @@ and tries to create consistent graphical output and to be very user friendly.")
 (define-public r-chemospec
   (package
     (name "r-chemospec")
-    (version "6.1.10")
+    (version "6.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChemoSpec" version))
        (sha256
-        (base32 "0yxjhnbmvjf5kr0l3vq5j5s46c0498gfmrxm9czl7k082ibkznmg"))))
+        (base32 "055dapz7nd0vqz94b9q9j5lpy75da6bs11qiz8633mzlxj2nmpll"))))
     (properties `((upstream-name . "ChemoSpec")))
     (build-system r-build-system)
     (arguments
@@ -40606,13 +40635,13 @@ groupwise additive index models\" <doi:10.1093/biostatistics/kxac023>.")
 (define-public r-cg
   (package
     (name "r-cg")
-    (version "1.0-3")
+    (version "1.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cg" version))
        (sha256
-        (base32 "1kbyal1sicbr10yvxpwgcij710kqpi23vmndp9kyfzn3k8zfird3"))))
+        (base32 "02x4w53jiirbklhm92zv25hdyc2yp3ksa3nzad59vj1frjlj4vgb"))))
     (properties `((upstream-name . "cg")))
     (build-system r-build-system)
     (arguments
@@ -43363,13 +43392,13 @@ dataset embedded in the package.  Yifei Huang, Liping Tong, and Jie Yang
 (define-public r-cds
   (package
     (name "r-cds")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cds" version))
        (sha256
-        (base32 "1h34k96h7ajkaqsw4dlqri63hrbnshaqwrdl74wlgycdlbvrqj05"))))
+        (base32 "1cyfx13ixgyayxbznj3jjwpm52sfp7z11x5yn77ks0lw0xsv89fm"))))
     (properties `((upstream-name . "cds")))
     (build-system r-build-system)
     (arguments
@@ -43742,6 +43771,31 @@ Syst.  Sci., 12, 2769-2784, www.nat-hazards-earth-syst-sci.net/12/2769/2012/,
 on the (0, 1) interval by applying the cumulative distribution function (cdf) of
 one parent distribution to the quantile function of another.")
     (license license:gpl3)))
+
+(define-public r-cdfinv
+  (package
+    (name "r-cdfinv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cdfinv" version))
+       (sha256
+        (base32 "105p0rfbkzhfpr98qldwgwlvhl34wi90jvw74ra5xa5nb79q6yi1"))))
+    (properties `((upstream-name . "cdfinv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr r-extradistr))
+    (home-page "https://cran.r-project.org/package=cdfinv")
+    (synopsis "Confidence Interval Estimation via CDF Inversion")
+    (description
+     "Estimation of one- and two-sided confidence intervals via the numerical
+inversion of the cumulative distribution function of a statistic's sampling
+distribution.  For more details, see section 9.2.3 of Casella and Berger (2002)
+<ISBN:0534243126>.")
+    (license license:expat)))
 
 (define-public r-cder
   (package
@@ -50618,13 +50672,13 @@ used for analyzing the results from random experiments.")
 (define-public r-calidad
   (package
     (name "r-calidad")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calidad" version))
        (sha256
-        (base32 "0aafmhwas1sil59yr1jmf460nagdrv6zfi3kd5a7wdsyks6ajprq"))))
+        (base32 "17xcvi1gs6hflqbdkq9vpsjxbcgpl3khb9bv64190yylrmdvkahg"))))
     (properties `((upstream-name . "calidad")))
     (build-system r-build-system)
     (arguments
@@ -50643,8 +50697,11 @@ used for analyzing the results from random experiments.")
      "Assesses the Quality of Estimates Made by Complex Sample Designs")
     (description
      "Assesses the quality of estimates made by complex sample designs, following the
-methodology developed by the National Institute of Statistics Chile (2020,
-<https://www.ine.cl/docs/default-source/institucionalidad/buenas-pr%C3%A1cticas/clasificaciones-y-estandares/est%C3%A1ndar-evaluaci%C3%B3n-de-calidad-de-estimaciones-publicaci%C3%B3n-27022020.pdf>)
+methodology developed by the National Institute of Statistics Chile (Household
+Survey Standard 2020,
+<https://www.ine.cl/docs/default-source/institucionalidad/buenas-pr%C3%A1cticas/clasificaciones-y-estandares/est%C3%A1ndar-evaluaci%C3%B3n-de-calidad-de-estimaciones-publicaci%C3%B3n-27022020.pdf>),
+(Economics Survey Standard 2024,
+<https://www.ine.gob.cl/docs/default-source/buenas-practicas/directrices-metodologicas/estandares/documentos/est%C3%A1ndar-evaluaci%C3%B3n-de-calidad-de-estimaciones-econ%C3%B3micas.pdf?sfvrsn=201fbeb9_2>)
 and by Economic Commission for Latin America and Caribbean (2020,
 <https://repositorio.cepal.org/bitstream/handle/11362/45681/1/S2000293_es.pdf>),
 (2024,

@@ -1790,13 +1790,13 @@ regression analysis.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtsummary" version))
        (sha256
-        (base32 "0d27x881s5c0ijp0brqmibmssl8bxdcz3saasg9l4n2a6sq2008s"))))
+        (base32 "11l5mw9h069j841gsdf7q1r4k0icnwniwmmfqhwlx1qyp7pvvx2f"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (arguments
@@ -11109,13 +11109,13 @@ characteristics of different trial designs.")
 (define-public r-goldfish
   (package
     (name "r-goldfish")
-    (version "1.6.10")
+    (version "1.6.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goldfish" version))
        (sha256
-        (base32 "0y6x3zlsgq48kv5mhgcaaczjz8zlf8yvs5z7hgdc8jdzi1dl0vw8"))))
+        (base32 "1vj7vrkqhzx940z5vglz7mxmwhkdf6w6xv2x7cf9ncngghrhzhq5"))))
     (properties `((upstream-name . "goldfish")))
     (build-system r-build-system)
     (arguments
@@ -15713,6 +15713,51 @@ fitting GLMs and GAMs under Beta regression, Poisson regression, Gamma
 regression, and Binomial regression (currently GLM only) settings.  Models are
 fit using local scoring algorithms described in Hastie and Tibshirani (1990)
 <doi:10.1214/ss/1177013604>.")
+    (license license:expat)))
+
+(define-public r-gkwreg
+  (package
+    (name "r-gkwreg")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gkwreg" version))
+       (sha256
+        (base32 "1r952zbmvws1namvl9k21ghqpyn5zvw4mc3qvlfa88lg7rx0xw50"))))
+    (properties `((upstream-name . "gkwreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmb
+                             r-tidyr
+                             r-scales
+                             r-reshape2
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rappdirs
+                             r-patchwork
+                             r-numderiv
+                             r-magrittr
+                             r-gridextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-formula
+                             r-fmsb))
+    (home-page "https://cran.r-project.org/package=gkwreg")
+    (synopsis "Generalized Kumaraswamy Regression Models for Bounded Data")
+    (description
+     "This package implements regression models for bounded continuous data in the
+open interval (0,1) using the five-parameter Generalized Kumaraswamy
+distribution.  Supports modeling all distribution parameters (alpha, beta,
+gamma, delta, lambda) as functions of predictors through various link functions.
+ Provides efficient maximum likelihood estimation via Template Model Builder
+('TMB'), offering comprehensive diagnostics, model comparison tools, and
+simulation methods.  Particularly useful for analyzing proportions, rates,
+indices, and other bounded response data with complex distributional features
+not adequately captured by simpler models.")
     (license license:expat)))
 
 (define-public r-gkrls
@@ -22331,13 +22376,13 @@ projections of a latin hypercube design.")
 (define-public r-ggdmc
   (package
     (name "r-ggdmc")
-    (version "0.2.6.0")
+    (version "0.2.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggdmc" version))
        (sha256
-        (base32 "1gncv7npl548k3zd41x2gwg5qywn5rp6zb4i7ga78sy77mvi3x92"))))
+        (base32 "1dmfjc9b5833z0lp9kxw0apzk72czyxhbk2vpvz3l1m88gxnm859"))))
     (properties `((upstream-name . "ggdmc")))
     (build-system r-build-system)
     (arguments
@@ -26250,13 +26295,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "1h2yqhxznsrcdknhhgd6mxjknjxm03mcd21iz3b4fdcsk8hzsid7"))))
+        (base32 "10i3nh2ikfqi0ghz2z6cjbkfajmi2ypbmmkkghj339djgjrbp9jr"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (arguments
@@ -33975,13 +34020,13 @@ measurements.")
 (define-public r-gaselect
   (package
     (name "r-gaselect")
-    (version "1.0.22")
+    (version "1.0.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gaselect" version))
        (sha256
-        (base32 "0hk18dl851z9dnw9vd9836lr7j3wlg3kk31k185p2yyk7l821mqp"))))
+        (base32 "1ijk54qc2izgw285x1y3w30acgs7zykw1rhgi0jfm38g109ikka8"))))
     (properties `((upstream-name . "gaselect")))
     (build-system r-build-system)
     (arguments
@@ -35005,20 +35050,20 @@ elastic net and least angle regression.")
 (define-public r-gamlss-inf
   (package
     (name "r-gamlss-inf")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamlss.inf" version))
        (sha256
-        (base32 "0m091zxjm5wvhm6mzbpzkr275n3qnlb3v4099k0a1jymahk4w7vr"))))
+        (base32 "1ixjpajinfrxy0g2rn5yry67n6l86lggi3jl11zwmhh4g5qn9qmh"))))
     (properties `((upstream-name . "gamlss.inf")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-gamlss-dist r-gamlss))
-    (home-page "http://www.gamlss.com/")
+    (home-page "https://www.gamlss.com/")
     (synopsis "Fitting Mixed (Inflated and Adjusted) Distributions")
     (description
      "This is an add-on package to gamlss'.  The purpose of this package is to allow

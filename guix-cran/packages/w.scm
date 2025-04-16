@@ -181,21 +181,24 @@ smart summaries that allows you to focus on dysfunctional cases.")
 (define-public r-wxgenr
   (package
     (name "r-wxgenr")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wxgenR" version))
        (sha256
-        (base32 "1zrzd99155gh8nm4lwbg96iqwkvh8a63l53bklwgp11q2z4l3g2w"))))
+        (base32 "0gx5gyc5af3rzj9rhz3pvyhb3z5njqcg474lpwi78bhvlrd1wzaq"))))
     (properties `((upstream-name . "wxgenR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sm
+    (propagated-inputs (list r-tidyr
+                             r-sm
+                             r-qmap
                              r-plyr
                              r-msm
+                             r-mc2d
                              r-magrittr
                              r-lubridate
                              r-foreach
@@ -5027,6 +5030,49 @@ topographic position analysis), and @code{LiDAR} data processing.  Suggested
 citation: Lindsay (2016) <doi:10.1016/j.cageo.2016.07.003>.")
     (license license:expat)))
 
+(define-public r-whirl
+  (package
+    (name "r-whirl")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "whirl" version))
+       (sha256
+        (base32 "10bhpcwgv5zyvprgf9pf6ablasifly7vglapzrb334racbqljq2g"))))
+    (properties `((upstream-name . "whirl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zephyr
+                             r-yaml
+                             r-withr
+                             r-unglue
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sessioninfo
+                             r-rlang
+                             r-reticulate
+                             r-r6
+                             r-quarto
+                             r-knitr
+                             r-kableextra
+                             r-jsonlite
+                             r-dplyr
+                             r-cli
+                             r-callr))
+    (native-inputs (list r-knitr))
+    (home-page "https://novonordisk-opensource.github.io/whirl/")
+    (synopsis "Log Execution of Scripts")
+    (description
+     "Logging of scripts suitable for clinical trials using Quarto to create nice
+human readable logs.  whirl enables execution of scripts in batch, while
+simultaneously creating logs for the execution of each script, and providing an
+overview summary log of the entire batch execution.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-whippr
   (package
     (name "r-whippr")
@@ -7177,13 +7223,13 @@ Twitter data for research and commercial purposes.")
 (define-public r-weatheroz
   (package
     (name "r-weatheroz")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weatherOz" version))
        (sha256
-        (base32 "0d4nf5q2cm0pg76c3did04bnrb7zh8dsvnq8kg4gzkp29mcmg5j0"))))
+        (base32 "1gky86zhcr2fimr51knfj4ffmrjrdwzl999x460ya70mxj3n04lj"))))
     (properties `((upstream-name . "weatherOz")))
     (build-system r-build-system)
     (arguments
@@ -8034,13 +8080,13 @@ to Beguin and Hulliger (2008)
 (define-public r-waywiser
   (package
     (name "r-waywiser")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "waywiser" version))
        (sha256
-        (base32 "0zl1c687djrb78472bip1psg8szwnr7m9kzpq4x7bvabmbwvp7kw"))))
+        (base32 "0px1iahwrjzwiakjbam2ik49qc0sskc2vpl3shmv22fhxw61jdh6"))))
     (properties `((upstream-name . "waywiser")))
     (build-system r-build-system)
     (arguments

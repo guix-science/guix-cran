@@ -1326,13 +1326,13 @@ are available for seasonal unit root tests.")
 (define-public r-urlshortener
   (package
     (name "r-urlshortener")
-    (version "1.6.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "urlshorteneR" version))
        (sha256
-        (base32 "11i3q1mf911yycfifpmkqprbqklnm9s5q14wj8a1nl5g0xhns4r9"))))
+        (base32 "09v8zif81lygq5w6hrgvzdi15bhfvzjn5jz21xqy14v2665p692p"))))
     (properties `((upstream-name . "urlshorteneR")))
     (build-system r-build-system)
     (arguments
@@ -1343,7 +1343,7 @@ are available for seasonal unit root tests.")
                              r-miniui
                              r-lubridate
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-clipr
                              r-cli
                              r-assertthat))
@@ -1360,13 +1360,13 @@ analytic functions.  Specifically developed for Bit.ly (which requires OAuth
 (define-public r-urlparse
   (package
     (name "r-urlparse")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "urlparse" version))
        (sha256
-        (base32 "0csg848ic20ds31nq2ndp7j2bw6rvb1zd10b8qh1zjdshl0456hz"))))
+        (base32 "03fynxqmrfwkvnsh915r77l8sakj0v1pr4wb13xbqhhqaz44fmff"))))
     (properties `((upstream-name . "urlparse")))
     (build-system r-build-system)
     (arguments

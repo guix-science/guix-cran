@@ -44,13 +44,13 @@
 (define-public r-jwileymisc
   (package
     (name "r-jwileymisc")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JWileymisc" version))
        (sha256
-        (base32 "131knl4bsj6d9gnmxw7ij59fqddxhv3fkag2ff0rxsdmg2hymchb"))))
+        (base32 "1wi4jkd7w15l3jw5v62j40lzbjz3l1ww7g06lpr9d64wb1zxiphp"))))
     (properties `((upstream-name . "JWileymisc")))
     (build-system r-build-system)
     (arguments
@@ -3751,13 +3751,13 @@ Implementation of the method described in Angelini, De Canditiis and Plaksienko
 (define-public r-jetty
   (package
     (name "r-jetty")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jetty" version))
        (sha256
-        (base32 "0v8j6i1ivxf4wi5i7xfpmvzj6vmkjmdwmid7a4qy4aqvl87fapis"))))
+        (base32 "1f8z4ilqwwzgkba6bmy1xgd88i70wf9ycldnrzwzbmcxl0bclq7c"))))
     (properties `((upstream-name . "jetty")))
     (build-system r-build-system)
     (arguments
@@ -3998,13 +3998,13 @@ reduce user dependencies.")
 (define-public r-jdcruncher
   (package
     (name "r-jdcruncher")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JDCruncheR" version))
        (sha256
-        (base32 "0g8j437ak62dp20k5gb0pnxak3c2jspliimfjjxrm4mfayk7sc6i"))))
+        (base32 "1q0p3my7py3p33zllmw8q2kvvrmla1js6qwh059h1bv4p13zgx8s"))))
     (properties `((upstream-name . "JDCruncheR")))
     (build-system r-build-system)
     (arguments

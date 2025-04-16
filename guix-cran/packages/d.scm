@@ -1917,13 +1917,13 @@ absolute quantification under uncertainty.  See Comoglio et al. (2013)
 (define-public r-dunlin
   (package
     (name "r-dunlin")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dunlin" version))
        (sha256
-        (base32 "0q1nrjwrbxzm3xw8jhd9glgjzdp90l1snklwcwdyf8k38gg6dq05"))))
+        (base32 "027dk1cnajsbadnz4c7s6cb5s4p0f6kfadskmamymb2h6gy86b6k"))))
     (properties `((upstream-name . "dunlin")))
     (build-system r-build-system)
     (arguments
@@ -4630,13 +4630,13 @@ to create many different drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "01mlwra2vyn1yw6ada5jmw1g514i7830bsax6zdgwq0hprc77042"))))
+        (base32 "0cw0cr4nk0hv1hdpncn8mfr74lwx8wwjmnzrmr8k9rhnlkpmbiqk"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (arguments
@@ -11260,13 +11260,13 @@ the original @code{dixon2002()} function of the ecespa package to improve speed.
 (define-public r-divvy
   (package
     (name "r-divvy")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "divvy" version))
        (sha256
-        (base32 "03s76pkywxcx6kkdq7dpa0l2rvhwibzp48sb9mqbbhf713a621pi"))))
+        (base32 "0jm9f7dj10a09fl29wlsaws8ysy166ddnhj7rz7jkyafy54nwn2n"))))
     (properties `((upstream-name . "divvy")))
     (build-system r-build-system)
     (arguments
@@ -11286,7 +11286,7 @@ the original @code{dixon2002()} function of the ecespa package to improve speed.
 with three customisable methods to standardise area and extent.  Calculate
 common biodiversity and range-size metrics on subsampled data.  Background
 theory and practical considerations for the methods are described in Antell and
-others (2023) <doi:10.31223/X5997Z>.")
+others (2024) <doi:10.1017/pab.2023.36>.")
     (license license:gpl3+)))
 
 (define-public r-divseg
@@ -15289,13 +15289,13 @@ be satisfied without penalization.  Yu and Rosenbaum (2019)
 (define-public r-dipm
   (package
     (name "r-dipm")
-    (version "1.9")
+    (version "1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dipm" version))
        (sha256
-        (base32 "1hzcwjnjrhd1s31w8pnyhpfz519jvj820jyq1rdkq8qllny5jbrk"))))
+        (base32 "14ik7npakgdc22vzx64mn4rgwh5x3pbdk81h3kflcqk1392qa26g"))))
     (properties `((upstream-name . "dipm")))
     (build-system r-build-system)
     (arguments
@@ -17377,13 +17377,13 @@ clusters.")
 (define-public r-diceplot
   (package
     (name "r-diceplot")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diceplot" version))
        (sha256
-        (base32 "1xjas48r0xpg72h1r5zrgf2yhz4qmla91ffb66mkzjg4gj3fazc0"))))
+        (base32 "1k17rjkl6mscdflj6hxlz3q2jcf3angjbnghzd9cgc2lvw41v5p7"))))
     (properties `((upstream-name . "diceplot")))
     (build-system r-build-system)
     (arguments
@@ -17394,6 +17394,7 @@ clusters.")
                              r-sf
                              r-rlang
                              r-rcolorbrewer
+                             r-ggrepel
                              r-ggplot2
                              r-dplyr
                              r-data-table
@@ -22030,13 +22031,13 @@ with a focus on forestry use of resistance drilling in standing trees.")
 (define-public r-denseflmm
   (package
     (name "r-denseflmm")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "denseFLMM" version))
        (sha256
-        (base32 "1lfhd73zvvz6glq41lb2a9x63fjwjfp53zmy9g78fg6gz5lbnbpm"))))
+        (base32 "0kqawfkgpngkfnz5dhwsgznvpcvs3lq22mlh4f9sqsq5qxd4jaqg"))))
     (properties `((upstream-name . "denseFLMM")))
     (build-system r-build-system)
     (arguments
@@ -29425,13 +29426,13 @@ documentation see
 (define-public r-datareporter
   (package
     (name "r-datareporter")
-    (version "1.0.2")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataReporter" version))
        (sha256
-        (base32 "1rjm6j1s229j1j9yb5y1sdi03x22qzrkmhc09k4xdmwmwmpi3s58"))))
+        (base32 "1nh60bcg4m0a9yyxy5zkarffaj0sig5p142nvr2is6xvbha3r8az"))))
     (properties `((upstream-name . "dataReporter")))
     (build-system r-build-system)
     (arguments
@@ -29442,6 +29443,7 @@ documentation see
                              r-stringi
                              r-robustbase
                              r-rmarkdown
+                             r-rlang
                              r-pander
                              r-magrittr
                              r-htmltools
@@ -30043,13 +30045,13 @@ information from Chilean media.")
 (define-public r-datamaid
   (package
     (name "r-datamaid")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataMaid" version))
        (sha256
-        (base32 "06jywq3llwafjnpklqimra456crdi752zxci6z1w0v7p8blf4vjw"))))
+        (base32 "1k0pxygz3ga99d1c6y58nh7p0pv7kag4ncpfkcrd2i4p0v7mim58"))))
     (properties `((upstream-name . "dataMaid")))
     (build-system r-build-system)
     (arguments
@@ -30060,6 +30062,7 @@ information from Chilean media.")
                              r-stringi
                              r-robustbase
                              r-rmarkdown
+                             r-rlang
                              r-pander
                              r-magrittr
                              r-htmltools
@@ -31579,13 +31582,13 @@ methods described in Quartagno et al. (2019) <@code{arXiv:1905.00241>}.")
 (define-public r-dandefa
   (package
     (name "r-dandefa")
-    (version "1.6")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DandEFA" version))
        (sha256
-        (base32 "1ir1z76c8742vqdlwv35l4rhr0x7lhghz24g35zn7b30671lypf8"))))
+        (base32 "0sa58kcc6i7wg1saa70zx7fqqyfyy8fmxm49zr8zr08n19gcs3p5"))))
     (properties `((upstream-name . "DandEFA")))
     (build-system r-build-system)
     (arguments

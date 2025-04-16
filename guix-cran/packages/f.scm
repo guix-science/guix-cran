@@ -1054,13 +1054,13 @@ dependency as needed.")
 (define-public r-future-tests
   (package
     (name "r-future-tests")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "future.tests" version))
        (sha256
-        (base32 "1ys7nx2i8mdah22x0av99yagh8ighbb4766z8dr1g1fwni3gxp4r"))))
+        (base32 "1v1v903d94raijmy2kvzfdl6ws1ij03r2l3vbl1pmd8b32hl1lvm"))))
     (properties `((upstream-name . "future.tests")))
     (build-system r-build-system)
     (arguments
@@ -1884,6 +1884,72 @@ memory. @code{after_join()} joins two tables of events, while
 With the type argument, you can switch between different funnel types, like
 first-first and last-firstafter.")
     (license license:expat)))
+
+(define-public r-funmodisco
+  (package
+    (name "r-funmodisco")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "funMoDisco" version))
+       (sha256
+        (base32 "0qiarbb5jgkyljjprhp1qaf28gky6pbkl9z9c6r70ar7lxbp27vb"))))
+    (properties `((upstream-name . "funMoDisco")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (inputs (list))
+    (propagated-inputs (list r-zoo
+                             r-stringr
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinybusy
+                             r-shiny
+                             r-scales
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-progress
+                             r-ggtext
+                             r-ggplot2
+                             r-fda
+                             r-fastcluster
+                             r-dplyr
+                             r-dendextend
+                             r-data-table
+                             r-combinat
+                             r-class))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=funMoDisco")
+    (synopsis "Motif Discovery in Functional Data")
+    (description
+     "Efficiently implementing two complementary methodologies for discovering motifs
+in functional data: @code{ProbKMA} and @code{FunBIalign}.  Cremona and
+Chiaromonte (2023) \"Probabilistic K-means with Local Alignment for Clustering
+and Motif Discovery in Functional Data\" <doi:10.1080/10618600.2022.2156522> is a
+probabilistic K-means algorithm that leverages local alignment and fuzzy
+clustering to identify recurring patterns (candidate functional motifs) across
+and within curves, allowing different portions of the same curve to belong to
+different clusters.  It includes a family of distances and a normalization to
+discover various motif types and learns motif lengths in a data-driven manner.
+It can also be used for local clustering of misaligned data.  Di Iorio, Cremona,
+and Chiaromonte (2023) \"@code{funBIalign}: A Hierarchical Algorithm for
+Functional Motif Discovery Based on Mean Squared Residue Scores\"
+<doi:10.48550/@code{arXiv.2306.04254>} applies hierarchical agglomerative
+clustering with a functional generalization of the Mean Squared Residue Score to
+identify motifs of a specified length in curves.  This deterministic method
+includes a small set of user-tunable parameters.  Both algorithms are suitable
+for single curves or sets of curves.  The package also includes a flexible
+function to simulate functional data with embedded motifs, allowing users to
+generate benchmark datasets for validating and comparing motif discovery
+methods.")
+    (license license:gpl2+)))
 
 (define-public r-funmodeling
   (package
@@ -8137,13 +8203,13 @@ al(2023)<doi:10.1007/s11629-022-7429-z>.")
 (define-public r-forestploter
   (package
     (name "r-forestploter")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestploter" version))
        (sha256
-        (base32 "15wx7kjawr11hajq4s1b7wv5klwzmyjn5ad6x8g4kwxvzlgzk2bl"))))
+        (base32 "0mbk6692w3w2sny2sl3pg94j46k13vgfd84zqhyvmr75ihxzgrhb"))))
     (properties `((upstream-name . "forestploter")))
     (build-system r-build-system)
     (arguments
@@ -12318,13 +12384,13 @@ registration).  Low memory footprint.")
 (define-public r-flexreg
   (package
     (name "r-flexreg")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FlexReg" version))
        (sha256
-        (base32 "15vl2wfvplydjgdgcb4gla02n6hx9lljnw20r5rvhw4ll6ahr110"))))
+        (base32 "0i201vqgyvb59h94b63zw95p58in0haqbxb9nnvf3113ckmipizy"))))
     (properties `((upstream-name . "FlexReg")))
     (build-system r-build-system)
     (arguments
@@ -15925,19 +15991,19 @@ computational finance.")
 (define-public r-finbif
   (package
     (name "r-finbif")
-    (version "0.9.9")
+    (version "0.9.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finbif" version))
        (sha256
-        (base32 "0fc9kkpbl0d5j6z6ch2k5wdajmfx5cwgrmbckqfbyfg3ligqhciq"))))
+        (base32 "1rzd2rb4fd6qgskg8bl6c25rf6fkmm3xn2h7k1ijq8kd6fh4lzgr"))))
     (properties `((upstream-name . "finbif")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lutz r-httr r-digest))
+    (propagated-inputs (list r-lutz r-jsonlite r-httr r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/luomus/finbif")
     (synopsis
@@ -18854,21 +18920,20 @@ less predictive variables are eliminated from the analysis, see Boughaci (2018)
 (define-public r-features
   (package
     (name "r-features")
-    (version "2015.12-1")
+    (version "2025.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "features" version))
        (sha256
-        (base32 "0rd8r1dxzddb6718hcm8ck7531c9wdrjfy8n67875bbxgzcvds61"))))
+        (base32 "0l1fmz1xljyafx7ywp2nz8pg9kfps4yv6rzbs8w108vnz56q9pdh"))))
     (properties `((upstream-name . "features")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-lokern))
-    (home-page
-     "http://www.jhsph.edu/agingandhealth/People/Faculty_personal_pages/Varadhan.html")
+    (home-page "https://cran.r-project.org/package=features")
     (synopsis "Feature Extraction for Discretely-Sampled Functional Data")
     (description
      "Discretely-sampled function is first smoothed.  Features of the smoothed
@@ -20547,13 +20612,13 @@ validity and visualizing fuzzy clustering results.")
 (define-public r-fcl
   (package
     (name "r-fcl")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fcl" version))
        (sha256
-        (base32 "1lqh4asy8qx2xippp7c7fsdw5y3rk6q4czqf9397f3dkdaydgv18"))))
+        (base32 "0yb6xrxf5icqglxjlxl6w4wn7sm7ksyq6j2z0l58dy22rvigkrar"))))
     (properties `((upstream-name . "fcl")))
     (build-system r-build-system)
     (arguments

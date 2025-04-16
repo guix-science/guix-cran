@@ -12,6 +12,8 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
+  #:use-module (gnu packages cmake)
+  #:use-module (gnu packages version-control)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
@@ -886,19 +888,20 @@ multivariate normality proposed by Villasenor-Alva and Gonzalez-Estrada (2009)."
 (define-public r-mvs
   (package
     (name "r-mvs")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvs" version))
        (sha256
-        (base32 "1fkkxrx5mraa2zlmgq9fgka2rvzn95yzaqby8slhyfpsrzxqwm4y"))))
+        (base32 "0mxzzpv94mhbg4la1mkmm8i64rqqyzdnc6x9x2lvbp7fjfbcvnyl"))))
     (properties `((upstream-name . "mvs")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-glmnet r-foreach))
+    (propagated-inputs (list r-randomforest r-glmnet r-foreach))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mvs")
     (synopsis "Methods for High-Dimensional Multi-View Learning")
     (description
@@ -3209,13 +3212,13 @@ the Bayesian posterior of a tensor-on-tensor model.")
 (define-public r-multiway
   (package
     (name "r-multiway")
-    (version "1.0-6")
+    (version "1.0-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiway" version))
        (sha256
-        (base32 "1y9cykarr2aysdrnyab5aklsrc5id5b58881q03lcb5kc385v3gv"))))
+        (base32 "1kmcz7zyyz24228wipiaz5bxj9q31dj2q0shax7akkxcd0iwkz75"))))
     (properties `((upstream-name . "multiway")))
     (build-system r-build-system)
     (arguments
@@ -3631,13 +3634,13 @@ methods at the masters program of Applied Statistics at University of Ljubljana.
 (define-public r-multitraits
   (package
     (name "r-multitraits")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiTraits" version))
        (sha256
-        (base32 "1088m69vqcvnnczcjzvqayxha9flkgqmpbhz3laszfn34zw7whl0"))))
+        (base32 "0v82pyfi3lr4xr55i674s9q6f7n6bb62m88m8hrwm94klhi9lsji"))))
     (properties `((upstream-name . "MultiTraits")))
     (build-system r-build-system)
     (arguments
@@ -4494,13 +4497,13 @@ supported by @code{ImageMagick} (accessed through magick').")
 (define-public r-multiord
   (package
     (name "r-multiord")
-    (version "2.4.3")
+    (version "2.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiOrd" version))
        (sha256
-        (base32 "1fmp8979ibxrx43vhi6dncljpbc1388y915d4g0gnl6a7z8g1dnh"))))
+        (base32 "1fcsj020v1jq2b5d4ipk9f2w5qh6606hkhw77m5a26qw2m8d333v"))))
     (properties `((upstream-name . "MultiOrd")))
     (build-system r-build-system)
     (arguments
@@ -5253,30 +5256,33 @@ technical details, see Lyrvall et al (2023)
 (define-public r-multileveltools
   (package
     (name "r-multileveltools")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevelTools" version))
        (sha256
-        (base32 "01fzx7j0mkb4fr7axv34184w6w5nfsdcr51nscci1mi5b2805x1s"))))
+        (base32 "1r8plz99x97d8krd39libizhqvzxcm84ibsas8wcxhy34y9apmnw"))))
     (properties `((upstream-name . "multilevelTools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zoo
+                             r-testthat
+                             r-scales
                              r-nlme
                              r-lmertest
                              r-lme4
                              r-lavaan
                              r-jwileymisc
+                             r-ggpubr
                              r-ggplot2
                              r-extraoperators
                              r-data-table
-                             r-cowplot))
+                             r-brms))
     (native-inputs (list r-knitr))
-    (home-page "http://joshuawiley.com/multilevelTools")
+    (home-page "https://joshuawiley.com/multilevelTools/")
     (synopsis
      "Multilevel and Mixed Effects Model Diagnostics and Effect Sizes")
     (description
@@ -11339,26 +11345,25 @@ the book's many practical examples.")
 (define-public r-mpv
   (package
     (name "r-mpv")
-    (version "1.64")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MPV" version))
        (sha256
-        (base32 "0alvs1jm1qqnswhm62a0ky070dskk6syjsa5bkcssg1zin8xcyhv"))))
+        (base32 "113fw99d3nvs4amw55ac8rdcm7ksrvh9n0bqi4w4dcq6psgmx15j"))))
     (properties `((upstream-name . "MPV")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-randomforest r-lattice r-kernsmooth))
+    (propagated-inputs (list r-lattice r-kernsmooth))
     (home-page "https://cran.r-project.org/package=MPV")
     (synopsis "Data Sets from Montgomery, Peck and Vining")
     (description
      "Most of this package consists of data sets from the textbook Introduction to
-Linear Regression Analysis, by Montgomery, Peck and Vining.  All data sets from
-the 3rd edition are included and many from the 6th edition are also included.
-The package also contains some additional data sets and functions.")
+Linear Regression Analysis (3rd ed), by Montgomery, Peck and Vining.  Some
+additional data sets and functions are also included.")
     (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-mptmultiverse
@@ -12147,6 +12152,45 @@ Pasaniuc, WJ Gauderman, JS Witte (2020) <doi:10.1101/2020.07.06.190256>.")
     (description
      "Data sets and scripts for Modeling Psychophysical Data in R (Springer).")
     (license license:gpl2)))
+
+(define-public r-mpcr
+  (package
+    (name "r-mpcr")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MPCR" version))
+       (sha256
+        (base32 "1p9iaw89sl9ap7g48vyfl9g6ss59cdvjvwjsvl5vxl951lc01ra9"))))
+    (properties `((upstream-name . "MPCR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list git cmake))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/stsds/MPCR")
+    (synopsis "Multi- And Mixed-Precision Computations")
+    (description
+     "Designed for multi- and mixed-precision computations, accommodating 64-bit and
+32-bit data structures.  This flexibility enables fast execution across various
+applications.  The package enhances performance by optimizing operations in both
+precision levels, which is achieved by integrating with high-speed BLAS and
+LAPACK libraries like MKL and @code{OpenBLAS}'.  Including a 32-bit option
+caters to applications where high precision is unnecessary, accelerating
+computational processes whenever feasible.  The package also provides support
+for tile-based algorithms in three linear algebra operations: @code{CHOL()},
+@code{TRSM()}, and @code{GEMM()}.  The tile-based algorithm splits the matrix
+into smaller tiles, facilitating parallelization through a predefined Directed
+Acyclic Graph (DAG) for each operation.  Enabling @code{OpenMP} enhances the
+efficiency of these operations, leveraging multi-core parallelism.  In this
+case, MPCR facilitates mixed-precision execution by permitting varying precision
+levels for different tiles.  This approach is advantageous in numerous
+applications, as it maintains the accuracy of the application while accelerating
+execution in scenarios where single-precision alone does not significantly
+affect the accuracy of the application.")
+    (license license:gpl3+)))
 
 (define-public r-mpci
   (package
@@ -25713,19 +25757,19 @@ TaudiÃ¨re A. (2023) <doi:10.21105/joss.06038>.")
 (define-public r-miscmath
   (package
     (name "r-miscmath")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MiscMath" version))
        (sha256
-        (base32 "0awvlval83ng39hhkgm6bipr2kwhzlvs16ba6y3lkk7zkwy2yfi1"))))
+        (base32 "0wddhz58d8ld1r2bf1n7p7s78wrimaxfn34vwdy9q7785kcl32x8"))))
     (properties `((upstream-name . "MiscMath")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-randomforest))
+    (propagated-inputs (list r-randomforest r-numbers))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=MiscMath")
     (synopsis "Miscellaneous Mathematical Tools")
@@ -29202,13 +29246,13 @@ variable in an unbiased way.")
 (define-public r-microinverterdata
   (package
     (name "r-microinverterdata")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microinverterdata" version))
        (sha256
-        (base32 "1bxiq06rky10ispi0h55dqfqv744d79vmrkz7pin95gif095a1l4"))))
+        (base32 "14qh4cm14n60a130b62p7wxfs7jqsc9y9vzvkpa32c1qwcfc2skq"))))
     (properties `((upstream-name . "microinverterdata")))
     (build-system r-build-system)
     (arguments
@@ -29217,9 +29261,7 @@ variable in an unbiased way.")
     (propagated-inputs (list r-units
                              r-tidyr
                              r-rlang
-                             r-readr
                              r-purrr
-                             r-lubridate
                              r-httr2
                              r-glue
                              r-dplyr
@@ -47538,13 +47580,13 @@ autoregressive models.")
 (define-public r-maq
   (package
     (name "r-maq")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maq" version))
        (sha256
-        (base32 "0k9rhvwrljxsjdjjiniln22i3cl7nn33yc4snpdkx85s1fjni9w5"))))
+        (base32 "1by8j2l1yk3pn3hfv0az8567zik3i6hil77bkisj92l5kvhhanvs"))))
     (properties `((upstream-name . "maq")))
     (build-system r-build-system)
     (arguments
@@ -49454,6 +49496,46 @@ as a heatmap, which is binned using -log10(p-value) and chromosome position.
 Annotation currently supported is minor allele frequency and gene function high
 impact variants.")
     (license license:gpl2+)))
+
+(define-public r-manhattanly
+  (package
+    (name "r-manhattanly")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "manhattanly" version))
+       (sha256
+        (base32 "007qvfzq8fyvnirywfpl6n1gqxxizz32z4xbgnnx7riyb7nxl1qh"))))
+    (properties `((upstream-name . "manhattanly")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plotly r-magrittr r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sahirbhatnagar/manhattanly/")
+    (synopsis "Interactive Q-Q and Manhattan Plots Using 'plotly.js'")
+    (description
+     "Create interactive manhattan, Q-Q and volcano plots that are usable from the R
+console, in Dash apps, in the RStudio viewer pane, in R Markdown documents, and
+in Shiny apps.  Hover the mouse pointer over a point to show details or drag a
+rectangle to zoom.  A manhattan plot is a popular graphical method for
+visualizing results from high-dimensional data analysis such as a (epi)genome
+wide association study (GWAS or EWAS), in which p-values, Z-scores, test
+statistics are plotted on a scatter plot against their genomic position.
+Manhattan plots are used for visualizing potential regions of interest in the
+genome that are associated with a phenotype.  Interactive manhattan plots allow
+the inspection of specific value (e.g. rs number or gene name) by hovering the
+mouse over a cell, as well as zooming into a region of the genome (e.g. a
+chromosome) by dragging a rectangle around the relevant area.  This work is
+based on the qqman package and the plotly.js engine.  It produces similar
+manhattan and Q-Q plots as the manhattan and qq functions in the qqman package,
+with the advantage of including extra annotation information and interactive
+web-based visualizations directly from R. Once uploaded to a plotly account,
+plotly graphs (and the data behind them) can be viewed and modified in a web
+browser.")
+    (license license:expat)))
 
 (define-public r-mangrove
   (package

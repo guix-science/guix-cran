@@ -5063,13 +5063,13 @@ described in Barger and Bunge (2010) <doi:10.1214/10-BA527>.")
 (define-public r-breadr
   (package
     (name "r-breadr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BREADR" version))
        (sha256
-        (base32 "1hbjwf86575hqxbz3lz89r0sbzfr5cyy8jmid2jx4yj9f9lqc8h5"))))
+        (base32 "04rwdfdw7xm2bqahrgyacsvc5ah5yw65c5c3pi4bxqwkp8fn8dyp"))))
     (properties `((upstream-name . "BREADR")))
     (build-system r-build-system)
     (arguments
@@ -5087,6 +5087,7 @@ described in Barger and Bunge (2010) <doi:10.1214/10-BA527>.")
                              r-forcats
                              r-dplyr
                              r-data-table))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/jonotuke/BREADR")
     (synopsis
      "Estimates Degrees of Relatedness (Up to the Second Degree) for Extreme Low-Coverage Data")
@@ -6545,19 +6546,20 @@ for researchers.")
 (define-public r-boxr
   (package
     (name "r-boxr")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boxr" version))
        (sha256
-        (base32 "1hdm4p7zx2r566zaiyw06qg3c790gsvylrvav7g9fl4i1x6qgkyk"))))
+        (base32 "1k3a5m4cx3m92bsh15dfrba246n57hs5q5xlx2hwny6na539jzsp"))))
     (properties `((upstream-name . "boxr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-withr
+                             r-tibble
                              r-stringr
                              r-rlang
                              r-rio
@@ -6566,16 +6568,16 @@ for researchers.")
                              r-magrittr
                              r-lifecycle
                              r-jsonlite
+                             r-jose
                              r-httr
-                             r-httpuv
                              r-glue
                              r-fs
                              r-dplyr
                              r-digest
-                             r-bit64
+                             r-cli
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/r-box/boxr/")
+    (home-page "https://r-box.github.io/boxr/")
     (synopsis "Interface for the 'Box.com API'")
     (description
      "An R interface for the remote file hosting service Box (<https://www.box.com/>).
@@ -8470,13 +8472,13 @@ Return.  CFA Institute (\"CFA Program Curriculum 2020 Level I Volumes 1-6. (Vol.
 (define-public r-boltzmm
   (package
     (name "r-boltzmm")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoltzMM" version))
        (sha256
-        (base32 "17nsjr2y8nniaxd6f13g85gb9rshar72qqp45yh2ygg4zrx1d226"))))
+        (base32 "1wm5dzn23bymyzdm9dsy9b47gxnl8ag3lzyyjf7yrjnp0vvirs6l"))))
     (properties `((upstream-name . "BoltzMM")))
     (build-system r-build-system)
     (arguments
@@ -15505,13 +15507,13 @@ for a binomial proportion\".  Statistics in Medicine, 12(9): 809-824.
 (define-public r-binnor
   (package
     (name "r-binnor")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BinNor" version))
        (sha256
-        (base32 "07r7nf4ygilp470z93x9dc5zddc96m2dkw6d2s4an8fbr4pljc1y"))))
+        (base32 "1k72bjqnpw0i925r75jjnsmbq25m679w7xwpd372czdj8fx46pwx"))))
     (properties `((upstream-name . "BinNor")))
     (build-system r-build-system)
     (arguments

@@ -3026,19 +3026,20 @@ also many practical uses under the XAI paradigm.")
 (define-public r-visualizesimon2stage
   (package
     (name "r-visualizesimon2stage")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VisualizeSimon2Stage" version))
        (sha256
-        (base32 "06r97sx1pvssk8ab9ims7h5dmga740k4ka7nnizjid9amim5p8ig"))))
+        (base32 "0mx89pfjzj8szj91hrvmysc6l3610p9mzcqxi4bhhp5shck3bj92"))))
     (properties `((upstream-name . "VisualizeSimon2Stage")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-officer r-ggplot2 r-flextable))
+    (propagated-inputs (list r-scales r-officer r-ggplot2 r-geomtextpath
+                             r-flextable))
     (native-inputs (list r-quarto))
     (home-page "https://cran.r-project.org/package=VisualizeSimon2Stage")
     (synopsis "Visualize Simon's Two-Stage Design")
@@ -5563,13 +5564,13 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "17lk5pq4fn2yp3b3cm4i01zn03rqxyywikv1zw83r5q8ldwjxc62"))))
+        (base32 "0wszzdfd24hxx1rq79p9i39dbfyrqjgyfvh0cxh7c1n51qvvk985"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
     (arguments
@@ -5601,7 +5602,7 @@ Factorization algorithms - Random generators of diferent types of integers.")
      "This package provides functions to run statistical analyses on surface-based
 neuroimaging data, computing measures including cortical thickness and surface
 area of the whole-brain and of the hippocampi.  It can make use of
-@code{FreeSurfer}', @code{fMRIprep} and HCP preprocessed datasets and
+@code{FreeSurfer}', @code{fMRIprep}', HCP and CAT12 preprocessed datasets and
 @code{HippUnfold} hippocampal segmentation outputs for a given sample by
 restructuring the data values into a single file.  The single file can then be
 used by the package for analyses independently from its base dataset and without
@@ -6404,13 +6405,13 @@ analyses.")
 (define-public r-vectorsurvr
   (package
     (name "r-vectorsurvr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectorsurvR" version))
        (sha256
-        (base32 "0w04r2473iriyalazc0m72665jnp0j6lxvlw394nxn07cmq4bm05"))))
+        (base32 "0f5vf15wpqjagq91v4z3z0k9m7sgx01z9c18w30dgs0l3f8k1n7i"))))
     (properties `((upstream-name . "vectorsurvR")))
     (build-system r-build-system)
     (arguments
@@ -6418,7 +6419,9 @@ analyses.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
+                             r-sf
                              r-rstudioapi
+                             r-purrr
                              r-magrittr
                              r-lubridate
                              r-knitr
@@ -7495,6 +7498,31 @@ inference and is computationally efficient.")
 likelihood posterior.  This is an implementation of the function found in Yu,
 W., & Bondell, H. D. (2023) <doi:10.1080/01621459.2023.2169701>.")
     (license license:gpl3+)))
+
+(define-public r-vayr
+  (package
+    (name "r-vayr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vayr" version))
+       (sha256
+        (base32 "1555n42jvvcybhwmcgsgv1zby7innsvxa8r3f75mypvx68pk8qcv"))))
+    (properties `((upstream-name . "vayr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-packcircles r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://alexandercoppock.com/vayr/index.html")
+    (synopsis "Extensions for 'ggplot2' to Visualize as You Randomize")
+    (description
+     "Position adjustments for ggplot2 to implement \"visualize as you randomize\"
+principles, which can be especially useful when plotting experimental data.")
+    (license (list license:gpl2
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-vaxpmx
   (package
