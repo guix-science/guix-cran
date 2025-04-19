@@ -4,8 +4,8 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages geo)
@@ -2574,13 +2574,13 @@ samples from its posterior distribution obtained.")
 (define-public r-tswge
   (package
     (name "r-tswge")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tswge" version))
        (sha256
-        (base32 "1pl10n20w2vz95q28zjiafcjmjij586h33s5b0nqvxfwlask6xbw"))))
+        (base32 "03jhcada03x1wf262mjffj7w3wrx8wfn1z886nda34b1c1vasr5v"))))
     (properties `((upstream-name . "tswge")))
     (build-system r-build-system)
     (arguments
@@ -4654,13 +4654,13 @@ response relative to the overall sample.")
 (define-public r-tsdistributions
   (package
     (name "r-tsdistributions")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsdistributions" version))
        (sha256
-        (base32 "19pzh7pa5ss8dj9bxmvz7l4q90rzr6rlbg80qax25yypxsqg8zkn"))))
+        (base32 "0jw6plrdz6jdb2z2l8pzxng7b704s7l434s2h3wz50qr7smkmq6w"))))
     (properties `((upstream-name . "tsdistributions")))
     (build-system r-build-system)
     (arguments
@@ -5374,28 +5374,6 @@ derivatives).  See Braun, M. (2014) <doi:10.18637/jss.v060.i04>.")
 dataset into a transaction on the decentralized blockchain (Stellar network).
 The package makes use of a free service provided by <https://stellarapi.io>.")
     (license license:agpl3)))
-
-(define-public r-trust
-  (package
-    (name "r-trust")
-    (version "0.1-8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "trust" version))
-       (sha256
-        (base32 "1b6wsx4vybr5952ii3ska6jbcb3654iibz83n645khxfca5k8blm"))))
-    (properties `((upstream-name . "trust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "http://www.stat.umn.edu/geyer/trust/")
-    (synopsis "Trust Region Optimization")
-    (description
-     "Does local optimization using two derivatives and trust regions.  Guaranteed to
-converge to local minimum of objective function.")
-    (license license:expat)))
 
 (define-public r-truncsp
   (package
@@ -7254,30 +7232,6 @@ fitting trends along with a standardised approach for generating confidence and
 prediction intervals.")
     (license license:expat)))
 
-(define-public r-trendeval
-  (package
-    (name "r-trendeval")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "trendeval" version))
-       (sha256
-        (base32 "0a9ipy88ay7170mmjissky57xgh0y9vk0kirygbsg9ihk0pk9dc5"))))
-    (properties `((upstream-name . "trendeval")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yardstick r-trending r-tibble r-rsample))
-    (home-page "https://github.com/reconverse/trendeval")
-    (synopsis "Evaluate Trending Models")
-    (description
-     "This package provides a coherent interface for evaluating models fit with the
-trending package.  This package is part of the RECON
-(<https://www.repidemicsconsortium.org/>) toolkit for outbreak analysis.")
-    (license license:expat)))
-
 (define-public r-trendchange
   (package
     (name "r-trendchange")
@@ -8212,6 +8166,7 @@ dynamics and pathway expression specificity.")
                              r-interactionset
                              r-dplyr
                              r-data-table
+                             r-csaw
                              r-biocgenerics
                              r-adjclust))
     (home-page "https://forgemia.inra.fr/scales/treediff")
@@ -8684,13 +8639,13 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "02v6kadwy47m2h68in1k6fcvxbalka633z2jc40jn7p8v4h0jjg8"))))
+        (base32 "1vss1g7hl65xhrqvj3cmh1pb89dgxg49p3p2hcjgjfw17xm5j9zb"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (arguments
@@ -13654,33 +13609,6 @@ distributions based on the algorithms proposed by Yifang Li and Sujit K. Ghosh
 (2015) <doi:10.1080/15598608.2014.996690>.")
     (license license:gpl2+)))
 
-(define-public r-tmvtnorm
-  (package
-    (name "r-tmvtnorm")
-    (version "1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tmvtnorm" version))
-       (sha256
-        (base32 "1fhvisddn3x4li2q12c3hss0cj735c0iq32c9cw646ni619jr6rd"))))
-    (properties `((upstream-name . "tmvtnorm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-matrix r-gmm))
-    (native-inputs (list gfortran))
-    (home-page "https://www.r-project.org")
-    (synopsis "Truncated Multivariate Normal and Student t Distribution")
-    (description
-     "Random number generation for the truncated multivariate normal and Student t
-distribution.  Computes probabilities, quantiles and densities, including
-one-dimensional and bivariate marginal densities.  Computes first and second
-moments (i.e.  mean and covariance matrix) for the double-truncated multinormal
-case.")
-    (license license:gpl2+)))
-
 (define-public r-tmvmixnorm
   (package
     (name "r-tmvmixnorm")
@@ -16849,13 +16777,13 @@ be inserted into the output stream.")
 (define-public r-tigris
   (package
     (name "r-tigris")
-    (version "2.1")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tigris" version))
        (sha256
-        (base32 "15zxsqxwns9vm8ymk2nadxjh3h91pxr69206sqakhch3w1nfssvr"))))
+        (base32 "1jk73hidz518c83frh588mc7nappilda5qplc0rzvb50qrvczd29"))))
     (properties `((upstream-name . "tigris")))
     (build-system r-build-system)
     (arguments
@@ -22179,13 +22107,13 @@ solving differential systems.")
 (define-public r-tfm
   (package
     (name "r-tfm")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TFM" version))
        (sha256
-        (base32 "1n5ma0paw9kx77hybgb3walxxd5cabrm9sxdw39rgpms3v3ab3bv"))))
+        (base32 "1kykjbsmd4hwn03l04ic9g2dyqc567dbyylpmy159wwcyy9yrimz"))))
     (properties `((upstream-name . "TFM")))
     (build-system r-build-system)
     (arguments
@@ -27676,6 +27604,30 @@ burned, maximum altitude, and power values (watts).  This package is useful for
 analyzing workout and training data from devices that export TCX format.")
     (license license:expat)))
 
+(define-public r-tcrconvertr
+  (package
+    (name "r-tcrconvertr")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TCRconvertR" version))
+       (sha256
+        (base32 "04pknh1l5ra1737armkxiwbifgwhx54wbpvjbjhpx9h70hb5sk54"))))
+    (properties `((upstream-name . "TCRconvertR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rappdirs))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/seshadrilab/tcrconvertr")
+    (synopsis "Convert TCR Gene Names")
+    (description
+     "Convert T Cell Receptor (TCR) gene names between the 10X Genomics, Adaptive
+Biotechnologies, and @code{ImMunoGeneTics} (IMGT) nomenclatures.")
+    (license license:expat)))
+
 (define-public r-tcpmor
   (package
     (name "r-tcpmor")
@@ -27705,13 +27657,13 @@ medical diagnostics, risk assessment, or predictive modeling.")
 (define-public r-tcplfit2
   (package
     (name "r-tcplfit2")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tcplfit2" version))
        (sha256
-        (base32 "0ay9lylizr91piif5gynykp8mnw59sy3sqjmilrbp6r53f8w33cc"))))
+        (base32 "12dx2frvwlm5r5wyrzw3izmrqpiik0zjra2r8vm9dq7k55llk9gh"))))
     (properties `((upstream-name . "tcplfit2")))
     (build-system r-build-system)
     (arguments
@@ -29736,19 +29688,21 @@ available.")
 (define-public r-tall
   (package
     (name "r-tall")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tall" version))
        (sha256
-        (base32 "0n9zpbsxrbyqihwn8smsfkidf7hsx1858ls8kac95kricx0fs9z9"))))
+        (base32 "00jr0vn69lcfzq9y7zwr2j398jzywgdvfcz8xazk9v256xkkpnkl"))))
     (properties `((upstream-name . "tall")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-visnetwork
+    (propagated-inputs (list r-word2vec
+                             r-visnetwork
+                             r-umap
                              r-udpipe
                              r-topicmodels
                              r-tidyr
@@ -29775,7 +29729,6 @@ available.")
                              r-pdftools
                              r-pagedown
                              r-openxlsx
-                             r-ldatuning
                              r-later
                              r-jsonlite
                              r-igraph
@@ -29950,6 +29903,35 @@ distributional tails.  See
 <https://gitlab.com/krcoombes/coombeslab/-/blob/master/doc/papers/tolstoy-new.pdf>.")
     (license license:asl2.0)))
 
+(define-public r-tailplots
+  (package
+    (name "r-tailplots")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tailplots" version))
+       (sha256
+        (base32 "1f71r1dyq3w9i3mfpqm0qjhcgc4m1ljmp1cbsj69zjplj7zi1bg0"))))
+    (properties `((upstream-name . "tailplots")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-resample))
+    (home-page "https://cran.r-project.org/package=tailplots")
+    (synopsis "Estimators and Plots for Gamma and Pareto Tail Detection")
+    (description
+     "Estimators for two functionals used to detect Gamma or Pareto distributions, as
+well as distributions exhibiting similar tail behavior, as introduced by
+Iwashita and Klar (2023) <doi:10.1111/stan.12316> and Klar (2024)
+<doi:10.1080/00031305.2024.2413081>.  One of these functionals, g, originally
+proposed by Asmussen and Lehtomaa (2017) <doi:10.3390/risks5010010>,
+distinguishes between log-convex and log-concave tail behavior.  The package
+also includes methods for visualizing these estimators and their associated
+confidence intervals across various threshold values.")
+    (license license:expat)))
+
 (define-public r-tailloss
   (package
     (name "r-tailloss")
@@ -30030,6 +30012,32 @@ for your discrete data: 1) Power decaying tail; 2) Sub-exponential decaying
 tail; and 3) Near-exponential decaying tail.  The function also provides an
 estimate of the parameter for the classified-distribution as a reference.")
     (license license:gpl3)))
+
+(define-public r-tai
+  (package
+    (name "r-tai")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tAI" version))
+       (sha256
+        (base32 "08qp2iz9hqvgnbf60v86ppma3a70zk2x3hyr9xvhdrl4pgdb61na"))))
+    (properties `((upstream-name . "tAI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=tAI")
+    (synopsis "The tRNA Adaptation Index")
+    (description
+     "This package provides functions and example files to calculate the @code{tRNA}
+adaptation index, a measure of the level of co-adaptation between the set of
+@code{tRNA} genes and the codon usage bias of protein-coding genes in a given
+genome.  The methodology is described in dos Reis, Wernisch and Savva (2003)
+<doi:10.1093/nar/gkg897>, and dos Reis, Savva and Wernisch (2004)
+<doi:10.1093/nar/gkh834>.")
+    (license license:gpl2+)))
 
 (define-public r-tagtools
   (package
@@ -30761,6 +30769,53 @@ the package.")
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
 
+(define-public r-tabnet
+  (package
+    (name "r-tabnet")
+    (version "0.7.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tabnet" version))
+       (sha256
+        (base32 "08nz6crxw95fs1dhjb5w2gy38in0lsyd34z7p9vx1xfwm0xjla9s"))))
+    (properties `((upstream-name . "tabnet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zeallot
+                             r-withr
+                             r-vctrs
+                             r-tune
+                             r-torch
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-progress
+                             r-parsnip
+                             r-matrix
+                             r-magrittr
+                             r-hardhat
+                             r-ggplot2
+                             r-dplyr
+                             r-dials
+                             r-data-tree
+                             r-coro))
+    (native-inputs (list r-knitr))
+    (home-page "https://mlverse.github.io/tabnet/")
+    (synopsis "Fit 'TabNet' Models for Classification and Regression")
+    (description
+     "This package implements the @code{TabNet} model by Sercan O. Arik et al. (2019)
+<doi:10.48550/@code{arXiv.1908.07442>} with Coherent Hierarchical Multi-label
+Classification Networks by Giunchiglia et al.
+<doi:10.48550/@code{arXiv.2010.10151>} and provides a consistent interface for
+fitting and creating predictions.  It's also fully compatible with the
+tidymodels ecosystem.")
+    (license license:expat)))
+
 (define-public r-tablexlsx
   (package
     (name "r-tablexlsx")
@@ -30931,39 +30986,6 @@ options available in the package.")
     (description
      "Computes and displays complex tables of summary statistics.  Output may be in
 @code{LaTeX}, HTML, plain text, or an R matrix for further processing.")
-    (license license:gpl2)))
-
-(define-public r-tableone
-  (package
-    (name "r-tableone")
-    (version "0.13.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tableone" version))
-       (sha256
-        (base32 "1br78y68037g5v5jhgi9l393kj2msamdklim8ki40hmxk9bibkxi"))))
-    (properties `((upstream-name . "tableone")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-survey
-                             r-nlme
-                             r-mass
-                             r-labelled
-                             r-gmodels
-                             r-e1071))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/kaz-yos/tableone")
-    (synopsis
-     "Create 'Table 1' to Describe Baseline Characteristics with or without Propensity Score Weights")
-    (description
-     "This package creates Table 1', i.e., description of baseline patient
-characteristics, which is essential in every medical research.  Supports both
-continuous and categorical variables, as well as p-values and standardized mean
-differences.  Weighted data are supported via the survey package.")
     (license license:gpl2)))
 
 (define-public r-tablemonster
@@ -31554,31 +31576,4 @@ T^2-test for equivalence according to Hoffelder (2016)
 <http://www.ecv.de/suse_item.php?@code{suseId=Z|pi|8430>} for the equivalence
 comparison of highly variable dissolution profiles.")
     (license license:gpl3)))
-
-(define-public r-t2dfittailor
-  (package
-    (name "r-t2dfittailor")
-    (version "3.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "T2DFitTailor" version))
-       (sha256
-        (base32 "1491cn8gx1ijkdg33p0fiyiam80aiisd489hqn76ijsbhkagm51c"))))
-    (properties `((upstream-name . "T2DFitTailor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr r-fmsb r-dplyr))
-    (home-page "https://cran.r-project.org/package=T2DFitTailor")
-    (synopsis
-     "Tailor the Exercise Plans and Visualize the Outcome for T2D Patients")
-    (description
-     "This package provides a system for personalized exercise plan recommendations
-for T2D (Type 2 Diabetes) patients based on the primary outcome of @code{HbA1c}
-(Glycated Hemoglobin).  You provide the individual's information, and
-T2D@code{FitTailor} details the exercise plan and predicts the intervention's
-effectiveness.")
-    (license license:expat)))
 

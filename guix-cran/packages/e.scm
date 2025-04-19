@@ -4,9 +4,9 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages web)
   #:use-module (gnu packages perl)
@@ -14,7 +14,6 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages java)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages pkg-config)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -7403,13 +7402,13 @@ cross validation.")
 (define-public r-estimatebreed
   (package
     (name "r-estimatebreed")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EstimateBreed" version))
        (sha256
-        (base32 "1dfh9810xj900bdwvnk8s71rncvis91s5ip2029c4sgxcb4651hd"))))
+        (base32 "18zd4ryjrh5r76wy4xpm8zy1k26xy5nps2hhi03sc2i25z2197z5"))))
     (properties `((upstream-name . "EstimateBreed")))
     (build-system r-build-system)
     (arguments
@@ -11092,13 +11091,13 @@ Gradient Boosting approach to predict the sequences with 6@code{mA} sites in it.
 (define-public r-epireport
   (package
     (name "r-epireport")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiReport" version))
        (sha256
-        (base32 "1dh9rjdjgmwzvfslzgnmd37ipj7ydbn4pnngz4sw7nknqy7r4dpx"))))
+        (base32 "1hdgh5i8xpjjm3bgz68xyb446lqjiad5r9dz213y9r17zyqinvcb"))))
     (properties `((upstream-name . "EpiReport")))
     (build-system r-build-system)
     (arguments
@@ -11114,7 +11113,7 @@ Gradient Boosting approach to predict the sequences with 6@code{mA} sites in it.
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page
-     "https://www.ecdc.europa.eu/en/all-topics-z/surveillance-and-disease-data/annual-epidemiological-reports-aers")
+     "https://www.ecdc.europa.eu/en/publications-data/monitoring/all-annual-epidemiological-reports")
     (synopsis "Epidemiological Report")
     (description
      "Drafting an epidemiological report in Microsoft Word format for a given disease,
@@ -13703,40 +13702,6 @@ Amiri, S., Clarke, B., and Clarke, J. (2015).  Clustering categorical data via
 ensembling dissimilarity matrices.  Preprint <@code{arXiv:1506.07930>}.")
     (license license:gpl2+)))
 
-(define-public r-enrichwith
-  (package
-    (name "r-enrichwith")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "enrichwith" version))
-       (sha256
-        (base32 "05fhx323ani86wdxbjp8dgw4d1iq4kr1887646w072a6iq93bwhm"))))
-    (properties `((upstream-name . "enrichwith")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ikosmidis/enrichwith")
-    (synopsis "Methods to Enrich R Objects with Extra Components")
-    (description
-     "This package provides the \"enrich\" method to enrich list-like R objects with
-new, relevant components.  The current version has methods for enriching objects
-of class family', link-glm', lm', glm and betareg'.  The resulting objects
-preserve their class, so all methods associated with them still apply.  The
-package also provides the enriched_glm function that has the same interface as
-glm but results in objects of class enriched_glm'.  In addition to the usual
-components in a `glm` object, enriched_glm objects carry an object-specific
-simulate method and functions to compute the scores, the observed and expected
-information matrix, the first-order bias, as well as model densities,
-probabilities, and quantiles at arbitrary parameter values.  The package can
-also be used to produce customizable source code templates for the structured
-implementation of methods to compute new components and enrich arbitrary
-objects.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-enrichintersect
   (package
     (name "r-enrichintersect")
@@ -14588,6 +14553,67 @@ nucleic acid sequences of equal length.")
 management, data extraction, data preparation and data visualization facilities.
  See <https://ips-lmu.github.io/The-EMU-SDMS-Manual/> for more details.")
     (license license:gpl2+)))
+
+(define-public r-emtscore
+  (package
+    (name "r-emtscore")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EMTscore" version))
+       (sha256
+        (base32 "1ypchz5frnfn1val0hfr5hfcb4fx98sch7v45iddbp59n6bmfwly"))))
+    (properties `((upstream-name . "EMTscore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-seurat
+                             r-pheatmap
+                             r-paletteer
+                             r-nsprcomp
+                             r-magrittr
+                             r-gsva
+                             r-gsa
+                             r-gridextra
+                             r-ggthemes
+                             r-ggpubr
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-curl
+                             r-complexheatmap
+                             r-circlize
+                             r-aucell))
+    (home-page "https://cran.r-project.org/package=EMTscore")
+    (synopsis "Calculate 'EMT' Scores Based on 'Omics' Data")
+    (description
+     "Epithelial-Mesenchymal transition ('EMT') is an important form of cellular
+plasticity that is fully or partially activated in several biological scenarios
+including development and disease progression.  EMT involves altered expression
+of hundreds of protein-coding and non-protein-coding genes.  Recent studies
+showed the prevalence of partial EMT in multiple processes such as various
+cancers and organ fibrosis, which necessitates rigorous quantification of the
+degree of EMT'.  While traditional gene set scoring methods such as gene set
+variation analysis have been used to generate EMT scores from omics data,
+multiple EMT scoring algorithms and EMT gene sets have been used by different
+groups without standardization.  Furthermore, comparisons of EMT scores computed
+from different methods and/or different EMT gene sets are generally difficult
+due to both the context dependent nature of EMT and the lack of tools that
+comprehensively integrate varying components for EMT scoring.  To address this
+problem, we have built a toolbox named EMTscore that enables users to select
+scoring methods from a list of previously used algorithms and EMT gene sets from
+a list of gene sets produced from different experiments.  We provided several
+visualization methods for making publication quality plots of EMT scores from
+omics data.  Furthermore, we showed a unique utility of a method based on
+principal component analysis for scoring divergent EMT processes from a single
+dataset.  Overall, EMTscore provides an integrated solution for assessing the
+degree and complexity of EMT from omics data, and it paves the way for
+standardizing the comparison of EMT programs across multiple contexts.")
+    (license license:gpl3)))
 
 (define-public r-emt
   (package
@@ -18648,21 +18674,21 @@ degrees of freedom. <doi:10.22271/09746315.2020.v16.i3.1358>.")
 (define-public r-egretci
   (package
     (name "r-egretci")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EGRETci" version))
        (sha256
-        (base32 "1g01a03smn5yp261cyk3x310m1mcv4bqyh8y123wam9gpa7dxrp6"))))
+        (base32 "087w0hbg46j8a1ppxjx55vdgzdk1j18ma6ifb02p1zvisw93n9ra"))))
     (properties `((upstream-name . "EGRETci")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-egret r-binom))
+    (propagated-inputs (list r-foreach r-egret r-binom))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/USGS-R/EGRETci")
+    (home-page "https://cran.r-project.org/package=EGRETci")
     (synopsis "Exploration and Graphics for RivEr Trends Confidence Intervals")
     (description
      "Collection of functions to evaluate uncertainty of results from water quality
@@ -21735,13 +21761,13 @@ variables.")
 (define-public r-ecotraj
   (package
     (name "r-ecotraj")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecotraj" version))
        (sha256
-        (base32 "1qsp67y07xrqq0szlq8ks5i7w6aa42kmai9m5pjpfifs9hz5wnrz"))))
+        (base32 "1fshm22mpcpl6w7amqfy8xmpq0fzd4ryv4jnh71fxy2f7cs3xrl3"))))
     (properties `((upstream-name . "ecotraj")))
     (build-system r-build-system)
     (arguments
@@ -21759,7 +21785,8 @@ metrics and visual representations [De Caceres et al. (2019)
 for individual trajectories (length, directionality, angles, ...) as well as
 metrics to relate pairs of trajectories (dissimilarity and convergence).
 Functions are also provided to estimate the ecological quality of ecosystem with
-respect to reference conditions [Sturbois et al. (2023) ].")
+respect to reference conditions [Sturbois et al. (2023)
+<doi:10.1002/ecs2.4726>].")
     (license license:gpl2+)))
 
 (define-public r-ecotoxr
@@ -24565,20 +24592,20 @@ characteristics from a target population.")
 (define-public r-eba
   (package
     (name "r-eba")
-    (version "1.10-0")
+    (version "1.10-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eba" version))
        (sha256
-        (base32 "03jr54xq109x9bf8kcs8mi7am17l9ya3xdkdppd8imwd2paqrssk"))))
+        (base32 "1hq6hxndkshsq2xq2zdmd39fj090z7wfs3j8c8lzn2bx50lxkqxp"))))
     (properties `((upstream-name . "eba")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-psychotools r-nlme))
-    (home-page "http://www.mathpsy.uni-tuebingen.de/wickelmaier")
+    (home-page "https://www.mathpsy.uni-tuebingen.de/wickelmaier/")
     (synopsis "Elimination-by-Aspects Models")
     (description
      "Fitting and testing multi-attribute probabilistic choice models, especially the
@@ -26095,32 +26122,6 @@ trait.  For users unfamiliar with R, to perform an analysis, run
 @code{OpenGUI()}'.  This opens a web browser to the menu-driven user interface
 for the input of data, and for performing genome-wide analysis.")
     (license license:gpl3)))
-
-(define-public r-eaf
-  (package
-    (name "r-eaf")
-    (version "2.5.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "eaf" version))
-       (sha256
-        (base32 "14mfcc7lacaghfxiq3x7zmbvk2ink3xkkbiky1bfv9dgwbmic8dr"))))
-    (properties `((upstream-name . "eaf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list gsl))
-    (propagated-inputs (list r-rdpack r-modeltools r-matrixstats))
-    (native-inputs (list pkg-config))
-    (home-page "https://mlopez-ibanez.github.io/eaf/")
-    (synopsis "Plots of the Empirical Attainment Function")
-    (description
-     "Computation and visualization of the empirical attainment function (EAF) for the
-analysis of random sets in multi-criterion optimization.  M. LÃ³pez-IbÃ¡Ã±ez, L.
-Paquete, and T. StÃ¼tzle (2010) <doi:10.1007/978-3-642-02538-9_9>.")
-    (license license:gpl2+)))
 
 (define-public r-eadrm
   (package

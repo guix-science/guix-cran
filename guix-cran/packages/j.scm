@@ -4,8 +4,8 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages web)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages bioconductor)
@@ -4023,13 +4023,13 @@ series scores).  The latest version of the cruncher can be downloaded here:
 (define-public r-jcvrisk
   (package
     (name "r-jcvrisk")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Jcvrisk" version))
        (sha256
-        (base32 "0n4lb1y3h4lwslrfb8shaaxfr4yb5b9b1045aplnirl31wvap5wq"))))
+        (base32 "1f01x7vhznn89rgrxw3hcrkm6jl0pkhp9r4sjcq17pnw40zsddb2"))))
     (properties `((upstream-name . "Jcvrisk")))
     (build-system r-build-system)
     (arguments
@@ -4993,28 +4993,26 @@ Frontier Measurements for Outliers.\" <doi:10.1007/s11123-005-4702-4>.")
 (define-public r-jackknifer
   (package
     (name "r-jackknifer")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jackknifeR" version))
        (sha256
-        (base32 "0s2kf0r102gwcrjd2ggimyxw99nwcdd0pfwgyw922f2kzwf0rxq6"))))
+        (base32 "0s6lqvmjr7ndgnarjlm4ffdkzx42si2wsxildg4b2rwh17hsjwvi"))))
     (properties `((upstream-name . "jackknifeR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-foreach r-doparallel))
+    (propagated-inputs (list r-future-apply r-future r-foreach r-dofuture))
     (home-page "https://cran.r-project.org/package=jackknifeR")
     (synopsis "Delete-d Jackknife for Point and Interval Estimation")
     (description
-     "This function creates jackknife samples from the data by sequentially removing d
-observations from the data, performs estimation using the jackknife samples and
-calculates the jackknife coefficients, bias, standard error and confidence
-intervals based on the methodology discussed by Quenouille (1956)
-<doi:10.2307/2332914>, Tukey (1958) <doi:10.1214/aoms/1177706647> and Shi (1988)
-<doi:10.1016/0167-7152(88)90011-9>.")
+     "This package implements delete-d jackknife resampling for robust statistical
+estimation.  The package provides both weighted (HC3-adjusted) and unweighted
+versions of jackknife estimation, with parallel computation support.  Suitable
+for biomedical research and other fields requiring robust variance estimation.")
     (license license:gpl3+)))
 
 (define-public r-jackalope

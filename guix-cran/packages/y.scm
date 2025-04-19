@@ -4,9 +4,9 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages compression)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages x)
@@ -129,13 +129,13 @@ functionality).")
 (define-public r-yuima
   (package
     (name "r-yuima")
-    (version "1.15.27")
+    (version "1.15.30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yuima" version))
        (sha256
-        (base32 "1w0g6yq1g2maq8wslgj5bis1f514ngxkxxbc9j7dsz7w51vppcwd"))))
+        (base32 "175jyqm8lmv5rmb6md1zncb44igk0wm85ayfp9ww4nja50kcn296"))))
     (properties `((upstream-name . "yuima")))
     (build-system r-build-system)
     (arguments
@@ -146,6 +146,7 @@ functionality).")
                              r-rcpparmadillo
                              r-rcpp
                              r-mvtnorm
+                             r-matrix
                              r-glassofast
                              r-expm
                              r-cubature
@@ -813,6 +814,37 @@ multiple financial exchanges.  The package offers a local caching system and
 support for parallel computation.")
     (license license:expat)))
 
+(define-public r-yfinancer
+  (package
+    (name "r-yfinancer")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yfinancer" version))
+       (sha256
+        (base32 "0fyivw3yn0cjasir3j9d77r9kmz5mr3kns72zdv9dyn5la0ngblp"))))
+    (properties `((upstream-name . "yfinancer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-dplyr))
+    (home-page "https://github.com/gacolitti/yfinancer")
+    (synopsis "'Yahoo Finance' API Wrapper")
+    (description
+     "Download financial market data, company information, financial statements,
+options data, and more from the unofficial Yahoo Finance API.")
+    (license license:expat)))
+
 (define-public r-yesno
   (package
     (name "r-yesno")
@@ -1076,13 +1108,13 @@ packages taxlist and vegtable'.")
 (define-public r-yamlet
   (package
     (name "r-yamlet")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yamlet" version))
        (sha256
-        (base32 "0ia9z8410raa54fm2jzh95zr8szbwicp7jg80pj818mbg1xi8lhn"))))
+        (base32 "0c8g97swjpxzf936k9z00d957xpdihzggf7m2qcp1mlcp4ahj7kg"))))
     (properties `((upstream-name . "yamlet")))
     (build-system r-build-system)
     (arguments

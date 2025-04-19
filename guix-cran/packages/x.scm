@@ -4,14 +4,13 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages package-management)
   #:use-module (gnu packages python)
   #:use-module (gnu packages fontutils)
@@ -1398,48 +1397,6 @@ and question blocks.  Tables are exported with native Excel formatting,
 including titles, footnotes, and basic styling options.")
     (license license:gpl3+)))
 
-(define-public r-xllim
-  (package
-    (name "r-xllim")
-    (version "2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "xLLiM" version))
-       (sha256
-        (base32 "08v6acn6vpn8asn61ldqdryjz0xk5zyd2v63aqrc5xximpqwrp7d"))))
-    (properties `((upstream-name . "xLLiM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-randomforest
-                             r-progress
-                             r-mixomics
-                             r-mda
-                             r-matrix
-                             r-mass
-                             r-igraph
-                             r-glmnet
-                             r-e1071
-                             r-corpcor
-                             r-capushe
-                             r-abind))
-    (home-page "https://cran.r-project.org/package=xLLiM")
-    (synopsis "High Dimensional Locally-Linear Mapping")
-    (description
-     "This package provides a tool for non linear mapping (non linear regression)
-using a mixture of regression model and an inverse regression strategy.  The
-methods include the GL@code{LiM} model (see Deleforge et al (2015)
-<DOI:10.1007/s11222-014-9461-5>) based on Gaussian mixtures and a robust version
-of GL@code{LiM}, named SL@code{LiM} (see Perthame et al (2016)
-<DOI:10.1016/j.jmva.2017.09.009>) based on a mixture of Generalized Student
-distributions.  The methods also include BL@code{LiM} (see Devijver et al (2017)
-<@code{arXiv:1701.07899>}) which is an extension of GL@code{LiM} with a sparse
-block diagonal structure for large covariance matrices (particularly interesting
-for transcriptomic data).")
-    (license license:gpl2+)))
-
 (define-public r-xlink
   (package
     (name "r-xlink")
@@ -1862,19 +1819,19 @@ package.")
 (define-public r-xegaselectgene
   (package
     (name "r-xegaselectgene")
-    (version "1.0.0.0")
+    (version "1.0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaSelectGene" version))
        (sha256
-        (base32 "1vrs5d1p6x1c3n9pv6556185rx1a01zdsjqx8y5vpa37f8di7iwk"))))
+        (base32 "0wlfhy5ylxzbagggnzws8810lwx92db2b21f8di56yr888zaix2x"))))
     (properties `((upstream-name . "xegaSelectGene")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "<https://github.com/ageyerschulz/xegaSelectGene>")
+    (home-page "https://github.com/ageyerschulz/xegaSelectGene")
     (synopsis
      "Selection of Genes and Gene Representation Independent Functions")
     (description
@@ -1907,20 +1864,20 @@ ISBN:1-55860-066-3), Wickham, Hadley (2019, ISBN:978-815384571).")
 (define-public r-xegapopulation
   (package
     (name "r-xegapopulation")
-    (version "1.0.0.0")
+    (version "1.0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaPopulation" version))
        (sha256
-        (base32 "0gzcmsbw0256m9fy7n520pwic3f4zwcw6nfhna8fc7abhnvyrdph"))))
+        (base32 "0gbiv9v83gda1mcr3k7lzp0am88k6hfr028yr38n2jnkbwz4zngc"))))
     (properties `((upstream-name . "xegaPopulation")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xegaselectgene r-xegagagene r-future-apply))
-    (home-page "<https://github.com/ageyerschulz/xegaPopulation>")
+    (home-page "https://github.com/ageyerschulz/xegaPopulation")
     (synopsis "Genetic Population Level Functions")
     (description
      "This collection of gene representation-independent functions implements the
@@ -1943,25 +1900,25 @@ Stanhope, S. A. and Daida, J. M. (1996, ISBN:0-18-201-031-7).")
 (define-public r-xegapermgene
   (package
     (name "r-xegapermgene")
-    (version "1.0.0.0")
+    (version "1.0.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaPermGene" version))
        (sha256
-        (base32 "02f97ddz9lzkc762qazn9ybrvl4qya9m02c7cs0l7wmpgl93mbx6"))))
+        (base32 "1c8fpjz8292f1cf744y32zdd53pmi74igh7sjxw9dccvxyy421yf"))))
     (properties `((upstream-name . "xegaPermGene")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xegaselectgene))
-    (home-page "<https://github.com/ageyerschulz/xegaPermGene>")
+    (home-page "https://github.com/ageyerschulz/xegaPermGene")
     (synopsis "Operations on Permutation Genes")
     (description
      "An implementation of representation-dependent gene level operations for genetic
-algorithms with genes which represent permutations: initialization of genes,
-mutation and crossover.  The crossover operation provided is position-based
+algorithms with genes representing permutations: Initialization of genes,
+mutation, and crossover.  The crossover operation provided is position-based
 crossover (Syswerda, G., Chap.  21 in Davis, L. (1991, ISBN:0-442-00173-8).  For
 mutation, several variants are included: Order-based mutation (Syswerda, G.,
 Chap.  21 in Davis, L. (1991, ISBN:0-442-00173-8), randomized Lin-Kernighan
@@ -1974,20 +1931,20 @@ randomly.")
 (define-public r-xegagpgene
   (package
     (name "r-xegagpgene")
-    (version "1.0.0.0")
+    (version "1.0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaGpGene" version))
        (sha256
-        (base32 "058sp2w1mhrnbcq3r5fgkmrq7b0mp4kbkf3v3q7k0i3akr95vrci"))))
+        (base32 "1lvk4ycbzjk7w1iip284k02mxwci5wxixiibyry0abqbilkfyx2i"))))
     (properties `((upstream-name . "xegaGpGene")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xegaselectgene r-xegaderivationtrees r-xegabnf))
-    (home-page "<https://github.com/ageyerschulz/xegaGpGene>")
+    (home-page "https://github.com/ageyerschulz/xegaGpGene")
     (synopsis "Genetic Operations for Grammar-Based Genetic Programming")
     (description
      "An implementation of the representation-dependent gene level operations of
@@ -2004,13 +1961,13 @@ ISBN:978-3-7908-0830-X).")
 (define-public r-xegagegene
   (package
     (name "r-xegagegene")
-    (version "1.0.0.0")
+    (version "1.0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaGeGene" version))
        (sha256
-        (base32 "15ng9n6fi0cbk8zda7cwbs5niiy3fb8h941fws4xcli3h6l5krwg"))))
+        (base32 "0b2bnpzsi1bi8gwvc4k91y37vah377cb77vz7jsn4x5sg5f1pgs9"))))
     (properties `((upstream-name . "xegaGeGene")))
     (build-system r-build-system)
     (arguments
@@ -2018,7 +1975,7 @@ ISBN:978-3-7908-0830-X).")
       #:tests? #f))
     (propagated-inputs (list r-xegaselectgene r-xegaderivationtrees r-xegabnf
                              r-numbers))
-    (home-page "<https://github.com/ageyerschulz/xegaGeGene>")
+    (home-page "https://github.com/ageyerschulz/xegaGeGene")
     (synopsis "Grammatical Evolution")
     (description
      "Grammatical evolution (see O'Neil, M. and Ryan, C. (2003,ISBN:1-4020-7444-1))
@@ -2031,20 +1988,20 @@ O'Neill, M., and Collins, J. J. (2018) <doi:10.1007/978-3-319-78717-6>.")
 (define-public r-xegagagene
   (package
     (name "r-xegagagene")
-    (version "1.0.0.1")
+    (version "1.0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaGaGene" version))
        (sha256
-        (base32 "110nhig9jp79mk9mq3pk3imqyg05pmd45r2b7bdr0wl6y6v7j9zm"))))
+        (base32 "0i1v178d7vr98syas7bw6k4s1i7mf8ndwk878dcb9lc0br0nvkdd"))))
     (properties `((upstream-name . "xegaGaGene")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xegaselectgene))
-    (home-page "<https://github.com/ageyerschulz/xegaGaGene>")
+    (home-page "https://github.com/ageyerschulz/xegaGaGene")
     (synopsis "Binary Gene Operations for Genetic Algorithms")
     (description
      "Representation-dependent gene level operations of a genetic algorithm with
@@ -2061,23 +2018,23 @@ ISBN:0-18-201-031-7).")
 (define-public r-xegadfgene
   (package
     (name "r-xegadfgene")
-    (version "1.0.0.0")
+    (version "1.0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaDfGene" version))
        (sha256
-        (base32 "1xvq7grff6iz9254shhjakwaba1qlfii361ydarzsxsjwgx4b8al"))))
+        (base32 "0r13gchfx2pvsl25nqqnv2xpqdyad70x13kb4i42h5ysffkbfakr"))))
     (properties `((upstream-name . "xegaDfGene")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xegaselectgene))
-    (home-page "<https://github.com/ageyerschulz/xegaDfGene>")
+    (home-page "https://github.com/ageyerschulz/xegaDfGene")
     (synopsis "Gene Operations for Real-Coded Genes")
     (description
-     "Representation-dependent gene level operations for genetic and evolutionary
+     "Representation-dependent gene-level operations for genetic and evolutionary
 algorithms with real-coded genes are collected in this package.  The common
 feature of the gene operations is that all of them are useful for
 derivation-free optimization algorithms.  At the moment the package implements
@@ -2089,55 +2046,55 @@ Jouni A. (2005) <doi:10.1007/3-540-31306-0>.")
 (define-public r-xegaderivationtrees
   (package
     (name "r-xegaderivationtrees")
-    (version "1.0.0.0")
+    (version "1.0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaDerivationTrees" version))
        (sha256
-        (base32 "0wkv14k73xf4sc86jj4zpbv99ic4q45bbyafmz4mrff85c33srlh"))))
+        (base32 "16q38r33c57cp3cnbdvm994719x3x23vza0pshk25a10i1pvfmzd"))))
     (properties `((upstream-name . "xegaDerivationTrees")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xegabnf))
-    (home-page "<https://github.com/ageyerschulz/xegaDerivationTrees>")
+    (home-page "https://github.com/ageyerschulz/xegaDerivationTrees")
     (synopsis "Generating and Manipulating Derivation Trees")
     (description
      "Derivation tree operations are needed for implementing grammar-based genetic
-programming and grammatical evolution: Generating of a random derivation trees
-of a context-free grammar of bounded depth, decoding a derivation tree, choosing
-a random node in a derivation tree, extracting a tree whose root is a specified
+programming and grammatical evolution: Generating a random derivation trees of a
+context-free grammar of bounded depth, decoding a derivation tree, choosing a
+random node in a derivation tree, extracting a tree whose root is a specified
 node, and inserting a subtree into a derivation tree at a specified node.  These
-operations are necessary for the initializiation and for decoders of a random
+operations are necessary for the initialization and for decoders of a random
 population of programs, as well as for implementing crossover and mutation
 operators.  Depth-bounds are guaranteed by switching to a grammar without
 recursive production rules.  For executing the examples, the package BNF is
-needed.  The basic tree operations of generating, extracting, and inserting of
+needed.  The basic tree operations for generating, extracting, and inserting
 derivation trees as well as the conditions for guaranteeing complete derivation
 trees have been presented in Geyer-Schulz (1997, ISBN:978-3-7908-0830-X).  The
 use of random integer vectors for the generation of derivation trees has been
 introduced in Ryan, C., Collins, J. J., and O'Neill, M. (1998)
-<doi:10.1007/BFb0055930>.")
+<doi:10.1007/BFb0055930> for grammatical evolution.")
     (license license:expat)))
 
 (define-public r-xegabnf
   (package
     (name "r-xegabnf")
-    (version "1.0.0.0")
+    (version "1.0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaBNF" version))
        (sha256
-        (base32 "0r1ac8h0ah3jsphrh8lbvm8gphkprycs9nib2nih6l522par4pma"))))
+        (base32 "1hdf9rsliiy8447ai98k3anlb44an58rny97qcqqndyigryppfk3"))))
     (properties `((upstream-name . "xegaBNF")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "<https://github.com/ageyerschulz/xegaBNF>")
+    (home-page "https://github.com/ageyerschulz/xegaBNF")
     (synopsis
      "Compile a Backus-Naur Form Specification into an R Grammar Object")
     (description
@@ -2151,20 +2108,21 @@ to access the production table @code{(rules()} and @code{derives()}).  For the
 BNF specification, see Backus, John et al. (1962) \"Revised Report on the
 Algorithmic Language ALGOL 60\". (ALGOL60 standards page
 <http://www.algol60.org/2standards.htm>, html-edition
-<https://www.masswerk.at/algol60/report.htm>) The grammar compiler is based on
-the APL2 implementation in Geyer-Schulz, Andreas (1997, ISBN:978-3-7908-0830-X).")
+<https://www.masswerk.at/algol60/report.htm>) A preprocessor for macros which
+expand to standard BNF is included.  The grammar compiler is an extension of the
+APL2 implementation in Geyer-Schulz, Andreas (1997, ISBN:978-3-7908-0830-X).")
     (license license:expat)))
 
 (define-public r-xega
   (package
     (name "r-xega")
-    (version "0.9.0.0")
+    (version "0.9.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xega" version))
        (sha256
-        (base32 "1zkmlh04h66xg4r21m8n1hl5c6z4jrbriqm32yhgaxfb8c0kysqv"))))
+        (base32 "1z9x1596c7hg05mxd4q2l222fsrz2cf259n2q6jz3xm0nhkmh6wj"))))
     (properties `((upstream-name . "xega")))
     (build-system r-build-system)
     (arguments
@@ -2179,8 +2137,9 @@ the APL2 implementation in Geyer-Schulz, Andreas (1997, ISBN:978-3-7908-0830-X).
                              r-xegadfgene
                              r-xegaderivationtrees
                              r-xegabnf
-                             r-parallelly))
-    (home-page "<https://github.com/ageyerschulz/xega>")
+                             r-parallelly
+                             r-filelock))
+    (home-page "https://github.com/ageyerschulz/xega")
     (synopsis "Extended Evolutionary and Genetic Algorithms")
     (description
      "Implementation of a scalable, highly configurable, and e(x)tended architecture
@@ -2194,7 +2153,7 @@ evolution (Price, Kenneth V., Storn, Rainer M. and Lampinen, Jouni A. (2005)
 (1997, ISBN:978-3-7908-0830-X)), and grammatical evolution (Ryan, C., O'Neill,
 M., and Collins, J. J. (2018) <doi:10.1007/978-3-319-78717-6>).  All algorithms
 reuse basic adaptive mechanisms for performance optimization.  Sequential or
-parallel execution (on multi-core machines, local clusters, and high performance
+parallel execution (on multi-core machines, local clusters, and high-performance
 computing environments) is available for all algorithms.  See
 <https://github.com/ageyerschulz/xega/tree/main/examples/@code{executionModel>}.")
     (license license:expat)))

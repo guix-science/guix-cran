@@ -5,10 +5,10 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages statistics)
+  #:use-module (gnu packages cran)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
-  #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages java)
   #:use-module (gnu packages spreadsheet)
   #:use-module (gnu packages image)
@@ -25,12 +25,10 @@
   #:use-module (gnu packages tcl)
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
-  #:use-module (gnu packages c)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages databases)
   #:use-module (gnu packages documentation)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages mpi)
@@ -1090,30 +1088,6 @@ database framework.  It helps users to pull data from the Wildbook framework and
 format data for further analysis with mark-recapture applications like Program
 MARK (which can be accessed via the RMark package in R').  Further information
 on the Wildbook framework is available at: <http://www.wildbook.org/doku.php>.")
-    (license license:gpl2+)))
-
-(define-public r-rwiener
-  (package
-    (name "r-rwiener")
-    (version "1.3-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RWiener" version))
-       (sha256
-        (base32 "0afrgflyfjv4jqm04had74zz4cs934zwvyxaan1r4qpg383kibpq"))))
-    (properties `((upstream-name . "RWiener")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/yeagle/RWiener")
-    (synopsis "Wiener Process Distribution Functions")
-    (description
-     "This package provides Wiener process distribution functions, namely the Wiener
-first passage time density, CDF, quantile and random functions.  Additionally
-supplies a modelling function (wdm) and further methods for the resulting
-object.")
     (license license:gpl2+)))
 
 (define-public r-rwicc
@@ -2342,38 +2316,6 @@ and so on).  You will obtain an amazing geometric figure that complicates and
 beautifies itself by varying the number of points and the multiplication table
 you use.")
     (license license:gpl3)))
-
-(define-public r-rush
-  (package
-    (name "r-rush")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rush" version))
-       (sha256
-        (base32 "1pcp60hn07r57dfs2xk7nd7y59q1ahnjylz30vbdpmny8cjxlx4n"))))
-    (properties `((upstream-name . "rush")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-uuid
-                             r-redux
-                             r-r6
-                             r-processx
-                             r-mlr3misc
-                             r-lgr
-                             r-jsonlite
-                             r-data-table
-                             r-checkmate))
-    (home-page "https://github.com/mlr-org/rush")
-    (synopsis "Rapid Parallel and Distributed Computing")
-    (description
-     "Parallel computing with a network of local and remote workers.  Fast exchange of
-results between the workers through a Redis database.  Key features include task
-queues, local caching, and sophisticated error handling.")
-    (license license:expat)))
 
 (define-public r-runuran
   (package
@@ -4904,34 +4846,6 @@ graphs.  The bookdown Lite template theme supports code folding.")
      "Exploit controlled vocabularies organized on tematres servers.")
     (license license:gpl3)))
 
-(define-public r-rtdists
-  (package
-    (name "r-rtdists")
-    (version "0.11-5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rtdists" version))
-       (sha256
-        (base32 "1v8yhyvliw3dm3ciwxxaa9spfw05wp334l7gmvgv20mab2kjxkwp"))))
-    (properties `((upstream-name . "rtdists")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-msm r-gsl r-evd))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rtdists/rtdists/")
-    (synopsis "Response Time Distributions")
-    (description
-     "This package provides response time distributions (density/PDF, distribution
-function/CDF, quantile function, and random generation): (a) Ratcliff diffusion
-model (Ratcliff & @code{McKoon}, 2008, <doi:10.1162/neco.2008.12-06-420>) based
-on C code by Andreas and Jochen Voss and (b) linear ballistic accumulator (LBA;
-Brown & Heathcote, 2008, <doi:10.1016/j.cogpsych.2007.12.002>) with different
-distributions underlying the drift rate.")
-    (license license:gpl3+)))
-
 (define-public r-rtde
   (package
     (name "r-rtde")
@@ -5767,6 +5681,40 @@ interface to the org.vikamine.kernel library of the VIKAMINE system
 analytics in Java.")
     (license license:gpl3+)))
 
+(define-public r-rsubbotools
+  (package
+    (name "r-rsubbotools")
+    (version "0.0.0.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rsubbotools" version))
+       (sha256
+        (base32 "1iqc5fqhxqp867pi6pb0zbhjag86ydadclq53jw9wcby6z7w0spn"))))
+    (properties `((upstream-name . "Rsubbotools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list gsl))
+    (propagated-inputs (list r-rcppgsl r-rcpp))
+    (native-inputs (list pkg-config))
+    (home-page "https://cran.r-project.org/package=Rsubbotools")
+    (synopsis
+     "Fast Estimation of Subbottin and AEP Distributions (Generalized Error Distribution)")
+    (description
+     "Create densities, probabilities, random numbers, quantiles, and maximum
+likelihood estimation for several distributions, mainly the symmetric and
+asymmetric power exponential (AEP), a.k.a.  the Subbottin family of
+distributions, also known as the generalized error distribution.  Estimation is
+made using the design of Bottazzi (2004)
+<https://ideas.repec.org/p/ssa/lemwps/2004-14.html>, where the likelihood is
+maximized by several optimization procedures using the GNU Scientific Library
+(GSL)', translated to C++ code, which makes it both fast and accurate.  The
+package also provides methods for the gamma, Laplace, and Asymmetric Laplace
+distributions.")
+    (license license:gpl3)))
+
 (define-public r-rstudio-prefs
   (package
     (name "r-rstudio-prefs")
@@ -6006,13 +5954,13 @@ Stata commands (both inline and from a .do file) from R.")
 (define-public r-rstantva
   (package
     (name "r-rstantva")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RStanTVA" version))
        (sha256
-        (base32 "02yss5sv8kzqfl566kkkasbkx4yypin8z24b8wm0128fv4znxdxq"))))
+        (base32 "0dazxqcdhdw0igjhjk3m3zfnnypfvaiswwi0ab5414n5avgdya9m"))))
     (properties `((upstream-name . "RStanTVA")))
     (build-system r-build-system)
     (arguments
@@ -7086,32 +7034,6 @@ contains Fortran 90 modules for the P-model (Stocker et al. (2020)
 <doi:10.5194/gmd-10-689-2017>) and @code{BiomeE} (Weng et al. (2015)
 <doi:10.5194/bg-12-2655-2015>).")
     (license license:gpl3)))
-
-(define-public r-rsocrata
-  (package
-    (name "r-rsocrata")
-    (version "1.7.15-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RSocrata" version))
-       (sha256
-        (base32 "0afsmliwcsza7r46b1d6126s0gkpkk2mlj6bw83ix8cswlfg8xzk"))))
-    (properties `((upstream-name . "RSocrata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plyr r-mime r-jsonlite r-httr))
-    (home-page "https://github.com/Chicago/RSocrata")
-    (synopsis "Download or Upload 'Socrata' Data Sets")
-    (description
-     "This package provides easier interaction with Socrata open data portals
-<https://dev.socrata.com>.  Users can provide a Socrata data set resource URL,
-or a Socrata Open Data API (SODA) web query, or a Socrata \"human-friendly\" URL,
-returns an R data frame.  Converts dates to POSIX format and manages throttling
-by Socrata'.  Users can upload data to Socrata portals directly from R.")
-    (license license:expat)))
 
 (define-public r-rsocialwatcher
   (package
@@ -11157,42 +11079,6 @@ This especially includes the computation of the Pareto frontier, also known as
 preferences (see KieÃling (2002) <doi:10.1016/B978-155860869-6/50035-4>).")
     (license license:gpl2+)))
 
-(define-public r-rpredictit
-  (package
-    (name "r-rpredictit")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rpredictit" version))
-       (sha256
-        (base32 "0azq75fhjadchc4pxgs4pccpvskc508zhggxxb7ab012nysap027"))))
-    (properties `((upstream-name . "rpredictit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xts
-                             r-shiny
-                             r-quantmod
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-dygraphs
-                             r-dt
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/danielkovtun/rpredictit")
-    (synopsis "Interface to the 'PredictIt' API")
-    (description
-     "Wrapper to retrieve market data, explore available markets, and plot historical
-price data from the @code{PredictIt} public API
-(<https://www.predictit.org/api/marketdata/all/>).  The package comes with a
-demo shiny application for illustrating example use cases.  License to use data
-made available via the API is for non-commercial use and @code{PredictIt} is the
-sole source of such data.")
-    (license license:expat)))
-
 (define-public r-rpraat
   (package
     (name "r-rpraat")
@@ -14452,13 +14338,13 @@ using a hierarchical method and various ordered logrank tests.")
 (define-public r-rologit
   (package
     (name "r-rologit")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROlogit" version))
        (sha256
-        (base32 "09j9c24f7plzpnnhpmzdi4gapb7w1377ksjwk6i2xpyr4bfsrr5k"))))
+        (base32 "0cl8vdbf4c9ycr7v7k3qb96fpws3srd7grk8kswycggancsd96qs"))))
     (properties `((upstream-name . "ROlogit")))
     (build-system r-build-system)
     (arguments
@@ -19330,33 +19216,6 @@ to the @code{NetLogo} Mathematica Link
 <https://github.com/@code{NetLogo/Mathematica-Link>}.")
     (license license:gpl2)))
 
-(define-public r-rnetcdf
-  (package
-    (name "r-rnetcdf")
-    (version "2.10-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RNetCDF" version))
-       (sha256
-        (base32 "0llk4s0bf3r3knsn7ih2b6rym20wg13nsdfvv5v9hxvkyyl7yfa0"))))
-    (properties `((upstream-name . "RNetCDF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list udunits netcdf))
-    (native-inputs (list pkg-config))
-    (home-page "https://cran.r-project.org/package=RNetCDF")
-    (synopsis "Interface to 'NetCDF' Datasets")
-    (description
-     "An interface to the @code{NetCDF} file formats designed by Unidata for efficient
-storage of array-oriented scientific data and descriptions.  Most capabilities
-of @code{NetCDF} version 4 are supported.  Optional conversions of time units
-are enabled by UDUNITS version 2, also from Unidata.")
-    (license (list license:gpl2+
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-rnetcarto
   (package
     (name "r-rnetcarto")
@@ -22726,20 +22585,20 @@ weight, variable weight, tracking subjects used in each tree, etc.")
 (define-public r-rlowdb
   (package
     (name "r-rlowdb")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlowdb" version))
        (sha256
-        (base32 "167mdj02x83jb38h0gm74w9nnhsaicx5zj3i0ys3fgj7vrfrjbgd"))))
+        (base32 "1xasqwma9bkpg9x1lliln8gwsyqfzra1wga79ygzzb91r0y1r7ha"))))
     (properties `((upstream-name . "rlowdb")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-r6 r-purrr r-jsonlite))
-    (home-page "https://cran.r-project.org/package=rlowdb")
+    (propagated-inputs (list r-yyjsonr r-rlang r-r6 r-purrr r-cli))
+    (home-page "https://github.com/feddelegrand7/rlowdb")
     (synopsis "Lightweight JSON-Based Database")
     (description
      "The goal of rlowdb is to provide a lightweight, file-based JSON database.
@@ -26569,13 +26428,13 @@ Kang et al. (2016) <doi:10.1214/15-aoas894>.")
 (define-public r-rigr
   (package
     (name "r-rigr")
-    (version "1.0.4")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rigr" version))
        (sha256
-        (base32 "0x0f8a33zqid6gld2mc0k8jsmbfz2d58myr8zn7i5cr6w02lpi35"))))
+        (base32 "0cdrc0g6r4l95fxg6z8xq301x57xzwyri7m5w4gwwnjvz6168mdk"))))
     (properties `((upstream-name . "rigr")))
     (build-system r-build-system)
     (arguments
@@ -27573,44 +27432,6 @@ peptides.  This package, developed mainly in base R, is based on the workflow
 published by Faridi et al.  in 2018 <doi:10.1126/sciimmunol.aar3947>.")
     (license license:expat)))
 
-(define-public r-rhub
-  (package
-    (name "r-rhub")
-    (version "2.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rhub" version))
-       (sha256
-        (base32 "0fc291gy7zpx6mcpfw5sjjmx4y7lxhzh6n61mwwmz96nn4qb2m1q"))))
-    (properties `((upstream-name . "rhub")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-whoami
-                             r-rprojroot
-                             r-rematch
-                             r-rappdirs
-                             r-r6
-                             r-processx
-                             r-pkgbuild
-                             r-jsonlite
-                             r-glue
-                             r-gitcreds
-                             r-gert
-                             r-desc
-                             r-curl
-                             r-cli
-                             r-callr))
-    (home-page "https://github.com/r-hub/rhub")
-    (synopsis "Tools for R Package Developers")
-    (description
-     "R-hub v2 uses @code{GitHub} Actions to run R CMD check and similar package
-checks.  The rhub package helps you set up R-hub v2 for your R package, and
-start running checks.")
-    (license license:expat)))
-
 (define-public r-rhsdb
   (package
     (name "r-rhsdb")
@@ -28510,13 +28331,13 @@ defined in Chapter 8.")
 (define-public r-rgraph6
   (package
     (name "r-rgraph6")
-    (version "2.0-4")
+    (version "2.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgraph6" version))
        (sha256
-        (base32 "1kyny6a70rarw0p79w8lp09b42178m37lsch3wdrqskphc9gl3cn"))))
+        (base32 "05sjjvjn3b2p4sc1fqjhcqpzaiqksa33bj6bpnmjl7wrqwyah74p"))))
     (properties `((upstream-name . "rgraph6")))
     (build-system r-build-system)
     (arguments
@@ -29282,27 +29103,6 @@ which is an open-source software tool that serves as an introduction to spatial
 data analysis.  The @code{GeoDa} software and its documentation are available at
 <https://geodacenter.github.io>.")
     (license license:gpl2+)))
-
-(define-public r-rgenoud
-  (package
-    (name "r-rgenoud")
-    (version "5.9-0.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rgenoud" version))
-       (sha256
-        (base32 "12pf7kvyvly0aqrk84k07cx7gnqmnrpfzs41ys960gx70lzf77f6"))))
-    (properties `((upstream-name . "rgenoud")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/JasjeetSekhon/rgenoud")
-    (synopsis "R Version of GENetic Optimization Using Derivatives")
-    (description
-     "This package provides a genetic algorithm plus derivative optimizer.")
-    (license license:gpl3)))
 
 (define-public r-rgenius
   (package
@@ -32797,13 +32597,13 @@ responses and identify those that may be problematic.  See Gottfried et al.
 (define-public r-respirometry
   (package
     (name "r-respirometry")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "respirometry" version))
        (sha256
-        (base32 "10pa1jv08125r6jhly27ilp5pmnmwsdwsl21i5na5l3glidrzbdn"))))
+        (base32 "0zf7z5l8h8hfyly447qf7kf5f6ad5yrdlnxx2gp5grki5qydmphd"))))
     (properties `((upstream-name . "respirometry")))
     (build-system r-build-system)
     (arguments
@@ -35477,6 +35277,37 @@ James-Stein, LASSO, Ridge Regression, and Equal Weighting.  It also provides
 visualization tools and performance metrics, such as the Sharpe ratio,
 volatility, and maximum drawdown, to assess the results.")
     (license license:agpl3+)))
+
+(define-public r-remulate
+  (package
+    (name "r-remulate")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "remulate" version))
+       (sha256
+        (base32 "1qr06lgf0wfyzw29b1gz38ip2flyh185gm9s5rbw3m86jla01v0b"))))
+    (properties `((upstream-name . "remulate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/TilburgNetworkGroup/remulate")
+    (synopsis "Simulate Dynamic Networks from Relational Event Models")
+    (description
+     "Model based simulation of dynamic networks under tie-oriented (Butts, C., 2008,
+<doi:10.1111/j.1467-9531.2008.00203.x>) and actor-oriented (Stadtfeld, C., &
+Block, P., 2017, <doi:10.15195/v4.a14>) relational event models.  Supports
+simulation from a variety of relational event model extensions, including
+temporal variability in effects, heterogeneity through dyadic latent class
+relational event models (DLC-REM), random effects, blockmodels, and memory decay
+in relational event models (Lakdawala, R., 2024
+<doi:10.48550/@code{arXiv.2403.19329>}).  The development of this package was
+supported by a Vidi Grant (452-17-006) awarded by the Netherlands Organization
+for Scientific Research (NWO) Grant and an ERC Starting Grant (758791).")
+    (license license:expat)))
 
 (define-public r-remstimate
   (package
@@ -38556,36 +38387,6 @@ data mining approach for longitudinal and clustered data
 <doi:10.1007/s10994-011-5258-3>.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-redux
-  (package
-    (name "r-redux")
-    (version "1.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "redux" version))
-       (sha256
-        (base32 "1cbgc39avvjx1lqfrrwyq6fjm751i10gxhsfx67njg8ghj4pq790"))))
-    (properties `((upstream-name . "redux")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list hiredis))
-    (propagated-inputs (list r-storr r-r6))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://github.com/richfitz/redux")
-    (synopsis "R Bindings to 'hiredis'")
-    (description
-     "This package provides a hiredis wrapper that includes support for transactions,
-pipelining, blocking subscription, serialisation of all keys and values, Redis
-error handling with R errors.  Includes an automatically generated R6 interface
-to the full hiredis API. Generated functions are faithful to the hiredis
-documentation while attempting to match R's argument semantics.  Serialisation
-must be explicitly done by the user, but both binary and text-mode serialisation
-is supported.")
-    (license license:gpl2)))
-
 (define-public r-redquack
   (package
     (name "r-redquack")
@@ -39474,13 +39275,13 @@ SPC program and gets the results as data frames @code{(redatam_query()},
 (define-public r-redatam
   (package
     (name "r-redatam")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redatam" version))
        (sha256
-        (base32 "1l517lns1pkrh2kvh47dky4mfmgkd3zkdm5ddq4dgc8qxyypg0xh"))))
+        (base32 "121qb3a5xkhlsl141x7hgn8v0i2nw25a2x6dhzgnbdah9h9bmpfw"))))
     (properties `((upstream-name . "redatam")))
     (build-system r-build-system)
     (arguments
@@ -47415,13 +47216,13 @@ Fogarty (2019) <doi:10.1016/j.jocm.2019.100171>.")
 (define-public r-rcmdrplugin-bws1
   (package
     (name "r-rcmdrplugin-bws1")
-    (version "0.2-2")
+    (version "0.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.BWS1" version))
        (sha256
-        (base32 "0as8nnyfk2fjsc92rxywi36bp41zppwcx9207zywqxb0b3awdn08"))))
+        (base32 "1lamy0p0ny82p90jlz48qi8nwcixgm7662qprcj98l96x2sicw7c"))))
     (properties `((upstream-name . "RcmdrPlugin.BWS1")))
     (build-system r-build-system)
     (arguments
@@ -54237,33 +54038,6 @@ Parallel Analysis.  Also weighted correlation matrices may be considered for PA.
 are described by the Clinical Data Interchange Standards Consortium (CDISC)
 Analysis Data Model Team.")
     (license license:asl2.0)))
-
-(define-public r-random
-  (package
-    (name "r-random")
-    (version "0.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "random" version))
-       (sha256
-        (base32 "0sdhagwjlhldb8hn6h4nd1sflzhwkapzybdlb8hzisy3w2ygjn9b"))))
-    (properties `((upstream-name . "random")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-curl))
-    (home-page "https://www.random.org")
-    (synopsis "True Random Numbers using RANDOM.ORG")
-    (description
-     "The true random number service provided by the RANDOM.ORG website created by
-Mads Haahr samples atmospheric noise via radio tuned to an unused broadcasting
-frequency together with a skew correction algorithm due to John von Neumann.
-More background is available in the included vignette based on an essay by Mads
-Haahr.  In its current form, the package offers functions to retrieve random
-integers, randomized sequences and random strings.")
-    (license license:gpl2+)))
 
 (define-public r-rando
   (package

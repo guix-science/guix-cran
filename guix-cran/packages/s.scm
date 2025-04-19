@@ -4,9 +4,9 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages python)
@@ -5424,13 +5424,13 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
 (define-public r-surveydown
   (package
     (name "r-surveydown")
-    (version "0.10.1")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveydown" version))
        (sha256
-        (base32 "0fy66xaccvjpxamml70l2xcncmzixgksx97v7ffdvpggyj1902n7"))))
+        (base32 "0i9k3lk6sw46lv8wi4wsmlf9nj7qcpaz9h123aqz0df7hy9gf0wj"))))
     (properties `((upstream-name . "surveydown")))
     (build-system r-build-system)
     (arguments
@@ -9683,32 +9683,6 @@ dependencies and can be copied directly into your package code using the
 staticimports package.")
     (license license:cc0)))
 
-(define-public r-stringmagic
-  (package
-    (name "r-stringmagic")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stringmagic" version))
-       (sha256
-        (base32 "134g9c358d3730fvkhcwcrhy4w7ig614jcnxrygakrcvm55c1lgf"))))
-    (properties `((upstream-name . "stringmagic")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://lrberge.github.io/stringmagic/")
-    (synopsis "Character String Operations and Interpolation, Magic Edition")
-    (description
-     "This package performs complex string operations compactly and efficiently.
-Supports string interpolation jointly with over 50 string operations.  Also
-enhances regular string functions (like @code{grep()} and co).  See an
-introduction at <https://lrberge.github.io/stringmagic/>.")
-    (license license:gpl2+)))
-
 (define-public r-stringformattr
   (package
     (name "r-stringformattr")
@@ -11521,31 +11495,6 @@ of modern CPU caches and minimise evaluation of the target density for most
 samples.  Many standard densities are internally implemented in C for high
 performance, with general user defined densities also supported.  A paper
 describing the methodology will be released soon.")
-    (license license:expat)))
-
-(define-public r-storr
-  (package
-    (name "r-storr")
-    (version "1.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "storr" version))
-       (sha256
-        (base32 "1spfnizyjdn1idl293k07zcgb32h2wi444vas8hwvm7ngbc6m9y5"))))
-    (properties `((upstream-name . "storr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6 r-digest))
-    (native-inputs (list r-knitr))
-    (home-page "https://richfitz.github.io/storr/")
-    (synopsis "Simple Key Value Stores")
-    (description
-     "This package creates and manages simple key-value stores.  These can use a
-variety of approaches for storing the data.  This package implements the base
-methods and support for file system, in-memory and DBI-based database stores.")
     (license license:expat)))
 
 (define-public r-stormr
@@ -14120,32 +14069,6 @@ bootstrapping as proposed in Cheung, Cheung, Lau, Hui, and Vong (2022)
 <doi:10.1037/hea0001188>.  Also includes simple-to-use functions for computing
 conditional effects (unstandardized or standardized) and plotting moderation
 effects.")
-    (license license:gpl3)))
-
-(define-public r-stddiff
-  (package
-    (name "r-stddiff")
-    (version "3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stddiff" version))
-       (sha256
-        (base32 "1lirfxqiq59vhjkq1zv27ycybbs9n62c14klkkcf74j15a54cmbn"))))
-    (properties `((upstream-name . "stddiff")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=stddiff")
-    (synopsis
-     "Calculate the Standardized Difference for Numeric, Binary and Category Variables")
-    (description
-     "This package contains three main functions including @code{stddiff.numeric()},
-@code{stddiff.binary()} and @code{stddiff.category()}.  These are used to
-calculate the standardized difference between two groups.  It is especially used
-to evaluate the balance between two groups before and after propensity score
-matching.")
     (license license:gpl3)))
 
 (define-public r-stcpr6
@@ -20320,19 +20243,19 @@ formatting SQL statements.")
 (define-public r-sqlove
   (package
     (name "r-sqlove")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SQLove" version))
        (sha256
-        (base32 "00qazplc08rj7l9bs0cvq54jw53csnj53i1rsgk5yp5l9czs7l7x"))))
+        (base32 "0pa2y50zcw3knfc9nx37cmzys2amy44ibcckzj5dim93xla0yj19"))))
     (properties `((upstream-name . "SQLove")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rjdbc r-readr r-dbi))
+    (propagated-inputs (list r-rjdbc r-readr r-odbc r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SQLove")
     (synopsis "Execute 'SQL' Scripts in 'R' Containing Multiple Queries")
@@ -23128,33 +23051,6 @@ Lambert (1999) <doi:10.1080/10618600.1999.10474847>.  This method allows trees
 and forests to be built while considering either level and shape or only shape
 of response trajectories.")
     (license license:expat)))
-
-(define-public r-splines2
-  (package
-    (name "r-splines2")
-    (version "0.5.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "splines2" version))
-       (sha256
-        (base32 "0izjcpcwi35b7m4i9yp2frk1nfij9nw338w7z1fwpkw75c7ac4av"))))
-    (properties `((upstream-name . "splines2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://wwenjie.org/splines2")
-    (synopsis "Regression Spline Functions and Classes")
-    (description
-     "Constructs basis functions of B-splines, M-splines, I-splines, convex splines
-(C-splines), periodic splines, natural cubic splines, generalized Bernstein
-polynomials, their derivatives, and integrals (except C-splines) by closed-form
-recursive formulas.  It also contains a C++ head-only library integrated with
-Rcpp.  See Wang and Yan (2021) <doi:10.6339/21-JDS1020> for details.")
-    (license license:gpl3+)))
 
 (define-public r-splinecox
   (package
@@ -28498,32 +28394,6 @@ additional information about SVMlight format see
 translated from the Matlab functions in <https://github.com/jiayi-ma/VFC>.")
     (license license:gpl3+)))
 
-(define-public r-sparsevctrs
-  (package
-    (name "r-sparsevctrs")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sparsevctrs" version))
-       (sha256
-        (base32 "14r3w74xycsbs7am8ff8mb06m75nf0scscmishdh8mhkjhi5nni6"))))
-    (properties `((upstream-name . "sparsevctrs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs r-rlang r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/r-lib/sparsevctrs")
-    (synopsis "Sparse Vectors for Use in Data Frames")
-    (description
-     "This package provides sparse vectors powered by ALTREP (Alternative
-Representations for R Objects) that behave like regular vectors, and can thus be
-used in data frames.  Also provides tools to convert between sparse matrices and
-data frames with sparse columns and functions to interact with sparse vectors.")
-    (license license:expat)))
-
 (define-public r-sparsevb
   (package
     (name "r-sparsevb")
@@ -30144,53 +30014,6 @@ datasets into analysis-ready formats.")
 quantities.  Reverse translation from integer to Spanish.  Upper limit is up to
 the millions range.  Geocoding via Cadastral web site.")
     (license license:gpl3)))
-
-(define-public r-spamm
-  (package
-    (name "r-spamm")
-    (version "4.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spaMM" version))
-       (sha256
-        (base32 "1nr44jg73gnbc3q1ip7zmzl1n5bggbcgjrdlh6fg81zp41ba3ydv"))))
-    (properties `((upstream-name . "spaMM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-roi
-                             r-rcppeigen
-                             r-rcpp
-                             r-proxy
-                             r-pbapply
-                             r-numderiv
-                             r-nloptr
-                             r-nlme
-                             r-minqa
-                             r-matrix
-                             r-mass
-                             r-gmp
-                             r-geometry
-                             r-crayon
-                             r-boot
-                             r-backports))
-    (home-page "https://www.r-project.org")
-    (synopsis "Mixed-Effect Models, with or without Spatial Random Effects")
-    (description
-     "Inference based on models with or without spatially-correlated random effects,
-multivariate responses, or non-Gaussian random effects (e.g., Beta).  Variation
-in residual variance (heteroscedasticity) can itself be represented by a
-mixed-effect model.  Both classical geostatistical models (Rousset and Ferdy
-2014 <doi:10.1111/ecog.00566>), and Markov random field models on irregular
-grids (as considered in the INLA package, <https://www.r-inla.org>), can be
-fitted, with distinct computational procedures exploiting the sparse matrix
-representations for the latter case and other autoregressive models.  Laplace
-approximations are used for likelihood or restricted likelihood.  Penalized
-quasi-likelihood and other variants discussed in the h-likelihood literature
-(Lee and Nelder 2001 <doi:10.1093/biomet/88.4.987>) are also implemented.")
-    (license (license:fsdg-compatible "CeCILL-2"))))
 
 (define-public r-spam64
   (package
@@ -32793,13 +32616,13 @@ representation described in Sierra and others (2012)
 (define-public r-soilmanager
   (package
     (name "r-soilmanager")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SoilManageR" version))
        (sha256
-        (base32 "13qp3z09wgsfkgy8bzg79qzpy9hd0ir7hggcy5x0wl13988b5bg2"))))
+        (base32 "0ccmw70s1n3qrjgapvrh5ikdp6kf6kf0dwmng7wjjqfk244jjh6i"))))
     (properties `((upstream-name . "SoilManageR")))
     (build-system r-build-system)
     (arguments
@@ -36638,31 +36461,6 @@ Generalized Linear Models for Categorical and Continuous Limited Dependent
 Variables.")
     (license license:gpl2)))
 
-(define-public r-smd
-  (package
-    (name "r-smd")
-    (version "0.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "smd" version))
-       (sha256
-        (base32 "1f5pph3728jb15bmyv0xdanww490gjm5ixz9dbvdv27av02p12js"))))
-    (properties `((upstream-name . "smd")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://bsaul.github.io/smd/")
-    (synopsis "Compute Standardized Mean Differences")
-    (description
-     "Computes standardized mean differences and confidence intervals for multiple
-data types based on Yang, D., & Dalton, J. E. (2012)
-<https://support.sas.com/resources/papers/proceedings12/335-2012.pdf>.")
-    (license license:expat)))
-
 (define-public r-smcure
   (package
     (name "r-smcure")
@@ -38519,24 +38317,19 @@ described in Jetka et al. (2019) <doi:10.1371/journal.pcbi.1007132>.")
 (define-public r-sleev
   (package
     (name "r-sleev")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sleev" version))
        (sha256
-        (base32 "149324mvaixnrjrm20mfmvj3dy6rahaxdhdxq4iczkf3knv0hkbs"))))
+        (base32 "0dmjjf277aynnrr3nn765wvg6wcl3h7r35hc706s9k2zlnbkfi4c"))))
     (properties `((upstream-name . "sleev")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=sleev")
     (synopsis "Semiparametric Likelihood Estimation with Errors in Variables")
     (description
@@ -38919,6 +38712,35 @@ Statistical Learning with Big Dependent Data by Daniel PeÃ±a and Ruey S. Tsay
 linear regression model described in Centofanti et al. (2020)
 <@code{arXiv:2007.00529>}.")
     (license license:gpl3+)))
+
+(define-public r-slash
+  (package
+    (name "r-slash")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "slash" version))
+       (sha256
+        (base32 "183x2vmc61c28kbpcxjlnbagd7d0g39jwqljdggb0kfq3iskwfcc"))))
+    (properties `((upstream-name . "slash")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6))
+    (home-page "https://github.com/feddelegrand7/slash")
+    (synopsis "Path-Based Access and Manipulation of Nested Lists")
+    (description
+     "Allows users to list data structures using path-based navigation.  Provides
+intuitive methods for storing, accessing, and manipulating nested data through
+simple path strings.  Key features include strict mode validation, path
+existence checking, recursive operations, and automatic parent-level creation.
+Designed for use cases requiring organized storage of complex nested data while
+maintaining simple access patterns.  Particularly useful for configuration
+management, nested settings, and any application where data naturally forms a
+tree-like structure.")
+    (license license:expat)))
 
 (define-public r-slap
   (package
@@ -43301,13 +43123,13 @@ using Bernoulli or Poisson distributions.  See Singer et al. (2019)
 (define-public r-simph
   (package
     (name "r-simph")
-    (version "1.3.13")
+    (version "1.3.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simPH" version))
        (sha256
-        (base32 "086060f78f1dmpa6cyhx160blchckplw04gs6997f1hwzswci2l2"))))
+        (base32 "0wrhx01iiww09rlfdi5b15njh1yxxjwkxmr3kl2bd9ghp5bp4g3v"))))
     (properties `((upstream-name . "simPH")))
     (build-system r-build-system)
     (arguments
@@ -43323,7 +43145,6 @@ using Bernoulli or Poisson distributions.  See Singer et al. (2019)
                              r-ggplot2
                              r-dplyr
                              r-data-table))
-    (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=simPH")
     (synopsis
      "Simulate and Plot Estimates from Cox Proportional Hazards Models")
@@ -50404,6 +50225,33 @@ with @code{shinydashboardPlus} and bs4Dash'.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-shinydtc
+  (package
+    (name "r-shinydtc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyDTC" version))
+       (sha256
+        (base32 "0bgxajm0s6a8hkx8d20xvx670p8n09z5gw160j0kl210psfvhfii"))))
+    (properties `((upstream-name . "shinyDTC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinyjs r-shiny r-rstudioapi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sigbertklinke/shinyDTC")
+    (synopsis "Simple Dynamic Timer Control")
+    (description
+     "This package provides a dynamic timer control (DTC) is a shiny widget that
+enables time-based processes in applications.  It allows users to execute these
+processes manually in individual steps or at customizable speeds.  The timer can
+be paused, resumed, or restarted.  This control is particularly well-suited for
+simulations, animations, countdowns, or interactive visualizations.")
+    (license license:gpl3)))
+
 (define-public r-shinydrive
   (package
     (name "r-shinydrive")
@@ -52157,6 +52005,52 @@ combining several data sets and covariates; with a global data set combining
 individual SAR studies; as described in Solymos and Lele (2012)
 <doi:10.1111/j.1466-8238.2011.00655.x>.")
     (license license:gpl2)))
+
+(define-public r-sharpshootr
+  (package
+    (name "r-sharpshootr")
+    (version "2.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sharpshootR" version))
+       (sha256
+        (base32 "07v0w2zgnhhx9bip883ladaa9nswklcp0hf5dpr7b8ds2filzzkn"))))
+    (properties `((upstream-name . "sharpshootR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi
+                             r-soildb
+                             r-scales
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-plyr
+                             r-lattice
+                             r-e1071
+                             r-digest
+                             r-curl
+                             r-cluster
+                             r-circular
+                             r-aqp
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ncss-tech/sharpshootR")
+    (synopsis "Soil Survey Toolkit")
+    (description
+     "This package provides a collection of data processing, visualization, and export
+functions to support soil survey operations.  Many of the functions build on the
+`@code{SoilProfileCollection`} S4 class provided by the aqp package, extending
+baseline visualization to more elaborate depictions in the context of spatial
+and taxonomic data.  While this package is primarily developed by and for the
+USDA-NRCS, in support of the National Cooperative Soil Survey, the authors
+strive for generalization sufficient to support any soil survey operation.  Many
+of the included functions are used by the @code{SoilWeb} suite of websites and
+movile applications.  These functions are provided here, with additional
+documentation, to enable others to replicate high quality versions of these
+figures for their own purposes.")
+    (license license:gpl3+)))
 
 (define-public r-sharpr2
   (package
@@ -66959,13 +66853,13 @@ relationships among different classes and objects.")
 (define-public r-scaper
   (package
     (name "r-scaper")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scaper" version))
        (sha256
-        (base32 "0ygh5lhbpgxc0mbyvc2cv0m3g405aiappysb7msw7r7g2f4x0w6s"))))
+        (base32 "00cmj1jb9rpyv82rkznbw1wz45g9pczhnvw3avzpn4zfm6j9rlml"))))
     (properties `((upstream-name . "scaper")))
     (build-system r-build-system)
     (arguments

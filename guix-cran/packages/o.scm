@@ -4,8 +4,8 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages version-control)
@@ -2868,13 +2868,13 @@ of Operations Research, 167, pg.  7-41, 2009. <DOI:10.1007/s10479-008-0352-z>.")
 (define-public r-orkm
   (package
     (name "r-orkm")
-    (version "0.8.0.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ORKM" version))
        (sha256
-        (base32 "132459zd83c3www2gijcb97f5c765p66y459irlv63ny21hwpnsp"))))
+        (base32 "0kqhdm5diyc6rp0rf36i9k4ksidxa6l5hgk9mk3jmwkhqlq6sr3y"))))
     (properties `((upstream-name . "ORKM")))
     (build-system r-build-system)
     (arguments
@@ -2885,8 +2885,8 @@ of Operations Research, 167, pg.  7-41, 2009. <DOI:10.1007/s10479-008-0352-z>.")
     (synopsis "The Online Regularized K-Means Clustering Algorithm")
     (description
      "Algorithm of online regularized k-means to deal with online multi(single) view
-data.  The philosophy of the package is described in Guo G. (2020)
-<doi:10.1080/02331888.2020.1823979>.")
+data.  The philosophy of the package is described in Guo G. (2024)
+<doi:10.1016/j.ins.2024.121133>.")
     (license license:expat)))
 
 (define-public r-orionz-g
@@ -11511,13 +11511,13 @@ and Chien (2022) <doi:10.18637/jss.v104.i06>.")
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "00qyrkrpd1lp1mcjsj12qil58zgwk0p6mgqyng20a6vlxqmvd96p"))))
+        (base32 "089hp4cj5bsw3j53dvygf58cs9638m34i4k7dcywn9l8gz0fh8rr"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (arguments
@@ -11537,10 +11537,11 @@ and Chien (2022) <doi:10.18637/jss.v104.i06>.")
                              r-checkmate
                              r-benchmarkme))
     (home-page "https://github.com/loelschlaeger/oeli")
-    (synopsis "Utilities for Developing Data Science Software")
+    (synopsis "Some Utilities for Developing Data Science Software")
     (description
-     "Some general helper functions that I (and maybe others) find useful when
-developing data science software.")
+     "This package provides a collection of general-purpose helper functions that I
+(and maybe others) find useful when developing data science software.  Includes
+tools for simulation, data transformation, input validation, and more.")
     (license license:gpl3+)))
 
 (define-public r-oefpil

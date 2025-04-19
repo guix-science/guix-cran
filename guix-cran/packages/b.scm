@@ -4,8 +4,8 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages haskell-xyz)
@@ -1634,6 +1634,49 @@ log-likelihood or its significance, Akaike's Information Criterion, the Bayesian
 Information Criterion, the explained deviance, or the F-test of the change in
 RÂ².")
     (license (license:fsdg-compatible "FreeBSD"))))
+
+(define-public r-budgetivr
+  (package
+    (name "r-budgetivr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "budgetIVr" version))
+       (sha256
+        (base32 "1a53xypqil3w6ynih542j44p6dpzbr8z5dqwqy02djdrvbh2rl6z"))))
+    (properties `((upstream-name . "budgetIVr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rglpk r-mass r-data-table r-arrangements))
+    (home-page "https://github.com/jpenn2023/budgetIVr")
+    (synopsis
+     "Partial Identification of Causal Effects with Mostly Invalid Instruments")
+    (description
+     "This package provides a tuneable and interpretable method for relaxing the
+instrumental variables (IV) assumptions to infer treatment effects in the
+presence of unobserved confounding.  For a treatment-associated covariate to be
+a valid IV, it must be (a) unconfounded with the outcome and (b) have a causal
+effect on the outcome that is exclusively mediated by the exposure.  There is no
+general test of the validity of these IV assumptions for any particular
+pre-treatment covariate.  However, if different pre-treatment covariates give
+differing causal effect estimates when treated as IVs, then we know at least
+some of the covariates violate these assumptions. @code{budgetIVr} exploits this
+fact by taking as input a minimum budget of pre-treatment covariates assumed to
+be valid IVs and idenfiying the set of causal effects that are consistent with
+the user's data and budget assumption.  The following generalizations of this
+principle can be used in this package: (1) a vector of multiple budgets can be
+assigned alongside corresponding thresholds that model degrees of IV invalidity;
+(2) budgets and thresholds can be chosen using specialist knowledge or varied in
+a principled sensitivity analysis; (3) treatment effects can be nonlinear and/or
+depend on multiple exposures (at a computational cost).  The methods in this
+package require only summary statistics.  Confidence sets are constructed under
+the \"no measurement error\" (NOME) assumption from the Mendelian randomization
+literature.  For further methodological details, please refer to Penn et al.
+(2024) <doi:10.48550/@code{arXiv.2411.06913>}.")
+    (license license:gpl3+)))
 
 (define-public r-buddle
   (package
@@ -4730,49 +4773,6 @@ data about LEGO sets.  Data sets that can be used for teaching and learning
 without the need of a Brickset account and API key are also included.  Includes
 all LEGO since through the end of 2023.")
     (license license:gpl3+)))
-
-(define-public r-brglm2
-  (package
-    (name "r-brglm2")
-    (version "0.9.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "brglm2" version))
-       (sha256
-        (base32 "0islmx4kdy22qn2cq7lpzqq6lc6mci5qly645nfdhad9001jmhsa"))))
-    (properties `((upstream-name . "brglm2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-numderiv r-nnet r-matrix r-mass r-enrichwith))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ikosmidis/brglm2")
-    (synopsis "Bias Reduction in Generalized Linear Models")
-    (description
-     "Estimation and inference from generalized linear models based on various methods
-for bias reduction and maximum penalized likelihood with powers of the Jeffreys
-prior as penalty.  The @code{brglmFit} fitting method can achieve reduction of
-estimation bias by solving either the mean bias-reducing adjusted score
-equations in Firth (1993) <doi:10.1093/biomet/80.1.27> and Kosmidis and Firth
-(2009) <doi:10.1093/biomet/asp055>, or the median bias-reduction adjusted score
-equations in Kenne et al. (2017) <doi:10.1093/biomet/asx046>, or through the
-direct subtraction of an estimate of the bias of the maximum likelihood
-estimator from the maximum likelihood estimates as in Cordeiro and
-@code{McCullagh} (1991) <https://www.jstor.org/stable/2345592>.  See Kosmidis et
-al (2020) <doi:10.1007/s11222-019-09860-6> for more details.  Estimation in all
-cases takes place via a quasi Fisher scoring algorithm, and S3 methods for the
-construction of of confidence intervals for the reduced-bias estimates are
-provided.  In the special case of generalized linear models for binomial and
-multinomial responses (both ordinal and nominal), the adjusted score approaches
-to mean and media bias reduction have been found to return estimates with
-improved frequentist properties, that are also always finite, even in cases
-where the maximum likelihood estimates are infinite (e.g. complete and
-quasi-complete separation; see Kosmidis and Firth, 2020
-<doi:10.1093/biomet/asaa052>, for a proof for mean bias reduction in logistic
-regression).")
-    (license license:gpl3)))
 
 (define-public r-bretigea
   (package
@@ -9623,13 +9623,13 @@ Calderon and Nieto (2017) <doi:10.1080/03610926.2014.990758>.")
 (define-public r-bmt
   (package
     (name "r-bmt")
-    (version "0.1.0.3")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BMT" version))
        (sha256
-        (base32 "1vdah5bsn41s2qriq15xi7dw9qzngaacmn5gk6yc7hi89dwyy3yj"))))
+        (base32 "1y7ls4bj4rj64kqrqxvm0m2yf2lvpsjd993fx35q36c5668zxsxc"))))
     (properties `((upstream-name . "BMT")))
     (build-system r-build-system)
     (arguments
@@ -9641,11 +9641,11 @@ Calderon and Nieto (2017) <doi:10.1080/03610926.2014.990758>.")
     (description
      "Density, distribution, quantile function, random number generation for the BMT
 (Bezier-Montenegro-Torres) distribution.  Torres-Jimenez C.J. and
-Montenegro-Diaz A.M. (2017) <@code{arXiv:1709.05534>}.  Moments, descriptive
-measures and parameter conversion for different parameterizations of the BMT
-distribution.  Fit of the BMT distribution to non-censored data by maximum
-likelihood, moment matching, quantile matching, maximum goodness-of-fit, also
-known as minimum distance, maximum product of spacing, also called maximum
+Montenegro-Diaz A.M. (2017) <doi:10.48550/@code{arXiv.1709.05534>}.  Moments,
+descriptive measures and parameter conversion for different parameterizations of
+the BMT distribution.  Fit of the BMT distribution to non-censored data by
+maximum likelihood, moment matching, quantile matching, maximum goodness-of-fit,
+also known as minimum distance, maximum product of spacing, also called maximum
 spacing, and minimum quantile distance, which can also be called maximum
 quantile goodness-of-fit.  Fit of univariate distributions for non-censored data
 using maximum product of spacing estimation and minimum quantile distance
@@ -11534,46 +11534,6 @@ opinion pooling framework as described in Meucci, Attilio (2005)
 Meucci, Attilio (2008) <doi:10.2139/ssrn.1117574>.")
     (license license:expat)))
 
-(define-public r-blavaan
-  (package
-    (name "r-blavaan")
-    (version "0.5-8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "blavaan" version))
-       (sha256
-        (base32 "00pxi5zj68796b3qkil3w66z446ib61xl2l5v1qia1mc9fznlzri"))))
-    (properties `((upstream-name . "blavaan")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tmvnsim
-                             r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-nonnest2
-                             r-mnormt
-                             r-matrix
-                             r-loo
-                             r-lavaan
-                             r-future-apply
-                             r-coda
-                             r-bh
-                             r-bayesplot))
-    (home-page "https://ecmerkle.github.io/blavaan/")
-    (synopsis "Bayesian Latent Variable Analysis")
-    (description
-     "Fit a variety of Bayesian latent variable models, including confirmatory factor
-analysis, structural equation models, and latent growth curve models.
-References: Merkle & Rosseel (2018) <doi:10.18637/jss.v085.i04>; Merkle et al.
-(2021) <doi:10.18637/jss.v100.i06>.")
-    (license license:gpl3+)))
-
 (define-public r-blatr
   (package
     (name "r-blatr")
@@ -11873,49 +11833,6 @@ format and checked for compatibility.  Supports dataframes, tibbles and
      "Geographically referenced data and statistics of nighttime lights from NASA
 Black Marble <https://blackmarble.gsfc.nasa.gov/>.")
     (license license:expat)))
-
-(define-public r-blackbox
-  (package
-    (name "r-blackbox")
-    (version "1.1.46")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "blackbox" version))
-       (sha256
-        (base32 "03m93v5nk5zg039axkf02drdj2q165k73xk6waaiyi0b8w0sbl8l"))))
-    (properties `((upstream-name . "blackbox")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spamm
-                             r-rcppeigen
-                             r-rcpp
-                             r-rcdd
-                             r-proxy
-                             r-pbapply
-                             r-numderiv
-                             r-nloptr
-                             r-matrixstats
-                             r-mass
-                             r-lattice
-                             r-geometry
-                             r-foreach))
-    (home-page "https://kimura.univ-montp2.fr/~rousset/Migraine.htm")
-    (synopsis "Black Box Optimization and Exploration of Parameter Space")
-    (description
-     "This package performs prediction of a response function from simulated response
-values, allowing black-box optimization of functions estimated with some error.
-Includes a simple user interface for such applications, as well as more
-specialized functions designed to be called by the Migraine software (Rousset
-and Leblois, 2012 <doi:10.1093/molbev/MSR262>; Leblois et al., 2014
-<doi:10.1093/molbev/msu212>; and see URL).  The latter functions are used for
-prediction of likelihood surfaces and implied likelihood ratio confidence
-intervals, and for exploration of predictor space of the surface.  Prediction of
-the response is based on ordinary Kriging (with residual error) of the input.
-Estimation of smoothing parameters is performed by generalized cross-validation.")
-    (license (license:fsdg-compatible "CeCILL-2"))))
 
 (define-public r-bla
   (package
@@ -14748,13 +14665,13 @@ calculations needed by Biological Dosimetry Laboratories.")
 (define-public r-biodiversityr
   (package
     (name "r-biodiversityr")
-    (version "2.17-1.1")
+    (version "2.17-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiodiversityR" version))
        (sha256
-        (base32 "1n6m42zvav6ghwgl3g50sb1fcab0w2hkhyix2syjfy4i87qza7qz"))))
+        (base32 "15wiwfd2667dm8f4j6wjj6s61db4cwp9mp9zcsj446kvpj17y1dm"))))
     (properties `((upstream-name . "BiodiversityR")))
     (build-system r-build-system)
     (arguments
@@ -17563,32 +17480,6 @@ Itzlinger-Bruneforth, 2016; Bruneforth, Oberwimmer & Robitzsch, 2016; Robitzsch,
 Pham & Yanagida, 2016).  The package development was supported by BIFIE (Federal
 Institute for Educational Research, Innovation and Development of the Austrian
 School System; Salzburg, Austria).")
-    (license license:gpl2+)))
-
-(define-public r-bife
-  (package
-    (name "r-bife")
-    (version "0.7.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bife" version))
-       (sha256
-        (base32 "0xikxniwzcv6jc64rgx39hddqchxk6c43h45algssbz2vaxvc4zg"))))
-    (properties `((upstream-name . "bife")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-formula r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/amrei-stammann/bife")
-    (synopsis "Binary Choice Models with Fixed Effects")
-    (description
-     "Estimates fixed effects binary choice models (logit and probit) with potentially
-many individual fixed effects and computes average partial effects.  Incidental
-parameter bias can be reduced with an asymptotic bias correction proposed by
-Fernandez-Val (2009) <doi:10.1016/j.jeconom.2009.02.007>.")
     (license license:gpl2+)))
 
 (define-public r-bifactorindicescalculator
@@ -22027,13 +21918,13 @@ vectors (BD-SVD), which can be extended to hierarchical variable clustering
 (define-public r-bdsm
   (package
     (name "r-bdsm")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bdsm" version))
        (sha256
-        (base32 "1r8fz0v7d01c37f7g1cc4wdynzia5la8m4i5zr9yhnsprb88d6x1"))))
+        (base32 "0cv5lzj4ni0v6r7zzqk97787x4826f9yyjx14y0zzib6ahhb834j"))))
     (properties `((upstream-name . "bdsm")))
     (build-system r-build-system)
     (arguments
@@ -22044,6 +21935,7 @@ vectors (BD-SVD), which can be extended to hierarchical variable clustering
                              r-rootsolve
                              r-rlang
                              r-rje
+                             r-pbapply
                              r-optimbase
                              r-magrittr
                              r-knitr
@@ -29071,13 +28963,13 @@ Fujikawa et al. (2020) <doi:10.1002/bimj.201800404>.")
 (define-public r-basketballanalyzer
   (package
     (name "r-basketballanalyzer")
-    (version "0.5.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BasketballAnalyzeR" version))
        (sha256
-        (base32 "1bad287llg89smqg43lgz2hdkjg3l39mh4k82avgb52xwqp5gjxc"))))
+        (base32 "0ralfc9i32f7jwarfg20gvrx0qfisk5dpay74djazm354vqhdphj"))))
     (properties `((upstream-name . "BasketballAnalyzeR")))
     (build-system r-build-system)
     (arguments
@@ -29087,34 +28979,30 @@ Fujikawa et al. (2020) <doi:10.1002/bimj.201800404>.")
                              r-stringr
                              r-statnet-common
                              r-sp
-                             r-sna
-                             r-scales
                              r-rlang
                              r-readr
                              r-plyr
                              r-pbsmapping
                              r-operators
-                             r-network
+                             r-mathjaxr
                              r-mass
                              r-magrittr
-                             r-hexbin
+                             r-gtools
                              r-gridextra
                              r-ggrepel
-                             r-ggplotify
                              r-ggplot2
-                             r-ggnetwork
                              r-ggally
                              r-dplyr
                              r-directlabels
-                             r-dendextend
-                             r-corrplot
-                             r-circlize))
-    (home-page "https://github.com/sndmrc/BasketballAnalyzeR")
+                             r-data-table
+                             r-corrplot))
+    (home-page "https://github.com/sndmrc/BasketballAnalyzeR/")
     (synopsis "Analysis and Visualization of Basketball Data")
     (description
      "This package contains data and code to accompany the book P. Zuccolotto and M.
 Manisera (2020) Basketball Data Science.  Applications with R. CRC Press.  ISBN
-9781138600799.")
+9781138600799.  For more details, see the page
+bdsports.unibs.it/basketballanalyzer/.")
     (license license:gpl2+)))
 
 (define-public r-basket

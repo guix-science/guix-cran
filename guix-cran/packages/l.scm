@@ -5,8 +5,8 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages multiprecision)
@@ -9613,33 +9613,6 @@ Wickham et.  al (2011) <doi:10.18637/jss.v040.i02> or
 <https://github.com/ggobi/tourr>.")
     (license license:expat)))
 
-(define-public r-lintools
-  (package
-    (name "r-lintools")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lintools" version))
-       (sha256
-        (base32 "03sfx1w3kl7xk79bpw6hddk7xylh2w2fp9zsgbd50150xp49p1ah"))))
-    (properties `((upstream-name . "lintools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/data-cleaning/lintools")
-    (synopsis "Manipulation of Linear Systems of (in)Equalities")
-    (description
-     "Variable elimination (Gaussian elimination, Fourier-Motzkin elimination),
-Moore-Penrose pseudoinverse, reduction to reduced row echelon form, value
-substitution, projecting a vector on the convex polytope described by a system
-of (in)equations, simplify systems by removing spurious columns and rows and
-collapse implied equalities, test if a matrix is totally unimodular, compute
-variable ranges implied by linear (in)equalities.")
-    (license license:gpl3)))
-
 (define-public r-linselect
   (package
     (name "r-linselect")
@@ -12838,13 +12811,13 @@ LFMM program present in the LEA package (Frichot and Francois, 2015,
 (define-public r-lfm
   (package
     (name "r-lfm")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LFM" version))
        (sha256
-        (base32 "11wpr9fx8nnnhi7n6g398mcfv0692pclv5zw7w0rbjzhxmbq11wi"))))
+        (base32 "0jiaf0rkv5azv7civ70q1crwlalbaq5mn2zp4vn9n71lf0rgk7ba"))))
     (properties `((upstream-name . "LFM")))
     (build-system r-build-system)
     (arguments

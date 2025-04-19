@@ -4,10 +4,10 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
@@ -1347,13 +1347,13 @@ Shiny input or output.")
 (define-public r-pursuit
   (package
     (name "r-pursuit")
-    (version "1.0.6")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Pursuit" version))
        (sha256
-        (base32 "0hx9pn9bv9z4bgg9m3vz0256b6wgkdz3d1fbjvk1kwbnddmh5dv3"))))
+        (base32 "1iz7vbsc7by3dwfnlz3sdch1ij3765lr9422v49mpqj51laykni6"))))
     (properties `((upstream-name . "Pursuit")))
     (build-system r-build-system)
     (arguments
@@ -9349,13 +9349,13 @@ that governs neural spiking in response to optogenetic stimulation.")
 (define-public r-prnsamplr
   (package
     (name "r-prnsamplr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prnsamplr" version))
        (sha256
-        (base32 "0m6j0wr66kwx51q89352hidvdjzq2vp3ans5vf1dzxrjs6ghm2qm"))))
+        (base32 "08ys73yvf4wyiwqcw8qb8mjd526zi2c3c5cwkyyv317870my7wd5"))))
     (properties `((upstream-name . "prnsamplr")))
     (build-system r-build-system)
     (arguments
@@ -11585,13 +11585,13 @@ part of the OOMPA collection of packages described at
 (define-public r-prepplot
   (package
     (name "r-prepplot")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prepplot" version))
        (sha256
-        (base32 "1x6znfhmrsb2zj2cfygsw1fdszcp4xdpaip4b4d5cdl2rykb3bjn"))))
+        (base32 "0iy29jy5k8ibggd4vx4izvmil9v3g1dqr88gd2vq052nhcswsqi2"))))
     (properties `((upstream-name . "prepplot")))
     (build-system r-build-system)
     (arguments
@@ -15739,26 +15739,26 @@ global options.")
 (define-public r-poth
   (package
     (name "r-poth")
-    (version "0.2-0")
+    (version "0.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poth" version))
        (sha256
-        (base32 "0jm9sgd9w8d0c0zlabd57amg70yy6xsal2hzdl13v02ib5nd1iy2"))))
+        (base32 "1hcrq1l0rjcmn17mrmdq2aqya82m0xfs3hd50mwqcr7gzwydmlrj"))))
     (properties `((upstream-name . "poth")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-netmeta r-ggplot2))
+    (propagated-inputs (list r-stringr r-netmeta r-mass r-ggplot2))
     (home-page "https://github.com/augustinewigle/poth")
     (synopsis "Precision of Treatment Hierarchy (POTH)")
     (description
      "Calculate POTH for treatment hierarchies from frequentist and Bayesian network
 meta-analysis.  POTH quantifies the certainty in a treatment hierarchy.  Subset
-POTH, POTH residuals, and cumulative POTH can also be calculated to improve
-interpretation of treatment hierarchies.")
+POTH, POTH residuals, and best k treatments POTH can also be calculated to
+improve interpretation of treatment hierarchies.")
     (license license:gpl2+)))
 
 (define-public r-potential
@@ -18304,13 +18304,13 @@ ISBN:3540262393).")
 (define-public r-pomp
   (package
     (name "r-pomp")
-    (version "6.1")
+    (version "6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomp" version))
        (sha256
-        (base32 "1ynb96r3gyp4wfgcbrm5rs58can27iiszcqzrljpd542nvva411n"))))
+        (base32 "1hizjbfhk3kfalj1nf4gp78316z9q2rjihbyxnjyg1cjgd4z1l29"))))
     (properties `((upstream-name . "pomp")))
     (build-system r-build-system)
     (arguments
@@ -24004,51 +24004,6 @@ Tardella (2017) <doi.org/10.1007/s11336-016-9530-0> and Mollica and Tardella
 (2014) <doi/10.1002/sim.6224>.")
     (license license:gpl2+)))
 
-(define-public r-plm
-  (package
-    (name "r-plm")
-    (version "2.6-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "plm" version))
-       (sha256
-        (base32 "1cq0hj6csfxsrm6k4qw5rds018div26mw6m34wjj45gj34l87a9m"))))
-    (properties `((upstream-name . "plm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-sandwich
-                             r-rdpack
-                             r-nlme
-                             r-maxlik
-                             r-mass
-                             r-lmtest
-                             r-lattice
-                             r-formula
-                             r-collapse
-                             r-bdsmatrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=plm")
-    (synopsis "Linear Models for Panel Data")
-    (description
-     "This package provides a set of estimators for models and (robust) covariance
-matrices, and tests for panel data econometrics, including within/fixed effects,
-random effects, between, first-difference, nested random effects as well as
-instrumental-variable (IV) and Hausman-Taylor-style models, panel generalized
-method of moments (GMM) and general FGLS models, mean groups (MG), demeaned MG,
-and common correlated effects (CCEMG) and pooled (CCEP) estimators with common
-factors, variable coefficients and limited dependent variables models.  Test
-functions include model specification, serial correlation, cross-sectional
-dependence, panel unit root and panel Granger (non-)causality.  Typical
-references are general econometrics text books such as Baltagi (2021),
-Econometric Analysis of Panel Data (<doi:10.1007/978-3-030-53953-5>), Hsiao
-(2014), Analysis of Panel Data (<doi:10.1017/CBO9781139839327>), and Croissant
-and Millo (2018), Panel Data Econometrics with R (<doi:10.1002/9781119504641>).")
-    (license license:gpl2+)))
-
 (define-public r-plis
   (package
     (name "r-plis")
@@ -25606,6 +25561,40 @@ AUCs with linear or log interpolation method * Reference: Gabrielsson J, Weiner
 D. Pharmacokinetic and Pharmacodynamic Data Analysis - Concepts and
 Applications.  5th ed.  2016. (ISBN:9198299107).")
     (license license:gpl3)))
+
+(define-public r-pkpdsim
+  (package
+    (name "r-pkpdsim")
+    (version "1.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PKPDsim" version))
+       (sha256
+        (base32 "09d8rs4shk8w69znz58w1b34hixs4064yciw6mgaqysx7ig0c47y"))))
+    (properties `((upstream-name . "PKPDsim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-rcpp
+                             r-randtoolbox
+                             r-mass
+                             r-magrittr
+                             r-jsonlite
+                             r-data-table
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/InsightRX/PKPDsim")
+    (synopsis
+     "Tools for Performing Pharmacokinetic-Pharmacodynamic Simulations")
+    (description
+     "Simulate dose regimens for pharmacokinetic-pharmacodynamic (PK-PD) models
+described by differential equation (DE) systems.  Simulation using ADVAN-style
+analytical equations is also supported (Abuhelwa et al. (2015)
+<doi:10.1016/j.vascn.2015.03.004>).")
+    (license license:expat)))
 
 (define-public r-pknca
   (package
@@ -28775,33 +28764,6 @@ prevalence.")
 phylogenetic tree and predictors (groups) towards total R2 for phylogenetic
 linear regression models.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-phylolm
-  (package
-    (name "r-phylolm")
-    (version "2.6.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "phylolm" version))
-       (sha256
-        (base32 "0sg2a7isy5f5phk2db4v2b78apdmd3k9c8jdwpkrm3lw7vxj52v5"))))
-    (properties `((upstream-name . "phylolm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-future-apply r-ape))
-    (home-page "https://github.com/lamho86/phylolm")
-    (synopsis "Phylogenetic Linear Regression")
-    (description
-     "This package provides functions for fitting phylogenetic linear models and
-phylogenetic generalized linear models.  The computation uses an algorithm that
-is linear in the number of tips in the tree.  The package also provides
-functions for simulating continuous or binary traits along the tree.  Other
-tools include functions to test the adequacy of a population tree.")
-    (license (list license:gpl2+
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-phylogr
   (package
@@ -35522,27 +35484,6 @@ values.  The relationship matrix between the individuals can be derived from
 pedigree structure ('Vazquez et al., 2010') <doi:10.2527/jas.2009-1952>.")
     (license license:gpl3)))
 
-(define-public r-pedigreemm
-  (package
-    (name "r-pedigreemm")
-    (version "0.3-5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pedigreemm" version))
-       (sha256
-        (base32 "1bnvd25z8ff0d00wijp2vw9xw11fczqrlblw3ag39pjzn98a1zf7"))))
-    (properties `((upstream-name . "pedigreemm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix r-lme4))
-    (home-page "https://github.com/anainesvs/pedigreemm/")
-    (synopsis "Pedigree-Based Mixed-Effects Models")
-    (description "Fit pedigree-based mixed-effects models.")
-    (license license:gpl2+)))
-
 (define-public r-pedigree
   (package
     (name "r-pedigree")
@@ -36941,13 +36882,13 @@ websites: <https://github.com/Penncil/pda>, and <https://pdamethods.org/>.")
 (define-public r-pcvr
   (package
     (name "r-pcvr")
-    (version "1.1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcvr" version))
        (sha256
-        (base32 "1hlfbddi54hrr3s15vrbpxc8jvnhvrlifp632qpninf9lfik23js"))))
+        (base32 "0yacdlz0vg097gpmr2z76gdjzmk1dr97qxh9hby04zqayxvzcg7q"))))
     (properties `((upstream-name . "pcvr")))
     (build-system r-build-system)
     (arguments
@@ -39690,6 +39631,40 @@ then be used to fit a predictive model with a number of machine learning
 algorithms.  This is further described in Reps (2017)
 <doi:10.1093/jamia/ocy032>.")
     (license license:asl2.0)))
+
+(define-public r-pathwayvote
+  (package
+    (name "r-pathwayvote")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PathwayVote" version))
+       (sha256
+        (base32 "0awlx7d1hnnang6mzm8kzxw7nr4cz71ch72fz7dxar0yf57b7q6b"))))
+    (properties `((upstream-name . "PathwayVote")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reactomepa
+                             r-parallelly
+                             r-org-hs-eg-db
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-clusterprofiler
+                             r-annotationdbi))
+    (home-page "https://cran.r-project.org/package=PathwayVote")
+    (synopsis
+     "Robust Pathway Enrichment for DNA Methylation Studies Using Ensemble Voting")
+    (description
+     "This package implements a robust, voting-based pathway enrichment method
+designed for DNA methylation data analysis.  The algorithm allows the input of
+expression quantitative trait methylation (@code{eQTM}) data to aggregates
+pathway signals across multiple parameter settings, and selects pathways
+supported across combinations using a vote-pruning strategy.")
+    (license license:expat)))
 
 (define-public r-pathwaytmb
   (package

@@ -2792,35 +2792,6 @@ are mapped to the visible sides of the cube.  The cube can be freely rotated.
 Zooming and panning can be used to focus on different areas of the cube.")
     (license license:expat)))
 
-(define-public r-cubelyr
-  (package
-    (name "r-cubelyr")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cubelyr" version))
-       (sha256
-        (base32 "154vwf5pj2jh66wqdh78nc0v722b4rh88hss24g5lc31wlghzc8q"))))
-    (properties `((upstream-name . "cubelyr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-pillar
-                             r-glue
-                             r-dplyr))
-    (home-page "https://github.com/hadley/cubelyr")
-    (synopsis "Data Cube 'dplyr' Backend")
-    (description
-     "An implementation of a data cube extracted out of dplyr for backward
-compatibility.")
-    (license license:expat)))
-
 (define-public r-cubble
   (package
     (name "r-cubble")
@@ -9085,13 +9056,13 @@ from Krailo M. D., & Pike M. C. (1984, Journal of the Royal Statistical Society.
 (define-public r-cptnonpar
   (package
     (name "r-cptnonpar")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CptNonPar" version))
        (sha256
-        (base32 "1mpjxy5wivadbska51g30594rqgdx3g0m4jr90lnnri2yb8a78kw"))))
+        (base32 "1p0d8j94ax7kicyw5s35qkclpvk4f0q83ryhfcpfq43bz4zi591c"))))
     (properties `((upstream-name . "CptNonPar")))
     (build-system r-build-system)
     (arguments
@@ -9110,8 +9081,7 @@ from Krailo M. D., & Pike M. C. (1984, Journal of the Royal Statistical Society.
      "This package implements the nonparametric moving sum procedure for detecting
 changes in the joint characteristic function (NP-MOJO) for multiple change point
 detection in multivariate time series.  See @code{McGonigle}, E. T., Cho, H.
-(2023) <doi:10.48550/@code{arXiv.2305.07581>} for description of the NP-MOJO
-methodology.")
+(2025) <doi:10.1093/biomet/asaf024> for description of the NP-MOJO methodology.")
     (license license:gpl3+)))
 
 (define-public r-cptcity
@@ -9605,32 +9575,6 @@ PDF files such as split, combine, and compress PDF files.")
 facilitate communication between R and the Eigen C++ library for linear algebra
 and scientific computing.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
-(define-public r-cpp11bigwig
-  (package
-    (name "r-cpp11bigwig")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cpp11bigwig" version))
-       (sha256
-        (base32 "0i9rbjj2f8m5x2z594fg7rqqiajf2sjlxj6g66fpl65gr9n7hch8"))))
-    (properties `((upstream-name . "cpp11bigwig")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib))
-    (propagated-inputs (list r-tibble r-iranges r-genomicranges r-cpp11))
-    (home-page "https://rnabioco.github.io/cpp11bigwig/")
-    (synopsis "Read bigWig and bigBed Files")
-    (description
-     "Read @code{bigWig} and @code{bigBed} files using \"@code{libBigWig}\"
-<https://github.com/dpryan79/@code{libBigWig>}.  Provides lightweight access to
-the binary @code{bigWig} and @code{bigBed} formats developed by the UCSC Genome
-Browser group.")
-    (license license:expat)))
 
 (define-public r-cpp11armadillo
   (package
@@ -15543,13 +15487,13 @@ from Gaussian, if specified.")
 (define-public r-copula-surv
   (package
     (name "r-copula-surv")
-    (version "1.9")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Copula.surv" version))
        (sha256
-        (base32 "1jcwpkdbxdv9al2m8321m3ymkxc9z6i8nim2hszzrqhyhxsrvax9"))))
+        (base32 "0fn7h7ma6kbazj5cr772zx7xwj1l732c0kd4w2a4fvabb21d6qly"))))
     (properties `((upstream-name . "Copula.surv")))
     (build-system r-build-system)
     (arguments
@@ -17705,38 +17649,49 @@ recommended to consult the documentation of the corresponding packages.")
 (define-public r-consrankclass
   (package
     (name "r-consrankclass")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ConsRankClass" version))
        (sha256
-        (base32 "02n6a3affm72vfhsjz90jl8x0qrvxsimlm1ng313s4zla515h8ap"))))
+        (base32 "08wq6qmm9f73m4sdal7yldyswkgbj0pycq7hnap4rlxicasyzsj0"))))
     (properties `((upstream-name . "ConsRankClass")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlist r-proxy r-pracma r-janitor r-consrank))
+    (propagated-inputs (list r-smacof
+                             r-rlist
+                             r-proxy
+                             r-pracma
+                             r-janitor
+                             r-gtools
+                             r-consrank))
     (home-page "https://www.r-project.org/")
     (synopsis "Classification and Clustering of Preference Rankings")
     (description
      "Tree-based classification and soft-clustering method for preference rankings,
-with tools for external validation of fuzzy clustering.  It contains the
-recursive partitioning algorithm for preference rankings, non-parametric
-tree-based method for a matrix of preference rankings as a response variable.
-It contains also the distribution-free soft clustering method for preference
-rankings, namely the K-median cluster component analysis (CCA).  The package
-depends on the @code{ConsRank} R package.  Options for validate the tree-based
-method are both test-set procedure and V-fold cross validation.  The package
-contains the routines to compute the adjusted concordance index (a fuzzy version
-of the adjusted rand index) and the normalized degree of concordance (the
-corresponding fuzzy version of the rand index).  Essential references:
-D'Ambrosio, A., Amodio, S., Iorio, C., Pandolfo, G., and Siciliano, R. (2021)
-<doi:10.1007/s00357-020-09367-0> D'Ambrosio, A., and Heiser, W.J. (2019)
+with tools for external validation of fuzzy clustering, and Kemeny-equivalent
+augmented unfolding.  It contains the recursive partitioning algorithm for
+preference rankings, non-parametric tree-based method for a matrix of preference
+rankings as a response variable.  It contains also the distribution-free soft
+clustering method for preference rankings, namely the K-median cluster component
+analysis (CCA).  The package depends on the @code{ConsRank} R package.  Options
+for validate the tree-based method are both test-set procedure and V-fold cross
+validation.  The package contains the routines to compute the adjusted
+concordance index (a fuzzy version of the adjusted rand index) and the
+normalized degree of concordance (the corresponding fuzzy version of the rand
+index).  The package also contains routines to perform the Kemeny-equivalent
+augmented unfolding.  The mds endine is the function @code{sacofSym} from the
+package smacof'.  Essential references: D'Ambrosio, A., Vera, J.F., and Heiser,
+W.J. (2021) <doi:10.1080/00273171.2021.1899892>; D'Ambrosio, A., Amodio, S.,
+Iorio, C., Pandolfo, G., and Siciliano, R. (2021)
+<doi:10.1007/s00357-020-09367-0>; D'Ambrosio, A., and Heiser, W.J. (2019)
 <doi:10.1007/s41237-018-0069-5>; D'Ambrosio, A., and Heiser W.J. (2016)
 <doi:10.1007/s11336-016-9505-1>; Hullermeier, E., Rifqi, M., Henzgen, S., and
-Senge, R. (2012) <doi:10.1109/TFUZZ.2011.2179303>.")
+Senge, R. (2012) <doi:10.1109/TFUZZ.2011.2179303>; Marden, J.J.
+<ISBN:0412995212>.")
     (license license:gpl3)))
 
 (define-public r-conspline
@@ -21046,33 +21001,6 @@ assessment type and produces extensive G- and D-study results with graphical
 interpretations.  Overall, our approach enhances the reliability of composite
 assessments, making it suitable for various education contexts.")
     (license license:gpl3+)))
-
-(define-public r-compoissonreg
-  (package
-    (name "r-compoissonreg")
-    (version "0.8.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "COMPoissonReg" version))
-       (sha256
-        (base32 "0a03v9b3mv214y2ky94z8y363x6b97a68kvypvan56m0mg0zzq3d"))))
-    (properties `((upstream-name . "COMPoissonReg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-numderiv))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/lotze/COMPoissonReg")
-    (synopsis "Conway-Maxwell Poisson (COM-Poisson) Regression")
-    (description
-     "Fit Conway-Maxwell Poisson (COM-Poisson or CMP) regression models to count data
-(Sellers & Shmueli, 2010) <doi:10.1214/09-AOAS306>.  The package provides
-functions for model estimation, dispersion testing, and diagnostics.
-Zero-inflated CMP regression (Sellers & Raim, 2016)
-<doi:10.1016/j.csda.2016.01.007> is also supported.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-compmodels
   (package
@@ -28865,30 +28793,6 @@ between data is crucial.  The package is designed to be flexible and easily
 integrated into data analysis workflows, providing reliable tools for evaluating
 distances in multidimensional contexts.")
     (license license:gpl3)))
-
-(define-public r-cmaesr
-  (package
-    (name "r-cmaesr")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cmaesr" version))
-       (sha256
-        (base32 "03zx2nrw24wmmjjpyh8pswasjjq0amf0g375fm2b3s111dx8fbj9"))))
-    (properties `((upstream-name . "cmaesr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-smoof r-paramhelpers r-ggplot2 r-checkmate
-                             r-bbmisc))
-    (home-page "https://github.com/jakobbossek/cmaesr")
-    (synopsis "Covariance Matrix Adaptation Evolution Strategy")
-    (description
-     "Pure R implementation of the Covariance Matrix Adaptation - Evolution Strategy
-(CMA-ES) with optional restarts (IPOP-CMA-ES).")
-    (license license:bsd-2)))
 
 (define-public r-cmaes
   (package
@@ -38778,6 +38682,34 @@ Inc. \"@code{CompTox} Chemicals Dashboard v2.2.1\",
 <https://comptox.epa.gov/dashboard/chemical-lists/WIKIPEDIA>].")
     (license license:cc0)))
 
+(define-public r-cheetahr
+  (package
+    (name "r-cheetahr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cheetahR" version))
+       (sha256
+        (base32 "1b0j4frkj6hd979wjm9qa9xg060lslv7w9gvp7m08disfhn85jdj"))))
+    (properties `((upstream-name . "cheetahR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-jsonlite r-htmlwidgets))
+    (native-inputs (list r-quarto))
+    (home-page "https://cran.r-project.org/package=cheetahR")
+    (synopsis "High Performance Tables Using 'Cheetah Grid'")
+    (description
+     "An R interface to Cheetah Grid', a high-performance @code{JavaScript} table
+widget. @code{cheetahR} allows users to render millions of rows in just a few
+milliseconds, making it an excellent alternative to other R table widgets.  The
+package wraps the Cheetah Grid @code{JavaScript} functions and makes them
+readily available for R users.  The underlying grid implementation is based on
+Cheetah Grid <https://github.com/future-architect/cheetah-grid>.")
+    (license license:gpl3+)))
+
 (define-public r-cheese
   (package
     (name "r-cheese")
@@ -40667,37 +40599,6 @@ paired samples.  Good data graphs, modern statistical methods, and useful
 displays of results are emphasized.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-cftime
-  (package
-    (name "r-cftime")
-    (version "1.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CFtime" version))
-       (sha256
-        (base32 "169pw3dz61736v7dymym50alsvaj5dxn863d3l2nrr75dn48ynqw"))))
-    (properties `((upstream-name . "CFtime")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/pvanlaake/CFtime")
-    (synopsis "Using CF-Compliant Calendars with Climate Projection Data")
-    (description
-     "Support for all calendars as specified in the Climate and Forecast (CF) Metadata
-Conventions for climate and forecasting data.  The CF Metadata Conventions is
-widely used for distributing files with climate observations or projections,
-including the Coupled Model Intercomparison Project (CMIP) data used by climate
-change scientists and the Intergovernmental Panel on Climate Change (IPCC).
-This package specifically allows the user to work with any of the CF-compliant
-calendars (many of which are not compliant with POSIXt).  The CF time coordinate
-is formally defined in the CF Metadata Conventions document available at
-<https://cfconventions.org/Data/cf-conventions/cf-conventions-1.12/cf-conventions.html#time-coordinate>.")
-    (license license:expat)))
-
 (define-public r-cft
   (package
     (name "r-cft")
@@ -42158,13 +42059,13 @@ show various ways to load them.  Refer to Pham (2020)
 (define-public r-centr
   (package
     (name "r-centr")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "centr" version))
        (sha256
-        (base32 "1f4bhgkrv5niffwxmpa6vnjiqhay4j0isbjwgbdv40q54hjqb08a"))))
+        (base32 "1lwai91afscs5pc5d0n1dsq9jmk6z9bcw1hin5hwkh4cswvyvbcd"))))
     (properties `((upstream-name . "centr")))
     (build-system r-build-system)
     (arguments
@@ -42342,29 +42243,6 @@ to estimate the response at censored locations and predict new values at unknown
 locations.  It also offers graphical tools for assessing the fitted model.  More
 details can be found in Ordonez et al. (2018)
 <doi:10.1016/j.spasta.2017.12.001>.")
-    (license license:gpl2+)))
-
-(define-public r-censreg
-  (package
-    (name "r-censreg")
-    (version "0.5-38")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "censReg" version))
-       (sha256
-        (base32 "1rrgvq883970zp311lmkvxxky29w48p54xa4hq7iaa33yq7dbmmb"))))
-    (properties `((upstream-name . "censReg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sandwich r-plm r-misctools r-maxlik r-glmmml))
-    (home-page "http://www.sampleSelection.org")
-    (synopsis "Censored Regression (Tobit) Models")
-    (description
-     "Maximum Likelihood estimation of censored regression (Tobit) models with
-cross-sectional and panel data.")
     (license license:gpl2+)))
 
 (define-public r-censoredaids
@@ -48584,37 +48462,6 @@ variables.  This package provides functions for estimating CAR scores, for
 variable selection using CAR scores, and for estimating corresponding regression
 coefficients.  Both shrinkage as well as empirical estimators are available.")
     (license license:gpl3+)))
-
-(define-public r-cardx
-  (package
-    (name "r-cardx")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cardx" version))
-       (sha256
-        (base32 "1qbfa2kbxbc7lnrajj79dgz2nkjf4616ngha1yk9fl6f10qmsk24"))))
-    (properties `((upstream-name . "cardx")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rlang
-                             r-lifecycle
-                             r-glue
-                             r-dplyr
-                             r-cli
-                             r-cards))
-    (home-page "https://github.com/insightsengineering/cardx")
-    (synopsis "Extra Analysis Results Data Utilities")
-    (description
-     "Create extra Analysis Results Data (ARD) summary objects.  The package
-supplements the simple ARD functions from the cards package, exporting functions
-to put statistical results in the ARD format.  These objects are used and
-re-used to construct summary tables, visualizations, and written reports.")
-    (license license:asl2.0)))
 
 (define-public r-cardiocurver
   (package

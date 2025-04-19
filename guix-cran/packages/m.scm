@@ -4,8 +4,8 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages java)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages gcc)
@@ -2327,13 +2327,13 @@ facilitate the model interpretation.")
 (define-public r-mvar-pt
   (package
     (name "r-mvar-pt")
-    (version "2.2.6")
+    (version "2.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar.pt" version))
        (sha256
-        (base32 "1cz2l1ljhwp6k9k47di1mwigshycz028dyq1bszihr2zxmz7i03n"))))
+        (base32 "0bjlbsi63rx8pin1w0qxxwsyrpqc6vpaz5sbg16y274cnh10xx3b"))))
     (properties `((upstream-name . "MVar.pt")))
     (build-system r-build-system)
     (arguments
@@ -2357,13 +2357,13 @@ multivariada.")
 (define-public r-mvar
   (package
     (name "r-mvar")
-    (version "2.2.6")
+    (version "2.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar" version))
        (sha256
-        (base32 "1jyd94016xli0xljvrz9khjgjky811z4dzy91qn08m0nrd3h9wvp"))))
+        (base32 "018mnhv5rnfbmirh8g93b36qmfhlpjwnr1w8abj3qnm8rmlnvk6p"))))
     (properties `((upstream-name . "MVar")))
     (build-system r-build-system)
     (arguments
@@ -5729,30 +5729,6 @@ by Shafie (2015) <doi:10.21307/joss-2019-011>, including methods to study local
 and global properties <doi:10.1080/0022250X.2016.1219732> and goodness of fit
 tests.")
     (license license:expat)))
-
-(define-public r-multigraph
-  (package
-    (name "r-multigraph")
-    (version "0.99-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "multigraph" version))
-       (sha256
-        (base32 "0q634jsr1m9nzn4g3bcy5dxl26bdzdg6imcym2jifaa29b7m1790"))))
-    (properties `((upstream-name . "multigraph")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-multiplex))
-    (home-page "https://github.com/mplex/multigraph/")
-    (synopsis "Plot and Manipulate Multigraphs")
-    (description
-     "This package provides functions to plot and manipulate multigraphs, signed and
-valued graphs, bipartite graphs, multilevel graphs, and Cayley graphs with
-various layout options.")
-    (license license:gpl3)))
 
 (define-public r-multiglarmavarsel
   (package
@@ -13406,13 +13382,13 @@ provide widely-used tables out of the box.")
 (define-public r-mortalitylaws
   (package
     (name "r-mortalitylaws")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MortalityLaws" version))
        (sha256
-        (base32 "1n8mi4fad6amq8s4820vvq9bqch8f2i5zznxgw4cckm7irslnzwm"))))
+        (base32 "1hvwk95l534alkrg3baj2q70fh7lzfph9jidj4w96rmjz41f52rk"))))
     (properties `((upstream-name . "MortalityLaws")))
     (build-system r-build-system)
     (arguments
@@ -17607,31 +17583,6 @@ eponymous testthat function with the intention of providing a drop-in
 replacement.")
     (license license:expat)))
 
-(define-public r-mockr
-  (package
-    (name "r-mockr")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mockr" version))
-       (sha256
-        (base32 "0n3syab3dq1am562vnjpkgmx3v06liafyy0fcyvj0spdxr0mkvr3"))))
-    (properties `((upstream-name . "mockr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr r-rlang))
-    (native-inputs (list r-knitr))
-    (home-page "https://krlmlr.github.io/mockr/")
-    (synopsis "Mocking in R")
-    (description
-     "This package provides a means to mock a package function, i.e., temporarily
-substitute it for testing.  Designed as a drop-in replacement for the now
-deprecated @code{testthat::with_mock()} and @code{testthat::local_mock()}'.")
-    (license license:gpl3)))
-
 (define-public r-mocca
   (package
     (name "r-mocca")
@@ -19055,6 +19006,39 @@ Chu, Luo, Nie, Chen, (2015) <doi:10.1177/0962280211430889>, Chen, Luo, Chu, Su,
 Nie, (2014) <doi:10.1080/03610926.2012.700379>, Chen, Luo, Chu, Wei, (2013)
 <doi:10.1080/19466315.2013.791483>.")
     (license license:gpl2+)))
+
+(define-public r-mmequiv
+  (package
+    (name "r-mmequiv")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mmequiv" version))
+       (sha256
+        (base32 "1vm8iwj5s91ic1dhf2c9bx874ij07hljbkcv6zz59w2vy799svpf"))))
+    (properties `((upstream-name . "mmequiv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-lifecycle
+                             r-httr2
+                             r-glue
+                             r-cli))
+    (home-page "https://kennethataylor.github.io/mmequiv/")
+    (synopsis "Calculate Standardized Morphine Milligram Equivalent Doses")
+    (description
+     "Calculate morphine milligram equivalents (MME) for opioid dose comparison using
+standardized methods.  Includes API wrapper functions to call NIH HEAL MME
+Online Calculator and functions that replicate API calculations on the user's
+local machine from the comfort of R'.  Creation of the NIH HEAL MME Online
+Calculator and the MME calculations implemented in this package are described in
+Adams MCB, Sward KA, Perkins ML, Hurley RW (2025)
+<doi:10.1097/j.pain.0000000000003529>.")
+    (license license:gpl3+)))
 
 (define-public r-mmem
   (package
@@ -20669,40 +20653,6 @@ automatically converted to mlr3 objects.  For a more sophisticated interface
 with more upload options, see the @code{OpenML} package.")
     (license license:lgpl3)))
 
-(define-public r-mlr3inferr
-  (package
-    (name "r-mlr3inferr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mlr3inferr" version))
-       (sha256
-        (base32 "0cw0a194hcairl7va6lvx62k0bn25x15ylczbgcaxjj54bagqslm"))))
-    (properties `((upstream-name . "mlr3inferr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-r6
-                             r-paradox
-                             r-mlr3misc
-                             r-mlr3measures
-                             r-mlr3
-                             r-lgr
-                             r-future
-                             r-data-table
-                             r-checkmate))
-    (home-page "https://mlr3inferr.mlr-org.com")
-    (synopsis "Inference on the Generalization Error")
-    (description
-     "An mlr3 extension that provides various resampling-based confidence interval
-(CI) methods for estimating the generalization error.  These CI methods are
-implemented as mlr3 measures, enabling the evaluation of individual algorithms
-on specific tasks as well as the comparison of different learning algorithms.")
-    (license license:lgpl3)))
-
 (define-public r-mlr3fda
   (package
     (name "r-mlr3fda")
@@ -21032,37 +20982,6 @@ learning algorithms.  See also Curtin et al. (2023) <doi:10.21105/joss.05026>.")
 applied to multinomial logit (MNL) data.  The data is converted to binary logit
 using the Begg & Gray approximation.  The package also contains functions for
 maximum likelihood estimation of MNL.")
-    (license license:gpl2+)))
-
-(define-public r-mlogit
-  (package
-    (name "r-mlogit")
-    (version "1.1-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mlogit" version))
-       (sha256
-        (base32 "0hyi6gi03n895iydrfr1ba2ifbsd6lyjyhkq62d95ghhniysjgkg"))))
-    (properties `((upstream-name . "mlogit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-statmod
-                             r-rdpack
-                             r-mass
-                             r-lmtest
-                             r-formula
-                             r-dfidx))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mlogit")
-    (synopsis "Multinomial Logit Models")
-    (description
-     "Maximum likelihood estimation of random utility discrete choice models.  The
-software is described in Croissant (2020) <doi:10.18637/jss.v095.i11> and the
-underlying methods in Train (2009) <doi:10.1017/CBO9780511805271>.")
     (license license:gpl2+)))
 
 (define-public r-mlmusingr
@@ -32029,13 +31948,13 @@ see: Chao et al. (2018) <doi:10.1002/ecm.1343>, Maire et al. (2015)
 (define-public r-mfag
   (package
     (name "r-mfag")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MFAg" version))
        (sha256
-        (base32 "1ryds61cjhfc25650vzppsa4qly59gzhw3vxs13ikqc8wzm0p1wa"))))
+        (base32 "0nlhvgjsan70qlkffx6dy6d5p7n8q5x5lmj7hhm3am5jzp9ky78m"))))
     (properties `((upstream-name . "MFAg")))
     (build-system r-build-system)
     (arguments
@@ -35696,13 +35615,13 @@ and find the best clustering algorithm for binning.")
 (define-public r-metacart
   (package
     (name "r-metacart")
-    (version "2.0-3")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metacart" version))
        (sha256
-        (base32 "1wim72fvhx6cyc16c9gl8cwzbhlpzilk7q8gi4jnzzazqmc1kb5n"))))
+        (base32 "1lfc2xlk157mvb59jzp8fkx8wngmcxhxc33ijksf39v4w7509z9g"))))
     (properties `((upstream-name . "metacart")))
     (build-system r-build-system)
     (arguments
@@ -40432,13 +40351,13 @@ distribution.  Initially 	created for statistics at Middlebury College.")
 (define-public r-mcsimmod
   (package
     (name "r-mcsimmod")
-    (version "0.9")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MCSimMod" version))
        (sha256
-        (base32 "1hpznc2mzc7s0z0qsncsl3499sm5v4g2gj7ha32hmi0a681c8hga"))))
+        (base32 "1ncrjwn0wm040sbsm8v5w1ycxc0qsi0jyv1hfrg68b94q6v2xgka"))))
     (properties `((upstream-name . "MCSimMod")))
     (build-system r-build-system)
     (arguments
@@ -44099,6 +44018,32 @@ an effort to determine if a new drug or therapy is more effective at delaying
 undesirable outcomes than an established drug or therapy or a placebo.")
     (license license:gpl2)))
 
+(define-public r-maxbootr
+  (package
+    (name "r-maxbootr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "maxbootR" version))
+       (sha256
+        (base32 "1k75xz9giryf6n1b2clkrrlxrfryvagwp8w1gpvgw31j5f0y2f65"))))
+    (properties `((upstream-name . "maxbootR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-evd))
+    (native-inputs (list r-knitr))
+    (home-page "https://torbenstaud.github.io/maxbootR/")
+    (synopsis "Efficient Bootstrap Methods for Block Maxima")
+    (description
+     "This package implements state-of-the-art block bootstrap methods for extreme
+value statistics based on block maxima.  Includes disjoint blocks, sliding
+blocks, relying on a circular transformation of blocks.  Fast C++ backends (via
+Rcpp') ensure scalability for large time series.")
+    (license license:gpl3+)))
+
 (define-public r-maxaltall
   (package
     (name "r-maxaltall")
@@ -45385,13 +45330,13 @@ Result and Option enums from Rust.")
 (define-public r-matchmulti
   (package
     (name "r-matchmulti")
-    (version "1.1.12.1")
+    (version "1.1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matchMulti" version))
        (sha256
-        (base32 "07c02dwim46f511fswbkr7s25inli7nblvf11gb5npz7p7yjc9bw"))))
+        (base32 "1dqffqjgmg3lm02xgsak5fqfldgbzzxppqinav6vfzd4g2xyzcj0"))))
     (properties `((upstream-name . "matchMulti")))
     (build-system r-build-system)
     (arguments
@@ -47220,43 +47165,6 @@ the method.")
 a conditional risk model.")
     (license license:gpl2+)))
 
-(define-public r-marginaleffects
-  (package
-    (name "r-marginaleffects")
-    (version "0.25.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "marginaleffects" version))
-       (sha256
-        (base32 "11kb423z4096w0dpl93d0sgsq746giab25cj8c532zbra1bvbmx4"))))
-    (properties `((upstream-name . "marginaleffects")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-rcppeigen
-                             r-rcpp
-                             r-insight
-                             r-generics
-                             r-formula
-                             r-data-table
-                             r-checkmate
-                             r-backports))
-    (native-inputs (list r-quarto r-knitr))
-    (home-page "https://marginaleffects.com/")
-    (synopsis
-     "Predictions, Comparisons, Slopes, Marginal Means, and Hypothesis Tests")
-    (description
-     "Compute and plot predictions, slopes, marginal means, and comparisons
-(contrasts, risk ratios, odds, etc.) for over 100 classes of statistical and
-machine learning models in R. Conduct linear and non-linear hypothesis tests, or
-equivalence tests.  Calculate uncertainty estimates using the delta method,
-bootstrapping, or simulation-based inference.  Details can be found in
-Arel-Bundock, Greifer, and Heiss (2024) <doi:10.18637/jss.v111.i09>.")
-    (license license:gpl3+)))
-
 (define-public r-margaret
   (package
     (name "r-margaret")
@@ -48784,13 +48692,13 @@ holistic estimation of its structure.  For details see Kourentzes et al. (2014)
 (define-public r-map2ncbi
   (package
     (name "r-map2ncbi")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Map2NCBI" version))
        (sha256
-        (base32 "1ssqnm9g5p0nnhdyp9dqbbsz3hw8jzdwy0rv3csp8fxm0f1bi1kb"))))
+        (base32 "13ss9gh10qhfip2yp8l7vbzva0j36k69svafnfgzc6gih4sym7ki"))))
     (properties `((upstream-name . "Map2NCBI")))
     (build-system r-build-system)
     (arguments

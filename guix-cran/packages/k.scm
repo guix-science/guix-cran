@@ -4,9 +4,9 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
-  #:use-module (gnu packages algebra)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages algebra)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages bioconductor)
@@ -3304,30 +3304,6 @@ is characteristic of seismic waves, atmospheric pressure fluctuations, and solid
 earth tides.")
     (license license:gpl2+)))
 
-(define-public r-kit
-  (package
-    (name "r-kit")
-    (version "0.0.19")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kit" version))
-       (sha256
-        (base32 "0a0q57q3c5kfjd2c3vz1918hgzsh2ik1rwkr7kdrmzn45xs1nmdy"))))
-    (properties `((upstream-name . "kit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=kit")
-    (synopsis "Data Manipulation Functions Implemented in C")
-    (description
-     "Basic functions, implemented in C, for large data manipulation.  Fast vectorised
-@code{ifelse()}/nested @code{if()/switch()} functions, @code{psum()/pprod()}
-functions equivalent to @code{pmin()/pmax()} plus others which are missing from
-base R. Most of these functions are callable at C level.")
-    (license license:gpl3)))
-
 (define-public r-kissmig
   (package
     (name "r-kissmig")
@@ -3455,13 +3431,13 @@ functional and structural imaging.")
 (define-public r-kira
   (package
     (name "r-kira")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Kira" version))
        (sha256
-        (base32 "1m5a551vlvd7ndmphqs182kmva7qyyh2rqxkmck7vjcil0qw11bk"))))
+        (base32 "0mi94qjmaknaj1s5xxppqmpv3h7xr186bbii483yfyg1rpziaksr"))))
     (properties `((upstream-name . "Kira")))
     (build-system r-build-system)
     (arguments

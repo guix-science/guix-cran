@@ -4,8 +4,8 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages python)
@@ -6282,13 +6282,13 @@ Ralston and Philip Rabinowitz (2001) <ISBN:9780486414546>.")
 (define-public r-greenfeedr
   (package
     (name "r-greenfeedr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greenfeedr" version))
        (sha256
-        (base32 "05w0c5zx92qvxlapymypkcaic92a60ql4bymrgsjdl1sf4z4vs56"))))
+        (base32 "1c4s47w4702r7krq2lgivhd1a0yhn4l3r4scgc78wbgsnz3ny602"))))
     (properties `((upstream-name . "greenfeedr")))
     (build-system r-build-system)
     (arguments
@@ -12717,13 +12717,13 @@ model.")
 (define-public r-gmmsslm
   (package
     (name "r-gmmsslm")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmmsslm" version))
        (sha256
-        (base32 "1cbpgl5w4zkgci77lbx2ji73z3hvzj6kyr6bi79a8l65d303fblk"))))
+        (base32 "1jy7szz8ij4maqsp3g9bgyib3vyzw3n6vi5hddmh6kr0wv0cjnns"))))
     (properties `((upstream-name . "gmmsslm")))
     (build-system r-build-system)
     (arguments
@@ -12804,38 +12804,6 @@ the variant Set Mixed Model Association Tests (SMMAT) as proposed in Chen et al.
 kernel association test (SKAT), SKAT-O and an efficient hybrid test of the
 burden test and SKAT, based on user-defined variant sets.")
     (license license:gpl3+)))
-
-(define-public r-gmm
-  (package
-    (name "r-gmm")
-    (version "1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gmm" version))
-       (sha256
-        (base32 "1n45dls7632b11bg6pipamp2zmp8j1hp4nlrj91r4schd9fgr6bh"))))
-    (properties `((upstream-name . "gmm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sandwich))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=gmm")
-    (synopsis
-     "Generalized Method of Moments and Generalized Empirical Likelihood")
-    (description
-     "It is a complete suite to estimate models based on moment conditions.  It
-includes the two step Generalized method of moments (Hansen 1982;
-<doi:10.2307/1912775>), the iterated GMM and continuous updated estimator
-(Hansen, Eaton and Yaron 1996; <doi:10.2307/1392442>) and several methods that
-belong to the Generalized Empirical Likelihood family of estimators (Smith 1997;
-<doi:10.1111/j.0013-0133.1997.174.x>, Kitamura 1997;
-<doi:10.1214/aos/1069362388>, Newey and Smith 2004;
-<doi:10.1111/j.1468-0262.2004.00482.x>, and Anatolyev 2005
-<doi:10.1111/j.1468-0262.2005.00601.x>).")
-    (license license:gpl2+)))
 
 (define-public r-gmkmcharlie
   (package
@@ -14076,41 +14044,6 @@ learning under high-dimensional generalized linear models.  Journal of the
 American Statistical Association, 118(544), 2684-2697.\".")
     (license license:gpl2)))
 
-(define-public r-glmtoolbox
-  (package
-    (name "r-glmtoolbox")
-    (version "0.1.12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "glmtoolbox" version))
-       (sha256
-        (base32 "1nzn5nqicry2687d0nx6dacy0kbl0fzsw2wqwwi07mc12b84m7j9"))))
-    (properties `((upstream-name . "glmtoolbox")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-suppdists
-                             r-statmod
-                             r-rfast
-                             r-numderiv
-                             r-mass
-                             r-formula
-                             r-broom))
-    (home-page "https://mlgs.netlify.app/")
-    (synopsis "Set of Tools to Data Analysis using Generalized Linear Models")
-    (description
-     "Set of tools for the statistical analysis of data using: (1) normal linear
-models; (2) generalized linear models; (3) negative binomial regression models
-as alternative to the Poisson regression models under the presence of
-overdispersion; (4) beta-binomial and random-clumped binomial regression models
-as alternative to the binomial regression models under the presence of
-overdispersion; (5) Zero-inflated and zero-altered regression models to deal
-with zero-excess in count data; (6) generalized nonlinear models; (7)
-generalized estimating equations for cluster correlated data.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-glmtlp
   (package
     (name "r-glmtlp")
@@ -14656,29 +14589,6 @@ random effects.  The ncvreg and grpreg packages also describe the MCP, SCAD, and
 LASSO penalties.")
     (license license:gpl2+)))
 
-(define-public r-glmmml
-  (package
-    (name "r-glmmml")
-    (version "1.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "glmmML" version))
-       (sha256
-        (base32 "07w6b1i9fkv8dxcmvky81f87ysbrrry3d4jczwkg953g9lankr5j"))))
-    (properties `((upstream-name . "glmmML")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=glmmML")
-    (synopsis "Generalized Linear Models with Clustering")
-    (description
-     "Binomial and Poisson regression for clustered data, fixed and random effects
-with bootstrapping.")
-    (license license:gpl3+)))
-
 (define-public r-glmmlasso
   (package
     (name "r-glmmlasso")
@@ -14848,33 +14758,6 @@ extends on existing cosinor modeling packages, including cosinor and
 circacompare', by including a wide range of available link functions and the
 capability to fit mixed models.  The cosinor model is described by Cornelissen
 (2014) <doi:10.1186/1742-4682-11-16>.")
-    (license license:gpl3+)))
-
-(define-public r-glmmadaptive
-  (package
-    (name "r-glmmadaptive")
-    (version "0.9-7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GLMMadaptive" version))
-       (sha256
-        (base32 "0g71ysa1g4pk59v0m9s2l45f0ik5h3dc23hjv8513lcrj3jc471z"))))
-    (properties `((upstream-name . "GLMMadaptive")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nlme r-matrixstats r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://drizopoulos.github.io/GLMMadaptive/")
-    (synopsis
-     "Generalized Linear Mixed Models using Adaptive Gaussian Quadrature")
-    (description
-     "Fits generalized linear mixed models for a single grouping factor under maximum
-likelihood approximating the integrals over the random effects with an adaptive
-Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
-<doi:10.1080/10618600.1995.10474663>.")
     (license license:gpl3+)))
 
 (define-public r-glmm-hp
@@ -15502,32 +15385,6 @@ et al (1997) <doi:10.1080/01621459.1997.10473658>; Clogg and Goodman (1985)
 <doi:10.2307/270847>) and nonparametric random-effect LCA (Vermunt (2003)
 <doi:10.1111/j.0081-1750.2003.t01-1-00131.x>).")
     (license license:gpl3)))
-
-(define-public r-glba
-  (package
-    (name "r-glba")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "glba" version))
-       (sha256
-        (base32 "0dilf144xfn454xfsndbddhc28gzf36fiknc2qwcx3bp7z5caqjn"))))
-    (properties `((upstream-name . "glba")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=glba")
-    (synopsis "General Linear Ballistic Accumulator Models")
-    (description
-     "Analyses response times and accuracies from psychological experiments with the
-linear ballistic accumulator (LBA) model from Brown and Heathcote (2008).  The
-LBA model is optionally fitted with explanatory variables on the parameters such
-as the drift rate, the boundary and the starting point parameters.  A log-link
-function on the linear predictors can be used to ensure that parameters remain
-positive when needed.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-glassdoor
   (package
@@ -25427,30 +25284,28 @@ are described in Messier, Reif, and Marvel (2024)
 (define-public r-geotopbricks
   (package
     (name "r-geotopbricks")
-    (version "1.5.8.2")
+    (version "1.5.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geotopbricks" version))
        (sha256
-        (base32 "1wl0zggilgq2nrwdjvmba9k4avgqfv06ffsj2fmql2qmlzan744q"))))
+        (base32 "1mj0sbhqm1km3c8v6bdmwnrbgmy0aly95hn7ipdrbqcbvzhsbh9l"))))
     (properties `((upstream-name . "geotopbricks")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zoo r-terra r-stringr r-sf r-raster))
-    (home-page "https://zenodo.org/record/8228413")
+    (home-page "https://github.com/ecor/geotopbricks")
     (synopsis "An R Plug-in for the Distributed Hydrological Model GEOtop")
     (description
      "It analyzes raster maps and other information as input/output files from the
 Hydrological Distributed Model GEOtop.  It contains functions and methods to
 import maps and other keywords from geotop.inpts file.  Some examples with
 simulation cases of GEOtop 2.x/3.x are presented in the package.  Any
-information about the GEOtop Distributed Hydrological Model source code is
-available on www.geotop.org.  Technical details about the model are available in
-Endrizzi et al (2014)
-<https://gmd.copernicus.org/articles/7/2831/2014/gmd-7-2831-2014.html>.")
+information about the GEOtop Distributed Hydrological Model can be found in the
+provided documentation.")
     (license license:gpl3+)))
 
 (define-public r-geotoolsr
@@ -27002,43 +26857,6 @@ software @code{GeoFIS} <https://www.geofis.org> (Leroux et al.  2018)
 zone delineation (Pedroso et al.  2010) <doi:10.1016/j.compag.2009.10.007> and
 data aggregation (Mora-Herrera et al.  2020) <doi:10.1016/j.compag.2020.105624>.")
     (license license:cecill)))
-
-(define-public r-geofi
-  (package
-    (name "r-geofi")
-    (version "1.0.18")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geofi" version))
-       (sha256
-        (base32 "0frgqi7fhyldxq14rl9gvs59x4i7v8h90228bq5kdh7073251nf9"))))
-    (properties `((upstream-name . "geofi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-xml2
-                             r-sf
-                             r-rlang
-                             r-purrr
-                             r-httr
-                             r-httpcache
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://ropengov.github.io/geofi/")
-    (synopsis "Access Finnish Geospatial Data")
-    (description
-     "Designed to simplify geospatial data access from the Statistics Finland Web
-Feature Service API <https://geo.stat.fi/geoserver/index.html>, the geofi
-package offers researchers and analysts a set of tools to obtain and harmonize
-administrative spatial data for a wide range of applications, from urban
-planning to environmental research.  The package contains annually updated time
-series of municipality key datasets that can be used for data aggregation and
-language translations.")
-    (license license:bsd-2)))
 
 (define-public r-geofacet
   (package
@@ -29657,35 +29475,6 @@ and the main algorithm called simplified self-organizing map for dimensionality
 reduction methods is published in <DOI: 10.1016/j.mex.2020.101093>.")
     (license license:gpl3)))
 
-(define-public r-generalizedhyperbolic
-  (package
-    (name "r-generalizedhyperbolic")
-    (version "0.8-7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GeneralizedHyperbolic" version))
-       (sha256
-        (base32 "08z4jz9lzyc0afvxqw6m2p9h54lqk6hn1a8mva5lrddxlxf04qbv"))))
-    (properties `((upstream-name . "GeneralizedHyperbolic")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-distributionutils))
-    (home-page "https://r-forge.r-project.org/projects/rmetrics/")
-    (synopsis "The Generalized Hyperbolic Distribution")
-    (description
-     "This package provides functions for the hyperbolic and related distributions.
-Density, distribution and quantile functions and random number generation are
-provided for the hyperbolic distribution, the generalized hyperbolic
-distribution, the generalized inverse Gaussian distribution and the skew-Laplace
-distribution.  Additional functionality is provided for the hyperbolic
-distribution, normal inverse Gaussian distribution and generalized inverse
-Gaussian distribution, including fitting of these distributions to data.  Linear
-models with hyperbolic errors may be fitted using @code{hyperblmFit}.")
-    (license license:gpl2+)))
-
 (define-public r-generalisedcovariancemeasure
   (package
     (name "r-generalisedcovariancemeasure")
@@ -30797,13 +30586,13 @@ quantitative trait locus studies.")
 (define-public r-gemini-r
   (package
     (name "r-gemini-r")
-    (version "0.12.0")
+    (version "0.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gemini.R" version))
        (sha256
-        (base32 "0jhj5xlccbcfyx3a3rc53qj52yb0s6kc27b0lvcrkcm9m5b60mhc"))))
+        (base32 "1ryb8hmdn36p33anlbxsgh4lqkwyg9qlyg97i5y5lmz81kbmfw6h"))))
     (properties `((upstream-name . "gemini.R")))
     (build-system r-build-system)
     (arguments
@@ -31169,31 +30958,6 @@ proposed by Liang and Zeger (1986), and eight types of more recent modified
 variance estimators for improving the finite small-sample performance.")
     (license license:gpl3+)))
 
-(define-public r-geepack
-  (package
-    (name "r-geepack")
-    (version "1.3.12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geepack" version))
-       (sha256
-        (base32 "0k856hw7zh553yrqp9g3s19hjviadh36drg2vvaddv2ma5ayj6z0"))))
-    (properties `((upstream-name . "geepack")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-magrittr r-broom))
-    (home-page "https://cran.r-project.org/package=geepack")
-    (synopsis "Generalized Estimating Equation Package")
-    (description
-     "Generalized estimating equations solver for parameters in mean, scale, and
-correlation structures, through mean link, scale link, and correlation link.
-Can also handle clustered categorical responses.  See e.g. Halekoh and
-HÃ¸jsgaard, (2005, <doi:10.18637/jss.v015.i02>), for details.")
-    (license license:gpl3+)))
-
 (define-public r-geemediate
   (package
     (name "r-geemediate")
@@ -31374,18 +31138,22 @@ pathway level analyses.")
 (define-public r-geds
   (package
     (name "r-geds")
-    (version "0.2.9")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeDS" version))
        (sha256
-        (base32 "1vrbr27cm5vp4k7k22k1f62ms01czdpslqlrrdxbawmfxh7v713y"))))
+        (base32 "00xnwmjkax7j1kifgx8w9g0gd06r8x5ms3nypp5wj9c7vkmbicc7"))))
     (properties `((upstream-name . "GeDS")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-th-data
                              r-rmpfr
                              r-rcpp
@@ -31399,6 +31167,7 @@ pathway level analyses.")
                              r-dorng
                              r-doparallel
                              r-dofuture))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/emilioluissaenzguillen/GeDS")
     (synopsis "Geometrically Designed Spline Regression")
     (description
@@ -34450,64 +34219,6 @@ model selection with Genetic Algorithms (GA) proposed in {Martinez-de-Pison}
 (2015) <DOI:10.1016/j.asoc.2015.06.012>.  To this objective, a novel GA
 selection procedure is introduced based on separate cost and complexity
 evaluations.")
-    (license license:gpl2+)))
-
-(define-public r-gap-datasets
-  (package
-    (name "r-gap-datasets")
-    (version "0.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gap.datasets" version))
-       (sha256
-        (base32 "1jwpsb66sgj2zzgrpgwxc22df66gbhi278ywbmaicc10mipv050y"))))
-    (properties `((upstream-name . "gap.datasets")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://jinghuazhao.github.io/R/")
-    (synopsis "Datasets for 'gap'")
-    (description
-     "Datasets associated with the gap package.  Currently, it includes an example
-data for regional association plot (CDKN), an example data for a genomewide
-association meta-analysis (OPG), data in studies of Parkinson's diease (PD),
-ALHD2 markers and alcoholism (aldh2), APOE/APOC1 markers and Schizophrenia
-(apoeapoc), cystic fibrosis (cf), a Olink/INF panel (inf1), Manhattan plots with
-(hr1420, mhtdata) and without (w4) gene annotations.")
-    (license license:gpl2+)))
-
-(define-public r-gap
-  (package
-    (name "r-gap")
-    (version "1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gap" version))
-       (sha256
-        (base32 "1pz0j3vglccrwm3p9lj6wbq58varb8b0xg5r97gmz8c3biprpzww"))))
-    (properties `((upstream-name . "gap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack r-plotly r-ggplot2 r-gap-datasets
-                             r-dplyr))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://github.com/jinghuazhao/R")
-    (synopsis "Genetic Analysis Package")
-    (description
-     "As first reported [Zhao, J. H. 2007. \"gap: Genetic Analysis Package\".  J Stat
-Soft 23(8):1-18. <doi:10.18637/jss.v023.i08>], it is designed as an integrated
-package for genetic data analysis of both population and family data.
-Currently, it contains functions for sample size calculations of both
-population-based and family-based designs, probability of familial disease
-aggregation, kinship calculation, statistics in linkage analysis, and
-association analysis involving genetic markers including haplotype analysis with
-or without environmental covariates.  Over years, the package has been developed
-in-between many projects hence also in line with the name (gap).")
     (license license:gpl2+)))
 
 (define-public r-ganpadata

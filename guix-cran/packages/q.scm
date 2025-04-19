@@ -5,8 +5,8 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages xdisorg)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
@@ -208,6 +208,35 @@ efficacy.")
      "This package provides functions to compute quasi variances and associated
 measures of approximation error.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-qvarsel
+  (package
+    (name "r-qvarsel")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qVarSel" version))
+       (sha256
+        (base32 "0nmmrj8vwldk4n07q1dq3aym6a7pl8vadrf41kqc4kw9hkcawbcb"))))
+    (properties `((upstream-name . "qVarSel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-lpsolveapi))
+    (home-page "https://cran.r-project.org/package=qVarSel")
+    (synopsis "Select Variables for Optimal Clustering")
+    (description
+     "Finding hidden clusters in structured data can be hindered by the presence of
+masking variables.  If not detected, masking variables are used to calculate the
+overall similarities between units, and therefore the cluster attribution is
+more imprecise.  The algorithm q-vars implements an optimization method to find
+the variables that most separate units between clusters.  In this way, masking
+variables can be discarded from the data frame and the clustering is more
+accurate.  Tests can be found in Benati et al.(2017)
+<doi:10.1080/01605682.2017.1398206>.")
+    (license license:gpl2+)))
 
 (define-public r-qval
   (package
@@ -1240,36 +1269,6 @@ trees.  A quantile regression is implemented to determine the dispersal
 potential.  Spatial prediction can be used to identify natural regeneration
 potential for forest restoration as described in Axer et al (2021)
 <doi:10.1016/j.foreco.2020.118802>.")
-    (license license:gpl2+)))
-
-(define-public r-quarto
-  (package
-    (name "r-quarto")
-    (version "1.4.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "quarto" version))
-       (sha256
-        (base32 "18403v03hh57fm09csg6jmxh6biih7dgq9sakn0hg6x3kn8vnnaf"))))
-    (properties `((upstream-name . "quarto")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-rstudioapi
-                             r-rmarkdown
-                             r-rlang
-                             r-processx
-                             r-later
-                             r-jsonlite
-                             r-cli))
-    (home-page "https://github.com/quarto-dev/quarto-r")
-    (synopsis "R Interface to 'Quarto' Markdown Publishing System")
-    (description
-     "Convert R Markdown documents and Jupyter notebooks to a variety of output
-formats using Quarto'.")
     (license license:gpl2+)))
 
 (define-public r-quartets

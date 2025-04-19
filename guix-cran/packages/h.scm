@@ -3804,13 +3804,13 @@ lesser the influence of trend effects on the run order.")
 (define-public r-hrt
   (package
     (name "r-hrt")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hrt" version))
        (sha256
-        (base32 "0l0hjspncr6pkc3sg11p63k1gy1jmc70g6581ykh6zy0b07zm8rk"))))
+        (base32 "1n5zjjdq2zb26ab8yyw24nfzs708mimcqy22dj2ybv7r5vfxlhw1"))))
     (properties `((upstream-name . "hrt")))
     (build-system r-build-system)
     (arguments
@@ -3830,7 +3830,9 @@ function for determining size-controlling critical values for such test
 statistics and a user-supplied significance level (also incorporating a check of
 conditions under which such a size-controlling critical value exists).  The
 three functions are based on results in Poetscher and Preinerstorfer (2021)
-\"Valid Heteroskedasticity Robust Testing\" <@code{arXiv:2104.12597>}.")
+\"Valid Heteroskedasticity Robust Testing\"
+<doi:10.48550/@code{arXiv.2104.12597>}, which will appear as
+<doi:10.1017/S0266466623000269>.")
     (license license:gpl2)))
 
 (define-public r-hrqglas
@@ -5230,13 +5232,13 @@ annotators, and consistent output formats.")
 (define-public r-holland
   (package
     (name "r-holland")
-    (version "0.1.2-1")
+    (version "0.1.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "holland" version))
        (sha256
-        (base32 "0f5nr17rmx1m3g4aw6c1f82xdj2ll5nr8slm8ha80cg2i6a90v10"))))
+        (base32 "0m0cdskdkkf11kqanzry4fvw04yckmjjnq2arzcdkj7f7piplmbz"))))
     (properties `((upstream-name . "holland")))
     (build-system r-build-system)
     (arguments
@@ -8744,52 +8746,6 @@ from the POLYMOD survey.  This package contains the data and code to reproduce
 the results from the paper, see demo(\"hhh4contacts\")'.")
     (license license:gpl2)))
 
-(define-public r-hh
-  (package
-    (name "r-hh")
-    (version "3.1-53")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HH" version))
-       (sha256
-        (base32 "14lqyxnpx6dis5s40yrzrdqq5qvqspibzssr2bh3jkkfykjasxmj"))))
-    (properties `((upstream-name . "HH")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vcd
-                             r-shiny
-                             r-rmpfr
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-multcomp
-                             r-leaps
-                             r-latticeextra
-                             r-lattice
-                             r-hmisc
-                             r-gridextra
-                             r-colorspace
-                             r-abind))
-    (home-page "https://cran.r-project.org/package=HH")
-    (synopsis "Statistical Analysis and Data Display: Heiberger and Holland")
-    (description
-     "Support software for Statistical Analysis and Data Display (Second Edition,
-Springer, ISBN 978-1-4939-2121-8, 2015) and (First Edition, Springer, ISBN
-0-387-40270-5, 2004) by Richard M. Heiberger and Burt Holland.  This
-contemporary presentation of statistical methods features extensive use of
-graphical displays for exploring data and for displaying the analysis.  The
-second edition includes redesigned graphics and additional chapters.  The
-authors emphasize how to construct and interpret graphs, discuss principles of
-graphical design, and show how accompanying traditional tabular results are used
-to confirm the visual impressions derived directly from the graphs.  Many of the
-graphical formats are novel and appear here for the first time in print.  All
-chapters have exercises.  All functions introduced in the book are in the
-package.  R code for all examples, both graphs and tables, in the book is
-included in the scripts directory of the package.")
-    (license license:gpl2+)))
-
 (define-public r-hgwrr
   (package
     (name "r-hgwrr")
@@ -10241,13 +10197,13 @@ through comms.")
 (define-public r-heplots
   (package
     (name "r-heplots")
-    (version "1.7.3")
+    (version "1.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heplots" version))
        (sha256
-        (base32 "19xb2fih45vx17xbkr3vlv19xdzy2vzhx63xqwrvjjshzqnqfcb4"))))
+        (base32 "0fjmmqz6vf92gz6r9qsyvlykggb1551yzr5iqzbakf3dhwf2zvk6"))))
     (properties `((upstream-name . "heplots")))
     (build-system r-build-system)
     (arguments
@@ -10271,7 +10227,9 @@ through comms.")
      "This package provides HE plot and other functions for visualizing hypothesis
 tests in multivariate linear models.  HE plots represent
 sums-of-squares-and-products matrices for linear hypotheses and for error using
-ellipses (in two dimensions) and ellipsoids (in three dimensions).  The related
+ellipses (in two dimensions) and ellipsoids (in three dimensions).  It also
+provides other tools for analysis and graphical display of the models such as
+robust methods and homogeneity of variance covariance matrices.  The related
 candisc package provides visualizations in a reduced-rank canonical discriminant
 space when there are more than a few response variables.")
     (license license:gpl2+)))
@@ -10496,20 +10454,19 @@ option set to HELLNO ( which in turn equals FALSE ) by default.")
 (define-public r-hellmer
   (package
     (name "r-hellmer")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hellmer" version))
        (sha256
-        (base32 "0fmq2aa3s5imlnj6rdvbnb573lysg77zhqjyzshr94f18i7i9sw9"))))
+        (base32 "1g00cpfr3nn1f1c38ll3hwxhzc93y0p0gs428d0jdihnsbv5yd7d"))))
     (properties `((upstream-name . "hellmer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-s7
-                             r-r-utils
                              r-purrr
                              r-jsonlite
                              r-future
@@ -10521,13 +10478,13 @@ option set to HELLNO ( which in turn equals FALSE ) by default.")
     (home-page "https://dylanpieper.github.io/hellmer/")
     (synopsis "Batch Processing for Chat Models")
     (description
-     "Batch processing framework for ellmer chat model interactions.  Enables
-sequential and parallel processing of chat completions.  Core capabilities
-include error handling with backoff, state persistence, progress tracking, and
-retry management.  Parallel processing is implemented via the future framework.
-Additional features include structured data extraction, tool integration,
-timeout handling, verbosity control, and sound notifications.  Includes methods
-for returning chat texts, chat objects, progress status, and structured data.")
+     "Batch processing framework for ellmer chat models.  Provides both sequential and
+parallel processing of chat interactions with features including tool calling
+and structured data extraction.  Enables workflow management through progress
+tracking and recovery and automatic retry with backoff.  Additional
+quality-of-life features include verbosity (or echo) control and sound
+notifications.  Parallel processing is implemented via the future framework.
+Includes methods for retrieving progress status, chat texts, and chat objects.")
     (license license:expat)))
 
 (define-public r-hellcor
@@ -10906,13 +10863,13 @@ global and local influence for four possible perturbation schema.")
 (define-public r-heck
   (package
     (name "r-heck")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heck" version))
        (sha256
-        (base32 "1vw2v72b9pcr0s4qss7af0dpi8b9ncvzmvypi8bpw15x3n6hwv04"))))
+        (base32 "0lmd19ia6jwnraagd8k99dp630y013vd9a7dkxsarahqqk80jpca"))))
     (properties `((upstream-name . "heck")))
     (build-system r-build-system)
     (arguments
@@ -12562,13 +12519,13 @@ forests.  See Waggoner (2023) <doi:10.1007/s00180-023-01325-9> for more on
 (define-public r-hdi
   (package
     (name "r-hdi")
-    (version "0.1-9")
+    (version "0.1-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdi" version))
        (sha256
-        (base32 "0k35zqz58lcx5p7ijhks4j7kqp553zggvrx4lh6k4s85lp601x22"))))
+        (base32 "01ljli5y2s6lx28r5k9az7pcg4a3nd1f8wh4smcb2l9c1ri7mwqm"))))
     (properties `((upstream-name . "hdi")))
     (build-system r-build-system)
     (arguments
@@ -15371,43 +15328,6 @@ algorithm was described by Hejazi, Coyle, and van der Laan (2020)
      "Initializes a class that obtains API credentials and provides a method to use
 those credentials to make GET requests to the Hakai API server.  Usage
 instructions are documented at <https://hakaiinstitute.github.io/hakai-api/>.")
-    (license license:expat)))
-
-(define-public r-hahmmr
-  (package
-    (name "r-hahmmr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hahmmr" version))
-       (sha256
-        (base32 "19bds84pkimr71dy1365b71k7ihn7x86yalgcmagvkxgygpg3409"))))
-    (properties `((upstream-name . "hahmmr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-tibble
-                             r-stringr
-                             r-roptim
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-patchwork
-                             r-iranges
-                             r-glue
-                             r-ggplot2
-                             r-genomicranges
-                             r-dplyr
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=hahmmr")
-    (synopsis "Haplotype-Aware Hidden Markov Model for RNA")
-    (description
-     "Haplotype-aware Hidden Markov Model for RNA (@code{HaHMMR}) is a method for
-detecting copy number variations (CNVs) from bulk RNA-seq data.  Additional
-examples, documentations, and details on the method are available at
-<https://github.com/kharchenkolab/hahmmr/>.")
     (license license:expat)))
 
 (define-public r-hagis

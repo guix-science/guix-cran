@@ -4,8 +4,8 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages python)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages java)
@@ -3986,27 +3986,6 @@ based on atlases.  Mask data using labels, load data for specific atlas regions
 only, and visualize data and statistical results directly in R'.")
     (license license:expat)))
 
-(define-public r-fsadata
-  (package
-    (name "r-fsadata")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FSAdata" version))
-       (sha256
-        (base32 "0zh0gkylziysqjc9gn3kjz7070x2rvmi1c64kxl6q2479929hysi"))))
-    (properties `((upstream-name . "FSAdata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://fishr-core-team.github.io/FSAdata/")
-    (synopsis "Data to Support Fish Stock Assessment ('FSA') Package")
-    (description
-     "The datasets to support the Fish Stock Assessment ('FSA') package.")
-    (license license:gpl2+)))
-
 (define-public r-fruclimadapt
   (package
     (name "r-fruclimadapt")
@@ -4560,13 +4539,13 @@ downloaded from the authors website.")
 (define-public r-frf2
   (package
     (name "r-frf2")
-    (version "2.3-3")
+    (version "2.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FrF2" version))
        (sha256
-        (base32 "11ljgqxan5afsczihvwd14p4ygk8z7hif753ka5wxpla8wp92xxx"))))
+        (base32 "04driqjz17y872a0v26xl55d298lzg8mzyw0yf8hy7nfbyzykx5g"))))
     (properties `((upstream-name . "FrF2")))
     (build-system r-build-system)
     (arguments
@@ -10422,19 +10401,20 @@ Browne (2015) <DOI:10.3102/1076998614556816>.")
 (define-public r-fmm
   (package
     (name "r-fmm")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FMM" version))
        (sha256
-        (base32 "0prh6myrg81gz441gfjd0cxvrsa264v5yv7chjw902vaigb8rc3i"))))
+        (base32 "1gdxyqzzydny4ynnxw86r8rxphi89l385i4i48sfrz31xjjhhizn"))))
     (properties `((upstream-name . "FMM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-iterators r-foreach r-doparallel))
+    (propagated-inputs (list r-rlang r-iterators r-gsignal r-foreach
+                             r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/FMMGroupVa/FMM-base-R-package")
     (synopsis "Rhythmic Patterns Modeling by FMM Models")
@@ -12731,13 +12711,13 @@ Fisher-Scoring algorithm.  Overall the estimation relies on the mgcv'-package.")
 (define-public r-flexfitr
   (package
     (name "r-flexfitr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexFitR" version))
        (sha256
-        (base32 "1b0rz9wf9k62x52hjay810f6xic3f0kgsyj2307nbhjpn86i8cry"))))
+        (base32 "1nnh57p539arv7d7frxv40y22bsxdg8mx2qygy0jvp4lvqklqkba"))))
     (properties `((upstream-name . "flexFitR")))
     (build-system r-build-system)
     (arguments
@@ -13425,13 +13405,13 @@ Journal of Statistical Software <doi:10.18637/jss.v101.i03>.")
 (define-public r-fkf-sp
   (package
     (name "r-fkf-sp")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FKF.SP" version))
        (sha256
-        (base32 "0jv08qqcqqqs73gzj3v7wd45zfhf12qn3ahnb9a39h9rs3ipc15l"))))
+        (base32 "13qvlw23flnbi2w2ibksjl9c7k5a4qsn6naas9i6ga98j3a0yrps"))))
     (properties `((upstream-name . "FKF.SP")))
     (build-system r-build-system)
     (arguments
@@ -13655,41 +13635,6 @@ and cleaning for statistical analysis including functions for finding and fixing
 duplicate rows and columns, missing values, outliers, and special characters in
 column and row names and functions for checking data consistency, distribution,
 quality, reliability, and structure.")
-    (license license:gpl3)))
-
-(define-public r-fixest
-  (package
-    (name "r-fixest")
-    (version "0.12.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fixest" version))
-       (sha256
-        (base32 "1pqkwzcv8mjh00k0cl0na7izwhwsp6qpimbxmq5005vbhnwimrvw"))))
-    (properties `((upstream-name . "fixest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringmagic
-                             r-sandwich
-                             r-rcpp
-                             r-numderiv
-                             r-nlme
-                             r-dreamerr))
-    (native-inputs (list r-knitr))
-    (home-page "https://lrberge.github.io/fixest/")
-    (synopsis "Fast Fixed-Effects Estimations")
-    (description
-     "Fast and user-friendly estimation of econometric models with multiple
-fixed-effects.  Includes ordinary least squares (OLS), generalized linear models
-(GLM) and the negative binomial.  The core of the package is based on optimized
-parallel C++ code, scaling especially well for large data sets.  The method to
-obtain the fixed-effects coefficients is based on Berge (2018)
-<https://github.com/lrberge/fixest/blob/master/_DOCS/FENmlm_paper.pdf>.  Further
-provides tools to export and view the results of several estimations with
-intuitive design to cluster the standard-errors.")
     (license license:gpl3)))
 
 (define-public r-fixes
@@ -14801,35 +14746,6 @@ a backbone the phylogenetic tree proposed by Rabosky et al. (2018)
      "Fits models to catch and effort data.  Single-species models are 1) delta
 log-normal, 2) Tweedie, or 3) Poisson-gamma (G)LMs.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-fishmethods
-  (package
-    (name "r-fishmethods")
-    (version "1.13-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fishmethods" version))
-       (sha256
-        (base32 "07y58zr4m2nb9q3m3rqjxbxysf9br6ss22l4857w59mcnjfrx8c7"))))
-    (properties `((upstream-name . "fishmethods")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tmb
-                             r-numderiv
-                             r-mass
-                             r-lme4
-                             r-data-table
-                             r-bootstrap
-                             r-boot))
-    (home-page "https://cran.r-project.org/package=fishmethods")
-    (synopsis "Fishery Science Methods and Models")
-    (description
-     "This package provides functions for applying a wide range of fisheries stock
-assessment methods.")
-    (license license:gpl2+)))
 
 (define-public r-fishkirkko2015
   (package
@@ -16276,32 +16192,6 @@ over 100 votes in 2022.  The data are analysed in Chapter 3 of the Book Getting
     (synopsis "Fill Missing Values in Vectors")
     (description
      "Edit vectors to fill missing values, based on the vector itself.")
-    (license license:expat)))
-
-(define-public r-fillpattern
-  (package
-    (name "r-fillpattern")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fillpattern" version))
-       (sha256
-        (base32 "0qwrzxjw4br9sbh0zxry72j6rgvb1s8cwvwqigf7dg1zi4hk4i74"))))
-    (properties `((upstream-name . "fillpattern")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
-    (home-page "https://cmmr.github.io/fillpattern/")
-    (synopsis "Patterned Fills for 'ggplot2' and 'grid' Graphics")
-    (description
-     "Adds distinctive yet unobtrusive geometric patterns where solid color fills are
-normally used.  Patterned figures look just as professional when viewed by
-colorblind readers or when printed in black and white.  The dozen included
-patterns can be customized in terms of scale, rotation, color, fill, line type,
-and line width.  Compatible with the ggplot2 package as well as grid graphics.")
     (license license:expat)))
 
 (define-public r-filling
@@ -19083,6 +18973,30 @@ summary statistics.")
 adequate correlations in a feature matrix: Pearson product-moment correlation
 coefficient, Intraclass correlation and Cramer's V.")
     (license license:gpl2+)))
+
+(define-public r-featforge
+  (package
+    (name "r-featforge")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "featForge" version))
+       (sha256
+        (base32 "0cdm68higvr6bfkz5mgg70sf5dlbsh2wd0pvxs18sc8ykbjpgcka"))))
+    (properties `((upstream-name . "featForge")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=featForge")
+    (synopsis "Automated Feature Engineering for Credit Scoring")
+    (description
+     "Automated feature engineering functions tailored for credit scoring.  It
+includes utilities for extracting structured features from timestamps, IP
+addresses, and email addresses, enabling enhanced predictive modeling for
+financial risk assessment.")
+    (license license:expat)))
 
 (define-public r-feasts
   (package
@@ -22172,6 +22086,34 @@ Applications of Statistics: an Introduction using R\" (R Pruim, published by AMS
 advanced undergraduate level.  R is integrated throughout, and access to all the
 R code in the book is provided via the @code{snippet()} function.")
     (license license:gpl2+)))
+
+(define-public r-fastqrs
+  (package
+    (name "r-fastqrs")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastqrs" version))
+       (sha256
+        (base32 "0zx4f6xk5lzyxwyjz35yaw3lbbiisdkwjxq396z688q5d1lqyia7"))))
+    (properties `((upstream-name . "fastqrs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg r-copula))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fastqrs")
+    (synopsis "Fast Algorithms for Quantile Regression with Selection")
+    (description
+     "Fast estimation algorithms to implement the Quantile Regression with Selection
+estimator and the multiplicative Bootstrap for inference.  This estimator can be
+used to estimate models that feature sample selection and heterogeneous effects
+in cross-sectional data.  For more details, see Arellano and Bonhomme (2017)
+<doi:10.3982/ECTA14030> and Pereda-FernÃ¡ndez (2024)
+<doi:10.48550/@code{arXiv.2402.16693>}.")
+    (license license:gpl3)))
 
 (define-public r-fastqq
   (package

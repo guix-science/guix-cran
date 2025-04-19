@@ -4,8 +4,8 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
@@ -1578,13 +1578,13 @@ interface.")
 (define-public r-wpp2015
   (package
     (name "r-wpp2015")
-    (version "1.1-2")
+    (version "1.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wpp2015" version))
        (sha256
-        (base32 "07bnbmrshlqnlpca5djpq5crnpsmz228wmbpv1ah7ywnjvks6fyx"))))
+        (base32 "1lpripfs331lgjlqxx3wsiha82n2lfwx4ffpjy8f9mv3zmrxylpp"))))
     (properties `((upstream-name . "wpp2015")))
     (build-system r-build-system)
     (arguments
@@ -4741,31 +4741,6 @@ the results from this survey, as used by the WHO. The package primarily provides
 functions for implementing Rasch Analysis (see Andrich (2011)
 <doi:10.1586/erp.11.59>) to calculate a metric scale for disability.")
     (license license:gpl3)))
-
-(define-public r-whoami
-  (package
-    (name "r-whoami")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "whoami" version))
-       (sha256
-        (base32 "19fwl7z55s4kl2xzwqwh8iwg13kdrv222vyl3kibxgwrjcjwj2y2"))))
-    (properties `((upstream-name . "whoami")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr))
-    (home-page "https://github.com/r-lib/whoami#readme")
-    (synopsis
-     "Username, Full Name, Email Address, 'GitHub' Username of the Current User")
-    (description
-     "Look up the username and full name of the current user, the current user's email
-address and @code{GitHub} username, using various sources of system and
-configuration information.")
-    (license license:expat)))
 
 (define-public r-whoa
   (package
@@ -10140,6 +10115,36 @@ archives.  It can also read models in MDL and MD2 formats.")
     (description
      "Generates random data sets including: data.frames, lists, and vectors.")
     (license license:gpl2)))
+
+(define-public r-waetr
+  (package
+    (name "r-waetr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "waetr" version))
+       (sha256
+        (base32 "11az8zx9cmh9nsfj89gp2z2cngvvr5x3cycni0s84b18lgqqr2dp"))))
+    (properties `((upstream-name . "waetr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/benjaminlistyg/waetr")
+    (synopsis "'WebAIM' 'WAVE' Accessibility Evaluation Tool")
+    (description
+     "An R interface to the @code{WebAIM} WAVE accessibility evaluation API
+<https://wave.webaim.org/api/>.  This package provides tools for analyzing web
+pages for accessibility issues, generating reports, and comparing accessibility
+across multiple websites.")
+    (license license:expat)))
 
 (define-public r-wactor
   (package

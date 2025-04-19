@@ -4,8 +4,8 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages web)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
@@ -1323,13 +1323,13 @@ Ye, C.,and Yang,Y. (2019) <doi:10.1109/TIT.2019.2913417>.")
 (define-public r-avesperu
   (package
     (name "r-avesperu")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "avesperu" version))
        (sha256
-        (base32 "122jcl1wn47w19rv57v9dnrvs05044zp7d77vj1zxv2fkc5na4ch"))))
+        (base32 "1z5md68arn2hy2jvlimgn3xfj0j5rapsn6r4wmvld801lzv1imaj"))))
     (properties `((upstream-name . "avesperu")))
     (build-system r-build-system)
     (arguments
@@ -1837,13 +1837,13 @@ relationships between categorical and continuous variables in the data set.")
 (define-public r-autoslider-core
   (package
     (name "r-autoslider-core")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoslider.core" version))
        (sha256
-        (base32 "06m0w6ixnmqgd9f62r8y1pb3j93b30cl62r11a5nzwhdp2zkgphv"))))
+        (base32 "0a55xq7md0hdzcjlspck0a8a22439jkn0nmii0sx3y654kxcb5vx"))))
     (properties `((upstream-name . "autoslider.core")))
     (build-system r-build-system)
     (arguments
@@ -1859,6 +1859,7 @@ relationships between categorical and continuous variables in the data set.")
                              r-rlistings
                              r-rlang
                              r-officer
+                             r-gtsummary
                              r-gridextra
                              r-ggpubr
                              r-ggplot2
@@ -4893,42 +4894,6 @@ graph need not be conditionally independent given their predecessor node),
 including multinomial and two-parameter normal as families.  Thus this package
 also generalizes mark-capture-recapture analysis.")
     (license license:gpl2+)))
-
-(define-public r-aster
-  (package
-    (name "r-aster")
-    (version "1.1-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "aster" version))
-       (sha256
-        (base32 "1piimmrsvhbps8ld6vjjg82kf8pm5nwl91437dglid802p51pwlm"))))
-    (properties `((upstream-name . "aster")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-trust))
-    (home-page "http://www.stat.umn.edu/geyer/aster/")
-    (synopsis "Aster Models")
-    (description
-     "Aster models (Geyer, Wagenius, and Shaw, 2007, <doi:10.1093/biomet/asm030>;
-Shaw, Geyer, Wagenius, Hangelbroek, and Etterson, 2008, <doi:10.1086/588063>;
-Geyer, Ridley, Latta, Etterson, and Shaw, 2013, <doi:10.1214/13-AOAS653>) are
-exponential family regression models for life history analysis.  They are like
-generalized linear models except that elements of the response vector can have
-different families (e.  g., some Bernoulli, some Poisson, some zero-truncated
-Poisson, some normal) and can be dependent, the dependence indicated by a
-graphical structure.  Discrete time survival analysis, life table analysis,
-zero-inflated Poisson regression, and generalized linear models that are
-exponential family (e.  g., logistic regression and Poisson regression with log
-link) are special cases.  Main use is for data in which there is survival over
-discrete time periods and there is additional data about what happens
-conditional on survival (e.  g., number of offspring).  Uses the exponential
-family canonical parameterization (aster transform of usual parameterization).
-There are also random effects versions of these models.")
-    (license license:expat)))
 
 (define-public r-ast2ast
   (package
@@ -8329,13 +8294,13 @@ and Tzeremes (2022) <doi:10.1002/jae.2919>.")
 (define-public r-ardeco
   (package
     (name "r-ardeco")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ARDECO" version))
        (sha256
-        (base32 "0m1lwcgp3bpv4xw2mj8m5hwmfr5i3qdhg011izzwaacziq8f44sv"))))
+        (base32 "18nnncl1hm4s5qfnqpl0ygpv6b6d248dlsvwp2vqjnnjcjiyrihj"))))
     (properties `((upstream-name . "ARDECO")))
     (build-system r-build-system)
     (arguments
@@ -13784,6 +13749,32 @@ the GRN analysis software ANANSE', Xu et al.(2021) <doi:10.1093/nar/gkab598>.
 Export data from Seurat objects, for GRN analysis by ANANSE implemented in
 snakemake'.  Finally, incorporate results for visualization and interpretation.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-ananke
+  (package
+    (name "r-ananke")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ananke" version))
+       (sha256
+        (base32 "1p863z2iwys65pskba3rifp8cyfkpscwy8964wxj1qpah0yd1by1"))))
+    (properties `((upstream-name . "ananke")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-arkhe r-aion))
+    (home-page "https://codeberg.org/tesselle/ananke")
+    (synopsis "Quantitative Chronology in Archaeology")
+    (description
+     "Simple radiocarbon calibration and chronological analysis.  This package allows
+the calibration of radiocarbon ages and modern carbon fraction values using
+multiple calibration curves.  It allows the calculation of highest density
+region intervals and credible intervals.  The package also provides tools for
+visualising results and estimating statistical summaries.")
+    (license license:gpl3+)))
 
 (define-public r-analyzer
   (package
@@ -21522,25 +21513,32 @@ Functions are compatible with base R and ggplot2 for visualization.")
 (define-public r-adsiht
   (package
     (name "r-adsiht")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ADSIHT" version))
        (sha256
-        (base32 "0jakh6fn682pshk7kgn92hbmvgp30fp5g12vh76y2ylmn2m4jyv1"))))
+        (base32 "16y7n3zqab17qvxrdqd18ba5r3mnbykn94gspnfj75gfgq3vf168"))))
     (properties `((upstream-name . "ADSIHT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp r-mvnfast r-matrix))
+    (propagated-inputs (list r-snowfall
+                             r-rcppeigen
+                             r-rcpp
+                             r-purrr
+                             r-mvnfast
+                             r-matrix))
     (home-page "https://cran.r-project.org/package=ADSIHT")
     (synopsis "Adaptive Double Sparse Iterative Hard Thresholding")
     (description
-     "Solving the high-dimensional double sparse linear regression via iterative hard
-thresholding algorithm.  For more details, please see Zhang et al. (2024,
-<DOI:10.48550/@code{arXiv.2305.04182>}).")
+     "Solving high-dimensional double sparse linear regression via an iterative hard
+thresholding algorithm.  Furthermore, the method is extended to jointly estimate
+multiple graphical models.  For more details, please see
+<https://www.jmlr.org/papers/v25/23-0653.html> and
+<doi:10.48550/@code{arXiv.2503.18722>}.")
     (license license:gpl3+)))
 
 (define-public r-adsdatahubr
@@ -22973,13 +22971,13 @@ estimators on real datasets, and it implements methods to calculate p-values.")
 (define-public r-adespatial
   (package
     (name "r-adespatial")
-    (version "0.3-27")
+    (version "0.3-28")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adespatial" version))
        (sha256
-        (base32 "10njrxva62vggy3lns9sa0x0vkpgg1hiyv074z6snp6v099qy452"))))
+        (base32 "16d22b1kvhfw32cm8gx7vsjcp6ki4jap5f6h4247pvpd9v24hian"))))
     (properties `((upstream-name . "adespatial")))
     (build-system r-build-system)
     (arguments
@@ -23776,32 +23774,6 @@ Connectivity ('ADBC') @code{PostgreSQL} driver for the purposes of building
 high-level database interfaces for users.  ADBC <https://arrow.apache.org/adbc/>
 is an API standard for database access libraries that uses Arrow for result sets
 and query parameters.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
-(define-public r-adbcdrivermanager
-  (package
-    (name "r-adbcdrivermanager")
-    (version "0.17.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "adbcdrivermanager" version))
-       (sha256
-        (base32 "1q4ac5wr5f697zdwhah4ccqxlmwkssz4jwx44fn46by258fwrggp"))))
-    (properties `((upstream-name . "adbcdrivermanager")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nanoarrow))
-    (home-page "https://arrow.apache.org/adbc/current/r/adbcdrivermanager/")
-    (synopsis "'Arrow' Database Connectivity ('ADBC') Driver Manager")
-    (description
-     "This package provides a developer-facing interface to Arrow Database
-Connectivity ('ADBC') for the purposes of driver development, driver testing,
-and building high-level database interfaces for users.  ADBC
-<https://arrow.apache.org/adbc/> is an API standard for database access
-libraries that uses Arrow for result sets and query parameters.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-adass

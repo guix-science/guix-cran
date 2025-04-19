@@ -4,8 +4,8 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
@@ -216,29 +216,6 @@ some convenience analytical function are also supplied.")
      "Updating the now 10-year-old nycflights13 data package.  It contains information
 about all flights that departed from the three main New York City airports in
 2023 and metadata on airlines, airports, weather, and planes.")
-    (license license:cc0)))
-
-(define-public r-nycflights13
-  (package
-    (name "r-nycflights13")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nycflights13" version))
-       (sha256
-        (base32 "07aa76c77pm1wpzkwjmzv8n6ir5i6fxawx8wx586gwc5wajcb1qf"))))
-    (properties `((upstream-name . "nycflights13")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble))
-    (home-page "https://github.com/hadley/nycflights13")
-    (synopsis "Flights that Departed NYC in 2013")
-    (description
-     "Airline on-time data for all flights departing NYC in 2013.  Also includes
-useful metadata on airlines, airports, weather, and planes.")
     (license license:cc0)))
 
 (define-public r-nvmix
@@ -13637,6 +13614,36 @@ linear, multilayer and force Layout; 3) Network live exploration and 4) SVG
 exportation.")
     (license license:gpl3+)))
 
+(define-public r-netdose
+  (package
+    (name "r-netdose")
+    (version "0.6-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netdose" version))
+       (sha256
+        (base32 "1xmf0p1kmnx5jjr8x7g5d3rly4lnpv4h834k0apwqp3ij65ddh24"))))
+    (properties `((upstream-name . "netdose")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-netmeta
+                             r-meta
+                             r-matrix
+                             r-mass
+                             r-hmisc
+                             r-gridextra
+                             r-ggplot2))
+    (home-page "https://github.com/petropouloumaria/netdose")
+    (synopsis "Dose-Response Network Meta-Analysis in a Frequentist Way")
+    (description
+     "This package provides a set of functions providing the implementation of the
+network meta-analysis model with dose-response relationships, predicted values
+of the fitted model and dose-response plots in a frequentist way.")
+    (license license:gpl2+)))
+
 (define-public r-netdiffuser
   (package
     (name "r-netdiffuser")
@@ -15292,32 +15299,6 @@ to reportable printed statistics is covered for basic experimental designs.")
      "Collapse, partition, combine, fill gaps in and expand date/time ranges.")
     (license license:expat)))
 
-(define-public r-neatr
-  (package
-    (name "r-neatr")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "neatR" version))
-       (sha256
-        (base32 "064mil95f4jd43gkpx0rdvxgf4ffxjpn8z31vc5yg98516hgcqb1"))))
-    (properties `((upstream-name . "neatR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-magrittr r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=neatR")
-    (synopsis "Neat Data for Presentation")
-    (description
-     "Utilities for unambiguous, neat and legible representation of data (date, time
-stamp, numbers, percentages and strings) for presentation of analysis , aiming
-for elegance and consistency.  The purpose of this package is to format data,
-that is better for presentation and any automation jobs that reports numbers.")
-    (license license:expat)))
-
 (define-public r-neatmaps
   (package
     (name "r-neatmaps")
@@ -15777,40 +15758,6 @@ data: large document collections, logfiles, and other text data.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-ncmeta
-  (package
-    (name "r-ncmeta")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ncmeta" version))
-       (sha256
-        (base32 "1aamxs3yza1hsgvkp6740lv1dc21a87mzl06n6w3zxkjshri020w"))))
-    (properties `((upstream-name . "ncmeta")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rnetcdf
-                             r-rlang
-                             r-dplyr
-                             r-cftime))
-    (home-page "https://github.com/hypertidy/ncmeta")
-    (synopsis "Straightforward 'NetCDF' Metadata")
-    (description
-     "Extract metadata from @code{NetCDF} data sources, these can be files, file
-handles or servers.  This package leverages and extends the lower level
-functions of the R@code{NetCDF} package providing a consistent set of functions
-that all return data frames.  We introduce named concepts of grid', axis and
-source which are all meaningful entities without formal definition in the
-@code{NetCDF} library <https://www.unidata.ucar.edu/software/netcdf/>.
-R@code{NetCDF} matches the library itself with only the named concepts of
-variables', dimensions and attributes'.")
-    (license license:gpl3)))
-
 (define-public r-ncf
   (package
     (name "r-ncf")
@@ -15888,34 +15835,6 @@ printed header output or to navigate nested lists of raw metadata.")
      "This package provides tools to create time series and geometry @code{NetCDF}
 files.")
     (license license:cc0)))
-
-(define-public r-ncdfcf
-  (package
-    (name "r-ncdfcf")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ncdfCF" version))
-       (sha256
-        (base32 "1fi71qi5kgh13d409080jr410wmsgmyzrbbgs8xy9ysgkp2an5mp"))))
-    (properties `((upstream-name . "ncdfCF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-rnetcdf r-r6 r-cftime r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/pvanlaake/ncdfCF")
-    (synopsis "Easy Access to NetCDF Files with CF Metadata Conventions")
-    (description
-     "Network Common Data Form ('@code{netCDF}') files are widely used for scientific
-data.  Library-level access in R is provided through packages R@code{NetCDF} and
-ncdf4'.  Package @code{ncdfCF} is built on top of R@code{NetCDF} and makes the
-data and its attributes available as a set of R6 classes that are informed by
-the Climate and Forecasting Metadata Conventions.  Access to the data uses
-standard R subsetting operators and common function forms.")
-    (license license:expat)))
 
 (define-public r-ncdf4-helpers
   (package
