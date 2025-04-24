@@ -4163,13 +4163,13 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
 (define-public r-brnn
   (package
     (name "r-brnn")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brnn" version))
        (sha256
-        (base32 "14gqbsrmv9r5kbp4c5swrpclympchyg4fw5f0b6g767y6mm22h7m"))))
+        (base32 "1kn7559cd6v3pa9wr1df61dnkipf694lip55js49dgckwknkyrqk"))))
     (properties `((upstream-name . "brnn")))
     (build-system r-build-system)
     (arguments
@@ -14085,13 +14085,13 @@ visualization tools are also available within the package.")
 (define-public r-biometryassist
   (package
     (name "r-biometryassist")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biometryassist" version))
        (sha256
-        (base32 "1gj2lfsi8rnvc61sz70rvii1xhszl84wfvy6lsnwgh26vnj890wf"))))
+        (base32 "0kix7wwfxdyggdv5q0sm53k0m4sc0fjx596g78kns3lsz69x2z6y"))))
     (properties `((upstream-name . "biometryassist")))
     (build-system r-build-system)
     (arguments
@@ -24488,6 +24488,34 @@ is in Zhao et al. (2021) <doi:10.18637/jss.v100.i11>, and the model with random
 effects is described in Zhao et al. (2024) <doi:10.1093/jrsssc/qlad102>.")
     (license license:expat)))
 
+(define-public r-bayesssm
+  (package
+    (name "r-bayesssm")
+    (version "0.4.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesSSM" version))
+       (sha256
+        (base32 "0b0kc0cy33dizg3ffr5av2sa7pc79ln7rpvch9lcqjs6ribxr5wf"))))
+    (properties `((upstream-name . "bayesSSM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-future-apply r-future r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/BjarkeHautop/bayesSSM")
+    (synopsis "Bayesian Methods for State Space Models")
+    (description
+     "This package implements methods for Bayesian analysis of State Space Models.
+Includes implementations the Particle Marginal Metropolis-Hastings algorithm
+described in Andrieu et al. (2010) <doi:10.1111/j.1467-9868.2009.00736.x> and
+automatic tuning inspired by Pitt et al. (2012)
+<doi:10.1016/j.jeconom.2012.06.004> and J. Dahlin and T. B. SchÃ¶n (2019)
+<doi:10.18637/jss.v088.c02>.")
+    (license license:expat)))
+
 (define-public r-bayessenmc
   (package
     (name "r-bayessenmc")
@@ -29205,13 +29233,13 @@ are processed to compute tree metrics and statistics.  Function
 (define-public r-basictabler
   (package
     (name "r-basictabler")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basictabler" version))
        (sha256
-        (base32 "0d5gpvf3la0fky786z74i8q7il1mmb2prg8y9wslg2gbngnkvkvm"))))
+        (base32 "1wjzshs56xyani13kblbc6dda91ll8wx5yaszpg933m5zjy6lkm2"))))
     (properties `((upstream-name . "basictabler")))
     (build-system r-build-system)
     (arguments
@@ -32153,20 +32181,20 @@ Reference: Nan Chen and J. Jack Lee (2019) <doi:10.1002/bimj.201700275>.")
 (define-public r-bacenapi
   (package
     (name "r-bacenapi")
-    (version "0.2.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BacenAPI" version))
        (sha256
-        (base32 "1b4zkx7bnxp5gj7prrzw55z86jxvw33182mbpf19wbws44rby8bs"))))
+        (base32 "0fp447znw2mm7cpg652g1107vlpq5ma2n0qm8sj94rdivjgmb4xr"))))
     (properties `((upstream-name . "BacenAPI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-magrittr r-jsonlite r-httr2 r-httr))
-    (home-page "https://github.com/LissandroSousa/BacenAPI")
+    (home-page "https://github.com/LissandroSousa/BacenAPI.r")
     (synopsis "Data Collection from the Central Bank of Brazil")
     (description
      "This package provides tools to facilitate the access and processing of data from

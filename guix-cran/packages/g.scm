@@ -7,6 +7,7 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages video)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages python)
   #:use-module (gnu packages gcc)
@@ -509,6 +510,50 @@ components analysis, which consists of the fusion of geographically weighted and
 sparse non-negative principal components analyses
 <doi:10.17608/k6.auckland.9850826.v1>.")
     (license license:gpl3+)))
+
+(define-public r-gwmodelvis
+  (package
+    (name "r-gwmodelvis")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GWmodelVis" version))
+       (sha256
+        (base32 "0kfrswad5c0fwfviklc2njcsif9wgvf3nxyvr3q8sk0hj4wlnwbr"))))
+    (properties `((upstream-name . "GWmodelVis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list geos ffmpeg))
+    (propagated-inputs (list r-tuner
+                             r-sp
+                             r-signal
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyfiles
+                             r-shinydashboard
+                             r-shiny
+                             r-sf
+                             r-servr
+                             r-leaflet-extras
+                             r-leaflet
+                             r-gwmodel
+                             r-ggspatial
+                             r-dt
+                             r-dplyr
+                             r-av))
+    (home-page "http://gwmodel.whu.edu.cn/")
+    (synopsis "Visualization Tools for Geographically Weighted Models")
+    (description
+     "The increasing popularity of geographically weighted (GW) techniques has
+resulted in the development of several R packages, such as GWmodel'.  To
+facilate their usages, G@code{WmodelVis} provides a shiny'-based interactive
+visualization toolkit for geographically weighted (GW) models.  It includes a
+number of visualization tools, including dynamic mapping of parameter surfaces,
+statistical visualization, sonification and exporting videos via FFmpeg'.")
+    (license license:gpl2+)))
 
 (define-public r-gwmodel
   (package
@@ -1492,13 +1537,13 @@ from Git', SQLite', and Make to provide a lab notebook for machine learning.")
 (define-public r-guider
   (package
     (name "r-guider")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "guideR" version))
        (sha256
-        (base32 "0ln887nx74fw69gi2xynkkijcwsnbpr1va9gmkh99f5j92ih35ip"))))
+        (base32 "05shminhnriw0v32vgkc9dzls7f665xlrrdidrh9fgk9rljq8nby"))))
     (properties `((upstream-name . "guideR")))
     (build-system r-build-system)
     (arguments
@@ -2234,13 +2279,13 @@ opinionated niche capabilities and helpers functions.")
 (define-public r-gtexr
   (package
     (name "r-gtexr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtexr" version))
        (sha256
-        (base32 "18g7138mzr4hk5h6k13zkc3vy7pmidva0vplfd6vbgqbm9p79yf8"))))
+        (base32 "1r0crgv59kkz6xpc2ahr53mp71raapl1z3lhj2y8d1iinx2a59wn"))))
     (properties `((upstream-name . "gtexr")))
     (build-system r-build-system)
     (arguments
@@ -2254,11 +2299,17 @@ opinionated niche capabilities and helpers functions.")
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://rmgpanw.github.io/gtexr/")
+    (home-page "https://docs.ropensci.org/gtexr/")
     (synopsis "Query the GTEx Portal API")
     (description
      "This package provides a convenient R interface to the Genotype-Tissue Expression
-(GTEx) Portal API. For more information on the API, see
+(GTEx) Portal API. The GTEx project is a comprehensive public resource for
+studying tissue-specific gene expression and regulation in human tissues.
+Through systematic analysis of RNA sequencing data from 54 non-diseased tissue
+sites across nearly 1000 individuals, GTEx provides crucial insights into the
+relationship between genetic variation and gene expression.  This data is
+accessible through the GTEx Portal API enabling programmatic access to human
+gene expression data.  For more information on the API, see
 <https://gtexportal.org/api/v2/redoc>.")
     (license license:expat)))
 
@@ -2411,6 +2462,46 @@ compute such an influence measure grounded on game theory concepts.  In
 particular, the influence measures presented in Davila-Pena, Saavedra-Nieves,
 and Casas-MÃ©ndez (2024) <doi:10.48550/@code{arXiv.2408.02481>} can be obtained.")
     (license license:gpl2)))
+
+(define-public r-gtapviz
+  (package
+    (name "r-gtapviz")
+    (version "1.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GTAPViz" version))
+       (sha256
+        (base32 "1lp8m724vbdi9xzk7hnw286245mv64gh0ghw9899iz62ilhlh40d"))))
+    (properties `((upstream-name . "GTAPViz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringdist
+                             r-scales
+                             r-openxlsx2
+                             r-openxlsx
+                             r-harplus
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://bodysbobb.github.io/GTAPViz/")
+    (synopsis "Automating 'GTAP' Data Processing and Visualization")
+    (description
+     "This package provides tools to streamline the extraction, processing, and
+visualization of Computable General Equilibrium (CGE) results from GTAP models.
+Designed for compatibility with both .har and .sl4 files, the package enables
+users to automate data preparation, apply mapping metadata, and generate
+high-quality plots and summary tables with minimal coding.  GTAPViz supports
+flexible export options (e.g., Text, CSV, Stata', or Excel formats).  This
+facilitates efficient post-simulation analysis for economic research and policy
+reporting.  Includes helper functions to filter, format, and customize outputs
+with reproducible styling.")
+    (license license:expat)))
 
 (define-public r-gt4ireval
   (package
@@ -3636,13 +3727,13 @@ overlapped Quantitative Trait Loci names.")
 (define-public r-gsaot
   (package
     (name "r-gsaot")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsaot" version))
        (sha256
-        (base32 "1phbbcnx4c60p0c62pvapqvkcks5q7ijpwb4m4q5wm6xlanbhn24"))))
+        (base32 "17v0y0z11x50rbbazahcrkbaj01isw5rq9xga6mpdrkqi8s1rp69"))))
     (properties `((upstream-name . "gsaot")))
     (build-system r-build-system)
     (arguments
@@ -7301,6 +7392,40 @@ expression data to test the performance of genomic analyses.")
      "Bindings to the libgraphqlparser C++ library.  Parses @code{GraphQL}
 <https://graphql.org> syntax and exports the AST in JSON format.")
     (license license:expat)))
+
+(define-public r-graphpcor
+  (package
+    (name "r-graphpcor")
+    (version "0.1.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "graphpcor" version))
+       (sha256
+        (base32 "08w8cdrrfx8ghn7l3ylvb3m104v7fl657mn2s2lfkmv0l1gi1559"))))
+    (properties `((upstream-name . "graphpcor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rgraphviz r-numderiv r-matrix r-graph))
+    (home-page "https://cran.r-project.org/package=graphpcor")
+    (synopsis "Models for Correlation Matrices Based on Graphs")
+    (description
+     "Implement some models for correlation/covariance matrices including two
+approaches to model correlation matrices from a graphical structure.  One use
+latent parent variables as proposed in Sterrantino et.  al. (2024)
+<doi:10.48550/@code{arXiv.2312.06289>}.  The other uses a graph to specify
+conditional relations between the variables.  The graphical structure makes
+correlation matrices interpretable and avoids the quadratic increase of
+parameters as a function of the dimension.  In the first approach a natural
+sequence of simpler models along with a complexity penalization is used.  The
+second penalizes deviations from a base model.  These can be used as prior for
+model parameters, considering C code through the cgeneric interface for the INLA
+package (<https://www.r-inla.org>).  This allows one to use these models as
+building blocks combined and to other latent Gaussian models in order to build
+complex data models.")
+    (license license:gpl2+)))
 
 (define-public r-graphpaf
   (package
@@ -14873,6 +14998,35 @@ for the LRT chi-square approximation.  See Rao (1948)
 <doi:10.2307/1990256> for Wald's test.")
     (license license:gpl2)))
 
+(define-public r-glmfitmiss
+  (package
+    (name "r-glmfitmiss")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glmfitmiss" version))
+       (sha256
+        (base32 "1kyalb06ma622zpkx96nzg3jpx1q2ianvl4300y87ggakwffqi8s"))))
+    (properties `((upstream-name . "glmfitmiss")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-dplyr r-data-table r-brglm2 r-abind))
+    (home-page "https://cran.r-project.org/package=glmfitmiss")
+    (synopsis
+     "Fitting GLMs with Missing Data in Both Responses and Covariates")
+    (description
+     "Fits generalized linear models (GLMs) when there is missing data in both the
+response and categorical covariates.  The functions implement likelihood-based
+methods using the Expectation and Maximization (EM) algorithm and optionally
+apply Firthâs bias correction for improved inference.  See Pradhan, Nychka,
+and Bandyopadhyay (2025) <https:>, Maiti and Pradhan (2009)
+<doi:10.1111/j.1541-0420.2008.01186.x>, Maity, Pradhan, and Das (2019)
+<doi:10.1080/00031305.2017.1407359> for further methodological details.")
+    (license license:expat)))
+
 (define-public r-glmertree
   (package
     (name "r-glmertree")
@@ -15941,13 +16095,13 @@ to access repository data.")
 (define-public r-gitr
   (package
     (name "r-gitr")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gitr" version))
        (sha256
-        (base32 "135adqixwz7g8kl235y2qlv11yvpkiq4kvs0qmm547871csjpib6"))))
+        (base32 "0nknh4nksd9rx2kn8fc75p901n9ldh1i785xr1yjcyb0mjisz1i0"))))
     (properties `((upstream-name . "gitr")))
     (build-system r-build-system)
     (arguments
@@ -15958,11 +16112,10 @@ to access repository data.")
     (synopsis "Lightweight API for 'Git'")
     (description
      "This package provides a light-weight, dependency-free, application programming
-interface (API) to access system-level Git commands from within R'.  Contains
-wrappers and defaults for common data science workflows as well as Zsh
-<https://github.com/ohmyzsh/ohmyzsh> plugin aliases.  A generalized API syntax
-is also available.  A system installation of Git <https://git-scm.com/downloads>
-is required.")
+interface (API) to access system-level Git <https://git-scm.com/downloads>
+commands from within R'.  Contains wrappers and defaults for common data science
+workflows as well as Zsh <https://github.com/ohmyzsh/ohmyzsh> plugin aliases.  A
+generalized API syntax is also available.")
     (license license:expat)))
 
 (define-public r-gitlink
@@ -31138,13 +31291,13 @@ pathway level analyses.")
 (define-public r-geds
   (package
     (name "r-geds")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeDS" version))
        (sha256
-        (base32 "00xnwmjkax7j1kifgx8w9g0gd06r8x5ms3nypp5wj9c7vkmbicc7"))))
+        (base32 "12176q63axzdflmk25gh89szamyzjn3bsjrrsbbvcg9bs5af89nw"))))
     (properties `((upstream-name . "GeDS")))
     (build-system r-build-system)
     (arguments
@@ -32765,13 +32918,13 @@ orthogonal direction, and no further restrictions implied.")
 (define-public r-gbop2
   (package
     (name "r-gbop2")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GBOP2" version))
        (sha256
-        (base32 "16q2xjxb7dy8sfvglawfygb01z5lirzz6j66ymrcmha7lipx6vrc"))))
+        (base32 "049s7d52mf0vadh07hy5ww64bkkj0zwilvphyf1xhfn4y2axwpyg"))))
     (properties `((upstream-name . "GBOP2")))
     (build-system r-build-system)
     (arguments
@@ -35773,13 +35926,13 @@ sum of residuals squared).")
 (define-public r-gadget3
   (package
     (name "r-gadget3")
-    (version "0.12-1")
+    (version "0.13-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gadget3" version))
        (sha256
-        (base32 "1jw834v98mwlx7pf78xcqvpqnlrdwl03qm1m4fd5x7yxkn5nhk92"))))
+        (base32 "1pqbc3bimv65g9spgjcpn4f9wpvbai30bwd0w251n4c4vc35n5hc"))))
     (properties `((upstream-name . "gadget3")))
     (build-system r-build-system)
     (arguments

@@ -3537,6 +3537,45 @@ estimation.  The methods are described in our paper (Zimmer et al. (2022)
 <doi:10.1007/s11336-022-09883-5>).")
     (license license:gpl3+)))
 
+(define-public r-irtm
+  (package
+    (name "r-irtm")
+    (version "0.0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IRTM" version))
+       (sha256
+        (base32 "0vy6q335qkqv0vyfrrdcj1gk484d4fl4lwk9ripq6npc77yvv1c7"))))
+    (properties `((upstream-name . "IRTM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncnorm
+                             r-tmvtnorm
+                             r-rlang
+                             r-reshape2
+                             r-rcppprogress
+                             r-rcppdist
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ggridges
+                             r-ggplot2
+                             r-dplyr
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=IRTM")
+    (synopsis "Theory-Driven Item Response Theory (IRT) Models")
+    (description
+     "IRT-M is a semi-supervised approach based on Bayesian Item Response Theory that
+produces theoretically identified underlying dimensions from input data and a
+constraints matrix.  The methodology is fully described in Morucci et al.
+(2024), \"Measurement That Matches Theory: Theory-Driven Identification in Item
+Response Theory Models\"'.  Details are available at
+<https://www.cambridge.org/core/journals/american-political-science-review/article/measurement-that-matches-theory-theorydriven-identification-in-item-response-theory-models/395DA1DFE3DCD7B866DC053D7554A30B>.")
+    (license license:expat)))
+
 (define-public r-irtgui
   (package
     (name "r-irtgui")
@@ -3605,13 +3644,13 @@ assumption on the latent distribution.")
 (define-public r-irtdemo
   (package
     (name "r-irtdemo")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irtDemo" version))
        (sha256
-        (base32 "0rpwryybnj7b4bxn0mn1m496y85s2fpqdd78lmdl6jg1ck4j4pb3"))))
+        (base32 "0jmrb7aq19qan1sqvsd6pl0z80jfag0rmkjcdb6cg29vgpi6mn3m"))))
     (properties `((upstream-name . "irtDemo")))
     (build-system r-build-system)
     (arguments
@@ -4078,13 +4117,13 @@ rate of green (IRG) according to methods described in Bischoff et al. (2012)
 (define-public r-irfcb
   (package
     (name "r-irfcb")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iRfcb" version))
        (sha256
-        (base32 "0sq6m8ns6fxk2g069qcykyhpgiqqiwmqslriq7m6a3a3hqjvfbm5"))))
+        (base32 "17dxb6p8di1qjvhyh4m9hfm35b9va4g77b3c0j05zzaagyn6pf5q"))))
     (properties `((upstream-name . "iRfcb")))
     (build-system r-build-system)
     (arguments
@@ -16605,20 +16644,20 @@ The IDSL.CSA package was introduced in <doi:10.1021/acs.analchem.3c00376>.")
 (define-public r-idpsurvival
   (package
     (name "r-idpsurvival")
-    (version "1.2")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IDPSurvival" version))
        (sha256
-        (base32 "0hifs8vw3rxlb5vlxs1433pcv2dh7p0mxpgb2n03d98f20vkdwfw"))))
+        (base32 "0jph7kjgb57gh1av2jya4flgfmxbr4kvgsyqxhvi2shnyk65c5cv"))))
     (properties `((upstream-name . "IDPSurvival")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival r-rsolnp r-gtools))
-    (home-page "http://ipg.idsia.ch/software/")
+    (home-page "https://ipg.idsia.ch/software.html")
     (synopsis "Imprecise Dirichlet Process for Survival Analysis")
     (description
      "This package provides functions to perform robust nonparametric survival
@@ -19377,13 +19416,13 @@ parameters and evaluate the model fit.  See Yao et al. (2019)
 (define-public r-iccde
   (package
     (name "r-iccde")
-    (version "0.3.6")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iccde" version))
        (sha256
-        (base32 "1q6nrbhirrzjjmqwn7mc0wziknqx9zi70s5riza2ic5shgsjq87i"))))
+        (base32 "0b4zyc2ylgydzlidwbg960q8p9lvm7v9q00p0x5nhcrx4vgdsg30"))))
     (properties `((upstream-name . "iccde")))
     (build-system r-build-system)
     (arguments

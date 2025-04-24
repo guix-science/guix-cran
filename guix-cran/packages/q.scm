@@ -241,13 +241,13 @@ accurate.  Tests can be found in Benati et al.(2017)
 (define-public r-qval
   (package
     (name "r-qval")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qval" version))
        (sha256
-        (base32 "1dj75d3ixja0zr2ks79cvm0zhl6xbzn51k0diqkh5zpcqalhmqrr"))))
+        (base32 "0yagbgr6hbp0da641dnl0qh6v58wvmqwwzxyl5y6cf40sgi7fxh4"))))
     (properties `((upstream-name . "Qval")))
     (build-system r-build-system)
     (arguments
@@ -4384,13 +4384,13 @@ also Maindonald, Waddell, and Petry (2001) <doi:10.1016/S0925-5214(01)00082-5>."
 (define-public r-qr-break
   (package
     (name "r-qr-break")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QR.break" version))
        (sha256
-        (base32 "0x2psvmgmzgl3l26vkzj4926m14yv287rk3mpds7ryp4giifjajy"))))
+        (base32 "0xjmy01wm51qm92jfrwywbngvznyb9sz9yhnb43iih71v4wc8bs9"))))
     (properties `((upstream-name . "QR.break")))
     (build-system r-build-system)
     (arguments
@@ -4405,11 +4405,11 @@ number of breaks, and estimating break locations in linear quantile regression,
 using one or multiple quantiles, based on Qu (2008) and Oka and Qu (2011).
 Applicable to both time series and repeated cross-sectional data.  The main
 function is @code{rq.break()}. .  References for detailed theoretical and
-empirical explanations: . (1) Qu, Z. (2008).  Testing for Structural Change in
-Regression Quantiles.  Journal of Econometrics, 146(1), 170-184
+empirical explanations: . (1) Qu, Z. (2008). \"Testing for Structural Change in
+Regression Quantiles.\" Journal of Econometrics, 146(1), 170-184
 <doi:10.1016/j.jeconom.2008.08.006> . (2) Oka, T., and Qu, Z. (2011).
-Estimating Structural Changes in Regression Quantiles.  Journal of Econometrics,
-162(2), 248-267 <doi:10.1016/j.jeconom.2011.01.005>.")
+\"Estimating Structural Changes in Regression Quantiles.\" Journal of
+Econometrics, 162(2), 248-267 <doi:10.1016/j.jeconom.2011.01.005>.")
     (license license:gpl3+)))
 
 (define-public r-qr
@@ -5100,13 +5100,13 @@ recoding of nominal data.")
 (define-public r-qlcal
   (package
     (name "r-qlcal")
-    (version "0.0.14")
+    (version "0.0.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qlcal" version))
        (sha256
-        (base32 "0a4vx3ffghjb2n68wfmkmm0m5fz9qh8l43xnijxj3rhgmcgkb8kk"))))
+        (base32 "1sqx2blqbgv9g10kzvav9fawsd2pvd4psbrc6lcm9slidcbxrgyk"))))
     (properties `((upstream-name . "qlcal")))
     (build-system r-build-system)
     (arguments
@@ -6211,6 +6211,33 @@ data.")
      "Simulates a 5 qubit Quantum Computer and evaluates quantum circuits with 1,2
 qubit quantum gates.")
     (license license:expat)))
+
+(define-public r-qcrlscr
+  (package
+    (name "r-qcrlscr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qcrlscR" version))
+       (sha256
+        (base32 "0iz7jbir4f20qf3mb5zzdx4zc5kqj37y48lbyjaqgk0qgpvndpdh"))))
+    (properties `((upstream-name . "qcrlscR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/wanchanglin/qcrlscR")
+    (synopsis "Quality Controlâbased Robust LOESS Signal Correction")
+    (description
+     "An R implementation of quality controlâbased robust LOESS(local polynomial
+regression fitting) signal correction for metabolomics data analysis, described
+in Dunn, W., Broadhurst, D., Begley, P. et al. (2011)
+<doi:10.1038/nprot.2011.335>.  The optimisation of LOESS's span parameter using
+generalized cross-validation (GCV) is provided as an option.  In addition to
+signal correction, @code{qcrlscR} includes some utility functions like batch
+shifting and data filtering.")
+    (license license:gpl2+)))
 
 (define-public r-qcr
   (package

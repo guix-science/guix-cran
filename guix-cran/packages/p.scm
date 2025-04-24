@@ -1837,13 +1837,13 @@ Richard Bonneau, Zachary Kurtz (2016) <@code{arXiv:1605.07072>}.")
 (define-public r-puls
   (package
     (name "r-puls")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "puls" version))
        (sha256
-        (base32 "0cdgcm4fvakk2mdjmlsnin3d0bf56wrm23p9f4bhh5j1ib68lsh5"))))
+        (base32 "01nr4z02vcbc8c0c613mg4w6sdkb62fjycdmxkqfmwrx70mi5gdx"))))
     (properties `((upstream-name . "puls")))
     (build-system r-build-system)
     (arguments
@@ -10009,13 +10009,13 @@ binomial experiment.")
 (define-public r-priorcon
   (package
     (name "r-priorcon")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorCON" version))
        (sha256
-        (base32 "1h32jhkfqwdwn7y7wfz2cvglwq3vz0kjvq8396zdifkxrjy7887s"))))
+        (base32 "1k96ammlrdp9ryvmm8yjmdd5rvq98b5l7mz4bs7znv0fdghp4338"))))
     (properties `((upstream-name . "priorCON")))
     (build-system r-build-system)
     (arguments
@@ -17936,13 +17936,13 @@ the package also includes utilities to manipulate standard allele count data
 (define-public r-pooledpeaks
   (package
     (name "r-pooledpeaks")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pooledpeaks" version))
        (sha256
-        (base32 "1p0gvlvn37f3cy6xmb27sjgid33wdskdr9i3yq2jvvdy2nfz4kfq"))))
+        (base32 "13pqh3bgf7nqs39h9r0v0rq52n384s24vy4jf8bxi9zdxv8c19hq"))))
     (properties `((upstream-name . "pooledpeaks")))
     (build-system r-build-system)
     (arguments
@@ -21929,13 +21929,13 @@ phylogeny informative? Measuring the power of comparative methods, Evolution 66
 (define-public r-pmartr
   (package
     (name "r-pmartr")
-    (version "2.4.6")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmartR" version))
        (sha256
-        (base32 "0ay61ypvhc04r6j91h4jc5iqjxshk0dzcbqhxamrjdwmrs6yyzng"))))
+        (base32 "1gvvp8y0b1hqlx5rwbfhqcrpbhyzbx08walpp1ymjcqixwvaihzs"))))
     (properties `((upstream-name . "pmartR")))
     (build-system r-build-system)
     (arguments
@@ -26537,13 +26537,13 @@ The result is a tibble.")
 (define-public r-pivottabler
   (package
     (name "r-pivottabler")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pivottabler" version))
        (sha256
-        (base32 "1kf9z2ashfvgjl0sviryx2r9b9k1k9j9b9nzivr1nxm0d9x9n3yn"))))
+        (base32 "0bjyzlxz3mkdw054s2q91kwn1kdv561qlpcgzhd0r02ag13sz9vi"))))
     (properties `((upstream-name . "pivottabler")))
     (build-system r-build-system)
     (arguments
@@ -27528,54 +27528,6 @@ For related methodology, see Wells (2025)
      "Check a data frame for personal information, including names, location,
 disability status, and geo-coordinates.")
     (license license:expat)))
-
-(define-public r-piglet
-  (package
-    (name "r-piglet")
-    (version "1.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "piglet" version))
-       (sha256
-        (base32 "10zvjsbcf5i43s18jadlvqnr3za4hjlb8pd7kamf1p0m475v1j8n"))))
-    (properties `((upstream-name . "piglet")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zen4r
-                             r-tigger
-                             r-rlang
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-r6
-                             r-magrittr
-                             r-jsonlite
-                             r-ggplot2
-                             r-dplyr
-                             r-dendextend
-                             r-decipher
-                             r-data-table
-                             r-complexheatmap
-                             r-circlize
-                             r-biostrings
-                             r-alakazam))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=piglet")
-    (synopsis
-     "Program for Inferring Immunoglobulin Allele Similarity Clusters and Genotypes")
-    (description
-     "Improves genotype inference and downstream Adaptive Immune Receptor Repertoire
-Sequence data analysis.  Inference of allele similarity clusters, an alternative
-naming scheme and genotype inference for immunoglobulin heavy chain repertoires.
- The main tools are allele similarity clusters, and allele based genotype.  The
-first tool is designed to reduce the ambiguity within the immunoglobulin heavy
-chain V alleles.  The ambiguity is caused by duplicated or similar alleles which
-are shared among different genes.  The second tool is an allele based genotype,
-that determined the presence of an allele based on a threshold derived from a
-naive population.  See Peres et al. (2023) <doi:10.1093/nar/gkad603>.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-piggyback
   (package
@@ -28675,13 +28627,13 @@ Gonzalez-Voyer (2012) <doi:10.1111/j.1558-5646.2012.01790.x>.")
 (define-public r-phylopairs
   (package
     (name "r-phylopairs")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylopairs" version))
        (sha256
-        (base32 "0rspl6py8zjx5cs4q3cba1f7lvfvry4c06m5ng2ckwggjwpjcnam"))))
+        (base32 "1j1a364nvrq1i1xk3zkdz9l9dqvph1xd27rvdbydvaxqkfbg408p"))))
     (properties `((upstream-name . "phylopairs")))
     (build-system r-build-system)
     (arguments
@@ -39593,13 +39545,13 @@ Medical Outcomes Partnership (OMOP) common data model.")
 (define-public r-patientlevelprediction
   (package
     (name "r-patientlevelprediction")
-    (version "6.4.0")
+    (version "6.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientLevelPrediction" version))
        (sha256
-        (base32 "0j1d7mypfpy31l1bqqgwyixnnccimb6m7gpc7zmnm00mghdd26qw"))))
+        (base32 "0kb97ddar7bj73dxay4wjh6bhkncmsy1wzmdl52i4n253gslh8hq"))))
     (properties `((upstream-name . "PatientLevelPrediction")))
     (build-system r-build-system)
     (arguments
@@ -40674,13 +40626,13 @@ application to accommodate general use cases just as conveniently.")
 (define-public r-partsm
   (package
     (name "r-partsm")
-    (version "1.1-3")
+    (version "1.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "partsm" version))
        (sha256
-        (base32 "17md3j41knscllckiqnvkqvf2v0fgsig101vgg6z5ic1yzvzfxgs"))))
+        (base32 "17lvw3182r12pi9pla3p4zp6xk9nxz9gk4spgwqcvidnskr961ji"))))
     (properties `((upstream-name . "partsm")))
     (build-system r-build-system)
     (arguments

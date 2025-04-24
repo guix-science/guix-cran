@@ -1133,13 +1133,13 @@ and download of files.")
 (define-public r-zeitgebr
   (package
     (name "r-zeitgebr")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zeitgebr" version))
        (sha256
-        (base32 "1h2zx3ah1xdyyag40ragrv7gvpnlzqmappbnjp971dn9khqdxfqs"))))
+        (base32 "03bgkhvv366fmsaa07gc674n6w3sgs6h70h5xc5ypl95bkvcvkxn"))))
     (properties `((upstream-name . "zeitgebr")))
     (build-system r-build-system)
     (arguments

@@ -239,13 +239,13 @@ packages.")
 (define-public r-azureqstor
   (package
     (name "r-azureqstor")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AzureQstor" version))
        (sha256
-        (base32 "1z7j8kakiarpw3q2rii7gl9zc2nsb49nzs1nxg1hgfyvcdhw2fcg"))))
+        (base32 "0c33dj85a8xy6df8vzpz7xbm147fd7y49kxpyb4zix4jzvsfzyha"))))
     (properties `((upstream-name . "AzureQstor")))
     (build-system r-build-system)
     (arguments
@@ -1192,6 +1192,31 @@ set of different commands.")
 US from January 2017 through December 20204.  See the package website for more
 information, documentation, and examples.  Data source: Haas Avocado Board
 <https://hassavocadoboard.com/category-data/>.")
+    (license license:expat)))
+
+(define-public r-avlm
+  (package
+    (name "r-avlm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "avlm" version))
+       (sha256
+        (base32 "000c2qlyrahqwg5kv19dzvzfm4xnlgmdyw7hb4qll94j2qvl5lc4"))))
+    (properties `((upstream-name . "avlm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=avlm")
+    (synopsis "Safe Anytime Valid Inference for Linear Models")
+    (description
+     "Anytime-valid inference for linear models, namely, sequential t-tests,
+sequential F-tests, and confidence sequences with time-uniform Type-I error and
+coverage guarantees.  This allows hypotheses to be continuously tested without
+sacrificing false positive guarantees.  It is based on the methods documented in
+Lindon et al. (2022) <doi:10.48550/@code{arXiv.2210.08589>}.")
     (license license:expat)))
 
 (define-public r-avirtualtwins
@@ -14607,13 +14632,13 @@ list of citations for the methods implemented.")
 (define-public r-ammibayes
   (package
     (name "r-ammibayes")
-    (version "1.0-2")
+    (version "1.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ammiBayes" version))
        (sha256
-        (base32 "0mj14n882jcg7p7rldb0d7yndp1dv3vma9g7f7f0vabhwm6d1jkd"))))
+        (base32 "0lmsb606k0hvfwyryq6hssqv59m7dgy1as7x21mc5f3jnmhsjjj5"))))
     (properties `((upstream-name . "ammiBayes")))
     (build-system r-build-system)
     (arguments

@@ -114,24 +114,28 @@ Bank.")
 (define-public r-cytosimplex
   (package
     (name "r-cytosimplex")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CytoSimplex" version))
        (sha256
-        (base32 "0zknsizsh860hyij5zxpm3izfsiwnp7mshrrnk4fmxsjv9fcxahr"))))
+        (base32 "06jzjba27qhj0m3qp4v5rh8pn6chyds9hprcsxpak6798b7b43db"))))
     (properties `((upstream-name . "CytoSimplex")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-viridis
+                             r-rlang
                              r-rcpparmadillo
                              r-rcpp
+                             r-rcolorbrewer
+                             r-plotly
                              r-plot3d
                              r-matrix
-                             r-ggplot2))
+                             r-ggplot2
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://welch-lab.github.io/CytoSimplex/")
     (synopsis
@@ -140,7 +144,7 @@ Bank.")
      "Create simplex plots to visualize the similarity between single-cells and
 selected clusters in a 1-/2-/3-simplex space.  Velocity information can be added
 as an additional layer.  See Liu J, Wang Y et al (2023)
-<doi:10.1101/2023.12.07.570655> for more details.")
+<doi:10.1093/bioinformatics/btaf119> for more details.")
     (license license:gpl3)))
 
 (define-public r-cytopt
@@ -5744,35 +5748,6 @@ data produced by the Southwest Fisheries Science Center (SWFSC) program
 Climatic Research Unit (CRU) Time-Series (TS) Version 3.21 data.")
     (license license:gpl3)))
 
-(define-public r-crunchy
-  (package
-    (name "r-crunchy")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "crunchy" version))
-       (sha256
-        (base32 "15w72kmizsxkj1wx3nqny6329m2041mxyzi4nxh8l3hfmaisb4qm"))))
-    (properties `((upstream-name . "crunchy")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny r-rstudioapi r-miniui r-httpcache
-                             r-crunch))
-    (native-inputs (list r-knitr))
-    (home-page "https://crunch.io/r/crunchy/")
-    (synopsis "Shiny Apps on Crunch")
-    (description
-     "To facilitate building custom dashboards on the Crunch data platform
-<https://crunch.io/>, the crunchy package provides tools for working with
-shiny'.  These tools include utilities to manage authentication and
-authorization automatically and custom stylesheets to help match the look and
-feel of the Crunch web application.  The package also includes several gadgets
-for use in RStudio'.")
-    (license license:lgpl3+)))
-
 (define-public r-crunch
   (package
     (name "r-crunch")
@@ -6817,13 +6792,13 @@ the number of cross-matches and a p-value.  See Rosenbaum (2005)
 (define-public r-crossmap
   (package
     (name "r-crossmap")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crossmap" version))
        (sha256
-        (base32 "079ibxhm6877nfdqf88fhg9fjdn3vbs44jprrbhxmmbbd30nma4v"))))
+        (base32 "0lb3zwlc86k04vjdc0k5wcp8j5p963hkjsnh0070zazmznc0ynfp"))))
     (properties `((upstream-name . "crossmap")))
     (build-system r-build-system)
     (arguments
@@ -14450,53 +14425,6 @@ transformed to binary outcomes.  Such artificial binary outcomes indicate
 whether an underlying measurement is greater than a threshold.")
     (license license:gpl3)))
 
-(define-public r-cornerstoner
-  (package
-    (name "r-cornerstoner")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CornerstoneR" version))
-       (sha256
-        (base32 "04dvryhcyi7f6bmm4067cn5vmy7kdqi3bys7ln8nnsc0kkdjxhi5"))))
-    (properties `((upstream-name . "CornerstoneR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vcd
-                             r-spatialtools
-                             r-ranger
-                             r-minpack-lm
-                             r-data-table
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/camLine/CornerstoneR/-/issues")
-    (synopsis
-     "Collection of Scripts for Interface Between 'Cornerstone' and 'R'")
-    (description
-     "Collection of generic R scripts which enable you to use existing R routines in
-Cornerstone'. .  The desktop application Cornerstone
-(<https://www.camline.com/en/products/cornerstone/cornerstone-core.html>) is a
-data analysis software provided by @code{camLine} that empowers engineering
-teams to find solutions even faster.  The engineers incorporate intensified
-hands-on statistics into their projects.  They benefit from an intuitive and
-uniquely designed graphical Workmap concept: you design experiments (@code{DoE})
-and explore data, analyze dependencies, and find answers you can act upon,
-immediately, interactively, and without any programming. .  While Cornerstone's
-interface to the statistical programming language R has been available since
-version 6.0, the latest interface with R is even much more efficient.
-Cornerstone release 7.1.1 allows you to integrate user defined R packages
-directly into the standard Cornerstone GUI. Your engineering team stays in
-Cornerstone's graphical working environment and can apply R routines,
-immediately and without the need to deal with programming code.  Additionally,
-your R programming team develops corresponding R packages detached from
-Cornerstone in their favorite R environment. .  Learn how to use R packages in
-Cornerstone 7.1.1 on @code{camLineTV} @code{YouTube} channel
-(<https://www.youtube.com/watch?v=HEQHwq_@code{laXU>}) (available in German).")
-    (license license:gpl3)))
-
 (define-public r-corncob
   (package
     (name "r-corncob")
@@ -15735,45 +15663,6 @@ example, k-means.  Implements work developed in Moya B., Walker S. G. (2022).
 <doi:10.48550/arxiv.2103.15671>, and Escobar M. D., West, M. (1995)
 <doi:10.1080/01621459.1995.10476550>.")
     (license license:gpl2+)))
-
-(define-public r-coppecosenzar
-  (package
-    (name "r-coppecosenzar")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "coppeCosenzaR" version))
-       (sha256
-        (base32 "1chwsfyaf5rmlsypr43n7px8b2220dfa5mzcriq1swylgbx4181l"))))
-    (properties `((upstream-name . "coppeCosenzaR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/ptaranti/coppeCosenzaR")
-    (synopsis "COPPE-Cosenza Fuzzy Hierarchy Model")
-    (description
-     "The program implements the COPPE-Cosenza Fuzzy Hierarchy Model.  The model was
-based on the evaluation of local alternatives, representing regional
-potentialities, so as to fulfill demands of economic projects.  After defining
-demand profiles in terms of their technological coefficients, the degree of
-importance of factors is defined so as to represent the productive activity.
-The method can detect a surplus of supply without the restriction of the
-distance of classical algebra, defining a hierarchy of location alternatives.
-In COPPE-Cosenza Model, the distance between factors is measured in terms of the
-difference between grades of memberships of the same factors belonging to two or
-more sets under comparison.  The required factors are classified under the
-following linguistic variables: Critical (CR); Conditioning (C); Little
-Conditioning (LC); and Irrelevant (I).  And the alternatives can assume the
-following linguistic variables: Excellent (Ex), Good (G), Regular (R), Weak (W),
-Empty (Em), Zero (Z) and Inexistent (In).  The model also provides flexibility,
-allowing different aggregation rules to be performed and defined by the Decision
-Maker.  Such feature is considered in this package, allowing the user to define
-other aggregation matrices, since it considers the same linguistic variables
-mentioned.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-cophescan
   (package
@@ -25126,32 +25015,6 @@ Meta-Learners.\" A tutorial for this package can be found at
 <https://www.laylaparast.com/cohetsurr>.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-cohensdplibrary
-  (package
-    (name "r-cohensdplibrary")
-    (version "0.5.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CohensdpLibrary" version))
-       (sha256
-        (base32 "16zsjc6n05ffk35qrdslgvzdva9cwq7by1vsjr3y35zv4wcvnxd8"))))
-    (properties `((upstream-name . "CohensdpLibrary")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=CohensdpLibrary")
-    (synopsis "Cohen's D_p Computation with Confidence Intervals")
-    (description
-     "Computing Cohen's d_p in any experimental designs (between-subject,
-within-subject, and single-group design).  Cousineau (2022)
-<https://github.com/dcousin3/@code{CohensdpLibrary>}; Cohen (1969, ISBN:
-0-8058-0283-5).")
-    (license license:gpl3)))
-
 (define-public r-cognitor
   (package
     (name "r-cognitor")
@@ -26402,13 +26265,13 @@ and continuous outcomes.")
 (define-public r-coda-plot
   (package
     (name "r-coda-plot")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coda.plot" version))
        (sha256
-        (base32 "1kwkla9mhb61g61gczhp99hx2rav6wp7wgjsn550hsxdmp41cww4"))))
+        (base32 "08g0xj4lb62vzg1yxny1lqlncqj9yrk7jf9nsddrl38431wcvk9g"))))
     (properties `((upstream-name . "coda.plot")))
     (build-system r-build-system)
     (arguments
@@ -28996,13 +28859,13 @@ sparse latent variables can also be defined.")
 (define-public r-clustur
   (package
     (name "r-clustur")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustur" version))
        (sha256
-        (base32 "07czqkm4k0cx1h50fkviip21h65bg5xs712p5k5mp9kc7011grvw"))))
+        (base32 "12r78457iq0j1cbxlw1ppqypmmi8wz12bhywyl583wgpg4jiwv4y"))))
     (properties `((upstream-name . "clustur")))
     (build-system r-build-system)
     (arguments
@@ -29271,13 +29134,13 @@ some basic data handling tools for angular data.")
 (define-public r-clustofvar
   (package
     (name "r-clustofvar")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClustOfVar" version))
        (sha256
-        (base32 "0grhkab7s58ji4cf7cxh7ahd2dxrj8aqfdf3119b40zxkxbwxcr0"))))
+        (base32 "1kwl0zsqdlkyfkx73bz2072acnl867klba394lcgh0b3l8viz7r5"))))
     (properties `((upstream-name . "ClustOfVar")))
     (build-system r-build-system)
     (arguments
@@ -29730,13 +29593,13 @@ clusters that exist across the datasets.")
 (define-public r-clustermq
   (package
     (name "r-clustermq")
-    (version "0.9.8")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustermq" version))
        (sha256
-        (base32 "1pddz46vr69pl4ql2y6h6a42zx2fqrzp2xpsjwrm8x9za52waccz"))))
+        (base32 "03fapfckdgyjy3y3c3jfnkawax4b49j0vafdwj98bcmzbabj0gn2"))))
     (properties `((upstream-name . "clustermq")))
     (build-system r-build-system)
     (arguments
@@ -31249,13 +31112,13 @@ model.")
 (define-public r-clocksim
   (package
     (name "r-clocksim")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clockSim" version))
        (sha256
-        (base32 "0v4cj7x7rcgj44hsc16zxrlpcx28iywqbi3jnxrp7s5wahz6imcs"))))
+        (base32 "0v8bkvzfif8ljjircxr5wk20qajfmzbdgpn3hsaq10spf62px07a"))))
     (properties `((upstream-name . "clockSim")))
     (build-system r-build-system)
     (arguments
@@ -32362,19 +32225,24 @@ Guralnick <doi:10.17161/bi.v14i0.9786> Biodiversity Informatics.")
 (define-public r-climate
   (package
     (name "r-climate")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climate" version))
        (sha256
-        (base32 "1p8l7sdplrkc5n1f28xbmvmpz8akhbxzqm522gcgs7jg754zlxhb"))))
+        (base32 "04nx1ac2m2ml2qf00fa7qnh13w4chfdnimsfbqm59jszpwrpznsw"))))
     (properties `((upstream-name . "climate")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml r-stringi r-httr r-data-table r-curl))
+    (propagated-inputs (list r-xml
+                             r-stringi
+                             r-httr
+                             r-data-table
+                             r-curl
+                             r-archive))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bczernecki/climate")
     (synopsis
@@ -35291,6 +35159,32 @@ Trigonometric Sums (MNNTS).  The package includes functions for calculation of
 densities and distributions, for the estimation of parameters, and more.")
     (license license:gpl2+)))
 
+(define-public r-circnntsraxial
+  (package
+    (name "r-circnntsraxial")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CircNNTSRaxial" version))
+       (sha256
+        (base32 "1bwxpbx044ldiljnfxkwy3wbck0llh60d2n39hg9qnlrzr5gzhfv"))))
+    (properties `((upstream-name . "CircNNTSRaxial")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-psychtools r-circnntsr))
+    (home-page "https://cran.r-project.org/package=CircNNTSRaxial")
+    (synopsis "Axial Data using NNTS Models")
+    (description
+     "Statistical analysis of axial using distributions Nonnegative Trigonometric Sums
+(NNTS).  The package includes functions for calculation of densities and
+distributions, for the estimation of parameters, and more.  Fernandez-Duran,
+J.J. and Gregorio-Dominguez, M.M. (2025), Multimodal distributions for circular
+axial data\", <doi:10.48550/@code{arXiv.2504.04681>}.")
+    (license license:gpl2+)))
+
 (define-public r-circnntsr
   (package
     (name "r-circnntsr")
@@ -35374,6 +35268,34 @@ Golzy M., Markatou M. (2020) <doi:10.1080/10618600.2020.1740713>, Kato S.,
 @code{McCullagh} P. (2020) <doi:10.3150/20-bej1222> and Sablica L., Hornik K.,
 Leydold J. (2023) <doi:10.1214/23-ejs2149>.")
     (license license:gpl3)))
+
+(define-public r-circlizeplus
+  (package
+    (name "r-circlizeplus")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "circlizePlus" version))
+       (sha256
+        (base32 "04lk0l1h5lcdkl3v3fwv6257ngv13hwfzfp6y9lwkjkn4m7l92h8"))))
+    (properties `((upstream-name . "circlizePlus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-circlize))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/TianzeLab/circlizePlus")
+    (synopsis
+     "Using 'ggplot2' Feature to Write Readable R Code for Circular Visualization")
+    (description
+     "This package provides a wrapper for circlize'.  All components are based on
+classes and objects.  Users can use the addition symbol (+) to combine
+components for a circular visualization with ggplot2 style.The package is
+described in Zhang Z, Cao T, Huang Y and Xia Y (2025)
+<doi:10.3389/fgene.2025.1535368>.")
+    (license license:expat)))
 
 (define-public r-circletyper
   (package
@@ -40459,13 +40381,13 @@ variables with respect to this measure.")
 (define-public r-cgam
   (package
     (name "r-cgam")
-    (version "1.24")
+    (version "1.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgam" version))
        (sha256
-        (base32 "10sdadvw6ywy6b2fcld2vdisyv2zdiy72cw0k08a10v6iw9cjb67"))))
+        (base32 "00ra2aa1dzrfj94sszpv17qcir6zh5r1hl147ndwiln50a7ns5x3"))))
     (properties `((upstream-name . "cgam")))
     (build-system r-build-system)
     (arguments
@@ -40475,6 +40397,7 @@ variables with respect to this measure.")
                              r-svdialogs
                              r-statmod
                              r-splines2
+                             r-rlang
                              r-matrix
                              r-lme4
                              r-ggplot2
@@ -45124,54 +45047,6 @@ web resource.")
 standard discrete binomial with continuous size parameter and continuous support
 with x in [0, size + 1], following Ilienko (2013) <@code{arXiv:1303.5990>}.")
     (license license:gpl2+)))
-
-(define-public r-cbctools
-  (package
-    (name "r-cbctools")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cbcTools" version))
-       (sha256
-        (base32 "07has80n7n23y2y3shalps1hkw1r8f4fld1r48g42fdrwkhhf6jw"))))
-    (properties `((upstream-name . "cbcTools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-randtoolbox
-                             r-mass
-                             r-logitr
-                             r-idefix
-                             r-ggplot2
-                             r-fastdummies
-                             r-doe-base
-                             r-algdesign))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jhelvy/cbcTools")
-    (synopsis
-     "Choice-Based Conjoint Experiment Design Generation and Power Evaluation in R")
-    (description
-     "Design and evaluate choice-based conjoint survey experiments.  Generate a
-variety of survey designs, including random designs, full factorial designs,
-orthogonal designs, D-optimal designs, and Bayesian D-efficient designs as well
-as designs with \"no choice\" options and \"labeled\" (also known as \"alternative
-specific\") designs.  Conveniently inspect the design balance and overlap, and
-simulate choice data for a survey design either randomly or according to a
-multinomial or mixed logit utility model defined by user-provided prior
-parameters.  Conduct a power analysis for a given survey design by estimating
-the same model on different subsets of the data to simulate different sample
-sizes.  Full factorial and orthogonal designs are obtained using the
-@code{DoE.base} package (GrÃ¶mping, 2018) <doi:10.18637/jss.v085.i05>.
-D-optimal designs are obtained using the @code{AlgDesign} package (Wheeler,
-2022) <https://CRAN.R-project.org/package=@code{AlgDesign>}.  Bayesian
-D-efficient designs are obtained using the idefix package (Traets et al, 2020)
-<doi:10.18637/jss.v096.i03>.  Choice simulation and model estimation in power
-analyses are handled using the logitr package (Helveston, 2023)
-<doi:10.18637/jss.v105.i10>.")
-    (license license:expat)))
 
 (define-public r-cbcgrps
   (package

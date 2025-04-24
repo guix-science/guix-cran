@@ -1571,13 +1571,13 @@ with a color legend.")
 (define-public r-hybridmodels
   (package
     (name "r-hybridmodels")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hybridModels" version))
        (sha256
-        (base32 "0fj3dvv7s1hlicvlb077pkhbj894brzgdxhp67jck9zpy2qymzxq"))))
+        (base32 "0ci0kbfgsjvb28bgg0z1v5x4p23kifgpp4p17a3ky7lmv2qls1x8"))))
     (properties `((upstream-name . "hybridModels")))
     (build-system r-build-system)
     (arguments
@@ -2579,13 +2579,13 @@ performance.")
 (define-public r-httk
   (package
     (name "r-httk")
-    (version "2.5.0")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "httk" version))
        (sha256
-        (base32 "167813rx1kwpyi81f1dzwym78zjv5k5852pqrmph9b2m2mhly8q9"))))
+        (base32 "02ss69yrdcl7ali1v638vabrr6b8nbjc26y9c0ndlnmiw2pqf6y3"))))
     (properties `((upstream-name . "httk")))
     (build-system r-build-system)
     (arguments
@@ -2599,6 +2599,7 @@ performance.")
                              r-msm
                              r-magrittr
                              r-ggplot2
+                             r-dplyr
                              r-desolve
                              r-data-table))
     (native-inputs (list r-knitr))
@@ -4335,6 +4336,37 @@ sold for 2984 counties in the contiguous United States From 2008 to January
 2016.  Additional data sets containing geographical information and links to
 Wikipedia are also included.")
     (license license:cc0)))
+
+(define-public r-hours2lessons
+  (package
+    (name "r-hours2lessons")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hours2lessons" version))
+       (sha256
+        (base32 "053dpnhyqj2mkybgw2xszwxcmbj7255rr898ci14241k3wcf1gra"))))
+    (properties `((upstream-name . "hours2lessons")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-igraph
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=hours2lessons")
+    (synopsis "AlocÄ Pe Ore LecÈiile Zilei")
+    (description
+     "LecÈiile prof/cls trebuie completate cu un cÃ¢mp \"ora\", astfel ca oricare douÄ
+lecÈii prof/cls/ora sÄ nu se suprapunÄ Ã®ntr-o aceeaÈi orÄ.  The prof/cls
+lessons must be completed with a \"hour\" field ('ora), so that any two
+prof/cls/ora lessons do not overlap in the same hour. <https://vlad.bazon.net/>.")
+    (license license:expat)))
 
 (define-public r-hotspots
   (package
@@ -8121,13 +8153,13 @@ syntax.")
 (define-public r-higarrote
   (package
     (name "r-higarrote")
-    (version "1.0.2")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HiGarrote" version))
        (sha256
-        (base32 "1wvwzsj4qrpax96xxy4jjjk3ymkyiawhrmld8gmzh15s9dg7wqb1"))))
+        (base32 "1gl4ql0cz4av79ax3xzjwa6r4yayhm1zx4yicx717sncw8qwi06a"))))
     (properties `((upstream-name . "HiGarrote")))
     (build-system r-build-system)
     (arguments
@@ -8459,6 +8491,31 @@ documented in the HICP Methodological Manual
 HICP data from Eurostat's public database
 (<https://ec.europa.eu/eurostat/data/database>).")
     (license (license:fsdg-compatible "EUPL"))))
+
+(define-public r-hicocietyexample
+  (package
+    (name "r-hicocietyexample")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HiCocietyExample" version))
+       (sha256
+        (base32 "089qq22q74kxws9j7zzadlnk69m8yqqanhyxj4n3y789s4n2icby"))))
+    (properties `((upstream-name . "HiCocietyExample")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=HiCocietyExample")
+    (synopsis
+     "Example HiC and Two 'HiCociety' Outputs for Demonstration and Testing")
+    (description
+     "This package provides an example @code{HiC} dataset and two examples of
+@code{HiCociety} outputs from a function named @code{hic2community()}.  The data
+are intended for demonstration purposes only and kept small enough to be
+distributed via CRAN.")
+    (license license:expat)))
 
 (define-public r-hiclimr
   (package
@@ -11887,13 +11944,13 @@ proposed in Tang, Q., Zhang, Y., & Wang, B. (2022)
 (define-public r-hdpglm
   (package
     (name "r-hdpglm")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdpGLM" version))
        (sha256
-        (base32 "1hh0d0dmnqxzsfar86bd0cqjj5jljyhw073zi59bmjyg4m0rjyyn"))))
+        (base32 "0drcvqqaawvndv3xsas0am5xq58kb9fg2s879knvwmd1qa002lam"))))
     (properties `((upstream-name . "hdpGLM")))
     (build-system r-build-system)
     (arguments
@@ -11919,7 +11976,6 @@ proposed in Tang, Q., Zhang, Y., & Wang, B. (2022)
                              r-ggridges
                              r-ggpubr
                              r-ggplot2
-                             r-ggjoy
                              r-formula-tools
                              r-dplyr
                              r-data-table
@@ -14330,13 +14386,13 @@ Julia', or any software that supports Text, CSV, or Excel formats.")
 (define-public r-harmonydata
   (package
     (name "r-harmonydata")
-    (version "0.2.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harmonydata" version))
        (sha256
-        (base32 "1xdnnsmkbfvmb40fmv28qynspz3bwbha19pfc12gpm29nw081hvg"))))
+        (base32 "1g1k2d9hr1mjlqkn2v149km4kf3y7xz1fl51lag3f7740pvqagf1"))))
     (properties `((upstream-name . "harmonydata")))
     (build-system r-build-system)
     (arguments
@@ -14426,13 +14482,13 @@ rate only in the weak sense, rather than the strong sense as intended.")
 (define-public r-harbinger
   (package
     (name "r-harbinger")
-    (version "1.1.707")
+    (version "1.1.717")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harbinger" version))
        (sha256
-        (base32 "0vvqfdb8f5ly75c5a1fbalir7142l7qrb07zbvc0387w9b9fpmfs"))))
+        (base32 "02ha42aad47mvy43z78f745azw5ai0ah5cg9fz2bhcsrhqdjrmyc"))))
     (properties `((upstream-name . "harbinger")))
     (build-system r-build-system)
     (arguments
@@ -14451,7 +14507,7 @@ rate only in the weak sense, rather than the strong sense as intended.")
                              r-dplyr
                              r-daltoolbox
                              r-changepoint))
-    (home-page "https://github.com/cefet-rj-dal/harbinger")
+    (home-page "https://cefet-rj-dal.github.io/harbinger/")
     (synopsis "Unified Time Series Event Detection Framework")
     (description
      "By analyzing time series, it is possible to observe significant changes in the
@@ -15495,36 +15551,6 @@ sampling sufficiency for DNA barcoding initiatives.  Users can also simulate
 their own DNA sequences according to various models of nucleotide substitution.
 A Shiny app is also available.")
     (license license:gpl3)))
-
-(define-public r-hacksig
-  (package
-    (name "r-hacksig")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hacksig" version))
-       (sha256
-        (base32 "0sc35vyi00r2b3hgn1xw2zffd704adschjwhx0niv5a1l33dxbkp"))))
-    (properties `((upstream-name . "hacksig")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-tibble r-rlang r-future-apply r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Acare/hacksig")
-    (synopsis "Tidy Framework to Hack Gene Expression Signatures")
-    (description
-     "This package provides a collection of cancer transcriptomics gene signatures as
-well as a simple and tidy interface to compute single sample enrichment scores
-either with the original procedure or with three alternatives: the \"combined
-z-score\" of Lee et al. (2008) <doi:10.1371/journal.pcbi.1000217>, the \"single
-sample GSEA\" of Barbie et al. (2009) <doi:10.1038/nature08460> and the
-\"singscore\" of Foroutan et al. (2018) <doi:10.1186/s12859-018-2435-4>.  The
-@code{get_sig_info()} function can be used to retrieve information about each
-signature implemented.")
-    (license license:expat)))
 
 (define-public r-hackernews
   (package

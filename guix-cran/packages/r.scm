@@ -2084,13 +2084,13 @@ placed in the top r-fraction of units.")
 (define-public r-rvaidememoire
   (package
     (name "r-rvaidememoire")
-    (version "0.9-83-7")
+    (version "0.9-83-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RVAideMemoire" version))
        (sha256
-        (base32 "1ix6v1m4h1wffvgmzhrzdgj5268z54bnd02wqivrjf32pi7s9vn5"))))
+        (base32 "133wil3sywpyha10mfjryl8crgm0q8hmy2w5xniid888a2jkna0d"))))
     (properties `((upstream-name . "RVAideMemoire")))
     (build-system r-build-system)
     (arguments
@@ -5123,13 +5123,13 @@ more.")
 (define-public r-rtables-officer
   (package
     (name "r-rtables-officer")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtables.officer" version))
        (sha256
-        (base32 "0g9bxa3x8j6v19h08kfdb8wz9pk70cx2fpvsxr5vayqdsfavx1wy"))))
+        (base32 "08k123rw8vvypn8a2b248va8j3pak715ca1w9x2g8ryn46hr0hsb"))))
     (properties `((upstream-name . "rtables.officer")))
     (build-system r-build-system)
     (arguments
@@ -5137,6 +5137,7 @@ more.")
       #:tests? #f))
     (propagated-inputs (list r-stringi
                              r-rtables
+                             r-rlistings
                              r-officer
                              r-magrittr
                              r-lifecycle
@@ -5954,13 +5955,13 @@ Stata commands (both inline and from a .do file) from R.")
 (define-public r-rstantva
   (package
     (name "r-rstantva")
-    (version "0.2.1")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RStanTVA" version))
        (sha256
-        (base32 "0dazxqcdhdw0igjhjk3m3zfnnypfvaiswwi0ab5414n5avgdya9m"))))
+        (base32 "0pk366bza89mggg8zy0f3mjq2hfcc42v1p4hsv48pdg4adi7kkmc"))))
     (properties `((upstream-name . "RStanTVA")))
     (build-system r-build-system)
     (arguments
@@ -9721,13 +9722,13 @@ purposes.")
 (define-public r-rrcovna
   (package
     (name "r-rrcovna")
-    (version "0.5-2")
+    (version "0.5-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rrcovNA" version))
        (sha256
-        (base32 "1hp6cji9w38qq00bb0jyx0s2lh74960qciwhbc1vdiv5dfg38qmx"))))
+        (base32 "106avpgv9683m8naglvwgqs8g9gkmgxa0b2f5l4zwpggz314am5d"))))
     (properties `((upstream-name . "rrcovNA")))
     (build-system r-build-system)
     (arguments
@@ -14439,13 +14440,13 @@ different colour metrics for the conversion.")
 (define-public r-rolluptree
   (package
     (name "r-rolluptree")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rollupTree" version))
        (sha256
-        (base32 "0bbhs6gj3cj38ny841zn8j1s5dc68phcgxagvjxlpw65sxbs9gwi"))))
+        (base32 "047dpddgg8lcrcvzaa6si8cmmwz4kh6p25pvz0k92vr47kh71f7f"))))
     (properties `((upstream-name . "rollupTree")))
     (build-system r-build-system)
     (arguments
@@ -18490,6 +18491,38 @@ packages; is currently used by package @code{RobExtremes} only.")
      "Base S4-classes and functions for robust asymptotic statistics.")
     (license license:lgpl3)))
 
+(define-public r-rob
+  (package
+    (name "r-rob")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rob" version))
+       (sha256
+        (base32 "13h6yp6s694pvbdhrb0zqz51rvi253vy8pfjr48chk8riqr9cfr0"))))
+    (properties `((upstream-name . "rob")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-minimalrsd r-fmc))
+    (home-page "https://github.com/RomarioContoL/rob")
+    (synopsis "Run Orders with Assignment-Expansion Method")
+    (description
+     "It enables the identification of sequentialexperimentation orders for factorial
+designs that jointly reduce bias and the number of level changes.  The method
+used is that presented by Conto et al. (2025), known as the Assignment-Expansion
+method, which consists of adapting the linear programming assignment problem to
+generate balanced experimentation orders.  The properties identified are then
+generalized to designs with a larger number of factors and levels using the
+expansion method proposed by Correa et al. (2009) and later generalized by
+Bhowmik et al. (2017).  For more details see Conto et al. (2025)
+<doi:10.1016/j.cie.2024.110844>, Correa et al. (2009)
+<doi:10.1080/02664760802499337> and Bhowmik et al. (2017)
+<doi:10.1080/03610926.2016.1152490>.")
+    (license license:expat)))
+
 (define-public r-roauth
   (package
     (name "r-roauth")
@@ -19355,13 +19388,13 @@ background of the method is described in Sato et al. (2021)
 (define-public r-rneighborgwas
   (package
     (name "r-rneighborgwas")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rNeighborGWAS" version))
        (sha256
-        (base32 "1j2rafli0ns34ms5s8zjxwyvlxhl88r5krw0qqzc3igd9sc0mjvn"))))
+        (base32 "07pxkpr7yjqzpifaaxy0fyf4vpcw8mxvn3r0d3nn1zcvv07chpa0"))))
     (properties `((upstream-name . "rNeighborGWAS")))
     (build-system r-build-system)
     (arguments
@@ -26025,13 +26058,13 @@ al. (2013) <doi:10.1111/2041-210X.12079> and associated references.")
 (define-public r-rinside
   (package
     (name "r-rinside")
-    (version "0.2.18")
+    (version "0.2.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RInside" version))
        (sha256
-        (base32 "0dmpdi39dv5a0i7v507cbm2vr2d0cl310n9w1qz66r53y3q18l40"))))
+        (base32 "090zramd77305kvpsv3n85jjsmcndn2faf01cmqwaq0l7wx880q7"))))
     (properties `((upstream-name . "RInside")))
     (build-system r-build-system)
     (arguments
@@ -26622,6 +26655,42 @@ feedback and requirements.  Please, make sure to review and acknowledge
 Investors Exchange Group (IEX Group) terms and conditions before using Riex
 (<https://iexcloud.io/terms/>).")
     (license license:gpl2)))
+
+(define-public r-riemtan
+  (package
+    (name "r-riemtan")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "riemtan" version))
+       (sha256
+        (base32 "0i833vvqvac2l827xsd683g878n16ljkp56fwr3q22nd2c1442sa"))))
+    (properties `((upstream-name . "riemtan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6
+                             r-purrr
+                             r-matrix
+                             r-mass
+                             r-furrr
+                             r-expm))
+    (native-inputs (list r-knitr))
+    (home-page "https://nicoesve.github.io/riemtan/")
+    (synopsis "Riemannian Metrics for Symmetric Positive Definite Matrices")
+    (description
+     "This package implements various Riemannian metrics for symmetric positive
+definite matrices, including AIRM (Affine Invariant Riemannian Metric, see
+Pennec, Fillard, and Ayache (2006) <doi:10.1007/s11263-005-3222-z>),
+Log-Euclidean (see Arsigny, Fillard, Pennec, and Ayache (2006)
+<doi:10.1002/mrm.20965>), Euclidean, Log-Cholesky (see Lin (2019)
+<doi:10.1137/18M1221084>), and Bures-Wasserstein metrics (see Bhatia, Jain, and
+Lim (2019) <doi:10.1016/j.exmath.2018.01.002>).  Provides functions for
+computing logarithmic and exponential maps, vectorization, and statistical
+operations on the manifold of positive definite matrices.")
+    (license license:expat)))
 
 (define-public r-riembase
   (package
@@ -43373,13 +43442,13 @@ library.")
 (define-public r-rdeps
   (package
     (name "r-rdeps")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdeps" version))
        (sha256
-        (base32 "0zcik1lf3b37h089sx8pvcdkdilkx832gjwsvzach5mdg1sv3plc"))))
+        (base32 "1r5vgzgp4j4agl8x3n3dgmxkj5bcwac9bpqz9cf1cqsqhg7lx5jn"))))
     (properties `((upstream-name . "rdeps")))
     (build-system r-build-system)
     (arguments
@@ -43391,8 +43460,9 @@ library.")
     (description
      "Screens all .R', .Rmd', and .qmd files to extract the name of packages used in a
 project.  This package detects packages called with library(foo)',
-require(foo)', and @code{foo::bar()} and adds these dependencies in the
-DESCRIPTION file in the sections Depends, Imports, and Suggests.")
+require(foo)', @code{foo::bar()} and use(\"foo\", \"bar\") and adds these
+dependencies in the DESCRIPTION file in the sections Depends, Imports, and
+Suggests.")
     (license license:gpl2+)))
 
 (define-public r-rdecode
@@ -44131,13 +44201,13 @@ validation approach is introduced by Shen, L., Geleijnse, G. and Kaptein, M.
 (define-public r-rctrecruit
   (package
     (name "r-rctrecruit")
-    (version "0.1.24")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCTRecruit" version))
        (sha256
-        (base32 "0bkzrxvf1i5s9bs3wh1jg12c33wy9jf08r5xi4g0rlqgcj2gm4qc"))))
+        (base32 "15qkzclkvk9l44nypq70hsq8fv04m4xjnaqapbqf2765jm8gd8cc"))))
     (properties `((upstream-name . "RCTRecruit")))
     (build-system r-build-system)
     (arguments
@@ -44849,13 +44919,13 @@ contributors to both @code{QuantLib} and Quantuccia'.")
 (define-public r-rcppplanc
   (package
     (name "r-rcppplanc")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppPlanc" version))
        (sha256
-        (base32 "1pfq5ykfyx654r76srwbp5gy0bjkmzvnv2x83vr79pflafnvdrnf"))))
+        (base32 "0k1x0rx3wqwzm5ra1cyycwzwj1nwilpw890q7b88qg7p8kc9lmvc"))))
     (properties `((upstream-name . "RcppPlanc")))
     (build-system r-build-system)
     (arguments
@@ -44865,7 +44935,7 @@ contributors to both @code{QuantLib} and Quantuccia'.")
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-matrix
                              r-hdf5r-extra))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RcppPlanc")
+    (home-page "https://github.com/welch-lab/RcppPlanc/")
     (synopsis "Parallel Low-Rank Approximation with Nonnegativity Constraints")
     (description
      "Rcpp bindings for PLANC', a highly parallel and extensible NMF/NTF (Non-negative
@@ -45789,13 +45859,13 @@ R and modern C++.")
 (define-public r-rcplex
   (package
     (name "r-rcplex")
-    (version "0.3-6")
+    (version "0.3-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcplex" version))
        (sha256
-        (base32 "01254ygn661zp0h6xf04vw77vppm54y3g8fcmcxfj4m36nk7jc01"))))
+        (base32 "05ikppznqiyqn8ca0ykfvviyk13nh2sz87rxflifyz1cw8h2mx3k"))))
     (properties `((upstream-name . "Rcplex")))
     (build-system r-build-system)
     (arguments
@@ -53025,20 +53095,20 @@ distance, Hamming distance, Weighted-tau distance and Weighted Kendall distance.
 (define-public r-rankdifferencetest
   (package
     (name "r-rankdifferencetest")
-    (version "2021-11-25")
+    (version "2025.4.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rankdifferencetest" version))
        (sha256
-        (base32 "11isc6fjaicyibnbc315036wp7m670ja6kg4xq5s2x72k076v55f"))))
+        (base32 "19jfdbsrz4xm9722f8jln2m1kk4xc0gwdz5rn34q0wh6xwhp0pjl"))))
     (properties `((upstream-name . "rankdifferencetest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rdpack r-modeltools r-coin))
-    (home-page "http://brettklamer.com/work/rankdifferencetest")
+    (home-page "https://brettklamer.com/work/rankdifferencetest")
     (synopsis "Kornbrot's Rank Difference Test")
     (description
      "This package implements Kornbrot's rank difference test as described in
@@ -57459,13 +57529,13 @@ package.")
 (define-public r-r2mlm
   (package
     (name "r-r2mlm")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2mlm" version))
        (sha256
-        (base32 "1gsmmwgm50cfmzqpm6khlfkgr65x9q7qnm821x46cw9yi64ip5an"))))
+        (base32 "0kssghnlpbmp11kgbfrlajmx7w3nyrkw04271fkyxidkmi84l5pk"))))
     (properties `((upstream-name . "r2mlm")))
     (build-system r-build-system)
     (arguments

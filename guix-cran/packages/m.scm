@@ -3634,13 +3634,13 @@ methods at the masters program of Applied Statistics at University of Ljubljana.
 (define-public r-multitraits
   (package
     (name "r-multitraits")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiTraits" version))
        (sha256
-        (base32 "0v82pyfi3lr4xr55i674s9q6f7n6bb62m88m8hrwm94klhi9lsji"))))
+        (base32 "1yf4v0wh92gikkpmdycm8iq4z9flg9db94s432maaj6b9x0061w0"))))
     (properties `((upstream-name . "MultiTraits")))
     (build-system r-build-system)
     (arguments
@@ -17368,13 +17368,13 @@ analysis and predictions.  For a list of supported models, see
 (define-public r-modehunt
   (package
     (name "r-modehunt")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modehunt" version))
        (sha256
-        (base32 "0qz9kmf1qfs2dr7kzm9l7ac0h5rvi3b9j9896p991sk4bcalsl0b"))))
+        (base32 "0fkr5595fm4s9wmfyhwklz1dzw9fh0fwkmkr3k88ha48ggkq20fj"))))
     (properties `((upstream-name . "modehunt")))
     (build-system r-build-system)
     (arguments
@@ -18135,39 +18135,6 @@ in a portable (header-only) C++ library, with matrix manipulations using the
 Eigen library for linear algebra.  Also provided is a Gibbs sampler for Bayesian
 inference on a random-effects model with multivariate normal observations.")
     (license license:gpl3)))
-
-(define-public r-mnis
-  (package
-    (name "r-mnis")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mnis" version))
-       (sha256
-        (base32 "03ss2sp4gjjxlfip95p2vcc0nz8q7khm3iiyh1362n2xb6yp78k0"))))
-    (properties `((upstream-name . "mnis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringi
-                             r-rcpp
-                             r-purrr
-                             r-jsonlite
-                             r-janitor
-                             r-httr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.evanodell.com/mnis")
-    (synopsis
-     "Easy Downloading Capabilities for the Members' Name Information Service")
-    (description
-     "An API package for the Members Name Information Service operated by the UK
-parliament.  Documentation for the API itself can be found here:
-<http://data.parliament.uk/membersdataplatform/default.aspx>.")
-    (license license:expat)))
 
 (define-public r-mnet
   (package
@@ -19444,13 +19411,13 @@ Scutari (2010) <doi:10.18637/jss.v035.i03>.")
 (define-public r-mmarch-ac
   (package
     (name "r-mmarch-ac")
-    (version "2.9.4.0")
+    (version "3.2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mMARCH.AC" version))
        (sha256
-        (base32 "0mrhr1f5qvqdv1mwzd8iqgfjwq9n4ny1s8a5sppkdp9zyvvmwv81"))))
+        (base32 "0f9i8m5py7q8qici75nsv24bj4yhh11grldramwxih9nsili2k2g"))))
     (properties `((upstream-name . "mMARCH.AC")))
     (build-system r-build-system)
     (arguments
@@ -23158,13 +23125,13 @@ parameter estimation.  See @code{citation()} for how to cite.")
 (define-public r-mixsmsn
   (package
     (name "r-mixsmsn")
-    (version "1.1-10")
+    (version "1.1-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixsmsn" version))
        (sha256
-        (base32 "1w31br65la62zw847bw4bz0shvgna680wagxnqmc71kpy4a9mv3x"))))
+        (base32 "1i13aj7pv4ac0p45r4v4da9rakgqd8cz0lb0yag40k1bxz068y7k"))))
     (properties `((upstream-name . "mixsmsn")))
     (build-system r-build-system)
     (arguments
@@ -23697,13 +23664,13 @@ For more information, see Molloy et al. (2021)
 (define-public r-mixkernel
   (package
     (name "r-mixkernel")
-    (version "0.9-1")
+    (version "0.9-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixKernel" version))
        (sha256
-        (base32 "0vak6qfhva666mjqwn16ivcdjsw31qic36g62g4p3ng2jvv57f32"))))
+        (base32 "09pdv3yggpg5z9d7wfw4zzaff0h7y051lpqdplr4r9idvdqq2m34"))))
     (properties `((upstream-name . "mixKernel")))
     (build-system r-build-system)
     (arguments
@@ -25835,13 +25802,13 @@ EM-type algorithms.  Jiang W., Josse J., Lavielle M., @code{TraumaBase} Group
 (define-public r-mirtsvd
   (package
     (name "r-mirtsvd")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirtsvd" version))
        (sha256
-        (base32 "0c06dpg0jr15hmk03s96fyp2rb6z4svihjzfs316nkl3dd03ami1"))))
+        (base32 "1byckqgj3zz8f305ldp82w2ihv6w9fnl3x4xcgmx940bnlaibxik"))))
     (properties `((upstream-name . "mirtsvd")))
     (build-system r-build-system)
     (arguments
@@ -26955,13 +26922,13 @@ results, and more.")
 (define-public r-minicran
   (package
     (name "r-minicran")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miniCRAN" version))
        (sha256
-        (base32 "1dfqish0vhvdp1a6kiw18z088sghndv9pviby51s7kqv0bjs3ca7"))))
+        (base32 "0m0sp6yzn6lkb7dkrp73c9r6j3s23sj5nrvbzzjfizrcqkc5mjw8"))))
     (properties `((upstream-name . "miniCRAN")))
     (build-system r-build-system)
     (arguments
@@ -27814,19 +27781,19 @@ allows cross-loadings and correlated errors.")
 (define-public r-miipw
   (package
     (name "r-miipw")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MIIPW" version))
        (sha256
-        (base32 "043zdadny5rb1vlg1lnjaxjdjqmb755lgxha4zcdzyv9sl83ca8y"))))
+        (base32 "16w8y2wi3ajbxyhbshh667mkyja2lblhbm6n356v1ddmfrv90n2p"))))
     (properties `((upstream-name . "MIIPW")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mice r-matrix r-mass))
+    (propagated-inputs (list r-spatstat r-mice r-matrix r-mass r-lme4))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MIIPW")
     (synopsis "IPW and Mean Score Methods for Time-Course Missing Data")
@@ -32299,13 +32266,13 @@ is possible with or without available data from a pilot study.")
 (define-public r-mets
   (package
     (name "r-mets")
-    (version "1.3.5")
+    (version "1.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mets" version))
        (sha256
-        (base32 "0ccc0arq55dz1dnq166616ybja5jwgqi6lvm3x072cmr9li24w4s"))))
+        (base32 "0k2k5icjg95d0x9vyrn47iy7177gm3z4j3zr9b0qs43iwdb5c9km"))))
     (properties `((upstream-name . "mets")))
     (build-system r-build-system)
     (arguments
@@ -38330,13 +38297,13 @@ Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>."
 (define-public r-medfateland
   (package
     (name "r-medfateland")
-    (version "2.5.1")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medfateland" version))
        (sha256
-        (base32 "1p492vd826vbkysql7nf34fsl7q02yngh86fs6pym68psfz5kyqr"))))
+        (base32 "02s1rsx77pyrw9yrz6agpixyqvsgwkgsvhhzax7apv4w20i8732m"))))
     (properties `((upstream-name . "medfateland")))
     (build-system r-build-system)
     (arguments
@@ -38371,13 +38338,13 @@ including spatial processes such as lateral water transfer and seed dispersal.")
 (define-public r-medfate
   (package
     (name "r-medfate")
-    (version "4.8.0")
+    (version "4.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medfate" version))
        (sha256
-        (base32 "0vj8n22hpvlizwz963myq8jlmbd1s1s45fzzgwb0ksa0wrgi81r5"))))
+        (base32 "17alsx1368n93is2f6xm7056gzppl3nai1ajmw4ymcsc5grq93n1"))))
     (properties `((upstream-name . "medfate")))
     (build-system r-build-system)
     (arguments
@@ -45818,13 +45785,13 @@ estimation.")
 (define-public r-massprops
   (package
     (name "r-massprops")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "massProps" version))
        (sha256
-        (base32 "0qqksrf316rr6qyy627na6g5ikx0xyji4cidlqfcrdfjg6mh5r3y"))))
+        (base32 "178f4rvlwdp4nl9jy47j12b2mj23dlsx06prkg7l4anf7283vqq5"))))
     (properties `((upstream-name . "massProps")))
     (build-system r-build-system)
     (arguments
@@ -47005,13 +46972,13 @@ inspired by the \"comment\" window of <https://github.com/>.")
 (define-public r-mark
   (package
     (name "r-mark")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mark" version))
        (sha256
-        (base32 "1j6x92ghrzf129spc3vckgvamy17b2h9hgsgmjbkj1xc85lnmsfh"))))
+        (base32 "0ysyakbp3z5rn3awjz70yscx9svd1y8f206bmd1f4fyv442dpyjq"))))
     (properties `((upstream-name . "mark")))
     (build-system r-build-system)
     (arguments
@@ -47137,6 +47104,34 @@ and outcomes with little change in interpretation from the continuous
 mediators/outcomes.  See <doi:10.13140/RG.2.2.18465.92001> for more details on
 the method.")
     (license license:gpl2)))
+
+(define-public r-marginalmaxtest
+  (package
+    (name "r-marginalmaxtest")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MarginalMaxTest" version))
+       (sha256
+        (base32 "1909yj2q2i6rbrscrvbz2wkvjw0c94mv0aycpzi2n3vxi2kzm1vw"))))
+    (properties `((upstream-name . "MarginalMaxTest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/canyi-chen/MarginalMaxTest")
+    (synopsis "Max-Type Test for Marginal Correlation with Bootstrap")
+    (description
+     "Test the marginal correlation between a scalar response variable with a vector
+of explanatory variables using the max-type test with bootstrap.  The test is
+based on the max-type statistic and its asymptotic distribution under the null
+hypothesis of no marginal correlation.  The bootstrap procedure is used to
+approximate the null distribution of the test statistic.  The package provides a
+function for performing the test.  For more technical details, refer to Zhang
+and Laber (2014) <doi:10.1080/01621459.2015.1106403>.")
+    (license license:expat)))
 
 (define-public r-marginalizedrisk
   (package
@@ -48392,25 +48387,28 @@ Horvath and Okamura (2013) <doi:10.1007/978-3-642-40725-3_10>, Okamura and Dohi
 (define-public r-mapedit
   (package
     (name "r-mapedit")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapedit" version))
        (sha256
-        (base32 "1ix0sjsqb6646xyi73am9ic97plw9y9p4pl8mrkpzvqzm0pxdhxx"))))
+        (base32 "1cj15xax4sgdzslac3fvlsjzm2idh4d41d6nzrsh7nyh662pmcpd"))))
     (properties `((upstream-name . "mapedit")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sp
+    (propagated-inputs (list r-tmaptools
+                             r-shinywidgets
                              r-shiny
                              r-sf
                              r-scales
+                             r-rstudioapi
                              r-raster
                              r-miniui
                              r-mapview
+                             r-leafpop
                              r-leafpm
                              r-leaflet-extras
                              r-leaflet
@@ -48418,7 +48416,9 @@ Horvath and Okamura (2013) <doi:10.1007/978-3-642-40725-3_10>, Okamura and Dohi
                              r-jsonlite
                              r-htmlwidgets
                              r-htmltools
-                             r-dplyr))
+                             r-dt
+                             r-dplyr
+                             r-assertthat))
     (home-page "https://github.com/r-spatial/mapedit")
     (synopsis "Interactive Editing of Spatial Data in R")
     (description

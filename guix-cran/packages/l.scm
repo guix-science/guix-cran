@@ -1298,13 +1298,13 @@ tabulated data.")
 (define-public r-lsx
   (package
     (name "r-lsx")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSX" version))
        (sha256
-        (base32 "1skqb72wqma8j5hjdv0sb4fjlvf5k0hggcp2y1njnlp60f1qwayp"))))
+        (base32 "143ab5hkgwxs3pgk8ihdsdala1zyan11d9n567f8b7jrxj86adb1"))))
     (properties `((upstream-name . "LSX")))
     (build-system r-build-system)
     (arguments
@@ -1674,6 +1674,35 @@ data-driven selection of the IMSE-optimal number of knots;
 and confidence bands; @code{lsplincom()} for estimation and inference for linear
 combinations of regression functions from different groups.")
     (license license:gpl2)))
+
+(define-public r-lsoda
+  (package
+    (name "r-lsoda")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lsoda" version))
+       (sha256
+        (base32 "0g9dm3xwdnhchphcvshmmnl1w6lnkv567z62clx1wr6gdha0kyr3"))))
+    (properties `((upstream-name . "lsoda")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/mclements/lsoda")
+    (synopsis "'C++' Header Library for Ordinary Differential Equations")
+    (description
+     "This package provides a C++ header library for using the libsoda-cxx library
+with R. The C++ header reimplements the lsoda function from the ODEPACK library
+for solving initial value problems for first order ordinary differential
+equations (Hindmarsh, 1982;
+<https://computing.llnl.gov/sites/default/files/ODEPACK_pub1_u88007.pdf>).  The
+C++ header can be used by other R packages by linking against this package.  The
+C++ functions can be called inline using Rcpp'.  Finally, the package provides
+an ode function to call from R.")
+    (license license:expat)))
 
 (define-public r-lsnstat
   (package
@@ -6548,13 +6577,13 @@ Economics (http://www.sgh.waw.pl/en/).")
 (define-public r-localscore
   (package
     (name "r-localscore")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "localScore" version))
        (sha256
-        (base32 "0nfwbcr7hsv9i37rbrb5195dpwr9yh1pjyzpk469svd50hxnjzca"))))
+        (base32 "0k625ypfcn9rjwcvmiycm9n09qrg66w3w7gqjrqabazvclzl3gym"))))
     (properties `((upstream-name . "localScore")))
     (build-system r-build-system)
     (arguments
@@ -9649,13 +9678,13 @@ parameter in a Gauss-lasso procedure.")
 (define-public r-linreginteractive
   (package
     (name "r-linreginteractive")
-    (version "0.3-3")
+    (version "0.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LinRegInteractive" version))
        (sha256
-        (base32 "1rkxvkv3ls0cgqcvs74dy6qabh62cjc0xh89dlk88bpc8mz76k8z"))))
+        (base32 "08zmh0cxnad8v18x2jxlc4zr69x9709gb0ngypzgxba1c1kjrp6v"))))
     (properties `((upstream-name . "LinRegInteractive")))
     (build-system r-build-system)
     (arguments
@@ -10411,20 +10440,19 @@ surveillance and intervention planning for infectious diseases like COVID-19.")
 (define-public r-linelist
   (package
     (name "r-linelist")
-    (version "1.1.4")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "linelist" version))
        (sha256
-        (base32 "08rw58pl8l1pdn5mpv0awgjcb0gbsg48ihqk48vydfyjx6683qrv"))))
+        (base32 "1vf1807by3zym6nk9jbfy62sck1h1qqhzhbkyiadszaa6nkrin2d"))))
     (properties `((upstream-name . "linelist")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect r-rlang r-lifecycle r-dplyr
-                             r-checkmate))
+    (propagated-inputs (list r-tidyselect r-rlang r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://epiverse-trace.github.io/linelist/")
     (synopsis "Tagging and Validating Epidemiological Data")
@@ -12351,6 +12379,47 @@ of computer experiments.")
      "This package provides a very simple implementation of a class for longitudinal
 data.")
     (license license:gpl2+)))
+
+(define-public r-lgspline
+  (package
+    (name "r-lgspline")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lgspline" version))
+       (sha256
+        (base32 "0sb3sjn4s81wpd5kr1hzaap8xb0vwxb74lbsf40qfk79pjwq7gvv"))))
+    (properties `((upstream-name . "lgspline")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-quadprog
+                             r-plotly
+                             r-fnn))
+    (home-page "https://github.com/matthewlouisdavisBioStat/lgspline")
+    (synopsis
+     "Lagrangian Multiplier Smoothing Splines for Smooth Function Estimation")
+    (description
+     "This package implements Lagrangian multiplier smoothing splines for flexible
+nonparametric regression and function estimation.  Provides tools for fitting,
+prediction, and inference using a constrained optimization approach to enforce
+smoothness.  Supports generalized linear models, Weibull accelerated failure
+time (AFT) models, quadratic programming problems, and customizable arbitrary
+correlation structures.  Options for fitting in parallel are provided.  The
+method builds upon the framework described by Ezhov et al. (2018)
+<doi:10.1515/jag-2017-0029> using Lagrangian multipliers to fit cubic splines.
+For more information on correlation structure estimation, see Searle et al.
+(2009) <ISBN:978-0470009598>.  For quadratic programming and constrained
+optimization in general, see Nocedal & Wright (2006)
+<doi:10.1007/978-0-387-40065-5>.  For a comprehensive background on smoothing
+splines, see Wahba (1990) <doi:10.1137/1.9781611970128> and Wood (2006)
+<ISBN:978-1584884743> \"Generalized Additive Models: An Introduction with R\".")
+    (license license:expat)))
 
 (define-public r-lgrf
   (package
@@ -15083,19 +15152,25 @@ default.")
 (define-public r-leadsense
   (package
     (name "r-leadsense")
-    (version "0.0.1.0000")
+    (version "0.0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LeadSense" version))
        (sha256
-        (base32 "166pbjmyag1gn3gf0vbsxb599gqs2jcggn4dy60706m7cpc18hnp"))))
+        (base32 "0li2nz2aajxkmb1jrp1ijkrkn18v67whxa5qhf5yrib0h1mdnflm"))))
     (properties `((upstream-name . "LeadSense")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-ggpubr r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-signal
+                             r-seewave
+                             r-reshape2
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=LeadSense")
     (synopsis "Medtronic Brain Sense Local Field Potencial Analysis")
     (description

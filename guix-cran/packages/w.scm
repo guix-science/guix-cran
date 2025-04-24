@@ -669,20 +669,20 @@ The package also incorporates the data described in Rosenman, Olivella, and Imai
 (define-public r-wrtopdownfrag
   (package
     (name "r-wrtopdownfrag")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrTopDownFrag" version))
        (sha256
-        (base32 "1rdg6rzjz2h514i3c8z89mvj2j3h1s7rr5fry2mq3xvrwrgd3738"))))
+        (base32 "08pn5dc5665rn3vma684wwcwvr70y8nawydpymav0j8xnwly6wid"))))
     (properties `((upstream-name . "wrTopDownFrag")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-wrproteo r-wrmisc))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wrTopDownFrag")
     (synopsis
      "Internal Fragment Identification from Top-Down Mass Spectrometry")
@@ -1196,13 +1196,13 @@ directory within functions and wrap console messages around other functions.")
 (define-public r-wrappedtools
   (package
     (name "r-wrappedtools")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrappedtools" version))
        (sha256
-        (base32 "0bp21x84rbmv5v0kv6bw41m6lq8mck24xv4ngkn2jywdjfpw3f8n"))))
+        (base32 "1ymy6dkf5nc2pwf83bamm0n1fnr0xd6dh4pvmniafy8qfsn289vs"))))
     (properties `((upstream-name . "wrappedtools")))
     (build-system r-build-system)
     (arguments
@@ -6623,13 +6623,13 @@ Stier et al., 2022 <doi:10.1017/S0003055421001222>).")
 (define-public r-webshot2
   (package
     (name "r-webshot2")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webshot2" version))
        (sha256
-        (base32 "1i4432ifw6nxid9cjgly5qpirj245pvh1vfvhm695z3grkk5nvlv"))))
+        (base32 "151fg3d4w3h4v3ipac0a8z1hc4gbhny00n4hqmihak0pz6g49ai7"))))
     (properties `((upstream-name . "webshot2")))
     (build-system r-build-system)
     (arguments
@@ -6641,7 +6641,7 @@ Stier et al., 2022 <doi:10.1017/S0003055421001222>).")
     (description
      "Takes screenshots of web pages, including Shiny applications and R Markdown
 documents.  webshot2 uses headless Chrome or Chromium as the browser back-end.")
-    (license license:gpl2)))
+    (license license:expat)))
 
 (define-public r-websearchr
   (package

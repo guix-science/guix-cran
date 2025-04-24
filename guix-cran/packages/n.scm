@@ -197,13 +197,13 @@ some convenience analytical function are also supplied.")
 (define-public r-nycflights23
   (package
     (name "r-nycflights23")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nycflights23" version))
        (sha256
-        (base32 "10jy4j2jlxcx32p3q0vir5h79qykyna31z8pjkk1yca9brdkdcp9"))))
+        (base32 "1lb0w1hhlmxvfbm0w2jhfgdkc7jc9l7zbfxwmvqrz0gw0f4ymm1b"))))
     (properties `((upstream-name . "nycflights23")))
     (build-system r-build-system)
     (arguments
@@ -4679,13 +4679,13 @@ further details, see the paper by John R.J. Thompson (2024)
 (define-public r-nonprobsvy
   (package
     (name "r-nonprobsvy")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonprobsvy" version))
        (sha256
-        (base32 "06k9diblqb4azkgsgbn5pid7ysj140r7jsmq85kcgqa7669091nb"))))
+        (base32 "1l4rhkdd2bl7lxajp42y7vlk01vkr7ya7ijmd17sgfsbkid5zkg7"))))
     (properties `((upstream-name . "nonprobsvy")))
     (build-system r-build-system)
     (arguments
@@ -8675,42 +8675,6 @@ Poustka, and Ulrich Mansmann (2004) <doi:10.2202/1544-6115.1078>.")
      "Optimization for nonlinear objective and constraint functions.  Linear or
 nonlinear equality and inequality constraints are allowed.  It accepts the input
 parameters as a constrained matrix.")
-    (license license:gpl3)))
-
-(define-public r-njtr1
-  (package
-    (name "r-njtr1")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "njtr1" version))
-       (sha256
-        (base32 "1fyp9myzlx670xjpzxq4ivbl1qs7f3rz6n424ydp1ml994mz709a"))))
-    (properties `((upstream-name . "njtr1")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-stringr
-                             r-stringi
-                             r-readr
-                             r-lubridate
-                             r-httr
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://gavinrozzi.github.io/njtr1/")
-    (synopsis "Download, Analyze & Clean New Jersey Car Crash Data")
-    (description
-     "Download and analyze motor vehicle crash data released by the New Jersey
-Department of Transportation (NJDOT).  The data in this package is collected
-through the filing of NJTR-1 form by police officers, which provide a
-standardized way of documenting a motor vehicle crash that occurred in New
-Jersey.  3 different data tables containing data on crashes, vehicles &
-pedestrians released from 2001 to the present can be downloaded & cleaned using
-this package.")
     (license license:gpl3)))
 
 (define-public r-njira
@@ -17234,23 +17198,23 @@ number of useful other related data sets.")
 (define-public r-nasapower
   (package
     (name "r-nasapower")
-    (version "4.2.2")
+    (version "4.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nasapower" version))
        (sha256
-        (base32 "0735j9lcb15j20g3hv28wz77mfnrwfh6wz7r5fvq8q5mgyy46d0z"))))
+        (base32 "1b0pp85xb4vhkdniq898sp0wypy96y9jd7gcg7ngb6syd9q9zqrz"))))
     (properties `((upstream-name . "nasapower")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-yyjsonr
+                             r-tibble
                              r-rlang
                              r-readr
                              r-lubridate
-                             r-jsonlite
                              r-crul
                              r-cli))
     (native-inputs (list r-knitr))

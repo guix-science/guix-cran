@@ -1441,13 +1441,13 @@ the @code{CompTox} Chemicals Dashboard Resource Hub
 (define-public r-extractfaers
   (package
     (name "r-extractfaers")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extractFAERS" version))
        (sha256
-        (base32 "1ay03zr4nhk693p0prxaklzbznikvk3z7yxlk4kzvbykq781r8fq"))))
+        (base32 "01lj86zs9qpwy7s0l2gq562a6zyblrgzk2lpxmynj5lvl253d3ag"))))
     (properties `((upstream-name . "extractFAERS")))
     (build-system r-build-system)
     (arguments
@@ -1459,8 +1459,8 @@ the @code{CompTox} Chemicals Dashboard Resource Hub
     (description
      "This package provides functions to extract and process data from the FDA Adverse
 Event Reporting System (FAERS).  It facilitates the conversion of raw FAERS data
-into structured formats for analysis.  See Yang et al. (2022)
-<doi:10.3389/fphar.2021.772768> for related information.")
+published after 2014Q3 into structured formats for analysis.  See Yang et al.
+(2022) <doi:10.3389/fphar.2021.772768> for related information.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-extmallows
@@ -2861,13 +2861,13 @@ Gul, Dost Muhammad Khan, Saeed Aldahmani, Zardad Khan (2022)
 (define-public r-exiftoolr
   (package
     (name "r-exiftoolr")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exiftoolr" version))
        (sha256
-        (base32 "0cw4ha0bzw4xs0izaz3drzsfqbknx4pp1yc4aw1rsqnrq3nq6wjb"))))
+        (base32 "1jkrdp3yz5jajhp3i0myf85d6hpc0qy48l0awbq79qj1k1khvh0c"))))
     (properties `((upstream-name . "exiftoolr")))
     (build-system r-build-system)
     (arguments
@@ -4139,19 +4139,19 @@ functions written in this package.")
 (define-public r-ewp
   (package
     (name "r-ewp")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ewp" version))
        (sha256
-        (base32 "18qcndxr5x6z5m91r9q8lzq0fmwli1w03x91z0rr03n3dw5c3kdx"))))
+        (base32 "0h0knpf20mvnqr9j6ngg1gbhgz034xr7cdaq0hg6ig2m6acipvrn"))))
     (properties `((upstream-name . "ewp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-bh))
+    (propagated-inputs (list r-rcpp r-mvtnorm r-bh))
     (home-page "https://cran.r-project.org/package=ewp")
     (synopsis "An Empirical Model for Underdispersed Count Data")
     (description
@@ -10587,13 +10587,13 @@ Swiderski and ML Zelditch (2022) <doi:10.1111/2041-210X.13914>.")
 (define-public r-eplusr
   (package
     (name "r-eplusr")
-    (version "0.16.2")
+    (version "0.16.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eplusr" version))
        (sha256
-        (base32 "1b9kqrma6ayzsj146fdb2w2pwzmz1r6yy9g0abhx745gll8g9gqr"))))
+        (base32 "11jsn941135i18xr8ya7j2rp7ffx5smsiw5r49gh8h6wvxjn3bj2"))))
     (properties `((upstream-name . "eplusr")))
     (build-system r-build-system)
     (arguments
@@ -10730,13 +10730,13 @@ results interactively.")
 (define-public r-epiworldr
   (package
     (name "r-epiworldr")
-    (version "0.6.1.0")
+    (version "0.8.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiworldR" version))
        (sha256
-        (base32 "1p08x41071jnb4r9cidgs625mw1gaw8r90jk125c8l5d5c4xygc5"))))
+        (base32 "1zvcczi96psvmr17k1y38cr7zzyb19x7i5zlvk8gc2as85bwxam1"))))
     (properties `((upstream-name . "epiworldR")))
     (build-system r-build-system)
     (arguments
@@ -11134,13 +11134,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.81")
+    (version "2.0.82")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "10kqlg5mxhzmarczh8jg3fvx5dcyn5dwla9rb99lb1304ahshx38"))))
+        (base32 "132fv2lv0y7plxdq2xkfpp2x8mk5sna5k08djdzkvdsrcn7ia9vm"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (arguments
@@ -14144,13 +14144,13 @@ Okhrin and Y.F. Xu (2017)
 (define-public r-energymethod
   (package
     (name "r-energymethod")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "energymethod" version))
        (sha256
-        (base32 "1767hh5cpn9k26ynncpz6c18qhry07nb04khxbvnms1fm8ys9fld"))))
+        (base32 "08nj3mn3nh2asw1zhfqljfc12dj2m8rp9scipx93cg0cydnr5qca"))))
     (properties `((upstream-name . "energymethod")))
     (build-system r-build-system)
     (arguments
@@ -14165,7 +14165,8 @@ Okhrin and Y.F. Xu (2017)
 of K functional observations (channels), each recorded on T grid points, the
 function energy method implements a hypothesis test of equality of channel-wise
 mean at each channel using the bootstrapped distribution of maximum energy to
-control family wise error.")
+control family wise error.  The function energy_method_complex accomodates
+complex valued functional observations.")
     (license license:gpl3)))
 
 (define-public r-endtoend
@@ -23196,13 +23197,13 @@ Xiaobo, et al (2017) <doi:10.1016/j.knosys.2017.06.010>.")
 (define-public r-ecipex
   (package
     (name "r-ecipex")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecipex" version))
        (sha256
-        (base32 "16iyi6n0pnyfmy47b0ranjbh3spvq8cgkmcamzhgjfj7qn0ix184"))))
+        (base32 "0n3a6bzb1gjwrzryl4hwgldsl5r2qki9fc9l4b1cbi7a941432ri"))))
     (properties `((upstream-name . "ecipex")))
     (build-system r-build-system)
     (arguments

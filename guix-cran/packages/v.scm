@@ -6405,13 +6405,13 @@ analyses.")
 (define-public r-vectorsurvr
   (package
     (name "r-vectorsurvr")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectorsurvR" version))
        (sha256
-        (base32 "0f5vf15wpqjagq91v4z3z0k9m7sgx01z9c18w30dgs0l3f8k1n7i"))))
+        (base32 "0a0awp059g6x5cvpbprmy5hk1y5r2x1kpjva5202xj7ibp70akq1"))))
     (properties `((upstream-name . "vectorsurvR")))
     (build-system r-build-system)
     (arguments

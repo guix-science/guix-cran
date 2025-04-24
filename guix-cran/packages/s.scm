@@ -712,30 +712,6 @@ missing values exist in the synthetic data output.  The method builds on the
 work of Murray and Reiter (2016) <doi:10.1080/01621459.2016.1174132>.")
     (license license:gpl3+)))
 
-(define-public r-synlik
-  (package
-    (name "r-synlik")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "synlik" version))
-       (sha256
-        (base32 "15ln8kamlxhp4yh28ykc3zn0z03wkq9gznsx7a0wz08i2ahg00sw"))))
-    (properties `((upstream-name . "synlik")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix))
-    (native-inputs (list r-knitr))
-    (home-page "http://mfasiolo.github.io/synlik_release/")
-    (synopsis "Synthetic Likelihood Methods for Intractable Likelihoods")
-    (description
-     "Framework to perform synthetic likelihood inference for models where the
-likelihood function is unavailable or intractable.")
-    (license license:gpl2+)))
-
 (define-public r-synergylmm
   (package
     (name "r-synergylmm")
@@ -11275,13 +11251,13 @@ are they related?\" by Yashin A. et al. (2007), Biogerontology 8(3), 291(302),
 (define-public r-stplanr
   (package
     (name "r-stplanr")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stplanr" version))
        (sha256
-        (base32 "111hhmixq3h2f4hrzpldzkq3wwipwggalavy8wszkwbs3l35h487"))))
+        (base32 "1fgfgpxxvmk9c7p74mhbkg4rapmjvqa6hr83qxhypldg406b2vzv"))))
     (properties `((upstream-name . "stplanr")))
     (build-system r-build-system)
     (arguments
@@ -18992,13 +18968,13 @@ needed to pre-installed.  Hanzelmann, S., Castelo, R., and Guinney, J. (2013)
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "1.5.41")
+    (version "1.5.42")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDforR" version))
        (sha256
-        (base32 "0my98hchki5mqxvb8h1bliac9sdx4yy110nsnfgi1xy11ldjsp10"))))
+        (base32 "0nkmnn6xx6m6cq30aq4jd5d2rxcjqijjfkg5ly1dpkz6kdbx96h1"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (arguments
@@ -33964,13 +33940,13 @@ variable selection through L1 penalization, Selectivity Ratio and VIP scores.")
 (define-public r-snplist
   (package
     (name "r-snplist")
-    (version "0.18.2")
+    (version "0.18.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snplist" version))
        (sha256
-        (base32 "1sa2s3br4agx920jpr250iih61p99v500nh0c1w99w0846g9908c"))))
+        (base32 "0iiszpxp78gwk8qvb0djp9bq7mp52iq29lyjl0c487pgacx7g9wn"))))
     (properties `((upstream-name . "snplist")))
     (build-system r-build-system)
     (arguments
@@ -36845,13 +36821,13 @@ non-randomly missing.  The implemented algorithm is available in Xu et al.
 (define-public r-smartmeteranalytics
   (package
     (name "r-smartmeteranalytics")
-    (version "1.0.3")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SmartMeterAnalytics" version))
        (sha256
-        (base32 "0i8my7ngzdbay3cld8axhvbri0nh0dd1dmv2lbsgyx4adr5hb30f"))))
+        (base32 "0c88zml7dd4hlkkjzmjxh3hvvqdif65c32kx0qqn2d54f41is1bx"))))
     (properties `((upstream-name . "SmartMeterAnalytics")))
     (build-system r-build-system)
     (arguments
@@ -38317,19 +38293,20 @@ described in Jetka et al. (2019) <doi:10.1371/journal.pcbi.1007132>.")
 (define-public r-sleev
   (package
     (name "r-sleev")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sleev" version))
        (sha256
-        (base32 "0dmjjf277aynnrr3nn765wvg6wcl3h7r35hc706s9k2zlnbkfi4c"))))
+        (base32 "1mqa8nkx6f9hwvk0mg4b3r8jgxz1b0xlmxjbd51mp0bxv3pqlj8w"))))
     (properties `((upstream-name . "sleev")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=sleev")
     (synopsis "Semiparametric Likelihood Estimation with Errors in Variables")
     (description
@@ -44452,20 +44429,20 @@ details on the use of these functions can be found in Lawson and Leemis (2015)
 (define-public r-simecol
   (package
     (name "r-simecol")
-    (version "0.8-14")
+    (version "0.9-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simecol" version))
        (sha256
-        (base32 "0b0zx5wqvrfs4rpn6ngdf0c9d99wf9d0niaps41lslvlnpddvjw8"))))
+        (base32 "1r8zbrcznnyb2in7gpq8hpz17yy2fhx8034bdq9lwrcifi5r2dd9"))))
     (properties `((upstream-name . "simecol")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-minqa r-desolve))
-    (home-page "http://www.simecol.de/")
+    (home-page "https://github.com/tpetzoldt/simecol/")
     (synopsis "Simulation of Ecological (and Other) Dynamic Systems")
     (description
      "An object oriented framework to simulate ecological (and other) dynamic systems.
@@ -44964,6 +44941,37 @@ diversities of two or more groups while simultaneously testing a user-defined
 selection of Hill numbers of orders q, which are considered as appropriate and
 useful indices for measuring diversity.")
     (license license:gpl2+)))
+
+(define-public r-simbkmrdata
+  (package
+    (name "r-simbkmrdata")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simBKMRdata" version))
+       (sha256
+        (base32 "0a88rmndhqvqgxssykhl6qmr64ncaph2n13r1363lx12k2qhp5bb"))))
+    (properties `((upstream-name . "simBKMRdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (native-inputs (list r-quarto))
+    (home-page "https://cran.r-project.org/package=simBKMRdata")
+    (synopsis "Helper Functions for Bayesian Kernel Machine Regression")
+    (description
+     "This package provides a suite of helper functions to support Bayesian Kernel
+Machine Regression (BKMR) analyses in environmental health research.  It enables
+the simulation of realistic multivariate exposure data using Multivariate Skewed
+Gamma distributions, estimation of distributional parameters by subgroup, and
+application of adaptive, data-driven thresholds for feature selection via
+Posterior Inclusion Probabilities (PIPs).  It is especially suited for handling
+skewed exposure data and enhancing the interpretability of BKMR results through
+principled variable selection.  The methodology is shown in Hasan et.  al.
+(2025) <doi:10.1101/2025.04.14.25325822>.")
+    (license license:gpl3+)))
 
 (define-public r-simbiid
   (package
@@ -46571,13 +46579,13 @@ intervention distance (SID) for evaluating causal graphs\", Neural Computation
 (define-public r-sicure
   (package
     (name "r-sicure")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sicure" version))
        (sha256
-        (base32 "096ynmqdsc6nwj5kp9p5s13fgq8vrrzasl2nrxpwrp7y1hqzqpzm"))))
+        (base32 "1l07a1mldqn3vykx37n8aka81gv8lj5nrkb3rz2mmzi6yb1qrzrj"))))
     (properties `((upstream-name . "sicure")))
     (build-system r-build-system)
     (arguments
@@ -46592,7 +46600,13 @@ the latency depending on a vector (or functional) covariate, avoiding the curse
 of dimensionality.  The vector of parameters that defines the model can be
 estimated by maximum likelihood.  A nonparametric estimator for the conditional
 density of the susceptible population is provided.  For more details, see
-PiÃ±eiro-Lamas (2024) (<https://ruc.udc.es/dspace/handle/2183/37035>).")
+PiÃ±eiro-Lamas (2024) (<https://ruc.udc.es/dspace/handle/2183/37035>).  Funding:
+This work, integrated into the framework of PERTE for Vanguard Health, has been
+co-financed by the Spanish Ministry of Science, Innovation and Universities with
+funds from the European Union @code{NextGenerationEU}, from the Recovery,
+Transformation and Resilience Plan (PRTR-C17.I1) and from the Autonomous
+Community of Galicia within the framework of the Biotechnology Plan Applied to
+Health.")
     (license license:gpl2+)))
 
 (define-public r-siconvr
@@ -52854,13 +52868,13 @@ and sampling approaches.")
 (define-public r-sgs
   (package
     (name "r-sgs")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgs" version))
        (sha256
-        (base32 "1dvaw1mn6f4lwk04xnmwyhyr3iw8dvv9c1fpyws81i515r052h76"))))
+        (base32 "0jyqj2sf8m9dygi4sgcjrk7i44b6m623jb2kqdnfwkb90mw6lphr"))))
     (properties `((upstream-name . "sgs")))
     (build-system r-build-system)
     (arguments
@@ -53651,39 +53665,6 @@ Graf, M. (2017, ISBN: 978-84-947240-0-8).  See also the vignette enclosed in the
 package.")
     (license license:gpl2+)))
 
-(define-public r-sgat
-  (package
-    (name "r-sgat")
-    (version "0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sgat" version))
-       (sha256
-        (base32 "14sniq5yfh7xmbnd8d0ighw97352qjgfdg587a6hxafisx9is61p"))))
-    (properties `((upstream-name . "sgat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-rselenium
-                             r-rcurl
-                             r-qdapregex
-                             r-plyr
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/matiaspoullain/sgat")
-    (synopsis "Extract Information from Google's \"Popular Times\"")
-    (description
-     "Once you've identified a real life place, such as a shop, a restaurant, a bar,
-etc.  use this package to simulate a Google search and retrieve its \"Popular
-Times\" and geographic location information and save them in Comma-Separated
-Values files.  This package also downloads a list of restaurants and bars of
-Ushuaia city, Argentina.")
-    (license license:expat)))
-
 (define-public r-sgapi
   (package
     (name "r-sgapi")
@@ -53800,13 +53781,13 @@ out of memory for large big data by using the ff package.")
 (define-public r-sft
   (package
     (name "r-sft")
-    (version "2.2-1")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sft" version))
        (sha256
-        (base32 "0fxz64ba58n6ghfqsgq64n1c7qkvi8c3lsa86732mil9w71yxw33"))))
+        (base32 "1rq4b3ycpqs9y0r4svrdmzy6rmnjhs8hdfps5h4ps7apglrcfq6y"))))
     (properties `((upstream-name . "sft")))
     (build-system r-build-system)
     (arguments
@@ -54844,34 +54825,6 @@ as causal discovery tools is described by Ryan, O., Bringmann, L.F., &
 Schuurman, N.K. (2022) <doi: 10.31234/osf.io/ryg69>.")
     (license license:gpl3)))
 
-(define-public r-sesem
-  (package
-    (name "r-sesem")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sesem" version))
-       (sha256
-        (base32 "0b1xzv38wpkhhlq87xrvlh45b8ksbi8bg4ar5hrf8gxa19r9rmi5"))))
-    (properties `((upstream-name . "sesem")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mgcv r-lavaan r-gplots))
-    (home-page "http://www.r-project.org")
-    (synopsis "Spatially Explicit Structural Equation Modeling")
-    (description
-     "Structural equation modeling is a powerful statistical approach for the testing
-of networks of direct and indirect theoretical causal relationships in complex
-data sets with inter-correlated dependent and independent variables.  Here we
-implement a simple method for spatially explicit structural equation modeling
-based on the analysis of variance co-variance matrices calculated across a range
-of lag distances.  This method provides readily interpreted plots of the change
-in path coefficients across scale.")
-    (license license:gpl2+)))
-
 (define-public r-servospherer
   (package
     (name "r-servospherer")
@@ -55519,46 +55472,6 @@ The function also matches the sequences with variables from other files such as
 the master files of persons (MP) and households (MH), and social origins (SO).
 It can also match with activity calendar data (CA).")
     (license license:gpl3+)))
-
-(define-public r-seqnet
-  (package
-    (name "r-seqnet")
-    (version "1.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SeqNet" version))
-       (sha256
-        (base32 "1ix3c249q758si6670hqa56g1snqqwqdrwshfwajvynl7k2zqzmv"))))
-    (properties `((upstream-name . "SeqNet")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-rdpack
-                             r-rcpp
-                             r-purrr
-                             r-mvtnorm
-                             r-igraph
-                             r-ggplot2
-                             r-fitdistrplus))
-    (home-page "https://cran.r-project.org/package=SeqNet")
-    (synopsis "Generate RNA-Seq Data from Gene-Gene Association Networks")
-    (description
-     "This package provides methods to generate random gene-gene association networks
-and simulate RNA-seq data from them, as described in Grimes and Datta (2021)
-<doi:10.18637/jss.v098.i12>.  Includes functions to generate random networks of
-any size and perturb them to obtain differential networks.  Network objects are
-built from individual, overlapping modules that represent pathways.  The
-resulting network has various topological properties that are characteristic of
-gene regulatory networks.  RNA-seq data can be generated such that the
-association among gene expression profiles reflect the underlying network.  A
-reference RNA-seq dataset can be provided to model realistic marginal
-distributions.  Plotting functions are available to visualize a network, compare
-two networks, and compare the expression of two genes across multiple networks.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-seqmon
   (package
@@ -64759,13 +64672,13 @@ gene expression data.")
 (define-public r-sciviews
   (package
     (name "r-sciviews")
-    (version "0.9-13.1")
+    (version "0.9-13.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SciViews" version))
        (sha256
-        (base32 "0wm4vnjh65jxyg82m8l08kanl414qiaz0cc6srshb8sdx2sixkfi"))))
+        (base32 "1flfyihjg5clhbi6s8d8i6miywbkf28cgfi04v28v8w4vkxzx8rj"))))
     (properties `((upstream-name . "SciViews")))
     (build-system r-build-system)
     (arguments
@@ -67300,13 +67213,13 @@ variability in the data.")
 (define-public r-sc2sc
   (package
     (name "r-sc2sc")
-    (version "0.0.1-16")
+    (version "0.0.1-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sc2sc" version))
        (sha256
-        (base32 "1l7caajbzc6w2xb0mnnlj47gljffg7w2vscvhjcfgzinag8qaz93"))))
+        (base32 "02frhwbjbmlm87zg62r9bglm9277qixx3ypd9jmi1wz9akxa05na"))))
     (properties `((upstream-name . "sc2sc")))
     (build-system r-build-system)
     (arguments

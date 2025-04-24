@@ -2816,13 +2816,13 @@ models.  The package contains six vignettes containing detailed examples.")
 (define-public r-fuj
   (package
     (name "r-fuj")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuj" version))
        (sha256
-        (base32 "0ls63rhlwkfn145c34qgng5n8h0av092jkid5gy8fq7mj1ycflwd"))))
+        (base32 "0wr0ln2iwc1cjyh63qpilqmv5lgp6r43jy9swwczh3ph8k0gi3vz"))))
     (properties `((upstream-name . "fuj")))
     (build-system r-build-system)
     (arguments
@@ -10858,13 +10858,13 @@ to calculate equilibrium stability.")
 (define-public r-fluxible
   (package
     (name "r-fluxible")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxible" version))
        (sha256
-        (base32 "00cgyzbdjs6c6skbi99xi4dgihqdh6cgy3cc2xq057sycg8aja9r"))))
+        (base32 "0szqkp82srz1jagblzbm2l3d3l3ygpv3fjc8qpklakj5rpbasxwf"))))
     (properties `((upstream-name . "fluxible")))
     (build-system r-build-system)
     (arguments
@@ -11357,13 +11357,13 @@ style-polymorphic plant populations.\".")
 (define-public r-flowchart
   (package
     (name "r-flowchart")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flowchart" version))
        (sha256
-        (base32 "0d4b4sqkrz58k53ix8rlx9zx323wb347ijrrrd4l0a9wf0y87pgs"))))
+        (base32 "1il5cbg7qgsw95rx3mxgy789wja0fpn40my0asyj1vrac0w8kgvq"))))
     (properties `((upstream-name . "flowchart")))
     (build-system r-build-system)
     (arguments
@@ -11376,7 +11376,8 @@ style-polymorphic plant populations.\".")
                              r-rlang
                              r-purrr
                              r-gmisc
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://bruigtp.github.io/flowchart/")
     (synopsis "Tidy Flowchart Generator")
@@ -11892,20 +11893,20 @@ automatically parsed and prepped for presentation as flipbooks.")
 (define-public r-flip
   (package
     (name "r-flip")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flip" version))
        (sha256
-        (base32 "08x5hwxaxbgc745gblja7gcy0b5wbp7jf90lkha75zl5cc9iyksl"))))
+        (base32 "15mm4q29c7v0c1s6cvkrv6c45c7izc99nrc0md1s0dsxlyf2sln3"))))
     (properties `((upstream-name . "flip")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-somemtp r-plyr r-e1071 r-cherry))
-    (home-page "ttps://CRAN.R-project.org/package=flip")
+    (home-page "https://cran.r-project.org/package=flip")
     (synopsis "Multivariate Permutation Tests")
     (description
      "It implements many univariate and multivariate permutation (and rotation) tests.
@@ -13640,13 +13641,13 @@ quality, reliability, and structure.")
 (define-public r-fixes
   (package
     (name "r-fixes")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fixes" version))
        (sha256
-        (base32 "1rcy64zzzf06xwbpl9c43wfhc6fws5gmf6hjs8g6k5394763bdw9"))))
+        (base32 "0fgl5b0xps24853jip2qp7phx3hn33mdzb78p42vhh0b8cypdjzh"))))
     (properties `((upstream-name . "fixes")))
     (build-system r-build-system)
     (arguments
@@ -14042,20 +14043,20 @@ from two different assays (probes) for the same SNP, recovery from a
 (define-public r-fitplc
   (package
     (name "r-fitplc")
-    (version "1.2-3")
+    (version "1.2-3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitplc" version))
        (sha256
-        (base32 "1yg3ch907c4gk7q8hxgwqxgngkmy125j3ni917nkzi7hn59krd1n"))))
+        (base32 "0w1rn2cznkrm0n04hhf94gfwcxc3n49m3z11gj4jkpw7zrh0b457"))))
     (properties `((upstream-name . "fitplc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-nlme r-car))
-    (home-page "https://www.bitbucket.org/remkoduursma/fitplc")
+    (home-page "https://bitbucket.org/remkoduursma/fitplc")
     (synopsis "Fit Hydraulic Vulnerability Curves")
     (description
      "Fits Weibull or sigmoidal models to percent loss conductivity (plc) curves as a
@@ -14291,6 +14292,54 @@ Sun, Babu, and Palomar (2014); Sun, Babu, and Palomar (2015); Liu and Rubin
      "Estimation of a dynamic lognormal - Generalized Pareto mixture via the
 Approximate Maximum Likelihood and the Cross-Entropy methods.  See Bee, M.
 (2023) <doi:10.1016/j.csda.2023.107764>.")
+    (license license:expat)))
+
+(define-public r-fitdistcp
+  (package
+    (name "r-fitdistcp")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fitdistcp" version))
+       (sha256
+        (base32 "1x0gcijdjkypwbzx51sfg21l77cg0jdbn2agijwqs5qbakrvxn1s"))))
+    (properties `((upstream-name . "fitdistcp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rust
+                             r-pracma
+                             r-mev
+                             r-gnorm
+                             r-fextremes
+                             r-fdrtool
+                             r-extradistr
+                             r-actuar))
+    (home-page "https://fitdistcp.info")
+    (synopsis
+     "Distribution Fitting with Calibrating Priors for Commonly Used Distributions")
+    (description
+     "Generates predictive distributions based on calibrating priors for various
+commonly used statistical models, including models with predictors.  Routines
+for densities, probabilities, quantiles, random deviates and the parameter
+posterior are provided.  The predictions are generated from the Bayesian
+prediction integral, with priors chosen to give good reliability (also known as
+calibration).  For homogeneous models, the prior is set to the right Haar prior,
+giving predictions which are exactly reliable.  As a result, in repeated
+testing, the frequencies of out-of-sample outcomes and the probabilities from
+the predictions agree.  For other models, the prior is chosen to give good
+reliability.  Where possible, the Bayesian prediction integral is solved
+exactly.  Where exact solutions are not possible, the Bayesian prediction
+integral is solved using the Datta-Mukerjee-Ghosh-Sweeting (DMGS) asymptotic
+expansion.  Optionally, the prediction integral can also be solved using
+posterior samples generated using Paul Northrop's ratio of uniforms sampling
+package ('rust').  Results are also generated based on maximum likelihood, for
+comparison purposes.  Various model selection diagnostics and testing routines
+are included.  Based on \"Reducing reliability bias in assessments of extreme
+weather risk using calibrating priors\", Jewson, S., Sweeting, T. and Jewson, L.
+(2024); <doi:10.5194/ascmo-11-1-2025>.")
     (license license:expat)))
 
 (define-public r-fitconic
@@ -14875,6 +14924,36 @@ dynamics of migratory fish.  Datasets contain both basic size information on a
 per fish basis, as well as otolith data that contains a per day record of fish
 growth history.  All data in this package was collected by the author, from
 2015-2016, in the Wellington region of New Zealand.")
+    (license license:gpl3)))
+
+(define-public r-fishboot
+  (package
+    (name "r-fishboot")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fishboot" version))
+       (sha256
+        (base32 "0ymil8qzxw8h7ji6pjifxagdvzpiay0cxkz6zmq69x9j8gb7b0sy"))))
+    (properties `((upstream-name . "fishboot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tropfishr r-ks r-foreach r-fishmethods
+                             r-doparallel))
+    (home-page "https://github.com/rschwamborn/fishboot")
+    (synopsis
+     "Bootstrap-Based Methods for the Study of Fish Stocks and Aquatic Populations")
+    (description
+     "This package provides a suite of bootstrap-based models and tools for analyzing
+fish stocks and aquatic populations.  Designed for ecologists and fisheries
+scientists, it supports data from length-frequency distributions,
+tag-and-recapture studies, and hard structure readings (e.g., otoliths).  See
+Schwamborn et al., 2019 <doi:10.1016/j.ecolmodel.2018.12.001> for background.
+The package includes functions for bootstrapped fitting of growth curves and
+plotting.")
     (license license:gpl3)))
 
 (define-public r-fishbc
@@ -18914,13 +18993,13 @@ data.")
 (define-public r-featureextraction
   (package
     (name "r-featureextraction")
-    (version "3.8.0")
+    (version "3.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FeatureExtraction" version))
        (sha256
-        (base32 "1175yar9jjp1ich7w8837jdxch17xfyz94kinsidypsxc5s15qw7"))))
+        (base32 "1p42z4gwqd7hcc1c8cp0xvgywfrqazsnxx46nbzsgsgjb6vib686"))))
     (properties `((upstream-name . "FeatureExtraction")))
     (build-system r-build-system)
     (arguments
@@ -21368,13 +21447,13 @@ Limnios, (2007, ISBN: 9780470612484) <DOI: 10.1002/9780470612484>.")
 (define-public r-fattailsr
   (package
     (name "r-fattailsr")
-    (version "1.8-5")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FatTailsR" version))
        (sha256
-        (base32 "0zqwh3x40qbjsbkmac8zr722vrmyd4p2jwp0qaiqzd4ypkhgnix0"))))
+        (base32 "07ckdd6yc57qdv9slk4rczfx5ziczdpj3y1vhr43dwys67lbpgj6"))))
     (properties `((upstream-name . "FatTailsR")))
     (build-system r-build-system)
     (arguments
@@ -21382,13 +21461,16 @@ Limnios, (2007, ISBN: 9780470612484) <DOI: 10.1002/9780470612484>.")
       #:tests? #f))
     (propagated-inputs (list r-timeseries r-minpack-lm))
     (home-page "https://www.inmodelia.com/fattailsr-en.html")
-    (synopsis "Kiener Distributions and Fat Tails in Finance")
+    (synopsis "Kiener Distributions and Fat Tails in Finance and Neuroscience")
     (description
      "Kiener distributions K1, K2, K3, K4 and K7 to characterize distributions with
-left and right, symmetric or asymmetric fat tails in market finance,
-neuroscience and other disciplines.  Two algorithms to estimate with a high
-accuracy distribution parameters, quantiles, value-at-risk and expected
-shortfall.  Include power hyperbolas and power hyperbolic functions.")
+left and right, symmetric or asymmetric fat tails in finance, neuroscience and
+other disciplines.  Two algorithms to estimate the distribution parameters,
+quantiles, value-at-risk and expected shortfall.  IMPORTANT: Standardization has
+been changed in versions >= 2.0.0 to get sd = 1 when kappa = Inf rather than
+2*pi/sqrt(3) in versions <= 1.8.6.  This affects parameter g (other parameters
+stay unchanged).  Do not update if you need consistent comparisons with previous
+results for the g parameter.")
     (license license:gpl2)))
 
 (define-public r-fat2lpoly

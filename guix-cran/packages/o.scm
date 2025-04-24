@@ -587,13 +587,13 @@ publishable @code{LaTeX} code to present the sample information.")
 (define-public r-overturer
   (package
     (name "r-overturer")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "overtureR" version))
        (sha256
-        (base32 "15j9i2c1admjbgc41y4kv1bs2b9pqzrvzq6fc8cqkmb9xkxz52xd"))))
+        (base32 "1w71isyv8irhalhlzkrj1s5yfi7lcm2y9s543fmaf9y93a07j7q9"))))
     (properties `((upstream-name . "overtureR")))
     (build-system r-build-system)
     (arguments
@@ -10951,13 +10951,13 @@ a high-dimensional linear regression model via OGA+HDIC+Trim.")
 (define-public r-ohenery
   (package
     (name "r-ohenery")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ohenery" version))
        (sha256
-        (base32 "14f46s2d75313d7vkshlnan40452pyxnj02cz98dkpk6mis6y751"))))
+        (base32 "1mcrn7ia3xc809hzsfj16ig312l2zvbk7sm2mqjrkxfkdnpyn8dy"))))
     (properties `((upstream-name . "ohenery")))
     (build-system r-build-system)
     (arguments

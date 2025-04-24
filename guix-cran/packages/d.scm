@@ -2091,6 +2091,30 @@ analysis of non-verbal cues in paired interactions and contributing to research
 on human communication dynamics.")
     (license license:expat)))
 
+(define-public r-duckspatial
+  (package
+    (name "r-duckspatial")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "duckspatial" version))
+       (sha256
+        (base32 "08gs79g661aa14s8szr5aw9xgba6w44m1nv7y92c3w1cswxny765"))))
+    (properties `((upstream-name . "duckspatial")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-glue r-dbi r-cli))
+    (home-page "https://cran.r-project.org/package=duckspatial")
+    (synopsis "R Interface to 'DuckDB' Database with Spatial Extension")
+    (description
+     "This package provides an interface between R and the @code{DuckDB} (see
+<https://duckdb.org>) database with spatial extensions.  It supports reading,
+writing, and performing some geometric operations.")
+    (license license:gpl3+)))
+
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
@@ -3608,13 +3632,13 @@ splines.")
 (define-public r-dssd
   (package
     (name "r-dssd")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dssd" version))
        (sha256
-        (base32 "1nbr8mdva6g7p9mrbbg6g116vrvny07yvkyklgjbw79vrj7lfgy3"))))
+        (base32 "15hxrcffhfqzvr6adfikyd4n9p55czv509ds197rlap4xr8v0c8k"))))
     (properties `((upstream-name . "dssd")))
     (build-system r-build-system)
     (arguments
@@ -3633,7 +3657,7 @@ implemented in this R package were first made available in our Distance for
 Windows software and are detailed in Chapter 7 of Advanced Distance Sampling,
 Buckland et.  al. (2008, ISBN-13: 978-0199225873).  Find out more about
 estimating animal/plant abundance with distance sampling at
-<http://distancesampling.org/>.")
+<https://distancesampling.org/>.")
     (license license:gpl2+)))
 
 (define-public r-dssat
@@ -4112,13 +4136,13 @@ implemented based on the DStorage class.")
 (define-public r-dsims
   (package
     (name "r-dsims")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsims" version))
        (sha256
-        (base32 "1n8l43971wg48jjwvscrz2pihzdq44ljplx120bgajvms6qdq1nw"))))
+        (base32 "1xvd57hvczkkq0f0cjzg5rrpyaaypa4bw7jz69fakjlzv6bhqvin"))))
     (properties `((upstream-name . "dsims")))
     (build-system r-build-system)
     (arguments
@@ -8030,19 +8054,19 @@ functions for computing statistics.")
 (define-public r-dosresmeta
   (package
     (name "r-dosresmeta")
-    (version "2.0.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dosresmeta" version))
        (sha256
-        (base32 "0qdalzdk7q4wx3vl5f3i64m8cb7vhi4pqzghar32j0a7l6gla04z"))))
+        (base32 "0435k0h39wjpvsl8fizs4k9ndpgcqcrvragpy83fymfgrlap2977"))))
     (properties `((upstream-name . "dosresmeta")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvmeta))
+    (propagated-inputs (list r-mixmeta))
     (native-inputs (list r-knitr))
     (home-page "https://alecri.github.io/software/dosresmeta.html")
     (synopsis "Multivariate Dose-Response Meta-Analysis")
@@ -9843,46 +9867,6 @@ the parameters of different models.  Standard phylogenetic methods assume
 stationarity, homogeneity and reversibility for the Markov processes, and often
 impose further restrictions on the parameters.")
     (license license:gpl2)))
-
-(define-public r-dnapath
-  (package
-    (name "r-dnapath")
-    (version "0.7.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dnapath" version))
-       (sha256
-        (base32 "1da219hpvk715p50m5rw3ziny3lm2iwyqvfn7s0xlz0s9qcg43zc"))))
-    (properties `((upstream-name . "dnapath")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wcorr
-                             r-tibble
-                             r-seqnet
-                             r-rdpack
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-igraph
-                             r-gtools
-                             r-ggplot2
-                             r-dplyr
-                             r-curl
-                             r-corpcor))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=dnapath")
-    (synopsis "Differential Network Analysis using Gene Pathways")
-    (description
-     "Integrates pathway information into the differential network analysis of two
-gene expression datasets as described in Grimes, Potter, and Datta (2019)
-<doi:10.1038/s41598-019-41918-3>.  Provides summary functions to break down the
-results at the pathway, gene, or individual connection level.  The differential
-networks for each pathway of interest can be plotted, and the visualization will
-highlight any differentially expressed genes and all of the gene-gene
-associations that are significantly differentially connected.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-dnamotif
   (package
@@ -12541,43 +12525,6 @@ supported.")
 descriptions, see Fronzetti Colladon and Naldi (2020)
 <doi:10.1371/journal.pone.0233276>.")
     (license license:expat)))
-
-(define-public r-distillml
-  (package
-    (name "r-distillml")
-    (version "0.1.0.13")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "distillML" version))
-       (sha256
-        (base32 "05pk6g3bjaw0ghb673yxfvnijqkvjy4bfxk2vpiwccm7hjszl62s"))))
-    (properties `((upstream-name . "distillML")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rforestry
-                             r-r6
-                             r-purrr
-                             r-mltools
-                             r-gridextra
-                             r-glmnet
-                             r-ggplot2
-                             r-dplyr
-                             r-data-table
-                             r-checkmate))
-    (home-page "https://github.com/forestry-labs/distillML")
-    (synopsis
-     "Model Distillation and Interpretability Methods for Machine Learning Models")
-    (description
-     "This package provides several methods for model distillation and
-interpretability for general black box machine learning models and treatment
-effect estimation methods.  For details on the algorithms implemented, see
-<https://forestry-labs.github.io/@code{distillML/index.html>} Brian Cho, Theo F.
-Saarinen, Jasjeet S. Sekhon, Simon Walter.")
-    (license license:gpl3+)))
 
 (define-public r-distill
   (package
@@ -19354,42 +19301,6 @@ channels.")
 <https://yaml.org/>.  The dataframe with multiple key columns and one value
 column will be converted to the multi-level hierarchy.")
     (license license:expat)))
-
-(define-public r-dextermst
-  (package
-    (name "r-dextermst")
-    (version "0.9.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dexterMST" version))
-       (sha256
-        (base32 "073xx30gavig6nhi6ppll7jdgf7yvci8nv6pyxcy9vl177l1k62b"))))
-    (properties `((upstream-name . "dexterMST")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rsqlite
-                             r-rlang
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-igraph
-                             r-dplyr
-                             r-dexter
-                             r-dbi
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://dexter-psychometrics.github.io/dexter/")
-    (synopsis "CML and Bayesian Calibration of Multistage Tests")
-    (description
-     "Conditional Maximum Likelihood Calibration and data management of multistage
-tests.  Supports polytomous items and incomplete designs with linear as well as
-multistage tests.  Extended Nominal Response and Interaction models, DIF and
-profile analysis.  See Robert J. Zwitser and Gunter Maris
-(2015)<doi:10.1007/s11336-013-9369-6>.")
-    (license license:lgpl3)))
 
 (define-public r-dextergui
   (package
@@ -31449,13 +31360,13 @@ provides functionality to access the entire cleaned NID data.")
 (define-public r-damr
   (package
     (name "r-damr")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "damr" version))
        (sha256
-        (base32 "12vr630m2az8xb8wndk8cyh7r8mwg3lvr7i3fcgqqxcq9rsgqm4r"))))
+        (base32 "10nj3rqcdyzdfbq7m2n3crwasbak6vrx8k0gxwp806p65ys38a5j"))))
     (properties `((upstream-name . "damr")))
     (build-system r-build-system)
     (arguments
@@ -31731,13 +31642,13 @@ libraries.  Information on Experiment Line is based on Ogasawara et al. (2009)
 (define-public r-daltoolbox
   (package
     (name "r-daltoolbox")
-    (version "1.1.727")
+    (version "1.1.737")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolbox" version))
        (sha256
-        (base32 "0lqiamyg4h2wdv1yfjz1fbw6w78hlp4f8h7ssrcr8pz4qnkgwfgl"))))
+        (base32 "0z8fi8l9f8x5waxs9plmw0jcigm5glmgd3x3r90py8jidzdpbyw0"))))
     (properties `((upstream-name . "daltoolbox")))
     (build-system r-build-system)
     (arguments

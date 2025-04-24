@@ -73,6 +73,31 @@ Olson database) and make it current in your R session.  Beware: on Windows
 Cygwin is required!")
     (license license:expat)))
 
+(define-public r-typr
+  (package
+    (name "r-typr")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "typr" version))
+       (sha256
+        (base32 "0naclrzb06fvvn4iij55gdz8h7aqlidq28back3by48f9ilrwjlh"))))
+    (properties `((upstream-name . "typr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-processx r-fs r-cli))
+    (home-page "http://christophertkenny.com/typr/")
+    (synopsis "Write and Render 'Typst' Documents")
+    (description
+     "Compile Typst files using the typst-cli (<https://typst.app>) command line tool.
+ Automatically falls back to rendering via embedded Typst from Quarto
+(<https://quarto.org>) if Typst is not installed.  Includes utilities to check
+for typst-cli availability and run Typst commands.")
+    (license license:expat)))
+
 (define-public r-typetracer
   (package
     (name "r-typetracer")
@@ -2280,6 +2305,35 @@ package output is composed of plots of experimental data, horizontal and
 vertical shifts, TTS data, and TTS data fitted using B-splines with bootstrap
 confidence intervals.")
     (license license:gpl2+)))
+
+(define-public r-ttr-pgm
+  (package
+    (name "r-ttr-pgm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TTR.PGM" version))
+       (sha256
+        (base32 "166gl6rn90h6xid9kyhn2b6znm7firvck10vdzdp2h2lq4fiqin7"))))
+    (properties `((upstream-name . "TTR.PGM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-checkmate r-abind))
+    (home-page "https://cran.r-project.org/package=TTR.PGM")
+    (synopsis "Thornley Transport Resistance Plant Growth Model")
+    (description
+     "An implementation of the Thornley transport resistance plant growth model.  The
+package can be used to simulate plant growth as forced by climate system
+variables.  The package provides methods for formatting forcing variables,
+simulating growth dynamics and calibrating model parameters.  For more
+information see Higgins et al. (2025) TTR.PGM: An R package for modelling the
+distributions and dynamics of plants using the Thornley transport resistance
+plant growth model.  Methods in Ecology and Evolution.  in press.")
+    (license license:lgpl3)))
 
 (define-public r-ttolr
   (package
@@ -5702,13 +5756,13 @@ more information on the API, see
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "1y4x2mjrxw9j0m8jcv7qswgi2828gzfbwhmgzm8zh1kn78fsqxd0"))))
+        (base32 "1044hqqvs757dqxriflddd367g90w3a7vg771z1wnmcvyj8v03vi"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (arguments
@@ -5716,7 +5770,7 @@ more information on the API, see
       #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=trtswitch")
+    (home-page "https://github.com/kaifenglu/trtswitch")
     (synopsis "Treatment Switching")
     (description
      "This package implements rank-preserving structural failure time model (RPSFTM),
@@ -12119,13 +12173,13 @@ in pure base R are patched.")
 (define-public r-tosca
   (package
     (name "r-tosca")
-    (version "0.3-2")
+    (version "0.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tosca" version))
        (sha256
-        (base32 "1z8svczy93lpdj7n1gk9jz8jgzkjsf886ldlkgq1mfi1j6m8557y"))))
+        (base32 "1xsb6vpl3r41xd3xwdvwrpa1wqchsjwxwd3qk2kq2jy9hbmgmbff"))))
     (properties `((upstream-name . "tosca")))
     (build-system r-build-system)
     (arguments
@@ -12369,13 +12423,13 @@ directory at once, and to do so as quickly, flexibly, and simply as possible.")
 (define-public r-topsiswm
   (package
     (name "r-topsiswm")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TopSisWM" version))
        (sha256
-        (base32 "1rhvygr07qf65qib83l061vg8j262rbgd96r1z1sm97r2b7l85z0"))))
+        (base32 "1adj2rq7n39q38l3q7zw6r76j92c4kvyl9iiry7807kapgicxm3j"))))
     (properties `((upstream-name . "TopSisWM")))
     (build-system r-build-system)
     (arguments
@@ -25141,6 +25195,56 @@ with additional safety rules.  The unique feature of this design is that dose is
 escalated based on lack of activity rather than on lack of toxicity and is
 de-escalated only if an unacceptable level of toxicity is experienced.")
     (license license:gpl2)))
+
+(define-public r-tepr
+  (package
+    (name "r-tepr")
+    (version "1.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tepr" version))
+       (sha256
+        (base32 "0agbaxs5dggyx5jhcmsc534k0yv08ahy358770sv98kgykfkg1h3"))))
+    (properties `((upstream-name . "tepr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-valr
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rtracklayer
+                             r-rlang
+                             r-purrr
+                             r-pracma
+                             r-matrixstats
+                             r-magrittr
+                             r-ggrepel
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tepr")
+    (synopsis "Transcription Elongation Profiling")
+    (description
+     "The general principle relies on calculating the cumulative signal of nascent RNA
+sequencing over the gene body of any given gene or transcription unit.  tepr can
+identify transcription attenuation sites by comparing profile to a null model
+which assumes uniform read density over the entirety of the transcription unit.
+It can also identify increased or diminished transcription attenuation by
+comparing two conditions.  Besides rigorous statistical testing and high
+sensitivity, a major feature of tepr is its ability to provide the elongation
+pattern of each individual gene, including the position of the main attenuation
+point when such a phenomenon occurs.  Using tepr', users can visualize and
+refine genome-wide aggregated analyses of elongation patterns to robustly
+identify effects specific to subsets of genes.  These metrics are suitable for
+internal comparisons (between genes in each condition) and for studying
+elongation of the same gene in different conditions or comparing it to a perfect
+theoretical uniform elongation.")
+    (license license:gpl3)))
 
 (define-public r-tensr
   (package
