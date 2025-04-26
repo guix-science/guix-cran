@@ -575,13 +575,13 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
 (define-public r-eyeris
   (package
     (name "r-eyeris")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyeris" version))
        (sha256
-        (base32 "086ibqs5rv72nrglsn0j7vnk7wv78id39lp1kg52blzkzhpwk1cm"))))
+        (base32 "1453sdb00glj1qyf123vwrji59p2k3zbwvkszimljph64r5d06d0"))))
     (properties `((upstream-name . "eyeris")))
     (build-system r-build-system)
     (arguments
@@ -594,6 +594,7 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
                              r-rlang
                              r-purrr
                              r-progress
+                             r-lifecycle
                              r-gsignal
                              r-eyelinker
                              r-dplyr
@@ -605,21 +606,21 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
     (description
      "Pupillometry offers a non-invasive window into the mind and has been used
 extensively as a psychophysiological readout of arousal signals linked with
-cognitive processes like attention, stress, and emotional states (see Clewett et
-al., 2020 <doi:10.1038/s41467-020-17851-9>; Kret & Sjak-Shie, 2018
-<doi:10.3758/s13428-018-1075-y>; Strauch, 2024
-<doi:10.1016/j.tins.2024.06.002>).  Yet, despite decades of pupillometry
+cognitive processes like attention, stress, and emotional states [Clewett et al.
+(2020) <doi:10.1038/s41467-020-17851-9>; Kret & Sjak-Shie (2018)
+<doi:10.3758/s13428-018-1075-y>; Strauch (2024)
+<doi:10.1016/j.tins.2024.06.002>].  Yet, despite decades of pupillometry
 research, many established packages and workflows to date unfortunately lack
 design patterns based on Findability, Accessibility, Interoperability, and
-Reusability (FAIR) principles (see Wilkinson et al., 2016
-<doi:10.1038/sdata.2016.18> for more information).  eyeris', on the other hand,
-follows a design philosophy that provides users with an intuitive, modular,
-performant, and extensible pupillometry data preprocessing framework
-out-of-the-box.  eyeris introduces a Brain Imaging Data Structure (BIDS)-like
-organization for derivative (i.e., preprocessed) pupillometry data as well as an
-intuitive workflow for inspecting preprocessed pupil epochs using interactive
-output report files (Esteban et al., 2019 <doi:10.1038/s41592-018-0235-4>;
-Gorgolewski et al., 2016 <doi:10.1038/sdata.2016.44>).")
+Reusability (FAIR) principles [see Wilkinson et al. (2016)
+<doi:10.1038/sdata.2016.18>].  eyeris', on the other hand, follows a design
+philosophy that provides users with an intuitive, modular, performant, and
+extensible pupillometry data preprocessing framework out-of-the-box.  eyeris
+introduces a Brain Imaging Data Structure (BIDS)-like organization for
+derivative (i.e., preprocessed) pupillometry data as well as an intuitive
+workflow for inspecting preprocessed pupil epochs using interactive output
+report files [Esteban et al. (2019) <doi:10.1038/s41592-018-0235-4>; Gorgolewski
+et al. (2016) <doi:10.1038/sdata.2016.44>].")
     (license license:expat)))
 
 (define-public r-eyeread
@@ -4744,13 +4745,13 @@ periods.")
 (define-public r-evola
   (package
     (name "r-evola")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evola" version))
        (sha256
-        (base32 "0yyvy84afxrvwjff1rxc63193kg7jb8pb4hfrrjlg3hzbzbipxq4"))))
+        (base32 "0c8nd804gg3hwpf5nd2f4jmi9im0cccvxn7zdh05yczlr5bvc148"))))
     (properties `((upstream-name . "evola")))
     (build-system r-build-system)
     (arguments
@@ -4761,9 +4762,8 @@ periods.")
     (home-page "https://cran.r-project.org/package=evola")
     (synopsis "Evolutionary Algorithm")
     (description
-     "Runs a genetic algorithm using the @code{AlphaSimR} machinery
-<doi:10.1093/g3journal/jkaa017> and the coalescent simulator @code{MaCS}
-<doi:10.1101/gr.083634.108>.")
+     "Runs an evolutionary algorithm using the @code{AlphaSimR} machinery
+<doi:10.1093/g3journal/jkaa017> .")
     (license license:gpl2+)))
 
 (define-public r-evobir
@@ -20039,6 +20039,34 @@ trials.  This package can be used to evaluate other intervention designs using
 Frequentist and Bayesian multilevel models.")
     (license license:agpl3+)))
 
+(define-public r-eeea
+  (package
+    (name "r-eeea")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EEEA" version))
+       (sha256
+        (base32 "1wxvzz2lj3js7nr6wxfnilng4ybalidzjrwqziyckzyhp4s30qk7"))))
+    (properties `((upstream-name . "EEEA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=EEEA")
+    (synopsis "Explicit Exploration Strategy for Evolutionary Algorithms")
+    (description
+     "This package implements an explicit exploration strategy for evolutionary
+algorithms in order to have a more effective search in solving optimization
+problems.  Along with this exploration search strategy, a set of four different
+Estimation of Distribution Algorithms (EDAs) are also implemented for solving
+optimization problems in continuous domains.  The implemented explicit
+exploration strategy in this package is described in Salinas-GutiÃ©rrez and
+MuÃ±oz Zavala (2023) <doi:10.1016/j.asoc.2023.110230>.")
+    (license license:gpl3)))
+
 (define-public r-eeaaq
   (package
     (name "r-eeaaq")
@@ -20702,13 +20730,13 @@ modules are intended for reuse across applications.")
 (define-public r-editbl
   (package
     (name "r-editbl")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "editbl" version))
        (sha256
-        (base32 "1596lps6day5xskqacg700yv303ci5w0ai9xd509p19hdcf8bq87"))))
+        (base32 "1w6xrlx9ldbrbchrpbmyhvm5rbrpw70873khrlq451gq43fibchg"))))
     (properties `((upstream-name . "editbl")))
     (build-system r-build-system)
     (arguments

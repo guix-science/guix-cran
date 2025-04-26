@@ -3327,6 +3327,54 @@ specified by the Open Geospatial Consortium'.  Supports Spatial objects of class
 Spotfire'.")
     (license license:bsd-3)))
 
+(define-public r-wizardry
+  (package
+    (name "r-wizardry")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wizaRdry" version))
+       (sha256
+        (base32 "1x0xmajvsrnidinw4afd6kdfwxm8zw1l61mn41y7q8gj5lc4ci0i"))))
+    (properties `((upstream-name . "wizaRdry")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-testthat
+                             r-stringdist
+                             r-rstudioapi
+                             r-rlang
+                             r-redcapr
+                             r-r6
+                             r-qualtrics
+                             r-mongolite
+                             r-lubridate
+                             r-knitr
+                             r-jsonlite
+                             r-httr
+                             r-haven
+                             r-future-apply
+                             r-future
+                             r-dplyr
+                             r-config
+                             r-cli
+                             r-beepr))
+    (home-page "https://github.com/belieflab/wizaRdry")
+    (synopsis
+     "Magical Framework for Collaborative & Reproducible Data Analysis")
+    (description
+     "This package provides a comprehensive data analysis framework for NIH-funded
+research that streamlines workflows for both data cleaning and preparing NIH
+Data Archive ('NDA') submission templates.  Provides unified access to multiple
+data sources ('REDCap', @code{MongoDB}', Qualtrics') through interfaces to their
+APIs, with specialized functions for data cleaning, filtering, merging, and
+parsing.  Features automatic validation, field harmonization, and memory-aware
+processing to enhance reproducibility in multi-site collaborative research as
+described in Mittal et al. (2021) <doi:10.20900/jpbs.20210011>.")
+    (license license:expat)))
+
 (define-public r-wither
   (package
     (name "r-wither")
@@ -8351,21 +8399,21 @@ using the Weighted AVERage of all possible Regressions using the data available.
 (define-public r-waverider
   (package
     (name "r-waverider")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WaverideR" version))
        (sha256
-        (base32 "1lm7xq443vninrph21xq6dikpd42xl9ilwfb22lfba2b7j7j5z6g"))))
+        (base32 "1mfw7h4im86b09lc5wxshs2n4brngald9w7d6z5as97srfbp35pi"))))
     (properties `((upstream-name . "WaverideR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-waveletcomp
-                             r-viridis
+    (propagated-inputs (list r-viridis
                              r-truncnorm
+                             r-trapezoid
                              r-rlist
                              r-reshape2
                              r-rcolorbrewer
@@ -8380,7 +8428,6 @@ using the Weighted AVERage of all possible Regressions using the data available.
                              r-decomposer
                              r-colorramps
                              r-colorednoise
-                             r-biwavelet
                              r-astrochron))
     (home-page "https://github.com/stratigraphy/WaverideR")
     (synopsis "Extracting Signals from Wavelet Spectra")

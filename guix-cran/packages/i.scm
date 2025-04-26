@@ -922,6 +922,35 @@ Modelling short time series data
 the method.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
+(define-public r-itrimhoch
+  (package
+    (name "r-itrimhoch")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "itrimhoch" version))
+       (sha256
+        (base32 "03yxb9ll805fsqb7mm9y66bn68wslrvfmq4rri1m5mriw7bjv9w4"))))
+    (properties `((upstream-name . "itrimhoch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=itrimhoch")
+    (synopsis
+     "Improved Trimmed Weighted Hochberg Procedures and Sample Size Optimization")
+    (description
+     "The improved trimmed weighted Hochberg procedure provides increased statistical
+power and relaxes the dependence assumptions for familywise error rate control
+compared to the original weighted Hochberg procedure.  This package computes the
+boundaries required for implementing the proposed methodology and includes
+sample size optimization methods.  See Gou, J., Chang, Y., Li, T., and Zhang,
+F.(2025).  Improved trimmed weighted Hochberg procedures with two endpoints and
+sample size optimization.  Technical Report.")
+    (license license:gpl3)))
+
 (define-public r-itraxr
   (package
     (name "r-itraxr")
@@ -1653,6 +1682,32 @@ easier way.")
      "You can access to open data published in Instituto Canario De Estadistica
 (ISTAC) APIs at <https://datos.canarias.es/api/estadisticas/>.")
     (license license:gpl3+)))
+
+(define-public r-issuetracker
+  (package
+    (name "r-issuetracker")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IssueTrackeR" version))
+       (sha256
+        (base32 "1mh5glqbp846bj7hj71gnljyfvmysq2r1wld2fx5cmxci4fyfndp"))))
+    (properties `((upstream-name . "IssueTrackeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-gh r-crayon))
+    (home-page "https://github.com/TanguyBarthelemy/IssueTrackeR")
+    (synopsis "List Things to Do")
+    (description
+     "Manage a @code{GitHub} problem using R: wrangle issues, labels and milestones.
+It includes functions for storing, prioritizing (sorting), displaying, adding,
+deleting, and selecting (filtering) issues based on qualitative and quantitative
+information.  Issues (labels and milestones) are written in lists and
+categorized into the S3 class to be easily manipulated as datasets in R.")
+    (license license:expat)))
 
 (define-public r-iss
   (package
@@ -4002,13 +4057,13 @@ t-designs. (Mcsorley, J.P., Phillips, N.C., Wallis, W.D. and Yucas, J.L.
 (define-public r-irisseismic
   (package
     (name "r-irisseismic")
-    (version "1.6.7")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IRISSeismic" version))
        (sha256
-        (base32 "1xh8r8qky8m2i5h1y41jycaygvb93lmj1b92ax71b1lg5p245j5d"))))
+        (base32 "1128s5fccpbzrcsrb236n0jak4g9wkx7ps8w26agdc1kr0w6r4mc"))))
     (properties `((upstream-name . "IRISSeismic")))
     (build-system r-build-system)
     (arguments
@@ -4027,8 +4082,8 @@ t-designs. (Mcsorley, J.P., Phillips, N.C., Wallis, W.D. and Yucas, J.L.
      "This package provides classes and methods for seismic data analysis.  The base
 classes and methods are inspired by the python code found in the @code{ObsPy}
 python toolbox <https://github.com/obspy/obspy>.  Additional classes and methods
-support data returned by web services provided by @code{EarthScope}.
-<https://service.earthscope.org/>.")
+support data returned by web services provided by the IRIS DMC
+<http://service.iris.edu/>.")
     (license license:gpl2+)))
 
 (define-public r-irismustangmetrics
@@ -21169,13 +21224,13 @@ tabular datasets.")
 (define-public r-i14y
   (package
     (name "r-i14y")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "I14Y" version))
        (sha256
-        (base32 "1w8ffnyzx9ir5bjqc1gm9jg2kxzgjpbmnvc762ya6kwx5vvljl3m"))))
+        (base32 "1gawz1fcnrav5xzkmn6dncsa01drcijdxs3br339q5g9gfidmjx1"))))
     (properties `((upstream-name . "I14Y")))
     (build-system r-build-system)
     (arguments

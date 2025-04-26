@@ -4251,45 +4251,6 @@ Institute of Hydrology (1992, ISBN 0 948540 45 1).  Wallingford
 and conditions: <https://nrfa.ceh.ac.uk/costs-terms-and-conditions>).")
     (license license:gpl3)))
 
-(define-public r-ukbtools
-  (package
-    (name "r-ukbtools")
-    (version "0.11.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ukbtools" version))
-       (sha256
-        (base32 "1j5p9ypn3s781582all64kvywih1ry0lqsh1zirr35g7r46fy783"))))
-    (properties `((upstream-name . "ukbtools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-scales
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://kenhanscombe.github.io/ukbtools/")
-    (synopsis "Manipulate and Explore UK Biobank Data")
-    (description
-     "This package provides a set of tools to create a UK Biobank
-<http://www.ukbiobank.ac.uk/> dataset from a UKB fileset (.tab, .r, .html),
-visualize primary demographic data for a sample subset, query ICD diagnoses,
-retrieve genetic metadata, read and write standard file formats for genetic
-analyses.")
-    (license license:gpl2)))
-
 (define-public r-ukbnmr
   (package
     (name "r-ukbnmr")

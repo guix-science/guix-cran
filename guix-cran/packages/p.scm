@@ -5057,13 +5057,13 @@ suggested in the literature, but are not regularly maintained.")
 (define-public r-psd
   (package
     (name "r-psd")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psd" version))
        (sha256
-        (base32 "1c9kq5g2p4iy1jdc9fhfs1v0hcnc8cbrpvafdpy3l4n9m66hahky"))))
+        (base32 "0d7lyp6zi5hq66cvks07zbm88dgprqmjcg0m9xl35n3n0kvw7csx"))))
     (properties `((upstream-name . "psd")))
     (build-system r-build-system)
     (arguments
@@ -13158,19 +13158,19 @@ attained.")
 (define-public r-practools
   (package
     (name "r-practools")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PracTools" version))
        (sha256
-        (base32 "1ridvpj9zgf987ysg86620r7daxh6r48gfjnyd6amsb8i6rdvp31"))))
+        (base32 "1lwad3n4d671gn03mp493akwxfm2sdxmvanxm3624vpmsspybmvb"))))
     (properties `((upstream-name . "PracTools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-usmap r-ggplot2 r-geosphere r-dplyr))
+    (propagated-inputs (list r-usmap r-mass r-ggplot2 r-geosphere r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=PracTools")
     (synopsis "Designing and Weighting Survey Samples")
@@ -17594,6 +17594,56 @@ implementations.  Includes population projection, indices of short- and
 long-term population size and growth, perturbation analysis, convergence to
 stability or stationarity, and diagnostic and manipulation tools.")
     (license license:gpl2+)))
+
+(define-public r-popcomm
+  (package
+    (name "r-popcomm")
+    (version "0.1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PopComm" version))
+       (sha256
+        (base32 "0szj0a6k64bkwslig62rncf9mam316nrq0aw1352v8nm821jkglm"))))
+    (properties `((upstream-name . "PopComm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-seurat
+                             r-scales
+                             r-rlang
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-purrr
+                             r-pheatmap
+                             r-pbmcapply
+                             r-matrix
+                             r-igraph
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-broom))
+    (home-page "https://cran.r-project.org/package=PopComm")
+    (synopsis "Population-Level Cell-Cell Communication Analysis Tools")
+    (description
+     "Facilitates population-level analysis of ligand-receptor (LR) interactions using
+large-scale single-cell transcriptomic data.  Identifies significant LR pairs
+and quantifies their interactions through correlation-based filtering and
+projection score computations.  Designed for large-sample single-cell studies,
+the package employs statistical modeling, including linear regression, to
+investigate LR relationships between cell types.  It provides a systematic
+framework for understanding cell-cell communication, uncovering regulatory
+interactions and signaling mechanisms.  Offers tools for LR pair-level,
+sample-level, and differential interaction analyses, with comprehensive
+visualization support to aid biological interpretation.  The methodology is
+described in a manuscript currently under review and will be referenced here
+once published or publicly available.")
+    (license license:expat)))
 
 (define-public r-popbio
   (package
@@ -45713,6 +45763,45 @@ joint analysis of metabolomic and epidemiological data.  Metabolomics,
 curves with numbers of subjects at risk, compare data sets, display
 spaghetti-plot, build multi-contingency tables...")
     (license license:gpl2+)))
+
+(define-public r-packetllm
+  (package
+    (name "r-packetllm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PacketLLM" version))
+       (sha256
+        (base32 "01x4nydz6bzynjq4r2ar12qcbv8adl9wgg1y1annc7krlwa7qvvb"))))
+    (properties `((upstream-name . "PacketLLM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinyjs
+                             r-shiny
+                             r-readtext
+                             r-promises
+                             r-pdftools
+                             r-httr
+                             r-future))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AntoniCzolgowski/PacketLLM")
+    (synopsis "Interactive 'OpenAI' Model Integration in 'RStudio'")
+    (description
+     "Offers an interactive RStudio gadget interface for communicating with
+@code{OpenAI} large language models (e.g., gpt-4o', gpt-4o-mini', gpt-4.1', o1',
+o3-mini') (<https://platform.openai.com/docs/api-reference>).  Enables users to
+conduct multiple chat conversations simultaneously in separate tabs.  Supports
+uploading local files (R, PDF, DOCX) to provide context for the models.  Allows
+per-conversation configuration of model parameters such as temperature and
+system messages (where supported by the model).  API interactions via the httr
+package are performed asynchronously using promises and future to avoid blocking
+the R console.  Useful for tasks like code generation, text summarization, and
+document analysis directly within the RStudio environment.  Requires an
+@code{OpenAI} API key set as an environment variable.")
+    (license license:expat)))
 
 (define-public r-packer
   (package

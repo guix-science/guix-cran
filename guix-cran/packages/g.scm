@@ -6926,6 +6926,33 @@ rectangular prisms at specific observation points using the method of Plouff
 (1976) <doi:10.1190/1.1440645>.")
     (license license:cc0)))
 
+(define-public r-gravityge
+  (package
+    (name "r-gravityge")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gravityGE" version))
+       (sha256
+        (base32 "18pm430j15wf912wvbzs0px4ypciz8784qw7q85qg1krjdb5z9sv"))))
+    (properties `((upstream-name . "gravityGE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=gravityGE")
+    (synopsis
+     "One Sector Armington-CES Gravity Model with General Equilibrium")
+    (description
+     "This package implements a one-sector Armington-CES gravity model with general
+equilibrium (GE) effects.  This model is designed to analyze international and
+domestic trade by capturing the impacts of trade costs and policy changes within
+a general equilibrium framework.  Additionally, it includes a local parameter to
+run simulations on productivity.  The package provides functions for
+calibration, simulation, and analysis of the model.")
+    (license license:expat)))
+
 (define-public r-gravity
   (package
     (name "r-gravity")
@@ -16060,13 +16087,13 @@ that all targets remain up to date.")
 (define-public r-gitstats
   (package
     (name "r-gitstats")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitStats" version))
        (sha256
-        (base32 "0vxb00bpghmbsyvjdxpigzjb6kf8x83d7s08fyvvsrjqq4dbjpdk"))))
+        (base32 "16xvcdm44dmyz851y6il3yi74lm8qmvcrwcisi14qh6n82k6dnxl"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
     (arguments
@@ -21269,13 +21296,13 @@ ggiraph'.")
 (define-public r-ggir
   (package
     (name "r-ggir")
-    (version "3.2-0")
+    (version "3.2-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIR" version))
        (sha256
-        (base32 "1m2vnz5f71n3rr13kzzj32ws4rqm46wc211p6f4a46dpxmgm9pm0"))))
+        (base32 "0h9lvkyd1mwkfwrvlvyr5j4f6nl4603lk7xnvzb9hanpw0dgsi6y"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
     (arguments
@@ -25512,27 +25539,29 @@ bootstrap variograms.")
 (define-public r-geothinner
   (package
     (name "r-geothinner")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoThinneR" version))
        (sha256
-        (base32 "0fsiik19cck9pmfk4nwwfy3vyj19s1x0m2y9a14jlrqy40v98lza"))))
+        (base32 "16c7g693kd9yinzqz1vyask3082xc33p6jahbznlqsy6k7khyc4x"))))
     (properties `((upstream-name . "GeoThinneR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-terra
-                             r-rcpp
+                             r-sf
                              r-nabor
                              r-matrixstats
+                             r-foreach
                              r-fields
+                             r-doparallel
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jmestret/GeoThinneR")
-    (synopsis "Simple Spatial Thinning for Ecological and Spatial Analysis")
+    (synopsis "Efficient Spatial Thinning of Species Occurrences")
     (description
      "This package provides efficient geospatial thinning algorithms to reduce the
 density of coordinate data while maintaining spatial relationships.  Implements
@@ -25994,13 +26023,13 @@ degree cells occupied.")
 (define-public r-geor
   (package
     (name "r-geor")
-    (version "1.9-4")
+    (version "1.9-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoR" version))
        (sha256
-        (base32 "1ggbswsw01r3cfx88khprx6rhrq40rnqsbsljcjkpyg0xdy9g7df"))))
+        (base32 "0y9g9c5vij0j9icydjzz7x2m42n5xp6azin79zqm8sgz5vj0nmp1"))))
     (properties `((upstream-name . "geoR")))
     (build-system r-build-system)
     (arguments
@@ -26303,13 +26332,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "10i3nh2ikfqi0ghz2z6cjbkfajmi2ypbmmkkghj339djgjrbp9jr"))))
+        (base32 "0x73shavp4ssciamiffn7bxjb4rix7c02sgwd36jyp86rf7n7hvi"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (arguments
@@ -29842,13 +29871,13 @@ ready-to-use output.")
 (define-public r-genenmf
   (package
     (name "r-genenmf")
-    (version "0.6.2")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeneNMF" version))
        (sha256
-        (base32 "1955d39fbqnqp7j2878v7qd4wm9pjp315mgigsk3g4pnivgml2a4"))))
+        (base32 "0m1702m3lad65hv2i8682vcpa1nwqdfb9m4jnhfny2q7yyap38kj"))))
     (properties `((upstream-name . "GeneNMF")))
     (build-system r-build-system)
     (arguments
@@ -33363,13 +33392,13 @@ an analytic or a numerical solution, both available in the function.")
 (define-public r-gausssuppression
   (package
     (name "r-gausssuppression")
-    (version "0.9.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaussSuppression" version))
        (sha256
-        (base32 "13rhnzfnd3li9cqnb8lmi0m1r9ra5cyf6d8l6i3zsrs4mwh2k0zk"))))
+        (base32 "1pdysqb3f4jya33pw9qfw1msd610wf6cqjb25r8x8vwv6qvnmj22"))))
     (properties `((upstream-name . "GaussSuppression")))
     (build-system r-build-system)
     (arguments

@@ -2114,6 +2114,48 @@ analysis and randomized complete block design, to be made available in the
 future and making them easily accessible to users.")
     (license license:expat)))
 
+(define-public r-mverse
+  (package
+    (name "r-mverse")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mverse" version))
+       (sha256
+        (base32 "18r0mclq23abzfn1b34fwv0db45krgy5qifcihs56m2cacwzdc93"))))
+    (properties `((upstream-name . "mverse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-rdpack
+                             r-multiverse
+                             r-magrittr
+                             r-igraph
+                             r-ggupset
+                             r-ggraph
+                             r-ggplot2
+                             r-dplyr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mverseanalysis/mverse/")
+    (synopsis "Tidy Multiverse Analysis Made Simple")
+    (description
+     "Extends multiverse package (Sarma A., Kale A., Moon M., Taback N., Chevalier F.,
+Hullman J., Kay M., 2021) <doi:10.31219/osf.io/yfbwm>, which allows users
+perform to create explorable multiverse analysis in R. This extension provides
+an additional level of abstraction to the multiverse package with the aim of
+creating user friendly syntax to researchers, educators, and students in
+statistics.  The mverse syntax is designed to allow piping and takes hints from
+the tidyverse grammar.  The package allows users to define and inspect
+multiverse analysis using familiar syntax in R.")
+    (license license:gpl3+)))
+
 (define-public r-mvdfa
   (package
     (name "r-mvdfa")
@@ -14030,13 +14072,13 @@ Austin, Texas.")
 (define-public r-mop
   (package
     (name "r-mop")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mop" version))
        (sha256
-        (base32 "1x17mnh2lrgkqr1nzhk5dxmwpv9812i3ryvlspqhbrfadj3s76l7"))))
+        (base32 "0j6x05niqcvrwbbzsnkdnh9ph1p9kp8mflpm281i0lxm0v3pfrf2"))))
     (properties `((upstream-name . "mop")))
     (build-system r-build-system)
     (arguments
@@ -14054,7 +14096,8 @@ to conditions different from those over which models were calibrated (trained),
 this metric helps to identify transfer conditions that differ substantially from
 those of calibration.  These tools are implemented following principles proposed
 in Owens et al. (2013) <doi:10.1016/j.ecolmodel.2013.04.011>, and expanded to
-obtain more detailed results that aid in interpretation.")
+obtain more detailed results that aid in interpretation as in Cobos et al.
+(2024) <doi:10.21425/fob.17.132916>.")
     (license license:gpl3+)))
 
 (define-public r-moose
@@ -14409,13 +14452,13 @@ based on Dette, Holger, Neumeyer, and Pilz (2006) <doi:10.3150/bj/1151525131>.")
 (define-public r-monotonicitytest
   (package
     (name "r-monotonicitytest")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MonotonicityTest" version))
        (sha256
-        (base32 "18qla9kvf0ywvhw2dd5lpl4dagv9rs8l5vn7lj4b9bjvy8dxp20b"))))
+        (base32 "0j2156hh5xmzfkdi7mir1gpxy79xmg230f974pinf39pg092815r"))))
     (properties `((upstream-name . "MonotonicityTest")))
     (build-system r-build-system)
     (arguments
@@ -19411,13 +19454,13 @@ Scutari (2010) <doi:10.18637/jss.v035.i03>.")
 (define-public r-mmarch-ac
   (package
     (name "r-mmarch-ac")
-    (version "3.2.0.0")
+    (version "3.2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mMARCH.AC" version))
        (sha256
-        (base32 "0f9i8m5py7q8qici75nsv24bj4yhh11grldramwxih9nsili2k2g"))))
+        (base32 "1a246ajrixad6lyb33dyd3gys780pd9s7w9s0mkzyzwaiannabql"))))
     (properties `((upstream-name . "mMARCH.AC")))
     (build-system r-build-system)
     (arguments
@@ -28210,6 +28253,36 @@ multi-objective optimization algorithms NSGA-II by Deb, Pratap, Agarwal, and
 Meyarivan (2002) <doi:10.1109/4235.996017>.")
     (license license:expat)))
 
+(define-public r-miebl
+  (package
+    (name "r-miebl")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "miebl" version))
+       (sha256
+        (base32 "0s6s1mmy41jvg5p6yp11bla4fxkfy9d7nwdfhq6m6igi08mshj3k"))))
+    (properties `((upstream-name . "miebl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=miebl")
+    (synopsis "Performance Criteria Modeler for Discrete Trial Training")
+    (description
+     "This package provides a tool for computing probabilities and other quantities
+that are relevant in selecting performance criteria for discrete trial training.
+ The main function, @code{miebl()}, computes Bayesian and frequentist
+probabilities and bounds for each of n possible performance criterion choices
+when attempting to determine a student's true mastery level by counting their
+number of successful attempts at displaying learning among n trials.  The
+reporting function @code{miebl_re()} takes output from @code{miebl()} and
+prepares it into a brief report for a specific criterion. @code{miebl_cp()}
+combines 2 to 5 distributions of true mastery level given performance criterion
+in one plot for comparison.  Ramos (2025) <doi:10.1007/s40617-025-01058-9>.")
+    (license license:gpl3)))
+
 (define-public r-midrangemcp
   (package
     (name "r-midrangemcp")
@@ -28661,19 +28734,19 @@ described in Zinn (2014) <doi:10.34196/IJM.00105>.")
 (define-public r-microsynth
   (package
     (name "r-microsynth")
-    (version "2.0.44")
+    (version "2.0.51")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microsynth" version))
        (sha256
-        (base32 "1a8xh4aqv0177p9vp05i6c881k4pkyyha7izbq3j3ssyb9id7yy6"))))
+        (base32 "05izi1izawfv6qpa1bpyxzvhbfhb5iy2x3pnd4m5h5nvghay3l9g"))))
     (properties `((upstream-name . "microsynth")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survey r-pracma r-kernlab))
+    (propagated-inputs (list r-survey r-pracma r-lowrankqp r-kernlab))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=microsynth")
     (synopsis "Synthetic Control Methods with Micro- And Meso-Level Data")
@@ -33599,13 +33672,13 @@ treatment effect parameter which are described in Guenhan, Roever, and Friede
 (define-public r-metasnf
   (package
     (name "r-metasnf")
-    (version "2.0.6")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metasnf" version))
        (sha256
-        (base32 "1k0jm9bgdwszfwzwjqcvvksc6vxaabb2kc6sjqcn9mnrc9yygrb7"))))
+        (base32 "0jw1sxkq4r8wdnzq0rlzgkngws68ccranfqfw6i263kqj84mprr2"))))
     (properties `((upstream-name . "metasnf")))
     (build-system r-build-system)
     (arguments
@@ -38396,13 +38469,13 @@ preposition.")
 (define-public r-medesigns
   (package
     (name "r-medesigns")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MEDesigns" version))
        (sha256
-        (base32 "1hwiwc1f4ng57gvclw0i2z9sg5irzv1bir2jwb6m28m8xm59dlva"))))
+        (base32 "15avz30qnii5sxk408gm17vvzfi0506vykh6iy3kfiic7g0lqn90"))))
     (properties `((upstream-name . "MEDesigns")))
     (build-system r-build-system)
     (arguments
@@ -42941,13 +43014,13 @@ Foster (2021) <doi:10.1111/2041-210X.13535>.")
 (define-public r-mbg
   (package
     (name "r-mbg")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mbg" version))
        (sha256
-        (base32 "09hi0n1agk7n8rkqx5w7kxw8jcg6s777si3ivj2hi4kyprb9hh7x"))))
+        (base32 "13d3jhhhynqb48n1as8saraqdw4iw2ii8y5299y0pic1xlr4kcq3"))))
     (properties `((upstream-name . "mbg")))
     (build-system r-build-system)
     (arguments
@@ -42975,6 +43048,37 @@ point-referenced outcomes and, optionally, a set of raster covariates.  The
 package also includes functions to summarize raster outcomes by (polygon) region
 while preserving uncertainty.")
     (license license:expat)))
+
+(define-public r-mbest
+  (package
+    (name "r-mbest")
+    (version "0.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mbest" version))
+       (sha256
+        (base32 "03yjkqykrhfrqmk7mfhwa32fwf0kvsvksds5yxbicrzpgv2hix5h"))))
+    (properties `((upstream-name . "mbest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reformulas
+                             r-nlme
+                             r-logging
+                             r-foreach
+                             r-bigmemory
+                             r-abind))
+    (home-page "https://github.com/patperry/r-mbest")
+    (synopsis "Moment-Based Estimation for Hierarchical Models")
+    (description
+     "Fast moment-based hierarchical model fitting.  Implements methods from the
+papers \"Fast Moment-Based Estimation for Hierarchical Models,\" by Perry (2017)
+and \"Fitting a Deeply Nested Hierarchical Model to a Large Book Review Dataset
+Using a Moment-Based Estimator,\" by Zhang, Schmaus, and Perry (2018).")
+    (license (list license:asl2.0
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-mbend
   (package

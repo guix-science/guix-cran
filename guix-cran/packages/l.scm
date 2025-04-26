@@ -1678,13 +1678,13 @@ combinations of regression functions from different groups.")
 (define-public r-lsoda
   (package
     (name "r-lsoda")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lsoda" version))
        (sha256
-        (base32 "0g9dm3xwdnhchphcvshmmnl1w6lnkv567z62clx1wr6gdha0kyr3"))))
+        (base32 "0w1bcipz0rw18fkckzwsc31dij8bsivl24xi0bmk8bip9mhlmczr"))))
     (properties `((upstream-name . "lsoda")))
     (build-system r-build-system)
     (arguments
@@ -6577,13 +6577,13 @@ Economics (http://www.sgh.waw.pl/en/).")
 (define-public r-localscore
   (package
     (name "r-localscore")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "localScore" version))
        (sha256
-        (base32 "0k625ypfcn9rjwcvmiycm9n09qrg66w3w7gqjrqabazvclzl3gym"))))
+        (base32 "1nbdj9s1s32hm8fswg61yxcf9z9npybkyp2mipci0h45lfzhxvys"))))
     (properties `((upstream-name . "localScore")))
     (build-system r-build-system)
     (arguments
@@ -12383,13 +12383,13 @@ data.")
 (define-public r-lgspline
   (package
     (name "r-lgspline")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lgspline" version))
        (sha256
-        (base32 "0sb3sjn4s81wpd5kr1hzaap8xb0vwxb74lbsf40qfk79pjwq7gvv"))))
+        (base32 "08yx88acfyz5faal5ic930x8jxzlm4ja44m5jn5xjqwg8202rlpf"))))
     (properties `((upstream-name . "lgspline")))
     (build-system r-build-system)
     (arguments
@@ -18963,13 +18963,13 @@ observed variables and multiple	group models.")
 (define-public r-laminr
   (package
     (name "r-laminr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "laminr" version))
        (sha256
-        (base32 "0s5ck39izl4gj975792ska36flap6782bn5mndvb2c8mhxd4iw2v"))))
+        (base32 "0812ag42w6wf5vaawkdk2l8z5q8rnz3wk5nxjibyqh89pypq5zyn"))))
     (properties `((upstream-name . "laminr")))
     (build-system r-build-system)
     (arguments
@@ -18981,8 +18981,10 @@ observed variables and multiple	group models.")
                              r-r6
                              r-r-utils
                              r-purrr
+                             r-pak
+                             r-lifecycle
                              r-cli))
-    (native-inputs (list r-quarto))
+    (native-inputs (list r-knitr))
     (home-page "https://laminr.lamin.ai")
     (synopsis "Client for 'LaminDB'")
     (description

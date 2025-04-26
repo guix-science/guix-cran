@@ -5797,6 +5797,52 @@ digit to an input number, and validate that a check digit is correct given an
 input number.")
     (license license:gpl3)))
 
+(define-public r-verdata
+  (package
+    (name "r-verdata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "verdata" version))
+       (sha256
+        (base32 "1i5qzwsjn01mrh57xhkmq97hlwwjglf3j11ynjpdsjvqwqwwv16y"))))
+    (properties `((upstream-name . "verdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rjson
+                             r-readr
+                             r-rdpack
+                             r-purrr
+                             r-magrittr
+                             r-logger
+                             r-lcmcr
+                             r-glue
+                             r-dplyr
+                             r-digest
+                             r-assertr
+                             r-arrow))
+    (home-page "https://github.com/HRDAG/verdata")
+    (synopsis "Analyze Data from the Truth Commission in Colombia")
+    (description
+     "Facilitates use and analysis of data about the armed conflict in Colombia
+resulting from the joint project between La JurisdicciÃ³n Especial para la Paz
+(JEP), La ComisiÃ³n para el Esclarecimiento de la Verdad, la Convivencia y la No
+repeticiÃ³n (CEV), and the Human Rights Data Analysis Group (HRDAG).  The data
+are 100 replicates from a multiple imputation through chained equations as
+described in Van Buuren and Groothuis-Oudshoorn (2011)
+<doi:10.18637/jss.v045.i03>.  With the replicates the user can examine four
+human rights violations that occurred in the Colombian conflict accounting for
+the impact of missing fields and fully missing observations.")
+    (license license:gpl2)))
+
 (define-public r-verbalisr
   (package
     (name "r-verbalisr")
@@ -6524,13 +6570,13 @@ argument multiple which, when set to FALSE, reverts them to the base::sets
 (define-public r-vecmatch
   (package
     (name "r-vecmatch")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vecmatch" version))
        (sha256
-        (base32 "04pb367mybssjyh60ynh5lvgsvmhbfdirms4l8nqsifhq9ywwr3v"))))
+        (base32 "0sawas9ysahmdvwrcyjwcn8866q1m1qqzspjjjzcc195xfdrck2s"))))
     (properties `((upstream-name . "vecmatch")))
     (build-system r-build-system)
     (arguments
@@ -6552,6 +6598,7 @@ argument multiple which, when set to FALSE, reverts them to the base::sets
                              r-cli
                              r-chk
                              r-brglm2))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/Polymerase3/vecmatch")
     (synopsis
      "Generalized Propensity Score Estimation and Matching for Multiple Groups")

@@ -10166,19 +10166,20 @@ a recent evaluation and improvements.")
 (define-public r-rquantlib
   (package
     (name "r-rquantlib")
-    (version "0.4.25")
+    (version "0.4.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RQuantLib" version))
        (sha256
-        (base32 "0fv9ql8nn342ljijwhllnbg744bavxhplc04xwv19hkdns184dkv"))))
+        (base32 "1bj17wh1cbvy4wx9g2w9qxyvcvwqc72igiga0l69p1s6znviry63"))))
     (properties `((upstream-name . "RQuantLib")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zoo r-rcpp))
+    (native-inputs (list pkg-config))
     (home-page "https://github.com/eddelbuettel/rquantlib")
     (synopsis "R Interface to the 'QuantLib' Library")
     (description
@@ -10970,13 +10971,13 @@ the corresponding argument value to appear in the string.")
 (define-public r-rprime
   (package
     (name "r-rprime")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rprime" version))
        (sha256
-        (base32 "1h54vclc800pir3vxqcq4cmmxy9fcar1fydqmba2dzpj8dvlad7v"))))
+        (base32 "0ndx349mwwcsm24790z6vylc67z3m669j9pkjkr2vi7hajla7fzv"))))
     (properties `((upstream-name . "rprime")))
     (build-system r-build-system)
     (arguments
@@ -14617,13 +14618,13 @@ detection of events or structural breaks.")
 (define-public r-rollama
   (package
     (name "r-rollama")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rollama" version))
        (sha256
-        (base32 "1ck5xbqpw6kb64gipzcdvr52vkyc4hx2pyqks32dfr59lkglr9lz"))))
+        (base32 "0xdarwg9xrc3n04dkp6qgnw824g1q4axncpphp01flnhc1ira64k"))))
     (properties `((upstream-name . "rollama")))
     (build-system r-build-system)
     (arguments
@@ -14983,13 +14984,13 @@ ipop solver from package kernlab'.")
 (define-public r-roi-plugin-highs
   (package
     (name "r-roi-plugin-highs")
-    (version "1.0-3")
+    (version "1.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROI.plugin.highs" version))
        (sha256
-        (base32 "0ldfm4y66wj4marwzvm6f7dgq31q3bdr2cwqw4hlc0nc379anmrv"))))
+        (base32 "1dga30j14c8z3jsmkvkqni55v81g7qj79wqnqh83b9fj3s0bjc2z"))))
     (properties `((upstream-name . "ROI.plugin.highs")))
     (build-system r-build-system)
     (arguments
@@ -20767,6 +20768,38 @@ graph for passerines having 9 (Rmolt(data,9)) or 10 primaries (Rmolt(data,10)),
 and also only for the 10 first primaries (Rmolt(data,\"10_0\")).")
     (license license:gpl2+)))
 
+(define-public r-rmoji
+  (package
+    (name "r-rmoji")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rmoji" version))
+       (sha256
+        (base32 "1g3psgcfvw1vxmjqp9fcc4kkc20gwj0ph4csdph0krg1ijmw8rad"))))
+    (properties `((upstream-name . "Rmoji")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinyjs r-shiny r-rstudioapi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/3p1d3m/Rmoji")
+    (synopsis "Interactively Insert Emojis in 'R' Documents")
+    (description
+     "This package provides an intuitive and user-friendly interface for working with
+emojis in R'.  It allows users to search, insert, and manage emojis by keyword,
+category, or through an interactive shiny'-based drop-down.  The package enables
+integration of emojis into R scripts, R Markdown', Quarto', shiny apps, and
+ggplot2 plots.  Also includes built-in mappings for commit messages, useful for
+version control.  It builds on established emoji libraries and Unicode
+standards, adding expressiveness and visual cues to documentation, user
+interfaces, and reports.  For more details see Emojipedia (2024)
+<https://emojipedia.org> and @code{GitHub} Emoji Cheat Sheet
+<https://github.com/ikatyang/emoji-cheat-sheet/tree/master>.")
+    (license license:expat)))
+
 (define-public r-rmodule
   (package
     (name "r-rmodule")
@@ -24702,13 +24735,13 @@ implemented with @code{JavaScript} for node and browsers.")
 (define-public r-rix
   (package
     (name "r-rix")
-    (version "0.15.7")
+    (version "0.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rix" version))
        (sha256
-        (base32 "0pnmgabwpa7kmj8m6ddl2kc48hligy5g1lvf1v4k3778nmjzsilh"))))
+        (base32 "0amzdmmmg4b5w8w55dqxidrjbzhciyrj7bsf6fnjchrl790b655l"))))
     (properties `((upstream-name . "rix")))
     (build-system r-build-system)
     (arguments
@@ -28428,13 +28461,13 @@ formats and methods are described in @code{McKay}, B.D. and Piperno, A (2014)
 (define-public r-rgplates
   (package
     (name "r-rgplates")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgplates" version))
        (sha256
-        (base32 "1mxr7h42cbcpapm976c3pwsvhkqfm38kxcpms2pr79blgb2yd12j"))))
+        (base32 "1ym30p2ai23pb2jvvwymh7bv87wa648nfm9z5azwi5hrcrb6n24f"))))
     (properties `((upstream-name . "rgplates")))
     (build-system r-build-system)
     (arguments
@@ -38938,19 +38971,37 @@ based and day-time based approaches (Lasslop et al. (2010)
 (define-public r-reddprec
   (package
     (name "r-reddprec")
-    (version "2.0.4")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reddPrec" version))
        (sha256
-        (base32 "1saliry8z6zjn2jqkwvrb545fywjysnk91lcb121c3c7gnnzis0l"))))
+        (base32 "0z7nlikmjlgxj01hzllx0d9g04nix7y9gcx6ghg4mr96l0byx2v5"))))
     (properties `((upstream-name . "reddPrec")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra r-reshape r-qmap r-foreach r-doparallel))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-xgboost
+                             r-terra
+                             r-reshape2
+                             r-reshape
+                             r-randomforest
+                             r-qmap
+                             r-pracma
+                             r-neuralnet
+                             r-lattice
+                             r-kendall
+                             r-gridextra
+                             r-geosphere
+                             r-foreach
+                             r-e1071
+                             r-doparallel
+                             r-car
+                             r-breakpoints))
     (home-page "https://cran.r-project.org/package=reddPrec")
     (synopsis "Reconstruction of Daily Data - Precipitation")
     (description
@@ -41048,19 +41099,20 @@ way to read these files into R.")
 (define-public r-readstata13
   (package
     (name "r-readstata13")
-    (version "0.10.1")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readstata13" version))
        (sha256
-        (base32 "18yr7nsz80dsxxsdgyi68k7506digjawk6khnzpvk5y80yz7hyqi"))))
+        (base32 "089d4z27yv9sbr2xifvqjjg80mh00rs16vb75wk38pvppjzg8vcy"))))
     (properties `((upstream-name . "readstata13")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/sjewo/readstata13")
     (synopsis "Import 'Stata' Data Files")
     (description "Function to read and write the Stata file format.")
@@ -49681,13 +49733,13 @@ distribution and random vectors from the Dirichlet distribution.")
 (define-public r-rbest
   (package
     (name "r-rbest")
-    (version "1.8-1")
+    (version "1.8-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RBesT" version))
        (sha256
-        (base32 "04aah2ldppkiah7yrzqqhvz6bfr7k6z61nhf41gn0vvp2pj0cbjr"))))
+        (base32 "0mhiqjxbr5m30bwbc24ngs669ylkmkr1j5msjhy4bifp5mkm0s94"))))
     (properties `((upstream-name . "RBesT")))
     (build-system r-build-system)
     (arguments
@@ -49703,6 +49755,8 @@ distribution and random vectors from the Dirichlet distribution.")
                              r-rcpp
                              r-mvtnorm
                              r-matrixstats
+                             r-lifecycle
+                             r-jsonlite
                              r-ggplot2
                              r-formula
                              r-dplyr
@@ -50106,13 +50160,13 @@ provided in: Border and Malik (2022) <doi:10.1101/2022.10.13.512132>.")
 (define-public r-rbacon
   (package
     (name "r-rbacon")
-    (version "3.3.1")
+    (version "3.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbacon" version))
        (sha256
-        (base32 "1zg4sy56cp2j7bq26ap83g63h7adzzmaaliyw7k75a58drkf5pxx"))))
+        (base32 "0v2g38vgz96azmv71qgifzrhwpi6w3h5dizvmcfiimsnd3nq3q37"))))
     (properties `((upstream-name . "rbacon")))
     (build-system r-build-system)
     (arguments
@@ -53592,6 +53646,32 @@ function that is independent to the original data.  Then finally apply the
 classification task on the projected data.")
     (license license:gpl2+)))
 
+(define-public r-randpedpca
+  (package
+    (name "r-randpedpca")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "randPedPCA" version))
+       (sha256
+        (base32 "0zgc08n28xq815mgr1ijhzvqmzm9hapgm86rdlmprbdgr9g3fimz"))))
+    (properties `((upstream-name . "randPedPCA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spam r-pedigreetools r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=randPedPCA")
+    (synopsis "Fast PCA for Large Pedigrees")
+    (description
+     "Carry out principal component analysis (PCA) of very large pedigrees such as
+found in breeding populations! This package, @code{randPedPCA}', exploits sparse
+matrices and randomised linear algebra to deliver a gazillion-times speed-up
+compared to naive singular value decoposition (SVD) (and eigen decomposition).")
+    (license license:expat)))
+
 (define-public r-randomwalker
   (package
     (name "r-randomwalker")
@@ -55180,6 +55260,44 @@ supporting functions to employ these estimators in a graphical modeling setting.
 library ag-grid (typically via R Markdown or Shiny').  The ag-grid library has
 been included in this R package.  The package name @code{RagGrid} is an
 abbreviation of R @code{agGrid}'.")
+    (license license:expat)))
+
+(define-public r-ragflowchainr
+  (package
+    (name "r-ragflowchainr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RAGFlowChainR" version))
+       (sha256
+        (base32 "0fn2hysmbcmw0qh7lm5r7srkzgnrc3m49zl53am5ln5p32rfvfxi"))))
+    (properties `((upstream-name . "RAGFlowChainR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-rvest
+                             r-pdftools
+                             r-officer
+                             r-httr
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-curl))
+    (home-page "https://github.com/knowusuboaky/RAGFlowChainR")
+    (synopsis
+     "Retrieval-Augmented Generation (RAG) Workflows in R with Local and Web Search")
+    (description
+     "Enables Retrieval-Augmented Generation (RAG) workflows in R by combining local
+vector search using @code{DuckDB} with optional web search via the Tavily API.
+Supports @code{OpenAI}- and Ollama-compatible embedding models, full-text and
+HNSW (Hierarchical Navigable Small World) indexing, and modular large language
+model (LLM) invocation.  Designed for advanced question-answering, chat-based
+applications, and production-ready AI pipelines.  This package is the R
+equivalent of the python package RAG@code{FlowChain} available at
+<https://pypi.org/project/RAG@code{FlowChain/>}.")
     (license license:expat)))
 
 (define-public r-rage

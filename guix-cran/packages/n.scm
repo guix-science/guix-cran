@@ -2358,6 +2358,54 @@ methodologies used in the package can be found in Sharma, A., Mehrotra, R.
 (2006). <doi:10.1016/j.advwatres.2005.08.007>.")
     (license license:gpl3)))
 
+(define-public r-nprcgenekeepr
+  (package
+    (name "r-nprcgenekeepr")
+    (version "1.0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nprcgenekeepr" version))
+       (sha256
+        (base32 "1z3anys5p2gi15fzfaz73ay237rbvwai04qqwx42s0agrh2p6yhn"))))
+    (properties `((upstream-name . "nprcgenekeepr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexls
+                             r-stringi
+                             r-shiny
+                             r-sessioninfo
+                             r-rlabkey
+                             r-readxl
+                             r-plotrix
+                             r-matrix
+                             r-lubridate
+                             r-lifecycle
+                             r-htmltable
+                             r-futile-logger
+                             r-data-table
+                             r-anytime))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://rmsharp.github.io/nprcgenekeepr/")
+    (synopsis "Genetic Tools for Colony Management")
+    (description
+     "This package provides genetic tools for colony management and is a derivation of
+the work in Amanda Vinson and Michael J Raboin (2015)
+<https://pmc.ncbi.nlm.nih.gov/articles/PMC4671785/> \"A Practical Approach for
+Designing Breeding Groups to Maximize Genetic Diversity in a Large Colony of
+Captive Rhesus Macaques ('Macaca mulatto')\".  It provides a Shiny application
+with an exposed API. The application supports five groups of functions: (1)
+Quality control of studbooks contained in text files or Excel workbooks and of
+pedigrees within @code{LabKey} Electronic Health Records (EHR); (2) Creation of
+pedigrees from a list of animals using the @code{LabKey} EHR integration; (3)
+Creation and display of an age by sex pyramid plot of the living animals within
+the designated pedigree; (4) Generation of genetic value analysis reports; and
+(5) Creation of potential breeding groups with and without proscribed sex ratios
+and defined maximum kinships.")
+    (license license:expat)))
+
 (define-public r-npphen
   (package
     (name "r-npphen")
@@ -6687,13 +6735,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "1jrjlpspaq4b1lb4lfvcrrhsf6nhd6krmh7skvdzk899l71s8r7z"))))
+        (base32 "0wwarlvrk5d0lkyq7wbadrjg7jma62im8fbbc7i6qdyrz4lb71k5"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (arguments
@@ -15917,13 +15965,13 @@ Analysis - Concepts and Applications.  5th ed.  2016. (ISBN:9198299107).")
 (define-public r-ncappc
   (package
     (name "r-ncappc")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncappc" version))
        (sha256
-        (base32 "0bf00iskrd3x43839bwn957mi3qvm2dhcmqa7hl1ib0gp2r1cnzx"))))
+        (base32 "1g28m4qplrmzyj4j0w6cnl8qjhyzbq8b8nhzb1i8yw7pg3mb5xhj"))))
     (properties `((upstream-name . "ncappc")))
     (build-system r-build-system)
     (arguments
@@ -15946,16 +15994,16 @@ Analysis - Concepts and Applications.  5th ed.  2016. (ISBN:9198299107).")
                              r-gridextra
                              r-ggplot2
                              r-dplyr
-                             r-cairo
                              r-bookdown))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ncappc")
+    (home-page "https://github.com/UUPharmacometrics/ncappc")
     (synopsis "NCA Calculations and Population Model Diagnosis")
     (description
      "This package provides a flexible tool that can perform (i) traditional
 non-compartmental analysis (NCA) and (ii) Simulation-based posterior predictive
 checks for population pharmacokinetic (PK) and/or pharmacodynamic (PKPD) models
-using NCA metrics.")
+using NCA metrics.  The methods are described in Acharya et al. (2016)
+<doi:10.1016/j.cmpb.2016.01.013>.")
     (license license:gpl3)))
 
 (define-public r-ncaavolleyballr
@@ -17428,19 +17476,20 @@ sequentially observed data.")
 (define-public r-nanostringr
   (package
     (name "r-nanostringr")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanostringr" version))
        (sha256
-        (base32 "051c32z6awjy5l1yrl6f0i0dsg0hkdazrvrqac3zs8gg36l37kl8"))))
+        (base32 "1zq483gnzp8vwh8ykk20bc8b551shb2spjgvzmbzb22ihylbk286"))))
     (properties `((upstream-name . "nanostringr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-rlang
                              r-purrr
                              r-dplyr

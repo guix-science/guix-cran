@@ -4030,23 +4030,25 @@ al (1998, ISBN:92-5-104219-5)).")
 (define-public r-frscore
   (package
     (name "r-frscore")
-    (version "0.4.1")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frscore" version))
        (sha256
-        (base32 "1phmy313xl1x3v1smf6f19aa1sd0cypfn5hpg715k9p9z9sh58qq"))))
+        (base32 "1nss4kmsficfn7kwwcy6bvmpym9zz8cz8s7n6xdd168bhsr3z6gp"))))
     (properties `((upstream-name . "frscore")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-withr
+                             r-visnetwork
                              r-rlang
                              r-rfast
                              r-magrittr
                              r-lifecycle
+                             r-igraph
                              r-dplyr
                              r-cna))
     (home-page "https://cran.r-project.org/package=frscore")
@@ -7865,13 +7867,13 @@ K., Mandal, A., & Yang, J., (2024)<doi:10.1007/s11222-024-10465-x>.")
 (define-public r-forit
   (package
     (name "r-forit")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ForIT" version))
        (sha256
-        (base32 "0kc15b05dp3cybjln49d0ly962s4gayidi0qpb6mcy0qdxvb17lv"))))
+        (base32 "118jh1xhls9v6dalbi93dhzc0v4k0jky5vjkpf3gqqsnj5rcswzq"))))
     (properties `((upstream-name . "ForIT")))
     (build-system r-build-system)
     (arguments
@@ -10583,6 +10585,42 @@ unfolding.  Restrictions (fixed coordinates or model restrictions) are available
 for both row and column coordinates in all combinations.")
     (license license:bsd-2)))
 
+(define-public r-fmds
+  (package
+    (name "r-fmds")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fmds" version))
+       (sha256
+        (base32 "0clbd9jn86dc6vcp9yik801aqbpbk99a31hlx6hilawisv9sidr6"))))
+    (properties `((upstream-name . "fmds")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=fmds")
+    (synopsis "Multidimensional Scaling Development Kit")
+    (description
+     "Multidimensional scaling (MDS) functions for various tasks that are beyond the
+beta stage and way past the alpha stage.  Currently, options are available for
+weights, restrictions, classical scaling or principal coordinate analysis,
+transformations (linear, power, Box-Cox, spline, ordinal), outlier mitigation
+(rdop), out-of-sample estimation (predict), negative dissimilarities, fast and
+faster executions with low memory footprints, penalized restrictions,
+cross-validation-based penalty selection, supplementary variable estimation
+(explain), additive constant estimation, mixed measurement level distance
+calculation, restricted classical scaling, etc.  More will come in the future.
+References.  Busing (2024) \"A Simple Population Size Estimator for Local Minima
+Applied to Multidimensional Scaling\".  Manuscript submitted for publication.
+Busing (2025) \"Node Localization by Multidimensional Scaling with Iterative
+Majorization\".  Manuscript submitted for publication.  Busing (2025) \"Faster
+Multidimensional Scaling\".  Manuscript in preparation.  Barroso and Busing
+(2025) \"e-RDOP, Relative Density-Based Outlier Probabilities, Extended to
+Proximity Mapping\".  Manuscript submitted for publication.")
+    (license license:bsd-2)))
+
 (define-public r-fmcmc
   (package
     (name "r-fmcmc")
@@ -12626,13 +12664,13 @@ trait metric, as described by Feuerstahler (2019)
 (define-public r-flexlsx
   (package
     (name "r-flexlsx")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexlsx" version))
        (sha256
-        (base32 "07yh5fcv2jpkb266jx2ng42sybdpwkkpwn1axs41m37x5z749dz9"))))
+        (base32 "1d19iivykllwp9p0v29rff7j252fraqazsif0nndmk5w1sxz6aiq"))))
     (properties `((upstream-name . "flexlsx")))
     (build-system r-build-system)
     (arguments
@@ -21497,6 +21535,33 @@ results for the g parameter.")
 under 2-locus and 1-locus models defined by some design matrix.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-fastymd
+  (package
+    (name "r-fastymd")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastymd" version))
+       (sha256
+        (base32 "0kr5r05qg6lgpkzhm2in1i37vdm2zbb0f2yahha5065967ddvahb"))))
+    (properties `((upstream-name . "fastymd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-litedown))
+    (home-page "https://timtaylor.codeberg.page/fastymd/")
+    (synopsis "Fast Utilities for 'Year Month Day' Objects")
+    (description
+     "This package provides a collection of utility functions for working with Year
+Month Day objects.  Includes functions for fast parsing of numeric and character
+input based on algorithms described in Hinnant, H. (2021)
+<https://howardhinnant.github.io/date_algorithms.html> as well as a branchless
+calculation of leap years by Jerichaux (2025)
+<https://stackoverflow.com/a/79564914>.")
+    (license license:gpl3)))
+
 (define-public r-fastwavelets
   (package
     (name "r-fastwavelets")
@@ -22978,6 +23043,34 @@ process used by Amelia <https://gking.harvard.edu/amelia> but is much faster
 when filling in values for a single line of data.")
     (license license:gpl2+)))
 
+(define-public r-fasthamming
+  (package
+    (name "r-fasthamming")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FastHamming" version))
+       (sha256
+        (base32 "03kf6j8srrfvpj8vbk3pmk5nj7jllfg9amww1sh1ii57ia025wp7"))))
+    (properties `((upstream-name . "FastHamming")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://cran.r-project.org/package=FastHamming")
+    (synopsis "Fast Computation of Pairwise Hamming Distances")
+    (description
+     "Pairwise Hamming distances are computed between the rows of a binary (0/1)
+matrix using highly optimized C code.  The input is an integer matrix where each
+row represents a binary feature vector and returns a symmetric integer matrix of
+pairwise distances.  Internally, rows are bit-packed into 64-bit words for fast
+XOR-based comparisons, with hardware-accelerated popcount operations to count
+differences. @code{OpenMP} parallelization ensures efficient performance for
+large matrices.")
+    (license license:gpl3)))
+
 (define-public r-fastgraph
   (package
     (name "r-fastgraph")
@@ -23174,13 +23267,13 @@ guides and Python package information can be found at
 (define-public r-fasterraster
   (package
     (name "r-fasterraster")
-    (version "8.4.0.5")
+    (version "8.4.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fasterRaster" version))
        (sha256
-        (base32 "1q7hgpvdbwzqwp7dms546w8h12l1mnnmfsj7nawn8rfsn4bjhwzd"))))
+        (base32 "0fzzgasbcb9p4mghggl8m0slk0wjbidzbvvxjl8q1lyy8k90zgb6"))))
     (properties `((upstream-name . "fasterRaster")))
     (build-system r-build-system)
     (arguments
@@ -23190,7 +23283,6 @@ guides and Python package information can be found at
     (propagated-inputs (list r-terra
                              r-shiny
                              r-sf
-                             r-rpanel
                              r-rgrass
                              r-omnibus
                              r-dt
@@ -23299,13 +23391,13 @@ computational point of view.")
 (define-public r-fastcpd
   (package
     (name "r-fastcpd")
-    (version "0.16.1")
+    (version "0.16.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastcpd" version))
        (sha256
-        (base32 "0jzw62ml5anbd6zyf8g1ffdk3j70zyjhwlaipq14nvgmmvzzjbl6"))))
+        (base32 "1ql27ns5rp6xy0w4jq6qd8hfp3md64ph01qmfyvwhkwx6gazx7a2"))))
     (properties `((upstream-name . "fastcpd")))
     (build-system r-build-system)
     (arguments

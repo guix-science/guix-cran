@@ -370,13 +370,13 @@ cbind.")
 (define-public r-zipper
   (package
     (name "r-zipper")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zippeR" version))
        (sha256
-        (base32 "1w5yqad9x8qncdzpdhn3j0w54zd432d5bgj5izir93j5x9cbf5mc"))))
+        (base32 "1snypy2bf7hc12y61ynyilfjkj3p9863pymans6jc7w85607wc5p"))))
     (properties `((upstream-name . "zippeR")))
     (build-system r-build-system)
     (arguments

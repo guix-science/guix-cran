@@ -5474,6 +5474,33 @@ brand.yml standard, providing functions to consistently access and apply brand
 colors, typography, and other visual elements across your R projects.")
     (license license:expat)))
 
+(define-public r-branchingprocess
+  (package
+    (name "r-branchingprocess")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "branchingprocess" version))
+       (sha256
+        (base32 "1xyc8adaw3sqsq2krmgkjnidplp8j3w0jfyzxl1vmgv9dw6iy0zd"))))
+    (properties `((upstream-name . "branchingprocess")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EpiForeSITE/branchingprocess")
+    (synopsis "Calculate Outbreak Probabilities for a Branching Process Model")
+    (description
+     "Quantify outbreak risk posed by individual importers of a transmissible
+pathogen.  Input parameters of negative binomial offspring distributions for the
+number of transmissions from each infected individual and initial number of
+infected.  Calculate probabilities of final outbreak size and generations of
+transmission, as described in Toth et al. (2015) <doi:10.3201/eid2108.150170>
+and Toth et al. (2016) <doi:10.1016/j.epidem.2016.04.002>.")
+    (license license:expat)))
+
 (define-public r-branching
   (package
     (name "r-branching")
@@ -8220,6 +8247,33 @@ Provides also functions to analyze and visualize attractors in Boolean networks
      "This package provides tools for optimal and approximate state estimation as well
 as network inference of Partially-Observed Boolean Dynamical Systems.")
     (license license:artistic2.0)))
+
+(define-public r-booklet
+  (package
+    (name "r-booklet")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "booklet" version))
+       (sha256
+        (base32 "1b845nlbbwzl59zpm4s6jypkx32y1farmiia6dj5whhi2am80vb2"))))
+    (properties `((upstream-name . "booklet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/alexym1/booklet")
+    (synopsis "Multivariate Exploratory Data Analysis")
+    (description
+     "Exploratory data analysis methods to summarize, visualize and describe datasets.
+ The main principal component methods are available, those with the largest
+potential in terms of applications: principal component analysis (PCA) when
+variables are quantitative, correspondence analysis (CA) when variables are
+categorical, Multiple Factor Analysis (MFA) when variables are structured in
+groups.")
+    (license license:expat)))
 
 (define-public r-boodist
   (package
@@ -14188,31 +14242,6 @@ cite BIOMASS', please use citation(\"BIOMASS\").  See more in the article of
 RÃ©jou-MÃ©chain et al. (2017) <doi:10.1111/2041-210X.12753>.")
     (license license:gpl2)))
 
-(define-public r-biomark
-  (package
-    (name "r-biomark")
-    (version "0.4.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BioMark" version))
-       (sha256
-        (base32 "1ifc72bayy3azbilajqqzl0is6z7l1zaadchcg3n8lhmjrv5sk3m"))))
-    (properties `((upstream-name . "BioMark")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-st r-pls r-mass r-glmnet))
-    (home-page "https://cran.r-project.org/package=BioMark")
-    (synopsis "Find Biomarkers in Two-Class Discrimination Problems")
-    (description
-     "Variable selection methods are provided for several classification methods: the
-lasso/elastic net, PCLDA, PLSDA, and several t-tests.  Two approaches for
-selecting cutoffs can be used, one based on the stability of model coefficients
-under perturbation, and the other on higher criticism.")
-    (license license:gpl2+)))
-
 (define-public r-biom2
   (package
     (name "r-biom2")
@@ -15076,13 +15105,13 @@ restrictions and clustering.")
 (define-public r-binspp
   (package
     (name "r-binspp")
-    (version "0.1.26")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binspp" version))
        (sha256
-        (base32 "0ah002lvimniwmwgn2syw9saxgzpdhs5vins0f3kb98p5k3gdxqk"))))
+        (base32 "01s7g0bjw54fcnnwwapzvpnqa6a9l94hz58d1lrgzywnyv2yf6z9"))))
     (properties `((upstream-name . "binspp")))
     (build-system r-build-system)
     (arguments
@@ -15097,6 +15126,7 @@ restrictions and clustering.")
                              r-rcpparmadillo
                              r-rcpp
                              r-mvtnorm
+                             r-fields
                              r-cluster))
     (home-page "https://github.com/tomasmrkvicka/binspp")
     (synopsis "Bayesian Inference for Neyman-Scott Point Processes")

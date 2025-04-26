@@ -5346,6 +5346,50 @@ friendly and easily customized with inline code evaluation and styling powered
 by the cli package.")
     (license license:expat)))
 
+(define-public r-asserthe
+  (package
+    (name "r-asserthe")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "assertHE" version))
+       (sha256
+        (base32 "0fn64i3m982y0x0d0v7cdpia1bpm8ai5q1grzkz739lhpf06hban"))))
+    (properties `((upstream-name . "assertHE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-waiter
+                             r-visnetwork
+                             r-shinyjs
+                             r-shiny
+                             r-rstudioapi
+                             r-roxygen2
+                             r-officer
+                             r-knitr
+                             r-igraph
+                             r-httr
+                             r-htmltools
+                             r-ggplot2
+                             r-flextable
+                             r-dplyr
+                             r-covr
+                             r-assertthat))
+    (home-page "https://dark-peak-analytics.github.io/assertHE/")
+    (synopsis
+     "Visualisation and Verification of Health Economic Decision Models")
+    (description
+     "Designed to help health economic modellers when building and reviewing models.
+The visualisation functions allow users to more easily review the network of
+functions in a project, and get lay summaries of them.  The asserts included are
+intended to check for common errors, thereby freeing up time for modellers to
+focus on tests specific to the individual model in development or review.  For
+more details see Smith and colleagues
+(2024)<doi:10.12688/wellcomeopenres.23180.1>.")
+    (license license:expat)))
+
 (define-public r-assert
   (package
     (name "r-assert")
@@ -6639,13 +6683,13 @@ dividers.")
 (define-public r-artma
   (package
     (name "r-artma")
-    (version "0.1.19")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "artma" version))
        (sha256
-        (base32 "1ssjx6j0sgadn19cbyybjzwqjdf9axbh68k23bs7db2za13wll3v"))))
+        (base32 "0q9w773jzlc3f91ddxf6yrpz2lg1lcq2nrx2n1k8x6fbgkbzws7c"))))
     (properties `((upstream-name . "artma")))
     (build-system r-build-system)
     (arguments
@@ -6653,10 +6697,12 @@ dividers.")
       #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-withr
+                             r-usethis
+                             r-tidyverse
                              r-stringr
                              r-rlang
+                             r-purrr
                              r-metafor
-                             r-logger
                              r-lintr
                              r-lifecycle
                              r-glue
@@ -9081,6 +9127,39 @@ integrates with arcgisutils to provide access to custom locators or private
 @code{ArcGIS} World Geocoder hosted on @code{ArcGIS} Enterprise'.  Learn more in
 the Geocode service API reference
 <https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-arcgis
+  (package
+    (name "r-arcgis")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arcgis" version))
+       (sha256
+        (base32 "0by6frijpxrg5q7rpjgxall8i6iq4cpjzdkdjq2xgnz3kk9mzz79"))))
+    (properties `((upstream-name . "arcgis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-httr2
+                             r-cli
+                             r-arcgisutils
+                             r-arcgisplaces
+                             r-arcgislayers
+                             r-arcgisgeocode))
+    (home-page "https://github.com/R-ArcGIS/arcgis/")
+    (synopsis "ArcGIS Location Services Meta-Package")
+    (description
+     "This package provides easy installation and loading of core @code{ArcGIS}
+location services packages arcgislayers', arcgisutils', arcgisgeocode', and
+arcgisplaces'.  Enabling developers to interact with spatial data and services
+from @code{ArcGIS} Online', @code{ArcGIS} Enterprise', and @code{ArcGIS}
+Platform'.  Learn more about the arcgis meta-package at
+<https://developers.arcgis.com/r-bridge/>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-arcgeocoder
@@ -11662,13 +11741,13 @@ between-subject, within-subject, and mixed one-way and two-way ANOVA.")
 (define-public r-ao
   (package
     (name "r-ao")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ao" version))
        (sha256
-        (base32 "0d7c7g4s0m46qhjrbpd4cfq61z5y3s9f5k69ramn16sc4l0ybsqw"))))
+        (base32 "1xlvcrdclibnaw9l1x0gmzmg05b5ls59rr46j5fq66d1ama5shzr"))))
     (properties `((upstream-name . "ao")))
     (build-system r-build-system)
     (arguments
@@ -11685,11 +11764,11 @@ between-subject, within-subject, and mixed one-way and two-way ANOVA.")
     (home-page "https://loelschlaeger.de/ao/")
     (synopsis "Alternating Optimization")
     (description
-     "Alternating optimization is an iterative procedure that optimizes a function by
-alternately performing restricted optimization over individual parameter
-subsets.  Instead of tackling joint optimization directly, it breaks the problem
-down into simpler sub-problems.  This approach can make optimization feasible
-when joint optimization is too difficult.")
+     "An iterative process that optimizes a function by alternately performing
+restricted optimization over parameter subsets.  Instead of joint optimization,
+it breaks the optimization problem down into simpler sub-problems.  This
+approach can make optimization feasible when joint optimization is too
+difficult.")
     (license license:gpl3)))
 
 (define-public r-anylib
@@ -21966,13 +22045,13 @@ A., Barberena R., Thomas M. G., Mendez C., Manning K. (2020)
 (define-public r-admtools
   (package
     (name "r-admtools")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admtools" version))
        (sha256
-        (base32 "08g8v5c6s2d0alpkpznh97xr5lfznmgr0w4zpplbv8m7apbk5mrq"))))
+        (base32 "1522hllir10pawlznw8zhkic4rximv3rfslxwvkfa6f4z37mspy3"))))
     (properties `((upstream-name . "admtools")))
     (build-system r-build-system)
     (arguments

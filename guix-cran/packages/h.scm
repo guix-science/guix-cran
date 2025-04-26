@@ -9440,13 +9440,13 @@ on many data sets and analyzed in: Gigerenzer, G., Todd, P. M., & the ABC Group
 (define-public r-heumilkr
   (package
     (name "r-heumilkr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heumilkr" version))
        (sha256
-        (base32 "0zpjmsk0vzz9x5nngznma3znpjlhjihxq0i9hrjx4nzbbbayf9qp"))))
+        (base32 "06k56jmxkw4nj3lijwmksy1nh3hlpwipysxla2lq65k4gffslasj"))))
     (properties `((upstream-name . "heumilkr")))
     (build-system r-build-system)
     (arguments
@@ -11222,13 +11222,13 @@ package.")
 (define-public r-healthyr-ai
   (package
     (name "r-healthyr-ai")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthyR.ai" version))
        (sha256
-        (base32 "1wfwjl1v91y16v6x2zzag8h85lvrq4m9jnh041s9gxmv0wpccnqr"))))
+        (base32 "04bv2vwskr37lcc1knb0v8bfn5qd286cmmhj5pzpyr797h5r7s1g"))))
     (properties `((upstream-name . "healthyR.ai")))
     (build-system r-build-system)
     (arguments
@@ -12152,6 +12152,37 @@ models, with the support of reproducible survival model building, validation,
 calibration, and comparison for high-dimensional data.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-hdmtd
+  (package
+    (name "r-hdmtd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdMTD" version))
+       (sha256
+        (base32 "08gpqb1pix1lh283r6a17hmj7cml32qqx15rb4cm8afiwaaanxb8"))))
+    (properties `((upstream-name . "hdMTD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-purrr r-dplyr))
+    (home-page "https://github.com/MaiaraGripp/hdMTD")
+    (synopsis
+     "Inference for High-Dimensional Mixture Transition Distribution Models")
+    (description
+     "Estimates parameters in Mixture Transition Distribution (MTD) models, a class of
+high-order Markov chains.  The set of relevant pasts (lags) is selected using
+either the Bayesian Information Criterion or the Forward Stepwise and Cut
+algorithms.  Other model parameters (e.g. transition probabilities and
+oscillations) can be estimated via maximum likelihood estimation or the
+Expectation-Maximization algorithm.  Additionally, @code{hdMTD} includes a
+perfect sampling algorithm that generates samples of an MTD model from its
+invariant distribution.  For theory, see Ost & Takahashi (2023)
+<http://jmlr.org/papers/v24/22-0266.html>.")
+    (license license:expat)))
 
 (define-public r-hdmt
   (package

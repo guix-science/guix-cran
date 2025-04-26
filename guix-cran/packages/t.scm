@@ -3227,13 +3227,13 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
 (define-public r-tspredit
   (package
     (name "r-tspredit")
-    (version "1.0.787")
+    (version "1.1.707")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tspredit" version))
        (sha256
-        (base32 "0zyfmwr8sbkn27xwvzdk3wl1ycnrjfdampx2sakqxirdrapn2w2b"))))
+        (base32 "1xfmr8y5503nc94c8s07j3s4zh485m8rss0wrbwqvxlnv8y5rhkn"))))
     (properties `((upstream-name . "tspredit")))
     (build-system r-build-system)
     (arguments
@@ -3247,22 +3247,20 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
                              r-dplyr
                              r-desctools
                              r-daltoolbox))
-    (home-page "https://github.com/cefet-rj-dal/daltoolbox")
-    (synopsis "Time Series Prediction Integrated Tuning")
+    (home-page "https://cefet-rj-dal.github.io/tspredit/")
+    (synopsis "Time Series Prediction with Integrated Tuning")
     (description
-     "Prediction is one of the most important activities while working with time
-series.  There are many alternative ways to model the time series.  Finding the
-right one is challenging to model them.  Most data-driven models (either
-statistical or machine learning) demand tuning.  Setting them right is mandatory
-for good predictions.  It is even more complex since time series prediction also
-demands choosing a data pre-processing that complies with the chosen model.
-Many time series frameworks have features to build and tune models.  The package
-differs as it provides a framework that seamlessly integrates tuning data
-pre-processing activities with the building of models.  The package provides
-functions for defining and conducting time series prediction, including data
-pre(post)processing, decomposition, tuning, modeling, prediction, and accuracy
-assessment.  More information is available at Izau et al.
-<doi:10.5753/sbbd.2022.224330>.")
+     "Time series prediction is a critical task in data analysis, requiring not only
+the selection of appropriate models, but also suitable data preprocessing and
+tuning strategies.  TS@code{PredIT} (Time Series Prediction with Integrated
+Tuning) is a framework that provides a seamless integration of data
+preprocessing, decomposition, model training, hyperparameter optimization, and
+evaluation.  Unlike other frameworks, TS@code{PredIT} emphasizes the
+co-optimization of both preprocessing and modeling steps, improving predictive
+performance.  It supports a variety of statistical and machine learning models,
+filtering techniques, outlier detection, data augmentation, and ensemble
+strategies.  More information is available in Salles et al.
+<doi:10.1007/978-3-662-68014-8_2>.")
     (license license:expat)))
 
 (define-public r-tspred
@@ -5756,13 +5754,13 @@ more information on the API, see
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "1044hqqvs757dqxriflddd367g90w3a7vg771z1wnmcvyj8v03vi"))))
+        (base32 "15nvzlbcz7k9xpfl3yydk97rfgpa6xvhjg1bsn9c499nl0yx9bqg"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (arguments
@@ -7286,6 +7284,30 @@ fitting trends along with a standardised approach for generating confidence and
 prediction intervals.")
     (license license:expat)))
 
+(define-public r-trendeval
+  (package
+    (name "r-trendeval")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trendeval" version))
+       (sha256
+        (base32 "1v8awy89vi17441pvmdnzpi0kmhc2xm9c1hag7j8pipj9v6jis6m"))))
+    (properties `((upstream-name . "trendeval")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick r-trending r-tibble r-rsample))
+    (home-page "https://github.com/reconverse/trendeval")
+    (synopsis "Evaluate Trending Models")
+    (description
+     "This package provides a coherent interface for evaluating models fit with the
+trending package.  This package is part of the RECON
+(<https://www.repidemicsconsortium.org/>) toolkit for outbreak analysis.")
+    (license license:expat)))
+
 (define-public r-trendchange
   (package
     (name "r-trendchange")
@@ -8802,6 +8824,33 @@ alleles from either parent are not transmitted to the offspring at the expected
 association studies.  Functions in this package are developed to account for
 this phenomenon using loglinear model and Transmission Disequilibrium Test
 (TDT).  Some population information can also be calculated.")
+    (license license:gpl2+)))
+
+(define-public r-trc
+  (package
+    (name "r-trc")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trc" version))
+       (sha256
+        (base32 "05xfidsgx9k8nj8asmx2nphghjdgiady904ak5s7300rrwhfhd1h"))))
+    (properties `((upstream-name . "trc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://sites.google.com/site/dhyeonyu/software")
+    (synopsis "Truncated Rank Correlation")
+    (description
+     "This package provides a new measure of similarity between a pair of mass
+spectrometry (MS) experiments, called truncated rank correlation (TRC).  To
+provide a robust metric of similarity in noisy high-dimensional data, TRC uses
+truncated top ranks (or top m-ranks) for calculating correlation.  Truncated
+rank correlation as a robust measure of test-retest reliability in mass
+spectrometry data.  For more details see Lim et al. (2019)
+<doi:10.1515/sagmb-2018-0056>.")
     (license license:gpl2+)))
 
 (define-public r-trawl
@@ -14538,6 +14587,35 @@ pretty in an RMarkdown document.  The package also provides wrappers function in
 the tableone package to make the results knit-able.")
     (license license:gpl3)))
 
+(define-public r-tlda
+  (package
+    (name "r-tlda")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tlda" version))
+       (sha256
+        (base32 "16dn5ywygnvfa2j783jrv9hk5cpw90srlccxicqacs57iaqhann8"))))
+    (properties `((upstream-name . "tlda")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lsoenning/tlda")
+    (synopsis "Tools for Language Data Analysis")
+    (description
+     "Support functions and datasets to facilitate the analysis of linguistic data.
+The current focus is on the calculation of corpus-linguistic dispersion measures
+as described in Gries (2021) <doi:10.1007/978-3-030-46216-1_5> and Soenning
+(2025) <doi:10.3366/cor.2025.0326>.  The most commonly used parts-based indices
+are implemented, including different formulas and modifications that are found
+in the literature, with the additional option to obtain frequency-adjusted
+scores.  Dispersion scores can be computed based on individual count variables
+or a term-document matrix.")
+    (license license:expat)))
+
 (define-public r-tlcar
   (package
     (name "r-tlcar")
@@ -16744,13 +16822,13 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.30.2")
+    (version "0.31.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tiledb" version))
        (sha256
-        (base32 "0b6130y039ppc5b748rzhbivrd44z5rpbnxw8cqdfivfcbfxv734"))))
+        (base32 "057wrci3nznl1wy0cdlw3xan1z7f0p45rg6slgl1vxnncbqcqc3q"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (arguments

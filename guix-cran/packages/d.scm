@@ -10736,13 +10736,13 @@ reports that support these three tasks.")
 (define-public r-dlmtree
   (package
     (name "r-dlmtree")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dlmtree" version))
        (sha256
-        (base32 "01nzhi1ysbvfl8f3asba9l2n72aidk632njv5m50k9xjfcjhayqb"))))
+        (base32 "1yjzbg8pnw75ynnbb83vdww7rn557q5pgi27amb9pmjaplxv3y6a"))))
     (properties `((upstream-name . "dlmtree")))
     (build-system r-build-system)
     (arguments
@@ -10755,8 +10755,10 @@ reports that support these three tasks.")
                              r-rcpparmadillo
                              r-rcpp
                              r-mgcv
+                             r-ggridges
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-coda))
     (native-inputs (list gfortran))
     (home-page "https://github.com/danielmork/dlmtree")
     (synopsis "Bayesian Treed Distributed Lag Models")
@@ -10768,7 +10770,7 @@ treed distributed lag nonlinear models (Mork and Wilson, 2022)
 <doi:10.1093/biostatistics/kxaa051>; heterogeneous DLMs (Mork, et.  al., 2024)
 <doi:10.1080/01621459.2023.2258595>; monotone DLMs (Mork and Wilson, 2024)
 <doi:10.1214/23-BA1412>.  The package also includes visualization tools and a
-shiny interface to help interpret results.")
+shiny interface to check model convergence and to help interpret results.")
     (license license:gpl3+)))
 
 (define-public r-dlmtool
@@ -22149,18 +22151,19 @@ as described in Visser and Vorst (2022) <DOI:10.1163/27723194-bja10014>.")
 (define-public r-dendrometry
   (package
     (name "r-dendrometry")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dendrometry" version))
        (sha256
-        (base32 "0zxavg34mmxkl5i5mi3x0g1m8pd4f9vc70906iazmmvimvvhp22c"))))
+        (base32 "1afxnf4lpfwyzbi0ll9c7mlklv5d1m872prfnx4mndrwcvfhv071"))))
     (properties `((upstream-name . "dendrometry")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-forestfit))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dendrometry")
     (synopsis "Forest Estimations and Dendrometric Computations")
@@ -31608,35 +31611,39 @@ stochastic disability-adjusted life year (DALY) calculation.")
 (define-public r-daltoolboxdp
   (package
     (name "r-daltoolboxdp")
-    (version "1.0.777")
+    (version "1.0.787")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolboxdp" version))
        (sha256
-        (base32 "0qb0wmfwcnx861ib9cvgcs53dnb8wyigj3bv123xp3npz874lm7f"))))
+        (base32 "1h8g4zr8idpa7zk86jqww6xll6dx31il9rgakxy4va649k7n3wdg"))))
     (properties `((upstream-name . "daltoolboxdp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-smotefamily
+                             r-reticulate
                              r-leaps
                              r-glmnet
                              r-fselector
                              r-doby
                              r-daltoolbox))
-    (home-page "https://github.com/cefet-rj-dal/daltoolboxdp")
-    (synopsis "Data Pre-Processing Extensions")
+    (home-page "https://cefet-rj-dal.github.io/daltoolboxdp/")
+    (synopsis "Python-Based Extensions for Data Analytics Workflows")
     (description
-     "An important aspect of data analytics is related to data management support for
-artificial intelligence.  It is related to preparing data correctly.  This
-package provides extensions to support data preparation in terms of both data
-sampling and data engineering.  Overall, the package provides researchers with a
-comprehensive set of functionalities for data science based on experiment lines,
-promoting ease of use, extensibility, and integration with various tools and
-libraries.  Information on Experiment Line is based on Ogasawara et al. (2009)
-<doi:10.1007/978-3-642-02279-1_20>.")
+     "This package provides Python-based extensions to enhance data analytics
+workflows, particularly for tasks involving data preprocessing and predictive
+modeling.  Includes tools for data sampling, transformation, feature selection,
+balancing strategies (e.g., SMOTE), and model construction.  These capabilities
+leverage Python libraries via the reticulate interface, enabling seamless
+integration with a broader machine learning ecosystem.  Supports instance
+selection and hybrid workflows that combine R and Python functionalities for
+flexible and reproducible analytical pipelines.  The architecture is inspired by
+the Experiment Lines approach, which promotes modularity, extensibility, and
+interoperability across tools.  More information on Experiment Lines is
+available in Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
     (license license:expat)))
 
 (define-public r-daltoolbox

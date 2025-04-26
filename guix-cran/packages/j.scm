@@ -852,13 +852,13 @@ information published on J-STAGE <https://www.jstage.jst.go.jp/browse/-char/ja>.
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.3.11")
+    (version "1.3.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstable" version))
        (sha256
-        (base32 "0w3vs6xdsvb3hbc9my3qn1sgl0r0nl9k4y3ajqzk0k5a4xpljjk1"))))
+        (base32 "1h273d7xcypmchmlbczv4cmkvynhbjgvm4vh04crv5jd4gwn0qkl"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (arguments
@@ -870,6 +870,7 @@ information published on J-STAGE <https://www.jstage.jst.go.jp/browse/-char/ja>.
                              r-survey
                              r-rlang
                              r-purrr
+                             r-nortest
                              r-magrittr
                              r-lmertest
                              r-lme4
@@ -1077,13 +1078,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.6.4")
+    (version "1.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "1spnfvpj2w6x780lvmbl5llxxpglbxh73w3jy825bd02fhzs3yd6"))))
+        (base32 "0sabxwzw2xpaykdsbgzc17c1qzg7l8hmg1jnnpl3w3jvp3bvj08i"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (arguments
@@ -1112,6 +1113,7 @@ available at the following URL:
                              r-labelled
                              r-jstable
                              r-jskm
+                             r-htmltools
                              r-hmisc
                              r-haven
                              r-ggrepel
@@ -1123,7 +1125,8 @@ available at the following URL:
                              r-flextable
                              r-epidisplay
                              r-dt
-                             r-data-table))
+                             r-data-table
+                             r-bslib))
     (native-inputs (list r-knitr))
     (home-page "https://jinseob2kim.github.io/jsmodule/")
     (synopsis "'RStudio' Addins and 'Shiny' Modules for Medical Research")
@@ -4023,13 +4026,13 @@ series scores).  The latest version of the cruncher can be downloaded here:
 (define-public r-jcvrisk
   (package
     (name "r-jcvrisk")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Jcvrisk" version))
        (sha256
-        (base32 "1f01x7vhznn89rgrxw3hcrkm6jl0pkhp9r4sjcq17pnw40zsddb2"))))
+        (base32 "07qjcv7rmdhzvq48n9df50s12hk364nhx6j1nqydbvvqirr6lqhw"))))
     (properties `((upstream-name . "Jcvrisk")))
     (build-system r-build-system)
     (arguments

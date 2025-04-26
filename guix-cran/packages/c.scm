@@ -6792,13 +6792,13 @@ the number of cross-matches and a p-value.  See Rosenbaum (2005)
 (define-public r-crossmap
   (package
     (name "r-crossmap")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crossmap" version))
        (sha256
-        (base32 "0lb3zwlc86k04vjdc0k5wcp8j5p963hkjsnh0070zazmznc0ynfp"))))
+        (base32 "1jya9rfpai6irzx01j1fi8nafpf68hlf3mh11c7gyn7v7im40r9h"))))
     (properties `((upstream-name . "crossmap")))
     (build-system r-build-system)
     (arguments
@@ -15294,13 +15294,13 @@ and Remillard (2023) <@code{arXiv:2301.13408>}.")
 (define-public r-copulagamm
   (package
     (name "r-copulagamm")
-    (version "0.4.1")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopulaGAMM" version))
        (sha256
-        (base32 "1n5nbmmqz3jynqpv53kwha5s7h9h3br7y7b6798mskadvqc2x90k"))))
+        (base32 "1qzsxd6wjh8dhcbradax9bm2gyvi6lh9r7xyqahsxwmrhh0bsq63"))))
     (properties `((upstream-name . "CopulaGAMM")))
     (build-system r-build-system)
     (arguments
@@ -17997,6 +17997,49 @@ Grid, Table, Search, and Filter can be used to produce a showcase page or
 gallery contained within a static or interactive R Markdown page.")
     (license license:expat)))
 
+(define-public r-connector
+  (package
+    (name "r-connector")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "connector" version))
+       (sha256
+        (base32 "1d6kq5wvp5q182ykrr5nflhqnli783s06haj5wg5clmbbhhhhm76"))))
+    (properties `((upstream-name . "connector")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zephyr
+                             r-yaml
+                             r-writexl
+                             r-vroom
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-r6
+                             r-purrr
+                             r-jsonlite
+                             r-haven
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-dbi
+                             r-cli
+                             r-checkmate
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/novonordisk-opensource/connector/")
+    (synopsis "Streamlining Data Access in Clinical Research")
+    (description
+     "This package provides a consistent interface for connecting R to various data
+sources including file systems and databases.  Designed for clinical research,
+connector streamlines access to ADAM', SDTM for example.  It helps to deal with
+multiple data formats through a standardized API and centralized configuration.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-connectomoda
   (package
     (name "r-connectomoda")
@@ -19082,6 +19125,32 @@ Wiernik, Wilmot, Davison, and Ones (2020) <doi:10.1037/met0000305>.  Sensitivity
 analyses to aid in interpreting criterion profile analysis results are also
 included.")
     (license license:gpl3+)))
+
+(define-public r-configular
+  (package
+    (name "r-configular")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "configulaR" version))
+       (sha256
+        (base32 "1j0d12plp3ysqr3wnaik7i6zx302d5scxdlfmngsjkagfm2asjps"))))
+    (properties `((upstream-name . "configulaR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-magrittr r-here r-assertthat))
+    (home-page "https://dataupsurge.github.io/configulaR/")
+    (synopsis "Manage Application Settings via '.env' or '.ini' Files")
+    (description
+     "This package provides a simple way to manage application settings by loading
+configuration values from .env or .ini files.  It supports default values, type
+casting, and environment variable overrides, enabling a clean separation of
+configuration from code.  Ideal for managing credentials, API keys, and
+deployment-specific settings.")
+    (license license:expat)))
 
 (define-public r-configr
   (package
@@ -36691,13 +36760,13 @@ finding.  Howard Y. Chang(2019) <doi:10.1038/s41587-019-0206-z>.")
 (define-public r-chromote
   (package
     (name "r-chromote")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chromote" version))
        (sha256
-        (base32 "1rwhd97g6ikrlavkn0bj6fzscyfzgbskavf3xvlh35rr71zjjilb"))))
+        (base32 "1dalnd0pgil0phpw1bb0dfsbhzn71b59jkf84k2s7pm20xjsgjmh"))))
     (properties `((upstream-name . "chromote")))
     (build-system r-build-system)
     (arguments
@@ -36722,7 +36791,7 @@ finding.  Howard Y. Chang(2019) <doi:10.1038/s41587-019-0206-z>.")
     (description
      "An implementation of the Chrome @code{DevTools} Protocol', for controlling a
 headless Chrome web browser.")
-    (license license:gpl2)))
+    (license license:expat)))
 
 (define-public r-chromer
   (package
@@ -39132,6 +39201,33 @@ with a single parameter.  In addition to generating numeric ratings,
 metrics including word frequency (with optional corpus input), lexical coverage
 (with customizable vocabulary size and test basis), Zipf metric, Levenshtein
 distance, and semantic transparency.")
+    (license license:expat)))
+
+(define-public r-chatllm
+  (package
+    (name "r-chatllm")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chatLLM" version))
+       (sha256
+        (base32 "1lmy0ay5qvhk98py3mdf4cvb6hsv103n0l4cjf6ry6jzcz928yzy"))))
+    (properties `((upstream-name . "chatLLM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr))
+    (home-page "https://github.com/knowusuboaky/chatLLM")
+    (synopsis "Flexible Interface for 'LLM' API Interactions")
+    (description
+     "This package provides a flexible interface for interacting with Large Language
+Model ('LLM') providers such as @code{OpenAI} (<https://openai.com/>), Groq
+(<https://groq.com/>), and Anthropic (<https://www.anthropic.com/>).  Supports
+both synchronous and asynchronous API calls with features such as retry logic,
+support for additional parameters, and multi-message handling to streamline
+integration with state-of-the-art LLM APIs.")
     (license license:expat)))
 
 (define-public r-chatgpt
@@ -44747,6 +44843,41 @@ general reward distributions.  Reference: Hock Peng Chan and Shouri Hu (2018)
 <@code{arXiv:1805.11793>}.")
     (license license:gpl2)))
 
+(define-public r-cbsreps
+  (package
+    (name "r-cbsreps")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cbsREPS" version))
+       (sha256
+        (base32 "1w60mqxx2wkxa6094f9rfj6hfrvaglxdq8slfp77zivfm7h9h12i"))))
+    (properties `((upstream-name . "cbsREPS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-kfas r-dplyr r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cbsREPS")
+    (synopsis
+     "Hedonic and Multilateral Index Methods for Real Estate Price Statistics")
+    (description
+     "Compute price indices using various Hedonic and multilateral methods, including
+Laspeyres, Paasche, Fisher, and HMTS (Hedonic Multilateral Time series
+re-estimation with splicing).  The central function
+@code{calculate_price_index()} offers a unified interface for running these
+methods on structured datasets.  This package is designed to support index
+construction workflows for real estate and other domains where quality-adjusted
+price comparisons over time are essential.  The development of this package was
+funded by Eurostat and Statistics Netherlands (CBS), and carried out by
+Statistics Netherlands.  The HMTS method implemented here is described in
+Ishaak, Ouwehand and RemÃ¸y (2024) <doi:10.1177/0282423X241246617>.  For broader
+methodological context, see Eurostat (2013, ISBN:978-92-79-25984-5,
+<doi:10.2785/34007>).")
+    (license license:gpl2)))
+
 (define-public r-cbsr
   (package
     (name "r-cbsr")
@@ -45153,6 +45284,40 @@ splines\" Under review.")
      "This package provides a set of functions that helps you to generate descriptive
 statistics based on the variable types.")
     (license license:gpl2)))
+
+(define-public r-cbamodel
+  (package
+    (name "r-cbamodel")
+    (version "0.0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CBAModel" version))
+       (sha256
+        (base32 "12vdxy8ls48gv275s3ydsp3xhdy4c2clr7a94h9jqn78hrf4cvyi"))))
+    (properties `((upstream-name . "CBAModel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pracma))
+    (home-page "https://cran.r-project.org/package=CBAModel")
+    (synopsis
+     "Stochastic 3D Structure Model for Binder-Conductive Additive Phase")
+    (description
+     "Simulation of the stochastic 3D structure model for the nanoporous
+binder-conductive additive phase in battery cathodes introduced in P.
+GrÃ¤fensteiner, M. Osenberg, A. Hilger, N. Bohn, J. R. Binder, I. Manke, V.
+Schmidt, M. Neumann (2024) <doi:10.48550/@code{arXiv.2409.11080>}.  The model is
+developed for a binder-conductive additive phase of consisting of carbon black,
+polyvinylidene difluoride binder and graphite particles.  For its stochastic 3D
+modeling, a three-step procedure based on methods from stochastic geometry is
+used.  First, the graphite particles are described by a Boolean model with
+ellipsoidal grains.  Second, the mixture of carbon black and binder is modeled
+by an excursion set of a Gaussian random field in the complement of the graphite
+particles.  Third, large pore regions within the mixture of carbon black and
+binder are described by a Boolean model with spherical grains.")
+    (license license:gpl3+)))
 
 (define-public r-cba
   (package
@@ -45654,13 +45819,13 @@ paper by Sachs, Jonzon, Gabriel, and SjÃ¶lander (2022)
 (define-public r-causalmodels
   (package
     (name "r-causalmodels")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalModels" version))
        (sha256
-        (base32 "19m1qfzssrwmsxiiyqiqby102qmxxcmbyxhggd9bb44z2iicf8cl"))))
+        (base32 "06g5la8fgphg5syiscpy6yhyaz5qqm8wd59zizvkiam164iqm7al"))))
     (properties `((upstream-name . "CausalModels")))
     (build-system r-build-system)
     (arguments
@@ -45674,8 +45839,7 @@ paper by Sachs, Jonzon, Gabriel, and SjÃ¶lander (2022)
 such as standardization, IP weighting, propensity matching, outcome regression,
 and doubly-robust estimators.  Estimates of the average treatment effects from
 each model are given with the standard error and a 95% Wald confidence interval
-(Hernan, Robins (2020)
-<https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/>).")
+(Hernan, Robins (2020) <https://miguelhernan.org/whatifbook/>).")
     (license license:gpl3)))
 
 (define-public r-causalmetar

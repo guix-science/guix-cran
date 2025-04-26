@@ -7482,13 +7482,13 @@ Cousineau & Laurencelle (2016) <doi:10.1037/met0000055>, Cousineau & O'Brien
 (define-public r-super
   (package
     (name "r-super")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "super" version))
        (sha256
-        (base32 "1d4cmxj1bnh2r89gpdwgb5z97p4083gzmayz75j9djs5545m51y6"))))
+        (base32 "149jfg68yhk6i2f1x49wj1cw3g6xxipsf903cljiisfd43xql9xq"))))
     (properties `((upstream-name . "super")))
     (build-system r-build-system)
     (arguments
@@ -17839,13 +17839,13 @@ criteria proposed by Jayasankar et al.,2021
 (define-public r-ssp
   (package
     (name "r-ssp")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSP" version))
        (sha256
-        (base32 "0ccg81rsjki1fcqvj6lgmmmy5yw1gxy8khajl1i80qyi4v7ny9hk"))))
+        (base32 "0x1wm5mali8rhnxqhx4z9is5f65af7yvin4lgkazx4wqc19h68b6"))))
     (properties `((upstream-name . "SSP")))
     (build-system r-build-system)
     (arguments
@@ -17856,13 +17856,13 @@ criteria proposed by Jayasankar et al.,2021
     (home-page "https://github.com/edlinguerra/SSP")
     (synopsis "Simulated Sampling Procedure for Community Ecology")
     (description
-     "Simulation-based sampling protocol (SSP) is an R package design to estimate
-sampling effort in studies of ecological communities based on the definition of
-pseudo-multivariate standard error (@code{MultSE}) (Anderson & Santana-Garcon,
-2015) <doi:10.1111/ele.12385> and simulation of ecological data.  The
-theoretical background is described in Guerra-Castro et al. (2020)
-<doi:10.1101/2020.03.19.996991>.")
-    (license license:gpl2)))
+     "The Simulation-based Sampling Protocol (SSP) is an R package designed to
+estimate sampling effort in studies of ecological communities.  It is based on
+the concept of pseudo-multivariate standard error (@code{MultSE}) (Anderson &
+Santana-Garcon, 2015, <doi:10.1111/ele.12385>) and the simulation of ecological
+data.  The theoretical background is described in Guerra-Castro et al. (2020,
+<doi:10.1111/ecog.05284>).")
+    (license license:gpl3)))
 
 (define-public r-ssosvm
   (package
@@ -21621,6 +21621,34 @@ statistics for regression analysis.  Furthermore, the outer ellipse flags
 potential outliers.  Multiple groups can be compared in terms of centers and
 spreads as illustrated in the examples.")
     (license license:gpl3)))
+
+(define-public r-spotr
+  (package
+    (name "r-spotr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spotr" version))
+       (sha256
+        (base32 "0dv2pxi7khpg3ihyfl9ibxppmyd80x1865ym90yjlwcn3fic71hs"))))
+    (properties `((upstream-name . "spotr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-mgcv))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=spotr")
+    (synopsis
+     "Estimate Spatial Population Indices from Ecological Abundance Data")
+    (description
+     "Compute relative or absolute population trends across space and time using
+predictions from models fitted to ecological population abundance data, as
+described in Knape (2025) <doi:10.1016/j.ecolind.2025.113435>.  The package
+supports models fitted by mgcv or brms', and draws from posterior predictive
+distributions.")
+    (license license:gpl3+)))
 
 (define-public r-spotoroo
   (package
@@ -38293,21 +38321,20 @@ described in Jetka et al. (2019) <doi:10.1371/journal.pcbi.1007132>.")
 (define-public r-sleev
   (package
     (name "r-sleev")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sleev" version))
        (sha256
-        (base32 "1mqa8nkx6f9hwvk0mg4b3r8jgxz1b0xlmxjbd51mp0bxv3pqlj8w"))))
+        (base32 "0v5rxrr51y9kvppls7256x0xzd0lwhw327y2cz196854g1y9dd8x"))))
     (properties `((upstream-name . "sleev")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=sleev")
+    (home-page "https://github.com/dragontaoran/sleev")
     (synopsis "Semiparametric Likelihood Estimation with Errors in Variables")
     (description
      "Efficient regression analysis under general two-phase sampling, where Phase I
@@ -38846,13 +38873,13 @@ and @code{DeYoung} (1987) <https://archive.org/details/DTIC_ADA182110>.")
 (define-public r-skpr
   (package
     (name "r-skpr")
-    (version "1.7.1")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skpr" version))
        (sha256
-        (base32 "1g19pq73map54sypkarvyw191zgf4cbmr1hskr8amg75wvw8mg11"))))
+        (base32 "0zchh94687lpqm6rgxqs9i94jqviqb7h3ldzfadwj5v7pmib7y10"))))
     (properties `((upstream-name . "skpr")))
     (build-system r-build-system)
     (arguments
@@ -38860,7 +38887,6 @@ and @code{DeYoung} (1987) <https://archive.org/details/DTIC_ADA182110>.")
       #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-survival
-                             r-scales
                              r-rcppeigen
                              r-rcpp
                              r-progressr
@@ -38869,11 +38895,13 @@ and @code{DeYoung} (1987) <https://archive.org/details/DTIC_ADA182110>.")
                              r-lmertest
                              r-lme4
                              r-iterators
+                             r-geometry
                              r-future
                              r-foreach
                              r-dorng
                              r-doparallel
                              r-dofuture
+                             r-digest
                              r-car))
     (home-page "https://github.com/tylermorganwall/skpr")
     (synopsis
@@ -65539,6 +65567,33 @@ extract colour palettes from images, as well for the conversion of images
 between colour spaces.")
     (license license:gpl3)))
 
+(define-public r-schematic
+  (package
+    (name "r-schematic")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "schematic" version))
+       (sha256
+        (base32 "1p81lh09h39d4c4jrrxxyn9nzmj8spzx5gq7294lkwj2gjcyvwnf"))))
+    (properties `((upstream-name . "schematic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect r-rlang r-purrr r-glue r-cli))
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://github.com/whipson/schematic")
+    (synopsis "Tidy Schema Validation for Data Frames")
+    (description
+     "Validate data.frames against schemas to ensure that data matches expectations.
+Define schemas using tidyselect and predicate functions for type consistency,
+nullability, and more.  Schema failure messages can be tailored for
+non-technical users and are ideal for user-facing applications such as in shiny
+or plumber'.")
+    (license license:expat)))
+
 (define-public r-sched
   (package
     (name "r-sched")
@@ -72501,13 +72556,13 @@ which based on Wilcox (1979) <doi:10.1177/001316447903900302> and Kleinman
 (define-public r-sae4health
   (package
     (name "r-sae4health")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sae4health" version))
        (sha256
-        (base32 "1isysgdjc3l7xl0mh7av5g81lw3azpmsap1csc94sshasg3zybqn"))))
+        (base32 "0zw6qrsfq2giqi6d0yk3hl3mm0pd8kfprvvi7ywsfkkxzb7v4ifs"))))
     (properties `((upstream-name . "sae4health")))
     (build-system r-build-system)
     (arguments

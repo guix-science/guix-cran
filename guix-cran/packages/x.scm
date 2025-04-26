@@ -1365,6 +1365,33 @@ human readable format.")
 file formats.")
     (license license:gpl3)))
 
+(define-public r-xlsform2word
+  (package
+    (name "r-xlsform2word")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xlsform2word" version))
+       (sha256
+        (base32 "16ycqk38p79a58isjn2m717vd3xr24mi0f25kmj2m1glpvbg4mny"))))
+    (properties `((upstream-name . "xlsform2word")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-rlang r-readxl r-officer r-dplyr))
+    (home-page "https://cran.r-project.org/package=xlsform2word")
+    (synopsis "Convert 'XLSForm' to Structured 'Word' Document")
+    (description
+     "Converts an XLSForm (survey in Excel') into a well-structured Word document,
+including sections, skip logic, options, and question labels.  Designed to
+support survey documentation, training materials, and data collection workflows.
+ The package was developed based on field experience with XLSForm and
+humanitarian operations, aiming to streamline documentation and enhance training
+efficiency.")
+    (license license:expat)))
+
 (define-public r-xls
   (package
     (name "r-xls")
@@ -2242,13 +2269,13 @@ render \"DVI\" objects.")
 (define-public r-xdnuts
   (package
     (name "r-xdnuts")
-    (version "1.5.6")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XDNUTS" version))
        (sha256
-        (base32 "06w0jacf062ba5ifni2y975m5135gg65vhhcghdwk229ngvpxpg1"))))
+        (base32 "01xj8pzvgynr4h6s98ny2607kr1cn8jc4yvjnd2b0y7b1fcybnbz"))))
     (properties `((upstream-name . "XDNUTS")))
     (build-system r-build-system)
     (arguments

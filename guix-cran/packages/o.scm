@@ -5018,13 +5018,13 @@ the portfolio performance as presented by Gosling et al. (2020)
 (define-public r-optimizer
   (package
     (name "r-optimizer")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimizeR" version))
        (sha256
-        (base32 "0n3rl7kp5gy2sfa6hyfl230xqf7k9skr7ais01klmjmjmg71dmlg"))))
+        (base32 "1nymalz79mwsv7mvl7a5l8cllyls6rwwiq2aj682wf0mpzh12gcv"))))
     (properties `((upstream-name . "optimizeR")))
     (build-system r-build-system)
     (arguments
@@ -5033,6 +5033,7 @@ the portfolio performance as presented by Gosling et al. (2020)
     (propagated-inputs (list r-ucminf
                              r-testfunctions
                              r-r6
+                             r-pracma
                              r-oeli
                              r-lbfgsb3c
                              r-cli
@@ -6350,13 +6351,13 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.14")
+    (version "1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "0hzdvl2sssr0a3m8mjfkirbxjn2a0izaq56dv0x228v5h1k13h2p"))))
+        (base32 "1hjc117zzkn9wnr90izajq22xc86r799awi7v4fgkp7jfl3prm5p"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (arguments
@@ -7775,6 +7776,33 @@ subsequent papers.")
 of bio-medical data.")
     (license license:gpl3)))
 
+(define-public r-opcreg
+  (package
+    (name "r-opcreg")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OPCreg" version))
+       (sha256
+        (base32 "08792h6zzp27s061c3y3mhh32sbh71izn3arfjsdfnxyd15qglfa"))))
+    (properties `((upstream-name . "OPCreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-mass r-car))
+    (home-page "https://cran.r-project.org/package=OPCreg")
+    (synopsis "Online Principal Component Regression for Online Datasets")
+    (description
+     "The online principal component regression method can process the online data
+set.  OPCreg implements the online principal component regression method, which
+is specifically designed to process online datasets efficiently.  This method is
+particularly useful for handling large-scale, streaming data where traditional
+batch processing methods may be computationally infeasible.The philosophy of the
+package is described in Guo (2025) <doi:10.1016/j.physa.2024.130308>.")
+    (license license:gpl3)))
+
 (define-public r-opc
   (package
     (name "r-opc")
@@ -8871,6 +8899,46 @@ together with extensive diagnostic functions.  It is useful as a baseline for
 machine learning models and the rules are often helpful heuristics.")
     (license license:expat)))
 
+(define-public r-onemap
+  (package
+    (name "r-onemap")
+    (version "3.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onemap" version))
+       (sha256
+        (base32 "0vmvdmxqzrw0ga92yjhlixsd196wj0gw5f79i2457jhi7hv884x4"))))
+    (properties `((upstream-name . "onemap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vcfr
+                             r-tidyr
+                             r-smacof
+                             r-reshape2
+                             r-rebus
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-princurve
+                             r-plotly
+                             r-htmlwidgets
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-dendextend))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cristianetaniguti/onemap")
+    (synopsis "Construction of Genetic Maps in Experimental Crosses")
+    (description
+     "Analysis of molecular marker data from model and non-model systems.  For the
+later, it allows statistical analysis by simultaneously estimating linkage and
+linkage phases (genetic map construction) according to Wu and colleagues (2002)
+<doi:10.1006/tpbi.2002.1577>.  All analysis are based on multi-point approaches
+using hidden Markov models.")
+    (license license:gpl3)))
+
 (define-public r-onelogin
   (package
     (name "r-onelogin")
@@ -9340,13 +9408,13 @@ outcomes.")
 (define-public r-oncobayes2
   (package
     (name "r-oncobayes2")
-    (version "0.9-2")
+    (version "0.9-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OncoBayes2" version))
        (sha256
-        (base32 "0m7r26xc14izq8wsc7m8b12knv0nlrdxl0y230pwvc7jnx45d3pz"))))
+        (base32 "014w5j1b01nfysxnx2sibc9hs08dp68y9yyqd6b50gqw8r4zpmbx"))))
     (properties `((upstream-name . "OncoBayes2")))
     (build-system r-build-system)
     (arguments
@@ -11681,19 +11749,21 @@ estimated likelihood method analyzing a secondary outcome in case-cohort data
 (define-public r-odrf
   (package
     (name "r-odrf")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ODRF" version))
        (sha256
-        (base32 "017z7yr4r864cxvqyn14fxgmc2rgq01c95sbcmp6qg8dj03bcz53"))))
+        (base32 "1k02cr1plyy2zd0wzsbmnwc0075rs0mw5xcaqrsmwmk2n87b7ahr"))))
     (properties `((upstream-name . "ODRF")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-rpart
+                             r-rlang
+                             r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-pursuit
@@ -11702,6 +11772,7 @@ estimated likelihood method analyzing a secondary outcome in case-cohort data
                              r-magrittr
                              r-lifecycle
                              r-glue
+                             r-glmnet
                              r-foreach
                              r-doparallel))
     (native-inputs (list r-knitr))
@@ -11711,10 +11782,13 @@ estimated likelihood method analyzing a secondary outcome in case-cohort data
     (description
      "The oblique decision tree (ODT) uses linear combinations of predictors as
 partitioning variables in a decision tree.  Oblique Decision Random Forest
-(ODRF) is an ensemble of multiple ODTs generated by feature bagging.  Both can
-be used for classification and regression as supplements to the classical CART
-of Breiman (1984) <DOI:10.1201/9781315139470> and Random Forest of Breiman
-(2001) <DOI:10.1023/A:1010933404324> respectively.")
+(ODRF) is an ensemble of multiple ODTs generated by feature bagging.  Oblique
+Decision Boosting Tree (ODBT) applies feature bagging during the training
+process of ODT-based boosting trees to ensemble multiple boosting trees.  All
+three methods can be used for classification and regression, and ODT and ODRF
+serve as supplements to the classical CART of Breiman (1984)
+<DOI:10.1201/9781315139470> and Random Forest of Breiman (2001)
+<DOI:10.1023/A:1010933404324> respectively.")
     (license license:gpl3+)))
 
 (define-public r-odr
