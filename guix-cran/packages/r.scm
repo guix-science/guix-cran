@@ -4352,55 +4352,6 @@ of alleles due to low coverage.  Moreover, it increases the statistical power to
 uncover sequencing or alignment errors <doi:10.1093/plphys/kiad191>.")
     (license license:gpl2+)))
 
-(define-public r-rties
-  (package
-    (name "r-rties")
-    (version "5.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rties" version))
-       (sha256
-        (base32 "1mxgzrlf41hhawab2664az151fmmhm8ivnnimmzm538yliilc0b7"))))
-    (properties `((upstream-name . "rties")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-plyr
-                             r-nnet
-                             r-nlme
-                             r-mclust
-                             r-mass
-                             r-lme4
-                             r-lattice
-                             r-interactions
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr
-                             r-desolve
-                             r-desctools
-                             r-datacombine))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rties")
-    (synopsis "Modeling Interpersonal Dynamics")
-    (description
-     "The name of this package grew out of our research on temporal interpersonal
-emotion systems (TIES), hence rties'.  It provides tools for using a set of
-models to investigate temporal processes in bivariate (e.g., dyadic) systems.
-The general approach is to model, one dyad at a time, the dynamics of a variable
-that is assessed repeatedly from both partners, extract the parameter estimates
-for each dyad, and then use those parameter estimates as input to a latent
-profile analysis to extract groups of dyads with qualitatively distinct
-dynamics.  Finally, the profile memberships can be used to either predict, or be
-predicted by, another variable of interest.  Currently, 2 models are supported:
-1) inertia-coordination, and 2) a coupled-oscillator.  Extended documentation is
-provided in vignettes.  Theoretical background can be found in Butler (2011)
-<doi:10.1177/1088868311411164> and Butler & Barnard (2019)
-<doi:10.1097/PSY.0000000000000703>.")
-    (license license:gpl3)))
-
 (define-public r-rtide
   (package
     (name "r-rtide")
@@ -33557,19 +33508,20 @@ forms for both the recurrent event process and the terminal event.")
 (define-public r-rerddapxtracto
   (package
     (name "r-rerddapxtracto")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rerddapXtracto" version))
        (sha256
-        (base32 "139zavwyws08ryf0bbgxaxckp8i2y6bmwx33lfkyi6pj3kaybmbb"))))
+        (base32 "1vfqnnyj3j453h4mf5p1jhk33827c8y9qqi6ya9k437zc82529cl"))))
     (properties `((upstream-name . "rerddapXtracto")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sp
+    (propagated-inputs (list r-tibble
+                             r-sp
                              r-sf
                              r-rerddap
                              r-readr

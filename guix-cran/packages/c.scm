@@ -2629,13 +2629,13 @@ of GPU-accelerated machine learning libraries powered by CUDA
 (define-public r-cucumber
   (package
     (name "r-cucumber")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cucumber" version))
        (sha256
-        (base32 "0swsx0kmgs2vc53c27sfk3yzqbsqrnrj67vrycpcpjmydj94j6r6"))))
+        (base32 "1k2q38zy939dqvy9nzwb267g38039kl5pzsaxz1xfvgzi91ks27i"))))
     (properties `((upstream-name . "cucumber")))
     (build-system r-build-system)
     (arguments

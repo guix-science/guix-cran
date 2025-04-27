@@ -5028,32 +5028,6 @@ Volodin (2022) <doi:10.1134/S1995080222110270>, Sulewski (2023)
 <doi:10.17713/ajs.v52i3.1434>.")
     (license license:gpl3)))
 
-(define-public r-psdata
-  (package
-    (name "r-psdata")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "psData" version))
-       (sha256
-        (base32 "013hb6lk9rm2w08m5jbw90ndrcd4wyy2h125jx07c9bs60wh4mp4"))))
-    (properties `((upstream-name . "psData")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xlsx r-rio r-reshape2 r-datacombine
-                             r-countrycode))
-    (home-page "http://cran.r-project.org/package=psData")
-    (synopsis "Download Regularly Maintained Political Science Data Sets")
-    (description
-     "This R package includes functions for gathering commonly used and regularly
-maintained data set in political science.  It also includes functions for
-combining components from these data sets into variables that have been
-suggested in the literature, but are not regularly maintained.")
-    (license license:gpl3+)))
-
 (define-public r-psd
   (package
     (name "r-psd")

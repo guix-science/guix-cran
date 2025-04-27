@@ -979,13 +979,13 @@ L-moment Statistics [...] ISBN 1463508417.")
 (define-public r-extremerisks
   (package
     (name "r-extremerisks")
-    (version "0.0.4")
+    (version "0.0.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExtremeRisks" version))
        (sha256
-        (base32 "1mvkrwyj9kwg35dzm9jzx311qqd4v3nnbrr6d64x476ni4pnrbl8"))))
+        (base32 "1h35063aqkzw6bn36il4ag3i2649s427s1aqr0nmalxqs0z8lr87"))))
     (properties `((upstream-name . "ExtremeRisks")))
     (build-system r-build-system)
     (arguments
@@ -997,7 +997,7 @@ L-moment Statistics [...] ISBN 1463508417.")
                              r-mvtnorm
                              r-evd
                              r-copula))
-    (home-page "mypage.unibocconi.it/simonepadoan/")
+    (home-page "https://faculty.unibocconi.it/simonepadoan/")
     (synopsis "Extreme Risk Measures")
     (description
      "This package provides a set of procedures for estimating risks related to
@@ -1008,8 +1008,8 @@ the case of independent multidimensional observations.  The statistical
 inference is performed through parametric and non-parametric estimators.
 Inferential procedures such as confidence intervals, confidence regions and
 hypothesis testing are obtained by exploiting the asymptotic theory.  Adapts the
-methodologies derived in Padoan and Stupfler (2020) <arxiv:2004.04078>, Padoan
-and Stupfler (2020) <arxiv:2007.08944>, Daouia et al. (2018)
+methodologies derived in Padoan and Stupfler (2022) <doi:10.3150/21-BEJ1375>,
+Davison et al. (2023) <doi:10.1080/07350015.2022.2078332>, Daouia et al. (2018)
 <doi:10.1111/rssb.12254>, Drees (2000) <doi:10.1214/aoap/1019487617>, Drees
 (2003) <doi:10.3150/bj/1066223272>, de Haan and Ferreira (2006)
 <doi:10.1007/0-387-34471-3>, de Haan et al. (2016)
@@ -26179,46 +26179,6 @@ High-Throughput Screening Data Using an Evolutionary Algorithm\", Ma, J., Bair,
 E., Motsinger-Reif, A.; Dose-Response 18(2):1559325820926734 (2020)
 <doi:10.1177/1559325820926734>.")
     (license license:gpl3)))
-
-(define-public r-e4tools
-  (package
-    (name "r-e4tools")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "E4tools" version))
-       (sha256
-        (base32 "1kmj1fddybjia9ninhcy75kdmq152zjw7s24chpqr5wsblffr3yx"))))
-    (properties `((upstream-name . "E4tools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-signal
-                             r-scales
-                             r-hms
-                             r-ggplot2
-                             r-foreach
-                             r-dosnow
-                             r-doparallel
-                             r-datacombine
-                             r-data-table
-                             r-chron
-                             r-bbmisc
-                             r-anytime
-                             r-accelerometry))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=E4tools")
-    (synopsis
-     "Management and Processing Tools for Data Produced by the Empatica E4")
-    (description
-     "Process and manage the data from the Empatica E4.  All functions operate on the
-EDA data stream, but other streams will be added soon.  The Empatica E4 is a
-wearable physiological monitor made by Empatica (Empatica is not associated with
-any of this code).  You can find more information about the E4 at Empatica's
-website <https://www.empatica.com/research/e4/>.")
-    (license license:expat)))
 
 (define-public r-e2tree
   (package

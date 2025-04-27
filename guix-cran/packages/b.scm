@@ -18289,19 +18289,24 @@ rates can be provided.")
 (define-public r-bhm
   (package
     (name "r-bhm")
-    (version "1.18")
+    (version "1.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bhm" version))
        (sha256
-        (base32 "05gr5qmd6dzfylay60wazi0iyvj9r0xhzdk7jm7wrsrag7i43z1p"))))
+        (base32 "1z0if6b06akx1q9q6kz6sr4msq2pp0yghi74pjqy9q3d15azj8zk"))))
     (properties `((upstream-name . "bhm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-mass r-ggplot2 r-coda))
+    (propagated-inputs (list r-survival
+                             r-mass
+                             r-lpl
+                             r-gridextra
+                             r-ggplot2
+                             r-coda))
     (home-page "https://cran.r-project.org/package=bhm")
     (synopsis "Biomarker Threshold Models")
     (description

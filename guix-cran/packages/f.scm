@@ -23046,13 +23046,13 @@ when filling in values for a single line of data.")
 (define-public r-fasthamming
   (package
     (name "r-fasthamming")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastHamming" version))
        (sha256
-        (base32 "03kf6j8srrfvpj8vbk3pmk5nj7jllfg9amww1sh1ii57ia025wp7"))))
+        (base32 "0yl26pli9pwzh8af0glzmp82mlsks06y1bmgsf0x2l12fvxciy44"))))
     (properties `((upstream-name . "FastHamming")))
     (build-system r-build-system)
     (arguments

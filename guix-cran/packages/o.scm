@@ -5344,13 +5344,13 @@ a Shiny application for observing the effects of different strata splits.")
 (define-public r-optimaldesign
   (package
     (name "r-optimaldesign")
-    (version "1.0.1")
+    (version "1.0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OptimalDesign" version))
        (sha256
-        (base32 "02vxxb25q7fl73y7zq0a89ra0s88wji4mrql7p88014p073lj2as"))))
+        (base32 "1h8r3828bh3sryvxici4gfa7ckz1bqsfmg9m480scng50qy57bvl"))))
     (properties `((upstream-name . "OptimalDesign")))
     (build-system r-build-system)
     (arguments
@@ -5363,7 +5363,7 @@ a Shiny application for observing the effects of different strata splits.")
                              r-matrixcalc
                              r-matrix
                              r-lpsolve))
-    (home-page "https://cran.r-project.org/package=OptimalDesign")
+    (home-page "http://www.iam.fmph.uniba.sk/design/")
     (synopsis "Toolbox for Computing Efficient Designs of Experiments")
     (description
      "Algorithms for D-, A-, I-, and c-optimal designs.  Some of the functions in this
@@ -6490,13 +6490,13 @@ graphics, or ggplot2.  This package is not affiliated with the
 (define-public r-openspecy
   (package
     (name "r-openspecy")
-    (version "1.4.0")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenSpecy" version))
        (sha256
-        (base32 "15vnbg7h0ijrypi7i6g5kfq4zasxc9fywsyzih0p5f6wkqavmhqg"))))
+        (base32 "00jhzypjlw8m0pik1x8j61hfd94xp6j48r4pn8m3dza54308bj41"))))
     (properties `((upstream-name . "OpenSpecy")))
     (build-system r-build-system)
     (arguments
@@ -6528,7 +6528,7 @@ conversions, wavenumber alignment, and min-max normalization.  Spectra can be
 identified in batch using an onboard reference library (Cowger et al.  2020,
 <doi:10.1177/0003702820929064>) using @code{match_spec()}.  A Shiny app is
 available via @code{run_app()} or online at
-<https://openanalysis.org/openspecy/>.")
+<https://www.openanalysis.org/openspecy/>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-openskies

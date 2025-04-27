@@ -13229,24 +13229,24 @@ forecasting for a univariate time series.")
 (define-public r-gmdatabase
   (package
     (name "r-gmdatabase")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmDatabase" version))
        (sha256
-        (base32 "0prap4a8pvylmvakd2ii87jz9bqf0vvfsxdi4iwa40nx444hqhx2"))))
+        (base32 "08nx9q338c27jprswdcknwmdlh6k77wjlcbg0qkjjqa000fqqasr"))))
     (properties `((upstream-name . "gmDatabase")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-shiny r-rmysql r-foreach r-digest r-dbi))
-    (home-page "http://www.r-project.org")
+    (home-page "https://cran.r-project.org/package=gmDatabase")
     (synopsis "Accessing a Geometallurgical Database with R")
     (description
      "This package provides a template for a geometallurgical database and a fast and
-easy interface for accessing it is provided in this package.")
+easy interface for accessing it.")
     (license (list license:gpl2+ license:lgpl2.0+))))
 
 (define-public r-gmcplite
@@ -24739,44 +24739,6 @@ al. (2017) <doi:10.1111/rssb.12172>, MrkviÄka and MyllymÃ¤ki (2023)
 DvoÅÃ¡k and MrkviÄka (2022) <doi:10.1007/s00180-021-01134-y>, MrkviÄka et al.
 (2023) <doi:10.48550/@code{arXiv.2309.04746>}, and Konstantinou et al. (2024)
 <doi: 10.1007/s00180-024-01569-z>.")
-    (license license:gpl3)))
-
-(define-public r-gesttools
-  (package
-    (name "r-gesttools")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gesttools" version))
-       (sha256
-        (base32 "1lrjr60vrl0j31hb12i8c78k5554vwpgj8pzzrhbdhmb6y0972fx"))))
-    (properties `((upstream-name . "gesttools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-testthat
-                             r-rsample
-                             r-nnet
-                             r-magrittr
-                             r-geem
-                             r-datacombine))
-    (home-page "https://github.com/danieltompsett/gesttools")
-    (synopsis
-     "General Purpose G-Estimation for End of Study or Time-Varying Outcomes")
-    (description
-     "This package provides a series of general purpose tools to perform g-estimation
-using the methods described in Sjolander and Vansteelandt (2016)
-<doi:10.1515/em-2015-0005> and Dukes and Vansteelandt <doi:10.1093/aje/kwx347>.
-The package allows for g-estimation in a wide variety of circumstances,
-including an end of study or time-varying outcome, and an exposure that is a
-binary, continuous, or a categorical variable with three or more categories.
-The package also supports g-estimation with time-varying causal effects and
-effect modification by a confounding variable.")
     (license license:gpl3)))
 
 (define-public r-gestate

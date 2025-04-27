@@ -30196,29 +30196,6 @@ arsenal and @code{skim()} from skimr'.  For more details see the description of
 skimr package.")
     (license license:expat)))
 
-(define-public r-datacombine
-  (package
-    (name "r-datacombine")
-    (version "0.2.21")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DataCombine" version))
-       (sha256
-        (base32 "0iwb4726bk0cjhay694dp43b1553yyk9lpxbncs85kz229b26arm"))))
-    (properties `((upstream-name . "DataCombine")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-dplyr r-data-table))
-    (home-page "http://CRAN.R-project.org/package=DataCombine")
-    (synopsis "Tools for Easily Combining and Cleaning Data Sets")
-    (description
-     "This package provides tools for combining and cleaning data sets, particularly
-with grouped and time series data.")
-    (license license:gpl3+)))
-
 (define-public r-datacleanr
   (package
     (name "r-datacleanr")

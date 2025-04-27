@@ -4362,13 +4362,13 @@ English words.")
 (define-public r-uiucthemes
   (package
     (name "r-uiucthemes")
-    (version "0.3.1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uiucthemes" version))
        (sha256
-        (base32 "1faggg8hiqw4pblq5r3m9wi3x5m6kbjq0flf88mqa993v9rpdrf6"))))
+        (base32 "01gfmf0zfkng2fnfx7a1r627qxlnwr8k5cplj3flj6122vzcsifs"))))
     (properties `((upstream-name . "uiucthemes")))
     (build-system r-build-system)
     (arguments
