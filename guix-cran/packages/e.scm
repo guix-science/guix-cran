@@ -9493,13 +9493,13 @@ of the data and interpretation of the results.")
 (define-public r-equivalence
   (package
     (name "r-equivalence")
-    (version "0.7.2")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equivalence" version))
        (sha256
-        (base32 "170l5gnk0dkjkfsx7qyrw56ircwsjzz9cvhakgyrqh7bj5734i79"))))
+        (base32 "0ary9kzb8v1gpcaa2y4qzihbddx64s6igqjfjkhgkklg9wzqfgil"))))
     (properties `((upstream-name . "equivalence")))
     (build-system r-build-system)
     (arguments

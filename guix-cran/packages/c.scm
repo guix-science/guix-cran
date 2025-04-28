@@ -1119,13 +1119,13 @@ Statistics and their p-values.")
 (define-public r-cvmaplfam
   (package
     (name "r-cvmaplfam")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvmaPLFAM" version))
        (sha256
-        (base32 "1qmd4zbh70z1vgc6mxfr9scvqw923y9qdxjf80i826bdh7sc4wq3"))))
+        (base32 "0rady48hqa10bf4fl11b20jz48m5cj1n9zzvnfkvpxxl26yx8gzk"))))
     (properties `((upstream-name . "cvmaPLFAM")))
     (build-system r-build-system)
     (arguments
@@ -1138,8 +1138,8 @@ Statistics and their p-values.")
     (description
      "Produce an averaging estimate/prediction by combining all candidate models for
 partial linear functional additive models, using multi-fold cross-validation
-criterion.  More details can be referred to Shishi Liu and Jingxiao Zhang.
-(2021) <@code{arXiv:2105.00966>}.")
+criterion.  More details can be referred to @code{arXiv} e-Prints via
+<doi:10.48550/@code{arXiv.2105.00966>}.")
     (license license:gpl3+)))
 
 (define-public r-cvlm

@@ -14708,41 +14708,6 @@ shiny R App is included for a no-code solution for retrieval, analysis, and
 visualization.")
     (license license:agpl3+)))
 
-(define-public r-fishresp
-  (package
-    (name "r-fishresp")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FishResp" version))
-       (sha256
-        (base32 "1vgpv8jr9j6mj7qxd8glj6b6yrdk8qny06c07grq8mfzkr93s9k1"))))
-    (properties `((upstream-name . "FishResp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rmr r-respirometry r-mclust r-lattice r-chron))
-    (home-page "https://fishresp.org")
-    (synopsis "Analytical Tool for Aquatic Respirometry")
-    (description
-     "Calculates metabolic rate of fish and other aquatic organisms measured using an
-intermittent-flow respirometry approach.  The tool is used to run a set of
-graphical QC tests of raw respirometry data, correct it for background
-respiration and chamber effect, filter and extract target values of absolute and
-mass-specific metabolic rate.  Experimental design should include background
-respiration tests and measuring of one or more metabolic rate traits.  The R
-package is ideally integrated with the pump controller @code{PumpResp} and the
-DO meter @code{SensResp} (open-source hardware by @code{FishResp}).  Raw
-respirometry data can be also imported from @code{AquaResp} (free software),
-@code{AutoResp} ('@code{LoligoSystems}'), @code{OxyView} ('@code{PreSens}'),
-Pyro Oxygen Logger ('@code{PyroScience}') and Q-box Aqua
-('@code{QubitSystems}').  More information about the R package
-@code{FishResp'is} available in the publication by Morozov et al. (2019)
-<doi:10.1093/conphys/coz003>.")
-    (license license:gpl3)))
-
 (define-public r-fishproxcompanalyzer
   (package
     (name "r-fishproxcompanalyzer")

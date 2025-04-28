@@ -3026,13 +3026,13 @@ also many practical uses under the XAI paradigm.")
 (define-public r-visualizesimon2stage
   (package
     (name "r-visualizesimon2stage")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VisualizeSimon2Stage" version))
        (sha256
-        (base32 "0mx89pfjzj8szj91hrvmysc6l3610p9mzcqxi4bhhp5shck3bj92"))))
+        (base32 "10bls9xibb6iv3cghizxi1clfjclvikmsrfjvamnaw3pjv93h2wb"))))
     (properties `((upstream-name . "VisualizeSimon2Stage")))
     (build-system r-build-system)
     (arguments

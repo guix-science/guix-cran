@@ -13319,19 +13319,20 @@ binary covariate; - subgroup network meta-analysis.")
 (define-public r-netmediate
   (package
     (name "r-netmediate")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmediate" version))
        (sha256
-        (base32 "1ja5kgnnk6y6c8wav4h29jahpx5p7bsy36qccy2fmn7i5xn7hs7k"))))
+        (base32 "0fv2ynakjp8phc08sgz03r0kqmqka2ww86x9797dzdzv81438g56"))))
     (properties `((upstream-name . "netmediate")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vgam
+                             r-tergm
                              r-sna
                              r-rsiena
                              r-plyr

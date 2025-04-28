@@ -37505,13 +37505,13 @@ are less biased than in partial credit models.")
 (define-public r-pcmbasecpp
   (package
     (name "r-pcmbasecpp")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PCMBaseCpp" version))
        (sha256
-        (base32 "0k40mxs8w1vk7qwpkv8gnq6cq3kpj7wvf0i6f1qn1wmm2vvz1kfy"))))
+        (base32 "08ncdg151sfm4ccvy1jv4zp6ivqm2qdn84nj2g99lh8pmmysrlpc"))))
     (properties `((upstream-name . "PCMBaseCpp")))
     (build-system r-build-system)
     (arguments
@@ -37527,8 +37527,8 @@ are less biased than in partial credit models.")
      "This package provides a C++ backend for multivariate phylogenetic comparative
 models implemented in the R-package PCMBase'.  Can be used in combination with
 PCMBase to enable fast and parallel likelihood calculation.  Implements the
-pruning likelihood calculation algorithm described in Mitov et al. (2018)
-<@code{arXiv:1809.09014>}.  Uses the SPLITT C++ library for parallel tree
+pruning likelihood calculation algorithm described in Mitov et al. (2020)
+<doi:10.1016/j.tpb.2019.11.005>.  Uses the SPLITT C++ library for parallel tree
 traversal described in Mitov and Stadler (2018) <doi:10.1111/2041-210X.13136>.")
     (license license:gpl3+)))
 

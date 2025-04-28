@@ -8399,13 +8399,13 @@ using the Weighted AVERage of all possible Regressions using the data available.
 (define-public r-waverider
   (package
     (name "r-waverider")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WaverideR" version))
        (sha256
-        (base32 "1mfw7h4im86b09lc5wxshs2n4brngald9w7d6z5as97srfbp35pi"))))
+        (base32 "1ag80sj1fn9apbxhfibfl1b9zazz0j3llk03qahjrm2gd469badd"))))
     (properties `((upstream-name . "WaverideR")))
     (build-system r-build-system)
     (arguments

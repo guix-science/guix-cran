@@ -28394,13 +28394,13 @@ algorithms of Whidden and Matsen (2017) <arxiv:1511.07529>.")
 (define-public r-tbox
   (package
     (name "r-tbox")
-    (version "0.1.2")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TBox" version))
        (sha256
-        (base32 "19s51kwid7fnshlsp8wisp221kk7nv2ii5dyhnxrc6krisb45746"))))
+        (base32 "1y7s4v9xpwyxy3a16h414nzs6yjz638910kpqyp57ncfzp3rkjkm"))))
     (properties `((upstream-name . "TBox")))
     (build-system r-build-system)
     (arguments

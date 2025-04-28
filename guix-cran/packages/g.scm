@@ -7423,13 +7423,13 @@ expression data to test the performance of genomic analyses.")
 (define-public r-graphpcor
   (package
     (name "r-graphpcor")
-    (version "0.1.11")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "graphpcor" version))
        (sha256
-        (base32 "08w8cdrrfx8ghn7l3ylvb3m104v7fl657mn2s2lfkmv0l1gi1559"))))
+        (base32 "0nwfb6n5jynd96wjaf04kb9s17fk7agr36c8c3a3rrp10i0xz7v1"))))
     (properties `((upstream-name . "graphpcor")))
     (build-system r-build-system)
     (arguments
@@ -23029,13 +23029,13 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "12.2.0")
+    (version "12.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggblanket" version))
        (sha256
-        (base32 "1xxl3wnffrjygl775xmiilrpxam88ng0m5bfl7b1zbym588jqgiq"))))
+        (base32 "0vj29gc8yw1b9yzx5wc8zmrl9y3ynismc8yp5fpxcq85c3qp8k77"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (arguments

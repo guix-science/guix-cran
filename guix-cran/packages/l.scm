@@ -15703,35 +15703,6 @@ built with D3.js that is accessed via a browser.  The goal is to help users
 interpret the topics in their LDA topic model.")
     (license license:expat)))
 
-(define-public r-ldatuning
-  (package
-    (name "r-ldatuning")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ldatuning" version))
-       (sha256
-        (base32 "0367y6k5i4sccwfcm89xyc62qblrlwnm6hsa2jf346rnrfz9hkkc"))))
-    (properties `((upstream-name . "ldatuning")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-topicmodels
-                             r-slam
-                             r-scales
-                             r-rmpfr
-                             r-reshape2
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/nikita-moor/ldatuning")
-    (synopsis "Tuning of the Latent Dirichlet Allocation Models Parameters")
-    (description
-     "For this first version only metrics to estimate the best fitting number of
-topics are implemented.")
-    (license license:bsd-2)))
-
 (define-public r-ldats
   (package
     (name "r-ldats")
@@ -15800,61 +15771,6 @@ model fitting in terminal nodes.  It automatically handles missing values and
 offers visualization tools.  For more details, see Wang (2024)
 <doi:10.48550/@code{arXiv.2410.23147>}.")
     (license license:expat)))
-
-(define-public r-ldashiny
-  (package
-    (name "r-ldashiny")
-    (version "0.9.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LDAShiny" version))
-       (sha256
-        (base32 "0iql2fcg7fkyggdwmb6mhn54vhki6v206mkc5km41fjiqss2b4ni"))))
-    (properties `((upstream-name . "LDAShiny")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-topicmodels
-                             r-tm
-                             r-tidytext
-                             r-tidyr
-                             r-textminer
-                             r-stringr
-                             r-snowballc
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shinydashboard
-                             r-shinycssloaders
-                             r-shinybs
-                             r-shinyalert
-                             r-shiny
-                             r-quanteda
-                             r-purrr
-                             r-plotly
-                             r-ldatuning
-                             r-htmlwidgets
-                             r-highcharter
-                             r-dt
-                             r-dplyr
-                             r-chinese-misc
-                             r-broom
-                             r-beepr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=LDAShiny")
-    (synopsis "User-Friendly Interface for Review of Scientific Literature")
-    (description
-     "This package contains the development of a tool that provides a web-based
-graphical user interface (GUI) to perform a review of the scientific literature
-under the Bayesian approach of Latent Dirichlet Allocation (LDA)and machine
-learning algorithms.  The application methodology is framed by the well known
-procedures in topic modelling on how to clean and process data.  Contains
-methods described by Blei, David M., Andrew Y. Ng, and Michael I. Jordan (2003)
-<https://jmlr.org/papers/volume3/blei03a/blei03a.pdf> Allocation\"; Thomas L.
-Griffiths and Mark Steyvers (2004) <doi:10.1073/pnas.0307752101> ; Xiong Hui, et
-al (2019) <doi:10.1016/j.cie.2019.06.010>.")
-    (license license:gpl3)))
 
 (define-public r-ldaprototype
   (package
@@ -15955,64 +15871,6 @@ cooperation.  The implemented method incorporates the same cooperativity module
 to model the non-linearity associated with cellular cooperation as known from
 the colony formation assay (Brix et al. (2021) <doi:10.1038/s41596-021-00615-0>:
 \"Analysis of clonogenic growth in vitro.\" Nature protocols).")
-    (license license:gpl3)))
-
-(define-public r-ldabiplots
-  (package
-    (name "r-ldabiplots")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LDABiplots" version))
-       (sha256
-        (base32 "0vcc2s0qyib9l7sdflxbfanraxw5hqjlp24v8yg3z9i65y5gzbaw"))))
-    (properties `((upstream-name . "LDABiplots")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-topicmodels
-                             r-tidyr
-                             r-textplot
-                             r-textminer
-                             r-stringr
-                             r-snowballc
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shinydashboard
-                             r-shinycssloaders
-                             r-shinybusy
-                             r-shinybs
-                             r-shinyalert
-                             r-shiny
-                             r-rvest
-                             r-quanteda
-                             r-qgraph
-                             r-matrix
-                             r-ldatuning
-                             r-htmlwidgets
-                             r-highcharter
-                             r-glasso
-                             r-ggrepel
-                             r-ggplot2
-                             r-factoextra
-                             r-dt
-                             r-dplyr
-                             r-chinese-misc))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=LDABiplots")
-    (synopsis "Biplot Graphical Interface for LDA Models")
-    (description
-     "This package contains the development of a tool that provides a web-based
-graphical user interface (GUI) to perform Biplots representations from a
-scraping of news from digital newspapers under the Bayesian approach of Latent
-Dirichlet Assignment (LDA) and machine learning algorithms.  Contains LDA
-methods described by Blei , David M., Andrew Y. Ng and Michael I. Jordan (2003)
-<https://jmlr.org/papers/volume3/blei03a/blei03a.pdf>, and Biplot methods
-described by Gabriel K.R(1971) <doi:10.1093/biomet/58.3.453> and
-Galindo-Villardon P(1986)
-<https://diarium.usal.es/pgalindo/files/2012/07/Questiio.pdf>.")
     (license license:gpl3)))
 
 (define-public r-ldaandldas

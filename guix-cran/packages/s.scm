@@ -20527,13 +20527,13 @@ chemical interpretation.  The methods are described in Inglese P. et al (2019)
 (define-public r-spurs
   (package
     (name "r-spurs")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spuRs" version))
        (sha256
-        (base32 "00c0hnyrcbkbj269czxbfgmgi88y0vxzm79sxclllkzr9rdd1p53"))))
+        (base32 "0djmj90ab76kfwxjh5g4gy0dbn5q4m46r7h979nbii50q8f371lz"))))
     (properties `((upstream-name . "spuRs")))
     (build-system r-build-system)
     (arguments

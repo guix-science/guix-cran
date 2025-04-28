@@ -2532,13 +2532,13 @@ are wrapped and time zones are maintained unless explicitly altered by the user.
 (define-public r-dtsr
   (package
     (name "r-dtsr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DTSR" version))
        (sha256
-        (base32 "0im249drx2d2jpiswmv9dx42drfzcqd82fb10gxqady128ndkcxx"))))
+        (base32 "12rn5hh1vaf9j2vb8wai1m4ikm071d2s14ph7a6rh1hz1ag0mk8m"))))
     (properties `((upstream-name . "DTSR")))
     (build-system r-build-system)
     (arguments
