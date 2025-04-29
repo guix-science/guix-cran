@@ -8634,13 +8634,13 @@ of the methods is Crispino, Mollica, Astuti and Tardella (2023)
 (define-public r-msme
   (package
     (name "r-msme")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "msme" version))
        (sha256
-        (base32 "0mq57zdas1s87nblnvbif9lisgahfhvmabglvp9imr1mvpwybpbh"))))
+        (base32 "1vpb093krw74c8fx3ij75n4d3k4wi8y28ps8rgprqnn04rcvh364"))))
     (properties `((upstream-name . "msme")))
     (build-system r-build-system)
     (arguments
@@ -33672,13 +33672,13 @@ treatment effect parameter which are described in Guenhan, Roever, and Friede
 (define-public r-metasnf
   (package
     (name "r-metasnf")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metasnf" version))
        (sha256
-        (base32 "0jw1sxkq4r8wdnzq0rlzgkngws68ccranfqfw6i263kqj84mprr2"))))
+        (base32 "0cdsr1yplqqggcvnqxa00iqnnddskj0jn605vw36dnb063ank7cb"))))
     (properties `((upstream-name . "metasnf")))
     (build-system r-build-system)
     (arguments
@@ -39210,13 +39210,13 @@ attractiveness of Lower Silesian counties. (Borg, I., Groenen, P.J.F., Mair, P.
 (define-public r-mdsmap
   (package
     (name "r-mdsmap")
-    (version "1.1")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MDSMap" version))
        (sha256
-        (base32 "0knrkfwgl763fwdb3ln3g5y3rarnpqdfgzxf4m045664m7gkipsg"))))
+        (base32 "1vc3i378vhmbys4kgv4lfpdi0162qasnipjhwg0vdb1cigb173xr"))))
     (properties `((upstream-name . "MDSMap")))
     (build-system r-build-system)
     (arguments
@@ -48138,13 +48138,13 @@ looking maps in R, with support for map projections.  See Brown (2016)
 (define-public r-mapme-biodiversity
   (package
     (name "r-mapme-biodiversity")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapme.biodiversity" version))
        (sha256
-        (base32 "1zygn11wlvzp88visgrrppqnwy8b20pw95x09px7adl5961sk4j0"))))
+        (base32 "1a2alavpg7s8kz1dj340ifc6ryf70hnwzh1990s8s91qxd6n44ai"))))
     (properties `((upstream-name . "mapme.biodiversity")))
     (build-system r-build-system)
     (arguments
@@ -48162,8 +48162,7 @@ looking maps in R, with support for map projections.  See Brown (2016)
                              r-furrr
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page
-     "https://mapme-initiative.github.io/mapme.biodiversity/index.html")
+    (home-page "https://mapme-initiative.github.io/mapme.biodiversity/")
     (synopsis "Efficient Monitoring of Global Biodiversity Portfolios")
     (description
      "Biodiversity areas, especially primary forest, serve a multitude of functions

@@ -2486,6 +2486,37 @@ whole lot more!")
 genomic admixture data and generating customizable stacked barplots.")
     (license license:gpl3+)))
 
+(define-public r-xactonomial
+  (package
+    (name "r-xactonomial")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xactonomial" version))
+       (sha256
+        (base32 "1dmxbcksybznhd0hcvpzxgpkcxyz0rjlvmpy195qby23g51f3l4w"))))
+    (properties `((upstream-name . "xactonomial")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (native-inputs (list r-knitr))
+    (home-page "https://sachsmc.github.io/xactonomial/")
+    (synopsis "Inference for Functions of Multinomial Parameters")
+    (description
+     "We consider the problem where we observe k vectors (possibly of different
+lengths), each representing an independent multinomial random vector.  For a
+given function that takes in the concatenated vector of multinomial
+probabilities and outputs a real number, this is a Monte Carlo estimation
+procedure of an exact p-value and confidence interval.  The resulting inference
+is valid even in small samples, when the parameter is on the boundary, and when
+the function is not differentiable at the parameter value, all situations where
+asymptotic methods and the bootstrap would fail.  For more details see Sachs,
+Fay, and Gabriel (2025) <doi:10.48550/@code{arXiv.2406.19141>}.")
+    (license license:expat)))
+
 (define-public r-x3ptools
   (package
     (name "r-x3ptools")

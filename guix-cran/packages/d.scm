@@ -19367,13 +19367,13 @@ educational and psychological tests.")
 (define-public r-dexter
   (package
     (name "r-dexter")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dexter" version))
        (sha256
-        (base32 "0a8w1njv8av04jkcii6ww2ghnnrhzx2mk9gypgw59bngwy4mmwwa"))))
+        (base32 "1jsbinbpflvjrajmc2l0dqllx6385vwphndp89fdk9fai6d07a60"))))
     (properties `((upstream-name . "dexter")))
     (build-system r-build-system)
     (arguments
@@ -29730,13 +29730,13 @@ writing code or use alternate functions that will prompt the user to add these."
 (define-public r-datamedios
   (package
     (name "r-datamedios")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datamedios" version))
        (sha256
-        (base32 "0irv7670snkiyz204a2r4097bcxdrrbzbw4y9qvwn37z2d4496vx"))))
+        (base32 "0s6jagahnkz16vri0jqpw8gkyypi6q2krz2m7i0ggjcrh9gniqrp"))))
     (properties `((upstream-name . "datamedios")))
     (build-system r-build-system)
     (arguments
@@ -29744,10 +29744,10 @@ writing code or use alternate functions that will prompt the user to add these."
       #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-wordcloud2
-                             r-tidyverse
                              r-tidytext
                              r-stringr
                              r-rvest
+                             r-rlang
                              r-purrr
                              r-magrittr
                              r-lubridate
@@ -31626,13 +31626,13 @@ available in Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
 (define-public r-daltoolbox
   (package
     (name "r-daltoolbox")
-    (version "1.1.737")
+    (version "1.1.747")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolbox" version))
        (sha256
-        (base32 "0z8fi8l9f8x5waxs9plmw0jcigm5glmgd3x3r90py8jidzdpbyw0"))))
+        (base32 "0f4as1lilkf3dcy6gj8nhlwplj29khpr0rw4bdx1pg2cfgg4rmk9"))))
     (properties `((upstream-name . "daltoolbox")))
     (build-system r-build-system)
     (arguments
@@ -31654,7 +31654,7 @@ available in Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
                              r-cluster
                              r-class
                              r-caret))
-    (home-page "https://github.com/cefet-rj-dal/daltoolbox")
+    (home-page "https://cefet-rj-dal.github.io/daltoolbox/")
     (synopsis "Leveraging Experiment Lines to Data Analytics")
     (description
      "The natural increase in the complexity of current research experiments and data

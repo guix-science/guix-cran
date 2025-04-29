@@ -2452,13 +2452,13 @@ estimates) from multiple models into an aggregated ensemble model output.")
 (define-public r-hubeau
   (package
     (name "r-hubeau")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hubeau" version))
        (sha256
-        (base32 "1n54pzjmfnqjnppsrcm8lgzs9xbx59ikdlyasg046bcp1zg5nzqj"))))
+        (base32 "1g6n4hzbm4ws8hnh6ir4pgxsch3q9z813i2vwlx0l11yj617737c"))))
     (properties `((upstream-name . "hubeau")))
     (build-system r-build-system)
     (arguments
@@ -10692,28 +10692,37 @@ Australia's higher education system, as well as a range of relevant information.
 (define-public r-heimdall
   (package
     (name "r-heimdall")
-    (version "1.0.717")
+    (version "1.0.737")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heimdall" version))
        (sha256
-        (base32 "0qqr084h30p7aiv7cfz7g39qgswz4d249s90cck6xhbc8la9jbc3"))))
+        (base32 "1604d8m68dpkhmhmsl5jx7qgg0pw1b668a077v7qxjgzjnq0j5ii"))))
     (properties `((upstream-name . "heimdall")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reticulate r-ggplot2 r-daltoolbox r-caret))
-    (home-page "https://github.com/cefet-rj-dal/heimdall")
+    (propagated-inputs (list r-reticulate
+                             r-proc
+                             r-ggplot2
+                             r-daltoolbox
+                             r-caret
+                             r-car))
+    (home-page "https://cefet-rj-dal.github.io/heimdall/")
     (synopsis "Drift Adaptable Models")
     (description
-     "By analyzing streaming datasets, it is possible to observe significant changes
-in the data distribution or models accuracy during their prediction (concept
-drift).  The goal of heimdall is to measure when concept drift occurs.  The
-package makes available several state-of-the-art methods.  It also tackles how
-to adapt models in a nonstationary context.  Some concept drifts methods are
-described in Tavares (2022) <doi:10.1007/s12530-021-09415-z>.")
+     "In streaming data analysis, it is crucial to detect significant shifts in the
+data distribution or the accuracy of predictive models over time, a phenomenon
+known as **concept drift**.  The **heimdall** package aims to identify when
+concept drift occurs and provide methodologies for adapting models in
+non-stationary environments.  It offers a range of state-of-the-art techniques
+for detecting concept drift and maintaining model performance.  Additionally,
+**heimdall** provides tools for adapting models in response to these changes,
+ensuring continuous and accurate predictions in dynamic contexts.  Methods for
+concept drift detection are described in Tavares (2022)
+<doi:10.1007/s12530-021-09415-z>.")
     (license license:expat)))
 
 (define-public r-heemod

@@ -20338,13 +20338,13 @@ distance.")
 (define-public r-edoif
   (package
     (name "r-edoif")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EDOIF" version))
        (sha256
-        (base32 "1lq4j5axybhv34mdsz0rn5nz9x3rzjf6bczzfzrf75k6pwqxim1w"))))
+        (base32 "14jqqmw9jlgi35ghnfn5wf6n51y45m38c86zvirvb75sr38nivjm"))))
     (properties `((upstream-name . "EDOIF")))
     (build-system r-build-system)
     (arguments
@@ -23978,13 +23978,13 @@ about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
 (define-public r-ebvcube
   (package
     (name "r-ebvcube")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebvcube" version))
        (sha256
-        (base32 "1048vfm6rbring445v7frkj98b7a5fnc108d78fjixkbkm186ib4"))))
+        (base32 "17hw5g4h9ji5f6g5x8wp2mlh136il0vmf6j06rndmcr6c9cfgsfx"))))
     (properties `((upstream-name . "ebvcube")))
     (build-system r-build-system)
     (arguments

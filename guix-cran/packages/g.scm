@@ -7239,18 +7239,19 @@ well as tidyverse compatible representations of estimated smooths.")
 (define-public r-grates
   (package
     (name "r-grates")
-    (version "1.4.3")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grates" version))
        (sha256
-        (base32 "031rmdvqjjaayigkhzhp2w6xnbnh7dkrzlpw9k77mf6njpawj9cf"))))
+        (base32 "0wx9ly4mcq5m0hcxmms88q1a72rbp5silvl6rpvf4a56kf67958k"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-fastymd))
     (native-inputs (list r-litedown))
     (home-page "https://www.reconverse.org/grates/")
     (synopsis "Grouped Date Classes")
@@ -19055,6 +19056,33 @@ with shiny') provides an interface that allows extensive customization, and
 creates CSV outputs, which can then be used to recreate the figures either using
 the web app or script-based workflow.")
     (license license:gpl2)))
+
+(define-public r-ggsegmentedtotalbar
+  (package
+    (name "r-ggsegmentedtotalbar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggsegmentedtotalbar" version))
+       (sha256
+        (base32 "1zmc0jrbp03dqh6milc6gzvmvwi894xp68nmm680hdrbp5v0i91l"))))
+    (properties `((upstream-name . "ggsegmentedtotalbar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-forcats))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ozancanozdemir/ggsegmentedtotalbar")
+    (synopsis
+     "Create a Segmented Total Bar Plot with Custom Annotations and Labels")
+    (description
+     "It provides a better alternative for stacked bar plot by creating a segmented
+total bar plot with custom annotations and labels.  It is useful for visualizing
+the total of a variable and its segments in a single bar, making it easier to
+compare the segments and their contributions to the total.")
+    (license license:expat)))
 
 (define-public r-ggseg3d
   (package

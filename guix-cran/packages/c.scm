@@ -6481,36 +6481,6 @@ algorithms used for \"class prediction\" problems.")
 computing diagnostic errors.")
     (license license:gpl3+)))
 
-(define-public r-crossva
-  (package
-    (name "r-crossva")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CrossVA" version))
-       (sha256
-        (base32 "16ahw8h27acvqqixmwmsyl6rbjzxbn4pfyh2ls9rq852mc7mdg9b"))))
-    (properties `((upstream-name . "CrossVA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringi))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CrossVA")
-    (synopsis
-     "Verbal Autopsy Data Transformation for InSilicoVA and InterVA5 Algorithms")
-    (description
-     "Enables transformation of Verbal Autopsy data collected with the WHO 2016
-questionnaire (versions 1.4.1 & 1.5.1) or the WHO 2014 questionnaire for
-automated coding of Cause of Death using the @code{InSilicoVA} (data.type =
-\"WHO2016\") and @code{InterVA5} algorithms.  Previous versions of this package
-supported user-supplied mappings (via the map_records function), but this
-functionality has been removed.  This package is made available by WHO and the
-Bloomberg Data for Health Initiative.")
-    (license license:gpl3)))
-
 (define-public r-crossurr
   (package
     (name "r-crossurr")
@@ -12732,13 +12702,13 @@ specify multiple color ranges for masking.")
 (define-public r-count
   (package
     (name "r-count")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COUNT" version))
        (sha256
-        (base32 "02f7779fy0d2bql88x5v9csbxljhnyvl8wb8h83xrmwl7kaxsdpy"))))
+        (base32 "166mzrxxfvhsbslvh9w68c4wa83gahkl1mxl4aghmd9ha12qlzhz"))))
     (properties `((upstream-name . "COUNT")))
     (build-system r-build-system)
     (arguments
@@ -40477,13 +40447,13 @@ variables with respect to this measure.")
 (define-public r-cgam
   (package
     (name "r-cgam")
-    (version "1.25")
+    (version "1.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgam" version))
        (sha256
-        (base32 "00ra2aa1dzrfj94sszpv17qcir6zh5r1hl147ndwiln50a7ns5x3"))))
+        (base32 "1ck7y636dzbv705w5nx81ynj0jx40fc5gf0savl6afpg2imxifkn"))))
     (properties `((upstream-name . "cgam")))
     (build-system r-build-system)
     (arguments

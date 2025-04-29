@@ -2069,6 +2069,34 @@ Hankin (2023) <doi:10.48550/@code{arXiv.2303.06062>}.")
 Marx (2021, ISBN:978-1108482950).")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-joker
+  (package
+    (name "r-joker")
+    (version "0.14.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "joker" version))
+       (sha256
+        (base32 "0ixcdg614hlz1sr23xnhpsavq37qxbfhq7g6vnj4m8kqs2fi2hyp"))))
+    (properties `((upstream-name . "joker")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-ggplot2 r-ggh4x))
+    (native-inputs (list r-knitr))
+    (home-page "https://thechibo.github.io/joker/")
+    (synopsis "Probability Distributions and Parameter Estimation")
+    (description
+     "This package implements an S4 distribution system and estimation methods for
+parameters of common distribution families.  The common d, p, q, r function
+family for each distribution is enriched with the ll, e, and v counterparts,
+computing the log-likelihood, performing estimation, and calculating the
+asymptotic variance - covariance matrix, respectively.  Parameter estimation is
+performed analytically whenever possible.")
+    (license license:gpl3+)))
+
 (define-public r-joinxl
   (package
     (name "r-joinxl")

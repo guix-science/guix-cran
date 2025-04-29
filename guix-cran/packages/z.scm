@@ -985,6 +985,33 @@ to the Bootstrap\" Efron (1983) <0-412-04231-2>.")
 and configuration management for package developers.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-zep
+  (package
+    (name "r-zep")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZEP" version))
+       (sha256
+        (base32 "1948ji060hii3x6b6l0akrn63f014i6hzxyalc1yx6hpqijgwpg0"))))
+    (properties `((upstream-name . "ZEP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fuzzynumbers))
+    (home-page "https://cran.r-project.org/package=ZEP")
+    (synopsis
+     "Procedures Related to the Zadeh's Extension Principle for Fuzzy Data")
+    (description
+     "Procedures for calculation, plotting, and approximation of the outputs for fuzzy
+numbers (see A.I. Ban, L. Coroianu, P. Grzegorzewski \"Fuzzy Numbers:
+Approximations, Ranking and Applications\" (2015)) based on the Zadeh's Extension
+Principle (see de Barros, L.C., Bassanezi, R.C., Lodwick, W.A. (2017)
+<doi:10.1007/978-3-662-53324-6_2>).")
+    (license license:gpl3)))
+
 (define-public r-zenstats
   (package
     (name "r-zenstats")
@@ -1099,13 +1126,13 @@ detail on use and algorithms, see <doi:10.18637/jss.v095.i04>.")
 (define-public r-zen4r
   (package
     (name "r-zen4r")
-    (version "0.10")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zen4R" version))
        (sha256
-        (base32 "0sizxy7ck26jrq77y09qcqyzppamfm0kh2zw8s7n83z0bfy54vs6"))))
+        (base32 "1b4fhj05h9y2pv6pkz3d5814bscdb1f6l4ismq72fi7lxbg6jjvj"))))
     (properties `((upstream-name . "zen4R")))
     (build-system r-build-system)
     (arguments

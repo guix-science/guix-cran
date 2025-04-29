@@ -8255,13 +8255,13 @@ Caamal-Pat et.al. (2021) <doi:10.3389/fgene.2021.680569>.")
 (define-public r-lme4breeding
   (package
     (name "r-lme4breeding")
-    (version "1.0.50")
+    (version "1.0.60")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lme4breeding" version))
        (sha256
-        (base32 "0d1xkb0jk0jdlzviv195676wk409966fbvs5i9rgl9kn4fnnmnqw"))))
+        (base32 "135nfbcb97vfnmjfwrirwyc140xz7plvybb5b5jm2d6bvh1chjsx"))))
     (properties `((upstream-name . "lme4breeding")))
     (build-system r-build-system)
     (arguments
@@ -8530,6 +8530,54 @@ Language Model (LLM) APIs such as @code{OpenAI} (see
 <https://aistudio.google.com> for details), and Voyage AI (see
 <https://docs.voyageai.com/docs/introduction> for details).  Allows users to use
 and switch between various APIs seamlessly within R, and define LLM agents.")
+    (license license:expat)))
+
+(define-public r-llmagentr
+  (package
+    (name "r-llmagentr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LLMAgentR" version))
+       (sha256
+        (base32 "18mbnipv32afdqllm39chblavlkii0ag92qy4gbkzp9q6ar5acw9"))))
+    (properties `((upstream-name . "LLMAgentR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-workflows
+                             r-timetk
+                             r-rsqlite
+                             r-rsample
+                             r-recipes
+                             r-purrr
+                             r-plotly
+                             r-pdftools
+                             r-parsnip
+                             r-officer
+                             r-modeltime-ensemble
+                             r-modeltime
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-dbi))
+    (home-page "https://github.com/knowusuboaky/LLMAgentR")
+    (synopsis "Language Model Agents in R for AI Workflows and Research")
+    (description
+     "This package provides modular, graph-based agents powered by large language
+models (LLMs) for intelligent task execution in R. Supports structured workflows
+for tasks such as forecasting, data visualization, feature engineering, data
+wrangling, data cleaning, SQL, code generation, weather reporting, and
+research-driven question answering.  Each agent performs iterative reasoning:
+recommending steps, generating R code, executing, debugging, and explaining
+results.  Includes built-in support for packages such as tidymodels',
+modeltime', plotly', ggplot2', and prophet'.  Designed for analysts, developers,
+and teams building intelligent, reproducible AI workflows in R. Compatible with
+LLM providers such as @code{OpenAI}', Anthropic', Groq', and Ollama'.  Inspired
+by the Python package langagent'.")
     (license license:expat)))
 
 (define-public r-llm
@@ -12053,6 +12101,39 @@ both physical (gaps, edges, trees) and statistical features useful for e.g.
 habitat suitability modeling (Glad et al. (2020) <doi:10.1002/rse2.117>) and
 forest maturity mapping (Fuhr et al. (2022) <doi:10.1002/rse2.274>).")
     (license license:gpl3)))
+
+(define-public r-licoread
+  (package
+    (name "r-licoread")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "licoread" version))
+       (sha256
+        (base32 "0hr08ms09mc8bw89g63z7pw8zgkvdvbcy3rn2phkfwd7jibv122x"))))
+    (properties `((upstream-name . "licoread")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-lubridate
+                             r-jsonlite
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://jogaudard.github.io/licoread/")
+    (synopsis "Reads Raw Files from Li-COR Gas Analyzers")
+    (description
+     "Reads raw files from Li-COR gas analyzers and produces a dataframe that can
+directly be used with fluxible <https://cran.r-project.org/package=fluxible>.")
+    (license license:gpl3+)))
 
 (define-public r-lic
   (package

@@ -4254,6 +4254,31 @@ Counts orbits of nodes and edges from edge matrix or data frame, or a graph
 object from the graph package.")
     (license license:lgpl3)))
 
+(define-public r-orbweaver
+  (package
+    (name "r-orbweaver")
+    (version "0.18.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orbweaver" version))
+       (sha256
+        (base32 "08x4wcqbfwrk1w3va1z027k9xjjkvymbm756spq1n8m53zy52nvp"))))
+    (properties `((upstream-name . "orbweaver")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-glue))
+    (home-page "https://github.com/ixpantia/orbweaver-r")
+    (synopsis "Fast and Efficient Graph Data Structures")
+    (description
+     "Seamlessly build and manipulate graph structures, leveraging its
+high-performance methods for filtering, joining, and mutating data.  Ensures
+that mutations and changes to the graph are performed in place, streamlining
+your workflow for optimal productivity.")
+    (license license:expat)))
+
 (define-public r-orbital
   (package
     (name "r-orbital")

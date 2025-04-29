@@ -8879,6 +8879,31 @@ evidence is available.  With a focus on optimizing statistical power,
 enhancing the reliability and efficiency of missing person investigations.")
     (license license:gpl3+)))
 
+(define-public r-forensicpopdata
+  (package
+    (name "r-forensicpopdata")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forensicpopdata" version))
+       (sha256
+        (base32 "180abggdf3ch7086l0vs81zn3wv6ains29rkdsk41yzb5i8j0czg"))))
+    (properties `((upstream-name . "forensicpopdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2))
+    (home-page "https://cran.r-project.org/package=forensicpopdata")
+    (synopsis "Allele Frequency Data for Human Genetic Markers")
+    (description
+     "This package provides allele frequency data for Short Tandem Repeat human
+genetic markers commonly used in forensic genetics for human identification and
+kinship analysis.  Includes published population frequency data from the US
+National Institute of Standards and Technology and the UK government.")
+    (license license:gpl3+)))
+
 (define-public r-forensicolors
   (package
     (name "r-forensicolors")
@@ -23475,13 +23500,13 @@ categorical covariates.")
 (define-public r-fastbeta
   (package
     (name "r-fastbeta")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastbeta" version))
        (sha256
-        (base32 "05h171b9l6hqf3577kbvqm99c9iws7299ijp3a2la244szv8aspz"))))
+        (base32 "1x49ax4ssip9wnj3j4bxxicc00kdav7lk3ibwjqym502w3sgl68g"))))
     (properties `((upstream-name . "fastbeta")))
     (build-system r-build-system)
     (arguments

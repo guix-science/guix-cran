@@ -2248,42 +2248,6 @@ can also be used to improve efficiency.  From version 1.2.0 the Rcpp package
 <https://cran.r-project.org/package=Rcpp> can be used to improve efficiency.")
     (license license:gpl2+)))
 
-(define-public r-rusquant
-  (package
-    (name "r-rusquant")
-    (version "1.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rusquant" version))
-       (sha256
-        (base32 "1573sbzv2zy1k0bqqillwr2lzvy05kbv6qvil9dhwahjcn38x6j6"))))
-    (properties `((upstream-name . "rusquant")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xts
-                             r-xml
-                             r-stringr
-                             r-rvest
-                             r-quantmod
-                             r-jsonlite
-                             r-jose
-                             r-httr
-                             r-data-table
-                             r-base64enc))
-    (home-page "https://rusquant.ru")
-    (synopsis "Quantitative Trading Framework")
-    (description
-     "Collection of functions to retrieve financial data from various sources,
-including brokerage and exchange platforms, financial websites, and data
-providers.  Includes functions to retrieve account information, portfolio
-information, and place/cancel orders from different brokers.  Additionally,
-allows users to download historical data such as earnings, dividends, stock
-splits.")
-    (license license:gpl3)))
-
 (define-public r-rusk
   (package
     (name "r-rusk")
@@ -11542,19 +11506,19 @@ See Goyal, Handcock, Jackson, Rendall and Yeung (2022)
 (define-public r-rplum
   (package
     (name "r-rplum")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rplum" version))
        (sha256
-        (base32 "1mrwvpq9pbp1fq797d8wy10syqki42mjbivbg8vlai1fyy4i0gpi"))))
+        (base32 "0cpfgngi4kn0bydjwb43vfd5f5xnj3275b83gzb2yw1mv2laawda"))))
     (properties `((upstream-name . "rplum")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rintcal r-rbacon))
+    (propagated-inputs (list r-rintcal r-rice r-rbacon))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rplum")
     (synopsis "Bayesian Age-Depth Modelling of Cores Dated by Pb-210")
@@ -16578,6 +16542,32 @@ Gaussian stochastic process emulator for computer model with massive outputs See
 the reference: Mengyang Gu and Jim Berger, 2016, Annals of Applied Statistics;
 Mengyang Gu, Xiaojing Wang and Jim Berger, 2018, Annals of Statistics.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-robustgarch
+  (package
+    (name "r-robustgarch")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "robustGarch" version))
+       (sha256
+        (base32 "0dz0vlxkglpn6cb2jzc6grwrznq9f4qpq44bmhk945g2g9z4l7qk"))))
+    (properties `((upstream-name . "robustGarch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-xts r-rugarch r-rsolnp r-nloptr))
+    (home-page "https://github.com/EchoRLiu/robustGarch")
+    (synopsis "Robust Garch(1,1) Model")
+    (description
+     "This package provides a method for modeling robust generalized autoregressive
+conditional heteroskedasticity (Garch) (1,1) processes, providing robustness
+toward additive outliers instead of innovation outliers.  This work is based on
+the methodology described by Muler and Yohai (2008)
+<doi:10.1016/j.jspi.2007.11.003>.")
+    (license license:expat)))
 
 (define-public r-robustfa
   (package
@@ -23304,28 +23294,28 @@ format versions 1.0 to 1.4 <https://laszip.org/>.")
 (define-public r-rlandfire
   (package
     (name "r-rlandfire")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlandfire" version))
        (sha256
-        (base32 "18l5fjx3aw89wybhjbw3lyk8a0619919s6d4mbh293vbyfgng0a8"))))
+        (base32 "122vjg0wbmc7p4w8gwi84ffag9hgf3pg0qxl2vrm8xkz6bvpikpf"))))
     (properties `((upstream-name . "rlandfire")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-httr))
+    (propagated-inputs (list r-terra r-sf r-httr2 r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bcknr/rlandfire")
     (synopsis "Interface to 'LANDFIRE Product Service' API")
     (description
      "This package provides access to a suite of geospatial data layers for wildfire
 management, fuel modeling, ecology, natural resource management, climate,
-conservation, etc., via the LANDFIRE (<https://www.landfire.gov/index.php>)
-Product Service ('LFPS') API.")
-    (license license:expat)))
+conservation, etc., via the LANDFIRE (<https://www.landfire.gov/>) Product
+Service ('LFPS') API.")
+    (license license:gpl3+)))
 
 (define-public r-rlakehabitat
   (package
@@ -38134,6 +38124,34 @@ measurement error modelling using MCEM, see the RMarkdown vignette:
 \"'@code{refitME} R-package tutorial\".")
     (license license:gpl2)))
 
+(define-public r-refitgaps
+  (package
+    (name "r-refitgaps")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "refitgaps" version))
+       (sha256
+        (base32 "0sxhkw1frxz9gqjx1yi1pj7g6isjjqk0g01b4z0gpdy1my52mycm"))))
+    (properties `((upstream-name . "refitgaps")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-purrr r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=refitgaps")
+    (synopsis "Reduce the Number of Holes in the School Timetable")
+    (description
+     "If a teacher was assigned, say, hours 1, 2, 4, 6 for his lessons on the current
+day, then he got two \"gaps\" (or \"holes\"), in hours 3 and 5.  If the total number
+of holes in the existing daily schedule is too large (exceeding, say, 6% of the
+total lessons), then the problem arises of reallocating the respective lessons
+by hours (respecting the constraints induced by the existence of coupled
+lessons) so that the total number of holes is as small as possible.")
+    (license license:expat)))
+
 (define-public r-refinr
   (package
     (name "r-refinr")
@@ -47233,13 +47251,13 @@ Louviere et al. (2015) <doi:10.1017/CBO9781107337855>.")
 (define-public r-rcmdrplugin-bws2
   (package
     (name "r-rcmdrplugin-bws2")
-    (version "0.2-2")
+    (version "0.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.BWS2" version))
        (sha256
-        (base32 "1xsacwicglpcqd6kipqgg68vbhh81d6hi1n6wgliw49iic2jnshg"))))
+        (base32 "09mpiqyz71nl3ih3c4dir2zivfbl0h9zk0dlsasfcjrmflpslf4k"))))
     (properties `((upstream-name . "RcmdrPlugin.BWS2")))
     (build-system r-build-system)
     (arguments
@@ -56010,6 +56028,35 @@ intuitive deep understanding of the data.")
 power, scatter, doppler, geometry, radar equations, etc.  Based on Nick Guy's
 Python package @code{PyRadarMet}.")
     (license license:gpl3+)))
+
+(define-public r-radanalysis
+  (package
+    (name "r-radanalysis")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RADanalysis" version))
+       (sha256
+        (base32 "10l47563xmsn5dkzajpwiagkbzrldr2rvnaqydqgbq3m68niak1c"))))
+    (properties `((upstream-name . "RADanalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sfsmisc r-scales))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RADanalysis")
+    (synopsis "Normalization and Analysis of Rank Abundance Distributions")
+    (description
+     "Implementation of the @code{MaxRank} normalization method, which enables
+standardization of Rank Abundance Distributions (RADs) to a specified number of
+ranks.  Rank abundance distributions are widely used in biology and ecology to
+describe species abundances, and are mathematically equivalent to complementary
+cumulative distribution functions (CCDFs) used in physics, linguistics,
+sociology, and other fields.  The method is described in Saeedghalati et al.
+(2017) <doi:10.1371/journal.pcbi.1005362>.")
+    (license license:gpl3)))
 
 (define-public r-rada
   (package

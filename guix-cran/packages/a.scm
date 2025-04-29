@@ -3999,13 +3999,13 @@ and a client to API(s) implementing the @code{AtomPub} SWORD API specification."
 (define-public r-atnr
   (package
     (name "r-atnr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ATNr" version))
        (sha256
-        (base32 "1wlzw5565hprlphjp3jrgyhmgqdbrzwka4m1ac7rhxdgljdfh2j5"))))
+        (base32 "1xzslcj4wgsrk4hyvf2isacz6hrsdvsxzvhicb6lvm88cbc2c2cn"))))
     (properties `((upstream-name . "ATNr")))
     (build-system r-build-system)
     (arguments
@@ -4794,13 +4794,13 @@ Information by Banerjee, Mukherjee and Sun (JASA 2020).")
 (define-public r-astrochron
   (package
     (name "r-astrochron")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "astrochron" version))
        (sha256
-        (base32 "1ba5sbg7z3jayphm6qp0v1ir4pr14jw1rfn3b4sz0vl8h2vpcmsi"))))
+        (base32 "0apvkagdjrsajkjlf9nxjwrambjqpkfwgzin8bwi0r1mg0gf01qm"))))
     (properties `((upstream-name . "astrochron")))
     (build-system r-build-system)
     (arguments
@@ -8365,13 +8365,13 @@ and Tzeremes (2022) <doi:10.1002/jae.2919>.")
 (define-public r-ardeco
   (package
     (name "r-ardeco")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ARDECO" version))
        (sha256
-        (base32 "18nnncl1hm4s5qfnqpl0ygpv6b6d248dlsvwp2vqjnnjcjiyrihj"))))
+        (base32 "0ns4dgp3rv12mfv9h65hkr41j6zgsligxghjdd8d3nvz0zb1mqj3"))))
     (properties `((upstream-name . "ARDECO")))
     (build-system r-build-system)
     (arguments

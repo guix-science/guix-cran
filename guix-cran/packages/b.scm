@@ -1374,13 +1374,13 @@ which identifies the groove locations.")
 (define-public r-bulkreadr
   (package
     (name "r-bulkreadr")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bulkreadr" version))
        (sha256
-        (base32 "0hq4xaxqjp08qd7h54s6nbvz2q7xpzxg1n6s0w9flavhl5jfilzg"))))
+        (base32 "1q3k310jn0lyssd9fzxp1wk0f78cp74iigc1a31wv1ksgsvy47wf"))))
     (properties `((upstream-name . "bulkreadr")))
     (build-system r-build-system)
     (arguments
@@ -27846,13 +27846,13 @@ meta-analysis.")
 (define-public r-bayeschange
   (package
     (name "r-bayeschange")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesChange" version))
        (sha256
-        (base32 "11y050zb6br78q570w7fa9wa801szik8j35pqg4apdpcyh6x85h3"))))
+        (base32 "1xbcdn34lbxlc98wnbprrjldj9bbrw9dfp9yscancc7qr92fryjs"))))
     (properties `((upstream-name . "BayesChange")))
     (build-system r-build-system)
     (arguments
@@ -29877,6 +29877,60 @@ the data set for analysis as well as to calculate and visualize several
 degradation metrics, including blur ratio, signal-to-noise ratio, excess
 attenuation and envelope correlation among others (Dabelsteen et al 1993
 <doi:10.1121/1.406682>).")
+    (license license:gpl2+)))
+
+(define-public r-bartxviz
+  (package
+    (name "r-bartxviz")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bartXViz" version))
+       (sha256
+        (base32 "1n245s222di90afrv636yzzkv1fmx9yisxhcmbr4svcgk97zwhmj"))))
+    (properties `((upstream-name . "bartXViz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-superlearner
+                             r-stringr
+                             r-reshape2
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-missforest
+                             r-gridextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-gggenes
+                             r-ggforce
+                             r-ggfittext
+                             r-foreach
+                             r-forcats
+                             r-dplyr
+                             r-dbarts
+                             r-data-table
+                             r-data-table
+                             r-bartmachine
+                             r-bart
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=bartXViz")
+    (synopsis "Visualization of BART and BARP using SHAP")
+    (description
+     "The contribution of variables in Bayesian Additive Regression Trees (BART) and
+Bayesian Additive Regression Trees with Post-Stratification (BARP) models is
+computed using permutation-based Shapley values.  The computed SHAP values are
+then utilized to visualize the contribution of each variable through various
+plots.  The computation of SHAP values for most models follows the methodology
+proposed by Strumbel and Kononenko (2014) <doi:10.1007/s10115-013-0679-x>, while
+for XGBoost, the approach introduced by Lundberg et al. (2020)
+<doi:10.1038/s42256-019-0138-9> was also considered.  The BART model was
+referenced based on the works of Chipman, George, and @code{McCulloch} (2010)
+<doi:10.1214/09-AOAS285> and Kapelner and Bleich (2013)
+<doi:10.18637/jss.v070.i04>, while the methodology for the BARP model was based
+on Bisbee (2019) <doi:10.1017/S0003055419000480>.")
     (license license:gpl2+)))
 
 (define-public r-bartman

@@ -3761,6 +3761,51 @@ proximal gradient descent algorithm (Chen et al. (2012)
 <doi:10.1214/11-AOAS514>).")
     (license license:gpl3)))
 
+(define-public r-tsissm
+  (package
+    (name "r-tsissm")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tsissm" version))
+       (sha256
+        (base32 "17knl2x4lhzvbf03vl4pdl619vg609zwvk2ylhp01fvgk19vzadg"))))
+    (properties `((upstream-name . "tsissm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-viridislite
+                             r-tsmethods
+                             r-tsdistributions
+                             r-tsaux
+                             r-tmb
+                             r-sandwich
+                             r-rtmb
+                             r-rcppeigen
+                             r-rcpp
+                             r-progressr
+                             r-nloptr
+                             r-future-apply
+                             r-future
+                             r-flextable
+                             r-data-table
+                             r-copula))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tsmodels/tsissm")
+    (synopsis "Linear Innovations State Space Unobserved Components Model")
+    (description
+     "Unobserved components time series model using the linear innovations state space
+representation (single source of error) with choice of error distributions and
+option for dynamic variance.  Methods for estimation using automatic
+differentiation, automatic model selection and ensembling, prediction,
+filtering, simulation and backtesting.  Based on the model described in Hyndman
+et al (2012) <doi:10.1198/jasa.2011.tm09771>.")
+    (license license:gpl2)))
+
 (define-public r-tsir
   (package
     (name "r-tsir")
@@ -7398,31 +7443,6 @@ from Gates (1980) <doi:10.1007/978-1-4612-6024-0> and Campbell and Norman (1988)
 requests, tremendousr has, dare I say, tremendously intuitive functions for
 sending digital rewards and incentives directly from R.")
     (license license:expat)))
-
-(define-public r-trellor
-  (package
-    (name "r-trellor")
-    (version "0.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "trelloR" version))
-       (sha256
-        (base32 "04yh5msbslh3hg6507wmpwng3wrwyjjvj6aa1q2fjdj3np82vv55"))))
-    (properties `((upstream-name . "trelloR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jchrom/trelloR")
-    (synopsis "Access the Trello API")
-    (description
-     "An R client for the Trello API. Supports free-tier features such as access to
-private boards, creating and updating cards and other resources, and downloading
-data in a structured way.")
-    (license license:gpl3)))
 
 (define-public r-trelliscopejs
   (package
@@ -17319,20 +17339,19 @@ Service (NASS) @code{QuickStats} service.")
 (define-public r-tidytuesdayr
   (package
     (name "r-tidytuesdayr")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytuesdayR" version))
        (sha256
-        (base32 "0ja78nngnqcdnhnkcrxgnyychf83izn88yv5b2kpif72qdz8qny3"))))
+        (base32 "06ykjs668lprvkw4yj9gs3b08h5kdb67r7yi8b1z5icy2cp6l5q3"))))
     (properties `((upstream-name . "tidytuesdayR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
-                             r-usethis
                              r-tidyr
                              r-rvest
                              r-rlang
@@ -17344,6 +17363,7 @@ Service (NASS) @code{QuickStats} service.")
                              r-glue
                              r-gh
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://dslc-io.github.io/tidytuesdayR/")
     (synopsis "Access the Weekly 'TidyTuesday' Project Dataset")
     (description
@@ -24756,13 +24776,13 @@ tune the detection algorithms and obtain the best possible results.")
 (define-public r-tesselle
   (package
     (name "r-tesselle")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tesselle" version))
        (sha256
-        (base32 "0h7znhyjy80040irxwyk1pf1sgvhf7mwfjs4wr5mqnqi7gx3a71c"))))
+        (base32 "0n9fsyzc6awq3nv8a2c55qb5dq9h790s4jckqii9laf0aqqzg5cp"))))
     (properties `((upstream-name . "tesselle")))
     (build-system r-build-system)
     (arguments
@@ -24775,7 +24795,7 @@ tune the detection algorithms and obtain the best possible results.")
                              r-isopleuros
                              r-folio
                              r-dimensio))
-    (home-page "https://github.com/tesselle/tesselle")
+    (home-page "https://codeberg.org/tesselle/tesselle")
     (synopsis "Easily Install and Load 'tesselle' Packages")
     (description
      "Easy install and load key packages from the tesselle suite in a single step.
@@ -30881,13 +30901,13 @@ Groeve et al. (2025) <doi:10.3897/arphapreprints.e151900>.")
 (define-public r-tabr
   (package
     (name "r-tabr")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabr" version))
        (sha256
-        (base32 "1y14whqm0xw9n14nc2r27c6i6hchcbmbzidkyi9nhjn3prdln5b2"))))
+        (base32 "0n5vnfpy0lrmjngvq2xzn32hgypys8rji6h7367sbqw8l0ag9msk"))))
     (properties `((upstream-name . "tabr")))
     (build-system r-build-system)
     (arguments

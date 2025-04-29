@@ -5180,13 +5180,13 @@ linear models.  For further details, see Hanson et al. (2023)
 (define-public r-surveytable
   (package
     (name "r-surveytable")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveytable" version))
        (sha256
-        (base32 "1p0wyywa4sik94fm4385vm8yk8fnsrmza1axjawk7zsckc0ip1yg"))))
+        (base32 "0cp1gba3lbjnb94ra86c541dvmcg3x4fyc3sw6ssfw5dhnxm4h0a"))))
     (properties `((upstream-name . "surveytable")))
     (build-system r-build-system)
     (arguments
@@ -11540,13 +11540,13 @@ application-specific functionality rather than Storm/R communications plumbing."
 (define-public r-stops
   (package
     (name "r-stops")
-    (version "1.8-2")
+    (version "1.9-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stops" version))
        (sha256
-        (base32 "0nc4c371rq144f1ci5ppxnbjr9qchp2a2knsp3hiyyvg2mfax241"))))
+        (base32 "1ixyn1n7mj89bqzihkyb4pwj10nmi06ni6a1ixlqdgxrij0wmfya"))))
     (properties `((upstream-name . "stops")))
     (build-system r-build-system)
     (arguments
@@ -11567,8 +11567,6 @@ application-specific functionality rather than Storm/R communications plumbing."
                              r-nloptr
                              r-minerva
                              r-energy
-                             r-diceoptim
-                             r-dicekriging
                              r-dfoptim
                              r-cordillera
                              r-cmaes
@@ -11602,7 +11600,10 @@ also be fit by optimizing over hyperparameters based on goodness-of-fit fit only
 (i.e., no structure considerations).  The package further contains functions for
 optimization, specifically the adaptive Luus-Jaakola algorithm and a wrapper for
 Bayesian optimization with treed Gaussian process with jumps to linear models,
-and functions for various c-structuredness indices.")
+and functions for various c-structuredness indices.  Hyperparameter optimization
+can be done with a number of techniques but we recommend either Bayesian
+optimization or particle swarm.  For using \"Kriging\", users need to install a
+version of the archived @code{DiceOptim} R package.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-stoppingrule
@@ -22844,19 +22845,19 @@ et al. (2021) <doi:10.48550/@code{arXiv.2103.16159>}.")
 (define-public r-splithalfr
   (package
     (name "r-splithalfr")
-    (version "2.2.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splithalfr" version))
        (sha256
-        (base32 "0zy7p2cvxbq2p24vyi55hl4qcj42igfbsapmx3xh15rpcdhzsmm0"))))
+        (base32 "09xi1rhjbjk1qldg4yrv1kclwh9qhmvp5l8q6sq90azvm77pz2a8"))))
     (properties `((upstream-name . "splithalfr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rlang r-psych r-dplyr r-bcaboot))
+    (propagated-inputs (list r-tibble r-rlang r-psych r-dplyr r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tpronk/splithalfr")
     (synopsis "Estimate Split-Half Reliabilities")
@@ -22866,7 +22867,7 @@ questionnaires.  The splithalfr supports researcher-provided scoring algorithms,
 with six vignettes illustrating how on included datasets.  The package provides
 four splitting methods (first-second, odd-even, permutated, Monte Carlo), the
 option to stratify splits by task design, a number of reliability coefficients,
-and the option to sub-sample data.")
+the option to sub-sample data, and bootstrapped confidence intervals.")
     (license license:gpl3)))
 
 (define-public r-splithalf
@@ -52346,20 +52347,25 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 (define-public r-shapr
   (package
     (name "r-shapr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shapr" version))
        (sha256
-        (base32 "1g845j5vphl5vwv8sr8za5jpb819pkng08m86wgcmxcjlbdinazd"))))
+        (base32 "1w93z0xkdidyhmd3diqmayma6fl1v5j4q4lqrlljg63hlr3x6q76"))))
     (properties `((upstream-name . "shapr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-future-apply
-                             r-data-table))
+    (propagated-inputs (list r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-future-apply
+                             r-data-table
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://norskregnesentral.github.io/shapr/")
     (synopsis "Prediction Explanation with Dependence-Aware Shapley Values")
@@ -69897,13 +69903,13 @@ cancer data <@code{arXiv:2012.06093>}.")
 (define-public r-samtool
   (package
     (name "r-samtool")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAMtool" version))
        (sha256
-        (base32 "1dh2jazf7sc7c0cj9wbiph3ci9r00avqw7mivdlsnp9nd6m2dsmm"))))
+        (base32 "0fjbsvjm2nxh0dhv1aad5b5jrc6j05k7v8lynhdklz6a7y3xv2qq"))))
     (properties `((upstream-name . "SAMtool")))
     (build-system r-build-system)
     (arguments
