@@ -6445,13 +6445,13 @@ Duan and Parast (2023) <doi:10.1002/sim.9986>.")
 (define-public r-surrogate
   (package
     (name "r-surrogate")
-    (version "3.4.0")
+    (version "3.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Surrogate" version))
        (sha256
-        (base32 "10xwbbals8ms9bslrnv5gg211ik2vdk0xzwbl11nbm0xan1fydxd"))))
+        (base32 "1ws0g154wh988q6dzq5li095cvrm4p7kf6l19ayl44zkgig0lczw"))))
     (properties `((upstream-name . "Surrogate")))
     (build-system r-build-system)
     (arguments
@@ -8740,13 +8740,13 @@ topologies.")
 (define-public r-submax
   (package
     (name "r-submax")
-    (version "1.1.1")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "submax" version))
        (sha256
-        (base32 "0b9x55gqzw20smr3hx9izvyr0i8zv0h03hadn4c7ks7w8ga5i0kj"))))
+        (base32 "0m40q24kzrrj7llnz6xzvw4fyfax3byldrb52g0yjkgswp3m28dh"))))
     (properties `((upstream-name . "submax")))
     (build-system r-build-system)
     (arguments
@@ -8759,7 +8759,7 @@ topologies.")
     (description
      "Effect modification occurs if a treatment effect is larger or more stable in
 certain subgroups defined by observed covariates.  The submax or
-subgroup-maximum method of Lee et al. (2017) <@code{arXiv:1702.00525>} does an
+subgroup-maximum method of Lee et al. (2018) <doi:10.1111/biom.12884> does an
 overall test and separate tests in subgroups, correcting for multiple testing
 using the joint distribution.")
     (license license:gpl2)))
@@ -14568,19 +14568,19 @@ power.  For details see: Statistical Methods for Psychologists, Volumes 1 â
 (define-public r-statprograms
   (package
     (name "r-statprograms")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statprograms" version))
        (sha256
-        (base32 "0m7px7fmpz2zzlfdi7rbllcjvcjp8iy94f6fa1w4xinh7vz3y6vq"))))
+        (base32 "1q41sy512kiphb08sz78h2qhmq0i11hs896wxv0jivv347ch2q8i"))))
     (properties `((upstream-name . "statprograms")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "http://brettklamer.com/work/statprograms/")
+    (home-page "https://brettklamer.com/work/statprograms/")
     (synopsis "Graduate Statistics Program Datasets")
     (description
      "This package provides a small collection of data on graduate statistics programs
@@ -15017,13 +15017,13 @@ developed by Biometris.")
 (define-public r-statgenhtp
   (package
     (name "r-statgenhtp")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenHTP" version))
        (sha256
-        (base32 "0ia3xw8cnh4hyx31w2hzgqx2mp9fipk59rq6pvc8n33r3byzph9p"))))
+        (base32 "1wzfyi1l4sjflqanhkdrjvri2580pdq329pvsawmqg7d0f6m190b"))))
     (properties `((upstream-name . "statgenHTP")))
     (build-system r-build-system)
     (arguments
@@ -17437,13 +17437,13 @@ Practices in Psychological Science 3(1), 66-80 <DOI:10.1177/2515245919885617>.")
 (define-public r-sstvars
   (package
     (name "r-sstvars")
-    (version "1.1.6")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sstvars" version))
        (sha256
-        (base32 "05i457r3fbzr0qhgq0hwb3sais6jhmxcwdq4j6y0sdlhrjav93a4"))))
+        (base32 "1sy32kw0zznsfm8nvs4zr5rjqykjvn4r3w4d7vs5lppjfb9c13dk"))))
     (properties `((upstream-name . "sstvars")))
     (build-system r-build-system)
     (arguments
@@ -17460,9 +17460,10 @@ Practices in Psychological Science 3(1), 66-80 <DOI:10.1177/2515245919885617>.")
 vector autoregressive models with various types of transition weight functions,
 conditional distributions, and identification methods.  Constrained estimation
 with various types of constraints is available.  Residual based model
-diagnostics, forecasting, simulations, and calculation of impulse response
-functions, generalized impulse response functions, and generalized forecast
-error variance decompositions.  See Heather Anderson, Farshid Vahid (1998)
+diagnostics, forecasting, simulations, counterfactual analysis, and computation
+of impulse response functions, generalized impulse response functions,
+generalized forecast error variance decompositions, as well as historical
+decompositions.  See Heather Anderson, Farshid Vahid (1998)
 <doi:10.1016/S0304-4076(97)00076-6>, Helmut LÃ¼tkepohl, Aleksei NetÅ¡unajev
 (2017) <doi:10.1016/j.jedc.2017.09.001>, Markku Lanne, Savi Virolainen (2025)
 <doi:10.48550/@code{arXiv.2403.14216>}, Savi Virolainen (2025)
@@ -19066,16 +19067,49 @@ companion paper Kon Kam King et al. (2014)
 <doi:10.48550/@code{arXiv.1311.5772>}.")
     (license license:expat)))
 
+(define-public r-sscsrs
+  (package
+    (name "r-sscsrs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SscSrs" version))
+       (sha256
+        (base32 "0bjwinfm1fvmxyz28mhpbksxjlrlbgfl54yazx1298awh15hpalp"))))
+    (properties `((upstream-name . "SscSrs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=SscSrs")
+    (synopsis
+     "Sample Size Calculator for Estimation of Population Mean and Proportion under SRS")
+    (description
+     "It helps in determination of sample size for estimation of population mean and
+proportion based upon the availability of prior information on coefficient of
+variation (CV) of the population under Simple Random Sampling (SRS) with or
+without replacement sampling design.  If there is no prior information on the
+population CV, then a small preliminary sample of size is selected to estimate
+the population CV which is then used for determination of final sample size.  If
+the final sample size is more than the preliminary sample size, then the
+preliminary sample is augmented by drawing additional units from the remaining
+population units so that the size of the augmented sample is equal to the final
+sample size.  On the other hand, if the preliminary sample size is larger than
+the final sample size, then the preliminary sample is considered as the final
+sample.")
+    (license license:gpl2+)))
+
 (define-public r-sscor
   (package
     (name "r-sscor")
-    (version "0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sscor" version))
        (sha256
-        (base32 "1kcrr90cxg6k4qkc3pidhkwf4dsnlgbxczxigr2afwpd9cpf104c"))))
+        (base32 "1zj6sk9534np3rhpl6sa34ybpkwj08zvf92nwv40al3g1cf0ap3h"))))
     (properties `((upstream-name . "sscor")))
     (build-system r-build-system)
     (arguments
@@ -33874,6 +33908,32 @@ of the @code{MfUSampler} can be obtained from the archive
 <https://cran.r-project.org/src/contrib/Archive/@code{MfUSampler/>}.")
     (license license:gpl2+)))
 
+(define-public r-snqtl
+  (package
+    (name "r-snqtl")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "snQTL" version))
+       (sha256
+        (base32 "100m8cl1j6y8cdvvkflhivcph9jiakjxxhrgfdd5fx9rp2f2x5kb"))))
+    (properties `((upstream-name . "snQTL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rarpack r-mass))
+    (home-page "https://cran.r-project.org/package=snQTL")
+    (synopsis "Spectral Network Quantitative Trait Loci (snQTL) Analysis")
+    (description
+     "This package provides a spectral framework to map quantitative trait loci (QTLs)
+affecting joint differential networks of gene co-Expression.  Test the
+equivalence among multiple biological networks via spectral statistics.  See
+reference Hu, J., Weber, J. N., Fuess, L. E., Steinel, N. C., Bolnick, D. I., &
+Wang, M. (2025) <doi:10.1371/journal.pcbi.1012953>.")
+    (license license:gpl2+)))
+
 (define-public r-snpsettest
   (package
     (name "r-snpsettest")
@@ -35137,32 +35197,6 @@ Electronic Health Records Using the Smooth Algorithm : Development and
 Validation Study.\" JMIR medical informatics, 10(11), e37976.
 <doi:10.2196/37976>.")
     (license license:gpl3+)))
-
-(define-public r-smoothwin
-  (package
-    (name "r-smoothwin")
-    (version "3.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SmoothWin" version))
-       (sha256
-        (base32 "0zq2sq0w4rs3hrra24wgbbzv88d1hx6m8q8gmc5h6nbs1172hs66"))))
-    (properties `((upstream-name . "SmoothWin")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rfast r-nlme))
-    (home-page "http://hamedhaseli.webs.com")
-    (synopsis "Soft Windowing on Linear Regression")
-    (description
-     "The main function in the package utilizes a windowing function in the form of an
-exponential weighting function to linear models.  The bandwidth and sharpness of
-the window are controlled by two parameters.  Then, a series of tests are used
-to identify the right parameters of the window (see Hamed Haselimashhadi et al
-(2019) <https://www.biorxiv.org/content/10.1101/656678v1>).")
-    (license license:lgpl2.0+)))
 
 (define-public r-smoothtensor
   (package
@@ -38414,46 +38448,6 @@ implements sleep scoring using the \"five-minute rule\" (Hendricks et al. (2000)
 (Geissmann et al. (2017) <DOI:10.1371/journal.pbio.2003026>) and a new algorithm
 to detect when animals are dead.")
     (license license:gpl3)))
-
-(define-public r-sleeperapi
-  (package
-    (name "r-sleeperapi")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sleeperapi" version))
-       (sha256
-        (base32 "0304v06gaa4lw5jjz5j009acf43d1wdq96nvq1qc108whm542sm0"))))
-    (properties `((upstream-name . "sleeperapi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-shinywidgets
-                             r-shinycssloaders
-                             r-shiny
-                             r-scales
-                             r-rlang
-                             r-rcolorbrewer
-                             r-purrr
-                             r-plotly
-                             r-jsonlite
-                             r-httr
-                             r-htmlwidgets
-                             r-htmltools
-                             r-dt
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=sleeperapi")
-    (synopsis "Wrapper Functions Around 'Sleeper' (Fantasy Sports) API")
-    (description
-     "For those wishing to interact with the Sleeper (Fantasy Sports) API
-(<https://docs.sleeper.com/>) without looking too much into its documentation
-(found at <https://docs.sleeper.com/>), this package offers wrapper functions
-around the available API calls to make it easier.")
-    (license license:expat)))
 
 (define-public r-sleepcycles
   (package
@@ -56816,13 +56810,13 @@ matched observational studies with multiple controls JASA, 109(507), 1145-1158
 (define-public r-sensitivitymv
   (package
     (name "r-sensitivitymv")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sensitivitymv" version))
        (sha256
-        (base32 "1ga8mf92niiv1z3g3kv5ha5xdd1089aaqp19dz68kv8a396vhy1j"))))
+        (base32 "1aqkbzw6cjjmg5b7wr9y2ybv92fyvp7lz63a0689c74rbx0mas5i"))))
     (properties `((upstream-name . "sensitivitymv")))
     (build-system r-build-system)
     (arguments
@@ -57333,13 +57327,13 @@ Brandmaier, von Oertzen, @code{McArdle}, & Lindenberger (2013)
 (define-public r-semsfa
   (package
     (name "r-semsfa")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semsfa" version))
        (sha256
-        (base32 "1k6i1m4r9y7j85rlrsgfjm8w15ax4xgf70xyvqwsszmf9950ldxx"))))
+        (base32 "0m19yxnsa63wmdzdlqv41ylshixl7xg14pr1vx4rinmx4fp2sfr7"))))
     (properties `((upstream-name . "semsfa")))
     (build-system r-build-system)
     (arguments
@@ -58666,13 +58660,13 @@ reproducible code, with no visible impact on the experience of the programmer.")
 (define-public r-selectspm
   (package
     (name "r-selectspm")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "selectspm" version))
        (sha256
-        (base32 "02gzbzjdr8ij9gsrvx8wmz9q8r35zjniwcri2hmiz57h0svybvll"))))
+        (base32 "0kkn2ix73ghqcf5fvcmwwxb7xis4x0c3fyap0s634f06z0k90dc4"))))
     (properties `((upstream-name . "selectspm")))
     (build-system r-build-system)
     (arguments
@@ -60733,6 +60727,67 @@ agreement no.  869730 (CONFER).  A comprehensive online tutorial is available at
 individual seasonality tests as described by Ollech and Webel (forthcoming): An
 overall seasonality test.  Bundesbank Discussion Paper.")
     (license license:gpl3)))
+
+(define-public r-seasonder
+  (package
+    (name "r-seasonder")
+    (version "0.2.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SeaSondeR" version))
+       (sha256
+        (base32 "0q0j5cj6734hnyxn5ad28n9115h0as0laqg3v9db6mqflyz6vcls"))))
+    (properties `((upstream-name . "SeaSondeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-yaml
+                             r-whisker
+                             r-uuid
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-slider
+                             r-rlang
+                             r-purrr
+                             r-pracma
+                             r-magrittr
+                             r-lubridate
+                             r-glue
+                             r-ggplot2
+                             r-geosphere
+                             r-dplyr
+                             r-data-table
+                             r-constants
+                             r-bitops
+                             r-bit64))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GOFUVI/SeaSondeR")
+    (synopsis "Radial Metrics from SeaSonde HF-Radar Data")
+    (description
+     "Read CODAR's @code{SeaSonde} High-Frequency Radar spectra files, compute radial
+metrics, and generate plots for spectra and antenna pattern data.
+Implementation is based in technical manuals, publications and patents, please
+refer to the following documents for more information: Barrick and Lipa (1999)
+<https://codar.com/images/about/patents/05990834.PDF>; CODAR Ocean Sensors
+(2002)
+<http://support.codar.com/Technicians_Information_Page_for_@code{SeaSondes/Docs/Informative/FirstOrder_Settings.pdf>};
+Lipa et al. (2006) <doi:10.1109/joe.2006.886104>; Paolo et al. (2007)
+<doi:10.1109/oceans.2007.4449265>; CODAR Ocean Sensors (2009a)
+<http://support.codar.com/Technicians_Information_Page_for_@code{SeaSondes/Docs/GuidesToFileFormats/File_AntennaPattern.pdf>};
+CODAR Ocean Sensors (2009b)
+<http://support.codar.com/Technicians_Information_Page_for_@code{SeaSondes/Docs/GuidesToFileFormats/File_CrossSpectraReduced.pdf>};
+CODAR Ocean Sensors (2016a)
+<http://support.codar.com/Technicians_Information_Page_for_@code{SeaSondes/Manuals_Documentation_Release_8/File_Formats/File_Cross_Spectra_V6.pdf>};
+CODAR Ocean Sensors (2016b)
+<http://support.codar.com/Technicians_Information_Page_for_@code{SeaSondes/Manuals_Documentation_Release_8/File_Formats/FIle_Reduced_Spectra.pdf>};
+CODAR Ocean Sensors (2016c)
+<http://support.codar.com/Technicians_Information_Page_for_@code{SeaSondes/Manuals_Documentation_Release_8/Application_Guides/Guide_SpectraPlotterMap.pdf>};
+Bushnell and Worthington (2022) <doi:10.25923/4c5x-g538>.")
+    (license license:gpl3+)))
 
 (define-public r-seasonalview
   (package

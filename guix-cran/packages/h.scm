@@ -12713,13 +12713,13 @@ more information, see the reference manual
 (define-public r-hdflex
   (package
     (name "r-hdflex")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdflex" version))
        (sha256
-        (base32 "19ncn1nks93g3xgdnnsxd72lzyxx9qsxj4m8sd7sdlz7azccpm51"))))
+        (base32 "1ivnc7rj04snfghyxy61h4mhba7v3kjvanwhscmil64dmk3pxd4i"))))
     (properties `((upstream-name . "hdflex")))
     (build-system r-build-system)
     (arguments

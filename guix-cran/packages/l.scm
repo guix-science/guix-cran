@@ -120,13 +120,13 @@ regression, as per Gennings et al (2020) <doi:10.1016/j.envres.2020.109529>.")
 (define-public r-lwfbrook90r
   (package
     (name "r-lwfbrook90r")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LWFBrook90R" version))
        (sha256
-        (base32 "1hh633ax4l4hvb09bqyx5j3v71v7n5n0v93pi49nisl48dsbpq2i"))))
+        (base32 "0kndnl8pzh0ancb9skgcqnh2g30iadq2597fjbjdzi9yb4yg8lv9"))))
     (properties `((upstream-name . "LWFBrook90R")))
     (build-system r-build-system)
     (arguments
@@ -814,13 +814,13 @@ programmers working with date-time data.")
 (define-public r-luajr
   (package
     (name "r-luajr")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "luajr" version))
        (sha256
-        (base32 "0f4p7f6qcpib1gqnsm08lqpcawafk7r5n10yjqf5hw4dpsfz934g"))))
+        (base32 "0134ykrwraq66pcd3gfgqdp3agblsl70bvafrag4yhrq52vf7a85"))))
     (properties `((upstream-name . "luajr")))
     (build-system r-build-system)
     (arguments
@@ -1640,13 +1640,13 @@ and scores for potential secretion and truncation.")
 (define-public r-lspartition
   (package
     (name "r-lspartition")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lspartition" version))
        (sha256
-        (base32 "1n0pag5l4kx211dl5z9xbqijp7l04jcm0i6jgvkk2b0x9v32q4r5"))))
+        (base32 "17v85al3a1b8gk8vhcp8c7in5lah3p1hm78slhhyr6545b6gdvzw"))))
     (properties `((upstream-name . "lspartition")))
     (build-system r-build-system)
     (arguments
@@ -1664,10 +1664,10 @@ and scores for potential secretion and truncation.")
      "Nonparametric Estimation and Inference Procedures using Partitioning-Based Least Squares Regression")
     (description
      "This package provides tools for statistical analysis using partitioning-based
-least squares regression as described in Cattaneo, Farrell and Feng (2019a,
-<@code{arXiv:1804.04916>}) and Cattaneo, Farrell and Feng (2019b,
-<@code{arXiv:1906.00202>}): @code{lsprobust()} for nonparametric point
-estimation of regression functions and their derivatives and for robust
+least squares regression as described in Cattaneo, Farrell and Feng (2020a,
+<doi:10.48550/@code{arXiv.1804.04916>}) and Cattaneo, Farrell and Feng (2020b,
+<doi:10.48550/@code{arXiv.1906.00202>}): @code{lsprobust()} for nonparametric
+point estimation of regression functions and their derivatives and for robust
 bias-corrected (pointwise and uniform) inference; @code{lspkselect()} for
 data-driven selection of the IMSE-optimal number of knots;
 @code{lsprobust.plot()} for regression plots with robust confidence intervals
@@ -4880,6 +4880,36 @@ functions has been derived.")
 selection.")
     (license license:gpl2+)))
 
+(define-public r-logrxaddin
+  (package
+    (name "r-logrxaddin")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "logrxaddin" version))
+       (sha256
+        (base32 "1yqcbd8v6q7yc0k1mwr396wkpd2war6q0wbx1q6vnyvqx04qbplf"))))
+    (properties `((upstream-name . "logrxaddin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-waiter
+                             r-stringr
+                             r-shiny
+                             r-rstudioapi
+                             r-miniui
+                             r-logrx))
+    (home-page "https://github.com/pharmaverse/logrxaddin")
+    (synopsis "Addin for the 'logrx' Package")
+    (description
+     "This is an extension package to logrx', which is a log creation program focused
+on Clinical Reporting within the Pharma Industry.  This package enables a simple
+shiny-based Add-in that provides a point and click interface to produce a log
+for a single program.")
+    (license license:expat)))
+
 (define-public r-logrx
   (package
     (name "r-logrx")
@@ -5520,13 +5550,13 @@ to create their own accounts, and password reset functionality.  Bryer (2024)
 (define-public r-logihist
   (package
     (name "r-logihist")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logihist" version))
        (sha256
-        (base32 "1q3322rh3g31c5i80aw54pln0m1jgxmbx30cn31nlh3ijkvnpq9a"))))
+        (base32 "03mnd4ycbx56i5m57bskpf46c68gyw6if8fk8q512naf509nbhs5"))))
     (properties `((upstream-name . "logihist")))
     (build-system r-build-system)
     (arguments
@@ -8535,13 +8565,13 @@ and switch between various APIs seamlessly within R, and define LLM agents.")
 (define-public r-llmagentr
   (package
     (name "r-llmagentr")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMAgentR" version))
        (sha256
-        (base32 "18mbnipv32afdqllm39chblavlkii0ag92qy4gbkzp9q6ar5acw9"))))
+        (base32 "16jydbkw95aggddc3ir03dd9w9ssvvjhss8lf7zj0piqhsjhszwr"))))
     (properties `((upstream-name . "LLMAgentR")))
     (build-system r-build-system)
     (arguments
@@ -8570,7 +8600,7 @@ and switch between various APIs seamlessly within R, and define LLM agents.")
      "This package provides modular, graph-based agents powered by large language
 models (LLMs) for intelligent task execution in R. Supports structured workflows
 for tasks such as forecasting, data visualization, feature engineering, data
-wrangling, data cleaning, SQL, code generation, weather reporting, and
+wrangling, data cleaning, SQL', code generation, weather reporting, and
 research-driven question answering.  Each agent performs iterative reasoning:
 recommending steps, generating R code, executing, debugging, and explaining
 results.  Includes built-in support for packages such as tidymodels',
@@ -14332,13 +14362,13 @@ provided as well.")
 (define-public r-learnnonparam
   (package
     (name "r-learnnonparam")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LearnNonparam" version))
        (sha256
-        (base32 "00h8aj4z0ihp9qm5bpdbxd6q42v8b46gzb6r6kz4mwwr5a9xhjhq"))))
+        (base32 "1mf3j85bsbfw2axlqj11w3yv317vpjvn8qnpnp28nwkf2cysl6aw"))))
     (properties `((upstream-name . "LearnNonparam")))
     (build-system r-build-system)
     (arguments

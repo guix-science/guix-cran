@@ -9634,6 +9634,43 @@ purposes.")
     (description "Queries data from RDAP servers.")
     (license license:expat)))
 
+(define-public r-rrda
+  (package
+    (name "r-rrda")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rrda" version))
+       (sha256
+        (base32 "0zw7q8iwllv2lkg03xfgfflpvvmx4csbj57hwdbgw7qzflbd1yr0"))))
+    (properties `((upstream-name . "rrda")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rspectra
+                             r-reshape2
+                             r-mass
+                             r-ggplot2
+                             r-furrr
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=rrda")
+    (synopsis "Ridge Redundancy Analysis for High-Dimensional Omics Data")
+    (description
+     "Efficient framework for ridge redundancy analysis (rrda), tailored for
+high-dimensional omics datasets where the number of predictors exceeds the
+number of samples.  The method leverages Singular Value Decomposition (SVD) to
+avoid direct inversion of the covariance matrix, enhancing scalability and
+performance.  It also introduces a memory-efficient storage strategy for
+coefficient matrices, enabling practical use in large-scale applications.  The
+package supports cross-validation for selecting regularization parameters and
+reduced-rank dimensions, making it a robust and flexible tool for multivariate
+analysis in omics research.  Please refer to our article (Yoshioka et al., 2025)
+for more details.")
+    (license license:gpl3+)))
+
 (define-public r-rrcovna
   (package
     (name "r-rrcovna")
@@ -9912,13 +9949,13 @@ scalarisation approach.")
 (define-public r-rramas
   (package
     (name "r-rramas")
-    (version "0.1-6")
+    (version "0.1-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rramas" version))
        (sha256
-        (base32 "16aapvz9j81lvi5ryj41bvn3wf51b0gynnzs0jpvva4m3mvzw6an"))))
+        (base32 "05hix0cr3908pgjx576ls4rkv70q6d3ycbj6jchip3ia0ziadhq0"))))
     (properties `((upstream-name . "Rramas")))
     (build-system r-build-system)
     (arguments
@@ -10560,13 +10597,13 @@ memory.  See citation(\"@code{rpyANTs}\") for more reference information.")
 (define-public r-rptr
   (package
     (name "r-rptr")
-    (version "0.9.22")
+    (version "0.9.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rptR" version))
        (sha256
-        (base32 "0vvjc6qiq71d5wckl77z606q1fp43mgrfzp1bxcab96n5whb2r9k"))))
+        (base32 "09yi280rljmw0m5rkvxahr5by6zl8fapknl7vnkb6kl47r1ax1nq"))))
     (properties `((upstream-name . "rptR")))
     (build-system r-build-system)
     (arguments
@@ -10574,12 +10611,12 @@ memory.  See citation(\"@code{rpyANTs}\") for more reference information.")
       #:tests? #f))
     (propagated-inputs (list r-pbapply r-lme4))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rptR")
+    (home-page "https://github.com/mastoffel/rptR")
     (synopsis "Repeatability Estimation for Gaussian and Non-Gaussian Data")
     (description
      "Estimating repeatability (intra-class correlation) from Gaussian, binary,
 proportion and Poisson data.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-rptests
   (package
@@ -22933,13 +22970,13 @@ version from @code{GitHub}: <https://github.com/helske/Rlibeemd/>.")
 (define-public r-rlgt
   (package
     (name "r-rlgt")
-    (version "0.2-2")
+    (version "0.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rlgt" version))
        (sha256
-        (base32 "1c23flwrw2b361dgjms3h5407w3ll98gsbsy0nmi3000wza5xdzz"))))
+        (base32 "0309yjapnyp2sxb5549dd8lz8cp44qzlgpvn6fyx59rrhgbv2qk8"))))
     (properties `((upstream-name . "Rlgt")))
     (build-system r-build-system)
     (arguments
@@ -34598,13 +34635,13 @@ projects.")
 (define-public r-replicatedpp2w
   (package
     (name "r-replicatedpp2w")
-    (version "0.1-5")
+    (version "0.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "replicatedpp2w" version))
        (sha256
-        (base32 "10iqzzqck58jz47p46xav28806kpxcsaac8xj4w03lnaza9msm8x"))))
+        (base32 "0zjcy05rkh9vlp1fm4wvvf1pf3bfvblss3y0zradxg2xxq3n9vkc"))))
     (properties `((upstream-name . "replicatedpp2w")))
     (build-system r-build-system)
     (arguments
@@ -38611,13 +38648,13 @@ Redistricting Methodology (ALARM) Project.  For more details see
 (define-public r-redistmetrics
   (package
     (name "r-redistmetrics")
-    (version "1.0.7")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redistmetrics" version))
        (sha256
-        (base32 "0r9fa0p65bpklgcb5nbbsm2s3vhrcbbp4glciglmw185vfjqg7s2"))))
+        (base32 "1kfi399v87zh54qdbgzm5c6sk14hdxlj6604zx8dh7i5w5kvm13m"))))
     (properties `((upstream-name . "redistmetrics")))
     (build-system r-build-system)
     (arguments
@@ -38637,7 +38674,7 @@ Redistricting Methodology (ALARM) Project.  For more details see
                              r-doparallel
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "http://alarm-redist.org/redistmetrics/")
+    (home-page "https://alarm-redist.org/redistmetrics/")
     (synopsis "Redistricting Metrics")
     (description
      "Reliable and flexible tools for scoring redistricting plans using common
@@ -41821,6 +41858,31 @@ identifies the entire clusters of genotype-phenotype associated signals,
 improving the power of replicability analysis while effectively controlling the
 false discovery rate.")
     (license license:gpl3)))
+
+(define-public r-reactrouter
+  (package
+    (name "r-reactrouter")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "reactRouter" version))
+       (sha256
+        (base32 "0ymh40ihznb15vz2jaaa25a5hzzrgajyz5cazwg70p2859scvrb5"))))
+    (properties `((upstream-name . "reactRouter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny-react r-shiny r-htmltools r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://felixluginbuhl.com/reactRouter/")
+    (synopsis "'React Router' for 'shiny' Apps and 'Quarto'")
+    (description
+     "You can easily share url pages using React Router in shiny applications and
+Quarto documents.  The package wraps the react-router-dom React library and
+provides access to hash routing to navigate on multiple url pages.")
+    (license license:expat)))
 
 (define-public r-reactran
   (package
@@ -45909,6 +45971,58 @@ Edwards<https://edge.sagepub.com/pollock>, \"An R Companion to Political
 Analysis, 3rd Edition,\" Thousand Oaks, CA: Sage Publications.")
     (license license:cc0)))
 
+(define-public r-rcpa
+  (package
+    (name "r-rcpa")
+    (version "0.2.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RCPA" version))
+       (sha256
+        (base32 "0hy8v2nz17c2n85pg3w775wrl5if6ch15h1y1hk7yld7rl7b2i3l"))))
+    (properties `((upstream-name . "RCPA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-summarizedexperiment
+                             r-stringr
+                             r-scales
+                             r-robustrankaggreg
+                             r-rlang
+                             r-limma
+                             r-jsonlite
+                             r-irdisplay
+                             r-httr
+                             r-graph
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggpattern
+                             r-ggnewscale
+                             r-geoquery
+                             r-edger
+                             r-dplyr
+                             r-deseq2
+                             r-biocmanager
+                             r-biobase
+                             r-annotationdbi))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=RCPA")
+    (synopsis "Consensus Pathway Analysis")
+    (description
+     "This package provides a set of functions to perform pathway analysis and
+meta-analysis from multiple gene expression datasets, as well as visualization
+of the results.  This package wraps functionality from the following packages:
+Ritchie et al. (2015) <doi:10.1093/nar/gkv007>, Love et al. (2014)
+<doi:10.1186/s13059-014-0550-8>, Robinson et al. (2010)
+<doi:10.1093/bioinformatics/btp616>, Korotkevich et al. (2016)
+<arxiv:10.1101/060012>, Efron et al. (2015)
+<https://CRAN.R-project.org/package=GSA>, and Gu et al. (2012)
+<https://CRAN.R-project.org/package=@code{CePa>}.")
+    (license license:gpl3)))
+
 (define-public r-rcorpora
   (package
     (name "r-rcorpora")
@@ -47148,13 +47262,13 @@ the DS and TAD methods.")
 (define-public r-rcmdrplugin-dce
   (package
     (name "r-rcmdrplugin-dce")
-    (version "0.2-5")
+    (version "0.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.DCE" version))
        (sha256
-        (base32 "01hxh68zvbxk461yinz0dip5khv2531x2cq8j6bybmx5cxphhsxp"))))
+        (base32 "091csf0y0apqbgwzww7m3g369rc19abjlr5yqymn7f416amj2cps"))))
     (properties `((upstream-name . "RcmdrPlugin.DCE")))
     (build-system r-build-system)
     (arguments
@@ -47224,13 +47338,13 @@ Carson and Hanemann (2005) <doi:10.1016/S1574-0099(05)02017-6> for DCCV.")
 (define-public r-rcmdrplugin-bws3
   (package
     (name "r-rcmdrplugin-bws3")
-    (version "0.2-3")
+    (version "0.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.BWS3" version))
        (sha256
-        (base32 "09vmq77lk0j9qg4jb05rdys7frf8zpy063k1gq1ja2dw1789rld3"))))
+        (base32 "1yahkrzbsmx5an4hlnybi32ngbxa4yxkj09027av1qfsg3wyxlfb"))))
     (properties `((upstream-name . "RcmdrPlugin.BWS3")))
     (build-system r-build-system)
     (arguments
@@ -47279,13 +47393,13 @@ Fogarty (2019) <doi:10.1016/j.jocm.2019.100171>.")
 (define-public r-rcmdrplugin-bws1
   (package
     (name "r-rcmdrplugin-bws1")
-    (version "0.2-3")
+    (version "0.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.BWS1" version))
        (sha256
-        (base32 "1lamy0p0ny82p90jlz48qi8nwcixgm7662qprcj98l96x2sicw7c"))))
+        (base32 "040h2l5vg6byi9gf0785znpk42cbfknz0hdinxdkjw1six2qj0gh"))))
     (properties `((upstream-name . "RcmdrPlugin.BWS1")))
     (build-system r-build-system)
     (arguments
@@ -47301,8 +47415,8 @@ best-worst scaling (BWS1) from designing choice sets to measuring preferences
 for items.  BWS1 is a question-based survey method that constructs various
 combinations of items (choice sets) using the experimental designs, asks
 respondents to select the best and worst items in each choice set, and then
-measures preferences for the items by analyzing the responses.  For details on
-BWS1, refer to Louviere et al. (2015) <doi:10.1017/CBO9781107337855>.")
+measures preferences for the items by analyzing the responses.  For details,
+refer to Aizaki and Fogarty (2023) <doi:10.1016/j.jocm.2022.100394>.")
     (license license:gpl2+)))
 
 (define-public r-rcmdrplugin-biclustgui
@@ -49986,13 +50100,13 @@ distributions.")
 (define-public r-rbbnp
   (package
     (name "r-rbbnp")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbbnp" version))
        (sha256
-        (base32 "1g6lcnpz1mram45vzks57jwlxz8l76avfabrhp1m6v40llc274g5"))))
+        (base32 "0f2zn8d2873n9axm2ix7b2x5jssklvf9rrzwnn4gwpr20jdi684h"))))
     (properties `((upstream-name . "rbbnp")))
     (build-system r-build-system)
     (arguments
@@ -53012,13 +53126,13 @@ details.")
 (define-public r-rankhazard
   (package
     (name "r-rankhazard")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rankhazard" version))
        (sha256
-        (base32 "0kljn9b74alrd22b5pwfnamdbaqi2wa2z6yzpmgpfs3x0hv72fw7"))))
+        (base32 "024hj5q9v1r79gzq2yr62j5s5yii74fk577c7dspbdryfkg5hz6k"))))
     (properties `((upstream-name . "rankhazard")))
     (build-system r-build-system)
     (arguments
@@ -55206,13 +55320,13 @@ abbreviation of R @code{agGrid}'.")
 (define-public r-ragflowchainr
   (package
     (name "r-ragflowchainr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RAGFlowChainR" version))
        (sha256
-        (base32 "0fn2hysmbcmw0qh7lm5r7srkzgnrc3m49zl53am5ln5p32rfvfxi"))))
+        (base32 "17j9n6nvxvh12mx9nk6py485p4rp1vdigbhqbsfqcaay1d745nyp"))))
     (properties `((upstream-name . "RAGFlowChainR")))
     (build-system r-build-system)
     (arguments
@@ -57338,13 +57452,13 @@ using the package in question.")
 (define-public r-r2sample
   (package
     (name "r-r2sample")
-    (version "4.0.0")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2sample" version))
        (sha256
-        (base32 "0iipz3jzmq9ays5xdf1ajra814fjnsa8z3bnfy3nnqb4n7j990md"))))
+        (base32 "0i4ljqvka2rrwv19v0gd1hkh130bs0x83zqjq8gm6mbzbx9kw0h9"))))
     (properties `((upstream-name . "R2sample")))
     (build-system r-build-system)
     (arguments

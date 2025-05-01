@@ -3647,13 +3647,13 @@ files for Moodle'.")
 (define-public r-exams
   (package
     (name "r-exams")
-    (version "2.4-1")
+    (version "2.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exams" version))
        (sha256
-        (base32 "1ld2j22kxgbx3d9nmhzb0cnmb5a1pz1skx6y87i6ifmjhm1ib78q"))))
+        (base32 "1373vpfclvh40b9libjdqgflzwqpc8ggbblll14ib2glsfmf75vy"))))
     (properties `((upstream-name . "exams")))
     (build-system r-build-system)
     (arguments
@@ -9720,13 +9720,13 @@ corresponding @code{LaTeX} code for the model.")
 (define-public r-equateirt
   (package
     (name "r-equateirt")
-    (version "2.5.1")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equateIRT" version))
        (sha256
-        (base32 "0w9n77ivk5v5bnr8sc7qgsaq9zkmzsc9s29j6a51qj3l4i1rsqfd"))))
+        (base32 "1ybncsal0jf8gzv7rk2v3n7zq52ixwy0zkkr3kc7aimlfrryg14x"))))
     (properties `((upstream-name . "equateIRT")))
     (build-system r-build-system)
     (arguments
@@ -13868,13 +13868,13 @@ objects and coordinate reference systems.")
 (define-public r-enmpa
   (package
     (name "r-enmpa")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enmpa" version))
        (sha256
-        (base32 "055fmp2jzrzycqm6jccdbg5wg41c1q3mdn5sx54h8r9gjdyx4ifw"))))
+        (base32 "1fflwasphifygyxm42k465pa9gd52bcjmnc8bibnz2yn7w478wim"))))
     (properties `((upstream-name . "enmpa")))
     (build-system r-build-system)
     (arguments
@@ -13907,13 +13907,13 @@ et al., (2019) <doi:10.7717/peerj.6281>, and Peterson et al., (2008)
 (define-public r-enmeval
   (package
     (name "r-enmeval")
-    (version "2.0.5")
+    (version "2.0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ENMeval" version))
        (sha256
-        (base32 "1scrdv5b5xzn905wgl1smir3g0dd1ldi8kr77k6s5azdwj6wlj1c"))))
+        (base32 "11hjyihcc1v8jcx3y41qz9wwrywi8j7fbw2m10j3gj0s5jafj662"))))
     (properties `((upstream-name . "ENMeval")))
     (build-system r-build-system)
     (arguments
@@ -18705,13 +18705,13 @@ uncertainty and confidence interval calculations is Hirsch et al. (2015)
 (define-public r-egret
   (package
     (name "r-egret")
-    (version "3.0.10")
+    (version "3.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EGRET" version))
        (sha256
-        (base32 "04apfhwczdwh6kq0ww4hbbfd4ymkvxzbm0r0kk97x96i5nvrk5fs"))))
+        (base32 "0b17pa6gii291pb9mbqg8lh42pzj7rhrznl1xc242x8adbdfpm44"))))
     (properties `((upstream-name . "EGRET")))
     (build-system r-build-system)
     (arguments
@@ -24677,13 +24677,13 @@ to Wolter (2007) <doi:10.1007/978-0-387-35099-8>.")
 (define-public r-eatrep
   (package
     (name "r-eatrep")
-    (version "0.15.1")
+    (version "0.15.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eatRep" version))
        (sha256
-        (base32 "12wdakpy7a41m35k97sb65vp2c0jswl43adkgjvm699wc8x9197k"))))
+        (base32 "12q6z92sxl3vil053a7hjkjfagy5jvi738b32f1fcy1xlmjdhvcq"))))
     (properties `((upstream-name . "eatRep")))
     (build-system r-build-system)
     (arguments

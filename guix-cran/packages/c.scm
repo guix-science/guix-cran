@@ -23590,13 +23590,13 @@ grouping aligns to naturally occurring clusters.")
 (define-public r-colorfindr
   (package
     (name "r-colorfindr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colorfindr" version))
        (sha256
-        (base32 "175h476dzq1f2x25vdd268xj4ja4lv8fhfj9vld85waqi0sq515g"))))
+        (base32 "1jl650llv8cykp1ihgng3hxikxhca2qsni1r1qn0721mg8b1ahlj"))))
     (properties `((upstream-name . "colorfindr")))
     (build-system r-build-system)
     (arguments
@@ -24576,13 +24576,13 @@ Cap <https://coinmarketcap.com/api/>.")
 (define-public r-coimp
   (package
     (name "r-coimp")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoImp" version))
        (sha256
-        (base32 "1bd3y4aqmjgk5894rc2vp7z245gshmlyralyywghyrg3dhnhsd8z"))))
+        (base32 "0ly1k1mf50ijki69rwk58870kibb8fxv68in3hb1pxdnlwfbddm1"))))
     (properties `((upstream-name . "CoImp")))
     (build-system r-build-system)
     (arguments
@@ -24590,9 +24590,9 @@ Cap <https://coinmarketcap.com/api/>.")
       #:tests? #f))
     (propagated-inputs (list r-nnet r-locfit r-gtools r-copula r-cluster))
     (home-page "https://cran.r-project.org/package=CoImp")
-    (synopsis "Parametric and Non-Parametric Copula-Based Imputation Methods")
+    (synopsis "Parametric and Nonparametric Copula-Based Imputation Methods")
     (description
-     "Copula-based imputation methods: parametric and non-parametric algorithms for
+     "Copula-based imputation methods: parametric and nonparametric algorithms for
 missing multivariate data through conditional copulas.")
     (license license:gpl2+)))
 
@@ -33574,13 +33574,13 @@ methods presented by Wu et al. (2006) <doi:10.1007/978-981-10-3302-5>.")
 (define-public r-classgraph
   (package
     (name "r-classgraph")
-    (version "0.7-6")
+    (version "0.7-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "classGraph" version))
        (sha256
-        (base32 "10nyrs5xh70ajhi1q6pvx4s5lkl2r46ddxanhiyn9vv9swr2hzsw"))))
+        (base32 "0pziva8hbzya31s0b8vd2rfw5kd2pf0g8rl73c9qpfw4vi7rwrsl"))))
     (properties `((upstream-name . "classGraph")))
     (build-system r-build-system)
     (arguments
@@ -36972,13 +36972,13 @@ those maps over reference maps from Google Maps'.")
 (define-public r-chores
   (package
     (name "r-chores")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chores" version))
        (sha256
-        (base32 "0rbgybg3ck479pxn2xxnv80p2anq2m4rf52id43gflsc5id50kx5"))))
+        (base32 "0dprdjdll5p1q8pvk3y53kxdp8vq5747hgabqhm2gpdnfib2gkh0"))))
     (properties `((upstream-name . "chores")))
     (build-system r-build-system)
     (arguments
@@ -38947,13 +38947,13 @@ been applied.")
 (define-public r-checked
   (package
     (name "r-checked")
-    (version "0.2.4")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "checked" version))
        (sha256
-        (base32 "09l82y9gmz1q5m1mjql31nvid8dsc9hhalzp7fpb1pdcwdas994i"))))
+        (base32 "12cv4gj2vlfzr80iyxbgqh10glv7linfdg7bf8sx406437wmagxb"))))
     (properties `((upstream-name . "checked")))
     (build-system r-build-system)
     (arguments

@@ -1836,13 +1836,13 @@ are tidyverse compatible.")
 (define-public r-volesti
   (package
     (name "r-volesti")
-    (version "1.1.2-8")
+    (version "1.1.2-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "volesti" version))
        (sha256
-        (base32 "0g8p2y1awjdxfnghcsj91ws2kdgczlhgwg3dd2dxwhfv2ch2693n"))))
+        (base32 "1m4k07038z6096j3k38pyd12v5ayq1snggj3prh2agigz88i03qy"))))
     (properties `((upstream-name . "volesti")))
     (build-system r-build-system)
     (arguments
@@ -4799,53 +4799,6 @@ Vicus can exploit more local structures of graph data.  For the details of the
 methods, see the reference section of @code{GitHub} README.md
 <https://github.com/rikenbit/Vicus>.")
     (license license:expat)))
-
-(define-public r-vicmapr
-  (package
-    (name "r-vicmapr")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "VicmapR" version))
-       (sha256
-        (base32 "0djv95l32nz6wwslwgn0v037fjbl3fz15vybn39c6g1iw9a2a46s"))))
-    (properties `((upstream-name . "VicmapR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list proj geos gdal))
-    (propagated-inputs (list r-xml2
-                             r-stringr
-                             r-sf
-                             r-rvest
-                             r-rlang
-                             r-purrr
-                             r-mapview
-                             r-magrittr
-                             r-lubridate
-                             r-leaflet
-                             r-knitr
-                             r-kableextra
-                             r-httr
-                             r-glue
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi
-                             r-curl
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://justincally.github.io/VicmapR/")
-    (synopsis "Access Victorian Spatial Data Through Web File Services (WFS)")
-    (description
-     "Easily interfaces R to spatial datasets available through the Victorian
-Government's WFS (Web Feature Service):
-<https://opendata.maps.vic.gov.au/geoserver/ows?request=@code{GetCapabilities&service=wfs>},
-which allows users to read in sf data from these sources. @code{VicmapR} uses
-the lazy querying approach and code developed by Teucher et al. (2021) for the
-bcdata R package <doi:10.21105/joss.02927>.")
-    (license license:asl2.0)))
 
 (define-public r-vici
   (package

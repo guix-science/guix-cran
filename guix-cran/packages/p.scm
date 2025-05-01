@@ -1147,13 +1147,13 @@ Sack (2012) <doi:10.1111/j.1461-0248.2012.01751.x>.")
 (define-public r-pvclass
   (package
     (name "r-pvclass")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pvclass" version))
        (sha256
-        (base32 "1g6x75qz3xybq1xnik0hzi7mcs0gzzqd3f0iwfkzi5d1zcddnw13"))))
+        (base32 "1s4kqg3s7vdkm7gh531n0v2cm7rhshcdhq085yfmpcad840xv44x"))))
     (properties `((upstream-name . "pvclass")))
     (build-system r-build-system)
     (arguments
@@ -5621,49 +5621,6 @@ PRS-PGx Methods by Zhai, S., Zhang, H., Mehrotra, D.V., and Shen, J., 2021
 (submitted).")
     (license license:gpl2+)))
 
-(define-public r-prsim
-  (package
-    (name "r-prsim")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PRSim" version))
-       (sha256
-        (base32 "1imy9blzdk2y4xzmsb86g49zzm59cpi2xrh3bgpw20611a03505d"))))
-    (properties `((upstream-name . "PRSim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wavscalogram r-splus2r r-mev r-lmomco r-goftest))
-    (home-page "https://git.math.uzh.ch/reinhard.furrer/PRSim-devel")
-    (synopsis
-     "Stochastic Simulation of Streamflow Time Series using Phase Randomization")
-    (description
-     "This package provides a simulation framework to simulate streamflow time series
-with similar main characteristics as observed data.  These characteristics
-include the distribution of daily streamflow values and their temporal
-correlation as expressed by short- and long-range dependence.  The approach is
-based on the randomization of the phases of the Fourier transform or the phases
-of the wavelet transform.  The function @code{prsim()} is applicable to single
-site simulation and uses the Fourier transform.  The function
-@code{prsim.wave()} extends the approach to multiple sites and is based on the
-complex wavelet transform.  The function @code{prsim.weather()} extends the
-approach to multiple variables for weather generation.  We further use the
-flexible four-parameter Kappa distribution, which allows for the extrapolation
-to yet unobserved low and high flows.  Alternatively, the empirical or any other
-distribution can be used.  A detailed description of the simulation approach for
-single sites and an application example can be found in Brunner et al. (2019)
-<doi:10.5194/hess-23-3175-2019>.  A detailed description and evaluation of the
-wavelet-based multi-site approach can be found in Brunner and Gilleland (2020)
-<doi:10.5194/hess-24-3967-2020>.  A detailed description and evaluation of the
-multi-variable and multi-site weather generator can be found in Brunner et al.
-(2021) <doi:10.5194/esd-12-621-2021>.  A detailed description and evaluation of
-the non-stationary streamflow generator can be found in Brunner and Gilleland
-(2024) <doi:10.1029/2023EF004238>.")
-    (license license:gpl3)))
-
 (define-public r-prrd
   (package
     (name "r-prrd")
@@ -6608,56 +6565,6 @@ for Biotechnology Information (NCBI) database.  Nature Structural Biology 10,
 980 (2003) <doi:10.1038/nsb1203-980>.  US National Library of Medicine (2021)
 <https://www.ncbi.nlm.nih.gov/datasets/docs/reference-docs/data-reports/virus/>.")
     (license license:cc0)))
-
-(define-public r-prote
-  (package
-    (name "r-prote")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ProtE" version))
-       (sha256
-        (base32 "0lkhs2d96pvvb8wasw5ydba52w99dx32ak0xd645d6i55jv4rkm4"))))
-    (properties `((upstream-name . "ProtE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vim
-                             r-vegan
-                             r-uniprotr
-                             r-tidyr
-                             r-stringr
-                             r-reshape2
-                             r-pheatmap
-                             r-openxlsx
-                             r-missranger
-                             r-limma
-                             r-ggpubr
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-car
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/theomargel/ProtE")
-    (synopsis
-     "Processing Proteomics Data, Statistical Analysis and Visualization")
-    (description
-     "The Proteomics Eye ('@code{ProtE}') offers a comprehensive and intuitive
-framework for the univariate analysis of label-free proteomics data.  By
-integrating essential data wrangling and processing steps into a single
-function, @code{ProtE} streamlines pairwise statistical comparisons for
-categorical variables.  It provides quality checks and generates
-publication-ready visualizations, enabling efficient and robust data analysis.
-@code{ProtE} is compatible with proteomics data outputs from @code{MaxQuant}
-(Cox & Mann, (2008) <doi:10.1038/nbt.1511>), DIA-NN (Demichev et al., (2020)
-<doi:10.1038/s41592-019-0638-x>), and Proteome Discoverer (Thermo Fisher
-Scientific, version 2.5).  The package leverages ggplot2 for visualization
-(Wickham, (2016) <doi:10.1007/978-3-319-24277-4>) and limma for statistical
-analysis (Ritchie et al., (2015) <doi:10.1093/nar/gkv007>).")
-    (license license:expat)))
 
 (define-public r-protag
   (package
@@ -8159,6 +8066,31 @@ models for longitudinal responses fitted by generalized least squares.  The
 package also provides plots for normalized profile likelihoods as well as the
 maximum profile likelihood estimates and the kth likelihood support intervals.")
     (license license:gpl3+)))
+
+(define-public r-profileladder
+  (package
+    (name "r-profileladder")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ProfileLadder" version))
+       (sha256
+        (base32 "0z6mlmzjr8hp1nxiw4wr6jmzlshb2f9i0kxv9p6smc3bm710jjr3"))))
+    (properties `((upstream-name . "ProfileLadder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-raw r-chainladder))
+    (home-page "https://cran.r-project.org/package=ProfileLadder")
+    (synopsis "Functional Profile Chain Ladder for Claims Reserving")
+    (description
+     "Functional claims reserving methods based on aggregated chain-ladder data, also
+known as the run-off triangle (functional) development profiles, implemented in
+three nonparametric algorithms (PARALLAX, REACT, and MACRAME) proposed in
+Maciak, Mizera, and PeÅ¡ta (2022) <doi:10.1017/asb.2022.4>.")
+    (license license:gpl2+)))
 
 (define-public r-profile
   (package
@@ -16287,6 +16219,33 @@ documents, Git', @code{GitHub}', and Quarto websites.  Makes extensive use of
 the tools in the tutorial.helpers package.")
     (license license:expat)))
 
+(define-public r-posir
+  (package
+    (name "r-posir")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PosiR" version))
+       (sha256
+        (base32 "0j12jkg5ypyrzmjwiknpjlycydv1gbjav9wv3mmvigp7a6avaqqy"))))
+    (properties `((upstream-name . "PosiR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Chukyhenry/PosiR")
+    (synopsis "Post-Selection Inference via Simultaneous Confidence Intervals")
+    (description
+     "Post-selection inference in linear regression models, constructing simultaneous
+confidence intervals across a user-specified universe of models.  Implements the
+methodology described in Kuchibhotla, Kolassa, and Kuffner (2022)
+\"Post-Selection Inference\" <doi:10.1146/annurev-statistics-100421-044639> to
+ensure valid inference after model selection, with applications in
+high-dimensional settings like Lasso selection.")
+    (license license:expat)))
+
 (define-public r-posiadjrsquared
   (package
     (name "r-posiadjrsquared")
@@ -16493,13 +16452,13 @@ examples, testing versions, and more details from:
 (define-public r-portion
   (package
     (name "r-portion")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "portion" version))
        (sha256
-        (base32 "0sqmv5f0jsbm4p9l02cm2zf8jbjxxyb9hb0cmry65jlnhy4axbm3"))))
+        (base32 "1dv6s402xnnghw1df6b3664bwaq4wlmwc0gq121jk405xcjlmvz5"))))
     (properties `((upstream-name . "portion")))
     (build-system r-build-system)
     (arguments
@@ -16508,9 +16467,9 @@ examples, testing versions, and more details from:
     (home-page "https://github.com/loelschlaeger/portion")
     (synopsis "Extracting a Data Portion")
     (description
-     "This package provides a simple method to extract portions of a vector, matrix,
-or data.frame.  The relative portion size and the way the portion is selected
-can be chosen.")
+     "This package provides simple methods to extract data portions from various
+objects.  The relative portion size and the way the portion is selected can be
+chosen.")
     (license license:gpl3+)))
 
 (define-public r-portfoliooptim
@@ -27193,13 +27152,13 @@ et al. (2019) <DOI: 10.1093/bioinformatics/bty1049>, Nguyen et al. (2017)<DOI:
 (define-public r-pins
   (package
     (name "r-pins")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pins" version))
        (sha256
-        (base32 "07hggz1yjhcgvknhsp183gwd4lzqwwsvw7vdv2rn8rx8yh23ylcp"))))
+        (base32 "1xixk04c88v6gskhp1nz7x6w8cpif4f2bddsi6zjncsvipr0397q"))))
     (properties `((upstream-name . "pins")))
     (build-system r-build-system)
     (arguments
@@ -35183,13 +35142,13 @@ from wild populations, and for visualizing pedigrees.")
 (define-public r-pedtools
   (package
     (name "r-pedtools")
-    (version "2.8.0")
+    (version "2.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedtools" version))
        (sha256
-        (base32 "06qzvcfsdxaxldmvln3clmv37p6vqk2wzjswk77mhkyr5xv87l0w"))))
+        (base32 "0wrzrw4ij0axazvflmlribzjyxa7c2j5cn2w3fzmqyfcddghwkq5"))))
     (properties `((upstream-name . "pedtools")))
     (build-system r-build-system)
     (arguments
@@ -35380,18 +35339,19 @@ from the CRAN archive <https://cran.r-project.org/src/contrib/Archive/>.")
 (define-public r-pedmut
   (package
     (name "r-pedmut")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedmut" version))
        (sha256
-        (base32 "1i2lgls7x3fwazdnb0b1spplc4v7cdcs0cvw5s9784va1i4mqk98"))))
+        (base32 "0p1p3n4d6v7xwmqfcg437mlifjj2jg5bacjh8975kbp764hi3jpc"))))
     (properties `((upstream-name . "pedmut")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-lpsolve))
     (home-page "https://github.com/magnusdv/pedmut")
     (synopsis "Mutation Models for Pedigree Likelihood Computations")
     (description
@@ -45814,13 +45774,13 @@ in web applications, and much more.")
 (define-public r-packagerank
   (package
     (name "r-packagerank")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "packageRank" version))
        (sha256
-        (base32 "0wx185ywnvzr7r96bcsvd5xhzy6qlkhj8ad2zcw61pfjj6kxjk33"))))
+        (base32 "0hr659khgy42509nq87m8gq1hr8w11khsf6h7b59lblhp4h51yg4"))))
     (properties `((upstream-name . "packageRank")))
     (build-system r-build-system)
     (arguments
@@ -45835,6 +45795,7 @@ in web applications, and much more.")
                              r-memoise
                              r-isocodes
                              r-ggplot2
+                             r-fasttime
                              r-data-table
                              r-curl
                              r-cranlogs))

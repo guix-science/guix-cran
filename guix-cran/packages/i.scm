@@ -777,31 +777,6 @@ from the iucnrdata package, available on @code{GitHub}
 use pak::pak('@code{PaulESantos/iucnrdata}').")
     (license license:expat)))
 
-(define-public r-itsmr
-  (package
-    (name "r-itsmr")
-    (version "1.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "itsmr" version))
-       (sha256
-        (base32 "1dr8n95rjbsfvw82v2r8rsahxa26f75icp9fn3hfr0d6g0xpkb69"))))
-    (properties `((upstream-name . "itsmr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://georgeweigt.github.io/itsmr-refman.pdf")
-    (synopsis "Time Series Analysis Using the Innovations Algorithm")
-    (description
-     "This package provides functions for modeling and forecasting time series data.
-Forecasting is based on the innovations algorithm.  A description of the
-innovations algorithm can be found in the textbook \"Introduction to Time Series
-and Forecasting\" by Peter J. Brockwell and Richard A. Davis.
-<https://link.springer.com/book/10.1007/b97391>.")
-    (license (license:fsdg-compatible "FreeBSD"))))
-
 (define-public r-itsdm
   (package
     (name "r-itsdm")
@@ -18795,30 +18770,26 @@ the Exploration of the Sea) DATRAS trawl survey database
 (define-public r-icesconnect
   (package
     (name "r-icesconnect")
-    (version "1.0.0")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icesConnect" version))
        (sha256
-        (base32 "067jh43vp79pcw8bs1iarrd680x0ajc25vp91ckpjpzm22311wbr"))))
+        (base32 "1hqpij0rzmcv87m4gqrrv478zk007clg0gm1433534q1zrds11rh"))))
     (properties `((upstream-name . "icesConnect")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-whoami
-                             r-keyring
-                             r-jsonlite
-                             r-httr
-                             r-getpass
-                             r-base64enc))
-    (home-page "https://cran.r-project.org/package=icesConnect")
+    (propagated-inputs (list r-jsonlite r-httr r-base64enc r-askpass))
+    (home-page "https://www.ices.dk/data/tools/Pages/WebServices.aspx")
     (synopsis "Provides User Tokens for Access to ICES Web Services")
     (description
      "This package provides user tokens for ICES web services that require
 authentication and authorization.  Web services covered by this package are ICES
-VMS database, the ICES DATSU web services, and the ICES @code{SharePoint} site.")
+VMS database, the ICES DATSU web services, and the ICES @code{SharePoint} site
+<https://www.ices.dk/data/tools/Pages/@code{WebServices.aspx>}.")
     (license license:gpl3)))
 
 (define-public r-icesat2r

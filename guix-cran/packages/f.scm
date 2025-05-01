@@ -6430,19 +6430,19 @@ more information about floristic quality assessment and the associated database.
 (define-public r-fqadata
   (package
     (name "r-fqadata")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fqadata" version))
        (sha256
-        (base32 "1nxqq33j396wa12n3qwfrsh9l2g2pn2f9d25vfzihh3xnsbk0cv5"))))
+        (base32 "01w4j4j9lxmpn5kk0sbrwp8jdprlmhvdvjgjx7mz3cs33b85wc62"))))
     (properties `((upstream-name . "fqadata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=fqadata")
+    (home-page "https://github.com/EcoModTeam/fqadata")
     (synopsis "Contains Regional Floristic Quality Assessment Databases")
     (description
      "This package contains regional Floristic Quality Assessment databases that have
@@ -6457,13 +6457,13 @@ Laboratory.")
 (define-public r-fqacalc
   (package
     (name "r-fqacalc")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fqacalc" version))
        (sha256
-        (base32 "1n4vlz75d2jsl3chsarmgf5cg7zj06gxgn1mj79d85z86pn4jip3"))))
+        (base32 "1wgp9sxfghixblc42b02nzzqxp1a3bym5vxhbca8in77b3km6qhi"))))
     (properties `((upstream-name . "fqacalc")))
     (build-system r-build-system)
     (arguments
@@ -6471,7 +6471,7 @@ Laboratory.")
       #:tests? #f))
     (propagated-inputs (list r-rlang r-magrittr r-fqadata r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=fqacalc")
+    (home-page "https://github.com/EcoModTeam/fqacalc")
     (synopsis "Calculate Floristic Quality Assessment Metrics")
     (description
      "This package provides a collection of functions for calculating Floristic
@@ -11202,6 +11202,39 @@ measurement models.  Lee, Adam, Kang, & Whittaker (2023).
 <doi:10.1007/978-3-031-27781-8_25>.  This package is supported by the Institute
 of Education Sciences, U.S. Department of Education, through Grant R305D210036.")
     (license license:gpl3)))
+
+(define-public r-flowtracer
+  (package
+    (name "r-flowtracer")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flowTraceR" version))
+       (sha256
+        (base32 "16in029bwxyakvxzjzr98wqv735gx05rlwxchwxchw5dgqnvzrh3"))))
+    (properties `((upstream-name . "flowTraceR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-comprehenr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/OKdll/flowTraceR")
+    (synopsis
+     "Tracing Information Flow for Inter-Software Comparisons in Mass Spectrometry-Based Bottom-Up Proteomics")
+    (description
+     "Useful functions to standardize software outputs from @code{ProteomeDiscoverer},
+Spectronaut, DIA-NN and @code{MaxQuant} on precursor, modified peptide and
+proteingroup level and to trace software differences for identifications such as
+varying proteingroup denotations for common precursor.")
+    (license license:expat)))
 
 (define-public r-flowscreen
   (package
@@ -25078,13 +25111,13 @@ regression models.  Find more details in (WiÅniewski, Biecek (2021))
 (define-public r-fairml
   (package
     (name "r-fairml")
-    (version "0.8")
+    (version "0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fairml" version))
        (sha256
-        (base32 "17rzg2256nb4xnrzkc8c3fiwbwqf8fr69rk5k08wrbrnjr2c05dg"))))
+        (base32 "1q5h340ygpjajwp806bw05mhj8w91d7fsc72phv7cs8ws9w13s6a"))))
     (properties `((upstream-name . "fairml")))
     (build-system r-build-system)
     (arguments
@@ -25099,8 +25132,7 @@ account in model estimation.  Currently implementing Komiyama et al. (2018)
 <http://proceedings.mlr.press/v80/komiyama18a/komiyama18a.pdf>, Zafar et al.
 (2019) <https://www.jmlr.org/papers/volume20/18-262/18-262.pdf> and my own
 approach from Scutari, Panero and Proissl (2022)
-<https://link.springer.com/content/pdf/10.1007/s11222-022-10143-w.pdf> that uses
-ridge regression to enforce fairness.")
+<doi:10.1007/s11222-022-10143-w> that uses ridge regression to enforce fairness.")
     (license license:expat)))
 
 (define-public r-fairmclus

@@ -3756,30 +3756,6 @@ defined in Borgonovo et al (2024) <doi:10.1287/mnsc.2023.01796>.  You provide an
 input sample, an output sample, decide the algorithm, and compute the indices.")
     (license license:gpl3+)))
 
-(define-public r-gsafishercombined
-  (package
-    (name "r-gsafishercombined")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GSAfisherCombined" version))
-       (sha256
-        (base32 "1xhq5nc3kbz3ml9qkdxm6m0c65fybabfhgqlwii2105jl0ll7qy5"))))
-    (properties `((upstream-name . "GSAfisherCombined")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=GSAfisherCombined")
-    (synopsis "Gene Set Analysis with Fisher Combined Method")
-    (description
-     "This package provides the p-value for a joint test of association between a
-phenotype and a set of genetic variants (SNPs) by combining marginal p-values
-using the Fisher method.  See Fisher, R.A. (1925,ISBN:0-05-002170-2) Statistical
-Methods for Research Workers.")
-    (license license:gpl2+)))
-
 (define-public r-gsa-un
   (package
     (name "r-gsa-un")
@@ -7263,13 +7239,13 @@ grouped date classes.")
 (define-public r-grateful
   (package
     (name "r-grateful")
-    (version "0.2.11")
+    (version "0.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grateful" version))
        (sha256
-        (base32 "1qywd3kb1pyaz3v1qy010q1ajayik62gagr65j6v89w6lra1aa39"))))
+        (base32 "1dcaxqx7pfng46nx189jx7kszsjs7ki30k4kppdicdmqfrj0qa3z"))))
     (properties `((upstream-name . "grateful")))
     (build-system r-build-system)
     (arguments
@@ -17085,13 +17061,13 @@ Waldorp, Mottus & Borsboom (2018) <doi:10.1080/00273171.2018.1454823>.")
 (define-public r-gimme
   (package
     (name "r-gimme")
-    (version "0.7-18")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gimme" version))
        (sha256
-        (base32 "16xb0182nh2p2cbr1iw74q1biif240jcyckal3mf6zdq703vgy4j"))))
+        (base32 "1ljn7acp3iyc7kl088626b378vpkca1yc1663qnakl3y9s7n61b9"))))
     (properties `((upstream-name . "gimme")))
     (build-system r-build-system)
     (arguments
@@ -17121,13 +17097,13 @@ individual-level) relations.  See Gates & Molenaar (2012)
 (define-public r-gimap
   (package
     (name "r-gimap")
-    (version "1.0.3")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gimap" version))
        (sha256
-        (base32 "11lwc82dzy5j7xznccjh0aydzhvpy11k1w5njhj0hm5qxv3fha2q"))))
+        (base32 "0db90qk1bw6i0zq63x6r7sq7ddk0akwvizh7vfmkgjy1cs1byc18"))))
     (properties `((upstream-name . "gimap")))
     (build-system r-build-system)
     (arguments
@@ -17146,8 +17122,7 @@ individual-level) relations.  See Gates & Molenaar (2012)
                              r-janitor
                              r-httr
                              r-ggplot2
-                             r-dplyr
-                             r-broom))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/FredHutch/gimap")
     (synopsis "Calculate Genetic Interactions for Paired CRISPR Targets")
@@ -24663,13 +24638,13 @@ possible concurrence of treatment pairs.")
 (define-public r-getbcbdata
   (package
     (name "r-getbcbdata")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GetBCBData" version))
        (sha256
-        (base32 "02wi3b8wh7l2qknpdf8k4k04jipfv97aan53v29kwrcjkplcayfl"))))
+        (base32 "1m4bqx584q9alqbic6vsd9w52vgm89biws9nj0crd2lcs712wd5b"))))
     (properties `((upstream-name . "GetBCBData")))
     (build-system r-build-system)
     (arguments
@@ -27029,6 +27004,44 @@ software @code{GeoFIS} <https://www.geofis.org> (Leroux et al.  2018)
 zone delineation (Pedroso et al.  2010) <doi:10.1016/j.compag.2009.10.007> and
 data aggregation (Mora-Herrera et al.  2020) <doi:10.1016/j.compag.2020.105624>.")
     (license license:cecill)))
+
+(define-public r-geofi
+  (package
+    (name "r-geofi")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geofi" version))
+       (sha256
+        (base32 "1s2c8m084ql7jczzh5gpzh2s21j5gc79r49jzvrnv83l9i05v8jj"))))
+    (properties `((upstream-name . "geofi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-xml2
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-httr
+                             r-httpcache
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://ropengov.github.io/geofi/")
+    (synopsis "Access Finnish Geospatial Data")
+    (description
+     "Designed to simplify geospatial data access from the Statistics Finland Web
+Feature Service API <https://geo.stat.fi/geoserver/index.html>, the geofi
+package offers researchers and analysts a set of tools to obtain and harmonize
+administrative spatial data for a wide range of applications, from urban
+planning to environmental research.  The package contains annually updated time
+series of municipality key datasets that can be used for data aggregation and
+language translations.")
+    (license license:bsd-2)))
 
 (define-public r-geofacet
   (package

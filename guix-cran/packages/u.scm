@@ -2688,20 +2688,20 @@ is updated or re-installed.")
 (define-public r-unisensr
   (package
     (name "r-unisensr")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unisensR" version))
        (sha256
-        (base32 "1pqfb8i3rj64l9hh1bn9mm78wlfqphgrlp7zrydznqy88f4jwgvy"))))
+        (base32 "11mshcvjzag8px0g7cl8f1hl76y2fnqyi0iwbv83w51rzf61xp81"))))
     (properties `((upstream-name . "unisensR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml r-vroom r-hexview))
-    (home-page "http://unisens.org/")
+    (home-page "https://unisens.org/")
     (synopsis "Read 'Unisens' Data")
     (description
      "This package provides the ability to read Unisens data into R. Unisens is a
@@ -4764,6 +4764,39 @@ interdependence for right-censored event times.  These models, as applied to
 this data set, can be found back in the publications found in the reference
 list.")
     (license license:gpl3)))
+
+(define-public r-ucsfindustrydocs
+  (package
+    (name "r-ucsfindustrydocs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ucsfindustrydocs" version))
+       (sha256
+        (base32 "17c3cfnc8k189dlz0asrp6kkfvfi59xd8f8rzp0v6sbg3lwrxiha"))))
+    (properties `((upstream-name . "ucsfindustrydocs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-r6
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-data-table
+                             r-arrow))
+    (home-page "https://cran.r-project.org/package=ucsfindustrydocs")
+    (synopsis "UCSF Industry Documents Library API Wrapper")
+    (description
+     "Serves as a R wrapper for the University of California San Francisco's [Industry
+Documents Digital Library]<https://www.industrydocuments.ucsf.edu/> API. The
+API, and this wrapper, serve to pull metadata about of items within the digital
+library.  For more information the API, see the [API's
+documentation]<https://www.industrydocuments.ucsf.edu/wp-content/uploads/2020/08/@code{IndustryDocumentsDataAPI_v7.pdf>}.")
+    (license license:expat)))
 
 (define-public r-ucscxenatools
   (package

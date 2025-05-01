@@ -8864,19 +8864,20 @@ and Paul (2017) <DOI:10.1007/s00521-017-3289-9>.")
 (define-public r-waveletcomp
   (package
     (name "r-waveletcomp")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WaveletComp" version))
        (sha256
-        (base32 "07w2aa0jiflvxyqhgh48705hg8hjspd103jd00i2pcw2v42hwmf8"))))
+        (base32 "0f3a9rq3sz9nv35vsypnkn7xs3dpsg2qjqi51j3brhw05zincpav"))))
     (properties `((upstream-name . "WaveletComp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=WaveletComp")
+    (home-page
+     "http://www.hs-stat.com/projects/WaveletComp/WaveletComp_guided_tour.pdf")
     (synopsis "Computational Wavelet Analysis")
     (description
      "Wavelet analysis and reconstruction of time series, cross-wavelets and

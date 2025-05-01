@@ -1682,13 +1682,13 @@ univariate time series as described in Ardia et al. (2018)
 (define-public r-nscluster
   (package
     (name "r-nscluster")
-    (version "1.3.6-1")
+    (version "1.3.6-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NScluster" version))
        (sha256
-        (base32 "0qaf36pf5gd91ivy4ns5gppmrzxcha7ghyih4hcbnxs2291jck0x"))))
+        (base32 "0ynl5hc3hnmbgr48g5s4an8mm4wpjvj4c799y95z4i0vf9ghj6lg"))))
     (properties `((upstream-name . "NScluster")))
     (build-system r-build-system)
     (arguments
@@ -4468,13 +4468,13 @@ Statistics, 1184-1238.\" <doi:10.1214/aos/1176344370>.")
 (define-public r-normalize
   (package
     (name "r-normalize")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "normalize" version))
        (sha256
-        (base32 "0c0vmq54mrj0h95q7hdvi9m7c1gdbiyhik5y3gbban8k6fzav0y7"))))
+        (base32 "1ph94nhj661a8zz72zkb3y36fg3iaag0rszy69yg3b0rv35hz058"))))
     (properties `((upstream-name . "normalize")))
     (build-system r-build-system)
     (arguments
@@ -4483,9 +4483,8 @@ Statistics, 1184-1238.\" <doi:10.1214/aos/1176344370>.")
     (home-page "https://github.com/loelschlaeger/normalize")
     (synopsis "Centering and Scaling of Numeric Data")
     (description
-     "This package provides a simple method for centering and scaling of numeric data.
- Certain columns or rows can be ignored when normalizing or be normalized
-jointly.")
+     "This package provides simple methods for centering and scaling of numeric data.
+Columns or rows can be ignored when normalizing or be normalized jointly.")
     (license license:gpl3+)))
 
 (define-public r-normalityassessment
@@ -9861,13 +9860,13 @@ shortcomings.")
 (define-public r-nhsrwaitinglist
   (package
     (name "r-nhsrwaitinglist")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NHSRwaitinglist" version))
        (sha256
-        (base32 "0w1dpk5p2h40pa36fn3zg8irrkp7ki19s2bg6qc1cj4aw872cmki"))))
+        (base32 "0gffg38nq2mg7ska3i9bxsajaxjbmj0ida622h067bh1igii517n"))))
     (properties `((upstream-name . "NHSRwaitinglist")))
     (build-system r-build-system)
     (arguments

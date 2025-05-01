@@ -4693,19 +4693,18 @@ measures are identical to the correlation measure (r) for bi-allelic data.")
 (define-public r-asyk
   (package
     (name "r-asyk")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AsyK" version))
        (sha256
-        (base32 "0mr09gfxq2xsdrh7h28fkczhs44m367gf7zj09kc5lc5zwd9fs83"))))
+        (base32 "17rkb94zzxxnq1na3w87czxdgj1adqg0knhgv6i088hqsy0h5smb"))))
     (properties `((upstream-name . "AsyK")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-deltd))
     (home-page "https://CRAN.R-project.org/package=AsyK")
     (synopsis "Kernel Density Estimation")
     (description
@@ -7136,60 +7135,6 @@ only for the normal case).  Olivari et all (2021)
 <doi:10.1080/10543406.2020.1852246>.")
     (license license:gpl2+)))
 
-(define-public r-arpaldata
-  (package
-    (name "r-arpaldata")
-    (version "1.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ARPALData" version))
-       (sha256
-        (base32 "0lav1c3fnai65jyxd1832f8vcvd93vqa389c8dsiwfzknkq3z9d9"))))
-    (properties `((upstream-name . "ARPALData")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tm
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-sf
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-lubridate
-                             r-ggplot2
-                             r-future-apply
-                             r-future
-                             r-eurostat
-                             r-dplyr
-                             r-curl
-                             r-aweek
-                             r-archive))
-    (home-page "https://cran.r-project.org/package=ARPALData")
-    (synopsis
-     "Retrieving and Analyzing Air Quality and Weather Data from ARPA Lombardia")
-    (description
-     "This package contains functions for retrieving, managing and analysing air
-quality and weather data from Regione Lombardia open database
-(<https://www.dati.lombardia.it/>).  Data are collected by ARPA Lombardia
-(Lombardia Environmental Protection Agency), Italy, through its ground
-monitoring network (<https://www.dati.lombardia.it/stories/s/auv9-c2sj>).  See
-the webpage <https://www.arpalombardia.it/> for further information on ARPA
-Lombardia's activities and history.  Data quality (e.g. missing values, exported
-values, graphical mapping) has been checked involving members of the ARPA
-Lombardia's office for air quality control.  The package makes available
-observations since 1989 (for weather) and 1968 (for air quality) and are updated
-with daily frequency by the regional agency.  Full description of the package
-can be retrieved in the companion paper Maranzano \\& Algieri (2024), \"ARPALData:
-an R package for retrieving and analyzing air quality and weather data from ARPA
-Lombardia (Italy)\", Environmental and Ecological Statistics,
-<doi:10.1007/s10651-024-00599-6>.")
-    (license license:gpl2+)))
-
 (define-public r-arothron
   (package
     (name "r-arothron")
@@ -7375,27 +7320,6 @@ amount of available disk space.  The Aroma Framework has successfully been used
 in studies to process tens of thousands of arrays.  This package has actively
 been used since 2006.")
     (license license:lgpl2.1+)))
-
-(define-public r-arnie
-  (package
-    (name "r-arnie")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "arnie" version))
-       (sha256
-        (base32 "14xkgyfn9zvkbgram15w7qzqc5pl1a8ig66cif7a79najrgd914r"))))
-    (properties `((upstream-name . "arnie")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/imanuelcostigan/arnie")
-    (synopsis "\"Arnie\" box office records 1982-2014")
-    (description
-     "Arnold Schwarzenegger movie weekend box office records from 1982-2014.")
-    (license license:cc-by-sa4.0)))
 
 (define-public r-armspp
   (package
@@ -14883,13 +14807,13 @@ containers, and more.")
 (define-public r-amerika
   (package
     (name "r-amerika")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amerika" version))
        (sha256
-        (base32 "1c0bi0wrc89d0zv0wzmdvka66mcikgi1w4gn1i22mvg5bivhzaqx"))))
+        (base32 "06fb6dl92jr1acjrlg15s38r4h5n25vq7j21kwc6xjw6cp9pzkha"))))
     (properties `((upstream-name . "amerika")))
     (build-system r-build-system)
     (arguments
@@ -18362,13 +18286,13 @@ Visit: <https://yqzhong7.github.io/AIPW/> for more information.")
 (define-public r-aion
   (package
     (name "r-aion")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aion" version))
        (sha256
-        (base32 "0xfbnaf9v1qb9w756kc0r0nqc8hin6cvma7yc9q1hf6ycj40x8m6"))))
+        (base32 "1lvl78zzvvq1dvlchva9qk505k9z82aci2r5x9f009cx9b0k3yid"))))
     (properties `((upstream-name . "aion")))
     (build-system r-build-system)
     (arguments
@@ -25574,6 +25498,34 @@ Software <doi:10.18637/jss.v112.i04>.")
 high resolution mass spectrometers.  Supports correction for 13C, 2H and 15N. Su
 X, Lu W and Rabinowitz J (2017) <doi:10.1021/acs.analchem.7b00396>.")
     (license license:expat)))
+
+(define-public r-accsamplingdesign
+  (package
+    (name "r-accsamplingdesign")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AccSamplingDesign" version))
+       (sha256
+        (base32 "0bvsbw4lrjjbh210ljvaa9fbss3nnzcv2fcfqmnpwy1j41pdqahd"))))
+    (properties `((upstream-name . "AccSamplingDesign")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vietha/AccSamplingDesign")
+    (synopsis "Acceptance Sampling Plans Design")
+    (description
+     "This package provides tools for designing and analyzing acceptance sampling
+plans.  Supports both attribute-based (Binomial and Poisson) and variable-based
+(Normal and Beta) sampling, enabling quality control for fractional and
+compositional data.  Uses nonlinear programming (NLP) for sampling plan
+optimization, minimizing sample size while balancing producer's and consumer's
+risks.  Operating Characteristic (OC) curves are available for plan
+visualization.")
+    (license license:gpl3)))
 
 (define-public r-accrualplot
   (package

@@ -159,13 +159,13 @@ presented in van den Boom et al. (2018) <doi:10.1093/bioinformatics/bty120>.")
 (define-public r-xvm
   (package
     (name "r-xvm")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xvm" version))
        (sha256
-        (base32 "0pzhavnxsz5m2x8rnnsk1q29gfjxdy1n74a295bq2ghfxxqrayiy"))))
+        (base32 "1fb4nvp1s14jqw7ch0pjqw3bk4rh6lh2fvhars7fymzi39yx8y4d"))))
     (properties `((upstream-name . "xvm")))
     (build-system r-build-system)
     (arguments
@@ -1514,13 +1514,13 @@ output.")
 (define-public r-xlconnect
   (package
     (name "r-xlconnect")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XLConnect" version))
        (sha256
-        (base32 "0vh4iwvplyg0qhh77b1k7sbs7bxp8mzzv54iqsxgd4dn8n5hgavd"))))
+        (base32 "0vllw7d53kxvkm7lif1r8zcpza9sn3skm3wzyxd7pji0y6pin24w"))))
     (properties `((upstream-name . "XLConnect")))
     (build-system r-build-system)
     (arguments

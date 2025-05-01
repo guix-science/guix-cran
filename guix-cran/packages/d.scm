@@ -1675,6 +1675,36 @@ method.  See Lam, X.Y., Marron, J.S., Sun, D.F., and Toh, K.C. (2018)
 (Darwin Core Taxon class <https://dwc.tdwg.org/terms/#taxon>).")
     (license license:expat)))
 
+(define-public r-dwavenardl
+  (package
+    (name "r-dwavenardl")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DWaveNARDL" version))
+       (sha256
+        (base32 "0x300zxi7qacgzf56aca7yqa5mn6c6dby5wvc4d9jii0801bkx3q"))))
+    (properties `((upstream-name . "DWaveNARDL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wavelets r-roxygen2 r-nardl))
+    (home-page "https://cran.r-project.org/package=DWaveNARDL")
+    (synopsis "Dual Wavelet Based NARDL Model")
+    (description
+     "Dual Wavelet based Nonlinear Autoregressive Distributed Lag model has been
+developed for noisy time series analysis.  This package is designed to capture
+both short-run and long-run relationships in time series data, while
+incorporating wavelet transformations.  The methodology combines the NARDL model
+with wavelet decomposition to better capture the nonlinear dynamics of the
+series and exogenous variables.  The package is useful for analyzing economic
+and financial time series data that exhibit both long-term trends and short-term
+fluctuations.  This package has been developed using algorithm of Jammazi et al.
+<doi:10.1016/j.intfin.2014.11.011>.")
+    (license license:gpl3)))
+
 (define-public r-dvqcc
   (package
     (name "r-dvqcc")
@@ -2094,20 +2124,20 @@ on human communication dynamics.")
 (define-public r-duckspatial
   (package
     (name "r-duckspatial")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckspatial" version))
        (sha256
-        (base32 "08gs79g661aa14s8szr5aw9xgba6w44m1nv7y92c3w1cswxny765"))))
+        (base32 "112gyx8nvgaiq3mggnn99n613p6733s9rhjxyx1rw8d27i0a349k"))))
     (properties `((upstream-name . "duckspatial")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sf r-glue r-dbi r-cli))
-    (home-page "https://cran.r-project.org/package=duckspatial")
+    (home-page "https://cidree.github.io/duckspatial/")
     (synopsis "R Interface to 'DuckDB' Database with Spatial Extension")
     (description
      "This package provides an interface between R and the @code{DuckDB} (see
@@ -17326,36 +17356,6 @@ conditions.  For a detailed documentation please visit
 <https://dice-and-domino-plot.readthedocs.io/en/latest/>.")
     (license license:expat)))
 
-(define-public r-diceoptim
-  (package
-    (name "r-diceoptim")
-    (version "2.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DiceOptim" version))
-       (sha256
-        (base32 "0qqvj97lzir6sgvshg13lr3c9yw1qybqh4m34kj37fk8gaab1py7"))))
-    (properties `((upstream-name . "DiceOptim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rgenoud
-                             r-randtoolbox
-                             r-pbivnorm
-                             r-mnormt
-                             r-dicekriging
-                             r-dicedesign))
-    (home-page "http://dice.emse.fr/")
-    (synopsis "Kriging-Based Optimization for Computer Experiments")
-    (description
-     "Efficient Global Optimization (EGO) algorithm as described in \"Roustant et al.
-(2012)\" <doi:10.18637/jss.v051.i01> and adaptations for problems with noise
-(\"Picheny and Ginsbourger, 2012\") <doi:10.1016/j.csda.2013.03.018>, parallel
-infill, and problems with constraints.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-dicem
   (package
     (name "r-dicem")
@@ -21035,6 +21035,50 @@ text file with the necessary R and SPSS codes to reread the data.")
      "Decompose a time series into seasonal, trend and irregular components using
 transformations to amplitude-frequency domain.")
     (license license:gpl2+)))
+
+(define-public r-descide
+  (package
+    (name "r-descide")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DeSciDe" version))
+       (sha256
+        (base32 "17y9lzfpnq0ndbq68c6drm193pr7d5xwcpcjd10w2chx72h5hzi4"))))
+    (properties `((upstream-name . "DeSciDe")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringdb
+                             r-rentrez
+                             r-openxlsx
+                             r-magrittr
+                             r-igraph
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-complexheatmap
+                             r-circlize))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/camdouglas/DeSciDe")
+    (synopsis "Tool for Unbiased Literature Searching and Gene List Curation")
+    (description
+     "Designed for genomic and proteomic data analysis, enabling unbiased
+@code{PubMed} searching, protein interaction network visualization, and
+comprehensive data summarization.  This package aims to help users identify
+novel targets within their data sets based on protein network interactions and
+publication precedence of target's association with research context based on
+literature precedence.  Methods in this package are described in detail in:
+Douglas (Year) <to-be-added DOI or link to the preprint>.  Key functionalities
+of this package also leverage methodologies from previous works, such as: -
+Szklarczyk et al. (2023) <doi:10.1093/nar/gkac1000> - Winter (2017)
+<doi:10.32614/RJ-2017-066>.")
+    (license license:expat)))
 
 (define-public r-des
   (package
@@ -27543,38 +27587,6 @@ Biotechnology Information (NCBI) Database of Genotypes and Phenotypes
 (@code{dbGaP}) <https://www.ncbi.nlm.nih.gov/gap/docs/submissionguide/>.")
     (license license:gpl2)))
 
-(define-public r-dbflobr
-  (package
-    (name "r-dbflobr")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dbflobr" version))
-       (sha256
-        (base32 "04gh0xfdp077f3ppf8i101q17n2r711y47qnxb9nq5ksnf37s5jp"))))
-    (properties `((upstream-name . "dbflobr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsqlite
-                             r-rlang
-                             r-glue
-                             r-flobr
-                             r-dbi
-                             r-crayon
-                             r-clisymbols
-                             r-chk
-                             r-blob))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/poissonconsulting/dbflobr")
-    (synopsis "Read and Write Files to SQLite Databases")
-    (description
-     "Reads and writes files to SQLite databases <https://www.sqlite.org/index.html>
-as flobs (a flob is a blob that preserves the file extension).")
-    (license license:expat)))
-
 (define-public r-dbfit
   (package
     (name "r-dbfit")
@@ -27922,19 +27934,18 @@ computes several estimations of the true error rate.")
 (define-public r-davies
   (package
     (name "r-davies")
-    (version "1.2-0")
+    (version "1.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Davies" version))
        (sha256
-        (base32 "0n2pqipv0b1w2zjvycms0kyk7h8ps49f5jlzgyxhy9dlyr0ivaml"))))
+        (base32 "1l05411zwaj224vdv025bwqh6iqc5gmffmn4aml1fyzaa4magz1n"))))
     (properties `((upstream-name . "Davies")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mathjaxr))
     (home-page "https://cran.r-project.org/package=Davies")
     (synopsis "The Davies Quantile Function")
     (description "Various utilities for the Davies distribution.")

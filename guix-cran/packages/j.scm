@@ -2039,13 +2039,13 @@ Hankin (2023) <doi:10.48550/@code{arXiv.2303.06062>}.")
 (define-public r-jops
   (package
     (name "r-jops")
-    (version "0.1.19")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JOPS" version))
        (sha256
-        (base32 "0qnycf7yd1sas0v6jclmc1y0jq9bslqlf66mqyirpxcs2lsk0327"))))
+        (base32 "0sb3ha0f4gz3nlni2mlhwh9663pl2zw517gxhn6ys4iap4v1jxd4"))))
     (properties `((upstream-name . "JOPS")))
     (build-system r-build-system)
     (arguments
@@ -2053,7 +2053,6 @@ Hankin (2023) <doi:10.48550/@code{arXiv.2303.06062>}.")
       #:tests? #f))
     (propagated-inputs (list r-spats
                              r-spam
-                             r-semipar
                              r-rpart
                              r-mass
                              r-ggplot2

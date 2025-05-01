@@ -11831,13 +11831,13 @@ with @code{OpenMP} and suited to large genomic datasets.")
 (define-public r-mpmcorrelogram
   (package
     (name "r-mpmcorrelogram")
-    (version "0.1-4")
+    (version "0.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpmcorrelogram" version))
        (sha256
-        (base32 "0gv9xswrfvndcjal0csab1w2cnl4rg8pznyxbz84b0qr95jg81ag"))))
+        (base32 "1qkr1b5h2lgngap7nb3lbbxk8qls8zga067l0z1b99fpy851iw85"))))
     (properties `((upstream-name . "mpmcorrelogram")))
     (build-system r-build-system)
     (arguments
@@ -14730,30 +14730,6 @@ model library instead manually setting up text files (which only works with old
 versions of Monolix').")
     (license license:expat)))
 
-(define-public r-monoinc
-  (package
-    (name "r-monoinc")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MonoInc" version))
-       (sha256
-        (base32 "14rykw3bfj0vznz0rw4vsg1k4vanfv9cy867vspw966ncl4bw70h"))))
-    (properties `((upstream-name . "MonoInc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sitar r-iterators r-foreach r-doparallel
-                             r-compare))
-    (home-page "https://cran.r-project.org/package=MonoInc")
-    (synopsis "Monotonic Increasing")
-    (description
-     "Various imputation methods are utilized in this package, where one can flag and
-impute non-monotonic data that is outside of a prespecified range.")
-    (license license:gpl3)))
-
 (define-public r-monographar
   (package
     (name "r-monographar")
@@ -15649,33 +15625,6 @@ provides an alternative way of comparing two different JSON lists, returning the
 left/inner/right-join style results.")
     (license license:expat)))
 
-(define-public r-mogavs
-  (package
-    (name "r-mogavs")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mogavs" version))
-       (sha256
-        (base32 "0lhmwdv991bv7j8k066jr7ii94w60ydjpf5pzmv8jlblf3w2pr02"))))
-    (properties `((upstream-name . "mogavs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-cvtools))
-    (home-page "https://cran.r-project.org/package=mogavs")
-    (synopsis
-     "Multiobjective Genetic Algorithm for Variable Selection in Regression")
-    (description
-     "This package provides functions for exploring the best subsets in regression
-with a genetic algorithm.  The package is much faster than methods relying on
-complete enumeration, and is suitable for data sets with large number of
-variables.  For more information, see Sinha, Malo & Kuosmanen (2015)
-<doi:10.1080/10618600.2014.899236>.")
-    (license license:gpl2)))
-
 (define-public r-mofat
   (package
     (name "r-mofat")
@@ -15968,13 +15917,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "1gv6jqvgv066nwsgwp0x38hxl4lz8fsgfhnl8pvb50p8djx8dycx"))))
+        (base32 "05hf9kjgid9jf9gb7b6rvcwrwzbk5ddpjkf9b058k6lxhfyp88a9"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (arguments
@@ -16375,13 +16324,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.33")
+    (version "3.34")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modEvA" version))
        (sha256
-        (base32 "16jkcpapmfx5vjv8zg4wwp8da5cck05id9jxpz048hwfj42119nf"))))
+        (base32 "01yn47nx2nm4g51zhpl170544vrh2v7p3q5bxcg9z1jh3s0xypjl"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (arguments
@@ -19740,13 +19689,13 @@ published by Oxford University Press in 2018 with ISBN-13: 978-019882472.")
 (define-public r-mma
   (package
     (name "r-mma")
-    (version "10.7-1")
+    (version "10.8-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mma" version))
        (sha256
-        (base32 "0zqkqzi27qg4q6mirhw5gzjbsd9i06rxzr61zmmsw33wg5a6lgd3"))))
+        (base32 "08h0aff47kss3q7zhik1x5f5v89b13w633a1k7ca5wb0dp2rlhn6"))))
     (properties `((upstream-name . "mma")))
     (build-system r-build-system)
     (arguments
@@ -20092,13 +20041,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.6-3")
+    (version "1.6-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "0qlssaji78y1lbapakzp1j4q8grzgw3fmrd0215h25265bwym8yf"))))
+        (base32 "1zspxyyklls5zq8w3b1sd255vc3h4rkg21fxrry4gx8fbgfb9g2j"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (arguments
@@ -24504,32 +24453,6 @@ frequentist (EM) and Bayesian methods for estimation, prediction and model
 evaluation.  See Wong and Li (2002) <doi:10.1111/1467-9868.00222>, Boshnakov
 (2009) <doi:10.1016/j.spl.2009.04.009>), and the extensive references in the
 documentation.")
-    (license license:gpl2+)))
-
-(define-public r-mixall
-  (package
-    (name "r-mixall")
-    (version "1.5.16")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MixAll" version))
-       (sha256
-        (base32 "134nf62cc2l998dl6vhp4nlyjfbybw9l9rycnxys4i0wzcsl8lz5"))))
-    (properties `((upstream-name . "MixAll")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rtkore r-rcpp))
-    (home-page "https://cran.r-project.org/package=MixAll")
-    (synopsis "Clustering and Classification using Model-Based Mixture Models")
-    (description
-     "Algorithms and methods for model-based clustering and classification.  It
-supports various types of data: continuous, categorical and counting and can
-handle mixed data of these types.  It can fit Gaussian (with diagonal covariance
-structure), gamma, categorical and Poisson models.  The algorithms also support
-missing values.")
     (license license:gpl2+)))
 
 (define-public r-mixak

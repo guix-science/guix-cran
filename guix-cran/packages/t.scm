@@ -15383,13 +15383,13 @@ details.")
 (define-public r-tinytiger
   (package
     (name "r-tinytiger")
-    (version "0.0.9")
+    (version "0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytiger" version))
        (sha256
-        (base32 "0nfy0zd7byy2j9mgq4piyjvxdlzw98jajmvni8pp5m6ilac116zy"))))
+        (base32 "0fr6m47dnql1xhn5kvmibckys7vkrkylg5aavbvix1f2a831sing"))))
     (properties `((upstream-name . "tinytiger")))
     (build-system r-build-system)
     (arguments
@@ -17339,13 +17339,13 @@ Service (NASS) @code{QuickStats} service.")
 (define-public r-tidytuesdayr
   (package
     (name "r-tidytuesdayr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytuesdayR" version))
        (sha256
-        (base32 "06ykjs668lprvkw4yj9gs3b08h5kdb67r7yi8b1z5icy2cp6l5q3"))))
+        (base32 "12y6sgwdwxi47gs94sa1zf49ci03wf0gqcy2jk5riyfybvwpgi3b"))))
     (properties `((upstream-name . "tidytuesdayR")))
     (build-system r-build-system)
     (arguments
@@ -19146,13 +19146,13 @@ operations.")
 (define-public r-tidyfit
   (package
     (name "r-tidyfit")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfit" version))
        (sha256
-        (base32 "1c8ydjwszgbp0y49iiqyhvfkx2gbiz6y0kg98kz0hfgd63k66lk5"))))
+        (base32 "0wd1xrynhgnznxjrjv30nss8sv4wv4gg01b5l6m30hhpn66v5a4d"))))
     (properties `((upstream-name . "tidyfit")))
     (build-system r-build-system)
     (arguments
@@ -19167,7 +19167,6 @@ operations.")
                              r-purrr
                              r-progressr
                              r-mass
-                             r-magrittr
                              r-generics
                              r-furrr
                              r-dplyr
@@ -21888,13 +21887,13 @@ implementation of the TGS algorithm and its variants.")
 (define-public r-tgram
   (package
     (name "r-tgram")
-    (version "0.2-3")
+    (version "0.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tgram" version))
        (sha256
-        (base32 "0vlnry8drq3fqfy8dk50pcwcx9dj657kx6s19fs2b6acigkr4g7w"))))
+        (base32 "10jlpzaf6rbk5jmswx0gwwih255yc44nns2xsbzvbx4s9cr95ysl"))))
     (properties `((upstream-name . "tgram")))
     (build-system r-build-system)
     (arguments
@@ -30855,13 +30854,13 @@ them into a standardised (tidy) output format.")
 (define-public r-tabs
   (package
     (name "r-tabs")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabs" version))
        (sha256
-        (base32 "0zqgi89lsix9gq5b30ibx1j4xl7wd4ihwinm0bqhx7j8cg2c1jws"))))
+        (base32 "02cfnbc1nd5fmr5n0hpxdcswxf9lp08mrbcsis3nwkal78vxck60"))))
     (properties `((upstream-name . "tabs")))
     (build-system r-build-system)
     (arguments

@@ -1995,6 +1995,31 @@ smoothing of the daily run size.  Theory described in Bonner and Schwarz (2011)
 <doi:10.1111/j.1541-0420.2011.01599.x>.")
     (license license:gpl2+)))
 
+(define-public r-btrm
+  (package
+    (name "r-btrm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "btrm" version))
+       (sha256
+        (base32 "0limvn2n1rchp55l440gfifz6ci87dkih1rzgzvmlymdgf6nqq17"))))
+    (properties `((upstream-name . "btrm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-proc r-arm))
+    (home-page "https://cran.r-project.org/package=btrm")
+    (synopsis
+     "Bayesian Treed Regression Model for Personalized Prediction and Precision Diagnostics")
+    (description
+     "Generalization of the Bayesian classification and regression tree (CART) model
+that partitions subjects into terminal nodes and tailors regression model to
+each terminal node.")
+    (license license:gpl2+)))
+
 (define-public r-btllasso
   (package
     (name "r-btllasso")
@@ -7198,13 +7223,13 @@ Koopmeiners, & Hobbs (2018) <doi:10.1093/biostatistics/kxx031>.")
 (define-public r-boral
   (package
     (name "r-boral")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boral" version))
        (sha256
-        (base32 "1x53g3y283i92624rkp36lwfmz0p8rkkqsndn5h35sapjga6wmy3"))))
+        (base32 "1jcx0swdq0parn15d8p22hvq50s3pfyic26k60v0cnmknwipcg9l"))))
     (properties `((upstream-name . "boral")))
     (build-system r-build-system)
     (arguments
@@ -10325,6 +10350,30 @@ user-friendly wrapper for simulating basket trials under conditions and
 analyzing them with a Bayesian model averaging approach.")
     (license license:gpl3+)))
 
+(define-public r-bmabart
+  (package
+    (name "r-bmabart")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bmabart" version))
+       (sha256
+        (base32 "0sslfz2vsq29j99r4rx17ykf9n6mzc4sf1bw6qkpij6hcs994wcn"))))
+    (properties `((upstream-name . "bmabart")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-lattice r-gplots r-bart))
+    (home-page "https://www.r-project.org")
+    (synopsis "Bayesian Mediation Analysis Using BART")
+    (description
+     "Used for Bayesian mediation analysis based on Bayesian additive Regression Trees
+(BART).  The analysis method is described in Yu and Li (2025) \"Mediation
+Analysis with Bayesian Additive Regression Trees\", submitted for publication.")
+    (license license:gpl2+)))
+
 (define-public r-blythstillcasellaci
   (package
     (name "r-blythstillcasellaci")
@@ -12995,6 +13044,34 @@ Traffic Rate calculation procedures, see Schmid et al. (2019)
 metal rings.  For a tutorial, go to <doi:10.1080/03078698.2014.933053>.")
     (license license:gpl2)))
 
+(define-public r-birdnetr
+  (package
+    (name "r-birdnetr")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "birdnetR" version))
+       (sha256
+        (base32 "1lsmjid3ij571dm1w5ki28vph4ll5cja0gz8f7hpmhh1nazfwfcn"))))
+    (properties `((upstream-name . "birdnetR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reticulate))
+    (native-inputs (list r-knitr))
+    (home-page "https://birdnet-team.github.io/birdnetR/")
+    (synopsis "Deep Learning for Automated (Bird) Sound Identification")
+    (description
+     "Use @code{BirdNET}', a state-of-the-art deep learning classifier, to
+automatically identify (bird) sounds.  Analyze bioacoustic datasets without any
+computer science background using a pre-trained model or a custom trained
+classifier.  Predict bird species occurrence based on location and week of the
+year.  Kahl, S., Wood, C. M., Eibl, M., & Klinck, H. (2021)
+<doi:10.1016/j.ecoinf.2021.101236>.")
+    (license license:expat)))
+
 (define-public r-birdie
   (package
     (name "r-birdie")
@@ -14648,47 +14725,6 @@ and aridity.  Modeled fluctuations (model frames) are compared with Mantel
 correlograms on multiple levels defined by sample design.  Package
 implementation can be understood by running examples in @code{modelFrame()}, and
 @code{muleMan()} functions.")
-    (license license:gpl3)))
-
-(define-public r-biodosetools
-  (package
-    (name "r-biodosetools")
-    (version "3.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "biodosetools" version))
-       (sha256
-        (base32 "013nqdqrv5h3swzqss2kazsp06wrs57zri3aaidy92wrd6v24bsh"))))
-    (properties `((upstream-name . "biodosetools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-shinywidgets
-                             r-shinydashboard
-                             r-shiny
-                             r-rmarkdown
-                             r-rlang
-                             r-rhandsontable
-                             r-msm
-                             r-mixtools
-                             r-maxlik
-                             r-mass
-                             r-magrittr
-                             r-golem
-                             r-ggplot2
-                             r-dplyr
-                             r-config
-                             r-cli
-                             r-bsplus))
-    (native-inputs (list r-knitr))
-    (home-page "https://biodosetools-team.github.io/biodosetools/")
-    (synopsis "An R Shiny Application for Biological Dosimetry")
-    (description
-     "This package provides a tool to perform all different statistical tests and
-calculations needed by Biological Dosimetry Laboratories.")
     (license license:gpl3)))
 
 (define-public r-biodiversityr
@@ -19057,13 +19093,13 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.5.12")
+    (version "0.5.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFS" version))
        (sha256
-        (base32 "1n5bw68sf03apji46p3dk702zhbach5f2qqfb5ija3w3zn7wma18"))))
+        (base32 "0awwp76q1aqx1rf35gl0z6jir9syq93m3flk95cwsd5rwp40lpg2"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (arguments
@@ -19422,13 +19458,13 @@ scaffolds from low-depth sequencing data.")
 (define-public r-bevimed
   (package
     (name "r-bevimed")
-    (version "5.10")
+    (version "6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeviMed" version))
        (sha256
-        (base32 "0brima71g7x51zd1ifbgw54mnamjmm2wr8rrcnkzdy0q8wcnvgqj"))))
+        (base32 "05br55m97c1wlsig9z3kyv7d3sab3gcis0bkqn1w6rlsknxajmdm"))))
     (properties `((upstream-name . "BeviMed")))
     (build-system r-build-system)
     (arguments
@@ -22869,35 +22905,6 @@ of a marginal model estimated with generalized estimating equations.  Details
 about the bias formula used are in Lunardon, N., Scharfstein, D. (2017)
 <doi:10.1002/sim.7366>.")
     (license license:gpl2)))
-
-(define-public r-bcgam
-  (package
-    (name "r-bcgam")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bcgam" version))
-       (sha256
-        (base32 "1dg2fcjw8xal77irviiz260qpar2iqkjvi2k4qfm71jyq0ir0axk"))))
-    (properties `((upstream-name . "bcgam")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nimble r-igraph r-coda))
-    (home-page "https://cran.r-project.org/package=bcgam")
-    (synopsis "Bayesian Constrained Generalised Linear Models")
-    (description
-     "Fits generalised partial linear regression models using a Bayesian approach,
-where shape and smoothness constraints are imposed on nonparametrically modelled
-predictors through shape-restricted splines, and no constraints are imposed on
-optional parametrically modelled covariates.  See Meyer et al. (2011)
-<doi/10.1080/10485252.2011.597852> for more details.  IMPORTANT: before
-installing bcgam', you need to install Rtools (Windows) or Xcode (Mac OS X).
-These are required for the correct installation of nimble
-(<https://r-nimble.org/download>).")
-    (license license:gpl2+)))
 
 (define-public r-bcfrailphdv
   (package

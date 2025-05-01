@@ -673,13 +673,13 @@ adaptive Metropolis samplers.  References: Roberts and Rosenthal (2009)
 (define-public r-overlapptest
   (package
     (name "r-overlapptest")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "overlapptest" version))
        (sha256
-        (base32 "0qvsiwh76isiz3rcrizahp6p35lscrjijidnjwwwpmc0r9pm7xzd"))))
+        (base32 "01nsqzsgsnbx513lcb6lr94p7mlw0nnb6y02k2m04p35dqjxmfc5"))))
     (properties `((upstream-name . "overlapptest")))
     (build-system r-build-system)
     (arguments
@@ -2611,13 +2611,13 @@ through @code{OpenMP}'.")
 (define-public r-orthgs
   (package
     (name "r-orthgs")
-    (version "0.1.6")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orthGS" version))
        (sha256
-        (base32 "0nb0jayfx5pi23kq1xybiz0v9fyjj50z13fansna5h9zc6f3m4s7"))))
+        (base32 "1r91vnlgh4nxwdvvnlwbj2gyxzvhg4g5jy0dbic9nm1fhlyfh0ry"))))
     (properties `((upstream-name . "orthGS")))
     (build-system r-build-system)
     (arguments
@@ -3699,25 +3699,21 @@ al (2020) <doi:10.18637/jss.v096.i08>.")
 (define-public r-ordinalbayes
   (package
     (name "r-ordinalbayes")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordinalbayes" version))
        (sha256
-        (base32 "13f9rv6gndjr18rfk60rmginzam1xjsssjn45l6hhl6y3gglsyzh"))))
+        (base32 "12pgfm7byr9kvvgj1f1n6jpy9r5hd1c1jdjyr1vqkzp1v06ym1fh"))))
     (properties `((upstream-name . "ordinalbayes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list jags))
-    (propagated-inputs (list r-summarizedexperiment
-                             r-runjags
-                             r-devtools
-                             r-deseq2
-                             r-dclone
-                             r-coda))
+    (propagated-inputs (list r-summarizedexperiment r-runjags r-deseq2
+                             r-dclone r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kelliejarcher/ordinalbayes")
     (synopsis "Bayesian Ordinal Regression for High-Dimensional Data")
@@ -4349,6 +4345,57 @@ note in no way should output from this package be a substitute for medical
 advise.  All medications should only be consumed on prescription from a licensed
 healthcare provider.")
     (license license:gpl3)))
+
+(define-public r-orakle
+  (package
+    (name "r-orakle")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oRaklE" version))
+       (sha256
+        (base32 "1h8zj41d2m8ar71yc9fbrdlvnmhjs8p552biflsbj1r2i5dz0c1y"))))
+    (properties `((upstream-name . "oRaklE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xml2
+                             r-survival
+                             r-scales
+                             r-r-utils
+                             r-purrr
+                             r-patchwork
+                             r-mumin
+                             r-mlmetrics
+                             r-mgcv
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-glmnet
+                             r-ggthemes
+                             r-ggplot2
+                             r-dplyr
+                             r-doparallel
+                             r-countrycode
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=oRaklE")
+    (synopsis
+     "Multi-Horizon Electricity Demand Forecasting in High Resolution")
+    (description
+     "Advanced forecasting algorithms for long-term energy demand at the national or
+regional level.  The methodology is based on GrandÃ³n et al. (2024)
+<doi:10.1016/j.apenergy.2023.122249>; Zimmermann & Ziel (2024)
+<doi:10.2139/ssrn.4823013>.  Real-time data, including power demand, weather
+conditions, and macroeconomic indicators, are provided through automated API
+integration with various institutions.  The modular approach maintains
+transparency on the various model selection processes and encompasses the
+ability to be adapted to individual needs. @code{oRaklE} tries to help
+facilitating robust decision-making in energy management and planning.")
+    (license license:expat)))
 
 (define-public r-opusminer
   (package
@@ -13238,33 +13285,6 @@ the total volumes of distribution of a set of regions of interest.  Fitting
 methods include the simple reference region', ordinary least squares (sometimes
 known as occupancy plot), and restricted maximum likelihood estimation'.")
     (license license:gpl3)))
-
-(define-public r-oca
-  (package
-    (name "r-oca")
-    (version "0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OCA" version))
-       (sha256
-        (base32 "19bayggqkzzpvn7ax8m8xgvz27a03iyybsxjz2vphf03dwsr8c5h"))))
-    (properties `((upstream-name . "OCA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mathjaxr))
-    (home-page "https://cran.r-project.org/package=OCA")
-    (synopsis "Optimal Capital Allocations")
-    (description
-     "Computes optimal capital allocations based on some standard principles such as
-Haircut, Overbeck type II and the Covariance Allocation Principle.  It also
-provides some shortcuts for obtaining the Value at Risk and the Expectation
-Shortfall, using both the normal and the t-student distribution, see Urbina and
-GuillÃ©n (2014)<doi:10.1016/j.eswa.2014.05.017> and Urbina
-(2013)<http://hdl.handle.net/2099.1/19443>.")
-    (license license:gpl2)))
 
 (define-public r-oc
   (package
