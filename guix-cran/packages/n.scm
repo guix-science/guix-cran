@@ -4490,13 +4490,13 @@ Columns or rows can be ignored when normalizing or be normalized jointly.")
 (define-public r-normalityassessment
   (package
     (name "r-normalityassessment")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NormalityAssessment" version))
        (sha256
-        (base32 "0r9a51z614si3b45g01lfgapmgc4smjf2hylgy5kvq8w0yh0w5y6"))))
+        (base32 "1rykf7g0b6kw31pg6vgib5hq5naamy3cfvfzldmgyziixkg2172b"))))
     (properties `((upstream-name . "NormalityAssessment")))
     (build-system r-build-system)
     (arguments
@@ -13464,19 +13464,18 @@ network analysis libraries and dynamic web interfaces.")
 (define-public r-netint
   (package
     (name "r-netint")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetInt" version))
        (sha256
-        (base32 "08vmqjai1lakbb4zs895fn0hn3gw2q7zsdkx6yxidfff5qn4mq6b"))))
+        (base32 "143blya3pwwbxkjxry37lz583hz13n4bh53k163wv5jdr2ili3b8"))))
     (properties `((upstream-name . "NetInt")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mathjaxr))
     (home-page "https://cran.r-project.org/package=NetInt")
     (synopsis "Methods for Unweighted and Weighted Network Integration")
     (description
@@ -15847,32 +15846,6 @@ printed header output or to navigate nested lists of raw metadata.")
      "This package provides tools to create time series and geometry @code{NetCDF}
 files.")
     (license license:cc0)))
-
-(define-public r-ncdf4-helpers
-  (package
-    (name "r-ncdf4-helpers")
-    (version "0.3-7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ncdf4.helpers" version))
-       (sha256
-        (base32 "1nj1d9lpv6jkhm4gygndbvxvnzsnqsq813ilcy6jwxvk92r3awwk"))))
-    (properties `((upstream-name . "ncdf4.helpers")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pcict r-ncdf4 r-abind))
-    (home-page "https://www.r-project.org")
-    (synopsis "Helper Functions for Use with the 'ncdf4' Package")
-    (description
-     "This package contains a collection of helper functions for dealing with
-@code{NetCDF} files <https://www.unidata.ucar.edu/software/netcdf/> opened using
-ncdf4', particularly @code{NetCDF} files that conform to the Climate and
-Forecast (CF) Metadata Conventions
-<http://cfconventions.org/Data/cf-conventions/cf-conventions-1.7/cf-conventions.html>.")
-    (license license:lgpl2.1)))
 
 (define-public r-ncc
   (package

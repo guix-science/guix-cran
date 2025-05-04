@@ -17919,13 +17919,13 @@ the package also includes utilities to manipulate standard allele count data
 (define-public r-pooledpeaks
   (package
     (name "r-pooledpeaks")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pooledpeaks" version))
        (sha256
-        (base32 "13pqh3bgf7nqs39h9r0v0rq52n384s24vy4jf8bxi9zdxv8c19hq"))))
+        (base32 "1wbhrnhzhc5dw2ydr8w5lhiwnf43z7p9r3y2kqhdyz2hisq9zyir"))))
     (properties `((upstream-name . "pooledpeaks")))
     (build-system r-build-system)
     (arguments
@@ -28319,13 +28319,13 @@ trees in NEXUS and Newick formats, while preserving annotations.")
 (define-public r-phylospatial
   (package
     (name "r-phylospatial")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylospatial" version))
        (sha256
-        (base32 "1585ci8wdj8swzrnyqk7rsf8k3w05ann3kdpxzb9kypvqk8scbrp"))))
+        (base32 "00gmgj86609c3dbi4g0870iq1js8n5iq4vh308q7iw2mclcdvzp3"))))
     (properties `((upstream-name . "phylospatial")))
     (build-system r-build-system)
     (arguments
@@ -28336,12 +28336,12 @@ trees in NEXUS and Newick formats, while preserving annotations.")
     (home-page "https://matthewkling.github.io/phylospatial/")
     (synopsis "Spatial Phylogenetic Analysis")
     (description
-     "Conduct various analyses on spatial phylogenetic diversity patterns.  Use your
-data on an evolutionary tree and geographic distributions of the terminal taxa
-to compute diversity and endemism metrics, test significance with null model
-randomization, analyze community turnover and biotic regionalization, and
-perform spatial conservation prioritizations.  All functions support
-quantitative community data in addition to binary data.")
+     "Analyze spatial phylogenetic diversity patterns.  Use your data on an
+evolutionary tree and geographic distributions of the terminal taxa to compute
+diversity and endemism metrics, test significance with null model randomization,
+analyze community turnover and biotic regionalization, and perform spatial
+conservation prioritizations.  All functions support quantitative community data
+in addition to binary data.")
     (license license:expat)))
 
 (define-public r-phylosignaldb
@@ -29689,20 +29689,20 @@ elements (i.e., \"2\" becomes a vector of \"A,\" \"B,\" and \"C\").")
 (define-public r-phoenix
   (package
     (name "r-phoenix")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phoenix" version))
        (sha256
-        (base32 "0vb1y6ga3gjgm7xhaa2pv61cc4a8i45bdf1pvk2ym4l6c717s3yp"))))
+        (base32 "17ba8i13ikzck1a4nvxnisa979hkn231rwp9gg0qr48r0pr036q4"))))
     (properties `((upstream-name . "phoenix")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/CU-DBMI-Peds/phoenix/")
+    (home-page "https://cu-dbmi-peds.github.io/phoenix/")
     (synopsis "The Phoenix Pediatric Sepsis and Septic Shock Criteria")
     (description
      "Implementation of the Phoenix and Phoenix-8 Sepsis Criteria as described in
@@ -37678,29 +37678,6 @@ e-prints, @code{arXiv-2009} <@code{arXiv:2009.10982>}.")
 conditional maximum likelihood estimation.")
     (license license:gpl3)))
 
-(define-public r-pcict
-  (package
-    (name "r-pcict")
-    (version "0.5-4.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PCICt" version))
-       (sha256
-        (base32 "1akfvlxmklwzlzdg1q1828dkf8rqy3pyypywhd06g1f0g87xk5x7"))))
-    (properties `((upstream-name . "PCICt")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://www.r-project.org")
-    (synopsis
-     "Implementation of POSIXct Work-Alike for 365 and 360 Day Calendars")
-    (description
-     "This package provides a work-alike to R's POSIXct class which implements 360-
-and 365-day calendars in addition to the gregorian calendar.")
-    (license license:gpl2)))
-
 (define-public r-pci
   (package
     (name "r-pci")
@@ -38419,13 +38396,13 @@ implemented.  Functions for incorporating background knowledge are provided.")
 (define-public r-pcal1
   (package
     (name "r-pcal1")
-    (version "1.5.7")
+    (version "1.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcaL1" version))
        (sha256
-        (base32 "0k4kq4j45wsplag3nklyhyycpw65jin4i1l6ayci971y1pr3n113"))))
+        (base32 "1vprg93whv0l4mvgmq6c3bsxlyfbhswlf8yi3y5x2kc3cbf76s3y"))))
     (properties `((upstream-name . "pcaL1")))
     (build-system r-build-system)
     (arguments
@@ -40274,19 +40251,19 @@ from the ggeffects package.  LÃ¼decke, D. (2018) <doi:10.21105/joss.00638>.")
 (define-public r-password
   (package
     (name "r-password")
-    (version "1.0-0")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "password" version))
        (sha256
-        (base32 "1ijzqdw54l8wvpy6ys28njvhplzjxzzi5i9y41vjnrr88n13977v"))))
+        (base32 "1kyk2yn8yn03wmrcims776x506avyykyq8462zaw5kgm9iq1vnad"))))
     (properties `((upstream-name . "password")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=password")
+    (home-page "https://enricoschumann.net/R/packages/password/")
     (synopsis "Create Random Passwords")
     (description
      "Create random passwords of letters, numbers and punctuation.")
@@ -40885,48 +40862,6 @@ as well as others such as vector fields, traps, and attractors.")
 the package contains two classes: the Particle and the Particle Swarm, this two
 class is used to run the PSO with methods to easily print, plot and save the
 result.")
-    (license license:gpl3)))
-
-(define-public r-partialnetwork
-  (package
-    (name "r-partialnetwork")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PartialNetwork" version))
-       (sha256
-        (base32 "010q3d0r40kszdsyc6bish7vrzl98zxi47ppbnv5n86p0n3dckjn"))))
-    (properties `((upstream-name . "PartialNetwork")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppprogress
-                             r-rcppnumerical
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-formula-tools
-                             r-formula
-                             r-foreach
-                             r-dorng
-                             r-doparallel
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ahoundetoungan/PartialNetwork")
-    (synopsis "Estimating Peer Effects Using Partial Network Data")
-    (description
-     "This package implements IV-estimator and Bayesian estimator for linear-in-means
-Spatial Autoregressive (SAR) model (see @code{LeSage}, 1997
-<doi:10.1177/016001769702000107>; Lee, 2004
-<doi:10.1111/j.1468-0262.2004.00558.x>; BramoullÃ© et al., 2009
-<doi:10.1016/j.jeconom.2008.12.021>), while assuming that only a partial
-information about the network structure is available.  Examples are when the
-adjacency matrix is not fully observed or when only consistent estimation of the
-network formation model is available (see Boucher and Houndetoungan
-<https://ahoundetoungan.com/files/Papers/@code{PartialNetwork.pdf>}).")
     (license license:gpl3)))
 
 (define-public r-partiallyoverlapping

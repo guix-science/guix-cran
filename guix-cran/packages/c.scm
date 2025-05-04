@@ -3735,29 +3735,6 @@ of Bladt and Sorensen (2005) <doi:10.1111/j.1467-9868.2005.00508.x> are
 included.")
     (license license:gpl3)))
 
-(define-public r-ctm
-  (package
-    (name "r-ctm")
-    (version "0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CTM" version))
-       (sha256
-        (base32 "0h1lpygjq46nwkn4km49bngvxmgrnh3csrfln3yjr9yyzs7d3lz1"))))
-    (properties `((upstream-name . "CTM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plyr r-jiebar))
-    (home-page "https://cran.r-project.org/package=CTM")
-    (synopsis "Text Mining Toolkit for Chinese Document")
-    (description
-     "The CTM package is designed to solve problems of text mining and is specific for
-Chinese document.")
-    (license license:gpl3)))
-
 (define-public r-ctl
   (package
     (name "r-ctl")
@@ -4240,65 +4217,6 @@ equally sized groups, and the unnesting of data.frames within fully named lists.
 X, Meyer MC and Opsomer JD (2021)<doi:10.1016/j.jspi.2021.02.004> for more
 details.")
     (license license:gpl2+)))
-
-(define-public r-cstools
-  (package
-    (name "r-cstools")
-    (version "5.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CSTools" version))
-       (sha256
-        (base32 "0yyzc76x45pf3r84jdpxj2zplibf6zb1q3gb8jv5ncpcw3s9i3c9"))))
-    (properties `((upstream-name . "CSTools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-verification
-                             r-startr
-                             r-scales
-                             r-s2dv
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-rainfarmr
-                             r-qmap
-                             r-plyr
-                             r-ncdf4
-                             r-multiapply
-                             r-maps
-                             r-lubridate
-                             r-ggplot2
-                             r-easyverification
-                             r-easyncdf
-                             r-data-table
-                             r-climprojdiags
-                             r-abind))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=CSTools")
-    (synopsis
-     "Assessing Skill of Climate Forecasts on Seasonal-to-Decadal Timescales")
-    (description
-     "Exploits dynamical seasonal forecasts in order to provide information relevant
-to stakeholders at the seasonal timescale.  The package contains process-based
-methods for forecast calibration, bias correction, statistical and stochastic
-downscaling, optimal forecast combination and multivariate verification, as well
-as basic and advanced tools to obtain tailored products.  This package was
-developed in the context of the ERA4CS project MEDSCOPE and the H2020 S2S4E
-project and includes contributions from @code{ArticXchange} project founded by
-EU-@code{PolarNet} 2'.  PÃ©rez-ZanÃ³n et al. (2022)
-<doi:10.5194/gmd-15-6115-2022>'.  Doblas-Reyes et al. (2005)
-<doi:10.1111/j.1600-0870.2005.00104.x>'.  Mishra et al. (2018)
-<doi:10.1007/s00382-018-4404-z>'.  Sanchez-Garcia et al. (2019)
-<doi:10.5194/asr-16-165-2019>'.  Straus et al. (2007) <doi:10.1175/JCLI4070.1>'.
- Terzago et al. (2018) <doi:10.5194/nhess-18-2825-2018>'.  Torralba et al.
-(2017) <doi:10.1175/JAMC-D-16-0204.1>'.  D'Onofrio et al. (2014)
-<doi:10.1175/JHM-D-13-096.1>'.  Verfaillie et al. (2017)
-<doi:10.5194/gmd-10-4257-2017>'.  Van Schaeybroeck et al. (2019)
-<doi:10.1016/B978-0-12-812372-0.00010-8>'.  Yiou et al. (2013)
-<doi:10.1007/s00382-012-1626-3>'.")
-    (license license:gpl3)))
 
 (define-public r-cstime
   (package
@@ -4811,50 +4729,6 @@ county, municipality, and ward (Oslo only) level for redistricting in 2024,
 insert for Oslo), allowing the user to rapidly create choropleth maps of Norway
 without any geolibraries.")
     (license license:expat)))
-
-(define-public r-csindicators
-  (package
-    (name "r-csindicators")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CSIndicators" version))
-       (sha256
-        (base32 "1imfhr049wn00bs6c5lmi0gpyiqifk3dv5iz054x48r0niz8hmsf"))))
-    (properties `((upstream-name . "CSIndicators")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-spei
-                             r-s2dv
-                             r-multiapply
-                             r-lmomco
-                             r-lmom
-                             r-cstools
-                             r-climprojdiags))
-    (native-inputs (list r-knitr))
-    (home-page "https://earth.bsc.es/gitlab/es/csindicators/")
-    (synopsis
-     "Climate Services' Indicators Based on Sub-Seasonal to Decadal Predictions")
-    (description
-     "Set of generalised tools for the flexible computation of climate related
-indicators defined by the user.  Each method represents a specific mathematical
-approach which is combined with the possibility to select an arbitrary time
-period to define the indicator.  This enables a wide range of possibilities to
-tailor the most suitable indicator for each particular climate service
-application (agriculture, food security, energy, water management, ...).  This
-package is intended for sub-seasonal, seasonal and decadal climate predictions,
-but its methods are also applicable to other time-scales, provided the
-dimensional structure of the input is maintained.  Additionally, the outputs of
-the functions in this package are compatible with CSTools'.  This package is
-described in PÃ©rez-ZanÃ³n et al. (2023) <doi:10.1016/j.cliser.2023.100393> and
-it was developed in the context of H2020 MED-GOLD (776467) and S2S4E (776787)
-projects.  See LledÃ³ et al. (2019) <doi:10.1016/j.renene.2019.04.135> and Chou
-et al., 2023 <doi:10.1016/j.cliser.2023.100345> for details.")
-    (license license:gpl3)))
 
 (define-public r-cshshydrology
   (package
@@ -8794,13 +8668,13 @@ highly bespoke tables in the pharmaceutical industry.")
 (define-public r-crandep
   (package
     (name "r-crandep")
-    (version "0.3.11")
+    (version "0.3.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crandep" version))
        (sha256
-        (base32 "0svv8lz2654142p62rjskpwqiwhqiclx3v8swskk40738f8nw6d7"))))
+        (base32 "151ssp2v3fawkm97pby63z7x52q8mgsl6acjdk03kviip6li4qgy"))))
     (properties `((upstream-name . "crandep")))
     (build-system r-build-system)
     (arguments
@@ -19992,13 +19866,13 @@ reproducibility in their data analysis workflows.")
 (define-public r-concur
   (package
     (name "r-concur")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CONCUR" version))
        (sha256
-        (base32 "0455jmc8grcpmipcz2rr6zdhxjfi0gd5zj46lyvh75k6wn2p6265"))))
+        (base32 "0bw4n5m558nys5wnsx8ad7782zhfx8y6vl280d85hq6c6iqpb89v"))))
     (properties `((upstream-name . "CONCUR")))
     (build-system r-build-system)
     (arguments
@@ -23940,6 +23814,36 @@ package, and may be used in particular to identify false \"H3\" conclusions in
 coloc'.")
     (license license:gpl3+)))
 
+(define-public r-colocboost
+  (package
+    (name "r-colocboost")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "colocboost" version))
+       (sha256
+        (base32 "1w6cambblq9g3ki8sxbq5wjpayrgj7g9jblwwhjpqk14hzms9nv5"))))
+    (properties `((upstream-name . "colocboost")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast r-matrixstats))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StatFunGen/colocboost")
+    (synopsis "Multi-Context Colocalization Analysis for QTL and GWAS Studies")
+    (description
+     "This package provides a multi-task learning approach to variable selection
+regression with highly correlated predictors and sparse effects, based on
+frequentist statistical inference.  It provides statistical evidence to identify
+which subsets of predictors have non-zero effects on which subsets of response
+variables, motivated and designed for colocalization analysis across genome-wide
+association studies (GWAS) and quantitative trait loci (QTL) studies.  The
+@code{ColocBoost} model is described in Cao et.  al. (2025)
+<doi:10.1101/2025.04.17.25326042>.")
+    (license license:expat)))
+
 (define-public r-colocalized
   (package
     (name "r-colocalized")
@@ -26328,19 +26232,19 @@ common plotting techniques in compositional data analysis.")
 (define-public r-coda-base
   (package
     (name "r-coda-base")
-    (version "0.5.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coda.base" version))
        (sha256
-        (base32 "1jjg0akvi9srdwnk1xibf7lr8vp776xy8ai71g7y15vrbmzyqkfb"))))
+        (base32 "0snwhpjksli90z2x54xwdkcl7h5pwsllxj7zsb8g6k9q90l9kqv7"))))
     (properties `((upstream-name . "coda.base")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://mcomas.net/coda.base/")
     (synopsis "Basic Set of Functions for Compositional Data Analysis")
@@ -27938,6 +27842,43 @@ marginal structure model for the cause-specific hazard of competing risk events.
 outcomes, and provides inference on risk difference and risk ratio.  Reference:
 Kalbfleisch & Prentice (2002)<doi:10.1002/9781118032985>; Hernan et al
 (2001)<doi:10.1198/016214501753168154>.")
+    (license license:gpl2+)))
+
+(define-public r-cmpp
+  (package
+    (name "r-cmpp")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cmpp" version))
+       (sha256
+        (base32 "0ssriy2njwxlm4hyqb54afbbxbrbplrflbkmca7irf3p4jvk84g0"))))
+    (properties `((upstream-name . "cmpp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rcppeigen
+                             r-rcpp
+                             r-numderiv
+                             r-ggplot2
+                             r-dplyr
+                             r-cmprsk))
+    (home-page "https://cran.r-project.org/package=cmpp")
+    (synopsis
+     "Direct Parametric Inference for the Cumulative Incidence Function in Competing Risks")
+    (description
+     "This package implements parametric (Direct) regression methods for modeling
+cumulative incidence functions (CIFs) in the presence of competing risks.
+Methods include the direct Gompertz-based approach and generalized regression
+models as described in Jeong and Fine (2006)
+<doi:10.1111/j.1467-9876.2006.00532.x> and Jeong and Fine (2007)
+<doi:10.1093/biostatistics/kxj040>.  The package facilitates maximum likelihood
+estimation, variance computation, with applications to clinical trials and
+survival analysis.")
     (license license:gpl2+)))
 
 (define-public r-cmocean
@@ -31968,35 +31909,6 @@ de Pol et al. (2016) <doi:10.1111/2041-210X.12590> and Bailey and van de Pol
 (2016) <doi:10.1371/journal.pone.0167980> for details.")
     (license license:gpl2)))
 
-(define-public r-climprojdiags
-  (package
-    (name "r-climprojdiags")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ClimProjDiags" version))
-       (sha256
-        (base32 "039rnjpsbq90x6h9snz9iy37bwhapcmw9v98ngh82bsh19h8hwb1"))))
-    (properties `((upstream-name . "ClimProjDiags")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pcict r-multiapply))
-    (native-inputs (list r-knitr))
-    (home-page "https://earth.bsc.es/gitlab/es/ClimProjDiags")
-    (synopsis "Set of Tools to Compute Various Climate Indices")
-    (description
-     "Set of tools to compute metrics and indices for climate analysis.  The package
-provides functions to compute extreme indices, evaluate the agreement between
-models and combine theses models into an ensemble.  Multi-model time series of
-climate indices can be computed either after averaging the 2-D fields from
-different models provided they share a common grid or by combining time series
-computed on the model native grid.  Indices can be assigned weights and/or
-combined to construct new indices.")
-    (license license:gpl3)))
-
 (define-public r-climmobtools
   (package
     (name "r-climmobtools")
@@ -32388,13 +32300,13 @@ Reefton electronic weather station, is sought.")
 (define-public r-clifford
   (package
     (name "r-clifford")
-    (version "1.0-8")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clifford" version))
        (sha256
-        (base32 "0gi4jajng1v0a45dl5qv8v279bm4lzfbkdsqp0bd1vil2ns1934j"))))
+        (base32 "18rlhfwaqghhq401s7pb2p3rgfrhy0zm97g2yvlrdgzql3xwxp0z"))))
     (properties `((upstream-name . "clifford")))
     (build-system r-build-system)
     (arguments
@@ -32402,8 +32314,8 @@ Reefton electronic weather station, is sought.")
       #:tests? #f))
     (propagated-inputs (list r-rcpp
                              r-partitions
-                             r-mathjaxr
                              r-magrittr
+                             r-freealg
                              r-disordr
                              r-bh))
     (native-inputs (list r-knitr))
@@ -32413,9 +32325,10 @@ Reefton electronic weather station, is sought.")
      "This package provides a suite of routines for Clifford algebras, using the Map
 class of the Standard Template Library.  Canonical reference: Hestenes (1987,
 ISBN 90-277-1673-0, \"Clifford algebra to geometric calculus\").  Special cases
-including Lorentz transforms, quaternion multiplication, and Grassman algebra,
-are discussed.  Conformal geometric algebra theory is implemented.  Uses
-@code{disordR} discipline.")
+including Lorentz transforms, quaternion multiplication, and Grassmann algebra,
+are discussed.  Vignettes presenting conformal geometric algebra, quaternions
+and split quaternions, dual numbers, and Lorentz transforms are included.  The
+package follows @code{disordR} discipline.")
     (license license:gpl2+)))
 
 (define-public r-cliff
@@ -35421,6 +35334,30 @@ algorithm for computation of the intersection areas of an arbitrary number of
 circles.")
     (license license:expat)))
 
+(define-public r-circles
+  (package
+    (name "r-circles")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "circles" version))
+       (sha256
+        (base32 "1zvz06kw14v9r8d0lcryv288drqy2dmli9q1si718fcq0b8lxn0d"))))
+    (properties `((upstream-name . "circles")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table))
+    (home-page "https://github.com/ryan-odea/circles")
+    (synopsis "Small Package for Drawing Various Combinations of Circles")
+    (description
+     "This package contains the adaptation of bubblebath from MATLAB', developed by
+Adam Danz and available through the MATLAB Central File Exchange, and the tools
+to transform a dataframe of radii and points to plot-able paths.")
+    (license license:expat)))
+
 (define-public r-circle
   (package
     (name "r-circle")
@@ -37198,13 +37135,13 @@ so the C functions can be called directly from other programs.")
 (define-public r-cholera
   (package
     (name "r-cholera")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cholera" version))
        (sha256
-        (base32 "0bmzg56x0l6qqyg4v0gangl0ahnfgb1yv78sg6lshg4pqplq4qlv"))))
+        (base32 "033max4lr63qmjkb3xl5svzxbb13r5m8w5hvxkii8wwcaldvw63k"))))
     (properties `((upstream-name . "cholera")))
     (build-system r-build-system)
     (arguments
@@ -37647,38 +37584,6 @@ household-registered population born from 1930 to 2008 and still alive in 2008).
  This package also contains a function for computing multiple features of
 Chinese surnames and Chinese given names for scientific research (e.g., name
 uniqueness, name gender, name valence, and name warmth/competence).")
-    (license license:gpl3)))
-
-(define-public r-chinese-misc
-  (package
-    (name "r-chinese-misc")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "chinese.misc" version))
-       (sha256
-        (base32 "0hlna52g00nh3908wgpb9ldgghff3gfjx24vmk5gikkazdqk9zrh"))))
-    (properties `((upstream-name . "chinese.misc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tm
-                             r-stringi
-                             r-slam
-                             r-purrr
-                             r-nlp
-                             r-matrix
-                             r-jiebar))
-    (home-page
-     "https://github.com/githubwwwjjj/chinese.misc/blob/master/README.md")
-    (synopsis "Miscellaneous Tools for Chinese Text Mining and More")
-    (description
-     "Efforts are made to make Chinese text mining easier, faster, and robust to
-errors.  Document term matrix can be generated by only one line of code;
-detecting encoding, segmenting and removing stop words are done automatically.
-Some convenient tools are also supplied.")
     (license license:gpl3)))
 
 (define-public r-chillr
@@ -39665,13 +39570,13 @@ Bucher, Kojadinovic, Rohmer & Segers <doi:10.1016/j.jmva.2014.07.012> and Nasri
 (define-public r-changepointtesting
   (package
     (name "r-changepointtesting")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChangepointTesting" version))
        (sha256
-        (base32 "0gasqf39hhrd2pg2rq4a2aaxwi3syjvmgdiss42wdwb47dww8wil"))))
+        (base32 "17k6v2lixiviw8ikfnkrzsc8yd3rf0qdvx8k546zzikqbdqzwn0i"))))
     (properties `((upstream-name . "ChangepointTesting")))
     (build-system r-build-system)
     (arguments
@@ -49083,44 +48988,6 @@ Pdot-approximation (single stock, JAERE).  Development of this package was
 generously supported by the Knobloch Family Foundation.")
     (license license:gpl2+)))
 
-(define-public r-capm
-  (package
-    (name "r-capm")
-    (version "0.14.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "capm" version))
-       (sha256
-        (base32 "0c3rnc1qd9c4v0jj8ihg6bdhpqvfnpafkqyqkar6fwnlvgw48z83"))))
-    (properties `((upstream-name . "capm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-survey
-                             r-sf
-                             r-magrittr
-                             r-ggplot2
-                             r-fme
-                             r-dplyr
-                             r-desolve
-                             r-circlize))
-    (home-page "http://oswaldosantos.github.io/capm")
-    (synopsis "Companion Animal Population Management")
-    (description
-     "Quantitative analysis to support companion animal population management.  Some
-functions assist survey sampling tasks (calculate sample size for simple and
-complex designs, select sampling units and estimate population parameters) while
-others assist the modelling of population dynamics.  For demographic
-characterizations and population management evaluations see: \"Baquero, et al.\"
-(2018), <doi:10.1016/j.prevetmed.2018.07.006>.  For modelling of population
-dynamics see: \"Baquero et al.\" (2016), <doi:10.1016/j.prevetmed.2015.11.009>.
-For sampling methods see: \"Levy PS & Lemeshow S\" (2013), \"ISBN-10: 0470040076\";
-\"Lumley\" (2010), \"ISBN: 978-0-470-28430-8\".")
-    (license license:gpl2+)))
-
 (define-public r-caplot
   (package
     (name "r-caplot")
@@ -49414,30 +49281,6 @@ Arias-Pulido H et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS
 research with complete tracking of data and end-user modifications stored in a
 single PNG image that can be played back.  See <https://www.canvasxpress.org>
 for more information.")
-    (license license:gpl3)))
-
-(define-public r-cansim2r
-  (package
-    (name "r-cansim2r")
-    (version "1.14.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CANSIM2R" version))
-       (sha256
-        (base32 "1dnzbd9lyqj3w80lx12qxcsbmv8wy6hxknyi5ijp99cfv7kaq1kc"))))
-    (properties `((upstream-name . "CANSIM2R")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-hmisc r-downloader))
-    (home-page "https://cran.r-project.org/package=CANSIM2R")
-    (synopsis "Directly Extracts Complete CANSIM Data Tables")
-    (description
-     "Extract CANSIM (Statistics Canada) tables and transform them into readily usable
-data in panel (wide) format.  It can also extract more than one table at a time
-and produce the resulting merge by time period and geographical region.")
     (license license:gpl3)))
 
 (define-public r-cansim

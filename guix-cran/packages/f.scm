@@ -7430,13 +7430,13 @@ Regression Analysis, First Edition.  New York: Springer.")
 (define-public r-fortls
   (package
     (name "r-fortls")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FORTLS" version))
        (sha256
-        (base32 "0gzcmn48prl5p59mxvx9raqpbjsi4kmkjbv2j2dbvd21zcw2pndj"))))
+        (base32 "1lzrb1jjwdlx4adw9iayp8rh942y3jfcip9rffjmf3j7v4pvj635"))))
     (properties `((upstream-name . "FORTLS")))
     (build-system r-build-system)
     (arguments
@@ -8882,13 +8882,13 @@ enhancing the reliability and efficiency of missing person investigations.")
 (define-public r-forensicpopdata
   (package
     (name "r-forensicpopdata")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forensicpopdata" version))
        (sha256
-        (base32 "180abggdf3ch7086l0vs81zn3wv6ains29rkdsk41yzb5i8j0czg"))))
+        (base32 "0q4gbyk4vfzx8i0y8qrbzrbjksmf94f73zmi83r88jj5yyy1i1d0"))))
     (properties `((upstream-name . "forensicpopdata")))
     (build-system r-build-system)
     (arguments
@@ -8901,7 +8901,8 @@ enhancing the reliability and efficiency of missing person investigations.")
      "This package provides allele frequency data for Short Tandem Repeat human
 genetic markers commonly used in forensic genetics for human identification and
 kinship analysis.  Includes published population frequency data from the US
-National Institute of Standards and Technology and the UK government.")
+National Institute of Standards and Technology, Federal Bureau of Investigation
+and the UK government.")
     (license license:gpl3+)))
 
 (define-public r-forensicolors
@@ -16654,6 +16655,30 @@ supporting documentation are offered to streamline a variety of figure
 production task.")
     (license license:gpl2)))
 
+(define-public r-figpatch
+  (package
+    (name "r-figpatch")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "figpatch" version))
+       (sha256
+        (base32 "1i1xz71babass19v8jw8wdh2qba5b0g6vfd9vryaimk1q1jyp1lv"))))
+    (properties `((upstream-name . "figpatch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-patchwork r-magrittr r-magick r-ggplot2))
+    (home-page "https://github.com/BradyAJohnston/figpatch")
+    (synopsis
+     "Easily Arrange External Figures with Patchwork Alongside 'ggplot2' Figures")
+    (description
+     "For including external figures into an assembled {patchwork}.  This enables the
+creation of more complex figures that include images alongside plots.")
+    (license license:expat)))
+
 (define-public r-figma
   (package
     (name "r-figma")
@@ -22974,13 +22999,13 @@ using the existing single-kernel analysis software SKAT and @code{coxKM}'.
 (define-public r-fastjt
   (package
     (name "r-fastjt")
-    (version "1.0.6")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastJT" version))
        (sha256
-        (base32 "1vw9x00gslqgjfz55a60kizz8y02jifgf3fw7dv9lxm207vd2wxq"))))
+        (base32 "1m6a4a60q6zpgxcr38dwy861md8532856zn0hgf21b253qgnlwwf"))))
     (properties `((upstream-name . "fastJT")))
     (build-system r-build-system)
     (arguments
@@ -22989,7 +23014,8 @@ using the existing single-kernel analysis software SKAT and @code{coxKM}'.
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=fastJT")
-    (synopsis "Efficient Jonckheere-Terpstra Test Statistics")
+    (synopsis
+     "Efficient Jonckheere-Terpstra Test Statistics for Robust Machine Learning and Genome-Wide Association Studies")
     (description
      "This Rcpp'-based package implements highly efficient functions for the
 calculation of the Jonckheere-Terpstra statistic.  It can be used for a variety
@@ -23663,36 +23689,36 @@ Huang (2013) <doi:10.1111/sjos.12031>.")
 (define-public r-fastadi
   (package
     (name "r-fastadi")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastadi" version))
        (sha256
-        (base32 "1hvi430ws1yzw10fp4z177wc1bnj11pxmvjsbmx0p54bcbb3a32a"))))
+        (base32 "0k9mkm2wal7q5bcaly2p7xfjyf4vdrqlljxckrq4yfq832550xi7"))))
     (properties `((upstream-name . "fastadi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rspectra
+                             r-rlang
                              r-rcpparmadillo
                              r-rcpp
                              r-matrix
                              r-lrmf3
                              r-logger
-                             r-glue
-                             r-ellipsis))
-    (home-page "https://github.com/RoheLab/fastadi")
+                             r-glue))
+    (home-page "https://rohelab.github.io/fastadi/")
     (synopsis "Self-Tuning Data Adaptive Matrix Imputation")
     (description
      "This package implements the @code{AdaptiveImpute} matrix completion algorithm of
 Intelligent Initialization and Adaptive Thresholding for Iterative Matrix
-Completion',
-<https://amstat.tandfonline.com/doi/abs/10.1080/10618600.2018.1518238>.
-@code{AdaptiveImpute} is useful for embedding sparsely observed matrices, often
-out performs competing matrix completion algorithms, and self-tunes its
-hyperparameter, making usage easy.")
+Completion <doi:10.1080/10618600.2018.1518238> as well as the specialized
+variant of Co-Factor Analysis of Citation Networks
+<doi:10.1080/10618600.2024.2394464>. @code{AdaptiveImpute} is useful for
+embedding sparsely observed matrices, often out performs competing matrix
+completion algorithms, and self-tunes its hyperparameter, making usage easy.")
     (license license:expat)))
 
 (define-public r-fasta

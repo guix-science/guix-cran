@@ -4431,13 +4431,13 @@ variety of approaches to select items.")
 (define-public r-asynchlong
   (package
     (name "r-asynchlong")
-    (version "2.3")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AsynchLong" version))
        (sha256
-        (base32 "1fnrx8dgghs579zpckymc0lip9hisn70agv71kbicgi80k8wn62s"))))
+        (base32 "0wm6mjnw6920w9yvl01a4i5sj4cnrpanx1f80c9w7y37ndjg5xh0"))))
     (properties `((upstream-name . "AsynchLong")))
     (build-system r-build-system)
     (arguments
@@ -17943,49 +17943,6 @@ License.")
      "Retrieve air quality data via the @code{AirNow} <https://www.airnow.gov/> API.")
     (license license:expat)))
 
-(define-public r-airmonitor
-  (package
-    (name "r-airmonitor")
-    (version "0.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AirMonitor" version))
-       (sha256
-        (base32 "0plnxpxr5b1bsnbnqahfcqg7w11hc2ndxhmb9328c5n3cd2nyyrb"))))
-    (properties `((upstream-name . "AirMonitor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xts
-                             r-tidyselect
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-mazamatimeseries
-                             r-mazamarollutils
-                             r-mazamacoreutils
-                             r-magrittr
-                             r-lubridate
-                             r-leaflet
-                             r-dygraphs
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/MazamaScience/AirMonitor")
-    (synopsis "Air Quality Data Analysis")
-    (description
-     "Utilities for working with hourly air quality monitoring data with a focus on
-small particulates (PM2.5).  A compact data model is structured as a list with
-two dataframes.  A meta dataframe contains spatial and measuring device metadata
-associated with deployments at known locations.  A data dataframe contains a
-datetime column followed by columns of measurements associated with each
-\"device-deployment\".  Algorithms to calculate @code{NowCast} and the associated
-Air Quality Index (AQI) are defined at the US Environmental Projection Agency
-@code{AirNow} program:
-<https://document.airnow.gov/technical-assistance-document-for-the-reporting-of-daily-air-quailty.pdf>.")
-    (license license:gpl3)))
-
 (define-public r-airly
   (package
     (name "r-airly")
@@ -21537,37 +21494,6 @@ intended for environmental scientists, chemists, and researchers working on
 adsorption phenomena in soils, water treatment, and material sciences.
 Functions are compatible with base R and ggplot2 for visualization.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-adsiht
-  (package
-    (name "r-adsiht")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ADSIHT" version))
-       (sha256
-        (base32 "16y7n3zqab17qvxrdqd18ba5r3mnbykn94gspnfj75gfgq3vf168"))))
-    (properties `((upstream-name . "ADSIHT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-snowfall
-                             r-rcppeigen
-                             r-rcpp
-                             r-purrr
-                             r-mvnfast
-                             r-matrix))
-    (home-page "https://cran.r-project.org/package=ADSIHT")
-    (synopsis "Adaptive Double Sparse Iterative Hard Thresholding")
-    (description
-     "Solving high-dimensional double sparse linear regression via an iterative hard
-thresholding algorithm.  Furthermore, the method is extended to jointly estimate
-multiple graphical models.  For more details, please see
-<https://www.jmlr.org/papers/v25/23-0653.html> and
-<doi:10.48550/@code{arXiv.2503.18722>}.")
-    (license license:gpl3+)))
 
 (define-public r-adsdatahubr
   (package

@@ -7648,6 +7648,34 @@ the face of possibly many controls.  Implements the procedures described in
 Blackwell and Olson (2022) <doi:10.1017/pan.2021.19>.")
     (license license:gpl2+)))
 
+(define-public r-interprocess
+  (package
+    (name "r-interprocess")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interprocess" version))
+       (sha256
+        (base32 "0x8bydivsy2lxn4n64b156fc31yli362i34jdl9ivl4vg3fc9afb"))))
+    (properties `((upstream-name . "interprocess")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-bh))
+    (home-page "https://cmmr.github.io/interprocess/")
+    (synopsis "Mutexes, Semaphores, and Message Queues")
+    (description
+     "This package provides access to low-level operating system mechanisms for
+performing atomic operations on shared data structures.  Mutexes provide shared
+and exclusive locks.  Semaphores act as counters.  Message queues move text
+strings from one process to another.  All these interprocess communication (IPC)
+tools can optionally block with or without a timeout.  Implemented using the
+cross-platform boost C++ library
+<https://www.boost.org/doc/libs/release/libs/interprocess/>.")
+    (license license:expat)))
+
 (define-public r-interpretr
   (package
     (name "r-interpretr")
@@ -7824,13 +7852,13 @@ the C++ library CGAL (<https://www.cgal.org/>).")
 (define-public r-interpolater
   (package
     (name "r-interpolater")
-    (version "1.2-0")
+    (version "1.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "InterpolateR" version))
        (sha256
-        (base32 "0q6h6wm5dfbc9whi1lvh9bsrw287p11vc97hqqqnbz2ms1sa4zaj"))))
+        (base32 "1l3x3bghaxcjsmkv9lvk26f7yipdvn69g5bjv8jkrcgx3x0287qb"))))
     (properties `((upstream-name . "InterpolateR")))
     (build-system r-build-system)
     (arguments
@@ -7840,7 +7868,8 @@ the C++ library CGAL (<https://www.cgal.org/>).")
                              r-randomforest
                              r-qmap
                              r-pbapply
-                             r-hydrogof
+                             r-future-apply
+                             r-future
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Jonnathan-Landi/InterpolateR")
@@ -11219,26 +11248,27 @@ An Application to MDGs\" <DOI:10.1007/s11205-010-9727-z>.")
 (define-public r-india
   (package
     (name "r-india")
-    (version "0.1")
+    (version "0.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "india" version))
        (sha256
-        (base32 "1xk617s5njwdl6sz2vgprxbikv71azx9d79rmkvbdiraj740jsz5"))))
+        (base32 "1zpn3hysaac7kkq3ymfyp554y5kkfvhjmcr1xvxm0dapyra752y2"))))
     (properties `((upstream-name . "india")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-l1pack r-fastmatrix))
-    (home-page "https://cran.r-project.org/package=india")
+    (home-page "https://github.com/faosorios/india")
     (synopsis "Influence Diagnostics in Statistical Models")
     (description
      "Set of routines for influence diagnostics by using case-deletion in ordinary
-least squares, ridge estimation [Walker and Birch (1988).
-<doi:10.1080/00401706.1988.10488370>] and least absolute deviations (LAD)
-regression [Sun and Wei (2004). <doi:10.1016/j.spl.2003.08.018>].")
+least squares, nonlinear regression [Ross (1987). <doi:10.2307/3315198>], ridge
+estimation [Walker and Birch (1988). <doi:10.1080/00401706.1988.10488370>] and
+least absolute deviations (LAD) regression [Sun and Wei (2004).
+<doi:10.1016/j.spl.2003.08.018>].")
     (license license:gpl3)))
 
 (define-public r-indgenerrors
@@ -17689,13 +17719,13 @@ visit
 (define-public r-idarps
   (package
     (name "r-idarps")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "idarps" version))
        (sha256
-        (base32 "0n76v5p69hkh98ckvcn8nwg6by29mmhkvbzffm52q5071qzx64b7"))))
+        (base32 "06vhfddlkk0mxqm578fy31jwn8v3q423ixqhvc7s26ql3kwmrkcg"))))
     (properties `((upstream-name . "idarps")))
     (build-system r-build-system)
     (arguments
@@ -17714,13 +17744,13 @@ visualization are also implemented.")
 (define-public r-idar
   (package
     (name "r-idar")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "idar" version))
        (sha256
-        (base32 "0433kyhwzaicb10jmb6b6b6lbfhd5g2zsdrg6v02lndb2j7dlk5c"))))
+        (base32 "1qif497wqb51ibp00sxsfzwfccdyizpfcvyb97j3dfjj3wc9xf3c"))))
     (properties `((upstream-name . "idar")))
     (build-system r-build-system)
     (arguments
@@ -18317,13 +18347,13 @@ the implemented ICA based algorithm is greatly inspired.")
 (define-public r-icods
   (package
     (name "r-icods")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICODS" version))
        (sha256
-        (base32 "0ch463yxnhb3kcpwqmbshm1jljnnrw8lgisym6yvsr8h2gpi15zm"))))
+        (base32 "14m9pvl1sqlr63x0gax60rlfba7nr5gvzmzs41k6abxcj2vcfizz"))))
     (properties `((upstream-name . "ICODS")))
     (build-system r-build-system)
     (arguments
@@ -18599,25 +18629,25 @@ with interval censored data.")
 (define-public r-icesvocab
   (package
     (name "r-icesvocab")
-    (version "1.2.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icesVocab" version))
        (sha256
-        (base32 "0cd2w0w2m176mpfd3lzvxl88bcli1qrkjrli539i764nlyh0ipl0"))))
+        (base32 "0zyhs1rw8vp9yb2vrv5jl565jkmr4sdlgv367lw9kp636aya3p7k"))))
     (properties `((upstream-name . "icesVocab")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2))
-    (home-page "https://vocab.ices.dk/services/POX.aspx")
+    (propagated-inputs (list r-rlang r-memoise r-icesconnect r-httr r-cachem))
+    (home-page "https://vocab.ices.dk/services/api/swagger/index.html")
     (synopsis "ICES Vocabularies Database Web Services")
     (description
-     "R interface to access the RECO POX web services of the ICES (International
+     "R interface to access the Vocabularies REST API of the ICES (International
 Council for the Exploration of the Sea) Vocabularies database
-<https://vocab.ices.dk/services/POX.aspx>.")
+<https://vocab.ices.dk/services/>.")
     (license license:gpl3)))
 
 (define-public r-icestaf
@@ -18671,13 +18701,13 @@ collaboration in marine science.")
 (define-public r-icessag
   (package
     (name "r-icessag")
-    (version "1.5.0")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icesSAG" version))
        (sha256
-        (base32 "0y4jmvy7b91jzyc39b4cfakr9xs82icyna91aqizgh038bcn7wy9"))))
+        (base32 "1l5r9r41fppv1lxcrznxnb1cnijqam535kwdb4cni79s7q9s87xi"))))
     (properties `((upstream-name . "icesSAG")))
     (build-system r-build-system)
     (arguments
@@ -18686,7 +18716,7 @@ collaboration in marine science.")
     (propagated-inputs (list r-xml2
                              r-rlang
                              r-memoise
-                             r-icesvocab
+                             r-icesdatsu
                              r-icesconnect
                              r-httr
                              r-cachem))
@@ -18723,19 +18753,24 @@ ICES Data Submission Utility (DATSU) <https://datsu.ices.dk>.")
 (define-public r-icesdatsu
   (package
     (name "r-icesdatsu")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icesDatsu" version))
        (sha256
-        (base32 "0kjnc2z0yyxln7axq9k1x652phjvq22pxqiz2a8s2v4c1iffy1j3"))))
+        (base32 "1f1m6jidyy0b61r1kaj4icrfg957sqkm33xpc6jwahrrpjlkggni"))))
     (properties `((upstream-name . "icesDatsu")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-icesconnect r-httr))
+    (propagated-inputs (list r-rlang
+                             r-memoise
+                             r-jsonlite
+                             r-icesconnect
+                             r-httr
+                             r-cachem))
     (home-page "https://datsu.ices.dk/web/index.aspx")
     (synopsis
      "Functions to Interact with the ICES Data Submission Utility (DATSU)")
@@ -20439,6 +20474,33 @@ Pedigree analysis in R (Vigeland, 2021, ISBN:9780128244302).  A Shiny app for
 visualising and comparing IBD distributions is available at
 <https://magnusdv.shinyapps.io/ibdsim2-shiny/>.")
     (license license:gpl3)))
+
+(define-public r-ibdsegments
+  (package
+    (name "r-ibdsegments")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ibdsegments" version))
+       (sha256
+        (base32 "00qcqmgcb6m0m50v9bfgjz67kncvkqdmjq3wvaaac9k6bvmcpl8c"))))
+    (properties `((upstream-name . "ibdsegments")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-pedtools r-expm))
+    (home-page "https://cran.r-project.org/package=ibdsegments")
+    (synopsis "Identity by Descent Probability in Pedigrees")
+    (description
+     "Identity by Descent (IBD) distributions in pedigrees.  A Hidden Markov Model is
+used to compute identity coefficients, simulate IBD segments and to derive the
+distribution of total IBD sharing and segment count across chromosomes.  The
+methods are applied in Kruijver (2025) <doi:10.3390/genes16050492>.  The
+probability that the total IBD sharing is zero can be computed using the method
+of Donnelly (1983) <doi:10.1016/0040-5809(83)90004-7>.")
+    (license license:gpl2+)))
 
 (define-public r-ibdinfer
   (package

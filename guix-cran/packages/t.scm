@@ -5982,20 +5982,19 @@ Simplifies working with structures commonly encountered in combinatorics.")
 (define-public r-tropfishr
   (package
     (name "r-tropfishr")
-    (version "1.6.5")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TropFishR" version))
        (sha256
-        (base32 "16n5zi1a0mjfdnm54b52f32v7542qi0akqwznd9i61cv7qszi0bj"))))
+        (base32 "19lq85slxb81d4j0j1ffxp0668hnp5asr2wb0z6gzq4y07jdx2yb"))))
     (properties `((upstream-name . "TropFishR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-reshape2
-                             r-propagate
                              r-msm
                              r-matrix
                              r-mass
@@ -10601,6 +10600,44 @@ Trade Policy Analysis\" and functions to report regression summaries with
 clustered robust standard errors.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-tradeoffaucdim
+  (package
+    (name "r-tradeoffaucdim")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tradeoffaucdim" version))
+       (sha256
+        (base32 "0s7phmx8giai1mlh1mzm9xgkk3azvcfkjqdvml0fika2apqwlsz1"))))
+    (properties `((upstream-name . "tradeoffaucdim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-superlearner
+                             r-stringr
+                             r-speedglm
+                             r-rsample
+                             r-rocr
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-fuzzysim
+                             r-fastdummies
+                             r-ez
+                             r-dplyr
+                             r-caret))
+    (home-page "https://github.com/luisgarcez11/tradeoffaucdim")
+    (synopsis "Plotting Trade-Off AUC-Dimensionality")
+    (description
+     "Perform and Runtime statistical comparisons between models.  This package aims
+at choosing the best model for a particular dataset, regarding its discriminant
+power and runtime.")
+    (license license:expat)))
+
 (define-public r-trade
   (package
     (name "r-trade")
@@ -11559,33 +11596,6 @@ partition across scales.  These indices constitute a unified framework that
 incorporates the underlying probabilistic nature of trait distributions into
 uni- or multidimensional functional trait-based studies.  See Carmona et al.
 (2016) <doi:10.1016/j.tree.2016.02.003> for further information.")
-    (license license:gpl3)))
-
-(define-public r-tpcselect
-  (package
-    (name "r-tpcselect")
-    (version "0.8.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TPCselect" version))
-       (sha256
-        (base32 "1x3db852zp3c12aihwbaak4i0dwjyl4sfv5snn7ap3gj3lydlznp"))))
-    (properties `((upstream-name . "TPCselect")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-psych r-mass r-kernsmooth r-corpcor))
-    (home-page "https://cran.r-project.org/package=TPCselect")
-    (synopsis "Variable Selection via Threshold Partial Correlation")
-    (description
-     "This package provides a threshold partial correlation approach to selecting
-important variables in linear models of L. and others (2017) at
-<doi:10.5705/ss.202015.0473>, and in partial linear models of L. and others
-(2018) at <doi:10.1016/j.jmva.2018.06.005>.  This package also extends the
-PC-simple algorithm of B. and others (2010) at <doi:10.1093/biomet/asq008> to
-partial linear models.")
     (license license:gpl3)))
 
 (define-public r-tpc
@@ -13206,13 +13216,13 @@ strings, pasting and combining rows together across columns, etc.")
 (define-public r-tongfen
   (package
     (name "r-tongfen")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tongfen" version))
        (sha256
-        (base32 "1xg5jvrl4cv86rylhyiyfdyhb9gr5vdabsp1cdfnz7wpmdkpwnxl"))))
+        (base32 "1gy9b8f87a8swqrbnzx93fmyrj800g5xa6ahmc5kvq9n5k2a73b0"))))
     (properties `((upstream-name . "tongfen")))
     (build-system r-build-system)
     (arguments
@@ -15340,13 +15350,13 @@ tensors.")
 (define-public r-tinyvast
   (package
     (name "r-tinyvast")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyVAST" version))
        (sha256
-        (base32 "0a8hx7bvw7pjglqj7yijizzfhbc0av3vc2k9820kfhyjn9bd8p93"))))
+        (base32 "1xw1ca03j1z6c0dhpq01a1vs50rnvd7avy0hgk5ic94jsvf9dzpq"))))
     (properties `((upstream-name . "tinyVAST")))
     (build-system r-build-system)
     (arguments
@@ -15361,8 +15371,11 @@ tensors.")
                              r-rcppeigen
                              r-mgcv
                              r-matrix
+                             r-insight
                              r-igraph
                              r-fmesher
+                             r-dsem
+                             r-cv
                              r-corpcor
                              r-checkmate
                              r-abind))
@@ -15815,24 +15828,25 @@ comments.")
 (define-public r-tinkr
   (package
     (name "r-tinkr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinkr" version))
        (sha256
-        (base32 "068ym4a0gwayd6a86zq6428j8gkmvxgm7hk0crbjp0lp9cz85dzq"))))
+        (base32 "1p9n97nz5fm9hx2b7smm6d2xhk27nn8ghx8ghv7yqk7sj0g23rlr"))))
     (properties `((upstream-name . "tinkr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-xslt
+    (propagated-inputs (list r-xslt
                              r-xml2
+                             r-rlang
                              r-r6
                              r-purrr
                              r-magrittr
+                             r-lifecycle
                              r-glue
                              r-commonmark))
     (native-inputs (list r-knitr))
@@ -17448,13 +17462,13 @@ documentation here for more detail: <https://gtfs.org/>.")
 (define-public r-tidytlg
   (package
     (name "r-tidytlg")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytlg" version))
        (sha256
-        (base32 "0w4ah32b82b14y6nxw8l5z06mxx9cxipqmjnmifxxb86qjhqpp9f"))))
+        (base32 "00fnz8y6a23kmic1ig2xixxq46qs8h82sm798n66imfhcn21d0f3"))))
     (properties `((upstream-name . "tidytlg")))
     (build-system r-build-system)
     (arguments
@@ -21907,6 +21921,31 @@ implementation of the TGS algorithm and its variants.")
 Soto et al. (2011) <doi:10.1139/x11-045>.")
     (license license:gpl2+)))
 
+(define-public r-tgml
+  (package
+    (name "r-tgml")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tgml" version))
+       (sha256
+        (base32 "0s6xkkbnj2mbnrj48f53safrz0zjv43rgm5ch8a0qhwq26q6h6c9"))))
+    (properties `((upstream-name . "tgml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-randomforest r-proc r-glmnet r-e1071))
+    (home-page "https://cran.r-project.org/package=tgml")
+    (synopsis
+     "Treed Guided Machine Learning for Personalized Prediction and Precision Diagnostics")
+    (description
+     "Generalization of the classification and regression tree (CART) model that
+partitions subjects into terminal nodes and tailors machine learning model to
+each terminal node.")
+    (license license:gpl2+)))
+
 (define-public r-tggd
   (package
     (name "r-tggd")
@@ -23594,13 +23633,13 @@ molecular sequences.")
 (define-public r-text
   (package
     (name "r-text")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "text" version))
        (sha256
-        (base32 "0xp15xyxrkqihs3kzn67376c1jcskkdrnqgmx0mlhxin8mcrwdip"))))
+        (base32 "12yn9cl9g7w699b3dnb3w5hc9kxa7nzkkhv8i8f2y9nyidhka625"))))
     (properties `((upstream-name . "text")))
     (build-system r-build-system)
     (arguments
@@ -27386,6 +27425,40 @@ algorithms.  Methods are provided to create and update t-Digests and retrieve
 quantiles from the accumulated distributions.")
     (license license:expat)))
 
+(define-public r-tdiagree
+  (package
+    (name "r-tdiagree")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TDIagree" version))
+       (sha256
+        (base32 "0jgms70hav601w8rbnyhsjmrrkpf2wkcsrsm2cfaii97zv1bmwzi"))))
+    (properties `((upstream-name . "TDIagree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plotfunctions
+                             r-nlme
+                             r-multcomp
+                             r-katex
+                             r-gt
+                             r-coxed
+                             r-boot))
+    (home-page "https://cran.r-project.org/package=TDIagree")
+    (synopsis "Assessment of Agreement using the Total Deviation Index")
+    (description
+     "The total deviation index (TDI) is an unscaled statistical measure used to
+evaluate the deviation between paired quantitative measurements when assessing
+the extent of agreement between different raters.  It describes a boundary such
+that a large specified proportion of the differences in paired measurements are
+within the boundary (Lin, 2000) <https://pubmed.ncbi.nlm.nih.gov/10641028/>.
+This R package implements some methodologies existing in the literature for TDI
+estimation and inference in the case of two raters.")
+    (license license:gpl2+)))
+
 (define-public r-tdcor
   (package
     (name "r-tdcor")
@@ -29732,27 +29805,6 @@ Journal of Medicine style, Lancet style and @code{Hmisc::summaryM()} statistics
 are provided.  The package contains rendering for HTML5, Rmarkdown and an
 indexing format for use in tracing and tracking are provided.")
     (license license:gpl3)))
-
-(define-public r-tangpoemr
-  (package
-    (name "r-tangpoemr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TangPoemR" version))
-       (sha256
-        (base32 "06w5gg36mx0vdagkhy7rskgjv2d3irr0d3nkjw26vxp25x1py4sf"))))
-    (properties `((upstream-name . "TangPoemR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jiebar))
-    (home-page "https://cran.r-project.org/package=TangPoemR")
-    (synopsis "Write Chinese Tang Poems")
-    (description "Write Chinese Tang Poems automatically.")
-    (license license:gpl2+)))
 
 (define-public r-tangledfeatures
   (package

@@ -3515,21 +3515,21 @@ based on R/exams exercises.")
 (define-public r-exams2forms
   (package
     (name "r-exams2forms")
-    (version "0.1-0")
+    (version "0.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exams2forms" version))
        (sha256
-        (base32 "05z8a0nlhz5hmzhgnahlqrrm7n9by687yjjmsd6nch11yy0kh10a"))))
+        (base32 "1xvpmf26ala5w3sc36r8smw8vjky0brabfy28d8415043p6jazq7"))))
     (properties `((upstream-name . "exams2forms")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rmarkdown r-knitr r-exams))
+    (propagated-inputs (list r-rmarkdown r-knitr r-exams r-digest r-base64enc))
     (native-inputs (list r-knitr))
-    (home-page "https://www.R-exams.org/")
+    (home-page "https://www.R-exams.org/tutorials/exams2forms/")
     (synopsis
      "Embedding 'exams' Exercises as Forms in 'rmarkdown' or 'quarto' Documents")
     (description
@@ -6200,43 +6200,6 @@ for rapid and easy generation of richly-commented R code â to import a
 Eurostat dataset or its subset (based on the @code{eurodata::importData()}
 function).")
     (license license:gpl2)))
-
-(define-public r-eurocordexr
-  (package
-    (name "r-eurocordexr")
-    (version "0.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "eurocordexr" version))
-       (sha256
-        (base32 "0xwmh8q3nw3dl1qxsa54ckpsli1r1jp4pby81l8j0pmd0xgs5r71"))))
-    (properties `((upstream-name . "eurocordexr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rnetcdf
-                             r-pcict
-                             r-ncdf4-helpers
-                             r-ncdf4
-                             r-magrittr
-                             r-lubridate
-                             r-fs
-                             r-data-table))
-    (home-page "https://github.com/mitmat/eurocordexr")
-    (synopsis
-     "Makes it Easier to Work with Daily 'netCDF' from EURO-CORDEX RCMs")
-    (description
-     "Daily @code{netCDF} data from e.g. regional climate models (RCMs) are not
-trivial to work with.  This package, which relies on data.table', makes it
-easier to deal with large data from RCMs, such as from EURO-CORDEX
-(<https://www.euro-cordex.net/>, <https://cordex.org/data-access/>).  It has
-functions to extract single grid cells from rotated pole grids as well as the
-whole array in long format.  Can handle non-standard calendars (360, noleap) and
-interpolate them to a standard one.  Potentially works with many CF-conform
-@code{netCDF} files.")
-    (license license:gpl3)))
 
 (define-public r-eurlex
   (package
@@ -9686,13 +9649,13 @@ corresponding @code{LaTeX} code for the model.")
 (define-public r-equatemultiple
   (package
     (name "r-equatemultiple")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equateMultiple" version))
        (sha256
-        (base32 "08mm3yqn2jbzvc7fd7z42cq141891dfnhpv93jf3rwkbcf4k8fq1"))))
+        (base32 "09swklnvjrhq7x2h1g2wvd34c0544h06ak9vgccp6h9izwk63swj"))))
     (properties `((upstream-name . "equateMultiple")))
     (build-system r-build-system)
     (arguments
@@ -10176,46 +10139,6 @@ al. (2016) <doi:10.1021/acs.jcim.5b00663>, and Tomal et al. (2019)
 <@code{arXiv:1706.06971>} for more details.")
     (license license:gpl3)))
 
-(define-public r-epwshiftr
-  (package
-    (name "r-epwshiftr")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "epwshiftr" version))
-       (sha256
-        (base32 "075yvrxyjswkx03fwns2pa7plz5hjlpjyp5xq48s7i0ya3x9x55w"))))
-    (properties `((upstream-name . "epwshiftr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-units
-                             r-rnetcdf
-                             r-rappdirs
-                             r-r6
-                             r-psychrolib
-                             r-progressr
-                             r-pcict
-                             r-jsonlite
-                             r-future-apply
-                             r-fst
-                             r-eplusr
-                             r-data-table
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ideas-lab-nus/epwshiftr")
-    (synopsis "Create Future 'EnergyPlus' Weather Files using 'CMIP6' Data")
-    (description
-     "Query, download climate change projection data from the CMIP6 (Coupled Model
-Intercomparison Project Phase 6) project <https://pcmdi.llnl.gov/CMIP6/> in the
-ESGF (Earth System Grid Federation) platform <https://esgf.llnl.gov>, and create
-future @code{EnergyPlus} <https://energyplus.net> Weather ('EPW') files adjusted
-from climate changes using data from Global Climate Models ('GCM').")
-    (license license:expat)))
-
 (define-public r-epubr
   (package
     (name "r-epubr")
@@ -10261,6 +10184,38 @@ performed subsequently by the user as part of their text analysis.  Additional
 text cleaning can be performed at the user's discretion, such as with functions
 from packages like tm or qdap'.")
     (license license:expat)))
+
+(define-public r-epts
+  (package
+    (name "r-epts")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epts" version))
+       (sha256
+        (base32 "0y44d2nygmv6ppgm74ll4ljdagazpv1bjbfa50qcqnngbjkb1ajy"))))
+    (properties `((upstream-name . "epts")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm
+                             r-mcmcvis
+                             r-lme4
+                             r-ggpubr
+                             r-ggplot2
+                             r-eefanalytics
+                             r-coda))
+    (home-page "https://cran.r-project.org/package=epts")
+    (synopsis "Educational Platform Trials Simulator")
+    (description
+     "Simulating multi-arm cluster-randomized, multi-site, and simple randomized
+trials.  Includes functions for conducting multilevel analyses using both
+Bayesian and Frequentist methods.  Supports futility and superiority analyses
+through Bayesian approaches, along with visualization tools to aid
+interpretation and presentation of results.")
+    (license license:agpl3+)))
 
 (define-public r-ept
   (package
@@ -11091,13 +11046,13 @@ Gradient Boosting approach to predict the sequences with 6@code{mA} sites in it.
 (define-public r-epireport
   (package
     (name "r-epireport")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiReport" version))
        (sha256
-        (base32 "1hdgh5i8xpjjm3bgz68xyb446lqjiad5r9dz213y9r17zyqinvcb"))))
+        (base32 "1bx8cvkd1al27p9qzv2kpnhs52hi9l432gzdxaznh532whdqcw6m"))))
     (properties `((upstream-name . "EpiReport")))
     (build-system r-build-system)
     (arguments
@@ -11112,8 +11067,7 @@ Gradient Boosting approach to predict the sequences with 6@code{mA} sites in it.
                              r-flextable
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page
-     "https://www.ecdc.europa.eu/en/publications-data/monitoring/all-annual-epidemiological-reports")
+    (home-page "https://cran.r-project.org/package=EpiReport")
     (synopsis "Epidemiological Report")
     (description
      "Drafting an epidemiological report in Microsoft Word format for a given disease,
@@ -13907,13 +13861,13 @@ et al., (2019) <doi:10.7717/peerj.6281>, and Peterson et al., (2008)
 (define-public r-enmeval
   (package
     (name "r-enmeval")
-    (version "2.0.5.1")
+    (version "2.0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ENMeval" version))
        (sha256
-        (base32 "11hjyihcc1v8jcx3y41qz9wwrywi8j7fbw2m10j3gj0s5jafj662"))))
+        (base32 "1is7w51lx7dmj0rirb6qayh8nlr5g7lh8lib8gki1gsqrwzph6lk"))))
     (properties `((upstream-name . "ENMeval")))
     (build-system r-build-system)
     (arguments
@@ -17092,13 +17046,13 @@ Point Query Service <https://apps.nationalmap.gov/epqs/>.")
 (define-public r-electoral
   (package
     (name "r-electoral")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "electoral" version))
        (sha256
-        (base32 "0r15ghnblp5f2g9hpw187clfpj1cgplqyn9mhyvlcmz5ql60glsj"))))
+        (base32 "1nlrg8n57fik41m85y7dsf0myk12p6m9v4d6d189j5024apkk7hc"))))
     (properties `((upstream-name . "electoral")))
     (build-system r-build-system)
     (arguments
@@ -17118,15 +17072,12 @@ is that ties are always reported and not incorrectly allocated.  Party system
 scores provided are competitiveness, concentration, effective number of parties,
 party nationalization score, party system nationalization score and volatility.
 References: Gallagher (1991) <doi:10.1016/0261-3794(91)90004-C>.  Norris (2004,
-ISBN:0-521-82977-1).  Consejo Nacional Electoral del Ecuador
-(2014)<http://cne.gob.ec/documents/Estadisticas/Atlas/ATLAS/CAPITULO%206%20web.pdf>.
- Laakso & Taagepera (1979)
-<https://journals.sagepub.com/doi/pdf/10.1177/001041407901200101>.  Jones &
-Mainwaring (2003)
+ISBN:0-521-82977-1).  Laakso & Taagepera (1979)
+<https://escholarship.org/uc/item/703827nv>.  Jones & Mainwaring (2003)
 <https://kellogg.nd.edu/sites/default/files/old_files/documents/304_0.pdf>.
 Pedersen (1979) <https://janda.org/c24/Readings/Pedersen/Pedersen.htm>.  Golosov
-(2010) <https://ppq.sagepub.com/content/16/2/171.abstract>.  Golosov (2014)
-<https://ppq.sagepub.com/content/early/2014/09/08/1354068814549342.abstract>.")
+(2010) <doi:10.1177/1354068809339538>.  Golosov (2014)
+<doi:10.1177/1354068814549342>.")
     (license license:gpl3)))
 
 (define-public r-electivity
@@ -19512,13 +19463,13 @@ procedures, like principal axis factoring (PAF), are implemented in C++.")
 (define-public r-efafactors
   (package
     (name "r-efafactors")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFAfactors" version))
        (sha256
-        (base32 "0c75jz64292i8qyb65i9ggb8cpdjigg87z5abbbbpzpsanz90x40"))))
+        (base32 "054z8ibym0rk1vlavdfg3n6n266ai7cbjhcg6aw7s4kl5raq1h75"))))
     (properties `((upstream-name . "EFAfactors")))
     (build-system r-build-system)
     (arguments
@@ -22221,13 +22172,13 @@ Engineers).")
 (define-public r-ecoregime
   (package
     (name "r-ecoregime")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecoregime" version))
        (sha256
-        (base32 "0f54y3q81ji4vaah6hplhl4jvzxw4lf0gg9sh0zvgq8ca43i4rkn"))))
+        (base32 "0hpwlqhapc4cs3h66bfcgkzzbifwlb157xcpmyny3kmgd643zy1c"))))
     (properties `((upstream-name . "ecoregime")))
     (build-system r-build-system)
     (arguments
@@ -23735,13 +23686,13 @@ Gravity method.  It supports replicated observations.  Cameron, D.G., et al
 (define-public r-ecespa
   (package
     (name "r-ecespa")
-    (version "1.1-17")
+    (version "1.1-18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecespa" version))
        (sha256
-        (base32 "1n96nxb8spyi914m21yybb2yajawz22fmjldbr9j76dl7s36ygcd"))))
+        (base32 "067q45vhb8123b4j6sh6qcav1a56mynnm0fcpsx0x4sf7vb43g5z"))))
     (properties `((upstream-name . "ecespa")))
     (build-system r-build-system)
     (arguments

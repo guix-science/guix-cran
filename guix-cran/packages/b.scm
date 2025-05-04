@@ -3129,13 +3129,13 @@ use this package, see An et al. (2022) <doi:10.18637/jss.v101.i11>.")
 (define-public r-bskyr
   (package
     (name "r-bskyr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bskyr" version))
        (sha256
-        (base32 "08n7gdvifwp1fi4ig0x3dls6kllx90lw0dkgnai7f761ijjgqrhj"))))
+        (base32 "1iy464ibmg2qh6rscmkq2ylb5l0h8nd13r8g3cipkxy9d108iw8s"))))
     (properties `((upstream-name . "bskyr")))
     (build-system r-build-system)
     (arguments
@@ -3147,11 +3147,14 @@ use this package, see An et al. (2022) <doi:10.18637/jss.v101.i11>.")
                              r-stringi
                              r-rlang
                              r-purrr
+                             r-opengraph
                              r-mime
+                             r-magick
                              r-lubridate
                              r-httr2
                              r-fs
                              r-dplyr
+                             r-curl
                              r-cli))
     (home-page "https://github.com/christopherkenny/bskyr")
     (synopsis "Interact with 'Bluesky' Social")
@@ -12649,6 +12652,45 @@ and place, edit and cancel orders. @code{BitMEX's} Testnet and live API are both
 supported.")
     (license license:expat)))
 
+(define-public r-bitfield
+  (package
+    (name "r-bitfield")
+    (version "0.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bitfield" version))
+       (sha256
+        (base32 "1kdzh5is5y29jclsk4c8ljd1hlklqg61b04fn28ijrqpiqy99xzk"))))
+    (properties `((upstream-name . "bitfield")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-terra
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-httr
+                             r-glue
+                             r-gitcreds
+                             r-gh
+                             r-dplyr
+                             r-crayon
+                             r-codetools
+                             r-checkmate
+                             r-base64enc))
+    (home-page "https://github.com/bitfloat/bitfield")
+    (synopsis "Handle Bitfields to Record Meta Data")
+    (description
+     "Record algorithmic and analytic meta data along a workflow to store that in a
+bitfield, which can be published alongside any (modelled) data products.")
+    (license license:gpl3+)))
+
 (define-public r-bistablehistory
   (package
     (name "r-bistablehistory")
@@ -14319,57 +14361,6 @@ cite BIOMASS', please use citation(\"BIOMASS\").  See more in the article of
 RÃ©jou-MÃ©chain et al. (2017) <doi:10.1111/2041-210X.12753>.")
     (license license:gpl2)))
 
-(define-public r-biom2
-  (package
-    (name "r-biom2")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BioM2" version))
-       (sha256
-        (base32 "0nrdby8yr48clishclw69d9jray6gfj37lzsnqavg6921s4d93zn"))))
-    (properties `((upstream-name . "BioM2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wordcloud2
-                             r-wgcna
-                             r-webshot
-                             r-viridis
-                             r-uwot
-                             r-rocr
-                             r-mlr3verse
-                             r-mlr3
-                             r-jiebar
-                             r-igraph
-                             r-htmlwidgets
-                             r-ggthemes
-                             r-ggstatsplot
-                             r-ggsci
-                             r-ggpubr
-                             r-ggplot2
-                             r-ggnetwork
-                             r-ggforce
-                             r-cmplot
-                             r-caret))
-    (home-page "https://cran.r-project.org/package=BioM2")
-    (synopsis "Biologically Explainable Machine Learning Framework")
-    (description
-     "Biologically Explainable Machine Learning Framework for Phenotype Prediction
-using omics data described in Chen and Schwarz (2017)
-<doi:10.48550/@code{arXiv.1712.00336>.Identifying} reproducible and
-interpretable biological patterns from high-dimensional omics data is a critical
-factor in understanding the risk mechanism of complex disease.  As such,
-explainable machine learning can offer biological insight in addition to
-personalized risk scoring.In this process, a feature space of biological
-pathways will be generated, and the feature space can also be subsequently
-analyzed using WGCNA (Described in Horvath and Zhang (2005)
-<doi:10.2202/1544-6115.1128> and Langfelder and Horvath (2008)
-<doi:10.1186/1471-2105-9-559> ) methods.")
-    (license license:expat)))
-
 (define-public r-biologicalactivityindices
   (package
     (name "r-biologicalactivityindices")
@@ -15567,13 +15558,13 @@ conditional maximum test for many-to-one comparisons to a control.")
 (define-public r-binmat
   (package
     (name "r-binmat")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BinMat" version))
        (sha256
-        (base32 "1brgv0zmprvwx6x670mmxxlk50nh4ds63bip48mlh0p1qv8pm9db"))))
+        (base32 "0y3xrvy173ciz0wlm5d203qwnpkzyxzh9cia9xik1a2z5n20ca8g"))))
     (properties `((upstream-name . "BinMat")))
     (build-system r-build-system)
     (arguments
@@ -15589,17 +15580,15 @@ conditional maximum test for many-to-one comparisons to a control.")
 fragment analysis.  It consolidates replicate sample pairs, outputs summary
 statistics, and produces hierarchical clustering trees and @code{nMDS} plots.
 This package was developed from the publication available here:
-<https://www.sciencedirect.com/science/article/pii/S1049964420306538>.  The GUI
-version of this package is available on the R Shiny online server at:
+<doi:10.1016/j.biocontrol.2020.104426>.  The GUI version of this package is
+available on the R Shiny online server at:
 <https://clarkevansteenderen.shinyapps.io/BINMAT/> or it is accessible via
 @code{GitHub} by typing: shiny::@code{runGitHub(\"BinMat}\",
 \"clarkevansteenderen\") into the console in R. Two real-world datasets accompany
 the package: an AFLP dataset of Bunias orientalis samples from Tewes et.  al.
-(2017)
-<https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/1365-2745.12869>,
-and an ISSR dataset of Nymphaea specimens from Reid et.  al. (2021)
-<https://www.sciencedirect.com/science/article/pii/S0304377021000218> .  The
-authors of these publications are thanked for allowing the use of their data.")
+(2017) <doi:10.1111/1365-2745.12869>, and an ISSR dataset of Nymphaea specimens
+from Reid et.  al. (2021) <doi:10.1016/j.aquabot.2021.103372>.  The authors of
+these publications are thanked for allowing the use of their data.")
     (license license:gpl3)))
 
 (define-public r-binhf
@@ -19637,13 +19626,13 @@ with leverage (one-component, two-component, skewed versions).")
 (define-public r-betaselectr
   (package
     (name "r-betaselectr")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaselectr" version))
        (sha256
-        (base32 "1v8920wi74fjjklai7cc1dsm2xmb98r2phf997wlxclk2ga1qy1s"))))
+        (base32 "1ikfckia0hdmdcrxvpdv4vmh2xb689pfbbk277ifw0wccx62fqhq"))))
     (properties `((upstream-name . "betaselectr")))
     (build-system r-build-system)
     (arguments
@@ -21989,13 +21978,13 @@ vectors (BD-SVD), which can be extended to hierarchical variable clustering
 (define-public r-bdsm
   (package
     (name "r-bdsm")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bdsm" version))
        (sha256
-        (base32 "0cv5lzj4ni0v6r7zzqk97787x4826f9yyjx14y0zzib6ahhb834j"))))
+        (base32 "03n3mbk1r3ki7vjj98shzqqdfkxscbs3s2myx530apzs8yrpdgjr"))))
     (properties `((upstream-name . "bdsm")))
     (build-system r-build-system)
     (arguments

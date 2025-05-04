@@ -1252,13 +1252,13 @@ addin.  The report appears in the RStudio viewer pane.")
 (define-public r-jsdne
   (package
     (name "r-jsdne")
-    (version "4.4.4")
+    (version "4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JSDNE" version))
        (sha256
-        (base32 "1sw5bdf3mmnp3wqbnlifxh6ppb62rv6x46l5nfnxadmcv503c0f2"))))
+        (base32 "1bxk14wag1mc02flsp56ik0rjay27fm1vdvh3kiyq1vi87rdr5d0"))))
     (properties `((upstream-name . "JSDNE")))
     (build-system r-build-system)
     (arguments
@@ -1271,11 +1271,15 @@ addin.  The report appears in the RStudio viewer pane.")
     (description
      "The age is estimated by calculating the Dirichlet Normal Energy (DNE) on the
 whole auricular surface and the apex of the auricular surface.  It involves
-three estimation methods: principal component discriminant analysis (PCQDA),
-principal component regression analysis (PCR), and principal component logistic
-regression analysis (PCLR) methods.  The package is created with the data from
-the Louis Lopes Collection in Lisbon, the 21st Century Identified Human Remains
-Collection in Coimbra, and the CAL Milano Cemetery Skeletal Collection in Milan.")
+three estimation methods: principal component discriminant analysis (PCQDA), and
+principal component logistic regression analysis (PCLR) methods, principal
+component regression analysis with Southeast Asian (A_PCR), and principal
+component regression analysis with multipopulation (M_PCR).  The package is
+created with the data from the Louis Lopes Collection in Lisbon, the 21st
+Century Identified Human Remains Collection in Coimbra, and the CAL Milano
+Cemetery Skeletal Collection in Milan, and the skeletal collection at Khon Kaen
+University (KKU) Human Skeletal Research Centre (HSRC), housed in the Department
+of Anatomy in the Faculty of Medicine at KKU in Khon Kaen.")
     (license license:gpl3)))
 
 (define-public r-jsdm
@@ -3002,13 +3006,13 @@ data type, item scoring, special data codes, and variable label.")
 (define-public r-jmdesign
   (package
     (name "r-jmdesign")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JMdesign" version))
        (sha256
-        (base32 "12y9g9m38qbvibay1pm0s9zyw5hxczdysm1hxcpjqi265z9wr9wd"))))
+        (base32 "1vzxpqznn628j5qdhmb2g0bskaq0vpkd3w0d40slrr4naw33irrv"))))
     (properties `((upstream-name . "JMdesign")))
     (build-system r-build-system)
     (arguments
@@ -3493,51 +3497,6 @@ probabilities of a general sampling design as in Fattorini (2006)
 document, using syntax inspired by the Jinja Python package, and then render the
 final document by passing data from R. The template syntax supports features
 such as variables, loops, conditions and inheritance.")
-    (license license:expat)))
-
-(define-public r-jiebard
-  (package
-    (name "r-jiebard")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jiebaRD" version))
-       (sha256
-        (base32 "1wadpcdca4pm56r8q22y4axmqdbb2dazsh2vlhjy73rpymqfcph4"))))
-    (properties `((upstream-name . "jiebaRD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/qinwf/jiebaRD/")
-    (synopsis "Chinese Text Segmentation Data for jiebaR Package")
-    (description
-     "@code{jiebaR} is a package for Chinese text segmentation, keyword extraction and
-speech tagging.  This package provides the data files required by @code{jiebaR}.")
-    (license license:expat)))
-
-(define-public r-jiebar
-  (package
-    (name "r-jiebar")
-    (version "0.11.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jiebaR" version))
-       (sha256
-        (base32 "1drkipnqpx865w0wl3b9nzwn1yslcidfy0cmdg0kyi75b5n8jamm"))))
-    (properties `((upstream-name . "jiebaR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-jiebard))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/qinwf/jiebaR/")
-    (synopsis "Chinese Text Segmentation")
-    (description
-     "Chinese text segmentation, keyword extraction and speech tagging For R.")
     (license license:expat)))
 
 (define-public r-jico

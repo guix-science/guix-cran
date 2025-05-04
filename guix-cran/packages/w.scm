@@ -3994,13 +3994,13 @@ truncated distribution functions.")
 (define-public r-winch
   (package
     (name "r-winch")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "winch" version))
        (sha256
-        (base32 "1ib3qz09r40gwxvzsapi6xs80phxxn2x04f6vgsvrbplfy5nxg6k"))))
+        (base32 "1fnvv3w3xj6k09v82hb0p8y4n7sic469flzv8m79ildqbhdggs0k"))))
     (properties `((upstream-name . "winch")))
     (build-system r-build-system)
     (arguments
@@ -4308,13 +4308,13 @@ the sources just listed, as well performing taxonomic search.")
 (define-public r-wikiprofiler
   (package
     (name "r-wikiprofiler")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wikiprofiler" version))
        (sha256
-        (base32 "180hgqc1saqc280p423qhgm5h106kd783l4ckhxs5nnhygm3yiv4"))))
+        (base32 "0ygfs55fcmhd78ybdf42l2746zyckzczw79y14d3cjwfysifxhfh"))))
     (properties `((upstream-name . "wikiprofiler")))
     (build-system r-build-system)
     (arguments
@@ -8075,13 +8075,13 @@ multiple geographies, counterparts, and time periods.")
 (define-public r-wbacon
   (package
     (name "r-wbacon")
-    (version "0.6-2")
+    (version "0.6-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wbacon" version))
        (sha256
-        (base32 "10rhxwgjdrhyrk0zkrifgwyxjzrk2aypq65pdg08bymwsch44d1g"))))
+        (base32 "1srnamcb3kqbc5caw012sxa1j2fyply72w7mbcwyzgn7nchpxjn8"))))
     (properties `((upstream-name . "wbacon")))
     (build-system r-build-system)
     (arguments
@@ -9505,13 +9505,13 @@ functions.")
 (define-public r-warn
   (package
     (name "r-warn")
-    (version "1.2-4")
+    (version "1.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WARN" version))
        (sha256
-        (base32 "18gfk9vqcqarj7j5i240wqv2dclg3csng4mih5izj40xaaxaf6q5"))))
+        (base32 "1dgi4q6gn6550crqmpkzhk7d0d6s76ykfq94srrgs0rgwmswf455"))))
     (properties `((upstream-name . "WARN")))
     (build-system r-build-system)
     (arguments

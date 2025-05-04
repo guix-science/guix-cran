@@ -241,13 +241,13 @@ accurate.  Tests can be found in Benati et al.(2017)
 (define-public r-qval
   (package
     (name "r-qval")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qval" version))
        (sha256
-        (base32 "0yagbgr6hbp0da641dnl0qh6v58wvmqwwzxyl5y6cf40sgi7fxh4"))))
+        (base32 "1yl2klhpdics2ylsy4i6qmm73f1i0d4ypxcrad74mxsfki966idx"))))
     (properties `((upstream-name . "Qval")))
     (build-system r-build-system)
     (arguments
@@ -267,15 +267,16 @@ accurate.  Tests can be found in Benati et al.(2017)
 diagnosis models, including the method based on the generalized deterministic
 input, noisy, and gate model (G-DINA) by de la Torre (2011)
 <DOI:10.1007/s11336-011-9207-7> discrimination index (the GDI method) by de la
-Torre and Chiu (2016) <DOI:10.1007/s11336-015-9467-8>, the step-wise Wald test
-method (the Wald method) by Ma and de la Torre (2020) <DOI:10.1111/bmsp.12156>,
-the Hull method by Najera et al. (2021) <DOI:10.1111/bmsp.12228>, the multiple
+Torre and Chiu (2016) <DOI:10.1007/s11336-015-9467-8>, the Hull method by Najera
+et al. (2021) <DOI:10.1111/bmsp.12228>, the stepwise Wald test method (the Wald
+method) by Ma and de la Torre (2020) <DOI:10.1111/bmsp.12156>, the multiple
 logistic regressionâbased Qâmatrix validation method (the MLR-B method) by
 Tu et al. (2022) <DOI:10.3758/s13428-022-01880-x>, the beta method based on
 signal detection theory by Li and Chen (2024) <DOI:10.1111/bmsp.12371> and
-Q-matrix validation based on relative fit index by Chen et la. (2013)
+Q-matrix validation based on relative fit index by Chen et al. (2013)
 <DOI:10.1111/j.1745-3984.2012.00185.x>.  Different research methods and
-iterative procedures during Q-matrix validating are available.")
+iterative procedures during Q-matrix validating are available
+<DOI:10.3758/s13428-024-02547-5>.")
     (license license:gpl3)))
 
 (define-public r-qurve
@@ -4654,6 +4655,43 @@ ISBN:978-91-9765-100-4), and Gibaldi and Perrier (1982, ISBN:978-0824710422).")
 constraints.  The method used is outlined in D. Goldfarb, and A. Idnani (1983)
 <doi:10.1007/BF02591962>.")
     (license license:gpl3+)))
+
+(define-public r-qploidy
+  (package
+    (name "r-qploidy")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Qploidy" version))
+       (sha256
+        (base32 "1q0jpqvki46wdrr40hgj2kzv34jp2gdy5s5i0ppnv8n1ffvs3l2i"))))
+    (properties `((upstream-name . "Qploidy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vroom
+                             r-vcfr
+                             r-tidyr
+                             r-stringr
+                             r-multtest
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Cristianetaniguti/Qploidy")
+    (synopsis
+     "Estimation of Ploidy and Detection of Aneuploidy Using Genotyping Data")
+    (description
+     "This package provides functions for estimating ploidy levels and detecting
+aneuploidy in individuals using allele intensities or allele count data from
+high-throughput genotyping platforms, including single nucleotide polymorphism
+(SNP) arrays and sequencing-based technologies.  Implements an extended version
+of the @code{PennCNV} signal standardization method by Wang et al. (2007)
+<doi:10.1101/gr.6861907> for higher ploidy levels.  Computes B-allele
+frequencies (BAF), z-scores, and identifies copy number variation patterns.")
+    (license license:agpl3+)))
 
 (define-public r-qpcrtools
   (package

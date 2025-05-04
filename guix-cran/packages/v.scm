@@ -4195,6 +4195,38 @@ counts.  These methods help determine the extent of extrapolation when making
 predictions.")
     (license license:expat)))
 
+(define-public r-viprodesign
+  (package
+    (name "r-viprodesign")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VIProDesign" version))
+       (sha256
+        (base32 "16m9y9sq04q6c7adnx5w6a4qqgzisdvn2jn2bp58xcaf95sbcjnp"))))
+    (properties `((upstream-name . "VIProDesign")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pathviewr
+                             r-decipher
+                             r-dbscan
+                             r-cluster
+                             r-biostrings
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=VIProDesign")
+    (synopsis "Comprehensive Tool for Protein Design")
+    (description
+     "This package provides tools for designing virus protein panels through sequence
+clustering and protein sequence analysis.  The package includes functionality
+for filtering sequences, removing redundancy, identifying outliers, clustering
+sequences, and calculating entropy to evaluate clustering quality.  A
+publication describing these methods is in preparation and will be added once
+available.")
+    (license license:asl2.0)))
+
 (define-public r-vip
   (package
     (name "r-vip")

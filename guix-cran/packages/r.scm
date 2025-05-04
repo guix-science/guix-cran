@@ -4161,13 +4161,13 @@ trading professionals.  Includes functions for API calls to
 (define-public r-rtkore
   (package
     (name "r-rtkore")
-    (version "1.6.12")
+    (version "1.6.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtkore" version))
        (sha256
-        (base32 "10mwa5m6papd6a3vx7zb36fy93wjkhzyxgcvi3i88lslh5hsccnm"))))
+        (base32 "0znvpis4mnvy26ar74ilgaf2bg0fgzsr5a10rhig0sawqly616x0"))))
     (properties `((upstream-name . "rtkore")))
     (build-system r-build-system)
     (arguments
@@ -18383,6 +18383,34 @@ In addition, visualisation and diagnostic tools are implemented as well as high
 and low-level plot functions for the ternary diagram.")
     (license license:gpl2+)))
 
+(define-public r-robcat
+  (package
+    (name "r-robcat")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "robcat" version))
+       (sha256
+        (base32 "1x0dhg43bvmn765r4ladpc8h1izbhxk45bwz7mndnbnqlr1ikxy3"))))
+    (properties `((upstream-name . "robcat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-rcpp r-mvtnorm r-ggplot2))
+    (home-page "https://cran.r-project.org/package=robcat")
+    (synopsis "Robust Categorical Data Analysis")
+    (description
+     "Robust categorical data analysis based on the theory of C-estimation developed
+in Welz (2024) <doi:10.48550/@code{arXiv.2403.11954>}.  For now, the package
+only implements robust estimation of polychoric correlation as proposed in Welz,
+Mair and Alfons (2024) <doi:10.48550/@code{arXiv.2407.18835>} with methods for
+printing and plotting.  We will implement further models in future releases.  In
+addition, the package is still experimental, so input arguments and class
+structure may change in future releases.")
+    (license license:gpl2+)))
+
 (define-public r-robber
   (package
     (name "r-robber")
@@ -30701,13 +30729,13 @@ Steve Horvath (2006) <doi:10.1198/106186006X94072> & Monti et al (2003)
 (define-public r-rfast2
   (package
     (name "r-rfast2")
-    (version "0.1.5.3")
+    (version "0.1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rfast2" version))
        (sha256
-        (base32 "08zxd28ch1j37mnx16fqz9sa9kjpri115ab317cf1pyc1v1jfsa6"))))
+        (base32 "0w3ikc6yd2a0d4ymqk8lpbrqk1vr74ha6xvnbfphnpgsgjbgi2j3"))))
     (properties `((upstream-name . "Rfast2")))
     (build-system r-build-system)
     (arguments
@@ -30856,13 +30884,13 @@ documents by Facebook Marketing API
 (define-public r-rextendr
   (package
     (name "r-rextendr")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rextendr" version))
        (sha256
-        (base32 "1jm0vvpqzycbp6an2vi3wmjavhj2wlnncvgxcd1nfzn0fw7vpbrc"))))
+        (base32 "1wx1z4s7lqynwzzh36jj3ixwjjl3gpd0452bnml49a8il988vk6p"))))
     (properties `((upstream-name . "rextendr")))
     (build-system r-build-system)
     (arguments
@@ -30870,11 +30898,9 @@ documents by Facebook Marketing API
       #:tests? #f))
     (propagated-inputs (list r-withr
                              r-vctrs
-                             r-tibble
                              r-stringi
                              r-rprojroot
                              r-rlang
-                             r-purrr
                              r-processx
                              r-pkgbuild
                              r-jsonlite
@@ -33155,13 +33181,13 @@ Software paper available at <doi:10.18637/jss.v112.i03>.")
 (define-public r-resevol
   (package
     (name "r-resevol")
-    (version "0.3.4.0")
+    (version "0.4.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resevol" version))
        (sha256
-        (base32 "0h716h7n11r95sv72j5rqn7x2bfnl7hi4nhhypy534i2cc8v4zr9"))))
+        (base32 "1ccgwk573dwsvj6xnmlz8mn6n8gykc59cbl2mv6727cq1im7n3l7"))))
     (properties `((upstream-name . "resevol")))
     (build-system r-build-system)
     (arguments

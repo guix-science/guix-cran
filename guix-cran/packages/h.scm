@@ -2579,13 +2579,13 @@ performance.")
 (define-public r-httk
   (package
     (name "r-httk")
-    (version "2.6.0")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "httk" version))
        (sha256
-        (base32 "02ss69yrdcl7ali1v638vabrr6b8nbjc26y9c0ndlnmiw2pqf6y3"))))
+        (base32 "1ll3j8750jabh2h5xz69rd9h300kksq80j1cnk3h27wkw9zsplyf"))))
     (properties `((upstream-name . "httk")))
     (build-system r-build-system)
     (arguments
@@ -3618,13 +3618,13 @@ polymorphisms for association analyses using linkage disequilibrium\"
 (define-public r-hsaur2
   (package
     (name "r-hsaur2")
-    (version "1.1-20")
+    (version "1.1-21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HSAUR2" version))
        (sha256
-        (base32 "0660z2fxj5l0dzlb1xzgd446zzxqwc1kmv52k4aa7p45apxy9hn4"))))
+        (base32 "1hg22fjfaxbalwyvhgar7zhb4f3afimdndnypykhdj7nyak7nl6n"))))
     (properties `((upstream-name . "HSAUR2")))
     (build-system r-build-system)
     (arguments
@@ -3645,13 +3645,13 @@ chapters (see HSAUR2/inst/slides).")
 (define-public r-hsaur
   (package
     (name "r-hsaur")
-    (version "1.3-10")
+    (version "1.3-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HSAUR" version))
        (sha256
-        (base32 "1z4drab395bnyfbd19rn9hr1gz78ny773g1anh54w18iszakkvib"))))
+        (base32 "0n8n1mzn6vzcvamg0cmapw20aw76qq2i6y1ri59iaz1idabgg7j8"))))
     (properties `((upstream-name . "HSAUR")))
     (build-system r-build-system)
     (arguments
@@ -4681,13 +4681,13 @@ horse and by drowning.")
 (define-public r-hornpa
   (package
     (name "r-hornpa")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hornpa" version))
        (sha256
-        (base32 "0b4dxzibngdiqj00ma2nzimbknfkscpq1ncalm9dc6pjwrmq43q1"))))
+        (base32 "06152x50cd9xhfh4jvi2k9pvlj6zampw9x6fyx01xhlgic036bn1"))))
     (properties `((upstream-name . "hornpa")))
     (build-system r-build-system)
     (arguments
@@ -4700,19 +4700,18 @@ horse and by drowning.")
      "This package provides a stand-alone function that generates a user specified
 number of random datasets and computes eigenvalues using the random datasets
 (i.e., implements Horn's [1965, Psychometrika] parallel analysis
-<https://link.springer.com/article/10.1007/BF02289447>).  Users then compare the
-resulting eigenvalues (the mean or the specified percentile) from the random
-datasets (i.e., eigenvalues resulting from noise) to the eigenvalues generated
-with the user's data.  Can be used for both principal components analysis (PCA)
-and common/exploratory factor analysis (EFA).  The output table shows how large
-eigenvalues can be as a result of merely using randomly generated datasets.  If
-the user's own dataset has actual eigenvalues greater than the corresponding
-eigenvalues, that lends support to retain that factor/component.  In other
-words, if the i(th) eigenvalue from the actual data was larger than the
-percentile of the (i)th eigenvalue generated using randomly generated data,
-empirical support is provided to retain that factor/component.  Horn, J. (1965).
- A rationale and test for the number of factors in factor analysis.
-Psychometrika, 32, 179-185.")
+<doi:10.1007/BF02289447>).  Users then compare the resulting eigenvalues (the
+mean or the specified percentile) from the random datasets (i.e., eigenvalues
+resulting from noise) to the eigenvalues generated with the user's data.  Can be
+used for both principal components analysis (PCA) and common/exploratory factor
+analysis (EFA).  The output table shows how large eigenvalues can be as a result
+of merely using randomly generated datasets.  If the user's own dataset has
+actual eigenvalues greater than the corresponding eigenvalues, that lends
+support to retain that factor/component.  In other words, if the i(th)
+eigenvalue from the actual data was larger than the percentile of the (i)th
+eigenvalue generated using randomly generated data, empirical support is
+provided to retain that factor/component.  Horn, J. (1965).  A rationale and
+test for the number of factors in factor analysis.  Psychometrika, 32, 179-185.")
     (license license:gpl3)))
 
 (define-public r-horm
@@ -6385,30 +6384,30 @@ learning model, and the joint learning model for responses and response times.")
 (define-public r-hmc
   (package
     (name "r-hmc")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HMC" version))
        (sha256
-        (base32 "0xsf9ry019r21yjfrm1bxkr60dzvmy7lj4is0l5qfr7g0bskg1lc"))))
+        (base32 "0jpkykq0f4wksnx4fd390i7na0vbz3pcsj0z11npnv85jmqfnc3y"))))
     (properties `((upstream-name . "HMC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pma r-mass r-irlba r-glmnet))
-    (home-page "https://cran.r-project.org/package=HMC")
+    (propagated-inputs (list r-pma r-mass r-irlba r-grpreg r-glmnet))
+    (home-page "https://github.com/terrytianyuzhang/HMC/tree/main/HMC_package")
     (synopsis
-     "High Dimensional Mean Comparison with Projection and Cross-Fitting")
+     "High-Dimensional Mean Comparison with Projection and Cross-Fitting")
     (description
-     "This package provides interpretable High-dimensional Mean Comparison methods
-(HMC).  For example, users can use them to assess the difference in gene
-expression between two treatment groups.  It is not a gene-by-gene comparison.
-Instead, we focus on the interplay between features and are interested in those
-that are predictive of the group label.  The methods are valid frequentist tests
-and give sparse estimates indicating which features contribute to the test
-results.")
+     "This package provides interpretable high-dimensional mean comparison methods
+(HMC).  For example, users can apply these methods to assess the difference in
+gene expression between two treatment groups.  It is not a gene-by-gene
+comparison.  Instead, the methods focus on the interplay between features and
+identify those that are predictive of the group label.  The tests are valid
+frequentist procedures and yield sparse estimates indicating which features
+contribute to the group differences.")
     (license license:gpl2)))
 
 (define-public r-hmb
@@ -6548,13 +6547,13 @@ using either lmer in the lme4 package or lme in the nlme package.")
 (define-public r-hlatools
   (package
     (name "r-hlatools")
-    (version "1.4.0")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HLAtools" version))
        (sha256
-        (base32 "16rq6zgjwisy1va681f3jg7w4v9p54bq41wgn4hdj5jyfbswiwxf"))))
+        (base32 "0m4vc00a7l0qg0ar1lhil3xf6r05n55qy8d3fic4pyb34zgxjdfr"))))
     (properties `((upstream-name . "HLAtools")))
     (build-system r-build-system)
     (arguments
@@ -6563,6 +6562,7 @@ using either lmer in the lme4 package or lme in the nlme package.")
     (propagated-inputs (list r-xfun
                              r-tibble
                              r-stringr
+                             r-rvest
                              r-fmsb
                              r-dplyr
                              r-desctools))
@@ -11503,13 +11503,13 @@ body mass index etc.  related to fitness and health of a person.")
 (define-public r-healthatlas
   (package
     (name "r-healthatlas")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthatlas" version))
        (sha256
-        (base32 "1jc0bpz0bx1il7pk1xg50r4x9j7z0n17jjzflj74g26s5pz6dsn0"))))
+        (base32 "10qz7ibba3qjvp1bf75m4313ymxgvfvinnsplzmdakp5j76hg153"))))
     (properties `((upstream-name . "healthatlas")))
     (build-system r-build-system)
     (arguments
@@ -11522,11 +11522,11 @@ body mass index etc.  related to fitness and health of a person.")
      "Explore and Import 'Metopio' Health Atlas Data and Spatial Layers")
     (description
      "Allows for painless use of the Metopio health atlas APIs
-<https://metopio.com/how-it-works/atlas/> to explore and import data.  Metopio
-health atlases store open public health data.  See what topics (or indicators)
-are available among specific populations, periods, and geographic layers.
-Download relevant data along with geographic boundaries or point datasets.
-Spatial datasets are returned as sf objects.")
+<https://metopio.com/health-atlas> to explore and import data.  Metopio health
+atlases store open public health data.  See what topics (or indicators) are
+available among specific populations, periods, and geographic layers.  Download
+relevant data along with geographic boundaries or point datasets.  Spatial
+datasets are returned as sf objects.")
     (license license:expat)))
 
 (define-public r-headliner
@@ -14522,13 +14522,13 @@ rate only in the weak sense, rather than the strong sense as intended.")
 (define-public r-harbinger
   (package
     (name "r-harbinger")
-    (version "1.1.717")
+    (version "1.1.727")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harbinger" version))
        (sha256
-        (base32 "02ha42aad47mvy43z78f745azw5ai0ah5cg9fz2bhcsrhqdjrmyc"))))
+        (base32 "02syfmrsrknsmn0mlxi70xl88gvbvy2aycjwmf33k7m88766p36p"))))
     (properties `((upstream-name . "harbinger")))
     (build-system r-build-system)
     (arguments
@@ -14540,6 +14540,7 @@ rate only in the weak sense, rather than the strong sense as intended.")
                              r-strucchange
                              r-stringr
                              r-rugarch
+                             r-rcpphungarian
                              r-hht
                              r-ggplot2
                              r-forecast

@@ -218,13 +218,13 @@ annotation.  Saelens et al. (2019) <doi:10.1038/s41587-019-0071-9>.")
 (define-public r-dyntxregime
   (package
     (name "r-dyntxregime")
-    (version "4.15")
+    (version "4.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DynTxRegime" version))
        (sha256
-        (base32 "18hk5bc6bsdjdl4736sdk896zblyc8l3ipjii4x2jksngcjvszbb"))))
+        (base32 "0qvgknjg5swshha6fxndgxwadgm3x022bp2c1mdjpb9z3df9m1q4"))))
     (properties `((upstream-name . "DynTxRegime")))
     (build-system r-build-system)
     (arguments
@@ -2683,13 +2683,13 @@ Holloway, S. T., and Kosorok, M. R. (2020) <@code{arXiv:2012.03294>}.")
 (define-public r-dtrreg
   (package
     (name "r-dtrreg")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DTRreg" version))
        (sha256
-        (base32 "1irgkrar8m0xy97y19j48s8ab9y4cjzbbnhk3mhqbbs2qgam92cw"))))
+        (base32 "13gmy3yvjyha8d6bjvcaky8m21hhs622nr1nqn24vdrpjil6962c"))))
     (properties `((upstream-name . "DTRreg")))
     (build-system r-build-system)
     (arguments
@@ -11218,13 +11218,13 @@ removed or further analyses as required.")
 (define-public r-dixon
   (package
     (name "r-dixon")
-    (version "0.0-9")
+    (version "0.0-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dixon" version))
        (sha256
-        (base32 "1lgmhg3d0f59x5mfa6j9cs009yqxyzfzv7jfz5d93jrbs0p7glnk"))))
+        (base32 "1fyx3wd45c67i9xrr2gpmgnp7yk6c6qa7q3z856qkbc8hby5n3xj"))))
     (properties `((upstream-name . "dixon")))
     (build-system r-build-system)
     (arguments
@@ -31599,13 +31599,13 @@ stochastic disability-adjusted life year (DALY) calculation.")
 (define-public r-daltoolboxdp
   (package
     (name "r-daltoolboxdp")
-    (version "1.0.787")
+    (version "1.1.717")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolboxdp" version))
        (sha256
-        (base32 "1h8g4zr8idpa7zk86jqww6xll6dx31il9rgakxy4va649k7n3wdg"))))
+        (base32 "1jx6h0i8iv7vz4c0k7lzps9cnrd6k6vzbalcbkg7w99qv6lry5l8"))))
     (properties `((upstream-name . "daltoolboxdp")))
     (build-system r-build-system)
     (arguments

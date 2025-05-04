@@ -1091,13 +1091,13 @@ package.")
 (define-public r-xmlrpc2
   (package
     (name "r-xmlrpc2")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xmlrpc2" version))
        (sha256
-        (base32 "13rfw0civp3hzi4hn31x1idliid1qb73495x4c31z5msd35lzxrs"))))
+        (base32 "0adrq6r5kp3cx4mnpsa1dzaznj843fkmzch2z4j5l592x9zzywad"))))
     (properties `((upstream-name . "xmlrpc2")))
     (build-system r-build-system)
     (arguments

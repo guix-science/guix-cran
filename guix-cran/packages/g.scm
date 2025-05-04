@@ -514,13 +514,13 @@ sparse non-negative principal components analyses
 (define-public r-gwmodelvis
   (package
     (name "r-gwmodelvis")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWmodelVis" version))
        (sha256
-        (base32 "0kfrswad5c0fwfviklc2njcsif9wgvf3nxyvr3q8sk0hj4wlnwbr"))))
+        (base32 "0n4z2bj2116v2dh7hamv7zkqwhjxb20rp09k7p10nclk4gkvggjl"))))
     (properties `((upstream-name . "GWmodelVis")))
     (build-system r-build-system)
     (arguments
@@ -541,6 +541,7 @@ sparse non-negative principal components analyses
                              r-leaflet
                              r-gwmodel
                              r-ggspatial
+                             r-ggforce
                              r-dt
                              r-dplyr
                              r-av))
@@ -549,7 +550,7 @@ sparse non-negative principal components analyses
     (description
      "The increasing popularity of geographically weighted (GW) techniques has
 resulted in the development of several R packages, such as GWmodel'.  To
-facilate their usages, G@code{WmodelVis} provides a shiny'-based interactive
+facilitate their usages, G@code{WmodelVis} provides a shiny'-based interactive
 visualization toolkit for geographically weighted (GW) models.  It includes a
 number of visualization tools, including dynamic mapping of parameter surfaces,
 statistical visualization, sonification and exporting videos via FFmpeg'.")
@@ -4118,13 +4119,13 @@ visit the package homepage <https://pbreheny.github.io/grpreg/>.")
 (define-public r-grpnet
   (package
     (name "r-grpnet")
-    (version "0.8")
+    (version "0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grpnet" version))
        (sha256
-        (base32 "1j96blzg9gn42vysbnm1lqib0p7xffxvyv8ybvw5arf5a62k1p4w"))))
+        (base32 "17va8i063bjn8widlvxx8c03il6rdp8fyp8h3yk1lk7wlnxy32c3"))))
     (properties `((upstream-name . "grpnet")))
     (build-system r-build-system)
     (arguments
@@ -4139,12 +4140,13 @@ group elastic net penalties as described in Helwig (2025)
 <doi:10.1080/10618600.2024.2362232>.  Implements group LASSO, group MCP, and
 group SCAD with an optional group ridge penalty.  Computes the regularization
 path for linear regression (gaussian), multivariate regression (multigaussian),
-logistic regression (binomial), multinomial logistic regression (multinomial),
-log-linear count regression (poisson and negative.binomial), and log-linear
-continuous regression (gamma and inverse gaussian).  Supports default and
-formula methods for model specification, k-fold cross-validation for tuning the
-regularization parameters, and nonparametric regression via tensor product
-reproducing kernel (smoothing spline) basis function expansion.")
+Huberized support vector machines (hsvm), logistic regression (binomial),
+multinomial logistic regression (multinomial), log-linear count regression
+(poisson and negative.binomial), and log-linear continuous regression (gamma and
+inverse gaussian).  Supports default and formula methods for model
+specification, k-fold cross-validation for tuning the regularization parameters,
+and nonparametric regression via tensor product reproducing kernel (smoothing
+spline) basis function expansion.")
     (license license:gpl2+)))
 
 (define-public r-grplasso
@@ -4277,13 +4279,13 @@ growth curves) at isolated time points.")
 (define-public r-growthpheno
   (package
     (name "r-growthpheno")
-    (version "3.1.11")
+    (version "3.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growthPheno" version))
        (sha256
-        (base32 "13xyd98s514fviry78ira2mq8a9wlqhy7jigp2d0fb9vay11isqq"))))
+        (base32 "0fy8r7289qwm2snvdlbjhfb705p9vxll0kr9x5vm0dw7zx4h281v"))))
     (properties `((upstream-name . "growthPheno")))
     (build-system r-build-system)
     (arguments
@@ -4301,6 +4303,7 @@ growth curves) at isolated time points.")
                              r-hmisc
                              r-ggplot2
                              r-ggally
+                             r-dplyr
                              r-dae))
     (native-inputs (list r-r-rsp))
     (home-page "http://chris.brien.name/")
@@ -15733,13 +15736,13 @@ fit using local scoring algorithms described in Hastie and Tibshirani (1990)
 (define-public r-gkwreg
   (package
     (name "r-gkwreg")
-    (version "1.0.3")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gkwreg" version))
        (sha256
-        (base32 "1r952zbmvws1namvl9k21ghqpyn5zvw4mc3qvlfa88lg7rx0xw50"))))
+        (base32 "0ndpq6fxs3h2726yix5aw3dp0160cr2pxlx78d4pibci96vnfgjb"))))
     (properties `((upstream-name . "gkwreg")))
     (build-system r-build-system)
     (arguments
@@ -20697,13 +20700,13 @@ a data matrix.")
 (define-public r-ggmridge
   (package
     (name "r-ggmridge")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGMridge" version))
        (sha256
-        (base32 "179g82w7vrbkvq0b8bcaakcjhqz1gsyc2qyh70ldglbj0sj5yh4m"))))
+        (base32 "1pgn323lxg1mgls3d6l1rjlvl31hyv71m2rczvc963xx3g0zixhz"))))
     (properties `((upstream-name . "GGMridge")))
     (build-system r-build-system)
     (arguments
@@ -26297,13 +26300,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "0x73shavp4ssciamiffn7bxjb4rix7c02sgwd36jyp86rf7n7hvi"))))
+        (base32 "00hg1a4zl2kls4cc2vajxwxh4v5rb5nb9h4cp7lsxa9h6g3wx66x"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (arguments
@@ -34584,13 +34587,13 @@ utility functions to get an overview of GAMS data and to check its validity.")
 (define-public r-gamselbayes
   (package
     (name "r-gamselbayes")
-    (version "2.0-2")
+    (version "2.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamselBayes" version))
        (sha256
-        (base32 "0id9q1z6yrlm6sj3nrwcb70b5fmymmv1n0bn1j9417wkkd01hwnb"))))
+        (base32 "1g397qs30dfalwccbf6p8pdmsybfs3hghknn19spkcyy91haxvx5"))))
     (properties `((upstream-name . "gamselBayes")))
     (build-system r-build-system)
     (arguments

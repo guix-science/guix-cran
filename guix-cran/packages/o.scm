@@ -1351,13 +1351,13 @@ could benefit from the general framework provided by otsfeatures'.")
 (define-public r-otrselect
   (package
     (name "r-otrselect")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OTRselect" version))
        (sha256
-        (base32 "02aslqz8k10jglxwifn8sm1y3cg10vaq6dd5n15s4nrvcfg53180"))))
+        (base32 "0s5yyg5bb5vfm0xl3pyj7qa5gxmk283rh9l49ka86w3yh49q4q72"))))
     (properties `((upstream-name . "OTRselect")))
     (build-system r-build-system)
     (arguments

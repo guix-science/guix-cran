@@ -5538,6 +5538,34 @@ Expectation-Maximization paradigm.  Individual covariates affecting the class
 weights may be included in the new version (since 2.1).")
     (license license:gpl2+)))
 
+(define-public r-multilaterals
+  (package
+    (name "r-multilaterals")
+    (version "2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multilaterals" version))
+       (sha256
+        (base32 "1cibrsjx263c8cc106xdw9mwy5ndqr40xvfspf5cm2yc8hnr2n3b"))))
+    (properties `((upstream-name . "multilaterals")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-igraph r-ape))
+    (home-page "https://cran.r-project.org/package=multilaterals")
+    (synopsis "Transitive Index Numbers for Cross-Sections and Panel Data")
+    (description
+     "Computing transitive (and non-transitive) index numbers (Coelli et al., 2005
+<doi:10.1007/b136381>) for cross-sections and panel data.  For the calculation
+of transitive indexes, the EKS (Coelli et al., 2005 <doi:10.1007/b136381>; Rao
+et al., 2002 <doi:10.1007/978-1-4615-0851-9_4>) and Minimum spanning tree (Hill,
+2004 <doi:10.1257/0002828043052178>) methods are implemented.  Traditional
+fixed-base and chained indexes, and their growth rates, can also be derived
+using the Paasche, Laspeyres, Fisher and Tornqvist formulas.")
+    (license license:gpl3)))
+
 (define-public r-multilandr
   (package
     (name "r-multilandr")
@@ -7694,29 +7722,30 @@ instance, Morales-OÃ±ate and Morales-OÃ±ate (2015) <doi:10.33333/rp.vol51n2.
 (define-public r-mte
   (package
     (name "r-mte")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MTE" version))
        (sha256
-        (base32 "0xh9q302gklx0djkjvmp79n7y8d0sc06mm7lvmva5i6s69jq243f"))))
+        (base32 "0pb35nx86zr712mmc7mxwyywrhqhxzkb8c9s8ms9mdk7rvidd8pr"))))
     (properties `((upstream-name . "MTE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rqpen r-quantreg r-glmnet))
-    (home-page "https://cran.r-project.org/package=MTE")
+    (home-page "https://github.com/shaobo-li/MTE")
     (synopsis
      "Maximum Tangent Likelihood Estimation for Robust Linear Regression and Variable Selection")
     (description
      "Several robust estimators for linear regression and variable selection are
 provided.  Included are Maximum tangent likelihood estimator by Qin, et al.,
-(2017) <arxiv:1708.05439>, least absolute deviance estimator and Huber
-regression.  The penalized version of each of these estimator incorporates L1
-penalty function, i.e., LASSO and Adaptive Lasso.  They are able to produce
-consistent estimates for both fixed and high-dimensional settings.")
+(2017), @code{arXiv} preprint <doi:10.48550/@code{arXiv.1708.05439>}, least
+absolute deviance estimator and Huber regression.  The penalized version of each
+of these estimator incorporates L1 penalty function, i.e., LASSO and Adaptive
+Lasso.  They are able to produce consistent estimates for both fixed and
+high-dimensional settings.")
     (license license:gpl3)))
 
 (define-public r-mtdrh
@@ -16891,18 +16920,19 @@ number (Zhao et al. (2022) <doi:10.1371/journal.pcbi.1010281>).")
 (define-public r-modelobj
   (package
     (name "r-modelobj")
-    (version "4.2")
+    (version "4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelObj" version))
        (sha256
-        (base32 "0qj8ri7aw9lc7cc7rcs618bcbarcs29zgbz8l74s55qajvwpssg0"))))
+        (base32 "0wyldsl5grblxhcwqf7bw4pnn4g3arin3vi08asf677vcw7vnfay"))))
     (properties `((upstream-name . "modelObj")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=modelObj")
     (synopsis "Model Object Framework for Regression Analysis")
     (description
@@ -17334,13 +17364,13 @@ using the method presented in Wu, Cheung, and Leung (2020)
 (define-public r-modelbased
   (package
     (name "r-modelbased")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelbased" version))
        (sha256
-        (base32 "1ikx7ssw0dvhy473bnnv3m0nqr4np84p6bmnnfkdhs2f56y6xgqi"))))
+        (base32 "1ir5mllxya129x6pb35s68pkf6j8m0l958s1m7idn991mk8yphqz"))))
     (properties `((upstream-name . "modelbased")))
     (build-system r-build-system)
     (arguments
@@ -24222,13 +24252,13 @@ o1-preview for code structure and documentation.")
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "12m731k637xnnlf2kafh7wrqzpfirqqwp0gwd8swnig5aqrf1r11"))))
+        (base32 "187nbgymi9rjihf3pxihgvmj2ch6i4l6jnargxz5sscyaf5k1fr9"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (arguments
@@ -24238,19 +24268,17 @@ o1-preview for code structure and documentation.")
     (home-page "https://github.com/kunfa/mixedBayes")
     (synopsis "Bayesian Longitudinal Regularized Quantile Mixed Model")
     (description
-     "In longitudinal studies, the same subjects are measured repeatedly over time,
-leading to correlations among the repeated measurements.  Properly accounting
-for the intra-cluster correlations in the presence of data heterogeneity and
-long tailed distributions of the disease phenotype is challenging, especially in
-the context of high dimensional regressions.  In this package, we developed a
-Bayesian quantile mixed effects model with spike- and -slab priors to dissect
-important gene - environment interactions under longitudinal genomics studies.
-An efficient Gibbs sampler has been developed to facilitate fast computation.
-The Markov chain Monte Carlo algorithms of the proposed and alternative methods
-are efficiently implemented in C++'.  The development of this software package
-and the associated statistical methods have been partially supported by an
-Innovative Research Award from Johnson Cancer Research Center, Kansas State
-University.")
+     "With high-dimensional omics features, repeated measure ANOVA leads to
+longitudinal gene-environment interaction studies that have intra-cluster
+correlations, outlying observations and structured sparsity arising from the
+ANOVA design.  In this package, we have developed robust sparse Bayesian mixed
+effect models tailored for the above studies (Fan et al. (2025)
+<doi:10.1093/jrsssc/qlaf027>).  An efficient Gibbs sampler has been developed to
+facilitate fast computation.  The Markov chain Monte Carlo algorithms of the
+proposed and alternative methods are efficiently implemented in C++'.  The
+development of this software package and the associated statistical methods have
+been partially supported by an Innovative Research Award from Johnson Cancer
+Research Center, Kansas State University.")
     (license license:gpl2)))
 
 (define-public r-mixdist
@@ -33653,20 +33681,20 @@ while adhering to best practices for unsupervised learning.")
 (define-public r-metasens
   (package
     (name "r-metasens")
-    (version "1.5-2")
+    (version "1.5-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metasens" version))
        (sha256
-        (base32 "0jd5adkyi14blbppmv6lny4pnj0ld2wkq6xpv7dhvh0xhgw5n49y"))))
+        (base32 "19as9m0n4b9d0374ynngqaxna69i8svgwlhg90827znz5a1vykg0"))))
     (properties `((upstream-name . "metasens")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-meta))
-    (home-page "https://cran.r-project.org/package=metasens")
+    (home-page "https://github.com/guido-s/metasens")
     (synopsis "Statistical Methods for Sensitivity Analysis in Meta-Analysis")
     (description
      "The following methods are implemented to evaluate how sensitive the results of a
@@ -36157,26 +36185,29 @@ al. (2021) <doi:10.3390/axioms10040267>, Taketomi et al. (2022)
 (define-public r-meta
   (package
     (name "r-meta")
-    (version "8.0-2")
+    (version "8.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meta" version))
        (sha256
-        (base32 "0sgzalxymm2r5pcgd5rcq5a64nvzmar351habmhznckhmc06cg0x"))))
+        (base32 "1cgfyyyc40s24a1aw6jpha99p42pd6h75sp0cbpsig9xxzg9rrb5"))))
     (properties `((upstream-name . "meta")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
+                             r-tibble
                              r-stringr
+                             r-scales
                              r-readr
                              r-purrr
                              r-metafor
                              r-metadat
                              r-magrittr
                              r-lme4
+                             r-ggplot2
                              r-dplyr
                              r-compquadform))
     (native-inputs (list r-knitr))
@@ -36974,13 +37005,13 @@ HTML theme will be added in the future.")
 (define-public r-memoir
   (package
     (name "r-memoir")
-    (version "1.3-0")
+    (version "1.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "memoiR" version))
        (sha256
-        (base32 "1gmdf5hjgvkyda01i69ziqllk2kvq17q4d0lskrhl04gvmhs6qqb"))))
+        (base32 "0i4g3mf2a3iirrd33xvj3z79dh3154vkipg2xh6an0xsi5md1vqk"))))
     (properties `((upstream-name . "memoiR")))
     (build-system r-build-system)
     (arguments
@@ -43395,42 +43426,6 @@ zero-inflated mediators containing true zeros and false zeros.  See Jiang et al
 <@code{arXiv:2301.10064>} for more details.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-mazamatimeseries
-  (package
-    (name "r-mazamatimeseries")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MazamaTimeSeries" version))
-       (sha256
-        (base32 "10w8nffv9rls32bj3rfa48l6nyly0238ywqbqwfkvr16i7g63dsb"))))
-    (properties `((upstream-name . "MazamaTimeSeries")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-rlang
-                             r-mazamarollutils
-                             r-mazamacoreutils
-                             r-magrittr
-                             r-lubridate
-                             r-geodist
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/MazamaScience/MazamaTimeSeries")
-    (synopsis "Core Functionality for Environmental Time Series")
-    (description
-     "Utility functions for working with environmental time series data from known
-locations.  The compact data model is structured as a list with two dataframes.
-A meta dataframe contains spatial and measuring device metadata associated with
-deployments at known locations.  A data dataframe contains a datetime column
-followed by columns of measurements associated with each \"device-deployment\".
-Ephemerides calculations are based on code originally found in NOAA's \"Solar
-Calculator\" <https://gml.noaa.gov/grad/solcalc/>.")
-    (license license:gpl3)))
-
 (define-public r-mazamaspatialutils
   (package
     (name "r-mazamaspatialutils")
@@ -43493,31 +43488,6 @@ associated with a set of longitude/latitude pairs. (They also make cool maps.)."
      "This package provides a suite of convenience functions for generating US state
 and county thematic maps using datasets from the @code{MazamaSpatialUtils}
 package.")
-    (license license:gpl3)))
-
-(define-public r-mazamarollutils
-  (package
-    (name "r-mazamarollutils")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MazamaRollUtils" version))
-       (sha256
-        (base32 "1433xy64n3wpxg9d0jlwdfp8hlvmq0ndg3fv6kfxq3pasm600jgc"))))
-    (properties `((upstream-name . "MazamaRollUtils")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/MazamaScience/MazamaRollUtils")
-    (synopsis "Efficient Rolling Functions")
-    (description
-     "This package provides a suite of compiled functions calculating rolling mins,
-means, maxes and other statistics.  This package is designed to meet the needs
-of data processing systems for environmental time series.")
     (license license:gpl3)))
 
 (define-public r-mazamalocationutils
@@ -48942,13 +48912,13 @@ visualizing networks with sensible defaults.")
 (define-public r-manymome
   (package
     (name "r-manymome")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymome" version))
        (sha256
-        (base32 "1w72vrsp4q81cqcv5kaakransksbaqgd3y10vffr8fsfm89wy3mf"))))
+        (base32 "036pvkwh4wqsjmqk3bjsr1q08cz5yd10lwbjhmw9b3zg801d6yxk"))))
     (properties `((upstream-name . "manymome")))
     (build-system r-build-system)
     (arguments

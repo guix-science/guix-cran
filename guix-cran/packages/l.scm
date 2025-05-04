@@ -7331,24 +7331,26 @@ model inference feature through simulation and games.")
 (define-public r-lmtp
   (package
     (name "r-lmtp")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmtp" version))
        (sha256
-        (base32 "10gy8nb64vp36q6yy0kp0g2dvv514gvq4vfc5az4ydlx29qyc6bn"))))
+        (base32 "1hmmr66wsv2yxbims7ahnqmlzlkwk5xm6sc3gs8pwq6qidrqaxpg"))))
     (properties `((upstream-name . "lmtp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-superlearner
-                             r-schoolmath
                              r-r6
                              r-progressr
                              r-origami
                              r-nnls
+                             r-lifecycle
+                             r-isotone
+                             r-ife
                              r-generics
                              r-future
                              r-data-table
@@ -7366,7 +7368,9 @@ and multivariate treatments are allowed as well are censored outcomes.  The
 treatment mechanism is estimated via a density ratio classification procedure
 irrespective of treatment variable type.  For both continuous and binary
 outcomes, additive treatment effects can be calculated and relative risks and
-odds ratios may be calculated for binary outcomes.")
+odds ratios may be calculated for binary outcomes.  Supports survival outcomes
+with competing risks (Diaz, Hoffman, and Hejazi;
+<doi:10.1007/s10985-023-09606-7>).")
     (license license:agpl3)))
 
 (define-public r-lmtestrob
@@ -11562,13 +11566,13 @@ of common parameters, and semi-automated analysis and visualization.")
 (define-public r-lightauc
   (package
     (name "r-lightauc")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lightAUC" version))
        (sha256
-        (base32 "1vf2jgqq205bcms8rszvzacl317dcl46464mxlbak938mrwjrdys"))))
+        (base32 "0x8jrhwg50wr3aybh66sj74f651570p2jlqw4fpj112cgyryv7j8"))))
     (properties `((upstream-name . "lightAUC")))
     (build-system r-build-system)
     (arguments
@@ -14101,13 +14105,13 @@ colour displays.")
 (define-public r-lefko3
   (package
     (name "r-lefko3")
-    (version "6.4.0")
+    (version "6.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lefko3" version))
        (sha256
-        (base32 "112xhfppqmz32qag1ahrnrcx95j53h33yrs41wlhrb0pw36aii2b"))))
+        (base32 "1xgls4ixmzwvaffc7fp9aj5aqjb3gs6wqqkvd4xhpifn6qlkmjlq"))))
     (properties `((upstream-name . "lefko3")))
     (build-system r-build-system)
     (arguments
@@ -14125,7 +14129,7 @@ colour displays.")
                              r-glmmtmb
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "http://revolutionarydemography.com/projects.html")
+    (home-page "https://github.com/dormancy1/lefko3")
     (synopsis
      "Historical and Ahistorical Population Projection Matrix Analysis")
     (description
@@ -15160,13 +15164,13 @@ browser using @code{WebGl}'.")
 (define-public r-leafem
   (package
     (name "r-leafem")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leafem" version))
        (sha256
-        (base32 "1qvmygxm5957k7mnbi05vs3sjcwng9f18hbxx6143nl38fm5pzfy"))))
+        (base32 "1if5x8s75a0bbkfakf0iav2j8ybdswiv4viarnfzlh7x2lql5pki"))))
     (properties `((upstream-name . "leafem")))
     (build-system r-build-system)
     (arguments
@@ -15190,6 +15194,7 @@ browser using @code{WebGl}'.")
                              r-raster
                              r-png
                              r-leaflet
+                             r-jsonlite
                              r-htmlwidgets
                              r-htmltools
                              r-geojsonsf
@@ -19482,6 +19487,36 @@ with distances greater than certain threshold and, iii) the CBH based on
 different criteria.  The methods implemented in this package are original and
 have not been published elsewhere.")
     (license license:gpl3)))
+
+(define-public r-ladder
+  (package
+    (name "r-ladder")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ladder" version))
+       (sha256
+        (base32 "0pjn73jzihp5wicjczij1hghr0fr72lgimprj86gdw7mb73c9qq5"))))
+    (properties `((upstream-name . "ladder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-httr
+                             r-httpuv
+                             r-gargle
+                             r-flextable
+                             r-curl
+                             r-cli
+                             r-checkmate))
+    (home-page "https://www.r-ladder.com")
+    (synopsis "Get on to the Slides")
+    (description
+     "Create tables from within R directly on Google Slides presentations.  Currently
+supports matrix, data.frame and flextable objects.")
+    (license license:expat)))
 
 (define-public r-lad
   (package

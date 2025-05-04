@@ -4236,13 +4236,13 @@ package and Fauvernier et al. (2019b) <doi:10.1111/rssc.12368> for the method.")
 (define-public r-survparamsim
   (package
     (name "r-survparamsim")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survParamSim" version))
        (sha256
-        (base32 "1dmxvdz1pp6k9rpln8w1pq1bkjmjx2jhym526c9bkl48xnla1nbw"))))
+        (base32 "0z6qiir4zwl64byc2lxldmanzgjrm68kxmwm6882lka687ndjrwr"))))
     (properties `((upstream-name . "survParamSim")))
     (build-system r-build-system)
     (arguments
@@ -4258,6 +4258,7 @@ package and Fauvernier et al. (2019b) <doi:10.1111/rssc.12368> for the method.")
                              r-lifecycle
                              r-ggplot2
                              r-forcats
+                             r-eha
                              r-dplyr
                              r-broom))
     (native-inputs (list r-knitr))
@@ -12698,13 +12699,13 @@ transformation.")
 (define-public r-sticr
   (package
     (name "r-sticr")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "STICr" version))
        (sha256
-        (base32 "0i75ql1si8jqqfkjj99bslvhazwjjh7v8bc53hhmr3pc2ax8y1x5"))))
+        (base32 "1n59mzmirxz2jqr0fmacjrcn55l8vggjhy3lypb8lkvskliln9an"))))
     (properties `((upstream-name . "STICr")))
     (build-system r-build-system)
     (arguments
@@ -14286,6 +14287,50 @@ variance and sample size.  It offers only a simple all-in-one method for quick
 calculations to find the CI for Chi Distribution.")
     (license license:expat)))
 
+(define-public r-statteacherassistant
+  (package
+    (name "r-statteacherassistant")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StatTeacherAssistant" version))
+       (sha256
+        (base32 "0hc185bqna2x4nc76g21w7619v44sgb9hk1piwvjwbb2yv6lyshx"))))
+    (properties `((upstream-name . "StatTeacherAssistant")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-stringi
+                             r-sortable
+                             r-shinyjs
+                             r-shinybs
+                             r-shinyalert
+                             r-shiny
+                             r-rmatio
+                             r-rio
+                             r-rhandsontable
+                             r-plotly
+                             r-ggplot2
+                             r-extradistr
+                             r-dt
+                             r-dplyr
+                             r-desctools))
+    (home-page "https://github.com/ccasement/StatTeacherAssistant")
+    (synopsis
+     "An App that Assists Intro Statistics Instructors with Data Sets")
+    (description
+     "Includes an interactive application designed to support educators in
+wide-ranging disciplines, with a particular focus on those teaching introductory
+statistical methods (descriptive and/or inferential) for data analysis.  Users
+are able to randomly generate data, make new versions of existing data through
+common adjustments (e.g., add random normal noise and perform transformations),
+and check the suitability of the resulting data for statistical analyses.")
+    (license license:expat)))
+
 (define-public r-statswalesr
   (package
     (name "r-statswalesr")
@@ -15273,6 +15318,39 @@ provided that allow for use of a binned, discrete scale, a continuous scale or
 manually specified colors depending on what is needed for the underlying data.")
     (license license:expat)))
 
+(define-public r-statdecider
+  (package
+    (name "r-statdecider")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "statdecideR" version))
+       (sha256
+        (base32 "1zb76bgf4gp4c694x7qr2aq2w8mhj3j25kba0qllrbkv70b7mx36"))))
+    (properties `((upstream-name . "statdecideR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-ggplot2 r-effectsize r-dplyr
+                             r-agricolae))
+    (home-page "https://cran.r-project.org/package=statdecideR")
+    (synopsis "Automated Statistical Analysis and Plotting with CLD")
+    (description
+     "This package provides a lightweight tool that provides a reproducible workflow
+for selecting and executing appropriate statistical analysis in one-way or
+two-way experimental designs.  The package automatically checks for data
+normality, conducts parametric (ANOVA) or non-parametric (Kruskal-Wallis) tests,
+performs post-hoc comparisons with Compact Letter Displays (CLD), and generates
+publication-ready boxplots, faceted plots, and heatmaps.  It is designed for
+researchers seeking fast, automated statistical summaries and visualization.
+Based on established statistical methods including Shapiro and Wilk (1965)
+<doi:10.2307/2333709>, Kruskal and Wallis (1952)
+<doi:10.1080/01621459.1952.10483441>, Tukey (1949) <doi:10.2307/3001913>, Fisher
+(1925) <ISBN:0050021702>, and Wickham (2016) <ISBN:978-3-319-24277-4>.")
+    (license license:expat)))
+
 (define-public r-statdataml
   (package
     (name "r-statdataml")
@@ -15828,43 +15906,6 @@ Penalized maximum likelihood estimation and Markov Chain Monte Carlo estimation
 are also provided, see Luedtke, Robitzsch and Wagner (2018)
 <DOI:10.1037/met0000155>.")
     (license license:gpl2+)))
-
-(define-public r-startr
-  (package
-    (name "r-startr")
-    (version "2.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "startR" version))
-       (sha256
-        (base32 "1p1yrwcmzzln5qjpsdsz3a8a3d6dlq5fvibx0zq3njmvbffwsh24"))))
-    (properties `((upstream-name . "startR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-s2dv
-                             r-pcict
-                             r-multiapply
-                             r-future
-                             r-easyncdf
-                             r-climprojdiags
-                             r-bigmemory
-                             r-abind))
-    (home-page "https://earth.bsc.es/gitlab/es/startR/")
-    (synopsis "Automatically Retrieve Multidimensional Distributed Data Sets")
-    (description
-     "Tool to automatically fetch, transform and arrange subsets of multi- dimensional
-data sets (collections of files) stored in local and/or remote file systems or
-servers, using multicore capabilities where possible.  The tool provides an
-interface to perceive a collection of data sets as a single large
-multidimensional data array, and enables the user to request for automatic
-retrieval, processing and arrangement of subsets of the large array.  Wrapper
-functions to add support for custom file formats can be plugged in/out, making
-the tool suitable for any research field where large multidimensional data sets
-are involved.")
-    (license license:gpl3)))
 
 (define-public r-starter
   (package
@@ -16781,13 +16822,13 @@ This version is available in French and English.  See
 (define-public r-stacks
   (package
     (name "r-stacks")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stacks" version))
        (sha256
-        (base32 "1bhfdnyf4w5r5bmfnrcwwy9h6qdimklbcr0b50vwmkj4jcyin48a"))))
+        (base32 "0kf83rfajyla4hpi51a9q384d41qw7hl99pl1wnbf17vl54lhfan"))))
     (properties `((upstream-name . "stacks")))
     (build-system r-build-system)
     (arguments
@@ -16808,9 +16849,9 @@ This version is available in French and English.  See
                              r-ggplot2
                              r-generics
                              r-future
+                             r-furrr
                              r-foreach
                              r-dplyr
-                             r-dofuture
                              r-cli
                              r-butcher))
     (native-inputs (list r-knitr))
@@ -62224,13 +62265,13 @@ various methods of this package.")
 (define-public r-sdclog
   (package
     (name "r-sdclog")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdcLog" version))
        (sha256
-        (base32 "0ssjgpfg3z8j9s47nmiw6a5jcsi4pppdxidvzm3sryjz4klallwg"))))
+        (base32 "115h1j6vihxkh2ryiiy83zd3mf2x2pk33mhbh5a70jvcgzjjkdr1"))))
     (properties `((upstream-name . "sdcLog")))
     (build-system r-build-system)
     (arguments
@@ -62249,7 +62290,7 @@ and in calculating extreme values that are not individual data.  Also included
 is a simple function to create log files.  The methods used here are described
 in the \"Guidelines for the checking of output based on microdata research\" by
 Bond, Brandt, and de Wolf (2015)
-<https://ec.europa.eu/eurostat/cros/system/files/dwb_standalone-document_output-checking-guidelines.pdf>.")
+<https://cros.ec.europa.eu/system/files/2024-02/Output-checking-guidelines.pdf>.")
     (license license:gpl3)))
 
 (define-public r-sdchierarchies
@@ -65234,31 +65275,27 @@ Observational Studies using R. Chapman & Hall/CRC.")
 (define-public r-scicomptools
   (package
     (name "r-scicomptools")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scicomptools" version))
        (sha256
-        (base32 "0v3a8spx199rqs3y861kh8syax02f0pcvnyg5ivxm4zzhvfnmcvx"))))
+        (base32 "0xpp5w9hm474hfrnqkhq8109ykq6291gv7fgjncjpa6pjfvlcj94"))))
     (properties `((upstream-name . "scicomptools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyxl
-                             r-tidytext
                              r-tidyr
                              r-tibble
                              r-stringr
-                             r-semnetcleaner
                              r-readxl
                              r-purrr
                              r-magrittr
                              r-googledrive
                              r-gitcreds
-                             r-ggwordcloud
-                             r-ggplot2
                              r-dplyr
                              r-data-tree
                              r-chromote))
@@ -73334,48 +73371,6 @@ models.  We develop a flexible and fast implementation, written in C++ using
 <doi:10.1080/10618600.2012.657139> for references on the Joint Trained
 Elastic-Net.")
     (license license:gpl2+)))
-
-(define-public r-s2dv
-  (package
-    (name "r-s2dv")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "s2dv" version))
-       (sha256
-        (base32 "0bs46hgvryaydf0hmdn02cpfc3b3schx26gpw11b78j6by95z0yw"))))
-    (properties `((upstream-name . "s2dv")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list cdo))
-    (propagated-inputs (list r-specsverification
-                             r-plyr
-                             r-ncdf4
-                             r-nbclust
-                             r-multiapply
-                             r-maps
-                             r-mapproj
-                             r-easyverification
-                             r-easyncdf
-                             r-climprojdiags
-                             r-bigmemory
-                             r-abind))
-    (home-page "https://earth.bsc.es/gitlab/es/s2dv/")
-    (synopsis "Set of Common Tools for Seasonal to Decadal Verification")
-    (description
-     "The advanced version of package s2dverification'.  It is intended for seasonal
-to decadal (s2d) climate forecast verification, but it can also be used in other
-kinds of forecasts or general climate analysis.  This package is specially
-designed for the comparison between the experimental and observational datasets.
- The functionality of the included functions covers from data retrieval, data
-post-processing, skill scores against observation, to visualization.  Compared
-to s2dverification', s2dv is more compatible with the package @code{startR}',
-able to use multiple cores for computation and handle multi-dimensional arrays
-with a higher flexibility.  The CDO version used in development is 1.9.8.")
-    (license license:gpl3)))
 
 (define-public r-s20x
   (package
