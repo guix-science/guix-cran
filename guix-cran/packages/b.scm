@@ -4738,13 +4738,13 @@ Gaussian.")
 (define-public r-brickster
   (package
     (name "r-brickster")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brickster" version))
        (sha256
-        (base32 "1x2yk4k49klliv9d9vkyh5ik2m5a9kpphp7d2llfry4q66d4xpq2"))))
+        (base32 "0hlc0zzbrd5qrk54ayz8gir9zvzxgi1jp821v8k7h7sfv4j7mz2p"))))
     (properties `((upstream-name . "brickster")))
     (build-system r-build-system)
     (arguments
@@ -10827,13 +10827,13 @@ shiny app for interactive model building.")
 (define-public r-bloq
   (package
     (name "r-bloq")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BLOQ" version))
        (sha256
-        (base32 "0qs4pnzpfwkii6wpd8my34zw9k003b3is0y0aj1lhcm0qnn1p8h4"))))
+        (base32 "06yfg483m0krbcww4qw35nv66slfadhscsw5c6l08cng4009ad3m"))))
     (properties `((upstream-name . "BLOQ")))
     (build-system r-build-system)
     (arguments
@@ -10841,18 +10841,17 @@ shiny app for interactive model building.")
       #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-maxlik))
     (home-page "https://cran.r-project.org/package=BLOQ")
-    (synopsis "Impute and Analyze Data with BLOQ Observations")
+    (synopsis "Methods to Impute and Analyze Data with BLOQ Observations")
     (description
-     "It includes estimating the area under the concentrations versus time curve (AUC)
-and its standard error for data with Below the Limit of Quantification (BLOQ)
-observations.  Two approaches are implemented: direct estimation using censored
-maximum likelihood, also by first imputing the BLOQ's using various methods,
-then compute AUC and its standard error using imputed data.  Technical details
-can found in Barnett, Helen Yvette, Helena Geys, Tom Jacobs, and Thomas Jaki.
-\"Methods for Non-Compartmental Pharmacokinetic Analysis With Observations Below
-the Limit of Quantification.\" Statistics in Biopharmaceutical Research (2020):
-1-12. (available online:
-<https://www.tandfonline.com/doi/full/10.1080/19466315.2019.1701546>).")
+     "This package provides methods for estimating the area under the concentration
+versus time curve (AUC) and its standard error in the presence of Below the
+Limit of Quantification (BLOQ) observations.  Two approaches are implemented:
+direct estimation using censored maximum likelihood, and a two-step approach
+that first imputes BLOQ values using various methods and then computes the AUC
+using the imputed data.  Technical details are described in Barnett et al.
+(2020), \"Methods for Non-Compartmental Pharmacokinetic Analysis With
+Observations Below the Limit of Quantification,\" Statistics in Biopharmaceutical
+Research. <doi:10.1080/19466315.2019.1701546>.")
     (license license:gpl2+)))
 
 (define-public r-blogdown
@@ -15132,13 +15131,13 @@ restrictions and clustering.")
 (define-public r-binspp
   (package
     (name "r-binspp")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binspp" version))
        (sha256
-        (base32 "01s7g0bjw54fcnnwwapzvpnqa6a9l94hz58d1lrgzywnyv2yf6z9"))))
+        (base32 "1iqqzzad14b6qn16wx6x3p5xzzv8rkpn6qh3xil13s9jvz5pbarb"))))
     (properties `((upstream-name . "binspp")))
     (build-system r-build-system)
     (arguments
@@ -23402,13 +23401,13 @@ respectively.")
 (define-public r-bc3net
   (package
     (name "r-bc3net")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bc3net" version))
        (sha256
-        (base32 "15dghd0v1s71h77iw8b49v5h7wcda5mb4540lfyibsdipbashv2h"))))
+        (base32 "144bjr9vxf6bg7wvd7liq0d1n86y5ma5bhnr63zcxnb94pc9gq2n"))))
     (properties `((upstream-name . "bc3net")))
     (build-system r-build-system)
     (arguments
@@ -32056,13 +32055,13 @@ from Goodman-Bacon (2018) <doi:10.3386/w25018>.")
 (define-public r-baclava
   (package
     (name "r-baclava")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baclava" version))
        (sha256
-        (base32 "1jpb59g23cmxc8c07fx9y810sx58gm6n1v6cgkmsf8m7592di1bb"))))
+        (base32 "0xr9as2lz46mir2jkfx3kziaghmdxr9qxgjr5d2dn3i03h2j57rb"))))
     (properties `((upstream-name . "baclava")))
     (build-system r-build-system)
     (arguments

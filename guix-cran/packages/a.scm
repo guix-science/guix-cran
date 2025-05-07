@@ -2445,6 +2445,31 @@ borrows heavily from the methods of packages ps <doi:10.32614/CRAN.package.ps>
 and psutil'.")
     (license license:expat)))
 
+(define-public r-automatedtests
+  (package
+    (name "r-automatedtests")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "automatedtests" version))
+       (sha256
+        (base32 "14lgh7ipk3qjjwig54jf59bfis08qrg5jpfanxjna4nr1p2skkj0"))))
+    (properties `((upstream-name . "automatedtests")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rvaidememoire r-r6 r-nortest r-nnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/wouterzeevat/automatedtests")
+    (synopsis "Automating Choosing Statistical Tests")
+    (description
+     "This package provides a tool for simplifying the selection of appropriate
+statistical tests based on input data, making statistical workflows easier for
+users of all experience levels.")
+    (license license:gpl3)))
+
 (define-public r-automagic
   (package
     (name "r-automagic")
@@ -3349,13 +3374,13 @@ Area Under Minimum.")
 (define-public r-auk
   (package
     (name "r-auk")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "auk" version))
        (sha256
-        (base32 "02bhki208rzlzcxnhzby654r5z2rm0i65yb4952g92bmaf70a56f"))))
+        (base32 "18kkbvkrv1bqmz46hb5mmwy5mc5x5wja424zjwzp45n0syi3l6ax"))))
     (properties `((upstream-name . "auk")))
     (build-system r-build-system)
     (arguments
@@ -3372,7 +3397,7 @@ Area Under Minimum.")
                              r-countrycode
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/CornellLabofOrnithology/auk")
+    (home-page "https://cornelllabofornithology.github.io/auk/")
     (synopsis "eBird Data Extraction and Processing in R")
     (description
      "Extract and process bird sightings records from @code{eBird}
@@ -17177,13 +17202,13 @@ family of distributions available in Galarza et.al. (2017)
 (define-public r-alcyon
   (package
     (name "r-alcyon")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alcyon" version))
        (sha256
-        (base32 "1myzd9rvg6ihpwdvdb47l4q5dd0pmpwpmnikir5vr7kfrkx3ypg8"))))
+        (base32 "1f8mz1dfjqmm2lyf3di7c6xkw6wk8s5q7nyn7nm349z7n803s0n9"))))
     (properties `((upstream-name . "alcyon")))
     (build-system r-build-system)
     (arguments
@@ -17914,6 +17939,44 @@ translate names into codes and vice-verse, as well as some basic calculation
 functions for measuring distances.  Data is licensed under the Open Database
 License.")
     (license license:expat)))
+
+(define-public r-airportproblems
+  (package
+    (name "r-airportproblems")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AirportProblems" version))
+       (sha256
+        (base32 "0ylwz1wgbiarhn5v2kmly21an7agd93szrr751bsrdx0vd87gc18"))))
+    (properties `((upstream-name . "AirportProblems")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plotly r-magrittr))
+    (home-page "https://cran.r-project.org/package=AirportProblems")
+    (synopsis "Analysis of Cost Allocation for Airport Problems")
+    (description
+     "Airport problems, introduced by Littlechild and Owen (1973)
+<https://www.jstor.org/stable/2629727>, are cost allocation problems where
+agents share the cost of a facility (or service) based on their ordered needs.
+Valid allocations must satisfy no-subsidy constraints, meaning that no group of
+agents contributes more than the highest cost of its members (i.e., no agent is
+allowed to subsidize another).  A rule is a mechanism that selects an allocation
+vector for a given problem.  This package computes several rules proposed in the
+literature, including both standard rules and their variants, such as weighted
+versions, rules for clones, and rules based on the agentsâ hierarchy order.
+These rules can be applied to various problems of interest, including the
+allocation of liabilities and the maintenance of irrigation systems, among
+others.  Moreover, the package provides functions for graphical representation,
+enabling users to visually compare the outcomes produced by each rule, or to
+display the no-subsidy set.  In addition, it includes four datasets illustrating
+different applications and examples of airport problems.  For a more detailed
+explanation of all concepts, see Thomson (2024)
+<doi:10.1016/j.mathsocsci.2024.03.007>.")
+    (license license:gpl3)))
 
 (define-public r-airnow
   (package
@@ -23790,13 +23853,13 @@ Ormerod, J., Liu, W., Ma, C., Zomaya, A., Yang, J. (2018)
 (define-public r-adas-utils
   (package
     (name "r-adas-utils")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adas.utils" version))
        (sha256
-        (base32 "0gv8vrwrdyv7imldlcz05v230fipydmd3js3y3nzmgd2rka9qh1a"))))
+        (base32 "0057r2ahmaxdcp6rmmpwfk6cbicl2mbqc84rdvjrn1lxlsx4lgas"))))
     (properties `((upstream-name . "adas.utils")))
     (build-system r-build-system)
     (arguments

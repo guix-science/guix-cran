@@ -390,13 +390,13 @@ Hediger & Michel & Naef (2022).")
 (define-public r-hypetools
   (package
     (name "r-hypetools")
-    (version "1.6.4")
+    (version "1.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HYPEtools" version))
        (sha256
-        (base32 "0p8ph11rsj8j5b3khisza48kj1b2qiyd2wxhcdv2vvk5a8mrc6bw"))))
+        (base32 "1p9k0jp7qms1sl5msrqm12bf5f48h8jrw2im72f150yv3q5yadjy"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
     (arguments
@@ -1703,13 +1703,13 @@ of general ARMA alternatives.")
 (define-public r-hwsdr
   (package
     (name "r-hwsdr")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hwsdr" version))
        (sha256
-        (base32 "1dfrqcd0nccrsv01hsvp2xic9nfhsqmvl7cqvv28amayqyv3lizk"))))
+        (base32 "0nmf34s2w4ww1hjgql07bibzz51dgjvnhgzgmf7xv2nnk5f0043d"))))
     (properties `((upstream-name . "hwsdr")))
     (build-system r-build-system)
     (arguments
@@ -7688,18 +7688,19 @@ a set of exposures.")
 (define-public r-highttest
   (package
     (name "r-highttest")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "highTtest" version))
        (sha256
-        (base32 "0w7114qnywpd3wcnxhpkmv0j7hqip25p6wdigg505k0gywanr7fp"))))
+        (base32 "0l3lqkfwdiwnfpfndz9pzxc85dc9m97lvsirf67p6y9zp8pd3kl3"))))
     (properties `((upstream-name . "highTtest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-venndiagram))
     (home-page "https://cran.r-project.org/package=highTtest")
     (synopsis
      "Simultaneous Critical Values for t-Tests in Very High Dimensions")
@@ -9896,13 +9897,13 @@ environmental and climate-related data.")
 (define-public r-heterocop
   (package
     (name "r-heterocop")
-    (version "0.1.0.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heterocop" version))
        (sha256
-        (base32 "0bb56pq2cc3vi5c2kskn76dgrsn5f32dlhrxfpblaq3a5fg0w445"))))
+        (base32 "0ljj5g3dd2kmhl6d78jfd6342w4vkbsnvw7gdvg4ml625wrx7923"))))
     (properties `((upstream-name . "heterocop")))
     (build-system r-build-system)
     (arguments
@@ -9912,6 +9913,7 @@ environmental and climate-related data.")
                              r-mvtnorm
                              r-matrixcalc
                              r-igraph
+                             r-huge
                              r-foreach
                              r-dosnow))
     (native-inputs (list r-knitr))
@@ -10869,6 +10871,32 @@ detect change points which not only largely improves the computing efficiency
 but also accounts for the rate of change of the flow variation.  More details
 <doi:10.1016/j.jhydrol.2021.126392>.")
     (license license:expat)))
+
+(define-public r-heckmanstan
+  (package
+    (name "r-heckmanstan")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HeckmanStan" version))
+       (sha256
+        (base32 "1jn5fjljyip3gs9czbd1ydv443wsf98disxvw369ydri0ysxq6m8"))))
+    (properties `((upstream-name . "HeckmanStan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstan r-mvtnorm r-loo))
+    (home-page "https://cran.r-project.org/package=HeckmanStan")
+    (synopsis "Heckman Selection Models Based on Bayesian Analysis")
+    (description
+     "This package implements Heckman selection models using a Bayesian approach via
+Stan and compares the performance of normal, Studentâs t, and contaminated
+normal distributions in addressing complexities and selection bias (Heeju Lim,
+Victor E. Lachos, and Victor H. Lachos, Bayesian analysis of flexible Heckman
+selection models using Hamiltonian Monte Carlo, 2025, under submission).")
+    (license license:gpl3)))
 
 (define-public r-heckmange
   (package

@@ -1588,6 +1588,35 @@ Goldberg (2000,\\doi{10.1145/355017.355028}).  Two-means clustering is described
 in Hessels et al. (2017, \\doi{10.3758/s13428-016-0822-1}).")
     (license license:gpl3)))
 
+(define-public r-kolaide
+  (package
+    (name "r-kolaide")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KOLaide" version))
+       (sha256
+        (base32 "06nh1a86a46kbzf217im241nc332qh245s64ngkzgfz06dh20cy9"))))
+    (properties `((upstream-name . "KOLaide")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-igraph))
+    (home-page "https://github.com/zpneal/KOLaide")
+    (synopsis
+     "Pick and Plot Key Opinion Leaders from a Network Given Constraints")
+    (description
+     "Assists researchers in choosing Key Opinion Leaders (KOLs) in a network to help
+disseminate or encourage adoption of an innovation by other network members.
+Potential KOL teams are evaluated using the ABCDE framework (Neal et al., 2025
+<doi:10.31219/osf.io/3vxy9_v1>).  This framework which considers: (1) the team
+members Availability, (2) the Breadth of the team's network coverage, (3) the
+Cost of recruiting a team of a given size, and (4) the Diversity of the team's
+members, (5) which are pooled into a single Evaluation score.")
+    (license license:gpl3)))
+
 (define-public r-kokudosuuchi
   (package
     (name "r-kokudosuuchi")
@@ -3307,19 +3336,19 @@ earth tides.")
 (define-public r-kissmig
   (package
     (name "r-kissmig")
-    (version "1.0-5")
+    (version "2.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kissmig" version))
        (sha256
-        (base32 "0q2kn394kzziywb1a0h1s0845q8b83fqv4s5qk1vx03kppd93smv"))))
+        (base32 "0q91ngvfrmvnbgnrhj3zjr1fyzhj6ma201wdijpmqlsqxszr0lh3"))))
     (properties `((upstream-name . "kissmig")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-raster))
+    (propagated-inputs (list r-terra r-rcpp))
     (home-page "https://purl.oclc.org/wsl/kissmig")
     (synopsis "a Keep It Simple Species Migration Model")
     (description
@@ -5250,13 +5279,13 @@ requiring you to change a few lines of code.")
 (define-public r-keras3
   (package
     (name "r-keras3")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "keras3" version))
        (sha256
-        (base32 "077smx92rym88jkl0r4ag0v0ax41a6zwql5x39h8qxz4fkw1why1"))))
+        (base32 "1plac4mpr6np8r55fn7z57kcp10i1vq98kmfrkyxi3jf49kkvbk4"))))
     (properties `((upstream-name . "keras3")))
     (build-system r-build-system)
     (arguments

@@ -7430,13 +7430,13 @@ Regression Analysis, First Edition.  New York: Springer.")
 (define-public r-fortls
   (package
     (name "r-fortls")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FORTLS" version))
        (sha256
-        (base32 "1lzrb1jjwdlx4adw9iayp8rh942y3jfcip9rffjmf3j7v4pvj635"))))
+        (base32 "00a4190wpl3w14yvsk128nbk4gbvggfxzc8fndw297azrv6bqzkh"))))
     (properties `((upstream-name . "FORTLS")))
     (build-system r-build-system)
     (arguments
@@ -22972,13 +22972,13 @@ Schubert, Peter J. Rousseeuw 2019 <doi:10.1007/978-3-030-32047-8_16>.")
 (define-public r-fastkm
   (package
     (name "r-fastkm")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastKM" version))
        (sha256
-        (base32 "0kkrfb98h843yh4n8mvz3y2sp9qkykpabg9w927jb8i230aiy1sq"))))
+        (base32 "19h13mzml0f9ba4yiamp675d5af19y3jdgbd2q2gd27f7z8vyf3j"))))
     (properties `((upstream-name . "FastKM")))
     (build-system r-build-system)
     (arguments
@@ -23478,13 +23478,13 @@ cost function.")
 (define-public r-fastcox
   (package
     (name "r-fastcox")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastcox" version))
        (sha256
-        (base32 "0jn19v6mkwgyz8x63xrfgkgnf0f2rq338r5qkhz690mdzr4c47a3"))))
+        (base32 "07i331bk6sia5bkgzjkc0rla54kbng53rv6caha3438a1pdzy0kl"))))
     (properties `((upstream-name . "fastcox")))
     (build-system r-build-system)
     (arguments
@@ -23492,14 +23492,14 @@ cost function.")
       #:tests? #f))
     (propagated-inputs (list r-matrix))
     (native-inputs (list gfortran))
-    (home-page "https://github.com/emeryyi/fastcox")
+    (home-page "https://github.com/archer-yang-lab/fastcox")
     (synopsis
      "Lasso and Elastic-Net Penalized Cox's Regression in High Dimensions Models using the Cocktail Algorithm")
     (description
      "We implement a cocktail algorithm, a good mixture of coordinate decent, the
 majorization-minimization principle and the strong rule, for computing the
 solution paths of the elastic net penalized Cox's proportional hazards model.
-The package is an implementation of Yang, Y. and Zou, H. (2013) DOI:
+The package is an implementation of Yang, Y. and Zou, H. (2013)
 <doi:10.4310/SII.2013.v6.n2.a1>.")
     (license license:gpl2)))
 

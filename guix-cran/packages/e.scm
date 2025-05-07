@@ -10577,13 +10577,13 @@ to do parametric simulations and analysis.")
 (define-public r-eplsim
   (package
     (name "r-eplsim")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EPLSIM" version))
        (sha256
-        (base32 "0x495638nh0n0k3i80vs7bcbdrgvw5fkib8dvwwgzgdgb419hakm"))))
+        (base32 "1sbvbfacma802l5ba62fsn5nzxlgbzyyqnh60bsd49vlx70dldd8"))))
     (properties `((upstream-name . "EPLSIM")))
     (build-system r-build-system)
     (arguments
@@ -21741,13 +21741,13 @@ variables.")
 (define-public r-ecotraj
   (package
     (name "r-ecotraj")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecotraj" version))
        (sha256
-        (base32 "1fshm22mpcpl6w7amqfy8xmpq0fzd4ryv4jnh71fxy2f7cs3xrl3"))))
+        (base32 "1gpd1rhvxhfycx3jha75r8cq707scnsvpci9rjrllzqkviv2wpab"))))
     (properties `((upstream-name . "ecotraj")))
     (build-system r-build-system)
     (arguments
@@ -21757,7 +21757,7 @@ variables.")
     (home-page "https://emf-creaf.github.io/ecotraj/")
     (synopsis "Ecological Trajectory Analysis")
     (description
-     "Assists ecologists in the analysis of temporal changes of ecosystems, defined as
+     "Analysis of temporal changes (i.e.  dynamics) of ecological entities, defined as
 trajectories on a chosen multivariate space, by providing a set of trajectory
 metrics and visual representations [De Caceres et al. (2019)
 <doi:10.1002/ecm.1350>; and Sturbois et al. (2021)
@@ -24594,6 +24594,38 @@ Bradley-Terry-Luce (BTL) model (Bradley & Terry, 1952
 models (Tversky, 1972 <doi:10.1037/h0032955>), and preference tree (Pretree)
 models (Tversky & Sattath, 1979 <doi:10.1037/0033-295X.86.6.542>).")
     (license license:gpl2+)))
+
+(define-public r-eava
+  (package
+    (name "r-eava")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EAVA" version))
+       (sha256
+        (base32 "1fxvahcbm12z3hzsyz0kwswdb6crvbfrkxwhq5ws73bxw7hp3n4c"))))
+    (properties `((upstream-name . "EAVA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-stringi))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=EAVA")
+    (synopsis
+     "Deterministic Verbal Autopsy Coding with Expert Algorithm Verbal Autopsy")
+    (description
+     "Expert Algorithm Verbal Autopsy assigns causes of death to 2016 WHO Verbal
+Autopsy Questionnaire data. @code{odk2EAVA()} converts data to a standard input
+format for cause of death determination building on the work of Thomas (2021)
+<https://cran.r-project.org/src/contrib/Archive/@code{CrossVA/>}.
+@code{codEAVA()} uses the presence and absence of signs and symptoms reported in
+the Verbal Autopsy interview to diagnose common causes of death.  A
+deterministic algorithm assigns a single cause of death to each Verbal Autopsy
+interview record using a hierarchy of all common causes for neonates or children
+1 to 59 months of age.")
+    (license license:gpl2)))
 
 (define-public r-eattools
   (package

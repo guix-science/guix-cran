@@ -71,19 +71,20 @@ Originally published by the New Zealand Police at
 (define-public r-nzilbb-vowels
   (package
     (name "r-nzilbb-vowels")
-    (version "0.3.1")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nzilbb.vowels" version))
        (sha256
-        (base32 "1yjh9pyw3f4fqjx25ahmqjz0jq696idjfxvaghg021drlakhgm3n"))))
+        (base32 "0gqm31s2jk1j126cqzzgwll06y30i689alpiha3ancjy776h3i6y"))))
     (properties `((upstream-name . "nzilbb.vowels")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-vegan
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -4192,6 +4193,30 @@ models developed in several packages.")
 model.")
     (license license:gpl3+)))
 
+(define-public r-norstr
+  (package
+    (name "r-norstr")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "norSTR" version))
+       (sha256
+        (base32 "0245xfcsvgaxz0sv063y42kicb98mwrkkvrdq50hq64l9hgillhf"))))
+    (properties `((upstream-name . "norSTR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/magnusdv/norSTR")
+    (synopsis "Allele Frequencies for 50 Forensic STR Markers")
+    (description
+     "Allele frequency databases for 50 forensic short tandem repeat (STR) markers,
+covering Norway and several broader regional populations: Europe, Africa, South
+America, West Asia, Middle Asia, and East Asia.  Developed and maintained for
+use at the Department of Forensic Sciences, Oslo, Norway.")
+    (license license:expat)))
+
 (define-public r-normpsy
   (package
     (name "r-normpsy")
@@ -5861,13 +5886,13 @@ mapped.")
 (define-public r-nodesub
   (package
     (name "r-nodesub")
-    (version "1.2.8")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nodeSub" version))
        (sha256
-        (base32 "1ks9bx2kswbhcw2sbnx3zx2pbx0n30b5f6awr5haviw29zv24izw"))))
+        (base32 "0a9dksi8msqfldwx9vaxfapxlbm91crbs245i4czshkk3xgx03ym"))))
     (properties `((upstream-name . "nodeSub")))
     (build-system r-build-system)
     (arguments
@@ -6734,13 +6759,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "0wwarlvrk5d0lkyq7wbadrjg7jma62im8fbbc7i6qdyrz4lb71k5"))))
+        (base32 "1w16qbi7i7h52byvf5mnc04qqjkprqm07y7jyc1vkfi5ixphh8q9"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (arguments
@@ -7328,13 +7353,13 @@ available.")
 (define-public r-nltt
   (package
     (name "r-nltt")
-    (version "1.4.9")
+    (version "1.4.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nLTT" version))
        (sha256
-        (base32 "1h87iwzy988jx1i70nxv24c3gjirrga5c3fw5al86m7qr1nz4sps"))))
+        (base32 "1wn88xjsib4yl10jig7kvypkvwmi6phdd27bqs5vscs5ilqnvqnp"))))
     (properties `((upstream-name . "nLTT")))
     (build-system r-build-system)
     (arguments
@@ -8657,13 +8682,13 @@ approach\".  BMC medical research methodology, 21(1), 1-11.
 (define-public r-nlcv
   (package
     (name "r-nlcv")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlcv" version))
        (sha256
-        (base32 "1ywnm8a13ifqa1bxnf659h1j6mg9iy02vaszyh9p966ps9c1pjab"))))
+        (base32 "1ma9v4mi9dlqvqgm1ddzl86n9mqn8xafbqb15jy0hllphxc4vdyj"))))
     (properties `((upstream-name . "nlcv")))
     (build-system r-build-system)
     (arguments
@@ -12156,13 +12181,13 @@ Bernard, H. R., Shelley, G. A., and Johnsen, E. C. (1998)
 (define-public r-networkriskmeasures
   (package
     (name "r-networkriskmeasures")
-    (version "0.1.4")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetworkRiskMeasures" version))
        (sha256
-        (base32 "1121ma43jxc4p9rw0sc8w32shf9xrmn5qd1xsqgzr8diymc49zhg"))))
+        (base32 "13ap7byazvh6n4dvcx7439pmlas10ff695hbmwb3g3k7jygqjp14"))))
     (properties `((upstream-name . "NetworkRiskMeasures")))
     (build-system r-build-system)
     (arguments
@@ -17449,13 +17474,13 @@ sequentially observed data.")
 (define-public r-nanostringr
   (package
     (name "r-nanostringr")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanostringr" version))
        (sha256
-        (base32 "1zq483gnzp8vwh8ykk20bc8b551shb2spjgvzmbzb22ihylbk286"))))
+        (base32 "1n9xjizyixnajhdp41jwl0mfajj1b8mznkwvl7z4fixmp2ippr04"))))
     (properties `((upstream-name . "nanostringr")))
     (build-system r-build-system)
     (arguments
@@ -17538,13 +17563,13 @@ upon events signalled by concurrent threads.")
 (define-public r-nandb
   (package
     (name "r-nandb")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nandb" version))
        (sha256
-        (base32 "1rbn4nibjzvwpccpmqn84w9a167f1avyl18kjlapy5dhafvixgbz"))))
+        (base32 "045xy75dgica0khq3r5237nw3k37fqcbr34aqx502zxk09bjxa5b"))))
     (properties `((upstream-name . "nandb")))
     (build-system r-build-system)
     (arguments

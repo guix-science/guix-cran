@@ -13,6 +13,7 @@
   #:use-module (gnu packages spreadsheet)
   #:use-module (gnu packages image)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages tls)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages web)
   #:use-module (gnu packages cmake)
@@ -20,7 +21,6 @@
   #:use-module (gnu packages xml)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages algebra)
-  #:use-module (gnu packages tls)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages tcl)
   #:use-module (gnu packages python)
@@ -1264,37 +1264,6 @@ and visualization.  Package RWeka contains the interface code, the Weka jar is
 in a separate package RWekajars'.  For more information on Weka see
 <https://www.cs.waikato.ac.nz/ml/weka/>.")
     (license license:gpl2)))
-
-(define-public r-rwebstat
-  (package
-    (name "r-rwebstat")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rwebstat" version))
-       (sha256
-        (base32 "1vc6m260rglfc8vzyip1rzw5ymrr8lbls8kwmmx1bnppjkl7l2lm"))))
-    (properties `((upstream-name . "rwebstat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-readr
-                             r-jsonlite
-                             r-httr
-                             r-getpass
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://developer.webstat.banque-france.fr")
-    (synopsis "Download Data from the Webstat API")
-    (description
-     "Access the Webstat API, download data and metadata from more than 35000 time
-series from the Banque de France statistics web portal.  Access requires a free
-client ID easily available from the API portal
-<https://developer.webstat.banque-france.fr/>.")
-    (license license:gpl3)))
 
 (define-public r-rweaveextra
   (package
@@ -3041,6 +3010,36 @@ interface.  Also provides functions for downloading your results.")
     (description
      "This package provides a strong type system for R which supports symbol
 declaration and assignment with type checking and condition checking.")
+    (license license:expat)))
+
+(define-public r-rtwobitlib
+  (package
+    (name "r-rtwobitlib")
+    (version "0.3.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rtwobitlib" version))
+       (sha256
+        (base32 "1n9xya6885bq1lirm9wvbih2csk1rrmpdwc19mgbmwpv4zfpr5qn"))))
+    (properties `((upstream-name . "Rtwobitlib")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list openssl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hpages/Rtwobitlib")
+    (synopsis "'2bit' 'C' Library")
+    (description
+     "This package provides a trimmed down copy of the \"kent-core source tree\" turned
+into a C library for manipulation of .2bit files.  See
+<https://genome.ucsc.edu/FAQ/FAQformat.html#format7> for a quick overview of the
+2bit format.  The \"kent-core source tree\" can be found here:
+<https://github.com/@code{ucscGenomeBrowser/kent-core/>}.  Only the .c and .h
+files from the source tree that are related to manipulation of .2bit files were
+kept.  Note that the package is primarily useful to developers of other R
+packages who wish to use the 2bit C library in their own C'/'C++ code.")
     (license license:expat)))
 
 (define-public r-rtwig
@@ -5271,20 +5270,20 @@ what) and clauses (who did what).  Method proposed in Van Atteveldt et al.
 (define-public r-rsyncrosim
   (package
     (name "r-rsyncrosim")
-    (version "2.0.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsyncrosim" version))
        (sha256
-        (base32 "0s5nprv5nij08d5ha55q71j4lqbybk2g70n2sb5g88dlcq71xfqm"))))
+        (base32 "0q5abi67rrm0qys13r01ris3x5chxww4kff24gvhyz45wnhpbfll"))))
     (properties `((upstream-name . "rsyncrosim")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (propagated-inputs (list r-terra r-rsqlite r-gtools r-dbi))
+    (propagated-inputs (list r-terra r-rsqlite r-processx r-gtools r-dbi))
     (home-page "https://syncrosim.github.io/rsyncrosim/")
     (synopsis "The R Interface to 'SyncroSim'")
     (description
@@ -13907,13 +13906,13 @@ authorized to a free, registered account.")
 (define-public r-ropencvlite
   (package
     (name "r-ropencvlite")
-    (version "4.90.2")
+    (version "4.110.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROpenCVLite" version))
        (sha256
-        (base32 "0iiyajrc9njx41f1mm4jhdj2a8ljzasn8lmbnrpv2bvppclsqc8q"))))
+        (base32 "1jls8am2k7xlly10q0jy9mkvmpw7azysfdq0jxzzih75gvnw3c4w"))))
     (properties `((upstream-name . "ROpenCVLite")))
     (build-system r-build-system)
     (arguments
@@ -16406,13 +16405,13 @@ Kronecker-covariance structure using the Matrix Minimum Covariance Determinant
 (define-public r-robustlmm
   (package
     (name "r-robustlmm")
-    (version "3.3-1")
+    (version "3.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustlmm" version))
        (sha256
-        (base32 "1rv08rxv0s2013hq196p4rnh3hh5gvcv8jw14sbh9lm1hzkj67rg"))))
+        (base32 "0gcp2vbdyks1f3nx6k9nap4nxhvdfwn360hqlaz22dwd7q4gd78j"))))
     (properties `((upstream-name . "robustlmm")))
     (build-system r-build-system)
     (arguments
@@ -17542,13 +17541,13 @@ P., Masten, M. A., & Poirier, A. (2022) for a recent discussion of the topic:
 (define-public r-robobayes
   (package
     (name "r-robobayes")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roboBayes" version))
        (sha256
-        (base32 "0hk415j98aikl3n3ylr2fjadjd0k40zxk3627c6zg6zs9di6dqmg"))))
+        (base32 "1g06vq4bkc2vd1vx9kd52wsqfqpkyfwhq4acqlpnl9fmrf6814s5"))))
     (properties `((upstream-name . "roboBayes")))
     (build-system r-build-system)
     (arguments
@@ -17559,13 +17558,13 @@ P., Masten, M. A., & Poirier, A. (2022) for a recent discussion of the topic:
     (synopsis "Robust Online Bayesian Monitoring")
     (description
      "An implementation of Bayesian online changepoint detection (Adams and
-@code{MacKay} (2007) <@code{arXiv:0710.3742>}) with an option for probability
-based outlier detection and removal (Wendelberger et.  al. (2021)
-<@code{arXiv:2112.12899>}).  Building on the independent multivariate constant
-mean model implemented in the R package ocp', this package models multivariate
-data as multivariate normal about a linear trend, defined by user input
-covariates, with an unstructured error covariance.  Changepoints are identified
-based on a probability threshold for windows of points.")
+@code{MacKay} (2007) <doi:10.48550/@code{arXiv.0710.3742>}) with an option for
+probability based outlier detection and removal (Wendelberger et.  al. (2021)
+<doi:10.48550/@code{arXiv.2112.12899>}).  Building on the independent
+multivariate constant mean model implemented in the R package ocp', this package
+models multivariate data as multivariate normal about a linear trend, defined by
+user input covariates, with an unstructured error covariance.  Changepoints are
+identified based on a probability threshold for windows of points.")
     (license license:gpl2)))
 
 (define-public r-robnptests
@@ -41509,13 +41508,13 @@ formats: akterm, dmna, Scintec Format-1, and Campbell Scientific TOA5.")
 (define-public r-readmdtable
   (package
     (name "r-readmdtable")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readMDTable" version))
        (sha256
-        (base32 "1l67x8pr1bmswfqwv6rc5kplhirgmq8zv7k424il7sayivxk0v1y"))))
+        (base32 "04cmkr9mkqnklbsrfsgfzgc9hi5dr77vys0brl3g203f27490fgg"))))
     (properties `((upstream-name . "readMDTable")))
     (build-system r-build-system)
     (arguments
@@ -47494,13 +47493,13 @@ installation through @code{BiocManager::install('rqubic}').).")
 (define-public r-rcmdrplugin-arnova
   (package
     (name "r-rcmdrplugin-arnova")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.aRnova" version))
        (sha256
-        (base32 "0ys3565pcbr554yb1gi2h149vhvwc0gdfmh7mz8zzd4367hqn553"))))
+        (base32 "0ki5yz2bfrs564c10q0s0ava0jygrvs9x2sdhl9408cwaj7qcqky"))))
     (properties `((upstream-name . "RcmdrPlugin.aRnova")))
     (build-system r-build-system)
     (arguments
@@ -50241,13 +50240,13 @@ provided in: Border and Malik (2022) <doi:10.1101/2022.10.13.512132>.")
 (define-public r-rbacon
   (package
     (name "r-rbacon")
-    (version "3.4.1")
+    (version "3.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbacon" version))
        (sha256
-        (base32 "0v2g38vgz96azmv71qgifzrhwpi6w3h5dizvmcfiimsnd3nq3q37"))))
+        (base32 "0fpc6qzddbxzpvmvzaz5x5ls2madl13q8f086s59p2mpqm75fi6y"))))
     (properties `((upstream-name . "rbacon")))
     (build-system r-build-system)
     (arguments
@@ -53756,13 +53755,13 @@ compared to naive singular value decoposition (SVD) (and eigen decomposition).")
 (define-public r-randomwalker
   (package
     (name "r-randomwalker")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RandomWalker" version))
        (sha256
-        (base32 "0x1d1s4mylfl0jgx94kvl26vgkndx6gc1bcfxqwq1ayckpsvld84"))))
+        (base32 "0gisklmgywmyj2pynx7n9igvj5f63lcgh0vcxa9mkas7ndrwxb09"))))
     (properties `((upstream-name . "RandomWalker")))
     (build-system r-build-system)
     (arguments
@@ -54447,13 +54446,13 @@ variable.  See Branson (2021) <@code{arXiv:1804.08760>} for details.")
 (define-public r-ramsvm
   (package
     (name "r-ramsvm")
-    (version "2.3")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ramsvm" version))
        (sha256
-        (base32 "1mr3q99i5s4p91fsvpz6qlc40ndqxmzrnmm8m2msxrbavqan7lck"))))
+        (base32 "02srx1xr3lbi8f0d7647b0nbjbksy1c2m0aj3zdn3r0ydgmzkks8"))))
     (properties `((upstream-name . "ramsvm")))
     (build-system r-build-system)
     (arguments

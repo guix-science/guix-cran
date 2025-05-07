@@ -9398,13 +9398,13 @@ and scientific computing.")
 (define-public r-cpp11armadillo
   (package
     (name "r-cpp11armadillo")
-    (version "0.4.6")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpp11armadillo" version))
        (sha256
-        (base32 "1ia4fb0mdhdv130ccw5r7wf3acinmg4nihh1i503z7p3c17ykfy4"))))
+        (base32 "0vym0v3ypd4g6rq6s7200f3zg9lfwa6zapk7ph1hjhrnp7kvvdcs"))))
     (properties `((upstream-name . "cpp11armadillo")))
     (build-system r-build-system)
     (arguments
@@ -47726,13 +47726,13 @@ by other packages (or your own code).")
 (define-public r-cartogramr
   (package
     (name "r-cartogramr")
-    (version "1.5-0")
+    (version "1.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cartogramR" version))
        (sha256
-        (base32 "11gv7dp5zwmbp8gwmxl0c5n6m3h4ra1pqfgw210m3lki302czh86"))))
+        (base32 "0v7rq8yhldb20yg0syfjby7lang9s4rl97sg9d3nvbapm11byzfp"))))
     (properties `((upstream-name . "cartogramR")))
     (build-system r-build-system)
     (arguments

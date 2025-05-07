@@ -12043,13 +12043,13 @@ covariates to predict outcomes under treatment and control.")
 (define-public r-predicts
   (package
     (name "r-predicts")
-    (version "0.1-17")
+    (version "0.1-19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predicts" version))
        (sha256
-        (base32 "1r7gdfsy2d0wl5sq1cxvvg4xnm4d7pqhdbwb2cznilij6mghy3w8"))))
+        (base32 "1z2a3mjy28jn4gzq8myfslkvkry380fjp59i7xf8iz3wbg5pkszm"))))
     (properties `((upstream-name . "predicts")))
     (build-system r-build-system)
     (arguments
@@ -20534,13 +20534,13 @@ aim is to record, collect, and generate useful information on data tables.")
 (define-public r-point
   (package
     (name "r-point")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "POINT" version))
        (sha256
-        (base32 "11xxmz3ncgnbs8yn7d53y1bc0g9rrlgz0d1ixjrxh4wh9qlyfzq6"))))
+        (base32 "09vy97g96qbxlcicqci74cbcwabspxvb7zq6v03gqpyakbrflcb3"))))
     (properties `((upstream-name . "POINT")))
     (build-system r-build-system)
     (arguments
@@ -27014,13 +27014,13 @@ codes.")
 (define-public r-pintervals
   (package
     (name "r-pintervals")
-    (version "0.7.5")
+    (version "0.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pintervals" version))
        (sha256
-        (base32 "0r4gqq52gc4zmzhrpsil9w2wfh94bdwc3lzwwv4hi4p63sxizh1j"))))
+        (base32 "05lw7phnyx7iwk258grc233qzh8a2cm3737g7p05y4ay6hxqz41m"))))
     (properties `((upstream-name . "pintervals")))
     (build-system r-build-system)
     (arguments
@@ -33487,13 +33487,13 @@ that will be published soon.")
 (define-public r-permallows
   (package
     (name "r-permallows")
-    (version "1.14")
+    (version "1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PerMallows" version))
        (sha256
-        (base32 "11kf6cma8vjr8vp0rg9jpbg8zxxl4fx0zjf03k02c1s3l7swc311"))))
+        (base32 "174mifp93i4jx3l8fps104gy70n10rar3ks4k51pa2k8gw5ivv23"))))
     (properties `((upstream-name . "PerMallows")))
     (build-system r-build-system)
     (arguments
@@ -35277,13 +35277,13 @@ and etc packages.")
 (define-public r-pedprobr
   (package
     (name "r-pedprobr")
-    (version "0.9.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedprobr" version))
        (sha256
-        (base32 "0zfrf0mlyz0v1dgkj4r0y19k77spkn43qbfsn4gbba1qg4aq8j75"))))
+        (base32 "062vyyly0pr1q0qfpa9s38zayxj3zmn17zzzvivm1rqix7kg7vwk"))))
     (properties `((upstream-name . "pedprobr")))
     (build-system r-build-system)
     (arguments
@@ -37465,13 +37465,13 @@ are less biased than in partial credit models.")
 (define-public r-pcmbasecpp
   (package
     (name "r-pcmbasecpp")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PCMBaseCpp" version))
        (sha256
-        (base32 "08ncdg151sfm4ccvy1jv4zp6ivqm2qdn84nj2g99lh8pmmysrlpc"))))
+        (base32 "0507bkhprwa0x4l3apv2ax0081v9pgqcxnm6vrd7p6k3p25bdhvb"))))
     (properties `((upstream-name . "PCMBaseCpp")))
     (build-system r-build-system)
     (arguments

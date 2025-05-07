@@ -751,6 +751,30 @@ overdispersion in count data.  Another advantage is that the installation of
 other packages is unnecessary, since the command runs in the basic R language.")
     (license license:gpl2+)))
 
+(define-public r-ovbsa
+  (package
+    (name "r-ovbsa")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ovbsa" version))
+       (sha256
+        (base32 "013w5y4p6dkp2zi6mpzn0jz74g9q1lbhp7w5nlqzchd8l68mfdsb"))))
+    (properties `((upstream-name . "ovbsa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-lmtest r-dplyr))
+    (home-page "https://github.com/dbasu-umass/ovbsa/")
+    (synopsis "Sensitivity Analysis of Omitted Variable Bias")
+    (description
+     "Conduct sensitivity analysis of omitted variable bias in linear econometric
+models using the methodology presented in Basu (2025)
+<doi:10.2139/ssrn.4704246>.")
+    (license license:expat)))
+
 (define-public r-ouwie
   (package
     (name "r-ouwie")
@@ -1618,6 +1642,30 @@ refers to an overall clustering result.  Jia Li, Beomseok Seo, and Lin Lin
 (2019) <doi:10.1002/sam.11418>.  Lixiang Zhang, Lin Lin, and Jia Li (2020)
 <doi:10.1093/bioinformatics/btaa165>.")
     (license license:gpl2+)))
+
+(define-public r-otbsegm
+  (package
+    (name "r-otbsegm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OTBsegm" version))
+       (sha256
+        (base32 "1fign060h2w33bp8n3nrcaqvw3k2q28sp796xccp086r7zdhpvbb"))))
+    (properties `((upstream-name . "OTBsegm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-link2gi r-cli))
+    (home-page "https://cidree.github.io/OTBsegm/")
+    (synopsis "Apply Unsupervised Segmentation Algorithms from 'OTB'")
+    (description
+     "Apply unsupervised segmentation algorithms included in Orfeo @code{ToolBox}
+software (<https://www.orfeo-toolbox.org/>), such as mean shift or watershed
+segmentation.")
+    (license license:expat)))
 
 (define-public r-otargen
   (package
@@ -4349,13 +4397,13 @@ healthcare provider.")
 (define-public r-orakle
   (package
     (name "r-orakle")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oRaklE" version))
        (sha256
-        (base32 "1h8zj41d2m8ar71yc9fbrdlvnmhjs8p552biflsbj1r2i5dz0c1y"))))
+        (base32 "0gbvmn98jg1lf6kazdx20biar4j32qhb74fxb7n6ggqmdds1vsxv"))))
     (properties `((upstream-name . "oRaklE")))
     (build-system r-build-system)
     (arguments
@@ -4389,9 +4437,9 @@ healthcare provider.")
      "Advanced forecasting algorithms for long-term energy demand at the national or
 regional level.  The methodology is based on GrandÃ³n et al. (2024)
 <doi:10.1016/j.apenergy.2023.122249>; Zimmermann & Ziel (2024)
-<doi:10.2139/ssrn.4823013>.  Real-time data, including power demand, weather
-conditions, and macroeconomic indicators, are provided through automated API
-integration with various institutions.  The modular approach maintains
+<doi:10.1016/j.apenergy.2025.125444>.  Real-time data, including power demand,
+weather conditions, and macroeconomic indicators, are provided through automated
+API integration with various institutions.  The modular approach maintains
 transparency on the various model selection processes and encompasses the
 ability to be adapted to individual needs. @code{oRaklE} tries to help
 facilitating robust decision-making in energy management and planning.")
@@ -5031,13 +5079,13 @@ unequal occurrences.  See the detailed methodology by Birks et al. (1990)
 (define-public r-optimmodel
   (package
     (name "r-optimmodel")
-    (version "2.0-1")
+    (version "2.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OptimModel" version))
        (sha256
-        (base32 "1c53jryrvzjhkgjppvf8kx7fvfss2x52v6wx90sfw57710dl9wvx"))))
+        (base32 "0jyf9fwb9d0c7qwnk3q9d4lzi66w8f63mga3ph7c0lxhxkm9qh98"))))
     (properties `((upstream-name . "OptimModel")))
     (build-system r-build-system)
     (arguments
@@ -5053,7 +5101,7 @@ unequal occurrences.  See the detailed methodology by Birks et al. (1990)
 Nocedal J and Write S (2006, ISBN: 978-0387-30303-1).  Performs ordinary least
 squares (OLS), iterative re-weighted least squares (IRWLS), and maximum
 likelihood (MLE).  Also includes the robust outlier detection (ROUT) algorithm;
-see Motulsky, H and Brown, R (2006)<doi:10.1186/1471-2105-7-123>.")
+see Motulsky, H and Brown, R (2006) <doi:10.1186/1471-2105-7-123>.")
     (license license:gpl2)))
 
 (define-public r-optimlanduse
@@ -7660,13 +7708,13 @@ into R.")
 (define-public r-openalexr
   (package
     (name "r-openalexr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openalexR" version))
        (sha256
-        (base32 "0kbd1zfky5rvz6f2nji86m4r7m35i4gi4vih1aqyfv7wdnah47dp"))))
+        (base32 "0cnr9k15jhyxn11k3lb81v08kc36aa7swlwx1mx3jkbxlsqcwbqy"))))
     (properties `((upstream-name . "openalexR")))
     (build-system r-build-system)
     (arguments

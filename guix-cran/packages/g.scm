@@ -12171,20 +12171,20 @@ methods for diagnostics etc.")
 (define-public r-gnlm
   (package
     (name "r-gnlm")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gnlm" version))
        (sha256
-        (base32 "1krbz791l5qc06sh6my0bkq420b5afncw87lhyx1yiml2yg46zrk"))))
+        (base32 "0mpri24balqdhic4fyrq44cgcwrz8bn50zlndqhgmyyzawpm0a3d"))))
     (properties `((upstream-name . "gnlm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rmutil))
-    (home-page "http://www.commanster.eu/rcode.html")
+    (home-page "https://www.commanster.eu/rcode.html")
     (synopsis "Generalized Nonlinear Regression Models")
     (description
      "This package provides a variety of functions to fit linear and nonlinear
@@ -17887,13 +17887,13 @@ method can be found in Anton Rask Lundborg, Rajen D. Shah and Jonas Peters
 (define-public r-ghclass
   (package
     (name "r-ghclass")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ghclass" version))
        (sha256
-        (base32 "10sq9rissf3w7rp8449vzigl7bj7y3iqx0vci2m559ihjmsdkn6i"))))
+        (base32 "1bnic75rlp37nwcrc581nw9djfam0rklc6cnj0z47045pph6y3lf"))))
     (properties `((upstream-name . "ghclass")))
     (build-system r-build-system)
     (arguments
@@ -18957,13 +18957,13 @@ to get a steampunk style.")
 (define-public r-ggseqplot
   (package
     (name "r-ggseqplot")
-    (version "0.8.5")
+    (version "0.8.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseqplot" version))
        (sha256
-        (base32 "012hpnrj921bxc5s2dvjks8iri322lkn21rl87gwgrh23pvhrn83"))))
+        (base32 "0rbazw5bra9hxnv1a2pzrfmc4aapj5qlhavp641rb79rawrlx3vg"))))
     (properties `((upstream-name . "ggseqplot")))
     (build-system r-build-system)
     (arguments
@@ -33636,13 +33636,13 @@ Davies, \"An Approximation Based Theory of Linear Regression\", 2024,
 (define-public r-gauser
   (package
     (name "r-gauser")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gauseR" version))
        (sha256
-        (base32 "1rvw7dbrsxqqch2dgslabc47llb64ljakc60m47gql5n9br7akbd"))))
+        (base32 "1cbhii3z0pa1pxjkv4qqks2jv4radhwgsz11cr21kzg1nkd3g9sc"))))
     (properties `((upstream-name . "gauseR")))
     (build-system r-build-system)
     (arguments

@@ -4913,35 +4913,31 @@ for a single program.")
 (define-public r-logrx
   (package
     (name "r-logrx")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logrx" version))
        (sha256
-        (base32 "0b1dgpbx8mi8w67899r3nncqb8fa8kxk10w2qamk251lv86kw2g8"))))
+        (base32 "1rc1yxgch9hhwkn6k1v52793c19z411kl5b29cg3lj4665fvdsxd"))))
     (properties `((upstream-name . "logrx")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-waiter
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
                              r-stringi
-                             r-shiny
                              r-sessioninfo
-                             r-rstudioapi
                              r-rlang
                              r-purrr
-                             r-miniui
                              r-magrittr
                              r-lifecycle
                              r-dplyr
                              r-digest))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/pharmaverse/logrx")
+    (home-page "https://pharmaverse.github.io/logrx/")
     (synopsis "Logging Utility Focus on Clinical Trial Programming Workflows")
     (description
      "This package provides a utility to facilitate the logging and review of R
@@ -7828,13 +7824,13 @@ cores which repeat until convergence.")
 (define-public r-lmmelsm
   (package
     (name "r-lmmelsm")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMMELSM" version))
        (sha256
-        (base32 "0m57hsfpgxch5lmpdxqp720jv18as12drpx1p5x3y4w0navslslz"))))
+        (base32 "1pw7wvdr5dx3bn37bxcxdxprb7la1fhqny1ra3sjdg1fz8dmw618"))))
     (properties `((upstream-name . "LMMELSM")))
     (build-system r-build-system)
     (arguments
@@ -7926,13 +7922,13 @@ diagnostic plots for the model class.")
 (define-public r-lmhelprs
   (package
     (name "r-lmhelprs")
-    (version "0.4.0")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmhelprs" version))
        (sha256
-        (base32 "1ari7wmg5xfwp7902zi0yfi6hlicwvl0h098h8090rsklsz65mvp"))))
+        (base32 "06q79bzsxjgxk0q9zl7ymkc7kk6f9cl9kxmkvdn0g797nzpwkfj0"))))
     (properties `((upstream-name . "lmhelprs")))
     (build-system r-build-system)
     (arguments
@@ -12196,13 +12192,13 @@ philosophy of the package is described in Guo G. (2022)
 (define-public r-libstable4u
   (package
     (name "r-libstable4u")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libstable4u" version))
        (sha256
-        (base32 "1szyqm1vfx2c0mjzazg58jmw10a816279wa0blmwzvjs3ik7qfl3"))))
+        (base32 "166grdgqwzgk5zm8cj8y7gbgjqrv65wjnh2f750xgzwbyplsxmsp"))))
     (properties `((upstream-name . "libstable4u")))
     (build-system r-build-system)
     (arguments

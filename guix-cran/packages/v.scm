@@ -5377,13 +5377,13 @@ vaccine.")
 (define-public r-vewaning
   (package
     (name "r-vewaning")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VEwaning" version))
        (sha256
-        (base32 "0zg5m7bx1vj9libvg8l3g8wnsnqd565jjsqvwghml62wfsdhghk4"))))
+        (base32 "0s2i5rkx04d6zv3yyk3gf9vkcp74650ldyv9bbynik6xmyl5rfw2"))))
     (properties `((upstream-name . "VEwaning")))
     (build-system r-build-system)
     (arguments
@@ -5401,7 +5401,7 @@ crossed over to the study vaccine.  The methods also allow adjustment for
 possible confounding via inverse probability weighting through specification of
 models for the trial entry process, unblinding mechanisms, and the probability
 an unblinded placebo participant accepts study vaccine: Tsiatis, A. A. and
-Davidian, M. (2021) <@code{arXiv:2102.13103>} .")
+Davidian, M. (2022) <doi:10.1111/biom.13509>.")
     (license license:gpl2)))
 
 (define-public r-vetresearchlmm
@@ -7692,13 +7692,13 @@ distribution with the intent to make the lives of risk modelers easier.")
 (define-public r-varycoef
   (package
     (name "r-varycoef")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "varycoef" version))
        (sha256
-        (base32 "063z9gnms5pz757b6q5aqbp8z00l8fa041sdmlqgn7ajf9vikmc1"))))
+        (base32 "1xldwxx20vvfl9nsk2fr8ql58idd1rwmbmb85zwbbrfn80qis1z2"))))
     (properties `((upstream-name . "varycoef")))
     (build-system r-build-system)
     (arguments

@@ -3443,13 +3443,13 @@ differences between two estimated networks.  See also Siepe, Kloft & Heck (2024)
 (define-public r-tsna
   (package
     (name "r-tsna")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsna" version))
        (sha256
-        (base32 "0rgzdf60j8ahi0zgypkj7wd7y7ghrkymc48kjfyz9w3ksmrzgqjf"))))
+        (base32 "0x4h22i5d0z1mq0n95y1fibcgn90v3wgzj0fli1afazljrarxpf1"))))
     (properties `((upstream-name . "tsna")))
     (build-system r-build-system)
     (arguments
@@ -3457,7 +3457,7 @@ differences between two estimated networks.  See also Siepe, Kloft & Heck (2024)
       #:tests? #f))
     (propagated-inputs (list r-statnet-common r-networkdynamic r-network))
     (native-inputs (list r-knitr))
-    (home-page "http://statnet.org/")
+    (home-page "https://statnet.org/")
     (synopsis "Tools for Temporal Social Network Analysis")
     (description
      "Temporal SNA tools for continuous- and discrete-time longitudinal networks
@@ -14735,13 +14735,13 @@ Tibshirani (2004) <doi:10.1214/009053604000000067>, and Tibshirani (1996)
 (define-public r-tlagpropodds
   (package
     (name "r-tlagpropodds")
-    (version "1.9")
+    (version "1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tLagPropOdds" version))
        (sha256
-        (base32 "0bygx77s28izfwdyk6gihcyanch55cha7x52h29kxxp1kaapyf11"))))
+        (base32 "1j1l6qa2g0a0rwkpqc53knln3w40wnvvqiwvv8s5n69rxl3k3m6k"))))
     (properties `((upstream-name . "tLagPropOdds")))
     (build-system r-build-system)
     (arguments
@@ -14754,20 +14754,20 @@ Tibshirani (2004) <doi:10.1214/009053604000000067>, and Tibshirani (1996)
     (description
      "This package implements a semiparametric estimator for the odds ratio model with
 censored, time-lagged, ordered categorical outcome in a randomized clinical
-trial that incorporates baseline and time-dependent information.  Tsiatis, A. A.
-and Davidian, M. (2021) <@code{arXiv:2106.15559>}.")
+trial that incorporates baseline and time-dependent information.  Tsiatis AA,
+Davidian M, Holloway ST (2023) <doi:10.1111/biom.13603>.")
     (license license:gpl2)))
 
 (define-public r-tlaginterim
   (package
     (name "r-tlaginterim")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tLagInterim" version))
        (sha256
-        (base32 "17fz38bc4r7m3racscr9yn1s8vmzlkkc14144bb3x4sg40ybyfpx"))))
+        (base32 "0sg5sj3rmzfsa4zljxs0mna4nddw52c9igzsmdqaznz4xkq1w3j5"))))
     (properties `((upstream-name . "tLagInterim")))
     (build-system r-build-system)
     (arguments
@@ -14783,7 +14783,7 @@ time-lagged outcome that may not be available for all enrolled subjects.
 Produces estimators, standard errors, and information that can be used to
 compute stopping boundaries using software that assumes that the estimators/test
 statistics have independent increments.  Tsiatis, A. A. and Davidian, M., (2022)
-<@code{arXiv:2204.10739>} .")
+<doi:10.1002/sim.9580> .")
     (license license:gpl2)))
 
 (define-public r-tkrplotr
@@ -15478,13 +15478,13 @@ its dependency.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "0lnbln8zss5hpwzyncv17920sp8ywpad6ahwwzmb3d0jajpbc3z1"))))
+        (base32 "1jb82smsdrg08lk7r14hs7gavkcw98sfq50vrzxbb65gs60rikgm"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (arguments
@@ -17638,6 +17638,37 @@ improvements when implementing the method in R. These improvements allow users
 to inspect, visualize, and tune the synthetic control more easily.  A key
 benefit of a tidy implementation is that the entire preparation process for
 building the synthetic control can be accomplished in a single pipe.")
+    (license license:expat)))
+
+(define-public r-tidysummaries
+  (package
+    (name "r-tidysummaries")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidySummaries" version))
+       (sha256
+        (base32 "0rzf1bnxz49qj6dkfhy9wxxq6ins8nr901ha466pz89m152h1gbq"))))
+    (properties `((upstream-name . "tidySummaries")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-dplyr
+                             r-crayon))
+    (home-page "https://github.com/kleanthisk10/tidySummaries")
+    (synopsis "Tidy Statistical Summaries for Exploratory Data Analysis")
+    (description
+     "This package provides a tidy set of functions for summarising data, including
+descriptive statistics, frequency tables with normality testing, and group-wise
+significance testing.  Designed for fast, readable, and easy exploration of both
+numeric and categorical data.")
     (license license:expat)))
 
 (define-public r-tidystringdist
@@ -27366,13 +27397,13 @@ sap flow rates at the tree and plot scale (For more information see : Granier
 (define-public r-tdlm
   (package
     (name "r-tdlm")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDLM" version))
        (sha256
-        (base32 "1r0qqyva2w9sy4bdi6h81qkq7ca397csb2kdljf92phvxr96nl7g"))))
+        (base32 "13dxb1j9q3wsqy9li04w6bz3a61k3gkj3nb6g2r4kax3q6gp6dpb"))))
     (properties `((upstream-name . "TDLM")))
     (build-system r-build-system)
     (arguments
@@ -27385,7 +27416,7 @@ sap flow rates at the tree and plot scale (For more information see : Granier
                              r-mathjaxr
                              r-ecume))
     (native-inputs (list r-knitr))
-    (home-page "https://epivec.github.io/TDLM/")
+    (home-page "https://rtdlm.github.io/TDLM/")
     (synopsis "Systematic Comparison of Trip Distribution Laws and Models")
     (description
      "The main purpose of this package is to propose a rigorous framework to fairly
@@ -27962,19 +27993,20 @@ independently to support analysis for diverse chemical screening efforts.")
 (define-public r-tcpl
   (package
     (name "r-tcpl")
-    (version "3.2.1")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tcpl" version))
        (sha256
-        (base32 "0nbgc46kwgkjr9p84chrkhvhdzklc076j4kw8r590pac3vlg7p3k"))))
+        (base32 "13701c1pn38map6s5nmi258nvfhjlklpy3ri6yr21fmgg5zmm8sn"))))
     (properties `((upstream-name . "tcpl")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-viridis
+                             r-tidyr
                              r-tcplfit2
                              r-stringr
                              r-sqldf
@@ -27983,6 +28015,7 @@ independently to support analysis for diverse chemical screening efforts.")
                              r-rcolorbrewer
                              r-plotly
                              r-numderiv
+                             r-gt
                              r-gridextra
                              r-ggplot2
                              r-dplyr

@@ -2658,13 +2658,13 @@ for drug target information; see Kanehisa et al. (2021) <doi:
 (define-public r-dtrsurv
   (package
     (name "r-dtrsurv")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtrSurv" version))
        (sha256
-        (base32 "1xc39rigaylrq6d6zm6szgkiwdh4xjkvcima9lkhs1qnbrj3gb5l"))))
+        (base32 "1ay4w9k71mygalixsfzhv3lr5gb1nin2dmwr74ph2dgsxyzv0b8j"))))
     (properties `((upstream-name . "dtrSurv")))
     (build-system r-build-system)
     (arguments
@@ -2677,7 +2677,7 @@ for drug target information; see Kanehisa et al. (2021) <doi:
     (description
      "This package provides methods for estimating multi-stage optimal dynamic
 treatment regimes for survival outcomes with dependent censoring.  Cho, H.,
-Holloway, S. T., and Kosorok, M. R. (2020) <@code{arXiv:2012.03294>}.")
+Holloway, S. T., and Kosorok, M. R. (2022) <doi:10.1093/biomet/asac047>.")
     (license license:gpl2)))
 
 (define-public r-dtrreg
@@ -7854,13 +7854,13 @@ Gruttola & Stephen W. Lagakos (1989) <doi:10.2307/2532030>] [Jianguo Sun (1995)
 (define-public r-dotwhisker
   (package
     (name "r-dotwhisker")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dotwhisker" version))
        (sha256
-        (base32 "0p1l0750cy31ray9f9xm8yrc0zin4zb93rvbix51m3r4snhvjlnl"))))
+        (base32 "0a6rk7bfm9jl7bfr36fr7vvb0f3n0xmdiqmbq2kp5ng5lp2cnjfj"))))
     (properties `((upstream-name . "dotwhisker")))
     (build-system r-build-system)
     (arguments
@@ -7872,6 +7872,7 @@ Gruttola & Stephen W. Lagakos (1989) <doi:10.2307/2532030>] [Jianguo Sun (1995)
                              r-performance
                              r-patchwork
                              r-parameters
+                             r-marginaleffects
                              r-gtable
                              r-gridextra
                              r-ggstance
@@ -11388,13 +11389,13 @@ convert them to N@code{IfTI-1} format.")
 (define-public r-diversityforest
   (package
     (name "r-diversityforest")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diversityForest" version))
        (sha256
-        (base32 "0p4kk896y6cidy9nh8blvg9ghcy21dhjnw9hcpg90bq4j8s82gms"))))
+        (base32 "0r0cha15jiglw02ss4yw2r294nkmq61jj4hkhvph3pfhlggrl3dh"))))
     (properties `((upstream-name . "diversityForest")))
     (build-system r-build-system)
     (arguments
@@ -11419,29 +11420,25 @@ convert them to N@code{IfTI-1} format.")
     (synopsis
      "Innovative Complex Split Procedures in Random Forests Through Candidate Split Sampling")
     (description
-     "Implementations of three diversity forest (DF) (Hornung, 2022,
-<doi:10.1007/s42979-021-00920-1>) variants.  The DF algorithm is a split-finding
-approach that allows complex split procedures to be realized in random forest
-variants.  The three DF variants implemented are: 1.  interaction forests (IFs)
-(Hornung & Boulesteix, 2022, <doi:10.1016/j.csda.2022.107460>): Model
-quantitative and qualitative interaction effects using bivariable splitting.
-Come with the Effect Importance Measure (EIM), which can be used to identify
-variable pairs that have well-interpretable quantitative and qualitative
-interaction effects with high predictive relevance.  2.  multi forests
-(@code{MuFs}) (Hornung & Hapfelmeier, 2024,
-<doi:10.48550/@code{arXiv.2409.08925>}): Model multi-class outcomes using
-multi-way and binary splitting.  Come with two variable importance measures
-(VIMs): The multi-class VIM measures the degree to which the variables are
-specifically associated with one or more outcome classes, and the discriminatory
-VIM, similar to conventional VIMs, measures the overall influence strength of
-the variables.  3.  the basic form of diversity forests that uses conventional
-univariable, binary splitting (Hornung, 2022).  Except for multi forests, which
-are tailored for multi-class outcomes, all included diversity forest variants
-support categorical, metric, and survival outcomes.  The package also includes
-plotting functions that make it possible to learn about the forms of the effects
-identified using IFs and @code{MuFs}.  This is a fork of the R package ranger
-(main author: Marvin N. Wright), which implements random forests using an
-efficient C++ implementation.")
+     "Implementation of three methods based on the diversity forest (DF) algorithm
+(Hornung, 2022, <doi:10.1007/s42979-021-00920-1>), a split-finding approach that
+enables complex split procedures in random forests.  The package includes: 1.
+Interaction forests (IFs) (Hornung & Boulesteix, 2022,
+<doi:10.1016/j.csda.2022.107460>): Model quantitative and qualitative
+interaction effects using bivariable splitting.  Come with the Effect Importance
+Measure (EIM), which can be used to identify variable pairs that have
+well-interpretable quantitative and qualitative interaction effects with high
+predictive relevance.  2.  Two random forest-based variable importance measures
+(VIMs) for multi-class outcomes: the class-focused VIM, which ranks covariates
+by their ability to distinguish individual outcome classes from the others, and
+the discriminatory VIM, which measures overall covariate influence irrespective
+of class-specific relevance.  3.  The basic form of diversity forests that uses
+conventional univariable, binary splitting (Hornung, 2022).  Except for the
+multi-class VIMs, all methods support categorical, metric, and survival
+outcomes.  The package includes visualization tools for interpreting the
+identified covariate effects.  Built as a fork of the ranger R package (main
+author: Marvin N. Wright), which implements random forests using an efficient
+C++ implementation.")
     (license license:gpl3)))
 
 (define-public r-diversificationr
@@ -12990,6 +12987,31 @@ extension of the well-known Heckman selection model are provided in the package.
 The sample selection mechanism allows to choose among a Normal, Logistic or
 Gumbel distribution.")
     (license license:gpl2)))
+
+(define-public r-dissimilarities
+  (package
+    (name "r-dissimilarities")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dissimilarities" version))
+       (sha256
+        (base32 "1nh4zdzd39jr97baaj69z9cyffkhdxbsnccc08bdz5rrkhfr0fb4"))))
+    (properties `((upstream-name . "dissimilarities")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-proxy r-microbenchmark))
+    (home-page "https://cran.r-project.org/package=dissimilarities")
+    (synopsis "Creating, Manipulating, and Subsetting \"dist\" Objects")
+    (description
+     "Efficiently creates, manipulates, and subsets \"dist\" objects, commonly used in
+cluster analysis.  Designed to minimise unnecessary conversions and
+computational overhead while enabling seamless interaction with distance
+matrices.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-dissever
   (package
@@ -22323,6 +22345,46 @@ identifies periods of consecutive days with user-defined climatic conditions in
 daily meteorological data, then check what trees are doing during that period.")
     (license license:gpl3)))
 
+(define-public r-demulticoder
+  (package
+    (name "r-demulticoder")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "demulticoder" version))
+       (sha256
+        (base32 "154mkdhzxy3393qj336jyilb902vnmngwvayhbf96f4chj3dh090"))))
+    (properties `((upstream-name . "demulticoder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-ggplot2
+                             r-furrr
+                             r-dplyr))
+    (home-page "https://grunwaldlab.github.io/demulticoder/")
+    (synopsis "Simultaneous Analysis of Multiplexed Metabarcodes")
+    (description
+     "This package provides a comprehensive set of wrapper functions for the analysis
+of multiplex metabarcode data.  It includes robust wrappers for Cutadapt and
+DADA2 to trim primers, filter reads, perform amplicon sequence variant (ASV)
+inference, and assign taxonomy.  The package can handle single metabarcode
+datasets, datasets with two pooled metabarcodes, or multiple datasets
+simultaneously.  The final output is a matrix per metabarcode, containing both
+ASV abundance data and associated taxonomic assignments.  An optional function
+converts these matrices into phyloseq and taxmap objects.  For more information
+on DADA2', including information on how DADA2 infers samples sequences, see
+Callahan et al. (2016) <doi:10.1038/nmeth.3869>.  For more details on the
+demulticoder R package see Sudermann et al. (2025)
+<doi:10.1094/PHYTO-02-25-0043-FI>.")
+    (license license:expat)))
+
 (define-public r-demu
   (package
     (name "r-demu")
@@ -27252,13 +27314,13 @@ Nagarajan, Scutari and LÃ¨bre (2013) <doi:10.1007/978-1-4614-6446-4>.")
 (define-public r-dbmss
   (package
     (name "r-dbmss")
-    (version "2.9-2")
+    (version "2.10-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbmss" version))
        (sha256
-        (base32 "1131lfli0fna2yvq383f710sr87fwfg5gngiawrhdx8b14zn796p"))))
+        (base32 "096xly2bck2dizl1z06yc1b48dbs8bn46s031vcadyk8s5zxvmfi"))))
     (properties `((upstream-name . "dbmss")))
     (build-system r-build-system)
     (arguments
@@ -27274,7 +27336,11 @@ Nagarajan, Scutari and LÃ¨bre (2013) <doi:10.1007/978-1-4614-6446-4>.")
                              r-reshape2
                              r-rcppparallel
                              r-rcpp
+                             r-progressr
                              r-ggplot2
+                             r-future
+                             r-foreach
+                             r-dofuture
                              r-cubature))
     (native-inputs (list r-knitr))
     (home-page "https://ericmarcon.github.io/dbmss/")
@@ -29055,22 +29121,22 @@ comprehensive and up-to-date collection of open data from Switzerland.")
 (define-public r-datasda
   (package
     (name "r-datasda")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataSDA" version))
        (sha256
-        (base32 "0nf7ssk8srpmq0b2bqzm6kilj3m3dhdk7fz35vhzzkj4d2wn9czr"))))
+        (base32 "0fmanlp3kahd8fz0pzn9k6dn649p68g72l8rms99zqn4ac63myiv"))))
     (properties `((upstream-name . "dataSDA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-magrittr))
+    (propagated-inputs (list r-tidyr r-rsda r-magrittr r-histdawass r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dataSDA")
-    (synopsis "Data Sets for Symbolic Data Analysis")
+    (synopsis "Datasets and Basic Statistics for Symbolic Data Analysis")
     (description
      "Collects a diverse range of symbolic data and offers a comprehensive set of
 functions that facilitate the conversion of traditional data into the symbolic

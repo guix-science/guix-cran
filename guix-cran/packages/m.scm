@@ -10168,13 +10168,13 @@ Journal of Data Science and Analytics, 1-17, <doi:10.1007/s41060-020-00226-0>.")
 (define-public r-mrreg
   (package
     (name "r-mrreg")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRReg" version))
        (sha256
-        (base32 "0705hc85hhk7nd4ygvkswz7drdgia86v6svk85vqa5p899bsam14"))))
+        (base32 "16q55n34jp4wv6l5qa807zdid7rnvj73qmmji6dskmd2cr1pqcxk"))))
     (properties `((upstream-name . "MRReg")))
     (build-system r-build-system)
     (arguments
@@ -22989,13 +22989,13 @@ and Symmetric Hyperbolic.")
 (define-public r-mixture
   (package
     (name "r-mixture")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixture" version))
        (sha256
-        (base32 "0a7dy6p5lhs4sff5w1p6fha9w2vwd39fav34b0zsmyw0k4fjg2ah"))))
+        (base32 "0pbaj71vdl2gxng8d75yxl5ppivyqhsvxbhjzawzrir7i4psx9v8"))))
     (properties `((upstream-name . "mixture")))
     (build-system r-build-system)
     (arguments
@@ -26142,13 +26142,13 @@ functions are available as a Shiny web application under
 (define-public r-mires
   (package
     (name "r-mires")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MIRES" version))
        (sha256
-        (base32 "17k6f73qx85klhhn247nr6h7sinpabq9crlc5ag7qm6z7k6mr370"))))
+        (base32 "0h3fs63pbsr2fcfr4x2sr9pnqf1k5nlbz6nm0rxgz802r9zdv053"))))
     (properties `((upstream-name . "MIRES")))
     (build-system r-build-system)
     (arguments
@@ -26777,13 +26777,13 @@ changed run sequence.")
 (define-public r-minimalistgodb
   (package
     (name "r-minimalistgodb")
-    (version "1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minimalistGODB" version))
        (sha256
-        (base32 "1y4mrk86pqirrv9vyda0c63dd454rj1553fqrbmn0nl2c1dr1m61"))))
+        (base32 "0ccr6s7aam4c8phhgz2cmia51ahnjly3pjrsvpf91pf8pn3vmddq"))))
     (properties `((upstream-name . "minimalistGODB")))
     (build-system r-build-system)
     (arguments
@@ -26797,10 +26797,14 @@ changed run sequence.")
 database files and using these to build e.g. a @code{mySQL} database.  Accessing
 this database is also complicated, involving an intimate knowledge of the
 database in order to construct reliable queries.  Here we have a more modest
-goal, generating GOGOA3, which is a stripped down version of the GODB that is
-restricted to human genes as designated by the HUGO Gene Nomenclature Committee
-(HGNC) (see <https://geneontology.org/>).  This can be built in a matter of
-seconds from 2 easily downloaded files (see
+goal, generating GOGOA3, which is a stripped down version of the GODB that was
+originally restricted to human genes as designated by the HUGO Gene Nomenclature
+Committee (HGNC) (see <https://geneontology.org/>).  I have now added about two
+dozen additional species, namely all species represented on the Gene Ontology
+download page <https://current.geneontology.org/products/pages/downloads.html>.
+This covers most of the model organisms that are commonly used in bio-medical
+and basic research (assuming that anyone still has a grant to do such research).
+ This can be built in a matter of seconds from 2 easily downloaded files (see
 <https://current.geneontology.org/products/pages/downloads.html> and
 <https://geneontology.org/docs/download-ontology/>), and it can be queried by
 e.g. w<-which(GOGOA3[,\"HGNC\"] %in% @code{hgncList}) where GOGOA3 is a matrix
@@ -26808,7 +26812,8 @@ representing the minimalist GODB and @code{hgncList} is a list of gene
 identifiers.  This database will be used in my upcoming package @code{GoMiner}
 which is based on my previous publication (see Zeeberg, B.R., Feng, W., Wang, G.
 et al. (2003)<doi:10.1186/gb-2003-4-4-r28>).  Relevant .RData files are
-available from @code{GitHub} (<https://github.com/barryzee/GO>).")
+available from @code{GitHub}
+(<https://github.com/barryzee/GO/tree/main/databases>).")
     (license license:gpl2+)))
 
 (define-public r-minilnm
@@ -38998,6 +39003,43 @@ Liu', 2004) <doi:10.1145/1014052.1014073> for determining sentiment.  The
 scoring function is vectorized by document, and scores for multiple documents
 are computed in parallel via @code{OpenMP}'.")
     (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
+
+(define-public r-meaanalysis
+  (package
+    (name "r-meaanalysis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MEAanalysis" version))
+       (sha256
+        (base32 "195wd0cq8ifyyr9d82klpyda5f8rsvcsi84rnqbpdzf01hfmxryj"))))
+    (properties `((upstream-name . "MEAanalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyverse
+                             r-tidyr
+                             r-stringr
+                             r-reshape2
+                             r-readxl
+                             r-readr
+                             r-knitr
+                             r-kableextra
+                             r-janitor
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://egordon2.github.io/MEA-analysis-package/")
+    (synopsis "Analyse and Visualise Multi Electrode Array Burst Data")
+    (description
+     "Analyse and visualise multi electrode array data at the single electrode and
+whole well level, downstream of @code{AxIS} Navigator 3.6.2 Software processing.
+ Compare bursting parameters between time intervals and recordings using the bar
+chart visualisation functions.  Compatible with 12- and 24- well plates.")
+    (license license:gpl2+)))
 
 (define-public r-mdw
   (package
@@ -51570,20 +51612,20 @@ J., et al. (2023). <https://CRAN.R-project.org/package=udpipe>), and shiny
 (define-public r-mada
   (package
     (name "r-mada")
-    (version "0.5.11")
+    (version "0.5.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mada" version))
        (sha256
-        (base32 "1cqjkk8rr8in12hms6qvm2yrgmnr9xwg0z6cc0gnzazz0rijj8n1"))))
+        (base32 "1gjd427hhqbhs44hvsq185kig4y0zdrizvjf5yxkhvbzhmcai3j5"))))
     (properties `((upstream-name . "mada")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-mvmeta r-metafor r-ellipse))
-    (home-page "r-forge.r-project.org/projects/mada/")
+    (home-page "https://r-forge.r-project.org/projects/mada/")
     (synopsis "Meta-Analysis of Diagnostic Accuracy")
     (description
      "This package provides functions for diagnostic meta-analysis.  Next to basic

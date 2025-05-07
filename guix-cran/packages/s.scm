@@ -3635,13 +3635,13 @@ Meitz, M., Saikkonen, P. (2017) <doi:10.1016/j.jeconom.2016.06.002>)).")
 (define-public r-svalues
   (package
     (name "r-svalues")
-    (version "0.1.6")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sValues" version))
        (sha256
-        (base32 "0830f4w6jgpiysk0vz0bxaxwa8m3k94fgj9l3qb42r3jjf9cdn29"))))
+        (base32 "1gk5771a51xxa6rrmlkgjq7ckzx3wmcsk0wv2fgc6fmpb9xq26pq"))))
     (properties `((upstream-name . "sValues")))
     (build-system r-build-system)
     (arguments
@@ -3650,7 +3650,7 @@ Meitz, M., Saikkonen, P. (2017) <doi:10.1016/j.jeconom.2016.06.002>)).")
     (propagated-inputs (list r-reshape2 r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=sValues")
-    (synopsis "Measures of the Sturdiness of Regression Coefficients")
+    (synopsis "Measures of Sturdiness of Regression Coefficients")
     (description
      "This package implements the s-values proposed by Ed.  Leamer.  It provides a
 context-minimal approach for sensitivity analysis using extreme bounds to assess
@@ -4507,13 +4507,13 @@ reference of the underlying methods is Li and Wang (2023)
 (define-public r-survlong
   (package
     (name "r-survlong")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurvLong" version))
        (sha256
-        (base32 "004s62c5w4lrp55g883iz8plviaij86m5wiaxcmqxaf5709sbk9g"))))
+        (base32 "1xjfv1bp85k194ldf5238a0yqdw32hp2bv9z34ny6rn767701lvz"))))
     (properties `((upstream-name . "SurvLong")))
     (build-system r-build-system)
     (arguments
@@ -8912,13 +8912,13 @@ identical.  This package aids in the creation of subformulas.")
 (define-public r-subdetect
   (package
     (name "r-subdetect")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "subdetect" version))
        (sha256
-        (base32 "0p9153dhxf9k5qs554vdcgpdsqas41ylc5qb2i2j76z8nvi0v9hm"))))
+        (base32 "0p6wglzslv9iiam9kwab3kl0c7h9f5c6yjrzfmk6pgc1vyp2xkak"))))
     (properties `((upstream-name . "subdetect")))
     (build-system r-build-system)
     (arguments
@@ -13599,25 +13599,19 @@ other activities from accelerometry data.")
 (define-public r-stepcam
   (package
     (name "r-stepcam")
-    (version "1.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "STEPCAM" version))
        (sha256
-        (base32 "03crbc7hag8w333j9c7k0q7zy7xmfid4lq773p74r55jmac5xpjf"))))
+        (base32 "17h9dpxkr5r53ag6wrp2cpw5063qyi5brdk48pgx9y2zjl72ckf6"))))
     (properties `((upstream-name . "STEPCAM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vcd
-                             r-mass
-                             r-gtools
-                             r-geometry
-                             r-fd
-                             r-ape
-                             r-ade4))
+    (propagated-inputs (list r-gtools r-geometry r-fd r-ape r-ade4))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/thijsjanzen/STEPCAM")
     (synopsis "ABC-SMC Inference of STEPCAM")
@@ -13626,9 +13620,8 @@ other activities from accelerometry data.")
 STEPCAM family of community assembly models.  STEPCAM is a STEPwise Community
 Assembly Model that infers the relative contribution of Dispersal Assembly,
 Habitat Filtering and Limiting Similarity from a dataset consisting of the
-combination of trait and abundance data.  See also
-<http://onlinelibrary.wiley.com/wol1/doi/10.1890/14-0454.1/abstract> for more
-information.")
+combination of trait and abundance data.  See also <doi:10.1890/14-0454.1> for
+more information.")
     (license license:gpl2)))
 
 (define-public r-stepbeta
@@ -13998,13 +13991,13 @@ to implement custom models.")
 (define-public r-stdreg
   (package
     (name "r-stdreg")
-    (version "3.4.1")
+    (version "3.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stdReg" version))
        (sha256
-        (base32 "0x4awgbja70mdpbavgkg9mpnrxxc0qpsnl8i3rj9hs4vwbdkalr8"))))
+        (base32 "1g07rlsb2mlcplx2l0mww3v0axb06dcd8g2bis00j7723y6sq0yj"))))
     (properties `((upstream-name . "stdReg")))
     (build-system r-build-system)
     (arguments
@@ -23817,6 +23810,42 @@ in degraded DNA studies.  Further information on the package has been published
 in Brown et al (2012) <doi:10.1111/j.1755-0998.2011.03108.x>.")
     (license license:expat)))
 
+(define-public r-spicy
+  (package
+    (name "r-spicy")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spicy" version))
+       (sha256
+        (base32 "1rfxvw62kv01ai32k6i7l5rgrckabx0nj0yw5p78q35gszk2nc6l"))))
+    (properties `((upstream-name . "spicy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-stringr
+                             r-stringi
+                             r-rlang
+                             r-labelled
+                             r-haven
+                             r-dplyr
+                             r-collapse
+                             r-clipr))
+    (home-page "https://github.com/amaltawfik/spicy/")
+    (synopsis "Descriptive Statistics and Data Management Tools")
+    (description
+     "Extracts and summarizes metadata from data frames, including variable names,
+labels, types, and missing values.  Computes compact descriptive statistics,
+frequency tables, and cross-tabulations to assist with efficient data
+exploration.  Facilitates the identification of missing data patterns and
+structural issues in datasets.  Designed to streamline initial data management
+and exploratory analysis workflows within R'.")
+    (license license:expat)))
+
 (define-public r-spichanges
   (package
     (name "r-spichanges")
@@ -29904,6 +29933,41 @@ process SAS data in parallel using Spark'.  Hereby allowing to execute dplyr
 statements in parallel on top of SAS data.")
     (license license:gpl3)))
 
+(define-public r-spareg
+  (package
+    (name "r-spareg")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spareg" version))
+       (sha256
+        (base32 "0yrfa4b4d2l2a6jk3a9nvqcrjixpbpl8ly0pawafqi1s0sigzxp6"))))
+    (properties `((upstream-name . "spareg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rocr
+                             r-rlang
+                             r-rdpack
+                             r-matrix
+                             r-glmnet
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/lauravana/spareg")
+    (synopsis "Sparse Projected Averaged Regression")
+    (description
+     "This package provides a flexible framework combining variable screening and
+random projection techniques for fitting ensembles of predictive generalized
+linear models to high-dimensional data.  Designed for extensibility, the package
+implements key techniques as S3 classes with user-friendly constructors,
+enabling easy integration and development of new procedures for high-dimensional
+applications.  For more details see Parzer et al (2024a)
+<doi:10.48550/@code{arXiv.2312.00130>} and Parzer et al (2024b)
+<doi:10.48550/@code{arXiv.2410.00971>}.")
+    (license license:gpl3)))
+
 (define-public r-sparcl
   (package
     (name "r-sparcl")
@@ -32060,13 +32124,13 @@ to drive cancer.")
 (define-public r-somadataio
   (package
     (name "r-somadataio")
-    (version "6.2.0")
+    (version "6.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SomaDataIO" version))
        (sha256
-        (base32 "0zjwali2yi5lmms3l64jq3j4cbwlfz6jgy4rcddrr67kpiamyv67"))))
+        (base32 "0v64yjmscq2ai3k0i9w0vk60p064dgfa6my6n24h35yjmx1qm3c7"))))
     (properties `((upstream-name . "SomaDataIO")))
     (build-system r-build-system)
     (arguments
@@ -32077,6 +32141,7 @@ to drive cancer.")
                              r-readxl
                              r-magrittr
                              r-lifecycle
+                             r-ggplot2
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
@@ -39597,6 +39662,47 @@ defaults, including a test suite outline that passes checks and helpers for
 running tests, checking test coverage, building vignettes, and more.  Package
 skeletons it creates are set up for pushing your package to @code{GitHub} and
 using other hosted services for building and test automation.")
+    (license license:expat)))
+
+(define-public r-skeletalvis
+  (package
+    (name "r-skeletalvis")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SkeletalVis" version))
+       (sha256
+        (base32 "05g9fb7415xlah4vlpbng7y7ks37zdbj7v2x7q51vsjcnadnm5y6"))))
+    (properties `((upstream-name . "SkeletalVis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visnetwork
+                             r-tidyr
+                             r-shiny
+                             r-rlang
+                             r-plotly
+                             r-pbapply
+                             r-miniui
+                             r-igraph
+                             r-httr
+                             r-ggrepel
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-cowplot
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/soulj/SkeletalVis")
+    (synopsis "Exploration and Visualisation of Skeletal Transcriptomics Data")
+    (description
+     "Allows search and visualisation of a collection of uniformly processed skeletal
+transcriptomic datasets.  Includes methods to identify datasets where genes of
+interest are differentially expressed and find datasets with a similar gene
+expression pattern to a query dataset Soul J, Hardingham TE, Boot-Handford RP,
+Schwartz JM (2019) <doi:10.1093/bioinformatics/bty947>.")
     (license license:expat)))
 
 (define-public r-skedastic
@@ -52937,13 +53043,13 @@ and sampling approaches.")
 (define-public r-sgs
   (package
     (name "r-sgs")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgs" version))
        (sha256
-        (base32 "0jyqj2sf8m9dygi4sgcjrk7i44b6m623jb2kqdnfwkb90mw6lphr"))))
+        (base32 "1wcb4vlyn6q9zgxrdlrhb2jjzsxhfsj3yj9z88cyqry55x9b510w"))))
     (properties `((upstream-name . "sgs")))
     (build-system r-build-system)
     (arguments
@@ -55080,13 +55186,13 @@ Data: A Modern Statistical Perspective\" (Hens, Niel & Shkedy, Ziv & Aerts, Marc
 (define-public r-serolyzer
   (package
     (name "r-serolyzer")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SerolyzeR" version))
        (sha256
-        (base32 "144yp0i20475ijiig1kdim29x4q8lsjn85gdhil8s8jjljc7823n"))))
+        (base32 "1693w4b8f2622y9ncppjwyzgna20a5kamzrfb3894svfpp16912c"))))
     (properties `((upstream-name . "SerolyzeR")))
     (build-system r-build-system)
     (arguments
@@ -59825,6 +59931,41 @@ implementation of the FFORMS algorithm.  For more details see our paper at
 <https://www.monash.edu/business/econometrics-and-business-statistics/research/publications/ebs/wp06-2018.pdf>.")
     (license license:gpl3)))
 
+(define-public r-seekr
+  (package
+    (name "r-seekr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "seekr" version))
+       (sha256
+        (base32 "1db1igp5i3fsx4j5is7dydnb70kddwqa61vx6j8411kghhm6vw4x"))))
+    (properties `((upstream-name . "seekr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-lifecycle
+                             r-fs
+                             r-cli
+                             r-checkmate))
+    (home-page "https://github.com/smartiing/seekr")
+    (synopsis "Extract Matching Lines from Matching Files")
+    (description
+     "This package provides a simple interface to recursively list files from a
+directory, filter them using a regular expression, read their contents, and
+extract lines that match a user-defined pattern.  The package returns a
+dataframe containing the matched lines, their line numbers, file paths, and the
+corresponding matched substrings.  Designed for quick code base exploration, log
+inspection, or any use case involving pattern-based file and line filtering.")
+    (license license:expat)))
+
 (define-public r-seedvigorindex
   (package
     (name "r-seedvigorindex")
@@ -59967,53 +60108,6 @@ Garcia-Huidobro (1982) <doi:10.1093/jxb/33.2.288>.  Allows to fit models to
 grouped datasets, i.e.  datasets containing multiple species, seedlots or
 experiments.")
     (license license:gpl3)))
-
-(define-public r-seedmatchr
-  (package
-    (name "r-seedmatchr")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SeedMatchR" version))
-       (sha256
-        (base32 "138chb0z1gyhvl56g3a7zf4nash1v3v5l3qfxiqai2kxvladmz9y"))))
-    (properties `((upstream-name . "SeedMatchR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-testit
-                             r-stringr
-                             r-msa
-                             r-lifecycle
-                             r-ggplot2
-                             r-genomicfeatures
-                             r-genomeinfodb
-                             r-dplyr
-                             r-cowplot
-                             r-biostrings
-                             r-annotationhub))
-    (native-inputs (list r-knitr))
-    (home-page "https://tacazares.github.io/SeedMatchR/")
-    (synopsis "Find Matches to Canonical SiRNA Seeds in Genomic Features")
-    (description
-     "On-target gene knockdown using @code{siRNA} ideally results from binding fully
-complementary regions in @code{mRNA} transcripts to induce cleavage.  Off-target
-@code{siRNA} gene knockdown can occur through several modes, one being a
-seed-mediated mechanism mimicking @code{miRNA} gene regulation.  Seed-mediated
-off-target effects occur when the ~8 nucleotides at the 5â end of the guide
-strand, called a seed region, bind the 3â untranslated regions of @code{mRNA},
-causing reduced translation.  Experiments using @code{siRNA} knockdown paired
-with RNA-seq can be used to detect @code{siRNA} sequences with potential
-off-target effects driven by the seed region. @code{SeedMatchR} provides tools
-for exploring and detecting potential seed-mediated off-target effects of
-@code{siRNA} in RNA-seq experiments. @code{SeedMatchR} is designed to extend
-current differential expression analysis tools, such as DESeq2', by annotating
-results with predicted seed matches.  Using publicly available data, we
-demonstrate the ability of @code{SeedMatchR} to detect cumulative changes in
-differential gene expression attributed to @code{siRNA} seed regions.")
-    (license license:expat)))
 
 (define-public r-seedmaker
   (package
@@ -65336,13 +65430,13 @@ context for which they were designed.")
 (define-public r-sci
   (package
     (name "r-sci")
-    (version "1.0-2")
+    (version "1.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCI" version))
        (sha256
-        (base32 "1jvzkdv15ifgf6a3zjfzzcgw2y2vg0wp7yhiamiaqp8xkm142w49"))))
+        (base32 "06h1lhxgn9ycyf37qhfax932vkc6yb72grp4l3n3iqp7drn2mi0y"))))
     (properties `((upstream-name . "SCI")))
     (build-system r-build-system)
     (arguments
@@ -65353,10 +65447,11 @@ context for which they were designed.")
     (synopsis "Standardized Climate Indices Such as SPI, SRI or SPEI")
     (description
      "This package provides functions for generating Standardized Climate Indices
-(SCI).  SCI is a transformation of (smoothed) climate (or environmental) time
-series that removes seasonality and forces the data to take values of the
-standard normal distribution.  SCI was originally developed for precipitation.
-In this case it is known as the Standardized Precipitation Index (SPI).")
+(SCI).  Functions for generating Standardized Climate Indices (SCI).  SCI is a
+transformation of (smoothed) climate (or environmental) time series that removes
+seasonality and forces the data to take values of the standard normal
+distribution.  SCI was originally developed for precipitation.  In this case it
+is known as the Standardized Precipitation Index (SPI).")
     (license license:gpl2+)))
 
 (define-public r-schwabr

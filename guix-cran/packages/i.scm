@@ -10,8 +10,8 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages maths)
-  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pdf)
@@ -5707,13 +5707,13 @@ me.")
 (define-public r-ipadmixture
   (package
     (name "r-ipadmixture")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipADMIXTURE" version))
        (sha256
-        (base32 "1fl7nyxg7gakjdggdc311wf037zaxwpqsw3ax7liq1pvw6flb9h7"))))
+        (base32 "16lx7v0zrip4dj8brnw594hb9kcsjr5x5g6igkmjxyfqsbq04kaf"))))
     (properties `((upstream-name . "ipADMIXTURE")))
     (build-system r-build-system)
     (arguments
@@ -5926,6 +5926,32 @@ or hostname originates from.  Supported IPv4 and IPv6.  Please visit
 requires IP2Location Python module.  At the terminal, please run pip install
 IP2Location to install the module.")
     (license license:expat)))
+
+(define-public r-ip
+  (package
+    (name "r-ip")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IP" version))
+       (sha256
+        (base32 "111hhb0bj8z3ks7jddcbzhllvqvhzimrar8r1kh0vxbzgc5wrsyc"))))
+    (properties `((upstream-name . "IP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://cran.r-project.org/package=IP")
+    (synopsis "Classes and Methods for 'IP' Addresses")
+    (description
+     "This package provides S4 classes for Internet Protocol (IP) versions 4 and 6
+addresses and efficient methods for IP addresses comparison, arithmetic, bit
+manipulation and lookup.  Both IPv4 and IPv6 arbitrary ranges are also supported
+as well as internationalized ('IDN') domain lookup with and whois query.")
+    (license license:gpl2+)))
 
 (define-public r-iotarelr
   (package
@@ -20941,13 +20967,13 @@ irregular autoregressive model (Elorrieta et al.(2021)
 (define-public r-iapws95
   (package
     (name "r-iapws95")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IAPWS95" version))
        (sha256
-        (base32 "0jccq1pj0b8xpa7zs20ikkwlyj0f2q5qzdz8kllm0qiwlrrj7jsn"))))
+        (base32 "0w3pp52picwpdpys0vh2vyyg8kc6rczkdkaq5w5ya2ag4yrljksy"))))
     (properties `((upstream-name . "IAPWS95")))
     (build-system r-build-system)
     (arguments
