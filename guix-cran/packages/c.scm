@@ -5816,13 +5816,13 @@ Causal Hypotheses in Conjoint Analysis\" <@code{arXiv:2201.08343>}.")
 (define-public r-crt2power
   (package
     (name "r-crt2power")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crt2power" version))
        (sha256
-        (base32 "1q7a0bqjzzaqf5jksy0989mqvlrv67nxahg7jslwlz1cx73a5323"))))
+        (base32 "0rqjwwvh9ni04zq7idpbjbrra0m82x9g301gjf0xh8bjmd8v2938"))))
     (properties `((upstream-name . "crt2power")))
     (build-system r-build-system)
     (arguments
@@ -10160,13 +10160,13 @@ with two different treatments to be compared and survival as an endpoint.")
 (define-public r-coxsei
   (package
     (name "r-coxsei")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coxsei" version))
        (sha256
-        (base32 "1k3xsjwv1ji8n2qry2j93svr8a114mxkdl5y2zwz7mp82dmv0ld6"))))
+        (base32 "1l9h5jk5jjv6w6y6ycr8swhz7csw160msg1xgjc9dhm8yd3j8l3y"))))
     (properties `((upstream-name . "coxsei")))
     (build-system r-build-system)
     (arguments
@@ -20575,20 +20575,24 @@ sensitivity analyses under dependent censoring (Yeh et al 2023 Biomedicines)
 (define-public r-compositionalrf
   (package
     (name "r-compositionalrf")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompositionalRF" version))
        (sha256
-        (base32 "0brm03d9ypdc9k1klwmwb818gj7b1jr2z3968gs1qnnd8r8sr0bn"))))
+        (base32 "1qdv3qxalvd7qdyzaiswkgh2pfsz4cjrr468kzaickzgif4cgha4"))))
     (properties `((upstream-name . "CompositionalRF")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rfast r-multivariaterandomforest r-foreach
-                             r-doparallel r-compositional))
+    (propagated-inputs (list r-rfast
+                             r-rcppparallel
+                             r-rcpp
+                             r-foreach
+                             r-doparallel
+                             r-compositional))
     (home-page "https://cran.r-project.org/package=CompositionalRF")
     (synopsis "Multivariate Random Forest with Compositional Responses")
     (description
@@ -32300,13 +32304,13 @@ Reefton electronic weather station, is sought.")
 (define-public r-clifford
   (package
     (name "r-clifford")
-    (version "1.1-0")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clifford" version))
        (sha256
-        (base32 "18rlhfwaqghhq401s7pb2p3rgfrhy0zm97g2yvlrdgzql3xwxp0z"))))
+        (base32 "07ishg18qm7aycb3v8bw2gbpwi8zglp1x6nms4c6qf6q4cxz5hhq"))))
     (properties `((upstream-name . "clifford")))
     (build-system r-build-system)
     (arguments
@@ -43849,13 +43853,13 @@ convolution kernel density estimator.")
 (define-public r-cctest
   (package
     (name "r-cctest")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cctest" version))
        (sha256
-        (base32 "1lqb4dzmbr7nj2xj5hmnlzd4wzsrmpis9vdbq92r47gcjshxywmz"))))
+        (base32 "132wxxx6h5xndkvp9vmjbdy9lw6pvksaf0v9w7xpzsk6dd4ykz0i"))))
     (properties `((upstream-name . "cctest")))
     (build-system r-build-system)
     (arguments
@@ -44521,13 +44525,13 @@ Journal of Statistical Theory Practice, 16(3): 47.
 (define-public r-cccrm
   (package
     (name "r-cccrm")
-    (version "3.0.4")
+    (version "3.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cccrm" version))
        (sha256
-        (base32 "0sgh1q9rcxxpfrphr62fwghspwfnzr0lis7hj05bwa3iqjjsfcr1"))))
+        (base32 "05fx8z1bn4vlapyb5qlfp4gzhim010jdni9xn25qmyw8bcbaqa9v"))))
     (properties `((upstream-name . "cccrm")))
     (build-system r-build-system)
     (arguments
@@ -45163,13 +45167,13 @@ statistics based on the variable types.")
 (define-public r-cbamodel
   (package
     (name "r-cbamodel")
-    (version "0.0.1.1")
+    (version "0.0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CBAModel" version))
        (sha256
-        (base32 "12vdxy8ls48gv275s3ydsp3xhdy4c2clr7a94h9jqn78hrf4cvyi"))))
+        (base32 "0r1bswcb9k358hi10n25l6dczsqryw3jy7r7xh3rqqp84hp5gril"))))
     (properties `((upstream-name . "CBAModel")))
     (build-system r-build-system)
     (arguments

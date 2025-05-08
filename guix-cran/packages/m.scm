@@ -7838,19 +7838,19 @@ output) and Shiny file editing.")
 (define-public r-mtarm
   (package
     (name "r-mtarm")
-    (version "0.1.2")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mtarm" version))
        (sha256
-        (base32 "19830spz9r1bj520vkafiq3inb45ydzwx6fjaa2vadr6mxr7b2l0"))))
+        (base32 "03xwfl8jn8bnvswi1riv4qgs2nn8vm4zl7j4v50j41qkp3rsbkpr"))))
     (properties `((upstream-name . "mtarm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-gigrvg r-formula r-coda))
+    (propagated-inputs (list r-mvtnorm r-gigrvg r-formula r-coda))
     (home-page "https://cran.r-project.org/package=mtarm")
     (synopsis
      "Bayesian Estimation of Multivariate Threshold Autoregressive Models")
@@ -21176,13 +21176,13 @@ well-known data sets from the multilevel modelling literature.")
 (define-public r-mlmpower
   (package
     (name "r-mlmpower")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlmpower" version))
        (sha256
-        (base32 "1y7vvawgzp8gw287jrcfam1izimy4il3vzanx0mqd5x88n76mpbp"))))
+        (base32 "1d7a5x9b0w3nk6dxvnbjkqf72cmx4y5czw39gj4fdib639s054gb"))))
     (properties `((upstream-name . "mlmpower")))
     (build-system r-build-system)
     (arguments
@@ -47611,13 +47611,13 @@ parallelization, uncomment the relevant flags in src/MAKEVARS before compiling."
 (define-public r-maptiles
   (package
     (name "r-maptiles")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maptiles" version))
        (sha256
-        (base32 "1h72jhrib6a6kfb9dvwpl463520hzai3qn5k7c9yy00bzrj8sx8m"))))
+        (base32 "0nnzb81fhvhd922kk161y813f25w7pjajnzxqc502ld484h2ya14"))))
     (properties `((upstream-name . "maptiles")))
     (build-system r-build-system)
     (arguments

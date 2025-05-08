@@ -1552,13 +1552,13 @@ layout based on DIN 5008B'.")
 (define-public r-kollar
   (package
     (name "r-kollar")
-    (version "1.0.4")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kollaR" version))
        (sha256
-        (base32 "01aj0z5z3qf3vz3zs1wwlssg32w3j6f4071gnrmcsdj9v6fs61rz"))))
+        (base32 "1grccrdqzkqflqni79j4y8bz6k9w71p560ngl275frr4r5vzgmkz"))))
     (properties `((upstream-name . "kollaR")))
     (build-system r-build-system)
     (arguments
@@ -1577,15 +1577,20 @@ layout based on DIN 5008B'.")
                              r-ggforce
                              r-dplyr
                              r-base64enc))
-    (home-page "https://cran.r-project.org/package=kollaR")
-    (synopsis "Filtering, Visualization and Analysis of Eye Tracking Data")
+    (home-page "https://drjohanlk.github.io/kollaR/demo.html")
+    (synopsis
+     "Event Classification, Visualization and Analysis of Eye Tracking Data")
     (description
      "This package provides functions for analysing eye tracking data, including event
-detection (I-VT, I-DT and two means clustering), visualizations and area of
-interest (AOI) based analyses.  See separate documentation for each function.
-The principles underlying I-VT and I-DT filters are described in Salvucci &
-Goldberg (2000,\\doi{10.1145/355017.355028}).  Two-means clustering is described
-in Hessels et al. (2017, \\doi{10.3758/s13428-016-0822-1}).")
+detection, visualizations and area of interest (AOI) based analyses.  The
+package includes implementations of the IV-T, I-DT, adaptive velocity threshold,
+and Identification by two means clustering (I2MC) algorithms.  See separate
+documentation for each function.  The principles underlying I-VT and I-DT
+algorithms are described in Salvucci & Goldberg
+(2000,\\doi{10.1145/355017.355028}).  Two-means clustering is described in
+Hessels et al. (2017, \\doi{10.3758/s13428-016-0822-1}).  The adaptive velocity
+threshold algorithm is described in NystrÃ¶m & Holmqvist
+(2010,\\doi{10.3758/BRM.42.1.188}).  See a demonstration in the URL.")
     (license license:gpl3)))
 
 (define-public r-kolaide

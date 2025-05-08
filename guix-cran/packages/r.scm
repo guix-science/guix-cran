@@ -52896,6 +52896,37 @@ possible, it also keeps all requested data available as separate data frames to
 increase efficiency.")
     (license license:expat)))
 
+(define-public r-ransac
+  (package
+    (name "r-ransac")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RANSAC" version))
+       (sha256
+        (base32 "06f5v04mfvyxgnv7bhk4h31jpja4i689fr7kcpyjcf7bfr4mknvq"))))
+    (properties `((upstream-name . "RANSAC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RANSAC")
+    (synopsis "Robust Model Fitting Using the RANSAC Algorithm")
+    (description
+     "This package provides tools for robust regression model fitting using the RANSAC
+(Random Sample Consensus) algorithm.  RANSAC is an iterative method to estimate
+parameters of a model from a dataset that contains outliers.  This package
+allows fitting both linear lm and nonlinear nls models using RANSAC, helping
+users obtain more reliable models in the presence of noisy or corrupted data.
+The methods are particularly useful in contexts where traditional least squares
+regression fails due to the influence of outliers.  Implementations include
+support for performance metrics such as RMSE, MAE, and RÂ² based on the inlier
+subset.  For further details, see Fischler and Bolles (1981)
+<doi:10.1145/358669.358692>.")
+    (license license:expat)))
+
 (define-public r-ranktreeensemble
   (package
     (name "r-ranktreeensemble")
@@ -53673,29 +53704,6 @@ with Rocker <https://rocker-project.org>.")
 sequences.")
     (license license:gpl2+)))
 
-(define-public r-randquotes
-  (package
-    (name "r-randquotes")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "randquotes" version))
-       (sha256
-        (base32 "0fj9vx0c4059511wka7ip30yz87y144pz7ny840gp72qm73pp8li"))))
-    (properties `((upstream-name . "randquotes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2 r-jsonlite r-httr r-curl))
-    (home-page "https://github.com/amrrs/randquotes")
-    (synopsis "Get Random Quotes from Quotes on Design API")
-    (description
-     "Connects to the site <http://quotesondesign.com/> that uses the @code{WordPress}
-built-in REST API to provide a way for you to grab quotes.")
-    (license (license:fsdg-compatible "AGPL"))))
-
 (define-public r-randpro
   (package
     (name "r-randpro")
@@ -54063,6 +54071,38 @@ the randomization distributions are accurate for their experimental settings.
 The package also creates visualizations of randomization distributions and can
 test multiple test statistics simultaneously.")
     (license license:gpl2)))
+
+(define-public r-randomgodb
+  (package
+    (name "r-randomgodb")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "randomGODB" version))
+       (sha256
+        (base32 "1mfmhsyv2x1v8r77c0igwy7600sqm8ld9g0f1ylrzfak4hfc4lw5"))))
+    (properties `((upstream-name . "randomGODB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-minimalistgodb r-go-db))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=randomGODB")
+    (synopsis "Random GO Database")
+    (description
+     "The Gene Ontology (GO) Consortium <https://geneontology.org/> organizes genes
+into hierarchical categories based on biological process (BP), molecular
+function (MF) and cellular component (CC, i.e., subcellular localization).
+Tools such as @code{GoMiner} (see Zeeberg, B.R., Feng, W., Wang, G. et al.
+(2003) <doi:10.1186/gb-2003-4-4-r28>) can leverage GO to perform ontological
+analysis of microarray and proteomics studies, typically generating a list of
+significant functional categories.  The significance is traditionally determined
+by randomizing the input gene list to computing the false discovery rate (FDR)
+of the enrichment p-value for each category.  We explore here the novel
+alternative of randomizing the GO database rather than the gene list.")
+    (license license:gpl2+)))
 
 (define-public r-randomglm
   (package

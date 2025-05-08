@@ -13641,13 +13641,13 @@ evaluation of the outputs.")
 (define-public r-andromeda
   (package
     (name "r-andromeda")
-    (version "0.6.7")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Andromeda" version))
        (sha256
-        (base32 "1v3pg8vskr079yv8yg2lby8agvcc1jhkbr7nnvgz26fgb2nwfq3c"))))
+        (base32 "116gpx9wixa0j83sq3ri0cjak5a0cc5mflah05ay1rnr0zf3qm43"))))
     (properties `((upstream-name . "Andromeda")))
     (build-system r-build-system)
     (arguments
@@ -13655,10 +13655,9 @@ evaluation of the outputs.")
       #:tests? #f))
     (propagated-inputs (list r-zip
                              r-tidyselect
-                             r-rsqlite
                              r-rlang
                              r-pillar
-                             r-hms
+                             r-duckdb
                              r-dplyr
                              r-dbplyr
                              r-dbi
@@ -17732,13 +17731,13 @@ MÃ¸lgaard, and Schytt (2024) <DOI:10.31219/osf.io/yrhzm>.")
 (define-public r-airthermo
   (package
     (name "r-airthermo")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aiRthermo" version))
        (sha256
-        (base32 "058082qdfi1pbdgf26vbfahri1kbc8b2l816q4dq89j5aj5is0a2"))))
+        (base32 "1avxmbm0iwv2r4f4nf964snw7xblb9ls23zb1id7gb59j5miaqrp"))))
     (properties `((upstream-name . "aiRthermo")))
     (build-system r-build-system)
     (arguments
@@ -18388,13 +18387,13 @@ is 50%, 80% and 100% completeness.")
 (define-public r-aihuman
   (package
     (name "r-aihuman")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aihuman" version))
        (sha256
-        (base32 "1jh2x1qrcdpg7a5cfry6r8ljkibil84in43qibxjrq457ylbrp77"))))
+        (base32 "0b7bspdglbsarqprrlyyracnr771ccg17rris0r8dblbyf61jdwy"))))
     (properties `((upstream-name . "aihuman")))
     (build-system r-build-system)
     (arguments
@@ -25491,13 +25490,13 @@ X, Lu W and Rabinowitz J (2017) <doi:10.1021/acs.analchem.7b00396>.")
 (define-public r-accsamplingdesign
   (package
     (name "r-accsamplingdesign")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AccSamplingDesign" version))
        (sha256
-        (base32 "0bvsbw4lrjjbh210ljvaa9fbss3nnzcv2fcfqmnpwy1j41pdqahd"))))
+        (base32 "1bc7aks8x452dd3k3pd1nv33kzg8nqjwdgdv9gp1sq9zd3071kmh"))))
     (properties `((upstream-name . "AccSamplingDesign")))
     (build-system r-build-system)
     (arguments
@@ -25510,10 +25509,9 @@ X, Lu W and Rabinowitz J (2017) <doi:10.1021/acs.analchem.7b00396>.")
      "This package provides tools for designing and analyzing acceptance sampling
 plans.  Supports both attribute-based (Binomial and Poisson) and variable-based
 (Normal and Beta) sampling, enabling quality control for fractional and
-compositional data.  Uses nonlinear programming (NLP) for sampling plan
-optimization, minimizing sample size while balancing producer's and consumer's
-risks.  Operating Characteristic (OC) curves are available for plan
-visualization.")
+compositional data.  Uses nonlinear programming for sampling plan optimization,
+minimizing sample size while balancing producer's and consumer's risks.
+Operating Characteristic curves are available for plan visualization.")
     (license license:gpl3)))
 
 (define-public r-accrualplot

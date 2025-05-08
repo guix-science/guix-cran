@@ -5989,19 +5989,20 @@ connecting to Amazon Web Service ('AWS') Athena
 (define-public r-nobbs
   (package
     (name "r-nobbs")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NobBS" version))
        (sha256
-        (base32 "0dvl97v2nzaamlr327mdm51lpzm4z3451fwivvp0ijvbac3cc29r"))))
+        (base32 "0f3fx14m03vy9bkwsg3vjnrv3zs4yyx71bh5nzr7d7k9x349r7fv"))))
     (properties `((upstream-name . "NobBS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rlang r-rjags r-magrittr r-dplyr r-coda))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=NobBS")
     (synopsis "Nowcasting by Bayesian Smoothing")
     (description

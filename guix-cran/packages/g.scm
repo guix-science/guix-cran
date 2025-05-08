@@ -7564,13 +7564,13 @@ regularization.  See also Epskamp, Waldorp, Mottus & Borsboom (2018)
 (define-public r-graphicalmcp
   (package
     (name "r-graphicalmcp")
-    (version "0.2.6")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "graphicalMCP" version))
        (sha256
-        (base32 "1ffhxifncj5v4fm0kkfdnl3qgg9g13xy9kih6sf5rhiww3cs4haz"))))
+        (base32 "0cikcf7zqnkd6cqx94l1wnks29y09kls7psgkcq97m7p7dp9k254"))))
     (properties `((upstream-name . "graphicalMCP")))
     (build-system r-build-system)
     (arguments
@@ -22292,6 +22292,39 @@ descendant branches of interest.  Uses the Grammar of Graphics.")
      "Interactively edit ggplot2 layer and theme aesthetics definitions.")
     (license license:expat)))
 
+(define-public r-ggeda
+  (package
+    (name "r-ggeda")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggEDA" version))
+       (sha256
+        (base32 "0128rzwax5l1sssbdggjajwiyw3dmf55d2pc51di8sal01529q92"))))
+    (properties `((upstream-name . "ggEDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-rank
+                             r-patchwork
+                             r-ggtext
+                             r-ggplot2
+                             r-ggiraph
+                             r-cli
+                             r-assertions))
+    (home-page "https://github.com/CCICB/ggEDA")
+    (synopsis "Turnkey Visualisations for Exploratory Data Analysis")
+    (description
+     "This package provides interactive visualisations for exploratory data analysis
+of high-dimensional datasets.  Includes parallel coordinate plots for exploring
+large datasets with mostly quantitative features, but also stacked
+one-dimensional visualisations that more effectively show missingness and
+complex categorical relationships in smaller datasets.")
+    (license license:expat)))
+
 (define-public r-ggebiplots
   (package
     (name "r-ggebiplots")
@@ -25316,6 +25349,33 @@ Brunsdon et al., 2002 <doi:10.1016/s0198-9715(01)00009-6>, Harris et al., 2011
 <doi:10.1111/j.1538-4632.2007.00709.x>.")
     (license license:gpl3)))
 
+(define-public r-geovol
+  (package
+    (name "r-geovol")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geovol" version))
+       (sha256
+        (base32 "0b4y2frd7gz1p71jpgfdv2wlfzm22yvcyll5as60qczkq7nk7fbj"))))
+    (properties `((upstream-name . "geovol")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo))
+    (home-page "https://sites.google.com/site/susanacamposmartins/")
+    (synopsis "Geopolitical Volatility (GEOVOL) Modelling")
+    (description
+     "Simulation, estimation and testing for geopolitical volatility (GEOVOL) based on
+the global common volatility model of Engle and Campos-Martins (2023)
+<doi:10.1016/j.jfineco.2022.09.009>.  GEOVOL is modelled as a latent
+multiplicative volatility factor with heterogeneous factor loadings.  Estimation
+is carried out as a maximization-maximization procedure, where GEOVOL and the
+GEOVOL loadings are estimated iteratively until convergence.")
+    (license license:gpl2+)))
+
 (define-public r-geouy
   (package
     (name "r-geouy")
@@ -25536,6 +25596,38 @@ density of coordinate data while maintaining spatial relationships.  Implements
 K-D Tree and brute-force distance-based thinning, as well as grid-based and
 precision-based thinning methods.  For more information on the methods, see
 Elseberg et al. (2012) <https://hdl.handle.net/10446/86202>.")
+    (license license:expat)))
+
+(define-public r-geotargets
+  (package
+    (name "r-geotargets")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geotargets" version))
+       (sha256
+        (base32 "0qyvbm7ask17hqs46dkri5038zc227l6s8cxim18k8yil7mh4gx9"))))
+    (properties `((upstream-name . "geotargets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-withr
+                             r-terra
+                             r-targets
+                             r-rlang
+                             r-lifecycle
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/geotargets")
+    (synopsis "'targets' Extensions for Geographic Spatial Formats")
+    (description
+     "This package provides extensions for various geographic spatial file formats,
+such as shape files and rasters.  Currently provides support for the terra
+geographic spatial formats.  See the vignettes for worked examples,
+demonstrations, and explanations of how to use the various package extensions.")
     (license license:expat)))
 
 (define-public r-geostatsp
@@ -27460,13 +27552,13 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
 (define-public r-geocodebr
   (package
     (name "r-geocodebr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocodebr" version))
        (sha256
-        (base32 "13w910rww8qg38h0kfi8vn111v26pak2qbnkp3mfr9i5ynzjbr4p"))))
+        (base32 "0ysijs6v8shr3zqdpmd5hi1fynn7l4bd8h65hpmn03r4mf144w31"))))
     (properties `((upstream-name . "geocodebr")))
     (build-system r-build-system)
     (arguments
@@ -27475,7 +27567,9 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
     (propagated-inputs (list r-sfheaders
                              r-sf
                              r-rlang
+                             r-rcpp
                              r-purrr
+                             r-nanoarrow
                              r-httr2
                              r-glue
                              r-fs
@@ -27494,7 +27588,7 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
     (description
      "MÃ©todo simples e eficiente de geolocalizar dados no Brasil.  O pacote Ã©
 baseado em conjuntos de dados espaciais abertos de endereÃ§os brasileiros,
-utilizando principalmente o Cadastro Nacional de EndereÃ§os para Fins
+utilizando como fonte principal o Cadastro Nacional de EndereÃ§os para Fins
 EstatÃ­sticos (CNEFE).  O CNEFE Ã© publicado pelo Instituto Brasileiro de
 Geografia e EstatÃ­stica (IBGE), Ã³rgÃ£o oficial de estatÃ­sticas e geografia do
 Brasil. (A simple and efficient method for geolocating data in Brazil.  The

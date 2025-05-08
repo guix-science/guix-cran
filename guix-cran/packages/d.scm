@@ -5585,13 +5585,13 @@ Karim, M.R., Islam, M.A. (2019) <doi:10.1007/978-981-13-9776-9>.")
 (define-public r-drgee
   (package
     (name "r-drgee")
-    (version "1.1.10")
+    (version "1.1.10-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drgee" version))
        (sha256
-        (base32 "0hy7887mvlxh73zk2yzp46bqakq924n940j21lw25jgygmzz1176"))))
+        (base32 "0w50zvjx6278ixxd498si0k52wxkqpzqyi89bcrhczhjlgh43rgy"))))
     (properties `((upstream-name . "drgee")))
     (build-system r-build-system)
     (arguments
@@ -9443,13 +9443,13 @@ container.")
 (define-public r-dockerfiler
   (package
     (name "r-dockerfiler")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dockerfiler" version))
        (sha256
-        (base32 "0axiqvd3hbrb6br56qhjc5cpxv230x4j02ly9aa98gcrwwpc1w59"))))
+        (base32 "1l57lfh8q0ra3715bilkb0071ysw4mxbrc2j5dzykfdgm9a2psar"))))
     (properties `((upstream-name . "dockerfiler")))
     (build-system r-build-system)
     (arguments
@@ -9469,7 +9469,7 @@ container.")
                              r-cli
                              r-attempt))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ThinkR-open/dockerfiler")
+    (home-page "https://thinkr-open.github.io/dockerfiler/")
     (synopsis "Easy Dockerfile Creation from R")
     (description
      "Build a Dockerfile straight from your R session.  dockerfiler allows you to
@@ -9953,6 +9953,35 @@ provide the full functionality it is noticeably less efficient than the original
 DNAmixtures package.  For details on implementation and methodology see
 <https://dnamixtures.r-forge.r-project.org/>.")
     (license license:gpl2+)))
+
+(define-public r-dnafractal
+  (package
+    (name "r-dnafractal")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dnafractal" version))
+       (sha256
+        (base32 "1q9lh7fj83xx85cwvca6b99vmgd6vafinrhxa444nz2hkf76cjix"))))
+    (properties `((upstream-name . "dnafractal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-desctools))
+    (home-page "https://cran.r-project.org/package=dnafractal")
+    (synopsis "Generates a Fractal Image of a DNA Sequence")
+    (description
+     "The function takes a DNA sequence, a start point, an end point in the sequence,
+dot size and dot color and draws a fractal image of the sequence.  The fractal
+starts in the center of the canvas.  The image is drawn by moving base by base
+along the sequence and dropping a midpoint between the actual point and the
+corner designated by the actual base.  For more details see Jeffrey (1990)
+<doi:10.1093/nar/18.8.2163>, Hill, Schisler, and Singh (1992)
+<doi:10.1007/BF00178602>, and LÃ¶chel and Heider (2021)
+<doi:10.1016/j.csbj.2021.11.008>.")
+    (license license:gpl3+)))
 
 (define-public r-dmutate
   (package
@@ -21102,6 +21131,44 @@ Szklarczyk et al. (2023) <doi:10.1093/nar/gkac1000> - Winter (2017)
 <doi:10.32614/RJ-2017-066>.")
     (license license:expat)))
 
+(define-public r-desa
+  (package
+    (name "r-desa")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DESA" version))
+       (sha256
+        (base32 "0a4cqxqcqq9bhwwivhr5m8gc5pchwngxsh8bk28qw43w0ks3b9al"))))
+    (properties `((upstream-name . "DESA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/vjoshy/DESA")
+    (synopsis "Detecting Epidemics using School Absenteeism")
+    (description
+     "This package provides a comprehensive framework for early epidemic detection
+through school absenteeism surveillance.  The package offers three core
+functionalities: (1) simulation of population structures, epidemic spread, and
+resulting school absenteeism patterns; (2) implementation of surveillance models
+that generate alerts for impending epidemics based on absenteeism data and (3)
+evaluation of alert timeliness and accuracy through alert time quality metrics
+to optimize model parameters.  These tools enable public health officials and
+researchers to develop and assess early warning systems before implementation.
+Methods are based on research published in Vanderkruk et al. (2023)
+<doi:10.1186/s12889-023-15747-z> and Ward et al. (2019)
+<doi:10.1186/s12889-019-7521-7>.")
+    (license license:gpl3+)))
+
 (define-public r-des
   (package
     (name "r-des")
@@ -24248,13 +24315,13 @@ all actions are logged.")
 (define-public r-deducer
   (package
     (name "r-deducer")
-    (version "0.7-9")
+    (version "0.9-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Deducer" version))
        (sha256
-        (base32 "14kakyf28i654pndlswjzp6h3h7szpznrg6xznqg150mmn0bs3s6"))))
+        (base32 "1sd67vkxpvfh2kzy5q5kb7y6fkbzj7s9rhffjqsmqq6gcvjrbzw4"))))
     (properties `((upstream-name . "Deducer")))
     (build-system r-build-system)
     (arguments
@@ -29667,27 +29734,27 @@ Publishing.")
 (define-public r-datana
   (package
     (name "r-datana")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datana" version))
        (sha256
-        (base32 "047hxck8h7zqdqb10a07ch536w0lrvavr3bi8xdl7kdmdpmixrj9"))))
+        (base32 "1diyk2j4dlqx4q6ddw7cx7a5k0a53l76c7i43p4awkkh2fcmz16r"))))
     (properties `((upstream-name . "datana")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lattice r-ggplot2))
-    (home-page "https://eljatib.com/rlibro")
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cran.r-project.org/package=datana")
     (synopsis "Datasets and Functions to Accompany Analisis De Datos Con R")
     (description
      "Datasets and functions to accompany the book Analisis de datos con el programa
 estadistico R: una introduccion aplicada by Salas-Eljatib (2021, ISBN:
 9789566086109).  The package helps carry out data management, exploratory
 analyses, and model fitting.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-datamojo
   (package

@@ -4038,13 +4038,13 @@ approach.")
 (define-public r-orddisp
   (package
     (name "r-orddisp")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordDisp" version))
        (sha256
-        (base32 "0906y98ydiadyqhz9ad2ssw1282a10c418k20vkbwzad2xip7grg"))))
+        (base32 "1lcdanfpm7z6nanhjhcxdxmsy04w1x40ji4ikd14x1knv1gmdxqc"))))
     (properties `((upstream-name . "ordDisp")))
     (build-system r-build-system)
     (arguments
@@ -11199,13 +11199,13 @@ at <https://ohdsi.github.io/@code{OhdsiShinyAppBuilder/>}.")
 (define-public r-ohdsireportgenerator
   (package
     (name "r-ohdsireportgenerator")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OhdsiReportGenerator" version))
        (sha256
-        (base32 "0c3yr4ijp0fcfn90v11fyabnp9jhw7ci76k3g0zlkn9ksx7smraa"))))
+        (base32 "0ihsykh1lyr2h3dx1jnd6vw54kz8f66y6s5zzzlkmbyfy2sk48sy"))))
     (properties `((upstream-name . "OhdsiReportGenerator")))
     (build-system r-build-system)
     (arguments
@@ -11220,11 +11220,13 @@ at <https://ohdsi.github.io/@code{OhdsiShinyAppBuilder/>}.")
                              r-parallellogger
                              r-kableextra
                              r-htmltools
+                             r-gt
                              r-ggpubr
                              r-ggplot2
                              r-forestplot
                              r-dplyr
-                             r-databaseconnector))
+                             r-databaseconnector
+                             r-circer))
     (native-inputs (list r-knitr))
     (home-page "https://ohdsi.github.io/OhdsiReportGenerator/")
     (synopsis

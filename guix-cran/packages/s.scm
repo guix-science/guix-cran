@@ -4649,6 +4649,42 @@ observations.  The hybrid approach combines the regression and ranking
 constraints in the same model.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-survivalsurrogate
+  (package
+    (name "r-survivalsurrogate")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survivalsurrogate" version))
+       (sha256
+        (base32 "16r4hn2pgpk7v1ljfyl1g322xrr714rqb4x50zab392fnr8f8pyx"))))
+    (properties `((upstream-name . "survivalsurrogate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sparsem
+                             r-rpart
+                             r-rbeta2009
+                             r-purrr
+                             r-mlr3
+                             r-magrittr
+                             r-glue
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=survivalsurrogate")
+    (synopsis "Evaluate a Longitudinal Surrogate with a Censored Outcome")
+    (description
+     "This package provides influence function-based methods to evaluate a
+longitudinal surrogate marker in a censored time-to-event outcome setting, with
+plug-in and targeted minimum loss-based estimation options.  More details will
+be available in the future in: Agniel D and Parast L (2025+). \"Robust Evaluation
+of Longitudinal Surrogate Markers with Censored Data.\" Journal of the Royal
+Statistical Society: Series B, In press.  A tutorial for this package can be
+found at <https://www.laylaparast.com/survivalsurrogate>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-survivalsl
   (package
     (name "r-survivalsl")
@@ -14175,13 +14211,13 @@ informative error messages when that is not possible.")
 (define-public r-stb
   (package
     (name "r-stb")
-    (version "0.6.5")
+    (version "0.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "STB" version))
        (sha256
-        (base32 "12r59wj5nxllkif5047a7gw7li9xj71zybw7isgdf3y6iyv4f9pw"))))
+        (base32 "14grzwqc37aikjbp7an3r6qsv2w9mbci7mqm3qc013nwbzpph3x9"))))
     (properties `((upstream-name . "STB")))
     (build-system r-build-system)
     (arguments
@@ -24394,13 +24430,13 @@ in standard linear as well as some generalized linear regression models.")
 (define-public r-spfda
   (package
     (name "r-spfda")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spfda" version))
        (sha256
-        (base32 "094j68gyy5yw7d2mn3n864h6vf8nd76x9ypfzc1liggnw7qs0fdl"))))
+        (base32 "0bn9ij7qgdk24xr5zbjcdc64sc9czq3bga13phv6l3c78627w1x0"))))
     (properties `((upstream-name . "spfda")))
     (build-system r-build-system)
     (arguments
@@ -24411,8 +24447,8 @@ in standard linear as well as some generalized linear regression models.")
     (synopsis "Function-on-Scalar Regression with Group-Bridge Penalty")
     (description
      "This package implements a group-bridge penalized function-on-scalar regression
-model proposed by Wang et al. (2020) <@code{arXiv:2006.10163>}, to
-simultaneously estimate functional coefficient and recover the local sparsity.")
+model proposed by Wang et al. (2023) <doi:10.1111/biom.13684>, to simultaneously
+estimate functional coefficient and recover the local sparsity.")
     (license license:expat)))
 
 (define-public r-spfa
@@ -30835,13 +30871,13 @@ analysis.")
 (define-public r-sox
   (package
     (name "r-sox")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sox" version))
        (sha256
-        (base32 "0i15z47bjs1cj17g4x5i74v069ba5ypl7qv5sblxs13wwlgs5ah5"))))
+        (base32 "02bbip7p6jd7nyn0pypdkmmkqbplij5cgsy4f4r40485grr08yi9"))))
     (properties `((upstream-name . "sox")))
     (build-system r-build-system)
     (arguments
@@ -37427,13 +37463,13 @@ statistic, and q nearest neighbors of cases.")
 (define-public r-smacofx
   (package
     (name "r-smacofx")
-    (version "1.6-1")
+    (version "1.20-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smacofx" version))
        (sha256
-        (base32 "112457wqdyj4ld083ibzkfjww6xilyamcj7v6mal2gh1jxcf2r8k"))))
+        (base32 "0lr6hpg2h7rb3x9qvggip4f034wijzibhxkam6wipss28mc7845q"))))
     (properties `((upstream-name . "smacofx")))
     (build-system r-build-system)
     (arguments
@@ -37452,15 +37488,15 @@ statistic, and q nearest neighbors of cases.")
      "Flexible multidimensional scaling (MDS) methods and extensions to the package
 smacof'.  This package contains various functions, wrappers, methods and classes
 for fitting, plotting and displaying a large number of different flexible MDS
-models (some as of yet unpublished).  These are: Torgerson scaling (Torgerson,
-1958, ISBN:978-0471879459) with powers, Sammon mapping (Sammon, 1969,
-<doi:10.1109/T-C.1969.222678>) with ratio and interval optimal scaling,
-Multiscale MDS (Ramsay, 1977, <doi:10.1007/BF02294052>) with ratio and interval
-optimal scaling, S-stress MDS (ALSCAL; Takane, Young & De Leeuw, 1977,
-<doi:10.1007/BF02293745>) with ratio and interval optimal scaling, elastic
-scaling (@code{McGee}, 1966, <doi:10.1111/j.2044-8317.1966.tb00367.x>) with
-ratio and interval optimal scaling, r-stress MDS (De Leeuw, Groenen & Mair,
-2016, <https://rpubs.com/deleeuw/142619>) with ratio, interval and non-metric
+models.  These are: Torgerson scaling (Torgerson, 1958, ISBN:978-0471879459)
+with powers, Sammon mapping (Sammon, 1969, <doi:10.1109/T-C.1969.222678>) with
+ratio and interval optimal scaling, Multiscale MDS (Ramsay, 1977,
+<doi:10.1007/BF02294052>) with ratio and interval optimal scaling, s-stress MDS
+(ALSCAL; Takane, Young & De Leeuw, 1977, <doi:10.1007/BF02293745>) with ratio
+and interval optimal scaling, elastic scaling (@code{McGee}, 1966,
+<doi:10.1111/j.2044-8317.1966.tb00367.x>) with ratio and interval optimal
+scaling, r-stress MDS (De Leeuw, Groenen & Mair, 2016,
+<https://rpubs.com/deleeuw/142619>) with ratio, interval, splines and nonmetric
 optimal scaling, power-stress MDS (POST-MDS; Buja & Swayne, 2002
 <doi:10.1007/s00357-001-0031-0>) with ratio and interval optimal scaling,
 restricted power-stress (Rusch, Mair & Hornik, 2021,
@@ -37469,14 +37505,19 @@ approximate power-stress with ratio optimal scaling (Rusch, Mair & Hornik, 2021,
 <doi:10.1080/10618600.2020.1869027>), Box-Cox MDS (Chen & Buja, 2013,
 <https://jmlr.org/papers/v14/chen13a.html>), local MDS (Chen & Buja, 2009,
 <doi:10.1198/jasa.2009.0111>), curvilinear component analysis (Demartines &
-Herault, 1997, <doi:10.1109/72.554199>) and curvilinear distance analysis (Lee,
-Lendasse & Verleysen, 2004, <doi:10.1016/j.neucom.2004.01.007>).  There also are
-experimental models (e.g., sparsified MDS and sparsified POST-MDS).  Some
-functions are suitably flexible to allow any other sensible combination of
-explicit power transformations for weights, distances and input proximities with
-implicit ratio, interval or non-metric optimal scaling of the input proximities.
- Most functions use a Majorization-Minimization algorithm.  Currently the
-methods are only available for one-mode data (symmetric dissimilarity matrices).")
+Herault, 1997, <doi:10.1109/72.554199>), curvilinear distance analysis (Lee,
+Lendasse & Verleysen, 2004, <doi:10.1016/j.neucom.2004.01.007>), nonlinear MDS
+with optimal dissimilarity powers functions (De Leeuw, 2024,
+<https://github.com/deleeuw/@code{smacofManual/blob/main/smacofPO(power)/smacofPO.pdf>}),
+sparsified (power) MDS and sparsified multidimensional (power) distance analysis
+aka extended curvilinear (power) component analysis and extended curvilinear
+(power) distance analysis (Rusch, 2024,
+<doi:10.57938/355bf835-ddb7-42f4-8b85-129799fc240e>).  Some functions are
+suitably flexible to allow any other sensible combination of explicit power
+transformations for weights, distances and input proximities with implicit
+ratio, interval, splines or nonmetric optimal scaling of the input proximities.
+Most functions use a Majorization-Minimization algorithm.  Currently the methods
+are only available for one-mode two-way data (symmetric dissimilarity matrices).")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-smacof
@@ -72749,13 +72790,13 @@ which based on Wilcox (1979) <doi:10.1177/001316447903900302> and Kleinman
 (define-public r-sae4health
   (package
     (name "r-sae4health")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sae4health" version))
        (sha256
-        (base32 "0zw6qrsfq2giqi6d0yk3hl3mm0pd8kfprvvi7ywsfkkxzb7v4ifs"))))
+        (base32 "0ygvmyrwfbxjx8d9jiaxh6ca3vv9y7iqnb9q8m039s6jqdccqll8"))))
     (properties `((upstream-name . "sae4health")))
     (build-system r-build-system)
     (arguments
@@ -72802,13 +72843,12 @@ which based on Wilcox (1979) <doi:10.1177/001316447903900302> and Kleinman
      "Small Area Estimation for Key Health and Demographic Indicators from Household Surveys")
     (description
      "Enables small area estimation (SAE) of health and demographic indicators in low-
-and middle-income countries (LMICs).  It powers an R shiny application that
-helps public health analysts, policymakers, and researchers generate subnational
-estimates and prevalence maps for 150+ binary indicators from Demographic and
-Health Surveys (DHS).  Basing its core SAE analysis workflow on the
-@code{surveyPrev} package, the app ensures methodological rigor through guided
-model selection, automated fitting, and interactive visualization.  For more
-details, visit <https://sae4health.stat.uw.edu/>.")
+and middle-income countries (LMICs).  It powers an R shiny application for
+generating subnational estimates and prevalence maps of 150+ binary indicators
+from Demographic and Health Surveys (DHS).  It builds on the SAE analysis
+workflow from the @code{surveyPrev} package.  For documentation, visit
+<https://sae4health.stat.uw.edu/>.  Methodological details can be found at Wu et
+al. (2025) <doi:10.48550/@code{arXiv.2505.01467>}.")
     (license license:agpl3)))
 
 (define-public r-sae2

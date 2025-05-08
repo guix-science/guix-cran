@@ -4336,13 +4336,13 @@ estimators are implemented.")
 (define-public r-evsim
   (package
     (name "r-evsim")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evsim" version))
        (sha256
-        (base32 "04w9yz96m9sqhk9xc92ss3vjnqqm2lqm8j833n8wyn7ns8i7hg8q"))))
+        (base32 "09k370bny8c0hmch1fsay95q84zm72zdg98q0akqhxpvz7l1gc6l"))))
     (properties `((upstream-name . "evsim")))
     (build-system r-build-system)
     (arguments
@@ -4357,13 +4357,11 @@ estimators are implemented.")
                              r-ggplot2
                              r-dygraphs
                              r-dplyr))
-    (home-page "https://mcanigueral.github.io/evsim/")
+    (home-page "https://github.com/resourcefully-dev/evsim/")
     (synopsis "Electric Vehicle Charging Sessions Simulation")
     (description
      "Simulation of Electric Vehicles charging sessions using Gaussian models,
-together with time-series power demand calculations.  The simulation methodology
-is published in CaÃ±igueral et al. (2023, ISBN:0957-4174)
-<doi:10.1016/j.eswa.2023.120318>.")
+together with time-series power demand calculations.")
     (license license:gpl3)))
 
 (define-public r-evreg
@@ -24277,13 +24275,13 @@ blackbox models while remaining completely interpretable.")
 (define-public r-ebirdst
   (package
     (name "r-ebirdst")
-    (version "3.2022.3")
+    (version "3.2023.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebirdst" version))
        (sha256
-        (base32 "0d2qblxdm3sk6rsl155ik303pcphw2dp6li4chizc8anpxwf175r"))))
+        (base32 "03ayzhjhbqnk1klw30gav4ah7yr47h40b48r9vgglxvnyalcndbs"))))
     (properties `((upstream-name . "ebirdst")))
     (build-system r-build-system)
     (arguments

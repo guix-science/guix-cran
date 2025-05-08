@@ -15350,13 +15350,13 @@ tensors.")
 (define-public r-tinyvast
   (package
     (name "r-tinyvast")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyVAST" version))
        (sha256
-        (base32 "1xw1ca03j1z6c0dhpq01a1vs50rnvd7avy0hgk5ic94jsvf9dzpq"))))
+        (base32 "0ghsyvbn33vbcbqnwqk6q5lgg697wvq8sr58vp6xjnwmfchpwha0"))))
     (properties `((upstream-name . "tinyVAST")))
     (build-system r-build-system)
     (arguments
@@ -19162,13 +19162,13 @@ any other data frame.  The main function is @code{predict_gam()}.")
 (define-public r-tidyfst
   (package
     (name "r-tidyfst")
-    (version "1.8.1")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfst" version))
        (sha256
-        (base32 "0zwp4vbvgmd65fjjdpdyvhj9zzvdjmg7wkh4y5sdazbabj75088p"))))
+        (base32 "05f8nqfhq1wbgka2v86xxz3pnzqh6iyq5bgbw4j6i4xa2fnz4b5f"))))
     (properties `((upstream-name . "tidyfst")))
     (build-system r-build-system)
     (arguments
@@ -19230,13 +19230,13 @@ classification algorithms on grouped data.")
 (define-public r-tidyfinance
   (package
     (name "r-tidyfinance")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfinance" version))
        (sha256
-        (base32 "1ipny1zf02gqy23r0ac12f2cjay9n6myf76a9da7d8kghk68kvam"))))
+        (base32 "1b1yhmqg5dg9x458iva9s0riwg3cgqw8lfv99m4y3sd4k2gk19ns"))))
     (properties `((upstream-name . "tidyfinance")))
     (build-system r-build-system)
     (arguments
@@ -25028,13 +25028,13 @@ forecasts, as discussed in the paper by Jupp (2012)
 (define-public r-ternary
   (package
     (name "r-ternary")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ternary" version))
        (sha256
-        (base32 "1pzkz4k0qkqdalk4fxrrkwn025197qghqxvj84r68fhcipjqsv4a"))))
+        (base32 "09dqq44p5m4r981chz0z1w4spaag7dsvaq07xyqi2vkpkbm1kww2"))))
     (properties `((upstream-name . "Ternary")))
     (build-system r-build-system)
     (arguments

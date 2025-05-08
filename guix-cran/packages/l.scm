@@ -13,6 +13,7 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages web)
   #:use-module (gnu packages docker)
+  #:use-module (gnu packages cmake)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
   #:use-module (gnu packages linux)
@@ -12385,6 +12386,31 @@ for model selection, probability estimates (logistic regression only) or weights
 for unbalanced data.  The estimation of the models is particularly fast as
 compared to other libraries.")
     (license license:gpl2)))
+
+(define-public r-libdeflate
+  (package
+    (name "r-libdeflate")
+    (version "1.23.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "libdeflate" version))
+       (sha256
+        (base32 "14w2cmg2aqh132z8cm7h8dpcpx8mxz413a2x58g7si2pcf4iwgpl"))))
+    (properties `((upstream-name . "libdeflate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list cmake))
+    (home-page "https://cran.r-project.org/package=libdeflate")
+    (synopsis "DEFLATE Compression Static Library and Headers")
+    (description
+     "This package provides the libdeflate static library (see
+<https://github.com/ebiggers/libdeflate>) and C headers for whole-buffer
+DEFLATE-based compression and decompression, along with an R interface for
+compressing and decompressing raw vectors.")
+    (license license:expat)))
 
 (define-public r-libbib
   (package

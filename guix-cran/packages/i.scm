@@ -17,8 +17,8 @@
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages image)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages xorg)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -5930,13 +5930,13 @@ IP2Location to install the module.")
 (define-public r-ip
   (package
     (name "r-ip")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IP" version))
        (sha256
-        (base32 "111hhb0bj8z3ks7jddcbzhllvqvhzimrar8r1kh0vxbzgc5wrsyc"))))
+        (base32 "1fablbj94ppcmzixjqhfrkjxirmc6vvyl6dldni2jmyjvsixvbpv"))))
     (properties `((upstream-name . "IP")))
     (build-system r-build-system)
     (arguments
@@ -14459,43 +14459,6 @@ codes).  The function can return a complete image or a range of color (i.e.,
 contour, silhouette).  The data can then be manipulated as would any data set by
 either creating other related variables (to hide the image) or as a genuine toy
 data set.")
-    (license license:expat)))
-
-(define-public r-image-textlinedetector
-  (package
-    (name "r-image-textlinedetector")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "image.textlinedetector" version))
-       (sha256
-        (base32 "0cymn7swlrmqlkjs3cih8l53xqgjhiimnmlnagzzwd72ijikz1ll"))))
-    (properties `((upstream-name . "image.textlinedetector")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib))
-    (propagated-inputs (list r-rcpp r-magick))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/DIGI-VUB/image.textlinedetector")
-    (synopsis "Segment Images in Text Lines and Words")
-    (description
-     "Find text lines in scanned images and segment the lines into words.  Includes
-implementations of the paper Novel A* Path Planning Algorithm for Line
-Segmentation of Handwritten Documents by Surinta O. et al (2014)
-<doi:10.1109/ICFHR.2014.37> available at
-<https://github.com/smeucci/@code{LineSegm>}, an implementation of A Statistical
-approach to line segmentation in handwritten documents by Arivazhagan M. et al
-(2007) <doi:10.1117/12.704538>, and a wrapper for an image segmentation
-technique to detect words in text lines as described in the paper Scale Space
-Technique for Word Segmentation in Handwritten Documents by Manmatha R. and
-Srimal N. (1999) paper at <doi:10.1007/3-540-48236-9_3>, wrapper for code
-available at <https://github.com/arthurflor23/text-segmentation>.  Provides as
-well functionality to put cursive text in images upright using the approach
-defined in the paper A new normalization technique for cursive handwritten words
-by Vinciarelli A. and Luettin J. (2001) <doi:10.1016/S0167-8655(01)00042-3>.")
     (license license:expat)))
 
 (define-public r-image-otsu

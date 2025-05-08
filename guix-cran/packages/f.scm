@@ -7550,13 +7550,13 @@ functions to display the descriptive statistics.")
 (define-public r-forrel
   (package
     (name "r-forrel")
-    (version "1.7.1")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forrel" version))
        (sha256
-        (base32 "1yylf1zxqz6j7729w8085b7h6y6h3zibawgfgxd1pd20khzy9n4j"))))
+        (base32 "0i1114xw4np4sb3yw22pc8j1wcnyqvl1wgcgns1xccmh5pzvwkl5"))))
     (properties `((upstream-name . "forrel")))
     (build-system r-build-system)
     (arguments
@@ -10382,13 +10382,13 @@ functions.")
 (define-public r-fmpapi
   (package
     (name "r-fmpapi")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmpapi" version))
        (sha256
-        (base32 "0rwmvqv3zwdn409lkr9rsxgxw7yaky26wjd0w3sf0lzvqck064zc"))))
+        (base32 "06b03jh3yicdksln5bsw3pk6wilbryybfp2cq2k4f545qdfvlvdg"))))
     (properties `((upstream-name . "fmpapi")))
     (build-system r-build-system)
     (arguments
@@ -13051,13 +13051,13 @@ series of packages.")
 (define-public r-flashr
   (package
     (name "r-flashr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flashr" version))
        (sha256
-        (base32 "03a88rz64qqj048rvmczcycqqxqhgx770c1jl58iq558rxdiyzsj"))))
+        (base32 "05big2n95pzisa4nbqcpx2gqr2mmwkmqlwc2jyyzgh2lzxx8cqci"))))
     (properties `((upstream-name . "flashr")))
     (build-system r-build-system)
     (arguments

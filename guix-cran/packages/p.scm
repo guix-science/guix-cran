@@ -17788,13 +17788,13 @@ spatial modelling.")
 (define-public r-poolr
   (package
     (name "r-poolr")
-    (version "1.1-1")
+    (version "1.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poolr" version))
        (sha256
-        (base32 "1y8bish2s96b42xsld0x1nrjz9dzqhdr2w95vdpfymq7mg05d1ry"))))
+        (base32 "0a08vak598cq11a2zaazq7iyvk1k8vc45jxsl9cf6fq4k5d5w3la"))))
     (properties `((upstream-name . "poolr")))
     (build-system r-build-system)
     (arguments
@@ -20689,13 +20689,13 @@ principal orthogonal complements.")
 (define-public r-poems
   (package
     (name "r-poems")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poems" version))
        (sha256
-        (base32 "04szn1p9wqw0s5f1g5b6v67rkxqhgqmzj64264vh21cir7wqfqpd"))))
+        (base32 "11f4rnx5pr6fhc2s619230y6b2ra70hjajy90pv9p8iy1kr48fgx"))))
     (properties `((upstream-name . "poems")))
     (build-system r-build-system)
     (arguments
@@ -27466,13 +27466,13 @@ Pijavski method, which was published in Pijavski (1972)
 (define-public r-piir
   (package
     (name "r-piir")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piiR" version))
        (sha256
-        (base32 "16ayyva9xgsd64hyqf9kvp5dj0kygbg30mf60akc2jkfjpc1gh8y"))))
+        (base32 "0zn0bs418hxr33gfrmadd24270n32bixsrpi28k6sr20xgjcpyg5"))))
     (properties `((upstream-name . "piiR")))
     (build-system r-build-system)
     (arguments
@@ -35277,13 +35277,13 @@ and etc packages.")
 (define-public r-pedprobr
   (package
     (name "r-pedprobr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedprobr" version))
        (sha256
-        (base32 "062vyyly0pr1q0qfpa9s38zayxj3zmn17zzzvivm1rqix7kg7vwk"))))
+        (base32 "025jdflj1z2aahnqy5h8yrlwfrcbjbcd0gzf7l90cmvfsmixd4ck"))))
     (properties `((upstream-name . "pedprobr")))
     (build-system r-build-system)
     (arguments
@@ -45884,20 +45884,20 @@ diff file viewable in a browser.")
 (define-public r-pack
   (package
     (name "r-pack")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pack" version))
        (sha256
-        (base32 "0x4p8clwp49s2y67y7in530xwhjngnqwagf9xnyb1jp0z3myd3r7"))))
+        (base32 "0b3vfwp08f1hvdblkpz9pyxjxsbqy9gqhijjcniyczgpp6w5kfar"))))
     (properties `((upstream-name . "pack")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=pack")
-    (synopsis "Convert values to/from raw vectors")
+    (synopsis "Convert Values to/from Raw Vectors")
     (description
      "This package provides functions to easily convert data to binary formats other
 programs/machines can understand.")
