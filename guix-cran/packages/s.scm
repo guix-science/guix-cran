@@ -3342,13 +3342,13 @@ in a web browser.")
 (define-public r-svgtools
   (package
     (name "r-svgtools")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svgtools" version))
        (sha256
-        (base32 "0jp53x1nlclwsg5adyr1764car0z52rjq95ppijfkqi7yrbbi6ja"))))
+        (base32 "0f8xv3blr2ikc3c16r4jm8l7z1qawip0kvbpdl4iisfq1823pdgg"))))
     (properties `((upstream-name . "svgtools")))
     (build-system r-build-system)
     (arguments
@@ -53884,13 +53884,13 @@ package.")
 (define-public r-sgapi
   (package
     (name "r-sgapi")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgapi" version))
        (sha256
-        (base32 "0fzfssaivqldyvmv367aszdni76l9p1fn9fxkq09zi9qzpw4rzhn"))))
+        (base32 "1v7z5jf8ynvsjchs08v37j4ql11xk2dx0zqyccr2wzglrsvk5765"))))
     (properties `((upstream-name . "sgapi")))
     (build-system r-build-system)
     (arguments
@@ -54362,6 +54362,37 @@ error rate control and a functional local Bayes factor for post-GWAS analyses
 (e.g., fine mapping and colocalization).  The @code{sfFDR} framework is
 described in Bass and Wallace (2024) <doi:10.1101/2024.09.24.24314276>.")
     (license license:lgpl2.0+)))
+
+(define-public r-sfdesign
+  (package
+    (name "r-sfdesign")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SFDesign" version))
+       (sha256
+        (base32 "10h008rxivrcvyhqq9ipys8fcrv75182yqi7pnnpcqkm3x59bvq4"))))
+    (properties `((upstream-name . "SFDesign")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spacefillr
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-proxy
+                             r-primes
+                             r-nloptr
+                             r-gensa))
+    (home-page "https://cran.r-project.org/package=SFDesign")
+    (synopsis "Space-Filling Designs")
+    (description
+     "Construct various types of space-filling designs, including Latin hypercube
+designs, clustering-based designs, maximin designs, maximum projection designs,
+and uniform designs (Joseph 2016 <doi:10.1080/08982112.2015.1100447>).  It also
+offers the option to optimize designs based on user-defined criteria.")
+    (license license:gpl2+)))
 
 (define-public r-sfdep
   (package
@@ -57655,19 +57686,18 @@ measures analysis.")
 (define-public r-semnetdictionaries
   (package
     (name "r-semnetdictionaries")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SemNetDictionaries" version))
        (sha256
-        (base32 "1yhhva79hhj1imzw0n8wkyrb6pmxcqs7kq9czs392xzc6lqk9xr2"))))
+        (base32 "0dak0haf61cff656j526xqs7n97qapjllm2n75gz9d6l79ags7jg"))))
     (properties `((upstream-name . "SemNetDictionaries")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-knitr r-easycsv))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AlexChristensen/SemNetDictionaries")
     (synopsis "Dictionaries for the 'SemNetCleaner' Package")
@@ -57685,13 +57715,13 @@ package by submitting user-defined dictionaries to
 (define-public r-semnetcleaner
   (package
     (name "r-semnetcleaner")
-    (version "1.3.4")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SemNetCleaner" version))
        (sha256
-        (base32 "1fll6i4bz2z07h23z5m3x8hqw5rkianh0w6v8gnnkjqlrnacpfp9"))))
+        (base32 "1qwyf88zcmqqri7gnssp784wn1dm0h0mdpac79ap5y8dz2q6r49n"))))
     (properties `((upstream-name . "SemNetCleaner")))
     (build-system r-build-system)
     (arguments
@@ -57705,10 +57735,8 @@ package by submitting user-defined dictionaries to
                              r-rstudioapi
                              r-readxl
                              r-r-matlab
-                             r-miniui
-                             r-foreign
-                             r-editdata
-                             r-easycsv))
+                             r-pbapply
+                             r-foreign))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AlexChristensen/SemNetCleaner")
     (synopsis "An Automated Cleaning Tool for Semantic and Linguistic Data")
@@ -65804,13 +65832,13 @@ between colour spaces.")
 (define-public r-schematic
   (package
     (name "r-schematic")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "schematic" version))
        (sha256
-        (base32 "1p81lh09h39d4c4jrrxxyn9nzmj8spzx5gq7294lkwj2gjcyvwnf"))))
+        (base32 "1g5hgf3wi8n6zn766m76hfqfb7r9i18b6rqr63p8w7s44c934zmx"))))
     (properties `((upstream-name . "schematic")))
     (build-system r-build-system)
     (arguments
@@ -68368,13 +68396,13 @@ Sequential Analysis, 40(3), 291-313. <doi:10.1080/07474946.2021.1940491>.")
 (define-public r-savvyr
   (package
     (name "r-savvyr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "savvyr" version))
        (sha256
-        (base32 "08lrhb4nc0hcbqjdv1ar31l80gbfgxjivpc5k0farcldksybxjsg"))))
+        (base32 "1rp1jsrr1zz3xkb42lq0cmiqx75n3bix4glglqngpgac5p33i0g2"))))
     (properties `((upstream-name . "savvyr")))
     (build-system r-build-system)
     (arguments

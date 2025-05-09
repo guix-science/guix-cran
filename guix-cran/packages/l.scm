@@ -8286,13 +8286,13 @@ Caamal-Pat et.al. (2021) <doi:10.3389/fgene.2021.680569>.")
 (define-public r-lme4breeding
   (package
     (name "r-lme4breeding")
-    (version "1.0.60")
+    (version "1.0.62")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lme4breeding" version))
        (sha256
-        (base32 "135nfbcb97vfnmjfwrirwyc140xz7plvybb5b5jm2d6bvh1chjsx"))))
+        (base32 "1vv4sn7zzrpgg748m476vfvy3lkx6kml0pxfy6kjj9dsdpwvymq1"))))
     (properties `((upstream-name . "lme4breeding")))
     (build-system r-build-system)
     (arguments
@@ -12136,13 +12136,13 @@ forest maturity mapping (Fuhr et al. (2022) <doi:10.1002/rse2.274>).")
 (define-public r-licoread
   (package
     (name "r-licoread")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "licoread" version))
        (sha256
-        (base32 "0hr08ms09mc8bw89g63z7pw8zgkvdvbcy3rn2phkfwd7jibv122x"))))
+        (base32 "0js1r6xp4rjnnq6v0ahmy72s5mp4irndwmhyj8gvxh7r0z22wjdg"))))
     (properties `((upstream-name . "licoread")))
     (build-system r-build-system)
     (arguments
@@ -13586,13 +13586,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.4.2")
+    (version "4.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "05177isjn7i2srnv4lscpfym7j8h72y78c8ack4jkpb7w821znyj"))))
+        (base32 "12b74qwbc8pnxxy1hvp2wh4nl33za6hmj69g2m39vzdd7qgzniis"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (arguments
@@ -13603,6 +13603,7 @@ package is heavily inspired by the
                              r-shiny
                              r-robustbase
                              r-openxlsx
+                             r-mass
                              r-leaps
                              r-latticeextra
                              r-lattice

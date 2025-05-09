@@ -5869,13 +5869,13 @@ Stata commands (both inline and from a .do file) from R.")
 (define-public r-rstantva
   (package
     (name "r-rstantva")
-    (version "0.2.6")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RStanTVA" version))
        (sha256
-        (base32 "0pk366bza89mggg8zy0f3mjq2hfcc42v1p4hsv48pdg4adi7kkmc"))))
+        (base32 "1clk1m06sn8njw522k5b64spy2cdbnnpxcqmr11q2qh9x4sxdv65"))))
     (properties `((upstream-name . "RStanTVA")))
     (build-system r-build-system)
     (arguments
@@ -19284,13 +19284,13 @@ roles in networks.  It is a wrapper around the rgraph library (Guimera & Amaral,
 (define-public r-rnest
   (package
     (name "r-rnest")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rnest" version))
        (sha256
-        (base32 "16l6w0zm39ykmaiky3pg1i2q0rd7q7hc9wx0sviqgbsbxgncpz7w"))))
+        (base32 "0w74h0jb94rp63jcar8k0knv7ifhhq66w875dwfpld6ffaqisr7h"))))
     (properties `((upstream-name . "Rnest")))
     (build-system r-build-system)
     (arguments
@@ -19303,7 +19303,8 @@ roles in networks.  It is a wrapper around the rgraph library (Guimera & Amaral,
                              r-ggplot2
                              r-fungible
                              r-efa-mrfa
-                             r-crayon))
+                             r-crayon
+                             r-cli))
     (home-page "https://cran.r-project.org/package=Rnest")
     (synopsis "Next Eigenvalue Sufficiency Test")
     (description
@@ -23980,20 +23981,20 @@ information see <http://www.nzdl.org/Kea/>.")
 (define-public r-rkaggle
   (package
     (name "r-rkaggle")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RKaggle" version))
        (sha256
-        (base32 "143fkkabfhkdvv8f7pcfvhdd4rm9l77msxwsgpb8ilf6jp48a0s8"))))
+        (base32 "1pg6b4skivgffmky7fvdx488i6ffclwc1g282qm63cif77shxnp4"))))
     (properties `((upstream-name . "RKaggle")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-withr
-                             r-tibble
+                             r-sf
                              r-readxl
                              r-readr
                              r-readods
@@ -29774,13 +29775,13 @@ algorithm random forest.")
 (define-public r-rfvimptest
   (package
     (name "r-rfvimptest")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfvimptest" version))
        (sha256
-        (base32 "1c14591y4wpi5r7f6azzyac93h6klgk8jqfaszzp01krkb8z2cdy"))))
+        (base32 "039q95kg8sn88r9hksnl5g6lp4zqn3z5lzyn03pz1imfl6xw929g"))))
     (properties `((upstream-name . "rfvimptest")))
     (build-system r-build-system)
     (arguments
@@ -29792,12 +29793,16 @@ algorithm random forest.")
      "Sequential Permutation Testing of Random Forest Variable Importance Measures")
     (description
      "Sequential permutation testing for statistical significance of predictors in
-random forests.  The main function of the package is @code{rfvimptest()}, which
-allows to test for the statistical significance of predictors in random forests
-using different (sequential) permutation test strategies.  The advantage of
-sequential over conventional permutation tests is that they are computationally
-considerably less intensive, as the sequential procedure is stopped as soon as
-there is sufficient evidence for either the null or the alternative hypothesis.")
+random forests and other prediction methods.  The main function of the package
+is @code{rfvimptest()}, which allows to test for the statistical significance of
+predictors in random forests using different (sequential) permutation test
+strategies [1].  The advantage of sequential over conventional permutation tests
+is that they are computationally considerably less intensive, as the sequential
+procedure is stopped as soon as there is sufficient evidence for either the null
+or the alternative hypothesis.  Reference: [1] Hapfelmeier, A., Hornung, R. &
+Haller, B. (2023) Efficient permutation testing of variable importance measures
+by the example of random forests.  Computational Statistics & Data Analysis
+181:107689, <doi:10.1016/j.csda.2022.107689>.")
     (license license:gpl3)))
 
 (define-public r-rfvarimpoob
@@ -44999,13 +45004,13 @@ contributors to both @code{QuantLib} and Quantuccia'.")
 (define-public r-rcppplanc
   (package
     (name "r-rcppplanc")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppPlanc" version))
        (sha256
-        (base32 "0k1x0rx3wqwzm5ra1cyycwzwj1nwilpw890q7b88qg7p8kc9lmvc"))))
+        (base32 "05c60glb77yy2wqwd0rgqa3bilz1flr1wz5bfzrnhskidi0cjvfq"))))
     (properties `((upstream-name . "RcppPlanc")))
     (build-system r-build-system)
     (arguments
@@ -49987,13 +49992,13 @@ selection.")
 (define-public r-rbdat
   (package
     (name "r-rbdat")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rBDAT" version))
        (sha256
-        (base32 "02s91p6nvxbm3wflvs75aln3zw0g6535sxrmzkhywcc9k3x63926"))))
+        (base32 "1bwvq7iqfkcmlw7ckvnz29nz8s8dm5nvzdnd3h0ggzx9nq1l1983"))))
     (properties `((upstream-name . "rBDAT")))
     (build-system r-build-system)
     (arguments

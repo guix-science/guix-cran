@@ -34584,13 +34584,13 @@ Table 1').")
 (define-public r-metalite-sl
   (package
     (name "r-metalite-sl")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metalite.sl" version))
        (sha256
-        (base32 "0m7xdaglkz5xwgvxn03y8b88a21ba89zhiwsh40wxkd6mkkx30j4"))))
+        (base32 "1fvqrizg111kn3aw76ajrkd5d4wlpwnw0bbk3xd1p186v3vl0vi6"))))
     (properties `((upstream-name . "metalite.sl")))
     (build-system r-build-system)
     (arguments
@@ -34606,7 +34606,6 @@ Table 1').")
                              r-metalite
                              r-htmltools
                              r-glue
-                             r-forestly
                              r-brew))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=metalite.sl")
@@ -49691,13 +49690,13 @@ vignette in this package and
 (define-public r-mams
   (package
     (name "r-mams")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAMS" version))
        (sha256
-        (base32 "1w55vysw5n1wapaz0x3zyyzlyn7l1764d32b09p45yzfv2wdwr6v"))))
+        (base32 "0nvgivv627rzk69pnfa9cwlilmgpg0202kg8rcfiaqdkvc6sgq18"))))
     (properties `((upstream-name . "MAMS")))
     (build-system r-build-system)
     (arguments

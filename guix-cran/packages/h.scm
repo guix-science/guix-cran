@@ -9736,19 +9736,19 @@ generate and take coefficient modulo are provided.")
 (define-public r-hetgp
   (package
     (name "r-hetgp")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hetGP" version))
        (sha256
-        (base32 "0h4lhy3ifmdh51f91a5i5cw85mhzszcijrafg1andhkm4fsps5m8"))))
+        (base32 "1qpp7w0zjvgr1r5rdviy776qs55jynrnpmlk36vqb72x507gc08z"))))
     (properties `((upstream-name . "hetGP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-mass r-dicedesign))
+    (propagated-inputs (list r-rcpp r-quadprog r-mco r-mass r-dicedesign))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hetGP")
     (synopsis

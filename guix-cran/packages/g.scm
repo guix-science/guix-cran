@@ -13740,59 +13740,6 @@ a way compatible with both Latex and HTML outputs.")
 Definitions can be provided inline or in a separate file.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
-(define-public r-glossa
-  (package
-    (name "r-glossa")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "glossa" version))
-       (sha256
-        (base32 "17b9iir51a9vavd3bpg3448wpcmb9ib2kcf08qa29f68xy8fglgz"))))
-    (properties `((upstream-name . "glossa")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zip
-                             r-waiter
-                             r-tidyterra
-                             r-terra
-                             r-svglite
-                             r-sparkline
-                             r-shinywidgets
-                             r-shiny
-                             r-sf
-                             r-proc
-                             r-mcp
-                             r-markdown
-                             r-leaflet
-                             r-jsonlite
-                             r-htmltools
-                             r-ggplot2
-                             r-geothinner
-                             r-dt
-                             r-dplyr
-                             r-dbarts
-                             r-bs4dash))
-    (home-page "https://github.com/iMARES-group/glossa")
-    (synopsis
-     "User-Friendly 'shiny' App for Bayesian Species Distribution Models")
-    (description
-     "This package provides a user-friendly shiny application for Bayesian machine
-learning analysis of marine species distributions.  GLOSSA (Global Species
-Spatiotemporal Analysis) uses Bayesian Additive Regression Trees (BART; Chipman,
-George, and @code{McCulloch} (2010) <doi:10.1214/09-AOAS285>) to model species
-distributions with intuitive workflows for data upload, processing, model
-fitting, and result visualization.  It supports presence-absence and
-presence-only data (with pseudo-absence generation), spatial thinning,
-cross-validation, and scenario-based projections.  GLOSSA is designed to
-facilitate ecological research by providing easy-to-use tools for analyzing and
-visualizing marine species distributions across different spatial and temporal
-scales.")
-    (license license:gpl3)))
-
 (define-public r-glogis
   (package
     (name "r-glogis")
@@ -21131,27 +21078,26 @@ themes.")
 (define-public r-gglasso
   (package
     (name "r-gglasso")
-    (version "1.5.1")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gglasso" version))
        (sha256
-        (base32 "1gasfhwp74akmqk8c534iyag61r9jznalcjcpgvacnmbnf2irrif"))))
+        (base32 "1v1vbnyrc9wbphrwc2xhbf5adv6rh0qmsz4j0idgr5n6a5jysysn"))))
     (properties `((upstream-name . "gglasso")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://github.com/emeryyi/gglasso")
+    (native-inputs (list gfortran))
+    (home-page "https://github.com/archer-yang-lab/gglasso")
     (synopsis "Group Lasso Penalized Learning Using a Unified BMD Algorithm")
     (description
      "This package provides a unified algorithm, blockwise-majorization-descent (BMD),
 for efficiently computing the solution paths of the group-lasso penalized least
 squares, logistic regression, Huberized SVM and squared SVM. The package is an
-implementation of Yang, Y. and Zou, H. (2015) DOI:
-<doi:10.1007/s11222-014-9498-5>.")
+implementation of Yang, Y. and Zou, H. (2015) <doi:10.1007/s11222-014-9498-5>.")
     (license license:gpl2)))
 
 (define-public r-ggisotonic
@@ -31829,6 +31775,36 @@ be used in the generalized dynamic principal components as well as the number of
 components required for a given reconstruction accuracy.")
     (license license:gpl2+)))
 
+(define-public r-gdm
+  (package
+    (name "r-gdm")
+    (version "1.6.0-7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gdm" version))
+       (sha256
+        (base32 "0axr8y4lxg1hbi71sih54r9fbdycd1gz4dkb8nf5cgkrdhjkpkj7"))))
+    (properties `((upstream-name . "gdm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-reshape2
+                             r-rcpp
+                             r-pbapply
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://mfitzpatrick.al.umces.edu/gdm/")
+    (synopsis "Generalized Dissimilarity Modeling")
+    (description
+     "This package provides a toolkit with functions to fit, plot, summarize, and
+apply Generalized Dissimilarity Models.  Mokany K, Ware C, Woolley SNC, Ferrier
+S, Fitzpatrick MC (2022) <doi:10.1111/geb.13459> Ferrier S, Manion G, Elith J,
+Richardson K (2007) <doi:10.1111/j.1472-4642.2007.00341.x>.")
+    (license license:gpl3+)))
+
 (define-public r-gdldata
   (package
     (name "r-gdldata")
@@ -34653,13 +34629,13 @@ calculation of density values.  These tasks are executed using package
 (define-public r-gamstransfer
   (package
     (name "r-gamstransfer")
-    (version "3.0.4")
+    (version "3.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamstransfer" version))
        (sha256
-        (base32 "1xfrykgfd0xw1z2fs1ay1d7wq87ak78qrfgw8vsxf0lg8lvmjqpp"))))
+        (base32 "0virpysnxv1mgwp1ancyba5l9587sdjd0awfdab89y545dalkczj"))))
     (properties `((upstream-name . "gamstransfer")))
     (build-system r-build-system)
     (arguments

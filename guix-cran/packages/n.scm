@@ -12062,13 +12062,13 @@ MDS, PCA, & eigenmodel network plotting.")
 (define-public r-networktoolbox
   (package
     (name "r-networktoolbox")
-    (version "1.4.2")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetworkToolbox" version))
        (sha256
-        (base32 "026gizms1xsmlpzgssgqi2y5lfhvvbqkwy5q3a0d4xvzbmyan3y7"))))
+        (base32 "1iycnx8hp6jhpl2nb411l2n60havz0xqbanmqalp9kk9j8p4d4vl"))))
     (properties `((upstream-name . "NetworkToolbox")))
     (build-system r-build-system)
     (arguments

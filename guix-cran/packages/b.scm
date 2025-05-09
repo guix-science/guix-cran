@@ -605,13 +605,13 @@ Equivalence Bound: A New Procedure of Hypothesis Testing\"
 (define-public r-buysetest
   (package
     (name "r-buysetest")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BuyseTest" version))
        (sha256
-        (base32 "0m5zab49acq50di0mlnh643vy9z4dr08vxbrhzmmmlyf0hnfkx5p"))))
+        (base32 "1ij7ahjhs24zhy9y5k8bv12w6k0gdm1rr4aq2g3fqxxdi7yshk0f"))))
     (properties `((upstream-name . "BuyseTest")))
     (build-system r-build-system)
     (arguments

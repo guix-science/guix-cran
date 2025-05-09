@@ -4582,13 +4582,13 @@ variable selection for generalized linear models.")
 (define-public r-optrf
   (package
     (name "r-optrf")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optRF" version))
        (sha256
-        (base32 "19lszrk7i722lj23s7kcgjv276hwf3v10var913fzavvcj7iliba"))))
+        (base32 "1qh5cf7m6hwzdz28w3av5yy0r7kap8gaxwraawjh2zmhxk5lwdab"))))
     (properties `((upstream-name . "optRF")))
     (build-system r-build-system)
     (arguments
@@ -7899,19 +7899,19 @@ of bio-medical data.")
 (define-public r-opcreg
   (package
     (name "r-opcreg")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPCreg" version))
        (sha256
-        (base32 "08792h6zzp27s061c3y3mhh32sbh71izn3arfjsdfnxyd15qglfa"))))
+        (base32 "1ny2rh7gq5c5irj5x82kzirazg1xzb8qidskfbmcifw0x14bak86"))))
     (properties `((upstream-name . "OPCreg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix r-mass r-car))
+    (propagated-inputs (list r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=OPCreg")
     (synopsis "Online Principal Component Regression for Online Datasets")
     (description

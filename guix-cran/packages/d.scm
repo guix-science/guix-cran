@@ -750,13 +750,13 @@ and derivatives.")
 (define-public r-dynconfir
   (package
     (name "r-dynconfir")
-    (version "0.0.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynConfiR" version))
        (sha256
-        (base32 "1ql8c712g7jx0j1aw7qrfsp81abiajigzvwwlq6v96ar5ag5jrgy"))))
+        (base32 "01bnkk9h6nf2xwjq5905swx9xhkbl11ga4drvmbbghb5py8x4y4c"))))
     (properties `((upstream-name . "dynConfiR")))
     (build-system r-build-system)
     (arguments
@@ -2148,13 +2148,13 @@ writing, and performing some geometric operations.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckplyr" version))
        (sha256
-        (base32 "1bnnzfavccj4ilvkjkrkb1xyqd13miakwm3gg71c9zn1a1crva38"))))
+        (base32 "1cl8snkm87wf3xm989h4bwv8skjljblhi66ry16h9r1gbfrvngny"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
     (arguments
@@ -17669,33 +17669,6 @@ frame with many numeric columns and a factor column.")
 libphonenumber java library, <https://github.com/google/libphonenumber>.")
     (license license:gpl3+)))
 
-(define-public r-diallelanalysisr
-  (package
-    (name "r-diallelanalysisr")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DiallelAnalysisR" version))
-       (sha256
-        (base32 "042i84pxm3gy59r94m0pk7gb04kxl9l8w43b9h7g70dyxi6hf89x"))))
-    (properties `((upstream-name . "DiallelAnalysisR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
-    (home-page "https://cran.r-project.org/package=DiallelAnalysisR")
-    (synopsis "Diallel Analysis with R")
-    (description
-     "This package performs Diallel Analysis with R using Griffing's and Hayman's
-approaches.  Four different Methods (1: Method-I (Parents + F1's + reciprocals);
-2: Method-II (Parents and one set of F1's); 3: Method-III (One set of F1's and
-reciprocals); 4: Method-IV (One set of F1's only)) and two Models (1: Fixed
-Effects Model; 2: Random Effects Model) can be applied using Griffing's
-approach.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-diagrammersvg
   (package
     (name "r-diagrammersvg")
@@ -26512,13 +26485,13 @@ of Approximation based on the M2 statistic.")
 (define-public r-dclusterm
   (package
     (name "r-dclusterm")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DClusterm" version))
        (sha256
-        (base32 "04i9fyph2k3ffds0nv49371p8lw6dkzcf27pc98f99x0l6c8k5iq"))))
+        (base32 "19018yw64nf6mwmlfzz9srvar3b8kc0galhqw98gw8mvqazx0lvi"))))
     (properties `((upstream-name . "DClusterm")))
     (build-system r-build-system)
     (arguments

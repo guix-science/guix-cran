@@ -14930,13 +14930,13 @@ easily performed.")
 (define-public r-emp
   (package
     (name "r-emp")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMP" version))
        (sha256
-        (base32 "0piagbxk8siagmvzqv2bh12g1y0hy3c0vkxpddlmp7gm3i304rpi"))))
+        (base32 "0dxcvxgf471h0npir6nywr4122wcfq6jjkjgyk88jdgxd346hvbl"))))
     (properties `((upstream-name . "EMP")))
     (build-system r-build-system)
     (arguments

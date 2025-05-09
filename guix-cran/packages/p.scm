@@ -17919,13 +17919,13 @@ the package also includes utilities to manipulate standard allele count data
 (define-public r-pooledpeaks
   (package
     (name "r-pooledpeaks")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pooledpeaks" version))
        (sha256
-        (base32 "1wbhrnhzhc5dw2ydr8w5lhiwnf43z7p9r3y2kqhdyz2hisq9zyir"))))
+        (base32 "0ilihx94gqcl96plmi5migyyrh58vh89rcsbfrsxlihvbmqzy0v5"))))
     (properties `((upstream-name . "pooledpeaks")))
     (build-system r-build-system)
     (arguments
@@ -25582,13 +25582,13 @@ analytical equations is also supported (Abuhelwa et al. (2015)
 (define-public r-pknca
   (package
     (name "r-pknca")
-    (version "0.11.0")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PKNCA" version))
        (sha256
-        (base32 "1az62z5w9fydzbhzdlr0h1wzwby144vc7z0w907q3i43v3ziilb0"))))
+        (base32 "0zrickq6vhjv0cb71a8w73d3104fkg26jhknzym3kgmyyqjgpbpx"))))
     (properties `((upstream-name . "PKNCA")))
     (build-system r-build-system)
     (arguments
@@ -27627,13 +27627,13 @@ more.")
 (define-public r-piecepackr
   (package
     (name "r-piecepackr")
-    (version "1.14.1")
+    (version "1.15.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piecepackr" version))
        (sha256
-        (base32 "1bw3xy17braf7952v2120bbl1x09cdbwxpqiph2phga82crk48q0"))))
+        (base32 "1af7cb1zxxl5brfvnjd37xgf2hk88y9lpvxq2nfm4256yn63a3fp"))))
     (properties `((upstream-name . "piecepackr")))
     (build-system r-build-system)
     (arguments
@@ -40862,6 +40862,48 @@ as well as others such as vector fields, traps, and attractors.")
 the package contains two classes: the Particle and the Particle Swarm, this two
 class is used to run the PSO with methods to easily print, plot and save the
 result.")
+    (license license:gpl3)))
+
+(define-public r-partialnetwork
+  (package
+    (name "r-partialnetwork")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PartialNetwork" version))
+       (sha256
+        (base32 "09z8vyg8k9q90aq7x0dmizhqx4kfb7ml10c7hrf84arq7zf1fv0w"))))
+    (properties `((upstream-name . "PartialNetwork")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppprogress
+                             r-rcppnumerical
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-formula-tools
+                             r-formula
+                             r-foreach
+                             r-dorng
+                             r-doparallel
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ahoundetoungan/PartialNetwork")
+    (synopsis "Estimating Peer Effects Using Partial Network Data")
+    (description
+     "This package implements IV-estimator and Bayesian estimator for linear-in-means
+Spatial Autoregressive (SAR) model (see @code{LeSage}, 1997
+<doi:10.1177/016001769702000107>; Lee, 2004
+<doi:10.1111/j.1468-0262.2004.00558.x>; BramoullÃ© et al., 2009
+<doi:10.1016/j.jeconom.2008.12.021>), while assuming that only a partial
+information about the network structure is available.  Examples are when the
+adjacency matrix is not fully observed or when only consistent estimation of the
+network formation model is available (see Boucher and Houndetoungan
+<https://ahoundetoungan.com/files/Papers/@code{PartialNetwork.pdf>}).")
     (license license:gpl3)))
 
 (define-public r-partiallyoverlapping

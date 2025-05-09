@@ -7928,13 +7928,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew" version))
        (sha256
-        (base32 "0ayyi5z8pvqg73z937d3gs4sm238s4flyllq2v3jg170gbhc8wpd"))))
+        (base32 "03ygyvwh418mp0vx98vdavyr6xdwi9qcb7pyj56xxba06cymdgch"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (arguments
@@ -24791,13 +24791,13 @@ profiles.")
 (define-public r-cohortconstructor
   (package
     (name "r-cohortconstructor")
-    (version "0.3.5")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortConstructor" version))
        (sha256
-        (base32 "0m89xy7gnkm0d6mrw3ys9bfxw1pb42mf4pq8nlfankvgkk9i26b7"))))
+        (base32 "198wnnirm7iwls0k0m4sbnsll473fraggn6wrxh366z1c7hk3dy7"))))
     (properties `((upstream-name . "CohortConstructor")))
     (build-system r-build-system)
     (arguments

@@ -2148,13 +2148,13 @@ either be used offline, or hosted on a server to provide online access to the
 (define-public r-isoplotr
   (package
     (name "r-isoplotr")
-    (version "6.5")
+    (version "6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotR" version))
        (sha256
-        (base32 "13hw8vgh0w5vi9chsj1xbc7ra8q4xgvi5zpqrwwdv8wng9j1rdm7"))))
+        (base32 "04kjxdnvj28gbq5lxlhnbf7hsl9sd1vg7k8d38imc22qd59255ym"))))
     (properties `((upstream-name . "IsoplotR")))
     (build-system r-build-system)
     (arguments
@@ -14041,25 +14041,26 @@ images.")
 (define-public r-imbalancedatrel
   (package
     (name "r-imbalancedatrel")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imbalanceDatRel" version))
        (sha256
-        (base32 "017z434pshsc2v8w1nlrvlf6dswdjk060flrn951n59vdzvl5rhj"))))
+        (base32 "1cbg8x12ca57x393l1vggrzszc805a70ngdj4chwrx9i13gn822s"))))
     (properties `((upstream-name . "imbalanceDatRel")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-smotewb r-rfast r-rcccd r-rann))
-    (home-page "https://cran.r-project.org/package=imbalanceDatRel")
+    (home-page "https://doi.org/10.1007/s10994-025-06755-8")
     (synopsis "Relocated Data Oversampling for Imbalanced Data Classification")
     (description
      "Relocates oversampled data from a specific oversampling method to cover area
 determined by pure and proper class cover catch digraphs (PCCCD).  It prevents
-any data to be generated in class overlapping area.")
+any data to be generated in class overlapping area.  For more details, see the
+corresponding publication: F. SaÄlam (2025) <doi:10.1007/s10994-025-06755-8>.")
     (license license:expat)))
 
 (define-public r-imbalance
@@ -17423,13 +17424,13 @@ range of reporting materials.")
 (define-public r-ideanet
   (package
     (name "r-ideanet")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ideanet" version))
        (sha256
-        (base32 "0p1gkz1qhplw3zh41951azlbspma7g0xfl2jaa5rm0a1f36bc2m9"))))
+        (base32 "1vyzqqvc7nfh9db1gq4hk8bk57l266gb7r81bq41x941xzlfcf5l"))))
     (properties `((upstream-name . "ideanet")))
     (build-system r-build-system)
     (arguments
@@ -17443,6 +17444,7 @@ range of reporting materials.")
                              r-shiny
                              r-rspectra
                              r-rlang
+                             r-reshape2
                              r-readxl
                              r-network
                              r-moments
@@ -17451,8 +17453,10 @@ range of reporting materials.")
                              r-linkcomm
                              r-jsonlite
                              r-intergraph
+                             r-igraphdata
                              r-igraph
                              r-gridgraphics
+                             r-ggthemes
                              r-ggplot2
                              r-forcats
                              r-dplyr
@@ -19381,13 +19385,13 @@ by the icd package for finding comorbidities.")
 (define-public r-icctraj
   (package
     (name "r-icctraj")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iccTraj" version))
        (sha256
-        (base32 "0chac68jsxnmy0whm7ajnlv68xdplwzy5xa7pdybyp3zlxyj35ss"))))
+        (base32 "14cfhr7xqia54n0fir4j1dypgv8k0ijjnymwpwr52zdrl6sjyxcm"))))
     (properties `((upstream-name . "iccTraj")))
     (build-system r-build-system)
     (arguments
@@ -19397,10 +19401,12 @@ by the icd package for finding comorbidities.")
                              r-spacetime
                              r-sp
                              r-purrr
+                             r-progressr
+                             r-parallelly
                              r-magic
-                             r-foreach
-                             r-dplyr
-                             r-doparallel))
+                             r-future
+                             r-furrr
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=iccTraj")
     (synopsis
      "Estimates the Intraclass Correlation Coefficient for Trajectory Data")

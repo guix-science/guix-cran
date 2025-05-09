@@ -6911,13 +6911,13 @@ with a set tolerance.")
 (define-public r-fpcdpca
   (package
     (name "r-fpcdpca")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FPCdpca" version))
        (sha256
-        (base32 "1zmpq0jcjj4xm52lvh38f51597bz8ap3j021cbpj9r4kynpa14xz"))))
+        (base32 "1dhkng7k9122cmxfrwgpix2wg856q4hviscf4551q1lia9b998h8"))))
     (properties `((upstream-name . "FPCdpca")))
     (build-system r-build-system)
     (arguments
@@ -19079,13 +19079,13 @@ data.")
 (define-public r-featureextraction
   (package
     (name "r-featureextraction")
-    (version "3.9.0")
+    (version "3.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FeatureExtraction" version))
        (sha256
-        (base32 "1p42z4gwqd7hcc1c8cp0xvgywfrqazsnxx46nbzsgsgjb6vib686"))))
+        (base32 "0sv6b00h8l13wa5g397z8m04kab9d1xq9rwk8zwclr0vsq1abpm2"))))
     (properties `((upstream-name . "FeatureExtraction")))
     (build-system r-build-system)
     (arguments
@@ -23973,13 +23973,13 @@ regressions, see Lederer & Vogt (2021, JMLR)
 (define-public r-fars
   (package
     (name "r-fars")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FARS" version))
        (sha256
-        (base32 "0bghvfilk877igl1i59nzxmbmlns7jqpfdil685165j21wrv9nps"))))
+        (base32 "13wbbq34zcmscchwbvrzzimhdxi4w9cbwmsrfyp21wfshcxvapy8"))))
     (properties `((upstream-name . "FARS")))
     (build-system r-build-system)
     (arguments
