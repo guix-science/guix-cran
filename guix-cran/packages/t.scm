@@ -5448,6 +5448,32 @@ of the objective function is sparse (i.e., relatively few nonzero cross-partial
 derivatives).  See Braun, M. (2014) <doi:10.18637/jss.v060.i04>.")
     (license (license:fsdg-compatible "MPL (>= 2.0)"))))
 
+(define-public r-trustmebro
+  (package
+    (name "r-trustmebro")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trustmebro" version))
+       (sha256
+        (base32 "1014fjz7kfp39zklggd8c2czmx1312bwxhvlcffcvb9l5dgabalq"))))
+    (properties `((upstream-name . "trustmebro")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://kuuuwe.github.io/trustmebro/")
+    (synopsis "Inspect and Clean Subject-Generated ID Codes and Related Data")
+    (description
+     "Makes data wrangling with ID-related aspects more comfortable.  Provides
+functions that make it easy to inspect various subject-generated ID codes (SGIC)
+for plausibility.  Also helps with inspecting other common identifiers, ensuring
+that your data stays clean and reliable.")
+    (license license:expat)))
+
 (define-public r-trustedtimestamping
   (package
     (name "r-trustedtimestamping")
@@ -10074,13 +10100,13 @@ in Kook et al. (2023, <doi:10.1080/01621459.2024.2395588>).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.2-1")
+    (version "1.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "13arfam905zbpx40npfwx19yblqravd5rsmwl9md8m5df7qbaqbv"))))
+        (base32 "0ibp7l1vpjlbvp2wphh99y290kby8dhqcqrvq280plrvcg3r4wvy"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (arguments
@@ -15092,19 +15118,19 @@ NicolÃ² and Gardini (2024 <doi:10.18637/jss.v108.i01>).")
 (define-public r-tips
   (package
     (name "r-tips")
-    (version "1.2.3")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TiPS" version))
        (sha256
-        (base32 "061lyai1kjm5glm69wxpnqvgp1xzj8j893pa73x5fl228dqm526f"))))
+        (base32 "1b9avn5xm091g64g8ns5ldckrbjgf0wm5qfd4jc5akvz7rcbzd2h"))))
     (properties `((upstream-name . "TiPS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-rcpp r-inline r-gtools))
+    (propagated-inputs (list r-stringr r-rcpp r-inline r-gtools r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.in2p3.fr/ete/tips/")
     (synopsis "Trajectories and Phylogenies Simulator")
@@ -26292,13 +26318,13 @@ knowledge) to data visualization, including data preprocessing.")
 (define-public r-telp
   (package
     (name "r-telp")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TELP" version))
        (sha256
-        (base32 "0abdbhp898lgv7jmgg82vzdx6ibyi053xw8b3p3kx49yfbiyynny"))))
+        (base32 "06nny8cgbs68hin3jliwpvrxrn2yf5mcw2hwwja8qwfxgl6vhjl9"))))
     (properties `((upstream-name . "TELP")))
     (build-system r-build-system)
     (arguments
@@ -28737,6 +28763,34 @@ stratigraphic ranges\".  Quantitative Methods in Paleobiology, 291--316.
 death, which requires the existence of a substitution variable.  It can be
 applied to both experimental and observational data.")
     (license license:gpl2+)))
+
+(define-public r-tba
+  (package
+    (name "r-tba")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TBA" version))
+       (sha256
+        (base32 "0g20wb25h92wx2rk270wyvy0014b92wx2yndrgz56ra85xbwmrib"))))
+    (properties `((upstream-name . "TBA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinybusy r-shiny r-reshape2 r-readxl r-ggplot2))
+    (home-page "https://cran.r-project.org/package=TBA")
+    (synopsis "Collection of 'shiny' Apps for Tree Breeding Analysis")
+    (description
+     "This package provides a collection of interactive shiny applications for
+performing comprehensive analyses in the field of tree breeding and genetics.
+The package is designed to assist users in visualizing and interpreting
+experimental data through a user-friendly interface.  Each application is
+launched via a simple function, and users can upload data in Excel format for
+analysis.  For more information, refer to Singh, R.K. and Chaudhary, B.D. (1977,
+ISBN:9788176633079).")
+    (license license:gpl3)))
 
 (define-public r-taylorswift
   (package

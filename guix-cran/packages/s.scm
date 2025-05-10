@@ -2843,6 +2843,38 @@ Variance inflation factors and condition indexes are also computed for some
 general linear models as described in Liao (U. Maryland thesis, 2010).")
     (license license:gpl3)))
 
+(define-public r-svycoxme
+  (package
+    (name "r-svycoxme")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "svycoxme" version))
+       (sha256
+        (base32 "1nm5mmbh15arjxqi1asxfvd8k6smhrg9h9k67nh6wfbxq0q6x31v"))))
+    (properties `((upstream-name . "svycoxme")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-survey
+                             r-rcpp
+                             r-parallelly
+                             r-matrix
+                             r-lme4
+                             r-future
+                             r-coxme))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bdrayton/svycoxme")
+    (synopsis "Mixed-Effects Cox Models for Complex Samples")
+    (description
+     "Mixed-effect proportional hazards models for multistage stratified,
+cluster-sampled, unequally weighted survey samples.  Provides variance
+estimation by Taylor series linearisation or replicate weights.")
+    (license license:gpl3+)))
+
 (define-public r-svycdiff
   (package
     (name "r-svycdiff")
@@ -23820,20 +23852,20 @@ files.")
 (define-public r-spider
   (package
     (name "r-spider")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spider" version))
        (sha256
-        (base32 "1y034v42jxjl3vj87iz5kaizq7fwppmn56z7yyvrrmk5ps4nqr1j"))))
+        (base32 "13c8axrkdqrc52v7wwxmam5j3hlrpxal6yfrpk56mhk85fy6fb1a"))))
     (properties `((upstream-name . "spider")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-pegas r-ape))
-    (home-page "https://cran.r-project.org/package=spider")
+    (home-page "https://github.com/boopsboops/spider")
     (synopsis "Species Identity and Evolution in R")
     (description
      "Analysis of species limits and DNA barcoding data.  Included are functions for
@@ -24170,13 +24202,13 @@ G., & Xie, Y. (2020) <doi:10.1016/j.jspi.2020.07.001>.")
 (define-public r-sphereml
   (package
     (name "r-sphereml")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sphereML" version))
        (sha256
-        (base32 "1v7gqg8izl9sfx34z1zbipxng96gsz9rg7ck3plmcsn6bmywkg7z"))))
+        (base32 "1j2zwv6kna7y1z2mcmc0c41vz9v1bn2mvj0dppq2y243mqw10nqd"))))
     (properties `((upstream-name . "sphereML")))
     (build-system r-build-system)
     (arguments
@@ -24220,13 +24252,13 @@ are also demonstrated.")
 (define-public r-spheredata
   (package
     (name "r-spheredata")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spheredata" version))
        (sha256
-        (base32 "1j7jrvgkdvbs98afa28bj7hk1ynrbsc6v9l9scy5w121prika8a7"))))
+        (base32 "181442aw460xm8yx47jnxccdxn1yh5992nwf6yyvlk7nlgws468b"))))
     (properties `((upstream-name . "spheredata")))
     (build-system r-build-system)
     (arguments
@@ -58703,6 +58735,36 @@ the semaphore.")
      "Style sheets and @code{JavaScript} assets for shiny.semantic package.")
     (license license:lgpl3)))
 
+(define-public r-selindrix
+  (package
+    (name "r-selindrix")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "seliNDRIx" version))
+       (sha256
+        (base32 "1qdj91yi5q72827wpixgaqj8nsy0ra5nk9ajd7k5nb2xv3bmbyyk"))))
+    (properties `((upstream-name . "seliNDRIx")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-psych r-dplyr))
+    (home-page "https://github.com/venkatesanraja/seliNDRIx")
+    (synopsis "Construction of Selection Index")
+    (description
+     "Selection index is one of the efficient and acurrate method for selection of
+animals.  This package is useful for construction of selection indices.  It uses
+mixed and random model least squares analysis to estimate the heritability of
+traits and genetic correlation between traits.  The package uses the sire model
+as it is considered as random effect.  The genetic and phenotypic (co)variances
+along with the relative economic values are used to construct the selection
+index for any number of traits.  It also estimates the accuracy of the index and
+the genetic gain expected for different traits.  Fisher (1936)
+<doi:10.1111/j.1469-1809.1936.tb02137.x>.")
+    (license license:expat)))
+
 (define-public r-selfingtree
   (package
     (name "r-selfingtree")
@@ -62015,13 +62077,13 @@ MARSPEC <http://www.marspec.org/>.")
 (define-public r-sdmodels
   (package
     (name "r-sdmodels")
-    (version "1.0.7")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SDModels" version))
        (sha256
-        (base32 "0x0f94iqvn3mvf6j3ibgnrvcjknwp0spim0wmzykxm5m1cfcv9h6"))))
+        (base32 "199vswwbrwi330r932ngf59jdy2f5s8310w1f358vflfgxmaxmfm"))))
     (properties `((upstream-name . "SDModels")))
     (build-system r-build-system)
     (arguments
@@ -71978,6 +72040,34 @@ contingency table tests.")
      "This package provides a consistent interface to encrypt and decrypt strings, R
 objects and files using symmetric and asymmetric key encryption.")
     (license license:gpl3)))
+
+(define-public r-safepg
+  (package
+    (name "r-safepg")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SAFEPG" version))
+       (sha256
+        (base32 "0w3p13fzzfkphzxiyxyd8qhz9p7pa2hlxybnkws361ir6gxi0ax8"))))
+    (properties `((upstream-name . "SAFEPG")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://cran.r-project.org/package=SAFEPG")
+    (synopsis "Novel SAFE Model for Predicting Climate-Related Extreme Losses")
+    (description
+     "The goal of SAFEPG is to predict climate-related extreme losses by fitting a
+frequency-severity model.  It improves predictive performance by introducing a
+sign-aligned regularization term, which ensures consistent signs for the
+coefficients across the frequency and severity components.  This enhancement not
+only increases model accuracy but also enhances its interpretability, making it
+more suitable for practical applications in risk assessment.")
+    (license license:gpl2)))
 
 (define-public r-safejoin
   (package

@@ -15782,13 +15782,13 @@ allows for plotting of results and interactive 3D visualization functionality.")
 (define-public r-rocket
   (package
     (name "r-rocket")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROCket" version))
        (sha256
-        (base32 "1p5b1408fdq8z64b7ihwcdxprg5rfiq4z5annxzvmizzr6qwn8qa"))))
+        (base32 "1c5kyv716afanpcqavj51zhjvx9bjjbxwzhd104hj34gcvhqcy2d"))))
     (properties `((upstream-name . "ROCket")))
     (build-system r-build-system)
     (arguments
@@ -15807,8 +15807,7 @@ false positive rate (FPR) are functions of a parameter (the score), 2) functions
 - TPR is a function of FPR. There are several ROC curve estimation methods
 available.  An introduction to the mathematical background of the implemented
 methods (and much more) can be found in de Zea Bermudez, GonÃ§alves, Oliveira &
-Subtil (2014) <https://www.ine.pt/revstat/pdf/rs140101.pdf> and Cai & Pepe
-(2004) <doi:10.1111/j.0006-341X.2004.00200.x>.")
+Subtil (2014) and Cai & Pepe (2004).")
     (license license:gpl3)))
 
 (define-public r-rocker
@@ -29017,25 +29016,24 @@ data for respondents aged 3 years and above.")
 (define-public r-rgff
   (package
     (name "r-rgff")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rgff" version))
        (sha256
-        (base32 "1prcjnr4zvp8ksrnzrvz7zmwbsximhg3aifa1wsz6h9aa3pcl2gl"))))
+        (base32 "1d97jg0wz75yygsxam33fg4c7pmybwwqcak6607jx9fbmzb0lxs0"))))
     (properties `((upstream-name . "Rgff")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-withr
-                             r-tidyr
                              r-tibble
                              r-stringi
                              r-rlang
-                             r-rjsonio
                              r-magrittr
+                             r-jsonlite
                              r-dplyr
                              r-data-tree))
     (native-inputs (list r-knitr))
@@ -37026,13 +37024,13 @@ visual inference on diagnostics from model fits.")
 (define-public r-regress
   (package
     (name "r-regress")
-    (version "1.3-21")
+    (version "1.3-22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regress" version))
        (sha256
-        (base32 "0mkf1dyg0r09ifdvmc3g6b0q0h819j0kfh1cb33r1vsr8yfjvgbz"))))
+        (base32 "0b22h610k75w9xsal3bdbbzd6x093pp457dzrvx80w363chfk2yw"))))
     (properties `((upstream-name . "regress")))
     (build-system r-build-system)
     (arguments
@@ -55572,13 +55570,13 @@ analysis.")
 (define-public r-radviz
   (package
     (name "r-radviz")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Radviz" version))
        (sha256
-        (base32 "0ayrkax1g7x9jvkl8lni08ydm1lhcwpcbvy1xj9zk3bpd5zpll86"))))
+        (base32 "06mv7y4gi6h1k986blzngrvgnp375p3f5gdj4vgphxq2qg83a8wk"))))
     (properties `((upstream-name . "Radviz")))
     (build-system r-build-system)
     (arguments
@@ -55600,12 +55598,11 @@ analysis.")
 multidimensional data while maintaining the relation to the original dimensions.
  This package provides functions to create and plot radviz projections, and a
 number of summary plots that enable comparison and analysis.  For reference see
-Ankerst *et al.* (1996)
-(<https://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.68.1811>) for original
-implementation, see Di Caro *et al* (2012)
-(<https://link.springer.com/chapter/10.1007/978-3-642-13672-6_13>) for the
-original method for dimensional anchor arrangements, see Demsar *et al.* (2007)
-(<doi:10.1016/j.jbi.2007.03.010>) for the original Freeviz implementation.")
+Hoffman *et al.* (1999) (<doi:10.1145/331770.331775>) for original
+implementation, see Di Caro *et al* (2012) (<doi:10.1007/978-3-642-13672-6_13>),
+for the original method for dimensional anchor arrangements, see Demsar *et al.*
+(2007) (<doi:10.1016/j.jbi.2007.03.010>) for the original Freeviz
+implementation.")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
 (define-public r-radstackshelpr
@@ -56053,13 +56050,13 @@ thereof.")
 (define-public r-radero
   (package
     (name "r-radero")
-    (version "1.0.5")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RadEro" version))
        (sha256
-        (base32 "1gpmhqw0rpipvzgadwh20l4sfhz86vjy1vnh9x02l67q5phsvc5n"))))
+        (base32 "06g8v2blixk84qz88y4whg0qhcbp9cnpikdsbdg93jpm52l1mb0l"))))
     (properties `((upstream-name . "RadEro")))
     (build-system r-build-system)
     (arguments

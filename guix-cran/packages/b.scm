@@ -1247,13 +1247,13 @@ the supply chain.  Marchena Marlene (2010) <@code{arXiv:1009.3977>}.")
 (define-public r-bullseye
   (package
     (name "r-bullseye")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bullseye" version))
        (sha256
-        (base32 "0dscd8v1i3rxa0b01brc2vr5gfp2k3j9mv1clmi0cizkhbd4anbi"))))
+        (base32 "0cjccsf08hahpf7z9vxv7kqrfm59vi44b5hd2qlfvi7fsqby7ycf"))))
     (properties `((upstream-name . "bullseye")))
     (build-system r-build-system)
     (arguments
@@ -1267,6 +1267,7 @@ the supply chain.  Marchena Marlene (2010) <@code{arXiv:1009.3977>}.")
                              r-ggiraph
                              r-dplyr
                              r-dendser
+                             r-colorspace
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://cbhurley.github.io/bullseye/")
@@ -29636,13 +29637,13 @@ sources such as @code{OpenStreetMap}', Carto', Mapbox and others in R.")
 (define-public r-basefun
   (package
     (name "r-basefun")
-    (version "1.2-2")
+    (version "1.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basefun" version))
        (sha256
-        (base32 "136yl6mznl1qh8pcfyhzrlnh5bns5wkpkizjf11y5bla4lrbkn4q"))))
+        (base32 "1vs2134a85anjkymngd7idp4y8i8limak2gci0739v4jxj8532g0"))))
     (properties `((upstream-name . "basefun")))
     (build-system r-build-system)
     (arguments

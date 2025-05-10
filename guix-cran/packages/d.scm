@@ -3011,6 +3011,40 @@ new distribution for count data analysis.  The DTGIW is discrete distribution
 based on Atchanut and Sirinapa (2021). <DOI: 10.14456/sjst-psu.2021.149>.")
     (license license:gpl3)))
 
+(define-public r-dtebop2
+  (package
+    (name "r-dtebop2")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DTEBOP2" version))
+       (sha256
+        (base32 "1pwgi407awzpw7fs9zq3ps58358yxb2kcldhwwrx33wxm056wh30"))))
+    (properties `((upstream-name . "DTEBOP2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncdist r-invgamma r-foreach r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DTEBOP2")
+    (synopsis
+     "Bayesian Optimal Phase II Randomized Clinical Trial Design with Delayed Outcomes")
+    (description
+     "This package implements a Bayesian Optimal Phase II design (DTE-BOP2) for trials
+with delayed treatment effects, particularly relevant to immunotherapy studies
+where treatment benefits may emerge after a delay.  The method builds upon the
+BOP2 framework and incorporates uncertainty in the delay timepoint through a
+truncated gamma prior, informed by expert knowledge or default settings.
+Supports two-arm trial designs with functionality for sample size determination,
+interim and final analyses, and comprehensive simulation under various delay and
+design scenarios.  Ensures rigorous type I and II error control while improving
+trial efficiency and power when the delay effect is present.  A manuscript
+describing the methodology is under development and will be formally referenced
+upon publication.")
+    (license license:gpl3)))
+
 (define-public r-dtda-ni
   (package
     (name "r-dtda-ni")
@@ -7584,13 +7618,13 @@ you to visualize all your data with graphic representation.")
 (define-public r-douconca
   (package
     (name "r-douconca")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "douconca" version))
        (sha256
-        (base32 "0p6qmj6bhq6ggpkv59nzgx3sv4gscq6ln2l05lj1f0zskpg9skqq"))))
+        (base32 "00q9xkfmmdy4l1vywyqm0y8rjnqxzrhbsnfj8hdrcwskqy92kdfn"))))
     (properties `((upstream-name . "douconca")))
     (build-system r-build-system)
     (arguments
@@ -7623,7 +7657,8 @@ the advantage that the multivariate analysis corresponds with an unweighted
 step of the algorithm uses @code{vegan::cca()}.  The second step uses
 @code{wrda()} but @code{vegan::rda()} if the site weights are equal.  This
 version has a @code{predict()} function.  For details see ter Braak et al.  2018
-<doi:10.1007/s10651-017-0395-x>.")
+<doi:10.1007/s10651-017-0395-x>.  and ter Braak & van Rossum 2025
+<doi:10.1016/j.ecoinf.2025.103143>.")
     (license license:gpl3)))
 
 (define-public r-doubt
@@ -9355,6 +9390,35 @@ images identical to the originals; otherwise, @code{LibreOffice} is used and the
 rendering can be sometimes different from the original documents.")
     (license license:expat)))
 
+(define-public r-dockviewr
+  (package
+    (name "r-dockviewr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dockViewR" version))
+       (sha256
+        (base32 "0nysqnvx1hhsipahkbmbammqlc83qjnwvc52sxhpa4yyj291d2a8"))))
+    (properties `((upstream-name . "dockViewR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-htmlwidgets r-htmltools))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/cynkra/dockViewR")
+    (synopsis "Layout Manager Widget for R and 'shiny' Apps")
+    (description
+     "This package provides R bindings to the dockview @code{JavaScript} library
+<https://dockview.dev/>.  Create fully customizable grid layouts (docks) in
+seconds to include in interactive R reports with R Markdown or Quarto or in
+shiny apps <https://shiny.posit.co/>.  In shiny mode, modify docks by
+dynamically adding, removing or moving panels or groups of panels from the
+server function.  Choose among 8 stunning themes (dark and light), serialise the
+state of a dock to restore it later.")
+    (license license:expat)))
+
 (define-public r-docknitr
   (package
     (name "r-docknitr")
@@ -9957,13 +10021,13 @@ DNAmixtures package.  For details on implementation and methodology see
 (define-public r-dnafractal
   (package
     (name "r-dnafractal")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dnafractal" version))
        (sha256
-        (base32 "1q9lh7fj83xx85cwvca6b99vmgd6vafinrhxa444nz2hkf76cjix"))))
+        (base32 "11vkf7yimajpi59dp0s68nh2l0i75gfpff4ply4ryl5k1idxwddv"))))
     (properties `((upstream-name . "dnafractal")))
     (build-system r-build-system)
     (arguments
@@ -16783,6 +16847,41 @@ and calculates electivity indices in R. Borstein (2020)
 <doi:10.1007/s10750-020-04417-5>.")
     (license license:gpl2+)))
 
+(define-public r-dietcost
+  (package
+    (name "r-dietcost")
+    (version "1.0.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DIETCOST" version))
+       (sha256
+        (base32 "0191yb56g3lkjz887msv8ls9da4npm729yh6v83kbcq3gp2d5f83"))))
+    (properties `((upstream-name . "DIETCOST")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xlsx
+                             r-tidyselect
+                             r-rlang
+                             r-readxl
+                             r-magrittr
+                             r-dplyr))
+    (home-page "https://github.com/hbracarense/dietcost")
+    (synopsis "Calculate the Cost and Environmental Impact of a Ideal Diet")
+    (description
+     "Easily perform a Monte Carlo simulation to evaluate the cost and carbon,
+ecological, and water footprints of a set of ideal diets.  Pre-processing tools
+are also available to quickly treat the data, along with basic statistical
+features to analyze the simulation results â including the ability to
+establish confidence intervals for selected parameters, such as nutrients and
+price/emissions.  A standard version of the datasets employed is included as
+well, allowing users easy access to customization.  This package brings to R the
+Python software initially developed by Vandevijvere, Young, Mackay, Swinburn and
+Gahegan (2018) <doi:10.1186/s12966-018-0648-6>.")
+    (license license:expat)))
+
 (define-public r-diemr
   (package
     (name "r-diemr")
@@ -17668,6 +17767,33 @@ frame with many numeric columns and a factor column.")
      "Parse, format, and validate international phone numbers using Google's
 libphonenumber java library, <https://github.com/google/libphonenumber>.")
     (license license:gpl3+)))
+
+(define-public r-diallelanalysisr
+  (package
+    (name "r-diallelanalysisr")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DiallelAnalysisR" version))
+       (sha256
+        (base32 "042i84pxm3gy59r94m0pk7gb04kxl9l8w43b9h7g70dyxi6hf89x"))))
+    (properties `((upstream-name . "DiallelAnalysisR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cran.r-project.org/package=DiallelAnalysisR")
+    (synopsis "Diallel Analysis with R")
+    (description
+     "This package performs Diallel Analysis with R using Griffing's and Hayman's
+approaches.  Four different Methods (1: Method-I (Parents + F1's + reciprocals);
+2: Method-II (Parents and one set of F1's); 3: Method-III (One set of F1's and
+reciprocals); 4: Method-IV (One set of F1's only)) and two Models (1: Fixed
+Effects Model; 2: Random Effects Model) can be applied using Griffing's
+approach.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-diagrammersvg
   (package
@@ -27941,6 +28067,31 @@ computes daysâ supply and daily dose at both the prescription and patient
 levels.  Results at the prescription level are denoted with â-Rx-â and those
 at patient level are denoted with â-Pt-â.")
     (license license:gpl3+)))
+
+(define-public r-days2lessons
+  (package
+    (name "r-days2lessons")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "days2lessons" version))
+       (sha256
+        (base32 "1msfpxgxic25r8n0n9kl00waryp57p8py57fsqd84v63x4q0wlyv"))))
+    (properties `((upstream-name . "days2lessons")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-purrr r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=days2lessons")
+    (synopsis "Distributes Teachers Lessons On Days in a Balanced Manner")
+    (description
+     "The set of teacher/class lessons is completed with a column that allocates a day
+to each lesson, so that the distribution of lessons by day, by class, and by
+teacher is as uniform as possible. <https://vlad.bazon.net/>.")
+    (license license:expat)))
 
 (define-public r-daymetr
   (package

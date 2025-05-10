@@ -18165,13 +18165,13 @@ graph.  Finds total order consistent with partial order or directed graph
 (define-public r-poobly
   (package
     (name "r-poobly")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poobly" version))
        (sha256
-        (base32 "1rjl9p7wgd1b84zj85z9b25b507ivdkhc3c0l9diyz1y5vb0nrn7"))))
+        (base32 "0w03v7vmics8mr230dnw74limjczdkhd950jc9jhxacsyfqqijnj"))))
     (properties `((upstream-name . "poobly")))
     (build-system r-build-system)
     (arguments
@@ -18287,13 +18287,13 @@ ISBN:3540262393).")
 (define-public r-pomp
   (package
     (name "r-pomp")
-    (version "6.2")
+    (version "6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomp" version))
        (sha256
-        (base32 "1hizjbfhk3kfalj1nf4gp78316z9q2rjihbyxnjyg1cjgd4z1l29"))))
+        (base32 "1rnk0iyxcpi6fyp5wjq801amvhc0q03qiczh415r5118m4v2nvxc"))))
     (properties `((upstream-name . "pomp")))
     (build-system r-build-system)
     (arguments
@@ -25979,6 +25979,34 @@ have to give a Uniform Resource Locator (URL) for each file.  File integrity
 checks are supported.  This is useful for package authors who need to ship more
 than the 5 Megabyte of data currently allowed by the the Comprehensive R Archive
 Network (CRAN).")
+    (license license:expat)))
+
+(define-public r-pkgdown-offline
+  (package
+    (name "r-pkgdown-offline")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pkgdown.offline" version))
+       (sha256
+        (base32 "02f3n02nnibf56gsdp9whdbbxc1gy12jzl2jvwc3npd47znpm74f"))))
+    (properties `((upstream-name . "pkgdown.offline")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pkgdown))
+    (native-inputs (list r-knitr))
+    (home-page "https://nanx.me/pkgdown.offline/")
+    (synopsis "Build 'pkgdown' Websites Offline")
+    (description
+     "This package provides support for building pkgdown websites without an internet
+connection.  Works by bundling cached dependencies and implementing drop-in
+replacements for key pkgdown functions.  Enables package documentation websites
+to be built in environments where internet access is unavailable or restricted.
+For more details on generating pkgdown websites, see Wickham et al. (2025)
+<doi:10.32614/CRAN.package.pkgdown>.")
     (license license:expat)))
 
 (define-public r-pkgdiff
@@ -42867,13 +42895,13 @@ generalized linear model extension thereof using GEE.")
 (define-public r-panelpomp
   (package
     (name "r-panelpomp")
-    (version "1.6.0.0")
+    (version "1.7.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "panelPomp" version))
        (sha256
-        (base32 "1c590gr7aiwcndz2c0n0plic5cspcp1k4ydla6m2hn58dyraijdp"))))
+        (base32 "1yyi5af0vbwnbb8ybc51wdx8mxyjpgg6s7c2fz6xj59jbqg74rn4"))))
     (properties `((upstream-name . "panelPomp")))
     (build-system r-build-system)
     (arguments

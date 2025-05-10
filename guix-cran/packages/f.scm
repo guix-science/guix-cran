@@ -8669,43 +8669,6 @@ in 2012 by adopting the idea of moment matching optimization related by Hoyland
 and Wallace (2001) <doi: 10.1287/mnsc.47.2.295.9834>.")
     (license license:gpl3+)))
 
-(define-public r-forestdata
-  (package
-    (name "r-forestdata")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "forestdata" version))
-       (sha256
-        (base32 "0bjj129jlls5iwamf5nfq1p1hq1950zfw3jrmzxk0azgh5g3jv8p"))))
-    (properties `((upstream-name . "forestdata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-terra
-                             r-stringr
-                             r-stringi
-                             r-sf
-                             r-purrr
-                             r-lifecycle
-                             r-glue
-                             r-foreign
-                             r-dplyr
-                             r-cli
-                             r-archive))
-    (home-page "https://cidree.github.io/forestdata/")
-    (synopsis "Download Forestry Data")
-    (description
-     "This package provides functions for downloading forestry and land use data for
-use in spatial analysis.  This packages offers a user-friendly solution to
-quickly obtain datasets such as forest height, forest types, tree species under
-various climate change scenarios, or land use data among others.")
-    (license license:gpl3+)))
-
 (define-public r-forestcontrol
   (package
     (name "r-forestcontrol")
@@ -8878,6 +8841,32 @@ evidence is available.  With a focus on optimizing statistical power,
 @code{forensIT} empowers investigators to effectively prioritize family members,
 enhancing the reliability and efficiency of missing person investigations.")
     (license license:gpl3+)))
+
+(define-public r-forensim
+  (package
+    (name "r-forensim")
+    (version "4.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forensim" version))
+       (sha256
+        (base32 "1frslck0vyhgl4qwl5dqwd4mp9dyn2r4560603a78qv030jywnr3"))))
+    (properties `((upstream-name . "forensim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tkrplot r-tcltk2))
+    (home-page "https://cran.r-project.org/package=forensim")
+    (synopsis "Interpretation of Forensic DNA Mixtures")
+    (description
+     "Statistical methods and simulation tools for the interpretation of forensic DNA
+mixtures.  The methods implemented are described in Haned et al. (2011)
+<doi:10.1111/j.1556-4029.2010.01550.x>, Haned et al. (2012)
+<doi:10.1016/j.fsigen.2012.11.002> and Gill & Haned (2013)
+<doi:10.1016/j.fsigen.2012.08.008>.")
+    (license license:gpl2+)))
 
 (define-public r-forensicpopdata
   (package
@@ -10609,42 +10598,6 @@ other types of functions.")
      "This package provides functions for performing (external) multidimensional
 unfolding.  Restrictions (fixed coordinates or model restrictions) are available
 for both row and column coordinates in all combinations.")
-    (license license:bsd-2)))
-
-(define-public r-fmds
-  (package
-    (name "r-fmds")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fmds" version))
-       (sha256
-        (base32 "0clbd9jn86dc6vcp9yik801aqbpbk99a31hlx6hilawisv9sidr6"))))
-    (properties `((upstream-name . "fmds")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=fmds")
-    (synopsis "Multidimensional Scaling Development Kit")
-    (description
-     "Multidimensional scaling (MDS) functions for various tasks that are beyond the
-beta stage and way past the alpha stage.  Currently, options are available for
-weights, restrictions, classical scaling or principal coordinate analysis,
-transformations (linear, power, Box-Cox, spline, ordinal), outlier mitigation
-(rdop), out-of-sample estimation (predict), negative dissimilarities, fast and
-faster executions with low memory footprints, penalized restrictions,
-cross-validation-based penalty selection, supplementary variable estimation
-(explain), additive constant estimation, mixed measurement level distance
-calculation, restricted classical scaling, etc.  More will come in the future.
-References.  Busing (2024) \"A Simple Population Size Estimator for Local Minima
-Applied to Multidimensional Scaling\".  Manuscript submitted for publication.
-Busing (2025) \"Node Localization by Multidimensional Scaling with Iterative
-Majorization\".  Manuscript submitted for publication.  Busing (2025) \"Faster
-Multidimensional Scaling\".  Manuscript in preparation.  Barroso and Busing
-(2025) \"e-RDOP, Relative Density-Based Outlier Probabilities, Extended to
-Proximity Mapping\".  Manuscript submitted for publication.")
     (license license:bsd-2)))
 
 (define-public r-fmcmc

@@ -11583,13 +11583,13 @@ with various link functions.  Michael Arthur Stephens (1976)
 (define-public r-gofcopula
   (package
     (name "r-gofcopula")
-    (version "0.4-1")
+    (version "0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gofCopula" version))
        (sha256
-        (base32 "17bdrn8xsqjz64caa5wdigkv798i18gc2f9jiin1bz840bqn1abg"))))
+        (base32 "14blfca1liihx3rjskjxv3wa0sczsj2di2vimb05j5g44yc8hwi3"))))
     (properties `((upstream-name . "gofCopula")))
     (build-system r-build-system)
     (arguments
@@ -18497,13 +18497,13 @@ and hexplots of survey data.")
 (define-public r-ggsurveillance
   (package
     (name "r-ggsurveillance")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsurveillance" version))
        (sha256
-        (base32 "1nlj04x9nnvz45acdbkn0mns8y61wwakla8l5d4gagzax6fa9h53"))))
+        (base32 "1pwph4bhnz3ch68fzrn510044swnyp7prx0m5g9ap87i754ag53x"))))
     (properties `((upstream-name . "ggsurveillance")))
     (build-system r-build-system)
     (arguments
@@ -21051,6 +21051,37 @@ using the Grammar of Graphics.  Provides functionality for both individual
 diagnostic plots and an array of four standard diagnostic plots.")
     (license license:cc0)))
 
+(define-public r-gglinedensity
+  (package
+    (name "r-gglinedensity")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gglinedensity" version))
+       (sha256
+        (base32 "15x0cm36kdwd2b2nvn71vfrvqm6s0693df1c9733j059636azban"))))
+    (properties `((upstream-name . "gglinedensity")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-vctrs
+                             r-scales
+                             r-rlang
+                             r-lifecycle
+                             r-ggplot2
+                             r-cli))
+    (home-page "https://github.com/hrryt/gglinedensity")
+    (synopsis "Make DenseLines Heatmaps with 'ggplot2'")
+    (description
+     "Create a raster plot of line density using a ggplot2 statistic implementing the
+@code{DenseLines} algorithm, which \"normalizes time series by the arc length to
+compute accurate densities\" (Moritz and Fisher, 2018)
+<doi:10.48550/@code{arXiv.1808.06019>}.")
+    (license license:gpl3+)))
+
 (define-public r-gglgbtq
   (package
     (name "r-gglgbtq")
@@ -21126,13 +21157,13 @@ regression curves.")
 (define-public r-ggirread
   (package
     (name "r-ggirread")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIRread" version))
        (sha256
-        (base32 "05cq7wcxvnfxv3a7yyp7kas4rd9r2dxvl57gd7g2xazgb1zn6lrm"))))
+        (base32 "1mnbnqyp7m8zqxhkaiymr0xib7ikn9ycgxr45xzzc9rrjw4pibva"))))
     (properties `((upstream-name . "GGIRread")))
     (build-system r-build-system)
     (arguments
@@ -26338,13 +26369,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "00hg1a4zl2kls4cc2vajxwxh4v5rb5nb9h4cp7lsxa9h6g3wx66x"))))
+        (base32 "0n6mxmj4rincjpwddrvlglvm1ldaa8jhvb8v0ajskhijhbx09xkg"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (arguments

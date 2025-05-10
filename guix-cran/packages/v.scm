@@ -2180,6 +2180,41 @@ et al. (2009) \"A Heuristic for Nonlinear Global Optimization\"
 <doi:10.1287/ijoc.1090.0343>.")
     (license license:gpl3)))
 
+(define-public r-vmsae
+  (package
+    (name "r-vmsae")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vmsae" version))
+       (sha256
+        (base32 "17rv6xvhdkglyldk69kva84fk2fs99qvmv5r5m0vyw623mc3cd2s"))))
+    (properties `((upstream-name . "vmsae")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-sf
+                             r-rlang
+                             r-reticulate
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/zhenhua-wang/vmsae")
+    (synopsis "Variational Multivariate Spatial Small Area Estimation")
+    (description
+     "Variational Autoencoded Multivariate Spatial Fay-Herriot models are designed to
+efficiently estimate population parameters in small area estimation.  This
+package implements the variational generalized multivariate spatial Fay-Herriot
+model (VGMSFH) using @code{NumPyro} and @code{PyTorch} backends, as demonstrated
+by Wang, Parker, and Holan (2025) <doi:10.48550/@code{arXiv.2503.14710>}.  The
+vmsae package provides utility functions to load weights of the pretrained
+variational autoencoders (VAEs) as well as tools to train custom VAEs tailored
+to users specific applications.")
+    (license license:expat)))
+
 (define-public r-vmr
   (package
     (name "r-vmr")
@@ -8316,13 +8351,13 @@ REIMHERR (2016) <DOI:10.1214/16-AOAS912>.")
 (define-public r-variables
   (package
     (name "r-variables")
-    (version "1.1-1")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "variables" version))
        (sha256
-        (base32 "13hji43m9nb7rpc8p4bz1qva5jhxwdk16mcprvhb5pxp78w7clyf"))))
+        (base32 "0a7c6ndx155f5v2jj4fy1baji1mb0d6in21rjdj82hzgkrg47bkp"))))
     (properties `((upstream-name . "variables")))
     (build-system r-build-system)
     (arguments

@@ -8840,32 +8840,38 @@ For more details visit <https://docs.nixtla.io/>.")
 (define-public r-nixmass
   (package
     (name "r-nixmass")
-    (version "1.0.2")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nixmass" version))
        (sha256
-        (base32 "0g8hm0mnbwahbnk44rfciiggxn5bscfni5gqc6y3za496cf9wlk1"))))
+        (base32 "1bl7b4whqwrpp8y2arvksb5w2ysd9xq9w6ki5qbbf24gqylyxlqx"))))
     (properties `((upstream-name . "nixmass")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo r-lubridate))
-    (home-page "https://cran.r-project.org/package=nixmass")
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr
+                             r-colorspace))
+    (home-page "https://haraldschellander.github.io/nixmass/")
     (synopsis
-     "Snow Water Equivalent Modeling with the 'Delta.snow' Model and Empirical Regression Models")
+     "Snow Water Equivalent Modeling with the 'Delta.snow' and 'HS2SWE' Models and Empirical Regression Models")
     (description
-     "Snow water equivalent is modeled with the process based delta.snow model and
-empirical regression models using relationships between density and diverse
-at-site parameters.  The methods are described in Winkler et al. (2021)
-<doi:10.5194/hess-25-1165-2021>, Guyennon et al. (2019)
+     "Snow water equivalent is modeled with the process based models delta.snow and
+HS2SWE and empirical regression, which use relationships between density and
+diverse at-site parameters.  The methods are described in Winkler et al. (2021)
+<doi:10.5194/hess-25-1165-2021>, Magnusson et al. (2025)
+<doi:10.1016/j.coldregions.2025.104435>, Guyennon et al. (2019)
 <doi:10.1016/j.coldregions.2019.102859>, Pistocchi (2016)
 <doi:10.1016/j.ejrh.2016.03.004>, Jonas et al. (2009)
 <doi:10.1016/j.jhydrol.2009.09.021> and Sturm et al. (2010)
 <doi:10.1175/2010JHM1202.1>.")
-    (license (list license:gpl2 license:gpl3))))
+    (license license:gpl3)))
 
 (define-public r-nivm
   (package
@@ -12110,13 +12116,13 @@ network analysis.")
 (define-public r-networksem
   (package
     (name "r-networksem")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "networksem" version))
        (sha256
-        (base32 "08ggqr7aswx7qw8zwy5miblisvjxmj9k6r0kbw2ji7wzyrnrd4fl"))))
+        (base32 "0q13hgiz3fag05znnlymqbfwkxx74vzl7x7d803vf3nxzqj7xdbi"))))
     (properties `((upstream-name . "networksem")))
     (build-system r-build-system)
     (arguments
@@ -17223,24 +17229,24 @@ from @code{DriverAverages.com}.")
 (define-public r-nasaweather
   (package
     (name "r-nasaweather")
-    (version "0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nasaweather" version))
        (sha256
-        (base32 "05pqrsf2vmkzc7l4jvvqbi8wf9f46854y73q2gilag62s85vm9xb"))))
+        (base32 "13x5rr7ny7n4m5sddy32z5ky2gvppi4g64lqfrwqr4knbaanrgw6"))))
     (properties `((upstream-name . "nasaweather")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "http://github.com/hadley/nasaweather")
-    (synopsis "Collection of datasets from the ASA 2006 data expo")
+    (home-page "https://github.com/hadley/nasaweather")
+    (synopsis "Collection of Datasets from the ASA 2006 Data Expo")
     (description
-     "This package contains tidied data from the ASA 2006 data expo, as well as a
-number of useful other related data sets.")
-    (license license:gpl3)))
+     "Tidied data from the ASA 2006 data expo, as well as a number of useful other
+related data sets.")
+    (license license:expat)))
 
 (define-public r-nasapower
   (package

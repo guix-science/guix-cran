@@ -5589,6 +5589,36 @@ To cite the package in publications, use Hankin 2022
 <doi:10.48550/@code{arXiv.2212.09230>}.")
     (license license:gpl2+)))
 
+(define-public r-wex
+  (package
+    (name "r-wex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wex" version))
+       (sha256
+        (base32 "1mrif8czhcrb58mda6c2332q464sdggx742ddksgzzm38n8pjg4x"))))
+    (properties `((upstream-name . "wex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fkf))
+    (home-page "https://github.com/timginker/wex")
+    (synopsis
+     "Compute the Exact Observation Weights for the Kalman Filter and Smoother")
+    (description
+     "Computes the exact observation weights for the Kalman filter and smoother, based
+on the method described in Koopman and Harvey (2003)
+<www.sciencedirect.com/science/article/pii/S0165188902000611>.  The package
+supports in-depth exploration of state-space models, enabling researchers and
+practitioners to extract meaningful insights from time series data.  This
+functionality is especially valuable in dynamic factor models, where the
+computed weights can be used to decompose the contributions of individual
+variables to the latent factors.  See the README file for examples.")
+    (license license:expat)))
+
 (define-public r-wevid
   (package
     (name "r-wevid")

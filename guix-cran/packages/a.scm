@@ -10149,6 +10149,40 @@ feature selection and feed-forward neural networks, taking advantage of newly
 published sequences with experimental, in vitro, evidence of amyloid formation.")
     (license license:gpl3)))
 
+(define-public r-applypolygenicscore
+  (package
+    (name "r-applypolygenicscore")
+    (version "3.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ApplyPolygenicScore" version))
+       (sha256
+        (base32 "12cjmnaqlvfsdrwp37jyiabmvq71i2l8i4x9sxzn6j5prcgig3hx"))))
+    (properties `((upstream-name . "ApplyPolygenicScore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vcfr
+                             r-reshape2
+                             r-proc
+                             r-lattice
+                             r-data-table
+                             r-boutroslab-plotting-general))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ApplyPolygenicScore")
+    (synopsis "Utilities for the Application of a Polygenic Score to a VCF")
+    (description
+     "Simple and transparent parsing of genotype/dosage data from an input Variant
+Call Format (VCF) file, matching of genotype coordinates to the component Single
+Nucleotide Polymorphisms (SNPs) of an existing polygenic score (PGS), and
+application of SNP weights to dosages for the calculation of a polygenic score
+for each individual in accordance with the additive weighted sum of dosages
+model.  Methods are designed in reference to best practices described by
+Collister, Liu, and Clifton (2022) <doi:10.3389/fgene.2022.818574>.")
+    (license license:gpl2)))
+
 (define-public r-appliedpredictivemodeling
   (package
     (name "r-appliedpredictivemodeling")
@@ -10352,13 +10386,13 @@ field.")
 (define-public r-apoderoides
   (package
     (name "r-apoderoides")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Apoderoides" version))
        (sha256
-        (base32 "1hlcps0zf9ymcrfac7jhrnqzd0qihxfw363qj8zmjj3q6aa3v2k9"))))
+        (base32 "0cvkqjd736qvrfsg3yaf829dql1fdr94rkgjhqj0pnc076372g6j"))))
     (properties `((upstream-name . "Apoderoides")))
     (build-system r-build-system)
     (arguments

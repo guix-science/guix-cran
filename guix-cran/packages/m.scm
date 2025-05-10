@@ -863,6 +863,42 @@ Pienaar, P. Mostad, S. Andersson, T. F. Hansen (2012)
     (license (list license:gpl2+
                    (license:fsdg-compatible "file LICENCE")))))
 
+(define-public r-mvskmod
+  (package
+    (name "r-mvskmod")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MVSKmod" version))
+       (sha256
+        (base32 "1h6wrgzi2nf5n6fs07asklm5gab159dfsygz1q1h0cbfhm35mvrm"))))
+    (properties `((upstream-name . "MVSKmod")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncnorm
+                             r-pracma
+                             r-maxlik
+                             r-matlib
+                             r-distributionutils
+                             r-clustergeneration
+                             r-bessel))
+    (home-page "https://github.com/soonsk-vcu/MVSKmod")
+    (synopsis "Matrix-Variate Skew Linear Regression Models")
+    (description
+     "An implementation of the alternating expectation conditional maximization (AECM)
+algorithm for matrix-variate variance gamma (MVVG) and normal-inverse Gaussian
+(MVNIG) linear models.  These models are designed for settings of multivariate
+analysis with clustered non-uniform observations and correlated responses.  The
+package includes fitting and prediction functions for both models, and an
+example dataset from a periodontal on Gullah-speaking African Americans, with
+responses in gaad_res, and covariates in gaad_cov.  For more details on the
+matrix-variate distributions used, see Gallaugher & @code{McNicholas} (2019)
+<doi:10.1016/j.spl.2018.08.012>.")
+    (license license:expat)))
+
 (define-public r-mvshapirotest
   (package
     (name "r-mvshapirotest")
@@ -11181,13 +11217,13 @@ Gerber, Schmid and Furrer (2021) <DOI:10.1016/j.spasta.2020.100483>.")
 (define-public r-mrbin
   (package
     (name "r-mrbin")
-    (version "1.9.0")
+    (version "1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrbin" version))
        (sha256
-        (base32 "1yvn1c9xbf4lr69ylr0az50hvvfzj4v24d278nls28rw27rc0lza"))))
+        (base32 "0yrdapbalmz5wdsvfabjl2ga6b8mf9k32k21r9fxqwz2lm22yl6q"))))
     (properties `((upstream-name . "mrbin")))
     (build-system r-build-system)
     (arguments
@@ -20071,13 +20107,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.6-4")
+    (version "1.6-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "1zspxyyklls5zq8w3b1sd255vc3h4rkg21fxrry4gx8fbgfb9g2j"))))
+        (base32 "0pssscrvy1jb1nczj7w1ga54ykpqg6w0frhd260hlj8g742gvgl3"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (arguments
@@ -43529,6 +43565,31 @@ associated with a set of longitude/latitude pairs. (They also make cool maps.)."
      "This package provides a suite of convenience functions for generating US state
 and county thematic maps using datasets from the @code{MazamaSpatialUtils}
 package.")
+    (license license:gpl3)))
+
+(define-public r-mazamarollutils
+  (package
+    (name "r-mazamarollutils")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MazamaRollUtils" version))
+       (sha256
+        (base32 "0hlz94dciy91hbjgn0sabrkjcp5gc2yfginrmqspyglvj9babxf4"))))
+    (properties `((upstream-name . "MazamaRollUtils")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MazamaScience/MazamaRollUtils")
+    (synopsis "Efficient Rolling Functions")
+    (description
+     "This package provides a suite of compiled functions calculating rolling mins,
+means, maxes and other statistics.  This package is designed to meet the needs
+of data processing systems for environmental time series.")
     (license license:gpl3)))
 
 (define-public r-mazamalocationutils

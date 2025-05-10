@@ -2108,13 +2108,13 @@ normal profiles.")
 (define-public r-isoplotrgui
   (package
     (name "r-isoplotrgui")
-    (version "6.5")
+    (version "6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotRgui" version))
        (sha256
-        (base32 "18m9ld58ll7ipxn9p2pdm93r3n80rbyljcy8z627yfwzgw83hhdw"))))
+        (base32 "10a0icbcf2nngsjcai66m4qdhjzn7ysapvw2j24d9qam32zy39xs"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
     (arguments
@@ -5676,13 +5676,13 @@ can find the full API documentation at <https://ipbase.com/docs> .")
 (define-public r-ipanema
   (package
     (name "r-ipanema")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipanema" version))
        (sha256
-        (base32 "0fs9mddhzr1pq7mv08602w6rqmx2sjnj0lcp56hawcjfszczdzzn"))))
+        (base32 "1kca8by5bncx5mi06bj4dvrij8wy3b5aks23zmkyjx7pm0fsr328"))))
     (properties `((upstream-name . "ipanema")))
     (build-system r-build-system)
     (arguments
@@ -7677,13 +7677,13 @@ Blackwell and Olson (2022) <doi:10.1017/pan.2021.19>.")
 (define-public r-interprocess
   (package
     (name "r-interprocess")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interprocess" version))
        (sha256
-        (base32 "0x8bydivsy2lxn4n64b156fc31yli362i34jdl9ivl4vg3fc9afb"))))
+        (base32 "0i1n5amjw29dn349m5wd2x9zyfdfns4gzw5l23g1ip4xxpp195mb"))))
     (properties `((upstream-name . "interprocess")))
     (build-system r-build-system)
     (arguments

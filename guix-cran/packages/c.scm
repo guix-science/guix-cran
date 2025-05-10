@@ -1030,13 +1030,13 @@ P., Olsen, L. R., & Wambugu M. (2019, ISBN: 9781838550134).")
 (define-public r-cvmortalitymult
   (package
     (name "r-cvmortalitymult")
-    (version "1.0.9")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CvmortalityMult" version))
        (sha256
-        (base32 "05aka0cyr4j0q77y1ihglfxd49q35gy0xg9jam4g067rvmdixk38"))))
+        (base32 "0yd27biax662rp2izw0lqz99211chz8mw5xhrml69dn5mw5cfp9j"))))
     (properties `((upstream-name . "CvmortalityMult")))
     (build-system r-build-system)
     (arguments
@@ -1552,6 +1552,34 @@ regression model.  The optimal equal-HR method estimates two optimal cut-points
 that have approximately the same log hazard value based on Cox regression model
 and divides individuals into different groups according to their HR values.")
     (license license:gpl3)))
+
+(define-public r-cutpoint
+  (package
+    (name "r-cutpoint")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cutpoint" version))
+       (sha256
+        (base32 "11908haypz155qzf9l1w2gm8vbbk5r8qaf0ymi15nv9swy7hr756"))))
+    (properties `((upstream-name . "cutpoint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-rcppalgos r-plotly r-magrittr))
+    (home-page "https://github.com/jan-por/cutpoint")
+    (synopsis
+     "Estimate Cutpoints of Metric Variables in the Context of Cox Regression")
+    (description
+     "Estimate one or two cutpoints of a metric or ordinal-scaled variable in the
+multivariable context of survival data or time-to-event data.  Visualise the
+cutpoint estimation process using contour plots, index plots, and spline plots.
+It is also possible to estimate cutpoints based on the assumption of a U-shaped
+or inverted U-shaped relationship between the predictor and the hazard ratio.
+Govindarajulu, U., and Tarpey, T. (2022) <doi:10.1080/02664763.2020.1846690>.")
+    (license license:expat)))
 
 (define-public r-cutools
   (package
@@ -17844,13 +17872,13 @@ gallery contained within a static or interactive R Markdown page.")
 (define-public r-connector
   (package
     (name "r-connector")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "connector" version))
        (sha256
-        (base32 "1d6kq5wvp5q182ykrr5nflhqnli783s06haj5wg5clmbbhhhhm76"))))
+        (base32 "1sgaa24l1whw1i7fvi94axm8cknnnhwnjh9i0lj5h3igaxy4c38w"))))
     (properties `((upstream-name . "connector")))
     (build-system r-build-system)
     (arguments
@@ -17875,7 +17903,7 @@ gallery contained within a static or interactive R Markdown page.")
                              r-checkmate
                              r-arrow))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/novonordisk-opensource/connector/")
+    (home-page "https://novonordisk-opensource.github.io/connector/")
     (synopsis "Streamlining Data Access in Clinical Research")
     (description
      "This package provides a consistent interface for connecting R to various data
@@ -21083,13 +21111,13 @@ the analysed objects.")
 (define-public r-compind
   (package
     (name "r-compind")
-    (version "3.2")
+    (version "3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compind" version))
        (sha256
-        (base32 "07yvprvp4170lgxr68ma81mnwd8nbrj3gzhai38iislqhj5rjizs"))))
+        (base32 "0810j491kivhlsx7glj3j1z5wzw0xr2rz83l7zjarll5ibd1v23m"))))
     (properties `((upstream-name . "Compind")))
     (build-system r-build-system)
     (arguments
@@ -25589,6 +25617,38 @@ string representation.  Checks on CRAN based on information in the URL field or
 all paths via testing for a successful response.  This can be useful when
 automating static code analysis based on a list of package names, and similar
 tasks.")
+    (license license:expat)))
+
+(define-public r-codestral
+  (package
+    (name "r-codestral")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "codestral" version))
+       (sha256
+        (base32 "15jy57fwbz7yrd0qbwy68hrmkhlflxb43l9qhxqn9al7dii2fgp5"))))
+    (properties `((upstream-name . "codestral")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-rstudioapi
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (home-page "https://urbs-dev.github.io/codestral/")
+    (synopsis "Chat and FIM with 'Codestral'")
+    (description
+     "Create an addin in Rstudio to do fill-in-the-middle (FIM) and chat with latest
+Mistral AI models for coding, Codestral and Codestral Mamba'.  For more details
+about Mistral AI API': <https://docs.mistral.ai/getting-started/quickstart/> and
+<https://docs.mistral.ai/api/>.  For more details about Codestral model:
+<https://mistral.ai/news/codestral>; about Codestral Mamba':
+<https://mistral.ai/news/codestral-mamba>.")
     (license license:expat)))
 
 (define-public r-coder
