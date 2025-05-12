@@ -1679,13 +1679,13 @@ combinations of regression functions from different groups.")
 (define-public r-lsoda
   (package
     (name "r-lsoda")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lsoda" version))
        (sha256
-        (base32 "0w1bcipz0rw18fkckzwsc31dij8bsivl24xi0bmk8bip9mhlmczr"))))
+        (base32 "1rbw66xs5xa8b2pgkdhy5acv7g250hanqhwkvxmc15al3nyjmdc5"))))
     (properties `((upstream-name . "lsoda")))
     (build-system r-build-system)
     (arguments
@@ -4567,13 +4567,13 @@ Using R and @code{OpenBUGS}\" by Bhattacharjee A (2020)
 (define-public r-longevity
   (package
     (name "r-longevity")
-    (version "1.1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longevity" version))
        (sha256
-        (base32 "1p1sd4ahfbbj1fhgnw914yw06z6q0hbswiwb1gvmc2ks8i2ngi1r"))))
+        (base32 "0jr0x1yy56va08mxz7c7nrpd5dsfdmqxbxlhzic87g1czkc1m774"))))
     (properties `((upstream-name . "longevity")))
     (build-system r-build-system)
     (arguments
@@ -12390,13 +12390,13 @@ compared to other libraries.")
 (define-public r-libdeflate
   (package
     (name "r-libdeflate")
-    (version "1.23.0")
+    (version "1.23.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libdeflate" version))
        (sha256
-        (base32 "14w2cmg2aqh132z8cm7h8dpcpx8mxz413a2x58g7si2pcf4iwgpl"))))
+        (base32 "02hawlahvziww9fwdvq871rggdzg4ml0pgvcqz3dngpkc8winb18"))))
     (properties `((upstream-name . "libdeflate")))
     (build-system r-build-system)
     (arguments

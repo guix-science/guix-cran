@@ -304,28 +304,6 @@ time-varying coefficients for right censored data using estimating equations
 proposed by Peng and Huang (2007) <doi:10.1093/biomet/asm058>.")
     (license license:gpl3+)))
 
-(define-public r-dynsim
-  (package
-    (name "r-dynsim")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dynsim" version))
-       (sha256
-        (base32 "1fk23cp2hvkn7msxrdc9cnm4pmcmhcdf3q6rwm507bniigrswnx4"))))
-    (properties `((upstream-name . "dynsim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-gridextra r-ggplot2))
-    (home-page "https://cran.r-project.org/package=dynsim")
-    (synopsis "Dynamic Simulations of Autoregressive Relationships")
-    (description
-     "Dynamic simulations and graphical depictions of autoregressive relationships.")
-    (license license:gpl3)))
-
 (define-public r-dynrb
   (package
     (name "r-dynrb")
@@ -12732,31 +12710,6 @@ samples.  On the interior of the provided quantiles, an interpolation method
 such as a monotonic cubic spline is used; the tails are approximated by a
 location-scale family.")
     (license license:gpl3+)))
-
-(define-public r-distfreereg
-  (package
-    (name "r-distfreereg")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "distfreereg" version))
-       (sha256
-        (base32 "1vly5yiqfc68wvijrsa5c14yv4h5rwqrhq4isi3k5ck1sldpdfv5"))))
-    (properties `((upstream-name . "distfreereg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-numderiv r-clue))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=distfreereg")
-    (synopsis "Distribution-Free Goodness-of-Fit Testing for Regression")
-    (description
-     "This package implements distribution-free goodness-of-fit regression testing for
-the mean structure of parametric models introduced in Khmaladze (2021)
-<doi:10.1007/s10463-021-00786-3>.")
-    (license license:gpl3)))
 
 (define-public r-distfree-cr
   (package
@@ -30467,13 +30420,13 @@ skimr package.")
 (define-public r-datacleanr
   (package
     (name "r-datacleanr")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datacleanr" version))
        (sha256
-        (base32 "0mrfqm3lgb6sl2j35sfd00gb5121j9wmlff8k0vczr3sgmqz4dg8"))))
+        (base32 "0fxy0x7hbb77p6ngizq8bm25abzbb1bqdri0m1ipzgm5xjg77zz1"))))
     (properties `((upstream-name . "datacleanr")))
     (build-system r-build-system)
     (arguments
@@ -30491,7 +30444,6 @@ skimr package.")
                              r-magrittr
                              r-lubridate
                              r-htmlwidgets
-                             r-htmltools
                              r-glue
                              r-fs
                              r-formatr

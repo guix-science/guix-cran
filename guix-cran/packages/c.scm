@@ -7845,37 +7845,6 @@ package provides some functions to download the data into tibbles ready for
 analysis.")
     (license license:gpl3)))
 
-(define-public r-crfsuite
-  (package
-    (name "r-crfsuite")
-    (version "0.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "crfsuite" version))
-       (sha256
-        (base32 "15ldbx8g9xa6sql6is2gcqryzqb9dad1hiarvrgmizdp5fd3gxnm"))))
-    (properties `((upstream-name . "crfsuite")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/bnosac/crfsuite")
-    (synopsis
-     "Conditional Random Fields for Labelling Sequential Data in Natural Language Processing")
-    (description
-     "Wraps the CRFsuite library <https://github.com/chokkan/crfsuite> allowing users
-to fit a Conditional Random Field model and to apply it on existing data.  The
-focus of the implementation is in the area of Natural Language Processing where
-this R package allows you to easily build and apply models for named entity
-recognition, text chunking, part of speech tagging, intent recognition or
-classification of any category you have in mind.  Next to training, a small web
-application is included in the package to allow you to easily construct training
-data.")
-    (license license:bsd-3)))
-
 (define-public r-crew-cluster
   (package
     (name "r-crew-cluster")
@@ -20970,13 +20939,13 @@ which have inspired many methods in this package.")
 (define-public r-complexlm
   (package
     (name "r-complexlm")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "complexlm" version))
        (sha256
-        (base32 "0ykshrqia09pklkwhvjc8mfn005yq5wxfpjsbimg8gp38xch3wvn"))))
+        (base32 "1x6z8s8awh326i8i4ya9ngga1mb1ys9z4dn7262hbbicw0xi0ppb"))))
     (properties `((upstream-name . "complexlm")))
     (build-system r-build-system)
     (arguments
@@ -27138,13 +27107,13 @@ genomic regions where the copy number differs from the norm.")
 (define-public r-cnorm
   (package
     (name "r-cnorm")
-    (version "3.4.0")
+    (version "3.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cNORM" version))
        (sha256
-        (base32 "0pkaf00a4z19xbnkcxpgciakbzcshdbsgjf76irvgdd5lpwh4j6r"))))
+        (base32 "0dz2lbh683vaqn5cdzsfqhlmd86499l8zvajmal5x7b0v5q3yqyj"))))
     (properties `((upstream-name . "cNORM")))
     (build-system r-build-system)
     (arguments
@@ -50271,13 +50240,13 @@ API. @code{CalPASS} Plus.  MMAP API V1.
 (define-public r-calmr
   (package
     (name "r-calmr")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calmr" version))
        (sha256
-        (base32 "11hb2d9a5vzda94qb3pg440vgch2pfn8jhkw71hj6xzw8aqylhs3"))))
+        (base32 "19vll9gsgp4wpcjgyvbrhzz1lzknnd9w2kkspdlp5pxxg2j7nan8"))))
     (properties `((upstream-name . "calmr")))
     (build-system r-build-system)
     (arguments
@@ -50287,6 +50256,7 @@ API. @code{CalPASS} Plus.  MMAP API V1.
                              r-progressr
                              r-patchwork
                              r-network
+                             r-lifecycle
                              r-ggplot2
                              r-ggnetwork
                              r-ga

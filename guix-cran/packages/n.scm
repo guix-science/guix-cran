@@ -1385,13 +1385,13 @@ information on how those decisions were made.")
 (define-public r-nspmix
   (package
     (name "r-nspmix")
-    (version "1.5-0")
+    (version "2.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nspmix" version))
        (sha256
-        (base32 "1jaaw5ibn614yhlid0csnzj31npdx5zivm2nhnvyghzcmvyxavr8"))))
+        (base32 "0y19kwkykwns56vkrfvy7jaqwflsl58n0z0qxziaajk0dafhl5lq"))))
     (properties `((upstream-name . "nspmix")))
     (build-system r-build-system)
     (arguments
@@ -8585,13 +8585,13 @@ generation of starting values.")
 (define-public r-nlist
   (package
     (name "r-nlist")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlist" version))
        (sha256
-        (base32 "1wq7bp834c7cl37wbrgd9ars3mm0s5c3l3fxlrry728a27c27f9h"))))
+        (base32 "1w38a5nhzd53yc1ax183y7d3pmxkprl587iz4h433905aqsyr824"))))
     (properties `((upstream-name . "nlist")))
     (build-system r-build-system)
     (arguments
@@ -8600,6 +8600,7 @@ generation of starting values.")
     (propagated-inputs (list r-universals
                              r-tibble
                              r-term
+                             r-rlang
                              r-purrr
                              r-lifecycle
                              r-generics
@@ -8607,6 +8608,7 @@ generation of starting values.")
                              r-coda
                              r-chk
                              r-abind))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/poissonconsulting/nlist")
     (synopsis "Lists of Numeric Atomic Objects")
     (description
@@ -15091,13 +15093,13 @@ A. (2014) <doi:10.1111/bmsp.12015>.  Goertzen, J. R. & Cribbie, R. A. (2010)
 (define-public r-negenes
   (package
     (name "r-negenes")
-    (version "1.0-12")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "negenes" version))
        (sha256
-        (base32 "0b82822vl86gni0pv5f6pjfzmks35i7q2rqkhgyb9z9c677g991q"))))
+        (base32 "15pglhjr1d82xi36vabgfb66zfady6f2l2yjbp1k24xxvxq9qd2p"))))
     (properties `((upstream-name . "negenes")))
     (build-system r-build-system)
     (arguments

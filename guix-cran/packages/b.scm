@@ -1609,19 +1609,19 @@ anywhere anytime.")
 (define-public r-buildmer
   (package
     (name "r-buildmer")
-    (version "2.11")
+    (version "2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "buildmer" version))
        (sha256
-        (base32 "0lmgzvi2jz92nps1z7cxla28ymxp5vnagikzk6dma94hycb7x2b4"))))
+        (base32 "02cd4immbw9s4kvvrn57sz5qm7pw0b3xzk5xzl9finv6qjihiaj3"))))
     (properties `((upstream-name . "buildmer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-nlme r-mgcv r-lme4))
+    (propagated-inputs (list r-reformulas r-nlme r-mgcv r-lme4))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=buildmer")
     (synopsis
@@ -17638,6 +17638,42 @@ intracranial electroencephalography, or RAVE', see Magnotti, J. F., Wang, Z.,
 and Beauchamp, M. S. (2020) <doi:10.1016/j.neuroimage.2020.117341>; see
 citation(\"bidsr\") for details and attributions.")
     (license license:expat)))
+
+(define-public r-bidistances
+  (package
+    (name "r-bidistances")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BIDistances" version))
+       (sha256
+        (base32 "1mm1ph9j0b75gg5w6vqalv97ggfh2jhvgkz4hqpf4z86z025gc8j"))))
+    (properties `((upstream-name . "BIDistances")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list pandoc))
+    (propagated-inputs (list r-vegan
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pracma
+                             r-paralleldist
+                             r-ggplot2
+                             r-e1071
+                             r-diptest
+                             r-datavisualizations))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BIDistances")
+    (synopsis "Bioinformatic Distances")
+    (description
+     "This package provides a selection of distances measures for bioinformatics data.
+ Other important distance measures for bioinformatics data are selected from the
+R package @code{parallelDist}'.  A special distance measure for the Gene
+Ontology is available.")
+    (license license:gpl3)))
 
 (define-public r-bidimregression
   (package

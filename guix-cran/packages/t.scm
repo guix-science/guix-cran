@@ -1587,13 +1587,13 @@ or estimated by sampling.")
 (define-public r-tutorial-helpers
   (package
     (name "r-tutorial-helpers")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tutorial.helpers" version))
        (sha256
-        (base32 "1kvgbh0h80fr84szpkadjr4bshdrn695zik4nwggfs9z7h3y0hmj"))))
+        (base32 "1wrynn4marhrlbi12z1504jkn85z1jh8dwzvh771kvcrfl927syi"))))
     (properties `((upstream-name . "tutorial.helpers")))
     (build-system r-build-system)
     (arguments
@@ -31035,55 +31035,6 @@ crustal deformation and other tectonic changes, allowing for a more accurate
 representation of biogeographic system dynamics.  For more information see De
 Groeve et al. (2025) <doi:10.3897/arphapreprints.e151900>.")
     (license license:gpl3+)))
-
-(define-public r-tabr
-  (package
-    (name "r-tabr")
-    (version "0.5.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tabr" version))
-       (sha256
-        (base32 "0n5vnfpy0lrmjngvq2xzn32hgypys8rji6h7367sbqw8l0ag9msk"))))
-    (properties `((upstream-name . "tabr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-purrr
-                             r-ggplot2
-                             r-dplyr
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/leonawicz/tabr")
-    (synopsis
-     "Music Notation Syntax, Manipulation, Analysis and Transcription in R")
-    (description
-     "This package provides a music notation syntax and a collection of music
-programming functions for generating, manipulating, organizing, and analyzing
-musical information in R. Music syntax can be entered directly in character
-strings, for example to quickly transcribe short pieces of music.  The package
-contains functions for directly performing various mathematical, logical and
-organizational operations and musical transformations on special object classes
-that facilitate working with music data and notation.  The same music data can
-be organized in tidy data frames for a familiar and powerful approach to the
-analysis of large amounts of structured music data.  Functions are available for
-mapping seamlessly between these formats and their representations of musical
-information.  The package also provides an API to @code{LilyPond}
-(<https://lilypond.org/>) for transcribing musical representations in R into
-tablature (\"tabs\") and sheet music. @code{LilyPond} is open source music
-engraving software for generating high quality sheet music based on markup
-syntax.  The package generates @code{LilyPond} files from R code and can pass
-them to the @code{LilyPond} command line interface to be rendered into sheet
-music PDF files or inserted into R markdown documents.  The package offers
-nominal MIDI file output support in conjunction with rendering sheet music.  The
-package can read MIDI files and attempts to structure the MIDI data to integrate
-as best as possible with the data structures and functionality found throughout
-the package.")
-    (license license:expat)))
 
 (define-public r-taboolar
   (package

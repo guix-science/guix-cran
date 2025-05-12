@@ -28,12 +28,12 @@
   #:use-module (gnu packages geo)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages python-science)
-  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages documentation)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages mpi)
   #:use-module (gnu packages base)
   #:use-module (gnu packages pcre)
+  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages tbb)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -32190,40 +32190,6 @@ maintainers to migrate existing SQL database models, export and import results
 in consistent patterns.")
     (license license:asl2.0)))
 
-(define-public r-resultant
-  (package
-    (name "r-resultant")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "resultant" version))
-       (sha256
-        (base32 "0d9mql0cn48mx3id6gfi3lqgbn1vbx0dpp3lvfcd7x3n3j9wdw1x"))))
-    (properties `((upstream-name . "resultant")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list mpfr gmp))
-    (propagated-inputs (list r-rcppcgal r-rcpp r-qspray r-gmp r-bh))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/resultant")
-    (synopsis
-     "Utilities for Multivariate Polynomials with Rational Coefficients")
-    (description
-     "Computation of resultant, subresultants, greatest common divisor, integral
-division (aka division without remainder) of two multivariate polynomials with
-rational coefficients, Sturm-Habicht sequence and square-free factorization of a
-multivariate polynomial with rational coefficients.  The computations are
-performed by the C++ library CGAL (<https://www.cgal.org/>).  Resultants have
-applications in polynomial systems solving, number theory, and algebraic
-geometry.  The package also contains some functions computing the number of real
-roots of a univariate polynomial with rational coefficients, and a function
-computing the division with remainder of two univariate polynomials with
-rational coefficients.")
-    (license license:gpl3)))
-
 (define-public r-result
   (package
     (name "r-result")
@@ -39529,13 +39495,13 @@ model with spline rate function following Fu, et al. (2016)
 (define-public r-red
   (package
     (name "r-red")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "red" version))
        (sha256
-        (base32 "1xij1wshb5bv5zd9svhgprdjpn3snxb7wjqjdrqkbgs8y49cixx6"))))
+        (base32 "1qvzm086lbpphz5x426qpn298mps0qinv8zdzp6scfk9jyzf8h6m"))))
     (properties `((upstream-name . "red")))
     (build-system r-build-system)
     (arguments
@@ -39554,7 +39520,7 @@ model with spline rate function following Fu, et al. (2016)
     (description
      "Includes algorithms to facilitate the assessment of extinction risk of species
 according to the IUCN (International Union for Conservation of Nature, see
-<https://www.iucn.org/> for more information) red list criteria.")
+<https://iucn.org/> for more information) red list criteria.")
     (license license:gpl3)))
 
 (define-public r-recurse
@@ -44896,13 +44862,13 @@ R by providing both the header files and all examples.")
 (define-public r-rcppsmc
   (package
     (name "r-rcppsmc")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppSMC" version))
        (sha256
-        (base32 "0rp5s8j72al39rihn0q0j0ws6l1bxl1hlbx31mjllzhiq03pn2mq"))))
+        (base32 "0x52np5ikdfl9j1i0dqnnaypiwlacm1vnz27hfz5iqzylaah932m"))))
     (properties `((upstream-name . "RcppSMC")))
     (build-system r-build-system)
     (arguments

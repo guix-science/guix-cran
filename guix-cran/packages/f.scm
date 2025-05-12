@@ -13691,13 +13691,13 @@ quality, reliability, and structure.")
 (define-public r-fixes
   (package
     (name "r-fixes")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fixes" version))
        (sha256
-        (base32 "0fgl5b0xps24853jip2qp7phx3hn33mdzb78p42vhh0b8cypdjzh"))))
+        (base32 "1ndzl00ph4vd9lc21fsvcgph2rciqjk96xcr400i9d7gln6jj2yx"))))
     (properties `((upstream-name . "fixes")))
     (build-system r-build-system)
     (arguments
@@ -16326,13 +16326,13 @@ topic.")
 (define-public r-filibustr
   (package
     (name "r-filibustr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filibustr" version))
        (sha256
-        (base32 "1mdibdc8sn33qgr0pa5rzjqnms58bl681pcygq7n5v65r9b35llr"))))
+        (base32 "1ppaza1p134b57zbjs03n799k0qipgczmqr453v07hzdbixnw7ih"))))
     (properties `((upstream-name . "filibustr")))
     (build-system r-build-system)
     (arguments
@@ -16343,12 +16343,15 @@ topic.")
                              r-rvest
                              r-rlang
                              r-readr
+                             r-purrr
                              r-lifecycle
                              r-httr2
                              r-haven
+                             r-future
+                             r-furrr
                              r-dplyr
                              r-cli))
-    (home-page "https://github.com/feinleib/filibustr")
+    (home-page "https://feinleib.github.io/filibustr/")
     (synopsis "Data Utilities for Congressional Research")
     (description
      "This package provides easy-to-understand and consistent interfaces for accessing

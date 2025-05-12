@@ -6556,22 +6556,22 @@ attenuate the results to the null or by a given amount?")
 (define-public r-multibias
   (package
     (name "r-multibias")
-    (version "1.7")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multibias" version))
        (sha256
-        (base32 "14sadwywxwsawf8smfh9i4c5jmhj9lkndgy6asga0rfgwsxyh90j"))))
+        (base32 "1ykfzyaad2z1baxsb6s9915cn89a2imd5b1ya4vx1d2w16gjbnvy"))))
     (properties `((upstream-name . "multibias")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-magrittr r-lifecycle r-dplyr))
+    (propagated-inputs (list r-rlang r-magrittr r-lifecycle r-dplyr r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pcbrendel/multibias")
-    (synopsis "Simultaneous Multi-Bias Adjustment")
+    (synopsis "Multiple Bias Analysis in Causal Inference")
     (description
      "Quantify the causal effect of a binary exposure on a binary outcome with
 adjustment for multiple biases.  The functions can simultaneously adjust for any
@@ -6614,13 +6614,13 @@ likelihood estimation and Bayesian inference.")
 (define-public r-multiatsm
   (package
     (name "r-multiatsm")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiATSM" version))
        (sha256
-        (base32 "1q9rwhg5bbl3z3z8zhb7jwbp4v4wbj1kkilv1qjs1xc5wlg1p8rp"))))
+        (base32 "1a8fkw13fgf8l1xr8a8zk8c9kj8608iyiah6qszmbkj53v6s4spm"))))
     (properties `((upstream-name . "MultiATSM")))
     (build-system r-build-system)
     (arguments
@@ -6637,7 +6637,7 @@ macroeconomic risk framework from Joslin, Priebsch, and Singleton (2014, JF)
 <doi:10.1111/jofi.12131>.  Multicountry extensions such as the ones of
 Jotikasthira, Le, and Lundblad (2015, JFE) <doi:10.1016/j.jfineco.2014.09.004>,
 Candelon and Moura (2023, EM) <doi:10.1016/j.econmod.2023.106453>, and Candelon
-and Moura (Forthcoming, JFEC) <doi:10.1093/jjfinec/nbae008> are also available.")
+and Moura (2024, JFEC) <doi:10.1093/jjfinec/nbae008> are also available.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-multiassetoptions
@@ -14379,13 +14379,13 @@ and examples are given by Koutra et al. (2024)
 (define-public r-moocore
   (package
     (name "r-moocore")
-    (version "0.1.2")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moocore" version))
        (sha256
-        (base32 "0qn95fv5j3z2vgks9y0kny1pq99ixadfmyr0ff1a778blgn7w7jf"))))
+        (base32 "1cq0mmqzkcwzpvjwnw30xlpff1lxsvynccmhffq5mz209idmyi8n"))))
     (properties `((upstream-name . "moocore")))
     (build-system r-build-system)
     (arguments
@@ -28185,13 +28185,13 @@ half-spaces.")
 (define-public r-mifa
   (package
     (name "r-mifa")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mifa" version))
        (sha256
-        (base32 "1rj3ba746f8759gird0vpvyb4fl0z2ihccpiv3qkr3sc64wgplln"))))
+        (base32 "107wyzf4qc0rhb5vkafzvk7xai5clkaxs9c7v32x5301qfny3zmb"))))
     (properties `((upstream-name . "mifa")))
     (build-system r-build-system)
     (arguments

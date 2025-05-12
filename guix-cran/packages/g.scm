@@ -25,7 +25,6 @@
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages curl)
-  #:use-module (gnu packages xml)
   #:use-module (gnu packages ssh)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages pcre)
@@ -14352,13 +14351,13 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (define-public r-glmnetr
   (package
     (name "r-glmnetr")
-    (version "0.5-5")
+    (version "0.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmnetr" version))
        (sha256
-        (base32 "05crxkym6cbm0g1ciin8fgfgm9a6b5vi2z1x6fj4j5phak7kvmq5"))))
+        (base32 "0qr09fy2nvr07nh5m2yhc93z9fs4bkl5d1n2ddkm3zpdn5vj61hp"))))
     (properties `((upstream-name . "glmnetr")))
     (build-system r-build-system)
     (arguments
@@ -14386,26 +14385,24 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
     (synopsis
      "Nested Cross Validation for the Relaxed Lasso and Other Machine Learning Models")
     (description
-     "Cross validation informed Relaxed LASSO, Artificial Neural Network (ANN),
+     "Cross validation informed Relaxed LASSO (or more generally elastic net),
 gradient boosting machine ('xgboost'), Random Forest ('@code{RandomForestSRC}'),
-Oblique Random Forest ('aorsf'), Recursive Partitioning ('RPART') or step wise
-regression models are fit.  Cross validation leave out samples (leading to
-nested cross validation) or bootstrap out-of-bag samples are used to evaluate
-and compare performances between these models with results presented in tabular
-or graphical means.  Calibration plots can also be generated, again based upon
-(outer nested) cross validation or bootstrap leave out (out of bag) samples.
-For some datasets, for example when the design matrix is not of full rank,
-glmnet may have very long run times when fitting the relaxed lasso model, from
-our experience when fitting Cox models on data with many predictors and many
-patients, making it difficult to get solutions from either @code{glmnet()} or
-@code{cv.glmnet()}.  This may be remedied by using the path=TRUE option when
-calling @code{glmnet()} and @code{cv.glmnet()}.  Within the glmnetr package the
-approach of path=TRUE is taken by default.  When fitting not a relaxed lasso
-model but an elastic-net model, then the R-packages nestedcv
+Oblique Random Forest ('aorsf'), Artificial Neural Network (ANN), Recursive
+Partitioning ('RPART') or step wise regression models are fit.  Cross validation
+leave out samples (leading to nested cross validation) or bootstrap out-of-bag
+samples are used to evaluate and compare performances between these models with
+results presented in tabular or graphical means.  Calibration plots can also be
+generated, again based upon (outer nested) cross validation or bootstrap leave
+out (out of bag) samples.  For some datasets, for example when the design matrix
+is not of full rank, glmnet may have very long run times when fitting the
+relaxed lasso model, from our experience when fitting Cox models on data with
+many predictors and many patients.  This may be remedied by using the path=TRUE
+option, which is passed to the @code{glmnet()} and @code{cv.glmnet()} calls.
+Other packages doing similar include nestedcv
 <https://cran.r-project.org/package=nestedcv>, @code{glmnetSE}
-<https://cran.r-project.org/package=@code{glmnetSE>} or others may provide
-greater functionality when performing a nested CV. Use of the glmnetr has many
-similarities to the glmnet package and it is recommended that the user of
+<https://cran.r-project.org/package=@code{glmnetSE>} which may provide different
+functionality when performing a nested CV. Use of the glmnetr has many
+similarities to the glmnet package and it could be helpful for the user of
 glmnetr also become familiar with the glmnet package
 <https://cran.r-project.org/package=glmnet>, with the \"An Introduction to
 glmnet'\" and \"The Relaxed Lasso\" being especially useful in this regard.")
@@ -32203,54 +32200,62 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "1.12.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalraster" version))
        (sha256
-        (base32 "1dik3lyplawvsj67pmx78x91ci547hj9b59bv8jv5636j9p2w5yk"))))
+        (base32 "023j30k63hmkmnynq8ip8h6hphzs292l67adxh5ai53zmj72ydby"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list zlib
-                  proj
                   pcre2
                   openssl
                   openssh
-                  libxml2
                   gdal
                   curl))
-    (propagated-inputs (list r-xml2 r-rcppint64 r-rcpp r-bit64))
+    (propagated-inputs (list r-xml2
+                             r-wk
+                             r-rcppint64
+                             r-rcpp
+                             r-nanoarrow
+                             r-bit64))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://usdaforestservice.github.io/gdalraster/")
-    (synopsis
-     "Bindings to the 'Geospatial Data Abstraction Library' Raster API")
+    (synopsis "Bindings to 'GDAL'")
     (description
-     "Interface to the Raster API of the Geospatial Data Abstraction Library ('GDAL',
-<https://gdal.org>).  Bindings are implemented in an exposed C++ class
-encapsulating a GDALDataset and its raster band objects, along with several
-stand-alone functions.  These support manual creation of uninitialized datasets,
-creation from existing raster as template, read/set dataset parameters, low
-level I/O, color tables, raster attribute tables, virtual raster (VRT), and
-gdalwarp wrapper for reprojection and mosaicing.  Includes GDAL algorithms
-@code{('dem_proc()}', @code{polygonize()}', @code{rasterize()}', etc.), and
-functions for coordinate transformation and spatial reference systems.  Calling
-signatures resemble the native C, C++ and Python APIs provided by the GDAL
-project.  Includes raster @code{calc()} to evaluate a given R expression on a
-layer or stack of layers, with pixel x/y available as variables in the
-expression; and raster @code{combine()} to identify and count unique pixel
-combinations across multiple input layers, with optional output of the
-pixel-level combination IDs.  Provides raster display using base graphics'.
-Bindings to a subset of the OGR API are also included for managing vector data
-sources.  Bindings to a subset of the Virtual Systems Interface ('VSI') are also
-included to support operations on GDAL virtual file systems.  These are general
-utility functions that abstract file system operations on URLs, cloud storage
-services, Zip'/'GZip'/'7z'/'RAR archives, and in-memory files.  gdalraster may
-be useful in applications that need scalable, low-level I/O, or prefer a direct
-GDAL API.")
+     "API bindings to the Geospatial Data Abstraction Library ('GDAL',
+<https://gdal.org>).  Implements the GDAL Raster and Vector Data Models.
+Bindings are implemented with Rcpp modules.  Exposed C++ classes and stand-alone
+functions wrap much of the GDAL API and provide additional functionality.
+Calling signatures resemble the native C, C++ and Python APIs provided by the
+GDAL project.  Class GDALRaster encapsulates a GDALDataset and its raster band
+objects.  Class GDALVector encapsulates an OGRLayer and the GDALDataset that
+contains it.  Class VSIFile provides bindings to the GDAL
+VSI@code{VirtualHandle} API. Additional classes include @code{CmbTable} for
+counting unique combinations of integers, and @code{RunningStats} for computing
+summary statistics efficiently on large data streams.  C++ stand-alone functions
+provide bindings to most GDAL raster and vector utilities including OGR
+facilities for vector geoprocessing, several algorithms, the Geometry API ('GEOS
+via GDAL headers), the Spatial Reference Systems API, and methods for coordinate
+transformation.  Bindings to the Virtual Systems Interface ('VSI') API implement
+standard file system operations, abstracted for URLs, cloud storage services,
+Zip'/'GZip'/'7z'/'RAR', in-memory files, as well as regular local file systems.
+This provides a single interface for operating on file system objects that works
+the same for any storage backend.  A custom raster calculator evaluates a
+user-defined R expression on a layer or stack of layers, with pixel x/y
+available as variables in the expression.  Raster @code{combine()} identifies
+and counts unique pixel combinations across multiple input layers, with optional
+raster output of the pixel-level combination IDs.  Basic plotting capability is
+provided for raster and vector display.  gdalraster leans toward minimalism and
+the use of simple, lightweight objects for holding raw data.  Currently, only
+minimal S3 class interfaces have been implemented for selected R objects that
+contain spatial data.  gdalraster may be useful in applications that need
+scalable, low-level I/O, or prefer a direct GDAL API.")
     (license license:expat)))
 
 (define-public r-gdalcubes
@@ -35790,13 +35795,13 @@ materials.")
 (define-public r-galamm
   (package
     (name "r-galamm")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galamm" version))
        (sha256
-        (base32 "1gjz1hmfimld6drildhmlf8xgh6s3p7l6064bsjvp58ggvlmwawk"))))
+        (base32 "1zsfqd6l9bd4m9kzlz7lk9ncjy24lhwv3xcr06ps6kdqxvs51xrf"))))
     (properties `((upstream-name . "galamm")))
     (build-system r-build-system)
     (arguments

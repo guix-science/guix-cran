@@ -11086,13 +11086,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.82")
+    (version "2.0.83")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "132fv2lv0y7plxdq2xkfpp2x8mk5sna5k08djdzkvdsrcn7ia9vm"))))
+        (base32 "1fnxjikn5x0v3mnxzh24hjvzlbc29wkbar439c08s0ijpx84h63l"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (arguments

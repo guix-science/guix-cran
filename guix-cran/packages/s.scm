@@ -33288,13 +33288,13 @@ bibliographies in PDF', Word', Rmarkdown', and @code{BibTeX} formats.")
 (define-public r-softbart
   (package
     (name "r-softbart")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SoftBart" version))
        (sha256
-        (base32 "0s7d2gxh6qnpwzagfrwhacgd7w3hxx3xkxrhk6kqjykpckdwy091"))))
+        (base32 "046qxa63k8w1qnpyb636fl6pjnd78aydg6cv2lxhpdd0c9m3v65b"))))
     (properties `((upstream-name . "SoftBart")))
     (build-system r-build-system)
     (arguments
@@ -34700,26 +34700,28 @@ same files.")
 (define-public r-snazzier
   (package
     (name "r-snazzier")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snazzieR" version))
        (sha256
-        (base32 "102ipi6hiry5abv20ygsg1b4aynchcksbnjw0wwpv0pwm9s2i1ha"))))
+        (base32 "1ccm0414ydrk405hg0bjvd9v70yz1xl0mbj6l945qbjskaxy2w32"))))
     (properties `((upstream-name . "snazzieR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-knitr r-kableextra r-ggplot2))
+    (propagated-inputs (list r-knitr r-kableextra r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=snazzieR")
     (synopsis "Chic and Sleek Functions for Beautiful Statisticians")
     (description
      "Because your linear models deserve better than console output.  A sleek color
 palette and kable styling to make your regression results look sharper than they
-are.  See the package manual at
-<https://github.com/@code{JesusButForGayPeople/snazzieR/releases/download/v0.1.0/snazzieR_0.1.0.pdf>}.")
+are.  Includes support for Partial Least Squares (PLS) regression via both the
+SVD and NIPALS algorithms, along with a unified interface for model fitting and
+fabulous @code{LaTeX} and console output formatting.  See the package manual at
+<https://github.com/@code{JesusButForGayPeople/snazzieR/releases/download/v0.1.1/snazzieR_0.1.1.pdf>}.")
     (license license:expat)))
 
 (define-public r-snapshot
@@ -40191,13 +40193,13 @@ Control with R\" [ISBN 978-3-319-24046-6], are also included in the package.")
 (define-public r-sivs
   (package
     (name "r-sivs")
-    (version "0.2.10")
+    (version "0.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sivs" version))
        (sha256
-        (base32 "1mf881yy1f6s4f6bx4p5010f45pg09lww3npkkp1s11zpawgmdjq"))))
+        (base32 "15dnkqbdlp8mgdxz7m360x59pz28p2z22g7ivbakm20bb7zvdg0g"))))
     (properties `((upstream-name . "sivs")))
     (build-system r-build-system)
     (arguments
@@ -40209,9 +40211,9 @@ Control with R\" [ISBN 978-3-319-24046-6], are also included in the package.")
     (home-page "https://github.com/mmahmoudian/sivs")
     (synopsis "Stable Iterative Variable Selection")
     (description
-     "An iterative feature selection method (manuscript submitted) that internally
-utilizes various Machine Learning methods that have embedded feature reduction
-in order to shrink down the feature space into a small and yet robust set.")
+     "An iterative feature selection method that internally utilizes various Machine
+Learning methods that have embedded feature reduction in order to shrink down
+the feature space into a small and yet robust set.")
     (license license:gpl3)))
 
 (define-public r-sivirep
@@ -48314,13 +48316,13 @@ tracking, customizable submit actions, easy survey-theming, and more.")
 (define-public r-shinystoreplus
   (package
     (name "r-shinystoreplus")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyStorePlus" version))
        (sha256
-        (base32 "0n7c3zdf1yrl94v6py00d0p0w57623ba8f5jjwbvjhl82lab4f6n"))))
+        (base32 "0k40zlghs7v8m7j0wv8ap4jd5f18h7nw4dnbd0r6ay5pc3cmz1lj"))))
     (properties `((upstream-name . "shinyStorePlus")))
     (build-system r-build-system)
     (arguments
@@ -60065,13 +60067,13 @@ implementation of the FFORMS algorithm.  For more details see our paper at
 (define-public r-seekr
   (package
     (name "r-seekr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seekr" version))
        (sha256
-        (base32 "1db1igp5i3fsx4j5is7dydnb70kddwqa61vx6j8411kghhm6vw4x"))))
+        (base32 "19a756w0awis228qlqq4gl4czzcgn7jn5r3ddigs4bngimwp6k6w"))))
     (properties `((upstream-name . "seekr")))
     (build-system r-build-system)
     (arguments

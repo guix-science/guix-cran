@@ -13064,13 +13064,13 @@ attained.")
 (define-public r-practools
   (package
     (name "r-practools")
-    (version "1.6")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PracTools" version))
        (sha256
-        (base32 "1lwad3n4d671gn03mp493akwxfm2sdxmvanxm3624vpmsspybmvb"))))
+        (base32 "07vn7c2gvqk6zw6i5s2yxpkwm2i411dawz2kgrgns91nk81mjpg2"))))
     (properties `((upstream-name . "PracTools")))
     (build-system r-build-system)
     (arguments
@@ -13087,8 +13087,9 @@ and Weighting Survey Samples\".  Contains functions for sample size calculation
 for survey samples using stratified or clustered one-, two-, and three-stage
 sample designs, and single-stage audit sample designs.  Functions are included
 that will group geographic units accounting for distances apart and measures of
-size.  Other functions compute variance components for multistage designs and
-sample sizes in two-phase designs.  A number of example data sets are included.")
+size.  Other functions compute variance components for multistage designs,
+sample sizes in two-phase designs, and a stopping rule for ending data
+collection.  A number of example data sets are included.")
     (license license:gpl3)))
 
 (define-public r-practicalsigni
@@ -40554,13 +40555,13 @@ completely re-written.")
 (define-public r-parttree
   (package
     (name "r-parttree")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parttree" version))
        (sha256
-        (base32 "0hvafg5fvwh34g218hi59fv70vvnhz40jx9y3vwdn3brkdq72m22"))))
+        (base32 "10b75l1kvz7x3i11jgx0xxnfv217njkxahkdlhsx2v064y61q3i7"))))
     (properties `((upstream-name . "parttree")))
     (build-system r-build-system)
     (arguments

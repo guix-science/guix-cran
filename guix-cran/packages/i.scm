@@ -6916,29 +6916,6 @@ models proposed by Asano and Hirakawa (2017)
 <doi:10.1080/10543406.2017.1293082>.")
     (license license:gpl3+)))
 
-(define-public r-intsel
-  (package
-    (name "r-intsel")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "intsel" version))
-       (sha256
-        (base32 "02m5wyhsrd4n74sabjwinyc33q50qbbca4wp8yf0myjyf4fj1vv4"))))
-    (properties `((upstream-name . "intsel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=intsel")
-    (synopsis "Interaction Selection in Logistic Regression")
-    (description
-     "Logistic regression model with data-driven screening for significant two-way
-interactions.")
-    (license license:gpl3+)))
-
 (define-public r-intsdm
   (package
     (name "r-intsdm")
@@ -16996,13 +16973,13 @@ conducting simulations on composite scores.")
 (define-public r-idlfm
   (package
     (name "r-idlfm")
-    (version "0.0.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IDLFM" version))
        (sha256
-        (base32 "10a3c5522rlwy3fvhqmrsqba26l8qak539qzj3spplfd0lfk22nd"))))
+        (base32 "0856g4kqxid2hgb9az2hgfxbmzsyi01rvgb45bf8b9syx3xnfgn7"))))
     (properties `((upstream-name . "IDLFM")))
     (build-system r-build-system)
     (arguments

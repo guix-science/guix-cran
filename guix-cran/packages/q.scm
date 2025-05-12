@@ -3017,13 +3017,13 @@ provides tools to help make such choices.  Sen and others (2007)
 (define-public r-qtlcharts
   (package
     (name "r-qtlcharts")
-    (version "0.16")
+    (version "0.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qtlcharts" version))
        (sha256
-        (base32 "1bf7cdcbbxblsx357pymq54yr4aa7iaxpq4f73nbxdal9nbcqkda"))))
+        (base32 "1a1lafr40a9rd9wms9jkjyxbm9351pphdbgmy2vlx6bqhk35y2dg"))))
     (properties `((upstream-name . "qtlcharts")))
     (build-system r-build-system)
     (arguments
