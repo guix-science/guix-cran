@@ -17539,36 +17539,6 @@ data types.  Can write many R data types, including factors and temporal types.
 See docs for limitations.")
     (license license:expat)))
 
-(define-public r-nanonext
-  (package
-    (name "r-nanonext")
-    (version "1.5.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nanonext" version))
-       (sha256
-        (base32 "1lymdjach4gyd4xd3isql0vm8r120ck57vhg91lm6c7f5kxd7mvx"))))
-    (properties `((upstream-name . "nanonext")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-litedown))
-    (home-page "https://shikokuchuo.net/nanonext/")
-    (synopsis "NNG (Nanomsg Next Gen) Lightweight Messaging Library")
-    (description
-     "R binding for NNG (Nanomsg Next Gen), a successor to @code{ZeroMQ}.  NNG is a
-socket library for reliable, high-performance messaging over in-process, IPC,
-TCP, @code{WebSocket} and secure TLS transports.  Implements Scalability
-Protocols', a standard for common communications patterns including
-publish/subscribe, request/reply and service discovery.  As its own threaded
-concurrency framework, provides a toolkit for asynchronous programming and
-distributed computing.  Intuitive aio objects resolve automatically when
-asynchronous operations complete, and synchronisation primitives allow R to wait
-upon events signalled by concurrent threads.")
-    (license license:gpl3+)))
-
 (define-public r-nandb
   (package
     (name "r-nandb")

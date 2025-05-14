@@ -2414,37 +2414,6 @@ provides several methods which infer these values with as little input from the
 user as possible.")
     (license license:gpl3+)))
 
-(define-public r-autometric
-  (package
-    (name "r-autometric")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "autometric" version))
-       (sha256
-        (base32 "1dk2k78niqx9n8pq95cyx4qw00cmic47lyrg5ac0ghr25539jrld"))))
-    (properties `((upstream-name . "autometric")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://wlandau.github.io/autometric/")
-    (synopsis "Background Resource Logging")
-    (description
-     "Intense parallel workloads can be difficult to monitor.  Packages crew.cluster',
-clustermq', and future.batchtools distribute hundreds of worker processes over
-multiple computers.  If a worker process exhausts its available memory, it may
-terminate silently, leaving the underlying problem difficult to detect or
-troubleshoot.  Using the autometric package, a worker can proactively monitor
-itself in a detached background thread.  The worker process itself runs
-normally, and the thread writes to a log every few seconds.  If the worker
-terminates unexpectedly, autometric can read and visualize the log file to
-reveal potential resource-related reasons for the crash.  The autometric package
-borrows heavily from the methods of packages ps <doi:10.32614/CRAN.package.ps>
-and psutil'.")
-    (license license:expat)))
-
 (define-public r-automatedtests
   (package
     (name "r-automatedtests")
@@ -6916,13 +6885,13 @@ performance without return to baseline).")
 (define-public r-arrowheadr
   (package
     (name "r-arrowheadr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arrowheadr" version))
        (sha256
-        (base32 "19xya0p6nnw62s43cvv6bcjdm1nffil37192g586jxnkqwlw23bj"))))
+        (base32 "1513hzfdw4gn5a25c22hiyf8imsdxxfy1svyxic05mjd59i8d7l7"))))
     (properties `((upstream-name . "arrowheadr")))
     (build-system r-build-system)
     (arguments
@@ -7436,13 +7405,13 @@ El-Moussaoui et al. (2021) <doi:10.1007/978-3-030-66840-2_3>.")
 (define-public r-arkhe
   (package
     (name "r-arkhe")
-    (version "1.10.0")
+    (version "1.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arkhe" version))
        (sha256
-        (base32 "1dpsj0fbbscq26d404wnmk4ymcml2m5nys0dpz4yh9fdfzc79g83"))))
+        (base32 "1kfhkv5l5gy65kprfbp3s3wfh4fh97mjf3cjbx1vvbfnhggyr1wd"))))
     (properties `((upstream-name . "arkhe")))
     (build-system r-build-system)
     (arguments
@@ -19833,13 +19802,13 @@ scientometrics, software engineering, etc.")
 (define-public r-aglm
   (package
     (name "r-aglm")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aglm" version))
        (sha256
-        (base32 "0rcyrzfi3l1k53c9qs1gfrcflnhdnri9sq6py8s6fw4wcn55kf67"))))
+        (base32 "00arvqa7mgx13qk509amdqp9vlv37xlrr0jfz3pqqcsz13z6g4pc"))))
     (properties `((upstream-name . "aglm")))
     (build-system r-build-system)
     (arguments
@@ -21371,6 +21340,31 @@ free survival.  The adverse event biomarkers include occurrence of grade 3, low
 grade (1-2), and treatment related adverse events.  Plots and tables of results
 are downloadable.")
     (license license:gpl3)))
+
+(define-public r-adverbial
+  (package
+    (name "r-adverbial")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adverbial" version))
+       (sha256
+        (base32 "1zi7vacah3y1jjhp29q0dxgkmsd5w7i39f0kc4m144fxsn2sbq6h"))))
+    (properties `((upstream-name . "adverbial")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-rlang r-purrr r-pillar r-cli))
+    (home-page "https://github.com/UchidaMizuki/adverbial")
+    (synopsis "Enhanced Adverbial Functions")
+    (description
+     "This package provides @code{new_partialised()} and @code{new_composed()}, which
+extend @code{partial()} and @code{compose()} functions of purrr to make it
+easier to extract and replace arguments and functions.  It also has additional
+adverbial functions.")
+    (license license:expat)))
 
 (define-public r-adventr
   (package

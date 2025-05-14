@@ -2921,20 +2921,20 @@ assembly, and performs model selection.")
 (define-public r-isingsampler
   (package
     (name "r-isingsampler")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsingSampler" version))
        (sha256
-        (base32 "195xl9ivdhpqbl291x3cji343lgg8wsy20yz71iv7cg6g5ni8vvx"))))
+        (base32 "0y81cvzpclbpgisn4cjdsgxxadswc7wmm0xwc9a505kpf1zyyhih"))))
     (properties `((upstream-name . "IsingSampler")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp r-plyr r-nnet r-magrittr r-dplyr))
-    (home-page "github.com/SachaEpskamp/IsingSampler")
+    (home-page "https://github.com/SachaEpskamp/IsingSampler")
     (synopsis
      "Sampling Methods and Distribution Functions for the Ising Model")
     (description

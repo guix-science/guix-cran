@@ -6472,13 +6472,13 @@ with the R Package hlt\"
 (define-public r-hlmdiag
   (package
     (name "r-hlmdiag")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HLMdiag" version))
        (sha256
-        (base32 "0yy0qf9iw5gr40vlmm697rvvvgp077f08fialx3ijn0vfpsjbl2v"))))
+        (base32 "0kzj78qcvn5rf51l7lr8ppabxbp7cfvsmsfvkcxyz5b0whx289zj"))))
     (properties `((upstream-name . "HLMdiag")))
     (build-system r-build-system)
     (arguments
@@ -8517,6 +8517,57 @@ HICP data from Eurostat's public database
 are intended for demonstration purposes only and kept small enough to be
 distributed via CRAN.")
     (license license:expat)))
+
+(define-public r-hicociety
+  (package
+    (name "r-hicociety")
+    (version "0.1.38")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HiCociety" version))
+       (sha256
+        (base32 "1k858yjjmwy0a3f3355s7dllzcbajsxsbj52617cjzrv4xiaz410"))))
+    (properties `((upstream-name . "HiCociety")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-txdb-mmusculus-ucsc-mm10-knowngene
+                             r-txdb-hsapiens-ucsc-hg38-knowngene
+                             r-strawr
+                             r-signal
+                             r-shape
+                             r-s4vectors
+                             r-rcpp
+                             r-pracma
+                             r-org-mm-eg-db
+                             r-org-hs-eg-db
+                             r-iranges
+                             r-igraph
+                             r-hicocietyexample
+                             r-ggraph
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-foreach
+                             r-fitdistrplus
+                             r-doparallel
+                             r-biomart
+                             r-biocmanager
+                             r-biocgenerics
+                             r-annotationdbi))
+    (home-page "https://cran.r-project.org/package=HiCociety")
+    (synopsis "Inferring Chromatin Interaction Modules from 3C-Based Data")
+    (description
+     "Identifies chromatin interaction modules by constructing a Hi-C contact network
+based on statistically significant interactions, followed by network clustering.
+ The method enables comparison of module connectivity across two Hi-C datasets
+and is capable of detecting cell-type-specific regulatory modules.  By
+integrating network analysis with chromatin conformation data, this approach
+provides insights into the spatial organization of the genome and its functional
+implications in gene regulation.  Author: Sora Yoon (2025)
+<https://github.com/ysora/@code{HiCociety>}.")
+    (license license:gpl3)))
 
 (define-public r-hiclimr
   (package
@@ -10694,13 +10745,13 @@ Australia's higher education system, as well as a range of relevant information.
 (define-public r-heimdall
   (package
     (name "r-heimdall")
-    (version "1.0.737")
+    (version "1.2.707")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heimdall" version))
        (sha256
-        (base32 "1604d8m68dpkhmhmsl5jx7qgg0pw1b668a077v7qxjgzjnq0j5ii"))))
+        (base32 "0rhrs3h5lbrrif925v06d4jigbrza6ifnq8yb61ssisxbi80pnbx"))))
     (properties `((upstream-name . "heimdall")))
     (build-system r-build-system)
     (arguments
@@ -10717,14 +10768,13 @@ Australia's higher education system, as well as a range of relevant information.
     (description
      "In streaming data analysis, it is crucial to detect significant shifts in the
 data distribution or the accuracy of predictive models over time, a phenomenon
-known as **concept drift**.  The **heimdall** package aims to identify when
-concept drift occurs and provide methodologies for adapting models in
-non-stationary environments.  It offers a range of state-of-the-art techniques
-for detecting concept drift and maintaining model performance.  Additionally,
-**heimdall** provides tools for adapting models in response to these changes,
-ensuring continuous and accurate predictions in dynamic contexts.  Methods for
-concept drift detection are described in Tavares (2022)
-<doi:10.1007/s12530-021-09415-z>.")
+known as concept drift.  The package aims to identify when concept drift occurs
+and provide methodologies for adapting models in non-stationary environments.
+It offers a range of state-of-the-art techniques for detecting concept drift and
+maintaining model performance.  Additionally, the package provides tools for
+adapting models in response to these changes, ensuring continuous and accurate
+predictions in dynamic contexts.  Methods for concept drift detection are
+described in Tavares (2022) <doi:10.1007/s12530-021-09415-z>.")
     (license license:expat)))
 
 (define-public r-heemod
@@ -14550,13 +14600,13 @@ rate only in the weak sense, rather than the strong sense as intended.")
 (define-public r-harbinger
   (package
     (name "r-harbinger")
-    (version "1.1.727")
+    (version "1.2.707")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harbinger" version))
        (sha256
-        (base32 "02syfmrsrknsmn0mlxi70xl88gvbvy2aycjwmf33k7m88766p36p"))))
+        (base32 "0h11gp4nb8qw21nqp5hjasi3s78k5nnhcsk8n0xc6phaljd05649"))))
     (properties `((upstream-name . "harbinger")))
     (build-system r-build-system)
     (arguments
@@ -14564,6 +14614,7 @@ rate only in the weak sense, rather than the strong sense as intended.")
       #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-wavelets
+                             r-tspredit
                              r-tsmp
                              r-strucchange
                              r-stringr

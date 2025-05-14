@@ -2983,13 +2983,13 @@ National Nuclear Security Administration under Award Number DE-NA0004104.")
 (define-public r-klink
   (package
     (name "r-klink")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KLINK" version))
        (sha256
-        (base32 "100rfisd3srj3j3d1pqxcz45gd21ibclf873ccnb0n3pch8a8lbp"))))
+        (base32 "1z7fvs7imlz7lmq8hyzpgchsfqdfzyl8qyp1353k0rxnn3kxvvig"))))
     (properties `((upstream-name . "KLINK")))
     (build-system r-build-system)
     (arguments
@@ -3005,6 +3005,7 @@ National Nuclear Security Administration under Award Number DE-NA0004104.")
                              r-pedmut
                              r-pedfamilias
                              r-openxlsx
+                             r-norstr
                              r-gt
                              r-forrel))
     (home-page "https://github.com/magnusdv/KLINK")

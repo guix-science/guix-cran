@@ -3440,30 +3440,6 @@ or without concomitant variables.  See Frick et al. (2012)
 <doi:10.1177/0013164414536183> for details on the Rasch mixture models.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-psychometric
-  (package
-    (name "r-psychometric")
-    (version "2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "psychometric" version))
-       (sha256
-        (base32 "1mlggzw80pb7kfykva1s4ic726l8dckrgik2519njh32ycvk9x1s"))))
-    (properties `((upstream-name . "psychometric")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-purrr r-nlme r-multilevel r-dplyr))
-    (home-page "https://cran.r-project.org/package=psychometric")
-    (synopsis "Applied Psychometric Theory")
-    (description
-     "This package contains functions useful for correlation theory, meta-analysis
-(validity-generalization), reliability, item analysis, inter-rater reliability,
-and classical utility.")
-    (license license:gpl2+)))
-
 (define-public r-psycho
   (package
     (name "r-psycho")
@@ -13199,13 +13175,13 @@ described in Nagraj and Turner (2023) <doi:10.48550/@code{arXiv.2303.07876>}.")
 (define-public r-praatpicture
   (package
     (name "r-praatpicture")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "praatpicture" version))
        (sha256
-        (base32 "1fnbgn37nlsp3pg25kmvrv1xjfndxripl4lvj5rw0y2mrkvn368l"))))
+        (base32 "1j3092d40vjygd2ybmxnx02bd14384yplc7hyvmlamfn7l4w9aq7"))))
     (properties `((upstream-name . "praatpicture")))
     (build-system r-build-system)
     (arguments
@@ -13219,6 +13195,7 @@ described in Nagraj and Turner (2023) <doi:10.48550/@code{arXiv.2303.07876>}.")
                              r-shiny
                              r-rstudioapi
                              r-rpraat
+                             r-reticulate
                              r-phontools
                              r-ipa
                              r-gsignal
@@ -18524,13 +18501,13 @@ overall average effect size in meta-analysis of dependent effect sizes.")
 (define-public r-polywog
   (package
     (name "r-polywog")
-    (version "0.4-1")
+    (version "0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polywog" version))
        (sha256
-        (base32 "02qk1cyvkd77mwlvhj1zzzi0bmy7qxz29j2v730wp7rz4w7h5x5n"))))
+        (base32 "1jm9vrwxjfvvyd3x069hw51j1lhvfzb21lbh2dgipgnih3rmg1bs"))))
     (properties `((upstream-name . "polywog")))
     (build-system r-build-system)
     (arguments
@@ -18545,7 +18522,7 @@ overall average effect size in meta-analysis of dependent effect sizes.")
                              r-glmnet
                              r-formula
                              r-foreach))
-    (home-page "https://github.com/brentonk/polywog-package")
+    (home-page "https://github.com/brentonk/polywog")
     (synopsis "Bootstrapped Basis Regression with Oracle Model Selection")
     (description
      "Routines for flexible functional form estimation via basis regression, with
@@ -41287,41 +41264,6 @@ of several formats (\"csv\", \"RData\", \"rds\", \"RSQLite\", \"json\", \"ndjson
 been previously coalesced into one file.  Convenient for reading in moderately
 sized, but split files.")
     (license license:cc0)))
-
-(define-public r-paropt
-  (package
-    (name "r-paropt")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "paropt" version))
-       (sha256
-        (base32 "0rmiamj3s0s9qcymx74lmk266mrja3mxkflf32dpahnric9rvpsl"))))
-    (properties `((upstream-name . "paropt")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-rcppthread
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-dfdr
-                             r-ast2ast))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=paropt")
-    (synopsis "Parameter Optimizing of ODE-Systems")
-    (description
-     "Enable optimization of parameters of ordinary differential equations.
-Therefore, using SUNDIALS to solve the ODE-System (see Hindmarsh, Alan C., Peter
-N. Brown, Keith E. Grant, Steven L. Lee, Radu Serban, Dan E. Shumaker, and Carol
-S. Woodward. (2005) <doi:10.1145/1089014.1089020>).  Furthermore, for
-optimization the particle swarm algorithm is used (see: Akman, Devin, Olcay
-Akman, and Elsa Schaefer. (2018) <doi:10.1155/2018/9160793> and Sengupta,
-Saptarshi, Sanchita Basak, and Richard Peters. (2018)
-<doi:10.3390/make1010010>).")
-    (license license:gpl3)))
 
 (define-public r-parmsurvfit
   (package

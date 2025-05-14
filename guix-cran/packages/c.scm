@@ -4219,23 +4219,28 @@ equally sized groups, and the unnesting of data.frames within fully named lists.
 (define-public r-csurvey
   (package
     (name "r-csurvey")
-    (version "1.10")
+    (version "1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csurvey" version))
        (sha256
-        (base32 "1zmspq2nav5zvy5qsz3b2czrwbnhisp2h3ckhjhrhyq94zg9a5b3"))))
+        (base32 "1359hz1cy59wyh7fgsxvkhsvrnhx803mgql4ccadv10qq124n6xd"))))
     (properties `((upstream-name . "csurvey")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survey
+    (propagated-inputs (list r-zeallot
+                             r-tibble
+                             r-survey
                              r-purrr
                              r-matrix
                              r-mass
                              r-igraph
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
                              r-coneproj
                              r-cgam))
     (home-page "https://cran.r-project.org/package=csurvey")
@@ -7920,51 +7925,6 @@ Batch.  Inspiration also comes from packages mirai by Gao (2023)
 <https://github.com/mrc-ide/rrq>, clustermq by Schubert (2019)
 <doi:10.1093/bioinformatics/btz284>), and batchtools by Lang, Bischl, and
 Surmann (2017). <doi:10.21105/joss.00135>.")
-    (license license:expat)))
-
-(define-public r-crew
-  (package
-    (name "r-crew")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "crew" version))
-       (sha256
-        (base32 "03ygyvwh418mp0vx98vdavyr6xdwi9qcb7pyj56xxba06cymdgch"))))
-    (properties `((upstream-name . "crew")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tibble
-                             r-rlang
-                             r-r6
-                             r-ps
-                             r-promises
-                             r-processx
-                             r-nanonext
-                             r-mirai
-                             r-later
-                             r-getip
-                             r-data-table
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://wlandau.github.io/crew/")
-    (synopsis "Distributed Worker Launcher Framework")
-    (description
-     "In computationally demanding analysis projects, statisticians and data
-scientists asynchronously deploy long-running tasks to distributed systems,
-ranging from traditional clusters to cloud services.  The NNG'-powered mirai R
-package by Gao (2023) <doi:10.5281/zenodo.7912722> is a sleek and sophisticated
-scheduler that efficiently processes these intense workloads.  The crew package
-extends mirai with a unifying interface for third-party worker launchers.
-Inspiration also comes from packages.  future by Bengtsson (2021)
-<doi:10.32614/RJ-2021-048>, rrq by @code{FitzJohn} and Ashton (2023)
-<https://github.com/mrc-ide/rrq>, clustermq by Schubert (2019)
-<doi:10.1093/bioinformatics/btz284>), and batchtools by Lang, Bischel, and
-Surmann (2017) <doi:10.21105/joss.00135>.")
     (license license:expat)))
 
 (define-public r-creepyalien
@@ -11769,13 +11729,13 @@ effects models using the structures and methods of the nlme package.")
 (define-public r-covatest
   (package
     (name "r-covatest")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "covatest" version))
        (sha256
-        (base32 "04pycgxiq3h2j70vzqac5li0iqsyg005zpqfjr9iw17y0p51jv0a"))))
+        (base32 "0qh4b5bphsr6c7q96pyl88xyim16y53h29cdlagaf4qmjdwx7qv7"))))
     (properties `((upstream-name . "covatest")))
     (build-system r-build-system)
     (arguments
@@ -30125,13 +30085,13 @@ Valkiers, Nicky de Vrij, Benson Ogunjimi, Kris Laukens, Pieter Meysman (2023)
 (define-public r-clustblock
   (package
     (name "r-clustblock")
-    (version "4.0.0")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClustBlock" version))
        (sha256
-        (base32 "1gqq6wq79c6ikz8nxrahqdnl8g204y4sw82fvmrykh8xv3hzv2cp"))))
+        (base32 "1jp3676yzaia0a7kzj0dvb3ckzqkqdzm6cjc6fjkf3amhjx33szw"))))
     (properties `((upstream-name . "ClustBlock")))
     (build-system r-build-system)
     (arguments
@@ -30143,19 +30103,19 @@ Valkiers, Nicky de Vrij, Benson Ogunjimi, Kris Laukens, Pieter Meysman (2023)
     (description
      "Hierarchical and partitioning algorithms to cluster blocks of variables.  The
 partitioning algorithm includes an option called noise cluster to set aside
-atypical blocks of variables.  The CLUSTATIS method (for quantitative blocks)
-(Llobell, Cariou, Vigneau, Labenne & Qannari (2020)
-<doi:10.1016/j.foodqual.2018.05.013>, Llobell, Vigneau & Qannari (2019)
-<doi:10.1016/j.foodqual.2019.02.017>) and the CLUSCATA method (for
-Check-All-That-Apply data) (Llobell, Cariou, Vigneau, Labenne & Qannari (2019)
-<doi:10.1016/j.foodqual.2018.09.006>, Llobell, Giacalone, Labenne & Qannari
-(2019) <doi:10.1016/j.foodqual.2019.05.017>) are the core of this package.  The
-CATATIS methods allows to compute some indices and tests to control the quality
-of CATA data.  Multivariate analysis and clustering of subjects for quantitative
-multiblock data, CATA, RATA, Free Sorting and JAR experiments are available.
-Clustering of rows in multi-block context (notably with @code{ClusMB} strategy)
-is also included.")
-    (license license:gpl3)))
+atypical blocks of variables.  Different thresholds per cluster can be sets.
+The CLUSTATIS method (for quantitative blocks) (Llobell, Cariou, Vigneau,
+Labenne & Qannari (2020) <doi:10.1016/j.foodqual.2018.05.013>, Llobell, Vigneau
+& Qannari (2019) <doi:10.1016/j.foodqual.2019.02.017>) and the CLUSCATA method
+(for Check-All-That-Apply data) (Llobell, Cariou, Vigneau, Labenne & Qannari
+(2019) <doi:10.1016/j.foodqual.2018.09.006>, Llobell, Giacalone, Labenne &
+Qannari (2019) <doi:10.1016/j.foodqual.2019.05.017>) are the core of this
+package.  The CATATIS methods allows to compute some indices and tests to
+control the quality of CATA data.  Multivariate analysis and clustering of
+subjects for quantitative multiblock data, CATA, RATA, Free Sorting and JAR
+experiments are available.  Clustering of rows in multi-block context (notably
+with @code{ClusMB} strategy) is also included.")
+    (license license:expat)))
 
 (define-public r-clustassess
   (package
@@ -33347,13 +33307,13 @@ arm binary trial\" by Lloyd, C.J. (2020), Statistics in Medicine, Volume 38,
 (define-public r-classmap
   (package
     (name "r-classmap")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "classmap" version))
        (sha256
-        (base32 "125895ym1jhdd4gm7ywlhfzn66kra1a8bbkq3502vg38zvdsm3ci"))))
+        (base32 "183h70kfsvr1b0xjb5ggzmdag76nv70jdk08j0347nvxq99ibpxf"))))
     (properties `((upstream-name . "classmap")))
     (build-system r-build-system)
     (arguments
@@ -33375,12 +33335,13 @@ arm binary trial\" by Lloyd, C.J. (2020), Statistics in Medicine, Volume 38,
      "This package provides tools to visualize the results of a classification of
 cases.  The graphical displays include stacked plots, silhouette plots, quasi
 residual plots, and class maps.  Implements the techniques described and
-illustrated in Raymaekers, Rousseeuw and Hubert (2021), Class maps for
-visualizing classification results, Technometrics, appeared online.
-<doi:10.1080/00401706.2021.1927849> (open access) and Raymaekers and Rousseeuw
-(2021), Silhouettes and quasi residual plots for neural nets and tree-based
-classifiers, <@code{arXiv:2106.08814>}.  Examples can be found in the vignettes:
-\"Discriminant_analysis_examples\",\"K_nearest_neighbors_examples\",
+illustrated in Raymaekers J., Rousseeuw P.J., Hubert M. (2021).  Class maps for
+visualizing classification results. \\emph{Technometrics}, 64(2), 151â165.
+\\doi{10.1080/00401706.2021.1927849} (open access) and Raymaekers J., Rousseeuw
+P.J.(2021).  Silhouettes and quasi residual plots for neural nets and tree-based
+classifiers. \\emph{Journal of Computational and Graphical Statistics}, 31(4),
+1332â1343. \\doi{10.1080/10618600.2022.2050249}.  Examples can be found in the
+vignettes: \"Discriminant_analysis_examples\",\"K_nearest_neighbors_examples\",
 \"Support_vector_machine_examples\", \"Rpart_examples\", \"Random_forest_examples\",
 and \"Neural_net_examples\".")
     (license license:gpl2+)))
@@ -38584,13 +38545,13 @@ Inc. \"@code{CompTox} Chemicals Dashboard v2.2.1\",
 (define-public r-cheetahr
   (package
     (name "r-cheetahr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheetahR" version))
        (sha256
-        (base32 "1b0j4frkj6hd979wjm9qa9xg060lslv7w9gvp7m08disfhn85jdj"))))
+        (base32 "1i43vpcnx1rfs8djzaa5276l9x7n89a04ap0wx4zr4z7n0h6fwvh"))))
     (properties `((upstream-name . "cheetahR")))
     (build-system r-build-system)
     (arguments
@@ -40385,13 +40346,13 @@ variables with respect to this measure.")
 (define-public r-cgam
   (package
     (name "r-cgam")
-    (version "1.26")
+    (version "1.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgam" version))
        (sha256
-        (base32 "1ck7y636dzbv705w5nx81ynj0jx40fc5gf0savl6afpg2imxifkn"))))
+        (base32 "106hrsjixjd50kcdv81dvjz467sbjqd23sk9z7fpnx4600bfg39f"))))
     (properties `((upstream-name . "cgam")))
     (build-system r-build-system)
     (arguments
@@ -43441,6 +43402,30 @@ to quantify the increase in life expectancy if a certain cause of death is
 removed.  See Adamic, P. (2015)
 (<https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2689352>).")
     (license license:gpl2)))
+
+(define-public r-cdiwg2ws
+  (package
+    (name "r-cdiwg2ws")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cdiWG2WS" version))
+       (sha256
+        (base32 "1h8a56dgh07csq2b7hk5ychd3gpfn7dx9zg3hfvl1zcgdn3rs457"))))
+    (properties `((upstream-name . "cdiWG2WS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=cdiWG2WS")
+    (synopsis "Words and Gestures to Words and Sentences Score Conversion")
+    (description
+     "Convert @code{MacArthur-Bates} Communicative Development Inventory Words and
+Gestures scores to would-be scores on Words and Sentences, based on modeling
+from the Stanford Wordbank <https://wordbank.stanford.edu/>.  See Day et al.
+(2024) <doi:10.31234/osf.io/rwhcy>.")
+    (license license:gpl3+)))
 
 (define-public r-cdid
   (package
@@ -48410,6 +48395,37 @@ variable selection using CAR scores, and for estimating corresponding regression
 coefficients.  Both shrinkage as well as empirical estimators are available.")
     (license license:gpl3+)))
 
+(define-public r-cardiodatasets
+  (package
+    (name "r-cardiodatasets")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CardioDataSets" version))
+       (sha256
+        (base32 "0b65nzbnrhr4xy1k3s6zwdg5mbcahp7k8l2rjaay60ajf8qbh5sk"))))
+    (properties `((upstream-name . "CardioDataSets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/cardiodatasets")
+    (synopsis
+     "Comprehensive Collection of Cardiovascular and Heart Disease Datasets")
+    (description
+     "Offers a diverse collection of datasets focused on cardiovascular and heart
+disease research, including heart failure, myocardial infarction, aortic
+dissection, transplant outcomes, cardiovascular risk factors, drug efficacy, and
+mortality trends.  Designed for researchers, clinicians, epidemiologists, and
+data scientists, the package features clinical, epidemiological, and simulated
+datasets covering a wide range of conditions and treatments such as statins,
+anticoagulants, and beta blockers.  It supports analyses related to disease
+progression, treatment effects, rehospitalization, and public health outcomes
+across various cardiovascular patient populations.")
+    (license license:gpl3)))
+
 (define-public r-cardiocurver
   (package
     (name "r-cardiocurver")
@@ -49319,13 +49335,13 @@ for more information.")
 (define-public r-cansim
   (package
     (name "r-cansim")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cansim" version))
        (sha256
-        (base32 "1ghw68mp9ng63lqq1dac87h6rbwmx72mps5i6cwp80lhln3yf45p"))))
+        (base32 "1sipdyjzxsi9n8f3wdg3lzhx531zsymirk8f6a1j770f9cfk37s0"))))
     (properties `((upstream-name . "cansim")))
     (build-system r-build-system)
     (arguments

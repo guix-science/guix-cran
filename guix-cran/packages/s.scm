@@ -4926,13 +4926,13 @@ define clusters.  Details about this method is described in
 (define-public r-survivalanalysis
   (package
     (name "r-survivalanalysis")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivalAnalysis" version))
        (sha256
-        (base32 "0s4cihmjhg94zcbvr7c1pxdjyc0rpbqlw1gni5xkdhqp4lnqmygf"))))
+        (base32 "1a2lp5wg21mflcyzzs160n5h5l7mmrch952zhkvmbjrk5zvysk1b"))))
     (properties `((upstream-name . "survivalAnalysis")))
     (build-system r-build-system)
     (arguments
@@ -4963,8 +4963,9 @@ including Kaplan-Meier analysis and log-rank tests and Cox regression.  Aims at
 providing a clear and elegant syntax, support for use in a pipeline, structured
 output and plotting.  Builds upon the survminer package for Kaplan-Meier plots
 and provides a customizable implementation for forest plots.  Kaplan & Meier
-(1958) <doi:10.1080/01621459.1958.10501452> Cox (1972) <JSTOR:2985181> Peto &
-Peto (1972) <JSTOR:2344317>.")
+(1958) <doi:10.1080/01621459.1958.10501452> Cox (1972) Journal of the Royal
+Statistical Society.  Series B (Methodological), Vol.  34, No.  2 (1972), pp.
+187-220 (34 pages) Peto & Peto (1972) <doi:10.2307/2344317>.")
     (license license:gpl3)))
 
 (define-public r-survival-svb
@@ -7637,36 +7638,6 @@ managed by Oak Ridge Associated Universities (ORAU) under DOE contract number
 DE-SC0014664. [1] Wang, M. et al, 2018. <doi:10.1109/PVSC.2018.8547772>. [2]
 Walters et al, 2018 <doi:10.1109/PVSC.2018.8548187>. [3] Guo, S. et al, 2016.
 <doi:10.1117/12.2236939>.")
-    (license license:bsd-3)))
-
-(define-public r-sundialr
-  (package
-    (name "r-sundialr")
-    (version "0.1.6.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sundialr" version))
-       (sha256
-        (base32 "1s1mp42mv009hc39l0ryq5fg5qms9qjvdh7vvcjsm0ll8wkdfm2a"))))
-    (properties `((upstream-name . "sundialr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list cmake))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sn248/sundialr")
-    (synopsis
-     "An Interface to 'SUNDIALS' Ordinary Differential Equation (ODE) Solvers")
-    (description
-     "This package provides a way to call the functions in SUNDIALS C ODE solving
-library (<https://computing.llnl.gov/projects/sundials>).  Currently the serial
-version of ODE solver, CVODE', sensitivity calculator CVODES and differential
-algebraic solver IDA from the SUNDIALS library are implemented.  The package
-requires ODE to be written as an R or Rcpp function and does not require the
-SUNDIALS library to be installed on the local machine.")
     (license license:bsd-3)))
 
 (define-public r-sunclarco
@@ -12853,28 +12824,19 @@ objects.")
 (define-public r-stgam
   (package
     (name "r-stgam")
-    (version "0.0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stgam" version))
        (sha256
-        (base32 "0p6w0yb0cyc4zpsb7nwkxh8s7vlssprb5ssg0rfbmh83n37faqb4"))))
+        (base32 "1kaizgcx6b69c8bhd8bj8jw30a82y7k715swmm0mkyzj6wf9ccdx"))))
     (properties `((upstream-name . "stgam")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-mgcv
-                             r-metr
-                             r-magrittr
-                             r-glue
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-cowplot))
+    (propagated-inputs (list r-mgcv r-glue r-foreach r-dplyr r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lexcomber/stgam")
     (synopsis
@@ -12882,15 +12844,20 @@ objects.")
     (description
      "This package provides a framework for specifying spatially, temporally and
 spatially-and-temporally varying coefficient models using Generalized Additive
-Models with Gaussian Process smooths.  The smooths are parameterised with
-location and / or time attributes.  Importantly the framework supports the
-investigation of the presence and nature of any space-time dependencies in the
-data, allows the user to evaluate different model forms (specifications) and to
-pick the most probable model or to combine multiple varying coefficient models
-using Bayesian Model Averaging.  For more details see: Brunsdon et al (2023)
-<doi:10.4230/LIPIcs.GIScience.2023.17>, Comber et al (2023)
-<doi:10.4230/LIPIcs.GIScience.2023.22> and Comber et al (2024)
-<doi:10.1080/13658816.2023.2270285>.")
+Models with smooths.  The smooths are parameterised with location, time and
+predictor variables.  The framework supports the investigation of the presence
+and nature of any space-time dependencies in the data by evaluating multiple
+model forms (specifications) using a Generalized Cross-Validation score.  The
+workflow sequence is to: i) Prepare the data by lengthening it to have a single
+location and time variables for each observation.  ii) Evaluate all possible
+spatial and/or temporal models in which each predictor is specified in different
+ways.  iii) Evaluate each model and pick the best one.  iv) Create the final
+model.  v) Calculate the varying coefficient estimates to quantify how the
+relationships between the target and predictor variables vary over space, time
+or space-time.  vi) Create maps, time series plots etc.  For more details see:
+Comber et al (2023) <doi:10.4230/LIPIcs.GIScience.2023.22>, Comber et al (2024)
+<doi:10.1080/13658816.2023.2270285> and Comber et al (2004)
+<doi:10.3390/ijgi13120459>.")
     (license license:expat)))
 
 (define-public r-stfts
@@ -27797,6 +27764,77 @@ Methods for fitting this class of models are described in Chen, Ramezan, and
 Lysy (2024) <doi:10.48550/@code{arXiv.2110.07051>}.")
     (license license:gpl3)))
 
+(define-public r-spatialge
+  (package
+    (name "r-spatialge")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spatialGE" version))
+       (sha256
+        (base32 "1xlzj7lvxdvk8q5cj387ncj3x40dywl0sfn28q6xcdlisdibyvi3"))))
+    (properties `((upstream-name . "spatialGE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wordspace
+                             r-uwot
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-spdep
+                             r-spamm
+                             r-sp
+                             r-sfsmisc
+                             r-sf
+                             r-sctransform
+                             r-scales
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-rcppprogress
+                             r-rcppeigen
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-png
+                             r-matrix
+                             r-mass
+                             r-magrittr
+                             r-khroma
+                             r-jsonlite
+                             r-jpeg
+                             r-hdf5r
+                             r-gsva
+                             r-gstat
+                             r-ggrepel
+                             r-ggpolypath
+                             r-ggplot2
+                             r-ggforce
+                             r-ebimage
+                             r-dynamictreecut
+                             r-dplyr
+                             r-delayedmatrixstats
+                             r-delayedarray
+                             r-data-table
+                             r-concaveman
+                             r-complexheatmap
+                             r-biocparallel
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=spatialGE")
+    (synopsis
+     "Visualization and Analysis of Spatial Heterogeneity in Spatially-Resolved Gene Expression")
+    (description
+     "Visualization and analysis of spatially resolved transcriptomics data.  The
+@code{spatialGE} R package provides methods for visualizing and analyzing
+spatially resolved transcriptomics data, such as 10X Visium, @code{CosMx}, or
+csv/tsv gene expression matrices.  It includes tools for spatial interpolation,
+autocorrelation analysis, tissue domain detection, gene set enrichment, and
+differential expression analysis using spatial mixed models.")
+    (license license:expat)))
+
 (define-public r-spatialfdar
   (package
     (name "r-spatialfdar")
@@ -30685,13 +30723,13 @@ ggplot2 package.")
 (define-public r-spacci
   (package
     (name "r-spacci")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaCCI" version))
        (sha256
-        (base32 "0yzkb0lnd6xjw9y5xmhn595s3r6jd5jwm4i33z2pclfw6nrrri6x"))))
+        (base32 "0yzsx91zfislc0akwpfxqf2rqw2wj799jv5x5nxqm05jn89qp560"))))
     (properties `((upstream-name . "SpaCCI")))
     (build-system r-build-system)
     (arguments
@@ -30718,7 +30756,7 @@ on ligand-receptor pairs, including functions for local, regional, and global
 analysis using spatial transcriptomics data.  Integrates with databases like
 @code{CellChat} <http://www.cellchat.org/>, @code{CellPhoneDB}
 <https://www.cellphonedb.org/>, Cellinker
-<https://www.rna-society.org/cellinker/>, ICELLNET
+<https://www.rna-society.org/cellinker/index.html>, ICELLNET
 <https://github.com/soumelis-lab/ICELLNET>, and @code{ConnectomeDB}
 <https://humanconnectome.org/software/connectomedb/> to identify ligand-receptor
 pairs, visualize interactions through heatmaps, chord diagrams, and infer
@@ -36698,33 +36736,6 @@ Variables.")
      "An R-package for Estimating Semiparametric PH and AFT Mixture Cure Models.")
     (license license:gpl2)))
 
-(define-public r-smcryptor
-  (package
-    (name "r-smcryptor")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "smcryptoR" version))
-       (sha256
-        (base32 "05njdwx1ah1559k2fsvqg4wcm07k0570zxlnl4zscr042ixyg0sw"))))
-    (properties `((upstream-name . "smcryptoR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/zhuobie/smcryptoR")
-    (synopsis "ShangMi(SM) Cryptographic Algorithms(SM2/SM3/SM4)")
-    (description
-     "Bindings to smcrypto <https://github.com/zhuobie/smcrypto>: a Rust
-implementation of China's Standards of Encryption Algorithms, which is usually
-called @code{ShangMi(SM}) algorithms.  It contains SM3 message digest algorithm,
-SM2 asymmetric encryption algorithm and SM4 symmetric encryption algorithm.
-Users can do message hash, encrypt/decrypt, sign/verify, key exchange and more.")
-    (license license:expat)))
-
 (define-public r-smcrm
   (package
     (name "r-smcrm")
@@ -41271,6 +41282,32 @@ bootstrap method.  Details can be found in: van der Heijden et all. (2003)
 the Social and Medical Sciences or BÃ¶hning and Friedl (2021)
 <doi:10.1007/s10260-021-00556-8>.")
     (license license:expat)))
+
+(define-public r-singlecellstat
+  (package
+    (name "r-singlecellstat")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SingleCellStat" version))
+       (sha256
+        (base32 "1ax023vkhilzpr0wn4sq4zq68h1a0cbqgrbp3hb9nmrnzvah2gdb"))))
+    (properties `((upstream-name . "SingleCellStat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan r-matrixstats r-matrix))
+    (home-page "https://cran.r-project.org/package=SingleCellStat")
+    (synopsis "Toolkit for Statistical Analysis of Single-Cell Omics Data")
+    (description
+     "This package provides a suite of statistical methods for analysis of single-cell
+omics data including linear model-based methods for differential abundance
+analysis for individual level single-cell RNA-seq data.  For more details see
+Zhang, et al. (Submitted to
+Bioinformatics)<https://github.com/Lujun995/@code{DiSC_Replication_Code>}.")
+    (license license:gpl3)))
 
 (define-public r-singlecellhaystack
   (package
@@ -61712,13 +61749,13 @@ package?SDT for an overview.")
 (define-public r-sdsfun
   (package
     (name "r-sdsfun")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdsfun" version))
        (sha256
-        (base32 "0mq07vlscl9qafcvih1zz0lka2vlhw6f256z0sfcjcn7y0bml3cy"))))
+        (base32 "1fw029nm978i7l84w7vz1rkkjjbb8lail90xg5fxwd4hmi57zwb8"))))
     (properties `((upstream-name . "sdsfun")))
     (build-system r-build-system)
     (arguments
@@ -73288,6 +73325,39 @@ generated text.  It is based on the n-gram overlap between the generated text
 and reference texts.  Additionally, the package provides some smoothing methods
 as described in Chen and Cherry (2014) <doi:10.3115/v1/W14-3346>.")
     (license license:gpl2+)))
+
+(define-public r-saccr
+  (package
+    (name "r-saccr")
+    (version "3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SACCR" version))
+       (sha256
+        (base32 "0mcrcwbg5kg0i0lcx3iklc70pgrz59bh9nb7kv30crvfs0ncdq2y"))))
+    (properties `((upstream-name . "SACCR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-trading r-jsonlite r-data-tree))
+    (home-page "https://openriskcalculator.com/")
+    (synopsis "SA Counterparty Credit Risk under CRR2")
+    (description
+     "Computes the Exposure-At-Default based on the standardized approach of CRR2
+(SA-CCR).  The simplified version of SA-CCR has been included, as well as the
+OEM methodology.  Multiple trade types of all the five major asset classes are
+being supported including the Other Exposure and, given the inheritance- based
+structure of the application, the addition of further trade types is
+straightforward.  The application returns a list of trees per Counterparty and
+CSA after automatically separating the trades based on the Counterparty, the
+CSAs, the hedging sets, the netting sets and the risk factors.  The basis and
+volatility transactions are also identified and treated in specific hedging sets
+whereby the corresponding penalty factors are applied.  All the examples
+appearing on the regulatory papers (both for the margined and the unmargined
+workflow) have been implemented including the latest CRR2 developments.")
+    (license license:gpl3)))
 
 (define-public r-saccadr
   (package

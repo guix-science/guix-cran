@@ -1146,6 +1146,31 @@ Oceanography'.  Functions are designed to process automated image classification
 output and create organized and easily portable data products.")
     (license license:expat)))
 
+(define-public r-vprint
+  (package
+    (name "r-vprint")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vprint" version))
+       (sha256
+        (base32 "0jpynvbcrpis154s44ich0lb6by12jii7x0q2jws9pb4cq4dfgjm"))))
+    (properties `((upstream-name . "vprint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=vprint")
+    (synopsis "More Flexible Form of Boolean Verbose")
+    (description
+     "R functions are not supposed to print text without giving the user the option to
+turn the printing off or on using a Boolean verbose in a construct like
+if(verbose) print(...)'.  But this black/white approach is rather rigid, and an
+approach with shades of gray might be more appropriate in many circumstances.")
+    (license license:gpl2+)))
+
 (define-public r-vpdtw
   (package
     (name "r-vpdtw")
@@ -2696,13 +2721,13 @@ Functions in vivaldi primarily operate on vcf files.")
 (define-public r-vivainsights
   (package
     (name "r-vivainsights")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vivainsights" version))
        (sha256
-        (base32 "0hj3byhvm6gs3bibgsqa48p6fcy33j8hqa45jwbbm5skxaan8wk4"))))
+        (base32 "05q29qib3jc2r2ckca6x30iayinl8x0cf6f44lahhfgxn54dd71s"))))
     (properties `((upstream-name . "vivainsights")))
     (build-system r-build-system)
     (arguments
@@ -3328,50 +3353,34 @@ with the plot using mouse hover or zoom.")
 (define-public r-visstatistics
   (package
     (name "r-visstatistics")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visStatistics" version))
        (sha256
-        (base32 "0lp6sf2wrjjp1zh77yhlgr9sfpls54z0bny0l36v98ik4qykky0f"))))
+        (base32 "0i98d198fkr7169wj4j1c1k54avfilmymk0gc2swwi63cnaywv46"))))
     (properties `((upstream-name . "visStatistics")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vcd r-nortest r-multcompview r-cairo))
-    (home-page "https://cran.r-project.org/package=visStatistics")
-    (synopsis "Automated Visualization of Statistical Tests")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/shhschilling/visStatistics")
+    (synopsis
+     "Automated Selection and Visualisation of Statistical Hypothesis Tests")
     (description
-     "Visualization of the most powerful statistical hypothesis test.  The function
-@code{vistat()} visualizes the statistical hypothesis testing between the
-dependent variable (response) varsample and the independent variable (feature)
-varfactor.  The statistical hypothesis test (including the eventual
-corresponding post-hoc analysis) with the highest statistical power fulfilling
-the assumptions of the corresponding test is chosen based on a decision tree.  A
-graph displaying the raw data accordingly to the chosen test is generated, the
-test statistics including eventual post-hoc-analysis are returned.  The
-automated workflow is especially suited for browser based interfaces to
-server-based deployments of R. Implemented tests: @code{lm()}, @code{t.test()},
-@code{wilcox.test()}, @code{aov()}, @code{kruskal.test()}, @code{fisher.test()},
-@code{chisqu.test()}.  Implemented tests to check the normal distribution of
-standardized residuals: @code{shapiro.test()} and @code{ad.test()}.  Implemented
-post-hoc tests: @code{TukeyHSD()} for @code{aov()} and
-@code{pairwise.wilcox.test()} for @code{kruskal.test()}.  For the comparison of
-averages, the following algorithm is implemented: If the p-values of the
-standardized residuals of both @code{shapiro.test()} or @code{ad.test()} are
-smaller than 1-conf.level, @code{kruskal.test()} resp. @code{wilcox.test()} are
-performed, otherwise the @code{oneway.test()} and @code{aov()} resp.
-@code{t.test()} are performed and displayed.  Exception: If the sample size is
-bigger than 100, @code{t.test()} is always performed and @code{wilcox.test()} is
-never executed (Lumley et al. (2002)
-<doi:10.1146/annurev.publhealth.23.100901.140546>).  For the test of
-independence of count data, Cochran's rule (Cochran (1954)
-<doi:10.2307/3001666>) is implemented: If more than 20 percent of all cells have
-a count smaller than 5, @code{fisher.test()} is performed and displayed,
-otherwise @code{chisqu.test()}.  In both cases case an additional mosaic plot is
-generated.")
+     "Automatically selects and visualises appropriate statistical hypothesis tests
+between a response and a feature variable in a data frame.  The choice of test
+depends on the class, distribution, and sample size of the input variables, as
+well as the user-defined conf.level'.  Well suited for web-based or server-side
+R applications.  Implemented tests: @code{t.test()}, @code{wilcox.test()},
+@code{aov()}, @code{oneway.test()}, @code{kruskal.test()}, @code{lm()},
+@code{fisher.test()}, @code{chisq.test()}.  Tests for normality:
+@code{shapiro.test()}, @code{ad.test()}.  Tests for equal variances:
+@code{bartlett.test()}.  Post-hoc tests: @code{TukeyHSD()},
+@code{pairwise.wilcox.test()}.")
     (license license:expat)))
 
 (define-public r-visreg
@@ -9470,13 +9479,13 @@ isochrones and travel distances matrices (travel time and kilometer distance).")
 (define-public r-valet
   (package
     (name "r-valet")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "valet" version))
        (sha256
-        (base32 "0xgp3rzwyshjw8s9ncpals8naja7fc2yk81abl08gh43zp294scm"))))
+        (base32 "1vmkb421l5xjdnlcnpz1zw1m4fvmmx4f3xxkf5js495ay9g07xys"))))
     (properties `((upstream-name . "valet")))
     (build-system r-build-system)
     (arguments
@@ -9488,7 +9497,7 @@ isochrones and travel distances matrices (travel time and kilometer distance).")
                              r-jsonlite
                              r-httr
                              r-dplyr))
-    (home-page "runkelcorey.github.io/valet")
+    (home-page "https://github.com/runkelcorey/valet")
     (synopsis "Provide R Client to the Bank of Canada's Valet API")
     (description
      "The Bank of Canada updated their Valet API

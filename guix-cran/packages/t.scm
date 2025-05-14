@@ -3227,23 +3227,28 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
 (define-public r-tspredit
   (package
     (name "r-tspredit")
-    (version "1.1.707")
+    (version "1.2.707")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tspredit" version))
        (sha256
-        (base32 "1xfmr8y5503nc94c8s07j3s4zh485m8rss0wrbwqvxlnv8y5rhkn"))))
+        (base32 "1j5sggf1qwcj0w6vnjjnba6zsgb31f0vdwqif9f1jbiq88l29y1l"))))
     (properties `((upstream-name . "tspredit")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-wavelets
+                             r-randomforest
+                             r-nnet
                              r-mfilter
                              r-kfas
                              r-hht
                              r-forecast
+                             r-fnn
+                             r-elmnnrcpp
+                             r-e1071
                              r-dplyr
                              r-desctools
                              r-daltoolbox))
@@ -5160,13 +5165,13 @@ references. @code{McNeil}, A.J. (2021) <doi:10.3390/risks9010014>, Bladt, M., &
 (define-public r-tsclust
   (package
     (name "r-tsclust")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSclust" version))
        (sha256
-        (base32 "1pj984sf7z0bakr55jqcrxr4mh4gihdv197m2k05phpp5hsplsjh"))))
+        (base32 "0cbjk7q3yv97x1rpdlmy2kq2i6qpwj9r0lf11pqs93xgks9m9b7p"))))
     (properties `((upstream-name . "TSclust")))
     (build-system r-build-system)
     (arguments
@@ -5179,7 +5184,7 @@ references. @code{McNeil}, A.J. (2021) <doi:10.3390/risks9010014>, Bladt, M., &
                              r-forecast
                              r-dtw
                              r-cluster))
-    (home-page "http://www.jstatsoft.org/v62/i01/")
+    (home-page "https://doi.org/10.18637/jss.v062.i01")
     (synopsis "Time Series Clustering Utilities")
     (description
      "This package provides a set of measures of dissimilarity between time series to
@@ -7577,13 +7582,13 @@ package.")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "1.13.1")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeTools" version))
        (sha256
-        (base32 "0wxyz575rmd4bjmvg94ib5i1v4kmvm1i69zj4qhi39dwq5z0h4b3"))))
+        (base32 "1qc3kwz1js073sjgn0vnqzjcic5b8xg4a9p6q01yl565wjyd7iy1"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (arguments
@@ -10753,6 +10758,35 @@ crÃ©ation et de gestion des sÃ©ries temporelles @code{(ts()}, @code{window()
 speed data.  Designed primarily using data from Wildlife Computers Daily Diary
 tags deployed on northern fur seals.")
     (license license:gpl2+)))
+
+(define-public r-trackopt
+  (package
+    (name "r-trackopt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trackopt" version))
+       (sha256
+        (base32 "018yklwkpzw2j81z2z70kyj28bdijqva145vvvizaga2yf4g8m73"))))
+    (properties `((upstream-name . "trackopt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-optimizer
+                             r-oeli
+                             r-ggplot2
+                             r-cli
+                             r-checkmate))
+    (home-page "https://github.com/loelschlaeger/trackopt")
+    (synopsis "Track Numerical Optimization")
+    (description
+     "Tracks parameter value, gradient, and Hessian at each iteration of numerical
+optimizers.  Useful for analyzing optimization progress, diagnosing issues, and
+studying convergence behavior.")
+    (license license:gpl3+)))
 
 (define-public r-trackerapp
   (package
@@ -14226,13 +14260,13 @@ preserving geographic positions as much as possible.")
 (define-public r-tmap
   (package
     (name "r-tmap")
-    (version "4.0")
+    (version "4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmap" version))
        (sha256
-        (base32 "1m2bdlm00jp77np43xcys3nzsi6n9dnday27mwpry3jl4yb3k5yg"))))
+        (base32 "1wjkh2kfffl3wbyi5hswd5f4nkarjwaykjzl87j3x86mfirkl9mi"))))
     (properties `((upstream-name . "tmap")))
     (build-system r-build-system)
     (arguments
@@ -14245,6 +14279,7 @@ preserving geographic positions as much as possible.")
                              r-servr
                              r-s2
                              r-rlang
+                             r-maptiles
                              r-leafsync
                              r-leaflet
                              r-leaflegend
@@ -14255,7 +14290,8 @@ preserving geographic positions as much as possible.")
                              r-data-table
                              r-cols4all
                              r-cli
-                             r-classint))
+                             r-classint
+                             r-base64enc))
     (home-page "https://github.com/r-tmap/tmap")
     (synopsis "Thematic Maps")
     (description
@@ -20296,13 +20332,13 @@ uncertainty bands.")
 (define-public r-tidyaml
   (package
     (name "r-tidyaml")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyAML" version))
        (sha256
-        (base32 "0vv6nfw113h1pph06h9smm31b1j2zz3z5a9dalc6ldgs7pjb16gi"))))
+        (base32 "1fhkxf16j9zzn41lgriyx92gnjr0iiza5drgfwg1ib6imv5bbff8"))))
     (properties `((upstream-name . "tidyAML")))
     (build-system r-build-system)
     (arguments
@@ -20310,6 +20346,7 @@ uncertainty bands.")
       #:tests? #f))
     (propagated-inputs (list r-workflowsets
                              r-workflows
+                             r-tune
                              r-tidyr
                              r-rsample
                              r-rlang
@@ -23657,6 +23694,39 @@ Taylor (2019) <doi:10.1007/s42001-019-00048-6>, Taylor and Stoltz (2020)
 <doi:10.15195/v7.a23>, and Stoltz and Taylor (2021)
 <doi:10.1016/j.poetic.2021.101567>.")
     (license license:expat)))
+
+(define-public r-text2emotion
+  (package
+    (name "r-text2emotion")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "text2emotion" version))
+       (sha256
+        (base32 "18s1qcl7hc466imm0xv7d6aj5xmz0cljc3jjbgzgbj9bfj7i4rp7"))))
+    (properties `((upstream-name . "text2emotion")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-textclean
+                             r-text2vec
+                             r-stringr
+                             r-ranger
+                             r-matrix
+                             r-magrittr
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=text2emotion")
+    (synopsis "Emotion Analysis and Emoji Mapping for Text")
+    (description
+     "Allows users to analyze text and classify emotions such as happiness, sadness,
+anger, fear, and neutrality.  It combines text preprocessing, TF-IDF (Term
+Frequency-Inverse Document Frequency) feature extraction, and Random Forest
+classification to predict emotions and map them to corresponding emojis for
+enhanced sentiment visualization.")
+    (license license:gpl2)))
 
 (define-public r-text-alignment
   (package
@@ -30903,13 +30973,13 @@ retrieval.")
 (define-public r-tabula
   (package
     (name "r-tabula")
-    (version "3.2.1")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabula" version))
        (sha256
-        (base32 "0bk38q7afx3ffpb70wg9sffa5vrm8ay3bkl4d7dhy1aalmzx23nr"))))
+        (base32 "0df4zl06x34qzb8fgm9y3wd3kjvydx9xsviqymm6pv1ykgh5psv5"))))
     (properties `((upstream-name . "tabula")))
     (build-system r-build-system)
     (arguments

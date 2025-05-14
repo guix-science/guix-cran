@@ -1035,13 +1035,13 @@ Tatjana. (2019) <doi:10.1016/j.insmatheco.2018.12.001>.")
 (define-public r-ltfhplus
   (package
     (name "r-ltfhplus")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LTFHPlus" version))
        (sha256
-        (base32 "1r1s3pckza8792342akmrpxin6sbj7i5y3abl144k0c0vhw3p313"))))
+        (base32 "00jfwzlwr9br2ks3kr26qqkkp1af23n5580hnpflc2d03q3adly3"))))
     (properties `((upstream-name . "LTFHPlus")))
     (build-system r-build-system)
     (arguments
@@ -1071,8 +1071,9 @@ structures.  LT-FH++ was first described in Pedersen, Emil M., et al. (2022)
 <doi:10.1016/j.ajhg.2022.01.009> as an extension to LT-FH with more flexible
 family structures, and again as the age-dependent liability threshold
 (A@code{DuLT}) model Pedersen, Emil M., et al. (2023)
-<doi:10.1038/s41467-023-41210-z> as an alternative to traditional time-to-event
-genome-wide association studies, where family history was not considered.")
+<https://www.nature.com/articles/s41467-023-41210-z> as an alternative to
+traditional time-to-event genome-wide association studies, where family history
+was not considered.")
     (license license:gpl3)))
 
 (define-public r-ltertools
@@ -12331,30 +12332,6 @@ library.  And the @code{datestep()} function will perform row-by-row data
 processing.")
     (license license:cc0)))
 
-(define-public r-libopf
-  (package
-    (name "r-libopf")
-    (version "2.6.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LibOPF" version))
-       (sha256
-        (base32 "0hkgx2al685353slv5yaqkls56bwci8zc1w6xdfzalfdwna2a7hm"))))
-    (properties `((upstream-name . "LibOPF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/RafaelJM/LibOPF-in-R")
-    (synopsis "Design of Optimum-Path Forest Classifiers")
-    (description
-     "The @code{LibOPF} is a framework to develop pattern recognition techniques based
-on optimum-path forests (OPF), JoÃ£o P. Papa and Alexandre X. FalcÃ£o (2008)
-<doi:10.1007/978-3-540-89639-5_89>, with methods for supervised learning and
-data clustering.")
-    (license license:bsd-2)))
-
 (define-public r-liblinear
   (package
     (name "r-liblinear")
@@ -15345,37 +15322,6 @@ special cases for p=1,2, and infinity) as well as for spatial data using the
 Haversine formula, which takes latitude/longitude pairs as inputs and clusters
 based on great circle distances.")
     (license license:lgpl2.0)))
-
-(define-public r-leabra
-  (package
-    (name "r-leabra")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "leabRa" version))
-       (sha256
-        (base32 "08yiwyfg9bp4i9w5yyw9p63wyvgj39kd64y3h21j2jmpw8zxncdq"))))
-    (properties `((upstream-name . "leabRa")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6 r-plyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/johannes-titz/leabRa")
-    (synopsis "The Artificial Neural Networks Algorithm Leabra")
-    (description
-     "The algorithm Leabra (local error driven and associative biologically realistic
-algorithm) allows for the construction of artificial neural networks that are
-biologically realistic and balance supervised and unsupervised learning within a
-single framework.  This package is based on the MATLAB version by Sergio
-Verduzco-Flores, which in turn was based on the description of the algorithm by
-Randall O'Reilly (1996)
-<ftp://grey.colorado.edu/pub/oreilly/thesis/oreilly_thesis.all.pdf>.  For more
-general (not R specific) information on the algorithm Leabra see
-<https://grey.colorado.edu/emergent/index.php/Leabra>.")
-    (license license:gpl2)))
 
 (define-public r-ldt
   (package

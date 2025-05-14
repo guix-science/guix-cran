@@ -5046,13 +5046,13 @@ of the grouping regarding an outcome of interest, as described in Becker et.  al
 (define-public r-groundhog
   (package
     (name "r-groundhog")
-    (version "3.2.2")
+    (version "3.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groundhog" version))
        (sha256
-        (base32 "1dklqr2fj4w42isiz15glqnisakjwbwx9lic24z5xsdv3xaccqhd"))))
+        (base32 "09lw3klygjhv226073vkpi5passala7lmj22gc380q4gdb33dlgp"))))
     (properties `((upstream-name . "groundhog")))
     (build-system r-build-system)
     (arguments
@@ -7325,13 +7325,13 @@ to build nodes and another create a temporal graph.")
 (define-public r-graphsim
   (package
     (name "r-graphsim")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "graphsim" version))
        (sha256
-        (base32 "16djk5zm2pnvfyb2783rdyi6a0gspm23br7xxgb2c8wfd9gf430n"))))
+        (base32 "0a4jkh0fiqiymgxdgbggkm7mjfg2i73jr7lkwr0s4xbvwsbh517l"))))
     (properties `((upstream-name . "graphsim")))
     (build-system r-build-system)
     (arguments
@@ -9719,13 +9719,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.5.6")
+    (version "1.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "09jiis8yc9jw7gqflrwn2xy373cpymmhy1zvwzpbv8azj8apjlpp"))))
+        (base32 "1pymzi942y6indnwww73g2zlx8vgw47nrd11iizqzlqxpx739s01"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (arguments
@@ -11125,19 +11125,20 @@ similarity between samples visually in a low (2 or 3) dimensional space.")
 (define-public r-gominer
   (package
     (name "r-gominer")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GoMiner" version))
        (sha256
-        (base32 "1bx2gwd27gjvphm48jf4pzwab5hyfyb538wdbl1zzhv27w9vwsxg"))))
+        (base32 "1rdlnw2r9i05bafmq3p6bn3d617522397lcg5h5ln4pdb6fz6j0a"))))
     (properties `((upstream-name . "GoMiner")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-minimalistgodb r-hgnchelper r-gplots))
+    (propagated-inputs (list r-vprint r-randomgodb r-minimalistgodb
+                             r-hgnchelper r-gplots))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GoMiner")
     (synopsis
@@ -16904,39 +16905,6 @@ Raster* images, optionally featuring trend-free pre-whitening to account for
 lag-1 autocorrelation.")
     (license license:expat)))
 
-(define-public r-gimmetools
-  (package
-    (name "r-gimmetools")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gimmeTools" version))
-       (sha256
-        (base32 "1g170rz3c3qx27yy67f7xab4gkm0pbbvwlwkcsczfxphad609ryl"))))
-    (properties `((upstream-name . "gimmeTools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shinywidgets
-                             r-shinyjs
-                             r-shiny
-                             r-rstudioapi
-                             r-rintrojs
-                             r-rhandsontable
-                             r-miniui
-                             r-magrittr
-                             r-easycsv))
-    (home-page "https://github.com/stlane")
-    (synopsis "Supplemental Tools for the 'gimme' R Package")
-    (description
-     "Supplemental tools for the gimme R package.  It contains an interactive
-graphical user interface, allowing for the flexible specification of a variety
-of both basic and advanced options.  It will expand to include a variety of
-tools for navigating output.")
-    (license license:gpl2)))
-
 (define-public r-gimmemyplot
   (package
     (name "r-gimmemyplot")
@@ -18431,42 +18399,6 @@ possibility to add layers of data on the maps.  Data are publicly available from
 the swiss federal statistical office.")
     (license license:gpl2)))
 
-(define-public r-ggsurvfit
-  (package
-    (name "r-ggsurvfit")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggsurvfit" version))
-       (sha256
-        (base32 "0c3qv9gii3ndqip3nxs08bx7lvh6sm46mxz8nyi627zbgqmhwrr5"))))
-    (properties `((upstream-name . "ggsurvfit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-survival
-                             r-rlang
-                             r-patchwork
-                             r-gtable
-                             r-glue
-                             r-ggplot2
-                             r-dplyr
-                             r-cli
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/pharmaverse/ggsurvfit")
-    (synopsis "Flexible Time-to-Event Figures")
-    (description
-     "Ease the creation of time-to-event (i.e.  survival) endpoint figures.  The
-modular functions create figures ready for publication.  Each of the functions
-that add to or modify the figure are written as proper ggplot2 geoms or stat
-methods, allowing the functions from this package to be combined with any
-function or customization from ggplot2 and other ggplot2 extension packages.")
-    (license license:expat)))
-
 (define-public r-ggsurvey
   (package
     (name "r-ggsurvey")
@@ -19154,19 +19086,20 @@ and aesthetics.  This method was described by Balachandran VP (2015)
 (define-public r-ggscatridges
   (package
     (name "r-ggscatridges")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggScatRidges" version))
        (sha256
-        (base32 "1blwzynrzywdgqllcgjjb0j0xc8fwplybnx3mfmiysppcvrk47p9"))))
+        (base32 "0iz7np4wn556lz3dn8c19fl3kyr8kzgsiy4yv8cz9h2chpldx3rm"))))
     (properties `((upstream-name . "ggScatRidges")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-viridis
+                             r-vegan
                              r-hrbrthemes
                              r-ggridges
                              r-ggrepel
@@ -21579,6 +21512,35 @@ This allows visually comparing long lists of URLs, words, genes or other data
 that has a fixed order and position.")
     (license license:expat)))
 
+(define-public r-gghexsize
+  (package
+    (name "r-gghexsize")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gghexsize" version))
+       (sha256
+        (base32 "14v1wn5vr3mf9hg6dyw4il8h2fpj0sb177vcs9c7h89iy3ng0myl"))))
+    (properties `((upstream-name . "gghexsize")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-scales
+                             r-rlang
+                             r-hexbin
+                             r-ggplot2
+                             r-farver
+                             r-cli))
+    (home-page "https://github.com/hrryt/gghexsize")
+    (synopsis "Make Hexagonal Heatmaps with Varying Hexagon Sizes")
+    (description
+     "Create hexagonal heatmaps with ggplot2', using the size aesthetic to variably
+size each hexagon.")
+    (license license:gpl3+)))
+
 (define-public r-ggheatmap
   (package
     (name "r-ggheatmap")
@@ -21939,13 +21901,13 @@ uses the layered grammar of graphics of ggplot2 to create simple flowcharts.")
 (define-public r-ggfixest
   (package
     (name "r-ggfixest")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfixest" version))
        (sha256
-        (base32 "0r20g98g23k4qj6wc0s5kf0ggc6s3cfnyicx039np75iqkfmch4i"))))
+        (base32 "02v5bcyp748fl82m284cj0j2rb6p5jdj6z1win3mqlf1y1501hgc"))))
     (properties `((upstream-name . "ggfixest")))
     (build-system r-build-system)
     (arguments
@@ -23397,13 +23359,13 @@ if things do not work as they should.")
 (define-public r-gformulami
   (package
     (name "r-gformulami")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gFormulaMI" version))
        (sha256
-        (base32 "1zp8gn83h7bnfygi46qqhda4z5n2axbvcmqvhz60ba0daknw0jx0"))))
+        (base32 "1sk952gnisx6vyq4lkk14clj11sy73j1ik58fwzjvjblpdjfd45a"))))
     (properties `((upstream-name . "gFormulaMI")))
     (build-system r-build-system)
     (arguments
@@ -23416,10 +23378,10 @@ if things do not work as they should.")
     (description
      "This package implements the G-Formula method for causal inference with
 time-varying treatments and confounders using Bayesian multiple imputation
-methods, as described by Bartlett, Olarte Parra and Daniel (2023)
-<@code{arXiv:2301.12026>}.  It creates multiple synthetic imputed datasets under
-treatment regimes of interest using the mice package.  These can then be
-analysed using rules developed for analysing multiple synthetic datasets.")
+methods, as described by Bartlett et al (2025) <doi:10.1177/09622802251316971>.
+It creates multiple synthetic imputed datasets under treatment regimes of
+interest using the mice package.  These can then be analysed using rules
+developed for analysing multiple synthetic datasets.")
     (license license:gpl3+)))
 
 (define-public r-gformulaice
@@ -24228,13 +24190,13 @@ documentation and examples <https://magosil86.github.io/getspres/>.")
 (define-public r-getspanel
   (package
     (name "r-getspanel")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "getspanel" version))
        (sha256
-        (base32 "0xccla4w7vc82gqxfm927xzynchn9zi37smnq03rkamn4pf7v4gz"))))
+        (base32 "0ibz0g722358y3ga13f8sxxzhrdbllf084sqgd5465j50f8nnscx"))))
     (properties `((upstream-name . "getspanel")))
     (build-system r-build-system)
     (arguments
@@ -24445,29 +24407,6 @@ obtained: professional formation, research area, publications, academics
 advisories, projects, etc. @code{getLattes} package allows work with Lattes data
 exported to XML format.")
     (license license:gpl3)))
-
-(define-public r-getip
-  (package
-    (name "r-getip")
-    (version "0.1-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "getip" version))
-       (sha256
-        (base32 "0qyld6sy1i7kmbvcyg3vdv31qdyj81n54v6gvknb7nrqwwl8bgv3"))))
-    (properties `((upstream-name . "getip")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=getip")
-    (synopsis "'IP' Address 'Lookup'")
-    (description
-     "This package provides a micro-package for getting your IP address, either the
-local/internal or the public/external one.  Currently only IPv4 addresses are
-supported.")
-    (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
 
 (define-public r-getfredata
   (package
@@ -34978,30 +34917,6 @@ bimodal skew symmetric normal distribution of Hassan and El-Bassiouni (2016)
 users to defined truncated distributions in GAMLSS models.  The main function
 @code{gen.trun()} generates truncated version of an existing GAMLSS family
 distribution.")
-    (license (list license:gpl2 license:gpl3))))
-
-(define-public r-gamlss-spatial
-  (package
-    (name "r-gamlss-spatial")
-    (version "3.0-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gamlss.spatial" version))
-       (sha256
-        (base32 "1v1mwi0k38b1b6bwf9gw46fkx83gzfxfqcyykx6kzpc7shkvy8f8"))))
-    (properties `((upstream-name . "gamlss.spatial")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spam r-mgcv r-gamlss-dist r-gamlss-add r-gamlss))
-    (home-page "https://www.gamlss.com/")
-    (synopsis
-     "Spatial Terms in Generalized Additive Models for Location Scale and Shape Models")
-    (description
-     "It allows us to fit Gaussian Markov Random Field within the Generalized Additive
-Models for Location Scale and Shape algorithms.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-gamlss-mx

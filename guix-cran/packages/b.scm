@@ -10211,6 +10211,35 @@ Zhang and Wang (2013, <doi:10.1007/s11336-012-9301-5>), Zhang (2014,
 <doi:10.1007/s11336-012-9282-4>).")
     (license license:gpl2)))
 
+(define-public r-bmemapping
+  (package
+    (name "r-bmemapping")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BMEmapping" version))
+       (sha256
+        (base32 "0m84cz4214avdb3n3g99xblw50sir6qjrxd286cqq97n5x5kn7np"))))
+    (properties `((upstream-name . "BMEmapping")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/KinsprideDuah/BMEmapping")
+    (synopsis "Spatial Interpolation using Bayesian Maximum Entropy (BME)")
+    (description
+     "This package provides an accessible and robust implementation of core BME
+methodologies for spatial prediction.  It enables the systematic integration of
+heterogeneous data sources including both hard data (precise measurements) and
+soft interval data (bounded or uncertain observations) while incorporating prior
+knowledge and supporting variogram-based spatial modeling.  The BME methodology
+is described in Christakos (1990) <doi:10.1007/BF00890661> and Serre and
+Christakos (1999) <doi:10.1007/s004770050029>.")
+    (license license:expat)))
+
 (define-public r-bmem
   (package
     (name "r-bmem")
@@ -15994,6 +16023,38 @@ theme by Rob J Hyndman.  Additional (free) fonts may be needed: Metropolis
 prefers Fira', and IQSS requires Libertinus'.")
     (license license:gpl2+)))
 
+(define-public r-binaryrl
+  (package
+    (name "r-binaryrl")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "binaryRL" version))
+       (sha256
+        (base32 "0va9mh9l960iifplbjghc5ykq98k3bsbypqgimm0vdgmpb72dw3g"))))
+    (properties `((upstream-name . "binaryRL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-progressr r-future r-foreach r-dorng r-dofuture))
+    (home-page "https://github.com/yuki-961004/binaryRL")
+    (synopsis
+     "Reinforcement Learning Tools for Two-Alternative Forced Choice Tasks")
+    (description
+     "This package provides tools for building reinforcement learning (RL) models
+specifically tailored for Two-Alternative Forced Choice (TAFC) tasks, commonly
+employed in psychological research.  These models build upon the foundational
+principles of model-free reinforcement learning detailed in Sutton and Barto
+(1998) <ISBN:0262039249>.  The package allows for the intuitive definition of RL
+models using simple if-else statements.  Our approach to constructing and
+evaluating these computational models is informed by the guidelines proposed in
+Wilson & Collins (2019) <doi:10.7554/@code{eLife.49547>}.  Example datasets
+included with the package are sourced from the work of Mason et al. (2024)
+<doi:10.3758/s13423-023-02415-x>.")
+    (license license:gpl3)))
+
 (define-public r-binarygp
   (package
     (name "r-binarygp")
@@ -16565,42 +16626,6 @@ Bayesian Information Criterion).  Selection can be performed on data which
 exceed RAM capacity.  Bogdan et al., (2004) <doi:10.1534/genetics.103.021683>.")
     (license license:gpl3)))
 
-(define-public r-bigstatsr
-  (package
-    (name "r-bigstatsr")
-    (version "1.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bigstatsr" version))
-       (sha256
-        (base32 "1c445mm11gsvs2sqmrblig1d3456vwb1n3rz08mhkpxghjaf4dci"))))
-    (properties `((upstream-name . "bigstatsr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rspectra
-                             r-rmio
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-ps
-                             r-ggplot2
-                             r-foreach
-                             r-cowplot
-                             r-bigparallelr
-                             r-bigassertr))
-    (home-page "https://privefl.github.io/bigstatsr/")
-    (synopsis "Statistical Tools for Filebacked Big Matrices")
-    (description
-     "Easy-to-use, efficient, flexible and scalable statistical tools.  Package
-bigstatsr provides and uses Filebacked Big Matrices via memory-mapping.  It
-provides for instance matrix operations, Principal Component Analysis, sparse
-linear supervised models, utility functions and more
-<doi:10.1093/bioinformatics/bty185>.")
-    (license license:gpl3)))
-
 (define-public r-bigsplines
   (package
     (name "r-bigsplines")
@@ -16787,30 +16812,6 @@ windows since multi-core processing is done using @code{mclapply()} which forks
 R on Unix/Linux type operating systems.")
     (license license:gpl2+)))
 
-(define-public r-bigreadr
-  (package
-    (name "r-bigreadr")
-    (version "0.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bigreadr" version))
-       (sha256
-        (base32 "15wy5rphk2l59k8fk68a15xsvy8nxj1srnc2c86i7y5ym04a856k"))))
-    (properties `((upstream-name . "bigreadr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-parallelly r-data-table r-bigassertr))
-    (home-page "https://github.com/privefl/bigreadr")
-    (synopsis "Read Large Text Files")
-    (description
-     "Read large text files by splitting them in smaller files.  Package bigreadr also
-provides some convenient wrappers around @code{fread()} and @code{fwrite()} from
-package data.table'.")
-    (license license:gpl3)))
-
 (define-public r-bigquic
   (package
     (name "r-bigquic")
@@ -16861,35 +16862,6 @@ particular for the Sequence Kernel Association Test (SKAT) used in genomics
 <doi:10.1002/gepi.22136>.  Also provides stochastic singular value decomposition
 for dense or sparse matrices.")
     (license license:gpl2)))
-
-(define-public r-bigparallelr
-  (package
-    (name "r-bigparallelr")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bigparallelr" version))
-       (sha256
-        (base32 "14rkcig4j93c231sfm43331ykmvxjx2fiz5nhblj2rfzkxli4css"))))
-    (properties `((upstream-name . "bigparallelr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rhpcblasctl
-                             r-parallelly
-                             r-foreach
-                             r-flock
-                             r-doparallel
-                             r-bigassertr))
-    (home-page "https://github.com/privefl/bigparallelr")
-    (synopsis "Easy Parallel Tools")
-    (description
-     "Utility functions for easy parallelism in R. Include some reexports from other
-packages, utility functions for splitting and parallelizing over blocks, and
-choosing and setting the number of cores used.")
-    (license license:gpl3)))
 
 (define-public r-bignum
   (package
@@ -17423,30 +17395,6 @@ size, in any base from 2 to 36, including 2's complement format, and perform
 actions like \"AND,\" \"OR\", \"NOT\", \"SHIFTR/L\" etc.  The output can be in any base
 specified.  A direct base to base converter is included.")
     (license license:lgpl3)))
-
-(define-public r-bigassertr
-  (package
-    (name "r-bigassertr")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bigassertr" version))
-       (sha256
-        (base32 "0bk11jinlc1cvm6aaq9mccs9i328b8s2lbwq63a42fgf1qng103p"))))
-    (properties `((upstream-name . "bigassertr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/privefl/bigassertr")
-    (synopsis "Assertion and Message Functions")
-    (description
-     "Enhanced message functions @code{(cat()} / @code{message()} / @code{warning()} /
-@code{error()}) using wrappers around @code{sprintf()}.  Also, multiple
-assertion functions (e.g. to check class, length, values, files, arguments,
-etc.).")
-    (license license:gpl3)))
 
 (define-public r-biganalytics
   (package
@@ -18091,13 +18039,13 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "4.3.3")
+    (version "4.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliometrix" version))
        (sha256
-        (base32 "1ib8kv7i31q4n6827dqjx1w1xnyhgmfbrivhs8aj5f12m3q2ysfv"))))
+        (base32 "1l2c6l96dg2kydxnabagjdjscqhb5r5n0sir3qi845vkzmddr0b6"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (arguments

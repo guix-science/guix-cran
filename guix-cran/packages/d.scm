@@ -4671,13 +4671,13 @@ to create many different drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "0cw0cr4nk0hv1hdpncn8mfr74lwx8wwjmnzrmr8k9rhnlkpmbiqk"))))
+        (base32 "0m6csf2pd0x876mcmazrx17m7x0rpm2a8wrrby1ra6c9h15v2hjq"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (arguments
@@ -22504,36 +22504,6 @@ demulticoder R package see Sudermann et al. (2025)
 <doi:10.1094/PHYTO-02-25-0043-FI>.")
     (license license:expat)))
 
-(define-public r-demu
-  (package
-    (name "r-demu")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "demu" version))
-       (sha256
-        (base32 "1mp5iz8mg0d6cyqi3f6fdhk6x5xxvng5bi13b7jnlp60wpjrq0il"))))
-    (properties `((upstream-name . "demu")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spam
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-fields
-                             r-clusterr))
-    (home-page "https://cran.r-project.org/package=demu")
-    (synopsis "Optimal Design Emulators via Point Processes")
-    (description
-     "This package implements the Determinantal point process (DPP) based optimal
-design emulator described in Pratola, Lin and Craigmile (2018)
-<@code{arXiv:1804.02089>} for Gaussian process regression models.  See
-<http://www.matthewpratola.com/software> for more information and examples.")
-    (license license:agpl3)))
-
 (define-public r-demova
   (package
     (name "r-demova")
@@ -29899,13 +29869,13 @@ and to manipulate them after that.")
 (define-public r-datametprocess
   (package
     (name "r-datametprocess")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataMetProcess" version))
        (sha256
-        (base32 "0qhrjbaqzffwakm6iivzw8qyclmhni37z9c1nz3mbsp0xi7z0cph"))))
+        (base32 "1hnm5bpc7v3jddsnd5m5qyjkf26rhk6vs1kylkkqjbx4ys5cxxmh"))))
     (properties `((upstream-name . "DataMetProcess")))
     (build-system r-build-system)
     (arguments
@@ -31808,13 +31778,13 @@ stochastic disability-adjusted life year (DALY) calculation.")
 (define-public r-daltoolboxdp
   (package
     (name "r-daltoolboxdp")
-    (version "1.1.717")
+    (version "1.2.707")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolboxdp" version))
        (sha256
-        (base32 "1jx6h0i8iv7vz4c0k7lzps9cnrd6k6vzbalcbkg7w99qv6lry5l8"))))
+        (base32 "1d6d0b80gxggjap8wzc639ckwm3h1fjjc0qgc3a2b7n4dxzc0qj1"))))
     (properties `((upstream-name . "daltoolboxdp")))
     (build-system r-build-system)
     (arguments
@@ -31846,20 +31816,19 @@ available in Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
 (define-public r-daltoolbox
   (package
     (name "r-daltoolbox")
-    (version "1.1.747")
+    (version "1.2.707")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolbox" version))
        (sha256
-        (base32 "0f4as1lilkf3dcy6gj8nhlwplj29khpr0rw4bdx1pg2cfgg4rmk9"))))
+        (base32 "081kq2p6avkmdz00ivdzqx9qfl6grk3p2mjn3xw4dgivzmkn9mkp"))))
     (properties `((upstream-name . "daltoolbox")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tree
-                             r-reticulate
                              r-reshape
                              r-randomforest
                              r-nnet
@@ -31867,7 +31836,6 @@ available in Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
                              r-ggplot2
                              r-forecast
                              r-fnn
-                             r-elmnnrcpp
                              r-e1071
                              r-dplyr
                              r-dbscan

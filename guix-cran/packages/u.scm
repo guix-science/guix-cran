@@ -1090,6 +1090,33 @@ later off-line use.  Also provide relevant information and metadata for each of
 the input variables needed for sending the data inquiry.")
     (license license:gpl2+)))
 
+(define-public r-uscongress
+  (package
+    (name "r-uscongress")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uscongress" version))
+       (sha256
+        (base32 "1rkq7q5w5ki5sh6n196jyxrkf1ai503qjwf6zsghafb2r37jxfik"))))
+    (properties `((upstream-name . "uscongress")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-stringr r-rvest r-httr r-dplyr))
+    (home-page "https://cran.r-project.org/package=uscongress")
+    (synopsis "Fetch United States Congressional Records (1995-Present)")
+    (description
+     "Fetch United States Congressional Records from their API
+<https://api.govinfo.gov/docs/> such as congressional speeches, speaker names,
+and metadata about congressional sessions, and detailed granule records.
+Optional parameters allow users to specify congressional sessions, and the
+maximum number of speeches to retrieve.  Data is parsed, cleaned, and returned
+in a structured dataframe for analysis.")
+    (license license:gpl3)))
+
 (define-public r-uscoauditlog
   (package
     (name "r-uscoauditlog")
@@ -2656,34 +2683,6 @@ optimal usage of hardness in a game.")
      "The @code{uc.check()} function checks whether the roots of a given polynomial
 lie outside the Unit circle.  You can also easily draw an unit circle.")
     (license license:gpl3)))
-
-(define-public r-uniset
-  (package
-    (name "r-uniset")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "uniset" version))
-       (sha256
-        (base32 "1lpwsx1l6x186aj7wl5kvfmc5mp4g95p5h69alg8dn1sns84zqjs"))))
-    (properties `((upstream-name . "uniset")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-easycsv))
-    (home-page "https://bpollner.github.io/uniset/")
-    (synopsis "Dynamic Settings File")
-    (description
-     "Any package (subsequently called target package') is enabled to provide its
-users an easily accessible, user-friendly and human readable text file where
-key=value pairs (used by functions defined in the target package) can be saved.
-This settings file lives in a location defined by the user of the target
-package, and its user-defined values remain unchanged even when the author of
-the target package is introducing or deleting keys, or when the target package
-is updated or re-installed.")
-    (license license:gpl3+)))
 
 (define-public r-unisensr
   (package

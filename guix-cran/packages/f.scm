@@ -4382,13 +4382,13 @@ may depend on packages with priority base').")
 (define-public r-fritools
   (package
     (name "r-fritools")
-    (version "4.4.0")
+    (version "4.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fritools" version))
        (sha256
-        (base32 "0p1mj4icl1qjfyf2c53yjdg52r7ak3mjw5jbl26rgpr366q6ijrg"))))
+        (base32 "0820vfypgjk6mmsl6z08l9d74y06lrzwp6wbwig4fd3m549nibnv"))))
     (properties `((upstream-name . "fritools")))
     (build-system r-build-system)
     (arguments
@@ -5203,13 +5203,13 @@ of faces.")
 (define-public r-freesurfer
   (package
     (name "r-freesurfer")
-    (version "1.6.10")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "freesurfer" version))
        (sha256
-        (base32 "1i687yj76gbassyldpgal33cxd2hixzl0779ql9fjsaibh5m1dc4"))))
+        (base32 "04wmgbbz2i1ipxmdrznkrnv8vrhp9qnm82ssmp4mqnlrcdr4ncyz"))))
     (properties `((upstream-name . "freesurfer")))
     (build-system r-build-system)
     (arguments
@@ -10875,13 +10875,13 @@ to calculate equilibrium stability.")
 (define-public r-fluxible
   (package
     (name "r-fluxible")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxible" version))
        (sha256
-        (base32 "0szqkp82srz1jagblzbm2l3d3l3ygpv3fjc8qpklakj5rpbasxwf"))))
+        (base32 "1jgh85v19xqsj1d4d3apjxpzsbifxi1sn2giwljgq0y5whfjfnfs"))))
     (properties `((upstream-name . "fluxible")))
     (build-system r-build-system)
     (arguments
@@ -11715,32 +11715,6 @@ al. (2017) <doi:10.18637/jss.v076.i01>; Socolar & Mills (2023)
 <doi:10.1101/2023.10.26.564080>.")
     (license license:bsd-3)))
 
-(define-public r-flobr
-  (package
-    (name "r-flobr")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "flobr" version))
-       (sha256
-        (base32 "0if7g3zz669digy0z0n8kjkz9rq9dnyq2kz9n2zvddssl5q4nnc9"))))
-    (properties `((upstream-name . "flobr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lifecycle r-chk r-blob))
-    (home-page "https://github.com/poissonconsulting/flobr")
-    (synopsis "Convert Files to and from Binary Objects (BLOBs)")
-    (description
-     "Converts files to and from flobs.  A flob is a file that was read into binary in
-integer-mode as little endian, saved as the single element of a named list
-(where the name is the name of the original file) and then serialized before
-being coerced into a blob.  Flobs are useful for writing and reading files to
-and from databases.")
-    (license license:expat)))
-
 (define-public r-flipscores
   (package
     (name "r-flipscores")
@@ -12489,29 +12463,6 @@ value; (2) encoding only the offset from the previous point; (3) using variable
 length for each coordinate delta; and (4) using 64 URL-safe characters to
 display the result.")
     (license license:gpl3)))
-
-(define-public r-flexparamcurve
-  (package
-    (name "r-flexparamcurve")
-    (version "1.5-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FlexParamCurve" version))
-       (sha256
-        (base32 "0p0c949cdb05r6xnjc7k1i47z809g4mda1l94q7f4dikpnl1h2zd"))))
-    (properties `((upstream-name . "FlexParamCurve")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nlme))
-    (home-page "https://pennstate.academia.edu:443/SteveOswald")
-    (synopsis "Tools to Fit Flexible Parametric Curves")
-    (description
-     "Model selection tools and @code{selfStart} functions to fit parametric curves in
-nls', @code{nlsList} and nlme frameworks.")
-    (license license:gpl2)))
 
 (define-public r-flexord
   (package
@@ -20416,33 +20367,6 @@ method.  For array-based comparative genomic hybridization data, segmentation
 results are obtained by merging the significant probes detected.")
     (license license:gpl2+)))
 
-(define-public r-fcr
-  (package
-    (name "r-fcr")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fcr" version))
-       (sha256
-        (base32 "17jrz5zp1msd2khl1lwnb5sgxcigagni556rhn7qm9g0aykbh8yj"))))
-    (properties `((upstream-name . "fcr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mgcv r-fields r-face))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=fcr")
-    (synopsis "Functional Concurrent Regression for Sparse Data")
-    (description
-     "Dynamic prediction in functional concurrent regression with an application to
-child growth.  Extends the @code{pffr()} function from the refund package to
-handle the scenario where the functional response and concurrently measured
-functional predictor are irregularly measured.  Leroux et al. (2017), Statistics
-in Medicine, <doi:10.1002/sim.7582>.")
-    (license license:gpl3+)))
-
 (define-public r-fcps
   (package
     (name "r-fcps")
@@ -21542,13 +21466,13 @@ under 2-locus and 1-locus models defined by some design matrix.")
 (define-public r-fastymd
   (package
     (name "r-fastymd")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastymd" version))
        (sha256
-        (base32 "0kr5r05qg6lgpkzhm2in1i37vdm2zbb0f2yahha5065967ddvahb"))))
+        (base32 "1aff4fc72kp4qaiinrrmnb6j3a2hqjvrvd31wc805p6znscj2010"))))
     (properties `((upstream-name . "fastymd")))
     (build-system r-build-system)
     (arguments
@@ -21556,7 +21480,7 @@ under 2-locus and 1-locus models defined by some design matrix.")
       #:tests? #f))
     (native-inputs (list r-litedown))
     (home-page "https://timtaylor.codeberg.page/fastymd/")
-    (synopsis "Fast Utilities for 'Year Month Day' Objects")
+    (synopsis "Fast Utilities for Year Month Day Objects")
     (description
      "This package provides a collection of utility functions for working with Year
 Month Day objects.  Includes functions for fast parsing of numeric and character
@@ -24641,13 +24565,13 @@ relatives, kinship networks and other topics in multi-generation populations.")
 (define-public r-familias
   (package
     (name "r-familias")
-    (version "2.6.2")
+    (version "2.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Familias" version))
        (sha256
-        (base32 "0ykhpja1b471n8892y9im2yqxl8sacg6y9mr6jy074j6c18ghr12"))))
+        (base32 "057528ks9pqka4fsg26fq6l6m1q9kyhz9khiy1m16hvgm38cy2hm"))))
     (properties `((upstream-name . "Familias")))
     (build-system r-build-system)
     (arguments

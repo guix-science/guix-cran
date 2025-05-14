@@ -7311,13 +7311,13 @@ TRUE of optim function.")
 (define-public r-estimatew
   (package
     (name "r-estimatew")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "estimateW" version))
        (sha256
-        (base32 "0fgbyfnxxs6kp9p17ljvj72q5vd4xn7kwh4zbmzjx45cdq101bjv"))))
+        (base32 "06ldy811qdjjdf5gwdz4mv94pzgpvldnswa1zw5rhddsahx2q39m"))))
     (properties `((upstream-name . "estimateW")))
     (build-system r-build-system)
     (arguments
@@ -7328,10 +7328,11 @@ TRUE of optim function.")
     (synopsis "Estimation of Spatial Weight Matrices")
     (description
      "Bayesian estimation of spatial weight matrices in spatial econometric panel
-models.  Allows for estimation of spatial autoregressive (SAR), spatial Durbin
-(SDM), and spatially lagged explanatory variable (SLX) type specifications
-featuring an unknown spatial weight matrix.  Methodological details are given in
-Krisztin and Piribauer (2022) <doi:10.1080/17421772.2022.2095426>.")
+models.  Allows for estimation of spatial autoregressive (SAR), spatial error
+(SEM), spatial Durbin (SDM), spatial error Durbin (SDEM) and spatially lagged
+explanatory variable (SLX) type specifications featuring an unknown spatial
+weight matrix.  Methodological details are given in Krisztin and Piribauer
+(2022) <doi:10.1080/17421772.2022.2095426>.")
     (license license:gpl3+)))
 
 (define-public r-estimategroupnetwork
@@ -10186,13 +10187,13 @@ from packages like tm or qdap'.")
 (define-public r-epts
   (package
     (name "r-epts")
-    (version "1.1.4")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epts" version))
        (sha256
-        (base32 "0y44d2nygmv6ppgm74ll4ljdagazpv1bjbfa50qcqnngbjkb1ajy"))))
+        (base32 "1q9jg7kbhnklyvycnam2v0qzpr6i38z7v074daak3f6w5q45kspg"))))
     (properties `((upstream-name . "epts")))
     (build-system r-build-system)
     (arguments
@@ -10200,10 +10201,12 @@ from packages like tm or qdap'.")
       #:tests? #f))
     (propagated-inputs (list r-mvtnorm
                              r-mcmcvis
+                             r-magrittr
                              r-lme4
                              r-ggpubr
                              r-ggplot2
                              r-eefanalytics
+                             r-dplyr
                              r-coda))
     (home-page "https://cran.r-project.org/package=epts")
     (synopsis "Educational Platform Trials Simulator")
@@ -10683,13 +10686,13 @@ results interactively.")
 (define-public r-epiworldr
   (package
     (name "r-epiworldr")
-    (version "0.8.1.0")
+    (version "0.8.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiworldR" version))
        (sha256
-        (base32 "1zvcczi96psvmr17k1y38cr7zzyb19x7i5zlvk8gc2as85bwxam1"))))
+        (base32 "14ycjzksilkhw1bf7farx2q6ivnjj1g2a07xx39s0c4zqwpgy3fy"))))
     (properties `((upstream-name . "epiworldR")))
     (build-system r-build-system)
     (arguments
@@ -14298,24 +14301,19 @@ matches between strings.).")
 (define-public r-encryptr
   (package
     (name "r-encryptr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "encryptr" version))
        (sha256
-        (base32 "01gsimhrb9c7k5d9h5dbvm4h9i7fc9vzi8wgqb5f191ki27fsw9w"))))
+        (base32 "0sa491gs48pj3nwjdcx421yh5l1d85lzajmkxg320ygl7qic6hn4"))))
     (properties `((upstream-name . "encryptr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-readr
-                             r-purrr
-                             r-openssl
-                             r-knitr
-                             r-dplyr))
+    (propagated-inputs (list r-rlang r-readr r-purrr r-openssl r-dplyr))
     (home-page "https://github.com/SurgicalInformatics/encryptr")
     (synopsis
      "Easily Encrypt and Decrypt Data Frame/Tibble Columns or Files using RSA Public/Private Keys")
@@ -15408,13 +15406,13 @@ described in Imai, Lo, and Olmsted (2016) <DOI:10.1017/S000305541600037X>.")
 (define-public r-emir
   (package
     (name "r-emir")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EmiR" version))
        (sha256
-        (base32 "1xhsf9n5af6z7v62vpnqjlp20s6fp7jf1wmgxgv77hxm4g5cm0q7"))))
+        (base32 "112srd951lxdq1rb98fnqy6l4firf0cnnjiryksf19p9ma77zc11"))))
     (properties `((upstream-name . "EmiR")))
     (build-system r-build-system)
     (arguments
@@ -15423,10 +15421,10 @@ described in Imai, Lo, and Olmsted (2016) <DOI:10.1017/S000305541600037X>.")
     (propagated-inputs (list r-tidyr
                              r-tictoc
                              r-tibble
+                             r-testthat
                              r-rdpack
                              r-rcppprogress
                              r-rcpp
-                             r-plot3d
                              r-mathjaxr
                              r-ggplot2
                              r-gganimate
@@ -20444,13 +20442,13 @@ Chen et al. (2021) <doi:10.1007/s11336-021-09750-9>, Yinyin Chen et al. (2020)
 (define-public r-edma
   (package
     (name "r-edma")
-    (version "1.5-3")
+    (version "1.5-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eDMA" version))
        (sha256
-        (base32 "0wyp81si6lcispqng4c7lii22qbyblvijgnlxvcsnkcxj5hpm76j"))))
+        (base32 "1069i4sjd71yan00wqx8prb3fmbacbb0n878wmacaxk9prd61k7z"))))
     (properties `((upstream-name . "eDMA")))
     (build-system r-build-system)
     (arguments
@@ -25003,29 +25001,6 @@ conducting statistical analysis by accessing summary results, model fit indices,
 and visualizations with minimal programming.")
     (license license:expat)))
 
-(define-public r-easysimdata
-  (package
-    (name "r-easysimdata")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "easySimData" version))
-       (sha256
-        (base32 "19jf7j91ynsibrjsd9m7i18sqhj89md7rwc753618sjhdrdfvrww"))))
-    (properties `((upstream-name . "easySimData")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-simdata r-gridextra r-ggplot2 r-dplyr))
-    (home-page "https://cran.r-project.org/package=easySimData")
-    (synopsis "Wrapper of 'simdata' Package")
-    (description
-     "Simulating data according to marginal distributions and pairwise correlation.
-This is a wrapper for the simdata package to make it easier to use.")
-    (license license:expat)))
-
 (define-public r-easysdctable
   (package
     (name "r-easysdctable")
@@ -25487,30 +25462,6 @@ package will ask you questions to help you configure the connection and setup
 your credentials.  Once database configuration and connection has been set up
 once, you won't have to do it ever again.")
     (license license:expat)))
-
-(define-public r-easycsv
-  (package
-    (name "r-easycsv")
-    (version "1.0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "easycsv" version))
-       (sha256
-        (base32 "1i2k5372b6a5pypk6m0rsvvkcy0y51pvh57a60rpgqk8q0yq8pig"))))
-    (properties `((upstream-name . "easycsv")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-data-table))
-    (home-page "https://github.com/bogind/easycsv")
-    (synopsis "Load Multiple 'csv' and 'txt' Tables")
-    (description
-     "Allows users to easily read multiple comma separated tables and create a data
-frame under the same name.  Is able to read multiple comma separated tables from
-a local directory, a zip file or a zip file on a remote directory.")
-    (license license:gpl2)))
 
 (define-public r-easycoda
   (package

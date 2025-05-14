@@ -724,42 +724,6 @@ Documentation.  NOTE: Zillow deprecated their API on 2021-09-30, and this
 package is now deprecated as a result.")
     (license license:gpl3+)))
 
-(define-public r-zigg
-  (package
-    (name "r-zigg")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "zigg" version))
-       (sha256
-        (base32 "1v1c11ajdjycp24z9afv7mysmih55jaj1r7vh36xxd7m9b2pr93c"))))
-    (properties `((upstream-name . "zigg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/eddelbuettel/zigg")
-    (synopsis
-     "Lightweight Interfaces to the 'Ziggurat' Pseudo Random Number Generator")
-    (description
-     "The Ziggurat pseudo-random number generator (or PRNG), introduced by Marsaglia
-and Tsang (2000, <doi:10.18637/jss.v005.i08>) and further improved by Leong et
-al (2005, <doi:10.18637/jss.v012.i07>), offers a lightweight and very fast PRNG
-for the normal, exponential, and uniform distributions.  It is provided here in
-a small zero-dependency package.  It can be used from R as well as from C/C++
-code in other packages as is demonstrated by four included sample packages using
-four distinct methods to use the PRNG presented here in client package.  The
-implementation is influenced by our package @code{RcppZiggurat} which offers a
-comparison among multiple alternative implementations but presented here in a
-lighter-weight implementation that is easier to use by other packages.  The
-PRNGs provided are generally faster than the ones in base R: on our machine, the
-relative gains for normal, exponential and uniform are on the order of 7.4, 5.2
-and 4.7 times faster than base R. However, these generators are of potentially
-lesser quality and shorter period so if in doubt use of the base R functions
-remains the general recommendation.")
-    (license license:gpl2+)))
-
 (define-public r-zic
   (package
     (name "r-zic")

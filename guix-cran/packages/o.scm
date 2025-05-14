@@ -1344,6 +1344,34 @@ with the OTTR Template repository to create courses.")
 Markdown documents, and R Jupyter Notebooks.")
     (license license:bsd-3)))
 
+(define-public r-otsuseg
+  (package
+    (name "r-otsuseg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OtsuSeg" version))
+       (sha256
+        (base32 "08c2wdx7kq5rfmnp6yfl71n4gb7jq6s88n0iqkivaw3jxsckv6n9"))))
+    (properties `((upstream-name . "OtsuSeg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-sf r-raster))
+    (home-page "https://github.com/olgaviedma/OtsuSeg")
+    (synopsis "Raster Thresholding Using OtsuÂ´s Algorithm")
+    (description
+     "This package provides tools to process raster data and apply Otsu-based
+thresholding for burned area mapping and other image segmentation tasks.
+Implements the method described by Otsu (1979) <doi:10.1109/TSMC.1979.4310076>,
+a data-driven technique that determines an optimal threshold by maximizing the
+inter-class variance of pixel intensities.  It includes validation functions to
+assess segmentation accuracy against reference data using standard accuracy
+metrics such as precision, recall, and F1-score.")
+    (license license:gpl3)))
+
 (define-public r-otsfeatures
   (package
     (name "r-otsfeatures")
@@ -3563,13 +3591,13 @@ Technometrics paper.")
 (define-public r-ordinalpattern
   (package
     (name "r-ordinalpattern")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordinalpattern" version))
        (sha256
-        (base32 "19kakwb2p5lqqzc7lgc0y9js90nnb2427y702p2z79bzfprrvqn9"))))
+        (base32 "1yn2sypknqlyr5x6pcqrz61w1y4ssin29rsmqjwihhxs990g5r42"))))
     (properties `((upstream-name . "ordinalpattern")))
     (build-system r-build-system)
     (arguments
@@ -7345,13 +7373,13 @@ data and parse.  Kass-Hout TA, Xu Z, Mohebbi M et al. (2016)
 (define-public r-openeo
   (package
     (name "r-openeo")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openeo" version))
        (sha256
-        (base32 "02rm34mgjhcb3pp71x0rspyz7cmpmj4g5rs93xnly304il8v0rx2"))))
+        (base32 "1b20b2zns81a5apmvcm4nv22acxngbvnxb2xzaq32kpw0mkm4hvf"))))
     (properties `((upstream-name . "openeo")))
     (build-system r-build-system)
     (arguments
@@ -7367,7 +7395,7 @@ data and parse.  Kass-Hout TA, Xu Z, Mohebbi M et al. (2016)
                              r-htmltools
                              r-base64enc))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/Open-EO/openeo-r-client")
+    (home-page "https://open-eo.github.io/openeo-r-client/")
     (synopsis "Client Interface for 'openEO' Servers")
     (description
      "Access data and processing functionalities of @code{openEO} compliant back-ends

@@ -3081,19 +3081,19 @@ chromatography (TLC) plates.")
 (define-public r-qtlbook
   (package
     (name "r-qtlbook")
-    (version "0.18-8")
+    (version "0.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qtlbook" version))
        (sha256
-        (base32 "1c849xy2ki7niddajv5wnsm0zdp5381w8zm9lc8rvkdbs2v6rhf4"))))
+        (base32 "1dh2x83kj57sv61g5c63ma1bim1v6lg08z35pwv8l8zjplm02xc7"))))
     (properties `((upstream-name . "qtlbook")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "http://rqtl.org/book")
+    (home-page "https://rqtl.org/book/")
     (synopsis "Datasets for the R/qtl Book")
     (description
      "Datasets for the book, A Guide to QTL Mapping with R/qtl.  Broman and Sen (2009)

@@ -459,13 +459,13 @@ summary functions are from the spatstat package <https://spatstat.org/>.")
 (define-public r-mxcc
   (package
     (name "r-mxcc")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mxcc" version))
        (sha256
-        (base32 "1dlard1w925mgppx21d8a44l1pplglk9gkr5p394dsnf9fb20x54"))))
+        (base32 "013ly8zm0i46a2a0ylbydcs1r9iffrc5rd6iqvr8x72pckn0pz3g"))))
     (properties `((upstream-name . "mxcc")))
     (build-system r-build-system)
     (arguments
@@ -5518,34 +5518,6 @@ isotemporal substitution models.  References: Le, Stanford, Dumuid, and Wiley
 (2024) <doi:10.48550/@code{arXiv.2411.12407>}.")
     (license license:gpl3+)))
 
-(define-public r-multilevel
-  (package
-    (name "r-multilevel")
-    (version "2.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "multilevel" version))
-       (sha256
-        (base32 "0ds7q3q2ncldb4iik24xisyxyyv1yv8l1yz7zd7cy036bna1yp5i"))))
-    (properties `((upstream-name . "multilevel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nlme r-mass))
-    (home-page "https://www.r-project.org")
-    (synopsis "Multilevel Functions")
-    (description
-     "This package provides tools used by organizational researchers for the analysis
-of multilevel data.  Includes four broad sets of tools.  First, functions for
-estimating within-group agreement and reliability indices.  Second, functions
-for manipulating multilevel and longitudinal (panel) data.  Third, simulations
-for estimating power and generating multilevel data.  Fourth, miscellaneous
-functions for estimating reliability and performing simple calculations and data
-transformations.")
-    (license license:gpl2+)))
-
 (define-public r-multilcirt
   (package
     (name "r-multilcirt")
@@ -6079,13 +6051,13 @@ minimum distance with the Utopia point or the TOPSIS approach.")
 (define-public r-multidimbio
   (package
     (name "r-multidimbio")
-    (version "1.2.2")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiDimBio" version))
        (sha256
-        (base32 "0xadpvnyghpqh2q1gp1fqwv591sm3icmx60x4g8gn1vybi51k5rx"))))
+        (base32 "1af0kp3nwx7g6ifiz8hibpjm30rh8xa99ld5j68hdi1vimb2vdi7"))))
     (properties `((upstream-name . "multiDimBio")))
     (build-system r-build-system)
     (arguments
@@ -11425,6 +11397,45 @@ Fisheries\" ISBN 9780367469894, published in 2021 by Chapman & Hall in their
 the book's many practical examples.")
     (license license:gpl3)))
 
+(define-public r-mpwr
+  (package
+    (name "r-mpwr")
+    (version "0.1.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mpwR" version))
+       (sha256
+        (base32 "0mm9hdf1c271paq2ifj9hr6m5c7qaq5dbfshvrqk2zl4zl4clsbd"))))
+    (properties `((upstream-name . "mpwR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-upsetr
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-plotly
+                             r-magrittr
+                             r-ggplot2
+                             r-forcats
+                             r-flowtracer
+                             r-dplyr
+                             r-data-table
+                             r-comprehenr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mpwR")
+    (synopsis
+     "Standardized Comparison of Workflows in Mass Spectrometry-Based Bottom-Up Proteomics")
+    (description
+     "Useful functions to analyze proteomic workflows including number of
+identifications, data completeness, missed cleavages, quantitative and retention
+time precision etc.  Various software outputs are supported such as
+@code{ProteomeDiscoverer}', Spectronaut', DIA-NN and @code{MaxQuant}'.")
+    (license license:expat)))
+
 (define-public r-mpv
   (package
     (name "r-mpv")
@@ -14199,13 +14210,13 @@ of out-of-sample \"hat\" or \"leverage\" values, as defined in the paper.")
 (define-public r-mooplot
   (package
     (name "r-mooplot")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mooplot" version))
        (sha256
-        (base32 "1rxqky4lh026qrdq41mpj6ks2h6vzy45bh7ssd13x1wn4ml9lb8x"))))
+        (base32 "1hvbjqw17s700nspd2ns2b5af4pqyvhjb44s4ih49avxfw1a3bq8"))))
     (properties `((upstream-name . "mooplot")))
     (build-system r-build-system)
     (arguments
@@ -14379,13 +14390,13 @@ and examples are given by Koutra et al. (2024)
 (define-public r-moocore
   (package
     (name "r-moocore")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moocore" version))
        (sha256
-        (base32 "1cq0mmqzkcwzpvjwnw30xlpff1lxsvynccmhffq5mz209idmyi8n"))))
+        (base32 "1prjf6hspf78flkhzmhyignvmlhdafhn4cp9n00nmqqvy9nziz8j"))))
     (properties `((upstream-name . "moocore")))
     (build-system r-build-system)
     (arguments
@@ -19288,13 +19299,13 @@ longitudinal data in R: development of a statistical package.\"
 (define-public r-mmconvert
   (package
     (name "r-mmconvert")
-    (version "0.10")
+    (version "0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmconvert" version))
        (sha256
-        (base32 "1bmvcvkisqmfnpwwwb8fvnqq5fbdd6ppsi6iw9parbmzrnir8zmj"))))
+        (base32 "00pfj2k9iy6pajnd5cwjxvzhi9cg8d3ypsg59yp4ar1abw6a0dp3"))))
     (properties `((upstream-name . "mmconvert")))
     (build-system r-build-system)
     (arguments
@@ -22614,13 +22625,13 @@ Graphical visualization by volcano and Bland-Altman plots (Bland and Altman
 (define-public r-mkin
   (package
     (name "r-mkin")
-    (version "1.2.9")
+    (version "1.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mkin" version))
        (sha256
-        (base32 "1jdd77lkxn8l92gfa7rhwqf8vwh8rnphf9dz71w4lpg7h4crr8sx"))))
+        (base32 "05ka5p3liwd6mri35h76gfxdq5axy5mdqqbhqq45s20xdq758a7n"))))
     (properties `((upstream-name . "mkin")))
     (build-system r-build-system)
     (arguments
@@ -26244,38 +26255,6 @@ invariance.  Martin, Williams, and Rast (2020) <doi:10.31234/osf.io/qbdjt>.")
 imputation of the number of previous episodes.  See HernÃ¡ndez-Herrera G,
 MoriÃ±a D, Navarro A. (2020) <@code{arXiv:2007.15031>}.")
     (license license:gpl2+)))
-
-(define-public r-mirai
-  (package
-    (name "r-mirai")
-    (version "2.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mirai" version))
-       (sha256
-        (base32 "17jiabwijcbs1qnvyc2jdnzi3hynlakfl878z5726857c1xqsv42"))))
-    (properties `((upstream-name . "mirai")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nanonext))
-    (native-inputs (list r-litedown))
-    (home-page "https://shikokuchuo.net/mirai/")
-    (synopsis "Minimalist Async Evaluation Framework for R")
-    (description
-     "Designed for simplicity, a mirai evaluates an R expression asynchronously in a
-parallel process, locally or distributed over the network.  The result is
-automatically available upon completion.  Modern networking and concurrency,
-built on nanonext and NNG (Nanomsg Next Gen), ensures reliable and efficient
-scheduling over fast inter-process communications or TCP/IP secured by TLS.
-Distributed computing can launch remote resources via SSH or cluster managers.
-An inherently queued architecture handles many more tasks than available
-processes, and requires no storage on the file system.  Innovative features
-include support for otherwise non-exportable reference objects, event-driven
-promises, and asynchronous parallel map.")
-    (license license:gpl3+)))
 
 (define-public r-mipplot
   (package
@@ -32635,13 +32614,13 @@ visit the vignettes <https://adriancorrendo.github.io/metrica/>.")
 (define-public r-metr
   (package
     (name "r-metr")
-    (version "0.18.0")
+    (version "0.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metR" version))
        (sha256
-        (base32 "0zqjhphn9i0gzbwacpnc2ii7iailp6kh8v28mdv39wpv09xp21sr"))))
+        (base32 "0xz9iij0fm2654cka7vr52j79s3srfm3g252sxnf92ca6y0zbp2r"))))
     (properties `((upstream-name . "metR")))
     (build-system r-build-system)
     (arguments
@@ -51227,13 +51206,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "0.5.3")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "11xcrwakh8x5rlqkj1m9j7l2ajwsn9arw9n9yyr09fnhjys5c88z"))))
+        (base32 "158rzgf3c7klv8k0d8lqbvzrlicqbk56scwdnnjp8qi7p7bf27l1"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (arguments
