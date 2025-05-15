@@ -44331,13 +44331,13 @@ data frame and expand a data frame of matrices into a tidy data frame.")
 (define-public r-matsbyname
   (package
     (name "r-matsbyname")
-    (version "0.6.11")
+    (version "0.6.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matsbyname" version))
        (sha256
-        (base32 "1v69vvdmbmywdaidgfvyrid2ckndbsxf3zgp8vfzi1h74g3pbj9i"))))
+        (base32 "13czgchnqrvwnc5dz6lzqmlrm232y17in97k2f9l2ill9p8pj7zx"))))
     (properties `((upstream-name . "matsbyname")))
     (build-system r-build-system)
     (arguments

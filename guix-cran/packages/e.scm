@@ -10650,26 +10650,24 @@ simulator that includes disease dynamics.")
 (define-public r-epiworldrshiny
   (package
     (name "r-epiworldrshiny")
-    (version "0.1-0")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiworldRShiny" version))
        (sha256
-        (base32 "0xffsvswwaxv3kcy4s9iznwmadb5r1p4darpkkplz1zvfma9sy5c"))))
+        (base32 "1vppys687gqaw45fq9ibrwa5gm1cpwkdvb21z4g3zj3d3mg8pbv9"))))
     (properties `((upstream-name . "epiworldRShiny")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shinyjs
-                             r-shinydashboard
-                             r-shinycssloaders
-                             r-shiny
+    (propagated-inputs (list r-shiny
                              r-plotly
                              r-ggplot2
                              r-epiworldr
-                             r-dt))
+                             r-dt
+                             r-bslib))
     (home-page "https://github.com/UofUEpiBio/epiworldRShiny/")
     (synopsis "'shiny' Wrapper of the R Package 'epiworldR'")
     (description

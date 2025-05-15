@@ -2180,13 +2180,13 @@ beginner friendly user introduction.")
 (define-public r-jointseg
   (package
     (name "r-jointseg")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jointseg" version))
        (sha256
-        (base32 "0zilkxk30w3l9mwikmsgvpy5misjggs98c3bjrjy1pfc4b0is943"))))
+        (base32 "1dswk3dqqi34m7v7p3skzgbmg2c0mv6sys6kdriw62hkjzqla98f"))))
     (properties `((upstream-name . "jointseg")))
     (build-system r-build-system)
     (arguments

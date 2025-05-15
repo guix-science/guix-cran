@@ -45227,13 +45227,13 @@ useful indices for measuring diversity.")
 (define-public r-simbkmrdata
   (package
     (name "r-simbkmrdata")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simBKMRdata" version))
        (sha256
-        (base32 "0a88rmndhqvqgxssykhl6qmr64ncaph2n13r1363lx12k2qhp5bb"))))
+        (base32 "0plizd8rl74qqc375zjz3m4wq2ym5xrkvwyl85zsapdipsr3s7wy"))))
     (properties `((upstream-name . "simBKMRdata")))
     (build-system r-build-system)
     (arguments
@@ -65798,13 +65798,13 @@ focus is set to prime-calculation.")
 (define-public r-schooldatait
   (package
     (name "r-schooldatait")
-    (version "0.2.4")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SchoolDataIT" version))
        (sha256
-        (base32 "1qikv711w5ppvpfkgs6a7qzpja37bx2x19d92z8jq06av35v9hpk"))))
+        (base32 "1agjr4a2hv18k7gbinaww52c4x3wn36gyjy1bfhaf1yzxcl4wffg"))))
     (properties `((upstream-name . "SchoolDataIT")))
     (build-system r-build-system)
     (arguments

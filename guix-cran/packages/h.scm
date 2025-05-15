@@ -3122,19 +3122,19 @@ the corresponding pair.")
 (define-public r-htgm
   (package
     (name "r-htgm")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HTGM" version))
        (sha256
-        (base32 "183q7rdygkymv6glf668f7yql41fmk0a2dq4f04kbw5qvjf393y7"))))
+        (base32 "1fpn3ahf5kj9igqfhddbi3xp8pd365byh0bdp408l1piwzdvs4h7"))))
     (properties `((upstream-name . "HTGM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-minimalistgodb r-gplots r-gominer))
+    (propagated-inputs (list r-vprint r-minimalistgodb r-gplots r-gominer))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=HTGM")
     (synopsis "High Throughput 'GoMiner'")
@@ -13739,13 +13739,13 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
 (define-public r-hce
   (package
     (name "r-hce")
-    (version "0.7.0")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hce" version))
        (sha256
-        (base32 "05hwnly584jikymcwkz767xcg86vymqgr0daimm5v7mxq7ah9asb"))))
+        (base32 "1vhmk96xm802inbg0h3xzyzf5kd8pbwr8ih15hfda7d2vnzj0859"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
     (arguments
@@ -13755,12 +13755,22 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
     (home-page "https://cran.r-project.org/package=hce")
     (synopsis "Design and Analysis of Hierarchical Composite Endpoints")
     (description
-     "Simulate and analyze hierarchical composite endpoints.  Win odds is the main
-analysis method, but other win statistics (win ratio, net benefit) are also
-implemented, provided there is no censoring.  See Gasparyan SB et al (2023)
-\"Hierarchical Composite Endpoints in COVID-19: The DARE-19 Trial.\" Case Studies
-in Innovative Clinical Trials, 95-148.  Chapman; Hall/CRC.
-<doi:10.1201/9781003288640-7>.")
+     "Simulate and analyze hierarchical composite endpoints.  Win odds, also called
+Wilcoxon-Mann-Whitney or success odds, is the main analysis method.  Other win
+statistics (win probability, win ratio, net benefit) are also implemented in the
+univariate case, provided there is no censoring.  The win probability analysis
+is based on the Brunner-Munzel test and uses the
+@code{DeLong-DeLong-Clarke-Pearson} variance estimator, as described by Brunner
+and Konietschke (2025) in âAn unbiased rank-based estimator of the
+MannâWhitney variance including the case of tiesâ (Statistical Papers 66
+(1): 20, <doi:10.1007/s00362-024-01635-0>).  Stratification and covariate
+adjustment are performed based on the methodology presented by Koch GG et al.
+in âIssues for covariance analysis of dichotomous and ordered categorical data
+from randomized clinical trials and non-parametric strategies for addressing
+themâ (Statistics in Medicine 17 (15-16): 1863â92).  For a review, see
+Gasparyan SB et al (2021) âAdjusted win ratio with stratification: Calculation
+methods and interpretationâ (Statistical Methods in Medical Research 30 (2):
+580â611, <doi:10.1177/0962280220942558>).")
     (license license:expat)))
 
 (define-public r-hcd

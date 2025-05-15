@@ -9719,13 +9719,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.5.7")
+    (version "1.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "1pymzi942y6indnwww73g2zlx8vgw47nrd11iizqzlqxpx739s01"))))
+        (base32 "0x01gfb4rr3f9kspyv8wjyd8wadwhh8yil6vqbjqvbz39rf21mad"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (arguments
@@ -23268,19 +23268,20 @@ other available packages.")
 (define-public r-ggalign
   (package
     (name "r-ggalign")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggalign" version))
        (sha256
-        (base32 "1c9n3zr8ffw0xp6w6p6gam02mgiqmphahan124mg8wlmv10y708i"))))
+        (base32 "0ivjipbinbawdd5qpf3lxdnwhi34df6mbbixndniw6y2bdbgwxbz"))))
     (properties `((upstream-name . "ggalign")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vctrs
+                             r-scales
                              r-rlang
                              r-lifecycle
                              r-gtable
@@ -36135,13 +36136,13 @@ solving the problem.")
 (define-public r-gabb
   (package
     (name "r-gabb")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GABB" version))
        (sha256
-        (base32 "16gdg5yvzlvic3qc9ya68xkbx55jg7lvlnqjry9x4c5hvggywzvl"))))
+        (base32 "0ydxyxrs69j6yf9x90g23g38qzx0m6493mgfiy59mkr6883zynw0"))))
     (properties `((upstream-name . "GABB")))
     (build-system r-build-system)
     (arguments

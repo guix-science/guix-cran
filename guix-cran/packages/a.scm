@@ -16854,6 +16854,58 @@ See <https://community.algolia.com/places/>.")
 resolving a small number ob closed equations.")
     (license license:gpl2)))
 
+(define-public r-algaeclassify
+  (package
+    (name "r-algaeclassify")
+    (version "2.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "algaeClassify" version))
+       (sha256
+        (base32 "0a0rfa3j2wnpbp4vmnyx2dvsb2y90g9phhvq8n1286f6afaks9j9"))))
+    (properties `((upstream-name . "algaeClassify")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ritis r-rcurl r-lubridate r-jsonlite r-curl))
+    (home-page "https://doi.org/10.5066/F7S46Q3F")
+    (synopsis
+     "Tools to Query the 'Algaebase' Online Database, Standardize Phytoplankton Taxonomic Data, and Perform Functional Group Classifications")
+    (description
+     "This package provides functions that facilitate the use of accepted taxonomic
+nomenclature, collection of functional trait data, and assignment of functional
+group classifications to phytoplankton species.  Possible classifications
+include Morpho-functional group (MFG; Salmaso et al.  2015
+<doi:10.1111/fwb.12520>) and CSR (Reynolds 1988; Functional morphology and the
+adaptive strategies of phytoplankton.  In C.D. Sandgren (ed).  Growth and
+reproductive strategies of freshwater phytoplankton, 388-433.  Cambridge
+University Press, New York).  Versions 2.0.0 and later includes new functions
+for querying the algaebase online taxonomic database (www.algaebase.org),
+however these functions require a valid API key that must be acquired from the
+algaebase administrators.  Note that none of the @code{algaeClassify} authors
+are affiliated with algaebase in any way.  Taxonomic names can also be checked
+against a variety of taxonomic databases using the Global Names Resolver service
+via its API (<https://resolver.globalnames.org/api>).  In addition, currently
+accepted and outdated synonyms, and higher taxonomy, can be extracted for lists
+of species from the ITIS database using wrapper functions for the ritis package.
+ The @code{algaeClassify} package is a product of the GEISHA (Global Evaluation
+of the Impacts of Storms on freshwater Habitat and Structure of phytoplankton
+Assemblages), funded by CESAB (Centre for Synthesis and Analysis of
+Biodiversity) and the U.S. Geological Survey John Wesley Powell Center for
+Synthesis and Analysis, with data and other support provided by members of GLEON
+(Global Lake Ecology Observation Network).  DISCLAIMER: This software has been
+approved for release by the U.S. Geological Survey (USGS).  Although the
+software has been subjected to rigorous review, the USGS reserves the right to
+update the software as needed pursuant to further analysis and review.  No
+warranty, expressed or implied, is made by the USGS or the U.S. Government as to
+the functionality of the software and related material nor shall the fact of
+release constitute any such warranty.  Furthermore, the software is released on
+condition that neither the USGS nor the U.S. Government shall be held liable for
+any damages resulting from its authorized or unauthorized use.")
+    (license license:cc0)))
+
 (define-public r-alfred
   (package
     (name "r-alfred")

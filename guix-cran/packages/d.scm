@@ -3789,6 +3789,35 @@ to find similar songs.  More information:
 <https://developer.spotify.com/documentation/web-api/> .")
     (license license:gpl3)))
 
+(define-public r-dspline
+  (package
+    (name "r-dspline")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dspline" version))
+       (sha256
+        (base32 "0w9wlll36g3psj9ghjfi7339848v6bh1xq3c4371pzw3whycwk43"))))
+    (properties `((upstream-name . "dspline")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rcppeigen r-rcpp r-matrix))
+    (home-page "https://github.com/glmgen/dspline")
+    (synopsis "Tools for Computations with Discrete Splines")
+    (description
+     "Discrete splines are a class of univariate piecewise polynomial functions which
+are analogous to splines, but whose smoothness is defined via divided
+differences rather than derivatives.  Tools for efficient computations relating
+to discrete splines are provided here.  These tools include discrete
+differentiation and integration, various matrix computations with discrete
+derivative or discrete spline bases matrices, and interpolation within discrete
+spline spaces.  These techniques are described in Tibshirani (2020)
+<doi:10.48550/@code{arXiv.2003.03886>}.")
+    (license license:expat)))
+
 (define-public r-dsos
   (package
     (name "r-dsos")
@@ -23026,6 +23055,48 @@ issue with delta is that can not be computed by hand contrary to kappa.  The
 current algorithm is based on the Version 5 of the delta windows program that
 can be found on
 <https://www.ugr.es/~bioest/software/delta/cmd.php?seccion=downloads>.")
+    (license license:gpl3)))
+
+(define-public r-delma
+  (package
+    (name "r-delma")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "delma" version))
+       (sha256
+        (base32 "0510m66jjmc9xvhva5digxcc609skqna29hwazw7xgkhsnaij638"))))
+    (properties `((upstream-name . "delma")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-xfun
+                             r-withr
+                             r-tibble
+                             r-stringr
+                             r-snakecase
+                             r-rmarkdown
+                             r-rlang
+                             r-quarto
+                             r-purrr
+                             r-lightparser
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://delma.ala.org.au")
+    (synopsis
+     "Convert 'R Markdown' and 'Quarto' Documents to Ecological Metadata Language")
+    (description
+     "Ecological Metadata Language or EML is a long-established format for describing
+ecological datasets to facilitate sharing and re-use.  Because EML is
+effectively a modified xml schema, however, it is challenging to write and
+manipulate for non-expert users.  delma supports users to write metadata
+statements in R Markdown or Quarto markdown format, and parse them to EML and
+(optionally) back again.")
     (license license:gpl3)))
 
 (define-public r-delimtools

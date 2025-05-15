@@ -9211,6 +9211,31 @@ al. (2021) <doi:10.1007/s00285-021-01685-0>, and Collienne (2021)
 <http://hdl.handle.net/10523/12606>.")
     (license license:gpl3+)))
 
+(define-public r-rrmorph
+  (package
+    (name "r-rrmorph")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RRmorph" version))
+       (sha256
+        (base32 "0w0xx5fzxlf86lpbv519n0ars8mg9knr4mpk78aacr4ks0si5hl0"))))
+    (properties `((upstream-name . "RRmorph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rvcg r-rrphylo r-rgl r-morpho))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RRmorph")
+    (synopsis "3D Morphological Analyses with 'RRphylo'")
+    (description
+     "Combined with RRphylo', this package provides a powerful tool to analyse and
+visualise 3d models (surfaces and meshes) in a phylogenetically explicit context
+(Melchionna et al., 2024 <doi:10.1038/s42003-024-06710-8>).")
+    (license license:gpl2)))
+
 (define-public r-rrmlrfmc
   (package
     (name "r-rrmlrfmc")
@@ -16379,13 +16404,13 @@ the meta-analysis methods are developed by Noma et al. (2022) <forthcoming>.")
 (define-public r-robustmatrix
   (package
     (name "r-robustmatrix")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustmatrix" version))
        (sha256
-        (base32 "1qhb2wxzb0wh0b9c7jj42aanmyxd22b0hn5gip3s9q2ypdzhnllc"))))
+        (base32 "0ww9qzs8b9wzvh44hndcsacywcl9qnd6dnsg6b11ga5xjaq2ww2h"))))
     (properties `((upstream-name . "robustmatrix")))
     (build-system r-build-system)
     (arguments
@@ -28329,13 +28354,13 @@ still permitting the use of GRASS 7'.")
 (define-public r-rgraphspace
   (package
     (name "r-rgraphspace")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RGraphSpace" version))
        (sha256
-        (base32 "05k532mwvsm9kjid69xk6pp87bgfh1hrwzq6h4gp9aphbm97nys5"))))
+        (base32 "1fhs2bh1zcld4yr7yp5j9bgyjykh6rkccg6l76xyk44pn5z02prj"))))
     (properties `((upstream-name . "RGraphSpace")))
     (build-system r-build-system)
     (arguments
@@ -38441,34 +38466,27 @@ data mining approach for longitudinal and clustered data
 (define-public r-redquack
   (package
     (name "r-redquack")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redquack" version))
        (sha256
-        (base32 "0q3fvm8cb7yh4xw94n10gqvm1blk9ghj6kfmgy195250f5fzixg6"))))
+        (base32 "1ma84nigvy2xlpgjq7w7r1gcni8wzfhv5v15y9knsdy8npsyx8mi"))))
     (properties `((upstream-name . "redquack")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-readr
-                             r-httr2
-                             r-duckdb
-                             r-dplyr
-                             r-dbi
-                             r-cli
-                             r-beepr
-                             r-audio))
+    (propagated-inputs (list r-readr r-httr2 r-dbi r-cli r-audio))
     (home-page "https://cran.r-project.org/package=redquack")
-    (synopsis "Transfer 'REDCap' Data to 'DuckDB'")
+    (synopsis "Transfer 'REDCap' Data to Database")
     (description
-     "This package provides a single function to transfer REDCap (Research Electronic
-Data Capture) data to a @code{DuckDB} database.  Processes data in chunks to
-handle large datasets while minimizing memory usage.  Features include resuming
-incomplete transfers, converting column types, tracking progress, logging
-operations in the database.")
+     "Transfer REDCap (Research Electronic Data Capture) data to a database with
+additional support for @code{DuckDB}'.  Processes data in chunks to handle large
+datasets without exceeding available memory.  Features include resuming
+incomplete transfers, automatically converting data types for @code{DuckDB}',
+tracking progress, and logging operations in the database.")
     (license license:expat)))
 
 (define-public r-redoc
@@ -44008,6 +44026,32 @@ more readable.")
 converts the package documentation files into markdown files and combines them
 into a markdown version of the package reference manual.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-rd2d
+  (package
+    (name "r-rd2d")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rd2d" version))
+       (sha256
+        (base32 "17s6s25xrfnvn5w5lwbkykicmqk4rpvw38daq642rq9jr8j4c5wb"))))
+    (properties `((upstream-name . "rd2d")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-ggplot2 r-expm))
+    (home-page "https://rdpackages.github.io/rd2d/")
+    (synopsis "Boundary Regression Discontinuity Designs")
+    (description
+     "This package provides estimation and inference procedures for boundary
+regression discontinuity (RD) designs using local polynomial methods, based on
+either bivariate coordinates or distance-based approaches.  Methods are
+developed in Cattaneo, Titiunik, and Yu (2025)
+<https://mdcattaneo.github.io/papers/Cattaneo-Titiunik-Yu_2025_@code{BoundaryRD.pdf>}.")
+    (license license:gpl2)))
 
 (define-public r-rczechia
   (package

@@ -14425,6 +14425,56 @@ cite BIOMASS', please use citation(\"BIOMASS\").  See more in the article of
 RÃ©jou-MÃ©chain et al. (2017) <doi:10.1111/2041-210X.12753>.")
     (license license:gpl2)))
 
+(define-public r-biom2
+  (package
+    (name "r-biom2")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BioM2" version))
+       (sha256
+        (base32 "1p61w98q5h08yramikqc017ahr93yxwb361j5wj28j0w4kmm0ib1"))))
+    (properties `((upstream-name . "BioM2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wordcloud2
+                             r-wgcna
+                             r-webshot
+                             r-viridis
+                             r-uwot
+                             r-rocr
+                             r-mlr3verse
+                             r-mlr3
+                             r-igraph
+                             r-htmlwidgets
+                             r-ggthemes
+                             r-ggstatsplot
+                             r-ggsci
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggnetwork
+                             r-ggforce
+                             r-cmplot
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=BioM2")
+    (synopsis "Biologically Explainable Machine Learning Framework")
+    (description
+     "Biologically Explainable Machine Learning Framework for Phenotype Prediction
+using omics data described in Chen and Schwarz (2017)
+<doi:10.48550/@code{arXiv.1712.00336>.Identifying} reproducible and
+interpretable biological patterns from high-dimensional omics data is a critical
+factor in understanding the risk mechanism of complex disease.  As such,
+explainable machine learning can offer biological insight in addition to
+personalized risk scoring.In this process, a feature space of biological
+pathways will be generated, and the feature space can also be subsequently
+analyzed using WGCNA (Described in Horvath and Zhang (2005)
+<doi:10.2202/1544-6115.1128> and Langfelder and Horvath (2008)
+<doi:10.1186/1471-2105-9-559> ) methods.")
+    (license license:expat)))
+
 (define-public r-biologicalactivityindices
   (package
     (name "r-biologicalactivityindices")
@@ -15743,13 +15793,13 @@ modeling for commonly used hierarchical and array-based algorithms.")
 (define-public r-bingroup
   (package
     (name "r-bingroup")
-    (version "2.2-1")
+    (version "2.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binGroup" version))
        (sha256
-        (base32 "0cb7j6b0s3y56mv1967awwri0kv0rf3sr3vwf9gc2zbjggxi9ffp"))))
+        (base32 "0albhz1659nnifw9c2xb4hv59n3xfchz38w7j2v35q20w638ak8p"))))
     (properties `((upstream-name . "binGroup")))
     (build-system r-build-system)
     (arguments
@@ -22111,13 +22161,13 @@ using a Bayesian hierarchical model as described in Hrafnkelsson et al. (2020)
 (define-public r-bdpv
   (package
     (name "r-bdpv")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bdpv" version))
        (sha256
-        (base32 "0wcnmamqrbqwskgv2yhnxq2kb179n63c825y9hsl20rfca0ijh6m"))))
+        (base32 "12v3dbjv13ca9gpgfza1h4810864r5a8havvi3gksrsrxb2b999s"))))
     (properties `((upstream-name . "bdpv")))
     (build-system r-build-system)
     (arguments

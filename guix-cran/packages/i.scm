@@ -15790,6 +15790,42 @@ to simulate @code{IgA-Seq} data and an example experimental data set for method
 testing.")
     (license license:gpl3)))
 
+(define-public r-igapfill
+  (package
+    (name "r-igapfill")
+    (version "0.0.41")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "igapfill" version))
+       (sha256
+        (base32 "0a0cabn9dzpnr16bmpxy6h64sx060g863p23lqdriz0kdbk42hw5"))))
+    (properties `((upstream-name . "igapfill")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-raster
+                             r-numbers
+                             r-itertools
+                             r-iterators
+                             r-gtools
+                             r-geots
+                             r-gapfill
+                             r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=igapfill")
+    (synopsis "Interface for Gap-Filling Earth Observation Datasets")
+    (description
+     "This package provides functions and a user-friendly console-based interface for
+the efficient use of the main function of the R package gapfill to fill missing
+values of satellite images subsets.  In addition to the R package documentation,
+the gapfill methods are introduced in Gerber et al. (2018)
+<doi:10.1109/TGRS.2017.2785240>.")
+    (license license:gpl2+)))
+
 (define-public r-ig-vancouver-2014-topcolour
   (package
     (name "r-ig-vancouver-2014-topcolour")

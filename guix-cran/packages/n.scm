@@ -6049,6 +6049,32 @@ customized and tracked over time, so that the same input is always assigned the
 same pseudonym.")
     (license license:expat)))
 
+(define-public r-noaa
+  (package
+    (name "r-noaa")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noaa" version))
+       (sha256
+        (base32 "0dksm583b46l3bv9mqnky2ia68lyxa91rciy1w0pb3zy4j3zv8rq"))))
+    (properties `((upstream-name . "noaa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr))
+    (home-page "https://cran.r-project.org/package=noaa")
+    (synopsis "Accessing NOAA Climate Data Online")
+    (description
+     "Fetch data from the National Oceanic and Atmospheric Administration Climate Data
+Online (NOAA CDO) <https://www.ncdc.noaa.gov/cdo-web/webservices/v2> API
+including daily, monthly, and yearly climate summaries, radar data,
+climatological averages, precipitation data, annual summaries, storm events, and
+agricultural meteorology.")
+    (license license:gpl3)))
+
 (define-public r-no-ping-pong
   (package
     (name "r-no-ping-pong")
@@ -10815,20 +10841,19 @@ analysis in ggplot2 plots and gt tables.")
 (define-public r-nflfastr
   (package
     (name "r-nflfastr")
-    (version "5.0.0")
+    (version "5.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflfastR" version))
        (sha256
-        (base32 "0bpgkl5gxh3brm8wiqpx0m1ky4w8czadzrjhjw1p478yaldn9xx5"))))
+        (base32 "02507b9w6mgqanw54hnjwk591xgal7ncfd3g383jhnhd4rmghhhr"))))
     (properties `((upstream-name . "nflfastR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xgboost
-                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -16157,13 +16182,13 @@ we refer the reader to the paper Gomtsyan (2023), <@code{arXiv:2307.00929>}.")
 (define-public r-nbtransmission
   (package
     (name "r-nbtransmission")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nbTransmission" version))
        (sha256
-        (base32 "0ij7c6r4l1f2yq5qqyd3hirkhhzy45h0vhd0b3fh6idmww47dich"))))
+        (base32 "01d1ph0kxknkmz1irb44hcjpj53sm1iz8i2y9ri6sz9grgj6gxy2"))))
     (properties `((upstream-name . "nbTransmission")))
     (build-system r-build-system)
     (arguments
@@ -16174,7 +16199,8 @@ we refer the reader to the paper Gomtsyan (2023), <@code{arXiv:2307.00929>}.")
                              r-poisbinom
                              r-lubridate
                              r-dplyr
-                             r-caret))
+                             r-caret
+                             r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://sarahleavitt.github.io/nbTransmission/")
     (synopsis "Naive Bayes Transmission Analysis")

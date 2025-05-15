@@ -14234,13 +14234,13 @@ Laplace approximation for the random effects.  This is demonstrated in Monnahan
 (define-public r-tmap-cartogram
   (package
     (name "r-tmap-cartogram")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmap.cartogram" version))
        (sha256
-        (base32 "0vw3acj54b9vr6sq1iq4w9iibj073gp7aqh9mykg1vr3nxq4xnp9"))))
+        (base32 "07jsxq3vpn18rypfw6vxwk3z00qswdkkqxlx3979zr3d692gswkl"))))
     (properties `((upstream-name . "tmap.cartogram")))
     (build-system r-build-system)
     (arguments

@@ -939,13 +939,13 @@ across a website.")
 (define-public r-usdoj
   (package
     (name "r-usdoj")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usdoj" version))
        (sha256
-        (base32 "0jrw83nh7inyira5z9shswi2hic60y3iikr5x870ym9z7rqd352q"))))
+        (base32 "018kknkabm75h2zzb76lc4mci1cw50f64f1jfbrsyg408syca3qv"))))
     (properties `((upstream-name . "usdoj")))
     (build-system r-build-system)
     (arguments

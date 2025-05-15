@@ -8658,6 +8658,62 @@ network.  This can be fitted by the power law and/or an extreme value mixture
 distribution <doi:10.1111/stan.12355>, of which functions are provided.")
     (license license:gpl2+)))
 
+(define-public r-cramr
+  (package
+    (name "r-cramr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cramR" version))
+       (sha256
+        (base32 "0gklijv4w1bw66q7yb5qm8lrz2pxxzbazhcn25z45s6511j30if1"))))
+    (properties `((upstream-name . "cramR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rjson
+                             r-r6
+                             r-r-devices
+                             r-purrr
+                             r-magrittr
+                             r-keras
+                             r-itertools
+                             r-iterators
+                             r-grf
+                             r-glmnet
+                             r-foreach
+                             r-dt
+                             r-dplyr
+                             r-doparallel
+                             r-data-table
+                             r-caret))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/yanisvdc/cramR")
+    (synopsis "Cram Method for Efficient Simultaneous Learning and Evaluation")
+    (description
+     "This package performs the Cram method, a general and efficient approach to
+simultaneous learning and evaluation using a generic machine learning algorithm.
+ In a single pass of batched data, the proposed method repeatedly trains a
+machine learning algorithm and tests its empirical performance.  Because it
+utilizes the entire sample for both learning and evaluation, cramming is
+significantly more data-efficient than sample-splitting.  Unlike
+cross-validation, Cram evaluates the final learned model directly, providing
+sharper inference aligned with real-world deployment.  The method naturally
+applies to both policy learning and contextual bandits, where decisions are
+based on individual features to maximize outcomes.  The package includes
+@code{cram_policy()} for learning and evaluating individualized binary treatment
+rules, @code{cram_ml()} to train and assess the population-level performance of
+machine learning models, and @code{cram_bandit()} for on-policy evaluation of
+contextual bandit algorithms.  For all three functions, the package provides
+estimates of the average outcome that would result if the model were deployed,
+along with standard errors and confidence intervals for these estimates.
+Details of the method are described in Jia, Imai, and Li (2024)
+<https://www.hbs.edu/ris/Publication%20Files/2403.07031v1_a83462e0-145b-4675-99d5-9754aa65d786.pdf>
+and Jia et al. (2025) <doi:10.48550/@code{arXiv.2403.07031>}.")
+    (license license:gpl3)))
+
 (define-public r-cramer
   (package
     (name "r-cramer")
@@ -29371,6 +29427,37 @@ time-series data for model-based clustering and classification.  Includes model
 selection criteria for selecting the number of lags and clusters.")
     (license license:gpl2)))
 
+(define-public r-clusterv
+  (package
+    (name "r-clusterv")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clusterv" version))
+       (sha256
+        (base32 "18almryf7fz2r9na7dzd7mrczhq7167c9z7cc61192cmnrqg00v4"))))
+    (properties `((upstream-name . "clusterv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-mass r-cluster))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://valentini.di.unimi.it/SW/clusterv/")
+    (synopsis "Assessment of Cluster Stability by Randomized Maps")
+    (description
+     "The reliability of clusters is estimated using random projections.  A set of
+stability measures is provided to assess the reliability of the clusters
+discovered by a generic clustering algorithm.  The stability measures are
+taylored to high dimensional data (e.g. DNA microarray data) (Valentini, G
+(2005), <doi:10.1093/bioinformatics/bti817>.")
+    (license license:gpl2+)))
+
 (define-public r-clustertend
   (package
     (name "r-clustertend")
@@ -38978,13 +39065,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "170fdh1x2l0zw9cb6dyw3gv2hhi9972z8wyby3lzn6gd1f52b0bj"))))
+        (base32 "0ak0pcpq60q8sgw4qf31mmiskkh7mz2knan43z2gb6fzal7zz9d4"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (arguments

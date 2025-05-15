@@ -10918,6 +10918,31 @@ Kumam, P., Khan, D.M., Khalil, U., Sulaiman, M. and Khan, Z. (2020)
 <DOI:10.1109/ACCESS.2020.3010099>.")
     (license license:gpl3+)))
 
+(define-public r-okcolors
+  (package
+    (name "r-okcolors")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "okcolors" version))
+       (sha256
+        (base32 "1mfllfrx94k6vgmzkmg8d40mfskb034jfnm20lkjzdhbav0n2n9i"))))
+    (properties `((upstream-name . "okcolors")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/nelsonquesado/okcolors")
+    (synopsis
+     "Set of Color Palettes Inspired by OK Go Music Videos for 'ggplot2' in R")
+    (description
+     "This package provides a collection of aesthetically appealing color palettes for
+effective data visualization with ggplot2'.  Palettes support both discrete and
+continuous data.")
+    (license license:gpl3)))
+
 (define-public r-ojsr
   (package
     (name "r-ojsr")

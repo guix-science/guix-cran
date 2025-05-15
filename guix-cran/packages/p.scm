@@ -12921,13 +12921,13 @@ memberships and the truth.")
 (define-public r-prcbench
   (package
     (name "r-prcbench")
-    (version "1.1.8")
+    (version "1.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prcbench" version))
        (sha256
-        (base32 "0h49cgzaqcy97gl57glh0z34g7dnx4wr4y8a1h7r3nxgkvdcvx74"))))
+        (base32 "09fby86ynqgplzrkkrivf454zmzyfp04zhbiaf9kqf6bc0mrbp13"))))
     (properties `((upstream-name . "prcbench")))
     (build-system r-build-system)
     (arguments
@@ -19048,13 +19048,13 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
 (define-public r-polyglotr
   (package
     (name "r-polyglotr")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyglotr" version))
        (sha256
-        (base32 "1l6dpbsslc1lynm39nx5x9kxb6zh54klfnrqb0i8lybavd14i24k"))))
+        (base32 "1cj7c6dipgs025xhwap9krilr6427y5l61ardl4jxl3swigi190j"))))
     (properties `((upstream-name . "polyglotr")))
     (build-system r-build-system)
     (arguments

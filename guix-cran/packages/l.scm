@@ -7752,13 +7752,13 @@ to covariates only or also to outcome values.")
 (define-public r-lmmsolver
   (package
     (name "r-lmmsolver")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMMsolver" version))
        (sha256
-        (base32 "1q8dcl3ihf5vs016x85xp13a4yn1d0xg4zdwxawf85il6mhgng21"))))
+        (base32 "03c1c367m8pmxaij7ml9y0w40sndmgdk9ylvks1hwry0v4irlynv"))))
     (properties `((upstream-name . "LMMsolver")))
     (build-system r-build-system)
     (arguments
