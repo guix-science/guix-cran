@@ -905,13 +905,13 @@ magnitude quicker than other methods.")
 (define-public r-quickcode
   (package
     (name "r-quickcode")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickcode" version))
        (sha256
-        (base32 "0f6d5g3k0qd1fiy26nl1i3i0j93cnj6haqw85ld1g0s46qgqmrk3"))))
+        (base32 "05kjjllgjl7vbk70i9ahpz2v0a6a3p4k3czv3kq0qdyxb9bsdrd8"))))
     (properties `((upstream-name . "quickcode")))
     (build-system r-build-system)
     (arguments
@@ -5292,13 +5292,13 @@ B. (2000) <doi:10.1093/biomet/87.4.823>.")
 (define-public r-qicharts2
   (package
     (name "r-qicharts2")
-    (version "0.7.5")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qicharts2" version))
        (sha256
-        (base32 "12r191bb1fri33h5lcb8lcpzv0f916a8x36fg87i31zh6id94vyc"))))
+        (base32 "08nq83mimcifb2nnq4jzbfynkxhinhl3j8lmjgx5hk3xw8zghwkh"))))
     (properties `((upstream-name . "qicharts2")))
     (build-system r-build-system)
     (arguments

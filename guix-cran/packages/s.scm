@@ -1233,51 +1233,6 @@ of a square matrix (a detguide) as a function of the elements of the matrix and
 writes out that formula, the symbolic representation.")
     (license license:expat)))
 
-(define-public r-symbolicda
-  (package
-    (name "r-symbolicda")
-    (version "0.7-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "symbolicDA" version))
-       (sha256
-        (base32 "1x1qwrf587lgp9ciakrhiy3wj4g90x4g7r784rr2b97g1xwysjff"))))
-    (properties `((upstream-name . "symbolicDA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml
-                             r-shapes
-                             r-rsda
-                             r-e1071
-                             r-clustersim
-                             r-cluster
-                             r-ade4))
-    (home-page "http://keii.ue.wroc.pl/symbolicDA/")
-    (synopsis "Analysis of Symbolic Data")
-    (description
-     "Symbolic data analysis methods: importing/exporting data from ASSO XML Files,
-distance calculation for symbolic data (Ichino-Yaguchi, de Carvalho measure),
-zoom star plot, 3d interval plot, multidimensional scaling for symbolic interval
-data, dynamic clustering based on distance matrix, HI@code{NoV} method for
-symbolic data, Ichino's feature selection method, principal component analysis
-for symbolic interval data, decision trees for symbolic data based on optimal
-split with bagging, boosting and random forest approach (+visualization), kernel
-discriminant analysis for symbolic data, Kohonen's self-organizing maps for
-symbolic data, replication and profiling, artificial symbolic data generation.
-(Milligan, G.W., Cooper, M.C. (1985) <doi:10.1007/BF02294245>, Breiman, L.
-(1996), <doi:10.1007/BF00058655>, Hubert, L., Arabie, P. (1985),
-<doi:10.1007%2FBF01908075>, Ichino, M., & Yaguchi, H. (1994),
-<doi:10.1109/21.286391>, Rand, W.M. (1971) <doi:10.1080/01621459.1971.10482356>,
-Calinski, T., Harabasz, J. (1974) <doi:10.1080/03610927408827101>, Breckenridge,
-J.N. (2000) <doi:10.1207/S15327906MBR3502_5>, Groenen, P.J.F, Winsberg, S.,
-Rodriguez, O., Diday, E. (2006) <doi:10.1016/j.csda.2006.04.003>, Walesiak, M.,
-Dudek, A. (2008) <doi:10.1007/978-3-540-78246-9_11>, Dudek, A. (2007),
-<doi:10.1007/978-3-540-70981-7_4>).")
-    (license license:gpl2+)))
-
 (define-public r-symbol-equation-gpt
   (package
     (name "r-symbol-equation-gpt")
@@ -2048,116 +2003,6 @@ error in covariates.  References: Yi, G. Y. (2008)
 <doi:10.1080/01621459.1994.10476871>; Little, R. J. A. and Rubin, D. B. (2002,
 ISBN:978-0-471-18386-0).")
     (license license:gpl3)))
-
-(define-public r-swfscmisc
-  (package
-    (name "r-swfscmisc")
-    (version "1.6.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "swfscMisc" version))
-       (sha256
-        (base32 "1fc1wdnwvy12v07scf4dd2j1lw8wsgillvi2rcx833fpxg37gzx8"))))
-    (properties `((upstream-name . "swfscMisc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-spatstat-geom
-                             r-sf
-                             r-rlang
-                             r-modeest
-                             r-kknn
-                             r-hdinterval
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr
-                             r-abind))
-    (home-page "https://github.com/EricArcher/swfscMisc")
-    (synopsis "Miscellaneous Functions for Southwest Fisheries Science Center")
-    (description
-     "Collection of conversion, analytical, geodesic, mapping, and plotting functions.
- Used to support packages and code written by researchers at the Southwest
-Fisheries Science Center of the National Oceanic and Atmospheric Administration.")
-    (license license:gpl2+)))
-
-(define-public r-swfscdas
-  (package
-    (name "r-swfscdas")
-    (version "0.6.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "swfscDAS" version))
-       (sha256
-        (base32 "0xyhaabbcmb3hja6pylnmr2vwxqhsxa47ih8chdwcnrz5lqz9inw"))))
-    (properties `((upstream-name . "swfscDAS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-swfscmisc
-                             r-sf
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://swfsc.github.io/swfscDAS/")
-    (synopsis "Processing DAS Data Files")
-    (description
-     "Process and summarize DAS data files.  These files are typically, but do not
-have to be DAS
-<https://swfsc-publications.fisheries.noaa.gov/publications/TM/SWFSC/NOAA-TM-NMFS-SWFSC-305.PDF>
-data produced by the Southwest Fisheries Science Center (SWFSC) program
-@code{WinCruz}'.  This package standardizes and streamlines basic DAS data
-processing, and includes a PDF with the DAS data format requirements expected by
-the package.")
-    (license (license:fsdg-compatible "Apache License (== 2)"))))
-
-(define-public r-swfscairdas
-  (package
-    (name "r-swfscairdas")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "swfscAirDAS" version))
-       (sha256
-        (base32 "0y52ishci4djp1izanzh6psrmnqrpcgvkq28vxs61gdgrgxqp5lk"))))
-    (properties `((upstream-name . "swfscAirDAS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-swfscmisc
-                             r-swfscdas
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://swfsc.github.io/swfscAirDAS/")
-    (synopsis "Southwest Fisheries Science Center Aerial DAS Data Processing")
-    (description
-     "Process and summarize aerial survey DAS data (@code{AirDAS})
-<https://swfsc-publications.fisheries.noaa.gov/publications/TM/SWFSC/NOAA-TM-NMFS-SWFSC-185.PDF>
-collected using an aerial survey program from the Southwest Fisheries Science
-Center (SWFSC)
-<https://www.fisheries.noaa.gov/west-coast/science-data/california-current-marine-mammal-assessment-program>.
- PDF files detailing the relevant @code{AirDAS} data formats are included in
-this package.")
-    (license (license:fsdg-compatible "Apache License (== 2)"))))
 
 (define-public r-swephr
   (package
@@ -4052,13 +3897,13 @@ competing risks outcomes.  Huang, R., Xu, R. and Dulai, P.S.(2020)
 (define-public r-survsakk
   (package
     (name "r-survsakk")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survSAKK" version))
        (sha256
-        (base32 "0j2avaf08jn7llbik1pfjlbficn79s7x2by1fyni3l7bjk6lhpb1"))))
+        (base32 "1ivi2p93rcyrrrwc93affx5bp5pshi6lwrz34ls9q6ibm462rar4"))))
     (properties `((upstream-name . "survSAKK")))
     (build-system r-build-system)
     (arguments
@@ -5147,13 +4992,13 @@ reclassification index (NRI).")
 (define-public r-survhe
   (package
     (name "r-survhe")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survHE" version))
        (sha256
-        (base32 "0c47nw8wfvj7x8llj1cyjgg86rbfix1yxgf0d1x2xncyxyxvxc38"))))
+        (base32 "179g1a68pmskyc45wzmx42ysyk2sd2x2m5wi48gl9l9w8pcid91x"))))
     (properties `((upstream-name . "survHE")))
     (build-system r-build-system)
     (arguments
@@ -5174,17 +5019,18 @@ economics.  These can be used to run survival models under a frequentist (based
 on maximum likelihood) or a Bayesian approach (both based on Integrated Nested
 Laplace Approximation or Hamiltonian Monte Carlo).  To run the Bayesian models,
 the user needs to install additional modules (packages), i.e. @code{survHEinla}
-and @code{survHEhmc}'.  These can be installed using remotes::install_github
-from their @code{GitHub} repositories:
-(<https://github.com/giabaio/@code{survHEhmc>} and
-<https://github.com/giabaio/@code{survHEinla/>} respectively). @code{survHEinla}
-is based on the package INLA, which is available for download at
-<https://inla.r-inla-download.org/R/stable/>.  The user can specify a set of
-parametric models using a common notation and select the preferred mode of
-inference.  The results can also be post-processed to produce probabilistic
-sensitivity analysis and can be used to export the output to an Excel file (e.g.
-for a Markov model, as often done by modellers and practitioners).
-<doi:10.18637/jss.v095.i14>.")
+and @code{survHEhmc}'.  These can be installed from
+<https://giabaio.r-universe.dev/> using install.packages(\"@code{survHEhmc}\",
+repos = c(\"https://giabaio.r-universe.dev\", \"https://cloud.r-project.org\")) and
+install.packages(\"@code{survHEinla}\", repos =
+c(\"https://giabaio.r-universe.dev\", \"https://cloud.r-project.org\"))
+respectively. @code{survHEinla} is based on the package INLA, which is available
+for download at <https://inla.r-inla-download.org/R/stable/>.  The user can
+specify a set of parametric models using a common notation and select the
+preferred mode of inference.  The results can also be post-processed to produce
+probabilistic sensitivity analysis and can be used to export the output to an
+Excel file (e.g. for a Markov model, as often done by modellers and
+practitioners). <doi:10.18637/jss.v095.i14>.")
     (license license:gpl3+)))
 
 (define-public r-surveyvoi
@@ -7103,13 +6949,13 @@ information.")
 (define-public r-superpower
   (package
     (name "r-superpower")
-    (version "0.2.0")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Superpower" version))
        (sha256
-        (base32 "0bv2jx3hadp5d9c3q790in3m728c8jc1nkp9wqvzcdip1d29hyin"))))
+        (base32 "0mzmzlvkq8n4isrkk1d49cm98dc8vqfg3jn5j4igb9s3dndkhlmb"))))
     (properties `((upstream-name . "Superpower")))
     (build-system r-build-system)
     (arguments
@@ -7118,10 +6964,8 @@ information.")
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-reshape2
-                             r-mvtnorm
                              r-mass
                              r-magrittr
-                             r-gridextra
                              r-ggplot2
                              r-emmeans
                              r-dplyr
@@ -8363,13 +8207,13 @@ Japanese morphological analyzer.  This is a port of what is available in Python.
 (define-public r-success
   (package
     (name "r-success")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "success" version))
        (sha256
-        (base32 "14y6farbnjxd0jq3g4vzj6y1xivcibgfic3w4s2jir1wq10ixf5x"))))
+        (base32 "1b59dqjb47apw10kiam8k2yyrdns952p384l7bhrvkdh1wxhqwx2"))))
     (properties `((upstream-name . "success")))
     (build-system r-build-system)
     (arguments
@@ -10406,46 +10250,6 @@ W., Cardozo, N. C., and Fisher, D., 2013, Structural Geology Algorithms: Vectors
 and Allmendinger, R. W., 2013, Spherical projections with OSXStereonet:
 Computers & Geosciences, v.  51, no.  0, p.  193 - 205, <doi:
 10.1016/j.cageo.2012.07.021>.")
-    (license license:gpl3)))
-
-(define-public r-stratifyr
-  (package
-    (name "r-stratifyr")
-    (version "1.0-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stratifyR" version))
-       (sha256
-        (base32 "12m40105wh3gkfx3b3adpsqx6wdjp9i5205abp3xpdybvbnj2plv"))))
-    (properties `((upstream-name . "stratifyR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zipfr r-triangle r-mc2d r-fitdistrplus r-actuar))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=stratifyR")
-    (synopsis "Optimal Stratification of Univariate Populations")
-    (description
-     "The stratification of univariate populations under stratified sampling designs
-is implemented according to Khan et al. (2002) <doi:10.1177/0008068320020518>
-and Khan et al. (2015) <doi:10.1080/02664763.2015.1018674> in this library.  It
-determines the Optimum Strata Boundaries (OSB) and Optimum Sample Sizes (OSS)
-for the study variable, y, using the best-fit frequency distribution of a survey
-variable (if data is available) or a hypothetical distribution (if data is not
-available).  The method formulates the problem of determining the OSB as
-mathematical programming problem which is solved by using a dynamic programming
-technique.  If a dataset of the population is available to the surveyor, the
-method estimates its best-fit distribution and determines the OSB and OSS under
-Neyman allocation directly.  When the dataset is not available, stratification
-is made based on the assumption that the values of the study variable, y, are
-available as hypothetical realizations of proxy values of y from recent surveys.
- Thus, it requires certain distributional assumptions about the study variable.
-At present, it handles stratification for the populations where the study
-variable follows a continuous distribution, namely, Pareto, Triangular,
-Right-triangular, Weibull, Gamma, Exponential, Uniform, Normal, Log-normal and
-Cauchy distributions.")
     (license license:gpl3)))
 
 (define-public r-stratifiedyh
@@ -21338,31 +21142,6 @@ studies with high dimensional genomic features.  Alternative methods conducting
 only the group or individual level selection have also been included.  The core
 modules of the package have been developed in C++.")
     (license license:gpl2)))
-
-(define-public r-sprex
-  (package
-    (name "r-sprex")
-    (version "1.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sprex" version))
-       (sha256
-        (base32 "130vyykibi9yk3b00k1wpbk00w0ah8zsdnfgwbw5wdfh837in1r8"))))
-    (properties `((upstream-name . "sprex")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-swfscmisc r-ggplot2))
-    (home-page "https://github.com/EricArcher/sprex")
-    (synopsis "Species Richness and Extrapolation")
-    (description
-     "This package provides functions for calculating species richness for rarefaction
-and extrapolation, primarily non-parametric species richness such as jackknife,
-Chao1, and ACE. Also available are functions for plotting species richness and
-extrapolation curves, and computing standard diversity and entropy indices.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-spreval
   (package

@@ -808,13 +808,13 @@ Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
 (define-public r-fuzzyimputationtest
   (package
     (name "r-fuzzyimputationtest")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyImputationTest" version))
        (sha256
-        (base32 "1amda4gqgrhsvpxa60d37y8knip26mr98dybdw65wz25j2qk2lj6"))))
+        (base32 "1n1x8k1shf09jdzyirdzr8dr07lx81hg2a3vm6x8w2k276fr00qp"))))
     (properties `((upstream-name . "FuzzyImputationTest")))
     (build-system r-build-system)
     (arguments
@@ -14892,36 +14892,6 @@ growth history.  All data in this package was collected by the author, from
 2015-2016, in the Wellington region of New Zealand.")
     (license license:gpl3)))
 
-(define-public r-fishboot
-  (package
-    (name "r-fishboot")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fishboot" version))
-       (sha256
-        (base32 "0ymil8qzxw8h7ji6pjifxagdvzpiay0cxkz6zmq69x9j8gb7b0sy"))))
-    (properties `((upstream-name . "fishboot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tropfishr r-ks r-foreach r-fishmethods
-                             r-doparallel))
-    (home-page "https://github.com/rschwamborn/fishboot")
-    (synopsis
-     "Bootstrap-Based Methods for the Study of Fish Stocks and Aquatic Populations")
-    (description
-     "This package provides a suite of bootstrap-based models and tools for analyzing
-fish stocks and aquatic populations.  Designed for ecologists and fisheries
-scientists, it supports data from length-frequency distributions,
-tag-and-recapture studies, and hard structure readings (e.g., otoliths).  See
-Schwamborn et al., 2019 <doi:10.1016/j.ecolmodel.2018.12.001> for background.
-The package includes functions for bootstrapped fitting of growth curves and
-plotting.")
-    (license license:gpl3)))
-
 (define-public r-fishbc
   (package
     (name "r-fishbc")
@@ -17081,20 +17051,20 @@ normal densities.")
 (define-public r-fi
   (package
     (name "r-fi")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FI" version))
        (sha256
-        (base32 "17qzl8qvxklpqrzsmvw4wq3lyqz3zkidr7ihxc4vdzmmz69pyh2f"))))
+        (base32 "1kqflaj6l7xknbryvh1y5x3vw9s2vjsr7i0ss0r406qj91zk6hdj"))))
     (properties `((upstream-name . "FI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=FI")
-    (synopsis "Provide functions for forest inventory calculations")
+    (home-page "https://github.com/dvdscripter/FI")
+    (synopsis "Provide Functions for Forest Inventory Calculations")
     (description
      "Provide functions for forest inventory calculations.  Common volumetric
 equations (Smalian, Newton and Huber) as well stacking factor and form.")
@@ -17917,19 +17887,19 @@ computation of the extreme index.")
 (define-public r-fetwfe
   (package
     (name "r-fetwfe")
-    (version "0.4.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fetwfe" version))
        (sha256
-        (base32 "0f9yjlwpra1cb2dz7hbhcjd722683aq906ngbxbrcgk49vzap2n6"))))
+        (base32 "14vrjri748rinzb56pwwnddi230src9q7wrxzqch8lliv8262wq9"))))
     (properties `((upstream-name . "fetwfe")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-grpreg r-glmnet r-expm))
+    (propagated-inputs (list r-matrix r-grpreg r-glmnet r-expm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=fetwfe")
     (synopsis "Fused Extended Two-Way Fixed Effects")
@@ -17942,7 +17912,9 @@ bridge regression regularization approach to improve efficiency and yield valid
 standard errors.  Provides flexible tuning parameters (including user-specified
 or data-driven choices for penalty parameters), detailed output including
 overall and cohort-specific treatment effects with confidence intervals, and
-extensive diagnostic tools.  See details in Faletto (2024)
+extensive diagnostic tools.  Also provides functions for generating simulated
+panel data formatted for estimating FETWFE, and running and evaluating
+simulations.  See details in Faletto (2025)
 (<doi:10.48550/@code{arXiv.2312.05985>}).")
     (license license:expat)))
 
@@ -21223,13 +21195,13 @@ poll of over 30,000 people by Alex Bellos
 (define-public r-faviconplease
   (package
     (name "r-faviconplease")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "faviconPlease" version))
        (sha256
-        (base32 "1q9519y4c5jj0w98yxv51dc7zskxnyjc4fmmi6l47j724cp67gmq"))))
+        (base32 "0b8zq8j7a3q7llw3gf82bdhfdk6i5fw6nh48c21dl04mbnx7z5n1"))))
     (properties `((upstream-name . "faviconPlease")))
     (build-system r-build-system)
     (arguments
@@ -21891,20 +21863,20 @@ maintaining very fast response time.")
 (define-public r-fastrmodels
   (package
     (name "r-fastrmodels")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastrmodels" version))
        (sha256
-        (base32 "1333546nk429l6s4icbmx8hmh29wsc252wbmmhsmgb116l4ra9zi"))))
+        (base32 "1hwgk0pjah8f503y8aydqmwmikdx88xmlxk805i106gcmcj7gbcx"))))
     (properties `((upstream-name . "fastrmodels")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xgboost))
-    (home-page "https://github.com/mrcaseb/fastrmodels")
+    (home-page "https://github.com/nflverse/fastrmodels")
     (synopsis "Models for the 'nflfastR' Package")
     (description
      "This package provides a data package that hosts all models for the

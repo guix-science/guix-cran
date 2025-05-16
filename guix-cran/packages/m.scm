@@ -12380,13 +12380,13 @@ convenience functions to aid in data processing.")
 (define-public r-mpathr
   (package
     (name "r-mpathr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpathr" version))
        (sha256
-        (base32 "1y5p3c86xs3fmdlbraf2048b6ylxbhziw5kjvasv5drk6hb25hzd"))))
+        (base32 "1x8w0wsq71n7sr2xgjdhhkqw1k06ljw4sxbcdrzpzpjfap5iy113"))))
     (properties `((upstream-name . "mpathr")))
     (build-system r-build-system)
     (arguments
@@ -24299,13 +24299,13 @@ o1-preview for code structure and documentation.")
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "187nbgymi9rjihf3pxihgvmj2ch6i4l6jnargxz5sscyaf5k1fr9"))))
+        (base32 "0ylv9l06vi5sbygsp1f8pmg0p1rmyxjlxmiz031zp6wyhhkxxpyx"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (arguments
@@ -31640,13 +31640,13 @@ general concepts of both packages and a case study, see Happ-Kurz (2020)
 (define-public r-mfp2
   (package
     (name "r-mfp2")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mfp2" version))
        (sha256
-        (base32 "03xv7zjdcsnyrawwpjgfw5g59h7miwh68wkmbvfkd8wxnfcdmmmv"))))
+        (base32 "08s5jhds83kl6j4wbkas7mb79jwr6hzpc5fxkybsfr9wf9bakz7a"))))
     (properties `((upstream-name . "mfp2")))
     (build-system r-build-system)
     (arguments
@@ -31659,14 +31659,13 @@ general concepts of both packages and a case study, see Happ-Kurz (2020)
     (description
      "Multivariable fractional polynomial algorithm simultaneously selects variables
 and functional forms in both generalized linear models and Cox proportional
-hazard models.  Key references for this algorithm are Royston and Altman
-(1994)<doi:10.2307/2986270> and Sauerbrei and Royston (2008,
-ISBN:978-0-470-02842-1).  In addition, it can model a sigmoid relationship
-between variable x and an outcome variable y using the approximate cumulative
-distribution transformation proposed by Royston (2014)
-<doi:10.1177/1536867X1401400206>.  This feature distinguishes it from a standard
-fractional polynomial function, which lacks the ability to achieve such
-modeling.")
+hazard models.  Key references are Royston and Altman (1994)
+<doi:10.2307/2986270> and Royston and Sauerbrei (2008, ISBN:978-0-470-02842-1).
+In addition, it can model a sigmoid relationship between variable x and an
+outcome variable y using the approximate cumulative distribution transformation
+proposed by Royston (2014) <doi:10.1177/1536867X1401400206>.  This feature
+distinguishes it from a standard fractional polynomial function, which lacks the
+ability to achieve such modeling.")
     (license license:gpl3)))
 
 (define-public r-mfp
@@ -39174,48 +39173,6 @@ component analysis using rmarkdown and shiny packages.  Runtime examples are
 provided in the package function as well as at
 <https://kartikeyabolar.shinyapps.io/MDS_PCAShiny/>.")
     (license license:gpl2)))
-
-(define-public r-mdsopt
-  (package
-    (name "r-mdsopt")
-    (version "0.7-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mdsOpt" version))
-       (sha256
-        (base32 "1przk2ganrvs2g15rzby4npy58iwlxv1lsqrzan6z65filncqifq"))))
-    (properties `((upstream-name . "mdsOpt")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-symbolicda
-                             r-spdep
-                             r-smacof
-                             r-plotrix
-                             r-clustersim
-                             r-animation))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=mdsOpt")
-    (synopsis
-     "Searching for Optimal MDS Procedure for Metric and Interval-Valued Data")
-    (description
-     "Selecting the optimal multidimensional scaling (MDS) procedure for metric data
-via metric MDS (ratio, interval, mspline) and nonmetric MDS (ordinal).
-Selecting the optimal multidimensional scaling (MDS) procedure for
-interval-valued data via metric MDS (ratio, interval, mspline).Selecting the
-optimal multidimensional scaling procedure for interval-valued data by varying
-all combinations of normalization and optimization methods.Selecting the optimal
-MDS procedure for statistical data referring to the evaluation of tourist
-attractiveness of Lower Silesian counties. (Borg, I., Groenen, P.J.F., Mair, P.
-(2013) <doi:10.1007/978-3-642-31848-1>, Walesiak, M. (2016)
-<doi:10.15611/ekt.2016.2.01>, Walesiak, M. (2017) <doi:10.15611/ekt.2017.3.01>).")
-    (license license:gpl2+)))
 
 (define-public r-mdsmap
   (package

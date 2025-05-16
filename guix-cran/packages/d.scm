@@ -29303,31 +29303,6 @@ ready form.")
 comprehensive and up-to-date collection of open data from Switzerland.")
     (license license:gpl3)))
 
-(define-public r-datasda
-  (package
-    (name "r-datasda")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dataSDA" version))
-       (sha256
-        (base32 "0fmanlp3kahd8fz0pzn9k6dn649p68g72l8rms99zqn4ac63myiv"))))
-    (properties `((upstream-name . "dataSDA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-rsda r-magrittr r-histdawass r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=dataSDA")
-    (synopsis "Datasets and Basic Statistics for Symbolic Data Analysis")
-    (description
-     "Collects a diverse range of symbolic data and offers a comprehensive set of
-functions that facilitate the conversion of traditional data into the symbolic
-data format.")
-    (license license:gpl2+)))
-
 (define-public r-datarobot
   (package
     (name "r-datarobot")

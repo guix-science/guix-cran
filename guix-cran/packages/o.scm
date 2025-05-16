@@ -1198,13 +1198,13 @@ Jombart T. 2019. <doi:10.1371/journal.pcbi.1006930>.")
 (define-public r-ouladformat
   (package
     (name "r-ouladformat")
-    (version "1.1.2")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ouladFormat" version))
        (sha256
-        (base32 "1m8m5nrf2y42yvz9f0j976dvq5jrmyswiznq7iv32bppm0jwz92m"))))
+        (base32 "07yfmizc6bvv2k7jizza2zgvrfhxmhvq5mldcxj05x2jcfryz4mx"))))
     (properties `((upstream-name . "ouladFormat")))
     (build-system r-build-system)
     (arguments
@@ -3621,13 +3621,13 @@ Schnurr and Fischer (2022) <doi:10.1016/j.csda.2022.107472> are also considered.
 (define-public r-ordinalnet
   (package
     (name "r-ordinalnet")
-    (version "2.12")
+    (version "2.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordinalNet" version))
        (sha256
-        (base32 "0ijgxp1lh4hbgks0p5041f5s6kpfrlm6f7hdz2nm3dn1rhq6bwvi"))))
+        (base32 "0j15grxa11pn4bvvgwibr2x2gbghg77zgqvqc83f5h9ws96940p9"))))
     (properties `((upstream-name . "ordinalNet")))
     (build-system r-build-system)
     (arguments
@@ -10017,13 +10017,13 @@ Medical Outcomes Partnership (OMOP) common data model using shiny applications."
 (define-public r-omopsketch
   (package
     (name "r-omopsketch")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopSketch" version))
        (sha256
-        (base32 "13013g6p714jxm4dzr2yrjnhvrgy7jrn1lvqs4am6fv4rjlr6yjl"))))
+        (base32 "0ccqryjrdqcjvrmzs82sz16h9vvg8wxs2pkdas76nxf89zaxk2q9"))))
     (properties `((upstream-name . "OmopSketch")))
     (build-system r-build-system)
     (arguments

@@ -12090,49 +12090,6 @@ of sample predictability based on out of sample mean squared error comparisons
 given in Gonzalo and Pitarakis (2023) <doi:10.1016/j.ijforecast.2023.10.005>.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-predictor
-  (package
-    (name "r-predictor")
-    (version "4.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "predictoR" version))
-       (sha256
-        (base32 "1x7sg15pwsgb5x0my8farhav0gmm8p7sz5d926wv6las7h85asxf"))))
-    (properties `((upstream-name . "predictoR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-trainer
-                             r-shinyjs
-                             r-shinydashboardplus
-                             r-shinydashboard
-                             r-shinycustomloader
-                             r-shinyace
-                             r-shiny
-                             r-rpart-plot
-                             r-rlang
-                             r-loader
-                             r-htmltools
-                             r-golem
-                             r-glmnet
-                             r-echarts4r
-                             r-dt
-                             r-dplyr
-                             r-config
-                             r-colourpicker))
-    (home-page "https://promidat.website/")
-    (synopsis "Predictive Data Analysis System")
-    (description
-     "Perform a supervised data analysis on a database through a shiny graphical
-interface.  It includes methods such as K-Nearest Neighbors, Decision Trees, ADA
-Boosting, Extreme Gradient Boosting, Random Forest, Neural Networks, Deep
-Learning, Support Vector Machines and Bayesian Methods.")
-    (license license:gpl2+)))
-
 (define-public r-predictnmb
   (package
     (name "r-predictnmb")
@@ -13298,13 +13255,13 @@ fixed effects with penalized intercepts by LASSO.")
 (define-public r-pqrbayes
   (package
     (name "r-pqrbayes")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pqrBayes" version))
        (sha256
-        (base32 "16p6qfw2jqjwc3zbk716xivrnw447is59rq270hsndhsmmz7rl82"))))
+        (base32 "05c5d40wgd5g755vai004y6xhwp9acah295m43s797cjs4a17kn8"))))
     (properties `((upstream-name . "pqrBayes")))
     (build-system r-build-system)
     (arguments
@@ -13323,9 +13280,9 @@ regression models (Fan et al. (2024) <doi:10.3390/e26090794> and Ren et al.
 models (Zhou et al.(2023) <doi:10.1016/j.csda.2023.107808>).  In particular,
 valid robust Bayesian inferences under both models in the presence of
 heavy-tailed errors can be validated on finite samples.  Additional models
-including robust Bayesian group LASSO are also included.  The Markov Chain Monte
-Carlo (MCMC) algorithms of the proposed and alternative models are implemented
-in C++.")
+including robust Bayesian group LASSO and robust Bayesian binary LASSO are also
+included.  The Markov Chain Monte Carlo (MCMC) algorithms of the proposed and
+alternative models are implemented in C++.")
     (license license:gpl2)))
 
 (define-public r-pqlseq
@@ -28916,6 +28873,38 @@ branch-annotated trees (as in @code{SigTree}'); also provides support for a few
 other extra features.")
     (license license:gpl3)))
 
+(define-public r-phutil
+  (package
+    (name "r-phutil")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phutil" version))
+       (sha256
+        (base32 "10hrc4ik8cnpscbl2cpmzzzksp8xhjbywcxwkqgihswa3af03j1d"))))
+    (properties `((upstream-name . "phutil")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-cli r-bh))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/tdaverse/phutil")
+    (synopsis "Persistence Homology Utilities")
+    (description
+     "This package provides a low-level package for hosting persistence data.  It is
+part of the TDAverse suite of packages, which is designed to provide a
+collection of packages for enabling machine learning and data science tasks
+using persistent homology.  Implements a class for hosting persistence data, a
+number of coercers from and to already existing and used data structures from
+other packages and functions to compute distances between persistence diagrams.
+A formal definition and study of bottleneck and Wasserstein distances can be
+found in Bubenik, Scott and Stanley (2023) <doi:10.1007/s41468-022-00103-8>.
+Their implementation in phutil relies on the C++ Hera library developed by
+Kerber, Morozov and Nigmetov (2017) <doi:10.1145/3064175>.")
+    (license license:expat)))
+
 (define-public r-phuassess
   (package
     (name "r-phuassess")
@@ -30771,63 +30760,6 @@ details about the methods can be found at Zhang et al. (2019)
 <doi:10.1038/s41596-019-0227-6>, Yu et al. (2017) <doi:10.1093/jamia/ocw135>,
 and Liao et al. (2015) <doi:10.1136/bmj.h1885>.")
     (license license:gpl3)))
-
-(define-public r-pheble
-  (package
-    (name "r-pheble")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pheble" version))
-       (sha256
-        (base32 "14q66ldpksxsh5q7mpgp4d9p43kbx1v4yqd35p3gqi6qxrlb5q1z"))))
-    (properties `((upstream-name . "pheble")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-themis
-                             r-sparselda
-                             r-rpartscore
-                             r-randomforest
-                             r-pls
-                             r-party
-                             r-nnet
-                             r-mlmetrics
-                             r-mda
-                             r-matrix
-                             r-mass
-                             r-magrittr
-                             r-klar
-                             r-kknn
-                             r-kernlab
-                             r-ipred
-                             r-hdclassif
-                             r-hda
-                             r-gmodels
-                             r-glmnet
-                             r-frbs
-                             r-evtree
-                             r-earth
-                             r-e1071
-                             r-dplyr
-                             r-doparallel
-                             r-data-table
-                             r-catools
-                             r-caret
-                             r-c50
-                             r-adabag))
-    (home-page "https://cran.r-project.org/package=pheble")
-    (synopsis "Classifying High-Dimensional Phenotypes with Ensemble Learning")
-    (description
-     "This package provides a system for binary and multi-class classification of
-high-dimensional phenotypic data using ensemble learning.  By combining
-predictions from different classification models, this package attempts to
-improve performance over individual learners.  The pre-processing, training,
-validation, and testing are performed end-to-end to minimize user input and
-simplify the process of classification.")
-    (license license:gpl3+)))
 
 (define-public r-phdcocktail
   (package

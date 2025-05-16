@@ -17223,13 +17223,13 @@ R package uses the Nasdaq Data Link API. For more information go to
 (define-public r-nascar-data
   (package
     (name "r-nascar-data")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nascaR.data" version))
        (sha256
-        (base32 "0zwydi4ipg09s5mzqvqndm2fj75m1kk1d5f8s6gn7q7qr8yb1jrf"))))
+        (base32 "0nvnpq9c63c23p102x6i6jc8gx2hqlhh2py2ywy1r20p6hx6qprk"))))
     (properties `((upstream-name . "nascaR.data")))
     (build-system r-build-system)
     (arguments

@@ -4121,48 +4121,6 @@ model using algorithm by Jin, Lin and Tamvakis (2012)
 <doi.org/10.1016/j.eneco.2012.03.003>.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-viralx
-  (package
-    (name "r-viralx")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "viralx" version))
-       (sha256
-        (base32 "1449r74g4q7qigyqb21sasdyr80542b4lfavjszh2s5bd8pkc8di"))))
-    (properties `((upstream-name . "viralx")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-workflows
-                             r-vdiffr
-                             r-teachingdemos
-                             r-rsample
-                             r-recipes
-                             r-plotrix
-                             r-plotmo
-                             r-parsnip
-                             r-kknn
-                             r-formula
-                             r-earth
-                             r-dplyr
-                             r-dalextra
-                             r-dalex))
-    (home-page "https://cran.r-project.org/package=viralx")
-    (synopsis "Explainers for Regression Models in HIV Research")
-    (description
-     "This package provides a dedicated viral-explainer model tool designed to empower
-researchers in the field of HIV research, particularly in viral load and CD4
-(Cluster of Differentiation 4) lymphocytes regression modeling.  Drawing
-inspiration from the tidymodels framework for rigorous model building of Max
-Kuhn and Hadley Wickham (2020) <https://www.tidymodels.org>, and the DALEXtra
-tool for explainability by Przemyslaw Biecek (2020) <@code{arXiv:2009.13248>}.
-It aims to facilitate interpretable and reproducible research in biostatistics
-and computational biology for the benefit of understanding HIV dynamics.")
-    (license license:gpl3+)))
-
 (define-public r-viralmodels
   (package
     (name "r-viralmodels")

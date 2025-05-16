@@ -8075,63 +8075,6 @@ includes functions for computing the bivariate depth as well as RS median.
 Drawing functions for depth bags are also provided.")
     (license license:gpl2)))
 
-(define-public r-rsda
-  (package
-    (name "r-rsda")
-    (version "3.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RSDA" version))
-       (sha256
-        (base32 "10dx9ds7i738wydljkfw5jvggixsysbg2674hrw4z4lccgijjmrc"))))
-    (properties `((upstream-name . "RSDA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xtable
-                             r-xml
-                             r-vctrs
-                             r-umap
-                             r-tidyselect
-                             r-tibble
-                             r-stringr
-                             r-sqldf
-                             r-scales
-                             r-rpart
-                             r-rlang
-                             r-rjsonio
-                             r-reshape
-                             r-randomforest
-                             r-randomcolor
-                             r-purrr
-                             r-princurve
-                             r-plotly
-                             r-nloptr
-                             r-neuralnet
-                             r-magrittr
-                             r-kknn
-                             r-glmnet
-                             r-ggrepel
-                             r-ggpolypath
-                             r-ggplot2
-                             r-gbm
-                             r-forcats
-                             r-factominer
-                             r-e1071
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://oldemarrodriguez.com/")
-    (synopsis "R to Symbolic Data Analysis")
-    (description
-     "Symbolic Data Analysis (SDA) was proposed by professor Edwin Diday in 1987, the
-main purpose of SDA is to substitute the set of rows (cases) in the data table
-for a concept (second order statistical unit).  This package implements, to the
-symbolic case, certain techniques of automatic classification, as well as some
-linear models.")
-    (license license:gpl2+)))
-
 (define-public r-rscorecard
   (package
     (name "r-rscorecard")
@@ -16219,28 +16162,6 @@ implemented in this package are based on Song et al. (2017)
 <doi:10.1016/j.csda.2016.08.005>.")
     (license license:gpl3)))
 
-(define-public r-robustsae
-  (package
-    (name "r-robustsae")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "robustsae" version))
-       (sha256
-        (base32 "0fi1fpqnfj6vkmidlr90kqbn1bxxxqb5qpqqrz9rrimlsvrc4ddl"))))
-    (properties `((upstream-name . "robustsae")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pscl r-mvtnorm r-mcmcpack r-lattice r-coda))
-    (home-page "https://cran.r-project.org/package=robustsae")
-    (synopsis "Robust Bayesian Small Area Estimation")
-    (description
-     "This package provides functions for Robust Bayesian Small Area Estimation.")
-    (license license:gpl3)))
-
 (define-public r-robustreg
   (package
     (name "r-robustreg")
@@ -21190,59 +21111,6 @@ constraint programming problems without using @code{MiniZinc} directly, modify
 existing @code{MiniZinc} models and also create their own models.")
     (license (license:fsdg-compatible "Mozilla Public License Version 2.0"))))
 
-(define-public r-rminer
-  (package
-    (name "r-rminer")
-    (version "1.4.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rminer" version))
-       (sha256
-        (base32 "1z2nfnsj8k066amawnydhhmjzhni4w6hjw7xzhvikfdwzxhq2kjx"))))
-    (properties `((upstream-name . "rminer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-rpart
-                             r-randomforest
-                             r-pls
-                             r-plotrix
-                             r-party
-                             r-nnet
-                             r-mda
-                             r-mass
-                             r-lattice
-                             r-kknn
-                             r-kernlab
-                             r-glmnet
-                             r-e1071
-                             r-cubist
-                             r-adabag))
-    (home-page "https://cran.r-project.org/package=rminer")
-    (synopsis "Data Mining Classification and Regression Methods")
-    (description
-     "Facilitates the use of data mining algorithms in classification and regression
-(including time series forecasting) tasks by presenting a short and coherent set
-of functions.  Versions: 1.4.8 improved help, several warning and error code
-fixes (more stable version, all examples run correctly); 1.4.7 improved
-Importance function and examples, minor error fixes; 1.4.6 / 1.4.5 / 1.4.4 new
-automated machine learning (@code{AutoML}) and ensembles, via improved
-@code{fit()}, @code{mining()} and @code{mparheuristic()} functions, and new
-categorical preprocessing, via improved @code{delevels()} function; 1.4.3 new
-metrics (e.g., macro precision, explained variance), new \"lssvm\" model and
-improved @code{mparheuristic()} function; 1.4.2 new \"NMAE\" metric, \"xgboost\" and
-\"cv.glmnet\" models (16 classification and 18 regression models); 1.4.1 new
-tutorial and more robust version; 1.4 - new classification and regression
-models, with a total of 14 classification and 15 regression methods, including:
-Decision Trees, Neural Networks, Support Vector Machines, Random Forests,
-Bagging and Boosting; 1.3 and 1.3.1 - new classification and regression metrics;
-1.2 - new input importance methods via improved @code{Importance()} function;
-1.0 - first version.")
-    (license license:gpl2)))
-
 (define-public r-rmidas
   (package
     (name "r-rmidas")
@@ -25341,13 +25209,13 @@ models (Spiegelman and Hertzmark 2005, <doi:10.1093/aje/kwi188>), and others.")
 (define-public r-riskregression
   (package
     (name "r-riskregression")
-    (version "2023.12.21")
+    (version "2025.05.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskRegression" version))
        (sha256
-        (base32 "07cvj86v2k1i34yrsqcgl2wqxlbbmslbbilvcnvkwfsk9l6ajk5c"))))
+        (base32 "1xq64g93zsakyz0pkrz1hxnrs511w7hxv9lx874cy4wd076cx6jg"))))
     (properties `((upstream-name . "riskRegression")))
     (build-system r-build-system)
     (arguments
@@ -25370,6 +25238,7 @@ models (Spiegelman and Hertzmark 2005, <doi:10.1093/aje/kwi188>), and others.")
                              r-mets
                              r-lava
                              r-lattice
+                             r-glmnet
                              r-ggplot2
                              r-foreach
                              r-doparallel
@@ -28680,49 +28549,6 @@ written in Go.  gnparser parses scientific names into their component parts; it
 utilizes a Parsing Expression Grammar specifically for scientific names.")
     (license license:expat)))
 
-(define-public r-rgnoisefilt
-  (package
-    (name "r-rgnoisefilt")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rgnoisefilt" version))
-       (sha256
-        (base32 "0rdjbxws1bimpnwfv46yycafvwjc2lcqgdf993f5mm2sg2fxv2da"))))
-    (properties `((upstream-name . "rgnoisefilt")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rpart
-                             r-randomforest
-                             r-nnet
-                             r-modelr
-                             r-kknn
-                             r-infotheo
-                             r-ggplot2
-                             r-gbm
-                             r-fnn
-                             r-entropy
-                             r-e1071
-                             r-class
-                             r-arules))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/juanmartinsantos/rgnoisefilt")
-    (synopsis
-     "Elimination of Noisy Samples in Regression Datasets using Noise Filters")
-    (description
-     "Traditional noise filtering methods aim at removing noisy samples from a
-classification dataset.  This package adapts classic and recent filtering
-techniques for use in regression problems, and it also incorporates methods
-specifically designed for regression data.  In order to do this, it uses
-approaches proposed in the specialized literature, such as Martin et al. (2021)
-[<doi:10.1109/ACCESS.2021.3123151>] and Arnaiz-Gonzalez et al. (2016)
-[<doi:10.1016/j.eswa.2015.12.046>].  Thus, the goal of the implemented noise
-filters is to eliminate samples with noise in regression datasets.")
-    (license license:gpl3+)))
-
 (define-public r-rgn
   (package
     (name "r-rgn")
@@ -30012,42 +29838,6 @@ ground precipitation data using Random Forest for spatial prediction, residual
 modeling for bias correction, and quantile mapping for adjustment, ensuring
 accurate estimates across temporal scales and regions.")
     (license license:gpl3+)))
-
-(define-public r-rfpermute
-  (package
-    (name "r-rfpermute")
-    (version "2.5.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rfPermute" version))
-       (sha256
-        (base32 "1j2jaia1prhpqkp02p8l4cpdnnyk6fkcjysx93v4kh99wnp6n0nl"))))
-    (properties `((upstream-name . "rfPermute")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-swfscmisc
-                             r-scales
-                             r-rlang
-                             r-randomforest
-                             r-magrittr
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr
-                             r-abind))
-    (home-page "https://github.com/EricArcher/rfPermute")
-    (synopsis
-     "Estimate Permutation p-Values for Random Forest Importance Metrics")
-    (description
-     "Estimate significance of importance metrics for a Random Forest model by
-permuting the response variable.  Produces null distribution of importance
-metrics for each predictor variable and p-value of observed.  Provides summary
-and visualization functions for @code{randomForest} results.")
-    (license license:gpl2+)))
 
 (define-public r-rformatter
   (package
@@ -36858,64 +36648,6 @@ hypothesis testing, and plotting moderating effects (the effect of X on Y
 becomes stronger/weaker as Z increases).")
     (license license:gpl3)))
 
-(define-public r-regressor
-  (package
-    (name "r-regressor")
-    (version "4.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "regressoR" version))
-       (sha256
-        (base32 "06azxr11pb779nkabrklxpjndvjvjbpidm5gjfq7m4iqfd7kw95c"))))
-    (properties `((upstream-name . "regressoR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-trainer
-                             r-shinyjs
-                             r-shinydashboardplus
-                             r-shinydashboard
-                             r-shinycustomloader
-                             r-shinyace
-                             r-shiny
-                             r-rpart-plot
-                             r-rlang
-                             r-psych
-                             r-pls
-                             r-loader
-                             r-htmltools
-                             r-golem
-                             r-glmnet
-                             r-gbm
-                             r-echarts4r
-                             r-dt
-                             r-dplyr))
-    (native-inputs (list esbuild))
-    (home-page "https://promidat.website/")
-    (synopsis "Regression Data Analysis System")
-    (description
-     "Perform a supervised data analysis on a database through a shiny graphical
-interface.  It includes methods such as linear regression, penalized regression,
-k-nearest neighbors, decision trees, ada boosting, extreme gradient boosting,
-random forest, neural networks, deep learning and support vector machines.")
-    (license license:gpl2+)))
-
 (define-public r-regressionfactory
   (package
     (name "r-regressionfactory")
@@ -37506,6 +37238,35 @@ hierarchical levels to create meaningful data panels and time series.")
 region names and administration division codes of Chinese regions.  The current
 version enables seamlessly converting Chinese regions formal names, common-used
 names, and codes between each other at the city level from 1986 to 2019.")
+    (license license:expat)))
+
+(define-public r-regionalconsistency
+  (package
+    (name "r-regionalconsistency")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RegionalConsistency" version))
+       (sha256
+        (base32 "140idg6ykaj8w5p8pw576iysxnr3qb9q12lb8s7klz5dpbgy1m8y"))))
+    (properties `((upstream-name . "RegionalConsistency")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=RegionalConsistency")
+    (synopsis
+     "Calculate Regional Consistency Probabilities for Multi-Regional Clinical Trials")
+    (description
+     "This package provides methods to calculate approximate regional consistency
+probabilities using Method 1 and Method 2 proposed by the Japanese Ministry of
+Health, Labor and Welfare (2007) <https://www.pmda.go.jp/files/000153265.pdf>.
+These methods are useful for assessing regional consistency in multi-regional
+clinical trials.  The package can calculate unconditional, joint, and
+conditional regional consistency probabilities.  For technical details, please
+see Homma (2024) <doi:10.1002/pst.2358>.")
     (license license:expat)))
 
 (define-public r-regional
@@ -57105,13 +56866,13 @@ setup.  Such a list can be generated by @code{cdbIni()}.")
 (define-public r-r3port
   (package
     (name "r-r3port")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R3port" version))
        (sha256
-        (base32 "0ls6hzg413lb52jiw2pny100ybdsax2v4vxafn1yjfcbkrlvh3i6"))))
+        (base32 "0vxpr2k7apy8jlc68jldmgzlhiq245p1r255dqd587vivn680zas"))))
     (properties `((upstream-name . "R3port")))
     (build-system r-build-system)
     (arguments

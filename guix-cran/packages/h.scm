@@ -6469,6 +6469,30 @@ with the R Package hlt\"
 <https://mkleinsa.github.io/doc/hlt_proof_draft_brmic.pdf>.")
     (license license:gpl2+)))
 
+(define-public r-hlsm
+  (package
+    (name "r-hlsm")
+    (version "0.9.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HLSM" version))
+       (sha256
+        (base32 "06ssp92jjc29z6z71qcfcd506b0aqka8s9zhc1qlif075yqy2rc8"))))
+    (properties `((upstream-name . "HLSM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-igraph r-coda r-abind))
+    (home-page "https://cran.r-project.org/package=HLSM")
+    (synopsis "Hierarchical Latent Space Network Model")
+    (description
+     "Fits latent space models for single networks and hierarchical latent space
+models for ensembles of networks as described in Sweet, Thomas & Junker (2013).
+<DOI:10.3102/1076998612458702>.")
+    (license (license:fsdg-compatible "GPL (> 3)"))))
+
 (define-public r-hlmdiag
   (package
     (name "r-hlmdiag")
@@ -11841,51 +11865,6 @@ responses and generating diagnostic plots.")
     (license (list license:cc0
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-hdspatialscan
-  (package
-    (name "r-hdspatialscan")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HDSpatialScan" version))
-       (sha256
-        (base32 "1hwqdwr4jl887sgnjwq3gmxjhk6zz45nasvy3x7i7rmrqylxig60"))))
-    (properties `((upstream-name . "HDSpatialScan")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-teachingdemos
-                             r-swfscmisc
-                             r-spatialnp
-                             r-sp
-                             r-sf
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-raster
-                             r-purrr
-                             r-plotrix
-                             r-pbapply
-                             r-matrixstats
-                             r-fmsb
-                             r-dt))
-    (home-page "https://cran.r-project.org/package=HDSpatialScan")
-    (synopsis "Multivariate and Functional Spatial Scan Statistics")
-    (description
-     "Allows to detect spatial clusters of abnormal values on multivariate or
-functional data.  Martin KULLDORFF and Lan HUANG and Kevin KONTY (2009)
-<doi:10.1186/1476-072X-8-58>, Inkyung JUNG and Ho Jin CHO (2015)
-<doi:10.1186/s12942-015-0024-6>, Lionel CUCALA and Michael GENIN and Caroline
-LANIER and Florent OCCELLI (2017) <doi:10.1016/j.spasta.2017.06.001>, Lionel
-CUCALA and Michael GENIN and Florent OCCELLI and Julien SOULA (2019)
-<doi:10.1016/j.spasta.2018.10.002>, Camille FREVENT and Mohamed-Salem AHMED and
-Matthieu MARBAC and Michael GENIN (2021) <doi:10.1016/j.spasta.2021.100550>,
-Zaineb SMIDA and Lionel CUCALA and Ali GANNOUN and Ghislain Durif (2022)
-<doi:10.1016/j.csda.2021.107378>, Camille FREVENT and Mohamed-Salem AHMED and
-Sophie DABO-NIANG and Michael GENIN (2023) <doi:10.1093/jrsssc/qlad017>.")
-    (license license:gpl3)))
-
 (define-public r-hdsinrdata
   (package
     (name "r-hdsinrdata")
@@ -12849,34 +12828,6 @@ al. (2023) <doi:10.2139/ssrn.4342487>.")
 writing R objects to HDF5 formats follow the specification of @code{AnnData}
 <https://anndata.readthedocs.io/en/latest/fileformat-prose.html>.")
     (license license:expat)))
-
-(define-public r-hddesign
-  (package
-    (name "r-hddesign")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HDDesign" version))
-       (sha256
-        (base32 "1jim4h9bwn8r637va7m81kwwsfwyzs9pzn5a9i7c8xz8b1x191bj"))))
-    (properties `((upstream-name . "HDDesign")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=HDDesign")
-    (synopsis
-     "Sample Size Calculation for High Dimensional Classification Study")
-    (description
-     "Determine the sample size requirement to achieve the target probability of
-correct classification (PCC) for studies employing high-dimensional features.
-The package implements functions to 1) determine the asymptotic feasibility of
-the classification problem; 2) compute the upper bounds of the PCC for any
-linear classifier; 3) estimate the PCC of three design methods given design
-assumptions; 4) determine the sample size requirement to achieve the target PCC
-for three design methods.")
-    (license license:gpl2)))
 
 (define-public r-hdd
   (package

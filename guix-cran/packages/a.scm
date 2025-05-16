@@ -6554,36 +6554,6 @@ ensuring stable performance even when auxiliary datasets are less informative.
 See the paper, Wang, Wu, and Ye (2023) <doi:10.1002/sta4.582>.")
     (license license:gpl2)))
 
-(define-public r-artsy
-  (package
-    (name "r-artsy")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "aRtsy" version))
-       (sha256
-        (base32 "0pmzv7qm00lwf8p33blzq3k4k4xfwc8s3bcaggxm2ww5l7p93zif"))))
-    (properties `((upstream-name . "aRtsy")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-randomforest
-                             r-kknn
-                             r-ggplot2
-                             r-e1071
-                             r-ambient))
-    (home-page "https://koenderks.github.io/aRtsy/")
-    (synopsis "Generative Art with 'ggplot2'")
-    (description
-     "This package provides algorithms for creating artworks in the ggplot2 language
-that incorporate some form of randomness.")
-    (license license:gpl3+)))
-
 (define-public r-artpack
   (package
     (name "r-artpack")
@@ -26049,47 +26019,6 @@ under Linear, Logistic, Negative binomial, Quantile, and Skew-Normal regression.
  Under the spike-and-slab method, a probability for each possible model is
 estimated with the posterior mean, credibility interval, and standard deviation
 of coefficients and parameters under the most probable model.")
-    (license license:gpl3+)))
-
-(define-public r-abmr
-  (package
-    (name "r-abmr")
-    (version "1.0.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "abmR" version))
-       (sha256
-        (base32 "0klfrclmwxsqm3aazs9jlw8mh5rzcsvm2wjk2r1ycx76kvkx8wii"))))
-    (properties `((upstream-name . "abmR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tmap
-                             r-table1
-                             r-swfscmisc
-                             r-sp
-                             r-sf
-                             r-rnaturalearth
-                             r-raster
-                             r-purrr
-                             r-maps
-                             r-kableextra
-                             r-gtsummary
-                             r-gstat
-                             r-googledrive
-                             r-ggplot2
-                             r-geosphere))
-    (home-page "https://cran.r-project.org/package=abmR")
-    (synopsis "Agent-Based Models in R")
-    (description
-     "Supplies tools for running agent-based models (ABM) in R, as discussed in
-Gochanour et al. (2022) <doi:10.1111/2041-210X.14014>.  The package contains two
-movement functions, each of which is based on the Ornstein-Uhlenbeck (OU) model
-(Ornstein & Uhlenbeck, 1930) <doi:10.1103/@code{PhysRev.36.823>}.  It also
-contains several visualization and data summarization functions to facilitate
-the presentation of simulation results.")
     (license license:gpl3+)))
 
 (define-public r-abm

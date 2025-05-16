@@ -3246,13 +3246,13 @@ logical filter statements.")
 (define-public r-excluder
   (package
     (name "r-excluder")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "excluder" version))
        (sha256
-        (base32 "1amvxys6xg5djnfv4jxylv9m2z1vhvipq3d1k1ihv9m05prsvdv2"))))
+        (base32 "10z1y8jy5srbr7qa8y9vyd9n2azxyyz64prjdm4l7cp7s7485n0y"))))
     (properties `((upstream-name . "excluder")))
     (build-system r-build-system)
     (arguments
@@ -6823,6 +6823,32 @@ Pardo-de-Santayana, 2008.  Cultural Importance Indices: A Comparative Analysis
 Based on the Useful Wild Plants of Southern Cantabria (Northern Spain) 1.
 Economic Botany, 62(1), 24-39. <doi:10.1007/s12231-007-9004-5>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-ethiodate
+  (package
+    (name "r-ethiodate")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ethiodate" version))
+       (sha256
+        (base32 "1gyxfh0p8gygq5qvrcaiv6mxiydzzqs4wg6gy83raq2ywiajldsl"))))
+    (properties `((upstream-name . "ethiodate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-stringr r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://guturago.github.io/ethiodate/")
+    (synopsis "Working with Ethiopian Dates")
+    (description
+     "This package provides a robust and efficient solution for working with Ethiopian
+dates.  It can seamlessly convert to and from Gregorian dates.  It ensures
+lightning-fast computations by integrating high-performance C++ code through
+Rcpp package.")
+    (license license:expat)))
 
 (define-public r-etc
   (package
@@ -10964,35 +10990,40 @@ Prevention and Control.")
 (define-public r-episensr
   (package
     (name "r-episensr")
-    (version "1.3.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "episensr" version))
        (sha256
-        (base32 "0jah8lwmgc7nfacw3nzlnfmrmh1hfnwpjdsvy928pvgh0rsamxvc"))))
+        (base32 "0b0hnrzyq4w2zl5p8lz7gxsfsbr4mb4388s86b7gs4mcyay5i6k2"))))
     (properties `((upstream-name . "episensr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-triangle
+    (propagated-inputs (list r-truncnorm
+                             r-triangle
                              r-trapezoid
+                             r-mass
                              r-magrittr
+                             r-lifecycle
                              r-ggplot2
                              r-ggdag
+                             r-forcats
                              r-dagitty
+                             r-cli
                              r-boot
                              r-actuar))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/dhaine/episensr")
+    (home-page "https://codeberg.org/dhaine/episensr")
     (synopsis "Basic Sensitivity Analysis of Epidemiological Results")
     (description
      "Basic sensitivity analysis of the observed relative risks adjusting for
 unmeasured confounding and misclassification of the exposure/outcome, or both.
-It follows the bias analysis methods and examples from the book by Lash T.L, Fox
-M.P, and Fink A.K. \"Applying Quantitative Bias Analysis to Epidemiologic Data\",
-('Springer', 2021).")
+It follows the bias analysis methods and examples from the book by Fox M.P.,
+@code{MacLehose} R.F., and Lash T.L. \"Applying Quantitative Bias Analysis to
+Epidemiologic Data, second ed.\", ('Springer', 2021).")
     (license license:gpl2)))
 
 (define-public r-episemble
@@ -12917,13 +12948,13 @@ assessment: the role of exposure factors in an urban garden scenario\"
 (define-public r-envirem
   (package
     (name "r-envirem")
-    (version "3.0")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "envirem" version))
        (sha256
-        (base32 "06mxzm5kg0vm34z8sx5mbxxcdicjicjjdnhx0pi61dqnrwj47jml"))))
+        (base32 "1ssh16zllsfc280qh70sk4wwrmd3dcw7kf2x7rypl9mdi8ld9zh5"))))
     (properties `((upstream-name . "envirem")))
     (build-system r-build-system)
     (arguments
@@ -13440,75 +13471,6 @@ observations at Innsbruck/Austria.  Additionally, a demo with the full code of
 the book chapter is provided.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-ensemblepenreg
-  (package
-    (name "r-ensemblepenreg")
-    (version "0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EnsemblePenReg" version))
-       (sha256
-        (base32 "1rmqd382v98xllb60qb7jlyb3vah5y8kpa5jq4msps0cacszpvcy"))))
-    (properties `((upstream-name . "EnsemblePenReg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-glmnet r-ensemblebase))
-    (home-page "https://cran.r-project.org/package=EnsemblePenReg")
-    (synopsis
-     "Extensible Classes and Methods for Penalized-Regression-Based Integration of Base Learners")
-    (description
-     "Extending the base classes and methods of @code{EnsembleBase} package for
-Penalized-Regression-based (Ridge and Lasso) integration of base learners.
-Default implementation uses cross-validation error to choose the optimal lambda
-(shrinkage parameter) for the final predictor.  The package takes advantage of
-the file method provided in @code{EnsembleBase} package for writing estimation
-objects to disk in order to circumvent RAM bottleneck.  Special save and load
-methods are provided to allow estimation objects to be saved to permanent files
-on disk, and to be loaded again into temporary files in a later R session.
-Users and developers can extend the package by extending the generic methods and
-classes provided in @code{EnsembleBase} package as well as this package.")
-    (license license:gpl2+)))
-
-(define-public r-ensemblepcreg
-  (package
-    (name "r-ensemblepcreg")
-    (version "1.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EnsemblePCReg" version))
-       (sha256
-        (base32 "0pii3w9dyv1505s92b03i42yiwq5vwa051674yzqxijj2mz7pvdh"))))
-    (properties `((upstream-name . "EnsemblePCReg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-ensemblebase))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=EnsemblePCReg")
-    (synopsis
-     "Extensible Package for Principal-Component-Regression-Based Heterogeneous Ensemble Meta-Learning")
-    (description
-     "Extends the base classes and methods of @code{EnsembleBase} package for
-Principal-Components-Regression-based (PCR) integration of base learners.
-Default implementation uses cross-validation error to choose the optimal number
-of PC components for the final predictor.  The package takes advantage of the
-file method provided in @code{EnsembleBase} package for writing estimation
-objects to disk in order to circumvent RAM bottleneck.  Special save and load
-methods are provided to allow estimation objects to be saved to permanent files
-on disk, and to be loaded again into temporary files in a later R session.
-Users and developers can extend the package by extending the generic methods and
-classes provided in @code{EnsembleBase} package as well as this package.")
-    (license license:gpl2+)))
-
 (define-public r-ensemblemos
   (package
     (name "r-ensemblemos")
@@ -13530,37 +13492,6 @@ classes provided in @code{EnsembleBase} package as well as this package.")
     (description
      "Ensemble Model Output Statistics to create probabilistic forecasts from ensemble
 forecasts and weather observations.")
-    (license license:gpl2+)))
-
-(define-public r-ensemblecv
-  (package
-    (name "r-ensemblecv")
-    (version "0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EnsembleCV" version))
-       (sha256
-        (base32 "08z9k2z5gvbxb8gj7hqvyybvaamzv84raf30nbx5fzkwrqbqbdww"))))
-    (properties `((upstream-name . "EnsembleCV")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ensemblebase))
-    (home-page "https://cran.r-project.org/package=EnsembleCV")
-    (synopsis
-     "Extensible Package for Cross-Validation-Based Integration of Base Learners")
-    (description
-     "Extends the base classes and methods of @code{EnsembleBase} package for
-cross-validation-based integration of base learners.  Default implementation
-calculates average of repeated CV errors, and selects the base learner /
-configuration with minimum average error.  The package takes advantage of the
-file method provided in @code{EnsembleBase} package for writing estimation
-objects to disk in order to circumvent RAM bottleneck.  Special save and load
-methods are provided to allow estimation objects to be saved to permanent files
-on disk, and to be loaded again into temporary files in a later R session.  The
-package can be extended, e.g. by adding variants of the current implementation.")
     (license license:gpl2+)))
 
 (define-public r-ensemblebma
@@ -13586,49 +13517,6 @@ package can be extended, e.g. by adding variants of the current implementation."
      "Bayesian Model Averaging to create probabilistic forecasts from ensemble
 forecasts and weather observations
 <https://stat.uw.edu/sites/default/files/files/reports/2007/tr516.pdf>.")
-    (license license:gpl2+)))
-
-(define-public r-ensemblebase
-  (package
-    (name "r-ensemblebase")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EnsembleBase" version))
-       (sha256
-        (base32 "05qdmhnkxcvvhw1adrjmmckqxm8rbry6wqk8jzqfbm5yn1wh41kz"))))
-    (properties `((upstream-name . "EnsembleBase")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-randomforest
-                             r-nnet
-                             r-kknn
-                             r-glmnet
-                             r-gbm
-                             r-foreach
-                             r-e1071
-                             r-doparallel
-                             r-bartmachine))
-    (home-page "https://cran.r-project.org/package=EnsembleBase")
-    (synopsis
-     "Extensible Package for Parallel, Batch Training of Base Learners for Ensemble Modeling")
-    (description
-     "Extensible S4 classes and methods for batch training of regression and
-classification algorithms such as Random Forest, Gradient Boosting Machine,
-Neural Network, Support Vector Machines, K-Nearest Neighbors, Penalized
-Regression (L1/L2), and Bayesian Additive Regression Trees.  These algorithms
-constitute a set of base learners', which can subsequently be combined together
-to form ensemble predictions.  This package provides cross-validation wrappers
-to allow for downstream application of ensemble integration techniques,
-including best-error selection.  All base learner estimation objects are
-retained, allowing for repeated prediction calls without the need for
-re-training.  For large problems, an option is provided to save estimation
-objects to disk, along with prediction methods that utilize these objects.  This
-allows users to train and predict with large ensembles of base learners without
-being constrained by system RAM.")
     (license license:gpl2+)))
 
 (define-public r-enscat

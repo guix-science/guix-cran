@@ -10714,19 +10714,19 @@ tests, Levene's test, @code{McNemar} Test, Cochran's Q test and Runs test.")
 (define-public r-inferference
   (package
     (name "r-inferference")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inferference" version))
        (sha256
-        (base32 "171h9zhvaza7fklcg07wk9sm8k2fy39k3cdjkzb3vk8p8acd051v"))))
+        (base32 "0d9y1prj4px2c8p47hy3dabyadbxin5qizidhaw1jh994jx20d2v"))))
     (properties `((upstream-name . "inferference")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-numderiv r-lme4 r-formula))
+    (propagated-inputs (list r-spamm r-numderiv r-lme4 r-formula))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=inferference")
     (synopsis "Methods for Causal Inference with Interference")

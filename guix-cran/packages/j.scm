@@ -1468,58 +1468,6 @@ present category curves, as well as information, reliability and standard error
 functions.")
     (license license:gpl3)))
 
-(define-public r-jrsicklsnmf
-  (package
-    (name "r-jrsicklsnmf")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jrSiCKLSNMF" version))
-       (sha256
-        (base32 "1b0v8hq9dpif6l0gm9iyrd9l2mgdg7ksaj6zvip8rvqx1n5wdxdv"))))
-    (properties `((upstream-name . "jrSiCKLSNMF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-umap
-                             r-scran
-                             r-rlang
-                             r-rdpack
-                             r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-pbapply
-                             r-matrix
-                             r-mass
-                             r-kknn
-                             r-irlba
-                             r-igraph
-                             r-ggrepel
-                             r-ggplot2
-                             r-foreach
-                             r-factoextra
-                             r-data-table
-                             r-clvalid
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=jrSiCKLSNMF")
-    (synopsis "Multimodal Single-Cell Omics Dimensionality Reduction")
-    (description
-     "This package provides methods to perform Joint graph Regularized Single-Cell
-Kullback-Leibler Sparse Non-negative Matrix Factorization ('@code{jrSiCKLSNMF}',
-pronounced \"junior sickles NMF\") on quality controlled single-cell multimodal
-omics count data. @code{jrSiCKLSNMF} specifically deals with dual-assay
-@code{scRNA-seq} and @code{scATAC-seq} data.  This package contains functions to
-extract meaningful latent factors that are shared across omics modalities.
-These factors enable accurate cell-type clustering and facilitate
-visualizations.  Methods for pre-processing, clustering, and mini-batch updates
-and other adaptations for larger datasets are also included.  For further
-details on the methods used in this package please see Ellis, Roy, and Datta
-(2023) <doi:10.3389/fgene.2023.1179439>.")
-    (license license:gpl3)))
-
 (define-public r-jrich
   (package
     (name "r-jrich")

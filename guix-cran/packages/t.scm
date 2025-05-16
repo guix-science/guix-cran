@@ -8709,13 +8709,13 @@ effect design.")
 (define-public r-treats
   (package
     (name "r-treats")
-    (version "1.1")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treats" version))
        (sha256
-        (base32 "1s96pazw6l7gak4fy5ba5wiw8ff9zb07ghd7xhx2mpllkaph4x1l"))))
+        (base32 "0b4xwnaz1i39pl3znkl7ggbzd5ka1qsw5d0rdqbvd382p3fzl1b9"))))
     (properties `((upstream-name . "treats")))
     (build-system r-build-system)
     (arguments
@@ -9787,13 +9787,13 @@ plots.")
 (define-public r-transforemotion
   (package
     (name "r-transforemotion")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transforEmotion" version))
        (sha256
-        (base32 "13a6gcw9ifzy1x7dj5p3qnapf4l1nrsgxq8dn31hlk9dkl51c1hp"))))
+        (base32 "065pp0ckd507v3xsd1galig7jisii46jkal40j0pjf47lf4224hi"))))
     (properties `((upstream-name . "transforEmotion")))
     (build-system r-build-system)
     (arguments
@@ -9801,6 +9801,7 @@ plots.")
       #:tests? #f))
     (propagated-inputs (list r-reticulate
                              r-remotes
+                             r-progress
                              r-pbapply
                              r-matrix
                              r-lsafun
@@ -10380,60 +10381,6 @@ more. @code{trainR} simplifies the data retrieval, so that the users can focus
 on their analyses.  For more details visit
 <https://www.nationalrail.co.uk/46391.aspx>.")
     (license license:expat)))
-
-(define-public r-trainer
-  (package
-    (name "r-trainer")
-    (version "2.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "traineR" version))
-       (sha256
-        (base32 "0a07l38k18x97yzqh8qcaza4fac0r2ngf3588v3nrvhcm3wz70az"))))
-    (properties `((upstream-name . "traineR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-stringr
-                             r-rpart
-                             r-rocr
-                             r-randomforest
-                             r-nnet
-                             r-neuralnet
-                             r-mass
-                             r-kknn
-                             r-glmnet
-                             r-ggplot2
-                             r-gbm
-                             r-e1071
-                             r-dplyr
-                             r-adabag
-                             r-ada))
-    (home-page "https://promidat.website/")
-    (synopsis "Predictive (Classification and Regression) Models Homologator")
-    (description
-     "This package provides methods to unify the different ways of creating predictive
-models and their different predictive formats for classification and regression.
- It includes methods such as K-Nearest Neighbors Schliep, K. P. (2004)
-<doi:10.5282/ubm/epub.1769>, Decision Trees Leo Breiman, Jerome H. Friedman,
-Richard A. Olshen, Charles J. Stone (2017) <doi:10.1201/9781315139470>, ADA
-Boosting Esteban Alfaro, Matias Gamez, Noelia GarcÃ­a (2013)
-<doi:10.18637/jss.v054.i02>, Extreme Gradient Boosting Chen & Guestrin (2016)
-<doi:10.1145/2939672.2939785>, Random Forest Breiman (2001)
-<doi:10.1023/A:1010933404324>, Neural Networks Venables, W. N., & Ripley, B. D.
-(2002) <ISBN:0-387-95457-0>, Support Vector Machines Bennett, K. P. & Campbell,
-C. (2000) <doi:10.1145/380995.380999>, Bayesian Methods Gelman, A., Carlin, J.
-B., Stern, H. S., & Rubin, D. B. (1995) <doi:10.1201/9780429258411>, Linear
-Discriminant Analysis Venables, W. N., & Ripley, B. D. (2002)
-<ISBN:0-387-95457-0>, Quadratic Discriminant Analysis Venables, W. N., & Ripley,
-B. D. (2002) <ISBN:0-387-95457-0>, Logistic Regression Dobson, A. J., & Barnett,
-A. G. (2018) <doi:10.1201/9781315182780> and Penalized Logistic Regression
-Friedman, J. H., Hastie, T., & Tibshirani, R. (2010)
-<doi:10.18637/jss.v033.i01>.")
-    (license license:gpl2+)))
 
 (define-public r-trafo
   (package
@@ -13121,13 +13068,13 @@ clustering, visualizing, and quantifying cell clade relationships.  See
 (define-public r-toolstability
   (package
     (name "r-toolstability")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toolStability" version))
        (sha256
-        (base32 "032czpmr484jm10i0pz9f3jyzkqrz5s11q2nxrhk8jrlg0s427lr"))))
+        (base32 "1hn7qzzr0cn461clni1pjrcfxk939dqgzcqw0zqczkilxavk4pzz"))))
     (properties `((upstream-name . "toolStability")))
     (build-system r-build-system)
     (arguments
@@ -13147,19 +13094,18 @@ the dataframe with chosen stability index for each genotype.  Function
 package.  This R package @code{toolStability} is part of the main publication:
 Wang, Casadebaig and Chen (2023) <doi:10.1007/s00122-023-04264-7>.  Analysis
 pipeline for main publication can be found on github:
-<https://github.com/Illustratien/Wang_2023_TAAG/tree/V1.0.0>.  Sample dataset in
-this package is derived from another publication: Casadebaig P, Zheng B, Chapman
-S et al. (2016) <doi:10.1371/journal.pone.0146385>.  For detailed documentation
-of dataset, please see on Zenodo <doi:10.5281/zenodo.4729636>.  Indices used in
+<https://github.com/Illustratien/Wang_2023_TAAG>.  Sample dataset in this
+package is derived from another publication: Casadebaig P, Zheng B, Chapman S et
+al. (2016) <doi:10.1371/journal.pone.0146385>.  For detailed documentation of
+dataset, please see on Zenodo <doi:10.5281/zenodo.4729636>.  Indices used in
 this package are from: DÃ¶ring TF, Reckling M (2018)
 <doi:10.1016/j.eja.2018.06.007>.  Eberhart SA, Russell WA (1966)
 <doi:10.2135/cropsci1966.0011183X000600010011x>.  Eskridge KM (1990)
 <doi:10.2135/cropsci1990.0011183X003000020025x>.  Finlay KW, Wilkinson GN (1963)
 <doi:10.1071/AR9630742>.  Hanson WD (1970) Genotypic stability.
-<doi:10.1007/BF00285245>.  Lin CS, Binns MR (1988)
-<https://cdnsciencepub.com/doi/abs/10.4141/cjps88-018>.  Nassar R, HÃ¼hn M
-(1987).  Pinthus MJ (1973) <doi:10.1007/BF00021563>.  RÃ¶mer T (1917).  Shukla
-GK (1972).  Wricke G (1962).")
+<doi:10.1007/BF00285245>.  Lin CS, Binns MR (1988).  Nassar R, HÃ¼hn M (1987).
+Pinthus MJ (1973) <doi:10.1007/BF00021563>.  RÃ¶mer T (1917).  Shukla GK (1972).
+ Wricke G (1962).")
     (license license:gpl3+)))
 
 (define-public r-toolsforcoda
@@ -16918,13 +16864,13 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.31.1")
+    (version "0.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tiledb" version))
        (sha256
-        (base32 "057wrci3nznl1wy0cdlw3xan1z7f0p45rg6slgl1vxnncbqcqc3q"))))
+        (base32 "1s7nayydx760661jak0vc996cq2mni50fr6hqs83rb1v9cvfy6cn"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (arguments
@@ -27384,13 +27330,13 @@ codebooks and allows for extraction of code sequences.")
 (define-public r-tdsa
   (package
     (name "r-tdsa")
-    (version "1.1-0")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tdsa" version))
        (sha256
-        (base32 "0zp0g2jcpl26vszbw3s5v6qc6l8jk2jll0nz0f3gywhiv93mjmgr"))))
+        (base32 "0yw0a91qfpv8g7kq7n21acj1wbw7nhqv481hnb7f6slk30isr884"))))
     (properties `((upstream-name . "tdsa")))
     (build-system r-build-system)
     (arguments
@@ -27403,7 +27349,7 @@ codebooks and allows for extraction of code sequences.")
     (description
      "This package provides functions that can be used to calculate time-dependent
 state and parameter sensitivities for both continuous- and discrete-time
-deterministic models.  See Ng et al. (in press) <doi:10.1086/726143> for more
+deterministic models.  See Ng et al. (2023) <doi:10.1086/726143> for more
 information about time-dependent sensitivity analysis.")
     (license license:gpl3)))
 
@@ -30973,13 +30919,13 @@ retrieval.")
 (define-public r-tabula
   (package
     (name "r-tabula")
-    (version "3.3.0")
+    (version "3.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabula" version))
        (sha256
-        (base32 "0df4zl06x34qzb8fgm9y3wd3kjvydx9xsviqymm6pv1ykgh5psv5"))))
+        (base32 "06rsx2fj0fb4p3vsm8m49f3dzk9hih5m1mlkv6rbz3ssa0bxy7ym"))))
     (properties `((upstream-name . "tabula")))
     (build-system r-build-system)
     (arguments

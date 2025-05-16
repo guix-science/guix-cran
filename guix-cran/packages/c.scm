@@ -5594,43 +5594,6 @@ errors\".  The Review of Economics and Statistics, 90(3): 414--427.
 <doi:10.1162/rest.90.3.414>.")
     (license license:gpl2+)))
 
-(define-public r-cruzplot
-  (package
-    (name "r-cruzplot")
-    (version "1.4.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CruzPlot" version))
-       (sha256
-        (base32 "1x9cm4773xps2q1z8vpgb8fkdrrfcrvrz6qk2m734zz9c1v39733"))))
-    (properties `((upstream-name . "CruzPlot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-swfscdas
-                             r-stringr
-                             r-shinyjs
-                             r-shinydashboard
-                             r-shiny
-                             r-marmap
-                             r-maps
-                             r-mapdata
-                             r-geosphere
-                             r-dt
-                             r-dplyr))
-    (home-page "https://github.com/swfsc/CruzPlot/")
-    (synopsis "Plot Shipboard DAS Data")
-    (description
-     "This package provides a utility program oriented to create maps, plot data, and
-do basic data summaries of DAS data files.  These files are typically, but do
-not have to be DAS
-<https://swfsc-publications.fisheries.noaa.gov/publications/TM/SWFSC/NOAA-TM-NMFS-SWFSC-305.PDF>
-data produced by the Southwest Fisheries Science Center (SWFSC) program
-@code{WinCruz}'.")
-    (license (license:fsdg-compatible "Apache License (== 2)"))))
-
 (define-public r-cruts
   (package
     (name "r-cruts")
@@ -21701,13 +21664,13 @@ pcalg') and regression.")
 (define-public r-comparec
   (package
     (name "r-comparec")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "compareC" version))
        (sha256
-        (base32 "0r3d03yj5fjzfc6awc16x9420366dcy3nhvibjlrn0m10il714pc"))))
+        (base32 "1hs8w94qq9vjjd8a56gwwd28xq9z4pdrc29sl5hxg35sqjy7fcgb"))))
     (properties `((upstream-name . "compareC")))
     (build-system r-build-system)
     (arguments
@@ -25217,13 +25180,13 @@ from the base matrix.")
 (define-public r-cofad
   (package
     (name "r-cofad")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cofad" version))
        (sha256
-        (base32 "008qlq47kyfvdgfm43vz5ziv67km5af7mydzlxdxg14kidiv16bf"))))
+        (base32 "11s1x5qlmgw2kj56psh4r78w8gbihlb9q3ndz1yzn6saq95gp0kh"))))
     (properties `((upstream-name . "cofad")))
     (build-system r-build-system)
     (arguments

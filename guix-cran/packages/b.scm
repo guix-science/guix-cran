@@ -17365,35 +17365,6 @@ data, and the Generalized Mahalanobis Kernel distance for high dimensional data.
 et al (2018, submitted); Martos et al (2018, submitted).")
     (license license:gpl3+)))
 
-(define-public r-bigd
-  (package
-    (name "r-bigd")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bigD" version))
-       (sha256
-        (base32 "1lc8c3g22sb3mkmr0vjw6x92cs04gdfsny1iii0v3xj9337v1cc6"))))
-    (properties `((upstream-name . "bigD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://rstudio.github.io/bigD/")
-    (synopsis "Flexibly Format Dates and Times to a Given Locale")
-    (description
-     "Format dates and times flexibly and to whichever locales make sense.  Parses
-dates, times, and date-times in various formats (including string-based ISO 8601
-constructions).  The formatting syntax gives the user many options for
-formatting the date and time output in a precise manner.  Time zones in the
-input can be expressed in multiple ways and there are many options for
-formatting time zones in the output as well.  Several of the provided helper
-functions allow for automatic generation of locale-aware formatting patterns
-based on date/time skeleton formats and standardized date/time formats with
-varying specificity.")
-    (license license:expat)))
-
 (define-public r-bigchess
   (package
     (name "r-bigchess")
@@ -19188,13 +19159,13 @@ the bfsl solution.")
 (define-public r-bfpwr
   (package
     (name "r-bfpwr")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfpwr" version))
        (sha256
-        (base32 "1vh70vqf0g4q2n4kkkq10g2917qry4bykrzvwcr5pwh3p34g87vp"))))
+        (base32 "17lbfzl034vw1wdwmj5fw1nzwcf7xcpryp5c52xi6grm2w01qnlg"))))
     (properties `((upstream-name . "bfpwr")))
     (build-system r-build-system)
     (arguments
@@ -19207,8 +19178,8 @@ the bfsl solution.")
     (description
      "This package implements z-test, t-test, and normal moment prior Bayes factors
 based on summary statistics, along with functionality to perform corresponding
-power and sample size calculations as described in Pawel and Held (2024)
-<doi:10.48550/@code{arXiv.2406.19940>}.")
+power and sample size calculations as described in Pawel and Held (2025)
+<doi:10.1080/00031305.2025.2467919>.")
     (license license:gpl3)))
 
 (define-public r-bfpack
@@ -21496,13 +21467,13 @@ instead.")
 (define-public r-beastt
   (package
     (name "r-beastt")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beastt" version))
        (sha256
-        (base32 "1kcg9100fnjs4circkwz8ipdmnrmcwzns0dj9ihiwwa9xrl3nkky"))))
+        (base32 "1ykjkqjnfsfgdk2k14zsxwmpgrldmxmrkwgcacsfv9zhmjb8y9mh"))))
     (properties `((upstream-name . "beastt")))
     (build-system r-build-system)
     (arguments
@@ -21535,7 +21506,8 @@ instead.")
      "Bayesian dynamic borrowing with covariate adjustment via inverse probability
 weighting for simulations and data analyses in clinical trials.  This makes it
 easy to use propensity score methods to balance covariate distributions between
-external and internal data.")
+external and internal data.  This methodology based on Psioda et al (2025)
+<doi:10.1080/10543406.2025.2489285>.")
     (license license:gpl3+)))
 
 (define-public r-beastjar
@@ -30549,38 +30521,6 @@ complex user-provided vector of probabilities.")
      "This package provides functions to scrape IQY calls to Bank of Mexico,
 downloading and ordering the data conveniently.")
     (license license:cc0)))
-
-(define-public r-banter
-  (package
-    (name "r-banter")
-    (version "0.9.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "banter" version))
-       (sha256
-        (base32 "07gzl06l7iw4czdx3il3p8kl83yw32fxa8cjx1j018z3468m1qyj"))))
-    (properties `((upstream-name . "banter")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-swfscmisc
-                             r-rlang
-                             r-rfpermute
-                             r-randomforest
-                             r-magrittr
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=banter")
-    (synopsis "BioAcoustic eveNT classifiER")
-    (description
-     "Create a hierarchical acoustic event species classifier out of multiple call
-type detectors as described in Rankin et al (2017) <doi:10.1111/mms.12381>.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-banova
   (package

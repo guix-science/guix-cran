@@ -9455,34 +9455,6 @@ Habbal (2018) <doi:10.1007/s10898-018-0688-0>.  M. Binois, V. Picheny, P.
 Taillandier, A. Habbal (2020) <@code{arXiv:1902.06565v2>}.")
     (license license:gpl3)))
 
-(define-public r-gpg
-  (package
-    (name "r-gpg")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gpg" version))
-       (sha256
-        (base32 "04hnmxvnxligd93vzvp38wpxpyxvqz5qd5084awklim846v3dg03"))))
-    (properties `((upstream-name . "gpg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-curl r-askpass))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://github.com/jeroen/gpg")
-    (synopsis "GNU Privacy Guard for R")
-    (description
-     "Bindings to @code{GnuPG} for working with @code{OpenGPG} (RFC4880) cryptographic
-methods.  Includes utilities for public key encryption, creating and verifying
-digital signatures, and managing your local keyring.  Some functionality depends
-on the version of @code{GnuPG} that is installed on the system.  On Windows this
-package can be used together with GPG4Win which provides a GUI for managing keys
-and entering passphrases.")
-    (license license:expat)))
-
 (define-public r-gpfda
   (package
     (name "r-gpfda")
@@ -22124,48 +22096,6 @@ days.  This package is part of the rethomics framework
 <https://rethomics.github.io/>.")
     (license license:gpl3)))
 
-(define-public r-ggesda
-  (package
-    (name "r-ggesda")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggESDA" version))
-       (sha256
-        (base32 "0abjjs1syk9w5fqs778njkz3f92kil1617239hzdcjy67hbbf3c0"))))
-    (properties `((upstream-name . "ggESDA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-tidyverse
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rsda
-                             r-rlang
-                             r-r6
-                             r-prodlim
-                             r-magrittr
-                             r-gtools
-                             r-gridextra
-                             r-ggthemes
-                             r-ggpubr
-                             r-ggplot2
-                             r-ggforce
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/kiangkiangkiang/ggESDA")
-    (synopsis "Exploratory Symbolic Data Analysis with 'ggplot2'")
-    (description
-     "This package implements an extension of ggplot2 and visualizes the symbolic data
-with multiple plot which can be adjusted by more general and flexible input
-arguments.  It also provides a function to transform the classical data to
-symbolic data by both clustering algorithm and customized method.")
-    (license license:gpl2+)))
-
 (define-public r-ggenealogy
   (package
     (name "r-ggenealogy")
@@ -25515,13 +25445,13 @@ Elseberg et al. (2012) <https://hdl.handle.net/10446/86202>.")
 (define-public r-geotargets
   (package
     (name "r-geotargets")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geotargets" version))
        (sha256
-        (base32 "0qyvbm7ask17hqs46dkri5038zc227l6s8cxim18k8yil7mh4gx9"))))
+        (base32 "15lf3wl0s786bzqarv1khhc2kd8kkd71ci47lrdq5ljb1jjy841x"))))
     (properties `((upstream-name . "geotargets")))
     (build-system r-build-system)
     (arguments
@@ -25533,6 +25463,7 @@ Elseberg et al. (2012) <https://hdl.handle.net/10446/86202>.")
                              r-targets
                              r-rlang
                              r-lifecycle
+                             r-gdalraster
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/geotargets")
@@ -30430,6 +30361,51 @@ can also generate random matrices with low, medium, and high correlations, in
 which low, medium, and high thresholds are user-defined.")
     (license license:gpl3)))
 
+(define-public r-gencodymo2
+  (package
+    (name "r-gencodymo2")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GencoDymo2" version))
+       (sha256
+        (base32 "1vpwzz8z95kric9wj7l2nc0sd93396rsja4s1vrbip9qjhmdv3ji"))))
+    (properties `((upstream-name . "GencoDymo2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rtracklayer
+                             r-rcurl
+                             r-progress
+                             r-plotrix
+                             r-genomicranges
+                             r-dplyr
+                             r-data-table
+                             r-bsgenome-hsapiens-ucsc-hg38
+                             r-bsgenome
+                             r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/monahton/GencoDymo2")
+    (synopsis
+     "Comprehensive Analysis of 'GENCODE' Annotations and Splice Site Motifs")
+    (description
+     "This package provides a comprehensive suite of helper functions designed to
+facilitate the analysis of genomic annotations from the GENCODE database
+<https://www.gencodegenes.org/>, supporting both human and mouse genomes.  This
+toolkit enables users to extract, filter, and analyze a wide range of annotation
+features including genes, transcripts, exons, and introns across different
+GENCODE releases.  It provides functionality for cross-version comparisons,
+allowing researchers to systematically track annotation updates, structural
+changes, and feature-level differences between releases.  In addition, the
+package can generate high-quality FASTA files containing donor and acceptor
+splice site motifs, which are formatted for direct input into the
+@code{MaxEntScan} tool (Yeo and Burge, 2004 <doi:10.1089/1066527041410418>),
+enabling accurate calculation of splice site strength scores.")
+    (license license:gpl3+)))
+
 (define-public r-genbinomapps
   (package
     (name "r-genbinomapps")
@@ -33477,13 +33453,13 @@ Langsrud (2019) <doi:10.1007/s11222-018-9848-9>.")
 (define-public r-gaussratiovegind
   (package
     (name "r-gaussratiovegind")
-    (version "1.0.1")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gaussratiovegind" version))
        (sha256
-        (base32 "061qn262q3zrbb1c6n4hvsszx4pw0k65dddnm9ln14cjgcq0rpg1"))))
+        (base32 "16gwi1xqdi0xpcmq8nmw5q75nj1f4lnxrxvl49bli06ycbhrk3lq"))))
     (properties `((upstream-name . "gaussratiovegind")))
     (build-system r-build-system)
     (arguments
@@ -33498,7 +33474,8 @@ about this non-Gaussian nature could lead to incorrect statistical modeling and
 interpretation.  This package provides tools to accurately handle and analyse
 such ratios: density function, parameter estimation, simulation.  An example on
 the study of chlorophyll fluorescence can be found in A. El Ghaziri et al.
-(2023) <doi:10.3390/rs15020528>.")
+(2023) <doi:10.3390/rs15020528> and another method for parameter estimation is
+given in Bouhlel et al. (2023) <doi:10.23919/EUSIPCO58844.2023.10290111>.")
     (license license:gpl3+)))
 
 (define-public r-gaussquad

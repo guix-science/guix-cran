@@ -2643,32 +2643,6 @@ Based on Maximum Lq-likelihood Estimation.  Statistics in Medicine,
 40:6818-6834.<doi:10.1002/sim.9212>.")
     (license license:gpl3)))
 
-(define-public r-lpwc
-  (package
-    (name "r-lpwc")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LPWC" version))
-       (sha256
-        (base32 "0jgz8rkhhsdiwz7jq568axcsfwlkzdpwssr76zx33r0gz6mf3lln"))))
-    (properties `((upstream-name . "LPWC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nleqslv))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/gitter-lab/LPWC")
-    (synopsis "Lag Penalized Weighted Correlation for Time Series Clustering")
-    (description
-     "Computes a time series distance measure for clustering based on weighted
-correlation and introduction of lags.  The lags capture delayed responses in a
-time series dataset.  The timepoints must be specified.  T. Chandereng, A.
-Gitter (2020) <doi:10.1186/s12859-019-3324-1>.")
-    (license license:expat)))
-
 (define-public r-lpsmooth
   (package
     (name "r-lpsmooth")
@@ -18906,13 +18880,13 @@ observed variables and multiple	group models.")
 (define-public r-laminr
   (package
     (name "r-laminr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "laminr" version))
        (sha256
-        (base32 "0812ag42w6wf5vaawkdk2l8z5q8rnz3wk5nxjibyqh89pypq5zyn"))))
+        (base32 "0q55rq71476kx586rd3663wygyc1c023nf2fxbvsi7zs57ma0lcz"))))
     (properties `((upstream-name . "laminr")))
     (build-system r-build-system)
     (arguments
