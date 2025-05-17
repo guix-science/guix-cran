@@ -9050,13 +9050,13 @@ machine learning models and the rules are often helpful heuristics.")
 (define-public r-onemap
   (package
     (name "r-onemap")
-    (version "3.2.1")
+    (version "3.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onemap" version))
        (sha256
-        (base32 "0vmvdmxqzrw0ga92yjhlixsd196wj0gw5f79i2457jhi7hv884x4"))))
+        (base32 "1km8fc9a34ddprmqa3bq9yvsjmjirh5hy67b39r98l72y8z33v0p"))))
     (properties `((upstream-name . "onemap")))
     (build-system r-build-system)
     (arguments

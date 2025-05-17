@@ -537,13 +537,13 @@ rms::Glm, rms::lrm, rms::cph, and mgcv::gam model objects.")
 (define-public r-dynmix
   (package
     (name "r-dynmix")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynmix" version))
        (sha256
-        (base32 "1j91svrhapj24y5b3wga17cyrrfiqixx27rhaklkhz6zwhllp3qg"))))
+        (base32 "02g9nmq2lb0a2ig4g0r9y8h5wh24ppc7mp7z0kzhlkkgaamagrvl"))))
     (properties `((upstream-name . "dynmix")))
     (build-system r-build-system)
     (arguments
@@ -21938,6 +21938,38 @@ width strips, using base R graphics.  Note that the ggdist package offers a
 similar set of tools for illustrating distributions, based on ggplot2'.")
     (license license:gpl2+)))
 
+(define-public r-denstest
+  (package
+    (name "r-denstest")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "denstest" version))
+       (sha256
+        (base32 "1qgi7fjhv1rrpy6yij03mrff87rsz99csyqzrx1zkviwx43iizgn"))))
+    (properties `((upstream-name . "denstest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=denstest")
+    (synopsis "Density Equality Testing")
+    (description
+     "This package provides methods for testing the equality between groups of
+estimated density functions.  The package implements FDET (Fourier-based Density
+Equality Testing) and MDET (Moment-based Density Equality Testing), two new
+approaches introduced by the author.  Both methods extend an earlier testing
+approach by Delicado (2007), \"Functional k-sample problem when data are density
+functions\" <doi:10.1007/s00180-007-0047-y>, which is referred to as DET (Density
+Equality Testing) in this package for clarity.  FDET compares groups of
+densities based on their global shape using Fourier transforms, while MDET tests
+for differences in distributional moments.  All methods are described in Anarat,
+Krutmann and Schwender (2025), \"Testing for Differences in Extrinsic Skin Aging
+Based on Density Functions\" (Submitted).")
+    (license license:gpl3)))
+
 (define-public r-densratio
   (package
     (name "r-densratio")
@@ -22160,13 +22192,13 @@ binomial distribution.")
 (define-public r-denim
   (package
     (name "r-denim")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "denim" version))
        (sha256
-        (base32 "143r0pp75qcjb5r7rw30nz370qpsxpcpqxqip3bk2nais78z0ihc"))))
+        (base32 "0282sd0a8ml4j8c81izr9aszi4r1firbp7lbgvbilxvci13qmjwf"))))
     (properties `((upstream-name . "denim")))
     (build-system r-build-system)
     (arguments

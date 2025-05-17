@@ -15390,13 +15390,13 @@ quantitate the influence of both continuous and categorical factors.")
 (define-public r-poumm
   (package
     (name "r-poumm")
-    (version "2.1.7")
+    (version "2.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "POUMM" version))
        (sha256
-        (base32 "0pwa97sffb571nfqnbc35dj9lr8z07wjsjnwibj9dhj2dr5b2cfp"))))
+        (base32 "1qs9prspdkx7k8pc1wn8ngb8jvyzpicgq3hs2ajal2g3bc1vsz39"))))
     (properties `((upstream-name . "POUMM")))
     (build-system r-build-system)
     (arguments
@@ -29749,13 +29749,13 @@ Automatic query of metabolic pathways is also implemented.")
 (define-public r-phm
   (package
     (name "r-phm")
-    (version "1.1.2")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phm" version))
        (sha256
-        (base32 "05ymrynv5zzrbj3vsdrijay841hv5jbkn8c0v4l6dqndysl9xis4"))))
+        (base32 "0rc60j9q3hy25zpd0g6vil0g7yajgi81jva16003105yanf4w022"))))
     (properties `((upstream-name . "phm")))
     (build-system r-build-system)
     (arguments
@@ -29768,11 +29768,14 @@ Automatic query of metabolic pathways is also implemented.")
                              r-matrix
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=phm")
+    (home-page "https://doi.org/10.1080/1206212X.2024.2448494")
     (synopsis "Phrase Mining")
     (description
      "This package provides functions to extract and handle commonly occurring
-principal phrases obtained from collections of texts.")
+principal phrases obtained from collections of texts.  This package is based on,
+Small, E., & Cabrera, J. (2025).  Principal phrase mining, an automated method
+for extracting meaningful phrases from text.  International Journal of Computers
+and Applications, 47(1), 84â92.")
     (license license:gpl3)))
 
 (define-public r-phitestr
@@ -38055,19 +38058,19 @@ components as a function of a prior parameter.  See <doi:10.1101/237883>.")
 (define-public r-pccc
   (package
     (name "r-pccc")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pccc" version))
        (sha256
-        (base32 "0jh8yadks76ip9jmgvld9nycdm74f5gllkyhfmnrir8vi6xwvbad"))))
+        (base32 "0fkq43zwsyf36j4cx0kicnqq12i1mxqarchi9h7wwwb31lcyfzyl"))))
     (properties `((upstream-name . "pccc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-dplyr))
+    (propagated-inputs (list r-tibble r-rcpp r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/CUD2V/pccc")
     (synopsis "Pediatric Complex Chronic Conditions")

@@ -8261,13 +8261,13 @@ Caamal-Pat et.al. (2021) <doi:10.3389/fgene.2021.680569>.")
 (define-public r-lme4breeding
   (package
     (name "r-lme4breeding")
-    (version "1.0.62")
+    (version "1.0.63")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lme4breeding" version))
        (sha256
-        (base32 "1vv4sn7zzrpgg748m476vfvy3lkx6kml0pxfy6kjj9dsdpwvymq1"))))
+        (base32 "0sc3xkgk7s1kbryrja1svk90fkc6g6sd0ynimva3jj1wbjvj0a0y"))))
     (properties `((upstream-name . "lme4breeding")))
     (build-system r-build-system)
     (arguments
@@ -19773,13 +19773,13 @@ more information is available on their website
 (define-public r-lacm
   (package
     (name "r-lacm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lacm" version))
        (sha256
-        (base32 "01zd4zsas60kzxx4wsnxs6qqc72i4djwj8m7ryjyx5nrxgpjaixc"))))
+        (base32 "17ijc0q774rz5as1jpi7pxhp0hhh6nz6jlf110429s15haip425v"))))
     (properties `((upstream-name . "lacm")))
     (build-system r-build-system)
     (arguments

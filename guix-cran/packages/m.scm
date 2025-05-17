@@ -20973,13 +20973,13 @@ studies.")
 (define-public r-mlpack
   (package
     (name "r-mlpack")
-    (version "4.6.0")
+    (version "4.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlpack" version))
        (sha256
-        (base32 "0dsbk12vk88qa4zjhrwhp35av56safypw4ghx9xq2klgmair9xbv"))))
+        (base32 "0vzs0h64hgbzc5xghg4l4q9308sn0ydnrb1wkg59af8c4l7fzf8d"))))
     (properties `((upstream-name . "mlpack")))
     (build-system r-build-system)
     (arguments
@@ -23699,13 +23699,13 @@ and several tools for visualizing and interpreting the models parameters.")
 (define-public r-mixl
   (package
     (name "r-mixl")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixl" version))
        (sha256
-        (base32 "1j3mqbrjgib57cyirmqgsx6livm63bx9xzps2j4fa6wgivwbk5xr"))))
+        (base32 "0hk1bjy7bih9spzhm4a94ng8ih43dvmwlan3s2clvxqhx83yqjmq"))))
     (properties `((upstream-name . "mixl")))
     (build-system r-build-system)
     (arguments
@@ -34689,13 +34689,13 @@ reporting results based on consistent inputs.")
 (define-public r-metalik
   (package
     (name "r-metalik")
-    (version "0.43.0")
+    (version "0.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaLik" version))
        (sha256
-        (base32 "1li40pgd9z00nrph9njwn6wysb1i9dkpqzcp6fzds6asvcxlqqfl"))))
+        (base32 "19jb3dw4wl7jz1ccwrgwqdl8rssfl5hjybsi2n8rdz8p69nyv47c"))))
     (properties `((upstream-name . "metaLik")))
     (build-system r-build-system)
     (arguments
@@ -36573,13 +36573,13 @@ consistent after imputation.")
 (define-public r-mermboost
   (package
     (name "r-mermboost")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mermboost" version))
        (sha256
-        (base32 "0zca1wnyxj718w03yhwdy32pv8x6y3b1c59r7k4szi8l03x3iimy"))))
+        (base32 "1kkyfxsy0i6b069w3ma679qfpck8a8s8v90n27z63iwa4z82cr1i"))))
     (properties `((upstream-name . "mermboost")))
     (build-system r-build-system)
     (arguments
@@ -36597,10 +36597,11 @@ consistent after imputation.")
     (synopsis "Gradient Boosting for Generalized Additive Mixed Models")
     (description
      "This package provides a novel framework to estimate mixed models via gradient
-boosting.  The implemented functions are based on mboost and lme4'.  Hence, the
-family range is predetermined by lme4'.  A correction mechanism for
-cluster-constant covariates is implemented as well as an estimation of random
-effects covariance.")
+boosting.  The implemented functions are based on the mboost and lme4 packages,
+and the family range is therefore determined by lme4'.  A correction mechanism
+for cluster-constant covariates is implemented, as well as estimation of the
+covariance of random effects.  These methods are described in the accompanying
+publication; see <doi:10.1007/s11222-025-10612-y> for details.")
     (license license:gpl2)))
 
 (define-public r-mergingtools

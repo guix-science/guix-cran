@@ -4717,13 +4717,13 @@ test for the number of factors in factor analysis.  Psychometrika, 32, 179-185."
 (define-public r-horm
   (package
     (name "r-horm")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HoRM" version))
        (sha256
-        (base32 "09dkpzlwkkdn0z8g9fbb7hzxbrrq70x9v1zx254svck2jyk0hx58"))))
+        (base32 "08xwi209wdpv3hjly2s28zw27cc6cs1w393d73ccyip43gim625z"))))
     (properties `((upstream-name . "HoRM")))
     (build-system r-build-system)
     (arguments

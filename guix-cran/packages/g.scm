@@ -17346,6 +17346,30 @@ the API as well as the respective data on regional, country, company or facility
 level.")
     (license license:expat)))
 
+(define-public r-gicf
+  (package
+    (name "r-gicf")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gicf" version))
+       (sha256
+        (base32 "0j3a6wwia61hhc53zcz74vfck4fm0w05s28prx743v064pvcgwdh"))))
+    (properties `((upstream-name . "gicf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=gicf")
+    (synopsis "Penalised Likelihood Estimation of a Covariance Matrix")
+    (description
+     "Penalised likelihood estimation of a covariance matrix via the ridge-regularised
+covglasso estimator described in Cibinel et al. (2024)
+<doi:10.48550/@code{arXiv.2410.02403>}.")
+    (license license:gpl3)))
+
 (define-public r-gic
   (package
     (name "r-gic")
@@ -18150,6 +18174,31 @@ the methods used in this package, see Ritz and Streibig (2008)
 <doi:10.1007/978-0-387-09616-2> and Greenwell and Schubert Kabban (2014)
 <doi:10.32614/RJ-2014-009>.")
     (license license:gpl3)))
+
+(define-public r-ggtreebar
+  (package
+    (name "r-ggtreebar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggtreebar" version))
+       (sha256
+        (base32 "11k6bvgram7s3mfnc1admd13rgmwc3n0i36x51yglmab6xclb06r"))))
+    (properties `((upstream-name . "ggtreebar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-treemapify r-ggplot2 r-ggfittext r-dplyr r-cli))
+    (home-page "https://github.com/hrryt/ggtreebar")
+    (synopsis "Make Treemap Bar Charts with 'ggplot2'")
+    (description
+     "This package provides ggplot2 geoms analogous to @code{geom_col()} and
+@code{geom_bar()} that allow for treemaps using treemapify nested within each
+bar segment.  Also provides geometries for subgroup bordering and text
+annotation.")
+    (license license:gpl3+)))
 
 (define-public r-ggtrace
   (package
@@ -28389,13 +28438,13 @@ parameters from any standard generalised linear model that may be fit by the
 (define-public r-genomeadmixr
   (package
     (name "r-genomeadmixr")
-    (version "2.1.7")
+    (version "2.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenomeAdmixR" version))
        (sha256
-        (base32 "14qnabg1pj8sg2bvd3k4m467bh1q2zfjr0ljxn1ny031sqwis4cy"))))
+        (base32 "00c4plhvh1s9vdvchlmsiymx4xczwgjbsjpgigbzsslbypz52wx7"))))
     (properties `((upstream-name . "GenomeAdmixR")))
     (build-system r-build-system)
     (arguments
@@ -32514,13 +32563,13 @@ the reference section in the package documentation.")
 (define-public r-gcmr
   (package
     (name "r-gcmr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gcmr" version))
        (sha256
-        (base32 "0m4px1w41226clczzmnzal3hs0qwrvlhhdnkcxj1i7qp358ksxvm"))))
+        (base32 "1ss80ccbxgrgjlrh2gwc674a1y25mh52kscx4bm9iwrkyfb0gk33"))))
     (properties `((upstream-name . "gcmr")))
     (build-system r-build-system)
     (arguments

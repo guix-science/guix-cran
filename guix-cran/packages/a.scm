@@ -4186,6 +4186,43 @@ with expected references such as linear or quadratic,
 includes functionality for measuring asymptotic memory and other quantities.")
     (license license:gpl3)))
 
+(define-public r-athlytics
+  (package
+    (name "r-athlytics")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Athlytics" version))
+       (sha256
+        (base32 "1a31xcri8j00gz61gls6mxrxhr9ky9hhjrk4aj65nj1l86k1q6k1"))))
+    (properties `((upstream-name . "Athlytics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-viridis
+                             r-tidyr
+                             r-rstrava
+                             r-rlang
+                             r-purrr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://hezhiang.com/Athlytics/")
+    (synopsis "Advanced Sports Performance Analysis for 'Strava' Data")
+    (description
+     "Advanced sports performance analysis and modeling for activity data retrieved
+from Strava'.  This package focuses on applying established sports science
+models and statistical methods to gain deeper insights into training load,
+performance prediction, recovery status, and identifying key performance
+factors, extending basic data analysis capabilities.")
+    (license license:expat)))
+
 (define-public r-atemevs
   (package
     (name "r-atemevs")
@@ -6553,6 +6590,36 @@ negative transfer by including the non-transfer model in the candidate pool,
 ensuring stable performance even when auxiliary datasets are less informative.
 See the paper, Wang, Wu, and Ye (2023) <doi:10.1002/sta4.582>.")
     (license license:gpl2)))
+
+(define-public r-artsy
+  (package
+    (name "r-artsy")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aRtsy" version))
+       (sha256
+        (base32 "075whs6s0q5ipzlwsn7nihkfrm1hv4albp0fdrd8pppik3jr2ijs"))))
+    (properties `((upstream-name . "aRtsy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-randomforest
+                             r-ggplot2
+                             r-fnn
+                             r-e1071
+                             r-ambient))
+    (home-page "https://koenderks.github.io/aRtsy/")
+    (synopsis "Generative Art with 'ggplot2'")
+    (description
+     "This package provides algorithms for creating artworks in the ggplot2 language
+that incorporate some form of randomness.")
+    (license license:gpl3+)))
 
 (define-public r-artpack
   (package
@@ -10548,13 +10615,13 @@ book.")
 (define-public r-apisensr
   (package
     (name "r-apisensr")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apisensr" version))
        (sha256
-        (base32 "00mfmqck521wgx26az57ynmbj8j3c1vxykpqpwg17591s1jw5796"))))
+        (base32 "0p41800fiy7x6rm2crbigz8apiwcimqmm35spiia3vgk530snd19"))))
     (properties `((upstream-name . "apisensr")))
     (build-system r-build-system)
     (arguments
@@ -10575,7 +10642,7 @@ book.")
                              r-config
                              r-attempt))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/dhaine/apisensr")
+    (home-page "https://codeberg.org/dhaine/apisensr")
     (synopsis
      "Interface to 'episensr' for Sensitivity Analysis of Epidemiological Results")
     (description

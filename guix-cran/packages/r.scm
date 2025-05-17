@@ -15482,13 +15482,13 @@ two Receiver Operating Characteristic (ROC) curves (treatment vs. control).")
 (define-public r-rocpsych
   (package
     (name "r-rocpsych")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROCpsych" version))
        (sha256
-        (base32 "0fcrhhxmvrrchbswb94liahbgz5pfhs86fbj0vby7vnakrhngh7v"))))
+        (base32 "128r5jkg1f585pd3ain6asq7wy23ikx2141vi5bkmvpd26mz52db"))))
     (properties `((upstream-name . "ROCpsych")))
     (build-system r-build-system)
     (arguments
@@ -15504,10 +15504,10 @@ various base rates or known prevalence based on @code{McCaffrey} et al (2003)
 <doi:10.1007/978-1-4615-0079-7_1>, (2) computing optimal cut-off scores with
 different criteria including maximizing sensitivity, maximizing specificity, and
 maximizing the Youden Index from Youden (1950)
-<https://acsjournals.onlinelibrary.wiley.com/doi/abs/10.1002/1097-0142%281950%293%3A1%3C32%3A%3AAID-CNCR2820030106%3E3.0.CO%3B2-3>,
-and (3) displaying and comparing classification statistics and area under the
-receiver operating characteristic (ROC) curves or area under the curves (AUC)
-across consecutive categories for ordinal variables.")
+<doi:10.1002/1097-0142(1950)3:1%3C32::AID-CNCR2820030106%3E3.0.CO;2-3>, and (3)
+displaying and comparing classification statistics and area under the receiver
+operating characteristic (ROC) curves or area under the curves (AUC) across
+consecutive categories for ordinal variables.")
     (license license:gpl2+)))
 
 (define-public r-rococo
@@ -23199,13 +23199,13 @@ to other interactive elements with just few lines of code.")
 (define-public r-rlas
   (package
     (name "r-rlas")
-    (version "1.8.0")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlas" version))
        (sha256
-        (base32 "0fqlg2hqyxvv7lfrqy8qjf1vbxwf5irsw70h7qqw1n5wrv7h6yfw"))))
+        (base32 "1c40x3pygllnixa1cs74x28r5vhccnf5siirrn26r06m2m1k84aj"))))
     (properties `((upstream-name . "rlas")))
     (build-system r-build-system)
     (arguments
@@ -30675,45 +30675,6 @@ documents by Facebook Marketing API
     (description "This package provides an interface to the Facebook API.")
     (license license:gpl2)))
 
-(define-public r-rextendr
-  (package
-    (name "r-rextendr")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rextendr" version))
-       (sha256
-        (base32 "1wx1z4s7lqynwzzh36jj3ixwjjl3gpd0452bnml49a8il988vk6p"))))
-    (properties `((upstream-name . "rextendr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-vctrs
-                             r-stringi
-                             r-rprojroot
-                             r-rlang
-                             r-processx
-                             r-pkgbuild
-                             r-jsonlite
-                             r-glue
-                             r-dplyr
-                             r-desc
-                             r-cli
-                             r-callr
-                             r-brio))
-    (native-inputs (list r-knitr))
-    (home-page "https://extendr.github.io/rextendr/")
-    (synopsis "Call Rust Code from R using the 'extendr' Crate")
-    (description
-     "This package provides functions to compile and load Rust code from R, similar to
-how Rcpp or cpp11 allow easy interfacing with C++ code.  Also provides helper
-functions to create R packages that use Rust code.  Under the hood, the Rust
-crate extendr is used to do all the heavy lifting.")
-    (license license:expat)))
-
 (define-public r-rexpokit
   (package
     (name "r-rexpokit")
@@ -35911,13 +35872,13 @@ of useful Tcl/Tk widgets.")
 (define-public r-reliagrowr
   (package
     (name "r-reliagrowr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReliaGrowR" version))
        (sha256
-        (base32 "1inzsp8y6d2hp9wjw89rc4hisafxz36f8fnd285nj6vpariy8h7p"))))
+        (base32 "1g98g445rrkwpgk36zg5c28p3w68l1k8dflplxjdcfmrldph51ab"))))
     (properties `((upstream-name . "ReliaGrowR")))
     (build-system r-build-system)
     (arguments
@@ -44750,13 +44711,13 @@ contributors to both @code{QuantLib} and Quantuccia'.")
 (define-public r-rcppplanc
   (package
     (name "r-rcppplanc")
-    (version "2.0.7")
+    (version "2.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppPlanc" version))
        (sha256
-        (base32 "0lhpmdwlh7yiblzp0cn4rq4gd77cc18x3yf6cia3n93yy68m1nbl"))))
+        (base32 "148gc9hkv7lvadhndy5zghsfrrkjk6nmhaynczl4xka1a9a6pphd"))))
     (properties `((upstream-name . "RcppPlanc")))
     (build-system r-build-system)
     (arguments
@@ -48037,6 +47998,32 @@ particularly strong requirements into the function to be optimized.
 Additionally, it takes profit from multi-core processing to enable optimization
 of time-consuming functions.")
     (license license:gpl2+)))
+
+(define-public r-rcdo
+  (package
+    (name "r-rcdo")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcdo" version))
+       (sha256
+        (base32 "1qiy4jalg6ms6k9chbbkfc0vjmljffym4bfa0v7ks9y9j21jxr17"))))
+    (properties `((upstream-name . "rcdo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list cdo))
+    (propagated-inputs (list r-rlang r-r6 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://eliocamp.github.io/rcdo/")
+    (synopsis "Wrapper of 'CDO' Operators")
+    (description
+     "This package provides a translation layer between R and CDO operators.  Each
+operator is it's own function with documentation.  Nested or piped functions
+will be translated into CDO chains.")
+    (license license:gpl3+)))
 
 (define-public r-rcdklibs
   (package
@@ -51593,6 +51580,31 @@ variability of environmental phenomena.  The theoretical background of the
 algorithms and code examples are presented in Fuentes et al. (2022).
 <doi:10.32614/RJ-2022-036>.")
     (license license:agpl3+)))
+
+(define-public r-rashnu
+  (package
+    (name "r-rashnu")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rashnu" version))
+       (sha256
+        (base32 "1a7b6bzf9lqwwd7z34dfhk9p8ckc8dbrrgdsiqp8q2nzv6d9c739"))))
+    (properties `((upstream-name . "rashnu")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-dt))
+    (home-page "https://cran.r-project.org/package=rashnu")
+    (synopsis "Balanced Sample Size and Power Calculation Tools")
+    (description
+     "This package implements sample size and power calculation methods with a focus
+on balance and fairness in study design, inspired by the Zoroastrian deity
+Rashnu, the judge who weighs truth.  Supports survival analysis and various
+hypothesis testing frameworks.")
+    (license license:expat)))
 
 (define-public r-rasen
   (package

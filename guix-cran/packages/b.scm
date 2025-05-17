@@ -11,8 +11,8 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages web)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages algebra)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages algebra)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages tls)
@@ -2855,13 +2855,13 @@ Meyer, R. and Christensen, N., Statistics and Computing (2018).
 (define-public r-bspline
   (package
     (name "r-bspline")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bspline" version))
        (sha256
-        (base32 "17xrs7rq0hnf8i7mhv2daykp4g5xmnp826ghap9fsxak6g3n35mw"))))
+        (base32 "01kmhjxjkkba8k598sapdnwyk1lii0fvp4jxxjkj94kdyb2n7593"))))
     (properties `((upstream-name . "bspline")))
     (build-system r-build-system)
     (arguments
@@ -12420,28 +12420,27 @@ function, survival function, random generation, parameter estimation, and more."
 (define-public r-bivgeo
   (package
     (name "r-bivgeo")
-    (version "2.0.1")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BivGeo" version))
        (sha256
-        (base32 "1sj52v1zmk425jw9acq9y0jdp3agx103yzf1bjbc5vrmk1x0i0qr"))))
+        (base32 "1k1hvaq84l7dn9kkqc61ybfalxbbwyivm0mi2mj0kv5b8mm430mn"))))
     (properties `((upstream-name . "BivGeo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=BivGeo")
+    (home-page "https://doi.org/10.1285/i20705948v11n1p108")
     (synopsis "Basu-Dhar Bivariate Geometric Distribution")
     (description
-     "Computes the joint probability mass function (pmf), the joint cumulative
-function (cdf), the joint survival function (sf), the correlation coefficient,
-the covariance, the cross-factorial moment and generate random deviates for the
-Basu-Dhar bivariate geometric distribution as well the joint probability mass,
-cumulative and survival function assuming the presence of a cure fraction given
-by the standard bivariate mixture cure fraction model.  The package also
-computes the estimators based on the method of moments.")
+     "This package provides functions to compute the joint probability mass function
+(pmf), cumulative distribution function (cdf), and survival function (sf) of the
+Basu-Dhar bivariate geometric distribution.  Additional functionalities include
+the calculation of the correlation coefficient, covariance, and cross-factorial
+moments, as well as the generation of random variates.  The package also
+implements parameter estimation based on the method of moments.")
     (license license:gpl2+)))
 
 (define-public r-bivariatemaps
@@ -13020,6 +13019,40 @@ and Seock-Ho Kim (Springer, 2017, ISBN-13: 978-3-319-54204-1) including
 @code{groupinv()}, @code{tcc()}, @code{ability()}, @code{tif()}, and
 @code{rasch()}.  For example, @code{iccplot()} plots an item characteristic
 curve under the two-parameter logistic model.")
+    (license license:gpl2+)))
+
+(define-public r-birp
+  (package
+    (name "r-birp")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "birp" version))
+       (sha256
+        (base32 "048cmam746jg2hvjl2cmxiymfzqx3lz1kgh7mdwsi61wi6g591fh"))))
+    (properties `((upstream-name . "birp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
+    (home-page "https://bitbucket.org/wegmannlab/birpr/wiki/Home")
+    (synopsis
+     "Testing for Population Trends Using Low-Cost Ecological Count Data")
+    (description
+     "This package provides a Bayesian tool to test for population trends and changes
+in trends under arbitrary designs, including before-after (BA),
+control-intervention (CI) and before-after-control-intervention (BACI) designs
+commonly used to assess conservation impact.  It infers changes in trends
+jointly from data obtained with multiple survey methods, as well as from limited
+and noisy data not necessarily collected in standardized ecological surveys.
+Observed counts can be modeled as following either a Poisson or a negative
+binomial model, and both deterministic and stochastic trend models are
+available.  For more details on the model see Singer et al. (2025)
+<doi:10.1101/2025.01.08.631844>, and the file AUTHORS for a list of copyright
+holders and contributors.")
     (license license:gpl2+)))
 
 (define-public r-birk

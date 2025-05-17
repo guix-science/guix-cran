@@ -24698,13 +24698,13 @@ intervention of a single legislator.")
 (define-public r-spedm
   (package
     (name "r-spedm")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spEDM" version))
        (sha256
-        (base32 "1c6vwxxx9ffjjspvy18minmb9w5xapxz3gqw5wz8rjcgi68vzhxj"))))
+        (base32 "1w1ypaz2dx5gsppz742yfygjcshyxl0jhc5hs17afxmrv4pdag2d"))))
     (properties `((upstream-name . "spEDM")))
     (build-system r-build-system)
     (arguments
@@ -24722,12 +24722,11 @@ intervention of a single legislator.")
     (home-page "https://stscl.github.io/spEDM/")
     (synopsis "Spatial Empirical Dynamic Modeling")
     (description
-     "Inferring causal associations in cross-sectional earth system data through
-empirical dynamic modeling (EDM), with extensions to convergent cross mapping
-from Sugihara et al. (2012) <doi:10.1126/science.1227079>, partial cross mapping
-as outlined in Leng et al. (2020) <doi:10.1038/s41467-020-16238-0>, and cross
-mapping cardinality as described in Tao et al.
-(2023)<doi:10.1016/j.fmre.2023.01.007>.")
+     "Inferring causation from spatial cross-sectional data through empirical dynamic
+modeling (EDM), with methodological extensions including geographical convergent
+cross mapping from Gao et al. (2023) <doi:10.1038/s41467-023-41619-6>, as well
+as the spatial causality test following the approach of Herrera et al. (2016)
+<doi:10.1111/pirs.12144>.")
     (license license:gpl3)))
 
 (define-public r-spedinstabr
@@ -37098,13 +37097,13 @@ Embedded Brownian Motions.")
 (define-public r-smallstuff
   (package
     (name "r-smallstuff")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smallstuff" version))
        (sha256
-        (base32 "17x73fcrvnw71bn52mg6lgpm9is99djy5avpnyqsffhqa8x6mzsv"))))
+        (base32 "1yacxji5hm7g8c2y9jq4d3wb53k025rinx9fvmxls2vfjadf0x7w"))))
     (properties `((upstream-name . "smallstuff")))
     (build-system r-build-system)
     (arguments
@@ -50709,13 +50708,13 @@ be stored in a database or a .rds file.")
 (define-public r-shinychat
   (package
     (name "r-shinychat")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinychat" version))
        (sha256
-        (base32 "0fy6b56dniccir93h6a2cxi9j83bzclgffpdg0x7386snzahqm1s"))))
+        (base32 "1qdwhhf717d6qb6rvz9w2czavx35rfdj3cyd2wl482vhynnxidbh"))))
     (properties `((upstream-name . "shinychat")))
     (build-system r-build-system)
     (arguments
@@ -50724,15 +50723,18 @@ be stored in a database or a .rds file.")
     (propagated-inputs (list r-shiny
                              r-rlang
                              r-promises
+                             r-jsonlite
                              r-htmltools
+                             r-fastmap
+                             r-ellmer
                              r-coro
                              r-bslib))
-    (home-page "https://github.com/jcheng5/shinychat")
+    (home-page "https://github.com/posit-dev/shinychat")
     (synopsis "Chat UI Component for 'shiny'")
     (description
      "This package provides a scrolling chat interface with multiline input, suitable
 for creating chatbot apps based on Large Language Models (LLMs).  Designed to
-work particularly well with the elmer R package for calling LLMs.")
+work particularly well with the ellmer R package for calling LLMs.")
     (license license:expat)))
 
 (define-public r-shinychakraui
@@ -55754,44 +55756,58 @@ invariant the package contains the subroutines @code{seqICP.s} and
 (define-public r-seqhmm
   (package
     (name "r-seqhmm")
-    (version "1.2.6")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seqHMM" version))
        (sha256
-        (base32 "17rphq6n2pzgxma0v27vaixi4a343gzc6sk15czfd96kfz7m0gad"))))
+        (base32 "1lh3z39vrrdzhs7g428h0y300haglj4y48smsafjf16pkpnsrnyl"))))
     (properties `((upstream-name . "seqHMM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-traminer
+                             r-rlang
+                             r-rcpphungarian
                              r-rcpparmadillo
                              r-rcpp
+                             r-progressr
+                             r-patchwork
                              r-numderiv
                              r-nloptr
                              r-matrix
+                             r-lhs
                              r-igraph
-                             r-gridbase))
+                             r-gridbase
+                             r-ggseqplot
+                             r-ggplot2
+                             r-future-apply
+                             r-data-table
+                             r-cli
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=seqHMM")
     (synopsis
      "Mixture Hidden Markov Models for Social Sequence Data and Other Multivariate, Multichannel Categorical Time Series")
     (description
-     "Designed for fitting hidden (latent) Markov models and mixture hidden Markov
-models for social sequence data and other categorical time series.  Also some
-more restricted versions of these type of models are available: Markov models,
-mixture Markov models, and latent class models.  The package supports models for
-one or multiple subjects with one or multiple parallel sequences (channels).
-External covariates can be added to explain cluster membership in mixture
-models.  The package provides functions for evaluating and comparing models, as
-well as functions for visualizing of multichannel sequence data and hidden
-Markov models.  Models are estimated using maximum likelihood via the EM
-algorithm and/or direct numerical maximization with analytical gradients.  All
-main algorithms are written in C++ with support for parallel computation.
-Documentation is available via several vignettes in this page, and the paper by
-Helske and Helske (2019, <doi:10.18637/jss.v088.i03>).")
+     "Designed for estimating variants of hidden (latent) Markov models (HMMs),
+mixture HMMs, and non-homogeneous HMMs (NHMMs) for social sequence data and
+other categorical time series.  Special cases include feedback-augmented NHMMs,
+Markov models without latent layer, mixture Markov models, and latent class
+models.  The package supports models for one or multiple subjects with one or
+multiple parallel sequences (channels).  External covariates can be added to
+explain cluster membership in mixture models as well as initial, transition and
+emission probabilities in NHMMs. The package provides functions for evaluating
+and comparing models, as well as functions for visualizing of multichannel
+sequence data and HMMs. For NHMMs, methods for computing average causal effects
+and marginal state and emission probabilities are available.  Models are
+estimated using maximum likelihood via the EM algorithm or direct numerical
+maximization with analytical gradients.  Documentation is available via several
+vignettes, and Helske and Helske (2019, <doi:10.18637/jss.v088.i03>).  For
+methodology behind the NHMMs, see Helske (2025,
+<doi:10.48550/@code{arXiv.2503.16014>}).")
     (license license:gpl2+)))
 
 (define-public r-seqhandbook

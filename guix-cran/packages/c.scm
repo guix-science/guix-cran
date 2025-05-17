@@ -4962,13 +4962,13 @@ with our novel method (Little et al. (2023) <doi:10.1038/s41467-023-38795-w>).")
 (define-public r-csem
   (package
     (name "r-csem")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cSEM" version))
        (sha256
-        (base32 "1cxkdjbrpzl5mc3367k1271amv7zj3m3jmfr6plivclppg057vmz"))))
+        (base32 "0nknqjxnp0x1v8barwaxh93wb6bf6vwaa84ww83zrrdbpygrhq7n"))))
     (properties `((upstream-name . "cSEM")))
     (build-system r-build-system)
     (arguments
@@ -21059,13 +21059,13 @@ the analysed objects.")
 (define-public r-compind
   (package
     (name "r-compind")
-    (version "3.3")
+    (version "3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compind" version))
        (sha256
-        (base32 "0810j491kivhlsx7glj3j1z5wzw0xr2rz83l7zjarll5ibd1v23m"))))
+        (base32 "0844scw78iv6gxy87gxsldlis57wgp994m3ph0x00k5sa1wwdn7j"))))
     (properties `((upstream-name . "Compind")))
     (build-system r-build-system)
     (arguments

@@ -9553,13 +9553,13 @@ business), and emissions metric (e.g. carbon dioxide equivalent, methane).")
 (define-public r-footbayes
   (package
     (name "r-footbayes")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "footBayes" version))
        (sha256
-        (base32 "1lswg1b7srmvq4wkhg0zb2kd22db08hhibaf1bjgjm2s6j9g4fjr"))))
+        (base32 "1ksj95g54l8l1w0wl0y1mccakph99k80hhsjx6scj1z14q9zkrwm"))))
     (properties `((upstream-name . "footBayes")))
     (build-system r-build-system)
     (arguments
@@ -9570,26 +9570,31 @@ business), and emissions metric (e.g. carbon dioxide equivalent, methane).")
                              r-rstan
                              r-rlang
                              r-reshape2
+                             r-posterior
                              r-numderiv
                              r-metrology
                              r-matrixstats
                              r-magrittr
+                             r-instantiate
                              r-ggridges
                              r-ggplot2
                              r-extradistr
-                             r-dplyr
-                             r-bayesplot
-                             r-arm))
+                             r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/leoegidi/footbayes")
     (synopsis "Fitting Bayesian and MLE Football Models")
     (description
      "This is the first package allowing for the estimation, visualization and
 prediction of the most well-known football models: double Poisson, bivariate
 Poisson, Skellam, student_t, diagonal-inflated bivariate Poisson, and
-zero-inflated Skellam.  The package allows Hamiltonian Monte Carlo (HMC)
-estimation through the underlying Stan environment and Maximum Likelihood
-estimation (MLE, for static models only).  The model construction relies on the
-most well-known football references, such as Dixon and Coles (1997)
+zero-inflated Skellam.  It supports both maximum likelihood estimation (MLE, for
+static models only) and Bayesian inference.  For Bayesian methods, it
+incorporates several techniques: MCMC sampling with Hamiltonian Monte Carlo,
+variational inference using either the Pathfinder algorithm or Automatic
+Differentiation Variational Inference (ADVI), and the Laplace approximation.
+The package compiles all the @code{CmdStan} models once during installation
+using the instantiate package.  The model construction relies on the most
+well-known football references, such as Dixon and Coles (1997)
 <doi:10.1111/1467-9876.00065>, Karlis and Ntzoufras (2003)
 <doi:10.1111/1467-9884.00366> and Egidi, Pauli and Torelli (2018)
 <doi:10.1177/1471082X18798414>.")
@@ -23228,6 +23233,41 @@ way, many matrices to be computed are retained as triangular matrices which can
 eventually speed up the computation.  The fitting algorithm for Elastic Net is
 written in C++ using Armadillo linear algebra library.")
     (license license:gpl2+)))
+
+(define-public r-fastei
+  (package
+    (name "r-fastei")
+    (version "0.0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastei" version))
+       (sha256
+        (base32 "0qmrbk5yhqp39cpr7nxl7lyl4la7k2jhw620lqdy7j2cx180dbb7"))))
+    (properties `((upstream-name . "fastei")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://danielhermosilla.github.io/ecological-inference-elections/reference/fastei-package.html")
+    (synopsis
+     "Methods for ''A Fast Alternative for the R x C Ecological Inference Problem''")
+    (description
+     "Estimates the probability matrix for the RÃC Ecological Inference problem using
+the Expectation-Maximization Algorithm with four approximation methods for the
+E-Step, and an exact method as well.  It also provides a bootstrap function to
+estimate the standard deviation of the estimated probabilities.  In addition, it
+has functions that aggregate rows optimally to have more reliable estimates in
+cases of having few data points.  For comparing the probability estimates of two
+groups, a Welch t-test routine is implemented.  The library has data from the
+first round of the Chilean Presidential Election 2021 and can also generate
+synthetic election data.  Methods described in Thraves, Charles; Ubilla, Pablo;
+Hermosilla, Daniel (2024) \"A Fast Ecological Inference Algorithm for the
+@code{RxC} case\" <doi:10.2139/ssrn.4832834>.")
+    (license license:expat)))
 
 (define-public r-fastdid
   (package

@@ -777,6 +777,30 @@ from the iucnrdata package, available on @code{GitHub}
 use pak::pak('@code{PaulESantos/iucnrdata}').")
     (license license:expat)))
 
+(define-public r-itsmr
+  (package
+    (name "r-itsmr")
+    (version "1.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "itsmr" version))
+       (sha256
+        (base32 "1xa11adlpkkq2s3scjx8xqdr3fa370605ayiaxv26bi1as992r18"))))
+    (properties `((upstream-name . "itsmr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://georgeweigt.github.io/itsmr-refman.pdf")
+    (synopsis "Time Series Analysis Using the Innovations Algorithm")
+    (description
+     "This package provides functions for modeling and forecasting time series data.
+Forecasting is based on the innovations algorithm.  A description of the
+innovations algorithm can be found in the textbook \"Introduction to Time Series
+and Forecasting\" by Peter J. Brockwell and Richard A. Davis.")
+    (license (license:fsdg-compatible "FreeBSD"))))
+
 (define-public r-itsdm
   (package
     (name "r-itsdm")
@@ -1753,13 +1777,13 @@ information visit the IS@code{RaD} website at: <https://soilradiocarbon.org/>.")
 (define-public r-isr
   (package
     (name "r-isr")
-    (version "2025.01.14")
+    (version "2025.5.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ISR" version))
        (sha256
-        (base32 "009bw27c3wifmzbsnh882ifg1n4cf099sicrf5vbmg7nx9c5vkdx"))))
+        (base32 "0vy6ixgf3iafcg73164nqh9b5j0sb0365yamyr50va4v0jw8dy3y"))))
     (properties `((upstream-name . "ISR")))
     (build-system r-build-system)
     (arguments
@@ -7654,13 +7678,13 @@ Blackwell and Olson (2022) <doi:10.1017/pan.2021.19>.")
 (define-public r-interprocess
   (package
     (name "r-interprocess")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interprocess" version))
        (sha256
-        (base32 "0i1n5amjw29dn349m5wd2x9zyfdfns4gzw5l23g1ip4xxpp195mb"))))
+        (base32 "11z8nl88y57ws4zz3m0qx81dfax6rrpr24w0snq1z57i0nippk6x"))))
     (properties `((upstream-name . "interprocess")))
     (build-system r-build-system)
     (arguments

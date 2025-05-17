@@ -5473,13 +5473,13 @@ information about Kendall random walks see Jasiulis-GoÅdyn (2014)
 (define-public r-kendallknight
   (package
     (name "r-kendallknight")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kendallknight" version))
        (sha256
-        (base32 "0hqfiwvz6fkmgwp1d2hfh5d24vqkj9fcqv5lj5r31r8lqmlx860b"))))
+        (base32 "0mnnp2sdgx282888qkssw8lnqi3868lh4j4bia9fn1b0hhakchrh"))))
     (properties `((upstream-name . "kendallknight")))
     (build-system r-build-system)
     (arguments
@@ -6607,13 +6607,13 @@ or the first Wasserstein distance.")
 (define-public r-kanova
   (package
     (name "r-kanova")
-    (version "0.3-12")
+    (version "0.3-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kanova" version))
        (sha256
-        (base32 "1l14bi4z78ylryqflmdk10sxfzhyxp7qb2m13nfi32kl7axyhi8h"))))
+        (base32 "080agirbaz1pnpmqyxf3hfqz9n41zb41xrcfwcaxf6a83pvv4fbb"))))
     (properties `((upstream-name . "kanova")))
     (build-system r-build-system)
     (arguments

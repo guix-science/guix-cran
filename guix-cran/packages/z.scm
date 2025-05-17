@@ -1236,13 +1236,13 @@ the software).")
 (define-public r-zcurve
   (package
     (name "r-zcurve")
-    (version "2.4.2")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zcurve" version))
        (sha256
-        (base32 "0a9x0j04mfjn2vfycylvqmsh7v4b1a5lx5j501xbzqp9m3m9bh9q"))))
+        (base32 "18f3nb8hpc0b2i836j2jfcj0c31ba8xcjj8lwmhl05xr1vym4n3s"))))
     (properties `((upstream-name . "zcurve")))
     (build-system r-build-system)
     (arguments
@@ -1259,13 +1259,14 @@ the software).")
     (description
      "An implementation of z-curves - a method for estimating expected discovery and
 replicability rates on the bases of test-statistics of published studies.  The
-package provides functions for fitting the new density and EM version (BartoÅ¡ &
-Schimmack, 2020, <doi:10.31234/osf.io/urgtn>), censored observations, as well as
-the original density z-curve (Brunner & Schimmack, 2020,
-<doi:10.15626/MP.2018.874>).  Furthermore, the package provides summarizing and
-plotting functions for the fitted z-curve objects.  See the aforementioned
-articles for more information about the z-curves, expected discovery and
-replicability rates, validation studies, and limitations.")
+package provides functions for fitting the density, EM, and censored EM version
+(BartoÅ¡ & Schimmack, 2022, <doi:10.15626/MP.2021.2720>; Schimmack & BartoÅ¡,
+2023, <doi: 10.1371/journal.pone.0290084>), as well as the original density
+z-curve (Brunner & Schimmack, 2020, <doi:10.15626/MP.2018.874>).  Furthermore,
+the package provides summarizing and plotting functions for the fitted z-curve
+objects.  See the aforementioned articles for more information about the
+z-curves, expected discovery and replicability rates, validation studies, and
+limitations.")
     (license license:gpl3)))
 
 (define-public r-zctacrosswalk

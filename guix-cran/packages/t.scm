@@ -22337,13 +22337,13 @@ solving differential systems.")
 (define-public r-tfm
   (package
     (name "r-tfm")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TFM" version))
        (sha256
-        (base32 "1kykjbsmd4hwn03l04ic9g2dyqc567dbyylpmy159wwcyy9yrimz"))))
+        (base32 "0665x2q05v78mnqv7xfg8sajs4zv436x01b3qalcrawspq3yjrgm"))))
     (properties `((upstream-name . "TFM")))
     (build-system r-build-system)
     (arguments

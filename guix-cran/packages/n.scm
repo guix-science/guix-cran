@@ -7630,19 +7630,19 @@ details in Garay, Lachos and Abanto-Valle (2011)
 (define-public r-nlsic
   (package
     (name "r-nlsic")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlsic" version))
        (sha256
-        (base32 "02xvmzq1yv8bz6wksx4nck9ljxkprsn8xk39chjilir6jddkh6fq"))))
+        (base32 "0qx8839sxs5lwxc8gygl7j57r7fkwzw631imhlacmc1zn86svzp2"))))
     (properties `((upstream-name . "nlsic")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-nnls))
+    (propagated-inputs (list r-nnls r-dotty))
     (home-page "https://github.com/MathsCell/nlsic")
     (synopsis "Non Linear Least Squares with Inequality Constraints")
     (description
