@@ -24218,13 +24218,13 @@ Murph et al. (2023) <@code{arXiv:2310.02940>}.")
 (define-public r-bayesvl
   (package
     (name "r-bayesvl")
-    (version "0.8.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesvl" version))
        (sha256
-        (base32 "1gb2in8hjiqb3daqz6phn1639i6p2w641kxrm3zh4rm3d6hg6hzr"))))
+        (base32 "1p66zsxic85rr6wdaffdq5zaixy87jpf7wvry6pc7xihfzd55a76"))))
     (properties `((upstream-name . "bayesvl")))
     (build-system r-build-system)
     (arguments
@@ -24235,7 +24235,6 @@ Murph et al. (2023) <@code{arXiv:2310.02940>}.")
                              r-rstan
                              r-reshape2
                              r-ggplot2
-                             r-dplyr
                              r-coda
                              r-bnlearn
                              r-bayesplot))

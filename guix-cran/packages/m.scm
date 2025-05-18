@@ -43440,6 +43440,42 @@ zero-inflated mediators containing true zeros and false zeros.  See Jiang et al
 <@code{arXiv:2301.10064>} for more details.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-mazamatimeseries
+  (package
+    (name "r-mazamatimeseries")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MazamaTimeSeries" version))
+       (sha256
+        (base32 "1knsza204ngq9y79rl6kwhkxwysjxhfl4c35nplqpsxnsx2iw123"))))
+    (properties `((upstream-name . "MazamaTimeSeries")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-mazamarollutils
+                             r-mazamacoreutils
+                             r-magrittr
+                             r-lubridate
+                             r-geodist
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MazamaScience/MazamaTimeSeries")
+    (synopsis "Core Functionality for Environmental Time Series")
+    (description
+     "Utility functions for working with environmental time series data from known
+locations.  The compact data model is structured as a list with two dataframes.
+A meta dataframe contains spatial and measuring device metadata associated with
+deployments at known locations.  A data dataframe contains a datetime column
+followed by columns of measurements associated with each \"device-deployment\".
+Ephemerides calculations are based on code originally found in NOAA's \"Solar
+Calculator\" <https://gml.noaa.gov/grad/solcalc/>.")
+    (license license:gpl3)))
+
 (define-public r-mazamaspatialutils
   (package
     (name "r-mazamaspatialutils")

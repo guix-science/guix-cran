@@ -3384,43 +3384,6 @@ use.  It also provides a number of utility functions such as BIC calculations.")
 complete stories, collected for the purpose of text analysis.")
     (license license:gpl3+)))
 
-(define-public r-lotterybr
-  (package
-    (name "r-lotterybr")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lotterybr" version))
-       (sha256
-        (base32 "1p0cv9g01l02917nndnw6f0wkms4kqpyiiddpjg251iy5j4qyl1k"))))
-    (properties `((upstream-name . "lotterybr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny r-plotly r-ggplot2 r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tomasbp2/lotterybr")
-    (synopsis "Lottery Datasets from Caixa Economica Federal")
-    (description
-     "This package provides a collection of functions designed to streamline the
-retrieval of data from Brazilian lottery games operated by Caixa EconÃ´mica
-Federal, accessible through the official website at
-<https://loterias.caixa.gov.br/Paginas/default.aspx/>.  Datasets for each game
-are conveniently stored on the @code{GitHub} page at
-<https://github.com/tomasbp2/@code{LotteryBrasilDATA/>}.  Each game within this
-repository consists of two primary datasets: the winners dataset and the numbers
-dataset.  The winners dataset includes crucial information such as the draw
-date, game type, potential matches, winners for each match, and corresponding
-prize amounts.  Meanwhile, the numbers dataset provides essential details
-including the draw date, game type, and the numbers drawn during the respective
-lottery event.  By offering easy access to these datasets, the package
-facilitates efficient data retrieval and analysis for researchers, analysts, and
-enthusiasts interested in exploring the dynamics and outcomes of Brazilian
-lottery games.")
-    (license license:expat)))
-
 (define-public r-lotri
   (package
     (name "r-lotri")

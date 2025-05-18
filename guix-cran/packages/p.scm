@@ -2678,13 +2678,13 @@ can be estimated (e.g. stochastic fluctuations during predator-prey dynamics).")
 (define-public r-ptsr
   (package
     (name "r-ptsr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PTSR" version))
        (sha256
-        (base32 "0zwqw8zdp0p05nm64yg658iqfbj26n3v2py8r5m6g1sjispm5whf"))))
+        (base32 "0pmrhkilll2smlv3i8l6rh9b9pbhpfnsxp44f105ighny20z36ba"))))
     (properties `((upstream-name . "PTSR")))
     (build-system r-build-system)
     (arguments
@@ -2696,9 +2696,10 @@ can be estimated (e.g. stochastic fluctuations during predator-prey dynamics).")
     (description
      "This package provides a collection of functions to simulate, estimate and
 forecast a wide range of regression based dynamic models for positive time
-series.  This package implements the results presented in Prass, T.S.; Carlos,
-J.H.; Taufemback, C.G. and Pumi, G. (2022). \"Positive Time Series Regression\"
-<@code{arXiv:2201.03667>}.")
+series.  This package implements the results presented in Prass, T.S.; Pumi, G.;
+Taufemback, C.G. and Carlos, J.H. (2025). \"Positive time series regression
+models: theoretical and computational aspects\".  Computational Statistics 40,
+1185â1215. <doi:10.1007/s00180-024-01531-z>.")
     (license license:gpl3+)))
 
 (define-public r-ptspotter
@@ -28995,30 +28996,6 @@ particularly since it has functions for working with Community Health Index
 efficient and reproducible.")
     (license license:gpl2+)))
 
-(define-public r-phreeqc
-  (package
-    (name "r-phreeqc")
-    (version "3.8.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "phreeqc" version))
-       (sha256
-        (base32 "1k3r1xqq51hw0siya9imdwwlyh5y6gx389ylkc2ng9qrxnhznhgw"))))
-    (properties `((upstream-name . "phreeqc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://www.usgs.gov/software/phreeqc-version-3")
-    (synopsis "R Interface to Geochemical Modeling Software")
-    (description
-     "This package provides a geochemical modeling program developed by the US
-Geological Survey that is designed to perform a wide variety of aqueous
-geochemical calculations, including speciation, batch-reaction, one-dimensional
-reactive-transport, and inverse geochemical calculations.")
-    (license license:gpl3)))
-
 (define-public r-phrases
   (package
     (name "r-phrases")
@@ -33423,36 +33400,6 @@ see (i) Pankaj Das (2020)
 associated pictorial representations.  The pictorial representation is based on
 the principal coordinates of the group means.  There are some original results
 that will be published soon.")
-    (license license:gpl2+)))
-
-(define-public r-permallows
-  (package
-    (name "r-permallows")
-    (version "1.15")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PerMallows" version))
-       (sha256
-        (base32 "174mifp93i4jx3l8fps104gy70n10rar3ks4k51pa2k8gw5ivv23"))))
-    (properties `((upstream-name . "PerMallows")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=PerMallows")
-    (synopsis "Permutations and Mallows Distributions")
-    (description
-     "Includes functions to work with the Mallows and Generalized Mallows Models.  The
-considered distances are Kendall's-tau, Cayley, Hamming and Ulam and it includes
-functions for making inference, sampling and learning such distributions, some
-of which are novel in the literature.  As a by-product, @code{PerMallows} also
-includes operations for permutations, paying special attention to those related
-with the Kendall's-tau, Cayley, Ulam and Hamming distances.  It is also possible
-to generate random permutations at a given distance, or with a given number of
-inversions, or cycles, or fixed points or even with a given length on LIS
-(longest increasing subsequence).")
     (license license:gpl2+)))
 
 (define-public r-permalgo

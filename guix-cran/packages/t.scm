@@ -17247,13 +17247,13 @@ get tidy data frames in response, and cache data in a local database.")
 (define-public r-tidywater
   (package
     (name "r-tidywater")
-    (version "0.7.0")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidywater" version))
        (sha256
-        (base32 "0bpwdsb77vgldykx56ksdav3998g3scvmfn4yid4b521zj1160r6"))))
+        (base32 "01ahgrj1wgm6ypk70mk1hcxnyb1wmnmzi4hvjkf3hd26c43fsd7i"))))
     (properties `((upstream-name . "tidywater")))
     (build-system r-build-system)
     (arguments
@@ -17267,7 +17267,9 @@ get tidy data frames in response, and cache data in a local database.")
                              r-ggrepel
                              r-ggplot2
                              r-furrr
-                             r-dplyr))
+                             r-forcats
+                             r-dplyr
+                             r-desolve))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/BrownandCaldwell-Public/tidywater")
     (synopsis "Water Quality Models for Drinking Water Treatment Processes")

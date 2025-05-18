@@ -24885,13 +24885,13 @@ S-estimator of multivariate location and scatter matrix.")
 (define-public r-ritools
   (package
     (name "r-ritools")
-    (version "0.3-4")
+    (version "0.3-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RItools" version))
        (sha256
-        (base32 "1msjxrlil82sa8xm705zi5kqy74nq8jndgm7aq0skn9ms6w88xh4"))))
+        (base32 "1y7w715g2m9xxwps2av9rqf4jf7kjj138ndz68dj2w36vzsw73v0"))))
     (properties `((upstream-name . "RItools")))
     (build-system r-build-system)
     (arguments

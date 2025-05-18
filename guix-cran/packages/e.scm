@@ -16507,13 +16507,13 @@ Guang-Bin Huang, Qin-Yu Zhu, Chee-Kheong Siew (2006), Elsevier B.V,
 (define-public r-ellmer
   (package
     (name "r-ellmer")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ellmer" version))
        (sha256
-        (base32 "1yq7xbd8z4i2y89rgdnrfxkj7fq9lz6wm9svzrfnmkvjhm9sb7ia"))))
+        (base32 "1263bw435n3prhd04505sgbbcyvk180ph5zy2wy1r916z40pykkn"))))
     (properties `((upstream-name . "ellmer")))
     (build-system r-build-system)
     (arguments

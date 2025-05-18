@@ -5681,20 +5681,20 @@ Michel & Meinshausen & Buhlmann (2020) <@code{arXiv:2005.14458>}.")
 (define-public r-dregar
   (package
     (name "r-dregar")
-    (version "0.1.3.0")
+    (version "0.1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DREGAR" version))
        (sha256
-        (base32 "15cplshs85r0z659mc7xmj5db7vc95wxs01c34isc22p8z0a287i"))))
+        (base32 "0pgr4rnjqc9qzv7zlqmw03w083b0lrxfnrgbiabdb9k3460j4mrv"))))
     (properties `((upstream-name . "DREGAR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-msgps))
-    (home-page "http://hamedhaseli.webs.com.")
+    (home-page "https://cran.r-project.org/package=DREGAR")
     (synopsis
      "Regularized Estimation of Dynamic Linear Regression in the Presence of Autocorrelated Residuals (DREGAR)")
     (description
@@ -13066,20 +13066,20 @@ Gumbel distribution.")
 (define-public r-dissimilarities
   (package
     (name "r-dissimilarities")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dissimilarities" version))
        (sha256
-        (base32 "1nh4zdzd39jr97baaj69z9cyffkhdxbsnccc08bdz5rrkhfr0fb4"))))
+        (base32 "0v1gffjvvi800jm99xss9ib3bhvwck1ikwnzhfi0l37js2kral8f"))))
     (properties `((upstream-name . "dissimilarities")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-proxy r-microbenchmark))
-    (home-page "https://cran.r-project.org/package=dissimilarities")
+    (propagated-inputs (list r-rcpp r-proxy r-microbenchmark))
+    (home-page "https://github.com/edelweiss611428/dissimilarities")
     (synopsis "Creating, Manipulating, and Subsetting \"dist\" Objects")
     (description
      "Efficiently creates, manipulates, and subsets \"dist\" objects, commonly used in

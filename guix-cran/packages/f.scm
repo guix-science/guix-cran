@@ -6615,21 +6615,21 @@ examples are also loaded.")
 (define-public r-fpow
   (package
     (name "r-fpow")
-    (version "0.0-2")
+    (version "0.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fpow" version))
        (sha256
-        (base32 "0am3nczimcfrm9hi02vl2xxsh703qjmr2j11y014mll3f2v1l8cy"))))
+        (base32 "0yndqwybgmjqsnylq1wkcn9ykzkqrdwf57gmx8mz6r8ckcqpaydh"))))
     (properties `((upstream-name . "fpow")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "http://dx.doi.org/10.1007/s11222-008-9061-3")
+    (home-page "https://doi.org/10.1007/s11222-008-9061-3")
     (synopsis
-     "Computing the noncentrality parameter of the noncentral F distribution")
+     "Computing the Noncentrality Parameter of the Noncentral F Distribution")
     (description
      "Returns the noncentrality parameter of the noncentral F distribution if
 probability of type I and type II error, degrees of freedom of the numerator and
@@ -9793,19 +9793,19 @@ format similar to shiny', form validation and more.")
 (define-public r-folio
   (package
     (name "r-folio")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "folio" version))
        (sha256
-        (base32 "1hrw0bf6nmid40cr9pzqmrv3libc1y8dka2g2ax7ma0msccqx57p"))))
+        (base32 "157xrz54j17jcm5rskfi55bc9ndssm09kf2kk3rr95nj54qn450d"))))
     (properties `((upstream-name . "folio")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://packages.tesselle.org/folio/")
+    (home-page "https://codeberg.org/tesselle/folio")
     (synopsis "Datasets for Teaching Archaeology and Paleontology")
     (description
      "Datasets for teaching quantitative approaches and modeling in archaeology and

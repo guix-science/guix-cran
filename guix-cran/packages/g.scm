@@ -5574,40 +5574,6 @@ transport plans and costs.  Additionally, related functions for one-dimensional
 optimal transport are available.")
     (license license:gpl3)))
 
-(define-public r-gridonclusters
-  (package
-    (name "r-gridonclusters")
-    (version "0.1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GridOnClusters" version))
-       (sha256
-        (base32 "1zanz8p5ghy7q7dsazv6wfkf5gl2dnbmchw88drbrip1h85gxyid"))))
-    (properties `((upstream-name . "GridOnClusters")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack
-                             r-rcpp
-                             r-plotrix
-                             r-mclust
-                             r-fossil
-                             r-dqrng
-                             r-cluster
-                             r-ckmeans-1d-dp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GridOnClusters")
-    (synopsis "Cluster-Preserving Multivariate Joint Grid Discretization")
-    (description
-     "Discretize multivariate continuous data using a grid that captures the joint
-distribution via preserving clusters in the original data (Wang et al.  2020)
-<doi:10.1145/3388440.3412415>.  Joint grid discretization is applicable as a
-data transformation step to prepare data for model-free inference of
-association, function, or causality.")
-    (license license:lgpl3+)))
-
 (define-public r-gridgraphviz
   (package
     (name "r-gridgraphviz")
@@ -25151,30 +25117,6 @@ package references layout algorithms developed by Jacomy, M., Venturini T.,
 Heymann S., and Bastian M. (2014) <doi:10.1371/journal.pone.0098679> and Noack,
 A. (2009) <doi:10.48550/@code{arXiv.0807.4052>}.")
     (license license:expat)))
-
-(define-public r-gepaf
-  (package
-    (name "r-gepaf")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gepaf" version))
-       (sha256
-        (base32 "1fmxm8dzz8jx9qc7q9rwxh8zm8flwb9xkbpbv50526klsixp0qs3"))))
-    (properties `((upstream-name . "gepaf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-bitops))
-    (home-page "https://github.com/riatelab/gepaf")
-    (synopsis "Google Encoded Polyline Algorithm Format")
-    (description
-     "Encode and decode the Google Encoded Polyline Algorithm Format.  See
-<https://developers.google.com/maps/documentation/utilities/polylinealgorithm>
-for more information.")
-    (license license:gpl3)))
 
 (define-public r-geozoo
   (package

@@ -1174,39 +1174,6 @@ open source if you want to run your own.  Visit <https://ntfy.sh> for more
 details.")
     (license license:expat)))
 
-(define-public r-ntdr
-  (package
-    (name "r-ntdr")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ntdr" version))
-       (sha256
-        (base32 "0a2k1vlmknlj2d8xg73rp7985mnrxzivdbqqkxzwpplz1yfqxpdn"))))
-    (properties `((upstream-name . "ntdr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rvest
-                             r-rlang
-                             r-readxl
-                             r-rappdirs
-                             r-purrr
-                             r-lubridate
-                             r-httr2
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://vgxhc.github.io/ntdr/")
-    (synopsis "Retrieve Data from the National Transit Database")
-    (description
-     "Downloads the latest National Transit Database data, processes it, and returns
-in a tidy data format.")
-    (license license:expat)))
-
 (define-public r-nsyllable
   (package
     (name "r-nsyllable")

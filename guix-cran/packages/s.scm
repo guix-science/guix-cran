@@ -36041,36 +36041,6 @@ output as a distance measure: convert it to distance by \"as.dist(1 -
 smirnov(x))\".")
     (license license:gpl2+)))
 
-(define-public r-smiles
-  (package
-    (name "r-smiles")
-    (version "0.1-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "smiles" version))
-       (sha256
-        (base32 "0bjdp4198069hmlcxy718idv50jbscl0l4ffl8aqvqh7iqmy14cz"))))
-    (properties `((upstream-name . "smiles")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-meta r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=smiles")
-    (synopsis "Sequential Method in Leading Evidence Synthesis")
-    (description
-     "Trial sequential analysis emerges as an important method in data synthesis
-realm.  It is necessary to integrate pooling methods and sequential analysis
-coherently, as discussed in the Chapter by Thomas, J., Askie, L.M., Berlin,
-J.A., Elliott, J.H., Ghersi, D., Simmonds, M., Takwoingi, Y., Tierney, J.F. and
-Higgins, J.P. (2019). \"Prospective approaches to accumulating evidence\".  In
-Cochrane Handbook for Systematic Reviews of Interventions (eds J.P.T. Higgins,
-J. Thomas, J. Chandler, M. Cumpston, T. Li, M.J. Page and V.A. Welch).
-<doi:10.1002/9781119536604.ch22>.")
-    (license license:gpl3+)))
-
 (define-public r-smile
   (package
     (name "r-smile")
@@ -53563,13 +53533,13 @@ Millions of Observations\".")
 (define-public r-sgdgmf
   (package
     (name "r-sgdgmf")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgdGMF" version))
        (sha256
-        (base32 "1kicbdix52v53d098hjahzjvj6i5l9zc0m7byvjsrq9vz4vp435i"))))
+        (base32 "0ywx0xn0k8vil7wai4g6d6ra61csny0am0ajp0lzl2k140y3385l"))))
     (properties `((upstream-name . "sgdGMF")))
     (build-system r-build-system)
     (arguments

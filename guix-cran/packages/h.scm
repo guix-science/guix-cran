@@ -12114,13 +12114,13 @@ uses probabilities to determine outliers.")
 (define-public r-hdomdesign
   (package
     (name "r-hdomdesign")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDOMDesign" version))
        (sha256
-        (base32 "1wfq4w73dkkmfwn3n9rwpjlpvm1ak76dv9ymh6zqfls5whdmp59g"))))
+        (base32 "1f3zsg8gqynx6dj6pbjm8njzm4rnifa28kyfa95hj1vfsy0hraad"))))
     (properties `((upstream-name . "HDOMDesign")))
     (build-system r-build-system)
     (arguments

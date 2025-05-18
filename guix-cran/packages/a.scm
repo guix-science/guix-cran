@@ -18576,33 +18576,6 @@ Finally, all objects created with this package allow to share trained AI models
 with other people.")
     (license license:gpl3)))
 
-(define-public r-aides
-  (package
-    (name "r-aides")
-    (version "1.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "aides" version))
-       (sha256
-        (base32 "0cfi9h2bmjpxrvhbamm808s1pzgw9p9xxj70ickqc7ki8rzzk6cw"))))
-    (properties `((upstream-name . "aides")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-meta r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=aides")
-    (synopsis "Additive Information & Details of Evidence Synthesis")
-    (description
-     "This package provides a supportive collection of functions for pooled analysis
-of aggregate data.  The current version supports users to test assumptions
-before relevant analysis of bias from study size and sequential analysis such as
-mentioned by Wetterslev, J., Jakobsen, J. C., & Gluud, C. (2017)
-<doi:10.1186/s12874-017-0315-7>.")
-    (license license:gpl3+)))
-
 (define-public r-aidar
   (package
     (name "r-aidar")
