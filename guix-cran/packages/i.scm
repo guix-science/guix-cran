@@ -8310,43 +8310,6 @@ associated statistical methods have been partially supported by an Innovative
 Research Award from Johnson Cancer Research Center, Kansas State University.")
     (license license:gpl2)))
 
-(define-public r-interd
-  (package
-    (name "r-interd")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "InteRD" version))
-       (sha256
-        (base32 "18grg2pyn0p3dwqhm2251d47sd97wcjr858y64lf5chkhvcz09nk"))))
-    (properties `((upstream-name . "InteRD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2
-                             r-rcpp
-                             r-pheatmap
-                             r-mgcv
-                             r-limsolve
-                             r-ggplot2
-                             r-desctools
-                             r-cowplot
-                             r-biobase))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/chencxxy28/InteRD")
-    (synopsis "The Integrated and Robust Deconvolution")
-    (description
-     "We developed the Integrated and Robust Deconvolution algorithm to infer
-cell-type proportions from target bulk RNA-seq data.  This package is able to
-effectively integrate deconvolution results from multiple @code{scRNA-seq}
-datasets and calibrates estimates from reference-based deconvolution by taking
-into account extra biological information as priors.  Moreover, the proposed
-algorithm is robust to inaccurate external information imposed in the
-deconvolution system.")
-    (license license:artistic2.0)))
-
 (define-public r-interca
   (package
     (name "r-interca")

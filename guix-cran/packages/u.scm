@@ -3081,13 +3081,13 @@ diverse range of color palettes for creating scientific visualizations.")
 (define-public r-unicode
   (package
     (name "r-unicode")
-    (version "15.1.0-1")
+    (version "16.0.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Unicode" version))
        (sha256
-        (base32 "1y4rdvnkmcf9kls28wbbri2mxmrqhm7jy9fb03qhn17xvrxnk12k"))))
+        (base32 "0q19qn0x5pi8fhylx1c381y4ssysysf30pi3cq948jkg0s84cp1z"))))
     (properties `((upstream-name . "Unicode")))
     (build-system r-build-system)
     (arguments
@@ -3095,7 +3095,7 @@ diverse range of color palettes for creating scientific visualizations.")
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=Unicode")
     (synopsis "Unicode Data and Utilities")
-    (description "Data from Unicode 15.1.0 and related utilities.")
+    (description "Data from Unicode 16.0.0 and related utilities.")
     (license license:gpl2)))
 
 (define-public r-unico

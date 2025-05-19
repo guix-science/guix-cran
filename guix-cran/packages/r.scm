@@ -41429,13 +41429,13 @@ desorption/ionization-time-of-flight mass spectrometer of the *flex series.")
 (define-public r-readabs
   (package
     (name "r-readabs")
-    (version "0.4.18")
+    (version "0.4.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readabs" version))
        (sha256
-        (base32 "1iqd7bsmm0v5364hh02zxh64nhy124bsvj6q7ay76iyrbqxb5yh0"))))
+        (base32 "10y10wxycjs4a665sjl87yrq1ijv3kk8lhh75fgf31dls7a87khc"))))
     (properties `((upstream-name . "readabs")))
     (build-system r-build-system)
     (arguments
@@ -43988,32 +43988,6 @@ simple steps, namely, set-selection, estimation, diagnosis, and validation.
 RCTrep provides a simple dashboard to review the obtained results.  The
 validation approach is introduced by Shen, L., Geleijnse, G. and Kaptein, M.
 (2023) <doi:10.21203/rs.3.rs-2559287/v2>.")
-    (license license:expat)))
-
-(define-public r-rctrecruit
-  (package
-    (name "r-rctrecruit")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RCTRecruit" version))
-       (sha256
-        (base32 "15qkzclkvk9l44nypq70hsq8fv04m4xjnaqapbqf2765jm8gd8cc"))))
-    (properties `((upstream-name . "RCTRecruit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-lubridate))
-    (home-page "https://github.com/imalagaris/RCTRecruit")
-    (synopsis
-     "Non-Parametric Recruitment Prediction for Randomized Clinical Trials")
-    (description
-     "Accurate prediction of subject recruitment for Randomized Clinical Trials (RCT)
-remains an ongoing challenge.  Many previous prediction models rely on
-parametric assumptions.  We present functions for non-parametric RCT recruitment
-prediction under several scenarios.")
     (license license:expat)))
 
 (define-public r-rct3
@@ -49978,13 +49952,13 @@ provided in: Border and Malik (2022) <doi:10.1101/2022.10.13.512132>.")
 (define-public r-rbacon
   (package
     (name "r-rbacon")
-    (version "3.4.2")
+    (version "3.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbacon" version))
        (sha256
-        (base32 "0fpc6qzddbxzpvmvzaz5x5ls2madl13q8f086s59p2mpqm75fi6y"))))
+        (base32 "086d46222wbdby6spz6cz7f8r8wcf4465bsbqyc2ca0lpnnllq66"))))
     (properties `((upstream-name . "rbacon")))
     (build-system r-build-system)
     (arguments

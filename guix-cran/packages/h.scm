@@ -3086,19 +3086,25 @@ and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
 (define-public r-htgm2d
   (package
     (name "r-htgm2d")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HTGM2D" version))
        (sha256
-        (base32 "0lnjyld4kqxzdb02qzccx6s3rbc8b1wmmv57mp9gm3bi5xszw7qp"))))
+        (base32 "0y0185p13yx2lq0ppl197hi6d7xdby57c3yjfcbsm3wdmgahcawx"))))
     (properties `((upstream-name . "HTGM2D")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-minimalistgodb r-jaccard r-htgm r-gplots
+    (propagated-inputs (list r-vprint
+                             r-randomgodb
+                             r-minimalistgodb
+                             r-jaccard
+                             r-htgm
+                             r-hgnchelper
+                             r-gplots
                              r-gominer))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=HTGM2D")

@@ -17642,13 +17642,13 @@ dialects that are identified by locale.")
 (define-public r-conquestr
   (package
     (name "r-conquestr")
-    (version "1.4.5")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conquestr" version))
        (sha256
-        (base32 "15y8nwdalnq8j7zl1bdmpr4rg69am7sggqs8ljhyh3ng178h104f"))))
+        (base32 "1b3jpzf2n6w4brn69r5p746vys9yxmmj7m79af0yw23xj0pl47cr"))))
     (properties `((upstream-name . "conquestr")))
     (build-system r-build-system)
     (arguments
@@ -49224,65 +49224,6 @@ international mobility programs, recorded in Capes computerized payment systems.
  The CAPES database refers to international mobility programs for the period
 from 2010 to 2019 <https://dadosabertos.capes.gov.br/dataset/>.")
     (license license:cc0)))
-
-(define-public r-cape
-  (package
-    (name "r-cape")
-    (version "3.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cape" version))
-       (sha256
-        (base32 "01bxyhn0kk07yx4012px6cys0csqgrsf2n5abdg22vr7ky7phqja"))))
-    (properties `((upstream-name . "cape")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-shape
-                             r-regress
-                             r-rcolorbrewer
-                             r-r6
-                             r-qtl2convert
-                             r-qtl2
-                             r-qtl
-                             r-propagate
-                             r-pracma
-                             r-pheatmap
-                             r-matrix
-                             r-igraph
-                             r-here
-                             r-foreach
-                             r-evd
-                             r-doparallel
-                             r-corpcor
-                             r-catools
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cape")
-    (synopsis
-     "Combined Analysis of Pleiotropy and Epistasis for Diversity Outbred Mice")
-    (description
-     "Combined Analysis of Pleiotropy and Epistasis infers predictive networks between
-genetic variants and phenotypes.  It can be used with standard two-parent
-populations as well as multi-parent populations, such as the Diversity Outbred
-(DO) mice, Collaborative Cross (CC) mice, or the multi-parent advanced
-generation intercross (MAGIC) population of Arabidopsis thaliana.  It uses
-complementary information of pleiotropic gene variants across different
-phenotypes to resolve models of epistatic interactions between alleles.  To do
-this, cape reparametrizes main effect and interaction coefficients from pairwise
-variant regressions into directed influence parameters.  These parameters
-describe how alleles influence each other, in terms of suppression and
-enhancement, as well as how gene variants influence phenotypes.  All of the
-final interactions are reported as directed interactions between pairs of
-parental alleles.  For detailed descriptions of the methods used in this package
-please see the following references.  Carter, G. W., Hays, M., Sherman, A. &
-Galitski, T. (2012) <doi:10.1371/journal.pgen.1003010>.  Tyler, A. L., Lu, W.,
-Hendrick, J. J., Philip, V. M. & Carter, G. W. (2013)
-<doi:10.1371/journal.pcbi.1003270>.")
-    (license license:gpl3)))
 
 (define-public r-caop-raa-2024
   (package

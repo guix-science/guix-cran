@@ -736,13 +736,13 @@ adjusted effect sizes.")
 (define-public r-yfscreen
   (package
     (name "r-yfscreen")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yfscreen" version))
        (sha256
-        (base32 "0rsgnjq0y748wyv2w6dwn9hyj2a1xppmrv888mbf1dr10av994m6"))))
+        (base32 "0lhpls6r494sfpzhha5p49bfhcjx2jq65bw77vg5g6vdhrnndmd3"))))
     (properties `((upstream-name . "yfscreen")))
     (build-system r-build-system)
     (arguments

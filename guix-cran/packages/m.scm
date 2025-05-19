@@ -29242,13 +29242,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.14.0")
+    (version "1.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "0z4bs1rbbvyxzssigdr9b1lkgbn7y882jy2b75kjag0pi7jjbal7"))))
+        (base32 "05z9f6fd0lqh00vwzxy68nd8ah6yn8mnfrckzbv4rlhscw758zj2"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (arguments
@@ -45187,13 +45187,13 @@ and use of the API is subject to their terms and conditions.")
 (define-public r-mathml
   (package
     (name "r-mathml")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mathml" version))
        (sha256
-        (base32 "1zllzr112ycx23sqhhg3kfbg9w7cdxcc8nxr3x0lsbk075msgwav"))))
+        (base32 "1rjabyzsf060mbakz8zffmchv366y9fgyjg84jdf8662lyzqryvr"))))
     (properties `((upstream-name . "mathml")))
     (build-system r-build-system)
     (arguments

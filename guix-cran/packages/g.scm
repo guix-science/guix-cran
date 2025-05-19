@@ -11063,13 +11063,13 @@ similarity between samples visually in a low (2 or 3) dimensional space.")
 (define-public r-gominer
   (package
     (name "r-gominer")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GoMiner" version))
        (sha256
-        (base32 "1rdlnw2r9i05bafmq3p6bn3d617522397lcg5h5ln4pdb6fz6j0a"))))
+        (base32 "0zr71lqpgn5pp88zwzqdl0hd6m3hbb28qpryf80871hg26wyidrr"))))
     (properties `((upstream-name . "GoMiner")))
     (build-system r-build-system)
     (arguments
@@ -25117,6 +25117,30 @@ package references layout algorithms developed by Jacomy, M., Venturini T.,
 Heymann S., and Bastian M. (2014) <doi:10.1371/journal.pone.0098679> and Noack,
 A. (2009) <doi:10.48550/@code{arXiv.0807.4052>}.")
     (license license:expat)))
+
+(define-public r-gepaf
+  (package
+    (name "r-gepaf")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gepaf" version))
+       (sha256
+        (base32 "1fmxm8dzz8jx9qc7q9rwxh8zm8flwb9xkbpbv50526klsixp0qs3"))))
+    (properties `((upstream-name . "gepaf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-bitops))
+    (home-page "https://github.com/riatelab/gepaf")
+    (synopsis "Google Encoded Polyline Algorithm Format")
+    (description
+     "Encode and decode the Google Encoded Polyline Algorithm Format.  See
+<https://developers.google.com/maps/documentation/utilities/polylinealgorithm>
+for more information.")
+    (license license:gpl3)))
 
 (define-public r-geozoo
   (package

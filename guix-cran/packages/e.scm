@@ -17366,13 +17366,13 @@ Valeinis, E. Cers (2011)
 (define-public r-eks
   (package
     (name "r-eks")
-    (version "1.0.7")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eks" version))
        (sha256
-        (base32 "0mdias69r0snz11yj741jrsc2cgg00ir1yknl5wf8zfhzdv12rpp"))))
+        (base32 "19xb7pkac7s5gj2b3l0a4mjbjbna61nwrji6g9zq0b5mhg4dz67r"))))
     (properties `((upstream-name . "eks")))
     (build-system r-build-system)
     (arguments
@@ -17380,10 +17380,13 @@ Valeinis, E. Cers (2011)
       #:tests? #f))
     (propagated-inputs (list r-sf
                              r-mapsf
+                             r-lwgeom
                              r-ks
                              r-isoband
                              r-ggplot2
-                             r-dplyr))
+                             r-geos
+                             r-dplyr
+                             r-colorspace))
     (native-inputs (list r-knitr))
     (home-page "https://www.mvstat.net/mvksa/")
     (synopsis "Tidy and Geospatial Kernel Smoothing")

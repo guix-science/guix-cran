@@ -5555,49 +5555,6 @@ and efficient fst package.")
      "Tests periodicity in short time series using response surface regression.")
     (license license:gpl2+)))
 
-(define-public r-prspgx
-  (package
-    (name "r-prspgx")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PRSPGx" version))
-       (sha256
-        (base32 "1vvclrp6h63l471qvgwkdhs52lrkapz0v90gwld89zwim6pnh7av"))))
-    (properties `((upstream-name . "PRSPGx")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sgl
-                             r-rfast
-                             r-propagate
-                             r-mvtnorm
-                             r-mcmcpack
-                             r-matrixcalc
-                             r-matrix
-                             r-lmtest
-                             r-glmnet
-                             r-gigrvg
-                             r-gglasso
-                             r-bigstatsr
-                             r-bigsparser
-                             r-bigsnpr
-                             r-bigparallelr
-                             r-bdsmatrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=PRSPGx")
-    (synopsis "Construct PGx PRS")
-    (description
-     "Construct pharmacogenomics (PGx) polygenic risk score (PRS) with PRS-PGx-Unadj
-(unadjusted), PRS-PGx-CT (clumping and thresholding), PRS-PGx-L, -GL, -SGL
-(penalized regression), PRS-PGx-Bayes (Bayesian regression).  Package is based
-on Pharmacogenomics Polyenic Risk Score for Drug Response Prediction Using
-PRS-PGx Methods by Zhai, S., Zhang, H., Mehrotra, D.V., and Shen, J., 2021
-(submitted).")
-    (license license:gpl2+)))
-
 (define-public r-prrd
   (package
     (name "r-prrd")
@@ -7075,29 +7032,6 @@ of random multigraph models and conformity-based decompositions.")
      "Computes two-sample confidence intervals for single, paired and independent
 proportions.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-propagate
-  (package
-    (name "r-propagate")
-    (version "1.0-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "propagate" version))
-       (sha256
-        (base32 "17jinz1jramlsf87i7vyn2qp82rc1dacljfaxxplrk3crhw3bhs7"))))
-    (properties `((upstream-name . "propagate")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tmvtnorm r-rcpp r-minpack-lm r-mass r-ff))
-    (home-page "https://cran.r-project.org/package=propagate")
-    (synopsis "Propagation of Uncertainty")
-    (description
-     "Propagation of uncertainty using higher-order Taylor expansion and Monte Carlo
-simulation.")
-    (license license:gpl2+)))
 
 (define-public r-prop-comb-rr
   (package
@@ -38831,13 +38765,13 @@ studies.")
 (define-public r-pbibd
   (package
     (name "r-pbibd")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PBIBD" version))
        (sha256
-        (base32 "0zh73bsiwmsqw1vhs2dazndsf0894kfv3vfv88wr4fnh7njysz6r"))))
+        (base32 "09qvccdr4vc715l4gybaxdqkdz5dgcx4sn04f81hsclw8c3j56sz"))))
     (properties `((upstream-name . "PBIBD")))
     (build-system r-build-system)
     (arguments

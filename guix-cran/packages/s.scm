@@ -2901,19 +2901,19 @@ the method.")
 (define-public r-svrep
   (package
     (name "r-svrep")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svrep" version))
        (sha256
-        (base32 "0r9629jf690x4gf0n56cfq50yx4p7ilpyi40jd5hzvxpq21hi74c"))))
+        (base32 "0aifjbzj8v8fyj6ygj27p8al4ayx9yhzpc2awc0fxb85w7lx46ry"))))
     (properties `((upstream-name . "svrep")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survey r-mvtnorm r-matrix r-dbi))
+    (propagated-inputs (list r-survey r-sampling r-mvtnorm r-matrix r-dbi))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://bschneidr.github.io/svrep/")
     (synopsis
@@ -12494,50 +12494,6 @@ cross-validation (which includes information on 95% confidence interval
 empirical coverage), and to produce contour plots over 2D slices in model
 parameter space.")
     (license license:gpl3)))
-
-(define-public r-sticsrfiles
-  (package
-    (name "r-sticsrfiles")
-    (version "1.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SticsRFiles" version))
-       (sha256
-        (base32 "0aw1crzji95dik556q29kxrjph80x2gx6ba1rm47l9301k6scj1k"))))
-    (properties `((upstream-name . "SticsRFiles")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xslt
-                             r-xml2
-                             r-xml
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rstudioapi
-                             r-rlang
-                             r-lubridate
-                             r-lifecycle
-                             r-dplyr
-                             r-data-table
-                             r-curl
-                             r-crayon
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/SticsRPacks/SticsRFiles")
-    (synopsis "Read and Modify 'STICS' Input/Output Files")
-    (description
-     "Manipulating input and output files of the STICS crop model.  Files are either
-@code{JavaSTICS} XML files or text files used by the model fortran executable.
-Most basic functionalities are reading or writing parameter names and values in
-both XML or text input files, and getting data from output files.  Advanced
-functionalities include XML files generation from XML templates and/or
-spreadsheets, or text files generation from XML files by using xslt
-transformation.")
-    (license license:lgpl3+)))
 
 (define-public r-sticr
   (package

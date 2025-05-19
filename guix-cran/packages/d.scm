@@ -10685,35 +10685,6 @@ CRAN packages is from the RStudio CRAN mirror', see
 <https://bioconductor.org/packages/stats/>.")
     (license license:artistic2.0)))
 
-(define-public r-dlssm
-  (package
-    (name "r-dlssm")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DLSSM" version))
-       (sha256
-        (base32 "0phmjz37kyqfxqc70f8f9pvyvh8gm7yc8j32w7kk3rbhlk0ip4dy"))))
-    (properties `((upstream-name . "DLSSM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DLSSM")
-    (synopsis "Dynamic Logistic State Space Prediction Model")
-    (description
-     "This package implements the dynamic logistic state space model for binary
-outcome data proposed by Jiang et al. (2021) <doi:10.1111/biom.13593>.  It
-provides a computationally efficient way to update the prediction whenever new
-data becomes available.  It allows for both time-varying and time-invariant
-coefficients, and use cubic smoothing splines to model varying coefficients.
-The smoothing parameters are objectively chosen by maximum likelihood.  The
-model is updated using batch data accumulated at pre-specified time intervals.")
-    (license license:gpl3)))
-
 (define-public r-dlsem
   (package
     (name "r-dlsem")
@@ -18987,13 +18958,13 @@ Riviere Marie-Karelle et al. (2016) <doi:10.1177/0962280216631763>.")
 (define-public r-dfms
   (package
     (name "r-dfms")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfms" version))
        (sha256
-        (base32 "0p3fbvmrdrsiz3dy23i5fjldc7l5hwfh7v73sg8dkhvxxnn1ciw4"))))
+        (base32 "0cwfn6gz6bw1mq6c6bb9ayg7xv7bgjzg6ialwqibg840mqlln5yd"))))
     (properties `((upstream-name . "dfms")))
     (build-system r-build-system)
     (arguments
@@ -19006,18 +18977,19 @@ Riviere Marie-Karelle et al. (2016) <doi:10.1177/0962280216631763>.")
     (description
      "Efficient estimation of Dynamic Factor Models using the Expectation Maximization
 (EM) algorithm or Two-Step (2S) estimation, supporting datasets with missing
-data.  The estimation options follow advances in the econometric literature:
-either running the Kalman Filter and Smoother once with initial values from PCA
-- 2S estimation as in Doz, Giannone and Reichlin (2011)
-<doi:10.1016/j.jeconom.2011.02.012> - or via iterated Kalman Filtering and
-Smoothing until EM convergence - following Doz, Giannone and Reichlin (2012)
-<doi:10.1162/REST_a_00225> - or using the adapted EM algorithm of Banbura and
-Modugno (2014) <doi:10.1002/jae.2306>, allowing arbitrary patterns of missing
-data.  The implementation makes heavy use of the Armadillo C++ library and the
-collapse package, providing for particularly speedy estimation.  A comprehensive
-set of methods supports interpretation and visualization of the model as well as
-forecasting.  Information criteria to choose the number of factors are also
-provided - following Bai and Ng (2002) <doi:10.1111/1468-0262.00273>.")
+data.  Factors are assumed to follow a stationary VAR process of order p.  The
+estimation options follow advances in the econometric literature: either running
+the Kalman Filter and Smoother once with initial values from PCA - 2S estimation
+as in Doz, Giannone and Reichlin (2011) <doi:10.1016/j.jeconom.2011.02.012> - or
+via iterated Kalman Filtering and Smoothing until EM convergence - following
+Doz, Giannone and Reichlin (2012) <doi:10.1162/REST_a_00225> - or using the
+adapted EM algorithm of Banbura and Modugno (2014) <doi:10.1002/jae.2306>,
+allowing arbitrary patterns of missing data.  The implementation makes heavy use
+of the Armadillo C++ library and the collapse package, providing for
+particularly speedy estimation.  A comprehensive set of methods supports
+interpretation and visualization of the model as well as forecasting.
+Information criteria to choose the number of factors are also provided -
+following Bai and Ng (2002) <doi:10.1111/1468-0262.00273>.")
     (license license:gpl3)))
 
 (define-public r-dfmirror
@@ -26917,19 +26889,20 @@ for social networks.  Fushing, @code{VanderWaal}, @code{McCowan}, & Koehl (2013)
 (define-public r-dcetool
   (package
     (name "r-dcetool")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DCEtool" version))
        (sha256
-        (base32 "18x0fk71is77cc5ldm890asqrm1dz45m14z2ic9df89fm0wpwrvg"))))
+        (base32 "1rz8vi51krznlzfdmhqk9hsf168fvglmki2950d6k0n6c8578y7h"))))
     (properties `((upstream-name . "DCEtool")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-writexl
+                             r-usethis
                              r-tidyr
                              r-survival
                              r-shinywidgets

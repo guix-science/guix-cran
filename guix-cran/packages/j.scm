@@ -1879,35 +1879,6 @@ the notes were added.  A simple text representation is used to allow for clear
 version histories.")
     (license license:expat)))
 
-(define-public r-jose
-  (package
-    (name "r-jose")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jose" version))
-       (sha256
-        (base32 "0si1mg325fwx9zgjdbqspw9v6prl5mn3iccg7vki4bpzmwhd953q"))))
-    (properties `((upstream-name . "jose")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-openssl r-jsonlite))
-    (native-inputs (list r-knitr))
-    (home-page "https://r-lib.r-universe.dev/jose")
-    (synopsis "JavaScript Object Signing and Encryption")
-    (description
-     "Read and write JSON Web Keys (JWK, rfc7517), generate and verify JSON Web
-Signatures (JWS, rfc7515) and encode/decode JSON Web Tokens (JWT, rfc7519)
-<https://datatracker.ietf.org/wg/jose/documents/>.  These standards provide
-modern signing and encryption formats that are natively supported by browsers
-via the @code{JavaScript} @code{WebCryptoAPI}
-<https://www.w3.org/TR/@code{WebCryptoAPI/#jose>}, and used by services like
-OAuth 2.0, @code{LetsEncrypt}, and Github Apps.")
-    (license license:expat)))
-
 (define-public r-josaplay
   (package
     (name "r-josaplay")
