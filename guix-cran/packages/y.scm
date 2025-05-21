@@ -772,13 +772,13 @@ support for both R and Python to ensure accessibility for a broad audience.")
 (define-public r-yfr
   (package
     (name "r-yfr")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yfR" version))
        (sha256
-        (base32 "1jdqz0cb13fgvrak1sgs4h2cwgr8rcbg68c35mlaqnmkfn2w3xvc"))))
+        (base32 "0iwk1cfc3s3yrxjm22192jd9904s798c246w011rl7kl9lczxz0x"))))
     (properties `((upstream-name . "yfR")))
     (build-system r-build-system)
     (arguments
@@ -797,7 +797,7 @@ support for both R and Python to ensure accessibility for a broad audience.")
                              r-magrittr
                              r-lubridate
                              r-jsonlite
-                             r-humanize
+                             r-janitor
                              r-httr
                              r-glue
                              r-future

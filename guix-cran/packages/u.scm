@@ -125,13 +125,13 @@ reporting summary statistics.")
 (define-public r-utsf
   (package
     (name "r-utsf")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "utsf" version))
        (sha256
-        (base32 "1bfhms7j1042j30v9k84i9jsvsahjdx6h5dfplynlvwb1isb5hi8"))))
+        (base32 "1axcvg5h3wwpdm15fpqip20ngmcp1j0hzps7xaw2bbnx4rcj35j5"))))
     (properties `((upstream-name . "utsf")))
     (build-system r-build-system)
     (arguments

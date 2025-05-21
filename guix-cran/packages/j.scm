@@ -1602,6 +1602,32 @@ data.  Custom parsing of the rules is also supported.  For more information
 about @code{jQuery} @code{QueryBuilder} see <https://querybuilder.js.org/>.")
     (license license:expat)))
 
+(define-public r-jpsurv
+  (package
+    (name "r-jpsurv")
+    (version "3.0.20")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JPSurv" version))
+       (sha256
+        (base32 "0jishmvvk6b142p6yqnbvv9sgrhvgbsphb86pjg2dng39qvj0v1x"))))
+    (properties `((upstream-name . "JPSurv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-ggrepel r-ggplot2))
+    (home-page "https://cran.r-project.org/package=JPSurv")
+    (synopsis "Joinpoint Model for Relative and Cause-Specific Survival")
+    (description
+     "This package contains functions for fitting a joinpoint proportional hazards
+model to relative survival or cause-specific survival data, including estimates
+of joinpoint years at which survival trends have changed and trend measures in
+the hazard and cumulative survival scale.  See Yu et al.(2009)
+<doi:10.1111/j.1467-985X.2009.00580.x>.")
+    (license license:gpl2+)))
+
 (define-public r-jpstat
   (package
     (name "r-jpstat")

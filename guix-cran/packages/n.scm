@@ -6753,13 +6753,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "1w16qbi7i7h52byvf5mnc04qqjkprqm07y7jyc1vkfi5ixphh8q9"))))
+        (base32 "11zfcixrw0d0s1ywqs3ixcwsnpxmigrc8wnnyn1rq1zrhxl12rix"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (arguments
@@ -13750,13 +13750,13 @@ accommodated to do classification and prediction.")
 (define-public r-netcoupler
   (package
     (name "r-netcoupler")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetCoupler" version))
        (sha256
-        (base32 "1xycg179anf78kd1xfwzlmfp8igrl7k2bv105w3s2df5pd8gnpbg"))))
+        (base32 "038igg3jqvr3dfrgg1bks6vxsy8b7k0vf21kivprkhfivhvsnb9n"))))
     (properties `((upstream-name . "NetCoupler")))
     (build-system r-build-system)
     (arguments

@@ -1319,6 +1319,36 @@ under selective pressure.  See Jacobs, Sluckin and Kivisild (2016)
 <doi:10.1534/genetics.115.185900>.")
     (license license:expat)))
 
+(define-public r-z22
+  (package
+    (name "r-z22")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "z22" version))
+       (sha256
+        (base32 "1bl20j0zm56siavqjigg6fn6rk276m3lfqzb1j065ljsgb77ycnd"))))
+    (properties `((upstream-name . "z22")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-httr2 r-dplyr r-cli r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jslth/z22/")
+    (synopsis "Official Gridded Data from the German Census 2022")
+    (description
+     "This package provides fast and easy access to German census grid data from the
+2011 and 2022 censuses <https://www.zensus2022.de/>, including a wide range of
+socio-economic indicators at multiple spatial resolutions (100m, 1km, 10km).
+Enables efficient download, processing, and analysis of large census datasets
+covering population, households, families, dwellings, and buildings.  Harmonized
+data structures allow direct comparison with the 2011 census, supporting
+temporal and spatial analyses.  Facilitates conversion of data into common
+formats for spatial analysis and mapping ('terra', sf', ggplot2').")
+    (license license:expat)))
+
 (define-public r-z10
   (package
     (name "r-z10")

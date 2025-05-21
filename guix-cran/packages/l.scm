@@ -2266,6 +2266,43 @@ R-Hilfe-Seiten fÃ¼r den Herausgeberband Breit, S. und Schreiner, C. (Hrsg.).
 zur VerfÃ¼gung.")
     (license license:gpl3+)))
 
+(define-public r-lsamba
+  (package
+    (name "r-lsamba")
+    (version "2024.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LSAMBA" version))
+       (sha256
+        (base32 "0hal52c4diaakli002h85v0hdjysx28wqfahrl2ymqajajk9m8cx"))))
+    (properties `((upstream-name . "LSAMBA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-stringr
+                             r-sharp
+                             r-rsmlx
+                             r-mass
+                             r-latex2exp
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=LSAMBA")
+    (synopsis "Lasso-SAMBA Algorithm")
+    (description
+     "This package provides a lasso-based method for building mechanistic models using
+the SAMBA algorithm (Stochastic Approximation for Model Building Algorithm) (M
+Prague, M Lavielle (2022) <doi:10.1002/psp4.12742>).  The package extends the
+Rsmlx package (version 2024.1.0) to better handle high-dimensional data.  It
+relies on the Monolix software (version 2024R1; see
+(<https://monolixsuite.slp-software.com/monolix/2024R1/>), which must be
+installed beforehand.")
+    (license license:gpl3+)))
+
 (define-public r-lsafun
   (package
     (name "r-lsafun")
@@ -7266,13 +7303,13 @@ model inference feature through simulation and games.")
 (define-public r-lmtp
   (package
     (name "r-lmtp")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmtp" version))
        (sha256
-        (base32 "1hmmr66wsv2yxbims7ahnqmlzlkwk5xm6sc3gs8pwq6qidrqaxpg"))))
+        (base32 "06i8ijj8vk3qsrikpnsqivxaji9x9zai303xzb9rprga39blhh3k"))))
     (properties `((upstream-name . "lmtp")))
     (build-system r-build-system)
     (arguments
@@ -8504,13 +8541,13 @@ and switch between various APIs seamlessly within R, and define LLM agents.")
 (define-public r-llmagentr
   (package
     (name "r-llmagentr")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMAgentR" version))
        (sha256
-        (base32 "16jydbkw95aggddc3ir03dd9w9ssvvjhss8lf7zj0piqhsjhszwr"))))
+        (base32 "0qsql1qk15g5gskwqdb87hm6ki4v3xw4nj4xdgvnvlaw3v60djp7"))))
     (properties `((upstream-name . "LLMAgentR")))
     (build-system r-build-system)
     (arguments
@@ -12301,30 +12338,30 @@ for unbalanced data.  The estimation of the models is particularly fast as
 compared to other libraries.")
     (license license:gpl2)))
 
-(define-public r-libdeflate
+(define-public r-libimath
   (package
-    (name "r-libdeflate")
-    (version "1.23.1")
+    (name "r-libimath")
+    (version "3.1.9")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "libdeflate" version))
+       (uri (cran-uri "libimath" version))
        (sha256
-        (base32 "02hawlahvziww9fwdvq871rggdzg4ml0pgvcqz3dngpkc8winb18"))))
-    (properties `((upstream-name . "libdeflate")))
+        (base32 "1ar54j2s6a88gbbakp0mqbqdnxxzsq3rj5wrdzrnf3svw04s34mq"))))
+    (properties `((upstream-name . "libimath")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list cmake))
-    (home-page "https://cran.r-project.org/package=libdeflate")
-    (synopsis "DEFLATE Compression Static Library and Headers")
+    (home-page "https://cran.r-project.org/package=libimath")
+    (synopsis "'Imath' Computer Graphics Linear Algebra Static Library")
     (description
-     "This package provides the libdeflate static library (see
-<https://github.com/ebiggers/libdeflate>) and C headers for whole-buffer
-DEFLATE-based compression and decompression, along with an R interface for
-compressing and decompressing raw vectors.")
-    (license license:expat)))
+     "This package provides a static library for Imath (see
+<https://github.com/@code{AcademySoftwareFoundation/Imath>}), a library for
+functions and data types common in computer graphics applications, including a
+16-bit floating-point type.")
+    (license license:bsd-3)))
 
 (define-public r-libbib
   (package
@@ -13649,6 +13686,30 @@ packages.  It includes numerous convenience functions to create modules, include
 utility functions to create common Bootstrap elements, setup a project from the
 ground-up, and much more.")
     (license license:gpl2+)))
+
+(define-public r-lepidochroma
+  (package
+    (name "r-lepidochroma")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lepidochroma" version))
+       (sha256
+        (base32 "1jsvz0ji4lh5jxg7vsdq32dmwr0188i7qz3ln7ixsn6462ybsm93"))))
+    (properties `((upstream-name . "lepidochroma")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=lepidochroma")
+    (synopsis "Colour Palettes Inspired by Butterflies")
+    (description
+     "This package provides a collection of colour palettes inspired by some of our
+dearest butterfly species.  This package provides continuous and categorical
+palettes, including some colour blind friendly options.")
+    (license license:gpl3+)))
 
 (define-public r-leontief
   (package
@@ -18107,13 +18168,13 @@ Council (2006, ISBN:978-0-309-09156-5).")
 (define-public r-largevars
   (package
     (name "r-largevars")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Largevars" version))
        (sha256
-        (base32 "0i4jxhg3ccv3d5spy7vbfmhwn5wcq4h9l2bv9a7gzhv1y0pnfnwb"))))
+        (base32 "1y5hszw2l9sq617x09msb89rp02m8vrq946x4pfzaf11cxsfpr2z"))))
     (properties `((upstream-name . "Largevars")))
     (build-system r-build-system)
     (arguments
@@ -20370,6 +20431,40 @@ is described with more details in the preprint C. Champion, M. Champion, M.
 BlazÃ¨re, R. Burcelin and J.M. Loubes, \"l1-spectral clustering algorithm: a
 spectral clustering method using l1-regularization\" (2022).")
     (license license:gpl2)))
+
+(define-public r-l1rotation
+  (package
+    (name "r-l1rotation")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "l1rotation" version))
+       (sha256
+        (base32 "094lf1mjbh2wdgg5xq3v7sc014py59n0lbrdis7a88ks0wqnfjqg"))))
+    (properties `((upstream-name . "l1rotation")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-pracma
+                             r-matrixstats
+                             r-magrittr
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://kobleary.github.io/l1rotation/")
+    (synopsis "Identify Loading Vectors under Sparsity in Factor Models")
+    (description
+     "Simplify the loading matrix in factor models using the l1 criterion as proposed
+in Freyaldenhoven (2025) <doi:10.21799/frbp.wp.2020.25>.  Given a data matrix,
+find the rotation of the loading matrix with the smallest l1-norm and/or test
+for the presence of local factors with main function @code{local_factors()}.")
+    (license license:expat)))
 
 (define-public r-l1pack
   (package

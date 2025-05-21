@@ -5006,6 +5006,35 @@ t-test, Mann-Whitney; equality of variances), and reports the findings
 format (Fay, M.P., & Proschan, M.A. (2010)<DOI: 10.1214/09-SS051>).")
     (license license:expat)))
 
+(define-public r-groupcompare
+  (package
+    (name "r-groupcompare")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "groupcompare" version))
+       (sha256
+        (base32 "0a80fgjvd1dfbp79g221v6mbkdswif4qwk9v0vqfhp0k7lqj4pn8"))))
+    (properties `((upstream-name . "groupcompare")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vioplot r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=groupcompare")
+    (synopsis "Comparing Two Groups Using Various Descriptive Statistics")
+    (description
+     "Comparing two independent or paired groups across a range of descriptive
+statistics, enabling the evaluation of potential differences in central tendency
+(mean, median), dispersion (variance, interquartile range), shape (skewness,
+kurtosis), and distributional characteristics (various quantiles).  The
+analytical framework incorporates parametric t-tests, non-parametric Wilcoxon
+tests, permutation tests, and bootstrap resampling techniques to assess the
+statistical significance of observed differences.")
+    (license license:gpl2+)))
+
 (define-public r-groupbn
   (package
     (name "r-groupbn")
@@ -15950,13 +15979,13 @@ that all targets remain up to date.")
 (define-public r-gitstats
   (package
     (name "r-gitstats")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitStats" version))
        (sha256
-        (base32 "16xvcdm44dmyz851y6il3yi74lm8qmvcrwcisi14qh6n82k6dnxl"))))
+        (base32 "1ld2xmjga0bcv5fjbr5ypssgah8xmz81259xyybf88flcr1805fn"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
     (arguments
@@ -16286,13 +16315,13 @@ changes in their source code, in relation to features requests.")
 (define-public r-gitai
   (package
     (name "r-gitai")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitAI" version))
        (sha256
-        (base32 "1j8iqagiz1x0mil4i5wjq5746pkxnbsr9jpzf5anr7lryd3q34c8"))))
+        (base32 "1z82gax3p5l4jbmmgf1ki4hd08pqckw3824zmq82jhz6rbglr03q"))))
     (properties `((upstream-name . "GitAI")))
     (build-system r-build-system)
     (arguments
@@ -20971,13 +21000,13 @@ diagnostic plots and an array of four standard diagnostic plots.")
 (define-public r-gglinedensity
   (package
     (name "r-gglinedensity")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gglinedensity" version))
        (sha256
-        (base32 "15x0cm36kdwd2b2nvn71vfrvqm6s0693df1c9733j059636azban"))))
+        (base32 "040pdr4ly73ziv4c8livr17ihinwvl031ig9aj1r8ghz7yrsl0yd"))))
     (properties `((upstream-name . "gglinedensity")))
     (build-system r-build-system)
     (arguments
@@ -20993,10 +21022,10 @@ diagnostic plots and an array of four standard diagnostic plots.")
     (home-page "https://github.com/hrryt/gglinedensity")
     (synopsis "Make DenseLines Heatmaps with 'ggplot2'")
     (description
-     "Create a raster plot of line density using a ggplot2 statistic implementing the
-@code{DenseLines} algorithm, which \"normalizes time series by the arc length to
-compute accurate densities\" (Moritz and Fisher, 2018)
-<doi:10.48550/@code{arXiv.1808.06019>}.")
+     "Visualise overlapping time series lines as a heatmap of line density.  Provides
+a ggplot2 statistic implementing the @code{DenseLines} algorithm, which
+\"normalizes time series by the arc length to compute accurate densities\" (Moritz
+and Fisher, 2018) <doi:10.48550/@code{arXiv.1808.06019>}.")
     (license license:gpl3+)))
 
 (define-public r-gglgbtq
@@ -24064,13 +24093,13 @@ builds on Windows, but just returns NULL.")
 (define-public r-gettddata
   (package
     (name "r-gettddata")
-    (version "1.5.6")
+    (version "1.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GetTDData" version))
        (sha256
-        (base32 "1l2kc85sxnwmccyyjf18d8npg40pa3kgsvd73lj6b8pxwrsg9wj7"))))
+        (base32 "1q1qg61fb8z361mdsagcbi172a5cz4d5zi7ij9zy31wgk2x4dh8m"))))
     (properties `((upstream-name . "GetTDData")))
     (build-system r-build-system)
     (arguments
@@ -24084,7 +24113,6 @@ builds on Windows, but just returns NULL.")
                              r-readxl
                              r-purrr
                              r-jsonlite
-                             r-humanize
                              r-fs
                              r-dplyr
                              r-curl
@@ -24592,13 +24620,13 @@ Markdown HTML documents.")
 (define-public r-get
   (package
     (name "r-get")
-    (version "1.0-5")
+    (version "1.0-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GET" version))
        (sha256
-        (base32 "1bhcvdai9a43plra7k9a07hgzcz0q6r8by5h4yza8scqc1vcbga3"))))
+        (base32 "0n19cjrv0va1ajhqmdfb2fnf8drhs8nfwcx889f6fqhdjk34kkmr"))))
     (properties `((upstream-name . "GET")))
     (build-system r-build-system)
     (arguments
@@ -28404,13 +28432,13 @@ parameters from any standard generalised linear model that may be fit by the
 (define-public r-genomeadmixr
   (package
     (name "r-genomeadmixr")
-    (version "2.1.10")
+    (version "2.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenomeAdmixR" version))
        (sha256
-        (base32 "00c4plhvh1s9vdvchlmsiymx4xczwgjbsjpgigbzsslbypz52wx7"))))
+        (base32 "1d4hg6z8cmsxyqx7kb6323hfcn3rb3lmi062752x86jfbzf0rvqr"))))
     (properties `((upstream-name . "GenomeAdmixR")))
     (build-system r-build-system)
     (arguments
@@ -32065,26 +32093,21 @@ Information Facility (GBIF - <https://www.gbif.org/>) using a Shiny interface.")
 (define-public r-gdatools
   (package
     (name "r-gdatools")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GDAtools" version))
        (sha256
-        (base32 "1561zzw177kc7x3hiqzi7qm1yvczx8lzjb2j7d45zgwgz96v9vf8"))))
+        (base32 "1a1wbbkf6i9241wlhg50707pqb9rflnlp9ra8cc0ny4m52sj7fyj"))))
     (properties `((upstream-name . "GDAtools")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-ggrepel r-ggplot2 r-factominer
                              r-descriptio))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/nicolas-robette/GDAtools")
+    (home-page "https://framagit.org/nicolas-robette/GDAtools")
     (synopsis "Geometric Data Analysis")
     (description
      "Many tools for Geometric Data Analysis (Le Roux & Rouanet (2005)

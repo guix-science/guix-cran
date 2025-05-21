@@ -123,13 +123,13 @@ information about the Google Trends API - pytrends', visit
 (define-public r-pysparklyr
   (package
     (name "r-pysparklyr")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pysparklyr" version))
        (sha256
-        (base32 "10wk393s0q87ns69z7lxilp51lf2f764h01ryxq7icx0w32nynv9"))))
+        (base32 "1jl51i5caa7ms7mi06k5bi0mglfzjidfmc3vyw0xz7sp2b122zxc"))))
     (properties `((upstream-name . "pysparklyr")))
     (build-system r-build-system)
     (arguments
@@ -10917,6 +10917,41 @@ while the Prettify addins also modify the code, e.g. trailing semi-colons are
 added to @code{JavaScript} code when they are missing.")
     (license license:gpl3)))
 
+(define-public r-pretestcad
+  (package
+    (name "r-pretestcad")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pretestcad" version))
+       (sha256
+        (base32 "18bb2wqdw71j4gkdxf9blvg8mca2rq5wjwq5wyjqkvaxdlkn5din"))))
+    (properties `((upstream-name . "pretestcad")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-rlang r-dplyr r-cli))
+    (home-page "https://github.com/JauntyJJS/pretestcad")
+    (synopsis "Pretest Probability for Coronary Artery Disease")
+    (description
+     "An application to calculate a patient's pretest probability (PTP) for
+obstructive Coronary Artery Disease (CAD) from a collection of guidelines or
+studies.  Guidelines usually comes from the American Heart Association (AHA),
+American College of Cardiology (ACC) or European Society of Cardiology (ESC).
+Examples of PTP scores that comes from studies are the 2020 Winther et al.
+basic, Risk Factor-weighted Clinical Likelihood (RF-CL) and Coronary Artery
+Calcium Score-weighted Clinical Likelihood (CACS-CL) models
+<doi:10.1016/j.jacc.2020.09.585>, 2019 Reeh et al.  basic and clinical models
+<doi:10.1093/eurheartj/ehy806> and 2017 Fordyce et al.  PROMISE Minimal-Risk
+Tool <doi:10.1001/jamacardio.2016.5501>.  As diagnosis of CAD involves a costly
+and invasive coronary angiography procedure for patients, having a reliable PTP
+for CAD helps doctors to make better decisions during patient management.  This
+ensures high risk patients can be diagnosed and treated early for CAD while
+avoiding unnecessary testing for low risk patients.")
+    (license license:expat)))
+
 (define-public r-pretest
   (package
     (name "r-pretest")
@@ -14965,20 +15000,20 @@ conditions based on bootstrap resampling.  See Shui et al. (2024)
 (define-public r-powereqtl
   (package
     (name "r-powereqtl")
-    (version "0.3.4")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powerEQTL" version))
        (sha256
-        (base32 "124mwkjf5m19znn7zdnncdc3klgqyid08kvihk0gws2y9bw0m1zs"))))
+        (base32 "1b9gprnwyf0g8ir1pdnyvm3jpki8z142nm7yhkqa23qh2a5mc000"))))
     (properties `((upstream-name . "powerEQTL")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-nlme r-glmmadaptive))
-    (home-page "https://cran.r-project.org/package=powerEQTL")
+    (home-page "https://github.com/sterding/powerEQTL")
     (synopsis
      "Power and Sample Size Calculation for Bulk Tissue and Single-Cell eQTL Analysis")
     (description
@@ -20914,13 +20949,13 @@ using package survey'.")
 (define-public r-pnd
   (package
     (name "r-pnd")
-    (version "0.0.10")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pnd" version))
        (sha256
-        (base32 "0mkrvzpfci1shdjz9rad1gqrjxj8yxc55yfn19020rghfm0kf3ig"))))
+        (base32 "05zg7fahyxvkpwdymmz48204rs5zy81pyijbzrfwbf4q823cfmdx"))))
     (properties `((upstream-name . "pnd")))
     (build-system r-build-system)
     (arguments
@@ -24165,13 +24200,13 @@ binary three-way data.")
 (define-public r-plfd
   (package
     (name "r-plfd")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PLFD" version))
        (sha256
-        (base32 "0w6d3sy4cnn7sj5d2fbn510gc3y6hipd006jnyvkariaqwlh3fa0"))))
+        (base32 "03fsdqp8wh2s28llxh12km5mdh19xiijb9f2rpa0slf4rf191zjf"))))
     (properties `((upstream-name . "PLFD")))
     (build-system r-build-system)
     (arguments
@@ -24187,7 +24222,7 @@ binary three-way data.")
 discriminant features and their differential structures, then constructs the
 discriminant rule by pooling the identified local features together.  This
 method is applicable to high-dimensional matrix-variate data.  See the paper by
-Xu, Luo and Chen (2021, <doi:10.1007/s13171-021-00255-2>).")
+Xu, Luo and Chen (2023, <doi:10.1007/s13171-021-00255-2>).")
     (license license:gpl3)))
 
 (define-public r-plexi
@@ -40319,22 +40354,21 @@ Also referred to the following implementation:
 (define-public r-parzer
   (package
     (name "r-parzer")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parzer" version))
        (sha256
-        (base32 "0v97cfjkggkdhv8gc0ffgbijgwxzpz7n44z7gsmkvggjj3wsxvpr"))))
+        (base32 "0544iijla39s147lf2yflgx1hnkhz8vj26mxy600mhmg44h43xgc"))))
     (properties `((upstream-name . "parzer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-withr r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://github.com/ropensci/parzerhttps://docs.ropensci.org/parzer/")
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/ropensci/parzer")
     (synopsis "Parse Messy Geographic Coordinates")
     (description
      "Parse messy geographic coordinates from various character formats to decimal
@@ -42010,13 +42044,13 @@ automation with delayed execution (e.g. for executing functions in parallel).")
 (define-public r-parafac4microbiome
   (package
     (name "r-parafac4microbiome")
-    (version "1.1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parafac4microbiome" version))
        (sha256
-        (base32 "1cxlx6y5vyr21zgh4njrpqrrm8wkyrw8l0gkd3rj5afvgmqysx6z"))))
+        (base32 "0fjbkcskwc9l4b4sk5n6nijr2sj0dfv9xpf7j8nan0jagl2dihvv"))))
     (properties `((upstream-name . "parafac4microbiome")))
     (build-system r-build-system)
     (arguments

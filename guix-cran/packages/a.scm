@@ -1532,13 +1532,13 @@ Statistics in Medicine, 43: 5803-5813. <doi:10.1002/sim.10270> for details.")
 (define-public r-autowmm
   (package
     (name "r-autowmm")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AutoWMM" version))
        (sha256
-        (base32 "1ci2j65nzgckf70qp500xw943s7xgv18qiw2c9w3cfrg9ay1xnrs"))))
+        (base32 "0smc4lv5v1s0lg8rj4y41pk0spy827qvz6kssngawc1qsfmf4cb9"))))
     (properties `((upstream-name . "AutoWMM")))
     (build-system r-build-system)
     (arguments
@@ -4162,13 +4162,13 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2025.4.1")
+    (version "2025.5.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "0yphwp1f267qqgnj4q9rvddf6qpc87a4lq8l84h0al0051m0pgk3"))))
+        (base32 "0l47gn665cqx5fp1dfb17sdb20xvv92fc697lkiwnqsy5cpdi6la"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (arguments
@@ -18063,6 +18063,49 @@ explanation of all concepts, see Thomson (2024)
      "Retrieve air quality data via the @code{AirNow} <https://www.airnow.gov/> API.")
     (license license:expat)))
 
+(define-public r-airmonitor
+  (package
+    (name "r-airmonitor")
+    (version "0.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AirMonitor" version))
+       (sha256
+        (base32 "06ff1m4n5rab56jgka4mnl091lqz8j4vrpxv0v5cl91gb87rz2cj"))))
+    (properties `((upstream-name . "AirMonitor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xts
+                             r-tidyselect
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-mazamatimeseries
+                             r-mazamarollutils
+                             r-mazamacoreutils
+                             r-magrittr
+                             r-lubridate
+                             r-leaflet
+                             r-dygraphs
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MazamaScience/AirMonitor")
+    (synopsis "Air Quality Data Analysis")
+    (description
+     "Utilities for working with hourly air quality monitoring data with a focus on
+small particulates (PM2.5).  A compact data model is structured as a list with
+two dataframes.  A meta dataframe contains spatial and measuring device metadata
+associated with deployments at known locations.  A data dataframe contains a
+datetime column followed by columns of measurements associated with each
+\"device-deployment\".  Algorithms to calculate @code{NowCast} and the associated
+Air Quality Index (AQI) are defined at the US Environmental Projection Agency
+@code{AirNow} program:
+<https://document.airnow.gov/technical-assistance-document-for-the-reporting-of-daily-air-quailty.pdf>.")
+    (license license:gpl3)))
+
 (define-public r-airly
   (package
     (name "r-airly")
@@ -22013,13 +22056,13 @@ A., Barberena R., Thomas M. G., Mendez C., Manning K. (2020)
 (define-public r-admtools
   (package
     (name "r-admtools")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admtools" version))
        (sha256
-        (base32 "1522hllir10pawlznw8zhkic4rximv3rfslxwvkfa6f4z37mspy3"))))
+        (base32 "17xyy6s65x3zadaqaijyvl1v1zblj8y3p4psvwcyf313bh849nz6"))))
     (properties `((upstream-name . "admtools")))
     (build-system r-build-system)
     (arguments
@@ -25765,24 +25808,25 @@ ISBN: 978-0387310732).")
 (define-public r-accelstab
   (package
     (name "r-accelstab")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AccelStab" version))
        (sha256
-        (base32 "0c2b7z2yn70vn7gck5imxc4dc05bvkvxjiskbk28gpwsyk73ny07"))))
+        (base32 "1i2zm60bhzgc67j4d7ga0vdli5wii9h3k9vsr59z0jjng1kyjfih"))))
     (properties `((upstream-name . "AccelStab")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-scales r-mvtnorm r-minpack-lm r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/AccelStab/AccelStab")
     (synopsis "Accelerated Stability Kinetic Modelling")
     (description
      "Estimate the Å estÃ¡kâBerggren kinetic model (degradation model) from
-experimental data.  A A closed-form (analytic) solution to the degradation model
+experimental data.  A closed-form (analytic) solution to the degradation model
 is implemented as a non-linear fit, allowing for the extrapolation of the
 degradation of a drug product - both in time and temperature.  Parametric
 bootstrap, with kinetic parameters drawn from the multivariate t-distribution,

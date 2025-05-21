@@ -1435,13 +1435,13 @@ the the multilevel p2 model as described in Zijlstra, Van Duijn & Snijders
 (define-public r-dwreg
   (package
     (name "r-dwreg")
-    (version "2.0")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DWreg" version))
        (sha256
-        (base32 "0bgahzgcxz86n0ady97l48zyahv3p2iyc2ivbij1xrfx3wcx3b5n"))))
+        (base32 "0gscfks20fgsa989nfg6npj7vng4hsy8vzasads8zx39mhmcd144"))))
     (properties `((upstream-name . "DWreg")))
     (build-system r-build-system)
     (arguments
@@ -1453,7 +1453,7 @@ the the multilevel p2 model as described in Zijlstra, Van Duijn & Snijders
     (description
      "Regression for a discrete response, where the conditional distribution is
 modelled via a discrete Weibull distribution.")
-    (license license:gpl2+)))
+    (license license:gpl3)))
 
 (define-public r-dwp
   (package
@@ -2926,6 +2926,43 @@ organizations to utilize the data collected by the Displacement Tracking Matrix
 aggregated at the country, Admin 1 (states, provinces, or equivalent), and Admin
 2 (smaller administrative areas) levels.")
     (license license:expat)))
+
+(define-public r-dtlcor
+  (package
+    (name "r-dtlcor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dtlcor" version))
+       (sha256
+        (base32 "1g9rnnidnxag8pqp9m6hhl478y82hagpidispqvlv470gnbzmciz"))))
+    (properties `((upstream-name . "dtlcor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-survival
+                             r-stringr
+                             r-shinythemes
+                             r-shiny
+                             r-mvtnorm
+                             r-gsdesign
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-cubature
+                             r-coin))
+    (home-page "https://cran.r-project.org/package=dtlcor")
+    (synopsis "Multiplicity Control on Drop-the-Losers Designs")
+    (description
+     "This package provides a tool to calculate the correlation boundary for the
+correlation between the response rate and the log-rank test statistic for the
+binary surrogate endpoint and the time-to-event primary endpoint, as well as
+conduct simulation studies to obtain design operating characteristics of the
+drop-the-losers design.")
+    (license license:gpl3+)))
 
 (define-public r-dti
   (package
@@ -15709,13 +15746,13 @@ Digital Science Dimensions using DSL API
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.13.0")
+    (version "0.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dimensio" version))
        (sha256
-        (base32 "0k8674cz8lz2lhwhjg02wxlbzf8jrj4d7yk8a8aa5ihi8r5cm7wx"))))
+        (base32 "103pihiiy2j7q6fgwlpn0r2i9nj9xhlih8s2azdyfpl80hrbd6vq"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
     (arguments
@@ -21993,6 +22030,46 @@ shift adaptation.  The implemented methods are @code{uLSIF} (Hido et al. (2011)
 brain networks using partial correlation.")
     (license license:gpl2)))
 
+(define-public r-densityratio
+  (package
+    (name "r-densityratio")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "densityratio" version))
+       (sha256
+        (base32 "1939f9qf8fpmibhnc4p2kk6k92wfwqin6bcfan5g3can0kk57j2j"))))
+    (properties `((upstream-name . "densityratio")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pbapply
+                             r-osqp
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://thomvolker.github.io/densityratio/")
+    (synopsis "Distribution Comparison Through Density Ratio Estimation")
+    (description
+     "Fast, flexible and user-friendly tools for distribution comparison through
+direct density ratio estimation.  The estimated density ratio can be used for
+covariate shift adjustment, outlier-detection, change-point detection,
+classification and evaluation of synthetic data quality.  The package implements
+multiple non-parametric estimation techniques (unconstrained least-squares
+importance fitting, @code{ulsif()}, Kullback-Leibler importance estimation
+procedure, @code{kliep()}, spectral density ratio estimation, @code{spectral()},
+kernel mean matching, @code{kmm()}, and least-squares hetero-distributional
+subspace search, @code{lhss()}).  with automatic tuning of hyperparameters.
+Helper functions are available for two-sample testing and visualizing the
+density ratios.  For an overview on density ratio estimation, see Sugiyama et
+al. (2012) <doi:10.1017/CBO9781139035613> for a general overview, and the help
+files for references on the specific estimation techniques.")
+    (license license:gpl3+)))
+
 (define-public r-densityarea
   (package
     (name "r-densityarea")
@@ -22737,31 +22814,6 @@ and Fisher's exact test calculated the p-value of two groups.  The standardized
 mean difference were performed with 95 % confident interval, and writing table
 into document file.")
     (license license:gpl3)))
-
-(define-public r-demografixer
-  (package
-    (name "r-demografixer")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DemografixeR" version))
-       (sha256
-        (base32 "16qd1wbzizvg86bqkk8fvb53g6h30l5v99cjxpnr43qf0r4drz3j"))))
-    (properties `((upstream-name . "DemografixeR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-magrittr r-jsonlite r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://matbmeijer.github.io/DemografixeR")
-    (synopsis "Extrapolate Gender, Age and Nationality of a Name")
-    (description
-     "Connects to the <https://genderize.io/>, <https://agify.io/> and
-<https://nationalize.io/> APIs to estimate gender, age and nationality of a
-first name.")
-    (license license:expat)))
 
 (define-public r-demogr
   (package
@@ -24053,24 +24105,30 @@ There are also functions for graphical representation of clusters obtained.")
 (define-public r-deeplr
   (package
     (name "r-deeplr")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deeplr" version))
        (sha256
-        (base32 "0xzhycw3yylq6hvaba3dv2wpmfaj9z6v6mzli8r4dbbzzaaa8214"))))
+        (base32 "001wylkljispbf2kra7nml4ybljc4zb9dn4xmm2mac6wdm0cq6j8"))))
     (properties `((upstream-name . "deeplr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-utf8 r-tokenizers r-tibble r-purrr r-httr))
+    (propagated-inputs (list r-utf8
+                             r-tokenizers
+                             r-tibble
+                             r-readr
+                             r-purrr
+                             r-jsonlite
+                             r-httr))
     (home-page "https://www.deepl.com/translator")
     (synopsis "Interface to the 'DeepL' Translation API")
     (description
-     "This package provides a wrapper for the @code{DeepL} Pro API
-<https://www.deepl.com/docs-api>, a web service for translating texts between
+     "This package provides a wrapper for the @code{DeepL} API
+<https://developers.deepl.com/docs>, a web service for translating texts between
 different languages.  A @code{DeepL} API developer account is required to use
 the service (see <https://www.deepl.com/pro#developer>).")
     (license license:expat)))
@@ -28070,13 +28128,13 @@ at patient level are denoted with â-Pt-â.")
 (define-public r-days2lessons
   (package
     (name "r-days2lessons")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "days2lessons" version))
        (sha256
-        (base32 "1msfpxgxic25r8n0n9kl00waryp57p8py57fsqd84v63x4q0wlyv"))))
+        (base32 "0jzy1wzp5bmpb5apmxwag25b1qkrqnbaf1hb554v4qm8lfky5wan"))))
     (properties `((upstream-name . "days2lessons")))
     (build-system r-build-system)
     (arguments
@@ -28781,19 +28839,25 @@ Self-Organization and Swarm Intelligence\" (2018)
 (define-public r-dataverse
   (package
     (name "r-dataverse")
-    (version "0.3.14")
+    (version "0.3.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataverse" version))
        (sha256
-        (base32 "0hb7d4rgwjzxg5ixx6jf3vg6s6r2aynw34lkw688f5jd9ysc706l"))))
+        (base32 "0ffq6r521nzhlr5w97msmncij141qmj0z2255d6nahsmvfd36pci"))))
     (properties `((upstream-name . "dataverse")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-readr r-jsonlite r-httr r-checkmate))
+    (propagated-inputs (list r-xml2
+                             r-readr
+                             r-memoise
+                             r-jsonlite
+                             r-httr
+                             r-checkmate
+                             r-cachem))
     (native-inputs (list r-knitr))
     (home-page "https://iqss.github.io/dataverse-client-r/")
     (synopsis "Client for Dataverse 4+ Repositories")
@@ -29972,13 +30036,13 @@ writing code or use alternate functions that will prompt the user to add these."
 (define-public r-datamedios
   (package
     (name "r-datamedios")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datamedios" version))
        (sha256
-        (base32 "0s6jagahnkz16vri0jqpw8gkyypi6q2krz2m7i0ggjcrh9gniqrp"))))
+        (base32 "1i7zzikmk124dh6711mnm8zhpm1q5imnvsgywrclag1jcrjy7yry"))))
     (properties `((upstream-name . "datamedios")))
     (build-system r-build-system)
     (arguments

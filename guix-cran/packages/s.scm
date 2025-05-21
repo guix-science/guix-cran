@@ -6247,24 +6247,29 @@ surrogate outcome to improve inference on a partially missing target outcome\"
 (define-public r-surrogaterank
   (package
     (name "r-surrogaterank")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurrogateRank" version))
        (sha256
-        (base32 "0q90qq3apn8qs6rlmw0vj3iv89mpm85wah2xqjdwvbf8k7hwkgrm"))))
+        (base32 "1f36y02mf9l1z0cph4f0amn08cblra25fh4w53h3r144hvaa9cqz"))))
     (properties `((upstream-name . "SurrogateRank")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-pbmcapply r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=SurrogateRank")
     (synopsis "Rank-Based Test to Evaluate a Surrogate Marker")
     (description
      "Uses a novel rank-based nonparametric approach to evaluate a surrogate marker in
 a small sample size setting.  Details are described in Parast et al (2024)
-<doi:10.1093/biomtc/ujad035>.")
+<doi:10.1093/biomtc/ujad035> and Hughes A et al (2025)
+<doi:10.48550/@code{arXiv.2502.03030>}.  A tutorial for this package can be
+found at <https://www.laylaparast.com/surrogaterank> and a Shiny App
+implementing the package can be found at
+<https://parastlab.shinyapps.io/@code{SurrogateRankApp/>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-surrogateparadoxtest
@@ -8946,13 +8951,13 @@ Andrew Zammit-Mangion, Noel Cressie, 2019, ISBN:9781138711136).")
 (define-public r-stv
   (package
     (name "r-stv")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "STV" version))
        (sha256
-        (base32 "02cd78z2k08gg5kskw1m53dc2xyl9f8qhcnhvy9n90ckakw6h19h"))))
+        (base32 "0ab24217wbsyc98m79cjgw7jc5gqgvr9zlvxghjn1jsdabxy3pw6"))))
     (properties `((upstream-name . "STV")))
     (build-system r-build-system)
     (arguments
@@ -18707,13 +18712,13 @@ proportions are produced by bootstrapping.")
 (define-public r-ssdm
   (package
     (name "r-ssdm")
-    (version "0.2.10")
+    (version "0.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDM" version))
        (sha256
-        (base32 "11k6ibcwb8z94p3aw9ff5d52cx0xq18dbbp1srndq30c9xl1iqa8"))))
+        (base32 "19358ijvsbnb6xl4n2v54jdlkldkx5j1gvrp1z5fciadqshahn7r"))))
     (properties `((upstream-name . "SSDM")))
     (build-system r-build-system)
     (arguments
@@ -19800,6 +19805,48 @@ covariates and overlapping groups.  See Van Nee et al. (2021)
 Shiny Dashboard, which can be used to visualize experimental results and
 analyses.")
     (license license:expat)))
+
+(define-public r-squat
+  (package
+    (name "r-squat")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "squat" version))
+       (sha256
+        (base32 "0mpjv35gzxa29jbpxb3dq3d0b26vg3hzi9hnlh13d0i2cwdzrbmk"))))
+    (properties `((upstream-name . "squat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-scales
+                             r-roahd
+                             r-rlang
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progressr
+                             r-mfpca
+                             r-ggrepel
+                             r-ggplot2
+                             r-future-apply
+                             r-fundata
+                             r-fdasrvf
+                             r-fdacluster
+                             r-dtw
+                             r-dbscan
+                             r-cli))
+    (home-page "https://github.com/LMJL-Alea/squat")
+    (synopsis "Statistics for Quaternion Temporal Data")
+    (description
+     "An implementation of statistical tools for the analysis of rotation-valued time
+series and functional data.  It relies on pre-existing quaternion data structure
+provided by the Eigen C++ library.")
+    (license license:gpl3+)))
 
 (define-public r-squash
   (package
@@ -44415,13 +44462,13 @@ details on the use of these functions can be found in Lawson and Leemis (2015)
 (define-public r-simecol
   (package
     (name "r-simecol")
-    (version "0.9-0")
+    (version "0.9-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simecol" version))
        (sha256
-        (base32 "1r8zbrcznnyb2in7gpq8hpz17yy2fhx8034bdq9lwrcifi5r2dd9"))))
+        (base32 "1wvigicykz1i5qmrdrzzq6cc3agi7fy888ajl2aqbvmg4bpa9jji"))))
     (properties `((upstream-name . "simecol")))
     (build-system r-build-system)
     (arguments
@@ -48291,13 +48338,13 @@ Powered by the html2canvas @code{JavaScript} library.")
 (define-public r-shinyscholar
   (package
     (name "r-shinyscholar")
-    (version "0.3.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyscholar" version))
        (sha256
-        (base32 "1czgjqswk17zx499xjvds8d3bdz1a2822l0lxzpc7w64kqhly5cc"))))
+        (base32 "05ip7c8v8v5jy930fnhd10ljzvzqhychsbyilc9l1qjkpw16hc27"))))
     (properties `((upstream-name . "shinyscholar")))
     (build-system r-build-system)
     (arguments
@@ -48311,7 +48358,8 @@ Powered by the html2canvas @code{JavaScript} library.")
                              r-glue
                              r-gargoyle
                              r-devtools
-                             r-curl))
+                             r-curl
+                             r-bslib))
     (home-page "https://simon-smart88.github.io/shinyscholar/")
     (synopsis "Template for Creating Reproducible 'shiny' Applications")
     (description
@@ -54298,6 +54346,43 @@ ISBN:978-1-137-08599-3).  The algorithms implemented to solve the models
 (Gauss-Seidel and Broyden) are described in Kinsella and O'Shea (2010)
 <doi:10.2139/ssrn.1729205> and Peressini and Sullivan (1988,
 ISBN:0-387-96614-5).")
+    (license license:expat)))
+
+(define-public r-sfclust
+  (package
+    (name "r-sfclust")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sfclust" version))
+       (sha256
+        (base32 "1c8xk72hk5x9acw2xi7f9sf1sy69ig8nv9jf1wsnk9hxnibi0bmy"))))
+    (properties `((upstream-name . "sfclust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stars
+                             r-sparsem
+                             r-sf
+                             r-matrix
+                             r-igraph
+                             r-dplyr
+                             r-cubelyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=sfclust")
+    (synopsis "Bayesian Spatial Functional Clustering")
+    (description
+     "Bayesian clustering of spatial regions with similar functional shapes using
+spanning trees and latent Gaussian models.  The method enforces spatial
+contiguity within clusters and supports a wide range of latent Gaussian models,
+including non-Gaussian likelihoods, via the R-INLA framework.  The algorithm is
+based on Zhong, R., ChacÃ³n-MontalvÃ¡n, E. A., and Moraga, P. (2024)
+<doi:10.48550/@code{arXiv.2407.12633>}, extending the approach of Zhang, B.,
+Sang, H., Luo, Z. T., and Huang, H. (2023) <doi:10.1214/22-AOAS1643>.  The
+package includes tools for model fitting, convergence diagnostics,
+visualization, and summarization of clustering results.")
     (license license:expat)))
 
 (define-public r-sfcentral

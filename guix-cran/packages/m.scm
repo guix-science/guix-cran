@@ -4030,13 +4030,13 @@ outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
 (define-public r-multiscaledtm
   (package
     (name "r-multiscaledtm")
-    (version "0.9.1")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiscaleDTM" version))
        (sha256
-        (base32 "1pg947za6kkkqw6csgnn9jqcn4xfbnfi6gz74g05lkh5crv1kr4k"))))
+        (base32 "1qsszhrkd0rwj0xzhz3xsqkn607rdxa4fvs1zccrdg0mqvs2k3zv"))))
     (properties `((upstream-name . "MultiscaleDTM")))
     (build-system r-build-system)
     (arguments
@@ -7169,6 +7169,47 @@ questions across various model organisms.")
      "This package provides a simple tool allowing users to easily and dynamically
 explore or document a data set using a tree structure.")
     (license license:gpl2+)))
+
+(define-public r-mugs
+  (package
+    (name "r-mugs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MUGS" version))
+       (sha256
+        (base32 "0yqxfdhw0xz3szdk45l8fy4facflnc7af0hfgh2zp5l5jyzkvxjf"))))
+    (properties `((upstream-name . "MUGS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsvd
+                             r-rcpparmadillo
+                             r-proc
+                             r-mvtnorm
+                             r-matrix
+                             r-mass
+                             r-inline
+                             r-grpreg
+                             r-grplasso
+                             r-glmnet
+                             r-foreach
+                             r-fastdummies
+                             r-dplyr
+                             r-dosnow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/celehs/MUGS")
+    (synopsis "Multisource Graph Synthesis with EHR Data")
+    (description
+     "We develop Multi-source Graph Synthesis (MUGS), an algorithm designed to create
+embeddings for pediatric Electronic Health Record (EHR) codes by leveraging
+graphical information from three distinct sources: (1) pediatric EHR data, (2)
+EHR data from the general patient population, and (3) existing hierarchical
+medical ontology knowledge shared across different patient populations.  See Li
+et al. (2024) <doi:10.1038/s41746-024-01320-4> for details.")
+    (license license:gpl3)))
 
 (define-public r-muerelativerisk
   (package
@@ -11189,13 +11230,13 @@ Gerber, Schmid and Furrer (2021) <DOI:10.1016/j.spasta.2020.100483>.")
 (define-public r-mrbin
   (package
     (name "r-mrbin")
-    (version "1.9.1")
+    (version "1.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrbin" version))
        (sha256
-        (base32 "0yrdapbalmz5wdsvfabjl2ga6b8mf9k32k21r9fxqwz2lm22yl6q"))))
+        (base32 "1r1ax748mc82khy8qr8qsj3cbdjqrl4hlf00jfv1k5jhghg1c9v7"))))
     (properties `((upstream-name . "mrbin")))
     (build-system r-build-system)
     (arguments
@@ -13983,20 +14024,20 @@ A. Berra's list of stop words for Ancient Greek and Latin.")
 (define-public r-morepls
   (package
     (name "r-morepls")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "morepls" version))
        (sha256
-        (base32 "14rpzq9833b5idf8jzx83rdmy3w7bk44iafpf5ynlnvz7lyc96fv"))))
+        (base32 "1k19br1206l6n5cpqf7kzns9ggp2xixf1ynzp4vpnwk4b0gsp4wm"))))
     (properties `((upstream-name . "morepls")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rlang r-pls r-ggrepel r-ggplot2))
-    (home-page "https://cran.r-project.org/package=morepls")
+    (home-page "https://framagit.org/nicolas-robette/morepls")
     (synopsis "Interpretation Tools for Partial Least Squares Regression")
     (description
      "Various kinds of plots (observations, variables, correlations, weights,
@@ -19046,33 +19087,28 @@ Nie, (2014) <doi:10.1080/03610926.2012.700379>, Chen, Luo, Chu, Wei, (2013)
 (define-public r-mmequiv
   (package
     (name "r-mmequiv")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmequiv" version))
        (sha256
-        (base32 "1vm8iwj5s91ic1dhf2c9bx874ij07hljbkcv6zz59w2vy799svpf"))))
+        (base32 "1y37481yz4j7iin0wzc4mr2cv72xjygpi53vn157kzph31hpvxac"))))
     (properties `((upstream-name . "mmequiv")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-lifecycle
-                             r-httr2
-                             r-glue
-                             r-cli))
+    (propagated-inputs (list r-rlang r-lifecycle r-httr2 r-glue r-cli))
     (home-page "https://kennethataylor.github.io/mmequiv/")
     (synopsis "Calculate Standardized Morphine Milligram Equivalent Doses")
     (description
      "Calculate morphine milligram equivalents (MME) for opioid dose comparison using
-standardized methods.  Includes API wrapper functions to call NIH HEAL MME
-Online Calculator and functions that replicate API calculations on the user's
-local machine from the comfort of R'.  Creation of the NIH HEAL MME Online
-Calculator and the MME calculations implemented in this package are described in
-Adams MCB, Sward KA, Perkins ML, Hurley RW (2025)
+standardized methods.  Can directly call the NIH HEAL MME Online Calculator
+<https://research-mme.wakehealth.edu/api> API or replicate API calculations on
+the user's local machine from the comfort of R'.  Creation of the NIH HEAL MME
+Online Calculator and the MME calculations implemented in this package are
+described in Adams MCB, Sward KA, Perkins ML, Hurley RW (2025)
 <doi:10.1097/j.pain.0000000000003529>.")
     (license license:gpl3+)))
 
@@ -22322,6 +22358,32 @@ transform that information into team colors, logos, or player headshots for
 graphics.")
     (license license:expat)))
 
+(define-public r-mlbc
+  (package
+    (name "r-mlbc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MLBC" version))
+       (sha256
+        (base32 "04f54p61i0m1281k06rrj7hghjpyq2r0srkvb7g5wadfs89ljd4z"))))
+    (properties `((upstream-name . "MLBC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmb r-rcppeigen))
+    (home-page "https://cran.r-project.org/package=MLBC")
+    (synopsis "Bias Correction Methods for Models Using Synthetic Data")
+    (description
+     "This package implements three bias-correction techniques (additive bias
+correction, multiplicative bias correction, and one-step estimation via Template
+Model Builder (TMB)) based on Battaglia et al. (2025
+<doi:10.48550/@code{arXiv.2402.15585>}) to improve inference using synthetic
+data.")
+    (license license:expat)))
+
 (define-public r-ml2pvae
   (package
     (name "r-ml2pvae")
@@ -24719,13 +24781,13 @@ of Health and Human Services.")
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "04i5yfvk8c9d4j71afp8j6yf5byqxipxz8g3addbfwlwzi45x1b3"))))
+        (base32 "18v8yxiwdx3ff7pxn2n2xkm1dfp05ljivk4kbj5dsrxway02bb4i"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (arguments
@@ -32517,13 +32579,13 @@ utilize metricminer'.")
 (define-public r-metricgraph
   (package
     (name "r-metricgraph")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetricGraph" version))
        (sha256
-        (base32 "0yb0vjznhi6nrpamfy55ghmb0g74asczaagcfh4pla5208aidb2l"))))
+        (base32 "04pcypc0z96rw4f59x7jmm0xf5xnr29j2y6qz4x220kniqgbrn93"))))
     (properties `((upstream-name . "MetricGraph")))
     (build-system r-build-system)
     (arguments

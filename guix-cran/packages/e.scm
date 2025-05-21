@@ -10213,19 +10213,20 @@ from packages like tm or qdap'.")
 (define-public r-epts
   (package
     (name "r-epts")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epts" version))
        (sha256
-        (base32 "1q9jg7kbhnklyvycnam2v0qzpr6i38z7v074daak3f6w5q45kspg"))))
+        (base32 "0rpn83crm9a9p9d0y1va3mzdn5j0jvmcnrznqxgyr68a56gjxnhd"))))
     (properties `((upstream-name . "epts")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm
+    (propagated-inputs (list r-shiny
+                             r-mvtnorm
                              r-mcmcvis
                              r-magrittr
                              r-lme4
@@ -18606,13 +18607,13 @@ Graphs (Lerner 2008 <DOI:10.1109/PACIFICVIS.2008.4475458>).")
 (define-public r-egocor
   (package
     (name "r-egocor")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EgoCor" version))
        (sha256
-        (base32 "1vrxcyki6ijzzgg1x5480s4p0mki3q9f2mfs90p0867w9y9h2k05"))))
+        (base32 "0jfadrvdwapj5prpy2k6b90a52jb6r6vkjzw40mld69wd6xrncnv"))))
     (properties `((upstream-name . "EgoCor")))
     (build-system r-build-system)
     (arguments

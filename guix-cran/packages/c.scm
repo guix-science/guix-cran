@@ -190,13 +190,13 @@ Freulon P, Bigot J and Hejblum BP (2023) <doi:10.1214/22-AOAS1660>.")
 (define-public r-cytoprofile
   (package
     (name "r-cytoprofile")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CytoProfile" version))
        (sha256
-        (base32 "1wixb72avvb222akw56q2632mjb9jhqfxs86bfniwk4f5mipf56a"))))
+        (base32 "19fx0r07irvls72prrqyc6p0nw0n2kry6avw3jd691ddcacdl3lm"))))
     (properties `((upstream-name . "CytoProfile")))
     (build-system r-build-system)
     (arguments
@@ -2657,13 +2657,13 @@ of GPU-accelerated machine learning libraries powered by CUDA
 (define-public r-cucumber
   (package
     (name "r-cucumber")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cucumber" version))
        (sha256
-        (base32 "1k2q38zy939dqvy9nzwb267g38039kl5pzsaxz1xfvgzi91ks27i"))))
+        (base32 "1fjk7vkf28yb3xvbmy955ph92n57cpk5vnxw80vxb63milxva0bg"))))
     (properties `((upstream-name . "cucumber")))
     (build-system r-build-system)
     (arguments
@@ -11389,38 +11389,6 @@ on COVID-19 in France.")
 smaller version from dbdataset package.  It contains only information about
 COVID-19 possible treatment.")
     (license license:cc0)))
-
-(define-public r-covid19br
-  (package
-    (name "r-covid19br")
-    (version "0.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "covid19br" version))
-       (sha256
-        (base32 "1jcxwyxc2rdarniy7bqkx7m300i1i0lvqdvzvkr9synvhpgcv4b0"))))
-    (properties `((upstream-name . "covid19br")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-sf
-                             r-rlang
-                             r-httr
-                             r-dplyr
-                             r-data-table
-                             r-curl))
-    (home-page "https://fndemarqui.github.io/covid19br/")
-    (synopsis "Brazilian COVID-19 Pandemic Data")
-    (description
-     "Set of functions to import COVID-19 pandemic data into R. The Brazilian COVID-19
-data, obtained from the official Brazilian repository at
-<https://covid.saude.gov.br/>, is available at country, region, state, and
-city-levels.  The package also downloads the world-level COVID-19 data from the
-John Hopkins University's repository.")
-    (license license:expat)))
 
 (define-public r-covid19-analytics
   (package
@@ -24803,13 +24771,13 @@ Outcomes Partnership Common Data Model.")
 (define-public r-cohortcharacteristics
   (package
     (name "r-cohortcharacteristics")
-    (version "0.5.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortCharacteristics" version))
        (sha256
-        (base32 "1142l7g5nyd4b9kipdf4jp87623qx0b7h4zbz9lv2fw3svzc1qy6"))))
+        (base32 "11alkk5xk7nw9v6pzs14im447dbdw1jm4m6bj97ipahn5xgkbbyv"))))
     (properties `((upstream-name . "CohortCharacteristics")))
     (build-system r-build-system)
     (arguments
@@ -33898,50 +33866,6 @@ buggy implementations.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-ckmrpop
-  (package
-    (name "r-ckmrpop")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CKMRpop" version))
-       (sha256
-        (base32 "0d4sai2h2cfzh4hbg8yh7wqb459j948j3s0m218d3gcippm22jpb"))))
-    (properties `((upstream-name . "CKMRpop")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vroom
-                             r-tidyr
-                             r-tidygraph
-                             r-tibble
-                             r-stringr
-                             r-readr
-                             r-rcpp
-                             r-purrr
-                             r-magrittr
-                             r-igraph
-                             r-ggraph
-                             r-ggplot2
-                             r-ggforce
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CKMRpop")
-    (synopsis
-     "Forward-in-Time Simulation and Tallying of Pairwise Relationships")
-    (description
-     "This package provides an R wrapper around the program spip
-(<https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1471-8286.2005.00884.x>), a
-C program for the simulation of pedigrees within age-structured populations with
-user-specified life histories.  Also includes a variety of functions to parse
-spip output to compile information about related pairs amongst simulated,
-sampled individuals, to assess the feasibility and potential accuracy of
-close-kin mark-recapture (CKMR).  Full documentation and vignettes are mirrored
-at <https://eriqande.github.io/CKMRpop/index.html> and can be read online there.")
-    (license license:cc0)))
-
 (define-public r-ckmeans-1d-dp
   (package
     (name "r-ckmeans-1d-dp")
@@ -36235,13 +36159,13 @@ C (2021) <doi:10.1101/2021.03.29.437525> for more details.")
 (define-public r-cici
   (package
     (name "r-cici")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CICI" version))
        (sha256
-        (base32 "171yxkmsvbcca4j4658v3cgkxgdf1psz4c9fvvwjvxad407vylfp"))))
+        (base32 "1fxwd0sgsrs8g97mg7n53knhr51gf858qymcd98i1m0qjdvlaxwd"))))
     (properties `((upstream-name . "CICI")))
     (build-system r-build-system)
     (arguments
@@ -39125,13 +39049,13 @@ distance, and semantic transparency.")
 (define-public r-chatllm
   (package
     (name "r-chatllm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chatLLM" version))
        (sha256
-        (base32 "1lmy0ay5qvhk98py3mdf4cvb6hsv103n0l4cjf6ry6jzcz928yzy"))))
+        (base32 "0lkd4ij22i2xbibvix7acqdjbmx3gn7ps3j99bc7dcaa5pc286a8"))))
     (properties `((upstream-name . "chatLLM")))
     (build-system r-build-system)
     (arguments
@@ -39142,11 +39066,12 @@ distance, and semantic transparency.")
     (synopsis "Flexible Interface for 'LLM' API Interactions")
     (description
      "This package provides a flexible interface for interacting with Large Language
-Model ('LLM') providers such as @code{OpenAI} (<https://openai.com/>), Groq
-(<https://groq.com/>), and Anthropic (<https://www.anthropic.com/>).  Supports
-both synchronous and asynchronous API calls with features such as retry logic,
-support for additional parameters, and multi-message handling to streamline
-integration with state-of-the-art LLM APIs.")
+Model ('LLM') providers including @code{OpenAI}', Groq', Anthropic',
+@code{DeepSeek}', @code{DashScope}', and @code{GitHub} Models'.  Supports both
+synchronous and asynchronous chat-completion APIs, with features such as retry
+logic, dynamic model selection, customizable parameters, and multi-message
+conversation handling.  Designed to streamline integration with state-of-the-art
+LLM services across multiple platforms.")
     (license license:expat)))
 
 (define-public r-chatgpt
@@ -43320,13 +43245,13 @@ absorption spectra of chromophoric dissolved organic matter (CDOM).")
 (define-public r-cdmtools
   (package
     (name "r-cdmtools")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cdmTools" version))
        (sha256
-        (base32 "0nd15lr8hdin8qnxykway70irvfi239rm4jx3ck253l7igswiz7s"))))
+        (base32 "1xdvv16fav1xfl0dzzxwwiv0dm62kbklxz8gykr88yh76f71i6jv"))))
     (properties `((upstream-name . "cdmTools")))
     (build-system r-build-system)
     (arguments
@@ -43334,6 +43259,7 @@ absorption spectra of chromophoric dissolved organic matter (CDOM).")
       #:tests? #f))
     (propagated-inputs (list r-sirt
                              r-psych
+                             r-plyr
                              r-gparotation
                              r-ggplot2
                              r-gdina
@@ -51580,6 +51506,30 @@ methodology described in Sies & Van Mechelen (2020)
      "Allows inferring gene regulatory networks with direct physical interactions from
 microarray expression data using C3NET.")
     (license license:gpl3+)))
+
+(define-public r-c3dr
+  (package
+    (name "r-c3dr")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "c3dr" version))
+       (sha256
+        (base32 "0qrl26r8asblchhglp2i4r4vhdvcd4d227670ckpaigjank7vz1k"))))
+    (properties `((upstream-name . "c3dr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/ropensci/c3dr")
+    (synopsis "Read and Write C3D Motion Capture Files")
+    (description
+     "This package provides a wrapper for the EZC3D library to work with C3D motion
+capture data.")
+    (license license:expat)))
 
 (define-public r-c3
   (package

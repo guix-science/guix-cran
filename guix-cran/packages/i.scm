@@ -11020,6 +11020,45 @@ squared coefficient of variation is based on Garcia-Penalosa, C., & Orgiazzi, E.
 <https://www.inegi.org.mx/servicios/api_indicadores.html>.")
     (license license:cc0)))
 
+(define-public r-inecolr
+  (package
+    (name "r-inecolr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inecolr" version))
+       (sha256
+        (base32 "1fzd4nlvc06almy01206bjkd3rnqsinspw63lvr4hfh8bnzswaya"))))
+    (properties `((upstream-name . "inecolr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-tree
+                             r-terra
+                             r-stringr
+                             r-multcomp
+                             r-gtools
+                             r-gmodels
+                             r-cli
+                             r-boot
+                             r-betapart
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=inecolr")
+    (synopsis "Modeling and Plotting for Ecologist")
+    (description
+     "It provides multiple functions that are useful for ecological research and
+teaching statistics to ecologists.  It is based on data analysis courses offered
+at the Instituto de EcologÃ­a AC (INECOL).  For references and published
+evidence see, Manrique-Ascencio, et al (2024) <doi:10.1111/gcb.17282>,
+Manrique-Ascencio et al (2024) <doi:10.1111/plb.13683>, Ruiz-Guerra et al(2017)
+<doi:10.17129/botsci.812>, Juarez-Fragoso et al (2024)
+<doi:10.1007/s10980-024-01809-z>, Papaqui-Bello et al (2024)
+<doi:10.13102/sociobiology.v71i2.10503>.")
+    (license license:gpl3)))
+
 (define-public r-ineatlas
   (package
     (name "r-ineatlas")

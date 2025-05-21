@@ -10226,13 +10226,13 @@ of Skew Heavy-Tailed Errors.")
 (define-public r-fmritools
   (package
     (name "r-fmritools")
-    (version "0.5.3")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fMRItools" version))
        (sha256
-        (base32 "14xsixhalba8dcqyf42347sakld7wpmba7xgz4gl0ncn2i3rp26l"))))
+        (base32 "1dki25cc3pznkp0wwkwg8l5h8qch7r7v20ha7mpn79s2ygx9a4r5"))))
     (properties `((upstream-name . "fMRItools")))
     (build-system r-build-system)
     (arguments
@@ -12051,13 +12051,13 @@ of the project: <https://metabarcoding.org/flimo>.")
 (define-public r-flightsbr
   (package
     (name "r-flightsbr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flightsbr" version))
        (sha256
-        (base32 "1nmfllzr0z0ihzdqy6pa28brxhfjfmfzh7maiccw6kpcfxbajgms"))))
+        (base32 "0zmrd5lww637a1yvyc4ap9v0lkdj8ypdpy1b1swrm4alf3bg9s19"))))
     (properties `((upstream-name . "flightsbr")))
     (build-system r-build-system)
     (arguments
@@ -12066,6 +12066,7 @@ of the project: <https://metabarcoding.org/flimo>.")
     (propagated-inputs (list r-rvest
                              r-pbapply
                              r-parzer
+                             r-lifecycle
                              r-janitor
                              r-fs
                              r-data-table
@@ -12657,6 +12658,32 @@ trait metric, as described by Feuerstahler (2019)
     (description
      "Exports flextable objects to xlsx files, utilizing functionalities provided by
 flextable and openxlsx2'.")
+    (license license:expat)))
+
+(define-public r-flexic
+  (package
+    (name "r-flexic")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flexIC" version))
+       (sha256
+        (base32 "1jm36vld9yafqrxkifma2bspd860hxbh3l4wclx8dcv667c0aj52"))))
+    (properties `((upstream-name . "flexIC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=flexIC")
+    (synopsis "Flexible Rank-Preserving Correlation Engine")
+    (description
+     "This package implements a fast, flexible method for simulating continuous
+variables with specified rank correlations using the ImanâConover
+transformation (Iman & Conover, 1982 <doi:10.1080/03610918208812265>) and
+back-ranking.  Includes plotting tools and error-diagnostics.")
     (license license:expat)))
 
 (define-public r-flexiblas
@@ -14279,13 +14306,13 @@ Sun, Babu, and Palomar (2014); Sun, Babu, and Palomar (2015); Liu and Rubin
 (define-public r-fitdynmix
   (package
     (name "r-fitdynmix")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FitDynMix" version))
        (sha256
-        (base32 "1miwqdlgvyqyql67mjclx1fiild59p37zani9hxa0lzs2bbhrz43"))))
+        (base32 "1dmzijqj2345z33c1bpldhx5v5jpiag9mybvhfpgbry2a9rc8bq7"))))
     (properties `((upstream-name . "FitDynMix")))
     (build-system r-build-system)
     (arguments
@@ -15511,13 +15538,13 @@ sources contribution.")
 (define-public r-finetune
   (package
     (name "r-finetune")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finetune" version))
        (sha256
-        (base32 "001c8firflasyyblbkmh4zl913xb1170jrc20zbdjw1ssgfvybnp"))))
+        (base32 "07vcqx2wv8zkhxr6jrcdl513mi7lr69xw3vdbn42xmqndx22mb41"))))
     (properties `((upstream-name . "finetune")))
     (build-system r-build-system)
     (arguments
@@ -15542,8 +15569,8 @@ sources contribution.")
      "The ability to tune models is important.  finetune enhances the tune package by
 providing more specialized methods for finding reasonable values of model tuning
 parameters.  Two racing methods described by Kuhn (2014)
-<@code{arXiv:1405.6974>} are included.  An iterative search method using
-generalized simulated annealing (Bohachevsky, Johnson and Stein, 1986)
+<doi:10.48550/@code{arXiv.1405.6974>} are included.  An iterative search method
+using generalized simulated annealing (Bohachevsky, Johnson and Stein, 1986)
 <doi:10.1080/00401706.1986.10488128> is also included.")
     (license license:expat)))
 
@@ -23237,13 +23264,13 @@ written in C++ using Armadillo linear algebra library.")
 (define-public r-fastei
   (package
     (name "r-fastei")
-    (version "0.0.0.4")
+    (version "0.0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastei" version))
        (sha256
-        (base32 "0qmrbk5yhqp39cpr7nxl7lyl4la7k2jhw620lqdy7j2cx180dbb7"))))
+        (base32 "1zfwm8pbc6n9gnv4dx7g8dx9g9w2ab0wa5l4sapdmfh9bg1dwhim"))))
     (properties `((upstream-name . "fastei")))
     (build-system r-build-system)
     (arguments
@@ -23254,7 +23281,7 @@ written in C++ using Armadillo linear algebra library.")
     (home-page
      "https://danielhermosilla.github.io/ecological-inference-elections/reference/fastei-package.html")
     (synopsis
-     "Methods for ''A Fast Alternative for the R x C Ecological Inference Problem''")
+     "Methods for ''A Fast Alternative for the R x C Ecological Inference Case''")
     (description
      "Estimates the probability matrix for the RÃC Ecological Inference problem using
 the Expectation-Maximization Algorithm with four approximation methods for the
@@ -23262,11 +23289,11 @@ E-Step, and an exact method as well.  It also provides a bootstrap function to
 estimate the standard deviation of the estimated probabilities.  In addition, it
 has functions that aggregate rows optimally to have more reliable estimates in
 cases of having few data points.  For comparing the probability estimates of two
-groups, a Welch t-test routine is implemented.  The library has data from the
-first round of the Chilean Presidential Election 2021 and can also generate
-synthetic election data.  Methods described in Thraves, Charles; Ubilla, Pablo;
-Hermosilla, Daniel (2024) \"A Fast Ecological Inference Algorithm for the
-@code{RxC} case\" <doi:10.2139/ssrn.4832834>.")
+groups, a Wald test routine is implemented.  The library has data from the first
+round of the Chilean Presidential Election 2021 and can also generate synthetic
+election data.  Methods described in Thraves, Charles; Ubilla, Pablo;
+Hermosilla, Daniel (2024) A Fast Ecological Inference Algorithm for the RÃC
+case <doi:10.2139/ssrn.4832834>.")
     (license license:expat)))
 
 (define-public r-fastdid
@@ -25051,6 +25078,33 @@ account in model estimation.  Currently implementing Komiyama et al. (2018)
 (2019) <https://www.jmlr.org/papers/volume20/18-262/18-262.pdf> and my own
 approach from Scutari, Panero and Proissl (2022)
 <doi:10.1007/s11222-022-10143-w> that uses ridge regression to enforce fairness.")
+    (license license:expat)))
+
+(define-public r-fairmetrics
+  (package
+    (name "r-fairmetrics")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fairmetrics" version))
+       (sha256
+        (base32 "0640hz347j2zaqzv86qs6jh0gam253d2jm91p8416dfdbflw13jj"))))
+    (properties `((upstream-name . "fairmetrics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://jianhuig.github.io/fairmetrics/")
+    (synopsis "Fairness Evaluation Metrics with Confidence Intervals")
+    (description
+     "This package provides a collection of functions for computing fairness metrics
+for machine learning and statistical models, including confidence intervals for
+each metric.  The package supports the evaluation of group-level fairness
+criterion commonly used in fairness research, particularly in healthcare.  It is
+based on the overview of fairness in machine learning written by Gao et al
+(2024) <doi:10.48550/@code{arXiv.2406.09307>}.")
     (license license:expat)))
 
 (define-public r-fairmclus

@@ -2021,6 +2021,31 @@ that partitions subjects into terminal nodes and tailors regression model to
 each terminal node.")
     (license license:gpl2+)))
 
+(define-public r-btml
+  (package
+    (name "r-btml")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "btml" version))
+       (sha256
+        (base32 "0xj2fiy4rwzvr0lyind77abzqjpz4rxwwy0gki3lzby4f51m5lch"))))
+    (properties `((upstream-name . "btml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-randomforest r-proc r-glmnet r-e1071))
+    (home-page "https://cran.r-project.org/package=btml")
+    (synopsis
+     "Bayesian Treed Machine Learning for Personalized Prediction and Precision Diagnostics")
+    (description
+     "Generalization of the Bayesian classification and regression tree (CART) model
+that partitions subjects into terminal nodes and tailors machine learning model
+to each terminal node.")
+    (license license:gpl2+)))
+
 (define-public r-btllasso
   (package
     (name "r-btllasso")
@@ -11043,6 +11068,41 @@ JABES 25, 500â522 (2020) <doi:10.1007/s13253-020-00416-0>.")
 file of randomization cards.")
     (license license:gpl2)))
 
+(define-public r-blockr-core
+  (package
+    (name "r-blockr-core")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blockr.core" version))
+       (sha256
+        (base32 "1a8gy3i1yz7lc0m1dng0afjz5mwi5z9xh8mqsbj99gjk2rcaq54r"))))
+    (properties `((upstream-name . "blockr.core")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-shinyfiles
+                             r-shiny
+                             r-rlang
+                             r-jsonlite
+                             r-htmltools
+                             r-generics
+                             r-dt
+                             r-bslib
+                             r-bsicons))
+    (native-inputs (list r-quarto))
+    (home-page "https://bristolmyerssquibb.github.io/blockr.core/")
+    (synopsis
+     "Graphical Web-Framework for Data Manipulation and Visualization")
+    (description
+     "This package provides a framework for data manipulation and visualization using
+a web-based point and click user interface where analysis pipelines are
+decomposed into re-usable and parameterizable blocks.")
+    (license license:gpl3+)))
+
 (define-public r-blockmodels
   (package
     (name "r-blockmodels")
@@ -14424,13 +14484,13 @@ analysis, and model assessment.")
 (define-public r-biomass
   (package
     (name "r-biomass")
-    (version "2.2.3")
+    (version "2.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BIOMASS" version))
        (sha256
-        (base32 "0zk0bcd5mafnxyzi3bcm34nrvqxhzving7i7inbbaspa7li5p7s6"))))
+        (base32 "1lczpn7k90a3sxmkwzrff3z1jkbm2xyps6drfiad7y04ayq0q6h3"))))
     (properties `((upstream-name . "BIOMASS")))
     (build-system r-build-system)
     (arguments
@@ -14449,12 +14509,12 @@ analysis, and model assessment.")
     (synopsis
      "Estimating Aboveground Biomass and Its Uncertainty in Tropical Forests")
     (description
-     "This package contains functions to estimate aboveground biomass/carbon and its
-uncertainty in tropical forests.  These functions allow to (1) retrieve and to
-correct taxonomy, (2) estimate wood density and its uncertainty, (3) construct
-height-diameter models, (4) manage tree and plot coordinates, (5) estimate the
-aboveground biomass/carbon at the stand level with associated uncertainty.  To
-cite BIOMASS', please use citation(\"BIOMASS\").  See more in the article of
+     "This package contains functions for estimating above-ground biomass/carbon and
+its uncertainty in tropical forests.  These functions allow to (1) retrieve and
+correct taxonomy, (2) estimate wood density and its uncertainty, (3) build
+height-diameter models, (4) manage tree and plot coordinates, (5) estimate
+above-ground biomass/carbon at stand level with associated uncertainty.  To cite
+âBIOMASSâ, please use citation(âBIOMASSâ).  For more information, see
 RÃ©jou-MÃ©chain et al. (2017) <doi:10.1111/2041-210X.12753>.")
     (license license:gpl2)))
 
@@ -16895,6 +16955,51 @@ windows since multi-core processing is done using @code{mclapply()} which forks
 R on Unix/Linux type operating systems.")
     (license license:gpl2+)))
 
+(define-public r-bigr
+  (package
+    (name "r-bigr")
+    (version "0.5.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BIGr" version))
+       (sha256
+        (base32 "147z8vf6zifrcvm4bqpvcqjggxj0xmrpjq7ksy0sw03kcgn2661d"))))
+    (properties `((upstream-name . "BIGr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vcfr
+                             r-tidyr
+                             r-tibble
+                             r-rsamtools
+                             r-reshape2
+                             r-readr
+                             r-rdpack
+                             r-quadprog
+                             r-pwalign
+                             r-janitor
+                             r-dplyr
+                             r-biostrings))
+    (home-page "https://github.com/Breeding-Insight/BIGr")
+    (synopsis
+     "Breeding Insight Genomics Functions for Polyploid and Diploid Species")
+    (description
+     "This package provides functions developed within Breeding Insight to analyze
+diploid and polyploid breeding and genetic data.  BIGr provides the ability to
+filter variant call format (VCF) files, extract single nucleotide polymorphisms
+(SNPs) from diversity arrays technology missing allele discovery count
+(D@code{ArT} MADC) files, and manipulate genotype data for both diploid and
+polyploid species.  It also serves as the core dependency for the BIGapp Shiny
+app, which provides a user-friendly interface for performing routine genotype
+analysis tasks such as dosage calling, filtering, principal component analysis
+(PCA), genome-wide association studies (GWAS), and genomic prediction.  For more
+details about the included @code{breedTools} functions, see Funkhouser et al.
+(2017) <doi:10.2527/tas2016.0003>, and the updog output format, see Gerard et
+al. (2018) <doi:10.1534/genetics.118.301468>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-bigquic
   (package
     (name "r-bigquic")
@@ -19299,13 +19404,13 @@ and Held, L. (2011) <doi:10.1007/s11222-010-9170-7>.")
 (define-public r-bfi
   (package
     (name "r-bfi")
-    (version "2.0.1")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFI" version))
        (sha256
-        (base32 "0szx9cjzhlxk6n83i6rm48db2lkj4zdsaqrgzipr71bwwjfk08nr"))))
+        (base32 "00cl759fxpjwn1sz20zavzdmf2r9bxvg5sbmzwrzh8k75hmlskz4"))))
     (properties `((upstream-name . "BFI")))
     (build-system r-build-system)
     (arguments
@@ -19320,21 +19425,20 @@ obtained from local data sets in the separate centers.  In this version of the
 package, the BFI methodology is programmed for linear, logistic and survival
 regression models.  For GLMs, see Jonker, Pazira and Coolen (2024)
 <doi:10.1002/sim.10072>; for survival models, see Pazira, Massa, Weijers, Coolen
-and Jonker (2024) <doi:10.48550/@code{arXiv.2404.17464>}; and for heterogeneous
-populations, see Jonker, Pazira and Coolen (2024)
-<doi:10.48550/@code{arXiv.2402.02898>}.")
+and Jonker (2025) <doi:10.48550/@code{arXiv.2404.17464>}; and for heterogeneous
+populations, see Jonker, Pazira and Coolen (2025) <doi:10.1017/rsm.2025.6>.")
     (license license:expat)))
 
 (define-public r-bff
   (package
     (name "r-bff")
-    (version "4.2.1")
+    (version "4.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFF" version))
        (sha256
-        (base32 "1s4f9mjhx24hxm2aan25kmb5akpxl25ggic3mkwmh1d0npbgip6a"))))
+        (base32 "08si8552yvn8hc97y74hxgl6c3n5ix0148p1v8v4x71rcis1fkcd"))))
     (properties `((upstream-name . "BFF")))
     (build-system r-build-system)
     (arguments
@@ -32576,13 +32680,13 @@ fragment counts given @code{mRNA} counts.")
 (define-public r-b64
   (package
     (name "r-b64")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "b64" version))
        (sha256
-        (base32 "15ff2j23x9jh00j81fn6vmp7yjn1hj0lpjk92wqk9isffk9y5q3w"))))
+        (base32 "1ccac83ppsfpf6jlh3q368p7yfdk9qgykr7hv7n7aphiq23nl39r"))))
     (properties `((upstream-name . "b64")))
     (build-system r-build-system)
     (arguments

@@ -7127,13 +7127,13 @@ to web development.")
 (define-public r-webdav
   (package
     (name "r-webdav")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webdav" version))
        (sha256
-        (base32 "0736cpi2kndhwa9w5jb95nxzkr3cccsy6pxddrkd860kg01cw14g"))))
+        (base32 "1j3likv9f0k09q0b0i4269qpawfffrf0sa8dkmrza7syi5csd1z5"))))
     (properties `((upstream-name . "webdav")))
     (build-system r-build-system)
     (arguments
@@ -7154,7 +7154,7 @@ to web development.")
     (description
      "An easy-to-use interface for interacting with @code{WebDAV} servers, including
 @code{OwnCloud}'.  It simplifies the use of @code{WebDAV} methods such as COPY,
-MKCOL, MOVE, and others.  With built-in authentication and request handling, it
+MOVE, DELETE and others.  With built-in authentication and request handling, it
 allows for easy management of files and directories over the @code{WebDAV}
 protocol.")
     (license license:expat)))

@@ -9999,13 +9999,13 @@ Statistical Association <https://graemeblair.com/papers/randresp.pdf>.")
 (define-public r-rquest
   (package
     (name "r-rquest")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rquest" version))
        (sha256
-        (base32 "1vl5g2v4s7hkr8lnp8symnva06mg2klzvnixjk81i008k4rg2f61"))))
+        (base32 "09p3r69wn9dl8p507kd7jng118a3pg0acc45lfcrw1dn5h5adrlf"))))
     (properties `((upstream-name . "rquest")))
     (build-system r-build-system)
     (arguments
@@ -11510,13 +11510,13 @@ See Goyal, Handcock, Jackson, Rendall and Yeung (2022)
 (define-public r-rplum
   (package
     (name "r-rplum")
-    (version "0.5.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rplum" version))
        (sha256
-        (base32 "0cpfgngi4kn0bydjwb43vfd5f5xnj3275b83gzb2yw1mv2laawda"))))
+        (base32 "1hdp2h5magkd79sxywh40w89fvrr6xwyixarcyizn2n2n3f6j7jc"))))
     (properties `((upstream-name . "rplum")))
     (build-system r-build-system)
     (arguments
@@ -14285,13 +14285,13 @@ outcomes with ties are supported.")
 (define-public r-rolog
   (package
     (name "r-rolog")
-    (version "0.9.21")
+    (version "0.9.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolog" version))
        (sha256
-        (base32 "16zbgcqaada0blrh7zas06xlasxa86vphcg21z6b6kjy111q1kc4"))))
+        (base32 "1n7fiad3014bg330blfz22vdjca8bh9lkz7nfblg704k56nvs36z"))))
     (properties `((upstream-name . "rolog")))
     (build-system r-build-system)
     (arguments
@@ -16931,13 +16931,13 @@ robust accelerated failure time regression for gaussian and log-Weibull case.")
 (define-public r-robust2sls
   (package
     (name "r-robust2sls")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robust2sls" version))
        (sha256
-        (base32 "1q12lvb5kifcn6qjaw1zpzq8p59lw92x79jfj9ffgy3sswhznpq4"))))
+        (base32 "1c6snijxijc3pkfi2372xvif3yd0716dkcxcdfwba6ajzxa1rm3x"))))
     (properties `((upstream-name . "robust2sls")))
     (build-system r-build-system)
     (arguments
@@ -21385,26 +21385,25 @@ analysis time-series.  Psychotherapy research, 1-14.
 (define-public r-rmdwc
   (package
     (name "r-rmdwc")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmdwc" version))
        (sha256
-        (base32 "0s7k54ggf0zdkkjg8k5jz2kfjpw99i59k82xqgvj7qaxvakm7vss"))))
+        (base32 "0x7p1ci141nkk0jzkmg4x867vlnzn1kv6f7ywiblk0pl9m263xfj"))))
     (properties `((upstream-name . "rmdwc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rstudioapi r-knitr))
-    (home-page "https://cran.r-project.org/package=rmdwc")
-    (synopsis "Count Words, Chars and Non-Whitespace Chars in R Markdown Docs")
+    (propagated-inputs (list r-rstudioapi r-knitr r-jsonlite))
+    (home-page "https://github.com/sigbertklinke/rmdwc")
+    (synopsis "Count Words and Characters in R Markdown and Jupyter Notebooks")
     (description
-     "If you are using R Markdown documents then you have sometimes restrictions about
-the size of the documents, e.g. number of words, number of characters or
-non-whitespace characters. @code{rmdcount()} computes these counts with and
-without code chunks and returns the result as data frame.")
+     "Computes word, character, and non-whitespace character counts in R Markdown
+documents and Jupyter notebooks, with or without code chunks.  Returns results
+as a data frame.")
     (license license:gpl3)))
 
 (define-public r-rmdplugr
@@ -25209,13 +25208,13 @@ models (Spiegelman and Hertzmark 2005, <doi:10.1093/aje/kwi188>), and others.")
 (define-public r-riskregression
   (package
     (name "r-riskregression")
-    (version "2025.05.15")
+    (version "2025.05.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskRegression" version))
        (sha256
-        (base32 "1xq64g93zsakyz0pkrz1hxnrs511w7hxv9lx874cy4wd076cx6jg"))))
+        (base32 "1j2jjzm1nrl9cx4h5fjn8mfkiml8p9kwmjqih6xxr29rvqwh1pgv"))))
     (properties `((upstream-name . "riskRegression")))
     (build-system r-build-system)
     (arguments
@@ -26337,39 +26336,6 @@ are made with conventional methods, as described in Rosenbaum (2002)
 <doi:10.1007/978-1-4757-3692-2>, Fogarty (2018) <doi:10.1111/rssb.12290>, and
 Kang et al. (2016) <doi:10.1214/15-aoas894>.")
     (license license:gpl3)))
-
-(define-public r-rigr
-  (package
-    (name "r-rigr")
-    (version "1.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rigr" version))
-       (sha256
-        (base32 "0cdrc0g6r4l95fxg6z8xq301x57xzwyri7m5w4gwwnjvz6168mdk"))))
-    (properties `((upstream-name . "rigr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-sandwich))
-    (native-inputs (list r-knitr))
-    (home-page "https://statdivlab.github.io/rigr/")
-    (synopsis "Regression, Inference, and General Data Analysis Tools in R")
-    (description
-     "This package provides a set of tools to streamline data analysis.  Learning both
-R and introductory statistics at the same time can be challenging, and so we
-created rigr to facilitate common data analysis tasks and enable learners to
-focus on statistical concepts.  We provide easy-to-use interfaces for
-descriptive statistics, one- and two-sample inference, and regression analyses.
-rigr output includes key information while omitting unnecessary details that can
-be confusing to beginners.  Heteroscedasticity-robust (\"sandwich\") standard
-errors are returned by default, and multiple partial F-tests and tests for
-contrasts are easy to specify.  A single regression function can fit both linear
-and generalized linear models, allowing students to more easily make connections
-between different classes of models.")
-    (license license:expat)))
 
 (define-public r-rigma
   (package
@@ -33079,13 +33045,13 @@ persistence using the Hurst coefficient.")
 (define-public r-resemble
   (package
     (name "r-resemble")
-    (version "2.2.3")
+    (version "2.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resemble" version))
        (sha256
-        (base32 "1m27y1wmig4d7gxmli1n8mbqid9sh6vij0aj7vi1wk4vnwxgnq6w"))))
+        (base32 "0b2rw25piw6izci4nmxc9qfpxgdwmyzbns1xzfcm0cg51kxfxsvg"))))
     (properties `((upstream-name . "resemble")))
     (build-system r-build-system)
     (arguments
@@ -40101,6 +40067,32 @@ subunits and features.  Intended to be part of a 3D visualization workflow.")
 frameworks.")
     (license license:expat)))
 
+(define-public r-recastlessons
+  (package
+    (name "r-recastlessons")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "recastlessons" version))
+       (sha256
+        (base32 "1s9ghcji6adz6bn28nvv3dznvg1hlw8sb0jbd5jxap986hvfljvq"))))
+    (properties `((upstream-name . "recastlessons")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-purrr r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=recastlessons")
+    (synopsis
+     "Explore and Interactively Adjust a Daily Distribution of Lessons")
+    (description
+     "This package provides a set of functions to see and interactively adjust a
+distribution of lessons by day, aiming at homogenizing individual distributions
+(for each class and teacher).")
+    (license license:expat)))
+
 (define-public r-recassorules
   (package
     (name "r-recassorules")
@@ -43990,6 +43982,32 @@ validation approach is introduced by Shen, L., Geleijnse, G. and Kaptein, M.
 (2023) <doi:10.21203/rs.3.rs-2559287/v2>.")
     (license license:expat)))
 
+(define-public r-rctrecruit
+  (package
+    (name "r-rctrecruit")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RCTRecruit" version))
+       (sha256
+        (base32 "15qkzclkvk9l44nypq70hsq8fv04m4xjnaqapbqf2765jm8gd8cc"))))
+    (properties `((upstream-name . "RCTRecruit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-lubridate))
+    (home-page "https://github.com/imalagaris/RCTRecruit")
+    (synopsis
+     "Non-Parametric Recruitment Prediction for Randomized Clinical Trials")
+    (description
+     "Accurate prediction of subject recruitment for Randomized Clinical Trials (RCT)
+remains an ongoing challenge.  Many previous prediction models rely on
+parametric assumptions.  We present functions for non-parametric RCT recruitment
+prediction under several scenarios.")
+    (license license:expat)))
+
 (define-public r-rct3
   (package
     (name "r-rct3")
@@ -44685,13 +44703,13 @@ contributors to both @code{QuantLib} and Quantuccia'.")
 (define-public r-rcppplanc
   (package
     (name "r-rcppplanc")
-    (version "2.0.8")
+    (version "2.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppPlanc" version))
        (sha256
-        (base32 "148gc9hkv7lvadhndy5zghsfrrkjk6nmhaynczl4xka1a9a6pphd"))))
+        (base32 "0jxjpibkbky57hrwp6pr7dw0sqz5ic2fsdn7z4rq49139nx9bq3g"))))
     (properties `((upstream-name . "RcppPlanc")))
     (build-system r-build-system)
     (arguments
@@ -50669,13 +50687,13 @@ and @code{cairoDevice} have been archived on CRAN. See
 (define-public r-rattains
   (package
     (name "r-rattains")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rATTAINS" version))
        (sha256
-        (base32 "0s8byhlpmf95kan86id4kwffcqhp0jm55jx3f0wdz0g641ghrarc"))))
+        (base32 "0kbpsdqyn68ya9rv01cg3xc73alvi240vay7zjg98ydd8lpmwwzl"))))
     (properties `((upstream-name . "rATTAINS")))
     (build-system r-build-system)
     (arguments
@@ -55147,13 +55165,13 @@ abbreviation of R @code{agGrid}'.")
 (define-public r-ragflowchainr
   (package
     (name "r-ragflowchainr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RAGFlowChainR" version))
        (sha256
-        (base32 "17j9n6nvxvh12mx9nk6py485p4rp1vdigbhqbsfqcaay1d745nyp"))))
+        (base32 "0c0l6wqdf86q71h4ryyxnl7nbpp96dm9vpdhcrpczgni28a47k65"))))
     (properties `((upstream-name . "RAGFlowChainR")))
     (build-system r-build-system)
     (arguments
@@ -55174,7 +55192,7 @@ abbreviation of R @code{agGrid}'.")
     (description
      "Enables Retrieval-Augmented Generation (RAG) workflows in R by combining local
 vector search using @code{DuckDB} with optional web search via the Tavily API.
-Supports @code{OpenAI}- and Ollama-compatible embedding models, full-text and
+Supports @code{OpenAI}'- and Ollama'-compatible embedding models, full-text and
 HNSW (Hierarchical Navigable Small World) indexing, and modular large language
 model (LLM) invocation.  Designed for advanced question-answering, chat-based
 applications, and production-ready AI pipelines.  This package is the R

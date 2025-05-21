@@ -10056,13 +10056,13 @@ counts and trends.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "0p8m0hmkbaavl77sx8yvr27ka9y521iy5h9k9abpj26skwg5kiwd"))))
+        (base32 "16yq749h602rzqm9889hzzk35y3c07dcq6p72p408wlqjf3s42s2"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (arguments
@@ -10607,35 +10607,44 @@ assessment and variable selection procedures.")
 (define-public r-olr
   (package
     (name "r-olr")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "olr" version))
        (sha256
-        (base32 "1l6m2gbglh8idy4k2q23qgfb7in1a6pnwiji1gbygfan6paw4xza"))))
+        (base32 "0ghqwswl1jr78vs3w7rzj7dlj3pv46316j6nsanqxvi0iagnhsgs"))))
     (properties `((upstream-name . "olr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plyr))
-    (home-page "https://github.com/MatHatter")
+    (propagated-inputs (list r-readxl r-plyr r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MatHatter/olr_r")
     (synopsis "Optimal Linear Regression")
     (description
-     "The optimal linear regression @code{olr()}, runs all the possible combinations
-of linear regression equations.  The @code{olr()} returns the equation which has
-the greatest adjusted R-squared term or the greatest R-squared term based on the
-user's discretion.  Essentially, the @code{olr()} returns the best fit equation
-out of all the possible equations.  R-squared increases with the addition of an
-explanatory variable whether it is significant or not, thus this was developed
-to eliminate that conundrum.  Adjusted R-squared is preferred to overcome this
-phenomenon, but each combination will still produce different results and this
-will return the best one.  Complimentary functions are included which list all
-of the equations, all of the equations in ascending order, a function to give
-the user a specific model's summary, and the list of adjusted R-squared terms &
-R-squared terms.  A Python version is available at:
-<https://pypi.org/project/olr/>.")
+     "The olr function systematically evaluates multiple linear regression models by
+exhaustively fitting all possible combinations of independent variables against
+the specified dependent variable.  It selects the model that yields the highest
+adjusted R-squared (by default) or R-squared, depending on user preference.  In
+model evaluation, both R-squared and adjusted R-squared are key metrics:
+R-squared measures the proportion of variance explained but tends to increase
+with the addition of predictorsâregardless of relevanceâpotentially leading
+to overfitting.  Adjusted R-squared compensates for this by penalizing model
+complexity, providing a more balanced view of fit quality.  The goal of olr is
+to identify the most suitable model that captures the underlying structure of
+the data while avoiding unnecessary complexity.  By comparing both metrics, it
+offers a robust evaluation framework that balances predictive power with model
+parsimony.  Example Analogy: Imagine a gardener trying to understand what
+influences plant growth (the dependent variable).  They might consider variables
+like sunlight, watering frequency, soil type, and nutrients (independent
+variables).  Instead of manually guessing which combination works best, the olr
+function automatically tests every possible combination of predictors and
+identifies the most effective modelâbased on either the highest R-squared or
+adjusted R-squared value.  This saves the user from trial-and-error modeling and
+highlights only the most meaningful variables for explaining the outcome.  A
+Python version is also available at <https://pypi.org/project/olr>.")
     (license license:gpl3)))
 
 (define-public r-ollggamma
@@ -11557,13 +11566,13 @@ The method is based on Jie Ding, Yu Xiang, Lu Shen, Vahid Tarokh (2017)
 (define-public r-officedown
   (package
     (name "r-officedown")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "officedown" version))
        (sha256
-        (base32 "19fb49did42c1xi7ww569b24xcawhk6r4qil3z2ccy98khm35qg1"))))
+        (base32 "12criqsjlbr9a21l1bkm6gjm6nygvc2023g6i0n7hz84bd30cxb5"))))
     (properties `((upstream-name . "officedown")))
     (build-system r-build-system)
     (arguments
@@ -11754,26 +11763,23 @@ and Chien (2022) <doi:10.18637/jss.v104.i06>.")
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "089hp4cj5bsw3j53dvygf58cs9638m34i4k7dcywn9l8gz0fh8rr"))))
+        (base32 "0jn1chn7i06ffarmvbj7sfslhxlyr3ls1m0a709yfcwxlg76q1a1"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-testthat
-                             r-sysfonts
                              r-simmulticorrdata
-                             r-showtext
-                             r-rprojroot
                              r-rcpparmadillo
                              r-rcpp
-                             r-latex2exp
+                             r-r6
                              r-hexsticker
                              r-ggplot2
                              r-cli

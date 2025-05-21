@@ -2562,13 +2562,13 @@ based in Russia.")
 (define-public r-viztest
   (package
     (name "r-viztest")
-    (version "0.3")
+    (version "0.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VizTest" version))
        (sha256
-        (base32 "0sxp5shf7xxm247yy96x8fx15mrykaxj387icjcsrcarzlsgb6hf"))))
+        (base32 "08c47wnz64f3cf0zz9ak8jbay27sx9g5zwml29kzh2sqmhdrl8rh"))))
     (properties `((upstream-name . "VizTest")))
     (build-system r-build-system)
     (arguments
@@ -6197,13 +6197,13 @@ appropriate taxonomic lists, e.g. the German taxonomic standard list
 (define-public r-vegclust
   (package
     (name "r-vegclust")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vegclust" version))
        (sha256
-        (base32 "18v1iqgabhsdxi76kvy9wgp9h2i17aw4c43kcki7lzyqiyyql0nx"))))
+        (base32 "1499anyjaq6kpjp1y8lpd6qha0qybr72f2fd6svf47dl1vdc8g2v"))))
     (properties `((upstream-name . "vegclust")))
     (build-system r-build-system)
     (arguments

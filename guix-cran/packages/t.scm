@@ -26174,13 +26174,13 @@ represented by characters in R, or can themselves be R-expressions or functions.
 (define-public r-templateicar
   (package
     (name "r-templateicar")
-    (version "0.9.1")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "templateICAr" version))
        (sha256
-        (base32 "19273x2z6shyd737zx65jwfxqi21p49gszkvbfgcvf6d9c0y90ri"))))
+        (base32 "1h36hg10kshsyqxym5ihj54n3xmlhxmv4w2awr2chhdh987b5di2"))))
     (properties `((upstream-name . "templateICAr")))
     (build-system r-build-system)
     (arguments
@@ -27503,13 +27503,13 @@ quantiles from the accumulated distributions.")
 (define-public r-tdiagree
   (package
     (name "r-tdiagree")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDIagree" version))
        (sha256
-        (base32 "0jgms70hav601w8rbnyhsjmrrkpf2wkcsrsm2cfaii97zv1bmwzi"))))
+        (base32 "01chzg465fc390imwnhgnjjxsi5wyh897bjc8zzcfim7qnfrkg03"))))
     (properties `((upstream-name . "TDIagree")))
     (build-system r-build-system)
     (arguments
