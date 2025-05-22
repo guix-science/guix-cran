@@ -24699,25 +24699,26 @@ effects is described in Zhao et al. (2024) <doi:10.1093/jrsssc/qlad102>.")
 (define-public r-bayesssm
   (package
     (name "r-bayesssm")
-    (version "0.4.7")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesSSM" version))
        (sha256
-        (base32 "0b0kc0cy33dizg3ffr5av2sa7pc79ln7rpvch9lcqjs6ribxr5wf"))))
+        (base32 "1aqkrn6jmq1bpvy3j3mv10jy8hz84g0j7kp78jdzqz9msfd6ljwd"))))
     (properties `((upstream-name . "bayesSSM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mass r-future-apply r-future r-dplyr))
+    (propagated-inputs (list r-mass r-lifecycle r-future-apply r-future
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/BjarkeHautop/bayesSSM")
     (synopsis "Bayesian Methods for State Space Models")
     (description
      "This package implements methods for Bayesian analysis of State Space Models.
-Includes implementations the Particle Marginal Metropolis-Hastings algorithm
+Includes implementations of the Particle Marginal Metropolis-Hastings algorithm
 described in Andrieu et al. (2010) <doi:10.1111/j.1467-9868.2009.00736.x> and
 automatic tuning inspired by Pitt et al. (2012)
 <doi:10.1016/j.jeconom.2012.06.004> and J. Dahlin and T. B. SchÃ¶n (2019)

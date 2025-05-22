@@ -1734,48 +1734,6 @@ method and a minimum distance estimator.  Mayoral, L. (2007)
 <doi:10.1111/j.2517-6161.1995.tb02054.x>.")
     (license license:gpl3+)))
 
-(define-public r-nsae
-  (package
-    (name "r-nsae")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NSAE" version))
-       (sha256
-        (base32 "1pig0b2g6z1pc6is3nw7m88zwvwpg3pwvifvyc6p38kbin57m1pb"))))
-    (properties `((upstream-name . "NSAE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spgwr
-                             r-semipar
-                             r-rlist
-                             r-numderiv
-                             r-nlme
-                             r-matrix
-                             r-mass
-                             r-lattice
-                             r-cluster))
-    (home-page "https://cran.r-project.org/package=NSAE")
-    (synopsis "Nonstationary Small Area Estimation")
-    (description
-     "Executes nonstationary Fay-Herriot model and nonstationary generalized linear
-mixed model for small area estimation.The empirical best linear unbiased
-predictor (EBLUP) under stationary and nonstationary Fay-Herriot models and
-empirical best predictor (EBP) under nonstationary generalized linear mixed
-model along with the mean squared error estimation are included.  EBLUP for
-prediction of non-sample area is also included under both stationary and
-nonstationary Fay-Herriot models.  This extension to the Fay-Herriot model that
-accounts for the presence of spatial nonstationarity was developed by Hukum
-Chandra, Nicola Salvati and Ray Chambers (2015) <doi:10.1093/jssam/smu026> and
-nonstationary generalized linear mixed model was developed by Hukum Chandra,
-Nicola Salvati and Ray Chambers (2017) <doi:10.1016/j.spasta.2017.01.004>.  This
-package is dedicated to the memory of Dr. Hukum Chandra who passed away while
-the package creation was in progress.")
-    (license license:gpl3)))
-
 (define-public r-nricens
   (package
     (name "r-nricens")
@@ -13746,6 +13704,32 @@ al., (2015) <DOI:10.1016/j.socscimed.2015.10.001>; Valente (1995) <ISBN:
      "Implementation of discriminant analysis with network structures in predictors
 accommodated to do classification and prediction.")
     (license license:gpl2)))
+
+(define-public r-netcutter
+  (package
+    (name "r-netcutter")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netcutter" version))
+       (sha256
+        (base32 "1zg29kgj6aky084lk0wbw23db80idsghcvdf99dxmnwwg0kap0n2"))))
+    (properties `((upstream-name . "netcutter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlecuyer r-poissonbinomial))
+    (native-inputs (list r-knitr))
+    (home-page "https://doi.org/10.1371/journal.pone.0003178")
+    (synopsis "Identification and Analysis of Co-Occurrence Networks")
+    (description
+     "Implementation of the @code{NetCutter} algorithm described in MÃ¼ller and
+Mancuso (2008) <doi:10.1371/journal.pone.0003178>.  The package identifies
+co-occurring terms in a list of containers.  For example, it may be used to
+detect genes that co-occur across genomes.")
+    (license license:expat)))
 
 (define-public r-netcoupler
   (package

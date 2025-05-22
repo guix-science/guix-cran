@@ -922,27 +922,6 @@ sql query or a dataframe to a database table with modes such as create, append,
 insert, update, upsert, patch, delete, overwrite, overwrite_schema.")
     (license license:lgpl3+)))
 
-(define-public r-write-snns
-  (package
-    (name "r-write-snns")
-    (version "0.0-4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "write.snns" version))
-       (sha256
-        (base32 "0sxg7z8rnh4lssbivkrfxldv4ivy37wkndzzndpbvq2gbvbjnp4l"))))
-    (properties `((upstream-name . "write.snns")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=write.snns")
-    (synopsis "Function for exporting data to SNNS pattern files")
-    (description
-     "Function for writing a SNNS pattern file from a data.frame or matrix.")
-    (license license:gpl2+)))
-
 (define-public r-wrightmap
   (package
     (name "r-wrightmap")

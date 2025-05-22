@@ -9642,6 +9642,53 @@ for the feedback and plan-making domains.")
 (Year: 2018, ISBN:9781138741515) by Dobson and Barnett.")
     (license license:gpl2)))
 
+(define-public r-doblin
+  (package
+    (name "r-doblin")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "doblin" version))
+       (sha256
+        (base32 "0v3iqhvin8c32pfi55wmikd2gfhd22gy64gyb20v0jkgz1xpcfd9"))))
+    (properties `((upstream-name . "doblin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tsdist
+                             r-tidyr
+                             r-reshape2
+                             r-readr
+                             r-purrr
+                             r-proxy
+                             r-magrittr
+                             r-lazyeval
+                             r-imputets
+                             r-gplots
+                             r-ggthemes
+                             r-ggplot2
+                             r-ggnewscale
+                             r-entropy
+                             r-dtwclust
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=doblin")
+    (synopsis
+     "'doblin': Inferring Dominant Clonal Lineages from DNA Barcoding Time-Series")
+    (description
+     "This package provides functions to quantify dominant clonal lineages from DNA
+barcoding time-series data.  The package implements clustering of barcode
+lineage trajectories, based on the assumption that similar temporal dynamics
+indicate comparable relative fitness.  It also identifies persistent clonal
+lineages across time points.  Input data can include lineage frequency tables
+derived from chromosomal barcoding, mutational libraries, or CRISPR/Cas screens.
+ For more details, see GagnÃ©-Leroux et al. (2024)
+<doi:10.1101/2024.09.08.611892>.")
+    (license license:gpl3)))
+
 (define-public r-dobin
   (package
     (name "r-dobin")
@@ -21001,27 +21048,27 @@ The package is based on Gerring, Jerzak, and Oncel (2024)
 (define-public r-descriptio
   (package
     (name "r-descriptio")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "descriptio" version))
        (sha256
-        (base32 "0ic44blsi7ys6075zsawf4rxqgjsv1d7hr8y2j3psk6pjchlgx18"))))
+        (base32 "1cp759pjlwixb72ymk760rz14wfnxxwwsvhx7f8mf4qhg5s7100i"))))
     (properties `((upstream-name . "descriptio")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rlang r-mass r-ggplot2))
-    (home-page "https://github.com/nicolas-robette/descriptio")
+    (home-page "https://framagit.org/nicolas-robette/descriptio")
     (synopsis "Descriptive Statistical Analysis")
     (description
-     "Description of statistical associations between two variables : measures of
-local and global association between variables (phi, CramÃ©r V, correlations,
+     "Description of statistical associations between variables : measures of local
+and global association between variables (phi, CramÃ©r V, correlations,
 eta-squared, Goodman and Kruskal tau, permutation tests, etc.), multiple
-graphical representations of the associations between two variables (using
-ggplot2') and weighted statistics.")
+graphical representations of the associations between variables (using ggplot2')
+and weighted statistics.")
     (license license:gpl2+)))
 
 (define-public r-describer

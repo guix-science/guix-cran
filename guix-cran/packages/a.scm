@@ -2417,26 +2417,25 @@ user as possible.")
 (define-public r-automatedtests
   (package
     (name "r-automatedtests")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "automatedtests" version))
        (sha256
-        (base32 "14lgh7ipk3qjjwig54jf59bfis08qrg5jpfanxjna4nr1p2skkj0"))))
+        (base32 "1dq9a3chyd48anigr66msdrfnm4dl7wwrhpyq3fs2k1qp6vgw82b"))))
     (properties `((upstream-name . "automatedtests")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rvaidememoire r-r6 r-nortest r-nnet))
+    (propagated-inputs (list r-r6 r-nortest r-nnet r-desctools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wouterzeevat/automatedtests")
     (synopsis "Automating Choosing Statistical Tests")
     (description
-     "This package provides a tool for simplifying the selection of appropriate
-statistical tests based on input data, making statistical workflows easier for
-users of all experience levels.")
+     "Automatically selects and runs the most appropriate statistical test for your
+data, returning clear, easy-to-read results.  Ideal for all experience levels.")
     (license license:gpl3)))
 
 (define-public r-automagic

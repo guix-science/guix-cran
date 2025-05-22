@@ -28044,38 +28044,6 @@ Number for Repetitive Group Sampling Plan Based on Cpk as given in Aslam et al.
 (2013) (<DOI:10.1080/00949655.2012.663374>).")
     (license license:gpl2)))
 
-(define-public r-rgs
-  (package
-    (name "r-rgs")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RGS" version))
-       (sha256
-        (base32 "0zwj6hnpkb2zixr35hfybaizrsmb53p7jj0xijihib5hy2xj8w30"))))
-    (properties `((upstream-name . "RGS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-semipar r-rms))
-    (home-page "https://cran.r-project.org/package=RGS")
-    (synopsis "Recursive Gradient Scanning Algorithm")
-    (description
-     "This package provides a recursive gradient scanning algorithm for discretizing
-continuous variables in Logistic and Cox regression models.  This algorithm is
-especially effective in identifying optimal cut-points for variables with
-U-shaped relationships to @code{lnOR} (the natural logarithm of the odds ratio)
-or @code{lnHR} (the natural logarithm of the hazard ratio), thereby enhancing
-model fit, interpretability, and predictive power.  By iteratively scanning and
-calculating gradient changes, the method accurately pinpoints critical
-cut-points within nonlinear relationships, transforming continuous variables
-into categorical ones.  This approach improves risk classification and
-regression analysis performance, increasing interpretability and practical
-relevance in clinical and risk management settings.")
-    (license license:expat)))
-
 (define-public r-rgroovy
   (package
     (name "r-rgroovy")
@@ -47309,64 +47277,6 @@ Nikolaus Hansen.  CMA-ES is the Covariance Matrix Adaptation Evolution Strategy,
 see <https://www.lri.fr/~hansen/cmaes_inmatlab.html#java>.")
     (license license:gpl3+)))
 
-(define-public r-rclustool
-  (package
-    (name "r-rclustool")
-    (version "0.91.61")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RclusTool" version))
-       (sha256
-        (base32 "1w6xnm5vhvi526vxapwkj0n0wl1ha0zs2naz0brfi8ksz3gwvbky"))))
-    (properties `((upstream-name . "RclusTool")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tkrplot
-                             r-tcltk2
-                             r-stringr
-                             r-stringi
-                             r-sp
-                             r-searchtrees
-                             r-rlang
-                             r-reshape
-                             r-randomforest
-                             r-png
-                             r-nnet
-                             r-mmand
-                             r-mda
-                             r-mclust
-                             r-mass
-                             r-knitr
-                             r-jpeg
-                             r-ggplot2
-                             r-factominer
-                             r-factoextra
-                             r-e1071
-                             r-corrplot
-                             r-conclust
-                             r-cluster
-                             r-class))
-    (home-page "https://cran.r-project.org/package=RclusTool")
-    (synopsis
-     "Graphical Toolbox for Clustering and Classification of Data Frames")
-    (description
-     "Graphical toolbox for clustering and classification of data frames.  It proposes
-a graphical interface to process clustering and classification methods on
-features data-frames, and to view initial data as well as resulted cluster or
-classes.  According to the level of available labels, different approaches are
-proposed: unsupervised clustering, semi-supervised clustering and supervised
-classification.  To assess the processed clusters or classes, the toolbox can
-import and show some supplementary data formats: either profile/time series, or
-images.  These added information can help the expert to label clusters
-(clustering), or to constrain data frame rows (semi-supervised clustering),
-using Constrained spectral embedding algorithm by Wacquet et al. (2013)
-<doi:10.1016/j.patrec.2013.02.003> and the methodology provided by Wacquet et
-al. (2013) <doi:10.1007/978-3-642-35638-4_21>.")
-    (license license:gpl2+)))
-
 (define-public r-rclipboard
   (package
     (name "r-rclipboard")
@@ -54979,13 +54889,13 @@ Ranking with Incomplete Information, Technical Report.")
 (define-public r-rainbowr
   (package
     (name "r-rainbowr")
-    (version "0.1.35")
+    (version "0.1.38")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RAINBOWR" version))
        (sha256
-        (base32 "0cpjjnjfv53q0cwgia5fbay4n02z0q26jjr2p7c7rpykd382lr7c"))))
+        (base32 "1sr9k4d82syf9sp3nxcll4f45g25f40r1ddyg59gd2d7pl9vxzg2"))))
     (properties `((upstream-name . "RAINBOWR")))
     (build-system r-build-system)
     (arguments

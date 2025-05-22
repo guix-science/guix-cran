@@ -8922,21 +8922,20 @@ analyze likelihood ratio distributions.")
 (define-public r-forectheta
   (package
     (name "r-forectheta")
-    (version "2.6.2")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forecTheta" version))
        (sha256
-        (base32 "0xw5xl6famx0wy68a32f8vgqk02lkymvxq082yp16giidvzvqjwd"))))
+        (base32 "1nsmdzsp9005rkr9cgnv8ahsix01zm3ihlvl4w6jx22b4rfffx7k"))))
     (properties `((upstream-name . "forecTheta")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tseries r-forecast))
-    (home-page
-     "https://www.sciencedirect.com/science/article/pii/S0169207016300243")
+    (propagated-inputs (list r-tseries r-forecast r-foreach))
+    (home-page "https://cran.r-project.org/package=forecTheta")
     (synopsis "Forecasting Time Series by Theta Models")
     (description
      "Routines for forecasting univariate time series using Theta Models.")

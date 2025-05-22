@@ -4346,13 +4346,13 @@ Wikipedia are also included.")
 (define-public r-hours2lessons
   (package
     (name "r-hours2lessons")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hours2lessons" version))
        (sha256
-        (base32 "053dpnhyqj2mkybgw2xszwxcmbj7255rr898ci14241k3wcf1gra"))))
+        (base32 "1372c54fhla7manih6dsfxwbwhf6iqa7vnjcjw25962kifyd8z1f"))))
     (properties `((upstream-name . "hours2lessons")))
     (build-system r-build-system)
     (arguments

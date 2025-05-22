@@ -2992,27 +2992,6 @@ calculate trait heritability; and (2) handling overfitting by calculating the
 variance components and the heritability through cross validation.")
     (license license:gpl2+)))
 
-(define-public r-gsmoothr
-  (package
-    (name "r-gsmoothr")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gsmoothr" version))
-       (sha256
-        (base32 "00z9852vn5pj04dhl3w36yk0xjawniay6iifw1i7fd8g98mgspxp"))))
-    (properties `((upstream-name . "gsmoothr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=gsmoothr")
-    (synopsis "Smoothing tools")
-    (description
-     "This package provides tools rewritten in C for various smoothing tasks.")
-    (license license:lgpl2.0+)))
-
 (define-public r-gsmams
   (package
     (name "r-gsmams")
@@ -3426,13 +3405,13 @@ logrank tests in Yung and Liu (2019) <doi:10.1111/biom.13196>, and
 (define-public r-gsdesign
   (package
     (name "r-gsdesign")
-    (version "3.6.7")
+    (version "3.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign" version))
        (sha256
-        (base32 "0nmi9yivakky05m2lj6vca5abjq94kzhl5fz8nd0cx2bw1qkkm1m"))))
+        (base32 "18vxc76yxz9yygn8dlcfg7mmnl1l1xp9wmnz1pjzljgp434f2avn"))))
     (properties `((upstream-name . "gsDesign")))
     (build-system r-build-system)
     (arguments
@@ -16943,13 +16922,13 @@ Waldorp, Mottus & Borsboom (2018) <doi:10.1080/00273171.2018.1454823>.")
 (define-public r-gimme
   (package
     (name "r-gimme")
-    (version "0.8")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gimme" version))
        (sha256
-        (base32 "1ljn7acp3iyc7kl088626b378vpkca1yc1663qnakl3y9s7n61b9"))))
+        (base32 "0pa6z82wbhwljm3srkn9ibw9kd9b7avhjb6akyivwy4sdxbz5zcr"))))
     (properties `((upstream-name . "gimme")))
     (build-system r-build-system)
     (arguments
@@ -26792,6 +26771,92 @@ coordinate system, including API for interacting with other common R GIS
 libraries.")
     (license (list (license:fsdg-compatible "MPL-2.0")
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-geohabnet
+  (package
+    (name "r-geohabnet")
+    (version "2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geohabnet" version))
+       (sha256
+        (base32 "09rhs8h290q2jlkcbbyzzyfimq3mlmhyjm63107ldvpyvawrlaps"))))
+    (properties `((upstream-name . "geohabnet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-viridislite
+                             r-terra
+                             r-stringr
+                             r-rnaturalearth
+                             r-patchwork
+                             r-memoise
+                             r-magrittr
+                             r-igraph
+                             r-ggplot2
+                             r-geosphere
+                             r-future-apply
+                             r-future
+                             r-config
+                             r-beepr))
+    (home-page "https://garrettlab.github.io/HabitatConnectivity/")
+    (synopsis "Geographical Risk Analysis Based on Habitat Connectivity")
+    (description
+     "The geohabnet package is designed to perform a geographically or spatially
+explicit risk analysis of habitat connectivity.  Xing et al (2021)
+<doi:10.1093/biosci/biaa067> proposed the concept of cropland connectivity as a
+risk factor for plant pathogen or pest invasions.  As the functions in geohabnet
+were initially developed thinking on cropland connectivity, users are
+recommended to first be familiar with the concept by looking at the Xing et al
+paper.  In a nutshell, a habitat connectivity analysis combines information from
+maps of host density, estimates the relative likelihood of pathogen movement
+between habitat locations in the area of interest, and applies network analysis
+to calculate the connectivity of habitat locations.  The functions of geohabnet
+are built to conduct a habitat connectivity analysis relying on geographic
+parameters (spatial resolution and spatial extent), dispersal parameters (in two
+commonly used dispersal kernels: inverse power law and negative exponential
+models), and network parameters (link weight thresholds and network metrics).
+The functionality and main extensions provided by the functions in geohabnet to
+habitat connectivity analysis are a) Capability to easily calculate the
+connectivity of locations in a landscape using a single function, such as
+@code{sensitivity_analysis()} or @code{msean()}.  b) As backbone datasets, the
+geohabnet package supports the use of two publicly available global datasets to
+calculate cropland density.  The backbone datasets in the geohabnet package
+include crop distribution maps from Monfreda, C., N. Ramankutty, and J. A. Foley
+(2008) <doi:10.1029/2007gb002947> \"Farming the planet: 2.  Geographic
+distribution of crop areas, yields, physiological types, and net primary
+production in the year 2000, Global Biogeochem.  Cycles, 22, GB1022\" and
+International Food Policy Research Institute (2019) <doi:10.7910/DVN/PRFF8V>
+\"Global Spatially-Disaggregated Crop Production Statistics Data for 2010 Version
+2.0, Harvard Dataverse, V4\".  Users can also provide any other geographic
+dataset that represents host density.  c) Because the geohabnet package allows R
+users to provide maps of host density (as originally in Xing et al (2021)), host
+landscape density (representing the geographic distribution of either crops or
+wild species), or habitat distribution (such as host landscape density adjusted
+by climate suitability) as inputs, we propose the term habitat connectivity.  d)
+The geohabnet package allows R users to customize parameter values in the
+habitat connectivity analysis, facilitating context-specific (pathogen- or
+pest-specific) analyses.  e) The geohabnet package allows users to automatically
+visualize maps of the habitat connectivity of locations resulting from a
+sensitivity analysis across all customized parameter combinations.  The primary
+functions are @code{msean()} and sensitivity @code{analysis()}.  Most functions
+in geohabnet provide three main outcomes: i) A map of mean habitat connectivity
+across parameters selected by the user, ii) a map of variance of habitat
+connectivity across the selected parameters, and iii) a map of the difference
+between the ranks of habitat connectivity and habitat density.  Each function
+can be used to generate these maps as final outcomes.  Each function can also
+provide intermediate outcomes, such as the adjacency matrices built to perform
+the analysis, which can be used in other network analysis.  Refer to article at
+<https://garrettlab.github.io/@code{HabitatConnectivity/articles/analysis.html>}
+to see examples of each function and how to access each of these outcome types.
+To change parameter values, the file called parameters.yaml stores the
+parameters and their values, can be accessed using @code{get_parameters()} and
+set new parameter values with @code{set_parameters()}'.  Users can modify up to
+ten parameters.")
+    (license license:gpl3)))
 
 (define-public r-geogrid
   (package

@@ -9833,13 +9833,13 @@ collection of street views for various research purposes.")
 (define-public r-streamy
   (package
     (name "r-streamy")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "streamy" version))
        (sha256
-        (base32 "15psvxgxj9wfi65y56y5y7qg9fs7fjaz3w7x34hh8wk84xpszdqr"))))
+        (base32 "174iaalwq96hjaxsnbnyrgxy56j9kyyal4ib6lv558fz0z0qb92h"))))
     (properties `((upstream-name . "streamy")))
     (build-system r-build-system)
     (arguments
@@ -10188,13 +10188,13 @@ to create dyadic data sets.")
 (define-public r-stratpal
   (package
     (name "r-stratpal")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StratPal" version))
        (sha256
-        (base32 "1dld0dbdd699pf8hbis06g0fwkvsk5yks8ad91kbll6ikr44c6ng"))))
+        (base32 "0ip8fydnly85da4mg3gylc9a7k0hrzj69vr0xvjagv5svsrqyb3g"))))
     (properties `((upstream-name . "StratPal")))
     (build-system r-build-system)
     (arguments
@@ -10208,13 +10208,14 @@ to create dyadic data sets.")
      "The fossil record is a joint expression of ecological, taphonomic, evolutionary,
 and stratigraphic processes (Holland and Patzkowsky, 2012, ISBN:978-0226649382).
  This package allowing to simulate biological processes in the time domain
-(e.g., trait evolution, fossil abundance), and examine how their expression in
-the rock record (stratigraphic domain) is influenced based on age-depth models,
-ecological niche models, and taphonomic effects.  Functions simulating common
-processes used in modeling trait evolution or event type data such as first/last
-occurrences are provided and can be used standalone or as part of a pipeline.
-The package comes with example data sets and tutorials in several vignettes,
-which can be used as a template to set up one's own simulation.")
+(e.g., trait evolution, fossil abundance, phylogenetic trees), and examine how
+their expression in the rock record (stratigraphic domain) is influenced based
+on age-depth models, ecological niche models, and taphonomic effects.  Functions
+simulating common processes used in modeling trait evolution or event type data
+such as first/last occurrences are provided and can be used standalone or as
+part of a pipeline.  The package comes with example data sets and tutorials in
+several vignettes, which can be used as a template to set up one's own
+simulation.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-stratigrapher
@@ -18083,48 +18084,6 @@ estimation of the SSM metamodel error using a GP model with a variety of defined
 correlation functions.")
     (license license:gpl3)))
 
-(define-public r-sslr
-  (package
-    (name "r-sslr")
-    (version "0.9.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SSLR" version))
-       (sha256
-        (base32 "0fv1jqri3gpzcfs429pgx4hjqmjrglb4g7nfqdihd2hjmq9k4sql"))))
-    (properties `((upstream-name . "SSLR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rssl
-                             r-rlang
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-rann
-                             r-purrr
-                             r-proxy
-                             r-plyr
-                             r-parsnip
-                             r-magrittr
-                             r-generics
-                             r-foreach
-                             r-dplyr
-                             r-conclust))
-    (native-inputs (list r-knitr))
-    (home-page "https://dicits.ugr.es/software/SSLR/")
-    (synopsis
-     "Semi-Supervised Classification, Regression and Clustering Methods")
-    (description
-     "Providing a collection of techniques for semi-supervised classification,
-regression and clustering.  In semi-supervised problem, both labeled and
-unlabeled data are used to train a classifier.  The package includes a
-collection of semi-supervised learning techniques: self-training, co-training,
-democratic, decision tree, random forest, S3VM ...  etc, with a fairly intuitive
-interface that is easy to use.")
-    (license license:gpl3)))
-
 (define-public r-ssizerna
   (package
     (name "r-ssizerna")
@@ -21446,13 +21405,13 @@ Statistical Association, 109:505, 11-23, <doi:10.1080/01621459.2013.870904>.")
 (define-public r-spower
   (package
     (name "r-spower")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Spower" version))
        (sha256
-        (base32 "029sxdhi5maa0zd9l8adxw7yflrczhhcg4nhzd5kbb11ygk0vrah"))))
+        (base32 "0nf5c9yybv6ilxgbjfdw1bq1nrkhzl7cm7dy8pdyv2ra63d4qy38"))))
     (properties `((upstream-name . "Spower")))
     (build-system r-build-system)
     (arguments
@@ -21474,14 +21433,14 @@ Statistical Association, 109:505, 11-23, <doi:10.1080/01621459.2013.870904>.")
      "This package provides a general purpose simulation-based power analysis API for
 routine and customized simulation experimental designs.  The package focuses
 exclusively on Monte Carlo simulation variants of (expected) prospective power
-analyses, criterion power analyses, compromise power analyses, sensitivity
-analyses, and prospective/post-hoc power analyses.  The default simulation
-experiment functions found within the package provide stochastic variants of the
-power analyses subroutines found in the G*Power 3 software (Faul, Erdfelder,
-Buchner, and Lang, 2009) <doi:10.3758/brm.41.4.1149>, along with various other
-power analysis examples (e.g., mediation analyses).  Supporting functions are
-also included, such as for building empirical power curve estimates, which
-utilize a similar API structure.")
+analyses, criterion analyses, compromise analyses, sensitivity analyses, and a
+priori analyses.  The default simulation experiment functions found within the
+package provide stochastic variants of the power analyses subroutines found in
+the G*Power 3.1 software (Faul, Erdfelder, Buchner, and Lang, 2009)
+<doi:10.3758/brm.41.4.1149>, along with various other parametric and
+non-parametric power analysis examples (e.g., mediation analyses).  Supporting
+functions are also included, such as for building empirical power curve
+estimates, which utilize a similar API structure.")
     (license license:gpl3+)))
 
 (define-public r-spouse
@@ -57847,30 +57806,6 @@ conditions could be used.  Implemented methods are described in the article
 and Van Keilegom (2024) <doi:10.1080/01621459.2022.2161387>.")
     (license license:gpl3)))
 
-(define-public r-semipar
-  (package
-    (name "r-semipar")
-    (version "1.0-4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SemiPar" version))
-       (sha256
-        (base32 "0pa3drpvclkw81ji5m1h5arj5c2rh03dnlff97cnnr1v5kvg1i4w"))))
-    (properties `((upstream-name . "SemiPar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nlme r-mass r-cluster))
-    (home-page "http://matt-wand.utsacademics.info/SPmanu.pdf")
-    (synopsis "Semiparametic Regression")
-    (description
-     "This package provides functions for semiparametric regression analysis, to
-complement the book: Ruppert, D., Wand, M.P. and Carroll, R.J. (2003).
-Semiparametric Regression.  Cambridge University Press.")
-    (license license:gpl2+)))
-
 (define-public r-seminr
   (package
     (name "r-seminr")
@@ -66640,13 +66575,13 @@ J. et al.  2023 (Wang, J. and Li, J. (2023), <doi:10.1038/s41467-023-43256-5>)."
 (define-public r-scbmeanfd
   (package
     (name "r-scbmeanfd")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCBmeanfd" version))
        (sha256
-        (base32 "045498q71zqgcg8p3665vwd99a8ybf21y0sa7y8316zw66wb1caz"))))
+        (base32 "1l91z6zywyfvxj0jjg5i4badcpg44alnrr0n8bv7wwl2q40gi9mp"))))
     (properties `((upstream-name . "SCBmeanfd")))
     (build-system r-build-system)
     (arguments

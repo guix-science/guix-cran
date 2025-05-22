@@ -10205,6 +10205,40 @@ Brophy, J., MÃ©sidor, M., Blais, C. and Hamel, D., (2023)
 <doi:10.1177/09622802231202384>.")
     (license license:gpl3+)))
 
+(define-public r-trajer
+  (package
+    (name "r-trajer")
+    (version "0.11.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trajeR" version))
+       (sha256
+        (base32 "09idfgmfq0x58yr8is8g5lkxjx1m73ls5fwd43k18ia8hryx3gxc"))))
+    (properties `((upstream-name . "trajeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ucminf
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-numderiv
+                             r-minpack-lm
+                             r-mass
+                             r-capushe))
+    (home-page "https://github.com/gitedric/trajeR")
+    (synopsis "Group Based Modeling Trajectory")
+    (description
+     "Estimation of group-based trajectory models, including finite mixture models for
+longitudinal data, supporting censored normal, zero-inflated Poisson, logit, and
+beta distributions, using expectation-maximization and quasi-Newton methods,
+with tools for model selection, diagnostics, and visualization of latent
+trajectory groups, <doi:10.4159/9780674041318>, Nagin, D. (2005).  Group-Based
+Modeling of Development.  Cambridge, MA: Harvard University Press.  and Noel
+(2022), <https://orbilu.uni.lu/>, thesis.")
+    (license license:gpl2+)))
+
 (define-public r-trajectories
   (package
     (name "r-trajectories")
@@ -11319,13 +11353,13 @@ function, and maximum likelihood estimation.")
 (define-public r-tpn
   (package
     (name "r-tpn")
-    (version "1.10")
+    (version "1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tpn" version))
        (sha256
-        (base32 "0abn89z2bca9fnzsswjw3qwgqbm176zkyk9ncrrx3w26f2qlxrjs"))))
+        (base32 "0cfyqcsjlk964mxn8phb4paaads1fbph8ac0m7q4nbz1lvgjjp1m"))))
     (properties `((upstream-name . "tpn")))
     (build-system r-build-system)
     (arguments
@@ -11339,8 +11373,9 @@ function, and maximum likelihood estimation.")
 (tpn) model discussed in Gomez, Olmos, Varela and Bolfarine (2018)
 <doi:10.1007/s11766-018-3354-x>, the slash tpn distribution discussed in Gomez,
 Gallardo and Santoro (2021) <doi:10.3390/sym13112164>, the bimodal tpn
-distribution discussed in Gomez et al. (2022) <doi:10.3390/sym14040665> and the
-flexible tpn model.")
+distribution discussed in Gomez et al. (2022) <doi:10.3390/sym14040665>, the
+flexible tpn model <doi:10.3390/math11214431> and the unit tpn distribution
+<doi:10.1016/j.chemolab.2025.105322>.")
     (license license:gpl2+)))
 
 (define-public r-tpmsm
@@ -27975,32 +28010,6 @@ analyzing workout and training data from devices that export TCX format.")
     (description
      "Convert T Cell Receptor (TCR) gene names between the 10X Genomics, Adaptive
 Biotechnologies, and @code{ImMunoGeneTics} (IMGT) nomenclatures.")
-    (license license:expat)))
-
-(define-public r-tcpmor
-  (package
-    (name "r-tcpmor")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TCPMOR" version))
-       (sha256
-        (base32 "10zbslpkc9kd7piakrkch71y20pgzmfw6vfmi6slsicqq50grca6"))))
-    (properties `((upstream-name . "TCPMOR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-semipar))
-    (home-page "https://cran.r-project.org/package=TCPMOR")
-    (synopsis "Two Cut-Points with Maximum Odds Ratio")
-    (description
-     "Enables the computation of the two cut-points with maximum odds ratio (OR) value
-method for data analysis, particularly suited for binary classification tasks.
-Users can identify optimal cut-points in a continuous variable by maximizing the
-odds ratio while maintaining an equal risk level, useful for tasks such as
-medical diagnostics, risk assessment, or predictive modeling.")
     (license license:expat)))
 
 (define-public r-tcplfit2

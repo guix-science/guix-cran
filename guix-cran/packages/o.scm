@@ -4744,13 +4744,13 @@ matching directives, or calipers, alone or in combination.")
 (define-public r-optm
   (package
     (name "r-optm")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OptM" version))
        (sha256
-        (base32 "00xjzpfnri2k0p04cv98vwwymv16pbw79znklg1k3xc4rxg8wd25"))))
+        (base32 "1whivfbrd1dpq3nlak10ynv8rraln9qi6wzy2h0h3irl4llflq1p"))))
     (properties `((upstream-name . "OptM")))
     (build-system r-build-system)
     (arguments
@@ -7927,13 +7927,13 @@ of bio-medical data.")
 (define-public r-opcreg
   (package
     (name "r-opcreg")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPCreg" version))
        (sha256
-        (base32 "1ny2rh7gq5c5irj5x82kzirazg1xzb8qidskfbmcifw0x14bak86"))))
+        (base32 "0473g0hnxzbh7jyfbi4na6xd5ssjhx9jz872nimdgg411s3dwjg1"))))
     (properties `((upstream-name . "OPCreg")))
     (build-system r-build-system)
     (arguments
@@ -8952,13 +8952,13 @@ data from Rimm et al. (2017 <doi:10.1001/jamaoncol.2017.0013>).")
 (define-public r-onesamplemr
   (package
     (name "r-onesamplemr")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OneSampleMR" version))
        (sha256
-        (base32 "1swjc1gsddihdcx9c219vzh9xn379fp8jlvvs5jhikixkk1frqdq"))))
+        (base32 "0fxm001ajqyaaxha56qrj7kz4935sk9hyvb5dkxb2ambxp3379p9"))))
     (properties `((upstream-name . "OneSampleMR")))
     (build-system r-build-system)
     (arguments

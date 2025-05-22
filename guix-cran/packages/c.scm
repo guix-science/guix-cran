@@ -14,8 +14,8 @@
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages image)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages machine-learning)
@@ -9293,33 +9293,6 @@ pane as a formatted HTML file.  It is also possible to get this report with a
 shiny application.  Cppcheck can spot many error types and it can also give some
 recommendations on the code.")
     (license license:gpl3)))
-
-(define-public r-cpp11tesseract
-  (package
-    (name "r-cpp11tesseract")
-    (version "5.3.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cpp11tesseract" version))
-       (sha256
-        (base32 "0y2vacy1i19kwij0g8cc2fgnlldx1ndm0783fgywzi61xg8s7lfq"))))
-    (properties `((upstream-name . "cpp11tesseract")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib))
-    (propagated-inputs (list r-digest r-curl r-cpp11))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://pacha.dev/cpp11tesseract/")
-    (synopsis "Open Source OCR Engine")
-    (description
-     "Bindings to tesseract': tesseract (<https://github.com/tesseract-ocr/tesseract>)
-is a powerful optical character recognition (OCR) engine that supports over 100
-languages.  The engine is highly configurable in order to tune the detection
-algorithms and obtain the best possible results.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-cpp11qpdf
   (package
@@ -20022,30 +19995,6 @@ components of an undirected graph (though not faster than the
 @code{components()} function of the igraph package) from the edges or the
 adjacency matrix of the graph.  Based on this one, a function to compute the
 connected components of a triangle rgl mesh is also provided.")
-    (license license:gpl3)))
-
-(define-public r-conclust
-  (package
-    (name "r-conclust")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "conclust" version))
-       (sha256
-        (base32 "1k9y1mniy7s51dmm5ia693k72s2vxk5bznxxf74s7mx9n3mg2i8r"))))
-    (properties `((upstream-name . "conclust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=conclust")
-    (synopsis "Pairwise Constraints Clustering")
-    (description
-     "There are 4 main functions in this package: @code{ckmeans()}, @code{lcvqe()},
-@code{mpckm()} and @code{ccls()}.  They take an unlabeled dataset and two lists
-of must-link and cannot-link constraints as input and produce a clustering as
-output.")
     (license license:gpl3)))
 
 (define-public r-concaveman
@@ -38973,6 +38922,33 @@ saving time and memory.  It aims to provide cheaper alternatives to common base
 R functions, as well as some additional functions.")
     (license license:expat)))
 
+(define-public r-chauboxplot
+  (package
+    (name "r-chauboxplot")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ChauBoxplot" version))
+       (sha256
+        (base32 "1j2r1fk31p3c1nx330vcrv43ab8g8ak6iyyybgxfjk7mc61b7rh6"))))
+    (properties `((upstream-name . "ChauBoxplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://tiejuntong.github.io/ChauBoxplot/")
+    (synopsis "Chauvenet-Type Boxplot")
+    (description
+     "This package provides a modified boxplot with a new fence coefficient determined
+by Lin et al. (2025).  The traditional fence coefficient k=1.5 in Tukey's
+boxplot is replaced by a coefficient based on Chauvenet's criterion, as
+described in their formula (9).  The new boxplot can be implemented in base R
+with function @code{chau_boxplot()}, and in ggplot2 with function
+@code{geom_chau_boxplot()}.")
+    (license license:gpl3)))
+
 (define-public r-chattr
   (package
     (name "r-chattr")
@@ -48885,13 +48861,13 @@ symbolic sums and other important quantities.")
 (define-public r-capybara
   (package
     (name "r-capybara")
-    (version "0.9.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "capybara" version))
        (sha256
-        (base32 "1wiafcrx1zdi0ravfnzxcygbqd6ynfzi7r1zyyjyasim4iq2bq0f"))))
+        (base32 "0k2xx580lyh7c54ay91rliz3ij2am6dbgp83ky86bia4qlb06yaq"))))
     (properties `((upstream-name . "capybara")))
     (build-system r-build-system)
     (arguments

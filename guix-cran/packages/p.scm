@@ -9030,13 +9030,13 @@ joint probability of superior performance and stability is also provided.")
 (define-public r-probably
   (package
     (name "r-probably")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "probably" version))
        (sha256
-        (base32 "1ck84r63n72nf8w4v5kfyvhk7b8r6j1hq3sdcclar1k965yphl8n"))))
+        (base32 "1rpv9mn4w52d49rr5s359is1jfyzbv3syf8fid2z3k77hbh203vy"))))
     (properties `((upstream-name . "probably")))
     (build-system r-build-system)
     (arguments
@@ -26118,13 +26118,13 @@ detailed explanation of pharmacokinetic parameters, see \"Gabrielsson and Weiner
 (define-public r-pkbioanalysis
   (package
     (name "r-pkbioanalysis")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PKbioanalysis" version))
        (sha256
-        (base32 "104sm6wpplc0cljm6xdaif6ck4macix880nzx0hp9kb0w9f91066"))))
+        (base32 "01sfgirv64rqnpyc78yyfy9hb5lrsxahgi14vs3fa96nixfmgzry"))))
     (properties `((upstream-name . "PKbioanalysis")))
     (build-system r-build-system)
     (arguments
@@ -26140,6 +26140,7 @@ detailed explanation of pharmacokinetic parameters, see \"Gabrielsson and Weiner
                              r-shinyalert
                              r-shiny
                              r-rlang
+                             r-rhandsontable
                              r-htmltools
                              r-glue
                              r-ggplot2
@@ -26152,8 +26153,7 @@ detailed explanation of pharmacokinetic parameters, see \"Gabrielsson and Weiner
                              r-checkmate
                              r-bslib
                              r-bsicons))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/OmarAshkar/PKbioanalysis")
+    (home-page "https://omarashkar.github.io/PKbioanalysis/")
     (synopsis "Pharmacokinetic Bioanalysis Experiments Design and Exploration")
     (description
      "Automate pharmacokinetic/pharmacodynamic bioanalytical procedures based on best
@@ -30059,13 +30059,13 @@ bimbam', plink', snptest', @code{LiMMBo}').")
 (define-public r-phenotyper
   (package
     (name "r-phenotyper")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhenotypeR" version))
        (sha256
-        (base32 "124gwba0s8mzw4q3n5pabwpjjvn8rx8l3rs348v6irff7f70ybfn"))))
+        (base32 "1m5qpzxj15g41x6bk4cxv90p8n8ay9sbq0a9dapb8dlwc5iy2w42"))))
     (properties `((upstream-name . "PhenotypeR")))
     (build-system r-build-system)
     (arguments
@@ -32820,6 +32820,30 @@ and Yu (2021) <doi:10.18637/jss.v098.i05>.")
 images and the export of those positions as individual images written to output
 as multi-layered tiff files.")
     (license license:gpl3)))
+
+(define-public r-persistence
+  (package
+    (name "r-persistence")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "persistence" version))
+       (sha256
+        (base32 "1hapnx4vx3whw72iw1z9cdf49xc4gy0fzivxcx13pg0iya66rnwd"))))
+    (properties `((upstream-name . "persistence")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://cran.r-project.org/package=persistence")
+    (synopsis "Optimal Graph Partition using the Persistence")
+    (description
+     "Calculate the optimal vertex partition of a graph using the persistence as
+objective function.  These subroutines have been used in Avellone et al.
+<doi:10.1007/s10288-023-00559-z>.")
+    (license license:gpl2+)))
 
 (define-public r-persianstemmer
   (package

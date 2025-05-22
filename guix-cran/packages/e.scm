@@ -24633,13 +24633,13 @@ and Arnold (2016) <doi: 10.1080/00949655.2015.1125901>.")
 (define-public r-eatgads
   (package
     (name "r-eatgads")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eatGADS" version))
        (sha256
-        (base32 "1rbgs04rk7rdgyvvx9bcs9g0ir9rlx0ilkdj0dzfdyh6ba4jbkp3"))))
+        (base32 "0zz7v6d3gbck5kx8yhz68d2c5g3ck3rfv41vrk71llkq942sa3y9"))))
     (properties `((upstream-name . "eatGADS")))
     (build-system r-build-system)
     (arguments
