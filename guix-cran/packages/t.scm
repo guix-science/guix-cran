@@ -1557,13 +1557,13 @@ Austrian catchments, Hydrological Processes, 21, 435-446.")
 (define-public r-tuvalues
   (package
     (name "r-tuvalues")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TUvalues" version))
        (sha256
-        (base32 "1v0dxwwkxzrz07yqi4k9gx9327ic6pvm5ylznv7m43rsbdmmampw"))))
+        (base32 "1xqg5a87n94bd7cfzhih5ki4718m5xalp3krqgd9hyg74xqbyz6n"))))
     (properties `((upstream-name . "TUvalues")))
     (build-system r-build-system)
     (arguments
@@ -8967,13 +8967,13 @@ personalisation and delivers a more relevant search.")
 (define-public r-traumar
   (package
     (name "r-traumar")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traumar" version))
        (sha256
-        (base32 "0rfr9v78xswnci7v3rdpfq02ssjsfhqvv8nrd09l2g1bggcpi2b4"))))
+        (base32 "1vl4ldy5qswg5hk2l2va275ihamzqr7knyvwa008x53yl22r05vg"))))
     (properties `((upstream-name . "traumar")))
     (build-system r-build-system)
     (arguments
@@ -8982,11 +8982,17 @@ personalisation and delivers a more relevant search.")
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
+                             r-stringr
                              r-rlang
                              r-purrr
+                             r-patchwork
+                             r-nortest
+                             r-nemsqar
                              r-lubridate
                              r-lifecycle
                              r-infer
+                             r-hms
+                             r-glue
                              r-ggplot2
                              r-dplyr
                              r-cli))
@@ -9008,7 +9014,12 @@ PMID:3106646), Llullaku et al. (2009) <doi:10.1186/1749-7922-4-2>, Singh et al.
 Champion et al. (1989) <doi:10.1097/00005373-198905000-00017>.  For the Relative
 Mortality Metric, see Napoli et al. (2017) <doi:10.1080/24725579.2017.1325948>,
 Schroeder et al. (2019) <doi:10.1080/10903127.2018.1489021>, and Kassar et al.
-(2016) <doi:10.1177/00031348221093563>.")
+(2016) <doi:10.1177/00031348221093563>.  For more information about methods to
+calculate over- and under-triage in trauma hospital populations and samples,
+please see the following publications - Peng & Xiang (2016)
+<doi:10.1016/j.ajem.2016.08.061>, Beam et al. (2022)
+<doi:10.23937/2474-3674/1510136>, Roden-Foreman et al. (2017)
+<doi:10.1097/JTN.0000000000000283>.")
     (license license:expat)))
 
 (define-public r-traudem
@@ -15652,13 +15663,13 @@ project template for Rstudio'.")
 (define-public r-tinyplot
   (package
     (name "r-tinyplot")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyplot" version))
        (sha256
-        (base32 "05vfd1mlm5v7grw2mbmv2zzshy94dsnygn7vl0khl09ag5ypzifv"))))
+        (base32 "0f859ig41jj40g8hhik5dxnxb34743y67lyw8cqmbmh8xljr9yc1"))))
     (properties `((upstream-name . "tinyplot")))
     (build-system r-build-system)
     (arguments
@@ -16167,13 +16178,13 @@ the hypothesis test.")
 (define-public r-timetools
   (package
     (name "r-timetools")
-    (version "1.15.4")
+    (version "1.15.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timetools" version))
        (sha256
-        (base32 "1jhkj6zpl6icnbn46g9l8qscq1scdlk91hd3nf7rdxmlsc48jxgr"))))
+        (base32 "0h045vmfv2vx2f9686bzf858gf47mdxk2pzmp8pkc6004x9wdj0q"))))
     (properties `((upstream-name . "timetools")))
     (build-system r-build-system)
     (arguments
@@ -26689,13 +26700,13 @@ been published.")
 (define-public r-tectonicr
   (package
     (name "r-tectonicr")
-    (version "0.4.6")
+    (version "0.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tectonicr" version))
        (sha256
-        (base32 "08spags0jvfpsxhbzl9vp8bdm23jd7h48a0m5g40r4cdfpph3q17"))))
+        (base32 "05xwzd2zscvlhms45k1ib50k0hpfajr0l9nz8rc78s7v5lk8h6lc"))))
     (properties `((upstream-name . "tectonicr")))
     (build-system r-build-system)
     (arguments
@@ -31309,20 +31320,20 @@ options available in the package.")
 (define-public r-tablemonster
   (package
     (name "r-tablemonster")
-    (version "1.7.6")
+    (version "1.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TableMonster" version))
        (sha256
-        (base32 "0ybvg7xxrdp6j51m0lrcqdlwh1skx3zhcb3f0wlyx4q7xiay2fx4"))))
+        (base32 "0c003yybhvkn9465pd3amfyzxxy78c7mmvw29l24bgajgfmnjy1m"))))
     (properties `((upstream-name . "TableMonster")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xtable))
-    (home-page "<https://www.youtube.com/watch?v=CM1TaNVnh58>")
+    (home-page "https://cran.r-project.org/package=TableMonster")
     (synopsis "Table Monster")
     (description
      "This package provides a user friendly interface to generation of booktab style

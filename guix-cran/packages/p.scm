@@ -5473,13 +5473,13 @@ Mitteroecker et al. (2020) <doi:10.5061/dryad.j6q573n8s> and Grunstra et al.
 (define-public r-prtree
   (package
     (name "r-prtree")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRTree" version))
        (sha256
-        (base32 "1m1npdajyrc6hcdfl8qpj0zi5wa4sh4mxsi37yz0i9v24ygdw5r8"))))
+        (base32 "0j2d9v789qsdwh3pjg382ldwbbzkh2gr98l368apmw2sfk6zcrlp"))))
     (properties `((upstream-name . "PRTree")))
     (build-system r-build-system)
     (arguments
@@ -31090,20 +31090,20 @@ circular analysis are based on methods from - Batschelet (1981)
 (define-public r-pharmr
   (package
     (name "r-pharmr")
-    (version "1.4.0")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmr" version))
        (sha256
-        (base32 "027zmkkd9jdqlbln7yisp9bf3w5zjkyvx54qz3517d8zzi121nh3"))))
+        (base32 "0225j8aqi0smf27zhb7kiy6vkkrhr4jfq29y5clzglp2rkambj3r"))))
     (properties `((upstream-name . "pharmr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list python))
-    (propagated-inputs (list r-reticulate r-altair))
+    (propagated-inputs (list r-reticulate r-cli r-altair))
     (home-page "https://github.com/pharmpy/pharmr")
     (synopsis "Interface to the 'Pharmpy' 'Pharmacometrics' Library")
     (description

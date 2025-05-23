@@ -5645,13 +5645,13 @@ Regression with Automatic Knot Selection\", <@code{arXiv:1808.01770>}.")
 (define-public r-aspect
   (package
     (name "r-aspect")
-    (version "1.0-6")
+    (version "1.0-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aspect" version))
        (sha256
-        (base32 "13pb1pslyka706v13b7hdrzzn5bxmj2l5irpd9f1pm1n8a1ivrrl"))))
+        (base32 "1y0xvwn8ddw2mpfqnwcaa49197yr7mfkmrf7g2f9qs66wai89v27"))))
     (properties `((upstream-name . "aspect")))
     (build-system r-build-system)
     (arguments
@@ -10482,13 +10482,13 @@ communication.")
 (define-public r-apm
   (package
     (name "r-apm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apm" version))
        (sha256
-        (base32 "0yqhxyjinb5f8i6pnlrm3fq5a3nzdfz0qrc0mk6r5dgfh4s5gzxg"))))
+        (base32 "08zpj6jxyjynv3riib2iyxlzz1vjrp1zr86apza8qx1x38f1adw4"))))
     (properties `((upstream-name . "apm")))
     (build-system r-build-system)
     (arguments
@@ -10503,7 +10503,7 @@ communication.")
                              r-fwb
                              r-chk))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/tl2624/apm")
+    (home-page "https://github.com/tl2624/apm/")
     (synopsis "Averaged Prediction Models")
     (description
      "In panel data settings, specifies set of candidate models, fits them to data
@@ -13951,13 +13951,13 @@ images.")
 (define-public r-anacor
   (package
     (name "r-anacor")
-    (version "1.1-4")
+    (version "1.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anacor" version))
        (sha256
-        (base32 "0wf9kb8389gc9jy32dr8ap78lychgjnd19jix7wzln4yx78ypqnq"))))
+        (base32 "1kqhahkqfpb8x133l48mywlfdd0bq0f1fzpzmrlp5000xbdjg0g3"))))
     (properties `((upstream-name . "anacor")))
     (build-system r-build-system)
     (arguments

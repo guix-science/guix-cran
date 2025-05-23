@@ -2027,13 +2027,13 @@ regression estimator is calculated with the usual orderings.")
 (define-public r-isotone
   (package
     (name "r-isotone")
-    (version "1.1-1")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isotone" version))
        (sha256
-        (base32 "0kpzcfxac3yrvw4rszzc99r1mw78pq6bsgg0h332jamwvffhasgn"))))
+        (base32 "0jbcprxz7y6p12pplcr96vkj04s4dj3j4g069jvjbxbd9zln32x8"))))
     (properties `((upstream-name . "isotone")))
     (build-system r-build-system)
     (arguments

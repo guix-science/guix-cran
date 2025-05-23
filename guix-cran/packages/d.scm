@@ -10769,6 +10769,35 @@ CRAN packages is from the RStudio CRAN mirror', see
 <https://bioconductor.org/packages/stats/>.")
     (license license:artistic2.0)))
 
+(define-public r-dlssm
+  (package
+    (name "r-dlssm")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DLSSM" version))
+       (sha256
+        (base32 "16vfl6njyvia7020c0cr9vi7j86z9r3l8ry8gppd5ji4icd3x639"))))
+    (properties `((upstream-name . "DLSSM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DLSSM")
+    (synopsis "Dynamic Logistic State Space Prediction Model")
+    (description
+     "This package implements the dynamic logistic state space model for binary
+outcome data proposed by Jiang et al. (2021) <doi:10.1111/biom.13593>.  It
+provides a computationally efficient way to update the prediction whenever new
+data becomes available.  It allows for both time-varying and time-invariant
+coefficients, and use cubic smoothing splines to model varying coefficients.
+The smoothing parameters are objectively chosen by maximum likelihood.  The
+model is updated using batch data accumulated at pre-specified time intervals.")
+    (license license:gpl3)))
+
 (define-public r-dlsem
   (package
     (name "r-dlsem")

@@ -7262,13 +7262,13 @@ information about cromwell', visit <http://cromwell.readthedocs.io>.")
 (define-public r-crmreg
   (package
     (name "r-crmreg")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crmReg" version))
        (sha256
-        (base32 "0y6xb0sxhsqcmcwbkwvk70snwqhxgzl513ld9dp53cm88qdwaj1r"))))
+        (base32 "121fahzpbci7y944fv2z764n6ymvb3qfnzyqaj737ni3i9b75xiv"))))
     (properties `((upstream-name . "crmReg")))
     (build-system r-build-system)
     (arguments
@@ -9347,13 +9347,13 @@ and scientific computing.")
 (define-public r-cpp11armadillo
   (package
     (name "r-cpp11armadillo")
-    (version "0.5.0")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpp11armadillo" version))
        (sha256
-        (base32 "0vym0v3ypd4g6rq6s7200f3zg9lfwa6zapk7ph1hjhrnp7kvvdcs"))))
+        (base32 "0gck7wzp4z75z57xxg0k4bcc2my9xmzy387msvmlapmq0mw6yxfz"))))
     (properties `((upstream-name . "cpp11armadillo")))
     (build-system r-build-system)
     (arguments
@@ -39643,13 +39643,13 @@ univariate mean against adversarial attacks: <@code{arXiv:2105.10417>}.")
 (define-public r-changepointga
   (package
     (name "r-changepointga")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "changepointGA" version))
        (sha256
-        (base32 "1rcpscn60skmwmjrkc0zvdzvlsrv9f1cyxbv71gj6cw1jvrg8kfn"))))
+        (base32 "1w55fbzkdn13fk88z7s66nzimc74ycwjhbq1c04y51ibgx30wab4"))))
     (properties `((upstream-name . "changepointGA")))
     (build-system r-build-system)
     (arguments
@@ -40897,13 +40897,13 @@ uncertainty analysis and plotting functions are provided.")
 (define-public r-cfa
   (package
     (name "r-cfa")
-    (version "0.10-1")
+    (version "0.10-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cfa" version))
        (sha256
-        (base32 "1hmahwi60qiwf4g50d3cnhgvdbnv0q0shfalzxisv87xxr586mlj"))))
+        (base32 "18dh5xhirh9jxbgxisff2860dhjs0wjsbpar456xr6c4bbrp5v0y"))))
     (properties `((upstream-name . "cfa")))
     (build-system r-build-system)
     (arguments
@@ -43605,13 +43605,13 @@ assumption of two multivariate variable.")
 (define-public r-cdcplaces
   (package
     (name "r-cdcplaces")
-    (version "1.1.9")
+    (version "1.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDCPLACES" version))
        (sha256
-        (base32 "1926wxfgiisd5z7pjrqf3clw0ilcdbc1qz6ij09p2cxl4k1s6mmf"))))
+        (base32 "1rvmdli7dn5ha3lzxqvf7322kxswb0z1lpi650c2ml8qcndglxhd"))))
     (properties `((upstream-name . "CDCPLACES")))
     (build-system r-build-system)
     (arguments
@@ -48861,13 +48861,13 @@ symbolic sums and other important quantities.")
 (define-public r-capybara
   (package
     (name "r-capybara")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "capybara" version))
        (sha256
-        (base32 "0k2xx580lyh7c54ay91rliz3ij2am6dbgp83ky86bia4qlb06yaq"))))
+        (base32 "1w62wkm4wxd42l1gv3wj3h0l4z9fflhvnv8rv2j6gdgxvwd6zvc8"))))
     (properties `((upstream-name . "capybara")))
     (build-system r-build-system)
     (arguments
@@ -51486,13 +51486,13 @@ microarray expression data using C3NET.")
 (define-public r-c3dr
   (package
     (name "r-c3dr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "c3dr" version))
        (sha256
-        (base32 "0qrl26r8asblchhglp2i4r4vhdvcd4d227670ckpaigjank7vz1k"))))
+        (base32 "0rwc7snxdqyjahvn56byprd158pnw5f0665wmld6jiqbs407z4xh"))))
     (properties `((upstream-name . "c3dr")))
     (build-system r-build-system)
     (arguments

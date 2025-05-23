@@ -5096,23 +5096,19 @@ linear models.  For further details, see Hanson et al. (2023)
 (define-public r-surveytable
   (package
     (name "r-surveytable")
-    (version "0.9.7")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveytable" version))
        (sha256
-        (base32 "0cp1gba3lbjnb94ra86c541dvmcg3x4fyc3sw6ssfw5dhnxm4h0a"))))
+        (base32 "17s5wca639f8mr7d6rpvxdcv979mr4r0avz953zfmc2w4y4jl2dz"))))
     (properties `((upstream-name . "surveytable")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survey
-                             r-magrittr
-                             r-lifecycle
-                             r-huxtable
-                             r-glue
+    (propagated-inputs (list r-survey r-magrittr r-huxtable r-glue
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://cdcgov.github.io/surveytable/")
@@ -31459,13 +31455,13 @@ Based on the work described in Rodriguez-Alvarez et al. (2015)
 (define-public r-sooty
   (package
     (name "r-sooty")
-    (version "0.1.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sooty" version))
        (sha256
-        (base32 "1mp88bnsi1f3nngcpy0dpxqz75jfg6p0n6rsdcinbba4xfmjvmy7"))))
+        (base32 "14lpd8spqkfnhpnb2z8i43g1w2z518144mzal5zlbsqv7s8jksmx"))))
     (properties `((upstream-name . "sooty")))
     (build-system r-build-system)
     (arguments
@@ -31485,7 +31481,7 @@ Based on the work described in Rodriguez-Alvarez et al. (2015)
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-memoise r-dplyr r-curl r-cachem r-arrow))
+    (propagated-inputs (list r-tibble r-s7 r-dplyr r-arrow))
     (native-inputs (list esbuild))
     (home-page "https://github.com/mdsumner/sooty")
     (synopsis
@@ -31495,15 +31491,19 @@ Based on the work described in Rodriguez-Alvarez et al. (2015)
 properties.  Commonly used data sources of sea surface temperature, sea ice
 concentration, and altimetry products such as sea surface height and sea surface
 currents are cached in object storage on the Pawsey Supercomputing Research
-Centre facility.  Functions to retrieve these object storage catalogues are
-provided.  The catalogues include complete collections of datasets Reynolds et
-al. (2008) \"NOAA Optimum Interpolation Sea Surface Temperature (OISST) Analysis,
-Version 2.1\" <doi:10.7289/V5SQ8XB5>, Spreen et al. (2008) \"Artist Advanced
-Microwave Scanning Radiometer for Earth Observing System (AMSR-E) sea ice
-concentration\" <doi:10.1029/2005JC003384>.  In future releases helpers will be
-added to identify particular data collections and target specific dates for
-earth observation data for reading, as well as helpers to retrieve data set
-citation and provenance details.")
+Centre facility.  Patterns of working to retrieve data from these object storage
+catalogues are described.  The catalogues include complete collections of
+datasets Reynolds et al. (2008) \"NOAA Optimum Interpolation Sea Surface
+Temperature (OISST) Analysis, Version 2.1\" <doi:10.7289/V5SQ8XB5>, Spreen et al.
+(2008) \"Artist Advanced Microwave Scanning Radiometer for Earth Observing System
+(AMSR-E) sea ice concentration\" <doi:10.1029/2005JC003384>.  In future releases
+helpers will be added to identify particular data collections and target
+specific dates for earth observation data for reading, as well as helpers to
+retrieve data set citation and provenance details.  This work was supported by
+resources provided by the Pawsey Supercomputing Research Centre with funding
+from the Australian Government and the Government of Western Australia.  This
+software was developed by the Integrated Digital East Antarctica program of the
+Australian Antarctic Division.")
     (license license:expat)))
 
 (define-public r-sono
@@ -35000,13 +35000,13 @@ the correlation coefficient under sampling from a bivariate normal distribution.
 (define-public r-smotewb
   (package
     (name "r-smotewb")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SMOTEWB" version))
        (sha256
-        (base32 "1vkkzp8vcr1pf010871wl5c6d9knryx2lvqcxn6nfy42ffbr5yx9"))))
+        (base32 "0720rjfxblfp4w88qf344xq4gjvzkznhw5fj3waklkbcaajpjp5k"))))
     (properties `((upstream-name . "SMOTEWB")))
     (build-system r-build-system)
     (arguments
@@ -35020,7 +35020,7 @@ the correlation coefficient under sampling from a bivariate normal distribution.
 SaÄlam, M. A. Cengiz (2022) <doi:10.1016/j.eswa.2022.117023>.  It is a
 SMOTE-based resampling technique which creates synthetic data on the links
 between nearest neighbors.  SMOTEWB uses boosting weights to determine where to
-generate new samples and automatically decides the number of neighbors for eacg
+generate new samples and automatically decides the number of neighbors for each
 sample.  It is robust to noise and outperforms most of the alternatives
 according to Matthew Correlation Coefficient metric.  Alternative resampling
 methods are also available in the package.")
@@ -58258,13 +58258,13 @@ provided via bootstrapping.")
 (define-public r-semds
   (package
     (name "r-semds")
-    (version "0.9-6")
+    (version "0.9-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semds" version))
        (sha256
-        (base32 "10kvcmcy6qa2r5sram6azqgzl528rghfxgw2f2bq2fvhhq127dzq"))))
+        (base32 "0szfcnwg24a2fd41a6zl9c008wrhg2y1g7iyj2grba8knch1b2ac"))))
     (properties `((upstream-name . "semds")))
     (build-system r-build-system)
     (arguments
@@ -60963,13 +60963,13 @@ checking the case-crossover code.")
 (define-public r-seas
   (package
     (name "r-seas")
-    (version "0.6-0")
+    (version "0.7-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seas" version))
        (sha256
-        (base32 "0cr4lsbd599gzjzc6px7hkm3np34zh6sjzgzamlp4mdrphpvlvn7"))))
+        (base32 "1bi6dm90cwk7lsr9d895jfm13bpy6k5q0yyi6m2f4i2nbfj2fcnn"))))
     (properties `((upstream-name . "seas")))
     (build-system r-build-system)
     (arguments
@@ -61422,13 +61422,13 @@ Model (SDTM) controlled terminology, 2025-03-25.  Source:
 (define-public r-sdtm-oak
   (package
     (name "r-sdtm-oak")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdtm.oak" version))
        (sha256
-        (base32 "130rbc36j3y75cfrfx9n5bryablb43a1w3aafji41n8ac0wa629y"))))
+        (base32 "0gryn2xxn63vmsb69qd2jpzzkikmyqmw5jzbk26nd6b64a5i33cq"))))
     (properties `((upstream-name . "sdtm.oak")))
     (build-system r-build-system)
     (arguments

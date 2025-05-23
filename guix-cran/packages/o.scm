@@ -11261,13 +11261,13 @@ at <https://ohdsi.github.io/@code{OhdsiShinyAppBuilder/>}.")
 (define-public r-ohdsireportgenerator
   (package
     (name "r-ohdsireportgenerator")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OhdsiReportGenerator" version))
        (sha256
-        (base32 "0ihsykh1lyr2h3dx1jnd6vw54kz8f66y6s5zzzlkmbyfy2sk48sy"))))
+        (base32 "1879fwxgv5nzn1ajy6pyvckxy7s5lmc8hngans13pp1gh4nm36k7"))))
     (properties `((upstream-name . "OhdsiReportGenerator")))
     (build-system r-build-system)
     (arguments

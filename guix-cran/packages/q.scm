@@ -4401,13 +4401,13 @@ configurations.")
 (define-public r-qra
   (package
     (name "r-qra")
-    (version "0.2.7")
+    (version "0.2.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qra" version))
        (sha256
-        (base32 "0wx0lz8a7qc1fdpvgyfhpbryy7wk7yi90ii2yirh57dvpyfq54m0"))))
+        (base32 "0xw6y2ryg7j1j03j7rqllqzvcpwr8w7ixmcgb6lsivq1pja9fqvx"))))
     (properties `((upstream-name . "qra")))
     (build-system r-build-system)
     (arguments

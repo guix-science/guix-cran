@@ -8669,6 +8669,44 @@ in 2012 by adopting the idea of moment matching optimization related by Hoyland
 and Wallace (2001) <doi: 10.1287/mnsc.47.2.295.9834>.")
     (license license:gpl3+)))
 
+(define-public r-forestdata
+  (package
+    (name "r-forestdata")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forestdata" version))
+       (sha256
+        (base32 "1xkl6kv0y863ksd2p6aj2cf377v1kdz3py37vylfawjq5jawqzyy"))))
+    (properties `((upstream-name . "forestdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-terra
+                             r-stringr
+                             r-stringi
+                             r-sf
+                             r-purrr
+                             r-lifecycle
+                             r-glue
+                             r-foreign
+                             r-dplyr
+                             r-countrycode
+                             r-cli
+                             r-archive))
+    (home-page "https://cidree.github.io/forestdata/")
+    (synopsis "Download Forestry Data")
+    (description
+     "This package provides functions for downloading forestry and land use data for
+use in spatial analysis.  This packages offers a user-friendly solution to
+quickly obtain datasets such as forest height, forest types, tree species under
+various climate change scenarios, or land use data among others.")
+    (license license:gpl3+)))
+
 (define-public r-forestcontrol
   (package
     (name "r-forestcontrol")
@@ -10879,13 +10917,13 @@ to calculate equilibrium stability.")
 (define-public r-fluxible
   (package
     (name "r-fluxible")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxible" version))
        (sha256
-        (base32 "1jgh85v19xqsj1d4d3apjxpzsbifxi1sn2giwljgq0y5whfjfnfs"))))
+        (base32 "0qd3qb769khjap428rmgs7qrh20s75jcs8v1chqfx5g07853lz9d"))))
     (properties `((upstream-name . "fluxible")))
     (build-system r-build-system)
     (arguments
@@ -23891,13 +23929,13 @@ regressions, see Lederer & Vogt (2021, JMLR)
 (define-public r-fars
   (package
     (name "r-fars")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FARS" version))
        (sha256
-        (base32 "13wbbq34zcmscchwbvrzzimhdxi4w9cbwmsrfyp21wfshcxvapy8"))))
+        (base32 "1qc5df271y1sqx2z334l33mxj16h6xj41953kmzvs2pccnp7fwjm"))))
     (properties `((upstream-name . "FARS")))
     (build-system r-build-system)
     (arguments
@@ -23905,6 +23943,7 @@ regressions, see Lederer & Vogt (2021, JMLR)
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-syscselection
+                             r-stringr
                              r-sn
                              r-reshape2
                              r-quantreg

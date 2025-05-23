@@ -15359,13 +15359,13 @@ model\"<doi:10.1080/10543406.2021.1934854>.")
 (define-public r-glcmtextures
   (package
     (name "r-glcmtextures")
-    (version "0.5")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GLCMTextures" version))
        (sha256
-        (base32 "0342zfb5lkhf6z6zni66qv6qxj3kk716hwnspav6y56kwik106vy"))))
+        (base32 "1hvb76zdcdmbzai1ddb0067my1bl11vh50230nlz1whby7k5q6ls"))))
     (properties `((upstream-name . "GLCMTextures")))
     (build-system r-build-system)
     (arguments
@@ -20979,20 +20979,21 @@ diagnostic plots and an array of four standard diagnostic plots.")
 (define-public r-gglinedensity
   (package
     (name "r-gglinedensity")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gglinedensity" version))
        (sha256
-        (base32 "040pdr4ly73ziv4c8livr17ihinwvl031ig9aj1r8ghz7yrsl0yd"))))
+        (base32 "1xvnickw0ws8b913qcmsykmknmq83gnsjysw7wq8d5aaxbavmqgp"))))
     (properties `((upstream-name . "gglinedensity")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (propagated-inputs (list r-vctrs
+    (propagated-inputs (list r-vdiffr
+                             r-vctrs
                              r-scales
                              r-rlang
                              r-lifecycle
@@ -26259,13 +26260,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "0n6mxmj4rincjpwddrvlglvm1ldaa8jhvb8v0ajskhijhbx09xkg"))))
+        (base32 "0vm09g74n967m94yv634dlzfv9g3s9hqrhxfvcgxk95vxpdnvr7i"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (arguments

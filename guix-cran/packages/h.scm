@@ -5090,13 +5090,13 @@ best-known lover of doughnuts.")
 (define-public r-homals
   (package
     (name "r-homals")
-    (version "1.0-10")
+    (version "1.0-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "homals" version))
        (sha256
-        (base32 "0kjcy3nv28jrir6a4pf8y82908p5snx8wha8h9lip4y436n1f4iw"))))
+        (base32 "00lfcvllxzp1fa6981amdvr56rbbbi6sgwqsbf7hpnxxx7ncpvh2"))))
     (properties `((upstream-name . "homals")))
     (build-system r-build-system)
     (arguments

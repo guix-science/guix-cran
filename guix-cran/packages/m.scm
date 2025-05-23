@@ -17191,26 +17191,29 @@ function from the caret package.")
 (define-public r-modelfree
   (package
     (name "r-modelfree")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelfree" version))
        (sha256
-        (base32 "08kqc5a5ray0wgnd8c6d1frqzg9q990j1p78j7j7c5xll402c8ns"))))
+        (base32 "09lwcwm1va09w2xwf3adphrg1m6yqdbw8gl582c1dnw5p3c20ssz"))))
     (properties `((upstream-name . "modelfree")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sparsem r-polynomf))
-    (home-page "www.R-project.org")
+    (home-page
+     "https://personalpages.manchester.ac.uk/staff/d.h.foster/software-modelfree/latest/home.html")
     (synopsis "Model-Free Estimation of a Psychometric Function")
     (description
      "Local linear estimation of psychometric functions.  Provides functions for
 nonparametric estimation of a psychometric function and for estimation of a
 derived threshold and slope, and their standard deviations and confidence
-intervals.")
+intervals.For more details see Zychaluk and Foster (2009)
+<doi:10.3758/APP.71.6.1414> and Foster and Zychaluk (2007)
+<doi:10.1109/MSP.2007.4286564>.")
     (license license:lgpl3+)))
 
 (define-public r-modelfactory
@@ -21009,13 +21012,13 @@ studies.")
 (define-public r-mlpack
   (package
     (name "r-mlpack")
-    (version "4.6.1")
+    (version "4.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlpack" version))
        (sha256
-        (base32 "0vzs0h64hgbzc5xghg4l4q9308sn0ydnrb1wkg59af8c4l7fzf8d"))))
+        (base32 "0bd0ys93bdp2mag2mp7dk7bml25fy21m0wqksh7wn7w4bdxnxai7"))))
     (properties `((upstream-name . "mlpack")))
     (build-system r-build-system)
     (arguments
@@ -21886,19 +21889,20 @@ metrics with confidence intervals.")
 (define-public r-mlergm
   (package
     (name "r-mlergm")
-    (version "0.8")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlergm" version))
        (sha256
-        (base32 "0bpdljmbn4lfm263jcsp0hrknixn49m7hqsx0jjk3pfwhgjlajh8"))))
+        (base32 "0rh31vv5f22fp1na2m12p24d5fjkd1y0dpaim6rbklwf52j24d7c"))))
     (properties `((upstream-name . "mlergm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-stringr
+                             r-statnet-common
                              r-sna
                              r-reshape2
                              r-plyr
@@ -21919,10 +21923,9 @@ multilevel models where the set of nodes is nested within known blocks.  The
 estimation method uses Monte-Carlo maximum likelihood estimation (MCMLE) methods
 to estimate a variety of canonical or curved exponential family models for
 binary random graphs.  MCMLE methods for curved exponential-family random graph
-models can be found in Hunter and Handcock (2006) <DOI:
-10.1198/106186006X133069>.  The package supports parallel computing, and
-provides methods for assessing goodness-of-fit of models and visualization of
-networks.")
+models can be found in Hunter and Handcock (JCGS, 2006).  The package supports
+parallel computing, and provides methods for assessing goodness-of-fit of models
+and visualization of networks.")
     (license license:gpl3)))
 
 (define-public r-mlelod
@@ -29238,13 +29241,13 @@ variable in an unbiased way.")
 (define-public r-microinverterdata
   (package
     (name "r-microinverterdata")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microinverterdata" version))
        (sha256
-        (base32 "14qh4cm14n60a130b62p7wxfs7jqsc9y9vzvkpa32c1qwcfc2skq"))))
+        (base32 "09gjwbwq7nn45zkxn0hylf3vngaklaqj4p73a293nn534dhnmxv2"))))
     (properties `((upstream-name . "microinverterdata")))
     (build-system r-build-system)
     (arguments

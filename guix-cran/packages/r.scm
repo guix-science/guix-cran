@@ -14593,13 +14593,13 @@ time-series data.")
 (define-public r-rolap
   (package
     (name "r-rolap")
-    (version "2.5.1")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolap" version))
        (sha256
-        (base32 "1j538xnfilrhhh3rk8rr1941353kn96a469h810h0h6l1cn5z2vp"))))
+        (base32 "0vgcg0hbbcwkqxbnkavgqhrfi3ps982473751732if5700ygqpvn"))))
     (properties `((upstream-name . "rolap")))
     (build-system r-build-system)
     (arguments
@@ -14610,7 +14610,6 @@ time-series data.")
                              r-tidyselect
                              r-tidyr
                              r-tibble
-                             r-starschemar
                              r-snakecase
                              r-sf
                              r-rlang
@@ -19668,13 +19667,13 @@ a list object.")
 (define-public r-rmzqc
   (package
     (name "r-rmzqc")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmzqc" version))
        (sha256
-        (base32 "0ln45f3cm9vzjxgwqlxbd5rgdgzbmi02l0vyinm7139krxgfqdzh"))))
+        (base32 "1jv2b4dmxvpxssc81bhmf87xy0q4421a2z0h8m7svyy47hc0p9kk"))))
     (properties `((upstream-name . "rmzqc")))
     (build-system r-build-system)
     (arguments
@@ -27294,13 +27293,13 @@ hypergraph centrality measures.")
 (define-public r-rhymer
   (package
     (name "r-rhymer")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rhymer" version))
        (sha256
-        (base32 "0pjazv3daysg14ikilq0gly1d9fl1rfs3j92wg67wyy8hwqd74zx"))))
+        (base32 "1pcbffrpyz5hp38ln5z63rg1h7f5lshydn8vj08l5q4l37zxd2k5"))))
     (properties `((upstream-name . "rhymer")))
     (build-system r-build-system)
     (arguments
@@ -42359,36 +42358,6 @@ plots).")
 <https://dracor.org/documentation/api>.")
     (license license:gpl3+)))
 
-(define-public r-rdpower
-  (package
-    (name "r-rdpower")
-    (version "2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rdpower" version))
-       (sha256
-        (base32 "0v598jqka5skffbzb4knfmm5hfbg6gmwjgbclv774wrxxn62sj4z"))))
-    (properties `((upstream-name . "rdpower")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdrobust))
-    (home-page "https://cran.r-project.org/package=rdpower")
-    (synopsis "Power Calculations for RD Designs")
-    (description
-     "The regression discontinuity (RD) design is a popular quasi-experimental design
-for causal inference and policy evaluation.  The rdpower package provides tools
-to perform power, sample size and MDE calculations in RD designs:
-@code{rdpower()} calculates the power of an RD design, @code{rdsampsi()}
-calculates the required sample size to achieve a desired power and
-@code{rdmde()} calculates minimum detectable effects.  See Cattaneo, Titiunik
-and Vazquez-Bare (2019)
-<https://rdpackages.github.io/references/Cattaneo-Titiunik-@code{VazquezBare_2019_Stata.pdf>}
-for further methodological details.")
-    (license license:gpl2)))
-
 (define-public r-rdp
   (package
     (name "r-rdp")
@@ -42564,36 +42533,6 @@ about Germany, translations of German works, and the works of German-speaking
 emigrants published abroad between 1933 and 1945.")
     (license license:expat)))
 
-(define-public r-rdmulti
-  (package
-    (name "r-rdmulti")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rdmulti" version))
-       (sha256
-        (base32 "1bx97r6d4rfq2y7h85j9g1hqmyf7qmmr7faw4gjxnlh1q281fvdv"))))
-    (properties `((upstream-name . "rdmulti")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdrobust r-ggplot2))
-    (home-page "https://cran.r-project.org/package=rdmulti")
-    (synopsis "Analysis of RD Designs with Multiple Cutoffs or Scores")
-    (description
-     "The regression discontinuity (RD) design is a popular quasi-experimental design
-for causal inference and policy evaluation.  The rdmulti package provides tools
-to analyze RD designs with multiple cutoffs or scores: @code{rdmc()} estimates
-pooled and cutoff specific effects for multi-cutoff designs, @code{rdmcplot()}
-draws RD plots for multi-cutoff designs and @code{rdms()} estimates effects in
-cumulative cutoffs or multi-score designs.  See Cattaneo, Titiunik and
-Vazquez-Bare (2020)
-<https://rdpackages.github.io/references/Cattaneo-Titiunik-@code{VazquezBare_2020_Stata.pdf>}
-for further methodological details.")
-    (license license:gpl2)))
-
 (define-public r-rdml
   (package
     (name "r-rdml")
@@ -42652,40 +42591,6 @@ variables for different underlying measures.  Furthermore, it provides a method
 to estimate the (SI)-rearrangement copula using empirical checkerboard copulas.
 It is based on the theoretical results presented in Strothmann et al. (2022)
 <@code{arXiv:2201.03329>} and Strothmann (2021) <doi:10.17877/DE290R-22733>.")
-    (license license:gpl2)))
-
-(define-public r-rdlocrand
-  (package
-    (name "r-rdlocrand")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rdlocrand" version))
-       (sha256
-        (base32 "0kh66bvfg7jq2rj6zx541xrr887f8jfyinhl6jf21vizcijyf3k6"))))
-    (properties `((upstream-name . "rdlocrand")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sandwich r-aer))
-    (home-page "https://cran.r-project.org/package=rdlocrand")
-    (synopsis "Local Randomization Methods for RD Designs")
-    (description
-     "The regression discontinuity (RD) design is a popular quasi-experimental design
-for causal inference and policy evaluation.  Under the local randomization
-approach, RD designs can be interpreted as randomized experiments inside a
-window around the cutoff.  This package provides tools to perform randomization
-inference for RD designs under local randomization: @code{rdrandinf()} to
-perform hypothesis testing using randomization inference, @code{rdwinselect()}
-to select a window around the cutoff in which randomization is likely to hold,
-@code{rdsensitivity()} to assess the sensitivity of the results to different
-window lengths and null hypotheses and @code{rdrbounds()} to construct Rosenbaum
-bounds for sensitivity to unobserved confounders.  See Cattaneo, Titiunik and
-Vazquez-Bare (2016)
-<https://rdpackages.github.io/references/Cattaneo-Titiunik-@code{VazquezBare_2016_Stata.pdf>}
-for further methodological details.")
     (license license:gpl2)))
 
 (define-public r-rdlearn
@@ -55075,13 +54980,13 @@ abbreviation of R @code{agGrid}'.")
 (define-public r-ragflowchainr
   (package
     (name "r-ragflowchainr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RAGFlowChainR" version))
        (sha256
-        (base32 "0c0l6wqdf86q71h4ryyxnl7nbpp96dm9vpdhcrpczgni28a47k65"))))
+        (base32 "09g4xwp8csyjrsxb4lagmrvkczq4r08vprs8xgzp7z8czf8xc99w"))))
     (properties `((upstream-name . "RAGFlowChainR")))
     (build-system r-build-system)
     (arguments
@@ -56509,13 +56414,13 @@ S3/S4 generics and methods for dispatch.  Also allows piping for R6 objects.")
 (define-public r-r5r
   (package
     (name "r-r5r")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r5r" version))
        (sha256
-        (base32 "1yzd1qskkcjw5c9yjj88817mysqsssyrddjq4jhqq1x48sl4pps1"))))
+        (base32 "1rprwm7fxk9mh6xi8d23kbq9v6ip37ag7akq6h1dadcfhpmcfnja"))))
     (properties `((upstream-name . "r5r")))
     (build-system r-build-system)
     (arguments

@@ -115,13 +115,13 @@ al. (2021) <doi:10.1016/j.wocn.2021.101096> and Wilson Black et al. (2023)
 (define-public r-nzilbb-labbcat
   (package
     (name "r-nzilbb-labbcat")
-    (version "1.3-0")
+    (version "1.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nzilbb.labbcat" version))
        (sha256
-        (base32 "1nrd67d78klhnbslrpqaigbv1qrvl2nr6l9qhmgm2j34qpjrv7n5"))))
+        (base32 "18x12i5c16c81md99a20iyhpd5jgwk4vmxz3s3rmvwpq241nsl90"))))
     (properties `((upstream-name . "nzilbb.labbcat")))
     (build-system r-build-system)
     (arguments
@@ -135,7 +135,7 @@ al. (2021) <doi:10.1016/j.wocn.2021.101096> and Wilson Black et al. (2023)
 the New Zealand Institute of Language, Brain and Behaviour (NZILBB) - see
 <https://labbcat.canterbury.ac.nz>.  This package defines functions for
 accessing corpus data in a @code{LaBB-CAT} instance.  You must have at least
-version 20230224.1731 of @code{LaBB-CAT} to use this package.  For more
+version 20230818.1400 of @code{LaBB-CAT} to use this package.  For more
 information about @code{LaBB-CAT}', see Robert Fromont and Jennifer Hay (2008)
 <doi:10.3366/E1749503208000142> or Robert Fromont (2017)
 <doi:10.1016/j.csl.2017.01.004>.")
@@ -17116,13 +17116,13 @@ package).")
 (define-public r-naspaclust
   (package
     (name "r-naspaclust")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naspaclust" version))
        (sha256
-        (base32 "1p4ilv2z5140h4kdix2w1v32vz1n8v33wq0fhc8n8mi7baknhd1i"))))
+        (base32 "0mb0jsjpmigalnhxldhfr68gri8qz5d1ls36q479nqcvvdc31y4h"))))
     (properties `((upstream-name . "naspaclust")))
     (build-system r-build-system)
     (arguments
