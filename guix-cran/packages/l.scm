@@ -46,13 +46,13 @@
 (define-public r-lzstring
   (package
     (name "r-lzstring")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lzstring" version))
        (sha256
-        (base32 "1vyh0lbnz2mpz2zs3pbh9dbabh9k774hz5qv3ir84blmkmfi1hmf"))))
+        (base32 "02ij8nrgwzz4201kiskvsh101y2qj896k1h7kqhf5zp2j98pipmr"))))
     (properties `((upstream-name . "lzstring")))
     (build-system r-build-system)
     (arguments
@@ -1300,13 +1300,13 @@ tabulated data.")
 (define-public r-lsx
   (package
     (name "r-lsx")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSX" version))
        (sha256
-        (base32 "143ab5hkgwxs3pgk8ihdsdala1zyan11d9n567f8b7jrxj86adb1"))))
+        (base32 "0pyh3l9wzycy0xk0rfdif5paraixzffvld2s0kp94jqis515axlc"))))
     (properties `((upstream-name . "LSX")))
     (build-system r-build-system)
     (arguments

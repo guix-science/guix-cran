@@ -31137,6 +31137,28 @@ the CDISC SDTM implementation guide, accessible by creating a free account on
 <https://www.cdisc.org/>.")
     (license license:asl2.0)))
 
+(define-public r-pharmaverseraw
+  (package
+    (name "r-pharmaverseraw")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pharmaverseraw" version))
+       (sha256
+        (base32 "1zrhckdbhf30lvf2lpr7208nkv4yb7547asr8clnyrhxpfzm9qp9"))))
+    (properties `((upstream-name . "pharmaverseraw")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://pharmaverse.github.io/pharmaverseraw/")
+    (synopsis "Raw Data for 'pharmaversesdtm' Package")
+    (description
+     "This package provides a set of raw datasets used to create SDTM domains in
+pharmaversesdtm package.")
+    (license license:asl2.0)))
+
 (define-public r-pharmaverseadam
   (package
     (name "r-pharmaverseadam")

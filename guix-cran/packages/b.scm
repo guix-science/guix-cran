@@ -5300,27 +5300,36 @@ GJRM package.")
 (define-public r-brazilmet
   (package
     (name "r-brazilmet")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BrazilMet" version))
        (sha256
-        (base32 "0d948as65nayy7k0hbfbwp7abip3czls1976af2mg0j75fyfg77c"))))
+        (base32 "1j9x99vsix4rs1all2qbn8g2q10a203qb4ryjbk8fl4d6hgqms4h"))))
     (properties `((upstream-name . "BrazilMet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-stringr r-readxl r-dplyr))
+    (propagated-inputs (list r-tibble
+                             r-terra
+                             r-stringr
+                             r-stringi
+                             r-sf
+                             r-readxl
+                             r-lubridate
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=BrazilMet")
     (synopsis
      "Download and Processing of Automatic Weather Stations (AWS) Data of INMET-Brazil")
     (description
-     "This package provides a compilation of functions to download and processing AWS
-data of INMET-Brazil, with the purpose of reference evapotranspiration (ETo)
-estimation.  The package aims to make meteorological and agricultural data
-analysis more parsimonious.")
+     "This package provides a collection of functions for downloading and processing
+automatic weather station (AWS) data from INMET (Brazilâs National Institute
+of Meteorology), designed to support the estimation of reference
+evapotranspiration (ETo).  The package facilitates streamlined access to
+meteorological data and aims to simplify analyses in agricultural and
+environmental contexts.")
     (license license:gpl3)))
 
 (define-public r-brazilcrime
@@ -16169,13 +16178,13 @@ prefers Fira', and IQSS requires Libertinus'.")
 (define-public r-binaryrl
   (package
     (name "r-binaryrl")
-    (version "0.8.0")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binaryRL" version))
        (sha256
-        (base32 "0va9mh9l960iifplbjghc5ykq98k3bsbypqgimm0vdgmpb72dw3g"))))
+        (base32 "02y2a3xh3n1pfvzkmx3f7kr76yczn7wfg5ppdymhr8bh6vi1rzcm"))))
     (properties `((upstream-name . "binaryRL")))
     (build-system r-build-system)
     (arguments

@@ -203,13 +203,13 @@ and direct communication with Zabbix API from R'.")
 (define-public r-rywaasb
   (package
     (name "r-rywaasb")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rYWAASB" version))
        (sha256
-        (base32 "1672h1c48m71sjyhk2hdmmnl8z864dryw5y852qijacyck7726hs"))))
+        (base32 "1xnx4c79bfnya07sk70s2qwvss49j450pdjxqc88b0bwvxm727jm"))))
     (properties `((upstream-name . "rYWAASB")))
     (build-system r-build-system)
     (arguments
@@ -28482,6 +28482,49 @@ written in Go.  gnparser parses scientific names into their component parts; it
 utilizes a Parsing Expression Grammar specifically for scientific names.")
     (license license:expat)))
 
+(define-public r-rgnoisefilt
+  (package
+    (name "r-rgnoisefilt")
+    (version "1.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rgnoisefilt" version))
+       (sha256
+        (base32 "049vcxfdbmby5nkl2w9mcm7135vp2c1dhli30mcwc88nghwm6w70"))))
+    (properties `((upstream-name . "rgnoisefilt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rpart
+                             r-randomforest
+                             r-nnet
+                             r-modelr
+                             r-kknn
+                             r-infotheo
+                             r-ggplot2
+                             r-gbm
+                             r-fnn
+                             r-entropy
+                             r-e1071
+                             r-class
+                             r-arules))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/juanmartinsantos/rgnoisefilt")
+    (synopsis
+     "Elimination of Noisy Samples in Regression Datasets using Noise Filters")
+    (description
+     "Traditional noise filtering methods aim at removing noisy samples from a
+classification dataset.  This package adapts classic and recent filtering
+techniques for use in regression problems, and it also incorporates methods
+specifically designed for regression data.  In order to do this, it uses
+approaches proposed in the specialized literature, such as Martin et al. (2021)
+[<doi:10.1109/ACCESS.2021.3123151>] and Arnaiz-Gonzalez et al. (2016)
+[<doi:10.1016/j.eswa.2015.12.046>].  Thus, the goal of the implemented noise
+filters is to eliminate samples with noise in regression datasets.")
+    (license license:gpl3+)))
+
 (define-public r-rgn
   (package
     (name "r-rgn")
@@ -37815,29 +37858,31 @@ measurement error modelling using MCEM, see the RMarkdown vignette:
 (define-public r-refitgaps
   (package
     (name "r-refitgaps")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refitgaps" version))
        (sha256
-        (base32 "0sxhkw1frxz9gqjx1yi1pj7g6isjjqk0g01b4z0gpdy1my52mycm"))))
+        (base32 "1clbfvl87n4kj5vjkw92ypkl01cmvcahy8r35zingv6m6kpmqkv4"))))
     (properties `((upstream-name . "refitgaps")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rlang r-purrr r-magrittr r-dplyr))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=refitgaps")
     (synopsis "Reduce the Number of Holes in the School Timetable")
     (description
-     "If a teacher was assigned, say, hours 1, 2, 4, 6 for his lessons on the current
-day, then he got two \"gaps\" (or \"holes\"), in hours 3 and 5.  If the total number
-of holes in the existing daily schedule is too large (exceeding, say, 6% of the
-total lessons), then the problem arises of reallocating the respective lessons
-by hours (respecting the constraints induced by the existence of coupled
-lessons) so that the total number of holes is as small as possible.")
+     "Reallocating the respective lessons by hours (respecting the constraints induced
+by the existence of coupled lessons) so that the total number of gaps is as
+small as possible.")
     (license license:expat)))
 
 (define-public r-refinr
@@ -42358,6 +42403,36 @@ plots).")
 <https://dracor.org/documentation/api>.")
     (license license:gpl3+)))
 
+(define-public r-rdpower
+  (package
+    (name "r-rdpower")
+    (version "2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rdpower" version))
+       (sha256
+        (base32 "0a7ays4acilpa6w4098bndjszpf6q29w0423i16p7h1giqn3yxgr"))))
+    (properties `((upstream-name . "rdpower")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdrobust))
+    (home-page "https://cran.r-project.org/package=rdpower")
+    (synopsis "Power Calculations for RD Designs")
+    (description
+     "The regression discontinuity (RD) design is a popular quasi-experimental design
+for causal inference and policy evaluation.  The rdpower package provides tools
+to perform power, sample size and MDE calculations in RD designs:
+@code{rdpower()} calculates the power of an RD design, @code{rdsampsi()}
+calculates the required sample size to achieve a desired power and
+@code{rdmde()} calculates minimum detectable effects.  See Cattaneo, Titiunik
+and Vazquez-Bare (2019)
+<https://rdpackages.github.io/references/Cattaneo-Titiunik-@code{VazquezBare_2019_Stata.pdf>}
+for further methodological details.")
+    (license license:gpl2)))
+
 (define-public r-rdp
   (package
     (name "r-rdp")
@@ -42533,6 +42608,36 @@ about Germany, translations of German works, and the works of German-speaking
 emigrants published abroad between 1933 and 1945.")
     (license license:expat)))
 
+(define-public r-rdmulti
+  (package
+    (name "r-rdmulti")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rdmulti" version))
+       (sha256
+        (base32 "1aal71dizqr470k3s08ikf7qwr84zzpyjn7ydhdihln3av5rm9kf"))))
+    (properties `((upstream-name . "rdmulti")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdrobust r-ggplot2))
+    (home-page "https://cran.r-project.org/package=rdmulti")
+    (synopsis "Analysis of RD Designs with Multiple Cutoffs or Scores")
+    (description
+     "The regression discontinuity (RD) design is a popular quasi-experimental design
+for causal inference and policy evaluation.  The rdmulti package provides tools
+to analyze RD designs with multiple cutoffs or scores: @code{rdmc()} estimates
+pooled and cutoff specific effects for multi-cutoff designs, @code{rdmcplot()}
+draws RD plots for multi-cutoff designs and @code{rdms()} estimates effects in
+cumulative cutoffs or multi-score designs.  See Cattaneo, Titiunik and
+Vazquez-Bare (2020)
+<https://rdpackages.github.io/references/Cattaneo-Titiunik-@code{VazquezBare_2020_Stata.pdf>}
+for further methodological details.")
+    (license license:gpl2)))
+
 (define-public r-rdml
   (package
     (name "r-rdml")
@@ -42591,6 +42696,40 @@ variables for different underlying measures.  Furthermore, it provides a method
 to estimate the (SI)-rearrangement copula using empirical checkerboard copulas.
 It is based on the theoretical results presented in Strothmann et al. (2022)
 <@code{arXiv:2201.03329>} and Strothmann (2021) <doi:10.17877/DE290R-22733>.")
+    (license license:gpl2)))
+
+(define-public r-rdlocrand
+  (package
+    (name "r-rdlocrand")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rdlocrand" version))
+       (sha256
+        (base32 "161xq60ymf3f2fqwcr5x35cpbv0yv65j9ca4pic6kriwpk4py7ds"))))
+    (properties `((upstream-name . "rdlocrand")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich r-aer))
+    (home-page "https://cran.r-project.org/package=rdlocrand")
+    (synopsis "Local Randomization Methods for RD Designs")
+    (description
+     "The regression discontinuity (RD) design is a popular quasi-experimental design
+for causal inference and policy evaluation.  Under the local randomization
+approach, RD designs can be interpreted as randomized experiments inside a
+window around the cutoff.  This package provides tools to perform randomization
+inference for RD designs under local randomization: @code{rdrandinf()} to
+perform hypothesis testing using randomization inference, @code{rdwinselect()}
+to select a window around the cutoff in which randomization is likely to hold,
+@code{rdsensitivity()} to assess the sensitivity of the results to different
+window lengths and null hypotheses and @code{rdrbounds()} to construct Rosenbaum
+bounds for sensitivity to unobserved confounders.  See Cattaneo, Titiunik and
+Vazquez-Bare (2016)
+<https://rdpackages.github.io/references/Cattaneo-Titiunik-@code{VazquezBare_2016_Stata.pdf>}
+for further methodological details.")
     (license license:gpl2)))
 
 (define-public r-rdlearn
@@ -44576,13 +44715,13 @@ contributors to both @code{QuantLib} and Quantuccia'.")
 (define-public r-rcppplanc
   (package
     (name "r-rcppplanc")
-    (version "2.0.10")
+    (version "2.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppPlanc" version))
        (sha256
-        (base32 "0jxjpibkbky57hrwp6pr7dw0sqz5ic2fsdn7z4rq49139nx9bq3g"))))
+        (base32 "0q97cjhvnjkzsbiby0zcw3nydpmrfyv1a5rr7iqvj3q44n1j92wy"))))
     (properties `((upstream-name . "RcppPlanc")))
     (build-system r-build-system)
     (arguments
@@ -48864,6 +49003,37 @@ download those spreadsheets and read them directly into R.")
      "Creation, manipulation, simulation of linear Gaussian Bayesian networks from
 text files and more...")
     (license license:gpl2+)))
+
+(define-public r-rbmiutils
+  (package
+    (name "r-rbmiutils")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rbmiUtils" version))
+       (sha256
+        (base32 "1969ixngybrl3g5pwj7p5624417ybxdwr22wpr70yjjxr7m15r1y"))))
+    (properties `((upstream-name . "rbmiUtils")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-rbmi
+                             r-purrr
+                             r-dplyr
+                             r-beeca
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/openpharma/rbmiUtils")
+    (synopsis "Utility Functions to Support and Extend the 'rbmi' Package")
+    (description
+     "This package provides utility functions that extend the capabilities of the
+reference-based multiple imputation package rbmi'.  It supports clinical trial
+analysis workflows with functions for managing imputed datasets, applying
+analysis methods across imputations, and tidying results for reporting.")
+    (license license:gpl3+)))
 
 (define-public r-rbmi
   (package

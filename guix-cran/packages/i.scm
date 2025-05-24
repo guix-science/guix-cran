@@ -7678,19 +7678,19 @@ Blackwell and Olson (2022) <doi:10.1017/pan.2021.19>.")
 (define-public r-interprocess
   (package
     (name "r-interprocess")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interprocess" version))
        (sha256
-        (base32 "11z8nl88y57ws4zz3m0qx81dfax6rrpr24w0snq1z57i0nippk6x"))))
+        (base32 "18kdrl0ina8sakq6qa9w9v66n7yd12hvkkf0kv35v3xldfb6zr9a"))))
     (properties `((upstream-name . "interprocess")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-bh))
+    (propagated-inputs (list r-cpp11 r-bh))
     (home-page "https://cmmr.github.io/interprocess/")
     (synopsis "Mutexes, Semaphores, and Message Queues")
     (description

@@ -23098,6 +23098,31 @@ Symmetric Generalized Hyperbolic, Hyperbolic Univariate Marginals, Hyperbolic,
 and Symmetric Hyperbolic.")
     (license license:gpl2+)))
 
+(define-public r-mixturefitting
+  (package
+    (name "r-mixturefitting")
+    (version "0.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MixtureFitting" version))
+       (sha256
+        (base32 "0hsmn7il5amydaflrpycmldfr2y59l5b8flmba9q1dkigq8ghij2"))))
+    (properties `((upstream-name . "MixtureFitting")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=MixtureFitting")
+    (synopsis
+     "Fitting of Univariate Mixture Distributions to Data using Various Approaches")
+    (description
+     "This package provides methods for fitting mixture distributions to univariate
+data using expectation maximization, HWHM and other methods.  Supports Gaussian,
+Cauchy, Student's t and von Mises mixtures.  For more details see Merkys (2018)
+<https://www.lvb.lt/permalink/370LABT_NETWORK/1m6ui06/alma9910036312108451>.")
+    (license license:gpl2)))
+
 (define-public r-mixture
   (package
     (name "r-mixture")
@@ -48406,13 +48431,13 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "05fmsswbbd21n8q7s62c9hcmbk8c12rjlifwf56bw8icbc7z2a9b"))))
+        (base32 "1g1flhb547j2m1fkvf6v8jhj4a1z1bxj8lxswbx9n6zqc5r86z8s"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
     (arguments
@@ -48432,7 +48457,8 @@ samples.")
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-terra
+    (propagated-inputs (list r-viridislite
+                             r-terra
                              r-shiny
                              r-sf
                              r-rlang
@@ -50926,13 +50952,13 @@ described in Chaston, J.M. et al. (2014) <doi:10.1128/@code{mBio.01631-14>}.")
 (define-public r-magmar
   (package
     (name "r-magmar")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "magmaR" version))
        (sha256
-        (base32 "04c1wvz8r6msc6jq6xv5w75sqza8xcfnawzayniyzdg6k2lr7hr5"))))
+        (base32 "0mgn9547s5330r6c8i1pk8ldz047idkna2xgdsxylmz75lfmiaxx"))))
     (properties `((upstream-name . "magmaR")))
     (build-system r-build-system)
     (arguments

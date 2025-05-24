@@ -609,13 +609,13 @@ Madigan (2013) <doi:10.1145/2414416.2414791>.")
 (define-public r-cyclomort
   (package
     (name "r-cyclomort")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cyclomort" version))
        (sha256
-        (base32 "0qmfwhrp7bq7av0yc95xnz2sd1jxfaiys9smrk1kpclnynnra9rr"))))
+        (base32 "0hmndpw5ybijpbhs61xjpyg77gk6w20wh99i09sjb07jig11n6cb"))))
     (properties `((upstream-name . "cyclomort")))
     (build-system r-build-system)
     (arguments
@@ -639,8 +639,8 @@ duration of peaks of periods of elevated hazard within a period.  The underlying
 model is a mixed wrapped Cauchy function fitted using maximum likelihoods
 (details in Gurarie et al. (2020) <doi:10.1111/2041-210X.13305>).  The
 development of these tools was motivated by the strongly seasonal mortality
-patterns observed in many wild animal populations, such that the respective
-periods of higher mortality can be identified as \"mortality seasons\".")
+patterns observed in many wild animal populations.  Thus, the respective periods
+of higher mortality can be identified as \"mortality seasons\".")
     (license license:gpl3+)))
 
 (define-public r-cycloids
@@ -4219,13 +4219,13 @@ equally sized groups, and the unnesting of data.frames within fully named lists.
 (define-public r-csurvey
   (package
     (name "r-csurvey")
-    (version "1.11")
+    (version "1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csurvey" version))
        (sha256
-        (base32 "1359hz1cy59wyh7fgsxvkhsvrnhx803mgql4ccadv10qq124n6xd"))))
+        (base32 "1yvnillhdxi349wywgikjrp17z5zfrzx41c48lsp8qzkn1kml281"))))
     (properties `((upstream-name . "csurvey")))
     (build-system r-build-system)
     (arguments
@@ -9760,13 +9760,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.1-8")
+    (version "1.1-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "1zz097apm6i2b4q93ilvfgk5a29amxkrs97fdi8xnf0ss9c9xxi9"))))
+        (base32 "0418dp9ilpx2by1wlgsqdw4gjw05dzjrbrqwzbip60pigb5bpbn9"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (arguments
@@ -13590,13 +13590,13 @@ Duan, W Nick Street, Yanchi Liu, Songhua Xu, and Brook Wu (2014)
 (define-public r-correlatio
   (package
     (name "r-correlatio")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "correlatio" version))
        (sha256
-        (base32 "14przr8svag707xndy73gp5m48m3fnjpgv457zs63rnvzvj4vx0g"))))
+        (base32 "0zbab0b6n628jvzxi7n2jvvyacls8baq9xabcjllqpmwc1rdhw20"))))
     (properties `((upstream-name . "correlatio")))
     (build-system r-build-system)
     (arguments
@@ -35141,13 +35141,13 @@ Leydold J. (2023) <doi:10.1214/23-ejs2149>.")
 (define-public r-circlizeplus
   (package
     (name "r-circlizeplus")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "circlizePlus" version))
        (sha256
-        (base32 "04lk0l1h5lcdkl3v3fwv6257ngv13hwfzfp6y9lwkjkn4m7l92h8"))))
+        (base32 "02m7ar7xldqws28cqxzchz2ww3p6p8mdarm5g8ghix05v3fy1hhl"))))
     (properties `((upstream-name . "circlizePlus")))
     (build-system r-build-system)
     (arguments
@@ -41546,13 +41546,13 @@ deserialize JSON back to the correct object prototypes.")
 (define-public r-cercospora
   (package
     (name "r-cercospora")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cercospoRa" version))
        (sha256
-        (base32 "0bp76m2kj1hlr6ynq762vr1bvla16np5dlj64chmy38vx2026f8b"))))
+        (base32 "0nz1vdl0adibfriidnd79742vj3mch00bvvwkp5q1bdl2wvz1inv"))))
     (properties `((upstream-name . "cercospoRa")))
     (build-system r-build-system)
     (arguments
@@ -41565,7 +41565,7 @@ deserialize JSON back to the correct object prototypes.")
                              r-data-table
                              r-circular))
     (native-inputs (list r-knitr))
-    (home-page "https://paul.melloy.com.au/cercospoRa/")
+    (home-page "https://paulmelloy.com.au/cercospoRa/")
     (synopsis
      "Process Based Epidemiological Model for Cercospora Leaf Spot of Sugar Beet")
     (description
@@ -51034,59 +51034,6 @@ described in Lee, Kim, Perera, @code{McLachlan} and Bae (2015)
 <doi:10.1007/s00431-015-2581-x>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-caesar-suite
-  (package
-    (name "r-caesar-suite")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CAESAR.Suite" version))
-       (sha256
-        (base32 "1ww3s6gl8lb7g3xlykzgnlc7lrnnc7wvn1kip90yv84j09i096kx"))))
-    (properties `((upstream-name . "CAESAR.Suite")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-seurat
-                             r-scater
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-progress
-                             r-profast
-                             r-pbapply
-                             r-matrix
-                             r-irlba
-                             r-ggrepel
-                             r-ggplot2
-                             r-future
-                             r-furrr
-                             r-desctools
-                             r-ade4))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/XiaoZhangryy/CAESAR.Suite")
-    (synopsis
-     "CAESAR: a Cross-Technology and Cross-Resolution Framework for Spatial Omics Annotation")
-    (description
-     "Biotechnology in spatial omics has advanced rapidly over the past few years,
-enhancing both throughput and resolution.  However, existing annotation
-pipelines in spatial omics predominantly rely on clustering methods, lacking the
-flexibility to integrate extensive annotated information from single-cell RNA
-sequencing (@code{scRNA-seq}) due to discrepancies in spatial resolutions,
-species, or modalities.  Here we introduce the CAESAR suite, an open-source
-software package that provides image-based spatial co-embedding of locations and
-genomic features.  It uniquely transfers labels from @code{scRNA-seq} reference,
-enabling the annotation of spatial omics datasets across different technologies,
-resolutions, species, and modalities, based on the conserved relationship
-between signature genes and cells/locations at an appropriate level of
-granularity.  Notably, CAESAR enriches location-level pathways, allowing for the
-detection of gradual biological pathway activation within spatially defined
-domain types.  More details on the methods related to our paper currently under
-submission.  A full reference to the paper will be provided in future versions
-once the paper is published.")
-    (license license:gpl2+)))
 
 (define-public r-caesar
   (package

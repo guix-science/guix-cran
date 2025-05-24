@@ -2599,32 +2599,32 @@ well.")
 (define-public r-jobqueue
   (package
     (name "r-jobqueue")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jobqueue" version))
        (sha256
-        (base32 "1xjr0fw4jhifqiqsbg4lwqfzdjajndwfg0azr143wif6gqy0wwjh"))))
+        (base32 "01mz1rf9chffc99ff5d9k8dr1fhkp681687ar8xr10m96z0803m0"))))
     (properties `((upstream-name . "jobqueue")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-semaphore
-                             r-rlang
+    (propagated-inputs (list r-rlang
                              r-r6
                              r-ps
                              r-promises
                              r-parallelly
                              r-magrittr
                              r-later
+                             r-interprocess
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://cmmr.github.io/jobqueue/")
     (synopsis "Run Interruptible Code Asynchronously")
     (description
-     "Takes an R expression and returns a Job object with a @code{$stop()} method
+     "Takes an R expression and returns a job object with a @code{$stop()} method
 which can be called to terminate the background job.  Also provides timeouts and
 other mechanisms for automatically terminating a background job.  The result of
 the expression is available synchronously via $result or asynchronously with

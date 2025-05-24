@@ -2421,13 +2421,13 @@ be primarily used internally by other hubverse packages.  See Reich et al.
 (define-public r-hubensembles
   (package
     (name "r-hubensembles")
-    (version "0.1.9")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hubEnsembles" version))
        (sha256
-        (base32 "1kl3m41mfi1r47sv1m4w8kdk6zqq3jizr2hjv5wbvsgdrcxqc7nx"))))
+        (base32 "0znpz9klcgc521y0bx9prcda1radhri8zc8dzk52bsabcwbp83s9"))))
     (properties `((upstream-name . "hubEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -2438,6 +2438,7 @@ be primarily used internally by other hubverse packages.  See Reich et al.
                              r-rlang
                              r-purrr
                              r-matrixstats
+                             r-lifecycle
                              r-hubutils
                              r-dplyr
                              r-distfromq

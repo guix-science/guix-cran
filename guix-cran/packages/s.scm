@@ -30775,13 +30775,13 @@ the website <https://southpark.fandom.com/wiki/South_Park_Archives>.")
 (define-public r-sourcoise
   (package
     (name "r-sourcoise")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sourcoise" version))
        (sha256
-        (base32 "0ik3svf6hw0wr4pz24zjysza8sfh4ayk2s17r2hksman67mfl61k"))))
+        (base32 "0lgnfpb3ag8n8cq8cmkalz7jw5bil6hp9ln3zws29cp4lfqzlaxx"))))
     (properties `((upstream-name . "sourcoise")))
     (build-system r-build-system)
     (arguments
@@ -30807,8 +30807,8 @@ the website <https://southpark.fandom.com/wiki/South_Park_Archives>.")
     (home-page "https://xtimbeau.github.io/sourcoise/")
     (synopsis "Source a Script and Cache")
     (description
-     "This package provides a function that behave nearly as @code{base::source()} but
-implements a caching mechanism on disk, project based.  It allows to quasi
+     "This package provides a function that behaves nearly as @code{base::source()}
+but implements a caching mechanism on disk, project based.  It allows to quasi
 @code{source()} R scripts that gather data but can fail or consume to much time
 to respond even if nothing new is expected.  It comes with tools to check and
 execute on demand or when cache is invalid the script.")
@@ -69901,6 +69901,46 @@ measurements.")
      "Data sets and code blocks for the book Statistical Analysis of Network Data with
 R, 2nd Edition'.")
     (license license:gpl3)))
+
+(define-public r-sanba
+  (package
+    (name "r-sanba")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sanba" version))
+       (sha256
+        (base32 "084nhbg8a8b8nh2fxg4if3cfyhrkscnb171n8j9s9xb3zdmbhhzk"))))
+    (properties `((upstream-name . "sanba")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-salso
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-matrixstats
+                             r-cpp11))
+    (home-page "https://github.com/fradenti/sanba")
+    (synopsis
+     "Fitting Shared Atoms Nested Models via MCMC or Variational Bayes")
+    (description
+     "An efficient tool for fitting nested mixture models based on a shared set of
+atoms via Markov Chain Monte Carlo and variational inference algorithms.
+Specifically, the package implements the common atoms model (Denti et al.,
+2023), its finite version (similar to D'Angelo et al., 2023), and a hybrid
+finite-infinite model (D'Angelo and Denti, 2024).  All models implement
+univariate nested mixtures with Gaussian kernels equipped with a normal-inverse
+gamma prior distribution on the parameters.  Additional functions are provided
+to help analyze the results of the fitting procedure.  References: Denti,
+Camerlenghi, Guindani, Mira (2023) <doi:10.1080/01621459.2021.1933499>,
+DâAngelo, Canale, Yu, Guindani (2023) <doi:10.1111/biom.13626>, DâAngelo,
+Denti (2024) <doi:10.1214/24-BA1458>.")
+    (license license:expat)))
 
 (define-public r-samurais
   (package

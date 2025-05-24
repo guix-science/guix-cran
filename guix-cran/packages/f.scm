@@ -4455,13 +4455,13 @@ floating-point vectors provided by the bignum package.")
 (define-public r-frictionless
   (package
     (name "r-frictionless")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frictionless" version))
        (sha256
-        (base32 "1mnrkrslwvqrlsib73gv160482hdcnxfy6cvdmfgi0qbfam0xx9n"))))
+        (base32 "14qg0jqfbfyan62vrd72w7ia75mipf6c6p882iid0pw6sj31cgnr"))))
     (properties `((upstream-name . "frictionless")))
     (build-system r-build-system)
     (arguments
@@ -9393,6 +9393,39 @@ dependency explicitly into account and searches for the most forecastable
 signal.  The measure of forecastability is based on the Shannon entropy of the
 spectral density of the transformed signal.")
     (license license:gpl2)))
+
+(define-public r-forcis
+  (package
+    (name "r-forcis")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forcis" version))
+       (sha256
+        (base32 "1ylg04njs8dki64wk7alvhnbdazmy8fb2gc57jfmj11clmkxyylm"))))
+    (properties `((upstream-name . "forcis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vroom
+                             r-tidyr
+                             r-tibble
+                             r-sf
+                             r-rlang
+                             r-httr2
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/forcis/")
+    (synopsis "Handle the FORCIS Foraminifera Database")
+    (description
+     "This package provides an interface to the FORCIS database (Chaabane et al.
+(2024) <doi:10.5281/zenodo.7390791>) on global foraminifera distribution.  This
+package allows to download and to handle FORCIS data.  It is part of the
+FRB-CESAB working group FORCIS.
+<https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/forcis/>.")
+    (license license:gpl2+)))
 
 (define-public r-forcer
   (package
@@ -25286,46 +25319,58 @@ Useful when using the book.")
 (define-public r-fafa
   (package
     (name "r-fafa")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAfA" version))
        (sha256
-        (base32 "1cqfbd49pqn132l6nhp9v8jqj2vjkbsrzcph593n15vvgw3xbl2v"))))
+        (base32 "0ffmzanzmqw9fr1m1ydcldiwnxm9159v0qmddxpzvh5ysq813q5q"))))
     (properties `((upstream-name . "FAfA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shinydashboard
+    (propagated-inputs (list r-sirt
+                             r-shinydashboard
                              r-shinycssloaders
                              r-shiny
+                             r-semtools
+                             r-semplot
+                             r-readxl
+                             r-psychometric
                              r-psych
+                             r-pastecs
+                             r-mvnormaltest
+                             r-moments
+                             r-mctest
+                             r-mbess
                              r-magrittr
                              r-lavaan
+                             r-haven
                              r-golem
-                             r-dplyr))
-    (native-inputs (list r-knitr))
+                             r-ggcorrplot
+                             r-energy
+                             r-eganet
+                             r-efatools
+                             r-efa-mrfa
+                             r-efa-dimensions
+                             r-dplyr
+                             r-config))
     (home-page "https://cran.r-project.org/package=FAfA")
     (synopsis "Factor Analysis for All")
     (description
-     "This Shiny application offers researchers a comprehensive tool for performing
-factor analysis.  Users can upload datasets, validate assumptions, manage
-missing and outlier data, split data for different analyses, and run exploratory
-and confirmatory factor analyses (\"EFA\" and \"CFA\").  The software also offers
-reliability analysis, exploratory graph analysis, and item weighting.  With a
-user-friendly interface, this tool simplifies the EFA and CFA processes.  The
-main features are data submission and simple data inspection.  Data manipulation
-(excluding variables, splitting data, checking for outliers), assumption
-checking (Tabachnik & Fidell (2012) <ISBN:978-0-205-84957-4> and Field (2009)
-<ISBN:978-1-84787-906-6>) for factor analysis, exploratory factor analysis (with
-various factor number determination methods (Lorenzo-Seva & Ferrando (2021)
-<doi:10.5964/meth.7185>)), confirmatory factor analysis (model definition and
-modification suggestions (Kline (2011) <ISBN:978-1-60623-877-6>)), reliability
-analysis (Cronbach's alpha, @code{McDonald's} omega, Armor's theta, structural
-reliability, stratified alpha), item weighting (Kilic & Dogan (2019)
-<doi:10.21031/epod.516057>).")
+     "This package provides a comprehensive Shiny-based graphical user interface for
+conducting a wide range of factor analysis procedures.  F@code{AfA} (Factor
+Analysis for All) guides users through data uploading, assumption checking
+(descriptives, collinearity, multivariate normality, outliers), data wrangling
+(variable exclusion, data splitting), factor retention analysis (e.g., Parallel
+Analysis, Hull method, EGA), Exploratory Factor Analysis (EFA) with various
+rotation and extraction methods, Confirmatory Factor Analysis (CFA) for model
+testing, Reliability Analysis (e.g., Cronbach's Alpha, @code{McDonald's} Omega),
+Measurement Invariance testing across groups, and item weighting techniques.
+Results are presented in user-friendly tables and plots, with options for
+downloading outputs.")
     (license license:gpl3)))
 
 (define-public r-faersquarterlydata

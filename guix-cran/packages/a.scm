@@ -22169,13 +22169,13 @@ format is also provided.")
 (define-public r-admix
   (package
     (name "r-admix")
-    (version "2.3.4")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admix" version))
        (sha256
-        (base32 "0psramahgsd2baf8lzglxiy9mxmydhbpfk473f4q6y181wnyrl2y"))))
+        (base32 "13dw5g2i00rwz43fx54m8379slwc7z3lvn1gz694yhn3v52ilx8i"))))
     (properties `((upstream-name . "admix")))
     (build-system r-build-system)
     (arguments

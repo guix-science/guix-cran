@@ -19300,13 +19300,13 @@ conditions.")
 (define-public r-efatools
   (package
     (name "r-efatools")
-    (version "0.4.6")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFAtools" version))
        (sha256
-        (base32 "0y75amgsp2r1n8hdw0sni6c2vrbsqjjsnv5z0igwmfykfr3cwmwf"))))
+        (base32 "12n5cl1i6a5gxc9zmjj3ydrf54c834kfpzm46dk10x813mqgkmab"))))
     (properties `((upstream-name . "EFAtools")))
     (build-system r-build-system)
     (arguments

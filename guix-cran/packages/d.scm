@@ -25406,6 +25406,48 @@ function with missing outcomes.  The reference paper is Zhang, Giessing, and
 Chen (2023) <@code{arXiv:2309.06429>}.")
     (license license:expat)))
 
+(define-public r-debiasedtrialemulation
+  (package
+    (name "r-debiasedtrialemulation")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "debiasedTrialEmulation" version))
+       (sha256
+        (base32 "0kza7kj78kl7lrj8mzf3fh7nyvamk5gvc4b9ggw0vcjr68agcshj"))))
+    (properties `((upstream-name . "debiasedTrialEmulation")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-purrr
+                             r-parallellogger
+                             r-matchit
+                             r-janitor
+                             r-glmnet
+                             r-ggplot2
+                             r-geex
+                             r-empiricalcalibration
+                             r-dplyr
+                             r-cobalt))
+    (home-page "https://cran.r-project.org/package=debiasedTrialEmulation")
+    (synopsis "Pipeline for Debiased Target Trial Emulation")
+    (description
+     "Supports propensity score-based methodsâincluding matching, stratification,
+and weightingâfor estimating causal treatment effects.  It also implements
+calibration using negative control outcomes to enhance robustness.
+@code{debiasedTrialEmulation} facilitates effect estimation for both binary and
+time-to-event outcomes, supporting risk ratio (RR), odds ratio (OR), and hazard
+ratio (HR) as effect measures.  It integrates statistical modeling and
+visualization tools to assess covariate balance, equipoise, and bias
+calibration.  Additional methodsâincluding approaches to address immortal time
+bias, information bias, selection bias, and informative censoringâare under
+development.  Users interested in these extended features are encouraged to
+contact the package authors.")
+    (license license:gpl2+)))
+
 (define-public r-debest
   (package
     (name "r-debest")
