@@ -3353,20 +3353,20 @@ with the plot using mouse hover or zoom.")
 (define-public r-visstatistics
   (package
     (name "r-visstatistics")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visStatistics" version))
        (sha256
-        (base32 "0i98d198fkr7169wj4j1c1k54avfilmymk0gc2swwi63cnaywv46"))))
+        (base32 "1sdawj5arw8ia1bb3fsvxa0vyvsq53p2nm4mlj1xqb6w1m4n7ig0"))))
     (properties `((upstream-name . "visStatistics")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vcd r-nortest r-multcompview r-cairo))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr r-bookdown))
     (home-page "https://github.com/shhschilling/visStatistics")
     (synopsis
      "Automated Selection and Visualisation of Statistical Hypothesis Tests")
@@ -3374,13 +3374,19 @@ with the plot using mouse hover or zoom.")
      "Automatically selects and visualises appropriate statistical hypothesis tests
 between a response and a feature variable in a data frame.  The choice of test
 depends on the class, distribution, and sample size of the input variables, as
-well as the user-defined conf.level'.  Well suited for web-based or server-side
-R applications.  Implemented tests: @code{t.test()}, @code{wilcox.test()},
-@code{aov()}, @code{oneway.test()}, @code{kruskal.test()}, @code{lm()},
-@code{fisher.test()}, @code{chisq.test()}.  Tests for normality:
-@code{shapiro.test()}, @code{ad.test()}.  Tests for equal variances:
-@code{bartlett.test()}.  Post-hoc tests: @code{TukeyHSD()},
-@code{pairwise.wilcox.test()}.")
+well as the user-defined conf.level'.  The package focuses on visualising the
+selected test using appropriate plotsâ such as box plots, bar charts,
+regression lines with confidence bands, mosaic plots, residual plots and QâQ
+plots.  Each plot is annotated with relevant test statistics and, where
+applicable, assumption checks and post-hoc results.  The scripted workflow is
+particularly well suited for interactive interfaces where users access data only
+through a graphical front end backed by server-side R sessions, as well as for
+quick data exploration, for example, in statistical consulting contexts.
+Implemented tests: @code{t.test()}, @code{wilcox.test()}, @code{aov()},
+@code{oneway.test()}, @code{kruskal.test()}, @code{lm()}, @code{fisher.test()},
+@code{chisq.test()}.  Tests for normality: @code{shapiro.test()},
+@code{ad.test()}.  Tests for equal variances: @code{bartlett.test()}.  Post-hoc
+tests: @code{TukeyHSD()}, @code{pairwise.wilcox.test()}.")
     (license license:expat)))
 
 (define-public r-visreg

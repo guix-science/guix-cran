@@ -6066,13 +6066,13 @@ minimizing the (mean) squared error within all bins.")
 (define-public r-optbdmaeat
   (package
     (name "r-optbdmaeat")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optbdmaeAT" version))
        (sha256
-        (base32 "1y1mvcyjihpj1wgjmifhmd10717wr1srp7h87azs4gfypgsiqchn"))))
+        (base32 "0k341vpqm3h9fcli04gryqky81nsyc7pv397qy43j1rvd72b5jxm"))))
     (properties `((upstream-name . "optbdmaeAT")))
     (build-system r-build-system)
     (arguments
@@ -6088,9 +6088,9 @@ minimizing the (mean) squared error within all bins.")
 effects models where the interest is in a comparison of all possible elementary
 treatment contrasts.  The algorithms used in this package are based on the
 treatment exchange and array exchange algorithms of Debusho, Gemechu and Haines
-(2016, unpublished).  The package also provides an optional method of using the
-graphical user interface (GUI) R package tcltk to ensure that it is user
-friendly.")
+(2018) <doi:10.1080/03610918.2018.1429617>.  The package also provides an
+optional method of using the graphical user interface (GUI) R package tcltk to
+ensure that it is user friendly.")
     (license license:gpl2)))
 
 (define-public r-optband
@@ -13303,13 +13303,13 @@ distributions are implemented as described in OâNeill (2019)
 (define-public r-occumb
   (package
     (name "r-occumb")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "occumb" version))
        (sha256
-        (base32 "1rfaswipykflwkdiacq66ibbvf2hzzal2ffibsgrl8q1m6frj5k3"))))
+        (base32 "1lxngbp0v92ssappc4n8gmxzxzb01jk1xw71jng431a7ha589xxy"))))
     (properties `((upstream-name . "occumb")))
     (build-system r-build-system)
     (arguments
@@ -13321,11 +13321,12 @@ distributions are implemented as described in OâNeill (2019)
     (home-page "https://fukayak.github.io/occumb/")
     (synopsis "Site Occupancy Modeling for Environmental DNA Metabarcoding")
     (description
-     "Fits multispecies site occupancy models to environmental DNA metabarcoding data
+     "Fits community site occupancy models to environmental DNA metabarcoding data
 collected using spatially-replicated survey design.  Model fitting results can
 be used to evaluate and compare the effectiveness of species detection to find
 an efficient survey design.  Reference: Fukaya et al. (2022)
-<doi:10.1111/2041-210X.13732>.")
+<doi:10.1111/2041-210X.13732>, Fukaya and Hasebe (2025)
+<doi:10.1101/2025.01.09.632116>.")
     (license license:gpl3+)))
 
 (define-public r-occcite

@@ -2124,13 +2124,13 @@ exploration.")
 (define-public r-explodelayout
   (package
     (name "r-explodelayout")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExplodeLayout" version))
        (sha256
-        (base32 "0yxf12hv4ypbyxnj1x4wrmj0l52nrx9ss79szl7j4bk9nc98qmli"))))
+        (base32 "0fdjv4gasld0i9wrw66y9973xjjfiw826cbaan8jjj550nqlxrx3"))))
     (properties `((upstream-name . "ExplodeLayout")))
     (build-system r-build-system)
     (arguments
@@ -2158,8 +2158,10 @@ generate a layout which has sufficient separation of clusters, while reducing
 the overall layout size of the network.  This package is a basic version of an
 earlier version called [epl]<https://github.com/UTMB-DIVA-Lab/epl> that searched
 for an optimal explode radius, and offered multiple ways to separate clusters in
-a network (Bhavnani et al(2017) <PMID: 28815099>).  The example dataset is for a
-bipartite network, but the algorithm can work also for unipartite networks.")
+a network (Bhavnani et al(2017)
+<https://pmc.ncbi.nlm.nih.gov/articles/PMC5543384/>).  The example dataset is
+for a bipartite network, but the algorithm can work also for unipartite
+networks.")
     (license license:expat)))
 
 (define-public r-explainprediction

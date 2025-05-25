@@ -10338,13 +10338,13 @@ through comms.")
 (define-public r-heplots
   (package
     (name "r-heplots")
-    (version "1.7.4")
+    (version "1.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heplots" version))
        (sha256
-        (base32 "0fjmmqz6vf92gz6r9qsyvlykggb1551yzr5iqzbakf3dhwf2zvk6"))))
+        (base32 "0m951dq8d9w88wq1zkp05npfj991c535clygknx5wczk2ln3xlcb"))))
     (properties `((upstream-name . "heplots")))
     (build-system r-build-system)
     (arguments
@@ -15206,20 +15206,20 @@ Webpage provided at: <https://github.com/CSAFE-ISU/handwriter>.")
 (define-public r-handtill2001
   (package
     (name "r-handtill2001")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HandTill2001" version))
        (sha256
-        (base32 "0wgr3rhz1iklirpnzk25afh8fv1qpi2ijmx4xwzplw3w3qir4yv6"))))
+        (base32 "0av4c56161kpav1mpm79h5z6h4c2dg8bnirhjl1g5gv3hnkm9944"))))
     (properties `((upstream-name . "HandTill2001")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list))
-    (home-page "https://gitlab.com/fvafrCU/HandTill2001")
+    (home-page "https://gitlab.com/fvafrcu/HandTill2001")
     (synopsis "Multiple Class Area under ROC Curve")
     (description
      "An S4 implementation of Eq. (3) and Eq. (7) by David J. Hand and Robert J. Till

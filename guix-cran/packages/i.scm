@@ -9415,13 +9415,13 @@ bdm macroeconomic database.")
 (define-public r-insect
   (package
     (name "r-insect")
-    (version "1.4.2")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "insect" version))
        (sha256
-        (base32 "0pbac9il1jrhii0hxvvqjc3phyr2iamxwzanxx5mrkyjh2wsl3jh"))))
+        (base32 "1lc1h6v8d2ys6dbn4nlvr9p9bxp0sfxggj110rwbxi1j4rwjvxbd"))))
     (properties `((upstream-name . "insect")))
     (build-system r-build-system)
     (arguments
@@ -9436,7 +9436,7 @@ bdm macroeconomic database.")
                              r-aphid
                              r-ape))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/shaunpwilkinson/insect/")
+    (home-page "https://github.com/shaunpwilkinson/insect")
     (synopsis "Informatic Sequence Classification Trees")
     (description
      "This package provides tools for probabilistic taxon assignment with informatic

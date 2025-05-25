@@ -11666,13 +11666,13 @@ over discrete, often discontinuous depth intervals.")
 (define-public r-mpsem
   (package
     (name "r-mpsem")
-    (version "0.5-1")
+    (version "0.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MPSEM" version))
        (sha256
-        (base32 "138p9iwssqpi6giy0wqmycjkipiz1sxd8rgw2bbjc3wpg2qbv8jh"))))
+        (base32 "0fbvyv0m04gh9bwwvar50wsmm94w6xxhhpj076f3jynfa4bfpfyj"))))
     (properties `((upstream-name . "MPSEM")))
     (build-system r-build-system)
     (arguments
@@ -25323,13 +25323,13 @@ others (2023) <doi:10.13140/RG.2.2.11977.42087>.")
 (define-public r-missforestpredict
   (package
     (name "r-missforestpredict")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missForestPredict" version))
        (sha256
-        (base32 "0p9bmphv77f6xxdvnz4zzalbbv8ch3bdyqqy33r78iimg5rnmi5x"))))
+        (base32 "00z88ak7wszyl30qlxsahinnvncmqzshg98vjyy6bzg3c1jmryqh"))))
     (properties `((upstream-name . "missForestPredict")))
     (build-system r-build-system)
     (arguments
@@ -25347,7 +25347,10 @@ prediction settings.  The function @code{missForest()} is used to impute a
 (training) dataset with missing values and to learn imputation models that can
 be later used for imputing new observations.  The function
 @code{missForestPredict()} is used to impute one or multiple new observations
-(test set) using the models learned on the training data.")
+(test set) using the models learned on the training data.  For more details see
+Albu, E., Gao, S., Wynants, L., & Van Calster, B. (2024).
+@code{missForestPredict--Missing} data imputation for prediction settings
+<doi:10.48550/@code{arXiv.2407.03379>}.")
     (license license:gpl2+)))
 
 (define-public r-missdiag
@@ -46269,13 +46272,13 @@ variance adjustment, and correlated responses.")
 (define-public r-marzic
   (package
     (name "r-marzic")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MarZIC" version))
        (sha256
-        (base32 "16f09s5f95jsafd3s8w01vc9i98nlwm3abrwfdhymaallq4kcban"))))
+        (base32 "0ywpmp4rw36gkmbr0vf12amln1km5h1plv9gq991s0i552zz1152"))))
     (properties `((upstream-name . "MarZIC")))
     (build-system r-build-system)
     (arguments

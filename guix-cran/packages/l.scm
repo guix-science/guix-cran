@@ -13,6 +13,7 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages web)
   #:use-module (gnu packages docker)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
@@ -2378,13 +2379,13 @@ images, see Taylor et al (2014) <doi:10.1080/00401706.2013.823890>.")
 (define-public r-lrtester
   (package
     (name "r-lrtester")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LRTesteR" version))
        (sha256
-        (base32 "0xrx9q2jnfjy4d8aqx7y1ycl2wn61riap7kaw78ng33xks8l6b93"))))
+        (base32 "0hjpk39s2001kgs7slp3hz0rlnbdda1zmjf4l2kmhvli2il7w93j"))))
     (properties `((upstream-name . "LRTesteR")))
     (build-system r-build-system)
     (arguments
@@ -12341,19 +12342,20 @@ compared to other libraries.")
 (define-public r-libimath
   (package
     (name "r-libimath")
-    (version "3.1.9")
+    (version "3.1.9-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libimath" version))
        (sha256
-        (base32 "1ar54j2s6a88gbbakp0mqbqdnxxzsq3rj5wrdzrnf3svw04s34mq"))))
+        (base32 "1gxnbs3vh38a8m2nxjlaay8n4b654lad55m34akmdf1ahiwpamic"))))
     (properties `((upstream-name . "libimath")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list cmake))
+    (native-inputs (list pkg-config))
     (home-page "https://cran.r-project.org/package=libimath")
     (synopsis "'Imath' Computer Graphics Linear Algebra Static Library")
     (description
@@ -18432,13 +18434,13 @@ powerful language detection API.")
 (define-public r-langevitour
   (package
     (name "r-langevitour")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "langevitour" version))
        (sha256
-        (base32 "17194spqad0aqqglqxxm57l25196frs1x2l9fj2h9xb67187w7ki"))))
+        (base32 "0ji2dzn74m3b4b0r9hd8qrzz74qbh8b9fd9iag42hd9lrsc5n5sv"))))
     (properties `((upstream-name . "langevitour")))
     (build-system r-build-system)
     (arguments

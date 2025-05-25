@@ -13590,13 +13590,13 @@ Duan, W Nick Street, Yanchi Liu, Songhua Xu, and Brook Wu (2014)
 (define-public r-correlatio
   (package
     (name "r-correlatio")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "correlatio" version))
        (sha256
-        (base32 "0zbab0b6n628jvzxi7n2jvvyacls8baq9xabcjllqpmwc1rdhw20"))))
+        (base32 "1xaz4al8hzzg9yqczar53h4v4k1a99q1q3lmv1ng4qyinyrkqvq6"))))
     (properties `((upstream-name . "correlatio")))
     (build-system r-build-system)
     (arguments

@@ -7323,13 +7323,13 @@ subject.")
 (define-public r-boptbd
   (package
     (name "r-boptbd")
-    (version "1.0.5")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Boptbd" version))
        (sha256
-        (base32 "1p786avc37yq5g01zh6sqx7b1rvbxrh6gbxsad4bdvr12cjdsss6"))))
+        (base32 "0xcypcd0ja2zldvpv860kygpzd92vvgj720svlcsnifaims8zh3w"))))
     (properties `((upstream-name . "Boptbd")))
     (build-system r-build-system)
     (arguments
@@ -7341,10 +7341,11 @@ subject.")
     (description
      "Computes Bayesian A- and D-optimal block designs under the linear mixed effects
 model settings using block/array exchange algorithm of Debusho, Gemechu and
-Haines (2018) <doi:10.1080/03610918.2018.1429617> where the interest is in a
-comparison of all possible elementary treatment contrasts.  The package also
-provides an optional method of using the graphical user interface (GUI) R
-package tcltk to ensure that it is user friendly.")
+Haines (2018) <doi:10.1080/03610918.2018.1429617> and Gemechu, Debusho and
+Haines (2025) <doi:10.5539/ijsp.v14n1p50> where the interest is in a comparison
+of all possible elementary treatment contrasts.  The package also provides an
+optional method of using the graphical user interface (GUI) R package tcltk to
+ensure that it is user friendly.")
     (license license:gpl2)))
 
 (define-public r-bootwptos
@@ -9255,13 +9256,13 @@ Exact Test on significant parameters.")
 (define-public r-bnrep
   (package
     (name "r-bnrep")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnRep" version))
        (sha256
-        (base32 "0dh9p07v6p5ndqbq52aizwggmpasw2p7k91ia87w19v38dqn2z88"))))
+        (base32 "10ia4p2x3zks6wvfyapmja5mq3byp2ri02vb7gfhdya43ykps0yd"))))
     (properties `((upstream-name . "bnRep")))
     (build-system r-build-system)
     (arguments
@@ -19413,13 +19414,13 @@ and Held, L. (2011) <doi:10.1007/s11222-010-9170-7>.")
 (define-public r-bfi
   (package
     (name "r-bfi")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFI" version))
        (sha256
-        (base32 "00cl759fxpjwn1sz20zavzdmf2r9bxvg5sbmzwrzh8k75hmlskz4"))))
+        (base32 "0z7vwz9lv37lq69qisx9w8vbrarzapdw09aywg5d74pss51h1h9b"))))
     (properties `((upstream-name . "BFI")))
     (build-system r-build-system)
     (arguments

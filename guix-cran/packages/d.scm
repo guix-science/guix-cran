@@ -9238,13 +9238,13 @@ fashion.")
 (define-public r-document
   (package
     (name "r-document")
-    (version "4.0.0")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "document" version))
        (sha256
-        (base32 "1bkpyd1cg5r6g1jcwf6xqy0bviwd88i3k2jfzggzxpnva2s02y8y"))))
+        (base32 "17mb8q1jbqs5pl49bsgkmz5rvwzqgzd3aa0v8sv20klrqiixary9"))))
     (properties `((upstream-name . "document")))
     (build-system r-build-system)
     (arguments

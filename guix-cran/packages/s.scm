@@ -30775,13 +30775,13 @@ the website <https://southpark.fandom.com/wiki/South_Park_Archives>.")
 (define-public r-sourcoise
   (package
     (name "r-sourcoise")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sourcoise" version))
        (sha256
-        (base32 "0lgnfpb3ag8n8cq8cmkalz7jw5bil6hp9ln3zws29cp4lfqzlaxx"))))
+        (base32 "1g91qm5xq322yci58r3qg5z06l9vd5c4ybrybv6y5kamjxmvy3ad"))))
     (properties `((upstream-name . "sourcoise")))
     (build-system r-build-system)
     (arguments
@@ -31346,13 +31346,13 @@ Has method-chained and sensical syntax.  Plays well with pipes.")
 (define-public r-soptdmaea
   (package
     (name "r-soptdmaea")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soptdmaeA" version))
        (sha256
-        (base32 "03n1y82myq0rz14awjnx9nx1dz3dxqq58m13cw7a7ncap7fmw9r5"))))
+        (base32 "0f8y6brf6c2rp4nmdx0dwasav8z6frn7185razi39d9zcdyqcl22"))))
     (properties `((upstream-name . "soptdmaeA")))
     (build-system r-build-system)
     (arguments

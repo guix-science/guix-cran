@@ -17955,13 +17955,13 @@ Ye (2024)<doi:10.48550/@code{arXiv.2306.10213>}.")
 (define-public r-robincar
   (package
     (name "r-robincar")
-    (version "0.3.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobinCar" version))
        (sha256
-        (base32 "0q8dimhygskzppbi8j3sxdcvrlrqk26f2kal8bzip6567y17dr25"))))
+        (base32 "1jdx57vp5fkpx4fr4hwpxga6h9vrs5kb12n1pzyp89wrk8qskhkx"))))
     (properties `((upstream-name . "RobinCar")))
     (build-system r-build-system)
     (arguments
@@ -17972,6 +17972,7 @@ Ye (2024)<doi:10.48550/@code{arXiv.2306.10213>}.")
                              r-survival
                              r-superlearner
                              r-rlang
+                             r-rdpack
                              r-numderiv
                              r-mass
                              r-magrittr
@@ -17991,7 +17992,9 @@ trials.  Ting Ye, Jun Shao, Yanyao Yi, Qinyuan Zhao (2023)
 <doi:10.1080/01621459.2022.2049278>.  Ting Ye, Marlena Bannick, Yanyao Yi, Jun
 Shao (2023) <doi:10.1080/24754269.2023.2205802>.  Ting Ye, Jun Shao, Yanyao Yi
 (2023) <doi:10.1093/biomet/asad045>.  Marlena Bannick, Jun Shao, Jingyi Liu, Yu
-Du, Yanyao Yi, Ting Ye (2024) <doi:10.48550/@code{arXiv.2306.10213>}.")
+Du, Yanyao Yi, Ting Ye (2024) <doi:10.1093/biomet/asaf029>.  Xiaoyu Qiu, Yuhan
+Qian, Jaehwan Yi, Jinqiu Wang, Yu Du, Yanyao Yi, Ting Ye (2025)
+<doi:10.48550/@code{arXiv.2408.12541>}.")
     (license license:expat)))
 
 (define-public r-robin

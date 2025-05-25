@@ -4676,13 +4676,13 @@ further details, see the paper by John R.J. Thompson (2024)
 (define-public r-nonprobsvy
   (package
     (name "r-nonprobsvy")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonprobsvy" version))
        (sha256
-        (base32 "1l4rhkdd2bl7lxajp42y7vlk01vkr7ya7ijmd17sgfsbkid5zkg7"))))
+        (base32 "1j5x5ysfcmisr4k9f05w1qaa5hryw3f70p6jf4hqldpri3lwx30x"))))
     (properties `((upstream-name . "nonprobsvy")))
     (build-system r-build-system)
     (arguments
@@ -4713,7 +4713,9 @@ approach.  Details can be found in: Chen et al. (2020)
 al. (2021)
 <https://www150.statcan.gc.ca/n1/pub/12-001-x/2021001/article/00004-eng.htm> and
 Wu (2022)
-<https://www150.statcan.gc.ca/n1/pub/12-001-x/2022002/article/00002-eng.htm>.")
+<https://www150.statcan.gc.ca/n1/pub/12-001-x/2022002/article/00002-eng.htm>.
+For details on the package and its functionalities see
+<doi:10.48550/@code{arXiv.2504.04255>}.")
     (license license:expat)))
 
 (define-public r-nonprobest

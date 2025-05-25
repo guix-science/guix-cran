@@ -45654,13 +45654,13 @@ Posit/RStudio's CRAN mirror.")
 (define-public r-packager
   (package
     (name "r-packager")
-    (version "1.15.2")
+    (version "1.15.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "packager" version))
        (sha256
-        (base32 "0kvlc0cn3v1wpffh4hn29q8jgfxxg4pcxnfnnhykbx13wilrvrph"))))
+        (base32 "06szcszp9qvc5ppdwxsq8m2qldyx1lk5d5ablvxgvx6sffdq00b4"))))
     (properties `((upstream-name . "packager")))
     (build-system r-build-system)
     (arguments
