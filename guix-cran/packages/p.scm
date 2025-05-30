@@ -5095,21 +5095,24 @@ the Healthy Hearts formula.")
 (define-public r-psc
   (package
     (name "r-psc")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psc" version))
        (sha256
-        (base32 "10np3kr0kfly1rv9v0xvwg6ddrzpjhhhn8cmjvsr2rqn8is99v11"))))
+        (base32 "00222jkc7fgb1vfvhlssnsgw7jdpynailddnmrqzw6h8mddsrqzs"))))
     (properties `((upstream-name . "psc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survminer
+    (propagated-inputs (list r-waffle
+                             r-survminer
                              r-survival
+                             r-rcolorbrewer
                              r-mvtnorm
+                             r-gtsummary
                              r-ggplot2
                              r-flexsurv
                              r-enrichwith))
@@ -7032,6 +7035,33 @@ of random multigraph models and conformity-based decompositions.")
      "Computes two-sample confidence intervals for single, paired and independent
 proportions.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-propagate
+  (package
+    (name "r-propagate")
+    (version "1.0-7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "propagate" version))
+       (sha256
+        (base32 "0j1bwn7bzh9qahajcbf4v1sydwx9z1wvxvvblmm9rz9m7firxpbz"))))
+    (properties `((upstream-name . "propagate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmvtnorm r-rcpp r-minpack-lm r-mass r-ff))
+    (home-page "https://cran.r-project.org/package=propagate")
+    (synopsis "Propagation of Uncertainty")
+    (description
+     "Propagation of uncertainty using higher-order Taylor expansion and Monte Carlo
+simulation.  Calculations of propagated uncertainties are based on matrix
+calculus including covariance structure according to Arras 1998
+<doi:10.3929/ethz-a-010113668> (first order), Wang & Iyer 2005
+<doi:10.1088/0026-1394/42/5/011> (second order) and BIPM Supplement 1 (Monte
+Carlo) <doi:10.59161/JCGM101-2008>.")
+    (license license:gpl2+)))
 
 (define-public r-prop-comb-rr
   (package
@@ -12059,6 +12089,49 @@ candidate predictors.  This work is concerned with detecting the presence of out
 of sample predictability based on out of sample mean squared error comparisons
 given in Gonzalo and Pitarakis (2023) <doi:10.1016/j.ijforecast.2023.10.005>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-predictor
+  (package
+    (name "r-predictor")
+    (version "4.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "predictoR" version))
+       (sha256
+        (base32 "12f003yhdg6hw7nx943licws4z0w4ak44mz1wryy50r3221rdrjz"))))
+    (properties `((upstream-name . "predictoR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-trainer
+                             r-shinyjs
+                             r-shinydashboardplus
+                             r-shinydashboard
+                             r-shinycustomloader
+                             r-shinyace
+                             r-shiny
+                             r-rpart-plot
+                             r-rlang
+                             r-loader
+                             r-htmltools
+                             r-golem
+                             r-glmnet
+                             r-echarts4r
+                             r-dt
+                             r-dplyr
+                             r-config
+                             r-colourpicker))
+    (home-page "https://promidat.website/")
+    (synopsis "Predictive Data Analysis System")
+    (description
+     "Perform a supervised data analysis on a database through a shiny graphical
+interface.  It includes methods such as K-Nearest Neighbors, Decision Trees, ADA
+Boosting, Extreme Gradient Boosting, Random Forest, Neural Networks, Deep
+Learning, Support Vector Machines and Bayesian Methods.")
+    (license license:gpl2+)))
 
 (define-public r-predictnmb
   (package
@@ -18307,13 +18380,13 @@ provided in the separate package pomdp.  Kaelbling, Littman and Cassandra (1998)
 (define-public r-pomdp
   (package
     (name "r-pomdp")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomdp" version))
        (sha256
-        (base32 "0r9sh9954nl38nk465h8dgs4yd40s0xr6q1q5smlbgzc9rcrv228"))))
+        (base32 "0kynzc5s8wqx5ib7d57shrjbfczwrh7yy1g92774biqn020jrrzr"))))
     (properties `((upstream-name . "pomdp")))
     (build-system r-build-system)
     (arguments
@@ -18333,8 +18406,8 @@ provided in the separate package pomdp.  Kaelbling, Littman and Cassandra (1998)
      "This package provides the infrastructure to define and analyze the solutions of
 Partially Observable Markov Decision Process (POMDP) models.  Interfaces for
 various exact and approximate solution algorithms are available including value
-iteration, point-based value iteration and SARSOP. Smallwood and Sondik (1973)
-<doi:10.1287/opre.21.5.1071>.")
+iteration, point-based value iteration and SARSOP. Hahsler and Cassandra
+<doi:10.32614/RJ-2024-021>.")
     (license license:gpl3+)))
 
 (define-public r-pomcheckr
@@ -18910,13 +18983,13 @@ Liao et al. (2021) <doi:10.1007/s00122-021-03834-x>.")
 (define-public r-polykde
   (package
     (name "r-polykde")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polykde" version))
        (sha256
-        (base32 "10qymk31iq7c9ia41ycgbrmgbk9nvgyqhpvdgz6phxzzmydv75kx"))))
+        (base32 "02gw7xwyfdblf13b9r4ww6v46l5kff6irzsnnv5afgjf71n7fw9c"))))
     (properties `((upstream-name . "polykde")))
     (build-system r-build-system)
     (arguments
@@ -22987,28 +23060,34 @@ site is completed.")
 (define-public r-plotor
   (package
     (name "r-plotor")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotor" version))
        (sha256
-        (base32 "18997ayhqiw32gw4l3xmzzf8yf4659ajl18rsibqhb87kcasc3l0"))))
+        (base32 "05l57vhza3yalwj3ja0swbarrqqsg5bw1d8l3knn2r5fn3ykrx37"))))
     (properties `((upstream-name . "plotor")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyselect
+                             r-tibble
                              r-stringr
                              r-scales
                              r-rlang
                              r-purrr
+                             r-janitor
+                             r-gtextras
+                             r-gt
                              r-glue
                              r-ggplot2
                              r-forcats
                              r-dplyr
+                             r-detectseparation
                              r-cli
+                             r-car
                              r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/craig-parylo/plotor")
@@ -24790,13 +24869,13 @@ to the measured PER in control samples.")
 (define-public r-plasma
   (package
     (name "r-plasma")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plasma" version))
        (sha256
-        (base32 "14bp3l9rys0yfjl8lkbn0yw2qivldwfk9j5ka63bps5l2bw9m1b5"))))
+        (base32 "1v085di0d3hlj0njirvdxvlr8mzz3w7kbr27dgxdqw6fl6gl40nm"))))
     (properties `((upstream-name . "plasma")))
     (build-system r-build-system)
     (arguments
@@ -25889,13 +25968,13 @@ Network (CRAN).")
 (define-public r-pkgdown-offline
   (package
     (name "r-pkgdown-offline")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgdown.offline" version))
        (sha256
-        (base32 "02f3n02nnibf56gsdp9whdbbxc1gy12jzl2jvwc3npd47znpm74f"))))
+        (base32 "0wwyhw6dfh9dhpnxgc5wg5lfi1f2w5xpbkljll5gv4x1fh6yrkdc"))))
     (properties `((upstream-name . "pkgdown.offline")))
     (build-system r-build-system)
     (arguments
@@ -25968,13 +26047,13 @@ base of multiple R packages.")
 (define-public r-pkgdepends
   (package
     (name "r-pkgdepends")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgdepends" version))
        (sha256
-        (base32 "025ni959zvqfaxs6af9pka7gn23yzgbabpy28bsa45v75hi4i79m"))))
+        (base32 "05jsg28acrw81llrj3hg09xwblxb63qlcpzxdfrlpan1pd43pr8a"))))
     (properties `((upstream-name . "pkgdepends")))
     (build-system r-build-system)
     (arguments
@@ -26031,13 +26110,13 @@ on where the error originated.")
 (define-public r-pkgcache
   (package
     (name "r-pkgcache")
-    (version "2.2.3")
+    (version "2.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgcache" version))
        (sha256
-        (base32 "1isvbb2l6l2wk2grh7cz85q80nbghp5287jr137sal4gviprgk7v"))))
+        (base32 "00ly737hg16jy426p49393ldkscc5ldmfzag1ccy8l0lnajkq60k"))))
     (properties `((upstream-name . "pkgcache")))
     (build-system r-build-system)
     (arguments
@@ -30314,13 +30393,13 @@ scientific use.  Use for commercial purposes shall not be allowed.")
 (define-public r-phenofit
   (package
     (name "r-phenofit")
-    (version "0.3.9")
+    (version "0.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phenofit" version))
        (sha256
-        (base32 "1b6laz7idd4cbliidv0xqz0k1h5f2f0v9lz82qhsy7p7pm9zagi6"))))
+        (base32 "096y48gvlxdsn00gf4gn39gxd10kcdzpdbgs5lhqhcpsakxfalv6"))))
     (properties `((upstream-name . "phenofit")))
     (build-system r-build-system)
     (arguments
@@ -31716,25 +31795,27 @@ mixture models. @code{McNicholas} and Murphy (2008)
 (define-public r-pgm2
   (package
     (name "r-pgm2")
-    (version "1.0-1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PGM2" version))
        (sha256
-        (base32 "03282pcq7gw47awc2mxjsbz6w3zpqjhqd7fzg8la4p00cd0vvmr4"))))
+        (base32 "0s2603w8c58639qxl1jjd2mki84zp3lpi8smwdqrv16pdl906ria"))))
     (properties `((upstream-name . "PGM2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=PGM2")
-    (synopsis "Nested Resolvable Designs and their Associated Uniform Designs")
+    (home-page "https://mlaib.net")
+    (synopsis
+     "Recursive Construction of Nested Resolvable Designs and Associated Uniform Designs")
     (description
-     "Construction method of nested resolvable designs from a projective geometry
-defined on Galois field of order 2.  The obtained Resolvable designs are used to
-build uniform design.  The presented results are based on
-<https://eudml.org/doc/219563> and A. Boudraa et al. (See references).")
+     "This package implements recursive construction methods for balanced incomplete
+block designs (BIBDs), their second generation, resolvable BIBDs (RBIBDs), and
+uniform designs (UDs) derived from projective geometries over GF(2).  It enables
+extraction of nested structures in multiple stages and supports recursive
+resolution processes, as introduced in Boudraa et al. (2013).")
     (license license:gpl3)))
 
 (define-public r-pglm
@@ -36426,13 +36507,13 @@ extracted data.")
 (define-public r-pdfsearch
   (package
     (name "r-pdfsearch")
-    (version "0.4.1")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdfsearch" version))
        (sha256
-        (base32 "02kz05zxsb8x9ldfk57rvy41ga4iq03qv0v78dpnaqz2xfq45g5c"))))
+        (base32 "1ssl0jqcqc9hsl71aiixx2lcvjkm36av3irfmmxqac2520w2fk3d"))))
     (properties `((upstream-name . "pdfsearch")))
     (build-system r-build-system)
     (arguments
@@ -40400,13 +40481,13 @@ Also referred to the following implementation:
 (define-public r-parzer
   (package
     (name "r-parzer")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parzer" version))
        (sha256
-        (base32 "0544iijla39s147lf2yflgx1hnkhz8vj26mxy600mhmg44h43xgc"))))
+        (base32 "1sfw1pg4kv22fdba9xg7gckz3cry3fd4ww5j8c79rf3ss7np10vs"))))
     (properties `((upstream-name . "parzer")))
     (build-system r-build-system)
     (arguments
@@ -43930,13 +44011,13 @@ fossil assemblages.")
 (define-public r-pald
   (package
     (name "r-pald")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pald" version))
        (sha256
-        (base32 "1b24z6lls2z2c3mwmnbp3qjr63hc1css8d2zy61fzrc78v6v42am"))))
+        (base32 "027qjqyginqabj8bym7yzvza94j468579f5pd3i7q7i7y0n49zwn"))))
     (properties `((upstream-name . "pald")))
     (build-system r-build-system)
     (arguments
@@ -44596,13 +44677,13 @@ decisions based on timely and detailed economic insights.")
 (define-public r-pak
   (package
     (name "r-pak")
-    (version "0.8.0.2")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pak" version))
        (sha256
-        (base32 "07jfylf87cqb20cfczy369nlhmz8s3kdmyaz9sl7dp35vc8jy1bj"))))
+        (base32 "100im9syr6fdnkvviyrssgx2j4ass0wb4w3z21k1g0nrza1a3a25"))))
     (properties `((upstream-name . "pak")))
     (build-system r-build-system)
     (arguments
@@ -45236,13 +45317,13 @@ information, please see Gruenstaeudl and Jenke (2020)
 (define-public r-pacu
   (package
     (name "r-pacu")
-    (version "0.1.44")
+    (version "0.1.63")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pacu" version))
        (sha256
-        (base32 "0dfpqrlnnv571qzjdr528mwny8w94gvx9iv5r0l09xqxwvki2czc"))))
+        (base32 "1pyq429sq0g7zxc9zmnl823fj0fi1hd8a5x3zqdz9hb6qqdrpq0q"))))
     (properties `((upstream-name . "pacu")))
     (build-system r-build-system)
     (arguments

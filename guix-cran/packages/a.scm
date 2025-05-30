@@ -4161,13 +4161,13 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2025.5.12")
+    (version "2025.5.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "0l47gn665cqx5fp1dfb17sdb20xvv92fc697lkiwnqsy5cpdi6la"))))
+        (base32 "09kcynxrgqcrw3ajmbn5whav5s1l87h4jf884ambhzp3iqq5gxpz"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (arguments
@@ -5866,13 +5866,13 @@ clustering and optimal marker ordering using MSTmap (see Wu et al.,2008).")
 (define-public r-asm
   (package
     (name "r-asm")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asm" version))
        (sha256
-        (base32 "06ldb2dzp4vhyk6hy368bf5vnpjxn1f6zs13p7qmaknp97xfzzsd"))))
+        (base32 "1qxzm3n963mv8b12d123kwk0q7b47wj05ychmhy8s85hfvs7nif0"))))
     (properties `((upstream-name . "asm")))
     (build-system r-build-system)
     (arguments
@@ -9837,6 +9837,34 @@ scores/markers is also included.  Optional outputs include positive predictive
 values and true positive fractions at the specified marker cut-off values, and a
 plot of the time-dependent AP versus time (available for event time data).")
     (license license:lgpl3)))
+
+(define-public r-apticalc
+  (package
+    (name "r-apticalc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "APTIcalc" version))
+       (sha256
+        (base32 "0kavxdif665i9ir8a4yj21anp6s0c9y0dmn53lqw7ss73nvq6kzl"))))
+    (properties `((upstream-name . "APTIcalc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=APTIcalc")
+    (synopsis "Air Pollution Tolerance Index (APTI) Calculator")
+    (description
+     "It calculates the Air Pollution Tolerance Index (APTI) of plant species using
+biochemical parameters such as chlorophyll content, leaf extract @code{pH},
+relative water content, and ascorbic acid content.  It helps in identifying
+tolerant species for greenbelt development and pollution mitigation studies.  It
+includes a shiny app for interactive APTI calculation and visualisation.  For
+method details see, Sahu et al. (2020).<DOI:10.1007/s42452-020-3120-6>.")
+    (license license:gpl2+)))
 
 (define-public r-apt
   (package
@@ -17285,6 +17313,33 @@ Iida and A. Penn (2014) \"Space Syntax methodology\", and also by A. Turner (200
 handbook\".")
     (license license:gpl3)))
 
+(define-public r-alcoholsurv
+  (package
+    (name "r-alcoholsurv")
+    (version "0.7.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "alcoholSurv" version))
+       (sha256
+        (base32 "0rnsgml8hv5k9j2900vq4y2w74n7dzxy0hq42sqi87nbjvalp6ay"))))
+    (properties `((upstream-name . "alcoholSurv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sensitivitymv))
+    (home-page "https://cran.r-project.org/package=alcoholSurv")
+    (synopsis "Light Daily Alcohol and Longevity")
+    (description
+     "This package contains data from an observational study concerning possible
+effects of light daily alcohol consumption on survival and on HDL cholesterol.
+It also replicates various simple analyses in Rosenbaum (2025a)
+<doi:10.1080/09332480.2025.2473291>.  Finally, it includes new R code in
+@code{wgtRankCef()} that implements and replicates a new method for constructing
+evidence factors in observational block designs.")
+    (license license:gpl3)))
+
 (define-public r-albopictus
   (package
     (name "r-albopictus")
@@ -20073,6 +20128,58 @@ duration are supported.  There is also support for dummy variables in predictive
 contexts.  Code has been completely re-written in data.table for computational
 speed.")
     (license license:gpl2+)))
+
+(define-public r-aggrecat
+  (package
+    (name "r-aggrecat")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aggreCAT" version))
+       (sha256
+        (base32 "0gkg2x1mznhavjxdw3sdg2q92np8vj7p6ngx4yaryrchq4yyvizp"))))
+    (properties `((upstream-name . "aggreCAT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-vgam
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-r2jags
+                             r-purrr
+                             r-precrec
+                             r-mlmetrics
+                             r-mathjaxr
+                             r-magrittr
+                             r-insight
+                             r-gofkernel
+                             r-ggplot2
+                             r-dplyr
+                             r-desctools
+                             r-crayon
+                             r-coda
+                             r-cli))
+    (native-inputs (list r-r-rsp r-knitr))
+    (home-page "https://replicats.research.unimelb.edu.au/")
+    (synopsis "Mathematically Aggregating Expert Judgments")
+    (description
+     "The use of structured elicitation to inform decision making has grown
+dramatically in recent decades, however, judgements from multiple experts must
+be aggregated into a single estimate.  Empirical evidence suggests that
+mathematical aggregation provides more reliable estimates than enforcing
+behavioural consensus on group estimates. @code{aggreCAT} provides
+state-of-the-art mathematical aggregation methods for elicitation data including
+those defined in Hanea, A. et al. (2021) <doi:10.1371/journal.pone.0256919>.
+The package also provides functions to visualise and evaluate the performance of
+your aggregated estimates on validation data.")
+    (license license:expat)))
 
 (define-public r-agghoo
   (package
@@ -23838,13 +23945,13 @@ for analytical applications.")
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.17.0")
+    (version "0.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "1lfln79npf46lb1cr0bxdbkg2sgjm6w2n9rb73lq5s67lisk6g4b"))))
+        (base32 "1lr3nqf08biilkdivpkjfamd0fcim2g18vi7226zm67m39dv4qf0"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (arguments
@@ -23865,13 +23972,13 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.17.0")
+    (version "0.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "19wy46g9g5kyqz616crdk10b42asaf1xfn28p0swkbxw643gfchk"))))
+        (base32 "17yarhcpn05zlci9sv4wrv1j8z706v8qn8i595vwdv2fi8i8hi8m"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (arguments
@@ -25588,13 +25695,13 @@ X, Lu W and Rabinowitz J (2017) <doi:10.1021/acs.analchem.7b00396>.")
 (define-public r-accsamplingdesign
   (package
     (name "r-accsamplingdesign")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AccSamplingDesign" version))
        (sha256
-        (base32 "1bc7aks8x452dd3k3pd1nv33kzg8nqjwdgdv9gp1sq9zd3071kmh"))))
+        (base32 "0ybwk2nc0g7pma48rr3kbwadvgmaqp7206n3qmdhz4c86an9kgk4"))))
     (properties `((upstream-name . "AccSamplingDesign")))
     (build-system r-build-system)
     (arguments
@@ -25604,12 +25711,13 @@ X, Lu W and Rabinowitz J (2017) <doi:10.1021/acs.analchem.7b00396>.")
     (home-page "https://github.com/vietha/AccSamplingDesign")
     (synopsis "Acceptance Sampling Plans Design")
     (description
-     "This package provides tools for designing and analyzing acceptance sampling
-plans.  Supports both attribute-based (Binomial and Poisson) and variable-based
-(Normal and Beta) sampling, enabling quality control for fractional and
-compositional data.  Uses nonlinear programming for sampling plan optimization,
-minimizing sample size while balancing producer's and consumer's risks.
-Operating Characteristic curves are available for plan visualization.")
+     "This package provides tools for designing and analyzing Acceptance Sampling
+plans.  Supports both Attributes Sampling (Binomial and Poisson distributions)
+and Variables Sampling (Normal and Beta distributions), enabling quality control
+for fractional and compositional data.  Uses nonlinear programming for sampling
+plan optimization, minimizing sample size while controlling producer's and
+consumer's risks.  Operating Characteristic curves are available for plan
+visualization.")
     (license license:gpl3)))
 
 (define-public r-accrualplot
@@ -25807,13 +25915,13 @@ ISBN: 978-0387310732).")
 (define-public r-accelstab
   (package
     (name "r-accelstab")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AccelStab" version))
        (sha256
-        (base32 "1i2zm60bhzgc67j4d7ga0vdli5wii9h3k9vsr59z0jjng1kyjfih"))))
+        (base32 "1cymvl74lgpa96k4bfri5w7w9bdsz13g7i5i57x6rv0nz6g8pky3"))))
     (properties `((upstream-name . "AccelStab")))
     (build-system r-build-system)
     (arguments

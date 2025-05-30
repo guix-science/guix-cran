@@ -1078,13 +1078,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.6.8")
+    (version "1.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "0sabxwzw2xpaykdsbgzc17c1qzg7l8hmg1jnnpl3w3jvp3bvj08i"))))
+        (base32 "15spp6kva3f1bacri4kkppwd2l6hfjxh886hy1qvbmmhc0x9nmrb"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (arguments
@@ -1102,6 +1102,7 @@ available at the following URL:
                              r-scales
                              r-rvg
                              r-rstudioapi
+                             r-riskregression
                              r-readxl
                              r-readr
                              r-rcolorbrewer
@@ -3582,13 +3583,13 @@ derived from point cloud and makes data available for structural analysis.")
 (define-public r-jfe
   (package
     (name "r-jfe")
-    (version "2.5.9")
+    (version "2.5.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JFE" version))
        (sha256
-        (base32 "0cfxx38azpc236waxxxqfawqfzjg5cliyspf0y6226gkmslha3kp"))))
+        (base32 "0m1gmlwh8lsmc45bkmxf48p9k8s41m8pfb02ppla5573iyx2882n"))))
     (properties `((upstream-name . "JFE")))
     (build-system r-build-system)
     (arguments

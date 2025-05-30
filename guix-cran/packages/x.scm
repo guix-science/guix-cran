@@ -1514,13 +1514,13 @@ output.")
 (define-public r-xlconnect
   (package
     (name "r-xlconnect")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XLConnect" version))
        (sha256
-        (base32 "0vllw7d53kxvkm7lif1r8zcpza9sn3skm3wzyxd7pji0y6pin24w"))))
+        (base32 "1c9x04rzrn514rsradmgs7wrz4kznd0by3pi6775ifin55lrsr0l"))))
     (properties `((upstream-name . "XLConnect")))
     (build-system r-build-system)
     (arguments

@@ -11454,13 +11454,13 @@ HTML files, or integrate flow maps into Shiny applications.")
 (define-public r-flowermate
   (package
     (name "r-flowermate")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FlowerMate" version))
        (sha256
-        (base32 "0hl91lz1ikhqransinn0zqa2gmx0fyl7yqxnjjj4h8ssff63hwrc"))))
+        (base32 "1w39rxn5bzyb2h9d1s1c2sv9hz474cxy82khw0hk1mvcxgpm5l94"))))
     (properties `((upstream-name . "FlowerMate")))
     (build-system r-build-system)
     (arguments
@@ -12058,13 +12058,13 @@ features? See Aw, Spence and Song (2023) for the accompanying paper.")
 (define-public r-flint
   (package
     (name "r-flint")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flint" version))
        (sha256
-        (base32 "04bci3hpsf7rwinssacbd0fjzlxhdvlq5kk29y02kwpcq2s820bp"))))
+        (base32 "0mfm6acjfsk6z267y1falrg8y7h4kpjgx15cxbp1v1hqcbcw22fl"))))
     (properties `((upstream-name . "flint")))
     (build-system r-build-system)
     (arguments
@@ -13744,13 +13744,13 @@ quality, reliability, and structure.")
 (define-public r-fixes
   (package
     (name "r-fixes")
-    (version "0.2.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fixes" version))
        (sha256
-        (base32 "1ndzl00ph4vd9lc21fsvcgph2rciqjk96xcr400i9d7gln6jj2yx"))))
+        (base32 "06zh7fd8dvdc7ndp1fbsrnvdvx2ga1ya10jvlfrlzggfqd38x13f"))))
     (properties `((upstream-name . "fixes")))
     (build-system r-build-system)
     (arguments
@@ -13763,7 +13763,7 @@ quality, reliability, and structure.")
                              r-dplyr
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=fixes")
+    (home-page "https://github.com/yo5uke/fixes")
     (synopsis
      "Tools for Creating and Visualizing Fixed-Effects Event Study Models")
     (description
@@ -15045,13 +15045,13 @@ work is available on github and @code{PyPi} ('@code{FiShPy}').")
 (define-public r-first
   (package
     (name "r-first")
-    (version "1.1")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "first" version))
        (sha256
-        (base32 "13gzjxgbqjn227981sijkksbjkyh8fca9735zjq93w2mv2af3y87"))))
+        (base32 "0lz2nm7rvqyfnxbc3p357k18wbzrzjf39is9xp5ajgq3vpmpjgln"))))
     (properties `((upstream-name . "first")))
     (build-system r-build-system)
     (arguments
@@ -15062,10 +15062,49 @@ work is available on github and @code{PyPi} ('@code{FiShPy}').")
     (synopsis "Factor Importance Ranking and Selection using Total Indices")
     (description
      "This package provides a model-independent factor importance ranking and
-selection procedure that is based on total Sobol indices.  Please see Huang and
-Joseph (2024) <@code{arXiv:2401.00800>}.  This research is supported by U.S.
+selection procedure based on total Sobol indices.  Please see Huang and Joseph
+(2025) <doi:10.1080/00401706.2025.2483531>.  This research is supported by U.S.
 National Science Foundation grants DMS-2310637 and DMREF-1921873.")
     (license license:gpl2+)))
+
+(define-public r-fireexposur
+  (package
+    (name "r-fireexposur")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fireexposuR" version))
+       (sha256
+        (base32 "0xr5c8zcdwkbqhzyvnbfkqyw0qnfbaigi1yglmj1v6spd8m3kssz"))))
+    (properties `((upstream-name . "fireexposuR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyterra
+                             r-tidyselect
+                             r-tidyr
+                             r-terra
+                             r-rlang
+                             r-multiscaledtm
+                             r-maptiles
+                             r-magrittr
+                             r-ggspatial
+                             r-ggplot2
+                             r-geosphere
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/fireexposuR")
+    (synopsis "Compute and Visualize Wildfire Exposure")
+    (description
+     "This package provides methods for computing and visualizing wildfire igntion
+exposure and directional vulnerability that are published in a series of
+scientific publications are automated by the functions in this package.  See
+Beverly et al. (2010) <doi:10.1071/WF09071>, Beverly et al. (2021)
+<doi:10.1007/s10980-020-01173-8>, and Beverly and Forbes (2023)
+<doi:10.1007/s11069-023-05885-3> for background and methodology.")
+    (license license:gpl3+)))
 
 (define-public r-firebehavior
   (package
@@ -22663,13 +22702,13 @@ extend it to tackle datasets in metric spaces.")
 (define-public r-fastmatrix
   (package
     (name "r-fastmatrix")
-    (version "0.5-7721")
+    (version "0.5-9017")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastmatrix" version))
        (sha256
-        (base32 "1q0swa420a2hiyi7q7xc42igil2h8wrdvhf74563m184b2bvxajv"))))
+        (base32 "0bdbcn20c3kxjc7zg1xvp0nnykifwnf8v2911gqz4156hx9kw8k8"))))
     (properties `((upstream-name . "fastmatrix")))
     (build-system r-build-system)
     (arguments

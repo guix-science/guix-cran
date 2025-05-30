@@ -607,13 +607,13 @@ Bureau.")
 (define-public r-usmap
   (package
     (name "r-usmap")
-    (version "0.7.1")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usmap" version))
        (sha256
-        (base32 "04fw3k9h11av7idn8cvcphq7wncgp9pf7mrrdb2a63wirlgd14w6"))))
+        (base32 "19wkma0lj3dk725cjjra7grb2ywb96cflqijsjq9q7kngkn0qvdf"))))
     (properties `((upstream-name . "usmap")))
     (build-system r-build-system)
     (arguments
@@ -3883,13 +3883,13 @@ Jacobian actions etc.")
 (define-public r-umatrix
   (package
     (name "r-umatrix")
-    (version "4.0.1")
+    (version "4.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Umatrix" version))
        (sha256
-        (base32 "03ci20nz0vfaw36miq1gvyg0spmmg2bd229xkrnbv6za1q18y08l"))))
+        (base32 "067jwf9h6j4m2vxzfj4c4aj8iiq2cyjl42lww4bd94v2vvdzm2ak"))))
     (properties `((upstream-name . "Umatrix")))
     (build-system r-build-system)
     (arguments
@@ -3902,6 +3902,7 @@ Jacobian actions etc.")
                              r-png
                              r-plyr
                              r-pdist
+                             r-ggrepel
                              r-ggplot2
                              r-geometry
                              r-fields

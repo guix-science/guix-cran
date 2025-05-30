@@ -791,13 +791,13 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
 (define-public r-hyper-gam
   (package
     (name "r-hyper-gam")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyper.gam" version))
        (sha256
-        (base32 "02qh6rk4pkad5nyz02q65j6wgdr6l0xn47axk26lgama6dbzgah4"))))
+        (base32 "0nyg3h7x5dnhhd6i8zbjf7fx95cjwjfnab60w9l4b1y9w47nx5f7"))))
     (properties `((upstream-name . "hyper.gam")))
     (build-system r-build-system)
     (arguments
@@ -809,7 +809,7 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
                              r-groupedhyperframe
                              r-cli
                              r-caret))
-    (native-inputs (list r-quarto))
+    (native-inputs (list r-quarto r-knitr))
     (home-page "https://cran.r-project.org/package=hyper.gam")
     (synopsis "Generalized Additive Models with Hyper Column")
     (description
@@ -13322,40 +13322,27 @@ package.")
 (define-public r-hdar
   (package
     (name "r-hdar")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdar" version))
        (sha256
-        (base32 "0kpvlv0n4sfm51l873cy2k47l3r6rr8jhgglj728ka3jrlm10w1w"))))
+        (base32 "1w242ivi6ffdmi9j4vzczmaaymy35a0jcs4n19rh382823ic03jw"))))
     (properties `((upstream-name . "hdar")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
+      #:tests? #f))
     (propagated-inputs (list r-stringr
+                             r-scales
                              r-r6
+                             r-progress
                              r-magrittr
                              r-jsonlite
-                             r-humanize
                              r-httr2
                              r-htmltools))
-    (native-inputs (list r-knitr esbuild))
+    (native-inputs (list r-knitr))
     (home-page "https://www.wekeo.eu/")
     (synopsis "'REST' API Client for Accessing Data on 'WEkEO HDA V2'")
     (description
@@ -13365,8 +13352,7 @@ the HDA platform.  With hdar', researchers and data scientists can integrate the
 extensive HDA datasets into their R workflows, enhancing their data analysis
 capabilities.  Comprehensive information on the API functionality and usage is
 available at <https://gateway.prod.wekeo2.eu/hda-broker/docs>.")
-    (license (list (license:fsdg-compatible "EUPL (>= 1.2)")
-                   (license:fsdg-compatible "file://LICENSE")))))
+    (license license:gpl3)))
 
 (define-public r-hdanova
   (package
@@ -14807,42 +14793,6 @@ relative frequencies.")
 parameters.")
     (license license:gpl2+)))
 
-(define-public r-haplor
-  (package
-    (name "r-haplor")
-    (version "4.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "haploR" version))
-       (sha256
-        (base32 "1s8f556d9x5h76gyl4wggcx01f4qrx0fp5mz46yk2x9qmwiir89v"))))
-    (properties `((upstream-name . "haploR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml
-                             r-tibble
-                             r-runit
-                             r-rjsonio
-                             r-rcurl
-                             r-plyr
-                             r-httr
-                             r-dt))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=haploR")
-    (synopsis "Query 'HaploReg', 'RegulomeDB'")
-    (description
-     "This package provides a set of utilities for querying @code{HaploReg}
-<https://pubs.broadinstitute.org/mammals/haploreg/haploreg.php>,
-@code{RegulomeDB} <https://www.regulomedb.org/regulome-search/> web-based tools.
- The package connects to @code{HaploReg}', @code{RegulomeDB} searches and
-downloads results, without opening web pages, directly from R environment.
-Results are stored in a data frame that can be directly used in various kinds of
-downstream analyses.")
-    (license license:gpl3)))
-
 (define-public r-haplocatcher
   (package
     (name "r-haplocatcher")
@@ -15485,19 +15435,19 @@ algorithm was described by Hejazi, Coyle, and van der Laan (2020)
 (define-public r-hakaiapi
   (package
     (name "r-hakaiapi")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hakaiApi" version))
        (sha256
-        (base32 "0lxqk4cp1s1sm3nbsp74q1bpklmph620c2f1kii97h6yimnq9bi0"))))
+        (base32 "124favc84xv2kzdpvr5b8x3qrbq26swh7xkjgznq6y5hclxa43kv"))))
     (properties `((upstream-name . "hakaiApi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-readr r-r6 r-httr r-dplyr))
+    (propagated-inputs (list r-tibble r-readr r-r6 r-httr2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/HakaiInstitute/hakai-api-client-r")
     (synopsis "Authenticated HTTP Request Client for the 'Hakai' API")

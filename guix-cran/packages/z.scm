@@ -867,13 +867,13 @@ Zeta score calculation and hits selection based on defined Screen Strength.")
 (define-public r-zetadiv
   (package
     (name "r-zetadiv")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zetadiv" version))
        (sha256
-        (base32 "0m147z864g2pca28gbna1bb7jqr2f74x15fj8v8hhs3a2lr8lh37"))))
+        (base32 "0rrnnb8fa6f5dkdy00c35fxbiqk3nk4aglc0qjkc30ldmsvb1akc"))))
     (properties `((upstream-name . "zetadiv")))
     (build-system r-build-system)
     (arguments

@@ -1149,13 +1149,13 @@ output and create organized and easily portable data products.")
 (define-public r-vprint
   (package
     (name "r-vprint")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vprint" version))
        (sha256
-        (base32 "0jpynvbcrpis154s44ich0lb6by12jii7x0q2jws9pb4cq4dfgjm"))))
+        (base32 "154ji1cfm0cq1yzy8yi4fqqynjwyj8b9vcpz4l73z2w28y8khmy6"))))
     (properties `((upstream-name . "vprint")))
     (build-system r-build-system)
     (arguments
@@ -2721,13 +2721,13 @@ Functions in vivaldi primarily operate on vcf files.")
 (define-public r-vivainsights
   (package
     (name "r-vivainsights")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vivainsights" version))
        (sha256
-        (base32 "05q29qib3jc2r2ckca6x30iayinl8x0cf6f44lahhfgxn54dd71s"))))
+        (base32 "1xmffacid9lpy65r52bz9b06wmdvzmhcd94w6yavp2z2sadyvrba"))))
     (properties `((upstream-name . "vivainsights")))
     (build-system r-build-system)
     (arguments
@@ -3353,40 +3353,56 @@ with the plot using mouse hover or zoom.")
 (define-public r-visstatistics
   (package
     (name "r-visstatistics")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visStatistics" version))
        (sha256
-        (base32 "1sdawj5arw8ia1bb3fsvxa0vyvsq53p2nm4mlj1xqb6w1m4n7ig0"))))
+        (base32 "0fjqyfgjvrnmcj1w0pjkkhsn876iip49yzmr3647g9bksvwn88g1"))))
     (properties `((upstream-name . "visStatistics")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vcd r-nortest r-multcompview r-cairo))
-    (native-inputs (list r-rmarkdown r-knitr r-bookdown))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/shhschilling/visStatistics")
     (synopsis
      "Automated Selection and Visualisation of Statistical Hypothesis Tests")
     (description
-     "Automatically selects and visualises appropriate statistical hypothesis tests
-between a response and a feature variable in a data frame.  The choice of test
-depends on the class, distribution, and sample size of the input variables, as
-well as the user-defined conf.level'.  The package focuses on visualising the
-selected test using appropriate plotsâ such as box plots, bar charts,
-regression lines with confidence bands, mosaic plots, residual plots and QâQ
-plots.  Each plot is annotated with relevant test statistics and, where
-applicable, assumption checks and post-hoc results.  The scripted workflow is
-particularly well suited for interactive interfaces where users access data only
-through a graphical front end backed by server-side R sessions, as well as for
-quick data exploration, for example, in statistical consulting contexts.
-Implemented tests: @code{t.test()}, @code{wilcox.test()}, @code{aov()},
-@code{oneway.test()}, @code{kruskal.test()}, @code{lm()}, @code{fisher.test()},
-@code{chisq.test()}.  Tests for normality: @code{shapiro.test()},
-@code{ad.test()}.  Tests for equal variances: @code{bartlett.test()}.  Post-hoc
-tests: @code{TukeyHSD()}, @code{pairwise.wilcox.test()}.")
+     "Automatically selects and visualises statistical hypothesis tests between two
+vectors, based on their class, distribution, sample size, and a user-defined
+confidence level (conf.level).  Visual outputs - including box plots, bar
+charts, regression lines with confidence bands, mosaic plots, residual plots,
+and Q-Q plots - are annotated with relevant test statistics, assumption checks,
+and post-hoc analyses where applicable.  The algorithmic workflow helps the user
+focus on the interpretation of test results rather than test selection.  It is
+particularly suited for quick data analysis, e.g., in statistical consulting
+projects or educational settings.  The test selection algorithm proceeds as
+follows: Input vectors of class numeric or integer are considered numerical;
+those of class factor are considered categorical.  Assumptions of residual
+normality and homogeneity of variances are considered met if the corresponding
+test yields a p-value greater than the significance level alpha = 1 -
+conf.level. (1) When the response vector is numerical and the predictor vector
+is categorical, a test of central tendencies is selected.  If the categorical
+predictor has exactly two levels, @code{t.test()} is applied when group sizes
+exceed 30 (Lumley et al. (2002)
+<doi:10.1146/annurev.publhealth.23.100901.140546>).  For smaller samples,
+normality of residuals is tested using @code{shapiro.test()}; if met,
+@code{t.test()} is used; otherwise, @code{wilcox.test()}.  If the predictor is
+categorical with more than two levels, an @code{aov()} is initially fitted.
+Residual normality is evaluated using both @code{shapiro.test()} and
+@code{ad.test()}; residuals are considered approximately normal if at least one
+test yields a p-value above alpha.  If this assumption is met,
+@code{bartlett.test()} assesses variance homogeneity.  If variances are
+homogeneous, @code{aov()} is used; otherwise @code{oneway.test()}.  Both tests
+are followed by @code{TukeyHSD()}.  If residual normality cannot be assumed,
+@code{kruskal.test()} is followed by @code{pairwise.wilcox.test()}. (2) When
+both the response and predictor vectors are numerical, a simple linear
+regression model is fitted using @code{lm()}. (3) When both vectors are
+categorical, Cochran's rule (Cochran (1954) <doi:10.2307/3001666>) is applied to
+test independence either by @code{chisq.test()} or @code{fisher.test()}.")
     (license license:expat)))
 
 (define-public r-visreg
@@ -4131,13 +4147,13 @@ model using algorithm by Jin, Lin and Tamvakis (2012)
 (define-public r-viralmodels
   (package
     (name "r-viralmodels")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viralmodels" version))
        (sha256
-        (base32 "00x562cf0i50hpvam4xv9xp8g9b0f497qb4w26zfk70cdq5sb353"))))
+        (base32 "1xkgbf4l0ca8dgpzcsb94fxnv8vwz8rhs99i33zdwy14nqcjxcj5"))))
     (properties `((upstream-name . "viralmodels")))
     (build-system r-build-system)
     (arguments
@@ -4145,16 +4161,25 @@ model using algorithm by Jin, Lin and Tamvakis (2012)
       #:tests? #f))
     (propagated-inputs (list r-workflowsets
                              r-workflows
+                             r-viraldomain
                              r-tune
                              r-tidyselect
+                             r-rules
                              r-rsample
                              r-recipes
+                             r-ranger
                              r-purrr
                              r-parsnip
+                             r-magrittr
+                             r-kknn
+                             r-kernlab
                              r-hardhat
+                             r-glmnet
                              r-dplyr
-                             r-dials))
-    (home-page "https://github.com/juanv66x/viralmodels")
+                             r-dials
+                             r-cubist
+                             r-baguette))
+    (home-page "https://cran.r-project.org/package=viralmodels")
     (synopsis "Viral Load and CD4 Lymphocytes Regression Models")
     (description
      "This package provides a comprehensive framework for building, evaluating, and
@@ -4176,13 +4201,13 @@ populations.")
 (define-public r-viraldomain
   (package
     (name "r-viraldomain")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viraldomain" version))
        (sha256
-        (base32 "1g5872l0vgv3dx2ilkk75rzrvp2df7c7avx9n51dzfxkm82s41hi"))))
+        (base32 "1jjyaxvamw054vzcfwb05admm9facbrsnscbxwxpqc9pdarkxw4m"))))
     (properties `((upstream-name . "viraldomain")))
     (build-system r-build-system)
     (arguments
@@ -4191,11 +4216,14 @@ populations.")
     (propagated-inputs (list r-workflows
                              r-tidyselect
                              r-recipes
+                             r-ranger
                              r-parsnip
-                             r-ggplot2
+                             r-magrittr
+                             r-kknn
+                             r-earth
                              r-dplyr
                              r-applicable))
-    (home-page "https://github.com/juanv66x/viraldomain")
+    (home-page "https://cran.r-project.org/package=viraldomain")
     (synopsis "Applicability Domain Methods of Viral Load and CD4 Lymphocytes")
     (description
      "This package provides methods for assessing the applicability domain of models

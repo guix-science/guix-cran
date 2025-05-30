@@ -1643,23 +1643,24 @@ interface.")
 (define-public r-wpkde
   (package
     (name "r-wpkde")
-    (version "0.1")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WPKDE" version))
        (sha256
-        (base32 "100vla11fbw16x5n4w4kbslz4n725v4x6j0hrxzrk99ryl0crmf6"))))
+        (base32 "1i837d16q4j0q8jzlkkar0znayhzpdlyjj63ij0cw27s7lvigpff"))))
     (properties `((upstream-name . "WPKDE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rcpp r-rann r-plotly))
     (home-page "https://cran.r-project.org/package=WPKDE")
     (synopsis "Weighted Piecewise Kernel Density Estimation")
     (description
      "Weighted Piecewise Kernel Density Estimation for large data.")
-    (license (list license:gpl2+ license:gpl3+))))
+    (license license:gpl2+)))
 
 (define-public r-wperm
   (package
@@ -1690,13 +1691,13 @@ introduction to permutation tests.")
 (define-public r-wpa
   (package
     (name "r-wpa")
-    (version "1.9.1")
+    (version "1.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wpa" version))
        (sha256
-        (base32 "0likivdwxl66nj6wxkcssqgz8slhagbw9qhxbxwsw10gyq4769rb"))))
+        (base32 "0qk748dzr0a338p6lf8y99snxyqj59xcnpffhh0d3973vlv2rqix"))))
     (properties `((upstream-name . "wpa")))
     (build-system r-build-system)
     (arguments
@@ -2088,13 +2089,13 @@ static since 2013.")
 (define-public r-worldbank
   (package
     (name "r-worldbank")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worldbank" version))
        (sha256
-        (base32 "1x7g9n69h0spvn7z2v8d44nkwl0wf6b5cjqr9xqrgx2aivm6f09d"))))
+        (base32 "0rmg5x5cwkd1b2m5fqp6y1dnwc7nmaly7ifvaclsvi6hi13y47kd"))))
     (properties `((upstream-name . "worldbank")))
     (build-system r-build-system)
     (arguments
@@ -6155,13 +6156,13 @@ CLARA algorithm to cluster large database with sequence analysis.")
 (define-public r-weightedcl
   (package
     (name "r-weightedcl")
-    (version "0.5")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weightedCL" version))
        (sha256
-        (base32 "0gb9p3qvbnqmccsfi3a0hx6i67n5z9fg3jgjrgg6qikgngbq3sld"))))
+        (base32 "1pdgslkknfbvimnsf588qgb12l93kk141y70vjm2sxdbmn7xdh18"))))
     (properties `((upstream-name . "weightedCL")))
     (build-system r-build-system)
     (arguments
@@ -6174,11 +6175,11 @@ CLARA algorithm to cluster large database with sequence analysis.")
      "Efficient and Feasible Inference for High-Dimensional Normal Copula Regression Models")
     (description
      "Estimates high-dimensional multivariate normal copula regression models with the
-weighted composite likelihood estimating equations in Nikoloulopoulos (2022)
-<@code{arXiv:2203.04619>}.  It provides autoregressive moving average
+weighted composite likelihood estimating equations in Nikoloulopoulos (2023)
+<doi:10.1016/j.csda.2022.107654>.  It provides autoregressive moving average
 correlation structures and binary, ordinal, Poisson, and negative binomial
 regressions.")
-    (license (license:fsdg-compatible "GPL (>= 3.5.0)"))))
+    (license license:gpl2+)))
 
 (define-public r-weighted-desc-stat
   (package
@@ -9574,13 +9575,13 @@ Georgia Institute of Technology.
 (define-public r-warden
   (package
     (name "r-warden")
-    (version "0.99.3")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WARDEN" version))
        (sha256
-        (base32 "1j0nll5d7fmb5h9bccf9fr16s5v2q7v421xr33c4bz4ahwr4sj8s"))))
+        (base32 "0hjajavx6g82mh7isl49ar3x2b02pa7i6lxw7c46b8vn7acacc9n"))))
     (properties `((upstream-name . "WARDEN")))
     (build-system r-build-system)
     (arguments

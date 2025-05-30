@@ -2561,21 +2561,26 @@ conditional-distribution based models with longitudinal Data.")
 (define-public r-nplyr
   (package
     (name "r-nplyr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nplyr" version))
        (sha256
-        (base32 "0n9pl6igjpdvsp39d7h5xr64c1ixlhc8bcxpbl70mz95p7jrld8h"))))
+        (base32 "0njm6bzbdfh34yqqlvkhmxflbp2g9iwm9j1r5f0nn7gsz0m3b6vl"))))
     (properties `((upstream-name . "nplyr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-rlang r-purrr r-dplyr r-assertthat))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-dplyr
+                             r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/markjrieke/nplyr")
+    (home-page "https://github.com/jibarozzo/nplyr")
     (synopsis "Grammar of Nested Data Manipulation")
     (description
      "This package provides functions for manipulating nested data frames in a
@@ -7778,13 +7783,13 @@ high performance computing machines.  In order to use this package, Java and
 (define-public r-nlreg
   (package
     (name "r-nlreg")
-    (version "1.2-2.2")
+    (version "1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlreg" version))
        (sha256
-        (base32 "0gkcxg5m287axhvkl00xy26vidawhhb1ii1s13rh49v0yccwvvqh"))))
+        (base32 "05y5d3m3k5frq9mgychv9sqkzgi2kah0v4qbf2vws1lkisg8mh5k"))))
     (properties `((upstream-name . "nlreg")))
     (build-system r-build-system)
     (arguments
@@ -7794,8 +7799,8 @@ high performance computing machines.  In order to use this package, Java and
     (home-page "https://www.r-project.org")
     (synopsis "Higher Order Inference for Nonlinear Heteroscedastic Models")
     (description
-     "Likelihood inference based on higher order approximations for nonlinear models
-with possibly non constant variance.")
+     "This package implements likelihood inference based on higher order
+approximations for nonlinear models with possibly non constant variance.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file LICENCE")))))
 
@@ -11731,6 +11736,37 @@ classifiers to predict experimental conditions based on neural activity.
 @code{NeuroDecodeR} is a system of objects that makes it easy to run neural
 decoding analyses.  For more information on neural decoding see Meyers & Kreiman
 (2011) <doi:10.7551/mitpress/8404.003.0024>.")
+    (license license:gpl3)))
+
+(define-public r-neurodatasets
+  (package
+    (name "r-neurodatasets")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NeuroDataSets" version))
+       (sha256
+        (base32 "03mn68frpy621addkm3n4np2zaz8vwnpnrqp9v67mgkgf4lrri3i"))))
+    (properties `((upstream-name . "NeuroDataSets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/neurodatasets")
+    (synopsis
+     "Comprehensive Collection of Neuroscience and Brain-Related Datasets")
+    (description
+     "Offers a rich and diverse collection of datasets focused on the brain, nervous
+system, and related disorders.  The package includes clinical, experimental,
+neuroimaging, behavioral, cognitive, and simulated data on conditions such as
+Parkinson's disease, Alzheimer's, epilepsy, schizophrenia, gliomas, and mental
+health.  Datasets cover structural and functional brain data, neurotransmission,
+gene expression, cognitive performance, and treatment outcomes.  Designed for
+researchers, neuroscientists, clinicians, psychologists, data scientists, and
+students, this package facilitates exploratory data analysis, statistical
+modeling, and hypothesis testing in neuroscience and neuroepidemiology.")
     (license license:gpl3)))
 
 (define-public r-neuroblastoma

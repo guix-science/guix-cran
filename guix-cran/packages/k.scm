@@ -1470,13 +1470,13 @@ hazard functions.")
 (define-public r-konfound
   (package
     (name "r-konfound")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "konfound" version))
        (sha256
-        (base32 "03p7rsrag1xskccg42rx4dz1f42dah1bjqkfca64cs0rxvq4g2yk"))))
+        (base32 "1cym7bby43c92vs1x502941r4ssrjdr9c5abgxnli4lcwy7wbalz"))))
     (properties `((upstream-name . "konfound")))
     (build-system r-build-system)
     (arguments
@@ -1486,6 +1486,7 @@ hazard functions.")
                              r-tibble
                              r-rlang
                              r-purrr
+                             r-ppcor
                              r-pbkrtest
                              r-lme4
                              r-lavaan
@@ -4377,13 +4378,13 @@ Zhang, D., and Frangi, A. F. (2004) <DOI:10.1016/j.patcog.2003.10.015>.")
 (define-public r-kfas
   (package
     (name "r-kfas")
-    (version "1.5.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KFAS" version))
        (sha256
-        (base32 "1kswy3ahd7ng8jhd1nl1x454ywqnlsgpxnzz0q2rll7hsl3xr4hj"))))
+        (base32 "11z9y6n8n4fq1wn5hv3vjj3lp7l6s1rn9cdxjg6wlj6m9ys8w9j8"))))
     (properties `((upstream-name . "KFAS")))
     (build-system r-build-system)
     (arguments

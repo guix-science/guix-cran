@@ -1251,19 +1251,20 @@ vignette for more, including full details of citations.")
 (define-public r-cvdprevent
   (package
     (name "r-cvdprevent")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvdprevent" version))
        (sha256
-        (base32 "14f9wpg4bjl918j1i23kchdw2dnyvnr3rwh5msghjm94js1l9z87"))))
+        (base32 "1n44j83yanrppwln5n0ixwyzazw0fsvq3q5fxcj64pn6cmbrcsv1"))))
     (properties `((upstream-name . "cvdprevent")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-purrr
                              r-jsonlite
                              r-httr2
@@ -5154,13 +5155,13 @@ Please refer to the article of Peter Ganz et al. (2016)
 (define-public r-csampling
   (package
     (name "r-csampling")
-    (version "1.2-2.1")
+    (version "1.2-4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csampling" version))
        (sha256
-        (base32 "0kqx7j96yafsqi9cz551fqpwkbcabxl8zpwa2jms862z41xbgsv3"))))
+        (base32 "0m92bg608p5lpzhdc892z1h7wmz9rqblxy7hsmlp969ii9pf59fh"))))
     (properties `((upstream-name . "csampling")))
     (build-system r-build-system)
     (arguments
@@ -5171,8 +5172,8 @@ Please refer to the article of Peter Ganz et al. (2016)
     (synopsis
      "Functions for Conditional Simulation in Regression-Scale Models")
     (description
-     "Monte Carlo conditional inference for the parameters of a linear nonnormal
-regression model.")
+     "This package implements Monte Carlo conditional inference for the parameters of
+a linear nonnormal regression model.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file LICENCE")))))
 
@@ -14957,13 +14958,13 @@ dependence structure of the original data but with a shifted mean vector.")
 (define-public r-copularemada
   (package
     (name "r-copularemada")
-    (version "1.7.3")
+    (version "1.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopulaREMADA" version))
        (sha256
-        (base32 "1kfw3q3i5nzha6bn74m3xvbv67d24w0m43mhad402wdcyx6rvh8v"))))
+        (base32 "00f12x61snpdr9750l3jm7bvig1ymlb1d3fv1phhwfxm89p8xywg"))))
     (properties `((upstream-name . "CopulaREMADA")))
     (build-system r-build-system)
     (arguments
@@ -14994,8 +14995,8 @@ mixed model for meta-analysis of two diagnostic tests accounting for within and
 between studies dependence in Nikoloulopoulos (2024)
 <doi:10.1177/09622802241269645>.  The 1-truncated D-vine copula mixed models for
 meta-analysis of diagnostic accuracy studies without a gold standard
-(Nikoloulopoulos, 2024).")
-    (license (license:fsdg-compatible "GPL (>= 3.5.0)"))))
+(Nikoloulopoulos, 2025) <doi:10.1093/biomtc/ujaf037>.")
+    (license license:gpl2+)))
 
 (define-public r-copulareg
   (package
@@ -19759,13 +19760,13 @@ reproducibility in their data analysis workflows.")
 (define-public r-cond
   (package
     (name "r-cond")
-    (version "1.2-3.1")
+    (version "1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cond" version))
        (sha256
-        (base32 "1j0gf28mg2j6ahs83nk662bix1lb2c9184vn8sblw433zxqaa2ny"))))
+        (base32 "0wf85rp42bvcfk593a4rvf8bnqz09vd3asg4g8pl5nikzm5vcnsw"))))
     (properties `((upstream-name . "cond")))
     (build-system r-build-system)
     (arguments
@@ -19776,7 +19777,8 @@ reproducibility in their data analysis workflows.")
     (synopsis
      "Approximate Conditional Inference for Logistic and Loglinear Models")
     (description
-     "Higher order likelihood-based inference for logistic and loglinear models.")
+     "This package implements higher order likelihood-based inference for logistic and
+loglinear models.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file LICENCE")))))
 
@@ -20468,13 +20470,13 @@ sensitivity analyses under dependent censoring (Yeh et al 2023 Biomedicines)
 (define-public r-compositionalrf
   (package
     (name "r-compositionalrf")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompositionalRF" version))
        (sha256
-        (base32 "1qdv3qxalvd7qdyzaiswkgh2pfsz4cjrr468kzaickzgif4cgha4"))))
+        (base32 "1s5g8lscmwhqgg0idf79np12shf8iqb1r1ckcy19azi5zxzgixqx"))))
     (properties `((upstream-name . "CompositionalRF")))
     (build-system r-build-system)
     (arguments
@@ -22392,24 +22394,29 @@ presented in the @code{bioRxiv} pre print Ferrari et al.
 (define-public r-combins
   (package
     (name "r-combins")
-    (version "1.1-1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CombinS" version))
        (sha256
-        (base32 "06g41zbjl54cbhhs8q7l4bbvszclvbxn3m2dqg800d6ghs9vgl6v"))))
+        (base32 "0w9ik1224z8hkfki4w4pdxgj3gky4i5ydisql5mvl5ci5bvanasa"))))
     (properties `((upstream-name . "CombinS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "'www.sites.google.com/site/mohamedlaibwebpage'")
-    (synopsis "Construction Methods of some Series of PBIB Designs")
+    (home-page "https://mlaib.net")
+    (synopsis
+     "Construction Methods for Series of PBIB Designs via Combinatory Method S")
     (description
-     "Series of partially balanced incomplete block designs (PBIB) based on the
-combinatory method (S) introduced in (Imane Rezgui et al, 2014)
-<doi:10.3844/jmssp.2014.45.48>; and it gives their associated U-type design.")
+     "This package provides constructions of series of partially balanced incomplete
+block designs (PBIB) based on the combinatory method S, introduced by Rezgui et
+al. (2014) <doi:10.3844/jmssp.2014.45.48>.  This package also offers the
+associated U-type designs.  Version 1.1-1 generalizes the approach to designs
+with v = wnl treatments.  It includes various rectangular and generalized
+rectangular right angular association schemes with 4, 5, and 7 associated
+classes.")
     (license license:gpl3)))
 
 (define-public r-combinit
@@ -29040,6 +29047,38 @@ von Mises mixtures, and naive k-means clusters.  Moreover, the package provides
 some basic data handling tools for angular data.")
     (license license:gpl3)))
 
+(define-public r-clustord
+  (package
+    (name "r-clustord")
+    (version "1.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clustord" version))
+       (sha256
+        (base32 "1x8c1b0ylmagwsnjim68c1i5n1igld7ff0nk58fxb57xj5619k6f"))))
+    (properties `((upstream-name . "clustord")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppclock
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-nnet
+                             r-mass
+                             r-flexclust))
+    (native-inputs (list r-knitr r-formatr))
+    (home-page "https://vuw-clustering.github.io/clustord/")
+    (synopsis
+     "Cluster Ordinal Data via Proportional Odds or Ordered Stereotype")
+    (description
+     "Biclustering, row clustering and column clustering using the proportional odds
+model (POM), ordered stereotype model (OSM) or binary model for ordinal
+categorical data.  FernÃ¡ndez, D., Arnold, R., Pledger, S., Liu, I., & Costilla,
+R. (2019) <doi:10.1007/s11634-018-0324-3>.")
+    (license license:gpl3)))
+
 (define-public r-clustofvar
   (package
     (name "r-clustofvar")
@@ -30087,13 +30126,13 @@ with @code{ClusMB} strategy) is also included.")
 (define-public r-clustassess
   (package
     (name "r-clustassess")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClustAssess" version))
        (sha256
-        (base32 "0wpqxgb3nb2342mkq008jq1ikwjy4j3261aa92px6nvczcysxb0b"))))
+        (base32 "0rzvap36hfrr7z7qd41yvl5549sfw688kdh9r9mp44j2iyhj7l9k"))))
     (properties `((upstream-name . "ClustAssess")))
     (build-system r-build-system)
     (arguments
@@ -36931,6 +36970,43 @@ Carlo.  This package implements the chopthin resampler, which keeps a bound on
 the ratio between the largest and the smallest weights after resampling.")
     (license license:gpl3)))
 
+(define-public r-chopper
+  (package
+    (name "r-chopper")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chopper" version))
+       (sha256
+        (base32 "0l25m7gda4qam0b9ac53smzhrb3zvrhmqbf5m9x85762fg7yls9i"))))
+    (properties `((upstream-name . "chopper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-purrr
+                             r-normalp
+                             r-lubridate
+                             r-imputets
+                             r-ggplot2
+                             r-generalizedhyperbolic
+                             r-forecast
+                             r-fgarch
+                             r-evd
+                             r-changepoint
+                             r-ald))
+    (home-page "https://rpubs.com/giancarlo_vercellino/chopper")
+    (synopsis "Changepoint-Aware Ensemble for Probabilistic Modeling")
+    (description
+     "This package implements a changepoint-aware ensemble forecasting algorithm that
+combines Theta, TBATS (Trigonometric, Box-Cox transformation, ARMA errors,
+Trend, Seasonal components), and ARFIMA (@code{AutoRegressive}, Fractionally
+Integrated, Moving Average) using a product-of-experts approach for robust
+probabilistic prediction.")
+    (license license:gpl3)))
+
 (define-public r-choplump
   (package
     (name "r-choplump")
@@ -38901,13 +38977,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "0ak0pcpq60q8sgw4qf31mmiskkh7mz2knan43z2gb6fzal7zz9d4"))))
+        (base32 "09yjfn7q5l9x527bkhwlhi2yf6l9hvg0n1mwxww3gp2gld1509sj"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (arguments
@@ -38952,13 +39028,13 @@ with function @code{chau_boxplot()}, and in ggplot2 with function
 (define-public r-chattr
   (package
     (name "r-chattr")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chattr" version))
        (sha256
-        (base32 "0w0srhmy3kmfrbsivihk17k3pz7gvzd6rid19bbf0l7znsxg1ssx"))))
+        (base32 "1h7b8l5ksigz4dwvk1q7fsd2ppss9qqmi8vzlcqdir6qh911s75h"))))
     (properties `((upstream-name . "chattr")))
     (build-system r-build-system)
     (arguments
@@ -38971,14 +39047,14 @@ with function @code{chau_boxplot()}, and in ggplot2 with function
                              r-purrr
                              r-processx
                              r-lifecycle
-                             r-jsonlite
                              r-httr2
                              r-glue
                              r-fs
+                             r-ellmer
+                             r-coro
                              r-config
                              r-clipr
                              r-cli
-                             r-callr
                              r-bslib))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mlverse/chattr")
@@ -40996,6 +41072,37 @@ with the Canadian Election Study surveys.")
      "Implementation of the Cluster Estimated Standard Errors (CESE) proposed in
 Jackson (2020) <DOI:10.1017/pan.2019.38> to compute clustered standard errors of
 linear coefficients in regression models with grouped data.")
+    (license license:expat)))
+
+(define-public r-ces
+  (package
+    (name "r-ces")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ces" version))
+       (sha256
+        (base32 "0li48bclx113gqhs1plni4v1dyp5aakv87ll76k0a2c0ka675fw6"))))
+    (properties `((upstream-name . "ces")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-haven r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/laurenceomfoisy/ces")
+    (synopsis "Access to Canadian Election Study Data")
+    (description
+     "This package provides tools to easily access and analyze Canadian Election Study
+data.  The package simplifies the process of downloading, cleaning, and using
+CES datasets for political science research and analysis.  The Canadian Election
+Study ('CES') has been conducted during federal elections since 1965, surveying
+Canadians on their political preferences, engagement, and demographics.  Data is
+accessed from the Borealis Data repository <https://borealisdata.ca/>, which
+serves as the official host for CES datasets.  This package is not officially
+affiliated with the Canadian Election Study or Borealis Data, and users should
+cite the original data sources in their work.")
     (license license:expat)))
 
 (define-public r-certara-xpose-nlme

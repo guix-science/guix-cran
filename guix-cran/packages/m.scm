@@ -1566,36 +1566,42 @@ arbitrary Markov multistate models <ISBN:978-0-387-68560-1>.")
 (define-public r-mvn
   (package
     (name "r-mvn")
-    (version "5.9")
+    (version "6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVN" version))
        (sha256
-        (base32 "014s07nxq014j5hkbd6iwwqykcw8si5sah57gi3n0wb51sv8ip1k"))))
+        (base32 "0kl0k8r32slh3r30bqgvc163zypkfd08qvk08pr3jg23qliq7kcp"))))
     (properties `((upstream-name . "MVN")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-psych
-                             r-plyr
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-plotly
                              r-nortest
                              r-moments
                              r-mass
+                             r-ggplot2
                              r-energy
+                             r-dplyr
+                             r-cli
                              r-car
                              r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MVN")
+    (home-page "https://selcukorkmaz.github.io/mvn-tutorial/")
     (synopsis "Multivariate Normality Tests")
     (description
-     "This package performs multivariate normality tests and graphical approaches and
-implements multivariate outlier detection and univariate normality of marginal
-distributions through plots and tests, and performs multivariate Box-Cox
-transformation (Korkmaz et al, (2014),
+     "This package provides a suite of multivariate normality tests (Mardia,
+HenzeâZirkler, Royston, DoornikâHansen, Energy), univariate diagnostics,
+robust outlier detection, bivariate density plots, and BoxâCox transformations
+(Korkmaz et al, (2014),
 <https://journal.r-project.org/archive/2014-2/korkmaz-goksuluk-zararsiz.pdf>).")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-mvmorph
   (package
@@ -5400,6 +5406,41 @@ effects models based on Johnson (2014) <doi:10.1111/2041-210X.12225>.")
 data.  Bryer & Pruzek (2011) <doi:10.1080/00273171.2011.636693>.")
     (license license:gpl2+)))
 
+(define-public r-multileveloptimalbayes
+  (package
+    (name "r-multileveloptimalbayes")
+    (version "0.0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MultiLevelOptimalBayes" version))
+       (sha256
+        (base32 "1a4qp8y8lz37np1np07g7fzgc3776dmy6ybinqfm3j58q31v545l"))))
+    (properties `((upstream-name . "MultiLevelOptimalBayes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pracma))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MultiLevelOptimalBayes")
+    (synopsis
+     "Regularized Bayesian Estimator for Two-Level Latent Variable Models")
+    (description
+     "This package implements a regularized Bayesian estimator that optimizes the
+estimation of between-group coefficients for multilevel latent variable models
+by minimizing mean squared error (MSE) and balancing variance and bias.  The
+package provides more reliable estimates in scenarios with limited data,
+offering a robust solution for accurate parameter estimation in two-level latent
+variable models.  It is designed for researchers in psychology, education, and
+related fields who face challenges in estimating between-group effects under
+small sample sizes and low intraclass correlation coefficients.  Dashuk et al.
+(2024) <doi:10.13140/RG.2.2.18148.39048> derived the optimal regularized
+Bayesian estimator; Dashuk et al. (2024) <doi:10.13140/RG.2.2.34350.01604>
+extended it to the multivariate case; and Luedtke et al. (2008)
+<doi:10.1037/a0012869> formalized the two-level latent variable framework.")
+    (license license:gpl3)))
+
 (define-public r-multilevelmod
   (package
     (name "r-multilevelmod")
@@ -5473,13 +5514,13 @@ supported.  Factors for any predictors must be numerically represented.")
 (define-public r-multilevelcoda
   (package
     (name "r-multilevelcoda")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevelcoda" version))
        (sha256
-        (base32 "1rakgj40zz526wsjgcbym5b31q2pdxk35z229xfpkhdc627w2954"))))
+        (base32 "1kw2376idi4jx2xnds1sbmr5jrm91hxkxy14q8j58hd04dw90vf9"))))
     (properties `((upstream-name . "multilevelcoda")))
     (build-system r-build-system)
     (arguments
@@ -5490,9 +5531,11 @@ supported.  Factors for any predictors must be numerically represented.")
                              r-posterior
                              r-plotly
                              r-loo
+                             r-htmltools
                              r-hrbrthemes
                              r-ggplot2
                              r-future
+                             r-fs
                              r-foreach
                              r-extraoperators
                              r-emmeans
@@ -5509,13 +5552,13 @@ supported.  Factors for any predictors must be numerically represented.")
     (home-page "https://florale.github.io/multilevelcoda/")
     (synopsis "Estimate Bayesian Multilevel Models for Compositional Data")
     (description
-     "Implement Bayesian Multilevel Modelling for compositional data in a multilevel
-framework.  Compute multilevel compositional data and Isometric log ratio (ILR)
-at between and within-person levels, fit Bayesian multilevel models for
-compositional predictors and outcomes, and run post-hoc analyses such as
-isotemporal substitution models.  References: Le, Stanford, Dumuid, and Wiley
-(2024) <doi:10.48550/@code{arXiv.2405.03985>}, Le, Dumuid, Stanford, and Wiley
-(2024) <doi:10.48550/@code{arXiv.2411.12407>}.")
+     "Implement Bayesian multilevel modelling for compositional data.  Compute
+multilevel compositional data and perform log-ratio transforms at between and
+within-person levels, fit Bayesian multilevel models for compositional
+predictors and outcomes, and run post-hoc analyses such as isotemporal
+substitution models.  References: Le, Stanford, Dumuid, and Wiley (2025)
+<doi:10.1037/met0000750>, Le, Dumuid, Stanford, and Wiley (2024)
+<doi:10.48550/@code{arXiv.2411.12407>}.")
     (license license:gpl3+)))
 
 (define-public r-multilcirt
@@ -6902,13 +6945,13 @@ help of each procedure.")
 (define-public r-mult-latent-reg
   (package
     (name "r-mult-latent-reg")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mult.latent.reg" version))
        (sha256
-        (base32 "02xnmx6p501mkmm33p165kw3x6inxffjxvgm67i9hk45izcvcimh"))))
+        (base32 "1m7ka877qyqz0j83par2g4dj0l34qmk9azm3jhprjqva5n9kn0bs"))))
     (properties `((upstream-name . "mult.latent.reg")))
     (build-system r-build-system)
     (arguments
@@ -11230,13 +11273,13 @@ Gerber, Schmid and Furrer (2021) <DOI:10.1016/j.spasta.2020.100483>.")
 (define-public r-mrbin
   (package
     (name "r-mrbin")
-    (version "1.9.2")
+    (version "1.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrbin" version))
        (sha256
-        (base32 "1r1ax748mc82khy8qr8qsj3cbdjqrl4hlf00jfv1k5jhghg1c9v7"))))
+        (base32 "0xxxv0kyalar166nmhal4xgnbxkk61j403xabw6dh1i4cfb5q4g7"))))
     (properties `((upstream-name . "mrbin")))
     (build-system r-build-system)
     (arguments
@@ -13397,6 +13440,33 @@ visualization.  The methods are based on Mijanovic and Popovic (2024, submitted)
 \"An R package for Marshall-Olkin shock models with semi-independent times.\".")
     (license license:expat)))
 
+(define-public r-mosclust
+  (package
+    (name "r-mosclust")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mosclust" version))
+       (sha256
+        (base32 "1gw2ywv2izhmpi967ls67nmz77vaccpam90zgvlyi00v5n2zrjqx"))))
+    (properties `((upstream-name . "mosclust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-clusterv r-cluster))
+    (home-page "https://valentini.di.unimi.it/SW/mosclust/")
+    (synopsis "Model Order Selection for Clustering")
+    (description
+     "Stability based methods for model order selection in clustering problems
+(Valentini, G (2007), <doi:10.1093/bioinformatics/btl600>).  Using multiple
+perturbations of the data the stability of clustering solutions is assessed.
+Different perturbations may be used: resampling techniques, random projections
+and noise injection.  Stability measures for the estimate of clustering
+solutions and statistical tests to assess their significance are provided.")
+    (license license:gpl2+)))
+
 (define-public r-mosaicmodel
   (package
     (name "r-mosaicmodel")
@@ -13663,6 +13733,37 @@ to life tables.")
      "This package provides a toolkit for identifying potential mortalities and
 expelled tags in aquatic acoustic telemetry arrays.  Designed for arrays with
 non-overlapping receivers.")
+    (license license:gpl3+)))
+
+(define-public r-morsedr
+  (package
+    (name "r-morsedr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "morseDR" version))
+       (sha256
+        (base32 "05gvfgdvsdjpi1ssqz8lqk76z3i0i6920krj95m8v54zpnjnypx5"))))
+    (properties `((upstream-name . "morseDR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rjags r-ggplot2 r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=morseDR")
+    (synopsis
+     "Bayesian Inference of Binary, Count and Continuous Data in Toxicology")
+    (description
+     "Advanced methods for a valuable quantitative environmental risk assessment using
+Bayesian inference of several type of toxicological data.  binary (e.g.,
+survival, mobility), count (e.g., reproduction) and continuous (e.g., growth as
+length, weight).  Estimation procedures can be used without a deep knowledge of
+their underlying probabilistic model or inference methods.  Rather, they were
+designed to behave as well as possible without requiring a user to provide
+values for some obscure parameters.  That said, models can also be used as a
+first step to tailor new models for more specific situations.")
     (license license:gpl3+)))
 
 (define-public r-morse
@@ -14024,19 +14125,19 @@ A. Berra's list of stop words for Ancient Greek and Latin.")
 (define-public r-morepls
   (package
     (name "r-morepls")
-    (version "0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "morepls" version))
        (sha256
-        (base32 "1k19br1206l6n5cpqf7kzns9ggp2xixf1ynzp4vpnwk4b0gsp4wm"))))
+        (base32 "149ipvkjl5r407nxa4hrpq6nsb12g5m0j0fq52bbv3lrzdrafv59"))))
     (properties `((upstream-name . "morepls")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-pls r-ggrepel r-ggplot2))
+    (propagated-inputs (list r-rlang r-pls r-ggrepel r-ggplot2 r-descriptio))
     (home-page "https://framagit.org/nicolas-robette/morepls")
     (synopsis "Interpretation Tools for Partial Least Squares Regression")
     (description
@@ -17245,13 +17346,13 @@ with easy-to-remember syntax.")
 (define-public r-modeler
   (package
     (name "r-modeler")
-    (version "3.4.8")
+    (version "3.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Modeler" version))
        (sha256
-        (base32 "1ar6cbffbjf51wrx6dzqlfw1rklzx1zpygb3v70g9kxrbbfby785"))))
+        (base32 "0nsxaqn7rnf58vlr01z1xkvrrcqsjrfpa2iv2xwnmc283s100wv4"))))
     (properties `((upstream-name . "Modeler")))
     (build-system r-build-system)
     (arguments
@@ -20863,13 +20964,13 @@ benchmark experiments, for mlr3 and beyond.")
 (define-public r-mlr3batchmark
   (package
     (name "r-mlr3batchmark")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3batchmark" version))
        (sha256
-        (base32 "00y3hkr81s13qjz42q48fjfnj4hv6klklm0766sj9ay1bn2v5blj"))))
+        (base32 "0x428wdf6ixa5j6a60rxfqn7gvcc0lmxscanxmlxcpzli6j5lgmm"))))
     (properties `((upstream-name . "mlr3batchmark")))
     (build-system r-build-system)
     (arguments
@@ -22950,13 +23051,13 @@ solvers hold up quite well for higher-dimensional problems.")
 (define-public r-mixvlmc
   (package
     (name "r-mixvlmc")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixvlmc" version))
        (sha256
-        (base32 "1bx9qvdi5fq69bwa25l9sqcdyihswjhmqrsslmnqfq7wzfxy3d3q"))))
+        (base32 "1g9y7phz4vz2x9l7qnjly7hqw2lb7slpqdp0s0956j73k5g0zfrn"))))
     (properties `((upstream-name . "mixvlmc")))
     (build-system r-build-system)
     (arguments
@@ -25000,6 +25101,33 @@ to a realistic level.  This would allow, e.g., to do multiple imputation when
 repeating the call to @code{missRanger()}.  Out-of-sample application is
 supported as well.")
     (license license:gpl2+)))
+
+(define-public r-missr
+  (package
+    (name "r-missr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "missr" version))
+       (sha256
+        (base32 "0srs6rkki2z767qdqprpi7014axnvwipv5q2acbai26sidr25fqr"))))
+    (properties `((upstream-name . "missr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-norm r-lifecycle))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/NoahHellen/missr")
+    (synopsis "Classify Missing Data as MCAR, MAR, or MNAR")
+    (description
+     "Classify missing data as missing completely at random (MCAR), missing at random
+(MAR), or missing not at random (MNAR).  This step is required before handling
+missing data (e.g. mean imputation) so that bias is not introduced.  See Little
+(1988) <doi:10.1080/01621459.1988.10478722> for the statistical rationale for
+the methods used.")
+    (license license:expat)))
 
 (define-public r-missplot
   (package
@@ -28350,13 +28478,13 @@ in one plot for comparison.  Ramos (2025) <doi:10.1007/s40617-025-01058-9>.")
 (define-public r-midrangemcp
   (package
     (name "r-midrangemcp")
-    (version "3.1.1")
+    (version "3.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "midrangeMCP" version))
        (sha256
-        (base32 "1yfwyglyxxk4i914m8n148cjydlcg7r16zl8acb1w8h963svirk9"))))
+        (base32 "1g9asbrvqp9s1190k0iq53f7sm42h1hpsa6qig1f1jgrr42ffzv2"))))
     (properties `((upstream-name . "midrangeMCP")))
     (build-system r-build-system)
     (arguments
@@ -28365,13 +28493,14 @@ in one plot for comparison.  Ramos (2025) <doi:10.1007/s40617-025-01058-9>.")
     (propagated-inputs (list r-xtable r-writexl r-smr))
     (home-page "https://bendeivide.github.io/midrangeMCP/")
     (synopsis
-     "Multiples Comparisons Procedures Based on Studentized Midrange and Range Distributions")
+     "Multiple Comparisons Procedures Based on Studentized Midrange and Range Distributions")
     (description
      "Apply tests of multiple comparisons based on studentized midrange and range
 distributions.  The tests are: Tukey Midrange ('TM test), Student-Newman-Keuls
 Midrange ('SNKM test), Means Grouping Midrange ('MGM test) and Means Grouping
 Range ('MGR test).  The first two tests were published by Batista and Ferreira
-(2020) <doi:10.1590/1413-7054202044008020>.  The last two are being published.")
+(2020) <doi:10.1590/1413-7054202044008020>.  The last two were published by
+Batista and Ferreira (2023) <doi:10.28951/bjb.v41i4.640>.")
     (license license:gpl2+)))
 
 (define-public r-midoc
@@ -31823,13 +31952,13 @@ translation.  Examples of these methods can be found in Montes de Oca et al
 (define-public r-mflica
   (package
     (name "r-mflica")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mFLICA" version))
        (sha256
-        (base32 "02h53v124j38scl816ci8z5wfcrmh9p6m08fk2hhw973h7c6xbmy"))))
+        (base32 "18d69nw0arxfzap6wal3masl0f73srf88c7kawib4pfx51i4qky5"))))
     (properties `((upstream-name . "mFLICA")))
     (build-system r-build-system)
     (arguments
@@ -36928,13 +37057,13 @@ Science Foundation under Grant Number 1460719.")
 (define-public r-mercator
   (package
     (name "r-mercator")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Mercator" version))
        (sha256
-        (base32 "0skazqgl58jb916xyc0lasxajnli6ydkrsb01cvw82jlr4v2mfpl"))))
+        (base32 "0mdqa9w1p6cmli6976v4wi0sw9r4p5prkj7lzfd1877wk11c9c73"))))
     (properties `((upstream-name . "Mercator")))
     (build-system r-build-system)
     (arguments
@@ -37992,52 +38121,6 @@ hypothesis, high dimensional mediation testing, divide-aggregate composite null
 test, and Sobel's test under the composite null hypothesis.  Du et al (2023)
 <doi:10.1002/gepi.22510>.")
     (license license:gpl3)))
-
-(define-public r-medrxivr
-  (package
-    (name "r-medrxivr")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "medrxivr" version))
-       (sha256
-        (base32 "03p5rz6a362wvlcaq2khzyhjivvw62i50846db8p6rj9rwqba228"))))
-    (properties `((upstream-name . "medrxivr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-progress
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-data-table
-                             r-curl
-                             r-bib2df))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/medrxivr")
-    (synopsis "Access and Search MedRxiv and BioRxiv Preprint Data")
-    (description
-     "An increasingly important source of health-related bibliographic content are
-preprints - preliminary versions of research articles that have yet to undergo
-peer review.  The two preprint repositories most relevant to health-related
-sciences are @code{medRxiv} <https://www.medrxiv.org/> and @code{bioRxiv}
-<https://www.biorxiv.org/>, both of which are operated by the Cold Spring Harbor
-Laboratory.  medrxivr provides programmatic access to the Cold Spring Harbour
-Laboratory (CSHL) API <https://api.biorxiv.org/>, allowing users to easily
-download @code{medRxiv} and @code{bioRxiv} preprint metadata (e.g. title,
-abstract, publication date, author list, etc) into R. medrxivr also provides
-functions to search the downloaded preprint records using regular expressions
-and Boolean logic, as well as helper functions that allow users to export their
-search results to a .BIB file for easy import to a reference manager and to
-download the full-text PDFs of preprints matching their search criteria.")
-    (license license:gpl2)))
 
 (define-public r-medparser
   (package
@@ -44386,13 +44469,13 @@ package for matrix model-based clustering and parsimonious mixture modeling\",
 (define-public r-matsindf
   (package
     (name "r-matsindf")
-    (version "0.4.8")
+    (version "0.4.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matsindf" version))
        (sha256
-        (base32 "0jvgf87zrd1mrs3rrk4g1mfmf5ja1ww0pqf5cjvdw2id9vvc11jq"))))
+        (base32 "1lfwzxlmkzxdxmiicln0fl1xciqkdhjqxk70y984yxl1cnhh7r0i"))))
     (properties `((upstream-name . "matsindf")))
     (build-system r-build-system)
     (arguments
@@ -45882,13 +45965,13 @@ used to infer seed production by each individual plant.")
 (define-public r-masswater
   (package
     (name "r-masswater")
-    (version "2.1.5")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MassWateR" version))
        (sha256
-        (base32 "0rpasijp7jrxxcl9v41cpaw4aqavbby51mm0rplrggxsqi8dk7ld"))))
+        (base32 "0im4z8gms50mfmpkbk6vx35z5sjxs43hippvliz2cz3jwvpx46bs"))))
     (properties `((upstream-name . "MassWateR")))
     (build-system r-build-system)
     (arguments
@@ -46640,13 +46723,13 @@ least-cost paths.")
 (define-public r-marlod
   (package
     (name "r-marlod")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marlod" version))
        (sha256
-        (base32 "1ymrsl440ci565g0fhjxqj7hzjy0hz9p5lqbm7b052iwk6pa6qbi"))))
+        (base32 "0iwa70kdzdf9il7nnkj54ndrmhhac8qzaj4ix033lsrf4bhqpcap"))))
     (properties `((upstream-name . "marlod")))
     (build-system r-build-system)
     (arguments
@@ -47370,13 +47453,13 @@ scientific production in Colombia.")
 (define-public r-marg
   (package
     (name "r-marg")
-    (version "1.2-2.1")
+    (version "1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marg" version))
        (sha256
-        (base32 "1r6rl7dhvm8dghm7pm4hfw3924qja65hczl6d47v9ixnv4rxyzr9"))))
+        (base32 "19jcjjx2rpyqgy2rqjlygxv9b1982z485s1dhlybfbdsrms47cwk"))))
     (properties `((upstream-name . "marg")))
     (build-system r-build-system)
     (arguments
@@ -47386,8 +47469,8 @@ scientific production in Colombia.")
     (home-page "https://www.r-project.org")
     (synopsis "Approximate Marginal Inference for Regression-Scale Models")
     (description
-     "Likelihood inference based on higher order approximations for linear nonnormal
-regression models.")
+     "This package implements likelihood inference based on higher order
+approximations for linear nonnormal regression models.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file LICENCE")))))
 
@@ -51030,13 +51113,13 @@ training, prediction) of standard Gaussian processes are also implemented.")
 (define-public r-magma-r
   (package
     (name "r-magma-r")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAGMA.R" version))
        (sha256
-        (base32 "07jicr9axlb8cnjjprzrkad57r2wrnap52n45sia5qfjp53ys12g"))))
+        (base32 "1qp8jzxq002j9s5riyp7lmllb4x8byh67y3ka48mmwqyjkcyj528"))))
     (properties `((upstream-name . "MAGMA.R")))
     (build-system r-build-system)
     (arguments

@@ -383,13 +383,13 @@ diagnostics in addition to other standard model tools.")
 (define-public r-ivpp
   (package
     (name "r-ivpp")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IVPP" version))
        (sha256
-        (base32 "1l6m55h4fkb4fxv7bvx81nh4s1z5y0hifzd3ciwa4j92q71zmdnz"))))
+        (base32 "15fzbphxpbzg5qxkch1lmg7ncipy34i780pphnpip8bznzzzq1ry"))))
     (properties `((upstream-name . "IVPP")))
     (build-system r-build-system)
     (arguments
@@ -6732,13 +6732,13 @@ perspective.")
 (define-public r-inventorize
   (package
     (name "r-inventorize")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inventorize" version))
        (sha256
-        (base32 "0pbm9iw4v6wqr4qs5g2nfkgiaq75qdfcdicazy94fwwfvx5xbgbv"))))
+        (base32 "1qx1ncd4g6nyyykcf6sc3xjxhvd1yy0ijd5vhp08c11vpy3mr1sn"))))
     (properties `((upstream-name . "inventorize")))
     (build-system r-build-system)
     (arguments
@@ -6760,15 +6760,14 @@ metrics, stock-out calculations and ABC analysis calculations.  The package
 includes revenue management techniques such as Multi-product optimization,logit
 and polynomial model optimization.  The functions are referenced from :
 1-Harris, Ford W. (1913). \"How many parts to make at once\".  Factory, The
-Magazine of Management. <isbn10: 135â136, 152>.  2- Nahmias, S. Production and
-Operations Analysis. @code{McGraw-Hill} International Edition. <isbn: 0-07-
-2231265-3.  Chapter 4>.  3-Silver, E.A., Pyke, D.F., Peterson, R. Inventory
-Management and Production Planning and Scheduling. <isbn: 978-0471119470>.
-4-Ballou, R.H. Business Logistics Management. <isbn: 978-0130661845>.  Chapter
-9.  5-MIT Micromasters Program.  6- Columbia University course for supply and
-demand analysis.  8- Price Elasticity of Demand MATH 104,Mark Mac Lean (with
-assistance from Patrick Chan) 2011W For further details or correspondence
-:<www.linkedin.com/in/haythamomar>, <www.rescaleanalytics.com>.")
+Magazine of Management.  2- Nahmias, S. Production and Operations Analysis.
+@code{McGraw-Hill} International Edition.  3-Silver, E.A., Pyke, D.F., Peterson,
+R. Inventory Management and Production Planning and Scheduling.  4-Ballou, R.H.
+Business Logistics Management.  5-MIT Micromasters Program.  6- Columbia
+University course for supply and demand analysis.  8- Price Elasticity of Demand
+MATH 104,Mark Mac Lean (with assistance from Patrick Chan) 2011W For further
+details or correspondence :<www.linkedin.com/in/haythamomar>,
+<www.rescaleanalytics.com>.")
     (license license:gpl3)))
 
 (define-public r-invctr
@@ -10170,13 +10169,13 @@ observational studies Biometrika, 79(2), 367-374 <doi:10.1093/biomet/79.2.367>."
 (define-public r-informativesci
   (package
     (name "r-informativesci")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "informativeSCI" version))
        (sha256
-        (base32 "1va0lqhranks4kn1al4fwl00f39aylx361xc369vj3q55qbigny0"))))
+        (base32 "1n7gsb5lrmycjc2mmqwyfgphlw4ypngrg2678rb44i0ps8d2ll3c"))))
     (properties `((upstream-name . "informativeSCI")))
     (build-system r-build-system)
     (arguments
@@ -10561,6 +10560,33 @@ inflation functions are provided.  The well known trimmed means, exclusion and
 double weighing methods, alongside the new Triple Filter method introduced in
 Ferreira et al. (2016) <https://goo.gl/UYLhcj>.")
     (license license:bsd-3)))
+
+(define-public r-infixit
+  (package
+    (name "r-infixit")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "infixit" version))
+       (sha256
+        (base32 "0iv0za69fxrkajhw95csvlj2pb7cp5711fys9k11kfr3k2x0xqn7"))))
+    (properties `((upstream-name . "infixit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/prlitics/infixit")
+    (synopsis "Helpful Additional Infix Functions")
+    (description
+     "Infix functions in R are those that comes between its arguments such as %in%, +,
+and *.  These are useful in R programming when manipulating data, performing
+logical operations, and making new functions.  infixit extends the infix
+functions found in R to simplify frequent tasks, such as finding elements that
+are NOT in a set, in-line text concatenation, augmented assignment operations,
+additional logical and control flow operators, and identifying if a number or
+date lies between two others.")
+    (license license:expat)))
 
 (define-public r-infix
   (package
@@ -12022,13 +12048,13 @@ waste time on long operations that won't be used.")
 (define-public r-inca
   (package
     (name "r-inca")
-    (version "0.0.4")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inca" version))
        (sha256
-        (base32 "1r3niibd6pja59am8in9gpyvxi2g5bh8bqqhdixzwaj3xzyyipii"))))
+        (base32 "1aha3w1rxy7dr9kn8bh7k7pjyjrpj05wv4bwfxqyknfzskfjxpja"))))
     (properties `((upstream-name . "inca")))
     (build-system r-build-system)
     (arguments
@@ -12039,13 +12065,14 @@ waste time on long operations that won't be used.")
     (synopsis "Integer Calibration")
     (description
      "Specific functions are provided for rounding real weights to integers and
-performing an integer programming algorithm for calibration problems.  They are
-useful for census-weights adjustments, or for performing linear regression with
-integer parameters.  This research was supported in part by the U.S. Department
-of Agriculture, National Agriculture Statistics Service.  The findings and
-conclusions in this publication are those of the authors and should not be
-construed to represent any official USDA, or US Government determination or
-policy.")
+performing an integer programming algorithm for calibration problems.  These
+functions are useful for census-weights adjustments, survey calibration, or for
+performing linear regression with integer parameters
+<https://www.nass.usda.gov/Education_and_Outreach/Reports,_Presentations_and_Conferences/reports/New_Integer_Calibration_%20Procedure_2016.pdf>.
+ This research was supported in part by the U.S. Department of Agriculture,
+National Agriculture Statistics Service.  The findings and conclusions in this
+publication are those of the authors and should not be construed to represent
+any official USDA, or US Government determination or policy.")
     (license license:gpl2+)))
 
 (define-public r-inbreedr
@@ -17866,13 +17893,13 @@ estimation.  Journal of the American Statistical Association, 105(489), 415-423
 (define-public r-ictest
   (package
     (name "r-ictest")
-    (version "0.3-5")
+    (version "0.3-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICtest" version))
        (sha256
-        (base32 "13i7zsjy4dqx48vzn9294k7xb93m6r2ab3d546rymfqdzdjszpnp"))))
+        (base32 "1zzdfybfgyi9rnzdamwaf0xcvwh72fy2v8j0wzivpsvxgqa7a15k"))))
     (properties `((upstream-name . "ICtest")))
     (build-system r-build-system)
     (arguments
@@ -17884,6 +17911,7 @@ estimation.  Journal of the American Statistical Association, 105(489), 415-423
                              r-rcpproll
                              r-rcpparmadillo
                              r-rcpp
+                             r-progress
                              r-png
                              r-mvtnorm
                              r-jade
@@ -18661,13 +18689,13 @@ with interval censored data.")
 (define-public r-icesvocab
   (package
     (name "r-icesvocab")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icesVocab" version))
        (sha256
-        (base32 "0zyhs1rw8vp9yb2vrv5jl565jkmr4sdlgv367lw9kp636aya3p7k"))))
+        (base32 "1pqxzq74vkaz34mj55lg59lv5ssj0g60fgy5qifplnp6kgi02f0q"))))
     (properties `((upstream-name . "icesVocab")))
     (build-system r-build-system)
     (arguments

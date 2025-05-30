@@ -2284,18 +2284,19 @@ formats as well as other swatch file formats can be found at
 (define-public r-swash
   (package
     (name "r-swash")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swash" version))
        (sha256
-        (base32 "02sks9ci3rcfx9p52vk46k42ppl3pj2mhw7yhf8l6x01vx49ranb"))))
+        (base32 "04nc2fizcfkyqpia5kw9w5hs8kyjrnhqr3dypr7j63nig29ncx8j"))))
     (properties `((upstream-name . "swash")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-lubridate))
     (home-page "https://cran.r-project.org/package=swash")
     (synopsis "Swash-Backwash Model for the Single Epidemic Wave")
     (description
@@ -4009,6 +4010,33 @@ performs an ANCOVA-type covariate adjustment as well as unadjusted analyses for
 those measures.")
     (license license:gpl2)))
 
+(define-public r-survregvb
+  (package
+    (name "r-survregvb")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survregVB" version))
+       (sha256
+        (base32 "0mgj00hf2ll85dyb1ap0m45j641cij0qx3y843z607qlfsbiq00b"))))
+    (properties `((upstream-name . "survregVB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-invgamma r-bayestestr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/chengqianxian/survregVB")
+    (synopsis "Variational Bayesian Analysis of Survival Data")
+    (description
+     "This package implements Bayesian inference in accelerated failure time (AFT)
+models for right-censored survival times assuming a log-logistic distribution.
+Details of the variational Bayes algorithms, with and without shared frailty,
+are described in Xian et al. (2024) <doi:10.1007/s11222-023-10365-6> and Xian et
+al. (2024) <doi:10.48550/@code{arXiv.2408.00177>}, respectively.")
+    (license (list license:expat license:lgpl2.0))))
+
 (define-public r-survregcenscov
   (package
     (name "r-survregcenscov")
@@ -5122,6 +5150,39 @@ Statistics (NCHS) presentation standards (Parker et al. (2017)
 <https://www.cdc.gov/nchs/data/series/sr_02/sr02_175.pdf>, Parker et al. (2023)
 <doi:10.15620/cdc:124368>).")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-surveysimr
+  (package
+    (name "r-surveysimr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "surveySimR" version))
+       (sha256
+        (base32 "1rhnzmf5di4y309c8cc3d0b15vpccl2shgsf21sr6fhm8ya582lz"))))
+    (properties `((upstream-name . "surveySimR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-moments))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=surveySimR")
+    (synopsis "Estimation of Population Total under Complex Sampling Design")
+    (description
+     "Sample surveys use scientific methods to draw inferences about population
+parameters by observing a representative part of the population, called sample.
+The SRSWOR (Simple Random Sampling Without Replacement) is one of the most
+widely used probability sampling designs, wherein every unit has an equal chance
+of being selected and units are not repeated.This function draws multiple SRSWOR
+samples from a finite population and estimates the population parameter i.e.
+total of HT, Ratio, and Regression estimators.  Repeated simulations (e.g., 500
+times) are used to assess and compare estimators using metrics such as percent
+relative bias (%RB), percent relative root means square error (%RRMSE).For
+details on sampling methodology, see, Cochran (1977) \"Sampling Techniques\"
+<https://archive.org/details/samplingtechniqu0000coch_t4x6>.")
+    (license license:gpl2+)))
 
 (define-public r-surveysd
   (package
@@ -7656,13 +7717,13 @@ to sum their own low level functions as well.  Based on the paper by Braden
 (define-public r-sumo
   (package
     (name "r-sumo")
-    (version "0.2.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SUMO" version))
        (sha256
-        (base32 "08r46wxk5fidys57ngimfgpr5pkdlh25m4dxq450smknfv7y2249"))))
+        (base32 "12n4p7bc9gzp9kddd8qa6j9vx0ccg37bp5d7qyda4izzi7jz4p3i"))))
     (properties `((upstream-name . "SUMO")))
     (build-system r-build-system)
     (arguments
@@ -16612,13 +16673,13 @@ This version is available in French and English.  See
 (define-public r-stacks
   (package
     (name "r-stacks")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stacks" version))
        (sha256
-        (base32 "0kf83rfajyla4hpi51a9q384d41qw7hl99pl1wnbf17vl54lhfan"))))
+        (base32 "1l2mwl34qg5mnhi1cnkj80p764s2hdj5plq2wq2n0m5h8b3m5gib"))))
     (properties `((upstream-name . "stacks")))
     (build-system r-build-system)
     (arguments
@@ -19332,6 +19393,29 @@ by comparing the total expression of the small RNA in progeny with the
 expression level in the parent species.")
     (license license:gpl3+)))
 
+(define-public r-srmdata
+  (package
+    (name "r-srmdata")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SRMData" version))
+       (sha256
+        (base32 "0m38rrva9xdqp95wdiaq5b01iai8bcrvzg4gzkabaciphvbcxzfc"))))
+    (properties `((upstream-name . "SRMData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=SRMData")
+    (synopsis
+     "Data Files Supporting \"Scientific Research and Methodology\" by Peter K. Dunn (2025)")
+    (description
+     "This package provides most of the data files used in the textbook \"Scientific
+Research and Methodology\" by Dunn (2025, ISBN:9781032496726; forthcoming).")
+    (license license:gpl2+)))
+
 (define-public r-srm
   (package
     (name "r-srm")
@@ -21818,6 +21902,30 @@ MO@code{CkINg} @code{SpoNgebOb} C@code{AsE}
 @code{tHem} OFf IN Fun @code{WayS}.")
     (license license:bsd-3)))
 
+(define-public r-spomag
+  (package
+    (name "r-spomag")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SpoMAG" version))
+       (sha256
+        (base32 "04blzpqhcbyv89hgka4yw1c9iahnc82km0k7iiwaylk3dj09l0hc"))))
+    (properties `((upstream-name . "SpoMAG")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-tibble r-dplyr))
+    (home-page "https://cran.r-project.org/package=SpoMAG")
+    (synopsis "Probability of Sporulation Potential in MAGs")
+    (description
+     "This package implements an ensemble machine learning approach to predict the
+sporulation potential of metagenome-assembled genomes (MAGs) from uncultivated
+Firmicutes based on the presence/absence of sporulation-associated genes.")
+    (license license:artistic2.0)))
+
 (define-public r-spoiler
   (package
     (name "r-spoiler")
@@ -22536,6 +22644,37 @@ thesis.")
      "ML and GM estimation and diagnostic testing of econometric models for spatial
 panel data.")
     (license license:gpl2)))
+
+(define-public r-splitwise
+  (package
+    (name "r-splitwise")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SplitWise" version))
+       (sha256
+        (base32 "1rsks07sg3720g9sg508y3cyy8d2dw8838qrzra72cijz9yg58hx"))))
+    (properties `((upstream-name . "SplitWise")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rpart))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SplitWise")
+    (synopsis
+     "'SplitWise': Hybrid Stepwise Regression with Single-Split Dummy Encoding")
+    (description
+     "This package implements @code{SplitWise}', a hybrid regression approach that
+transforms numeric variables into either single-split (0/1) dummy variables or
+retains them as continuous predictors.  The transformation is followed by
+stepwise selection to identify the most relevant variables.  The default
+iterative mode adaptively explores partial synergies among variables to enhance
+model performance, while an alternative univariate mode applies simpler
+transformations independently to each predictor.  For details, see Kurbucz et
+al. (2025) <doi:10.48550/@code{arXiv.2505.15423>}.")
+    (license license:gpl3+)))
 
 (define-public r-splittools
   (package
@@ -27010,13 +27149,13 @@ spatial error model, Journal of Statistical Computation and Simulation,
 (define-public r-spatialrisk
   (package
     (name "r-spatialrisk")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialrisk" version))
        (sha256
-        (base32 "1r6dr4n3d0x1yb4vcbfq0aqdqmy0h4n73snl86wrk86agvi5rmwp"))))
+        (base32 "1lkqjw0fgjmrnl9jw9zh2j4nhns6076zhzml6naydxnnmpibsiv7"))))
     (properties `((upstream-name . "spatialrisk")))
     (build-system r-build-system)
     (arguments
@@ -27025,19 +27164,17 @@ spatial error model, Journal of Statistical Computation and Simulation,
     (propagated-inputs (list r-viridis
                              r-units
                              r-tmap
+                             r-terra
                              r-sf
+                             r-rlang
                              r-rcppprogress
                              r-rcpp
-                             r-leaflet
-                             r-leafgl
-                             r-leafem
+                             r-mapview
+                             r-lifecycle
                              r-ggplot2
-                             r-geohashtools
-                             r-gensa
                              r-fs
                              r-dplyr
                              r-data-table
-                             r-colourvalues
                              r-classint))
     (home-page "https://github.com/mharinga/spatialrisk")
     (synopsis "Calculating Spatial Risk")
@@ -27499,77 +27636,6 @@ well as the posterior predictive distributions at different spatial locations.
 Methods for fitting this class of models are described in Chen, Ramezan, and
 Lysy (2024) <doi:10.48550/@code{arXiv.2110.07051>}.")
     (license license:gpl3)))
-
-(define-public r-spatialge
-  (package
-    (name "r-spatialge")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spatialGE" version))
-       (sha256
-        (base32 "1xlzj7lvxdvk8q5cj387ncj3x40dywl0sfn28q6xcdlisdibyvi3"))))
-    (properties `((upstream-name . "spatialGE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wordspace
-                             r-uwot
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-spdep
-                             r-spamm
-                             r-sp
-                             r-sfsmisc
-                             r-sf
-                             r-sctransform
-                             r-scales
-                             r-rlang
-                             r-readxl
-                             r-readr
-                             r-rcppprogress
-                             r-rcppeigen
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-png
-                             r-matrix
-                             r-mass
-                             r-magrittr
-                             r-khroma
-                             r-jsonlite
-                             r-jpeg
-                             r-hdf5r
-                             r-gsva
-                             r-gstat
-                             r-ggrepel
-                             r-ggpolypath
-                             r-ggplot2
-                             r-ggforce
-                             r-ebimage
-                             r-dynamictreecut
-                             r-dplyr
-                             r-delayedmatrixstats
-                             r-delayedarray
-                             r-data-table
-                             r-concaveman
-                             r-complexheatmap
-                             r-biocparallel
-                             r-arrow))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=spatialGE")
-    (synopsis
-     "Visualization and Analysis of Spatial Heterogeneity in Spatially-Resolved Gene Expression")
-    (description
-     "Visualization and analysis of spatially resolved transcriptomics data.  The
-@code{spatialGE} R package provides methods for visualizing and analyzing
-spatially resolved transcriptomics data, such as 10X Visium, @code{CosMx}, or
-csv/tsv gene expression matrices.  It includes tools for spatial interpolation,
-autocorrelation analysis, tissue domain detection, gene set enrichment, and
-differential expression analysis using spatial mixed models.")
-    (license license:expat)))
 
 (define-public r-spatialfdar
   (package
@@ -28036,13 +28102,13 @@ works with the updated spatstat package (>= 3.0-2).")
 (define-public r-spatemr
   (package
     (name "r-spatemr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatemR" version))
        (sha256
-        (base32 "1y1hyg8qs7hi6ay5qxj9kglivv4pb79a5w35m3irfdidw5666x9w"))))
+        (base32 "0mbyza9winiiglc3frgdn8i3r25v7ckqzy2rwqzbyi2kbffl4r0c"))))
     (properties `((upstream-name . "spatemR")))
     (build-system r-build-system)
     (arguments
@@ -29264,35 +29330,30 @@ algebra, and a class to implement sparse LDL decomposition and solvers.  See
 (define-public r-sparsebiplots
   (package
     (name "r-sparsebiplots")
-    (version "4.0.1")
+    (version "4.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SparseBiplots" version))
        (sha256
-        (base32 "0jiyafhsddqa3llrp62lf8bgcvs3wp2pxc8ppaxx4zphkifw2yhr"))))
+        (base32 "1cadisjw0g3gyng6h5cfgpmn243k31kh58iifmbw1176nyfln84p"))))
     (properties `((upstream-name . "SparseBiplots")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-testthat
-                             r-sparsepca
-                             r-rlang
-                             r-gtable
-                             r-ggrepel
-                             r-ggplot2))
+    (propagated-inputs (list r-sparsepca r-ggrepel r-ggplot2))
     (home-page "https://github.com/mitzicubillamontilla/SparseBiplots")
     (synopsis
      "'HJ-Biplot' using Different Ways of Penalization Plotting with 'ggplot2'")
     (description
-     "HJ-Biplot is a multivariate method that allow represent multivariate data on a
-subspace of low dimension, in such a way that most of the variability of the
-information is captured in a few dimensions.  This package implements three new
-techniques and constructs in each case the HJ-Biplot', adapting restrictions to
-reduce weights and / or produce zero weights in the dimensions, based on the
-regularization theories.  It implements three methods of regularization: Ridge,
-LASSO and Elastic Net.")
+     "The HJ-Biplot is a multivariate method that represents high-dimensional data in
+a low-dimensional subspace, capturing most of the informationâs variability in
+just a few dimensions.  This package implements three new regularized versions
+of the HJ-Biplot: Ridge, LASSO, and Elastic Net.  These versions introduce
+restrictions that shrink or zero-out variable weights to improve
+interpretability based on regularization theory.  All methods provide graphical
+representations using ggplot2'.")
     (license license:gpl3+)))
 
 (define-public r-sparsebc
@@ -30775,13 +30836,13 @@ the website <https://southpark.fandom.com/wiki/South_Park_Archives>.")
 (define-public r-sourcoise
   (package
     (name "r-sourcoise")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sourcoise" version))
        (sha256
-        (base32 "1g91qm5xq322yci58r3qg5z06l9vd5c4ybrybv6y5kamjxmvy3ad"))))
+        (base32 "0ykb26d7pwg4gw92c915hy2qnrcgcpjcyvmb9nwjlzxbf68bmlvd"))))
     (properties `((upstream-name . "sourcoise")))
     (build-system r-build-system)
     (arguments
@@ -31750,13 +31811,13 @@ For more details see: <doi:10.5281/zenodo.10137768>.")
 (define-public r-sommer
   (package
     (name "r-sommer")
-    (version "4.4.1")
+    (version "4.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sommer" version))
        (sha256
-        (base32 "1j5cldirqjq8357wl0i9jx4m9p135v1z516p1m164yqyfh2p3h0v"))))
+        (base32 "0j9ip8m5pfyyjngibrbp4gr938njg154cfxhhvrilwgr545959av"))))
     (properties `((upstream-name . "sommer")))
     (build-system r-build-system)
     (arguments
@@ -44589,13 +44650,13 @@ facilitate communicating the simulation setup.")
 (define-public r-simdag
   (package
     (name "r-simdag")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simDAG" version))
        (sha256
-        (base32 "1f0pim3sg9q3djm1az08czy0l1f1hl2sz96qr1519dmyd041qml3"))))
+        (base32 "1qkk116vz5ngkqwnrc43zymw4x6gccsyvaiy8y3ks1c6799vpr7f"))))
     (properties `((upstream-name . "simDAG")))
     (build-system r-build-system)
     (arguments
@@ -45200,6 +45261,29 @@ bias arising from unmeasured confounding.  Users can specify their desired data
 generating mechanisms to simulate data and quantitatively summarize findings in
 an end-to-end application using this package.")
     (license license:gpl2+)))
+
+(define-public r-silviculture
+  (package
+    (name "r-silviculture")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "silviculture" version))
+       (sha256
+        (base32 "1ahwv3y978434gizwr1imdfrk46jkq63v41af2y3gj2glwcc2wzq"))))
+    (properties `((upstream-name . "silviculture")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s7 r-dplyr r-cli))
+    (home-page "https://cidree.github.io/silviculture/")
+    (synopsis "Utility Functions for Forest Inventory and Silviculture")
+    (description
+     "Perform common dendrometry operations such as inventory preparing, and inventory
+data analysis.")
+    (license license:gpl3+)))
 
 (define-public r-silp
   (package
@@ -51717,13 +51801,13 @@ Steiner, R. Jock @code{MacKay} (2005, ISBN: 0873896467).")
 (define-public r-shelter
   (package
     (name "r-shelter")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shelter" version))
        (sha256
-        (base32 "0nvq96i0i4gcp8p81zk48b936gmz5sxag41pcajxr9gwkhpnkqwb"))))
+        (base32 "0mr6gc3bf6j1aw8v2hkiv0zqzirdhkqmziq3m3is61xnrdgqzsz0"))))
     (properties `((upstream-name . "shelter")))
     (build-system r-build-system)
     (arguments
@@ -53071,6 +53155,30 @@ Lafaye de Micheaux, P., Hejblum B., Thiebaut, R. (2016)
 <doi:10.1093/bioinformatics/btv535>).  Version of PLS Discriminant analysis is
 also provided.")
     (license license:gpl2+)))
+
+(define-public r-sgplot
+  (package
+    (name "r-sgplot")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sgplot" version))
+       (sha256
+        (base32 "1vaaaddfj142h3xpdxin0g2pqp3kd2k301sa4ssawwa9l8yanajs"))))
+    (properties `((upstream-name . "sgplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-rlang r-lifecycle r-ggplot2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ScotGovAnalysis/sgplot/")
+    (synopsis "Graphic Styles and Colours for Scottish Government Plots")
+    (description
+     "This package provides a ggplot2 theme and colour palettes to create accessible
+data visualisations in the Scottish Government.")
+    (license license:expat)))
 
 (define-public r-sgpdata
   (package
@@ -61119,13 +61227,13 @@ collinearity of the design matrix is a concern.")
 (define-public r-seahors
   (package
     (name "r-seahors")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEAHORS" version))
        (sha256
-        (base32 "172wqna58sfmdaparvy14nva8lsflvsz55ndkd2ficfmp28qqp6n"))))
+        (base32 "10z37s6vhb3xkighk9v937hwpg4qp76j479r2j82rhlnhhacjh2r"))))
     (properties `((upstream-name . "SEAHORS")))
     (build-system r-build-system)
     (arguments
@@ -61136,6 +61244,7 @@ collinearity of the design matrix is a concern.")
                              r-shinywidgets
                              r-shinythemes
                              r-shinyjs
+                             r-shinybs
                              r-shiny
                              r-rmarkdown
                              r-readxl
@@ -65674,13 +65783,13 @@ between colour spaces.")
 (define-public r-schematic
   (package
     (name "r-schematic")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "schematic" version))
        (sha256
-        (base32 "1g5hgf3wi8n6zn766m76hfqfb7r9i18b6rqr63p8w7s44c934zmx"))))
+        (base32 "1kgzsdzmqgivwi5y7kfzl5l27w6jr1z67rkz445d0yl0mj7gxaxg"))))
     (properties `((upstream-name . "schematic")))
     (build-system r-build-system)
     (arguments
@@ -67086,13 +67195,13 @@ book Analyzing single-case data with R and scan', Juergen Wilbert (2025)
 (define-public r-scam
   (package
     (name "r-scam")
-    (version "1.2-18")
+    (version "1.2-19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scam" version))
        (sha256
-        (base32 "0a9dr53ma3fq8nfh7q191wml3mm74gy8rl9c46p0y40h1va2y3qx"))))
+        (base32 "1lfgwcrlsw49qk9wqzjaxgwy2bvd2gna6dkw1vz8vyaf88m5dpvq"))))
     (properties `((upstream-name . "scam")))
     (build-system r-build-system)
     (arguments

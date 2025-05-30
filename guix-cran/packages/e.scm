@@ -1546,6 +1546,34 @@ groups may be entwined, in the sense that some control individuals are in both
 control groups.  The exterior match is used to compare the two control groups.")
     (license license:gpl2)))
 
+(define-public r-extendedlaplace
+  (package
+    (name "r-extendedlaplace")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ExtendedLaplace" version))
+       (sha256
+        (base32 "195vzsf688jav2d395g6cinj98faliv10j8yvy0i0qbhxpgrcq7d"))))
+    (properties `((upstream-name . "ExtendedLaplace")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam))
+    (native-inputs (list r-knitr))
+    (home-page "https://doi.org/10.1016/j.cam.2025.116588")
+    (synopsis "The Extended Laplace Distribution")
+    (description
+     "This package provides computational tools for working with the Extended Laplace
+distribution, including the probability density function, cumulative
+distribution function, quantile function, random variate generation based on
+convolution with Uniform noise and the quantile-quantile plot.  Useful for
+modeling contaminated Laplace data and other applications in robust statistics.
+See Saah and Kozubowski (2025) <doi:10.1016/j.cam.2025.116588>.")
+    (license license:expat)))
+
 (define-public r-extendedfamily
   (package
     (name "r-extendedfamily")
@@ -6829,13 +6857,13 @@ Economic Botany, 62(1), 24-39. <doi:10.1007/s12231-007-9004-5>.")
 (define-public r-ethiodate
   (package
     (name "r-ethiodate")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ethiodate" version))
        (sha256
-        (base32 "1gyxfh0p8gygq5qvrcaiv6mxiydzzqs4wg6gy83raq2ywiajldsl"))))
+        (base32 "1h2kyvwgwb3grvgrsdzdz89kwm3agpwh5w5zb0zkyc7cih9bkm35"))))
     (properties `((upstream-name . "ethiodate")))
     (build-system r-build-system)
     (arguments
@@ -6847,9 +6875,10 @@ Economic Botany, 62(1), 24-39. <doi:10.1007/s12231-007-9004-5>.")
     (synopsis "Working with Ethiopian Dates")
     (description
      "This package provides a robust and efficient solution for working with Ethiopian
-dates.  It can seamlessly convert to and from Gregorian dates.  It ensures
-lightning-fast computations by integrating high-performance C++ code through
-Rcpp package.")
+dates.  It can seamlessly convert to and from Gregorian dates.  It is designed
+to be compatible with the tidyverse data workflow, including plotting with
+ggplot2'.  It ensures lightning-fast computations by integrating
+high-performance C++ code through Rcpp package.")
     (license license:expat)))
 
 (define-public r-etc
@@ -11121,13 +11150,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.83")
+    (version "2.0.84")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "1fnxjikn5x0v3mnxzh24hjvzlbc29wkbar439c08s0ijpx84h63l"))))
+        (base32 "0fjanfsbczbyx7f0664igsk8y1hc051x3n00k3vwvvkzfscx69kj"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (arguments
@@ -15425,6 +15454,33 @@ normal (Gaussian) distribution is also available.")
 Gaussian and exponential distribution.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-emf
+  (package
+    (name "r-emf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "emf" version))
+       (sha256
+        (base32 "195cjpvfq39vqr4mhgiyxhc4ix7ckw783z5ys70glsp9isq9zsgf"))))
+    (properties `((upstream-name . "emf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=emf")
+    (synopsis
+     "Ecosystem Multifunctionality: Richness, Divergence, and Regularity")
+    (description
+     "Analyzes and quantifies ecosystem multifunctionality with functions to calculate
+multifunctionality richness (MFric), multifunctionality divergence (MFdiv), and
+multifunctionality regularity (MFreg).  These indices help assess the
+relationship between biodiversity and multiple ecosystem functions.  For more
+details, see Byrnes et al. (2014) <doi:10.1111/2041-210X.12143> and Chao et al.
+(2024) <doi:10.1111/ele.14336>.")
+    (license license:gpl3)))
 
 (define-public r-emery
   (package
@@ -22025,6 +22081,40 @@ models, for running these models, and for visualizing their results.")
      "API wrapper to download statistical information from the Economic Statistics
 System (ECOS) of the Bank of Korea <https://ecos.bok.or.kr/api/#/>.")
     (license license:expat)))
+
+(define-public r-ecorisk
+  (package
+    (name "r-ecorisk")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ecorisk" version))
+       (sha256
+        (base32 "1ri4f0a5vq9cr4w8gppjlzkpri5r3w6qsdqcy44bb1a9m255z2wv"))))
+    (properties `((upstream-name . "ecorisk")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-mgcv
+                             r-gridextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggnewscale
+                             r-geomtextpath
+                             r-forecast
+                             r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/HeleneGutte/ecorisk")
+    (synopsis "Risk Assessments for Ecosystems or Ecosystem Components")
+    (description
+     "Implementation of a modular framework for ecosystem risk assessments, combining
+existing risk assessment approaches tailored to semi-quantitative and
+quantitative analyses.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-ecorest
   (package

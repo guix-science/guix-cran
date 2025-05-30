@@ -1036,13 +1036,13 @@ Tatjana. (2019) <doi:10.1016/j.insmatheco.2018.12.001>.")
 (define-public r-ltfhplus
   (package
     (name "r-ltfhplus")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LTFHPlus" version))
        (sha256
-        (base32 "00jfwzlwr9br2ks3kr26qqkkp1af23n5580hnpflc2d03q3adly3"))))
+        (base32 "00bwbcjs18mkxn09fz6rfg9djl90ck9rh2h21z3sf1av1kggp278"))))
     (properties `((upstream-name . "LTFHPlus")))
     (build-system r-build-system)
     (arguments
@@ -3969,13 +3969,13 @@ structure to the other.")
 (define-public r-loon-data
   (package
     (name "r-loon-data")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loon.data" version))
        (sha256
-        (base32 "0sdld3yggjadykqaljf0p4cymy2c47yaxjphc6jwyragzpv4awzw"))))
+        (base32 "01jf411n8l4bwgx2h0az2wgaakz1drbkwb0j1lzbaw6rj13plcas"))))
     (properties `((upstream-name . "loon.data")))
     (build-system r-build-system)
     (arguments
@@ -3989,13 +3989,13 @@ structure to the other.")
 (define-public r-loon
   (package
     (name "r-loon")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loon" version))
        (sha256
-        (base32 "096501q5lxxi9qcnziambi2zj09s8gwv6x85qjqa50bysqfjzdn2"))))
+        (base32 "037b7h78fdbrpjc02gs8h9dx06inkkj19haiap6y36828ppip8ap"))))
     (properties `((upstream-name . "loon")))
     (build-system r-build-system)
     (arguments
@@ -8511,32 +8511,43 @@ median of the distribution.")
 (define-public r-llmr
   (package
     (name "r-llmr")
-    (version "0.2.5")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMR" version))
        (sha256
-        (base32 "0xb11l1dhmb2gfjpkgscjh6637hm6m9b63i2968gnjyx235gjky0"))))
+        (base32 "00pykjdznpd4yd7b2dqjsk0f9pzxnw0bs63h55zwdg16vczq0j7m"))))
     (properties `((upstream-name . "LLMR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-purrr r-memoise r-httr2))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-purrr
+                             r-memoise
+                             r-httr2
+                             r-future-apply
+                             r-future
+                             r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/asanaei/LLMR")
     (synopsis "Interface for Large Language Model APIs in R")
     (description
-     "This package provides a unified interface to interact with various Large
-Language Model (LLM) APIs such as @code{OpenAI} (see
+     "This package provides a unified interface to interact with multiple Large
+Language Model (LLM) APIs.  The package supports text generation, embeddings,
+and parallelization.  Users can switch between different LLM providers
+seamlessly within R workflows, or call multiple models in parallel.  The package
+enables creation of LLM agents for automated tasks and provides consistent error
+handling across all supported APIs.  APIs include @code{OpenAI} (see
 <https://platform.openai.com/docs/overview> for details), Anthropic (see
 <https://docs.anthropic.com/en/api/getting-started> for details), Groq (see
 <https://console.groq.com/docs/api-reference> for details), Together AI (see
 <https://docs.together.ai/docs/quickstart> for details), @code{DeepSeek} (see
 <https://api-docs.deepseek.com> for details), Gemini (see
 <https://aistudio.google.com> for details), and Voyage AI (see
-<https://docs.voyageai.com/docs/introduction> for details).  Allows users to use
-and switch between various APIs seamlessly within R, and define LLM agents.")
+<https://docs.voyageai.com/docs/introduction> for details).")
     (license license:expat)))
 
 (define-public r-llmagentr
@@ -10171,13 +10182,13 @@ authoring with R Markdown is also provided.")
 (define-public r-lingtypology
   (package
     (name "r-lingtypology")
-    (version "1.1.20")
+    (version "1.1.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lingtypology" version))
        (sha256
-        (base32 "02xhk9ncgsgqygwszdzkrzlkg2zikfhlfan00wh0w0h0d6gd6z47"))))
+        (base32 "10glk74f52zv9qasm0zazkqhrk4ca8mazl1r5xl4kiq2wvbl3vy5"))))
     (properties `((upstream-name . "lingtypology")))
     (build-system r-build-system)
     (arguments
@@ -10884,20 +10895,21 @@ differential analysis of rhythmic transcriptome data.  See Singer and Hughey
 (define-public r-limonaid
   (package
     (name "r-limonaid")
-    (version "0.1.5")
+    (version "25.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "limonaid" version))
        (sha256
-        (base32 "04w9g0gv1cihljvmh1y40ygckhhv4jrg970913npvk5nc3id3bqd"))))
+        (base32 "0c5mplz472jmxf6s2mxkqcv6h0k6b60nr1q1f616llvqkwqznybm"))))
     (properties `((upstream-name . "limonaid")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6 r-jsonlite r-httr))
-    (home-page "https://r-packages.gitlab.io/limonaid")
+    (propagated-inputs (list r-xml2 r-r6 r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://limonaid.opens.science")
     (synopsis "Working with 'LimeSurvey' Surveys and Responses")
     (description
      "@code{LimeSurvey} is Free/Libre Open Source Software for the development and
@@ -12035,13 +12047,13 @@ is available at the Supplementary Data section at Nucleic Acids Research Online
 (define-public r-lidr
   (package
     (name "r-lidr")
-    (version "4.1.2")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lidR" version))
        (sha256
-        (base32 "1sx903krq6hn9gdz3k7kq88yxzm6hh8wpcjkvgzbrf4z31fc6lp4"))))
+        (base32 "09zsfaq9yikwpab7n0s4mx75w075hdgfk0r1cddb0hhl2s2dvg35"))))
     (properties `((upstream-name . "lidR")))
     (build-system r-build-system)
     (arguments
@@ -12364,6 +12376,36 @@ compared to other libraries.")
 functions and data types common in computer graphics applications, including a
 16-bit floating-point type.")
     (license license:bsd-3)))
+
+(define-public r-libdeflate
+  (package
+    (name "r-libdeflate")
+    (version "1.24-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "libdeflate" version))
+       (sha256
+        (base32 "1dbhnr6z1m2b0ykgqgkazyadczwifiihffay0zci51fh0lkmm848"))))
+    (properties `((upstream-name . "libdeflate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list cmake))
+    (native-inputs (list pkg-config))
+    (home-page "https://cran.r-project.org/package=libdeflate")
+    (synopsis "DEFLATE Compression and Static Library")
+    (description
+     "Whole-buffer DEFLATE-based compression and decompression of raw vectors using
+the libdeflate library (see <https://github.com/ebiggers/libdeflate>).  Provides
+the user with additional control over the speed and the quality of DEFLATE
+compression compared to the fixed level of compression offered in R's
+@code{memCompress()} function.  Also provides the libdeflate static library and
+C headers along with a CMake target and packageâconfig file that ease linking
+of libdeflate in packages that compile and statically link bundled libraries
+using CMake'.")
+    (license license:expat)))
 
 (define-public r-libbib
   (package

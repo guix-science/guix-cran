@@ -16349,13 +16349,13 @@ Kronecker-covariance structure using the Matrix Minimum Covariance Determinant
 (define-public r-robustlmm
   (package
     (name "r-robustlmm")
-    (version "3.3-2")
+    (version "3.3-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustlmm" version))
        (sha256
-        (base32 "0gcp2vbdyks1f3nx6k9nap4nxhvdfwn360hqlaz22dwd7q4gd78j"))))
+        (base32 "1fc62m6pd19fqnrbvrzi99px3gkkq4ngvgjhw0s5an9xnrlv529d"))))
     (properties `((upstream-name . "robustlmm")))
     (build-system r-build-system)
     (arguments
@@ -16364,6 +16364,7 @@ Kronecker-covariance structure using the Matrix Minimum Covariance Determinant
     (propagated-inputs (list r-xtable
                              r-robustbase
                              r-rlang
+                             r-reformulas
                              r-rcpp
                              r-nlme
                              r-matrix
@@ -17916,6 +17917,31 @@ retrieving investment statistics and quotes, placing and canceling orders,
 getting market trading hours, searching investments by popular tag, and
 interacting with watch lists.")
     (license license:gpl3)))
+
+(define-public r-robincid
+  (package
+    (name "r-robincid")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RobinCID" version))
+       (sha256
+        (base32 "0wbjd7ni52w9v83b7ajy8np8cdvksw208y4nmzcvwqhmxq330m69"))))
+    (properties `((upstream-name . "RobinCID")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv r-mass r-checkmate))
+    (home-page "https://github.com/Eureeca/RobinCID")
+    (synopsis "Robust Inference in Complex Innovative Trial Design")
+    (description
+     "Perform robust estimation and inference in platform trials and other master
+protocol trials.  Yuhan Qian, Yifan Yi, Jun Shao, Yanyao Yi, Gregory Levin,
+Nicole Mayer-Hamblett, Patrick J. Heagerty, Ting Ye (2025)
+<doi:10.48550/@code{arXiv.2411.12944>}.")
+    (license license:expat)))
 
 (define-public r-robincar2
   (package
@@ -29949,6 +29975,29 @@ functionalities to transfer R scripts (saved outside the R folder) into the R
 folder while making additional checks.")
     (license license:expat)))
 
+(define-public r-rfocal
+  (package
+    (name "r-rfocal")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rFocal" version))
+       (sha256
+        (base32 "17q0122fz2qvd5pkgwxjpb23i1mnx86yvdnqn01mw9jhh68qczmz"))))
+    (properties `((upstream-name . "rFocal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=rFocal")
+    (synopsis "Run 'FOCAL' Language Source Code")
+    (description
+     "Execute FOCAL (<https://en.wikipedia.org/wiki/FOCAL_(programming_language)>)
+source code directly in R'.  This is achieved by translating FOCAL code into
+equivalent R commands and controlling the sequence of execution.")
+    (license license:lgpl3)))
+
 (define-public r-rfoc
   (package
     (name "r-rfoc")
@@ -34978,6 +35027,32 @@ sweeping changes were introduced which greatly improve functionality and
 usability but break backwards compatibility.")
     (license license:gpl3)))
 
+(define-public r-rencher
+  (package
+    (name "r-rencher")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rencher" version))
+       (sha256
+        (base32 "1f69mz2inffirnykx2jiw9bdd9245gwsj1zwdldr6gl3djv2v8wd"))))
+    (properties `((upstream-name . "rencher")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=rencher")
+    (synopsis
+     "Datasets from the Book \"Methods of Multivariate Analysis (3rd)\"")
+    (description
+     "This package provides the datasets in the book \"Methods of Multivariate Analysis
+(3rd)\", such as Table 6.27 Blood Pressure Data, for statistical
+analysis,especially MANOVA. The dataset names correspond to their numbering in
+the third edition of the book, such as table6.27.  Based on the book by Rencher
+and Christensen (2012, ISBN:9780470178966).")
+    (license license:gpl3)))
+
 (define-public r-rena
   (package
     (name "r-rena")
@@ -36588,6 +36663,64 @@ hypothesis testing, and plotting moderating effects (the effect of X on Y
 becomes stronger/weaker as Z increases).")
     (license license:gpl3)))
 
+(define-public r-regressor
+  (package
+    (name "r-regressor")
+    (version "4.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "regressoR" version))
+       (sha256
+        (base32 "0mr2mpvn1i5zkj6wigadkmnwcjqswz4gsnwra89sfnbrh8g9j9ln"))))
+    (properties `((upstream-name . "regressoR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-trainer
+                             r-shinyjs
+                             r-shinydashboardplus
+                             r-shinydashboard
+                             r-shinycustomloader
+                             r-shinyace
+                             r-shiny
+                             r-rpart-plot
+                             r-rlang
+                             r-psych
+                             r-pls
+                             r-loader
+                             r-htmltools
+                             r-golem
+                             r-glmnet
+                             r-gbm
+                             r-echarts4r
+                             r-dt
+                             r-dplyr))
+    (native-inputs (list esbuild))
+    (home-page "https://promidat.website/")
+    (synopsis "Regression Data Analysis System")
+    (description
+     "Perform a supervised data analysis on a database through a shiny graphical
+interface.  It includes methods such as linear regression, penalized regression,
+k-nearest neighbors, decision trees, ada boosting, extreme gradient boosting,
+random forest, neural networks, deep learning and support vector machines.")
+    (license license:gpl2+)))
+
 (define-public r-regressionfactory
   (package
     (name "r-regressionfactory")
@@ -37436,13 +37569,13 @@ for theory and code examples.")
 (define-public r-regclass
   (package
     (name "r-regclass")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regclass" version))
        (sha256
-        (base32 "0m974k3yhf0dgv5f1qjs8c53mam0cll3cjn35ywfrmlfla0wlhf5"))))
+        (base32 "1b1dg92f5sk1kfz538bmhssxkllbjal77gy16incviczwj8kypfr"))))
     (properties `((upstream-name . "regclass")))
     (build-system r-build-system)
     (arguments
@@ -37460,8 +37593,7 @@ for theory and code examples.")
      "This package contains basic tools for visualizing, interpreting, and building
 regression models.  It has been designed for use with the book Introduction to
 Regression and Modeling with R by Adam Petrie, Cognella Publishers, ISBN:
-978-1-63189-250-9
-<https://titles.cognella.com/introduction-to-regression-and-modeling-with-r-9781631892509>.")
+978-1-63189-250-9.")
     (license license:gpl2+)))
 
 (define-public r-regassure
@@ -37745,13 +37877,13 @@ data.  Full mathematical details can be found in <doi:10.1002/sim.9163> and
 (define-public r-reflimr
   (package
     (name "r-reflimr")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reflimR" version))
        (sha256
-        (base32 "02phm6jjhwdcc82vw292kcwwrprl7zcd8fyvb479rs3c1ippkrhc"))))
+        (base32 "0zr4wv02cy7pwzkhz98gr4mmradrc0z8vshjkxb6rs4xmgxkj0k4"))))
     (properties `((upstream-name . "reflimR")))
     (build-system r-build-system)
     (arguments
@@ -37762,10 +37894,11 @@ data.  Full mathematical details can be found in <doi:10.1002/sim.9163> and
     (synopsis "Reference Limit Estimation Using Routine Laboratory Data")
     (description
      "Uses an indirect method based on truncated quantile-quantile plots to estimate
-reference limits from routine laboratory data.  The principle of the method was
-developed by Robert G Hoffmann (1963) <doi:10.1001/jama.1963.03060110068020> and
-modified by Georg Hoffmann and colleagues (2015) <doi:10.1515/labmed-2015-0104>,
-(2020) <doi:10.1515/labmed-2020-0005>, and (2022)
+reference limits from routine laboratory data: Georg Hoffmann and colleagues
+(2024) <doi: 10.3390/jcm13154397>.  The principle of the method was developed by
+Robert G Hoffmann (1963) <doi:10.1001/jama.1963.03060110068020> and modified by
+Georg Hoffmann and colleagues (2015) <doi:10.1515/labmed-2015-0104>, and Frank
+Klawonn and colleagues (2020) <doi:10.1515/labmed-2020-0005>, (2022)
 <doi:10.1007/978-3-031-15509-3_31>.")
     (license license:gpl2)))
 
@@ -44718,13 +44851,13 @@ contributors to both @code{QuantLib} and Quantuccia'.")
 (define-public r-rcppplanc
   (package
     (name "r-rcppplanc")
-    (version "2.0.11")
+    (version "2.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppPlanc" version))
        (sha256
-        (base32 "0q97cjhvnjkzsbiby0zcw3nydpmrfyv1a5rr7iqvj3q44n1j92wy"))))
+        (base32 "148yjcbyq72jr0wqjjwj41gd6m2mzghkk8p48bb23w88fzj2m333"))))
     (properties `((upstream-name . "RcppPlanc")))
     (build-system r-build-system)
     (arguments
@@ -46119,6 +46252,34 @@ within the Global Talent Mentoring platform.
      "Get your data (forms, structures, answers) from Coletum <https://coletum.com> to
 handle and analyse.")
     (license license:lgpl3)))
+
+(define-public r-rcoins
+  (package
+    (name "r-rcoins")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcoins" version))
+       (sha256
+        (base32 "1a4arl81hh98vj2zkfpn3lwwayhll9jifq2nsah0sslld1vndzni"))))
+    (properties `((upstream-name . "rcoins")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sfheaders r-sf r-rlang r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cityriverspaces.github.io/rcoins/")
+    (synopsis "Identify Naturally Continuous Lines in a Spatial Network")
+    (description
+     "This package provides functionality to group lines that form naturally
+continuous lines in a spatial network.  The algorithm implemented is based on
+the Continuity in Street Networks (COINS) method from Tripathy et al. (2021)
+<doi:10.1177/2399808320967680>, which identifies continuous \"strokes\" in the
+network as the line strings that maximize the angles between consecutive
+segments.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rcognito
   (package
@@ -53214,13 +53375,13 @@ numerical and categorical data.")
 (define-public r-rangr
   (package
     (name "r-rangr")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rangr" version))
        (sha256
-        (base32 "1cwjsibg749xzic5sqj12fcaqjan85c363r3qi7n96ghm3l47amb"))))
+        (base32 "0zjgmfffmch8v6acfa7zyqcz1scwxr3nzg99sl4q19dqp2a9gvhy"))))
     (properties `((upstream-name . "rangr")))
     (build-system r-build-system)
     (arguments
@@ -55153,13 +55314,13 @@ abbreviation of R @code{agGrid}'.")
 (define-public r-ragflowchainr
   (package
     (name "r-ragflowchainr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RAGFlowChainR" version))
        (sha256
-        (base32 "09g4xwp8csyjrsxb4lagmrvkczq4r08vprs8xgzp7z8czf8xc99w"))))
+        (base32 "199xfc9vl5zjq768h1p7yp56i81xf9dp6nv6p38cvw9vr3a0z1jk"))))
     (properties `((upstream-name . "RAGFlowChainR")))
     (build-system r-build-system)
     (arguments

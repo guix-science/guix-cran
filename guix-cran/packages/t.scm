@@ -1266,6 +1266,39 @@ For the seminal work on the topic, see Rudin et al (1992)
 <doi:10.1016/0167-2789(92)90242-F>.")
     (license license:expat)))
 
+(define-public r-tvmvp
+  (package
+    (name "r-tvmvp")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TVMVP" version))
+       (sha256
+        (base32 "0j06fxppdnx5fgs1xi6kv32ykg4j7xr69ivhzg3nfrvxr4wwlxmm"))))
+    (properties `((upstream-name . "TVMVP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-prettyunits r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/erilill/TV-MVP")
+    (synopsis "Time-Varying Minimum Variance Portfolio")
+    (description
+     "This package provides the estimation of a time-dependent covariance matrix of
+returns with the intended use for portfolio optimization.  The package offers
+methods for determining the optimal number of factors to be used in the
+covariance estimation, a hypothesis test of time-varying covariance, and
+user-friendly functions for portfolio optimization and rolling window
+evaluation.  The local PCA method, method for determining the number of factors,
+and associated hypothesis test are based on Su and Wang (2017)
+<doi:10.1016/j.jeconom.2016.12.004>.  The approach to time-varying portfolio
+optimization follows Fan et al. (2024) <doi:10.1016/j.jeconom.2022.08.007>.  The
+regularisation applied to the residual covariance matrix adopts the technique
+introduced by Chen et al. (2019) <doi:10.1016/j.jeconom.2019.04.025>.")
+    (license license:expat)))
+
 (define-public r-tvmm
   (package
     (name "r-tvmm")
@@ -9125,6 +9158,36 @@ principle of transx is to keep the number of observations the same.  Operations
 that reduce this number have to fill the observations gap.")
     (license license:gpl3)))
 
+(define-public r-transurv
+  (package
+    (name "r-transurv")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tranSurv" version))
+       (sha256
+        (base32 "0jccdkhz942kaz3ddvhlcdn0q1g9yvwqczvr9zclg1adwl95yc6k"))))
+    (properties `((upstream-name . "tranSurv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncsp r-survival r-squarem r-rootsolve))
+    (home-page "https://github.com/stc04003/tranSurv")
+    (synopsis "Transformation-Based Regression under Dependent Truncation")
+    (description
+     "This package provides a latent, quasi-independent truncation time is assumed to
+be linked with the observed dependent truncation time, the event time, and an
+unknown transformation parameter via a structural transformation model.  The
+transformation parameter is chosen to minimize the conditional Kendall's tau
+(Martin and Betensky, 2005) <doi:10.1198/016214504000001538> or the regression
+coefficient estimates (Jones and Crowley, 1992) <doi:10.2307/2336782>.  The
+marginal distribution for the truncation time and the event time are completely
+left unspecified.  The methodology is applied to survival curve estimation and
+regression analysis.")
+    (license license:gpl3+)))
+
 (define-public r-transtggm
   (package
     (name "r-transtggm")
@@ -13788,19 +13851,20 @@ nodes in the network.")
 (define-public r-tna
   (package
     (name "r-tna")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tna" version))
        (sha256
-        (base32 "1ws8lwvhkf1v3ym0hzzhci07xpbzcgfllxwaps48byiafi363pb0"))))
+        (base32 "1fdd59f9njwh64hasircv5kx8zhjy0csl3q28aax7y911wbi7xd0"))))
     (properties `((upstream-name . "tna")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-rlang
                              r-rcolorbrewer
@@ -18057,49 +18121,6 @@ functionalities of the package are described in Leonardi et al. (2023)
 <doi:10.1101/2023.07.24.550358>.")
     (license license:agpl3+)))
 
-(define-public r-tidyrules
-  (package
-    (name "r-tidyrules")
-    (version "0.2.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidyrules" version))
-       (sha256
-        (base32 "1h81bffqshasfgjdy9rlvi6jqd89r933p324x172mzcpqkvp484n"))))
-    (properties `((upstream-name . "tidyrules")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidytable
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-proxy
-                             r-pheatmap
-                             r-partykit
-                             r-metricsweighted
-                             r-magrittr
-                             r-glue
-                             r-generics
-                             r-desctools
-                             r-data-table
-                             r-cli
-                             r-checkmate))
-    (home-page "https://github.com/talegari/tidyrules")
-    (synopsis
-     "Utilities to Retrieve Rulelists from Model Fits, Filter, Prune, Reorder and Predict on Unseen Data")
-    (description
-     "This package provides a framework to work with decision rules.  Rules can be
-extracted from supported models, augmented with (custom) metrics using
-validation data, manipulated using standard dataframe operations, reordered and
-pruned based on a metric, predict on unseen (test) data.  Utilities include;
-Creating a rulelist manually, Exporting a rulelist as a SQL case statement and
-so on.  The package offers two classes; rulelist and ruleset based on dataframe.")
-    (license license:gpl3)))
-
 (define-public r-tidyrss
   (package
     (name "r-tidyrss")
@@ -20595,13 +20616,13 @@ be installed.")
 (define-public r-tican
   (package
     (name "r-tican")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tican" version))
        (sha256
-        (base32 "0bic4n7jgbj74ca849cklvjasgdv1rym2bry24zpad6q42jjkmg7"))))
+        (base32 "0pl580gq17sc2m1lcmqxs7qihszk1h5hsi02d9wprhcrb0db3z60"))))
     (properties `((upstream-name . "tican")))
     (build-system r-build-system)
     (arguments
@@ -24418,6 +24439,48 @@ univariate procedure.  See Marques, Diago, Norouzirad, Bispo (2023)
 <doi:10.1002/mma.9130>.")
     (license license:gpl2+)))
 
+(define-public r-testgenerator
+  (package
+    (name "r-testgenerator")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TestGenerator" version))
+       (sha256
+        (base32 "0dxkgvdfaw1gbklrad5ia122byglgkwscbc8n00z3j2qp3bxrwfn"))))
+    (properties `((upstream-name . "TestGenerator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-testthat
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-openxlsx
+                             r-omopgenerics
+                             r-jsonlite
+                             r-glue
+                             r-ggplot2
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-cli
+                             r-checkmate
+                             r-cdmconnector
+                             r-arrow))
+    (home-page "https://github.com/darwin-eu/TestGenerator")
+    (synopsis "Integration Unit Tests for Pharmacoepidemiological Studies")
+    (description
+     "An R interface to load testing data in the OMOP Common Data Model ('CDM').  An
+input file, csv or xlsx, can be converted to a CDMConnector object.  This object
+can be used to execute and test studies that use the CDM
+<https://www.ohdsi.org/data-standardization/>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-testgardener
   (package
     (name "r-testgardener")
@@ -27895,6 +27958,45 @@ at <https://github.com/Ripser/ripser>.  This package has been published as
 Wadhwa et al. (2018) <doi:10.21105/joss.00860>.")
     (license license:gpl3)))
 
+(define-public r-tdarec
+  (package
+    (name "r-tdarec")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tdarec" version))
+       (sha256
+        (base32 "1s9vpy7dr4zrrj5ahqlsbwgz02q4n7h64h10f116nv3zgkn8zjxm"))))
+    (properties `((upstream-name . "tdarec")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-recipes
+                             r-purrr
+                             r-magrittr
+                             r-dials))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tdaverse/tdarec")
+    (synopsis
+     "'recipes' Extension for Persistent Homology and Its Vectorizations")
+    (description
+     "Topological data analytic methods in machine learning rely on vectorizations of
+the persistence diagrams that encode persistent homology, as surveyed by Ali &al
+(2000) <doi:10.48550/@code{arXiv.2212.09703>}.  Persistent homology can be
+computed using TDA and ripserr and vectorized using TDAvec'.  The Tidymodels
+package collection modularizes machine learning in R for straightforward
+extensibility; see Kuhn & Silge (2022, ISBN:978-1-4920-9644-3).  These recipe
+steps and dials tuners make efficient algorithms for computing and vectorizing
+persistence diagrams available for Tidymodels workflows.")
+    (license license:gpl3+)))
+
 (define-public r-tdapplied
   (package
     (name "r-tdapplied")
@@ -28356,13 +28458,13 @@ and Gregg (1993) <doi:10.1007/BF01070999>; Schnider et al. (1998)
 (define-public r-tchazards
   (package
     (name "r-tchazards")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TCHazaRds" version))
        (sha256
-        (base32 "1jrfrx9ndjn380spshqnxjilvfxd1xkx9pkbc94cia55ffis9vnm"))))
+        (base32 "1w51j6gvzhh26nzx67hjrcjawwpfm43zkm6jzz3ab877dkhw7sc3"))))
     (properties `((upstream-name . "TCHazaRds")))
     (build-system r-build-system)
     (arguments
@@ -28977,6 +29079,38 @@ Spotify (song characteristics).  Additional functions are included for easily
 creating data visualizations with color palettes inspired by Taylor Swift's
 album covers.")
     (license license:expat)))
+
+(define-public r-taxotools
+  (package
+    (name "r-taxotools")
+    (version "0.0.148")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "taxotools" version))
+       (sha256
+        (base32 "03m1xqm1386dpy1paqfbqnia29nsr37ngm0337cscj4i0w0jq1lz"))))
+    (properties `((upstream-name . "taxotools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wikitaxa
+                             r-taxize
+                             r-stringr
+                             r-stringi
+                             r-stringdist
+                             r-sqldf
+                             r-rmarkdown
+                             r-plyr))
+    (home-page "https://cran.r-project.org/package=taxotools")
+    (synopsis "Taxonomic List Processing")
+    (description
+     "Taxonomic lists matching and merging, casting and melting scientific names,
+managing taxonomic lists from Global Biodiversity Information Facility GBIF
+<https://www.gbif.org/> or Integrated Taxonomic Information System ITIS',
+<https://itis.gov/> harvesting names from Wikipedia and fuzzy matching.")
+    (license license:cc0)))
 
 (define-public r-taxonomizr
   (package
@@ -31835,20 +31969,25 @@ exchange, reporting, and automated workflows.")
 (define-public r-t4transport
   (package
     (name "r-t4transport")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "T4transport" version))
        (sha256
-        (base32 "091mq0f2cawkfmaql9gqgv2sbs5fwyv4i2sdw14p1r01wznfrqzf"))))
+        (base32 "0m2yp2j83wvhxvpf0jw1ayqy5hwf27qm7a56bwk1il3vmn5jjx5k"))))
     (properties `((upstream-name . "T4transport")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-lpsolve r-cvxr))
-    (home-page "https://cran.r-project.org/package=T4transport")
+    (propagated-inputs (list r-rdpack
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-lpsolve
+                             r-cvxr
+                             r-bh))
+    (home-page "https://www.kisungyou.com/T4transport/")
     (synopsis "Tools for Computational Optimal Transport")
     (description
      "Transport theory has seen much success in many fields of statistics and machine

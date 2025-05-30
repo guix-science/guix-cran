@@ -1032,6 +1032,40 @@ some improvements to the algorithm, so the results may vary slightly compared to
 those obtained with version 0.0.1.")
     (license license:gpl3)))
 
+(define-public r-outliermbc
+  (package
+    (name "r-outliermbc")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "outlierMBC" version))
+       (sha256
+        (base32 "1biwqicics0yvdc6cdllj71cm60zjw8i9yhpgpzpm8sdz7vrsjbj"))))
+    (properties `((upstream-name . "outlierMBC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spatstat-univar
+                             r-mvtnorm
+                             r-mixture
+                             r-ggplot2
+                             r-flexcwm
+                             r-dbscan
+                             r-clusterr))
+    (home-page "https://cran.r-project.org/package=outlierMBC")
+    (synopsis "Sequential Outlier Identification for Model-Based Clustering")
+    (description
+     "Sequential outlier identification for Gaussian mixture models using the
+distribution of Mahalanobis distances.  The optimal number of outliers is chosen
+based on the dissimilarity between the theoretical and observed distributions of
+the scaled squared sample Mahalanobis distances.  Also includes an extension for
+Gaussian linear cluster-weighted models using the distribution of studentized
+residuals.  Doherty, @code{McNicholas}, and White (2025)
+<doi:10.48550/@code{arXiv.2505.11668>}.")
+    (license license:expat)))
+
 (define-public r-outlierensembles
   (package
     (name "r-outlierensembles")
@@ -4664,13 +4698,13 @@ installed following the instructions at
 (define-public r-optrcdmaeat
   (package
     (name "r-optrcdmaeat")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optrcdmaeAT" version))
        (sha256
-        (base32 "16g4612mwyfsckn6l71fbrjnnjv4yvnac1cccbrn3k8jh07qgb1h"))))
+        (base32 "1l4z72c2c2v27bqc8n316p2zbq1268m78b6k7skwgn6ky83f6p3n"))))
     (properties `((upstream-name . "optrcdmaeAT")))
     (build-system r-build-system)
     (arguments
@@ -4686,9 +4720,10 @@ two-colour @code{cDNA} microarray experiments using the linear fixed effects and
 mixed effects models where the interest is in a comparison of all pairwise
 treatment contrasts.  The algorithms used in this package are based on the array
 exchange and treatment exchange algorithms adopted from Debusho, Gemechu and
-Haines (2016, unpublished) algorithms after adjusting for the row-column designs
-setup.  The package also provides an optional method of using the graphical user
-interface (GUI) R package tcltk to ensure that it is user friendly.")
+Haines (2018) <doi:10.1080/03610918.2018.1429617> algorithms after adjusting for
+the row-column designs setup.  The package also provides an optional method of
+using the graphical user interface (GUI) R package tcltk to ensure that it is
+user friendly.")
     (license license:gpl2)))
 
 (define-public r-optr
@@ -7927,13 +7962,13 @@ of bio-medical data.")
 (define-public r-opcreg
   (package
     (name "r-opcreg")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPCreg" version))
        (sha256
-        (base32 "0473g0hnxzbh7jyfbi4na6xd5ssjhx9jz872nimdgg411s3dwjg1"))))
+        (base32 "17hxslgw9w5v9379jn5q0iy6i8mvyvilyaddphyp8hbd3607scp8"))))
     (properties `((upstream-name . "OPCreg")))
     (build-system r-build-system)
     (arguments
@@ -10403,13 +10438,13 @@ as DNA methylation and gene expression profiles.")
 (define-public r-omicnavigator
   (package
     (name "r-omicnavigator")
-    (version "1.13.13")
+    (version "1.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmicNavigator" version))
        (sha256
-        (base32 "0dfc3v5n7sms0fjgm8g0f1r810q139378ha0i86hv1s88psxy08x"))))
+        (base32 "1b49w0jpzg8ijj0znncnv3mcpnl17rrmhyjhmnhd1q4x4x8q277z"))))
     (properties `((upstream-name . "OmicNavigator")))
     (build-system r-build-system)
     (arguments
@@ -11975,13 +12010,13 @@ serve as supplements to the classical CART of Breiman (1984)
 (define-public r-odr
   (package
     (name "r-odr")
-    (version "1.4.4")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odr" version))
        (sha256
-        (base32 "037v6523kbl0izfzyg6lp6h4r5p8w23dp8r1fpx07wyr34q2w8vn"))))
+        (base32 "1m6lr75v7ig87c6xv22smq6mwlmp5ka8im6blp5mcvcw2dxc930w"))))
     (properties `((upstream-name . "odr")))
     (build-system r-build-system)
     (arguments
@@ -11992,22 +12027,28 @@ serve as supplements to the classical CART of Breiman (1984)
     (synopsis
      "Optimal Design and Statistical Power for Experimental Studies Investigating Main, Mediation, and Moderation Effects")
     (description
-     "Calculate the optimal sample size allocation that produces the highest
-statistical power for experimental studies under a budget constraint, and
-perform power analyses with and without accommodating cost structures of
-sampling.  The designs cover single-level and multilevel experiments detecting
-main, mediation, and moderation effects (and some combinations).  The references
-for the proposed methods include: (1) Shen, Z., & Kelcey, B. (2020).  Optimal
-sample allocation under unequal costs in cluster-randomized trials.  Journal of
-Educational and Behavioral Statistics, 45(4): 446-474.
-<doi:10.3102/1076998620912418>. (2) Shen, Z., & Kelcey, B. (2022b).  Optimal
-sample allocation for three-level multisite cluster-randomized trials.  Journal
-of Research on Educational Effectiveness, 15 (1), 130-150.
+     "Calculate the optimal sample size allocation that uses the minimum resources to
+achieve targeted statistical power in experiments.  Perform power analyses with
+and without accommodating costs and budget.  The designs cover single-level and
+multilevel experiments detecting main, mediation, and moderation effects (and
+some combinations).  The references for the proposed methods include: (1) Shen,
+Z., & Kelcey, B. (2020).  Optimal sample allocation under unequal costs in
+cluster-randomized trials.  Journal of Educational and Behavioral Statistics,
+45(4): 446-474. <doi:10.3102/1076998620912418>. (2) Shen, Z., & Kelcey, B.
+(2022b).  Optimal sample allocation for three-level multisite cluster-randomized
+trials.  Journal of Research on Educational Effectiveness, 15 (1), 130-150.
 <doi:10.1080/19345747.2021.1953200>. (3) Shen, Z., & Kelcey, B. (2022a).
 Optimal sample allocation in multisite randomized trials.  The Journal of
-Experimental Education. <doi:10.1080/00220973.2020.1830361>. (4) Champely, S.
-(2020).  pwr: Basic functions for power analysis (Version 1.3-0) [Software].
-Available from <https://CRAN.R-project.org/package=pwr>.")
+Experimental Education, 90(3), 693-711. <doi:10.1080/00220973.2020.1830361>. (4)
+Shen, Z., Leite, W., Zhang, H., Quan, J., & Kuang, H. (2025).  Using ant colony
+optimization to identify optimal sample allocations in cluster-randomized
+trials.  The Journal of Experimental Education, 93(1), 167-185.
+<doi:10.1080/00220973.2024.2306392>. (5) Shen, Z., Li, W., & Leite, W. (in
+press).  Statistical power and optimal design for randomized controlled trials
+investigating mediation effects.  Psychological Methods.
+<doi:10.1037/met0000698>. (6) Champely, S. (2020).  pwr: Basic functions for
+power analysis (Version 1.3-0) [Software].  Available from
+<https://CRAN.R-project.org/package=pwr>.")
     (license license:gpl3)))
 
 (define-public r-odmeans

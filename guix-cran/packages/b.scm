@@ -1044,6 +1044,31 @@ and visualization of process maps.  See also packages
 @code{edeaR','processmapR}', @code{eventdataR} and @code{processmonitR}'.")
     (license license:expat)))
 
+(define-public r-bunsen
+  (package
+    (name "r-bunsen")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bunsen" version))
+       (sha256
+        (base32 "0yvi7jk00v68vdj7kgvmmi847vx1zghhv7b6nvnm1ayy5x25f7vv"))))
+    (properties `((upstream-name . "bunsen")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-rcpp r-clustermq r-boot))
+    (home-page "https://cran.r-project.org/package=bunsen")
+    (synopsis "Marginal Survival Estimation with Covariate Adjustment")
+    (description
+     "This package provides an efficient and robust implementation for estimating
+marginal Hazard Ratio (HR) and Restricted Mean Survival Time (RMST) with
+covariate adjustment using Daniel et al. (2021) <doi:10.1002/bimj.201900297> and
+Karrison et al. (2018) <doi:10.1177/1740774518759281>.")
+    (license license:gpl3+)))
+
 (define-public r-bundle
   (package
     (name "r-bundle")
@@ -1999,19 +2024,19 @@ smoothing of the daily run size.  Theory described in Bonner and Schwarz (2011)
 (define-public r-btrm
   (package
     (name "r-btrm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "btrm" version))
        (sha256
-        (base32 "0limvn2n1rchp55l440gfifz6ci87dkih1rzgzvmlymdgf6nqq17"))))
+        (base32 "130ylhn1kmaj8anbshxd0z50lk870pyp1lxy9kvppdq711faq5cx"))))
     (properties `((upstream-name . "btrm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-proc r-arm))
+    (propagated-inputs (list r-proc r-mass r-arm))
     (home-page "https://cran.r-project.org/package=btrm")
     (synopsis
      "Bayesian Treed Regression Model for Personalized Prediction and Precision Diagnostics")
@@ -12690,6 +12715,31 @@ that it is possible to read bits, bit sequences, unaligned bytes and low-bit
 representations of integers.")
     (license license:expat)))
 
+(define-public r-bitsls
+  (package
+    (name "r-bitsls")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BiTSLS" version))
+       (sha256
+        (base32 "0pn4cvw99i3xfpy1fzizan9kv5lcnrsqpvd9iacgbv7imh35nrwq"))))
+    (properties `((upstream-name . "BiTSLS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=BiTSLS")
+    (synopsis "Bidirectional Two-Stage Least Squares Estimation")
+    (description
+     "This package implements bidirectional two-stage least squares (Bi-TSLS)
+estimation for identifying bidirectional causal effects between two variables in
+the presence of unmeasured confounding.  The method uses proxy variables
+(negative control exposure and outcome) along with at least one covariate to
+handle confounding.")
+    (license license:expat)))
+
 (define-public r-bitrina
   (package
     (name "r-bitrina")
@@ -15446,13 +15496,13 @@ after stopping, allowing updating for missing assessments.")
 (define-public r-binsegrcpp
   (package
     (name "r-binsegrcpp")
-    (version "2023.8.31")
+    (version "2025.5.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binsegRcpp" version))
        (sha256
-        (base32 "1rx8rxgzjf4bjbx6gpf70pnma05g51lg6l1z0kdswj8m3pmqnk93"))))
+        (base32 "15yhab0vnkzqrrsd1hqqb89ln5rd70jzkj9jz34y0nrsdzsmnwgb"))))
     (properties `((upstream-name . "binsegRcpp")))
     (build-system r-build-system)
     (arguments
@@ -16434,13 +16484,13 @@ al. (2009) <https://pmc.ncbi.nlm.nih.gov/articles/PMC2730180/>,
 (define-public r-bimets
   (package
     (name "r-bimets")
-    (version "4.0.3")
+    (version "4.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bimets" version))
        (sha256
-        (base32 "172nwa96k94j68f477nh1bf33dajma3140fjfbj09zw6p6hl06ay"))))
+        (base32 "1njlj1qq1878k3h2wff7gv5ckb9ki6vvm3l8j146hncp7fw8zxml"))))
     (properties `((upstream-name . "bimets")))
     (build-system r-build-system)
     (arguments
@@ -18869,13 +18919,13 @@ Knowledge, Journal of Statistical Software <doi:10.18637/jss.v047.i03>.")
 (define-public r-bgmisc
   (package
     (name "r-bgmisc")
-    (version "1.3.5")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGmisc" version))
        (sha256
-        (base32 "1w7mym07v0apzgzkw1y0bm6pry8bj5ap4ixs2w1pb3990k2c26vh"))))
+        (base32 "1rlrd0717dp1jjcqc1w3fx2nm0qb028d1jri7iz48cbngyah9wkf"))))
     (properties `((upstream-name . "BGmisc")))
     (build-system r-build-system)
     (arguments
@@ -18894,7 +18944,7 @@ path-tracing methods [Wright (1922) <doi:10.1086/279872>; @code{McArdle} &
 @code{McDonald} (1984) <doi:10.1111/j.2044-8317.1984.tb00802.x>], inference of
 relatedness, pedigree conversion, and simulation of multi-generational family
 data [Lyu et al. (2024) <doi:10.1101/2024.12.19.629449>].  For a full overview,
-see Garrison et al. (2024) <doi:10.21105/joss.06203>.")
+see [Garrison et al. (2024) <doi:10.21105/joss.06203>].")
     (license license:gpl3)))
 
 (define-public r-bgmfiles
@@ -19480,13 +19530,13 @@ summaries of hypothesis tests that can be easily aggregated across studies.")
 (define-public r-bfboinet
   (package
     (name "r-bfboinet")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfboinet" version))
        (sha256
-        (base32 "0n9q9j7a386gylnm7cynbnb7bmn0v7l4yyrm5r2kn07ajdwp1p7p"))))
+        (base32 "1yhl83fn5g3i6j8vbx2jkwmikms7hcy5n5i0fd5z2001hz979any"))))
     (properties `((upstream-name . "bfboinet")))
     (build-system r-build-system)
     (arguments
@@ -29046,19 +29096,20 @@ that will install Github starred R packages whether available on CRAN or not.")
 (define-public r-bat
   (package
     (name "r-bat")
-    (version "2.9.6")
+    (version "2.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAT" version))
        (sha256
-        (base32 "04wsr8sz70z7z6cqhmc4npqvh6ay9r1x5ghkp2ick58s0f6sagbf"))))
+        (base32 "0gs6l0azb4qikv4ia37gavxzd028dqnhr9ga93ncm10kg4kl3jwr"))))
     (properties `((upstream-name . "BAT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vegan
+                             r-treetools
                              r-terra
                              r-phytools
                              r-nls2
@@ -29672,6 +29723,39 @@ intersection, union, complementary sets, power sets, cartesian product and other
 set operations in a \"tidy\" way.  These set operations are available for both
 classical sets and fuzzy sets.  Import sets from several formats or from other
 several data structures.")
+    (license license:expat)))
+
+(define-public r-bases
+  (package
+    (name "r-bases")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bases" version))
+       (sha256
+        (base32 "1xddz4j7qnkifwglpmys3lqwsy66zr0qwq5nmbk6gn7kkwn6x3wk"))))
+    (properties `((upstream-name . "bases")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://corymccartan.com/bases/")
+    (synopsis "Basis Expansions for Regression Modeling")
+    (description
+     "This package provides various basis expansions for flexible regression modeling,
+including random Fourier features (Rahimi & Recht, 2007)
+<https://proceedings.neurips.cc/paper_files/paper/2007/file/013a006f03dbc5392effeb8f18fda755-Paper.pdf>,
+exact kernel / Gaussian process feature maps, Bayesian Additive Regression Trees
+(BART) (Chipman et al., 2010) <doi:10.1214/09-AOAS285> prior features, and a
+helpful interface for n-way interactions.  The provided functions may be used
+within any modeling formula, allowing the use of kernel methods and other basis
+expansions in modeling functions that do not otherwise support them.  Along with
+the basis expansions, a number of kernel functions are also provided, which
+support kernel arithmetic to form new kernels.  Basic ridge regression
+functionality is included as well.")
     (license license:expat)))
 
 (define-public r-baseq
