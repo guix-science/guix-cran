@@ -3084,6 +3084,44 @@ and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
 2827-2851, <@code{arXiv:1405.3319>}.")
     (license license:gpl3)))
 
+(define-public r-htgm3d
+  (package
+    (name "r-htgm3d")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HTGM3D" version))
+       (sha256
+        (base32 "0r7b7k6w2lqbvl5jvg9rg34236jk8w5xw52qdlcjnwz7l8zfmzam"))))
+    (properties `((upstream-name . "HTGM3D")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vprint
+                             r-stringr
+                             r-rgl
+                             r-randomgodb
+                             r-r2html
+                             r-minimalistgodb
+                             r-htgm2d
+                             r-htgm
+                             r-gominer))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=HTGM3D")
+    (synopsis "Three Dimensional High Throughput 'GoMiner'")
+    (description
+     "The Gene Ontology (GO) Consortium <https://geneontology.org/> organizes genes
+into hierarchical categories based on biological process (BP), molecular
+function (MF) and cellular component (CC, i.e., subcellular localization).
+Tools such as @code{GoMiner} (see Zeeberg, B.R., Feng, W., Wang, G. et al.
+(2003) <doi:10.1186/gb-2003-4-4-r28>) can leverage GO to perform ontological
+analysis of microarray and proteomics studies, typically generating a list of
+significant functional categories.  To capture the benefit of all three
+ontologies, I developed HTGM3D', a three-dimensional version of @code{GoMiner}'.")
+    (license license:gpl2+)))
+
 (define-public r-htgm2d
   (package
     (name "r-htgm2d")

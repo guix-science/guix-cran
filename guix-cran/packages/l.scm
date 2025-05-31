@@ -3809,6 +3809,32 @@ creating consensus loop datasets.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-loopevd
+  (package
+    (name "r-loopevd")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "loopevd" version))
+       (sha256
+        (base32 "15l3kprp1yj3byciaijck6k957izypjfhfwmvpzvwnbvdrhb5dp4"))))
+    (properties `((upstream-name . "loopevd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-ncdf4 r-evd))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=loopevd")
+    (synopsis "Loop Functions for Extreme Value Distributions")
+    (description
+     "This package performs extreme value analysis at multiple locations using
+functions from the evd package.  Supports both point-based and gridded input
+data using the terra package, enabling flexible looping across spatial datasets
+for batch processing of generalised extreme value, Gumbel fits.")
+    (license license:gpl3+)))
+
 (define-public r-loopdetectr
   (package
     (name "r-loopdetectr")
@@ -11174,13 +11200,13 @@ Travers Ching, Xun Zhu, Lana X. Garmire (2018)
 (define-public r-likertmaker
   (package
     (name "r-likertmaker")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LikertMakeR" version))
        (sha256
-        (base32 "1glvkxca4wb7jbgi24irmrky9rpq8lfs8r2ihjnj4m7a6c3fz1fa"))))
+        (base32 "1x0npv01jxpn3ry01sg024iwckgnldg8yr5c5anc00jvhb8zlpds"))))
     (properties `((upstream-name . "LikertMakeR")))
     (build-system r-build-system)
     (arguments
@@ -11190,11 +11216,12 @@ Travers Ching, Xun Zhu, Lana X. Garmire (2018)
     (native-inputs (list r-knitr))
     (home-page "https://github.com/WinzarH/LikertMakeR")
     (synopsis
-     "Synthesise and Correlate Likert Scale and Rating-Scale Data Based on Summary Statistics Only")
+     "Synthesise and Correlate Likert Scale and Rating-Scale Data Based on Summary Statistics")
     (description
      "Generate and correlate synthetic Likert and rating-scale data with predefined
-means, standard deviations, _Cronbach's Alpha_, _Factor Loading table_, and
-other summary statistics.")
+means, standard deviations, Cronbach's Alpha, Factor Loading table, and other
+summary statistics.  Worked examples and documentation are available in the
+package vignettes, accessible via @code{browseVignettes(\"LikertMakeR}\").")
     (license license:expat)))
 
 (define-public r-likertez
@@ -14116,13 +14143,13 @@ function for VES.")
 (define-public r-legendry
   (package
     (name "r-legendry")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "legendry" version))
        (sha256
-        (base32 "1nzw8r0iamgvmi9j40jn66dak3g5fdv41hjhz2pmf6p72vabf1cb"))))
+        (base32 "0mcfqvs2fb3g4q062w9rpb8h751n7g6r73xq05hg7cfn0x83s3ax"))))
     (properties `((upstream-name . "legendry")))
     (build-system r-build-system)
     (arguments

@@ -186,6 +186,35 @@ stability and conformational changes.  Supports import of trajectory metrics
 through integration with ggplot2'.")
     (license license:gpl3+)))
 
+(define-public r-xva
+  (package
+    (name "r-xva")
+    (version "1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xVA" version))
+       (sha256
+        (base32 "07cv88nq21smbkwnbpi7hnvclm9xrw04dvsh4lnra1wp7q58qdwb"))))
+    (properties `((upstream-name . "xVA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-trading r-saccr r-data-table))
+    (home-page "https://openriskcalculator.com/")
+    (synopsis "Credit Risk Valuation Adjustments")
+    (description
+     "Calculates a number of valuation adjustments including CVA, DVA, FBA, FCA, MVA
+and KVA. A two-way margin agreement has been implemented.  For the KVA
+calculation four regulatory frameworks are supported: CEM, (simplified) SA-CCR,
+OEM and IMM. The probability of default is implied through the credit spreads
+curve.  The package supports an exposure calculation based on SA-CCR which
+includes several trade types and a simulated path which is currently available
+only for Interest Rate Swaps.  The latest regulatory capital charge
+methodologies have been implementing including BA-CVA & SA-CVA.")
+    (license license:gpl3)))
+
 (define-public r-xutils
   (package
     (name "r-xutils")

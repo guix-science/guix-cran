@@ -25173,19 +25173,19 @@ Kunihiro M et al (2022) <doi:10.1093/eurjpc/zwac176>.")
 (define-public r-riskscores
   (package
     (name "r-riskscores")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskscores" version))
        (sha256
-        (base32 "0m2f4mk8zghnqvry949lqajv9q9l7p663qqx7j62mnax41y9ylx2"))))
+        (base32 "1wj3ccclk72l7lgxc2kv6dhj46jivxg0440v958llcc8khw02qf6"))))
     (properties `((upstream-name . "riskscores")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-magrittr r-ggplot2 r-foreach r-dplyr))
+    (propagated-inputs (list r-proc r-magrittr r-ggplot2 r-foreach r-dplyr))
     (native-inputs (list r-knitr r-kableextra))
     (home-page "https://github.com/hjeglinton/riskscores")
     (synopsis "Optimized Integer Risk Score Models")
@@ -25198,13 +25198,13 @@ process.")
 (define-public r-risks
   (package
     (name "r-risks")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "risks" version))
        (sha256
-        (base32 "1f28v9yqcbg2qp0xilggm61phyqcwfn9rw0vlg09wv12g3ii05xp"))))
+        (base32 "1z7iimgkjjb372m22sy6q21f983fhwl0s0j6g2n2fr74jxw9gjcv"))))
     (properties `((upstream-name . "risks")))
     (build-system r-build-system)
     (arguments
@@ -55270,6 +55270,58 @@ supporting functions to employ these estimators in a graphical modeling setting.
  For details, see Peeters, Bilgrau, & van Wieringen (2022)
 <doi:10.18637/jss.v102.i04> and associated publications.")
     (license license:gpl2+)))
+
+(define-public r-ragnar
+  (package
+    (name "r-ragnar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ragnar" version))
+       (sha256
+        (base32 "0l83gk1qlxnh008j89a9wb2qkax43yq5simh83fflx1acx7jdahb"))))
+    (properties `((upstream-name . "ragnar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-withr
+                             r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-stringi
+                             r-s7
+                             r-rvest
+                             r-rlang
+                             r-reticulate
+                             r-httr2
+                             r-glue
+                             r-duckdb
+                             r-dplyr
+                             r-dotty
+                             r-dbi
+                             r-curl
+                             r-commonmark
+                             r-cli
+                             r-blob))
+    (native-inputs (list r-knitr))
+    (home-page "http://ragnar.tidyverse.org/")
+    (synopsis "Retrieval-Augmented Generation (RAG) Workflows")
+    (description
+     "This package provides tools for implementing Retrieval-Augmented Generation
+(RAG) workflows with Large Language Models (LLM).  Includes functions for
+document processing, text chunking, embedding generation, storage management,
+and content retrieval.  Supports various document types and embedding providers
+('Ollama', @code{OpenAI}'), with @code{DuckDB} as the default storage backend.
+Integrates with the ellmer package to equip chat objects with retrieval
+capabilities.  Designed to offer both sensible defaults and customization
+options with transparent access to intermediate outputs.  For a review of
+retrieval-augmented generation methods, see Gao et al. (2023)
+\"Retrieval-Augmented Generation for Large Language Models: A Survey\"
+<doi:10.48550/@code{arXiv.2312.10997>}.")
+    (license license:expat)))
 
 (define-public r-raggrid
   (package

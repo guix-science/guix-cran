@@ -448,19 +448,24 @@ value phi-wabl given a sample of trapezoidal fuzzy numbers.")
 (define-public r-fuzzysimres
   (package
     (name "r-fuzzysimres")
-    (version "0.4.3")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzySimRes" version))
        (sha256
-        (base32 "1my73zaykbnak8bhhcg74fksxzdcnf4rldzy8yjs5lwc2p1a5r32"))))
+        (base32 "06vixzj76g071dvakk6jc2awsfhxi7bsd1ssanaa2rmkn3bj9kb4"))))
     (properties `((upstream-name . "FuzzySimRes")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-palasso r-fuzzynumbers))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=FuzzySimRes")
     (synopsis "Simulation and Resampling Methods for Epistemic Fuzzy Data")
     (description
@@ -471,11 +476,12 @@ see Coroianua et al. (2013) <doi:10.1016/j.fss.2013.02.005> for the further
 details).  Additionally, the special resampling algorithms known as the
 epistemic bootstrap are provided (see Grzegorzewski and Romaniuk (2022)
 <doi:10.34768/amcs-2022-0021>, Grzegorzewski and Romaniuk (2022)
-<doi:10.1007/978-3-031-08974-9_39>) together with the functions to apply
-statistical tests and estimate various characteristics based on the epistemic
-bootstrap.  The package also includes a real-life data set of epistemic fuzzy
-triangular numbers.  The fuzzy numbers used in this package are consistent with
-the @code{FuzzyNumbers} package.")
+<doi:10.1007/978-3-031-08974-9_39>, Romaniuk et al. (2024)
+<doi:10.32614/RJ-2024-016>) together with the functions to apply statistical
+tests and estimate various characteristics based on the epistemic bootstrap.
+The package also includes a real-life data set of epistemic fuzzy triangular
+numbers.  The fuzzy numbers used in this package are consistent with the
+@code{FuzzyNumbers} package.")
     (license license:gpl3)))
 
 (define-public r-fuzzysim
@@ -9393,6 +9399,33 @@ dependency explicitly into account and searches for the most forecastable
 signal.  The measure of forecastability is based on the Shannon entropy of the
 spectral density of the transformed signal.")
     (license license:gpl2)))
+
+(define-public r-ford
+  (package
+    (name "r-ford")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FORD" version))
+       (sha256
+        (base32 "0lwbz4ymsjzky55xsa3wv7w12banzq9ijbcsx0a9m9cpp88rkal1"))))
+    (properties `((upstream-name . "FORD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rann r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PouyaRoudaki/FORD")
+    (synopsis "Feature Ordering by Integrated R Square Dependence")
+    (description
+     "Feature Ordering by Integrated R square Dependence (FORD) is a variable
+selection algorithm based on the new measure of dependence: Integrated R2
+Dependence Coefficient (IRDC).  For more information, see the paper: Azadkia and
+Roudaki (2025),\"A New Measure Of Dependence: Integrated R2\"
+<doi:10.48550/@code{arXiv.2505.18146>}.")
+    (license license:gpl3)))
 
 (define-public r-forcis
   (package

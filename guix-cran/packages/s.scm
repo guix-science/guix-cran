@@ -16055,13 +16055,13 @@ side-by-side, as well as summary statistics.")
 (define-public r-stareg
   (package
     (name "r-stareg")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "STAREG" version))
        (sha256
-        (base32 "1skxwk817p4r7svnfrgv8bmkaz06ndqfxnypp9wdmndrgivrmg54"))))
+        (base32 "11zxfi431wh2iw7w8hq527gcizfmik528g0j50q46nq09i7n1m88"))))
     (properties `((upstream-name . "STAREG")))
     (build-system r-build-system)
     (arguments
@@ -16077,8 +16077,8 @@ developed for replicability analysis of two large-scale experimental studies.
 The method controls the false discovery rate by using the joint local false
 discovery rate based on the replicability null as the test statistic.  An EM
 algorithm combined with a shape constraint nonparametric method is used to
-estimate unknown parameters and functions. [Li, Y. et al., (2023),
-<https://www.biorxiv.org/content/10.1101/2023.05.30.542607v1>].")
+estimate unknown parameters and functions. [Li, Y. et al., (2024),
+<doi:10.1371/journal.pgen.1011423>].")
     (license license:gpl3)))
 
 (define-public r-stardom
@@ -19734,6 +19734,39 @@ smoothness in a multivariate relationship.  Causal relations are smooth, noise
 is not.  sr includes the Gamma test and search techniques that use it.
 References: Evans & Jones (2002) <doi:10.1098/rspa.2002.1010>, AJ Jones (2004)
 <doi:10.1007/s10287-003-0006-1>.")
+    (license license:gpl3+)))
+
+(define-public r-squids
+  (package
+    (name "r-squids")
+    (version "25.5.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "squids" version))
+       (sha256
+        (base32 "1h2r09bl0l0c89q935iniglz24im7mk3h6jxki0npxh4g585axsh"))))
+    (properties `((upstream-name . "squids")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://squids.opens.science")
+    (synopsis "Short Quasi-Unique Identifiers (SQUIDs)")
+    (description
+     "It is often useful to produce short, quasi-unique identifiers (SQUIDs) without
+the benefit of a central authority to prevent duplication.  Although Universally
+Unique Identifiers (UUIDs) provide for this, these are also unwieldy; for
+example, the most used UUID, version 4, is 36 characters long.  SQUIDs are short
+(8 characters) at the expense of having more collisions, which can be mitigated
+by combining them with human-produced suffixes, yielding relatively brief, half
+human-readable, almost-unique identifiers (see for example the identifiers used
+for Decentralized Construct Taxonomies; Peters & Crutzen, 2024
+<doi:10.15626/MP.2022.3638>).  SQUIDs are the number of centiseconds elapsed
+since the beginning of 1970 converted to a base 30 system.  This package
+contains functions to produce SQUIDs as well as convert them back into dates and
+times.")
     (license license:gpl3+)))
 
 (define-public r-squid
@@ -61266,6 +61299,37 @@ spatial exploration of archaeological data as user-friendly as possible.
 Documentation about SEAHORS is provided by the vignette included in this package
 and by the companion scientific paper: Royer, Discamps, Plutniak, Thomas (2023,
 PCI Archaeology, <doi:10.5281/zenodo.7674698>).")
+    (license license:gpl3)))
+
+(define-public r-seagraphs
+  (package
+    (name "r-seagraphs")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SeaGraphs" version))
+       (sha256
+        (base32 "03lw2bqihhb2qsrn2kpnf61r10vj819gag2vbpa4c6np1jw2dba0"))))
+    (properties `((upstream-name . "SeaGraphs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sfnetworks
+                             r-sf
+                             r-leaflet-minicharts
+                             r-leaflet-extras2
+                             r-leaflet))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/cadam00/SeaGraphs")
+    (synopsis "Sea Currents to Connectivity Transformation")
+    (description
+     "Transformation of sea currents to connectivity data.  Two files of horizontal
+and vertical currents flows are transformed into connectivity data in the form
+of sfnetwork, shapefile, edge list and adjacency matrix.  An application example
+is shown at Nagkoulis et al. (2025) <doi:10.1016/j.dib.2024.111268>.")
     (license license:gpl3)))
 
 (define-public r-seagle

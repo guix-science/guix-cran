@@ -21733,6 +21733,38 @@ bandwidth for any time series, and performs autocorrelation frequency analysis.
 It also calculates the periodicity of a time series.")
     (license license:gpl3)))
 
+(define-public r-adsorptionmcmc
+  (package
+    (name "r-adsorptionmcmc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adsoRptionMCMC" version))
+       (sha256
+        (base32 "0n1zzfsrdak0ba06hj7bs556m81aljav4vfvrad1pyjdx83lhi3r"))))
+    (properties `((upstream-name . "adsoRptionMCMC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mcmcpack r-coda))
+    (home-page "https://cran.r-project.org/package=adsoRptionMCMC")
+    (synopsis "Bayesian Estimation of Adsorption Isotherms via MCMC")
+    (description
+     "This package provides tools for Bayesian parameter estimation of adsorption
+isotherm models using Markov Chain Monte Carlo (MCMC) methods.  This package
+enables users to fit non-linear and linear adsorption isotherm
+modelsâFreundlich, Langmuir, and Temkinâwithin a probabilistic framework,
+capturing uncertainty and parameter correlations.  It provides posterior
+summaries, 95% credible intervals, convergence diagnostics (Gelman-Rubin), and
+visualizations through trace and density plots.  With this R package,
+researchers can rigorously analyze adsorption behavior in environmental and
+chemical systems using robust Bayesian inference.  For more details, see Gilks
+et al. (1995) <doi:10.1201/b14835>, and Gamerman & Lopes (2006)
+<doi:10.1201/9781482296426>.")
+    (license license:gpl3)))
+
 (define-public r-adsorpr
   (package
     (name "r-adsorpr")

@@ -284,13 +284,13 @@ automatically identified jumps.  See Maranzano and Pelagatti (2024)
 (define-public r-jump
   (package
     (name "r-jump")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JUMP" version))
        (sha256
-        (base32 "0i84vpzgs9bj0idxxjl885x818hq23drxy0h2pl6zbyz2z1v331m"))))
+        (base32 "0gpp464xiv08k7q4zvszlpkpnrxjd1d2ha660qf0jy6dcqiy5ib9"))))
     (properties `((upstream-name . "JUMP")))
     (build-system r-build-system)
     (arguments
@@ -303,7 +303,7 @@ automatically identified jumps.  See Maranzano and Pelagatti (2024)
      "Implementing a computationally scalable false discovery rate control procedure
 for replicability analysis based on maximum of p-values.  Please cite the
 manuscript corresponding to this package [Lyu, P. et al., (2023),
-<https://www.biorxiv.org/content/10.1101/2023.02.13.528417v2>].")
+<doi:10.1093/bioinformatics/btad366>].")
     (license license:gpl3)))
 
 (define-public r-juliaformulae

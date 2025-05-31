@@ -76,13 +76,13 @@ Cygwin is required!")
 (define-public r-typr
   (package
     (name "r-typr")
-    (version "0.0.1")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "typr" version))
        (sha256
-        (base32 "0naclrzb06fvvn4iij55gdz8h7aqlidq28back3by48f9ilrwjlh"))))
+        (base32 "0sjy0c4cb66cjhykhpkx87c5c9mxz46dvfl9jg7q93xfwgw2smvx"))))
     (properties `((upstream-name . "typr")))
     (build-system r-build-system)
     (arguments
@@ -1437,6 +1437,36 @@ at each time step, and there are a limited number of trials.  This distribution
 is essentially a Markov chain, and it is useful for modeling Markov chain
 systems with a set number of time steps.")
     (license license:expat)))
+
+(define-public r-tvgarchkf
+  (package
+    (name "r-tvgarchkf")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tvGarchKF" version))
+       (sha256
+        (base32 "1vq7vckk2553r7bw1gb23396q74v3pg75iiwf0qvp6v6j37fs272"))))
+    (properties `((upstream-name . "tvGarchKF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-fgarch))
+    (home-page "https://cran.r-project.org/package=tvGarchKF")
+    (synopsis "Time-Varying Garch Models Through a State-Space Representation")
+    (description
+     "Estimates the time-varying (tv) parameters of the GARCH(1,1) model, enabling the
+modeling of non-stationary volatilities by allowing the model parameters to
+change gradually over time.  The estimation and prediction processes are
+facilitated through the application of the Kalman filter and state-space
+equations.  This package supports the estimation of tv parameters for various
+deterministic functions, which can be identified through exploratory analysis of
+different time periods or segments of return data.  The methodology is grounded
+in the framework presented by Ferreira et al. (2017)
+<doi:10.1080/00949655.2017.1334778>.")
+    (license license:gpl3+)))
 
 (define-public r-tvgarch
   (package
@@ -14341,6 +14371,56 @@ Laplace approximation for the random effects.  This is demonstrated in Monnahan
 & Kristensen (2018) <DOI:10.1371/journal.pone.0197954>.")
     (license license:gpl3+)))
 
+(define-public r-tmap-networks
+  (package
+    (name "r-tmap-networks")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tmap.networks" version))
+       (sha256
+        (base32 "1cskhasdjd2j58n8h6ypdm78ycm51xkimr9i99c96gzx1r9c8lg5"))))
+    (properties `((upstream-name . "tmap.networks")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmap r-sfnetworks r-sf r-igraph r-data-table))
+    (home-page "https://github.com/r-tmap/tmap.networks")
+    (synopsis "Extension to 'tmap' for Creating Network Visualizations")
+    (description
+     "This package provides functions for visualizing networks with tmap'.  It
+supports sfnetworks objects natively but is not limited to them.  Useful for
+adding network layers such as edges and nodes to tmap maps.  More features may
+be added in future versions.")
+    (license license:gpl3)))
+
+(define-public r-tmap-glyphs
+  (package
+    (name "r-tmap-glyphs")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tmap.glyphs" version))
+       (sha256
+        (base32 "1zg31sffw240b7swvnfb9b45qi5svsf96z96kpzv7mh1fn6sn1yb"))))
+    (properties `((upstream-name . "tmap.glyphs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmap r-data-table))
+    (home-page "https://github.com/r-tmap/tmap.glyphs")
+    (synopsis "Extension to 'tmap' for Creating Glyphs")
+    (description
+     "This package provides new layer functions to tmap for drawing glyphs.  A glyph
+is a small chart (e.g., donut chart) shown at specific map locations to
+visualize multivariate or time-series data.  The functions work with the syntax
+of tmap and allow flexible control over size, layout, and appearance.")
+    (license license:gpl3)))
+
 (define-public r-tmap-cartogram
   (package
     (name "r-tmap-cartogram")
@@ -18120,6 +18200,49 @@ process occurrences for contemporary and palaeo datasets.  The full
 functionalities of the package are described in Leonardi et al. (2023)
 <doi:10.1101/2023.07.24.550358>.")
     (license license:agpl3+)))
+
+(define-public r-tidyrules
+  (package
+    (name "r-tidyrules")
+    (version "0.2.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyrules" version))
+       (sha256
+        (base32 "1h81bffqshasfgjdy9rlvi6jqd89r933p324x172mzcpqkvp484n"))))
+    (properties `((upstream-name . "tidyrules")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidytable
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-proxy
+                             r-pheatmap
+                             r-partykit
+                             r-metricsweighted
+                             r-magrittr
+                             r-glue
+                             r-generics
+                             r-desctools
+                             r-data-table
+                             r-cli
+                             r-checkmate))
+    (home-page "https://github.com/talegari/tidyrules")
+    (synopsis
+     "Utilities to Retrieve Rulelists from Model Fits, Filter, Prune, Reorder and Predict on Unseen Data")
+    (description
+     "This package provides a framework to work with decision rules.  Rules can be
+extracted from supported models, augmented with (custom) metrics using
+validation data, manipulated using standard dataframe operations, reordered and
+pruned based on a metric, predict on unseen (test) data.  Utilities include;
+Creating a rulelist manually, Exporting a rulelist as a SQL case statement and
+so on.  The package offers two classes; rulelist and ruleset based on dataframe.")
+    (license license:gpl3)))
 
 (define-public r-tidyrss
   (package

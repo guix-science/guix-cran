@@ -5940,13 +5940,13 @@ to the software and explicitly not to the included data.")
 (define-public r-drdid
   (package
     (name "r-drdid")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRDID" version))
        (sha256
-        (base32 "0sjjg4i9lq48na3xwsk0jv8s2jh5b70052ymlkxgha4hpvg9kh4y"))))
+        (base32 "1jrlm44cn85z6cndzw2qw6ihcfx78iyhz4pafvp1mcb741iqm767"))))
     (properties `((upstream-name . "DRDID")))
     (build-system r-build-system)
     (arguments
@@ -22496,19 +22496,19 @@ binomial distribution.")
 (define-public r-denim
   (package
     (name "r-denim")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "denim" version))
        (sha256
-        (base32 "0282sd0a8ml4j8c81izr9aszi4r1firbp7lbgvbilxvci13qmjwf"))))
+        (base32 "0a26wc7lvg2il602vs8i3aw78fw8gg62fsvgxhsdlbsyjm7w7z1n"))))
     (properties `((upstream-name . "denim")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-viridislite r-testthat r-rcpp))
+    (propagated-inputs (list r-viridislite r-testthat r-rlang r-rcpp r-glue))
     (native-inputs (list r-knitr))
     (home-page "https://drthinhong.com/denim/")
     (synopsis

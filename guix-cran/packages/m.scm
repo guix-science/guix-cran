@@ -1240,6 +1240,34 @@ mvoutlier.@code{CoDa}, a method for compositional data.  References are provided
 in the corresponding help files.")
     (license license:gpl3+)))
 
+(define-public r-mvout
+  (package
+    (name "r-mvout")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mvout" version))
+       (sha256
+        (base32 "1dpx25afb94748r529vh5fsc3mq25887dp8rqnz3sw71bq0cwlyd"))))
+    (properties `((upstream-name . "mvout")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-robustbase))
+    (home-page "https://cran.r-project.org/package=mvout")
+    (synopsis "Robust Multivariate Outlier Detection")
+    (description
+     "Detection of multivariate outliers using robust estimates of location and scale.
+ The Minimum Covariance Determinant (MCD) estimator is used to calculate robust
+estimates of the mean vector and covariance matrix.  Outliers are determined
+based on robust Mahalanobis distances using either an unstructured covariance
+matrix, a principal components structured covariance matrix, or a factor
+analysis structured covariance matrix.  Includes options for specifying the
+direction of interest for outlier detection for each variable.")
+    (license license:gpl2+)))
+
 (define-public r-mvord
   (package
     (name "r-mvord")
@@ -2587,6 +2615,42 @@ produce each \"within\" term can also be displayed at the user's request.  The
 results can be computed considering a variable or sets of variables that define
 separate clusters.")
     (license license:gpl3)))
+
+(define-public r-muttest
+  (package
+    (name "r-muttest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "muttest" version))
+       (sha256
+        (base32 "15zhng4nhhl4l068qn9kdghvly37vcq1k6anagv42457d2apbxfh"))))
+    (properties `((upstream-name . "muttest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-treesitter-r
+                             r-treesitter
+                             r-tibble
+                             r-testthat
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-fs
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (home-page "https://jakubsob.github.io/muttest/")
+    (synopsis "Mutation Testing")
+    (description
+     "Measure quality of your tests.  muttest introduces small changes (mutations) to
+your code and runs your tests to check if they catch the changes.  If they do,
+your tests are good.  If not, your assertions are not specific enough.  muttest
+gives you percent score of how often your tests catch the changes.")
+    (license license:expat)))
 
 (define-public r-mutsignatures
   (package
@@ -4863,13 +4927,13 @@ N., Parnell, A., Prado, E., & Moral, R. A. (2022)
 (define-public r-multinma
   (package
     (name "r-multinma")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multinma" version))
        (sha256
-        (base32 "0y7gs7ld0sxwf7kk2vxkhal11n8x31nq15j0jhm0xmlzp7ayb9cd"))))
+        (base32 "1ps6g9pw09lxmip6mcqy8nsjdv35daxy2p82r41kci01zw8jnyg6"))))
     (properties `((upstream-name . "multinma")))
     (build-system r-build-system)
     (arguments
@@ -17556,13 +17620,13 @@ using the method presented in Wu, Cheung, and Leung (2020)
 (define-public r-modelbased
   (package
     (name "r-modelbased")
-    (version "0.11.0")
+    (version "0.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelbased" version))
        (sha256
-        (base32 "1ir5mllxya129x6pb35s68pkf6j8m0l958s1m7idn991mk8yphqz"))))
+        (base32 "18fk4m0i363ynihd0q7nybkfn3mv3d37mpyjmf0vyv3bdf2ngl68"))))
     (properties `((upstream-name . "modelbased")))
     (build-system r-build-system)
     (arguments
@@ -31659,13 +31723,13 @@ probability.")
 (define-public r-mfx
   (package
     (name "r-mfx")
-    (version "1.2-2")
+    (version "1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mfx" version))
        (sha256
-        (base32 "04pwp67i4sn4rf497pgy6qifwvrcmwyxn8x5sn96fy8qyrdzjfhj"))))
+        (base32 "15fka16jixyg2823qh6qyfiy9ikz51l7x0lcvs6jpl5hp0vz1szz"))))
     (properties `((upstream-name . "mfx")))
     (build-system r-build-system)
     (arguments
@@ -45639,13 +45703,13 @@ matching and linear regression for causal inference in observational studies.")
 (define-public r-matchit
   (package
     (name "r-matchit")
-    (version "4.7.1")
+    (version "4.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MatchIt" version))
        (sha256
-        (base32 "12crrfzn4xfhkhkp3d4bbkq15g302459vw1cnaj7khhi8brnzf2p"))))
+        (base32 "1bbqh4alm725852gspc8fqygvqi256pxdiykzc5c958h3ljymdgi"))))
     (properties `((upstream-name . "MatchIt")))
     (build-system r-build-system)
     (arguments

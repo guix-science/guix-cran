@@ -49335,13 +49335,13 @@ for more information.")
 (define-public r-cansim
   (package
     (name "r-cansim")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cansim" version))
        (sha256
-        (base32 "1sipdyjzxsi9n8f3wdg3lzhx531zsymirk8f6a1j770f9cfk37s0"))))
+        (base32 "0l2ar3hygavzd3nhdqa1galv3ap6kfzr6v96l3qwgmd1czvf72df"))))
     (properties `((upstream-name . "cansim")))
     (build-system r-build-system)
     (arguments

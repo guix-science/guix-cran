@@ -13555,6 +13555,37 @@ the document.  This package primarily uses @code{GitHub} Flavored Markdown
 @code{MacFarlane} (2019) <https://spec.commonmark.org/>.")
     (license license:gpl3)))
 
+(define-public r-gluedo
+  (package
+    (name "r-gluedo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glueDo" version))
+       (sha256
+        (base32 "044nc3ri3gc2wckzfs0lynyghk0x6jsgwpjz9v7r5lxizbmmqyjq"))))
+    (properties `((upstream-name . "glueDo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glue))
+    (home-page "https://cran.r-project.org/package=glueDo")
+    (synopsis "Wrapper Functions for the 'glue' Library")
+    (description
+     "This package provides convenient wrapper functions around the glue library for
+common string interpolation tasks.  The package simplifies the process of
+combining glue string templating with common R functions like @code{message()},
+@code{warning()}, @code{stop()}, @code{print()}, @code{cat()}, and file writing
+operations.  Instead of manually calling @code{glue()} and then passing the
+result to these functions, @code{glueDo} provides direct wrapper functions that
+handle both steps in a single call.  This is particularly useful for logging,
+error handling, and formatted output in R scripts and packages.  The main
+reference for the underlying glue package is Hester and Bryan (2022)
+<https://CRAN.R-project.org/package=glue>.")
+    (license license:expat)))
+
 (define-public r-glsme
   (package
     (name "r-glsme")
@@ -26889,6 +26920,33 @@ brief summary output, and a few methods such as extracting and adding bounding
 boxes, properties, and coordinate reference systems; working with newline
 delimited @code{GeoJSON}'; and serializing to/from Geobuf binary @code{GeoJSON}
 format.")
+    (license license:expat)))
+
+(define-public r-geoheatmap
+  (package
+    (name "r-geoheatmap")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geoheatmap" version))
+       (sha256
+        (base32 "1jqbvzz3cjyrkxj7q50w1hl62q5pdw0qfi1l7ca0j3b0m4ndbhgi"))))
+    (properties `((upstream-name . "geoheatmap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-statebins r-rlang r-plotly r-ggplot2 r-geofacet))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=geoheatmap")
+    (synopsis "Create Geospatial Cartogram Heatmaps")
+    (description
+     "The functionality provided by this package is an expansion of the code of the
+statebins package, created by B. Rudis (2022),
+<doi:10.32614/CRAN.package.statebins>.  It allows for the creation of square
+choropleths for the entire world, provided an appropriate specified grid is
+supplied.")
     (license license:expat)))
 
 (define-public r-geohashtools

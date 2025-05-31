@@ -9082,6 +9082,42 @@ together with extensive diagnostic functions.  It is useful as a baseline for
 machine learning models and the rules are often helpful heuristics.")
     (license license:expat)))
 
+(define-public r-onemapsgapi
+  (package
+    (name "r-onemapsgapi")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onemapsgapi" version))
+       (sha256
+        (base32 "0q3kf9yz6hj59ln9kjwkipd01fiavb5nfsdpjjk9bfs7ib49mf8n"))))
+    (properties `((upstream-name . "onemapsgapi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-httr2
+                             r-future
+                             r-furrr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=onemapsgapi")
+    (synopsis "R Wrapper for the 'OneMap.Sg API'")
+    (description
+     "An R wrapper for the @code{OneMap.Sg} API <https://www.onemap.gov.sg/docs/>.
+Functions help users query data from the API and return raw JSON data in \"tidy\"
+formats.  Support is also available for users to retrieve data from multiple API
+calls and integrate results into single dataframes, without needing to clean and
+merge the data themselves.  This package is best suited for users who would like
+to perform analyses with Singapore's spatial data without having to perform
+excessive data cleaning.")
+    (license license:expat)))
+
 (define-public r-onemap
   (package
     (name "r-onemap")

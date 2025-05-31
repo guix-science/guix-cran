@@ -390,13 +390,13 @@ dissemination.")
 (define-public r-pxmake
   (package
     (name "r-pxmake")
-    (version "0.17.0")
+    (version "0.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pxmake" version))
        (sha256
-        (base32 "1mysmr16gykfhm8m16v9vlgqhxhmda5mhy5pczkqgwfvwrvh6r6l"))))
+        (base32 "0mbczkhmqm9zrll8kabf8dybb12qdw0yxh9xdlwgkxv7rxl7bwiz"))))
     (properties `((upstream-name . "pxmake")))
     (build-system r-build-system)
     (arguments
@@ -1804,6 +1804,40 @@ including a detailed technical appendix, see <doi:10.18637/jss.v108.i06>.")
     (description
      "R package to query and get data out of a Pumilio sound archive system
 (http://ljvillanueva.github.io/pumilio/).")
+    (license license:gpl3)))
+
+(define-public r-pumbayes
+  (package
+    (name "r-pumbayes")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pumBayes" version))
+       (sha256
+        (base32 "1gyl3j2awjr2rnh7cd5c7770i84d42apbwybyvpl2f5s3gsv1qcs"))))
+    (properties `((upstream-name . "pumBayes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpptn r-rcppdist r-rcpparmadillo r-rcpp
+                             r-mvtnorm))
+    (home-page "https://github.com/SkylarShiHub/pumBayes")
+    (synopsis
+     "Bayesian Estimation of Probit Unfolding Models for Binary Preference Data")
+    (description
+     "Bayesian estimation and analysis methods for Probit Unfolding Models (PUMs), a
+novel class of scaling models designed for binary preference data.  These models
+allow for both monotonic and non-monotonic response functions.  The package
+supports Bayesian inference for both static and dynamic PUMs using Markov chain
+Monte Carlo (MCMC) algorithms with minimal or no tuning.  Key functionalities
+include posterior sampling, hyperparameter selection, data preprocessing, model
+fit evaluation, and visualization.  The methods are particularly suited to
+analyzing voting data, such as from the U.S. Congress or Supreme Court, but can
+also be applied in other contexts where non-monotonic responses are expected.
+For methodological details, see Shi et al. (2025)
+<doi:10.48550/@code{arXiv.2504.00423>}.")
     (license license:gpl3)))
 
 (define-public r-pulsar
@@ -22864,13 +22898,13 @@ the base graphics plotting tools; and manipulate irregular polygons.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "0fj5v7rzx8hcc8l2s6zfvrgwzmiw2pwrs34qbpxh4kmmxz8i14gk"))))
+        (base32 "1rhw5d97asw4qkqcbgb7xlgax4xfwi3dzwfnyf0mxb4wqcl1aybl"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments
@@ -29910,13 +29944,13 @@ rankings.  For more information on phi delta diagrams, see also Giuliano Armano
 (define-public r-phia
   (package
     (name "r-phia")
-    (version "0.3-1")
+    (version "0.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phia" version))
        (sha256
-        (base32 "1lsprm49njwp0gfn4knvwdq7d5lpq4irhysl8f26glcz9x929sff"))))
+        (base32 "0pljsvn2zmszn2p41wajsff5an6n7fy4w04iriyklzq5cx6l9fa5"))))
     (properties `((upstream-name . "phia")))
     (build-system r-build-system)
     (arguments
@@ -34985,13 +35019,13 @@ parameters are included.")
 (define-public r-peiman2
   (package
     (name "r-peiman2")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PEIMAN2" version))
        (sha256
-        (base32 "0nx3hsbb66667fywypwv8g3aji558nj7za33fy81ak61yj607zc4"))))
+        (base32 "19038za9xs82swra58psy05jbpgp3982pyhqilj7f9xzckf3yiya"))))
     (properties `((upstream-name . "PEIMAN2")))
     (build-system r-build-system)
     (arguments
@@ -39457,13 +39491,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "1h2k2q4gz5y7ihwa9v69rnmxfvm7maanhivs7vbkiazjbilkgj4a"))))
+        (base32 "0daq13ac314lcfsjjg1i5zk62fjnyfnnwf5hq2ms3qp15zc7cqp1"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (arguments
