@@ -11214,13 +11214,13 @@ the function of interest under the high-dimensional sparse additive model.")
 (define-public r-dlim
   (package
     (name "r-dlim")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dlim" version))
        (sha256
-        (base32 "12sa1bpslans836v9fvma2wj8qspnc521saaw02q9iygkh7kf1sy"))))
+        (base32 "0ffcgav830znsaqd14359ampikwkibfdnqib8xjj4q9kjnqs9cnb"))))
     (properties `((upstream-name . "dlim")))
     (build-system r-build-system)
     (arguments
@@ -11231,10 +11231,11 @@ the function of interest under the high-dimensional sparse additive model.")
                              r-rlang
                              r-reshape2
                              r-mgcv
+                             r-lifecycle
                              r-ggplot2
                              r-dlnm))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=dlim")
+    (home-page "https://ddemateis.github.io/dlim/")
     (synopsis "Distributed Lag Interaction Model")
     (description
      "Collection of functions for fitting and interpreting distributed lag interaction
@@ -11243,7 +11244,7 @@ exposure and allows for modification by a continuous variable.  Includes a
 @code{dlim()} function for fitting, @code{predict()} function for inference, and
 plotting functions for visualization.  Details on methodology are described in
 Demateis et al. (2024) <doi:10.1002/env.2843>.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-dlib
   (package

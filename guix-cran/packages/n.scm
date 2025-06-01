@@ -17268,13 +17268,13 @@ related data sets.")
 (define-public r-nasapower
   (package
     (name "r-nasapower")
-    (version "4.2.4")
+    (version "4.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nasapower" version))
        (sha256
-        (base32 "1b0pp85xb4vhkdniq898sp0wypy96y9jd7gcg7ngb6syd9q9zqrz"))))
+        (base32 "1k1jp8knvsxh14xrrnpx5dv90xmcbgdkpw9pr01aqwh03pr9km3n"))))
     (properties `((upstream-name . "nasapower")))
     (build-system r-build-system)
     (arguments
@@ -17297,7 +17297,7 @@ freely available for download with varying spatial resolutions dependent on the
 original data and with several temporal resolutions depending on the POWER
 parameter and community.  This work is funded through the NASA Earth Science
 Directorate Applied Science Program.  For more on the data themselves, the
-methodologies used in creating, a web- based data viewer and web access, please
+methodologies used in creating, a web-based data viewer and web access, please
 see <https://power.larc.nasa.gov/>.")
     (license license:expat)))
 
@@ -17715,35 +17715,6 @@ the audience to good resources for further reading.  Styling is possible via
 predefined designs or via custom CSS'.  This package is not intended as
 replacement for proper reference manager packages, but a tool to enrich
 scientific presentation slides and conference posters.")
-    (license license:expat)))
-
-(define-public r-name
-  (package
-    (name "r-name")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "name" version))
-       (sha256
-        (base32 "1va2qqcxgvc4nzkylxyyzz8yx6ndgb1hx7af3qjzf8m4mzg8qnvm"))))
-    (properties `((upstream-name . "name")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-dplyr
-                             r-cli))
-    (home-page "https://github.com/christopherkenny/name")
-    (synopsis "Tools for Working with Names")
-    (description
-     "This package provides a system for organizing column names in data.  Aimed at
-supporting a prefix-based and suffix-based column naming scheme.  Extends dplyr
-functionality to add ordering by function and more explicit renaming.")
     (license license:expat)))
 
 (define-public r-nam

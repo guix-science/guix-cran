@@ -37516,13 +37516,13 @@ likelihood.  Biometrics <doi:10.1111/biom.13366>.")
 (define-public r-slsedesign
   (package
     (name "r-slsedesign")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLSEdesign" version))
        (sha256
-        (base32 "09ng145z98xh92fddi76g7grwg77y08zyqa8z1hy4lx1z0x5i5g7"))))
+        (base32 "112zsb1phg8mrrn2gdj133rzvs6ki4636v417vxbkp133qx4q6j5"))))
     (properties `((upstream-name . "SLSEdesign")))
     (build-system r-build-system)
     (arguments
@@ -54292,13 +54292,13 @@ described in Bass and Wallace (2024) <doi:10.1101/2024.09.24.24314276>.")
 (define-public r-sfdesign
   (package
     (name "r-sfdesign")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SFDesign" version))
        (sha256
-        (base32 "10h008rxivrcvyhqq9ipys8fcrv75182yqi7pnnpcqkm3x59bvq4"))))
+        (base32 "0xny6j6pa84y1h7pjsv6xylwnzpsd9s6mdz6mn0gcsk0zhi9s5bh"))))
     (properties `((upstream-name . "SFDesign")))
     (build-system r-build-system)
     (arguments
@@ -73434,34 +73434,6 @@ implementation of the @code{MapCurve} method (Hargrove et al. (2006)
 depth (intensity) and allele specific read depth (intensity) for whole genome
 sequencing (WGS), whole exome sequencing (WES) and SNP array data.")
     (license license:gpl2+)))
-
-(define-public r-s7
-  (package
-    (name "r-s7")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "S7" version))
-       (sha256
-        (base32 "16yllj1a2m9akli5z2q8fv7jlgc2y0z3bk919d96wfbsmizmlrxq"))))
-    (properties `((upstream-name . "S7")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://rconsortium.github.io/S7/")
-    (synopsis
-     "An Object Oriented System Meant to Become a Successor to S3 and S4")
-    (description
-     "This package provides a new object oriented programming system designed to be a
-successor to S3 and S4.  It includes formal class, generic, and method
-specification, and a limited form of multiple dispatch.  It has been designed
-and implemented collaboratively by the R Consortium Object-Oriented Programming
-Working Group, which includes representatives from R-Core, Bioconductor',
-Posit'/'tidyverse', and the wider R community.")
-    (license license:expat)))
 
 (define-public r-s4vd
   (package

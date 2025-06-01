@@ -3351,13 +3351,13 @@ detailed description of the method and applications see Rizzi et al. (2015)
 (define-public r-undidr
   (package
     (name "r-undidr")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "undidR" version))
        (sha256
-        (base32 "0cvy06ijbyglz70c2ldxn1lqgpaqqamn8lnmpsplhyvzz948iwci"))))
+        (base32 "0z4fsa22nbb5kv76ldbars6q6003bm484nl7d806war75x5hc7c4"))))
     (properties `((upstream-name . "undidR")))
     (build-system r-build-system)
     (arguments

@@ -3853,13 +3853,13 @@ other drugs.  Read more at the methods detailed in Giangreco (2022)
 (define-public r-kidney-epi
   (package
     (name "r-kidney-epi")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kidney.epi" version))
        (sha256
-        (base32 "1p4p5v349knv29zsvnas4a4lvl2pxiqkk6gi679w43mnpqhkghnb"))))
+        (base32 "0dfd575xlspzhkv37cj7zwk2r1zm6yya58qa8b6ky74n0lpbi14d"))))
     (properties `((upstream-name . "kidney.epi")))
     (build-system r-build-system)
     (arguments

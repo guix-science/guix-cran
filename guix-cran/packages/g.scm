@@ -839,13 +839,13 @@ comids, etc.")
 (define-public r-gwasrapidd
   (package
     (name "r-gwasrapidd")
-    (version "0.99.17")
+    (version "0.99.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gwasrapidd" version))
        (sha256
-        (base32 "1fmymw7vm4ana86mwf8figda20l601c7c6nr14444647x8cimlhx"))))
+        (base32 "1cr48izz9gy8zg348mn7xniprv0p0idiig05h6cnp0qcy0xb3n1l"))))
     (properties `((upstream-name . "gwasrapidd")))
     (build-system r-build-system)
     (arguments
@@ -868,7 +868,6 @@ comids, etc.")
                              r-httr
                              r-glue
                              r-dplyr
-                             r-concatenate
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ramiromagno/gwasrapidd")
@@ -8003,19 +8002,19 @@ Bioinformatics, 18:317 (June 2017).")
 (define-public r-grantham
   (package
     (name "r-grantham")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grantham" version))
        (sha256
-        (base32 "1bcycvf1sjzwxsmdbscj1q8i7kigy6gx5r202ihb1ilvdi1nmx7l"))))
+        (base32 "0gh3nnq6rhji661kd82vikb14qyxf76lkfvad5hh6rncygdx2zsr"))))
     (properties `((upstream-name . "grantham")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs r-tibble r-dplyr))
+    (propagated-inputs (list r-tibble r-dplyr))
     (home-page "https://www.pattern.institute/grantham/")
     (synopsis "Calculate the Grantham Distance")
     (description

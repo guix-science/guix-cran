@@ -466,13 +466,13 @@ in Dusseldorp, E., Doove, L., & Van Mechelen, I. (2016)
 (define-public r-quincunx
   (package
     (name "r-quincunx")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quincunx" version))
        (sha256
-        (base32 "05r9j1x209a03rg42ihwpqi1prk4lhamh3p66w2xlah7crdgs8ds"))))
+        (base32 "10qnp8avx09zhzzn64g2gbp4sl3jbxz569q4fhkf8d4ia3qhihm2"))))
     (properties `((upstream-name . "quincunx")))
     (build-system r-build-system)
     (arguments
@@ -493,8 +493,7 @@ in Dusseldorp, E., Doove, L., & Van Mechelen, I. (2016)
                              r-lubridate
                              r-httr
                              r-glue
-                             r-dplyr
-                             r-concatenate))
+                             r-dplyr))
     (home-page "https://github.com/ramiromagno/quincunx")
     (synopsis "REST API Client for the 'PGS' Catalog")
     (description

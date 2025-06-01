@@ -8166,13 +8166,13 @@ an implementation of multi-scale assessment as described in Riemann et al'.
 (define-public r-waypoint
   (package
     (name "r-waypoint")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Waypoint" version))
        (sha256
-        (base32 "1lnwhrlr6qjdj8qvi1ap7ch7xhpb2kaqz7xzj6aydbl8hmahmq8p"))))
+        (base32 "1l1arjs5wiz9rmp0kc743cq6an7x5vkwracrabgh23s4pbq5n6zj"))))
     (properties `((upstream-name . "Waypoint")))
     (build-system r-build-system)
     (arguments

@@ -29131,32 +29131,6 @@ qualitative or a mixture of both.")
 covariate adjustment.")
     (license license:gpl3)))
 
-(define-public r-clustmixtype
-  (package
-    (name "r-clustmixtype")
-    (version "0.4-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clustMixType" version))
-       (sha256
-        (base32 "1clby7x9jz0jpzmzni6g8zicysnf7ccxliglxr6ljigvkf747bg1"))))
-    (properties `((upstream-name . "clustMixType")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble r-rlang r-rcolorbrewer r-dplyr
-                             r-combinat))
-    (home-page "https://cran.r-project.org/package=clustMixType")
-    (synopsis "k-Prototypes Clustering for Mixed Variable-Type Data")
-    (description
-     "This package provides functions to perform k-prototypes partitioning clustering
-for mixed variable-type data according to Z.Huang (1998): Extensions to the
-k-Means Algorithm for Clustering Large Data Sets with Categorical Variables,
-Data Mining and Knowledge Discovery 2, 283-304.")
-    (license license:gpl2+)))
-
 (define-public r-clustmd
   (package
     (name "r-clustmd")

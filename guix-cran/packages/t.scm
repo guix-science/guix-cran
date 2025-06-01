@@ -20111,47 +20111,6 @@ univariate cumulative incidence estimates and competing risk regression.
 Methods follow those introduced in Fine and Gray (1999) <doi:10.1002/sim.7501>.")
     (license license:agpl3+)))
 
-(define-public r-tidyclust
-  (package
-    (name "r-tidyclust")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidyclust" version))
-       (sha256
-        (base32 "09z4p01l76wyc1dzkz1ggvbwcdih1c515amwm54mx5rvpmvmdw64"))))
-    (properties `((upstream-name . "tidyclust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-tune
-                             r-tidyr
-                             r-tibble
-                             r-rsample
-                             r-rlang
-                             r-prettyunits
-                             r-philentropy
-                             r-parsnip
-                             r-modelenv
-                             r-hardhat
-                             r-glue
-                             r-generics
-                             r-foreach
-                             r-flexclust
-                             r-dplyr
-                             r-dials
-                             r-cli))
-    (home-page "https://github.com/tidymodels/tidyclust")
-    (synopsis "Common API to Clustering")
-    (description
-     "This package provides a common interface to specifying clustering models, in the
-same style as parsnip'.  Creates unified interface across different functions
-and computational engines.")
-    (license license:expat)))
-
 (define-public r-tidycharts
   (package
     (name "r-tidycharts")

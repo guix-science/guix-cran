@@ -7048,28 +7048,6 @@ approximation of correlation networks, and on the other hand as a generalization
 of random multigraph models and conformity-based decompositions.")
     (license license:gpl2+)))
 
-(define-public r-propcis
-  (package
-    (name "r-propcis")
-    (version "0.3-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PropCIs" version))
-       (sha256
-        (base32 "1ywzi88igzaj2wnbrqa08cy7pw886z2m0x3j7rk45rin9mgpfdfd"))))
-    (properties `((upstream-name . "PropCIs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/shearer/PropCIs")
-    (synopsis "Various Confidence Interval Methods for Proportions")
-    (description
-     "Computes two-sample confidence intervals for single, paired and independent
-proportions.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-propagate
   (package
     (name "r-propagate")

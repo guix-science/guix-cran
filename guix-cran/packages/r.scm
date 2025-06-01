@@ -39709,13 +39709,13 @@ Monopoly Profit Maximization, Cournot's Duopoly, Solow (1956,
 (define-public r-recommenderlab
   (package
     (name "r-recommenderlab")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "recommenderlab" version))
        (sha256
-        (base32 "1dxpdgmv3hfwix1w8lzc0ijcd8myslsqnznr5pbwsrh7wypwqk1h"))))
+        (base32 "0kakm8byqq7fa4qcgk405pg5y1ca3szqkkz9hi642x47ihl2icci"))))
     (properties `((upstream-name . "recommenderlab")))
     (build-system r-build-system)
     (arguments
@@ -43967,13 +43967,13 @@ graphing.")
 (define-public r-rcurvep
   (package
     (name "r-rcurvep")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcurvep" version))
        (sha256
-        (base32 "1l29z50ka9n2qma1pk8gw00xhxvzxkrd07dwrd8k5b36kiql2q3y"))))
+        (base32 "0f0xbrhyq4xqv7c8d59lbb6c2wzwrl96mpf208vwgsj2l8yrgb2s"))))
     (properties `((upstream-name . "Rcurvep")))
     (build-system r-build-system)
     (arguments
@@ -45042,33 +45042,6 @@ morphological dictionaries and training data sets and applies them from the
 beginning of the input.  This simultaneous and deterministic process enables it
 to effectively perform tokenization, POS tagging, and lemmatization.")
     (license license:gpl2)))
-
-(define-public r-rcpphungarian
-  (package
-    (name "r-rcpphungarian")
-    (version "0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RcppHungarian" version))
-       (sha256
-        (base32 "00wxi77ajnhwds1pnmhbxaykdaiyh6ayblif58sx9r5rvv055c1a"))))
-    (properties `((upstream-name . "RcppHungarian")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jsilve24/RcppHungarian")
-    (synopsis "Solves Minimum Cost Bipartite Matching Problems")
-    (description
-     "Header library and R functions to solve minimum cost bipartite matching problem
-using Huhn-Munkres algorithm (Hungarian algorithm;
-<https://en.wikipedia.org/wiki/Hungarian_algorithm>; Kuhn (1955)
-<doi:10.1002/nav.3800020109>).  This is a repackaging of code written by Cong Ma
-in the @code{GitHub} repo <https://github.com/mcximing/hungarian-algorithm-cpp>.")
-    (license license:gpl2+)))
 
 (define-public r-rcpphmm
   (package

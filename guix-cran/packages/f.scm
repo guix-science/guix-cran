@@ -25226,13 +25226,13 @@ approach from Scutari, Panero and Proissl (2022)
 (define-public r-fairmetrics
   (package
     (name "r-fairmetrics")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fairmetrics" version))
        (sha256
-        (base32 "0640hz347j2zaqzv86qs6jh0gam253d2jm91p8416dfdbflw13jj"))))
+        (base32 "069vql73782i19ak7nx34yr2r01rn5z3l7skp5bm0m9hnn3siyfp"))))
     (properties `((upstream-name . "fairmetrics")))
     (build-system r-build-system)
     (arguments
