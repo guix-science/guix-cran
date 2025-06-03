@@ -5231,6 +5231,34 @@ tagging messages with a priority level and application type, as well as masking
 (hiding) messages below a given priority level.")
     (license license:gpl2+)))
 
+(define-public r-rsynthbio
+  (package
+    (name "r-rsynthbio")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsynthbio" version))
+       (sha256
+        (base32 "0ck8ff91zbvnrqx847ariq4g2l1706bzsbk6zrpvqj58lkir3hqb"))))
+    (properties `((upstream-name . "rsynthbio")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-keyring r-jsonlite r-httr r-getpass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/synthesizebio/rsynthbio")
+    (synopsis "Synthesize Bio API Wrapper")
+    (description
+     "Access Synthesize Bio models from their API <https://app.synthesize.bio/> using
+this wrapper that provides a convenient interface to the Synthesize Bio API,
+allowing users to generate realistic gene expression data based on specified
+biological conditions.  This package enables researchers to easily access
+AI-generated transcriptomic data for various modalities including bulk RNA-seq,
+single-cell RNA-seq, microarray data, and more.")
+    (license license:expat)))
+
 (define-public r-rsyntax
   (package
     (name "r-rsyntax")
@@ -8075,6 +8103,63 @@ includes functions for computing the bivariate depth as well as RS median.
 Drawing functions for depth bags are also provided.")
     (license license:gpl2)))
 
+(define-public r-rsda
+  (package
+    (name "r-rsda")
+    (version "3.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RSDA" version))
+       (sha256
+        (base32 "0qg7z42x8m70b1arkkcm9idyq72as4zqvmvqvmjhlpap0w4ispw1"))))
+    (properties `((upstream-name . "RSDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xtable
+                             r-xml
+                             r-vctrs
+                             r-umap
+                             r-tidyselect
+                             r-tibble
+                             r-stringr
+                             r-sqldf
+                             r-scales
+                             r-rpart
+                             r-rlang
+                             r-rjsonio
+                             r-reshape
+                             r-randomforest
+                             r-randomcolor
+                             r-purrr
+                             r-princurve
+                             r-plotly
+                             r-nloptr
+                             r-neuralnet
+                             r-magrittr
+                             r-kknn
+                             r-glmnet
+                             r-ggrepel
+                             r-ggpolypath
+                             r-ggplot2
+                             r-gbm
+                             r-forcats
+                             r-factominer
+                             r-e1071
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://oldemarrodriguez.com/")
+    (synopsis "R to Symbolic Data Analysis")
+    (description
+     "Symbolic Data Analysis (SDA) was proposed by professor Edwin Diday in 1987, the
+main purpose of SDA is to substitute the set of rows (cases) in the data table
+for a concept (second order statistical unit).  This package implements, to the
+symbolic case, certain techniques of automatic classification, as well as some
+linear models.")
+    (license license:gpl2+)))
+
 (define-public r-rscorecard
   (package
     (name "r-rscorecard")
@@ -10052,35 +10137,6 @@ objects (able to report both columns produced and columns used), optimized SQL
 generation as an explicit user visible table modeling step, plus explicit query
 reasoning and checking.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-rquefts
-  (package
-    (name "r-rquefts")
-    (version "1.2-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rquefts" version))
-       (sha256
-        (base32 "144hmgapzk8w2cv0gmyr67ivs683djv7k8i0ciihb4gl7rp55ppg"))))
-    (properties `((upstream-name . "Rquefts")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-meteor))
-    (home-page "https://CRAN.R-project.org/package=Rquefts")
-    (synopsis
-     "Quantitative Evaluation of the Native Fertility of Tropical Soils")
-    (description
-     "An implementation of the QUEFTS (Quantitative Evaluation of the Native Fertility
-of Tropical Soils) model.  The model (1) estimates native nutrient (N, P, K)
-supply of soils from a few soil chemical properties; and (2) computes crop yield
-given that supply, crop parameters, fertilizer application, and crop attainable
-yield.  See Janssen et al. (1990) <doi:10.1016/0016-7061(90)90021-Z> for the
-technical details and Sattari et al. (2014) <doi:10.1016/j.fcr.2013.12.005> for
-a recent evaluation and improvements.")
-    (license license:gpl3+)))
 
 (define-public r-rquantlib
   (package
@@ -16497,33 +16553,6 @@ sparse least trimmed squares regression (Alfons, Croux & Gelper, 2013;
 <doi:10.1214/12-AOAS575>).")
     (license license:gpl2+)))
 
-(define-public r-robustgasp
-  (package
-    (name "r-robustgasp")
-    (version "0.6.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RobustGaSP" version))
-       (sha256
-        (base32 "1pcy0n4krshjw9c4g41m7487qydrjbh45yqg77i74s5bvwd47fnp"))))
-    (properties `((upstream-name . "RobustGaSP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp r-nloptr))
-    (home-page "https://cran.r-project.org/package=RobustGaSP")
-    (synopsis "Robust Gaussian Stochastic Process Emulation")
-    (description
-     "Robust parameter estimation and prediction of Gaussian stochastic process
-emulators.  It allows for robust parameter estimation and prediction using
-Gaussian stochastic process emulator.  It also implements the parallel partial
-Gaussian stochastic process emulator for computer model with massive outputs See
-the reference: Mengyang Gu and Jim Berger, 2016, Annals of Applied Statistics;
-Mengyang Gu, Xiaojing Wang and Jim Berger, 2018, Annals of Statistics.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-robustgarch
   (package
     (name "r-robustgarch")
@@ -16694,34 +16723,6 @@ taking into account the detected inconsistencies into the labels.")
      "Collection of methods for robust covariance and (sparse) precision matrix
 estimation based on Loh and Tan (2018) <doi:10.1214/18-EJS1427>.")
     (license license:gpl3)))
-
-(define-public r-robustcalibration
-  (package
-    (name "r-robustcalibration")
-    (version "0.5.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RobustCalibration" version))
-       (sha256
-        (base32 "0ilbj88bgjymyyn7jh7dnxhhba7xrmpsnhkwr1cr53zd9rpywfdf"))))
-    (properties `((upstream-name . "RobustCalibration")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-robustgasp r-rcppeigen r-rcpp r-nloptr))
-    (home-page "https://cran.r-project.org/package=RobustCalibration")
-    (synopsis "Robust Calibration of Imperfect Mathematical Models")
-    (description
-     "This package implements full Bayesian analysis for calibrating mathematical
-models with new methodology for modeling the discrepancy function.  It allows
-for emulation, calibration and prediction using complex mathematical model
-outputs and experimental data.  See the reference: Mengyang Gu and Long Wang,
-2018, Journal of Uncertainty Quantification; Mengyang Gu, Fangzheng Xie and Long
-Wang, 2022, Journal of Uncertainty Quantification; Mengyang Gu, Kyle Anderson
-and Erika @code{McPhillips}, 2023, Technometrics.")
-    (license license:gpl2+)))
 
 (define-public r-robustblme
   (package
@@ -19648,13 +19649,13 @@ nanoflann library is exported and ready to be used via the linking to mechanism.
 (define-public r-rnamf
   (package
     (name "r-rnamf")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNAmf" version))
        (sha256
-        (base32 "1qsxkqd1j0xybb33fjbx13kkpfc3hjjb0gwzml3b92vzds9hn0s3"))))
+        (base32 "0qpd4lxvhq0rh0hjix95nizmmzsiypclx3g0c62bfzcf3jyh29zi"))))
     (properties `((upstream-name . "RNAmf")))
     (build-system r-build-system)
     (arguments
@@ -19665,7 +19666,7 @@ nanoflann library is exported and ready to be used via the linking to mechanism.
     (synopsis "Recursive Non-Additive Emulator for Multi-Fidelity Data")
     (description
      "This package performs RNA emulation and active learning proposed by Heo and Sung
-(2024) <doi:10.1080/00401706.2024.2376173> for multi-fidelity computer
+(2025) <doi:10.1080/00401706.2024.2376173> for multi-fidelity computer
 experiments.  The RNA emulator is particularly useful when the simulations with
 different fidelity level are nonlinearly correlated.  The hyperparameters in the
 model are estimated by maximum likelihood estimation.")
@@ -55173,36 +55174,6 @@ searching for polynomials, the package provides a statistically valid algorithm
 to run and terminate stepwise regression.  For more information, see Johnson,
 Stine, and Foster (2019) <@code{arXiv:1510.06322>}.")
     (license license:gpl3)))
-
-(define-public r-ragtop
-  (package
-    (name "r-ragtop")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ragtop" version))
-       (sha256
-        (base32 "0vgc2q71g8ysccq19kbk9a4swxgd5qj91xm4bshfgdg5chxqnb50"))))
-    (properties `((upstream-name . "ragtop")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-limsolve r-futile-logger))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ragtop")
-    (synopsis "Pricing Equity Derivatives with Extensions of Black-Scholes")
-    (description
-     "Algorithms to price American and European equity options, convertible bonds and
-a variety of other financial derivatives.  It uses an extension of the usual
-Black-Scholes model in which jump to default may occur at a probability
-specified by a power-law link between stock price and hazard rate as found in
-the paper by Takahashi, Kobayashi, and Nakagawa (2001)
-<doi:10.3905/jfi.2001.319302>.  We use ideas and techniques from Andersen and
-Buffum (2002) <doi:10.2139/ssrn.355308> and Linetsky (2006)
-<doi:10.1111/j.1467-9965.2006.00271.x>.")
-    (license license:gpl2+)))
 
 (define-public r-rags2ridges
   (package

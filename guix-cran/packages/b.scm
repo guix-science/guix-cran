@@ -11,8 +11,8 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages web)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages tls)
@@ -13141,40 +13141,6 @@ and Seock-Ho Kim (Springer, 2017, ISBN-13: 978-3-319-54204-1) including
 curve under the two-parameter logistic model.")
     (license license:gpl2+)))
 
-(define-public r-birp
-  (package
-    (name "r-birp")
-    (version "0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "birp" version))
-       (sha256
-        (base32 "048cmam746jg2hvjl2cmxiymfzqx3lz1kgh7mdwsi61wi6g591fh"))))
-    (properties `((upstream-name . "birp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
-    (home-page "https://bitbucket.org/wegmannlab/birpr/wiki/Home")
-    (synopsis
-     "Testing for Population Trends Using Low-Cost Ecological Count Data")
-    (description
-     "This package provides a Bayesian tool to test for population trends and changes
-in trends under arbitrary designs, including before-after (BA),
-control-intervention (CI) and before-after-control-intervention (BACI) designs
-commonly used to assess conservation impact.  It infers changes in trends
-jointly from data obtained with multiple survey methods, as well as from limited
-and noisy data not necessarily collected in standardized ecological surveys.
-Observed counts can be modeled as following either a Poisson or a negative
-binomial model, and both deterministic and stochastic trend models are
-available.  For more details on the model see Singer et al. (2025)
-<doi:10.1101/2025.01.08.631844>, and the file AUTHORS for a list of copyright
-holders and contributors.")
-    (license license:gpl2+)))
-
 (define-public r-birk
   (package
     (name "r-birk")
@@ -23967,39 +23933,6 @@ For the sake of convenience, the package includes the monthly and daily data on
 the prices (not adjusted for dividends) of the S&P 500 stock market index.")
     (license license:gpl3)))
 
-(define-public r-bazar
-  (package
-    (name "r-bazar")
-    (version "1.0.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bazar" version))
-       (sha256
-        (base32 "1q2w5pvlb51lzbb5k719sf1lrhffandkfqlcvi2prw4dmq7qjxv9"))))
-    (properties `((upstream-name . "bazar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-kimisc))
-    (home-page "https://github.com/paulponcet/bazar")
-    (synopsis "Miscellaneous Basic Functions")
-    (description
-     "This package provides a collection of miscellaneous functions for copying
-objects to the clipboard ('Copy'); manipulating strings ('concat', mgsub',
-trim', verlan'); loading or showing packages ('library_with_dep',
-require_with_dep', @code{sessionPackages}'); creating or testing for named lists
-('nlist', as.nlist', is.nlist'), formulas ('is.formula'), empty objects
-('as.empty', is.empty'), whole numbers ('as.wholenumber', is.wholenumber');
-testing for equality ('almost.equal', almost.zero') and computing uniqueness
-('almost.unique'); getting modified versions of usual functions ('rle2',
-@code{sumNA}'); making a pause or a stop ('pause', stopif'); converting into a
-function ('as.fun'); providing a C like ternary operator ('condition %?% true
-%:% false'); finding packages and functions ('get_all_pkgs', get_all_funs'); and
-others ('erase', %nin%', unwhich', top', bot', normalize').")
-    (license license:gpl3)))
-
 (define-public r-baytrends
   (package
     (name "r-baytrends")
@@ -30983,13 +30916,13 @@ using Thompson sampling are also supplied.")
 (define-public r-banditpam
   (package
     (name "r-banditpam")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "banditpam" version))
        (sha256
-        (base32 "05ym5x178rgfvpvqgiv46ly6xnk44d0j74ykdxkzshil7aig1xfk"))))
+        (base32 "1kdmk1wf311mk4zvz76fchjkamfv35pf8p0z6djx9k455sgwkfw5"))))
     (properties `((upstream-name . "banditpam")))
     (build-system r-build-system)
     (arguments

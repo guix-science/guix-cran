@@ -565,41 +565,6 @@ which randomly generate trapezoidal fuzzy numbers using some well-known
 statistical distributions.")
     (license license:gpl3)))
 
-(define-public r-fuzzyreg
-  (package
-    (name "r-fuzzyreg")
-    (version "0.6.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fuzzyreg" version))
-       (sha256
-        (base32 "056ryj4w26fb4fpy43fgvqs8ijcpm6v503pnzw73d8gxahwkvwl2"))))
-    (properties `((upstream-name . "fuzzyreg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-quadprog r-limsolve))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=fuzzyreg")
-    (synopsis "Fuzzy Linear Regression")
-    (description
-     "Estimators for fuzzy linear regression.  The functions estimate parameters of
-fuzzy linear regression models with crisp or fuzzy independent variables
-(triangular fuzzy numbers are supported).  Implements multiple methods for
-parameter estimation and algebraic operations with triangular fuzzy numbers.
-Includes functions for summarising, printing and plotting the model fit.
-Calculates predictions from the model and total error of fit.  Individual
-methods are described in Diamond (1988) <doi:10.1016/0020-0255(88)90047-3>, Hung
-& Yang (2006) <doi:10.1016/j.fss.2006.08.004>, Lee & Tanaka (1999)
-<doi:10.15807/jorsj.42.98>, Nasrabadi, Nasrabadi & Nasrabady (2005)
-<doi:10.1016/j.amc.2004.02.008>, Skrabanek, Marek & Pozdilkova (2021)
-<doi:10.3390/math9060685>, Tanaka, Hayashi & Watada (1989)
-<doi:10.1016/0377-2217(89)90431-1>, Zeng, Feng & Li (2017)
-<doi:10.1016/j.asoc.2016.09.029>.")
-    (license license:gpl3)))
-
 (define-public r-fuzzyranktests
   (package
     (name "r-fuzzyranktests")
@@ -12260,30 +12225,6 @@ plotted flight paths follow the great circle of the Earth.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-flifo
-  (package
-    (name "r-flifo")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "flifo" version))
-       (sha256
-        (base32 "03x66l3ryrjvwbxxd0ncjrb5w9kc7fswmp5psb1cb7r87f395gm3"))))
-    (properties `((upstream-name . "flifo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pryr r-bazar))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/paulponcet/flifo")
-    (synopsis "Don't Get Stuck with Stacks in R")
-    (description
-     "This package provides functions to create and manipulate FIFO (First In First
-Out), LIFO (Last In First Out), and NINO (Not In or Never Out) stacks in R.")
-    (license license:expat)))
-
 (define-public r-flickrapi
   (package
     (name "r-flickrapi")
@@ -15879,51 +15820,6 @@ character string or as a regular expression and will help users to locate CRAN
 packages matching their specified requirement. @code{findPackage(<string>})
 returns a data frame of packages with description containing the input string.")
     (license license:gpl3)))
-
-(define-public r-findit
-  (package
-    (name "r-findit")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FindIt" version))
-       (sha256
-        (base32 "0zrvkvj907fw86jnzzlwk4d90hi42nq45jprp16xryxb7xxii6i8"))))
-    (properties `((upstream-name . "FindIt")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sandwich
-                             r-quadprog
-                             r-matrix
-                             r-lmtest
-                             r-limsolve
-                             r-lars
-                             r-igraph
-                             r-glmnet
-                             r-glinternet
-                             r-arm))
-    (home-page "https://cran.r-project.org/package=FindIt")
-    (synopsis "Finding Heterogeneous Treatment Effects")
-    (description
-     "The heterogeneous treatment effect estimation procedure proposed by Imai and
-Ratkovic (2013)<DOI: 10.1214/12-AOAS593>.  The proposed method is applicable,
-for example, when selecting a small number of most (or least) efficacious
-treatments from a large number of alternative treatments as well as when
-identifying subsets of the population who benefit (or are harmed by) a treatment
-of interest.  The method adapts the Support Vector Machine classifier by placing
-separate LASSO constraints over the pre-treatment parameters and causal
-heterogeneity parameters of interest.  This allows for the qualitative
-distinction between causal and other parameters, thereby making the variable
-selection suitable for the exploration of causal heterogeneity.  The package
-also contains a class of functions, @code{CausalANOVA}, which estimates the
-average marginal interaction effects (AMIEs) by a regularized ANOVA as proposed
-by Egami and Imai (2019)<DOI:10.1080/01621459.2018.1476246>.  It contains a
-variety of regularization techniques to facilitate analysis of large factorial
-experiments.")
-    (license license:gpl2+)))
 
 (define-public r-findingit
   (package
@@ -21981,35 +21877,6 @@ from high-dimensional data.  Zamar, R., Ruiz, M., Lafit, G. and Nogales, J.
 spillover tables and spillover indices, as well as their average, minimal, and
 maximal values.")
     (license license:gpl2+)))
-
-(define-public r-fastsf
-  (package
-    (name "r-fastsf")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FastSF" version))
-       (sha256
-        (base32 "1xajav45h57hchzkvl2pb4mz9xy433lq74jnry0icid8dai5xhwb"))))
-    (properties `((upstream-name . "FastSF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-limsolve))
-    (home-page "https://cran.r-project.org/package=FastSF")
-    (synopsis "Fast Structural Filtering")
-    (description
-     "An implementation of the fast structural filtering with L0 penalty.  It includes
-an adaptive polynomial estimator by minimizing the least squares error with
-constraints on the number of breaks in their (k + 1)-st discrete derivative, for
-a chosen integer k >= 0.  It also includes generalized structure sparsity
-constraint, i.e., graph trend filtering.  This package is implemented via the
-primal dual active set algorithm, which formulates estimates and residuals as
-primal and dual variables, and utilizes efficient active set selection
-strategies based on the properties of the primal and dual variables.")
-    (license license:gpl3)))
 
 (define-public r-fastrweb
   (package

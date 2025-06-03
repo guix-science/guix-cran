@@ -4049,38 +4049,6 @@ t-distribution approach to compute confidence intervals, similar to SPSS
 (Statistical Package for the Social Sciences) software.")
     (license license:gpl3+)))
 
-(define-public r-cta
-  (package
-    (name "r-cta")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cta" version))
-       (sha256
-        (base32 "1i8psw6p6f4633ad17apm6v5ikrpv1dagm0s8pggpsjbbw8d655v"))))
-    (properties `((upstream-name . "cta")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-numderiv r-limsolve r-intervals))
-    (home-page "https://cran.r-project.org/package=cta")
-    (synopsis "Contingency Table Analysis Based on ML Fitting of MPH Models")
-    (description
-     "Contingency table analysis is performed based on maximum likelihood (ML) fitting
-of multinomial-Poisson homogeneous (MPH) and homogeneous linear predictor (HLP)
-models.  See Lang (2004) <doi:10.1214/aos/1079120140> and Lang (2005)
-<doi:10.1198/016214504000001042> for MPH and HLP models.  Objects computed
-include model goodness-of-fit statistics; likelihood- based (cell- and
-link-specific) residuals; and cell probability and expected count estimates
-along with standard errors.  This package can also compute test-inversion--e.g.
-Wald, profile likelihood, score, power-divergence--confidence intervals for
-contingency table estimands, when table probabilities are potentially subject to
-equality constraints.  For test-inversion intervals, see Lang (2008)
-<doi:10.1002/sim.3391> and Zhu (2020) <doi:10.17077/etd.005331>.")
-    (license license:gpl2+)))
-
 (define-public r-csvy
   (package
     (name "r-csvy")
@@ -10347,13 +10315,13 @@ confidence intervals.")
 (define-public r-coxmos
   (package
     (name "r-coxmos")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Coxmos" version))
        (sha256
-        (base32 "1jx7pph2fsdah6v9jmy8aylm5pbmd64ddfcw0dv1ys1ycrn6nykp"))))
+        (base32 "0l355fcgmbfziad8gd0vz1x1yi1488avdvzyd4985nix567nqhim"))))
     (properties `((upstream-name . "Coxmos")))
     (build-system r-build-system)
     (arguments
@@ -18974,13 +18942,13 @@ variables.")
 (define-public r-confidenceellipse
   (package
     (name "r-confidenceellipse")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ConfidenceEllipse" version))
        (sha256
-        (base32 "0p3dkfj1r1prz40cly7apcnvh1m6537h0kjaljgqkhb6ylrxmlci"))))
+        (base32 "1r3vj2dg7g6dv3jcxpjyblgkwi8ksnsdmqvvlx30cb74adb3j6nw"))))
     (properties `((upstream-name . "ConfidenceEllipse")))
     (build-system r-build-system)
     (arguments
@@ -19728,13 +19696,13 @@ procedures for the simplifying assumption (proposed in Derumigny and Fermanian
 (define-public r-condathis
   (package
     (name "r-condathis")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "condathis" version))
        (sha256
-        (base32 "1fd9g419gfq0rglwn77nvii6956q02j05m32x2knily6a5vqqlmd"))))
+        (base32 "1y5wy8imakzpd1v78h885njfcrq3kffiqm2mzk4aw78mb3zzzk6v"))))
     (properties `((upstream-name . "condathis")))
     (build-system r-build-system)
     (arguments
@@ -27289,13 +27257,13 @@ and cables.  Results are visualized in an easy-to-understand risk matrix.")
 (define-public r-cna
   (package
     (name "r-cna")
-    (version "4.0.0")
+    (version "4.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cna" version))
        (sha256
-        (base32 "14agpky8x1wx4n33xyldxs6qfpy622811qbhpgr6qj27g2ny62lb"))))
+        (base32 "0xnhpl8fckgpj127g9k52f7gwf2j0nzzrx4c94nydx9n95jyzmqv"))))
     (properties `((upstream-name . "cna")))
     (build-system r-build-system)
     (arguments
@@ -38108,6 +38076,32 @@ FRB-CESAB working group Bridge
 <https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/bridge/>.")
     (license license:gpl2+)))
 
+(define-public r-chess2plyrs
+  (package
+    (name "r-chess2plyrs")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chess2plyrs" version))
+       (sha256
+        (base32 "1dfb8yra762pkngkjk97yq5j67isppfh64a9am5qc95295c8s84x"))))
+    (properties `((upstream-name . "chess2plyrs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=chess2plyrs")
+    (synopsis "Chess Game Creation and Tools")
+    (description
+     "This package provides a chess program which allows the user to create a game,
+add moves, check for legal moves and game result, plot the board, take back,
+read and write FEN (ForsythâEdwards Notation).  A basic chess engine based on
+minimax is implemented.")
+    (license license:gpl3)))
+
 (define-public r-chess
   (package
     (name "r-chess")
@@ -40414,44 +40408,6 @@ standalone header-only library and is available under a double GPL-3|LGPL
 license. <https://www.cgal.org/>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-cgaim
-  (package
-    (name "r-cgaim")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cgaim" version))
-       (sha256
-        (base32 "1krs61rbnz7v4pncbjlil4728x5xyz5vzbyj487njbmqgymq10wl"))))
-    (properties `((upstream-name . "cgaim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-truncatednormal
-                             r-scar
-                             r-scam
-                             r-quadprog
-                             r-osqp
-                             r-mgcv
-                             r-matrix
-                             r-mass
-                             r-limsolve
-                             r-gratia
-                             r-foreach
-                             r-doparallel
-                             r-coneproj
-                             r-cgam))
-    (home-page "https://cran.r-project.org/package=cgaim")
-    (synopsis "Constrained Groupwise Additive Index Models")
-    (description
-     "Fits constrained groupwise additive index models and provides functions for
-inference and interpretation of these models.  The method is described in
-Masselot, Chebana, Campagna, Lavigne, Ouarda, Gosselin (2022) \"Constrained
-groupwise additive index models\" <doi:10.1093/biostatistics/kxac023>.")
-    (license license:gpl3)))
 
 (define-public r-cg
   (package
@@ -43187,37 +43143,6 @@ dataset embedded in the package.  Yifei Huang, Liping Tong, and Jie Yang
 (2025)<doi:10.5705/ss.202022.0414>.")
     (license license:expat)))
 
-(define-public r-cds
-  (package
-    (name "r-cds")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cds" version))
-       (sha256
-        (base32 "1cyfx13ixgyayxbznj3jjwpm52sfp7z11x5yn77ks0lw0xsv89fm"))))
-    (properties `((upstream-name . "cds")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-limsolve r-copula r-colorspace r-clue))
-    (home-page "https://cran.r-project.org/package=cds")
-    (synopsis "Constrained Dual Scaling for Detecting Response Styles")
-    (description
-     "This is an implementation of constrained dual scaling for detecting response
-styles in categorical data, including utility functions.  The procedure involves
-adding additional columns to the data matrix representing the boundaries between
-the rating categories.  The resulting matrix is then doubled and analyzed by
-dual scaling.  One-dimensional solutions are sought which provide optimal scores
-for the rating categories.  These optimal scores are constrained to follow
-monotone quadratic splines.  Clusters are introduced within which the response
-styles can vary.  The type of response style present in a cluster can be
-diagnosed from the optimal scores for said cluster, and this can be used to
-construct an imputed version of the data set which adjusts for response styles.")
-    (license license:gpl2+)))
-
 (define-public r-cdrcr
   (package
     (name "r-cdrcr")
@@ -44036,47 +43961,6 @@ solar spectrum (400-2500nm) using leaf models as PROSPECT5, 5b, and D which can
 be coupled with canopy models as FLIM', SAIL and SAIL2'.  Currently, only a
 simple atmospheric model ('skyl') is implemented.  Jacquemoud et al 2008 provide
 the most comprehensive overview of these models <doi:10.1016/j.rse.2008.01.026>.")
-    (license license:gpl2+)))
-
-(define-public r-ccrs
-  (package
-    (name "r-ccrs")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ccrs" version))
-       (sha256
-        (base32 "1nyw4ip9v7y6yfbfdz3bwhy4r6hpp1hiip3ycldxlkl9wrxkxgrw"))))
-    (properties `((upstream-name . "ccrs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-msm
-                             r-lsbclust
-                             r-limsolve
-                             r-dplyr
-                             r-colorspace
-                             r-cds))
-    (home-page "https://cran.r-project.org/package=ccrs")
-    (synopsis "Correct and Cluster Response Style Biased Data")
-    (description
-     "This package provides functions for performing Correcting and Clustering
-response-style-biased preference data (CCRS).  The main functions are
-@code{correct.RS()} for correcting for response styles, and @code{ccrs()} for
-simultaneously correcting and content-based clustering.  The procedure begin
-with making rank-ordered boundary data from the given preference matrix using a
-function called @code{create.ccrsdata()}.  Then in @code{correct.RS()}, the
-response style is corrected as follows: the rank-ordered boundary data are
-smoothed by I-spline functions, the given preference data are transformed by the
-smoothed functions.  The resulting data matrix, which is considered as
-bias-corrected data, can be used for any data analysis methods.  If one wants to
-cluster respondents based on their indicated preferences (content-based
-clustering), @code{ccrs()} can be applied to the given (response-style-biased)
-preference data, which simultaneously corrects for response styles and clusters
-respondents based on the contents.  Also, the correction result can be checked
-by @code{plot.crs()} function.")
     (license license:gpl2+)))
 
 (define-public r-ccremover
@@ -45310,13 +45194,13 @@ in Jeong et al. (2019) <doi:10.1101/gr.245571.118> and Baggerly et al. (2003)
 (define-public r-caviarpd
   (package
     (name "r-caviarpd")
-    (version "0.3.16")
+    (version "0.3.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caviarpd" version))
        (sha256
-        (base32 "1cf85q0ldikpgxcwz75k5ainiyka0drk2ailc12r9wnrwlrly9jj"))))
+        (base32 "18s4z7qkmhjzzpdn639az1lmcya3v6j88nnc6ca1syjm5ac2wazp"))))
     (properties `((upstream-name . "caviarpd")))
     (build-system r-build-system)
     (arguments
@@ -50395,13 +50279,13 @@ used for analyzing the results from random experiments.")
 (define-public r-calidad
   (package
     (name "r-calidad")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calidad" version))
        (sha256
-        (base32 "17xcvi1gs6hflqbdkq9vpsjxbcgpl3khb9bv64190yylrmdvkahg"))))
+        (base32 "0pi7qd0c7ssxs8h0x4zp5ns31lmpf9mvpmw2xhr74y8431zirdk4"))))
     (properties `((upstream-name . "calidad")))
     (build-system r-build-system)
     (arguments

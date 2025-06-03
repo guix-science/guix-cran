@@ -1271,13 +1271,13 @@ direction of interest for outlier detection for each variable.")
 (define-public r-mvord
   (package
     (name "r-mvord")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvord" version))
        (sha256
-        (base32 "08b4q7rbfq1b1ll2xlw1d28m744xng5b6b0xglxvhrxxm1wj3xac"))))
+        (base32 "0i9faxkyga00c9qlijy7vblhn6fhibg3lv10qdf8c2bqm3j3kcmd"))))
     (properties `((upstream-name . "mvord")))
     (build-system r-build-system)
     (arguments
@@ -5625,34 +5625,6 @@ substitution models.  References: Le, Stanford, Dumuid, and Wiley (2025)
 <doi:10.48550/@code{arXiv.2411.12407>}.")
     (license license:gpl3+)))
 
-(define-public r-multilcirt
-  (package
-    (name "r-multilcirt")
-    (version "2.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MultiLCIRT" version))
-       (sha256
-        (base32 "1qls0qp5fz377h50lvpzq3vkw49i3nvizli98gss50nqci8ssqm4"))))
-    (properties `((upstream-name . "MultiLCIRT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-limsolve))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=MultiLCIRT")
-    (synopsis "Multidimensional Latent Class Item Response Theory Models")
-    (description
-     "Framework for the Item Response Theory analysis of dichotomous and ordinal
-polytomous outcomes under the assumption of multidimensionality and discreteness
-of the latent traits.  The fitting algorithms allow for missing responses and
-for different item parameterizations and are based on the
-Expectation-Maximization paradigm.  Individual covariates affecting the class
-weights may be included in the new version (since 2.1).")
-    (license license:gpl2+)))
-
 (define-public r-multilaterals
   (package
     (name "r-multilaterals")
@@ -9626,13 +9598,13 @@ website <https://www.microsoft.com/cognitive-services/> in order to obtain a
 (define-public r-mscsimtester
   (package
     (name "r-mscsimtester")
-    (version "1.0.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSCsimtester" version))
        (sha256
-        (base32 "0k04fdprwa56vm6n372lipybgq1plhmjbxvp58wqmpgzpnhcxkvd"))))
+        (base32 "0hxn4k0bwgzchb8fq1mkh0n4r281cfj543c5ghbv5h1m1dvcrssw"))))
     (properties `((upstream-name . "MSCsimtester")))
     (build-system r-build-system)
     (arguments
@@ -9643,8 +9615,10 @@ website <https://www.microsoft.com/cognitive-services/> in order to obtain a
     (synopsis "Tests of Multispecies Coalescent Gene Tree Simulator Output")
     (description
      "Statistical tests for validating multispecies coalescent gene tree simulators,
-using pairwise distances and rooted triple counts.  Background is given by
-Allman, Banos, and Rhodes (2019) <@code{arXiv:1908.01424>}.")
+using pairwise distances and rooted triple counts.  See Allman ES, BaÃ±os HD,
+Rhodes JA 2023.  Testing multispecies coalescent simulators using summary
+statistics, IEEE/ACM Trans Comput Biol Bioinformat, 20(2):1613â1618.
+<doi:10.1109/TCBB.2022.3177956>.")
     (license license:expat)))
 
 (define-public r-mscquartets
@@ -9929,37 +9903,40 @@ extensions.")
 (define-public r-msca
   (package
     (name "r-msca")
-    (version "1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSCA" version))
        (sha256
-        (base32 "0pakp6jlq32il9yk41a53cikv0nl6cy3g9dm9rl72srdfimzr55s"))))
+        (base32 "111sfv9l9dn7bzl74fpag0bq3lklhfck9ym7k9p1y7q6dzlzsds5"))))
     (properties `((upstream-name . "MSCA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-rcppparallel
+    (propagated-inputs (list r-rcppparallel
                              r-rcpparmadillo
                              r-rcpp
                              r-matrix
-                             r-dplyr))
+                             r-fastkmedoids
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MSCA")
-    (synopsis "Clustering of Multiple Censored Time-to-Event Endpoints")
+    (synopsis
+     "Unsupervised Clustering of Multiple Censored Time-to-Event Endpoints")
     (description
-     "This package provides basic tools for computing clusters of instances described
-by multiple time-to-event censored endpoints.  From long-format datasets, where
-one instance is described by one or more records of events, a procedure is used
-to compute state matrices.  Then, from state matrices, a procedure provides
-optimised computation of the Jaccard distance between instances.  The library is
-currently in development, and more options and tools allowing graphical
-representation of typologies are expected.  For methodological details, see our
-methodological paper: Delord M, Douiri A (2025)
-<doi:10.1186/s12874-025-02476-7>.")
+     "This package provides basic tools and wrapper functions for computing clusters
+of instances described by multiple time-to-event censored endpoints.  From
+long-format datasets, where one instance is described by one or more dated
+records, the main function, @code{`make_state_matrices()}`, creates state
+matrices.  Based on these matrices, optimised procedures using the Jaccard
+distance between instances enable the construction of longitudinal typologies.
+The package is under active development, with additional tools for graphical
+representation of typologies planned.  For methodological details, see our
+accompanying paper: `Delord M, Douiri A (2025)
+<doi:10.1186/s12874-025-02476-7>`.")
     (license license:gpl3)))
 
 (define-public r-msbstatsdata
@@ -11063,44 +11040,6 @@ and Potts Model.  A complete manuscript describing the package is available in
 Freguglia & Garcia (2022) <doi:10.18637/jss.v101.i08>.")
     (license license:gpl3)))
 
-(define-public r-mrf
-  (package
-    (name "r-mrf")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mrf" version))
-       (sha256
-        (base32 "0jqpx0ng0l8f7y941awpi82yqbv8ir0sixiw6zdkqpj82d9a7j9m"))))
-    (properties `((upstream-name . "mrf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nnfor r-monmlp r-limsolve r-forecast r-deoptim))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.deepbionics.org")
-    (synopsis "Multiresolution Forecasting")
-    (description
-     "Forecasting of univariate time series using feature extraction with variable
-prediction methods is provided.  Feature extraction is done with a redundant
-Haar wavelet transform with filter h = (0.5, 0.5).  The advantage of the
-approach compared to typical Fourier based methods is an dynamic adaptation to
-varying seasonalities.  Currently implemented prediction methods based on the
-selected wavelets levels and scales are a regression and a multi-layer
-perceptron.  Forecasts can be computed for horizon 1 or higher.  Model selection
-is performed with an evolutionary optimization.  Selection criteria are
-currently the AIC criterion, the Mean Absolute Error or the Mean Root Error.
-The data is split into three parts for model selection: Training, test, and
-evaluation dataset.  The training data is for computing the weights of a
-parameter set.  The test data is for choosing the best parameter set.  The
-evaluation data is for assessing the forecast performance of the best parameter
-set on new data unknown to the model.  This work is published in Stier, Q.;
-Gehlert, T.; Thrun, M.C. Multiresolution Forecasting for Industrial
-Applications.  Processes 2021, 9, 1697. <doi:10.3390/pr9101697>.")
-    (license license:gpl3)))
-
 (define-public r-mregions2
   (package
     (name "r-mregions2")
@@ -11607,57 +11546,6 @@ time precision etc.  Various software outputs are supported such as
 Linear Regression Analysis (3rd ed), by Montgomery, Peck and Vining.  Some
 additional data sets and functions are also included.")
     (license (license:fsdg-compatible "Unlimited"))))
-
-(define-public r-mptmultiverse
-  (package
-    (name "r-mptmultiverse")
-    (version "0.4-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MPTmultiverse" version))
-       (sha256
-        (base32 "0fjfj8jk0dk1s3jc9rl9kza6gm5pm6dgsqyk0aq7pir2hrsr3qwy"))))
-    (properties `((upstream-name . "MPTmultiverse")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-treebugs
-                             r-tidyr
-                             r-tibble
-                             r-runjags
-                             r-rlang
-                             r-reshape2
-                             r-readr
-                             r-purrr
-                             r-mptinr
-                             r-magrittr
-                             r-limsolve
-                             r-ggplot2
-                             r-dplyr
-                             r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mpt-network/MPTmultiverse")
-    (synopsis "Multiverse Analysis of Multinomial Processing Tree Models")
-    (description
-     "Statistical or cognitive modeling usually requires a number of more or less
-arbitrary choices creating one specific path through a garden of forking paths'.
- The multiverse approach (Steegen, Tuerlinckx, Gelman, & Vanpaemel, 2016,
-<doi:10.1177/1745691616658637>) offers a principled alternative in which results
-for all possible combinations of reasonable modeling choices are reported.
-MPTmultiverse performs a multiverse analysis for multinomial processing tree
-(MPT, Riefer & Batchelder, 1988, <doi:10.1037/0033-295X.95.3.318>) models
-combining maximum-likelihood/frequentist and Bayesian estimation approaches with
-different levels of pooling (i.e., data aggregation).  For the frequentist
-approaches, no pooling (with and without parametric or nonparametric bootstrap)
-and complete pooling are implemented using MP@code{TinR}
-<https://cran.r-project.org/package=MP@code{TinR>}.  For the Bayesian
-approaches, no pooling, complete pooling, and three different variants of
-partial pooling are implemented using @code{TreeBUGS}
-<https://cran.r-project.org/package=@code{TreeBUGS>}.  The main function is
-@code{fit_mpt()} who performs the multiverse analysis in one call.")
-    (license license:gpl2)))
 
 (define-public r-mptinr
   (package
@@ -22382,36 +22270,6 @@ classification and regression.  The aim of this package is to use data generated
 around health and other domains.")
     (license license:expat)))
 
-(define-public r-mlcopula
-  (package
-    (name "r-mlcopula")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MLCOPULA" version))
-       (sha256
-        (base32 "0a2y84xajinmpryn0bizqy57fn7i3nwnw8kqjiw5bxprc1lc863h"))))
-    (properties `((upstream-name . "MLCOPULA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tsp
-                             r-pracma
-                             r-kde1d
-                             r-igraph
-                             r-gridcopula
-                             r-copula))
-    (home-page "https://cran.r-project.org/package=MLCOPULA")
-    (synopsis "Classification Models with Copula Functions")
-    (description
-     "This package provides several classifiers based on probabilistic models.  These
-classifiers allow to model the dependence structure of continuous features
-through bivariate copula functions and graphical models, see Salinas-GutiÃ©rrez
-et al. (2014) <doi:10.1007/s00180-013-0457-y>.")
-    (license license:gpl3)))
-
 (define-public r-mlcm
   (package
     (name "r-mlcm")
@@ -22437,35 +22295,6 @@ estimate the contribution of the n scales to the judgment by a maximum
 likelihood method under several hypotheses of how the perceptual dimensions
 interact.  Reference: Knoblauch & Maloney (2012) \"Modeling Psychophysical Data
 in R\". <doi:10.1007/978-1-4614-4475-6>.")
-    (license license:gpl2+)))
-
-(define-public r-mlcirtwithin
-  (package
-    (name "r-mlcirtwithin")
-    (version "2.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MLCIRTwithin" version))
-       (sha256
-        (base32 "1x0xmka7kkbjnh3yv4zxxyl17cpmf0rb9hxmdl1srb6ijld4np1b"))))
-    (properties `((upstream-name . "MLCIRTwithin")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-multilcirt r-mass r-limsolve))
-    (home-page "https://cran.r-project.org/package=MLCIRTwithin")
-    (synopsis
-     "Latent Class Item Response Theory (LC-IRT) Models under Within-Item Multidimensionality")
-    (description
-     "Framework for the Item Response Theory analysis of dichotomous and ordinal
-polytomous outcomes under the assumption of within-item multidimensionality and
-discreteness of the latent traits.  The fitting algorithms allow for missing
-responses and for different item parametrizations and are based on the
-Expectation-Maximization paradigm.  Individual covariates affecting the class
-weights may be included in the new version together with possibility of
-constraints on all model parameters.")
     (license license:gpl2+)))
 
 (define-public r-mlbstats
@@ -36561,13 +36390,13 @@ M-estimation in the vein of Tsiatis et al. (2019) <doi:10.1201/9780429192692>.")
 (define-public r-messydates
   (package
     (name "r-messydates")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "messydates" version))
        (sha256
-        (base32 "15d22ihq6dlkwqi80r7njizk01sd2am23n441wd6dnsn3yjxhcdk"))))
+        (base32 "1i7s9z7sfl7wx6l50jh4q6f9qf0gpsswbmyzk0pd9hysgq4v8a7i"))))
     (properties `((upstream-name . "messydates")))
     (build-system r-build-system)
     (arguments
@@ -52525,35 +52354,6 @@ Wang R, Tian B (2021) <doi:10.1186/s13059-021-02429-5>.")
      "Data manipulation in one package and in base R. Minimal.  No dependencies.
 dplyr and tidyr'-like in one place.  Nothing else than base R to build the
 package.")
-    (license license:expat)))
-
-(define-public r-m5
-  (package
-    (name "r-m5")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "m5" version))
-       (sha256
-        (base32 "0cw9b31j564qc5s1b37r1p425p4gndlzgwy34cn0m2c65jwiyf6h"))))
-    (properties `((upstream-name . "m5")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringi r-lubridate r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/krzjoa/m5")
-    (synopsis "'M5 Forecasting' Challenges Data")
-    (description
-     "This package contains functions, which facilitate downloading, loading and
-preparing data from M5 Forecasting challenges (by University of Nicosia', hosted
-on Kaggle').  The data itself is set of time series of different product sales
-in Walmart'.  The package also includes a ready-to-use built-in M5 subset named
-tiny_m5'.  For detailed information about the challenges, see: Makridakis, S. &
-Spiliotis, E. & Assimakopoulos, V. (2020).
-<doi:10.1016/j.ijforecast.2021.10.009>.")
     (license license:expat)))
 
 (define-public r-m3jf

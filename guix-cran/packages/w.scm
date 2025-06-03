@@ -2440,13 +2440,13 @@ conventions are used by default.")
 (define-public r-wordofmouth
   (package
     (name "r-wordofmouth")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WordOfMouth" version))
        (sha256
-        (base32 "199hnirbmwarn04ky1147x5c048j087rdml86qcp92kzp20679v3"))))
+        (base32 "1fqljppymxwshzrjlcqk0h68q6gfmi82hpgc5jgpk9iqxfd90561"))))
     (properties `((upstream-name . "WordOfMouth")))
     (build-system r-build-system)
     (arguments
@@ -8332,55 +8332,6 @@ spatial weights matrix to update the inclusion probabilities vector into a
 sample.  For more details see RaphaÃ«l Jauslin and Yves TillÃ© (2019)
 <doi:10.1007/s13253-020-00407-1>.")
     (license license:gpl2+)))
-
-(define-public r-waves
-  (package
-    (name "r-waves")
-    (version "0.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "waves" version))
-       (sha256
-        (base32 "1ggpldwdgc97jp03n3z5s8hw3ib6q09yyinryz78xs798v9l4qdl"))))
-    (properties `((upstream-name . "waves")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-spectacles
-                             r-scales
-                             r-rlang
-                             r-readr
-                             r-randomforest
-                             r-prospectr
-                             r-pls
-                             r-magrittr
-                             r-lifecycle
-                             r-ggplot2
-                             r-dplyr
-                             r-caret))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/GoreLab/waves")
-    (synopsis "Vis-NIR Spectral Analysis Wrapper")
-    (description
-     "Originally designed application in the context of resource-limited plant
-research and breeding programs, waves provides an open-source solution to
-spectral data processing and model development by bringing useful packages
-together into a streamlined pipeline.  This package is wrapper for functions
-related to the analysis of point visible and near-infrared reflectance
-measurements.  It includes visualization, filtering, aggregation, preprocessing,
-cross-validation set formation, model training, and prediction functions to
-enable open-source association of spectral and reference data.  This package is
-documented in a peer-reviewed manuscript in the Plant Phenome Journal
-<doi:10.1002/ppj2.20012>.  Specialized cross-validation schemes are described in
-detail in JarquÃ­n et al. (2017) <doi:10.3835/plantgenome2016.12.0130>.  Example
-data is from Ikeogu et al. (2017) <doi:10.1371/journal.pone.0188918>.")
-    (license license:expat)))
 
 (define-public r-waverr
   (package

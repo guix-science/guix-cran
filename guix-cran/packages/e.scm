@@ -4394,37 +4394,6 @@ estimators are implemented.")
 together with time-series power demand calculations.")
     (license license:gpl3)))
 
-(define-public r-evreg
-  (package
-    (name "r-evreg")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "evreg" version))
-       (sha256
-        (base32 "10zld5hh6qq92pmr0ajkimjjvnm8a6dhh106w6mpanfz09lvj74f"))))
-    (properties `((upstream-name . "evreg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-evclust))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=evreg")
-    (synopsis "Evidential Regression")
-    (description
-     "An implementation of the Evidential Neural Network for Regression model recently
-introduced in Denoeux (2023) <doi:10.1109/TFUZZ.2023.3268200>.  In this model,
-prediction uncertainty is quantified by Gaussian random fuzzy numbers as
-introduced in Denoeux (2023) <doi:10.1016/j.fss.2022.06.004>.  The package
-contains functions for training the network, tuning hyperparameters by
-cross-validation or the hold-out method, and making predictions.  It also
-contains utilities for making calculations with Gaussian random fuzzy numbers
-(such as, e.g., computing the degrees of belief and plausibility of an interval,
-or combining Gaussian random fuzzy numbers).")
-    (license license:gpl3)))
-
 (define-public r-evprof
   (package
     (name "r-evprof")
@@ -5662,42 +5631,6 @@ distribution.")
      "Combine pieces of evidence in the form of uncertainty representations.")
     (license license:gpl3+)))
 
-(define-public r-evclust
-  (package
-    (name "r-evclust")
-    (version "2.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "evclust" version))
-       (sha256
-        (base32 "0z707x770rp7y3sii4w0xk61is2ib79mix14x48n942vb11mc91b"))))
-    (properties `((upstream-name . "evclust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r-utils
-                             r-quadprog
-                             r-plyr
-                             r-mclust
-                             r-matrix
-                             r-limsolve
-                             r-fnn))
-    (native-inputs (list))
-    (home-page "https://cran.r-project.org/package=evclust")
-    (synopsis "Evidential Clustering")
-    (description
-     "Various clustering algorithms that produce a credal partition, i.e., a set of
-Dempster-Shafer mass functions representing the membership of objects to
-clusters.  The mass functions quantify the cluster-membership uncertainty of the
-objects.  The algorithms are: Evidential c-Means, Relational Evidential c-Means,
-Constrained Evidential c-Means, Evidential Clustering, Constrained Evidential
-Clustering, Evidential K-nearest-neighbor-based Clustering, Bootstrap
-Model-Based Evidential Clustering, Belief Peak Evidential Clustering,
-Neural-Network-based Evidential Clustering.")
-    (license license:gpl3)))
-
 (define-public r-evclass
   (package
     (name "r-evclass")
@@ -6010,19 +5943,20 @@ under the curve.  Outputs are well suited for nested dataframes.")
 (define-public r-eva3dm
   (package
     (name "r-eva3dm")
-    (version "0.99.1")
+    (version "1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eva3dm" version))
        (sha256
-        (base32 "1czvgnrykzll9dbq6ccgj34d5cpbk5rl6mrgp3kkl927dfs4gh2x"))))
+        (base32 "1gcnmv5rsi73nxmynpdbqp1vaip1km15ip38dbpwaa4ys92gcnla"))))
     (properties `((upstream-name . "eva3dm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-terra r-ncdf4))
+    (native-inputs (list r-knitr))
     (home-page "https://schuch666.github.io/eva3dm/")
     (synopsis "Evaluation of 3D Meteorological and Air Quality Models")
     (description
@@ -15091,31 +15025,6 @@ each gene.  The dimensionality of this gene subset is further reduced through
 the use of mixtures of factor analyzers, allowing the tissue samples to be
 clustered by fitting mixtures of normal distributions.")
     (license license:gpl3+)))
-
-(define-public r-emmageo
-  (package
-    (name "r-emmageo")
-    (version "0.9.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EMMAgeo" version))
-       (sha256
-        (base32 "1rcdqdy16x00fnry80rr6j6081p9zbkmhxxfv4k9izncagpm3gqk"))))
-    (properties `((upstream-name . "EMMAgeo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny r-matrixstats r-limsolve r-gparotation
-                             r-catools))
-    (home-page "https://cran.r-project.org/package=EMMAgeo")
-    (synopsis "End-Member Modelling of Grain-Size Data")
-    (description
-     "End-member modelling analysis of grain-size data is an approach to unmix a data
-set's underlying distributions and their contribution to the data set.  EMMAgeo
-provides deterministic and robust protocols for that purpose.")
-    (license license:gpl3)))
 
 (define-public r-emli
   (package
@@ -25986,42 +25895,6 @@ size.  These might aid in deciding what design to use for the early phase trial.
 Take an overview of the industry, measure Key Performance Indicators, identify
 changes in the industry over time, and discover new relationships in the data.")
     (license (license:fsdg-compatible "Apache License"))))
-
-(define-public r-eainference
-  (package
-    (name "r-eainference")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EAinference" version))
-       (sha256
-        (base32 "1kzcfya3z6rf1vqjn72yjymdhrn4dzgmwifh3w6k22cy5jxffzn4"))))
-    (properties `((upstream-name . "EAinference")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-mvtnorm
-                             r-msm
-                             r-mass
-                             r-limsolve
-                             r-hdi))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=EAinference")
-    (synopsis "Estimator Augmentation and Simulation-Based Inference")
-    (description
-     "Estimator augmentation methods for statistical inference on high-dimensional
-data, as described in Zhou, Q. (2014) <@code{arXiv:1401.4425v2>} and Zhou, Q.
-and Min, S. (2017) <doi:10.1214/17-EJS1309>.  It provides several
-simulation-based inference methods: (a) Gaussian and wild multiplier bootstrap
-for lasso, group lasso, scaled lasso, scaled group lasso and their de-biased
-estimators, (b) importance sampler for approximating p-values in these methods,
-(c) Markov chain Monte Carlo lasso sampler with applications in post-selection
-inference.")
-    (license license:gpl2+)))
 
 (define-public r-eagle
   (package

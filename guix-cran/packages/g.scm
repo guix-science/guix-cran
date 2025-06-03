@@ -5691,35 +5691,6 @@ viewports and grobs that @code{gridGraphviz} produces.")
 have been drawn using grid graphics.")
     (license license:gpl2+)))
 
-(define-public r-gridcopula
-  (package
-    (name "r-gridcopula")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GRIDCOPULA" version))
-       (sha256
-        (base32 "0d8zibd27z0krn564ba906zlvnb1fx4mfvhpii7pxr0pzjir2a9c"))))
-    (properties `((upstream-name . "GRIDCOPULA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsolnp
-                             r-reshape2
-                             r-pracma
-                             r-limsolve
-                             r-ggplot2
-                             r-fields
-                             r-evmix))
-    (home-page "https://cran.r-project.org/package=GRIDCOPULA")
-    (synopsis "Bivariate Copula Functions Based on Regular Grid")
-    (description
-     "Estimates grid type bivariate copula functions, calculates some association
-measures and provides several copula graphics.")
-    (license license:gpl3)))
-
 (define-public r-gridbezier
   (package
     (name "r-gridbezier")
@@ -10160,42 +10131,6 @@ data synthesis to model selection and visualisation.  The package is named after
 W.S. Gosset aka âStudentâ, a pioneer of modern statistics in small sample
 experimental design and analysis.")
     (license license:expat)))
-
-(define-public r-gorica
-  (package
-    (name "r-gorica")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gorica" version))
-       (sha256
-        (base32 "1r8dg9wcqxd53zm27mf0554x2zlsclbfmqqwjbkywa3np6gi358y"))))
-    (properties `((upstream-name . "gorica")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-quadprog
-                             r-mvtnorm
-                             r-mass
-                             r-lme4
-                             r-limsolve
-                             r-lavaan
-                             r-bain))
-    (home-page "https://informative-hypotheses.sites.uu.nl/software/goric/")
-    (synopsis "Evaluation of Inequality Constrained Hypotheses Using GORICA")
-    (description
-     "This package implements the generalized order-restricted information criterion
-approximation (GORICA), an AIC-like information criterion that can be utilized
-to evaluate informative hypotheses specifying directional relationships between
-model parameters in terms of (in)equality constraints (see Altinisik, Van Lissa,
-Hoijtink, Oldehinkel, & Kuiper, 2021), <doi:10.31234/osf.io/t3c8g>.  The GORICA
-is applicable not only to normal linear models, but also to generalized linear
-models (GLMs), generalized linear mixed models (GLMMs), structural equation
-models (SEMs), and contingency tables.  For contingency tables, restrictions on
-cell probabilities can be non-linear.")
-    (license license:gpl3+)))
 
 (define-public r-goric
   (package
@@ -15771,51 +15706,6 @@ fitting GLMs and GAMs under Beta regression, Poisson regression, Gamma
 regression, and Binomial regression (currently GLM only) settings.  Models are
 fit using local scoring algorithms described in Hastie and Tibshirani (1990)
 <doi:10.1214/ss/1177013604>.")
-    (license license:expat)))
-
-(define-public r-gkwreg
-  (package
-    (name "r-gkwreg")
-    (version "1.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gkwreg" version))
-       (sha256
-        (base32 "0ndpq6fxs3h2726yix5aw3dp0160cr2pxlx78d4pibci96vnfgjb"))))
-    (properties `((upstream-name . "gkwreg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tmb
-                             r-tidyr
-                             r-scales
-                             r-reshape2
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-rappdirs
-                             r-patchwork
-                             r-numderiv
-                             r-magrittr
-                             r-gridextra
-                             r-ggpubr
-                             r-ggplot2
-                             r-formula
-                             r-fmsb))
-    (home-page "https://cran.r-project.org/package=gkwreg")
-    (synopsis "Generalized Kumaraswamy Regression Models for Bounded Data")
-    (description
-     "This package implements regression models for bounded continuous data in the
-open interval (0,1) using the five-parameter Generalized Kumaraswamy
-distribution.  Supports modeling all distribution parameters (alpha, beta,
-gamma, delta, lambda) as functions of predictors through various link functions.
- Provides efficient maximum likelihood estimation via Template Model Builder
-('TMB'), offering comprehensive diagnostics, model comparison tools, and
-simulation methods.  Particularly useful for analyzing proportions, rates,
-indices, and other bounded response data with complex distributional features
-not adequately captured by simpler models.")
     (license license:expat)))
 
 (define-public r-gkrls
@@ -23155,45 +23045,6 @@ overlapping groups where the layer drawing order does not change the output; see
 Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
     (license license:expat)))
 
-(define-public r-ggblanket
-  (package
-    (name "r-ggblanket")
-    (version "12.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggblanket" version))
-       (sha256
-        (base32 "0vj29gc8yw1b9yzx5wc8zmrl9y3ynismc8yp5fpxcq85c3qp8k77"))))
-    (properties `((upstream-name . "ggblanket")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridislite
-                             r-tidyselect
-                             r-tidyr
-                             r-stringr
-                             r-snakecase
-                             r-scales
-                             r-rlang
-                             r-purrr
-                             r-lubridate
-                             r-labelled
-                             r-hms
-                             r-ggplot2
-                             r-ggblend
-                             r-forcats
-                             r-farver
-                             r-dplyr
-                             r-colorspace))
-    (native-inputs (list r-knitr))
-    (home-page "https://davidhodge931.github.io/ggblanket/")
-    (synopsis "Simplify 'ggplot2' Visualisation")
-    (description
-     "Simplify ggplot2 visualisation with ggblanket wrapper functions.")
-    (license license:expat)))
-
 (define-public r-ggbiplot
   (package
     (name "r-ggbiplot")
@@ -25807,75 +25658,6 @@ Donegan (2022) <doi:10.21105/joss.04716>; Donegan, Chun and Hughes (2020)
 <doi:10.3390/ijerph18136856>; Morris et al. (2019)
 <doi:10.1016/j.sste.2019.100301>.")
     (license license:gpl3+)))
-
-(define-public r-geosptdb
-  (package
-    (name "r-geosptdb")
-    (version "1.0-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geosptdb" version))
-       (sha256
-        (base32 "1n1jvigavcxlbc5wki74lnhax3060i44m1cvkcr664wsjqhx3kl2"))))
-    (properties `((upstream-name . "geosptdb")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-statmatch
-                             r-sp
-                             r-minqa
-                             r-limsolve
-                             r-gsl
-                             r-geospt
-                             r-fields
-                             r-fd))
-    (home-page "https://cran.r-project.org/package=geosptdb")
-    (synopsis
-     "Spatio-Temporal Radial Basis Functions with Distance-Based Methods (Optimization, Prediction and Cross Validation)")
-    (description
-     "Spatio-temporal radial basis functions (optimization, prediction and
-cross-validation), summary statistics from cross-validation, Adjusting
-distance-based linear regression model and generation of the principal
-coordinates of a new individual from Gower's distance.")
-    (license license:gpl2+)))
-
-(define-public r-geospt
-  (package
-    (name "r-geospt")
-    (version "1.0-5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geospt" version))
-       (sha256
-        (base32 "060952gblj078r3j246z72c3piviy6gprgsx0w60lyc51k908mz5"))))
-    (properties `((upstream-name . "geospt")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-teachingdemos
-                             r-sp
-                             r-sgeostat
-                             r-plyr
-                             r-minqa
-                             r-mass
-                             r-limsolve
-                             r-gstat
-                             r-gsl
-                             r-genalg
-                             r-fields))
-    (home-page "https://github.com/amsantac/geospt")
-    (synopsis
-     "Geostatistical Analysis and Design of Optimal Spatial Sampling Networks")
-    (description
-     "Estimation of the variogram through trimmed mean, radial basis functions
-(optimization, prediction and cross-validation), summary statistics from
-cross-validation, pocket plot, and design of optimal sampling networks through
-sequential and simultaneous points methods.")
-    (license license:gpl2+)))
 
 (define-public r-geospark
   (package
@@ -33350,13 +33132,13 @@ representation.")
 (define-public r-gbm2sas
   (package
     (name "r-gbm2sas")
-    (version "3.0")
+    (version "4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gbm2sas" version))
        (sha256
-        (base32 "1dzqmbfjasydghlb44nl1lsvr53w4gaiyh6852a9lnd62chapd45"))))
+        (base32 "0qag4zmzp5hkw0pbnbskhmy67ppivb013ywy13pwjazrvkg5r748"))))
     (properties `((upstream-name . "gbm2sas")))
     (build-system r-build-system)
     (arguments

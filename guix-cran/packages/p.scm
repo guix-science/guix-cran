@@ -3402,13 +3402,13 @@ integration within *.Rnw files.")
 (define-public r-psychonetrics
   (package
     (name "r-psychonetrics")
-    (version "0.13")
+    (version "0.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychonetrics" version))
        (sha256
-        (base32 "0yrpw1dcz8mzfydv48dk4liqhfcwqh3s7c9xpfcniisab5hvq3m6"))))
+        (base32 "195sni21nc8crh284208xflvn3xw8aajsi26mpgcbxvi5zq1c5qy"))))
     (properties `((upstream-name . "psychonetrics")))
     (build-system r-build-system)
     (arguments
@@ -15280,46 +15280,6 @@ test for central normality allows for rejecting transformations that fail to
 produce a suitably normal distribution, independent of sample number.")
     (license (license:fsdg-compatible "EUPL"))))
 
-(define-public r-powdr
-  (package
-    (name "r-powdr")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "powdR" version))
-       (sha256
-        (base32 "1bkx43xd46gzgiphknqyz2nyvviia0xkn4h8z4k2dwcfq92iwsbw"))))
-    (properties `((upstream-name . "powdR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-shinywidgets
-                             r-shiny
-                             r-rxylib
-                             r-reshape
-                             r-plyr
-                             r-plotly
-                             r-nnls
-                             r-ggpubr
-                             r-ggplot2
-                             r-factominer
-                             r-factoextra
-                             r-dt
-                             r-baseline))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/benmbutler/powdR")
-    (synopsis "Full Pattern Summation of X-Ray Powder Diffraction Data")
-    (description
-     "Full pattern summation of X-ray powder diffraction data as described in Chipera
-and Bish (2002) <doi:10.1107/S0021889802017405> and Butler and Hillier (2021)
-<doi:10.1016/j.cageo.2020.104662>.  Derives quantitative estimates of
-crystalline and amorphous phase concentrations in complex mixtures.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-powdist
   (package
     (name "r-powdist")
@@ -20247,13 +20207,13 @@ Demirtas, H. (2015) <DOI:10.1080/00949655.2014.953534>.")
 (define-public r-poisbinom
   (package
     (name "r-poisbinom")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poisbinom" version))
        (sha256
-        (base32 "0mjxg0s3nck7qrmq4bbrhwxfwr6fqml54s9k8q1mkfzlifa7qyf7"))))
+        (base32 "05ihf4jcw3n2pf1v5jz3drn14r0bhaqc17v52bsxsv7bg6vjr22f"))))
     (properties `((upstream-name . "poisbinom")))
     (build-system r-build-system)
     (arguments
@@ -34782,39 +34742,6 @@ Prediction, With an Application to Risk Factor Identification for Different
 Dementia Subtypes.  Statistics in Medicine, 43(30), 5711-5747.\".")
     (license license:gpl2)))
 
-(define-public r-pems-utils
-  (package
-    (name "r-pems-utils")
-    (version "0.3.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pems.utils" version))
-       (sha256
-        (base32 "0r6s0y67i5s6ld32l4bylgw7bp7akgizlq1jcf2ik69hy9cwsd83"))))
-    (properties `((upstream-name . "pems.utils")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-loa
-                             r-lattice
-                             r-ggplot2
-                             r-dplyr
-                             r-baseline))
-    (home-page "http://pems.r-forge.r-project.org/")
-    (synopsis
-     "Portable Emissions (and Other Mobile) Measurement System Utilities")
-    (description
-     "Utility functions for the handling, analysis and visualisation of data from
-portable emissions measurement systems ('PEMS') and other similar mobile
-activity monitoring devices.  The package includes a dedicated pems data class
-that manages many of the quality control, unit handling and data archiving
-issues that can hinder efforts to standardise PEMS research.")
-    (license license:gpl2+)))
-
 (define-public r-pempi
   (package
     (name "r-pempi")
@@ -45542,40 +45469,6 @@ tree approach to allow testing in high-dimensional settings.")
      "Procrustes analyses to infer co-phylogenetic matching between pairs of
 phylogenetic trees.")
     (license license:expat)))
-
-(define-public r-paclasso
-  (package
-    (name "r-paclasso")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PACLasso" version))
-       (sha256
-        (base32 "1qzzymhfsjy8mk0r0xpd5h4wrx4wk8gq3vi6fnawkq5xkrg26rld"))))
-    (properties `((upstream-name . "PACLasso")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-quadprog r-penalized r-mass r-limsolve r-lars))
-    (home-page "http://www-bcf.usc.edu/~gareth/research/PAC.pdf")
-    (synopsis "Penalized and Constrained Lasso Optimization")
-    (description
-     "An implementation of both the equality and inequality constrained lasso
-functions for the algorithm described in \"Penalized and Constrained
-Optimization\" by James, Paulson, and Rusmevichientong (Journal of the American
-Statistical Association, 2019; see
-<http://www-bcf.usc.edu/~gareth/research/PAC.pdf> for a full-text version of the
-paper).  The algorithm here is designed to allow users to define linear
-constraints (either equality or inequality constraints) and use a penalized
-regression approach to solve the constrained problem.  The functions here are
-used specifically for constraints with the lasso formulation, but the method
-described in the @code{PaC} paper can be used for a variety of scenarios.  In
-addition to the simple examples included here with the corresponding functions,
-complete code to entirely reproduce the results of the paper is available online
-through the Journal of the American Statistical Association.")
-    (license license:gpl3)))
 
 (define-public r-packmbplsda
   (package

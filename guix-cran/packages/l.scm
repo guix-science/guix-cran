@@ -1834,13 +1834,13 @@ in the near future.")
 (define-public r-lsm
   (package
     (name "r-lsm")
-    (version "0.2.1.4")
+    (version "0.2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lsm" version))
        (sha256
-        (base32 "0dfjz547fkysghv5mb5xhc91aqijz7falir1rkwshib55bb3ijl7"))))
+        (base32 "0gpca0bf51ihs1w6cp1awrs85jzcbrdkhd9icjnbnsawmyrky55n"))))
     (properties `((upstream-name . "lsm")))
     (build-system r-build-system)
     (arguments
@@ -5097,6 +5097,32 @@ the approximation of the difference of two correlated lognormally distributed
 variables (Lo 2012 <doi:10.1155/2012/838397>).")
     (license license:gpl2)))
 
+(define-public r-logngpd
+  (package
+    (name "r-logngpd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lognGPD" version))
+       (sha256
+        (base32 "1rlbn48yd0gank5sf2k731irfm1hksm5y4p7ska6b33m4gm0i3lf"))))
+    (properties `((upstream-name . "lognGPD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-lnpar r-evd r-envstats))
+    (home-page "https://github.com/marco-bee/lognGPD")
+    (synopsis "Estimation of a Lognormal - Generalized Pareto Mixture")
+    (description
+     "Estimation of a lognormal - Generalized Pareto mixture via the
+Expectation-Maximization algorithm.  Computation of bootstrap standard errors is
+supported and performed via parallel computing.  Functions for random number
+simulation and density evaluation are also available.  For more details see Bee
+and Santi (2025) <doi:10.48550/@code{arXiv.2505.22507>}.")
+    (license license:expat)))
+
 (define-public r-logmult
   (package
     (name "r-logmult")
@@ -5720,13 +5746,13 @@ methodology and simple automation possibilities.")
 (define-public r-loggit2
   (package
     (name "r-loggit2")
-    (version "2.3.1")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loggit2" version))
        (sha256
-        (base32 "1y971pb8v5s57hnvbrz11m2jwfxbid5dwlj4asazd5vf9xq04adx"))))
+        (base32 "0y22ilr0jvicwv359h92c3vnlr8f71zsj5jzc0vff3xxhrrdjjyd"))))
     (properties `((upstream-name . "loggit2")))
     (build-system r-build-system)
     (arguments
@@ -8054,37 +8080,6 @@ method.")
      "This package provides methods for estimation and statistical inference on
 directional and fluctuating selection in age-structured populations.")
     (license license:gpl2)))
-
-(define-public r-lmest
-  (package
-    (name "r-lmest")
-    (version "3.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LMest" version))
-       (sha256
-        (base32 "0db9my1gvml2j625an7zivqavcbnishhpsi584d5z3qj7dm1lbb3"))))
-    (properties `((upstream-name . "LMest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scatterplot3d
-                             r-mvtnorm
-                             r-multilcirt
-                             r-mix
-                             r-mclust
-                             r-mass
-                             r-formula
-                             r-diagram))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=LMest")
-    (synopsis "Generalized Latent Markov Models")
-    (description
-     "Latent Markov models for longitudinal continuous and categorical data.  See
-Bartolucci, Pandolfi, Pennoni (2017)<doi:10.18637/jss.v081.i04>.")
-    (license license:gpl2+)))
 
 (define-public r-lmesplines
   (package
@@ -12039,13 +12034,13 @@ is available at the Supplementary Data section at Nucleic Acids Research Online
 (define-public r-lidr
   (package
     (name "r-lidr")
-    (version "4.2.0")
+    (version "4.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lidR" version))
        (sha256
-        (base32 "09zsfaq9yikwpab7n0s4mx75w075hdgfk0r1cddb0hhl2s2dvg35"))))
+        (base32 "0p8ripfni2n84wq2rihcfi4abhrbiqrhnk5sn3qvcygk21ls92az"))))
     (properties `((upstream-name . "lidR")))
     (build-system r-build-system)
     (arguments
@@ -14400,13 +14395,13 @@ provided as well.")
 (define-public r-learnnonparam
   (package
     (name "r-learnnonparam")
-    (version "1.2.8")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LearnNonparam" version))
        (sha256
-        (base32 "1mf3j85bsbfw2axlqj11w3yv317vpjvn8qnpnp28nwkf2cysl6aw"))))
+        (base32 "1hs9lss2yamlldn65q21nl1h1s3fl4l0dc4k90wnh99wabqpic3c"))))
     (properties `((upstream-name . "LearnNonparam")))
     (build-system r-build-system)
     (arguments

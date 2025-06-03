@@ -6473,13 +6473,13 @@ analyses.")
 (define-public r-vectorsurvr
   (package
     (name "r-vectorsurvr")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectorsurvR" version))
        (sha256
-        (base32 "0a0awp059g6x5cvpbprmy5hk1y5r2x1kpjva5202xj7ibp70akq1"))))
+        (base32 "1s8j09q7zscyd2jyy57ikwqms733g1dxvsqldwbmwf7s0376xb1q"))))
     (properties `((upstream-name . "vectorsurvR")))
     (build-system r-build-system)
     (arguments
@@ -6495,7 +6495,7 @@ analyses.")
                              r-knitr
                              r-kableextra
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-dt
                              r-dplyr))
     (native-inputs (list r-knitr))

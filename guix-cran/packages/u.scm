@@ -157,34 +157,6 @@ and benefit from all the features of the engine, such as preprocessings or
 estimation of forecast accuracy.")
     (license license:expat)))
 
-(define-public r-utiml
-  (package
-    (name "r-utiml")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "utiml" version))
-       (sha256
-        (base32 "16l64scyipj7plwyv6whv3h040sgvzxx43jhjxyhrcdci4pqwh94"))))
-    (properties `((upstream-name . "utiml")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rocr r-mldr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rivolli/utiml")
-    (synopsis "Utilities for Multi-Label Learning")
-    (description
-     "Multi-label learning strategies and others procedures to support multi- label
-classification in R. The package provides a set of multi-label procedures such
-as sampling methods, transformation strategies, threshold functions,
-pre-processing techniques and evaluation metrics.  A complete overview of the
-matter can be seen in Zhang, M. and Zhou, Z. (2014) <doi:10.1109/TKDE.2013.39>
-and Gibaja, E. and Ventura, S. (2015) A Tutorial on Multi-label Learning.")
-    (license license:gpl3)))
-
 (define-public r-utilsipea
   (package
     (name "r-utilsipea")

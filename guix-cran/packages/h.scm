@@ -8955,24 +8955,19 @@ this model to reach better fitness.")
 (define-public r-hgutils
   (package
     (name "r-hgutils")
-    (version "0.2.13")
+    (version "0.2.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hgutils" version))
        (sha256
-        (base32 "12sylpfjzh8avlk9b51vcz5dm8097z9k90n043pv3g5jzywd4wxd"))))
+        (base32 "1fphfwf555rwk95l7vflmvy3qf246q4lzpvkyyywj5k8wyqz43sq"))))
     (properties `((upstream-name . "hgutils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-magrittr
-                             r-lubridate
-                             r-limsolve
-                             r-dplyr
-                             r-crayon))
+    (propagated-inputs (list r-stringr r-magrittr r-lubridate r-dplyr r-crayon))
     (home-page "https://github.com/hvdboorn/hgutils")
     (synopsis "Collection of Utility Functions")
     (description
@@ -11049,13 +11044,13 @@ handling issues related to eigenvalues in covariance matrices.")
 (define-public r-heckmanem
   (package
     (name "r-heckmanem")
-    (version "0.2-1")
+    (version "0.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HeckmanEM" version))
        (sha256
-        (base32 "0rx9lbi5l0h95sg5lhjyrv31qmp4ziam84b98l2a05q56avck9jj"))))
+        (base32 "05ns063f29m0kqy58wic9yzqhj66g0bs4pwyk3isqxj5001s3x66"))))
     (properties `((upstream-name . "HeckmanEM")))
     (build-system r-build-system)
     (arguments

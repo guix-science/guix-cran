@@ -22497,19 +22497,19 @@ binomial distribution.")
 (define-public r-denim
   (package
     (name "r-denim")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "denim" version))
        (sha256
-        (base32 "0a26wc7lvg2il602vs8i3aw78fw8gg62fsvgxhsdlbsyjm7w7z1n"))))
+        (base32 "00d6c27iy9xarq3d8dw7s4rvy990xxprrj5pzwjr0z9sal0bavvf"))))
     (properties `((upstream-name . "denim")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-viridislite r-testthat r-rlang r-rcpp r-glue))
+    (propagated-inputs (list r-testthat r-rlang r-rcpp r-glue r-colorspace))
     (native-inputs (list r-knitr))
     (home-page "https://drthinhong.com/denim/")
     (synopsis
@@ -32432,13 +32432,13 @@ extract the separate island colonists and store them.")
 (define-public r-daisie
   (package
     (name "r-daisie")
-    (version "4.5.0")
+    (version "4.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DAISIE" version))
        (sha256
-        (base32 "0pviqla4w5bqrkly7apnflpndzr2fq739cskwd51xgwv20lkyc3w"))))
+        (base32 "1104y5a8ycahajpbgfgkmrcmavq4g7n3szvbsnwryr9v7fmabqa4"))))
     (properties `((upstream-name . "DAISIE")))
     (build-system r-build-system)
     (arguments

@@ -6183,33 +6183,6 @@ deploying countries.")
 output modifying the resulting template.")
     (license license:gpl2+)))
 
-(define-public r-trmf
-  (package
-    (name "r-trmf")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TRMF" version))
-       (sha256
-        (base32 "1ar4shr2r58ksk7lzi3dwinp06d7inffrfmnvyb1s289swxg9a1w"))))
-    (properties `((upstream-name . "TRMF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix r-limsolve r-generics))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=TRMF")
-    (synopsis "Temporally Regularized Matrix Factorization")
-    (description
-     "This package provides functions to estimate temporally regularized matrix
-factorizations (TRMF) for forecasting and imputing values in short but
-high-dimensional time series.  Uses regularized alternating least squares to
-compute the factorization, allows for several types of constraints on matrix
-factors and natively handles weighted and missing data.")
-    (license license:gpl3)))
-
 (define-public r-triversity
   (package
     (name "r-triversity")
@@ -6440,13 +6413,13 @@ summaries binned by time interval from Markov Chain Monte Carlo simulations.")
 (define-public r-tripack
   (package
     (name "r-tripack")
-    (version "1.3-9.2")
+    (version "1.3-9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tripack" version))
        (sha256
-        (base32 "0in9jlqni00qy9czpw7lnhm846ijxqbm02z8dy5bhgmh9v048brv"))))
+        (base32 "0ximarlnrgldny2wf1ygzh2id72cvrx8fplk49kq1qwbvjf21sj0"))))
     (properties `((upstream-name . "tripack")))
     (build-system r-build-system)
     (arguments
@@ -6461,8 +6434,7 @@ package providing both triangulation and generation of voronoi mosaics of
 irregular spaced data.  Please note that most of the functions are now also
 covered in package interp, which is a re-implementation from scratch under a
 free license based on a different triangulation algorithm.")
-    (license (list (license:fsdg-compatible "ACM")
-                   (license:fsdg-compatible "file://LICENSE")))))
+    (license (license:fsdg-compatible "file://LICENSE"))))
 
 (define-public r-trip
   (package
@@ -8468,35 +8440,6 @@ Germany, as well as by the the project @code{ArtIGROW}, which is a part of the
 WIR!-Alliance @code{ArtIFARM} â Artificial Intelligence in Farming funded by
 the German Federal Ministry of Education and Research (FKZ: 03WIR4805).")
     (license license:gpl3)))
-
-(define-public r-treedater
-  (package
-    (name "r-treedater")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "treedater" version))
-       (sha256
-        (base32 "007rdrbv3v1z3qbyasla22rck105sqlqh93yfmxklihdydl7smfd"))))
-    (properties `((upstream-name . "treedater")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-limsolve r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=treedater")
-    (synopsis
-     "Fast Molecular Clock Dating of Phylogenetic Trees with Rate Variation")
-    (description
-     "This package provides functions for estimating times of common ancestry and
-molecular clock rates of evolution using a variety of evolutionary models,
-parametric and nonparametric bootstrap confidence intervals, methods for
-detecting outlier lineages, root-to-tip regression, and a statistical test for
-selecting molecular clock models.  The methods are described in Volz, E.M. and
-S.D.W. Frost (2017) <doi:10.1093/ve/vex025>.")
-    (license license:gpl2)))
 
 (define-public r-treeda
   (package
@@ -15861,13 +15804,13 @@ project template for Rstudio'.")
 (define-public r-tinyplot
   (package
     (name "r-tinyplot")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyplot" version))
        (sha256
-        (base32 "0f859ig41jj40g8hhik5dxnxb34743y67lyw8cqmbmh8xljr9yc1"))))
+        (base32 "1v8jjj9ygl9lk94l2qr95irljzg7zanljnn5h31nwcpb54fkzcf6"))))
     (properties `((upstream-name . "tinyplot")))
     (build-system r-build-system)
     (arguments
@@ -30201,6 +30144,38 @@ are provided.  The package contains rendering for HTML5, Rmarkdown and an
 indexing format for use in tracing and tracking are provided.")
     (license license:gpl3)))
 
+(define-public r-tangles
+  (package
+    (name "r-tangles")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tangles" version))
+       (sha256
+        (base32 "0sm1pdmg7c2ikhmf8xniv37m3hxiq9am24xvpcx4i1yny78jgqky"))))
+    (properties `((upstream-name . "tangles")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-sf r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tangles")
+    (synopsis "Anonymisation of Spatial Point Patterns and Grids")
+    (description
+     "This package provides methods for anonymisation of spatial datasets while
+preserving spatial structure and relationships.  Original coordinates or raster
+geometries are transformed using randomized or predefined vertical shifts,
+horizontal shifts, and rotations.  Compatible with point-based data in matrix',
+data.frame', or sf formats, as well as terra raster objects.  Supports
+reversible anonymisation workflows, hash-based validation, shapefile export, and
+consistent tangling across related datasets using stored transformation
+sequences.  Approach informed by the De-Identification Decision Making Framework
+(CM OâKeefe, S Otorepec, M Elliot, E Mackey, and K OâHara 2017)
+<doi:10.4225/08/59c169433efd4>.")
+    (license license:gpl2)))
+
 (define-public r-tangledfeatures
   (package
     (name "r-tangledfeatures")
@@ -30430,47 +30405,6 @@ visual insights into the nature, timing and quality of time-aligned annotations
 in conversational corpora.  For more details, see Dingemanse et al., (2022)
 <doi:10.18653/v1/2022.acl-long.385>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
-(define-public r-takos
-  (package
-    (name "r-takos")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "takos" version))
-       (sha256
-        (base32 "09w9lkqhxdb26fvrsb8n16601kqpr2smplipx3lj6cdgbyhb1hqz"))))
-    (properties `((upstream-name . "takos")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-smoother
-                             r-sfsmisc
-                             r-segmented
-                             r-pracma
-                             r-minpack-lm
-                             r-mass
-                             r-devemf
-                             r-desolve
-                             r-data-table
-                             r-colorramps
-                             r-broom
-                             r-baseline))
-    (home-page "https://github.com/sere3s/takos")
-    (synopsis "Analysis of Differential Calorimetry Scans")
-    (description
-     "It includes functions for applying methodologies utilized for single-process
-kinetic analysis of solid-state processes were recently summarized and described
-in the Recommendation of ICTAC Kinetic Committee.  These methods work with the
-basic kinetic equation.  The Methodologies included refers to Avrami, Friedman,
-Kissinger, Ozawa, OFM, Mo, Starink, isoconversional methodology (Vyazovkin)
-according to ICATAC Kinetics Committee recommendations as reported in Vyazovkin
-S, Chrissafis K, Di Lorenzo ML, et al.  ICTAC Kinetics Committee recommendations
-for collecting experimental thermal analysis data for kinetic computations.
-Thermochim Acta.  2014;590:1-23. <doi:10.1016/J.TCA.2014.05.036> .")
-    (license license:gpl2)))
 
 (define-public r-taipan
   (package

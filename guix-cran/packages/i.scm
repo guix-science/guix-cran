@@ -8634,37 +8634,6 @@ inconsistencies).  This suite of tables is useful for testing with packages that
 focus on data validation and data documentation.")
     (license license:expat)))
 
-(define-public r-integratedmrf
-  (package
-    (name "r-integratedmrf")
-    (version "1.1.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IntegratedMRF" version))
-       (sha256
-        (base32 "0kklgc48cib4bjfs9qbw13nkp8xyjdazrg6z15x69jylnxyakic7"))))
-    (properties `((upstream-name . "IntegratedMRF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-multivariaterandomforest r-limsolve
-                             r-ggplot2 r-bootstrap))
-    (home-page "https://cran.r-project.org/package=IntegratedMRF")
-    (synopsis
-     "Integrated Prediction using Uni-Variate and Multivariate Random Forests")
-    (description
-     "An implementation of a framework for drug sensitivity prediction from various
-genetic characterizations using ensemble approaches.  Random Forests or
-Multivariate Random Forest predictive models can be generated from each genetic
-characterization that are then combined using a Least Square Regression
-approach.  It also provides options for the use of different error estimation
-approaches of Leave-one-out, Bootstrap, N-fold cross validation and
-0.632+Bootstrap along with generation of prediction confidence interval using
-Jackknife-after-Bootstrap approach.")
-    (license license:gpl3)))
-
 (define-public r-integratedjm
   (package
     (name "r-integratedjm")
@@ -9779,6 +9748,35 @@ geohydrologic data have been structured to facilitate analysis.")
 Used to support packages and scripts written by researchers at the United States
 Geological Survey (USGS) Idaho National Laboratory Project Office.")
     (license license:cc0)))
+
+(define-public r-inlatools
+  (package
+    (name "r-inlatools")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "INLAtools" version))
+       (sha256
+        (base32 "1jwaw90sshk3jrv503j11hrcd4iq1sd5zjmpqqyfwczgal2c767d"))))
+    (properties `((upstream-name . "INLAtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix))
+    (home-page "https://cran.r-project.org/package=INLAtools")
+    (synopsis "Functionalities for the 'INLA' Package")
+    (description
+     "Contain code to work with latent Gaussian Markov random field (GMRF) models.
+Queries for the cgeneric interface, specified as a way to implement new GMRF
+models to be fitted as model components in the INLA package
+(<https://www.r-inla.org>).  The implemented functionalities leverage the use of
+cgeneric models and provide a way to debug the code as well to work with the
+prior for the model parameters and to sample from it.  A Kronecker product
+method is also implemented to work with the four possible combinations between a
+cgeneric and a rgeneric model.")
+    (license license:gpl2+)))
 
 (define-public r-inlaspacetime
   (package

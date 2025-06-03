@@ -591,13 +591,13 @@ their names easy to remember and easy to deploy.")
 (define-public r-numericensembles
   (package
     (name "r-numericensembles")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NumericEnsembles" version))
        (sha256
-        (base32 "1pcwc7mnix3xjsf4ylzhl7n5ar9nyphjyy2i1d2lr3k0psfa87x4"))))
+        (base32 "1pzidh7lyccgj3c78fmdjwv2mhsqn0cdq0y4zshdfci0m95b1acg"))))
     (properties `((upstream-name . "NumericEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -6775,38 +6775,6 @@ calculations.  This package can be easily inserted into existing analysis
 workflows by users to help with analyzing and interpreting NMR data.")
     (license license:expat)))
 
-(define-public r-nmrphasing
-  (package
-    (name "r-nmrphasing")
-    (version "1.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NMRphasing" version))
-       (sha256
-        (base32 "1s71n8mwqw3fazcgvdisk9m1s25x033v1id80mvra78kpalw3vzg"))))
-    (properties `((upstream-name . "NMRphasing")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-signal r-massspecwavelet r-baseline))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=NMRphasing")
-    (synopsis
-     "Phase Error Correction and Baseline Correction for One Dimensional ('1D') 'NMR' Data")
-    (description
-     "There are three distinct approaches for phase error correction, they are: a
-single linear model with a choice of optimization functions, multiple linear
-models with optimization function choices and a shrinkage-based method.  The
-methodology is based on our new algorithms and various references (Binczyk et
-al. (2015) <doi:10.1186/1475-925X-14-S2-S5>,Chen et al. (2002)
-<doi:10.1016/S1090-7807(02)00069-1>, de Brouwer (2009)
-<doi:10.1016/j.jmr.2009.09.017>, DÅ¾akula (2000) <doi:10.1006/jmre.2000.2123>,
-Ernst (1969) <doi:10.1016/0022-2364(69)90003-1>, Liland et al. (2010)
-<doi:10.1366/000370210792434350>).")
-    (license license:expat)))
-
 (define-public r-nmof
   (package
     (name "r-nmof")
@@ -10960,13 +10928,13 @@ error of the regression coeffcient (sescree); 8.  Nelson R2; 9.  Bartlett khi-2;
 (define-public r-nexus
   (package
     (name "r-nexus")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nexus" version))
        (sha256
-        (base32 "1vsri865x7k69l10b4xw5yjh8rrjl3x3zqc5f6ssascmc3hiascd"))))
+        (base32 "0796ysfvk5yf90dyn2j4n7jgpdlw97njpg40wpjn2y2bmzmd4458"))))
     (properties `((upstream-name . "nexus")))
     (build-system r-build-system)
     (arguments
@@ -14420,46 +14388,6 @@ protein-protein interaction network.")
 nephrology.")
     (license license:gpl3+)))
 
-(define-public r-neotoma2
-  (package
-    (name "r-neotoma2")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "neotoma2" version))
-       (sha256
-        (base32 "13l41cypjpiqdkpkdwz7z39iiza2z6jcxj4sgm85713m7ws9dyak"))))
-    (properties `((upstream-name . "neotoma2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wk
-                             r-uuid
-                             r-tidyr
-                             r-stringr
-                             r-sf
-                             r-rlang
-                             r-purrr
-                             r-progress
-                             r-magrittr
-                             r-lubridate
-                             r-leaflet
-                             r-jsonlite
-                             r-httr
-                             r-gtools
-                             r-geojsonsf
-                             r-dplyr
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/NeotomaDB/neotoma2")
-    (synopsis "Working with the Neotoma Paleoecology Database")
-    (description
-     "Access and manipulation of data using the Neotoma Paleoecology Database.
-<https://api.neotomadb.org/api-docs/>.")
-    (license license:expat)))
-
 (define-public r-neonutilities
   (package
     (name "r-neonutilities")
@@ -17212,13 +17140,13 @@ R package uses the Nasdaq Data Link API. For more information go to
 (define-public r-nascar-data
   (package
     (name "r-nascar-data")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nascaR.data" version))
        (sha256
-        (base32 "0nvnpq9c63c23p102x6i6jc8gx2hqlhh2py2ywy1r20p6hx6qprk"))))
+        (base32 "0nf58nn7dz3dxw149n79zrqi4avbv50f6dz1pb4dcwl9xbngmbcw"))))
     (properties `((upstream-name . "nascaR.data")))
     (build-system r-build-system)
     (arguments

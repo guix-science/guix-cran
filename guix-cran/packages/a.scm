@@ -14291,20 +14291,20 @@ and includes negative tests.  The implementation is based on testthat'.")
 (define-public r-amr
   (package
     (name "r-amr")
-    (version "2.1.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AMR" version))
        (sha256
-        (base32 "0dgql8s7jzk3cmjnvn09rsymz1zwzk2983rvcccl5z00x9d7yg7k"))))
+        (base32 "0s0iv4sdg18r25dr5ym4liz2sxrz561an8bhzqqzfpjq8xb23yil"))))
     (properties `((upstream-name . "AMR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://msberends.github.io/AMR/")
+    (home-page "https://amr-for-r.org")
     (synopsis "Antimicrobial Resistance Data Analysis")
     (description
      "This package provides functions to simplify and standardise antimicrobial
@@ -17583,13 +17583,13 @@ Fraiman and Li (2020) <@code{arXiv:2009.04550>}.")
 (define-public r-akima
   (package
     (name "r-akima")
-    (version "0.6-3.4")
+    (version "0.6-3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "akima" version))
        (sha256
-        (base32 "0gmdh5kvq455k82pvdsqbkk69bi7g0960jq5rcl3cbhxm297arcm"))))
+        (base32 "1j5nkn2m06gnzihmp48rb7zrvam8xx4pnqvxh183xm67qi3pqi68"))))
     (properties `((upstream-name . "akima")))
     (build-system r-build-system)
     (arguments
@@ -17606,9 +17606,10 @@ gridded data are available through this package, both for the bivariate case
 and ACM 697).  Linear interpolation of irregular gridded data is also covered by
 reusing D. J. Renkas triangulation code which is part of Akimas Fortran code.  A
 bilinear interpolator for regular grids was also added for comparison with the
-bicubic interpolator on regular grids.")
-    (license (list (license:fsdg-compatible "ACM")
-                   (license:fsdg-compatible "file://LICENSE")))))
+bicubic interpolator on regular grids.  Please note that most of the functions
+are now also covered in package interp, which is a re-implementation from
+scratch under a free license.")
+    (license (license:fsdg-compatible "file://LICENSE"))))
 
 (define-public r-akiflagger
   (package
@@ -17701,13 +17702,13 @@ solve other tasks in text mining as well.")
 (define-public r-aka
   (package
     (name "r-aka")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aka" version))
        (sha256
-        (base32 "0370rs9kz43azgclc11x8185sr5hq507mvk2pmwprwwj86j65vpk"))))
+        (base32 "10x9l3yg5li93pqvq3nmv9kwjw71kvs017lm6y852mji2brg9xmj"))))
     (properties `((upstream-name . "aka")))
     (build-system r-build-system)
     (arguments

@@ -9354,6 +9354,30 @@ identification and anomaly detection.")
 <doi:10.1080/10618600.2017.1371030>).")
     (license license:gpl3)))
 
+(define-public r-structenforcement
+  (package
+    (name "r-structenforcement")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "structenforcement" version))
+       (sha256
+        (base32 "1vj4kwp1g0d7k4viw9sybpm6jgpzjm50agxw8vwj92f34kqi1l67"))))
+    (properties `((upstream-name . "structenforcement")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-lubridate r-dplyr))
+    (home-page "https://cran.r-project.org/package=structenforcement")
+    (synopsis "Struct-Like Data Type Checking and Enforcement")
+    (description
+     "Enforcement of field types in lists.  A drop-in tool to allow for dynamic input
+data that might be questionably parsed or cast to be coerced into the specific
+desired format in a reasonably performant manner.")
+    (license license:expat)))
+
 (define-public r-strucchangercpp
   (package
     (name "r-strucchangercpp")
@@ -14645,6 +14669,34 @@ statistical matching when dealing with data from complex sample surveys are
 available too.")
     (license license:gpl2+)))
 
+(define-public r-statlingua
+  (package
+    (name "r-statlingua")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "statlingua" version))
+       (sha256
+        (base32 "0h1imq389wbrzynrr7bs92ihxpknylvs71yyzdsiwq4r1l7hdr9g"))))
+    (properties `((upstream-name . "statlingua")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bgreenwell/statlingua")
+    (synopsis "Explain Statistical Output with Large Language Models")
+    (description
+     "Transform complex statistical output into straightforward, understandable, and
+context-aware natural language descriptions using Large Language Models (LLMs),
+making complex analyses more accessible to individuals with varying statistical
+expertise.  It relies on the ellmer package to interface with LLM providers
+including @code{OpenAI} <https://openai.com/>, Google AI Studio
+<https://aistudio.google.com/>, and Anthropic <https://www.anthropic.com/> (API
+keys are required and managed via ellmer').")
+    (license license:gpl2+)))
+
 (define-public r-statisfactory
   (package
     (name "r-statisfactory")
@@ -15409,13 +15461,13 @@ Warin, Le Duc (2019) <doi:10.6084/m9.figshare.10544735>.")
 (define-public r-statbasics
   (package
     (name "r-statbasics")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statBasics" version))
        (sha256
-        (base32 "1hhwg2190bndjgmxmv37ihqdg665s9zn1h1smwshs59wk0r7bzjx"))))
+        (base32 "0zaxyk2m9pf6mfsrbq73y30zh55mw9wyvsnzai81hcz7fbaqw43x"))))
     (properties `((upstream-name . "statBasics")))
     (build-system r-build-system)
     (arguments
@@ -16188,6 +16240,31 @@ individual pages; splits single input PDF document into parts from given points.
 multiple raters for an object, typically an image, and this method fuses these
 ratings into one rating.  It uses an expectation-maximization method to estimate
 this rating and the individual specificity/sensitivity for each rater.")
+    (license license:gpl3)))
+
+(define-public r-stanza
+  (package
+    (name "r-stanza")
+    (version "1.0-3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stanza" version))
+       (sha256
+        (base32 "0gs4yn6abhmgyvzvspqwnlbnw8rnvzxal4n4qrn39p0dxj9jyz7s"))))
+    (properties `((upstream-name . "stanza")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reticulate r-nlp r-checkmate))
+    (home-page "https://cran.r-project.org/package=stanza")
+    (synopsis "'Stanza' - A 'R' NLP Package for Many Human Languages")
+    (description
+     "An interface to the Python package stanza
+<https://stanfordnlp.github.io/stanza/index.html>.  stanza is a Python NLP
+library for many human languages.  It contains support for running various
+accurate natural language processing tools on 60+ languages.")
     (license license:gpl3)))
 
 (define-public r-stanmomo
@@ -18057,13 +18134,13 @@ C++ library for Bayesian estimation.")
 (define-public r-ssmodels
   (package
     (name "r-ssmodels")
-    (version "1.0.1")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssmodels" version))
        (sha256
-        (base32 "19w3vr4zz23xbb4mr4zwqwj024i10hgnpm0cf47qh5c1zkjcwdib"))))
+        (base32 "195vl4ni1wwlw1m0ibfnvcdrfp8594l812mcjp5pw8j1lav8403b"))))
     (properties `((upstream-name . "ssmodels")))
     (build-system r-build-system)
     (arguments
@@ -18071,7 +18148,7 @@ C++ library for Bayesian estimation.")
       #:tests? #f))
     (propagated-inputs (list r-sn r-rdpack r-pracma r-numderiv r-misctools))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ssmodels")
+    (home-page "https://fsbmat-ufv.github.io/ssmodels/")
     (synopsis "Sample Selection Models")
     (description
      "In order to facilitate the adjustment of the sample selection models existing in
@@ -18079,16 +18156,19 @@ the literature, we created the ssmodels package.  Our package allows the
 adjustment of the classic Heckman model (Heckman (1976), Heckman (1979)
 <doi:10.2307/1912352>), and the estimation of the parameters of this model via
 the maximum likelihood method and two-step method, in addition to the adjustment
-of the Heckman-t models, introduced in the literature by Marchenko and Genton
+of the Heckman-t models introduced in the literature by Marchenko and Genton
 (2012) <doi:10.1080/01621459.2012.656011> and the Heckman-Skew model introduced
 in the literature by Ogundimu and Hutton (2016) <doi:10.1111/sjos.12171>.  We
 also implemented functions to adjust the generalized version of the Heckman
 model, introduced by Bastos, Barreto-Souza, and Genton (2021)
 <doi:10.5705/ss.202021.0068>, that allows the inclusion of covariables to the
-dispersion and correlation parameters and a function to adjust the Heckman-BS
+dispersion and correlation parameters, and a function to adjust the Heckman-BS
 model introduced by Bastos and Barreto-Souza (2020)
 <doi:10.1080/02664763.2020.1780570> that uses the Birnbaum-Saunders distribution
-as a joint distribution of the selection and primary regression variables.")
+as a joint distribution of the selection and primary regression variables.  This
+package extends and complements existing R packages such as
+@code{sampleSelection} (Toomet and Henningsen, 2008) and ssmrob (Zhelonkin et
+al., 2016), providing additional robust and flexible sample selection models.")
     (license license:gpl2+)))
 
 (define-public r-ssmn
@@ -18820,13 +18900,13 @@ needed to pre-installed.  Hanzelmann, S., Castelo, R., and Guinney, J. (2013)
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "1.5.42")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDforR" version))
        (sha256
-        (base32 "0nkmnn6xx6m6cq30aq4jd5d2rxcjqijjfkg5ly1dpkz6kdbx96h1"))))
+        (base32 "0qg3p4mmd59xdf49msg29m8d13li7snzmmrav2kaflawbwmz4h8x"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (arguments
@@ -25194,65 +25274,6 @@ upon \"Time-Series Anomaly Detection Service at Microsoft\", Ren, H., Xu, B.,
 Wang, Y., et al., (2019) <doi:10.48550/@code{arXiv.1906.03821>}.")
     (license license:expat)))
 
-(define-public r-spectralanalysis
-  (package
-    (name "r-spectralanalysis")
-    (version "4.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spectralAnalysis" version))
-       (sha256
-        (base32 "0b2f992p7vpzhzncrvpdkifbgymyiqxz66yk6md3j39wmx3ijkjw"))))
-    (properties `((upstream-name . "spectralAnalysis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-viridis
-                             r-signal
-                             r-rcolorbrewer
-                             r-plyr
-                             r-pls
-                             r-plotly
-                             r-nnls
-                             r-nmf
-                             r-magrittr
-                             r-jsonlite
-                             r-hnmf
-                             r-ggplot2
-                             r-dplyr
-                             r-data-table
-                             r-biocgenerics
-                             r-baseline))
-    (native-inputs (list r-knitr))
-    (home-page "https://openanalytics.eu")
-    (synopsis "Pre-Process, Visualize and Analyse Spectral Data")
-    (description
-     "Infrared, near-infrared and Raman spectroscopic data measured during chemical
-reactions, provide structural fingerprints by which molecules can be identified
-and quantified.  The application of these spectroscopic techniques as inline
-process analytical tools (PAT), provides the pharmaceutical and chemical
-industry with novel tools, allowing to monitor their chemical processes,
-resulting in a better process understanding through insight in reaction rates,
-mechanistics, stability, etc.  Data can be read into R via the generic
-spc-format, which is generally supported by spectrometer vendor software.
-Versatile pre-processing functions are available to perform baseline correction
-by linking to the baseline package; noise reduction via the signal package; as
-well as time alignment, normalization, differentiation, integration and
-interpolation.  Implementation based on the S4 object system allows storing a
-pre-processing pipeline as part of a spectral data object, and easily
-transferring it to other datasets.  Interactive plotting tools are provided
-based on the plotly package.  Non-negative matrix factorization (NMF) has been
-implemented to perform multivariate analyses on individual spectral datasets or
-on multiple datasets at once.  NMF provides a parts-based representation of the
-spectral data in terms of spectral signatures of the chemical compounds and
-their relative proportions.  See @code{hNMF'-package} for references on
-available methods.  The functionality to read in spc-files was adapted from the
-@code{hyperSpec} package.")
-    (license license:gpl3)))
-
 (define-public r-spectral
   (package
     (name "r-spectral")
@@ -25335,37 +25356,6 @@ larger set of satellites.  It is also possible to search the archive for
 available images over the area of interest for a given (past) period, get the
 URL links to download the whole image tiles, or alternatively to download the
 image for just the area of interest based on selected spectral bands.")
-    (license license:gpl3)))
-
-(define-public r-spectacles
-  (package
-    (name "r-spectacles")
-    (version "0.5-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spectacles" version))
-       (sha256
-        (base32 "10qc46kspnmc85w3a29jx1fj0jxpzxa9b5ygpszhjkz3w8q6s8i4"))))
-    (properties `((upstream-name . "spectacles")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-signal
-                             r-reshape2
-                             r-plyr
-                             r-ggplot2
-                             r-epir
-                             r-baseline))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/pierreroudier/spectacles/")
-    (synopsis
-     "Storing, Manipulating and Analysis Spectroscopy and Associated Data")
-    (description
-     "Stores and eases the manipulation of spectra and associated data, with dedicated
-classes for spatial and soil-related data.")
     (license license:gpl3)))
 
 (define-public r-spect
@@ -26091,13 +26081,13 @@ Covariance Matrix,\" Biometrika.  98(4).  807--820.")
 (define-public r-spcosa
   (package
     (name "r-spcosa")
-    (version "0.4-2")
+    (version "0.4-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spcosa" version))
        (sha256
-        (base32 "1y3qbz9kslb5k7h62pk7g2lk69y9i625r2q0dychhj91fdqx30n4"))))
+        (base32 "0nn7z7xyblsaq7hmvnlf8fxi7rc0vyii7m3qgzkdhj6d0j9xxngp"))))
     (properties `((upstream-name . "spcosa")))
     (build-system r-build-system)
     (arguments
@@ -31359,13 +31349,13 @@ constraints\".  Biometrics, 75, 539-550. <doi:10.1111/biom.12997>.")
 (define-public r-sorcering
   (package
     (name "r-sorcering")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sorcering" version))
        (sha256
-        (base32 "1w0kwc7wbkdl41kcjgdc68hscklg10byzbk309r13s1101xn6g3v"))))
+        (base32 "16wia8z97l4f33jvp5sb36sfifsbpjk4ix1xb2c1wzxap881qwd2"))))
     (properties `((upstream-name . "sorcering")))
     (build-system r-build-system)
     (arguments
@@ -39595,106 +39585,6 @@ expression pattern to a query dataset Soul J, Hardingham TE, Boot-Handford RP,
 Schwartz JM (2019) <doi:10.1093/bioinformatics/bty947>.")
     (license license:expat)))
 
-(define-public r-skedastic
-  (package
-    (name "r-skedastic")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "skedastic" version))
-       (sha256
-        (base32 "1ln0scwgvpif610jgwdl0rzlx41i8w2ri1vaq0kl11vg69xp5105"))))
-    (properties `((upstream-name . "skedastic")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-slam
-                             r-roi-plugin-qpoases
-                             r-roi
-                             r-rfast
-                             r-rdpack
-                             r-quadprogxt
-                             r-quadprog
-                             r-pracma
-                             r-osqp
-                             r-mgcv
-                             r-matrix
-                             r-mass
-                             r-inflection
-                             r-compquadform
-                             r-caret
-                             r-broom
-                             r-bazar))
-    (home-page "https://github.com/tjfarrar/skedastic")
-    (synopsis "Handling Heteroskedasticity in the Linear Regression Model")
-    (description
-     "This package implements numerous methods for testing for, modelling, and
-correcting for heteroskedasticity in the classical linear regression model.  The
-most novel contribution of the package is found in the functions that implement
-the as-yet-unpublished auxiliary linear variance models and auxiliary nonlinear
-variance models that are designed to estimate error variances in a
-heteroskedastic linear regression model.  These models follow principles of
-statistical learning described in Hastie (2009) <doi:10.1007/978-0-387-21606-5>.
- The nonlinear version of the model is estimated using quasi-likelihood methods
-as described in Seber and Wild (2003, ISBN: 0-471-47135-6).  Bootstrap methods
-for approximate confidence intervals for error variances are implemented as
-described in Efron and Tibshirani (1993, ISBN: 978-1-4899-4541-9), including
-also the expansion technique described in Hesterberg (2014)
-<doi:10.1080/00031305.2015.1089789>.  The wild bootstrap employed here follows
-the description in Davidson and Flachaire (2008)
-<doi:10.1016/j.jeconom.2008.08.003>.  Tuning of hyper-parameters makes use of a
-golden section search function that is modelled after the MATLAB function of
-Zarnowiec (2022)
-<https://www.mathworks.com/matlabcentral/fileexchange/25919-golden-section-method-algorithm>.
- A methodological description of the algorithm can be found in Fox (2021, ISBN:
-978-1-003-00957-3).  There are 25 different functions that implement hypothesis
-tests for heteroskedasticity.  These include a test based on Anscombe (1961)
-<https://projecteuclid.org/euclid.bsmsp/1200512155>, Ramsey's (1969) BAMSET Test
-<doi:10.1111/j.2517-6161.1969.tb00796.x>, the tests of Bickel (1978)
-<doi:10.1214/aos/1176344124>, Breusch and Pagan (1979) <doi:10.2307/1911963>
-with and without the modification proposed by Koenker (1981)
-<doi:10.1016/0304-4076(81)90062-2>, Carapeto and Holt (2003)
-<doi:10.1080/0266476022000018475>, Cook and Weisberg (1983)
-<doi:10.1093/biomet/70.1.1> (including their graphical methods), Diblasi and
-Bowman (1997) <doi:10.1016/S0167-7152(96)00115-0>, Dufour, Khalaf, Bernard, and
-Genest (2004) <doi:10.1016/j.jeconom.2003.10.024>, Evans and King (1985)
-<doi:10.1016/0304-4076(85)90085-5> and Evans and King (1988)
-<doi:10.1016/0304-4076(88)90006-1>, Glejser (1969)
-<doi:10.1080/01621459.1969.10500976> as formulated by Mittelhammer, Judge and
-Miller (2000, ISBN: 0-521-62394-4), Godfrey and Orme (1999)
-<doi:10.1080/07474939908800438>, Goldfeld and Quandt (1965)
-<doi:10.1080/01621459.1965.10480811>, Harrison and @code{McCabe} (1979)
-<doi:10.1080/01621459.1979.10482544>, Harvey (1976) <doi:10.2307/1913974>, Honda
-(1989) <doi:10.1111/j.2517-6161.1989.tb01749.x>, Horn (1981)
-<doi:10.1080/03610928108828074>, Li and Yao (2019)
-<doi:10.1016/j.ecosta.2018.01.001> with and without the modification of Bai,
-Pan, and Yin (2016) <doi:10.1007/s11749-017-0575-x>, Rackauskas and Zuokas
-(2007) <doi:10.1007/s10986-007-0018-6>, Simonoff and Tsai (1994)
-<doi:10.2307/2986026> with and without the modification of Ferrari, Cysneiros,
-and Cribari-Neto (2004) <doi:10.1016/S0378-3758(03)00210-6>, Szroeter (1978)
-<doi:10.2307/1913831>, Verbyla (1993) <doi:10.1111/j.2517-6161.1993.tb01918.x>,
-White (1980) <doi:10.2307/1912934>, Wilcox and Keselman (2006)
-<doi:10.1080/10629360500107923>, Yuce (2008)
-<https://dergipark.org.tr/en/pub/iuekois/issue/8989/112070>, and Zhou, Song, and
-Thompson (2015) <doi:10.1002/cjs.11252>.  Besides these heteroskedasticity
-tests, there are supporting functions that compute the BLUS residuals of Theil
-(1965) <doi:10.1080/01621459.1965.10480851>, the conditional two-sided p-values
-of Kulinskaya (2008) <@code{arXiv:0810.2124v1>}, and probabilities for the
-nonparametric trend statistic of Lehmann (1975, ISBN: 0-816-24996-1).  For
-handling heteroskedasticity, in addition to the new auxiliary variance model
-methods, there is a function to implement various existing
-Heteroskedasticity-Consistent Covariance Matrix Estimators from the literature,
-such as those of White (1980) <doi:10.2307/1912934>, @code{MacKinnon} and White
-(1985) <doi:10.1016/0304-4076(85)90158-7>, Cribari-Neto (2004)
-<doi:10.1016/S0167-9473(02)00366-3>, Cribari-Neto et al. (2007)
-<doi:10.1080/03610920601126589>, Cribari-Neto and da Silva (2011)
-<doi:10.1007/s10182-010-0141-2>, Aftab and Chang (2016)
-<doi:10.18187/pjsor.v12i2.983>, and Li et al. (2017)
-<doi:10.1080/00949655.2016.1198906>.")
-    (license license:expat)))
-
 (define-public r-skater
   (package
     (name "r-skater")
@@ -47075,13 +46965,13 @@ priors.  Details on the algorithms used are provided in Cadonna et al. (2020)
 (define-public r-shrinktvp
   (package
     (name "r-shrinktvp")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shrinkTVP" version))
        (sha256
-        (base32 "0fcvx7pz4mn89g9g8x32wgqil9xyh29vjxx8hlvv5385ig2wd4lw"))))
+        (base32 "13mbcrvsx94lfykzlwkdiy5n5hh4rrmarpq8i9ql3i2cy1139wd5"))))
     (properties `((upstream-name . "shrinkTVP")))
     (build-system r-build-system)
     (arguments
@@ -47110,7 +47000,8 @@ and static.  Details on the algorithms used are provided in Bitto and
 FrÃ¼hwirth-Schnatter (2019) <doi:10.1016/j.jeconom.2018.11.006> and Cadonna et
 al. (2020) <doi:10.3390/econometrics8020020> and Knaus and FrÃ¼hwirth-Schnatter
 (2023) <doi:10.48550/@code{arXiv.2312.10487>}.  For details on the package,
-please see Knaus et al. (2021) <doi:10.18637/jss.v100.i13>.")
+please see Knaus et al. (2021) <doi:10.18637/jss.v100.i13>.  For the
+multivariate extension, see the @code{shrinkTVPVAR} package.")
     (license license:gpl2+)))
 
 (define-public r-shrinkgpr
@@ -48414,13 +48305,13 @@ Powered by the html2canvas @code{JavaScript} library.")
 (define-public r-shinyscholar
   (package
     (name "r-shinyscholar")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyscholar" version))
        (sha256
-        (base32 "05ip7c8v8v5jy930fnhd10ljzvzqhychsbyilc9l1qjkpw16hc27"))))
+        (base32 "1h6h5m8cxqdkb4cpfv1wwmfb07949a7w1hh6aawq2dm2racgl40c"))))
     (properties `((upstream-name . "shinyscholar")))
     (build-system r-build-system)
     (arguments
@@ -48428,7 +48319,6 @@ Powered by the html2canvas @code{JavaScript} library.")
       #:tests? #f))
     (propagated-inputs (list r-zip
                              r-shiny
-                             r-magrittr
                              r-leaflet
                              r-knitr
                              r-glue
@@ -51834,13 +51724,13 @@ Steiner, R. Jock @code{MacKay} (2005, ISBN: 0873896467).")
 (define-public r-shelter
   (package
     (name "r-shelter")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shelter" version))
        (sha256
-        (base32 "0mr6gc3bf6j1aw8v2hkiv0zqzirdhkqmziq3m3is61xnrdgqzsz0"))))
+        (base32 "1dkagyz1f1p20qdxh4j36fdhp4c36pdp9azsxp4vmzdy6bw7ffa4"))))
     (properties `((upstream-name . "shelter")))
     (build-system r-build-system)
     (arguments
@@ -64368,32 +64258,6 @@ spherical score.  For two-alternative forecasts, also includes functionality for
 plotting scores that one would obtain under specific scoring rules.")
     (license license:gpl2)))
 
-(define-public r-scoreplus
-  (package
-    (name "r-scoreplus")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ScorePlus" version))
-       (sha256
-        (base32 "07hmrx1k256i4cs605j5bpg6brzypryxlcnjkzqak8cw4f26k24q"))))
-    (properties `((upstream-name . "ScorePlus")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rspectra r-limsolve r-igraphdata r-igraph
-                             r-combinat))
-    (home-page "https://cran.r-project.org/package=ScorePlus")
-    (synopsis "Implementation of SCORE, SCORE+ and Mixed-SCORE")
-    (description
-     "Implementation of community detection algorithm SCORE in the paper J. Jin (2015)
-<@code{arXiv:1211.5803>}, and SCORE+ in J. Jin, Z. Ke and S. Luo (2018)
-<@code{arXiv:1811.05927>}.  Membership estimation algorithm called Mixed-SCORE
-in J. Jin, Z. Ke and S. Luo (2017) <@code{arXiv:1708.07852>}.")
-    (license license:gpl2)))
-
 (define-public r-scorepeak
   (package
     (name "r-scorepeak")
@@ -64813,64 +64677,6 @@ This package is supplement to the paper \"A mechanistic model for the negative
 binomial distribution of single-cell @code{mRNA} counts\" by Lisa Amrhein, Kumar
 Harsha and Christiane Fuchs (2019) <doi:10.1101/657619> available on
 @code{bioRxiv}.")
-    (license license:gpl3)))
-
-(define-public r-scmappr
-  (package
-    (name "r-scmappr")
-    (version "1.0.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "scMappR" version))
-       (sha256
-        (base32 "0a2jm2a10lawqrlcglaz31gx3kbvjz19f4ynhllkj0px61awxjah"))))
-    (properties `((upstream-name . "scMappR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-seurat
-                             r-reshape
-                             r-pheatmap
-                             r-pcamethods
-                             r-pbapply
-                             r-limsolve
-                             r-gsva
-                             r-gprofiler2
-                             r-gprofiler
-                             r-ggplot2
-                             r-downloader
-                             r-adapts))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=scMappR")
-    (synopsis "Single Cell Mapper")
-    (description
-     "The single cell mapper (@code{scMappR}) R package contains a suite of
-bioinformatic tools that provide experimentally relevant cell-type specific
-information to a list of differentially expressed genes (DEG).  The function
-\"@code{scMappR_and_pathway_analysis}\" reranks DEGs to generate cell-type
-specificity scores called cell-weighted fold-changes.  Users input a list of
-DEGs, normalized counts, and a signature matrix into this function.
-@code{scMappR} then re-weights bulk DEGs by cell-type specific expression from
-the signature matrix, cell-type proportions from RNA-seq deconvolution and the
-ratio of cell-type proportions between the two conditions to account for changes
-in cell-type proportion.  With @code{cwFold-changes} calculated, @code{scMappR}
-uses two approaches to utilize @code{cwFold-changes} to complete cell-type
-specific pathway analysis.  The \"process_@code{dgTMatrix_lists}\" function in the
-@code{scMappR} package contains an automated @code{scRNA-seq} processing
-pipeline where users input @code{scRNA-seq} count data, which is made compatible
-for @code{scMappR} and other R packages that analyze @code{scRNA-seq} data.  We
-further used this to store hundreds up regularly updating signature matrices.
-The functions \"tissue_by_celltype_enrichment\", \"tissue_@code{scMappR_internal}\",
-and \"tissue_@code{scMappR_custom}\" combine these consistently processed
-@code{scRNAseq} count data with gene-set enrichment tools to allow for cell-type
-marker enrichment of a generic gene list (e.g. GWAS hits).  Reference:
-Sokolowski,D.J., Faykoo-Martinez,M., Erdman,L., Hou,H., Chan,C., Zhu,H.,
-Holmes,M.M., Goldenberg,A. and Wilson,M.D. (2021) Single-cell mapper
-(@code{scMappR}): using @code{scRNA-seq} to infer cell-type specificities of
-differentially expressed genes.  NAR Genomics and Bioinformatics.  3(1).
-Iqab011. <doi:10.1093/nargab/lqab011>.")
     (license license:gpl3)))
 
 (define-public r-scma
@@ -69178,13 +68984,13 @@ a network.")
 (define-public r-saros-base
   (package
     (name "r-saros-base")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saros.base" version))
        (sha256
-        (base32 "05zf6mxaycq2ac76dr19mr30n35zzhasskiqyy46vnbgx72r90i8"))))
+        (base32 "11qb91mnqxzs3ywl55rq1kwmcwvrpdbbvab37cgrcqgi6p6cq2a8"))))
     (properties `((upstream-name . "saros.base")))
     (build-system r-build-system)
     (arguments
@@ -69222,13 +69028,13 @@ drafted reports.")
 (define-public r-saros
   (package
     (name "r-saros")
-    (version "1.5.1")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saros" version))
        (sha256
-        (base32 "192y419lsdfbh760zla59jnmy9hnab8x9gyg4xjhbf95sgnd96ml"))))
+        (base32 "1dk9gixdxqhiyzb25zkdh0jsf5i0fbnnhqr7d2bw1arsfh348nar"))))
     (properties `((upstream-name . "saros")))
     (build-system r-build-system)
     (arguments

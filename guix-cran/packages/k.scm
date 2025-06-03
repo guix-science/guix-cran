@@ -6382,13 +6382,13 @@ is the first package implementing Karel in R.")
 (define-public r-karaoke
   (package
     (name "r-karaoke")
-    (version "2.0")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "karaoke" version))
        (sha256
-        (base32 "09fxf2pgs7nj96p8cfwc8ghwl8aqk6zal8njizbrz19m6l7ygxmk"))))
+        (base32 "0j50km7j6nmmpalhyzv2ydh69pj6ss5jgdqykiy83hcj1d2h4cac"))))
     (properties `((upstream-name . "karaoke")))
     (build-system r-build-system)
     (arguments

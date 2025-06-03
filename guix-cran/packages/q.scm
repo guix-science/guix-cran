@@ -240,13 +240,13 @@ accurate.  Tests can be found in Benati et al.(2017)
 (define-public r-qval
   (package
     (name "r-qval")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qval" version))
        (sha256
-        (base32 "1yl2klhpdics2ylsy4i6qmm73f1i0d4ypxcrad74mxsfki966idx"))))
+        (base32 "1kcd5sn49rmpzyvk8iqdz7cbxn36z9m5007dlrvfi53cjc4j4ljs"))))
     (properties `((upstream-name . "Qval")))
     (build-system r-build-system)
     (arguments
