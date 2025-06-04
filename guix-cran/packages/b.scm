@@ -19496,13 +19496,13 @@ summaries of hypothesis tests that can be easily aggregated across studies.")
 (define-public r-bfboinet
   (package
     (name "r-bfboinet")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfboinet" version))
        (sha256
-        (base32 "1yhl83fn5g3i6j8vbx2jkwmikms7hcy5n5i0fd5z2001hz979any"))))
+        (base32 "1m98gzld9y5a2mn6s0gibzsw06xxkkx7mfdgy35ciikviz7p2b37"))))
     (properties `((upstream-name . "bfboinet")))
     (build-system r-build-system)
     (arguments
@@ -21509,13 +21509,13 @@ assessing model adequacy.")
 (define-public r-bed
   (package
     (name "r-bed")
-    (version "1.6.0")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BED" version))
        (sha256
-        (base32 "0hma6wmrb6vqzhfsx5qgbsyw2kawpl80mmjac89xvfy1kmaz18qj"))))
+        (base32 "16sjiza20h6b71pqz753z4vb25l2plmpl9m6saz7jqm1ghi8g67z"))))
     (properties `((upstream-name . "BED")))
     (build-system r-build-system)
     (arguments
@@ -21528,6 +21528,7 @@ assessing model adequacy.")
                              r-readr
                              r-neo2r
                              r-miniui
+                             r-htmltools
                              r-dt
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -23785,13 +23786,13 @@ prediction on new data. <doi:10.18637/jss.v101.i05>.")
 (define-public r-bbknnr
   (package
     (name "r-bbknnr")
-    (version "1.1.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbknnR" version))
        (sha256
-        (base32 "0zwsk491pgfr0dxbpkw1zqa4fi4d8j1bdfiridxq6f07aypx8nmg"))))
+        (base32 "0pi4p2r0637zv25mj8y1kkc0fh0wj16adwpd25qijh0j0hz136v2"))))
     (properties `((upstream-name . "bbknnR")))
     (build-system r-build-system)
     (arguments
@@ -23802,13 +23803,13 @@ prediction on new data. <doi:10.18637/jss.v101.i05>.")
                              r-seuratobject
                              r-seurat
                              r-rtsne
+                             r-rnndescent
                              r-rlang
-                             r-reticulate
+                             r-rcppeigen
                              r-rcppannoy
                              r-rcpp
-                             r-matrix
-                             r-magrittr
                              r-glmnet
+                             r-future-apply
                              r-future))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ycli1995/bbknnR")

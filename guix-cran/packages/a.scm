@@ -21766,6 +21766,39 @@ et al. (1995) <doi:10.1201/b14835>, and Gamerman & Lopes (2006)
 <doi:10.1201/9781482296426>.")
     (license license:gpl3)))
 
+(define-public r-adsorptioncv
+  (package
+    (name "r-adsorptioncv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adsoRptionCV" version))
+       (sha256
+        (base32 "1q3ws53w8hrm38vsxh6kmd97ca1wjlsvq7j2gs5g2a8zajhrvi4a"))))
+    (properties `((upstream-name . "adsoRptionCV")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nls2))
+    (home-page "https://cran.r-project.org/package=adsoRptionCV")
+    (synopsis "Cross-Validation Methods for Adsorption Isotherm Models")
+    (description
+     "This package provides cross-validation tools for adsorption isotherm models,
+supporting both linear and non-linear forms.  Current methods cover commonly
+used isotherms including the Freundlich, Langmuir, and Temkin models.  This
+package implements K-fold and leave-one-out cross-validation (LOOCV) with
+optional clustering-based fold assignment to preserve underlying data structures
+during validation.  Model predictive performance is assessed using mean squared
+error (MSE), with optional graphical visualization of fold-wise MSEs to support
+intuitive evaluation of model accuracy.  This package is intended to facilitate
+rigorous model validation in adsorption studies and aid researchers in selecting
+robust isotherm models.  For more details, see Montgomery et al. (2012) <isbn:
+978-0-470-54281-1>, Lumumba et al. (2024) <doi:10.11648/j.ajtas.20241305.13>,
+and Yates et al. (2022) <doi:10.1002/ecm.1557>.")
+    (license license:gpl3)))
+
 (define-public r-adsorpr
   (package
     (name "r-adsorpr")

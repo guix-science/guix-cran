@@ -402,13 +402,13 @@ used, see Reiter & Raghunathan (2007) <doi:10.1198/016214507000000932>.")
 (define-public r-synthpop
   (package
     (name "r-synthpop")
-    (version "1.9-1")
+    (version "1.9-1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "synthpop" version))
        (sha256
-        (base32 "0zk5h4myllbmgdzkdllq5an665qwz4zimlxkw03j6bbc1arshyqg"))))
+        (base32 "139x14w1aipxbxfkl2r9v85c1z6nlds5kgbcbd3dhd90irrxys15"))))
     (properties `((upstream-name . "synthpop")))
     (build-system r-build-system)
     (arguments
@@ -2284,13 +2284,13 @@ formats as well as other swatch file formats can be found at
 (define-public r-swash
   (package
     (name "r-swash")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swash" version))
        (sha256
-        (base32 "04nc2fizcfkyqpia5kw9w5hs8kyjrnhqr3dypr7j63nig29ncx8j"))))
+        (base32 "15vn6agwidvzmy3q1kiggwqa0y3z0f78574md531mw4jly35n9z6"))))
     (properties `((upstream-name . "swash")))
     (build-system r-build-system)
     (arguments
@@ -3600,13 +3600,13 @@ available query filters.")
 (define-public r-susier
   (package
     (name "r-susier")
-    (version "0.12.35")
+    (version "0.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "susieR" version))
        (sha256
-        (base32 "0fhdc3lkhl4s9h2ng72gypy2z3hgk6566jfhwhsfbddyzd22drpd"))))
+        (base32 "1z6rifg22jywgvkjqdip1vs76pwinw05jb36cs291y0k6cp42246"))))
     (properties `((upstream-name . "susieR")))
     (build-system r-build-system)
     (arguments
@@ -6753,13 +6753,13 @@ frame management, including how to handle missing data.")
 (define-public r-supportr
   (package
     (name "r-supportr")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "supportR" version))
        (sha256
-        (base32 "0z18rmfn5hmrirks6arkpia9biiq2b6r57sak9yhk6j68yhbkjvs"))))
+        (base32 "1sc34q56y0s8dg5vnna64pg6zmwv4j0q9zcm7s5wpv4m1k35qsk2"))))
     (properties `((upstream-name . "supportR")))
     (build-system r-build-system)
     (arguments
@@ -12581,6 +12581,50 @@ cross-validation (which includes information on 95% confidence interval
 empirical coverage), and to produce contour plots over 2D slices in model
 parameter space.")
     (license license:gpl3)))
+
+(define-public r-sticsrfiles
+  (package
+    (name "r-sticsrfiles")
+    (version "1.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SticsRFiles" version))
+       (sha256
+        (base32 "02vf64s411fv7gp8mnvb9zq01liwbwr5k4kgqd2hvgczfji5alrr"))))
+    (properties `((upstream-name . "SticsRFiles")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xslt
+                             r-xml2
+                             r-xml
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rstudioapi
+                             r-rlang
+                             r-lubridate
+                             r-lifecycle
+                             r-dplyr
+                             r-data-table
+                             r-curl
+                             r-crayon
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SticsRPacks/SticsRFiles")
+    (synopsis "Read and Modify 'STICS' Input/Output Files")
+    (description
+     "Manipulating input and output files of the STICS crop model.  Files are either
+@code{JavaSTICS} XML files or text files used by the model fortran executable.
+Most basic functionalities are reading or writing parameter names and values in
+both XML or text input files, and getting data from output files.  Advanced
+functionalities include XML files generation from XML templates and/or
+spreadsheets, or text files generation from XML files by using xslt
+transformation.")
+    (license license:lgpl3+)))
 
 (define-public r-sticr
   (package
@@ -28125,13 +28169,13 @@ works with the updated spatstat package (>= 3.0-2).")
 (define-public r-spatemr
   (package
     (name "r-spatemr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatemR" version))
        (sha256
-        (base32 "0mbyza9winiiglc3frgdn8i3r25v7ckqzy2rwqzbyi2kbffl4r0c"))))
+        (base32 "0mrdx23mv94rm88f3bld3qm5cg21w900wz436wp3rwzmp0ficnjd"))))
     (properties `((upstream-name . "spatemR")))
     (build-system r-build-system)
     (arguments
@@ -28931,6 +28975,31 @@ plan is eventually subclass Matrix objects.")
 latent position model, as illustrated in Rastelli, R. (2018) \"The Sparse Latent
 Position Model for nonnegative weighted networks\" <@code{arXiv:1808.09262>}.")
     (license license:gpl3)))
+
+(define-public r-sparselink
+  (package
+    (name "r-sparselink")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sparselink" version))
+       (sha256
+        (base32 "1cifzlng5v5hpi8lkz4j12kg62kiw56v8p7p219cfzxfx7x27spa"))))
+    (properties `((upstream-name . "sparselink")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xrnet r-spls r-proc r-mvtnorm r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rauschenberger/sparselink")
+    (synopsis "Sparse Regression for Related Problems")
+    (description
+     "Estimates sparse regression models (i.e., with few non-zero coefficients) in
+high-dimensional multi-task learning and transfer learning settings, as proposed
+by Rauschenberger et al. (2025) <https://orbilu.uni.lu/handle/10993/63425>.")
+    (license license:expat)))
 
 (define-public r-sparseinv
   (package
@@ -38252,13 +38321,13 @@ Course in Methods of Data Analysis (2nd ed)\", Duxbury.")
 (define-public r-slendr
   (package
     (name "r-slendr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slendr" version))
        (sha256
-        (base32 "1kbxc6jnh3iqwmk3rfnfpriip9w7qx774qs0pdqp4ijnjxqjbqjr"))))
+        (base32 "1gz2ln9dx8r47f0parxpjcy68xbx8zq4076p7cg5bh96naxbgaaz"))))
     (properties `((upstream-name . "slendr")))
     (build-system r-build-system)
     (arguments
@@ -38274,6 +38343,7 @@ Course in Methods of Data Analysis (2nd ed)\", Duxbury.")
                              r-png
                              r-magrittr
                              r-ijtiff
+                             r-ggrepel
                              r-ggplot2
                              r-dplyr
                              r-digest
@@ -46930,13 +47000,13 @@ troubleshooting.  Note, 0.1.1 support deprecated 2023-05-31.")
 (define-public r-shrinktvpvar
   (package
     (name "r-shrinktvpvar")
-    (version "0.1.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shrinkTVPVAR" version))
        (sha256
-        (base32 "0938fmh45nnvvkpxskqrzgkv25yghzy8pq8313l8q50xxpskp1rm"))))
+        (base32 "068z7x6xsdr0axl4qavzsgn64m86a9aqnk16fhvn8wjxwvfvk4j2"))))
     (properties `((upstream-name . "shrinkTVPVAR")))
     (build-system r-build-system)
     (arguments
@@ -46949,6 +47019,7 @@ troubleshooting.  Note, 0.1.1 support deprecated 2023-05-31.")
                              r-rcpparmadillo
                              r-rcpp
                              r-rcolorbrewer
+                             r-mvtnorm
                              r-lattice
                              r-coda))
     (home-page "https://cran.r-project.org/package=shrinkTVPVAR")
@@ -46956,10 +47027,13 @@ troubleshooting.  Note, 0.1.1 support deprecated 2023-05-31.")
      "Efficient Bayesian Inference for TVP-VAR-SV Models with Shrinkage")
     (description
      "Efficient Markov chain Monte Carlo (MCMC) algorithms for fully Bayesian
-estimation of time-varying parameter vector autoregressive models with shrinkage
-priors.  Details on the algorithms used are provided in Cadonna et al. (2020)
-<doi:10.3390/econometrics8020020> and Knaus et al. (2021)
-<doi:10.18637/jss.v100.i13>.")
+estimation of time-varying parameter vector autoregressive models with
+stochastic volatility (TVP-VAR-SV) under shrinkage priors and dynamic shrinkage
+processes.  Details on the TVP-VAR-SV model and the shrinkage priors can be
+found in Cadonna et al. (2020) <doi:10.3390/econometrics8020020>, details on the
+software can be found in Knaus et al. (2021) <doi:10.18637/jss.v100.i13>, while
+details on the dynamic shrinkage process can be found in Knaus and
+FrÃ¼hwirth-Schnatter (2023) <doi:10.48550/@code{arXiv.2312.10487>}.")
     (license license:gpl2+)))
 
 (define-public r-shrinktvp
@@ -59492,40 +59566,6 @@ redundancy analysis (function @code{pwRDA()}).  Relevant references include
 Cornelius and Reynolds (1991) <doi:10.2307/1941559> and Legendre and Legendre
 (2012, ISBN: 9780444538697).")
     (license license:expat)))
-
-(define-public r-segmgarch
-  (package
-    (name "r-segmgarch")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "segMGarch" version))
-       (sha256
-        (base32 "0chw41h25jka9wa3rf3d8dq2ym47379jflv33q6qxaak8xy1kmd9"))))
-    (properties `((upstream-name . "segMGarch")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-mvtnorm
-                             r-iterators
-                             r-foreach
-                             r-fgarch
-                             r-doparallel
-                             r-corpcor))
-    (home-page "https://cran.r-project.org/package=segMGarch")
-    (synopsis
-     "Multiple Change-Point Detection for High-Dimensional GARCH Processes")
-    (description
-     "This package implements a segmentation algorithm for multiple change-point
-detection in high-dimensional GARCH processes.  It simultaneously segments GARCH
-processes by identifying common change-points, each of which can be shared by a
-subset or all of the component time series as a change-point in their
-within-series and/or cross-sectional correlation structure.")
-    (license license:gpl2+)))
 
 (define-public r-segmetric
   (package

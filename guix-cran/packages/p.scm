@@ -1904,6 +1904,36 @@ and plotting of the results in a tree format and limits the partitioning
 candidates into a specific set of subregions.")
     (license license:gpl2+)))
 
+(define-public r-pulmodatasets
+  (package
+    (name "r-pulmodatasets")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PulmoDataSets" version))
+       (sha256
+        (base32 "01d1hjrh6fr8g5fbrfz7qwb40a8g34yyk08ai06qj5ydaqxhmyil"))))
+    (properties `((upstream-name . "PulmoDataSets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/pulmodatasets")
+    (synopsis
+     "Curated Collection of Pulmonary and Respiratory Disease Datasets")
+    (description
+     "This package provides a comprehensive and curated collection of datasets related
+to the lungs, respiratory system, and associated diseases.  This package
+includes epidemiological, clinical, experimental, and simulated datasets on
+conditions such as lung cancer, asthma, Chronic Obstructive Pulmonary Disease
+(COPD), tuberculosis, whooping cough, pneumonia, influenza, and other
+respiratory illnesses.  It is designed to support data exploration, statistical
+modeling, teaching, and research in pulmonary medicine, public health,
+environmental epidemiology, and respiratory disease surveillance.")
+    (license license:gpl3)))
+
 (define-public r-pullword
   (package
     (name "r-pullword")
@@ -2765,13 +2795,13 @@ functions to help debug and monitor procedures.")
 (define-public r-ptprocess
   (package
     (name "r-ptprocess")
-    (version "3.3-16")
+    (version "3.3-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PtProcess" version))
        (sha256
-        (base32 "1d5i847jy9i1llbfsdkqcjmiids3kjxnqscinrwqyv7mwb9ijk2z"))))
+        (base32 "0k7pl3yk33gmyh8a84daxcr87g2jqlxb9kzaxm1ag7d95z3r27dg"))))
     (properties `((upstream-name . "PtProcess")))
     (build-system r-build-system)
     (arguments
@@ -24734,37 +24764,6 @@ submitted for publication.  For additional references: Dunnett, C. W. (1955)
 microtiter plates.  Easily read in plate-shaped data and convert it to tidy
 format, combine plate-shaped data with tidy data, and view tidy data in plate
 shape.")
-    (license license:gpl3)))
-
-(define-public r-plasso
-  (package
-    (name "r-plasso")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "plasso" version))
-       (sha256
-        (base32 "09pc210wb98xnhm9wxsqvf217gysj9c2piwwhzxdp3lxb3my533x"))))
-    (properties `((upstream-name . "plasso")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix r-iterators r-glmnet r-foreach
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stefan-1997/plasso")
-    (synopsis "Cross-Validated (Post-) Lasso")
-    (description
-     "Built on top of the glmnet library by Friedman, Hastie and Tibshirani (2010)
-<doi:10.18637/jss.v033.i01>, the plasso package follows Knaus (2022)
-<doi:10.1093/ectj/utac015> and comes up with two functions that estimate least
-squares Lasso and Post-Lasso models.  The @code{plasso()} function adds
-coefficient paths for a Post-Lasso model to the standard glmnet output.  On top
-of that @code{cv.plasso()} cross-validates the coefficient paths for both the
-Lasso and Post-Lasso model and provides optimal hyperparameter values for the
-penalty term lambda.")
     (license license:gpl3)))
 
 (define-public r-plasmidprofiler

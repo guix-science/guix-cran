@@ -15997,13 +15997,13 @@ that all targets remain up to date.")
 (define-public r-gitstats
   (package
     (name "r-gitstats")
-    (version "2.3.2")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitStats" version))
        (sha256
-        (base32 "1ld2xmjga0bcv5fjbr5ypssgah8xmz81259xyybf88flcr1805fn"))))
+        (base32 "17xj5vdw5ka8l3917d4qjrjw7f8z4y97qlg32134pqqa38ikr666"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
     (arguments
@@ -23043,6 +23043,45 @@ of layers) using blend modes (including commutative blend modes, like multiply
 and darken).  Blend mode support is particularly useful for creating plots with
 overlapping groups where the layer drawing order does not change the output; see
 Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
+    (license license:expat)))
+
+(define-public r-ggblanket
+  (package
+    (name "r-ggblanket")
+    (version "12.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggblanket" version))
+       (sha256
+        (base32 "1x1fxa66l1glf1r505wh1c7iajlf4n1qwdjkncx98wvyqadv0ww2"))))
+    (properties `((upstream-name . "ggblanket")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-snakecase
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-lubridate
+                             r-labelled
+                             r-hms
+                             r-ggplot2
+                             r-ggblend
+                             r-forcats
+                             r-farver
+                             r-dplyr
+                             r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://davidhodge931.github.io/ggblanket/")
+    (synopsis "Simplify 'ggplot2' Visualisation")
+    (description
+     "Simplify ggplot2 visualisation with ggblanket wrapper functions.")
     (license license:expat)))
 
 (define-public r-ggbiplot

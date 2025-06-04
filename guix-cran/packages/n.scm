@@ -13575,6 +13575,33 @@ implements the methodological developments in Behrouzi and Wit (2017)
 <doi:10.1093/bioinformatics/bty777>.")
     (license license:gpl3)))
 
+(define-public r-netgreg
+  (package
+    (name "r-netgreg")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetGreg" version))
+       (sha256
+        (base32 "1d0w6vqkzrmrngksp9gy49i5kjmc61sakwm1psws2gz14hf18424"))))
+    (properties `((upstream-name . "NetGreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plsgenomics r-huge r-glmnet r-dplyr))
+    (home-page "https://cran.r-project.org/package=NetGreg")
+    (synopsis "Network-Guided Penalized Regression (NetGreg)")
+    (description
+     "This package provides a network-guided penalized regression framework that
+integrates network characteristics from Gaussian graphical models with partial
+penalization, accounting for both network structure (hubs and non-hubs) and
+clinical covariates in high-dimensional omics data, including transcriptomics
+and proteomics.  The full methodological details can be found in our recent
+preprint by Ahn S and Oh EJ (2025) <doi:10.48550/@code{arXiv.2505.22986>}.")
+    (license license:gpl3)))
+
 (define-public r-netexplorer
   (package
     (name "r-netexplorer")

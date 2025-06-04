@@ -760,6 +760,31 @@ and provide a quicker way to summarize models statistical findings using
 ggplot2'.")
     (license license:gpl2)))
 
+(define-public r-quickr
+  (package
+    (name "r-quickr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quickr" version))
+       (sha256
+        (base32 "01hig7fc0p152qwa7zrr2a72s22ikshdw895qzxx955jikvlqplh"))))
+    (properties `((upstream-name . "quickr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s7 r-glue r-dotty))
+    (home-page "https://github.com/t-kalinowski/quickr")
+    (synopsis "Compiler for R")
+    (description
+     "Compiles R functions annotated with type and shape declarations to provide
+extremely fast performance and robust runtime type checking.  Supports both
+just-in-time (JIT) and ahead-of-time (AOT) compilation.  Compilation is
+performed by lowering R code to Fortran.")
+    (license license:expat)))
+
 (define-public r-quickpwcr
   (package
     (name "r-quickpwcr")

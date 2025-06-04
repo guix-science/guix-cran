@@ -10673,6 +10673,42 @@ unfolding.  Restrictions (fixed coordinates or model restrictions) are available
 for both row and column coordinates in all combinations.")
     (license license:bsd-2)))
 
+(define-public r-fmds
+  (package
+    (name "r-fmds")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fmds" version))
+       (sha256
+        (base32 "068hc7r7cbkym38m414nsmhi5lf8mmxns99di0h43b6bbphr6zli"))))
+    (properties `((upstream-name . "fmds")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=fmds")
+    (synopsis "Multidimensional Scaling Development Kit")
+    (description
+     "Multidimensional scaling (MDS) functions for various tasks that are beyond the
+beta stage and way past the alpha stage.  Currently, options are available for
+weights, restrictions, classical scaling or principal coordinate analysis,
+transformations (linear, power, Box-Cox, spline, ordinal), outlier mitigation
+(rdop), out-of-sample estimation (predict), negative dissimilarities, fast and
+faster executions with low memory footprints, penalized restrictions,
+cross-validation-based penalty selection, supplementary variable estimation
+(explain), additive constant estimation, mixed measurement level distance
+calculation, restricted classical scaling, etc.  More will come in the future.
+References.  Busing (2024) \"A Simple Population Size Estimator for Local Minima
+Applied to Multidimensional Scaling\".  Manuscript submitted for publication.
+Busing (2025) \"Node Localization by Multidimensional Scaling with Iterative
+Majorization\".  Manuscript submitted for publication.  Busing (2025) \"Faster
+Multidimensional Scaling\".  Manuscript in preparation.  Barroso and Busing
+(2025) \"e-RDOP, Relative Density-Based Outlier Probabilities, Extended to
+Proximity Mapping\".  Manuscript submitted for publication.")
+    (license license:bsd-2)))
+
 (define-public r-fmcmc
   (package
     (name "r-fmcmc")
@@ -17045,13 +17081,13 @@ ISBN:9780521852258).")
 (define-public r-fibos
   (package
     (name "r-fibos")
-    (version "1.2.3")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fibos" version))
        (sha256
-        (base32 "0dv27bfjdqhgm3cypi37jr669s2abirn8632yc05fby1a3yfg721"))))
+        (base32 "1aajmvswh6rf5ys40vcp3ismlpzw4vg12c8nsg4fsk1dnmlby78b"))))
     (properties `((upstream-name . "fibos")))
     (build-system r-build-system)
     (arguments

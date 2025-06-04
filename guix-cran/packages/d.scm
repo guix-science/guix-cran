@@ -4814,13 +4814,13 @@ to create many different drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "0m6csf2pd0x876mcmazrx17m7x0rpm2a8wrrby1ra6c9h15v2hjq"))))
+        (base32 "0hgg6mrlfx2lq25g5m01qczhbalfh0rrsji3kq4lx3rzw0j58f0h"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (arguments
@@ -16216,6 +16216,40 @@ compute and visualize harmonic power, actograms, average activity and diurnality
 index.")
     (license license:gpl3)))
 
+(define-public r-digestivedatasets
+  (package
+    (name "r-digestivedatasets")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DigestiveDataSets" version))
+       (sha256
+        (base32 "1izzjrlcr64q7ycm5s2hgkb3v0qzc7dbm750rx697qk28891b06n"))))
+    (properties `((upstream-name . "DigestiveDataSets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/digestivedatasets")
+    (synopsis
+     "Curated Collection of Digestive System and Gastrointestinal Disease Datasets")
+    (description
+     "This package provides an extensive and curated collection of datasets related to
+the digestive system, stomach, intestines, liver, pancreas, and associated
+diseases.  This package includes clinical trials, observational studies,
+experimental datasets, cohort data, and case series involving gastrointestinal
+disorders such as gastritis, ulcers, pancreatitis, liver cirrhosis, colon
+cancer, colorectal conditions, Helicobacter pylori infection, irritable bowel
+syndrome, intestinal infections, and post-surgical outcomes.  The datasets
+support educational, clinical, and research applications in gastroenterology,
+public health, epidemiology, and biomedical sciences.  Designed for researchers,
+clinicians, data scientists, students, and educators interested in digestive
+diseases, the package facilitates reproducible analysis, modeling, and
+hypothesis testing using real-world and historical data.")
+    (license license:gpl3)))
+
 (define-public r-diftree
   (package
     (name "r-diftree")
@@ -19704,13 +19738,13 @@ column will be converted to the multi-level hierarchy.")
 (define-public r-dextergui
   (package
     (name "r-dextergui")
-    (version "0.2.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dextergui" version))
        (sha256
-        (base32 "10v3djwani0zd27cjlf7lch7rfipnmb2p5wa7n2y5qxjqxli9z3x"))))
+        (base32 "1xx5nr35xhmn97g5ywk961r48i1d807wjqk1bj79v13fp9q5a7f3"))))
     (properties `((upstream-name . "dextergui")))
     (build-system r-build-system)
     (arguments
@@ -19732,22 +19766,18 @@ column will be converted to the multi-level hierarchy.")
                                   '())))))))
     (propagated-inputs (list r-writexl
                              r-tidyr
-                             r-tibble
+                             r-survey
                              r-shinyjs
                              r-shinyfiles
                              r-shinybs
                              r-shiny
                              r-rlang
                              r-readxl
-                             r-readods
                              r-rcurl
                              r-networkd3
                              r-jsonlite
-                             r-htmlwidgets
                              r-htmltools
-                             r-ggridges
                              r-ggplot2
-                             r-ggextra
                              r-dt
                              r-dplyr
                              r-dexter
@@ -19759,7 +19789,7 @@ column will be converted to the multi-level hierarchy.")
     (description
      "Classical Test and Item analysis, Item Response analysis and data management for
 educational and psychological tests.")
-    (license license:gpl3)))
+    (license license:lgpl3)))
 
 (define-public r-dexter
   (package
@@ -21840,6 +21870,42 @@ manipulating input raster files, shipping routes and for analyzing sound
 propagated from ships.")
     (license license:gpl3)))
 
+(define-public r-deplotting
+  (package
+    (name "r-deplotting")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DEplotting" version))
+       (sha256
+        (base32 "0n9lxv54cc4wg0r8lqpdrm6g2jj1wwdi7z7r0ss5xg5xky3y06wr"))))
+    (properties `((upstream-name . "DEplotting")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-sf
+                             r-scales
+                             r-rlang
+                             r-patchwork
+                             r-magrittr
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://codeberg.org/BBEdata/DEplotting")
+    (synopsis "Visualization Tools for German Regional Data")
+    (description
+     "This package provides functions to download, process, and visualize German
+geospatial data across administrative levels, including states, districts, and
+municipalities.  Supports interactive tables and customized maps using built-in
+or external datasets.  Official shapefiles are accessed from the German Federal
+Agency for Cartography and Geodesy (BKG) <https://gdz.bkg.bund.de/>, licensed
+under dl-de/by-2-0 <https://www.govdata.de/dl-de/by-2-0>.")
+    (license license:expat)))
+
 (define-public r-deploid-utils
   (package
     (name "r-deploid-utils")
@@ -22585,13 +22651,13 @@ state/ province/ country.")
 (define-public r-dendrotools
   (package
     (name "r-dendrotools")
-    (version "1.2.13")
+    (version "1.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dendroTools" version))
        (sha256
-        (base32 "1dvisplghjyh607ns5xnwv1v8bg7i05sp4w96g6bmkwpgshaa6b0"))))
+        (base32 "0cg6d6flin0x1hphiwzsmvns6rxbzbjf3rrs7pwv2fqvgvlgj8jw"))))
     (properties `((upstream-name . "dendroTools")))
     (build-system r-build-system)
     (arguments

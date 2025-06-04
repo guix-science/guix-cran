@@ -1757,29 +1757,34 @@ information as well as data that requires an API token.")
 (define-public r-kodama
   (package
     (name "r-kodama")
-    (version "2.4.1")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KODAMA" version))
        (sha256
-        (base32 "09wn4giikxpw6phks3nyd69zs7v4zw3rw6xqlwvdcy2gd3vinasz"))))
+        (base32 "1g6whwljdqrkk1mksy9ifj1sfwn24131wrv6w84nbkxh6z1dfqpc"))))
     (properties `((upstream-name . "KODAMA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-umap r-rtsne r-rcpparmadillo r-rcpp r-minerva))
+    (propagated-inputs (list r-umap
+                             r-rtsne
+                             r-rnanoflann
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=KODAMA")
     (synopsis "Knowledge Discovery by Accuracy Maximization")
     (description
-     "An unsupervised and semi-supervised learning algorithm that performs feature
-extraction from noisy and high-dimensional data.  It facilitates identification
-of patterns representing underlying groups on all samples in a data set.  Based
-on Cacciatore S, Tenori L, Luchinat C, Bennett PR, @code{MacIntyre} DA. (2017)
-Bioinformatics <doi:10.1093/bioinformatics/btw705> and Cacciatore S, Luchinat C,
-Tenori L. (2014) Proc Natl Acad Sci USA <doi:10.1073/pnas.1220873111>.")
+     "This package provides a self-guided, weakly supervised learning algorithm for
+feature extraction from noisy and high-dimensional data.  It facilitates the
+identification of patterns that reflect underlying group structures across all
+samples in a dataset.  The method incorporates a novel strategy to integrate
+spatial information, improving the interpretability of results in spatially
+resolved data.")
     (license license:gpl2+)))
 
 (define-public r-koboconnectr
@@ -4625,6 +4630,32 @@ about rows of data frame like objects.  This is done by creating special
 attribute \"keys\" which is updated after every change in rows (subsetting,
 ordering, etc.).  This package is designed to work tightly with dplyr package.")
     (license license:expat)))
+
+(define-public r-keyclust
+  (package
+    (name "r-keyclust")
+    (version "1.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "keyclust" version))
+       (sha256
+        (base32 "04icqrkzn52rb4gh5rigfknx4aq1d4babs38bz5myi4pg301ahpl"))))
+    (properties `((upstream-name . "keyclust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-textstem r-rcpp r-data-table))
+    (home-page "https://cran.r-project.org/package=keyclust")
+    (synopsis
+     "Model for Semi-Supervised Keyword Extraction from Word Embedding Models")
+    (description
+     "This package provides a fast and computationally efficient algorithm designed to
+enable researchers to efficiently and quickly extract semantically-related
+keywords using a fitted embedding model.  For more details about the methods
+applied, see Chester (2025). <doi:10.17605/OSF.IO/5B7RQ>.")
+    (license license:gpl3)))
 
 (define-public r-keyboardsimulator
   (package

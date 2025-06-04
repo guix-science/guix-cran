@@ -14701,13 +14701,13 @@ the data into separate modules.")
 (define-public r-corbouli
   (package
     (name "r-corbouli")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corbouli" version))
        (sha256
-        (base32 "0a89s50waz2qh0sp0xqihm37p4zac1fkw20gdpxhqavgz59gjja8"))))
+        (base32 "0kzq1gk8la49vzpa2k3nsi7jzwdb6zffd304scm1543h00ikvbyr"))))
     (properties `((upstream-name . "corbouli")))
     (build-system r-build-system)
     (arguments
@@ -38945,13 +38945,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "09yjfn7q5l9x527bkhwlhi2yf6l9hvg0n1mwxww3gp2gld1509sj"))))
+        (base32 "1zm312mjly5kxk41vsz2vp5nc793xyghydkn906m55zk8n78dydn"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (arguments

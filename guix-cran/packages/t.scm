@@ -8771,13 +8771,13 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "3.0.3")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "1vss1g7hl65xhrqvj3cmh1pb89dgxg49p3p2hcjgjfw17xm5j9zb"))))
+        (base32 "02ixaba0fdhwal6c2hhh12kqw04ssnpqgchx4rm2xqh1m82cckga"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (arguments
@@ -30311,13 +30311,13 @@ available.")
 (define-public r-tall
   (package
     (name "r-tall")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tall" version))
        (sha256
-        (base32 "00jr0vn69lcfzq9y7zwr2j398jzywgdvfcz8xazk9v256xkkpnkl"))))
+        (base32 "1mqg9cw0ikvv2zfry6891kh28w14j1hq0039hdgb1hqn4xzfl93s"))))
     (properties `((upstream-name . "tall")))
     (build-system r-build-system)
     (arguments
@@ -30355,6 +30355,7 @@ available.")
                              r-later
                              r-jsonlite
                              r-igraph
+                             r-httr2
                              r-ggraph
                              r-fontawesome
                              r-dt
@@ -30362,7 +30363,8 @@ available.")
                              r-doparallel
                              r-curl
                              r-chromote
-                             r-ca))
+                             r-ca
+                             r-base64enc))
     (home-page "https://github.com/massimoaria/tall")
     (synopsis "Text Analysis for All")
     (description

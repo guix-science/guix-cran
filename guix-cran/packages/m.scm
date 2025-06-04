@@ -37773,37 +37773,6 @@ models is also supported.  Supplementary functions for testing MEFM over factor
 models are included.")
     (license license:gpl3)))
 
-(define-public r-mefdind
-  (package
-    (name "r-mefdind")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mefdind" version))
-       (sha256
-        (base32 "1w52c5bq0jy38d8lkf9dglw3nr3c8dqvhdk4mmhc3q8r5x3a8cz0"))))
-    (properties `((upstream-name . "mefdind")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-rvest))
-    (home-page "https://eldafani.github.io/mefdind/")
-    (synopsis "Imports Data from MoE Spain")
-    (description
-     "Imports indicator data provided by the Ministry of Education (@code{MoE),Spain}.
- The data is stored at
-<https://www.educacionyfp.gob.es/servicios-al-ciudadano/estadisticas/no-universitaria.html>
-Includes functions for reading, downloading, and selecting data for main series.
- This package is not sponsored or supported by the @code{MoE} Spain.  Importa
-datos con indicadores del Ministerio de EducaciÃ³n y FormaciÃ³n Profesional
-(MEFD) de EspaÃ±Ã¡.  Los datos estÃ¡n en
-<https://www.educacionyfp.gob.es/servicios-al-ciudadano/estadisticas/no-universitaria.html>
-Contiene funciones para leer, descargar, y seleccionar bases de datos de series
-principales.  Este paquete no es patrocinado o respaldado por el MEFD.")
-    (license license:gpl2)))
-
 (define-public r-mefa4
   (package
     (name "r-mefa4")
@@ -49184,13 +49153,13 @@ mixed data.  Methods based on van de Velden et al. (2024)
 (define-public r-manydata
   (package
     (name "r-manydata")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manydata" version))
        (sha256
-        (base32 "1lbhkji803v3jf846wfpgj8mk3fs5kakdkh7n6l2l1grjkpbxmyp"))))
+        (base32 "00s8v3s8wap9rns4qssna6cp9q9j3nk2hdhj3jmndxx10xici6xz"))))
     (properties `((upstream-name . "manydata")))
     (build-system r-build-system)
     (arguments

@@ -19697,13 +19697,13 @@ a list object.")
 (define-public r-rmzqc
   (package
     (name "r-rmzqc")
-    (version "0.5.6")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmzqc" version))
        (sha256
-        (base32 "1jv2b4dmxvpxssc81bhmf87xy0q4421a2z0h8m7svyy47hc0p9kk"))))
+        (base32 "0igk2a1fs2pfp405ski862kwjwq8xvq9324y4kydygd75g0mmw1s"))))
     (properties `((upstream-name . "rmzqc")))
     (build-system r-build-system)
     (arguments
@@ -25455,6 +25455,43 @@ package use stationary Gaussian processes with Matern correlation function to
 carry out spatial prediction in a geographical area of interest.  The
 underpinning theory of the methods implemented in the package are found in
 Diggle and Giorgi (2019, ISBN: 978-1-138-06102-7).")
+    (license license:expat)))
+
+(define-public r-riskdiff
+  (package
+    (name "r-riskdiff")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "riskdiff" version))
+       (sha256
+        (base32 "1zagrikjf8lj5p905yigwlzn9mzsrbfqx8gxp55sf0mpqbycb8ih"))))
+    (properties `((upstream-name . "riskdiff")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-dplyr))
+    (home-page "https://github.com/jackmurphy2351/riskdiff")
+    (synopsis "Robust Risk Difference Estimation with Multiple Link Functions")
+    (description
+     "Calculates risk differences (or prevalence differences for cross-sectional data)
+using generalized linear models with automatic link function selection.
+Provides robust model fitting with fallback methods, support for stratification
+and adjustment variables, and publication-ready output formatting.  Handles
+model convergence issues gracefully and provides confidence intervals using
+multiple approaches.  Methods are based on approaches described in Mark W.
+Donoghoe and Ian C. Marschner (2018) \"logbin: An R Package for Relative Risk
+Regression Using the Log-Binomial Model\" <doi:10.18637/jss.v086.i09> for robust
+GLM fitting, and standard epidemiological methods for risk difference estimation
+as described in Kenneth J. Rothman, Sander Greenland and Timothy L. Lash (2008,
+ISBN:9780781755641) \"Modern Epidemiology\".")
     (license license:expat)))
 
 (define-public r-riskcommunicator
