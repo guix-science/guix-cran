@@ -6517,13 +6517,13 @@ with the R Package hlt\"
 (define-public r-hlsm
   (package
     (name "r-hlsm")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HLSM" version))
        (sha256
-        (base32 "06ssp92jjc29z6z71qcfcd506b0aqka8s9zhc1qlif075yqy2rc8"))))
+        (base32 "1629k439rwhyd984pyagabimmpld92mspj674s0wn0fcq5s7sg36"))))
     (properties `((upstream-name . "HLSM")))
     (build-system r-build-system)
     (arguments
@@ -6534,9 +6534,8 @@ with the R Package hlt\"
     (synopsis "Hierarchical Latent Space Network Model")
     (description
      "Fits latent space models for single networks and hierarchical latent space
-models for ensembles of networks as described in Sweet, Thomas & Junker (2013).
-<DOI:10.3102/1076998612458702>.")
-    (license (license:fsdg-compatible "GPL (> 3)"))))
+models for ensembles of networks as described in Sweet, Thomas & Junker (2013).")
+    (license license:gpl2+)))
 
 (define-public r-hlmdiag
   (package

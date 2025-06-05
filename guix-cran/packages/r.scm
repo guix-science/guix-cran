@@ -3748,13 +3748,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "19sxxl30qbm0iivli92pih9lq790zc007pscidy8pk6i07qplcns"))))
+        (base32 "035pnk6a846ck3p12jwhxx1j4279acvlzsjj2qiy2gyq4yr3g4pb"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (arguments
@@ -5234,13 +5234,13 @@ tagging messages with a priority level and application type, as well as masking
 (define-public r-rsynthbio
   (package
     (name "r-rsynthbio")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsynthbio" version))
        (sha256
-        (base32 "0ck8ff91zbvnrqx847ariq4g2l1706bzsbk6zrpvqj58lkir3hqb"))))
+        (base32 "0xx5idnpqclgzqzizb1q6cgdd4d3yf1l17f4cnsf340wvw01lwy2"))))
     (properties `((upstream-name . "rsynthbio")))
     (build-system r-build-system)
     (arguments
@@ -15534,6 +15534,32 @@ analysis.")
 two Receiver Operating Characteristic (ROC) curves (treatment vs. control).")
     (license license:gpl2+)))
 
+(define-public r-rocs
+  (package
+    (name "r-rocs")
+    (version "1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ROCS" version))
+       (sha256
+        (base32 "18rgdai2fyv51v4yxvc8qgpmnqaxs5qxhbjl5svq1di6q46icag8"))))
+    (properties `((upstream-name . "ROCS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rgl r-poibin))
+    (home-page "https://cran.r-project.org/package=ROCS")
+    (synopsis "Receiver Operating Characteristics Surface")
+    (description
+     "Plots the Receiver Operating Characteristics Surface for high-throughput
+class-skewed data, calculates the Volume under the Surface (VUS) and the
+FDR-Controlled Area Under the Curve (FCAUC), and conducts tests to compare two
+ROC surfaces.  Computes @code{eROC} curve and the corresponding AUC for
+imperfect reference standard.")
+    (license license:gpl2)))
+
 (define-public r-rocpsych
   (package
     (name "r-rocpsych")
@@ -21139,6 +21165,59 @@ solvers, for instance @code{GeCode}'.  R users can use the package to solve
 constraint programming problems without using @code{MiniZinc} directly, modify
 existing @code{MiniZinc} models and also create their own models.")
     (license (license:fsdg-compatible "Mozilla Public License Version 2.0"))))
+
+(define-public r-rminer
+  (package
+    (name "r-rminer")
+    (version "1.4.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rminer" version))
+       (sha256
+        (base32 "1ary3y00kzvm69j6a5qvxn8pbww3csb51c2rn8h8av032p3jmlg2"))))
+    (properties `((upstream-name . "rminer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-rpart
+                             r-randomforest
+                             r-pls
+                             r-plotrix
+                             r-party
+                             r-nnet
+                             r-mda
+                             r-mass
+                             r-lattice
+                             r-kknn
+                             r-kernlab
+                             r-glmnet
+                             r-e1071
+                             r-cubist
+                             r-adabag))
+    (home-page "https://cran.r-project.org/package=rminer")
+    (synopsis "Data Mining Classification and Regression Methods")
+    (description
+     "Facilitates the use of data mining algorithms in classification and regression
+(including time series forecasting) tasks by presenting a short and coherent set
+of functions.  Versions: 1.4.9 / 1.4.8 improved help, several warning and error
+code fixes (more stable version, all examples run correctly); 1.4.7 - improved
+Importance function and examples, minor error fixes; 1.4.6 / 1.4.5 / 1.4.4 new
+automated machine learning (@code{AutoML}) and ensembles, via improved
+@code{fit()}, @code{mining()} and @code{mparheuristic()} functions, and new
+categorical preprocessing, via improved @code{delevels()} function; 1.4.3 new
+metrics (e.g., macro precision, explained variance), new \"lssvm\" model and
+improved @code{mparheuristic()} function; 1.4.2 new \"NMAE\" metric, \"xgboost\" and
+\"cv.glmnet\" models (16 classification and 18 regression models); 1.4.1 new
+tutorial and more robust version; 1.4 - new classification and regression
+models, with a total of 14 classification and 15 regression methods, including:
+Decision Trees, Neural Networks, Support Vector Machines, Random Forests,
+Bagging and Boosting; 1.3 and 1.3.1 - new classification and regression metrics;
+1.2 - new input importance methods via improved @code{Importance()} function;
+1.0 - first version.")
+    (license license:gpl2)))
 
 (define-public r-rmidas
   (package
@@ -56956,44 +57035,57 @@ that enables advertisers to display advertising to web users (see
 (define-public r-r4goodpersonalfinances
   (package
     (name "r-r4goodpersonalfinances")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R4GoodPersonalFinances" version))
        (sha256
-        (base32 "19zwpm459q5kr3jxg1b2vcag5a1k46f9zyan8l84q3ryqmrs0s50"))))
+        (base32 "01cac18gdg5dkspwk3kzvcbi5mrskxgic2whyk4awcbzm468z7ir"))))
     (properties `((upstream-name . "R4GoodPersonalFinances")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
                              r-shiny
                              r-scales
+                             r-rlang
                              r-readr
                              r-purrr
+                             r-progressr
                              r-prettycols
+                             r-nloptr
+                             r-memoise
+                             r-lubridate
                              r-glue
                              r-ggtext
                              r-ggrepel
                              r-ggplot2
+                             r-future
+                             r-furrr
                              r-fs
                              r-dplyr
+                             r-cli
+                             r-cachem
                              r-bslib
                              r-bsicons))
     (home-page "https://www.r4good.academy/")
-    (synopsis "Make Better Financial Decisions")
+    (synopsis "Make Optimal Financial Decisions")
     (description
-     "Make informed, data-driven decisions for your personal or household finances.
-Use tools and methods that are selected carefully to align with academic
-consensus, bridging the gap between theoretical knowledge and practical
-application.  They assist you in finding optimal asset allocation, preparing for
-retirement or financial independence, calculating optimal spending, and more.
-For more details see: Haghani V., White J. (2023, ISBN:978-1-119-74791-8),
-Idzorek T., Kaplan P. (2024, ISBN:9781952927379).")
+     "Make optimal decisions for your personal or household finances.  Use tools and
+methods that are selected carefully to align with academic consensus, bridging
+the gap between theoretical knowledge and practical application.  They help you
+find your own personalized optimal discretionary spending or optimal asset
+allocation, and prepare you for retirement or financial independence.  The
+optimal solution to this problems is extremely complex, and we only have a
+single lifetime to get it right.  Fortunately, we now have the user-friendly
+tools implemented, that integrate life-cycle models with single-period net-worth
+mean-variance optimization models.  Those tools can be used by anyone who wants
+to see what highly-personalized optimal decisions can look like.  For more
+details see: Idzorek T., Kaplan P. (2024, ISBN:9781952927379), Haghani V., White
+J. (2023, ISBN:9781119747918).")
     (license license:expat)))
 
 (define-public r-r4ds-tutorials

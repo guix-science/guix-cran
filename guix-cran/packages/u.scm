@@ -1636,6 +1636,34 @@ around the @code{JavaScript} library @code{UpSet.js}'.")
     (license (list license:agpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-upset-hp
+  (package
+    (name "r-upset-hp")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "upset.hp" version))
+       (sha256
+        (base32 "1spbsfcp09yj5d5n8vc8rinv20j8qjc7xmx9bq8ab0cqijnzn6aw"))))
+    (properties `((upstream-name . "upset.hp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan r-patchwork r-mumin r-glmm-hp r-ggplot2))
+    (home-page "https://github.com/laijiangshan/upset.hp")
+    (synopsis "Generate UpSet Plots of VP and HP Based on the ASV Concept")
+    (description
+     "Using matrix layout to visualize the unique, common, or individual contribution
+of each predictor (or matrix of predictors) towards explained variation on
+different models.  These contributions were derived from variation partitioning
+(VP) and hierarchical partitioning (HP), applying the algorithm of \"Lai et al.
+(2022) Generalizing hierarchical and variation partitioning in multiple
+regression and canonical analyses using the rdacca.hp R package.Methods in
+Ecology and Evolution, 13: 782-788 <doi:10.1111/2041-210X.13800>\".")
+    (license license:gpl2+)))
+
 (define-public r-upndown
   (package
     (name "r-upndown")
@@ -1933,6 +1961,37 @@ the algorithm result is also verified by Monte-Carlo simulation.  Please see
 Li,Y., Luo,Y., Ferrari,D., Hu,X. and Qin,Y. (2019) Model Confidence Bounds for
 Variable Selection.  Biometrics, 75:392-403.<DOI:10.1111/biom.13024> for more
 information.")
+    (license license:gpl3)))
+
+(define-public r-unvs-med
+  (package
+    (name "r-unvs-med")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unvs.med" version))
+       (sha256
+        (base32 "0lr7dyzfp3j6znyiawzjvg9bfwh0b8nh60ld4wjq2awj9mcmh0sw"))))
+    (properties `((upstream-name . "unvs.med")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-snowfall r-data-table))
+    (home-page "https://cran.r-project.org/package=unvs.med")
+    (synopsis "Universal Approach for Causal Mediation Analysis")
+    (description
+     "This program realizes a universal estimation approach that accommodates
+multi-category variables and effect scales, making up for the deficiencies of
+the existing approaches when dealing with non-binary exposures and complex
+models.  The estimation via bootstrapping can simultaneously provide results of
+causal mediation on risk difference (RD), odds ratio (OR) and risk ratio (RR)
+scales with tests of the effects difference.  The estimation is also applicable
+to many other settings, e.g., moderated mediation, inconsistent covariates,
+panel data, etc.  The high flexibility and compatibility make it possible to
+apply for any type of model, greatly meeting the needs of current empirical
+researches.")
     (license license:gpl3)))
 
 (define-public r-unvotes

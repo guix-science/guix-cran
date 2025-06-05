@@ -25143,13 +25143,13 @@ regression models.")
 (define-public r-easyncdf
   (package
     (name "r-easyncdf")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyNCDF" version))
        (sha256
-        (base32 "0kh38iafgwf9rxd8ccwv2pvzxsnk5pwp02nqnksgy7l8s526i5cc"))))
+        (base32 "1pz9yjz1ydgxawfx5y698fv5j51jsd0bx00bplpapkywf3kxgkig"))))
     (properties `((upstream-name . "easyNCDF")))
     (build-system r-build-system)
     (arguments

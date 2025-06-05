@@ -1699,6 +1699,43 @@ statistics, and RESAS (Regional Economy and Society Analyzing System,
 mesh code using ggplot2 and leaflet', etc.")
     (license license:expat)))
 
+(define-public r-jpinfect
+  (package
+    (name "r-jpinfect")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jpinfect" version))
+       (sha256
+        (base32 "0p3mwr5kqvx03pc2lppkad3yiay0w8ymkcynzbr85mifxsw1ijzi"))))
+    (properties `((upstream-name . "jpinfect")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-stringi
+                             r-readxl
+                             r-readr
+                             r-magrittr
+                             r-isoweek
+                             r-httr
+                             r-future-apply
+                             r-future
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/TomonoriHoshi/jpinfect")
+    (synopsis
+     "Acquiring and Processing Data from Japan Institute for Health Security")
+    (description
+     "Download and post process the infectious disease case data from Japan Institute
+for Health Security.  Also the package included ready-to-analyse datasets.  See
+the data source website for further details <https://id-info.jihs.go.jp/>.")
+    (license license:gpl3+)))
+
 (define-public r-jpgrid
   (package
     (name "r-jpgrid")

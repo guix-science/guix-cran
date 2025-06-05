@@ -13742,6 +13742,39 @@ visualizing marine species distributions across different spatial and temporal
 scales.")
     (license license:gpl3)))
 
+(define-public r-glorenz
+  (package
+    (name "r-glorenz")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glorenz" version))
+       (sha256
+        (base32 "0hkcgrggrx7ykwblsgzm66x8agirym209s3s6piqk8c3lnzw8kz4"))))
+    (properties `((upstream-name . "glorenz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-magrittr r-lorenzregression r-dplyr))
+    (home-page "https://cran.r-project.org/package=glorenz")
+    (synopsis
+     "Transformed and Relative Lorenz Curves for Survey Weighted Data")
+    (description
+     "This package provides functions for constructing Transformed and Relative Lorenz
+curves with survey sampling weights.  Given a variable of interest measured in
+two groups with scaled survey weights so that their hypothetical populations are
+of equal size, @code{tlorenz()} computes the proportion of members of the group
+with smaller values (ordered from smallest to largest) needed for their sum to
+match the sum of the top qth percentile of the group with higher values.
+@code{rlorenz()} shows the fraction of the total value of the group with larger
+values held by the pth percentile of those in the group with smaller values.
+@code{Fd()} is a survey weighted cumulative distribution function and
+@code{Eps()} is a survey weighted inverse cdf used in @code{rlorenz()}.  Ramos,
+Graubard, and Gastwirth (2025) <doi:10.1093/jrsssa/qnaf044>.")
+    (license license:gpl3)))
+
 (define-public r-glogis
   (package
     (name "r-glogis")
@@ -32745,6 +32778,31 @@ Description of the method is available from: Han and @code{DeOliveira} (2018)
      "Scrapes Google Citation pages and creates data frames of citations over time.")
     (license license:gpl3)))
 
+(define-public r-gchartsmap
+  (package
+    (name "r-gchartsmap")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gchartsmap" version))
+       (sha256
+        (base32 "0c5pl3m5l25l2y1mhkibdzllqianmlhs4qbs2bkpsid1sbdajj0h"))))
+    (properties `((upstream-name . "gchartsmap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tigris r-sf r-jsonlite r-httr))
+    (home-page "https://github.com/odeleongt/gchartsmap")
+    (synopsis "Access 'Google Charts' Map Data")
+    (description
+     "Connects to the Google Charts geographic data resources hosted at
+<https://www.gstatic.com/charts/geochart/10/mapfiles/US-500_METROS.js>, allowing
+the user to download contents to use as a reference for related services like
+Google Trends'.")
+    (license license:gpl3)))
+
 (define-public r-gcerisk
   (package
     (name "r-gcerisk")
@@ -34747,13 +34805,13 @@ calculation of density values.  These tasks are executed using package
 (define-public r-gamstransfer
   (package
     (name "r-gamstransfer")
-    (version "3.0.5")
+    (version "3.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamstransfer" version))
        (sha256
-        (base32 "0virpysnxv1mgwp1ancyba5l9587sdjd0awfdab89y545dalkczj"))))
+        (base32 "1q6609v6zmmkv1cdf21blwr896xy8gyp54jyn1qqjsc77y69mx2j"))))
     (properties `((upstream-name . "gamstransfer")))
     (build-system r-build-system)
     (arguments

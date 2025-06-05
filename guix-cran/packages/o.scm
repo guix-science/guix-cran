@@ -3547,13 +3547,13 @@ cyclical projection algorithm.")
 (define-public r-ordinalsimr
   (package
     (name "r-ordinalsimr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordinalsimr" version))
        (sha256
-        (base32 "0n6kqzgk4q7ylz1yj69r3zbm04n055szfgca8qd9q88gg7v0lqr8"))))
+        (base32 "1xjkmv77mc0sprbjrppd9wzkd4qqwnzd6ww91szdzv2igsnsi9lf"))))
     (properties `((upstream-name . "ordinalsimr")))
     (build-system r-build-system)
     (arguments
@@ -3567,7 +3567,6 @@ cyclical projection algorithm.")
                              r-rms
                              r-rlang
                              r-rhandsontable
-                             r-magrittr
                              r-golem
                              r-ggplot2
                              r-dt
@@ -7962,13 +7961,13 @@ of bio-medical data.")
 (define-public r-opcreg
   (package
     (name "r-opcreg")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPCreg" version))
        (sha256
-        (base32 "17hxslgw9w5v9379jn5q0iy6i8mvyvilyaddphyp8hbd3607scp8"))))
+        (base32 "1386kalqc00ly27cyb2m6xgch9k55basj1nzhl7d66q09cbmyq4g"))))
     (properties `((upstream-name . "OPCreg")))
     (build-system r-build-system)
     (arguments

@@ -8075,6 +8075,35 @@ three nonparametric algorithms (PARALLAX, REACT, and MACRAME) proposed in
 Maciak, Mizera, and PeÅ¡ta (2022) <doi:10.1017/asb.2022.4>.")
     (license license:gpl2+)))
 
+(define-public r-profileci
+  (package
+    (name "r-profileci")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "profileCI" version))
+       (sha256
+        (base32 "08akp2wdb4iy15b8k0ncwwmpbb9ipc52hp8jnr25mbaanbsgaqnf"))))
+    (properties `((upstream-name . "profileCI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-itp))
+    (home-page "https://paulnorthrop.github.io/profileCI/")
+    (synopsis "Profiling a Log-Likelihood to Calculate Confidence Intervals")
+    (description
+     "This package provides tools for profiling a user-supplied log-likelihood
+function to calculate confidence intervals for model parameters.  Speed of
+computation can be improved by adjusting the step sizes in the profiling and/or
+starting the profiling from limits based on the approximate large sample normal
+distribution for the maximum likelihood estimator of a parameter.  The accuracy
+of the limits can be set by the user.  A plot method visualises the
+log-likelihood and confidence interval.  Only convex log-likelihoods are
+supported, that is, disjoint confidence intervals will not be found.")
+    (license license:gpl3+)))
+
 (define-public r-profile
   (package
     (name "r-profile")
@@ -42782,13 +42811,13 @@ Mechanistic Models\" <doi:10.1080/01621459.2019.1604367>.")
 (define-public r-panelmatch
   (package
     (name "r-panelmatch")
-    (version "3.0.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PanelMatch" version))
        (sha256
-        (base32 "11b296gr0bh9m5s77k79zxbcqr7clwlzx1fpawp16k4vlqs1q6x1"))))
+        (base32 "1licrqx3f4vp4qnvdc7czlzqnbmga41b4k85hal02k44sk8hf8n2"))))
     (properties `((upstream-name . "PanelMatch")))
     (build-system r-build-system)
     (arguments

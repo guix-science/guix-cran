@@ -29860,6 +29860,36 @@ emojis and multi-word tokens, so this package can also be used to study
 constructs beyond sentiment.")
     (license license:expat)))
 
+(define-public r-tarchives
+  (package
+    (name "r-tarchives")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tarchives" version))
+       (sha256
+        (base32 "0yk60amdnhha36g919rr4d8h4laprdpd4ih699iacdzd1sakjm47"))))
+    (properties `((upstream-name . "tarchives")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-usethis
+                             r-targets
+                             r-rlang
+                             r-fs
+                             r-callr))
+    (home-page "https://cran.r-project.org/package=tarchives")
+    (synopsis "Make Your 'targets' Pipelines into a Package")
+    (description
+     "Runs targets pipeline in /inst/tarchives and stores the results in the R user
+directory.  This means that the user does not have to run the process
+repeatedly, and the developer has the flexibility to update the data as versions
+are updated.")
+    (license license:expat)))
+
 (define-public r-tar
   (package
     (name "r-tar")

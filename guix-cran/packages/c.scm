@@ -23311,13 +23311,13 @@ be found.")
 (define-public r-colorhcplot
   (package
     (name "r-colorhcplot")
-    (version "1.3.1")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colorhcplot" version))
        (sha256
-        (base32 "009pyyb30kwshldd7v7zfy5rxys6i0dhlc5w8ail61acbg4rlrmz"))))
+        (base32 "10y014770s7c06vry7dzq3p5gmd0j7vsj9lrikmzswkixah862ra"))))
     (properties `((upstream-name . "colorhcplot")))
     (build-system r-build-system)
     (arguments
@@ -23331,7 +23331,7 @@ be found.")
 results of hierarchical clustering analyses as dendrograms whose leaves and
 labels are colored according to sample grouping.  Assess whether data point
 grouping aligns to naturally occurring clusters.")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-colorfindr
   (package
@@ -31683,6 +31683,34 @@ for easy data downloading and importing. @code{ClinicalOmicsDB} is a database of
 clinical and omics data from cancer patients.  The database is accessible at
 <http://trials.linkedomics.org>.")
     (license license:expat)))
+
+(define-public r-clinical
+  (package
+    (name "r-clinical")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clinical" version))
+       (sha256
+        (base32 "144vng11m0y1v0wp58l9nifs49d5na39pwbqfnicjnhcfsv7yj03"))))
+    (properties `((upstream-name . "clinical")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-minerva r-matrix r-clinfun))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=clinical")
+    (synopsis "Analysis of Clinical Data")
+    (description
+     "This package provides a collection of tools to easily analyze clinical data,
+including functions for correlation analysis, and statistical testing.  The
+package facilitates the integration of clinical metadata with other omics
+layers, enabling exploration of quantitative variables.  It also includes the
+utility for frequency matching samples across a dataset based on patient
+variables.")
+    (license license:gpl2+)))
 
 (define-public r-clinfun
   (package

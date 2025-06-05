@@ -1431,13 +1431,13 @@ covariance matrix based on permutations of the transformed data residuals.")
 (define-public r-mvnormaltest
   (package
     (name "r-mvnormaltest")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvnormalTest" version))
        (sha256
-        (base32 "1hbapcmj1rzrdzlbkay94f3r2388sk60zizh48vbbkc83qlm7xbr"))))
+        (base32 "17nixg1cwd6sjypflcx1vwrijnvf2y1m4g4w0ij3cb33xwviz4jd"))))
     (properties `((upstream-name . "mvnormalTest")))
     (build-system r-build-system)
     (arguments
@@ -7666,37 +7666,43 @@ series in standard file formats.")
 (define-public r-mtrank
   (package
     (name "r-mtrank")
-    (version "0.1-1")
+    (version "0.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mtrank" version))
        (sha256
-        (base32 "1vriyanhiia4drbrydj7hnxrrcnrdlpafkj6yjym6zjdzk13mphg"))))
+        (base32 "1prpmrfrchzkygx5nsq2yp1hl8z5bn2ax05s798qaqcck7cw5aa3"))))
     (properties `((upstream-name . "mtrank")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plackettluce r-netmeta r-meta r-magrittr
+    (propagated-inputs (list r-plackettluce
+                             r-netmeta
+                             r-meta
+                             r-magrittr
+                             r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/TEvrenoglou/mtrank")
     (synopsis
      "Ranking using Probabilistic Models and Treatment Choice Criteria")
     (description
-     "Implementation of a novel frequentist approach to produce clinically relevant
-treatment hierarchies in network meta-analysis.  The method is based on
-treatment choice criteria (TCC) and probabilistic ranking models, as described
-by Evrenoglou et al. (2024) <DOI:10.48550/@code{arXiv.2406.10612>}.  The TCC are
-defined using a rule based on the minimal clinically important difference.
-Using the defined TCC, the study-level data (i.e., treatment effects and
-standard errors) are first transformed into a preference format, indicating
-either a treatment preference (e.g., treatment A > treatment B) or a tie
-(treatment A = treatment B).  The preference data are then synthesized using a
-probabilistic ranking model, which estimates the latent ability parameter of
-each treatment and produces the final treatment hierarchy.  This parameter
-represents each treatmentâs ability to outperform all the other competing
+     "Estimation of treatment hierarchies in network meta-analysis using a novel
+frequentist approach based on treatment choice criteria (TCC) and probabilistic
+ranking models, as described by Evrenoglou et al. (2024)
+<DOI:10.48550/@code{arXiv.2406.10612>}.  The TCC are defined using a rule based
+on the smallest worthwhile difference (SWD).  Using the defined TCC, the NMA
+estimates (i.e., treatment effects and standard errors) are first transformed
+into treatment preferences, indicating either a treatment preference (e.g.,
+treatment A > treatment B) or a tie (treatment A = treatment B).  These
+treatment preferences are then synthesized using a probabilistic ranking model,
+which estimates the latent ability parameter of each treatment and produces the
+final treatment hierarchy.  This parameter represents each treatments ability to
+outperform all the other competing treatments in the network.  Here the terms
+ability to outperform indicates the propensity of each treatment to yield
+clinically important and beneficial effects when compared to all the other
 treatments in the network.  Consequently, larger ability estimates indicate
 higher positions in the ranking list.")
     (license license:gpl2+)))
@@ -9325,13 +9331,13 @@ Graphics''.")
 (define-public r-msetool
   (package
     (name "r-msetool")
-    (version "3.7.3")
+    (version "3.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSEtool" version))
        (sha256
-        (base32 "07rrh70bp3wckhszv5hgqcbch3llp84gl22x45wvx167pmgvgxp6"))))
+        (base32 "1r1nrcxnrajbiyzznzhahifsdrqp9x7f9hl91zdhnqn03317810i"))))
     (properties `((upstream-name . "MSEtool")))
     (build-system r-build-system)
     (arguments
@@ -13686,6 +13692,45 @@ to life tables.")
 expelled tags in aquatic acoustic telemetry arrays.  Designed for arrays with
 non-overlapping receivers.")
     (license license:gpl3+)))
+
+(define-public r-morsetktd
+  (package
+    (name "r-morsetktd")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "morseTKTD" version))
+       (sha256
+        (base32 "008dgw4xrnp6482cg6n91q3h09hr4nvzrvzj41cq5nh06lf05lxx"))))
+    (properties `((upstream-name . "morseTKTD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-testthat
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-gridextra
+                             r-ggplot2
+                             r-desolve
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=morseTKTD")
+    (synopsis "Bayesian Inference of TKTD Models")
+    (description
+     "Advanced methods for a valuable quantitative environmental risk assessment using
+Bayesian inference of survival Data with toxicokinetics toxicodynamics (TKTD)
+models.  Among others, it facilitates Bayesian inference of the general unified
+threshold model of survival (GUTS).  See models description in Jager et al.
+(2011) <doi:10.1021/es103092a> and implementation using Bayesian inference in
+Baudrot and Charles (2019) <doi:10.1038/s41598-019-47698-0>.")
+    (license license:agpl3+)))
 
 (define-public r-morsedr
   (package
@@ -22358,19 +22403,19 @@ graphics.")
 (define-public r-mlbc
   (package
     (name "r-mlbc")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLBC" version))
        (sha256
-        (base32 "04f54p61i0m1281k06rrj7hghjpyq2r0srkvb7g5wadfs89ljd4z"))))
+        (base32 "1d353mz88lyzhzwb9978hmzrzpqiibx2d53arly6044mr86ff250"))))
     (properties `((upstream-name . "MLBC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tmb r-rcppeigen))
+    (propagated-inputs (list r-tmb r-rcppeigen r-numderiv r-mass))
     (home-page "https://cran.r-project.org/package=MLBC")
     (synopsis "Bias Correction Methods for Models Using Synthetic Data")
     (description
@@ -24998,13 +25043,13 @@ supported as well.")
 (define-public r-missr
   (package
     (name "r-missr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missr" version))
        (sha256
-        (base32 "0srs6rkki2z767qdqprpi7014axnvwipv5q2acbai26sidr25fqr"))))
+        (base32 "1kv9vk2jg0ys1x5sfwspz0ics4pvx9b7yvqcywdf1mmg6xpyam1c"))))
     (properties `((upstream-name . "missr")))
     (build-system r-build-system)
     (arguments
@@ -33364,13 +33409,13 @@ global spatio-temporal models calculated using publicly available data.")
 (define-public r-metchem
   (package
     (name "r-metchem")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetChem" version))
        (sha256
-        (base32 "179634a8chsqfrq44il4dpyxrvadwdn1a7zm2h4ywim63w1dj02b"))))
+        (base32 "1rnkrpmrwmi223zzhrw2is4c9qfrqcx0pn8lg8iqcwngb7icw005"))))
     (properties `((upstream-name . "MetChem")))
     (build-system r-build-system)
     (arguments
@@ -33382,14 +33427,15 @@ global spatio-temporal models calculated using publicly available data.")
     (synopsis "Chemical Structural Similarity Analysis")
     (description
      "This package provides a new pipeline to explore chemical structural similarity
-across metabolite.  It allows to classify metabolites in structurally-related
-modules and identify common shared functional groups.  KODAMA algorithm is used
-to highlight structural similarity between metabolites.  See Cacciatore S,
-Tenori L, Luchinat C, Bennett PR, @code{MacIntyre} DA. (2017) Bioinformatics
-<doi:10.1093/bioinformatics/btw705>, Cacciatore S, Luchinat C, Tenori L. (2014)
-Proc Natl Acad Sci USA <doi:10.1073/pnas.1220873111>, and Abdel-Shafy EA, Melak
-T, @code{MacIntyre} DA, Zadra G, Zerbini LF, Piazza S, Cacciatore S. (2023)
-Bioinformatics Advances <doi:10.1093/bioadv/vbad053>.")
+across metabolites.  It allows the metabolite classification in
+structurally-related modules and identifies common shared functional groups.
+The KODAMA algorithm is used to highlight structural similarity between
+metabolites.  See Cacciatore S, Tenori L, Luchinat C, Bennett PR,
+@code{MacIntyre} DA. (2017) Bioinformatics <doi:10.1093/bioinformatics/btw705>,
+Cacciatore S, Luchinat C, Tenori L. (2014) Proc Natl Acad Sci USA
+<doi:10.1073/pnas.1220873111>, and Abdel-Shafy EA, Melak T, @code{MacIntyre} DA,
+Zadra G, Zerbini LF, Piazza S, Cacciatore S. (2023) Bioinformatics Advances
+<doi:10.1093/bioadv/vbad053>.")
     (license license:gpl2+)))
 
 (define-public r-metbrewer
@@ -41233,13 +41279,13 @@ plotting Monte Carlo estimates versus sample size.")
 (define-public r-mcmcsae
   (package
     (name "r-mcmcsae")
-    (version "0.7.8")
+    (version "0.7.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmcsae" version))
        (sha256
-        (base32 "03y1mbdikwg63facvs4jkh670cj01w7s5nyxg1hnzmg3dc22k38j"))))
+        (base32 "0639yvwk4azsyh2ghmqa1pkl2sk1657jxl0kddkrxwmqkli6w9l8"))))
     (properties `((upstream-name . "mcmcsae")))
     (build-system r-build-system)
     (arguments
@@ -41247,10 +41293,10 @@ plotting Monte Carlo estimates versus sample size.")
       #:tests? #f))
     (propagated-inputs (list r-rcppeigen
                              r-rcpp
-                             r-matrixstats
                              r-matrix
                              r-loo
-                             r-gigrvg))
+                             r-gigrvg
+                             r-collapse))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mcmcsae")
     (synopsis "Markov Chain Monte Carlo Small Area Estimation")

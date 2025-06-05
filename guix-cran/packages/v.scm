@@ -1149,13 +1149,13 @@ output and create organized and easily portable data products.")
 (define-public r-vprint
   (package
     (name "r-vprint")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vprint" version))
        (sha256
-        (base32 "154ji1cfm0cq1yzy8yi4fqqynjwyj8b9vcpz4l73z2w28y8khmy6"))))
+        (base32 "1dwig33zdy4m4nqjimbxiqz1xhk7am41j8r54539d5h8sw0sxayf"))))
     (properties `((upstream-name . "vprint")))
     (build-system r-build-system)
     (arguments

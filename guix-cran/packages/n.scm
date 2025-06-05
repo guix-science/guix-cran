@@ -8875,6 +8875,45 @@ species.")
     (description "Datasets for testing nonlinear regression routines.")
     (license license:gpl2+)))
 
+(define-public r-nisrarr
+  (package
+    (name "r-nisrarr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nisrarr" version))
+       (sha256
+        (base32 "0qni4vvxar3g3bsc7sj33r0a2k9hh0cglzylgpvqyxqrd7n9slc7"))))
+    (properties `((upstream-name . "nisrarr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-vctrs
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rjstat
+                             r-purrr
+                             r-pillar
+                             r-lubridate
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli
+                             r-cachem))
+    (home-page "https://github.com/MarkPaulin/nisrarr")
+    (synopsis "Download Data from the NISRA Data Portal")
+    (description
+     "Download data from the Northern Ireland Statistics and Research Agency (NISRA)
+data portal, accessed at <https://data.nisra.gov.uk>.  NISRA is a government
+agency and the principal source of official statistics and social research on
+Northern Ireland.")
+    (license license:expat)))
+
 (define-public r-nirstat
   (package
     (name "r-nirstat")
@@ -17278,6 +17317,35 @@ see <https://power.larc.nasa.gov/>.")
      "This package provides functions to access NASA's Earth Imagery and Assets API
 and the Earth Observatory Natural Event Tracker (EONET) webservice.")
     (license license:cc0)))
+
+(define-public r-nasa
+  (package
+    (name "r-nasa")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nasa" version))
+       (sha256
+        (base32 "08llbpfav8xgrwjkn47q0ydyiwpgyvf8bnq7rbjf2b0rybbmdjqf"))))
+    (properties `((upstream-name . "nasa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-magick r-jsonlite r-httr r-dplyr))
+    (home-page "https://api.nasa.gov")
+    (synopsis
+     "Access National Aeronautics and Space Administration (NASA) APIs")
+    (description
+     "This package provides functions to access and download data from various NASA
+APIs <https://api.nasa.gov/#@code{browseAPI>}, including: Astronomy Picture of
+the Day (APOD), Mars Rover Photos, Earth Polychromatic Imaging Camera (EPIC),
+Near Earth Object Web Service (@code{NeoWs}), Earth Observatory Natural Event
+Tracker (EONET), and NASA Earthdata CMR Search.  Most endpoints require a NASA
+API key for access.  Data is retrieved, cleaned for analysis, and returned in a
+dataframe-friendly format.")
+    (license license:gpl3)))
 
 (define-public r-naryn
   (package

@@ -4875,6 +4875,32 @@ scale development and paleoclimate analysis.")
 (NHANES).")
     (license license:gpl3)))
 
+(define-public r-astgrepr
+  (package
+    (name "r-astgrepr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "astgrepr" version))
+       (sha256
+        (base32 "02mznhs8kd3nrqik9l8hdhh76lkr37q98vrb7l9p1xjzx1p6l4pl"))))
+    (properties `((upstream-name . "astgrepr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-yaml r-rrapply r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/etiennebacher/astgrepr")
+    (synopsis "Parse and Manipulate R Code")
+    (description
+     "Parsing R code is key to build tools such as linters and stylers.  This package
+provides a binding to the Rust crate ast-grep so that one can parse and explore
+R code.")
+    (license license:expat)))
+
 (define-public r-asterisk
   (package
     (name "r-asterisk")
