@@ -11937,6 +11937,49 @@ responses and generating diagnostic plots.")
     (license (list license:cc0
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-hdspatialscan
+  (package
+    (name "r-hdspatialscan")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDSpatialScan" version))
+       (sha256
+        (base32 "1ggrg9gdh8qmy296cg1k3mp5lhjd62a3b8ywrg9qdvxxmrxxmqap"))))
+    (properties `((upstream-name . "HDSpatialScan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-teachingdemos
+                             r-swfscmisc
+                             r-spatialnp
+                             r-sp
+                             r-sf
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-raster
+                             r-purrr
+                             r-plotrix
+                             r-pbapply
+                             r-matrixstats
+                             r-fmsb
+                             r-dt))
+    (home-page "https://cran.r-project.org/package=HDSpatialScan")
+    (synopsis "Multivariate and Functional Spatial Scan Statistics")
+    (description
+     "Allows to detect spatial clusters of abnormal values on multivariate or
+functional data (FrÃ©vent et al. (2022) <doi:10.32614/RJ-2022-045>).  See also:
+FrÃ©vent et al. (2023) <doi:10.1093/jrsssc/qlad017>, Smida et al. (2022)
+<doi:10.1016/j.csda.2021.107378>, FrÃ©vent et al. (2021)
+<doi:10.1016/j.spasta.2021.100550>.  Cucala et al. (2019)
+<doi:10.1016/j.spasta.2018.10.002>, Cucala et al. (2017)
+<doi:10.1016/j.spasta.2017.06.001>, Jung and Cho (2015)
+<doi:10.1186/s12942-015-0024-6>, Kulldorff et al. (2009)
+<doi:10.1186/1476-072X-8-58>.")
+    (license license:gpl3)))
+
 (define-public r-hdsinrdata
   (package
     (name "r-hdsinrdata")

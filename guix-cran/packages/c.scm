@@ -7410,13 +7410,13 @@ framework with empiric link function is described in: Wages and Conaway (2014)
 (define-public r-critpath
   (package
     (name "r-critpath")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "critpath" version))
        (sha256
-        (base32 "0y9vbsdppi8xir1rvk8j7zvj69gjmc2whpqfcklws898rcnwck1f"))))
+        (base32 "08mbnki6m8i29r2mrf1fxpc6zv405984kc2nkxb32kiz4skdm170"))))
     (properties `((upstream-name . "critpath")))
     (build-system r-build-system)
     (arguments
@@ -22916,13 +22916,13 @@ custom colour palettes.")
 (define-public r-colossus
   (package
     (name "r-colossus")
-    (version "1.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Colossus" version))
        (sha256
-        (base32 "072i9a195x4nbyccmqbamsnyzab199j96bq058bwphc0qc94z4xr"))))
+        (base32 "09h1j6mnz0pn35ffprs73cs35lqfscz4jn4japad327pzkscl23m"))))
     (properties `((upstream-name . "Colossus")))
     (build-system r-build-system)
     (arguments
@@ -22953,12 +22953,12 @@ Proportional hazards <https://en.wikipedia.org/wiki/Proportional_hazards_model>,
 Poisson <https://en.wikipedia.org/wiki/Poisson_regression>, and Fine-Gray
 competing risks
 <https://www.publichealth.columbia.edu/research/population-health-methods/competing-risk-analysis>
-regression are supported.  This work was sponsored by NASA Grant 80NSSC19M0161
-through a subcontract from the National Council on Radiation Protection and
-Measurements (NCRP).  The computing for this project was performed on the Beocat
-Research Cluster at Kansas State University, which is funded in part by NSF
-grants CNS-1006860, EPS-1006860, EPS-0919443, ACI-1440548, CHE-1726332, and NIH
-P20GM113109.")
+regression are supported.  This work was sponsored by NASA Grants 80NSSC19M0161
+and 80NSSC23M0129 through a subcontract from the National Council on Radiation
+Protection and Measurements (NCRP).  The computing for this project was
+performed on the Beocat Research Cluster at Kansas State University, which is
+funded in part by NSF grants CNS-1006860, EPS-1006860, EPS-0919443, ACI-1440548,
+CHE-1726332, and NIH P20GM113109.")
     (license license:gpl3+)))
 
 (define-public r-colorspec
@@ -32444,13 +32444,13 @@ for integral dataset cleaning.")
 (define-public r-clickhousehttp
   (package
     (name "r-clickhousehttp")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClickHouseHTTP" version))
        (sha256
-        (base32 "0k8rl7vf4dd2jp8xk03v007mrmjz5w4lbgagmsylv73lm35485zh"))))
+        (base32 "1jbkzd65s58nlnsjp579cmni59gp8zg9q3f7q8pdlf2q5vkzz5h4"))))
     (properties `((upstream-name . "ClickHouseHTTP")))
     (build-system r-build-system)
     (arguments
@@ -45298,6 +45298,40 @@ updating of the in-control parameter estimates.  See Capizzi and Masarotto
 (2019) <doi:10.1080/00224065.2019.1640096> for the description of the method.")
     (license license:expat)))
 
+(define-public r-causens
+  (package
+    (name "r-causens")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "causens" version))
+       (sha256
+        (base32 "0mkxhwld6s97dg4nw8c14b33zq7k23yha7sf9s26i43vz2h5jn7p"))))
+    (properties `((upstream-name . "causens")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://kuan-liu-lab.github.io/causens/")
+    (synopsis
+     "Perform Causal Sensitivity Analyses Using Various Statistical Methods")
+    (description
+     "While data from randomized experiments remain the gold standard for causal
+inference, estimation of causal estimands from observational data is possible
+through various confounding adjustment methods.  However, the challenge of
+unmeasured confounding remains a concern in causal inference, where failure to
+account for unmeasured confounders can lead to biased estimates of causal
+estimands.  Sensitivity analysis within the framework of causal inference can
+help adjust for possible unmeasured confounding.  In `causens`, three main
+methods are implemented: adjustment via sensitivity functions (Brumback,
+HernÃ¡n, Haneuse, and Robins (2004) <doi:10.1002/sim.1657> and Li, Shen, Wu, and
+Li (2011) <doi:10.1093/aje/kwr096>), Bayesian parametric modelling and Monte
+Carlo approaches (@code{McCandless}, Lawrence C and Gustafson, Paul (2017)
+<doi:10.1002/sim.7298>).")
+    (license license:expat)))
+
 (define-public r-causcor
   (package
     (name "r-causcor")
@@ -46502,13 +46536,13 @@ Meira-Machado, C Esteban, I Arostegui (2017)
 (define-public r-catmaply
   (package
     (name "r-catmaply")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "catmaply" version))
        (sha256
-        (base32 "1vjnh0qvqdfsv4p28yg5r4s9m0l0d7f1r07vamlhvhshb5cfnmsy"))))
+        (base32 "15g2q0rsxqym0hgv6m5y2kyz8za43y6ilga5crjw39zhivs3way4"))))
     (properties `((upstream-name . "catmaply")))
     (build-system r-build-system)
     (arguments

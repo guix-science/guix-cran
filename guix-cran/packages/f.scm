@@ -1053,13 +1053,13 @@ Integration (CI) pipelines.")
 (define-public r-future-mirai
   (package
     (name "r-future-mirai")
-    (version "0.2.2")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "future.mirai" version))
        (sha256
-        (base32 "0fq01gzcby7sy51vhq2jdrrvfa14i94jjdf80jwvm9lwmc3p20d8"))))
+        (base32 "19hhyq0ag9c9gajj266n0wkl341izwqhbdk9h8yq5dp7nifxlas7"))))
     (properties `((upstream-name . "future.mirai")))
     (build-system r-build-system)
     (arguments
@@ -1070,23 +1070,27 @@ Integration (CI) pipelines.")
     (synopsis "'Future' API for Parallel Processing using 'mirai'")
     (description
      "Implementation of the Future API <doi:10.32614/RJ-2021-048> on top of the mirai
-package <doi:10.5281/zenodo.7912722>.  This allows you to process futures, as
-defined by the future package, in parallel out of the box, on your local machine
-or across remote machines.  Contrary to back-ends relying on the parallel
-package (e.g. multisession') and socket connections, mirai_cluster and
-mirai_multisession', provided here, can run more than 125 parallel R processes.")
+package <doi:10.5281/zenodo.7912722>.  By using this package, you get to take
+advantage of the benefits of mirai plus everything else that future and the
+Futureverse adds on top of it.  It allows you to process futures, as defined by
+the future package, in parallel out of the box, on your local machine or across
+remote machines.  Contrary to back-ends relying on the parallel package (e.g.
+multisession') and socket connections, mirai_cluster and mirai_multisession',
+provided here, can run more than 125 parallel R processes.  As a reminder,
+regardless which future backend is used by the user, the code does not have to
+change, it gives identical results, and behaves exactly the same.")
     (license license:gpl3+)))
 
 (define-public r-future-batchtools
   (package
     (name "r-future-batchtools")
-    (version "0.12.1")
+    (version "0.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "future.batchtools" version))
        (sha256
-        (base32 "0cfr4y6d0x1vm0qdpj2b6i9jddd6065iwbv99nix7nls4dzylwfv"))))
+        (base32 "1ccl79426syv90mpyvrrrv259yjzvmp4qzfzzn506dk6rjpdwnhb"))))
     (properties `((upstream-name . "future.batchtools")))
     (build-system r-build-system)
     (arguments
@@ -1102,12 +1106,12 @@ mirai_multisession', provided here, can run more than 125 parallel R processes."
     (synopsis
      "Future API for Parallel and Distributed Processing using 'batchtools'")
     (description
-     "Implementation of the Future API on top of the batchtools package.  This allows
-you to process futures, as defined by the future package, in parallel out of the
-box, not only on your local machine or ad-hoc cluster of machines, but also via
-high-performance compute ('HPC') job schedulers such as LSF', @code{OpenLava}',
-Slurm', SGE', and TORQUE / PBS', e.g. y <- future.apply::future_lapply(files,
-FUN = process)'.")
+     "Implementation of the Future API <doi:10.32614/RJ-2021-048> on top of the
+batchtools package.  This allows you to process futures, as defined by the
+future package, in parallel out of the box, not only on your local machine or
+ad-hoc cluster of machines, but also via high-performance compute ('HPC') job
+schedulers such as LSF', @code{OpenLava}', Slurm', SGE', and TORQUE / PBS', e.g.
+y <- future.apply::future_lapply(files, FUN = process)'.")
     (license license:lgpl2.1+)))
 
 (define-public r-futility
@@ -7273,13 +7277,13 @@ mechanistic models of speciation, preservation and sampling.")
 (define-public r-fossilbrush
   (package
     (name "r-fossilbrush")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fossilbrush" version))
        (sha256
-        (base32 "056krpxsx0gz47py6v2ldik74gsnhbc1d0v144i7v4f4qcm14hs1"))))
+        (base32 "0xvi9p6kxmrqqbmcbb8w2lipls5kd32n7jsrsw1yd5pc33lbvapc"))))
     (properties `((upstream-name . "fossilbrush")))
     (build-system r-build-system)
     (arguments
@@ -7290,7 +7294,8 @@ mechanistic models of speciation, preservation and sampling.")
                              r-pbapply
                              r-matrix
                              r-igraph
-                             r-data-table))
+                             r-data-table
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=fossilbrush")
     (synopsis "Automated Cleaning of Fossil Occurrence Data")
@@ -10984,13 +10989,13 @@ to calculate equilibrium stability.")
 (define-public r-fluxible
   (package
     (name "r-fluxible")
-    (version "1.1.2")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxible" version))
        (sha256
-        (base32 "0qd3qb769khjap428rmgs7qrh20s75jcs8v1chqfx5g07853lz9d"))))
+        (base32 "1j3ccnksfh90jfmg9gqasqjc7n8jd9yczr0x6llz43hl4y3xj3qv"))))
     (properties `((upstream-name . "fluxible")))
     (build-system r-build-system)
     (arguments
@@ -11005,6 +11010,7 @@ to calculate equilibrium stability.")
                              r-purrr
                              r-progress
                              r-lubridate
+                             r-lifecycle
                              r-haven
                              r-ggplot2
                              r-ggforce
@@ -22372,13 +22378,13 @@ available from <https://github.com/randy408/libspng/>.")
 (define-public r-fastplyr
   (package
     (name "r-fastplyr")
-    (version "0.5.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastplyr" version))
        (sha256
-        (base32 "1z6idh1djqab3ljyhjsqvlwm41z7nl4q1gxkch398phsfvnr88h1"))))
+        (base32 "0cwh83xgqlr7d3xbw4r9ghxivcdx9f86r8vispxcv0lxrxhjhgkn"))))
     (properties `((upstream-name . "fastplyr")))
     (build-system r-build-system)
     (arguments
@@ -22388,11 +22394,12 @@ available from <https://github.com/randy408/libspng/>.")
                              r-tidyselect
                              r-stringr
                              r-rlang
-                             r-magrittr
+                             r-purrr
                              r-lifecycle
                              r-dplyr
                              r-cpp11
                              r-collapse
+                             r-cli
                              r-cheapr))
     (home-page "https://cran.r-project.org/package=fastplyr")
     (synopsis "Fast Alternatives to 'tidyverse' Functions")
@@ -23170,13 +23177,13 @@ Raimondo (2019), IEEE International Conference on Image Processing (ICIP), pp.
 (define-public r-fastgasp
   (package
     (name "r-fastgasp")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastGaSP" version))
        (sha256
-        (base32 "0w1zy6zw4f0fd256hxfdf005p8v8m2bji1nl7mfpy37ap17wym0x"))))
+        (base32 "065ml5f9i8pca8mqli0gfgikal115ycaixqfg2kcl4s368vfz4yx"))))
     (properties `((upstream-name . "FastGaSP")))
     (build-system r-build-system)
     (arguments
@@ -25129,13 +25136,13 @@ approach from Scutari, Panero and Proissl (2022)
 (define-public r-fairmetrics
   (package
     (name "r-fairmetrics")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fairmetrics" version))
        (sha256
-        (base32 "069vql73782i19ak7nx34yr2r01rn5z3l7skp5bm0m9hnn3siyfp"))))
+        (base32 "0f0y3mw914fiqndkf3xvwivwrjkfmr1n9ldmbsqrbclg4vxqwbcx"))))
     (properties `((upstream-name . "fairmetrics")))
     (build-system r-build-system)
     (arguments

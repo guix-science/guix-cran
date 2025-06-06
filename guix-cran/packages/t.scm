@@ -5893,13 +5893,13 @@ more information on the API, see
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "15nvzlbcz7k9xpfl3yydk97rfgpa6xvhjg1bsn9c499nl0yx9bqg"))))
+        (base32 "1z1m96l114saf26jv9p0dazspva7x11k654isa0p5am8iynv9pa0"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (arguments
@@ -7818,13 +7818,13 @@ phylogenetic indexes, which can be quickly displayed graphically.")
 (define-public r-treesitter-r
   (package
     (name "r-treesitter-r")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treesitter.r" version))
        (sha256
-        (base32 "15kbbzz0mfs9wwm0lk7v764m85fjwbng881r1yhyjklc9zlxanx3"))))
+        (base32 "14wvxbzd3a9bkgpracyxprb9b028lm46v4qxdcyiz02i3c91npqp"))))
     (properties `((upstream-name . "treesitter.r")))
     (build-system r-build-system)
     (arguments
@@ -15031,13 +15031,13 @@ CR2) can be handled using the @code{tkImg} package for Tcl/Tk'.")
 (define-public r-tkcat
   (package
     (name "r-tkcat")
-    (version "1.1.12")
+    (version "1.1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TKCat" version))
        (sha256
-        (base32 "1s88lkc4wxzlwbrr4qq7rsrws8hvlzbfjdfj0qgxmkqqgz7g882z"))))
+        (base32 "0fvaghh49n7kiyw4hslww4d2j581fx2h4k4ss987kbfmdblk7hdj"))))
     (properties `((upstream-name . "TKCat")))
     (build-system r-build-system)
     (arguments
@@ -20809,24 +20809,19 @@ modeling for paired comparison and ranking data.; Maydeu-Olivares & BÃ¶ckenhol
 (define-public r-thunder
   (package
     (name "r-thunder")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thunder" version))
        (sha256
-        (base32 "1jyya96z3q5sqqzs4w3cmph2xqxmr5l7mdmp0pnky2h9kw2lr9l7"))))
+        (base32 "1f8k8r7r8jhr1fwdxq3apxypxhdl3jdamqagyjraxq6y246i4lid"))))
     (properties `((upstream-name . "thunder")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp
-                             r-radiosonde
-                             r-httr
-                             r-dplyr
-                             r-curl
-                             r-airthermo))
+    (propagated-inputs (list r-rcpp r-httr r-dplyr r-curl r-airthermo))
     (native-inputs (list r-knitr))
     (home-page "https://bczernecki.github.io/thundeR/")
     (synopsis

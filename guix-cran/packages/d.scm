@@ -3993,13 +3993,13 @@ reference implementation of the @code{DataSHIELD} infrastructure.")
 (define-public r-dsmsearch
   (package
     (name "r-dsmsearch")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsmSearch" version))
        (sha256
-        (base32 "0q0m95zrdbridjav6x3avq6m27rlm7jl3yf822p5v1r5jyf36jq6"))))
+        (base32 "0xx44hzy97g9cm6lx24r1a2p2fgq6av6srjzznym33vh6dx4sv5k"))))
     (properties `((upstream-name . "dsmSearch")))
     (build-system r-build-system)
     (arguments
@@ -4008,9 +4008,11 @@ reference implementation of the @code{DataSHIELD} infrastructure.")
     (propagated-inputs (list r-terra
                              r-sp
                              r-sf
+                             r-nominatimlite
                              r-lidr
                              r-imager
                              r-httr2
+                             r-forestdata
                              r-dplyr))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=dsmSearch")
@@ -4482,13 +4484,13 @@ been published by Bhattacharjee et al.(2024) <doi:10.1038/s41598-024-54149-y>.")
 (define-public r-dscore
   (package
     (name "r-dscore")
-    (version "1.9.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dscore" version))
        (sha256
-        (base32 "1skcmd2fh8s5d5qdj661niwa3cfd01i22kxxcf84awad0p1p8g57"))))
+        (base32 "1bxi24s5f9bc0g95gsihf3c4arhpxkca12x4mvvibnlqixks0928"))))
     (properties `((upstream-name . "dscore")))
     (build-system r-build-system)
     (arguments
@@ -30300,19 +30302,19 @@ Publishing.")
 (define-public r-datana
   (package
     (name "r-datana")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datana" version))
        (sha256
-        (base32 "1diyk2j4dlqx4q6ddw7cx7a5k0a53l76c7i43p4awkkh2fcmz16r"))))
+        (base32 "05g59lzgp28rxzc69v0v3w1048y5467jjiman01292pr00d9dd33"))))
     (properties `((upstream-name . "datana")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-hmisc r-ggplot2))
     (home-page "https://cran.r-project.org/package=datana")
     (synopsis "Datasets and Functions to Accompany Analisis De Datos Con R")
     (description

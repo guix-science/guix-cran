@@ -3635,13 +3635,13 @@ available query filters.")
 (define-public r-susier
   (package
     (name "r-susier")
-    (version "0.14.1")
+    (version "0.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "susieR" version))
        (sha256
-        (base32 "1z6rifg22jywgvkjqdip1vs76pwinw05jb36cs291y0k6cp42246"))))
+        (base32 "0vicxla65g3lhcb2rcgksvaqlkd30dwsly4j9h1cr9zpn4p340ms"))))
     (properties `((upstream-name . "susieR")))
     (build-system r-build-system)
     (arguments
@@ -4592,13 +4592,13 @@ constraints in the same model.")
 (define-public r-survivalsurrogate
   (package
     (name "r-survivalsurrogate")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivalsurrogate" version))
        (sha256
-        (base32 "16r4hn2pgpk7v1ljfyl1g322xrr714rqb4x50zab392fnr8f8pyx"))))
+        (base32 "0h5q4b92sk2vylx1q5n7s8z04pr2vbs3i86ljsh6wry1fkpywn48"))))
     (properties `((upstream-name . "survivalsurrogate")))
     (build-system r-build-system)
     (arguments
@@ -4618,11 +4618,13 @@ constraints in the same model.")
     (description
      "This package provides influence function-based methods to evaluate a
 longitudinal surrogate marker in a censored time-to-event outcome setting, with
-plug-in and targeted minimum loss-based estimation options.  More details will
-be available in the future in: Agniel D and Parast L (2025+). \"Robust Evaluation
-of Longitudinal Surrogate Markers with Censored Data.\" Journal of the Royal
-Statistical Society: Series B, In press.  A tutorial for this package can be
-found at <https://www.laylaparast.com/survivalsurrogate>.")
+plug-in and targeted maximum likelihood estimation options.  Details are
+described in: Agniel D and Parast L (2025). \"Robust Evaluation of Longitudinal
+Surrogate Markers with Censored Data.\" Journal of the Royal Statistical Society:
+Series B <doi:10.1093/jrsssb/qkae119>.  A tutorial for this package can be found
+at <https://www.laylaparast.com/survivalsurrogate> and a Shiny App implementing
+the package can be found at
+<https://parastlab.shinyapps.io/@code{survivalsurrogateApp/>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-survivalsl
@@ -37685,13 +37687,13 @@ likelihood.  Biometrics <doi:10.1111/biom.13366>.")
 (define-public r-slsedesign
   (package
     (name "r-slsedesign")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLSEdesign" version))
        (sha256
-        (base32 "112zsb1phg8mrrn2gdj133rzvs6ki4636v417vxbkp133qx4q6j5"))))
+        (base32 "1nciazg1xj039p2v5c18rl49fnfri5x8871mxadnhc4n93hf9iyb"))))
     (properties `((upstream-name . "SLSEdesign")))
     (build-system r-build-system)
     (arguments
@@ -55589,6 +55591,36 @@ Sequential package on these populations, which allows for the exploration of
 outcome misclassification in data.")
     (license license:gpl2)))
 
+(define-public r-sequential-pops
+  (package
+    (name "r-sequential-pops")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sequential.pops" version))
+       (sha256
+        (base32 "0jk6bcl69fi6zjhs5r7sgww6ag9akbk3fadxgp8nbj5x93v2krw6"))))
+    (properties `((upstream-name . "sequential.pops")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncdist r-rlang r-emdbook))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rincondf/sequential.pops")
+    (synopsis "Sequential Analysis of Biological Population Sizes")
+    (description
+     "In population management, data come at more or less regular intervals over time
+in sampling batches (bouts) and decisions should be made with the minimum number
+of samples and as quickly as possible.  This package provides tools to
+implement, produce charts with stop lines, summarize results and assess
+sequential analyses that test hypotheses about population sizes.  Two approaches
+are included: the sequential test of Bayesian posterior probabilities (Rincon,
+D.F. et al.  2025 <doi:10.1111/2041-210X.70053>), and the sequential probability
+ratio test (Wald, A. 1945 <http://www.jstor.org/stable/2235829>).")
+    (license license:gpl3+)))
+
 (define-public r-sequential
   (package
     (name "r-sequential")
@@ -62070,13 +62102,13 @@ MARSPEC <http://www.marspec.org/>.")
 (define-public r-sdmodels
   (package
     (name "r-sdmodels")
-    (version "1.0.10")
+    (version "1.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SDModels" version))
        (sha256
-        (base32 "199vswwbrwi330r932ngf59jdy2f5s8310w1f358vflfgxmaxmfm"))))
+        (base32 "08bib80zddncr9pirhw949srkm13m1jmpiy9vl0jzdhv96ryk07d"))))
     (properties `((upstream-name . "SDModels")))
     (build-system r-build-system)
     (arguments
@@ -62091,6 +62123,8 @@ MARSPEC <http://www.marspec.org/>.")
                              r-gridextra
                              r-gpumatrix
                              r-ggplot2
+                             r-future-apply
+                             r-future
                              r-fda
                              r-doparallel
                              r-diagrammer

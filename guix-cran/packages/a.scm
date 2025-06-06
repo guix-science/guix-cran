@@ -3571,6 +3571,32 @@ accounts, or estimate the amount of sales tax owed on a collection of
 transactions (Meeden and Sargent, 2007, <doi:10.1080/03610920701386802>).")
     (license license:expat)))
 
+(define-public r-audioscatter
+  (package
+    (name "r-audioscatter")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AudioScatter" version))
+       (sha256
+        (base32 "1ralk3q95lycr000maay9g67fvv62icjvcl789a8vbjsjan1swfb"))))
+    (properties `((upstream-name . "AudioScatter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyverse r-scales r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=AudioScatter")
+    (synopsis "Audiogram Scattergrams")
+    (description
+     "This package creates pre- and post- intervention scattergrams based on
+audiometric data.  These scattergrams are formatted for publication in Otology &
+Neurotology and other otolaryngology journals.  For more details, see Gurgel et
+al (2012) <doi:10.1177/0194599812458401>, Oghalai and Jackler (2016)
+<doi:10.1177/0194599816638314>.")
+    (license license:expat)))
+
 (define-public r-audiometry
   (package
     (name "r-audiometry")
@@ -21823,6 +21849,39 @@ rigorous model validation in adsorption studies and aid researchers in selecting
 robust isotherm models.  For more details, see Montgomery et al. (2012) <isbn:
 978-0-470-54281-1>, Lumumba et al. (2024) <doi:10.11648/j.ajtas.20241305.13>,
 and Yates et al. (2022) <doi:10.1002/ecm.1557>.")
+    (license license:gpl3)))
+
+(define-public r-adsorptioncmf
+  (package
+    (name "r-adsorptioncmf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adsoRptionCMF" version))
+       (sha256
+        (base32 "1hpa5lsjckmcfa2n8c86xvbdr0fv3xi020rizjbrqcg9sxnnpsyc"))))
+    (properties `((upstream-name . "adsoRptionCMF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nls2 r-metrics r-ggplot2 r-boot))
+    (home-page "https://cran.r-project.org/package=adsoRptionCMF")
+    (synopsis "Classical Model Fitting of Adsorption Isotherms")
+    (description
+     "This package provides tools for classical parameter estimation of adsorption
+isotherm models, including both linear and nonlinear forms of the Freundlich,
+Langmuir, and Temkin isotherms.  This package allows users to fit these models
+to experimental data, providing parameter estimates along with fit statistics
+such as Akaike Information Criterion (AIC) and Bayesian Information Criterion
+(BIC).  Error metrics are computed to evaluate model performance, and the
+package produces model fit plots with bootstrapped 95% confidence intervals.
+Additionally, it generates residual plots for diagnostic assessment of the
+models.  Researchers and engineers in material science, environmental
+engineering, and chemical engineering can rigorously analyze adsorption behavior
+in their systems using this straightforward, non-Bayesian approach.  For more
+details, see Harding (1907) <doi:10.2307/2987516>.")
     (license license:gpl3)))
 
 (define-public r-adsorpr

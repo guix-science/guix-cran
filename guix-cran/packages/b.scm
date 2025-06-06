@@ -2712,6 +2712,31 @@ non-linear Gaussian models and discretised diffusion models are supported.  See
 Helske and Vihola (2021, <doi:10.32614/RJ-2021-103>) for details.")
     (license license:gpl2+)))
 
+(define-public r-bssbinom
+  (package
+    (name "r-bssbinom")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bssbinom" version))
+       (sha256
+        (base32 "1b3yf89qk9mi5knhqzdgmlm34bsis8y9p331mwv52b6zh1wv2jws"))))
+    (properties `((upstream-name . "bssbinom")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-teachingdemos r-pscl))
+    (home-page "https://cran.r-project.org/package=bssbinom")
+    (synopsis "Bayesian Sample Size for Binomial Proportions")
+    (description
+     "Computation of the minimum sample size using the Average Coverage Criterion or
+the Average Length Criterion for estimating binomial proportions using beta
+prior distributions.  For more details see Costa (2025)
+<DOI:10.1007/978-3-031-72215-8_14>.")
+    (license license:expat)))
+
 (define-public r-bssasymp
   (package
     (name "r-bssasymp")
@@ -3491,13 +3516,13 @@ faster lookups on sorted vectors.")
 (define-public r-bscui
   (package
     (name "r-bscui")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bscui" version))
        (sha256
-        (base32 "0qznfnqfji6vb0y2nawdi8xn6w7l1l8p1326ypjga1wla7ni5a52"))))
+        (base32 "1wbakak2aaaml5m6lz1hvpf4bjk81x6yrqcpk8nz035z2z9isqxy"))))
     (properties `((upstream-name . "bscui")))
     (build-system r-build-system)
     (arguments
@@ -8392,6 +8417,85 @@ inverse Gaussian distribution\" Luc Devroye (2012)
 <doi:10.1007/s11222-012-9367-z>.")
     (license license:gpl3)))
 
+(define-public r-boodd
+  (package
+    (name "r-boodd")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "boodd" version))
+       (sha256
+        (base32 "10p4crv3bgc7223zwyzc5g91d81bv1gnpz6ask825cc4qkl3mdqq"))))
+    (properties `((upstream-name . "boodd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tseries
+                             r-timeseries
+                             r-timedate
+                             r-geor
+                             r-fgarch
+                             r-fbasics))
+    (home-page "https://cran.r-project.org/package=boodd")
+    (synopsis
+     "Functions for the Book \"Bootstrap for Dependent Data, with an R Package\"")
+    (description
+     "Companion package, functions, data sets, examples for the book Patrice Bertail
+and Anna Dudek (2025), Bootstrap for Dependent Data, with an R package (by
+Bernard Desgraupes and Karolina Marek) - submitted.  Kreiss, J.-P. and
+Paparoditis, E. (2003) <doi:10.1214/aos/1074290332> Politis, D.N., and White, H.
+(2004) <doi:10.1081/ETC-120028836> Patton, A., Politis, D.N., and White, H.
+(2009) <doi:10.1080/07474930802459016> Tsybakov, A. B. (2018)
+<doi:10.1007/b13794> Bickel, P., and Sakov, A. (2008) <doi:10.1214/18-AOS1803>
+GÃ¶tze, F. and RaÄkauskas, A. (2001) <doi:10.1214/lnms/1215090074> Politis, D.
+N., Romano, J. P., & Wolf, M. (1999, ISBN:978-0-387-98854-2) Carlstein E. (1986)
+<doi:10.1214/aos/1176350057> KÃ¼nsch, H. (1989) <doi:10.1214/aos/1176347265>
+Liu, R. and Singh, K. (1992)
+<https://www.stat.purdue.edu/docs/research/tech-reports/1991/tr91-07.pdf>
+Politis, D.N. and Romano, J.P. (1994) <doi:10.1080/01621459.1994.10476870>
+Politis, D.N. and Romano, J.P. (1992)
+<https://www.stat.purdue.edu/docs/research/tech-reports/1991/tr91-07.pdf>
+Patrice Bertail, Anna E. Dudek. (2022) <doi:10.3150/23-BEJ1683> Dudek, A.E.,
+LeÅkow, J., Paparoditis, E. and Politis, D. (2014a)
+<https://ideas.repec.org/a/bla/jtsera/v35y2014i2p89-114.html> Beran, R. (1997)
+<doi:10.1023/A:1003114420352> B. Efron, and Tibshirani, R. (1993,
+ISBN:9780429246593) Bickel, P. J., GÃ¶tze, F. and van Zwet, W. R. (1997)
+<doi:10.1007/978-1-4614-1314-1_17> A. C. Davison, D. Hinkley (1997)
+<doi:10.2307/1271471> Falk, M., & Reiss, R. D. (1989) <doi:10.1007/BF00354758>
+Lahiri, S. N. (2003) <doi:10.1007/978-1-4757-3803-2> Shimizu, K. .(2017)
+<doi:10.1007/978-3-8348-9778-7> Park, J.Y. (2003) <doi:10.1111/1468-0262.00471>
+Kirch, C. and Politis, D. N. (2011) <doi:10.48550/@code{arXiv.1211.4732>}
+Bertail, P. and Dudek, A.E. (2024) <doi:10.3150/23-BEJ1683> Dudek, A. E. (2015)
+<doi:10.1007/s00184-014-0505-9> Dudek, A. E. (2018)
+<doi:10.1080/10485252.2017.1404060> Bertail, P., ClÃ©menÃ§on, S. (2006a)
+<https://ideas.repec.org/p/crs/wpaper/2004-47.html> Bertail, P. and ClÃ©menÃ§on,
+S. (2006, ISBN:978-0-387-36062-1) RaduloviÄ, D. (2006) <doi:10.1007/BF02603005>
+Bertail, P. Politis, D. N. Rhomari, N. (2000) <doi:10.1080/02331880008802701>
+Nordman, D.J. Lahiri, S.N.(2004) <doi:10.1214/009053604000000779> Politis, D.N.
+Romano, J.P. (1993) <doi:10.1006/jmva.1993.1085> Hurvich, C. M. and Zeger, S. L.
+(1987, ISBN:978-1-4612-0099-4) Bertail, P. and Dudek, A. (2021)
+<doi:10.1214/20-EJS1787> Bertail, P., ClÃ©menÃ§on, S. and Tressou, J. (2015)
+<doi:10.1111/jtsa.12105> Asmussen, S. (1987) <doi:10.1007/978-3-662-11657-9>
+Efron, B. (1979) <doi:10.1214/aos/1176344552> Gray, H., Schucany, W. and
+Watkins, T. (1972) <doi:10.2307/2335521> Quenouille, M.H. (1949)
+<doi:10.1111/j.2517-6161.1949.tb00023.x> Quenouille, M. H. (1956)
+<doi:10.2307/2332914> Prakasa Rao, B. L. S. and Kulperger, R. J. (1989)
+<https://www.jstor.org/stable/25050735> Rajarshi, M.B. (1990)
+<doi:10.1007/BF00050835> Dudek, A.E. Maiz, S. and Elbadaoui, M. (2014)
+<doi:10.1016/j.sigpro.2014.04.022> Beran R. (1986) <doi:10.1214/aos/1176349847>
+Maritz, J. S. and Jarrett, R. G. (1978) <doi:10.2307/2286545> Bertail, P.,
+Politis, D., Romano, J. (1999) <doi:10.2307/2670177> Bertail, P. and
+ClÃ©menÃ§on, S. (2006b) <doi:10.1007/0-387-36062-X_1> RaduloviÄ, D. (2004)
+<doi:10.1007/BF02603005> Hurd, H.L., Miamee, A.G. (2007)
+<doi:10.1002/9780470182833> BÃ¼hlmann, P. (1997) <doi:10.2307/3318584> Choi, E.,
+Hall, P. (2000) <doi:10.1111/1467-9868.00244> Efron, B., Tibshirani, R. (1993,
+ISBN:9780429246593) Bertail, P., ClÃ©menÃ§on, S. and Tressou, J. (2009)
+<doi:10.1007/s10687-009-0081-y> Bertail, P., Medina-Garay, A., De Lima-Medina,
+F. and Jales, I. (2024) <doi:10.1080/02331888.2024.2344670>.")
+    (license license:gpl2+)))
+
 (define-public r-bonsaiforest
   (package
     (name "r-bonsaiforest")
@@ -8836,19 +8940,20 @@ adjustments.  The method is described in more detail in Ginker (2023)
 (define-public r-boinet
   (package
     (name "r-boinet")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boinet" version))
        (sha256
-        (base32 "0jk1igg45zpds8qadzwaifmcj3b61ghn2rqx4x8b4pv3mi2sk2cn"))))
+        (base32 "123k8z1wjh63vjl96aa6lbzymd1kzzqc8dk6633nl6kn98d580bs"))))
     (properties `((upstream-name . "boinet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mfp r-iso r-copula))
+    (propagated-inputs (list r-tibble r-mfp r-iso r-gt r-copula))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=boinet")
     (synopsis
      "Conduct Simulation Study of Bayesian Optimal Interval Design with BOIN-ET Family")
@@ -18224,13 +18329,13 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "5.0.0")
+    (version "5.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliometrix" version))
        (sha256
-        (base32 "0ldnky21lkvpd71cndcnxnz0x1bfqy77fpyp4wx557rqbj25xydx"))))
+        (base32 "1ylyxrjpd9cdd18nyyvspw3zdr7lkh0p3chk5xzg4dz870acmkg0"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (arguments
@@ -19521,6 +19626,31 @@ The advantages compared to the other designs in terms of the percentage of
 correct optimal dose (OD) selection, reducing the sample size, and shortening
 the duration of the trial, in various realistic setting.")
     (license license:gpl3)))
+
+(define-public r-bfboin
+  (package
+    (name "r-bfboin")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bfboin" version))
+       (sha256
+        (base32 "0mjk8384ram3ywxnclnrwz5483260b9vvbzshzs3adc6h872fqdz"))))
+    (properties `((upstream-name . "bfboin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-purrr r-boin))
+    (native-inputs (list r-knitr))
+    (home-page "https://openpharma.github.io/bfboin/")
+    (synopsis
+     "Operating Characteristics for the Bayesian Optimal Interval Design with Back Filling")
+    (description
+     "Calculate the operating characteristics of the Bayesian Optimal Interval with
+Back Filling Design for dose escalation in early-phase oncology trials.")
+    (license license:gpl3+)))
 
 (define-public r-bfast
   (package
@@ -23786,13 +23916,13 @@ prediction on new data. <doi:10.18637/jss.v101.i05>.")
 (define-public r-bbknnr
   (package
     (name "r-bbknnr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbknnR" version))
        (sha256
-        (base32 "0pi4p2r0637zv25mj8y1kkc0fh0wj16adwpd25qijh0j0hz136v2"))))
+        (base32 "14bfv7bb1lzqw0098qp10l57yr98fsdi9a8w7xqsn51r4gchfb67"))))
     (properties `((upstream-name . "bbknnR")))
     (build-system r-build-system)
     (arguments
@@ -27125,13 +27255,13 @@ described in Ardia (2008) <doi:10.1007/978-3-540-78657-3>.")
 (define-public r-bayesforecast
   (package
     (name "r-bayesforecast")
-    (version "1.0.1")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesforecast" version))
        (sha256
-        (base32 "0wnz6qblm3ib7lpj860s4lhrs4gvmyrmk779r38rybfvxw4xssii"))))
+        (base32 "0p9c8xhfja1wklamsdaynfabfpf9ix5qbihv45j4zi6fyfnv7mc9"))))
     (properties `((upstream-name . "bayesforecast")))
     (build-system r-build-system)
     (arguments
@@ -27153,8 +27283,7 @@ described in Ardia (2008) <doi:10.1007/978-3-540-78657-3>.")
                              r-forecast
                              r-bridgesampling
                              r-bh
-                             r-bayesplot
-                             r-astsa))
+                             r-bayesplot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bayesforecast")
     (synopsis "Bayesian Time Series Modeling with Stan")

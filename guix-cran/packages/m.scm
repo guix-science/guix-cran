@@ -2819,6 +2819,37 @@ Acoustic detection of NMR experiments.  OMICS. 2015;19(3):147-56.
 <doi:10.1089/omi.2014.0131>.")
     (license license:gpl2+)))
 
+(define-public r-musicmct
+  (package
+    (name "r-musicmct")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "musicMCT" version))
+       (sha256
+        (base32 "0llvpbhqlvpn5f5l36fsig4rwnr45d694w87apdb7pinql23r1k0"))))
+    (properties `((upstream-name . "musicMCT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://satbq.github.io/musicMCT/")
+    (synopsis "Analyze the Structure of Musical Scales")
+    (description
+     "Analysis of musical scales (& modes, grooves, etc.) in the vein of Sherrill 2025
+<https://collections.lib.utah.edu/ark:/87278/s6d2gr78>.  The initials MCT in the
+package title refer to the article's title: \"Modal Color Theory.\" Offers support
+for conventional musical pitch class set theory as developed by Forte (1973,
+ISBN: 9780300016109) and David Lewin (1987, ISBN: 9780300034936), as well as for
+the continuous geometries of Callender, Quinn, & Tymoczko (2008)
+<doi:10.1126/science.1153021>.  Identifies structural properties of scales and
+calculates derived values (sign vector, color number, brightness ratio, etc.).
+Creates plots such as \"brightness graphs\" which visualize these properties.")
+    (license license:gpl3+)))
+
 (define-public r-musica
   (package
     (name "r-musica")
@@ -6160,6 +6191,52 @@ that will evolve over time, thereby remaining relevant and reflective of current
 methods and techniques.  As a result, we encourage suggested additions to the
 package, both methodological and graphical.")
     (license license:gpl3+)))
+
+(define-public r-multideggs
+  (package
+    (name "r-multideggs")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multiDEGGs" version))
+       (sha256
+        (base32 "0fs4l8bs92bmf9zf7vnj335ii2kwbnmp599k6h42ypg92sp076y0"))))
+    (properties `((upstream-name . "multiDEGGs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visnetwork
+                             r-shinydashboard
+                             r-shiny
+                             r-sfsmisc
+                             r-rmarkdown
+                             r-pbmcapply
+                             r-pbapply
+                             r-mass
+                             r-magrittr
+                             r-knitr
+                             r-dt))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/elisabettasciacca/multiDEGGs/")
+    (synopsis "Multi-Omic Differentially Expressed Gene-Gene Pairs")
+    (description
+     "This package performs multi-omic differential network analysis by revealing
+differential interactions between molecular entities (genes, proteins,
+transcription factors, or other biomolecules) across the omic datasets provided.
+ For each omic dataset, a differential network is constructed where links
+represent statistically significant differential interactions between entities.
+These networks are then integrated into a comprehensive visualization using
+distinct colors to distinguish interactions from different omic layers.  This
+unified display allows interactive exploration of cross-omic patterns, such as
+differential interactions present at both transcript and protein levels.  For
+each link, users can access differential statistical significance metrics (p
+values or adjusted p values, calculated via robust or traditional linear
+regression with interaction term) and differential regression plots.  The
+methods implemented in this package are described in Sciacca et al. (2023)
+<doi:10.1093/bioinformatics/btad192>.")
+    (license license:gpl3)))
 
 (define-public r-multid
   (package
@@ -11889,13 +11966,13 @@ Aerobic Plate Count (APC) for similar microbial enumeration experiments.")
 (define-public r-mpmsim
   (package
     (name "r-mpmsim")
-    (version "3.2.0")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpmsim" version))
        (sha256
-        (base32 "0fg4c3ibci1lwn7z5442lj2j9cl2yj3hgamvhag8snacpc018mjx"))))
+        (base32 "0fqwy52wn86kvyi28z6pc68pb8jkg4zzq7rqjz4qlbg6agzfm3vj"))))
     (properties `((upstream-name . "mpmsim")))
     (build-system r-build-system)
     (arguments
@@ -14529,13 +14606,13 @@ and examples are given by Koutra et al. (2024)
 (define-public r-moocore
   (package
     (name "r-moocore")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moocore" version))
        (sha256
-        (base32 "1prjf6hspf78flkhzmhyignvmlhdafhn4cp9n00nmqqvy9nziz8j"))))
+        (base32 "1w8r7g0iajzy66308pzbx7ga1qqgjrjfvfa5z4wkzmm1yf0cacwg"))))
     (properties `((upstream-name . "moocore")))
     (build-system r-build-system)
     (arguments
@@ -27125,13 +27202,13 @@ slow (or zero) Internet access.")
 (define-public r-minic
   (package
     (name "r-minic")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minic" version))
        (sha256
-        (base32 "0p95vzld2v7j4z25hxi0vkx9y7xdzxnjhsh11k4v63yqfl6iiikx"))))
+        (base32 "12ydk498dk3zhgqi3rh1kp8pnffkqr8l7cfasrsc4w24cb6fypqg"))))
     (properties `((upstream-name . "minic")))
     (build-system r-build-system)
     (arguments
@@ -30327,13 +30404,13 @@ extraction for reporting purposes.")
 (define-public r-mic
   (package
     (name "r-mic")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MIC" version))
        (sha256
-        (base32 "196wax8wh14vns3kcs6z6qs2gxnrqcx34pzhmja6i43bbc54sk7h"))))
+        (base32 "1qx9rnkqpddm6cclk237911xz7qm7swwm7hmrbdfj9yjjcq6yw1s"))))
     (properties `((upstream-name . "MIC")))
     (build-system r-build-system)
     (arguments
@@ -49809,13 +49886,13 @@ vignette in this package and
 (define-public r-mams
   (package
     (name "r-mams")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAMS" version))
        (sha256
-        (base32 "0nvgivv627rzk69pnfa9cwlilmgpg0202kg8rcfiaqdkvc6sgq18"))))
+        (base32 "0pmrwp0ldafiv7aw1k9dqf0p4ifs34fmi2rcvklxna9dpz6nk182"))))
     (properties `((upstream-name . "MAMS")))
     (build-system r-build-system)
     (arguments

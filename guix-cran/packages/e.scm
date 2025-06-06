@@ -4599,13 +4599,13 @@ knowledge.  For additional details, see package's vignettes.")
 (define-public r-evolvability
   (package
     (name "r-evolvability")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evolvability" version))
        (sha256
-        (base32 "0l81d48zvvnbxlx1mj4qwga1kdzk05pzdvsp4ghi93pzzynfqn9s"))))
+        (base32 "002anh44yp8swy4kdgiz02zk578d000py3615p72dskd44r94xh8"))))
     (properties `((upstream-name . "evolvability")))
     (build-system r-build-system)
     (arguments
@@ -6534,35 +6534,27 @@ and R. W. Jones (1987) <doi:10.3905/jpm.1987.409131> and H. E. Leland (1980)
 (define-public r-etrep
   (package
     (name "r-etrep")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ETRep" version))
        (sha256
-        (base32 "1m422fj0pnskb3ag0vacfpiydjj7h9hxb6vny51xp19wbfd8a0ja"))))
+        (base32 "1xkzw18cp7fkdzhp0bmanpx9p2vf39wdc9whbpzrv245nsnvinz2"))))
     (properties `((upstream-name . "ETRep")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-truncnorm
-                             r-sphericalcubature
                              r-shapes
                              r-rvcg
                              r-rspincalc
                              r-rotations
-                             r-riembase
                              r-rgl
-                             r-reshape2
-                             r-ptinpoly
-                             r-pracma
                              r-morpho
-                             r-matrix
                              r-matlib
-                             r-ggplot2
-                             r-fields
-                             r-dplyr))
+                             r-fields))
     (home-page "https://github.com/MohsenTaheriShalmani/Elliptical_Tubes")
     (synopsis
      "Analysis of Elliptical Tubes Under the Relative Curvature Condition")
@@ -24252,6 +24244,34 @@ the EBglmnet package (also available on CRAN), this package encourages a
 grouping effects to select relevant variables and estimate the corresponding
 non-zero effects.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-ebdm
+  (package
+    (name "r-ebdm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ebdm" version))
+       (sha256
+        (base32 "1b276jzwxsznsayzbxd2yry2wjljib8rb3npj8xd2xzdidnlr1s4"))))
+    (properties `((upstream-name . "ebdm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=ebdm")
+    (synopsis
+     "Implementation of Estimating Binary Dependency from Marginal Data")
+    (description
+     "This package provides a maximum likelihood estimation method to recover the
+joint distribution of two binary variables using only marginal summary data from
+multiple studies.  This approach allows for privacy-preserving estimation in
+settings where individual-level data are unavailable.  The method is fully
+described in the manuscript by Shang, Tsao and Zhang (2025)
+<doi:10.48550/@code{arXiv.2505.03995>}: \"Estimating the Joint Distribution of
+Two Binary Variables from Their Marginal Summaries\".")
+    (license license:gpl3+)))
 
 (define-public r-ebdbnet
   (package

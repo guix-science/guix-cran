@@ -24177,13 +24177,13 @@ implemented here.")
 (define-public r-rjsdmx
   (package
     (name "r-rjsdmx")
-    (version "3.6-0")
+    (version "3.7-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RJSDMX" version))
        (sha256
-        (base32 "053vlazy0sf0jn6jjwhi11hmrnwby1w1fpdm69hqbad3c6szvp3n"))))
+        (base32 "0rfj1kpwcz2gyjc66qp8sxfq7paz1kqgbh3v2vp8l0xqmyyygj47"))))
     (properties `((upstream-name . "RJSDMX")))
     (build-system r-build-system)
     (arguments
@@ -39219,25 +39219,23 @@ interoperability with external sources (Harris et al (2009)
 (define-public r-redcapapi
   (package
     (name "r-redcapapi")
-    (version "2.10.0")
+    (version "2.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redcapAPI" version))
        (sha256
-        (base32 "0c7pp0cwbchmrr07diiacdnr77jny0l9gfahp3g742z8rzr8zb04"))))
+        (base32 "0g1gzi94sh57zs549b7xhjzcs6kqaxlw4wd5sa318mjh5nn2i01q"))))
     (properties `((upstream-name . "redcapAPI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml
+    (propagated-inputs (list r-shelter
                              r-mime
                              r-lubridate
                              r-labelvector
-                             r-keyring
                              r-jsonlite
-                             r-getpass
                              r-curl
                              r-chron
                              r-checkmate))
@@ -47284,19 +47282,19 @@ Louviere et al. (2000) <doi:10.1017/CBO9780511753831>.")
 (define-public r-rcmdrplugin-dccv
   (package
     (name "r-rcmdrplugin-dccv")
-    (version "0.1-5")
+    (version "0.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.DCCV" version))
        (sha256
-        (base32 "12qdjjad7l0rdl2rh7jir5ygw9rz008wpbr0shkarc84sz1aipxr"))))
+        (base32 "0ic2qjd5brn8scxcwy7mjwnpp4gx1r3gd7qlx3fn2w05fbizr1hz"))))
     (properties `((upstream-name . "RcmdrPlugin.DCCV")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcmdr r-dcchoice))
+    (propagated-inputs (list r-rcmdr r-isocodes r-dcchoice))
     (home-page "https://sites.google.com/view/r4sp/rcmdrplugin")
     (synopsis
      "R Commander Plug-in for Dichotomous Choice Contingent Valuation")
@@ -57091,13 +57089,13 @@ J. (2023, ISBN:9781119747918).")
 (define-public r-r4ds-tutorials
   (package
     (name "r-r4ds-tutorials")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r4ds.tutorials" version))
        (sha256
-        (base32 "1g9ccgycxvjds32kqn24x2lkh1fn93c0nw9xrha560wk1kbrd66q"))))
+        (base32 "1826rzmvrmwpc03szvd4709mmacn9mmvbhzvy876gg5ca2wp5rw1"))))
     (properties `((upstream-name . "r4ds.tutorials")))
     (build-system r-build-system)
     (arguments

@@ -19033,23 +19033,24 @@ on Torch'.")
 (define-public r-lama
   (package
     (name "r-lama")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LaMa" version))
        (sha256
-        (base32 "0wxbld9hqwshlj7zgs9qxc2580g01mhk8bna8b81h21pb31758bx"))))
+        (base32 "0p2009ldm49ym4xhf6rg4ish4m9gxmfyaf1lr4j39gnai5k7610s"))))
     (properties `((upstream-name . "LaMa")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sn
+    (propagated-inputs (list r-splines2
+                             r-sn
                              r-rtmb
                              r-rcpparmadillo
                              r-rcpp
-                             r-mvtnorm
+                             r-numderiv
                              r-mgcv
                              r-matrix
                              r-mass

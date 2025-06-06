@@ -21050,6 +21050,48 @@ the official website <https://www.ibge.gov.br/>.  Further analysis must be made
 using package survey'.")
     (license license:gpl3)))
 
+(define-public r-pnd-heter-cluster
+  (package
+    (name "r-pnd-heter-cluster")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PND.heter.cluster" version))
+       (sha256
+        (base32 "0kixf5v691i84x0djcjyfyc9jq2zbnixr0if2ksr8mz7maaxsq98"))))
+    (properties `((upstream-name . "PND.heter.cluster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-tidyverse
+                             r-superlearner
+                             r-ranger
+                             r-purrr
+                             r-origami
+                             r-nnet
+                             r-mvtnorm
+                             r-magrittr
+                             r-glue
+                             r-dplyr
+                             r-boot))
+    (home-page "https://github.com/xliu12/PND.heter")
+    (synopsis
+     "Estimating the Cluster Specific Treatment Effects in Partially Nested Designs")
+    (description
+     "This package implements the methods for assessing heterogeneous cluster-specific
+treatment effects in partially nested designs as described in Liu (2024)
+<doi:10.1037/met0000723>.  The estimation uses the multiply robust method,
+allowing for the use of machine learning methods in model estimation (e.g.,
+random forest, neural network, and the super learner ensemble).  Partially
+nested designs (also known as partially clustered designs) are designs where
+individuals in the treatment arm are assigned to clusters (e.g., teachers,
+tutoring groups, therapists), whereas individuals in the control arm have no
+such clustering.")
+    (license license:gpl2)))
+
 (define-public r-pnd
   (package
     (name "r-pnd")
@@ -34559,13 +34601,13 @@ methods are provided.")
 (define-public r-pencal
   (package
     (name "r-pencal")
-    (version "2.2.4")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pencal" version))
        (sha256
-        (base32 "04cgqylydhmpgzvnaqcqfhpa6nw4x39vhdlhdvzwa744f7x39xhm"))))
+        (base32 "09irlxfb834lklby2hxg35q17h3ch99c6iwwh3f7m0mjpl809pdl"))))
     (properties `((upstream-name . "pencal")))
     (build-system r-build-system)
     (arguments
@@ -34592,8 +34634,8 @@ methods are provided.")
     (description
      "Computes penalized regression calibration (PRC), a statistical method for the
 dynamic prediction of survival when many longitudinal predictors are available.
-PRC is described in Signorelli (2024) <doi:10.48550/@code{arXiv.2309.15600>} and
-in Signorelli et al. (2021) <doi:10.1002/sim.9178>.")
+See Signorelli (2024) <doi:10.32614/RJ-2024-014> and Signorelli et al. (2021)
+<doi:10.1002/sim.9178> for details.")
     (license license:gpl3+)))
 
 (define-public r-penaltylearning
@@ -42111,19 +42153,19 @@ not split into subsets.")
 (define-public r-parallellogger
   (package
     (name "r-parallellogger")
-    (version "3.4.1")
+    (version "3.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ParallelLogger" version))
        (sha256
-        (base32 "1hakwzj1k10d4wvd0h6qa1ndk54i70l1mlwnms38mhyvab988q1z"))))
+        (base32 "1gqg0cz1amg9llglf44lm2kg04sq1dp2fjvc03lgn0g3mjqshm96"))))
     (properties `((upstream-name . "ParallelLogger")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-snow r-rstudioapi r-jsonlite))
+    (propagated-inputs (list r-xml2 r-snow r-rstudioapi r-memuse r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://ohdsi.github.io/ParallelLogger/")
     (synopsis

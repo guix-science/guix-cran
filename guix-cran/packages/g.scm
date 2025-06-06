@@ -4897,13 +4897,13 @@ subject-specific random effects.")
 (define-public r-groupedhyperframe
   (package
     (name "r-groupedhyperframe")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupedHyperframe" version))
        (sha256
-        (base32 "0xzxhyc4wnc1rkb3p44xs2gm35ivyif1ny29rpq1h896jjkjpkjd"))))
+        (base32 "0ic5fr5akjpj17jixcxqb2wcbhgsk7x0rf676wlnc8n6s36cxx5v"))))
     (properties `((upstream-name . "groupedHyperframe")))
     (build-system r-build-system)
     (arguments
@@ -4911,14 +4911,13 @@ subject-specific random effects.")
       #:tests? #f))
     (propagated-inputs (list r-spatstat-geom
                              r-spatstat-explore
+                             r-spatialpack
                              r-pracma
-                             r-nlme
                              r-matrixstats
                              r-cli))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://cran.r-project.org/package=groupedHyperframe")
-    (synopsis
-     "Grouped Hyper Data Frame: An Extension of Hyper Data Frame Object")
+    (synopsis "Grouped Hyper Data Frame: An Extension of Hyper Data Frame")
     (description
      "An S3 class @code{groupedHyperframe} that inherits from hyper data frame.  Batch
 processes on point-pattern hyper column.  Aggregation of function-value-table
@@ -11040,13 +11039,13 @@ similarity between samples visually in a low (2 or 3) dimensional space.")
 (define-public r-gominer
   (package
     (name "r-gominer")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GoMiner" version))
        (sha256
-        (base32 "0zr71lqpgn5pp88zwzqdl0hd6m3hbb28qpryf80871hg26wyidrr"))))
+        (base32 "0myq70l8izidz75k8jprn545xhn4fkyiwlll9xw9a5cqywjc8qa7"))))
     (properties `((upstream-name . "GoMiner")))
     (build-system r-build-system)
     (arguments
@@ -26454,13 +26453,13 @@ performing high dimensional Bayesian variable selection.")
 (define-public r-geometa
   (package
     (name "r-geometa")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geometa" version))
        (sha256
-        (base32 "0a7qqf511rdm53jlw4pk9vimqbsvq0bxnk1qzkzf6pgi5ll4d6hz"))))
+        (base32 "19c6j1pjzrhrymn4y95hkmyj6y9gwkyp108smh961h4kkb7n5c8i"))))
     (properties `((upstream-name . "geometa")))
     (build-system r-build-system)
     (arguments

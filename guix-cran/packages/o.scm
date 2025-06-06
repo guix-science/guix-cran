@@ -6533,13 +6533,13 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.15")
+    (version "1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "1hjc117zzkn9wnr90izajq22xc86r799awi7v4fgkp7jfl3prm5p"))))
+        (base32 "1id4z2l98y432h4430b8fnfivb2kz2ymxx3w8s583bc7115d271l"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (arguments
@@ -7086,13 +7086,13 @@ uploading of data sets, tasks, flows and runs.  See
 (define-public r-openmindat
   (package
     (name "r-openmindat")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenMindat" version))
        (sha256
-        (base32 "1y9f358yn1d2xfqcgmmhcnyxr29fd2frh6ka70pzk63szswszs50"))))
+        (base32 "1j9q7n3j17jhzb28mjz3np400nabmzi7av2dmlrrwfyppvngafp3"))))
     (properties `((upstream-name . "OpenMindat")))
     (build-system r-build-system)
     (arguments
@@ -7106,24 +7106,10 @@ uploading of data sets, tasks, flows and runs.  See
                              r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/quexiang/OpenMindat")
-    (synopsis "Quickly Retrieve Datasets from the 'mindat.org' API")
+    (synopsis "Quickly Retrieve Datasets from the 'Mindat' API")
     (description
-     "Mindat ('mindat.org') is one of the world's most widely used databases of
-mineral species and their distribution.  Many scientists in mineralogy,
-geochemistry, petrology, and other Earth and planetary disciplines have been
-using the Mindat data.  Still, an open data service and the machine interface
-have never been fully established.  To meet the overwhelming data needs, the
-Mindat team has built an API (<https://api.mindat.org/schema/redoc/>) for data
-access.'@code{OpenMindat} R package provides valuable functions to bridge the
-data highway, connecting users data requirements to the Mindat API server and
-assist with retrieval and initial processing to improve efficiency further and
-lower the barrier of data query and access to scientists. @code{OpenMindat}
-provides friendly and extensible data retrieval functions, including the
-subjects of geomaterials (e.g., rocks, minerals, synonyms, variety, mixture, and
-commodity), localities, and the IMA (International Mineralogical
-Association)-approved mineral list. @code{OpenMindat} R package will accelerate
-the process of data-intensive studies in mineral informatics and lead to more
-scientific discoveries.")
+     "Provide functions for users or machines to quickly and easily retrieve datasets
+from the mindat.org API (<https://api.mindat.org/schema/redoc/>).")
     (license license:expat)))
 
 (define-public r-openmetrics
