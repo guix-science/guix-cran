@@ -2393,13 +2393,13 @@ Gneiting (2020) <@code{arXiv:1909.03725>}.")
 (define-public r-isocountry
   (package
     (name "r-isocountry")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isocountry" version))
        (sha256
-        (base32 "0rzw08gpp0lh3flnxc03wqq4qpdyk02pqr3gskw8kdrfhi7n3sqm"))))
+        (base32 "0gksbq90i0h4pm7mqkwiz8lmd0lyby40z1lc935miz0zgr96n24x"))))
     (properties `((upstream-name . "isocountry")))
     (build-system r-build-system)
     (arguments
@@ -13261,13 +13261,13 @@ to harness AI for predictive analytics.")
 (define-public r-immunogenetr
   (package
     (name "r-immunogenetr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "immunogenetr" version))
        (sha256
-        (base32 "1y8y0yh2hflhhm3qlxrs4mn71xr655zknyd420514vw6gkca0bqh"))))
+        (base32 "1q8r16nyda06lxpz07m433qbz2i8hdz92l6x93plhbq7gh53i2az"))))
     (properties `((upstream-name . "immunogenetr")))
     (build-system r-build-system)
     (arguments
@@ -16059,19 +16059,19 @@ association data, especially with large controls re-sequenced data.")
 (define-public r-ifo
   (package
     (name "r-ifo")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ifo" version))
        (sha256
-        (base32 "0zi89cwyr7pvws4b9brb2zcyy9sxjh61px9hkni0pf8m39kxzqkg"))))
+        (base32 "0qhchmv2mv8bg4nnygayi5jw27gabgvf2pv06h61jabf2mx7xcrs"))))
     (properties `((upstream-name . "ifo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-rvest r-readxl r-curl))
+    (propagated-inputs (list r-rvest r-readxl r-data-table r-curl))
     (home-page "https://m-muecke.github.io/ifo/")
     (synopsis "Client for the Ifo Institute Time Series")
     (description
@@ -21027,13 +21027,13 @@ conductivity, surface tension and melting pressure.")
 (define-public r-iapws
   (package
     (name "r-iapws")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iapws" version))
        (sha256
-        (base32 "115m678kb2bz450pjg8a5jrjj3g2q2cgpyg9cksz3ysm6j5vrb1a"))))
+        (base32 "0jaq8h57kjlgdk26ajz1ax9mfxjvc2rvqrq25pd2n2s79lrk9hyz"))))
     (properties `((upstream-name . "iapws")))
     (build-system r-build-system)
     (arguments
@@ -21046,8 +21046,8 @@ conductivity, surface tension and melting pressure.")
      "Implementation of some of the formulations for the thermodynamic and transport
 properties released by the International Association for the Properties of Water
 and Steam (IAPWS).  More specifically, the releases R1-76(2014), R5-85(1994),
-R6-95(2018), R7-97(2012), R8-97, R9-97, R10-06(2009), R11-07(2019), R12-08,
-R15-11, R16-17(2018), R17-20 and R18-21 at <http://iapws.org>.")
+R6-95(2018), R7-97(2012), R8-97, R9-97, R10-06(2009), R11-24, R12-08, R15-11,
+R16-17(2018), R17-20 and R18-21 at <https://iapws.org>.")
     (license license:gpl3+)))
 
 (define-public r-ials

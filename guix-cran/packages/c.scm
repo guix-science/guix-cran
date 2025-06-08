@@ -11601,6 +11601,39 @@ approximation, while several auxiliary functions @code{(inclusionCurve()},
 resulting estimates.")
     (license license:gpl3+)))
 
+(define-public r-covcortest
+  (package
+    (name "r-covcortest")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CovCorTest" version))
+       (sha256
+        (base32 "07j06l7n8gm2cfwfmldwnjxfx15899cm2jakl67ls2w6fr47k01m"))))
+    (properties `((upstream-name . "CovCorTest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrixcalc r-manova-rm))
+    (home-page "https://github.com/sjedhoff/CovCorTest")
+    (synopsis
+     "Statistical Tests for Covariance and Correlation Matrices and their Structures")
+    (description
+     "This package provides a compilation of tests for hypotheses regarding covariance
+and correlation matrices for one or more groups.  The hypothesis can be
+specified through a corresponding hypothesis matrix and a vector or by choosing
+one of the basic hypotheses, while for the structure test, only the latter
+works.  Thereby Monte-Carlo and Bootstrap-techniques are used, and the
+respective method must be chosen, and the functions provide p-values and mostly
+also estimators of calculated covariance matrices of test statistics.  For more
+details on the methodology, see Sattler et al. (2022)
+<doi:10.1016/j.jspi.2021.12.001>, Sattler and Pauly (2024)
+<doi:10.1007/s11749-023-00906-6>, and Sattler and Dobler (2025)
+<doi:10.48550/@code{arXiv.2310.11799>}.")
+    (license license:gpl3+)))
+
 (define-public r-covcombr
   (package
     (name "r-covcombr")
@@ -21515,6 +21548,34 @@ effect and the probability of observing the composite endpoint, among others.
 The methodology can be found in Bofill & GÃ³mez (2019) <doi:10.1002/sim.8092>
 and GÃ³mez & Lagakos (2013) <doi:10.1002/sim.5547>.")
     (license license:gpl3)))
+
+(define-public r-comparecstat
+  (package
+    (name "r-comparecstat")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "compareCstat" version))
+       (sha256
+        (base32 "0h17ibnnp166yhdkz460608d285qy8lvz17kbg8fm44w8ylixnfq"))))
+    (properties `((upstream-name . "compareCstat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-boot))
+    (home-page "https://github.com/Lemonade0924/compareCstat")
+    (synopsis "Compare C-Statistics (Concordance) Between Survival Models")
+    (description
+     "Compare C-statistics (concordance statistics) between two survival models, using
+either bootstrap resampling (Harrell's C) or Uno's C with
+perturbation-resampling (from the @code{survC1} package).  Returns confidence
+intervals and a p-value for the difference in C-statistics.  Useful for
+evaluating and comparing predictive performance of survival models.  Methods
+implemented for Uno's C are described in Uno et al. (2011)
+<doi:10.1002/sim.4154>.")
+    (license license:expat)))
 
 (define-public r-comparecausalnetworks
   (package
@@ -45066,6 +45127,43 @@ standard discrete beta-binomial with continuous size parameter and continuous
 support with x in [0, size + 1].")
     (license license:expat)))
 
+(define-public r-cbassed50
+  (package
+    (name "r-cbassed50")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CBASSED50" version))
+       (sha256
+        (base32 "1a6gbz30mzdaq3wdprvi2z9jj152675fw52ymhcidqwj3q3rsfnz"))))
+    (properties `((upstream-name . "CBASSED50")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlog
+                             r-readxl
+                             r-glue
+                             r-ggplot2
+                             r-drc
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=CBASSED50")
+    (synopsis "Process CBASS-Derived PAM Data")
+    (description
+     "This package provides tools to process CBASS-derived PAM data efficiently.
+Minimal requirements are PAM-based photosynthetic efficiency data (or data from
+any other continuous variable that changes with temperature, e.g. relative
+bleaching scores) from 4 coral samples (nubbins) subjected to 4 temperature
+profiles of at least 2 colonies from 1 coral species from 1 site.  Please refer
+to the following CBASS (Coral Bleaching Automated Stress System) papers for
+in-depth information regarding CBASS acute thermal stress assays, experimental
+design considerations, and ED5/ED50/ED95 thermal parameters: Nicolas R. Evensen
+et al. (2023) <doi:10.1002/lom3.10555> Christian R. Voolstra et al. (2020)
+<doi:10.1111/gcb.15148> Christian R. Voolstra et al. (2025)
+<doi:10.1146/annurev-marine-032223-024511>.")
+    (license license:expat)))
+
 (define-public r-cbass
   (package
     (name "r-cbass")
@@ -46532,6 +46630,37 @@ ability of the model.  I Barrio, I Arostegui, MX Rodriguez-Alvarez, JM Quintana
 Meira-Machado, C Esteban, I Arostegui (2017)
 <https://www.idescat.cat/sort/sort411/41.1.3.barrio-etal.pdf>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-catool
+  (package
+    (name "r-catool")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "catool" version))
+       (sha256
+        (base32 "17h66v6sy9hjiw81rixz6x82pxwlli4gvrrsbjfk0q7f1qb1786x"))))
+    (properties `((upstream-name . "catool")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-scales r-rlang r-purrr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dawit3000/catool")
+    (synopsis "Compensation Analysis Tool for Instructor Overload Pay")
+    (description
+     "Calculates equitable overload compensation for college instructors based on
+institutional policies, enrollment thresholds, and regular teaching load limits.
+ Compensation is awarded only for credit hours that exceed the regular load and
+meet minimum enrollment criteria.  When enrollment is below a specified
+threshold, pay is prorated accordingly.  The package prioritizes compensation
+from high-enrollment courses, or optionally from low-enrollment courses for
+fairness, depending on user-defined strategy.  Includes tools for flexible
+policy settings, instructor filtering, and produces clean, audit-ready summary
+tables suitable for payroll and administrative reporting.")
+    (license license:agpl3)))
 
 (define-public r-catmaply
   (package
@@ -50579,13 +50708,13 @@ simulated model outputs is provided.  See
 (define-public r-calibmsm
   (package
     (name "r-calibmsm")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calibmsm" version))
        (sha256
-        (base32 "1yg5m2zsiw005fdihlilk43h27c7yyzlnbsb32qr9k67q010rk00"))))
+        (base32 "1bc3a110d6nzm8b9z0rbvgvdlad731q4j2jjrll80rqi0lqa66r7"))))
     (properties `((upstream-name . "calibmsm")))
     (build-system r-build-system)
     (arguments

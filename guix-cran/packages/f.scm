@@ -8993,25 +8993,25 @@ robust the testing outcomes are.")
 (define-public r-foreco
   (package
     (name "r-foreco")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FoReco" version))
        (sha256
-        (base32 "1spzhiijpbrhlxassilnbrbdbghfr6sz8m43q756c7mikan9wag7"))))
+        (base32 "0ccjr4ipym1832lsq8ri45rlyv8riawp3m98xpab2bnjqrka5kj6"))))
     (properties `((upstream-name . "FoReco")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-osqp r-matrix r-cli))
-    (home-page "https://github.com/daniGiro/FoReco")
+    (home-page "https://github.com/danigiro/FoReco")
     (synopsis "Forecast Reconciliation")
     (description
      "Classical (bottom-up and top-down), optimal combination and heuristic point (Di
 Fonzo and Girolimetto, 2023 <doi:10.1016/j.ijforecast.2021.08.004>) and
-probabilistic (Girolimetto et al.  2023 <doi:10.1016/j.ijforecast.2023.10.003>)
+probabilistic (Girolimetto et al.  2024 <doi:10.1016/j.ijforecast.2023.10.003>)
 forecast reconciliation procedures for linearly constrained time series (e.g.,
 hierarchical or grouped time series) in cross-sectional, temporal, or
 cross-temporal frameworks.")

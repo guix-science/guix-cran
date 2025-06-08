@@ -6321,36 +6321,6 @@ computing the similarity matrices.  The fast PCA to compute the k leading
 eigenvectors can now also be run directly from bed'+'bim'+'fam files.")
     (license license:gpl2+)))
 
-(define-public r-locpolexpectile
-  (package
-    (name "r-locpolexpectile")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "locpolExpectile" version))
-       (sha256
-        (base32 "1phwcnbk1vmdk3qmfx2nd6crplly2lb8gb57yl67ky3c4sryh358"))))
-    (properties `((upstream-name . "locpolExpectile")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-quantreg r-matrixcalc r-locpol r-lestat
-                             r-expectreg))
-    (home-page "https://cran.r-project.org/package=locpolExpectile")
-    (synopsis "Local Polynomial Expectile Regression")
-    (description
-     "This package provides the local polynomial expectile regression method and
-different bandwidth selection procedures.  The codes include local polynomial
-univariate expectile regression with several data-driven methods for bandwidth
-selection; local linear bivariate and trivariate expectile regression; and
-partially linear expectile regression, allowing for different errors structures
-(homoscedastic error and various heteroscedastic error structures).  For more
-details, see Adam and Gijbels (2021a) <doi:10.1007/s10463-021-00799-y> and Adam
-and Gijbels (2021b) <doi:10.1007/978-3-030-73249-3_8>.")
-    (license license:gpl2+)))
-
 (define-public r-locker
   (package
     (name "r-locker")
@@ -12305,6 +12275,33 @@ function will generate data dictionaries for individual data frames or an entire
 library.  And the @code{datestep()} function will perform row-by-row data
 processing.")
     (license license:cc0)))
+
+(define-public r-libopenexr
+  (package
+    (name "r-libopenexr")
+    (version "3.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "libopenexr" version))
+       (sha256
+        (base32 "03asa08aprylq3r3n2pbpjlw5kxl4qy816474ii6qaprhmxsv3kg"))))
+    (properties `((upstream-name . "libopenexr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list cmake))
+    (propagated-inputs (list r-libimath r-libdeflate))
+    (native-inputs (list pkg-config))
+    (home-page "https://cran.r-project.org/package=libopenexr")
+    (synopsis "Static Library and Headers for 'OpenEXR' Image I/O")
+    (description
+     "This package provides the @code{OpenEXR} static library and C++ headers for
+high-dynamic-range image I/O (see <https://openexr.com/>) needed to link R
+packages against the @code{OpenEXR} library, along with a basic R interface to
+load EXR images.")
+    (license license:bsd-3)))
 
 (define-public r-liblinear
   (package

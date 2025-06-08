@@ -1742,6 +1742,33 @@ to perform Voronoi tessellation and Delaunay triangulation.  This package is a
 port of the original code published in the early 1990's by Steven Fortune.")
     (license license:gpl3)))
 
+(define-public r-voronoibiomedplot
+  (package
+    (name "r-voronoibiomedplot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VoronoiBiomedPlot" version))
+       (sha256
+        (base32 "1v4m673i5kbi5p742v4wky5m48dgc66qzpyhyz81gh3098l99wqb"))))
+    (properties `((upstream-name . "VoronoiBiomedPlot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggrepel r-ggplot2 r-deldir))
+    (home-page "https://cran.r-project.org/package=VoronoiBiomedPlot")
+    (synopsis "Projection Visualization Plots for Dimensionally Reduced Data")
+    (description
+     "This package creates visualization plots for 2D projected data including ellipse
+plots, Voronoi diagram plots, and combined ellipse-Voronoi plots.  Designed to
+visualize class separation in dimensionally reduced data from techniques like
+principal component analysis (PCA), partial least squares discriminant analysis
+(PLS-DA) or others.  For more details see LÃ¶tsch and Ultsch (2024)
+<doi:10.1016/j.imu.2024.101573>.")
+    (license license:gpl3)))
+
 (define-public r-volumodel
   (package
     (name "r-volumodel")

@@ -64,13 +64,13 @@
 (define-public r-rzooroh
   (package
     (name "r-rzooroh")
-    (version "0.3.2.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RZooRoH" version))
        (sha256
-        (base32 "02sz2hgddgws4qwwvqgcd470r7ffyzs88r90mnhjl3889a5ixkml"))))
+        (base32 "1psdspks9qplrnmwalj5zzfpbwi6kqbr1d10r2bw3h54nb92wx6z"))))
     (properties `((upstream-name . "RZooRoH")))
     (build-system r-build-system)
     (arguments
@@ -95,7 +95,8 @@ ancestor).  The functions allow to estimate the parameters of the model (rates
 of the exponential distributions, mixing proportions), to estimate global and
 local autozygosity probabilities and to identify HBD segments with the Viterbi
 decoding.  The method is fully described in Druet and Gautier (2017)
-<doi:10.1111/mec.14324>.")
+<doi:10.1111/mec.14324> and Druet and Gautier (2022)
+<doi:10.1016/j.tpb.2022.03.001>.")
     (license license:gpl3)))
 
 (define-public r-rzmq
@@ -19675,13 +19676,13 @@ nanoflann library is exported and ready to be used via the linking to mechanism.
 (define-public r-rnamf
   (package
     (name "r-rnamf")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNAmf" version))
        (sha256
-        (base32 "0qpd4lxvhq0rh0hjix95nizmmzsiypclx3g0c62bfzcf3jyh29zi"))))
+        (base32 "0246h8zzvqk6s3597vly3l99cfiy8xag5bs02pp79p34y5lix1hf"))))
     (properties `((upstream-name . "RNAmf")))
     (build-system r-build-system)
     (arguments
@@ -21863,6 +21864,39 @@ of interdependencies between the relevant features.  MCFS-ID is particularly
 suitable for the analysis of high-dimensional, small n large p transactional and
 biological data.  M. Draminski, J. Koronacki (2018) <doi:10.18637/jss.v085.i12>.")
     (license license:gpl3)))
+
+(define-public r-rmcda
+  (package
+    (name "r-rmcda")
+    (version "0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RMCDA" version))
+       (sha256
+        (base32 "0rairbx6fqwzpdc6b0did5212ki0ryc1b23xfwaql3a7b1rmzn5h"))))
+    (properties `((upstream-name . "RMCDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pracma
+                             r-nloptr
+                             r-matrixstats
+                             r-matlib
+                             r-lpsolve
+                             r-igraph
+                             r-fmsb
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RMCDA")
+    (synopsis "Multi-Criteria Decision Analysis")
+    (description
+     "Supporting decision making involving multiple criteria.  Annice Najafi,
+Shokoufeh Mirzaei (2025) RMCDA: The Comprehensive R Library for applying
+multi-criteria decision analysis methods, Volume 24, e100762
+<doi:10.1016/j.simpa.2025.100762>.")
+    (license license:expat)))
 
 (define-public r-rmcc
   (package
@@ -26527,6 +26561,44 @@ and streamline the application development by automating the extraction,
 transformation, and loading of design data to your applications and HTML
 documents.")
     (license license:expat)))
+
+(define-public r-rifttable
+  (package
+    (name "r-rifttable")
+    (version "0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rifttable" version))
+       (sha256
+        (base32 "0jarzxm1i9qvw4vba7n0zrcjiz3vxkdkxgv67g3vybxg9lhz2jw2"))))
+    (properties `((upstream-name . "rifttable")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survival
+                             r-stringr
+                             r-rlang
+                             r-risks
+                             r-purrr
+                             r-dplyr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://stopsack.github.io/rifttable/")
+    (synopsis
+     "Results Tables to Bridge the Rift Between Epidemiologists and Their Data")
+    (description
+     "Presentation-ready results tables for epidemiologists in an automated,
+reproducible fashion.  The user provides the final analytical dataset and
+specifies the design of the table, with rows and/or columns defined by
+exposure(s), effect modifier(s), and estimands as desired, allowing to show
+descriptors and inferential estimates in one table -- bridging the rift between
+epidemiologists and their data, one table at a time.  See Rothman (2017)
+<doi:10.1007/s10654-017-0314-3>.")
+    (license license:gpl3+)))
 
 (define-public r-rifs
   (package
@@ -39012,13 +39084,13 @@ documents, e.g. using Sweave'.")
 (define-public r-redcaptidier
   (package
     (name "r-redcaptidier")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapTidieR" version))
        (sha256
-        (base32 "0sxp4q5wq2fml1knr79kgp3g669q6xbm6dg4mik2ybw6m1br2iwh"))))
+        (base32 "17pn2k5r9mn1762xn4nvm6x6zfk0gac7vw04qs3gif9nywbfl71r"))))
     (properties `((upstream-name . "REDCapTidieR")))
     (build-system r-build-system)
     (arguments
@@ -40310,13 +40382,13 @@ subunits and features.  Intended to be part of a 3D visualization workflow.")
 (define-public r-receptiviti
   (package
     (name "r-receptiviti")
-    (version "0.1.8")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "receptiviti" version))
        (sha256
-        (base32 "1z8f8wky1r712mi3by4jf0iv973i3bppgslj7kkvzwnrbij458fj"))))
+        (base32 "0l4v17f9bvkygp1nblj998i0p4gmvx6s8f5xc0hdif9nvgl8xzjk"))))
     (properties `((upstream-name . "receptiviti")))
     (build-system r-build-system)
     (arguments
@@ -40326,8 +40398,8 @@ subunits and features.  Intended to be part of a 3D visualization workflow.")
     (home-page "https://receptiviti.github.io/receptiviti-r/")
     (synopsis "Text Analysis Through the 'Receptiviti' API")
     (description
-     "Send text to the <https://www.receptiviti.com> API to be scored by all available
-frameworks.")
+     "Sends texts to the <https://www.receptiviti.com> API to be scored, and
+facilitates the creation of custom norms and local results databases.")
     (license license:expat)))
 
 (define-public r-recastlessons
@@ -43765,6 +43837,31 @@ to test the assumption of no-sorting effects.")
      "R access to hundreds of millions data series from DBnomics API
 (<https://db.nomics.world/>).")
     (license license:agpl3)))
+
+(define-public r-rdatasets
+  (package
+    (name "r-rdatasets")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rdatasets" version))
+       (sha256
+        (base32 "1wvg9yxjdlv10lfk14lwsmz6qnc2zid3j4s5a7d668l49id2ghq4"))))
+    (properties `((upstream-name . "Rdatasets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://vincentarelbundock.github.io/Rdatasetspkg/")
+    (synopsis "Access Datasets from the Rdatasets Archive")
+    (description
+     "Download and access datasets from the Rdatasets archive
+(<https://vincentarelbundock.github.io/Rdatasets/>).  The package provides
+functions to search, download, and view documentation for thousands of datasets
+from various R packages, available in both CSV and Parquet formats for efficient
+access.")
+    (license license:gpl3+)))
 
 (define-public r-rdataretriever
   (package
@@ -49954,13 +50051,13 @@ selection.")
 (define-public r-rbdat
   (package
     (name "r-rbdat")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rBDAT" version))
        (sha256
-        (base32 "1bwvq7iqfkcmlw7ckvnz29nz8s8dm5nvzdnd3h0ggzx9nq1l1983"))))
+        (base32 "1sjpqxcv06z6jq8w69iwk6k54hrl7p8fdi31pfnxqmfqwl9fqm7g"))))
     (properties `((upstream-name . "rBDAT")))
     (build-system r-build-system)
     (arguments

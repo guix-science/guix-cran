@@ -9452,13 +9452,13 @@ for easy rendering of the glyphs in an R terminal or graphics device.")
 (define-public r-hexdensity
   (package
     (name "r-hexdensity")
-    (version "1.4.8")
+    (version "1.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hexDensity" version))
        (sha256
-        (base32 "1wnhv4hhcwvzr73sb777j35amxs3xk5qric0s1n1viwbw031qi4j"))))
+        (base32 "0j7hdn96cj79zcw3l5p5154681bpf3difzillhn7azf2lzz7li9k"))))
     (properties `((upstream-name . "hexDensity")))
     (build-system r-build-system)
     (arguments
@@ -10011,13 +10011,13 @@ environmental and climate-related data.")
 (define-public r-heterocop
   (package
     (name "r-heterocop")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heterocop" version))
        (sha256
-        (base32 "0ljj5g3dd2kmhl6d78jfd6342w4vkbsnvw7gdvg4ml625wrx7923"))))
+        (base32 "1059hw5wfn60wqvrn0nqlf2ms5b0v6nccba40z202saghh8mn9wk"))))
     (properties `((upstream-name . "heterocop")))
     (build-system r-build-system)
     (arguments
@@ -10034,9 +10034,10 @@ environmental and climate-related data.")
     (home-page "https://cran.r-project.org/package=heterocop")
     (synopsis "Semi-Parametric Estimation with Gaussian Copula")
     (description
-     "This package provides a method for generating random vectors which are linked by
-a Gaussian copula.  It also enables to estimate the correlation matrix of the
-Gaussian copula in order to identify independencies within the data.")
+     "This package provides a method for estimating the correlation matrix of the
+Gaussian copula from the observed data.  This package also contains a penalized
+estimation of the corresponding precision matrix, and enables to generate random
+vectors that are distributed according to a Gaussian copula.")
     (license license:gpl3+)))
 
 (define-public r-heterfunctionaldata

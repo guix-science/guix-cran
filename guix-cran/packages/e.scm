@@ -575,13 +575,13 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
 (define-public r-eyeris
   (package
     (name "r-eyeris")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyeris" version))
        (sha256
-        (base32 "1453sdb00glj1qyf123vwrji59p2k3zbwvkszimljph64r5d06d0"))))
+        (base32 "1yphxbzz9ym3vbqz29z8p4d55c88jsq82477rb6d550bnh81frwy"))))
     (properties `((upstream-name . "eyeris")))
     (build-system r-build-system)
     (arguments
@@ -602,7 +602,8 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://shawnschwartz.com/eyeris/")
-    (synopsis "Flexible, Extensible, & Reproducible Processing of Pupil Data")
+    (synopsis
+     "Flexible, Extensible, & Reproducible Pupillometry Preprocessing")
     (description
      "Pupillometry offers a non-invasive window into the mind and has been used
 extensively as a psychophysiological readout of arousal signals linked with
@@ -2526,37 +2527,6 @@ their description.  Allows for an arbitrary number of variables, both numeric
 and categorical.  For quality control it provides functions to subset a
 representative sample.")
     (license license:expat)))
-
-(define-public r-expectreg
-  (package
-    (name "r-expectreg")
-    (version "0.53")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "expectreg" version))
-       (sha256
-        (base32 "0g5py2096dyrcnvgmmba6g796ky150xk63ny6h6ylmajqfcypm1a"))))
-    (properties `((upstream-name . "expectreg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen
-                             r-rcpp
-                             r-quadprog
-                             r-mboost
-                             r-matrix
-                             r-fields
-                             r-colorspace
-                             r-bayesx))
-    (home-page "https://cran.r-project.org/package=expectreg")
-    (synopsis "Expectile and Quantile Regression")
-    (description
-     "Expectile and quantile regression of models with nonlinear effects e.g. spatial,
-random, ridge using least asymmetric weighed squares / absolutes as well as
-boosting; also supplies expectiles for common distributions.")
-    (license license:gpl2)))
 
 (define-public r-expdes-pt
   (package
@@ -21797,13 +21767,13 @@ paper for more details.")
 (define-public r-ecostats
   (package
     (name "r-ecostats")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecostats" version))
        (sha256
-        (base32 "0zf3kw0kbwg759ixzwxilagx7h1xhdjsfvp8gb86b9m6pnwsiqr7"))))
+        (base32 "08x8wvfiicsl7l00d6lrdlshcqkr32dabckiw48591xdjyscppbl"))))
     (properties `((upstream-name . "ecostats")))
     (build-system r-build-system)
     (arguments

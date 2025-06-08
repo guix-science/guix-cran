@@ -3364,13 +3364,13 @@ Cellwise and Casewise Contamination and Missing Data.")
 (define-public r-gsdesign2
   (package
     (name "r-gsdesign2")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign2" version))
        (sha256
-        (base32 "11bd2l0vi1xa8hx59i543csqyphmqbg2jax9gcsjrgjfn2pjm2cm"))))
+        (base32 "1fv3xvfdax5z4gkj4rbzf3dx3h1jragj4bjrkx0b1wmwdkz15dv2"))))
     (properties `((upstream-name . "gsDesign2")))
     (build-system r-build-system)
     (arguments
@@ -9339,19 +9339,19 @@ building block for a beginner.")
 (define-public r-gpindex
   (package
     (name "r-gpindex")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpindex" version))
        (sha256
-        (base32 "1hif169xsvfvsnbgmad8v9qwq1d6hxvn74zyqkbmic8v3yxifs56"))))
+        (base32 "1fq6v0vr20cihc407lnmfgl3yb6sfk4yi57a38380skzpf5cwbh9"))))
     (properties `((upstream-name . "gpindex")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://marberts.github.io/gpindex/")
     (synopsis "Generalized Price and Quantity Indexes")
     (description
@@ -34472,13 +34472,13 @@ augmented Lagrange multiplier method.")
 (define-public r-gapr
   (package
     (name "r-gapr")
-    (version "0.1.0")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GAPR" version))
        (sha256
-        (base32 "0g46zlcg9l045d9l5mg77xr89s3c08c9qds9qkj8ph06c1brjgjg"))))
+        (base32 "076ijbv734ip2lgl02kk62jwwxdzspma98rfppk3ln4hz24nfklz"))))
     (properties `((upstream-name . "GAPR")))
     (build-system r-build-system)
     (arguments

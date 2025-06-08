@@ -4904,13 +4904,13 @@ scale development and paleoclimate analysis.")
 (define-public r-astgrepr
   (package
     (name "r-astgrepr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "astgrepr" version))
        (sha256
-        (base32 "02mznhs8kd3nrqik9l8hdhh76lkr37q98vrb7l9p1xjzx1p6l4pl"))))
+        (base32 "14sn968syzflxlcyk3886z2a0hpbhscc5jwaxj8k6fv5qmsafs8r"))))
     (properties `((upstream-name . "astgrepr")))
     (build-system r-build-system)
     (arguments
@@ -18726,6 +18726,34 @@ Finally, all objects created with this package allow to share trained AI models
 with other people.")
     (license license:gpl3)))
 
+(define-public r-aies
+  (package
+    (name "r-aies")
+    (version "0.99.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AiES" version))
+       (sha256
+        (base32 "118myk3aa347mbg4ysajv60ggj5hyxk0sbsgxqa26nb6p96dbjrm"))))
+    (properties `((upstream-name . "AiES")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fs r-ebimage r-e1071 r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/BreezyCave/AiES")
+    (synopsis "Axon Integrity Evaluation System for Microscopy Images")
+    (description
+     "This package provides tools for the quantitative analysis of axon integrity in
+microscopy images.  It implements image pre-processing, adaptive thresholding,
+feature extraction, and support vector machine-based classification to compute
+indices such as the Axon Integrity Index (AII) and Degeneration Index (DI).  The
+package is designed for reproducible and automated analysis in neuroscience
+research.")
+    (license license:bsd-3)))
+
 (define-public r-aidar
   (package
     (name "r-aidar")
@@ -19985,6 +20013,33 @@ contains functions to replicate the analyses of the scientific article entitled
 \"Agricultural Productivity in Space\" (Baldoni and Esposti (2021),
 <doi:10.1111/ajae.12155>)).")
     (license license:gpl3)))
+
+(define-public r-agpower
+  (package
+    (name "r-agpower")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "agpower" version))
+       (sha256
+        (base32 "0vql7mr13rphvhbyg3qc85bxmxmzrncqff10y4bxg1c71r14bshg"))))
+    (properties `((upstream-name . "agpower")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=agpower")
+    (synopsis
+     "Recurrent Event Analysis Planning for Robust Andersen-Gill Model")
+    (description
+     "Power and associated functions useful in prospective planning and monitoring of
+a clinical trial when a recurrent event endpoint is to be assessed by the robust
+Andersen-Gill model, see Lin, Wei, Yang, and Ying (2010)
+<doi:10.1111/1467-9868.00259>.  The equations developed in Ingel and
+Jahn-Eimermacher (2014) <doi:10.1002/bimj.201300090> and their consequences are
+employed.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-agop
   (package

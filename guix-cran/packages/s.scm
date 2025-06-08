@@ -1684,37 +1684,6 @@ decide whether or not to leave the switch-case construct after a case block has
 been executed.")
     (license license:gpl3)))
 
-(define-public r-switchboard
-  (package
-    (name "r-switchboard")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "switchboard" version))
-       (sha256
-        (base32 "1qh6cfm5h0j17ldljpgj400f2dhcfaa4x1157d46cyfawfdscvc5"))))
-    (properties `((upstream-name . "switchboard")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-magrittr))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=switchboard")
-    (synopsis "An Agile Widget Engine for Real-Time, Dynamic Visualizations")
-    (description
-     "An unsorted collection of visualization widgets rendered in
-Tcl/Tk'<https://www.tcl.tk/> to generate agile dashboards for your iterative
-simulations.  Widgets include progress bars, counters, eavesdroppers, injectors,
-switches, and sliders for dynamic manipulation and visualization of simulation
-parameters.")
-    (license license:gpl2+)))
-
 (define-public r-swissparl
   (package
     (name "r-swissparl")
@@ -12752,13 +12721,13 @@ objects.")
 (define-public r-stgam
   (package
     (name "r-stgam")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stgam" version))
        (sha256
-        (base32 "1kaizgcx6b69c8bhd8bj8jw30a82y7k715swmm0mkyzj6wf9ccdx"))))
+        (base32 "1pw8raisg0d1zq9609wmbg3d383lxvj3sgy67815qj22c6h0xy91"))))
     (properties `((upstream-name . "stgam")))
     (build-system r-build-system)
     (arguments
@@ -19900,13 +19869,13 @@ References: Evans & Jones (2002) <doi:10.1098/rspa.2002.1010>, AJ Jones (2004)
 (define-public r-squids
   (package
     (name "r-squids")
-    (version "25.5.6")
+    (version "25.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "squids" version))
        (sha256
-        (base32 "1h2r09bl0l0c89q935iniglz24im7mk3h6jxki0npxh4g585axsh"))))
+        (base32 "1v8rrwwy0fh7rna7zk18yn5srmaxq1siwx1ld3hfd29k9i1vsyvl"))))
     (properties `((upstream-name . "squids")))
     (build-system r-build-system)
     (arguments
@@ -23958,13 +23927,13 @@ and exploratory analysis workflows within R'.")
 (define-public r-spichanges
   (package
     (name "r-spichanges")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPIChanges" version))
        (sha256
-        (base32 "16cvvgn5kc4bacjhmmly8r06fi39riyybj5ir09q85sc6idqfb2l"))))
+        (base32 "13hyrgr30b6vpcj86xls5zns17w0dm7ysias0w5j8g83z8nb4rg0"))))
     (properties `((upstream-name . "SPIChanges")))
     (build-system r-build-system)
     (arguments
@@ -30597,13 +30566,13 @@ spatio-temporally uncorrelated random fields.")
 (define-public r-spacesxyz
   (package
     (name "r-spacesxyz")
-    (version "1.5-1")
+    (version "1.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spacesXYZ" version))
        (sha256
-        (base32 "181z510lr7vrfy3qrbz1xhy68h4r78jiydz5yhx2hzrbz935rai8"))))
+        (base32 "1dvvnvr13bz3wc84syrqpf32ajkl2w0f6q4h40wmkycssyyhmskj"))))
     (properties `((upstream-name . "spacesXYZ")))
     (build-system r-build-system)
     (arguments
@@ -39767,6 +39736,105 @@ expression pattern to a query dataset Soul J, Hardingham TE, Boot-Handford RP,
 Schwartz JM (2019) <doi:10.1093/bioinformatics/bty947>.")
     (license license:expat)))
 
+(define-public r-skedastic
+  (package
+    (name "r-skedastic")
+    (version "2.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "skedastic" version))
+       (sha256
+        (base32 "15l4p4wy7f5q3085bqbwr5f2qbf9xhj9lxqhln2nspjjmrj4r40r"))))
+    (properties `((upstream-name . "skedastic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-slam
+                             r-roi-plugin-qpoases
+                             r-roi
+                             r-rfast
+                             r-rdpack
+                             r-quadprogxt
+                             r-quadprog
+                             r-pracma
+                             r-osqp
+                             r-mgcv
+                             r-matrix
+                             r-mass
+                             r-inflection
+                             r-compquadform
+                             r-caret
+                             r-broom))
+    (home-page "https://github.com/tjfarrar/skedastic")
+    (synopsis "Handling Heteroskedasticity in the Linear Regression Model")
+    (description
+     "This package implements numerous methods for testing for, modelling, and
+correcting for heteroskedasticity in the classical linear regression model.  The
+most novel contribution of the package is found in the functions that implement
+the as-yet-unpublished auxiliary linear variance models and auxiliary nonlinear
+variance models that are designed to estimate error variances in a
+heteroskedastic linear regression model.  These models follow principles of
+statistical learning described in Hastie (2009) <doi:10.1007/978-0-387-21606-5>.
+ The nonlinear version of the model is estimated using quasi-likelihood methods
+as described in Seber and Wild (2003, ISBN: 0-471-47135-6).  Bootstrap methods
+for approximate confidence intervals for error variances are implemented as
+described in Efron and Tibshirani (1993, ISBN: 978-1-4899-4541-9), including
+also the expansion technique described in Hesterberg (2014)
+<doi:10.1080/00031305.2015.1089789>.  The wild bootstrap employed here follows
+the description in Davidson and Flachaire (2008)
+<doi:10.1016/j.jeconom.2008.08.003>.  Tuning of hyper-parameters makes use of a
+golden section search function that is modelled after the MATLAB function of
+Zarnowiec (2022)
+<https://www.mathworks.com/matlabcentral/fileexchange/25919-golden-section-method-algorithm>.
+ A methodological description of the algorithm can be found in Fox (2021, ISBN:
+978-1-003-00957-3).  There are 25 different functions that implement hypothesis
+tests for heteroskedasticity.  These include a test based on Anscombe (1961)
+<https://projecteuclid.org/euclid.bsmsp/1200512155>, Ramsey's (1969) BAMSET Test
+<doi:10.1111/j.2517-6161.1969.tb00796.x>, the tests of Bickel (1978)
+<doi:10.1214/aos/1176344124>, Breusch and Pagan (1979) <doi:10.2307/1911963>
+with and without the modification proposed by Koenker (1981)
+<doi:10.1016/0304-4076(81)90062-2>, Carapeto and Holt (2003)
+<doi:10.1080/0266476022000018475>, Cook and Weisberg (1983)
+<doi:10.1093/biomet/70.1.1> (including their graphical methods), Diblasi and
+Bowman (1997) <doi:10.1016/S0167-7152(96)00115-0>, Dufour, Khalaf, Bernard, and
+Genest (2004) <doi:10.1016/j.jeconom.2003.10.024>, Evans and King (1985)
+<doi:10.1016/0304-4076(85)90085-5> and Evans and King (1988)
+<doi:10.1016/0304-4076(88)90006-1>, Glejser (1969)
+<doi:10.1080/01621459.1969.10500976> as formulated by Mittelhammer, Judge and
+Miller (2000, ISBN: 0-521-62394-4), Godfrey and Orme (1999)
+<doi:10.1080/07474939908800438>, Goldfeld and Quandt (1965)
+<doi:10.1080/01621459.1965.10480811>, Harrison and @code{McCabe} (1979)
+<doi:10.1080/01621459.1979.10482544>, Harvey (1976) <doi:10.2307/1913974>, Honda
+(1989) <doi:10.1111/j.2517-6161.1989.tb01749.x>, Horn (1981)
+<doi:10.1080/03610928108828074>, Li and Yao (2019)
+<doi:10.1016/j.ecosta.2018.01.001> with and without the modification of Bai,
+Pan, and Yin (2016) <doi:10.1007/s11749-017-0575-x>, Rackauskas and Zuokas
+(2007) <doi:10.1007/s10986-007-0018-6>, Simonoff and Tsai (1994)
+<doi:10.2307/2986026> with and without the modification of Ferrari, Cysneiros,
+and Cribari-Neto (2004) <doi:10.1016/S0378-3758(03)00210-6>, Szroeter (1978)
+<doi:10.2307/1913831>, Verbyla (1993) <doi:10.1111/j.2517-6161.1993.tb01918.x>,
+White (1980) <doi:10.2307/1912934>, Wilcox and Keselman (2006)
+<doi:10.1080/10629360500107923>, Yuce (2008)
+<https://dergipark.org.tr/en/pub/iuekois/issue/8989/112070>, and Zhou, Song, and
+Thompson (2015) <doi:10.1002/cjs.11252>.  Besides these heteroskedasticity
+tests, there are supporting functions that compute the BLUS residuals of Theil
+(1965) <doi:10.1080/01621459.1965.10480851>, the conditional two-sided p-values
+of Kulinskaya (2008) <doi:10.48550/@code{arXiv.0810.2124>}, and probabilities
+for the nonparametric trend statistic of Lehmann (1975, ISBN: 0-816-24996-1).
+For handling heteroskedasticity, in addition to the new auxiliary variance model
+methods, there is a function to implement various existing
+Heteroskedasticity-Consistent Covariance Matrix Estimators from the literature,
+such as those of White (1980) <doi:10.2307/1912934>, @code{MacKinnon} and White
+(1985) <doi:10.1016/0304-4076(85)90158-7>, Cribari-Neto (2004)
+<doi:10.1016/S0167-9473(02)00366-3>, Cribari-Neto et al. (2007)
+<doi:10.1080/03610920601126589>, Cribari-Neto and da Silva (2011)
+<doi:10.1007/s10182-010-0141-2>, Aftab and Chang (2016)
+<doi:10.18187/pjsor.v12i2.983>, and Li et al. (2017)
+<doi:10.1080/00949655.2016.1198906>.")
+    (license license:expat)))
+
 (define-public r-skater
   (package
     (name "r-skater")
@@ -46675,13 +46743,13 @@ researches.")
 (define-public r-sidier
   (package
     (name "r-sidier")
-    (version "4.1.0")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sidier" version))
        (sha256
-        (base32 "0zayhvhaq0q00rpgy0z01rhf3lcc3791klc8b30pdj627cl9xj01"))))
+        (base32 "0z6zsls1r0591vh1r7z42530pbmn7mdcqyymwj0kz47pxml7lbgg"))))
     (properties `((upstream-name . "sidier")))
     (build-system r-build-system)
     (arguments
@@ -46698,7 +46766,8 @@ researches.")
      "Substitution and Indel Distances to Infer Evolutionary Relationships")
     (description
      "Evolutionary reconstruction based on substitutions and insertion-deletion
-(indels) analyses in a distance-based framework.")
+(indels) analyses in a distance-based framework as described in MuÃ±oz-Pajares
+(2013) <doi:10.1111/2041-210X.12118>.")
     (license license:gpl2)))
 
 (define-public r-sides
@@ -48257,13 +48326,13 @@ tracking, customizable submit actions, easy survey-theming, and more.")
 (define-public r-shinystoreplus
   (package
     (name "r-shinystoreplus")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyStorePlus" version))
        (sha256
-        (base32 "0k40zlghs7v8m7j0wv8ap4jd5f18h7nw4dnbd0r6ay5pc3cmz1lj"))))
+        (base32 "1la8vcg9h4f4v8n5ps3wnb4176xv5j104bhf0afpwz6ggk7i51pl"))))
     (properties `((upstream-name . "shinyStorePlus")))
     (build-system r-build-system)
     (arguments
@@ -61172,6 +61241,35 @@ time-stratified case-crossover, plotting functions and residual checks, see
 Barnett and Dobson (2010) ISBN 978-3-642-10748-1.  Thanks to Yuming Guo for
 checking the case-crossover code.")
     (license license:gpl3+)))
+
+(define-public r-seasepi
+  (package
+    (name "r-seasepi")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SeasEpi" version))
+       (sha256
+        (base32 "0kzsivc9kfg95bz8rkja5j55sxxdzgpdmm0yifnh9f0vq3qjydah"))))
+    (properties `((upstream-name . "SeasEpi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ngspatial r-mvtnorm r-mass))
+    (home-page "https://cran.r-project.org/package=SeasEpi")
+    (synopsis "Spatiotemporal Modeling of Seasonal Infectious Disease")
+    (description
+     "Spatiotemporal individual-level model of seasonal infectious disease
+transmission within the Susceptible-Exposed-Infectious-Recovered-Susceptible
+(SEIRS) framework are applied to model seasonal infectious disease transmission.
+ This package employs a likelihood based Monte Carlo Expectation Conditional
+Maximization (MCECM) algorithm for estimating model parameters.  In addition to
+model fitting and parameter estimation, the package offers functions for
+calculating AIC using real pandemic data and conducting simulation studies
+customized to user-specified model configurations.")
+    (license license:expat)))
 
 (define-public r-seas
   (package

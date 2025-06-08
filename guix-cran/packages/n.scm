@@ -8878,20 +8878,19 @@ species.")
 (define-public r-nisrarr
   (package
     (name "r-nisrarr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nisrarr" version))
        (sha256
-        (base32 "0qni4vvxar3g3bsc7sj33r0a2k9hh0cglzylgpvqyxqrd7n9slc7"))))
+        (base32 "1gap9qkm4nv7gan0rnbsg9lqqscsa79dc1wmw9vkd70n6k4bf677"))))
     (properties `((upstream-name . "nisrarr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-vctrs
+    (propagated-inputs (list r-vctrs
                              r-tibble
                              r-stringr
                              r-rlang
@@ -8903,8 +8902,8 @@ species.")
                              r-httr2
                              r-glue
                              r-dplyr
-                             r-cli
                              r-cachem))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/MarkPaulin/nisrarr")
     (synopsis "Download Data from the NISRA Data Portal")
     (description
@@ -12677,13 +12676,13 @@ functions are build upon igraph'.")
 (define-public r-nettskjemar
   (package
     (name "r-nettskjemar")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nettskjemar" version))
        (sha256
-        (base32 "135x4z4mm9drwbmxrd0kvj73ammfq55hnv0khnw2651cxq9wi54b"))))
+        (base32 "00k2b7g65wlzfgs69zbafrqmgc6c51fp9gf2xvrd7vxwrddnwsm4"))))
     (properties `((upstream-name . "nettskjemar")))
     (build-system r-build-system)
     (arguments

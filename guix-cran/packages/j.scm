@@ -4424,13 +4424,13 @@ deep-neural networks using tensorflow'.")
 (define-public r-jane
   (package
     (name "r-jane")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JANE" version))
        (sha256
-        (base32 "0rqn247r422fbaza7v8zg18mlp0xnh68rnv2vpmpvaj0zbnkxm26"))))
+        (base32 "11g6zag8qrp4vvjf7c5wizh7b8ai5wlzi2cmr84fbwk80vli1sa5"))))
     (properties `((upstream-name . "JANE")))
     (build-system r-build-system)
     (arguments
@@ -4458,8 +4458,10 @@ algorithm.  Enables flexible modeling of unweighted or weighted network data
 (with or without noise edges), supporting both directed and undirected networks
 (with or without degree heterogeneity).  Designed to handle large networks
 efficiently, it allows users to explore network structure through latent space
-representations, identify clusters within network data, and simulate networks
-with varying clustering and connectivity patterns.")
+representations, identify clusters (i.e., community detection) within network
+data, and simulate networks with varying clustering, connectivity patterns, and
+noise edges.  Methodology for the implementation is described in Arakkal and
+Sewell (2025) <doi:10.1016/j.csda.2025.108228>.")
     (license license:gpl3+)))
 
 (define-public r-jamendor

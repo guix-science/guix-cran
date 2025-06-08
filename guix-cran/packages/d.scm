@@ -14362,6 +14362,36 @@ and discrete multiple testing procedures.  Some of them are also available as a
 four-column version, so that each row represents a 2x2 table.")
     (license license:gpl3)))
 
+(define-public r-discovr
+  (package
+    (name "r-discovr")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "discovr" version))
+       (sha256
+        (base32 "1rkh9sq3r53f74r19vg4dm2mpjwcxjydv3cpnkbaqswp0qdvnzzb"))))
+    (properties `((upstream-name . "discovr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-learnr r-glue r-ggplot2))
+    (home-page "https://www.discovr.rocks")
+    (synopsis
+     "Interactive Tutorials and Data for \"Discovering Statistics Using R and RStudio\"")
+    (description
+     "Interactive R tutorials and datasets for the textbook Field (2026), \"Discovering
+Statistics Using R and RStudio\", <https://www.discovr.rocks/>.  Interactive
+tutorials cover general workflow in R and RStudio', summarizing data,
+visualizing data, fitting models and bias, correlation, the general linear model
+(GLM), moderation, mediation, missing values, comparing means using the GLM
+(analysis of variance), comparing adjusted means (analysis of covariance),
+factorial designs, repeated measures designs, exploratory factor analysis (EFA).
+ There are no functions, only datasets and interactive tutorials.")
+    (license license:gpl3)))
+
 (define-public r-discoverableresearch
   (package
     (name "r-discoverableresearch")
@@ -15074,44 +15104,6 @@ values.  We also have the code for disaggregation as found in Wei and Stram
 (1990, <doi:10.1111/j.2517-6161.1990.tb01799.x>), and Hodgess and Wei (1996,
 \"Temporal Disaggregation of Time Series\").")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-dirttee
-  (package
-    (name "r-dirttee")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dirttee" version))
-       (sha256
-        (base32 "1kmchjvm5x3gsvq2dqxr4di2l607j1ivsm75zwggaiwi8yjz9s4c"))))
-    (properties `((upstream-name . "dirttee")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-rlang
-                             r-provenance
-                             r-nloptr
-                             r-mgcv
-                             r-matrix
-                             r-mass
-                             r-formula-tools
-                             r-expectreg))
-    (home-page "https://cran.r-project.org/package=dirttee")
-    (synopsis "Distributional Regression for Time to Event Data")
-    (description
-     "Semiparametric distributional regression methods (expectile, quantile and mode
-regression) for time-to-event variables with right-censoring; uses inverse
-probability of censoring weights or accelerated failure time models with
-auxiliary likelihoods.  Expectile regression using inverse probability of
-censoring weights has been introduced in Seipp et al. (2021) ``Weighted
-Expectile Regression for Right-Censored Data <doi:10.1002/sim.9137>, mode
-regression for time-to-event variables has been introduced in Seipp et al.
-(2022) ``Flexible Semiparametric Mode Regression for Time-to-Event Data
-<doi:10.1177/09622802221122406>.")
-    (license license:gpl2+)))
 
 (define-public r-dirstats
   (package
@@ -29777,6 +29769,31 @@ ready form.")
      "Download and import time series from <http://www.dataseries.org>, a
 comprehensive and up-to-date collection of open data from Switzerland.")
     (license license:gpl3)))
+
+(define-public r-datasda
+  (package
+    (name "r-datasda")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dataSDA" version))
+       (sha256
+        (base32 "1xdgv9cnpjw2iw4kqzvy1nbi6sdh6bzbi1n6sk3c388vhzgkms79"))))
+    (properties `((upstream-name . "dataSDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-rsda r-magrittr r-histdawass r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dataSDA")
+    (synopsis "Datasets and Basic Statistics for Symbolic Data Analysis")
+    (description
+     "Collects a diverse range of symbolic data and offers a comprehensive set of
+functions that facilitate the conversion of traditional data into the symbolic
+data format.")
+    (license license:gpl2+)))
 
 (define-public r-datarobot
   (package

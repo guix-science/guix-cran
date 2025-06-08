@@ -11455,6 +11455,32 @@ ratio-formatted hypotheses and the corresponding confidence interval are
 provided assuming homogeneous or heterogeneous group variances.")
     (license license:gpl2)))
 
+(define-public r-mram
+  (package
+    (name "r-mram")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MRAM" version))
+       (sha256
+        (base32 "0k83db6b4iq1x99hz79vbc1zwngwssv44q43ax6b31hx29wmg4qh"))))
+    (properties `((upstream-name . "MRAM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rann))
+    (home-page "https://cran.r-project.org/package=MRAM")
+    (synopsis "Multivariate Regression Association Measure")
+    (description
+     "The multivariate regression association measure quantifies the predictability of
+one random vector from another.  This package provides a function for estimating
+and performing inference on this measure.  A variable selection algorithm based
+on this measure is also included.  For more details, see Shih and Chen (2025)
+<in revision>.")
+    (license license:gpl2)))
+
 (define-public r-mr-rgm
   (package
     (name "r-mr-rgm")

@@ -426,6 +426,30 @@ including a 1-degree-of-freedom test for row*column non-additivity', linear in
 the row and column effects.")
     (license license:gpl3)))
 
+(define-public r-twotrials
+  (package
+    (name "r-twotrials")
+    (version "0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "twotrials" version))
+       (sha256
+        (base32 "07q9liilywmv93lb8gk8k13flyac8h40r8yl6r5zfd5hq2039bab"))))
+    (properties `((upstream-name . "twotrials")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/SamCH93/twotrials")
+    (synopsis
+     "Compatible Point Estimates, Confidence Intervals, and P-Values for Two Trials")
+    (description
+     "This package implements combined p-value functions for two trials along with
+compatible combined point and interval estimates as described in Pawel, Roos,
+and Held (2025) <doi:10.48550/@code{arXiv.2503.10246>}.")
+    (license license:gpl3)))
+
 (define-public r-twotimescales
   (package
     (name "r-twotimescales")
@@ -7842,13 +7866,13 @@ the source file is edited.")
 (define-public r-treesitter
   (package
     (name "r-treesitter")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treesitter" version))
        (sha256
-        (base32 "1mri1sfl96di94v3b76mfkh6ipq9dfaj6jhsslqw755j10bjbcib"))))
+        (base32 "0bljyh7glvhvxb9x258pg67dk2fkyx1jkl3kxma8k12kr6znqc08"))))
     (properties `((upstream-name . "treesitter")))
     (build-system r-build-system)
     (arguments

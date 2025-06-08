@@ -4814,13 +4814,13 @@ Gaussian.")
 (define-public r-brickster
   (package
     (name "r-brickster")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brickster" version))
        (sha256
-        (base32 "0hlc0zzbrd5qrk54ayz8gir9zvzxgi1jp821v8k7h7sfv4j7mz2p"))))
+        (base32 "1lamksgnn89nc497l2zfa2npbrfqh7gffqzl24dhwvxni5jp0hm4"))))
     (properties `((upstream-name . "brickster")))
     (build-system r-build-system)
     (arguments
@@ -4828,9 +4828,8 @@ Gaussian.")
       #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
-                             r-reticulate
-                             r-r6
                              r-purrr
+                             r-nanoarrow
                              r-jsonlite
                              r-ini
                              r-httr2
@@ -4838,8 +4837,7 @@ Gaussian.")
                              r-dplyr
                              r-curl
                              r-cli
-                             r-base64enc
-                             r-arrow))
+                             r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/databrickslabs/brickster")
     (synopsis "R Toolkit for 'Databricks'")
@@ -13713,13 +13711,13 @@ IDs.  In SVG mode, text and numbers can be dragged and dropped.  Based on the
 (define-public r-biotrajectory
   (package
     (name "r-biotrajectory")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioTrajectory" version))
        (sha256
-        (base32 "0mm24bjd0llhf3ff03vslgn7rjpbbp1lfick9y91011pqwpm2yd7"))))
+        (base32 "1d35p8x4ymhqcgfbqxxb72915pcikdzw26a00y9nn7cpi3c4yl86"))))
     (properties `((upstream-name . "BioTrajectory")))
     (build-system r-build-system)
     (arguments
@@ -13780,13 +13778,13 @@ variables and spatial gene diversity are implemented.")
 (define-public r-biotimer
   (package
     (name "r-biotimer")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioTIMEr" version))
        (sha256
-        (base32 "027kx7244j575wn3yxhsmhbg2yaf1w611jvjnzaxivpns56rvg33"))))
+        (base32 "0rvrcvhhf22fi6s2wnxb0wk735sk8xb4cd3ghbha9kkxvixdxx6z"))))
     (properties `((upstream-name . "BioTIMEr")))
     (build-system r-build-system)
     (arguments
@@ -27497,13 +27495,13 @@ models.  For a web-based Shiny application related to this package, see
 (define-public r-bayesertools
   (package
     (name "r-bayesertools")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesERtools" version))
        (sha256
-        (base32 "0vwxp3yin03a7xbvlq8kyf5rhr8ln0dyq2l1lv16ay4amlldmr23"))))
+        (base32 "08d7dyfjmc1wr7fmn4nr3a5vnm3lfcfzx0xxcarn81nxv5ygapdr"))))
     (properties `((upstream-name . "BayesERtools")))
     (build-system r-build-system)
     (arguments
@@ -27520,8 +27518,7 @@ models.  For a web-based Shiny application related to this package, see
                              r-gt
                              r-ggplot2
                              r-dplyr
-                             r-cli
-                             r-bayestestr))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://genentech.github.io/BayesERtools/")
     (synopsis "Bayesian Exposure-Response Analysis Tools")

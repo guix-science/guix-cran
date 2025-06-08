@@ -14170,6 +14170,31 @@ sets) (LÃ¶fstedt and Trygg, 2011 <doi:10.1002/cem.1388>; LÃ¶fstedt et al., 2
 specific for each data set separately.")
     (license license:gpl3)))
 
+(define-public r-o2ools
+  (package
+    (name "r-o2ools")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "o2ools" version))
+       (sha256
+        (base32 "0jy8bmkg6hmsm781jkd26qbck6hhfvdinclwb713rp3xyfx4rmwh"))))
+    (properties `((upstream-name . "o2ools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CyGei/o2ools")
+    (synopsis "Tools for 'outbreaker2'")
+    (description
+     "Streamlines the post-processing, summarization, and visualization of outbreaker2
+output via a suite of helper functions.  Facilitates tidy manipulation of
+posterior samples, integration with case metadata, generation of diagnostic
+plots and summary statistics.")
+    (license license:expat)))
+
 (define-public r-o2geosocial
   (package
     (name "r-o2geosocial")

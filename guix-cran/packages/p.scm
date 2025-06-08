@@ -28,6 +28,7 @@
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages gtk)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages bison)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -29535,13 +29536,13 @@ materials.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiology
   (package
     (name "r-photobiology")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiology" version))
        (sha256
-        (base32 "0hc67q09802h63xh3cgn2a31r9d6rlc62rdn450241gr5k1c9pr0"))))
+        (base32 "00k01z75a872w3zhwzq903q6lqj458snmmf7j3nak33rkyx67czw"))))
     (properties `((upstream-name . "photobiology")))
     (build-system r-build-system)
     (arguments
@@ -29557,7 +29558,8 @@ materials.  Part of the r4photobiology suite, Aphalo P. J. (2015)
                              r-polynom
                              r-plyr
                              r-lubridate
-                             r-dplyr))
+                             r-dplyr
+                             r-catools))
     (native-inputs (list r-knitr))
     (home-page "https://docs.r4photobiology.info/photobiology/")
     (synopsis "Photobiological Calculations")
@@ -41110,18 +41112,19 @@ functions for working with the resulting abstract syntax tree.")
 (define-public r-parselatex
   (package
     (name "r-parselatex")
-    (version "0.3.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parseLatex" version))
        (sha256
-        (base32 "1v86rk9b8gb32yj9rl65cw5jcpy68cav42a2nrqhzba1ncvyp155"))))
+        (base32 "169qywvpw33532gaj7882md9fh87n6nwamhd58pnxbrn3ml60m6g"))))
     (properties `((upstream-name . "parseLatex")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list gnu-gettext bison))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dmurdoch/parseLatex")
     (synopsis "Parse 'LaTeX' Code")
