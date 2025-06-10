@@ -4124,13 +4124,13 @@ the original data such as predictions, residuals and cluster assignments; and
 (define-public r-broman
   (package
     (name "r-broman")
-    (version "0.84")
+    (version "0.86")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broman" version))
        (sha256
-        (base32 "01q05xvxlam6isdhaq48sfw5fh60pcqlhivs7c38lh7c8r3w2172"))))
+        (base32 "165bssyahh7pyhy2n4dlkq2m3ipqj2xqrpj5lkyk3ppv0kn8i7j1"))))
     (properties `((upstream-name . "broman")))
     (build-system r-build-system)
     (arguments
@@ -19389,13 +19389,13 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.5.13")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFS" version))
        (sha256
-        (base32 "0awwp76q1aqx1rf35gl0z6jir9syq93m3flk95cwsd5rwp40lpg2"))))
+        (base32 "1rhzd5v1kspvc421ph86dzq9mmmkz39pg5mr458vvb5bdabfbx7w"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (arguments
@@ -19404,9 +19404,8 @@ the bfsl solution.")
     (propagated-inputs (list r-zip
                              r-xml2
                              r-tibble
-                             r-sf
                              r-rvest
-                             r-rstac
+                             r-rlang
                              r-pxweb
                              r-purrr
                              r-magrittr
@@ -19452,13 +19451,13 @@ power and sample size calculations as described in Pawel and Held (2025)
 (define-public r-bfpack
   (package
     (name "r-bfpack")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFpack" version))
        (sha256
-        (base32 "1w6p6nhd94zqbriwgqz8ydpmld5ysgy96rigvxg62951mvm1q9j0"))))
+        (base32 "1bwnwddwv8h4v5ikjdbqrh0vixif3ljsv3qis224wg742mq0bg95"))))
     (properties `((upstream-name . "BFpack")))
     (build-system r-build-system)
     (arguments
@@ -19474,6 +19473,7 @@ power and sample size calculations as described in Pawel and Held (2025)
                              r-extradistr
                              r-ergm
                              r-coda
+                             r-berryfunctions
                              r-bergm
                              r-bain))
     (native-inputs (list r-knitr gfortran))
@@ -24584,13 +24584,13 @@ Chipman, George, @code{McCulloch} (2010).")
 (define-public r-bayestools
   (package
     (name "r-bayestools")
-    (version "0.2.18")
+    (version "0.2.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesTools" version))
        (sha256
-        (base32 "0yp3s568pss7bap8bllsh24i56siv0skg7blp9l9rwcz6sb6awzg"))))
+        (base32 "0bb4ywfj2592m5hgn0xvza381g1029ar848sjkw46z0fwq7kwi6v"))))
     (properties `((upstream-name . "BayesTools")))
     (build-system r-build-system)
     (arguments

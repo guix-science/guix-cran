@@ -1600,13 +1600,13 @@ See Saah and Kozubowski (2025) <doi:10.1016/j.cam.2025.116588>.")
 (define-public r-extdist
   (package
     (name "r-extdist")
-    (version "0.7-2")
+    (version "0.7-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExtDist" version))
        (sha256
-        (base32 "0wramjs7s2nxgjb2k30jgbbpf7pj4a1gzzqx8p1qh4pskh15msfm"))))
+        (base32 "1406d7mzrgka6iq42m33nv32w02xq0ygbfwya6mqmd83dm79cghj"))))
     (properties `((upstream-name . "ExtDist")))
     (build-system r-build-system)
     (arguments
@@ -1614,7 +1614,7 @@ See Saah and Kozubowski (2025) <doi:10.1016/j.cam.2025.116588>.")
       #:tests? #f))
     (propagated-inputs (list r-optimx r-numderiv))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ExtDist")
+    (home-page "https://github.com/oleksii-nikolaienko/ExtDist")
     (synopsis "Extending the Range of Functions for Probability Distributions")
     (description
      "This package provides a consistent, unified and extensible framework for
@@ -15356,13 +15356,13 @@ details, see Byrnes et al. (2014) <doi:10.1111/2041-210X.12143> and Chao et al.
 (define-public r-emery
   (package
     (name "r-emery")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emery" version))
        (sha256
-        (base32 "1x0x1f2i0yxkq8xl6vm2w2nb8blpa6dkns07d1n9qj43rnwljv5s"))))
+        (base32 "0nzy70i4b9pdlz5fzpv7rdd80wdmxvvay3wqip05zxmsc7r488rf"))))
     (properties `((upstream-name . "emery")))
     (build-system r-build-system)
     (arguments
@@ -15377,7 +15377,7 @@ details, see Byrnes et al. (2014) <doi:10.1111/2041-210X.12143> and Chao et al.
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=emery")
+    (home-page "https://github.com/therealcfdrake/emery")
     (synopsis "Accuracy Statistic Estimation for Imperfect Gold Standards")
     (description
      "Produce maximum likelihood estimates of common accuracy statistics for multiple

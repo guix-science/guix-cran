@@ -1174,13 +1174,13 @@ Judd. (2018) <doi:10.1037/pspa0000132>.")
 (define-public r-jsm
   (package
     (name "r-jsm")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JSM" version))
        (sha256
-        (base32 "0vcsay1jpjlfdwykad4hp319swr9lv1ajlcyhmiizwr1ph3f1az9"))))
+        (base32 "08pa5ljihdjgx4vw290bk98f2lyxybwlw0rf6dbfxnxwwp7smzv2"))))
     (properties `((upstream-name . "JSM")))
     (build-system r-build-system)
     (arguments

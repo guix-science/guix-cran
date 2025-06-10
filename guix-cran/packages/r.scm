@@ -64,13 +64,13 @@
 (define-public r-rzooroh
   (package
     (name "r-rzooroh")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RZooRoH" version))
        (sha256
-        (base32 "1psdspks9qplrnmwalj5zzfpbwi6kqbr1d10r2bw3h54nb92wx6z"))))
+        (base32 "0bqimp40rmbj9bdl5n1ygzlv3rw2myn75y2mnvckn8jpmi6qxlk8"))))
     (properties `((upstream-name . "RZooRoH")))
     (build-system r-build-system)
     (arguments
@@ -31863,13 +31863,13 @@ tagging-related mortality and tag loss during mark-recapture studies\").")
 (define-public r-retistruct
   (package
     (name "r-retistruct")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "retistruct" version))
        (sha256
-        (base32 "1cqflx19yvm695s3d9xslhbmdkwa82i4g3rxh82f576cgdli2nnm"))))
+        (base32 "1g1ng57sdj9bbvqrjrpnzv7sn8fjd9vrgp0xinlm4cdy99aq56ln"))))
     (properties `((upstream-name . "retistruct")))
     (build-system r-build-system)
     (arguments
@@ -39356,13 +39356,13 @@ obtain updated taxonomic details, and explore the dataset.")
 (define-public r-redatamx
   (package
     (name "r-redatamx")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redatamx" version))
        (sha256
-        (base32 "1508sp8kxqrcyjd6hrw6fgvhlb33iswzdbh79l54wrcgxnf9xqli"))))
+        (base32 "0qpa5ka1fb6iq7sii4jzngkl675hn9bwsk2pc2mh6rdkqq27jvkp"))))
     (properties `((upstream-name . "redatamx")))
     (build-system r-build-system)
     (arguments
@@ -42535,13 +42535,13 @@ plotting components to enable use and replication of the book.")
 (define-public r-rdsdp
   (package
     (name "r-rdsdp")
-    (version "1.0.5.2.1")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdsdp" version))
        (sha256
-        (base32 "0lm5c1cv6jyxkmr09khfnsab4bzjbfcg8j04zc4zqimy1541i6yn"))))
+        (base32 "1pdz307xzczfvk97y4n2jv5kcn97w615b014q28mgr4ayds26inx"))))
     (properties `((upstream-name . "Rdsdp")))
     (build-system r-build-system)
     (arguments
@@ -57449,31 +57449,6 @@ auxiliary functions could be used with other MCMC programs, including JAGS'.")
      "This package uses either the @code{statconnDCOM} server (via the rcom package)
 or the RDCOMClient to communicate with MS-Word via the COM interface.")
     (license license:gpl2)))
-
-(define-public r-r2ucare
-  (package
-    (name "r-r2ucare")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "R2ucare" version))
-       (sha256
-        (base32 "0940c9zw3fifs7m4hrx9aqv4d56q3263bl12lzk2mx2sfjp9rzlw"))))
-    (properties `((upstream-name . "R2ucare")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-rmark))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/oliviergimenez/R2ucare")
-    (synopsis "Goodness-of-Fit Tests for Capture-Recapture Models")
-    (description
-     "This package performs goodness-of-fit tests for capture-recapture models as
-described by Gimenez et al. (2018) <doi:10.1111/2041-210X.13014>.  Also contains
-several functions to process capture-recapture data.")
-    (license license:gpl2+)))
 
 (define-public r-r2symbols
   (package

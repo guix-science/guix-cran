@@ -36889,13 +36889,13 @@ time while trading no accuracy loss in return.")
 (define-public r-smartsnp
   (package
     (name "r-smartsnp")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smartsnp" version))
        (sha256
-        (base32 "1gzzhys6bja55iclkji254kri6r3iamiw7bv881mp615wi9r3hx2"))))
+        (base32 "0l30ysi6n9yrmd49w1m2psdl6gxghk2d8lpw4h95yy7zw45amqrr"))))
     (properties `((upstream-name . "smartsnp")))
     (build-system r-build-system)
     (arguments
@@ -36910,7 +36910,8 @@ time while trading no accuracy loss in return.")
                              r-foreach
                              r-data-table
                              r-bootsvd))
-    (home-page "https://cran.r-project.org/package=smartsnp")
+    (native-inputs (list r-knitr))
+    (home-page "https://christianhuber.github.io/smartsnp/")
     (synopsis "Fast Multivariate Analyses of Big Genomic Data")
     (description
      "Fast computation of multivariate analyses of small (10s to 100s markers) to big
@@ -46982,13 +46983,13 @@ the aim being to describe and compare their isotopic niche.")
 (define-public r-siatools
   (package
     (name "r-siatools")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIAtools" version))
        (sha256
-        (base32 "1p89b5ws1hb1a4dn38pw8kyz7vccfmcmzfvpmd44mbpfl8fdlvqc"))))
+        (base32 "075v30iygsxfv5rfqbprfyaxz6kd4hq9drm9j58hvzcfvn3pdw5a"))))
     (properties `((upstream-name . "SIAtools")))
     (build-system r-build-system)
     (arguments

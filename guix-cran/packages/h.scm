@@ -12305,13 +12305,13 @@ Zhu, Tianming, Liang Zhang, and Jin-Ting Zhang.(2022)
 (define-public r-hdnom
   (package
     (name "r-hdnom")
-    (version "6.0.4")
+    (version "6.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdnom" version))
        (sha256
-        (base32 "0d9khk2a16p4j6vcj109pn695fbrra8vx821fzzyg56px5j1j8k0"))))
+        (base32 "1lx77lprp64x0dnxlqdvgbgbmkjhbpw312pxnk7njm4r5lpschvj"))))
     (properties `((upstream-name . "hdnom")))
     (build-system r-build-system)
     (arguments

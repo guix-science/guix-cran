@@ -6423,13 +6423,13 @@ available in both desktop and online versions.")
 (define-public r-inzightplots
   (package
     (name "r-inzightplots")
-    (version "2.15.3")
+    (version "2.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNZightPlots" version))
        (sha256
-        (base32 "0pc1z7ikh3c2l5s1dljdzaqk83m6i5p64p771waz5frkyyf3bg4r"))))
+        (base32 "0afallnnjis0jmr5a755r6cxp9jk75vjz9h88zwygxmmk6kjxb71"))))
     (properties `((upstream-name . "iNZightPlots")))
     (build-system r-build-system)
     (arguments
@@ -6450,6 +6450,7 @@ available in both desktop and online versions.")
                              r-hexbin
                              r-expss
                              r-emmeans
+                             r-dplyr
                              r-dichromat
                              r-colorspace
                              r-chron
@@ -21347,13 +21348,13 @@ tabular datasets.")
 (define-public r-i14y
   (package
     (name "r-i14y")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "I14Y" version))
        (sha256
-        (base32 "1gawz1fcnrav5xzkmn6dncsa01drcijdxs3br339q5g9gfidmjx1"))))
+        (base32 "04m0h3iwz4sm1fnqxd5kynsqi3dw4a170ad77kf2windapqh7ha0"))))
     (properties `((upstream-name . "I14Y")))
     (build-system r-build-system)
     (arguments

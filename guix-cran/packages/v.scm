@@ -1419,30 +1419,6 @@ check validity of ballots are also provided to ensure flexibility.")
 @code{VoteSmart'<https://justfacts.votesmart.org/>} API.")
     (license license:expat)))
 
-(define-public r-votesim
-  (package
-    (name "r-votesim")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "voteSim" version))
-       (sha256
-        (base32 "0wqyckpmwwyfmwqhmml62nf781zakbiir727jac1bc1iawxm9y7k"))))
-    (properties `((upstream-name . "voteSim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-truncnorm r-genord r-extradistr))
-    (home-page "https://eric.univ-lyon2.fr/arolland/")
-    (synopsis "Generate Simulated Data for Voting Rules using Evaluations")
-    (description
-     "Provide functions to generate random simulated evaluations on candidates by
-voters for evaluation-based elections.  Functions are based on several models
-for continuous or discrete evaluations.")
-    (license license:gpl3)))
-
 (define-public r-voteogram
   (package
     (name "r-voteogram")

@@ -7812,13 +7812,13 @@ using @code{treespaceServer()}.  For further details see Jombart et al. (2017)
 (define-public r-treeslicer
   (package
     (name "r-treeslicer")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treesliceR" version))
        (sha256
-        (base32 "1hzi2l24x1hb21ljnv0zcqghibpjxh8gx0rfryvh6fvd71v1g4hb"))))
+        (base32 "0yq56cxxaz2jvzf8vynnkwywg87q11f4h5smlbb45fsbhlgvzl0g"))))
     (properties `((upstream-name . "treesliceR")))
     (build-system r-build-system)
     (arguments
@@ -9897,13 +9897,13 @@ classification model pipelines can be implemented using their model name from
 (define-public r-transda
   (package
     (name "r-transda")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transDA" version))
        (sha256
-        (base32 "0v2ldrv5h35xbj9k76dx4ygfqn5j9ni2h22jj2l61sp2bfh1crbf"))))
+        (base32 "0is4spm2vajxacp8l6qwai8fyp5lz993xzppnwhi77mc9sfl387v"))))
     (properties `((upstream-name . "transDA")))
     (build-system r-build-system)
     (arguments
@@ -21362,13 +21362,13 @@ contemplating them.")
 (define-public r-thor
   (package
     (name "r-thor")
-    (version "1.1.6")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thor" version))
        (sha256
-        (base32 "12gpqs02gh4zvrxh862s64ba5shp4h30vddgplf67qzd8sijmx5q"))))
+        (base32 "1g9204n6khm1k9ifwlmhbycfp996k5c2zpcmk2aqd95iqafpaw4g"))))
     (properties `((upstream-name . "thor")))
     (build-system r-build-system)
     (arguments
@@ -21380,7 +21380,7 @@ contemplating them.")
     (synopsis "Interface to 'LMDB'")
     (description
      "Key-value store, implemented as a wrapper around LMDB'; the \"lightning
-memory-mapped database\" <https://www.symas.com/lmdb>.  LMDB is a transactional
+memory-mapped database\" <https://www.symas.com/mdb>.  LMDB is a transactional
 key value store that uses a memory map for efficient access.  This package wraps
 the entire LMDB interface (except duplicated keys), and provides objects for
 transactions and cursors.")
@@ -22504,20 +22504,25 @@ solving differential systems.")
 (define-public r-tfm
   (package
     (name "r-tfm")
-    (version "0.4.0")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TFM" version))
        (sha256
-        (base32 "0665x2q05v78mnqv7xfg8sajs4zv436x01b3qalcrawspq3yjrgm"))))
+        (base32 "1sd3x1972zb83qawznawchv476nfm2l49qnx1mi9lh4x5y38is6m"))))
     (properties `((upstream-name . "TFM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sopc r-relliptical r-mvtnorm r-matrixcalc
-                             r-mass))
+    (propagated-inputs (list r-sopc
+                             r-relliptical
+                             r-mvtnorm
+                             r-matrixcalc
+                             r-mass
+                             r-ggplot2
+                             r-corrplot))
     (home-page "https://cran.r-project.org/package=TFM")
     (synopsis "Sparse Online Principal Component for Truncated Factor Model")
     (description

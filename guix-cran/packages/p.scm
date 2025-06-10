@@ -10375,13 +10375,13 @@ aggregation of these tabular inputs.")
 (define-public r-primarycensored
   (package
     (name "r-primarycensored")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "primarycensored" version))
        (sha256
-        (base32 "10dsv71wwkcwxanbaxa1bahj1m64z42rghjqvplifs791rwvgmmy"))))
+        (base32 "1afj8rm3rmxhnxzpb5hpsfna02gkld0103fggblq715l6jpbvwzf"))))
     (properties `((upstream-name . "primarycensored")))
     (build-system r-build-system)
     (arguments
@@ -14279,13 +14279,13 @@ classification.")
 (define-public r-ppendemic
   (package
     (name "r-ppendemic")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppendemic" version))
        (sha256
-        (base32 "1glk6l78pb4076a059api2a963yfly5d47dc4pkf6bj3df927l10"))))
+        (base32 "1j04rrwsnw3slb3nzfrw52ixz0kjyvlf39mwhwzyd0c6vsia2lss"))))
     (properties `((upstream-name . "ppendemic")))
     (build-system r-build-system)
     (arguments
@@ -14306,7 +14306,7 @@ classification.")
     (description
      "Introducing a novel and updated database showcasing Peru's endemic plants.  This
 meticulously compiled and revised botanical collection encompasses a remarkable
-assemblage of over 7,249 distinct species.  The data for this resource was
+assemblage of over 7,898 distinct species.  The data for this resource was
 sourced from the work of Govaerts, R., Nic Lughadha, E., Black, N. et al.,
 titled The World Checklist of Vascular Plants: A continuously updated resource
 for exploring global plant diversity', published in Sci Data 8, 215 (2021)
@@ -16208,19 +16208,19 @@ Kang et al. (2012) <doi:10.4196/kjpp.2012.16.2.97>.")
 (define-public r-positron-tutorials
   (package
     (name "r-positron-tutorials")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "positron.tutorials" version))
        (sha256
-        (base32 "0cfdqj331ga9s2yvkrqqynp4vfv5h7vsc4457vdy0snliqwv0z46"))))
+        (base32 "1pjn0jwm6q9543rajc1kal8bvah1dcim775ydrcpqfbq4x7br7a5"))))
     (properties `((upstream-name . "positron.tutorials")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rvest r-purrr r-mime r-dplyr))
+    (propagated-inputs (list r-usethis r-tutorial-helpers))
     (home-page "https://ppbds.github.io/positron.tutorials/")
     (synopsis "Tutorials for Learning 'Positron' and Related Tools")
     (description
@@ -30690,13 +30690,13 @@ intervals and a significance test for both integration indices.")
 (define-public r-phenesse
   (package
     (name "r-phenesse")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phenesse" version))
        (sha256
-        (base32 "1f5m8pq1n6x9ic4b0cb7j3dwfn1xfkbbpn0zr32frkiai3jmzv3j"))))
+        (base32 "1mb23grvy2d5aly2ncvdm6k0mzj1d6hjm5yx2vy3bk4dzx3m1gzd"))))
     (properties `((upstream-name . "phenesse")))
     (build-system r-build-system)
     (arguments
@@ -30711,9 +30711,9 @@ intervals and a significance test for both integration indices.")
 distribution using the framework established in Cooke (1979)
 <doi:10.1093/biomet/66.2.367>.  Extensive testing against other estimators
 suggest the @code{weib_percentile()} function is especially useful in generating
-more accurate and less biased estimates of onset and offset (Belitz et al.  2020
-<doi.org:10.1111/2041-210X.13448>.  Non-parametric bootstrapping can be used to
-generate confidence intervals around those estimates, although this is
+more accurate and less biased estimates of onset and offset (Belitz et al.
+2020) <doi:10.1111/2041-210X.13448>.  Non-parametric bootstrapping can be used
+to generate confidence intervals around those estimates, although this is
 computationally expensive.  Additionally, this package offers an easy way to
 perform non-parametric bootstrapping to generate confidence intervals for
 quantile estimates, mean estimates, or any statistical function of interest.")

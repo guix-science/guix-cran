@@ -7785,13 +7785,13 @@ analysis.")
 (define-public r-crew-cluster
   (package
     (name "r-crew-cluster")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.cluster" version))
        (sha256
-        (base32 "1vfq13v6cjv0fn2hq4h684ra17k2m1b6jz1viccnpn1fvyrylvh6"))))
+        (base32 "15yixxsvcgl160app6a59vdmbwc0q9ns5qyc70kdj0x2xyihxylr"))))
     (properties `((upstream-name . "crew.cluster")))
     (build-system r-build-system)
     (arguments
@@ -7824,13 +7824,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew-aws-batch
   (package
     (name "r-crew-aws-batch")
-    (version "0.0.10")
+    (version "0.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.aws.batch" version))
        (sha256
-        (base32 "0586jl73apxxiw9wxdga83zzki44a3gc3f76dnm6ry6p1kkmfhsn"))))
+        (base32 "03kr765p9rzfr6xdn5wbbrs4q9k0bzlhh7r3vy6qji8fzlcdghlz"))))
     (properties `((upstream-name . "crew.aws.batch")))
     (build-system r-build-system)
     (arguments
@@ -9196,13 +9196,13 @@ Algorithm-B (R. B. Dial (2006) <doi:10.1016/j.trb.2006.02.008>).")
 (define-public r-cppdoubles
   (package
     (name "r-cppdoubles")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cppdoubles" version))
        (sha256
-        (base32 "0f4fdq24gamr1vl92mnganx6q4hjr7sv0riwqzn9hhhjh9g9lpvs"))))
+        (base32 "0rvkiasclkvz9qshm69h7nc65b83yl55z3hvm6596ir6zlr1nlid"))))
     (properties `((upstream-name . "cppdoubles")))
     (build-system r-build-system)
     (arguments
@@ -18171,13 +18171,13 @@ error.")
 (define-public r-conjoint
   (package
     (name "r-conjoint")
-    (version "1.41")
+    (version "1.42")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conjoint" version))
        (sha256
-        (base32 "1iq3226a6fn1gddmh2nxlzvjcvbj7502r9520g9d4xdmk8smfx33"))))
+        (base32 "0pb4cbh8blaiwa88czg93y0rz72w182szf5g024ipv16aiwc5gsq"))))
     (properties `((upstream-name . "conjoint")))
     (build-system r-build-system)
     (arguments
@@ -18189,12 +18189,12 @@ error.")
                              r-cluster
                              r-broom
                              r-algdesign))
-    (home-page "www.r-project.org")
+    (home-page "https://github.com/packagesR/conjoint")
     (synopsis "An Implementation of Conjoint Analysis Method")
     (description
      "This is a simple R package that allows to measure the stated preferences using
 traditional conjoint analysis method.")
-    (license license:gpl2+)))
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-conigrave
   (package
@@ -31906,13 +31906,13 @@ configuration files and template R Markdown reports contained in the package.")
 (define-public r-climwin
   (package
     (name "r-climwin")
-    (version "1.2.3")
+    (version "1.2.31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climwin" version))
        (sha256
-        (base32 "1r2x5941k8l9z3517389y120sfhrskdpchc0pkibznza8aa95r85"))))
+        (base32 "0pjs0bg50jnqxgfl6mfa29w6nf82yzgyrav6n4d6qcnnk8mf7nrg"))))
     (properties `((upstream-name . "climwin")))
     (build-system r-build-system)
     (arguments
@@ -40252,13 +40252,13 @@ for analyzing continuous glucose monitoring studies'.")
 (define-public r-cgmanalysis
   (package
     (name "r-cgmanalysis")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgmanalysis" version))
        (sha256
-        (base32 "1r668xicc9qm713svmaik4yyygpmics9rl78naslgxh5d25zbg7a"))))
+        (base32 "0rmv86n1q1h1algqk7g7865rm9lr7hkh8hylnjw6ahd04wyc4y39"))))
     (properties `((upstream-name . "cgmanalysis")))
     (build-system r-build-system)
     (arguments
@@ -40266,6 +40266,7 @@ for analyzing continuous glucose monitoring studies'.")
       #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xml
+                             r-rlang
                              r-readxl
                              r-readr
                              r-pracma

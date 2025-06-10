@@ -16953,13 +16953,13 @@ help narrow down the source of problems and differences.")
 (define-public r-diffcorr
   (package
     (name "r-diffcorr")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiffCorr" version))
        (sha256
-        (base32 "05rvyfgr9f5x0dcgwcsvnpcmgmg5hcsgyxspjzxkmbyfk8wzwaf7"))))
+        (base32 "1nlabwh95khz53gk3hgvc62abd5qgics8c4gd3air7iy3rkcw54b"))))
     (properties `((upstream-name . "DiffCorr")))
     (build-system r-build-system)
     (arguments
@@ -16978,7 +16978,7 @@ Pearson's correlation coefficient.  This package includes functions to calculate
 correlation matrices for high-dimensional dataset and to test differential
 correlation, which means the changes in the correlation relationship among
 variables (e.g., genes and metabolites) between 2 experimental conditions.")
-    (license (license:fsdg-compatible "GPL (> 3)"))))
+    (license license:gpl3)))
 
 (define-public r-diffcor
   (package

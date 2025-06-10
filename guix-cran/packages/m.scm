@@ -11938,13 +11938,13 @@ mixtures studies.  For more details and tutorials, see Nguyen et al. (2022)
 (define-public r-mpoly
   (package
     (name "r-mpoly")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpoly" version))
        (sha256
-        (base32 "10is69ks22ka1cqw3xk0fvy4z3b2drm8lanqwj178qrzj7ipf7i0"))))
+        (base32 "1jhcnnb7g0mgkivn94y7mq0jb0qny5qgnzb9grd7qmlxhgzmmvyv"))))
     (properties `((upstream-name . "mpoly")))
     (build-system r-build-system)
     (arguments
@@ -17089,13 +17089,13 @@ users about returned objects.")
 (define-public r-modelsummary
   (package
     (name "r-modelsummary")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelsummary" version))
        (sha256
-        (base32 "1bhbiw5g08zibzc3nzxwa2inhg901frn43ifj6s3fh704didjx09"))))
+        (base32 "1v1wy7lmp0wk7fxac7x9lkyzbpp3q98agq9mp3y0hc9p7gl6rb3v"))))
     (properties `((upstream-name . "modelsummary")))
     (build-system r-build-system)
     (arguments
@@ -19257,13 +19257,13 @@ optimal number of factors.  More details can be referred to Liu et al. (2024)
 (define-public r-mmeta
   (package
     (name "r-mmeta")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmeta" version))
        (sha256
-        (base32 "1isdi2vjqy6nvraa2d5j03pbax991wmvlrzcwkghxsqj9j2wbw0x"))))
+        (base32 "1aal8rm9i1qjsqz28x37sgi46jn4k66p5fv12n51fap94nbanrgk"))))
     (properties `((upstream-name . "mmeta")))
     (build-system r-build-system)
     (arguments
@@ -28875,41 +28875,37 @@ Carrion-i-Silvestre J.L (2004)
 (define-public r-micsr
   (package
     (name "r-micsr")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micsr" version))
        (sha256
-        (base32 "1rjny19h7h2zj2c186dws557h4yy0pcsr14dsbg25nmxplsbz0ml"))))
+        (base32 "0f81n5p36a3lrm5dh4ikdlsbv170qyswz0k3k5bmzd3gjzs6x0an"))))
     (properties `((upstream-name . "micsr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
+    (propagated-inputs (list r-survival
                              r-sandwich
-                             r-rlang
                              r-rdpack
-                             r-purrr
-                             r-magrittr
-                             r-knitr
-                             r-ggplot2
+                             r-rcpp
+                             r-numderiv
                              r-generics
                              r-formula
-                             r-dplyr))
-    (native-inputs (list r-knitr gfortran))
+                             r-compquadform))
+    (native-inputs (list r-quarto))
     (home-page "https://www.r-project.org")
     (synopsis "Microeconometrics with R")
     (description
-     "Functions, data sets and examples for the book: Yves Croissant (2024)
-\"Microeconometrics with R\", Chapman and Hall/CRC The R Series.  The package
-includes a set of estimators for models used in microeconometrics, especially
-for count data and limited dependent variables.  Test functions include score
-test, Hausman test, Vuong test, Sargan test and conditional moment test.  A
-small subset of the data set used in the book is also included.")
+     "Functions, data sets and examples for the book: Yves Croissant (2025)
+\"Microeconometrics with R\", Chapman and Hall/CRC The R Series
+<doi:10.1201/9781003100263>.  The package includes a set of estimators for
+models used in microeconometrics, especially for count data and limited
+dependent variables.  Test functions include score test, Hausman test, Vuong
+test, Sargan test and conditional moment test.  A small subset of the data set
+used in the book is also included.")
     (license license:gpl2+)))
 
 (define-public r-micsplines
@@ -47662,13 +47658,13 @@ developed in C++'.")
 (define-public r-maraca
   (package
     (name "r-maraca")
-    (version "0.7.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maraca" version))
        (sha256
-        (base32 "1mdjsm2rdrbzmkrfqb3v960mmm6xg4msb4nczr7sy5x4s3s7w2la"))))
+        (base32 "130ammd7vkccw8j3wy5rrglfrcgivzn2qygfwcrxmfiv4xy8w9i0"))))
     (properties `((upstream-name . "maraca")))
     (build-system r-build-system)
     (arguments
@@ -48209,19 +48205,19 @@ each level set.  3.  Generate a complex from the clustering results.")
 (define-public r-mapper
   (package
     (name "r-mapper")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mappeR" version))
        (sha256
-        (base32 "0sbf1armmhsjijm9l8q6vm17ws1k032dyi1s2lw8hcz5s3511hby"))))
+        (base32 "1ph2kslylbjwjfals697f7ggj55risbsf5f9p78hxwq5vfccbldz"))))
     (properties `((upstream-name . "mappeR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-igraph r-fastcluster))
+    (propagated-inputs (list r-fastcluster))
     (home-page "https://github.com/Uiowa-Applied-Topology/mappeR")
     (synopsis "Construct and Visualize TDA Mapper Graphs")
     (description
@@ -52151,13 +52147,13 @@ spatial data on various man-made and natural structures.")
 (define-public r-machineshop
   (package
     (name "r-machineshop")
-    (version "3.8.0")
+    (version "3.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MachineShop" version))
        (sha256
-        (base32 "0kpk3fvp7w6qx71556jplpl0wsm5q4fhxzcyz9np2gq3idxl7q37"))))
+        (base32 "0ppwhm5cf476k89xgwrdk0m9ww2wh443mymriwc6gp2zv1pks80k"))))
     (properties `((upstream-name . "MachineShop")))
     (build-system r-build-system)
     (arguments

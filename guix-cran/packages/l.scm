@@ -2404,13 +2404,13 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.2.13")
+    (version "0.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lrstat" version))
        (sha256
-        (base32 "0clr1831mcb4lj3jqdw59l382ivxfl3a7hd8vlfarbw7nimysshg"))))
+        (base32 "0i4303v7h8lil5lg67ff09s8cvy7rnmgi3vhlrggfc8qc4nm7wjc"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
     (arguments
@@ -2418,7 +2418,7 @@ based on the likelihood ratio
       #:tests? #f))
     (propagated-inputs (list r-shiny r-rcpp r-mvtnorm r-lpsolve))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=lrstat")
+    (home-page "https://github.com/kaifenglu/lrstat")
     (synopsis
      "Power and Sample Size Calculation for Non-Proportional Hazards and Beyond")
     (description
@@ -14227,13 +14227,13 @@ Beancount'.")
 (define-public r-leastcostpath
   (package
     (name "r-leastcostpath")
-    (version "2.0.12")
+    (version "2.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leastcostpath" version))
        (sha256
-        (base32 "0nkahghj9vvhcsq8h39y8kvcpgglwhnb0wcdhvkqzwnsparl58kd"))))
+        (base32 "05liw99iqi6nrz8wh272z878wa6cznq5nspm9d2hinc42rg1kjc6"))))
     (properties `((upstream-name . "leastcostpath")))
     (build-system r-build-system)
     (arguments
@@ -14246,7 +14246,7 @@ Beancount'.")
                              r-gstat
                              r-foreach
                              r-doparallel))
-    (home-page "https://cran.r-project.org/package=leastcostpath")
+    (home-page "https://CRAN.R-project.org/package=leastcostpath")
     (synopsis "Modelling Pathways and Movement Potential Within a Landscape")
     (description
      "Calculates cost surfaces based on slope to be used when modelling pathways and
@@ -17563,13 +17563,13 @@ He (2018) <doi:10.48550/@code{arXiv.1709.02062>}.")
 (define-public r-latte
   (package
     (name "r-latte")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "latte" version))
        (sha256
-        (base32 "1dcwxxj3yran5a3a8vvdfmx4ap69ql2jncxvmci4p4vcw4ki9j9g"))))
+        (base32 "0a6jw2yxyfl7hnj4w7ah5cyrkqas1ixfyxd8h3sqphilv2617946"))))
     (properties `((upstream-name . "latte")))
     (build-system r-build-system)
     (arguments
@@ -17586,8 +17586,8 @@ He (2018) <doi:10.48550/@code{arXiv.1709.02062>}.")
     (home-page "https://github.com/dkahle/latte")
     (synopsis "Interface to 'LattE' and '4ti2'")
     (description
-     "Back-end connections to @code{LattE} (<https://www.math.ucdavis.edu/~latte>) for
-counting lattice points and integration inside convex polytopes and 4ti2
+     "Back-end connections to @code{LattE} (<https://www.math.ucdavis.edu/~latte/>)
+for counting lattice points and integration inside convex polytopes and 4ti2
 (<http://www.4ti2.de/>) for algebraic, geometric, and combinatorial problems on
 linear spaces and front-end tools facilitating their use in the R ecosystem.")
     (license license:gpl2)))

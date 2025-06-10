@@ -20154,42 +20154,31 @@ the fly.")
 (define-public r-ggpedigree
   (package
     (name "r-ggpedigree")
-    (version "0.4.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggpedigree" version))
        (sha256
-        (base32 "0blasbdy1b1ksimd2rdhvl4lj83savz3kvr39d3c325z7ffmyawj"))))
+        (base32 "0a4kq6imbi321rh4x2rgnkbad4ckllr939f2lpd5a4119rqf25xs"))))
     (properties `((upstream-name . "ggpedigree")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-stringr
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-scales
                              r-rlang
                              r-reshape2
                              r-plotly
+                             r-paletteer
                              r-kinship2
                              r-ggrepel
                              r-ggplot2
                              r-dplyr
                              r-bgmisc))
-    (native-inputs (list r-knitr esbuild))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/R-Computing-Lab/ggpedigree/")
     (synopsis "Visualizing Pedigrees with 'ggplot2' and 'plotly'")
     (description
