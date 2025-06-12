@@ -2048,6 +2048,49 @@ extended to objects of the @code{lmer()} class, that is, mixed models with fixed
 effects.  For more details see Tukey (1949) <doi:10.2307/3001913>.")
     (license license:gpl2+)))
 
+(define-public r-tuglab
+  (package
+    (name "r-tuglab")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TUGLab" version))
+       (sha256
+        (base32 "0asl0c9zl8160c2m91zn303j7i9g9gdr9n48rkj10w27206h8flr"))))
+    (properties `((upstream-name . "TUGLab")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-volesti r-stringr r-rcdd r-plotly r-geometry))
+    (home-page "http://tuglabweb.uvigo.es/TUGlabWEB2/index.php")
+    (synopsis "Laboratory for TU Games")
+    (description
+     "Cooperative game theory models decision-making situations in which a group of
+agents, called players, may achieve certain benefits by cooperating to reach an
+optimal outcome.  It has great potential in different fields, since it offers a
+scenario to analyze and solve problems in which cooperation is essential to
+achieve a common goal.  The TUGLab (Transferable Utility Games Laboratory) R
+package contains a set of scripts that could serve as a helpful complement to
+the books and other materials used in courses on cooperative game theory, and
+also as a practical tool for researchers working in this field.  The TUGLab
+project was born in 2006 trying to highlight the geometrical aspects of the
+theory of cooperative games for 3 and 4 players.  TU@code{GlabWeb} is an online
+platform on which the basic functions of TUGLab are implemented, and it is being
+used all over the world as a resource in degree, master's and doctoral programs.
+ This package is an extension of the first versions and enables users to work
+with games in general (computational restrictions aside).  The user can check
+properties of games, compute well-known games and calculate several set-valued
+and single-valued solutions such as the core, the Shapley value, the nucleolus
+or the core-center.  The package also illustrates how the Shapley value flexibly
+adapts to various cooperative game settings, including weighted players and
+coalitions, a priori unions, and restricted communication structures.  In
+keeping with the original philosophy of the first versions, special emphasis is
+placed on the graphical representation of the solution concepts for 3 and 4
+players.")
+    (license license:gpl3)))
+
 (define-public r-tugboat
   (package
     (name "r-tugboat")
@@ -3358,20 +3401,19 @@ strategies.  More information is available in Salles et al.
 (define-public r-tspred
   (package
     (name "r-tspred")
-    (version "5.1")
+    (version "5.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSPred" version))
        (sha256
-        (base32 "14dzpm5i5iml9kb49rnw7kq1ga03l4c6m485b1p8p3ya0n6mivkl"))))
+        (base32 "0ddgl75d4w1niv19fnp8ini08y5f3iz7m85byqykai2wjj8cx8kn"))))
     (properties `((upstream-name . "TSPred")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-wavelets
-                             r-vars
                              r-tfdatasets
                              r-rsnns
                              r-rlibeemd
@@ -3384,7 +3426,6 @@ strategies.  More information is available in Salles et al.
                              r-kfas
                              r-keras
                              r-forecast
-                             r-emd
                              r-elmnnrcpp
                              r-e1071
                              r-dplyr))
@@ -8008,13 +8049,13 @@ models in polynomial time.  Currently supported models include gbm',
 (define-public r-treesearch
   (package
     (name "r-treesearch")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeSearch" version))
        (sha256
-        (base32 "0n2z3y3kjcx9mi5z72fv3yvnqc520rzzyvwvs92a1nf72q8a4lgf"))))
+        (base32 "0kg6d7r0cqyr1g41s07jfcyckifibh6kf0mkn1i8p8cm5kq9kn6x"))))
     (properties `((upstream-name . "TreeSearch")))
     (build-system r-build-system)
     (arguments
@@ -9226,13 +9267,13 @@ data-adaptive weights.  Reference: Ren, M., Zhen Y., and Wang J. (2022).
 (define-public r-transreg
   (package
     (name "r-transreg")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transreg" version))
        (sha256
-        (base32 "1xyvyj2l846hxknlf9h4dfidf85rnn1wa9m43kf3p3csfhfh6ahm"))))
+        (base32 "0z1n8n04h78lqxwyskdm7hjbdyhmmiscwwkc2gn7k1lklfn1gwl2"))))
     (properties `((upstream-name . "transreg")))
     (build-system r-build-system)
     (arguments
@@ -18211,6 +18252,37 @@ Creating a rulelist manually, Exporting a rulelist as a SQL case statement and
 so on.  The package offers two classes; rulelist and ruleset based on dataframe.")
     (license license:gpl3)))
 
+(define-public r-tidyrstats
+  (package
+    (name "r-tidyrstats")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyrstats" version))
+       (sha256
+        (base32 "14gpcp1knf6ndh8r16gqi8x6mr5bymq13hd21s911cgldvlmg6ds"))))
+    (properties `((upstream-name . "tidyrstats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-purrr
+                             r-glue
+                             r-dplyr
+                             r-broom))
+    (home-page "https://cran.r-project.org/package=tidyrstats")
+    (synopsis "Tidy Common R Statistical Functions")
+    (description
+     "This package provides functions to scale, log-transform and fit linear models
+within a tidyverse'-style R code framework.  Intended to smooth over
+inconsistencies in output of base R statistical functions, allowing ease of
+teaching, learning and daily use.  Inspired by the tidy principles used in broom
+Robinson (2017) <doi:10.21105/joss.00341>.")
+    (license license:expat)))
+
 (define-public r-tidyrss
   (package
     (name "r-tidyrss")
@@ -25042,13 +25114,13 @@ via the interactive interface.")
 (define-public r-test2norm
   (package
     (name "r-test2norm")
-    (version "0.3.0")
+    (version "0.3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "test2norm" version))
        (sha256
-        (base32 "1qfnzxry84y9y22xp1cfhpg9q5yrchhhasn3p81qx7ay9ii9n7j7"))))
+        (base32 "1zhk0pmp16gdb1cksbfvsgg6ssdxlfja21xzdb1dwg686friad7z"))))
     (properties `((upstream-name . "test2norm")))
     (build-system r-build-system)
     (arguments
@@ -25070,7 +25142,7 @@ demographically adjusted scores are calculated from the residuals of a model
 that regresses scaled scores on demographic predictors (e.g., age).  The norming
 procedure makes use of the @code{mfp2()} function from the mfp2 package to
 explore nonlinear associations between cognition and demographic variables.")
-    (license (license:fsdg-compatible "CPL (>= 2)"))))
+    (license license:gpl2+)))
 
 (define-public r-tesseract
   (package

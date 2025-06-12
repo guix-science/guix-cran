@@ -2025,6 +2025,43 @@ model-X knockoffs for high-dimensional controlled variable selection\", J. R.
 Statist.  Soc.  B (2018) 80, 3, pp.  551-577.")
     (license license:gpl3)))
 
+(define-public r-knobi
+  (package
+    (name "r-knobi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "knobi" version))
+       (sha256
+        (base32 "0cm2ripqiqak14xdf2n64h7zfbaa3cpv7l28i3zlw09lmz52wd66"))))
+    (properties `((upstream-name . "knobi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-plot3d
+                             r-optimx
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-corrplot))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=knobi")
+    (synopsis "Known-Biomass Production Model (KBPM)")
+    (description
+     "Application of a Known Biomass Production Model (KBPM): (1) the fitting of KBPM
+to each stock; (2) the estimation of the effects of environmental variability;
+(3) the retrospective analysis to identify regime shifts; (4) the estimation of
+forecasts.  For more details see Schaefer (1954)
+<https://www.iattc.org/@code{GetAttachment/62d510ee-13d0-40f2-847b-0fde415476b8/Vol-1-No-2-1954-SCHAEFER,-MILNER-B-_Some-aspects-of-the-dynamics-of-populations-important-to-the-management-of-the-commercial-marine-fisheries.pdf>},
+Pella and Tomlinson (1969)
+<https://www.iattc.org/@code{GetAttachment/9865079c-6ee7-40e2-9e30-c4523ff81ddf/Vol-13-No-3-1969-PELLA,-JEROME-J-,-and-PATRICK-K-TOMLINSON_A-generalized-stock-production-model.pdf>}
+and @code{MacCall} (2002)
+<doi:10.1577/1548-8675(2002)022%3C0272:UOKBPM%3E2.0.CO;2>.")
+    (license license:gpl2)))
+
 (define-public r-knnwtsim
   (package
     (name "r-knnwtsim")

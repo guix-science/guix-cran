@@ -3574,19 +3574,24 @@ transactions (Meeden and Sargent, 2007, <doi:10.1080/03610920701386802>).")
 (define-public r-audioscatter
   (package
     (name "r-audioscatter")
-    (version "0.1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AudioScatter" version))
        (sha256
-        (base32 "1ralk3q95lycr000maay9g67fvv62icjvcl789a8vbjsjan1swfb"))))
+        (base32 "0daz8qq6f9yh3pl1sxl9n3dfay21kwgpdrylmlc1dbpg5zdil5qq"))))
     (properties `((upstream-name . "AudioScatter")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyverse r-scales r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-tidyverse
+                             r-tibble
+                             r-scales
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=AudioScatter")
     (synopsis "Audiogram Scattergrams")
     (description
@@ -15626,6 +15631,31 @@ Alternate Fuel Locator shows the location of alternate fuel stations in the
 United States and Canada.  This package also includes the data from the US
 Department of Energy Alternate Fuel database as a data set.")
     (license license:expat)))
+
+(define-public r-alternativeroc
+  (package
+    (name "r-alternativeroc")
+    (version "0.0.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "alternativeROC" version))
+       (sha256
+        (base32 "0xbbqdl0fv08zwycm84rn9kcwbyh67wlcppj3gphz9k5fx1lb7qc"))))
+    (properties `((upstream-name . "alternativeROC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sn r-rcpp r-proc r-plyr r-hmisc))
+    (home-page "https://bitbucket.org/SQ4/alternativeROC")
+    (synopsis "Alternative and Fast ROC Analysis")
+    (description
+     "Alternative and fast algorithms for the analysis of receiver operating
+characteristics curves (ROC curves) as described in Thomas et al. (2017)
+<doi:10.1186/s41512-017-0017-y> and Thomas et al. (2023)
+<doi:10.1016/j.ajogmf.2023.101110>.")
+    (license license:gpl3)))
 
 (define-public r-alteredpqr
   (package

@@ -5326,13 +5326,13 @@ existence of cured population are as described in : Chen, Tai-Tsang(2016)
 (define-public r-eventpred
   (package
     (name "r-eventpred")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventPred" version))
        (sha256
-        (base32 "04dxihg5qcapcggxh85mbyl3j9rpz1kg5akrgyff6c065hhjjvij"))))
+        (base32 "15jd10fax8bjsrx9hls50njd5q4amsag90c4qln8k9ypr6kl6fpa"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
     (arguments
@@ -5341,6 +5341,7 @@ existence of cured population are as described in : Chen, Tai-Tsang(2016)
     (propagated-inputs (list r-survival
                              r-shiny
                              r-rstpm2
+                             r-rlang
                              r-purrr
                              r-plotly
                              r-numderiv
@@ -5348,6 +5349,7 @@ existence of cured population are as described in : Chen, Tai-Tsang(2016)
                              r-matrix
                              r-magrittr
                              r-lrstat
+                             r-ggplot2
                              r-flexsurv
                              r-erify
                              r-data-table))
@@ -8999,13 +9001,13 @@ Krivitsky, Coletti, and Hens (2023) <doi:10.1080/01621459.2023.2242627>.")
 (define-public r-ergm-ego
   (package
     (name "r-ergm-ego")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm.ego" version))
        (sha256
-        (base32 "09lhpfkbjbhb0qnshi69ghali83qmqwzqvn6scd38znmfnsyc90r"))))
+        (base32 "1qmp1pzrznlm554yg7y71q0w32i2v66vgdk29mh4cwjkmwp43bq4"))))
     (properties `((upstream-name . "ergm.ego")))
     (build-system r-build-system)
     (arguments
@@ -9059,13 +9061,13 @@ networks whose edge weights are counts.  See Krivitsky (2012)
 (define-public r-ergm
   (package
     (name "r-ergm")
-    (version "4.8.1")
+    (version "4.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm" version))
        (sha256
-        (base32 "1q676npmhlncyxvafwmjlcw4zzg3cszar5lriq5m7wklfnghcaw7"))))
+        (base32 "1kb95gzi9ahspydg09rj4j008jakjang342wj59wxdhffis6plmm"))))
     (properties `((upstream-name . "ergm")))
     (build-system r-build-system)
     (arguments

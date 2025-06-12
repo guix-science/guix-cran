@@ -8938,13 +8938,13 @@ adjustments.  The method is described in more detail in Ginker (2023)
 (define-public r-boinet
   (package
     (name "r-boinet")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boinet" version))
        (sha256
-        (base32 "123k8z1wjh63vjl96aa6lbzymd1kzzqc8dk6633nl6kn98d580bs"))))
+        (base32 "1dpam5165mr7vyxn6g5jk5pj0x1z1ywpbkxyfy12yz4ypb39q5b2"))))
     (properties `((upstream-name . "boinet")))
     (build-system r-build-system)
     (arguments
@@ -14544,13 +14544,13 @@ visualization tools are also available within the package.")
 (define-public r-biometryassist
   (package
     (name "r-biometryassist")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biometryassist" version))
        (sha256
-        (base32 "0kix7wwfxdyggdv5q0sm53k0m4sc0fjx596g78kns3lsz69x2z6y"))))
+        (base32 "01k1p3a2y8fiz1g0mx4rykcaywl3vkr5mc2pka9dlr8h0pvwd0wk"))))
     (properties `((upstream-name . "biometryassist")))
     (build-system r-build-system)
     (arguments
@@ -14564,7 +14564,6 @@ visualization tools are also available within the package.")
                              r-multcompview
                              r-lattice
                              r-ggplot2
-                             r-farver
                              r-emmeans
                              r-curl
                              r-cowplot
@@ -16298,13 +16297,13 @@ prefers Fira', and IQSS requires Libertinus'.")
 (define-public r-binaryrl
   (package
     (name "r-binaryrl")
-    (version "0.8.3")
+    (version "0.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binaryRL" version))
        (sha256
-        (base32 "02y2a3xh3n1pfvzkmx3f7kr76yczn7wfg5ppdymhr8bh6vi1rzcm"))))
+        (base32 "1f6lc14i479rv7c6k2bjn8x53g6q5jycxy9k7c8gxcl8i19sn0bj"))))
     (properties `((upstream-name . "binaryRL")))
     (build-system r-build-system)
     (arguments
@@ -18988,20 +18987,19 @@ Knowledge, Journal of Statistical Software <doi:10.18637/jss.v047.i03>.")
 (define-public r-bgmisc
   (package
     (name "r-bgmisc")
-    (version "1.4.1")
+    (version "1.4.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGmisc" version))
        (sha256
-        (base32 "1rlrd0717dp1jjcqc1w3fx2nm0qb028d1jri7iz48cbngyah9wkf"))))
+        (base32 "0hhalx81i5ilfk6fhiyd0cnwfvbjndwpvniqllm5fa9yy3cbd4iy"))))
     (properties `((upstream-name . "BGmisc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-matrix r-kinship2 r-igraph
-                             r-data-table))
+    (propagated-inputs (list r-stringr r-matrix r-igraph r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/R-Computing-Lab/BGmisc/")
     (synopsis "An R Package for Extended Behavior Genetics Analysis")
@@ -22566,20 +22564,19 @@ generate artificial data in a transparent and reproducible manner.")
 (define-public r-bdlim
   (package
     (name "r-bdlim")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bdlim" version))
        (sha256
-        (base32 "04qgmanb198abrkqfv4n0fk0zib3nad14s7pz85n4ws0252vk10r"))))
+        (base32 "1i47ah965j3szjh5a1rjysgc13bx3dw94vsjrh0w4c47hp7kns00"))))
     (properties `((upstream-name . "bdlim")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-laplacesdemon r-ggplot2 r-dplyr
-                             r-bayeslogit))
+    (propagated-inputs (list r-laplacesdemon r-ggplot2 r-bayeslogit))
     (home-page "https://anderwilson.github.io/bdlim/")
     (synopsis "Bayesian Distributed Lag Interaction Models")
     (description
@@ -24162,6 +24159,42 @@ models for genotype Ã environment interaction.  The method is explained in
 Perez-Elizalde, S., Jarquin, D., and Crossa, J. (2011)
 (<doi:10.1007/s13253-011-0063-9>).")
     (license license:gpl2)))
+
+(define-public r-bayou
+  (package
+    (name "r-bayou")
+    (version "2.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayou" version))
+       (sha256
+        (base32 "0i0zkag8mrjdr7w4489gp6bf5mykcnnwgi31ypjk52y09haz7a5n"))))
+    (properties `((upstream-name . "bayou")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-phytools
+                             r-mnormt
+                             r-matrix
+                             r-mass
+                             r-geiger
+                             r-foreach
+                             r-fitdistrplus
+                             r-denstrip
+                             r-coda
+                             r-assertthat
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=bayou")
+    (synopsis "Bayesian Fitting of Ornstein-Uhlenbeck Models to Phylogenies")
+    (description
+     "Fits and simulates multi-optima Ornstein-Uhlenbeck models to phylogenetic
+comparative data using Bayesian reversible-jump methods.  See Uyeda and Harmon
+(2014) <DOI:10.1093/sysbio/syu057>.")
+    (license license:gpl2+)))
 
 (define-public r-baymedr
   (package
@@ -30812,6 +30845,37 @@ complex user-provided vector of probabilities.")
      "This package provides functions to scrape IQY calls to Bank of Mexico,
 downloading and ordering the data conveniently.")
     (license license:cc0)))
+
+(define-public r-banter
+  (package
+    (name "r-banter")
+    (version "0.9.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "banter" version))
+       (sha256
+        (base32 "0pn19zkkw29xiidv19l05c8ildn9p5lx0hhp0v95ipqa8nhha71c"))))
+    (properties `((upstream-name . "banter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-swfscmisc
+                             r-rlang
+                             r-rfpermute
+                             r-randomforest
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/SWFSC/banter")
+    (synopsis "BioAcoustic eveNT classifiER")
+    (description
+     "Create a hierarchical acoustic event species classifier out of multiple call
+type detectors as described in Rankin et al (2017) <doi:10.1111/mms.12381>.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-banova
   (package

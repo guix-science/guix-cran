@@ -2591,6 +2591,32 @@ tools for common data manipulation steps: filtering rows, selecting columns,
 summarising grouped data, among others.")
     (license license:expat)))
 
+(define-public r-nplstoolbox
+  (package
+    (name "r-nplstoolbox")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPLStoolbox" version))
+       (sha256
+        (base32 "01f1cimkpakprj5jg7r7k12as84gnqdfib8s1ksph727q6zblc0h"))))
+    (properties `((upstream-name . "NPLStoolbox")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rtensor r-pracma r-parafac4microbiome r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GRvanderPloeg/NPLStoolbox")
+    (synopsis "N-Way Partial Least Squares Modelling of Multi-Way Data")
+    (description
+     "Creation and selection of N-way Partial Least Squares (NPLS) models.  Selection
+of the optimal number of components can be done using @code{ncrossreg()}.  NPLS
+was originally described by Rasmus Bro, see
+<doi:10.1002/%28SICI%291099-128X%28199601%2910%3A1%3C47%3A%3AAID-CEM400%3E3.0.CO%3B2-C>.")
+    (license license:expat)))
+
 (define-public r-nplr
   (package
     (name "r-nplr")
@@ -4423,13 +4449,13 @@ Statistics, 1184-1238.\" <doi:10.1214/aos/1176344370>.")
 (define-public r-normalize
   (package
     (name "r-normalize")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "normalize" version))
        (sha256
-        (base32 "1ph94nhj661a8zz72zkb3y36fg3iaag0rszy69yg3b0rv35hz058"))))
+        (base32 "1vwjz8jdfc76yr94r5ghaxzq5msbjni8j6cvp14m4gnrylkdvl77"))))
     (properties `((upstream-name . "normalize")))
     (build-system r-build-system)
     (arguments
@@ -10124,6 +10150,32 @@ direct numerical solution of the Kolmogorov forward equations to calculate the
 transition probabilities.")
     (license license:gpl2+)))
 
+(define-public r-nhlscraper
+  (package
+    (name "r-nhlscraper")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nhlscraper" version))
+       (sha256
+        (base32 "1day35808ynzananpsmhbdbbhn4z58z7jl6xhsvdlyf0w3479j1s"))))
+    (properties `((upstream-name . "nhlscraper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-magrittr r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RentoSaijo/nhlscraper")
+    (synopsis "Scraper for National Hockey League Data")
+    (description
+     "Scrapes data from the NHL API into tibble's.  It primarily wraps endpoints
+documented by Zach Maludzinski (2023)
+<https://github.com/Zmalski/NHL-API-Reference>.  It covers data from high-level
+multi-season summaries to low-level play-by-play logs.")
+    (license license:expat)))
+
 (define-public r-nhldata
   (package
     (name "r-nhldata")
@@ -10216,13 +10268,13 @@ datasets.")
 (define-public r-nhdplustools
   (package
     (name "r-nhdplustools")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhdplusTools" version))
        (sha256
-        (base32 "0f6r0l5777mgc1nhzyxy7ir9xf4qyzs8i0sfs7wcbk38pxyw1rdx"))))
+        (base32 "0mrqbg2n2grfnkgljs8yxrisb9j29dzax78gb3ph04kn47bvkfm9"))))
     (properties `((upstream-name . "nhdplusTools")))
     (build-system r-build-system)
     (arguments

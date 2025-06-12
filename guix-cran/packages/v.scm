@@ -5589,13 +5589,13 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "0wszzdfd24hxx1rq79p9i39dbfyrqjgyfvh0cxh7c1n51qvvk985"))))
+        (base32 "05vp96vvgh54c0rj4ixx6nyykkvrsni9y9qrb91r4xr42fahk6yq"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
     (arguments
@@ -5627,11 +5627,11 @@ Factorization algorithms - Random generators of diferent types of integers.")
      "This package provides functions to run statistical analyses on surface-based
 neuroimaging data, computing measures including cortical thickness and surface
 area of the whole-brain and of the hippocampi.  It can make use of
-@code{FreeSurfer}', @code{fMRIprep}', HCP and CAT12 preprocessed datasets and
-@code{HippUnfold} hippocampal segmentation outputs for a given sample by
-restructuring the data values into a single file.  The single file can then be
-used by the package for analyses independently from its base dataset and without
-need for its access.")
+@code{FreeSurfer}', @code{fMRIprep}', XCP-D', HCP and CAT12 preprocessed
+datasets and @code{HippUnfold} hippocampal segmentation outputs for a given
+sample by restructuring the data values into a single file.  The single file can
+then be used by the package for analyses independently from its base dataset and
+without need for its access.")
     (license license:gpl3)))
 
 (define-public r-vertexsimilarity

@@ -1858,13 +1858,13 @@ problems.")
 (define-public r-hvt
   (package
     (name "r-hvt")
-    (version "25.2.3")
+    (version "25.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HVT" version))
        (sha256
-        (base32 "0if5cddfhj5j0bwp9j7ipja14qg562w6vlbyjpwkvqlbpg7rk005"))))
+        (base32 "12y46p0z9n31nq4nqx9xa4g59dna50wwn0lzf7hpfq3830q4nmi7"))))
     (properties `((upstream-name . "HVT")))
     (build-system r-build-system)
     (arguments
@@ -7523,13 +7523,13 @@ forecasting, not for planning your flight!")
 (define-public r-hima
   (package
     (name "r-hima")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HIMA" version))
        (sha256
-        (base32 "0yb2wn69b72vg4hkbnsjwrjs36p5g49dk4l74r7y21qz1y4398pp"))))
+        (base32 "1ch6lcsigmhgpwj22w787pba49hw8938zbwd36j1npm1zbpzrm8v"))))
     (properties `((upstream-name . "HIMA")))
     (build-system r-build-system)
     (arguments
@@ -14338,6 +14338,33 @@ effective value framework (Sparks et al., (2019) <DOI:10.1139/cjfas-2017-0468>).
 @code{hatchR} offers users access to established phenological models and the
 flexibility to incorporate custom parameterizations using external datasets.")
     (license license:gpl3)))
+
+(define-public r-hassediagrams
+  (package
+    (name "r-hassediagrams")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hassediagrams" version))
+       (sha256
+        (base32 "054h5nykv180mrarfg1v4byl1v73bmjlws02xcin90alxlpm29l0"))))
+    (properties `((upstream-name . "hassediagrams")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GSK-Biostatistics/hassediagrams")
+    (synopsis
+     "Hasse Diagram of the Layout Structure and Restricted Layout Structure")
+    (description
+     "Returns a Hasse diagram of the layout structure (Bate and Chatfield (2016))
+<doi:10.1080/00224065.2016.11918173> or the restricted layout structure (Bate
+and Chatfield (2016)) <doi:10.1080/00224065.2016.11918174> of an experimental
+design.")
+    (license license:gpl2)))
 
 (define-public r-hassani-silva
   (package

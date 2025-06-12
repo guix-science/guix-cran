@@ -9391,13 +9391,13 @@ of the objective function.  For more details see de Paz (2024)
 (define-public r-cpop
   (package
     (name "r-cpop")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpop" version))
        (sha256
-        (base32 "082ny87ph3wz5kbp2i4yzf9g6r3bihbgfynv060fy6sv0xb9hxc1"))))
+        (base32 "09jyv0a84c72nmn4azb4zfyf781yh8rpx2xpsn15nyp6dzak2dmc"))))
     (properties `((upstream-name . "cpop")))
     (build-system r-build-system)
     (arguments
@@ -9729,13 +9729,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.1-9")
+    (version "1.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "0418dp9ilpx2by1wlgsqdw4gjw05dzjrbrqwzbip60pigb5bpbn9"))))
+        (base32 "19xmrhk12ri8wd1p43wl3g362xzidnk232lv06i9lsy01jzmqgxx"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (arguments
@@ -9750,6 +9750,7 @@ sites.")
                              r-foreach
                              r-e1071
                              r-doparallel))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=cpfa")
     (synopsis "Classification with Parallel Factor Analysis")
     (description
@@ -14020,13 +14021,13 @@ janeaustenr and sotu packages respectively).")
 (define-public r-corpora
   (package
     (name "r-corpora")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corpora" version))
        (sha256
-        (base32 "1l1dnnm9zvgxr7jrqrz0a9m5dwz7mra0mr3i9qxjvgrzc6n6cxw8"))))
+        (base32 "1j6ani870b903iz00dy1wxmszprl0mg2x0z5bpia31wx73b2vpsc"))))
     (properties `((upstream-name . "corpora")))
     (build-system r-build-system)
     (arguments
@@ -23025,13 +23026,13 @@ CHE-1726332, and NIH P20GM113109.")
 (define-public r-colorspec
   (package
     (name "r-colorspec")
-    (version "1.7-0")
+    (version "1.8-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colorSpec" version))
        (sha256
-        (base32 "1zgnkb3p82cnzjgwk1j5rdksqjv7sb3y47wy9xjbs7s637ssd9a9"))))
+        (base32 "0gkdpkjrrxmsahkiiaypz28df1z7fh0g4hnblpp2dwsp88vc6jbn"))))
     (properties `((upstream-name . "colorSpec")))
     (build-system r-build-system)
     (arguments
@@ -30094,13 +30095,13 @@ Valkiers, Nicky de Vrij, Benson Ogunjimi, Kris Laukens, Pieter Meysman (2023)
 (define-public r-clustblock
   (package
     (name "r-clustblock")
-    (version "4.1.0")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClustBlock" version))
        (sha256
-        (base32 "1jp3676yzaia0a7kzj0dvb3ckzqkqdzm6cjc6fjkf3amhjx33szw"))))
+        (base32 "04g420jlakn2z4kh3v4jx0k3agg11n4xmix57hx29ls93ibl3jqb"))))
     (properties `((upstream-name . "ClustBlock")))
     (build-system r-build-system)
     (arguments
@@ -38902,13 +38903,13 @@ been applied.")
 (define-public r-checked
   (package
     (name "r-checked")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "checked" version))
        (sha256
-        (base32 "12cv4gj2vlfzr80iyxbgqh10glv7linfdg7bf8sx406437wmagxb"))))
+        (base32 "1rpvkdglq9zhc1pilf1pg4avbpcf7hmmqv7zzwc5v5a31skgz7lb"))))
     (properties `((upstream-name . "checked")))
     (build-system r-build-system)
     (arguments
@@ -46635,13 +46636,13 @@ Meira-Machado, C Esteban, I Arostegui (2017)
 (define-public r-catool
   (package
     (name "r-catool")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "catool" version))
        (sha256
-        (base32 "17h66v6sy9hjiw81rixz6x82pxwlli4gvrrsbjfk0q7f1qb1786x"))))
+        (base32 "0xkh9dh99yvs4vgl2vcidr8wsfq8a0gb4dwzyr1c4qfa39g4gsa1"))))
     (properties `((upstream-name . "catool")))
     (build-system r-build-system)
     (arguments
@@ -49922,22 +49923,26 @@ data and provides simple mapping functions with GIS export.")
 (define-public r-camtrapdp
   (package
     (name "r-camtrapdp")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "camtrapdp" version))
        (sha256
-        (base32 "0aspfqjiv5xq8p7rchg4aqsnl0s7692pgq1bvgiq3i0vhlwizcd5"))))
+        (base32 "0sh2bshx7faicaq1pn14yx2ivy8mqcvbk75lrmbacsfwzri7z4rp"))))
     (properties `((upstream-name . "camtrapdp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-readr
+    (propagated-inputs (list r-uuid
+                             r-stringr
+                             r-rlang
+                             r-readr
                              r-purrr
                              r-memoise
                              r-frictionless
+                             r-eml
                              r-dplyr
                              r-cli))
     (home-page "https://github.com/inbo/camtrapdp")

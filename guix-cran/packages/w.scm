@@ -4658,6 +4658,34 @@ wordpress', blogger etc.  They also allow for separation of widget content from
 main HTML content where CSS of the main HTML could interfere with the widget.")
     (license license:expat)))
 
+(define-public r-widerhino
+  (package
+    (name "r-widerhino")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wideRhino" version))
+       (sha256
+        (base32 "016w9p2apsyz75qq96rq24mvxj435crsijcj4m5rr45mnnb1hd50"))))
+    (properties `((upstream-name . "wideRhino")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-mass r-ggplot2 r-geigen r-dplyr))
+    (home-page "https://cran.r-project.org/package=wideRhino")
+    (synopsis
+     "High-Dimensional Methods via Generalised Singular Decomposition")
+    (description
+     "Construct a Canonical Variate Analysis Biplot via the Generalised Singular Value
+Decomposition, for cases when the number of samples is less than the number of
+variables.  For more information on biplots, see Gower JC, Lubbe SG, Le Roux NJ
+(2011) <doi:10.1002/9780470973196> and for more information on the generalised
+singular value decomposition, see Edelman A, Wang Y (2020)
+<doi:10.1137/18M1234412>.")
+    (license license:expat)))
+
 (define-public r-widals
   (package
     (name "r-widals")
@@ -9526,13 +9554,13 @@ Georgia Institute of Technology.
 (define-public r-warden
   (package
     (name "r-warden")
-    (version "1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WARDEN" version))
        (sha256
-        (base32 "0hjajavx6g82mh7isl49ar3x2b02pa7i6lxw7c46b8vn7acacc9n"))))
+        (base32 "04rbqvvijfjvg3zp29b7f3rdir42qvpl6s83szsjnpr6r2ka81d1"))))
     (properties `((upstream-name . "WARDEN")))
     (build-system r-build-system)
     (arguments
@@ -9540,6 +9568,7 @@ Georgia Institute of Technology.
       #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyr
+                             r-rlang
                              r-purrr
                              r-progressr
                              r-mass

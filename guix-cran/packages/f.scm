@@ -289,13 +289,13 @@ applying it in different contexts (parametric or non-parametric).")
 (define-public r-fwb
   (package
     (name "r-fwb")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fwb" version))
        (sha256
-        (base32 "0k1bn3qnabrvkgzjyw0qbc4xwkydmpx33f4yqijjlzyqnskvmw9g"))))
+        (base32 "052b43cbrsn7rz7mbhs5m50qhjpq414cvp42zd1jk9zrxm1wak03"))))
     (properties `((upstream-name . "fwb")))
     (build-system r-build-system)
     (arguments
@@ -303,7 +303,7 @@ applying it in different contexts (parametric or non-parametric).")
       #:tests? #f))
     (propagated-inputs (list r-rlang r-pbapply r-chk))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ngreifer/fwb")
+    (home-page "https://ngreifer.github.io/fwb/")
     (synopsis "Fractional Weighted Bootstrap")
     (description
      "An implementation of the fractional weighted bootstrap to be used as a drop-in
@@ -7816,13 +7816,13 @@ single numbers in inline R code chunks and for rendering columns in tables.")
 (define-public r-forlion
   (package
     (name "r-forlion")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ForLion" version))
        (sha256
-        (base32 "15khdfcz8sji2ljr78bz4zlz78wi4ldfyypah1ymd5cwqs2dvabr"))))
+        (base32 "023j37ibdhl115nfrs0pcqx22qf7svc3h7gs7548kk5srm976qv7"))))
     (properties `((upstream-name . "ForLion")))
     (build-system r-build-system)
     (arguments
@@ -7831,13 +7831,15 @@ single numbers in inline R code chunks and for rendering columns in tables.")
     (propagated-inputs (list r-psych r-cubature))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ForLion")
-    (synopsis "'ForLion' Algorithm to Find D-Optimal Designs for Experiments")
+    (synopsis
+     "'ForLion' Algorithms to Find Optimal Experimental Designs with Mixed Factors")
     (description
      "Designing experimental plans that involve both discrete and continuous factors
 with general parametric statistical models using the @code{ForLion} algorithm
 and EW @code{ForLion} algorithm.  The algorithms will search for locally optimal
 designs and EW optimal designs under the D-criterion.  Reference: Huang, Y., Li,
-K., Mandal, A., & Yang, J., (2024)<doi:10.1007/s11222-024-10465-x>.")
+K., Mandal, A., & Yang, J., (2024)<doi:10.1007/s11222-024-10465-x>.  Lin, S.,
+Huang, Y., & Yang, J. (2025) <doi:10.48550/@code{arXiv.2505.00629>}.")
     (license license:expat)))
 
 (define-public r-forit
@@ -11419,21 +11421,24 @@ re-producibility in the context of machine-learning.")
 (define-public r-flowmapper
   (package
     (name "r-flowmapper")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flowmapper" version))
        (sha256
-        (base32 "0zz42c733hzk1q93qxvjidrs2jvh2cdbphd2hqlvfnddk57zhx3a"))))
+        (base32 "015wpf76c42xm2hsnn0hqrby5vs6zvq2b9brhihriyhmpbmdd4rd"))))
     (properties `((upstream-name . "flowmapper")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-sfheaders
+                             r-sf
                              r-scales
                              r-purrr
+                             r-lifecycle
                              r-ggplot2
                              r-forcats
                              r-dplyr))
@@ -12327,6 +12332,51 @@ events and the longitudinal marker.  The estimation is performed under the
 frequentist framework, using the Marquardt-Levenberg algorithm. (Courcoul,
 Tzourio, Woodward, Barbieri, Jacqmin-Gadda (2023) <@code{arXiv:2306.16785>}).")
     (license license:gpl3+)))
+
+(define-public r-flexurba
+  (package
+    (name "r-flexurba")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flexurba" version))
+       (sha256
+        (base32 "13lbjx9lfgqf0xj8y1cphydcyy8vqghppiq4jw210sz1xkc16bvz"))))
+    (properties `((upstream-name . "flexurba")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyterra
+                             r-terra
+                             r-sf
+                             r-rcpp
+                             r-nngeo
+                             r-magrittr
+                             r-lifecycle
+                             r-jsonlite
+                             r-ggspatial
+                             r-ggplot2
+                             r-geos
+                             r-fastmatch
+                             r-exactextractr
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/cvmigero/flexurba")
+    (synopsis "Construct Flexible Urban Delineations")
+    (description
+     "Enables the construction of flexible urban delineations that can be tailored to
+specific applications or research questions, see Van Migerode et al. (2024)
+<DOI:10.1177/23998083241262545> and Van Migerode et al. (2025)
+<DOI:10.5281/zenodo.15173220>.  Originally developed to flexibly reconstruct the
+Degree of Urbanisation classification of cities, towns and rural areas developed
+by Dijkstra et al. (2021) <DOI:10.1016/j.jue.2020.103312>.  Now it also support
+a broader range of delineation approaches, using multiple datasets â including
+population, built-up area, and night-time light grids â and different
+thresholding methods.")
+    (license license:expat)))
 
 (define-public r-flexsurvcure
   (package
@@ -18570,6 +18620,51 @@ for an artificial regression test and @code{bsfeistest()} for a bootstrapped
 version of the Hausman test.")
     (license license:gpl2+)))
 
+(define-public r-fegarch
+  (package
+    (name "r-fegarch")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fEGarch" version))
+       (sha256
+        (base32 "1a5yfnkf69i2il7ic52azz5d7lwwl4jn980nfm89skn6421rc8c0"))))
+    (properties `((upstream-name . "fEGarch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-smoots
+                             r-rugarch
+                             r-rsolnp
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-numderiv
+                             r-magrittr
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-esemifar
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=fEGarch")
+    (synopsis "Estimation of a Broad Family of EGARCH Models")
+    (description
+     "Implement and fit a variety of models from a very broad family of exponential
+generalized autoregressive conditional heteroskedasticity (EGARCH) models, such
+as a MEGARCH (modified EGARCH), FIEGARCH (fractionally integrated EGARCH),
+FIMLog-GARCH (fractionally integrated modulus Log-GARCH), and more.  The
+FIMLog-GARCH as part of the EGARCH family is discussed in Feng et al. (2023)
+<https://econpapers.repec.org/paper/pdnciepap/156.htm>.  For convenience and the
+purpose of comparison, a variety of other popular GARCH-type models, like an
+APARCH model, a fractionally integrated APARCH (FIAPARCH) model, standard GARCH
+and fractionally integrated GARCH (FIGARCH) models, GJR-GARCH and FIGJR-GARCH
+models, TGARCH and FITGARCH models, are implemented.  Models are fitted through
+quasi-maximum-likelihood estimation.")
+    (license license:gpl3)))
+
 (define-public r-feedbackts
   (package
     (name "r-feedbackts")
@@ -22542,13 +22637,13 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
 (define-public r-fastml
   (package
     (name "r-fastml")
-    (version "0.5.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastml" version))
        (sha256
-        (base32 "0a3ia2jgadgvdpjr026qqp3qbpzka9iww71zlzcba5jnafn7v2r4"))))
+        (base32 "06c61lffg479p5izmspfpwycnzjx4hkd17ryh65vz8p354lk1hgs"))))
     (properties `((upstream-name . "fastml")))
     (build-system r-build-system)
     (arguments
@@ -22603,7 +22698,7 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
                              r-broom
                              r-bonsai
                              r-baguette))
-    (home-page "https://cran.r-project.org/package=fastml")
+    (home-page "https://github.com/selcukorkmaz/fastml")
     (synopsis "Fast Machine Learning Model Training and Evaluation")
     (description
      "Streamlines the training, evaluation, and comparison of multiple machine
@@ -22611,7 +22706,7 @@ learning models with minimal code by providing comprehensive data preprocessing
 and support for a wide range of algorithms with hyperparameter tuning.  It
 offers performance metrics and visualization tools to facilitate efficient and
 effective machine learning workflows.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-fastmit
   (package

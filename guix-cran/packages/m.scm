@@ -1594,13 +1594,13 @@ arbitrary Markov multistate models <ISBN:978-0-387-68560-1>.")
 (define-public r-mvn
   (package
     (name "r-mvn")
-    (version "6.0")
+    (version "6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVN" version))
        (sha256
-        (base32 "0kl0k8r32slh3r30bqgvc163zypkfd08qvk08pr3jg23qliq7kcp"))))
+        (base32 "1ikd76kdrqz7dfi5gqh11kg6df82v6x5l3grrx53x8d8gz06gzrf"))))
     (properties `((upstream-name . "MVN")))
     (build-system r-build-system)
     (arguments
@@ -1614,6 +1614,7 @@ arbitrary Markov multistate models <ISBN:978-0-387-68560-1>.")
                              r-plotly
                              r-nortest
                              r-moments
+                             r-mice
                              r-mass
                              r-ggplot2
                              r-energy
@@ -1624,11 +1625,16 @@ arbitrary Markov multistate models <ISBN:978-0-387-68560-1>.")
     (home-page "https://selcukorkmaz.github.io/mvn-tutorial/")
     (synopsis "Multivariate Normality Tests")
     (description
-     "This package provides a suite of multivariate normality tests (Mardia,
-HenzeâZirkler, Royston, DoornikâHansen, Energy), univariate diagnostics,
-robust outlier detection, bivariate density plots, and BoxâCox transformations
-(Korkmaz et al, (2014),
-<https://journal.r-project.org/archive/2014-2/korkmaz-goksuluk-zararsiz.pdf>).")
+     "This package provides a comprehensive suite for assessing multivariate normality
+using six statistical tests (Mardia, HenzeâZirkler, HenzeâWagner, Royston,
+DoornikâHansen, Energy).  Also includes univariate diagnostics, bivariate
+density visualization, robust outlier detection, power transformations (e.g.,
+BoxâCox, YeoâJohnson), and imputation strategies (\"mean\", \"median\", \"mice\")
+for handling missing data.  Bootstrap resampling is supported for selected tests
+to improve p-value accuracy in small samples.  Diagnostic plots are available
+via both ggplot2 and interactive plotly visualizations.  See Korkmaz et al.
+(2014)
+<https://journal.r-project.org/archive/2014-2/korkmaz-goksuluk-zararsiz.pdf>.")
     (license license:expat)))
 
 (define-public r-mvmorph
@@ -6023,13 +6029,13 @@ January 2022.")
 (define-public r-multifear
   (package
     (name "r-multifear")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multifear" version))
        (sha256
-        (base32 "0240dk3cqdm9x9y139p5i0gj374f58qxnqw32cii1abhv852ijfm"))))
+        (base32 "0q9ajx6j50f34jl9awwm3fz2zjlb6i5hwi5alnw9b5g0kfasi337"))))
     (properties `((upstream-name . "multifear")))
     (build-system r-build-system)
     (arguments
@@ -6037,11 +6043,13 @@ January 2022.")
       #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
+                             r-rlang
                              r-reshape2
                              r-purrr
                              r-nlme
                              r-ggplot2
                              r-forestplot
+                             r-fastdummies
                              r-ez
                              r-esc
                              r-effsize
@@ -16235,13 +16243,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "05hf9kjgid9jf9gb7b6rvcwrwzbk5ddpjkf9b058k6lxhfyp88a9"))))
+        (base32 "0jkazlv6mfs91rbm721wcahxwmq9jc1lm3fqxcqjsisvjzs8g9p4"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (arguments
@@ -18735,13 +18743,13 @@ Rosenbaum and Rubin (1985).")
 (define-public r-mmrm
   (package
     (name "r-mmrm")
-    (version "0.3.14")
+    (version "0.3.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmrm" version))
        (sha256
-        (base32 "04rzb1bww8rdnpawwcx16kp5x0zfdhi23q4v7avb3c6ilw641s65"))))
+        (base32 "0c5hv0slifrwslhl5d556yqhnmyxar8dkyc0jbzlimqd83jx2b8k"))))
     (properties `((upstream-name . "mmrm")))
     (build-system r-build-system)
     (arguments
@@ -43073,13 +43081,13 @@ AI-based approaches.  Front.  Genet.  14:1233657. <doi:
 (define-public r-mbmca
   (package
     (name "r-mbmca")
-    (version "1.0.1-3")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBmca" version))
        (sha256
-        (base32 "08ls1rc440jjmbwm6nx09xyr8nb8q6wwid0dyvb97fv4l85qwn19"))))
+        (base32 "1srh1lmzj2mxi8wfpvmiy58x6piv6j2fd3zbg8yx770rxwi0587q"))))
     (properties `((upstream-name . "MBmca")))
     (build-system r-build-system)
     (arguments
@@ -50150,13 +50158,13 @@ normalized words.")
 (define-public r-malariaatlas
   (package
     (name "r-malariaatlas")
-    (version "1.6.3")
+    (version "1.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "malariaAtlas" version))
        (sha256
-        (base32 "1ipjhds73pcw30y3ks9glqlxng97fnavvpi1v9s01jr7m0l587xs"))))
+        (base32 "173zkkjhk4wfgmzk9fwb9s7i6hgizxnkiq3xvv0lizqk4kwyf5r4"))))
     (properties `((upstream-name . "malariaAtlas")))
     (build-system r-build-system)
     (arguments
@@ -52585,13 +52593,13 @@ to evaluate the best cluster number from the original data.")
 (define-public r-m2r
   (package
     (name "r-m2r")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "m2r" version))
        (sha256
-        (base32 "0vwvpalap4z5x2004c92n0ka7i4l64ry5n8pmxs4vjpd8fyx91gc"))))
+        (base32 "177zi42rbnaggpgvllq38q26dnpy3b72fpprz4magn0jdj108sga"))))
     (properties `((upstream-name . "m2r")))
     (build-system r-build-system)
     (arguments
@@ -52611,9 +52619,9 @@ to evaluate the best cluster number from the original data.")
     (home-page "https://github.com/coneill-math/m2r")
     (synopsis "Interface to 'Macaulay2'")
     (description
-     "Persistent interface to Macaulay2 <http://www.math.uiuc.edu/Macaulay2/> and
-front-end tools facilitating its use in the R ecosystem.  For details see Kahle
-et.  al. (2020) <doi:10.18637/jss.v093.i09>.")
+     "Persistent interface to Macaulay2 <https://www.macaulay2.com> and front-end
+tools facilitating its use in the R ecosystem.  For details see Kahle et.  al.
+(2020) <doi:10.18637/jss.v093.i09>.")
     (license license:gpl2)))
 
 (define-public r-m2b

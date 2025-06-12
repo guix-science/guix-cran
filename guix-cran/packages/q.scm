@@ -1092,13 +1092,13 @@ genetic information.")
 (define-public r-questionr
   (package
     (name "r-questionr")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "questionr" version))
        (sha256
-        (base32 "1zxh7wg81qmymmcs1ram3g1901pf9igcdn0zfbmcxs9jlf1m00i1"))))
+        (base32 "1mw7jwx8lvzs5cjqimdicidzi93i3k1z9pxn2axrs4w8z9ahxnx6"))))
     (properties `((upstream-name . "questionr")))
     (build-system r-build-system)
     (arguments

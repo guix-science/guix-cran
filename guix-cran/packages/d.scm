@@ -10087,13 +10087,13 @@ estimates of the regression coefficients.")
 (define-public r-dndr
   (package
     (name "r-dndr")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dndR" version))
        (sha256
-        (base32 "1jxkixav0rc69sfj614c1k2hgybr3z3zrg6aljjn7dy3fa47sdac"))))
+        (base32 "158dgbharl9f3lsjh7i3d6fqwcg73jz86pq3gz45shzcwn4zanni"))))
     (properties `((upstream-name . "dndR")))
     (build-system r-build-system)
     (arguments
@@ -10113,7 +10113,7 @@ estimates of the regression coefficients.")
 functions.  This package is meant to be useful both to players and Dungeon
 Masters (DMs).  Some functions apply to many tabletop role-playing games (e.g.,
 dice rolling), but others are focused on Fifth Edition (a.k.a. \"5e\") and where
-possible both there 2014 and 2024 versions are supported.")
+possible both the 2014 and 2024 versions are supported.")
     (license license:expat)))
 
 (define-public r-dnatools
@@ -14574,13 +14574,13 @@ for carrying out inference on them.")
 (define-public r-discord
   (package
     (name "r-discord")
-    (version "1.2.3")
+    (version "1.2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "discord" version))
        (sha256
-        (base32 "09ymb84457k6apwb8nnpjq90anh62kyffphhv2vwwxgiyr1z8dgk"))))
+        (base32 "0z2n71vfs66zyrdnq4mib1i7m4f7qj77m13m15hlqjri1r1cpvvj"))))
     (properties `((upstream-name . "discord")))
     (build-system r-build-system)
     (arguments
@@ -14595,7 +14595,7 @@ sibling-based quasi-experimental designs).  Contains data restructuring
 functions and functions for generating biometrically informed data for kin
 pairs.  See [Garrison and Rodgers, 2016 <doi:10.1016/j.intell.2016.08.008>],
 [Sims, Trattner, and Garrison, 2024 <doi:10.3389/fpsyg.2024.1430978>] for
-empirical examples, and Garrison et al for theoretical work
+empirical examples, and Garrison and colleagues for theoretical work
 <https://osf.io/zpdwt/>.")
     (license license:gpl3)))
 
@@ -19788,13 +19788,13 @@ educational and psychological tests.")
 (define-public r-dexter
   (package
     (name "r-dexter")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dexter" version))
        (sha256
-        (base32 "1jsbinbpflvjrajmc2l0dqllx6385vwphndp89fdk9fai6d07a60"))))
+        (base32 "1bvhanfagj85c7dzj5a0xsda95q95bpwgs67zd6wc98xc2hhwzy2"))))
     (properties `((upstream-name . "dexter")))
     (build-system r-build-system)
     (arguments
@@ -24452,13 +24452,13 @@ the service (see <https://www.deepl.com/pro#developer>).")
 (define-public r-deeplearningcausal
   (package
     (name "r-deeplearningcausal")
-    (version "0.0.104")
+    (version "0.0.106")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DeepLearningCausal" version))
        (sha256
-        (base32 "02n0prw6g0sslxwr3p5msbcqr2bny702pbf22vs6f0f9xc5gqkd6"))))
+        (base32 "1sks5w0lbyh3mfjhii5k00hfpg78h8cr6l3jarv4gj7d0k6f6p2w"))))
     (properties `((upstream-name . "DeepLearningCausal")))
     (build-system r-build-system)
     (arguments
@@ -24466,15 +24466,19 @@ the service (see <https://www.deepl.com/pro#developer>).")
       #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-weights
+                             r-tidyr
                              r-superlearner
                              r-rocr
                              r-randomforest
                              r-neuralnet
+                             r-magrittr
                              r-hmisc
                              r-glmnet
+                             r-ggplot2
                              r-gbm
                              r-gam
                              r-e1071
+                             r-dplyr
                              r-class
                              r-caret))
     (home-page "https://github.com/hknd23/DeepLearningCausal")
@@ -24485,7 +24489,7 @@ Effects (CATE) and Population Average Treatment Effects on the Treated (PATT)
 from experimental or observational data using the Super Learner (SL) ensemble
 method and Deep neural networks.  The package first provides functions to
 implement meta-learners such as the Single-learner (S-learner) and Two-learner
-(T-learner) described in KÃ¼nzel et al. (2019) <doi:10.1073/pnas.1804597116> for
+(T-learner) described in KC<nzel et al. (2019) <doi:10.1073/pnas.1804597116> for
 estimating the CATE. The S- and T-learner are each estimated using the SL
 ensemble method and deep neural networks.  It then provides functions to
 implement the Ottoboni and Poulos (2020) <doi:10.1515/jci-2018-0035> PATT-C
@@ -32998,13 +33002,13 @@ endpoints.")
 (define-public r-dad
   (package
     (name "r-dad")
-    (version "4.1.5")
+    (version "4.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dad" version))
        (sha256
-        (base32 "1bpjgwd739l661ri78a8iq3jhrawrn9g9awjrsdwmvw10gd9skmh"))))
+        (base32 "0xhihbz3qg5f1ijavi3l30f80aalik65ywg04wdfcadfl3s0n9dl"))))
     (properties `((upstream-name . "dad")))
     (build-system r-build-system)
     (arguments
@@ -33012,7 +33016,7 @@ endpoints.")
       #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-e1071 r-desctools))
     (native-inputs (list r-knitr))
-    (home-page "https://forgemia.inra.fr/dad/dad")
+    (home-page "https://forge.inrae.fr/dad/dad")
     (synopsis "Three-Way / Multigroup Data Analysis Through Densities")
     (description
      "The data consist of a set of variables measured on several groups of

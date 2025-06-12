@@ -2008,6 +2008,43 @@ ISBN:978-0-471-18386-0).")
 Fisheries Science Center of the National Oceanic and Atmospheric Administration.")
     (license license:gpl2+)))
 
+(define-public r-swfscdas
+  (package
+    (name "r-swfscdas")
+    (version "0.6.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "swfscDAS" version))
+       (sha256
+        (base32 "0338wpyyn07kic7m0iq2y1v3831niix7fbadmljb5pp9l1nxdqzr"))))
+    (properties `((upstream-name . "swfscDAS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-swfscmisc
+                             r-sf
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://swfsc.github.io/swfscDAS/")
+    (synopsis "Processing DAS Data Files")
+    (description
+     "Process and summarize DAS data files.  These files are typically, but do not
+have to be DAS
+<https://swfsc-publications.fisheries.noaa.gov/publications/TM/SWFSC/NOAA-TM-NMFS-SWFSC-305.PDF>
+data produced by the Southwest Fisheries Science Center (SWFSC) program
+@code{WinCruz}'.  This package standardizes and streamlines basic DAS data
+processing, and includes a PDF with the DAS data format requirements expected by
+the package.")
+    (license (license:fsdg-compatible "Apache License (== 2)"))))
+
 (define-public r-swephr
   (package
     (name "r-swephr")
@@ -3356,6 +3393,56 @@ permutation whole model test for SVEM (Karl (2024)
 from the supplementary material of Karl (2024).  Development of this package was
 assisted by GPT o1-preview for code structure and documentation.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-svelteplots
+  (package
+    (name "r-svelteplots")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SveltePlots" version))
+       (sha256
+        (base32 "16c7gsrg8fd27wjzxsvrswrxxs09n966azvfm735vh0646yvynp5"))))
+    (properties `((upstream-name . "SveltePlots")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rcolorbrewer
+                             r-purrr
+                             r-padr
+                             r-magrittr
+                             r-htmlwidgets
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list esbuild))
+    (home-page "https://github.com/Pascal-Schmidt/SveltePlots")
+    (synopsis "Wrapper for a Svelte Custom Web Component")
+    (description
+     "An interactive charting library built on Svelte and D3 to easily produce SVG
+charts in R. Designed to simplify shiny development by eliminating the need for
+@code{renderUI()}, @code{insertUI()}, @code{removeUI()}, and shiny proxy
+functions, using Svelte''s reactive state system instead.")
+    (license license:expat)))
 
 (define-public r-svdnf
   (package
@@ -5577,6 +5664,51 @@ variation from survey data with complex designs.  Includes the rescaled
 bootstrap described in Rust and Rao (1996) <doi:10.1177/096228029600500305> and
 Rao and Wu (1988) <doi:10.1080/01621459.1988.10478591>.")
     (license license:expat)))
+
+(define-public r-survextrap
+  (package
+    (name "r-survextrap")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survextrap" version))
+       (sha256
+        (base32 "10hi8x7676bmb2sackibzc8awykqs4kyvj7i2van8ndp8l0dj0kp"))))
+    (properties `((upstream-name . "survextrap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-survival
+                             r-stanheaders
+                             r-splines2
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-posterior
+                             r-loo
+                             r-gridextra
+                             r-ggplot2
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/chjackson/survextrap")
+    (synopsis
+     "Bayesian Flexible Parametric Survival Modelling and Extrapolation")
+    (description
+     "Survival analysis using a flexible Bayesian model for individual-level
+right-censored data, optionally combined with aggregate data on counts of
+survivors in different periods of time.  An M-spline is used to describe the
+hazard function, with a prior on the coefficients that controls over-fitting.
+Proportional hazards or flexible non-proportional hazards models can be used to
+relate survival to predictors.  Additive hazards (relative survival) models,
+waning treatment effects, and mixture cure models are also supported.  Priors
+can be customised and calibrated to substantive beliefs.  Posterior
+distributions are estimated using Stan', and outputs are arranged in a tidy
+format.  See Jackson (2023) <doi:10.1186/s12874-023-02094-1>.")
+    (license license:gpl3+)))
 
 (define-public r-survexp-fr
   (package
@@ -13670,13 +13802,13 @@ wanting to programmatically generate, or modify, executable documents.")
 (define-public r-stempcens
   (package
     (name "r-stempcens")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StempCens" version))
        (sha256
-        (base32 "0jphyikfggx0yj5f5k3fykf3fdv9msppymzpyin1m7xfmfi5cwia"))))
+        (base32 "18l7l7jsrd7idgg0d1b8ykm4plh84z7hhxklf7xab2h8nvgxqkwk"))))
     (properties `((upstream-name . "StempCens")))
     (build-system r-build-system)
     (arguments
@@ -13688,20 +13820,18 @@ wanting to programmatically generate, or modify, executable documents.")
                              r-rcpp
                              r-mvtnorm
                              r-mcmcglmm
-                             r-ggplot2
-                             r-distances))
+                             r-ggplot2))
     (home-page "https://cran.r-project.org/package=StempCens")
     (synopsis
      "Spatio-Temporal Estimation and Prediction for Censored/Missing Responses")
     (description
-     "It estimates the parameters of a censored or missing data in spatio-temporal
-models using the SAEM algorithm (Delyon et al., 1999).  This algorithm is a
-stochastic approximation of the widely used EM algorithm and an important tool
-for models in which the E-step does not have an analytic form.  Besides the
-expressions obtained to estimate the parameters to the proposed model, we
-include the calculations for the observed information matrix using the method
-developed by Louis (1982).  To examine the performance of the fitted model,
-case-deletion measure are provided.")
+     "It estimates the parameters of spatio-temporal models with censored or missing
+data using the SAEM algorithm (Delyon et al., 1999).  This algorithm is a
+stochastic approximation of the widely used EM algorithm and is particularly
+valuable for models in which the E-step lacks a closed-form expression.  It also
+provides a function to compute the observed information matrix using the method
+developed by Louis (1982).  To assess the performance of the fitted model,
+case-deletion diagnostics are provided.")
     (license license:gpl2+)))
 
 (define-public r-stemmatology
@@ -14504,13 +14634,13 @@ designed to be suitable for use at the console, in Rmarkdown and @code{LaTeX}.")
 (define-public r-statpsych
   (package
     (name "r-statpsych")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statpsych" version))
        (sha256
-        (base32 "0cm384ii8978v5l0x8801najvfz7zpv5ik75a91jsigq7pmx3kh3"))))
+        (base32 "1x0gcipa0hc58rnwyxn3jwqfnzwaxq1kacvrwq4fhjlvkq4cb7nh"))))
     (properties `((upstream-name . "statpsych")))
     (build-system r-build-system)
     (arguments
@@ -16055,13 +16185,13 @@ providing the user with options to create and customise plots and tables.")
 (define-public r-starnet
   (package
     (name "r-starnet")
-    (version "0.0.7")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "starnet" version))
        (sha256
-        (base32 "1rzssz1gj1bsfshk4a89vk7lllmq23334a8rahvivqkm1jvpxwnj"))))
+        (base32 "0iz4l3va3d98zq2la2404pf9l0gcmpgla9gszkpc4hfhgzj82fsr"))))
     (properties `((upstream-name . "starnet")))
     (build-system r-build-system)
     (arguments
@@ -16069,15 +16199,14 @@ providing the user with options to create and customise plots and tables.")
       #:tests? #f))
     (propagated-inputs (list r-survival r-matrix r-glmnet r-cornet))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rauschenberger/starnet")
+    (home-page "https://github.com/rauschenberger/starnet/")
     (synopsis "Stacked Elastic Net")
     (description
-     "This package implements stacked elastic net regression (Rauschenberger 2021,
+     "This package implements stacked elastic net regression (Rauschenberger 2021
 <doi:10.1093/bioinformatics/btaa535>).  The elastic net generalises ridge and
-lasso regularisation (Zou 2005, <doi:10.1111/j.1467-9868.2005.00503.x>).
-Instead of fixing or tuning the mixing parameter alpha, we combine multiple
-alpha by stacked generalisation (Wolpert 1992
-<doi:10.1016/S0893-6080(05)80023-1>).")
+lasso regularisation (Zou 2005 <doi:10.1111/j.1467-9868.2005.00503.x>).  Instead
+of fixing or tuning the mixing parameter alpha, we combine multiple alpha by
+stacked generalisation (Wolpert 1992 <doi:10.1016/S0893-6080(05)80023-1>).")
     (license license:gpl3)))
 
 (define-public r-starma
@@ -21351,6 +21480,31 @@ studies with high dimensional genomic features.  Alternative methods conducting
 only the group or individual level selection have also been included.  The core
 modules of the package have been developed in C++.")
     (license license:gpl2)))
+
+(define-public r-sprex
+  (package
+    (name "r-sprex")
+    (version "1.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sprex" version))
+       (sha256
+        (base32 "1giwy6xmq7gksbr33kidzdbs99npfap22s14y7vymg8h4wqy642x"))))
+    (properties `((upstream-name . "sprex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-swfscmisc r-ggplot2))
+    (home-page "https://github.com/SWFSC/sprex")
+    (synopsis "Species Richness and Extrapolation")
+    (description
+     "This package provides functions for calculating species richness for rarefaction
+and extrapolation, primarily non-parametric species richness such as jackknife,
+Chao1, and ACE. Also available are functions for plotting species richness and
+extrapolation curves, and computing standard diversity and entropy indices.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-spreval
   (package
@@ -27317,13 +27471,13 @@ Ziegler 2017 <DOI:10.18637/jss.v077.i01>).")
 (define-public r-spatialregimes
   (package
     (name "r-spatialregimes")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatialRegimes" version))
        (sha256
-        (base32 "1sp9fs8kwv5gm8bx9z5blkwj3c4lmcqw5126myr09rzz5xjmzzrx"))))
+        (base32 "0d8g4zzayg79abxvizsm3dbbmpdnv04k54qkwfnql6539bj6q7ch"))))
     (properties `((upstream-name . "SpatialRegimes")))
     (build-system r-build-system)
     (arguments
@@ -30072,13 +30226,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "3.3.0")
+    (version "3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "1bkcldqlnjfh29p0iwywpn95s0s31m6ic8dbws4bi5zjdi43237g"))))
+        (base32 "055hhni4j8sswl99jzv8v6l579wklg4721b38mixjj8kpcj6bqbk"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (arguments
@@ -30106,8 +30260,8 @@ of the American Statistical Association 105(490): 713-726.")
     (description
      "This package provides tools for reading, visualising and processing Magnetic
 Resonance Spectroscopy data.  The package includes methods for spectral fitting:
-Wilson (2021) <DOI:10.1002/mrm.28385> and spectral alignment: Wilson (2018)
-<DOI:10.1002/mrm.27605>.")
+Wilson (2021) <DOI:10.1002/mrm.28385>, Wilson (2025) <DOI:10.1002/mrm.30462> and
+spectral alignment: Wilson (2018) <DOI:10.1002/mrm.27605>.")
     (license license:gpl3)))
 
 (define-public r-spanova
@@ -41735,13 +41889,13 @@ linked to via the URL below.")
 (define-public r-simtrial
   (package
     (name "r-simtrial")
-    (version "0.4.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simtrial" version))
        (sha256
-        (base32 "1wwx9z10ycl06s0v3farfk2hkbw4xpsgvhg1rdzl7p2cr3s5840m"))))
+        (base32 "0czlq25p58ld8ligyzlw0kmwrzcpr3dg8kkazw80l13xi8968crz"))))
     (properties `((upstream-name . "simtrial")))
     (build-system r-build-system)
     (arguments
@@ -41750,7 +41904,6 @@ linked to via the URL below.")
     (propagated-inputs (list r-survival
                              r-rcpp
                              r-mvtnorm
-                             r-gsdesign2
                              r-future
                              r-foreach
                              r-dofuture
@@ -58274,13 +58427,13 @@ graphical representation of structural equation models.")
 (define-public r-semicontmanova
   (package
     (name "r-semicontmanova")
-    (version "0.1-8")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semicontMANOVA" version))
        (sha256
-        (base32 "08z4r8klp2drch89jd4j3ji0439p6dr93db51vnm3bzic0dbrm01"))))
+        (base32 "1xak8jmskwmg95jhkx8564qdfqbzqhdqv0jxlfiyxi64axrv8qcj"))))
     (properties `((upstream-name . "semicontMANOVA")))
     (build-system r-build-system)
     (arguments
@@ -58297,7 +58450,9 @@ inference and test with regularization for semicontinuous high-dimensional data.
 p-value can be obtained through asymptotic distribution or using a permutation
 procedure.  The package gives also the possibility to simulate this type of
 data.  Method is described in Elena Sabbioni, Claudio Agostinelli and Alessio
-Farcomeni (2024) <@code{arXiv:2401.04036>}.")
+Farcomeni (2025) A regularized MANOVA test for semicontinuous high-dimensional
+data.  Biometrical Journal, 67:e70054.  DOI <doi:10.1002/bimj.70054>,
+@code{arXiv} DOI <doi:10.48550/@code{arXiv.2401.04036>}.")
     (license license:gpl2)))
 
 (define-public r-semicomprisks

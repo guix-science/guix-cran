@@ -480,13 +480,13 @@ environmental covariates.")
 (define-public r-luminescence
   (package
     (name "r-luminescence")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Luminescence" version))
        (sha256
-        (base32 "1wnnf7fqa6jdfw1ml3r9l8z4ib8phzbvglrh49r691b2sk62zr21"))))
+        (base32 "05jrw2nys0h48b3xqda5m956ya8njzydzy6ph08941i5bm8y1cq8"))))
     (properties `((upstream-name . "Luminescence")))
     (build-system r-build-system)
     (arguments
@@ -11460,13 +11460,13 @@ not create any visualizations.")
 (define-public r-lightlogr
   (package
     (name "r-lightlogr")
-    (version "0.5.3")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LightLogR" version))
        (sha256
-        (base32 "1ypkjx4c7krdv8yfhg375qqa8gpiqnnfmmps0any93bkik23fy4q"))))
+        (base32 "08zdxgcykyvb0yarjbznxb88a6v42cxhriywsjrwm05ybqrk5x4n"))))
     (properties `((upstream-name . "LightLogR")))
     (build-system r-build-system)
     (arguments
@@ -11478,12 +11478,10 @@ not create any visualizations.")
                              r-stringr
                              r-slider
                              r-scales
-                             r-rsconnect
                              r-rlang
                              r-readr
                              r-purrr
                              r-plotly
-                             r-pkgload
                              r-magrittr
                              r-lubridate
                              r-janitor
@@ -11491,7 +11489,6 @@ not create any visualizations.")
                              r-ggtext
                              r-ggsci
                              r-ggplot2
-                             r-flextable
                              r-dplyr
                              r-cowplot))
     (home-page "https://github.com/tscnlab/LightLogR")
@@ -12996,13 +12993,13 @@ LFMM program present in the LEA package (Frichot and Francois, 2015,
 (define-public r-lfm
   (package
     (name "r-lfm")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LFM" version))
        (sha256
-        (base32 "0jiaf0rkv5azv7civ70q1crwlalbaq5mn2zp4vn9n71lf0rgk7ba"))))
+        (base32 "0i5f8hbdf4dlagj5jsszyqpscb0jbz2pa699ggy50v4l6vlvkhjf"))))
     (properties `((upstream-name . "LFM")))
     (build-system r-build-system)
     (arguments
@@ -13019,12 +13016,12 @@ LFMM program present in the LEA package (Frichot and Francois, 2015,
     (description
      "Enables the generation of Laplace factor models across diverse Laplace
 distributions and facilitates the application of Sparse Online Principal
-Component (SOPC), Incremental Principal Component (IPC), Projected Principal
-Component (PPC), Perturbation Principal Component (PPC), Stochastic
-Approximation Principal Component (SAPC), Sparse Principal Component (SPC) and
-other PC methods and Farm Test methods to these models.  Evaluates the efficacy
-of these methods within the context of Laplace factor models by scrutinizing
-parameter estimation accuracy, mean square error, and the degree of sparsity.")
+Component (SOPC), Incremental Principal Component (IPC), Perturbation Principal
+Component (PPC), Stochastic Approximation Principal Component (SAPC), Sparse
+Principal Component (SPC) and other PC methods and Farm Test methods to these
+models.  Evaluates the efficacy of these methods within the context of Laplace
+factor models by scrutinizing parameter estimation accuracy, mean square error,
+and the degree of sparsity.")
     (license license:expat)))
 
 (define-public r-lfl
@@ -18398,13 +18395,13 @@ seamless to use without running into package version conflicts.")
 (define-public r-languager
   (package
     (name "r-languager")
-    (version "1.5.0")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "languageR" version))
        (sha256
-        (base32 "1iipnr2b4hd2w718prbh075j56m5xnchlcb2vg26m16qpydp6afn"))))
+        (base32 "0x7r80v3rpjh961q6jgdy8bca894wgfvhp5vgqd6l8nqny1y5qrp"))))
     (properties `((upstream-name . "languageR")))
     (build-system r-build-system)
     (arguments
@@ -18412,7 +18409,7 @@ seamless to use without running into package version conflicts.")
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=languageR")
     (synopsis
-     "Analyzing Linguistic Data: A Practical Introduction to Statistics")
+     "Data Sets and Functions with Analyzing Linguistic Data: A Practical Introduction to Statistics")
     (description
      "Data sets exemplifying statistical methods, and some facilitatory utility
 functions used in ``Analyzing Linguistic Data: A practical introduction to
@@ -20606,6 +20603,37 @@ regression.  The main function, @code{l1ball()}, yields posterior samples for
 linear regression, as introduced by Xu and Duan (2020)
 <@code{arXiv:2006.01340>}.")
     (license license:gpl2+)))
+
+(define-public r-l0tfinv
+  (package
+    (name "r-l0tfinv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "L0TFinv" version))
+       (sha256
+        (base32 "1zd5b6xmxjy8zyd6yw8m3q4jc0rsp0mdp8vxk2bb1bh9mj3d6rlj"))))
+    (properties `((upstream-name . "L0TFinv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/C2S2-HF/InverseL0TF")
+    (synopsis "Splicing Approach to the Inverse Problem of L0 Trend Filtering")
+    (description
+     "Trend filtering is a widely used nonparametric method for knot detection.  This
+package provides an efficient solution for L0 trend filtering, avoiding the
+traditional methods of using Lagrange duality or Alternating Direction Method of
+Multipliers algorithms.  It employ a splicing approach that minimizes
+L0-regularized sparse approximation by transforming the L0 trend filtering
+problem.  The package excels in both efficiency and accuracy of trend estimation
+and changepoint detection in segmented functions.  References: Wen et al. (2020)
+<doi:10.18637/jss.v094.i04>; Zhu et al. (2020)<doi:10.1073/pnas.2014241117>; Wen
+et al. (2023) <doi:10.1287/ijoc.2021.0313>.")
+    (license license:gpl3+)))
 
 (define-public r-l0learn
   (package

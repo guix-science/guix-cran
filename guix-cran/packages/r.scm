@@ -3211,13 +3211,13 @@ document that support @code{JavaScript} typed data
 (define-public r-rtseva
   (package
     (name "r-rtseva")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RtsEva" version))
        (sha256
-        (base32 "0bnpplsyc4k4gs5gh2hxr4597xqsfpd9kvkfhp7s802xby4hqnia"))))
+        (base32 "0ky9ik2aigysydvavj1mismxsnrcbq4rgg993n9pdi1jk6xvsk7d"))))
     (properties `((upstream-name . "RtsEva")))
     (build-system r-build-system)
     (arguments
@@ -3326,19 +3326,20 @@ ISBN:9780849303166).")
 (define-public r-rts2
   (package
     (name "r-rts2")
-    (version "0.7.7")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rts2" version))
        (sha256
-        (base32 "05njx6d6rrcsycp0q55ja5yx53nv8gpp2mnmp5kzmsdnlghimyg5"))))
+        (base32 "11qigvkrvgqbm7x08a9xrlm8a1qgrzrpda8dqhlqlcj2sd60wp07"))))
     (properties `((upstream-name . "rts2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stanheaders
+    (propagated-inputs (list r-stars
+                             r-stanheaders
                              r-sparsechol
                              r-sf
                              r-rstantools
@@ -3346,6 +3347,7 @@ ISBN:9780849303166).")
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
+                             r-raster
                              r-r6
                              r-lubridate
                              r-glmmrbase
@@ -10085,13 +10087,13 @@ Statistical Association <https://graemeblair.com/papers/randresp.pdf>.")
 (define-public r-rquest
   (package
     (name "r-rquest")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rquest" version))
        (sha256
-        (base32 "09p3r69wn9dl8p507kd7jng118a3pg0acc45lfcrw1dn5h5adrlf"))))
+        (base32 "1zpaga1ipjcx5c42wlbf2lfyahr8z0cm2c361qfbm8i5vd9g4sf0"))))
     (properties `((upstream-name . "rquest")))
     (build-system r-build-system)
     (arguments
@@ -16580,6 +16582,33 @@ sparse least trimmed squares regression (Alfons, Croux & Gelper, 2013;
 <doi:10.1214/12-AOAS575>).")
     (license license:gpl2+)))
 
+(define-public r-robustgasp
+  (package
+    (name "r-robustgasp")
+    (version "0.6.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RobustGaSP" version))
+       (sha256
+        (base32 "0qmhjkjhja4cqx8lbhagdh7ypk877sfwr1wxaijhr9hkazb4i4fl"))))
+    (properties `((upstream-name . "RobustGaSP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-nloptr))
+    (home-page "https://cran.r-project.org/package=RobustGaSP")
+    (synopsis "Robust Gaussian Stochastic Process Emulation")
+    (description
+     "Robust parameter estimation and prediction of Gaussian stochastic process
+emulators.  It allows for robust parameter estimation and prediction using
+Gaussian stochastic process emulator.  It also implements the parallel partial
+Gaussian stochastic process emulator for computer model with massive outputs See
+the reference: Mengyang Gu and Jim Berger, 2016, Annals of Applied Statistics;
+Mengyang Gu, Xiaojing Wang and Jim Berger, 2018, Annals of Statistics.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-robustgarch
   (package
     (name "r-robustgarch")
@@ -17734,13 +17763,13 @@ discussion on robust mediation analysis can be found in Alfons & Schley (2024)
 (define-public r-robma
   (package
     (name "r-robma")
-    (version "3.4.0")
+    (version "3.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RoBMA" version))
        (sha256
-        (base32 "0xjp7sccznqvchh5zn5912q6blzw6ki81ma6vdmcn681rql4zlzc"))))
+        (base32 "0c1dfvlridvnxgnrq6q97zlj3693v0pppf6lmvzwl972pnm70jkg"))))
     (properties `((upstream-name . "RoBMA")))
     (build-system r-build-system)
     (arguments
@@ -17759,18 +17788,19 @@ discussion on robust mediation analysis can be found in Alfons & Schley (2024)
     (home-page "https://fbartos.github.io/RoBMA/")
     (synopsis "Robust Bayesian Meta-Analyses")
     (description
-     "This package provides a framework for estimating ensembles of meta-analytic and
-meta-regression models (assuming either presence or absence of the effect,
-heterogeneity, publication bias, and moderators).  The @code{RoBMA} framework
-uses Bayesian model-averaging to combine the competing meta-analytic models into
-a model ensemble, weights the posterior parameter distributions based on
-posterior model probabilities and uses Bayes factors to test for the presence or
-absence of the individual components (e.g., effect vs. no effect; BartoÅ¡ et
-al., 2022, <doi:10.1002/jrsm.1594>; Maier, BartoÅ¡ & Wagenmakers, 2022,
-<doi:10.1037/met0000405>).  Users can define a wide range of prior distributions
-for + the effect size, heterogeneity, publication bias (including selection
-models and PET-PEESE), and moderator components.  The package provides
-convenient functions for summary, visualizations, and fit diagnostics.")
+     "This package provides a framework for estimating ensembles of meta-analytic,
+meta-regression, and multilevel models (assuming either presence or absence of
+the effect, heterogeneity, publication bias, and moderators).  The @code{RoBMA}
+framework uses Bayesian model-averaging to combine the competing meta-analytic
+models into a model ensemble, weights the posterior parameter distributions
+based on posterior model probabilities and uses Bayes factors to test for the
+presence or absence of the individual components (e.g., effect vs. no effect;
+BartoÅ¡ et al., 2022, <doi:10.1002/jrsm.1594>; Maier, BartoÅ¡ & Wagenmakers,
+2022, <doi:10.1037/met0000405>; BartoÅ¡ et al., 2025, <doi:10.1037/met0000737>).
+ Users can define a wide range of prior distributions for the effect size,
+heterogeneity, publication bias (including selection models and PET-PEESE), and
+moderator components.  The package provides convenient functions for summary,
+visualizations, and fit diagnostics.")
     (license license:gpl3)))
 
 (define-public r-robloxbioc
@@ -26059,13 +26089,13 @@ Algorithms and Applications, for a reference.")
 (define-public r-rintcal
   (package
     (name "r-rintcal")
-    (version "1.1.3")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rintcal" version))
        (sha256
-        (base32 "1v7wgg14ikz6y86rvlv7jc559i9pwzagd94dkzb3p89kxlqa2j41"))))
+        (base32 "10dsf66bzfbgkl9hd6c2lk4njwmd542251xmvppjan7nn3ai1r6l"))))
     (properties `((upstream-name . "rintcal")))
     (build-system r-build-system)
     (arguments
@@ -30033,6 +30063,41 @@ modeling for bias correction, and quantile mapping for adjustment, ensuring
 accurate estimates across temporal scales and regions.")
     (license license:gpl3+)))
 
+(define-public r-rfpermute
+  (package
+    (name "r-rfpermute")
+    (version "2.5.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rfPermute" version))
+       (sha256
+        (base32 "02l6vbqq6lk09iwb9y5bm8kk3lyg914bgsc8qz8zysv8y4bh47fh"))))
+    (properties `((upstream-name . "rfPermute")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-swfscmisc
+                             r-scales
+                             r-rlang
+                             r-randomforest
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-abind))
+    (home-page "https://github.com/SWFSC/rfPermute")
+    (synopsis
+     "Estimate Permutation p-Values for Random Forest Importance Metrics")
+    (description
+     "Estimate significance of importance metrics for a Random Forest model by
+permuting the response variable.  Produces null distribution of importance
+metrics for each predictor variable and p-value of observed.  Provides summary
+and visualization functions for @code{randomForest} results.")
+    (license license:gpl2+)))
+
 (define-public r-rformatter
   (package
     (name "r-rformatter")
@@ -33223,13 +33288,13 @@ see BÃ¼cher, Rosenstock (2022) <doi:10.1007/s13385-022-00314-4>.")
 (define-public r-reservoirnet
   (package
     (name "r-reservoirnet")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reservoirnet" version))
        (sha256
-        (base32 "0x87jglv7zyldagrz1kz68xi9l4j920zgpsbpzbj1ksxi2ypp98s"))))
+        (base32 "0k30z9w8mn4y1cb5s5qm9057cw6nild1fr8v1zpn05gd29a9f8vk"))))
     (properties `((upstream-name . "reservoirnet")))
     (build-system r-build-system)
     (arguments
@@ -33245,7 +33310,7 @@ see BÃ¼cher, Rosenstock (2022) <doi:10.1007/s13385-022-00314-4>.")
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/reservoirpy")
+    (home-page "https://github.com/reservoirpy/reservoirR")
     (synopsis "Reservoir Computing and Echo State Networks")
     (description
      "This package provides a simple user-friendly library based on the python module
@@ -44104,19 +44169,19 @@ into a markdown version of the package reference manual.")
 (define-public r-rd2d
   (package
     (name "r-rd2d")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rd2d" version))
        (sha256
-        (base32 "17s6s25xrfnvn5w5lwbkykicmqk4rpvw38daq642rq9jr8j4c5wb"))))
+        (base32 "1zyn8pmg9wwi04iajlc33ldjsaknph0znwdak3sf1wdcx7nd4xxj"))))
     (properties `((upstream-name . "rd2d")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mass r-ggplot2 r-expm))
+    (propagated-inputs (list r-stringr r-mass r-ggplot2 r-expm))
     (home-page "https://rdpackages.github.io/rd2d/")
     (synopsis "Boundary Regression Discontinuity Designs")
     (description

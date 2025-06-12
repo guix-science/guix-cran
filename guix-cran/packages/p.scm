@@ -8054,13 +8054,13 @@ maximum profile likelihood estimates and the kth likelihood support intervals.")
 (define-public r-profileladder
   (package
     (name "r-profileladder")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProfileLadder" version))
        (sha256
-        (base32 "0z6mlmzjr8hp1nxiw4wr6jmzlshb2f9i0kxv9p6smc3bm710jjr3"))))
+        (base32 "0qrw6k12pbdribjlk25rvmlvkgbs5w9b3lf5lazff0xx0hqhkb7w"))))
     (properties `((upstream-name . "ProfileLadder")))
     (build-system r-build-system)
     (arguments
@@ -14686,13 +14686,13 @@ See README and NEWS for further information.")
 (define-public r-powertools
   (package
     (name "r-powertools")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powertools" version))
        (sha256
-        (base32 "06sdbd7m4q470xrn91npml2yzcab0nch26lg4s69bd7xrjdch2jw"))))
+        (base32 "083spfqf09h6589ms6ckwbl48c7fs6qmkmwdmh64f2i30p37i0dh"))))
     (properties `((upstream-name . "powertools")))
     (build-system r-build-system)
     (arguments
@@ -14711,7 +14711,8 @@ cluster randomized trials, individually randomized group treatment trials,
 multisite trials, treatment-by-covariate interaction effects and nonparametric
 tests of location.  Utilities are provided for computing various effect sizes.
 Companion package to the book \"Power and Sample Size in R\", Crespi (2025,
-ISBN:9781138591622).")
+ISBN:9781138591622).  Further resources available at
+<https://powerandsamplesize.org/>.")
     (license license:expat)))
 
 (define-public r-powersurvepi
@@ -16462,13 +16463,13 @@ examples, testing versions, and more details from:
 (define-public r-portion
   (package
     (name "r-portion")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "portion" version))
        (sha256
-        (base32 "1dv6s402xnnghw1df6b3664bwaq4wlmwc0gq121jk405xcjlmvz5"))))
+        (base32 "10jfay9hb5c0qw3jic4wg7i45wfvfv79rj74yhbya8afl8xldj0f"))))
     (properties `((upstream-name . "portion")))
     (build-system r-build-system)
     (arguments
@@ -27851,13 +27852,13 @@ functions used in the book.")
 (define-public r-picr
   (package
     (name "r-picr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "picR" version))
        (sha256
-        (base32 "0x5a9qgn66w06sl2c448ricby1bqiw3cpli1mnpslanym7m60nsb"))))
+        (base32 "0kqb80f0n5d4ivfbzy4a983arpxc0b0nkqcnmnzd5r7vb9gij9jf"))))
     (properties `((upstream-name . "picR")))
     (build-system r-build-system)
     (arguments
@@ -39214,6 +39215,44 @@ of colour described in Maia, Eliason, Bitton, Doucet & Shawkey (2013)
 <doi:10.1111/2041-210X.13174>.")
     (license license:gpl2+)))
 
+(define-public r-pautilities
+  (package
+    (name "r-pautilities")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PAutilities" version))
+       (sha256
+        (base32 "03nf89d6r78p271iqb0mgz8cgbip3m1m8pq5v2znim55jmcbv1rk"))))
+    (properties `((upstream-name . "PAutilities")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-reshape2
+                             r-rcpp
+                             r-magrittr
+                             r-lubridate
+                             r-lazyeval
+                             r-ggplot2
+                             r-equivalence
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/paulhibbing/PAutilities")
+    (synopsis "Streamline Physical Activity Research")
+    (description
+     "This package provides functions that support a broad range of common tasks in
+physical activity research, including but not limited to creation of
+Bland-Altman plots (<doi:10.1136/bmj.313.7049.106>), metabolic calculations such
+as basal metabolic rate predictions
+(<https://europepmc.org/article/med/4044297/reloa>), demographic calculations
+such as age-for-body-mass-index percentile
+(<https://www.cdc.gov/growthcharts/cdc_charts.htm>), and analysis of bout
+detection algorithm performance (<https://pubmed.ncbi.nlm.nih.gov/34258524/>).")
+    (license license:gpl3)))
+
 (define-public r-patterns
   (package
     (name "r-patterns")
@@ -41866,13 +41905,13 @@ for creating, manipulating and plotting pedigrees with or without marker data
 (define-public r-paramix
   (package
     (name "r-paramix")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paramix" version))
        (sha256
-        (base32 "136c1pqk8plx5kzx12xbvd502hgqdlc169f9cjwkbr7p51mwhsyk"))))
+        (base32 "084i5xy88mr1cn7cjh1l82f56v1qk046jlz7syk6bcivvdf98wca"))))
     (properties `((upstream-name . "paramix")))
     (build-system r-build-system)
     (arguments
@@ -43154,13 +43193,13 @@ personalized oncology.  Bioinformatics <doi:10.1093/bioinformatics/btad022>.")
 (define-public r-pamscapes
   (package
     (name "r-pamscapes")
-    (version "0.11.3")
+    (version "0.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMscapes" version))
        (sha256
-        (base32 "03pzyy1lvaqapdk669mij6nv6j432ilki17dndh4jnrbr2nm492x"))))
+        (base32 "18kv25bmgzsqvrz70p1mqqvz4d98n6shxscsv86gf99hvy1kmni8"))))
     (properties `((upstream-name . "PAMscapes")))
     (build-system r-build-system)
     (arguments
@@ -43323,13 +43362,13 @@ post-processing as well as visualization.")
 (define-public r-pammisc
   (package
     (name "r-pammisc")
-    (version "1.12.4")
+    (version "1.12.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMmisc" version))
        (sha256
-        (base32 "1yh1hx238czicsishg218iapizx2b8hkkjcim1z5gb0p5dnimq8n"))))
+        (base32 "0mvpaai20jsr0qs60k4f4paix9n2zh8gqgpls0cjvc8s8vv7l70m"))))
     (properties `((upstream-name . "PAMmisc")))
     (build-system r-build-system)
     (arguments
@@ -43458,13 +43497,13 @@ Xiaoyan Wang (2016) <@code{arXiv:1611.03063>} for more details.")
 (define-public r-pambinaries
   (package
     (name "r-pambinaries")
-    (version "1.9.0")
+    (version "1.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PamBinaries" version))
        (sha256
-        (base32 "1anxn06l714ila4kjdbvrmfnmg7k7rwbscvzdd0z768h84s34v19"))))
+        (base32 "0gjmisk8sk9x69dj47zls3j6z5yz97fhcf4ggq5329k97am16063"))))
     (properties `((upstream-name . "PamBinaries")))
     (build-system r-build-system)
     (arguments
