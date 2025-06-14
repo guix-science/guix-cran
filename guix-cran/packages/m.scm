@@ -459,13 +459,13 @@ summary functions are from the spatstat package <https://spatstat.org/>.")
 (define-public r-mxcc
   (package
     (name "r-mxcc")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mxcc" version))
        (sha256
-        (base32 "013ly8zm0i46a2a0ylbydcs1r9iffrc5rd6iqvr8x72pckn0pz3g"))))
+        (base32 "0wzlc2lp3ahwiacf1i4xv72bz8sdwi9z05d0dqhwi1lqa6h0jm88"))))
     (properties `((upstream-name . "mxcc")))
     (build-system r-build-system)
     (arguments
@@ -2193,13 +2193,13 @@ future and making them easily accessible to users.")
 (define-public r-mverse
   (package
     (name "r-mverse")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mverse" version))
        (sha256
-        (base32 "18r0mclq23abzfn1b34fwv0db45krgy5qifcihs56m2cacwzdc93"))))
+        (base32 "0pd05j0g7fpn0yb8mkcjwymzpjpl40lcq5ag79sl1ihpw5kwh8s8"))))
     (properties `((upstream-name . "mverse")))
     (build-system r-build-system)
     (arguments
@@ -2856,35 +2856,6 @@ calculates derived values (sign vector, color number, brightness ratio, etc.).
 Creates plots such as \"brightness graphs\" which visualize these properties.")
     (license license:gpl3+)))
 
-(define-public r-musica
-  (package
-    (name "r-musica")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "musica" version))
-       (sha256
-        (base32 "0cfzfar706l0xdb0n11m18mayj5rrplvf4qry36vgxsiaxcba90r"))))
-    (properties `((upstream-name . "musica")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-qmap r-magrittr r-lubridate r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=musica")
-    (synopsis "Multiscale Climate Model Assessment")
-    (description
-     "This package provides functions allowing for (1) easy aggregation of
-multivariate time series into custom time scales, (2) comparison of statistical
-summaries between different data sets at multiple time scales (e.g. observed and
-bias-corrected data), (3) comparison of relations between variables and/or
-different data sets at multiple time scales (e.g. correlation of precipitation
-and temperature in control and scenario simulation) and (4) transformation of
-time series at custom time scales.")
-    (license license:gpl2)))
-
 (define-public r-musclesynergies
   (package
     (name "r-musclesynergies")
@@ -3168,20 +3139,20 @@ Chapman and Hall/CRC Press 2009.")
 (define-public r-multvardiv
   (package
     (name "r-multvardiv")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multvardiv" version))
        (sha256
-        (base32 "05lx348s9bqawrbmgg88zz11bddd7rzhh059p7gq3y1dspnxz6bw"))))
+        (base32 "0zrap2ma9lfz3s1ahfzpx9fz0qnc50ia9gmcpaipyrg7m7k8s3dc"))))
     (properties `((upstream-name . "multvardiv")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rgl r-mass r-data-table))
-    (home-page "https://forgemia.inra.fr/imhorphen/multvardiv")
+    (home-page "https://forge.inrae.fr/imhorphen/multvardiv")
     (synopsis "Multivariate Probability Distributions, Statistical Divergence")
     (description
      "Multivariate generalized Gaussian distribution, Multivariate Cauchy
@@ -7706,48 +7677,6 @@ VARMA models, to compute impulse response functions of a fitted VARMA model, and
 to calculate theoretical cross-covariance matrices of a given VARMA model.")
     (license (license:fsdg-compatible "Artistic License 2.0"))))
 
-(define-public r-mtreering
-  (package
-    (name "r-mtreering")
-    (version "1.4.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MtreeRing" version))
-       (sha256
-        (base32 "1i6ljz950n9fpgci9b5777dg3b88ihhz8jvyw621hg218imswhxz"))))
-    (properties `((upstream-name . "MtreeRing")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tiff
-                             r-spatstat-geom
-                             r-shinywidgets
-                             r-shinydashboard
-                             r-shiny
-                             r-png
-                             r-measuring
-                             r-magrittr
-                             r-magick
-                             r-jpeg
-                             r-imager
-                             r-dplyr
-                             r-dplr
-                             r-bmp))
-    (home-page "https://docs.ropensci.org/MtreeRing")
-    (synopsis
-     "Shiny Application for Automatic Measurements of Tree-Ring Widths on Digital Images")
-    (description
-     "Use morphological image processing and edge detection algorithms to
-automatically measure tree ring widths on digital images.  Users can also
-manually mark tree rings on species with complex anatomical structures.  The
-arcs of inner-rings and angles of successive inclined ring boundaries are used
-to correct ring-width series.  The package provides a Shiny-based application,
-allowing R beginners to easily analyze tree ring images and export ring-width
-series in standard file formats.")
-    (license license:gpl3)))
-
 (define-public r-mtrank
   (package
     (name "r-mtrank")
@@ -9994,19 +9923,20 @@ extensions.")
 (define-public r-msca
   (package
     (name "r-msca")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSCA" version))
        (sha256
-        (base32 "111sfv9l9dn7bzl74fpag0bq3lklhfck9ym7k9p1y7q6dzlzsds5"))))
+        (base32 "0aqdjnb07z8pny5r64c6rjx2ch7n7syr051h19npr7nxl3kc1xhn"))))
     (properties `((upstream-name . "MSCA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppparallel
+    (propagated-inputs (list r-rlang
+                             r-rcppparallel
                              r-rcpparmadillo
                              r-rcpp
                              r-matrix
@@ -10134,32 +10064,6 @@ Poisson).  Ida Jongenburger et al. (2010) <doi:10.1016/j.foodcont.2012.02.004>
 <doi:10.1017/S0515036100001975> \"Casualty Actuarial Society - The Negative
 Binomial and Poisson Distributions Compared\".")
     (license (license:fsdg-compatible "Unlimited"))))
-
-(define-public r-msaface
-  (package
-    (name "r-msaface")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "msaFACE" version))
-       (sha256
-        (base32 "1lh8crz507nlddm946lmn73xbnsh4cs0kg238ysnsvxs726c83fs"))))
-    (properties `((upstream-name . "msaFACE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=msaFACE")
-    (synopsis "Moving Subset Analysis FACE")
-    (description
-     "The new methodology \"moving subset analysis\" provides functions to investigate
-the effect of environmental conditions on the CO2 fertilization effect within
-longterm free air carbon enrichment (FACE) experiments.  In general, the
-functionality is applicable to derive the influence of a third variable (forcing
-experiment-support variable) on the relation between a dependent and an
-independent variable.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-msaenet
   (package
@@ -13536,49 +13440,6 @@ and noise injection.  Stability measures for the estimate of clustering
 solutions and statistical tests to assess their significance are provided.")
     (license license:gpl2+)))
 
-(define-public r-mosaicmodel
-  (package
-    (name "r-mosaicmodel")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mosaicModel" version))
-       (sha256
-        (base32 "1gx4rzh0h922gyb50vz6q5vqqp5ry5hf2mq95948q2gcady91k5w"))))
-    (properties `((upstream-name . "mosaicModel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyverse
-                             r-tidyr
-                             r-tibble
-                             r-testthat
-                             r-mosaiccore
-                             r-mass
-                             r-lazyeval
-                             r-knitr
-                             r-ggplot2
-                             r-ggformula
-                             r-dplyr
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mosaicModel")
-    (synopsis
-     "An Interface to Statistical Modeling Independent of Model Architecture")
-    (description
-     "This package provides functions for evaluating, displaying, and interpreting
-statistical models.  The goal is to abstract the operations on models from the
-particular architecture of the model.  For instance, calculating effect sizes
-rather than looking at coefficients.  The package includes interfaces to both
-regression and classification architectures, including @code{lm()},
-@code{glm()}, @code{rlm()} in MASS', random forests and recursive partitioning,
-k-nearest neighbors, linear and quadratic discriminant analysis, and models
-produced by the caret package's @code{train()}.  It's straightforward to add in
-other other model architectures.")
-    (license license:expat)))
-
 (define-public r-mosaiccalc
   (package
     (name "r-mosaiccalc")
@@ -15788,13 +15649,13 @@ Used by MOLGENIS packages.")
 (define-public r-molgenisarmadillo
   (package
     (name "r-molgenisarmadillo")
-    (version "2.9.0")
+    (version "2.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MolgenisArmadillo" version))
        (sha256
-        (base32 "1k9cm34cym2l3srcl3wa5gdhr36i5nd7aadfknar176047sfqh9c"))))
+        (base32 "0lw7sbv54m5lgk98x8yjzb8dw9f062hyy0521xcv82vrfv4ihq9c"))))
     (properties `((upstream-name . "MolgenisArmadillo")))
     (build-system r-build-system)
     (arguments
@@ -16243,13 +16104,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "0jkazlv6mfs91rbm721wcahxwmq9jc1lm3fqxcqjsisvjzs8g9p4"))))
+        (base32 "0lhrvy6fp7h87yfxq7i761ycjwqs4dh0pzfhdx38y4ib475ibh4c"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (arguments
@@ -18373,36 +18234,6 @@ problems on Multinomial Logistic Regression.  Runtime examples are provided in
 the package function as well as at
 <https://jarvisatharva.shinyapps.io/@code{MultinomPresentation>}.")
     (license license:gpl2)))
-
-(define-public r-mnlpred
-  (package
-    (name "r-mnlpred")
-    (version "0.0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MNLpred" version))
-       (sha256
-        (base32 "0wb1a3d5s9hrv3sw8g1vyr9w9gmig4sdj3l339cv5cjfca75swns"))))
-    (properties `((upstream-name . "MNLpred")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MNLpred")
-    (synopsis "Simulated Predicted Probabilities for Multinomial Logit Models")
-    (description
-     "This package provides functions to easily return simulated predicted
-probabilities and first differences for multinomial logit models.  It takes a
-specified scenario and a multinomial model to predict probabilities with a set
-of coefficients, drawn from a simulated sampling distribution.  The simulated
-predictions allow for meaningful plots with means and confidence intervals.  The
-methodological approach is based on the principles laid out by King, Tomz, and
-Wittenberg (2000) <doi:10.2307/2669316> and Hanmer and Ozan Kalkan (2016)
-<doi:10.1111/j.1540-5907.2012.00602.x>.")
-    (license license:gpl3)))
 
 (define-public r-mnlfa
   (package
@@ -25882,39 +25713,6 @@ force selection of the same variables across multiply imputed data.  miselect
 also provides cross validated variants of these methods.")
     (license license:gpl3)))
 
-(define-public r-miscset
-  (package
-    (name "r-miscset")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "miscset" version))
-       (sha256
-        (base32 "1gwi7jnqdf2fa8yk8gmcc7dcv72bbdl7yj3yccj3r5jjk41vdp91"))))
-    (properties `((upstream-name . "miscset")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xtable
-                             r-rcpp
-                             r-gridextra
-                             r-ggplot2
-                             r-devtools
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/setempler/miscset")
-    (synopsis "Miscellaneous Tools Set")
-    (description
-     "This package provides a collection of miscellaneous methods to simplify various
-tasks, including plotting, data.frame and matrix transformations, environment
-functions, regular expression methods, and string and logical operations, as
-well as numerical and statistical tools.  Most of the methods are simple but
-useful wrappers of common base R functions, which extend S3 generics or provide
-default values for important parameters.")
-    (license license:gpl3)))
-
 (define-public r-miscmetabar
   (package
     (name "r-miscmetabar")
@@ -29644,61 +29442,6 @@ CRAN'.  Current version is bare-minimum without any access-control or much
 security.")
     (license license:gpl3)))
 
-(define-public r-microcontax
-  (package
-    (name "r-microcontax")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "microcontax" version))
-       (sha256
-        (base32 "004g979hyg0asbah7hxr445fidil4ibw1b8pqpjdbgmpm1qgvw7y"))))
-    (properties `((upstream-name . "microcontax")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-microseq))
-    (home-page "https://cran.r-project.org/package=microcontax")
-    (synopsis "The ConTax Data Package")
-    (description
-     "The consensus taxonomy for prokaryotes is a set of data-sets for best possible
-taxonomic classification based on 16S @code{rRNA} sequence data.")
-    (license license:gpl2)))
-
-(define-public r-microclass
-  (package
-    (name "r-microclass")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "microclass" version))
-       (sha256
-        (base32 "0q6mn1hbi6nk29x2x5a1wcdqp06mjggbrpglk5i8pp4gkqlzhl8q"))))
-    (properties `((upstream-name . "microclass")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-rlang
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-microseq
-                             r-microcontax
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=microclass")
-    (synopsis "Methods for Taxonomic Classification of Prokaryotes")
-    (description
-     "This package provides functions for assigning 16S sequence data to a taxonomic
-level in the tree-of-life for prokaryotes.")
-    (license license:gpl2+)))
-
 (define-public r-microbiomesurv
   (package
     (name "r-microbiomesurv")
@@ -31525,37 +31268,6 @@ provided in package MG@code{DrivE}', so we suggest installing that package
 initially.")
     (license license:gpl3)))
 
-(define-public r-mgdrive
-  (package
-    (name "r-mgdrive")
-    (version "1.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MGDrivE" version))
-       (sha256
-        (base32 "0ynn7iwxi5yfpjyrvfr6ym4ns7h8qfy8c10clab7i72pv90jqqlr"))))
-    (properties `((upstream-name . "MGDrivE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack r-rcpp r-r6))
-    (native-inputs (list r-knitr))
-    (home-page "https://marshalllab.github.io/MGDrivE/")
-    (synopsis "Mosquito Gene Drive Explorer")
-    (description
-     "This package provides a model designed to be a reliable testbed where various
-gene drive interventions for mosquito-borne diseases control.  It is being
-developed to accommodate the use of various mosquito-specific gene drive systems
-within a population dynamics framework that allows migration of individuals
-between patches in landscape.  Previous work developing the population dynamics
-can be found in Deredec et al. (2001) <doi:10.1073/pnas.1110717108> and Hancock
-& Godfray (2007) <doi:10.1186/1475-2875-6-98>, and extensions to accommodate
-CRISPR homing dynamics in Marshall et al. (2017)
-<doi:10.1038/s41598-017-02744-7>.")
-    (license license:gpl3)))
-
 (define-public r-mgcviz
   (package
     (name "r-mgcviz")
@@ -33173,34 +32885,6 @@ between measurement methods.  These cover Bland-Altman plots, Deming regression,
 Lin's Total deviation index, and difference-on-average regression.  See
 Carstensen B. (2010) \"Comparing Clinical Measurement Methods: A Practical Guide
 (Statistics in Practice)\" <doi:10.1002/9780470683019> for more information.")
-    (license license:gpl2+)))
-
-(define-public r-metgen
-  (package
-    (name "r-metgen")
-    (version "0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MetGen" version))
-       (sha256
-        (base32 "00yzaicrpwfnxi5mdzwx1ai721vczkkf2yl50q9wwpxhmfx0xbbh"))))
-    (properties `((upstream-name . "MetGen")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-glmnet r-chron))
-    (home-page "www.r-project.org")
-    (synopsis "Stochastic Weather Generator")
-    (description
-     "An adaptation of the multi-variable stochastic weather generator proposed in
-Rglimclim to perform gap-filling and temporal extension at sub-daily resolution.
- Simulation is performed based on large scale variables and climatic observation
-data that could be generated from different gauged stations having geographical
-proximity.  SWG relies on reanalyses.  Multi-variable dependence is taking into
-account by using the decomposition of the product rule (in statistics) into
-conditional probabilities.  See <https://hal.archives-ouvertes.fr/hal-02554676>.")
     (license license:gpl2+)))
 
 (define-public r-metevalue
@@ -37072,13 +36756,13 @@ unequal randomization ratios.")
 (define-public r-merderiv
   (package
     (name "r-merderiv")
-    (version "0.2-4")
+    (version "0.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "merDeriv" version))
        (sha256
-        (base32 "1piswi4l7ri3251shmanhygipmsw8zg701jqd0am1s76kj16l9cc"))))
+        (base32 "1zc4pslim520w1mqn32ijksf5qn9qg66gg1zmrf1iicgbsnhq6ff"))))
     (properties `((upstream-name . "merDeriv")))
     (build-system r-build-system)
     (arguments
@@ -38234,36 +37918,6 @@ well as guidance for the publicly available data this package targets, can be
 found on CMS's website covering publicly available data.  See
 <https://www.cms.gov/Research-Statistics-Data-and-Systems/Research-Statistics-Data-and-Systems.html>.")
     (license license:expat)))
-
-(define-public r-medicalrisk
-  (package
-    (name "r-medicalrisk")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "medicalrisk" version))
-       (sha256
-        (base32 "12p3mjy6lphjajxz7is04cahp0598ip9ixfkdimvw1k8n5hs9mj0"))))
-    (properties `((upstream-name . "medicalrisk")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-plyr r-hash))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/patrickmdnet/medicalrisk")
-    (synopsis "Medical Risk and Comorbidity Tools for ICD-9-CM Data")
-    (description
-     "Generates risk estimates and comorbidity flags from ICD-9-CM codes available in
-administrative medical datasets.  The package supports the Charlson Comorbidity
-Index, the Elixhauser Comorbidity classification, the Revised Cardiac Risk
-Index, and the Risk Stratification Index.  Methods are table-based, fast, and
-use the plyr package, so parallelization is possible for large jobs.  Also
-includes a sample of real ICD-9 data for 100 patients from a publicly available
-dataset.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-medicaldata
   (package
@@ -39509,38 +39163,6 @@ iteration, policy iteration, linear programming algorithms with some variants
 and also proposes some functions related to Reinforcement Learning.")
     (license license:bsd-3)))
 
-(define-public r-mdplot
-  (package
-    (name "r-mdplot")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MDplot" version))
-       (sha256
-        (base32 "1xijh18hrkb807nfkdr7g642aspn5psc8nw29q387jl5hly2w8s9"))))
-    (properties `((upstream-name . "MDplot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-rcolorbrewer r-mass r-gtools r-gplots))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/MDplot/MDplot")
-    (synopsis "Visualising Molecular Dynamics Analyses")
-    (description
-     "This package provides automatization for plot generation succeeding common
-molecular dynamics analyses.  This includes straightforward plots, such as RMSD
-(Root-Mean-Square-Deviation) and RMSF (Root-Mean-Square-Fluctuation) but also
-more sophisticated ones such as dihedral angle maps, hydrogen bonds, cluster bar
-plots and DSSP (Definition of Secondary Structure of Proteins) analysis.
-Currently able to load GROMOS, GROMACS and AMBER formats, respectively.")
-    (license license:gpl3)))
-
 (define-public r-mdpiexplorer
   (package
     (name "r-mdpiexplorer")
@@ -40138,38 +39760,6 @@ details please see Liu A., Mukhopadhyay R., and Markatou M.
      "Use the open source MDB Tools utilities <https://github.com/mdbtools/mdbtools/>.
  Primarily used for converting proprietary Microsoft Access files to simple text
 files and then reading those as data frames.")
-    (license license:gpl3)))
-
-(define-public r-mdbed
-  (package
-    (name "r-mdbed")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MDBED" version))
-       (sha256
-        (base32 "1r3sizb2mqd4pqjy25krwmsjfkr6cl7lkd8db5jn3hgxx3qh6sgc"))))
-    (properties `((upstream-name . "MDBED")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack
-                             r-psych
-                             r-orthopolynom
-                             r-lattice
-                             r-ggplot2
-                             r-foreach
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=MDBED")
-    (synopsis "Moran-Downton Bivariate Exponential Distribution")
-    (description
-     "This package provides 3D plots of the Moran-Downton bivariate exponential
-distribution (MDBED), generates bivariate random values, and also provides
-values of the joint and conditional PDFs and CDFs.  Nagao M, Kadoya M (1971)
-<http://hdl.handle.net/2433/124795>.  Balakrishna N, Lai CD (2009)
-<doi:10.1007/b101765>.")
     (license license:gpl3)))
 
 (define-public r-mdatools
@@ -44304,33 +43894,6 @@ Thornton (2017), \"Robustness of Reconstructed Ancestral Protein Functions to
 Statistical Uncertainty\" <doi:10.1093/molbev/msw223>.")
     (license license:gpl3+)))
 
-(define-public r-mave
-  (package
-    (name "r-mave")
-    (version "1.3.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MAVE" version))
-       (sha256
-        (base32 "01n204bxabbm8pcpayy2s0jvhg73r5cv0026lb3vbk0m40z02kcz"))))
-    (properties `((upstream-name . "MAVE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mda))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MAVE")
-    (synopsis "Methods for Dimension Reduction")
-    (description
-     "This package provides functions for dimension reduction, using MAVE (Minimum
-Average Variance Estimation), OPG (Outer Product of Gradient) and KSIR (sliced
-inverse regression of kernel version).  Methods for selecting the best dimension
-are also included.  Xia (2002) <doi:10.1111/1467-9868.03411>; Xia (2007)
-<doi:10.1214/009053607000000352>; Wang (2008) <doi:10.1198/016214508000000418>.")
-    (license license:gpl2+)))
-
 (define-public r-mauricer
   (package
     (name "r-mauricer")
@@ -44801,30 +44364,6 @@ or atypical points.  Finite mixtures of matrix-variate t and matrix-variate
 normal distributions are also implemented by using expectation-maximization
 algorithms.")
     (license license:gpl2+)))
-
-(define-public r-matrixlda
-  (package
-    (name "r-matrixlda")
-    (version "0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MatrixLDA" version))
-       (sha256
-        (base32 "0fixq35gp0fzmin75sfld2ln0zvnjgzrhk3b5yi7wdqzp99200yy"))))
-    (properties `((upstream-name . "MatrixLDA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-plyr r-glasso))
-    (home-page "ajmolstad@github.io")
-    (synopsis "Penalized Matrix-Normal Linear Discriminant Analysis")
-    (description
-     "Fits the penalized matrix-normal model to be used for linear discriminant
-analysis with matrix-valued predictors.  For a description of the method, see
-Molstad and Rothman (2018) <doi:10.1080/10618600.2018.1476249>.")
-    (license license:gpl2)))
 
 (define-public r-matrixlaplacian
   (package
@@ -45378,13 +44917,13 @@ and use of the API is subject to their terms and conditions.")
 (define-public r-mathml
   (package
     (name "r-mathml")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mathml" version))
        (sha256
-        (base32 "1rjabyzsf060mbakz8zffmchv366y9fgyjg84jdf8662lyzqryvr"))))
+        (base32 "12w8hbvz6sb6mk0vgix80r9ifvzmh1cvcvwdqkr4jprfiw4zxc65"))))
     (properties `((upstream-name . "mathml")))
     (build-system r-build-system)
     (arguments
@@ -49668,46 +49207,6 @@ Annotation currently supported is minor allele frequency and gene function high
 impact variants.")
     (license license:gpl2+)))
 
-(define-public r-manhattanly
-  (package
-    (name "r-manhattanly")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "manhattanly" version))
-       (sha256
-        (base32 "007qvfzq8fyvnirywfpl6n1gqxxizz32z4xbgnnx7riyb7nxl1qh"))))
-    (properties `((upstream-name . "manhattanly")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plotly r-magrittr r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sahirbhatnagar/manhattanly/")
-    (synopsis "Interactive Q-Q and Manhattan Plots Using 'plotly.js'")
-    (description
-     "Create interactive manhattan, Q-Q and volcano plots that are usable from the R
-console, in Dash apps, in the RStudio viewer pane, in R Markdown documents, and
-in Shiny apps.  Hover the mouse pointer over a point to show details or drag a
-rectangle to zoom.  A manhattan plot is a popular graphical method for
-visualizing results from high-dimensional data analysis such as a (epi)genome
-wide association study (GWAS or EWAS), in which p-values, Z-scores, test
-statistics are plotted on a scatter plot against their genomic position.
-Manhattan plots are used for visualizing potential regions of interest in the
-genome that are associated with a phenotype.  Interactive manhattan plots allow
-the inspection of specific value (e.g. rs number or gene name) by hovering the
-mouse over a cell, as well as zooming into a region of the genome (e.g. a
-chromosome) by dragging a rectangle around the relevant area.  This work is
-based on the qqman package and the plotly.js engine.  It produces similar
-manhattan and Q-Q plots as the manhattan and qq functions in the qqman package,
-with the advantage of including extra annotation information and interactive
-web-based visualizations directly from R. Once uploaded to a plotly account,
-plotly graphs (and the data behind them) can be viewed and modified in a web
-browser.")
-    (license license:expat)))
-
 (define-public r-mangrove
   (package
     (name "r-mangrove")
@@ -52623,42 +52122,4 @@ to evaluate the best cluster number from the original data.")
 tools facilitating its use in the R ecosystem.  For details see Kahle et.  al.
 (2020) <doi:10.18637/jss.v093.i09>.")
     (license license:gpl2)))
-
-(define-public r-m2b
-  (package
-    (name "r-m2b")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "m2b" version))
-       (sha256
-        (base32 "0agzw67mmwrw1f61yn24z5w1pgjssdapg3li0a53i3ylnij45mzr"))))
-    (properties `((upstream-name . "m2b")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-randomforest
-                             r-ggplot2
-                             r-geosphere
-                             r-e1071
-                             r-catools
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ldbk/m2b")
-    (synopsis "Movement to Behaviour Inference using Random Forest")
-    (description
-     "Prediction of behaviour from movement characteristics using observation and
-random forest for the analyses of movement data in ecology.  From movement
-information (speed, bearing...) the model predicts the observed behaviour
-(movement, foraging...) using random forest.  The model can then extrapolate
-behavioural information to movement data without direct observation of
-behaviours.  The specificity of this method relies on the derivation of multiple
-predictor variables from the movement data over a range of temporal windows.
-This procedure allows to capture as much information as possible on the changes
-and variations of movement and ensures the use of the random forest algorithm to
-its best capacity.  The method is very generic, applicable to any set of data
-providing movement data together with observation of behaviour.")
-    (license license:gpl3)))
 

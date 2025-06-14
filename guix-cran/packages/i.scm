@@ -2478,32 +2478,6 @@ The most recent version of @code{IsoCor} can be tested online at
 order restrictions.")
     (license license:gpl3+)))
 
-(define-public r-isocheck
-  (package
-    (name "r-isocheck")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IsoCheck" version))
-       (sha256
-        (base32 "06g0srp14yiha95mbmifaqf5yr5ppjnc20nyr237ah3l776mhsif"))))
-    (properties `((upstream-name . "IsoCheck")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plyr r-gtools r-dplyr))
-    (home-page "https://cran.r-project.org/package=IsoCheck")
-    (synopsis
-     "Isomorphism Check for Multi-Stage Factorial Designs with Randomization Restrictions")
-    (description
-     "This package contains functions to check the isomorphism of multi-stage
-factorial designs with randomisation restrictions based on balanced spreads and
-balanced covering stars of PG(n-1,2) as described in Spencer, Ranjan and
-Mendivil (2019) <doi:10.1007/s42519-019-0064-5>.")
-    (license license:gpl2)))
-
 (define-public r-isocat
   (package
     (name "r-isocat")
@@ -3206,37 +3180,6 @@ Analysis for the Life Sciences, Second edition\" by EkstrÃ¸m and SÃ¸rensen
 missing value imputations in the broad sense as introduced in Michel et al.
 (2021) <@code{arXiv:2106.03742>}.")
     (license license:gpl3)))
-
-(define-public r-iscocrosswalks
-  (package
-    (name "r-iscocrosswalks")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iscoCrosswalks" version))
-       (sha256
-        (base32 "00pzz0fy0k7zvi5pf389w4g5z96rbc4gzjvhghcmbq71z319wwcn"))))
-    (properties `((upstream-name . "iscoCrosswalks")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack r-labourr r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/eworx-org/iscoCrosswalks")
-    (synopsis "Crosswalks Between Classifications of Occupations")
-    (description
-     "Allows the user to perform approximate matching between the occupational
-classifications using concordances provided by the Institute for Structural
-Research and Faculty of Economics, University of Warsaw,
-<doi:10.1111/ecot.12145>.  The crosswalks offer a complete step-by-step mapping
-of Standard Occupational Classification (2010) data to the International
-Standard Classification of Occupations (2008).  We propose a mapping method
-based on the aforementioned research that converts measurements to the smallest
-possible unit of the target taxonomy, and then performs an aggregation/estimate
-to the requested degree Occupational Hierarchical level.")
-    (license license:expat)))
 
 (define-public r-isco08conversions
   (package
@@ -4371,34 +4314,6 @@ ties.  It also includes Yilmaz et al. (2008) <doi:10.1145/1390334.1390435>
 @code{tauAP} correlation coefficient, and versions @code{tauAP_a} and
 @code{tauAP_b} developed by Urbano and Marrero (2017)
 <doi:10.1145/3121050.3121106> to cope with ties.")
-    (license license:expat)))
-
-(define-public r-irccheck
-  (package
-    (name "r-irccheck")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IRCcheck" version))
-       (sha256
-        (base32 "035sx36qf5hdnc51h8251qwxfm30r8h2v2qs2x161ip4cqghw019"))))
-    (properties `((upstream-name . "IRCcheck")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack r-mass r-glmnet r-ggmncv r-corpcor))
-    (home-page "https://cran.r-project.org/package=IRCcheck")
-    (synopsis "Irrepresentable Condition Check")
-    (description
-     "Check the irrepresentable condition (IRC) in both L1-regularized regression
-<doi:10.1109/TIT.2006.883611> and Gaussian graphical models.  The IRC requires
-that the important and unimportant variables are not correlated, at least not
-all that much, and it is necessary for consistent model selection.  Exploring
-the IRC as a function of the number of variables, assumed sparsity, and effect
-size can provide valuable insights into the model selection properties of
-L1-regularization.")
     (license license:expat)))
 
 (define-public r-irboost
@@ -6093,39 +6008,6 @@ flat-top kernels.")
     (synopsis "Methods for Industrial/Organizational Psychology")
     (description "Collection of functions for IO Psychologists.")
     (license license:bsd-3)))
-
-(define-public r-ionr
-  (package
-    (name "r-ionr")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ionr" version))
-       (sha256
-        (base32 "18rv5n5gihb6pz36s45yj17sdjsbj4485k4lnggdjj1gbbjkz2ni"))))
-    (properties `((upstream-name . "ionr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-psych r-gplots))
-    (home-page "www.ut.ee/uku.vainik/ion/")
-    (synopsis "Test for Indifference of Indicator")
-    (description
-     "This package provides item exclusion procedure, which is a formal method to test
-Indifference Of @code{iNdicator} (ION).  When a latent personality trait-outcome
-association is assumed, then the association strength should not depend on which
-subset of indicators (i.e.  items) has been chosen to reflect the trait.
-Personality traits are often measured (reflected) by a sum-score of a certain
-set of indicators.  Item exclusion procedure randomly excludes items from a
-sum-score and tests, whether the sum-score - outcome correlation changes.  ION
-has been achieved, when any item can be excluded from the sum-score without the
-sum-score - outcome correlation substantially changing .  For more details, see
-Vainik, Mottus et.  al, (2015) \"Are Trait-Outcome Associations Caused by Scales
-or Particular Items? Example Analysis of Personality Facets and BMI\",European
-Journal of Personality DOI: <10.1002/per.2009> .")
-    (license license:gpl2+)))
 
 (define-public r-ionet
   (package
@@ -8114,30 +7996,6 @@ of a clinical trial.  Based on these simulations, the timing of interim analyses
 can be assessed.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-interfr
-  (package
-    (name "r-interfr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "interfr" version))
-       (sha256
-        (base32 "1wn7i8dsll1qq3v39hgpbqnkjc8f4wlffy73453rw9lpq61y2fgj"))))
-    (properties `((upstream-name . "interfr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plotrix r-colorspec r-circstats))
-    (home-page "https://cran.r-project.org/package=interfr")
-    (synopsis "Interference Color Charts for Polarized Light Microscopy")
-    (description
-     "Computes interference color tables and plots customized Michel-Levy or
-Raith-Sorensen charts.  Automatic interpretation of polarized-light microscopy
-images is still under development and will come soon.")
-    (license license:gpl2+)))
-
 (define-public r-interflex
   (package
     (name "r-interflex")
@@ -9133,35 +8991,6 @@ easypackages', pacman', pak', @code{anyLib}', and/or librarian'.")
      "Collect marketing data from Instagram Ads using the Windsor.ai API
 <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
-
-(define-public r-inspire
-  (package
-    (name "r-inspire")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "INSPIRE" version))
-       (sha256
-        (base32 "0938l50yxnb5q628mp874ayx9ybvcjddis20y1hzm5cmlsg0hqhg"))))
-    (properties `((upstream-name . "INSPIRE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-missmda))
-    (home-page "inspire.cs.washington.edu")
-    (synopsis
-     "Inferring Shared Modules from Multiple Gene Expression Datasets with Partially Overlapping Gene Sets")
-    (description
-     "This package provides a method to infer modules of co-expressed genes and the
-dependencies among the modules from multiple expression datasets that may
-contain different sets of genes.  Please refer to: Extracting a low-dimensional
-description of multiple gene expression datasets reveals a potential driver for
-tumor-associated stroma in ovarian cancer, Safiye Celik, Benjamin A. Logsdon,
-Stephanie Battle, Charles W. Drescher, Mara Rendi, R. David Hawkins and Su-In
-Lee (2016) <DOI:10.1186/s13073-016-0319-7>.")
-    (license license:gpl2+)))
 
 (define-public r-inspectumours
   (package
@@ -13299,47 +13128,6 @@ string; truncation of molecular HLA data to a specific number of fields; and
 reading HLA genotypes in HML files and extracting the GL string.")
     (license license:gpl3+)))
 
-(define-public r-immunesim
-  (package
-    (name "r-immunesim")
-    (version "0.8.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "immuneSIM" version))
-       (sha256
-        (base32 "0brj12xnkzmn3n91vb39fq3q68wmzmwx9l38dl38yypp0l8pknjl"))))
-    (properties `((upstream-name . "immuneSIM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-stringdist
-                             r-reshape2
-                             r-repmis
-                             r-rcolorbrewer
-                             r-powerlaw
-                             r-plyr
-                             r-metrics
-                             r-igraph
-                             r-ggthemes
-                             r-ggplot2
-                             r-data-table
-                             r-biostrings))
-    (home-page "https://immuneSIM.readthedocs.io")
-    (synopsis "Tunable Simulation of B- And T-Cell Receptor Repertoires")
-    (description
-     "Simulate full B-cell and T-cell receptor repertoires using an in silico
-recombination process that includes a wide variety of tunable parameters to
-introduce noise and biases.  Additional post-simulation modification functions
-allow the user to implant motifs or codon biases as well as remodeling sequence
-similarity architecture.  The output repertoires contain records of all relevant
-repertoire dimensions and can be analyzed using provided repertoire analysis
-functions.  Preprint is available at @code{bioRxiv} (Weber et al., 2019
-<doi:10.1101/759795>).")
-    (license license:gpl3)))
-
 (define-public r-immundata
   (package
     (name "r-immundata")
@@ -17367,48 +17155,6 @@ This is a backport of Qt-based idendro (<https://github.com/tsieger/idendro>) to
 base R graphics and Tcl/Tk GUI.")
     (license license:gpl2)))
 
-(define-public r-idem
-  (package
-    (name "r-idem")
-    (version "5.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "idem" version))
-       (sha256
-        (base32 "0vgxrw7rdhnxrrsg46x6nd2zx938j1z41fr4gp9pjmh2q6rnnaxl"))))
-    (properties `((upstream-name . "idem")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-stanheaders
-                             r-sqldf
-                             r-rstantools
-                             r-rstan
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-mice
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/olssol/idem/")
-    (synopsis
-     "Inference in Randomized Controlled Trials with Death and Missingness")
-    (description
-     "In randomized studies involving severely ill patients, functional outcomes are
-often unobserved due to missed clinic visits, premature withdrawal or death.  It
-is well known that if these unobserved functional outcomes are not handled
-properly, biased treatment comparisons can be produced.  In this package, we
-implement a procedure for comparing treatments that is based on the composite
-endpoint of both the functional outcome and survival.  The procedure was
-proposed in Wang et al. (2016) <DOI:10.1111/biom.12594> and Wang et al. (2020)
-<DOI:10.18637/jss.v093.i12>.  It considers missing data imputation with
-different sensitivity analysis strategies to handle the unobserved functional
-outcomes not due to death.")
-    (license license:gpl3+)))
-
 (define-public r-idefix
   (package
     (name "r-idefix")
@@ -19881,38 +19627,6 @@ parameters.")
      "Running Focused Identification of the Germplasm Strategy (FIGS) to make best
 subsets from Genebank Collection.")
     (license license:expat)))
-
-(define-public r-icaod
-  (package
-    (name "r-icaod")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ICAOD" version))
-       (sha256
-        (base32 "07fxh60vsndlvjijjsh1a9l2qkp78sb9nkg5x5mslh209lpjjhw1"))))
-    (properties `((upstream-name . "ICAOD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sn
-                             r-rcppeigen
-                             r-rcpp
-                             r-nloptr
-                             r-mvquad
-                             r-mnormt
-                             r-cubature))
-    (home-page "https://cran.r-project.org/package=ICAOD")
-    (synopsis
-     "Optimal Designs for Nonlinear Statistical Models by Imperialist Competitive Algorithm (ICA)")
-    (description
-     "Finds optimal designs for nonlinear models using a metaheuristic algorithm
-called Imperialist Competitive Algorithm (ICA).  See, for details, Masoudi et
-al. (2017) <doi:10.1016/j.csda.2016.06.014> and Masoudi et al. (2019)
-<doi:10.1080/10618600.2019.1601097>.")
-    (license license:gpl2+)))
 
 (define-public r-icams
   (package

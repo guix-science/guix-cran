@@ -9157,56 +9157,6 @@ chart in a ggplot2 object.  Some flexibility is provided, though often the
 object created will need to be modified through a theme.")
     (license license:expat)))
 
-(define-public r-waterfall
-  (package
-    (name "r-waterfall")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "waterfall" version))
-       (sha256
-        (base32 "0jy6l9mx0dixwnkychdl18sf4xh73pm0qd1jyxp9rlnv1vcragjp"))))
-    (properties `((upstream-name . "waterfall")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lattice))
-    (home-page "https://jameshoward.us/software/waterfall/")
-    (synopsis "Waterfall Charts")
-    (description
-     "This package provides support for creating waterfall charts in R using both
-traditional base and lattice graphics.")
-    (license license:bsd-2)))
-
-(define-public r-waterdata
-  (package
-    (name "r-waterdata")
-    (version "1.0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "waterData" version))
-       (sha256
-        (base32 "0884agh876wf3qlbc75fbaa47x2iwvncz7r2l25qw34n8lxq1yr6"))))
-    (properties `((upstream-name . "waterData")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2 r-lubridate r-latticeextra r-lattice
-                             r-dataretrieval))
-    (home-page "https://pubs.usgs.gov/of/2012/1168/")
-    (synopsis
-     "Retrieval, Analysis, and Anomaly Calculation of Daily Hydrologic Time Series Data")
-    (description
-     "Imports U.S. Geological Survey (USGS) daily hydrologic data from USGS web
-services (see <https://waterservices.usgs.gov/> for more information), plots the
-data, addresses some common data problems, and calculates and plots anomalies.")
-    (license (list (license:fsdg-compatible "Unlimited")
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-watcher
   (package
     (name "r-watcher")

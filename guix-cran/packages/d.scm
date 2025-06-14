@@ -7097,29 +7097,6 @@ Process Prior (DPP) to describe stochastically our prior assumptions about the
 dimensionality of the data.")
     (license license:expat)))
 
-(define-public r-dpmr
-  (package
-    (name "r-dpmr")
-    (version "0.1.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dpmr" version))
-       (sha256
-        (base32 "1cnjywkvjb4fhbf4shjmsrq47f1fg2x21hcm1q5512bm0wg9i6jd"))))
-    (properties `((upstream-name . "dpmr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rio r-magrittr r-jsonlite r-httr r-digest))
-    (home-page "http://cran.r-project.org/package=dpmr")
-    (synopsis "Data Package Manager for R")
-    (description
-     "Create, install, and summarise data packages that follow the Open Knowledge
-Foundation's Data Package Protocol.")
-    (license license:gpl3)))
-
 (define-public r-dpm
   (package
     (name "r-dpm")
@@ -10455,31 +10432,6 @@ Pokarowski, Wojciech Rejchel, Agnieszka SoÅtys, MichaÅ Frej and Jan
 Mielniczuk, 2022.  Improving Lasso for model selection and prediction.
 Scandinavian Journal of Statistics, 49(2): 831â863. <doi:10.1111/sjos.12546>.")
     (license license:gpl2)))
-
-(define-public r-dmri-tracking
-  (package
-    (name "r-dmri-tracking")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dmri.tracking" version))
-       (sha256
-        (base32 "0aij0n5p6cp75r5b3bfpmhnmz2nixbb4kwacixg66g6kilwj3sis"))))
-    (properties `((upstream-name . "dmri.tracking")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rgl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/vic-dragon/dmri.tracking")
-    (synopsis "DiST - Diffusion Direction Smoothing and Tracking")
-    (description
-     "It provides functions to apply the deterministic tracking algorithm -
-@code{DiST} (Wong et al 2016) <doi:10.1214/15-AOAS880> and to plot tractography
-results.")
-    (license license:expat)))
 
 (define-public r-dmq
   (package
@@ -17671,13 +17623,13 @@ processing for reading and saving DICOM images.")
 (define-public r-diceview
   (package
     (name "r-diceview")
-    (version "3.1-0")
+    (version "3.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiceView" version))
        (sha256
-        (base32 "1zrb3n3jd072am52whfm2ahrgvjwhgaadj2alxn39r1c5i3a4my1"))))
+        (base32 "06n28iin6yh3hn037sgy3f2xggxbfcsir8sj4ahdqwgcjjbgxsid"))))
     (properties `((upstream-name . "DiceView")))
     (build-system r-build-system)
     (arguments
@@ -19342,37 +19294,6 @@ package was created out of a need to share examples in cases where data are
 private and where a full data frame is not needed for testing or coordinating.")
     (license license:expat)))
 
-(define-public r-dfmeta
-  (package
-    (name "r-dfmeta")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dfmeta" version))
-       (sha256
-        (base32 "0ca48adfhaxac33jmxbynlyg3ak9l5mmjhlr69n4hnz6325gn9vb"))))
-    (properties `((upstream-name . "dfmeta")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plyr r-lme4 r-ggplot2 r-data-table))
-    (home-page "http://github.com/artemis-toumazi/dfmeta")
-    (synopsis "Meta-Analysis of Phase I Dose-Finding Early Clinical Trials")
-    (description
-     "Meta-analysis approaches for Phase I dose finding early phases clinical trials
-in order to better suit requirements in terms of maximum tolerated dose (MTD)
-and maximal dose regimen (MDR).  This package has currently three different
-approaches: (a) an approach proposed by Zohar et al, 2011,
-<doi:10.1002/sim.4121> (denoted as ZKO), (b) the Variance Weighted pooling
-analysis (called @code{VarWT}) and (c) the Random Effects Model Based (REMB)
-algorithm, where user can input his/her own model based approach or use the
-existing random effect logistic regression model (named as glimem) through the
-dfmeta package.")
-    (license (list license:gpl3+
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-dfit
   (package
     (name "r-dfit")
@@ -20175,30 +20096,6 @@ unpublished work.")
 and perform standard tree-ring analyses.  The interactive detrending allows the
 user to check how well the detrending curve fits each time-series and change it
 when needed.")
-    (license license:gpl2+)))
-
-(define-public r-detr
-  (package
-    (name "r-detr")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DetR" version))
-       (sha256
-        (base32 "1dd4nzkgj5pl9397aa0z3q5fpl27xbdf7q0pqbs821dyynylxzn9"))))
-    (properties `((upstream-name . "DetR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-robustbase r-rcppeigen r-rcpp r-pcapp r-mass))
-    (home-page "https://cran.r-project.org/package=DetR")
-    (synopsis
-     "Suite of Deterministic and Robust Algorithms for Linear Regression")
-    (description
-     "@code{DetLTS}, @code{DetMM} (and @code{DetS}) Algorithms for Deterministic,
-Robust Linear Regression.")
     (license license:gpl2+)))
 
 (define-public r-detpack
@@ -22501,30 +22398,6 @@ implement these analyses for the interpretation of de novo variation in human
 disease.")
     (license license:gpl3)))
 
-(define-public r-denoiser
-  (package
-    (name "r-denoiser")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "denoiseR" version))
-       (sha256
-        (base32 "1q5kxiwfkrf2k0gpidzhl4hyzyjcm33rwlw4dan9nkx1181naw9l"))))
-    (properties `((upstream-name . "denoiseR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix r-irlba r-factominer))
-    (home-page "https://cran.r-project.org/package=denoiseR")
-    (synopsis "Regularized Low Rank Matrix Estimation")
-    (description
-     "Estimate a low rank matrix from noisy data using singular values thresholding
-and shrinking functions.  Impute missing values with matrix completion.  The
-method is described in <@code{arXiv:1602.01206>}.")
-    (license license:gpl2+)))
-
 (define-public r-denoiseq
   (package
     (name "r-denoiseq")
@@ -23083,13 +22956,13 @@ fertility rates, net migration numbers; and stochastic population forecasting.")
 (define-public r-demographictable
   (package
     (name "r-demographictable")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DemographicTable" version))
        (sha256
-        (base32 "0s7dvsqywhqc2ww5qwkcvsnh1kn4fnxidmrbsqjlgia238f1cj3f"))))
+        (base32 "17asfdpqw81dcqk44vsr4xzfan9a54z3pwib091xwp949qgzik0d"))))
     (properties `((upstream-name . "DemographicTable")))
     (build-system r-build-system)
     (arguments
@@ -24572,36 +24445,6 @@ follow a mixture of Gaussian distributions.  To avoid overparameterized
 solutions, dimension reduction is applied at each layer by way of factor models.")
     (license license:gpl3+)))
 
-(define-public r-deepdive
-  (package
-    (name "r-deepdive")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "deepdive" version))
-       (sha256
-        (base32 "0q4jjq11bd52bx0vqjxsh0fz1b72pfy4gpj5p19z7p4czf4a46c6"))))
-    (properties `((upstream-name . "deepdive")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-treeclust
-                             r-stringr
-                             r-rpart
-                             r-plyr
-                             r-fastdummies
-                             r-data-table))
-    (home-page "https://rajeshb24.github.io/deepdive/")
-    (synopsis "Deep Learning for General Purpose")
-    (description
-     "Aims to provide simple intuitive functions to create quick prototypes of
-artificial neural network or deep learning models.  In addition novel ensemble
-models like deeptree and deepforest has been included which combines decision
-trees and neural network.")
-    (license license:expat)))
-
 (define-public r-deepdep
   (package
     (name "r-deepdep")
@@ -25786,13 +25629,13 @@ the vast majority of the time (>95%).")
 (define-public r-dear
   (package
     (name "r-dear")
-    (version "1.4.1")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deaR" version))
        (sha256
-        (base32 "0rc12pr4br8kca90xcy5f8w1fyjzn6s7kyc3q3m3caxq8dlidn5v"))))
+        (base32 "0adp4qgq66lg78nlsbdpznp80c92wksdwrjyv2b94ssmjgxrf69p"))))
     (properties `((upstream-name . "deaR")))
     (build-system r-build-system)
     (arguments
@@ -25801,6 +25644,7 @@ the vast majority of the time (>95%).")
     (propagated-inputs (list r-writexl
                              r-tidyr
                              r-plotly
+                             r-optisolve
                              r-lpsolve
                              r-igraph
                              r-gridextra
@@ -27219,6 +27063,38 @@ relatedness between polyclonal infections from biallelic and multiallelic data.
 The package includes functions that format and preprocess the data, implement
 the method, and visualize the results.  Gerlovina et al. (2022)
 <doi:10.1093/genetics/iyac126>.")
+    (license license:expat)))
+
+(define-public r-dci
+  (package
+    (name "r-dci")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dci" version))
+       (sha256
+        (base32 "1h45z7i2sljg3rh8v68348ylbbkycwl0c866ng2iw8ajymm3abhb"))))
+    (properties `((upstream-name . "dci")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units
+                             r-tidyselect
+                             r-tidygraph
+                             r-sfnetworks
+                             r-sf
+                             r-rlang
+                             r-magrittr
+                             r-igraph
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/aarkilanian/dci")
+    (synopsis "Calculate the Dendritic Connectivity Index in River Networks")
+    (description
+     "Calculate and analyze ecological connectivity across the watercourse of river
+networks using the Dendritic Connectivity Index.")
     (license license:expat)))
 
 (define-public r-dchipio
@@ -29396,33 +29272,6 @@ available at <https://www.lseg.com/en/data-analytics>.  Please report issues at
 <https://github.com/@code{CharlesCara/DatastreamDSWS2R/issues>}.")
     (license license:gpl3)))
 
-(define-public r-datastepr
-  (package
-    (name "r-datastepr")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "datastepr" version))
-       (sha256
-        (base32 "039yggdj8jdici7hwmkjwgix45lvwjl7rw5h2rfzsm9xaq6vw1z2"))))
-    (properties `((upstream-name . "datastepr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble r-r6 r-magrittr r-lazyeval r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/bramtayl/datastepr")
-    (synopsis "An Implementation of a SAS-Style Data Step")
-    (description
-     "Based on a SAS data step.  This allows for row-wise dynamic building of data,
-iteratively importing slices of existing dataframes, conducting analyses, and
-exporting to a results frame.  This is particularly useful for differential or
-time-series analyses, which are often not well suited to vector- based
-operations.")
-    (license license:cc0)))
-
 (define-public r-datastat
   (package
     (name "r-datastat")
@@ -30323,13 +30172,13 @@ Publishing.")
 (define-public r-datana
   (package
     (name "r-datana")
-    (version "1.0.9")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datana" version))
        (sha256
-        (base32 "05g59lzgp28rxzc69v0v3w1048y5467jjiman01292pr00d9dd33"))))
+        (base32 "0f83hp1gcc5dn4lxr28ia9sa46lsmsj83vdg6k3fdvch036mlaag"))))
     (properties `((upstream-name . "datana")))
     (build-system r-build-system)
     (arguments

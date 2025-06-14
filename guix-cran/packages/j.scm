@@ -1199,13 +1199,13 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.5.11")
+    (version "0.5.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jskm" version))
        (sha256
-        (base32 "1ng4f8nn6398ymm6g9c1b0kpiy445rax9vzbfy3gh3dig50bbm1p"))))
+        (base32 "0dmpfpjy4spv5f81sz6ciydqx7d7mvli8fnw4gp7vqn1hxs37ly3"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
     (arguments
@@ -3381,33 +3381,6 @@ interpretability and diagnostics.  Integrates Julia libraries
 functionalities for interfacing with Julia from R powered by the
 @code{JuliaConnectoR} package.")
     (license license:expat)))
-
-(define-public r-jlctree
-  (package
-    (name "r-jlctree")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jlctree" version))
-       (sha256
-        (base32 "0l8piz0m9iv9lbw35yx1ww0db0pv0qhbvkz4l36fwjsgnjlh8f6a"))))
-    (properties `((upstream-name . "jlctree")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-rpart r-lme4))
-    (home-page "https://cran.r-project.org/package=jlctree")
-    (synopsis
-     "Joint Latent Class Trees for Joint Modeling of Time-to-Event and Longitudinal Data")
-    (description
-     "This package implements the tree-based approach to joint modeling of
-time-to-event and longitudinal data.  This approach looks for a tree-based
-partitioning such that within each estimated latent class defined by a terminal
-node, the time-to-event and longitudinal responses display a lack of
-association.  See Zhang and Simonoff (2018) <@code{arXiv:1812.01774>}.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-jjb
   (package

@@ -1203,13 +1203,13 @@ environment, by Daniel Wallach (INRA), David Makowski (INRA), James W. Jones
 (define-public r-zdeskr
   (package
     (name "r-zdeskr")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zdeskR" version))
        (sha256
-        (base32 "03qdskrhcgbvmglsb87ydfki0x659f2f9v7dqlg6sbf9583whaqj"))))
+        (base32 "1hpmpvbm58f6gvvxxl9bgs144nysk8p6dd9dfnnkppphchjchvdp"))))
     (properties `((upstream-name . "zdeskR")))
     (build-system r-build-system)
     (arguments

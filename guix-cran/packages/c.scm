@@ -958,30 +958,6 @@ Association (AHA) as described in Dâagostino, et al (2008)
 <doi:10.1016/j.jacc.2015.08.035>.")
     (license license:gpl3)))
 
-(define-public r-cvr
-  (package
-    (name "r-cvr")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CVR" version))
-       (sha256
-        (base32 "1y8m9r409jq5h6xx1rvz7c7aj882jldfxly89zf3cvp2qg3jh7rj"))))
-    (properties `((upstream-name . "CVR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pma))
-    (home-page "https://cran.r-project.org/package=CVR")
-    (synopsis "Canonical Variate Regression")
-    (description
-     "Perform canonical variate regression (CVR) for two sets of covariates and a
-univariate response, with regularization and weight parameters tuned by cross
-validation.")
-    (license license:gpl2+)))
-
 (define-public r-cvms
   (package
     (name "r-cvms")
@@ -2498,30 +2474,6 @@ takes in vectors of binary responses and predicted risks.  The @code{plot()} and
 median, mode, variance, skewness and kurtosis.")
     (license license:gpl3)))
 
-(define-public r-cumseg
-  (package
-    (name "r-cumseg")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cumSeg" version))
-       (sha256
-        (base32 "0n1hp0abnd6zn72fkgkj9k875vivn5kr3q76sjy6q6va7x24j6sg"))))
-    (properties `((upstream-name . "cumSeg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lars))
-    (home-page "https://cran.r-project.org/package=cumSeg")
-    (synopsis "Change Point Detection in Genomic Sequences")
-    (description
-     "Estimation of number and location of change points in mean-shift (piecewise
-constant) models.  Particularly useful (but not confined) to model genomic
-sequences of continuous measurements.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-cumprinc
   (package
     (name "r-cumprinc")
@@ -3477,31 +3429,6 @@ density, ring width and percent latewood for each ring) are then obtained.")
     (synopsis "Censored and Truncated Quantile Regression")
     (description "Estimation of quantile regression models for survival data.")
     (license license:gpl2)))
-
-(define-public r-ctpm
-  (package
-    (name "r-ctpm")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ctpm" version))
-       (sha256
-        (base32 "1bycdh3mbimmfvv3yb50c8rwcmkbjj0jwnfiynsp2h56y3dmzc1r"))))
-    (properties `((upstream-name . "ctpm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-slouch r-ctmm r-clusterr r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/NoonanM/ctpm")
-    (synopsis "Continuous-Time Phylogenetic Modeling")
-    (description
-     "This package provides functions for identifying, fitting, and applying
-continuous-time stochastic models to phylogenetic data.  The package is based on
-methods introduced in Noonan et al. (2021) <doi:10.1101/2021.05.21.445056>.")
-    (license license:gpl3)))
 
 (define-public r-ctost
   (package
@@ -5843,46 +5770,6 @@ EPSG Dataset Terms of Use at <https://epsg.org/terms-of-use.html> for more
 information.")
     (license license:expat)))
 
-(define-public r-crsra
-  (package
-    (name "r-crsra")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "crsra" version))
-       (sha256
-        (base32 "1rkqm88zmvp9gw442cby6qpvfw4pfw65wz0gyl2h37w87c3wwvrw"))))
-    (properties `((upstream-name . "crsra")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidytext
-                             r-tibble
-                             r-readr
-                             r-rcorpora
-                             r-purrr
-                             r-knitr
-                             r-dplyr
-                             r-digest))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=crsra")
-    (synopsis "Tidying and Analyzing 'Coursera' Research Export Data")
-    (description
-     "Tidies and performs preliminary analysis of Coursera research export data.
-These export data can be downloaded by anyone who has classes on Coursera and
-wants to analyze the data.  Coursera is one of the leading providers of MOOCs
-and was launched in January 2012.  With over 25 million learners, Coursera is
-the most popular provider in the world being followed by @code{EdX}, the MOOC
-provider that was a result of a collaboration between Harvard University and
-MIT, with over 10 million users.  Coursera has over 150 university partners from
-29 countries and offers a total of 2000+ courses from computer science to
-philosophy.  Besides, Coursera offers 180+ specialization, Coursera's credential
-system, and four fully online Masters degrees.  For more information about
-Coursera check Coursera's About page on <https://blog.coursera.org/about/>.")
-    (license license:gpl2)))
-
 (define-public r-crso
   (package
     (name "r-crso")
@@ -6194,32 +6081,6 @@ monotonicity assumption.  Two monotonicity tests are also available to test the
 null hypothesis of monotonicity over a set of parameters associated with an
 ordinal predictor.")
     (license license:gpl2)))
-
-(define-public r-crossword-r
-  (package
-    (name "r-crossword-r")
-    (version "0.3.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "crossword.r" version))
-       (sha256
-        (base32 "1s31613s4qxxspka9bhgq3rq8xraf48mwfv6phvz6v06gijh64lr"))))
-    (properties `((upstream-name . "crossword.r")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-r6extended
-                             r-r6
-                             r-magrittr
-                             r-jsonlite
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=crossword.r")
-    (synopsis "Generating Crosswords from Word Lists")
-    (description "Generate crosswords from a list of words.")
-    (license license:expat)))
 
 (define-public r-crosswalkr
   (package
@@ -13353,34 +13214,6 @@ S., & Carter, R. E., 2012) <doi:10.1002/pst.1514> and a new correlation
 corrected weighted Hochberg for correlated endpoints.")
     (license license:gpl3+)))
 
-(define-public r-corrgrapher
-  (package
-    (name "r-corrgrapher")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "corrgrapher" version))
-       (sha256
-        (base32 "0s10n2av6dyjz6x4wvznpcbvpp63v6k3r9whkqsg7fiy9m3d4dr9"))))
-    (properties `((upstream-name . "corrgrapher")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-visnetwork r-knitr r-ingredients r-htmltools
-                             r-ggplot2))
-    (home-page "https://modeloriented.github.io/corrgrapher/")
-    (synopsis
-     "Explore Correlations Between Variables in a Machine Learning Model")
-    (description
-     "When exploring data or models we often examine variables one by one.  This
-analysis is incomplete if the relationship between these variables is not taken
-into account.  The corrgrapher package facilitates simultaneous exploration of
-the Partial Dependence Profiles and the correlation between variables in the
-model.  The package corrgrapher is a part of the @code{DrWhy.AI} universe.")
-    (license license:gpl2+)))
-
 (define-public r-corrgram
   (package
     (name "r-corrgram")
@@ -13811,33 +13644,6 @@ on stochastic ordering is implemented.  Szabo A, George EO. (2010)
 <doi:10.1093/biomet/asp077>; George EO, Cheon K, Yuan Y, Szabo A (2016)
 <doi:10.1093/biomet/asw009>.")
     (license license:gpl2+)))
-
-(define-public r-corrarray
-  (package
-    (name "r-corrarray")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "corrarray" version))
-       (sha256
-        (base32 "1hsk425xjz9p3wwvia7h78dg24qsr5r977xm2ap5z40ah1bw7bzi"))))
-    (properties `((upstream-name . "corrarray")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-hmisc))
-    (home-page "https://github.com/Medicine1/corrarray")
-    (synopsis "Correlation Arrays and 2-Sample Correlation Matrices")
-    (description
-     "The goal of corrarray is to create a multi-sample correlation array by combining
-the correlation matrices of a data set stratified by a grouping variable.  For
-two specified levels of the variable, corrarray displays one level's correlation
-matrix in the lower triangular matrix and the other level's correlation matrix
-in the upper triangular matrix.  Such an output can enable visualization of
-correlations from two samples in a single correlation matrix or corrgram.")
-    (license license:gpl3)))
 
 (define-public r-corr2d
   (package
@@ -20082,30 +19888,6 @@ elements aren't known in advance, like in stop, warning, or message, from clean
 code.")
     (license (license:fsdg-compatible "GPL (>= 3.2)"))))
 
-(define-public r-conake
-  (package
-    (name "r-conake")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Conake" version))
-       (sha256
-        (base32 "00c07wlsrzf6cwpaxmd7c78cxiwc3jfslxm6sxpbpr6b8270hz5m"))))
-    (properties `((upstream-name . "Conake")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "www.r-project.org")
-    (synopsis "Continuous Associated Kernel Estimation")
-    (description
-     "Continuous smoothing of probability density function on a compact or
-semi-infinite support is performed using four continuous associated kernels:
-extended beta, gamma, lognormal and reciprocal inverse Gaussian.  The
-cross-validation technique is also implemented for bandwidth selection.")
-    (license license:gpl2+)))
-
 (define-public r-con2lki
   (package
     (name "r-con2lki")
@@ -20540,13 +20322,13 @@ advances\".  Communications in Statistics--Theory and Methods, 52(16):
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "7.3")
+    (version "7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compositional" version))
        (sha256
-        (base32 "1syf4krq5f1cn9hha208zvqjywwc23jh6zhay17b99ngnm22arvx"))))
+        (base32 "15h309pp13h4k571hwn707ij93a4f2cf91znm236y93dsmamkin7"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (arguments
@@ -22585,6 +22367,40 @@ the purpose of combination p-values.  All methods used can referenced here:
 Heard & Rubin-Delanchy (2017) <@code{arXiv:1707.06897>}.")
     (license license:expat)))
 
+(define-public r-combcoint
+  (package
+    (name "r-combcoint")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "combcoint" version))
+       (sha256
+        (base32 "0g3msng74b064v8jjc8a997x45h1syzz7cdwy9rf31wzfyv8cy9d"))))
+    (properties `((upstream-name . "combcoint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-urca
+                             r-tsdyn
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-magrittr
+                             r-hmisc
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Janine-Langerbein/combcoint")
+    (synopsis "Joint Test-Statistic for the Null of Non-Cointegration")
+    (description
+     "This package implements a joint cointegration testing approach that combines
+Engle-Granger, Johansen maximum eigenvalue, Boswijk, and Banerjee tests into a
+unified test-statistic for the null of non-cointegration.  Also see Bayer and
+Hanck (2013) <doi:10.1111/j.1467-9892.2012.00814.x>.")
+    (license license:expat)))
+
 (define-public r-combatfamqc
   (package
     (name "r-combatfamqc")
@@ -23220,36 +23036,6 @@ scalar intensity values and colors.  There is also support for layering maps on
 top of one another using alpha composition.")
     (license license:expat)))
 
-(define-public r-colorpatch
-  (package
-    (name "r-colorpatch")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "colorpatch" version))
-       (sha256
-        (base32 "18p9hgccp37pbdf437xffkv6z500896v08fsw2jm8zcl9ladygaf"))))
-    (properties `((upstream-name . "colorpatch")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tsp r-gridextra r-ggplot2 r-colorspace))
-    (native-inputs (list r-knitr))
-    (home-page "http://sysbio.uni-ulm.de/?Software:colorpatch")
-    (synopsis "Optimized Rendering of Fold Changes and Confidence Values")
-    (description
-     "Shows color patches for encoding fold changes (e.g. log ratios) together with
-confidence values within a single diagram.  This is especially useful for
-rendering gene expression data as well as other types of differential
-experiments.  In addition to different rendering methods (ggplot extensions)
-functionality for perceptually optimizing color palettes are provided.
-Furthermore the package provides extension methods of the colorspace color-class
-in order to simplify the work with palettes (a.o.  length, as.list, and append
-are supported).")
-    (license license:artistic2.0)))
-
 (define-public r-colornamer
   (package
     (name "r-colornamer")
@@ -23690,33 +23476,6 @@ dates, public schools, Colombian coffee exports, cannabis licenses, Medellin
 rainfall, and malls in Bogota, making it a comprehensive tool for exploring
 Colombia's data.  For more details on the API-Colombia', see
 <https://api-colombia.com/>.")
-    (license license:gpl3)))
-
-(define-public r-colocr
-  (package
-    (name "r-colocr")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "colocr" version))
-       (sha256
-        (base32 "0ijykza6fdmwbr5zbyfjf382anrxh0lb9hlallyawfi6z076fv7j"))))
-    (properties `((upstream-name . "colocr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny r-scales r-magrittr r-magick r-imager))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/colocr")
-    (synopsis
-     "Conduct Co-Localization Analysis of Fluorescence Microscopy Images")
-    (description
-     "Automate the co-localization analysis of fluorescence microscopy images.
-Selecting regions of interest, extract pixel intensities from the image channels
-and calculate different co-localization statistics.  The methods implemented in
-this package are based on Dunn et al. (2011) <doi:10.1152/ajpcell.00462.2010>.")
     (license license:gpl3)))
 
 (define-public r-colocproptest
@@ -26020,13 +25779,13 @@ al. (2017a) <doi:10.1177/0962280217710835> and Dumuid et al. (2017b)
 (define-public r-codalomic
   (package
     (name "r-codalomic")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoDaLoMic" version))
        (sha256
-        (base32 "1z240vsjcnszd9wy01rdm2ahq7rgmvswymmxai3lqklay87lh06q"))))
+        (base32 "1kbfki4gn8vg3qblwz8maix94vlq2mzan22bskfzl1hs6avxyl0z"))))
     (properties `((upstream-name . "CoDaLoMic")))
     (build-system r-build-system)
     (arguments
@@ -28709,37 +28468,6 @@ for cluster stability approach that might be applied to algorithms implemented
 in \"cluster\" package as well as user defined clustering algorithms.")
     (license license:gpl2+)))
 
-(define-public r-clusvis
-  (package
-    (name "r-clusvis")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ClusVis" version))
-       (sha256
-        (base32 "06yckdl3gxjia1gjjqpc29lvy4f7qf47fncslng9ggjnks6il145"))))
-    (properties `((upstream-name . "ClusVis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-varsellcm
-                             r-rmixmod
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mvtnorm
-                             r-mgcv
-                             r-mass))
-    (home-page "https://cran.r-project.org/package=ClusVis")
-    (synopsis
-     "Gaussian-Based Visualization of Gaussian and Non-Gaussian Model-Based Clustering")
-    (description
-     "Gaussian-Based Visualization of Gaussian and Non-Gaussian Model-Based Clustering
-done on any type of data.  Visualization is based on the probabilities of
-classification.")
-    (license license:gpl2+)))
-
 (define-public r-clustvarsel
   (package
     (name "r-clustvarsel")
@@ -29875,32 +29603,6 @@ visualization and analysis.  See Lokesh Kumar and Matthias E Futschik (2007)
 <doi:10.6026/97320630002005> for more details.")
     (license license:expat)))
 
-(define-public r-clusteredmutations
-  (package
-    (name "r-clusteredmutations")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ClusteredMutations" version))
-       (sha256
-        (base32 "1n31nnvpjh1faw751k8m3ga3wfl0yhdpnszwckqhfzlma1jr8z04"))))
-    (properties `((upstream-name . "ClusteredMutations")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-seriation))
-    (home-page "https://cran.r-project.org/package=ClusteredMutations")
-    (synopsis "Location and Visualization of Clustered Somatic Mutations")
-    (description
-     "Identification and visualization of groups of closely spaced mutations in the
-DNA sequence of cancer genome.  The extremely mutated zones are searched in the
-symmetric dissimilarity matrix using the anti-Robinson matrix properties.
-Different data sets are obtained to describe and plot the clustered mutations
-information.")
-    (license license:gpl3)))
-
 (define-public r-clusterbootstrap
   (package
     (name "r-clusterbootstrap")
@@ -30789,40 +30491,6 @@ navigate Cloudstor from R.")
      "The @code{CloudOS} client library for R makes it easy to interact with
 @code{CloudOS} in the R environment for analysis.")
     (license license:expat)))
-
-(define-public r-cloudml
-  (package
-    (name "r-cloudml")
-    (version "0.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cloudml" version))
-       (sha256
-        (base32 "1j15q9yb2rc4fbjxfh21fiq6is8dnb8nfyi7g8iazgfwb3p9ahpx"))))
-    (properties `((upstream-name . "cloudml")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list python))
-    (propagated-inputs (list r-yaml
-                             r-withr
-                             r-tfruns
-                             r-rstudioapi
-                             r-rprojroot
-                             r-processx
-                             r-packrat
-                             r-jsonlite
-                             r-config))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cloudml")
-    (synopsis "Interface to the Google Cloud Machine Learning Platform")
-    (description
-     "Interface to the Google Cloud Machine Learning Platform
-<https://cloud.google.com/ml-engine>, which provides cloud tools for training
-machine learning models.")
-    (license license:asl2.0)))
 
 (define-public r-cloudfs
   (package
@@ -31939,6 +31607,48 @@ sensitivity (climate windows) for a given biological response.  Please see van
 de Pol et al. (2016) <doi:10.1111/2041-210X.12590> and Bailey and van de Pol
 (2016) <doi:10.1371/journal.pone.0167980> for details.")
     (license license:gpl2)))
+
+(define-public r-climodr
+  (package
+    (name "r-climodr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "climodr" version))
+       (sha256
+        (base32 "0900vi14mgm2gr85j1sdjd9a46spk79y0nj65g2c01g3lsl3zv7j"))))
+    (properties `((upstream-name . "climodr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-terra
+                             r-stringr
+                             r-rlang
+                             r-magrittr
+                             r-lares
+                             r-dplyr
+                             r-doparallel
+                             r-corrplot
+                             r-cast
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://envima.github.io/climodr/")
+    (synopsis "Climate Modeling with Point Data from Climate Stations")
+    (description
+     "An automated and streamlined workflow for predictive climate mapping using
+climate station data.  Works within an environment the user provides a destined
+path to - otherwise it's @code{tempdir()}.  Quick and relatively easy creation
+of resilient and reproducible climate models, predictions and climate maps,
+shortening the usually long and complicated work of predictive modelling.  For
+more information, please find the provided URL. Many methods in this package are
+new, but the main method is based on a workflow from Meyer (2019)
+<doi:10.1016/j.ecolmodel.2019.108815> and Meyer (2022)
+<doi:10.1038/s41467-022-29838-9> , however, it was generalized and adjusted in
+the context of this package.")
+    (license license:gpl3+)))
 
 (define-public r-climmobtools
   (package
@@ -39988,45 +39698,6 @@ package also contains methods for estimation and regression analysis of
 secondary attack rates.")
     (license license:gpl3)))
 
-(define-public r-ch
-  (package
-    (name "r-ch")
-    (version "0.1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ch" version))
-       (sha256
-        (base32 "1ryh2xr1ix4qznq1svi4gdr4qy6v6rg597z2zl6zw32s2xq6ssx6"))))
-    (properties `((upstream-name . "ch")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ryacas
-                             r-pracma
-                             r-polynom
-                             r-mass
-                             r-magrittr
-                             r-ggplot2
-                             r-crayon
-                             r-clipr))
-    (home-page "https://github.com/tsiamut/ch")
-    (synopsis "About some Small Functions")
-    (description
-     "The solution to some common problems is proposed, as well as a summary of some
-small functions.  In particular, it provides a useful function for some problems
-in chemistry.  For example, @code{monoa()}, @code{monob()} and @code{mono()}
-function can be used to calculate The @code{pH} of weak acid/base.  The
-@code{ggpng()} function can save the PNG format with transparent background.
-The @code{period_table()} function will show the periodic table.  Also the
-@code{show_ruler()} function will show the ruler.  The @code{show_color()}
-function is funny and easier to show colors.  I also provide the @code{symb()}
-function to generate multiple symbols at once.  The @code{csv2vcf()} function
-provides an easy method to generate a file.  The @code{sym2poly()} and
-@code{sym2coef()} function can extract coefficients from polynomials.")
-    (license license:artistic2.0)))
-
 (define-public r-cgwtools
   (package
     (name "r-cgwtools")
@@ -43505,19 +43176,19 @@ Difference-in-Differences\", Journal of Econometrics,
 (define-public r-cdghmm
   (package
     (name "r-cdghmm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDGHMM" version))
        (sha256
-        (base32 "0c43gfxgx2izs7hx2lkn4kws1nm94409258as72zdg123nf52hp8"))))
+        (base32 "1fqaavvfzd8f4hs0zc1pd51qrqyhfb20437dl58scrb40883d0kr"))))
     (properties `((upstream-name . "CDGHMM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ramify r-mvtnorm r-mass r-cluster))
+    (propagated-inputs (list r-mvtnorm r-mass r-cluster))
     (home-page "https://cran.r-project.org/package=CDGHMM")
     (synopsis "Hidden Markov Models for Multivariate Panel Data")
     (description
@@ -50714,13 +50385,13 @@ simulated model outputs is provided.  See
 (define-public r-calibmsm
   (package
     (name "r-calibmsm")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calibmsm" version))
        (sha256
-        (base32 "1bc3a110d6nzm8b9z0rbvgvdlad731q4j2jjrll80rqi0lqa66r7"))))
+        (base32 "0940z9z32r25pjkvbgb3c6m44d483ry08hv17bqq0c9gnnwahy46"))))
     (properties `((upstream-name . "calibmsm")))
     (build-system r-build-system)
     (arguments
@@ -50743,7 +50414,7 @@ simulated model outputs is provided.  See
                              r-dplyr
                              r-boot))
     (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://alexpate30.github.io/calibmsm/")
+    (home-page "https://github.com/alexpate30/calibmsm")
     (synopsis
      "Calibration Plots for the Transition Probabilities from Multistate Models")
     (description

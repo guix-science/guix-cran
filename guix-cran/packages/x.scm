@@ -16,7 +16,6 @@
   #:use-module (gnu packages fontutils)
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages perl)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages w)
@@ -1483,38 +1482,6 @@ and question blocks.  Tables are exported with native Excel formatting,
 including titles, footnotes, and basic styling options.")
     (license license:gpl3+)))
 
-(define-public r-xlink
-  (package
-    (name "r-xlink")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "xlink" version))
-       (sha256
-        (base32 "02ahgjampy92gcwhv269px5w8651a7j50dn1295zwqxj44lk4g9q"))))
-    (properties `((upstream-name . "xlink")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/qiuanzhu/xlink")
-    (synopsis
-     "Genetic Association Models for X-Chromosome SNPS on Continuous, Binary and Survival Outcomes")
-    (description
-     "The expression of X-chromosome undergoes three possible biological processes:
-X-chromosome inactivation (XCI), escape of the X-chromosome inactivation
-(XCI-E),and skewed X-chromosome inactivation (XCI-S).  To analyze the X-linked
-genetic association for phenotype such as continuous, binary, and time-to-event
-outcomes with the actual process unknown, we propose a unified approach of
-maximizing the likelihood or partial likelihood over all of the potential
-biological processes.  The methods are described in Wei Xu, Meiling Hao (2017)
-<doi:10.1002/gepi.22097>.  And also see Dongxiao Han, Meiling Hao, Lianqiang Qu,
-Wei Xu (2019) <doi:10.1177/0962280219859037>.")
-    (license license:gpl2)))
-
 (define-public r-xlcutter
   (package
     (name "r-xlcutter")
@@ -2636,34 +2603,4 @@ methodology and software is a widely used software and developed by the US
 Census Bureau.  It can be accessed from R with this package and X13-ARIMA-SEATS
 binaries are provided by the R package x13binary'.")
     (license license:gpl2+)))
-
-(define-public r-x-ent
-  (package
-    (name "r-x-ent")
-    (version "1.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "x.ent" version))
-       (sha256
-        (base32 "15qra77dqhj27g3qx92gram4mq4n9fdidygdpvxfmcx7ww3vc6yh"))))
-    (properties `((upstream-name . "x.ent")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list perl))
-    (propagated-inputs (list r-xtable r-stringr r-statmod r-jsonlite r-ggplot2))
-    (home-page "https://github.com/win-stub/x.ent")
-    (synopsis "eXtraction of ENTity")
-    (description
-     "This package provides a tool for extracting information (entities and relations
-between them) in text datasets.  It also emphasizes the results exploration with
-graphical displays.  It is a rule-based system and works with hand-made
-dictionaries and local grammars defined by users.  x.ent uses parsing with Perl
-functions and @code{JavaScript} to define user preferences through a browser and
-R to display and support analysis of the results extracted.  Local grammars are
-defined and compiled with the tool Unitex, a tool developed by University Paris
-Est that supports multiple languages.  See ?xconfig for an introduction.")
-    (license license:gpl3)))
 

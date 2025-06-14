@@ -989,35 +989,6 @@ short memory, and long memory.  See Fu, H. et al. (2018)
 <doi:10.1016/j.physa.2018.06.092>.")
     (license license:expat)))
 
-(define-public r-vsd
-  (package
-    (name "r-vsd")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vsd" version))
-       (sha256
-        (base32 "18whnvary4glblzx1vxf3yzsllnnnbnyijwhbw7bi3agppnwrf22"))))
-    (properties `((upstream-name . "vsd")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survminer
-                             r-survival
-                             r-muhaz
-                             r-magrittr
-                             r-ggpubr
-                             r-ggplot2
-                             r-flexsurv
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=vsd")
-    (synopsis "Graphical Shim for Visual Survival Data Analysis")
-    (description
-     "This package provides a shim command for survival analysis graphic generation.")
-    (license license:expat)))
-
 (define-public r-vscc
   (package
     (name "r-vscc")
@@ -1994,13 +1965,13 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-vol2birdr
   (package
     (name "r-vol2birdr")
-    (version "1.0.9")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vol2birdR" version))
        (sha256
-        (base32 "0aczn776y3rk29zpjkxp3waa5g4p40zf08ry2amjjv6xl4k3vszj"))))
+        (base32 "0xqfr3w39ywdf02jx6pms5srvwhav2gkbkqg34kca75mlyhcsqja"))))
     (properties `((upstream-name . "vol2birdR")))
     (build-system r-build-system)
     (arguments
@@ -3546,48 +3517,6 @@ made.  A reference for the underlying model that @code{VisitorCounts} uses can
 be found at Russell Goebel, Austin Schmaltz, Beth Ann Brackett, Spencer A. Wood,
 Kimihiro Noguchi (2023) <doi:10.1002/for.2965> .")
     (license license:gpl3)))
-
-(define-public r-visit
-  (package
-    (name "r-visit")
-    (version "2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "visit" version))
-       (sha256
-        (base32 "0mrwah122w9dyivyzs8xlv6vq9w8bpr468zjjw5q974wk7h31mk4"))))
-    (properties `((upstream-name . "visit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stanheaders
-                             r-sqldf
-                             r-rstantools
-                             r-rstan
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=visit")
-    (synopsis
-     "Vaccine Phase I Design with Simultaneous Evaluation of Immunogenicity and Toxicity")
-    (description
-     "Phase I clinical trials are the first step in drug development to test a new
-drug or drug combination on humans.  Typical designs of Phase I trials use
-toxicity as the primary endpoint and aim to find the maximum tolerable dosage.
-However, these designs are poorly applicable for the development of cancer
-therapeutic vaccines because the expected safety concerns for these vaccines are
-not as much as cytotoxic agents.  The primary objectives of a cancer therapeutic
-vaccine phase I trial thus often include determining whether the vaccine shows
-biologic activity and the minimum dose necessary to achieve a full immune or
-even clinical response.  This package implements a Bayesian Phase I cancer
-vaccine trial design that allows simultaneous evaluation of safety and
-immunogenicity outcomes.  See Wang et al. (2019) <DOI:10.1002/sim.8021> for
-further details.")
-    (license license:gpl3+)))
 
 (define-public r-visielse
   (package
@@ -5536,29 +5465,6 @@ model's input data prototype, and predicting from a remote API endpoint.  The
 vetiver package is extensible, with generics that can support many kinds of
 models.")
     (license license:expat)))
-
-(define-public r-vesselr
-  (package
-    (name "r-vesselr")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vesselr" version))
-       (sha256
-        (base32 "1wzprnpiv04gxhqgki36gp1a0xj9l3mchllphwkfsdja4axq3prk"))))
-    (properties `((upstream-name . "vesselr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pbmcapply r-pbapply r-oro-nifti))
-    (home-page "https://github.com/jdwor/vesselr")
-    (synopsis "Gradient and Vesselness Tools for Arrays and NIfTI Images")
-    (description
-     "Simple functions for calculating the image gradient, image hessian, volume ratio
-filter, and Frangi vesselness filter of 3-dimensional volumes.")
-    (license license:gpl2)))
 
 (define-public r-verylargeintegers
   (package

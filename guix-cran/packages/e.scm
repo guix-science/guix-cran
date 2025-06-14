@@ -575,13 +575,13 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
 (define-public r-eyeris
   (package
     (name "r-eyeris")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyeris" version))
        (sha256
-        (base32 "1yphxbzz9ym3vbqz29z8p4d55c88jsq82477rb6d550bnh81frwy"))))
+        (base32 "15ii61mmzpdxmhlm0yf20lskanpbza3wvb1qx085n9z2psc8zyzl"))))
     (properties `((upstream-name . "eyeris")))
     (build-system r-build-system)
     (arguments
@@ -2192,39 +2192,6 @@ a network (Bhavnani et al(2017)
 for a bipartite network, but the algorithm can work also for unipartite
 networks.")
     (license license:expat)))
-
-(define-public r-explainprediction
-  (package
-    (name "r-explainprediction")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ExplainPrediction" version))
-       (sha256
-        (base32 "14m3b9fsrpfpr8avsnhl8b3bzk2xlhwgkwag5iq8bj7bzvv4yck1"))))
-    (properties `((upstream-name . "ExplainPrediction")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-semiartificial r-corelearn))
-    (home-page "http://lkm.fri.uni-lj.si/rmarko/software/")
-    (synopsis
-     "Explanation of Predictions for Classification and Regression Models")
-    (description
-     "Generates explanations for classification and regression models and visualizes
-them.  Explanations are generated for individual predictions as well as for
-models as a whole.  Two explanation methods are included, EXPLAIN and IME. The
-EXPLAIN method is fast but might miss explanations expressed redundantly in the
-model.  The IME method is slower as it samples from all feature subsets.  For
-the EXPLAIN method see Robnik-Sikonja and Kononenko (2008)
-<doi:10.1109/TKDE.2007.190734>, and the IME method is described in Strumbelj and
-Kononenko (2010, JMLR, vol.  11:1-18).  All models in package CORElearn are
-natively supported, for other prediction models a wrapper function is provided
-and illustrated for models from packages @code{randomForest}', nnet', and
-e1071'.")
-    (license license:gpl3)))
 
 (define-public r-explainer
   (package
@@ -8897,13 +8864,13 @@ functions for hazard calculation and timing calibration.")
 (define-public r-ergmargins
   (package
     (name "r-ergmargins")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergMargins" version))
        (sha256
-        (base32 "1m1x2fqgpjins4bvh1jn2rli9s0knpsbdxdbfyhjiz8439zmk863"))))
+        (base32 "0fmal672aizrmqqx18disgmwfr9csrzcn00ahcjkj4543vm500ij"))))
     (properties `((upstream-name . "ergMargins")))
     (build-system r-build-system)
     (arguments
@@ -10640,13 +10607,13 @@ results interactively.")
 (define-public r-epiworldr
   (package
     (name "r-epiworldr")
-    (version "0.8.2.0")
+    (version "0.8.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiworldR" version))
        (sha256
-        (base32 "14ycjzksilkhw1bf7farx2q6ivnjj1g2a07xx39s0c4zqwpgy3fy"))))
+        (base32 "1js3wgy8j9n3dwm8ln3vr5as7v59pbl722s1afcjw41vd9f5jb1z"))))
     (properties `((upstream-name . "epiworldR")))
     (build-system r-build-system)
     (arguments
@@ -11545,62 +11512,6 @@ Alvarez et al. (2021) <doi:10.1073/pnas.2105112118> and Alvarez et al. (2022)
 between epidemiological indicators.  We also propose a learning method for the
 short time forecast of the trend incidence curve as described in Morel et al.
 (2022) <doi:10.1101/2022.11.05.22281904>.")
-    (license license:gpl2+)))
-
-(define-public r-epiilmct
-  (package
-    (name "r-epiilmct")
-    (version "1.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EpiILMCT" version))
-       (sha256
-        (base32 "1yjcjxf5m1qbb6p09g34wkr4q13g65ly11kxh95r22cdl85jmlq3"))))
-    (properties `((upstream-name . "EpiILMCT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-igraph r-coda))
-    (native-inputs (list gfortran))
-    (home-page "https://github.com/waleedalmutiry/EpiILMCT/")
-    (synopsis
-     "Continuous Time Distance-Based and Network-Based Individual Level Models for Epidemics")
-    (description
-     "This package provides tools for simulating from continuous-time individual level
-models of disease transmission, and carrying out infectious disease data
-analyses with the same models.  The epidemic models considered are
-distance-based and/or contact network-based models within
-Susceptible-Infectious-Removed (SIR) or Susceptible-Infectious-Notified-Removed
-(SINR) compartmental frameworks. <doi:10.18637/jss.v098.i10>.")
-    (license license:gpl2+)))
-
-(define-public r-epiilm
-  (package
-    (name "r-epiilm")
-    (version "1.5.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EpiILM" version))
-       (sha256
-        (base32 "0drs4qywx9axs7k5qk7sp5r3g8pykn4lqqbm0hxyl24r6b5l3d6b"))))
-    (properties `((upstream-name . "EpiILM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-laplacesdemon r-coda r-adaptmcmc))
-    (native-inputs (list gfortran))
-    (home-page "https://github.com/waleedalmutiry/EpiILM")
-    (synopsis
-     "Spatial and Network Based Individual Level Models for Epidemics")
-    (description
-     "This package provides tools for simulating from discrete-time individual level
-models for infectious disease data analysis.  This epidemic model class contains
-spatial and contact-network based models with two disease types:
-Susceptible-Infectious (SI) and Susceptible-Infectious-Removed (SIR).")
     (license license:gpl2+)))
 
 (define-public r-epigrowthfit
@@ -13639,13 +13550,13 @@ objects and coordinate reference systems.")
 (define-public r-enmpa
   (package
     (name "r-enmpa")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enmpa" version))
        (sha256
-        (base32 "1fflwasphifygyxm42k465pa9gd52bcjmnc8bibnz2yn7w478wim"))))
+        (base32 "1p7p6a8jgs49nb0m40ahz1k7gva81m2ix2750lrjj355v7afd1c5"))))
     (properties `((upstream-name . "enmpa")))
     (build-system r-build-system)
     (arguments
@@ -13966,29 +13877,6 @@ Monte Carlo simulations.  It is also possible to consider random data and ACK
 probabilities.")
     (license license:gpl2+)))
 
-(define-public r-endoswitch
-  (package
-    (name "r-endoswitch")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "endoSwitch" version))
-       (sha256
-        (base32 "1cj4skk317ppnayk1ph63vll49vs74fljc25cn1iviwgjq64ly0k"))))
-    (properties `((upstream-name . "endoSwitch")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-msm r-maxlik r-data-table))
-    (home-page "https://github.com/cbw1243/endoSwitch")
-    (synopsis "Endogenous Switching Regression Models")
-    (description
-     "Maximum likelihood estimation of endogenous switching regression models from
-Heckman (1979) <doi:10.2307/1912352> and estimation of treatment effects.")
-    (license license:gpl2+)))
-
 (define-public r-endorse
   (package
     (name "r-endorse")
@@ -14248,34 +14136,6 @@ factor.")
      "This package implements a segmentation algorithm for multiple change-point
 detection in univariate time series using the Ensemble Binary Segmentation of
 Korkas (2020) <@code{arXiv:2003.03649>}.")
-    (license license:gpl2+)))
-
-(define-public r-encdna
-  (package
-    (name "r-encdna")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EncDNA" version))
-       (sha256
-        (base32 "0wy2cmcvyqjhg5mqbvdzmihfv8swx7ym2n9mjdqgx0kgnc7k614y"))))
-    (properties `((upstream-name . "EncDNA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-biostrings))
-    (home-page "https://cran.r-project.org/package=EncDNA")
-    (synopsis "Encoding of Nucleotide Sequences into Numeric Feature Vectors")
-    (description
-     "We describe fifteen different splice site sequence encoding schemes that have
-been used in earlier studies for mapping of splice site sequences into numeric
-feature vectors.  These encoding schemes will also be helpful for transforming
-other nucleotide sequences into numeric forms, provided they are of equal
-length.  These encoding schemes will help the computational biologist working in
-the field of classification (binary or multiclass) or prediction involving
-nucleic acid sequences of equal length.")
     (license license:gpl2+)))
 
 (define-public r-emur
@@ -18971,36 +18831,6 @@ nonoverlap and trend to estimate the effect size of a treatment in a single case
 design.")
     (license license:expat)))
 
-(define-public r-effectr
-  (package
-    (name "r-effectr")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "effectR" version))
-       (sha256
-        (base32 "1icr1sx98x3h8rbky1agdh809arhjqcypyajl7y50yis8a5pkycb"))))
-    (properties `((upstream-name . "effectR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-shiny
-                             r-seqinr
-                             r-rmarkdown
-                             r-reshape2
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=effectR")
-    (synopsis "Predicts Oomycete Effectors")
-    (description
-     "Predicts cytoplasmic effector proteins using genomic data by searching for
-motifs of interest using regular expression searches and hidden Markov models
-(HMM) based in Haas et al. (2009) <doi:10.1038/nature08358>.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-effectplots
   (package
     (name "r-effectplots")
@@ -21447,27 +21277,6 @@ covariates and multiple data types.  The model fit is used to predict for new
 samples.  The name ecpc stands for Empirical Bayes, Co-data learnt, Prediction
 and Covariate selection.  See Van Nee et al. (2020) <@code{arXiv:2005.04010>}.")
     (license license:gpl3+)))
-
-(define-public r-ecovirtual
-  (package
-    (name "r-ecovirtual")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EcoVirtual" version))
-       (sha256
-        (base32 "1aryl2sb5ak390lgnm427ilm6xv9lmsjhwdnapzc033zvqb099gj"))))
-    (properties `((upstream-name . "EcoVirtual")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "http//ecovirtual.ib.usp.br")
-    (synopsis "Simulation of Ecological Models")
-    (description
-     "Computer simulations of classical ecological models as a learning resource.")
-    (license license:gpl2+)))
 
 (define-public r-ecoval
   (package

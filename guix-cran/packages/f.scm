@@ -12,9 +12,6 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages python-xyz)
-  #:use-module (gnu packages image-processing)
-  #:use-module (gnu packages python-science)
   #:use-module (gnu packages web)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages pkg-config)
@@ -2625,31 +2622,6 @@ for the tutorial: <https://github.com/gavinmdouglas/@code{FuncDiv/wiki>}.
 Citation: Gavin M. Douglas, Sunu Kim, Morgan G. I. Langille, B. Jesse Shapiro
 (2023) <doi:10.1093/bioinformatics/btac809>.")
     (license license:agpl3)))
-
-(define-public r-funcc
-  (package
-    (name "r-funcc")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FunCC" version))
-       (sha256
-        (base32 "0n8fnrq3grsxxcz1841d3d643nyrwc7y15na1205zxq6rmdjx7wa"))))
-    (properties `((upstream-name . "FunCC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape r-rcolorbrewer r-narray r-ggplot2
-                             r-biclust))
-    (home-page "https://cran.r-project.org/package=FunCC")
-    (synopsis "Functional Cheng and Church Bi-Clustering")
-    (description
-     "The @code{FunCC} algorithm allows to apply the @code{FunCC} algorithm to
-simultaneously cluster the rows and the columns of a data matrix whose inputs
-are functions.")
-    (license license:gpl3+)))
 
 (define-public r-func2vis
   (package
@@ -6911,33 +6883,6 @@ distributed principal component analysis; That is, the FPCdpca.  The philosophy
 of the package is described in Guo G. (2025) <doi:10.1016/j.physa.2024.130308>.")
     (license license:asl2.0)))
 
-(define-public r-fpcb
-  (package
-    (name "r-fpcb")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fpcb" version))
-       (sha256
-        (base32 "086060z6r79m527bb9ah6yk2z15xq8x27gyvbz23xbm6mhrxsa1y"))))
-    (properties `((upstream-name . "fpcb")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-fnn))
-    (home-page "https://cran.r-project.org/package=fpcb")
-    (synopsis
-     "Predictive Confidence Bands for Functional Time Series Forecasting")
-    (description
-     "This package provides functions to represent functional objects under a
-Reproducing Kernel Hilbert Space (RKHS) framework as described in MuÃ±oz &
-GonzÃ¡lez (2010).  Autoregressive Hilbertian Model for functional time series
-using RKHS and predictive confidence bands construction as proposed in
-HernÃ¡ndez et al (2021).")
-    (license license:gpl3+)))
-
 (define-public r-fpca3d
   (package
     (name "r-fpca3d")
@@ -7406,13 +7351,13 @@ Regression Analysis, First Edition.  New York: Springer.")
 (define-public r-fortls
   (package
     (name "r-fortls")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FORTLS" version))
        (sha256
-        (base32 "00a4190wpl3w14yvsk128nbk4gbvggfxzc8fndw297azrv6bqzkh"))))
+        (base32 "12nzqysz7msgvg56djsfh7ysngadag6c4dzw11v1cflciv0wbcx8"))))
     (properties `((upstream-name . "FORTLS")))
     (build-system r-build-system)
     (arguments
@@ -7699,13 +7644,13 @@ plugin: <https://github.com/qlands/formshare_sql_plugin> .")
 (define-public r-formods
   (package
     (name "r-formods")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formods" version))
        (sha256
-        (base32 "1r9bjnd53zlr4smvmi4qzxwl8zhjvv1m634dwmgf2mvdra19fvh0"))))
+        (base32 "04gpkzygz9p29xjzfiqlky6rbg22xfw4qcdrrsiq1mzv5c1s732r"))))
     (properties `((upstream-name . "formods")))
     (build-system r-build-system)
     (arguments
@@ -7881,37 +7826,6 @@ environment.  Version 2 exposes two distinct functions for individual and
 summary estimates.  To facilitate access to the functions, tree species
 identification is now based on EPPO species codes (<https://data.eppo.int/>).")
     (license license:gpl3+)))
-
-(define-public r-forimage
-  (package
-    (name "r-forimage")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "forImage" version))
-       (sha256
-        (base32 "1p8zfndvm7x7pnryphz944hgxcchvc6mwnr6ap15m0i6kwsh0nb4"))))
-    (properties `((upstream-name . "forImage")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list python-scipy python-pandas opencv python-numpy))
-    (propagated-inputs (list r-tibble r-reticulate r-magrittr r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ThaiseRF/forImage")
-    (synopsis "Foraminiferal Image Analysis and Test Measurement")
-    (description
-     "The goal of this collection of functions is to provide an easy to use tool for
-the measurement of foraminifera and other unicellulars organisms size.  With
-functions developed to guide foraminiferal test biovolume calculations and cell
-biomass estimations.  The volume function includes several microalgae models
-geometric adaptations based on Hillebrand et al. (1999)
-<doi:10.1046/j.1529-8817.1999.3520403.x>, Sun and Liu (2003)
-<doi:10.1093/plankt/fbg096> and Vadrucci, Cabrini and Basset (2007)
-<doi:10.1285/i1825229Xv1n2p83>.")
-    (license license:expat)))
 
 (define-public r-forgts
   (package
@@ -9306,42 +9220,6 @@ Constrained Least Squares, Variance-based, Best Individual model, Complete
 subset regressions and Information-theoretic (information criteria based).")
     (license license:gpl2)))
 
-(define-public r-forecastcomb
-  (package
-    (name "r-forecastcomb")
-    (version "1.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ForecastComb" version))
-       (sha256
-        (base32 "07cbiv172mpkwvg6svhwgavlfy2144ir3y1l7w37wbd0ygs514id"))))
-    (properties `((upstream-name . "ForecastComb")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-quantreg
-                             r-quadprog
-                             r-psych
-                             r-mtsdi
-                             r-matrix
-                             r-ggplot2
-                             r-forecast))
-    (home-page "https://github.com/ceweiss/ForecastComb")
-    (synopsis "Forecast Combination Methods")
-    (description
-     "This package provides geometric- and regression-based forecast combination
-methods under a unified user interface for the packages
-@code{ForecastCombinations} and @code{GeomComb}'.  Additionally, updated tools
-and convenience functions for data pre-processing are available in order to deal
-with common problems in forecast combination (missingness, collinearity).  For
-method details see Hsiao C, Wan SK (2014). <doi:10.1016/j.jeconom.2013.11.003>,
-Hansen BE (2007). <doi:10.1111/j.1468-0262.2007.00785.x>, Elliott G, Gargano A,
-Timmermann A (2013). <doi:10.1016/j.jeconom.2013.04.017>, and Clemen RT (1989).
-<doi:10.1016/0169-2070(89)90012-5>.")
-    (license license:gpl2+)))
-
 (define-public r-foreca
   (package
     (name "r-foreca")
@@ -9765,47 +9643,6 @@ often tedious step in the calculation of total human energy expenditure (TEE)
 using the doubly labeled water method, which is the gold standard for measuring
 TEE.")
     (license license:expat)))
-
-(define-public r-foodingraph
-  (package
-    (name "r-foodingraph")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "foodingraph" version))
-       (sha256
-        (base32 "0v40yk7lx0zxvpd3vz48h5gzx8ds8v3l12i2r7v9safgfvip6fvn"))))
-    (properties `((upstream-name . "foodingraph")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-minerva
-                             r-magrittr
-                             r-labeling
-                             r-igraph
-                             r-ggraph
-                             r-ggplot2
-                             r-dplyr
-                             r-cowplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/vgasque/foodingraph/")
-    (synopsis "Food Network Inference and Visualization")
-    (description
-     "Displays a weighted undirected food graph from an adjacency matrix.  Can perform
-confidence-interval bootstrap inference with mutual information or maximal
-information coefficient.  Based on my Master 1 internship at the Bordeaux
-Population Health center.  References : Reshef et al. (2011)
-<doi:10.1126/science.1205438>, Meyer et al. (2008)
-<doi:10.1186/1471-2105-9-461>, Liu et al. (2016)
-<doi:10.1371/journal.pone.0158247>.")
-    (license license:gpl3)))
 
 (define-public r-fontcm
   (package
@@ -11116,34 +10953,6 @@ provides functions to obtain this estimate together with functions to import
 spectrophotometry data from a Biotek microplate reader.  Details of the method
 are given in Parthuisot et al. (2018) <doi:10.1101/297929>.")
     (license license:gpl3)))
-
-(define-public r-flumodl
-  (package
-    (name "r-flumodl")
-    (version "0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FluMoDL" version))
-       (sha256
-        (base32 "0vp3w6hpph6svz8940w9yk9c5iv4n9mj94f9si1ks0xjbi948rqd"))))
-    (properties `((upstream-name . "FluMoDL")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tsmodel r-mvmeta r-dlnm))
-    (home-page "https://cran.r-project.org/package=FluMoDL")
-    (synopsis "Influenza-Attributable Mortality with Distributed-Lag Models")
-    (description
-     "This package provides functions to estimate the mortality attributable to
-influenza and temperature, using distributed-lag nonlinear models (DLNMs), as
-first implemented in Lytras et al. (2019)
-<doi:10.2807/1560-7917.ES.2019.24.14.1800118>.  Full descriptions of underlying
-DLNM methodology in Gasparrini et al. <doi:10.1002/sim.3940> (DLNMs),
-<doi:10.1186/1471-2288-14-55> (attributable risk from DLNMs) and
-<doi:10.1002/sim.5471> (multivariate meta-analysis).")
-    (license license:gpl2+)))
 
 (define-public r-fluidsynth
   (package
@@ -12715,29 +12524,6 @@ are also supported.  There are no limitations on the type of process one can
 assume, with both forward and backward transitions allowed and virtually any
 number of states.")
     (license license:expat)))
-
-(define-public r-flexmixnl
-  (package
-    (name "r-flexmixnl")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "flexmixNL" version))
-       (sha256
-        (base32 "0bk5v0cnsn1qkd1b86vj0bnpr4l9d6523kpkgzb1l1sqyscawfmm"))))
-    (properties `((upstream-name . "flexmixNL")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-gnm r-flexmix))
-    (home-page "https://cran.r-project.org/package=flexmixNL")
-    (synopsis "Finite Mixture Modeling of Generalized Nonlinear Models")
-    (description
-     "The fitting of mixtures of generalized nonlinear models is implemented as an
-extension of the existing package flexmix'.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-flexmet
   (package
@@ -16138,29 +15924,6 @@ functions included in the Society of Actuaries and Casualty Actuarial Society
 Financial Mathematics exam, and some topics in the Models for Financial
 Economics exam.")
     (license license:gpl2)))
-
-(define-public r-financialinstrument
-  (package
-    (name "r-financialinstrument")
-    (version "1.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FinancialInstrument" version))
-       (sha256
-        (base32 "0f1zaclrcmpkdhcfc8a09f7lsf2b7gfyd7js3173qckn84a01f3w"))))
-    (properties `((upstream-name . "FinancialInstrument")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo r-xts r-ttr r-quantmod))
-    (home-page "https://github.com/braverock/FinancialInstrument")
-    (synopsis "Financial Instrument Model Infrastructure and Meta-Data")
-    (description
-     "Infrastructure for defining meta-data and relationships for financial
-instruments.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-finana
   (package
@@ -24039,13 +23802,13 @@ regressions, see Lederer & Vogt (2021, JMLR)
 (define-public r-fars
   (package
     (name "r-fars")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FARS" version))
        (sha256
-        (base32 "1qc5df271y1sqx2z334l33mxj16h6xj41953kmzvs2pccnp7fwjm"))))
+        (base32 "0r5m66wvh8fp1bs7zz38p93k8v9hq6v106n3ax5qxxfayfg8s6c2"))))
     (properties `((upstream-name . "FARS")))
     (build-system r-build-system)
     (arguments
@@ -24475,35 +24238,6 @@ type plots, where a set of coloured polygon, with shadings corresponding to the
 percentile values are layered to represent different uncertainty levels.  Full
 details in R Journal article; Abel (2015) <doi:10.32614/RJ-2015-002>.")
     (license license:gpl2)))
-
-(define-public r-fanovagraph
-  (package
-    (name "r-fanovagraph")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fanovaGraph" version))
-       (sha256
-        (base32 "1hffda52yk24slbgsfdgkpg3vsryfnhlw09r39cbyz483i7xd8d0"))))
-    (properties `((upstream-name . "fanovaGraph")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sensitivity r-igraph r-dicekriging))
-    (home-page "https://cran.r-project.org/package=fanovaGraph")
-    (synopsis "Building Kriging Models from FANOVA Graphs")
-    (description
-     "Estimation and plotting of a function's FANOVA graph to identify the interaction
-structure and fitting, prediction and simulation of a Kriging model modified by
-the identified structure.  The interactive function @code{plotManipulate()} can
-only be run on the RStudio IDE with RStudio package manipulate loaded.  RStudio
-is freely available (<https://rstudio.com/>), and includes package manipulate'.
-The equivalent function @code{plotTk()} bases on CRAN Repository packages only.
-For further information on the method see Fruth, J., Roustant, O., Kuhnt, S.
-(2014) <doi:10.1016/j.jspi.2013.11.007>.")
-    (license license:gpl3)))
 
 (define-public r-fangs
   (package
@@ -25231,13 +24965,13 @@ approach from Scutari, Panero and Proissl (2022)
 (define-public r-fairmetrics
   (package
     (name "r-fairmetrics")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fairmetrics" version))
        (sha256
-        (base32 "0f0y3mw914fiqndkf3xvwivwrjkfmr1n9ldmbsqrbclg4vxqwbcx"))))
+        (base32 "1nnjr3di3k9vw3nwn7sgm33w4jkp9wbga8q8qzgbw0g9jz5xbwbl"))))
     (properties `((upstream-name . "fairmetrics")))
     (build-system r-build-system)
     (arguments

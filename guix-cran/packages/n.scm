@@ -4525,30 +4525,6 @@ numerical vectors and time-series features calculated within the theft
 ecosystem.")
     (license license:expat)))
 
-(define-public r-norma
-  (package
-    (name "r-norma")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NORMA" version))
-       (sha256
-        (base32 "193q6dwn8v7k8xq0amjpvb3v6mn7c6agqa487gvjj78dy1qz720a"))))
-    (properties `((upstream-name . "NORMA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rootsolve))
-    (home-page "http://link.springer.com/chapter/10.1007/978-3-319-19222-2_47")
-    (synopsis "Builds General Noise SVRs")
-    (description
-     "Builds general noise SVR models using Naive Online R Minimization Algorithm,
-NORMA, an optimization method based on classical stochastic gradient descent
-suitable for computing SVR models in an online setting.")
-    (license license:gpl2)))
-
 (define-public r-nordklimdata1
   (package
     (name "r-nordklimdata1")
@@ -4922,34 +4898,6 @@ its variations.")
      "This package contains the following 5 nonparametric hypothesis tests: The Sign
 Test, The 2 Sample Median Test, Miller's Jackknife Procedure, Cochran's Q Test,
 & The Stuart-Maxwell Test.")
-    (license license:gpl3)))
-
-(define-public r-nonnormvtdist
-  (package
-    (name "r-nonnormvtdist")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NonNorMvtDist" version))
-       (sha256
-        (base32 "11xqdrx03q3anavyxpzb0hz6mcbdy252rzzjlpa2byfdlrfvn178"))))
-    (properties `((upstream-name . "NonNorMvtDist")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-cubature))
-    (home-page "https://cran.r-project.org/package=NonNorMvtDist")
-    (synopsis
-     "Multivariate Lomax (Pareto Type II) and Its Related Distributions")
-    (description
-     "This package implements calculation of probability density function, cumulative
-distribution function, equicoordinate quantile function and survival function,
-and random numbers generation for the following multivariate distributions:
-Lomax (Pareto Type II), generalized Lomax, Mardiaâs Pareto of Type I,
-Logistic, Burr, Cook-Johnsonâs uniform, F and Inverted Beta.  See Tapan Nayak
-(1987) <doi:10.2307/3214068>.")
     (license license:gpl3)))
 
 (define-public r-nonneg-cg
@@ -11346,32 +11294,6 @@ Distribution, Two-Parameter Rayleigh Distribution, Muth Distribution,
 Uniform-Geometric Distribution, Discrete Weibull Distribution.")
     (license license:gpl3)))
 
-(define-public r-neverhpfilter
-  (package
-    (name "r-neverhpfilter")
-    (version "0.4-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "neverhpfilter" version))
-       (sha256
-        (base32 "097nfz30pf4bd95l943ccsvndni0n8c6gpcdk5dv02802mcg0h81"))))
-    (properties `((upstream-name . "neverhpfilter")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo r-xts))
-    (native-inputs (list r-knitr))
-    (home-page "https://justinmshea.github.io/neverhpfilter/")
-    (synopsis "An Alternative to the Hodrick-Prescott Filter")
-    (description
-     "In the working paper titled \"Why You Should Never Use the Hodrick-Prescott
-Filter\", James D. Hamilton proposes a new alternative to economic time series
-filtering.  The neverhpfilter package provides functions and data for
-reproducing his work.  Hamilton (2017) <doi:10.3386/w23429>.")
-    (license license:gpl3)))
-
 (define-public r-nevada
   (package
     (name "r-nevada")
@@ -13765,13 +13687,13 @@ of the fitted model and dose-response plots in a frequentist way.")
 (define-public r-netdiffuser
   (package
     (name "r-netdiffuser")
-    (version "1.22.6")
+    (version "1.23.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netdiffuseR" version))
        (sha256
-        (base32 "0f4d0x03970iqxkbr0r9jm8gf28r79rimfnfr1djcajzihxaj7l6"))))
+        (base32 "1bgzbhwxkpyyymd09lc1yq0bwz45lz16azx92h9fcksr3ca6psrr"))))
     (properties `((upstream-name . "netdiffuseR")))
     (build-system r-build-system)
     (arguments
@@ -16921,46 +16843,6 @@ application.")
     (description
      "Implementation of the two error variance estimation methods in high-dimensional
 linear models of Yu, Bien (2017) <@code{arXiv:1712.02412>}.")
-    (license license:gpl3)))
-
-(define-public r-natstrat
-  (package
-    (name "r-natstrat")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "natstrat" version))
-       (sha256
-        (base32 "1i3qjd787clbafpkjd0mkp6i540061q9xl9kxlgh9f517ksg8zpz"))))
-    (properties `((upstream-name . "natstrat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-slam
-                             r-sampling
-                             r-rlang
-                             r-rglpk
-                             r-ramify
-                             r-pps
-                             r-plyr
-                             r-ggplot2
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/kkbrum/natstrat")
-    (synopsis "Obtain Unweighted Natural Strata that Balance Many Covariates")
-    (description
-     "Natural strata can be used in observational studies to balance the distributions
-of many covariates across any number of treatment groups and any number of
-comparisons.  These strata have proportional amounts of units within each
-stratum across the treatments, allowing for simple interpretation and
-aggregation across strata.  Within each stratum, the units are chosen using
-randomized rounding of a linear program that balances many covariates.  To solve
-the linear program, the Gurobi commercial optimization software is recommended,
-but not required.  The gurobi R package can be installed following the
-instructions at
-<https://www.gurobi.com/documentation/9.1/refman/ins_the_r_package.html>.")
     (license license:gpl3)))
 
 (define-public r-natserv

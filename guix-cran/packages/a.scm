@@ -1862,13 +1862,13 @@ relationships between categorical and continuous variables in the data set.")
 (define-public r-autoslider-core
   (package
     (name "r-autoslider-core")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoslider.core" version))
        (sha256
-        (base32 "0a55xq7md0hdzcjlspck0a8a22439jkn0nmii0sx3y654kxcb5vx"))))
+        (base32 "1xf95qbxna6rh8x6bn6024l57v4aa3rwh0vlz6b0r0a6lnn39xf3"))))
     (properties `((upstream-name . "autoslider.core")))
     (build-system r-build-system)
     (arguments
@@ -5087,49 +5087,6 @@ social networks.  This can be measured on both weighted and binary networks,
 with discrete or continuous vertex values.")
     (license license:gpl2)))
 
-(define-public r-assoctests
-  (package
-    (name "r-assoctests")
-    (version "1.0-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AssocTests" version))
-       (sha256
-        (base32 "1wp5swnpd6m5g4zm14lllclmw058513n1g3kq1iqc0acjavkqy17"))))
-    (properties `((upstream-name . "AssocTests")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-fextremes r-combinat r-cluster))
-    (home-page "https://cran.r-project.org/package=AssocTests")
-    (synopsis "Genetic Association Studies")
-    (description
-     "Some procedures including EIGENSTRAT (a procedure for detecting and correcting
-for population stratification through searching for the eigenvectors in genetic
-association studies), P@code{CoC} (a procedure for correcting for population
-stratification through calculating the principal coordinates and the clustering
-of the subjects), Tracy-Widom test (a procedure for detecting the significant
-eigenvalues of a matrix), distance regression (a procedure for detecting the
-association between a distance matrix and some independent variants of
-interest), single-marker test (a procedure for identifying the association
-between the genotype at a biallelic marker and a trait using the Wald test or
-the Fisher's exact test), MAX3 (a procedure for testing for the association
-between a single nucleotide polymorphism and a binary phenotype using the
-maximum value of the three test statistics derived for the recessive, additive,
-and dominant models), nonparametric trend test (a procedure for testing for the
-association between a genetic variant and a non-normal distributed quantitative
-trait based on the nonparametric risk), and nonparametric MAX3 (a procedure for
-testing for the association between a biallelic single nucleotide polymorphism
-and a quantitative trait using the maximum value of the three nonparametric
-trend tests derived for the recessive, additive, and dominant models), which are
-commonly used in genetic association studies.  To cite this package in
-publications use: Lin Wang, Wei Zhang, and Qizhai Li. @code{AssocTests}: An R
-Package for Genetic Association Studies.  Journal of Statistical Software.
-2020; 94(5): 1-26.")
-    (license license:gpl2)))
-
 (define-public r-assocind
   (package
     (name "r-assocind")
@@ -6872,29 +6829,6 @@ H. W. Janson, revised and expanded by Anthony F. Janson (\"History of art,\" 199
 ISBN: 0810934213).")
     (license license:expat)))
 
-(define-public r-artfima
-  (package
-    (name "r-artfima")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "artfima" version))
-       (sha256
-        (base32 "1nqsq9fsqk9kag9n7i2r9yvf578nkdfrkkv7qy8650prka0jca2p"))))
-    (properties `((upstream-name . "artfima")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ltsa r-gsl))
-    (home-page "http://www.stats.uwo.ca/faculty/aim")
-    (synopsis "ARTFIMA Model Estimation")
-    (description
-     "Fit and simulate ARTFIMA. Theoretical autocovariance function and spectral
-density function for stationary ARTFIMA.")
-    (license license:gpl2+)))
-
 (define-public r-art
   (package
     (name "r-art")
@@ -8610,30 +8544,6 @@ Gabriel R Toro, and Andrew T Cox (2019) <@code{arXiv:1909.01836>}.")
 Carvalho, Masini and Medeiros (2016) <DOI:10.2139/ssrn.2823687>.")
     (license license:expat)))
 
-(define-public r-archivist-github
-  (package
-    (name "r-archivist-github")
-    (version "0.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "archivist.github" version))
-       (sha256
-        (base32 "092fzi505vx9xbk41m86d0isxna42iflp7q2kjiqa6z1ccvim2yx"))))
-    (properties `((upstream-name . "archivist.github")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr r-git2r r-digest r-archivist))
-    (native-inputs (list r-knitr))
-    (home-page "http://marcinkosinski.github.io/archivist.github/")
-    (synopsis "Tools for Archiving, Managing and Sharing R Objects via GitHub")
-    (description
-     "The extension of the archivist package integrating the archivist with
-@code{GitHub} via @code{GitHub} API, git2r packages and httr package.")
-    (license license:gpl2)))
-
 (define-public r-archiveretriever
   (package
     (name "r-archiveretriever")
@@ -8811,13 +8721,13 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
 (define-public r-archeoviz
   (package
     (name "r-archeoviz")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archeoViz" version))
        (sha256
-        (base32 "1992vpk0qjf0hbzpq27p0w0r2zlfj15yix7qqn9i8hl9bajamp9c"))))
+        (base32 "17jqfnqv0rl96xwmh5nb89m34nsl3kkzqcjvyqahgqax3cvc65c5"))))
     (properties `((upstream-name . "archeoViz")))
     (build-system r-build-system)
     (arguments
@@ -10636,13 +10546,13 @@ stem.leaf.backback plots back-to-back versions of stem and leaf plot.")
 (define-public r-aplotextra
   (package
     (name "r-aplotextra")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aplotExtra" version))
        (sha256
-        (base32 "0lpp285cnb76byf6mm4m3qzam447ldabnsda82vw1pmxgpgzrrql"))))
+        (base32 "1jrk05b98q92n3h41ga0pj8h4yc1w5pw6ym85w7l8pdn9f49hnz9"))))
     (properties `((upstream-name . "aplotExtra")))
     (build-system r-build-system)
     (arguments
@@ -10799,43 +10709,6 @@ assignment.")
 inference.  Additionally, supports \"A Progressive Introduction to Linear Models\"
 by Joshua French (<https://jfrench.github.io/@code{LinearRegression/>}).")
     (license license:gpl3)))
-
-(define-public r-aphylo
-  (package
-    (name "r-aphylo")
-    (version "0.3-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "aphylo" version))
-       (sha256
-        (base32 "06zccdhvcyjxzx71rark0jn1wj9d0kjvpv063x9p46ywy5ibcvk5"))))
-    (properties `((upstream-name . "aphylo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-rcpp
-                             r-matrix
-                             r-mass
-                             r-fmcmc
-                             r-coda
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/USCbiostats/aphylo")
-    (synopsis
-     "Statistical Inference and Prediction of Annotations in Phylogenetic Trees")
-    (description
-     "This package implements a parsimonious evolutionary model to analyze and predict
-gene-functional annotations in phylogenetic trees as described in Vega Yon et
-al. (2021) <doi:10.1371/journal.pcbi.1007948>.  Focusing on computational
-efficiency, aphylo makes it possible to estimate pooled phylogenetic models,
-including thousands (hundreds) of annotations (trees) in the same run.  The
-package also provides the tools for visualization of annotated phylogenies,
-calculation of posterior probabilities (prediction) and goodness-of-fit
-assessment featured in Vega Yon et al. (2021).")
-    (license license:expat)))
 
 (define-public r-aphid
   (package
@@ -11203,47 +11076,6 @@ Name Index (APNI) to align and update plant taxon names to current, accepted
 standards.  APCalign also supplies information about the established status of
 plant taxa across different states/territories.")
     (license license:expat)))
-
-(define-public r-apc
-  (package
-    (name "r-apc")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "apc" version))
-       (sha256
-        (base32 "0vh6iyxm46k8sfa1xgz0y6m619snnm8s072kml5qgiiw5s7bqnpq"))))
-    (properties `((upstream-name . "apc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survey
-                             r-reshape
-                             r-plyr
-                             r-plm
-                             r-lmtest
-                             r-lattice
-                             r-islr
-                             r-ggplot2
-                             r-chainladder
-                             r-car
-                             r-aer))
-    (home-page "https://cran.r-project.org/package=apc")
-    (synopsis "Age-Period-Cohort Analysis")
-    (description
-     "This package provides functions for age-period-cohort analysis.  Aggregate data
-can be organised in matrices indexed by age-cohort, age-period or cohort-period.
- The data can include dose and response or just doses.  The statistical model is
-a generalized linear model (GLM) allowing for 3,2,1 or 0 of the
-age-period-cohort factors.  Individual-level data should have a row for each
-individual and columns for each of age, period, and cohort.  The statistical
-model for repeated cross-section is a generalized linear model.  The statistical
-model for panel data is ordinary least squares.  The canonical parametrisation
-of Kuang, Nielsen and Nielsen (2008) <DOI:10.1093/biomet/asn026> is used.  Thus,
-the analysis does not rely on ad hoc identification.")
-    (license license:gpl3)))
 
 (define-public r-apatext
   (package
@@ -16279,13 +16111,13 @@ models, helping to select the best model.")
 (define-public r-alone
   (package
     (name "r-alone")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alone" version))
        (sha256
-        (base32 "0iwamh7sxq62rw5vlkfh9fjlj6mwz7fbpd3cbmqb1iw1l6yc8b9c"))))
+        (base32 "09znb8pd58vsjmf3ipw3r5p4lgv4fabhzxklkia6z33wgx6k13x7"))))
     (properties `((upstream-name . "alone")))
     (build-system r-build-system)
     (arguments
@@ -20876,49 +20708,6 @@ decay function to a stress-relaxation / creep experiment, obtain adhesion
 energies.  These operations can be done either over a single F-d curve or over a
 set of F-d curves in batch mode.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-afm
-  (package
-    (name "r-afm")
-    (version "2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AFM" version))
-       (sha256
-        (base32 "1l0yd68h8vlii1437zhyrxj6fq1ghfaqclk860c25q2d055ajnqd"))))
-    (properties `((upstream-name . "AFM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-sp
-                             r-shinyjs
-                             r-shiny
-                             r-scales
-                             r-rgl
-                             r-pracma
-                             r-png
-                             r-plyr
-                             r-moments
-                             r-mixtools
-                             r-igraph
-                             r-gstat
-                             r-gridextra
-                             r-ggplot2
-                             r-fractaldim
-                             r-fftwtools
-                             r-dbscan
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=AFM")
-    (synopsis "Atomic Force Microscope Image Analysis")
-    (description
-     "This package provides Atomic Force Microscope images analysis such as Gaussian
-mixes identification, Power Spectral Density, roughness against lengthscale,
-experimental variogram and variogram models, fractal dimension and scale, 2D
-network analysis.  The AFM images can be exported to STL format for 3D printing.")
-    (license license:agpl3)))
 
 (define-public r-afheritability
   (package

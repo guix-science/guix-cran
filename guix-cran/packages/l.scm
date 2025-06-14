@@ -761,31 +761,6 @@ the gps location where the measurement was made and the 250m east-facing
 transect.")
     (license license:gpl3+)))
 
-(define-public r-luca
-  (package
-    (name "r-luca")
-    (version "1.0-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "luca" version))
-       (sha256
-        (base32 "0zrxrwpk7iblpysd4fbh50s5bmvd5l1bzbd8rdyk06wby6bcs1rk"))))
-    (properties `((upstream-name . "luca")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-genetics))
-    (home-page "https://sfustatgen.github.io/research/luca.html")
-    (synopsis
-     "Likelihood Inference from Case-Control Data under Covariate Assumptions")
-    (description
-     "Likelihood inference under covariate assumptions (LUCA) in case-control studies
-of a rare disease assuming independence or simple dependence of genetic and
-non-genetic covariates.")
-    (license license:gpl2)))
-
 (define-public r-lubrilog
   (package
     (name "r-lubrilog")
@@ -2169,46 +2144,6 @@ function and minimize to get the optimal bandwidth matrix.  See Doss and Weng
 (2018) <@code{arXiv:1806.00731>} for more detail.")
     (license license:gpl3)))
 
-(define-public r-lsbclust
-  (package
-    (name "r-lsbclust")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lsbclust" version))
-       (sha256
-        (base32 "1pbai58pfvhfcrd0nj13d54vrn9wrx2xapqhgqa1pkrjwbk5amj7"))))
-    (properties `((upstream-name . "lsbclust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2
-                             r-rcpp
-                             r-plyr
-                             r-mvtnorm
-                             r-gridextra
-                             r-ggplot2
-                             r-foreach
-                             r-doparallel
-                             r-clue))
-    (home-page "https://cran.r-project.org/package=lsbclust")
-    (synopsis "Least-Squares Bilinear Clustering for Three-Way Data")
-    (description
-     "This package provides functions for performing least-squares bilinear clustering
-of three-way data.  The method uses the bilinear decomposition (or bi-additive
-model) to model two-way matrix slices while clustering over the third way.  Up
-to four different types of clusters are included, one for each term of the
-bilinear decomposition.  In this way, matrices are clustered simultaneously on
-(a subset of) their overall means, row margins, column margins and row-column
-interactions.  The orthogonality of the bilinear model results in separability
-of the joint clustering problem into four separate ones.  Three of these
-sub-problems are specific k-means problems, while a special algorithm is
-implemented for the interactions.  Plotting methods are provided, including
-biplots for the low-rank approximations of the interactions.")
-    (license license:gpl2+)))
-
 (define-public r-lsasim
   (package
     (name "r-lsasim")
@@ -2719,31 +2654,6 @@ for polynomials.  Simulations methods are used to perform variance estimation,
 inference and post-selection adjustments.  Algeri S. and Zhang X. (2020)
 <@code{arXiv:2005.13011>}.")
     (license license:gpl3)))
-
-(define-public r-lps
-  (package
-    (name "r-lps")
-    (version "1.0.16")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LPS" version))
-       (sha256
-        (base32 "192iz2gakrddqc4h1y4swj3m3dl03x9mvj3i1dl7jnj18dxik24n"))))
-    (properties `((upstream-name . "LPS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://bioinformatics.ovsa.fr/LPS")
-    (synopsis
-     "Linear Predictor Score, for Binary Inference from Multiple Continuous Variables")
-    (description
-     "An implementation of the Linear Predictor Score approach, as initiated by
-Radmacher et al. (J Comput Biol 2001) and enhanced by Wright et al. (PNAS 2003)
-for gene expression signatures.  Several tools for unsupervised clustering of
-gene expression data are also provided.")
-    (license license:gpl3+)))
 
 (define-public r-lpridge
   (package
@@ -7326,13 +7236,13 @@ model inference feature through simulation and games.")
 (define-public r-lmtp
   (package
     (name "r-lmtp")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmtp" version))
        (sha256
-        (base32 "06i8ijj8vk3qsrikpnsqivxaji9x9zai303xzb9rprga39blhh3k"))))
+        (base32 "1blh19rgglbkjdzqka359kcic216f7dbx0sinrqibhdhfrkvyz1w"))))
     (properties `((upstream-name . "lmtp")))
     (build-system r-build-system)
     (arguments
@@ -10899,40 +10809,6 @@ can be used to generate color values to be used in any functions that calls for
 a color (i.e. @code{ggplot()}, @code{plot()}, @code{flextable()}, etc.).")
     (license license:gpl3)))
 
-(define-public r-liminal
-  (package
-    (name "r-liminal")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "liminal" version))
-       (sha256
-        (base32 "1ka16fm0gzhpydlk5pjf1vjcb7ygx1d3iv4z8cs6ywzrq4bb5r61"))))
-    (properties `((upstream-name . "liminal")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegawidget
-                             r-tourr
-                             r-shiny
-                             r-rlang
-                             r-miniui
-                             r-matrixstats
-                             r-jsonlite
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sa-lee/liminal/")
-    (synopsis "Multivariate Data Visualization with Tours and Embeddings")
-    (description
-     "Compose interactive visualisations designed for exploratory high-dimensional
-data analysis.  With liminal you can create linked interactive graphics to
-diagnose the quality of a dimension reduction technique and explore the global
-structure of a dataset with a tour.  A complete description of the method is
-discussed in ['Lee & Laa & Cook (2020) <@code{arXiv:2012.06077>}].")
-    (license license:expat)))
-
 (define-public r-limexhub
   (package
     (name "r-limexhub")
@@ -11432,31 +11308,6 @@ Avantes <https://www.avantes.com/>, CRAIC <https://www.microspectra.com/>, and
 chunks.  Rebuild the file from the tibble.")
     (license license:expat)))
 
-(define-public r-lightningr
-  (package
-    (name "r-lightningr")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LightningR" version))
-       (sha256
-        (base32 "1va673aw2hgir8ybbjad6dhbs8izs1z4jcikwa7qp3mkv0zqd0vq"))))
-    (properties `((upstream-name . "LightningR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rjsonio r-rcurl r-r6 r-httr))
-    (home-page "https://github.com/Ermlab/lightining-rstat/")
-    (synopsis "Tools for Communication with Lightning-Viz Server")
-    (description
-     "The purpose of this package is to enable usage of lightningviz server to be
-accessible from R. The server itself can be found at http://lightning-viz.org/
-and is required to work with this package.  Package by itself cannot and will
-not create any visualizations.")
-    (license license:expat)))
-
 (define-public r-lightlogr
   (package
     (name "r-lightlogr")
@@ -11628,31 +11479,6 @@ wavelet lifting scales and wavelet energy of Knight et al (2017)
 <doi:10.1007/s11222-016-9698-2>.")
     (license license:gpl2)))
 
-(define-public r-lifetables
-  (package
-    (name "r-lifetables")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LifeTables" version))
-       (sha256
-        (base32 "1dyivvi5cjsnbhncj3arkrndadg7v81nzdf6p6mpgqwqvwn5li8x"))))
-    (properties `((upstream-name . "LifeTables")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mclust))
-    (home-page "https://cran.r-project.org/package=LifeTables")
-    (synopsis "Two-Parameter HMD Model Life Table System")
-    (description
-     "This package provides functions supplied in this package will implement
-discriminant analysis to select an appropriate life table family, select an
-appropriate alpha level based on a desired life expectancy at birth, produce a
-model mortality pattern based on family and level as well as plot the results.")
-    (license license:gpl2+)))
-
 (define-public r-lifertable
   (package
     (name "r-lifertable")
@@ -11778,42 +11604,6 @@ life insurance modeling, facilitating accurate financial projections.")
 \"taxid\" column containing NCBI format @code{TaxIds} and allows to draw multiple
 layers with different visualisation tools.")
     (license license:expat)))
-
-(define-public r-lifelogr
-  (package
-    (name "r-lifelogr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lifelogr" version))
-       (sha256
-        (base32 "1wygvw61ygpww0kahxhmjdncwg4zc2cshs0brzw18nfqaj8vpfav"))))
-    (properties `((upstream-name . "lifelogr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-shiny
-                             r-r6
-                             r-plyr
-                             r-modelr
-                             r-lubridate
-                             r-lazyeval
-                             r-ggplot2
-                             r-fitbitscraper
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=lifelogr")
-    (synopsis "Life Logging")
-    (description
-     "This package provides a framework for combining self-data (exercise, sleep,
-etc.) from multiple sources (fitbit, Apple Health), creating visualizations, and
-experimenting on onself.")
-    (license license:gpl2+)))
 
 (define-public r-lifeinsurer
   (package
@@ -15110,32 +14900,6 @@ plugins.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-leaflet-esri
-  (package
-    (name "r-leaflet-esri")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "leaflet.esri" version))
-       (sha256
-        (base32 "01bwzxh2rdhpvvazaxsji8axl765q1ix1fdxla6i61nvqkpw3dz1"))))
-    (properties `((upstream-name . "leaflet.esri")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-leaflet-extras r-leaflet r-htmltools))
-    (home-page "https://github.com/bhaskarvk/leaflet.esri")
-    (synopsis "'ESRI' Bindings for the 'leaflet' Package")
-    (description
-     "An add-on package to the leaflet package, which provides bindings for ESRI
-services.  This package allows a user to add ESRI provided services such as
-@code{MapService}', @code{ImageMapService}', @code{TiledMapService} etc.  to a
-leaflet map.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-leaflegend
   (package
     (name "r-leaflegend")
@@ -16450,54 +16214,16 @@ non-parametric confidence intervals were implemented using percentile method or
 normal-approximation based on Fisher Z-transformation.")
     (license license:gpl2+)))
 
-(define-public r-lcavarsel
-  (package
-    (name "r-lcavarsel")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LCAvarsel" version))
-       (sha256
-        (base32 "0aqc9rbrc8n6s9xllmamby219qsnxd4ajvffjr21qlkhkaklirb1"))))
-    (properties `((upstream-name . "LCAvarsel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-polca
-                             r-nnet
-                             r-memoise
-                             r-mass
-                             r-ga
-                             r-foreach
-                             r-doparallel))
-    (home-page "https://michaelfop.github.io/")
-    (synopsis "Variable Selection for Latent Class Analysis")
-    (description
-     "Variable selection for latent class analysis for model-based clustering of
-multivariate categorical data.  The package implements a general framework for
-selecting the subset of variables with relevant clustering information and
-discard those that are redundant and/or not informative.  The variable selection
-method is based on the approach of Fop et al. (2017) <doi:10.1214/17-AOAS1061>
-and Dean and Raftery (2010) <doi:10.1007/s10463-009-0258-9>.  Different
-algorithms are available to perform the selection: stepwise, swap-stepwise and
-evolutionary stochastic search.  Concomitant covariates used to predict the
-class membership probabilities can also be included in the latent class analysis
-model.  The selection procedure can be run in parallel on multiple cores
-machines.")
-    (license license:gpl2+)))
-
 (define-public r-lcars
   (package
     (name "r-lcars")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lcars" version))
        (sha256
-        (base32 "1v1fdnni4smkmsvsf09k96hf2503djlkyrglb5dc6yz66dsdg2bj"))))
+        (base32 "1dkn3ssmmis6cajg0zfl3ngrzbz83gzxidpz559qcxsq258m0gid"))))
     (properties `((upstream-name . "lcars")))
     (build-system r-build-system)
     (arguments
@@ -17169,31 +16895,6 @@ Bayesian learning: the partially CFA (Chen, Guo, Zhang, & Pan, 2020) <DOI:
 10.1080/10705511.2020.1854763>; Fully and partially EFA.")
     (license license:gpl3)))
 
-(define-public r-lavash
-  (package
-    (name "r-lavash")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Lavash" version))
-       (sha256
-        (base32 "0cjl8crk0rdkyzp069fk4k0sapcjmqm3q40z5mgl0i1n59kn4s07"))))
-    (properties `((upstream-name . "Lavash")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pracma r-mass r-glmnet))
-    (home-page "https://cran.r-project.org/package=Lavash")
-    (synopsis "Lava Estimation for the Sum of Sparse and Dense Signals")
-    (description
-     "The lava estimation is a new technique to recover signals that is the sum of a
-sparse and dense signals.  The post-lava method corrects the shrinkage bias of
-lava.  For more information on the lava estimation, see Chernozhukov, Hansen,
-and Liao (2017) <doi:10.1214/16-AOS1434>.")
-    (license license:gpl2)))
-
 (define-public r-lavasearch2
   (package
     (name "r-lavasearch2")
@@ -17237,32 +16938,6 @@ small samples, adjustment for multiple comparisons when searching for local
 dependencies, and adjustment for multiple comparisons when doing inference for
 multiple latent variable models.")
     (license license:gpl3)))
-
-(define-public r-lavacvxr
-  (package
-    (name "r-lavacvxr")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LavaCvxr" version))
-       (sha256
-        (base32 "0gg14y8kngj3r4p4bl3ddnm9dxlklxhvnra5bmbjp1kmjhlg52rn"))))
-    (properties `((upstream-name . "LavaCvxr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pracma r-lavash r-cvxr))
-    (home-page "https://cran.r-project.org/package=LavaCvxr")
-    (synopsis
-     "Lava Estimation for the Sum of Sparse and Dense Signals(3 Methods)")
-    (description
-     "The lava estimation is used to recover signals that is the sum of a sparse
-signal and a dense signal.  The post-lava method corrects the shrinkage bias of
-lava.  For more information on the lava estimation, see Chernozhukov, Hansen,
-and Liao (2017) <doi:10.1214/16-AOS1434>.")
-    (license license:gpl2)))
 
 (define-public r-lavacreg
   (package
@@ -18310,32 +17985,6 @@ Learning, Data Wrangling, Marketing Mix Modeling (Robyn), Exploratory, API, and
 Scrapper, it helps the analyst or data scientist to get quick and robust
 results, without the need of repetitive coding or advanced R programming skills.")
     (license license:agpl3)))
-
-(define-public r-lar
-  (package
-    (name "r-lar")
-    (version "0.1-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lar" version))
-       (sha256
-        (base32 "0qda0y4ag10kg83wxs3z754kc8c1dg2rwciy64klk7an4ln43i5b"))))
-    (properties `((upstream-name . "lar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xlsx r-treemap r-data-table))
-    (home-page "https://cran.r-project.org/package=lar")
-    (synopsis "History of labour relations package")
-    (description
-     "This package is intended for researchers studying historical labour relations
-(see http://www.historyoflabourrelations.org).  The package allows for easy
-access of excel files in the standard defined by the Global Collaboratory on the
-History of Labour Relations.  The package also allows for visualisation of
-labour relations according to the Collaboratory's format.")
-    (license license:gpl3)))
 
 (define-public r-lans2r
   (package
@@ -19945,38 +19594,6 @@ funzioni base per la ricerca sociale\" (Datasets, scripts and functions to
 support the book \"Ricerca sociale con R. Concetti e funzioni base per la ricerca
 sociale\").")
     (license license:gpl3+)))
-
-(define-public r-labourr
-  (package
-    (name "r-labourr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "labourR" version))
-       (sha256
-        (base32 "0skr8qr1m849l3gpcsn5bjxyjczlzzmsm2j6xcmxv33lf95qg6gi"))))
-    (properties `((upstream-name . "labourR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringdist r-stopwords r-magrittr r-data-table
-                             r-cld2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/AleKoure/labourR")
-    (synopsis
-     "Classify Multilingual Labour Market Free-Text to Standardized Hierarchical Occupations")
-    (description
-     "Allows the user to map multilingual free-text of occupations to a broad range of
-standardized classifications.  The package facilitates automatic occupation
-coding (see, e.g., Gweon et al. (2017) <doi:10.1515/jos-2017-0006> and Turrell
-et al. (2019) <doi:10.3386/w25837>), where the ISCO to ESCO mapping is exploited
-to extend the occupations hierarchy, Le Vrang et al. (2014)
-<doi:10.1109/mc.2014.283>.  Document vectorization is performed using the
-multilingual ESCO corpus.  A method based on the nearest neighbor search is used
-to suggest the closest ISCO occupation.")
-    (license license:gpl3)))
 
 (define-public r-labourmarketareas
   (package

@@ -642,34 +642,6 @@ different file formats.  For more information, visit
 <https://overturemaps.org/download/>.")
     (license license:expat)))
 
-(define-public r-overture
-  (package
-    (name "r-overture")
-    (version "0.4-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "overture" version))
-       (sha256
-        (base32 "1s16x5kn0apb0w1f7hqzcsqvw3x621y5n6yr1qn7yb7431pdw3cz"))))
-    (properties `((upstream-name . "overture")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-bigmemory))
-    (home-page "https://github.com/kurtis-s/overture")
-    (synopsis "Tools for Writing MCMC")
-    (description
-     "Simplifies MCMC setup by automatically looping through sampling functions and
-saving the results.  Reduces the memory footprint of running MCMC and saves
-samples to disk as the chain runs.  Allows samples from the chain to be analyzed
-while the MCMC is still running.  Provides functions for commonly performed
-operations such as calculating Metropolis acceptance ratios and creating
-adaptive Metropolis samplers.  References: Roberts and Rosenthal (2009)
-<doi:10.1198/jcgs.2009.06134>.")
-    (license license:lgpl3)))
-
 (define-public r-overlapptest
   (package
     (name "r-overlapptest")
@@ -10149,13 +10121,13 @@ common data model.")
 (define-public r-omock
   (package
     (name "r-omock")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omock" version))
        (sha256
-        (base32 "1hkkz0l9ai7sypzry571bm24bp2cjpm6yrig5b2h9sjz57qkpdwx"))))
+        (base32 "181k3sqapq927hfpnvg68ld6zlqf5f7cqxrcm43cdp0msmaplf2n"))))
     (properties `((upstream-name . "omock")))
     (build-system r-build-system)
     (arguments
@@ -10163,11 +10135,13 @@ common data model.")
       #:tests? #f))
     (propagated-inputs (list r-snakecase
                              r-rlang
+                             r-readr
                              r-purrr
                              r-omopgenerics
                              r-lubridate
                              r-dplyr
-                             r-cli))
+                             r-cli
+                             r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://ohdsi.github.io/omock/")
     (synopsis
@@ -10432,29 +10406,6 @@ degree of sparsity.")
  This package provides functions to construct the quantitative prediction model
 using omics data.")
     (license license:gpl3+)))
-
-(define-public r-omics
-  (package
-    (name "r-omics")
-    (version "0.1-5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "omics" version))
-       (sha256
-        (base32 "1y2x33mfgq98nglhvpr1wq1v6nfiq4njy2yac47x72rpwxsj9vb1"))))
-    (properties `((upstream-name . "omics")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pheatmap r-lme4))
-    (home-page "https://cran.r-project.org/package=omics")
-    (synopsis "'--omics' Data Analysis Toolbox")
-    (description
-     "This package provides a collection of functions to analyse --omics datasets such
-as DNA methylation and gene expression profiles.")
-    (license license:gpl2+)))
 
 (define-public r-omicnavigator
   (package
@@ -11402,35 +11353,6 @@ useful when considering the validity of novel inferences.  Use of the analysis
 provided is described in <doi:10.3389/fimmu.2019.00435>.")
     (license license:cc-by-sa4.0)))
 
-(define-public r-oglmx
-  (package
-    (name "r-oglmx")
-    (version "3.0.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "oglmx" version))
-       (sha256
-        (base32 "13axmhbqhv4kkcdsdmp9r7p0d0kyqlsaqgyyllbkxlxb4hfz79b6"))))
-    (properties `((upstream-name . "oglmx")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-maxlik))
-    (home-page "https://cran.r-project.org/package=oglmx")
-    (synopsis "Estimation of Ordered Generalized Linear Models")
-    (description
-     "Ordered models such as ordered probit and ordered logit presume that the error
-variance is constant across observations.  In the case that this assumption does
-not hold estimates of marginal effects are typically biased (Weiss (1997)).
-This package allows for generalization of ordered probit and ordered logit
-models by allowing the user to specify a model for the variance.  Furthermore,
-the package includes functions to calculate the marginal effects.  Wrapper
-functions to estimate the standard limited dependent variable models are also
-included.")
-    (license license:gpl2)))
-
 (define-public r-oglcnac
   (package
     (name "r-oglcnac")
@@ -11849,38 +11771,6 @@ and Chien (2022) <doi:10.18637/jss.v104.i06>.")
 tools for simulation, data transformation, input validation, and more.")
     (license license:gpl3+)))
 
-(define-public r-oefpil
-  (package
-    (name "r-oefpil")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OEFPIL" version))
-       (sha256
-        (base32 "0gnbbz2spaqlqqn7978l15jv7xiqpfrh8k9girrpdqih02x95rfw"))))
-    (properties `((upstream-name . "OEFPIL")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plyr
-                             r-minpack-lm
-                             r-matrixcalc
-                             r-mass
-                             r-ggplot2
-                             r-deriv))
-    (home-page "https://cran.r-project.org/package=OEFPIL")
-    (synopsis
-     "Optimal Estimation of Function Parameters by Iterated Linearization")
-    (description
-     "Package for estimating the parameters of a nonlinear function using iterated
-linearization via Taylor series.  Method is based on KubÃ¡Äek (2000) ISBN:
-80-244-0093-6.  The algorithm is a generalization of the procedure given in
-KÃ¶ning, R., Wimmer, G. and WitkovskÃ½, V. (2014)
-<doi:10.1088/0957-0233/25/11/115001>.")
-    (license license:gpl2+)))
-
 (define-public r-oecd
   (package
     (name "r-oecd")
@@ -12199,62 +12089,6 @@ This package provides the implementations of some novel approaches to detect the
 outliers based on typicality degrees that are obtained with the soft
 partitioning clustering algorithms such as Fuzzy C-means and its variants.")
     (license license:gpl2+)))
-
-(define-public r-odesensitivity
-  (package
-    (name "r-odesensitivity")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ODEsensitivity" version))
-       (sha256
-        (base32 "0yddv5h3y0xfviqjgrbixawd00jc1rh9ngckfqka5j855vhchh66"))))
-    (properties `((upstream-name . "ODEsensitivity")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sensitivity r-odenetwork r-desolve r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/surmann/ODEsensitivity")
-    (synopsis "Sensitivity Analysis of Ordinary Differential Equations")
-    (description
-     "This package performs sensitivity analysis in ordinary differential equation
-(ode) models.  The package utilize the ode interface from @code{deSolve} and
-connects it with the sensitivity analysis from sensitivity'.  Additionally we
-add a method to run the sensitivity analysis on variables with class
-ODEnetwork'.  A detailed plotting function provides outputs on the calculations.
- The method is described by Weber, Theers, Surmann, Ligges, and Weihs (2018)
-<doi:10.17877/DE290R-18874>.")
-    (license license:lgpl3)))
-
-(define-public r-odenetwork
-  (package
-    (name "r-odenetwork")
-    (version "1.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ODEnetwork" version))
-       (sha256
-        (base32 "0wicp0xxqq3jl0kjhc26iqpk8rwa9nv2aiwf18pkgnqxbyw6lgnp"))))
-    (properties `((upstream-name . "ODEnetwork")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-desolve r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/surmann/ODEnetwork")
-    (synopsis "Network of Differential Equations")
-    (description
-     "Simulates a network of ordinary differential equations of order two.  The
-package provides an easy interface to construct networks.  In addition you are
-able to define different external triggers to manipulate the trajectory.  The
-method is described by Surmann, Ligges, and Weihs (2014)
-<doi:10.1109/ENERGYCON.2014.6850482>.")
-    (license license:lgpl3)))
 
 (define-public r-odeguts
   (package
@@ -12584,31 +12418,6 @@ the data sets with variables \"harmonized\" across different years.")
     (description
      "This package provides a DBI-compatible interface to ODBC databases.")
     (license license:expat)))
-
-(define-public r-odb
-  (package
-    (name "r-odb")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ODB" version))
-       (sha256
-        (base32 "0frkbl99ilpmppm4fm97lbkqhmjgcwlz9j5vh5nzzcsxrh8qwicn"))))
-    (properties `((upstream-name . "ODB")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zip))
-    (propagated-inputs (list r-rjdbc r-dbi))
-    (home-page "http://bioinformatics.ovsa.fr/ODB")
-    (synopsis "Open Document Databases (.odb) Management")
-    (description
-     "This package provides functions to create, connect, update and query HSQL
-databases embedded in Open Document Databases files, as @code{OpenOffice} and
-@code{LibreOffice} do.")
-    (license license:gpl3+)))
 
 (define-public r-odataquery
   (package

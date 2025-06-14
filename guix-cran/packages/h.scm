@@ -3597,33 +3597,6 @@ accurately characterizing the environmental response of species, predicting
 their probability of occurrence, and assessing uncertainty in the model results.")
     (license license:gpl3)))
 
-(define-public r-hsdic
-  (package
-    (name "r-hsdic")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HSDiC" version))
-       (sha256
-        (base32 "0wiixb1ylx0l8qfgh5ark6alkdq87xaak1jlxizw1m589vghvqfp"))))
-    (properties `((upstream-name . "HSDiC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-quadprog r-ncvreg r-matrix r-glmnet))
-    (home-page "https://cran.r-project.org/package=HSDiC")
-    (synopsis
-     "Homogeneity and Sparsity Detection Incorporating Prior Constraint Information")
-    (description
-     "We explore sparsity and homogeneity of regression coefficients incorporating
-prior constraint information.  A general pairwise fusion approach is proposed to
-deal with the sparsity and homogeneity detection when combining prior convex
-constraints.  We develop an modified alternating direction method of multipliers
-algorithm (ADMM) to obtain the estimators.")
-    (license license:gpl2+)))
-
 (define-public r-hscovar
   (package
     (name "r-hscovar")
@@ -3884,20 +3857,20 @@ three functions are based on results in Poetscher and Preinerstorfer (2021)
 (define-public r-hrqglas
   (package
     (name "r-hrqglas")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hrqglas" version))
        (sha256
-        (base32 "0v3hdjz8755ka4ahdx2dsyw3513hxg1r0ncj9id6gbmqq1l0s9a5"))))
+        (base32 "01w6y1b6lsah9rifi6y9b696jncgifc38j7rr75drl0q12qk2nwi"))))
     (properties `((upstream-name . "hrqglas")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-quantreg r-matrix r-mass))
-    (home-page "https://cran.r-project.org/package=hrqglas")
+    (propagated-inputs (list r-matrix r-mass))
+    (home-page "https://github.com/shaobo-li/hrqglas")
     (synopsis
      "Group Variable Selection for Quantile and Robust Mean Regression")
     (description
@@ -10234,40 +10207,6 @@ estimators.\" Journal of Multivariate Analysis (2021)
 distribution.")
     (license license:gpl2+)))
 
-(define-public r-heritseq
-  (package
-    (name "r-heritseq")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HeritSeq" version))
-       (sha256
-        (base32 "0jzf3pq43lllxvvmf0rqzxz9fx6931mgb0ipminlw1iakz8wa6w3"))))
-    (properties `((upstream-name . "HeritSeq")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tweedie
-                             r-summarizedexperiment
-                             r-pbapply
-                             r-mass
-                             r-lme4
-                             r-deseq2
-                             r-cplm))
-    (home-page "https://cran.r-project.org/package=HeritSeq")
-    (synopsis "Heritability of Gene Expression for Next-Generation Sequencing")
-    (description
-     "Statistical framework to analyze heritability of gene expression based on
-next-generation sequencing data and simulating sequencing reads.  Variance
-partition coefficients (VPC) are computed using linear mixed effects and
-generalized linear mixed effects models.  Compound Poisson and negative binomial
-models are included.  Reference: Rudra, Pratyaydipta, et al. \"Model based
-heritability scores for high-throughput sequencing data.\" BMC bioinformatics
-18.1 (2017): 143.")
-    (license license:gpl2)))
-
 (define-public r-heritability
   (package
     (name "r-heritability")
@@ -14731,30 +14670,6 @@ state-of-the-art methods described in Salles et al. (2020)
 <doi:10.5753/sbbd.2020.13626>.")
     (license license:expat)))
 
-(define-public r-hapsim
-  (package
-    (name "r-hapsim")
-    (version "0.31")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hapsim" version))
-       (sha256
-        (base32 "0jw6iw89d4y8wjy58biv40szp123ql7frz1mmdjdxljmwaby963h"))))
-    (properties `((upstream-name . "hapsim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass))
-    (home-page "https://cran.r-project.org/package=hapsim")
-    (synopsis "Haplotype Data Simulation")
-    (description
-     "Package for haplotype-based genotype simulations.  Haplotypes are generated such
-that their allele frequencies and linkage disequilibrium coefficients match
-those estimated from an input data set.")
-    (license license:gpl2+)))
-
 (define-public r-happytime
   (package
     (name "r-happytime")
@@ -15615,47 +15530,6 @@ Partially Balanced Incomplete Block (PBIB) designs is much evident from
 literature.  Here, we have constructed Incomplete Block Designs (IBDs) based on
 Hadamard matrices and Kronecker product of Hadamard matrices.")
     (license license:gpl2+)))
-
-(define-public r-hadex
-  (package
-    (name "r-hadex")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HaDeX" version))
-       (sha256
-        (base32 "1qj6n03pd5kd5ff5h4v8wmnqxxylsxx1p6i88nahqkah2mzg9jdr"))))
-    (properties `((upstream-name . "HaDeX")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-shiny
-                             r-reshape2
-                             r-readxl
-                             r-readr
-                             r-latex2exp
-                             r-gsubfn
-                             r-ggplot2
-                             r-dt
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=HaDeX")
-    (synopsis
-     "Analysis and Visualisation of Hydrogen/Deuterium Exchange Mass Spectrometry Data")
-    (description
-     "This package provides functions for processing, analysis and visualization of
-Hydrogen Deuterium @code{eXchange} monitored by Mass Spectrometry experiments
-(HDX-MS) (10.1093/bioinformatics/btaa587). @code{HaDeX} introduces a new
-standardized and reproducible workflow for the analysis of the HDX-MS data,
-including novel uncertainty intervals.  Additionally, it covers data
-exploration, quality control and generation of publication-quality figures.  All
-functionalities are also available in the in-built Shiny app.")
-    (license license:gpl3)))
 
 (define-public r-hadamardr
   (package

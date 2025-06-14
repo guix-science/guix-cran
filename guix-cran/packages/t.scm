@@ -9,8 +9,8 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages photo)
   #:use-module (gnu packages python)
@@ -21,7 +21,6 @@
   #:use-module (gnu packages video)
   #:use-module (gnu packages imagemagick)
   #:use-module (gnu packages perl)
-  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages tex)
   #:use-module (gnu packages multiprecision)
   #:use-module (guix-cran packages z)
@@ -1561,6 +1560,31 @@ WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 PARTICULAR PURPOSE. See the GNU General Public License for more details.")
     (license license:gpl2+)))
 
+(define-public r-tvdenoising
+  (package
+    (name "r-tvdenoising")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tvdenoising" version))
+       (sha256
+        (base32 "0k2grlyn8pg8ab6kx3pyb5b2rwbxl96zi7lxia1sqvyy2p7m9s5w"))))
+    (properties `((upstream-name . "tvdenoising")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rcpp))
+    (home-page "https://github.com/glmgen/tvdenoising")
+    (synopsis "Univariate Total Variation Denoising")
+    (description
+     "Total variation denoising can be used to approximate a given sequence of noisy
+observations by a piecewise constant sequence, with adaptively-chosen break
+points.  An efficient linear-time algorithm for total variation denoising is
+provided here, based on Johnson (2013) <doi:10.1080/10618600.2012.681238>.")
+    (license license:expat)))
+
 (define-public r-tvcure
   (package
     (name "r-tvcure")
@@ -2371,37 +2395,6 @@ given target value in smaller computation time than algorithm B.")
 conflicts.  This package will be imported by @code{tidySingleCellExperiment} and
 tidyseurat'.")
     (license license:gpl3)))
-
-(define-public r-ttscreening
-  (package
-    (name "r-ttscreening")
-    (version "1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ttScreening" version))
-       (sha256
-        (base32 "1i8c9l3sdkzl99zxxyfqm84vkh6wjdh3a32l5q8ikf74g9dhxkf4"))))
-    (properties `((upstream-name . "ttScreening")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sva
-                             r-simsalapar
-                             r-matrixstats
-                             r-mass
-                             r-limma
-                             r-corpcor))
-    (home-page "https://cran.r-project.org/package=ttScreening")
-    (synopsis
-     "Genome-Wide DNA Methylation Sites Screening by Use of Training and Testing Samples")
-    (description
-     "This package provides a screening process utilizing training and testing samples
-to filter out uninformative DNA methylation sites.  Surrogate variables (SVs) of
-DNA methylation are included in the filtering process to explain unknown factor
-effects.")
-    (license license:artistic2.0)))
 
 (define-public r-tts
   (package
@@ -7041,13 +7034,13 @@ a method you would like implemented, please get in touch.")
 (define-public r-trialemulation
   (package
     (name "r-trialemulation")
-    (version "0.0.4.2")
+    (version "0.0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialEmulation" version))
        (sha256
-        (base32 "12w650aiv5vgp1ggq0nv7ha6g83dagq1g71jc6fyjk231r1s8ly7"))))
+        (base32 "0y5bqzlaj66lshvp2c2a6f0zmlm4kwk0cqmwzmba8b2kv2h1app6"))))
     (properties `((upstream-name . "TrialEmulation")))
     (build-system r-build-system)
     (arguments
@@ -7322,42 +7315,6 @@ temporal structures.  The procedure is the one proposed by Alquier, P. and
 Marie, N. \"Matrix factorization for multivariate time series analysis.\"
 Electronic Journal of Statistics, 13(2), 4346-4366 (2019).")
     (license license:gpl3)))
-
-(define-public r-trendslr
-  (package
-    (name "r-trendslr")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TrendSLR" version))
-       (sha256
-        (base32 "1x8j2dg3m7b22gva33y4s318a41wl60sz93y868z4j65hp13jb5k"))))
-    (properties `((upstream-name . "TrendSLR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-tseries
-                             r-rssa
-                             r-plyr
-                             r-imputets
-                             r-forecast
-                             r-changepoint))
-    (home-page "https://cran.r-project.org/package=TrendSLR")
-    (synopsis
-     "Estimating Trend, Velocity and Acceleration from Sea Level Records")
-    (description
-     "Analysis of annual average ocean water level time series, providing improved
-estimates of trend (mean sea level) and associated real-time velocities and
-accelerations.  Improved trend estimates are based on singular spectrum analysis
-methods.  Various gap-filling options are included to accommodate incomplete
-time series records.  The package also includes a range of diagnostic tools to
-inspect the components comprising the original time series which enables expert
-interpretation and selection of likely trend components.  A wide range of screen
-and plot to file options are available in the package.")
-    (license license:gpl3+)))
 
 (define-public r-trendsegmentr
   (package
@@ -18046,6 +18003,60 @@ processing and data-storage functions are heavily optimized to allow the fastest
 and most efficient data storage.")
     (license license:gpl2+)))
 
+(define-public r-tidyspec
+  (package
+    (name "r-tidyspec")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyspec" version))
+       (sha256
+        (base32 "1k0w9qwa4ijg3wkabq11w20ylb50flv1hqy4i6v7nsi5a3sczx28"))))
+    (properties `((upstream-name . "tidyspec")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-timetk
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-signal
+                             r-scales
+                             r-rlang
+                             r-recipes
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-plotly
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/marceelrf/tidyspec")
+    (synopsis "Spectroscopy Analysis Using the Tidy Data Philosophy")
+    (description
+     "Enables the analysis of spectroscopy data such as infrared ('IR'), Raman, and
+nuclear magnetic resonance ('NMR') using the tidy data framework from the
+tidyverse'.  The tidyspec package provides functions for data transformation,
+normalization, baseline correction, smoothing, derivatives, and both interactive
+and static visualization.  It promotes structured, reproducible workflows for
+spectral data exploration and preprocessing.  Implemented methods include
+Savitzky and Golay (1964) \"Smoothing and Differentiation of Data by Simplified
+Least Squares Procedures\" <doi:10.1021/ac60214a047>, Sternberg (1983)
+\"Biomedical Image Processing\"
+<https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1654163>, Zimmermann
+and Kohler (1996) \"Baseline correction using the rolling ball algorithm\"
+<doi:10.1016/0168-583X(95)00908-6>, Beattie and Esmonde-White (2021)
+\"Exploration of Principal Component Analysis: Deriving Principal Component
+Analysis Visually Using Spectra\" <doi:10.1177/0003702820987847>, Wickham et al.
+(2019) \"Welcome to the tidyverse\" <doi:10.21105/joss.01686>, and Kuhn, Wickham
+and Hvitfeldt (2024) \"recipes: Preprocessing and Feature Engineering Steps for
+Modeling\" <https://CRAN.R-project.org/package=recipes>.")
+    (license license:expat)))
+
 (define-public r-tidysmd
   (package
     (name "r-tidysmd")
@@ -22520,31 +22531,6 @@ probabilistic layers, variational inference, Markov chain Monte Carlo, and
 optimizers such as Nelder-Mead, BFGS, and SGLD.")
     (license license:asl2.0)))
 
-(define-public r-tfplot
-  (package
-    (name "r-tfplot")
-    (version "2021.6-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tfplot" version))
-       (sha256
-        (base32 "0w0m9d2lvjl96vxwvks2v086y4gqiv2n0d50j2yrngys9p2nrlxc"))))
-    (properties `((upstream-name . "tfplot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tframe))
-    (home-page "http://tsanalysis.r-forge.r-project.org/")
-    (synopsis "Time Frame User Utilities")
-    (description
-     "Utilities for simple manipulation and quick plotting of time series data.  These
-utilities use the tframe package which provides a programming kernel for time
-series.  Extensions to tframe provided in @code{tframePlus} can also be used.
-See the Guide vignette for examples.")
-    (license license:gpl2)))
-
 (define-public r-tfneuralode
   (package
     (name "r-tfneuralode")
@@ -22699,43 +22685,6 @@ histograms in the tfevent record file format.  Logged data can be visualized on
 the fly using @code{TensorBoard}', a web based tool that focuses on visualizing
 the training progress of machine learning models.")
     (license license:expat)))
-
-(define-public r-tfestimators
-  (package
-    (name "r-tfestimators")
-    (version "1.9.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tfestimators" version))
-       (sha256
-        (base32 "1gwj2xal5an0m9c2x1rxzsg07hgzjyxr4m08sd3salgyc2h3bi5g"))))
-    (properties `((upstream-name . "tfestimators")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list tensorflow))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-tfruns
-                             r-tensorflow
-                             r-rlang
-                             r-reticulate
-                             r-purrr
-                             r-progress
-                             r-magrittr
-                             r-forge))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rstudio/tfestimators")
-    (synopsis "Interface to 'TensorFlow' Estimators")
-    (description
-     "Interface to @code{TensorFlow} Estimators
-<https://www.tensorflow.org/guide/estimator>, a high-level API that provides
-implementations of many different model types including linear models and deep
-neural networks.")
-    (license license:asl2.0)))
 
 (define-public r-tfer
   (package
@@ -23438,35 +23387,6 @@ capability of earlier textir is now a separate package, maptpx'.")
 local defects, which were used in Bui and Apley (2018)
 <doi:10.1080/00401706.2017.1302362>.")
     (license license:gpl2)))
-
-(define-public r-textgrid
-  (package
-    (name "r-textgrid")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "textgRid" version))
-       (sha256
-        (base32 "1wi5vq5f7ixhz39l5hqi2jlmjjacx4lyrs4h8xfbd47pj6g16lc6"))))
-    (properties `((upstream-name . "textgRid")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "www.praat.org")
-    (synopsis "Praat TextGrid Objects in R")
-    (description
-     "The software application Praat can be used to annotate waveform data (e.g., to
-mark intervals of interest or to label events). (See
-<http://www.fon.hum.uva.nl/praat/> for more information about Praat.) These
-annotations are stored in a Praat @code{TextGrid} object, which consists of a
-number of interval tiers and point tiers.  An interval tier consists of
-sequential (i.e., not overlapping) labeled intervals.  A point tier consists of
-labeled events that have no duration.  The @code{textgRid} package provides S4
-classes, generics, and methods for accessing information that is stored in Praat
-@code{TextGrid} objects.")
-    (license license:gpl3)))
 
 (define-public r-textforecast
   (package
@@ -24909,27 +24829,35 @@ family of functions and reporting tools for checking and validating data frames.
 (define-public r-testcorr
   (package
     (name "r-testcorr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "testcorr" version))
        (sha256
-        (base32 "0bqhf4p4csyd430240d8gh09axpz3h108fh78sbgpyqdhiq3d1fh"))))
+        (base32 "08y5jrbp8dys0gqvvvk47pg3a54s8mx5xxapzivczf76qnjkffg7"))))
     (properties `((upstream-name . "testcorr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-reshape2 r-knitr r-ggplot2 r-forcats))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-scales
+                             r-reshape2
+                             r-knitr
+                             r-ggplot2
+                             r-forcats))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=testcorr")
     (synopsis "Testing Zero Correlation")
     (description
      "Computes the test statistics for examining the significance of autocorrelation
 in univariate time series, cross-correlation in bivariate time series, Pearson
 correlations in multivariate series and test statistics for i.i.d.  property of
-univariate series given in Dalla, Giraitis and Phillips (2020),
-<https://cowles.yale.edu/sites/default/files/files/pub/d21/d2194-r.pdf>.")
+univariate series given in Dalla, Giraitis and Phillips (2022),
+<https://www.cambridge.org/core/journals/econometric-theory/article/abs/robust-tests-for-white-noise-and-crosscorrelation/4D77C12C52433F4C6735E584C779403A>,
+<https://elischolar.library.yale.edu/cowles-discussion-paper-series/57/>.")
     (license license:gpl3)))
 
 (define-public r-testcor
@@ -26976,33 +26904,6 @@ compared with the observed data.  Provides plots to visualize the results.
 Methods described in Stephan et al. (2023) <doi:10.1038/s41598-023-42433-2> and
 Wdowinski (1998) <doi:10.1016/S0079-1946(98)00091-3>.")
     (license license:gpl3+)))
-
-(define-public r-teamr
-  (package
-    (name "r-teamr")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "teamr" version))
-       (sha256
-        (base32 "01gngws8lf093598wlzrv4ls74avsli6ij33v1plqgc0znyaw4s2"))))
-    (properties `((upstream-name . "teamr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6 r-jsonlite r-httr))
-    (home-page "https://github.com/wwwjk366/teamr")
-    (synopsis
-     "Send Formatted Messages, Images and Objects to Microsoft 'Teams'")
-    (description
-     "Package of wrapper functions using R6 class to send requests to Microsoft Teams
-<https://products.office.com/en-us/microsoft-teams/group-chat-software> through
-webhooks.  When you need to share information or data from R to Teams', rather
-than copying/pasting, you can use this package to send well-formatted output
-from multiple R objects.")
-    (license license:expat)))
 
 (define-public r-teamcolors
   (package

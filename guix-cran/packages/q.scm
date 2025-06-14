@@ -4244,31 +4244,6 @@ efficiently store data.  Matrix barcode generation is performed efficiently in C
 via the included libqrencoder library created by Kentaro Fukuchi.")
     (license license:gpl2)))
 
-(define-public r-qregvcm
-  (package
-    (name "r-qregvcm")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "QRegVCM" version))
-       (sha256
-        (base32 "0fcydkf6r2qxd59ylr8vn76bkxks91v58gfzvq3rjd5mqf9vsaaq"))))
-    (properties `((upstream-name . "QRegVCM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-truncsp r-sparsem r-quantreg))
-    (home-page "https://cran.r-project.org/package=QRegVCM")
-    (synopsis "Quantile Regression in Varying-Coefficient Models")
-    (description
-     "Quantile regression in varying-coefficient models (VCM) using one particular
-nonparametric technique called P-splines.  The functions can be applied on three
-types of VCM; (1) Homoscedastic VCM, (2) Simple heteroscedastic VCM, and (3)
-General heteroscedastic VCM.")
-    (license license:gpl2)))
-
 (define-public r-qregbb
   (package
     (name "r-qregbb")
