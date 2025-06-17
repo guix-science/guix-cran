@@ -14230,13 +14230,13 @@ non-hierarchical clustering algorithms (Kreft & Jetz (2010)
 (define-public r-biorad
   (package
     (name "r-biorad")
-    (version "0.9.1")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioRad" version))
        (sha256
-        (base32 "19qngdvpsbfv2swmyfjy85mqkmp3wh88kckm769zj58wish0fmkk"))))
+        (base32 "1da7jj544ygz6kxbbr0wx11ygm53r21vv5zpx4cfjhnpcs26c33d"))))
     (properties `((upstream-name . "bioRad")))
     (build-system r-build-system)
     (arguments
@@ -14256,6 +14256,7 @@ non-hierarchical clustering algorithms (Kreft & Jetz (2010)
                              r-raster
                              r-lutz
                              r-lubridate
+                             r-lifecycle
                              r-jsonlite
                              r-glue
                              r-ggplot2
@@ -16233,13 +16234,13 @@ prefers Fira', and IQSS requires Libertinus'.")
 (define-public r-binaryrl
   (package
     (name "r-binaryrl")
-    (version "0.8.7")
+    (version "0.8.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binaryRL" version))
        (sha256
-        (base32 "1f6lc14i479rv7c6k2bjn8x53g6q5jycxy9k7c8gxcl8i19sn0bj"))))
+        (base32 "0av69494d2j4rhrqqnxxmka5mgszw1gw0qw2lm4gbzy3ihcf0iw3"))))
     (properties `((upstream-name . "binaryRL")))
     (build-system r-build-system)
     (arguments
@@ -27539,13 +27540,13 @@ models.  For a web-based Shiny application related to this package, see
 (define-public r-bayesertools
   (package
     (name "r-bayesertools")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesERtools" version))
        (sha256
-        (base32 "08d7dyfjmc1wr7fmn4nr3a5vnm3lfcfzx0xxcarn81nxv5ygapdr"))))
+        (base32 "1fy0y549zn77b90dnv94hz07f6f4748n8smbvbadysjjbxmfxf2r"))))
     (properties `((upstream-name . "BayesERtools")))
     (build-system r-build-system)
     (arguments

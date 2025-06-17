@@ -99,13 +99,13 @@ available from <https://github.com/Cyan4973/@code{xxHash>}.")
 (define-public r-xxdi
   (package
     (name "r-xxdi")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xxdi" version))
        (sha256
-        (base32 "07yjq9f6dw1xvd5map5aj42qhbgdqyla270vqn0h8x2h8wfqjfgq"))))
+        (base32 "1z332i1cyicbwargimma5m6rz1hb3zc2rpzgxcci3z7szjyxn5f8"))))
     (properties `((upstream-name . "xxdi")))
     (build-system r-build-system)
     (arguments
@@ -127,7 +127,9 @@ thematic areas.  These indices offer a nuanced understanding of institutional
 research capabilities, aiding stakeholders in research management and resource
 allocation decisions.  Lathabai, H.H., Nandy, A., and Singh, V.K. (2021)
 <doi:10.1007/s11192-021-04188-3>.  Nandy, A., Lathabai, H.H., and Singh, V.K.
-(2023) <doi:10.5281/zenodo.8305585>.")
+(2023) <doi:10.5281/zenodo.8305585>.  This package provides the h, g, x, and xd
+indices for use with standard format of Web of Science (@code{WoS}) scrapped
+datasets.")
     (license license:gpl3)))
 
 (define-public r-xwf

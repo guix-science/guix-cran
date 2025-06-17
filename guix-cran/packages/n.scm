@@ -1555,43 +1555,6 @@ mutation are called in the main program.  The methods are described in Deb et
 al. (2002) <doi:10.1109/4235.996017>.")
     (license license:lgpl3)))
 
-(define-public r-nser
-  (package
-    (name "r-nser")
-    (version "1.5.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nser" version))
-       (sha256
-        (base32 "0v88gbcak22wpqanp5b4j1fdsp3s4jdhwq4a399msmjd1kxzf5f6"))))
-    (properties `((upstream-name . "nser")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-stringr
-                             r-rvest
-                             r-reticulate
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-httr
-                             r-googlevis
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/nandp1/nser/")
-    (synopsis
-     "Bhavcopy and Live Market Data from National Stock Exchange (NSE) & Bombay Stock Exchange (BSE) India")
-    (description
-     "Download Current & Historical Bhavcopy.  Get Live Market data from NSE India of
-Equities and Derivatives (F&O) segment.  Data source
-<https://www.nseindia.com/>.")
-    (license license:gpl3)))
-
 (define-public r-nseq
   (package
     (name "r-nseq")
@@ -10889,13 +10852,13 @@ or pools of intervals are provided as data frames.")
 (define-public r-nfcp
   (package
     (name "r-nfcp")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NFCP" version))
        (sha256
-        (base32 "16dvk8jiyzd94lfif0nkwc0ix05is8bhyykaaa6p1irwgzk8cia4"))))
+        (base32 "07wxxmcvclygid88cxl0raphmc858h92dfq7gacq9gvkdcrcn022"))))
     (properties `((upstream-name . "NFCP")))
     (build-system r-build-system)
     (arguments
@@ -10907,8 +10870,7 @@ or pools of intervals are provided as data frames.")
                              r-mathjaxr
                              r-mass
                              r-lsmrealoptions
-                             r-fkf-sp
-                             r-curl))
+                             r-fkf-sp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=NFCP")
     (synopsis "N-Factor Commodity Pricing Through Term Structure Estimation")

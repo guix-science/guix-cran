@@ -773,6 +773,41 @@ fuzzy constraints (following different approaches proposed by Verdegay,
 Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
     (license license:gpl3+)))
 
+(define-public r-fuzzylink
+  (package
+    (name "r-fuzzylink")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fuzzylink" version))
+       (sha256
+        (base32 "1r3rqvxapx6gx6pry9hbadk7wggr4g0w68pb4d9a9n4vx3dyrwng"))))
+    (properties `((upstream-name . "fuzzylink")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-stringdist
+                             r-rfast
+                             r-reshape2
+                             r-ranger
+                             r-jsonlite
+                             r-httr2
+                             r-httr
+                             r-dplyr))
+    (home-page "https://github.com/joeornstein/fuzzylink")
+    (synopsis "Probabilistic Record Linkage Using Pretrained Text Embeddings")
+    (description
+     "Links datasets through fuzzy string matching using pretrained text embeddings.
+Produces more accurate record linkage when lexical string distance metrics are a
+poor guide to match quality (e.g., \"Patricia\" is more lexically similar to
+\"Patrick\" than it is to \"Trish\").  Capable of performing multilingual record
+linkage.  Methods are described in Ornstein (2025)
+<https://joeornstein.github.io/publications/fuzzylink.pdf>.")
+    (license license:expat)))
+
 (define-public r-fuzzyimputationtest
   (package
     (name "r-fuzzyimputationtest")
@@ -9837,6 +9872,36 @@ For more information on the rationale and mathematical background, as well as an
 interactive introduction, see
 <https://lea-urpa.github.io/@code{focusedMDS.html>}.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-foco2
+  (package
+    (name "r-foco2")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FoCo2" version))
+       (sha256
+        (base32 "1q19pfix25vd96ikqjld0w8gp3kgzk2crd2cdrsmvbj6pcfx0y1z"))))
+    (properties `((upstream-name . "FoCo2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quadprog r-osqp r-matrix r-foreco r-cli))
+    (home-page "https://github.com/danigiro/FoCo2/")
+    (synopsis
+     "Coherent Forecast Combination for Linearly Constrained Multiple Time Series")
+    (description
+     "This package provides methods and tools designed to improve the forecast
+accuracy for a linearly constrained multiple time series, while fulfilling the
+linear/aggregation relationships linking the components (Girolimetto and Di
+Fonzo, 2024 <doi:10.48550/@code{arXiv.2412.03429>}). @code{FoCo2} offers
+multi-task forecast combination and reconciliation approaches leveraging input
+from multiple forecasting models or experts and ensuring that the resulting
+forecasts satisfy specified linear constraints.  In addition, linear inequality
+constraints (e.g., non-negativity of the forecasts) can be imposed, if needed.")
+    (license license:gpl3+)))
 
 (define-public r-foci
   (package

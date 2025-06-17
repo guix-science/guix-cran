@@ -266,13 +266,13 @@ condition.")
 (define-public r-ows4r
   (package
     (name "r-ows4r")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ows4R" version))
        (sha256
-        (base32 "0isp6f4q900yzx2fbm3nflm7ngpvycz33a6i1zilcjxsbyjkhxxk"))))
+        (base32 "0kkx2c696q8xmk7djgas5p3kzzw50pkrvb3xals6wyl22220mvrs"))))
     (properties `((upstream-name . "ows4R")))
     (build-system r-build-system)
     (arguments
@@ -1376,6 +1376,48 @@ a data-driven technique that determines an optimal threshold by maximizing the
 inter-class variance of pixel intensities.  It includes validation functions to
 assess segmentation accuracy against reference data using standard accuracy
 metrics such as precision, recall, and F1-score.")
+    (license license:gpl3)))
+
+(define-public r-otsufire
+  (package
+    (name "r-otsufire")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OtsuFire" version))
+       (sha256
+        (base32 "0zcvkv217kq1vjjipnh9g4afqzvrzqafqy89f2b2d3g60m93g64i"))))
+    (properties `((upstream-name . "OtsuFire")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-terra
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-raster
+                             r-purrr
+                             r-otsuseg
+                             r-magrittr
+                             r-glue
+                             r-gdalutilities
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://github.com/olgaviedma/OtsuFire")
+    (synopsis
+     "Fire Scars, Severity and Regeneration Mapping Using 'Otsu' Thresholding")
+    (description
+     "This package provides tools to segment fire scars and assess severity and
+vegetation regeneration using Otsu thresholding on Relative Burn Ratio (RBR) and
+differenced Normalized Burn Ratio (@code{dNBR}) image composites.  Includes
+support for mosaic handling, polygon metrics, post-fire regeneration detection,
+day-of-year flagging, and validation against reference datasets.  Designed for
+analysis of fire history in the Iberian Peninsula.  Input Landsat composites
+follow the methodology described in Quintero et al. (2025)
+<doi:10.2139/ssrn.4929831>.")
     (license license:gpl3)))
 
 (define-public r-otsfeatures
@@ -13203,13 +13245,13 @@ an efficient survey design.  Reference: Fukaya et al. (2022)
 (define-public r-occcite
   (package
     (name "r-occcite")
-    (version "0.5.9")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "occCite" version))
        (sha256
-        (base32 "17msmwh1rlyf4a2jkz36856bmvy2v636jmg3f8c4xingmfgdi94i"))))
+        (base32 "1k1z6hkf7yid6bqivzzsnpp4bwx6vaqn310qsb8gf4mzlc0f5icr"))))
     (properties `((upstream-name . "occCite")))
     (build-system r-build-system)
     (arguments
@@ -13232,8 +13274,7 @@ an efficient survey design.  Reference: Fukaya et al. (2022)
                              r-dbi
                              r-curl
                              r-bien
-                             r-bib2df
-                             r-ape))
+                             r-bib2df))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://docs.ropensci.org/occCite/")
     (synopsis "Querying and Managing Large Biodiversity Occurrence Datasets")

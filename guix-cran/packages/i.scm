@@ -9582,13 +9582,13 @@ Geological Survey (USGS) Idaho National Laboratory Project Office.")
 (define-public r-inlatools
   (package
     (name "r-inlatools")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAtools" version))
        (sha256
-        (base32 "0srkj5dzyfrn826nh2aadpr6z04sbsm08953yj5gxa5s6rn3vfyy"))))
+        (base32 "170qzxgwcqif5527g308ivjkj1cw97qva2xagp29cxwzb29y36y5"))))
     (properties `((upstream-name . "INLAtools")))
     (build-system r-build-system)
     (arguments
@@ -10640,6 +10640,38 @@ package is based on methods described in Sasieni (2003) <doi:
      "An R package for inferring cell-type specific gene regulatory network from
 single-cell RNA data.")
     (license license:expat)))
+
+(define-public r-infectiousr
+  (package
+    (name "r-infectiousr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "infectiousR" version))
+       (sha256
+        (base32 "19lwxw3vcpwsvcr5an9d3644bmm5w0pk31b0cfmkcffpmnrgli8c"))))
+    (properties `((upstream-name . "infectiousR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lubridate r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/infectiousr")
+    (synopsis
+     "Access Infectious and Epidemiological Data via 'disease.sh API'")
+    (description
+     "This package provides functions to access real-time infectious disease data from
+the disease.sh API', including COVID-19 global, US states, continent, and
+country statistics, vaccination coverage, influenza-like illness data from
+Centers for Disease Control and Prevention (CDC), and more.  Also includes
+curated datasets on a variety of infectious diseases such as influenza, measles,
+dengue, Ebola, tuberculosis, meningitis, AIDS, and others.  The package supports
+epidemiological research and data analysis by combining API access with
+high-quality historical and survey datasets on infectious diseases.  For more
+details on the disease.sh API', see <https://disease.sh/>.")
+    (license license:gpl3)))
 
 (define-public r-inext-beta3d
   (package
@@ -19631,13 +19663,13 @@ subsets from Genebank Collection.")
 (define-public r-icams
   (package
     (name "r-icams")
-    (version "2.3.12")
+    (version "3.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICAMS" version))
        (sha256
-        (base32 "0nnmnbh02d5miyk6fr07jrrnv3h7ws72xkwr92apvcx9m5ql6ll0"))))
+        (base32 "073cn5c77mgdjcb3dlyb0rwb6x7696z39iil6r4z3w39szhxs9rw"))))
     (properties `((upstream-name . "ICAMS")))
     (build-system r-build-system)
     (arguments
@@ -19646,9 +19678,11 @@ subsets from Genebank Collection.")
     (propagated-inputs (list r-zip
                              r-stringi
                              r-rcolorbrewer
+                             r-lifecycle
                              r-iranges
                              r-genomicranges
                              r-genomeinfodb
+                             r-fuzzyjoin
                              r-dplyr
                              r-data-table
                              r-bsgenome

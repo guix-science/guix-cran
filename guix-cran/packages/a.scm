@@ -2417,13 +2417,13 @@ user as possible.")
 (define-public r-automatedtests
   (package
     (name "r-automatedtests")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "automatedtests" version))
        (sha256
-        (base32 "1dq9a3chyd48anigr66msdrfnm4dl7wwrhpyq3fs2k1qp6vgw82b"))))
+        (base32 "0vdx7mj0wbapk0f2krjd52whhc7s8wg5ain05np25f096l9iypaa"))))
     (properties `((upstream-name . "automatedtests")))
     (build-system r-build-system)
     (arguments
@@ -5521,13 +5521,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.4.48")
+    (version "4.4.49")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asremlPlus" version))
        (sha256
-        (base32 "0vxv7018ygs11hzya290365i02h55xfnxsxnkv32bb3rf2d2p5w5"))))
+        (base32 "09wj9mgalrk3ky5r22zsbv1949gh9is8g4lgpcjir2z0gdgad4gg"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (arguments
@@ -11077,6 +11077,46 @@ standards.  APCalign also supplies information about the established status of
 plant taxa across different states/territories.")
     (license license:expat)))
 
+(define-public r-apc
+  (package
+    (name "r-apc")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "apc" version))
+       (sha256
+        (base32 "15g5xcj67hqlxinjpahxhacygqn8118z97fzp8ra399lcy08l52m"))))
+    (properties `((upstream-name . "apc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survey
+                             r-reshape
+                             r-plyr
+                             r-plm
+                             r-lmtest
+                             r-lattice
+                             r-islr
+                             r-ggplot2
+                             r-car
+                             r-aer))
+    (home-page "https://cran.r-project.org/package=apc")
+    (synopsis "Age-Period-Cohort Analysis")
+    (description
+     "This package provides functions for age-period-cohort analysis.  Aggregate data
+can be organised in matrices indexed by age-cohort, age-period or cohort-period.
+ The data can include dose and response or just doses.  The statistical model is
+a generalized linear model (GLM) allowing for 3,2,1 or 0 of the
+age-period-cohort factors.  Individual-level data should have a row for each
+individual and columns for each of age, period, and cohort.  The statistical
+model for repeated cross-section is a generalized linear model.  The statistical
+model for panel data is ordinary least squares.  The canonical parametrisation
+of Kuang, Nielsen and Nielsen (2008) <DOI:10.1093/biomet/asn026> is used.  Thus,
+the analysis does not rely on ad hoc identification.")
+    (license license:gpl3)))
+
 (define-public r-apatext
   (package
     (name "r-apatext")
@@ -13864,6 +13904,43 @@ in palaeoecology.")
 images, destroying them, rebooting, getting details on regions, and available
 images.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-analitica
+  (package
+    (name "r-analitica")
+    (version "1.8.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Analitica" version))
+       (sha256
+        (base32 "08i32s1finkrksiacn7xyhdx6597gdvaczmfsc0v5qyyaj6xrzkq"))))
+    (properties `((upstream-name . "Analitica")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-patchwork
+                             r-multcompview
+                             r-moments
+                             r-magrittr
+                             r-ggridges
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Analitica")
+    (synopsis "Exploratory Data Analysis and Group Comparison Tools")
+    (description
+     "This package provides tools for descriptive statistics, graphical exploration,
+outlier detection, homoscedasticity tests, and multiple comparison procedures.
+Includes manual implementations of Levene's test, Bartlett's test,
+Fligner-Killeen, and post hoc comparisons such as Tukey, Scheffe, Games-Howell,
+Brunner-Munzel, and others.  Useful for teaching, applied analysis, and
+reproducible research.")
+    (license license:expat)))
 
 (define-public r-anacor
   (package

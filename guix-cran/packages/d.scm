@@ -4959,13 +4959,13 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "0782mdd54k15lkzqcrddacbv3s14yga9anklz9p01si68pi4vja5"))))
+        (base32 "0v84shp54d3nh1ang7pvd5hy9i5nwgx7sgydkm3lz4yxiwkwfycj"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (arguments
@@ -4980,7 +4980,6 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
                              r-glue
                              r-drugutilisation
                              r-dplyr
-                             r-clock
                              r-checkmate
                              r-cdmconnector))
     (native-inputs (list r-knitr))
@@ -15535,13 +15534,13 @@ be satisfied without penalization.  Yu and Rosenbaum (2019)
 (define-public r-dipm
   (package
     (name "r-dipm")
-    (version "1.10")
+    (version "1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dipm" version))
        (sha256
-        (base32 "14ik7npakgdc22vzx64mn4rgwh5x3pbdk81h3kflcqk1392qa26g"))))
+        (base32 "0xvwh2myj0k6dzlm041axwg4q7z66pkxb0fam8n9xyd1aag0svyn"))))
     (properties `((upstream-name . "dipm")))
     (build-system r-build-system)
     (arguments
@@ -29074,6 +29073,44 @@ Self-Organization and Swarm Intelligence\" (2018)
 <DOI:10.1007/978-3-658-20540-9>.")
     (license license:gpl3)))
 
+(define-public r-dataviewr
+  (package
+    (name "r-dataviewr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dataviewR" version))
+       (sha256
+        (base32 "0sn5v617k9mkc74bsai7f93d8ss802rirda338vyrsvfsx8bq4ca"))))
+    (properties `((upstream-name . "dataviewR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-shinyjs
+                             r-shiny
+                             r-purrr
+                             r-labelled
+                             r-htmlwidgets
+                             r-forcats
+                             r-dt
+                             r-dplyr
+                             r-datamods))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dataviewR")
+    (synopsis "dataviewR: An Interactive and Feature-Rich Data Viewer")
+    (description
+     "This package provides an interactive viewer for data.frame and tibble objects
+using shiny <https://shiny.posit.co/> and DT <https://rstudio.github.io/DT/>.
+It supports complex filtering, column selection, and automatic generation of
+reproducible dplyr <https://dplyr.tidyverse.org/> code for data manipulation.
+The package is designed for ease of use in data exploration and reporting
+workflows.")
+    (license license:expat)))
+
 (define-public r-dataverse
   (package
     (name "r-dataverse")
@@ -29400,13 +29437,13 @@ pre-clinical and clinical HIV vaccine studies.")
 (define-public r-datasimilarity
   (package
     (name "r-datasimilarity")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataSimilarity" version))
        (sha256
-        (base32 "1ncnxwdma0yli6ymhgh33g2ybizgmfshidhkwl1prdal2x9v0f42"))))
+        (base32 "1i6chd06cjsidhy73if6wmibikdpxd1hdy29fk8frz6j2mc3smcw"))))
     (properties `((upstream-name . "DataSimilarity")))
     (build-system r-build-system)
     (arguments

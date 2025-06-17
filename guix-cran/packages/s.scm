@@ -2487,6 +2487,34 @@ step to build and test learners in the following step.  In the end, it outputs a
 set of strong low-dimensional learners.")
     (license license:gpl2+)))
 
+(define-public r-swa
+  (package
+    (name "r-swa")
+    (version "0.8.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "swa" version))
+       (sha256
+        (base32 "1zy1a6c17vmdkmkwp8vv3niww2zs1m0hylsa0b2cz68vfhnmpim4"))))
+    (properties `((upstream-name . "swa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rocr r-reshape r-ggplot2))
+    (home-page "https://cran.r-project.org/package=swa")
+    (synopsis "Subsampling Winner Algorithm for Classification")
+    (description
+     "This algorithm conducts variable selection in the classification setting.  It
+repeatedly subsamples variables and runs linear discriminant analysis (LDA) on
+the subsampled variables.  Variables are scored based on the AUC and the
+t-statistics.  Variables then enter a competition and the semi-finalist
+variables will be evaluated in a final round of LDA classification.  The
+algorithm then outputs a list of variable selected.  Qiao, Sun and Fan (2017)
+<http://people.math.binghamton.edu/qiao/swa.html>.")
+    (license license:gpl3)))
+
 (define-public r-svyweight
   (package
     (name "r-svyweight")
@@ -20160,13 +20188,13 @@ Comput Biol.  2010 Oct;17(10):1385-95 [PMID 20976876].")
 (define-public r-sqmtools
   (package
     (name "r-sqmtools")
-    (version "1.7.1")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SQMtools" version))
        (sha256
-        (base32 "0nclya78qilymwqkisqj4w1jzc3lkxwp1w62a3nvw3xkfbn6alx7"))))
+        (base32 "12x8f12fy1a8kg8167jyk79bdpnzbxabw6xa5prd2y0srxykj81i"))))
     (properties `((upstream-name . "SQMtools")))
     (build-system r-build-system)
     (arguments
@@ -30223,13 +30251,13 @@ Scott-Knott.")
 (define-public r-spanishoddata
   (package
     (name "r-spanishoddata")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spanishoddata" version))
        (sha256
-        (base32 "1hglg1kvvqbxkxhsihfv4c3z0gnfwry1s3kgiyy0dwgwba6sxvnv"))))
+        (base32 "1hmhwcbxfzvmm8vmvrif04dh3k3846sh4n6yxgl80gxabaayi0bi"))))
     (properties `((upstream-name . "spanishoddata")))
     (build-system r-build-system)
     (arguments
@@ -30242,18 +30270,21 @@ Scott-Knott.")
                              r-rlang
                              r-readr
                              r-purrr
+                             r-paws-storage
                              r-parallelly
-                             r-memuse
+                             r-openssl
+                             r-memoise
                              r-lubridate
                              r-lifecycle
+                             r-jsonlite
                              r-httr2
                              r-here
                              r-glue
                              r-fs
                              r-duckdb
                              r-dplyr
+                             r-digest
                              r-dbi
-                             r-curl
                              r-checkmate))
     (native-inputs (list r-quarto))
     (home-page "https://rOpenSpain.github.io/spanishoddata/")
@@ -60271,13 +60302,13 @@ geoms, and scales for ggplot2'.  Color scales are based on
 (define-public r-sedproxy
   (package
     (name "r-sedproxy")
-    (version "0.7.5")
+    (version "0.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sedproxy" version))
        (sha256
-        (base32 "1n5970pbdc0zl9vh0fslirlww56as5c090mnhzbic1fdzkhli245"))))
+        (base32 "05j3lfbi7yp2knnxym8y5vls4ynqx3fh5r6v42p0fqnk6wxsga9n"))))
     (properties `((upstream-name . "sedproxy")))
     (build-system r-build-system)
     (arguments
@@ -60635,38 +60666,32 @@ costs from fleet segment to metier level.")
 (define-public r-sebr
   (package
     (name "r-sebr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SeBR" version))
        (sha256
-        (base32 "0xk002y4nim5f3mcfbl3zk484cf2s5mvg1paj2jg4f5v60vr4pwp"))))
+        (base32 "09khc5g9wzybazzrlyyc299jm5zhv2v23790hi8fvqb356d4nxz2"))))
     (properties `((upstream-name . "SeBR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-statmod
-                             r-spikeslabgam
-                             r-quantreg
-                             r-mass
-                             r-gpgp
-                             r-fields))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/drkowal/SeBR")
     (synopsis "Semiparametric Bayesian Regression Analysis")
     (description
-     "Monte Carlo and MCMC sampling algorithms for semiparametric Bayesian regression
-analysis.  These models feature a nonparametric (unknown) transformation of the
-data paired with widely-used regression models including linear regression,
-spline regression, quantile regression, and Gaussian processes.  The
-transformation enables broader applicability of these key models, including for
-real-valued, positive, and compactly-supported data with challenging
-distributional features.  The samplers prioritize computational scalability and,
-for most cases, Monte Carlo (not MCMC) sampling for greater efficiency.  Details
-of the methods and algorithms are provided in Kowal and Wu (2023)
-<@code{arXiv:2306.05498>}.")
+     "Monte Carlo sampling algorithms for semiparametric Bayesian regression analysis.
+ These models feature a nonparametric (unknown) transformation of the data
+paired with widely-used regression models including linear regression, spline
+regression, quantile regression, and Gaussian processes.  The transformation
+enables broader applicability of these key models, including for real-valued,
+positive, and compactly-supported data with challenging distributional features.
+ The samplers prioritize computational scalability and, for most cases, Monte
+Carlo (not MCMC) sampling for greater efficiency.  Details of the methods and
+algorithms are provided in Kowal and Wu (2024)
+<doi:10.1080/01621459.2024.2395586>.")
     (license license:expat)))
 
 (define-public r-seawaveq

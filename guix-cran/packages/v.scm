@@ -1759,6 +1759,41 @@ JA (2016) <doi:10.1038/ncomms11484>.  Nychka D, Furrer R, Paige J, Sain S (2021)
 <https://CRAN.R-project.org/package=alphahull>.")
     (license license:gpl3)))
 
+(define-public r-volrisk
+  (package
+    (name "r-volrisk")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "volrisk" version))
+       (sha256
+        (base32 "0w3lnlry8chw526r2k3v1fvkdv0ylq2ca27jy1rj0v0aa18dx12g"))))
+    (properties `((upstream-name . "volrisk")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-rstudioapi
+                             r-progress
+                             r-magrittr
+                             r-foreach
+                             r-dplyr
+                             r-dosnow
+                             r-data-table
+                             r-arrow))
+    (home-page "https://github.com/taku1094/volrisk")
+    (synopsis "Simulation of Life Reinsurance with Profit Commission")
+    (description
+     "Simulates and evaluates stochastic scenarios of death and lapse events in life
+reinsurance contracts with profit commissions.  The methodology builds on
+materials published by the Institute of Actuaries of Japan
+<https://www.actuaries.jp/examin/textbook/pdf/modeling.pdf>.  A paper describing
+the detailed algorithms will be published by the author within a few months
+after the initial release of this package.")
+    (license license:expat)))
+
 (define-public r-volleystat
   (package
     (name "r-volleystat")

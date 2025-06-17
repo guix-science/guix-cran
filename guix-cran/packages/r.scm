@@ -28,6 +28,7 @@
   #:use-module (gnu packages geo)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages python-science)
+  #:use-module (gnu packages dotnet)
   #:use-module (gnu packages documentation)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages mpi)
@@ -20916,13 +20917,13 @@ ranking data.  This package contains the minimal R interface of the C++
 (define-public r-rmixtcomp
   (package
     (name "r-rmixtcomp")
-    (version "4.1.4")
+    (version "4.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMixtComp" version))
        (sha256
-        (base32 "1jybw5yhcahvixpyb551mzifi6kw914g80g1g4pdbgpkg4f9sfk4"))))
+        (base32 "18714vz8lz8rv2l3l9fsdpwmz8rb3l14siqf58c7q4cw2kvaz030"))))
     (properties `((upstream-name . "RMixtComp")))
     (build-system r-build-system)
     (arguments
@@ -22645,13 +22646,13 @@ regarding homoscedastic framework.")
 (define-public r-rlistings
   (package
     (name "r-rlistings")
-    (version "0.2.11")
+    (version "0.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlistings" version))
        (sha256
-        (base32 "04ym0mfpfznbsirz50ckg9h8ypmmzdb791aagn3r9j14d0wbflmv"))))
+        (base32 "12mm72h5sr48hhlap6shx940vywzgia5hknmbs4nf9lzng1n1swr"))))
     (properties `((upstream-name . "rlistings")))
     (build-system r-build-system)
     (arguments
@@ -22726,36 +22727,6 @@ account.")
 jobs, share updates with their network, and create group discussions.  For more
 information about using the API please visit <https://developer.linkedin.com/>.")
     (license license:gpl2)))
-
-(define-public r-rlibkriging
-  (package
-    (name "r-rlibkriging")
-    (version "0.9-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rlibkriging" version))
-       (sha256
-        (base32 "1p6bwy2d3mwc72gar98b1lhdr4c0fjrldbyb3k4hzmm4v0avs9hz"))))
-    (properties `((upstream-name . "rlibkriging")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list gfortran gcc cmake))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-dicekriging))
-    (native-inputs (list gfortran))
-    (home-page "https://github.com/libKriging")
-    (synopsis "Kriging Models using the 'libKriging' Library")
-    (description
-     "Interface to @code{libKriging} C++ library
-<https://github.com/@code{libKriging>} that should provide most standard Kriging
-/ Gaussian process regression features (like in @code{DiceKriging}', kergp or
-@code{RobustGaSP} packages). @code{libKriging} relies on Armadillo linear
-algebra library (Apache 2 license) by Conrad Sanderson, lbfgsb_cpp is a C++ port
-around by Pascal Have of lbfgsb library (BSD-3 license) by Ciyou Zhu, Richard
-Byrd, Jorge Nocedal and Jose Luis Morales used for hyperparameters optimization.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rlibkdv
   (package
@@ -28376,19 +28347,19 @@ function for authorization and loading reports.")
 (define-public r-rgof
   (package
     (name "r-rgof")
-    (version "3.2.0")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rgof" version))
        (sha256
-        (base32 "1s8mvc05ri2d9ifqnkj90j8b4ifs5dbpmh20slcxka7ipw25q45s"))))
+        (base32 "1yhyz4gks1pcazzsc11ia9sg81xh04kk0yxi4ilhbk1bpgps05kd"))))
     (properties `((upstream-name . "Rgof")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-microbenchmark r-ggplot2))
+    (propagated-inputs (list r-rcpp r-nortest r-microbenchmark r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Rgof")
     (synopsis "1d Goodness of Fit Tests")
@@ -30558,7 +30529,7 @@ prepare it for research.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list))
+    (inputs (list mono))
     (propagated-inputs (list r-xml2 r-tibble r-fs r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://elilillyco.github.io/rfacts/")
@@ -37595,13 +37566,13 @@ Some of the functions are applicable to image data.")
 (define-public r-refugees
   (package
     (name "r-refugees")
-    (version "2024.6.0")
+    (version "2024.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refugees" version))
        (sha256
-        (base32 "1lgxkcc4hv2nnndirp70hpn5mahcsv65nj289ms4qh3wdg89h9pb"))))
+        (base32 "0n24isvbqs954ig2kn5sxfbq8bn1y29bcgkpy5ar4rpf4vmzk8ks"))))
     (properties `((upstream-name . "refugees")))
     (build-system r-build-system)
     (arguments
@@ -39193,13 +39164,13 @@ their compatibility.")
 (define-public r-reda
   (package
     (name "r-reda")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reda" version))
        (sha256
-        (base32 "1lrfbcvxgbbpi7l3vls3rdj8y3w30gg5f1fjcfscmykvp0i01j3d"))))
+        (base32 "1c3zjf282rc5r527kb8281g5ygx7w60fvd12xdzjivd480k03wvd"))))
     (properties `((upstream-name . "reda")))
     (build-system r-build-system)
     (arguments
@@ -46943,13 +46914,13 @@ the DS and TAD methods.")
 (define-public r-rcmdrplugin-dce
   (package
     (name "r-rcmdrplugin-dce")
-    (version "0.3-0")
+    (version "0.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.DCE" version))
        (sha256
-        (base32 "091csf0y0apqbgwzww7m3g369rc19abjlr5yqymn7f416amj2cps"))))
+        (base32 "0czn10132955j4mra811crnhx95lp0cx8xjkrmnhh32hhx4ciq1d"))))
     (properties `((upstream-name . "RcmdrPlugin.DCE")))
     (build-system r-build-system)
     (arguments
@@ -47019,13 +46990,13 @@ Carson and Hanemann (2005) <doi:10.1016/S1574-0099(05)02017-6> for DCCV.")
 (define-public r-rcmdrplugin-bws3
   (package
     (name "r-rcmdrplugin-bws3")
-    (version "0.3-0")
+    (version "0.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.BWS3" version))
        (sha256
-        (base32 "1yahkrzbsmx5an4hlnybi32ngbxa4yxkj09027av1qfsg3wyxlfb"))))
+        (base32 "0ac9vw34pgd2919d2gzk8xv55i60d8ndvwzi14rwvgc5ll38hh73"))))
     (properties `((upstream-name . "RcmdrPlugin.BWS3")))
     (build-system r-build-system)
     (arguments
@@ -51863,13 +51834,13 @@ approach and hence more selective. <doi:10.1101/2021.10.01.462832>.")
 (define-public r-rare
   (package
     (name "r-rare")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rare" version))
        (sha256
-        (base32 "0j78ilswiaxdp9107psiw8ibxncd7i81z2njhfqf0n7532pbvjss"))))
+        (base32 "1w869zj6q0ddqbmn1bxf49pkfjq4gzny16wklhf5d2wfr58x6vzf"))))
     (properties `((upstream-name . "rare")))
     (build-system r-build-system)
     (arguments
@@ -51883,10 +51854,11 @@ approach and hence more selective. <doi:10.1101/2021.10.01.462832>.")
     (description
      "Implementation of an alternating direction method of multipliers algorithm for
 fitting a linear model with tree-based lasso regularization, which is proposed
-in Algorithm 1 of Yan and Bien (2018) <@code{arXiv:1803.06675>}.  The package
-allows efficient model fitting on the entire 2-dimensional regularization path
-for large datasets.  The complete set of functions also makes the entire process
-of tuning regularization parameters and visualizing results hassle-free.")
+in Algorithm 1 of Yan and Bien (2020) <doi:10.1080/01621459.2020.1796677>.  The
+package allows efficient model fitting on the entire 2-dimensional
+regularization path for large datasets.  The complete set of functions also
+makes the entire process of tuning regularization parameters and visualizing
+results hassle-free.")
     (license license:gpl3)))
 
 (define-public r-rar
@@ -53414,27 +53386,27 @@ classification task on the projected data.")
 (define-public r-randpedpca
   (package
     (name "r-randpedpca")
-    (version "1.0.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "randPedPCA" version))
        (sha256
-        (base32 "0zgc08n28xq815mgr1ijhzvqmzm9hapgm86rdlmprbdgr9g3fimz"))))
+        (base32 "1p2hzczcb0fzi4rfp3mlfrayrcb0m78zh9cs8n5sznxsv1mkjvmw"))))
     (properties `((upstream-name . "randPedPCA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-spam r-pedigreetools r-matrix))
+    (propagated-inputs (list r-spam r-rspectra r-pedigreetools r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=randPedPCA")
     (synopsis "Fast PCA for Large Pedigrees")
     (description
      "Carry out principal component analysis (PCA) of very large pedigrees such as
-found in breeding populations! This package, @code{randPedPCA}', exploits sparse
-matrices and randomised linear algebra to deliver a gazillion-times speed-up
-compared to naive singular value decoposition (SVD) (and eigen decomposition).")
+found in breeding populations! This package exploits sparse matrices and
+randomised linear algebra to deliver a gazillion-times speed-up compared to
+naive singular value decoposition (SVD) (and eigen decomposition).")
     (license license:expat)))
 
 (define-public r-randomwalker
@@ -57150,13 +57122,13 @@ using the package in question.")
 (define-public r-r2sample
   (package
     (name "r-r2sample")
-    (version "4.0.1")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2sample" version))
        (sha256
-        (base32 "0i4ljqvka2rrwv19v0gd1hkh130bs0x83zqjq8gm6mbzbx9kw0h9"))))
+        (base32 "12ckc3jlnl1qkf1bkhj7nawp9r6mwnvlzgwjfna4x2pn2sxmvxr0"))))
     (properties `((upstream-name . "R2sample")))
     (build-system r-build-system)
     (arguments

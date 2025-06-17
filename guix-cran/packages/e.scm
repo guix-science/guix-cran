@@ -8931,13 +8931,13 @@ networks whose edge weights are ranks.  See Krivitsky and Butts (2017)
 (define-public r-ergm-multi
   (package
     (name "r-ergm-multi")
-    (version "0.2.1.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm.multi" version))
        (sha256
-        (base32 "122yl6g4rbfdw0pscahr3p93kga8nifb2gdrpicikynpqb6dhqdn"))))
+        (base32 "0ak8qzqiw26qmy6f0kdgzq72hknz8rdz0px38bk31lxsrfcygqpl"))))
     (properties `((upstream-name . "ergm.multi")))
     (build-system r-build-system)
     (arguments
@@ -8949,6 +8949,7 @@ networks whose edge weights are ranks.  See Krivitsky and Butts (2017)
                              r-rlang
                              r-rdpack
                              r-purrr
+                             r-networklite
                              r-network
                              r-matrix
                              r-glue
@@ -15526,13 +15527,13 @@ al. (2024) <doi:10.31234/osf.io/2e4dq>.")
 (define-public r-embryogrowth
   (package
     (name "r-embryogrowth")
-    (version "9.5")
+    (version "10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "embryogrowth" version))
        (sha256
-        (base32 "059q5bp1pfz1hpas144jvb60izrl0f3nrn4ddm27h0haffx20s59"))))
+        (base32 "0mjsc3k942f0rmq0sw887dfy1imdjf0skwplcap6bki30zx7a1xq"))))
     (properties `((upstream-name . "embryogrowth")))
     (build-system r-build-system)
     (arguments
@@ -19110,13 +19111,13 @@ procedures, like principal axis factoring (PAF), are implemented in C++.")
 (define-public r-efafactors
   (package
     (name "r-efafactors")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFAfactors" version))
        (sha256
-        (base32 "054z8ibym0rk1vlavdfg3n6n266ai7cbjhcg6aw7s4kl5raq1h75"))))
+        (base32 "0l1x2wph4jax35qaq4vk10rj32d8345bd4qdzn1frnx7xlm6wq4z"))))
     (properties `((upstream-name . "EFAfactors")))
     (build-system r-build-system)
     (arguments

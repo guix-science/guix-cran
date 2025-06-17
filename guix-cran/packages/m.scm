@@ -6663,19 +6663,25 @@ attenuate the results to the null or by a given amount?")
 (define-public r-multibias
   (package
     (name "r-multibias")
-    (version "1.7.1")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multibias" version))
        (sha256
-        (base32 "1ykfzyaad2z1baxsb6s9915cn89a2imd5b1ya4vx1d2w16gjbnvy"))))
+        (base32 "0qalwa3mf6gramgmzpqif3x0vn7xhv1avhkqvjv4gqlr8n2v1gmq"))))
     (properties `((upstream-name . "multibias")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-magrittr r-lifecycle r-dplyr r-broom))
+    (propagated-inputs (list r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lifecycle
+                             r-ggplot2
+                             r-dplyr
+                             r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pcbrendel/multibias")
     (synopsis "Multiple Bias Analysis in Causal Inference")
@@ -13485,6 +13491,43 @@ grammar-of-graphics-based functions for drawing vector fields, trajectories,
 etc.  The software is suitable for general use, but intended mainly for teaching
 calculus.")
     (license license:gpl2+)))
+
+(define-public r-mos
+  (package
+    (name "r-mos")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mos" version))
+       (sha256
+        (base32 "1qvj3fvf1b6kv0g17n37hwjbj3yrxvl7mhnqynxq3zhyjlncvrvf"))))
+    (properties `((upstream-name . "mos")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-hypergeo2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mos")
+    (synopsis "Simulation and Moment Computation for Order Statistics")
+    (description
+     "This package provides a comprehensive set of tools for working with order
+statistics, including functions for simulating order statistics, censored
+samples (Type I and Type II), and record values from various continuous
+distributions.  Additionally, it offers functions to compute moments (mean,
+variance, skewness, kurtosis) of order statistics for several continuous
+distributions.  These tools assist researchers and statisticians in
+understanding and analyzing the properties of order statistics and related data.
+ The methods and algorithms implemented in this package are based on several
+published works, including Ahsanullah et al (2013, ISBN:9789491216831), Arnold
+and Balakrishnan (2012, ISBN:1461236444), Harter and Balakrishnan (1996,
+ISBN:9780849394522), Balakrishnan and Sandhu (1995)
+<doi:10.1080/00031305.1995.10476150>, GenÃ§ (2012)
+<doi:10.1007/s00362-010-0320-y>, Makouei et al (2021)
+<doi:10.1016/j.cam.2021.113386> and Nagaraja (2013)
+<doi:10.1016/j.spl.2013.06.028>.")
+    (license license:gpl3)))
 
 (define-public r-mortcast
   (package
@@ -20457,13 +20500,13 @@ parameters of @code{mlrMBO} are faithfully reproduced as a paradox
 (define-public r-mlrcpo
   (package
     (name "r-mlrcpo")
-    (version "0.3.7-7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlrCPO" version))
        (sha256
-        (base32 "0nia2f8j5vgiradlcqi618mlv7146ml2pvbzh4p89p1pk75p6v0l"))))
+        (base32 "09l691ryjv764vf15zyrhi46b5fn33g06jplnip8cqh5f3dq9sgh"))))
     (properties `((upstream-name . "mlrCPO")))
     (build-system r-build-system)
     (arguments
@@ -43490,13 +43533,13 @@ methodology can be found in the papers Iurii Nagornov (2024)
 (define-public r-maxstablepca
   (package
     (name "r-maxstablepca")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maxstablePCA" version))
        (sha256
-        (base32 "02lxvkg9ia25cvwppf8qf84mwzjkfc8w9acc99wnisddrdq7l1h2"))))
+        (base32 "1gm3lh31na42iqmzj0q9dprq17h4qx2g1g6v9bpdb05vbryxwibn"))))
     (properties `((upstream-name . "maxstablePCA")))
     (build-system r-build-system)
     (arguments
@@ -48071,13 +48114,13 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.2.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "1g1flhb547j2m1fkvf6v8jhj4a1z1bxj8lxswbx9n6zqc5r86z8s"))))
+        (base32 "1c5f23qj80767s94b8j166bag86ljgac2r8lsfgn27jslzjjy4ww"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
     (arguments

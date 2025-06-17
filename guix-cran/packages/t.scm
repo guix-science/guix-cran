@@ -9252,13 +9252,13 @@ running the vignette (optional), install fwelnet from @code{GitHub}
 (define-public r-transpror
   (package
     (name "r-transpror")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TransProR" version))
        (sha256
-        (base32 "1hvbgak6q2i9js8wrzs0rmf4arzzcmsdz54ks6kcfddma7309qhc"))))
+        (base32 "0fxr4y3qj5836rpij4mdiq46s8yp6c022ih7zr22wfawiy9rxnc3"))))
     (properties `((upstream-name . "TransProR")))
     (build-system r-build-system)
     (arguments
@@ -9282,7 +9282,6 @@ running the vignette (optional), install fwelnet from @code{GitHub}
                              r-ggplot2
                              r-ggnewscale
                              r-ggdensity
-                             r-ggalt
                              r-geomtextpath
                              r-edger
                              r-dplyr
@@ -10248,13 +10247,13 @@ for 3-dimensional trajectories. @code{McLean} & Skowron Volponi (2018)
 (define-public r-trajmsm
   (package
     (name "r-trajmsm")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trajmsm" version))
        (sha256
-        (base32 "1rjg89qh4ljaz1pspwx6njfbc5b1i4b5mka0vlypm2i5pljk71wa"))))
+        (base32 "0a4sxbci46ijcmkbl92xbgvn5r9vd0s3b6ipw6qv3x2sw6f1r242"))))
     (properties `((upstream-name . "trajmsm")))
     (build-system r-build-system)
     (arguments
@@ -18733,6 +18732,47 @@ summaries that are frequently included on stratigraphic diagrams.  See
 Dunnington et al. (2021) <doi:10.18637/jss.v101.i07>.")
     (license license:expat)))
 
+(define-public r-tidynorm
+  (package
+    (name "r-tidynorm")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidynorm" version))
+       (sha256
+        (base32 "0dysyw0paj2gzlkwdl86wq7ifv2zwiapjmg4kxh300n5c75331l9"))))
+    (properties `((upstream-name . "tidynorm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-quarto))
+    (home-page "https://jofrhwld.github.io/tidynorm/")
+    (synopsis "Tools for Tidy Vowel Normalization")
+    (description
+     "An implementation of tidy speaker vowel normalization.  This includes generic
+functions for defining new normalization methods for points, formant tracks, and
+Discrete Cosine Transform coefficients, as well as convenience functions
+implementing established normalization methods.  References for the implemented
+methods are: Johnson, Keith (2020) <doi:10.5334/labphon.196> Lobanov, Boris
+(1971) <doi:10.1121/1.1912396> Nearey, Terrance M. (1978)
+<https://sites.ualberta.ca/~tnearey/Nearey1978_compressed.pdf> Syrdal, Ann K.,
+and Gopal, H. S. (1986) <doi:10.1121/1.393381> Watt, Dominic, and Fabricius,
+Anne (2002)
+<https://www.latl.leeds.ac.uk/article/evaluation-of-a-technique-for-improving-the-mapping-of-multiple-speakers-vowel-spaces-in-the-f1-f2-plane/>.")
+    (license license:gpl3+)))
+
 (define-public r-tidync
   (package
     (name "r-tidync")
@@ -19764,6 +19804,31 @@ coin flips are simulated using @code{sample()}.  The properties of the dice can
 be changed, like the number of sides.  A coin flip is simulated using a two
 sided dice.  Experiments can be combined with the pipe-operator.")
     (license license:gpl3)))
+
+(define-public r-tidydfidx
+  (package
+    (name "r-tidydfidx")
+    (version "0.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidydfidx" version))
+       (sha256
+        (base32 "1ai45x6i0s670zn8bvn8hhv9zk6v94c4a174acg97w9qvdq8x6s8"))))
+    (properties `((upstream-name . "tidydfidx")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-rdpack r-pillar r-dplyr r-dfidx))
+    (native-inputs (list r-quarto))
+    (home-page "https://cran.r-project.org/package=dfidx")
+    (synopsis "Indexed 'tibble' and Methods for 'dplyr'")
+    (description
+     "This package provides extended data frames, with a special data frame column
+which contains two indexes, with potentially a nesting structure, and support
+for tibbles and methods for dplyr'.")
+    (license license:gpl2+)))
 
 (define-public r-tidydensity
   (package
@@ -25558,13 +25623,13 @@ exponential random graph models, implemented in the tergm package.")
 (define-public r-tergm
   (package
     (name "r-tergm")
-    (version "4.2.1")
+    (version "4.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tergm" version))
        (sha256
-        (base32 "1mv01rhd6ddsfcnzrv0lcb982fqswmzs932m23snpm76a11w074a"))))
+        (base32 "0kszsjliib7zgpq8vbwq3ncxjlmnwlmk8if2xvi0hnqw1vmgimbc"))))
     (properties `((upstream-name . "tergm")))
     (build-system r-build-system)
     (arguments

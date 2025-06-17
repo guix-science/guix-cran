@@ -553,13 +553,13 @@ non-asymptotic Type I error control at the nominal level.")
 (define-public r-usmapdata
   (package
     (name "r-usmapdata")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usmapdata" version))
        (sha256
-        (base32 "1m3zlwpfrb233vwy5kmrml4ky1jjls29l342r9s8bb57b7dldxhs"))))
+        (base32 "1nji6r0cx7vdfgjji1c50095ad5wchas9m832znd80jkg373i1vs"))))
     (properties `((upstream-name . "usmapdata")))
     (build-system r-build-system)
     (arguments
@@ -1667,27 +1667,29 @@ Ecology and Evolution, 13: 782-788 <doi:10.1111/2041-210X.13800>\".")
 (define-public r-upndown
   (package
     (name "r-upndown")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "upndown" version))
        (sha256
-        (base32 "15dlzn52nyk37naqjxxzy6wmspv3ambc0rg5xc9ffrbiai4j2sqr"))))
+        (base32 "02qz24zzl0d4hiwc35l21sp06sm1k1swrk8kp8wqxfjknps5qcvp"))))
     (properties `((upstream-name . "upndown")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plyr r-numbers r-expm r-cir))
+    (propagated-inputs (list r-plyr r-mass r-expm r-cir))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=upndown")
     (synopsis "Utilities and Design Aids for Up-and-Down Dose-Finding Studies")
     (description
-     "Up-and-Down is the most popular design approach for dose-finding, but has been
-severely under-served by the statistical computing community.  This is the first
-package to address Up-and-Down's needs.  For a recent methodological tutorial on
-Up-and-Down, see Oron et al. (2022) <doi:10.1097/ALN.0000000000004282>.")
+     "Up-and-Down (UD) is the most popular design approach for dose-finding, but it
+has been severely under-served by the statistical and computing communities.
+This is the first package that comprehensively addresses UD's needs.  Recent
+applied UD tutorial: Oron et al., 2022 <doi:10.1097/ALN.0000000000004282>.
+Recent methodological overview: Oron and Flournoy, 2024
+<doi:10.51387/24-NEJSDS74>.")
     (license license:gpl2)))
 
 (define-public r-upg
@@ -2791,13 +2793,13 @@ that string.")
 (define-public r-uniprotr
   (package
     (name "r-uniprotr")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UniprotR" version))
        (sha256
-        (base32 "0zrpqr1kvigfd0qv2sfra0xm2l94r0v0gyi2yjfgf2g60br4gggj"))))
+        (base32 "1rfaavzfqbllgnc45wawr15v53xfbbzg17z35plxxz6v9ibqxa6a"))))
     (properties `((upstream-name . "UniprotR")))
     (build-system r-build-system)
     (arguments
@@ -2829,7 +2831,7 @@ that string.")
      "Connect to Uniprot <https://www.uniprot.org/> to retrieve information about
 proteins using their accession number such information could be name or taxonomy
 information, For detailed information kindly read the publication
-<https://www.sciencedirect.com/science/article/pii/S1874391919303859>.")
+<doi:10.1016/j.jprot.2019.103613>.")
     (license license:gpl3)))
 
 (define-public r-unine

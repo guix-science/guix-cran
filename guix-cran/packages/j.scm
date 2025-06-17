@@ -2697,13 +2697,13 @@ and continuous moderators.  Allows correcting for phylogenetic relatedness.")
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
-    (version "0.4.10")
+    (version "0.4.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmvReadWrite" version))
        (sha256
-        (base32 "18b0gm3k7pxb9nwvg1qk4mrfq3q6h9qbpghcy9c3gpwdrwdqq740"))))
+        (base32 "1c9gzfhljgsi87y8dbvxdw38f5hv3ij8bzpsk0l0gv7b7rhfgl2v"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
     (arguments
@@ -3143,13 +3143,13 @@ and longitudinal data in clinical research.")
 (define-public r-jmbayes2
   (package
     (name "r-jmbayes2")
-    (version "0.5-2")
+    (version "0.5-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JMbayes2" version))
        (sha256
-        (base32 "1bdd0d41ivs88yy2219zvnx1g5f6za57v5mbal47qryy47xs2fz5"))))
+        (base32 "0djd6r3b48rjywyrkcm7mmkih83p3xi6fgh9dx1xihw1p6g0kbbf"))))
     (properties `((upstream-name . "JMbayes2")))
     (build-system r-build-system)
     (arguments
@@ -3164,7 +3164,8 @@ and longitudinal data in clinical research.")
                              r-gridextra
                              r-glmmadaptive
                              r-ggplot2
-                             r-coda))
+                             r-coda
+                             r-abind))
     (home-page "https://drizopoulos.github.io/JMbayes2/")
     (synopsis "Extended Joint Models for Longitudinal and Time-to-Event Data")
     (description

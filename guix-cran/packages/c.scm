@@ -1466,13 +1466,13 @@ level citizen voting age population from block group data.")
 (define-public r-cv
   (package
     (name "r-cv")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cv" version))
        (sha256
-        (base32 "0d0js2sfffb7k3dl89j166c90sk1a1zh1rsyx04y9grhspahiqli"))))
+        (base32 "0h9v4pi2zhfbq5x89as2s27989c5xiz75py6dq2saihqzjp8piyr"))))
     (properties `((upstream-name . "cv")))
     (build-system r-build-system)
     (arguments
@@ -8418,13 +8418,13 @@ highly bespoke tables in the pharmaceutical industry.")
 (define-public r-crandep
   (package
     (name "r-crandep")
-    (version "0.3.12")
+    (version "0.3.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crandep" version))
        (sha256
-        (base32 "151ssp2v3fawkm97pby63z7x52q8mgsl6acjdk03kviip6li4qgy"))))
+        (base32 "1kgqshbvqqd3ywi6lma925i5375gy4gfgm8q93b0pznayy1pfwy8"))))
     (properties `((upstream-name . "crandep")))
     (build-system r-build-system)
     (arguments
@@ -11915,13 +11915,13 @@ models as in the article Faddy and Smith (2011) <doi:10.18637/jss.v069.i06> .")
 (define-public r-countries
   (package
     (name "r-countries")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "countries" version))
        (sha256
-        (base32 "1725inz8syg2smcw224bn6kayy3p7icj44wyywy50rbvcaq9654q"))))
+        (base32 "1c9nc4z6i08m4ijsxjhyw1h89q8nr2s95n6lxybckmr5z0gasc6v"))))
     (properties `((upstream-name . "countries")))
     (build-system r-build-system)
     (arguments
@@ -20220,13 +20220,13 @@ events in hydrology and climatology.  Please see Hao Zengchao et al. (2019)
 (define-public r-compound-cox
   (package
     (name "r-compound-cox")
-    (version "3.32")
+    (version "3.33")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "compound.Cox" version))
        (sha256
-        (base32 "1xgl45i764x1lmqbv6q16jhfn211m28zyqhaj4xmv8g6i11sxy3j"))))
+        (base32 "0l4igxy7v783dabpqljj5335jy3h8azsy97c8gwmrbp1cxxsdh1h"))))
     (properties `((upstream-name . "compound.Cox")))
     (build-system r-build-system)
     (arguments
@@ -24264,13 +24264,13 @@ Common Data Model.")
 (define-public r-cohortsurvival
   (package
     (name "r-cohortsurvival")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSurvival" version))
        (sha256
-        (base32 "1w6qp6wkjkg3zb06x3i9jy7hymnyshq5mg25kxmsazwf6lh8gi2m"))))
+        (base32 "0vy1blarcawkm70iygv00cx9wa0flpywgyxfayzmlp89b7d0221x"))))
     (properties `((upstream-name . "CohortSurvival")))
     (build-system r-build-system)
     (arguments
@@ -34067,25 +34067,25 @@ intervals proposed by Kabaila, P. and Giri, K. (2009)
 (define-public r-ciu
   (package
     (name "r-ciu")
-    (version "0.6.0")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ciu" version))
        (sha256
-        (base32 "0pqs8ivbybbrjar978bl05awgaks33nqfm7l9z68iv2sj4a9hv21"))))
+        (base32 "14ih7x08dwj24fsvvzas9dxighclbylwcbizmmgs2x6fhilaqjfr"))))
     (properties `((upstream-name . "ciu")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-ggplot2 r-crayon))
+    (propagated-inputs (list r-rcpp r-ggplot2 r-ggbeeswarm r-crayon))
     (home-page "https://cran.r-project.org/package=ciu")
     (synopsis "Contextual Importance and Utility")
     (description
      "Implementation of the Contextual Importance and Utility (CIU) concepts for
-Explainable AI (XAI).  A recent description of CIU can be found in e.g.
-FrÃ¤mling (2020) <@code{arXiv:2009.13996>}.")
+Explainable AI (XAI).  A description of CIU can be found in e.g. FrÃ¤mling
+(2020) <doi:10.1007/978-3-030-51924-7_4>.")
     (license license:expat)))
 
 (define-public r-citrus
@@ -38062,13 +38062,13 @@ and tries to create consistent graphical output and to be very user friendly.")
 (define-public r-chemospec
   (package
     (name "r-chemospec")
-    (version "6.1.11")
+    (version "6.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChemoSpec" version))
        (sha256
-        (base32 "055dapz7nd0vqz94b9q9j5lpy75da6bs11qiz8633mzlxj2nmpll"))))
+        (base32 "0hklq96f12m8ms4xcbnw385clilqfgfqr9arvds4lqh7xlpag21y"))))
     (properties `((upstream-name . "ChemoSpec")))
     (build-system r-build-system)
     (arguments
@@ -38081,7 +38081,6 @@ and tries to create consistent graphical output and to be very user friendly.")
                              r-magrittr
                              r-ggplot2
                              r-chemospecutils))
-    (native-inputs (list r-knitr))
     (home-page "https://bryanhanson.github.io/ChemoSpec/")
     (synopsis "Exploratory Chemometrics for Spectroscopy")
     (description
@@ -43203,13 +43202,13 @@ as well as, controlling for dropped out observations and non-random missingness.
 (define-public r-cdgd
   (package
     (name "r-cdgd")
-    (version "0.3.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cdgd" version))
        (sha256
-        (base32 "10cd1s06k2hcvzjsibz1nask7n22x98s0cpi1j0l974s1j426wzy"))))
+        (base32 "0j0cmv1r8f0aa1sjdzw6ppxcfny1jd9s38060h6awdbmhfiygf21"))))
     (properties `((upstream-name . "cdgd")))
     (build-system r-build-system)
     (arguments
@@ -43220,9 +43219,9 @@ as well as, controlling for dropped out observations and non-random missingness.
     (synopsis "Causal Decomposition of Group Disparities")
     (description
      "The framework of causal decomposition of group disparities developed by Yu and
-Elwert (2023) <doi:10.48550/@code{arXiv.2306.16591>}.  This package implements
-the decomposition estimators that are based on efficient influence functions.
-For the nuisance functions of the estimators, both parametric and nonparametric
+Elwert (2025) <doi:10.1214/24-AOAS1990>.  This package implements the
+decomposition estimators that are based on efficient influence functions.  For
+the nuisance functions of the estimators, both parametric and nonparametric
 options are provided, as well as manual options in case the default models are
 not satisfying.")
     (license license:expat)))

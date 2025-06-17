@@ -436,13 +436,13 @@ al. (2024) <doi:10.1016/j.envsoft.2024.106094>.")
 (define-public r-hypervolume
   (package
     (name "r-hypervolume")
-    (version "3.1.5")
+    (version "3.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hypervolume" version))
        (sha256
-        (base32 "1gca148ch6mr1s1s501d1fh830l6b74friygm09y2a89mc2g6g14"))))
+        (base32 "0z2mzxl4141z95sjqb4xm2c7r53g29j2fmvsi4wb1nj8yd4haw9b"))))
     (properties `((upstream-name . "hypervolume")))
     (build-system r-build-system)
     (arguments
@@ -10455,13 +10455,13 @@ Events API, and Helsinki Region Infoshare statistics API.")
 (define-public r-helpersmg
   (package
     (name "r-helpersmg")
-    (version "6.5")
+    (version "6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HelpersMG" version))
        (sha256
-        (base32 "0y4slz11b35wxc9zsri49srmw559aiy0pmdx9lgi0vnfs682clyp"))))
+        (base32 "1kfsiw8hpyhl9fvhy4wm183y8qrs4h1h9qwlcz8wgxpc613s1pd2"))))
     (properties `((upstream-name . "HelpersMG")))
     (build-system r-build-system)
     (arguments
@@ -10783,13 +10783,13 @@ described in Tavares (2022) <doi:10.1007/s12530-021-09415-z>.")
 (define-public r-heemod
   (package
     (name "r-heemod")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heemod" version))
        (sha256
-        (base32 "0zcj2g578m6pxv7iz3xlypka64qm2j906w10n69wplpn9h9cp3s4"))))
+        (base32 "17x0k1yriqljj6x919xhmc4pf34m2f0dwa00mn3ivb755gsxiz8k"))))
     (properties `((upstream-name . "heemod")))
     (build-system r-build-system)
     (arguments
@@ -10800,7 +10800,6 @@ described in Tavares (2022) <doi:10.1007/s12530-021-09415-z>.")
                              r-rlang
                              r-purrr
                              r-mvnfast
-                             r-memoise
                              r-lifecycle
                              r-glue
                              r-ggplot2

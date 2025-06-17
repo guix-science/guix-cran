@@ -764,13 +764,13 @@ transect.")
 (define-public r-lubrilog
   (package
     (name "r-lubrilog")
-    (version "1.1.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lubrilog" version))
        (sha256
-        (base32 "166787agrp4a0gnm8vs72q6cgr1vha1g3d6yhdsla76l394rzq5n"))))
+        (base32 "0y6daqwks4sb5h1789z01y0qp80gfrprxarcr2an71ijfvp8cksf"))))
     (properties `((upstream-name . "lubrilog")))
     (build-system r-build-system)
     (arguments
@@ -10048,13 +10048,13 @@ authoring with R Markdown is also provided.")
 (define-public r-lingtypology
   (package
     (name "r-lingtypology")
-    (version "1.1.21")
+    (version "1.1.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lingtypology" version))
        (sha256
-        (base32 "10glk74f52zv9qasm0zazkqhrk4ca8mazl1r5xl4kiq2wvbl3vy5"))))
+        (base32 "14bk3dd4811vs7m02b730h33i696rvz8gzb5rri0c2qfwcjvmka9"))))
     (properties `((upstream-name . "lingtypology")))
     (build-system r-build-system)
     (arguments
@@ -11608,13 +11608,13 @@ layers with different visualisation tools.")
 (define-public r-lifeinsurer
   (package
     (name "r-lifeinsurer")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LifeInsureR" version))
        (sha256
-        (base32 "120pf97hp9rp9ncykpk93xxkrmilz74hksjrylh9vdnmmk1dgwbv"))))
+        (base32 "1f61prf7172z6bvdgmdqrfwsqb3kzghb7i727n18nic2lcyldydd"))))
     (properties `((upstream-name . "LifeInsureR")))
     (build-system r-build-system)
     (arguments
@@ -13352,13 +13352,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.4.3")
+    (version "4.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "12b74qwbc8pnxxy1hvp2wh4nl33za6hmj69g2m39vzdd7qgzniis"))))
+        (base32 "1is297rg8sjj4jfhrhk5ad3rsi1lmjlz0w2ca7ygmbxdkmizwq46"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (arguments
@@ -16488,6 +16488,38 @@ optimization routines, which is particularly suited for high-dimensional
 problems.")
     (license license:gpl2+)))
 
+(define-public r-lbdiscover
+  (package
+    (name "r-lbdiscover")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LBDiscover" version))
+       (sha256
+        (base32 "1r473riqdf5zl26f1n0yv0sd59a92l5ihb2i7p8ylkwf4hc8ylc1"))))
+    (properties `((upstream-name . "LBDiscover")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-rentrez
+                             r-matrix
+                             r-jsonlite
+                             r-igraph
+                             r-httr))
+    (home-page "https://github.com/chaoliu-cl/LBDiscover")
+    (synopsis "Literature-Based Discovery Tools for Biomedical Research")
+    (description
+     "This package provides a suite of tools for literature-based discovery in
+biomedical research.  Provides functions for retrieving scientific articles from
+@code{PubMed} and other NCBI databases, extracting biomedical entities
+(diseases, drugs, genes, etc.), building co-occurrence networks, and applying
+various discovery models including ABC', @code{AnC}', LSI', and BITOLA'.  The
+package also includes visualization tools for exploring discovered connections.")
+    (license license:gpl3)))
+
 (define-public r-lba
   (package
     (name "r-lba")
@@ -18676,13 +18708,13 @@ on Torch'.")
 (define-public r-lama
   (package
     (name "r-lama")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LaMa" version))
        (sha256
-        (base32 "0p2009ldm49ym4xhf6rg4ish4m9gxmfyaf1lr4j39gnai5k7610s"))))
+        (base32 "1z33f7cr72swmfsffmpq4s1jy32ixsyy0qimpfk66azdhzi3p6pj"))))
     (properties `((upstream-name . "LaMa")))
     (build-system r-build-system)
     (arguments
@@ -18697,8 +18729,7 @@ on Torch'.")
                              r-mgcv
                              r-matrix
                              r-mass
-                             r-circular
-                             r-circstats))
+                             r-circular))
     (native-inputs (list r-knitr))
     (home-page "https://janoleko.github.io/LaMa/")
     (synopsis

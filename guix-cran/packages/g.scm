@@ -4207,13 +4207,13 @@ are provided.")
 (define-public r-growthrates
   (package
     (name "r-growthrates")
-    (version "0.8.4")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growthrates" version))
        (sha256
-        (base32 "04q8psz4fiibjj0pl6n7wkq83qn1aizzixww8gqdxzzsq6kay81q"))))
+        (base32 "05ynz1kg7fmpan8fim2l61501nmjp7c32ca3kx3ypr7alrj7a5zp"))))
     (properties `((upstream-name . "growthrates")))
     (build-system r-build-system)
     (arguments
@@ -9889,6 +9889,40 @@ generalized pairs plot offers a range of displays of paired combinations of
 categorical and quantitative variables.  Emerson et al. (2013)
 <DOI:10.1080/10618600.2012.694762>.")
     (license license:gpl2+)))
+
+(define-public r-gpabin
+  (package
+    (name "r-gpabin")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GPAbin" version))
+       (sha256
+        (base32 "1bcljfjd09nyjywlbqijbpmzl7znsr9la4mllwv0s4h51n9hddxd"))))
+    (properties `((upstream-name . "GPAbin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-mitools
+                             r-missmda
+                             r-mice
+                             r-mi
+                             r-jomo
+                             r-ca))
+    (home-page "https://cran.r-project.org/package=GPAbin")
+    (synopsis "Unifying Multiple Biplot Visualisations into a Single Display")
+    (description
+     "Aligning multiple visualisations by utilising generalised orthogonal Procrustes
+analysis (GPA) before combining coordinates into a single biplot display as
+described in Nienkemper-Swanepoel, le Roux and Lubbe
+(2023)<doi:10.1080/03610918.2021.1914089>.  This is mainly suitable to combine
+visualisations constructed from multiple imputations, however, it can be
+generalised to combine variations of visualisations from the same datasets (i.e.
+ resamples).")
+    (license license:expat)))
 
 (define-public r-gp
   (package
@@ -22233,13 +22267,13 @@ the archived package GGE@code{BiplotGUI}'.")
 (define-public r-ggeasy
   (package
     (name "r-ggeasy")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggeasy" version))
        (sha256
-        (base32 "1inxk15lmdjpfzf46xdn6yrgz6h45i6rhv2qpcyb2rvf4v6cfm96"))))
+        (base32 "0yflqryikxcq5hmj14n8wiz1cidmxvqkqjvpwrw0c5j5kjc1ckqy"))))
     (properties `((upstream-name . "ggeasy")))
     (build-system r-build-system)
     (arguments
@@ -33473,19 +33507,19 @@ Langsrud (2019) <doi:10.1007/s11222-018-9848-9>.")
 (define-public r-gaussratiovegind
   (package
     (name "r-gaussratiovegind")
-    (version "2.0.1")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gaussratiovegind" version))
        (sha256
-        (base32 "16gwi1xqdi0xpcmq8nmw5q75nj1f4lnxrxvl49bli06ycbhrk3lq"))))
+        (base32 "0q342nvcds969r0vvak962kvkzv5ydi0zcaa1vcqs7wld5nsdml3"))))
     (properties `((upstream-name . "gaussratiovegind")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://forgemia.inra.fr/imhorphen/gaussratiovegind")
+    (home-page "https://forge.inrae.fr/imhorphen/gaussratiovegind")
     (synopsis "Distribution of Gaussian Ratios")
     (description
      "It is well known that the distribution of a Gaussian ratio does not follow a

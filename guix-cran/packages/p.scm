@@ -4621,38 +4621,6 @@ package have been described by Stephen JJ, Carolan P, Krefman AE, et al. (2024)
 <doi:10.1016/j.patter.2024.101003>.")
     (license license:expat)))
 
-(define-public r-psgp
-  (package
-    (name "r-psgp")
-    (version "0.3-21")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "psgp" version))
-       (sha256
-        (base32 "1pcg6q1g5ipial8kyk20n15zzls4ig0m0sxcc7d3ngryir89cyzs"))))
-    (properties `((upstream-name . "psgp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sp
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-intamap
-                             r-gstat
-                             r-foreach
-                             r-doparallel
-                             r-automap))
-    (home-page "https://cran.r-project.org/package=psgp")
-    (synopsis "Projected Spatial Gaussian Process Methods")
-    (description
-     "This package implements projected sparse Gaussian process Kriging (Ingram et.
-al.', 2008, <doi:10.1007/s00477-007-0163-9>) as an additional method for the
-intamap package.  More details on implementation (Barillec et.  al.', 2010,
-<doi:10.1016/j.cageo.2010.05.008>).")
-    (license license:gpl2+)))
-
 (define-public r-psgoft
   (package
     (name "r-psgoft")
@@ -34393,32 +34361,32 @@ please refer to Cuntrera, D., Augugliaro, L., & Muggeo, V. M. (2022)
 (define-public r-penaft
   (package
     (name "r-penaft")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "penAFT" version))
        (sha256
-        (base32 "1yhg9fr3fwpxxcp0ri4iqfwa9f2y134y5b13qfils4y15cp0rnzj"))))
+        (base32 "07clr9q6l3g0szcr331baddwsmjbxjvj6v0wsmmxx3rqhgf7a9as"))))
     (properties `((upstream-name . "penAFT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-irlba r-ggplot2))
-    (home-page "ajmolstad.github.io/research")
+    (home-page "https://ajmolstad.github.io/research/")
     (synopsis
-     "Fit the Regularized Gehan Estimator with Elastic Net and Sparse Group Lasso Penalties")
+     "Fit the Semiparametric Accelerated Failure Time Model with Elastic Net and Sparse Group Lasso Penalties")
     (description
      "The semiparametric accelerated failure time (AFT) model is an attractive
 alternative to the Cox proportional hazards model.  This package provides a
-suite of functions for fitting one popular estimator of the semiparametric AFT
-model, the regularized Gehan estimator.  Specifically, we provide functions for
-cross-validation, prediction, coefficient extraction, and visualizing both trace
-plots and cross-validation curves.  For further details, please see Suder, P. M.
-and Molstad, A. J., (2022+) Scalable algorithms for semiparametric accelerated
-failure time models in high dimensions, to appear in Statistics in Medicine
-<doi:10.1002/sim.9264>.")
+suite of functions for fitting one popular rank-based estimator of the
+semiparametric AFT model, the regularized Gehan estimator.  Specifically, we
+provide functions for cross-validation, prediction, coefficient extraction, and
+visualizing both trace plots and cross-validation curves.  For further details,
+please see Suder, P. M. and Molstad, A. J., (2022) Scalable algorithms for
+semiparametric accelerated failure time models in high dimensions, Statistics in
+Medicine <doi:10.1002/sim.9264>.")
     (license license:gpl2+)))
 
 (define-public r-pemultinom
@@ -39297,13 +39265,13 @@ representing and analyzing graph data.")
 (define-public r-pathviewr
   (package
     (name "r-pathviewr")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathviewr" version))
        (sha256
-        (base32 "0n3jv5zzwb7579ymv8s6vr7nzrc3gz5bi30yf6qvqixr8j0k4ggr"))))
+        (base32 "0zfd77yi09jzy8pkpxjzpwsa2lph94gs9qsx5jfzx02lp76pa8vl"))))
     (properties `((upstream-name . "pathviewr")))
     (build-system r-build-system)
     (arguments
@@ -39477,13 +39445,13 @@ data related to gene sets and example input/output data.")
 (define-public r-pathfindr
   (package
     (name "r-pathfindr")
-    (version "2.4.2")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathfindR" version))
        (sha256
-        (base32 "0hqkwwva49kc8w9y2nkw37vpnjr8mxb10pdx1mm76xm0nrj82kp5"))))
+        (base32 "1a59wqc733wi0sn6aaanwm2y6gjzvfp0b7wkcpk8zm6xxdzkkck8"))))
     (properties `((upstream-name . "pathfindR")))
     (build-system r-build-system)
     (arguments
