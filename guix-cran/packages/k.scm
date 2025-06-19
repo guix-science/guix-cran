@@ -42,13 +42,13 @@
 (define-public r-kzs
   (package
     (name "r-kzs")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kzs" version))
        (sha256
-        (base32 "1srffwfg0ps8zx0c6hs2rc2y2p01qjl5g1ypqsbhq88vkcppx1w9"))))
+        (base32 "1fbwd55ww51c3wj7km552w809vdpxqagp5gxyzsxmz1gqw1b67pr"))))
     (properties `((upstream-name . "kzs")))
     (build-system r-build-system)
     (arguments

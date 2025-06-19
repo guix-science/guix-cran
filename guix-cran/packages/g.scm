@@ -1893,6 +1893,30 @@ Google Trends is provided.  Trends (number of hits) over the time as well as
 geographic representation of the results can be displayed.")
     (license license:gpl2+)))
 
+(define-public r-gtrendshealth
+  (package
+    (name "r-gtrendshealth")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gtrendshealth" version))
+       (sha256
+        (base32 "1b9i0gcbk3ifrjfq162d69ja0ia5v2q0ipdkqglp11bjh9cans4m"))))
+    (properties `((upstream-name . "gtrendshealth")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr))
+    (home-page "https://github.com/CDCgov/gtrendshealth")
+    (synopsis "Query the 'Google Trends for Health' API")
+    (description
+     "Connects to the Google Trends for Health API hosted at
+<https://trends.google.com/trends/>, allowing projects authorized to use the
+health research data to query Google Trends'.")
+    (license license:expat)))
+
 (define-public r-gtreg
   (package
     (name "r-gtreg")
@@ -2072,13 +2096,13 @@ General Transit Feed Specification (GTFS) data format.")
 (define-public r-gtfsrouter
   (package
     (name "r-gtfsrouter")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtfsrouter" version))
        (sha256
-        (base32 "02vgx456z8d3yf5lklf7cddypkpxqxyv745xlax7y2fkanbinh3v"))))
+        (base32 "0iy60w0vi3cqn1gydhz0aawg784rayg94j2qvcana5w31bxhxzlh"))))
     (properties `((upstream-name . "gtfsrouter")))
     (build-system r-build-system)
     (arguments
@@ -3156,6 +3180,38 @@ manually.  Google Sheets is the new name for Google Docs Spreadsheets
 <https://www.google.com/sheets/about>.")
     (license license:gpl3)))
 
+(define-public r-gseries
+  (package
+    (name "r-gseries")
+    (version "3.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gseries" version))
+       (sha256
+        (base32 "0y0w44cjg7hc56gbd9s2zxhnf2bx7qwm6g0ygr2222g9fm4cnfid"))))
+    (properties `((upstream-name . "gseries")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xmpdf
+                             r-rlang
+                             r-osqp
+                             r-lifecycle
+                             r-gridextra
+                             r-ggtext
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://StatCan.github.io/gensol-gseries/en/")
+    (synopsis "Improve the Coherence of Your Time Series Data")
+    (description
+     "R version of G-Series', Statistics Canada's generalized system devoted to the
+benchmarking and reconciliation of time series data.  The methods used in
+G-Series essentially come from Dagum, E. B., and P. Cholette (2006)
+<doi:10.1007/0-387-35439-5>.")
+    (license license:gpl3+)))
+
 (define-public r-gsema
   (package
     (name "r-gsema")
@@ -3705,13 +3761,13 @@ overlapped Quantitative Trait Loci names.")
 (define-public r-gsaot
   (package
     (name "r-gsaot")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsaot" version))
        (sha256
-        (base32 "17v0y0z11x50rbbazahcrkbaj01isw5rq9xga6mpdrkqi8s1rp69"))))
+        (base32 "138cf9jy4a56ws5w7mwqjl78aqrid3f6y71vg15sswhays7i6yrb"))))
     (properties `((upstream-name . "gsaot")))
     (build-system r-build-system)
     (arguments
@@ -3923,31 +3979,6 @@ estimators.  Also, an interactive shiny application is provided with graphics
 for characteristic and information curves.  Samejima (2018)
 <doi:10.1007/978-1-4757-2691-6_5>.")
     (license license:gpl3+)))
-
-(define-public r-grs-test
-  (package
-    (name "r-grs-test")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GRS.test" version))
-       (sha256
-        (base32 "1g560n81kqf81n1z3s4yxl24r386q21avjknz6msqzp4xhxhr4l6"))))
-    (properties `((upstream-name . "GRS.test")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=GRS.test")
-    (synopsis
-     "GRS Test for Portfolio Efficiency, Its Statistical Power Analysis, and Optimal Significance Level Calculation")
-    (description
-     "Computational resources for test proposed by Gibbons, Ross, Shanken
-(1989)<DOI:10.2307/1913625>.  It also has the functions for the power analysis
-and the choice of the optimal level of significance.  The optimal level is
-determined by minimizing the expected loss from hypothesis testing.")
-    (license license:gpl2)))
 
 (define-public r-grpstring
   (package
@@ -5364,13 +5395,13 @@ C. Santana 2008) <doi:10.1080/17415970802082922>.")
 (define-public r-grin2
   (package
     (name "r-grin2")
-    (version "1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GRIN2" version))
        (sha256
-        (base32 "17q26vwz8mmdq649pmb6n4q210912f8q7qcc2imq10ri9ssaw295"))))
+        (base32 "1hy9gf782sqyqmv1q6bqyr074rsacwdbnlyw46jp3b4hmfbfzz8r"))))
     (properties `((upstream-name . "GRIN2")))
     (build-system r-build-system)
     (arguments
@@ -5382,18 +5413,11 @@ C. Santana 2008) <doi:10.1080/17415970802082922>.")
                              r-survival
                              r-stringr
                              r-magrittr
-                             r-gviz
-                             r-gridgraphics
                              r-ggplot2
-                             r-genomeinfodb
                              r-forcats
-                             r-ensembldb
-                             r-ensdb-hsapiens-v75
                              r-dplyr
                              r-data-table
-                             r-complexheatmap
-                             r-circlize
-                             r-biomart))
+                             r-circlize))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/abdel-elsayed87/GRIN2")
     (synopsis "Genomic Random Interval (GRIN)")
@@ -5404,31 +5428,6 @@ capabilities to answer additional scientific questions including a rigorous
 evaluation of the association of genomic lesions with RNA expression.  Pounds,
 Stan, et al. (2013) <DOI:10.1093/bioinformatics/btt372>.")
     (license license:gpl3+)))
-
-(define-public r-grimr
-  (package
-    (name "r-grimr")
-    (version "0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GrimR" version))
-       (sha256
-        (base32 "005ywc31yn1cs54kjlkrryw0s7zm8dqqfjkdlkm4s1sbc9r3mssz"))))
-    (properties `((upstream-name . "GrimR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-car))
-    (home-page "https://cran.r-project.org/package=GrimR")
-    (synopsis "Calculate Optical Parameters from Spindle Stage Measurements")
-    (description
-     "Calculates optical parameters of crystals like the optical axes, the axis angle
-2V, and the direction of the principal axes of the indicatrix from extinction
-angles measured on a spindle stage mounted on a polarisation microscope stage.
-Details of the method can be found in Dufey (2017) <@code{arXiv:1703.00070>}.")
-    (license license:gpl3)))
 
 (define-public r-grim
   (package
@@ -7106,13 +7105,13 @@ about date input quality, performance, or the ABS catalogue.")
 (define-public r-grattan
   (package
     (name "r-grattan")
-    (version "2024.1.1")
+    (version "2025.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grattan" version))
        (sha256
-        (base32 "0cxgj20c7gk55p22rmy1al44if4pk90yf9zify2jz9h7pviwgpjx"))))
+        (base32 "1wdg4cakg6qxhc7dgnny37nq0dbisk4w9pgms6l9hx7am7h1w3a8"))))
     (properties `((upstream-name . "grattan")))
     (build-system r-build-system)
     (arguments
@@ -8315,13 +8314,13 @@ included in the package and in the paper by HÃ¸jsgaard (2012,
 (define-public r-grafzahl
   (package
     (name "r-grafzahl")
-    (version "0.0.11")
+    (version "0.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grafzahl" version))
        (sha256
-        (base32 "0zx6fqwklyi3sc1p59nb71mgrfnp7bqw5axmddj3706cawlrqrb8"))))
+        (base32 "07znymwp55cg5kxy6gzxkb4l2ysljwihjajfg0mq4kqb4jxl2r1r"))))
     (properties `((upstream-name . "grafzahl")))
     (build-system r-build-system)
     (arguments
@@ -11786,37 +11785,6 @@ Peressini and Sullivan (1988, ISBN:0-387-96614-5), and contributions by Joao
 Macalos.")
     (license license:gpl3+)))
 
-(define-public r-gocompare
-  (package
-    (name "r-gocompare")
-    (version "1.0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GOCompare" version))
-       (sha256
-        (base32 "0h4235bs9aszil20bxyscxv2z96rw9gdp87va8bmvj15cg2lfvgv"))))
-    (properties `((upstream-name . "GOCompare")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-stringr
-                             r-mathjaxr
-                             r-igraph
-                             r-ggrepel
-                             r-ggplot2
-                             r-ape))
-    (home-page "https://github.com/ccsosa/GOCompare")
-    (synopsis "Comprehensive GO Terms Comparison Between Species")
-    (description
-     "Supports the assessment of functional enrichment analyses obtained for several
-lists of genes and provides a workflow to analyze them between two species via
-weighted graphs.  Methods are described in Sosa et al. (2023)
-<doi:10.1016/j.ygeno.2022.110528>.")
-    (license license:gpl3+)))
-
 (define-public r-goat
   (package
     (name "r-goat")
@@ -13388,40 +13356,6 @@ scenarios with the presence of cis-association (i.e., treatment-mediator
 association) and random @code{eQTL} (i.e., treatment).")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-gma
-  (package
-    (name "r-gma")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gma" version))
-       (sha256
-        (base32 "08hxbs9z4vq5zjis0lgdcvlysaj1k7i0icdk3wsyqf3wd9znsibi"))))
-    (properties `((upstream-name . "gma")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nlme r-mass r-car))
-    (home-page "https://cran.r-project.org/package=gma")
-    (synopsis "Granger Mediation Analysis")
-    (description
-     "This package performs Granger mediation analysis (GMA) for time series.  This
-package includes a single level GMA model and a two-level GMA model, for time
-series with hierarchically nested structure.  The single level GMA model for the
-time series of a single participant performs the causal mediation analysis which
-integrates the structural equation modeling and the Granger causality
-frameworks.  A vector autoregressive model of order p is employed to account for
-the spatiotemporal dependencies in the data.  Meanwhile, the model introduces
-the unmeasured confounding effect through a nonzero correlation parameter.
-Under the two-level model, by leveraging the variabilities across participants,
-the parameters are identifiable and consistently estimated based on a full
-conditional likelihood or a two-stage method.  See Zhao, Y., & Luo, X. (2017),
-Granger Mediation Analysis of Multiple Time Series with an Application to
-@code{fMRI}, <@code{arXiv:1709.05328>} for details.")
-    (license license:gpl2+)))
-
 (define-public r-gm
   (package
     (name "r-gm")
@@ -13758,13 +13692,13 @@ Definitions can be provided inline or in a separate file.")
 (define-public r-glossa
   (package
     (name "r-glossa")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glossa" version))
        (sha256
-        (base32 "07sfbzqs5spvmf9z7cjydp64cc8rc54mgxa877rh1cxnbxlai4y0"))))
+        (base32 "08mywjr1y3v64v2ah5ln1ck4qr340rb8lmir2r9hzc4cmyj2inri"))))
     (properties `((upstream-name . "glossa")))
     (build-system r-build-system)
     (arguments
@@ -13797,11 +13731,11 @@ Definitions can be provided inline or in a separate file.")
      "User-Friendly 'shiny' App for Bayesian Species Distribution Models")
     (description
      "This package provides a user-friendly shiny application for Bayesian machine
-learning analysis of marine species distributions.  GLOSSA (Global Species
-Spatiotemporal Analysis) uses Bayesian Additive Regression Trees (BART; Chipman,
-George, and @code{McCulloch} (2010) <doi:10.1214/09-AOAS285>) to model species
-distributions with intuitive workflows for data upload, processing, model
-fitting, and result visualization.  It supports presence-absence and
+learning analysis of marine species distributions.  GLOSSA (Global Ocean Species
+Spatio-temporal Analysis) uses Bayesian Additive Regression Trees (BART;
+Chipman, George, and @code{McCulloch} (2010) <doi:10.1214/09-AOAS285>) to model
+species distributions with intuitive workflows for data upload, processing,
+model fitting, and result visualization.  It supports presence-absence and
 presence-only data (with pseudo-absence generation), spatial thinning,
 cross-validation, and scenario-based projections.  GLOSSA is designed to
 facilitate ecological research by providing easy-to-use tools for analyzing and
@@ -13906,19 +13840,25 @@ DE/rand/2, DE/best/1, DE/best/2, DE/rand_to-best/1 and DE/rand_to-best/2.")
 (define-public r-globfpr
   (package
     (name "r-globfpr")
-    (version "0.1.0")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gloBFPr" version))
        (sha256
-        (base32 "1fj90ynmy5byqx94nbwqivw27hd74a7lyhsvkz7kzm4y6193hd2r"))))
+        (base32 "0sjcck2rgcp0mgjdczfaqv48lpxsbbgv6v569xjcj1gy0xnrp6yd"))))
     (properties `((upstream-name . "gloBFPr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra r-sf r-rlang r-httr2 r-dplyr))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-rlang
+                             r-lwgeom
+                             r-httr2
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/billbillbilly/gloBFPr")
     (synopsis "Access Global Building Height Datasets")
@@ -34312,6 +34252,31 @@ volatilities using the Unified GARCH-Ito [Kim and Wang (2016)
 augmented Lagrange multiplier method.")
     (license license:gpl3)))
 
+(define-public r-garch-x
+  (package
+    (name "r-garch-x")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GARCH.X" version))
+       (sha256
+        (base32 "1rarfkfjxfzjg7v864if0nn8zvnabw9cd5pszq7998avrv9h162k"))))
+    (properties `((upstream-name . "GARCH.X")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pso r-gensa r-ga))
+    (home-page "https://cran.r-project.org/package=GARCH.X")
+    (synopsis
+     "Estimation and Exogenous Covariate Selection for GARCH-X Models")
+    (description
+     "Estimates the parameters of a GARCH-X model with exogenous covariates, performs
+hypothesis tests for the parameters returning the p-values, and uses False
+Discovery Rate p-value corrections to select the exogenous variables.")
+    (license license:gpl2+)))
+
 (define-public r-gapr
   (package
     (name "r-gapr")
@@ -35234,32 +35199,6 @@ the same thing for penalization between L1 and L2 norms).  For details see:
 Taddy (2017 JCGS), One-Step Estimator Paths for Concave Regularization',
 <@code{arXiv:1308.5623>}.")
     (license license:gpl3)))
-
-(define-public r-gametheoryallocation
-  (package
-    (name "r-gametheoryallocation")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GameTheoryAllocation" version))
-       (sha256
-        (base32 "0733vmyr0d9scjd5ixpnggr548snd7nj70knf5hbzc59nmbc5y11"))))
-    (properties `((upstream-name . "GameTheoryAllocation")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lpsolveapi r-e1071))
-    (home-page "https://cran.r-project.org/package=GameTheoryAllocation")
-    (synopsis "Tools for Calculating Allocations in Game Theory")
-    (description
-     "Many situations can be modeled as game theoretic situations.  Some procedures
-are included in this package to calculate the most important allocations rules
-in Game Theory: Shapley value, Owen value or nucleolus, among other.  First, we
-must define as an argument the value of the unions of the envolved agents with
-the characteristic function.")
-    (license license:gpl2)))
 
 (define-public r-gametheory
   (package

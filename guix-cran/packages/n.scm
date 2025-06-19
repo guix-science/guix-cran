@@ -3654,41 +3654,6 @@ distribution function, only that the data have to be at least ordinal numbers.
 See Konietschke et al. (2015) <doi:10.18637/jss.v064.i09> for details.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-nparact
-  (package
-    (name "r-nparact")
-    (version "0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nparACT" version))
-       (sha256
-        (base32 "0zwhz52j526n3xd21s7kghjaby56a8g296bkkc6scaa23zn1xg4b"))))
-    (properties `((upstream-name . "nparACT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo r-stringr r-ggplot2))
-    (home-page "https://www.r-project.org")
-    (synopsis "Non-Parametric Measures of Actigraphy Data")
-    (description
-     "Computes interdaily stability (IS), intradaily variability (IV) & the relative
-amplitude (RA) from actigraphy data as described in Blume et al. (2016) <doi:
-10.1016/j.mex.2016.05.006> and van Someren et al. (1999) <doi:
-10.3109/07420529908998724>.  Additionally, it also computes L5 (i.e.  the 5
-hours with lowest average actigraphy amplitude) and M10 (the 10 hours with
-highest average amplitude) as well as the respective start times.  The flex
-versions will also compute the L-value for a user-defined number of minutes.  IS
-describes the strength of coupling of a rhythm to supposedly stable zeitgebers.
-It varies between 0 (Gaussian Noise) and 1 for perfect IS. IV describes the
-fragmentation of a rhythm, i.e.  the frequency and extent of transitions between
-rest and activity.  It is near 0 for a perfect sine wave, about 2 for Gaussian
-noise and may be even higher when a definite ultradian period of about 2 hrs is
-present.  RA is the relative amplitude of a rhythm.  Note that to obtain
-reliable results, actigraphy data should cover a reasonable number of days.")
-    (license license:gpl2)))
-
 (define-public r-nozzle-r1
   (package
     (name "r-nozzle-r1")
@@ -5398,13 +5363,13 @@ sf format.")
 (define-public r-nomclust
   (package
     (name "r-nomclust")
-    (version "2.8.0")
+    (version "2.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nomclust" version))
        (sha256
-        (base32 "1bl92zaf4iidm48xjxj0v812lx7gk3i3frvb59xr71y91ranwjpv"))))
+        (base32 "0w9lmxp31l9vgq91c31f0ph944zsc8bgprg9sx73h7iyh2jlb1qx"))))
     (properties `((upstream-name . "nomclust")))
     (build-system r-build-system)
     (arguments

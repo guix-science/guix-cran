@@ -13,8 +13,6 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages web)
   #:use-module (gnu packages docker)
-  #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages cmake)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
   #:use-module (gnu packages linux)
@@ -7354,31 +7352,6 @@ El-Bassiouni (2000) <doi:10.1080/00949650008812006>, iii.  Imdadullah, Aslam,
 and Saima (2017), iv.  Marquardt (1970) <doi:10.2307/1267205>.")
     (license license:gpl2+)))
 
-(define-public r-lmreg
-  (package
-    (name "r-lmreg")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lmreg" version))
-       (sha256
-        (base32 "02a4nqqcfkjlq21mpk8abd4lj4ib2nps3ndf7zgmzygkd1z0df18"))))
-    (properties `((upstream-name . "lmreg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass))
-    (home-page "https://cran.r-project.org/package=lmreg")
-    (synopsis
-     "Data and Functions Used in Linear Models and Regression with R: An Integrated Approach")
-    (description
-     "Data files and a few functions used in the book Linear Models and Regression
-with R: An Integrated Approach by Debasis Sengupta and Sreenivas Rao
-Jammalamadaka (2019).")
-    (license license:gpl2+)))
-
 (define-public r-lmqcm
   (package
     (name "r-lmqcm")
@@ -9100,32 +9073,6 @@ installed from CRAN or <https://github.com/timelyportfolio/@code{reactR>}.")
 short-cuts to operations like selecting and merging data stored in lists.  The
 functions in this package are designed to be used with pipes.")
     (license (license:fsdg-compatible "EUPL"))))
-
-(define-public r-listest
-  (package
-    (name "r-listest")
-    (version "2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LIStest" version))
-       (sha256
-        (base32 "1gk253v3f1jcr4z5ps8nrqf1n7isjhbynxsi9jq729w7h725806a"))))
-    (properties `((upstream-name . "LIStest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=LIStest")
-    (synopsis
-     "Tests of independence based on the Longest Increasing Subsequence")
-    (description
-     "Tests for independence between X and Y computed from a paired sample
-(x1,y1),...(xn,yn) of (X,Y), using one of the following statistics (a) the
-Longest Increasing Subsequence (Ln), (b) JLn, a Jackknife version of Ln or (c)
-JLMn, a Jackknife version of the longest monotonic subsequence.  This family of
-tests can be applied under the assumption of continuity of X and Y.")
-    (license license:gpl2)))
 
 (define-public r-listdown
   (package
@@ -12063,33 +12010,6 @@ library.  And the @code{datestep()} function will perform row-by-row data
 processing.")
     (license license:cc0)))
 
-(define-public r-libopenexr
-  (package
-    (name "r-libopenexr")
-    (version "3.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "libopenexr" version))
-       (sha256
-        (base32 "03asa08aprylq3r3n2pbpjlw5kxl4qy816474ii6qaprhmxsv3kg"))))
-    (properties `((upstream-name . "libopenexr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list cmake))
-    (propagated-inputs (list r-libimath r-libdeflate))
-    (native-inputs (list pkg-config))
-    (home-page "https://cran.r-project.org/package=libopenexr")
-    (synopsis "Static Library and Headers for 'OpenEXR' Image I/O")
-    (description
-     "This package provides the @code{OpenEXR} static library and C++ headers for
-high-dynamic-range image I/O (see <https://openexr.com/>) needed to link R
-packages against the @code{OpenEXR} library, along with a basic R interface to
-load EXR images.")
-    (license license:bsd-3)))
-
 (define-public r-liblinear
   (package
     (name "r-liblinear")
@@ -12121,62 +12041,6 @@ for model selection, probability estimates (logistic regression only) or weights
 for unbalanced data.  The estimation of the models is particularly fast as
 compared to other libraries.")
     (license license:gpl2)))
-
-(define-public r-libimath
-  (package
-    (name "r-libimath")
-    (version "3.1.9-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "libimath" version))
-       (sha256
-        (base32 "1gxnbs3vh38a8m2nxjlaay8n4b654lad55m34akmdf1ahiwpamic"))))
-    (properties `((upstream-name . "libimath")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list cmake))
-    (native-inputs (list pkg-config))
-    (home-page "https://cran.r-project.org/package=libimath")
-    (synopsis "'Imath' Computer Graphics Linear Algebra Static Library")
-    (description
-     "This package provides a static library for Imath (see
-<https://github.com/@code{AcademySoftwareFoundation/Imath>}), a library for
-functions and data types common in computer graphics applications, including a
-16-bit floating-point type.")
-    (license license:bsd-3)))
-
-(define-public r-libdeflate
-  (package
-    (name "r-libdeflate")
-    (version "1.24-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "libdeflate" version))
-       (sha256
-        (base32 "1dbhnr6z1m2b0ykgqgkazyadczwifiihffay0zci51fh0lkmm848"))))
-    (properties `((upstream-name . "libdeflate")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list cmake))
-    (native-inputs (list pkg-config))
-    (home-page "https://cran.r-project.org/package=libdeflate")
-    (synopsis "DEFLATE Compression and Static Library")
-    (description
-     "Whole-buffer DEFLATE-based compression and decompression of raw vectors using
-the libdeflate library (see <https://github.com/ebiggers/libdeflate>).  Provides
-the user with additional control over the speed and the quality of DEFLATE
-compression compared to the fixed level of compression offered in R's
-@code{memCompress()} function.  Also provides the libdeflate static library and
-C headers along with a CMake target and packageâconfig file that ease linking
-of libdeflate in packages that compile and statically link bundled libraries
-using CMake'.")
-    (license license:expat)))
 
 (define-public r-libbib
   (package
@@ -17337,13 +17201,13 @@ available from <https://github.com/MAnalytics/akmedoids>.")
 (define-public r-latexsymb
   (package
     (name "r-latexsymb")
-    (version "0.4.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "latexSymb" version))
        (sha256
-        (base32 "0p12dag85zvrzk3z3chynf2fbwwgf1fzypxgv6av013jgn0rdqcn"))))
+        (base32 "0sdmp474vb8spbd3gwcl3c01cbss9gpjpa1a9l87m056wx1p3fl1"))))
     (properties `((upstream-name . "latexSymb")))
     (build-system r-build-system)
     (arguments
@@ -17352,11 +17216,11 @@ available from <https://github.com/MAnalytics/akmedoids>.")
     (propagated-inputs (list r-purrr))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://nicoesve.github.io/latexSymb/")
-    (synopsis "Write Equations in a Way that You Can Read")
+    (synopsis "R Functions for Readable LaTeX Mathematical Expressions")
     (description
-     "Utilities to help you write @code{LaTeX} in a more readable way.  Instead of
-using plain code or a series of newcommand statements, use R functions.  You
-will be able to write what you mean and make fewer mistakes.")
+     "Build complex @code{LaTeX} mathematical expressions using intuitive R functions.
+ Replace error-prone @code{LaTeX} syntax with readable, modular functions that
+make mathematical typesetting straightforward and maintainable.")
     (license license:gpl3+)))
 
 (define-public r-latexpdf

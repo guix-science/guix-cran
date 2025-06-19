@@ -1128,6 +1128,46 @@ along the longitudinal flow path as proposed and validated in Greimel et al.
 (2022).")
     (license license:gpl2)))
 
+(define-public r-hydromopso
+  (package
+    (name "r-hydromopso")
+    (version "0.1-14")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydroMOPSO" version))
+       (sha256
+        (base32 "0wa20i337q495dq0z2rjsdilypl9qkf0pdvky5lbrmix0zk95mxb"))))
+    (properties `((upstream-name . "hydroMOPSO")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-randtoolbox r-lhs r-hydrotsm))
+    (home-page "https://gitlab.com/rmarinao/hydroMOPSO")
+    (synopsis
+     "Multi-Objective Optimisation with Focus on Environmental Models")
+    (description
+     "State-of-the-art Multi-Objective Particle Swarm Optimiser (MOPSO), based on the
+algorithm developed by Lin et al. (2018) <doi:10.1109/TEVC.2016.2631279> with
+improvements described by Marinao-Rivas & Zambrano-Bigiarini (2020)
+<doi:10.1109/LA-CCI48322.2021.9769844>.  This package is inspired by and closely
+follows the philosophy of the single objective @code{hydroPSO} R package
+((Zambrano-Bigiarini & Rojas, 2013) <doi:10.1016/j.envsoft.2013.01.004>), and
+can be used for global optimisation of non-smooth and non-linear R functions and
+R-base models (e.g., TUWmodel', GR4J', GR6J').  However, the main focus of
+@code{hydroMOPSO} is optimising environmental and other real-world models that
+need to be run from the system console (e.g., SWAT+'). @code{hydroMOPSO}
+communicates with the model to be optimised through its input and output files,
+without requiring modifying its source code.  Thanks to its flexible design and
+the availability of several fine-tuning options, @code{hydroMOPSO} can tackle a
+wide range of multi-objective optimisation problems (e.g., multi-objective
+functions, multiple model variables, multiple periods).  Finally,
+@code{hydroMOPSO} is designed to run on multi-core machines or network clusters,
+to alleviate the computational burden of complex models with long execution
+time.")
+    (license license:gpl2+)))
+
 (define-public r-hydrome
   (package
     (name "r-hydrome")
@@ -9011,13 +9051,13 @@ Implement reference about Baruch Awerbuch (1985)
 (define-public r-hgnc
   (package
     (name "r-hgnc")
-    (version "0.1.4")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hgnc" version))
        (sha256
-        (base32 "180092gpcs3j94904ry42crs62knzrv926bp25dapigqqfj7jjqi"))))
+        (base32 "1kh64ydplvga9vliwl85y9sp9xdv5lhfh1j8l7m06afkrjiw756f"))))
     (properties `((upstream-name . "hgnc")))
     (build-system r-build-system)
     (arguments
@@ -9025,23 +9065,19 @@ Implement reference about Baruch Awerbuch (1985)
       #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
-                             r-rvest
-                             r-rlang
                              r-readr
                              r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-hms
-                             r-dplyr))
-    (home-page "https://github.com/ramiromagno/hgnc")
-    (synopsis
-     "Download and Import the HUGO Gene Nomenclature Committee ('HGNC') Data Set into R")
+                             r-prettyunits
+                             r-memoise
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/patterninstitute/hgnc")
+    (synopsis "Import Human Gene Nomenclature")
     (description
-     "This package provides a set of routines to quickly download and import the HGNC
-data set on mapping of gene symbols to gene entries in other popular databases
-or resources.")
+     "This package provides a set of routines to quickly download and import the HUGO
+Gene Nomenclature Committee (HGNC) data set on mapping of gene symbols to gene
+entries in other genomic databases or resources.")
     (license license:expat)))
 
 (define-public r-hgmnd
@@ -13336,13 +13372,13 @@ package.")
 (define-public r-hdar
   (package
     (name "r-hdar")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdar" version))
        (sha256
-        (base32 "1w242ivi6ffdmi9j4vzczmaaymy35a0jcs4n19rh382823ic03jw"))))
+        (base32 "0b53xhxrghcg7nwzy6pzvmh18g187lm4nfby2bys2fdrsgfz9lj5"))))
     (properties `((upstream-name . "hdar")))
     (build-system r-build-system)
     (arguments
@@ -15705,34 +15741,6 @@ convexity, sphericity, circularity, second moments of area and volume, and more.
      "Simple tools for converting columns to new data types.  Intuitive functions for
 columns with missing values.")
     (license license:expat)))
-
-(define-public r-habcluster
-  (package
-    (name "r-habcluster")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "habCluster" version))
-       (sha256
-        (base32 "1cjmhq8krkv4g1vy70kc3j667djzmq38xlqn568f437f6jaglvkp"))))
-    (properties `((upstream-name . "habCluster")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stars r-sf r-rcpp r-raster r-igraph))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=habCluster")
-    (synopsis
-     "Detecting Spatial Clustering Based on Connection Cost Between Grids")
-    (description
-     "Based on landscape connectivity, spatial boundaries were identified using
-community detection algorithm at grid level.  Methods using raster as input and
-the value of each cell of the raster is the \"smoothness\" to indicate how easy
-the cell connecting with neighbor cells.  Details about the @code{habCluster}
-package methods can be found in Zhang et al. <@code{bioRxiv:2022.05.06.490926>}.")
-    (license license:gpl3+)))
 
 (define-public r-haarfisz
   (package

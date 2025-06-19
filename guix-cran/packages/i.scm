@@ -6589,29 +6589,6 @@ summarise the structure of a dataset or identify non-standard entries.  Many
 non-character inputs such as numeric vectors and data frames are supported.")
     (license license:expat)))
 
-(define-public r-inventorymodel
-  (package
-    (name "r-inventorymodel")
-    (version "1.1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Inventorymodel" version))
-       (sha256
-        (base32 "0x36pkr2f038cwdfqi03pljhg6xwhp7v97ymyqddb5lw5a0isw87"))))
-    (properties `((upstream-name . "Inventorymodel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-gametheoryallocation r-e1071))
-    (home-page "https://cran.r-project.org/package=Inventorymodel")
-    (synopsis "Inventory Models")
-    (description
-     "Determination of the optimal policy in inventory problems from a game-theoretic
-perspective.")
-    (license license:gpl2)))
-
 (define-public r-inventorize
   (package
     (name "r-inventorize")
@@ -13123,13 +13100,13 @@ to harness AI for predictive analytics.")
 (define-public r-immunogenetr
   (package
     (name "r-immunogenetr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "immunogenetr" version))
        (sha256
-        (base32 "1q8r16nyda06lxpz07m433qbz2i8hdz92l6x93plhbq7gh53i2az"))))
+        (base32 "0c86f34z5287irbc05bwx7mkkjaa7cwprg8gvqlp6jxv38bpbfly"))))
     (properties `((upstream-name . "immunogenetr")))
     (build-system r-build-system)
     (arguments
@@ -16079,13 +16056,13 @@ software is described in Pritikin & Falk (2020) <doi:10.1177/0146621620929431>."
 (define-public r-ieugwasr
   (package
     (name "r-ieugwasr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieugwasr" version))
        (sha256
-        (base32 "0xj6i6i6fq30f4pcbc53vjrycxalv1j5lz7v6vpnn2b70f8n3lxq"))))
+        (base32 "08b9lw48xgjky4i9ar2drlxripfimq7rlzms8hrnvr1p7mwi2xwd"))))
     (properties `((upstream-name . "ieugwasr")))
     (build-system r-build-system)
     (arguments

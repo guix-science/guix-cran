@@ -1124,13 +1124,13 @@ and Davison (2018) <doi:10.1093/biomet/asy026>, Thibaud and Opitz (2015)
 (define-public r-mvpd
   (package
     (name "r-mvpd")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvpd" version))
        (sha256
-        (base32 "10k82g2izv72k99j99mjljg2hxb66pzhgfqal2j5z3cj3gmkjabg"))))
+        (base32 "1gbxz2iwsphn8inpply39hp2glkfd8iqxbvcdp6rsxjw8jscg2g0"))))
     (properties `((upstream-name . "mvpd")))
     (build-system r-build-system)
     (arguments
@@ -3031,13 +3031,13 @@ export.")
 (define-public r-munsellinterpol
   (package
     (name "r-munsellinterpol")
-    (version "3.1-0")
+    (version "3.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "munsellinterpol" version))
        (sha256
-        (base32 "1ry94w2rpayx9g3p4v07k7fn2dgrb09pxzxs8wwkkil3iirjpcly"))))
+        (base32 "1xzvfwh9smilw13587bfn4zw989zx7cfddl636hh3vkv4aq296a4"))))
     (properties `((upstream-name . "munsellinterpol")))
     (build-system r-build-system)
     (arguments
@@ -3528,37 +3528,6 @@ ways of performing an analysis step, in R and R Notebooks.")
     (description
      "This package provides a multivariate generalization of the emulator package.")
     (license license:gpl2)))
-
-(define-public r-multivarsel
-  (package
-    (name "r-multivarsel")
-    (version "1.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MultiVarSel" version))
-       (sha256
-        (base32 "18wcw80m5knv6hbzczjsx3lf7sn9n84z12zz844agp6234im163p"))))
-    (properties `((upstream-name . "MultiVarSel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-matrix r-glmnet))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=MultiVarSel")
-    (synopsis "Variable Selection in a Multivariate Linear Model")
-    (description
-     "It performs variable selection in a multivariate linear model by estimating the
-covariance matrix of the residuals then use it to remove the dependence that may
-exist among the responses and eventually performs variable selection by using
-the Lasso criterion.  The method is described in the paper Perrot-DockÃ¨s et al.
-(2017) <@code{arXiv:1704.00076>}.")
-    (license license:gpl2+)))
 
 (define-public r-multivarmi
   (package
@@ -4677,13 +4646,13 @@ by Demirtas (2006) <DOI:10.1080/10629360600569246>.")
 (define-public r-multiocc
   (package
     (name "r-multiocc")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiocc" version))
        (sha256
-        (base32 "1ndwky6rjyb7x0mg2xx5lsxr5yyhg7a9jrwmwryjg6jsw23965qx"))))
+        (base32 "0zsxz2csrvzxm9n5n2bz4jf7dxw1zwxapg5z4dn13w5a82ndhvjx"))))
     (properties `((upstream-name . "multiocc")))
     (build-system r-build-system)
     (arguments
@@ -4696,8 +4665,7 @@ by Demirtas (2006) <DOI:10.1080/10629360600569246>.")
     (description
      "Spatio-temporal multivariate occupancy models can handle multiple species in
 occupancy models.  This method for fitting such models is described in Hepler
-and Erhardt (2021) \"A spatiotemporal model for multivariate occupancy data\"
-<https://onlinelibrary.wiley.com/doi/abs/10.1002/env.2657>.")
+and Erhardt (2021) \"A spatiotemporal model for multivariate occupancy data\".")
     (license license:gpl2)))
 
 (define-public r-multiobjmatch
@@ -10337,13 +10305,13 @@ Plangprasopchok, and Suttipong Thajchayapong (2021) <doi:10.1145/3424670>.")
 (define-public r-mrqol
   (package
     (name "r-mrqol")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRQoL" version))
        (sha256
-        (base32 "0isn4g3jpz7wm99ymrshl6zgkb7iancdzdxl2w98n8fbxsh5z6sw"))))
+        (base32 "11w648kh1k27b8an7b2p9pa0v532bg9l5dvjdaibr9mx77g16qdz"))))
     (properties `((upstream-name . "MRQoL")))
     (build-system r-build-system)
     (arguments
@@ -10353,9 +10321,9 @@ Plangprasopchok, and Suttipong Thajchayapong (2021) <doi:10.1145/3424670>.")
     (synopsis
      "Minimal Clinically Important Difference and Response Shift Effect for Health-Related Quality of Life")
     (description
-     "We can calculate directly used this package the Minimal Clinically Important
-Difference by applying the Anchor-based method and the Response shift effect by
-applying the Then-Test method.")
+     "To calculate the Minimal Clinically Important Difference by applying the
+Anchor-based method and the Response shift effect by applying the Then-Test
+method.")
     (license license:gpl2+)))
 
 (define-public r-mrpostman
@@ -20240,13 +20208,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.6-5")
+    (version "1.6-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "0pssscrvy1jb1nczj7w1ga54ykpqg6w0frhd260hlj8g742gvgl3"))))
+        (base32 "1wy267gr5vzljwmn57v14y0m9cc0s2jkgqwv1s749v24bwpp1xxk"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (arguments
@@ -21801,13 +21769,13 @@ increments (BAI) was described by JevÅ¡enak and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.21.3")
+    (version "2.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "0a8bb88c645nf7wcz4kcrlkrga7hbf3xw0i7dz06n4dvfdyvcjsb"))))
+        (base32 "0253shqbif5kbrfm840wabivdhsca2n9qb9fckwbw4i6jczl52k7"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (arguments
@@ -37580,52 +37548,6 @@ particularly suitable for genomics data and other large-scale biomedical
 studies.")
     (license license:gpl2)))
 
-(define-public r-mega2r
-  (package
-    (name "r-mega2r")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Mega2R" version))
-       (sha256
-        (base32 "05g0r7z6kiy0pgl7cbcc3c0wbf4wbc7fxdbha8sc77m3hqya882l"))))
-    (properties `((upstream-name . "Mega2R")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-skat
-                             r-rsqlite
-                             r-rcpp
-                             r-pedgene
-                             r-kinship2
-                             r-genomeinfodb
-                             r-gdsfmt
-                             r-famskatrc
-                             r-dbi
-                             r-annotationdbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://watson.hgen.pitt.edu/mega2/mega2r/")
-    (synopsis "Accessing and Processing a 'Mega2' Genetic Database")
-    (description
-     "Uses as input genetic data that have been reformatted and stored in a SQLite
-database; this database is initially created by the standalone mega2 C++ program
-(available freely from <https://watson.hgen.pitt.edu/register/>).  Loads and
-manipulates data frames containing genotype, phenotype, and family information
-from the input SQLite database, and decompresses needed subsets of the genotype
-data, on the fly, in a memory efficient manner.  We have also created several
-more functions that illustrate how to use the data frames as well as perform
-useful tasks: these permit one to run the pedgene package to carry out
-gene-based association tests on family data using selected marker subsets, to
-run the SKAT package to carry out gene-based association tests using selected
-marker subsets, to run the @code{famSKATRC} package to carry out gene-based
-association tests on families (optionally) and with rare or common variants
-using selected marker subsets, to output the Mega2R data as a VCF file and
-related files (for phenotype and family data), and to convert the data frames
-into @code{CoreArray} Genomic Data Structure (GDS) format.")
-    (license license:gpl2)))
-
 (define-public r-mefm
   (package
     (name "r-mefm")
@@ -41291,39 +41213,6 @@ results.  The detailed tutorial is available here:
 <https://matzlab.weebly.com/uploads/7/6/2/2/76229469/mcmc.qpcr.tutorial.v1.2.4.pdf>.")
     (license license:gpl3)))
 
-(define-public r-mcmc-otu
-  (package
-    (name "r-mcmc-otu")
-    (version "1.0.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MCMC.OTU" version))
-       (sha256
-        (base32 "1h1b0lw7d96q47sgq3px8j6rbkyhxhykm1c891px89khgg6hnszc"))))
-    (properties `((upstream-name . "MCMC.OTU")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mcmcglmm r-ggplot2 r-coda))
-    (home-page "https://cran.r-project.org/package=MCMC.OTU")
-    (synopsis
-     "Bayesian Analysis of Multivariate Counts Data in DNA Metabarcoding and Ecology")
-    (description
-     "Poisson-lognormal generalized linear mixed model analysis of multivariate counts
-data using MCMC, aiming to infer the changes in relative proportions of
-individual variables.  The package was originally designed for sequence-based
-analysis of microbial communities (\"metabarcoding\", variables = operational
-taxonomic units, OTUs), but can be used for other types of multivariate counts,
-such as in ecological applications (variables = species).  The results are
-summarized and plotted using ggplot2 functions.  Includes functions to remove
-sample and variable outliers and reformat counts into normalized log-transformed
-values for correlation and principal component/coordinate analysis.  Walkthrough
-and examples:
-http://www.bio.utexas.edu/research/matz_lab/matzlab/Methods_files/@code{walkthroughExample_mcmcOTU_R.txt}.")
-    (license license:gpl3)))
-
 (define-public r-mcmapper
   (package
     (name "r-mcmapper")
@@ -42664,13 +42553,13 @@ Lobo et al. (2021) <doi:10.1093/g3journal/jkab308>.")
 (define-public r-mbmethpred
   (package
     (name "r-mbmethpred")
-    (version "0.1.4.2")
+    (version "0.1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBMethPred" version))
        (sha256
-        (base32 "0qpflcydkf2k8a7kqklvp7mskppviqkffkr98rfsklk8iqf8x9c9"))))
+        (base32 "1mmzs2q3sx76xhy0vlnav3c884d4p9i2bm735x5rc9agjbd0ibff"))))
     (properties `((upstream-name . "MBMethPred")))
     (build-system r-build-system)
     (arguments
@@ -43178,30 +43067,6 @@ pairwise monotonic association from and based on the work of Pimentel (2009)
 <doi:10.4135/9781412985291.n2>.  Computation of association of vectors from one
 or multiple sets can be performed in parallel thanks to the packages foreach and
 @code{doMC}'.")
-    (license license:gpl3)))
-
-(define-public r-mazegen
-  (package
-    (name "r-mazegen")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mazeGen" version))
-       (sha256
-        (base32 "192xygg3l4rpqp49sgd5hpp4h3f8wjhyldn0l8abxhsks7jd2kfb"))))
-    (properties `((upstream-name . "mazeGen")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-igraph))
-    (home-page "https://cran.r-project.org/package=mazeGen")
-    (synopsis "Elithorn Maze Generator")
-    (description
-     "This package provides a maze generator that creates the Elithorn Maze (HTML
-file) and the functions to calculate the associated maze parameters (i.e.
-Difficulty and Ability).")
     (license license:gpl3)))
 
 (define-public r-mazealls
@@ -48888,13 +48753,13 @@ mixed data.  Methods based on van de Velden et al. (2024)
 (define-public r-manydata
   (package
     (name "r-manydata")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manydata" version))
        (sha256
-        (base32 "00s8v3s8wap9rns4qssna6cp9q9j3nk2hdhj3jmndxx10xici6xz"))))
+        (base32 "10sc6ms9xqjl999jb8mwvrw0xdx4ylnsgb8sd0iq79hfaikiln0a"))))
     (properties `((upstream-name . "manydata")))
     (build-system r-build-system)
     (arguments
@@ -49876,28 +49741,6 @@ which libraries that a installed R package linked to by inspecting output from
 ldd in combination with information from your distribution package manager, e.g.
 rpm or dpkg'.")
     (license license:expat)))
-
-(define-public r-makeproject
-  (package
-    (name "r-makeproject")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "makeProject" version))
-       (sha256
-        (base32 "09q8xa5j4s5spgzzr3y06l3xis93lqxlx0q66s2nczrhd8nrz3ca"))))
-    (properties `((upstream-name . "makeProject")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=makeProject")
-    (synopsis "Creates an empty package framework for the LCFD format")
-    (description
-     "This package creates an empty framework of files and directories for the \"Load,
-Clean, Func, Do\" structure described by Josh Reich.")
-    (license license:gpl3)))
 
 (define-public r-makepipe
   (package
@@ -51779,35 +51622,6 @@ of specific parameters to ensure reproducibility.  The MACER package has four
 core functions and an example run through using all of these functions can be
 found in the associated repository <https://github.com/rgyoung6/MACER_example>.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-macc
-  (package
-    (name "r-macc")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "macc" version))
-       (sha256
-        (base32 "1qj4mlikbqrxa6m46527xmxdbk7b3l95z6jdgpmi0ifywjiv52a4"))))
-    (properties `((upstream-name . "macc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-optimx r-nlme r-mass r-lme4 r-car))
-    (home-page "https://cran.r-project.org/package=macc")
-    (synopsis "Mediation Analysis of Causality under Confounding")
-    (description
-     "This package performs causal mediation analysis under confounding or correlated
-errors.  This package includes a single level mediation model, a two-level
-mediation model, and a three-level mediation model for data with hierarchical
-structures.  Under the two/three-level mediation model, the correlation
-parameter is identifiable and is estimated based on a hierarchical-likelihood, a
-marginal-likelihood or a two-stage method.  See Zhao, Y., & Luo, X. (2014),
-Estimating Mediation Effects under Correlated Errors with an Application to
-@code{fMRI}, <@code{arXiv:1410.7217>} for details.")
-    (license license:gpl2+)))
 
 (define-public r-macbehaviour
   (package

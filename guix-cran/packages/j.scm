@@ -84,28 +84,6 @@ tables, format output, visualize relations among variables or check
 distributions, and generic functions for residual and model diagnostics.")
     (license license:gpl3+)))
 
-(define-public r-jvnvar
-  (package
-    (name "r-jvnvar")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jvnVaR" version))
-       (sha256
-        (base32 "0zh0dc6wqlrxn5r2yv9vkpyfb8xsbdidkjv9g6qr94fyxlbs4yci"))))
-    (properties `((upstream-name . "jvnVaR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=jvnVaR")
-    (synopsis "Value at Risk")
-    (description
-     "Many method to compute, predict and back-test @code{VaR}.  For more detail, see
-the report: Value at Risk <researchgate.net>.")
-    (license license:gpl3)))
-
 (define-public r-jvcoords
   (package
     (name "r-jvcoords")

@@ -852,13 +852,13 @@ heterologous spike-in proteins.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "1.15.3.1")
+    (version "1.15.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrMisc" version))
        (sha256
-        (base32 "0ahs0rr7k9vspizcahwisnlx5lkrbwymw5cjgl1wq6yy5444snng"))))
+        (base32 "0740bvsb748zh3a0vd1dgb2cpl6i8f6ivz023qf0jr1609p8271c"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (arguments
@@ -1004,13 +1004,13 @@ Wasserstein autoregressive models.")
 (define-public r-wrgraph
   (package
     (name "r-wrgraph")
-    (version "1.3.9")
+    (version "1.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrGraph" version))
        (sha256
-        (base32 "04qjy29l4qjpq3f0w2mq050lg84hi6brfvpxl4mwdv07iw0c4d47"))))
+        (base32 "0lffq2vp5p9g7nqwpnafmv1ym1hhhs53zkpm360fjsqb66wwh424"))))
     (properties `((upstream-name . "wrGraph")))
     (build-system r-build-system)
     (arguments
@@ -1426,6 +1426,34 @@ sample approximately monthly, quarterly or annually at discrete stations, a
 feature of many legacy data sets.  Most of the functions should be useful for
 analysis of similar-frequency time series regardless of the subject matter.")
     (license license:gpl2)))
+
+(define-public r-wqc
+  (package
+    (name "r-wqc")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wqc" version))
+       (sha256
+        (base32 "0145w1vn2k2fhbzfawn58cpxcwny1cha0yihn5pz4i9v2lsyh84q"))))
+    (properties `((upstream-name . "wqc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-waveslim r-viridislite r-qcsis r-lattice))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=wqc")
+    (synopsis "Wavelet Quantile Correlation Analysis")
+    (description
+     "Estimate and plot wavelet quantile correlations(Kumar and Padakandla,2022)
+between two time series.  Wavelet quantile correlation is used to capture the
+dependency between two time series across quantiles and different frequencies.
+This method is useful in identifying potential hedges and safe-haven instruments
+for investment purposes.  See Kumar and Padakandla(2022)
+<doi:10.1016/j.frl.2022.102707> for further details.")
+    (license license:gpl3)))
 
 (define-public r-wpproj
   (package
@@ -3143,13 +3171,13 @@ Macmillian et al (2000)
 (define-public r-wmap
   (package
     (name "r-wmap")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WMAP" version))
        (sha256
-        (base32 "11fd1g83i2qvp9814zk3qq8bz5gir1j5gsz5x5zrqgygyla2xpbw"))))
+        (base32 "1j0fkxar850s4sgjz1hjlljanp2y1dayjpr2kn9r7n0zdnb2z7px"))))
     (properties `((upstream-name . "WMAP")))
     (build-system r-build-system)
     (arguments
@@ -3310,13 +3338,13 @@ Spotfire'.")
 (define-public r-wizardry
   (package
     (name "r-wizardry")
-    (version "0.2.0")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wizaRdry" version))
        (sha256
-        (base32 "1x0xmajvsrnidinw4afd6kdfwxm8zw1l61mn41y7q8gj5lc4ci0i"))))
+        (base32 "1rnrmh2hzal0bw35ynj6r4nc31bi8xlqn4999zsz2pqnhap3gw4a"))))
     (properties `((upstream-name . "wizaRdry")))
     (build-system r-build-system)
     (arguments

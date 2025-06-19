@@ -498,13 +498,13 @@ analyses and graphing packages as necessary.")
 (define-public r-eyetrackingr
   (package
     (name "r-eyetrackingr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyetrackingR" version))
        (sha256
-        (base32 "0y0aj9p4yhjmf04pi1bmbr4ygx4n2myc1n42fh3nzmy2chcaj959"))))
+        (base32 "0cda0jv3x12isz4aqkr8xj393yf2zj093mfapmmsl8p7pw1f20ar"))))
     (properties `((upstream-name . "eyetrackingR")))
     (build-system r-build-system)
     (arguments
@@ -520,7 +520,7 @@ analyses and graphing packages as necessary.")
                              r-broom-mixed
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "http://samforbes.me/eyetrackingR/")
+    (home-page "https://samforbes.me/eyetrackingR/")
     (synopsis "Eye-Tracking Data Analysis")
     (description
      "Addresses tasks along the pipeline from raw data to analysis and visualization
@@ -535,13 +535,13 @@ the approach see Mirman, Dixon & Magnuson (2008)
 (define-public r-eyetools
   (package
     (name "r-eyetools")
-    (version "0.8.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyetools" version))
        (sha256
-        (base32 "0h4cpb273x40lyc6hnrr4mfbkh8ip255az2yfk9n9qgcr2v7iaw4"))))
+        (base32 "0kfchp57bl6ccix96czpa5y9p6fysmwbfb8hlxn0zvipwixd5a5x"))))
     (properties `((upstream-name . "eyetools")))
     (build-system r-build-system)
     (arguments
@@ -550,6 +550,7 @@ the approach see Mirman, Dixon & Magnuson (2008)
     (propagated-inputs (list r-zoo
                              r-viridis
                              r-rlang
+                             r-png
                              r-pbapply
                              r-magick
                              r-lifecycle
@@ -14651,6 +14652,47 @@ implements a dispersion-based algorithm (I-DT) proposed by Salvucci & Goldberg
 (2000) which detects fixation duration and position.")
     (license license:gpl3)))
 
+(define-public r-emotions
+  (package
+    (name "r-emotions")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EMOTIONS" version))
+       (sha256
+        (base32 "1ngjzyn840vm9z9nyj154z3x1qvf6wa3rv4nk93jmlgi13slj86v"))))
+    (properties `((upstream-name . "EMOTIONS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-quantreg
+                             r-parameters
+                             r-orthopolynom
+                             r-minpack-lm
+                             r-ggridges
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=EMOTIONS")
+    (synopsis "'EMOTIONS: Ensemble Models for Lactation Curves'")
+    (description
+     "Lactation curve modeling plays a central role in dairy production, supporting
+management decisions and the selection of animals with superior productivity and
+resilience.  The package EMOTIONS fits 47 models for lactation curves and
+creates ensemble models using model averaging based on Akaike information
+criterion, Bayesian information criterion, root mean square percentage error,
+and mean squared error, variance of the predictions, cosine similarity for each
+model's predictions, and Bayesian Model Average.  The daily production values
+predicted through the ensemble models can be used to estimate resilience
+indicators in the package.  Additionally, the package allows the graphical
+visualization of the model ranks and the predicted lactation curves.")
+    (license license:gpl3)))
+
 (define-public r-emon
   (package
     (name "r-emon")
@@ -18672,30 +18714,6 @@ attributes, or tags; and determine the latest updates.  Includes functions for
 creating panels of related variables with minimal effort and datasets containing
 data sources, releases, and popular FRED tags.")
     (license license:expat)))
-
-(define-public r-efflog
-  (package
-    (name "r-efflog")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "efflog" version))
-       (sha256
-        (base32 "1sfmq7xrr6psa6hwi05m44prjcpixnrl7la03k33n0bksj8r1w6b"))))
-    (properties `((upstream-name . "efflog")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=efflog")
-    (synopsis "The Causal Effects for a Causal Loglinear Model")
-    (description
-     "Fitting a causal loglinear model and calculating the causal effects for a causal
-loglinear model with the multiplicative interaction or without the
-multiplicative interaction, obtaining the natural direct, indirect and the total
-effect.  It calculates also the cell effect, which is a new interaction effect.")
-    (license license:gpl2+)))
 
 (define-public r-efficientmaxeigenpair
   (package
@@ -23590,13 +23608,13 @@ about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
 (define-public r-ebvcube
   (package
     (name "r-ebvcube")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebvcube" version))
        (sha256
-        (base32 "17hw5g4h9ji5f6g5x8wp2mlh136il0vmf6j06rndmcr6c9cfgsfx"))))
+        (base32 "1b808rv6g2kilcmwl97rp6h16d2x6px0p03b13q3p5c9j73sbp04"))))
     (properties `((upstream-name . "ebvcube")))
     (build-system r-build-system)
     (arguments

@@ -1090,13 +1090,13 @@ detail on use and algorithms, see <doi:10.18637/jss.v095.i04>.")
 (define-public r-zen4r
   (package
     (name "r-zen4r")
-    (version "0.10.1")
+    (version "0.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zen4R" version))
        (sha256
-        (base32 "1b4fhj05h9y2pv6pkz3d5814bscdb1f6l4ismq72fi7lxbg6jjvj"))))
+        (base32 "19801lcnxy8g7c2pp1f1ris943xkb1ip9kkiim6zms079d39p1mr"))))
     (properties `((upstream-name . "zen4R")))
     (build-system r-build-system)
     (arguments

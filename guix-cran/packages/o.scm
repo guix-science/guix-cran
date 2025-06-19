@@ -8123,48 +8123,6 @@ of predictive performance.  In addition, a standard error for this point
 estimate is provided, and confidence intervals are constructed.")
     (license license:gpl2)))
 
-(define-public r-oos
-  (package
-    (name "r-oos")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OOS" version))
-       (sha256
-        (base32 "0jnj5y26rv0i2561mywcxb7aavmpq16ippq6rblb8jiqjd05nhib"))))
-    (properties `((upstream-name . "OOS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-vars
-                             r-tidyr
-                             r-sandwich
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-lmtest
-                             r-imputets
-                             r-glmnet
-                             r-ggplot2
-                             r-future
-                             r-furrr
-                             r-forecast
-                             r-dplyr
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tylerJPike/OOS")
-    (synopsis "Out-of-Sample Time Series Forecasting")
-    (description
-     "This package provides a comprehensive and cohesive API for the out-of-sample
-forecasting workflow: data preparation, forecasting - including both traditional
-econometric time series models and modern machine learning techniques - forecast
-combination, model and error analysis, and forecast visualization.")
-    (license license:gpl3)))
-
 (define-public r-oor
   (package
     (name "r-oor")
@@ -10087,13 +10045,13 @@ Medical Outcomes Partnership (OMOP) common data model using shiny applications."
 (define-public r-omopsketch
   (package
     (name "r-omopsketch")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopSketch" version))
        (sha256
-        (base32 "0ccqryjrdqcjvrmzs82sz16h9vvg8wxs2pkdas76nxf89zaxk2q9"))))
+        (base32 "1v67wnx49j8az6q8gj5b47ls3q1k5icr9gmlp1vqj94prgi4rywq"))))
     (properties `((upstream-name . "OmopSketch")))
     (build-system r-build-system)
     (arguments

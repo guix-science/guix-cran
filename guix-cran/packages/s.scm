@@ -8527,6 +8527,34 @@ subgroup specific time to event continual reassessment method.  Chapple, A.G.,
 Thall, P.F. (2018) <doi:10.1002/pst.1891>.")
     (license license:gpl2)))
 
+(define-public r-substackr
+  (package
+    (name "r-substackr")
+    (version "0.1.15")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "substackR" version))
+       (sha256
+        (base32 "0sjylyn1lczzc652nh6hlwacgsxv24r70f5id42085srpcmwp6hi"))))
+    (properties `((upstream-name . "substackR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-httr2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/posocap/substackR")
+    (synopsis "Access Substack Data via API")
+    (description
+     "An interface to access data from Substack publications via API. Users can fetch
+the latest, top, search for specific posts, or retrieve a single post by its
+slug.  This functionality is useful for developers and researchers looking to
+analyze Substack content or integrate it into their applications.  For more
+information, visit the API documentation at
+<https://substackapi.dev/introduction>.")
+    (license license:expat)))
+
 (define-public r-subspace
   (package
     (name "r-subspace")
@@ -8955,28 +8983,6 @@ identical.  This package aids in the creation of subformulas.")
      "This package provides a test for the existence of a subgroup with enhanced
 treatment effect.  And, a sample size calculation procedure for the subgroup
 detection test.")
-    (license license:gpl3)))
-
-(define-public r-subcopem2d
-  (package
-    (name "r-subcopem2d")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "subcopem2D" version))
-       (sha256
-        (base32 "06wwd847g9pxd0z2a8494h3nc9s280a3s1510bir24m3z7w1pqf3"))))
-    (properties `((upstream-name . "subcopem2D")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=subcopem2D")
-    (synopsis "Bivariate Empirical Subcopula")
-    (description
-     "Calculate empirical subcopula and dependence measures from a given bivariate
-sample, and Bernstein copula approximations.")
     (license license:gpl3)))
 
 (define-public r-stylo
@@ -12404,31 +12410,6 @@ and logistic regression models.  A function that works through PLINK software
 provided.  Covariates can be included in regression model.")
     (license license:gpl2+)))
 
-(define-public r-stmcorrviz
-  (package
-    (name "r-stmcorrviz")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stmCorrViz" version))
-       (sha256
-        (base32 "1a4pckrbzsihyf1bqvw3cl0hxrc4yq1pnkgxgf4b8jday6zkxwcv"))))
-    (properties `((upstream-name . "stmCorrViz")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tm r-stm r-snowballc r-jsonlite))
-    (home-page "https://cran.r-project.org/package=stmCorrViz")
-    (synopsis "Tool for Structural Topic Model Visualizations")
-    (description
-     "Generates an interactive visualization of topic correlations/ hierarchy in a
-Structural Topic Model (STM) of Roberts, Stewart, and Tingley.  The package
-performs a hierarchical clustering of topics which are then exported to a JSON
-object and visualized using D3.")
-    (license license:gpl2+)))
-
 (define-public r-stltdnn
   (package
     (name "r-stltdnn")
@@ -14045,6 +14026,39 @@ bootstrapping as proposed in Cheung, Cheung, Lau, Hui, and Vong (2022)
 conditional effects (unstandardized or standardized) and plotting moderation
 effects.")
     (license license:gpl3)))
+
+(define-public r-stdistance
+  (package
+    (name "r-stdistance")
+    (version "0.6.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "STDistance" version))
+       (sha256
+        (base32 "1jy2sa37crb91hl72i2qlc53wvpbq2byxgcky8hszdqqb5xk3fm2"))))
+    (properties `((upstream-name . "STDistance")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-rcolorbrewer
+                             r-hmisc
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=STDistance")
+    (synopsis "Spatial Transcriptomics Distance Calculation and Visualization")
+    (description
+     "Analysis of spatial relationships between cell types in spatial transcriptomics
+data.  Spatial proximity is a critical factor in cell-cell communication.  The
+package calculates nearest neighbor distances between specified cell types and
+provides visualization tools to explore spatial patterns.  Applications include
+studying cell-cell interactions, immune microenvironment characterization, and
+spatial organization of tissues.")
+    (license license:gpl3+)))
 
 (define-public r-stcpr6
   (package
@@ -15723,13 +15737,13 @@ collected from the open source Star Wars API <https://swapi.dev/>.")
 (define-public r-starvz
   (package
     (name "r-starvz")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "starvz" version))
        (sha256
-        (base32 "0rgrbnsn1cx6255scqyjrywbq2bn3mpn7aq60p31k6f80dd850lg"))))
+        (base32 "14zmp8aj93nzhx4m5nih6j1p30kss5llgj37v7wazdml3jfxyb61"))))
     (properties `((upstream-name . "starvz")))
     (build-system r-build-system)
     (arguments
@@ -18575,13 +18589,13 @@ implemented for the fast computation.  Details can be found in Feng et al.
 (define-public r-sshaarp
   (package
     (name "r-sshaarp")
-    (version "2.0.5")
+    (version "2.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSHAARP" version))
        (sha256
-        (base32 "00yzn0acgj3dib89a28x90v865czh05ig65dbsxc9silr3fwl10j"))))
+        (base32 "0kzss5003a3aqp3kwpi9qv67jinarjaz3iz7zkhp3iwlnmfbkh0n"))))
     (properties `((upstream-name . "SSHAARP")))
     (build-system r-build-system)
     (arguments
@@ -18597,8 +18611,7 @@ implemented for the fast computation.  Details can be found in Feng et al.
                              r-filesstrings
                              r-dplyr
                              r-desctools
-                             r-data-table
-                             r-bigdawg))
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SSHAARP")
     (synopsis "Searching Shared HLA Amino Acid Residue Prevalence")
@@ -18978,13 +18991,13 @@ needed to pre-installed.  Hanzelmann, S., Castelo, R., and Guinney, J. (2013)
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDforR" version))
        (sha256
-        (base32 "0qg3p4mmd59xdf49msg29m8d13li7snzmmrav2kaflawbwmz4h8x"))))
+        (base32 "02djhx593s1fr4dsks46zs22wgdyxjkw61ify5ipfca60f1ajbg8"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (arguments
@@ -22510,30 +22523,6 @@ statistics are used to summarize, visualize, and compare models.  Predictions at
 unobserved locations are readily obtainable.  For additional details, see
 Dumelle et al. (2023) <doi:10.1371/journal.pone.0282524>.")
     (license license:gpl3)))
-
-(define-public r-spmlficmcm
-  (package
-    (name "r-spmlficmcm")
-    (version "1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SPmlficmcm" version))
-       (sha256
-        (base32 "1acs3560a7h6xx286m40abr9b7i5qihn6wni8flj0biahmsszzx6"))))
-    (properties `((upstream-name . "SPmlficmcm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nleqslv))
-    (home-page "https://cran.r-project.org/package=SPmlficmcm")
-    (synopsis
-     "Semiparametric Maximum Likelihood Method for Interactions Gene-Environment in Case-Mother Control-Mother Designs")
-    (description
-     "This package implements the method of general semiparametric maximum likelihood
-estimation for logistic models in case-mother control-mother designs.")
-    (license license:gpl2)))
 
 (define-public r-spmc
   (package
@@ -29619,30 +29608,6 @@ interpretability based on regularization theory.  All methods provide graphical
 representations using ggplot2'.")
     (license license:gpl3+)))
 
-(define-public r-sparsebc
-  (package
-    (name "r-sparsebc")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sparseBC" version))
-       (sha256
-        (base32 "0a1siyi9kc805qji4alnw3c21spf4iw4wpsbfl50zvs52p8vl8w2"))))
-    (properties `((upstream-name . "sparseBC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-glasso r-fields))
-    (home-page "https://cran.r-project.org/package=sparseBC")
-    (synopsis "Sparse Biclustering of Transposable Data")
-    (description
-     "This package implements the sparse biclustering proposal of Tan and Witten
-(2014), Sparse biclustering of transposable data.  Journal of Computational and
-Graphical Statistics 23(4):985-1008.")
-    (license license:gpl2+)))
-
 (define-public r-sparrpowr
   (package
     (name "r-sparrpowr")
@@ -34202,31 +34167,6 @@ values more efficiently, as described in
 <https://github.com/@code{HimesGroup/snpsettest/wiki/Statistical-test-in-snpsettest>}.")
     (license license:gpl3+)))
 
-(define-public r-snpready
-  (package
-    (name "r-snpready")
-    (version "0.9.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "snpReady" version))
-       (sha256
-        (base32 "1r96j8zh84dn7qh3zgl0p0v3a80hx2wd3c4jgjlr43hzl7yglpqr"))))
-    (properties `((upstream-name . "snpReady")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-rgl r-matrixcalc r-matrix r-impute))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=snpReady")
-    (synopsis "Preparing Genotypic Datasets in Order to Run Genomic Analysis")
-    (description
-     "Three functions to clean, summarize and prepare genomic datasets to Genome
-Selection and Genome Association analysis and to estimate population genetic
-parameters.")
-    (license license:gpl3)))
-
 (define-public r-snpls
   (package
     (name "r-snpls")
@@ -38156,53 +38096,6 @@ proteins, with these distances being a measure of the similarity between the two
 cells being compared.  Based on Sen, N., Mukherjee, G., and Arvin, A.M. (2015)
 <DOI:10.1016/j.ymeth.2015.07.008>.")
     (license license:gpl3)))
-
-(define-public r-slickr
-  (package
-    (name "r-slickr")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "slickR" version))
-       (sha256
-        (base32 "01p72l3h8izg9pphjhkm83rgfsvlimf8aa5asa5lfgfbma60ivhb"))))
-    (properties `((upstream-name . "slickR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-xml2
-                             r-lifecycle
-                             r-htmlwidgets
-                             r-htmltools
-                             r-checkmate
-                             r-base64enc))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/yonicd/slickR")
-    (synopsis
-     "Create Interactive Carousels with the 'JavaScript' 'Slick' Library")
-    (description
-     "Create and customize interactive carousels using the Slick @code{JavaScript}
-library and the htmlwidgets package.  The carousels can contain plots produced
-in R, images, iframes', videos and other htmlwidgets'.  These carousels can be
-created directly from the R console, and viewed in the RStudio internal viewer,
-in Shiny apps and R Markdown documents.")
-    (license license:expat)))
 
 (define-public r-slicedlhd
   (package
@@ -44395,29 +44288,6 @@ those forms.  Ancillary functions for generating true item and person parameters
 as well as for calculating the probability of a person correctly answering an
 item are also included.")
     (license license:gpl3)))
-
-(define-public r-simexaft
-  (package
-    (name "r-simexaft")
-    (version "1.0.7.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "simexaft" version))
-       (sha256
-        (base32 "0n3n2g07pnpcqhbrjf78lbvqvc136g7jxlx6q27vnk96kwizh3f1"))))
-    (properties `((upstream-name . "simexaft")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-mvtnorm))
-    (home-page "https://cran.r-project.org/package=simexaft")
-    (synopsis "simexaft")
-    (description
-     "Implement of the Simulation-Extrapolation (SIMEX) algorithm for the accelerated
-failure time (AFT) with covariates subject to measurement error.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-simex
   (package
@@ -52942,13 +52812,13 @@ Setiawan(2016)<https://www.researchgate.net/publication/316517889_S-GSTAR-SUR_mo
 (define-public r-sgsr
   (package
     (name "r-sgsr")
-    (version "1.4.5")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgsR" version))
        (sha256
-        (base32 "1ircbwlc6ysv8v8vxn5snjqx47qhi5rdqyd3vvf3cx54jndsnvah"))))
+        (base32 "0rvi2h5q520dih81kwz0wk8a9znbsl42ahnbq7djqh0yrcnraj29"))))
     (properties `((upstream-name . "sgsR")))
     (build-system r-build-system)
     (arguments
@@ -58744,13 +58614,13 @@ Embedded Likelihood Framework for Causal Discovery.  AAAI. 2018.\".")
 (define-public r-selenium
   (package
     (name "r-selenium")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "selenium" version))
        (sha256
-        (base32 "0dnz7zz1rxkf80ayxmp56kcx3blbl5hxwcy66rhrs1s090mbhyxr"))))
+        (base32 "1gsk7cbykain4xf7zxx96wpl2rfgmcmdx9y8xmgjj0ngqm8q0rww"))))
     (properties `((upstream-name . "selenium")))
     (build-system r-build-system)
     (arguments
@@ -62803,6 +62673,53 @@ impact of the gene knockout and reveal the geneâs function in the analyzed
 cells.")
     (license license:gpl2+)))
 
+(define-public r-scstability
+  (package
+    (name "r-scstability")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scStability" version))
+       (sha256
+        (base32 "17j5pv8xad6mqqchva4b8dwrcsincx2m29bw77qg6imb7qiy7z04"))))
+    (properties `((upstream-name . "scStability")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-uwot
+                             r-seurat
+                             r-rtsne
+                             r-rlang
+                             r-pcapp
+                             r-magrittr
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-aricode))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=scStability")
+    (synopsis
+     "Measuring the Stability of Dimension Reduction and Cluster Assignment in scRNA-Seq Experiments")
+    (description
+     "This package provides functions for evaluating the stability of low-dimensional
+embeddings and cluster assignments in singleâcell RNA sequencing
+(@code{scRNAâseq}) datasets.  Starting from a principal component analysis
+(PCA) object, users can generate multiple replicates of tâDistributed
+Stochastic Neighbor Embedding (tâSNE) or Uniform Manifold Approximation and
+Projection (UMAP) embeddings.  Embedding stability is quantified by computing
+pairwise Kendallâs Tau correlations across replicates and summarizing the
+distribution of correlation coefficients.  In addition to dimensionality
+reduction, @code{scStability} assesses clustering consistency using either
+Louvain or Leiden algorithms and calculating the Normalized Mutual Information
+(NMI) between all pairs of cluster assignments.  For background on UMAP and
+t-SNE algorithms, see @code{McInnes} et al. (2020, <doi:10.21105/joss.00861>)
+and van der Maaten & Hinton (2008, <https://lvdmaaten.github.io/tsne/>),
+respectively.")
+    (license license:expat)))
+
 (define-public r-scspatialsim
   (package
     (name "r-scspatialsim")
@@ -65917,43 +65834,6 @@ information passed in the request object, such as the value of a cookie or a
 query parameter.  This packages facilitates such switches.")
     (license license:expat)))
 
-(define-public r-scem
-  (package
-    (name "r-scem")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SCEM" version))
-       (sha256
-        (base32 "1fxxkv965gb0wq06rclv05xxlzk8p9l8hzbnqcf0nbbymyn73fqr"))))
-    (properties `((upstream-name . "SCEM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mathjaxr r-devtools))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/kserkcho/SCEM")
-    (synopsis "Splitting-Coalescence-Estimation Method")
-    (description
-     "We introduce improved methods for statistically assessing birth seasonality and
-intra-annual variation.  The first method we propose is a new idea that uses a
-nonparametric clustering procedure to group individuals with similar time series
-data and estimate birth seasonality based on the clusters.  One can use the
-function @code{SCEM()} to implement this method.  The second method estimates
-input parameters for use with a previously-developed parametric approach
-(Tornero et al., 2013).  The relevant code for this approach is
-@code{makeFits_OLS()}, while @code{makeFits_initial()} is the code to implement
-the same method but with given initial conditions for two parameters.  The
-latter can be used to show the disadvantage of the existing approach.  One can
-use the function @code{makeFits()} to generate parametric birth seasonality
-estimates using either initialization.  Detailed description can be found here:
-Chazin Hannah, Soudeep Deb, Joshua Falk, and Arun Srinivasan. (2019) \"New
-Statistical Approaches to Intra-Individual Isotopic Analysis and Modeling Birth
-Seasonality in Studies of Herd Animals.\" <doi:10.1111/arcm.12432>.")
-    (license license:gpl3)))
-
 (define-public r-scellpam
   (package
     (name "r-scellpam")
@@ -68191,28 +68071,6 @@ of the Baum-Welch algorithm for stochastic automata.  This work is based on
 Inference and learning in stochastic automata was by Karl-Heinz Zimmermann(2017)
 <doi:10.12732/ijpam.v115i3.15>.")
     (license license:gpl3+)))
-
-(define-public r-saturnin
-  (package
-    (name "r-saturnin")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "saturnin" version))
-       (sha256
-        (base32 "0cjp4h1s9ivn17v8ar48mxflaj9vgv92c8p9l2k5bc9yqx9mcs36"))))
-    (properties `((upstream-name . "saturnin")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp))
-    (home-page "https://cran.r-project.org/package=saturnin")
-    (synopsis "Spanning Trees Used for Network Inference")
-    (description
-     "Bayesian inference of graphical model structures using spanning trees.")
-    (license license:gpl2)))
 
 (define-public r-saturncoefficient
   (package

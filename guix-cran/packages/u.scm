@@ -4190,6 +4190,33 @@ through SPARQL queries.  uklr supports the house price index, transaction and
 price paid data.")
     (license license:gpl3)))
 
+(define-public r-ukhsadatr
+  (package
+    (name "r-ukhsadatr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ukhsadatR" version))
+       (sha256
+        (base32 "0qpyl4cyscc6wssfq9x1nqaw3llshd2bhl1q3r50kxl0fnfbzz5k"))))
+    (properties `((upstream-name . "ukhsadatR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/silverfoxdoc/ukhsadatR")
+    (synopsis "R Interface to Access UKHSA Dashboard Data")
+    (description
+     "Programmatic interface to access data from the UK Health Security Agency (UKHSA)
+Data Dashboard API. The package was originally based on the ukcovid19 package by
+Pouria Hadjibagheri and has been substantially rewritten and extended.  For more
+information on the API, see
+<https://ukhsa-dashboard.data.gov.uk/access-our-data>.")
+    (license license:expat)))
+
 (define-public r-ukgrid
   (package
     (name "r-ukgrid")

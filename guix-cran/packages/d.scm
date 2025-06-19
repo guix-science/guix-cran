@@ -7266,6 +7266,75 @@ creates a separate row containing results for each sample until the entire
 dataset has been analyzed.")
     (license license:gpl2+)))
 
+(define-public r-dpi
+  (package
+    (name "r-dpi")
+    (version "2025.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DPI" version))
+       (sha256
+        (base32 "1h2csfv7f5s3a9q4dr9iri77yxim5c1yd0m0gn4rcfxkhhzimag1"))))
+    (properties `((upstream-name . "DPI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-qgraph r-glue r-ggplot2 r-crayon r-cli))
+    (home-page "https://psychbruce.github.io/DPI/")
+    (synopsis "The Directed Prediction Index")
+    (description
+     "The Directed Prediction Index ('DPI') is a simulation-based and conservative
+method for quantifying the relative endogeneity (relative dependence) of outcome
+(Y) versus predictor (X) variables in multiple linear regression models.  By
+comparing the proportion of variance explained (R-squared) between the
+Y-as-outcome model and the X-as-outcome model while controlling for a sufficient
+number of potential confounding variables, it suggests a more plausible
+influence direction from a more exogenous variable (X) to a more endogenous
+variable (Y).  Methodological details are provided at
+<https://psychbruce.github.io/DPI/>.")
+    (license license:gpl3)))
+
+(define-public r-dpcr
+  (package
+    (name "r-dpcr")
+    (version "0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dpcR" version))
+       (sha256
+        (base32 "1bx3nyh3k843jrrwqvinwayii7g7vjb09wannmgw21mndbrban8i"))))
+    (properties `((upstream-name . "dpcR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spatstat-geom
+                             r-spatstat-explore
+                             r-signal
+                             r-shiny
+                             r-readxl
+                             r-rateratio-test
+                             r-qpcr
+                             r-pracma
+                             r-multcomp
+                             r-evd
+                             r-e1071
+                             r-dgof
+                             r-chippcr
+                             r-binom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/michbur/dpcR")
+    (synopsis "Digital PCR Analysis")
+    (description
+     "Analysis, visualisation and simulation of digital polymerase chain reaction
+(@code{dPCR}) (Burdukiewicz et al. (2016) <doi:10.1016/j.bdq.2016.06.004>).
+Supports data formats of commercial systems (Bio-Rad QX100 and QX200; Fluidigm
+@code{BioMark}) and other systems.")
+    (license license:gpl3)))
+
 (define-public r-dpcp
   (package
     (name "r-dpcp")
@@ -7349,29 +7418,6 @@ penalties.")
      "Use dynamic programming method to solve l1 convex clustering with identical
 weights.")
     (license license:expat)))
-
-(define-public r-dpbbm
-  (package
-    (name "r-dpbbm")
-    (version "0.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DPBBM" version))
-       (sha256
-        (base32 "1qypxrcm3sb727lqb09ssjf3hblixqayw3qsyql01imrxwm609i2"))))
-    (properties `((upstream-name . "DPBBM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vgam r-tmvtnorm r-gplots r-ceoptim))
-    (home-page "https://cran.r-project.org/package=DPBBM")
-    (synopsis "Dirichlet Process Beta-Binomial Mixture")
-    (description
-     "Beta-binomial Mixture Model is used to infer the pattern from count data.  It
-can be used for clustering of RNA methylation sequencing data.")
-    (license license:gpl2+)))
 
 (define-public r-dpasurv
   (package
@@ -8985,59 +9031,6 @@ The philosophy of the package is described in Guo G.(2024)
 Republic of Venice, and use it for social network analysis, as used in Merelo
 (2022) <@code{arXiv:2209.07334>}.")
     (license license:gpl3)))
-
-(define-public r-doex
-  (package
-    (name "r-doex")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "doex" version))
-       (sha256
-        (base32 "1r999z30ipa04pgck0hfalqxihb1bj8sdhlkkhf4plb7maaz3qm3"))))
-    (properties `((upstream-name . "doex")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=doex")
-    (synopsis "The One-Way Heteroscedastic ANOVA Tests")
-    (description
-     "This package contains the heteroscedastic ANOVA tests for normal and
-two-parameter exponential distributed populations.  For normal distributions,
-Alexander-Govern test by Alexandern and Govern (1994) <doi:10.2307/1165140>,
-Alvandi et al.  Generalized F test by Alvandi et al. (2012)
-<doi:10.1080/03610926.2011.573160>, Approximate F test by Asiribo and Gurland
-(1990) <doi:10.1080/03610929008830427>, Box F test by Box (1954)
-<doi:10.1214/aoms/1177728786>, Brown-Forsythe test by Brown and Forsythe (1974)
-<do:10.2307/1267501>, B2 test by Ozdemir and Kurt (2006)
-<http://sjam.selcuk.edu.tr/sjam/article/view/174>, Cochran F test by Cochran
-(1937) <https://www.jstor.org/stable/pdf/2984123.pdf>, Fiducial Approach test by
-Li et al. (2011) <doi:10.1016/j.csda.2010.12.009>, Generalized F test by
-Weerahandi (1995) <doi:10.2307/2532947>, Johansen F test by Johansen (1980)
-<doi:10.1093/biomet/67.1.85>, Modified Brown-Forsythe test by Mehrotra (1997)
-<doi:10.1080/03610919708813431>, Modified Welch test by Hartung et al.(2002)
-<doi:10.1007/s00362-002-0097-8>, One-Stage test by Chen and Chen (1998)
-<doi:10.1080/03610919808813501>, One-Stage Range test by Chen and Chen (2000)
-<doi:10.1080/01966324.2000.10737505>, Parametric Bootstrap test by
-Krishnamoorhty et al.(2007) <doi:10.1016/j.csda.2006.09.039>, Permutation F test
-by Berry and Mielke (2002) <doi:10.2466/pr0.2002.90.2.495>, Scott-Smith test by
-Scott and Smith (1971) <doi:10.2307/2346757>, Welch test by Welch(1951)
-<doi:10.2307/2332579>, and Welch-Aspin test by Aspin (1948)
-<doi:10.1093/biomet/35.1-2.88>.  These tests are used to test the equality of
-group means under unequal variance.  Also, a modified version of Generalized
-F-test is improved to test the equality of non-normal group means under unequal
-variances and a revised version of Generalized F-test is given to test the
-equality of non-normal group means caused by skewness.  Furthermore, it consists
-some procedures for testing equality of several two-parameter exponentially
-distributed population means under unequal scale parameters such as generalized
-p-value, parametric bootstrap and fiducial approach test by Malekzadeh and
-Jafari (2019) <doi:10.1080/03610918.2018.1538452>.  There is also Hsieh test by
-Hsieh (1986) <doi:10.2307/1270452> for testing equality of location parameters
-of two-parameter exponentially distributed populations under unequal scale
-parameters.")
-    (license license:gpl2+)))
 
 (define-public r-doestrare
   (package
@@ -11753,29 +11746,6 @@ measures are based on the works of Rudin and Morgan (2006)
 <doi:10.3905/jpm.2017.43.4.112>, Calvet et al. (2007) <doi:10.1086/524204>, and
 Candelon, Fuerst and Hasse (2020).")
     (license license:gpl3)))
-
-(define-public r-diverse
-  (package
-    (name "r-diverse")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "diverse" version))
-       (sha256
-        (base32 "10kmx3qv58xhqs1icsxqq0y0cm8y2hx9ysb65brd3hhg33alzvk3"))))
-    (properties `((upstream-name . "diverse")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-proxy r-foreign))
-    (home-page "https://github.com/mguevara/diverse")
-    (synopsis "Diversity Measures for Complex Systems")
-    (description
-     "Computes the most common diversity measures used in social and other sciences,
-and includes new measures from interdisciplinary research.")
-    (license license:cc-by-sa4.0)))
 
 (define-public r-diverge
   (package
@@ -14726,13 +14696,13 @@ M. E. Arias, P. B. Ngor, T. A. RÃ¤sÃ¤nsen, S. Nam (2017)
 (define-public r-discfrail
   (package
     (name "r-discfrail")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "discfrail" version))
        (sha256
-        (base32 "1ll8c0fwwmz2yw8w582422r8bk9lr1570d7m7w2n1flrnqpqmk8j"))))
+        (base32 "1hqfkhz8h16iximp3w60a591r7gnbkn5776dndpj5chxsh7xw7pv"))))
     (properties `((upstream-name . "discfrail")))
     (build-system r-build-system)
     (arguments
@@ -18658,13 +18628,13 @@ Schwab et al. (2017) <doi:10.1016/j.neuroimage.2018.03.074>.")
 (define-public r-dglmextpois
   (package
     (name "r-dglmextpois")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DGLMExtPois" version))
        (sha256
-        (base32 "0bbf7cyrnn1ghvhbnv54pv6325l8v8fy1bayl4b6qgs84xd959p4"))))
+        (base32 "15s1sq0gkpffridrqqjnfgyj5j9nip5kindp4bnqicf168cixcib"))))
     (properties `((upstream-name . "DGLMExtPois")))
     (build-system r-build-system)
     (arguments
@@ -19048,45 +19018,6 @@ alarm probability is guaranteed without making any parametric assumptions on the
 stable (in-control) distribution.  See G. Capizzi and G. Masarotto (2018)
 <doi:10.1007/978-3-319-75295-2_1> for an introduction to the package.")
     (license license:lgpl2.0+)))
-
-(define-public r-dfped
-  (package
-    (name "r-dfped")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dfped" version))
-       (sha256
-        (base32 "11ffsah14igba276m9d3cla0kgb3isizm5d7j1iqcd0wq23il7hq"))))
-    (properties `((upstream-name . "dfped")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rstan r-ggplot2))
-    (home-page "http://github.com/artemis-toumazi/dfped")
-    (synopsis
-     "Extrapolation and Bridging of Adult Information in Early Phase Dose-Finding Paediatrics Studies")
-    (description
-     "This package provides a unified method for designing and analysing dose-finding
-trials in paediatrics, while bridging information from adults, is proposed in
-the dfped package.  The dose range can be calculated under three extrapolation
-methods: linear, allometry and maturation adjustment, using pharmacokinetic (PK)
-data.  To do this, it is assumed that target exposures are the same in both
-populations.  The working model and prior distribution parameters of the
-dose-toxicity and dose-efficacy relationships can be obtained using early phase
-adult toxicity and efficacy data at several dose levels through dfped package.
-Priors are used into the dose finding process through a Bayesian model selection
-or adaptive priors, to facilitate adjusting the amount of prior information to
-differences between adults and children.  This calibrates the model to adjust
-for misspecification if the adult and paediatric data are very different.  User
-can use his/her own Bayesian model written in Stan code through the dfped
-package.  A template of this model is proposed in the examples of the
-corresponding R functions in the package.  Finally, in this package you can find
-a simulation function for one trial or for more than one trial.  These methods
-are proposed by Petit et al, (2016) <doi:10.1177/0962280216671348>.")
-    (license license:gpl3+)))
 
 (define-public r-dformula
   (package
@@ -22245,13 +22176,13 @@ brain networks using partial correlation.")
 (define-public r-densityratio
   (package
     (name "r-densityratio")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "densityratio" version))
        (sha256
-        (base32 "1939f9qf8fpmibhnc4p2kk6k92wfwqin6bcfan5g3can0kk57j2j"))))
+        (base32 "1pxig2cajac5b7lnn83wgwka4i729zmzmnhzpffrwvd1gjkj2kx7"))))
     (properties `((upstream-name . "densityratio")))
     (build-system r-build-system)
     (arguments
@@ -26753,32 +26684,6 @@ and distance correlation methods for survival endpoints (Edelmann, et al. (2021)
 <doi:10.1111/biom.13470>) are also included.")
     (license license:gpl3)))
 
-(define-public r-dcode
-  (package
-    (name "r-dcode")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DCODE" version))
-       (sha256
-        (base32 "19dwms88q0ylxd92l3ivig8p8jjyhk8mhgz0l36m9pcq11gyjc0n"))))
-    (properties `((upstream-name . "DCODE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-seqinr))
-    (home-page "https://cran.r-project.org/package=DCODE")
-    (synopsis
-     "List Linear n-Peptide Constraints for Overlapping Protein Regions")
-    (description
-     "Traversal graph algorithm for listing linear n-peptide constraints for
-overlapping protein regions. (Lebre and Gascuel, The combinatorics of
-overlapping genes, freely available from @code{arXiv} at :
-http://arxiv.org/abs/1602.04971).")
-    (license license:gpl2+)))
-
 (define-public r-dcmodify
   (package
     (name "r-dcmodify")
@@ -27774,13 +27679,13 @@ Nagarajan, Scutari and LÃ¨bre (2013) <doi:10.1007/978-1-4614-6446-4>.")
 (define-public r-dbmss
   (package
     (name "r-dbmss")
-    (version "2.10-0")
+    (version "2.11-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbmss" version))
        (sha256
-        (base32 "096xly2bck2dizl1z06yc1b48dbs8bn46s031vcadyk8s5zxvmfi"))))
+        (base32 "0jjbjm3jzm1z9y51a6n3ylkj4492pc4g7dvh6x5j21lc4nks44fb"))))
     (properties `((upstream-name . "dbmss")))
     (build-system r-build-system)
     (arguments
@@ -28138,35 +28043,6 @@ and Huitema (2000) <doi:10.1037/1082-989X.5.1.87>.  The double bootstrap method
 provides a better fit for a linear model with autoregressive errors than ARIMA
 when the sample size is small.")
     (license license:gpl2+)))
-
-(define-public r-dbest
-  (package
-    (name "r-dbest")
-    (version "1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DBEST" version))
-       (sha256
-        (base32 "1a598g02hpfgv572gchllqkppynnsp4lx764jg0g66w3b66k0kdy"))))
-    (properties `((upstream-name . "DBEST")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo))
-    (home-page "https://cran.r-project.org/package=DBEST")
-    (synopsis "Detecting Breakpoints and Estimating Segments in Trend")
-    (description
-     "This package provides a program for analyzing vegetation time series, with two
-algorithms: 1) change detection algorithm that detects trend changes, determines
-their type (abrupt or non-abrupt), and estimates their timing, magnitude,
-number, and direction; 2) generalization algorithm that simplifies the temporal
-trend into main features.  The user can set the number of major breakpoints or
-magnitude of greatest changes of interest for detection, and can control the
-generalization process by setting an additional parameter of
-generalization-percentage.")
-    (license license:gpl2)))
 
 (define-public r-dbd
   (package

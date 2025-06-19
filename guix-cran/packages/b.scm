@@ -1914,29 +1914,27 @@ number of factors.")
 (define-public r-btsr
   (package
     (name "r-btsr")
-    (version "0.1.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BTSR" version))
        (sha256
-        (base32 "0kqgy61ijalpclrm20xwjbvbb5pkhkbgsbdbsz0mrb4v30a05dh4"))))
+        (base32 "0sfjvz7jagjw5bbrs7gyjxzsnnk9z61655cfrp1x9s8cizan9r0r"))))
     (properties `((upstream-name . "BTSR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rdpack))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=BTSR")
     (synopsis "Bounded Time Series Regression")
     (description
      "Simulate, estimate and forecast a wide range of regression based dynamic models
 for bounded time series, covering the most commonly applied models in the
-literature.  The main calculations are done in FORTRAN', which translates into
-very fast algorithms.  The main references are Bayer et al. (2017)
-<doi:10.1016/j.jhydrol.2017.10.006>, Pumi et al. (2019)
-<doi:10.1016/j.jspi.2018.10.001>, Pumi et al. (2021) <doi:10.1111/sjos.12439>
-and Pumi et al. (2022) <@code{arXiv:2211.02097>}.")
+literature.  The main calculations are done in FORTRAN, which translates into
+very fast algorithms.")
     (license license:gpl3+)))
 
 (define-public r-btspas
@@ -4976,33 +4974,6 @@ Yamamoto, R., Iwashima, T., Kazadi, S. N., & Hoshiai, M. (1985)
 <doi:10.2151/jmsj1965.63.6_1157>.")
     (license license:gpl3)))
 
-(define-public r-breakpoint
-  (package
-    (name "r-breakpoint")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "breakpoint" version))
-       (sha256
-        (base32 "004vi1qr7iib8ykg6sp7xzv0bb841h4vsz2x0cyrhkdp41frglx9"))))
-    (properties `((upstream-name . "breakpoint")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-msm r-mass r-ggplot2 r-foreach r-doparallel))
-    (home-page "https://github.com/madawaweer/breakpoint")
-    (synopsis
-     "An R Package for Multiple Break-Point Detection via the Cross-Entropy Method")
-    (description
-     "This package implements the Cross-Entropy (CE) method, which is a model based
-stochastic optimization technique to estimate both the number and their
-corresponding locations of break-points in continuous and discrete measurements
-(Priyadarshana and Sofronov (2015), Priyadarshana and Sofronov (2012a),
-Priyadarshana and Sofronov (2012b)).")
-    (license license:gpl2+)))
-
 (define-public r-breakfast
   (package
     (name "r-breakfast")
@@ -7958,19 +7929,20 @@ example of combining conditional prevalences.")
 (define-public r-bootcluster
   (package
     (name "r-bootcluster")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootcluster" version))
        (sha256
-        (base32 "0f1zw39c4dr0j6clxg4iay0vd3jb9k2nm6rjkvx32pnvmhbdkhvn"))))
+        (base32 "18k72455fhgcs1fijavlzg34bsj8qb0qkfnz2zsnfhhspbkl9f17"))))
     (properties `((upstream-name . "bootcluster")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sna
+                             r-progress
                              r-plyr
                              r-network
                              r-mclust
@@ -11294,13 +11266,13 @@ corresponding set of S3 plot methods.")
 (define-public r-blocking
   (package
     (name "r-blocking")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blocking" version))
        (sha256
-        (base32 "0ckj6ynq640i3cwjavkkl22s50nlyxx56aq2zrv46i0kgk8jsimh"))))
+        (base32 "18rjqrrzv1kiydja555ng45p8aky259p36sh77rr0nvjk1vw3639"))))
     (properties `((upstream-name . "blocking")))
     (build-system r-build-system)
     (arguments
@@ -11312,7 +11284,6 @@ corresponding set of S3 plot methods.")
                              r-readr
                              r-rcpphnsw
                              r-rcppannoy
-                             r-rcppalgos
                              r-mlpack
                              r-matrix
                              r-igraph
@@ -11660,19 +11631,20 @@ masked data.  Details of some forward search functions may be found in
 (define-public r-blindrecalc
   (package
     (name "r-blindrecalc")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blindrecalc" version))
        (sha256
-        (base32 "126mh5p1js4mm9sq3w6hs2vlx4baa6gzm9b9jybllfi751jsgjw5"))))
+        (base32 "12hdm59lj0hysssf7xkpqipnpiwbw5rdbr65ar1vb6n0ggd39hd1"))))
     (properties `((upstream-name . "blindrecalc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/imbi-heidelberg/blindrecalc")
     (synopsis "Blinded Sample Size Recalculation")
     (description
@@ -11710,32 +11682,6 @@ Kieser, M. (2011) <doi:10.3414/ME09-01-0063>.")
      "This package performs a joint analysis of experiments with mixtures and random
 effects, taking on a process variable represented by a covariable.")
     (license license:gpl3)))
-
-(define-public r-blender
-  (package
-    (name "r-blender")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "blender" version))
-       (sha256
-        (base32 "1qqkfgf7fzwcz88a43cqr8bw86qda33f18dg3rv1k77gpjqr999c"))))
-    (properties `((upstream-name . "blender")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan))
-    (home-page "https://cran.r-project.org/package=blender")
-    (synopsis "Analyze biotic homogenization of landscapes")
-    (description
-     "This package provides tools for assessing exotic species contributions to
-landscape homogeneity using average pairwise Jaccard similarity and an
-analytical approximation derived in Harris et al. (2011, \"Occupancy is
-nine-tenths of the law,\" The American Naturalist).  Also includes a
-randomization method for assessing sources of model error.")
-    (license (list license:gpl2 license:artistic2.0))))
 
 (define-public r-blend
   (package
@@ -13047,29 +12993,6 @@ relationships between bimodally distributed gene pairs in big gene expression
 datasets.  Enables the user to visualise these candidate synthetic lethal
 relationships.")
     (license license:artistic2.0)))
-
-(define-public r-bisectr
-  (package
-    (name "r-bisectr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bisectr" version))
-       (sha256
-        (base32 "1vjsjshvzj66qqzg32rviklqswrb00jyq6vwrywg1hpqhf4kisv7"))))
-    (properties `((upstream-name . "bisectr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-devtools))
-    (home-page "https://github.com/wch/bisectr")
-    (synopsis "Tools to find bad commits with git bisect")
-    (description
-     "This package provides tools to find bad commits with git bisect.  See
-https://github.com/wch/bisectr for examples and test script templates.")
-    (license license:gpl2)))
 
 (define-public r-bisdata
   (package
@@ -17598,13 +17521,13 @@ of functions of R API to communicate with UCI-protocol based chess engines.")
 (define-public r-bigbits
   (package
     (name "r-bigbits")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigBits" version))
        (sha256
-        (base32 "1aajx0cg3ljjmvc50qx3v2halqksj54i2krcm7ib33cnqaxzbfbb"))))
+        (base32 "0r70s63l2mzkliwdsb9q2bw4x23qinlzw9sgsra5sa1j2sl6yxxg"))))
     (properties `((upstream-name . "bigBits")))
     (build-system r-build-system)
     (arguments
@@ -19986,13 +19909,13 @@ Cheung (2023) <doi:10.1080/00273171.2023.2201277>.")
 (define-public r-betaper
   (package
     (name "r-betaper")
-    (version "1.1-2")
+    (version "1.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaper" version))
        (sha256
-        (base32 "0gh5xjimg0wgv626g3y34mvgrji2aylnm89iwadg7d6g4s457ynp"))))
+        (base32 "1ibz5shmjmfb4kwsgyhal7qx5017x9vqwszghsx3nna2lqxc4b3k"))))
     (properties `((upstream-name . "betaper")))
     (build-system r-build-system)
     (arguments
@@ -23517,6 +23440,33 @@ variables.  References: F. Castelletti and A. Mascaro (2021)
 <doi:10.48550/@code{arXiv.2201.12003>}.")
     (license license:expat)))
 
+(define-public r-bcd
+  (package
+    (name "r-bcd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BCD" version))
+       (sha256
+        (base32 "0qsybvky88vcgxc9wgxw5i992q0g0ppgc7lf5a9cj0iics8y8c39"))))
+    (properties `((upstream-name . "BCD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=BCD")
+    (synopsis "Bivariate Distributions via Conditional Specification")
+    (description
+     "Implementation of bivariate binomial, geometric, and Poisson distributions based
+on conditional specifications.  The package also includes tools for data
+generation and goodness-of-fit testing for these three distribution families.
+For methodological details, see Ghosh, Marques, and Chakraborty (2025)
+<doi:10.1080/03610926.2024.2315294>, Ghosh, Marques, and Chakraborty (2023)
+<doi:10.1080/03610918.2021.2004419>, and Ghosh, Marques, and Chakraborty (2021)
+<doi:10.1080/02664763.2020.1793307>.")
+    (license license:gpl2+)))
+
 (define-public r-bccp
   (package
     (name "r-bccp")
@@ -23803,6 +23753,38 @@ See Aaron et al (2016) <doi:10.1371/journal.pone.0163176> and Aaron et al (2016)
 <doi:10.1371/journal.pone.0162462> for application of the blocked weighted
 bootstrap to estimate indicators from two-stage cluster sampled surveys.")
     (license license:gpl3)))
+
+(define-public r-bbssr
+  (package
+    (name "r-bbssr")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bbssr" version))
+       (sha256
+        (base32 "1022fpahabbk7bza3yp0z0qil0skrdpmpqcnyi1zfdsxwch1dfq3"))))
+    (properties `((upstream-name . "bbssr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fpcompare))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gosukehommaEX/bbssr")
+    (synopsis "Blinded Sample Size Re-Estimation for Binary Endpoints")
+    (description
+     "This package provides comprehensive tools for blinded sample size re-estimation
+(BSSR) in two-arm clinical trials with binary endpoints.  Unlike traditional
+fixed-sample designs, BSSR allows adaptive sample size adjustments during trials
+while maintaining statistical integrity and study blinding.  Implements five
+exact statistical tests: Pearson chi-squared, Fisher exact, Fisher mid-p,
+Z-pooled exact unconditional, and Boschloo exact unconditional tests.  Supports
+restricted, unrestricted, and weighted BSSR approaches with exact Type I error
+control.  Statistical methods based on Mehrotra et al. (2003)
+<doi:10.1111/1541-0420.00051> and Kieser (2020)
+<doi:10.1007/978-3-030-49528-2_21>.")
+    (license license:expat)))
 
 (define-public r-bbreg
   (package
@@ -25935,6 +25917,39 @@ construct posterior probabilities for the number of modes, their locations and
 uncertainties, providing a powerful tool for mode inference.")
     (license license:gpl3+)))
 
+(define-public r-bayesmsm
+  (package
+    (name "r-bayesmsm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesmsm" version))
+       (sha256
+        (base32 "02j5r06l5fddsdcla6bhy1wqdzjcdsjjfy0ixfvxx6bjpm2lj7jz"))))
+    (properties `((upstream-name . "bayesmsm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r2jags
+                             r-mcmcpack
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Kuan-Liu-Lab/bayesmsm")
+    (synopsis
+     "Fitting Bayesian Marginal Structural Models for Longitudinal Observational Data")
+    (description
+     "This package implements Bayesian marginal structural models for causal effect
+estimation with time-varying treatment and confounding.  It includes an
+extension to handle informative right censoring.  The Bayesian importance
+sampling weights are estimated using JAGS. See Saarela (2015)
+<doi:10.1111/biom.12269> for methodological details.")
+    (license license:expat)))
+
 (define-public r-bayesmrm
   (package
     (name "r-bayesmrm")
@@ -27930,13 +27945,13 @@ WI or WP as the underlying CVI.")
 (define-public r-bayescureratemodel
   (package
     (name "r-bayescureratemodel")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesCureRateModel" version))
        (sha256
-        (base32 "0h3sq3yydzkr9f0j0n32w8x8an0ckl5q85yiz7c63c535wxhhdg0"))))
+        (base32 "000w6421kc3d6cldhd35s0791qzj38np8vl6z8czwdvif623sph3"))))
     (properties `((upstream-name . "bayesCureRateModel")))
     (build-system r-build-system)
     (arguments
@@ -27958,9 +27973,10 @@ WI or WP as the underlying CVI.")
     (description
      "This package provides a fully Bayesian approach in order to estimate a general
 family of cure rate models under the presence of covariates, see Papastamoulis
-and Milienos (2024) <doi:10.1007/s11749-024-00942-w>.  The promotion time can be
-modelled (a) parametrically using typical distributional assumptions for time to
-event data (including the Weibull, Exponential, Gompertz, log-Logistic
+and Milienos (2024) <doi:10.1007/s11749-024-00942-w> and Papastamoulis and
+Milienos (2024b) <doi:10.48550/@code{arXiv.2409.10221>}.  The promotion time can
+be modelled (a) parametrically using typical distributional assumptions for time
+to event data (including the Weibull, Exponential, Gompertz, log-Logistic
 distributions), or (b) semiparametrically using finite mixtures of
 distributions.  In both cases, user-defined families of distributions are
 allowed under some specific requirements.  Posterior inference is carried out by
@@ -29339,6 +29355,33 @@ two-stage basket trials with equal sample sizes using the power prior design by
 Baumann et al. (2024) <doi:10.48550/@code{arXiv.2309.06988>} and the design by
 Fujikawa et al. (2020) <doi:10.1002/bimj.201800404>.")
     (license license:gpl3+)))
+
+(define-public r-baskettrial
+  (package
+    (name "r-baskettrial")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BasketTrial" version))
+       (sha256
+        (base32 "01sakgphrp3wjj1sqhlcd2r453rnc4nrjv5kbzgfpgd3d97qwank"))))
+    (properties `((upstream-name . "BasketTrial")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=BasketTrial")
+    (synopsis "Bayesian Basket Trial Design and Analysis")
+    (description
+     "This package provides tools for Bayesian basket trial design and analysis using
+a novel three-component local power prior framework with global borrowing
+control, pairwise similarity assessment and a borrowing threshold.  Supports
+simulation-based evaluation of operating characteristics and comparison with
+other methods.  Applicable to both equal and unequal sample size settings in
+early-phase oncology trials.  For more details see Zhou et al. (2023)
+<doi:10.48550/@code{arXiv.2312.15352>}.")
+    (license license:gpl3)))
 
 (define-public r-basketballanalyzer
   (package

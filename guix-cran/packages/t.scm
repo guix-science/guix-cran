@@ -10174,13 +10174,13 @@ in Kook et al. (2023, <doi:10.1080/01621459.2024.2395588>).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.2-2")
+    (version "1.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "0ibp7l1vpjlbvp2wphh99y290kby8dhqcqrvq280plrvcg3r4wvy"))))
+        (base32 "1aq3nlql8czcm4x4xfnbz2nggivd8hz69vy9pfm69shmv28zbfij"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (arguments
@@ -11865,31 +11865,6 @@ transcriptomic data with adjustment for normal tissue-specificity.  Frost, H.
 Robert (2023) \"Tissue-adjusted pathway analysis of cancer (TPAC)\"
 <doi:10.1101/2022.03.17.484779>.")
     (license license:gpl2+)))
-
-(define-public r-tp-idm
-  (package
-    (name "r-tp-idm")
-    (version "1.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TP.idm" version))
-       (sha256
-        (base32 "0w8sgzm5bmv9m16dryxpw51q000mfmbipxqnhb26bkzr6y46bd79"))))
-    (properties `((upstream-name . "TP.idm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=TP.idm")
-    (synopsis
-     "Estimation of Transition Probabilities for the Illness-Death Model")
-    (description
-     "Estimation of transition probabilities for the illness-death model.  Both the
-Aalen-Johansen estimator for a Markov model and a novel non-Markovian estimator
-by de Una-Alvarez and Meira-Machado (2015) <doi:10.1111/biom.12288>, see also
-Balboa and de Una-Alvarez (2018) <doi:10.18637/jss.v083.i10>, are included.")
-    (license license:gpl2)))
 
 (define-public r-toxsummary
   (package
@@ -21563,6 +21538,39 @@ transactions and cursors.")
 University and Thomas Jefferson University Hospital, Philadelphia, PA.")
     (license license:gpl2)))
 
+(define-public r-thisutils
+  (package
+    (name "r-thisutils")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "thisutils" version))
+       (sha256
+        (base32 "02yv8rrni2gvpx5v74vkhbw0y1dsvqjpnjwfimymdb42w9n5wsj7"))))
+    (properties `((upstream-name . "thisutils")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-matrix
+                             r-foreach
+                             r-doparallel
+                             r-cli))
+    (home-page "https://github.com/mengxu98/thisutils")
+    (synopsis
+     "Collection of Utility Functions for Data Analysis and Computing")
+    (description
+     "This package provides a collection of utility functions commonly used in data
+analysis and scientific computing.  Includes functions for parallel processing,
+matrix operations, correlation calculations, and other computational tasks to
+streamline R workflows.")
+    (license license:expat)))
+
 (define-public r-this-path
   (package
     (name "r-this-path")
@@ -23429,29 +23437,6 @@ Distributed Multinomial Regression, <@code{arXiv:1311.6139>}.  A minimalist
 partial least squares routine is also included.  Note that the topic modeling
 capability of earlier textir is now a separate package, maptpx'.")
     (license license:gpl3)))
-
-(define-public r-textile
-  (package
-    (name "r-textile")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "textile" version))
-       (sha256
-        (base32 "069gb0j8ym44j1wk05xd3sixbvpxhhnhwax2gvyb9kbh5b99qpi6"))))
-    (properties `((upstream-name . "textile")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=textile")
-    (synopsis "Textile Images")
-    (description
-     "This package contains real images of the same textile material with/without
-local defects, which were used in Bui and Apley (2018)
-<doi:10.1080/00401706.2017.1302362>.")
-    (license license:gpl2)))
 
 (define-public r-textforecast
   (package
@@ -27753,13 +27738,13 @@ quantiles from the accumulated distributions.")
 (define-public r-tdiagree
   (package
     (name "r-tdiagree")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDIagree" version))
        (sha256
-        (base32 "01chzg465fc390imwnhgnjjxsi5wyh897bjc8zzcfim7qnfrkg03"))))
+        (base32 "1makm2cqsn5488zik8xy6n0yx0kskfbfdyw559nd3b1hm76q2czf"))))
     (properties `((upstream-name . "TDIagree")))
     (build-system r-build-system)
     (arguments
@@ -27770,7 +27755,6 @@ quantiles from the accumulated distributions.")
                              r-multcomp
                              r-katex
                              r-gt
-                             r-coxed
                              r-boot))
     (home-page "https://cran.r-project.org/package=TDIagree")
     (synopsis "Assessment of Agreement using the Total Deviation Index")
@@ -29281,6 +29265,39 @@ provides functions to import species lists from Turboveg
 backups from resulting R-objects.  Also quick displays are implemented as
 summary-methods.")
     (license license:gpl2+)))
+
+(define-public r-taxizedb
+  (package
+    (name "r-taxizedb")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "taxizedb" version))
+       (sha256
+        (base32 "08d5713424m45jzxwi770kcqrbvwbxzj78a89y0xdry65g5gghp9"))))
+    (properties `((upstream-name . "taxizedb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vroom
+                             r-tibble
+                             r-rsqlite
+                             r-rlang
+                             r-readr
+                             r-magrittr
+                             r-hoardr
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-curl))
+    (home-page "https://docs.ropensci.org/taxizedb/")
+    (synopsis "Offline Access to Taxonomic Databases")
+    (description
+     "Download taxonomic databases, convert them into SQLite format, and query them
+locally for fast, reliable, and reproducible access to taxonomic data.")
+    (license license:expat)))
 
 (define-public r-taxize
   (package

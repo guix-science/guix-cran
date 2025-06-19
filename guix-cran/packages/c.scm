@@ -2452,28 +2452,6 @@ takes in vectors of binary responses and predicted risks.  The @code{plot()} and
 @code{cumulcalib()}.")
     (license license:expat)))
 
-(define-public r-cumstats
-  (package
-    (name "r-cumstats")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cumstats" version))
-       (sha256
-        (base32 "119w751z9dg6pjyk389pbl8ab8pirf9sqndi4nxi89ix2bby4xz8"))))
-    (properties `((upstream-name . "cumstats")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=cumstats")
-    (synopsis "Cumulative Descriptive Statistics")
-    (description
-     "Cumulative descriptive statistics for (arithmetic, geometric, harmonic) mean,
-median, mode, variance, skewness and kurtosis.")
-    (license license:gpl3)))
-
 (define-public r-cumprinc
   (package
     (name "r-cumprinc")
@@ -9531,6 +9509,40 @@ models using competing proximal gradients.  The optimal sparsity and diversity
 tuning parameters are selected via an alternating grid search.")
     (license license:gpl2+)))
 
+(define-public r-cpgfr
+  (package
+    (name "r-cpgfr")
+    (version "0.0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cpgfR" version))
+       (sha256
+        (base32 "146an2zbvv3dghkyf8cb0fi5hmqr5mykixdlxxsmn30x7rfd7b05"))))
+    (properties `((upstream-name . "cpgfR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-osfr
+                             r-lubridate
+                             r-deflatebr
+                             r-data-table
+                             r-curl))
+    (home-page "https://cran.r-project.org/package=cpgfR")
+    (synopsis
+     "Consolidates Information from the Federal Government Payment Card")
+    (description
+     "This package provides access to consolidated information from the Brazilian
+Federal Government Payment Card.  Includes functions to retrieve, clean, and
+organize data directly from the Transparency Portal
+<https://portaldatransparencia.gov.br/download-de-dados/cpgf/> and a curated
+dataset hosted on the Open Science Framework <https://osf.io/z2mxc/>.  Useful
+for public spending analysis, transparency research, and reproducible workflows
+in auditing or investigative journalism.")
+    (license license:gpl3)))
+
 (define-public r-cpgfilter
   (package
     (name "r-cpgfilter")
@@ -15848,36 +15860,6 @@ alpha hat, were advanced in Mainali, Slud, et al, 2021
 interval were developed in Mainali and Slud, 2022
 <doi:10.1101/2022.11.01.514801>.")
     (license license:expat)))
-
-(define-public r-cooccur
-  (package
-    (name "r-cooccur")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cooccur" version))
-       (sha256
-        (base32 "1wlaghhi4f3v8kzwhcgq3c6as7v3zlpkzhb232qz1amr7f0058kv"))))
-    (properties `((upstream-name . "cooccur")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-gmp r-ggplot2))
-    (home-page "https://cran.r-project.org/package=cooccur")
-    (synopsis "Probabilistic Species Co-Occurrence Analysis in R")
-    (description
-     "This R package applies the probabilistic model of species co-occurrence (Veech
-2013) to a set of species distributed among a set of survey or sampling sites.
-The algorithm calculates the observed and expected frequencies of co-occurrence
-between each pair of species.  The expected frequency is based on the
-distribution of each species being random and independent of the other species.
-The analysis returns the probabilities that a more extreme (either low or high)
-value of co-occurrence could have been obtained by chance.  The package also
-includes functions for visualizing species co-occurrence results and preparing
-data for downstream analyses.")
-    (license license:gpl2)))
 
 (define-public r-convospat
   (package
@@ -23649,30 +23631,6 @@ functions.")
 from 2008/ week-52 to 2014/ week-21.")
     (license license:cc0)))
 
-(define-public r-collutils
-  (package
-    (name "r-collutils")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "collUtils" version))
-       (sha256
-        (base32 "0gbk3lrb2lwq2ixrpcngng6qz6axjb4iyqy5606x1zmjm71c060p"))))
-    (properties `((upstream-name . "collUtils")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list openjdk))
-    (propagated-inputs (list r-rjava r-rcpp))
-    (home-page "https://bitbucket.org/kindlychung/collutils")
-    (synopsis "Auxiliary Package for Package 'CollapsABEL'")
-    (description
-     "This package provides some low level functions for processing PLINK input and
-output files.")
-    (license license:gpl3)))
-
 (define-public r-collpcm
   (package
     (name "r-collpcm")
@@ -29562,13 +29520,13 @@ calculates such probability from relative frequencies.")
 (define-public r-clustergvis
   (package
     (name "r-clustergvis")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClusterGVis" version))
        (sha256
-        (base32 "0i14z0a6bf9r1c07k0rp57qbgclnz2di0hfw1h15pgsmm15g0ckp"))))
+        (base32 "09fwxvym6fpbp73iv4icpljvmxhjvc4k3nxnhl3qzp99ry7f2k5n"))))
     (properties `((upstream-name . "ClusterGVis")))
     (build-system r-build-system)
     (arguments
@@ -29580,7 +29538,6 @@ calculates such probability from relative frequencies.")
                              r-scales
                              r-reshape2
                              r-purrr
-                             r-mfuzz
                              r-matrix
                              r-magrittr
                              r-ggplot2
@@ -29591,8 +29548,10 @@ calculates such probability from relative frequencies.")
                              r-colorramps
                              r-clusterprofiler
                              r-circlize
+                             r-biocmanager
                              r-biobase))
-    (home-page "https://cran.r-project.org/package=ClusterGVis")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/junjunlab/ClusterGVis/")
     (synopsis "One-Step to Cluster and Visualize Gene Expression Data")
     (description
      "Streamlining the clustering and visualization of time-series gene expression
@@ -31950,30 +31909,6 @@ for searching geographical coordinates for each observation and calculate
 distances to the nearest stations.")
     (license license:expat)))
 
-(define-public r-clikcorr
-  (package
-    (name "r-clikcorr")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clikcorr" version))
-       (sha256
-        (base32 "0zdnbcl5q293mmm6pbn4ri7p1q6z6sff74axsb3nyd153v2xamr5"))))
-    (properties `((upstream-name . "clikcorr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm))
-    (home-page "https://cran.r-project.org/package=clikcorr")
-    (synopsis "Censoring Data and Likelihood-Based Correlation Estimation")
-    (description
-     "This package provides a profile likelihood based method of estimation and
-inference on the correlation coefficient of bivariate data with different types
-of censoring and missingness.")
-    (license license:gpl2+)))
-
 (define-public r-cliftlrd
   (package
     (name "r-cliftlrd")
@@ -33055,13 +32990,13 @@ arm binary trial\" by Lloyd, C.J. (2020), Statistics in Medicine, Volume 38,
 (define-public r-classmap
   (package
     (name "r-classmap")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "classmap" version))
        (sha256
-        (base32 "183h70kfsvr1b0xjb5ggzmdag76nv70jdk08j0347nvxq99ibpxf"))))
+        (base32 "1nx4zs4d511kgh7b4zlj059w9azn57vlm4ka2jr63wfm885437k7"))))
     (properties `((upstream-name . "classmap")))
     (build-system r-build-system)
     (arguments
@@ -33076,7 +33011,7 @@ arm binary trial\" by Lloyd, C.J. (2020), Statistics in Medicine, Volume 38,
                              r-e1071
                              r-cluster
                              r-cellwise))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://doi.org/10.1080/00401706.2021.1927849")
     (synopsis "Visualizing Classification Results")
     (description
@@ -38101,13 +38036,13 @@ operations is available.")
 (define-public r-chemodiv
   (package
     (name "r-chemodiv")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chemodiv" version))
        (sha256
-        (base32 "07y8wvi5vh5apvg57pd2q5rqvpxm0h3v899n12r76gwvj8z1a28s"))))
+        (base32 "04hs1f1aiy6mvflb2my897qclmsw8cy63a3f2pv6m9asr6iqxis5"))))
     (properties `((upstream-name . "chemodiv")))
     (build-system r-build-system)
     (arguments
@@ -40369,32 +40304,6 @@ provided URL.")
 cystic fibrosis patients, based on the clinical prediction models published in
 Stanojevic et al. (2019) <doi:10.1183/13993003.00224-2019>.")
     (license license:gpl3)))
-
-(define-public r-cfma
-  (package
-    (name "r-cfma")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cfma" version))
-       (sha256
-        (base32 "006z5g3rqpg44jqdf6ivyxr47sxm5cd9cqhayfi8qk73xx5w4lv9"))))
-    (properties `((upstream-name . "cfma")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=cfma")
-    (synopsis "Causal Functional Mediation Analysis")
-    (description
-     "This package performs causal functional mediation analysis (CFMA) for functional
-treatment, functional mediator, and functional outcome.  This package includes
-two functional mediation model types: (1) a concurrent mediation model and (2) a
-historical influence mediation model.  See Zhao et al. (2018), Functional
-Mediation Analysis with an Application to Functional Magnetic Resonance Imaging
-Data, <@code{arXiv:1805.06923>} for details.")
-    (license license:gpl2+)))
 
 (define-public r-cfilt
   (package
@@ -43125,13 +43034,13 @@ removed.  See Adamic, P. (2015)
 (define-public r-cdiwg2ws
   (package
     (name "r-cdiwg2ws")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cdiWG2WS" version))
        (sha256
-        (base32 "1h8a56dgh07csq2b7hk5ychd3gpfn7dx9zg3hfvl1zcgdn3rs457"))))
+        (base32 "037jvxv1a5wlc63mpbl9b2bd4j5c5yd091xflax242v4hw01nir1"))))
     (properties `((upstream-name . "cdiWG2WS")))
     (build-system r-build-system)
     (arguments
@@ -43143,7 +43052,7 @@ removed.  See Adamic, P. (2015)
      "Convert @code{MacArthur-Bates} Communicative Development Inventory Words and
 Gestures scores to would-be scores on Words and Sentences, based on modeling
 from the Stanford Wordbank <https://wordbank.stanford.edu/>.  See Day et al.
-(2024) <doi:10.31234/osf.io/rwhcy>.")
+(2025) <doi:10.1111/desc.70036>.")
     (license license:gpl3+)))
 
 (define-public r-cdid

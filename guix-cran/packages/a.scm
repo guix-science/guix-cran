@@ -1280,6 +1280,33 @@ vignettes and supplementary material for detailed information on the package
 function.")
     (license license:gpl3)))
 
+(define-public r-avilistr
+  (package
+    (name "r-avilistr")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "avilistr" version))
+       (sha256
+        (base32 "1yyhpf8jk4ymql19gvb071g9vrvxsixqwfp14yxgbjzmghpsa4j7"))))
+    (properties `((upstream-name . "avilistr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dalyanalytics/avilistr")
+    (synopsis "Access and Work with the 'AviList' Global Avian Checklist")
+    (description
+     "This package provides easy access to the @code{AviList} Global Avian Checklist,
+the first unified global bird taxonomy that harmonizes previous differences
+between International Ornithological Committee ('IOC'), Clements', and
+@code{BirdLife} checklists.  This package contains the complete @code{AviList}
+dataset as R data objects ready for ornithological research and analysis.  For
+more details see @code{AviList} Core Team (2025) <doi:10.2173/avilist.v2025>.")
+    (license license:cc0)))
+
 (define-public r-avidar
   (package
     (name "r-avidar")
@@ -10881,13 +10908,13 @@ subject to seasonality.")
 (define-public r-apctools
   (package
     (name "r-apctools")
-    (version "1.0.4")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APCtools" version))
        (sha256
-        (base32 "0xp90p7q3a33cqsyh6n2gcsfnq9gchm5vcl13s72gqyfx4jjcnv7"))))
+        (base32 "04qpdpa5b6gz5nmryy4y8dvblqv2j17y9v203lp9ybsnvkws0wpd"))))
     (properties `((upstream-name . "APCtools")))
     (build-system r-build-system)
     (arguments
@@ -17107,37 +17134,6 @@ model and Hafner et al. (2019) <doi:10.1016/j.agrformet.2017.11.027> for more on
 the measurement data used for parameter development.")
     (license license:gpl3)))
 
-(define-public r-aleplot
-  (package
-    (name "r-aleplot")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ALEPlot" version))
-       (sha256
-        (base32 "0bakl8a7xda7vh9zsc66kkd5w5jmb5j28kfwpfq2ifvk2mrakr3w"))))
-    (properties `((upstream-name . "ALEPlot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-yaimpute))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=ALEPlot")
-    (synopsis
-     "Accumulated Local Effects (ALE) Plots and Partial Dependence (PD) Plots")
-    (description
-     "Visualizes the main effects of individual predictor variables and their
-second-order interaction effects in black-box supervised learning models.  The
-package creates either Accumulated Local Effects (ALE) plots and/or Partial
-Dependence (PD) plots, given a fitted supervised learning model.")
-    (license license:gpl2)))
-
 (define-public r-ale
   (package
     (name "r-ale")
@@ -22230,37 +22226,6 @@ are used for diagnostics and inference.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-admur
-  (package
-    (name "r-admur")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ADMUR" version))
-       (sha256
-        (base32 "1wv5frav8vjkvsqwng9zddajmb7rdm4iqrikw9cjpqdpk7njl8ph"))))
-    (properties `((upstream-name . "ADMUR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo r-scales r-mathjaxr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/UCL/ADMUR")
-    (synopsis "Ancient Demographic Modelling Using Radiocarbon")
-    (description
-     "This package provides tools to directly model underlying population dynamics
-using date datasets (radiocarbon and other) with a Continuous Piecewise Linear
-(CPL) model framework.  Various other model types included.  Taphonomic loss
-included optionally as a power function.  Model comparison framework using BIC.
-Package also calibrates 14C samples, generates Summed Probability Distributions
-(SPD), and performs SPD simulation analysis to generate a Goodness-of-fit test
-for the best selected model.  Details about the method can be found in Timpson
-A., Barberena R., Thomas M. G., Mendez C., Manning K. (2020)
-<doi:10.1098/rstb.2019.0723>.")
-    (license license:gpl3)))
-
 (define-public r-admtools
   (package
     (name "r-admtools")
@@ -23553,19 +23518,19 @@ is an implementation of Yang, J. and Hastie, T. (2024)
 (define-public r-adehabitatlt
   (package
     (name "r-adehabitatlt")
-    (version "0.3.28")
+    (version "0.3.29")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adehabitatLT" version))
        (sha256
-        (base32 "1hixi29v6p2479hy5y907mfz3ij01dkiyxd62mx348pnh5nkn8bc"))))
+        (base32 "0sfvkgz4x63qw6j8rwvd4dlisg33mzah3161vgr84iab84jjadxk"))))
     (properties `((upstream-name . "adehabitatLT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sp r-circstats r-adehabitatma r-ade4))
+    (propagated-inputs (list r-sp r-adehabitatma r-ade4))
     (native-inputs (list))
     (home-page "https://cran.r-project.org/package=adehabitatLT")
     (synopsis "Analysis of Animal Movements")

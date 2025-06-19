@@ -5667,13 +5667,13 @@ based on MS1 or MS2 signal distributions.")
 (define-public r-proxreg
   (package
     (name "r-proxreg")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProxReg" version))
        (sha256
-        (base32 "1j6m0f6jjv061r05i3ipj3knb11z6impsp453blazbqfl9gr4k51"))))
+        (base32 "18jdn28770d06iihkwjjcdimnhrcg8dxxp8j9kdglwv9xpynk89r"))))
     (properties `((upstream-name . "ProxReg")))
     (build-system r-build-system)
     (arguments
@@ -7716,35 +7716,6 @@ the proj4 package.")
 predicting the prognosis of patients by integrating exclusive coverage of
 mutations with clinical characteristics in cancer.")
     (license license:gpl2+)))
-
-(define-public r-progenyclust
-  (package
-    (name "r-progenyclust")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "progenyClust" version))
-       (sha256
-        (base32 "0azp5pvk316s8xbawcqwqfd80fxb4xn8hc6aq87xwksc6fhwp94l"))))
-    (properties `((upstream-name . "progenyClust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-hmisc))
-    (home-page "https://cran.r-project.org/package=progenyClust")
-    (synopsis "Finding the Optimal Cluster Number Using Progeny Clustering")
-    (description
-     "Implementing the Progeny Clustering algorithm, the @code{progenyClust} package
-assesses the clustering stability and identifies the optimal clustering number
-for a given data matrix.  It uses k-means clustering as a default, provides a
-tailored hierarchical clustering function, and can be customized to work with
-other clustering algorithms and different parameter settings.  The package
-includes a main function @code{progenyClust()}, plot and summary methods for
-@code{progenyClust} object, a function @code{hclust.progenyClust()} for
-hierarchical clustering, and two example datasets (test and cell) for testing.")
-    (license license:agpl3)))
 
 (define-public r-proftools
   (package
@@ -16911,13 +16882,13 @@ pyramids.")
 (define-public r-poppr
   (package
     (name "r-poppr")
-    (version "2.9.6")
+    (version "2.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poppr" version))
        (sha256
-        (base32 "0cn62r584dfvz57in0666m4fsx9yd7xv8rawwgrhrqxs911pgzfd"))))
+        (base32 "1ax9mifdc3x6jxjj68fw5p4nypsm3i192n6s6lc5if1bq5982mfz"))))
     (properties `((upstream-name . "poppr")))
     (build-system r-build-system)
     (arguments
@@ -18254,32 +18225,6 @@ overall average effect size in meta-analysis of dependent effect sizes.")
      "Routines for flexible functional form estimation via basis regression, with
 model selection via the adaptive LASSO or SCAD to prevent overfitting.")
     (license license:gpl2+)))
-
-(define-public r-polytrend
-  (package
-    (name "r-polytrend")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PolyTrend" version))
-       (sha256
-        (base32 "17n6phkzgaqrlzs8x1l5smnij1gxfklr0zj9pqfy5n8xqnpwssm5"))))
-    (properties `((upstream-name . "PolyTrend")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=PolyTrend")
-    (synopsis "Trend Classification Algorithm")
-    (description
-     "This algorithm classifies the trends into linear, quadratic, cubic, concealed
-and no-trend types.  The \"concealed trends\" are those trends that possess
-quadratic or cubic forms, but the net change from the start of the time period
-to the end of the time period hasn't been significant.  The \"no-trend\" category
-includes simple linear trends with statistically in-significant slope
-coefficient.")
-    (license license:gpl2)))
 
 (define-public r-polytree
   (package
@@ -30066,13 +30011,13 @@ projection raster, following methodologies described in John (2016)
 (define-public r-phenology
   (package
     (name "r-phenology")
-    (version "10.1")
+    (version "10.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phenology" version))
        (sha256
-        (base32 "088288idp4jgj1jcrqxij9p5phlh425r41v7wnvxghp066cg1snr"))))
+        (base32 "1991fv37xzmhsq6vzcmd6gngw07v50rg7lp5h0fzlgfvgxbfxsgb"))))
     (properties `((upstream-name . "phenology")))
     (build-system r-build-system)
     (arguments

@@ -3001,28 +3001,6 @@ and @code{aRchi}'.  Also included is a novel database of twig diameters and
 tools for fractal analysis of point clouds.")
     (license license:gpl3+)))
 
-(define-public r-rtwalk
-  (package
-    (name "r-rtwalk")
-    (version "1.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rtwalk" version))
-       (sha256
-        (base32 "0zxf66lsfq8by40flv34xzd5yy0wa1ah9li1d0h7f0yh9nbwhxl5"))))
-    (properties `((upstream-name . "Rtwalk")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "http://www.cimat.mx/~jac/twalk/")
-    (synopsis "The R Implementation of the 't-walk' MCMC Algorithm")
-    (description
-     "The t-walk is a general-purpose MCMC sampler for arbitrary continuous
-distributions that requires no tuning.")
-    (license license:gpl3)))
-
 (define-public r-rtumblr
   (package
     (name "r-rtumblr")
@@ -5349,13 +5327,13 @@ of different algorithms.")
 (define-public r-rsurveycto
   (package
     (name "r-rsurveycto")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsurveycto" version))
        (sha256
-        (base32 "1s2slc7wlbrsvw0jnsimchypn6f8jmcs8fkc12a0f02lalgm21qn"))))
+        (base32 "1gc32b9c6wgcvsrpjz96r9vnd5w9y71x30cla2gmqg4hva1x29a7"))))
     (properties `((upstream-name . "rsurveycto")))
     (build-system r-build-system)
     (arguments
@@ -8054,6 +8032,37 @@ for a concept (second order statistical unit).  This package implements, to the
 symbolic case, certain techniques of automatic classification, as well as some
 linear models.")
     (license license:gpl2+)))
+
+(define-public r-rsd
+  (package
+    (name "r-rsd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RSD" version))
+       (sha256
+        (base32 "1ky0mn5cissr3n19yi5nadhgs8gxznygwhq0fc7m8z7yz6s9b2d3"))))
+    (properties `((upstream-name . "RSD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-magrittr r-ggplot2 r-dplyr))
+    (home-page "https://github.com/ShayanTohidi/RSD")
+    (synopsis "Compares Random Prospects using Stochastic Dominance")
+    (description
+     "The Stochastic Dominance (SD) is the classical way of comparing two random
+prospects, using their distribution functions.  Almost Stochastic Dominance
+(ASD) has also been developed to cover the SD failures due to the extreme
+utility functions.  This package focuses on classical and heuristic methods for
+testing the first and second SD and ASD methods given the probability mass
+function (PMF) of the random prospects.  The goal is to apply these methods
+easily, efficiently, and effectively on real-world datasets.  For more details
+see Hanoch and Levy (1969) <doi:10.2307/2296431>, Leshno and Levy (2002)
+<doi:10.1287/mnsc.48.8.1074.169>, and Tzeng et al. (2012)
+<doi:10.1287/mnsc.1120.1616>.")
+    (license license:gpl3+)))
 
 (define-public r-rscorecard
   (package
@@ -14286,13 +14295,13 @@ different colour metrics for the conversion.")
 (define-public r-rolluptree
   (package
     (name "r-rolluptree")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rollupTree" version))
        (sha256
-        (base32 "047dpddgg8lcrcvzaa6si8cmmwz4kh6p25pvz0k92vr47kh71f7f"))))
+        (base32 "0xchf2c8qq42i20355cp7mzrj9sk7cb6bnjf9ym042vfh24rbnfz"))))
     (properties `((upstream-name . "rollupTree")))
     (build-system r-build-system)
     (arguments
@@ -19362,30 +19371,6 @@ functions to simulate flight trajectories according to specified behavior using
 either NCEP wind data or data specified by the user.")
     (license license:gpl2+)))
 
-(define-public r-rncbieutilslibs
-  (package
-    (name "r-rncbieutilslibs")
-    (version "0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RNCBIEUtilsLibs" version))
-       (sha256
-        (base32 "1h1ywx8wxy6n2rbpmjbqw4c0djz29pbncisd0mlbshj1fw226jba"))))
-    (properties `((upstream-name . "RNCBIEUtilsLibs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list openjdk))
-    (propagated-inputs (list r-rjava))
-    (home-page "https://code.google.com/p/rncbi/")
-    (synopsis "EUtils libraries for use in the R environment")
-    (description
-     "This package provides the libraries of the EUtils operations for the RNCBI
-package.")
-    (license license:gpl3)))
-
 (define-public r-rnbp
   (package
     (name "r-rnbp")
@@ -20126,32 +20111,32 @@ more details.")
 (define-public r-rmsmd
   (package
     (name "r-rmsmd")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmsMD" version))
        (sha256
-        (base32 "193yxz5wz7vdaghka33mdrj3m1ynizfipc83ly4s7bxif0hwdgdv"))))
+        (base32 "1i6pnwa8icnkjcixmg4z6qss574n48shqf9wls3d44wcba1k9kvn"))))
     (properties `((upstream-name . "rmsMD")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rms))
+    (propagated-inputs (list r-rms r-rlang r-ggplot2 r-cowplot))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/sjtingle/rmsMD")
+    (home-page "https://rmsmd.github.io/rmsMD/")
     (synopsis "Output Results from 'rms' Models for Medical Journals")
     (description
-     "This takes the output of models performed using the rms package and returns a
-dataframe with the results.  This output is in the format required by medical
-journals.  For example for cox regression models, the hazard ratios, their 95%
-confidence intervals, and p values will be provided.  There are additional
-functions for outputs when the model included restricted cubic spline (RCS)
-terms.  Models using imputed data (eg from @code{aregimpute()}) and fitted used
-@code{fit.mult.impute()} can also be processed.  The dataframe which is returned
-can easily be turned into a publication ready table with packages flextable and
-officer'.")
+     "This package provides streamlined functions for summarising and visualising
+regression models fitted with the rms package, in the preferred format for
+medical journals.  The @code{modelsummary_rms()} function produces concise
+summaries for linear, logistic, and Cox regression models, including automatic
+handling of models containing restricted cubic spline (RCS) terms.  The
+resulting summary dataframe can be easily converted into publication-ready
+documents using the flextable and officer packages.  The @code{ggrmsMD()}
+function creates clear and customizable plots ('ggplot2 objects) to visualise
+RCS terms.")
     (license license:expat)))
 
 (define-public r-rmsfuns
@@ -42556,6 +42541,36 @@ classifiers based on Shallalist data to learn about the kind of content hosted
 by a domain.")
     (license license:expat)))
 
+(define-public r-rdocdump
+  (package
+    (name "r-rdocdump")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rdocdump" version))
+       (sha256
+        (base32 "0qrlfv2n1x5r39mxsi6pqzr373c0jr7m21fwpf1kghwl2917kc3x"))))
+    (properties `((upstream-name . "rdocdump")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/e-kotov/rdocdump")
+    (synopsis
+     "Dump 'R' Package Source, Documentation, and Vignettes into One File")
+    (description
+     "Dump source code, documentation and vignettes of an R package into a single
+file.  Supports installed packages, tar.gz archives, and package source
+directories.  If the package is not installed, only its source is automatically
+downloaded from CRAN for processing.  The output is a single plain text file or
+a character vector, which is useful to ingest complete package documentation and
+source into a large language model (LLM) or pass it further to other tools, such
+as ragnar <https://github.com/tidyverse/ragnar> to create a Retrieval-Augmented
+Generation (RAG) workflow.")
+    (license license:expat)))
+
 (define-public r-rdnp
   (package
     (name "r-rdnp")
@@ -49667,13 +49682,13 @@ MIT license from the Bitcoin Unlimited website
 (define-public r-rbcc
   (package
     (name "r-rbcc")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbcc" version))
        (sha256
-        (base32 "15crmxv2spkhnhivsr2sbq5kyhqbfisgriiz5dxq8d3f399wcxx6"))))
+        (base32 "0yn73sgby3y4g04fi1shgh6kyqjryc6aiji0m23rkn37lq86vabj"))))
     (properties `((upstream-name . "rbcc")))
     (build-system r-build-system)
     (arguments
@@ -51472,20 +51487,20 @@ algorithms and code examples are presented in Fuentes et al. (2022).
 (define-public r-rashnu
   (package
     (name "r-rashnu")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rashnu" version))
        (sha256
-        (base32 "1a7b6bzf9lqwwd7z34dfhk9p8ckc8dbrrgdsiqp8q2nzv6d9c739"))))
+        (base32 "11axr7jsfibnnrfn8bb2l8nfwnibh3qvd2nq419qd5ikccw7yhs9"))))
     (properties `((upstream-name . "rashnu")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-shiny r-dt))
-    (home-page "https://cran.r-project.org/package=rashnu")
+    (home-page "https://zarathucorp.github.io/rashnu/")
     (synopsis "Balanced Sample Size and Power Calculation Tools")
     (description
      "This package implements sample size and power calculation methods with a focus
@@ -54932,58 +54947,6 @@ supporting functions to employ these estimators in a graphical modeling setting.
 <doi:10.18637/jss.v102.i04> and associated publications.")
     (license license:gpl2+)))
 
-(define-public r-ragnar
-  (package
-    (name "r-ragnar")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ragnar" version))
-       (sha256
-        (base32 "0l83gk1qlxnh008j89a9wb2qkax43yq5simh83fflx1acx7jdahb"))))
-    (properties `((upstream-name . "ragnar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-withr
-                             r-vctrs
-                             r-tidyr
-                             r-tibble
-                             r-stringi
-                             r-s7
-                             r-rvest
-                             r-rlang
-                             r-reticulate
-                             r-httr2
-                             r-glue
-                             r-duckdb
-                             r-dplyr
-                             r-dotty
-                             r-dbi
-                             r-curl
-                             r-commonmark
-                             r-cli
-                             r-blob))
-    (native-inputs (list r-knitr))
-    (home-page "http://ragnar.tidyverse.org/")
-    (synopsis "Retrieval-Augmented Generation (RAG) Workflows")
-    (description
-     "This package provides tools for implementing Retrieval-Augmented Generation
-(RAG) workflows with Large Language Models (LLM).  Includes functions for
-document processing, text chunking, embedding generation, storage management,
-and content retrieval.  Supports various document types and embedding providers
-('Ollama', @code{OpenAI}'), with @code{DuckDB} as the default storage backend.
-Integrates with the ellmer package to equip chat objects with retrieval
-capabilities.  Designed to offer both sensible defaults and customization
-options with transparent access to intermediate outputs.  For a review of
-retrieval-augmented generation methods, see Gao et al. (2023)
-\"Retrieval-Augmented Generation for Large Language Models: A Survey\"
-<doi:10.48550/@code{arXiv.2312.10997>}.")
-    (license license:expat)))
-
 (define-public r-raggrid
   (package
     (name "r-raggrid")
@@ -57556,13 +57519,13 @@ mitigation goals.")
 (define-public r-r2dii-match
   (package
     (name "r-r2dii-match")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.match" version))
        (sha256
-        (base32 "1gw9vjf84hgkqprbhrih8m1y89vlzmviq7rnv2ipklkfq7lra8mk"))))
+        (base32 "0jqb6g07vv51smzq723x56xjglxz91n6246mhsgb60klprsdr0qs"))))
     (properties `((upstream-name . "r2dii.match")))
     (build-system r-build-system)
     (arguments
@@ -57580,7 +57543,8 @@ mitigation goals.")
                              r-lifecycle
                              r-glue
                              r-dplyr
-                             r-data-table))
+                             r-data-table
+                             r-cli))
     (home-page "https://rmi-pacta.github.io/r2dii.match/")
     (synopsis "Tools to Match Corporate Lending Portfolios with Climate Data")
     (description
@@ -57598,13 +57562,13 @@ financial portfolio aligns with climate goals.")
 (define-public r-r2dii-data
   (package
     (name "r-r2dii-data")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.data" version))
        (sha256
-        (base32 "160mzbb9j2hvhf60k236nli899rz2ghfnwc7wzb18bfffhsj1ysx"))))
+        (base32 "0x0l8rix4rg3ip9dpz9im1z4kmc6h3j4r76yh8116xzpfgpm30dy"))))
     (properties `((upstream-name . "r2dii.data")))
     (build-system r-build-system)
     (arguments
@@ -57628,13 +57592,13 @@ development and use of PACTA in R.")
 (define-public r-r2dii-analysis
   (package
     (name "r-r2dii-analysis")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.analysis" version))
        (sha256
-        (base32 "1ywd6sz8srbjx2in5bb7i2v4jbsxkvllk494lk9sa1ml38hyqn8d"))))
+        (base32 "1fgih4i0rrdl2z9j4mms43nfp8wf4zgkjk3an9hs7rp3iy04m1l4"))))
     (properties `((upstream-name . "r2dii.analysis")))
     (build-system r-build-system)
     (arguments

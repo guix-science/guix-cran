@@ -612,40 +612,6 @@ communication.  Will be used through a specific language interface package.
 Described in the book \"Extending R\".")
     (license license:gpl2+)))
 
-(define-public r-xpose4
-  (package
-    (name "r-xpose4")
-    (version "4.7.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "xpose4" version))
-       (sha256
-        (base32 "0w670g9y8nsdjcdxnvwpx8j9yfr7xhb5x3a171z1xizdfgpcpjxz"))))
-    (properties `((upstream-name . "xpose4")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-survival
-                             r-readr
-                             r-lazyeval
-                             r-lattice
-                             r-hmisc
-                             r-gam
-                             r-dplyr))
-    (home-page "https://uupharmacometrics.github.io/xpose4/")
-    (synopsis "Diagnostics for Nonlinear Mixed-Effect Models")
-    (description
-     "This package provides a model building aid for nonlinear mixed-effects
-(population) model analysis using NONMEM, facilitating data set checkout,
-exploration and visualization, model diagnostics, candidate covariate
-identification and model comparison.  The methods are described in Keizer et al.
-(2013) <doi:10.1038/psp.2013.24>, and Jonsson et al. (1999)
-<doi:10.1016/s0169-2607(98)00067-4>.")
-    (license license:lgpl3+)))
-
 (define-public r-xpose-xtras
   (package
     (name "r-xpose-xtras")

@@ -10863,13 +10863,13 @@ ISBN:9780080557816).")
 (define-public r-fluxweb
   (package
     (name "r-fluxweb")
-    (version "0.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxweb" version))
        (sha256
-        (base32 "1ssq90fqm4p0j4g171mx208lmgz3hkxs8hgsffkawpmxgacs0gh1"))))
+        (base32 "0bz6kxnr5kqas3381qmwqhlymbrfwqzh3hs2aikrqadw6slql93w"))))
     (properties `((upstream-name . "fluxweb")))
     (build-system r-build-system)
     (arguments
@@ -14631,13 +14631,13 @@ fossil calibrations, and diversification rate information for ray-finned fishes.
 (define-public r-fishstat
   (package
     (name "r-fishstat")
-    (version "2025.1.0.0")
+    (version "2025.1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fishstat" version))
        (sha256
-        (base32 "0xnmmpfhy79yck30rwvm7qlkjg04xn7h2w9an67lsy2715rp0cns"))))
+        (base32 "02hwij5cc8267z6zs9qwvlaicnzx8dkk6gxrl75wd3p97l8dj860"))))
     (properties `((upstream-name . "fishstat")))
     (build-system r-build-system)
     (arguments
@@ -19539,13 +19539,13 @@ DÃ©cisionnelle\".")
 (define-public r-fdesigns
   (package
     (name "r-fdesigns")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdesigns" version))
        (sha256
-        (base32 "0hsn325jgzvd4bjpmy5rglnz9035k1lb4h8yf2hbajnxxald0kal"))))
+        (base32 "10njbw13achjd5jcb3qj2mzmg1vi1ik7vwlxbhqpjg39jv6ik5cn"))))
     (properties `((upstream-name . "fdesigns")))
     (build-system r-build-system)
     (arguments
@@ -19554,7 +19554,7 @@ DÃ©cisionnelle\".")
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm r-mvquad
                              r-matrix))
     (home-page "https://cran.r-project.org/package=fdesigns")
-    (synopsis "Optimal Experimental Designs for Functional/Dynamic Models")
+    (synopsis "Optimal Experimental Designs for Dynamic/Functional Models")
     (description
      "Optimal experimental designs for functional linear and functional generalised
 linear models, for scalar responses and profile/dynamic factors.  The designs
