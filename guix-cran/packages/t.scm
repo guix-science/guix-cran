@@ -21937,13 +21937,13 @@ generation.")
 (define-public r-thematic
   (package
     (name "r-thematic")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thematic" version))
        (sha256
-        (base32 "00ym9blns25cq6wij8bjgq3g79bllm8h617lvd9ald51q78pd52h"))))
+        (base32 "0wzwhhn25jlaxl9i4ibr2p7rr6pl5z71mhwgm22x8zb6447gi3vs"))))
     (properties `((upstream-name . "thematic")))
     (build-system r-build-system)
     (arguments
@@ -31797,6 +31797,35 @@ make stratified analysis.")
      "Create publication quality plots and tables for Item Response Theory and
 Classical Test theory based item analysis, exploratory and confirmatory factor
 analysis.")
+    (license license:expat)))
+
+(define-public r-tablecontainer
+  (package
+    (name "r-tablecontainer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TableContainer" version))
+       (sha256
+        (base32 "1rd00zrkqq3bs5y63xdgpd6g7y2j0cs5yczkdjmwx9ia2j57chg0"))))
+    (properties `((upstream-name . "TableContainer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glue r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=TableContainer")
+    (synopsis "Create a Table with Row, Column, and Table Annotations")
+    (description
+     "Offers a @code{TableContainer()} function to create tables enriched with row,
+column, and table annotations.  This package is similar to
+@code{SummarizedExperiment} in Bioconductor
+<doi:10.18129/B9.bioc.@code{SummarizedExperiment>}, but designed to work
+independently of Bioconductor, it ensures annotations are automatically updated
+when the table is subset.  Additionally, it includes @code{format_tbl()} methods
+for enhanced table formatting and display.")
     (license license:expat)))
 
 (define-public r-tablecompare

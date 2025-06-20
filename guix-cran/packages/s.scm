@@ -17523,13 +17523,13 @@ Bechhofer, Santner, and Goldsman (1995, ISBN:978-0-471-57427-9).")
 (define-public r-sstvars
   (package
     (name "r-sstvars")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sstvars" version))
        (sha256
-        (base32 "1sy32kw0zznsfm8nvs4zr5rjqykjvn4r3w4d7vs5lppjfb9c13dk"))))
+        (base32 "0w6fawwwxqns40z3pwcw9zn16y56s1w51828h8rxdjjvgrc1p0id"))))
     (properties `((upstream-name . "sstvars")))
     (build-system r-build-system)
     (arguments
@@ -19185,13 +19185,13 @@ better than classical supervised classifiers.")
 (define-public r-ssbtools
   (package
     (name "r-ssbtools")
-    (version "1.7.5")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSBtools" version))
        (sha256
-        (base32 "1v4jd1iz4nhwvsbyzvhwgc82057z5vrc52kfk8njan54m4lvhsjy"))))
+        (base32 "1j9nwws8k9h1irbsjqlqa5y8qga8myy4ic13im28fa6f9zlpfn0z"))))
     (properties `((upstream-name . "SSBtools")))
     (build-system r-build-system)
     (arguments
@@ -32202,13 +32202,13 @@ dedicated to the visualization of time-dependent variables Licen et al. (2020)
 (define-public r-sombrero
   (package
     (name "r-sombrero")
-    (version "1.4-2")
+    (version "1.4-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SOMbrero" version))
        (sha256
-        (base32 "15bwdw3awwqq6d4b8ja8lsvcyr2v37l5jc3ja3df3y0ziazdllpn"))))
+        (base32 "1l4b0jzcawmxaz0x7i8il8fjm0fsky11jx21x8xnkcdkdli977f0"))))
     (properties `((upstream-name . "SOMbrero")))
     (build-system r-build-system)
     (arguments
@@ -34487,6 +34487,31 @@ creates a more interesting, somewhat realistic, image.  Images of the snowflakes
 can be separately saved as svg files and used in websites as static or animated
 images.")
     (license license:gpl2+)))
+
+(define-public r-snowflakeauth
+  (package
+    (name "r-snowflakeauth")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "snowflakeauth" version))
+       (sha256
+        (base32 "15knmv45kkmdfpc414vcj8mbnwggfv28qqigwnvg0vi5lvwfpnn5"))))
+    (properties `((upstream-name . "snowflakeauth")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rcpptoml r-jsonlite r-curl r-cli))
+    (home-page "https://posit-dev.github.io/snowflakeauth/")
+    (synopsis "Authentication Helpers for 'Snowflake'")
+    (description
+     "Authentication helpers for Snowflake'.  It provides compatibility with
+authentication approaches supported by the Snowflake Connector for Python
+<https://pypi.org/project/snowflake-connector-python> and the Snowflake CLI
+<https://pypi.org/project/snowflake-cli>.")
+    (license license:expat)))
 
 (define-public r-snowdata
   (package
@@ -52730,6 +52755,41 @@ a life-time model.  IMA Journal of Mathematical Control and Information, 4(2),
 143-148. <doi:10.1093/imamci/4.2.143>.")
     (license license:gpl2)))
 
+(define-public r-shadowvimp
+  (package
+    (name "r-shadowvimp")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shadowVIMP" version))
+       (sha256
+        (base32 "0ic6fxrbfkcf5cyacg4lwg04xphiin9x4ymf968f7m6p9494s9xs"))))
+    (properties `((upstream-name . "shadowVIMP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-ranger
+                             r-patchwork
+                             r-magrittr
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggforce
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/OktawiaStaburo/shadowVIMP")
+    (synopsis "Covariate Selection Based on VIMP Permutation-Like Testing")
+    (description
+     "This package provides a statistical method for reducing the number of covariates
+in an analysis by evaluating Variable Importance Measures (VIMPs) derived from
+the Random Forest algorithm.  It performs statistical tests on the VIMPs and
+outputs whether the covariate is significant along with the p-values.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-shadowr
   (package
     (name "r-shadowr")
@@ -61729,13 +61789,13 @@ viewer pane during their execution.")
 (define-public r-sdmtmb
   (package
     (name "r-sdmtmb")
-    (version "0.7.0")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdmTMB" version))
        (sha256
-        (base32 "0122891lkfzl8crbk4f03vlgknq0dl1ncj75p8mn2aivdjgi9vzv"))))
+        (base32 "15vgsxlqd5arisw03n3j7ps4r2lwmc6l4v5q18h3nwi2gayhm0l9"))))
     (properties `((upstream-name . "sdmTMB")))
     (build-system r-build-system)
     (arguments
@@ -67731,19 +67791,19 @@ controlled trials.  Contemp Clin Trials Commun.  2024 Nov 26;42:101393.
 (define-public r-sbgcop
   (package
     (name "r-sbgcop")
-    (version "0.980")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sbgcop" version))
        (sha256
-        (base32 "0vmg8b4462qghlyx6hq0raf9xqvygzgwi5y0cbqcljhmbmqjrwxs"))))
+        (base32 "1mqj3dyza886dal83plf5xj3idp3yrj6hg8acsw14lc4c5kbp2wi"))))
     (properties `((upstream-name . "sbgcop")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "http://pdhoff.github.io/")
+    (home-page "https://pdhoff.github.io/")
     (synopsis
      "Semiparametric Bayesian Gaussian Copula Estimation and Imputation")
     (description

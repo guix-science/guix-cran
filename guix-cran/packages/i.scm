@@ -10777,6 +10777,38 @@ provided.  See Chao et al. (2021) <doi:10.1111/2041-210X.13682> for more
 details.")
     (license license:gpl3+)))
 
+(define-public r-inettool
+  (package
+    (name "r-inettool")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "INetTool" version))
+       (sha256
+        (base32 "0380irgb6zxaq637ij1534n791kcqqj6xnr4qzpx18hdnaf93gxi"))))
+    (properties `((upstream-name . "INetTool")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-robin
+                             r-r2r
+                             r-multinet
+                             r-igraph
+                             r-ggpubr
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=INetTool")
+    (synopsis "Integration Network")
+    (description
+     "It constructs a Consensus Network which identifies the general information of
+all the layers and Specific Networks for each layer with the information present
+only in that layer and not in all the others.The method is described in
+Policastro et al. (2024) \"INet for network integration\"
+<doi:10.1007/s00180-024-01536-8>.")
+    (license license:expat)))
+
 (define-public r-inet
   (package
     (name "r-inet")
@@ -11755,13 +11787,13 @@ incidence and can be easily manipulated, subsetted, and plotted.")
 (define-public r-incidence
   (package
     (name "r-incidence")
-    (version "1.7.5")
+    (version "1.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incidence" version))
        (sha256
-        (base32 "0ysvrbvgk7xiv2d931mgb8q18fxjhlknrlww7myidv7n5250sd0v"))))
+        (base32 "0rzgwil8gpwfibshs8sgcypq9qfi3dsgfp6gi76mx7bj0zrimvy5"))))
     (properties `((upstream-name . "incidence")))
     (build-system r-build-system)
     (arguments

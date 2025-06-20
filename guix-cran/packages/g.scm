@@ -12374,13 +12374,13 @@ maximisation algorithm.  Bernhardt (2015) <doi:10.1016/j.csda.2014.11.011>.")
 (define-public r-gmvarkit
   (package
     (name "r-gmvarkit")
-    (version "2.1.4")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmvarkit" version))
        (sha256
-        (base32 "0kpsfdqn3sislc20dv8rfia5zlvhzl245h8paf04xqmlfvv2i75j"))))
+        (base32 "09pf4zfj41dw79g7xfd6fkhfn4r64ah9n2k14kj9crw2byl3n4l1"))))
     (properties `((upstream-name . "gmvarkit")))
     (build-system r-build-system)
     (arguments
@@ -20883,13 +20883,13 @@ curve (Shorrocks 1983) <doi:10.2307/2554117>.")
 (define-public r-gglogger
   (package
     (name "r-gglogger")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gglogger" version))
        (sha256
-        (base32 "1hhpv5vvpb635hb27v64h92x7ga9m4yvrldd61qa0jzjhnmp1623"))))
+        (base32 "1h9qblqa64cacp8arylwh8g1da6gl9dhk2y7dd42s7m71z9j0vzz"))))
     (properties `((upstream-name . "gglogger")))
     (build-system r-build-system)
     (arguments
@@ -21981,13 +21981,13 @@ You can easily add the figure to the database and update them later using CLI
 (define-public r-ggfields
   (package
     (name "r-ggfields")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfields" version))
        (sha256
-        (base32 "1b23hxi9g5fcmrw63pmksayk9j7xsi0j23qkfkchlcx258yrf7la"))))
+        (base32 "15sk0xbsljfnwchzam9azhrq502sjjbwjmk29gxm19qf9kkxq4ab"))))
     (properties `((upstream-name . "ggfields")))
     (build-system r-build-system)
     (arguments
@@ -31077,6 +31077,32 @@ equations.")
 modified generalized estimating equations (GEE) with bias-adjusted covariance
 estimator.  The package provides any combination of three GEE methods and 12
 covariance estimators.")
+    (license license:gpl2+)))
+
+(define-public r-geess
+  (package
+    (name "r-geess")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geess" version))
+       (sha256
+        (base32 "1ph0sic885ajmlcmniw1c01d1di3gzkfaxafnb2npw0h8km61h1l"))))
+    (properties `((upstream-name . "geess")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=geess")
+    (synopsis
+     "Modified Generalized Estimating Equations for Small-Sample Data")
+    (description
+     "Analyze small-sample clustered or longitudinal data using modified generalized
+estimating equations with bias-adjusted covariance estimator.  The package
+provides any combination of three modified generalized estimating equations and
+11 bias-adjusted covariance estimators.")
     (license license:gpl2+)))
 
 (define-public r-geesmv

@@ -2382,6 +2382,34 @@ Sourcing of R source files is performed without side-effects: from R scripts
 that have executable code and function definitions only functions are sourced.")
     (license license:expat)))
 
+(define-public r-functionalcalibration
+  (package
+    (name "r-functionalcalibration")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FunctionalCalibration" version))
+       (sha256
+        (base32 "1q5drb7c282nb8d0a8j2xa501jwfziyc3m9lkkpkjmz9r3ajccci"))))
+    (properties `((upstream-name . "FunctionalCalibration")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wavethresh))
+    (home-page "https://github.com/VitorRibasP/FunctionalCalibration")
+    (synopsis
+     "Aggregated Functional Data Calibration using Splines and Wavelets")
+    (description
+     "This package implements methods for calibrating an aggregated functional data
+model using wavelets or splines.  Each aggregated curve is modeled as a linear
+combination of component functions and known weights.  The component functions
+are estimated using wavelets or splines.  The package is based on dos Santos
+Sousa (2024) <doi:10.1515/mcma-2023-2016> and Saraiva and Dias (2009)
+<doi:10.47749/T/UNICAMP.2009.471073>.")
+    (license license:gpl3)))
+
 (define-public r-functional
   (package
     (name "r-functional")
@@ -6174,6 +6202,40 @@ random Sierpinski-Carpets with constant and variable probabilities are included.
  For more details on the method please see Hermann et al. (2015)
 <doi:10.1002/sim.6497>.")
     (license license:gpl2+)))
+
+(define-public r-fractalforest
+  (package
+    (name "r-fractalforest")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fractalforest" version))
+       (sha256
+        (base32 "0h1xlxlhnkisrcbx5dxc03ql62n7597nw3b3i6444cprl69ldg64"))))
+    (properties `((upstream-name . "fractalforest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-stringi
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fractalforest")
+    (synopsis "Simulate Fractal Trees and Forests")
+    (description
+     "Create and visualize fractal trees and fractal forests, based on the Lindenmayer
+system (L-system).  For more details see Lindenmayer (1968a)
+<doi:10.1016/0022-5193(68)90079-9> and Lindenmayer (1968b)
+<doi:10.1016/0022-5193(68)90080-5>.")
+    (license license:expat)))
 
 (define-public r-fractaldim
   (package
@@ -23175,13 +23237,13 @@ guides and Python package information can be found at
 (define-public r-fasterraster
   (package
     (name "r-fasterraster")
-    (version "8.4.0.7")
+    (version "8.4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fasterRaster" version))
        (sha256
-        (base32 "0fzzgasbcb9p4mghggl8m0slk0wjbidzbvvxjl8q1lyy8k90zgb6"))))
+        (base32 "0d3qqkvyq7jmcskd5i95hv4ss4licjacr95qq058r90jik4gajl9"))))
     (properties `((upstream-name . "fasterRaster")))
     (build-system r-build-system)
     (arguments
@@ -23197,15 +23259,15 @@ guides and Python package information can be found at
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/adamlilith/fasterRaster")
-    (synopsis "Faster Raster and Spatial Vector Processing Using 'GRASS GIS'")
+    (synopsis "Faster Raster and Spatial Vector Processing Using 'GRASS'")
     (description
      "Processing of large-in-memory/large-on disk rasters and spatial vectors using
-GRASS GIS <https://grass.osgeo.org/>.  Most functions in the terra package
+GRASS <https://grass.osgeo.org/>.  Most functions in the terra package
 are	recreated.  Processing of medium-sized and smaller spatial objects will
 nearly always be faster using terra or sf', but for
 large-in-memory/large-on-disk objects, @code{fasterRaster} may be faster.  To
 use most of the functions, you must have the stand-alone version (not the
-OS@code{GeoW4} installer version) of GRASS GIS 8.0 or higher.")
+OS@code{GeoW4} installer version) of GRASS 8.0 or higher.")
     (license license:gpl3+)))
 
 (define-public r-fasterelasticnet

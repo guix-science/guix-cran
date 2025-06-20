@@ -7324,13 +7324,13 @@ described in Hoffmann et al. (2018) <doi:10.1021/acs.analchem.8b00356>.")
 (define-public r-hipread
   (package
     (name "r-hipread")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hipread" version))
        (sha256
-        (base32 "06z20kxswamhs8abjk6ff7xqhisaixw9ygz1831n38nl489vjpip"))))
+        (base32 "0p4xhafk9ahvvklwy7lfsqzi3lxyqh3rkbqazdq4ifrmgwqmifiw"))))
     (properties `((upstream-name . "hipread")))
     (build-system r-build-system)
     (arguments
@@ -7338,7 +7338,7 @@ described in Hoffmann et al. (2018) <doi:10.1021/acs.analchem.8b00356>.")
       #:tests? #f))
     (inputs (list zlib))
     (propagated-inputs (list r-tibble r-rlang r-rcpp r-r6 r-bh))
-    (home-page "https://cran.r-project.org/package=hipread")
+    (home-page "https://github.com/ipums/hipread")
     (synopsis "Read Hierarchical Fixed Width Files")
     (description
      "Read hierarchical fixed width files like those commonly used by many census data

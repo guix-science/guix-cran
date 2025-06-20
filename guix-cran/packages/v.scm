@@ -1692,13 +1692,13 @@ port of the original code published in the early 1990's by Steven Fortune.")
 (define-public r-voronoibiomedplot
   (package
     (name "r-voronoibiomedplot")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VoronoiBiomedPlot" version))
        (sha256
-        (base32 "1v4m673i5kbi5p742v4wky5m48dgc66qzpyhyz81gh3098l99wqb"))))
+        (base32 "1k09p23p3zzmpc07ycwfcm04m2nfrc8vfpgzy88r35l0x6fz00v4"))))
     (properties `((upstream-name . "VoronoiBiomedPlot")))
     (build-system r-build-system)
     (arguments
@@ -1712,7 +1712,7 @@ port of the original code published in the early 1990's by Steven Fortune.")
 plots, Voronoi diagram plots, and combined ellipse-Voronoi plots.  Designed to
 visualize class separation in dimensionally reduced data from techniques like
 principal component analysis (PCA), partial least squares discriminant analysis
-(PLS-DA) or others.  For more details see LÃ¶tsch and Ultsch (2024)
+(PLS-DA) or others.  For more details see Lotsch and Ultsch (2024)
 <doi:10.1016/j.imu.2024.101573>.")
     (license license:gpl3)))
 
@@ -3467,13 +3467,13 @@ as both viewpoints and occluders.")
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visOmopResults" version))
        (sha256
-        (base32 "15b3akvq5d0mqqki4cylai6fr34f1kz1mwx8a14glda3xs20mwcr"))))
+        (base32 "0jck3fbjljz3vq84ap3xl0d149i0h5z0aqfz4bfbnx058dzhhyh8"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
     (arguments
@@ -3482,7 +3482,6 @@ as both viewpoints and occluders.")
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
-                             r-reactable
                              r-purrr
                              r-omopgenerics
                              r-glue

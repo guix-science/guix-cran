@@ -9849,6 +9849,36 @@ for high dimensional covariance matrices.\" Li and Chen (2012)
 <@code{arXiv:1206.0917>}.")
     (license license:gpl2)))
 
+(define-public r-eqtesting
+  (package
+    (name "r-eqtesting")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eqtesting" version))
+       (sha256
+        (base32 "1zr45yw0qj1w0ak509nbhs5m4xrf1lazj9xk6bv94if4wxs8liy9"))))
+    (properties `((upstream-name . "eqtesting")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdd r-data-table))
+    (home-page "https://github.com/jack-fitzgerald/eqtesting")
+    (synopsis "Equivalence Testing Functions")
+    (description
+     "This package contains several functions for equivalence testing and practical
+significance testing.  First, the @code{tsti()} command provides an automatic
+computation of three-sided testing results for a given estimate, standard error,
+and region of practical equivalence.  For details, see Goeman, Solari, & Stijnen
+(2010) <doi:10.1002/sim.4002> and Isager & Fitzgerald (2024)
+<doi:10.31234/osf.io/8y925>.  Second, the @code{lddtest()} command performs
+logarithmic density discontinuity equivalence testing for regression
+discontinuity designs.  For reference, see Fitzgerald (2025)
+<doi:10.31222/osf.io/2dgrp_v1>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-eqrn
   (package
     (name "r-eqrn")
@@ -9959,13 +9989,13 @@ data\" by Devlin et al. (2020) <doi:10.1007/978-3-030-47622-9>.")
 (define-public r-eq5d
   (package
     (name "r-eq5d")
-    (version "0.15.7")
+    (version "0.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eq5d" version))
        (sha256
-        (base32 "0rdhvsp1fz7cpq82zksxih2kz25w9d0lxrg6jk694zzxm89gjknc"))))
+        (base32 "1777jkpdcnvd2s4617smsv8na3rc8xlyipgvgyly88xs8d796ph3"))))
     (properties `((upstream-name . "eq5d")))
     (build-system r-build-system)
     (arguments
@@ -9993,17 +10023,18 @@ clinical and economic evaluation of health care as well as in population health
 surveys.  The eq5d package provides methods to calculate index scores from a
 subject's dimension scores.  32 TTO and 11 VAS EQ-5D-3L value sets including
 those for countries in Szende et al (2007) <doi:10.1007/1-4020-5511-0> and
-Szende et al (2014) <doi:10.1007/978-94-007-7596-1>, 46 EQ-5D-5L EQ-VT value
+Szende et al (2014) <doi:10.1007/978-94-007-7596-1>, 47 EQ-5D-5L EQ-VT value
 sets, the EQ-5D-5L crosswalk value sets developed by van Hout et al. (2012)
 <doi:10.1016/j.jval.2012.02.008>, the crosswalk value sets for Bermuda, Jordan
-and Russia and the reverse crosswalk value sets.  10 EQ-5D-Y value sets are also
-included as are the NICE DSU age-sex based EQ-5D-3L to EQ-5D-5L and EQ-5D-5L to
-EQ-5D-3L mappings.  Methods are also included for the analysis of EQ-5D
-profiles, including those from the book \"Methods for Analyzing and Reporting
-EQ-5D data\" by Devlin et al. (2020) <doi:10.1007/978-3-030-47622-9>.
-Additionally a shiny web tool is included to enable the calculation,
-visualisation and automated statistical analysis of EQ-5D data via a web browser
-using EQ-5D dimension scores stored in CSV or Excel files.")
+and Russia and the van Hout (2021) reverse crosswalk value sets.  10 EQ-5D-Y
+value sets are also included as are the NICE DSU age-sex based EQ-5D-3L to
+EQ-5D-5L and EQ-5D-5L to EQ-5D-3L mappings.  Methods are also included for the
+analysis of EQ-5D profiles, including those from the book \"Methods for Analyzing
+and Reporting EQ-5D data\" by Devlin et al. (2020)
+<doi:10.1007/978-3-030-47622-9>.  Additionally a shiny web tool is included to
+enable the calculation, visualisation and automated statistical analysis of
+EQ-5D data via a web browser using EQ-5D dimension scores stored in CSV or Excel
+files.")
     (license license:expat)))
 
 (define-public r-epxtor
@@ -19080,13 +19111,13 @@ conditions.")
 (define-public r-efatools
   (package
     (name "r-efatools")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFAtools" version))
        (sha256
-        (base32 "12n5cl1i6a5gxc9zmjj3ydrf54c834kfpzm46dk10x813mqgkmab"))))
+        (base32 "0zgqwdrczkdld0wmzd7s1mh387dsdf374l3bca44yivv48yfwbby"))))
     (properties `((upstream-name . "EFAtools")))
     (build-system r-build-system)
     (arguments

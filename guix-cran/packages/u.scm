@@ -2080,6 +2080,39 @@ predictors.")
 on unsystematic sub-samples.")
     (license license:gpl2)))
 
+(define-public r-unsum
+  (package
+    (name "r-unsum")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unsum" version))
+       (sha256
+        (base32 "0x3jlahx78dip1r6dld8h0gwiiivznj7m001fdzb83s2709a81jf"))))
+    (properties `((upstream-name . "unsum")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-tibble
+                             r-scales
+                             r-roundwork
+                             r-rlang
+                             r-readr
+                             r-nanoparquet
+                             r-ggplot2
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lhdjung/unsum")
+    (synopsis "Reconstruct Raw Data from Summary Statistics")
+    (description
+     "Reconstructs all possible raw data that could have led to reported summary
+statistics.  Provides a wrapper for the Rust implementation of the CLOSURE
+algorithm.")
+    (license license:expat)))
+
 (define-public r-unstruwwel
   (package
     (name "r-unstruwwel")
@@ -4591,13 +4624,13 @@ Shape.")
 (define-public r-ugmar
   (package
     (name "r-ugmar")
-    (version "3.5.2")
+    (version "3.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uGMAR" version))
        (sha256
-        (base32 "12n7rwpw6sabb53985vlgcq7bjqh7f6dy0p60mp8smcdw9qhl7sg"))))
+        (base32 "0ggrjcy4ay88sys1jhx56vcs7v3fl8v4fkmnz91kk5c6q5nkgr87"))))
     (properties `((upstream-name . "uGMAR")))
     (build-system r-build-system)
     (arguments

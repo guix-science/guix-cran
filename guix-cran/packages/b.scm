@@ -32133,13 +32133,13 @@ can be found in Zhang, Ding and Yang (2021) <@code{arXiv:1911.03063v2>}.")
 (define-public r-baggr
   (package
     (name "r-baggr")
-    (version "0.7.8")
+    (version "0.7.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baggr" version))
        (sha256
-        (base32 "18faz6b8llzxsrm60bnsanplc8d7knb8cmcz34nyai7i7022061k"))))
+        (base32 "10vv8dl0b53i57x7r9vc64jpksvkrj7blis6hfi2h30v2jzhwnlv"))))
     (properties `((upstream-name . "baggr")))
     (build-system r-build-system)
     (arguments

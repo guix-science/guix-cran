@@ -9327,13 +9327,13 @@ information.")
 (define-public r-niledam
   (package
     (name "r-niledam")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NiLeDAM" version))
        (sha256
-        (base32 "1xqj33182fz6x633vs9iy3rxr7m13bqn1773fphs1sb8mvxwdvzq"))))
+        (base32 "0ghhvbxrs4b2lqs60d606jliily90p19kxz0zj31xxdvadmjdnrk"))))
     (properties `((upstream-name . "NiLeDAM")))
     (build-system r-build-system)
     (arguments
@@ -10863,13 +10863,13 @@ structure futures data applied within this study provided in the NFCP package.")
 (define-public r-nfactors
   (package
     (name "r-nfactors")
-    (version "2.4.1.1")
+    (version "2.4.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nFactors" version))
        (sha256
-        (base32 "08gydk231zijw3inp6d3hnc5mz0zywi4vzlvqb4jmibhv0hncdxv"))))
+        (base32 "1j0w0g20hqfwq4fhhvr9421fnnln1fnvzyb6bc6gj66ar7ngvrqx"))))
     (properties `((upstream-name . "nFactors")))
     (build-system r-build-system)
     (arguments
@@ -10880,15 +10880,10 @@ structure futures data applied within this study provided in the NFCP package.")
     (synopsis
      "Parallel Analysis and Other Non Graphical Solutions to the Cattell Scree Test")
     (description
-     "Indices, heuristics and strategies to help determine the number of
-factors/components to retain: 1.  Acceleration factor (af with or without
-Parallel Analysis); 2.  Optimal Coordinates (noc with or without Parallel
-Analysis); 3.  Parallel analysis (components, factors and bootstrap); 4.  lambda
-> mean(lambda) (Kaiser, CFA and related); 5.  Cattell-Nelson-Gorsuch (CNG); 6.
-Zoski and Jurs multiple regression (b, t and p); 7.  Zoski and Jurs standard
-error of the regression coeffcient (sescree); 8.  Nelson R2; 9.  Bartlett khi-2;
-10.  Anderson khi-2; 11.  Lawley khi-2 and 12.  Bentler-Yuan khi-2.")
-    (license (license:fsdg-compatible "GPL (>= 3.5.0)"))))
+     "Indices, heuristics, simulations and strategies to help determine the number of
+factors/components to retain in exploratory factor analysis and principal
+component analysis.")
+    (license license:gpl3)))
 
 (define-public r-nexus
   (package

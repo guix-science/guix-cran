@@ -1274,13 +1274,13 @@ tabulated data.")
 (define-public r-lsx
   (package
     (name "r-lsx")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSX" version))
        (sha256
-        (base32 "0pyh3l9wzycy0xk0rfdif5paraixzffvld2s0kp94jqis515axlc"))))
+        (base32 "1x4zc0nkfr5h4m8pj3zwv6yxmkz7yyb1mr52vd88303ymjsbc9a0"))))
     (properties `((upstream-name . "LSX")))
     (build-system r-build-system)
     (arguments
@@ -3923,13 +3923,13 @@ structure to the other.")
 (define-public r-loon
   (package
     (name "r-loon")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loon" version))
        (sha256
-        (base32 "037b7h78fdbrpjc02gs8h9dx06inkkj19haiap6y36828ppip8ap"))))
+        (base32 "0rxbr93p4j14x5mh60l73jq8lg6gbj61ih5na4jv3p2j06l2mn9a"))))
     (properties `((upstream-name . "loon")))
     (build-system r-build-system)
     (arguments

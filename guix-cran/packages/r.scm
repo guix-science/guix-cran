@@ -3541,13 +3541,13 @@ test for autocorrelated data.  Journal of hydrology, 204(1-4), 182-196.
 (define-public r-rtrek
   (package
     (name "r-rtrek")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtrek" version))
        (sha256
-        (base32 "0hc58h2g3xldlcqlns43xf01sj09lmb7wnjlngsg6dr31z59xbk2"))))
+        (base32 "1bj5hv56ynjdj3iyvlq4z0w47qhzihdd3xsx5j7sbym0c0nhl8n9"))))
     (properties `((upstream-name . "rtrek")))
     (build-system r-build-system)
     (arguments
@@ -4972,13 +4972,13 @@ related to the Microsoft Office software suite, including Microsoft Word
 (define-public r-rtables
   (package
     (name "r-rtables")
-    (version "0.6.12")
+    (version "0.6.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtables" version))
        (sha256
-        (base32 "1ma4vybabfsrajdfrvn4zqbdrpqh4vf3cmy98jdmdvg6jzlavvzh"))))
+        (base32 "1imnj3znl8g6f9hmi2vysqhl31zxbr7sjwnadg5r5d49xj6973f4"))))
     (properties `((upstream-name . "rtables")))
     (build-system r-build-system)
     (arguments
@@ -19181,13 +19181,13 @@ roles in networks.  It is a wrapper around the rgraph library (Guimera & Amaral,
 (define-public r-rnest
   (package
     (name "r-rnest")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rnest" version))
        (sha256
-        (base32 "0w74h0jb94rp63jcar8k0knv7ifhhq66w875dwfpld6ffaqisr7h"))))
+        (base32 "1yc5a09iwdx6jqrjpg9dm6fb569kmv7cm6qgn018qfwbidahh6dj"))))
     (properties `((upstream-name . "Rnest")))
     (build-system r-build-system)
     (arguments
@@ -20572,13 +20572,13 @@ harmonization (Fortier I and al. (2017) <doi:10.1093/ije/dyw075>).")
 (define-public r-rmon
   (package
     (name "r-rmon")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmon" version))
        (sha256
-        (base32 "15s3kb6fbyqzngsl4b4bfzcyjw03b863ygp0vy8g8l60n8m42gb7"))))
+        (base32 "0xbl962rqya8vq8p5rcyc00ayg5xwfdl42pa89myhq599q21zmww"))))
     (properties `((upstream-name . "rmon")))
     (build-system r-build-system)
     (arguments
@@ -30582,6 +30582,45 @@ documents by Facebook Marketing API
     (synopsis "Access to Facebook API via R")
     (description "This package provides an interface to the Facebook API.")
     (license license:gpl2)))
+
+(define-public r-rextendr
+  (package
+    (name "r-rextendr")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rextendr" version))
+       (sha256
+        (base32 "1flfw2lnm9fagpq4x7llqkj8kfr75snfrikr3kdjc4fymq1dxkyl"))))
+    (properties `((upstream-name . "rextendr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-vctrs
+                             r-stringi
+                             r-rprojroot
+                             r-rlang
+                             r-processx
+                             r-pkgbuild
+                             r-jsonlite
+                             r-glue
+                             r-dplyr
+                             r-desc
+                             r-cli
+                             r-callr
+                             r-brio))
+    (native-inputs (list r-knitr))
+    (home-page "https://extendr.github.io/rextendr/")
+    (synopsis "Call Rust Code from R using the 'extendr' Crate")
+    (description
+     "This package provides functions to compile and load Rust code from R, similar to
+how Rcpp or cpp11 allow easy interfacing with C++ code.  Also provides helper
+functions to create R packages that use Rust code.  Under the hood, the Rust
+crate extendr is used to do all the heavy lifting.")
+    (license license:expat)))
 
 (define-public r-rexpokit
   (package

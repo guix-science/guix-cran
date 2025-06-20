@@ -5392,13 +5392,13 @@ from <https://coinmarketcap.com> via their web-api'.")
 (define-public r-cry
   (package
     (name "r-cry")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cry" version))
        (sha256
-        (base32 "0n1yyjkqj0kqs53g27chl7lhk07f7aj81jwyvaxfmfkp03xzjj0d"))))
+        (base32 "0x60k9q47visrwl138ym918hpg33gix97sbl3661fg8dp4gnafc3"))))
     (properties `((upstream-name . "cry")))
     (build-system r-build-system)
     (arguments
@@ -18115,13 +18115,13 @@ reconstructed trees from the generative tree, as analysed by Smith (2019)
 (define-public r-congressdata
   (package
     (name "r-congressdata")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CongressData" version))
        (sha256
-        (base32 "0hbsbszcwj81p2jnsh9k3ggnn2l0xvj0yk0c9fvqnlqhm07zm3l1"))))
+        (base32 "14cm84jf56wgmm6fgajh7905hx65n281i9j1f0rxaf970p68q8hd"))))
     (properties `((upstream-name . "CongressData")))
     (build-system r-build-system)
     (arguments
@@ -33142,13 +33142,13 @@ data frame.")
 (define-public r-classicaltest
   (package
     (name "r-classicaltest")
-    (version "0.7.0")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "classicaltest" version))
        (sha256
-        (base32 "0wqkqnyj6xdb6qsv03qz002g2b0f7s2vy33f3dm8kpajapdprvnk"))))
+        (base32 "1b3ci1jja16cwc43fagns7p7jiih4bc7hlmdnkz4gshgrlmbd3dv"))))
     (properties `((upstream-name . "classicaltest")))
     (build-system r-build-system)
     (arguments
@@ -34617,13 +34617,13 @@ e2667.")
 (define-public r-circstats
   (package
     (name "r-circstats")
-    (version "0.2-6")
+    (version "0.2-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CircStats" version))
        (sha256
-        (base32 "07bg4zrs2iqh0pmi44pybi8hlvnxwcaa5zpg85rmf55kflxxkzlf"))))
+        (base32 "0mp463w7myizvidhjnljzhyb1vrc1ajyay876g2w7k919klsnvcz"))))
     (properties `((upstream-name . "CircStats")))
     (build-system r-build-system)
     (arguments

@@ -304,6 +304,28 @@ time-varying coefficients for right censored data using estimating equations
 proposed by Peng and Huang (2007) <doi:10.1093/biomet/asm058>.")
     (license license:gpl3+)))
 
+(define-public r-dynsim
+  (package
+    (name "r-dynsim")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dynsim" version))
+       (sha256
+        (base32 "0b98by2y2cxy607rv1cy4m2kndbm7gxgi6y4g6f1r87p1y62pbjc"))))
+    (properties `((upstream-name . "dynsim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-gridextra r-ggplot2))
+    (home-page "https://cran.r-project.org/package=dynsim")
+    (synopsis "Dynamic Simulations of Autoregressive Relationships")
+    (description
+     "Dynamic simulations and graphical depictions of autoregressive relationships.")
+    (license license:gpl3)))
+
 (define-public r-dynsbm
   (package
     (name "r-dynsbm")
@@ -17621,13 +17643,13 @@ experiments designs, surrogates or test functions.")
 (define-public r-dicer
   (package
     (name "r-dicer")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diceR" version))
        (sha256
-        (base32 "195gc0cigl0ily9zbs2s1jrw5lkn9b4p2pk1vhfca1lyl7rppa4c"))))
+        (base32 "0kbkbl8zay7g4wqm6sw65zr4g710d9b2y9350gjy7jbbxqyy7mks"))))
     (properties `((upstream-name . "diceR")))
     (build-system r-build-system)
     (arguments
@@ -17647,7 +17669,6 @@ experiments designs, surrogates or test functions.")
                              r-ggplot2
                              r-dplyr
                              r-clvalid
-                             r-clv
                              r-clustercrit
                              r-clue
                              r-class
@@ -23972,13 +23993,13 @@ Access functions are provided in the accompanying package deeptime'.")
 (define-public r-deeptime
   (package
     (name "r-deeptime")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deeptime" version))
        (sha256
-        (base32 "1sv4vqg1q31nkk8aq8dz3nk3q9jfdm2c5b3b2n0355z31zpqg3gq"))))
+        (base32 "02zjwc5m4qkc27x0d8amb26sg745f2a4hnnrrdd947jp9gm9qwpc"))))
     (properties `((upstream-name . "deeptime")))
     (build-system r-build-system)
     (arguments

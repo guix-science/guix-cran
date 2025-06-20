@@ -1824,6 +1824,38 @@ testing directional predictability between time series.  Journal of
 Econometrics, 193(1), 251-270 <doi:10.1016/j.jeconom.2016.03.001>.")
     (license license:gpl3+)))
 
+(define-public r-quantilepeer
+  (package
+    (name "r-quantilepeer")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuantilePeer" version))
+       (sha256
+        (base32 "0zrg37x5wgvys76xzz84gjidhjbqsx2dywrrs851g3ha1qnjcpfp"))))
+    (properties `((upstream-name . "QuantilePeer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppnumerical
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-formula-tools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ahoundetoungan/QuantilePeer")
+    (synopsis "Quantile Peer Effect Models")
+    (description
+     "Simulating and estimating peer effect models including the quantile-based
+specification (Houndetoungan, 2025 <doi:10.48550/@code{arXiv.2506.12920>}), and
+the models with Constant Elasticity of Substitution (CES)-based social norm
+(Boucher et al., 2024 <doi:10.3982/ECTA21048>).")
+    (license license:gpl3)))
+
 (define-public r-quantilenpci
   (package
     (name "r-quantilenpci")

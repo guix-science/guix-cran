@@ -1297,6 +1297,37 @@ both.  Furthermore, data sets containing data from several entities, responses,
 and covariates can be simultaneously assembled.")
     (license license:gpl3)))
 
+(define-public r-putior
+  (package
+    (name "r-putior")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "putior" version))
+       (sha256
+        (base32 "17dq7fdf4mmrvkikyi1whvij8c9hig9kwizg7rzb27n0hh0j7q28"))))
+    (properties `((upstream-name . "putior")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://pjt222.github.io/putior/")
+    (synopsis "\"Register In- and Outputs for Workflow Visualization\"")
+    (description
+     "This package provides tools for extracting and processing structured annotations
+from R and Python source files to facilitate workflow visualization.  The
+package scans source files for special PUT annotations that define nodes,
+connections, and metadata within a data processing workflow.  These annotations
+can then be used to generate visual representations of data flows and processing
+steps across polyglot software environments.  Builds on concepts from literate
+programming Knuth (1984) <doi:10.1093/comjnl/27.2.97> and utilizes directed
+acyclic graph (DAG) theory for workflow representation Foraita, Spallek, and
+Zeeb (2014) <doi:10.1007/978-0-387-09834-0_65>.  Diagram generation powered by
+Mermaid Sveidqvist (2014) <https://mermaid.js.org/>.")
+    (license license:expat)))
+
 (define-public r-pushoverr
   (package
     (name "r-pushoverr")
@@ -31183,19 +31214,19 @@ outcome based on posterior probability (Thall and Simon (1994)
 (define-public r-ph1xbar
   (package
     (name "r-ph1xbar")
-    (version "0.11.2")
+    (version "0.11.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PH1XBAR" version))
        (sha256
-        (base32 "0ikh8jrf2yq9f444wa5fkiwri5xfc9r19f7862p3s11xmax8dycn"))))
+        (base32 "0k2p50w0q8gmjfkn12rxx03zrh8cp0bba67nyal34g3h6l5394ws"))))
     (properties `((upstream-name . "PH1XBAR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pracma r-mvtnorm r-forecast))
+    (propagated-inputs (list r-vgam r-pracma r-mvtnorm r-forecast))
     (home-page "https://github.com/bolus123/PH1XBAR")
     (synopsis "Phase I Shewhart X-Bar Chart")
     (description
@@ -38396,6 +38427,37 @@ are known, binding curves can be simulated and parameters can be varied.  The
 models within this package may also be used to fit a curve to measured binding
 data using non-linear regression.")
     (license license:expat)))
+
+(define-public r-pblm
+  (package
+    (name "r-pblm")
+    (version "0.1-12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pblm" version))
+       (sha256
+        (base32 "1w0mv4nhdc5p91g35p4m4n6kkfqjgnc1md6randfchb8vi6yapj3"))))
+    (properties `((upstream-name . "pblm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-mass r-lattice))
+    (home-page "https://github.com/MarcoEnea/pblm")
+    (synopsis
+     "Bivariate Additive Marginal Regression for Categorical Responses")
+    (description
+     "Bivariate additive categorical regression via penalized maximum likelihood.
+Under a multinomial framework, the method fits bivariate models where both
+responses are nominal, ordinal, or a mix of the two.  Partial proportional odds
+models are supported, with flexible (non-)uniform association structures.
+Various logit types and parametrizations can be specified for both marginals and
+the association, including Daleâs model.  The association structure can be
+regularized using polynomial-type penalty terms.  Additive effects are modeled
+using P-splines.  Standard methods such as @code{summary()}, @code{residuals()},
+and @code{predict()} are available.")
+    (license license:gpl2+)))
 
 (define-public r-pbir
   (package

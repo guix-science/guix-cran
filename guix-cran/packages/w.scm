@@ -11,6 +11,7 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages image)
   #:use-module (gnu packages algebra)
@@ -5389,25 +5390,27 @@ Inference,\" International Studies Quarterly 51 (March)
 (define-public r-wh
   (package
     (name "r-wh")
-    (version "1.1.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WH" version))
        (sha256
-        (base32 "0hvlyb3vb4lk4sn6vqj80y0ps5jx8fdlcniiqhy803v04cph7v4y"))))
+        (base32 "0m0f16grkvv9z68q8niq7l75hif3ppb96gprw973zh2dcnac26br"))))
     (properties `((upstream-name . "WH")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list lapack))
+    (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/GuillaumeBiessy/WH")
     (synopsis "Enhanced Implementation of Whittaker-Henderson Smoothing")
     (description
-     "An enhanced implementation of Whittaker-Henderson smoothing for the gradation of
-one-dimensional and two-dimensional actuarial tables used to quantify Life
-Insurance risks.  WH is based on the methods described in Biessy (2023)
+     "An enhanced implementation of Whittaker-Henderson smoothing for the graduation
+of one-dimensional and two-dimensional actuarial tables used to quantify Life
+Insurance risks.  WH is based on the methods described in Biessy (2025)
 <doi:10.48550/@code{arXiv.2306.06932>}.  Among other features, it generalizes
 the original smoothing algorithm to maximum likelihood estimation, automatically
 selects the smoothing parameter(s) and extrapolates beyond the range of data.")
@@ -9532,13 +9535,13 @@ Georgia Institute of Technology.
 (define-public r-warden
   (package
     (name "r-warden")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WARDEN" version))
        (sha256
-        (base32 "04rbqvvijfjvg3zp29b7f3rdir42qvpl6s83szsjnpr6r2ka81d1"))))
+        (base32 "050lsxb3cgydsm2idaymzji94z3swcgwir938r41w0zxyw1nbcms"))))
     (properties `((upstream-name . "WARDEN")))
     (build-system r-build-system)
     (arguments
