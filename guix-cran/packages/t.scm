@@ -3526,13 +3526,13 @@ level shifts, temporary changes and seasonal level shifts are considered.")
 (define-public r-tsnet
   (package
     (name "r-tsnet")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsnet" version))
        (sha256
-        (base32 "14wy4mfzxkigdm3abfybijqicfqxl0gfbf72asadwipaqyw91nf6"))))
+        (base32 "1a9zy9im4nim2c8c4cxm4zcgfyv04nhynvi042s702nlana0pnag"))))
     (properties `((upstream-name . "tsnet")))
     (build-system r-build-system)
     (arguments
@@ -3547,6 +3547,7 @@ level shifts, temporary changes and seasonal level shifts are considered.")
                              r-rcppeigen
                              r-rcpp
                              r-posterior
+                             r-loo
                              r-ggplot2
                              r-ggokabeito
                              r-ggdist
@@ -13949,13 +13950,13 @@ Markussen (2021) <doi:10.48550/@code{arXiv.2108.04731>}.")
 (define-public r-tmt
   (package
     (name "r-tmt")
-    (version "0.3.4-0")
+    (version "0.3.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmt" version))
        (sha256
-        (base32 "0n0wrgrf99bvlwbgjgx3sa8icmjqy1swc0ck3l1yja228qc26179"))))
+        (base32 "0zawfk2njrlyffrfz1qkwhvy35470rc5s04679y45h4jspn53nm2"))))
     (properties `((upstream-name . "tmt")))
     (build-system r-build-system)
     (arguments
@@ -13969,8 +13970,8 @@ Markussen (2021) <doi:10.48550/@code{arXiv.2108.04731>}.")
      "This package provides conditional maximum likelihood (CML) item parameter
 estimation of both sequential and cumulative deterministic multistage designs
 (Zwitser & Maris, 2015, <doi:10.1007/s11336-013-9369-6>) and probabilistic
-sequential and cumulative multistage designs (Steinfeld & Robitzsch, 2021,
-<doi:10.31234/osf.io/ew27f>).  Supports CML item parameter estimation of
+sequential and cumulative multistage designs (Steinfeld & Robitzsch, 2024,
+<doi:10.1007/s41237-024-00228-3>).  Supports CML item parameter estimation of
 conventional linear designs and additional functions for the likelihood ratio
 test (Andersen, 1973, <doi:10.1007/BF02291180>) as well as functions for
 simulating various types of multistage designs.")
@@ -25446,13 +25447,13 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
 (define-public r-tern
   (package
     (name "r-tern")
-    (version "0.9.8")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern" version))
        (sha256
-        (base32 "03h3v1as96w96gdknxnjacqxc2yp6vxkakwaxjr79shh9dhsww4r"))))
+        (base32 "0bsfh4b68j67y54h7pivlrrwd1xain8aj7f660p82qw27l6xvl8k"))))
     (properties `((upstream-name . "tern")))
     (build-system r-build-system)
     (arguments
@@ -28032,13 +28033,13 @@ Wadhwa et al. (2018) <doi:10.21105/joss.00860>.")
 (define-public r-tdarec
   (package
     (name "r-tdarec")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tdarec" version))
        (sha256
-        (base32 "1s9vpy7dr4zrrj5ahqlsbwgz02q4n7h64h10f116nv3zgkn8zjxm"))))
+        (base32 "009848spvsrqx69k3adpdqz3zrfz1fsrbdph7fp079f8x5l04v4v"))))
     (properties `((upstream-name . "tdarec")))
     (build-system r-build-system)
     (arguments

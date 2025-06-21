@@ -18513,13 +18513,13 @@ version of the Hausman test.")
 (define-public r-fegarch
   (package
     (name "r-fegarch")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fEGarch" version))
        (sha256
-        (base32 "1a5yfnkf69i2il7ic52azz5d7lwwl4jn980nfm89skn6421rc8c0"))))
+        (base32 "16xszzj97pbfx7krakqfmlsmvdmyvvfz7vnc3j9xbsjpp1fcr8fc"))))
     (properties `((upstream-name . "fEGarch")))
     (build-system r-build-system)
     (arguments
@@ -18540,19 +18540,26 @@ version of the Hausman test.")
                              r-esemifar
                              r-cli))
     (home-page "https://cran.r-project.org/package=fEGarch")
-    (synopsis "Estimation of a Broad Family of EGARCH Models")
+    (synopsis "SM/LM EGARCH & GARCH, VaR/ES Backtesting & Dual LM Extensions")
     (description
-     "Implement and fit a variety of models from a very broad family of exponential
-generalized autoregressive conditional heteroskedasticity (EGARCH) models, such
-as a MEGARCH (modified EGARCH), FIEGARCH (fractionally integrated EGARCH),
-FIMLog-GARCH (fractionally integrated modulus Log-GARCH), and more.  The
-FIMLog-GARCH as part of the EGARCH family is discussed in Feng et al. (2023)
+     "Implement and fit a variety of short-memory (SM) and long-memory (LM) models
+from a very broad family of exponential generalized autoregressive conditional
+heteroskedasticity (EGARCH) models, such as a MEGARCH (modified EGARCH),
+FIEGARCH (fractionally integrated EGARCH), FIMLog-GARCH (fractionally integrated
+modulus Log-GARCH), and more.  The FIMLog-GARCH as part of the EGARCH family is
+discussed in Feng et al. (2023)
 <https://econpapers.repec.org/paper/pdnciepap/156.htm>.  For convenience and the
-purpose of comparison, a variety of other popular GARCH-type models, like an
-APARCH model, a fractionally integrated APARCH (FIAPARCH) model, standard GARCH
-and fractionally integrated GARCH (FIGARCH) models, GJR-GARCH and FIGJR-GARCH
-models, TGARCH and FITGARCH models, are implemented.  Models are fitted through
-quasi-maximum-likelihood estimation.")
+purpose of comparison, a variety of other popular SM and LM GARCH-type models,
+like an APARCH model, a fractionally integrated APARCH (FIAPARCH) model,
+standard GARCH and fractionally integrated GARCH (FIGARCH) models, GJR-GARCH and
+FIGJR-GARCH models, TGARCH and FITGARCH models, are implemented as well as dual
+models with simultaneous modelling of the mean, including dual long-memory
+models with a fractionally integrated autoregressive moving average (FARIMA)
+model in the mean and a long-memory model in the variance, and semiparametric
+volatility model extensions.  Parametric models and parametric model parts are
+fitted through quasi-maximum-likelihood estimation.  Furthermore, common
+forecasting and backtesting functions for value-at-risk (@code{VaR}) and
+expected shortfall (ES) based on the package's models are provided.")
     (license license:gpl3)))
 
 (define-public r-feedbackts
@@ -20703,13 +20710,13 @@ following references: <https://en.wikipedia.org/wiki/Modified_Dietz_method>,
 (define-public r-fchange
   (package
     (name "r-fchange")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fChange" version))
        (sha256
-        (base32 "10rv0cvpqj296g5d58h44a13nljdxlv77bpl9pfj12dafi812amz"))))
+        (base32 "0xx5dmh2fsr0dz73rx0gy88waj5hwnwd1mfcxhwibm1974izwz5j"))))
     (properties `((upstream-name . "fChange")))
     (build-system r-build-system)
     (arguments

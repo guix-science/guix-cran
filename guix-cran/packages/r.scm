@@ -2786,13 +2786,13 @@ This package fixes incorrect annotations in the original data sets.")
 (define-public r-rugarch
   (package
     (name "r-rugarch")
-    (version "1.5-3")
+    (version "1.5-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rugarch" version))
        (sha256
-        (base32 "150rw7hyfxcrrhpnwjq5zqk54jrqkj8pjzm65nb5077qjicd7yf0"))))
+        (base32 "10p8ljirzgy5awgh4ah2r582l239p4ssczyx4xhi764941zc7biv"))))
     (properties `((upstream-name . "rugarch")))
     (build-system r-build-system)
     (arguments
@@ -2810,7 +2810,7 @@ This package fixes incorrect annotations in the original data sets.")
                              r-ks
                              r-fracdiff
                              r-chron))
-    (home-page "http://www.unstarched.net")
+    (home-page "https://github.com/alexiosg/rugarch")
     (synopsis "Univariate GARCH Models")
     (description
      "ARFIMA, in-mean, external regressors and various GARCH flavors, with methods for
@@ -50963,42 +50963,45 @@ parameter.")
 (define-public r-ratesci
   (package
     (name "r-ratesci")
-    (version "0.5.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ratesci" version))
        (sha256
-        (base32 "0q2n2ijfwp8dh6p2ca7szl06az4h646bip0vgr9cb015jww1v30q"))))
+        (base32 "1wfibl1g2wckc6pa5npcqjaa79z41szc8x2sx5q0wsyksalydbkw"))))
     (properties `((upstream-name . "ratesci")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-polynom))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/petelaud/ratesci")
     (synopsis
-     "Confidence Intervals for Comparisons of Binomial or Poisson Rates")
+     "Confidence Intervals and Tests for Comparisons of Binomial Proportions or Poisson Rates")
     (description
-     "Computes confidence intervals for the rate (or risk) difference ('RD') or rate
-ratio (or relative risk, RR') for binomial proportions or Poisson rates, or for
-odds ratio ('OR', binomial only).  Also confidence intervals for a single
-binomial or Poisson rate, and intervals for matched pairs.  Includes
-skewness-corrected asymptotic score ('SCAS') methods, which have been developed
-in Laud (2017) <doi:10.1002/pst.1813> from Miettinen & Nurminen (1985)
-<doi:10.1002/sim.4780040211> and Gart & Nam (1988) <doi:10.2307/2531848>.  The
-same score produces hypothesis tests analogous to the test for binomial RD and
-RR by Farrington & Manning (1990) <doi:10.1002/sim.4780091208>, or the
-@code{McNemar} test for paired data.  The package also includes MOVER methods
-(Method Of Variance Estimates Recovery) for all contrasts, derived from the
-Newcombe method but with options to use equal-tailed intervals in place of the
-Wilson score method, and generalised for Bayesian applications incorporating
-prior information.  So-called exact methods for strictly conservative coverage
-are approximated using continuity corrections, and the amount of correction can
-be selected to avoid over-conservative coverage.  Also includes methods for
-stratified calculations (e.g. meta-analysis), either assuming fixed effects
-(matching the CMH test) or incorporating stratum heterogeneity.")
-    (license license:gpl3)))
+     "Computes confidence intervals for binomial or Poisson rates and their
+differences or ratios.  Including the rate (or risk) difference ('RD') or rate
+ratio (or relative risk, RR') for binomial proportions or Poisson rates, and
+odds ratio ('OR', binomial only).  Also confidence intervals for RD, RR or OR
+for paired binomial data, and estimation of a proportion from clustered binomial
+data.  Includes skewness-corrected asymptotic score ('SCAS') methods, which have
+been developed in Laud (2017) <doi:10.1002/pst.1813> from Miettinen and Nurminen
+(1985) <doi:10.1002/sim.4780040211> and Gart and Nam (1988)
+<doi:10.2307/2531848>, and in Laud (2025, under review) for paired proportions.
+The same score produces hypothesis tests that are improved versions of the
+non-inferiority test for binomial RD and RR by Farrington and Manning (1990)
+<doi:10.1002/sim.4780091208>, or a generalisation of the @code{McNemar} test for
+paired data.  The package also includes MOVER methods (Method Of Variance
+Estimates Recovery) for all contrasts, derived from the Newcombe method but with
+options to use equal-tailed intervals in place of the Wilson score method, and
+generalised for Bayesian applications incorporating prior information.
+So-called exact methods for strictly conservative coverage are approximated
+using continuity adjustments, and the amount of adjustment can be selected to
+avoid over-conservative coverage.  Also includes methods for stratified
+calculations (e.g. meta-analysis), either with fixed effect assumption (matching
+the CMH test) or incorporating stratum heterogeneity.")
+    (license license:gpl3+)))
 
 (define-public r-raters
   (package

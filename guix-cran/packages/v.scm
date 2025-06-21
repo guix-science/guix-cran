@@ -2217,13 +2217,13 @@ et al. (2009) \"A Heuristic for Nonlinear Global Optimization\"
 (define-public r-vmsae
   (package
     (name "r-vmsae")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vmsae" version))
        (sha256
-        (base32 "17rv6xvhdkglyldk69kva84fk2fs99qvmv5r5m0vyw623mc3cd2s"))))
+        (base32 "0indwpmqz1yv50h8i642wl2lkx2dzgs0hm51p5s31iw4ywyd8nya"))))
     (properties `((upstream-name . "vmsae")))
     (build-system r-build-system)
     (arguments

@@ -12217,13 +12217,13 @@ gene/region.")
 (define-public r-lgrextra
   (package
     (name "r-lgrextra")
-    (version "0.0.9")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lgrExtra" version))
        (sha256
-        (base32 "1qjm6pz7s2nhx78cgc9si2mfcrqimpv2i11gqiznfxcy6rq2n3lp"))))
+        (base32 "0xxdv6prn6m002ydn30zx7ya2v41xc5wmxirrkkpida8h2bw0il2"))))
     (properties `((upstream-name . "lgrExtra")))
     (build-system r-build-system)
     (arguments

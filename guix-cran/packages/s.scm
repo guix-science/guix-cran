@@ -21664,13 +21664,13 @@ spatially generated data.")
 (define-public r-spphpr
   (package
     (name "r-spphpr")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spphpr" version))
        (sha256
-        (base32 "0z583awsx0ickcx3mag7bm9i9a967xh3d131cd7hpww10nj8y4sx"))))
+        (base32 "0vzdn07gi9dp8pdzh1sllfkj2lsddw2wswami3ifj9lk9x631sqq"))))
     (properties `((upstream-name . "spphpr")))
     (build-system r-build-system)
     (arguments
@@ -43124,13 +43124,13 @@ enough for use in large-scale data analysis projects.")
 (define-public r-simple-regression
   (package
     (name "r-simple-regression")
-    (version "0.2.3")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIMPLE.REGRESSION" version))
        (sha256
-        (base32 "177y5dha519hkxj2jpwlq5iab586mb5jw8x5qcfxd4r2bpk6h7k0"))))
+        (base32 "1dl59gsf5p3kkafws6v4rk7vldskia5pji8qd9pv5p9ds96nivsx"))))
     (properties `((upstream-name . "SIMPLE.REGRESSION")))
     (build-system r-build-system)
     (arguments
@@ -43150,7 +43150,9 @@ interactions.  The output for some functions includes Bayes Factors and, if
 requested, regression coefficients from Bayesian Markov Chain Monte Carlo
 analyses.  There are numerous options for model plots.  The
 REGIONS_OF_SIGNIFICANCE function also provides Johnson-Neyman regions of
-significance and plots of interactions for both lm and lme models.")
+significance and plots of interactions for both lm and lme models.  There is
+also a function for partial and semipartial correlations and a function for
+conducting Cohen's set correlation analyses.")
     (license license:gpl2+)))
 
 (define-public r-simplanonym
@@ -62736,13 +62738,13 @@ cells.")
 (define-public r-scstability
   (package
     (name "r-scstability")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scStability" version))
        (sha256
-        (base32 "17j5pv8xad6mqqchva4b8dwrcsincx2m29bw77qg6imb7qiy7z04"))))
+        (base32 "0114ri25p8v1ycwb1akn4db53xzrv0cvhp0jjq947nz2zqy2rmpb"))))
     (properties `((upstream-name . "scStability")))
     (build-system r-build-system)
     (arguments

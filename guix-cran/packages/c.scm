@@ -18600,13 +18600,13 @@ of unbiased estimation of variances of U-statistics.")
 (define-public r-confintrob
   (package
     (name "r-confintrob")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "confintROB" version))
        (sha256
-        (base32 "13fbq4zxs90sy49c55b9i2i8yq3g3p4p45cx30rs7yrb3610zkfb"))))
+        (base32 "1krp73kh3zjijm6rgp5ly7vrcqn1z4z46zzvs0dw0dkwmm40z3yh"))))
     (properties `((upstream-name . "confintROB")))
     (build-system r-build-system)
     (arguments
@@ -36918,20 +36918,20 @@ function of unit characteristics variables.")
 (define-public r-chnosz
   (package
     (name "r-chnosz")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CHNOSZ" version))
        (sha256
-        (base32 "1iwg6pfnkq5ap0p3nscadfx6fyakvvjgmgx2wkva65bgkbhs6x9v"))))
+        (base32 "0jsf52sy3n1vk04l75lkw8cjphiy8qcwfzcgc16m80ybydc09crs"))))
     (properties `((upstream-name . "CHNOSZ")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr gfortran))
-    (home-page "https://www.chnosz.net/")
+    (home-page "https://chnosz.net/")
     (synopsis "Thermodynamic Calculations and Diagrams for Geochemistry")
     (description
      "An integrated set of tools for thermodynamic calculations in aqueous
@@ -37636,13 +37636,13 @@ package.")
 (define-public r-chevron
   (package
     (name "r-chevron")
-    (version "0.2.11")
+    (version "0.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chevron" version))
        (sha256
-        (base32 "0vly5cpwknn41kf5lm42flrzv7f5q566cc38bn157dq4jlm46pij"))))
+        (base32 "1pmhsz5naa71i90852nx3fr36q3wz97w0y3bg4ww62n96i04hplg"))))
     (properties `((upstream-name . "chevron")))
     (build-system r-build-system)
     (arguments

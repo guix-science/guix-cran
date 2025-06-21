@@ -13692,13 +13692,13 @@ Definitions can be provided inline or in a separate file.")
 (define-public r-glossa
   (package
     (name "r-glossa")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glossa" version))
        (sha256
-        (base32 "08mywjr1y3v64v2ah5ln1ck4qr340rb8lmir2r9hzc4cmyj2inri"))))
+        (base32 "06f5ql1kda0xzmqg3x0d51lm72xa6s5ynm1h8xsss6ydv44nxhpz"))))
     (properties `((upstream-name . "glossa")))
     (build-system r-build-system)
     (arguments
@@ -13717,7 +13717,6 @@ Definitions can be provided inline or in a separate file.")
                              r-mcp
                              r-markdown
                              r-leaflet
-                             r-jsonlite
                              r-htmltools
                              r-ggplot2
                              r-geothinner
@@ -13725,7 +13724,8 @@ Definitions can be provided inline or in a separate file.")
                              r-dplyr
                              r-dbarts
                              r-bs4dash
-                             r-blockcv))
+                             r-blockcv
+                             r-automap))
     (home-page "https://github.com/iMARES-group/glossa")
     (synopsis
      "User-Friendly 'shiny' App for Bayesian Species Distribution Models")
@@ -21358,13 +21358,13 @@ system.")
 (define-public r-gghourglass
   (package
     (name "r-gghourglass")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gghourglass" version))
        (sha256
-        (base32 "1ymn39yll2hrdpf051xkbi9qs07xiv8gqp909cm8r6fsy0v68kmx"))))
+        (base32 "00fi8vnzkqhd2kb5vixggaxmgyjgr4dp27zfmxnbjjyndg8zcs5g"))))
     (properties `((upstream-name . "gghourglass")))
     (build-system r-build-system)
     (arguments
@@ -25573,6 +25573,41 @@ Donegan (2022) <doi:10.21105/joss.04716>; Donegan, Chun and Hughes (2020)
 <doi:10.1016/j.sste.2019.100301>.")
     (license license:gpl3+)))
 
+(define-public r-geospt
+  (package
+    (name "r-geospt")
+    (version "1.0-6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geospt" version))
+       (sha256
+        (base32 "1x10yqhi64wssl5z91j7i0cgmabwynf797sjmnnh24p2b4zhm3w0"))))
+    (properties `((upstream-name . "geospt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-teachingdemos
+                             r-sp
+                             r-sgeostat
+                             r-plyr
+                             r-minqa
+                             r-mass
+                             r-gstat
+                             r-gsl
+                             r-genalg
+                             r-fields))
+    (home-page "https://github.com/amsantac/geospt")
+    (synopsis
+     "Geostatistical Analysis and Design of Optimal Spatial Sampling Networks")
+    (description
+     "Estimation of the variogram through trimmed mean, radial basis functions
+(optimization, prediction and cross-validation), summary statistics from
+cross-validation, pocket plot, and design of optimal sampling networks through
+sequential and simultaneous points methods.")
+    (license license:gpl2+)))
+
 (define-public r-geospark
   (package
     (name "r-geospark")
@@ -28363,13 +28398,13 @@ parameters from any standard generalised linear model that may be fit by the
 (define-public r-genomeadmixr
   (package
     (name "r-genomeadmixr")
-    (version "2.1.11")
+    (version "2.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenomeAdmixR" version))
        (sha256
-        (base32 "1d4hg6z8cmsxyqx7kb6323hfcn3rb3lmi062752x86jfbzf0rvqr"))))
+        (base32 "13qfbdm61nz8dn8c2knxzxkmq6x3hsiix3lp47q8vbj9k84rb9y3"))))
     (properties `((upstream-name . "GenomeAdmixR")))
     (build-system r-build-system)
     (arguments
@@ -29189,13 +29224,13 @@ Dalthorp, et al. (2018) <doi:10.3133/tm7A2>.")
 (define-public r-geneslope
   (package
     (name "r-geneslope")
-    (version "0.38.2")
+    (version "0.38.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geneSLOPE" version))
        (sha256
-        (base32 "08fbrssj03ak6xqm9fmb9v6ir7229qds891088wznvg58k81yslv"))))
+        (base32 "0qrij0jmd9p0chf5vs4clp6098d93w8slj46d43c2g0gc1d3p6vp"))))
     (properties `((upstream-name . "geneSLOPE")))
     (build-system r-build-system)
     (arguments
@@ -29208,12 +29243,9 @@ Dalthorp, et al. (2018) <doi:10.3133/tm7A2>.")
     (description
      "Genome-wide association study (GWAS) performed with SLOPE, short for Sorted
 L-One Penalized Estimation, a method for estimating the vector of coefficients
-in a linear model.  In the first step of GWAS, single nucleotide polymorphisms
-(SNPs) are clumped according to their correlations and distances.  Then, SLOPE
-is performed on the data where each clump has one representative.  Malgorzata
-Bogdan, Ewout van den Berg, Chiara Sabatti, Weijie Su and Emmanuel Candes (2014)
-\"SLOPE - Adaptive Variable Selection via Convex Optimization\"
-<@code{arXiv:1407.3824>}.")
+in linear model.  In the first step of GWAS, SNPs are clumped according to their
+correlations and distances.  Then, SLOPE is performed on data where each clump
+has one representative.")
     (license license:gpl3)))
 
 (define-public r-geneset
@@ -30732,19 +30764,24 @@ quantitative trait locus studies.")
 (define-public r-gemini-r
   (package
     (name "r-gemini-r")
-    (version "0.13.1")
+    (version "0.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gemini.R" version))
        (sha256
-        (base32 "1ryb8hmdn36p33anlbxsgh4lqkwyg9qlyg97i5y5lmz81kbmfw6h"))))
+        (base32 "02jw12pi2n94y4bkv25cmckvsqp8h628frmq9l2cdrxbapfafb5z"))))
     (properties `((upstream-name . "gemini.R")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rstudioapi r-jsonlite r-httr2 r-cli r-base64enc))
+    (propagated-inputs (list r-rstudioapi
+                             r-knitr
+                             r-jsonlite
+                             r-httr2
+                             r-cli
+                             r-base64enc))
     (home-page "https://github.com/jhk0530/gemini.R")
     (synopsis "Interface for 'Google Gemini' API")
     (description
@@ -31500,13 +31537,13 @@ and Gotway (2004, <ISBN:9781584883227>) and Waller and Gotway (2004,
 (define-public r-ge
   (package
     (name "r-ge")
-    (version "0.4.8")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GE" version))
        (sha256
-        (base32 "1mhjkag4my8hbil62gy6rqgwck9p14dapdl52h17aidvjyiivlks"))))
+        (base32 "1ms4bbhj88kd83bkzsxvf06shmgnciw4mc4px82k9qjyj8fngbn5"))))
     (properties `((upstream-name . "GE")))
     (build-system r-build-system)
     (arguments
@@ -34852,13 +34889,13 @@ follows lineal regression structures.")
 (define-public r-gammafuncmodel
   (package
     (name "r-gammafuncmodel")
-    (version "4.0")
+    (version "5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gammaFuncModel" version))
        (sha256
-        (base32 "0r16ni3wcdq1z26lf4k14l5ax0ry95vyj07vsdn270wh10b1hi6m"))))
+        (base32 "1593lfbbnrai8amkqqmy6gpm7xg0yq4ndvxi877zz972542fnsv9"))))
     (properties `((upstream-name . "gammaFuncModel")))
     (build-system r-build-system)
     (arguments

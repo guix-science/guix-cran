@@ -20064,13 +20064,13 @@ Hoffelder et al.,2015, Suarez-Sharp et al., 2020).")
 (define-public r-ednajoint
   (package
     (name "r-ednajoint")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eDNAjoint" version))
        (sha256
-        (base32 "1090bnfpkkp6qlb4hzhajl4l8p96swxfqk2c0vra2ky3gdqr3nhg"))))
+        (base32 "041r5qa5qf5bb155h0yns3siy06j4igr3wylqkdga6bmfkdfz8c1"))))
     (properties `((upstream-name . "eDNAjoint")))
     (build-system r-build-system)
     (arguments
@@ -20103,7 +20103,7 @@ replicated @code{eDNA} detection/nondetection data via polymerase chain reaction
 (i.e., PCR or @code{qPCR}) from multiple survey locations.  Estimated parameters
 include probability of a false positive @code{eDNA} detection, a site-level
 covariates that scale the sensitivity of @code{eDNA} surveys relative to
-traditional surveys, and catchability coefficients for traditional gear types.
+traditional surveys, and gear scaling coefficients for traditional gear types.
 Models are implemented with a Bayesian framework (Markov chain Monte Carlo)
 using the Stan probabilistic programming language.")
     (license license:gpl3)))

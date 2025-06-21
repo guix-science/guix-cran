@@ -21308,13 +21308,13 @@ transformations to amplitude-frequency domain.")
 (define-public r-descide
   (package
     (name "r-descide")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DeSciDe" version))
        (sha256
-        (base32 "17y9lzfpnq0ndbq68c6drm193pr7d5xwcpcjd10w2chx72h5hzi4"))))
+        (base32 "1qh94kgqqw2vjs0cgrnp2048jk0pzlz8dcz8h68df3pmnga4b32g"))))
     (properties `((upstream-name . "DeSciDe")))
     (build-system r-build-system)
     (arguments

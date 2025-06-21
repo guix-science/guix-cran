@@ -22766,39 +22766,6 @@ April 2022.  Available at: <@code{arXiv:2007.14900>} [stat.ME], July 2020] and
 Bayesian Context Trees <@code{arXiv:2203.04341>} [stat.ME], March 2022].")
     (license license:gpl2+)))
 
-(define-public r-bcsub
-  (package
-    (name "r-bcsub")
-    (version "0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BCSub" version))
-       (sha256
-        (base32 "0c8dlxsx23qfyygmajg2amj78ax01kb3808d9hvy7g3hkgp2i2fp"))))
-    (properties `((upstream-name . "BCSub")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-nfactors r-mcclust
-                             r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=BCSub")
-    (synopsis
-     "Bayesian Semiparametric Factor Analysis Model for Subtype Identification (Clustering)")
-    (description
-     "Gene expression profiles are commonly utilized to infer disease subtypes and
-many clustering methods can be adopted for this task.  However, existing
-clustering methods may not perform well when genes are highly correlated and
-many uninformative genes are included for clustering.  To deal with these
-challenges, we develop a novel clustering method in the Bayesian setting.  This
-method, called BCSub, adopts an innovative semiparametric Bayesian factor
-analysis model to reduce the dimension of the data to a few factor scores for
-clustering.  Specifically, the factor scores are assumed to follow the Dirichlet
-process mixture model in order to induce clustering.")
-    (license license:gpl2)))
-
 (define-public r-bcrypt
   (package
     (name "r-bcrypt")

@@ -13500,13 +13500,13 @@ such as Cochran's \"Sampling Techniques\"; see the user's guide for references."
 (define-public r-pprof
   (package
     (name "r-pprof")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pprof" version))
        (sha256
-        (base32 "1i5vf2815gli269jj5y2b181mjv1spr7q5ybnk876nvry4g807lr"))))
+        (base32 "1dvx2qr3vqwhzykp6l86wprrsk8q82pm5cmgqxc6ml2hxc6qf9sf"))))
     (properties `((upstream-name . "pprof")))
     (build-system r-build-system)
     (arguments
@@ -22603,13 +22603,13 @@ the base graphics plotting tools; and manipulate irregular polygons.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "1rhw5d97asw4qkqcbgb7xlgax4xfwi3dzwfnyf0mxb4wqcl1aybl"))))
+        (base32 "0vk96g0hlzsa56162wz16mdvcyi66fvcsvz9msjkc63fhn8jzsa3"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments
@@ -34399,6 +34399,39 @@ Y. (2024).  L1âPenalized Multinomial Regression: Estimation, Inference, and
 Prediction, With an Application to Risk Factor Identification for Different
 Dementia Subtypes.  Statistics in Medicine, 43(30), 5711-5747.\".")
     (license license:gpl2)))
+
+(define-public r-pems-utils
+  (package
+    (name "r-pems-utils")
+    (version "0.3.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pems.utils" version))
+       (sha256
+        (base32 "1c255kw6ljmn7nbj6qwmb7jvnzcxvj3vw7chkplbmfsza0ym555z"))))
+    (properties `((upstream-name . "pems.utils")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-loa
+                             r-lattice
+                             r-ggplot2
+                             r-dplyr
+                             r-baseline))
+    (home-page "http://pems.r-forge.r-project.org/")
+    (synopsis
+     "Portable Emissions (and Other Mobile) Measurement System Utilities")
+    (description
+     "Utility functions for the handling, analysis and visualisation of data from
+portable emissions measurement systems ('PEMS') and other similar mobile
+activity monitoring devices.  The package includes a dedicated pems data class
+that manages many of the quality control, unit handling and data archiving
+issues that can hinder efforts to standardise PEMS research.")
+    (license license:gpl2+)))
 
 (define-public r-pempi
   (package

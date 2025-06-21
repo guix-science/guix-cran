@@ -3369,13 +3369,13 @@ Area Under Minimum.")
 (define-public r-auk
   (package
     (name "r-auk")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "auk" version))
        (sha256
-        (base32 "18kkbvkrv1bqmz46hb5mmwy5mc5x5wja424zjwzp45n0syi3l6ax"))))
+        (base32 "15ganiamcg1adppqf6gxriacm3wspqi796m0iigxzfm2q5imfmam"))))
     (properties `((upstream-name . "auk")))
     (build-system r-build-system)
     (arguments
@@ -19001,18 +19001,19 @@ Solution - with two normalizations).  This method is described in Souza et al.
 (define-public r-ahptools
   (package
     (name "r-ahptools")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AHPtools" version))
        (sha256
-        (base32 "053lk31xsv4hipah0px5xpxyd0s798pq08qpcynygkf84hjja2x0"))))
+        (base32 "1mxaj86gnyi3cbwj3nh8pv4shc1sihpdaaxj7f7ir08dn894w6gy"))))
     (properties `((upstream-name . "AHPtools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-readxl r-data-tree))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=AHPtools")
     (synopsis "Consistency in the Analytic Hierarchy Process")

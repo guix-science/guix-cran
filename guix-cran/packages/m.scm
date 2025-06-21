@@ -25724,42 +25724,6 @@ force selection of the same variables across multiply imputed data.  miselect
 also provides cross validated variants of these methods.")
     (license license:gpl3)))
 
-(define-public r-miscmetabar
-  (package
-    (name "r-miscmetabar")
-    (version "0.14.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MiscMetabar" version))
-       (sha256
-        (base32 "15s98akyxb48glqzkhm8wbxd3p36pwqydnzk218lhmyqx28fqin1"))))
-    (properties `((upstream-name . "MiscMetabar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-purrr
-                             r-phyloseq
-                             r-lifecycle
-                             r-ggplot2
-                             r-dplyr
-                             r-dada2
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/adrientaudiere/MiscMetabar")
-    (synopsis "Miscellaneous Functions for Metabarcoding Analysis")
-    (description
-     "Facilitate the description, transformation, exploration, and reproducibility of
-metabarcoding analyses. @code{MiscMetabar} is mainly built on top of the
-phyloseq', dada2 and targets R packages.  It helps to build reproducible and
-robust bioinformatics pipelines in R. @code{MiscMetabar} makes ecological
-analysis of alpha and beta-diversity easier, more reproducible and more powerful
-by integrating a large number of tools.  Important features are described in
-TaudiÃ¨re A. (2023) <doi:10.21105/joss.06038>.")
-    (license license:agpl3)))
-
 (define-public r-miscmath
   (package
     (name "r-miscmath")
@@ -28063,13 +28027,13 @@ Perederiy, V. (2017) <doi:10.48550/@code{arXiv.1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.4.5")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "0b9qr64ff7r14pvvxlfs7dc54llrx9q0riziyz272qwbxdaq9raw"))))
+        (base32 "14dnkip86ag0h2abjj5dlbfqi25sgdz3lw4q0xc62f684h9f0hkw"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (arguments
@@ -28077,14 +28041,12 @@ Perederiy, V. (2017) <doi:10.48550/@code{arXiv.1708.00062>}.")
       #:tests? #f))
     (propagated-inputs (list r-purrr
                              r-manynet
-                             r-ggplot2
                              r-generics
                              r-future
                              r-furrr
                              r-dplyr))
     (home-page "https://stocnet.github.io/migraph/")
-    (synopsis
-     "Univariate and Multivariate Tests for Multimodal and Other Networks")
+    (synopsis "Inferential Methods for Multimodal and Other Networks")
     (description
      "This package provides a set of tools for testing networks.  It includes
 functions for univariate and multivariate conditional uniform graph and
@@ -45495,13 +45457,13 @@ estimation.")
 (define-public r-massprops
   (package
     (name "r-massprops")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "massProps" version))
        (sha256
-        (base32 "178f4rvlwdp4nl9jy47j12b2mj23dlsx06prkg7l4anf7283vqq5"))))
+        (base32 "13pvpi9ifbmb1m52mfyk41jdmwy8csf9rbs5i6bl05j6sv53cjw5"))))
     (properties `((upstream-name . "massProps")))
     (build-system r-build-system)
     (arguments
@@ -47636,19 +47598,26 @@ re-labelling categorical variables.")
 (define-public r-mapperalgo
   (package
     (name "r-mapperalgo")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MapperAlgo" version))
        (sha256
-        (base32 "0vgvy9cqznd9xkcrw92a78wqlff6sny89jlahyn0nk67cn8jn02k"))))
+        (base32 "1ardgaf6pji7r106j8lxynnvl1xygf7cxqcv1nwwri7afqh6hxxv"))))
     (properties `((upstream-name . "MapperAlgo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-foreach r-doparallel))
+    (propagated-inputs (list r-tidygraph
+                             r-networkd3
+                             r-igraph
+                             r-htmlwidgets
+                             r-ggraph
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel))
     (home-page "https://github.com/kennywang112/MapperAlgo/")
     (synopsis "Topological Data Analysis: Mapper Algorithm")
     (description
