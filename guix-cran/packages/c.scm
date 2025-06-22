@@ -51,13 +51,13 @@
 (define-public r-czso
   (package
     (name "r-czso")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "czso" version))
        (sha256
-        (base32 "0hsml601swdig8ky210c8w3n2zfgn3f14ai9l43ni1iplkcpcdxi"))))
+        (base32 "1lk0i2dgcaqhslg9s1g5s4b7d968bj96hb7hb8z9yxjbbw1lxgdh"))))
     (properties `((upstream-name . "czso")))
     (build-system r-build-system)
     (arguments
@@ -3277,20 +3277,19 @@ the number of individuals is large.  For the main ctsem package, see
 (define-public r-ctsem
   (package
     (name "r-ctsem")
-    (version "3.10.2")
+    (version "3.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctsem" version))
        (sha256
-        (base32 "03wvjsmsgpchh1nm0xxfyv707g768wgsfdshpmm16c5adq3pn987"))))
+        (base32 "12539acina295jariicdskk33p16f5v4mrs85yd2mv97ai4y0szq"))))
     (properties `((upstream-name . "ctsem")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
-                             r-statmod
                              r-stanheaders
                              r-rstantools
                              r-rstan
@@ -3298,6 +3297,7 @@ the number of individuals is large.  For the main ctsem package, see
                              r-rcppeigen
                              r-rcpp
                              r-plyr
+                             r-parallelly
                              r-mvtnorm
                              r-mize
                              r-matrix

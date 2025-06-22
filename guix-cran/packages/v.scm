@@ -8008,13 +8008,13 @@ package.  See Kemal DinÃ§er DingeÃ§ & Wolfgang HÃ¶rmann (2012)
 (define-public r-varoc
   (package
     (name "r-varoc")
-    (version "0.2.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "varoc" version))
        (sha256
-        (base32 "034bycqwlz23rm2hm4i1qpqs1s74mk5axv965h09xj7yzvy9qjkm"))))
+        (base32 "0ndkvggr86ynrzj4xh721qmif3xd9q56ah95jpy9m3ixjbdvy0jx"))))
     (properties `((upstream-name . "varoc")))
     (build-system r-build-system)
     (arguments
@@ -8025,9 +8025,8 @@ package.  See Kemal DinÃ§er DingeÃ§ & Wolfgang HÃ¶rmann (2012)
     (synopsis "Value Added Receiver Operating Characteristics Curve")
     (description
      "This package provides a continuous version of the receiver operating
-characteristics (ROC) curve to visualize and assess the classification and
-continuity performances of biomarkers, diagnostic tests, or risk prediction
-models.")
+characteristics (ROC) curve to assess both classification and continuity
+performances of biomarkers, diagnostic tests, or risk prediction models.")
     (license license:gpl2+)))
 
 (define-public r-varjmcm

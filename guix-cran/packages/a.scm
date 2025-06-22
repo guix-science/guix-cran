@@ -21429,13 +21429,13 @@ the reporting side of the Google Adwords API.")
 (define-public r-adwave
   (package
     (name "r-adwave")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adwave" version))
        (sha256
-        (base32 "11iy50ng0zxvwsvdsvx262j8zgqaai308lp5is47az7xzvk57mx7"))))
+        (base32 "1cg04xizy3rp5r0iyhyf8mqmn2jjzs9q9k5d4npyf9jzr0wb5jya"))))
     (properties `((upstream-name . "adwave")))
     (build-system r-build-system)
     (arguments

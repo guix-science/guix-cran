@@ -9147,13 +9147,13 @@ to their API.")
 (define-public r-oneinfl
   (package
     (name "r-oneinfl")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oneinfl" version))
        (sha256
-        (base32 "05bymyrvd8a6wxdspd9640m7gjgli0gzasx6vyga64g6wcddf4b5"))))
+        (base32 "02j435ys1yy579nhd32sgakwvc8yv089ml9lrqgkrfs4v6jyc40d"))))
     (properties `((upstream-name . "oneinfl")))
     (build-system r-build-system)
     (arguments

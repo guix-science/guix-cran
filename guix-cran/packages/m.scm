@@ -2193,13 +2193,13 @@ future and making them easily accessible to users.")
 (define-public r-mverse
   (package
     (name "r-mverse")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mverse" version))
        (sha256
-        (base32 "0pd05j0g7fpn0yb8mkcjwymzpjpl40lcq5ag79sl1ihpw5kwh8s8"))))
+        (base32 "0wbdb9nfjrn3pca3x3gr03lnhsvnkksr36hl4iq7rp9mpab6pw7n"))))
     (properties `((upstream-name . "mverse")))
     (build-system r-build-system)
     (arguments
@@ -25724,6 +25724,42 @@ force selection of the same variables across multiply imputed data.  miselect
 also provides cross validated variants of these methods.")
     (license license:gpl3)))
 
+(define-public r-miscmetabar
+  (package
+    (name "r-miscmetabar")
+    (version "0.14.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MiscMetabar" version))
+       (sha256
+        (base32 "00kx28fhzn4wswf87zyqhvw6aq5b43aazwdxchnycvayd5wn5hxv"))))
+    (properties `((upstream-name . "MiscMetabar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-purrr
+                             r-phyloseq
+                             r-lifecycle
+                             r-ggplot2
+                             r-dplyr
+                             r-dada2
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/adrientaudiere/MiscMetabar")
+    (synopsis "Miscellaneous Functions for Metabarcoding Analysis")
+    (description
+     "Facilitate the description, transformation, exploration, and reproducibility of
+metabarcoding analyses. @code{MiscMetabar} is mainly built on top of the
+phyloseq', dada2 and targets R packages.  It helps to build reproducible and
+robust bioinformatics pipelines in R. @code{MiscMetabar} makes ecological
+analysis of alpha and beta-diversity easier, more reproducible and more powerful
+by integrating a large number of tools.  Important features are described in
+TaudiÃ¨re A. (2023) <doi:10.21105/joss.06038>.")
+    (license license:agpl3)))
+
 (define-public r-miscmath
   (package
     (name "r-miscmath")
@@ -48595,13 +48631,13 @@ visualizing networks with sensible defaults.")
 (define-public r-manymome
   (package
     (name "r-manymome")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymome" version))
        (sha256
-        (base32 "036pvkwh4wqsjmqk3bjsr1q08cz5yd10lwbjhmw9b3zg801d6yxk"))))
+        (base32 "004h739ypci56sbqq2yamw2q3653lws5i5wclsridv9j5fnm3fdv"))))
     (properties `((upstream-name . "manymome")))
     (build-system r-build-system)
     (arguments

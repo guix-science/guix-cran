@@ -8036,13 +8036,13 @@ linear models.")
 (define-public r-rsd
   (package
     (name "r-rsd")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSD" version))
        (sha256
-        (base32 "1ky0mn5cissr3n19yi5nadhgs8gxznygwhq0fc7m8z7yz6s9b2d3"))))
+        (base32 "0rqhg2bf3pbvv09bpywy480psqdhy0z85n20gba0rvg72n1iq1ii"))))
     (properties `((upstream-name . "RSD")))
     (build-system r-build-system)
     (arguments
@@ -8050,7 +8050,7 @@ linear models.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr r-magrittr r-ggplot2 r-dplyr))
     (home-page "https://github.com/ShayanTohidi/RSD")
-    (synopsis "Compares Random Prospects using Stochastic Dominance")
+    (synopsis "Compares Random Distributions using Stochastic Dominance")
     (description
      "The Stochastic Dominance (SD) is the classical way of comparing two random
 prospects, using their distribution functions.  Almost Stochastic Dominance
@@ -26334,13 +26334,13 @@ Bukhovets A.G. (2012) <doi:10.1134/S0005117912020154>.")
 (define-public r-rifreg
   (package
     (name "r-rifreg")
-    (version "0.1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rifreg" version))
        (sha256
-        (base32 "053hlvx3yibiadzwjsv55qvysc0bkznzqk61rjwb23lyxvjbb3rq"))))
+        (base32 "1xkhscksf6kfkz6vcxph05n204madpxwh30lrwiilrwjlvm4v4hw"))))
     (properties `((upstream-name . "rifreg")))
     (build-system r-build-system)
     (arguments
@@ -57524,13 +57524,13 @@ interest for working with data.table objects are included.")
 (define-public r-r2dii-plot
   (package
     (name "r-r2dii-plot")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.plot" version))
        (sha256
-        (base32 "1mmyzhf5ry5a6gxvgpbgdh8rhz5n2rp0jlid0px9l5jq42zwpyn7"))))
+        (base32 "0bbd7vfwrgk3pyzg2vqhh2lm8yr04ssw9qjjkpqhxk3skdyq6ax0"))))
     (properties `((upstream-name . "r2dii.plot")))
     (build-system r-build-system)
     (arguments
@@ -57540,7 +57540,6 @@ interest for working with data.table objects are included.")
                              r-scales
                              r-rlang
                              r-r2dii-data
-                             r-magrittr
                              r-glue
                              r-ggrepel
                              r-ggplot2

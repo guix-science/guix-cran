@@ -338,13 +338,13 @@ application of these @code{AgNPs}.")
 (define-public r-syrup
   (package
     (name "r-syrup")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "syrup" version))
        (sha256
-        (base32 "1c4cmqhh7k5ykywjkrlz73sh0i43aqjbakg0gd0lz90vmjkin7jf"))))
+        (base32 "1a1r0gjq2kfcasn5yag6c2pi187gb70l5r91g6ryg0dg9jvfa4d9"))))
     (properties `((upstream-name . "syrup")))
     (build-system r-build-system)
     (arguments
@@ -37862,21 +37862,21 @@ the models implemented can be found at Aznar-Gimeno et al. (2021)
 (define-public r-slmetrics
   (package
     (name "r-slmetrics")
-    (version "0.3-3")
+    (version "0.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLmetrics" version))
        (sha256
-        (base32 "1djd664v7w2gj5p624irs2acfcfls0bb1k20zc87p47d2dfid9wl"))))
+        (base32 "1byrlbxrd5z41ym48kx5psqwj66jm35f2xpg8xqxh183gh6ydg15"))))
     (properties `((upstream-name . "SLmetrics")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp r-lattice))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-lattice))
     (native-inputs (list r-knitr))
-    (home-page "https://serkor1.github.io/SLmetrics/")
+    (home-page "https://slmetrics-docs.gitbook.io/v1")
     (synopsis "Machine Learning Performance Evaluation on Steroids")
     (description
      "Performance evaluation metrics for supervised and unsupervised machine learning,
@@ -54220,13 +54220,13 @@ described in Bass and Wallace (2024) <doi:10.1101/2024.09.24.24314276>.")
 (define-public r-sfdesign
   (package
     (name "r-sfdesign")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SFDesign" version))
        (sha256
-        (base32 "0xny6j6pa84y1h7pjsv6xylwnzpsd9s6mdz6mn0gcsk0zhi9s5bh"))))
+        (base32 "1m4q4wdqa2szm7rk1j9bhmgn0m1gxgllqr2inkaxxj8jb1qq6bhz"))))
     (properties `((upstream-name . "SFDesign")))
     (build-system r-build-system)
     (arguments
@@ -54245,7 +54245,8 @@ described in Bass and Wallace (2024) <doi:10.1101/2024.09.24.24314276>.")
      "Construct various types of space-filling designs, including Latin hypercube
 designs, clustering-based designs, maximin designs, maximum projection designs,
 and uniform designs (Joseph 2016 <doi:10.1080/08982112.2015.1100447>).  It also
-offers the option to optimize designs based on user-defined criteria.")
+offers the option to optimize designs based on user-defined criteria.  This work
+is supported by U.S. National Science Foundation grant DMS-2310637.")
     (license license:gpl2+)))
 
 (define-public r-sfdep

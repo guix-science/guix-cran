@@ -24935,13 +24935,13 @@ techniques for evaluate the seed germination process in ecophysiological studies
 (define-public r-gerefer
   (package
     (name "r-gerefer")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gerefer" version))
        (sha256
-        (base32 "10l4s44amz0pc9nmwh3j7bbysyn2rwfa6a95w3xpf6qdgjkxgfnw"))))
+        (base32 "1vnxwclsyclimrhdlvrdh05hp2h8fxz3k4xjayq9wasjz9vylw90"))))
     (properties `((upstream-name . "gerefer")))
     (build-system r-build-system)
     (arguments
@@ -25572,6 +25572,39 @@ Donegan (2022) <doi:10.21105/joss.04716>; Donegan, Chun and Hughes (2020)
 <doi:10.3390/ijerph18136856>; Morris et al. (2019)
 <doi:10.1016/j.sste.2019.100301>.")
     (license license:gpl3+)))
+
+(define-public r-geosptdb
+  (package
+    (name "r-geosptdb")
+    (version "1.0-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geosptdb" version))
+       (sha256
+        (base32 "0g12z3imw2x6xph0qi39kk3jr1drddjs82lf5hgsyb4v5ypb809x"))))
+    (properties `((upstream-name . "geosptdb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-statmatch
+                             r-sp
+                             r-minqa
+                             r-mass
+                             r-gsl
+                             r-geospt
+                             r-fields
+                             r-fd))
+    (home-page "https://cran.r-project.org/package=geosptdb")
+    (synopsis
+     "Spatio-Temporal Radial Basis Functions with Distance-Based Methods (Optimization, Prediction and Cross Validation)")
+    (description
+     "Spatio-temporal radial basis functions (optimization, prediction and
+cross-validation), summary statistics from cross-validation, Adjusting
+distance-based linear regression model and generation of the principal
+coordinates of a new individual from Gower's distance.")
+    (license license:gpl2+)))
 
 (define-public r-geospt
   (package

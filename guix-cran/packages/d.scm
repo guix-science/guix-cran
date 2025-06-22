@@ -32141,13 +32141,13 @@ available in Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
 (define-public r-daltoolbox
   (package
     (name "r-daltoolbox")
-    (version "1.2.707")
+    (version "1.2.717")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolbox" version))
        (sha256
-        (base32 "081kq2p6avkmdz00ivdzqx9qfl6grk3p2mjn3xw4dgivzmkn9mkp"))))
+        (base32 "057mdrwk03mlbvzn0rkg1vf77y37i5kbhhhclp1v04b1q8jaakj1"))))
     (properties `((upstream-name . "daltoolbox")))
     (build-system r-build-system)
     (arguments
@@ -32157,7 +32157,6 @@ available in Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
                              r-reshape
                              r-randomforest
                              r-nnet
-                             r-mlmetrics
                              r-ggplot2
                              r-forecast
                              r-fnn
