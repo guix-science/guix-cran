@@ -9500,13 +9500,13 @@ this package.")
 (define-public r-warehousetools
   (package
     (name "r-warehousetools")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "warehouseTools" version))
        (sha256
-        (base32 "1qw7rmr7jh61icbjq4fd3y02bkqamgq4np6k6fxb9kvzf09r7fs7"))))
+        (base32 "19qrx2271cqf5pyj77zvfj76aj2rg95l057wjzgf8p9cr92m15vr"))))
     (properties `((upstream-name . "warehouseTools")))
     (build-system r-build-system)
     (arguments

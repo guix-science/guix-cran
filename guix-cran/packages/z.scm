@@ -952,13 +952,13 @@ and configuration management for package developers.")
 (define-public r-zep
   (package
     (name "r-zep")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ZEP" version))
        (sha256
-        (base32 "0dvbfpx84rw4i6cacqw61fifbdxsg9516zkciapsiny93h17ajbk"))))
+        (base32 "043vlybpxyjczaq2i9s3gnrhdr5fll13d5g722h5brj8v7n4jn2z"))))
     (properties `((upstream-name . "ZEP")))
     (build-system r-build-system)
     (arguments

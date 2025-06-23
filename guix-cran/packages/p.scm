@@ -3347,13 +3347,13 @@ corpora, including Word2Vec <doi:10.48550/@code{arXiv.1301.3781>}, @code{GloVe}
 (define-public r-psychtools
   (package
     (name "r-psychtools")
-    (version "2.5.3")
+    (version "2.5.7.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychTools" version))
        (sha256
-        (base32 "1hyb14z0swdffm5mk1qbxg5dykhlw0ymgb5id9m7r5raprcxhg0x"))))
+        (base32 "1cdza3b6sp0n753vrqyzx0k8qxblsxx9zcnjm75r2gblm1hvkymd"))))
     (properties `((upstream-name . "psychTools")))
     (build-system r-build-system)
     (arguments
@@ -14514,13 +14514,13 @@ ISBN:9781138591622).  Further resources available at
 (define-public r-powersurvepi
   (package
     (name "r-powersurvepi")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powerSurvEpi" version))
        (sha256
-        (base32 "1p1fw4jq4rxc273hmycxf4bkqm6zmfw0jdy2s65jy10q37r53ial"))))
+        (base32 "0912ayscqgwmaym5p7a6mlggv77lhawg9rxa6a56n3fzx4cwi3ak"))))
     (properties `((upstream-name . "powerSurvEpi")))
     (build-system r-build-system)
     (arguments
@@ -29847,13 +29847,13 @@ bimbam', plink', snptest', @code{LiMMBo}').")
 (define-public r-phenotyper
   (package
     (name "r-phenotyper")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhenotypeR" version))
        (sha256
-        (base32 "1m5qpzxj15g41x6bk4cxv90p8n8ay9sbq0a9dapb8dlwc5iy2w42"))))
+        (base32 "1cs26fdrq4rbxahqkjarvxdhbzcrs0i9v7qpgb4yfsmcahm3jwyd"))))
     (properties `((upstream-name . "PhenotypeR")))
     (build-system r-build-system)
     (arguments

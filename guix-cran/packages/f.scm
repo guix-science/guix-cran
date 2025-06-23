@@ -11161,6 +11161,51 @@ estimating errors, calculating pairwise similarities, determining pairwise
 similarity loci, and generating a similarity matrix.")
     (license license:gpl3)))
 
+(define-public r-flsss
+  (package
+    (name "r-flsss")
+    (version "9.2.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FLSSS" version))
+       (sha256
+        (base32 "05siyr7kaw0z1khikaqy0i00sv6f7lm4dgyv0z1jp8r1lvxcx92j"))))
+    (properties `((upstream-name . "FLSSS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel r-rcpp))
+    (home-page "https://cran.r-project.org/package=FLSSS")
+    (synopsis "Mining Rigs for Problems in the Subset Sum Family")
+    (description
+     "Specialized solvers for combinatorial optimization problems in the Subset Sum
+family.  The solvers differ from the mainstream in the options of (i)
+restricting subset size, (ii) bounding subset elements, (iii) mining real-value
+multisets with predefined subset sum errors, (iv) finding one or more subsets in
+limited time.  A novel algorithm for mining the one-dimensional Subset Sum
+induced algorithms for the multi-Subset Sum and the multidimensional Subset Sum.
+ The multi-threaded framework for the latter offers exact algorithms to the
+multidimensional Knapsack and the Generalized Assignment problems.  Historical
+updates include (a) renewed implementation of the multi-Subset Sum,
+multidimensional Knapsack and Generalized Assignment solvers; (b) availability
+of bounding solution space in the multidimensional Subset Sum; (c) fundamental
+data structure and architectural changes for enhanced cache locality and better
+chance of SIMD vectorization; (d) option of mapping floating-point instance to
+compressed 64-bit integer instance with user-controlled precision loss, which
+could yield substantial speedup due to the dimension reduction and efficient
+compressed integer arithmetic via bit-manipulations; (e) distributed computing
+infrastructure for multidimensional subset sum; (f) arbitrary-precision
+zero-margin-of-error multidimensional Subset Sum accelerated by a simplified
+Bloom filter.  The package contains a copy of @code{xxHash} from
+<https://github.com/Cyan4973/@code{xxHash>}.  Package vignette
+(<doi:10.48550/@code{arXiv.1612.04484>}) detailed a few historical updates.
+Functions prefixed with aux (auxiliary) are independent implementations of
+published algorithms for solving optimization problems less relevant to Subset
+Sum.")
+    (license license:gpl3)))
+
 (define-public r-flsa
   (package
     (name "r-flsa")
@@ -21280,19 +21325,19 @@ Analysis <doi:10.1038/nbt.1614>.")
 (define-public r-fawr
   (package
     (name "r-fawr")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAwR" version))
        (sha256
-        (base32 "1x90wvp0w7fhid7i5160b4fiv4xn5mpvy33zjzy0mvqvp0yp8xf0"))))
+        (base32 "1flj639h2dad0bl2nx91lvm063mixrfdwn5dfsf5m6zxp84j3zmg"))))
     (properties `((upstream-name . "FAwR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mass r-lattice r-glpkapi))
+    (propagated-inputs (list r-mass r-lattice))
     (home-page "https://cran.r-project.org/package=FAwR")
     (synopsis "Functions and Datasets for \"Forest Analytics with R\"")
     (description
@@ -22983,13 +23028,13 @@ computing to reduce overall processing time.")
 (define-public r-fastjm
   (package
     (name "r-fastjm")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastJM" version))
        (sha256
-        (base32 "0h5kywvbwxd13ghgvfgx1sr7k4ywgk4c51xfpr8dvqig9nnvrav8"))))
+        (base32 "1rs76kaib5p0sy7cdjq0129wnclzqqn70ydbaq7qd3mpd51q7b6a"))))
     (properties `((upstream-name . "FastJM")))
     (build-system r-build-system)
     (arguments
@@ -23002,6 +23047,7 @@ computing to reduce overall processing time.")
                              r-rcpp
                              r-nlme
                              r-mass
+                             r-magrittr
                              r-dplyr
                              r-caret))
     (home-page "https://cran.r-project.org/package=FastJM")
@@ -23009,13 +23055,13 @@ computing to reduce overall processing time.")
      "Semi-Parametric Joint Modeling of Longitudinal and Survival Data")
     (description
      "Maximum likelihood estimation for the semi-parametric joint modeling of
-competing risks and longitudinal data applying customized linear scan
-algorithms, proposed by Li and colleagues (2022) <doi:10.1155/2022/1362913>.
-The time-to-event data is modelled using a (cause-specific) Cox proportional
-hazards regression model with time-fixed covariates.  The longitudinal outcome
-is modelled using a linear mixed effects model.  The association is captured by
-shared random effects.  The model is estimated using an Expectation Maximization
-algorithm.")
+competing risks and (multivariate) longitudinal data applying customized linear
+scan algorithms, proposed by Li and colleagues (2022)
+<doi:10.1155/2022/1362913>.  The time-to-event data is modelled using a
+(cause-specific) Cox proportional hazards regression model with time-fixed
+covariates.  The longitudinal outcome is modelled using a linear mixed effects
+model.  The association is captured by shared random effects.  The model is
+estimated using an Expectation Maximization algorithm.")
     (license license:gpl3+)))
 
 (define-public r-fastimputation

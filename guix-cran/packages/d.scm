@@ -32103,13 +32103,13 @@ stochastic disability-adjusted life year (DALY) calculation.")
 (define-public r-daltoolboxdp
   (package
     (name "r-daltoolboxdp")
-    (version "1.2.707")
+    (version "1.2.717")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolboxdp" version))
        (sha256
-        (base32 "1d6d0b80gxggjap8wzc639ckwm3h1fjjc0qgc3a2b7n4dxzc0qj1"))))
+        (base32 "0w0mg6sc3zr6cg3zrkj6w4k7q4s5bl8m6y1p24zv24bn53yiqiz3"))))
     (properties `((upstream-name . "daltoolboxdp")))
     (build-system r-build-system)
     (arguments

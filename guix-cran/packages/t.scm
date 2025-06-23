@@ -3350,13 +3350,13 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
 (define-public r-tspredit
   (package
     (name "r-tspredit")
-    (version "1.2.707")
+    (version "1.2.727")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tspredit" version))
        (sha256
-        (base32 "1j5sggf1qwcj0w6vnjjnba6zsgb31f0vdwqif9f1jbiq88l29y1l"))))
+        (base32 "18d6i1g7d482gjj92rqfkr8vs05rvscwkfz06f1rq69mqq8sk1gb"))))
     (properties `((upstream-name . "tspredit")))
     (build-system r-build-system)
     (arguments
@@ -20498,13 +20498,13 @@ automatically summarize the properties of the binned columns.")
 (define-public r-tidybde
   (package
     (name "r-tidybde")
-    (version "0.3.8")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyBdE" version))
        (sha256
-        (base32 "1ck1ah6nh6pa10x02iczllddnwzgff6qvwajrkkqri3jp8si9d0h"))))
+        (base32 "1z3887n9sc8j3mhvz1p0918vbjcc3inx2rksrszwkjvisa3vsv2l"))))
     (properties `((upstream-name . "tidyBdE")))
     (build-system r-build-system)
     (arguments
@@ -29943,13 +29943,13 @@ constructs beyond sentiment.")
 (define-public r-tarchives
   (package
     (name "r-tarchives")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tarchives" version))
        (sha256
-        (base32 "0yk60amdnhha36g919rr4d8h4laprdpd4ih699iacdzd1sakjm47"))))
+        (base32 "0bvi7wrq3nav50fbdhlrr245dr0xxkampasnnrqjbcv2pnbcw87w"))))
     (properties `((upstream-name . "tarchives")))
     (build-system r-build-system)
     (arguments

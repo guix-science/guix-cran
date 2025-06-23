@@ -4077,13 +4077,13 @@ those measures.")
 (define-public r-survregvb
   (package
     (name "r-survregvb")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survregVB" version))
        (sha256
-        (base32 "0mgj00hf2ll85dyb1ap0m45j641cij0qx3y843z607qlfsbiq00b"))))
+        (base32 "11d5c8rf5r84al64r65bxv6ai2ndsrpjw6iwl871yax310ibwmzg"))))
     (properties `((upstream-name . "survregVB")))
     (build-system r-build-system)
     (arguments
@@ -27835,13 +27835,13 @@ differential expression analysis using spatial mixed models.")
 (define-public r-spatialfusion
   (package
     (name "r-spatialfusion")
-    (version "0.7")
+    (version "0.7-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialfusion" version))
        (sha256
-        (base32 "0snrv92xrzfc2xrv937mwyng7xp6rgfhn61nhddbrkwfw5dw7vl5"))))
+        (base32 "07zckqfxx9ngdl514f6cl6n5z00dh5wdz4rcjz2srrgf9wa5nxpg"))))
     (properties `((upstream-name . "spatialfusion")))
     (build-system r-build-system)
     (arguments
@@ -67479,50 +67479,6 @@ N-gram models (Brants et al., 2007,
      "Generate Stochastic Branching Networks ('SBNs').  Used to model the branching
 structure of rivers.")
     (license license:expat)))
-
-(define-public r-sbmtrees
-  (package
-    (name "r-sbmtrees")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SBMTrees" version))
-       (sha256
-        (base32 "00mj0k4id9gqkyvf74h32yiw4k7jy53q5r7kk00k1clkf2dqkns1"))))
-    (properties `((upstream-name . "SBMTrees")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-sn
-                             r-rcppprogress
-                             r-rcppdist
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-nnet
-                             r-mvtnorm
-                             r-mice
-                             r-matrix
-                             r-lme4
-                             r-dplyr
-                             r-arm))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SBMTrees")
-    (synopsis
-     "Sequential Imputation with Bayesian Trees Mixed-Effects Models for Longitudinal Data")
-    (description
-     "This package implements a sequential imputation framework using Bayesian
-Mixed-Effects Trees ('SBMTrees') for handling missing data in longitudinal
-studies.  The package supports a variety of models, including non-linear
-relationships and non-normal random effects and residuals, leveraging Dirichlet
-Process priors for increased flexibility.  Key features include handling Missing
-at Random (MAR) longitudinal data, imputation of both covariates and outcomes,
-and generating posterior predictive samples for further analysis.  The
-methodology is designed for applications in epidemiology, biostatistics, and
-other fields requiring robust handling of missing data in longitudinal settings.")
-    (license license:gpl2)))
 
 (define-public r-sbmsplitmerge
   (package

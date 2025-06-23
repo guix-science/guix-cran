@@ -20304,13 +20304,13 @@ advances\".  Communications in Statistics--Theory and Methods, 52(16):
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "7.5")
+    (version "7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compositional" version))
        (sha256
-        (base32 "15h309pp13h4k571hwn707ij93a4f2cf91znm236y93dsmamkin7"))))
+        (base32 "0fzprvxvw8lw0xv138g4adhp10igfw740wfqlgsl1bhsk054nynf"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (arguments
