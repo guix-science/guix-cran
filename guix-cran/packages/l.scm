@@ -3720,19 +3720,19 @@ creating consensus loop datasets.")
 (define-public r-loopevd
   (package
     (name "r-loopevd")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loopevd" version))
        (sha256
-        (base32 "15l3kprp1yj3byciaijck6k957izypjfhfwmvpzvwnbvdrhb5dp4"))))
+        (base32 "1fa72qysz30l18jgr27kycwdwbxhh2jh4dsf58jkgl43fb8nsp1g"))))
     (properties `((upstream-name . "loopevd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra r-ncdf4 r-evd))
+    (propagated-inputs (list r-terra r-ncdf4 r-ismev r-evd))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=loopevd")
     (synopsis "Loop Functions for Extreme Value Distributions")
@@ -13126,6 +13126,40 @@ textbook of Tukey (1977) <ISBN: 978-0201076165>.")
 environmental variables.  Read Vilela & Villalobos (2015)
 <doi:10.1111/2041-210X.12401> for details.")
     (license license:gpl2)))
+
+(define-public r-letsherp
+  (package
+    (name "r-letsherp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "letsHerp" version))
+       (sha256
+        (base32 "001h53kixzx3vjiwn6ffm2ji40la3sf6kl1639ypgzfmk2bys6h5"))))
+    (properties `((upstream-name . "letsHerp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-pbmcapply
+                             r-pbapply
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/joao-svalencar/letsHerp")
+    (synopsis "An Interface to the Reptile Database")
+    (description
+     "This package provides tools to retrieve and summarize taxonomic information and
+synonymy data for reptile species using data scraped from The Reptile Database
+website (<https://reptile-database.reptarium.cz/>).  Outputs include clean and
+structured data frames useful for ecological, evolutionary, and conservation
+research.")
+    (license license:expat)))
 
 (define-public r-lestat
   (package

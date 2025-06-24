@@ -9559,13 +9559,13 @@ Geological Survey (USGS) Idaho National Laboratory Project Office.")
 (define-public r-inlatools
   (package
     (name "r-inlatools")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAtools" version))
        (sha256
-        (base32 "170qzxgwcqif5527g308ivjkj1cw97qva2xagp29cxwzb29y36y5"))))
+        (base32 "16261m87nj3s5lzpixbqafygn6sy2xnxyis5b2v85m4n5w8i5m0z"))))
     (properties `((upstream-name . "INLAtools")))
     (build-system r-build-system)
     (arguments

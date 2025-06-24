@@ -23416,13 +23416,13 @@ case <doi:10.2139/ssrn.4832834>.")
 (define-public r-fastdid
   (package
     (name "r-fastdid")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastdid" version))
        (sha256
-        (base32 "1rb3lvp9s5jj34643c5njsi16hl7q67hjvyzcfw1gxdrz46nv444"))))
+        (base32 "00rnsqpmfs5kbbxjyrlnjm3hz095yvbzfw1svk1811hbbvn2kycl"))))
     (properties `((upstream-name . "fastdid")))
     (build-system r-build-system)
     (arguments

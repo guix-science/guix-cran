@@ -368,13 +368,13 @@ and data on global economic and social issues.")
 (define-public r-owidapi
   (package
     (name "r-owidapi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "owidapi" version))
        (sha256
-        (base32 "14npr3nf4iy59182lpzqi81hq0j754mgqnj8qpkrk4jkg8g4vfm6"))))
+        (base32 "1xannxprp79z7i3gxhd9znwvfy3fq88932vmqfs9zxpgblm176q7"))))
     (properties `((upstream-name . "owidapi")))
     (build-system r-build-system)
     (arguments
@@ -6225,56 +6225,6 @@ method, see Wang & Mokhtarian (2024) <doi:10.1016/j.tra.2024.104072> or Chiburis
 & Lokshin (2007) <doi:10.1177/1536867X0700700202>.")
     (license license:gpl3+)))
 
-(define-public r-oppr
-  (package
-    (name "r-oppr")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "oppr" version))
-       (sha256
-        (base32 "1kyzrpr09fmx7rhbgwy5d1s8ggl7avcrs4vjb9s6m03w756zbb3a"))))
-    (properties `((upstream-name . "oppr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-viridislite
-                             r-uuid
-                             r-tidytree
-                             r-tibble
-                             r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-proto
-                             r-matrix
-                             r-magrittr
-                             r-lpsolveapi
-                             r-ggplot2
-                             r-cli
-                             r-assertthat
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://prioritizr.github.io/oppr/")
-    (synopsis "Optimal Project Prioritization")
-    (description
-     "This package provides a decision support tool for prioritizing conservation
-projects.  Prioritizations can be developed by maximizing expected feature
-richness, expected phylogenetic diversity, the number of features that meet
-persistence targets, or identifying a set of projects that meet persistence
-targets for minimal cost.  Constraints (e.g. lock in specific actions) and
-feature weights can also be specified to further customize prioritizations.
-After defining a project prioritization problem, solutions can be obtained using
-exact algorithms, heuristic algorithms, or random processes.  In particular, it
-is recommended to install the Gurobi optimizer (available from
-<https://www.gurobi.com>) because it can identify optimal solutions very
-quickly.  Finally, methods are provided for comparing different prioritizations
-and evaluating their benefits.  For more information, see Hanson et al. (2019)
-<doi:10.1111/2041-210X.13264>.")
-    (license license:gpl3)))
-
 (define-public r-opportunistic
   (package
     (name "r-opportunistic")
@@ -7524,40 +7474,6 @@ the JSON file.")
     (synopsis "Access the City of Toronto Open Data Portal")
     (description "Access data from the \"City of Toronto Open Data Portal\"
 (<https://open.toronto.ca>) directly from R.")
-    (license license:expat)))
-
-(define-public r-opendataformat
-  (package
-    (name "r-opendataformat")
-    (version "2.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "opendataformat" version))
-       (sha256
-        (base32 "0i14kfp48s1bjj0f2ksjgizxb4mlmqik78g0h0bs1zwdnrffhpsv"))))
-    (properties `((upstream-name . "opendataformat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zip
-                             r-xml2
-                             r-tibble
-                             r-magrittr
-                             r-jsonlite
-                             r-data-table
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/opendataformat/r-package-opendataformat")
-    (synopsis "Reading and Writing Open Data Format Files")
-    (description
-     "The Open Data Format (ODF) is a new, non-proprietary, multilingual, metadata
-enriched, and zip-compressed data format with metadata structured in the Data
-Documentation Initiative (DDI) Codebook standard.  This package allows reading
-and writing of data files in the Open Data Format (ODF) in R, and displaying
-metadata in different languages.  For further information on the Open Data
-Format, see <https://opendataformat.github.io/>.")
     (license license:expat)))
 
 (define-public r-opencv

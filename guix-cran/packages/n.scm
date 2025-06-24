@@ -11273,6 +11273,30 @@ data: Analysis of brain networks of patients with autism\"
 <doi:10.1111/rssc.12463>.")
     (license license:gpl3+)))
 
+(define-public r-neutrosurvey
+  (package
+    (name "r-neutrosurvey")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neutroSurvey" version))
+       (sha256
+        (base32 "16law3i9yzafcavm9swl6k68yvxgsn0ig3zb3cfimai00xssbcnd"))))
+    (properties `((upstream-name . "neutroSurvey")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-moments))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=neutroSurvey")
+    (synopsis "Neutrosophic Survey Data Analysis")
+    (description
+     "Apply neutrosophic regression type estimator and performs neutrosophic interval
+analysis including metric calculations for survey data.")
+    (license license:gpl3)))
+
 (define-public r-neutrostat
   (package
     (name "r-neutrostat")

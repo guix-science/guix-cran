@@ -31167,6 +31167,49 @@ number needed to treat, number needed to diagnose, and predictive summary index.
      "This package provides functions for calculating clinical significance.")
     (license license:gpl2+)))
 
+(define-public r-clinpubr
+  (package
+    (name "r-clinpubr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clinpubr" version))
+       (sha256
+        (base32 "0kz9z2cn33ndaghdp9s38vjsdcrimnikh0hgwqy0ffmayjjf6iam"))))
+    (properties `((upstream-name . "clinpubr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tableone
+                             r-survminer
+                             r-survival
+                             r-stringr
+                             r-stringi
+                             r-rstatix
+                             r-rms
+                             r-rlang
+                             r-resourceselection
+                             r-proc
+                             r-ggplot2
+                             r-forestploter
+                             r-fbasics
+                             r-dplyr
+                             r-desctools
+                             r-dcurves
+                             r-caret
+                             r-car
+                             r-broom))
+    (home-page "https://github.com/yotasama/clinpubr")
+    (synopsis "Clinical Publication")
+    (description
+     "Accelerate the process from clinical data to medical publication, including
+clinical data cleaning, significant result screening, and the generation of
+publish-ready tables and figures.")
+    (license license:expat)))
+
 (define-public r-clinpk
   (package
     (name "r-clinpk")

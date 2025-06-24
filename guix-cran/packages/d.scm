@@ -3001,13 +3001,13 @@ statdistr determines the stationary distribution of a Markov Chain.")
 (define-public r-dtmapi
   (package
     (name "r-dtmapi")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtmapi" version))
        (sha256
-        (base32 "1a0a5dff82igzxsz0ma3j2w7waqq2nrv3cy0df2nh7sgqvcldk4m"))))
+        (base32 "1hb50z1w5x6zs4k0kpwyg4qa3i6r9qmfpiiym99rf9d4mx3k4scb"))))
     (properties `((upstream-name . "dtmapi")))
     (build-system r-build-system)
     (arguments
@@ -10220,6 +10220,40 @@ provide the full functionality it is noticeably less efficient than the original
 DNAmixtures package.  For details on implementation and methodology see
 <https://dnamixtures.r-forge.r-project.org/>.")
     (license license:gpl2+)))
+
+(define-public r-dnamf
+  (package
+    (name "r-dnamf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DNAmf" version))
+       (sha256
+        (base32 "0n1y3is60fkvpg1fmnd23ny4wzf94rcf68r4n7ajwi7lin6wcxv2"))))
+    (properties `((upstream-name . "DNAmf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plgp r-mvtnorm r-lhs r-fields))
+    (home-page "https://cran.r-project.org/package=DNAmf")
+    (synopsis "Diffusion Non-Additive Model with Tunable Precision")
+    (description
+     "This package performs Diffusion Non-Additive (DNA) model proposed by Heo,
+Boutelet, and Sung (2025+) <doi:10.48550/@code{arXiv.2506.08328>} for
+multi-fidelity computer experiments with tuning parameters.  The DNA model
+captures nonlinear dependencies across fidelity levels using Gaussian process
+priors and is particularly effective when simulations at different fidelity
+levels are nonlinearly correlated.  The DNA model targets not only interpolation
+across given fidelity levels but also extrapolation to smaller tuning parameters
+including the exact solution corresponding to a zero-valued tuning parameter,
+leveraging a nonseparable covariance kernel structure that models interactions
+between the tuning parameter and input variables.  Closed-form expressions for
+the predictive mean and variance enable efficient inference and uncertainty
+quantification.  Hyperparameters in the model are estimated via maximum
+likelihood estimation.")
+    (license license:gpl3)))
 
 (define-public r-dnafractal
   (package
@@ -20776,13 +20810,13 @@ investigate the characterization properties of any block design.")
 (define-public r-deseats
   (package
     (name "r-deseats")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deseats" version))
        (sha256
-        (base32 "11qhsiqq0f1s6b7x7fmvgwwhirhilf9x37pk90pwgg3h4khjl1j5"))))
+        (base32 "0b9yrblvjnk9plg0hfpnyhfdv69b3z3nnvgrlhni3iizj3jl6i0x"))))
     (properties `((upstream-name . "deseats")))
     (build-system r-build-system)
     (arguments
@@ -22412,13 +22446,13 @@ multinomial @code{(multinomial()}), fixed transition probability
 (define-public r-denguedatahub
   (package
     (name "r-denguedatahub")
-    (version "2.1.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "denguedatahub" version))
        (sha256
-        (base32 "1s7in7hh90gs9lzdijdl8q2xx24dbvslyd0ykdl7l3sn7qf4cp92"))))
+        (base32 "0hpffqajvj8hhl4ddia8idxi3n4snjx2m4sri2q1wf2x9164rzmg"))))
     (properties `((upstream-name . "denguedatahub")))
     (build-system r-build-system)
     (arguments
@@ -30246,13 +30280,13 @@ writing code or use alternate functions that will prompt the user to add these."
 (define-public r-datamedios
   (package
     (name "r-datamedios")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datamedios" version))
        (sha256
-        (base32 "1i7zzikmk124dh6711mnm8zhpm1q5imnvsgywrclag1jcrjy7yry"))))
+        (base32 "06nif692h901iknlz7w8c2v2p7cm1m85lj2653qx2fdmm29gmlb9"))))
     (properties `((upstream-name . "datamedios")))
     (build-system r-build-system)
     (arguments
@@ -30265,6 +30299,7 @@ writing code or use alternate functions that will prompt the user to add these."
                              r-rvest
                              r-rlang
                              r-purrr
+                             r-plotly
                              r-magrittr
                              r-lubridate
                              r-jsonlite

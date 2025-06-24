@@ -11349,13 +11349,13 @@ data.  BMC Bioinformatics 20:358. <doi:10.1186/s12859-019-2942-y>.")
 (define-public r-blockcv
   (package
     (name "r-blockcv")
-    (version "3.1-5")
+    (version "3.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blockCV" version))
        (sha256
-        (base32 "1ngjr7z7ivm12dijywvca776bpgagszn2aipl7d3kfzs9z3x12hg"))))
+        (base32 "0l421z05sjm6y10w5rx5yv9xqckda76rrdwcashbz65f4jckz64d"))))
     (properties `((upstream-name . "blockCV")))
     (build-system r-build-system)
     (arguments
@@ -24815,19 +24815,23 @@ effects is described in Zhao et al. (2024) <doi:10.1093/jrsssc/qlad102>.")
 (define-public r-bayesssm
   (package
     (name "r-bayesssm")
-    (version "0.5.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesSSM" version))
        (sha256
-        (base32 "1aqkrn6jmq1bpvy3j3mv10jy8hz84g0j7kp78jdzqz9msfd6ljwd"))))
+        (base32 "10s3afd35qd88v90kb7nn7b61k4riv2qaxwhydwgx4a8kh53cybi"))))
     (properties `((upstream-name . "bayesSSM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mass r-lifecycle r-future-apply r-future
+    (propagated-inputs (list r-rcpp
+                             r-mass
+                             r-lifecycle
+                             r-future-apply
+                             r-future
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/BjarkeHautop/bayesSSM")

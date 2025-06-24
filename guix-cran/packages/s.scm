@@ -20643,13 +20643,13 @@ Antonio Prohias.")
 (define-public r-sputnik
   (package
     (name "r-sputnik")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPUTNIK" version))
        (sha256
-        (base32 "1jp1gprib1ppwnsgr7457b48ljlb70s2rzccq660d5lrngs8afca"))))
+        (base32 "1v6f0iahp9wlr85zdbg2q46fyayq0hn8b5jyv3pwb9bykk8rmyzw"))))
     (properties `((upstream-name . "SPUTNIK")))
     (build-system r-build-system)
     (arguments
@@ -20667,7 +20667,7 @@ Antonio Prohias.")
                              r-edger
                              r-e1071
                              r-dosnow))
-    (home-page "https://github.com/paoloinglese/SPUTNIK")
+    (home-page "https://github.com/piplus2/SPUTNIK")
     (synopsis
      "Spatially Automatic Denoising for Imaging Mass Spectrometry Toolkit")
     (description
@@ -27835,13 +27835,13 @@ differential expression analysis using spatial mixed models.")
 (define-public r-spatialfusion
   (package
     (name "r-spatialfusion")
-    (version "0.7-1")
+    (version "0.7-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialfusion" version))
        (sha256
-        (base32 "07zckqfxx9ngdl514f6cl6n5z00dh5wdz4rcjz2srrgf9wa5nxpg"))))
+        (base32 "1m6rgmw2zzgp0qav7jkgj13fydv48y5mi88zqii5kcgaarwy6zyw"))))
     (properties `((upstream-name . "spatialfusion")))
     (build-system r-build-system)
     (arguments
@@ -37802,6 +37802,35 @@ et al. (2022)<https://pubmed.ncbi.nlm.nih.gov/35988701/>, Peres et al.
 (2023)<https://pubmed.ncbi.nlm.nih.gov/37922007/>.  More information:
 <https://github.com/igor-peres/ICU-Length-of-Stay-Prediction>.")
     (license license:expat)))
+
+(define-public r-slopes
+  (package
+    (name "r-slopes")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "slopes" version))
+       (sha256
+        (base32 "1nhn30gk0rxd9gp8x7chv3hyf6g0hrwyczlz174phz19rf75pvf8"))))
+    (properties `((upstream-name . "slopes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-raster r-pbapply r-geodist r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/slopes/")
+    (synopsis "Calculate Slopes of Roads, Rivers and Trajectories")
+    (description
+     "Calculates the slope (longitudinal gradient or steepness) of linear geographic
+features such as roads (for more details, see Ariza-LÃ³pez et al. (2019)
+<doi:10.1038/s41597-019-0147-x>) and rivers (for more details, see Cohen et al.
+(2018) <doi:10.1016/j.jhydrol.2018.06.066>).  It can use local Digital Elevation
+Model (DEM) data or download DEM data via the ceramic package.  The package also
+provides functions to add elevation data to linestrings and visualize elevation
+profiles.")
+    (license license:gpl3)))
 
 (define-public r-slope
   (package
@@ -48919,44 +48948,6 @@ will suggest, you will be able to test your server and ui functions
 interactively.")
     (license license:gpl3)))
 
-(define-public r-shinynotes
-  (package
-    (name "r-shinynotes")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shinyNotes" version))
-       (sha256
-        (base32 "19k4n3ikffxs24c66i9wi7ldw50wjs0gym73n9clnq3hh6l2fzz8"))))
-    (properties `((upstream-name . "shinyNotes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shiny
-                             r-rsqlite
-                             r-rlang
-                             r-markdown
-                             r-magrittr
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/danielkovtun/shinyNotes")
-    (synopsis "Shiny Module for Taking Free-Form Notes")
-    (description
-     "An enterprise-targeted scalable and customizable shiny module providing an easy
-way to incorporate free-form note taking or discussion boards into applications.
- The package includes a shiny module that can be included in any shiny
-application to create a panel containing searchable, editable text broken down
-by section headers.  Can be used with a local SQLite database, or a compatible
-remote database of choice.")
-    (license license:expat)))
-
 (define-public r-shinynorrrm
   (package
     (name "r-shinynorrrm")
@@ -58648,6 +58639,50 @@ are derived automatically and in symbolic form.  The package also provides
 functionality to extract and evaluate the relevant probabilities.")
     (license license:bsd-3)))
 
+(define-public r-selfcontrolledcaseseries
+  (package
+    (name "r-selfcontrolledcaseseries")
+    (version "6.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SelfControlledCaseSeries" version))
+       (sha256
+        (base32 "0zy7ym9idj46w3bc0nswv2wmxrk27nfsjjqc4m7wdwsyp9mjzqxs"))))
+    (properties `((upstream-name . "SelfControlledCaseSeries")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sqlrender
+                             r-resultmodelmanager
+                             r-readr
+                             r-rcpp
+                             r-r6
+                             r-parallellogger
+                             r-jsonlite
+                             r-ggplot2
+                             r-empiricalcalibration
+                             r-dplyr
+                             r-digest
+                             r-databaseconnector
+                             r-cyclops
+                             r-checkmate
+                             r-andromeda))
+    (native-inputs (list r-knitr))
+    (home-page "https://ohdsi.github.io/SelfControlledCaseSeries/")
+    (synopsis "Self-Controlled Case Series")
+    (description
+     "Execute the self-controlled case series (SCCS) design using observational data
+in the OMOP Common Data Model.  Extracts all necessary data from the database
+and transforms it to the format required for SCCS. Age and season can be modeled
+using splines assuming constant hazard within calendar months.  Event-dependent
+censoring of the observation period can be corrected for.  Many exposures can be
+included at once (MSCCS), with regularization on all coefficients except for the
+exposure of interest.  Includes diagnostics for all major assumptions of the
+SCCS.")
+    (license license:asl2.0)))
+
 (define-public r-self
   (package
     (name "r-self")
@@ -62739,13 +62774,13 @@ cells.")
 (define-public r-scstability
   (package
     (name "r-scstability")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scStability" version))
        (sha256
-        (base32 "0114ri25p8v1ycwb1akn4db53xzrv0cvhp0jjq947nz2zqy2rmpb"))))
+        (base32 "0fkqgxgmcqwwhqdi0lq2y2ql6bdvbyr7b75nsrda5xpysalcling"))))
     (properties `((upstream-name . "scStability")))
     (build-system r-build-system)
     (arguments
@@ -62779,7 +62814,7 @@ reduction, @code{scStability} assesses clustering consistency using either
 Louvain or Leiden algorithms and calculating the Normalized Mutual Information
 (NMI) between all pairs of cluster assignments.  For background on UMAP and
 t-SNE algorithms, see @code{McInnes} et al. (2020, <doi:10.21105/joss.00861>)
-and van der Maaten & Hinton (2008, <https://lvdmaaten.github.io/tsne/>),
+and van der Maaten & Hinton (2008, <https://github.com/lvdmaaten/bhtsne>),
 respectively.")
     (license license:expat)))
 
@@ -65929,6 +65964,36 @@ if it has them.  This package shares a great part of its code with packages
 jmatrix and parallelpam but their functionality is included here so there is no
 need to install them.")
     (license license:gpl2+)))
+
+(define-public r-sce
+  (package
+    (name "r-sce")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SCE" version))
+       (sha256
+        (base32 "04fhvzjgx9cyb4clbjn7zrzd55627cmdgra4g0a0n1cqgb74h43z"))))
+    (properties `((upstream-name . "SCE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://doi.org/10.5194/hess-25-4947-2021")
+    (synopsis "Stepwise Clustered Ensemble")
+    (description
+     "Implementation of Stepwise Clustered Ensemble (SCE) and Stepwise Cluster
+Analysis (SCA) for multivariate data analysis.  The package provides
+comprehensive tools for feature selection, model training, prediction, and
+evaluation in hydrological and environmental modeling applications.  Key
+functionalities include recursive feature elimination (RFE), Wilks feature
+importance analysis, model validation through out-of-bag (OOB) validation, and
+ensemble prediction capabilities.  The package supports both single and
+multivariate response variables, making it suitable for complex environmental
+modeling scenarios.  For more details see Li et al. (2021)
+<doi:10.5194/hess-25-4947-2021>.")
+    (license license:gpl3)))
 
 (define-public r-scdtb
   (package

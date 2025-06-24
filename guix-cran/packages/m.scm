@@ -12717,13 +12717,13 @@ Eerola et al. (2018) <doi:10.1098/rsos.171520>.")
 (define-public r-movehmm
   (package
     (name "r-movehmm")
-    (version "1.10")
+    (version "1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moveHMM" version))
        (sha256
-        (base32 "011g8hjiv5kd5z5m1k0m9nigln1k2xzd7rm7s5abqcx5b4br4cvg"))))
+        (base32 "0kcswpxhylbfsya2sn9awlndl1fl3qfqdvdllqw7651c6i45xljs"))))
     (properties `((upstream-name . "moveHMM")))
     (build-system r-build-system)
     (arguments
@@ -12737,7 +12737,6 @@ Eerola et al. (2018) <doi:10.1098/rsos.171520>.")
                              r-ggplot2
                              r-ggmap
                              r-geosphere
-                             r-circstats
                              r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/TheoMichelot/moveHMM")
@@ -20705,13 +20704,13 @@ framework.")
 (define-public r-mlr3resampling
   (package
     (name "r-mlr3resampling")
-    (version "2025.3.30")
+    (version "2025.6.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3resampling" version))
        (sha256
-        (base32 "01nql7q4mv430kv7qjnz9wyipdnd0zgph9mrp319hd6b5gl93ljx"))))
+        (base32 "1pvsmqymlxb65icvcswsnbskd5hyv4y0b6inax8cirp73hmii3s4"))))
     (properties `((upstream-name . "mlr3resampling")))
     (build-system r-build-system)
     (arguments
@@ -20721,8 +20720,10 @@ framework.")
                              r-paradox
                              r-mlr3misc
                              r-mlr3
+                             r-filelock
                              r-data-table
-                             r-checkmate))
+                             r-checkmate
+                             r-batchtools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tdhock/mlr3resampling")
     (synopsis "Resampling Algorithms for 'mlr3' Framework")
@@ -20734,12 +20735,12 @@ know if subsets are similar enough so that we can get accurate predictions on
 one subset, after training on Other subsets? And how do we know if training on
 All subsets would improve prediction accuracy, relative to training on the Same
 subset? SOAK, Same/Other/All K-fold cross-validation,
-<doi:10.48550/@code{arXiv.2410.08643>} can be used to answer these question, by
+<doi:10.48550/@code{arXiv.2410.08643>} can be used to answer these questions, by
 fixing a test subset, training models on Same/Other/All subsets, and then
 comparing test error rates (Same versus Other and Same versus All).  Also
 provides code for estimating how many train samples are required to get accurate
 predictions on a test set.")
-    (license license:gpl3)))
+    (license license:lgpl3)))
 
 (define-public r-mlr3oml
   (package
@@ -26438,6 +26439,34 @@ utility functions for phenotypic data processing commonly used by animal
 breeders.")
     (license license:expat)))
 
+(define-public r-mintriadic
+  (package
+    (name "r-mintriadic")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MinTriadic" version))
+       (sha256
+        (base32 "0xmv79bx3wxklizk0l37il1lg40jvnksch064a3ydwg397vq2wg2"))))
+    (properties `((upstream-name . "MinTriadic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-lolog r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MinTriadic")
+    (synopsis
+     "Extension to the 'Lolog' Package for 'Triadic' Network Statistics")
+    (description
+     "This package provides an extension to the lolog package by introducing the
+@code{minTriadicClosure()} statistic to capture higher-order interactions among
+triplets of nodes.  This function facilitates improved modelling of group
+formations and triadic closure in networks.  A smoothing parameter has been
+incorporated to avoid numerical errors.")
+    (license license:gpl3+)))
+
 (define-public r-mintplates
   (package
     (name "r-mintplates")
@@ -28358,6 +28387,37 @@ Range ('MGR test).  The first two tests were published by Batista and Ferreira
 (2020) <doi:10.1590/1413-7054202044008020>.  The last two were published by
 Batista and Ferreira (2023) <doi:10.28951/bjb.v41i4.640>.")
     (license license:gpl2+)))
+
+(define-public r-midr
+  (package
+    (name "r-midr")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "midr" version))
+       (sha256
+        (base32 "0bixb1szwnhzgyjdk753qh0vyqvkhgyd28d288g1xf2318xjamib"))))
+    (properties `((upstream-name . "midr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rcppeigen))
+    (home-page "https://github.com/ryo-asashi/midr")
+    (synopsis
+     "Learning from Black-Box Models by Maximum Interpretation Decomposition")
+    (description
+     "The goal of midr is to provide a model-agnostic method for interpreting and
+explaining black-box predictive models by creating a globally interpretable
+surrogate model.  The package implements Maximum Interpretation Decomposition
+(MID), a functional decomposition technique that finds an optimal additive
+approximation of the original model.  This approximation is achieved by
+minimizing the squared error between the predictions of the black-box model and
+the surrogate model.  The theoretical foundations of MID are described in
+Iwasawa & Matsumori (2025) [Forthcoming], and the package itself is detailed in
+Asashiba et al. (2025) <doi:10.48550/@code{arXiv.2506.08338>}.")
+    (license license:expat)))
 
 (define-public r-midoc
   (package
@@ -48571,13 +48631,13 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "1.3.2")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "1nspzw0q80nr5w6pmjaggxy1mim872m36ik9caq2h1lydsaqm6vj"))))
+        (base32 "1kwmhag6lb7cxb97gqrh32c04inizy4yvkqa276v2n8lypalbsjl"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (arguments
@@ -48701,16 +48761,56 @@ in one function.  The models are built using functions from caret with easier to
 read syntax.  Kuhn(2014) <doi:10.48550/@code{arXiv.1405.6974>}.")
     (license license:gpl2)))
 
+(define-public r-manyivsnets
+  (package
+    (name "r-manyivsnets")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ManyIVsNets" version))
+       (sha256
+        (base32 "1yrinsb8y9gj5njrd5afhlgb9p680rm6mwmlbyn06z0yslcgj5j3"))))
+    (properties `((upstream-name . "ManyIVsNets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich
+                             r-readr
+                             r-magrittr
+                             r-lmtest
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-dplyr
+                             r-aer))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/avishekb9/ManyIVsNets")
+    (synopsis
+     "Environmental Phillips Curve Analysis with Multiple Instrumental Variables and Networks")
+    (description
+     "Comprehensive toolkit for Environmental Phillips Curve analysis featuring
+multidimensional instrumental variable creation, transfer entropy causal
+discovery, network analysis, and state-of-the-art econometric methods.
+Implements geographic, technological, migration, geopolitical, financial, and
+natural risk instruments with robust diagnostics and visualization.  Provides 24
+different instrumental variable approaches with empirical validation.  Methods
+based on Phillips (1958) <doi:10.1111/j.1468-0335.1958.tb00003.x>, transfer
+entropy by Schreiber (2000) <doi:10.1103/@code{PhysRevLett.85.461>}, and weak
+instrument tests by Stock and Yogo (2005) <doi:10.1017/CBO9780511614491.006>.")
+    (license license:expat)))
+
 (define-public r-manydist
   (package
     (name "r-manydist")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manydist" version))
        (sha256
-        (base32 "114w4ylinkp8f5c82xlkzlnz272z0ph099xi81ypb95bpvb9whzk"))))
+        (base32 "0lcrzk9glk0dn019r3alg04hfwdwl4yw6k94frvk571ds9rjlm7v"))))
     (properties `((upstream-name . "manydist")))
     (build-system r-build-system)
     (arguments

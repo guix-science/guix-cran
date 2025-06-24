@@ -1986,13 +1986,13 @@ Song, Garvesh Raskutti (2018) <@code{arXiv:1711.08129>}.")
 (define-public r-pugmm
   (package
     (name "r-pugmm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PUGMM" version))
        (sha256
-        (base32 "03bwg4mb0kc708plqzym0xw5giai45nk601fs53gfnad57y70wdp"))))
+        (base32 "0bf3vck3f9h3g67xkmq90axk2mc3x1riidc02x2fz2sw9nmyshvr"))))
     (properties `((upstream-name . "PUGMM")))
     (build-system r-build-system)
     (arguments
@@ -2010,15 +2010,12 @@ Song, Garvesh Raskutti (2018) <@code{arXiv:1711.08129>}.")
     (home-page "https://github.com/giorgiazaccaria/PUGMM")
     (synopsis "Parsimonious Ultrametric Gaussian Mixture Models")
     (description
-     "Finite Gaussian mixture models with parsimonious extended ultrametric covariance
-structures estimated via a grouped coordinate ascent algorithm, which is
-equivalent to the Expectation-Maximization algorithm.  The thirteen ultrametric
-covariance structures implemented allow for the inspection of different
-hierarchical relationships among variables.  The estimation of an ultrametric
-correlation matrix is included as a function.  The methodologies are described
-in Cavicchia, Vichi, Zaccaria (2024) <doi:10.1007/s11222-024-10405-9>,
-Cavicchia, Vichi, Zaccaria (2022) <doi:10.1007/s11634-021-00488-x> and
-Cavicchia, Vichi, Zaccaria (2020) <doi:10.1007/s11634-020-00400-z>.")
+     "Parsimonious Ultrametric Gaussian Mixture Models via grouped coordinate ascent
+(equivalent to EM) algorithm characterized by the inspection of hierarchical
+relationships among variables via parsimonious extended ultrametric covariance
+structures.  The methodologies are described in Cavicchia, Vichi, Zaccaria
+(2024) <doi:10.1007/s11222-024-10405-9>, (2022) <doi:10.1007/s11634-021-00488-x>
+and (2020) <doi:10.1007/s11634-020-00400-z>.")
     (license license:expat)))
 
 (define-public r-puff
@@ -5198,13 +5195,13 @@ use the sampling functions from cmdstanr which can be installed from
 (define-public r-psborrow
   (package
     (name "r-psborrow")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psborrow" version))
        (sha256
-        (base32 "0zv50zfg1hmnjg0fyksfn93ib1cj6wjgd6h51408x8fz0jqrqs0s"))))
+        (base32 "06jmhg0n091b90bfv053mhlm2xq9s79hnj1r82rav60rl3zkn54w"))))
     (properties `((upstream-name . "psborrow")))
     (build-system r-build-system)
     (arguments
@@ -29201,13 +29198,13 @@ materials.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiology
   (package
     (name "r-photobiology")
-    (version "0.13.0")
+    (version "0.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiology" version))
        (sha256
-        (base32 "00k01z75a872w3zhwzq903q6lqj458snmmf7j3nak33rkyx67czw"))))
+        (base32 "1vgklizbs6bfr9709v3pbj67j8lys5gzw376k3rb3g6z1lagzb8a"))))
     (properties `((upstream-name . "photobiology")))
     (build-system r-build-system)
     (arguments
@@ -31592,13 +31589,13 @@ inference on diversity indexes, writing data.frame with Chinese characters.")
 (define-public r-pgenlibr
   (package
     (name "r-pgenlibr")
-    (version "0.4.0")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pgenlibr" version))
        (sha256
-        (base32 "1l41m6ms5lvz8prk6r8qq8f35kr2r72jj54c0g5cy9j19jqql9xn"))))
+        (base32 "1539a1c613h4vmb4f7nb6x2cm0lac96579alynmm58bq3l263a4k"))))
     (properties `((upstream-name . "pgenlibr")))
     (build-system r-build-system)
     (arguments

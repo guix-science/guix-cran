@@ -21871,21 +21871,31 @@ function.")
 (define-public r-theorytools
   (package
     (name "r-theorytools")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "theorytools" version))
        (sha256
-        (base32 "0xxbkf5z8a737x0yvh8q4jgn8hdpyc3wq8gfsa04iqb542mfs2lr"))))
+        (base32 "0h9i3ksn6wzvcjv5i2pnm96snjznfq9pljldn961z8m5dm0bpmiw"))))
     (properties `((upstream-name . "theorytools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-worcs r-jsonlite r-gh r-gert r-cli))
+    (propagated-inputs (list r-yaml
+                             r-worcs
+                             r-tidysem
+                             r-knitr
+                             r-jsonlite
+                             r-gh
+                             r-gert
+                             r-deriv
+                             r-dagitty
+                             r-curl
+                             r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/cjvanlissa/theorytools")
+    (home-page "https://cjvanlissa.github.io/theorytools/")
     (synopsis "FAIR Theory Construction")
     (description
      "An integrated suite of tools for creating, maintaining, and reusing FAIR
@@ -22123,6 +22133,42 @@ Braun, N., Neuffer, J., and Kempa-Liehr A.W. (2018)
      "Find out who maintains the packages you use in your current session or in your
 package library and maybe say thank you'.")
     (license license:expat)))
+
+(define-public r-thamesmix
+  (package
+    (name "r-thamesmix")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "thamesmix" version))
+       (sha256
+        (base32 "07z6zsnnz2gpaz1plzpf3ki5qs6wi642si79h8zwvr6bj87kqfmd"))))
+    (properties `((upstream-name . "thamesmix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-uniformly
+                             r-sparsediscrim
+                             r-rfast
+                             r-quadprog
+                             r-mvtnorm
+                             r-igraph
+                             r-gor
+                             r-combinat))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=thamesmix")
+    (synopsis
+     "Truncated Harmonic Mean Estimator of the Marginal Likelihood for Mixtures")
+    (description
+     "This package implements the truncated harmonic mean estimator (THAMES) of the
+reciprocal marginal likelihood for uni- and multivariate mixture models using
+posterior samples and unnormalized log posterior values via reciprocal
+importance sampling.  Metodiev, Irons, Perrot-DockÃ¨s, Latouche & Raftery (2025)
+<doi:10.48550/@code{arXiv.2504.21812>}.")
+    (license license:gpl3+)))
 
 (define-public r-thames
   (package
@@ -26983,13 +27029,13 @@ particular teams.")
 (define-public r-tealeaves
   (package
     (name "r-tealeaves")
-    (version "1.0.6")
+    (version "1.0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tealeaves" version))
        (sha256
-        (base32 "0gfga3fx047kpngwrkinsq3w5f34svnh3vpfjnc78bvrmmm70wqw"))))
+        (base32 "0wkinm8n1348aygmnprcasrc9mpyqg38akf8hsqkqcanygq42jgv"))))
     (properties `((upstream-name . "tealeaves")))
     (build-system r-build-system)
     (arguments

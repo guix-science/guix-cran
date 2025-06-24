@@ -8453,13 +8453,13 @@ model (@code{ErRUM}) described by Culpepper and Chen (2018)
 (define-public r-errors
   (package
     (name "r-errors")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "errors" version))
        (sha256
-        (base32 "1sks7n3821lak567wr9z26mipkcsl009rmjwdkxcha969l5ic8f5"))))
+        (base32 "0gm5f1ji7xa6kv93wy050dqhbh9picyc73zj0cfc106skq8m7hwx"))))
     (properties `((upstream-name . "errors")))
     (build-system r-build-system)
     (arguments
@@ -11740,13 +11740,13 @@ on the methods.")
 (define-public r-epiestim
   (package
     (name "r-epiestim")
-    (version "2.2-4")
+    (version "2.2-4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiEstim" version))
        (sha256
-        (base32 "12zv1mlb0gqsvff1s0fvqgxqk42c7y9gz3h94mjmf1wbmhsjcqnf"))))
+        (base32 "0gzqazzibqsq69zisvidl38c52fm2i5hpjy2mdlsi32l3yx44lix"))))
     (properties `((upstream-name . "EpiEstim")))
     (build-system r-build-system)
     (arguments
@@ -22947,13 +22947,13 @@ event-study style for either individual periods or individual quantiles.")
 (define-public r-echos
   (package
     (name "r-echos")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echos" version))
        (sha256
-        (base32 "162114g5xv3r0lizja02n5m9vz9anrg82hsd2qdz2nrg1hdwp1c1"))))
+        (base32 "0dnjzsh5rs59ps56sb899mqaq5g4kmcxdbvdswfibynxnvh94i2p"))))
     (properties `((upstream-name . "echos")))
     (build-system r-build-system)
     (arguments
@@ -22964,9 +22964,6 @@ event-study style for either individual periods or individual quantiles.")
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp
-                             r-purrr
-                             r-matrix
-                             r-forecast
                              r-fabletools
                              r-dplyr
                              r-distributional))

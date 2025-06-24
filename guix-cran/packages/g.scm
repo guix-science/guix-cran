@@ -15826,13 +15826,13 @@ distributions.")
 (define-public r-gjrm
   (package
     (name "r-gjrm")
-    (version "0.2-6.7")
+    (version "0.2-6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GJRM" version))
        (sha256
-        (base32 "1zzbjss0xfnmf8q445wfrkvpgp4x33nmcnfxm2wizpfj7jgxprqg"))))
+        (base32 "17anngk7g0gyq5yzqmvvcd5ga6nnmc8n50fj4q36r1phr27jsw59"))))
     (properties `((upstream-name . "GJRM")))
     (build-system r-build-system)
     (arguments
@@ -15862,7 +15862,7 @@ distributions.")
     (description
      "Routines for fitting various joint (and univariate) regression models, with
 several types of covariate effects, in the presence of equations errors
-association, endogeneity, non-random sample selection or partial observability.")
+association.")
     (license license:gpl2+)))
 
 (define-public r-gjls2
@@ -16940,13 +16940,13 @@ Waldorp, Mottus & Borsboom (2018) <doi:10.1080/00273171.2018.1454823>.")
 (define-public r-gimme
   (package
     (name "r-gimme")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gimme" version))
        (sha256
-        (base32 "081f1gbg771110xmm07dsbs3r1xczzdl9k5r7g87ya5yfdk1k6g3"))))
+        (base32 "1gr3bp4mmhykvj8lbiy0nmpplx3zfjaj7bx2y8jw5ia6naqfbf6g"))))
     (properties `((upstream-name . "gimme")))
     (build-system r-build-system)
     (arguments
@@ -18430,13 +18430,13 @@ different taxonomic ranks, facilitating insights into taxonomic visualization.")
 (define-public r-ggswissmaps
   (package
     (name "r-ggswissmaps")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggswissmaps" version))
        (sha256
-        (base32 "0is48x6k2p5dgj9q4km0dv33a9pcpfhlai9vz295y3acpyrkmnn4"))))
+        (base32 "1fwhfbk1sll6yhhmz7h8hbgd7yfnfgps9anwybh3j9haf17qs2d5"))))
     (properties `((upstream-name . "ggswissmaps")))
     (build-system r-build-system)
     (arguments
@@ -18449,7 +18449,10 @@ different taxonomic ranks, facilitating insights into taxonomic visualization.")
     (description
      "Offers various swiss maps as data frames and ggplot2 objects and gives the
 possibility to add layers of data on the maps.  Data are publicly available from
-the swiss federal statistical office.")
+the swiss federal statistical office.  In addition to the \\code{maps2} object (a
+list of 8 swiss maps, at various levels), there are the data frames with the
+boundaries used to produce these maps (\\code{shp_df}, a list with 8 data
+frames).")
     (license license:gpl2)))
 
 (define-public r-ggsurvey
@@ -31282,13 +31285,13 @@ fraction.  A reference is Yi Niu and Yingwei Peng (2014)
 (define-public r-geecrt
   (package
     (name "r-geecrt")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geeCRT" version))
        (sha256
-        (base32 "08gcifq3gv8b6j7mdgf2y2s9gdcza96681wkzmq7skcj9430m7dm"))))
+        (base32 "1p5s9zsaadkcg4pcchr5shzg9hllxs6f58bp43y6xmhg769pi3yi"))))
     (properties `((upstream-name . "geeCRT")))
     (build-system r-build-system)
     (arguments

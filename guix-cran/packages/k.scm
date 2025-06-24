@@ -5288,6 +5288,32 @@ solving the entire solution path of a flexible nonparametric expectile
 regression estimator constructed in a reproducing kernel Hilbert space.")
     (license license:gpl2)))
 
+(define-public r-kerdiest
+  (package
+    (name "r-kerdiest")
+    (version "1.3-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kerdiest" version))
+       (sha256
+        (base32 "0i3fj4kw0l8mic1l5d9p3h6z6c4srn5jmlrqjnha59lyymrvfscb"))))
+    (properties `((upstream-name . "kerdiest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=kerdiest")
+    (synopsis "Nonparametric Kernel Estimation of Distribution Function")
+    (description
+     "Nonparametric kernel distribution function estimation is performed.  Three
+bandwidth selectors are implemented: the plug-in selectors of Altman and Leger
+and of Polansky and Baker, and the cross-validation selector of Bowman, Hall and
+Prvan.  The exceedance function, the mean return period and the return level are
+also computed.  For details, see Quintela-del-RÃ­o and EstÃ©vez-PÃ©rez (2012)
+<doi:10.18637/jss.v050.i08>.")
+    (license license:gpl2+)))
+
 (define-public r-kerdaa
   (package
     (name "r-kerdaa")

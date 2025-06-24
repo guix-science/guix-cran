@@ -25316,13 +25316,13 @@ Diggle and Giorgi (2019, ISBN: 978-1-138-06102-7).")
 (define-public r-riskdiff
   (package
     (name "r-riskdiff")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskdiff" version))
        (sha256
-        (base32 "1zagrikjf8lj5p905yigwlzn9mzsrbfqx8gxp55sf0mpqbycb8ih"))))
+        (base32 "16chfi2kv98chmg2kj83yp9a56b2hrsh4l4prbp794gpnmdiywx4"))))
     (properties `((upstream-name . "riskdiff")))
     (build-system r-build-system)
     (arguments
@@ -25334,20 +25334,25 @@ Diggle and Giorgi (2019, ISBN: 978-1-138-06102-7).")
                              r-rlang
                              r-purrr
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/jackmurphy2351/riskdiff")
-    (synopsis "Robust Risk Difference Estimation with Multiple Link Functions")
+    (synopsis "Risk Difference Estimation with Multiple Link Functions")
     (description
      "Calculates risk differences (or prevalence differences for cross-sectional data)
 using generalized linear models with automatic link function selection.
 Provides robust model fitting with fallback methods, support for stratification
-and adjustment variables, and publication-ready output formatting.  Handles
-model convergence issues gracefully and provides confidence intervals using
-multiple approaches.  Methods are based on approaches described in Mark W.
-Donoghoe and Ian C. Marschner (2018) \"logbin: An R Package for Relative Risk
-Regression Using the Log-Binomial Model\" <doi:10.18637/jss.v086.i09> for robust
-GLM fitting, and standard epidemiological methods for risk difference estimation
-as described in Kenneth J. Rothman, Sander Greenland and Timothy L. Lash (2008,
-ISBN:9780781755641) \"Modern Epidemiology\".")
+and adjustment variables, inverse probability of treatment weighting (IPTW) for
+causal inference, and publication-ready output formatting.  Handles model
+convergence issues gracefully and provides confidence intervals using multiple
+approaches.  Methods are based on approaches described in Mark W. Donoghoe and
+Ian C. Marschner (2018) \"logbin: An R Package for Relative Risk Regression Using
+the Log-Binomial Model\" <doi:10.18637/jss.v086.i09> for robust GLM fitting,
+Peter C. Austin (2011) \"An Introduction to Propensity Score Methods for Reducing
+the Effects of Confounding in Observational Studies\"
+<doi:10.1080/00273171.2011.568786> for IPTW methods, and standard
+epidemiological methods for risk difference estimation as described in Kenneth
+J. Rothman, Sander Greenland and Timothy L. Lash (2008, ISBN:9780781755641)
+\"Modern Epidemiology\".")
     (license license:expat)))
 
 (define-public r-riskcommunicator
@@ -44219,13 +44224,13 @@ determined to generate an approximation of the ground surface
 (define-public r-rcsdp
   (package
     (name "r-rcsdp")
-    (version "0.1.57.5")
+    (version "0.1.57.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcsdp" version))
        (sha256
-        (base32 "1lhw7czra10bw8r7cv472wyx58gd4qhs6hsyijsgkfcb9b5qn12h"))))
+        (base32 "0c2vpq89k1dxkil0gf4qh1vv2xajcbxnhfavc6sc0qwz54394xf9"))))
     (properties `((upstream-name . "Rcsdp")))
     (build-system r-build-system)
     (arguments

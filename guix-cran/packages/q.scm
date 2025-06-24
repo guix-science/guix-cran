@@ -5377,13 +5377,13 @@ B. (2000) <doi:10.1093/biomet/87.4.823>.")
 (define-public r-qicharts2
   (package
     (name "r-qicharts2")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qicharts2" version))
        (sha256
-        (base32 "08nq83mimcifb2nnq4jzbfynkxhinhl3j8lmjgx5hk3xw8zghwkh"))))
+        (base32 "1h2c9f3nv14a9cb69vvfcrrfskigpa229i52yvqcc5h899wf8xlc"))))
     (properties `((upstream-name . "qicharts2")))
     (build-system r-build-system)
     (arguments
