@@ -3561,13 +3561,13 @@ cyclical projection algorithm.")
 (define-public r-ordinalsimr
   (package
     (name "r-ordinalsimr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordinalsimr" version))
        (sha256
-        (base32 "1xjkmv77mc0sprbjrppd9wzkd4qqwnzd6ww91szdzv2igsnsi9lf"))))
+        (base32 "1g4l2cm5k104kj1pxm6ckgb0wr64yi8f3xvxj2ks9mzi3zdp7kmc"))))
     (properties `((upstream-name . "ordinalsimr")))
     (build-system r-build-system)
     (arguments
@@ -5214,13 +5214,13 @@ the portfolio performance as presented by Gosling et al. (2020)
 (define-public r-optimizer
   (package
     (name "r-optimizer")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimizeR" version))
        (sha256
-        (base32 "1nymalz79mwsv7mvl7a5l8cllyls6rwwiq2aj682wf0mpzh12gcv"))))
+        (base32 "0yjx628w3g8ksd2y34a0zhldhx3iz0g3npgj9pvs5ycrlknbf36z"))))
     (properties `((upstream-name . "optimizeR")))
     (build-system r-build-system)
     (arguments
@@ -5231,6 +5231,7 @@ the portfolio performance as presented by Gosling et al. (2020)
                              r-r6
                              r-pracma
                              r-oeli
+                             r-numderiv
                              r-lbfgsb3c
                              r-cli
                              r-checkmate))
@@ -6224,6 +6225,57 @@ specifications are allowed for each treatment/regime.  For more details on the
 method, see Wang & Mokhtarian (2024) <doi:10.1016/j.tra.2024.104072> or Chiburis
 & Lokshin (2007) <doi:10.1177/1536867X0700700202>.")
     (license license:gpl3+)))
+
+(define-public r-oppr
+  (package
+    (name "r-oppr")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oppr" version))
+       (sha256
+        (base32 "1ky2aicn4pgrs692snlps0cbzp6z1kjwvip7dnywx3d72x9426bv"))))
+    (properties `((upstream-name . "oppr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-viridislite
+                             r-uuid
+                             r-tidytree
+                             r-tibble
+                             r-rlang
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-proto
+                             r-matrix
+                             r-magrittr
+                             r-lpsolveapi
+                             r-ggplot2
+                             r-cli
+                             r-assertthat
+                             r-ape))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://prioritizr.github.io/oppr/")
+    (synopsis "Optimal Project Prioritization")
+    (description
+     "This package provides a decision support tool for prioritizing conservation
+projects.  Prioritizations can be developed by maximizing expected feature
+richness, expected phylogenetic diversity, the number of features that meet
+persistence targets, or identifying a set of projects that meet persistence
+targets for minimal cost.  Constraints (e.g. lock in specific actions) and
+feature weights can also be specified to further customize prioritizations.
+After defining a project prioritization problem, solutions can be obtained using
+exact algorithms, heuristic algorithms, or random processes.  In particular, it
+is recommended to install the Gurobi optimizer (available from
+<https://www.gurobi.com>) because it can identify optimal solutions very
+quickly.  Finally, methods are provided for comparing different prioritizations
+and evaluating their benefits.  For more information, see Hanson et al. (2019)
+<doi:10.1111/2041-210X.13264>.")
+    (license license:gpl3)))
 
 (define-public r-opportunistic
   (package
@@ -7614,6 +7666,31 @@ address of a location (reverse geocoding), see <https://opencagedata.com/>.")
      "Interface to make HTTP requests to @code{OpenBlender} API services.  Go to
 <https://openblender.io> for more information.")
     (license license:expat)))
+
+(define-public r-openbard
+  (package
+    (name "r-openbard")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpenBARD" version))
+       (sha256
+        (base32 "093bsn5lxqkss00iz7c8fkjsx8wc5li53q57dbvphwsy8hh9bp8p"))))
+    (properties `((upstream-name . "OpenBARD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://codeberg.org/drdcarpenter/OpenBARD")
+    (synopsis "Open British Arboricultural Record Dataset")
+    (description
+     "Data used in compiling the Handbook of UK Urban Tree Allometric Equations and
+Size Characteristics (Fennel 2024).  The data include measurements of height,
+crown radius and diameter at breast height (DBH) for UK urban trees.  For more
+details see Fennell (2024) Handbook of UK Urban Tree Allometric Equations and
+Size Characteristics (Version 1.4). <doi:10.13140/RG.2.2.28745.04961>.")
+    (license license:gpl3)))
 
 (define-public r-openbanker
   (package
@@ -10651,13 +10728,13 @@ you run open-source large language models locally on your machine.")
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "4.2.0")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlinkAnalyze" version))
        (sha256
-        (base32 "0mvrlw2h8a60xj0narhbird6sgcfyzc605n154vjdlzbs39knpzi"))))
+        (base32 "157h5p8i2xk1g2wwry7akrdiqmw8sdpvzpgxx9ia39nrdqzgwagd"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (arguments
@@ -11657,25 +11734,31 @@ and Chien (2022) <doi:10.18637/jss.v104.i06>.")
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "0jn1chn7i06ffarmvbj7sfslhxlyr3ls1m0a709yfcwxlg76q1a1"))))
+        (base32 "1606l1d3c6wcynk0g5vz6dds3qxmqrda578d0qg1kh9wbxfv8vj7"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-testthat
+    (propagated-inputs (list r-tibble
+                             r-testthat
                              r-simmulticorrdata
                              r-rcpparmadillo
                              r-rcpp
                              r-r6
+                             r-progressr
                              r-hexsticker
+                             r-glue
                              r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-dplyr
                              r-cli
                              r-checkmate
                              r-benchmarkme))

@@ -426,13 +426,13 @@ bounded-variable least squares.")
 (define-public r-bvhar
   (package
     (name "r-bvhar")
-    (version "2.2.2")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bvhar" version))
        (sha256
-        (base32 "0gkgr000n90c0vw5glysxbswc9l95jdx85k3x67rj53x5dfhw09q"))))
+        (base32 "0wfzn4m1ja88l1mpkx0ql9i7832dgb5jpsy1rb1dlmlcm45j0wmn"))))
     (properties `((upstream-name . "bvhar")))
     (build-system r-build-system)
     (arguments
@@ -6799,13 +6799,13 @@ editors.")
 (define-public r-box-linters
   (package
     (name "r-box-linters")
-    (version "0.10.5")
+    (version "0.10.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "box.linters" version))
        (sha256
-        (base32 "1j6zjs5cpafyk1f74p059mggr9kp7c92fv4msyycs0lwji01ar88"))))
+        (base32 "063bnjm102k0c1yjpl8rpngc2pids34k6iaqp63zlkij48yjvylm"))))
     (properties `((upstream-name . "box.linters")))
     (build-system r-build-system)
     (arguments
@@ -8448,13 +8448,13 @@ in practical clinical trial analyses.")
 (define-public r-bonsai
   (package
     (name "r-bonsai")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bonsai" version))
        (sha256
-        (base32 "171zrfwr7xpr4j7ppkfw5a27xakf1sxdpm365zg5am7zr3inhbb7"))))
+        (base32 "01li3l7fas15gg2ibvxv50gy6y6c1q3466z5y13s0kjmxd1534ib"))))
     (properties `((upstream-name . "bonsai")))
     (build-system r-build-system)
     (arguments
@@ -8465,7 +8465,6 @@ in practical clinical trial analyses.")
                              r-rlang
                              r-purrr
                              r-parsnip
-                             r-glue
                              r-dplyr
                              r-dials
                              r-cli))
@@ -8840,13 +8839,13 @@ adjustments.  The method is described in more detail in Ginker (2023)
 (define-public r-boinet
   (package
     (name "r-boinet")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boinet" version))
        (sha256
-        (base32 "1dpam5165mr7vyxn6g5jk5pj0x1z1ywpbkxyfy12yz4ypb39q5b2"))))
+        (base32 "09bdb3vflpl5jw5xrxhkdcccv98hd46qd84akdxhjf1kwbmri75q"))))
     (properties `((upstream-name . "boinet")))
     (build-system r-build-system)
     (arguments
@@ -8907,6 +8906,33 @@ has a substantially lower risk of assigning patients to subtherapeutic or overly
 toxic doses.  For tutorial, please check Yan et al. (2020)
 <doi:10.18637/jss.v094.i13>.")
     (license license:gpl2)))
+
+(define-public r-boilerplate
+  (package
+    (name "r-boilerplate")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "boilerplate" version))
+       (sha256
+        (base32 "0inz6z8zbp4qhr98n3s0g1l9rsfvlyy15nrdksvd2sd1mihp799v"))))
+    (properties `((upstream-name . "boilerplate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonvalidate r-jsonlite r-digest r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://go-bayes.github.io/boilerplate/")
+    (synopsis "Managing and Compiling Manuscript Templates")
+    (description
+     "Managing and generating standardised text for methods and results sections of
+scientific reports.  It handles template variable substitution and supports
+hierarchical organisation of text through dot-separated paths.  The package
+supports both RDS and JSON database formats, enabling version control and
+cross-language compatibility.")
+    (license license:expat)))
 
 (define-public r-boilerpiper
   (package
@@ -10413,19 +10439,20 @@ analyzing them with a Bayesian model averaging approach.")
 (define-public r-bmabart
   (package
     (name "r-bmabart")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bmabart" version))
        (sha256
-        (base32 "0sslfz2vsq29j99r4rx17ykf9n6mzc4sf1bw6qkpij6hcs994wcn"))))
+        (base32 "0qqqzzgr5csi6hbmpq6np9aqlrzn4b7d4j0r434cqjziyy2h48cl"))))
     (properties `((upstream-name . "bmabart")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival r-lattice r-gplots r-bart))
+    (native-inputs (list r-knitr))
     (home-page "https://www.r-project.org")
     (synopsis "Bayesian Mediation Analysis Using BART")
     (description
@@ -23410,19 +23437,20 @@ variables.  References: F. Castelletti and A. Mascaro (2021)
 (define-public r-bcd
   (package
     (name "r-bcd")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BCD" version))
        (sha256
-        (base32 "0qsybvky88vcgxc9wgxw5i992q0g0ppgc7lf5a9cj0iics8y8c39"))))
+        (base32 "0gqxsi73mrn1fhvymhvflzqca58mni21r9109jw8q4gsl0pxkvzr"))))
     (properties `((upstream-name . "BCD")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=BCD")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mnrzrad/BCD")
     (synopsis "Bivariate Distributions via Conditional Specification")
     (description
      "Implementation of bivariate binomial, geometric, and Poisson distributions based
@@ -25229,6 +25257,38 @@ second-order factor model, (3) the bi-factor model, (4) the correlated factor
 model ('Lee', 2007, <doi:10.1002/9780470024737>).")
     (license license:gpl3)))
 
+(define-public r-bayesregdtr
+  (package
+    (name "r-bayesregdtr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesRegDTR" version))
+       (sha256
+        (base32 "154zhysln45rrif4v9dlpprmjkqal5rrhlmday07ha6bhvcrsynz"))))
+    (properties `((upstream-name . "BayesRegDTR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-progressr
+                             r-mvtnorm
+                             r-future
+                             r-foreach
+                             r-dorng))
+    (home-page "https://github.com/jlimrasc/BayesRegDTR")
+    (synopsis "Bayesian Regression for Dynamic Treatment Regimes")
+    (description
+     "This package provides methods to estimate optimal dynamic treatment regimes
+using Bayesian likelihood-based regression approach as described in Yu, W., &
+Bondell, H. D. (2023) <doi:10.1093/jrsssb/qkad016> Uses backward induction and
+dynamic programming theory for computing expected values.  Offers options for
+future parallel computing.")
+    (license license:gpl3+)))
+
 (define-public r-bayesreg
   (package
     (name "r-bayesreg")
@@ -26237,13 +26297,13 @@ models can be computed.")
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")
-    (version "2.2.4")
+    (version "2.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMallows" version))
        (sha256
-        (base32 "1l38ykvbyda03233g6x4mbg8g37y87cjm1ks06hjbpzryprwph0g"))))
+        (base32 "01dzj7hs48ri8xsm4ffcdsvmcpfq8jhaglg2vsi2mavml9hlgnss"))))
     (properties `((upstream-name . "BayesMallows")))
     (build-system r-build-system)
     (arguments
@@ -30246,13 +30306,13 @@ attenuation and envelope correlation among others (Dabelsteen et al 1993
 (define-public r-bartxviz
   (package
     (name "r-bartxviz")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bartXViz" version))
        (sha256
-        (base32 "1n245s222di90afrv636yzzkv1fmx9yisxhcmbr4svcgk97zwhmj"))))
+        (base32 "1p322k6sps0nnwsi7vim4p2y9rrq5rbxzdm2hmrd4ipqvaszrz1z"))))
     (properties `((upstream-name . "bartXViz")))
     (build-system r-build-system)
     (arguments
@@ -30283,18 +30343,23 @@ attenuation and envelope correlation among others (Dabelsteen et al 1993
     (home-page "https://cran.r-project.org/package=bartXViz")
     (synopsis "Visualization of BART and BARP using SHAP")
     (description
-     "The contribution of variables in Bayesian Additive Regression Trees (BART) and
-Bayesian Additive Regression Trees with Post-Stratification (BARP) models is
-computed using permutation-based Shapley values.  The computed SHAP values are
-then utilized to visualize the contribution of each variable through various
-plots.  The computation of SHAP values for most models follows the methodology
-proposed by Strumbel and Kononenko (2014) <doi:10.1007/s10115-013-0679-x>, while
-for XGBoost, the approach introduced by Lundberg et al. (2020)
-<doi:10.1038/s42256-019-0138-9> was also considered.  The BART model was
-referenced based on the works of Chipman, George, and @code{McCulloch} (2010)
-<doi:10.1214/09-AOAS285> and Kapelner and Bleich (2013)
-<doi:10.18637/jss.v070.i04>, while the methodology for the BARP model was based
-on Bisbee (2019) <doi:10.1017/S0003055419000480>.")
+     "Complex machine learning models are often difficult to interpret.  Shapley
+values serve as a powerful tool to understand and explain why a model makes a
+particular prediction.  This package computes variable contributions using
+permutation-based Shapley values for Bayesian Additive Regression Trees (BART)
+and its extension with Post-Stratification (BARP).  The permutation-based SHAP
+method proposed by Strumbel and Kononenko (2014) <doi:10.1007/s10115-013-0679-x>
+is grounded in data obtained via MCMC sampling.  Similar to the BART model
+introduced by Chipman, George, and @code{McCulloch} (2010)
+<doi:10.1214/09-AOAS285>, this package leverages Bayesian posterior samples
+generated during model estimation, allowing variable contributions to be
+computed without requiring additional sampling.  For XGBoost and baseline
+adjustments, the approach by Lundberg et al. (2020)
+<doi:10.1038/s42256-019-0138-9> is also considered.The BARP model proposed by
+Bisbee (2019) <doi:10.1017/S0003055419000480> extends post-stratification by
+computing variable contributions within each stratum defined by stratifying
+variables.  The resulting Shapley values are visualized through both global and
+local explanation methods.")
     (license license:gpl2+)))
 
 (define-public r-bartman

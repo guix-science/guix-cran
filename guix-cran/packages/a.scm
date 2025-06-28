@@ -1134,6 +1134,30 @@ nested JSON responses.  The AWDB can be found at
 <https://wcc.sc.egov.usda.gov/@code{awdbRestApi/swagger-ui/index.html>}.")
     (license license:expat)))
 
+(define-public r-avseqmc
+  (package
+    (name "r-avseqmc")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "avseqmc" version))
+       (sha256
+        (base32 "0f6xsw6kyr54w1vf5yfi23l74d3q872impqxwgvnl93mp71mm0ld"))))
+    (properties `((upstream-name . "avseqmc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=avseqmc")
+    (synopsis "Anytime-Valid Sequential Estimation of Monte-Carlo p-Values")
+    (description
+     "Anytime-valid sequential estimation of the p-value of a test calibrated by
+Monte-Carlo simulation, as described in Stoepker & Castro (2024)
+<doi:10.48550/@code{arXiv.2409.18908>}.")
+    (license license:gpl3)))
+
 (define-public r-avotrex
   (package
     (name "r-avotrex")
@@ -2934,19 +2958,18 @@ rendering 2D and 3D models.")
 (define-public r-autodb
   (package
     (name "r-autodb")
-    (version "2.3.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autodb" version))
        (sha256
-        (base32 "0vkn90w3xpd1cgm7g3idjd0q1rj8nin146asysvzaixaqpm4h9s1"))))
+        (base32 "1sa86wyrvksxmsfplq6c14h8lcl5wj069ivqrac3x6bkk0hxc78d"))))
     (properties `((upstream-name . "autodb")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang))
     (native-inputs (list r-knitr))
     (home-page "https://charnelmouse.github.io/autodb/")
     (synopsis "Automatic Database Normalisation for Data Frames")
@@ -3142,13 +3165,13 @@ For more information, see the
 (define-public r-authoritative
   (package
     (name "r-authoritative")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "authoritative" version))
        (sha256
-        (base32 "106873mng2vljmgbragjr2awkfgp40dfhj60y7mjfv3k7al37661"))))
+        (base32 "1ky825v1z71xj0w7rj6l6ijzhj0f6kd3kk72c62mjs6h9bdfi9qd"))))
     (properties `((upstream-name . "authoritative")))
     (build-system r-build-system)
     (arguments
@@ -3156,7 +3179,7 @@ For more information, see the
       #:tests? #f))
     (propagated-inputs (list r-stringi))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/epiverse-connect/authoritative")
+    (home-page "https://github.com/Bisaloo/authoritative")
     (synopsis "Parse and Deduplicate Author Names")
     (description
      "Utilities to parse authors fields from DESCRIPTION files and general purpose
@@ -7536,13 +7559,13 @@ model for time series forecasting.For method details see Zhang, GP (2003)
 (define-public r-arima2
   (package
     (name "r-arima2")
-    (version "3.3.0")
+    (version "3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arima2" version))
        (sha256
-        (base32 "115igm3g8hd0ccs5si7siwr56hynjj84abrivg9ri4zld7vc8lws"))))
+        (base32 "0r5c1sixlvmbj6h7qgyf64zbg6x65lrlc2djlmnj1kk26xbj71qm"))))
     (properties `((upstream-name . "arima2")))
     (build-system r-build-system)
     (arguments
@@ -11679,13 +11702,13 @@ between-subject, within-subject, and mixed one-way and two-way ANOVA.")
 (define-public r-ao
   (package
     (name "r-ao")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ao" version))
        (sha256
-        (base32 "1xlvcrdclibnaw9l1x0gmzmg05b5ls59rr46j5fq66d1ama5shzr"))))
+        (base32 "0a6xw5sasv7v12r4vwp5m2n44gay8kvf5bc9bihv5cwg2281xp14"))))
     (properties `((upstream-name . "ao")))
     (build-system r-build-system)
     (arguments
@@ -13880,13 +13903,13 @@ feature analysis, missing value imputation methods, and correlation analysis.")
 (define-public r-analogue
   (package
     (name "r-analogue")
-    (version "0.18.0")
+    (version "0.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "analogue" version))
        (sha256
-        (base32 "03zxiayrp26kfv1blp7vlbc6j9ff5cjd24fsppp57f27rqag5mnk"))))
+        (base32 "0nwpb9m0lsbm2j2mcxb81cixn5rmjxy5qghnq4mivsm7ss90mhlm"))))
     (properties `((upstream-name . "analogue")))
     (build-system r-build-system)
     (arguments
@@ -13935,13 +13958,13 @@ images.")
 (define-public r-analitica
   (package
     (name "r-analitica")
-    (version "1.8.1")
+    (version "1.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Analitica" version))
        (sha256
-        (base32 "08i32s1finkrksiacn7xyhdx6597gdvaczmfsc0v5qyyaj6xrzkq"))))
+        (base32 "1mw0jdk2ps2wdpnyr79l4nqwn5rll73mk7rzws2xqa21w65xf931"))))
     (properties `((upstream-name . "Analitica")))
     (build-system r-build-system)
     (arguments
@@ -13959,14 +13982,17 @@ images.")
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Analitica")
-    (synopsis "Exploratory Data Analysis and Group Comparison Tools")
+    (synopsis
+     "Exploratory Data Analysis, Group Comparison Tools, and Other Procedures")
     (description
-     "This package provides tools for descriptive statistics, graphical exploration,
-outlier detection, homoscedasticity tests, and multiple comparison procedures.
-Includes manual implementations of Levene's test, Bartlett's test,
-Fligner-Killeen, and post hoc comparisons such as Tukey, Scheffe, Games-Howell,
-Brunner-Munzel, and others.  Useful for teaching, applied analysis, and
-reproducible research.")
+     "This package provides a comprehensive set of tools for descriptive statistics,
+graphical data exploration, outlier detection, homoscedasticity testing, and
+multiple comparison procedures.  Includes manual implementations of Levene's
+test, Bartlett's test, and the Fligner-Killeen test, as well as post hoc
+comparison methods such as Tukey, ScheffÃ©, Games-Howell, Brunner-Munzel, and
+others.  This version introduces two new procedures: the Jonckheere-Terpstra
+trend test and the Jarque-Bera test with Glinskiy's (2024) correction.  Designed
+for use in teaching, applied statistical analysis, and reproducible research.")
     (license license:expat)))
 
 (define-public r-anacor
@@ -22617,21 +22643,23 @@ area.")
 (define-public r-admiraldev
   (package
     (name "r-admiraldev")
-    (version "1.2.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiraldev" version))
        (sha256
-        (base32 "0fkm3bg0ha5gsdxzv2blr3lip3dyy12d8jp6vp1g3jb3y24amrxd"))))
+        (base32 "0c6z16fv9i1rsq3syjgz5w2yjlxyghyyq5y7nblph82kg0qd1lsd"))))
     (properties `((upstream-name . "admiraldev")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-withr
+                             r-tidyselect
                              r-tidyr
                              r-stringr
+                             r-roxygen2
                              r-rlang
                              r-purrr
                              r-lubridate
@@ -22677,13 +22705,13 @@ the admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiral" version))
        (sha256
-        (base32 "1pk20c5y6zi8k5915wj507r7spzxy9ybpk4gv3wfpphwfbhriw3m"))))
+        (base32 "0y57i4a3pbh3d32sl6z67hkf33ckmhkgc85cra0yb7khnwv7icy0"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (arguments
@@ -22702,7 +22730,7 @@ the admiral package.")
                              r-cli
                              r-admiraldev))
     (native-inputs (list r-knitr))
-    (home-page "https://pharmaverse.github.io/admiral/")
+    (home-page "https://pharmaverse.github.io/admiral/cran-release/")
     (synopsis "ADaM in R Asset Library")
     (description
      "This package provides a toolbox for programming Clinical Data Interchange
@@ -25763,13 +25791,13 @@ X, Lu W and Rabinowitz J (2017) <doi:10.1021/acs.analchem.7b00396>.")
 (define-public r-accsamplingdesign
   (package
     (name "r-accsamplingdesign")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AccSamplingDesign" version))
        (sha256
-        (base32 "0ybwk2nc0g7pma48rr3kbwadvgmaqp7206n3qmdhz4c86an9kgk4"))))
+        (base32 "1g5wm0i2rz4b4q105r4grxby5h102gxcf0c661ipr29zq86hsmkw"))))
     (properties `((upstream-name . "AccSamplingDesign")))
     (build-system r-build-system)
     (arguments
@@ -26589,6 +26617,33 @@ based on the work by Ziembowicz, K., Rychwalska, A., & Nowak, A. (2022).
 bootstrapped and exact split-half reliability estimates, and compute confidence
 intervals for individual participant scores.")
     (license license:gpl3)))
+
+(define-public r-aamatch
+  (package
+    (name "r-aamatch")
+    (version "0.3.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aamatch" version))
+       (sha256
+        (base32 "1wrhxh61drmcixp895miglhxvhipwnixx0w42cr6m1mbn69xbd75"))))
+    (properties `((upstream-name . "aamatch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-itos))
+    (home-page "https://cran.r-project.org/package=aamatch")
+    (synopsis
+     "Artless Automatic Multivariate Matching for Observational Studies")
+    (description
+     "This package implements a simple version of multivariate matching using a
+propensity score, near-exact matching, near-fine balance, and robust Mahalanobis
+distance matching (Rosenbaum 2020
+<doi:10.1146/annurev-statistics-031219-041058>).  You specify the variables, and
+the program does everything else.")
+    (license license:gpl2)))
 
 (define-public r-aalenjohansen
   (package

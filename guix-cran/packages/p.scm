@@ -4649,6 +4649,38 @@ package have been described by Stephen JJ, Carolan P, Krefman AE, et al. (2024)
 <doi:10.1016/j.patter.2024.101003>.")
     (license license:expat)))
 
+(define-public r-psgp
+  (package
+    (name "r-psgp")
+    (version "0.3-22")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psgp" version))
+       (sha256
+        (base32 "0gkpkhpcp8665xwaz7hgd5izk1ficqa7l7pgbb5nr63dgrkqll9l"))))
+    (properties `((upstream-name . "psgp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sp
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-intamap
+                             r-gstat
+                             r-foreach
+                             r-doparallel
+                             r-automap))
+    (home-page "https://cran.r-project.org/package=psgp")
+    (synopsis "Projected Spatial Gaussian Process Methods")
+    (description
+     "This package implements projected sparse Gaussian process Kriging ('Ingram et.
+al.', 2008, <doi:10.1007/s00477-007-0163-9>) as an additional method for the
+intamap package.  More details on implementation ('Barillec et.  al.', 2010,
+<doi:10.1016/j.cageo.2010.05.008>).")
+    (license license:gpl2+)))
+
 (define-public r-psgoft
   (package
     (name "r-psgoft")
@@ -12914,13 +12946,13 @@ can be found in Ahn S et al (2023) <doi:10.1186/s12859-022-05123-w>.")
 (define-public r-prais
   (package
     (name "r-prais")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prais" version))
        (sha256
-        (base32 "0mwg87z2rki1g50464h9q25i28zm0glhyzaar5xvls9xvqx96dvm"))))
+        (base32 "099yvyry359bkp2gbr80f6cdk21119cylx3pgk6h5cqszglyc1ks"))))
     (properties `((upstream-name . "prais")))
     (build-system r-build-system)
     (arguments
@@ -31589,13 +31621,13 @@ inference on diversity indexes, writing data.frame with Chinese characters.")
 (define-public r-pgenlibr
   (package
     (name "r-pgenlibr")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pgenlibr" version))
        (sha256
-        (base32 "1539a1c613h4vmb4f7nb6x2cm0lac96579alynmm58bq3l263a4k"))))
+        (base32 "0ahg557hxn4kwbmppmaflcwxywhxjpnaqwdmkd9g8ffg69j36p6l"))))
     (properties `((upstream-name . "pgenlibr")))
     (build-system r-build-system)
     (arguments
@@ -33640,24 +33672,26 @@ implemented model can be found in Demarqui et al. (2008)
 (define-public r-pepmapviz
   (package
     (name "r-pepmapviz")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PepMapViz" version))
        (sha256
-        (base32 "0akn8m97ngs5bhnvs6qwhg2sjwfwhcbd5q4yqns6r6h0dfzq4248"))))
+        (base32 "1rrgqbrm355a03b4vrfv116icbidy2i1ghvs2866dn4lj0z8dzhw"))))
     (properties `((upstream-name . "PepMapViz")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-stringr
+                             r-shiny
                              r-rlang
                              r-ggplot2
                              r-ggnewscale
                              r-ggh4x
                              r-ggforce
+                             r-dt
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=PepMapViz")
@@ -33674,7 +33708,7 @@ visualization of cross-software mass spectrometry results at the peptide level
 for specific protein and domain details in a linearized format and
 post-translational modification coverage across different experimental
 conditions; unraveling insights into disease mechanisms.  It also enables
-visualization of major histocompatibility complex-presented peptides in
+visualization of Major histocompatibility complex-presented peptide clusters in
 different antibody regions predicting immunogenicity in antibody drug
 development.")
     (license license:expat)))
@@ -39113,13 +39147,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "0daq13ac314lcfsjjg1i5zk62fjnyfnnwf5hq2ms3qp15zc7cqp1"))))
+        (base32 "1bipla8j2mvw2802g1h318wnmyaj3m6h0lkz1f87j3dwdbv7fxfx"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (arguments
@@ -39188,35 +39222,41 @@ algorithms.  This is further described in Reps (2017)
 (define-public r-pathwayvote
   (package
     (name "r-pathwayvote")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PathwayVote" version))
        (sha256
-        (base32 "0awlx7d1hnnang6mzm8kzxw7nr4cz71ch72fz7dxar0yf57b7q6b"))))
+        (base32 "1qqp5l591mjhhslwqric0wagifsbpdrys84p39ndhgjn78hbcj25"))))
     (properties `((upstream-name . "PathwayVote")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reactomepa
+    (propagated-inputs (list r-reactome-db
                              r-parallelly
                              r-org-hs-eg-db
+                             r-go-db
                              r-future
                              r-furrr
-                             r-dplyr
                              r-clusterprofiler
                              r-annotationdbi))
     (home-page "https://cran.r-project.org/package=PathwayVote")
     (synopsis
      "Robust Pathway Enrichment for DNA Methylation Studies Using Ensemble Voting")
     (description
-     "This package implements a robust, voting-based pathway enrichment method
-designed for DNA methylation data analysis.  The algorithm allows the input of
-expression quantitative trait methylation (@code{eQTM}) data to aggregates
-pathway signals across multiple parameter settings, and selects pathways
-supported across combinations using a vote-pruning strategy.")
+     "This package performs pathway enrichment analysis using a voting-based framework
+that integrates @code{CpGâgene} regulatory information from expression
+quantitative trait methylation (@code{eQTM}) data.  For a grid of top-ranked
+@code{CpGs} and filtering thresholds, gene sets are generated and refined using
+an entropy-based pruning strategy that balances information richness, stability,
+and probe bias correction.  In particular, gene lists dominated by genes with
+disproportionately high numbers of @code{CpG} mappings are penalized to mitigate
+active probe biasâa common artifact in methylation data analysis.  Enrichment
+results across parameter combinations are then aggregated using a voting scheme,
+prioritizing pathways that are consistently recovered under diverse settings and
+robust to parameter perturbations.")
     (license license:expat)))
 
 (define-public r-pathwaytmb
@@ -44797,6 +44837,32 @@ function returns the numerator and denominator coefficients for the PadÃ©
 approximant of appropriate order (Baker, 1975) <ISBN:9780120748556>.")
     (license (list license:gpl2+ license:bsd-2))))
 
+(define-public r-paddler
+  (package
+    (name "r-paddler")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "paddleR" version))
+       (sha256
+        (base32 "0ji4bwr90d4x6x3b7alncsc8dzj4xqzqbv7niwbgj5kvlsqy9f7k"))))
+    (properties `((upstream-name . "paddleR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://arnold-kakas.github.io/paddleR/")
+    (synopsis "Wrapper for 'Paddle' API (Application Programming Interface)")
+    (description
+     "This package provides a wrapper for Paddle - The Merchant of Record for digital
+products API (Application Programming Interface)
+<https://developer.paddle.com/api-reference/overview>.  Provides functions to
+manage and analyze products, customers, invoices and many more.")
+    (license license:expat)))
+
 (define-public r-pacvr
   (package
     (name "r-pacvr")
@@ -44919,13 +44985,13 @@ form of csv files and plots and are exported to user-specified project paths.")
 (define-public r-pacta-loanbook
   (package
     (name "r-pacta-loanbook")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pacta.loanbook" version))
        (sha256
-        (base32 "10jafygzsksmfgj2cx8rmyj3zfhld15dpfjsn237hs5anxjjwavp"))))
+        (base32 "045x4awilasdydnixwghgrfcw3yadnp1knlpirp3k0mnjdh37spb"))))
     (properties `((upstream-name . "pacta.loanbook")))
     (build-system r-build-system)
     (arguments

@@ -7858,13 +7858,13 @@ single numbers in inline R code chunks and for rendering columns in tables.")
 (define-public r-forlion
   (package
     (name "r-forlion")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ForLion" version))
        (sha256
-        (base32 "023j37ibdhl115nfrs0pcqx22qf7svc3h7gs7548kk5srm976qv7"))))
+        (base32 "1f4vchv25pmcjw5w00jir0b6z8rzqflk7rlp308a8nldg09lbnxc"))))
     (properties `((upstream-name . "ForLion")))
     (build-system r-build-system)
     (arguments
@@ -7873,15 +7873,13 @@ single numbers in inline R code chunks and for rendering columns in tables.")
     (propagated-inputs (list r-psych r-cubature))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ForLion")
-    (synopsis
-     "'ForLion' Algorithms to Find Optimal Experimental Designs with Mixed Factors")
+    (synopsis "'ForLion' Algorithm to Find D-Optimal Designs for Experiments")
     (description
      "Designing experimental plans that involve both discrete and continuous factors
 with general parametric statistical models using the @code{ForLion} algorithm
 and EW @code{ForLion} algorithm.  The algorithms will search for locally optimal
 designs and EW optimal designs under the D-criterion.  Reference: Huang, Y., Li,
-K., Mandal, A., & Yang, J., (2024)<doi:10.1007/s11222-024-10465-x>.  Lin, S.,
-Huang, Y., & Yang, J. (2025) <doi:10.48550/@code{arXiv.2505.00629>}.")
+K., Mandal, A., & Yang, J., (2024)<doi:10.1007/s11222-024-10465-x>.")
     (license license:expat)))
 
 (define-public r-forit
@@ -10955,13 +10953,13 @@ to calculate equilibrium stability.")
 (define-public r-fluxible
   (package
     (name "r-fluxible")
-    (version "1.2.2")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxible" version))
        (sha256
-        (base32 "1j3ccnksfh90jfmg9gqasqjc7n8jd9yczr0x6llz43hl4y3xj3qv"))))
+        (base32 "1phqplf7703r9ws75bs9kw47m6h2jyssh84949qjp0aylmkr44sz"))))
     (properties `((upstream-name . "fluxible")))
     (build-system r-build-system)
     (arguments
@@ -11318,13 +11316,13 @@ varying proteingroup denotations for common precursor.")
 (define-public r-flowscreen
   (package
     (name "r-flowscreen")
-    (version "1.2.6")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FlowScreen" version))
        (sha256
-        (base32 "1s9xyrvfsgrl2zxm2an5qj3rs1qx7v7j8wc83jzl28pkwa5xr351"))))
+        (base32 "1dia052gs5xqvri7cq0a14m84fb919gj5z1dgw0i1ykpd9aq0zc4"))))
     (properties `((upstream-name . "FlowScreen")))
     (build-system r-build-system)
     (arguments
@@ -11343,7 +11341,11 @@ flow, low flow, and/or baseflow statistics, or it can be used to perform more
 detailed hydrological time series analyses.  The package was designed for
 screening daily streamflow time series from Water Survey Canada and the United
 States Geological Survey but will also work with streamflow time series from
-many other agencies.")
+many other agencies.  Package update to version 2.0 made updates to read.flows
+function to allow loading of GRDC and ROBIN streamflow record formats.  This
+package uses the `changepoint` package for change point detection.  For more
+information on change point methods, see the changepoint package at
+<https://cran.r-project.org/package=changepoint>.")
     (license license:gpl2+)))
 
 (define-public r-flowregenvcost
@@ -12784,19 +12786,19 @@ flextable and openxlsx2'.")
 (define-public r-flexic
   (package
     (name "r-flexic")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexIC" version))
        (sha256
-        (base32 "1jm36vld9yafqrxkifma2bspd860hxbh3l4wclx8dcv667c0aj52"))))
+        (base32 "1ppz8lvrsbm0nmapmrdh11b29fb34py67mwdxks4z1p7jz6jlzwd"))))
     (properties `((upstream-name . "flexIC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-mass r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=flexIC")
     (synopsis "Flexible Rank-Preserving Correlation Engine")
@@ -19806,13 +19808,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.3.6")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "0fwzs5m0gkmk2gygx3n9dv2k7a7hcfj8zfcm2fbzqgkj4ffhhymx"))))
+        (base32 "0gy57vdg04im4z9n9g1lys0959c2y2sa83c4qzblzm3f9gl9ndh0"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (arguments
@@ -19824,6 +19826,7 @@ the plot of the functional data.")
                              r-rcpparmadillo
                              r-rcpp
                              r-mvtnorm
+                             r-minpack-lm
                              r-matrix
                              r-lpsolve
                              r-foreach
@@ -19913,13 +19916,13 @@ J. L. (2005) <doi:10.1198/016214504000001745>.")
 (define-public r-fdapoifd
   (package
     (name "r-fdapoifd")
-    (version "1.0.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdaPOIFD" version))
        (sha256
-        (base32 "0c773hidrg69gs9lzdcwf4hzzmid3kwf73pw6c807y1b4lgiai20"))))
+        (base32 "1zx4rjb5h9inqgh7db9n69jviyw1i7zcxjkhpcbv5pwa0rchn68a"))))
     (properties `((upstream-name . "fdaPOIFD")))
     (build-system r-build-system)
     (arguments
@@ -19928,20 +19931,23 @@ J. L. (2005) <doi:10.1198/016214504000001745>.")
     (propagated-inputs (list r-tibble
                              r-reshape2
                              r-patchwork
-                             r-mass
                              r-magrittr
-                             r-ggplot2
-                             r-fdapace
-                             r-fastgp))
+                             r-igraph
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/aefdz/fdaPOIFD")
     (synopsis "Partially Observed Integrated Functional Depth")
     (description
-     "Applications to visualization, outlier detection and classification.  Software
-companion for ElÃ­as, Antonio, JimÃ©nez, RaÃºl, Paganoni, Anna M. and Sangalli,
-Laura M., (2022), \"Integrated Depth for Partially Observed Functional Data\".
-Journal of Computational and Graphical Statistics.
-<doi:10.1080/10618600.2022.2070171>.")
+     "Integrated Functional Depth for Partially Observed Functional Data and
+applications to visualization, outlier detection and classification.  It
+implements the methods proposed in: ElÃ­as, A., JimÃ©nez, R., Paganoni, A. M.
+and Sangalli, L. M., (2023), \"Integrated Depth for Partially Observed Functional
+Data\", Journal of Computational and Graphical Statistics,
+<doi:10.1080/10618600.2022.2070171>.  ElÃ­as, A., JimÃ©nez, R., & Shang, H. L.
+(2023), \"Depth-based reconstruction method for incomplete functional data\",
+Computational Statistics, <doi:10.1007/s00180-022-01282-9>.  ElÃ­as, A., Nagy,
+S. (2024), \"Statistical properties of partially observed integrated functional
+depths\", TEST, <doi:10.1007/s11749-024-00954-6>.")
     (license license:gpl3)))
 
 (define-public r-fdapde
@@ -22406,6 +22412,33 @@ report with result interpretations.")
 to stabilize in Schoenbrodt and Perugini's definition of sequential stability
 (see <doi:10.1016/j.jrp.2013.05.009>).")
     (license license:gpl3)))
+
+(define-public r-fastpolicytree
+  (package
+    (name "r-fastpolicytree")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastpolicytree" version))
+       (sha256
+        (base32 "0nlm9gwb68rw4bp3wsm4wc1chf4chqi3by8iwxjandgzj37hlxy6"))))
+    (properties `((upstream-name . "fastpolicytree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/jcussens/tailoring")
+    (synopsis "Constructs Policy Trees from Covariate and Reward Data")
+    (description
+     "Constructs optimal policy trees which provide a rule-based treatment
+prescription policy.  Input is covariate and reward data, where, typically, the
+rewards will be doubly robust reward estimates.  This package aims to construct
+optimal policy trees more quickly than the existing policytree package and is
+intended to be used alongside that package.  For more details see Cussens,
+Hatamyar, Shah and Kreif (2025) <doi:10.48550/@code{arXiv.2506.15435>}.")
+    (license license:gpl3+)))
 
 (define-public r-fastpng
   (package
@@ -26456,13 +26489,13 @@ with data.table and mvnfast installed.")
 (define-public r-fabr
   (package
     (name "r-fabr")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabR" version))
        (sha256
-        (base32 "1rqy3n3gnylpfc48pmrbm91y1lr87hkg44x9x53sky9044ms6flx"))))
+        (base32 "0mvyzw17ljirqvzz0622r4wdbqysjwkrwl21lf1lmchfmd27w446"))))
     (properties `((upstream-name . "fabR")))
     (build-system r-build-system)
     (arguments

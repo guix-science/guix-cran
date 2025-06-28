@@ -114,6 +114,39 @@ Transforms.")
 publication-ready tables to latex files, and running Monte Carlo experiments.")
     (license license:gpl2+)))
 
+(define-public r-kvkapir
+  (package
+    (name "r-kvkapir")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kvkapiR" version))
+       (sha256
+        (base32 "18ix3zc76z2piqbv49kq0p27m8g5wwa8v6bh057b24w03w48mxx4"))))
+    (properties `((upstream-name . "kvkapiR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-purrr
+                             r-lifecycle
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://coeneisma.github.io/kvkapiR/")
+    (synopsis "Interface to the Dutch Chamber of Commerce (KvK) API")
+    (description
+     "Access business registration data from the Dutch Chamber of Commerce (Kamer van
+Koophandel, @code{KvK}) through their official API <https://developers.kvk.nl/>.
+ Search for companies by name, location, or registration number.  Retrieve
+detailed business profiles, establishment information, and company name
+histories.  Built on httr2 for robust API interaction with automatic pagination,
+error handling, and usage tracking.")
+    (license license:expat)))
+
 (define-public r-kvh
   (package
     (name "r-kvh")

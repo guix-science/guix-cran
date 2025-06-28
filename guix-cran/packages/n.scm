@@ -3852,6 +3852,35 @@ families exponentiated generalized gull alpha power family, exponentiated gull
 alpha powerfamily, gull alpha power family.")
     (license license:expat)))
 
+(define-public r-notionr
+  (package
+    (name "r-notionr")
+    (version "0.0.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "notionR" version))
+       (sha256
+        (base32 "0ln1w29bs2vaqmcmhmjn5sgihf7si98lyiyp6img9jx875dgv61g"))))
+    (properties `((upstream-name . "notionR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringi
+                             r-httr2
+                             r-httr
+                             r-dplyr))
+    (home-page "<https://www.enelmargen.org/notionR/>")
+    (synopsis "R Wrapper for 'Notion' API")
+    (description
+     "This package provides functions to query databases and notes in Notion', using
+the official REST API. To learn more about the functionality of the Notion API,
+see <https://developers.notion.com/>.")
+    (license license:expat)))
+
 (define-public r-notifyme
   (package
     (name "r-notifyme")
@@ -6677,6 +6706,38 @@ calculations.  This package can be easily inserted into existing analysis
 workflows by users to help with analyzing and interpreting NMR data.")
     (license license:expat)))
 
+(define-public r-nmrphasing
+  (package
+    (name "r-nmrphasing")
+    (version "1.0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMRphasing" version))
+       (sha256
+        (base32 "1i6glyv3dskzcnyyzjqsma4dp6mdjsaz7y3y9q1rib1jw8wwk2jd"))))
+    (properties `((upstream-name . "NMRphasing")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-signal r-massspecwavelet r-baseline))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=NMRphasing")
+    (synopsis
+     "Phase Error Correction and Baseline Correction for One Dimensional ('1D') 'NMR' Data")
+    (description
+     "There are three distinct approaches for phase error correction, they are: a
+single linear model with a choice of optimization functions, multiple linear
+models with optimization function choices and a shrinkage-based method.  The
+methodology is based on our new algorithms and various references (Binczyk et
+al. (2015) <doi:10.1186/1475-925X-14-S2-S5>,Chen et al. (2002)
+<doi:10.1016/S1090-7807(02)00069-1>, de Brouwer (2009)
+<doi:10.1016/j.jmr.2009.09.017>, DÅ¾akula (2000) <doi:10.1006/jmre.2000.2123>,
+Ernst (1969) <doi:10.1016/0022-2364(69)90003-1>, Liland et al. (2010)
+<doi:10.1366/000370210792434350>).")
+    (license license:expat)))
+
 (define-public r-nmof
   (package
     (name "r-nmof")
@@ -7432,13 +7493,13 @@ details in Garay, Lachos and Abanto-Valle (2011)
 (define-public r-nlsic
   (package
     (name "r-nlsic")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlsic" version))
        (sha256
-        (base32 "0qx8839sxs5lwxc8gygl7j57r7fkwzw631imhlacmc1zn86svzp2"))))
+        (base32 "1rca8f4p35bkhpgrqnakx3z1igvzvf3b37qkib4j6kl9cv1kvgw9"))))
     (properties `((upstream-name . "nlsic")))
     (build-system r-build-system)
     (arguments
@@ -8106,13 +8167,13 @@ outputs (e.g. R Markdown).")
 (define-public r-nlmixr2plot
   (package
     (name "r-nlmixr2plot")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2plot" version))
        (sha256
-        (base32 "1r6dyczhsrvich8gd6x1a8a53gxkhxqg05s7fllnhxjjid4v29qb"))))
+        (base32 "18x72r1qm05svvyzbfa63m5zh245ka91rvgjvrrqphclw5szrxm0"))))
     (properties `((upstream-name . "nlmixr2plot")))
     (build-system r-build-system)
     (arguments
@@ -14372,6 +14433,46 @@ protein-protein interaction network.")
      "Set of functions to estimate kidney function and other traits of interest in
 nephrology.")
     (license license:gpl3+)))
+
+(define-public r-neotoma2
+  (package
+    (name "r-neotoma2")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neotoma2" version))
+       (sha256
+        (base32 "1p6wj7ifg1lgxw8nh2hia6ahx8gszhyqaj59qnm7bd5dycfwifng"))))
+    (properties `((upstream-name . "neotoma2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wk
+                             r-uuid
+                             r-tidyr
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-progress
+                             r-magrittr
+                             r-lubridate
+                             r-leaflet
+                             r-jsonlite
+                             r-httr
+                             r-gtools
+                             r-geojsonsf
+                             r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/NeotomaDB/neotoma2")
+    (synopsis "Working with the Neotoma Paleoecology Database")
+    (description
+     "Access and manipulation of data using the Neotoma Paleoecology Database.
+<https://api.neotomadb.org/api-docs/>.")
+    (license license:expat)))
 
 (define-public r-neonutilities
   (package

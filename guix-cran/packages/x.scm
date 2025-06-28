@@ -663,13 +663,13 @@ likelihood-based models.")
 (define-public r-xpose-nlmixr2
   (package
     (name "r-xpose-nlmixr2")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpose.nlmixr2" version))
        (sha256
-        (base32 "0scq6brd7sn1ybmacxlpdlmkwxbn9sc2gpzw6438fwfjss6sza8s"))))
+        (base32 "0a9asdq9d5g39bhb75ks698izbgs6x1npsq53b7kznl40kpcjc2a"))))
     (properties `((upstream-name . "xpose.nlmixr2")))
     (build-system r-build-system)
     (arguments

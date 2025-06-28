@@ -9001,13 +9001,13 @@ Nascimento (2021)
 (define-public r-dogoftest
   (package
     (name "r-dogoftest")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Dogoftest" version))
        (sha256
-        (base32 "0lf36mvng5qwsh0z0k54h1vhypnnpggbdgklraqqqnyr0np06rh1"))))
+        (base32 "0rbnxaplzbicflr1fpm660cs3zizdn7pkb7vjb74zbx18yczslci"))))
     (properties `((upstream-name . "Dogoftest")))
     (build-system r-build-system)
     (arguments
@@ -9025,13 +9025,13 @@ The philosophy of the package is described in Guo G.(2024)
 (define-public r-dogesr
   (package
     (name "r-dogesr")
-    (version "0.5.0")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dogesr" version))
        (sha256
-        (base32 "0w5qps781c406br5rba6mv127yrlgq7rzchk55j7mndrm7hwia63"))))
+        (base32 "03fgl61bijzyk8x05biiaszp6xphsl1n31v4qj17b036pcpk8mf6"))))
     (properties `((upstream-name . "dogesr")))
     (build-system r-build-system)
     (arguments
@@ -9051,7 +9051,7 @@ The philosophy of the package is described in Guo G.(2024)
     (description
      "Work with data on Venetian doges and dogaresse and the noble families of the
 Republic of Venice, and use it for social network analysis, as used in Merelo
-(2022) <@code{arXiv:2209.07334>}.")
+(2022) <doi:10.48550/@code{arXiv.2209.07334>}.")
     (license license:gpl3)))
 
 (define-public r-doestrare
@@ -11167,13 +11167,13 @@ or applied to fishery data to provide management recommendations.")
 (define-public r-dlmrmv
   (package
     (name "r-dlmrmv")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DLMRMV" version))
        (sha256
-        (base32 "0h130bsn203wi6lym8d2439v89ilpmrapkpnb36x7cfsi9y8nbdw"))))
+        (base32 "1dsy8k2b7d2hp07pqllw8ng67dkqqbma9sj6vknsih11fygsn9gp"))))
     (properties `((upstream-name . "DLMRMV")))
     (build-system r-build-system)
     (arguments
@@ -12476,19 +12476,19 @@ stems from @code{AdaptGauss}': Ultsch, A, et al. (2015)
 (define-public r-distributioniv
   (package
     (name "r-distributioniv")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DistributionIV" version))
        (sha256
-        (base32 "0n1z2vq0avr0mmr0125zpv2qinwpnivrdjgfgnh9cx3ss76ghzam"))))
+        (base32 "0rabm0dpq52r0fimhgp375rn7md7a10x2hfk390rhqdcqq0g7i0v"))))
     (properties `((upstream-name . "DistributionIV")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs r-torch r-checkmate))
+    (propagated-inputs (list r-torch r-checkmate))
     (home-page "https://cran.r-project.org/package=DistributionIV")
     (synopsis "Distributional Instrumental Variable (DIV) Model")
     (description
@@ -17724,13 +17724,13 @@ clusters.")
 (define-public r-diceplot
   (package
     (name "r-diceplot")
-    (version "0.1.7")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diceplot" version))
        (sha256
-        (base32 "1k17rjkl6mscdflj6hxlz3q2jcf3angjbnghzd9cgc2lvw41v5p7"))))
+        (base32 "17q9apx89p8p3d726q9z0w9xg7sb0898ibv00rblnp5cxn5lcb4c"))))
     (properties `((upstream-name . "diceplot")))
     (build-system r-build-system)
     (arguments
@@ -20204,6 +20204,42 @@ equivalent interest and discount rate calculation, present and future values of
 annuities, and loan amortization schedule.")
     (license license:gpl3)))
 
+(define-public r-detectxor
+  (package
+    (name "r-detectxor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "detectXOR" version))
+       (sha256
+        (base32 "0war6dl3ham9ibwqlvxjpkz5s3hgskjhmhrhbr2kbfw500xzcv2y"))))
+    (properties `((upstream-name . "detectXOR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-reshape2
+                             r-magrittr
+                             r-knitr
+                             r-kableextra
+                             r-htmltools
+                             r-glue
+                             r-ggthemes
+                             r-ggplot2
+                             r-ggh4x
+                             r-dplyr
+                             r-desctools
+                             r-base64enc))
+    (home-page "https://github.com/JornLotsch/detectXOR")
+    (synopsis "XOR Pattern Detection and Visualization")
+    (description
+     "This package provides tools for detecting XOR-like patterns in variable pairs in
+two-class data sets.  Includes visualizations for pattern exploration and
+reporting capabilities with both text and HTML output formats.")
+    (license license:gpl3)))
+
 (define-public r-detectruns
   (package
     (name "r-detectruns")
@@ -22446,13 +22482,13 @@ multinomial @code{(multinomial()}), fixed transition probability
 (define-public r-denguedatahub
   (package
     (name "r-denguedatahub")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "denguedatahub" version))
        (sha256
-        (base32 "0hpffqajvj8hhl4ddia8idxi3n4snjx2m4sri2q1wf2x9164rzmg"))))
+        (base32 "1kp66g0mjj2bk1p3y6mb0355qmj4ahixp560xw9khj6slgdpvbw8"))))
     (properties `((upstream-name . "denguedatahub")))
     (build-system r-build-system)
     (arguments
@@ -29666,19 +29702,21 @@ and ANCOVA.")
 (define-public r-dataretrieval
   (package
     (name "r-dataretrieval")
-    (version "2.7.18")
+    (version "2.7.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataRetrieval" version))
        (sha256
-        (base32 "0am07lj0jcb3fgirbb5y5354mznc7262fiyi10bncv5qmxgzmaxx"))))
+        (base32 "16abpj62w6x134v9h1ypmzh8s9p8v53bizfhjzs9day6wcxs3rah"))))
     (properties `((upstream-name . "dataRetrieval")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
+                             r-whisker
+                             r-sf
                              r-readr
                              r-lubridate
                              r-jsonlite
@@ -29691,10 +29729,7 @@ and ANCOVA.")
     (description
      "Collection of functions to help retrieve U.S. Geological Survey and U.S.
 Environmental Protection Agency water quality and hydrology data from web
-services.  Data are discovered from National Water Information System
-<https://waterservices.usgs.gov/> and <https://waterdata.usgs.gov/nwis>.  Water
-quality data are obtained from the Water Quality Portal
-<https://www.waterqualitydata.us/>.")
+services.")
     (license license:cc0)))
 
 (define-public r-dataresqc
@@ -32422,13 +32457,13 @@ additional tools to handle and visualize the output.  See the package website
 (define-public r-daiquiri
   (package
     (name "r-daiquiri")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daiquiri" version))
        (sha256
-        (base32 "05057i8xvkzyd8h1ppw7qip1d4yjgzimmb5chbdw72mwwgbrwrfy"))))
+        (base32 "1vwgsk55sqanqchyxs1aar40d8si5v7k0hn6i4sc9w51wwq4lfwh"))))
     (properties `((upstream-name . "daiquiri")))
     (build-system r-build-system)
     (arguments

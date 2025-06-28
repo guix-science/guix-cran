@@ -12797,6 +12797,68 @@ telemetry in mind, this package also provides functionality to account for
 unbalanced acoustic receiver array designs, and satellite tag data.")
     (license license:expat)))
 
+(define-public r-movedesign
+  (package
+    (name "r-movedesign")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "movedesign" version))
+       (sha256
+        (base32 "19qrldazrrjzsgk0nyv2nyciif3gxz803s2z9rhvqxhi0xb1bam1"))))
+    (properties `((upstream-name . "movedesign")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-terra
+                             r-stringr
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyfeedback
+                             r-shinydashboardplus
+                             r-shinydashboard
+                             r-shinybusy
+                             r-shinyalert
+                             r-shiny
+                             r-scales
+                             r-rlang
+                             r-rintrojs
+                             r-reactable
+                             r-quarto
+                             r-parsedate
+                             r-lubridate
+                             r-gsl
+                             r-golem
+                             r-ggtext
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggiraph
+                             r-gdtools
+                             r-fontawesome
+                             r-dplyr
+                             r-data-table
+                             r-ctmm
+                             r-crayon
+                             r-config
+                             r-combinat
+                             r-bsplus
+                             r-bayestestr))
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://ecoisilva.github.io/movedesign/")
+    (synopsis "Study Design Toolbox for Movement Ecology Studies")
+    (description
+     "Toolbox and shiny application to help researchers design movement ecology
+studies, focusing on two key objectives: estimating home range areas, and
+estimating fine-scale movement behavior, specifically speed and distance
+traveled.  It provides interactive simulations and methodological guidance to
+support study planning and decision-making.  The application is described in
+Silva et al. (2023) <doi:10.1111/2041-210X.14153>.")
+    (license license:gpl3+)))
+
 (define-public r-movecost
   (package
     (name "r-movecost")
@@ -20819,13 +20881,13 @@ functional PCA'.")
 (define-public r-mlr3fairness
   (package
     (name "r-mlr3fairness")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3fairness" version))
        (sha256
-        (base32 "0rm6l50prwjjy55p14zs9mkdrczbyl7f63fqsmh7r5xjahcsnfi7"))))
+        (base32 "0krilvi4zsfv5ggz8lmxlakj11n5kkcqra2ljis7cm7vpl9kpz98"))))
     (properties `((upstream-name . "mlr3fairness")))
     (build-system r-build-system)
     (arguments
@@ -24382,13 +24444,13 @@ o1-preview for code structure and documentation.")
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "0ylv9l06vi5sbygsp1f8pmg0p1rmyxjlxmiz031zp6wyhhkxxpyx"))))
+        (base32 "16zhg336bva89qnh5pq588d3d7ab1snmn7dkdhh2nd38h2d1496k"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (arguments
@@ -27580,13 +27642,13 @@ Robert Tibshirani (2018) <@code{arXiv:1806.09734>}.")
 (define-public r-mimer
   (package
     (name "r-mimer")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MIMER" version))
        (sha256
-        (base32 "1nqdjgm95dnaxnzy5j28agl7b95hj6hqjyipk5mz44yc2y2chg3z"))))
+        (base32 "1zpna27xcparwx81fjr97qhkwd8834dw8gd9548baa688g7iniby"))))
     (properties `((upstream-name . "MIMER")))
     (build-system r-build-system)
     (arguments
@@ -34294,13 +34356,13 @@ provides a layout method applicable for large trophic networks.")
 (define-public r-metanet
   (package
     (name "r-metanet")
-    (version "0.2.5")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetaNet" version))
        (sha256
-        (base32 "05wc8lzjbj87pj289y4s5m3szxrxnmd7b5rzpsg2r2bwjk1gm46g"))))
+        (base32 "0lvnq5wbwwc6cwp6dypkj3x0xn23g8sn18ins3r78nxynx0g31j7"))))
     (properties `((upstream-name . "MetaNet")))
     (build-system r-build-system)
     (arguments
@@ -39043,6 +39105,48 @@ provided in the package function as well as at
 <https://kartikeyabolar.shinyapps.io/MDS_PCAShiny/>.")
     (license license:gpl2)))
 
+(define-public r-mdsopt
+  (package
+    (name "r-mdsopt")
+    (version "0.7-7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mdsOpt" version))
+       (sha256
+        (base32 "0frf1ll0618m29xyqsh1v0fzb3rw5dchn7pqcm9vy0sr9d8dahx1"))))
+    (properties `((upstream-name . "mdsOpt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-symbolicda
+                             r-spdep
+                             r-smacof
+                             r-plotrix
+                             r-clustersim
+                             r-animation))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=mdsOpt")
+    (synopsis
+     "Searching for Optimal MDS Procedure for Metric and Interval-Valued Data")
+    (description
+     "Selecting the optimal multidimensional scaling (MDS) procedure for metric data
+via metric MDS (ratio, interval, mspline) and nonmetric MDS (ordinal).
+Selecting the optimal multidimensional scaling (MDS) procedure for
+interval-valued data via metric MDS (ratio, interval, mspline).Selecting the
+optimal multidimensional scaling procedure for interval-valued data by varying
+all combinations of normalization and optimization methods.Selecting the optimal
+MDS procedure for statistical data referring to the evaluation of tourist
+attractiveness of Lower Silesian counties. (Borg, I., Groenen, P.J.F., Mair, P.
+(2013) <doi:10.1007/978-3-642-31848-1>, Walesiak, M. (2016)
+<doi:10.15611/ekt.2016.2.01>, Walesiak, M. (2017) <doi:10.15611/ekt.2017.3.01>).")
+    (license license:gpl2+)))
+
 (define-public r-mdsmap
   (package
     (name "r-mdsmap")
@@ -42135,13 +42239,13 @@ Cauchy distributions.")
 (define-public r-mcartest
   (package
     (name "r-mcartest")
-    (version "1.2.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MCARtest" version))
        (sha256
-        (base32 "1j2p43jd1l5di93mf3arfnvg3jz4jzz1f917y2xbvgvgim2s2zmv"))))
+        (base32 "1zjlqrz0gcj74lh5hs78b4ibxn3s4jckkdpsjjs364ad3g9kzzlb"))))
     (properties `((upstream-name . "MCARtest")))
     (build-system r-build-system)
     (arguments
@@ -48019,20 +48123,26 @@ codes.")
 (define-public r-mapi
   (package
     (name "r-mapi")
-    (version "1.0.5")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapi" version))
        (sha256
-        (base32 "1yljvapzkb43i2sbqsmn5aqp95hm8gjkz8m41x1chwyfddrzjsbw"))))
+        (base32 "1q23sm6ydwgmgahpdsnnvglam1lcg8mziawkk1j00klp513cscv4"))))
     (properties `((upstream-name . "mapi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-rcpp r-pbapply r-data-table))
-    (home-page "https://www1.montpellier.inra.fr/CBGP/software/MAPI/")
+    (propagated-inputs (list r-sf
+                             r-s2
+                             r-rcpp
+                             r-foreach
+                             r-fmesher
+                             r-doparallel
+                             r-data-table))
+    (home-page "https://www1.montpellier.inrae.fr/CBGP/software/MAPI/")
     (synopsis "Mapping Averaged Pairwise Information")
     (description
      "Mapping Averaged Pairwise Information (MAPI) is an exploratory method providing
@@ -48253,6 +48363,47 @@ data.")
 interactive maps, and Deck.gl (<https://deck.gl/>), a javascript library which
 uses @code{WebGL} for visualising large data sets.")
     (license license:gpl3)))
+
+(define-public r-mapctools
+  (package
+    (name "r-mapctools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MAPCtools" version))
+       (sha256
+        (base32 "0yzm1x1cmc4bnffh9mha9s1jw44gd90pq764x097cvjh57pjgiir"))))
+    (properties `((upstream-name . "MAPCtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-survey
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-gridextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-fastdummies
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/LarsVatten/MAPCtools")
+    (synopsis "Multivariate Age-Period-Cohort (MAPC) Modeling for Health Data")
+    (description
+     "Bayesian multivariate age-period-cohort (MAPC) models for analyzing health data,
+with support for model fitting, visualization, stratification, and model
+comparison.  Inference focuses on identifiable cross-strata differences, as
+described by Riebler and Held (2010) <doi:10.1093/biostatistics/kxp037>.
+Methods for handling complex survey data via the survey package are included, as
+described in Mercer et al. (2014) <doi:10.1016/j.spasta.2013.12.001>.")
+    (license license:expat)))
 
 (define-public r-mapchina
   (package
@@ -50943,25 +51094,23 @@ settings can be modified.")
 (define-public r-madshapr
   (package
     (name "r-madshapr")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "madshapR" version))
        (sha256
-        (base32 "035hxkkhxi68id1f3q9qyl82kzphq9als60x7wv03gmzi6fn85zy"))))
+        (base32 "1nj8i4w0v5gikc6y3j4kivvzrd2qgdiadggyl6f9kjl0lphc8lvj"))))
     (properties `((upstream-name . "madshapR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidytext
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
                              r-readr
                              r-lubridate
-                             r-lifecycle
                              r-knitr
                              r-janitor
                              r-haven
@@ -50976,17 +51125,16 @@ settings can be modified.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/maelstrom-research/madshapR")
     (synopsis
-     "Support Technical Processes Following 'Maelstrom Research' Standards")
+     "Functions to Support Data Management and Processing Using the Maelstrom Research Approach")
     (description
-     "This package provides functions to support rigorous processes in data cleaning,
-evaluation, and documentation across datasets from different studies based on
-Maelstrom Research guidelines.  The package includes the core functions to
-evaluate and format the main inputs that define the process, diagnose errors,
-and summarize and evaluate datasets and their associated data dictionaries.  The
-main outputs are clean datasets and associated metadata, and tabular and visual
-summary reports.  As described in Maelstrom Research guidelines for rigorous
-retrospective data harmonization (Fortier I and al. (2017)
-<doi:10.1093/ije/dyw075>).")
+     "This package provides functions to support data cleaning, evaluation, and
+description, developed for integration with Maelstrom Research software tools.
+@code{madshapR} provides functions primarily to evaluate and manipulate datasets
+and data dictionaries in preparation for data harmonization with the package
+Rmonize and to facilitate integration and transfer between RStudio servers and
+secure Opal environments. @code{madshapR} functions can be used independently
+but are optimized in conjunction with âRmonizeâ functions for streamlined
+and coherent harmonization processing.")
     (license license:gpl3)))
 
 (define-public r-madrat
@@ -52084,4 +52232,38 @@ to evaluate the best cluster number from the original data.")
 tools facilitating its use in the R ecosystem.  For details see Kahle et.  al.
 (2020) <doi:10.18637/jss.v093.i09>.")
     (license license:gpl2)))
+
+(define-public r-m2b
+  (package
+    (name "r-m2b")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "m2b" version))
+       (sha256
+        (base32 "0bfjm0qs5nb0642p3991zy4zpqkwf0wqqdv35ydm72xhrbdsgzl6"))))
+    (properties `((upstream-name . "m2b")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-randomforest r-ggplot2 r-geosphere r-catools
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ldbk/m2b")
+    (synopsis "Movement to Behaviour Inference using Random Forest")
+    (description
+     "Prediction of behaviour from movement characteristics using observation and
+random forest for the analyses of movement data in ecology.  From movement
+information (speed, bearing...) the model predicts the observed behaviour
+(movement, foraging...) using random forest.  The model can then extrapolate
+behavioural information to movement data without direct observation of
+behaviours.  The specificity of this method relies on the derivation of multiple
+predictor variables from the movement data over a range of temporal windows.
+This procedure allows to capture as much information as possible on the changes
+and variations of movement and ensures the use of the random forest algorithm to
+its best capacity.  The method is very generic, applicable to any set of data
+providing movement data together with observation of behaviour.")
+    (license license:gpl3)))
 

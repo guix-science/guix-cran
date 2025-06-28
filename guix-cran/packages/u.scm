@@ -1639,13 +1639,13 @@ around the @code{JavaScript} library @code{UpSet.js}'.")
 (define-public r-upset-hp
   (package
     (name "r-upset-hp")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "upset.hp" version))
        (sha256
-        (base32 "1spbsfcp09yj5d5n8vc8rinv20j8qjc7xmx9bq8ab0cqijnzn6aw"))))
+        (base32 "0r98nyyndrmvfw3z19l1xhpjjc0p7wmc166y0vilm1ss2p2hja98"))))
     (properties `((upstream-name . "upset.hp")))
     (build-system r-build-system)
     (arguments
@@ -3318,13 +3318,13 @@ in spreadsheet files.")
 (define-public r-unhcrthemes
   (package
     (name "r-unhcrthemes")
-    (version "0.6.3")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unhcrthemes" version))
        (sha256
-        (base32 "02qvqjwxyxdxc8g3irm1ircz3qyd7w7x84fp2dvqjpxk27qcwki6"))))
+        (base32 "1wxm0n5gr36r9350wyhalwik79ch6n5s3b3iy7y0d4b02ys966a4"))))
     (properties `((upstream-name . "unhcrthemes")))
     (build-system r-build-system)
     (arguments

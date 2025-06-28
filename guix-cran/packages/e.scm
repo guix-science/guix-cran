@@ -1444,13 +1444,13 @@ the @code{CompTox} Chemicals Dashboard Resource Hub
 (define-public r-extractfaers
   (package
     (name "r-extractfaers")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extractFAERS" version))
        (sha256
-        (base32 "01lj86zs9qpwy7s0l2gq562a6zyblrgzk2lpxmynj5lvl253d3ag"))))
+        (base32 "08rq1nqj36m4w670kw0n102zlqzk1a0kynxmkhi0axf7cklf46hq"))))
     (properties `((upstream-name . "extractFAERS")))
     (build-system r-build-system)
     (arguments
@@ -2034,13 +2034,13 @@ remove as much redundant typing as possible.")
 (define-public r-explore
   (package
     (name "r-explore")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "explore" version))
        (sha256
-        (base32 "1qnvh8ks2incns87r43qszcs3ks058zzfsd7p2ghnqhnldzkrh70"))))
+        (base32 "0as72wrnafz56jskz4zllny1abs731na7a3zzllp1047z05knjrr"))))
     (properties `((upstream-name . "explore")))
     (build-system r-build-system)
     (arguments
@@ -7668,13 +7668,13 @@ formats, and retrieve the code to reproduce the plot.")
 (define-public r-espadon
   (package
     (name "r-espadon")
-    (version "1.11.0")
+    (version "1.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "espadon" version))
        (sha256
-        (base32 "1pr7q0as14jpn6437mhrb55icpcfy9jcy5aippj9bkdlprq9xsmc"))))
+        (base32 "0cb74zs29lf4zxiqirva2pm87p6rm0ql0yfpzld1dw69mglpz1jb"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
     (arguments
@@ -7687,7 +7687,7 @@ formats, and retrieve the code to reproduce the plot.")
                              r-rgl
                              r-rdpack
                              r-rcpp
-                             r-qs
+                             r-qs2
                              r-progress
                              r-openxlsx
                              r-misc3d
@@ -9173,28 +9173,31 @@ originally developed by Greg Ridgeway.")
 (define-public r-eratosthenes
   (package
     (name "r-eratosthenes")
-    (version "0.0.2")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eratosthenes" version))
        (sha256
-        (base32 "1kfgqb6bd0i39k4k5wg3p33ir13wnfvdyh2ld0gmcgfl2gjks7pa"))))
+        (base32 "0i8sz1s2mhq191blrhxx1sig4s12h8a8hyy4rr0vdnn6ib85njf1"))))
     (properties `((upstream-name . "eratosthenes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack r-rcpp))
+    (propagated-inputs (list r-rdpack r-rcpp r-paletteer))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=eratosthenes")
     (synopsis "Archaeological Synchronism")
     (description
-     "Estimates unknown historical or archaeological dates subject to relationships
-with other dates and absolute constraints, derived as marginal densities from
-the full joint conditional distribution.  Includes rule-based estimation of the
-production dates of artifact types.  Collins-Elliott (2024)
-<https://volweb.utk.edu/~scolli46/@code{sceGUTChronology.pdf>}.")
+     "Estimation of unknown historical or archaeological dates subject to
+relationships with other relative dates and absolute constraints, derived as
+marginal densities from the full joint conditional, using a two-stage Gibbs
+sampler with consistent batch means to assess convergence.  Features reporting
+on Monte Carlo standard errors, as well as tools for rule-based estimation of
+dates of production and use of artifact types, aligning and checking relative
+sequences, and evaluating the impact of the omission of relative/absolute events
+upon one another.")
     (license license:gpl3+)))
 
 (define-public r-erah
@@ -9943,13 +9946,13 @@ polynomials).")
 (define-public r-eq5dsuite
   (package
     (name "r-eq5dsuite")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eq5dsuite" version))
        (sha256
-        (base32 "1dy52swx5mq9xs2c0c4xa01dkpzffbyydfk6h83wh7hy27ml4zr8"))))
+        (base32 "137d92lilycngc5dgvpb91nsiz6vcb1f9xqjzcqfy73br82j09ky"))))
     (properties `((upstream-name . "eq5dsuite")))
     (build-system r-build-system)
     (arguments
@@ -9965,7 +9968,7 @@ polynomials).")
                              r-ggplot2
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=eq5dsuite")
-    (synopsis "Manipulating and Analysing EQ-5d Data")
+    (synopsis "Handling and Analysing EQ-5d Data")
     (description
      "The EQ-5D is a widely-used standarized instrument for measuring Health Related
 Quality Of Life (HRQOL), developed by the @code{EuroQol} group
@@ -11740,13 +11743,13 @@ on the methods.")
 (define-public r-epiestim
   (package
     (name "r-epiestim")
-    (version "2.2-4.1")
+    (version "2.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiEstim" version))
        (sha256
-        (base32 "0gzqazzibqsq69zisvidl38c52fm2i5hpjy2mdlsi32l3yx44lix"))))
+        (base32 "1z1p8qgvbx2iydqj92y5xyd5g7brjr37dj5pabjj5r4nm7g2h7nc"))))
     (properties `((upstream-name . "EpiEstim")))
     (build-system r-build-system)
     (arguments
@@ -14145,13 +14148,13 @@ factor.")
 (define-public r-enchange
   (package
     (name "r-enchange")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eNchange" version))
        (sha256
-        (base32 "07vdi05fr6mynb86haas21izdcjiagw14p1h8n0qr1hb3klvs8n5"))))
+        (base32 "03s2agcvwxcrfp0jalj05jy87amw4prdpnr95xi0pbz2z6cpkqpc"))))
     (properties `((upstream-name . "eNchange")))
     (build-system r-build-system)
     (arguments
@@ -14168,7 +14171,7 @@ factor.")
     (description
      "This package implements a segmentation algorithm for multiple change-point
 detection in univariate time series using the Ensemble Binary Segmentation of
-Korkas (2020) <@code{arXiv:2003.03649>}.")
+Korkas (2022) <Journal of the Korean Statistical Society, 51(1), pp.65-86.>.")
     (license license:gpl2+)))
 
 (define-public r-emur
@@ -15549,13 +15552,13 @@ cocktails.")
 (define-public r-emc2
   (package
     (name "r-emc2")
-    (version "3.1.1")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMC2" version))
        (sha256
-        (base32 "1vfkf91vrzkdl4d0mvp8ci9wrgifjs3wd2ajm23rp4blczlrbap5"))))
+        (base32 "0yl1l2ai051sydhp9i2hj6ywjylgh6hmnxzrxqjsq429b210746z"))))
     (properties `((upstream-name . "EMC2")))
     (build-system r-build-system)
     (arguments
@@ -15573,7 +15576,6 @@ cocktails.")
                              r-magic
                              r-lpsolve
                              r-corrplot
-                             r-corpcor
                              r-colorspace
                              r-coda
                              r-brobdingnag
@@ -20948,13 +20950,13 @@ Collection and Processing\" course.")
 (define-public r-edcimport
   (package
     (name "r-edcimport")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EDCimport" version))
        (sha256
-        (base32 "1c000mmy5krlq5203xjhhnwi44isqbph627cbg2j38ygw5ilvp50"))))
+        (base32 "0z4xc22fry8r4422l1hlmxhvi3yz6dzkw41hhdidw38wvrl7vaim"))))
     (properties `((upstream-name . "EDCimport")))
     (build-system r-build-system)
     (arguments
@@ -20968,6 +20970,7 @@ Collection and Processing\" course.")
                              r-rlang
                              r-readr
                              r-purrr
+                             r-lubridate
                              r-lifecycle
                              r-haven
                              r-glue
@@ -20976,6 +20979,7 @@ Collection and Processing\" course.")
                              r-forcats
                              r-dplyr
                              r-cli))
+    (native-inputs (list r-quarto))
     (home-page "https://github.com/DanChaltiel/EDCimport")
     (synopsis "Import Data from EDC Software")
     (description

@@ -9535,13 +9535,13 @@ Georgia Institute of Technology.
 (define-public r-warden
   (package
     (name "r-warden")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WARDEN" version))
        (sha256
-        (base32 "050lsxb3cgydsm2idaymzji94z3swcgwir938r41w0zxyw1nbcms"))))
+        (base32 "10dpm8g6gqhbsizvf5pdsq3k76dx8mz2mqqwgwj4g4fm8zyh8vk1"))))
     (properties `((upstream-name . "WARDEN")))
     (build-system r-build-system)
     (arguments

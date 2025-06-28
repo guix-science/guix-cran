@@ -791,13 +791,13 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
 (define-public r-hyper-gam
   (package
     (name "r-hyper-gam")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyper.gam" version))
        (sha256
-        (base32 "0nyg3h7x5dnhhd6i8zbjf7fx95cjwjfnab60w9l4b1y9w47nx5f7"))))
+        (base32 "119ylg2kg2cfbdlya2hknl47py0766929xn8yx5gslll8mq201wz"))))
     (properties `((upstream-name . "hyper.gam")))
     (build-system r-build-system)
     (arguments
@@ -5415,6 +5415,32 @@ which streamlines the process of launching a web-based shiny simulation
 application that saves results to a user-created @code{PostgreSQL} database.")
     (license license:expat)))
 
+(define-public r-hoifcar
+  (package
+    (name "r-hoifcar")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HOIFCar" version))
+       (sha256
+        (base32 "02arbmfj79vcmfmrwfqc9rx0iyr14g3p986m8f4qb9lr6gg72x01"))))
+    (properties `((upstream-name . "HOIFCar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=HOIFCar")
+    (synopsis
+     "Covariate Adjustment in RCT by Higher-Order Influence Functions")
+    (description
+     "Estimates treatment effects using covariate adjustment methods in Randomized
+Clinical Trials (RCT) motivated by higher-order influence functions (HOIF).
+Provides point estimates, oracle bias, variance, and approximate variance for
+HOIF-adjusted estimators.  For methodology details, see Zhao et al. (2024)
+<doi:10.48550/@code{arXiv.2411.08491>}.")
+    (license license:expat)))
+
 (define-public r-hodgestools
   (package
     (name "r-hodgestools")
@@ -5892,13 +5918,13 @@ experiments.")
 (define-public r-hmmtmb
   (package
     (name "r-hmmtmb")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmmTMB" version))
        (sha256
-        (base32 "1vrjkq5vv70wjvg588w2q7sd8qhnp4iz3swx8yc3x8w7zpwkf0hn"))))
+        (base32 "0zzncmcff3r1s0aqnlihh9ij35rfk5z2wis809xkkhbgj3cgy14j"))))
     (properties `((upstream-name . "hmmTMB")))
     (build-system r-build-system)
     (arguments
@@ -5909,12 +5935,10 @@ experiments.")
                              r-stringr
                              r-rcppeigen
                              r-r6
-                             r-optimx
                              r-mgcv
                              r-matrix
                              r-mass
-                             r-ggplot2
-                             r-circstats))
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/TheoMichelot/hmmTMB")
     (synopsis "Fit Hidden Markov Models using Template Model Builder")
@@ -5922,7 +5946,7 @@ experiments.")
      "Fitting hidden Markov models using automatic differentiation and Laplace
 approximation, allowing for fast inference and flexible covariate effects
 (including random effects and smoothing splines) on model parameters.  The
-package is described by Michelot (2022) <@code{arXiv:2211.14139>}.")
+package is described by Michelot (2022) <doi:10.48550/@code{arXiv.2211.14139>}.")
     (license license:gpl3)))
 
 (define-public r-hmmrel
@@ -7968,19 +7992,20 @@ in two sample populations.")
 (define-public r-highlightr
   (package
     (name "r-highlightr")
-    (version "1.0.2")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "highlightr" version))
        (sha256
-        (base32 "1n4jb1snl9riqkfhzn84rq1czyg5r5v41m3fk78wc0fi2wacxwil"))))
+        (base32 "0185wz2lxryk6q0fv6s6j7sp38l6vy253vgdw2dwyvnfcpamkhbx"))))
     (properties `((upstream-name . "highlightr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tm
+    (propagated-inputs (list r-zoomerjoin
+                             r-tm
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -7990,7 +8015,6 @@ in two sample populations.")
                              r-purrr
                              r-magrittr
                              r-ggplot2
-                             r-fuzzyjoin
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://rachelesrogers.github.io/highlightr/")

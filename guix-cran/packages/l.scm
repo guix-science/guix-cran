@@ -13,6 +13,8 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages web)
   #:use-module (gnu packages docker)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages cmake)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
   #:use-module (gnu packages linux)
@@ -3474,26 +3476,25 @@ are described in Robin, Josse, Moulines and Sardy (2019)
 (define-public r-lorenzregression
   (package
     (name "r-lorenzregression")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LorenzRegression" version))
        (sha256
-        (base32 "1npv0dcw16fm8k03wd4cnxxim4nc4qs81smhzg5np8bix4df36bx"))))
+        (base32 "1bw6nbj56s5vfswmm1qdab2rflnzkvfms3ilfgijlx6w21zv9phl"))))
     (properties `((upstream-name . "LorenzRegression")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales
-                             r-rsample
+    (propagated-inputs (list r-rsample
                              r-rearrangement
                              r-rcpparmadillo
                              r-rcpp
+                             r-progress
                              r-parsnip
                              r-mass
-                             r-locpol
                              r-ggplot2
                              r-ga
                              r-foreach
@@ -8350,41 +8351,49 @@ median of the distribution.")
 (define-public r-llmr
   (package
     (name "r-llmr")
-    (version "0.3.0")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMR" version))
        (sha256
-        (base32 "00pykjdznpd4yd7b2dqjsk0f9pzxnw0bs63h55zwdg16vczq0j7m"))))
+        (base32 "0mwqb3srvrhr9qhvcf34g9i705y5fp2za6jan2n73fzsq3n299ql"))))
     (properties `((upstream-name . "LLMR")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-rlang
                              r-purrr
+                             r-mime
                              r-memoise
                              r-httr2
+                             r-glue
                              r-future-apply
                              r-future
-                             r-dplyr))
-    (native-inputs (list r-knitr))
+                             r-dplyr
+                             r-base64enc))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/asanaei/LLMR")
     (synopsis "Interface for Large Language Model APIs in R")
     (description
      "This package provides a unified interface to interact with multiple Large
 Language Model (LLM) APIs.  The package supports text generation, embeddings,
-and parallelization.  Users can switch between different LLM providers
-seamlessly within R workflows, or call multiple models in parallel.  The package
-enables creation of LLM agents for automated tasks and provides consistent error
-handling across all supported APIs.  APIs include @code{OpenAI} (see
-<https://platform.openai.com/docs/overview> for details), Anthropic (see
-<https://docs.anthropic.com/en/api/getting-started> for details), Groq (see
-<https://console.groq.com/docs/api-reference> for details), Together AI (see
-<https://docs.together.ai/docs/quickstart> for details), @code{DeepSeek} (see
-<https://api-docs.deepseek.com> for details), Gemini (see
+parallelization, as well as tidyverse integration.  Users can switch between
+different LLM providers seamlessly within R workflows, or call multiple models
+in parallel.  The package enables creation of LLM agents for automated tasks and
+provides consistent error handling across all supported APIs.  APIs include
+@code{OpenAI} (see <https://platform.openai.com/docs/overview> for details),
+Anthropic (see <https://docs.anthropic.com/en/api/getting-started> for details),
+Groq (see <https://console.groq.com/docs/api-reference> for details), Together
+AI (see <https://docs.together.ai/docs/quickstart> for details), @code{DeepSeek}
+(see <https://api-docs.deepseek.com> for details), Gemini (see
 <https://aistudio.google.com> for details), and Voyage AI (see
 <https://docs.voyageai.com/docs/introduction> for details).")
     (license license:expat)))
@@ -10319,13 +10328,13 @@ surveillance and intervention planning for infectious diseases like COVID-19.")
 (define-public r-linelist
   (package
     (name "r-linelist")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "linelist" version))
        (sha256
-        (base32 "1vf1807by3zym6nk9jbfy62sck1h1qqhzhbkyiadszaa6nkrin2d"))))
+        (base32 "05lcz5yiaf0d1dhrfxqmypqabcibryb5yl2bvy48h8k8dk69g9xm"))))
     (properties `((upstream-name . "linelist")))
     (build-system r-build-system)
     (arguments
@@ -12042,6 +12051,36 @@ for unbalanced data.  The estimation of the models is particularly fast as
 compared to other libraries.")
     (license license:gpl2)))
 
+(define-public r-libdeflate
+  (package
+    (name "r-libdeflate")
+    (version "1.24-3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "libdeflate" version))
+       (sha256
+        (base32 "0rmyzyy2paa415b34zf9pvh0kiwqfc993v6j8rm7470iswh38mb3"))))
+    (properties `((upstream-name . "libdeflate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list cmake))
+    (native-inputs (list pkg-config))
+    (home-page "https://cran.r-project.org/package=libdeflate")
+    (synopsis "DEFLATE Compression and Static Library")
+    (description
+     "Whole-buffer DEFLATE-based compression and decompression of raw vectors using
+the libdeflate library (see <https://github.com/ebiggers/libdeflate>).  Provides
+the user with additional control over the speed and the quality of DEFLATE
+compression compared to the fixed level of compression offered in R's
+@code{memCompress()} function.  Also provides the libdeflate static library and
+C headers along with a CMake target and packageâconfig file that ease linking
+of libdeflate in packages that compile and statically link bundled libraries
+using CMake'.")
+    (license license:expat)))
+
 (define-public r-libbib
   (package
     (name "r-libbib")
@@ -12681,13 +12720,13 @@ and the degree of sparsity.")
 (define-public r-lfl
   (package
     (name "r-lfl")
-    (version "2.2.1")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lfl" version))
        (sha256
-        (base32 "0x7lwbpigfbfmwr5mynrkb8d0x4wvl1w0kj68dgbqg46mwh7v0mi"))))
+        (base32 "01pdbxx7dr0r6sadlkx25h1r5i6pmsv0r1sxd49w1k39cmbvn4sv"))))
     (properties `((upstream-name . "lfl")))
     (build-system r-build-system)
     (arguments
@@ -12697,8 +12736,7 @@ and the degree of sparsity.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-zoo
-                             r-tseries
+    (propagated-inputs (list r-tseries
                              r-tibble
                              r-rcpp
                              r-plyr
@@ -17879,13 +17917,13 @@ visualization tools.")
 (define-public r-lares
   (package
     (name "r-lares")
-    (version "5.2.13")
+    (version "5.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lares" version))
        (sha256
-        (base32 "1n6dc11593hwcb0r0vq4c6yym6yqawbkf9f956ydg4ni9kvbw8vp"))))
+        (base32 "1kmh8m19b4wclx7ahj1n79amaq3h3vhn66xz9xk6k3v7njf7fsi1"))))
     (properties `((upstream-name . "lares")))
     (build-system r-build-system)
     (arguments
@@ -17907,7 +17945,7 @@ visualization tools.")
                              r-ggplot2
                              r-dplyr))
     (home-page "https://github.com/laresbernardo/lares")
-    (synopsis "Analytics & Machine Learning Sidekick")
+    (synopsis "Lean Analytics and Robust Exploration Sidekick")
     (description
      "Auxiliary package for better/faster analytics, visualization, data mining, and
 machine learning tasks.  With a wide variety of family functions, like Machine

@@ -1206,6 +1206,49 @@ of a square matrix (a detguide) as a function of the elements of the matrix and
 writes out that formula, the symbolic representation.")
     (license license:expat)))
 
+(define-public r-symbolicda
+  (package
+    (name "r-symbolicda")
+    (version "0.7-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "symbolicDA" version))
+       (sha256
+        (base32 "1fpjq56ibyf4fk6kmdw3a1sdpma4zmgy1fbn6qdnnjj6w4gzfsyw"))))
+    (properties `((upstream-name . "symbolicDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml
+                             r-shapes
+                             r-rsda
+                             r-e1071
+                             r-clustersim
+                             r-cluster
+                             r-ade4))
+    (home-page "https://cran.r-project.org/package=symbolicDA")
+    (synopsis "Analysis of Symbolic Data")
+    (description
+     "Symbolic data analysis methods: importing/exporting data from ASSO XML Files,
+distance calculation for symbolic data (Ichino-Yaguchi, de Carvalho measure),
+zoom star plot, 3d interval plot, multidimensional scaling for symbolic interval
+data, dynamic clustering based on distance matrix, HI@code{NoV} method for
+symbolic data, Ichino's feature selection method, principal component analysis
+for symbolic interval data, decision trees for symbolic data based on optimal
+split with bagging, boosting and random forest approach (+visualization), kernel
+discriminant analysis for symbolic data, Kohonen's self-organizing maps for
+symbolic data, replication and profiling, artificial symbolic data generation.
+(Milligan, G.W., Cooper, M.C. (1985) <doi:10.1007/BF02294245>, Breiman, L.
+(1996), <doi:10.1007/BF00058655>, Hubert, L., Arabie, P. (1985),
+<doi:10.1007%2FBF01908075>, Ichino, M., & Yaguchi, H. (1994),
+<doi:10.1109/21.286391>, Rand, W.M. (1971) <doi:10.1080/01621459.1971.10482356>,
+Breckenridge, J.N. (2000) <doi:10.1207/S15327906MBR3502_5>, Groenen, P.J.F,
+Winsberg, S., Rodriguez, O., Diday, E. (2006) <doi:10.1016/j.csda.2006.04.003>,
+Dudek, A. (2007), <doi:10.1007/978-3-540-70981-7_4>).")
+    (license license:gpl2+)))
+
 (define-public r-symbol-equation-gpt
   (package
     (name "r-symbol-equation-gpt")
@@ -5795,13 +5838,13 @@ possibility of crossings or alternative orderings among the survival functions."
 (define-public r-surveillance
   (package
     (name "r-surveillance")
-    (version "1.24.1")
+    (version "1.25.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveillance" version))
        (sha256
-        (base32 "0wzjv9pb8nl1almd0qmn5xqfms2026pg21jvcqd73ij053w4vz1a"))))
+        (base32 "13mznfrlb2wshbc6rak6x19ma2sh2nm5wzi4y6sms2lls9zbpg62"))))
     (properties `((upstream-name . "surveillance")))
     (build-system r-build-system)
     (arguments
@@ -5984,19 +6027,23 @@ bivariate distribution, either on the original time scale or as copula.")
 (define-public r-survcompare
   (package
     (name "r-survcompare")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survcompare" version))
        (sha256
-        (base32 "1g5gzs61srzx4glrxgfr70vwmx96mvf6lbca43srskn1f8n93k14"))))
+        (base32 "09w6akmb83wmf7wl8fhm1z64ivw7sv9311n9cmi3mirm105i32rp"))))
     (properties `((upstream-name . "survcompare")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-timeroc r-survival r-randomforestsrc r-glmnet
+    (propagated-inputs (list r-timeroc
+                             r-survival
+                             r-randomforestsrc
+                             r-missforestpredict
+                             r-glmnet
                              r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=survcompare")
@@ -7082,13 +7129,13 @@ information.")
 (define-public r-superpower
   (package
     (name "r-superpower")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Superpower" version))
        (sha256
-        (base32 "0mzmzlvkq8n4isrkk1d49cm98dc8vqfg3jn5j4igb9s3dndkhlmb"))))
+        (base32 "0wmkdl14wdhm7hr30843rm8lzd6z5jpbpm94sxqh74w6ypxw89kf"))))
     (properties `((upstream-name . "Superpower")))
     (build-system r-build-system)
     (arguments
@@ -14905,13 +14952,13 @@ between graphs, and clustering of graphs.  References: Takahashi et al. (2012)
 (define-public r-statgensta
   (package
     (name "r-statgensta")
-    (version "1.0.14")
+    (version "1.0.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenSTA" version))
        (sha256
-        (base32 "0mj314ikqrhjjs2dcri0da8sbmar7acnh2rnpx99ylk32i6l6lrl"))))
+        (base32 "13b81aw5m7c8drkl9ylmhf8fsk9wcakhg9xgk8m1vyj9q8l7m38l"))))
     (properties `((upstream-name . "statgenSTA")))
     (build-system r-build-system)
     (arguments
@@ -15091,13 +15138,13 @@ software, which can be obtained upon purchase from VSN international
 (define-public r-statgengxe
   (package
     (name "r-statgengxe")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenGxE" version))
        (sha256
-        (base32 "0p2z8qf0gjznkcp99dzrdjkbv9433h62iwcj3h01dpx2f6v0f6zb"))))
+        (base32 "0a69zamdwr6h9msm6rwkb7vxaxqw3x348g7w62rhra9s5rma2vzj"))))
     (properties `((upstream-name . "statgenGxE")))
     (build-system r-build-system)
     (arguments
@@ -18467,20 +18514,19 @@ adaptive bandwidth kernel function for irregular lattice-based maps.")
 (define-public r-ssifs
   (package
     (name "r-ssifs")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssifs" version))
        (sha256
-        (base32 "11krpqzjnbaxqpjzg0hvigr6254vgr6w09bha64cn6fry3z6n860"))))
+        (base32 "0vp82lzxd7n1x2nic0mn02qpn71f2kgdfq7kn6cw7fj1pm0p6srj"))))
     (properties `((upstream-name . "ssifs")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-revecor
-                             r-rdpack
+    (propagated-inputs (list r-rdpack
                              r-r2jags
                              r-plyr
                              r-netmeta
@@ -25009,13 +25055,13 @@ intervention of a single legislator.")
 (define-public r-spedm
   (package
     (name "r-spedm")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spEDM" version))
        (sha256
-        (base32 "1w1ypaz2dx5gsppz742yfygjcshyxl0jhc5hs17afxmrv4pdag2d"))))
+        (base32 "0cil76rgzq5pqgmkjz4c5ndfwmgs3ya8hzpdf4nf6mriarblwsmm"))))
     (properties `((upstream-name . "spEDM")))
     (build-system r-build-system)
     (arguments
@@ -34950,6 +34996,30 @@ and click, and the @code{Componentlayouter()} to layout networks with many
 components manually.")
     (license license:expat)))
 
+(define-public r-smvr
+  (package
+    (name "r-smvr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smvr" version))
+       (sha256
+        (base32 "0sdnk9jiw3srl5vbsbrz6d8z90k9aca6ba5l9vcmdw5pgrv9ivk4"))))
+    (properties `((upstream-name . "smvr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-rlang r-cli))
+    (home-page "https://eitsupi.github.io/smvr/")
+    (synopsis "Simple Implementation of Semantic Versioning")
+    (description
+     "Simple implementation of Semantic Versioning 2.0.0 on the vctrs package.  This
+package provides a simple way to create, compare, and manipulate semantic
+versions in R. It is designed to be lightweight and easy to use.")
+    (license license:expat)))
+
 (define-public r-smvgraph
   (package
     (name "r-smvgraph")
@@ -35485,13 +35555,13 @@ is done in compiled C++ written using the Scythe Statistical Library Version
 (define-public r-smoothr
   (package
     (name "r-smoothr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smoothr" version))
        (sha256
-        (base32 "1sf57ywx4836dcz8s6h20d0r68y41c11gjbg78bpai4k1401a2sq"))))
+        (base32 "1wyk4k42bbfcm88cmalg1vk0nwb1ziprxg9nv3f3613sldh8fkha"))))
     (properties `((upstream-name . "smoothr")))
     (build-system r-build-system)
     (arguments
@@ -38428,13 +38498,13 @@ described in Jetka et al. (2019) <doi:10.1371/journal.pcbi.1007132>.")
 (define-public r-sleev
   (package
     (name "r-sleev")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sleev" version))
        (sha256
-        (base32 "0igs67lwnfipa24n40yl7d7l6ywn2arjv4cygl8r0yjfmlxmbky1"))))
+        (base32 "0kxh8lgkv3wyk1wyxf9b8y5lxzxwmic8pjd1f76h3hkgvbmxdwyv"))))
     (properties `((upstream-name . "sleev")))
     (build-system r-build-system)
     (arguments
@@ -44536,13 +44606,13 @@ details on the use of these functions can be found in Lawson and Leemis (2015)
 (define-public r-simecol
   (package
     (name "r-simecol")
-    (version "0.9-2")
+    (version "0.9-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simecol" version))
        (sha256
-        (base32 "1wvigicykz1i5qmrdrzzq6cc3agi7fy888ajl2aqbvmg4bpa9jji"))))
+        (base32 "1hn0bxilpcc0d1q23vyf9h6qn904b4vqayhwjw9f3dcbfbvahq70"))))
     (properties `((upstream-name . "simecol")))
     (build-system r-build-system)
     (arguments
@@ -44704,13 +44774,13 @@ facilitate communicating the simulation setup.")
 (define-public r-simdag
   (package
     (name "r-simdag")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simDAG" version))
        (sha256
-        (base32 "1qkk116vz5ngkqwnrc43zymw4x6gccsyvaiy8y3ks1c6799vpr7f"))))
+        (base32 "1bfmah009qgh8xcrpbkzcjil8sf0dbc6sp0jc3m45dk4fqn6xba8"))))
     (properties `((upstream-name . "simDAG")))
     (build-system r-build-system)
     (arguments
@@ -44726,7 +44796,8 @@ each individual node.  Root nodes are simply sampled from the specified
 distribution.  Child Nodes are simulated according to one of many implemented
 regressions, such as logistic regression, linear regression, poisson regression
 and more.  Also includes a comprehensive framework for discrete-time simulation,
-which can generate even more complex longitudinal data.")
+which can generate even more complex longitudinal data.  For more details, see
+Robin Denz, Nina Timmesfeld (2025) <doi:10.48550/@code{arXiv.2506.01498>}.")
     (license license:gpl3+)))
 
 (define-public r-simctest
@@ -48947,6 +49018,44 @@ your local environment.  If you create a dummy input object, as the function
 will suggest, you will be able to test your server and ui functions
 interactively.")
     (license license:gpl3)))
+
+(define-public r-shinynotes
+  (package
+    (name "r-shinynotes")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyNotes" version))
+       (sha256
+        (base32 "19k4n3ikffxs24c66i9wi7ldw50wjs0gym73n9clnq3hh6l2fzz8"))))
+    (properties `((upstream-name . "shinyNotes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shiny
+                             r-rsqlite
+                             r-rlang
+                             r-markdown
+                             r-magrittr
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/danielkovtun/shinyNotes")
+    (synopsis "Shiny Module for Taking Free-Form Notes")
+    (description
+     "An enterprise-targeted scalable and customizable shiny module providing an easy
+way to incorporate free-form note taking or discussion boards into applications.
+ The package includes a shiny module that can be included in any shiny
+application to create a panel containing searchable, editable text broken down
+by section headers.  Can be used with a local SQLite database, or a compatible
+remote database of choice.")
+    (license license:expat)))
 
 (define-public r-shinynorrrm
   (package
@@ -62162,13 +62271,13 @@ Differential Equations With R Examples, ISBN 978-0-387-75838-1, Springer, NY.")
 (define-public r-sdctable
   (package
     (name "r-sdctable")
-    (version "0.32.7")
+    (version "0.33.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdcTable" version))
        (sha256
-        (base32 "14fqf8m2k3lzbqq3ww5hv0f9m56vxwl6v3pcj446zagawaja3wvb"))))
+        (base32 "0zzqb83yfsqli5dkychbm6pv15909m70raxdmd0k91pbaic6n9j2"))))
     (properties `((upstream-name . "sdcTable")))
     (build-system r-build-system)
     (arguments
@@ -62179,12 +62288,11 @@ Differential Equations With R Examples, ISBN 978-0-387-75838-1, Springer, NY.")
                              r-slam
                              r-sdchierarchies
                              r-rlang
-                             r-rglpk
                              r-rcpp
                              r-progress
                              r-matrix
                              r-knitr
-                             r-glpkapi
+                             r-highs
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sdcTools/sdcTable")
@@ -62341,13 +62449,13 @@ Bond, Brandt, and de Wolf (2015)
 (define-public r-sdchierarchies
   (package
     (name "r-sdchierarchies")
-    (version "0.21.0")
+    (version "0.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdcHierarchies" version))
        (sha256
-        (base32 "0ihfddjkqdmzpr62dackblwbjcvbkhzm4ap1xzbn4m8i3z1nlbi0"))))
+        (base32 "1nd3g1lhmxmbhpn7mcm4kd3pq1b9n4fbb7294151sjbqbab21qp6"))))
     (properties `((upstream-name . "sdcHierarchies")))
     (build-system r-build-system)
     (arguments
@@ -64171,13 +64279,13 @@ Robins (1997) <doi:10.2307/2670119>.")
 (define-public r-scoringutils
   (package
     (name "r-scoringutils")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoringutils" version))
        (sha256
-        (base32 "1i1p09dws471mmm9v47ad3s30b9lapalz1yrq4vdvsn2m52yh5hb"))))
+        (base32 "17plqjbvbxy34dh233rc9js78m3klg4c883snc0n39wrybhspggc"))))
     (properties `((upstream-name . "scoringutils")))
     (build-system r-build-system)
     (arguments
@@ -64701,6 +64809,64 @@ This package is supplement to the paper \"A mechanistic model for the negative
 binomial distribution of single-cell @code{mRNA} counts\" by Lisa Amrhein, Kumar
 Harsha and Christiane Fuchs (2019) <doi:10.1101/657619> available on
 @code{bioRxiv}.")
+    (license license:gpl3)))
+
+(define-public r-scmappr
+  (package
+    (name "r-scmappr")
+    (version "1.0.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scMappR" version))
+       (sha256
+        (base32 "1hlqh54qy3lh4chpsbl4qwpdirik0jkcgxmylr31p250cwz0frfw"))))
+    (properties `((upstream-name . "scMappR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-seurat
+                             r-reshape
+                             r-pheatmap
+                             r-pcamethods
+                             r-pbapply
+                             r-limsolve
+                             r-gsva
+                             r-gprofiler2
+                             r-gprofiler
+                             r-ggplot2
+                             r-downloader
+                             r-adapts))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=scMappR")
+    (synopsis "Single Cell Mapper")
+    (description
+     "The single cell mapper (@code{scMappR}) R package contains a suite of
+bioinformatic tools that provide experimentally relevant cell-type specific
+information to a list of differentially expressed genes (DEG).  The function
+\"@code{scMappR_and_pathway_analysis}\" reranks DEGs to generate cell-type
+specificity scores called cell-weighted fold-changes.  Users input a list of
+DEGs, normalized counts, and a signature matrix into this function.
+@code{scMappR} then re-weights bulk DEGs by cell-type specific expression from
+the signature matrix, cell-type proportions from RNA-seq deconvolution and the
+ratio of cell-type proportions between the two conditions to account for changes
+in cell-type proportion.  With @code{cwFold-changes} calculated, @code{scMappR}
+uses two approaches to utilize @code{cwFold-changes} to complete cell-type
+specific pathway analysis.  The \"process_@code{dgTMatrix_lists}\" function in the
+@code{scMappR} package contains an automated @code{scRNA-seq} processing
+pipeline where users input @code{scRNA-seq} count data, which is made compatible
+for @code{scMappR} and other R packages that analyze @code{scRNA-seq} data.  We
+further used this to store hundreds up regularly updating signature matrices.
+The functions \"tissue_by_celltype_enrichment\", \"tissue_@code{scMappR_internal}\",
+and \"tissue_@code{scMappR_custom}\" combine these consistently processed
+@code{scRNAseq} count data with gene-set enrichment tools to allow for cell-type
+marker enrichment of a generic gene list (e.g. GWAS hits).  Reference:
+Sokolowski,D.J., Faykoo-Martinez,M., Erdman,L., Hou,H., Chan,C., Zhu,H.,
+Holmes,M.M., Goldenberg,A. and Wilson,M.D. (2021) Single-cell mapper
+(@code{scMappR}): using @code{scRNA-seq} to infer cell-type specificities of
+differentially expressed genes.  NAR Genomics and Bioinformatics.  3(1).
+Iqab011. <doi:10.1093/nargab/lqab011>.")
     (license license:gpl3)))
 
 (define-public r-scma
@@ -65560,13 +65726,13 @@ datasets.")
 (define-public r-scholar
   (package
     (name "r-scholar")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scholar" version))
        (sha256
-        (base32 "12r4j1s71szh77nsnqzsi0q5cvkp0cyr2fxzcagk02f42bnp5aww"))))
+        (base32 "15zdikddwc0dv3f0p98vr6vnxq7117yzws6a6lrkn08qg2k8wq5j"))))
     (properties `((upstream-name . "scholar")))
     (build-system r-build-system)
     (arguments
@@ -68769,19 +68935,19 @@ visualization concepts from Horton, Nowak, and Haegeli (2020,
 (define-public r-sarp-moodle
   (package
     (name "r-sarp-moodle")
-    (version "1.0.4")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SARP.moodle" version))
        (sha256
-        (base32 "1zpvw5sdzrh5ci89lqra73yvvpj340wc1rl5825krj1f73lmga3s"))))
+        (base32 "1jqgsky3bvz72dlllzw8n9sgvw7xz1hqkwjcsmyzzwcdwk768j7j"))))
     (properties `((upstream-name . "SARP.moodle")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-base64enc))
+    (propagated-inputs (list r-magick r-base64enc))
     (home-page "https://cran.r-project.org/package=SARP.moodle")
     (synopsis "XML Output Functions for Easy Creation of Moodle Questions")
     (description
@@ -71727,6 +71893,33 @@ not added to your data.  safejoin provides a wrapper around dplyr::left_join
 that will raise an error when extra rows are unexpectedly added to your data.
 This can be useful when working with data where you expect there to be a many to
 one relationship but you are not certain the relationship holds.")
+    (license license:expat)))
+
+(define-public r-safeframe
+  (package
+    (name "r-safeframe")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "safeframe" version))
+       (sha256
+        (base32 "11wsn18zvv4w36xj1n970ffrhw4ws9vk0akk8gxqlixkg8n141x2"))))
+    (properties `((upstream-name . "safeframe")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect r-rlang r-lifecycle r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://epiverse-trace.github.io/safeframe/")
+    (synopsis "Generic Data Tagging and Validation Tool")
+    (description
+     "This package provides tools to help tag and validate data according to
+user-specified rules.  The safeframe class adds variable level attributes to
+data.frame columns.  Once tagged, these variables can be seamlessly used in
+downstream analyses, making data pipelines clearer, more robust, and more
+reliable.")
     (license license:expat)))
 
 (define-public r-safd

@@ -573,13 +573,13 @@ modular functions and modular curves.")
 (define-public r-cyclops
   (package
     (name "r-cyclops")
-    (version "3.5.1")
+    (version "3.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Cyclops" version))
        (sha256
-        (base32 "1nrx8rd107nhza0ccgg2ipg54arg5d2zhyvc8mp6lyjqn1g1mrlb"))))
+        (base32 "0j3ff3dprz4zv7b2wb3k58r4jcxn0fgwg562yhsdnzbyvk1r7i7m"))))
     (properties `((upstream-name . "Cyclops")))
     (build-system r-build-system)
     (arguments
@@ -5995,13 +5995,13 @@ and the MBN-type bias correction by Morel, Bokossa, and Neerchal (2003)
 (define-public r-crqa
   (package
     (name "r-crqa")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crqa" version))
        (sha256
-        (base32 "117sxxil4yzqss7b8d5r7y2grpc6nzcli9mrjaarsk10k95c4bwp"))))
+        (base32 "1ic503sivm94d6ib4zlr0c4dfvgz17ivzflcdf79qbvb60zxwbm8"))))
     (properties `((upstream-name . "crqa")))
     (build-system r-build-system)
     (arguments
@@ -6606,13 +6606,13 @@ identification of outlier elements.")
 (define-public r-crosscarry
   (package
     (name "r-crosscarry")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CrossCarry" version))
        (sha256
-        (base32 "1nls5knpjfdbzwg8mapkinmmpafs4lpk6x0fayh16f6g5yvk2dr8"))))
+        (base32 "0js86zr38dd7hr9nxmdvj97z7460r9rqnyj6l7nnhrkicrmiry5m"))))
     (properties `((upstream-name . "CrossCarry")))
     (build-system r-build-system)
     (arguments
@@ -15497,13 +15497,13 @@ marginal likelihood, and distributional transform), for three types of outcomes
 (define-public r-copbasic
   (package
     (name "r-copbasic")
-    (version "2.2.7")
+    (version "2.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copBasic" version))
        (sha256
-        (base32 "1gx49q1psf0pifiaym2w2bff1cwhjw5dhkh326nq29w452xps7kr"))))
+        (base32 "040xar3lc94q0zj9rllzd2mjvcc1kmlxiaamnvxsdawjp6s48l8s"))))
     (properties `((upstream-name . "copBasic")))
     (build-system r-build-system)
     (arguments
@@ -15837,13 +15837,13 @@ original cookiecutter template format.")
 (define-public r-cooccurrenceaffinity
   (package
     (name "r-cooccurrenceaffinity")
-    (version "1.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CooccurrenceAffinity" version))
        (sha256
-        (base32 "0wn8jkvm5x30vj1vy196l691kbs5aa3j09s5dsa2r54cr34d16mn"))))
+        (base32 "0a8ya9fsbz20bmywbjva1jxgz90sf2vschbbi4ccqxa18fb1wlxl"))))
     (properties `((upstream-name . "CooccurrenceAffinity")))
     (build-system r-build-system)
     (arguments
@@ -15858,7 +15858,8 @@ co-occurrence (using binary presence/absence data).  The metric and its MLE,
 alpha hat, were advanced in Mainali, Slud, et al, 2021
 <doi:10.1126/sciadv.abj9204>.  Various types of confidence intervals and median
 interval were developed in Mainali and Slud, 2022
-<doi:10.1101/2022.11.01.514801>.")
+<doi:10.1101/2022.11.01.514801>.  The `finches` dataset is now bundled
+internally (no longer pulled via the cooccur package, which has been dropped).")
     (license license:expat)))
 
 (define-public r-convospat
@@ -26359,20 +26360,19 @@ longitudinal treatments.")
 (define-public r-coat
   (package
     (name "r-coat")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coat" version))
        (sha256
-        (base32 "01sfssvb20rnjx6vpgyglj96wysr9v00n7fa8mg9l65cgv32dvgc"))))
+        (base32 "07vmczrzjha46knhlrm3nqrgdpskbqgyk0r3adpmh94df9y87sh2"))))
     (properties `((upstream-name . "coat")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-partykit r-gridextra r-ggtext r-ggplot2
-                             r-ggparty))
+    (propagated-inputs (list r-partykit))
     (home-page "https://cran.r-project.org/package=coat")
     (synopsis "Conditional Method Agreement Trees (COAT)")
     (description
@@ -31952,6 +31952,32 @@ for searching geographical coordinates for each observation and calculate
 distances to the nearest stations.")
     (license license:expat)))
 
+(define-public r-climarep
+  (package
+    (name "r-climarep")
+    (version "0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ClimaRep" version))
+       (sha256
+        (base32 "0ynhri2r13ga4rp7px0p05nj28163vwzyvz1gyn8zrcsvxy9j6zi"))))
+    (properties `((upstream-name . "ClimaRep")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyterra r-terra r-sf r-ggplot2))
+    (home-page "https://cran.r-project.org/package=ClimaRep")
+    (synopsis "Estimating Climate Representativeness")
+    (description
+     "Offers tools to estimate the climate representativeness of defined areas and
+quantifies and analyzes its transformation under future climate change
+scenarios.  Approaches described in Mingarro and Lobo (2018)
+<doi:10.32800/abc.2018.41.0333> and Mingarro and Lobo (2022)
+<doi:10.1017/S037689292100014X>.")
+    (license license:expat)))
+
 (define-public r-cliftlrd
   (package
     (name "r-cliftlrd")
@@ -33388,6 +33414,39 @@ partitional clustering techniques based on nearest neighbor distances.")
      "Implementation of the Wilkinson and Ivany (2002) approach to paleoclimate
 analysis, applied to isotope data extracted from clams.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-clampseg
+  (package
+    (name "r-clampseg")
+    (version "1.2-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clampSeg" version))
+       (sha256
+        (base32 "1cz4sj5lfpyk2i6zbjl6qd7vsqlfc0915m82ff99ln5lr1myy508"))))
+    (properties `((upstream-name . "clampSeg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-stepr r-lowpassfilter))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=clampSeg")
+    (synopsis "Idealisation of Patch Clamp Recordings")
+    (description
+     "This package implements the model-free multiscale idealisation approaches:
+Jump-Segmentation by M@code{UltiResolution} Filter (JSMURF), Hotz et al. (2013)
+<doi:10.1109/TNB.2013.2284063>, JUmp Local @code{dEconvolution} Segmentation
+filter (JULES), Pein et al. (2018) <doi:10.1109/TNB.2018.2845126>, and
+Heterogeneous Idealization by Local testing and DEconvolution (HILDE), Pein et
+al. (2021) <doi:10.1109/TNB.2020.3031202>.  Further details on how to use them
+are given in the accompanying vignette.")
+    (license license:gpl3)))
 
 (define-public r-clam
   (package
@@ -36544,42 +36603,41 @@ package.")
 (define-public r-choroplethr
   (package
     (name "r-choroplethr")
-    (version "4.0.0")
+    (version "5.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "choroplethr" version))
        (sha256
-        (base32 "124j1add7fjdrldw1brm4a2z5zn1v9jv0nm0cjgwj5ildkpwry5k"))))
+        (base32 "01hywyyak9vsdrb8j47qk1zklazqhyv8p8wzh43gfjs05pg27apf"))))
     (properties `((upstream-name . "choroplethr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-wdi
-                             r-tigris
-                             r-tidyr
+    (propagated-inputs (list r-tigris
                              r-tidycensus
                              r-stringr
-                             r-rvest
-                             r-rgooglemaps
+                             r-sf
+                             r-rnaturalearth
                              r-r6
                              r-hmisc
-                             r-gridextra
+                             r-ggrepel
                              r-ggplot2
-                             r-ggmap
                              r-dplyr))
     (home-page "https://github.com/eastnile/choroplethr")
-    (synopsis "Simplify the Creation of Choropleth Maps")
+    (synopsis "Create Color-Coded Choropleth Maps in R")
     (description
-     "Choropleths are thematic maps where geographic regions, such as states, are
-colored according to some metric, such as the number of people who live in that
-state.  This package simplifies this process by 1.  Providing ready-made
-functions for creating choropleths of common maps.  2.  Providing data and API
-connections to interesting data sources for making choropleths.  3.  Providing a
-framework for creating choropleths from arbitrary shapefiles.  4.  Overlaying
-those maps over reference maps from Google Maps'.")
+     "Easily create color-coded (choropleth) maps in R. No knowledge of cartography or
+shapefiles needed; go directly from your geographically identified data to a
+highly customizable map with a single line of code! Supported geographies: U.S.
+states, counties, and census tracts, world countries and sub-country regions
+(e.g., provinces, prefectures, etc.).  One of the suggested packages,
+rnaturalearthhires, is not available on CRAN owing to its larger filesize
+(40MB).  It can be installed from @code{GitHub} using
+remotes::install_github(\"https://github.com/ropensci/rnaturalearthhires\").  This
+package contains higher resolution sub-country maps and is only needed for the
+@code{choropleth_admin1()} function.")
     (license license:bsd-3)))
 
 (define-public r-chores
@@ -42985,13 +43043,13 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "15aj7fzxl10b4rr913qdn3jp16p994gdjx00wblgsskkzgvg08n6"))))
+        (base32 "0l3lcajlgvgv8c7kacqgwm73r7ykys18g21941dhqx8fhmahk4sx"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (arguments

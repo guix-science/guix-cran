@@ -9449,13 +9449,13 @@ Details can be found in the accompanying scientific paper: Koenen & Wright
 (define-public r-inlpubs
   (package
     (name "r-inlpubs")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inlpubs" version))
        (sha256
-        (base32 "108jxs1qp4ypcw0c4rkybhh1dxydiy8gy3d4lfz1d7vf93gk3jji"))))
+        (base32 "08sx60r6g0wzc7xwf99ya62vp8wr3353wfkcw28aqi4lbda60dfd"))))
     (properties `((upstream-name . "inlpubs")))
     (build-system r-build-system)
     (arguments
@@ -13132,13 +13132,13 @@ to harness AI for predictive analytics.")
 (define-public r-immunogenetr
   (package
     (name "r-immunogenetr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "immunogenetr" version))
        (sha256
-        (base32 "0c86f34z5287irbc05bwx7mkkjaa7cwprg8gvqlp6jxv38bpbfly"))))
+        (base32 "0zmkjxba4bkanns9z2q2dyp3cdhm4a23flzmla7qhvldykmkckgn"))))
     (properties `((upstream-name . "immunogenetr")))
     (build-system r-build-system)
     (arguments
@@ -14171,6 +14171,34 @@ model architectures for general-purpose image segmentation based on grayscale or
 color images, both for binary and multi-class image segmentation.")
     (license license:expat)))
 
+(define-public r-imagery
+  (package
+    (name "r-imagery")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imageRy" version))
+       (sha256
+        (base32 "05h4crm6p8q9li8gag5xyis0zyi7ha2v1ls76jqmhkj63z632v6l"))))
+    (properties `((upstream-name . "imageRy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis r-terra r-rlang r-ggplot2))
+    (home-page "https://cran.r-project.org/package=imageRy")
+    (synopsis "Modify and Share Images")
+    (description
+     "This package provides tools for manipulating, visualizing, and exporting raster
+images in R. Designed as an educational resource for students learning the
+basics of remote sensing, the package provides user-friendly functions to apply
+color ramps, export RGB composites, and create multi-frame visualizations.
+Built on top of the terra and ggplot2 packages.  See
+<https://github.com/ducciorocchini/@code{imageRy>} for more details and
+examples.")
+    (license license:gpl2+)))
+
 (define-public r-imagerextra
   (package
     (name "r-imagerextra")
@@ -14343,31 +14371,6 @@ data set.")
 paper: \"A C++ Implementation of Otsu's Image Segmentation Method\".  The
 algorithm is explained at <doi:10.5201/ipol.2016.158>.")
     (license license:expat)))
-
-(define-public r-image-linesegmentdetector
-  (package
-    (name "r-image-linesegmentdetector")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "image.LineSegmentDetector" version))
-       (sha256
-        (base32 "1mx6vkmm9miwqdd5vil44if0dikzn5cy3kxvb3vp0kwfm8k36ib5"))))
-    (properties `((upstream-name . "image.LineSegmentDetector")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sp r-rcpp))
-    (home-page "https://github.com/bnosac/image")
-    (synopsis "Detect Line Segments in Images")
-    (description
-     "An implementation of the Line Segment Detector on digital images described in
-the paper: \"LSD: A Fast Line Segment Detector with a False Detection Control\" by
-Rafael Grompone von Gioi et al (2012).  The algorithm is explained at
-<doi:10.5201/ipol.2012.gjmr-lsd>.")
-    (license license:agpl3)))
 
 (define-public r-image-libfacedetection
   (package
@@ -15737,19 +15740,27 @@ Instagram is a web photo sharing service.  It can be found at:
 (define-public r-ig-degree-betweenness
   (package
     (name "r-ig-degree-betweenness")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ig.degree.betweenness" version))
        (sha256
-        (base32 "1w78gl8ls7y4knlhm8jq3rg5xghg51ia2xqksh7q6siw4lzhamkn"))))
+        (base32 "1gf6mji6ifsn0vm4bahyyakgy2j1yvpd39jkmk327v0l2i7kx9wk"))))
     (properties `((upstream-name . "ig.degree.betweenness")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlist r-qgraph r-igraphdata r-igraph r-bbmisc))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlist
+                             r-qgraph
+                             r-igraphdata
+                             r-igraph
+                             r-ggplot2
+                             r-dplyr
+                             r-bbmisc))
     (home-page "https://github.com/benyamindsmith/ig.degree.betweenness")
     (synopsis
      "\"Smith-Pittman Community Detection Algorithm for 'igraph' Objects (2024)\"")

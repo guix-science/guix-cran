@@ -2000,13 +2000,13 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-vol2birdr
   (package
     (name "r-vol2birdr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vol2birdR" version))
        (sha256
-        (base32 "0xqfr3w39ywdf02jx6pms5srvwhav2gkbkqg34kca75mlyhcsqja"))))
+        (base32 "0iq4rxxp3x4az63lb9pk1znx76x88gv87x00cizsgrjlrp21df7m"))))
     (properties `((upstream-name . "vol2birdR")))
     (build-system r-build-system)
     (arguments
@@ -2770,6 +2770,46 @@ Functions in vivaldi primarily operate on vcf files.")
 analysis, time-series analysis, organizational network analysis, and data
 validation, whilst at the same time implements a set of best practices in
 analyzing and visualizing data specific to Microsoft Viva Insights'.")
+    (license license:expat)))
+
+(define-public r-vitals
+  (package
+    (name "r-vitals")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vitals" version))
+       (sha256
+        (base32 "002ib0cxm5cc9mdf2gx0g2fif1rr9fzlqdfrazfqh8w22wfvkzhp"))))
+    (properties `((upstream-name . "vitals")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-tibble
+                             r-s7
+                             r-rstudioapi
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-jsonlite
+                             r-httpuv
+                             r-glue
+                             r-ellmer
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tidyverse/vitals")
+    (synopsis "Large Language Model Evaluation")
+    (description
+     "This package provides a port of Inspect', a widely adopted Python framework for
+large language model evaluation.  Specifically aimed at ellmer users who want to
+measure the effectiveness of their large language model-based products, the
+package supports prompt engineering, tool usage, multi-turn dialog, and model
+graded evaluations.")
     (license license:expat)))
 
 (define-public r-vitality

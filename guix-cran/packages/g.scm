@@ -3419,13 +3419,13 @@ Cellwise and Casewise Contamination and Missing Data.")
 (define-public r-gsdesign2
   (package
     (name "r-gsdesign2")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign2" version))
        (sha256
-        (base32 "1fv3xvfdax5z4gkj4rbzf3dx3h1jragj4bjrkx0b1wmwdkz15dv2"))))
+        (base32 "05ancgf4l19ffvm6fvdagi5a0vlc1z3n4f2kba7c3nslqvg6g14n"))))
     (properties `((upstream-name . "gsDesign2")))
     (build-system r-build-system)
     (arguments
@@ -3460,13 +3460,13 @@ logrank tests in Yung and Liu (2019) <doi:10.1111/biom.13196>, and
 (define-public r-gsdesign
   (package
     (name "r-gsdesign")
-    (version "3.6.8")
+    (version "3.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign" version))
        (sha256
-        (base32 "18vxc76yxz9yygn8dlcfg7mmnl1l1xp9wmnz1pjzljgp434f2avn"))))
+        (base32 "1pvdl8qyqx0476csbk5l7s7qglqdxshighpgpnjc46jnv66rhzmp"))))
     (properties `((upstream-name . "gsDesign")))
     (build-system r-build-system)
     (arguments
@@ -4927,13 +4927,13 @@ subject-specific random effects.")
 (define-public r-groupedhyperframe
   (package
     (name "r-groupedhyperframe")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupedHyperframe" version))
        (sha256
-        (base32 "0ic5fr5akjpj17jixcxqb2wcbhgsk7x0rf676wlnc8n6s36cxx5v"))))
+        (base32 "0f61n2lhhdcnbmav6z3amjcgg9b14x9pr8qcyrn9z215d7h354qy"))))
     (properties `((upstream-name . "groupedHyperframe")))
     (build-system r-build-system)
     (arguments
@@ -5017,13 +5017,13 @@ format (Fay, M.P., & Proschan, M.A. (2010)<DOI: 10.1214/09-SS051>).")
 (define-public r-groupcompare
   (package
     (name "r-groupcompare")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupcompare" version))
        (sha256
-        (base32 "0a80fgjvd1dfbp79g221v6mbkdswif4qwk9v0vqfhp0k7lqj4pn8"))))
+        (base32 "0qggsrdvp57a5c79hsz1m1g4za0h87kkj4qmsvyxxsgpif4bqvyv"))))
     (properties `((upstream-name . "groupcompare")))
     (build-system r-build-system)
     (arguments
@@ -5194,13 +5194,13 @@ described in Bilodeau, Lafaye De Micheaux and Mahdi (2015)
 (define-public r-grobblr
   (package
     (name "r-grobblr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grobblR" version))
        (sha256
-        (base32 "1l1msh900kmbbszn1f9vfdix4a6180lvs3gfidp9pgkvi2gv2g01"))))
+        (base32 "1r4mi9z9lch3c6sfwm5cvqxj201fbzwvlh8q2b8h73i95mk33mcx"))))
     (properties `((upstream-name . "grobblR")))
     (build-system r-build-system)
     (arguments
@@ -5217,7 +5217,7 @@ described in Bilodeau, Lafaye De Micheaux and Mahdi (2015)
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=grobblR")
+    (home-page "https://github.com/calvinmfloyd/grobblR")
     (synopsis "Creating Flexible, Reproducible 'PDF' Reports")
     (description
      "This package provides a tool which allows users the ability to intuitively
@@ -11785,6 +11785,37 @@ Peressini and Sullivan (1988, ISBN:0-387-96614-5), and contributions by Joao
 Macalos.")
     (license license:gpl3+)))
 
+(define-public r-gocompare
+  (package
+    (name "r-gocompare")
+    (version "1.0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GOCompare" version))
+       (sha256
+        (base32 "05kwdsh0mynavdwmm95vbsx4sy81814ml3fjmk2d3l9y862lmnjk"))))
+    (properties `((upstream-name . "GOCompare")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-stringr
+                             r-mathjaxr
+                             r-igraph
+                             r-ggrepel
+                             r-ggplot2
+                             r-ape))
+    (home-page "https://github.com/ccsosa/GOCompare")
+    (synopsis "Comprehensive GO Terms Comparison Between Species")
+    (description
+     "Supports the assessment of functional enrichment analyses obtained for several
+lists of genes and provides a workflow to analyze them between two species via
+weighted graphs.  Methods are described in Sosa et al. (2023)
+<doi:10.1016/j.ygeno.2022.110528>.")
+    (license license:gpl3+)))
+
 (define-public r-goat
   (package
     (name "r-goat")
@@ -12723,13 +12754,13 @@ Information on @code{oTree} is found in Chen, D. L., Schonger, M., & Wickens, C.
 (define-public r-gmoip
   (package
     (name "r-gmoip")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gMOIP" version))
        (sha256
-        (base32 "1vjzn2r3qfwvrvh74ly8sbsarx86r2sfhxh31zkbqnwh12465dgm"))))
+        (base32 "128sv7m3x0gb43bs1bm5jwsgymxl14gadyjvnjcff8wmbi0ax7f2"))))
     (properties `((upstream-name . "gMOIP")))
     (build-system r-build-system)
     (arguments
@@ -12763,7 +12794,7 @@ objectives.  Plots of both the solution and criterion space are possible.  For
 instance the non-dominated (Pareto) set for bi-objective LP/ILP/MILP programming
 models (see vignettes for an overview).  The package also contains an function
 for checking if a point is inside the convex hull.")
-    (license (license:fsdg-compatible "GPL (>= 3.3.2)"))))
+    (license license:gpl3+)))
 
 (define-public r-gmnl
   (package
@@ -13746,13 +13777,13 @@ scales.")
 (define-public r-glorenz
   (package
     (name "r-glorenz")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glorenz" version))
        (sha256
-        (base32 "0hkcgrggrx7ykwblsgzm66x8agirym209s3s6piqk8c3lnzw8kz4"))))
+        (base32 "02ks991a2bv9w576155s650m0g7z1dlpc5b8flry0kzqxawklghd"))))
     (properties `((upstream-name . "glorenz")))
     (build-system r-build-system)
     (arguments
@@ -14581,13 +14612,13 @@ under review.")
 (define-public r-glmmsel
   (package
     (name "r-glmmsel")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmsel" version))
        (sha256
-        (base32 "0n8g8l3hvjdll2r19s0awl5l6biacm86kx47v9gcgdc598nrby0c"))))
+        (base32 "0vp8lnjc7nz22lz7a12n65h87g5l1w45vmx0mi7wcf6kq9a5wq54"))))
     (properties `((upstream-name . "glmmsel")))
     (build-system r-build-system)
     (arguments
@@ -14603,7 +14634,8 @@ with l0 regularisation.  Selects fixed and random effects under the hierarchy
 constraint that fixed effects must precede random effects.  Uses coordinate
 descent and local search algorithms to rapidly deliver near-optimal estimates.
 Gaussian and binomial response families are currently supported.  For more
-details see Stroup, Ptukhina, and Garai (2024) <doi:10.1201/9780429092060>.")
+details see Thompson, Wand, and Wang (2025)
+<doi:10.48550/@code{arXiv.2506.20425>}.")
     (license license:gpl3)))
 
 (define-public r-glmmroptim
@@ -16940,13 +16972,13 @@ Waldorp, Mottus & Borsboom (2018) <doi:10.1080/00273171.2018.1454823>.")
 (define-public r-gimme
   (package
     (name "r-gimme")
-    (version "0.8.3")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gimme" version))
        (sha256
-        (base32 "1gr3bp4mmhykvj8lbiy0nmpplx3zfjaj7bx2y8jw5ia6naqfbf6g"))))
+        (base32 "09gj4zqls9025dr8zxdwlxqmm4cpp5m6jrx53sp4pg69p1sq5rd8"))))
     (properties `((upstream-name . "gimme")))
     (build-system r-build-system)
     (arguments
@@ -18643,13 +18675,13 @@ oceanography research communities.")
 (define-public r-ggspectra
   (package
     (name "r-ggspectra")
-    (version "0.3.15")
+    (version "0.3.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggspectra" version))
        (sha256
-        (base32 "0yxax1xbc4h94fgm4wi9c4n63kgwanbgvjah7s3d42pyghj8754n"))))
+        (base32 "0w9msigbd9439882nr8yyr05ia9ghfckfpdym4n4s1p54n3bbcm7"))))
     (properties `((upstream-name . "ggspectra")))
     (build-system r-build-system)
     (arguments
@@ -20622,6 +20654,38 @@ main functions return the adjacency matrix of an undirected graph estimated from
 a data matrix.")
     (license license:gpl3+)))
 
+(define-public r-ggmrscu
+  (package
+    (name "r-ggmrscu")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggmRSCU" version))
+       (sha256
+        (base32 "12j8z8qlp4r3ksa11f313qfk8ndpikvrf488i3pdclm57vzxvqmg"))))
+    (properties `((upstream-name . "ggmRSCU")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-patchwork
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=ggmRSCU")
+    (synopsis
+     "Visualizing Multi-Species Relative Synonymous Codon Usage and Extensible Data Exploration")
+    (description
+     "Facilitates efficient visualization of Relative Synonymous Codon Usage patterns
+across species.  Based on analytical outputs from @code{codonW}', MEGA', and
+Phylosuite', it supports multi-species RSCU comparisons and allows users to
+explore visual analysis of structurally similar datasets.")
+    (license license:gpl3+)))
+
 (define-public r-ggmridge
   (package
     (name "r-ggmridge")
@@ -22369,13 +22433,13 @@ regions instead of the traditional height of the estimated density surface.")
 (define-public r-ggdemetra
   (package
     (name "r-ggdemetra")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggdemetra" version))
        (sha256
-        (base32 "18i96jkbc0zm9xgn5250v2316kccr5vcxag2gii7lag7bhj6fq51"))))
+        (base32 "0dr2ycwhknjm9cd059cr696fssgd822qh2vgkb9ncahhq8q8qsll"))))
     (properties `((upstream-name . "ggdemetra")))
     (build-system r-build-system)
     (arguments
@@ -26227,13 +26291,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.1.5")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "0vm09g74n967m94yv634dlzfv9g3s9hqrhxfvcgxk95vxpdnvr7i"))))
+        (base32 "0l7fbw2a50bd41a6b4cgqq39mwi3shd7g8zgpzkj769nr9vrijkc"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (arguments
@@ -30768,6 +30832,43 @@ from transition-specific hazard function, whose parameters are multivariable
 normally distributed.")
     (license license:gpl2)))
 
+(define-public r-gemr
+  (package
+    (name "r-gemr")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gemR" version))
+       (sha256
+        (base32 "03v9dw5lvxcap68liw4ypj0mlqgnhz0hza6bv0ap7yx78drc8q7w"))))
+    (properties `((upstream-name . "gemR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-pracma
+                             r-plsvarsel
+                             r-pls
+                             r-neuralnet
+                             r-mixlm
+                             r-lme4
+                             r-hdanova
+                             r-gridextra
+                             r-glmnet
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=gemR")
+    (synopsis "General Effect Modelling")
+    (description
+     "Two-step modeling with separation of sources of variation through analysis of
+variance and subsequent multivariate modeling through a range of unsupervised
+and supervised statistical methods.  Separation can focus on removal of
+interfering effects or isolation of effects of interest.  EF Mosleth et al.
+(2021) <doi:10.1038/s41598-021-82388-w> and EF Mosleth et al. (2020)
+<doi:10.1016/B978-0-12-409547-2.14882-6>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-gemma2
   (package
     (name "r-gemma2")
@@ -32799,13 +32900,13 @@ online SQL database at <http://paleofire.org>.")
 (define-public r-gccfactor
   (package
     (name "r-gccfactor")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GCCfactor" version))
        (sha256
-        (base32 "1rxn0v4msfr5rwqc91ypafnvwa23n5574s8lhqmdqq53rs32ff89"))))
+        (base32 "1dcmghvrv3kmrjnzfx5min3lfjxy1f9rgrm9b34h1f29kd0k79qn"))))
     (properties `((upstream-name . "GCCfactor")))
     (build-system r-build-system)
     (arguments
@@ -32815,11 +32916,11 @@ online SQL database at <http://paleofire.org>.")
     (home-page "https://cran.r-project.org/package=GCCfactor")
     (synopsis "GCC Estimation of the Multilevel Factor Model")
     (description
-     "This package provides methods for model selection, estimation, bootstrap
-inference, and simulation for the multilevel factor model, based on the
-principal component estimation and generalised canonical correlation approach.
-Details can be found in \"Generalised Canonical Correlation Estimation of the
-Multilevel Factor Model.\" Lin and Shin (2023) <doi:10.2139/ssrn.4295429>.")
+     "This package provides methods for model selection, estimation, inference, and
+simulation for the multilevel factor model, based on the principal component
+estimation and generalised canonical correlation approach.  Details can be found
+in \"Generalised Canonical Correlation Estimation of the Multilevel Factor
+Model.\" Lin and Shin (2025) <doi:10.2139/ssrn.4295429>.")
     (license license:gpl3+)))
 
 (define-public r-gcbd
@@ -33513,13 +33614,13 @@ an analytic or a numerical solution, both available in the function.")
 (define-public r-gausssuppression
   (package
     (name "r-gausssuppression")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaussSuppression" version))
        (sha256
-        (base32 "1pdysqb3f4jya33pw9qfw1msd610wf6cqjb25r8x8vwv6qvnmj22"))))
+        (base32 "0zifs7cgl3cmrgianqhqgkkxgmbvl1591x9xx19nkdczb9hjwrvb"))))
     (properties `((upstream-name . "GaussSuppression")))
     (build-system r-build-system)
     (arguments

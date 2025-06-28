@@ -7848,13 +7848,13 @@ rare species.  Conservation Biology, In press.")
 (define-public r-rsdne
   (package
     (name "r-rsdne")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsdNE" version))
        (sha256
-        (base32 "0xjnkg009m51zfwih1rpgwch8bs7vvri0x4skrikzx3nvlszcjh3"))))
+        (base32 "1540pj7qy1y32rxd5psd0168gcm694n8fcpi1sz4kh4h76444w1a"))))
     (properties `((upstream-name . "rsdNE")))
     (build-system r-build-system)
     (arguments
@@ -7866,15 +7866,15 @@ rare species.  Conservation Biology, In press.")
      "Response surface designs with neighbour effects are suitable for experimental
 situations where it is expected that the treatment combination administered to
 one experimental unit may affect the response on neighboring units as well as
-the response on the unit to which it is applied.  Integrating these effects in
-the response surface model improves the experiment's precision (Jaggi, S.,
-Sarika and Sharma, V.K.
-(2010)<http://krishi.icar.gov.in/jspui/handle/123456789/4364>; Verma A., Jaggi
-S., Varghese, E.,Varghese, C.,Bhowmik, A., Datta, A. and Hemavathi M.
-(2021)<DOI: 10.1080/03610918.2021.1890123>).  This package includes
-@code{sym()}, @code{asym1()}, @code{asym2()} functions that generates response
-surface designs which are rotatable under a polynomial model of a given order
-without interaction term incorporating neighbour effects.")
+the response on the unit to which it is applied (Dalal et al.,2025 <doi:
+10.57805/revstat.v23i2.513>).  Integrating these effects in the response surface
+model improves the experiment's precision (Jaggi, S., Sarika and Sharma, V.K.
+(2010)<doi:10.5555/20103265373>; Verma A., Jaggi S., Varghese, E.,Varghese,
+C.,Bhowmik, A., Datta, A. and Hemavathi M. (2021)<doi:
+10.1080/03610918.2021.1890123>).  This package includes @code{sym()},
+@code{asym1()}, @code{asym2()}, @code{asym3()} and @code{asym4()} functions that
+generates response surface designs which are rotatable under a polynomial model
+of a given order without interaction term incorporating neighbour effects.")
     (license license:gpl2+)))
 
 (define-public r-rsdmx
@@ -10850,13 +10850,13 @@ exporting data in the text files produced by Eprime experiments.")
 (define-public r-rprev
   (package
     (name "r-rprev")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rprev" version))
        (sha256
-        (base32 "0494z0049rxahs4ndjlclzfc65k304a1m01cdlhjg4rz1gc1vrr8"))))
+        (base32 "1zfi1wk5ffcq2b1l8aznn3h5wdcwgiqa4qfvwk9z8f0zilfdqq9l"))))
     (properties `((upstream-name . "rprev")))
     (build-system r-build-system)
     (arguments
@@ -18189,19 +18189,19 @@ alternative methods are efficiently implemented in C++.")
 (define-public r-robcp
   (package
     (name "r-robcp")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robcp" version))
        (sha256
-        (base32 "0gl75k2lzk16v4ahksdis07y3l1x78x2jyfisw6k48svcmhpsdv5"))))
+        (base32 "1wb3wafvbbapw2y8mwwf39ikz1hlkp2xwx66z3pidj70z19d1fgx"))))
     (properties `((upstream-name . "robcp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcpp r-pracma r-mvtnorm r-mass))
     (home-page "https://cran.r-project.org/package=robcp")
     (synopsis "Robust Change-Point Tests")
     (description
@@ -23382,13 +23382,13 @@ Foundation grant DMS-2310637.")
 (define-public r-rkorapclient
   (package
     (name "r-rkorapclient")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RKorAPClient" version))
        (sha256
-        (base32 "0zk7sn1kqh963vrjv2hylqgchvl2wph4jns52ik25jm70k1i16rr"))))
+        (base32 "1k37if7jfrl2ybncd69f0ccv6qv92xz22s0683110mgbxcza6fg8"))))
     (properties `((upstream-name . "RKorAPClient")))
     (build-system r-build-system)
     (arguments
@@ -25627,13 +25627,13 @@ ensures findability, accessibility, interoperability, and reusability of data.")
 (define-public r-ripserr
   (package
     (name "r-ripserr")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ripserr" version))
        (sha256
-        (base32 "1w663pfhbna3j90cnhb1agp5ppkbyl3rlbqsa52inc93bcpr3ias"))))
+        (base32 "14pp0qw9zzxmk5c70vg41mhk288jip8xj8xagzqwmfb0bmbvpm5j"))))
     (properties `((upstream-name . "ripserr")))
     (build-system r-build-system)
     (arguments
@@ -28658,40 +28658,6 @@ contributors (2023)
      "Implementation of some functions to create quizzes in the GIFT format.  This
 format is used by several Virtual Learning Environments such as Moodle.")
     (license license:gpl2+)))
-
-(define-public r-rgho
-  (package
-    (name "r-rgho")
-    (version "3.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rgho" version))
-       (sha256
-        (base32 "1j46pkb8n2hn1isz5xgfagwn77cxs48wv3rs4qqvq2nq1r5bpa4x"))))
-    (properties `((upstream-name . "rgho")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-odataquery
-                             r-magrittr
-                             r-lifecycle
-                             r-httr
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rgho")
-    (synopsis "Access WHO Global Health Observatory Data from R")
-    (description
-     "Access WHO Global Health Observatory (<https://www.who.int/data/gho/>) data from
-R via the `OData` API (<https://www.who.int/data/gho/info/gho-odata-api>), an
-application program interface providing a simple query interface to the World
-Health Organization's data and statistics content.")
-    (license license:gpl3+)))
 
 (define-public r-rghanacensus
   (package
@@ -32233,19 +32199,25 @@ http://www.auriq.com/documentation/source/install/index.html.")
 (define-public r-resquin
   (package
     (name "r-resquin")
-    (version "0.0.2")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resquin" version))
        (sha256
-        (base32 "0h3wmmhx3bqy1li6nvgdxfvdr9k2yiw2b7h74jbc4mvpil747l7l"))))
+        (base32 "0wfgrghmi3san5l4f927irr6ngvi37cl0020k4y517aw0l0dyspj"))))
     (properties `((upstream-name . "resquin")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs r-purrr r-cli))
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-stringi
+                             r-slider
+                             r-rlang
+                             r-purrr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MatRoth/resquin")
     (synopsis "Response Quality Indicators for Survey Research")
@@ -35360,6 +35332,43 @@ heterogeneity as recommended by Nieser & Cochran (2023)
 <doi:10.1037/met0000413>.  The REM algorithm is based on the
 expectation-maximization (EM) algorithm, but it allows for the case when all the
 data are generated by the assumed data generating model.")
+    (license license:gpl3+)))
+
+(define-public r-remixed
+  (package
+    (name "r-remixed")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "REMixed" version))
+       (sha256
+        (base32 "1v9b8wjzbx94f8ay67yvgclwkma529dvd3r0l3yn9fwd4j088nrr"))))
+    (properties `((upstream-name . "REMixed")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-stringr
+                             r-snow
+                             r-rsmlx
+                             r-rmpfr
+                             r-ggplot2
+                             r-foreach
+                             r-fastghquad
+                             r-dplyr
+                             r-dosnow
+                             r-desolve))
+    (home-page "https://cran.r-project.org/package=REMixed")
+    (synopsis "Regularized Estimation in Mixed Effect Model")
+    (description
+     "Implementation of an algorithm in two steps to estimate parameters of a model
+whose latent dynamics are inferred through latent processes, jointly
+regularized.  This package uses Monolix software
+(<https://monolixsuite.slp-software.com/>), which provide robust statistical
+method for non-linear mixed effects modeling.  Monolix must have been installed
+prior to use.")
     (license license:gpl3+)))
 
 (define-public r-remiod
@@ -44678,13 +44687,13 @@ settings.")
 (define-public r-rcppredis
   (package
     (name "r-rcppredis")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppRedis" version))
        (sha256
-        (base32 "0a3h26cbzfzlw6x3fpvcjfbaai8v41jld2dav250vw7r0vc4cj7r"))))
+        (base32 "1n3x9nh9k6jq6b728g66ckcp6njy6r2yfxvzmlx2ifcah1aixn98"))))
     (properties `((upstream-name . "RcppRedis")))
     (build-system r-build-system)
     (arguments
@@ -44695,10 +44704,10 @@ settings.")
     (home-page "https://github.com/eddelbuettel/rcppredis")
     (synopsis "'Rcpp' Bindings for 'Redis' using the 'hiredis' Library")
     (description
-     "Connection to the Redis key/value store using the C-language client library
-hiredis (included as a fallback) with @code{MsgPack} encoding provided via
-@code{RcppMsgPack} headers.  It now also includes the pub/sub functions from the
-rredis package.")
+     "Connection to the Redis (or Valkey') key/value store using the C-language client
+library hiredis (included as a fallback) with @code{MsgPack} encoding provided
+via @code{RcppMsgPack} headers.  It now also includes the pub/sub functions from
+the rredis package.")
     (license license:gpl2+)))
 
 (define-public r-rcppquantuccia
@@ -54331,13 +54340,13 @@ interactions effects under the strong or weak heredity constraint.")
 (define-public r-ramify
   (package
     (name "r-ramify")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ramify" version))
        (sha256
-        (base32 "0cxmkxhshg0vrcxai2gbm4iih04f44liv5nh5jiq85hjz8qbhdi2"))))
+        (base32 "0wxc39z58s9k754c126gzj1injq950kym0d3rhzqq8da6bhanr04"))))
     (properties `((upstream-name . "ramify")))
     (build-system r-build-system)
     (arguments

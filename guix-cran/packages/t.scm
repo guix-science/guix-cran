@@ -1292,19 +1292,24 @@ For the seminal work on the topic, see Rudin et al (1992)
 (define-public r-tvmvp
   (package
     (name "r-tvmvp")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TVMVP" version))
        (sha256
-        (base32 "0j06fxppdnx5fgs1xi6kv32ykg4j7xr69ivhzg3nfrvxr4wwlxmm"))))
+        (base32 "17c22iijqky7x0i7sx9bxcnly0mnk45lkw07v69p470jz3b5bjlb"))))
     (properties `((upstream-name . "TVMVP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6 r-prettyunits r-cli))
+    (propagated-inputs (list r-tidyr
+                             r-r6
+                             r-prettyunits
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/erilill/TV-MVP")
     (synopsis "Time-Varying Minimum Variance Portfolio")
@@ -6195,13 +6200,13 @@ Science, pages 107-120 <doi: 10.1007/BFb0017135>.")
 (define-public r-troopdata
   (package
     (name "r-troopdata")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "troopdata" version))
        (sha256
-        (base32 "13a1a6d724816s5mkx4hxn7syvwy34l8bdffas76g0g3kadkpvj7"))))
+        (base32 "1rm99v6knbbrrrydxxrjda4bwr64lgm0rib5wffg42an5b9k044i"))))
     (properties `((upstream-name . "troopdata")))
     (build-system r-build-system)
     (arguments
@@ -8996,13 +9001,13 @@ personalisation and delivers a more relevant search.")
 (define-public r-traumar
   (package
     (name "r-traumar")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traumar" version))
        (sha256
-        (base32 "1vl4ldy5qswg5hk2l2va275ihamzqr7knyvwa008x53yl22r05vg"))))
+        (base32 "1dkix7q78h5bpf1i0ahxmcyalx9y6cm8l74dgdpg04kdy435h04d"))))
     (properties `((upstream-name . "traumar")))
     (build-system r-build-system)
     (arguments
@@ -22137,13 +22142,13 @@ package library and maybe say thank you'.")
 (define-public r-thamesmix
   (package
     (name "r-thamesmix")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thamesmix" version))
        (sha256
-        (base32 "07z6zsnnz2gpaz1plzpf3ki5qs6wi642si79h8zwvr6bj87kqfmd"))))
+        (base32 "00qwzhr9qlja43v0c5p3f51vnyx2c3ij5b738j30b1gzsz41mg8s"))))
     (properties `((upstream-name . "thamesmix")))
     (build-system r-build-system)
     (arguments
