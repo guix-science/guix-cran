@@ -27095,13 +27095,13 @@ language translations.")
 (define-public r-geofacet
   (package
     (name "r-geofacet")
-    (version "0.2.1")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geofacet" version))
        (sha256
-        (base32 "1bj201afh7df3smgmllglmgs7bkkc1k1arvjr7kwn1cnn67b3mzj"))))
+        (base32 "1szibyknny2zz9m9ihf0i9s01lmyxqr6nzz310q9cd9amn85kh0f"))))
     (properties `((upstream-name . "geofacet")))
     (build-system r-build-system)
     (arguments
@@ -27110,7 +27110,7 @@ language translations.")
     (propagated-inputs (list r-sp
                              r-rnaturalearth
                              r-rlang
-                             r-imgur
+                             r-httr2
                              r-gtable
                              r-gridextra
                              r-ggrepel

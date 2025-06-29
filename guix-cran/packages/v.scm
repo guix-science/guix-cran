@@ -2571,19 +2571,19 @@ based in Russia.")
 (define-public r-viztest
   (package
     (name "r-viztest")
-    (version "0.3-1")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VizTest" version))
        (sha256
-        (base32 "08c47wnz64f3cf0zz9ak8jbay27sx9g5zwml29kzh2sqmhdrl8rh"))))
+        (base32 "1bv8jbhprg77ffz966zz0xpsddhr1v19ss39ik5qf7d3pml1h6s4"))))
     (properties `((upstream-name . "VizTest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-hdinterval r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-tidyr r-hdinterval r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=VizTest")
     (synopsis "Optimal Confidence Intervals for Visual Testing")

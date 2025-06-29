@@ -5601,6 +5601,34 @@ substitution models.  References: Le, Stanford, Dumuid, and Wiley (2025)
 <doi:10.48550/@code{arXiv.2411.12407>}.")
     (license license:gpl3+)))
 
+(define-public r-multilcirt
+  (package
+    (name "r-multilcirt")
+    (version "2.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MultiLCIRT" version))
+       (sha256
+        (base32 "1j6p75d8gr5x7x5grck29ylmp69z6z65pq5q3kyk001z15h4gv9a"))))
+    (properties `((upstream-name . "MultiLCIRT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-limsolve))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=MultiLCIRT")
+    (synopsis "Multidimensional Latent Class Item Response Theory Models")
+    (description
+     "Framework for the Item Response Theory analysis of dichotomous and ordinal
+polytomous outcomes under the assumption of multidimensionality and discreteness
+of the latent traits.  The fitting algorithms allow for missing responses and
+for different item parameterizations and are based on the
+Expectation-Maximization paradigm.  Individual covariates affecting the class
+weights may be included in the new version (since 2.1).")
+    (license license:gpl2+)))
+
 (define-public r-multilaterals
   (package
     (name "r-multilaterals")
@@ -22358,6 +22386,35 @@ interact.  Reference: Knoblauch & Maloney (2012) \"Modeling Psychophysical Data
 in R\". <doi:10.1007/978-1-4614-4475-6>.")
     (license license:gpl2+)))
 
+(define-public r-mlcirtwithin
+  (package
+    (name "r-mlcirtwithin")
+    (version "2.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MLCIRTwithin" version))
+       (sha256
+        (base32 "0c67cama9j6q821gj1bsjajqdr9yx72lnzas76qa94cqig7514rg"))))
+    (properties `((upstream-name . "MLCIRTwithin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-multilcirt r-mass r-limsolve))
+    (home-page "https://cran.r-project.org/package=MLCIRTwithin")
+    (synopsis
+     "Latent Class Item Response Theory (LC-IRT) Models under Within-Item Multidimensionality")
+    (description
+     "Framework for the Item Response Theory analysis of dichotomous and ordinal
+polytomous outcomes under the assumption of within-item multidimensionality and
+discreteness of the latent traits.  The fitting algorithms allow for missing
+responses and for different item parametrizations and are based on the
+Expectation-Maximization paradigm.  Individual covariates affecting the class
+weights may be included in the new version together with possibility of
+constraints on all model parameters.")
+    (license license:gpl2+)))
+
 (define-public r-mlbstats
   (package
     (name "r-mlbstats")
@@ -29776,13 +29833,13 @@ the covariates, using a backfitting approach to maximize the likelihood.")
 (define-public r-micompr
   (package
     (name "r-micompr")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micompr" version))
        (sha256
-        (base32 "1i50zvhdfxz0zbx5vmiz9s055j6f0j0gf6a2vxhm7cw597rfp3s5"))))
+        (base32 "1mr0i4q6aih59xv5jfbxb72v49006dc0qyrhws9lja1j44gbk72y"))))
     (properties `((upstream-name . "micompr")))
     (build-system r-build-system)
     (arguments
@@ -47829,13 +47886,13 @@ each level set.  3.  Generate a complex from the clustering results.")
 (define-public r-mapper
   (package
     (name "r-mapper")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mappeR" version))
        (sha256
-        (base32 "1ph2kslylbjwjfals697f7ggj55risbsf5f9p78hxwq5vfccbldz"))))
+        (base32 "14jncr1gxzf7l8j3s0lrnh3mqv2mjr0l4i45gcs2i73g4fyp60q3"))))
     (properties `((upstream-name . "mappeR")))
     (build-system r-build-system)
     (arguments

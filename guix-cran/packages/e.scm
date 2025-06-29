@@ -3801,6 +3801,44 @@ and Lefebvre (2018) <doi:10.1353/obs.2018.0013>; Samoilenko, Lefebvre (2021)
 <doi:10.1002/sim.9621>.")
     (license license:gpl3)))
 
+(define-public r-exactltre
+  (package
+    (name "r-exactltre")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "exactLTRE" version))
+       (sha256
+        (base32 "0cjvhn0nnzfc3zsifp6szxap5f68xrm8q9g8wb67kljl8h8yqp41"))))
+    (properties `((upstream-name . "exactLTRE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-popdemo r-matrixcalc))
+    (home-page "https://cran.r-project.org/package=exactLTRE")
+    (synopsis
+     "An Exact Method for Life Table Response Experiment (LTRE) Analysis")
+    (description
+     "Life Table Response Experiments (LTREs) are a method of comparative demographic
+analysis.  The purpose is to quantify how the difference or variance in vital
+rates (stage-specific survival, growth, and fertility) among populations
+contributes to difference or variance in the population growth rate, \"lambda.\"
+We provide functions for one-way fixed design and random design LTRE, using
+either the classical methods that have been in use for several decades, or an
+@code{fANOVA-based} exact method that directly calculates the impact on lambda
+of changes in matrix elements, for matrix elements and their interactions.  The
+equations and descriptions for the classical methods of LTRE analysis can be
+found in Caswell (2001, ISBN: 0878930965), and the @code{fANOVA-based} exact
+methods are described in Hernandez et al. (2023) <doi:10.1111/2041-210X.14065>.
+We also provide some demographic functions, including generation time from
+Bienvenu and Legendre (2015) <doi:10.1086/681104>.  For implementation of
+@code{exactLTRE} where all possible interactions are calculated, we use an
+operator matrix presented in Poelwijk, Krishna, and Ranganathan (2016)
+<doi:10.1371/journal.pcbi.1004771>.")
+    (license license:expat)))
+
 (define-public r-exactcox
   (package
     (name "r-exactcox")
@@ -14926,6 +14964,30 @@ each gene.  The dimensionality of this gene subset is further reduced through
 the use of mixtures of factor analyzers, allowing the tissue samples to be
 clustered by fitting mixtures of normal distributions.")
     (license license:gpl3+)))
+
+(define-public r-emmageo
+  (package
+    (name "r-emmageo")
+    (version "0.9.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EMMAgeo" version))
+       (sha256
+        (base32 "10dg7077szfnv19a10xkj1xn4kgikvv5l8mbii5sfnbf3zgj3zn2"))))
+    (properties `((upstream-name . "EMMAgeo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-nnls r-gparotation r-catools))
+    (home-page "https://cran.r-project.org/package=EMMAgeo")
+    (synopsis "End-Member Modelling of Grain-Size Data")
+    (description
+     "End-member modelling analysis of grain-size data is an approach to unmix a data
+set's underlying distributions and their contribution to the data set.  EMMAgeo
+provides deterministic and robust protocols for that purpose.")
+    (license license:gpl3)))
 
 (define-public r-emli
   (package

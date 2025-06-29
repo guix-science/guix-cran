@@ -14372,6 +14372,31 @@ paper: \"A C++ Implementation of Otsu's Image Segmentation Method\".  The
 algorithm is explained at <doi:10.5201/ipol.2016.158>.")
     (license license:expat)))
 
+(define-public r-image-linesegmentdetector
+  (package
+    (name "r-image-linesegmentdetector")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "image.LineSegmentDetector" version))
+       (sha256
+        (base32 "1mx6vkmm9miwqdd5vil44if0dikzn5cy3kxvb3vp0kwfm8k36ib5"))))
+    (properties `((upstream-name . "image.LineSegmentDetector")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sp r-rcpp))
+    (home-page "https://github.com/bnosac/image")
+    (synopsis "Detect Line Segments in Images")
+    (description
+     "An implementation of the Line Segment Detector on digital images described in
+the paper: \"LSD: A Fast Line Segment Detector with a False Detection Control\" by
+Rafael Grompone von Gioi et al (2012).  The algorithm is explained at
+<doi:10.5201/ipol.2012.gjmr-lsd>.")
+    (license license:agpl3)))
+
 (define-public r-image-libfacedetection
   (package
     (name "r-image-libfacedetection")
@@ -15878,13 +15903,13 @@ association data, especially with large controls re-sequenced data.")
 (define-public r-iforecast
   (package
     (name "r-iforecast")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iForecast" version))
        (sha256
-        (base32 "05miwnmmsiilfym0mvk6n2jaw0dz4vpxfdvlhx2ivkhad0n8cs7l"))))
+        (base32 "1gs01mm2y35q28gvn5yabkbwh96qrkkjlfz3f80whcls53d4v28m"))))
     (properties `((upstream-name . "iForecast")))
     (build-system r-build-system)
     (arguments

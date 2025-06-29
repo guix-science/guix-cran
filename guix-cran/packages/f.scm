@@ -11845,6 +11845,41 @@ al. (2017) <doi:10.18637/jss.v076.i01>; Socolar & Mills (2023)
 <doi:10.1101/2023.10.26.564080>.")
     (license license:bsd-3)))
 
+(define-public r-flir
+  (package
+    (name "r-flir")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flir" version))
+       (sha256
+        (base32 "1snin9hh4zc30qb00mw1j27zvxk32h1yn19f52cydf292kmch624"))))
+    (properties `((upstream-name . "flir")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-rprojroot
+                             r-git2r
+                             r-fs
+                             r-digest
+                             r-data-table
+                             r-crayon
+                             r-cli
+                             r-astgrepr))
+    (native-inputs (list r-knitr))
+    (home-page "https://flir.etiennebacher.com")
+    (synopsis "Find and Fix Lints in R Code")
+    (description
+     "Lints are code patterns that are not optimal because they are inefficient,
+forget corner cases, or are less readable.  flir provides a small set of
+functions to detect those lints and automatically fix them.  It builds on
+astgrepr', which itself uses the Rust crate ast-grep to parse and navigate R
+code.")
+    (license license:expat)))
+
 (define-public r-flipscores
   (package
     (name "r-flipscores")

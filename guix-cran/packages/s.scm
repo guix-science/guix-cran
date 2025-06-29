@@ -41295,6 +41295,41 @@ we refer to our original paper Vandenbon and Diez (Nature Communications, 2020)
 Reports, 2023) <doi:10.1038/s41598-023-38965-2>.")
     (license license:expat)))
 
+(define-public r-singlecellcomplexheatmap
+  (package
+    (name "r-singlecellcomplexheatmap")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SingleCellComplexHeatMap" version))
+       (sha256
+        (base32 "03rwx4ir41rqcbgp1jjgyrr81h0lz3vvc4dpb6v4mpy5wm4n4xl7"))))
+    (properties `((upstream-name . "SingleCellComplexHeatMap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-seurat
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-dplyr
+                             r-complexheatmap
+                             r-circlize))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/FanXuRong/SingleCellComplexHeatMap")
+    (synopsis
+     "Complex Heatmaps for Single Cell Expression Data with Dual Information Display")
+    (description
+     "This package creates complex heatmaps for single cell RNA-seq data that
+simultaneously display gene expression levels (as color intensity) and
+expression percentages (as circle sizes).  Supports gene grouping, cell type
+annotations, and time point comparisons.  Built on top of @code{ComplexHeatmap}
+and integrates with Seurat objects.  For more details see Gu (2022)
+<doi:10.1002/imt2.43> and Hao (2024) <doi:10.1038/s41587-023-01767-y>.")
+    (license license:expat)))
+
 (define-public r-singlecasees
   (package
     (name "r-singlecasees")
@@ -51056,13 +51091,13 @@ package for a Grammar of Graphics declarative HTML syntax to create
 (define-public r-shiny2docker
   (package
     (name "r-shiny2docker")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shiny2docker" version))
        (sha256
-        (base32 "00r6hm2spp9pba1rbzdki0cfvgm16ivlvhqbh7nlpq3q0x252wcr"))))
+        (base32 "0404z1p8j0csfi3bgbhc2n19zwmksbs3vi6w202aw1vkbs8ab2ya"))))
     (properties `((upstream-name . "shiny2docker")))
     (build-system r-build-system)
     (arguments

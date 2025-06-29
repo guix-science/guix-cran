@@ -30860,13 +30860,13 @@ useful for organizing and managing large collections of objects in R.")
 (define-public r-tagcloud
   (package
     (name "r-tagcloud")
-    (version "0.6")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tagcloud" version))
        (sha256
-        (base32 "04zrh029n8pjlxlr6pdd7xhqqhavbrj3fhvhj6ygzlvi2jslxnwl"))))
+        (base32 "0acgvg7c3qh4vm0bb20658p187280mp3ksszc07j6kll4z1pl1ic"))))
     (properties `((upstream-name . "tagcloud")))
     (build-system r-build-system)
     (arguments
@@ -30874,7 +30874,7 @@ useful for organizing and managing large collections of objects in R.")
       #:tests? #f))
     (propagated-inputs (list r-rcpp r-rcolorbrewer))
     (native-inputs (list r-knitr))
-    (home-page "http://logfc.wordpress.com")
+    (home-page "https://logfc.wordpress.com")
     (synopsis "Tag Clouds")
     (description "Generating Tag and Word Clouds.")
     (license license:gpl2+)))

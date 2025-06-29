@@ -8658,6 +8658,36 @@ archive formats including tar', ZIP', 7-zip', RAR', CAB and compression formats
 including gzip', bzip2', compress', lzma and xz'.")
     (license license:expat)))
 
+(define-public r-archissur
+  (package
+    (name "r-archissur")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ARCHISSUR" version))
+       (sha256
+        (base32 "11lnl40g5vyc73a1z137aagsz4gdh9bsn7mhj0z6zxk1m80jlkab"))))
+    (properties `((upstream-name . "ARCHISSUR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncatednormal
+                             r-rgenoud
+                             r-randtoolbox
+                             r-kriginv
+                             r-gpcsign
+                             r-future-apply
+                             r-dicekriging))
+    (home-page "https://cran.r-project.org/package=ARCHISSUR")
+    (synopsis
+     "Active Recovery of a Constrained and Hidden Set by Stepwise Uncertainty Reduction Strategy")
+    (description
+     "Stepwise Uncertainty Reduction criterion and algorithm for sequentially learning
+a Gaussian Process Classifier as described in Menz et al. (2025).")
+    (license license:gpl3)))
+
 (define-public r-archidart
   (package
     (name "r-archidart")
@@ -21828,13 +21858,13 @@ and Yates et al. (2022) <doi:10.1002/ecm.1557>.")
 (define-public r-adsorptioncmf
   (package
     (name "r-adsorptioncmf")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adsoRptionCMF" version))
        (sha256
-        (base32 "1hpa5lsjckmcfa2n8c86xvbdr0fv3xi020rizjbrqcg9sxnnpsyc"))))
+        (base32 "1x4x6jhd5s6ifn98mrgiyzk7hzchcvz11ly4dqlwbmldmpw5gnh7"))))
     (properties `((upstream-name . "adsoRptionCMF")))
     (build-system r-build-system)
     (arguments

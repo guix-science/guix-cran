@@ -7935,6 +7935,37 @@ method.")
 directional and fluctuating selection in age-structured populations.")
     (license license:gpl2)))
 
+(define-public r-lmest
+  (package
+    (name "r-lmest")
+    (version "3.2.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LMest" version))
+       (sha256
+        (base32 "0czy4yb07n71g6gvg6f3bgzywizkm4bjqszwhxx9ccw2ch48wm5j"))))
+    (properties `((upstream-name . "LMest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scatterplot3d
+                             r-mvtnorm
+                             r-multilcirt
+                             r-mix
+                             r-mclust
+                             r-mass
+                             r-formula
+                             r-diagram))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://cran.r-project.org/package=LMest")
+    (synopsis "Generalized Latent Markov Models")
+    (description
+     "Latent Markov models for longitudinal continuous and categorical data.  See
+Bartolucci, Pandolfi, Pennoni (2017)<doi:10.18637/jss.v081.i04>.")
+    (license license:gpl2+)))
+
 (define-public r-lmesplines
   (package
     (name "r-lmesplines")

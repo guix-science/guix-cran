@@ -4840,6 +4840,46 @@ variability in the relative proportion of cell types across samples prior to
 downstream analyses.")
     (license license:expat)))
 
+(define-public r-bregr
+  (package
+    (name "r-bregr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bregr" version))
+       (sha256
+        (base32 "11imzpivqg8lh02qriplr3qi31dwnq01kdknixv8irh3dk7bmwi7"))))
+    (properties `((upstream-name . "bregr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-survival
+                             r-s7
+                             r-rlang
+                             r-purrr
+                             r-lifecycle
+                             r-insight
+                             r-glue
+                             r-ggplot2
+                             r-forestploter
+                             r-dplyr
+                             r-cli
+                             r-broom-helpers
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/WangLabCSU/bregr")
+    (synopsis "Easy and Efficient Batch Processing of Regression Models")
+    (description
+     "Easily process batches of univariate or multivariate regression models.  Returns
+results in a tidy format and generates visualization plots for straightforward
+interpretation (Wang, Shixiang, et al. (2021)
+<DOI:10.48550/@code{arXiv.2110.14232>}).")
+    (license license:gpl3+)))
+
 (define-public r-breeze
   (package
     (name "r-breeze")
@@ -16580,13 +16620,13 @@ additional metadata on stations and weather.")
 (define-public r-bigvar
   (package
     (name "r-bigvar")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BigVAR" version))
        (sha256
-        (base32 "1f67gk54gzdlil79gqqws0i6j0rvjqk4k0bhdb9adcvcsdxfkwwy"))))
+        (base32 "1aqmgmpwfkll7q20l3sda26nkmi2fjjs4cfxbhvhjy5q3a7k1lr1"))))
     (properties `((upstream-name . "BigVAR")))
     (build-system r-build-system)
     (arguments
@@ -16602,10 +16642,7 @@ additional metadata on stations and weather.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wbnicholson/BigVAR")
     (synopsis "Dimension Reduction Methods for Multivariate Time Series")
-    (description
-     "Estimates VAR and VARX models with Structured Penalties using the methods
-developed by Nicholson et al (2017)<doi:10.1016/j.ijforecast.2017.01.003> and
-Nicholson et al (2020) <doi:10.48550/@code{arXiv.1412.5250>}.")
+    (description "Estimates VAR and VARX models with Structured Penalties.")
     (license license:gpl2+)))
 
 (define-public r-bigutilsr

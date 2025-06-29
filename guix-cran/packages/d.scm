@@ -8653,6 +8653,43 @@ capabilities of the parabar package.  Learn more about parabar and
 @code{doParabar} at <https://parabar.mihaiconstantin.com>.")
     (license license:expat)))
 
+(define-public r-door
+  (package
+    (name "r-door")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "door" version))
+       (sha256
+        (base32 "1lld22ir1ipi8nzs32hf140rhvx187hybjvcppvwmya1fb16ddn9"))))
+    (properties `((upstream-name . "door")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-labeling
+                             r-ggplot2
+                             r-forestplot
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=door")
+    (synopsis
+     "Design of Clinical Trials with the Desirability of Outcome Ranking Methodology")
+    (description
+     "Statistical methods and related graphical representations for the Desirability
+of Outcome Ranking (DOOR) methodology.  The DOOR is a paradigm for the design,
+analysis, interpretation of clinical trials and other research studies based on
+the patient centric benefit risk evaluation.  The package provides functions for
+generating summary statistics from individual level/summary level datasets,
+conduct DOOR probability-based inference, and visualization of the results.  For
+more details of DOOR methodology, see \"Handbook of Generalized Pairwise
+Comparisons\", Chapter 13 <doi:10.1201/9781003390855>.  For more explanation of
+the statistical methods and the graphics, see the technical document and user
+manual of the DOOR Shiny apps at <https://methods.bsc.gwu.edu>.")
+    (license license:gpl3+)))
+
 (define-public r-doolkit
   (package
     (name "r-doolkit")
@@ -13275,13 +13312,13 @@ Gumbel distribution.")
 (define-public r-dissimilarities
   (package
     (name "r-dissimilarities")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dissimilarities" version))
        (sha256
-        (base32 "0v1gffjvvi800jm99xss9ib3bhvwck1ikwnzhfi0l37js2kral8f"))))
+        (base32 "1lpjn66ib56wbkb9433babja5bszl0l1iqpz2kycaa7y79vdc2b9"))))
     (properties `((upstream-name . "dissimilarities")))
     (build-system r-build-system)
     (arguments
@@ -27959,13 +27996,13 @@ be slow.")
 (define-public r-dbi-table
   (package
     (name "r-dbi-table")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbi.table" version))
        (sha256
-        (base32 "18gwlv6c2pipy1f1pp9ymbabnh67y438hm1scragv8y39gw6cr7v"))))
+        (base32 "0yhjzgbigx2z1gb6x7bvljp6rqh6bqa2fqhh68n5q7xzm1m5n0ig"))))
     (properties `((upstream-name . "dbi.table")))
     (build-system r-build-system)
     (arguments
@@ -32211,13 +32248,13 @@ available in Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
 (define-public r-daltoolbox
   (package
     (name "r-daltoolbox")
-    (version "1.2.717")
+    (version "1.2.727")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolbox" version))
        (sha256
-        (base32 "057mdrwk03mlbvzn0rkg1vf77y37i5kbhhhclp1v04b1q8jaakj1"))))
+        (base32 "1kkpkhwl39fbvqr931fscbh9ap69zahjdlqb9v79mabadxjnbd6p"))))
     (properties `((upstream-name . "daltoolbox")))
     (build-system r-build-system)
     (arguments
@@ -32228,7 +32265,6 @@ available in Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
                              r-randomforest
                              r-nnet
                              r-ggplot2
-                             r-forecast
                              r-fnn
                              r-e1071
                              r-dplyr
