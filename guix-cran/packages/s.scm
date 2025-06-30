@@ -26228,13 +26228,13 @@ Covariance Matrix,\" Biometrika.  98(4).  807--820.")
 (define-public r-spcosa
   (package
     (name "r-spcosa")
-    (version "0.4-3")
+    (version "0.4-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spcosa" version))
        (sha256
-        (base32 "0nn7z7xyblsaq7hmvnlf8fxi7rc0vyii7m3qgzkdhj6d0j9xxngp"))))
+        (base32 "0mj8gjrqapsc1xgvqydn5iw4fkzlvig5rkcb8vi9ijl78w9ydc2j"))))
     (properties `((upstream-name . "spcosa")))
     (build-system r-build-system)
     (arguments
@@ -26242,7 +26242,6 @@ Covariance Matrix,\" Biometrika.  98(4).  807--820.")
       #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-sp r-rjava r-ggplot2))
-    (native-inputs (list r-knitr))
     (home-page "https://git.wur.nl/Walvo001/spcosa")
     (synopsis
      "Spatial Coverage Sampling and Random Sampling from Compact Geographical Strata")
@@ -45224,6 +45223,34 @@ algorithm (Andrieu et al., 2010 <doi:10.1111/j.1467-9868.2009.00736.x>).  Also
 provides functions to plot and summarise the outputs.")
     (license license:gpl3+)))
 
+(define-public r-simbarepro
+  (package
+    (name "r-simbarepro")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SimBaRepro" version))
+       (sha256
+        (base32 "167hg8hp9k3lxkh604jxpd5biq1gcmr3kn54l3phd6pnv6y6iqq0"))))
+    (properties `((upstream-name . "SimBaRepro")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-ddalpha))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SimBaRepro")
+    (synopsis "Simulation-Based, Finite-Sample Inference via Repro Samples")
+    (description
+     "This package provides functions for obtaining p-values (for hypothesis tests),
+confidence intervals, and multivariate confidence sets.  In particular, the
+method is compatible with differentially private dataset, as long as the privacy
+mechanism is known.  For more details, see Awan and Wang (2024),
+\"Simulation-based, Finite-sample Inference for Privatized Data\",
+<doi:10.48550/@code{arXiv.2303.05328>}.")
+    (license license:gpl3+)))
+
 (define-public r-simaerep
   (package
     (name "r-simaerep")
@@ -63884,13 +63911,13 @@ based on model departure as a novel data representation.")
 (define-public r-scplot
   (package
     (name "r-scplot")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scplot" version))
        (sha256
-        (base32 "0pygj45m55qwwip18gxmjz8z5m451xkjpd3cns81cs0cs9xji9dw"))))
+        (base32 "0bsdzvc6c5bdwwah5mbr1x7aq40zd0597ivdhzi88c3awfjvm08q"))))
     (properties `((upstream-name . "scplot")))
     (build-system r-build-system)
     (arguments
@@ -67220,13 +67247,13 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
 (define-public r-scan
   (package
     (name "r-scan")
-    (version "0.64.0")
+    (version "0.65.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scan" version))
        (sha256
-        (base32 "1vmcx1sf973vxhqcsm6rpkxgmskgnvaq3xdd0lf5i6cpcg4rdfri"))))
+        (base32 "06nkdnrmzhblb52g1k9j3kydnnsl73hzsyhry6l2ary7x3lphlmz"))))
     (properties `((upstream-name . "scan")))
     (build-system r-build-system)
     (arguments

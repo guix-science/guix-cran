@@ -23200,13 +23200,13 @@ available @code{mapDK} package by Sebastian Barfort.")
 (define-public r-plotdap
   (package
     (name "r-plotdap")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotdap" version))
        (sha256
-        (base32 "151vaz61ycm95sazbn7d03wr7hcmvcmbz12rjls334lp38735954"))))
+        (base32 "10r0wn9s73x71mamhkp3f8g9k7559x8x5s8qrnr6540x2r5l92cx"))))
     (properties `((upstream-name . "plotdap")))
     (build-system r-build-system)
     (arguments
@@ -23216,6 +23216,7 @@ available @code{mapDK} package by Sebastian Barfort.")
                              r-tidyr
                              r-sf
                              r-scales
+                             r-rlang
                              r-rerddap
                              r-raster
                              r-maps
@@ -23231,7 +23232,7 @@ available @code{mapDK} package by Sebastian Barfort.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rmendels/plotdap")
     (synopsis
-     "Easily Visualize Data from 'ERDDAP' Servers via the 'rerddap' Package")
+     "Easily Visualize Data from 'ERDDAPâ¢' Servers via the 'rerddap' Package")
     (description
      "Easily visualize and animate tabledap and griddap objects obtained via the
 rerddap package in a simple one-line command, using either base graphics or

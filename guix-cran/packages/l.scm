@@ -12085,13 +12085,13 @@ compared to other libraries.")
 (define-public r-libdeflate
   (package
     (name "r-libdeflate")
-    (version "1.24-3")
+    (version "1.24-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libdeflate" version))
        (sha256
-        (base32 "0rmyzyy2paa415b34zf9pvh0kiwqfc993v6j8rm7470iswh38mb3"))))
+        (base32 "1hm8v5kwaidjsbw6r57ys02giww8c3x76spinhd9p1pz79wi0pc0"))))
     (properties `((upstream-name . "libdeflate")))
     (build-system r-build-system)
     (arguments

@@ -15627,13 +15627,13 @@ Department of Energy Alternate Fuel database as a data set.")
 (define-public r-alternativeroc
   (package
     (name "r-alternativeroc")
-    (version "0.0.12")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alternativeROC" version))
        (sha256
-        (base32 "0xbbqdl0fv08zwycm84rn9kcwbyh67wlcppj3gphz9k5fx1lb7qc"))))
+        (base32 "09a3rq3m51nw7cvrj3a64m8rkjrlh0slr79wdksg0fihis7lnysb"))))
     (properties `((upstream-name . "alternativeROC")))
     (build-system r-build-system)
     (arguments

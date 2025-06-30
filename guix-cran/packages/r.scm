@@ -17248,13 +17248,13 @@ Mueller, C.,(2019) <@code{arXiv:1909.04990>}.")
 (define-public r-robreg3s
   (package
     (name "r-robreg3s")
-    (version "0.3")
+    (version "0.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robreg3S" version))
        (sha256
-        (base32 "0rv8qh98wws1f40d1kmysyy9qin0ngsvwq63cnxbwi290wsnrvls"))))
+        (base32 "1hbav9pqsdlxgp6nly66iljpnq1qnpw32kims07lapnznlpfrq8j"))))
     (properties `((upstream-name . "robreg3S")))
     (build-system r-build-system)
     (arguments

@@ -2528,13 +2528,13 @@ where available, or direct download from
 (define-public r-wordmap
   (package
     (name "r-wordmap")
-    (version "0.9.2")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordmap" version))
        (sha256
-        (base32 "0qf20qr29wmd0m56nvwgfx1wkgwfqcych54nx1p1zw97010izxm7"))))
+        (base32 "1rsg4nh4gi2km3px3z5c8prcs32anlc2lr0zkbz0h34i2h6dk1w1"))))
     (properties `((upstream-name . "wordmap")))
     (build-system r-build-system)
     (arguments

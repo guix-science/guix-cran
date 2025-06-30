@@ -6420,6 +6420,34 @@ functionalities to facilitate conversion between Gregorian and Vedic calendar
 systems, and helpful in examining its impact in the time series analysis domain.")
     (license license:gpl3+)))
 
+(define-public r-vecvec
+  (package
+    (name "r-vecvec")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vecvec" version))
+       (sha256
+        (base32 "07fgg4y6zw79xcdbhwfdp6s2awvbamvmb3xx4bzbi8a3ryh7rick"))))
+    (properties `((upstream-name . "vecvec")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-rlang))
+    (home-page "https://cran.r-project.org/package=vecvec")
+    (synopsis "Construct Mixed Type Data Structures with Vectors of Vectors")
+    (description
+     "Mixed type vectors are useful for combining semantically similar classes.  Some
+examples of semantically related classes include time across different
+granularities (e.g. daily, monthly, annual) and probability distributions (e.g.
+Normal, Uniform, Poisson).  These groups of vector types typically share common
+statistical operations which vary in results with the attributes of each vector.
+ The vecvec data structure facilitates efficient storage and computation across
+multiple vectors within the same object.")
+    (license license:expat)))
+
 (define-public r-vectorwavelet
   (package
     (name "r-vectorwavelet")

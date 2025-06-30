@@ -14688,13 +14688,13 @@ rate only in the weak sense, rather than the strong sense as intended.")
 (define-public r-harbinger
   (package
     (name "r-harbinger")
-    (version "1.2.717")
+    (version "1.2.727")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harbinger" version))
        (sha256
-        (base32 "1vzs4dar65gc68s4sk2klf70mgzxnrdh4i4z5fiqqhn5fw2251hj"))))
+        (base32 "1ca6d7dj05139ylcv8b3dhlw4dkyf6rg0zqvvpylhhak4zimfh62"))))
     (properties `((upstream-name . "harbinger")))
     (build-system r-build-system)
     (arguments
@@ -14702,6 +14702,7 @@ rate only in the weak sense, rather than the strong sense as intended.")
       #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-wavelets
+                             r-tspredit
                              r-tsmp
                              r-strucchange
                              r-stringr
@@ -14710,6 +14711,8 @@ rate only in the weak sense, rather than the strong sense as intended.")
                              r-hht
                              r-ggplot2
                              r-forecast
+                             r-dtwclust
+                             r-dplyr
                              r-daltoolbox
                              r-changepoint))
     (home-page "https://cefet-rj-dal.github.io/harbinger/")

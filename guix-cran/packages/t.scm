@@ -10108,13 +10108,13 @@ groups of sequences.")
 (define-public r-traminer
   (package
     (name "r-traminer")
-    (version "2.2-11")
+    (version "2.2-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TraMineR" version))
        (sha256
-        (base32 "05fb5w1wz3aqc7ngr4vp84dwbwpxm10lpkqlin55h895wph5529x"))))
+        (base32 "0c3s562rnq2q006cksw36g89mik1746i8xqxl09l9y3sjcnd6qv4"))))
     (properties `((upstream-name . "TraMineR")))
     (build-system r-build-system)
     (arguments

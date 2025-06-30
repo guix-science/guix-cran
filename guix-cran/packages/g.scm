@@ -4013,13 +4013,13 @@ research.")
 (define-public r-grpslope
   (package
     (name "r-grpslope")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grpSLOPE" version))
        (sha256
-        (base32 "05417f0pnp21svi30vcbkkw16zyg1kxynfigh5w2jdjmd12cb899"))))
+        (base32 "0az52gxchdywn13h2hjr6zlcgwsky01dlnl6rv0kwrwlz5v8c0q8"))))
     (properties `((upstream-name . "grpSLOPE")))
     (build-system r-build-system)
     (arguments
@@ -15854,6 +15854,31 @@ Self-Selection,\" American Journal of Political Science 55(3): 724-736.")
      "This package provides functions for the g-and-k and generalised g-and-h
 distributions.")
     (license license:gpl2)))
+
+(define-public r-gjrm-data
+  (package
+    (name "r-gjrm-data")
+    (version "0.1-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GJRM.data" version))
+       (sha256
+        (base32 "0fkl7nq8wd3ksv09b7h6c1mkha44yaarnrqvslz5c3bwwgv49cki"))))
+    (properties `((upstream-name . "GJRM.data")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=GJRM.data")
+    (synopsis
+     "Data Sets for Copula Additive Distributional Regression Using R")
+    (description
+     "Data sets used in the book Marra and Radice (2025, ISBN:9781032973111) \"Copula
+Additive Distributional Regression Using R\", for illustrating the fitting of
+various joint (and univariate) regression models, with several types of
+covariate effects, in the presence of equations errors association.")
+    (license license:gpl2+)))
 
 (define-public r-gjrm
   (package

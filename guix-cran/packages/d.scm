@@ -25963,13 +25963,13 @@ along with associated references for further details and uses, is presented.")
 (define-public r-ddplot
   (package
     (name "r-ddplot")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ddplot" version))
        (sha256
-        (base32 "03zcnc6is4qdpz3krhhz820j0an6dr7562bnmzj787xf5parwq6r"))))
+        (base32 "0vjag5gr5vc8ps325nn275ppli0l6141mc62zr69g0jlqdl021pj"))))
     (properties `((upstream-name . "ddplot")))
     (build-system r-build-system)
     (arguments
@@ -32210,19 +32210,20 @@ stochastic disability-adjusted life year (DALY) calculation.")
 (define-public r-daltoolboxdp
   (package
     (name "r-daltoolboxdp")
-    (version "1.2.717")
+    (version "1.2.727")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolboxdp" version))
        (sha256
-        (base32 "0w0mg6sc3zr6cg3zrkj6w4k7q4s5bl8m6y1p24zv24bn53yiqiz3"))))
+        (base32 "1z4iy191lrg6c8zx2r3zbv934fvhxxwfix9p7bz5hnm7rypzyif5"))))
     (properties `((upstream-name . "daltoolboxdp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-smotefamily
+    (propagated-inputs (list r-tspredit
+                             r-smotefamily
                              r-reticulate
                              r-leaps
                              r-glmnet

@@ -1134,13 +1134,13 @@ users to customize all aspects of the analysis.")
 (define-public r-extremaldep
   (package
     (name "r-extremaldep")
-    (version "0.0.4-4")
+    (version "0.0.4-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExtremalDep" version))
        (sha256
-        (base32 "1k0b7i14vib00z79wymxk5jh413acqb3pp8bz4m0iv0xsmf38l2n"))))
+        (base32 "08d808qpc6mknd7n0jzv2r3vf4wa95iq7dfhlwrdr9wbyhjl0fa9"))))
     (properties `((upstream-name . "ExtremalDep")))
     (build-system r-build-system)
     (arguments
@@ -21661,6 +21661,32 @@ biodiversity indices (Jost (2006) <doi:10.1111/j.2006.0030-1299.14714.x>), and
 network analyses (Epskamp et al. (2012) <doi:10.18637/jss.v048.i04>) - as well
 as tools to explore the number of clusters in the data.  Functions to produce
 synthetic ecological datasets are also provided.")
+    (license license:expat)))
+
+(define-public r-ecoteach
+  (package
+    (name "r-ecoteach")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ecoteach" version))
+       (sha256
+        (base32 "10rz8prf1yk9paxrnv9l70s9650r4xkc14b6m2syd3ag4c39y5j5"))))
+    (properties `((upstream-name . "ecoteach")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ecoteach")
+    (synopsis "Educational Datasets for Ecology and Agriculture")
+    (description
+     "This package provides a collection of curated educational datasets for teaching
+ecology and agriculture concepts.  Includes data on wildlife monitoring, plant
+treatments, and ecological observations with documentation and examples for
+educational use.  All datasets are derived from published scientific studies and
+are available under CC0 or compatible licenses.")
     (license license:expat)))
 
 (define-public r-ecostatscale
