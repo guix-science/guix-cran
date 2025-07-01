@@ -22785,27 +22785,27 @@ and dates.  The code was originally available in S-PLUS'.")
 (define-public r-spls
   (package
     (name "r-spls")
-    (version "2.2-3")
+    (version "2.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spls" version))
        (sha256
-        (base32 "0bmb0ai5z80njhypd342i711x0bdkwcvlyn374lyyzj8h3d97mmv"))))
+        (base32 "110i0msxd8bgf2kkx596bfmvc96w20iwg8i9rjrjgk50bxalbh0n"))))
     (properties `((upstream-name . "spls")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-pls r-nnet r-mass))
-    (home-page "https://cran.r-project.org/package=spls")
+    (home-page "https://github.com/valentint/spls")
     (synopsis
      "Sparse Partial Least Squares (SPLS) Regression and Classification")
     (description
      "This package provides functions for fitting a sparse partial least squares
 (SPLS) regression and classification (Chun and Keles (2010)
 <doi:10.1111/j.1467-9868.2009.00723.x>).")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-splot
   (package
@@ -27877,38 +27877,6 @@ autocorrelation analysis, tissue domain detection, gene set enrichment, and
 differential expression analysis using spatial mixed models.")
     (license license:expat)))
 
-(define-public r-spatialfusion
-  (package
-    (name "r-spatialfusion")
-    (version "0.7-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spatialfusion" version))
-       (sha256
-        (base32 "1m6rgmw2zzgp0qav7jkgj13fydv48y5mi88zqii5kcgaarwy6zyw"))))
-    (properties `((upstream-name . "spatialfusion")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spam
-                             r-sp
-                             r-sf
-                             r-rstan
-                             r-fields
-                             r-deldir))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.math.uzh.ch/pages/spatialfusion/")
-    (synopsis
-     "Multivariate Analysis of Spatial Data Using a Unifying Spatial Fusion Framework")
-    (description
-     "Multivariate modelling of geostatistical (point), lattice (areal) and point
-pattern data in a unifying spatial fusion framework.  Details are given in Wang
-and Furrer (2021) <doi:10.1016/j.csda.2021.107240>.  Model inference is done
-using either Stan <https://mc-stan.org/> or INLA <https://www.r-inla.org/>.")
-    (license license:gpl3+)))
-
 (define-public r-spatialfdar
   (package
     (name "r-spatialfdar")
@@ -29920,13 +29888,13 @@ with nested data.")
 (define-public r-sparklyr
   (package
     (name "r-sparklyr")
-    (version "1.9.0")
+    (version "1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparklyr" version))
        (sha256
-        (base32 "1bmis1nf5255pmpw5ppnl9b1vxspi20y2w17km2172n33jyqgrnl"))))
+        (base32 "1wajnipp67nmwjb1ivqczax1lhd2caxh78kq6nas7lx9lnqczamw"))))
     (properties `((upstream-name . "sparklyr")))
     (build-system r-build-system)
     (arguments
@@ -37904,20 +37872,19 @@ profiles.")
 (define-public r-slope
   (package
     (name "r-slope")
-    (version "0.5.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLOPE" version))
        (sha256
-        (base32 "02m9p43x6pacfvjd7zvnr1n5s6lkkbr858x0kmz9vd9qq9xpxzi6"))))
+        (base32 "1j43k981rkvd4w07pcw5vq7gpga2pixzqxi6f72gyiivq5circfp"))))
     (properties `((upstream-name . "SLOPE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-ggplot2
-                             r-foreach))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-bigmemory r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://jolars.github.io/SLOPE/")
     (synopsis "Sorted L1 Penalized Estimation")
@@ -45776,38 +45743,6 @@ generalized linear regression setting for: (1) linear functionals
      "Streamlines geographic data transformation, storage and publication, simplifying
 data preparation and enhancing interoperability across formats and platforms.")
     (license license:expat)))
-
-(define-public r-sigtree
-  (package
-    (name "r-sigtree")
-    (version "1.10.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SigTree" version))
-       (sha256
-        (base32 "18gh7azjr979ijc2y4yyskj24ay697rw3j7znc5p4a63s4vpxr9w"))))
-    (properties `((upstream-name . "SigTree")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-rcolorbrewer
-                             r-phyloseq
-                             r-phylobase
-                             r-phyext2
-                             r-mass
-                             r-ape))
-    (home-page "https://cran.r-project.org/package=SigTree")
-    (synopsis
-     "Identify and Visualize Significantly Responsive Branches in a Phylogenetic Tree")
-    (description
-     "This package provides tools to identify and visualize branches in a phylogenetic
-tree that are significantly responsive to some intervention, taking as primary
-inputs a phylogenetic tree (of class phylo) and a data frame (or matrix) of
-corresponding tip (OTU) labels and p-values.")
-    (license license:gpl3)))
 
 (define-public r-sigr
   (package
@@ -59589,13 +59524,13 @@ proteins.")
 (define-public r-segtest
   (package
     (name "r-segtest")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "segtest" version))
        (sha256
-        (base32 "17r0k61wxry2bcb1aqrvvpbavqkf04qcaql2cn8qnbyfm5gxdhm4"))))
+        (base32 "12i2p1q5yhqlazjang2nfzn0kpsmcy8z05qqql7956gcvr21njk0"))))
     (properties `((upstream-name . "segtest")))
     (build-system r-build-system)
     (arguments
@@ -59604,19 +59539,24 @@ proteins.")
     (propagated-inputs (list r-updog
                              r-rcpparmadillo
                              r-rcpp
+                             r-nloptr
+                             r-minqa
                              r-iterators
                              r-future
                              r-foreach
                              r-dorng
                              r-dofuture))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/dcgerard/segtest")
+    (home-page "https://dcgerard.github.io/segtest/")
     (synopsis "Tests for Segregation Distortion in Polyploids")
     (description
-     "This package provides a suite of tests for segregation distortion in F1
-polyploid populations (for now, just tetraploids).  This is under different
-assumptions of meiosis.  Details of these methods are described in Gerard et al.
-(2025) <doi:10.1007/s00122-025-04816-z>.  This material is based upon work
+     "This package provides tests for segregation distortion in F1 polyploid
+populations under different assumptions of meiosis.  These tests can account for
+double reduction, partial preferential pairing, and genotype uncertainty through
+the use of genotype likelihoods.  Parallelization support is provided.  Details
+of these methods are described in Gerard et al. (2025a)
+<doi:10.1007/s00122-025-04816-z> and Gerard et al. (2025b)
+<doi:10.1101/2025.06.23.661114>.  Part of this material is based upon work
 supported by the National Science Foundation under Grant No.  2132247.  The
 opinions, findings, and conclusions or recommendations expressed are those of
 the author and do not necessarily reflect the views of the National Science
@@ -60832,32 +60772,6 @@ Carlo (not MCMC) sampling for greater efficiency.  Details of the methods and
 algorithms are provided in Kowal and Wu (2024)
 <doi:10.1080/01621459.2024.2395586>.")
     (license license:expat)))
-
-(define-public r-seawaveq
-  (package
-    (name "r-seawaveq")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "seawaveQ" version))
-       (sha256
-        (base32 "1x4vvassal1lwb9xnwisrhlx2maaqxl84h7klfy8yg9x80fdrhsw"))))
-    (properties `((upstream-name . "seawaveQ")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-rms r-reshape2 r-plyr r-lubridate))
-    (home-page "https://doi.org/10.3133/ofr20201082")
-    (synopsis "SEAWAVE-Q Model")
-    (description
-     "This package provides a model and utilities for analyzing trends in chemical
-concentrations in streams with a seasonal wave (seawave) and adjustment for
-streamflow (Q) and other ancillary variables.  See Ryberg and York, 2020,
-<doi:10.3133/ofr20201082>.")
-    (license (list (license:fsdg-compatible "Unlimited")
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-seaval
   (package

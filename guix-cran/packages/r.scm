@@ -20552,13 +20552,13 @@ functions are provided by the included monocypher C library
 (define-public r-rmonize
   (package
     (name "r-rmonize")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rmonize" version))
        (sha256
-        (base32 "0k9v0larxg35vnq65ybzp9nf5w860vqp7m0jf4q4ax58vj6f17yw"))))
+        (base32 "0jx3yd3v81pvcg81akj38khgwwii9gdwkbhzk3vxxiqrvzk0ynrm"))))
     (properties `((upstream-name . "Rmonize")))
     (build-system r-build-system)
     (arguments
@@ -20568,7 +20568,6 @@ functions are provided by the included monocypher C library
                              r-stringr
                              r-rlang
                              r-madshapr
-                             r-lifecycle
                              r-haven
                              r-fs
                              r-fabr
@@ -20576,21 +20575,20 @@ functions are provided by the included monocypher C library
                              r-crayon))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/maelstrom-research/Rmonize/")
-    (synopsis "Support Retrospective Harmonization of Data")
+    (synopsis "Tools for Data Harmonization")
     (description
-     "This package provides functions to support rigorous retrospective data
-harmonization processing, evaluation, and documentation across datasets from
-different studies based on Maelstrom Research guidelines.  The package includes
-the core functions to evaluate and format the main inputs that define the
-harmonization process, apply specified processing rules to generate harmonized
-data, diagnose processing errors, and summarize and evaluate harmonized outputs.
- The main inputs that define the processing are a @code{DataSchema} (list and
-definitions of harmonized variables to be generated) and Data Processing
-Elements (processing rules to be applied to generate harmonized variables from
-study-specific variables).  The main outputs of processing are harmonized
-datasets, associated metadata, and tabular and visual summary reports.  As
-described in Maelstrom Research guidelines for rigorous retrospective data
-harmonization (Fortier I and al. (2017) <doi:10.1093/ije/dyw075>).")
+     "Integrated tools to support rigorous and well documented data harmonization
+based on Maelstrom Research guidelines.  The package includes functions to
+assess and prepare input elements, apply specified processing rules to generate
+harmonized datasets, validate data processing and identify processing errors,
+and document and summarize harmonized outputs.  The harmonization process is
+defined and structured by two key user-generated documents: the
+@code{DataSchema} (specifying the list of harmonized variables to generate
+across datasets) and the Data Processing Elements (specifying the input elements
+and processing algorithms to generate harmonized variables in @code{DataSchema}
+formats).  The package was developed to address key challenges of retrospective
+data harmonization in epidemiology (as described in Fortier I and al. (2017)
+<doi:10.1093/ije/dyw075>) but can be used for any data harmonization initiative.")
     (license license:gpl3)))
 
 (define-public r-rmon
@@ -25340,13 +25338,13 @@ Diggle and Giorgi (2019, ISBN: 978-1-138-06102-7).")
 (define-public r-riskdiff
   (package
     (name "r-riskdiff")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskdiff" version))
        (sha256
-        (base32 "16chfi2kv98chmg2kj83yp9a56b2hrsh4l4prbp794gpnmdiywx4"))))
+        (base32 "0pwd023p812b180z66yqnafjsnpslmyagngdg5c1aiw83pg52n0p"))))
     (properties `((upstream-name . "riskdiff")))
     (build-system r-build-system)
     (arguments
@@ -25357,10 +25355,12 @@ Diggle and Giorgi (2019, ISBN: 978-1-138-06102-7).")
                              r-scales
                              r-rlang
                              r-purrr
+                             r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jackmurphy2351/riskdiff")
-    (synopsis "Risk Difference Estimation with Multiple Link Functions")
+    (synopsis
+     "Risk Difference Estimation with Multiple Link Functions and Inverse Probability of Treatment Weighting")
     (description
      "Calculates risk differences (or prevalence differences for cross-sectional data)
 using generalized linear models with automatic link function selection.

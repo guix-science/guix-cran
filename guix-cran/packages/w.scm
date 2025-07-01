@@ -3557,13 +3557,13 @@ productos de vida') for supporting this research.")
 (define-public r-wintime
   (package
     (name "r-wintime")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wintime" version))
        (sha256
-        (base32 "12ghq92mqr76jvld47cy4hh1gqs8kvjd0afb39qyx24l5abcl4nc"))))
+        (base32 "1ijwnyn9n48a9gzcpc4d3i5bvcgnn0xag5vfm4y8pb5wnizmk81k"))))
     (properties `((upstream-name . "wintime")))
     (build-system r-build-system)
     (arguments
@@ -3575,15 +3575,15 @@ productos de vida') for supporting this research.")
     (synopsis "Win Time Methods for Time-to-Event Data in Clinical Trials")
     (description
      "This package performs an analysis of time-to-event clinical trial data using
-various \"win time\" methods, including ewt', ewtr', rmt', max', wtr', rwtr', and
-pwt'.  These methods are used to calculate and compare treatment effects on
-ordered composite endpoints.  The package handles event times, event indicators,
-and treatment arm indicators and supports calculations on observed and resampled
-data.  Detailed explanations of each method and usage examples are provided in
-\"Use of win time for ordered composite endpoints in clinical trials,\" by
-Troendle et al. (2024)<https://pubmed.ncbi.nlm.nih.gov/38417455/>.  For more
-information, see the package documentation or the vignette titled \"Introduction
-to wintime.\".")
+various \"win time\" methods, including ewt', ewtr', rmt', ewtp', rewtp', ewtpr',
+rewtpr', max', wtr', rwtr', pwt', and rpwt'.  These methods are used to
+calculate and compare treatment effects on ordered composite endpoints.  The
+package handles event times, event indicators, and treatment arm indicators and
+supports calculations on observed and resampled data.  Detailed explanations of
+each method and usage examples are provided in \"Use of win time for ordered
+composite endpoints in clinical trials,\" by Troendle et al.
+(2024)<https://pubmed.ncbi.nlm.nih.gov/38417455/>.  For more information, see
+the package documentation or the vignette titled \"Introduction to wintime.\".")
     (license license:expat)))
 
 (define-public r-wins
@@ -3730,48 +3730,6 @@ including information on input expenditure aggregated at the farm level and
 acreage shares.  It also considers in fairly way the weighting data and can
 allow integrating time-varying and time-constant control variables.")
     (license license:gpl3+)))
-
-(define-public r-wingen
-  (package
-    (name "r-wingen")
-    (version "2.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wingen" version))
-       (sha256
-        (base32 "0a4lhsvwd1jh48nb2b6nxkybp4j5pblf94j8pmx6v2yq11k2ddki"))))
-    (properties `((upstream-name . "wingen")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-vcfr
-                             r-tidyselect
-                             r-tidyr
-                             r-terra
-                             r-sf
-                             r-rlang
-                             r-raster
-                             r-purrr
-                             r-pegas
-                             r-magrittr
-                             r-hierfstat
-                             r-ggplot2
-                             r-gdistance
-                             r-furrr
-                             r-dplyr
-                             r-crayon
-                             r-automap))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/AnushaPB/wingen")
-    (synopsis "Continuous Mapping of Genetic Diversity")
-    (description
-     "Generate continuous maps of genetic diversity using moving windows with options
-for rarefaction, interpolation, and masking as described in Bishop et al. (2023)
-<doi:10.1111/2041-210X.14090>.")
-    (license license:expat)))
 
 (define-public r-winfapreader
   (package

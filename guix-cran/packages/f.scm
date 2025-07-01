@@ -13832,13 +13832,13 @@ quality, reliability, and structure.")
 (define-public r-fixes
   (package
     (name "r-fixes")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fixes" version))
        (sha256
-        (base32 "06zh7fd8dvdc7ndp1fbsrnvdvx2ga1ya10jvlfrlzggfqd38x13f"))))
+        (base32 "03j12sabw8g2d05z5dwk2c2pxb1751ahdqca96mjrn1k1pnka29x"))))
     (properties `((upstream-name . "fixes")))
     (build-system r-build-system)
     (arguments
@@ -18670,36 +18670,6 @@ fitted through quasi-maximum-likelihood estimation.  Furthermore, common
 forecasting and backtesting functions for value-at-risk (@code{VaR}) and
 expected shortfall (ES) based on the package's models are provided.")
     (license license:gpl3)))
-
-(define-public r-feedbackts
-  (package
-    (name "r-feedbackts")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FeedbackTS" version))
-       (sha256
-        (base32 "120labhmisw1x1bq8c4bl6l14vayvb9xcm6jsj1awacypgrr2ar2"))))
-    (properties `((upstream-name . "FeedbackTS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sp
-                             r-proj4
-                             r-maps
-                             r-mapdata
-                             r-gstat
-                             r-automap))
-    (home-page "https://cran.r-project.org/package=FeedbackTS")
-    (synopsis "Analysis of Feedback in Time Series")
-    (description
-     "Analysis of fragmented time directionality to investigate feedback in time
-series.  Tools provided by the package allow the analysis of feedback for a
-single time series and the analysis of feedback for a set of time series
-collected across a spatial domain.")
-    (license license:gpl2+)))
 
 (define-public r-fedz1
   (package

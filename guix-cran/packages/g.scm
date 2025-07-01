@@ -5888,13 +5888,13 @@ details see Hsu, L. and Wang, C. (2007). <doi:10.1016/j.techfore.2006.02.005>.")
 (define-public r-greybox
   (package
     (name "r-greybox")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greybox" version))
        (sha256
-        (base32 "0d5wwmxj2w6r5217wlgs5sa03l2yibar339p0z9qv3aa81a7piyy"))))
+        (base32 "1krw8d595cr13w6n6bcs88ar1iibmka56avr252a0gi9zcaaxn2p"))))
     (properties `((upstream-name . "greybox")))
     (build-system r-build-system)
     (arguments
@@ -13720,60 +13720,6 @@ a way compatible with both Latex and HTML outputs.")
 Definitions can be provided inline or in a separate file.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
-(define-public r-glossa
-  (package
-    (name "r-glossa")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "glossa" version))
-       (sha256
-        (base32 "06f5ql1kda0xzmqg3x0d51lm72xa6s5ynm1h8xsss6ydv44nxhpz"))))
-    (properties `((upstream-name . "glossa")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zip
-                             r-waiter
-                             r-tidyterra
-                             r-terra
-                             r-svglite
-                             r-sparkline
-                             r-shinywidgets
-                             r-shiny
-                             r-sf
-                             r-proc
-                             r-mcp
-                             r-markdown
-                             r-leaflet
-                             r-htmltools
-                             r-ggplot2
-                             r-geothinner
-                             r-dt
-                             r-dplyr
-                             r-dbarts
-                             r-bs4dash
-                             r-blockcv
-                             r-automap))
-    (home-page "https://github.com/iMARES-group/glossa")
-    (synopsis
-     "User-Friendly 'shiny' App for Bayesian Species Distribution Models")
-    (description
-     "This package provides a user-friendly shiny application for Bayesian machine
-learning analysis of marine species distributions.  GLOSSA (Global Ocean Species
-Spatio-temporal Analysis) uses Bayesian Additive Regression Trees (BART;
-Chipman, George, and @code{McCulloch} (2010) <doi:10.1214/09-AOAS285>) to model
-species distributions with intuitive workflows for data upload, processing,
-model fitting, and result visualization.  It supports presence-absence and
-presence-only data (with pseudo-absence generation), spatial thinning,
-cross-validation, and scenario-based projections.  GLOSSA is designed to
-facilitate ecological research by providing easy-to-use tools for analyzing and
-visualizing marine species distributions across different spatial and temporal
-scales.")
-    (license license:gpl3)))
-
 (define-public r-glorenz
   (package
     (name "r-glorenz")
@@ -18946,13 +18892,13 @@ to get a steampunk style.")
 (define-public r-ggseqplot
   (package
     (name "r-ggseqplot")
-    (version "0.8.6")
+    (version "0.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseqplot" version))
        (sha256
-        (base32 "0rbazw5bra9hxnv1a2pzrfmc4aapj5qlhavp641rb79rawrlx3vg"))))
+        (base32 "08r6734jmyip820dwpvl56pmk06lj88jmvfn17v6d75r69aws9ic"))))
     (properties `((upstream-name . "ggseqplot")))
     (build-system r-build-system)
     (arguments
@@ -31509,13 +31455,13 @@ pathway level analyses.")
 (define-public r-geds
   (package
     (name "r-geds")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeDS" version))
        (sha256
-        (base32 "1wczr0my62drglglajv5jiyy0gpnynf7c0d50awjra65rcspi81p"))))
+        (base32 "1xjv3wbyc2z3ls4v5v1mnyz4ajacb67i0mmlpja4fjd1xc39n72y"))))
     (properties `((upstream-name . "GeDS")))
     (build-system r-build-system)
     (arguments
@@ -31525,11 +31471,8 @@ pathway level analyses.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-th-data
-                             r-rmpfr
-                             r-rcpp
+    (propagated-inputs (list r-rcpp
                              r-plot3d
-                             r-mi
                              r-mboost
                              r-matrix
                              r-mass
@@ -31542,19 +31485,19 @@ pathway level analyses.")
     (home-page "https://github.com/emilioluissaenzguillen/GeDS")
     (synopsis "Geometrically Designed Spline Regression")
     (description
-     "Spline Regression, Generalized Additive Models, and Component-wise Gradient
-Boosting, utilizing Geometrically Designed (@code{GeD}) Splines. @code{GeDS}
+     "Spline regression, generalized additive models and component-wise gradient
+boosting utilizing geometrically designed (@code{GeD}) splines. @code{GeDS}
 regression is a non-parametric method inspired by geometric principles, for
 fitting spline regression models with variable knots in one or two independent
 variables.  It efficiently estimates the number of knots and their positions, as
 well as the spline order, assuming the response variable follows a distribution
 from the exponential family. @code{GeDS} models integrate the broader category
-of Generalized (Non-)Linear Models, offering a flexible approach to modeling
+of generalized (non-)linear models, offering a flexible approach to model
 complex relationships.  A description of the method can be found in Kaishev et
 al. (2016) <doi:10.1007/s00180-015-0621-7> and Dimitrova et al. (2023)
 <doi:10.1016/j.amc.2022.127493>.  Further extending its capabilities,
-@code{GeDS's} implementation includes Generalized Additive Models (GAM) and
-Functional Gradient Boosting (FGB), enabling versatile multivariate predictor
+@code{GeDS's} implementation includes generalized additive models (GAM) and
+functional gradient boosting (FGB), enabling versatile multivariate predictor
 modeling, as discussed in the forthcoming work of Dimitrova et al. (2025).")
     (license license:gpl3)))
 
@@ -32181,32 +32124,6 @@ estimating the center of mass position (COM), the moment of inertia (I) for 3D
 shapes and the second moment of area (Ix, Iy, Iz) of 2D cross-sections, as well
 as for visualization of results.")
     (license license:gpl3+)))
-
-(define-public r-gdelttools
-  (package
-    (name "r-gdelttools")
-    (version "1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GDELTtools" version))
-       (sha256
-        (base32 "0v368chcgqnrfy2isy8z7gl0xizafhxlcd29gr89iblhrzwmssid"))))
-    (properties `((upstream-name . "GDELTtools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-plyr r-dplyr r-datetimeutils))
-    (home-page "https://cran.r-project.org/package=GDELTtools")
-    (synopsis
-     "Download, Slice, and Normalize GDELT V1 Event and Sentiment API Data")
-    (description
-     "The GDELT V1 Event data set is over 41 GB now and growing 250 MB a month.  The
-number of source articles has increased over time and unevenly across countries.
- This package makes it easy to download a subset of that data, then normalize
-that data to facilitate valid time series analysis.")
-    (license license:expat)))
 
 (define-public r-gde
   (package

@@ -11,7 +11,6 @@
   #:use-module (gnu packages apparmor)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages gcc)
   #:use-module (gnu packages perl)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -5231,33 +5230,6 @@ random slope and intercept terms.  References: Carpenter et al. (2017)
 <doi:10.18637/jss.v076.i01>; Fiske and Chandler (2011)
 <doi:10.18637/jss.v043.i10>.")
     (license license:gpl3+)))
-
-(define-public r-ubl
-  (package
-    (name "r-ubl")
-    (version "0.0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "UBL" version))
-       (sha256
-        (base32 "1jpm41la5210a9shak01fsgq2yw8l1cz5zbb5zlas2nc2jg7hslh"))))
-    (properties `((upstream-name . "UBL")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sp r-randomforest r-mba r-gstat r-automap))
-    (native-inputs (list gfortran))
-    (home-page "https://github.com/paobranco/UBL")
-    (synopsis
-     "An Implementation of Re-Sampling Approaches to Utility-Based Learning for Both Classification and Regression Tasks")
-    (description
-     "This package provides a set of functions that can be used to obtain better
-predictive performance on cost-sensitive and cost/benefits tasks (for both
-regression and classification).  This includes re-sampling approaches that
-modify the original data set biasing it towards the user preferences.")
-    (license license:gpl2+)))
 
 (define-public r-ubiquity
   (package

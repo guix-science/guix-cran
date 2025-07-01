@@ -3026,13 +3026,13 @@ described by Schneeweiss et.al. (2009) <doi:10.1097/EDE.0b013e3181a663cc> .")
 (define-public r-autocogs
   (package
     (name "r-autocogs")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autocogs" version))
        (sha256
-        (base32 "0v27l9a0ysj7x9wjka1jl1bq9rmxmzldclcp1w59a6807wjlszhx"))))
+        (base32 "0asb26xp082wbn2zsawvbd9cf3in4pvw5d58rfsy0swa2187w3yh"))))
     (properties `((upstream-name . "autocogs")))
     (build-system r-build-system)
     (arguments

@@ -9476,13 +9476,13 @@ for functions provided by packages as well.")
 (define-public r-docovt
   (package
     (name "r-docovt")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Docovt" version))
        (sha256
-        (base32 "0kvdz1jd4zhnz21drq6b84237nrr6dh5h2lfi66fgj39p5bzbg8x"))))
+        (base32 "1ss7i0q7q05s6m5943yvj1hbp44kb1yp80jgy2fhph10j6bch9jj"))))
     (properties `((upstream-name . "Docovt")))
     (build-system r-build-system)
     (arguments
@@ -9491,7 +9491,7 @@ for functions provided by packages as well.")
     (home-page "https://cran.r-project.org/package=Docovt")
     (synopsis "Distributed Online Covariance Matrix Tests")
     (description
-     "Distributed Online Covariance Matrix Tests is a powerful tool designed to
+     "Distributed Online Covariance Matrix Tests Docovt is a powerful tool designed to
 efficiently process and analyze distributed datasets.  It enables users to
 perform covariance matrix tests in an online, distributed manner, making it
 highly suitable for large-scale data analysis.  By leveraging advanced
@@ -16376,13 +16376,13 @@ Paykin (2001) <doi:10.1080/00949650108812115>, and French & Finch (2013)
 (define-public r-difnlr
   (package
     (name "r-difnlr")
-    (version "1.5.1-1")
+    (version "1.5.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "difNLR" version))
        (sha256
-        (base32 "1mr8spi7az1l3ki71xymm0j27fv6nizv75javn2spjv0ynyv9h3v"))))
+        (base32 "0570c38fa4vaxj32cd86xqcjlzfv0dwk989qzm9kka37ffv2cj64"))))
     (properties `((upstream-name . "difNLR")))
     (build-system r-build-system)
     (arguments

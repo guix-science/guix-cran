@@ -6450,32 +6450,6 @@ clicking the respective buttons.  If the mean is chosen incorrectly, the user is
 asked to correct it.")
     (license license:gpl3)))
 
-(define-public r-etwfe
-  (package
-    (name "r-etwfe")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "etwfe" version))
-       (sha256
-        (base32 "1lb7crk14cz0bh1mbzgvc9b1llrvlj5p8605lr2p6psmrn94ikip"))))
-    (properties `((upstream-name . "etwfe")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tinyplot r-marginaleffects r-formula r-fixest
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://grantmcdermott.com/etwfe/")
-    (synopsis "Extended Two-Way Fixed Effects")
-    (description
-     "Convenience functions for implementing extended two-way fixed effect regressions
-a la Wooldridge (2021, 2023) <doi:10.2139/ssrn.3906345>,
-<doi:10.1093/ectj/utad016>.")
-    (license license:expat)))
-
 (define-public r-etrm
   (package
     (name "r-etrm")
@@ -17939,13 +17913,13 @@ B. (2012).  A revised Brown and Payne model of voting behaviour applied to the
 (define-public r-eiaapi
   (package
     (name "r-eiaapi")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EIAapi" version))
        (sha256
-        (base32 "1vyl7zm8vwqcs57b8sw9vkwc1p123kcz2d2xldg6p2vfkgi91jw1"))))
+        (base32 "1k5351i9hl2zik1bvw2khb37a59aymy7b7z68miiw7q0chh7dcm5"))))
     (properties `((upstream-name . "EIAapi")))
     (build-system r-build-system)
     (arguments

@@ -3277,13 +3277,13 @@ the number of individuals is large.  For the main ctsem package, see
 (define-public r-ctsem
   (package
     (name "r-ctsem")
-    (version "3.10.3")
+    (version "3.10.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctsem" version))
        (sha256
-        (base32 "12539acina295jariicdskk33p16f5v4mrs85yd2mv97ai4y0szq"))))
+        (base32 "0j4cg4j9whhy6gkqmj7aa5yr3ym4433k4vm27s8fl2c8i1i4b55d"))))
     (properties `((upstream-name . "ctsem")))
     (build-system r-build-system)
     (arguments
@@ -3323,14 +3323,14 @@ parameters are possible, using either max likelihood / max a posteriori
 optimization (with optional importance sampling) or Stan's Hamiltonian Monte
 Carlo sampling.  See
 <https://github.com/cdriveraus/ctsem/raw/master/vignettes/hierarchicalmanual.pdf>
-for details.  Priors may be used.  For the conceptual overview of the
-hierarchical Bayesian linear SDE approach, see
+for details.  See <https://osf.io/preprints/psyarxiv/4q9ex_v2> for a detailed
+tutorial.  Priors may be used.  For the conceptual overview of the hierarchical
+Bayesian linear SDE approach, see
 <https://www.researchgate.net/publication/324093594_Hierarchical_Bayesian_Continuous_Time_Dynamic_Modeling>.
  Exogenous inputs may also be included, for an overview of such possibilities
 see
 <https://www.researchgate.net/publication/328221807_Understanding_the_Time_Course_of_Interventions_with_Continuous_Time_Dynamic_Models>
-.  Stan based functions are not available on 32 bit Windows systems at present.
-<https://cdriver.netlify.app/> contains some tutorial blog posts.")
+. <https://cdriver.netlify.app/> contains some tutorial blog posts.")
     (license license:gpl3)))
 
 (define-public r-ctrlgene
@@ -40205,6 +40205,44 @@ standalone header-only library and is available under a double GPL-3|LGPL
 license. <https://www.cgal.org/>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-cgaim
+  (package
+    (name "r-cgaim")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cgaim" version))
+       (sha256
+        (base32 "0az5msrznyqwcgx4n9hqc9g96wcl3zc0cqhv7g5yws3rfk3phjd3"))))
+    (properties `((upstream-name . "cgaim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncatednormal
+                             r-scar
+                             r-scam
+                             r-quadprog
+                             r-osqp
+                             r-mgcv
+                             r-matrix
+                             r-mass
+                             r-limsolve
+                             r-gratia
+                             r-foreach
+                             r-doparallel
+                             r-coneproj
+                             r-cgam))
+    (home-page "https://github.com/PierreMasselot/cgaim")
+    (synopsis "Constrained Groupwise Additive Index Models")
+    (description
+     "Fits constrained groupwise additive index models and provides functions for
+inference and interpretation of these models.  The method is described in
+Masselot, Chebana, Campagna, Lavigne, Ouarda, Gosselin (2022) \"Constrained
+groupwise additive index models\" <doi:10.1093/biostatistics/kxac023>.")
+    (license license:gpl3)))
 
 (define-public r-cg
   (package

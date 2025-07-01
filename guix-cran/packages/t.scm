@@ -22582,27 +22582,6 @@ American Statistical Association, 96:456, 1348-1360,
 <doi:10.1198/016214501753382273>.")
     (license license:gpl2+)))
 
-(define-public r-tframeplus
-  (package
-    (name "r-tframeplus")
-    (version "2024.2-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tframePlus" version))
-       (sha256
-        (base32 "02c4fjgwywqi6s7g42rpzz070j28cjr4bs94298jv2x14zkwf4v8"))))
-    (properties `((upstream-name . "tframePlus")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-timeseries r-tframe))
-    (home-page "http://tsanalysis.r-forge.r-project.org/")
-    (synopsis "Time Frame Coding Kernel Extensions")
-    (description "Extensions and additional tframe utilities.")
-    (license license:gpl2)))
-
 (define-public r-tframe
   (package
     (name "r-tframe")

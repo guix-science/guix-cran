@@ -8665,32 +8665,6 @@ fetched using Jira REST API, which can be found at the following URL:
 <https://developer.atlassian.com/cloud/jira/platform/rest/v2>.")
     (license license:expat)))
 
-(define-public r-njgeo
-  (package
-    (name "r-njgeo")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "njgeo" version))
-       (sha256
-        (base32 "1cc6gm0l5z31hqif2d8wd503pb48xsmyr28pbildkxgy9z022af5"))))
-    (properties `((upstream-name . "njgeo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sf r-jsonlite r-httr r-dplyr r-curl))
-    (home-page "https://cran.r-project.org/package=njgeo")
-    (synopsis
-     "Tools for Geocoding Addresses in New Jersey using the 'NJOGIS' API")
-    (description
-     "This package provides an R interface to free geocoding REST APIs maintained by
-the New Jersey Office of GIS
-<https://njgin.nj.gov/njgin/edata/geocoding/index.html#!/> and commonly used
-shapefiles.")
-    (license license:gpl3+)))
-
 (define-public r-nixtlar
   (package
     (name "r-nixtlar")

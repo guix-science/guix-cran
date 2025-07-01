@@ -4649,38 +4649,6 @@ package have been described by Stephen JJ, Carolan P, Krefman AE, et al. (2024)
 <doi:10.1016/j.patter.2024.101003>.")
     (license license:expat)))
 
-(define-public r-psgp
-  (package
-    (name "r-psgp")
-    (version "0.3-22")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "psgp" version))
-       (sha256
-        (base32 "0gkpkhpcp8665xwaz7hgd5izk1ficqa7l7pgbb5nr63dgrkqll9l"))))
-    (properties `((upstream-name . "psgp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sp
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-intamap
-                             r-gstat
-                             r-foreach
-                             r-doparallel
-                             r-automap))
-    (home-page "https://cran.r-project.org/package=psgp")
-    (synopsis "Projected Spatial Gaussian Process Methods")
-    (description
-     "This package implements projected sparse Gaussian process Kriging ('Ingram et.
-al.', 2008, <doi:10.1007/s00477-007-0163-9>) as an additional method for the
-intamap package.  More details on implementation ('Barillec et.  al.', 2010,
-<doi:10.1016/j.cageo.2010.05.008>).")
-    (license license:gpl2+)))
-
 (define-public r-psgoft
   (package
     (name "r-psgoft")
@@ -16431,13 +16399,13 @@ multivariate seasonal time series models.")
 (define-public r-portalr
   (package
     (name "r-portalr")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "portalr" version))
        (sha256
-        (base32 "1n6p1ighh5m209snfsy7fr71mz7bg9lyg4lnscaczaq9x91sjk9d"))))
+        (base32 "0aabz00gg2nfdc4jswlkhk5wxsccckpvnavfk444by7dvgcpq4lz"))))
     (properties `((upstream-name . "portalr")))
     (build-system r-build-system)
     (arguments
@@ -16446,6 +16414,7 @@ multivariate seasonal time series models.")
     (propagated-inputs (list r-zoo
                              r-tidyselect
                              r-tidyr
+                             r-tibble
                              r-rlang
                              r-magrittr
                              r-lunar
@@ -23694,30 +23663,25 @@ effects, making it useful for multilevel and cross-classified models.")
 (define-public r-plmix
   (package
     (name "r-plmix")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PLMIX" version))
        (sha256
-        (base32 "05mnzsi7y71cvg50qx8hp4m31gqslldl34k41r1f8npyb6ldpdca"))))
+        (base32 "1iqjs0p8hl5kca9habi2yfxwwdhh0759idrsvfb01kqqybzbara6"))))
     (properties `((upstream-name . "PLMIX")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-statrank
-                             r-reshape2
+    (propagated-inputs (list r-reshape2
                              r-rcpp
                              r-rcdd
-                             r-rankdist
                              r-radarchart
-                             r-prefmod
-                             r-pmr
                              r-plackettluce
                              r-mcmcpack
                              r-label-switching
-                             r-gtools
                              r-gridextra
                              r-ggplot2
                              r-ggmcmc
@@ -23725,8 +23689,7 @@ effects, making it useful for multilevel and cross-classified models.")
                              r-coda
                              r-abind))
     (home-page "https://cran.r-project.org/package=PLMIX")
-    (synopsis
-     "Bayesian Analysis of Finite Mixtures of Plackett-Luce Models for Partial Rankings/Orderings")
+    (synopsis "Bayesian Analysis of Finite Mixture of Plackett-Luce Models")
     (description
      "Fit finite mixtures of Plackett-Luce models for partial top rankings/orderings
 within the Bayesian framework.  It provides MAP point estimates via EM algorithm
@@ -23736,8 +23699,8 @@ addition to inferential techniques, the package assists other fundamental phases
 of a model-based analysis for partial rankings/orderings, by including functions
 for data manipulation, simulation, descriptive summary, model selection and
 goodness-of-fit evaluation.  Main references on the methods are Mollica and
-Tardella (2017) <doi.org/10.1007/s11336-016-9530-0> and Mollica and Tardella
-(2014) <doi/10.1002/sim.6224>.")
+Tardella (2017) <doi:10.1007/s11336-016-9530-0> and Mollica and Tardella (2014)
+<doi:10.1002/sim.6224>.")
     (license license:gpl2+)))
 
 (define-public r-plis

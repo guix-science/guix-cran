@@ -9805,63 +9805,6 @@ outliers (also referred to as \"bad\" points) and automatically detect bad point
 Punzo, A. & Tortora, C. (2021) <doi:10.1177/1471082X19890935>.")
     (license license:gpl2+)))
 
-(define-public r-msclassifr
-  (package
-    (name "r-msclassifr")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MSclassifR" version))
-       (sha256
-        (base32 "1qn79awr6yiywiz9k1wx6bqml1ssjijg1k2rm4blvlbd26yk5lbr"))))
-    (properties `((upstream-name . "MSclassifR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-vsurf
-                             r-vita
-                             r-ubl
-                             r-statmod
-                             r-reshape2
-                             r-randomforest
-                             r-performanceestimation
-                             r-nnet
-                             r-mltools
-                             r-mixomics
-                             r-metap
-                             r-mclust
-                             r-maldirppa
-                             r-maldiquantforeign
-                             r-maldiquant
-                             r-limma
-                             r-glmnet
-                             r-ggplot2
-                             r-fuzzyjoin
-                             r-e1071
-                             r-dplyr
-                             r-cp4p
-                             r-caret
-                             r-car))
-    (home-page "https://github.com/agodmer/MSclassifR_examples")
-    (synopsis "Automated Classification of Mass Spectra")
-    (description
-     "This package provides functions to classify mass spectra in known categories,
-and to determine discriminant mass-over-charge values.  It includes easy-to-use
-functions for pre-processing mass spectra, functions to determine discriminant
-mass-over-charge values (m/z) from a library of mass spectra corresponding to
-different categories, and functions to predict the category (species,
-phenotypes, etc.) associated to a mass spectrum from a list of selected
-mass-over-charge values.  Three vignettes illustrating how to use the functions
-of this package from real data sets are also available online to help users:
-<https://agodmer.github.io/M@code{SclassifR_examples/Vignettes/Vignettemsclassifr_Ecrobiav3.html>},
-<https://agodmer.github.io/M@code{SclassifR_examples/Vignettes/Vignettemsclassifr_Klebsiellav3.html>}
-and
-<https://agodmer.github.io/M@code{SclassifR_examples/Vignettes/Vignettemsclassifr_DAv3.html>}.")
-    (license license:gpl3+)))
-
 (define-public r-mschart
   (package
     (name "r-mschart")
@@ -13944,39 +13887,6 @@ analyses: canonical, stepwise, and classificatory (linear, quadratic, and the
 non-parametric k nearest neighbours).  The philosophy of the package is
 described in Å lenker et al.  2022.")
     (license license:gpl3)))
-
-(define-public r-morphoscape
-  (package
-    (name "r-morphoscape")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Morphoscape" version))
-       (sha256
-        (base32 "1f4cj5086r1849dwmha8drf7jq56p7bp0fj2liqksppy7gxmdrs4"))))
-    (properties `((upstream-name . "Morphoscape")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridislite
-                             r-spatial
-                             r-sp
-                             r-scales
-                             r-ggplot2
-                             r-concaveman
-                             r-automap
-                             r-alphahull))
-    (native-inputs (list r-knitr))
-    (home-page "https://blakedickson.github.io/Morphoscape/")
-    (synopsis "Computation and Visualization of Adaptive Landscapes")
-    (description
-     "This package implements adaptive landscape methods first described by Polly et
-al. (2016) <doi:10.1080/02724634.2016.1111225> for the integration, analysis and
-visualization of biological trait data on a phenotypic morphospace - typically
-defined by shape metrics.")
-    (license license:gpl2+)))
 
 (define-public r-morphoregions
   (package
@@ -31423,39 +31333,6 @@ misclassification parameters based on a given validation set.  This package is
 an implementation of Chen (2013) <doi:10.1002/bimj.201200195>.")
     (license license:gpl2+)))
 
-(define-public r-mgdrive2
-  (package
-    (name "r-mgdrive2")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MGDrivE2" version))
-       (sha256
-        (base32 "1n7kmn65v6fb372jyqcsqnn01xvwyascqn881avd2iclrajr6h7p"))))
-    (properties `((upstream-name . "MGDrivE2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-statmod r-matrix r-desolve))
-    (native-inputs (list r-knitr))
-    (home-page "https://marshalllab.github.io/MGDrivE/docs_v2/index.html")
-    (synopsis "Mosquito Gene Drive Explorer 2")
-    (description
-     "This package provides a simulation modeling framework which significantly
-extends capabilities from the MG@code{DrivE} simulation package via a new
-mathematical and computational framework based on stochastic Petri nets.  For
-more information about MG@code{DrivE}', see our publication: SÃ¡nchez et al.
-(2019) <doi:10.1111/2041-210X.13318> Some of the notable capabilities of
-MG@code{DrivE2} include: incorporation of human populations, epidemiological
-dynamics, time-varying parameters, and a continuous-time simulation framework
-with various sampling algorithms for both deterministic and stochastic
-interpretations.  MG@code{DrivE2} relies on the genetic inheritance structures
-provided in package MG@code{DrivE}', so we suggest installing that package
-initially.")
-    (license license:gpl3)))
-
 (define-public r-mgcviz
   (package
     (name "r-mgcviz")
@@ -38733,13 +38610,13 @@ Thomas Brendan Murphy (2010) <doi:10.1016/j.stamet.2010.01.002>.")
 (define-public r-mecfda
   (package
     (name "r-mecfda")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MECfda" version))
        (sha256
-        (base32 "1jkp91bzyhwsjij7074rj8wrj5jsxwbpk53jf02adra2i7cbbrni"))))
+        (base32 "1cgz2sfw4ynggjwyc9jbid291wd7y214acj1y1fzpsa2g0rvbf50"))))
     (properties `((upstream-name . "MECfda")))
     (build-system r-build-system)
     (arguments
@@ -48013,13 +47890,13 @@ regions were intervention is most duly needed.")
 (define-public r-maplegend
   (package
     (name "r-maplegend")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maplegend" version))
        (sha256
-        (base32 "0phf116pf8hfs7di7hwjj7777wjzlw00hmn25ldkg7s8dbhsjhy6"))))
+        (base32 "1papxqrpg36y0f397asx730k19qkjfgxz4097gqxy9bsg2r0wc5c"))))
     (properties `((upstream-name . "maplegend")))
     (build-system r-build-system)
     (arguments

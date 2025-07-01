@@ -24186,42 +24186,6 @@ Perez-Elizalde, S., Jarquin, D., and Crossa, J. (2011)
 (<doi:10.1007/s13253-011-0063-9>).")
     (license license:gpl2)))
 
-(define-public r-bayou
-  (package
-    (name "r-bayou")
-    (version "2.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bayou" version))
-       (sha256
-        (base32 "0i0zkag8mrjdr7w4489gp6bf5mykcnnwgi31ypjk52y09haz7a5n"))))
-    (properties `((upstream-name . "bayou")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-phytools
-                             r-mnormt
-                             r-matrix
-                             r-mass
-                             r-geiger
-                             r-foreach
-                             r-fitdistrplus
-                             r-denstrip
-                             r-coda
-                             r-assertthat
-                             r-ape))
-    (home-page "https://cran.r-project.org/package=bayou")
-    (synopsis "Bayesian Fitting of Ornstein-Uhlenbeck Models to Phylogenies")
-    (description
-     "Fits and simulates multi-optima Ornstein-Uhlenbeck models to phylogenetic
-comparative data using Bayesian reversible-jump methods.  See Uyeda and Harmon
-(2014) <DOI:10.1093/sysbio/syu057>.")
-    (license license:gpl2+)))
-
 (define-public r-baymedr
   (package
     (name "r-baymedr")
