@@ -10910,13 +10910,13 @@ analysis must be made using package survey'.")
 (define-public r-covidcast
   (package
     (name "r-covidcast")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "covidcast" version))
        (sha256
-        (base32 "0d4x3cydjng0f0gzn8fly44hf2viypym6ag7mzwips7791rhcm6k"))))
+        (base32 "1gydzczhhscr9qijpc2fyw200ws2db957yrgcdl9qcbm71k17d8m"))))
     (properties `((upstream-name . "covidcast")))
     (build-system r-build-system)
     (arguments
@@ -12120,13 +12120,13 @@ the the generalized monotone incremental forward stagewise method.")
 (define-public r-countfitter
   (package
     (name "r-countfitter")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "countfitteR" version))
        (sha256
-        (base32 "1aq7v2fy24pf3r6fkmcwvs18r2xc2l1bqablp53xfc7b6kxq3vqn"))))
+        (base32 "0ky0ql4an8y3wr97lp16v8xnlq4zcniihp49n7mrh3y6ryghsg3h"))))
     (properties `((upstream-name . "countfitteR")))
     (build-system r-build-system)
     (arguments

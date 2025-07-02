@@ -804,13 +804,13 @@ and Forecasting\" by Peter J. Brockwell and Richard A. Davis.")
 (define-public r-itsdm
   (package
     (name "r-itsdm")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "itsdm" version))
        (sha256
-        (base32 "1rd55arrha2xy5d68nymz3awycpk0797d9q55ia42rq9n1gi9w9k"))))
+        (base32 "180bjjfplhl3xkbkiq1p5i2m6wp3q7bnxx63ac5sgqbyr7ycpw74"))))
     (properties `((upstream-name . "itsdm")))
     (build-system r-build-system)
     (arguments
@@ -845,11 +845,12 @@ methods in references: Liu, F.T., Ting, K.M. and Zhou, Z.H. (2008)
 <doi:10.1109/TKDE.2019.2947676>, Liu, F.T., Ting, K.M. and Zhou, Z.H. (2010)
 <doi:10.1007/978-3-642-15883-4_18>, Guha, S., Mishra, N., Roy, G. and
 Schrijvers, O. (2016) <https://proceedings.mlr.press/v48/guha16.html>, Cortes,
-D. (2021) <@code{arXiv:2110.13402>}.  Additionally, Shapley values are used to
-explain model inputs and outputs.  See details in references: Shapley, L.S.
-(1953) <doi:10.1515/9781400881970-018>, Lundberg, S.M. and Lee, S.I. (2017)
-<https://dl.acm.org/doi/abs/10.5555/3295222.3295230>, Molnar, C. (2020)
-<ISBN:978-0-244-76852-2>, Å trumbelj, E. and Kononenko, I. (2014)
+D. (2021) <doi:10.48550/@code{arXiv.2110.13402>}.  Additionally, Shapley values
+are used to explain model inputs and outputs.  See details in references:
+Shapley, L.S. (1953) <doi:10.1515/9781400881970-018>, Lundberg, S.M. and Lee,
+S.I. (2017)
+<https://dm-gatech.github.io/CS8803-Fall2018-DML-Papers/shapley.pdf>, Molnar, C.
+(2020) <ISBN:978-0-244-76852-2>, Å trumbelj, E. and Kononenko, I. (2014)
 <doi:10.1007/s10115-013-0679-x>.  itsdm also provides functions to diagnose
 variable response, analyze variable importance, draw spatial dependence of
 variables and examine variable contribution.  As utilities, the package includes
@@ -1886,13 +1887,13 @@ calender format yyyy-mm-dd to and from ISO 8601 week format yyyy-Www-d.")
 (define-public r-isowater
   (package
     (name "r-isowater")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isoWater" version))
        (sha256
-        (base32 "1lmpvcljzsga89ib2avsasfdkgx3658vrp5gik25ymcdyxhsx5mi"))))
+        (base32 "0rhl57071xk97d5si5mqr3dkj47lwbfbkcy4qq1k93n95q4br2jd"))))
     (properties `((upstream-name . "isoWater")))
     (build-system r-build-system)
     (arguments
@@ -10671,13 +10672,13 @@ et al. (2020) <doi:10.1111/1440-1703.12102> for statistical background.")
 (define-public r-inext-3d
   (package
     (name "r-inext-3d")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNEXT.3D" version))
        (sha256
-        (base32 "0f8yg6c2nmci5znpvbg599zs38kgwzp76k2qv6sknr2isv3jcfpl"))))
+        (base32 "1f7q7ya4f16gmfgnv50d9j8xa500zp4ah69shznx8jkj0kvah7y3"))))
     (properties `((upstream-name . "iNEXT.3D")))
     (build-system r-build-system)
     (arguments

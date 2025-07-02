@@ -15081,13 +15081,13 @@ optimization problems.  More information can be found in the README file.")
 (define-public r-rogue
   (package
     (name "r-rogue")
-    (version "2.1.6")
+    (version "2.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rogue" version))
        (sha256
-        (base32 "0wbgl9dj2lr5ffn27q6q06n45vj9lm9qxx07dvd37jniqjxz71v4"))))
+        (base32 "1s29ryv9imp4j5p0xlddpf18nd032d66hh4i1v3b6k905c600vl3"))))
     (properties `((upstream-name . "Rogue")))
     (build-system r-build-system)
     (arguments
@@ -31973,13 +31973,13 @@ Core et al., (2022) <doi:10.1101/2022.05.31.494100>.")
 (define-public r-restoptr
   (package
     (name "r-restoptr")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restoptr" version))
        (sha256
-        (base32 "0m7nw277qgjdxfwx3i1k73l93rqyf766l2af9ymap9dl7hrp8jaq"))))
+        (base32 "1vl1fw3qkpzmpx02bw3q88vply010zraldc132a5hmm8b2c2a4yj"))))
     (properties `((upstream-name . "restoptr")))
     (build-system r-build-system)
     (arguments
@@ -37400,13 +37400,13 @@ expectation-maximization algorithm.")
 (define-public r-regddm
   (package
     (name "r-regddm")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RegDDM" version))
        (sha256
-        (base32 "1dj3m2ixvbxi707fwwhx2vsrbz598n55s1fvdi39kbm4l2qg0f13"))))
+        (base32 "17vwqfb93vgbszv2yrjbbgknxp21ah7vnv4697i926nrp26kzvb4"))))
     (properties `((upstream-name . "RegDDM")))
     (build-system r-build-system)
     (arguments

@@ -3094,6 +3094,38 @@ visualisations and automated report generation.  The calculation of likelihood
 ratios supports pairs of linked markers, and all common mutation models.")
     (license license:gpl3+)))
 
+(define-public r-klic
+  (package
+    (name "r-klic")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "klic" version))
+       (sha256
+        (base32 "1ggsdq8xcg6hi12rq356myhngx3j475gpwlvpynm1581r4z0lkbk"))))
+    (properties `((upstream-name . "klic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcolorbrewer r-pheatmap r-matrix r-coca
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "http://github.com/acabassi/klic")
+    (synopsis "Kernel Learning Integrative Clustering")
+    (description
+     "Kernel Learning Integrative Clustering (KLIC) is an algorithm that allows to
+combine multiple kernels, each representing a different measure of the
+similarity between a set of observations.  The contribution of each kernel on
+the final clustering is weighted according to the amount of information carried
+by it.  As well as providing the functions required to perform the kernel-based
+clustering, this package also allows the user to simply give the data as input:
+the kernels are then built using consensus clustering.  Different strategies to
+choose the best number of clusters are also available.  For further details
+please see Cabassi and Kirk (2020) <doi:10.1093/bioinformatics/btaa593>.")
+    (license license:expat)))
+
 (define-public r-klexp
   (package
     (name "r-klexp")
@@ -3644,6 +3676,47 @@ Green, P. J. and Mortera, J. (2021) <doi:10.1111/rssc.12498>.")
      "Data on houses in and around Seattle WA are included.  Basic characteristics are
 given along with sale prices.")
     (license license:expat)))
+
+(define-public r-kinesis
+  (package
+    (name "r-kinesis")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kinesis" version))
+       (sha256
+        (base32 "17bfiq4n54p6dc3xy20hnsmd5v2rqdrrcakjpb47hzl1vni8pyjw"))))
+    (properties `((upstream-name . "kinesis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tabula
+                             r-shiny
+                             r-sass
+                             r-nexus
+                             r-mirai
+                             r-khroma
+                             r-kairos
+                             r-isopleuros
+                             r-gt
+                             r-folio
+                             r-dimensio
+                             r-config
+                             r-bslib
+                             r-arkhe
+                             r-aion))
+    (home-page "https://codeberg.org/tesselle/kinesis")
+    (synopsis "'shiny' Applications for the 'tesselle' Packages")
+    (description
+     "This package provides a collection of shiny applications for the tesselle
+packages <https://www.tesselle.org/>.  This package provides applications for
+archaeological data analysis and visualization.  These mainly, but not
+exclusively, include applications for chronological modelling (e.g. matrix
+seriation, aoristic analysis) and count data analysis (e.g. diversity measures,
+compositional data analysis).")
+    (license license:gpl3+)))
 
 (define-public r-kinematics
   (package

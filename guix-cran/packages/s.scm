@@ -15060,13 +15060,13 @@ mixed model approach for QTL Mapping as described in Li et al.
 (define-public r-statgenibd
   (package
     (name "r-statgenibd")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenIBD" version))
        (sha256
-        (base32 "0sswnv1i8zfxfdmq4lxdfkhqddzairlynw43dvwnj4lxv64kfqdx"))))
+        (base32 "15xv0njyg93ci8vm797i8milh5w1zkgmpl73lsi41b3rbp76izzx"))))
     (properties `((upstream-name . "statgenIBD")))
     (build-system r-build-system)
     (arguments
@@ -15077,6 +15077,7 @@ mixed model approach for QTL Mapping as described in Li et al.
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp
+                             r-r-utils
                              r-matrix
                              r-ggplot2
                              r-data-table))
@@ -15175,13 +15176,13 @@ from VSN international (<https://vsni.co.uk/software/asreml-r/>).")
 (define-public r-statgengwas
   (package
     (name "r-statgengwas")
-    (version "1.0.11")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenGWAS" version))
        (sha256
-        (base32 "07kv3gy5q5qw8jd4l8i3515f70xxax5xcnyjb0ql818lc2c9fg4y"))))
+        (base32 "07zgyi17n3yc5g3ryc15k6z7zn441zi598h117xab97bzd8r7bz9"))))
     (properties `((upstream-name . "statgenGWAS")))
     (build-system r-build-system)
     (arguments
@@ -15191,6 +15192,7 @@ from VSN international (<https://vsni.co.uk/software/asreml-r/>).")
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp
+                             r-lmmsolver
                              r-ggplot2
                              r-data-table))
     (native-inputs (list r-knitr))
@@ -35731,13 +35733,13 @@ cross validation for selection of the regularization parameter is provided.")
 (define-public r-smooth
   (package
     (name "r-smooth")
-    (version "4.2.0")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smooth" version))
        (sha256
-        (base32 "1wf7203fryj8gi4kivfhax092i9mh2ikk3wzcb4wvv8r2yg0kngv"))))
+        (base32 "068s9yh0w2zgzwcapivivwsybbn7cc04kzir3z7bpanv99ggkhdj"))))
     (properties `((upstream-name . "smooth")))
     (build-system r-build-system)
     (arguments

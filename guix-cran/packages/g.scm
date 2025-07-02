@@ -17051,6 +17051,38 @@ in prospective cohort studies or case-control studies.  Described in Zhang et
 al. (2020)<doi:10.1093/biomet/asaa014>.")
     (license license:expat)))
 
+(define-public r-gilmour
+  (package
+    (name "r-gilmour")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gilmour" version))
+       (sha256
+        (base32 "00csf223ysz60bhb6mkpyi0sb42s7fnhnmnpi2j17sblgla54zyk"))))
+    (properties `((upstream-name . "gilmour")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=gilmour")
+    (synopsis "The Interpretation of Adjusted Cp Statistic")
+    (description
+     "Several methods may be found for selecting a subset of regressors from a set of
+k candidate variables in multiple linear regression.  One possibility is to
+evaluate all possible regression models and comparing them using Mallows's Cp
+statistic (Cp) according to Gilmour original study.  Full model is calculated,
+all possible combinations of regressors are generated, adjusted Cp for each
+submodel are computed, and the submodel with the minimum adjusted value Cp
+(@code{ModelMin}) is calculated.  To identify the final model, the package
+applies a sequence of hypothesis tests on submodels nested within
+@code{ModelMin}, following the approach outlined in Gilmour's original paper.
+For more details see the help of the function @code{final_model()} and the
+original study (1996) <doi:10.2307/2348411>.")
+    (license license:expat)))
+
 (define-public r-gillespiessa
   (package
     (name "r-gillespiessa")
@@ -18485,13 +18517,13 @@ and hexplots of survey data.")
 (define-public r-ggsurveillance
   (package
     (name "r-ggsurveillance")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsurveillance" version))
        (sha256
-        (base32 "1pwph4bhnz3ch68fzrn510044swnyp7prx0m5g9ap87i754ag53x"))))
+        (base32 "173rmq134jz7dlhp0vr1x6jznbccnj1jgrv1liyhr0a9jdm1pbqp"))))
     (properties `((upstream-name . "ggsurveillance")))
     (build-system r-build-system)
     (arguments
@@ -18503,6 +18535,7 @@ and hexplots of survey data.")
                              r-scales
                              r-rlang
                              r-lubridate
+                             r-legendry
                              r-isoweek
                              r-glue
                              r-ggplot2
@@ -18514,15 +18547,16 @@ and hexplots of survey data.")
     (synopsis
      "Tools for Outbreak Investigation/Infectious Disease Surveillance")
     (description
-     "Create epicurves or epigantt charts in ggplot2'.  Prepare data for visualisation
-or other reporting for infectious disease surveillance and outbreak
-investigation.  Includes tidy functions to solve date based transformations for
-common reporting tasks, like (A) seasonal date alignment for respiratory disease
-surveillance, (B) date-based case binning based on specified time intervals like
-isoweek, epiweek, month and more, (C) automated detection and marking of the new
-year based on the date/datetime axis of the ggplot2'.  An introduction on how to
-use epicurves can be found on the US CDC website (2012,
-<https://www.cdc.gov/training/quicklearns/epimode/index.html>).")
+     "Create epicurves, epigantt charts, and diverging bar charts using ggplot2'.
+Prepare data for visualisation or other reporting for infectious disease
+surveillance and outbreak investigation (time series data).  Includes tidy
+functions to solve date based transformations for common reporting tasks, like
+(A) seasonal date alignment for respiratory disease surveillance, (B) date-based
+case binning based on specified time intervals like isoweek, epiweek, month and
+more, (C) automated detection and marking of the new year based on the
+date/datetime axis of the ggplot2', (D) labelling of the last value of a
+time-series.  An introduction on how to use epicurves can be found on the US CDC
+website (2012, <https://www.cdc.gov/training/quicklearns/epimode/index.html>).")
     (license license:gpl3+)))
 
 (define-public r-ggstudent
@@ -19498,32 +19532,6 @@ mixture models, Bioinformatics, bty300, <doi:10.1093/bioinformatics/bty300>.")
      "Intended for both technical and non-technical users to create interactive data
 visualizations through a web browser GUI without writing any code.")
     (license license:gpl2+)))
-
-(define-public r-ggrandomforests
-  (package
-    (name "r-ggrandomforests")
-    (version "2.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggRandomForests" version))
-       (sha256
-        (base32 "05w1rs0mg2nj5j1rd32s1mcj294p4zm24p2d87535rmslqmya9c7"))))
-    (properties `((upstream-name . "ggRandomForests")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-survival r-randomforestsrc
-                             r-randomforest r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ehrlinger/ggRandomForests")
-    (synopsis "Visually Exploring Random Forests")
-    (description
-     "Graphic elements for exploring Random Forests using the @code{randomForest} or
-@code{randomForestSRC} package for survival, regression and classification
-forests and ggplot2 package plotting.")
-    (license license:gpl3+)))
 
 (define-public r-ggrain
   (package

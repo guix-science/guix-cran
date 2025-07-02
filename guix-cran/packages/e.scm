@@ -4676,13 +4676,13 @@ quantitative genetics tools.  Melo D, Garcia G, Hubbe A, Assis A P, Marroig G.
 (define-public r-evolmap
   (package
     (name "r-evolmap")
-    (version "1.3.8")
+    (version "1.3.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evolMap" version))
        (sha256
-        (base32 "1qf9gwpljl6wmndi37sw9ym22r9442184rx5k0gkqam56m96s4iw"))))
+        (base32 "1jvpvs5xggx45r29sxqb6cmsh5h234i8j8n3fyxrffrf9y5janb8"))))
     (properties `((upstream-name . "evolMap")))
     (build-system r-build-system)
     (arguments
@@ -4703,7 +4703,7 @@ quantitative genetics tools.  Melo D, Garcia G, Hubbe A, Assis A P, Marroig G.
                                                                #:target target)))
                                   '())))))))
     (propagated-inputs (list r-sf r-jsonlite r-curl))
-    (native-inputs (list esbuild))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=evolMap")
     (synopsis "Dynamic and Interactive Maps")
     (description

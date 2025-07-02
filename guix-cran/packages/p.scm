@@ -7142,13 +7142,13 @@ Truscott (2024)
 (define-public r-prompter
   (package
     (name "r-prompter")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prompter" version))
        (sha256
-        (base32 "18bbgcirw6z1vwna4bad4f4s4wnfq62bf9mzkakzlrn59kq9rxgc"))))
+        (base32 "1zm1sj22k78f5m1s20b440pgb5w9fjbmyvkcz491h8w2kx728nhp"))))
     (properties `((upstream-name . "prompter")))
     (build-system r-build-system)
     (arguments
@@ -15830,13 +15830,13 @@ and easy to personalize single page websites.")
 (define-public r-postcard
   (package
     (name "r-postcard")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "postcard" version))
        (sha256
-        (base32 "1k9sar32rb46qa2i5qkng93v5ysbfd597ih5gpdr9b98m5cn0vbj"))))
+        (base32 "110wd7v4rljbmwymsx6z3q1gi5274lnzb61ksgp4f5bj147bzhf8"))))
     (properties `((upstream-name . "postcard")))
     (build-system r-build-system)
     (arguments
@@ -22797,13 +22797,13 @@ site is completed.")
 (define-public r-plotor
   (package
     (name "r-plotor")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotor" version))
        (sha256
-        (base32 "05l57vhza3yalwj3ja0swbarrqqsg5bw1d8l3knn2r5fn3ykrx37"))))
+        (base32 "08qgzsdn6hsqw93c9c7bvv6gyzrfwbsm9mn8ivlsrigdvbrg0lnj"))))
     (properties `((upstream-name . "plotor")))
     (build-system r-build-system)
     (arguments
@@ -22816,7 +22816,6 @@ site is completed.")
                              r-rlang
                              r-purrr
                              r-janitor
-                             r-gtextras
                              r-gt
                              r-glue
                              r-ggplot2
@@ -27179,27 +27178,24 @@ Pijavski method, which was published in Pijavski (1972)
 (define-public r-piir
   (package
     (name "r-piir")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piiR" version))
        (sha256
-        (base32 "0zn0bs418hxr33gfrmadd24270n32bixsrpi28k6sr20xgjcpyg5"))))
+        (base32 "0m4kqgcqgn6wz2x6565xbcikcvfgw64gbhb9kc96jm747pysprny"))))
     (properties `((upstream-name . "piiR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-proc r-infotheo))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=piiR")
     (synopsis "Predictive Information Index ('PII')")
     (description
      "This package provides a simple implementation of the Predictive Information
-Index ('PII') using mutual information and entropy from the infotheo package.
-For related methodology, see Wells (2025)
-<https://github.com/@code{TheotherDrWells/piiR>}.")
+Index ('PII').")
     (license license:expat)))
 
 (define-public r-pii
@@ -43207,13 +43203,13 @@ GPL3 (<https://www.gimp.org/about/COPYING>), and Inkscape distributed under GPL2
 (define-public r-palettes
   (package
     (name "r-palettes")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "palettes" version))
        (sha256
-        (base32 "0s0pdza87jq5p7biq4vnajl59gnw77m2yi0x05gb31nmvcicxf2b"))))
+        (base32 "1zzw1r2ij4dlxhw9b9iinz7kjsis98a91i6qym1b02w0h76av3dz"))))
     (properties `((upstream-name . "palettes")))
     (build-system r-build-system)
     (arguments

@@ -19567,13 +19567,13 @@ Francis&Kannenberg's parameters of stability (1978) <doi:10.4141/cjps78-157>.")
 (define-public r-agroreg
   (package
     (name "r-agroreg")
-    (version "1.2.10")
+    (version "1.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AgroReg" version))
        (sha256
-        (base32 "1rvlgir48lhypw7vj23rg2xxi237sgmprp9syfryhmfz59wy6dcv"))))
+        (base32 "0n66jvcbbalizvlzarfrf7livzd1qh19j66ky8xp4rylika32wvd"))))
     (properties `((upstream-name . "AgroReg")))
     (build-system r-build-system)
     (arguments
@@ -20338,13 +20338,13 @@ bounded, multi-modal, or heavily skewed sampling errors.")
 (define-public r-ageutils
   (package
     (name "r-ageutils")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ageutils" version))
        (sha256
-        (base32 "1x8rglljccm0h5x5145hz6d14h7zynarg2ic17brlsflbm3wfcfg"))))
+        (base32 "0biaq964ysi6y6i6nzxb6hkk6i9xcwp902pcl9dpyvdhjp012dg9"))))
     (properties `((upstream-name . "ageutils")))
     (build-system r-build-system)
     (arguments
@@ -23521,13 +23521,13 @@ autocorrelation.  The package is described in Jombart et al (2010)
 (define-public r-adelie
   (package
     (name "r-adelie")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adelie" version))
        (sha256
-        (base32 "1xnkp6a1g5mhbmcbmrx24zwxpvsc81s8m77irmq1w6kc67ib2c2n"))))
+        (base32 "059cz4sn2g42z17mk1jj8vbr6ii9dc46dfhplnwwbpq422bvfmsc"))))
     (properties `((upstream-name . "adelie")))
     (build-system r-build-system)
     (arguments
@@ -26041,19 +26041,19 @@ ISBN: 978-0387310732).")
 (define-public r-accelstab
   (package
     (name "r-accelstab")
-    (version "2.2.1")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AccelStab" version))
        (sha256
-        (base32 "1cymvl74lgpa96k4bfri5w7w9bdsz13g7i5i57x6rv0nz6g8pky3"))))
+        (base32 "1k3vkqdyg42d5mxx7c8ky78nyyshy0h6kqky7rwpkq5pk6s75xga"))))
     (properties `((upstream-name . "AccelStab")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-mvtnorm r-minpack-lm r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-scales r-minpack-lm r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AccelStab/AccelStab")
     (synopsis "Accelerated Stability Kinetic Modelling")

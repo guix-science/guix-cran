@@ -2160,19 +2160,19 @@ fast Naive Bayes and linear SVMs specially designed for sparse textual data.")
 (define-public r-quantdr
   (package
     (name "r-quantdr")
-    (version "1.2.2")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quantdr" version))
        (sha256
-        (base32 "0w6jdd6i4wxbk4fp44rmy32mwq9ng63zwamq8zpa1hlfbm5qh4s2"))))
+        (base32 "14cim7j2qfngh5x9g06km7f7zfbnlzcgri5309gjqn033bq2gfdf"))))
     (properties `((upstream-name . "quantdr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-quantreg r-mvtnorm r-kernsmooth r-dr))
+    (propagated-inputs (list r-quantreg r-mvtnorm r-kernsmooth))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/elianachristou/quantdr")
     (synopsis "Dimension Reduction Techniques for Conditional Quantiles")

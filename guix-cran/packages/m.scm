@@ -33012,13 +33012,13 @@ Ecology (METE).")
 (define-public r-meteospain
   (package
     (name "r-meteospain")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meteospain" version))
        (sha256
-        (base32 "1bbnq9b03r2njqphdkg43zfgf2hv2qy7zrfzy2nbzj784f599z3h"))))
+        (base32 "1jv8zh5vmpwz3vc7j72qawf2ll78qjyzlqmic2zc9dnwqwf17lry"))))
     (properties `((upstream-name . "meteospain")))
     (build-system r-build-system)
     (arguments
@@ -33032,7 +33032,6 @@ Ecology (METE).")
                              r-sf
                              r-rlang
                              r-purrr
-                             r-memoise
                              r-lubridate
                              r-jsonlite
                              r-httr
@@ -35119,13 +35118,13 @@ respectively.  The methodology is available from: (De Walsche, A., et al. (2025)
 (define-public r-metagam
   (package
     (name "r-metagam")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metagam" version))
        (sha256
-        (base32 "1kpxf2jxbx13if3ir9iqsqbdg6gg0l9pa3qnxmff4w5dd59by5kd"))))
+        (base32 "1d9q78bkg204788lp394sxy6jks8fbpyh6vndrxjjlpnsp5pglz3"))))
     (properties `((upstream-name . "metagam")))
     (build-system r-build-system)
     (arguments
@@ -47532,13 +47531,13 @@ plugin and the ability of downloading and processing static tiles.")
 (define-public r-mapsf
   (package
     (name "r-mapsf")
-    (version "0.12.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapsf" version))
        (sha256
-        (base32 "1rxydssi9f0n9kgkvlcirzpdsnxn9a3gd7panljm1lqa92aqh1ck"))))
+        (base32 "0nkvnjlyg0d1ij9l63jwqlayca6ki837ikrisii8pdfxjmyq8yyw"))))
     (properties `((upstream-name . "mapsf")))
     (build-system r-build-system)
     (arguments

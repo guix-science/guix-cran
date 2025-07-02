@@ -1794,32 +1794,6 @@ the detailed algorithms will be published by the author within a few months
 after the initial release of this package.")
     (license license:expat)))
 
-(define-public r-volleystat
-  (package
-    (name "r-volleystat")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "volleystat" version))
-       (sha256
-        (base32 "0n1r0bvvmba21cs3qgpnw9jxpgl2n82fhxa40sa1w2gav5rch5i6"))))
-    (properties `((upstream-name . "volleystat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "http://github.com/bozhinvi/volleystat")
-    (synopsis "Detailed Statistics on Volleyball Matches")
-    (description
-     "Volleyball match statistics of the German volleyball first division league
-(seasons 2013/2014 to 2018/2019).  The data has been collected from the official
-volleyball first division homepage (<www.volleyball-bundesliga.de>) and contains
-information on teams, staff, sets, matches, and player-in-match statistics
-(extracted automatically from the official match reports).")
-    (license license:cc0)))
-
 (define-public r-volker
   (package
     (name "r-volker")
@@ -6484,13 +6458,13 @@ analyses.")
 (define-public r-vectorsurvr
   (package
     (name "r-vectorsurvr")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectorsurvR" version))
        (sha256
-        (base32 "1s8j09q7zscyd2jyy57ikwqms733g1dxvsqldwbmwf7s0376xb1q"))))
+        (base32 "135qhhfgr7vw8jf11jzsq3jvngi1l50kckxqajmbppx6lrrl607a"))))
     (properties `((upstream-name . "vectorsurvR")))
     (build-system r-build-system)
     (arguments
@@ -6500,7 +6474,6 @@ analyses.")
                              r-stringr
                              r-sf
                              r-rstudioapi
-                             r-purrr
                              r-magrittr
                              r-lubridate
                              r-knitr
