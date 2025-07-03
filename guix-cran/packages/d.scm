@@ -4838,13 +4838,13 @@ to create many different drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "0hgg6mrlfx2lq25g5m01qczhbalfh0rrsji3kq4lx3rzw0j58f0h"))))
+        (base32 "0b9xvxf04h2fwjzncq5s04l0k9yvdk5ql0a3ywg57jndgd1sr616"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (arguments
@@ -10851,13 +10851,13 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
 (define-public r-dm
   (package
     (name "r-dm")
-    (version "1.0.11")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dm" version))
        (sha256
-        (base32 "1jv9r5h3p4ci0d809fhzkc17xh6iliavkzkzcnkq7y4xahkk45rj"))))
+        (base32 "0xy7cvgafpkl024w8p59pmlphhx66znr748j87xcwlihmqx5722g"))))
     (properties `((upstream-name . "dm")))
     (build-system r-build-system)
     (arguments
@@ -12985,6 +12985,33 @@ samples.  On the interior of the provided quantiles, an interpolation method
 such as a monotonic cubic spline is used; the tails are approximated by a
 location-scale family.")
     (license license:gpl3+)))
+
+(define-public r-distfreereg
+  (package
+    (name "r-distfreereg")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "distfreereg" version))
+       (sha256
+        (base32 "01hvgqgidzqna6hxdm2rpqsr1b7v1lv1mvcmivxf90zcmi0cgps6"))))
+    (properties `((upstream-name . "distfreereg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lme4 r-clue r-calculus))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=distfreereg")
+    (synopsis "Distribution-Free Goodness-of-Fit Testing for Regression")
+    (description
+     "This package implements the distribution-free goodness-of-fit regression test
+for the mean structure of parametric models introduced in Khmaladze (2021)
+<doi:10.1007/s10463-021-00786-3>.  The test is implemented for general functions
+with minimal distributional assumptions as well as common models (e.g., lm, glm)
+with the usual assumptions.")
+    (license license:gpl3)))
 
 (define-public r-distfree-cr
   (package
@@ -15283,13 +15310,13 @@ a node, the corresponding text is displayed as a tooltip.")
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "7.1")
+    (version "7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Directional" version))
        (sha256
-        (base32 "0zyihh16ra1d8iy1cfv9qq2ysq88n31zn2ah2nf9gzzfsnnj0cqx"))))
+        (base32 "127rk32w2524awcdvhcgdc0qb134g4g58871grdf3lm2ipzdqa1a"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (arguments

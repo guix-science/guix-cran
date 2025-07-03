@@ -2706,6 +2706,37 @@ output, runtime statistics and static code analysis.  The latter feature is made
 possible by representing R expressions using a tree structure.")
     (license license:expat)))
 
+(define-public r-autograph
+  (package
+    (name "r-autograph")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autograph" version))
+       (sha256
+        (base32 "1h3raj1l1q78xachspzsv280j0d2c6ac9ah2fzczrs2da07gjb46"))))
+    (properties `((upstream-name . "autograph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-manynet
+                             r-ggplot2
+                             r-ggdendro
+                             r-dplyr
+                             r-cli))
+    (home-page "https://stocnet.github.io/autograph/")
+    (synopsis "Automatic Plotting of Many Graphs")
+    (description
+     "Visual exploration and presentation of networks should not be difficult.  This
+package includes functions for plotting networks and network-related metrics
+with sensible and pretty defaults.  It includes ggplot2'-based plot methods for
+many popular network package classes.  It also includes some novel layout
+algorithms, and options for straightforward, consistent themes.")
+    (license license:expat)))
+
 (define-public r-autogo
   (package
     (name "r-autogo")
@@ -6466,53 +6497,6 @@ Dirk F. Moore, Springer, 2016, ISBN: 978-3-319-31243-9,
      "An interface to the API for @code{arXiv}', a repository of electronic preprints
 for computer science, mathematics, physics, quantitative biology, quantitative
 finance, and statistics.")
-    (license license:expat)))
-
-(define-public r-arutools
-  (package
-    (name "r-arutools")
-    (version "0.7.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ARUtools" version))
-       (sha256
-        (base32 "1irc7gklf6n9057g2rk38fa027rcl0zsaa0iyfwxy528pkvy04g6"))))
-    (properties `((upstream-name . "ARUtools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-units
-                             r-tidyr
-                             r-suncalc
-                             r-stringr
-                             r-spsurvey
-                             r-sf
-                             r-seewave
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-parzer
-                             r-lutz
-                             r-lubridate
-                             r-lifecycle
-                             r-hms
-                             r-here
-                             r-glue
-                             r-fs
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://arutools.github.io/ARUtools/")
-    (synopsis
-     "Management and Processing of Autonomous Recording Unit (ARU) Data")
-    (description
-     "Parse Autonomous Recording Unit (ARU) data and for sub-sampling recordings.
-Extract Metadata from your recordings, select a subset of recordings for
-interpretation, and prepare files for processing on the @code{WildTrax}
-<https://wildtrax.ca/> platform.  Read and process metadata from recordings
-collected using the @code{SongMeter} and BAR-LT types of ARUs.")
     (license license:expat)))
 
 (define-public r-arulesviz
@@ -17190,58 +17174,6 @@ model and Hafner et al. (2019) <doi:10.1016/j.agrformet.2017.11.027> for more on
 the measurement data used for parameter development.")
     (license license:gpl3)))
 
-(define-public r-ale
-  (package
-    (name "r-ale")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ale" version))
-       (sha256
-        (base32 "19yp1zlhjbzb0qszzc6kszg4mr6cyi7zzllpkzw7q3spjcq7kmpw"))))
-    (properties `((upstream-name . "ale")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-univariateml
-                             r-tidyr
-                             r-stringr
-                             r-staccuracy
-                             r-s7
-                             r-rlang
-                             r-purrr
-                             r-progressr
-                             r-patchwork
-                             r-insight
-                             r-ggplot2
-                             r-future
-                             r-furrr
-                             r-dplyr
-                             r-cli
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tripartio/ale")
-    (synopsis
-     "Interpretable Machine Learning and Statistical Inference with Accumulated Local Effects (ALE)")
-    (description
-     "Accumulated Local Effects (ALE) were initially developed as a model-agnostic
-approach for global explanations of the results of black-box machine learning
-algorithms.  ALE has a key advantage over other approaches like partial
-dependency plots (PDP) and SHapley Additive @code{exPlanations} (SHAP): its
-values represent a clean functional decomposition of the model.  As such, ALE
-values are not affected by the presence or absence of interactions among
-variables in a mode.  Moreover, its computation is relatively rapid.  This
-package reimplements the algorithms for calculating ALE data and develops highly
-interpretable visualizations for plotting these ALE values.  It also extends the
-original ALE concept to add bootstrap-based confidence intervals and ALE-based
-statistics that can be used for statistical inference.  For more details, see
-Okoli, Chitu.  2023.  âStatistical Inference Using Machine Learning and
-Classical Techniques Based on Accumulated Local Effects (ALE).â @code{arXiv}.
-<doi:10.48550/@code{arXiv.2310.09877>}.")
-    (license license:expat)))
-
 (define-public r-aldvmm
   (package
     (name "r-aldvmm")
@@ -17679,19 +17611,19 @@ scratch under a free license.")
 (define-public r-ake
   (package
     (name "r-ake")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ake" version))
        (sha256
-        (base32 "0mdpx1dnk57yr0mpf9hqqdjx96j0sqdjdy964qvwmqbycvxxnp3z"))))
+        (base32 "1hma0nv512nmx7b50sdhf8l0ji88s3xixnh93fs5ikqjajbyybi0"))))
     (properties `((upstream-name . "Ake")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "www.r-project.org")
+    (home-page "https://www.r-project.org")
     (synopsis "Associated Kernel Estimations")
     (description
      "Continuous and discrete (count or categorical) estimation of density,
@@ -19602,13 +19534,13 @@ mean square error, AIC, BIC, as well as graphs with the equations automatically.
 (define-public r-agror
   (package
     (name "r-agror")
-    (version "1.3.6")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AgroR" version))
        (sha256
-        (base32 "0gbdba18fzk3x32wk1ycbj2ci8y1dpdmcysnmdd2361mp5yhvn7h"))))
+        (base32 "1f6vm5md63jara10i51wj7xf6z6ld2p1v915hzi8kairjg70dya1"))))
     (properties `((upstream-name . "AgroR")))
     (build-system r-build-system)
     (arguments
@@ -19647,7 +19579,8 @@ joint analysis of experiments according to Ferreira (2018, ISBN:
 family in CRD and RBD (Carvalho, FJ (2019), <doi:10.14393/ufu.te.2019.1244>).
 It can also be used to obtain descriptive measures and graphics, in addition to
 correlations and creative graphics used in agricultural sciences (Agronomy,
-Zootechnics, Food Science and related areas).")
+Zootechnics, Food Science and related areas).  Shimizu, G. D., Marubayashi, R.
+Y. P., Goncalves, L. S. A. (2025) <doi:10.4025/actasciagron.v47i1.73889>.")
     (license license:gpl2+)))
 
 (define-public r-agrmt

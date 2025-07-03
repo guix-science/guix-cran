@@ -9805,6 +9805,60 @@ outliers (also referred to as \"bad\" points) and automatically detect bad point
 Punzo, A. & Tortora, C. (2021) <doi:10.1177/1471082X19890935>.")
     (license license:gpl2+)))
 
+(define-public r-msclassifr
+  (package
+    (name "r-msclassifr")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MSclassifR" version))
+       (sha256
+        (base32 "1ils9bnhr8rls6ysh1cicrrxasbgmii6fppdmnkhsdk288jalmqc"))))
+    (properties `((upstream-name . "MSclassifR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-vsurf
+                             r-vita
+                             r-statmod
+                             r-reshape2
+                             r-randomforest
+                             r-nnet
+                             r-mltools
+                             r-mixomics
+                             r-metap
+                             r-mclust
+                             r-maldirppa
+                             r-maldiquantforeign
+                             r-maldiquant
+                             r-limma
+                             r-glmnet
+                             r-ggplot2
+                             r-e1071
+                             r-dplyr
+                             r-cp4p
+                             r-caret
+                             r-car
+                             r-boruta))
+    (home-page "https://github.com/agodmer/MSclassifR_examples")
+    (synopsis "Automated Classification of Mass Spectra")
+    (description
+     "This package provides functions to classify mass spectra in known categories,
+and to determine discriminant mass-to-charge values.  It includes easy-to-use
+functions for preprocessing mass spectra, functions to determine discriminant
+mass-to-charge values (m/z) from a library of mass spectra corresponding to
+different categories, and functions to predict the category (species,
+phenotypes, etc.) associated to a mass spectrum from a list of selected
+mass-to-charge values.  If you use this package in your research, please cite
+the associated publication (<doi:10.1016/j.eswa.2025.128796>).  For a
+comprehensive guide, additional applications, and detailed examples of using
+this package, please visit our @code{GitHub} repository
+(<https://github.com/agodmer/M@code{SclassifR_examples>}).")
+    (license license:gpl3+)))
+
 (define-public r-mschart
   (package
     (name "r-mschart")
@@ -23173,32 +23227,6 @@ Browne and @code{McNicholas} (2014) <doi:10.1007/s11634-013-0139-1>, Browne and
 @code{McNicholas} (2015) <doi:10.1002/cjs.11246>.")
     (license license:gpl2+)))
 
-(define-public r-mixtur
-  (package
-    (name "r-mixtur")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mixtur" version))
-       (sha256
-        (base32 "02hybyc647jhl3jcyv26kcg1ijq4qlami18m6xyckygw8m2fb85l"))))
-    (properties `((upstream-name . "mixtur")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-rlang r-ggplot2 r-dplyr))
-    (home-page "https://github.com/JimGrange/mixtur")
-    (synopsis "Modelling Continuous Report Visual Short-Term Memory Studies")
-    (description
-     "This package provides a set of utility functions for analysing and modelling
-data from continuous report short-term memory experiments using either the
-2-component mixture model of Zhang and Luck (2008) <doi:10.1038/nature06860> or
-the 3-component mixture model of Bays et al. (2009) <doi:10.1167/9.10.7>.  Users
-are also able to simulate from these models.")
-    (license license:gpl3)))
-
 (define-public r-mixtree
   (package
     (name "r-mixtree")
@@ -25292,13 +25320,13 @@ A.M.Gun,M.K.Gupta,B.Dasgupta(2019,ISBN:81-87567-81-3).")
 (define-public r-missinghe
   (package
     (name "r-missinghe")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missingHE" version))
        (sha256
-        (base32 "0my6a768w7lixh6cw453bl2nrb5aqdiri309p5kp4psp17pzllak"))))
+        (base32 "05fqw10x6kspr76d3yw3g5hxcpr9clz3874l30b5gprkwdqj9z4w"))))
     (properties `((upstream-name . "missingHE")))
     (build-system r-build-system)
     (arguments
@@ -25306,7 +25334,6 @@ A.M.Gun,M.K.Gupta,B.Dasgupta(2019,ISBN:81-87567-81-3).")
       #:tests? #f))
     (propagated-inputs (list r-r2jags
                              r-mcmcr
-                             r-mcmcplots
                              r-loo
                              r-gridextra
                              r-ggthemes
@@ -47762,13 +47789,13 @@ each level set.  3.  Generate a complex from the clustering results.")
 (define-public r-mapper
   (package
     (name "r-mapper")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mappeR" version))
        (sha256
-        (base32 "14jncr1gxzf7l8j3s0lrnh3mqv2mjr0l4i45gcs2i73g4fyp60q3"))))
+        (base32 "0m4b6pvnlmyd6jdf6bxb73yiqbymkhx13mcjh29vaj831d8ww90k"))))
     (properties `((upstream-name . "mappeR")))
     (build-system r-build-system)
     (arguments
@@ -48888,13 +48915,13 @@ instrument tests by Stock and Yogo (2005) <doi:10.1017/CBO9780511614491.006>.")
 (define-public r-manydist
   (package
     (name "r-manydist")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manydist" version))
        (sha256
-        (base32 "0lcrzk9glk0dn019r3alg04hfwdwl4yw6k94frvk571ds9rjlm7v"))))
+        (base32 "0kxw8hrbsmk3v26av8bxdqgkir6l30bxb3kb5qhiihj33yb4bih8"))))
     (properties `((upstream-name . "manydist")))
     (build-system r-build-system)
     (arguments

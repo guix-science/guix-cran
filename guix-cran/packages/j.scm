@@ -116,26 +116,19 @@ alternatives.")
 (define-public r-justifyalpha
   (package
     (name "r-justifyalpha")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JustifyAlpha" version))
        (sha256
-        (base32 "0bd7sn4sn95kal5q2x1q78fsk1mhakr5fax3z6ny2yda2h266af9"))))
+        (base32 "176bawmq9bi0qlzdqxkws7iaspd9p1818z8snx4yf8y9id5q0fd6"))))
     (properties `((upstream-name . "JustifyAlpha")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-superpower
-                             r-stringr
-                             r-shinydashboard
-                             r-shiny
-                             r-qpdf
-                             r-pwr
-                             r-ggplot2
-                             r-bayesfactor))
+    (propagated-inputs (list r-stringr r-shiny r-qpdf r-ggplot2 r-bayesfactor))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=JustifyAlpha")
     (synopsis "Justifying Alpha Levels for Hypothesis Tests")
@@ -1056,13 +1049,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.6.9")
+    (version "1.6.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "15spp6kva3f1bacri4kkppwd2l6hfjxh886hy1qvbmmhc0x9nmrb"))))
+        (base32 "1g1srmcbmqlpmga32wb97jcq2sw6pgvxr5dxz7bfgbxy01hd8n2f"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (arguments
@@ -1084,6 +1077,7 @@ available at the following URL:
                              r-readxl
                              r-readr
                              r-rcolorbrewer
+                             r-r6
                              r-purrr
                              r-proc
                              r-officer

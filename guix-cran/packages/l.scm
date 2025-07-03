@@ -12082,35 +12082,31 @@ for unbalanced data.  The estimation of the models is particularly fast as
 compared to other libraries.")
     (license license:gpl2)))
 
-(define-public r-libdeflate
+(define-public r-libimath
   (package
-    (name "r-libdeflate")
-    (version "1.24-4")
+    (name "r-libimath")
+    (version "3.1.9-4")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "libdeflate" version))
+       (uri (cran-uri "libimath" version))
        (sha256
-        (base32 "1hm8v5kwaidjsbw6r57ys02giww8c3x76spinhd9p1pz79wi0pc0"))))
-    (properties `((upstream-name . "libdeflate")))
+        (base32 "1q7hqbq84rk5q4fq3wnrhchm9nb087jkpq87p395mi84njbh7h05"))))
+    (properties `((upstream-name . "libimath")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list cmake))
     (native-inputs (list pkg-config))
-    (home-page "https://cran.r-project.org/package=libdeflate")
-    (synopsis "DEFLATE Compression and Static Library")
+    (home-page "https://cran.r-project.org/package=libimath")
+    (synopsis "'Imath' Computer Graphics Linear Algebra Static Library")
     (description
-     "Whole-buffer DEFLATE-based compression and decompression of raw vectors using
-the libdeflate library (see <https://github.com/ebiggers/libdeflate>).  Provides
-the user with additional control over the speed and the quality of DEFLATE
-compression compared to the fixed level of compression offered in R's
-@code{memCompress()} function.  Also provides the libdeflate static library and
-C headers along with a CMake target and packageâconfig file that ease linking
-of libdeflate in packages that compile and statically link bundled libraries
-using CMake'.")
-    (license license:expat)))
+     "This package provides a static library for Imath (see
+<https://github.com/@code{AcademySoftwareFoundation/Imath>}), a library for
+functions and data types common in computer graphics applications, including a
+16-bit floating-point type.")
+    (license license:bsd-3)))
 
 (define-public r-libbib
   (package
@@ -12624,13 +12620,13 @@ and produces plots similar to the ones in the manual.")
 (define-public r-lfproqc
   (package
     (name "r-lfproqc")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lfproQC" version))
        (sha256
-        (base32 "0ga5zwgqj5249kx7psnjzxj46v64npq6qvn8gl7hi7177r5ysgn9"))))
+        (base32 "0zlzbhs8a50m10hsn93nbmip8qg98xls5dwa54h1dzpvsx5sz8rk"))))
     (properties `((upstream-name . "lfproQC")))
     (build-system r-build-system)
     (arguments
@@ -12672,7 +12668,8 @@ package.  The chosen three normalization methods, three imputation methods and
 three evaluation measures were chosen for this study based on the research
 papers published by	VÃ¤likangas et al. (2016) <doi:10.1093/bib/bbw095>, Jin et
 al. (2021) <doi:10.1038/s41598-021-81279-4> and Srivastava et al. (2023)
-<doi:10.2174/1574893618666230223150253>.")
+<doi:10.2174/1574893618666230223150253>.This work has published by Sakthivel et
+al. (2025) <doi:10.1021/acs.jproteome.4c00552>.")
     (license license:gpl3)))
 
 (define-public r-lfmm

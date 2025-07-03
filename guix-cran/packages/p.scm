@@ -8,8 +8,8 @@
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
   #:use-module (gnu packages statistics)
-  #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages web)
   #:use-module (gnu packages curl)
@@ -515,6 +515,42 @@ information on relative levels of income, output, input, and productivity for
 accounts converted to international prices for 189 countries for some or all of
 the years 1950-2010.")
     (license license:gpl2)))
+
+(define-public r-pwsem
+  (package
+    (name "r-pwsem")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pwSEM" version))
+       (sha256
+        (base32 "0vmhjh9sa04b4g736yacpz4a3mw8r0b6f9wkqq2rbgzdd2kywmx2"))))
+    (properties `((upstream-name . "pwSEM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-poolr
+                             r-mgcv
+                             r-igraph
+                             r-ggm
+                             r-gamm4
+                             r-copula))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pwSEM")
+    (synopsis "Piecewise Structural Equation Modelling")
+    (description
+     "Conduct dsep tests (piecewise SEM) of a directed, or mixed, acyclic graph
+without latent variables (but possibly with implicitly marginalized or
+conditioned latent variables that create dependent errors) based on linear,
+generalized linear, or additive modelswith or without a nesting structure for
+the data.  Also included are functions to do desp tests step-by-step,exploratory
+path analysis, and Monte Carlo X2 probabilities.  This package accompanies
+Shipley, B, (2026).Cause and Correlation in Biology: A User's Guide to Path
+Analysis, @code{StructuralEquations} and Causal Inference (3rd edition).
+Cambridge University Press.")
+    (license license:expat)))
 
 (define-public r-pwrss
   (package
@@ -10826,56 +10862,6 @@ highlighting, using ANSI colors, if the terminal supports them.")
 prettier versions of the originals.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-prettifyaddins
-  (package
-    (name "r-prettifyaddins")
-    (version "2.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "prettifyAddins" version))
-       (sha256
-        (base32 "0ncj10j1ygc1dhlqdg5vklzf258bjbg6mry8i8vqqh1dxvl2djwr"))))
-    (properties `((upstream-name . "prettifyAddins")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-xrjulia
-                             r-xml2
-                             r-webdriver
-                             r-shiny
-                             r-rstudioapi
-                             r-httr
-                             r-chromote))
-    (native-inputs (list esbuild))
-    (home-page "https://github.com/stla/prettifyAddins")
-    (synopsis
-     "'RStudio' Addins to Prettify 'JavaScript', 'C++', 'Python', and More")
-    (description
-     "This package provides RStudio addins to prettify HTML', CSS', SCSS',
-@code{JavaScript}', JSX', Markdown', C(++)', @code{LaTeX}', Python', Julia',
-XML', Java', JSON', Ruby', and to reindent C(++)', Fortran', Java', Julia',
-Python', SAS', Scala', Shell', SQL and \"@code{TypeScript}\".  Two kinds of addins
-are provided: Prettify and Indent'.  The Indent addins only reindent the code,
-while the Prettify addins also modify the code, e.g. trailing semi-colons are
-added to @code{JavaScript} code when they are missing.")
-    (license license:gpl3)))
-
 (define-public r-pretestcad
   (package
     (name "r-pretestcad")
@@ -11802,13 +11788,13 @@ data processing and calculation of the prediction test.")
 (define-public r-predrupdate
   (package
     (name "r-predrupdate")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predRupdate" version))
        (sha256
-        (base32 "0wy5yrzsp36gyb6za4965xnk1pkii895a510zkghybarxnsxcb1h"))))
+        (base32 "1yy4c784k7hbrb0a944v46wzmyvyzxyb9bzdba8x8liay0d85nl0"))))
     (properties `((upstream-name . "predRupdate")))
     (build-system r-build-system)
     (arguments
@@ -17104,26 +17090,29 @@ ISBN:9780198829546).")
 (define-public r-popgenhelpr
   (package
     (name "r-popgenhelpr")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PopGenHelpR" version))
        (sha256
-        (base32 "0qkfrv5qshzb06q0y6vp9f01xcs9zqc7zb8nmpyl1sb18a6bvv2r"))))
+        (base32 "0pbbjb2kiyphlv7xmrania4pi5nv9h1m3n8242qwnkljxxixkz9q"))))
     (properties `((upstream-name . "PopGenHelpR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vcfr
+                             r-terra
                              r-spdep
-                             r-spdata
+                             r-sf
                              r-scatterpie
                              r-rlang
                              r-reshape2
                              r-magrittr
+                             r-ggspatial
                              r-ggplot2
+                             r-geodata
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://kfarleigh.github.io/PopGenHelpR/")
@@ -19006,36 +18995,6 @@ tibbles (simple data frames).  This package conveniently handles labelled data,
 such as that commonly used by Stata and SPSS. Complex survey design is not
 supported at this time.")
     (license license:cc0)))
-
-(define-public r-pollimetry
-  (package
-    (name "r-pollimetry")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pollimetry" version))
-       (sha256
-        (base32 "09zmcwlgzl4fnkdg2m424ibv3izzrm595c7pi4mc3bd1g8sa2ypn"))))
-    (properties `((upstream-name . "pollimetry")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-repmis r-brms))
-    (home-page "https://cran.r-project.org/package=pollimetry")
-    (synopsis "Estimate Pollinator Body Size and Co-Varying Ecological Traits")
-    (description
-     "This package provides tools to estimate pollinator body size and co-varying
-traits.  This package contains novel Bayesian predictive models of pollinator
-body size (for bees and hoverflies) as well as preexisting predictive models for
-pollinator body size (currently implemented for ants, bees, butterflies, flies,
-moths and wasps) as well as bee tongue length and foraging distance, total field
-nectar loads and wing loading.  An additional @code{GitHub} repository
-<https://github.com/liamkendall/pollimetrydata> provides model objects to use
-the bodysize function internally.  All models are described in Kendall et al
-(2018) <doi:10.1101/397604>.")
-    (license license:gpl2+)))
 
 (define-public r-pollen
   (package
@@ -31814,21 +31773,23 @@ Linear Regression That's interpretable (FLIRTI) by James et al. (2009)
 (define-public r-pfim
   (package
     (name "r-pfim")
-    (version "6.1")
+    (version "7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PFIM" version))
        (sha256
-        (base32 "095ddfgq424j3hfkbh4f2hjy93z098yyqa3ld28zj9x3skwpbbs0"))))
+        (base32 "1pm2zk6svwaqgzcka76mrnzyz1x1sj2sd9ygcgqfdnql5gcmy71k"))))
     (properties `((upstream-name . "PFIM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-tibble
+                             r-stringr
                              r-scales
-                             r-rmarkdown
+                             r-s7
+                             r-rcpparmadillo
                              r-rcpp
                              r-purrr
                              r-pracma
@@ -31837,7 +31798,6 @@ Linear Regression That's interpretable (FLIRTI) by James et al. (2009)
                              r-kableextra
                              r-inline
                              r-ggplot2
-                             r-devtools
                              r-desolve
                              r-deriv))
     (native-inputs (list r-knitr))
@@ -31852,7 +31812,7 @@ MentrÃ© F (2007) <doi:10.1002/sim.2910>, Bazzoli C, Retout S, MentrÃ© F (200
 <doi:10.1186/1471-2148-11-326>, Combes FP, Retout S, Frey N, MentrÃ© F (2013)
 <doi:10.1007/s11095-013-1079-3> and Seurat J, Tang Y, MentrÃ© F, Nguyen TT
 (2021) <doi:10.1016/j.cmpb.2021.106126>.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-pfica
   (package
@@ -36297,13 +36257,13 @@ user-interface.")
 (define-public r-pdcor
   (package
     (name "r-pdcor")
-    (version "1.0")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdcor" version))
        (sha256
-        (base32 "1qza222x30dd8larlza2byqx8pi4vbcynkdrr5nzmgkyvz1dwcmc"))))
+        (base32 "0f2k8pwj93ma6aac21zmvlg3i09grch9pzjkq57pjziyq4j65zvc"))))
     (properties `((upstream-name . "pdcor")))
     (build-system r-build-system)
     (arguments
@@ -36322,7 +36282,9 @@ dissimilarities\".  The Annals Statistics, 42(6): 2382--2412.
 Chi-Square Test of Distance Correlation\".  Journal of Computational and
 Graphical Statistics, 31(1): 254--262. <doi:10.1080/10618600.2021.1938585>.
 Szekely G. J. and Rizzo M. L. (2023). \"The Energy of Data and Distance
-Correlation\".  Chapman and Hall/CRC. <ISBN:9781482242744>.")
+Correlation\".  Chapman and Hall/CRC. <ISBN:9781482242744>.  Kontemeniotis N.,
+Vargiakakis R. and Tsagris M. (2025).  On independence testing using the
+(partial) distance correlation. <doi:10.48550/@code{arXiv.2506.15659>}.")
     (license license:gpl2+)))
 
 (define-public r-pdc
@@ -38856,13 +38818,13 @@ detection algorithm performance (<https://pubmed.ncbi.nlm.nih.gov/34258524/>).")
 (define-public r-patterns
   (package
     (name "r-patterns")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Patterns" version))
        (sha256
-        (base32 "1b4krl9gcwrxrslqyc0hhc6kqc7q34i70pyx9yb7xkdixs6dkr95"))))
+        (base32 "08fh7vj0c3ishb6m4vgka6nnhi3dhcagldq4y7qwcakgw4nlcpvf"))))
     (properties `((upstream-name . "Patterns")))
     (build-system r-build-system)
     (arguments
@@ -38872,7 +38834,6 @@ detection algorithm performance (<https://pubmed.ncbi.nlm.nih.gov/34258524/>).")
                              r-vgam
                              r-tnet
                              r-selectboost
-                             r-repmis
                              r-plotrix
                              r-nnls
                              r-movmf
@@ -40093,34 +40054,6 @@ Also referred to the following implementation:
     (synopsis "Polygenic Analysis System (PAS)")
     (description "An R package for polygenic trait analysis.")
     (license license:gpl2+)))
-
-(define-public r-parzer
-  (package
-    (name "r-parzer")
-    (version "0.4.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "parzer" version))
-       (sha256
-        (base32 "1sfw1pg4kv22fdba9xg7gckz3cry3fd4ww5j8c79rf3ss7np10vs"))))
-    (properties `((upstream-name . "parzer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr r-rcpp))
-    (native-inputs (list r-quarto))
-    (home-page "https://github.com/ropensci/parzer")
-    (synopsis "Parse Messy Geographic Coordinates")
-    (description
-     "Parse messy geographic coordinates from various character formats to decimal
-degree numeric values.  Parse coordinates into their parts (degree, minutes,
-seconds); calculate hemisphere from coordinates; pull out individually degrees,
-minutes, or seconds; add and subtract degrees, minutes, and seconds.  C++ code
-herein originally inspired from code written by Jeffrey D. Bogan, but then
-completely re-written.")
-    (license license:expat)))
 
 (define-public r-parttree
   (package

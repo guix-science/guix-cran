@@ -3589,13 +3589,13 @@ the package documentation or the vignette titled \"Introduction to wintime.\".")
 (define-public r-wins
   (package
     (name "r-wins")
-    (version "1.5")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WINS" version))
        (sha256
-        (base32 "0cd0xwvm61847cxbc9xk265nykzb8csyzfd83ip7zkwm3a8qywsd"))))
+        (base32 "0j44d0qknpm95nfncwbmvqxmwzllrbw1j5zhmd2cw8fsjcgl47g3"))))
     (properties `((upstream-name . "WINS")))
     (build-system r-build-system)
     (arguments

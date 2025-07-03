@@ -5473,31 +5473,6 @@ provides methods for tidying and summarizing results.  Salerno et al., (2024)
 <doi:10.48550/@code{arXiv.2410.09665>}.")
     (license license:expat)))
 
-(define-public r-ipcwswitch
-  (package
-    (name "r-ipcwswitch")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ipcwswitch" version))
-       (sha256
-        (base32 "12z16c8sv1nhdv70kwx1a0wh588znkv5y5r0s9kcws0n3rjhzh9p"))))
-    (properties `((upstream-name . "ipcwswitch")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival))
-    (home-page "https://cran.r-project.org/package=ipcwswitch")
-    (synopsis
-     "Inverse Probability of Censoring Weights to Deal with Treatment Switch in Randomized Clinical Trials")
-    (description
-     "This package contains functions for formatting clinical trials data and
-implementing inverse probability of censoring weights to handle treatment
-switches when estimating causal treatment effect in randomized clinical trials.")
-    (license license:gpl3)))
-
 (define-public r-ipcwk
   (package
     (name "r-ipcwk")
@@ -10672,13 +10647,13 @@ et al. (2020) <doi:10.1111/1440-1703.12102> for statistical background.")
 (define-public r-inext-3d
   (package
     (name "r-inext-3d")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNEXT.3D" version))
        (sha256
-        (base32 "1f7q7ya4f16gmfgnv50d9j8xa500zp4ah69shznx8jkj0kvah7y3"))))
+        (base32 "12sjg27953ij399rxj0l8kdjc5fyk5sz70rdxclsy23jlk8nx2gn"))))
     (properties `((upstream-name . "iNEXT.3D")))
     (build-system r-build-system)
     (arguments

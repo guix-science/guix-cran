@@ -11090,13 +11090,13 @@ individual behavior, for use in evolutionary and ecological studies.")
 (define-public r-track2kba
   (package
     (name "r-track2kba")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "track2KBA" version))
        (sha256
-        (base32 "1y5mj2qakwvgxh0s8dli9d2i97g1y19k0v3q20zgj7j3wx7x8fw4"))))
+        (base32 "12cbaav7mfvm9xg076maxymwj523pn1z5llb1saksy42yjxdf9zc"))))
     (properties `((upstream-name . "track2KBA")))
     (build-system r-build-system)
     (arguments
@@ -17661,13 +17661,13 @@ documentation here for more detail: <https://gtfs.org/>.")
 (define-public r-tidytlg
   (package
     (name "r-tidytlg")
-    (version "0.1.6")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytlg" version))
        (sha256
-        (base32 "00fnz8y6a23kmic1ig2xixxq46qs8h82sm798n66imfhcn21d0f3"))))
+        (base32 "14s8s5gxvgrirphjs4fjxbpjqzcasxiy64gj804l1m7c59qpb41x"))))
     (properties `((upstream-name . "tidytlg")))
     (build-system r-build-system)
     (arguments
@@ -18593,13 +18593,13 @@ behaviors such as @code{if_else2()} and @code{str_detect2()}.")
 (define-public r-tidyplots
   (package
     (name "r-tidyplots")
-    (version "0.2.2")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyplots" version))
        (sha256
-        (base32 "1kf21dv28nmhakmpnzr12wcdpidfvmqmi1zkyqvfq0ql0n3y8gkj"))))
+        (base32 "1n1mh5g5ww9qbam3y5rcvvpf4f63mgj141g3xsnaic1v1zkzpvqx"))))
     (properties `((upstream-name . "tidyplots")))
     (build-system r-build-system)
     (arguments

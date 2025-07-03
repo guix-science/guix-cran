@@ -1290,24 +1290,25 @@ vignettes and in Huang (2024, <doi:10.48550/@code{arXiv.2406.14163>}).")
 (define-public r-xlsxjars
   (package
     (name "r-xlsxjars")
-    (version "0.6.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xlsxjars" version))
        (sha256
-        (base32 "1rka5smm7yqnhhlblpihhciydfap4i6kjaa4a7isdg7qjmzm3h9p"))))
+        (base32 "1h7bxqiz8ajpnrkalhkq1jyjbqsm98lajg0m802vcy5gkwz0jh28"))))
     (properties `((upstream-name . "xlsxjars")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list openjdk))
     (propagated-inputs (list r-rjava))
     (home-page "https://cran.r-project.org/package=xlsxjars")
-    (synopsis "Package required POI jars for the xlsx package")
+    (synopsis "Package Required POI Jars for the xlsx Package")
     (description
      "The xlsxjars package collects all the external jars required for the xlxs
-package.  This release corresponds to POI 3.10.1.")
+package.  This release corresponds to POI 3.13.")
     (license license:gpl3)))
 
 (define-public r-xlsx2dfs

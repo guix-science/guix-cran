@@ -4702,13 +4702,13 @@ the package can be found at
 (define-public r-survivalsl
   (package
     (name "r-survivalsl")
-    (version "0.97.1")
+    (version "0.98")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivalSL" version))
        (sha256
-        (base32 "1grcimk3pba04m5j7nya1ixcvk3nf8y6g5yb9n79waar0l1676za"))))
+        (base32 "02kq1rcz0yi4dix6zakp4w0b0wqzng45l62vbc40i5ghjfi3xgq4"))))
     (properties `((upstream-name . "survivalSL")))
     (build-system r-build-system)
     (arguments
@@ -4720,7 +4720,6 @@ the package can be found at
                              r-randomforestsrc
                              r-mass
                              r-hdnom
-                             r-glmnetutils
                              r-glmnet
                              r-flexsurv
                              r-dplyr
@@ -4772,19 +4771,19 @@ All these methods have been submitted to be published.")
 (define-public r-survivalplann
   (package
     (name "r-survivalplann")
-    (version "0.1")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivalPLANN" version))
        (sha256
-        (base32 "0vkpclsirb37a0xdzbbk7z0ajnp398l12mwkrxh2nprngsnfvywn"))))
+        (base32 "02gfbgv5ldjyvzqk68zhncgd6nwkr2sncf2d89m5ghlm05kvm030"))))
     (properties `((upstream-name . "survivalPLANN")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-nnet))
+    (propagated-inputs (list r-survival r-risca r-nnet))
     (home-page "https://cran.r-project.org/package=survivalPLANN")
     (synopsis "Neural Networks to Predict Survival")
     (description
@@ -15096,13 +15095,13 @@ developed by Biometris.")
 (define-public r-statgenhtp
   (package
     (name "r-statgenhtp")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenHTP" version))
        (sha256
-        (base32 "1wzfyi1l4sjflqanhkdrjvri2580pdq329pvsawmqg7d0f6m190b"))))
+        (base32 "08k1ab377vsgr361wfjxqvsnq6sndcw0n1dm9i15cps0q7vhhm4h"))))
     (properties `((upstream-name . "statgenHTP")))
     (build-system r-build-system)
     (arguments
@@ -15112,7 +15111,6 @@ developed by Biometris.")
                              r-spam
                              r-scales
                              r-rlang
-                             r-reshape2
                              r-matrix
                              r-lubridate
                              r-locfit
@@ -15121,7 +15119,6 @@ developed by Biometris.")
                              r-ggplot2
                              r-ggnewscale
                              r-ggforce
-                             r-factoextra
                              r-animation))
     (native-inputs (list r-knitr))
     (home-page "https://biometris.github.io/statgenHTP/index.html")
@@ -15130,8 +15127,8 @@ developed by Biometris.")
      "Phenotypic analysis of data coming from high throughput phenotyping (HTP)
 platforms, including different types of outlier detection, spatial analysis, and
 parameter estimation.  The package is being developed within the EPPN2020
-project (<https://eppn2020.plant-phenotyping.eu/>).  Some functions have been
-created to be used in conjunction with the R package asreml for the ASReml
+project (<https://cordis.europa.eu/project/id/731013>).  Some functions have
+been created to be used in conjunction with the R package asreml for the ASReml
 software, which can be obtained upon purchase from VSN international
 (<https://vsni.co.uk/software/asreml-r/>).")
     (license (list license:gpl2+ license:gpl3+))))
@@ -37874,13 +37871,13 @@ profiles.")
 (define-public r-slope
   (package
     (name "r-slope")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLOPE" version))
        (sha256
-        (base32 "1j43k981rkvd4w07pcw5vq7gpga2pixzqxi6f72gyiivq5circfp"))))
+        (base32 "03slji3p1hvncsawl1cf1la8b8q9fcpir4mqh962yhyglz3wrqv2"))))
     (properties `((upstream-name . "SLOPE")))
     (build-system r-build-system)
     (arguments
@@ -66112,13 +66109,13 @@ need to install them.")
 (define-public r-sce
   (package
     (name "r-sce")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCE" version))
        (sha256
-        (base32 "04fhvzjgx9cyb4clbjn7zrzd55627cmdgra4g0a0n1cqgb74h43z"))))
+        (base32 "077j5rgx01wji22752haiimgpla4r3aqcgvpvdkw2ax9p1bk213r"))))
     (properties `((upstream-name . "SCE")))
     (build-system r-build-system)
     (arguments
@@ -70781,13 +70778,13 @@ from classic data sets in R.")
 (define-public r-sampcompr
   (package
     (name "r-sampcompr")
-    (version "0.3.0")
+    (version "0.3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sampcompR" version))
        (sha256
-        (base32 "0dmscwmz4ramcgrr7rh0m47xq0xnp85pjny2932l4kpkplmhv201"))))
+        (base32 "0i74q2b2zd90b21cmnkix7xrw3f57wbbmnsmw0zcy1k66gb1x4q8"))))
     (properties `((upstream-name . "sampcompR")))
     (build-system r-build-system)
     (arguments

@@ -6206,13 +6206,13 @@ random Sierpinski-Carpets with constant and variable probabilities are included.
 (define-public r-fractalforest
   (package
     (name "r-fractalforest")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fractalforest" version))
        (sha256
-        (base32 "0h1xlxlhnkisrcbx5dxc03ql62n7597nw3b3i6444cprl69ldg64"))))
+        (base32 "0lfvaqjfqrcjf71yn840bllmw69qi6d18fnxlw01mddb4c8aq598"))))
     (properties `((upstream-name . "fractalforest")))
     (build-system r-build-system)
     (arguments
@@ -12208,41 +12208,6 @@ on its own and also by using the Julia package Jflimo available on the git page
 of the project: <https://metabarcoding.org/flimo>.")
     (license license:cecill)))
 
-(define-public r-flightsbr
-  (package
-    (name "r-flightsbr")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "flightsbr" version))
-       (sha256
-        (base32 "0zmrd5lww637a1yvyc4ap9v0lkdj8ypdpy1b1swrm4alf3bg9s19"))))
-    (properties `((upstream-name . "flightsbr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rvest
-                             r-pbapply
-                             r-parzer
-                             r-lifecycle
-                             r-janitor
-                             r-fs
-                             r-data-table
-                             r-curl
-                             r-archive))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ipeaGIT/flightsbr")
-    (synopsis "Download Flight and Airport Data from Brazil")
-    (description
-     "Download flight and airport data from Brazilâs Civil Aviation Agency (ANAC)
-<https://www.gov.br/anac/pt-br>.  The data covers detailed information on
-aircraft, airports, and airport operations registered with ANAC. It also
-includes data on airfares, all international flights to and from Brazil, and
-domestic flights within the country.")
-    (license license:expat)))
-
 (define-public r-flightr
   (package
     (name "r-flightr")
@@ -13593,6 +13558,40 @@ functionals of the projected density, or conditional density of a response given
 projected covariates.  The package is accompanied by an instructive paper in the
 Journal of Statistical Software <doi:10.18637/jss.v101.i03>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-fkml
+  (package
+    (name "r-fkml")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FKmL" version))
+       (sha256
+        (base32 "187fsaq8s7yfqx2lmm8yjja6c9s5gl8s5i0vark0h0p3ymf0f15v"))))
+    (properties `((upstream-name . "FKmL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-proxy r-ggplot2 r-dplyr r-abind))
+    (home-page "https://cran.r-project.org/package=FKmL")
+    (synopsis
+     "FrÃ©chet Distance-Based K-Means and Extensions for Longitudinal Data")
+    (description
+     "This package implements shape-based clustering algorithms for multidimensional
+longitudinal data based on the FrÃ©chet distance.  It implements two main
+methods: MF@code{KmL} (Multidimensional FrÃ©chet distance-based K-means for
+Longitudinal data), an extension of the K-means algorithm using the FrÃ©chet
+distance originally developed in the @code{kmlShape} package, adapted for
+multidimensional trajectories; and SF@code{KmL} (Sparse multidimensional
+FrÃ©chet distance-based K-medoids for Longitudinal data), a K-medoids-based
+clustering algorithm that incorporates variable selection.  These tools are
+designed to enhance clustering performance in high-dimensional longitudinal data
+settings, particularly those with time delays, variations in trajectory speed,
+irregular sampling intervals, and noise.  This package implements methods
+derived from Kang et al. (2023) <doi:10.1007/s11222-023-10237-z>.")
+    (license license:gpl2+)))
 
 (define-public r-fkf-sp
   (package
@@ -15080,6 +15079,36 @@ dynamics of migratory fish.  Datasets contain both basic size information on a
 per fish basis, as well as otolith data that contains a per day record of fish
 growth history.  All data in this package was collected by the author, from
 2015-2016, in the Wellington region of New Zealand.")
+    (license license:gpl3)))
+
+(define-public r-fishboot
+  (package
+    (name "r-fishboot")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fishboot" version))
+       (sha256
+        (base32 "0ay53vdkgckim4n7cxdsh12gqbsbbja43lc7lpa12spjb6myznyv"))))
+    (properties `((upstream-name . "fishboot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tropfishr r-ks r-foreach r-fishmethods
+                             r-doparallel))
+    (home-page "https://github.com/rschwamborn/fishboot")
+    (synopsis
+     "Bootstrap-Based Methods for the Study of Fish Stocks and Aquatic Populations")
+    (description
+     "This package provides a suite of bootstrap-based models and tools for analyzing
+fish stocks and aquatic populations.  Designed for ecologists and fisheries
+scientists, it supports data from length-frequency distributions,
+tag-and-recapture studies, and hard structure readings (e.g., otoliths).  See
+Schwamborn et al., 2019 <doi:10.1016/j.ecolmodel.2018.12.001> for background.
+The package includes functions for bootstrapped fitting of growth curves and
+plotting.")
     (license license:gpl3)))
 
 (define-public r-fishbc
@@ -18048,13 +18077,13 @@ computation of the extreme index.")
 (define-public r-fetwfe
   (package
     (name "r-fetwfe")
-    (version "1.0.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fetwfe" version))
        (sha256
-        (base32 "14vrjri748rinzb56pwwnddi230src9q7wrxzqch8lliv8262wq9"))))
+        (base32 "04pg6lj3wgid3crqnhd7bzlbqa6nghx5pcjx1l2bxk2m8srmalcf"))))
     (properties `((upstream-name . "fetwfe")))
     (build-system r-build-system)
     (arguments
@@ -18062,7 +18091,7 @@ computation of the extreme index.")
       #:tests? #f))
     (propagated-inputs (list r-matrix r-grpreg r-glmnet r-expm))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=fetwfe")
+    (home-page "https://github.com/gregfaletto/fetwfePackage")
     (synopsis "Fused Extended Two-Way Fixed Effects")
     (description
      "Calculates the fused extended two-way fixed effects (FETWFE) estimator for
@@ -18070,12 +18099,12 @@ unbiased and efficient estimation of difference-in-differences in panel data
 with staggered treatment adoption.  This estimator eliminates bias inherent in
 conventional two-way fixed effects estimators, while also employing a novel
 bridge regression regularization approach to improve efficiency and yield valid
-standard errors.  Provides flexible tuning parameters (including user-specified
-or data-driven choices for penalty parameters), detailed output including
-overall and cohort-specific treatment effects with confidence intervals, and
-extensive diagnostic tools.  Also provides functions for generating simulated
-panel data formatted for estimating FETWFE, and running and evaluating
-simulations.  See details in Faletto (2025)
+standard errors.  Also implements extended TWFE (etwfe) and bridge-penalized
+ETWFE (betwfe).  Provides S3 classes for streamlined workflow and supports
+flexible tuning (ridge and rank-condition guarantees), automatic covariate
+centering/scaling, and detailed overall and cohort-specific effect estimates
+with valid standard errors.  Includes simulation and formatting utilities,
+extensive diagnostic tools, vignettes, and examples.  See Faletto (2025)
 (<doi:10.48550/@code{arXiv.2312.05985>}).")
     (license license:expat)))
 

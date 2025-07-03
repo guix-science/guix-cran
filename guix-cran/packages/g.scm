@@ -18517,13 +18517,13 @@ and hexplots of survey data.")
 (define-public r-ggsurveillance
   (package
     (name "r-ggsurveillance")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsurveillance" version))
        (sha256
-        (base32 "173rmq134jz7dlhp0vr1x6jznbccnj1jgrv1liyhr0a9jdm1pbqp"))))
+        (base32 "0j5cdw0znpqfkp3hci3w8pzyz6yqa403c8c6cx8b5wpxks1kakn9"))))
     (properties `((upstream-name . "ggsurveillance")))
     (build-system r-build-system)
     (arguments

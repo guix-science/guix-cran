@@ -2911,13 +2911,13 @@ performance that's why the basis and Jacobian calculation is implemented in C++.
 (define-public r-bspcov
   (package
     (name "r-bspcov")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bspcov" version))
        (sha256
-        (base32 "15dgkn1m3wrdci98qrrx0hr8c2lbn7p124gjp45mgwkjn9rgi2qb"))))
+        (base32 "0hyxkyddr3i932ya5pbjw7l6p4nci08x2bci8w6ahn0qlayrv1fh"))))
     (properties `((upstream-name . "bspcov")))
     (build-system r-build-system)
     (arguments
@@ -2949,9 +2949,13 @@ performance that's why the basis and Jacobian calculation is implemented in C++.
     (home-page "https://github.com/statjs/bspcov")
     (synopsis "Bayesian Sparse Estimation of a Covariance Matrix")
     (description
-     "This package provides functions which perform Bayesian estimations of a
-covariance matrix for multivariate normal data.  Assumes that the covariance
-matrix is sparse or band matrix and positive-definite.  This software has been
+     "Bayesian estimations of a covariance matrix for multivariate normal data.
+Assumes that the covariance matrix is sparse or band matrix and
+positive-definite.  Methods implemented include the beta-mixture shrinkage prior
+(Lee et al. (2022) <doi:10.1016/j.jmva.2022.105067>), screened beta-mixture
+prior (Lee et al. (2024) <doi:10.1214/24-BA1495>), and post-processed posteriors
+for banded and sparse covariances (Lee et al. (2023) <doi:10.1214/22-BA1333>;
+Lee and Lee (2023) <doi:10.1016/j.jeconom.2023.105475>).  This software has been
 developed using funding supported by Basic Science Research Program through the
 National Research Foundation of Korea ('NRF') funded by the Ministry of
 Education ('RS-2023-00211979', NRF-2022R1A5A7033499', NRF-2020R1A4A1018207 and
@@ -10307,13 +10311,13 @@ Zhang and Wang (2013, <doi:10.1007/s11336-012-9301-5>), Zhang (2014,
 (define-public r-bmemapping
   (package
     (name "r-bmemapping")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BMEmapping" version))
        (sha256
-        (base32 "0m84cz4214avdb3n3g99xblw50sir6qjrxd286cqq97n5x5kn7np"))))
+        (base32 "0qpvfwlibmacn3ddr99b84c199c18xrq60ybfsribjk9plckwjlc"))))
     (properties `((upstream-name . "BMEmapping")))
     (build-system r-build-system)
     (arguments

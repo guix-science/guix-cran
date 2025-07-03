@@ -25916,19 +25916,19 @@ common plotting techniques in compositional data analysis.")
 (define-public r-coda-base
   (package
     (name "r-coda-base")
-    (version "1.0.0")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coda.base" version))
        (sha256
-        (base32 "0snwhpjksli90z2x54xwdkcl7h5pwsllxj7zsb8g6k9q90l9kqv7"))))
+        (base32 "1r22yy7id4j1i1m7zd0vqvqyfcly22viw3p7wdfc6bx388shfzqd"))))
     (properties `((upstream-name . "coda.base")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://mcomas.net/coda.base/")
     (synopsis "Basic Set of Functions for Compositional Data Analysis")

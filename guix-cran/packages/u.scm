@@ -2954,6 +2954,35 @@ input vector.  Reference: Quentin F. Stout (2008)
 <doi:10.1007/s00453-012-9628-4>.")
     (license license:gpl2+)))
 
+(define-public r-unifyr
+  (package
+    (name "r-unifyr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unifyR" version))
+       (sha256
+        (base32 "0pfd4fzw50dgqjyh3kbn0wdbw562gxf29ik8p14ljbzfi962yanr"))))
+    (properties `((upstream-name . "unifyR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=unifyR")
+    (synopsis
+     "Unified Scores, Reliabilities and Validities from Multiple Tests")
+    (description
+     "In diagnostic contexts, individuals are often assessed using multiple tests that
+measure the same latent variable (e.g., intelligence).  These test scores are
+typically not exactly identical.  Simple averaging neglects the correlation
+between tests and the reduced variance of their combination.  The @code{unifyR}
+package provides functions to compute statistically accurate unified scores,
+reliabilities and validities of multiple tests.  The underlying algorithms build
+on and extend the method proposed by Evans (1996, <DOI:10.3758/BF03204767>) and
+have been validated through simulations.")
+    (license license:gpl3)))
+
 (define-public r-uniformly
   (package
     (name "r-uniformly")

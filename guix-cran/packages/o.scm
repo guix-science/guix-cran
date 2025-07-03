@@ -1329,13 +1329,13 @@ with the OTTR Template repository to create courses.")
 (define-public r-ottr
   (package
     (name "r-ottr")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ottr" version))
        (sha256
-        (base32 "0ixvisvzxfdznmdgy3jjknqmldryagp7nynvszf99lbxbnxcvdhj"))))
+        (base32 "0glfz21xw5wxzs6hbbr2w2ah2aa3i05kqvv6qf41ahwsrl4xxz01"))))
     (properties `((upstream-name . "ottr")))
     (build-system r-build-system)
     (arguments
@@ -3423,13 +3423,13 @@ Erwin, Dimitris Vlassopoulos, Michel Cloitre (2011) <doi:10.1122/1.3544591>).")
 (define-public r-ordr
   (package
     (name "r-ordr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordr" version))
        (sha256
-        (base32 "07nsl6mdm4dmyl8vsqzcpd2mihcxsm68gjx3v1dfqgjqmz477nvf"))))
+        (base32 "1sinh4h44xyp6wwn2b3s4hi5s6dzvkfgghzhxj2jhkn114n8vdpd"))))
     (properties `((upstream-name . "ordr")))
     (build-system r-build-system)
     (arguments
@@ -3442,6 +3442,7 @@ Erwin, Dimitris Vlassopoulos, Michel Cloitre (2011) <doi:10.1122/1.3544591>).")
                              r-scales
                              r-rlang
                              r-purrr
+                             r-mass
                              r-magrittr
                              r-labeling
                              r-ggrepel

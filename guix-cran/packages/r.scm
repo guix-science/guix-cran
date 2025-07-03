@@ -9256,13 +9256,13 @@ errors, e.g., clustered errors, or doubly-clustered errors.")
 (define-public r-rrgeo
   (package
     (name "r-rrgeo")
-    (version "0.0.3")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRgeo" version))
        (sha256
-        (base32 "1clarffwzjljpp9b3n7zn159w8zk0claj1x1nc3gmn3771z551hr"))))
+        (base32 "1dnj5pp09lyfvcc1s2wmz5armdh68k6flhnvn29irnn5fwr9kfsl"))))
     (properties `((upstream-name . "RRgeo")))
     (build-system r-build-system)
     (arguments
@@ -15986,13 +15986,13 @@ calculate the aggregated precision-recall (PR) curve.")
 (define-public r-robyn
   (package
     (name "r-robyn")
-    (version "3.11.1")
+    (version "3.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Robyn" version))
        (sha256
-        (base32 "0bcam3ki00s4rn1jyny7n9azandpl72b4w6gm1s50iivx17w6km2"))))
+        (base32 "1f6sag1ln8h0dyglp68ailpc15ykz49w8sr6hyvp9y1nk7bfw3x6"))))
     (properties `((upstream-name . "Robyn")))
     (build-system r-build-system)
     (arguments
@@ -16004,7 +16004,6 @@ calculate the aggregated precision-recall (PR) curve.")
                              r-prophet
                              r-patchwork
                              r-nloptr
-                             r-minpack-lm
                              r-lubridate
                              r-lares
                              r-jsonlite
@@ -26132,34 +26131,6 @@ in plots or for fun!")
 convert them to spatstat (<https://spatstat.org/>) spatial patterns.")
     (license license:gpl3)))
 
-(define-public r-rim
-  (package
-    (name "r-rim")
-    (version "0.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rim" version))
-       (sha256
-        (base32 "1dv7vic2f4khyd9k7wk95gan89s4klvlb474r0j931pp3icj23jq"))))
-    (properties `((upstream-name . "rim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list maxima))
-    (propagated-inputs (list r-rcpp r-r6 r-knitr r-globaloptions))
-    (home-page "https://rcst.github.io/rim/")
-    (synopsis "Interface to 'Maxima', Enabling Symbolic Computation")
-    (description
-     "An interface to the powerful and fairly complete computer algebra system
-Maxima'.  It can be used to start and control Maxima from within R by entering
-Maxima commands.  Results from Maxima can be parsed and evaluated in R. It
-facilitates outputting results from Maxima in @code{LaTeX} and @code{MathML}'.
-2D and 3D plots can be displayed directly.  This package also registers a
-knitr'-engine enabling Maxima code chunks to be written in RMarkdown documents.")
-    (license license:gpl3+)))
-
 (define-public r-rilostat
   (package
     (name "r-rilostat")
@@ -31973,13 +31944,13 @@ Core et al., (2022) <doi:10.1101/2022.05.31.494100>.")
 (define-public r-restoptr
   (package
     (name "r-restoptr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restoptr" version))
        (sha256
-        (base32 "1vl1fw3qkpzmpx02bw3q88vply010zraldc132a5hmm8b2c2a4yj"))))
+        (base32 "1rld23qqx1fhrry4qn7z8xsc65ys2jmwsjivv79nq06idam6df41"))))
     (properties `((upstream-name . "restoptr")))
     (build-system r-build-system)
     (arguments
@@ -33563,13 +33534,13 @@ aware of.) The PROJ library is available at <https://proj.org/>.")
 (define-public r-reproduciblerchunks
   (package
     (name "r-reproduciblerchunks")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reproducibleRchunks" version))
        (sha256
-        (base32 "0ymb2m853qb6ih6rzi75pwxi4pcizfjq03hhw84xnzpyyhhgha6v"))))
+        (base32 "1lqg9b5kdmvij1nvx7mgnz7l6zv4ggayc4ch2k76fxnvrwrq6n1k"))))
     (properties `((upstream-name . "reproducibleRchunks")))
     (build-system r-build-system)
     (arguments
@@ -33577,6 +33548,7 @@ aware of.) The PROJ library is available at <https://proj.org/>.")
       #:tests? #f))
     (propagated-inputs (list r-rstudioapi r-rmarkdown r-knitr r-jsonlite
                              r-digest))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=reproducibleRchunks")
     (synopsis "Automated Reproducibility Checks for R Markdown Documents")
     (description
@@ -34927,19 +34899,19 @@ usability but break backwards compatibility.")
 (define-public r-rencher
   (package
     (name "r-rencher")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rencher" version))
        (sha256
-        (base32 "1f69mz2inffirnykx2jiw9bdd9245gwsj1zwdldr6gl3djv2v8wd"))))
+        (base32 "1rs5ygnq0ybffqjkbc6i3x06dmadldbzcmpqy3j4ir2b8d6if2rs"))))
     (properties `((upstream-name . "rencher")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=rencher")
+    (home-page "https://github.com/AtefehRashidi/rencher")
     (synopsis
      "Datasets from the Book \"Methods of Multivariate Analysis (3rd)\"")
     (description
@@ -43368,20 +43340,19 @@ version if the original data file is unavailable.  Works best for small datasets
 (define-public r-rddtools
   (package
     (name "r-rddtools")
-    (version "1.6.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rddtools" version))
        (sha256
-        (base32 "12lxdpazfhwn5kkzs91qhs0xcky30dj01yp0v5708ahr1ywqdxmd"))))
+        (base32 "0pwbz4i5f2qnrnxj4lhn6yzbxz3gqs6w7ad0jci2q1nh0qq47rfh"))))
     (properties `((upstream-name . "rddtools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sandwich
-                             r-rmarkdown
                              r-rdrobust
                              r-rdd
                              r-np
@@ -43392,7 +43363,7 @@ version if the original data file is unavailable.  Works best for small datasets
                              r-formula
                              r-aer))
     (native-inputs (list r-knitr))
-    (home-page "https://qua.st/rddtools/")
+    (home-page "https://github.com/bquast/rddtools")
     (synopsis "Toolbox for Regression Discontinuity Design ('RDD')")
     (description
      "Set of functions for Regression Discontinuity Design ('RDD'), for data
@@ -44394,6 +44365,48 @@ advertising/content/5/27/en/api.html>.  Moreover, the package features an
 interface to query campaign data from the Criteo API. The data can be downloaded
 and will be transformed into a R data frame.")
     (license (list license:gpl2+ license:expat))))
+
+(define-public r-rcrisp
+  (package
+    (name "r-rcrisp")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcrisp" version))
+       (sha256
+        (base32 "18lns8pfdy3gxnv3xb2b3gwkiwhlcwsjaly9gil1mzh0iq7c36fs"))))
+    (properties `((upstream-name . "rcrisp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visor
+                             r-units
+                             r-tidygraph
+                             r-terra
+                             r-stringr
+                             r-sfnetworks
+                             r-sfheaders
+                             r-sf
+                             r-rstac
+                             r-rlang
+                             r-rcoins
+                             r-osmdata
+                             r-lwgeom
+                             r-dplyr
+                             r-dbscan))
+    (native-inputs (list r-knitr))
+    (home-page "https://cityriverspaces.github.io/rcrisp/")
+    (synopsis "Automate the Delineation of Urban River Spaces")
+    (description
+     "This package provides tools to automate the morphological delineation of
+riverside urban areas, based on a method introduced in Forgaci (2018)
+<doi:10.7480/abe.2018.31>.  Delineation entails the identification of corridor
+boundaries, segmentation of the corridor, and delineation of the river space.
+The resulting delineation can be used to characterise spatial phenomena that can
+be related to the river as a central element.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rcrimeanalysis
   (package
@@ -50715,13 +50728,13 @@ Water Act requirements.  ATTAINS information and API information is available at
 (define-public r-ratlas
   (package
     (name "r-ratlas")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ratlas" version))
        (sha256
-        (base32 "0iwkdr08jwyar1k737izjg7xw3wz1qlc0c7jar0fzlcn06i32c9k"))))
+        (base32 "1pdvrgdp0hxrv1l7zhqdmrhlyc792by63hrmfixd5fr89yqz4ld4"))))
     (properties `((upstream-name . "ratlas")))
     (build-system r-build-system)
     (arguments
@@ -50740,7 +50753,6 @@ Water Act requirements.  ATTAINS information and API information is available at
                              r-knitr
                              r-hrbrthemes
                              r-glue
-                             r-ggtext
                              r-ggplot2
                              r-fs
                              r-extrafont
@@ -56556,6 +56568,47 @@ model parameterizations, and various other common stock assessment tasks.  This
 version of {r4ss} is compatible with Stock Synthesis versions 3.24 through 3.30
 (specifically version 3.30.19.01, from April 2022).")
     (license license:gpl3)))
+
+(define-public r-r4pde
+  (package
+    (name "r-r4pde")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "r4pde" version))
+       (sha256
+        (base32 "08hwhr8pw6rp9293kfkn8wk552n2rvf7z1vbx70m0r7aawv3h6x9"))))
+    (properties `((upstream-name . "r4pde")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-survival
+                             r-rlang
+                             r-purrr
+                             r-progress
+                             r-nasapower
+                             r-lubridate
+                             r-interval
+                             r-igraph
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-car
+                             r-boot))
+    (home-page "https://github.com/emdelponte/r4pde")
+    (synopsis "Companion to R for Plant Disease Epidemiology Book")
+    (description
+     "Datasets and utility functions to support the book \"R for Plant Disease
+Epidemiology\" (R4PDE).  It includes functions for quantifying disease, assessing
+spatial patterns, and modeling plant disease epidemics based on weather
+predictors.  These tools are intended for teaching and research in plant disease
+epidemiology.  Several functions are based on classical and contemporary
+methods, including those discussed in Laurence V. Madden, Gareth Hughes, and
+Frank van den Bosch (2007) <doi:10.1094/9780890545058>.")
+    (license license:expat)))
 
 (define-public r-r4lineups
   (package

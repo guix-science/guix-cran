@@ -5046,13 +5046,13 @@ online and offline use.")
 (define-public r-qmd
   (package
     (name "r-qmd")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qmd" version))
        (sha256
-        (base32 "15y1bivli3jy09l4j37zp327x1nchkg6qm8hs46srcxznh9zb99d"))))
+        (base32 "1kba81w6pql309qjfv9dgbvr7avhc6jf116v8nzmy1z6x5w0qnmk"))))
     (properties `((upstream-name . "qmd")))
     (build-system r-build-system)
     (arguments
@@ -7021,13 +7021,13 @@ checking the convergence of the chains.")
 (define-public r-qad
   (package
     (name "r-qad")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qad" version))
        (sha256
-        (base32 "1pvdm6h5zilvrpggvy5qq5lhxxblslkjvjjfdj1f5zaick2hmf3s"))))
+        (base32 "1jn71nwnzib8rk102l5gqwz1dl1xdjrwlqzrqj2sx4jw37h718pr"))))
     (properties `((upstream-name . "qad")))
     (build-system r-build-system)
     (arguments
