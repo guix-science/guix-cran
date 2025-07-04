@@ -4478,13 +4478,13 @@ Using R and @code{OpenBUGS}\" by Bhattacharjee A (2020)
 (define-public r-longevity
   (package
     (name "r-longevity")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longevity" version))
        (sha256
-        (base32 "0jr0x1yy56va08mxz7c7nrpd5dsfdmqxbxlhzic87g1czkc1m774"))))
+        (base32 "0d1sfbq0z6b46yzwvqm8sbjk73arj69gy8dx189x816rl2qd460h"))))
     (properties `((upstream-name . "longevity")))
     (build-system r-build-system)
     (arguments
@@ -4508,6 +4508,38 @@ RootzÃ©n and Zholud (2017) <doi:10.1007/s10687-017-0305-5>; Belzile et al.
 (2021) <doi:10.1098/rsos.202097> and Belzile et al. (2022)
 <doi:10.1146/annurev-statistics-040120-025426>.")
     (license license:gpl3)))
+
+(define-public r-longdecomphe
+  (package
+    (name "r-longdecomphe")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LongDecompHE" version))
+       (sha256
+        (base32 "1dx7f4qsckj9jbfd25bbfzcl33287iwfiak92y39nyd9znrm5fli"))))
+    (properties `((upstream-name . "LongDecompHE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-patchwork r-ggplot2 r-corpcor r-copula))
+    (home-page "https://cran.r-project.org/package=LongDecompHE")
+    (synopsis
+     "Longitudinal Decomposition of Health Expectancy by Age and Cause")
+    (description
+     "This package provides tools to decompose differences in cohort health expectancy
+(HE) by age and cause using longitudinal data.  The package implements a novel
+longitudinal attribution method based on a semiparametric additive hazards model
+with time-dependent covariates, specifically designed to address interval
+censoring and semi-competing risks via a copula framework.  The resulting
+age-cause-specific contributions to disability prevalence and death probability
+can be used to quantify and decompose differences in cohort HE between groups.
+The package supports stepwise replacement decomposition algorithms and is
+applicable to cohort-based health disparity research across diverse populations.
+ Related methods include Sun et al. (2023) <doi:10.1177/09622802221133552>.")
+    (license license:gpl3+)))
 
 (define-public r-longclust
   (package

@@ -1834,13 +1834,13 @@ regression analysis.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtsummary" version))
        (sha256
-        (base32 "11l5mw9h069j841gsdf7q1r4k0icnwniwmmfqhwlx1qyp7pvvx2f"))))
+        (base32 "1nkx78n7xf8hcd9c3adbdplj39mv819bd83n8ii6mq0j9vp5bpls"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (arguments
@@ -23325,13 +23325,13 @@ if things do not work as they should.")
 (define-public r-gformulami
   (package
     (name "r-gformulami")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gFormulaMI" version))
        (sha256
-        (base32 "1sk952gnisx6vyq4lkk14clj11sy73j1ik58fwzjvjblpdjfd45a"))))
+        (base32 "0ix5wdii6ncdxwahf2d8v604zwib14hixn1hcdvk4cbqkpwpks1r"))))
     (properties `((upstream-name . "gFormulaMI")))
     (build-system r-build-system)
     (arguments
@@ -35850,13 +35850,13 @@ materials.")
 (define-public r-galamm
   (package
     (name "r-galamm")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galamm" version))
        (sha256
-        (base32 "1zsfqd6l9bd4m9kzlz7lk9ncjy24lhwv3xcr06ps6kdqxvs51xrf"))))
+        (base32 "0zjfb9siwn62irvjfrzk0hdbj1jqcg8f3kdr5lzgniasgqgs2bvd"))))
     (properties `((upstream-name . "galamm")))
     (build-system r-build-system)
     (arguments

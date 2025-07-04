@@ -576,13 +576,13 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
 (define-public r-eyeris
   (package
     (name "r-eyeris")
-    (version "1.2.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyeris" version))
        (sha256
-        (base32 "15ii61mmzpdxmhlm0yf20lskanpbza3wvb1qx085n9z2psc8zyzl"))))
+        (base32 "0bhq1n5xczn7xdg8diwv3kqj8szr5g4zn5l4ypgs4kc1jjp2q0j2"))))
     (properties `((upstream-name . "eyeris")))
     (build-system r-build-system)
     (arguments
@@ -590,13 +590,16 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
       #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-withr
+                             r-viridis
                              r-tidyr
                              r-stringr
                              r-rlang
                              r-purrr
                              r-progress
+                             r-mass
                              r-lifecycle
                              r-gsignal
+                             r-fields
                              r-eyelinker
                              r-dplyr
                              r-data-table
@@ -612,17 +615,19 @@ cognitive processes like attention, stress, and emotional states [Clewett et al.
 (2020) <doi:10.1038/s41467-020-17851-9>; Kret & Sjak-Shie (2018)
 <doi:10.3758/s13428-018-1075-y>; Strauch (2024)
 <doi:10.1016/j.tins.2024.06.002>].  Yet, despite decades of pupillometry
-research, many established packages and workflows to date unfortunately lack
-design patterns based on Findability, Accessibility, Interoperability, and
-Reusability (FAIR) principles [see Wilkinson et al. (2016)
-<doi:10.1038/sdata.2016.18>].  eyeris', on the other hand, follows a design
-philosophy that provides users with an intuitive, modular, performant, and
-extensible pupillometry data preprocessing framework out-of-the-box.  eyeris
-introduces a Brain Imaging Data Structure (BIDS)-like organization for
-derivative (i.e., preprocessed) pupillometry data as well as an intuitive
-workflow for inspecting preprocessed pupil epochs using interactive output
-report files [Esteban et al. (2019) <doi:10.1038/s41592-018-0235-4>; Gorgolewski
-et al. (2016) <doi:10.1038/sdata.2016.44>].")
+research, many established packages and workflows to date lack design patterns
+based on Findability, Accessibility, Interoperability, and Reusability (FAIR)
+principles [see Wilkinson et al. (2016) <doi:10.1038/sdata.2016.18>].  eyeris
+provides a modular, performant, and extensible preprocessing framework for
+pupillometry data with BIDS-like organization and interactive output reports
+[Esteban et al. (2019) <doi:10.1038/s41592-018-0235-4>; Gorgolewski et al.
+(2016) <doi:10.1038/sdata.2016.44>].  Development was supported, in part, by the
+Stanford Wu Tsai Human Performance Alliance, Stanford Ric Weiland Graduate
+Fellowship, Stanford Center for Mind, Brain, Computation and Technology, NIH
+National Institute on Aging Grants (R01-AG065255, R01-AG079345), NSF GRFP
+(DGE-2146755), @code{McKnight} Brain Research Foundation Clinical Translational
+Research Scholarship in Cognitive Aging and Age-Related Memory Loss, American
+Brain Foundation, and the American Academy of Neurology.")
     (license license:expat)))
 
 (define-public r-eyeread
@@ -5222,13 +5227,13 @@ exponential.")
 (define-public r-eventstudyr
   (package
     (name "r-eventstudyr")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventstudyr" version))
        (sha256
-        (base32 "0l7sv8kb459sb69rp2y61g7a19i8xhanjd6paajlrha44bxyl1kv"))))
+        (base32 "0785x8vdwgwnfqkjadmyshrrc01pajs5phrmncypmk4ivj85y6z0"))))
     (properties `((upstream-name . "eventstudyr")))
     (build-system r-build-system)
     (arguments
@@ -10461,13 +10466,13 @@ two-step estimator.  For technical details, see Naghi, Varadi and Zhelonkin
 (define-public r-epm
   (package
     (name "r-epm")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epm" version))
        (sha256
-        (base32 "0s7frjl457ww0njxdvrgxd68nlgp3n31ic9z4a2j5f5nzp41n7jw"))))
+        (base32 "1sdd21v3v8f65028q0kpdz5axxw17kd3v94vssfqsv728jdnh5xn"))))
     (properties `((upstream-name . "epm")))
     (build-system r-build-system)
     (arguments

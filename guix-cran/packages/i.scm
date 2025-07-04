@@ -6160,13 +6160,13 @@ structure creation.")
 (define-public r-inzightts
   (package
     (name "r-inzightts")
-    (version "2.0.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNZightTS" version))
        (sha256
-        (base32 "1wzzzkl64m7mk0mpkvgkj7ahlqdja9hyhwficprd4kyqxrv00f0r"))))
+        (base32 "1as2vhrki55r1bjwpjgkad5rc8brfgwash8h9i4cm30b8kixx8ki"))))
     (properties `((upstream-name . "iNZightTS")))
     (build-system r-build-system)
     (arguments
@@ -17223,13 +17223,13 @@ range of reporting materials.")
 (define-public r-ideanet
   (package
     (name "r-ideanet")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ideanet" version))
        (sha256
-        (base32 "1vyzqqvc7nfh9db1gq4hk8bk57l266gb7r81bq41x941xzlfcf5l"))))
+        (base32 "07spm0wsi12apnd7ls1hs7lib5gzcms9jzzfcynjichz5pkcrzij"))))
     (properties `((upstream-name . "ideanet")))
     (build-system r-build-system)
     (arguments
@@ -17249,7 +17249,6 @@ range of reporting materials.")
                              r-moments
                              r-matrix
                              r-magrittr
-                             r-linkcomm
                              r-jsonlite
                              r-intergraph
                              r-igraphdata
@@ -20673,13 +20672,13 @@ ISBN:978-1-84821-222-0).")
 (define-public r-iar
   (package
     (name "r-iar")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iAR" version))
        (sha256
-        (base32 "0n38a42jpr2wg7ngs8975r8856mivy1nhwq64i34in8pwkvprgf6"))))
+        (base32 "01bqrb08w6qajda1mqpjk6ly0qi8nyqrigirbi0a889j4xy2k1rh"))))
     (properties `((upstream-name . "iAR")))
     (build-system r-build-system)
     (arguments

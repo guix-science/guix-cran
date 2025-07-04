@@ -710,13 +710,13 @@ of interest rate of Federal Reserve Bank and European Central Bank.")
 (define-public r-yhat
   (package
     (name "r-yhat")
-    (version "2.0-4")
+    (version "2.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yhat" version))
        (sha256
-        (base32 "0hzf6fns37jv67ssa6zwivpj2nlaykfjmj5y21dyh739i3102jnv"))))
+        (base32 "078p1vanm2zgsy9k4dvvhsflq5jikgl3fljybjh6s39bv1mxk46v"))))
     (properties `((upstream-name . "yhat")))
     (build-system r-build-system)
     (arguments

@@ -16777,6 +16777,42 @@ serve many functions typically associated with A Digital Object Identifier
 identifiers permit the same content to be registered in many locations.")
     (license license:expat)))
 
+(define-public r-contdid
+  (package
+    (name "r-contdid")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "contdid" version))
+       (sha256
+        (base32 "09bh1rdcxpqr72civl3gv1pa4kndn0r03rl35j98pld5hf3mif0j"))))
+    (properties `((upstream-name . "contdid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-splines2
+                             r-sandwich
+                             r-ptetools
+                             r-npiv
+                             r-mass
+                             r-ggplot2
+                             r-checkmate
+                             r-bmisc))
+    (home-page "https://bcallaway11.github.io/contdid/")
+    (synopsis "Difference-in-Differences with a Continuous Treatment")
+    (description
+     "This package provides methods for difference-in-differences with a continuous
+treatment and staggered treatment adoption.  Includes estimation of treatment
+effects and causal responses as a function of the dose, event studies indexed by
+length of exposure to the treatment, and aggregation into overall average
+effects.  Uniform inference procedures are included, along with both parametric
+and nonparametric models for treatment effects.  The methods are based on
+Callaway, Goodman-Bacon, and Sant'Anna (2025)
+<doi:10.48550/@code{arXiv.2107.02637>}.")
+    (license license:gpl3)))
+
 (define-public r-contaminatedmixt
   (package
     (name "r-contaminatedmixt")
@@ -35783,6 +35819,33 @@ static or interactive visualizations and smoothing.")
 medical imaging data in the form of CIFTI files
 <https://www.nitrc.org/projects/cifti/>.")
     (license license:gpl2)))
+
+(define-public r-ciflyr
+  (package
+    (name "r-ciflyr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ciflyr" version))
+       (sha256
+        (base32 "11wmxk9ax70cps4ci2r969i2dbwiks2gdb7g45id9cmjcs7r9nb8"))))
+    (properties `((upstream-name . "ciflyr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://cifly.pages.dev/")
+    (synopsis "Reachability-Based Primitives for Graphical Causal Inference")
+    (description
+     "This package provides a framework for specifying and running flexible
+linear-time reachability-based algorithms for graphical causal inference.  Rule
+tables are used to encode and customize the reachability algorithm to typical
+causal and probabilistic reasoning tasks such as finding d-connected nodes or
+more advanced applications.  For more information, see WienÃ¶bst, Weichwald and
+Henckel (2025) <doi:10.48550/@code{arXiv.2506.15758>}.")
+    (license license:expat)))
 
 (define-public r-cifinder
   (package

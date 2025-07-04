@@ -15095,13 +15095,13 @@ developed by Biometris.")
 (define-public r-statgenhtp
   (package
     (name "r-statgenhtp")
-    (version "1.0.9")
+    (version "1.0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenHTP" version))
        (sha256
-        (base32 "08k1ab377vsgr361wfjxqvsnq6sndcw0n1dm9i15cps0q7vhhm4h"))))
+        (base32 "1hsyhcc2pmgxjngv2ldjhaarj2i1098n65p8yfrg94p7w2i7qlqx"))))
     (properties `((upstream-name . "statgenHTP")))
     (build-system r-build-system)
     (arguments
@@ -22543,13 +22543,13 @@ compositionally-warping (Murakami et al.  2021,
 (define-public r-spmodel
   (package
     (name "r-spmodel")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spmodel" version))
        (sha256
-        (base32 "1r280m9lgln10nwbk3c2ylwkphg97g1caii4wf89gbhv51izv90j"))))
+        (base32 "09g6chi8f84fg3dfwa05prisfrc55gc7d66wx7c58w6b8xdwd0s0"))))
     (properties `((upstream-name . "spmodel")))
     (build-system r-build-system)
     (arguments
@@ -43012,31 +43012,6 @@ multiple traits as described in Fernandes and Lipka (2020)
     (description
      "Trains neural networks (multilayer perceptrons with one hidden layer) for bi- or
 multi-class classification.")
-    (license license:expat)))
-
-(define-public r-simplemlp
-  (package
-    (name "r-simplemlp")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "simpleMLP" version))
-       (sha256
-        (base32 "134h217d3ipzpxgj5fh04pkajqmxdnnlr53ykk27vi86dqk4087p"))))
-    (properties `((upstream-name . "simpleMLP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-readr r-ggplot2))
-    (home-page "https://cran.r-project.org/package=simpleMLP")
-    (synopsis "Simple Multilayer Perceptron Neural Network")
-    (description
-     "Create and train a multilayer perceptron, a type of feedforward, fully connected
-neural network.  Features 2 @code{ReLU} hidden layers.  Learn more about about
-the activation functions and backpropagation used by this network in Goodfellow
-et al. (2016, ISBN: 9780262035613) \"Deep Learning\".")
     (license license:expat)))
 
 (define-public r-simplemh
@@ -63920,13 +63895,13 @@ analyses all wrapped within Seurat'.")
 (define-public r-scpi
   (package
     (name "r-scpi")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scpi" version))
        (sha256
-        (base32 "0qmx43x16xwiwzjhqzvic18nlf4wbmasfd2bw63rrazzgj8zhqpr"))))
+        (base32 "1g63csw4fpcy67y6pl9h02m233k4rqv2kvk50bb788nmpxw79pzk"))))
     (properties `((upstream-name . "scpi")))
     (build-system r-build-system)
     (arguments
@@ -63937,6 +63912,7 @@ analyses all wrapped within Seurat'.")
                              r-stringr
                              r-rlang
                              r-reshape2
+                             r-rdpack
                              r-qtools
                              r-purrr
                              r-matrix
@@ -63957,13 +63933,11 @@ analyses all wrapped within Seurat'.")
      "Implementation of prediction and inference procedures for Synthetic Control
 methods using least square, lasso, ridge, or simplex-type constraints.
 Uncertainty is quantified with prediction intervals as developed in Cattaneo,
-Feng, and Titiunik (2021)
-<https://nppackages.github.io/references/Cattaneo-Feng-Titiunik_2021_JASA.pdf>
-for a single treated unit and in Cattaneo, Feng, Palomba, and Titiunik (2023)
-<doi:10.48550/@code{arXiv.2210.05026>} for multiple treated units and staggered
-adoption.  More details about the software implementation can be found in
-Cattaneo, Feng, Palomba, and Titiunik (2024)
-<doi:10.48550/@code{arXiv.2202.05984>}.")
+Feng, and Titiunik (2021) <doi:10.1080/01621459.2021.1979561> for a single
+treated unit and in Cattaneo, Feng, Palomba, and Titiunik (2025)
+<doi:10.1162/rest_a_01588> for multiple treated units and staggered adoption.
+More details about the software implementation can be found in Cattaneo, Feng,
+Palomba, and Titiunik (2025) <doi:10.18637/jss.v113.i01>.")
     (license license:gpl2)))
 
 (define-public r-scperturbr

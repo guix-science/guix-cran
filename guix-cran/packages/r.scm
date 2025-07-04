@@ -43680,13 +43680,13 @@ Evolution,13: 782-788 <DOI:10.1111/2041-210X.13800>.")
 (define-public r-rd3plot
   (package
     (name "r-rd3plot")
-    (version "1.1.26")
+    (version "1.1.37")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rD3plot" version))
        (sha256
-        (base32 "0dn97z27knh4kqgg72rakyabzlq32429wnyf2h35nzkkrzxnk180"))))
+        (base32 "1yz3wqj5rrmbjw43xb1zb8b4j4d241qlb9a58bqan6k8x84rhp5l"))))
     (properties `((upstream-name . "rD3plot")))
     (build-system r-build-system)
     (arguments
@@ -49272,13 +49272,13 @@ the vector.")
 (define-public r-rbioapi
   (package
     (name "r-rbioapi")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbioapi" version))
        (sha256
-        (base32 "065621bbkxr9g6y6wl6ha41jqrh9bnagfdpcpmhi4sndp18vlz3n"))))
+        (base32 "11siimf60xv8f0gmf6vnf3rwfq4d13s6n7k2nv5df9bx9g5dbl01"))))
     (properties `((upstream-name . "rbioapi")))
     (build-system r-build-system)
     (arguments

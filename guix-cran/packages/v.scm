@@ -1469,13 +1469,13 @@ additions).")
 (define-public r-vosonsml
   (package
     (name "r-vosonsml")
-    (version "0.32.7")
+    (version "0.35.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vosonSML" version))
        (sha256
-        (base32 "1fs939zq2vnilc3fp6cplsqk0iz71i8xjdcbvspsccw7rsdp2qs8"))))
+        (base32 "0094p4vi70kbciaf4lzd47mdxdfpn3x4frfikhxhrwdl8f9rmpx4"))))
     (properties `((upstream-name . "vosonSML")))
     (build-system r-build-system)
     (arguments
@@ -1489,17 +1489,17 @@ additions).")
                              r-purrr
                              r-lubridate
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-dplyr
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/vosonlab/vosonSML")
+    (home-page "https://vosonlab.github.io/vosonSML/")
     (synopsis
      "Collecting Social Media Data and Generating Networks for Analysis")
     (description
      "This package provides a suite of easy to use functions for collecting social
-media data and generating networks for analysis.  Supports Twitter,
-@code{YouTube}, Reddit and web site data sources.")
+media data and generating networks for analysis.  Supports Mastodon,
+@code{YouTube}, Reddit and Web 1.0 data sources.")
     (license license:gpl3+)))
 
 (define-public r-vosondash

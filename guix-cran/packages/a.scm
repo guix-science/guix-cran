@@ -15793,13 +15793,13 @@ in the `alr3` package as well, so only one of them should be used.")
 (define-public r-alqrfe
   (package
     (name "r-alqrfe")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alqrfe" version))
        (sha256
-        (base32 "0lzw1sk4iaqzmg1a39v3wxcgj9hchyjcxq7b3nm83al8r75rfvdk"))))
+        (base32 "0xablian48jg3f45x8c28j5f4bjzzhf3f154f9h3v0lpygkwgswh"))))
     (properties `((upstream-name . "alqrfe")))
     (build-system r-build-system)
     (arguments
@@ -25306,13 +25306,13 @@ arbitrary text input.")
 (define-public r-acro
   (package
     (name "r-acro")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acro" version))
        (sha256
-        (base32 "0vm1828zb90kqj7vz16mpai7b975frmgd4hvs357cdgiam1hga76"))))
+        (base32 "08fmfz171dmfiwv5dhvjn3fy4g8qb7sfhcvjxbwwhpshp6m7r3n0"))))
     (properties `((upstream-name . "acro")))
     (build-system r-build-system)
     (arguments
@@ -25324,12 +25324,8 @@ arbitrary text input.")
     (synopsis
      "Tool for Semi-Automating the Statistical Disclosure Control of Research Outputs")
     (description
-     "Assists researchers and output checkers by distinguishing between research
-output that is safe to publish, output that requires further analysis, and
-output that cannot be published because of substantial disclosure risk.  A paper
-about the tool was presented at the UNECE Expert Meeting on Statistical Data
-Confidentiality 2023; see
-<https://uwe-repository.worktribe.com/output/11060964>.")
+     "This package provides a Tool for Semi-Automating the Statistical Disclosure
+Control of Research Outputs.")
     (license license:expat)))
 
 (define-public r-acorn

@@ -28181,13 +28181,13 @@ tidygraph objects, and on one-mode and two-mode (bipartite) networks.")
 (define-public r-migest
   (package
     (name "r-migest")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migest" version))
        (sha256
-        (base32 "0gksf8f1arpzxmcid1vskkf4s2r6k4n0ss85cag9429lmjpix5h4"))))
+        (base32 "04s5kczg19klzlbhy3mh5y3swqq01ydrw5bg2lnmmsdpaz9jp9xq"))))
     (properties `((upstream-name . "migest")))
     (build-system r-build-system)
     (arguments
@@ -28201,14 +28201,18 @@ tidygraph objects, and on one-mode and two-mode (bipartite) networks.")
                              r-migration-indices
                              r-matrixstats
                              r-magrittr
+                             r-lpsolve
                              r-forcats
                              r-dplyr
+                             r-cvxr
                              r-circlize))
     (home-page "http://guyabel.github.io/migest/")
-    (synopsis "Methods for the Indirect Estimation of Bilateral Migration")
+    (synopsis
+     "Tools for Estimating, Measuring and Working with Migration Data")
     (description
-     "This package provides tools for estimating, measuring and working with migration
-data.")
+     "This package provides tools for estimating, measuring, and analyzing migration
+data.  Designed to assist researchers and analysts in working effectively with
+migration data.")
     (license license:gpl3)))
 
 (define-public r-migee
@@ -48083,13 +48087,13 @@ codes.")
 (define-public r-mapi
   (package
     (name "r-mapi")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapi" version))
        (sha256
-        (base32 "1q23sm6ydwgmgahpdsnnvglam1lcg8mziawkk1j00klp513cscv4"))))
+        (base32 "0qwaqgwms2qx5zz5c9n0zziyc5snvfpvsyvjinb64myghyk7d3nj"))))
     (properties `((upstream-name . "mapi")))
     (build-system r-build-system)
     (arguments
@@ -48114,13 +48118,13 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.3")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "1c5f23qj80767s94b8j166bag86ljgac2r8lsfgn27jslzjjy4ww"))))
+        (base32 "0r5vxlg7ryz6kxzr9jxvpacbrq1cig3xrf8lfz797wb8zg95b6gm"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
     (arguments
@@ -50878,39 +50882,6 @@ Gaussian process Inference) of Yang, Wong, and Kou (2021)
 <doi:10.1073/pnas.2020397118>.  A user guide is provided by the accompanying
 software paper Wong, Yang, and Kou (2024) <doi:10.18637/jss.v109.i04>.")
     (license license:expat)))
-
-(define-public r-magee
-  (package
-    (name "r-magee")
-    (version "1.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MAGEE" version))
-       (sha256
-        (base32 "1gwm82iwji0wviy2d3brws9d3iqwgxlkcf4b24b9hcvfl1kgglb6"))))
-    (properties `((upstream-name . "MAGEE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-mass
-                             r-gmmat
-                             r-foreach
-                             r-data-table
-                             r-compquadform))
-    (home-page "https://cran.r-project.org/package=MAGEE")
-    (synopsis "Mixed Model Association Test for GEne-Environment Interaction")
-    (description
-     "Use a glmmkin class object (GMMAT package) from the null model to perform
-generalized linear mixed model-based single-variant and variant set main effect
-tests, gene-environment interaction tests, and joint tests for association, as
-proposed in Wang et al. (2020) <DOI:10.1002/gepi.22351>.")
-    (license license:gpl3+)))
 
 (define-public r-magclass
   (package

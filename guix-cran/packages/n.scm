@@ -13878,13 +13878,13 @@ interventions.  They have been developed and applied in Langendorf and Burgess
 (define-public r-netcoin
   (package
     (name "r-netcoin")
-    (version "2.1.0")
+    (version "2.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netCoin" version))
        (sha256
-        (base32 "16ddm27vvwiiqxxjk4rpi7pv147739kmk5fwfmhdbd50vrc0769z"))))
+        (base32 "1vj3c4knaxspqz6aczdirp5qi2b1z2fks8jpvzxs9ik6k10mpbib"))))
     (properties `((upstream-name . "netCoin")))
     (build-system r-build-system)
     (arguments

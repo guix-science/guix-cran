@@ -9,8 +9,8 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages algebra)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages algebra)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages photo)
   #:use-module (gnu packages python)
@@ -2400,6 +2400,37 @@ given target value in smaller computation time than algorithm B.")
 conflicts.  This package will be imported by @code{tidySingleCellExperiment} and
 tidyseurat'.")
     (license license:gpl3)))
+
+(define-public r-ttscreening
+  (package
+    (name "r-ttscreening")
+    (version "1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ttScreening" version))
+       (sha256
+        (base32 "08azvpw54a4snkikq48n40hgxd7hym6yn8qjaglc9hhrs6ghwfrp"))))
+    (properties `((upstream-name . "ttScreening")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sva
+                             r-simsalapar
+                             r-matrixstats
+                             r-mass
+                             r-limma
+                             r-corpcor))
+    (home-page "https://cran.r-project.org/package=ttScreening")
+    (synopsis
+     "Genome-Wide DNA Methylation Sites Screening by Use of Training and Testing Samples")
+    (description
+     "This package provides a screening process utilizing training and testing samples
+to filter out uninformative DNA methylation sites.  Surrogate variables (SVs) of
+DNA methylation are included in the filtering process to explain unknown factor
+effects.")
+    (license license:artistic2.0)))
 
 (define-public r-tts
   (package
@@ -6200,13 +6231,13 @@ Science, pages 107-120 <doi: 10.1007/BFb0017135>.")
 (define-public r-troopdata
   (package
     (name "r-troopdata")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "troopdata" version))
        (sha256
-        (base32 "1rm99v6knbbrrrydxxrjda4bwr64lgm0rib5wffg42an5b9k044i"))))
+        (base32 "1r2k9673hq1bmnlhb5kwjgy4czfmd57aazr33zfwd6wmfpwkjpd7"))))
     (properties `((upstream-name . "troopdata")))
     (build-system r-build-system)
     (arguments
@@ -15675,13 +15706,13 @@ its dependency.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "1jb82smsdrg08lk7r14hs7gavkcw98sfq50vrzxbb65gs60rikgm"))))
+        (base32 "1dp1cdkdr9gxwi7s3pz5i21fsyi6xk9qinb8f8qirbllf5csax5d"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (arguments
@@ -17436,13 +17467,13 @@ get tidy data frames in response, and cache data in a local database.")
 (define-public r-tidywater
   (package
     (name "r-tidywater")
-    (version "0.8.2")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidywater" version))
        (sha256
-        (base32 "01ahgrj1wgm6ypk70mk1hcxnyb1wmnmzi4hvjkf3hd26c43fsd7i"))))
+        (base32 "0si1pkbg1ib1dinl8karvy8ya0dcrj30nr03jg1qkr01sknh06sz"))))
     (properties `((upstream-name . "tidywater")))
     (build-system r-build-system)
     (arguments
@@ -17464,9 +17495,12 @@ get tidy data frames in response, and cache data in a local database.")
     (synopsis "Water Quality Models for Drinking Water Treatment Processes")
     (description
      "This package provides multiple water chemistry-based models and published
-empirical models in one standard format.  Functions can be chained together to
-model a complete treatment process and are designed to work in a tidyverse
-workflow.  Models are primarily based on these sources: Benjamin, M. M. (2002,
+empirical models in one standard format.  As many models have been included as
+possible, however, users should be aware that models have varying degrees of
+accuracy and applicability.  To learn more, read the references provided below
+for the models implemented.  Functions can be chained together to model a
+complete treatment process and are designed to work in a tidyverse workflow.
+Models are primarily based on these sources: Benjamin, M. M. (2002,
 ISBN:147862308X), Crittenden, J. C., Trussell, R., Hand, D., Howe, J. K., &
 Tchobanoglous, G., Borchardt, J. H. (2012, ISBN:9781118131473), USEPA. (2001)
 <https://www.epa.gov/sites/default/files/2017-03/documents/wtp_model_v._2.0_manual_508.pdf>.")
@@ -21547,19 +21581,20 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-thisutils
   (package
     (name "r-thisutils")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisutils" version))
        (sha256
-        (base32 "02yv8rrni2gvpx5v74vkhbw0y1dsvqjpnjwfimymdb42w9n5wsj7"))))
+        (base32 "0z71i6jf26vf106wgl10db7yhlbsyy0dwsp9dkh9pvmbb2480cdx"))))
     (properties `((upstream-name . "thisutils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppparallel
+    (propagated-inputs (list r-rlang
+                             r-rcppparallel
                              r-rcpparmadillo
                              r-rcpp
                              r-purrr
@@ -21567,7 +21602,7 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
                              r-foreach
                              r-doparallel
                              r-cli))
-    (home-page "https://github.com/mengxu98/thisutils")
+    (home-page "https://mengxu98.github.io/thisutils/")
     (synopsis
      "Collection of Utility Functions for Data Analysis and Computing")
     (description
@@ -31419,6 +31454,55 @@ crustal deformation and other tectonic changes, allowing for a more accurate
 representation of biogeographic system dynamics.  For more information see De
 Groeve et al. (2025) <doi:10.3897/arphapreprints.e151900>.")
     (license license:gpl3+)))
+
+(define-public r-tabr
+  (package
+    (name "r-tabr")
+    (version "0.5.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tabr" version))
+       (sha256
+        (base32 "1mp2j3f373hhqfk9mjp63qlkdcgmaq5iszk5bzzgyy8gn05y9722"))))
+    (properties `((upstream-name . "tabr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-purrr
+                             r-ggplot2
+                             r-dplyr
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/leonawicz/tabr")
+    (synopsis
+     "Music Notation Syntax, Manipulation, Analysis and Transcription in R")
+    (description
+     "This package provides a music notation syntax and a collection of music
+programming functions for generating, manipulating, organizing, and analyzing
+musical information in R. Music syntax can be entered directly in character
+strings, for example to quickly transcribe short pieces of music.  The package
+contains functions for directly performing various mathematical, logical and
+organizational operations and musical transformations on special object classes
+that facilitate working with music data and notation.  The same music data can
+be organized in tidy data frames for a familiar and powerful approach to the
+analysis of large amounts of structured music data.  Functions are available for
+mapping seamlessly between these formats and their representations of musical
+information.  The package also provides an API to @code{LilyPond}
+(<https://lilypond.org/>) for transcribing musical representations in R into
+tablature (\"tabs\") and sheet music. @code{LilyPond} is open source music
+engraving software for generating high quality sheet music based on markup
+syntax.  The package generates @code{LilyPond} files from R code and can pass
+them to the @code{LilyPond} command line interface to be rendered into sheet
+music PDF files or inserted into R markdown documents.  The package offers
+nominal MIDI file output support in conjunction with rendering sheet music.  The
+package can read MIDI files and attempts to structure the MIDI data to integrate
+as best as possible with the data structures and functionality found throughout
+the package.")
+    (license license:expat)))
 
 (define-public r-taboolar
   (package
