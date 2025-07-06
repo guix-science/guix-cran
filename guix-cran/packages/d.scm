@@ -354,13 +354,13 @@ groups through time, developed in Matias and Miele (2016)
 (define-public r-dynrb
   (package
     (name "r-dynrb")
-    (version "0.18")
+    (version "0.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynRB" version))
        (sha256
-        (base32 "0sz0a1g6z48f0s7ch86y9mvazwk4gdswjj179a13d0yjhy9rgpk0"))))
+        (base32 "047dmcaaf8a28ir89nqv6hh60winixc149h02fy8843v1mjrhq67"))))
     (properties `((upstream-name . "dynRB")))
     (build-system r-build-system)
     (arguments

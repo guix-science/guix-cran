@@ -6482,42 +6482,6 @@ of clonal reconstitution dynamics.  Further details on the methods can be found
 in L. Del Core et al., (2022) <doi:10.1101/2022.07.08.499353>.")
     (license license:gpl3)))
 
-(define-public r-karel
-  (package
-    (name "r-karel")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "karel" version))
-       (sha256
-        (base32 "0nvzvd8aq0sipcvn8agjjd2k1wykpgc99nrrk2cxrlvsjbpd2w52"))))
-    (properties `((upstream-name . "karel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-purrr
-                             r-magrittr
-                             r-gifski
-                             r-ggplot2
-                             r-gganimate
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://mpru.github.io/karel/")
-    (synopsis "Learning programming with Karel the robot")
-    (description
-     "This is the R implementation of Karel the robot, a programming language created
-by Dr. R. E. Pattis at Stanford University in 1981.  Karel is an useful tool to
-teach introductory concepts about general programming, such as algorithmic
-decomposition, conditional statements, loops, etc., in an interactive and fun
-way, by writing programs to make Karel the robot achieve certain tasks in the
-world she lives in.  Originally based on Pascal, Karel was implemented in many
-languages through these decades, including Java', C++', Ruby and Python'.  This
-is the first package implementing Karel in R.")
-    (license license:gpl2)))
-
 (define-public r-karaoke
   (package
     (name "r-karaoke")
@@ -6747,13 +6711,13 @@ or the first Wasserstein distance.")
 (define-public r-kanova
   (package
     (name "r-kanova")
-    (version "0.3-17")
+    (version "0.3-18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kanova" version))
        (sha256
-        (base32 "080agirbaz1pnpmqyxf3hfqz9n41zb41xrcfwcaxf6a83pvv4fbb"))))
+        (base32 "0hzz3ap1qnmpkgfgv4w30qdwnfzf14aj76r8lnizsa0xywfahzpy"))))
     (properties `((upstream-name . "kanova")))
     (build-system r-build-system)
     (arguments
@@ -6767,7 +6731,7 @@ or the first Wasserstein distance.")
                              r-spatstat-explore))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=kanova")
-    (synopsis "Pseudo Anova for K-Functions")
+    (synopsis "Quasi Analysis of Variance for K-Functions")
     (description
      "One-way and two-way analysis of variance for replicated point patterns, grouped
 by one or two classification factors, on the basis of the corresponding

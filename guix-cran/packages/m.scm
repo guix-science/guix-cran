@@ -9405,13 +9405,13 @@ identification\" <doi:10.1038/s41592-021-01331-z>.")
 (define-public r-mseapca
   (package
     (name "r-mseapca")
-    (version "2.0.3")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mseapca" version))
        (sha256
-        (base32 "0kmli8dmkv7dacb52dz84plhr4ncagch2kzh61amhga4chwqhwzq"))))
+        (base32 "0j0ahx4lv3r947slbq1lwzhbinjpjadqfqg4v6gc88mldxka2474"))))
     (properties `((upstream-name . "mseapca")))
     (build-system r-build-system)
     (arguments
@@ -9422,8 +9422,10 @@ identification\" <doi:10.1038/s41592-021-01331-z>.")
     (synopsis "Metabolite Set Enrichment Analysis for Loadings")
     (description
      "Computing metabolite set enrichment analysis (MSEA) (Yamamoto, H. et al. (2014)
-<doi:10.1186/1471-2105-15-51>) and single sample enrichment analysis (SSEA)
-(Yamamoto, H. (2023) <doi:10.51094/jxiv.262>).")
+<doi:10.1186/1471-2105-15-51>), single sample enrichment analysis (SSEA)
+(Yamamoto, H. (2023) <doi:10.51094/jxiv.262>) and over-representation analysis
+(ORA) that accounts for undetected metabolites (Yamamoto, H. (2024)
+<doi:10.51094/jxiv.954>).")
     (license license:lgpl3)))
 
 (define-public r-msdrought
@@ -11098,19 +11100,24 @@ Outcomes, Biometrics.")
 (define-public r-mrds
   (package
     (name "r-mrds")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrds" version))
        (sha256
-        (base32 "0xrir814jmhp7kvp5jn3f5amy5lqjcrj6qmg5ffkj96yzmpc4ab2"))))
+        (base32 "03dx3xc599915z9ibig43ys8b65yp0f8dz7nrdzqzmlb1d95kc55"))))
     (properties `((upstream-name . "mrds")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rsolnp r-optimx r-numderiv r-nloptr r-mgcv))
+    (propagated-inputs (list r-rsolnp
+                             r-rdpack
+                             r-optimx
+                             r-numderiv
+                             r-nloptr
+                             r-mgcv))
     (home-page "https://github.com/DistanceDevelopment/mrds/")
     (synopsis "Mark-Recapture Distance Sampling")
     (description
@@ -12820,6 +12827,35 @@ animals, as well as functions to visualize and quantify space use for
 individuals aggregated in groups.  Originally written with passive acoustic
 telemetry in mind, this package also provides functionality to account for
 unbalanced acoustic receiver array designs, and satellite tag data.")
+    (license license:expat)))
+
+(define-public r-moveez
+  (package
+    (name "r-moveez")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "moveEZ" version))
+       (sha256
+        (base32 "09kfm54kckxp1dysx42n5kchia5ahh98k4rfh7xa2vsqpmy1d0i8"))))
+    (properties `((upstream-name . "moveEZ")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gpabin r-ggplot2 r-gganimate r-dplyr r-biplotez))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=moveEZ")
+    (synopsis "Animated Biplots")
+    (description
+     "Create animated biplots that enables dynamic visualisation of temporal or
+sequential changes in multivariate data by animating a single biplot across the
+levels of a time variable.  It builds on objects from the @code{biplotEZ}
+package, Lubbe S, le Roux N, Nienkemper-Swanepoel J, Ganey R, Buys R, Adams Z,
+Manefeldt P (2024) <doi:10.32614/CRAN.package.@code{biplotEZ>}, allowing users
+to create animated biplots that reveal how both samples and variables evolve
+over time.")
     (license license:expat)))
 
 (define-public r-movedesign
@@ -28712,6 +28748,34 @@ block coordinate descent.  High-dimensional mixed frequency time-series data can
 also be easily manipulated with functions provided in the package.")
     (license license:gpl2+)))
 
+(define-public r-midasim
+  (package
+    (name "r-midasim")
+    (version "2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MIDASim" version))
+       (sha256
+        (base32 "0hgqpqmjil3icp0sngvhbsgf9ywilqv438zyqxpifr4bpca0s7w4"))))
+    (properties `((upstream-name . "MIDASim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scam r-psych r-pracma r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mengyu-he/MIDASim")
+    (synopsis "Simulating Realistic Microbiome Data using 'MIDASim'")
+    (description
+     "The MIDASim package is a microbiome data simulator for generating realistic
+microbiome datasets by adapting a user-provided template.  It supports the
+controlled introduction of experimental signals-such as shifts in taxon relative
+abundances, prevalence, and sample library sizes-to create distinct synthetic
+populations under diverse simulation scenarios.  For more details, see He et al.
+(2024) <doi:10.1186/s40168-024-01822-z>.")
+    (license license:gpl2)))
+
 (define-public r-midas2
   (package
     (name "r-midas2")
@@ -31367,23 +31431,21 @@ an implementation of Chen (2013) <doi:10.1002/bimj.201200195>.")
 (define-public r-mgcviz
   (package
     (name "r-mgcviz")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mgcViz" version))
        (sha256
-        (base32 "0lnp2m1z3hs2wrnfp7wpp70gg2gqzi8ak0c2xp1gc48y79pgp3g2"))))
+        (base32 "0wr9nch5yd6ygcpqn4zx49v52i2qv4d9p7c8aykkafj5sbn73v42"))))
     (properties `((upstream-name . "mgcViz")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-viridis
-                             r-shiny
                              r-qgam
                              r-plyr
-                             r-miniui
                              r-mgcv
                              r-matrixstats
                              r-kernsmooth

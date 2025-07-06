@@ -13454,13 +13454,13 @@ covariate values within each treatment group.")
 (define-public r-stepmixr
   (package
     (name "r-stepmixr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stepmixr" version))
        (sha256
-        (base32 "0yh0dbv14bdzwlz3fwl5ibmmg2nzb6prfdwribavfndx8zxbwgn7"))))
+        (base32 "1brbbklfi5kpbbjbvazbxkv6flxg8z9bvlqy4dvqs3cfp4izqlsl"))))
     (properties `((upstream-name . "stepmixr")))
     (build-system r-build-system)
     (arguments
@@ -13478,7 +13478,8 @@ Maximum Likelihood (FIML) and provides multiple stepwise
 Expectation-Maximization (EM) estimation methods based on pseudolikelihood
 theory.  Additional features include support for covariates and distal outcomes,
 various simulation utilities, and non-parametric bootstrapping, which allows
-inference in semi-supervised and unsupervised settings.")
+inference in semi-supervised and unsupervised settings.  Software paper
+available at <doi:10.18637/jss.v113.i08>.")
     (license license:gpl2)))
 
 (define-public r-stepjglm
@@ -17317,50 +17318,6 @@ yield and stability (1991) (<doi:10.2134/agronj1991.00021962008300010037x>),
 Additive Main Effects and Multiplicative Interaction (AMMI) method and Genotype
 plus Genotypes by Environment (GGE) Interaction methods.")
     (license license:gpl2)))
-
-(define-public r-stabiliser
-  (package
-    (name "r-stabiliser")
-    (version "1.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stabiliser" version))
-       (sha256
-        (base32 "1zyqmj8s8x0h8dji50r3yhn3n3838vci81gm02p971px8x5wq9y8"))))
-    (properties `((upstream-name . "stabiliser")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rsample
-                             r-recipes
-                             r-purrr
-                             r-ncvreg
-                             r-matrixstats
-                             r-lmertest
-                             r-lme4
-                             r-knitr
-                             r-hmisc
-                             r-glmnet
-                             r-ggplot2
-                             r-expss
-                             r-dplyr
-                             r-caret
-                             r-broom
-                             r-bigstep))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=stabiliser")
-    (synopsis "Stabilising Variable Selection")
-    (description
-     "This package provides a stable approach to variable selection through stability
-selection and the use of a permutation-based objective stability threshold.
-Lima et al (2021) <doi:10.1038/s41598-020-79317-8>, Meinshausen and Buhlmann
-(2010) <doi:10.1111/j.1467-9868.2010.00740.x>.")
-    (license license:expat)))
 
 (define-public r-sta
   (package
@@ -34965,13 +34922,13 @@ components manually.")
 (define-public r-smvr
   (package
     (name "r-smvr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smvr" version))
        (sha256
-        (base32 "0sdnk9jiw3srl5vbsbrz6d8z90k9aca6ba5l9vcmdw5pgrv9ivk4"))))
+        (base32 "1k5g29lv6w8rci4lnrc8175dqr6l45f5gn0wggr85h6pggcgis2k"))))
     (properties `((upstream-name . "smvr")))
     (build-system r-build-system)
     (arguments
@@ -34979,11 +34936,12 @@ components manually.")
       #:tests? #f))
     (propagated-inputs (list r-vctrs r-rlang r-cli))
     (home-page "https://eitsupi.github.io/smvr/")
-    (synopsis "Simple Implementation of Semantic Versioning")
+    (synopsis "Simple Implementation of Semantic Versioning (SemVer)")
     (description
-     "Simple implementation of Semantic Versioning 2.0.0 on the vctrs package.  This
-package provides a simple way to create, compare, and manipulate semantic
-versions in R. It is designed to be lightweight and easy to use.")
+     "Simple implementation of Semantic Versioning 2.0.0 ('@code{SemVer}') on the
+vctrs package.  This package provides a simple way to create, compare, and
+manipulate semantic versions in R. It is designed to be lightweight and easy to
+use.")
     (license license:expat)))
 
 (define-public r-smvgraph
@@ -58373,6 +58331,42 @@ presented by Pek and @code{MacCallum} (2011) <doi:10.1080/00273171.2011.561068>
 and approximate casewise influence using scores and casewise likelihood.")
     (license license:gpl3)))
 
+(define-public r-semeffect
+  (package
+    (name "r-semeffect")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "semEffect" version))
+       (sha256
+        (base32 "0bqg2m7674n22dqn2m10y86ziv785kwh4k1hw7kmnlkd68y8j92y"))))
+    (properties `((upstream-name . "semEffect")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rcolorbrewer
+                             r-plspm
+                             r-piecewisesem
+                             r-lavaan
+                             r-ggplot2
+                             r-dplyr
+                             r-checkmate))
+    (home-page "https://github.com/PhDMeiwp/semEffect/")
+    (synopsis "Structural Equation Model Effect Analysis and Visualization")
+    (description
+     "This package provides standardized effect decomposition (direct, indirect, and
+total effects) for three major structural equation modeling frameworks: lavaan',
+@code{piecewiseSEM}', and plspm'.  Automatically handles zero-effect variables,
+generates publication-ready ggplot2 visualizations, and returns both wide-format
+and long-format effect tables.  Supports effect filtering, multi-model object
+inputs, and customizable visualization parameters.  For a general overview of
+the methods used in this package, see Rosseel (2012) <doi:10.18637/jss.v048.i02>
+and Lefcheck (2016) <doi:10.1111/2041-210X.12512>.")
+    (license license:gpl3)))
+
 (define-public r-semeff
   (package
     (name "r-semeff")
@@ -68303,6 +68297,40 @@ evaluating the quality of UMAP dimensionality reduction results\" (2025, in
 preparation).")
     (license license:gpl3)))
 
+(define-public r-sats
+  (package
+    (name "r-sats")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SATS" version))
+       (sha256
+        (base32 "1fv0jhr9iws0n078g8afnpb7h2qxz1jkpia4bmv4a66124p84c0p"))))
+    (properties `((upstream-name . "SATS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-iranges
+                             r-glmnet
+                             r-genomicranges
+                             r-dplyr
+                             r-bsgenome-hsapiens-ucsc-hg19
+                             r-biostrings))
+    (home-page "https://cran.r-project.org/package=SATS")
+    (synopsis "Signature Analyzer for Targeted Sequencing (SATS)")
+    (description
+     "This package performs mutational signature analysis for targeted sequenced
+tumors.  Unlike the canonical analysis of mutational signatures, SATS factorizes
+the mutation counts matrix into a panel context matrix (measuring the size of
+the targeted sequenced genome for each tumor in the unit of million base pairs
+(Mb)), a signature profile matrix, and a signature activity matrix.  SATS also
+calculates the expected number of mutations attributed by a signature, namely
+signature expectancy, for each targeted sequenced tumor.  For more details see
+Lee et al. (2024) <doi:10.1101/2023.05.18.23290188>.")
+    (license license:gpl2)))
+
 (define-public r-satres
   (package
     (name "r-satres")
@@ -70752,13 +70780,13 @@ from classic data sets in R.")
 (define-public r-sampcompr
   (package
     (name "r-sampcompr")
-    (version "0.3.1.1")
+    (version "0.3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sampcompR" version))
        (sha256
-        (base32 "0i74q2b2zd90b21cmnkix7xrw3f57wbbmnsmw0zcy1k66gb1x4q8"))))
+        (base32 "154wxpbnwl0fgwq0imnj123n12hjqnkzrl2y9ngv8iadrzgvlxi0"))))
     (properties `((upstream-name . "sampcompR")))
     (build-system r-build-system)
     (arguments

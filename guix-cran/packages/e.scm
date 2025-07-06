@@ -9566,13 +9566,13 @@ measure the performance of these designs.  It consist of the function
 (define-public r-equatiomatic
   (package
     (name "r-equatiomatic")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equatiomatic" version))
        (sha256
-        (base32 "189qsbgqrzp84ylb76s56fjgvfzcwb8llp7q0mdd1h3bfrvsxa14"))))
+        (base32 "10qrkq2wzyzip9226c0vhpjc6ws8zysaqiwzr2qyxf223pg42483"))))
     (properties `((upstream-name . "equatiomatic")))
     (build-system r-build-system)
     (arguments

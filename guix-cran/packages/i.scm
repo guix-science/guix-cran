@@ -9323,6 +9323,41 @@ subsets, ranges, regular expressions and others.  Implemented operators work on
 vectors, matrices, and lists.")
     (license license:gpl3)))
 
+(define-public r-ino
+  (package
+    (name "r-ino")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ino" version))
+       (sha256
+        (base32 "1f1rjckwxbmak7maxyb1s9vhks9kq2j7dr1ddx3p1fkbg6cz9pck"))))
+    (properties `((upstream-name . "ino")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-r6
+                             r-portion
+                             r-optimizer
+                             r-oeli
+                             r-normalize
+                             r-ggplot2
+                             r-future-apply
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://loelschlaeger.de/ino/")
+    (synopsis "Initialization of Numerical Optimization")
+    (description
+     "Analysis of the initialization for numerical optimization of real-valued
+functions, particularly likelihood functions of statistical models.  See
+<https://loelschlaeger.de/ino/> for more details.")
+    (license license:gpl3+)))
+
 (define-public r-innsight
   (package
     (name "r-innsight")
@@ -11430,6 +11465,78 @@ presence/absence patterns (with data ordered by the tips of the tree) are
 required.  See Dang et al. (2016) <doi:10.1534/genetics.116.191973> for more
 details.")
     (license license:gpl2+)))
+
+(define-public r-indago
+  (package
+    (name "r-indago")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inDAGO" version))
+       (sha256
+        (base32 "08h5pk4q2mis97bmyqnqcssc5wcffn07xmfjv23pqvmk01g45h38"))))
+    (properties `((upstream-name . "inDAGO")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xvector
+                             r-upsetr
+                             r-upsetjs
+                             r-tidyr
+                             r-tibble
+                             r-spscomps
+                             r-shortread
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyfiles
+                             r-shinycssloaders
+                             r-shiny
+                             r-seqinr
+                             r-s4vectors
+                             r-rtracklayer
+                             r-rsubread
+                             r-rsamtools
+                             r-rintrojs
+                             r-reshape2
+                             r-readr
+                             r-r-devices
+                             r-plotly
+                             r-pheatmap
+                             r-paletteer
+                             r-memuse
+                             r-matrixstats
+                             r-magrittr
+                             r-limma
+                             r-htmltools
+                             r-hmisc
+                             r-heatmaply
+                             r-ggrepel
+                             r-ggplot2
+                             r-fs
+                             r-edger
+                             r-dt
+                             r-dplyr
+                             r-data-table
+                             r-checkmate
+                             r-callr
+                             r-bslib
+                             r-bsicons
+                             r-biostrings
+                             r-biocgenerics
+                             r-bigtabulate))
+    (home-page "https://github.com/inDAGOverse/inDAGO")
+    (synopsis "GUI for Dual and Bulk RNA-Sequencing Analysis")
+    (description
+     "This package provides a shiny app that supports both dual and bulk RNA-seq, with
+the dual RNA-seq functionality offering the flexibility to perform either a
+sequential approach (where reads are mapped separately to each genome) or a
+combined approach (where reads are aligned to a single merged genome).  The
+user-friendly interface automates the analysis process, providing step-by-step
+guidance, making it easy for users to navigate between different analysis steps,
+and download intermediate results and publication-ready plots.")
+    (license license:gpl3+)))
 
 (define-public r-incubate
   (package
@@ -18165,22 +18272,24 @@ Q., Zhou, H., and Cai, J. (2017) <doi:10.1093/biomet/asw067>.")
 (define-public r-icmstate
   (package
     (name "r-icmstate")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icmstate" version))
        (sha256
-        (base32 "0nkvfa03vzmq1sh95fbc16820666afs16v60iprw1n3426gxiyls"))))
+        (base32 "1gxfhm07h303220hr7gk4whf2xm97r0p7x140isc7zhdwmsc3fnf"))))
     (properties `((upstream-name . "icmstate")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp
+    (propagated-inputs (list r-survival
+                             r-rcpp
                              r-prodlim
                              r-mstate
                              r-msm
+                             r-jops
                              r-igraph
                              r-ggplot2
                              r-desolve

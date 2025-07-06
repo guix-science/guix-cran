@@ -4487,6 +4487,47 @@ decision trees, neural networks), comprehensive analytics, and thorough
 documentation.")
     (license license:gpl3)))
 
+(define-public r-rtestim
+  (package
+    (name "r-rtestim")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rtestim" version))
+       (sha256
+        (base32 "0psvdmd6f878n3qq39ddsnyd5f200f22vsshi8hnwr581kj73qpl"))))
+    (properties `((upstream-name . "rtestim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tvdenoising
+                             r-tibble
+                             r-testthat
+                             r-rlang
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-ggplot2
+                             r-dspline
+                             r-cli
+                             r-checkmate
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dajmcdon/rtestim")
+    (synopsis
+     "Estimate the Effective Reproductive Number with Trend Filtering")
+    (description
+     "Use trend filtering, a type of regularized nonparametric regression, to estimate
+the instantaneous reproduction number, also called Rt.  This value roughly says
+how many new infections will result from each new infection today.  Values
+larger than 1 indicate that an epidemic is growing while those less than 1
+indicate decline.  For more details about this methodology, see Liu, Cai,
+Gustafson, and @code{McDonald} (2024) <doi:10.1371/journal.pcbi.1012324>.")
+    (license license:expat)))
+
 (define-public r-rtern
   (package
     (name "r-rtern")
@@ -6673,6 +6714,48 @@ an areal map, 3) picking out cases living within a buffer of certain size
 surrounding a site, etc.  For more information, please refer to Zhang W,etc.
 (2018) <doi:10.1016/j.envpol.2018.08.030>.")
     (license license:gpl3)))
+
+(define-public r-rspacer
+  (package
+    (name "r-rspacer")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rspacer" version))
+       (sha256
+        (base32 "16igkl5zh8y7g37rbpb6yk6762p1i94ah8ipjlqdhv0kp7abbbj5"))))
+    (properties `((upstream-name . "rspacer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-httr2
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-curl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lacdr/rspacer")
+    (synopsis "'RSpace' API Wrapper")
+    (description
+     "Wrapper for the RSpace Electronic Lab Notebook
+(<https://www.researchspace.com/>) API. This packages provides convenience
+functions to browse, search, create, and edit your RSpace documents.  In
+addition, it enables filling RSpace templates from R Markdown/Quarto templates
+or tabular data (e.g., Excel files).  This R package is not developed or
+endorsed by Research Space.")
+    (license license:expat)))
 
 (define-public r-rspa
   (package
@@ -9664,13 +9747,13 @@ Filzmoser (2014) <doi:10.17713/ajs.v43i4.44>), and robust sparse classification
 (define-public r-rrcov3way
   (package
     (name "r-rrcov3way")
-    (version "0.5-0")
+    (version "0.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rrcov3way" version))
        (sha256
-        (base32 "1n4wjxb5irgsm9yfhg5aav161ca2s1cgzhggxgf8xxyy1yw3xnk0"))))
+        (base32 "0xk9y0w6l6fg45zmdw4am7ajw1s8xjvgsyjaxypcfk7dr5pkd9cq"))))
     (properties `((upstream-name . "rrcov3way")))
     (build-system r-build-system)
     (arguments
@@ -33443,6 +33526,34 @@ Star Wars universe.  Data from the gapminder package is also included, as a
 simple data frame and in nested and split forms.")
     (license license:cc0)))
 
+(define-public r-reptiledb-data
+  (package
+    (name "r-reptiledb-data")
+    (version "0.0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "reptiledb.data" version))
+       (sha256
+        (base32 "0mg2514rsfa1632skdk7ap7q9s8iij92bmxydqxxvx03pvcbw4rh"))))
+    (properties `((upstream-name . "reptiledb.data")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-stringr r-rvest r-httr))
+    (home-page "https://github.com/PaulESantos/reptiledb.data")
+    (synopsis "Reptile Database Data")
+    (description
+     "This package provides easy access to The Reptile Database', a comprehensive
+catalogue of all living reptile species and their classification.  This package
+includes taxonomic data for over 10,000 reptile species, approximately 2,800 of
+which are subspecies, covering all extant reptiles.  The dataset features
+taxonomic names, synonyms, distribution data, type specimens, and literature
+references, making it ready for research and analysis.  Data is sourced from The
+Reptile Database <http://www.reptile-database.org/>.")
+    (license license:expat)))
+
 (define-public r-reptile
   (package
     (name "r-reptile")
@@ -37196,19 +37307,19 @@ hierarchical levels to create meaningful data panels and time series.")
 (define-public r-regioncode
   (package
     (name "r-regioncode")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regioncode" version))
        (sha256
-        (base32 "1q3d2s6x79i7v7phspabk3m7kld74jplv5wda9ybpyv1vzdinx99"))))
+        (base32 "012fadyzkcw2dimjzmday8b705xci1k8z9fq02wkqhkrhkvw45mj"))))
     (properties `((upstream-name . "regioncode")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pinyin r-dplyr))
+    (propagated-inputs (list r-pinyin))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=regioncode")
     (synopsis "Convert Region Names and Division Codes of China Over Years")
@@ -44369,13 +44480,13 @@ and will be transformed into a R data frame.")
 (define-public r-rcrisp
   (package
     (name "r-rcrisp")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcrisp" version))
        (sha256
-        (base32 "18lns8pfdy3gxnv3xb2b3gwkiwhlcwsjaly9gil1mzh0iq7c36fs"))))
+        (base32 "0zjc5bcaw1yd2jhbkcmbk5687rcj77ni0p3yynha0xz7hc0v8rna"))))
     (properties `((upstream-name . "rcrisp")))
     (build-system r-build-system)
     (arguments

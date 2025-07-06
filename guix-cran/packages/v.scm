@@ -2008,6 +2008,34 @@ birds and other biological signals in weather radar data.  See Dokter et al.
 (2011) <doi:10.1098/rsif.2010.0116> for a paper describing the methodology.")
     (license license:lgpl3+)))
 
+(define-public r-voigt
+  (package
+    (name "r-voigt")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "voigt" version))
+       (sha256
+        (base32 "104p1s8d6py7zqg09wncxs0z9gb6rx86glcfa914ikk6a6wypxhz"))))
+    (properties `((upstream-name . "voigt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pracma r-invgamma r-coda))
+    (home-page "https://cran.r-project.org/package=voigt")
+    (synopsis "The Voigt Distribution")
+    (description
+     "Random generation, density function and parameter estimation for the Voigt
+distribution.  The main objective of this package is to provide R users with
+efficient estimation of Voigt parameters using classic iid data in a Bayesian
+framework.  The estimating function allows flexible prior specification,
+specification of fixed parameters and several options for MCMC posterior
+simulation.  A basic version of the algorithm is described in: Cannas M. and
+Piras, N. (2025) <doi:10.1007/978-3-031-96303-2_53>.")
+    (license license:gpl2)))
+
 (define-public r-voicer
   (package
     (name "r-voicer")
@@ -4123,6 +4151,37 @@ accumulation rates and given depth intervals between consecutive samples.")
 model using algorithm by Jin, Lin and Tamvakis (2012)
 <doi.org/10.1016/j.eneco.2012.03.003>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-viralx
+  (package
+    (name "r-viralx")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "viralx" version))
+       (sha256
+        (base32 "06liywpwb9hwld51ya88mvdqfzkwwp6g4cahh2gllyvzl8q0lysp"))))
+    (properties `((upstream-name . "viralx")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-workflows r-recipes r-parsnip r-dalextra
+                             r-dalex))
+    (home-page "https://github.com/juanv66x/viralx")
+    (synopsis "Explainers for Regression Models in HIV Research")
+    (description
+     "This package provides a dedicated viral-explainer model tool designed to empower
+researchers in the field of HIV research, particularly in viral load and CD4
+(Cluster of Differentiation 4) lymphocytes regression modeling.  Drawing
+inspiration from the tidymodels framework for rigorous model building of Max
+Kuhn and Hadley Wickham (2020) <https://www.tidymodels.org>, and the DALEXtra
+tool for explainability by Przemyslaw Biecek (2020)
+<doi:10.48550/@code{arXiv.2009.13248>}.  It aims to facilitate interpretable and
+reproducible research in biostatistics and computational biology for the benefit
+of understanding HIV dynamics.")
+    (license license:expat)))
 
 (define-public r-viralmodels
   (package

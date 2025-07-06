@@ -4040,13 +4040,13 @@ al (1998, ISBN:92-5-104219-5)).")
 (define-public r-frscore
   (package
     (name "r-frscore")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frscore" version))
        (sha256
-        (base32 "1nss4kmsficfn7kwwcy6bvmpym9zz8cz8s7n6xdd168bhsr3z6gp"))))
+        (base32 "1wp3rrbrvnxq0cq6fkyy3hbf2xpfi01zcfgzia8amxgs8382lgb9"))))
     (properties `((upstream-name . "frscore")))
     (build-system r-build-system)
     (arguments
@@ -4062,12 +4062,11 @@ al (1998, ISBN:92-5-104219-5)).")
                              r-dplyr
                              r-cna))
     (home-page "https://cran.r-project.org/package=frscore")
-    (synopsis "Functions for Calculating Fit-Robustness of CNA-Solutions")
+    (synopsis "Calculate the Fit-Robustness of CNA-Solutions")
     (description
-     "This package provides functions for automatically performing a reanalysis series
-on a data set using CNA, and for calculating the fit-robustness of the resulting
-models, as described in Parkkinen and Baumgartner (2021)
-<doi:10.1177/0049124120986200>.")
+     "Automatically perform a reanalysis series on a data set using CNA, and calculate
+the fit-robustness of the resulting models, as described in Parkkinen and
+Baumgartner (2021) <doi:10.1177/0049124120986200>.")
     (license license:agpl3+)))
 
 (define-public r-froth
@@ -11316,13 +11315,13 @@ varying proteingroup denotations for common precursor.")
 (define-public r-flowscreen
   (package
     (name "r-flowscreen")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FlowScreen" version))
        (sha256
-        (base32 "1dia052gs5xqvri7cq0a14m84fb919gj5z1dgw0i1ykpd9aq0zc4"))))
+        (base32 "1528yiiz3zq4kqvd89ihm491lv8q3hm38ng4d9jinz5c7vwgrh5j"))))
     (properties `((upstream-name . "FlowScreen")))
     (build-system r-build-system)
     (arguments
@@ -11533,6 +11532,40 @@ A. J. MuÃ±oz-Pajares, J. Arroyo, and S. D. Johnson. (in press)
 \"@code{FlowerMate}: multidimensional reciprocity and inaccuracy indices for
 style-polymorphic plant populations.\".")
     (license license:gpl2+)))
+
+(define-public r-flowcluster
+  (package
+    (name "r-flowcluster")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flowcluster" version))
+       (sha256
+        (base32 "18nnvr6yihw1acgadk4q9zirrbgxjnninxa1gxn178wiyq24gjgr"))))
+    (properties `((upstream-name . "flowcluster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-sf
+                             r-lwgeom
+                             r-glue
+                             r-dplyr
+                             r-dbscan))
+    (home-page "https://hussein-mahfouz.github.io/flowcluster/")
+    (synopsis "Cluster Origin-Destination Flow Data")
+    (description
+     "This package provides functionality for clustering origin-destination (OD)
+pairs, representing desire lines (or flows).  This includes creating distance
+matrices between OD pairs and passing distance matrices to a clustering
+algorithm.  See the academic paper Tao and Thill (2016) <doi:10.1111/gean.12100>
+for more details on spatial clustering of flows.")
+    (license license:expat)))
 
 (define-public r-flowchart
   (package

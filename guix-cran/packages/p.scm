@@ -13352,13 +13352,13 @@ For more information on PPS, see <https://github.com/paulvanderlaken/ppsr>.")
 (define-public r-ppsfs
   (package
     (name "r-ppsfs")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PPSFS" version))
        (sha256
-        (base32 "180brwqcs2qjh01a1qwdy2a8g19scn4mxzc3s6pw8gyl2r3fzxi7"))))
+        (base32 "1vq8l7ri6q8g7a67ipbwf2xi1spkhgn9slzjmrvh5nfm5sxrv4s6"))))
     (properties `((upstream-name . "PPSFS")))
     (build-system r-build-system)
     (arguments
@@ -13372,7 +13372,7 @@ For more information on PPS, see <https://github.com/paulvanderlaken/ppsr>.")
      "This is an implementation of the partial profile score feature selection (PPSFS)
 approach to generalized linear (interaction) models.  The PPSFS is highly
 scalable even for ultra-high-dimensional feature space.  See the paper by Xu,
-Luo and Chen (2021, <doi:10.4310/21-SII706>).")
+Luo and Chen (2022, <doi:10.4310/21-SII706>).")
     (license license:gpl3)))
 
 (define-public r-ppseq
@@ -15992,13 +15992,13 @@ high-dimensional settings like Lasso selection.")
 (define-public r-posiadjrsquared
   (package
     (name "r-posiadjrsquared")
-    (version "0.0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PoSIAdjRSquared" version))
        (sha256
-        (base32 "1awdrw16pansw8m0lvm2ahbrmv2h3mv7yrcknj6dqypjqpiv5adg"))))
+        (base32 "0w8kv8d8jpw952wqnb3xzsk1lp59jzhwygdl8haif1j2yr1nwwc1"))))
     (properties `((upstream-name . "PoSIAdjRSquared")))
     (build-system r-build-system)
     (arguments
@@ -30821,13 +30821,13 @@ used to interface Python from R.")
 (define-public r-pharmaversesdtm
   (package
     (name "r-pharmaversesdtm")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaversesdtm" version))
        (sha256
-        (base32 "1q0hid9v6bb73fnvqlrvsv94hsa5sgk0az4bb4p01p9wj11mzyw3"))))
+        (base32 "1xalp0l305n1ixwy19nvisb83vrnjv7qh2w4h89hphhad9gbzixn"))))
     (properties `((upstream-name . "pharmaversesdtm")))
     (build-system r-build-system)
     (arguments

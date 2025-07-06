@@ -6440,13 +6440,13 @@ resampling methods, as in Coraggio, L. and Coretto, P. (2023)
 (define-public r-qch
   (package
     (name "r-qch")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qch" version))
        (sha256
-        (base32 "1d2mcyzfnpmr4pv036crhsc91gypj0jrn6hmd9jcnm49khqc0lan"))))
+        (base32 "0s0qxkahlyzpzvy5n94q9hk49kmlb39jzrjyqra8kr1l092avfhr"))))
     (properties `((upstream-name . "qch")))
     (build-system r-build-system)
     (arguments

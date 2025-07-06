@@ -14475,13 +14475,13 @@ visualization tools are also available within the package.")
 (define-public r-biometryassist
   (package
     (name "r-biometryassist")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biometryassist" version))
        (sha256
-        (base32 "01k1p3a2y8fiz1g0mx4rykcaywl3vkr5mc2pka9dlr8h0pvwd0wk"))))
+        (base32 "1aylsj1yyj3whndhzzk40s2v8ihigjlmvf7px01pa75c07zjbrlv"))))
     (properties `((upstream-name . "biometryassist")))
     (build-system r-build-system)
     (arguments
@@ -20764,13 +20764,13 @@ JAGS software is used to get posterior samples (Yang, Luo, @code{DeSantis}
 (define-public r-benthos
   (package
     (name "r-benthos")
-    (version "1.3-8")
+    (version "1.3-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "benthos" version))
        (sha256
-        (base32 "0pznxnf4wl47wc926diaf4h6x12grc9vxbzd8d4d5j18dp3wvr5z"))))
+        (base32 "16nlk271b5hwzmflp4skvyi46crxr0qa0ick2ac68xnx2ax8rw2c"))))
     (properties `((upstream-name . "benthos")))
     (build-system r-build-system)
     (arguments
@@ -23314,13 +23314,13 @@ exposures and outcomes.  For more details, see Talbot et al. (2015)
 (define-public r-bcea
   (package
     (name "r-bcea")
-    (version "2.4.7")
+    (version "2.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BCEA" version))
        (sha256
-        (base32 "0bjwf3x6gxn8v9z9bwfvw7fxfqh4b84gwmr72zz8gkwk90fkqpas"))))
+        (base32 "1m2d6w8dlj3g8q0jinyzyz2k2d8xdwzcyzmnddx9lsb44qkqyq0b"))))
     (properties `((upstream-name . "BCEA")))
     (build-system r-build-system)
     (arguments
@@ -23333,6 +23333,7 @@ exposures and outcomes.  For more details, see Talbot et al. (2015)
                              r-reshape2
                              r-rdpack
                              r-purrr
+                             r-plotly
                              r-mcmcvis
                              r-matrix
                              r-mass
@@ -28287,6 +28288,44 @@ clinical trials with noncompliance, and Zhou et al. (2021)
 Analgesia.")
     (license license:gpl2+)))
 
+(define-public r-bayesbrainmap
+  (package
+    (name "r-bayesbrainmap")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesBrainMap" version))
+       (sha256
+        (base32 "0mxsx8rpqs06791xaqmxs0arvl1hishkfwmi7vz2434h22cl1rw3"))))
+    (properties `((upstream-name . "BayesBrainMap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-squarem
+                             r-pesel
+                             r-matrixstats
+                             r-matrix
+                             r-foreach
+                             r-fmritools
+                             r-fmriscrub
+                             r-abind))
+    (home-page "https://github.com/mandymejia/BayesBrainMap")
+    (synopsis
+     "Estimate Brain Networks and Connectivity with Population-Derived Priors")
+    (description
+     "This package implements Bayesian brain mapping models, including the prior ICA
+(independent components analysis) model proposed in Mejia et al. (2020)
+<doi:10.1080/01621459.2019.1679638> and the spatial prior ICA model proposed in
+proposed in Mejia et al. (2022) <doi:10.1080/10618600.2022.2104289>.  Both
+models estimate subject-level brain as deviations from known population-level
+networks, which are estimated using standard ICA algorithms.  Both models employ
+an expectation-maximization algorithm for estimation of the latent brain
+networks and unknown model parameters.  Includes direct support for CIFTI',
+GIFTI', and NIFTI neuroimaging file formats.")
+    (license license:gpl3)))
+
 (define-public r-bayesbp
   (package
     (name "r-bayesbp")
@@ -31078,13 +31117,13 @@ conjugate hierarchical models are available: beta-binomial, gamma-Poisson and a
 (define-public r-banffit
   (package
     (name "r-banffit")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "banffIT" version))
        (sha256
-        (base32 "0b37j8xg2rg7gisp2m1rqvjfffqj0yfz54bq2fl0wckmgknkz05c"))))
+        (base32 "0kk4byvn870c85apnz2ff733fpkxzi007sm6ai2r36arh6nl9v64"))))
     (properties `((upstream-name . "banffIT")))
     (build-system r-build-system)
     (arguments
@@ -31101,8 +31140,7 @@ conjugate hierarchical models are available: beta-binomial, gamma-Poisson and a
                              r-crayon))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/PersonalizedTransplantCare/banffIT")
-    (synopsis
-     "Automatize Diagnosis Standardized Assignation Using the Banff Classification")
+    (synopsis "Automated Standardized Assignment of the Banff Classification")
     (description
      "Assigns standardized diagnoses using the Banff Classification (Category 1 to 6
 diagnoses, including Acute and Chronic active T-cell mediated rejection as well

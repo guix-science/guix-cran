@@ -17638,6 +17638,42 @@ inspired by the Bayesian graphical lasso function using blocked sampling,
 authored by Wang(2012) <doi:10.1214/12-BA729>.")
     (license license:gpl2)))
 
+(define-public r-ghrexplore
+  (package
+    (name "r-ghrexplore")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GHRexplore" version))
+       (sha256
+        (base32 "1laz1rv8ydqrwb8xww6lfvkgcm3dfxk1bifjllaqql8b7mrf29w2"))))
+    (properties `((upstream-name . "GHRexplore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-rcolorbrewer
+                             r-isoweek
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://earth.bsc.es/gitlab/ghr/ghrexplore")
+    (synopsis
+     "Exploratory Analysis of Temporal and Spatio-Temporal Health Data")
+    (description
+     "This package provides a collection of commonly used visualizations of temporal
+and spatio-temporal health data including case counts, incidence rates, and
+covariates.  The available plot types include time series, heatmaps, seasonality
+plots, maps and more.  The package supports standard data transformations such
+as temporal and spatial aggregations, while offering extensive customization
+options for the resulting figures.")
+    (license license:gpl2+)))
+
 (define-public r-ghql
   (package
     (name "r-ghql")
@@ -18045,13 +18081,13 @@ ggplot2 framework Wickham (2016) <doi:10.1007/978-3-319-24277-4>.")
 (define-public r-ggview
   (package
     (name "r-ggview")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggview" version))
        (sha256
-        (base32 "0jdpr4bmw9kzq41h42r1i4ravfvkv65n2xkmqn6gm23bhdwyngmj"))))
+        (base32 "0dbfqffrzrkmhbg6gk4f89jzgna9nzzbknzpkf1xggz4ijbzdhfc"))))
     (properties `((upstream-name . "ggview")))
     (build-system r-build-system)
     (arguments
@@ -18857,37 +18893,6 @@ investigating data.  The ggsoccer package provides a set of functions for
 elegantly displaying and exploring soccer event data with ggplot2'.  Providing
 extensible layers and themes, it is designed to work smoothly with a variety of
 popular sports data providers.")
-    (license license:expat)))
-
-(define-public r-ggsmc
-  (package
-    (name "r-ggsmc")
-    (version "0.1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggsmc" version))
-       (sha256
-        (base32 "1wgb5ml1bgfi6rddbvm3rfk6di9imyx17iflg8h42hhbvbvm93iy"))))
-    (properties `((upstream-name . "ggsmc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-poorman r-ggplot2 r-gganimate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/richardgeveritt/ggsmc")
-    (synopsis
-     "Visualising Output from Sequential Monte Carlo Samplers and Ensemble-Based Methods")
-    (description
-     "This package provides functions for plotting, and animating, the output of
-importance samplers, sequential Monte Carlo samplers (SMC) and ensemble-based
-methods.  The package can be used to plot and animate histograms, densities,
-scatter plots and time series, and to plot the genealogy of an SMC or
-ensemble-based algorithm.  These functions all rely on algorithm output to be
-supplied in tidy format.  A function is provided to transform algorithm output
-from matrix format (one Monte Carlo point per row) to the tidy format required
-by the plotting and animating functions.")
     (license license:expat)))
 
 (define-public r-ggshadow
@@ -20107,13 +20112,13 @@ the fly.")
 (define-public r-ggpedigree
   (package
     (name "r-ggpedigree")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggpedigree" version))
        (sha256
-        (base32 "0a4kq6imbi321rh4x2rgnkbad4ckllr939f2lpd5a4119rqf25xs"))))
+        (base32 "0yafjc19r5491kbnv6h4jhlcx19m7sx4w9vv9hm8z5bx1f71491j"))))
     (properties `((upstream-name . "ggpedigree")))
     (build-system r-build-system)
     (arguments
@@ -20125,9 +20130,7 @@ the fly.")
                              r-rlang
                              r-reshape2
                              r-plotly
-                             r-paletteer
                              r-kinship2
-                             r-ggrepel
                              r-ggplot2
                              r-dplyr
                              r-bgmisc))
@@ -20328,13 +20331,13 @@ then is divided in lines and pages for easy overview of up to quite large texts.
 (define-public r-ggpackets
   (package
     (name "r-ggpackets")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggpackets" version))
        (sha256
-        (base32 "1fdyr0m5rf1wy2pydvk12g7lw338iw026rxz98mv8kryrs32q7kh"))))
+        (base32 "1a94lz5k3fhsvcz42nz8pabvd1ndhm6rbq3pcm5vpjq8x7q7bwq2"))))
     (properties `((upstream-name . "ggpackets")))
     (build-system r-build-system)
     (arguments
@@ -33724,13 +33727,13 @@ by Mike Cavers via the <http://gaussfacts.com> site.")
 (define-public r-gausscov
   (package
     (name "r-gausscov")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gausscov" version))
        (sha256
-        (base32 "1ipf6fm76g44f93gzmij4ihh3r2qx2hw618lyi050czgij1f9i1m"))))
+        (base32 "137ip8r4zb3w8ghlyaa0wrjzb0vv95rcp1qvpd908wp40gqyy4kd"))))
     (properties `((upstream-name . "gausscov")))
     (build-system r-build-system)
     (arguments

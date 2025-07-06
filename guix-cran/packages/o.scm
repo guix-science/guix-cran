@@ -2521,6 +2521,36 @@ matrix, raster and single coordinates on a plain (Euclidean distance) or on a
 sphere (great-circle or orthodromic distance).")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-osbng
+  (package
+    (name "r-osbng")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osbng" version))
+       (sha256
+        (base32 "05d7gxmj0kaaw7zcir7n2maxhsgh1sw64jp7vqdzfrx34fvnv4n1"))))
+    (properties `((upstream-name . "osbng")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-geos))
+    (native-inputs (list r-knitr))
+    (home-page "https://ordnancesurvey.github.io/osbng-r/")
+    (synopsis "Geospatial Grid Indexing with the British National Grid")
+    (description
+     "Offers a streamlined programmatic interface to Ordnance Survey's British
+National Grid (BNG) index system, enabling efficient spatial indexing and
+analysis based on grid references.  It supports a range of geospatial
+applications, including statistical aggregation, data visualisation, and
+interoperability across datasets.  Designed for developers and analysts working
+with geospatial data in Great Britain, osbng simplifies integration with
+geospatial workflows and provides intuitive tools for exploring the structure
+and logic of the BNG system.")
+    (license license:expat)))
+
 (define-public r-oryzaprobe
   (package
     (name "r-oryzaprobe")
@@ -6550,13 +6580,13 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.16")
+    (version "1.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "1id4z2l98y432h4430b8fnfivb2kz2ymxx3w8s583bc7115d271l"))))
+        (base32 "0q7qg8jr8h1kylkqn5kgs5vgi7d7anj9flp0r83bb3m8r2hfmfs9"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (arguments

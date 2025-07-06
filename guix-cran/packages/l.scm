@@ -3976,13 +3976,13 @@ represented using the S4 class @code{lookupTable}.")
 (define-public r-lookup
   (package
     (name "r-lookup")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lookup" version))
        (sha256
-        (base32 "0ncmj1df64088qv0g2c0wd8n43qmi15358mz289hakg6z4h0dmyi"))))
+        (base32 "0ppxi97rw1sp71x9knbs59vd4vhxnc3kswd61i9ab5w2w6qbym4b"))))
     (properties `((upstream-name . "lookup")))
     (build-system r-build-system)
     (arguments
@@ -8871,13 +8871,13 @@ Cornwell & Weedon (2013) <doi:10.1111/2041-210X.12138>.")
 (define-public r-litter
   (package
     (name "r-litter")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "litteR" version))
        (sha256
-        (base32 "0lb8vl13w60dci4ygxqi2ap4ay1b2ywn8zmyigkn251sz9j2f4q9"))))
+        (base32 "1j6wj3dg7lwq6kki0461pzy2k7jhkgn0h5cjh2aa7hgwp6d37s09"))))
     (properties `((upstream-name . "litteR")))
     (build-system r-build-system)
     (arguments
@@ -17295,13 +17295,13 @@ linear spaces and front-end tools facilitating their use in the R ecosystem.")
 (define-public r-latrend
   (package
     (name "r-latrend")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "latrend" version))
        (sha256
-        (base32 "1g5hhl8himv1g3v70vs42jsxn1h04knh73m6yhzkgc2bnj16hr2r"))))
+        (base32 "1p468y9bnifk2ady9skc6521yzg1lv50m7m7wsliq5k0j2k6vq21"))))
     (properties `((upstream-name . "latrend")))
     (build-system r-build-system)
     (arguments
@@ -17317,7 +17317,7 @@ linear spaces and front-end tools facilitating their use in the R ecosystem.")
                              r-data-table
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/philips-software/latrend")
+    (home-page "https://github.com/niekdt/latrend")
     (synopsis "Framework for Clustering Longitudinal Data")
     (description
      "This package provides a framework for clustering longitudinal datasets in a
@@ -17977,13 +17977,13 @@ visualization tools.")
 (define-public r-lares
   (package
     (name "r-lares")
-    (version "5.3.0")
+    (version "5.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lares" version))
        (sha256
-        (base32 "1kmh8m19b4wclx7ahj1n79amaq3h3vhn66xz9xk6k3v7njf7fsi1"))))
+        (base32 "14qswq667s0cpxdlwlvrzzdzgrfkhm119ah5vxwyzpvsmw6chcm3"))))
     (properties `((upstream-name . "lares")))
     (build-system r-build-system)
     (arguments

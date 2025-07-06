@@ -25427,13 +25427,13 @@ An alternative to ggtern', which uses the ggplot2 family of plotting functions."
 (define-public r-tern-mmrm
   (package
     (name "r-tern-mmrm")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern.mmrm" version))
        (sha256
-        (base32 "0xw0ikqi352sg8nvh1g0pmychhagq6lzvawqv25qvb66mw5ayhpc"))))
+        (base32 "0b0hj70kvpf3n1ji3zkjlikh6bz0mydz99i1dc9v9zj0a66r2435"))))
     (properties `((upstream-name . "tern.mmrm")))
     (build-system r-build-system)
     (arguments

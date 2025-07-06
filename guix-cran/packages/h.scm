@@ -1898,13 +1898,13 @@ problems.")
 (define-public r-hvt
   (package
     (name "r-hvt")
-    (version "25.2.4")
+    (version "25.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HVT" version))
        (sha256
-        (base32 "12y46p0z9n31nq4nqx9xa4g59dna50wwn0lzf7hpfq3830q4nmi7"))))
+        (base32 "1k24p0wns7wl87ah56d7np18kcd47d341a0qb1n1sdh51cf9hjx8"))))
     (properties `((upstream-name . "HVT")))
     (build-system r-build-system)
     (arguments
@@ -1924,7 +1924,6 @@ problems.")
                              r-magrittr
                              r-gridextra
                              r-ggplot2
-                             r-gganimate
                              r-fnn
                              r-dplyr
                              r-deldir
@@ -6355,6 +6354,43 @@ Mortality Database (<https://www.ipss.go.jp/p-toukei/JMD/index-en.html>), and
 the Canadian Human Mortality Database (<http://www.bdlc.umontreal.ca/chmd/>).
 Arguments and data are standardized.")
     (license license:gpl2)))
+
+(define-public r-hmde
+  (package
+    (name "r-hmde")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmde" version))
+       (sha256
+        (base32 "0vj381zzcmmmzm8nyin0r7h9nnl0a6vrs35mgns70h5i8l5zmagb"))))
+    (properties `((upstream-name . "hmde")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-purrr
+                             r-ggplot2
+                             r-dplyr
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://traitecoevo.github.io/hmde/")
+    (synopsis "Hierarchical Methods for Differential Equations")
+    (description
+     "Wrapper for Stan that offers a number of in-built models to implement a
+hierarchical Bayesian longitudinal model for repeat observation data.  Model
+choice selects the differential equation that is fit to the observations.
+Single and multi-individual models are available.  O'Brien et al. (2024)
+<doi:10.1111/2041-210X.14463>.")
+    (license license:gpl3+)))
 
 (define-public r-hmda
   (package
@@ -15589,6 +15625,44 @@ Partially Balanced Incomplete Block (PBIB) designs is much evident from
 literature.  Here, we have constructed Incomplete Block Designs (IBDs) based on
 Hadamard matrices and Kronecker product of Hadamard matrices.")
     (license license:gpl2+)))
+
+(define-public r-hadex
+  (package
+    (name "r-hadex")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HaDeX" version))
+       (sha256
+        (base32 "11lxdfrigiy0y9y0di9vljfxbm7l15yphkjhwi5wmgbz9d85psv4"))))
+    (properties `((upstream-name . "HaDeX")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-shiny
+                             r-reshape2
+                             r-readxl
+                             r-readr
+                             r-latex2exp
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=HaDeX")
+    (synopsis
+     "Analysis and Visualisation of Hydrogen/Deuterium Exchange Mass Spectrometry Data")
+    (description
+     "This package provides functions for processing, analysis and visualization of
+Hydrogen Deuterium @code{eXchange} monitored by Mass Spectrometry experiments
+(HDX-MS) (<doi:10.1093/bioinformatics/btaa587>). @code{HaDeX} introduces a new
+standardized and reproducible workflow for the analysis of the HDX-MS data,
+including novel uncertainty intervals.  Additionally, it covers data
+exploration, quality control and generation of publication-quality figures.  All
+functionalities are also available in the in-built Shiny app.")
+    (license license:gpl3)))
 
 (define-public r-hadamardr
   (package

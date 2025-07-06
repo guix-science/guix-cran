@@ -18847,13 +18847,13 @@ Johnson and Wichern (2007, ISBN:0-13-187715-1).  Raymaekers and Rousseeuw (2019)
 (define-public r-confidence
   (package
     (name "r-confidence")
-    (version "1.1-2")
+    (version "1.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "confidence" version))
        (sha256
-        (base32 "0m6iz59n5jpi0ig3za3nir4d4bdsysf5g47d2nakfmaz03wk520z"))))
+        (base32 "15zvzkbbg4f2w4wyhbq5rllhv3j926m0x0kvri5azpyd4lfyrlik"))))
     (properties `((upstream-name . "confidence")))
     (build-system r-build-system)
     (arguments
@@ -30829,37 +30829,6 @@ implemented models are based on Leloup and Goldbeter (1998)
 keeping data.")
     (license license:gpl3)))
 
-(define-public r-clmplus
-  (package
-    (name "r-clmplus")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clmplus" version))
-       (sha256
-        (base32 "024w8a4qj9sr0vqpfv5sm5gmcy4crin90sfx0z1y13iiznk7kvch"))))
-    (properties `((upstream-name . "clmplus")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stmomo
-                             r-reshape2
-                             r-gridextra
-                             r-ggplot2
-                             r-forecast
-                             r-chainladder))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/gpitt71/clmplus")
-    (synopsis "Tool-Box of Chain Ladder Plus Models")
-    (description
-     "Implementation of the age-period-cohort models for the claim development
-presented in the manuscript Replicating and extending chain-ladder via an
-age-period-cohort structure on the claim development in a run-off triangle
-<doi:10.48550/@code{arXiv.2301.03858>}.")
-    (license license:gpl2+)))
-
 (define-public r-clme
   (package
     (name "r-clme")
@@ -39239,13 +39208,13 @@ Observational Medical Outcomes Partnership Common Data Model.")
 (define-public r-chaosgame
   (package
     (name "r-chaosgame")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChaosGame" version))
        (sha256
-        (base32 "06d2jm8b3l242yqgbfsr1cclph0l8xdxqfq7xvbghsavzk3lf367"))))
+        (base32 "0kfvbplvvrs8wm1fp0yad84pp880wf953n70d4bfv4xy1q32xb2h"))))
     (properties `((upstream-name . "ChaosGame")))
     (build-system r-build-system)
     (arguments
@@ -40201,13 +40170,13 @@ variables with respect to this measure.")
 (define-public r-cgam
   (package
     (name "r-cgam")
-    (version "1.27")
+    (version "1.28")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgam" version))
        (sha256
-        (base32 "106hrsjixjd50kcdv81dvjz467sbjqd23sk9z7fpnx4600bfg39f"))))
+        (base32 "1cn6ivvad6md6pp6905yd3q37rp4w6qvgwbshqpb906cri44zs6j"))))
     (properties `((upstream-name . "cgam")))
     (build-system r-build-system)
     (arguments
@@ -40218,7 +40187,9 @@ variables with respect to this measure.")
                              r-statmod
                              r-splines2
                              r-rlang
+                             r-quadprog
                              r-matrix
+                             r-mass
                              r-lme4
                              r-ggplot2
                              r-dplyr
@@ -42497,35 +42468,6 @@ and Anne L. Plant, which is in press in the Journal of Theoretical Biology.  In
 order to reproduce the analysis used to obtain Table 1 in the paper, execute the
 command \"example(@code{fitVolDist})\".")
     (license license:gpl2+)))
-
-(define-public r-cellularautomata
-  (package
-    (name "r-cellularautomata")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cellularautomata" version))
-       (sha256
-        (base32 "07j0bv8bj20jjh4zdxgqnpkxm0pb2aia6045rp23i3x18n18zf42"))))
-    (properties `((upstream-name . "cellularautomata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-purrr r-patchwork r-ggplot2 r-gganimate))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cellularautomata")
-    (synopsis "Cellular Automata")
-    (description
-     "Create cellular automata from Wolfram rules.  Allows the creation of Wolfram
-style plots, as well as of animations.  Easy to create multiple plots, for
-example the output of a rule with different initial states, or the output of
-many different rules from the same state.  The output of a cellular automaton is
-given as a matrix, making it easy to try to explore the possibility of
-predicting its time evolution using various statistical tools available in R.
-Wolfram S. (2002, ISBN:1579550088) \"A New Kind of Science\".")
-    (license license:expat)))
 
 (define-public r-celltrackr
   (package
@@ -50327,21 +50269,23 @@ Bioinformatics 2019, 35(14):2458-2465.")
 (define-public r-calibrationcurves
   (package
     (name "r-calibrationcurves")
-    (version "2.0.4")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CalibrationCurves" version))
        (sha256
-        (base32 "0vd48vj3ma0qaa1d3zf3lbw3y9k3kspb4jr0x7r2cng6iacqh58r"))))
+        (base32 "0kgbsxnnlmb05pfs47r29j7d9hwps7qk1kxzminmpclzggkgldfi"))))
     (properties `((upstream-name . "CalibrationCurves")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
+    (propagated-inputs (list r-timeroc
+                             r-survival
                              r-rstudioapi
                              r-rms
+                             r-riskregression
                              r-hmisc
                              r-ggplot2
                              r-bookdown))

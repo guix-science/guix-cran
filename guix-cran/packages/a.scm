@@ -1399,13 +1399,13 @@ Ye, C.,and Yang,Y. (2019) <doi:10.1109/TIT.2019.2913417>.")
 (define-public r-avesperu
   (package
     (name "r-avesperu")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "avesperu" version))
        (sha256
-        (base32 "1z5md68arn2hy2jvlimgn3xfj0j5rapsn6r4wmvld801lzv1imaj"))))
+        (base32 "080p3g515gx9qh1anmr6xiq0imxxywzymc0ik5wb499ws6ydr5lp"))))
     (properties `((upstream-name . "avesperu")))
     (build-system r-build-system)
     (arguments
@@ -22333,13 +22333,13 @@ format is also provided.")
 (define-public r-admix
   (package
     (name "r-admix")
-    (version "2.4")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admix" version))
        (sha256
-        (base32 "13dw5g2i00rwz43fx54m8379slwc7z3lvn1gz694yhn3v52ilx8i"))))
+        (base32 "1cmq9n401ax7n1kzsqqnm1a8lwgncf7w2vql7fkdhwa12w0w4s1q"))))
     (properties `((upstream-name . "admix")))
     (build-system r-build-system)
     (arguments
@@ -22487,13 +22487,13 @@ extension package of the admiral package for pediatric clinical trials.")
 (define-public r-admiralophtha
   (package
     (name "r-admiralophtha")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralophtha" version))
        (sha256
-        (base32 "1rsyl8qq36zw6bhd6dmq8m6vjcrpyrvm3bd52iyxpmb0xca2j83x"))))
+        (base32 "01pkd56ql0ldfna64p1jv4j1d0ql84g07nbf5ybyldb1vs5l1c2a"))))
     (properties `((upstream-name . "admiralophtha")))
     (build-system r-build-system)
     (arguments
@@ -22509,7 +22509,6 @@ extension package of the admiral package for pediatric clinical trials.")
                              r-lifecycle
                              r-hms
                              r-dplyr
-                             r-cli
                              r-admiraldev
                              r-admiral))
     (native-inputs (list r-knitr))
