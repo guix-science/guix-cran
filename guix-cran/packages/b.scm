@@ -11,8 +11,8 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages web)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages algebra)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages algebra)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages tls)
@@ -605,13 +605,13 @@ Equivalence Bound: A New Procedure of Hypothesis Testing\"
 (define-public r-buysetest
   (package
     (name "r-buysetest")
-    (version "3.2.0")
+    (version "3.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BuyseTest" version))
        (sha256
-        (base32 "1ij7ahjhs24zhy9y5k8bv12w6k0gdm1rr4aq2g3fqxxdi7yshk0f"))))
+        (base32 "013d5z506bbsrw7h6dbb0bxx6hvpd547v5msh22njb141w8m0phm"))))
     (properties `((upstream-name . "BuyseTest")))
     (build-system r-build-system)
     (arguments
@@ -1003,13 +1003,13 @@ bupaverse at the <https://bupar.net> homepage.")
 (define-public r-bupar
   (package
     (name "r-bupar")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bupaR" version))
        (sha256
-        (base32 "16m9n7h1nwfz564cxyhgkxdzszcr3nr7abz4d6mqx97kjv46k23n"))))
+        (base32 "10hmminkpcss74fgl04mmw197vxz53173iz7akrnmmpb75nmckcr"))))
     (properties `((upstream-name . "bupaR")))
     (build-system r-build-system)
     (arguments
@@ -8578,19 +8578,24 @@ discoveries.")
 (define-public r-boneprofiler
   (package
     (name "r-boneprofiler")
-    (version "3.1")
+    (version "4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoneProfileR" version))
        (sha256
-        (base32 "0r9fmrb2v0jlbp9f2c644v17hbdfz91dl6j87mgxwkpc472iz9w8"))))
+        (base32 "1barqcz91dg1fphv40hldhlwavgcs9smbxrajg6r5lvsi6734kfx"))))
     (properties `((upstream-name . "BoneProfileR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny r-rmarkdown r-knitr r-imager r-helpersmg))
+    (propagated-inputs (list r-shiny
+                             r-rmarkdown
+                             r-rdpack
+                             r-knitr
+                             r-imager
+                             r-helpersmg))
     (home-page "https://cran.r-project.org/package=BoneProfileR")
     (synopsis "Tools to Study Bone Compactness")
     (description
@@ -13172,6 +13177,41 @@ and Seock-Ho Kim (Springer, 2017, ISBN-13: 978-3-319-54204-1) including
 @code{groupinv()}, @code{tcc()}, @code{ability()}, @code{tif()}, and
 @code{rasch()}.  For example, @code{iccplot()} plots an item characteristic
 curve under the two-parameter logistic model.")
+    (license license:gpl2+)))
+
+(define-public r-birp
+  (package
+    (name "r-birp")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "birp" version))
+       (sha256
+        (base32 "02nqlbp8gccz9402kmmb5nhik1bgvcw9b417fq2a5h5vwrk59q7h"))))
+    (properties `((upstream-name . "birp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://bitbucket.org/wegmannlab/birpr/wiki/Home")
+    (synopsis
+     "Testing for Population Trends Using Low-Cost Ecological Count Data")
+    (description
+     "This package provides a Bayesian tool to test for population trends and changes
+in trends under arbitrary designs, including before-after (BA),
+control-intervention (CI) and before-after-control-intervention (BACI) designs
+commonly used to assess conservation impact.  It infers changes in trends
+jointly from data obtained with multiple survey methods, as well as from limited
+and noisy data not necessarily collected in standardized ecological surveys.
+Observed counts can be modeled as following either a Poisson or a negative
+binomial model, and both deterministic and stochastic trend models are
+available.  For more details on the model see Singer et al. (2025)
+<doi:10.1101/2025.01.08.631844>, and the file AUTHORS for a list of copyright
+holders and contributors.")
     (license license:gpl2+)))
 
 (define-public r-birk

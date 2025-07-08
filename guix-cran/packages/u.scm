@@ -1382,20 +1382,20 @@ password, host, port, path, query, and fragment.")
 (define-public r-urbin
   (package
     (name "r-urbin")
-    (version "0.1-14")
+    (version "0.1-16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "urbin" version))
        (sha256
-        (base32 "1061a7n9yrpz6ixy88zwiam6amy7jg2l2hv7c5n8cqg33j32lf22"))))
+        (base32 "0jw2ih916m1nrhmdggpg5kx3ldhvpr2fpxmm638nb366zmynaf0z"))))
     (properties `((upstream-name . "urbin")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://r-forge.r-project.org/projects/urbin/")
+    (home-page "https://github.com/arne-henningsen/urbin/")
     (synopsis "Unifying Estimation Results with Binary Dependent Variables")
     (description
      "Calculate unified measures that quantify the effect of a covariate on a binary
@@ -4089,13 +4089,13 @@ simplex.")
 (define-public r-ulrb
   (package
     (name "r-ulrb")
-    (version "0.1.6")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ulrb" version))
        (sha256
-        (base32 "1xksj1gzh44fa5xdxxd4y099zpbk8hdzj95mbkdxikwbilixfzs7"))))
+        (base32 "15i7vbm12jfx26azd139h5600r1ccraq1axc2qrzy2i9qfdxf1vi"))))
     (properties `((upstream-name . "ulrb")))
     (build-system r-build-system)
     (arguments
@@ -4114,13 +4114,11 @@ simplex.")
     (synopsis
      "Unsupervised Learning Based Definition of Microbial Rare Biosphere")
     (description
-     "This package provides a tool to define rare biosphere.  ulrb solves the problem
-of the definition of rarity by replacing arbitrary thresholds with an
+     "This package provides a tool to define the rare biosphere.  ulrb solves the
+problem of the definition of rarity by replacing arbitrary thresholds with an
 unsupervised machine learning algorithm (partitioning around medoids, or
 k-medoids).  This algorithm works for any type of microbiome data, provided
-there is an abundance table.  For validation of this method to different
-abundance tables, see Pascoal et al, 2025.  This method also works for
-non-microbiome data.")
+there is an abundance table.  This method also works for non-microbiome data.")
     (license license:gpl3+)))
 
 (define-public r-ulid

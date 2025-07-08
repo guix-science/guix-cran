@@ -6205,6 +6205,35 @@ multivariate skewness.  See Khattree, R. and Bahuguna, M. (2019) <doi:
 10.1007/s41060-018-0106-1>.")
     (license license:gpl3)))
 
+(define-public r-kbal
+  (package
+    (name "r-kbal")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kbal" version))
+       (sha256
+        (base32 "0ck4zcdj09fnw4nx93pwcjr24flaim66lsygg6d843r60i6pdd3m"))))
+    (properties `((upstream-name . "kbal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rspectra r-rcppparallel r-rcpp r-dplyr))
+    (home-page "https://github.com/chadhazlett/kbal")
+    (synopsis "Kernel Balancing")
+    (description
+     "This package provides a weighting approach that employs kernels to make one
+group have a similar distribution to another group on covariates.  This method
+matches not only means or marginal distributions but also higher-order
+transformations implied by the choice of kernel.  kbal is applicable to both
+treatment effect estimation and survey reweighting problems.  Based on Hazlett,
+C. (2020) \"Kernel Balancing: A flexible non-parametric weighting procedure for
+estimating causal effects.\" Statistica Sinica.
+<https://www.researchgate.net/publication/299013953_Kernel_Balancing_A_flexible_non-parametric_weighting_procedure_for_estimating_causal_effects>.")
+    (license license:gpl2+)))
+
 (define-public r-kazaam
   (package
     (name "r-kazaam")

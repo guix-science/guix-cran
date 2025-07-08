@@ -11405,6 +11405,33 @@ labeling if not suppressed.  Subsequently, information carrying graphics
 elements can be added (points, lines, barplot with add=TRUE and so forth).")
     (license license:gpl2+)))
 
+(define-public r-prepost
+  (package
+    (name "r-prepost")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "prepost" version))
+       (sha256
+        (base32 "14jw31rd6rk9309g5d0hc0bzvx4rmsv9blclw2nlcrlkd5slxz6f"))))
+    (properties `((upstream-name . "prepost")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rglpk r-progress r-lpsolve r-gtools
+                             r-bayeslogit))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mattblackwell/prepost")
+    (synopsis
+     "Non-Parametric Bounds and Gibbs Sampler for Assessing Priming and Post-Treatment Bias")
+    (description
+     "This package provides a set of tools to implement the non-parametric bounds and
+Bayesian methods for assessing post-treatment bias developed in Blackwell,
+Brown, Hill, Imai, and Yamamoto (2025) <doi:10.1017/pan.2025.3>.")
+    (license license:expat)))
+
 (define-public r-prepdesigns
   (package
     (name "r-prepdesigns")
@@ -30817,6 +30844,30 @@ circular analysis are based on methods from - Batschelet (1981)
      "Interface to the Pharmpy pharmacometrics library.  The Reticulate package is
 used to interface Python from R.")
     (license license:lgpl3+)))
+
+(define-public r-pharmaversesdtmjnj
+  (package
+    (name "r-pharmaversesdtmjnj")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pharmaversesdtmjnj" version))
+       (sha256
+        (base32 "0y4dp8hnhmmw62qwaivb30wxqf5a29bb7cmyzlnahk1ski1cg05i"))))
+    (properties `((upstream-name . "pharmaversesdtmjnj")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pharmaversesdtm))
+    (home-page "https://cran.r-project.org/package=pharmaversesdtmjnj")
+    (synopsis "J&J Innovative Medicine SDTM Test Data")
+    (description
+     "This package provides a set of Study Data Tabulation Model (SDTM) datasets
+constructed by modifying the pharmaversesdtm package to meet J&J Innovative
+Medicine's standard data structure for Clinical and Statistical Programming.")
+    (license license:asl2.0)))
 
 (define-public r-pharmaversesdtm
   (package

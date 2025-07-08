@@ -20590,13 +20590,13 @@ composed to form preprocessing pipelines.")
 (define-public r-mlr3torch
   (package
     (name "r-mlr3torch")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3torch" version))
        (sha256
-        (base32 "0png7kiz4zkplxkfmyxk9dpkb74z35rdk97l9zadxx4fk25prrcc"))))
+        (base32 "0d5j7i6dwl3w1mfim2chq5dqpl74pc5vxgv1jbyyx8if89wvcwy2"))))
     (properties `((upstream-name . "mlr3torch")))
     (build-system r-build-system)
     (arguments
@@ -24895,13 +24895,13 @@ of Health and Human Services.")
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "18v8yxiwdx3ff7pxn2n2xkm1dfp05ljivk4kbj5dsrxway02bb4i"))))
+        (base32 "0x4qv4nvm453sxdbw2vsa1w56sj94lvg623m4q3clwzqmkm1ci9w"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (arguments
@@ -43549,13 +43549,13 @@ existence of unexpected behaviour.")
 (define-public r-maxwik
   (package
     (name "r-maxwik")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MaxWiK" version))
        (sha256
-        (base32 "04yaxc23m60jj1z24zkpw84g8fl7ayvbmfqqbhxa1q5am1fr3cfa"))))
+        (base32 "1d5wry468czdrk7qdz52hrlai3q231c3nz124dizfrs1a4x8kv3r"))))
     (properties `((upstream-name . "MaxWiK")))
     (build-system r-build-system)
     (arguments
@@ -44954,13 +44954,13 @@ their original counterparts, with more to come as this package grows.")
 (define-public r-maths-genealogy
   (package
     (name "r-maths-genealogy")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maths.genealogy" version))
        (sha256
-        (base32 "1dzwwlpjqpvh8q01hq37852jqlh6avii5mbr5v5ny28ngmzn0i8q"))))
+        (base32 "0366krr4wlgcsrnv6vgzss3blgmb03054siayhnk1dsiwk1z37gd"))))
     (properties `((upstream-name . "maths.genealogy")))
     (build-system r-build-system)
     (arguments

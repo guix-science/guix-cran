@@ -5129,6 +5129,35 @@ Dimensionality Reduction\" (2023), Machine Learning and Knowledge Extraction
 (MAKE), <DOI:10.3390/make5030056>.")
     (license license:gpl3)))
 
+(define-public r-drpt
+  (package
+    (name "r-drpt")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DRPT" version))
+       (sha256
+        (base32 "0m1fdyx96a0rgicrdnn6z6qbf5i6zqsnjw1l6ayzylbna981p995"))))
+    (properties `((upstream-name . "DRPT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rootsolve
+                             r-rdpack
+                             r-rcpp
+                             r-future-apply
+                             r-future
+                             r-biasedurn))
+    (home-page "https://cran.r-project.org/package=DRPT")
+    (synopsis "Density Ratio Permutation Test")
+    (description
+     "Implementation of the Density Ratio Permutation Test for testing the
+goodness-of-fit of a hypothesised ratio of two densities, as described in
+Bordino and Berrett (2025) <doi:10.48550/@code{arXiv.2505.24529>}.")
+    (license license:expat)))
+
 (define-public r-drpop
   (package
     (name "r-drpop")
@@ -15088,37 +15117,6 @@ ISBN:978-0-387-35439-2); (3) Novel techniques by Mosley, Gibberd, and Eckley
 (2022, <doi:10.1111/rssa.12952>) for disaggregating low-frequency series in the
 presence of high-dimensional indicator matrices.")
     (license license:gpl3)))
-
-(define-public r-disaggr
-  (package
-    (name "r-disaggr")
-    (version "1.0.5.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "disaggR" version))
-       (sha256
-        (base32 "1i2in27gygmh1l05371hzbf8zssgsjl6jyljsr964gk02l0ghkpn"))))
-    (properties `((upstream-name . "disaggR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcolorbrewer))
-    (native-inputs (list r-knitr))
-    (home-page "https://inseefr.github.io/disaggR/")
-    (synopsis "Two-Steps Benchmarks for Time Series Disaggregation")
-    (description
-     "The @code{twoStepsBenchmark()} and @code{threeRuleSmooth()} functions allow you
-to disaggregate a low-frequency time series with higher frequency time series,
-using the French National Accounts methodology.  The aggregated sum of the
-resulting time series is strictly equal to the low-frequency time series within
-the benchmarking window.  Typically, the low-frequency time series is an annual
-one, unknown for the last year, and the high frequency one is either quarterly
-or monthly.  See \"Methodology of quarterly national accounts\", Insee MÃ©thodes
-NÂ°126, by Insee (2012, ISBN:978-2-11-068613-8,
-<https://www.insee.fr/en/information/2579410>).")
-    (license license:expat)))
 
 (define-public r-disagg2
   (package

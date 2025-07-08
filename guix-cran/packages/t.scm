@@ -5892,6 +5892,34 @@ Bhattacharya, Gourab Mukherjee Ann.  Appl.  Stat.  14(4): 1777-1805 (December
 2020). <DOI:10.1214/20-AOAS1362> for more details.")
     (license license:gpl3+)))
 
+(define-public r-truewap
+  (package
+    (name "r-truewap")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TrueWAP" version))
+       (sha256
+        (base32 "0jgqz91mw2p5267gnc7m6adnw5nbnm9r2xdkl0n7wdpd2z02p7pv"))))
+    (properties `((upstream-name . "TrueWAP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-ttr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CallawayCross/TrueWAP")
+    (synopsis "True Range-Weighted Average Price ('TrueWAP')")
+    (description
+     "This groundbreaking technical indicator directly integrates volatility into
+price averaging by weighting median range-bound prices using the True Range.
+Unlike conventional metrics such as TWAP (Time-Weighted Average Price), which
+focuses solely on time, or VWAP (Volume-Weighted Average Price), which
+emphasizes volume, @code{TrueWAP} captures fluctuating market behavior by
+reflecting true price movement within high/low performance boundaries.")
+    (license license:gpl2+)))
+
 (define-public r-trueskillthroughtime
   (package
     (name "r-trueskillthroughtime")

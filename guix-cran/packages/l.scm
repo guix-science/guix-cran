@@ -1052,6 +1052,52 @@ traditional time-to-event genome-wide association studies, where family history
 was not considered.")
     (license license:gpl3)))
 
+(define-public r-ltfgrs
+  (package
+    (name "r-ltfgrs")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LTFGRS" version))
+       (sha256
+        (base32 "0i3qk1lsks6mv6fasabfz69y9x5ml8k8yn28jk5r82varw1cdhgd"))))
+    (properties `((upstream-name . "LTFGRS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-tmvtnorm
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rcpp
+                             r-purrr
+                             r-lubridate
+                             r-igraph
+                             r-future-apply
+                             r-future
+                             r-dplyr
+                             r-batchmeans))
+    (native-inputs (list r-knitr))
+    (home-page "https://emilmip.github.io/LTFGRS/")
+    (synopsis
+     "Implementation of Several Phenotype-Based Family Genetic Risk Scores")
+    (description
+     "Implementation of several phenotype-based family genetic risk scores with
+unified input data and data preparation functions to help facilitate the
+required data preparation and management.  The implemented family genetic risk
+scores are the extended liability threshold model conditional on family history
+(LT-FH++) from Pedersen (2022) <doi:10.1016/j.ajhg.2022.01.009> and Pedersen
+(2023) <https://www.nature.com/articles/s41467-023-41210-z>, Pearson-Aitken
+Family Genetic Risk Scores (PA-FGRS) from Krebs (2024)
+<doi:10.1016/j.ajhg.2024.09.009>, and family genetic risk score by Kendler
+(2021) <doi:10.1001/jamapsychiatry.2021.0336>.")
+    (license license:gpl3+)))
+
 (define-public r-ltertools
   (package
     (name "r-ltertools")
@@ -1383,6 +1429,37 @@ relates to the algorithm in Sumanta, Li, and Michailidis (2019)
      "This package provides a set of functions that allow stationary analysis and
 locally stationary time series analysis.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-lstmfactors
+  (package
+    (name "r-lstmfactors")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LSTMfactors" version))
+       (sha256
+        (base32 "1m1vk52ssq4srvn8mvlzkqlq5hn0f0blsxmpvvphmjr7px7z944c"))))
+    (properties `((upstream-name . "LSTMfactors")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reticulate r-efafactors))
+    (home-page "https://haijiangqin.com/LSTMfactors/")
+    (synopsis
+     "Determining the Number of Factors in Exploratory Factor Analysis by LSTM")
+    (description
+     "This package provides a method for factor retention using a pre-trained Long
+Short Term Memory (LSTM) Network, which is originally developed by Hochreiter
+and Schmidhuber (1997) <doi:10.1162/neco.1997.9.8.1735>, is provided.  The
+sample size of the dataset used to train the LSTM model is 1,000,000.  Each
+sample is a batch of simulated response data with a specific latent factor
+structure.  The eigenvalues of these response data will be used as sequential
+data to train the LSTM. The pre-trained LSTM is capable of factor retention for
+real response data with a true latent factor number ranging from 1 to 10, that
+is, determining the number of factors.")
+    (license license:gpl3)))
 
 (define-public r-lstbook
   (package

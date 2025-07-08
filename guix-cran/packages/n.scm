@@ -6946,13 +6946,13 @@ the updating process.  See e.g. TomÃ© et al (2015)
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMdata" version))
        (sha256
-        (base32 "0b6j4xrzvlb7lvdcqjg4g3zx770lssl4k1gdxkhdqb1q9w53144i"))))
+        (base32 "0icnh0icpanvyi3p5s7ddqiyiim86glvxyjk1sjaz6c7il9b4a09"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (arguments
@@ -6964,10 +6964,10 @@ the updating process.  See e.g. TomÃ© et al (2015)
      "Preparation, Checking and Post-Processing Data for PK/PD Modeling")
     (description
      "Efficient tools for preparation, checking and post-processing of data in PK/PD
-(pharmacokinetics/pharmacodynamics) modeling, with focus on use of Nonmem.
-Attention is paid to ensure consistency, traceability, and Nonmem compatibility
-of Data.  Rigorously checks final Nonmem datasets.  Implemented in data.table',
-but easily integrated with base and tidyverse'.")
+(pharmacokinetics/pharmacodynamics) modeling, with focus on use of Nonmem,
+including consistency, traceability, and Nonmem compatibility of Data.
+Rigorously checks final Nonmem datasets.  Implemented in data.table', but easily
+integrated with base and tidyverse'.")
     (license license:expat)))
 
 (define-public r-nmcalc

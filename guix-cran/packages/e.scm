@@ -1262,6 +1262,50 @@ et al, (2017) <doi:10.3390/life7040040> are included in the extraterrestrial
 package.")
     (license license:gpl3)))
 
+(define-public r-extrasuperpower
+  (package
+    (name "r-extrasuperpower")
+    (version "1.4.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "extraSuperpower" version))
+       (sha256
+        (base32 "0hd2gq47d74iw8g8s2ycm6yfvwxp2y1npndiq9a19qy25yx0q0j4"))))
+    (properties `((upstream-name . "extraSuperpower")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncnorm
+                             r-tmvtnorm
+                             r-sn
+                             r-scales
+                             r-rlist
+                             r-rlang
+                             r-rfit
+                             r-reshape2
+                             r-plyr
+                             r-permuco
+                             r-nparld
+                             r-matrix
+                             r-mass
+                             r-ggthemes
+                             r-ggplot2
+                             r-fgarch
+                             r-afex))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/luisrmacias/extraSuperpower")
+    (synopsis "Power Calculation for Two-Way Factorial Designs")
+    (description
+     "The basic use of this package is with 3 sequential functions.  One to generate
+expected cell means and standard deviations, along with correlation and
+covariance matrices in the case of repeated measurements.  This is followed by
+experiment simulation i number of times.  Finally, power is calculated from the
+simulated data.  Features that may be considered in the model are interaction,
+measure correlation and non-normal distributions.")
+    (license license:expat)))
+
 (define-public r-extrasteps
   (package
     (name "r-extrasteps")
@@ -21433,13 +21477,13 @@ functions.")
 (define-public r-ecotrends
   (package
     (name "r-ecotrends")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecotrends" version))
        (sha256
-        (base32 "0n3j4rjc607pvncx67slh2mhba1ycs6j5p0gwd3ybma1pwxf0n39"))))
+        (base32 "0mc5ydk74ns5v3j9nbzxq9p6yawmbmbgafigvg6rlxn2z2296785"))))
     (properties `((upstream-name . "ecotrends")))
     (build-system r-build-system)
     (arguments
@@ -22102,13 +22146,13 @@ these methods and its evolution in literature.")
 (define-public r-econid
   (package
     (name "r-econid")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "econid" version))
        (sha256
-        (base32 "0ijkmicv1xkfn3zi49yjq7431c23zr9m2fnq94ypfkii00k5jgal"))))
+        (base32 "0ahxvka6xadrzsig0x1ls2g0rhn92prqnn229cmffmgppqnnl53j"))))
     (properties `((upstream-name . "econid")))
     (build-system r-build-system)
     (arguments
@@ -22116,9 +22160,9 @@ these methods and its evolution in literature.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-stringr
                              r-rlang
                              r-purrr
-                             r-fuzzyjoin
                              r-dplyr
                              r-cli))
     (home-page "https://teal-insights.github.io/r-econid/")

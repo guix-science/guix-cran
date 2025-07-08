@@ -824,33 +824,6 @@ methods in detecting the most interesting signal patterns in pharmacogenetics
 Judong Shen (2022) <doi:10.13140/RG.2.2.28323.53280>.")
     (license license:gpl2)))
 
-(define-public r-cvwrapr
-  (package
-    (name "r-cvwrapr")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cvwrapr" version))
-       (sha256
-        (base32 "17h017p76y7sjcwik48ravygmyivj6kvkhqy5s9ch0nwzzcrzvj3"))))
-    (properties `((upstream-name . "cvwrapr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-foreach))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cvwrapr")
-    (synopsis "Tools for Cross Validation")
-    (description
-     "This package provides tools for performing cross-validation (CV).  The main
-function is a general purpose wrapper that performs k-fold CV for any tuning
-parameter in any supervised learning method.  The package also has a function
-that computes the loss incurred by a set of predictions for a variety of loss
-functions and model families.")
-    (license license:gpl3+)))
-
 (define-public r-cvtools
   (package
     (name "r-cvtools")
@@ -9602,13 +9575,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.2-0")
+    (version "1.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "19xmrhk12ri8wd1p43wl3g362xzidnk232lv06i9lsy01jzmqgxx"))))
+        (base32 "07is8l4pwrvhm6nfqjwavhsrjy7lyjc7h1nhq7d9jnfikm46dmk9"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (arguments
@@ -13692,13 +13665,13 @@ the second one generates 3D plots.")
 (define-public r-corpustools
   (package
     (name "r-corpustools")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corpustools" version))
        (sha256
-        (base32 "154n9gxzg9cx10sxbb05df9wsr378k2qhkprqr9cyh1q5ll1pki7"))))
+        (base32 "1als91awsa32i0sk57zcdr0zhg2bilh9jpq6mmrpwc14qafkl983"))))
     (properties `((upstream-name . "corpustools")))
     (build-system r-build-system)
     (arguments
@@ -30200,13 +30173,13 @@ data with the artificial panel data generator.  See Sobisek, Stachova, Fojtik
 (define-public r-clugenr
   (package
     (name "r-clugenr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clugenr" version))
        (sha256
-        (base32 "0wqhqy6ivhz0nhl0gr5gcxqdvi5ha4mhqgvgjmgaqibpi03dy3l8"))))
+        (base32 "1p85cbls4syrdc5inbc9rwwd4wz6yj6jdz1vk43h44yvyk4p21c8"))))
     (properties `((upstream-name . "clugenr")))
     (build-system r-build-system)
     (arguments
@@ -31269,13 +31242,13 @@ deleter-files.")
 (define-public r-clinify
   (package
     (name "r-clinify")
-    (version "0.1.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinify" version))
        (sha256
-        (base32 "1jkdzr1pmvqjac8awx00xppmdwvbl7p27z2dsphqvb66kwjra7rm"))))
+        (base32 "1fvnfmbap04jvkbhjn1ifddwq573hdb4z7abkkky5fsrvpg66lcy"))))
     (properties `((upstream-name . "clinify")))
     (build-system r-build-system)
     (arguments
@@ -31660,13 +31633,13 @@ the context of this package.")
 (define-public r-climmobtools
   (package
     (name "r-climmobtools")
-    (version "1.5")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClimMobTools" version))
        (sha256
-        (base32 "1svni8zlyy4gj7wzs1431hgc3g0kwwr4sw0ddxgrnvd350rzwxg5"))))
+        (base32 "1gqzw92q29i4ck13wmg5n4gwmr28k9bmfyvn8yv4rg2jr5nkhl22"))))
     (properties `((upstream-name . "ClimMobTools")))
     (build-system r-build-system)
     (arguments
@@ -42061,23 +42034,25 @@ fitting a bivariate copula.")
 (define-public r-censobr
   (package
     (name "r-censobr")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "censobr" version))
        (sha256
-        (base32 "1lvbmcng9y3ky0p1phd0xznlwx4dd88ig25jws6vg9lbl7y8pm6k"))))
+        (base32 "04pr905i91fhgrqijznkvqwi3fj8i5krb68n28d6nz44fk2a24ck"))))
     (properties `((upstream-name . "censobr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-glue
+    (propagated-inputs (list r-rlang
+                             r-glue
                              r-fs
                              r-duckdb
                              r-dplyr
                              r-curl
+                             r-cli
                              r-checkmate
                              r-arrow))
     (native-inputs (list r-knitr))
@@ -50269,13 +50244,13 @@ Bioinformatics 2019, 35(14):2458-2465.")
 (define-public r-calibrationcurves
   (package
     (name "r-calibrationcurves")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CalibrationCurves" version))
        (sha256
-        (base32 "0kgbsxnnlmb05pfs47r29j7d9hwps7qk1kxzminmpclzggkgldfi"))))
+        (base32 "1rl47dvf2m253dyf5rr8yx12yqldwr50awvl5dcp67x3x0amb6vq"))))
     (properties `((upstream-name . "CalibrationCurves")))
     (build-system r-build-system)
     (arguments

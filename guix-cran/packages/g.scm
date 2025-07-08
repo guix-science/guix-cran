@@ -16008,13 +16008,13 @@ that all targets remain up to date.")
 (define-public r-gitstats
   (package
     (name "r-gitstats")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitStats" version))
        (sha256
-        (base32 "17xj5vdw5ka8l3917d4qjrjw7f8z4y97qlg32134pqqa38ikr666"))))
+        (base32 "1q8w3dbb5dv53svi31marhimzabns1lygq9ia2a7id0850lvlgsl"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
     (arguments
@@ -22353,6 +22353,37 @@ plots for response surface methodology, Pareto plot, and two dimensional
 projections of a latin hypercube design.")
     (license license:expat)))
 
+(define-public r-ggdmcheaders
+  (package
+    (name "r-ggdmcheaders")
+    (version "0.2.9.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggdmcHeaders" version))
+       (sha256
+        (base32 "0z3542d0d5xcf96x823x70mflrbggz0hiw4p0cxxng3ky67g6f7y"))))
+    (properties `((upstream-name . "ggdmcHeaders")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/yxlin/ggdmcHeaders")
+    (synopsis "'C++' Headers for 'ggdmc' Package")
+    (description
+     "This package provides a fast C++ implementation of the design-based, Diffusion
+Decision Model (DDM) and the Linear Ballistic Accumulation (LBA) model.  It
+enables the user to optimise the choice response time model by connecting with
+the Differential Evolution Markov Chain Monte Carlo (DE-MCMC) sampler
+implemented in the ggdmc package.  The package fuses the hierarchical modelling,
+Bayesian inference, choice response time models and factorial designs, allowing
+users to build their own design-based models.  For more information on the
+underlying models, see the works by Voss, Rothermund, and Voss (2004)
+<doi:10.3758/BF03196893>, Ratcliff and @code{McKoon} (2008)
+<doi:10.1162/neco.2008.12-06-420>, and Brown and Heathcote (2008)
+<doi:10.1016/j.cogpsych.2007.12.002>.")
+    (license license:gpl2+)))
+
 (define-public r-ggdmc
   (package
     (name "r-ggdmc")
@@ -27488,13 +27519,13 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
 (define-public r-geocodebr
   (package
     (name "r-geocodebr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocodebr" version))
        (sha256
-        (base32 "0ysijs6v8shr3zqdpmd5hi1fynn7l4bd8h65hpmn03r4mf144w31"))))
+        (base32 "0dxwgfzxgjfm7hhznpbqp0iiljakxg5v7y7q2imryn5lisjbngm3"))))
     (properties `((upstream-name . "geocodebr")))
     (build-system r-build-system)
     (arguments
@@ -35849,6 +35880,49 @@ algebra algorithms.  Inspired by MATLAB gallery functions.")
  This packages allows you loading data from ads account and manage your ads
 materials.")
     (license license:expat)))
+
+(define-public r-galaxias
+  (package
+    (name "r-galaxias")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "galaxias" version))
+       (sha256
+        (base32 "18fjnbb9yc5l05yy0348m5mvs9hr51qbv23dbqyrxwsaz6x5aba4"))))
+    (properties `((upstream-name . "galaxias")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-withr
+                             r-usethis
+                             r-tibble
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-delma
+                             r-corella
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://galaxias.ala.org.au/R/")
+    (synopsis "Describe, Package, and Share Biodiversity Data")
+    (description
+     "The Darwin Core data standard is widely used to share biodiversity information,
+most notably by the Global Biodiversity Information Facility and its partner
+nodes; but converting data to this standard can be tricky.  galaxias is
+functionally similar to devtools', but with a focus on building Darwin Core
+Archives rather than R packages, enabling data to be shared and re-used with
+relative ease.  For details see Wieczorek and colleagues (2012)
+<doi:10.1371/journal.pone.0029715>.")
+    (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-galamm
   (package

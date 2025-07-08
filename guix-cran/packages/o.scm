@@ -6225,13 +6225,13 @@ algorithm in Hyun, Wong, Yang (2018) <doi:10.18637/jss.v083.i05>.")
 (define-public r-opsr
   (package
     (name "r-opsr")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPSR" version))
        (sha256
-        (base32 "13gcl93lgmrv224nsi1cvp11hp4pkm6b418bhcsak62z7ga4ly0p"))))
+        (base32 "065qgxwv3p0k61d9iqdb5nw0f35klpxsd0kd3vbi0w6sc3qg4l3n"))))
     (properties `((upstream-name . "OPSR")))
     (build-system r-build-system)
     (arguments
@@ -6248,9 +6248,9 @@ algorithm in Hyun, Wong, Yang (2018) <doi:10.18637/jss.v083.i05>.")
                              r-formula
                              r-car))
     (home-page "https://github.com/dheimgartner/OPSR")
-    (synopsis "Ordinal Probit Switching Regression")
+    (synopsis "Ordered Probit Switching Regression")
     (description
-     "Estimates ordinal probit switching regression models - a Heckman type selection
+     "Estimates ordered probit switching regression models - a Heckman type selection
 model with an ordinal selection and continuous outcomes.  Different model
 specifications are allowed for each treatment/regime.  For more details on the
 method, see Wang & Mokhtarian (2024) <doi:10.1016/j.tra.2024.104072> or Chiburis
@@ -11336,13 +11336,13 @@ more about @code{OhdsiReportGenerator} at
 (define-public r-ogrdbstats
   (package
     (name "r-ogrdbstats")
-    (version "0.5.2")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ogrdbstats" version))
        (sha256
-        (base32 "1dppd0jzzrifclic1bs6asjl2rbzygvbrjbc922xsz95wazgfmww"))))
+        (base32 "08rcshrmkvdabm0kgh3ghja2l3n1iixadl0nxxarn4r5mnx9nc2p"))))
     (properties `((upstream-name . "ogrdbstats")))
     (build-system r-build-system)
     (arguments
@@ -12741,19 +12741,20 @@ Furrer and Sain (2010) <doi:10.18637/jss.v036.i10> for the construct used.")
 (define-public r-oclust
   (package
     (name "r-oclust")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oclust" version))
        (sha256
-        (base32 "08247vcjs7hhzbj69f2x39n5y5ycns0qd7pdlvpwyn4j7yd1ji31"))))
+        (base32 "0mvllqxikf40lybawvj7hjnsjcdbyimrm0ga522b2zlyzzk2acak"))))
     (properties `((upstream-name . "oclust")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm
+    (propagated-inputs (list r-progress
+                             r-mvtnorm
                              r-mixture
                              r-mclust
                              r-mass
@@ -12764,7 +12765,7 @@ Furrer and Sain (2010) <doi:10.18637/jss.v036.i10> for the construct used.")
     (description
      "This package provides a function to detect and trim outliers in Gaussian mixture
 model-based clustering using methods described in Clark and @code{McNicholas}
-(2022) <@code{arXiv:1907.01136>}.")
+(2024) <doi:10.1007/s00357-024-09473-3>.")
     (license license:gpl2+)))
 
 (define-public r-ockc

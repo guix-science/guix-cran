@@ -5041,6 +5041,45 @@ R., and Mao, Y. (2018), The Variable Infiltration Capacity model version 5
 Geosci.  Model Dev., 11, 3481-3496, <doi:10.5194/gmd-11-3481-2018>\".")
     (license license:gpl3)))
 
+(define-public r-vibass
+  (package
+    (name "r-vibass")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vibass" version))
+       (sha256
+        (base32 "1pzfmdn1q5g52cmjaiy5j008igag3bgjmcvw6bsviq3vbqyxv4nz"))))
+    (properties `((upstream-name . "vibass")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-shiny
+                             r-rstudioapi
+                             r-rlang
+                             r-r2bayesx
+                             r-magrittr
+                             r-lme4
+                             r-knitr
+                             r-golem
+                             r-ggplot2
+                             r-extradistr
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "http://vabar.es/vibass/")
+    (synopsis "Materials for Introductory Course on Bayesian Learning")
+    (description
+     "Practicals, data sets, helper functions and interactive Shiny apps used in the
+introductory course on Bayesian inference at the Valencia International Bayesian
+Summer School.  Installing vibass installs all the other packages used during
+the course and downloads all necessary materials for working off line.")
+    (license license:gpl3)))
+
 (define-public r-viafr
   (package
     (name "r-viafr")

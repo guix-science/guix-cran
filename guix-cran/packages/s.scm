@@ -2341,19 +2341,19 @@ formats as well as other swatch file formats can be found at
 (define-public r-swash
   (package
     (name "r-swash")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swash" version))
        (sha256
-        (base32 "15vn6agwidvzmy3q1kiggwqa0y3z0f78574md531mw4jly35n9z6"))))
+        (base32 "0x11ad2dl6wm2frkzxs52mv1s1qfrg2jwqmff71hfw066n78x2lc"))))
     (properties `((upstream-name . "swash")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lubridate))
+    (propagated-inputs (list r-spdep r-sf r-lubridate))
     (home-page "https://cran.r-project.org/package=swash")
     (synopsis "Swash-Backwash Model for the Single Epidemic Wave")
     (description
@@ -5481,13 +5481,13 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
 (define-public r-surveydown
   (package
     (name "r-surveydown")
-    (version "0.11.0")
+    (version "0.12.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveydown" version))
        (sha256
-        (base32 "0i9k3lk6sw46lv8wi4wsmlf9nj7qcpaz9h123aqz0df7hy9gf0wj"))))
+        (base32 "1qnzsp7wl76m43cjs33vk0ik681raas1gxvp06sv1a3hza43qcf2"))))
     (properties `((upstream-name . "surveydown")))
     (build-system r-build-system)
     (arguments
@@ -14183,6 +14183,60 @@ supporting Gaussian outcomes was introduced by Bradley, Wikle, and Holan
 STCOS models.")
     (license license:expat)))
 
+(define-public r-stceg
+  (package
+    (name "r-stceg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stCEG" version))
+       (sha256
+        (base32 "0ki3rvsh3bg4i4mz4flhrcmb1yzmxqzb73nq6gqckkbvlg4bp3g4"))))
+    (properties `((upstream-name . "stCEG")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-visnetwork
+                             r-viridis
+                             r-tidyverse
+                             r-tidyr
+                             r-stringr
+                             r-spdata
+                             r-sortable
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyjqui
+                             r-shinycssloaders
+                             r-shiny
+                             r-sf
+                             r-scales
+                             r-rcolorbrewer
+                             r-purrr
+                             r-leaflet
+                             r-igraph
+                             r-hwep
+                             r-htmlwidgets
+                             r-htmltools
+                             r-gtools
+                             r-dt
+                             r-dplyr
+                             r-crayon
+                             r-colorspace))
+    (home-page "https://github.com/holliecalley/stCEG")
+    (synopsis "Fully Customizable Chain Event Graphs over Spatial Areas")
+    (description
+     "Enables the creation of Chain Event Graphs over spatial areas, with an optional
+Shiny user interface.  Allows users to fully customise both the structure and
+underlying model of the Chain Event Graph, offering a high degree of flexibility
+for tailored analyses.  For more details on Chain Event Graphs, see Freeman, G.,
+& Smith, J. Q. (2011) <doi:10.1016/j.jmva.2011.03.008>, Collazo R. A., GÃ¶rgen
+C. and Smith J. Q. (2018, ISBN:9781498729604) and Barclay, L. M., Hutton, J. L.,
+& Smith, J. Q. (2014) <doi:10.1214/13-BA843>.")
+    (license license:gpl3+)))
+
 (define-public r-stccgev
   (package
     (name "r-stccgev")
@@ -17318,6 +17372,50 @@ yield and stability (1991) (<doi:10.2134/agronj1991.00021962008300010037x>),
 Additive Main Effects and Multiplicative Interaction (AMMI) method and Genotype
 plus Genotypes by Environment (GGE) Interaction methods.")
     (license license:gpl2)))
+
+(define-public r-stabiliser
+  (package
+    (name "r-stabiliser")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stabiliser" version))
+       (sha256
+        (base32 "1zyqmj8s8x0h8dji50r3yhn3n3838vci81gm02p971px8x5wq9y8"))))
+    (properties `((upstream-name . "stabiliser")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rsample
+                             r-recipes
+                             r-purrr
+                             r-ncvreg
+                             r-matrixstats
+                             r-lmertest
+                             r-lme4
+                             r-knitr
+                             r-hmisc
+                             r-glmnet
+                             r-ggplot2
+                             r-expss
+                             r-dplyr
+                             r-caret
+                             r-broom
+                             r-bigstep))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=stabiliser")
+    (synopsis "Stabilising Variable Selection")
+    (description
+     "This package provides a stable approach to variable selection through stability
+selection and the use of a permutation-based objective stability threshold.
+Lima et al (2021) <doi:10.1038/s41598-020-79317-8>, Meinshausen and Buhlmann
+(2010) <doi:10.1111/j.1467-9868.2010.00740.x>.")
+    (license license:expat)))
 
 (define-public r-sta
   (package
@@ -37399,13 +37497,13 @@ statistic, and q nearest neighbors of cases.")
 (define-public r-smacofx
   (package
     (name "r-smacofx")
-    (version "1.20-1")
+    (version "1.21-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smacofx" version))
        (sha256
-        (base32 "0lr6hpg2h7rb3x9qvggip4f034wijzibhxkam6wipss28mc7845q"))))
+        (base32 "13bcwaqqymlc03y9dr5ijprjmq26gwfk3qjp5ya3q9z7yzlywhzr"))))
     (properties `((upstream-name . "smacofx")))
     (build-system r-build-system)
     (arguments
@@ -59624,6 +59722,40 @@ Cornelius and Reynolds (1991) <doi:10.2307/1941559> and Legendre and Legendre
 (2012, ISBN: 9780444538697).")
     (license license:expat)))
 
+(define-public r-segmgarch
+  (package
+    (name "r-segmgarch")
+    (version "1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "segMGarch" version))
+       (sha256
+        (base32 "0s5zi35z7r72m8g9a5l5w55cnkwkgxmwi653dcfjg0pcdc7v5s6z"))))
+    (properties `((upstream-name . "segMGarch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-iterators
+                             r-foreach
+                             r-fgarch
+                             r-doparallel
+                             r-corpcor))
+    (home-page "https://cran.r-project.org/package=segMGarch")
+    (synopsis
+     "Multiple Change-Point Detection for High-Dimensional GARCH Processes")
+    (description
+     "This package implements a segmentation algorithm for multiple change-point
+detection in high-dimensional GARCH processes.  It simultaneously segments GARCH
+processes by identifying common change-points, each of which can be shared by a
+subset or all of the component time series as a change-point in their
+within-series and/or cross-sectional correlation structure.")
+    (license license:gpl2+)))
+
 (define-public r-segmetric
   (package
     (name "r-segmetric")
@@ -67493,13 +67625,13 @@ and <http://foges.github.io/pogs/stp/r>.")
 (define-public r-sbtools
   (package
     (name "r-sbtools")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sbtools" version))
        (sha256
-        (base32 "14yjml5d34jkyw7rsc02zpb4wy9w30sxqzpdjk02znxpm9baxsj1"))))
+        (base32 "055klpw4hifbwk4rr9wr7dwqxgvsvqf572pk268qvmixiyil0c3k"))))
     (properties `((upstream-name . "sbtools")))
     (build-system r-build-system)
     (arguments
@@ -72846,13 +72978,13 @@ using modified approach proposed by Haris F and Ubaidillah A
 (define-public r-sae-projection
   (package
     (name "r-sae-projection")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sae.projection" version))
        (sha256
-        (base32 "0qbpr5xc9a2mlflncc3wq73ciim823dmxxljawcmml8pf6lhihh8"))))
+        (base32 "02s1ngqfcxrwddxcmqpj9gazj1qb9m8x3ahgh5vywckx9d12772w"))))
     (properties `((upstream-name . "sae.projection")))
     (build-system r-build-system)
     (arguments
@@ -72879,6 +73011,7 @@ using modified approach proposed by Haris F and Ubaidillah A
                              r-cli
                              r-caret
                              r-bonsai))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/Alfrzlp/sae.projection")
     (synopsis "Small Area Estimation Using Model-Assisted Projection Method")
     (description

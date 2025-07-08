@@ -11144,13 +11144,13 @@ plant taxa across different states/territories.")
 (define-public r-apc
   (package
     (name "r-apc")
-    (version "2.0.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apc" version))
        (sha256
-        (base32 "15g5xcj67hqlxinjpahxhacygqn8118z97fzp8ra399lcy08l52m"))))
+        (base32 "1ryypindnm1x5k2r24nyn0dnclcvisk3a8x64ris1p2yvs3ak789"))))
     (properties `((upstream-name . "apc")))
     (build-system r-build-system)
     (arguments
@@ -11173,12 +11173,13 @@ plant taxa across different states/territories.")
 can be organised in matrices indexed by age-cohort, age-period or cohort-period.
  The data can include dose and response or just doses.  The statistical model is
 a generalized linear model (GLM) allowing for 3,2,1 or 0 of the
-age-period-cohort factors.  Individual-level data should have a row for each
-individual and columns for each of age, period, and cohort.  The statistical
-model for repeated cross-section is a generalized linear model.  The statistical
-model for panel data is ordinary least squares.  The canonical parametrisation
-of Kuang, Nielsen and Nielsen (2008) <DOI:10.1093/biomet/asn026> is used.  Thus,
-the analysis does not rely on ad hoc identification.")
+age-period-cohort factors.  2-sample analysis is possible.  Mixed frequency data
+are possible.  Individual-level data should have a row for each individual and
+columns for each of age, period, and cohort.  The statistical model for repeated
+cross-section is a generalized linear model.  The statistical model for panel
+data is ordinary least squares.  The canonical parametrisation of Kuang, Nielsen
+and Nielsen (2008) <DOI:10.1093/biomet/asn026> is used.  Thus, the analysis does
+not rely on ad hoc identification.")
     (license license:gpl3)))
 
 (define-public r-apatext
@@ -18989,13 +18990,13 @@ Solution - with two normalizations).  This method is described in Souza et al.
 (define-public r-ahptools
   (package
     (name "r-ahptools")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AHPtools" version))
        (sha256
-        (base32 "1mxaj86gnyi3cbwj3nh8pv4shc1sihpdaaxj7f7ir08dn894w6gy"))))
+        (base32 "0bgn3vg93hz1blyvpbs15vgbg68rkfgg6832rr5hqj5iwnvw02rz"))))
     (properties `((upstream-name . "AHPtools")))
     (build-system r-build-system)
     (arguments
@@ -19006,15 +19007,14 @@ Solution - with two normalizations).  This method is described in Souza et al.
     (home-page "https://CRAN.R-project.org/package=AHPtools")
     (synopsis "Consistency in the Analytic Hierarchy Process")
     (description
-     "This package provides a Swiss Army knife of utility functions for users of the
-Analytic Hierarchy Process (AHP) which will help you to assess the consistency
-of a PCM as well as to improve its consistency ratio, to compute the sensitivity
-of a PCM, create a logical (as distinct from a random PCM) from preferences
-provided for the alternatives, and a function that helps evaluate the actual
-consistency of a PCM based on objective, fair bench marking.  The various
-functions in the toolkit additionally provide the flexibility to users to
-specify only the upper triangular comparison ratios of the PCM in order to
-performs its assigned task.")
+     "An integrated set of functions for building, analyzing, and visualizing Analytic
+Hierarchy Process (AHP) models, designed to support structured decision-making
+in consultancy, policy analysis, and research (Bose 2022
+<doi:10.1002/mcda.1784>; Bose 2023 <doi:10.1002/mcda.1821>).  In addition to
+tools for assessing and improving the consistency of pairwise comparison
+matrices (PCMs), the package supports full-hierarchy weight computation,
+intuitive tree-based visualization, sensitivity analysis, along with convenient
+PCM generation from user preferences.")
     (license license:gpl3)))
 
 (define-public r-ahpsurvey

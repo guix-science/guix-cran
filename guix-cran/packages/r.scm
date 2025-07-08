@@ -7379,13 +7379,13 @@ it with additional performance measures and functionality.")
 (define-public r-rsiena
   (package
     (name "r-rsiena")
-    (version "1.4.7")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSiena" version))
        (sha256
-        (base32 "0hvjd0f80p5icrzd4qa01349pkc5884l2p00m580aqiigri49d1q"))))
+        (base32 "17cky5769ra4mpppb2m4kf9zpkf9lnvkm21wq11cbhrfzaspaqn8"))))
     (properties `((upstream-name . "RSiena")))
     (build-system r-build-system)
     (arguments
@@ -23274,44 +23274,6 @@ format versions 1.0 to 1.4 <https://laszip.org/>.")
 management, fuel modeling, ecology, natural resource management, climate,
 conservation, etc., via the LANDFIRE (<https://www.landfire.gov/>) Product
 Service ('LFPS') API.")
-    (license license:gpl3+)))
-
-(define-public r-rlakehabitat
-  (package
-    (name "r-rlakehabitat")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rLakeHabitat" version))
-       (sha256
-        (base32 "1i6dkh0dv4fhnflsfyg96yi318yx2g7l5kpvlg3bllhmhsax3dbc"))))
-    (properties `((upstream-name . "rLakeHabitat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyterra
-                             r-terra
-                             r-sf
-                             r-rlakeanalyzer
-                             r-isoband
-                             r-gstat
-                             r-ggplot2
-                             r-gganimate
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/tristanblechinger/rlakehabitat")
-    (synopsis "Interpolate Bathymetry and Quantify Physical Aquatic Habitat")
-    (description
-     "Offers bathymetric interpolation using Inverse Distance Weighted and Ordinary
-Kriging via the gstat and terra packages.  Other functions focus on quantifying
-physical aquatic habitats (e.g., littoral, epliminion, metalimnion, hypolimnion)
-from interpolated digital elevation models (DEMs).  Functions were designed to
-calculate these metrics across water levels for use in reservoirs but can be
-applied to any DEM and will provide values for fixed conditions.  Parameters
-like Secchi disk depth or estimated photic zone, thermocline depth, and water
-level fluctuation depth are included in most functions.")
     (license license:gpl3+)))
 
 (define-public r-rlakeanalyzer
@@ -48075,13 +48037,13 @@ of time-consuming functions.")
 (define-public r-rcdo
   (package
     (name "r-rcdo")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcdo" version))
        (sha256
-        (base32 "1qiy4jalg6ms6k9chbbkfc0vjmljffym4bfa0v7ks9y9j21jxr17"))))
+        (base32 "1glbyk40lw85jv3g33skghqsp5zaymypapfbv492kdz50yfyhkvk"))))
     (properties `((upstream-name . "rcdo")))
     (build-system r-build-system)
     (arguments
@@ -50108,13 +50070,13 @@ Blaauw & Christen (2011).")
 (define-public r-rb3
   (package
     (name "r-rb3")
-    (version "0.0.12")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rb3" version))
        (sha256
-        (base32 "0zxxkyk541vakhj7xr7xsw9y93ys5kjq6slw9qchp6w9bfw6wwxc"))))
+        (base32 "1p7viylp5mk0h43272ni07arwwyrnbfiws27m19faxlcrj2xqhl9"))))
     (properties `((upstream-name . "rb3")))
     (build-system r-build-system)
     (arguments
@@ -50122,22 +50084,23 @@ Blaauw & Christen (2011).")
       #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-xml
-                             r-tidyr
                              r-stringr
-                             r-rvest
+                             r-stringi
+                             r-rsqlite
                              r-rlang
-                             r-readxl
                              r-readr
+                             r-r-utils
                              r-purrr
-                             r-proto
+                             r-lubridate
                              r-jsonlite
                              r-httr
                              r-dplyr
                              r-digest
+                             r-dbi
                              r-cli
                              r-bizdays
                              r-base64enc
-                             r-ascii))
+                             r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/rb3")
     (synopsis "Download and Parse Public Data Released by B3 Exchange")
@@ -54459,6 +54422,33 @@ based upon results obtained from a bivariate dynamic system.  Starting version
 0.4, RAMpath can conduct power analysis for both univariate and bivariate latent
 change score models.")
     (license license:gpl2)))
+
+(define-public r-rampage
+  (package
+    (name "r-rampage")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rampage" version))
+       (sha256
+        (base32 "1kmz6dg912irzrzwk03xsgai5qzfal44qac0zvy4ry77danpc0iz"))))
+    (properties `((upstream-name . "rampage")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://adamtkocsis.com/rampage/")
+    (synopsis "Calibrated Color Ramps")
+    (description
+     "Value-calibrated color ramps can be useful to emphasize patterns in data from
+complex distributions.  Colors can be tied to specific values, and the
+association can be expanded into full color ramps that also include the
+relationship between colors and values.  Such ramps can be used in a variety of
+cases when heatmap-type plots are necessary, including the visualization of
+vector and raster spatial data, such as topographies.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-ramp
   (package

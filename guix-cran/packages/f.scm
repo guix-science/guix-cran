@@ -9198,13 +9198,13 @@ women's time for the 2024 London Marathon.")
 (define-public r-forecasthybrid
   (package
     (name "r-forecasthybrid")
-    (version "5.0.19")
+    (version "5.1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forecastHybrid" version))
        (sha256
-        (base32 "1pg3wbmlagr01j3nikfh4dvh5lvbdfp7069wx9h9xsl7d4481ly1"))))
+        (base32 "1dc78dy728bk4ny2w6yrjcfjl2h65d2hxdnrfvjyqsqx8wh48xni"))))
     (properties `((upstream-name . "forecastHybrid")))
     (build-system r-build-system)
     (arguments
@@ -9223,12 +9223,12 @@ women's time for the 2024 London Marathon.")
     (description
      "Convenient functions for ensemble forecasts in R combining approaches from the
 forecast package.  Forecasts generated from @code{auto.arima()}, @code{ets()},
-@code{thetaf()}, @code{nnetar()}, @code{stlm()}, @code{tbats()}, and
-@code{snaive()} can be combined with equal weights, weights based on in-sample
-errors (introduced by Bates & Granger (1969) <doi:10.1057/jors.1969.103>), or
-cross-validated weights.  Cross validation for time series data with
-user-supplied models and forecasting functions is also supported to evaluate
-model accuracy.")
+@code{thetaf()}, @code{nnetar()}, @code{stlm()}, @code{tbats()}, @code{snaive()}
+and @code{arfima()} can be combined with equal weights, weights based on
+in-sample errors (introduced by Bates & Granger (1969)
+<doi:10.1057/jors.1969.103>), or cross-validated weights.  Cross validation for
+time series data with user-supplied models and forecasting functions is also
+supported to evaluate model accuracy.")
     (license license:gpl3)))
 
 (define-public r-forecaster
@@ -10922,13 +10922,13 @@ ISBN:9780080557816).")
 (define-public r-fluxweb
   (package
     (name "r-fluxweb")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxweb" version))
        (sha256
-        (base32 "0bz6kxnr5kqas3381qmwqhlymbrfwqzh3hs2aikrqadw6slql93w"))))
+        (base32 "1ynlprbw7slwx6kini9q9lp520swrwmgpnvmfxka6y5v399dkp5b"))))
     (properties `((upstream-name . "fluxweb")))
     (build-system r-build-system)
     (arguments
@@ -10939,7 +10939,7 @@ ISBN:9780080557816).")
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
     (native-inputs (list r-r-rsp))
-    (home-page "https://www.biorxiv.org/content/early/2017/12/06/229450")
+    (home-page "https://www.biorxiv.org/content/10.1101/229450v4")
     (synopsis "Estimate Energy Fluxes in Food Webs")
     (description
      "Compute energy fluxes in trophic networks, from resources to their consumers,
@@ -13864,13 +13864,13 @@ quality, reliability, and structure.")
 (define-public r-fixes
   (package
     (name "r-fixes")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fixes" version))
        (sha256
-        (base32 "03j12sabw8g2d05z5dwk2c2pxb1751ahdqca96mjrn1k1pnka29x"))))
+        (base32 "0805gsrmrqi0z6jwqrys6afj6m61cw7b185dzmj44yz2m3fhfnzm"))))
     (properties `((upstream-name . "fixes")))
     (build-system r-build-system)
     (arguments
@@ -13888,7 +13888,9 @@ quality, reliability, and structure.")
      "Tools for Creating and Visualizing Fixed-Effects Event Study Models")
     (description
      "This package provides functions for creating, analyzing, and visualizing event
-study models using fixed-effects regression.")
+study models using fixed-effects regression.  Supports staggered adoption,
+multiple confidence intervals, flexible clustering, and panel/time
+transformations in a simple workflow.")
     (license license:expat)))
 
 (define-public r-fixerapi
@@ -22809,20 +22811,20 @@ extend it to tackle datasets in metric spaces.")
 (define-public r-fastmatrix
   (package
     (name "r-fastmatrix")
-    (version "0.5-9017")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastmatrix" version))
        (sha256
-        (base32 "0bdbcn20c3kxjc7zg1xvp0nnykifwnf8v2911gqz4156hx9kw8k8"))))
+        (base32 "1s62avacck9bszws2q8mkf2b9rs2dh3zs04lgm75fkbvcayr7jrx"))))
     (properties `((upstream-name . "fastmatrix")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list gfortran))
-    (home-page "https://faosorios.github.io/fastmatrix/")
+    (home-page "https://github.com/faosorios/fastmatrix")
     (synopsis "Fast Computation of some Matrices Useful in Statistics")
     (description
      "Small set of functions to fast computation of some matrices and operations
