@@ -3222,13 +3222,13 @@ ISBN:9780849303166).")
 (define-public r-rts2
   (package
     (name "r-rts2")
-    (version "0.8.0")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rts2" version))
        (sha256
-        (base32 "11qigvkrvgqbm7x08a9xrlm8a1qgrzrpda8dqhlqlcj2sd60wp07"))))
+        (base32 "100zapbwdk952687a38pqimvb3zzpc7xp18y1c987hjmz1xf5adj"))))
     (properties `((upstream-name . "rts2")))
     (build-system r-build-system)
     (arguments
@@ -38491,13 +38491,13 @@ package seamlessly.")
 (define-public r-redist
   (package
     (name "r-redist")
-    (version "4.2.0")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redist" version))
        (sha256
-        (base32 "1ibwldd24zj2fhpn18q4381mp82p7wbv61xmqm2lzybil92y800w"))))
+        (base32 "140kzihidw4x3gx2j2hpzny35x0mg4qy7mp0d13c4sf2mkimlzds"))))
     (properties `((upstream-name . "redist")))
     (build-system r-build-system)
     (arguments
@@ -38537,9 +38537,9 @@ the enumeration algorithm of Fifield, Imai, Kawahara, and Kenny (2020)
 <doi:10.1080/2330443X.2020.1791773>, the Flip MCMC algorithm of Fifield,
 Higgins, Imai and Tarr (2020) <doi:10.1080/10618600.2020.1739532>, the
 Merge-split/Recombination algorithms of Carter et al. (2019)
-<@code{arXiv:1911.01503>} and @code{DeFord} et al. (2021)
+<doi:10.48550/@code{arXiv.1911.01503>} and @code{DeFord} et al. (2021)
 <doi:10.1162/99608f92.eb30390f>, and the Short-burst optimization algorithm of
-Cannon et al. (2020) <@code{arXiv:2011.02288>}.")
+Cannon et al. (2020) <doi:10.48550/@code{arXiv.2011.02288>}.")
     (license license:gpl2+)))
 
 (define-public r-rediscover

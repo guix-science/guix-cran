@@ -7956,6 +7956,39 @@ these services, see <https://www.ogc.org/publications/standard/wfs/> and
 <https://www.ogc.org/publications/standard/wms/>.")
     (license license:expat)))
 
+(define-public r-argentinapi
+  (package
+    (name "r-argentinapi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ArgentinAPI" version))
+       (sha256
+        (base32 "1g386nv5pwhc5cd198m6v1b6j89vfcdgh5fs98nfqjsf60zvsykl"))))
+    (properties `((upstream-name . "ArgentinAPI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lubridate r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/argentinapi")
+    (synopsis
+     "Access Argentine Economic, Social, and Geopolitical Data via RESTful APIs and Curated Datasets")
+    (description
+     "This package provides functions to access data from the @code{ArgentinaDatos}
+API and the REST Countries API related to Argentina's exchange rates, inflation,
+political figures, holidays, and general country-level indicators.
+Additionally, the package includes curated datasets related to Argentina,
+covering topics such as economic indicators, biodiversity, agriculture, human
+rights, genetic data, and consumer prices.  The package supports research and
+analysis focused on Argentina by integrating open APIs with high-quality
+datasets from various domains.  For more details on the @code{ArgentinaDatos}
+API', see <https://argentinadatos.com/> and for REST Countries', see
+<https://restcountries.com/>.")
+    (license license:gpl3)))
+
 (define-public r-arfima
   (package
     (name "r-arfima")
@@ -20271,19 +20304,19 @@ bounded, multi-modal, or heavily skewed sampling errors.")
 (define-public r-ageutils
   (package
     (name "r-ageutils")
-    (version "0.0.9")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ageutils" version))
        (sha256
-        (base32 "0biaq964ysi6y6i6nzxb6hkk6i9xcwp902pcl9dpyvdhjp012dg9"))))
+        (base32 "0y0afgndm64fzd10rh9n8aiqy0s59sfl7sbc9b9xr4i8virsyaj9"))))
     (properties `((upstream-name . "ageutils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rlang))
+    (propagated-inputs (list r-vctrs r-tibble r-rlang))
     (home-page "https://timtaylor.github.io/ageutils/")
     (synopsis "Collection of Functions for Working with Age Intervals")
     (description

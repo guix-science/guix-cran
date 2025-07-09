@@ -16268,20 +16268,20 @@ prefers Fira', and IQSS requires Libertinus'.")
 (define-public r-binaryrl
   (package
     (name "r-binaryrl")
-    (version "0.8.9")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binaryRL" version))
        (sha256
-        (base32 "0av69494d2j4rhrqqnxxmka5mgszw1gw0qw2lm4gbzy3ihcf0iw3"))))
+        (base32 "0a08rhlp65i2p4yywcyijcd3jym0pabxadjv2m456c627s5g7akp"))))
     (properties `((upstream-name . "binaryRL")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-progressr r-future r-foreach r-dorng r-dofuture))
-    (home-page "https://github.com/yuki-961004/binaryRL")
+    (home-page "https://yuki-961004.github.io/binaryRL/")
     (synopsis
      "Reinforcement Learning Tools for Two-Alternative Forced Choice Tasks")
     (description
@@ -16289,8 +16289,8 @@ prefers Fira', and IQSS requires Libertinus'.")
 specifically tailored for Two-Alternative Forced Choice (TAFC) tasks, commonly
 employed in psychological research.  These models build upon the foundational
 principles of model-free reinforcement learning detailed in Sutton and Barto
-(1998) <ISBN:0262039249>.  The package allows for the intuitive definition of RL
-models using simple if-else statements.  Our approach to constructing and
+(2018) <ISBN:9780262039246>.  The package allows for the intuitive definition of
+RL models using simple if-else statements.  Our approach to constructing and
 evaluating these computational models is informed by the guidelines proposed in
 Wilson & Collins (2019) <doi:10.7554/@code{eLife.49547>}.  Example datasets
 included with the package are sourced from the work of Mason et al. (2024)

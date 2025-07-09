@@ -6127,13 +6127,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "11.3")
+    (version "11.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "0ljhvv2zvfwaiwk37s433xmzb4aayhwd5rzaffzf6wggnb6phm0r"))))
+        (base32 "0d5w3yjla0qpxir2a17mn699z7nsxqzpj98418657r9plxqiq3c6"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (arguments

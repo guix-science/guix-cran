@@ -934,13 +934,13 @@ Association (AHA) as described in Dâagostino, et al (2008)
 (define-public r-cvms
   (package
     (name "r-cvms")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvms" version))
        (sha256
-        (base32 "09wr85lygkkpfcraa63m45qrfxy7zd5niww0zmbvqym16fz72xk6"))))
+        (base32 "0d3fgrrphvpfd5drk4rrxwq77zaz8byrajnm2zzwqs3rn1ry8d17"))))
     (properties `((upstream-name . "cvms")))
     (build-system r-build-system)
     (arguments

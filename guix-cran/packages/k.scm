@@ -5164,13 +5164,13 @@ for right-censored data including methods of bandwidth selection.")
 (define-public r-kernelshap
   (package
     (name "r-kernelshap")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kernelshap" version))
        (sha256
-        (base32 "0p0zi0l3b7axcp3r34arwbpbbj8bibgryza7g5f45ngm77nlbc5f"))))
+        (base32 "1nja629jxs4cr26pc6svdxxbbfcg61sq7kiyr9g1bypyh2m62989"))))
     (properties `((upstream-name . "kernelshap")))
     (build-system r-build-system)
     (arguments
@@ -5180,11 +5180,14 @@ for right-censored data including methods of bandwidth selection.")
     (home-page "https://github.com/ModelOriented/kernelshap")
     (synopsis "Kernel SHAP")
     (description
-     "Efficient implementation of Kernel SHAP, see Lundberg and Lee (2017), and Covert
-and Lee (2021) <http://proceedings.mlr.press/v130/covert21a>.  Furthermore, for
-up to 14 features, exact permutation SHAP values can be calculated.  The package
-plays well together with meta-learning packages like tidymodels', caret or
-mlr3'.  Visualizations can be done using the R package shapviz'.")
+     "Efficient implementation of Kernel SHAP (Lundberg and Lee, 2017,
+<doi:10.48550/@code{arXiv.1705.07874>}) permutation SHAP, and additive SHAP for
+model interpretability.  For Kernel SHAP and permutation SHAP, if the number of
+features is too large for exact calculations, the algorithms iterate until the
+SHAP values are sufficiently precise in terms of their standard errors.  The
+package integrates smoothly with meta-learning packages such as tidymodels',
+caret or mlr3'.  It supports multi-output models, case weights, and parallel
+computations.  Visualizations can be done using the R package shapviz'.")
     (license license:gpl2+)))
 
 (define-public r-kernelknn

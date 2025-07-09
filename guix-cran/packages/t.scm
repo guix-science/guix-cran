@@ -9674,6 +9674,32 @@ Ukrainian strings into Latin symbols.")
 (2010) <doi:10.1177/0759106309352586>.")
     (license license:gpl2+)))
 
+(define-public r-transition
+  (package
+    (name "r-transition")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Transition" version))
+       (sha256
+        (base32 "0j7hgrqrwwhi78s0v3z94i83bsvjgaqp4fv9qdiz89gswsazim64"))))
+    (properties `((upstream-name . "Transition")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://mark-eis.github.io/Transition/")
+    (synopsis
+     "Characterise Transitions in Test Result Status in Longitudinal Studies")
+    (description
+     "Analyse data from longitudinal studies to characterise changes in values of
+semi-quantitative outcome variables within individual subjects, using high
+performance C++ code to enable rapid processing of large datasets.  A flexible
+methodology is available for codifying these state transitions.")
+    (license license:expat)))
+
 (define-public r-transgraph
   (package
     (name "r-transgraph")
@@ -27389,13 +27415,13 @@ and accurate reports.")
 (define-public r-teal-logger
   (package
     (name "r-teal-logger")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.logger" version))
        (sha256
-        (base32 "1d6d9rahc2nqzajp66v7yrif3x2w0l12z0v4ly87hnvy6dvkgfkp"))))
+        (base32 "1yw6ywdcwm069lv36i69gzkyg3pc8k36dnj8wgyzvbv8r6720l5n"))))
     (properties `((upstream-name . "teal.logger")))
     (build-system r-build-system)
     (arguments

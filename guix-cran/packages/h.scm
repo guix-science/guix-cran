@@ -8149,6 +8149,29 @@ periodicity.  A detailed vignette can be found in the open-access paper
 Kleen, and Sjoerup (2022, <doi:10.18637/jss.v104.i08>).")
     (license license:gpl2+)))
 
+(define-public r-highfive
+  (package
+    (name "r-highfive")
+    (version "3.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HighFive" version))
+       (sha256
+        (base32 "0plfnrn0965fhdynlw7wkx0wgs32c86xix1nzq4b08waq6rhmaz3"))))
+    (properties `((upstream-name . "HighFive")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list hdf5))
+    (home-page "https://github.com/theAeon/HighFive")
+    (synopsis "The 'HighFive' 'C++' Interface to 'HDF5'")
+    (description
+     "This package provides a modern idiomatic header-only C++ interface for libhdf5'.
+ Original software can be found at <https://github.com/highfive-devs/highfive/>.")
+    (license (license:fsdg-compatible "BSL-1.0"))))
+
 (define-public r-highestmedianrules
   (package
     (name "r-highestmedianrules")
@@ -15548,13 +15571,13 @@ algorithm was described by Hejazi, Coyle, and van der Laan (2020)
 (define-public r-hakaiapi
   (package
     (name "r-hakaiapi")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hakaiApi" version))
        (sha256
-        (base32 "124favc84xv2kzdpvr5b8x3qrbq26swh7xkjgznq6y5hclxa43kv"))))
+        (base32 "1hy15104nmmilr3x9b7aavklb009qqxqjg2bk5hjzjq1vmdml1pz"))))
     (properties `((upstream-name . "hakaiApi")))
     (build-system r-build-system)
     (arguments

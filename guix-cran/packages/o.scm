@@ -6913,13 +6913,13 @@ description of the interpretive clustering (IC) method.")
 (define-public r-openrepgrid
   (package
     (name "r-openrepgrid")
-    (version "0.1.17")
+    (version "0.1.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenRepGrid" version))
        (sha256
-        (base32 "1an9q33g0q5hsf8xz5cqxbnypp0jffhs0nshlal9d4svy1ks0nc9"))))
+        (base32 "0dmj218fbs9nsyzs6jfa3rpy1v6336flxm9bfys5pb3xc2v7a4wg"))))
     (properties `((upstream-name . "OpenRepGrid")))
     (build-system r-build-system)
     (arguments

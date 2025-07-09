@@ -1962,13 +1962,13 @@ likelihood (PL) or penalized least squares (PLS).  For details, please see Huang
 (define-public r-lsirm12pl
   (package
     (name "r-lsirm12pl")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lsirm12pl" version))
        (sha256
-        (base32 "0bqlclpyask6lms8y45dspaj6slxz8f8wf17v5n086d26bbb7d66"))))
+        (base32 "0v2pdw0g56qz1z0cm3q2sxs92qry21xfv7pspb55g68bkyfjjjqb"))))
     (properties `((upstream-name . "lsirm12pl")))
     (build-system r-build-system)
     (arguments
@@ -20216,13 +20216,13 @@ for the presence of local factors with main function @code{local_factors()}.")
 (define-public r-l1pack
   (package
     (name "r-l1pack")
-    (version "0.52")
+    (version "0.60")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "L1pack" version))
        (sha256
-        (base32 "0mk282f9kd4rz8gkhrdl670p430ib5qbi420j717b78ca1bvv7h3"))))
+        (base32 "0hvhxg0d1y9ryfahyqm9m55hx379d6k0vfrylm48rsh22rcinqfq"))))
     (properties `((upstream-name . "L1pack")))
     (build-system r-build-system)
     (arguments

@@ -124,13 +124,13 @@ reporting summary statistics.")
 (define-public r-utsf
   (package
     (name "r-utsf")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "utsf" version))
        (sha256
-        (base32 "1axcvg5h3wwpdm15fpqip20ngmcp1j0hzps7xaw2bbnx4rcj35j5"))))
+        (base32 "04bpx4wb92w41z8h54har5jb9cblhs34qhaqcfkywg83rhp5qgaz"))))
     (properties `((upstream-name . "utsf")))
     (build-system r-build-system)
     (arguments
@@ -141,6 +141,7 @@ reporting summary statistics.")
                              r-ranger
                              r-ipred
                              r-ggplot2
+                             r-generics
                              r-forecast
                              r-fnn
                              r-cubist))

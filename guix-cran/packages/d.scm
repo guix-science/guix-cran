@@ -4084,13 +4084,13 @@ MOLGENIS Armadillo server.  MOLGENIS Armadillo is a light-weight
 (define-public r-dsmmr
   (package
     (name "r-dsmmr")
-    (version "1.0.5")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsmmR" version))
        (sha256
-        (base32 "0pdhpshdhpd1cvgnx3cnbkczwychxv49w90sc4lvgviknl7wd4c1"))))
+        (base32 "1pfiraa82qj9palqdln8gi6yd73ks4fjq6frfz9548px4b4zxzvf"))))
     (properties `((upstream-name . "dsmmR")))
     (build-system r-build-system)
     (arguments
@@ -7017,13 +7017,13 @@ the Rmpfr package and hence the underlying MPFR and GMP C libraries.")
 (define-public r-dpq
   (package
     (name "r-dpq")
-    (version "0.5-9")
+    (version "0.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPQ" version))
        (sha256
-        (base32 "04bmsqp4mkrf4y1s161ql77f2zpqi66cyqyz9xpzgdf0dizsvn50"))))
+        (base32 "0kr1prx189w6bhyhkigcqspw7jcyyspc27jj6g7wsg2vnd9w1fil"))))
     (properties `((upstream-name . "DPQ")))
     (build-system r-build-system)
     (arguments
@@ -7044,7 +7044,8 @@ for discrete or continuous distributions respectively.  This is for the use of
 researchers in these numerical approximation implementations, notably for my own
 use in order to improve standard R @code{pbeta()}, @code{qgamma()}, ..., etc:
 {'\"dpq\"'-functions}.")
-    (license license:gpl2+)))
+    (license (list license:gpl2+
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-dppmix
   (package
@@ -8685,13 +8686,13 @@ capabilities of the parabar package.  Learn more about parabar and
 (define-public r-door
   (package
     (name "r-door")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "door" version))
        (sha256
-        (base32 "1lld22ir1ipi8nzs32hf140rhvx187hybjvcppvwmya1fb16ddn9"))))
+        (base32 "1z7pfy4j5nxk21bjba6zgvcy5asd0g5xhq2q74d1y49jz3vsqsx9"))))
     (properties `((upstream-name . "door")))
     (build-system r-build-system)
     (arguments
@@ -8705,7 +8706,7 @@ capabilities of the parabar package.  Learn more about parabar and
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=door")
     (synopsis
-     "Design of Clinical Trials with the Desirability of Outcome Ranking Methodology")
+     "Analysis of Clinical Trials with the Desirability of Outcome Ranking Methodology")
     (description
      "Statistical methods and related graphical representations for the Desirability
 of Outcome Ranking (DOOR) methodology.  The DOOR is a paradigm for the design,
@@ -8713,10 +8714,10 @@ analysis, interpretation of clinical trials and other research studies based on
 the patient centric benefit risk evaluation.  The package provides functions for
 generating summary statistics from individual level/summary level datasets,
 conduct DOOR probability-based inference, and visualization of the results.  For
-more details of DOOR methodology, see \"Handbook of Generalized Pairwise
-Comparisons\", Chapter 13 <doi:10.1201/9781003390855>.  For more explanation of
-the statistical methods and the graphics, see the technical document and user
-manual of the DOOR Shiny apps at <https://methods.bsc.gwu.edu>.")
+more details of DOOR methodology, see Hamasaki and Evans (2025)
+<doi:10.1201/9781003390855>.  For more explanation of the statistical methods
+and the graphics, see the technical document and user manual of the DOOR Shiny
+apps at <https://methods.bsc.gwu.edu>.")
     (license license:gpl3+)))
 
 (define-public r-doolkit
@@ -10636,13 +10637,13 @@ and sediment budgets from a field or a catchment on a daily basis.")
 (define-public r-dmm
   (package
     (name "r-dmm")
-    (version "3.1-1")
+    (version "3.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dmm" version))
        (sha256
-        (base32 "0rzi1bk1js3glyw83xic7yywvgp8dc4ah8za678ipqd86w8d536g"))))
+        (base32 "167zrcmwihidgs374c4vwdvldd17s2cfaj1r7cbhpglkjk6lmcw7"))))
     (properties `((upstream-name . "dmm")))
     (build-system r-build-system)
     (arguments
@@ -10658,7 +10659,7 @@ environmental and genetic variance components for individual and maternal
 effects.  Method documented in @code{dmmOverview.pdf}; dmm is an implementation
 of dispersion mean model described by Searle et al. (1992) \"Variance
 Components\", Wiley, NY. DMM can do MINQUE', bias-corrected-ML', and REML
-variance component estimates.")
+variance and covariance component estimates.")
     (license (list license:gpl2 license:gpl2+ license:gpl3))))
 
 (define-public r-dmlalg
@@ -12537,33 +12538,6 @@ published under: Lerch, F., Ultsch, A., Lotsch, J. (2020)
 Scrucca, L. (2013) <doi:10.18637/jss.v053.i04> while the Gaussian Mixture Logic
 stems from @code{AdaptGauss}': Ultsch, A, et al. (2015)
 <doi:10.3390/ijms161025897>.")
-    (license license:expat)))
-
-(define-public r-distributioniv
-  (package
-    (name "r-distributioniv")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DistributionIV" version))
-       (sha256
-        (base32 "0rabm0dpq52r0fimhgp375rn7md7a10x2hfk390rhqdcqq0g7i0v"))))
-    (properties `((upstream-name . "DistributionIV")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-torch r-checkmate))
-    (home-page "https://cran.r-project.org/package=DistributionIV")
-    (synopsis "Distributional Instrumental Variable (DIV) Model")
-    (description
-     "Distributional instrumental variable (DIV) model for estimation of the
-interventional distribution of the outcome Y under a do-intervention on the
-treatment X. Instruments, predictors and targets can be univariate or
-multivariate.  Functionality includes estimation of the (conditional)
-interventional mean and quantiles, as well as sampling from the fitted
-(conditional) interventional distribution.")
     (license license:expat)))
 
 (define-public r-distributacalcul

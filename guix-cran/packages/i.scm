@@ -7379,6 +7379,47 @@ Elements) Research Group (<https://bellman.ciencias.uniovi.es/smire+codire/>)
 from the University of Oviedo (Spain).")
     (license license:lgpl3+)))
 
+(define-public r-intervalpsych
+  (package
+    (name "r-intervalpsych")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intervalpsych" version))
+       (sha256
+        (base32 "0pq1ycwp56521b9r1vfd5h1g8hx5sfvx8mbnn9jh185lm7sb73pa"))))
+    (properties `((upstream-name . "intervalpsych")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-purrr
+                             r-posterior
+                             r-ggplot2
+                             r-ggokabeito
+                             r-ggdist
+                             r-dplyr
+                             r-bh))
+    (home-page "https://matthiaskloft.github.io/intervalpsych/")
+    (synopsis "Analyzing Interval Data in Psychometrics")
+    (description
+     "This package implements the Interval Consensus Model (ICM) for analyzing
+continuous bounded interval-valued responses in psychometrics using Stan for
+Bayesian estimation.  Provides functions for transforming interval data to
+simplex representations, fitting item response theory (IRT) models with
+isometric log-ratio (ILR) and sum log-ratio (SLR) link functions, and
+visualizing results.  The package enables aggregation and analysis of
+interval-valued response data commonly found in psychological measurement and
+related disciplines.  Based on Kloft et al. (2024) <doi:10.31234/osf.io/dzvw2>.")
+    (license license:gpl3+)))
+
 (define-public r-intervalaverage
   (package
     (name "r-intervalaverage")
@@ -14192,13 +14233,13 @@ color images, both for binary and multi-class image segmentation.")
 (define-public r-imagery
   (package
     (name "r-imagery")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imageRy" version))
        (sha256
-        (base32 "05h4crm6p8q9li8gag5xyis0zyi7ha2v1ls76jqmhkj63z632v6l"))))
+        (base32 "1k2q4bw3mpsj6jmq7n781wmgg6q1dfdlcr0l8b5cpr3ldy371g9r"))))
     (properties `((upstream-name . "imageRy")))
     (build-system r-build-system)
     (arguments

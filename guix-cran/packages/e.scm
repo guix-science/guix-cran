@@ -14278,67 +14278,6 @@ management, data extraction, data preparation and data visualization facilities.
  See <https://ips-lmu.github.io/The-EMU-SDMS-Manual/> for more details.")
     (license license:gpl2+)))
 
-(define-public r-emtscore
-  (package
-    (name "r-emtscore")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EMTscore" version))
-       (sha256
-        (base32 "1ypchz5frnfn1val0hfr5hfcb4fx98sch7v45iddbp59n6bmfwly"))))
-    (properties `((upstream-name . "EMTscore")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-seurat
-                             r-pheatmap
-                             r-paletteer
-                             r-nsprcomp
-                             r-magrittr
-                             r-gsva
-                             r-gsa
-                             r-gridextra
-                             r-ggthemes
-                             r-ggpubr
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-curl
-                             r-complexheatmap
-                             r-circlize
-                             r-aucell))
-    (home-page "https://cran.r-project.org/package=EMTscore")
-    (synopsis "Calculate 'EMT' Scores Based on 'Omics' Data")
-    (description
-     "Epithelial-Mesenchymal transition ('EMT') is an important form of cellular
-plasticity that is fully or partially activated in several biological scenarios
-including development and disease progression.  EMT involves altered expression
-of hundreds of protein-coding and non-protein-coding genes.  Recent studies
-showed the prevalence of partial EMT in multiple processes such as various
-cancers and organ fibrosis, which necessitates rigorous quantification of the
-degree of EMT'.  While traditional gene set scoring methods such as gene set
-variation analysis have been used to generate EMT scores from omics data,
-multiple EMT scoring algorithms and EMT gene sets have been used by different
-groups without standardization.  Furthermore, comparisons of EMT scores computed
-from different methods and/or different EMT gene sets are generally difficult
-due to both the context dependent nature of EMT and the lack of tools that
-comprehensively integrate varying components for EMT scoring.  To address this
-problem, we have built a toolbox named EMTscore that enables users to select
-scoring methods from a list of previously used algorithms and EMT gene sets from
-a list of gene sets produced from different experiments.  We provided several
-visualization methods for making publication quality plots of EMT scores from
-omics data.  Furthermore, we showed a unique utility of a method based on
-principal component analysis for scoring divergent EMT processes from a single
-dataset.  Overall, EMTscore provides an integrated solution for assessing the
-degree and complexity of EMT from omics data, and it paves the way for
-standardizing the comparison of EMT programs across multiple contexts.")
-    (license license:gpl3)))
-
 (define-public r-emt
   (package
     (name "r-emt")
@@ -17319,13 +17258,13 @@ Valeinis, E. Cers (2011)
 (define-public r-eks
   (package
     (name "r-eks")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eks" version))
        (sha256
-        (base32 "19xb7pkac7s5gj2b3l0a4mjbjbna61nwrji6g9zq0b5mhg4dz67r"))))
+        (base32 "0biwvxv3ig2hg5hbigdcaiasfs9xwrzqmzahpr2rj2w25sc03kck"))))
     (properties `((upstream-name . "eks")))
     (build-system r-build-system)
     (arguments
@@ -18169,25 +18108,27 @@ functions to those users non-experienced in R coding. (SÃ¡ez et al.  2020)
 (define-public r-ehrmuse
   (package
     (name "r-ehrmuse")
-    (version "0.0.2.1")
+    (version "0.0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EHRmuse" version))
        (sha256
-        (base32 "0l1bbbn1vw18lzysw7xgrmi3lm69y5fi2f47wmm9vm5mcw4hlcvm"))))
+        (base32 "1vk333p45x45hi5xckn1zr5hrdarqhpxflqm8c31k57gq48qaaaq"))))
     (properties `((upstream-name . "EHRmuse")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list gsl))
     (propagated-inputs (list r-xgboost
                              r-survey
-                             r-simplexreg
+                             r-plotrix
                              r-nnet
                              r-nleqslv
                              r-mass
                              r-magrittr
+                             r-formula
                              r-dplyr))
     (home-page "https://github.com/Ritoban1/EHRmuse")
     (synopsis

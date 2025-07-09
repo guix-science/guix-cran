@@ -14625,13 +14625,13 @@ this package can be found in Watson, Hemming, and Girling (2023)
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrBase" version))
        (sha256
-        (base32 "1qyv2idi60ql428wqvvwcpp89bsdfpj5xq8r276xzbivaa2wf26w"))))
+        (base32 "0znc9qpqm9c0n1kh1vqc14yhraj97z45ag4y84i37hc5m0m3ph27"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (arguments
@@ -30788,13 +30788,13 @@ with either efficacy or safety/toxicity endpoints as described in Kim and Wong
 (define-public r-gemtc
   (package
     (name "r-gemtc")
-    (version "1.0-2")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gemtc" version))
        (sha256
-        (base32 "01sas647d3s5adkqg96z0hhr9pig275fz896ghnp313p5k3fz90l"))))
+        (base32 "0fr7k9hkvdad61namfand4p83j2bcxzlcyzpz8l06lqnijhvd9ii"))))
     (properties `((upstream-name . "gemtc")))
     (build-system r-build-system)
     (arguments

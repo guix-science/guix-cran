@@ -5051,13 +5051,13 @@ citation: Lindsay (2016) <doi:10.1016/j.cageo.2016.07.003>.")
 (define-public r-whirl
   (package
     (name "r-whirl")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "whirl" version))
        (sha256
-        (base32 "10bhpcwgv5zyvprgf9pf6ablasifly7vglapzrb334racbqljq2g"))))
+        (base32 "1fb35sk9jcjgij833d6zi50ciq3v8c8brq3bk37hjhd2cn308j06"))))
     (properties `((upstream-name . "whirl")))
     (build-system r-build-system)
     (arguments
@@ -5075,6 +5075,7 @@ citation: Lindsay (2016) <doi:10.1016/j.cageo.2016.07.003>.")
                              r-reticulate
                              r-r6
                              r-quarto
+                             r-purrr
                              r-knitr
                              r-kableextra
                              r-jsonlite

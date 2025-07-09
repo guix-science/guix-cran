@@ -24475,13 +24475,13 @@ o1-preview for code structure and documentation.")
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "16zhg336bva89qnh5pq588d3d7ab1snmn7dkdhh2nd38h2d1496k"))))
+        (base32 "10hzc5c3k8v8nz2m2ca0zim7q3gragv0ajwab42hky7018zbnd68"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (arguments
@@ -48981,13 +48981,13 @@ instrument tests by Stock and Yogo (2005) <doi:10.1017/CBO9780511614491.006>.")
 (define-public r-manydist
   (package
     (name "r-manydist")
-    (version "0.4.5")
+    (version "0.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manydist" version))
        (sha256
-        (base32 "0kxw8hrbsmk3v26av8bxdqgkir6l30bxb3kb5qhiihj33yb4bih8"))))
+        (base32 "1zyd3qv7pfv6h3w5kj29i9cwvs96k4nh0sbm9zxy0vk5pmwlpagq"))))
     (properties `((upstream-name . "manydist")))
     (build-system r-build-system)
     (arguments

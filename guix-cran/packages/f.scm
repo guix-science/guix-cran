@@ -286,19 +286,19 @@ applying it in different contexts (parametric or non-parametric).")
 (define-public r-fwb
   (package
     (name "r-fwb")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fwb" version))
        (sha256
-        (base32 "052b43cbrsn7rz7mbhs5m50qhjpq414cvp42zd1jk9zrxm1wak03"))))
+        (base32 "0wzza6cwj8fbs58dm3ci43gh5ly3pmf0a6xjphkgpky17xigrr99"))))
     (properties `((upstream-name . "fwb")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-pbapply r-chk))
+    (propagated-inputs (list r-rlang r-pbapply r-generics r-chk))
     (native-inputs (list r-knitr))
     (home-page "https://ngreifer.github.io/fwb/")
     (synopsis "Fractional Weighted Bootstrap")
@@ -4235,13 +4235,13 @@ repositories, and more.  File paths are specified with function arguments, or
 (define-public r-frogger
   (package
     (name "r-frogger")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "froggeR" version))
        (sha256
-        (base32 "0zjij29b4vbby2dymwkks4n3f3pd44z18i49ivm8a9fhjhh0hshw"))))
+        (base32 "03krjzm489hymc13b0s9x8nm9f01x6mwbc28jvg0gb16h64nc975"))))
     (properties `((upstream-name . "froggeR")))
     (build-system r-build-system)
     (arguments
@@ -4256,6 +4256,7 @@ repositories, and more.  File paths are specified with function arguments, or
                              r-quarto
                              r-here
                              r-glue
+                             r-fs
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://azimuth-project.tech/froggeR/")
@@ -4264,17 +4265,11 @@ repositories, and more.  File paths are specified with function arguments, or
      "Streamlines Quarto workflows by providing tools for consistent project setup and
 documentation.  Enables portability through reusable metadata, automated project
 structure creation, and standardized templates.  Features include enhanced
-project initialization, pre-formatted Quarto documents, comprehensive data
-protection settings, custom styling, and structured documentation generation.
-Designed to improve efficiency and collaboration in R data science projects by
-reducing repetitive setup tasks while maintaining consistent formatting across
-multiple documents.  There are many valuable resources providing in-depth
-explanations of customizing Quarto templates and theme styling by the Posit
-team:
-<https://quarto.org/docs/output-formats/html-themes.html#customizing-themes> &
-<https://quarto.org/docs/output-formats/html-themes-more.html>, and at the
-Bootstrap community's @code{GitHub} at
-<https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss>.")
+project initialization, pre-formatted Quarto documents, inclusion of Quarto
+brand functionality, comprehensive data protection settings, custom styling, and
+structured documentation generation.  Designed to improve efficiency and
+collaboration in R data science projects by reducing repetitive setup tasks
+while maintaining consistent formatting across multiple documents.")
     (license license:expat)))
 
 (define-public r-frlr

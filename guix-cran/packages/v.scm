@@ -6674,13 +6674,13 @@ argument multiple which, when set to FALSE, reverts them to the base::sets
 (define-public r-vecmatch
   (package
     (name "r-vecmatch")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vecmatch" version))
        (sha256
-        (base32 "0sawas9ysahmdvwrcyjwcn8866q1m1qqzspjjjzcc195xfdrck2s"))))
+        (base32 "0yx3qg5d7ls49w6amwm5i90in4n40l8bms50q47hgpq11dfnvpij"))))
     (properties `((upstream-name . "vecmatch")))
     (build-system r-build-system)
     (arguments
@@ -6699,8 +6699,11 @@ argument multiple which, when set to FALSE, reverts them to the base::sets
                              r-ggpubr
                              r-ggpp
                              r-ggplot2
+                             r-foreach
+                             r-dorng
                              r-cli
                              r-chk
+                             r-callr
                              r-brglm2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Polymerase3/vecmatch")

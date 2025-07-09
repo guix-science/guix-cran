@@ -11695,13 +11695,13 @@ stopping rules for safety monitoring in clinical studies.")
 (define-public r-stopp
   (package
     (name "r-stopp")
-    (version "0.2.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stopp" version))
        (sha256
-        (base32 "09cvh2h8c91zb8iak7g4j0sznv8kxbn0r2xjl36p663mqk2lb5ss"))))
+        (base32 "10idrb8yqix3ql8j97h832412yq9klcznwhpcky8phv5n0lzk1cg"))))
     (properties `((upstream-name . "stopp")))
     (build-system r-build-system)
     (arguments
@@ -11739,7 +11739,9 @@ Mateu 2018<doi:10.1007/s00477-018-1579-0>; Siino et al.
 2022<doi:10.1007/s00362-022-01338-4>; DâAngelo, Adelfio, and Mateu
 2023<doi:10.1016/j.csda.2022.107679>).  The main topics include modeling,
 statistical inference, and simulation issues on spatio-temporal point processes
-on Euclidean space and linear networks.")
+on Euclidean space and linear networks.  Version 1.0.0 has been updated for
+accompanying the journal publication D Angelo and Adelfio 2025
+<doi:10.18637/jss.v113.i10>.")
     (license license:gpl2+)))
 
 (define-public r-stopes
@@ -35198,6 +35200,32 @@ curve and the Area Under the Curve (AUC) based on the two-stages mixed-subjects
 ROC curve estimator (Diaz-Coto et al. (2020) <doi:10.1515/ijb-2019-0097> and
 Diaz-Coto et al. (2020) <doi:10.1080/00949655.2020.1736071>).")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-smsets
+  (package
+    (name "r-smsets")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smsets" version))
+       (sha256
+        (base32 "0ff9n5iv8pn92449afj9yj6dpkbg690ipdjcla257xmija9pcpgh"))))
+    (properties `((upstream-name . "smsets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-hotelling r-data-table r-biotools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ganava4/smsets")
+    (synopsis "Simple Multivariate Statistical Estimation and Tests")
+    (description
+     "This package provides a collection of simple parameter estimation and tests for
+the comparison of multivariate means and variation, to accompany Chapters 4 and
+5 of the book Multivariate Statistical Methods.  A Primer (5th edition), by
+Manly BFJ, Navarro Alberto JA & Gerow K (2024) <doi:10.1201/9781003453482>.")
+    (license license:expat)))
 
 (define-public r-sms
   (package
@@ -58810,50 +58838,6 @@ genotypes in the F2 to F7 selfing generations.  The conditional probabilities
 are derived automatically and in symbolic form.  The package also provides
 functionality to extract and evaluate the relevant probabilities.")
     (license license:bsd-3)))
-
-(define-public r-selfcontrolledcaseseries
-  (package
-    (name "r-selfcontrolledcaseseries")
-    (version "6.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SelfControlledCaseSeries" version))
-       (sha256
-        (base32 "0zy7ym9idj46w3bc0nswv2wmxrk27nfsjjqc4m7wdwsyp9mjzqxs"))))
-    (properties `((upstream-name . "SelfControlledCaseSeries")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sqlrender
-                             r-resultmodelmanager
-                             r-readr
-                             r-rcpp
-                             r-r6
-                             r-parallellogger
-                             r-jsonlite
-                             r-ggplot2
-                             r-empiricalcalibration
-                             r-dplyr
-                             r-digest
-                             r-databaseconnector
-                             r-cyclops
-                             r-checkmate
-                             r-andromeda))
-    (native-inputs (list r-knitr))
-    (home-page "https://ohdsi.github.io/SelfControlledCaseSeries/")
-    (synopsis "Self-Controlled Case Series")
-    (description
-     "Execute the self-controlled case series (SCCS) design using observational data
-in the OMOP Common Data Model.  Extracts all necessary data from the database
-and transforms it to the format required for SCCS. Age and season can be modeled
-using splines assuming constant hazard within calendar months.  Event-dependent
-censoring of the observation period can be corrected for.  Many exposures can be
-included at once (MSCCS), with regularization on all coefficients except for the
-exposure of interest.  Includes diagnostics for all major assumptions of the
-SCCS.")
-    (license license:asl2.0)))
 
 (define-public r-self
   (package
