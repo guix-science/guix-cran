@@ -9673,13 +9673,13 @@ console).")
 (define-public r-inlabru
   (package
     (name "r-inlabru")
-    (version "2.12.0")
+    (version "2.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inlabru" version))
        (sha256
-        (base32 "19njs1ji1w2gnn25jkis3qk2xd0zgb9kfz6p6k8h83lc2852ipp3"))))
+        (base32 "1y908g6sjfp5anppp67d6d43jxqlqx46mmmqlwaca8ykig2n9cdj"))))
     (properties `((upstream-name . "inlabru")))
     (build-system r-build-system)
     (arguments

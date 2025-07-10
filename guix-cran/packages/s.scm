@@ -21316,13 +21316,13 @@ Shiny apps, do not hesitate to try this package.")
 (define-public r-sps
   (package
     (name "r-sps")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sps" version))
        (sha256
-        (base32 "15pq2ab458a342drlsnnq73ka5ag58y7yx68xhv8n4d9in1h0i1m"))))
+        (base32 "16rs7r2nlivb5czhakxih3a04asgqjj236hzz1m023vb1szbd3j9"))))
     (properties `((upstream-name . "sps")))
     (build-system r-build-system)
     (arguments
@@ -37756,6 +37756,33 @@ second-order least squares estimator\" by Chi-Kuang Yeh and Julie Zhou (2021)
 <doi:10.1007/s00362-018-01076-6>.")
     (license license:gpl3)))
 
+(define-public r-slrmss
+  (package
+    (name "r-slrmss")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SLRMss" version))
+       (sha256
+        (base32 "0b957fsdwfzjrwbdfpqy8jp32xlkpzbw11lg0qjs0jd2bzzl43s1"))))
+    (properties `((upstream-name . "SLRMss")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ssym r-normalp))
+    (home-page "https://cran.r-project.org/package=SLRMss")
+    (synopsis "Symmetric Linear Regression Models for Small Samples")
+    (description
+     "Ordinary and modified statistics for symmetrical linear regression models with
+small samples.  The supported ordinary statistics include Wald, score,
+likelihood ratio and gradient.  The modified statistics include score,
+likelihood ratio and gradient.  Diagnostic tools associated with the fitted
+model are implemented.  For more details see Medeiros and Ferrari (2017)
+<DOI:10.1111/stan.12107>.")
+    (license license:gpl3)))
+
 (define-public r-slr
   (package
     (name "r-slr")
@@ -40646,13 +40673,13 @@ their situation, retention and drop out.")
 (define-public r-sisireg
   (package
     (name "r-sisireg")
-    (version "1.1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sisireg" version))
        (sha256
-        (base32 "0xwi1c60xlcl1ykgacxdk35wanmc4rbp1wl97s91xhvcfmfpvj4k"))))
+        (base32 "0friwsmps57mlcbb007xjcz3hqliybdjifssaclslwjrlxvf0z1h"))))
     (properties `((upstream-name . "sisireg")))
     (build-system r-build-system)
     (arguments
@@ -41694,6 +41721,54 @@ package are described in greater depth in Bien, J. (2016) \"The simulator: An
 Engine to Streamline Simulations,\" which is available at
 <@code{arXiv:1607.00021>}.")
     (license license:gpl3)))
+
+(define-public r-simulatedce
+  (package
+    (name "r-simulatedce")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simulateDCE" version))
+       (sha256
+        (base32 "17789fzx8qqs2v4jckg3g83s14wx10dqam72fsvl606g444ac7kv"))))
+    (properties `((upstream-name . "simulateDCE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tictoc
+                             r-tibble
+                             r-stringr
+                             r-rmarkdown
+                             r-readr
+                             r-qs
+                             r-purrr
+                             r-psych
+                             r-mixl
+                             r-magrittr
+                             r-kableextra
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-formula-tools
+                             r-evd
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=simulateDCE")
+    (synopsis "Simulate Data for Discrete Choice Experiments")
+    (description
+     "Supports simulating choice experiment data for given designs.  It helps to
+quickly test different designs against each other and compare the performance of
+new models.  The goal of @code{simulateDCE} is to make it easy to simulate
+choice experiment datasets using designs from NGENE', idefix or spdesign'.  You
+have to store the design file(s) in a sub-directory and need to specify certain
+parameters and the utility functions for the data generating process.  For more
+details on choice experiments see Mariel et al. (2021)
+<doi:10.1007/978-3-030-62669-3>.")
+    (license license:expat)))
 
 (define-public r-simulariatools
   (package

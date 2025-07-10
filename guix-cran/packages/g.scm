@@ -4856,6 +4856,35 @@ process.  The results returned a heatmap in R and exported to 3 folders named
 DEG, go, and merge.")
     (license license:artistic2.0)))
 
+(define-public r-grouper
+  (package
+    (name "r-grouper")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "grouper" version))
+       (sha256
+        (base32 "03nl7xr8ma29sjx6f3ll3lsmqq86k5vcv6r390gym7sw4y0pqnc6"))))
+    (properties `((upstream-name . "grouper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-rlang
+                             r-ompr
+                             r-magrittr
+                             r-dplyr
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=grouper")
+    (synopsis "Optimal Assignment of Students to Groups")
+    (description
+     "Integer programming models to assign students to groups by maximising diversity
+within groups, or by maximising preference scores for topics.")
+    (license license:expat)))
+
 (define-public r-groupedsurv
   (package
     (name "r-groupedsurv")
@@ -15694,6 +15723,51 @@ fit using local scoring algorithms described in Hastie and Tibshirani (1990)
 <doi:10.1214/ss/1177013604>.")
     (license license:expat)))
 
+(define-public r-gkwreg
+  (package
+    (name "r-gkwreg")
+    (version "1.0.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gkwreg" version))
+       (sha256
+        (base32 "0b0xk1zim63cjcm40wfkf2k3qd22q67irndsq9hwswxqwjq38azb"))))
+    (properties `((upstream-name . "gkwreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmb
+                             r-tidyr
+                             r-scales
+                             r-reshape2
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rappdirs
+                             r-patchwork
+                             r-numderiv
+                             r-magrittr
+                             r-gridextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-formula
+                             r-fmsb))
+    (home-page "https://cran.r-project.org/package=gkwreg")
+    (synopsis "Generalized Kumaraswamy Regression Models for Bounded Data")
+    (description
+     "This package implements regression models for bounded continuous data in the
+open interval (0,1) using the five-parameter Generalized Kumaraswamy
+distribution.  Supports modeling all distribution parameters (alpha, beta,
+gamma, delta, lambda) as functions of predictors through various link functions.
+ Provides efficient maximum likelihood estimation via Template Model Builder
+('TMB'), offering comprehensive diagnostics, model comparison tools, and
+simulation methods.  Particularly useful for analyzing proportions, rates,
+indices, and other bounded response data with complex distributional features
+not adequately captured by simpler models.")
+    (license license:expat)))
+
 (define-public r-gkrls
   (package
     (name "r-gkrls")
@@ -19988,13 +20062,13 @@ ggplot2.")
 (define-public r-ggplot2-utils
   (package
     (name "r-ggplot2-utils")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggplot2.utils" version))
        (sha256
-        (base32 "07svk16j9mc3d1fgkd5zpilnr82f7r40y9nachkp32s2bsg1a29g"))))
+        (base32 "0av11pb3l292nqqqlgdx9f65cv2b6nk2a76r89wwggr30hk0l2ix"))))
     (properties `((upstream-name . "ggplot2.utils")))
     (build-system r-build-system)
     (arguments
@@ -21737,6 +21811,56 @@ concept inspired by ggraph and introduces tracks to bring tidiness to the mess
 that is genomics data.")
     (license license:expat)))
 
+(define-public r-gggda
+  (package
+    (name "r-gggda")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gggda" version))
+       (sha256
+        (base32 "01vdhk66vl746pns1k532bxf6n61wzghny0lh76nk3wh9lykjmcj"))))
+    (properties `((upstream-name . "gggda")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-rlang
+                             r-magrittr
+                             r-labeling
+                             r-ggplot2
+                             r-dplyr
+                             r-ddalpha))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/corybrunson/gggda")
+    (synopsis "'ggplot2' Extension for Geometric Data Analysis")
+    (description
+     "This package provides a variety of multivariable data summary statistics and
+constructions have been proposed, either to generalize univariable analogs or to
+exploit multivariable properties.  Notable among these are the bivariate
+peelings surveyed by Green (1981, ISBN:978-0-471-28039-2), the bag-and-bolster
+plots proposed by Rousseeuw &al (1999) <doi:10.1080/00031305.1999.10474494>, and
+the minimum spanning trees used by Jolliffe (2002) <doi:10.1007/b98835> to
+represent high-dimensional relationships among data in a low-dimensional plot.
+Additionally, biplots of singular value--decomposed tabular data, such as from
+principal components analysis, make use of vectors, calibrated axes, and other
+representations of variable elements to complement point markers for case
+elements; see Gabriel (1971) <doi:10.1093/biomet/58.3.453> and Gower & Harding
+(1988) <doi:10.1093/biomet/75.3.445> for original proposals.  Because they treat
+the abscissa and ordinate as commensurate or the data elements themselves as
+point masses or unit vectors, these multivariable tools can be thought of as
+belonging to geometric data analysis; see Podani (2000, ISBN:90-5782-067-6) for
+techniques and applications and Le Roux & Rouanet (2005)
+<doi:10.1007/1-4020-2236-0> for foundations.  gggda extends Wickham's (2010)
+<doi:10.1198/jcgs.2009.07098> layered grammar of graphics with statistical
+transformation (\"stat\") and geometric construction (\"geom\") layers for many of
+these tools, as well as convenience coordinate systems to emphasize intrinsic
+geometry of the data.")
+    (license license:gpl3)))
+
 (define-public r-gggap
   (package
     (name "r-gggap")
@@ -22925,26 +23049,26 @@ modifications of display aesthetics supported by ggplot2'.")
 (define-public r-ggbrace
   (package
     (name "r-ggbrace")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggbrace" version))
        (sha256
-        (base32 "0p5k9lp0c34ry3mf39w0j9pi8irych9p6lvh6zyk82my18b25yk0"))))
+        (base32 "15cbkny750a865vadwkkbx9drzkakhfm514m6mg5i7isyaji1ri3"))))
     (properties `((upstream-name . "ggbrace")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-ggplot2))
-    (home-page "https://cran.r-project.org/package=ggbrace")
+    (home-page "https://github.com/NicolasH2/ggbrace")
     (synopsis "Curly Braces for 'ggplot2'")
     (description
-     "This package provides curly braces in ggplot2 plus matching text.
-@code{stat_brace()} plots braces partially in the confines of data so that the
-brace is set apart from it. @code{stat_bracetext()} plots corresponding text,
-fitting to the braces from @code{stat_brace()}.")
+     "This package provides curly braces and square brackets in ggplot2 plus matching
+text. @code{stat_brace()} plots braces/brackets to embrace data.
+@code{stat_bracetext()} plots corresponding text, fitting to the braces from
+@code{stat_brace()}.")
     (license license:expat)))
 
 (define-public r-ggborderline
@@ -33758,13 +33882,13 @@ by Mike Cavers via the <http://gaussfacts.com> site.")
 (define-public r-gausscov
   (package
     (name "r-gausscov")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gausscov" version))
        (sha256
-        (base32 "137ip8r4zb3w8ghlyaa0wrjzb0vv95rcp1qvpd908wp40gqyy4kd"))))
+        (base32 "0cygzw6832xcq9qdcns1pnj1afhbkbzzlyqpvn3xdy2409646ld1"))))
     (properties `((upstream-name . "gausscov")))
     (build-system r-build-system)
     (arguments
@@ -34357,13 +34481,13 @@ individuals, mutations and genes of interest.")
 (define-public r-garchx
   (package
     (name "r-garchx")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "garchx" version))
        (sha256
-        (base32 "0znb5drsbd6vfr6yp020r3w3k3jmk6p3xcnkx3n2sc7fm2qg765b"))))
+        (base32 "1mgi55cvvczzadsg5p8nkxmj2v327qms724ynpvszdcm4l5hvy6p"))))
     (properties `((upstream-name . "garchx")))
     (build-system r-build-system)
     (arguments
@@ -34373,15 +34497,13 @@ individuals, mutations and genes of interest.")
     (home-page "https://www.sucarrat.net/")
     (synopsis "Flexible and Robust GARCH-X Modelling")
     (description
-     "Flexible and robust estimation and inference of generalised autoregressive
-conditional heteroscedasticity (GARCH) models with covariates ('X') based on the
-results by Francq and Thieu (2018) <doi:10.1017/S0266466617000512>.
+     "Flexible and robust estimation and inference of Generalised Autoregressive
+Conditional Heteroscedasticity (GARCH) models with covariates ('X') based on the
+results by Francq and Thieu (2019) <doi:10.1017/S0266466617000512>.
 Coefficients can straightforwardly be set to zero by omission, and quasi maximum
 likelihood methods ensure estimates are generally consistent and inference
 valid, even when the standardised innovations are non-normal and/or dependent
-over time, see
-<https://journal.r-project.org/archive/2021/RJ-2021-057/RJ-2021-057.pdf> for an
-overview of the package.")
+over time.  See <doi:10.32614/RJ-2021-057> for an overview of the package.")
     (license license:gpl2+)))
 
 (define-public r-garchsk

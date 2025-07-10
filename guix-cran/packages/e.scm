@@ -6417,6 +6417,39 @@ directly upload an XML file into the web portal, with no further data entry by
 hand.")
     (license license:gpl2)))
 
+(define-public r-eudata
+  (package
+    (name "r-eudata")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eudata" version))
+       (sha256
+        (base32 "10yndk0pczbygn05l311aj511b6ifqbnba6nv732aggz6dz4qa4j"))))
+    (properties `((upstream-name . "eudata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rappdirs
+                             r-purrr
+                             r-httr2
+                             r-fs
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/prokaj/eudata")
+    (synopsis "Access Data from 'GISCO'")
+    (description
+     "Access data related to the European union from GISCO
+<https://ec.europa.eu/eurostat/web/gisco>, the Geographic Information System of
+the European Commission, via its rest API at
+<https://gisco-services.ec.europa.eu>.  This package tries to make it easier to
+get these data into R.")
+    (license license:expat)))
+
 (define-public r-euclimatch
   (package
     (name "r-euclimatch")
@@ -20876,13 +20909,13 @@ Buehlmann (1998) \"Sieve bootstrap for smoothing in nonstationary time series\"
 (define-public r-edear
   (package
     (name "r-edear")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edeaR" version))
        (sha256
-        (base32 "120x95a5s51rvpr6kybgs875rbghqqmsrzdpq3jr1007yaxpl710"))))
+        (base32 "11cjmgq6gsnkrd556cgvd0k75nqm6qcqi35hwp95k2yvdpqsgfka"))))
     (properties `((upstream-name . "edeaR")))
     (build-system r-build-system)
     (arguments
@@ -20897,6 +20930,7 @@ Buehlmann (1998) \"Sieve bootstrap for smoothing in nonstationary time series\"
                              r-rlang
                              r-purrr
                              r-miniui
+                             r-magrittr
                              r-lubridate
                              r-lifecycle
                              r-hms

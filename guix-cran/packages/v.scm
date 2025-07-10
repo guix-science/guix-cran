@@ -6556,13 +6556,13 @@ analyses.")
 (define-public r-vectorsurvr
   (package
     (name "r-vectorsurvr")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectorsurvR" version))
        (sha256
-        (base32 "135qhhfgr7vw8jf11jzsq3jvngi1l50kckxqajmbppx6lrrl607a"))))
+        (base32 "01yj3w039jim0gfni67k6famj91r116lggnrf85nikavm56995ar"))))
     (properties `((upstream-name . "vectorsurvR")))
     (build-system r-build-system)
     (arguments
@@ -9102,37 +9102,6 @@ large variable annuities.  The main valuation methodology was proposed by Gan
     (description
      "This package contains logic for cell-specific gene set scoring of single cell
 RNA sequencing data.")
-    (license license:gpl2+)))
-
-(define-public r-valuesetcompare
-  (package
-    (name "r-valuesetcompare")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "valueSetCompare" version))
-       (sha256
-        (base32 "06cb1hz1gp5gzbxbnv7306fyvvczggnaclab9llsbvfnmacbc2k5"))))
-    (properties `((upstream-name . "valueSetCompare")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-ggplot2 r-eq5dsuite r-dplyr))
-    (home-page "https://cran.r-project.org/package=valueSetCompare")
-    (synopsis "Comparing HRQoL Instrument Value Sets")
-    (description
-     "The number of countries with multiple Health Related Quality of Life (HRQL)
-value sets is growing, and this trend is expected to continue.  Each instrument
-and value set characterizes and values health differently.  Identical health
-states can yield different utility values when valued using different value
-sets.  The @code{valueSetCompare} package facilitates comparisons of
-HR@code{QoL} value sets, enabling both theoretical and empirical comparisons.
-For empirical comparisons, it employs a novel simulation-based method by Jiang
-et al. (2022) <doi:10.1186/s12955-022-02031-8>, allowing users to investigate
-the responsiveness of HR@code{QoL} instruments across the entire health spectrum
-using cross-sectional data with external health anchors.")
     (license license:gpl2+)))
 
 (define-public r-valuemap

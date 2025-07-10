@@ -626,6 +626,33 @@ weighted observations, one sample tests, etc).  We also include the permutation
 scheme to make test building simple for others.")
     (license license:gpl2+)))
 
+(define-public r-twophasecorr
+  (package
+    (name "r-twophasecorr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TwoPhaseCorR" version))
+       (sha256
+        (base32 "0vl8r2hycsrdnspiqz0v44d1qb4zq28pklv31wxzhhss0iqr1xvv"))))
+    (properties `((upstream-name . "TwoPhaseCorR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-mass r-ggplot2))
+    (home-page "https://cran.r-project.org/package=TwoPhaseCorR")
+    (synopsis
+     "Construction and Analysis of Two-Phase Experimental Designs with Correlated Errors")
+    (description
+     "This package provides tools for constructing and analyzing two-phase
+experimental designs under correlated error structures.  Includes cyclic
+constructions of designs and computes information matrices for Phase I residual
+treatment effects, Phase II direct treatment effects, and their interaction
+along with the canonical efficiency factor.")
+    (license license:gpl3)))
+
 (define-public r-twopexp
   (package
     (name "r-twopexp")
@@ -20341,13 +20368,13 @@ knitr'/'markdown'.")
 (define-public r-tidychangepoint
   (package
     (name "r-tidychangepoint")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidychangepoint" version))
        (sha256
-        (base32 "0lxhi7y1lf9hszw7iap8pw1cc2mvns1awzi2snr8apqm20x4y42k"))))
+        (base32 "0pxizc76969rpsajibmr0a3baw42kw6kbwz3xz9sd9blmxny1plj"))))
     (properties `((upstream-name . "tidychangepoint")))
     (build-system r-build-system)
     (arguments
@@ -20361,16 +20388,20 @@ knitr'/'markdown'.")
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-segmented
                              r-scales
                              r-rlang
                              r-purrr
+                             r-prettyunits
                              r-patchwork
                              r-memoise
+                             r-lubridate
                              r-lifecycle
                              r-ggplot2
                              r-ga
                              r-dplyr
                              r-cli
+                             r-changepointga
                              r-changepoint
                              r-broom))
     (native-inputs (list r-knitr))

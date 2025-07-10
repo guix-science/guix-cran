@@ -8503,13 +8503,13 @@ monitoring.  Building on the event log objects class from package @code{bupaR}'.
 (define-public r-processmapr
   (package
     (name "r-processmapr")
-    (version "0.5.6")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "processmapR" version))
        (sha256
-        (base32 "0152v160gh1m0805a9gbk21k71l1mqvddha7zlk4ydqqf9gm0qbw"))))
+        (base32 "0qcq07ayvd0i7jidm0ad6sgkzl5d6zzdkvm3fbdcsh4lbbiz3x1j"))))
     (properties `((upstream-name . "processmapR")))
     (build-system r-build-system)
     (arguments
@@ -18764,13 +18764,13 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
 (define-public r-polyglotr
   (package
     (name "r-polyglotr")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyglotr" version))
        (sha256
-        (base32 "1cj7c6dipgs025xhwap9krilr6427y5l61ardl4jxl3swigi190j"))))
+        (base32 "05kx23k5962q6jk0ny4jfibd6vwk7hz5c86c9492a9b8384x48zd"))))
     (properties `((upstream-name . "polyglotr")))
     (build-system r-build-system)
     (arguments
@@ -31765,6 +31765,38 @@ for the Polya Gamma Distribution using either C++ headers for Rcpp or
 @code{RcppArmadillo} and R'.")
     (license license:gpl3+)))
 
+(define-public r-pfw
+  (package
+    (name "r-pfw")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PFW" version))
+       (sha256
+        (base32 "1s3wz1khjng1f2r7awmc2ip4w46v7i2sjssysa1sfql5vxzbs3sl"))))
+    (properties `((upstream-name . "PFW")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-stringdist
+                             r-lubridate
+                             r-httr2
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/PFW")
+    (synopsis "Filtering and Processing Data from Project FeederWatch")
+    (description
+     "This package provides tools to import, clean, filter, and prepare Project
+@code{FeederWatch} data for analysis.  Includes functions for taxonomic rollup,
+easy filtering, zerofilling, merging in site metadata, and more.  Project
+@code{FeederWatch} data comes from
+<https://feederwatch.org/explore/raw-dataset-requests/>.")
+    (license license:gpl3)))
+
 (define-public r-pfr
   (package
     (name "r-pfr")
@@ -39119,13 +39151,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "1bipla8j2mvw2802g1h318wnmyaj3m6h0lkz1f87j3dwdbv7fxfx"))))
+        (base32 "1va0ghgzjmjdy7m5l79n35skp2m3c2fj8lyg9qmn0cgvvp86w4lq"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (arguments

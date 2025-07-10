@@ -1697,6 +1697,43 @@ method and a minimum distance estimator.  Mayoral, L. (2007)
 <doi:10.1111/j.2517-6161.1995.tb02054.x>.")
     (license license:gpl3+)))
 
+(define-public r-nrlr
+  (package
+    (name "r-nrlr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nrlR" version))
+       (sha256
+        (base32 "011jd5pn8gzwvkf7axcf772d72q2sly5ps2ril0r0xxn46x189xw"))))
+    (properties `((upstream-name . "nrlR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-purrr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=nrlR")
+    (synopsis "Access and Analyze Rugby League Data from Rugby League Project")
+    (description
+     "This package provides a set of functions to scrape and analyze rugby data.
+Supports competitions including the National Rugby League, New South Wales Cup,
+Queensland Cup, Super League, and various representative and women's
+competitions.  Includes functions to fetch player statistics, match results,
+ladders, venues, and coaching data.  Designed to assist analysts, fans, and
+researchers in exploring historical and current rugby league data.")
+    (license license:expat)))
+
 (define-public r-nricens
   (package
     (name "r-nricens")

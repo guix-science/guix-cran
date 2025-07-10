@@ -1284,13 +1284,13 @@ al., 2021 <doi:10.1111/biom.13501>).")
 (define-public r-wqtrends
   (package
     (name "r-wqtrends")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wqtrends" version))
        (sha256
-        (base32 "0swgjxq1i6pgflvavwq2dcdw21mc9bngqy18l089xrdv8kvilw4m"))))
+        (base32 "0ngj618qflrk9ia6a35k87fvqg31q1ypgwb9lh5h38bilbyzbcay"))))
     (properties `((upstream-name . "wqtrends")))
     (build-system r-build-system)
     (arguments

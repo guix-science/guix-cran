@@ -7602,19 +7602,20 @@ several monitors along a given region.")
 (define-public r-mtscr
   (package
     (name "r-mtscr")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mtscr" version))
        (sha256
-        (base32 "132dp97sx6177j8apla2qlw8gfw75dmg2vrbv3h99sd99jnhb8yz"))))
+        (base32 "17bni5cmfdibb7zmzxx3hnrhc2h3qjvplhb8859xbn63yspf83hx"))))
     (properties `((upstream-name . "mtscr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-stringr
                              r-rlang
                              r-readr
@@ -28874,13 +28875,13 @@ Carrion-i-Silvestre J.L (2004)
 (define-public r-micsr
   (package
     (name "r-micsr")
-    (version "0.1-2")
+    (version "0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micsr" version))
        (sha256
-        (base32 "0f81n5p36a3lrm5dh4ikdlsbv170qyswz0k3k5bmzd3gjzs6x0an"))))
+        (base32 "1jp3nh5rvcbrsfvqmiiv43il8cm3rjp1z26jsb0hfhvas0mni1gz"))))
     (properties `((upstream-name . "micsr")))
     (build-system r-build-system)
     (arguments
@@ -28893,6 +28894,7 @@ Carrion-i-Silvestre J.L (2004)
                              r-numderiv
                              r-generics
                              r-formula
+                             r-dfidx
                              r-compquadform))
     (native-inputs (list r-quarto))
     (home-page "https://www.r-project.org")

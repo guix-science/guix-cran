@@ -1295,6 +1295,31 @@ potential for forest restoration as described in Axer et al (2021)
 <doi:10.1016/j.foreco.2020.118802>.")
     (license license:gpl2+)))
 
+(define-public r-quartose
+  (package
+    (name "r-quartose")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quartose" version))
+       (sha256
+        (base32 "15sc7c0m7l5vy2zgjxlbslbzz4nd8gcn5yrszx9d5d3sfpmzzgmy"))))
+    (properties `((upstream-name . "quartose")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-purrr r-knitr r-cli))
+    (home-page "https://github.com/djnavarro/quartose")
+    (synopsis "Dynamically Generate Quarto Syntax")
+    (description
+     "This package provides helper functions to work programmatically within a quarto
+document.  It allows the user to create section headers, tabsets, divs, and
+spans, and formats these objects into quarto syntax when printed into a
+document.")
+    (license license:expat)))
+
 (define-public r-quartets
   (package
     (name "r-quartets")

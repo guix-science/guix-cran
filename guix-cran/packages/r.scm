@@ -25875,13 +25875,13 @@ Algorithms and Applications, for a reference.")
 (define-public r-rintcal
   (package
     (name "r-rintcal")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rintcal" version))
        (sha256
-        (base32 "10dsf66bzfbgkl9hd6c2lk4njwmd542251xmvppjan7nn3ai1r6l"))))
+        (base32 "18bkynd3b9dbqq8gdc376bfx6hbvbw7nhyadm5cy2cg9hwcm5f8g"))))
     (properties `((upstream-name . "rintcal")))
     (build-system r-build-system)
     (arguments
@@ -33487,6 +33487,41 @@ and examples.  Examples include color palettes, Game of Thrones characters,
 Star Wars universe.  Data from the gapminder package is also included, as a
 simple data frame and in nested and split forms.")
     (license license:cc0)))
+
+(define-public r-reptiledbr
+  (package
+    (name "r-reptiledbr")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "reptiledbr" version))
+       (sha256
+        (base32 "0lw59x8asbvmdyk5kjd1rfid35lvv0k38r8aispyp51pd3iddp2n"))))
+    (properties `((upstream-name . "reptiledbr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-lifecycle
+                             r-fuzzyjoin
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PaulESantos/reptiledbr")
+    (synopsis
+     "Interface to the Reptile Database for Querying and Retrieving Taxonomic Data")
+    (description
+     "This package provides tools to search, access, and format taxonomic information
+from the Reptile Database (<http://reptile-database.org>) directly within R.
+Users can retrieve species-level data, distribution, etymology, synonyms, common
+names, and other relevant information for reptiles.  Designed for taxonomists,
+ecologists, and biodiversity researchers.")
+    (license license:expat)))
 
 (define-public r-reptiledb-data
   (package

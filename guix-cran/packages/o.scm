@@ -10024,13 +10024,13 @@ more information, documentation and examples.")
 (define-public r-omopviewer
   (package
     (name "r-omopviewer")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopViewer" version))
        (sha256
-        (base32 "1kjya9mrjwi7g71b3s22gl0bgb0l0j5wfmgvznwmhqkaga33fkp3"))))
+        (base32 "0vlhhrla3870ij4i0fcdap0hapl2rrf116cszpcfnfxawc8hh4vs"))))
     (properties `((upstream-name . "OmopViewer")))
     (build-system r-build-system)
     (arguments
@@ -10052,6 +10052,7 @@ more information, documentation and examples.")
                              r-purrr
                              r-omopgenerics
                              r-markdown
+                             r-lifecycle
                              r-gt
                              r-glue
                              r-dt

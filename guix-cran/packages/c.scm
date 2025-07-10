@@ -15256,6 +15256,34 @@ disequilibrium.  For details see Manipur et al (2023)
 <doi:10.1101/2023.06.29.546856>.")
     (license license:gpl3)))
 
+(define-public r-copernicusr
+  (package
+    (name "r-copernicusr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "copernicusR" version))
+       (sha256
+        (base32 "0gik19nw164hzadbbnkl37xg4ndxc95swy331hv9prwcv9fxw9bq"))))
+    (properties `((upstream-name . "copernicusR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python))
+    (propagated-inputs (list r-reticulate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/HansTtito/copernicusR")
+    (synopsis "R Interface to Copernicus Marine Service")
+    (description
+     "This package provides an R interface to the Copernicus Marine Service for
+downloading and accessing marine data.  Integrates with the official
+copernicusmarine Python library through reticulate'.  Requires Python 3.7+ and a
+free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
+<https://pypi.org/project/copernicusmarine/> for more information.")
+    (license license:expat)))
+
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
@@ -47992,6 +48020,60 @@ fitting procedures, however, may produce numerical errors if p>2.  The toolbox
 also contains a function to simulate discrete time series data from CARFIMA(p,
 H, q) process given the model parameters and observation times.")
     (license license:gpl2)))
+
+(define-public r-caretsdm
+  (package
+    (name "r-caretsdm")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "caretSDM" version))
+       (sha256
+        (base32 "1ma0fz1zfxjlxixyhdkfv6hhf8m1g2412516rpspykwzn4qw1a35"))))
+    (properties `((upstream-name . "caretSDM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-usdm
+                             r-tidyr
+                             r-terra
+                             r-stringr
+                             r-stringdist
+                             r-stars
+                             r-sf
+                             r-rtsne
+                             r-rgbif
+                             r-raster
+                             r-purrr
+                             r-progressr
+                             r-proc
+                             r-pdp
+                             r-parallelly
+                             r-mapview
+                             r-lwgeom
+                             r-httr
+                             r-gtools
+                             r-glue
+                             r-ggspatial
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-fs
+                             r-dplyr
+                             r-dismo
+                             r-data-table
+                             r-coordinatecleaner
+                             r-cli
+                             r-checkmate
+                             r-caret))
+    (home-page "https://luizesser.github.io/caretSDM/")
+    (synopsis "Build Species Distribution Modeling using 'caret'")
+    (description
+     "Use machine learning algorithms and advanced geographic information system tools
+to build Species Distribution Modeling in a extensible and modern fashion.")
+    (license license:expat)))
 
 (define-public r-caretforecast
   (package

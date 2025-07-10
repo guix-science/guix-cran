@@ -5324,6 +5324,39 @@ meteorological data and aims to simplify analyses in agricultural and
 environmental contexts.")
     (license license:gpl3)))
 
+(define-public r-brazildataapi
+  (package
+    (name "r-brazildataapi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BrazilDataAPI" version))
+       (sha256
+        (base32 "0j2nfj9prm2dq9g7kcffsi86gizj1z5vv22n125vpms4xxhfsskj"))))
+    (properties `((upstream-name . "BrazilDataAPI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/brazildataapi")
+    (synopsis
+     "Access Brazilian Economic, Demographic, Environmental, and Geopolitical Data via RESTful APIs and Curated Datasets")
+    (description
+     "This package provides functions to access data from the @code{BrasilAPI} and the
+REST Countries API', related to Brazil's postal codes, banks, holidays, company
+registrations, and international country indicators.  Additionally, the package
+includes curated datasets related to Brazil, covering topics such as demographic
+data (males and females by state and year), river levels, environmental emission
+factors, film festivals, and yellow fever outbreak records.  The package
+supports research and analysis focused on Brazil by integrating open APIs with
+high-quality datasets from multiple domains.  For more details on the
+@code{BrasilAPI}', see <https://brasilapi.com.br/>, and for REST Countries', see
+<https://restcountries.com/>.")
+    (license license:gpl3)))
+
 (define-public r-brazilcrime
   (package
     (name "r-brazilcrime")
@@ -10129,6 +10162,49 @@ of distributions, including Mohammadi and et al. (2013)
 <doi:10.1007/s00180-012-0323-3> and Mohammadi and Salehi-Rad (2012)
 <doi:10.1080/03610918.2011.588358>.")
     (license license:gpl2+)))
+
+(define-public r-bmiselect
+  (package
+    (name "r-bmiselect")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BMIselect" version))
+       (sha256
+        (base32 "0xlh82iiq2k1aracc294zc8hhrcfaija8l7g22q6y9s75i7l8b59"))))
+    (properties `((upstream-name . "BMIselect")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-rfast
+                             r-posterior
+                             r-mvnfast
+                             r-mice
+                             r-mcmcpack
+                             r-mass
+                             r-gigrvg
+                             r-foreach
+                             r-doparallel
+                             r-arm
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=BMIselect")
+    (synopsis
+     "Bayesian MI-LASSO for Variable Selection on Multiply-Imputed Datasets")
+    (description
+     "This package provides a suite of Bayesian MI-LASSO for variable selection
+methods for multiply-imputed datasets.  The package includes four Bayesian
+MI-LASSO models using shrinkage (Multi-Laplace, Horseshoe, ARD) and
+Spike-and-Slab (Spike-and-Laplace) priors, along with tools for model fitting
+via MCMC, three-step projection predictive variable selection, and
+hyperparameter calibration.  Methods are suitable for both continuous and binary
+covariates under missing-at-random assumptions.  See Zou, J., Wang, S. and Chen,
+Q. (2022), Variable Selection for Multiply-imputed Data: A Bayesian Framework.
+@code{ArXiv}, 2211.00114. <doi:10.48550/@code{arXiv.2211.00114>} for more
+details.  We also provide the frequentist`s MI-LASSO function.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-bmisc
   (package
@@ -27987,13 +28063,13 @@ Rubin.  Not all datasets yet, hopefully completed soon.")
 (define-public r-bayescvi
   (package
     (name "r-bayescvi")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesCVI" version))
        (sha256
-        (base32 "0j2kaq0ssbs9d0y17kmj8p89g7gh8dpaa8wrf6ylm3jy27g8b48j"))))
+        (base32 "0jk79q8dansq1z6kw10833n25q442cg0fspk4i5p063fw7bhplzs"))))
     (properties `((upstream-name . "BayesCVI")))
     (build-system r-build-system)
     (arguments

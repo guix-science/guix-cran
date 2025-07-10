@@ -10944,6 +10944,33 @@ al. (2017) <doi:10.1101/229450> to calculate energy fluxes, which are also used
 to calculate equilibrium stability.")
     (license license:gpl2+)))
 
+(define-public r-fluxtools
+  (package
+    (name "r-fluxtools")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fluxtools" version))
+       (sha256
+        (base32 "0m5l045j32s5pyyqwd7qkspk0swnx06hjchkaajzgcpq9hzir6pr"))))
+    (properties `((upstream-name . "fluxtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-plotly r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kesondrakey/fluxtools")
+    (synopsis "'shiny' App for Reproducible QA/QC of Eddy Covariance Data")
+    (description
+     "An interactive shiny'-based tool for quality assurance and quality control
+(QA/QC) of eddy covariance flux tower data processing.  It generates data-point
+removal code via user-directed selection from a scatterplot, and can export a
+cleaned .csv with removed points set to NA plus an R script for reproducibility.
+ Reference: Key (2025) <DOI:10.5281/zenodo.15597159>.")
+    (license license:gpl3)))
+
 (define-public r-fluxible
   (package
     (name "r-fluxible")

@@ -2735,13 +2735,13 @@ inference and post-selection adjustments.  Algeri S. and Zhang X. (2020)
 (define-public r-lpridge
   (package
     (name "r-lpridge")
-    (version "1.1-0")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpridge" version))
        (sha256
-        (base32 "1zc0jn7j15yb3qj5sxs0nnj8knrzhm8899kyps6fp10vm2wwdnd1"))))
+        (base32 "0xkp22v8401av7l0qpmbffkg8h66mkic87gdp3nyzjk9agx4jzkf"))))
     (properties `((upstream-name . "lpridge")))
     (build-system r-build-system)
     (arguments
@@ -12392,13 +12392,13 @@ gene/region.")
 (define-public r-lgrextra
   (package
     (name "r-lgrextra")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lgrExtra" version))
        (sha256
-        (base32 "0xxdv6prn6m002ydn30zx7ya2v41xc5wmxirrkkpida8h2bw0il2"))))
+        (base32 "16hqvnhziyi6as4bl4gh3ggwvyrjkh1i35w0l9cidqik1f051isz"))))
     (properties `((upstream-name . "lgrExtra")))
     (build-system r-build-system)
     (arguments

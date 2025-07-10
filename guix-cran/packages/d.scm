@@ -8424,13 +8424,13 @@ and intervals from English-language prescriptions.  Based on Karystianis et al.
 (define-public r-dosefinding
   (package
     (name "r-dosefinding")
-    (version "1.3-1")
+    (version "1.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DoseFinding" version))
        (sha256
-        (base32 "1hg83ydq3k2wwaar4dwad8qrsgd3qixq3lgryzq2xg3p63qq70rq"))))
+        (base32 "0hir12c2f3vyfyw7vhcbkny62rghq6q6gkklfi9xad8rfgjq8m0n"))))
     (properties `((upstream-name . "DoseFinding")))
     (build-system r-build-system)
     (arguments
