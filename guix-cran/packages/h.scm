@@ -1168,33 +1168,6 @@ to alleviate the computational burden of complex models with long execution
 time.")
     (license license:gpl2+)))
 
-(define-public r-hydrome
-  (package
-    (name "r-hydrome")
-    (version "2.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HydroMe" version))
-       (sha256
-        (base32 "06fqzvpwh25qc9ksh49gpfyw8jgy9xbw27wlp8mxk0b2fq58fyqg"))))
-    (properties `((upstream-name . "HydroMe")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=HydroMe")
-    (synopsis
-     "Estimating Water Retention and Infiltration Model Parameters using Experimental Data")
-    (description
-     "This package contains functions for estimating the parameters of infiltration
-and water retention models using the curve-fitting methods as discussed in Omuto
-and Gumbe (2009) (\"Estimating water infiltration and retention characteristics
-using a computer program in R\"<doi:10.1016/j.cageo.2008.08.011>).  The models
-considered are those that are commonly used in soil science.  Version 2 of the
-package has new models for water retention characteristic curves.")
-    (license (license:fsdg-compatible "GPL (>= 3.5.0)"))))
-
 (define-public r-hydroloom
   (package
     (name "r-hydroloom")
@@ -15147,34 +15120,6 @@ vectors of equal length.  Quickly visualize scatter plots, residual plots,
 qq-plots, box plots, confidence intervals, and prediction intervals.")
     (license license:gpl2+)))
 
-(define-public r-handyfunctions
-  (package
-    (name "r-handyfunctions")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "handyFunctions" version))
-       (sha256
-        (base32 "0y476acqdm73y19k8s9c9vy8xryyjg16pay3vikslwccv7kgsigz"))))
-    (properties `((upstream-name . "handyFunctions")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-rlang r-ggplot2))
-    (home-page "https://github.com/LuffyLouis/handyFunctions")
-    (synopsis
-     "Useful Functions for Handfully Manipulating and Analyzing Data with Data.frame Format")
-    (description
-     "Some useful functions for simply manipulating and analyzing data with data.frame
-format.  It mainly includes the following sections: @code{ReformatDataframe}
-(reformat dataframe with the modifiers), @code{InteractDataframe}, and Post-VCF
-(for downstream analysis for data generated from vcftools Petr et al (2011)
-<doi:10.1093/bioinformatics/btr330> or plink Chang et al (2015)
-<doi:10.1186/s13742-015-0047-8>.")
-    (license license:expat)))
-
 (define-public r-handwriterrf
   (package
     (name "r-handwriterrf")
@@ -15571,13 +15516,13 @@ algorithm was described by Hejazi, Coyle, and van der Laan (2020)
 (define-public r-hakaiapi
   (package
     (name "r-hakaiapi")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hakaiApi" version))
        (sha256
-        (base32 "1hy15104nmmilr3x9b7aavklb009qqxqjg2bk5hjzjq1vmdml1pz"))))
+        (base32 "0kb4ghh8ph2sjwb93dsf9y066dhalxbn6v63mdsf3gc2rrki5sjh"))))
     (properties `((upstream-name . "hakaiApi")))
     (build-system r-build-system)
     (arguments

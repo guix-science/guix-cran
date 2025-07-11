@@ -837,40 +837,6 @@ data.")
 survreg', and ivreg outputs.")
     (license license:expat)))
 
-(define-public r-outqrf
-  (package
-    (name "r-outqrf")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "outqrf" version))
-       (sha256
-        (base32 "0gl3ix39kx7n1akg1789nfqg84jxq5q9qdxwcmf8ch7zklbkgccb"))))
-    (properties `((upstream-name . "outqrf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-ranger
-                             r-missranger
-                             r-ggpubr
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/flystar233/outqrf")
-    (synopsis "Find the Outlier by Quantile Random Forests")
-    (description
-     "This package provides a method to find the outlier in custom data by quantile
-random forests method.  Introduced by Meinshausen Nicolai (2006)
-<https://dl.acm.org/doi/10.5555/1248547.1248582>.  It directly calls the
-@code{ranger()} function of the ranger package to perform data fitting and
-prediction.  We also implement the evaluation of outlier prediction results.
-Compared with random forest detection of outliers, this method has higher
-accuracy and stability on large datasets.")
-    (license license:expat)))
-
 (define-public r-outliertree
   (package
     (name "r-outliertree")
@@ -1804,34 +1770,6 @@ the same name that returns data class, storage mode, mode, type, dimension, and
 size information for R objects in the specified environment.  Various filtering
 and sorting options are also proposed.")
     (license license:gpl3)))
-
-(define-public r-oste
-  (package
-    (name "r-oste")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OSTE" version))
-       (sha256
-        (base32 "0l8whr883g3jp5ckgxr4zf9vj055jrjb7pfraacd15smnrbl0v5d"))))
-    (properties `((upstream-name . "OSTE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-ranger r-prodlim r-pec))
-    (home-page "https://cran.r-project.org/package=OSTE")
-    (synopsis "Optimal Survival Trees Ensemble")
-    (description
-     "Function for growing survival trees ensemble ('Naz Gul', Nosheen Faiz', Dan
-Brawn', Rafal Kulakowski', Zardad Khan', and Berthold Lausen (2020)
-<@code{arXiv:2005.09043>}) is given.  The trees are grown by the method of
-random survival forest ('Marvin Wright', Andreas Ziegler (2017)
-<doi:10.18637/jss.v077.i01>).  The survival trees grown are assessed for both
-individual and collective performances.  The ensemble can give promising results
-on fewer survival trees selected in the final ensemble.")
-    (license (license:fsdg-compatible "GPL (>= 3.5.0)"))))
 
 (define-public r-ostats
   (package
@@ -3453,13 +3391,13 @@ Erwin, Dimitris Vlassopoulos, Michel Cloitre (2011) <doi:10.1122/1.3544591>).")
 (define-public r-ordr
   (package
     (name "r-ordr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordr" version))
        (sha256
-        (base32 "1sinh4h44xyp6wwn2b3s4hi5s6dzvkfgghzhxj2jhkn114n8vdpd"))))
+        (base32 "0ysg1npqfgn8n3fpi7cxj8wfgvhbn10ams533h355mgqhds3shdy"))))
     (properties `((upstream-name . "ordr")))
     (build-system r-build-system)
     (arguments
@@ -3477,11 +3415,13 @@ Erwin, Dimitris Vlassopoulos, Michel Cloitre (2011) <doi:10.1122/1.3544591>).")
                              r-labeling
                              r-ggrepel
                              r-ggplot2
+                             r-gggda
                              r-generics
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/corybrunson/ordr")
-    (synopsis "'tidyverse' Extension for Ordinations and Biplots")
+    (synopsis "'Tidyverse' Extension for Ordinations and Biplots")
     (description
      "Ordination comprises several multivariate exploratory and explanatory techniques
 with theoretical foundations in geometric data analysis; see Podani (2000,
@@ -3496,7 +3436,7 @@ can be measured.  The overlay of their scatterplots on these axes, introduced by
 Gabriel (1971) <doi:10.1093/biomet/58.3.453>, is called a biplot.  ordr provides
 inspection, extraction, manipulation, and visualization tools for several
 popular ordination classes supported by a set of recovery methods.  It is
-inspired by and designed to integrate into tidyverse workflows provided by
+inspired by and designed to integrate into Tidyverse workflows provided by
 Wickham et al (2019) <doi:10.21105/joss.01686>.")
     (license license:gpl3)))
 
@@ -6544,38 +6484,6 @@ Malkusch, S. and A. Ultsch. (2022) <doi:10.1016/j.imu.2022.101113>.")
      "This package provides a set of binary operators for common tasks such as regex
 manipulation.")
     (license license:expat)))
-
-(define-public r-opera
-  (package
-    (name "r-opera")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "opera" version))
-       (sha256
-        (base32 "09gh0c74y3n25f9p1rya8ybql5mfaqkcnr8i8wwwzfm67vqdfrnh"))))
-    (properties `((upstream-name . "opera")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack
-                             r-rcppeigen
-                             r-rcpp
-                             r-ramcharts
-                             r-piper
-                             r-htmlwidgets
-                             r-htmltools
-                             r-alabama))
-    (native-inputs (list r-knitr))
-    (home-page "http://pierre.gaillard.me/opera.html")
-    (synopsis "Online Prediction by Expert Aggregation")
-    (description
-     "Misc methods to form online predictions, for regression-oriented time-series, by
-combining a finite set of forecasts provided by the user.  See Cesa-Bianchi and
-Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
-    (license license:lgpl2.0+)))
 
 (define-public r-openxlsx2
   (package

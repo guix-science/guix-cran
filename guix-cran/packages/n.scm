@@ -8,7 +8,6 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages web)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages java)
   #:use-module (gnu packages xml)
@@ -18,6 +17,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages julia)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages pkg-config)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -3691,47 +3691,6 @@ distribution function, only that the data have to be at least ordinal numbers.
 See Konietschke et al. (2015) <doi:10.18637/jss.v064.i09> for details.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-nozzle-r1
-  (package
-    (name "r-nozzle-r1")
-    (version "1.1-1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Nozzle.R1" version))
-       (sha256
-        (base32 "0fanf7cl8dlb8iqw8ww03dd5s6mrpr97m2c511clqkaavbd0yzkp"))))
-    (properties `((upstream-name . "Nozzle.R1")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (native-inputs (list esbuild))
-    (home-page "http://github.com/parklab/nozzle")
-    (synopsis "Nozzle Reports")
-    (description
-     "The Nozzle package provides an API to generate HTML reports with dynamic user
-interface elements based on @code{JavaScript} and CSS (Cascading Style Sheets).
-Nozzle was designed to facilitate summarization and rapid browsing of complex
-results in data analysis pipelines where multiple analyses are performed
-frequently on big data sets.  The package can be applied to any project where
-user-friendly reports need to be created.")
-    (license license:lgpl2.0)))
-
 (define-public r-noweb
   (package
     (name "r-noweb")
@@ -7178,44 +7137,6 @@ approximations ('INLA') which is described in Guenhan, Held, and Friede (2018)
 inconsistency in the network.  Contains more than ten different network
 meta-analysis dataset.  INLA package can be obtained from
 <https://www.r-inla.org>.")
-    (license license:gpl2+)))
-
-(define-public r-nmadiagt
-  (package
-    (name "r-nmadiagt")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NMADiagT" version))
-       (sha256
-        (base32 "0fskc3ldfdl17gazpfr2hixy79n7db4c1f5yl1jalhwxiabnxjwp"))))
-    (properties `((upstream-name . "NMADiagT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rjags
-                             r-reshape2
-                             r-rdpack
-                             r-plotrix
-                             r-mcmcpack
-                             r-mass
-                             r-ks
-                             r-imgur
-                             r-ggplot2
-                             r-coda))
-    (home-page "https://cran.r-project.org/package=NMADiagT")
-    (synopsis "Network Meta-Analysis of Multiple Diagnostic Tests")
-    (description
-     "This package implements HSROC (hierarchical summary receiver operating
-characteristic) model developed by Ma, Lian, Chu, Ibrahim, and Chen (2018)
-<doi:10.1093/biostatistics/kxx025> and hierarchical model developed by Lian,
-Hodges, and Chu (2019) <doi:10.1080/01621459.2018.1476239> for performing
-meta-analysis for 1-5 diagnostic tests to simultaneously compare multiple tests
-within a missing data framework.  This package evaluates the accuracy of
-multiple diagnostic tests and also gives graphical representation of the
-results.")
     (license license:gpl2+)))
 
 (define-public r-nma
@@ -11060,13 +10981,13 @@ of the limit product model of Pena (2001) <doi:10.1198/016214501753381922>.")
 (define-public r-newsmap
   (package
     (name "r-newsmap")
-    (version "0.9.0")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "newsmap" version))
        (sha256
-        (base32 "103if7yh378c91bwq4j22p3krg00hwzah5wi1pjnni65yjjg2bqa"))))
+        (base32 "0d1djkbyy16g2knk1jaq21rkqjw9j4x8b5isp0pvxriih6xbbzwa"))))
     (properties `((upstream-name . "newsmap")))
     (build-system r-build-system)
     (arguments
@@ -18100,43 +18021,6 @@ functions have been created to be used in conjunction with the R package asreml
 for the ASReml software, which can be obtained upon purchase from VSN
 international (<https://vsni.co.uk/software/asreml>).")
     (license license:gpl2+)))
-
-(define-public r-nada2
-  (package
-    (name "r-nada2")
-    (version "1.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NADA2" version))
-       (sha256
-        (base32 "0m06kbx7z9ad7f3xf0r6gh1rbrgin2lcsc4hvdfsrayq1n4zfdap"))))
-    (properties `((upstream-name . "NADA2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-survminer
-                             r-survival
-                             r-perm
-                             r-nada
-                             r-multcomp
-                             r-mgcv
-                             r-kendall
-                             r-fitdistrplus
-                             r-envstats
-                             r-coin
-                             r-cengam))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/SwampThingPaul/NADA2")
-    (synopsis "Data Analysis for Censored Environmental Data")
-    (description
-     "This package contains methods described by Dennis Helsel in his book \"Statistics
-for Censored Environmental Data using Minitab and R\" (2011) and courses and
-videos at <https://practicalstats.com>.  This package adds new functions to the
-`NADA` Package.")
-    (license license:expat)))
 
 (define-public r-nacho
   (package

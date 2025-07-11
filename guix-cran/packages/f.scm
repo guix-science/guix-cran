@@ -1085,13 +1085,13 @@ Integration (CI) pipelines.")
 (define-public r-future-mirai
   (package
     (name "r-future-mirai")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "future.mirai" version))
        (sha256
-        (base32 "19hhyq0ag9c9gajj266n0wkl341izwqhbdk9h8yq5dp7nifxlas7"))))
+        (base32 "1kzcdm2w98xc4gk8rc94lbspag5nxaji80rvsn703kli9bccryji"))))
     (properties `((upstream-name . "future.mirai")))
     (build-system r-build-system)
     (arguments

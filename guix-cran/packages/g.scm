@@ -1401,34 +1401,6 @@ estimation functions (Maximum Likelihood Estimation, Inference For Margins,
 Moment Based Estimation and Canonical Maximum Likelihood).")
     (license license:gpl2+)))
 
-(define-public r-guiprofiler
-  (package
-    (name "r-guiprofiler")
-    (version "2.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GUIProfiler" version))
-       (sha256
-        (base32 "10m4d7f2rhw6cmkrnw3jh4iqlkfphf4v7mpfwzw17laq0ncmsx5r"))))
-    (properties `((upstream-name . "GUIProfiler")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rstudioapi
-                             r-rgraphviz
-                             r-proftools
-                             r-nozzle-r1
-                             r-mass
-                             r-graph))
-    (home-page "https://cran.r-project.org/package=GUIProfiler")
-    (synopsis "Graphical User Interface for Rprof()")
-    (description
-     "Show graphically the results of profiling R functions by tracking their
-execution time.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-guiplot
   (package
     (name "r-guiplot")
@@ -11590,48 +11562,6 @@ models with various link functions.  Michael Arthur Stephens (1976)
 <http://www.jstor.org/stable/2958206>.")
     (license license:gpl3+)))
 
-(define-public r-gofcopula
-  (package
-    (name "r-gofcopula")
-    (version "0.4-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gofCopula" version))
-       (sha256
-        (base32 "14blfca1liihx3rjskjxv3wa0sczsj2di2vimb05j5g44yc8hwi3"))))
-    (properties `((upstream-name . "gofCopula")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yarrr
-                             r-vinecopula
-                             r-sparsegrid
-                             r-r-utils
-                             r-progress
-                             r-numderiv
-                             r-mass
-                             r-foreach
-                             r-dosnow
-                             r-crayon
-                             r-copula))
-    (home-page "https://cran.r-project.org/package=gofCopula")
-    (synopsis "Goodness-of-Fit Tests for Copulae")
-    (description
-     "Several Goodness-of-Fit (@code{GoF}) tests for Copulae are provided.  A new
-hybrid test, Zhang et al. (2016) <doi:10.1016/j.jeconom.2016.02.017> is
-implemented which supports all of the individual tests in the package, e.g.
-Genest et al. (2009) <doi:10.1016/j.insmatheco.2007.10.005>.  Estimation methods
-for the margins are provided and all the tests support parameter estimation and
-predefined values.  The parameters are estimated by pseudo maximum likelihood
-but if it fails the estimation switches automatically to inversion of Kendall's
-tau.  For reproducibility of results, the functions support the definition of
-seeds.  Also all the tests support automatized parallelization of the
-bootstrapping tasks.  The package provides an interface to perform new
-@code{GoF} tests by submitting the test statistic.")
-    (license license:gpl3+)))
-
 (define-public r-gofcens
   (package
     (name "r-gofcens")
@@ -13632,13 +13562,13 @@ analysis under heterogeneity.")
 (define-public r-glpkapi
   (package
     (name "r-glpkapi")
-    (version "1.3.4")
+    (version "1.3.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glpkAPI" version))
        (sha256
-        (base32 "1cr40jksm27h0j1j0q1ngcf4cbrhrjz48m6z3c3jns8h17h8g8qh"))))
+        (base32 "012v3vzhfv0cjh5hfz58x2zpcaph680prhj40jkxphss7xfqhi00"))))
     (properties `((upstream-name . "glpkAPI")))
     (build-system r-build-system)
     (arguments
@@ -17128,13 +17058,13 @@ al. (2020)<doi:10.1093/biomet/asaa014>.")
 (define-public r-gilmour
   (package
     (name "r-gilmour")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gilmour" version))
        (sha256
-        (base32 "00csf223ysz60bhb6mkpyi0sb42s7fnhnmnpi2j17sblgla54zyk"))))
+        (base32 "1irc0wxqhvxp4qradlr7qj4vaxhap6znqs3rf3vi4r89q69fnb39"))))
     (properties `((upstream-name . "gilmour")))
     (build-system r-build-system)
     (arguments
@@ -17155,7 +17085,7 @@ applies a sequence of hypothesis tests on submodels nested within
 @code{ModelMin}, following the approach outlined in Gilmour's original paper.
 For more details see the help of the function @code{final_model()} and the
 original study (1996) <doi:10.2307/2348411>.")
-    (license license:expat)))
+    (license license:gpl3)))
 
 (define-public r-gillespiessa
   (package
@@ -17715,13 +17645,13 @@ authored by Wang(2012) <doi:10.1214/12-BA729>.")
 (define-public r-ghrexplore
   (package
     (name "r-ghrexplore")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GHRexplore" version))
        (sha256
-        (base32 "1laz1rv8ydqrwb8xww6lfvkgcm3dfxk1bifjllaqql8b7mrf29w2"))))
+        (base32 "1bim5g2l6yv74chy79r65vr196krrzxg9fv7x4iffi5r9ijrnafq"))))
     (properties `((upstream-name . "GHRexplore")))
     (build-system r-build-system)
     (arguments
@@ -18336,6 +18266,29 @@ the methods used in this package, see Ritz and Streibig (2008)
 bar segment.  Also provides geometries for subgroup bordering and text
 annotation.")
     (license license:gpl3+)))
+
+(define-public r-ggtranslate
+  (package
+    (name "r-ggtranslate")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggtranslate" version))
+       (sha256
+        (base32 "0k7074j4pyffg8k7iyinxv5zqbrwnqxqhvhbsdjlgr00n4yirsvx"))))
+    (properties `((upstream-name . "ggtranslate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2))
+    (home-page "https://github.com/mathiasleroy/ggtranslate")
+    (synopsis "'ggplot2' Extension for Translating Plot Text")
+    (description
+     "This package provides a simple way to translate text elements in ggplot2 plots
+using a dictionary-based approach.")
+    (license license:expat)))
 
 (define-public r-ggtrace
   (package
@@ -20322,13 +20275,13 @@ panels and theme elements.")
 (define-public r-ggparty
   (package
     (name "r-ggparty")
-    (version "1.0.0")
+    (version "1.0.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggparty" version))
        (sha256
-        (base32 "0s6hr5p930kl3pj6ajwgwqz6yikc3l9hhzy1yn0nqc0r8pp2jyqf"))))
+        (base32 "0x2wi0lbqgf3fkbp281lglvrq6i3g9824b308a16kiq70qgb7lf0"))))
     (properties `((upstream-name . "ggparty")))
     (build-system r-build-system)
     (arguments
@@ -36542,6 +36495,36 @@ association with trait using genetic and statistical models as well as Bayesian
 implementation, power calculation in study design and genetic annotation.  It
 also covers R integration with the Linux environment, @code{GitHub}, package
 creation and web applications.")
+    (license license:expat)))
+
+(define-public r-g6r
+  (package
+    (name "r-g6r")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "g6R" version))
+       (sha256
+        (base32 "1j5gvfqfq1am3sygskfss6v4j910cglpnkb5hxplr7wls3924mcz"))))
+    (properties `((upstream-name . "g6R")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-htmlwidgets))
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://github.com/cynkra/g6R")
+    (synopsis "Graph Visualisation Engine Widget for R and 'shiny' Apps")
+    (description
+     "Create stunning network experiences powered by the G6 graph visualisation engine
+@code{JavaScript} library <https://g6.antv.antgroup.com/en>.  In shiny mode,
+modify your graph directly from the server function to dynamically interact with
+nodes and edges.  Select your favorite layout among 20 choices.  15 behaviors
+are available such as interactive edge creation, collapse-expand and brush
+select.  17 plugins designed to improve the user experience such as a mini-map,
+toolbars and grid lines.  Customise the look and feel of your graph with
+comprehensive options for nodes, edges and more.")
     (license license:expat)))
 
 (define-public r-g3viz

@@ -5499,44 +5499,6 @@ interaction variable conditional on main effects, as described in Wang and Chen
 (2020) <doi:10.1093/bioinformatics/btaa017>.")
     (license license:gpl2+)))
 
-(define-public r-ipcaps
-  (package
-    (name "r-ipcaps")
-    (version "1.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IPCAPS" version))
-       (sha256
-        (base32 "17ifkgjjnvvcc8dp065ng4ad9lr85lcdcb401vi84yy8m2llbypw"))))
-    (properties `((upstream-name . "IPCAPS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rmixmod
-                             r-matrix
-                             r-mass
-                             r-lpcm
-                             r-kris
-                             r-fpc
-                             r-expm
-                             r-apcluster))
-    (home-page "https://gitlab.com/kris.ccp/ipcaps")
-    (synopsis "Iterative Pruning to Capture Population Structure")
-    (description
-     "An unsupervised clustering algorithm based on iterative pruning is for capturing
-population structure.  This version supports ordinal data which can be applied
-directly to SNP data to identify fine-level population structure and it is built
-on the iterative pruning Principal Component Analysis ('@code{ipPCA}') algorithm
-as explained in Intarapanich et al. (2009) <doi:10.1186/1471-2105-10-382>.  The
-IPCAPS involves an iterative process using multiple splits based on multivariate
-Gaussian mixture modeling of principal components and Expectation-Maximization
-clustering as explained in Lebret et al. (2015) <doi:10.18637/jss.v067.i06>.  In
-each iteration, rough clusters and outliers are also identified using the
-function @code{rubikclust()} from the R package KRIS'.")
-    (license license:gpl3)))
-
 (define-public r-ipc
   (package
     (name "r-ipc")
@@ -12877,13 +12839,13 @@ are available, including basic normalization, Shin's method (Hyun Song Shin,
 (define-public r-implicitmeasures
   (package
     (name "r-implicitmeasures")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "implicitMeasures" version))
        (sha256
-        (base32 "177d69fbyzrg28ddxqlqbf7hm25mj5rpmpslh0mad2xqzyvdylvn"))))
+        (base32 "0zyx9fsch9arny61b4swk0nrfy8l8am09y5vzggalgc8hhx6zbqy"))))
     (properties `((upstream-name . "implicitMeasures")))
     (build-system r-build-system)
     (arguments
@@ -13608,30 +13570,6 @@ This package will help to fit and validate AI (Artificial Intelligence) based
 machine learning algorithms for estimation of height of conifer trees based on
 diameter at breast height as explanatory variable using algorithm of Paul et al.
 (2022) <doi:10.1371/journal.pone.0270553>..")
-    (license license:gpl3)))
-
-(define-public r-imgur
-  (package
-    (name "r-imgur")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "imguR" version))
-       (sha256
-        (base32 "14f7ghgc8rbrpqb21rinfbrj1wh80i6ii0awwi814152v5qzj4b3"))))
-    (properties `((upstream-name . "imguR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-png r-jpeg r-httr))
-    (home-page "https://github.com/leeper/imguR")
-    (synopsis "An Imgur.com API Client Package")
-    (description
-     "This package provides a complete API client for the image hosting service
-Imgur.com, including the an imgur graphics device, enabling the easy upload and
-sharing of plots.")
     (license license:gpl3)))
 
 (define-public r-imgrec
@@ -15619,33 +15557,6 @@ conditional quantities such as the cdf and quantiles.  Generate data from an IG
 or IGL copula.  See the vignette for formulas, or for a derivation, see Coia, V
 (2017) \"Forecasting of Nonlinear Extreme Quantiles Using Copula Models.\"
 @code{PhD} Dissertation, The University of British Columbia.")
-    (license license:expat)))
-
-(define-public r-igcities
-  (package
-    (name "r-igcities")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IGCities" version))
-       (sha256
-        (base32 "1564bzvi6vgg9q8s97mxjwklr83vkcv8f526savkhnjxdzi1zmy0"))))
-    (properties `((upstream-name . "IGCities")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=IGCities")
-    (synopsis
-     "Simulate Impact of Different Urban Policies Through a General Equilibrium Model")
-    (description
-     "Develops a General Equilibrium (GE) Model, which estimates key variables such as
-wages, the number of residents and workers, the prices of the floor space, and
-its distribution between commercial and residential use, as in Ahlfeldt et al.,
-(2015) <https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA10876>.  By doing
-so, the model allows understanding the economic influence of different urban
-policies.")
     (license license:expat)))
 
 (define-public r-igc-csm
@@ -20476,6 +20387,44 @@ means of factors from experiments using a connected incomplete block design.
 Tests of hypothesis of treatment contrasts in incomplete block design set up is
 supported.")
     (license license:gpl2+)))
+
+(define-public r-ibclust
+  (package
+    (name "r-ibclust")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IBclust" version))
+       (sha256
+        (base32 "0arv1m4ya7y3gydp5mxl2x29whxd3xjlxng8qh2gfs7glv0zmcg7"))))
+    (properties `((upstream-name . "IBclust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rje
+                             r-rdpack
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-np))
+    (home-page "https://cran.r-project.org/package=IBclust")
+    (synopsis "Information Bottleneck Methods for Clustering Mixed-Type Data")
+    (description
+     "This package implements multiple variants of the Information Bottleneck ('IB')
+method for clustering datasets containing mixed-type variables (nominal,
+ordinal, and continuous).  The package provides deterministic, agglomerative,
+generalized, and standard IB clustering algorithms that preserve relevant
+information while forming interpretable clusters.  The Deterministic Information
+Bottleneck is described in Costa et al. (2024)
+<doi:10.48550/@code{arXiv.2407.03389>}.  The standard IB method originates from
+Tishby et al. (2000) <doi:10.48550/@code{arXiv.physics/0004057>}, the
+agglomerative variant from Slonim and Tishby (1999)
+<https://papers.nips.cc/paper/1651-agglomerative-information-bottleneck>, and
+the generalized IB for Gaussian variables from Chechik et al. (2005)
+<https://www.jmlr.org/papers/volume6/chechik05a/chechik05a.pdf>.")
+    (license license:expat)))
 
 (define-public r-ibcf-mtme
   (package

@@ -4120,38 +4120,6 @@ simulate quasi-realistic pollen-data conditions by applying simulated
 accumulation rates and given depth intervals between consecutive samples.")
     (license license:gpl2+)))
 
-(define-public r-virf
-  (package
-    (name "r-virf")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "VIRF" version))
-       (sha256
-        (base32 "0bdkmbmkmmj78h9x025qsdzjzcx8xr2s98wlspcsghlz4hxkzcas"))))
-    (properties `((upstream-name . "VIRF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rmgarch
-                             r-mgarchbekk
-                             r-matrixcalc
-                             r-matlib
-                             r-ks
-                             r-gnm
-                             r-expm
-                             r-bigvar))
-    (home-page "https://cran.r-project.org/package=VIRF")
-    (synopsis
-     "Computation of Volatility Impulse Response Function of Multivariate Time Series")
-    (description
-     "Computation of volatility impulse response function for multivariate time series
-model using algorithm by Jin, Lin and Tamvakis (2012)
-<doi.org/10.1016/j.eneco.2012.03.003>.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-viralx
   (package
     (name "r-viralx")
@@ -4944,31 +4912,6 @@ immunogenicity with bivariate linear modeling.  Method is detailed in: Lhomme,
 Hejblum, Lacabaratz, Wiedemann, Lelievre, Levy, Thiebaut & Richert (2020).
 Journal of Immunological Methods, 477:112711. <doi:10.1016/j.jim.2019.112711>.")
     (license license:gpl3)))
-
-(define-public r-vicc
-  (package
-    (name "r-vicc")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vICC" version))
-       (sha256
-        (base32 "13lcs7wwj1xfbjf3q7r8ssf00jg5hr1vjp2pyw0r42iz7mx47xjv"))))
-    (properties `((upstream-name . "vICC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rjags r-rdpack r-nlme r-ggplot2 r-coda))
-    (home-page "https://cran.r-project.org/package=vICC")
-    (synopsis "Varying Intraclass Correlation Coefficients")
-    (description
-     "Compute group-specific intraclass correlation coefficients, Bayesian testing of
-homogenous within-group variance, and spike-and-slab model selection to
-determine which groups share a common within-group variance in a one-way random
-effects model <10.31234/osf.io/hpq7w>.")
-    (license license:gpl2)))
 
 (define-public r-vicatmix
   (package

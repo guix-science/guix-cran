@@ -1247,6 +1247,48 @@ the error-correction variant of the autoregressive distributed lag model
 (Pesaran, Shin, and Smith 2001 <doi:10.1002/jae.616>).")
     (license license:gpl2+)))
 
+(define-public r-dynafluxr
+  (package
+    (name "r-dynafluxr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dynafluxr" version))
+       (sha256
+        (base32 "18838jcijnga9d8yplqgbwvdxzkpamkyh4h7g2qq007dfh0vdjij"))))
+    (properties `((upstream-name . "dynafluxr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-slam
+                             r-shinyjs
+                             r-shinyfiles
+                             r-shiny
+                             r-qpdf
+                             r-optparse
+                             r-nlsic
+                             r-gmresls
+                             r-bspline
+                             r-arrapply))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dynafluxr")
+    (synopsis
+     "Retrieve Reaction Rate Dynamics from Metabolite Concentration Time Courses")
+    (description
+     "Reaction rate dynamics can be retrieved from metabolite concentration time
+courses.  User has to provide corresponding stoichiometric matrix but not a
+regulation model (Michaelis-Menten or similar).  Instead of solving an ordinary
+differential equation (ODE) system describing the evolution of concentrations,
+we use B-splines to catch the concentration and rate dynamics then solve a least
+square problem on their coefficients with non-negativity (and optionally
+monotonicity) constraints.  Constraints can be also set on initial values of
+concentration.  The package dynafluxr can be used as a library but also as an
+application with command line interface dynafluxr::cli(\"-h\") or graphical user
+interface @code{dynafluxr::gui()}.")
+    (license license:gpl2)))
+
 (define-public r-dyn-log
   (package
     (name "r-dyn-log")
@@ -2610,34 +2652,6 @@ and reference).")
 Date/times are considered discrete and are floored whenever encountered.  Times
 are wrapped and time zones are maintained unless explicitly altered by the user.")
     (license license:expat)))
-
-(define-public r-dtsr
-  (package
-    (name "r-dtsr")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DTSR" version))
-       (sha256
-        (base32 "12rn5hh1vaf9j2vb8wai1m4ikm071d2s14ph7a6rh1hz1ag0mk8m"))))
-    (properties `((upstream-name . "DTSR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvdalab r-mass r-dmwr2 r-cluster))
-    (home-page "https://cran.r-project.org/package=DTSR")
-    (synopsis
-     "Distributed Trimmed Scores Regression for Handling Missing Data")
-    (description
-     "This package provides functions for handling missing data using Distributed
-Trimmed Scores Regression and other imputation methods.  It includes facilities
-for data imputation, evaluation metrics, and clustering analysis.  It is
-designed to work in distributed computing environments to handle large datasets
-efficiently.  The philosophy of the package is described in Guo G. (2024)
-<doi:10.1080/03610918.2022.2091779>.")
-    (license license:gpl3)))
 
 (define-public r-dtsg
   (package
@@ -9616,13 +9630,13 @@ rendering can be sometimes different from the original documents.")
 (define-public r-dockviewr
   (package
     (name "r-dockviewr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dockViewR" version))
        (sha256
-        (base32 "0nysqnvx1hhsipahkbmbammqlc83qjnwvc52sxhpa4yyj291d2a8"))))
+        (base32 "1dmb660xlsncnrr0yky6x0005npm5j0bdgwnz0bgz9f9x1q4gbqi"))))
     (properties `((upstream-name . "dockViewR")))
     (build-system r-build-system)
     (arguments

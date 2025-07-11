@@ -10295,42 +10295,6 @@ assumptions on the dependence structure, and an instrumental variable is
 supposed to be available.")
     (license license:gpl2+)))
 
-(define-public r-coxed
-  (package
-    (name "r-coxed")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "coxed" version))
-       (sha256
-        (base32 "09jnqza8wp2palayb0vsz43qmh8470gxil1l7g3b65lmxa7wpmnh"))))
-    (properties `((upstream-name . "coxed")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-survival
-                             r-rms
-                             r-permalgo
-                             r-mgcv
-                             r-mediation
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jkropko/coxed")
-    (synopsis
-     "Duration-Based Quantities of Interest for the Cox Proportional Hazards Model")
-    (description
-     "This package provides functions for generating, simulating, and visualizing
-expected durations and marginal changes in duration from the Cox proportional
-hazards model as described in Kropko and Harden (2017)
-<doi:10.1017/S000712341700045X> and Harden and Kropko (2018)
-<doi:10.1017/psrm.2018.19>.")
-    (license license:gpl2)))
-
 (define-public r-coxbcv
   (package
     (name "r-coxbcv")
@@ -11481,36 +11445,6 @@ details on the methodology, see Sattler et al. (2022)
 <doi:10.48550/@code{arXiv.2310.11799>}.")
     (license license:gpl3+)))
 
-(define-public r-covcombr
-  (package
-    (name "r-covcombr")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CovCombR" version))
-       (sha256
-        (base32 "07yd0zbvc9db2jw6xigfhxnbkxwb3gxlmywadz7fs3rva2if2ffx"))))
-    (properties `((upstream-name . "CovCombR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nlme r-matrix r-cholwishart))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CovCombR")
-    (synopsis "Combine Partial Covariance / Relationship Matrices")
-    (description
-     "Combine partial covariance matrices using a Wishart-EM algorithm.  Methods are
-described in the November 2019 article by Akdemir et al.
-<https://www.biorxiv.org/content/10.1101/857425v1>.  It can be used to combine
-partially overlapping covariance matrices from independent trials, partially
-overlapping multi-view relationship data from genomic experiments, partially
-overlapping Gaussian graphs described by their covariance structures.  High
-dimensional covariance estimation, multi-view data integration.  high
-dimensional covariance graph estimation.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-covbm
   (package
     (name "r-covbm")
@@ -11733,30 +11667,6 @@ Negative Binomial, Thompson sampling Zero-inflated Poisson, and Thompson
 sampling Zero-inflated Negative Binomial.  Additionally, it can generate regret
 plots to evaluate the performance of contextual bandit algorithms.  This package
 is based on the algorithms by Liu et al. (2023) <@code{arXiv:2311.14359>}.")
-    (license license:gpl2+)))
-
-(define-public r-counttransformers
-  (package
-    (name "r-counttransformers")
-    (version "0.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "countTransformers" version))
-       (sha256
-        (base32 "14n2sv7wqzslrzg0ag473ljj9mvha94161p5yh2h9l1vx7xliimf"))))
-    (properties `((upstream-name . "countTransformers")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-limma r-biobase))
-    (home-page "https://cran.r-project.org/package=countTransformers")
-    (synopsis "Transform Counts in RNA-Seq Data Analysis")
-    (description
-     "Provide data transformation functions to transform counts in RNA-seq data
-analysis.  Please see the reference: Zhang Z, Yu D, Seo M, Hersh CP, Weiss ST,
-Qiu W. (2019) <doi.org/10.1038/s41598-019-41315-w>.")
     (license license:gpl2+)))
 
 (define-public r-counttofpkm
@@ -18218,41 +18128,6 @@ exist for all version 3 endpoints, including for bills, amendments, congresses,
 summaries, members, reports, communications, nominations, and treaties.")
     (license license:expat)))
 
-(define-public r-confzic
-  (package
-    (name "r-confzic")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ConfZIC" version))
-       (sha256
-        (base32 "0x9933zirfdkg2ljm3kk1nalk9ri0rrqi11q07dkyh78p4w9lmsp"))))
-    (properties `((upstream-name . "ConfZIC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidytable
-                             r-psych
-                             r-mvtnorm
-                             r-mumin
-                             r-ltsa
-                             r-cmna))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ConfZIC")
-    (synopsis
-     "Confidence Envelopes for Model Selection Criteria Based on Minimum ZIC")
-    (description
-     "Narrow down the number of models to look at in model selection using the
-confidence envelopes based on the minimum ZIC (Generalized Information Criteria)
-values for regression and time series data.  Functions involve the computation
-of multivariate normal-probabilities with covariance matrices based on minimum
-ZIC inverting the CDF of the minimum ZIC. It involves both the computation of
-singular and non-singular probabilities as described in Genz (1992)
-<[https:doi.org/10.2307/1390838]https:doi.org/10.2307/1390838>.")
-    (license license:gpl2)))
-
 (define-public r-confusiontabler
   (package
     (name "r-confusiontabler")
@@ -18562,6 +18437,43 @@ column marginals to be fixed, see Ariza LÃ³pez et al. (2019)
 <doi:10.1016/j.rse.2006.10.010> for more details.  The package was created with
 R6'.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-confluxpro
+  (package
+    (name "r-confluxpro")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ConFluxPro" version))
+       (sha256
+        (base32 "0qlzdn31dqmhr1idnqicbpyg8lmpbk2dgbadjrqcq9c1yg1lcqbh"))))
+    (properties `((upstream-name . "ConFluxPro")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-progressr
+                             r-magrittr
+                             r-lubridate
+                             r-lifecycle
+                             r-ggplot2
+                             r-furrr
+                             r-dplyr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://confluxpro.valentingartiser.de/")
+    (synopsis "Soil Gas Analysis and Flux Modeling")
+    (description
+     "Model soil gas fluxes with the Flux-Gradient Method.  It includes functions for
+data handling, a forward and an inverse model for flux modeling and methods for
+calibration and uncertainty estimation.  For more details see Gartiser et al.
+(2025a) <doi:10.21105/joss.08094> and Gartiser et al. (2025b)
+<doi:10.1111/ejss.70126>.")
+    (license license:gpl3+)))
 
 (define-public r-conflr
   (package
@@ -19885,29 +19797,6 @@ concave polygon(s) for one or several set of points.")
 that can be edited in Excel <doi:10.5281/zenodo.5130603>.")
     (license license:expat)))
 
-(define-public r-concatenate
-  (package
-    (name "r-concatenate")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "concatenate" version))
-       (sha256
-        (base32 "1kvsw7vwa3hn97ff7r6z21h5ajs74azwv2dk4pzgyaasnbp778hw"))))
-    (properties `((upstream-name . "concatenate")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/jamesdunham/concatenate")
-    (synopsis "Human-Friendly Text from Unknown Strings")
-    (description
-     "Simple functions for joining strings.  Construct human-friendly messages whose
-elements aren't known in advance, like in stop, warning, or message, from clean
-code.")
-    (license (license:fsdg-compatible "GPL (>= 3.2)"))))
-
 (define-public r-con2lki
   (package
     (name "r-con2lki")
@@ -20274,31 +20163,27 @@ sensitivity analyses under dependent censoring (Yeh et al 2023 Biomedicines)
 (define-public r-compositionalrf
   (package
     (name "r-compositionalrf")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompositionalRF" version))
        (sha256
-        (base32 "1s5g8lscmwhqgg0idf79np12shf8iqb1r1ckcy19azi5zxzgixqx"))))
+        (base32 "0hdn15c8alysvmxf2z4rlic50zmsqssh3wbcmpngs0mc6k5skvqx"))))
     (properties `((upstream-name . "CompositionalRF")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rfast
-                             r-rcppparallel
-                             r-rcpp
-                             r-foreach
-                             r-doparallel
-                             r-compositional))
+    (propagated-inputs (list r-rfast r-rcppparallel r-rcpp r-compositional))
     (home-page "https://cran.r-project.org/package=CompositionalRF")
     (synopsis "Multivariate Random Forest with Compositional Responses")
     (description
-     "Non linear regression with compositional responses and Euclidean predictors is
-performed.  The compositional data are first transformed using the additive
-log-ratio transformation, and then the multivariate random forest of Rahman R.,
-Otridge J. and Pal R. (2017), <doi:10.1093/bioinformatics/btw765>, is applied.")
+     "Multivariate random forests with compositional responses and Euclidean
+predictors is performed.  The compositional data are first transformed using the
+additive log-ratio transformation, and then the multivariate random forest of
+Rahman R., Otridge J. and Pal R. (2017), <doi:10.1093/bioinformatics/btw765>, is
+applied.")
     (license license:gpl2+)))
 
 (define-public r-compositionalml
@@ -28440,13 +28325,13 @@ individuals.")
 (define-public r-clv
   (package
     (name "r-clv")
-    (version "0.3-2.4")
+    (version "0.3-2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clv" version))
        (sha256
-        (base32 "1zbi4i6z0sphkkjifr2h0pms9ysifh62iwcpmh9kmv2wl5m51vms"))))
+        (base32 "1py99g430lgn8x383jzhjipb48gxv0rg62x84y8dpbv4gsv25rnq"))))
     (properties `((upstream-name . "clv")))
     (build-system r-build-system)
     (arguments
@@ -28456,11 +28341,12 @@ individuals.")
     (home-page "https://cran.r-project.org/package=clv")
     (synopsis "Cluster Validation Techniques")
     (description
-     "Package contains most of the popular internal and external cluster validation
-methods ready to use for the most of the outputs produced by functions coming
-from package \"cluster\".  Package contains also functions and examples of usage
-for cluster stability approach that might be applied to algorithms implemented
-in \"cluster\" package as well as user defined clustering algorithms.")
+     "This package contains most of the popular internal and external cluster
+validation methods ready to use for the most of the outputs produced by
+functions coming from package \"cluster\".  Package contains also functions and
+examples of usage for cluster stability approach that might be applied to
+algorithms implemented in \"cluster\" package as well as user defined clustering
+algorithms.")
     (license license:gpl2+)))
 
 (define-public r-clustvarsel
@@ -32143,13 +32029,13 @@ cleaner interface than @code{processx::run()}.")
 (define-public r-clidamonger
   (package
     (name "r-clidamonger")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clidamonger" version))
        (sha256
-        (base32 "0dqq59cgjynccz4c9rs7mz7b3s8gldcr4s9m17wjmkjz2ldba3xr"))))
+        (base32 "1pmj3nif59mrr69a7b6p7q59jv42nflg8i04cv8cbn9g84mcxggc"))))
     (properties `((upstream-name . "clidamonger")))
     (build-system r-build-system)
     (arguments
@@ -43089,13 +42975,13 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "0l3lcajlgvgv8c7kacqgwm73r7ykys18g21941dhqx8fhmahk4sx"))))
+        (base32 "0kn7mc5j4wy91dh0lssddy1aqi26j03jwpbzb59p1b7w234srz9l"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (arguments
@@ -48024,13 +47910,13 @@ H, q) process given the model parameters and observation times.")
 (define-public r-caretsdm
   (package
     (name "r-caretsdm")
-    (version "1.1.0")
+    (version "1.1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caretSDM" version))
        (sha256
-        (base32 "1ma0fz1zfxjlxixyhdkfv6hhf8m1g2412516rpspykwzn4qw1a35"))))
+        (base32 "0g6qi5p3jmqwc03bb5qkh07avp4973iv84r1gw71yp0s787qcrr5"))))
     (properties `((upstream-name . "caretSDM")))
     (build-system r-build-system)
     (arguments

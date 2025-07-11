@@ -1115,6 +1115,42 @@ closure can be derived.  Methods adapted from Bartlett, Scoffoni, Sack (2012)
 <http://prometheuswiki.org/tiki-index.php?page=Minimum+epidermal+conductance+%28gmin%2C+a.k.a.+cuticular+conductance%29>.")
     (license license:expat)))
 
+(define-public r-pvebayes
+  (package
+    (name "r-pvebayes")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pvEBayes" version))
+       (sha256
+        (base32 "0hlcc239yj6p7ybv74s8gx4w4lzal951mpyki1yd5kqan5x35vb2"))))
+    (properties `((upstream-name . "pvEBayes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wacolors
+                             r-sobolsequence
+                             r-rebayes
+                             r-rcppeigen
+                             r-rcpp
+                             r-magrittr
+                             r-glue
+                             r-ggplot2
+                             r-ggfittext
+                             r-ggdist
+                             r-data-table))
+    (home-page "https://github.com/YihaoTancn/pvEBayes")
+    (synopsis "Empirical Bayes Methods for Pharmacovigilance")
+    (description
+     "This package provides a suite of empirical Bayes methods to use in
+pharmacovigilance.  Contains various model fitting and post-processing
+functions.  For more details see Tan et al. (2025)
+<doi:10.48550/@code{arXiv.2502.09816>}, Koenker and Mizera (2014)
+<doi:10.1080/01621459.2013.869224> and Efron (2016) <doi:10.1093/biomet/asv068>.")
+    (license license:gpl3)))
+
 (define-public r-pvda
   (package
     (name "r-pvda")
@@ -11957,6 +11993,34 @@ are applicable for continuous and binary outcomes, and for any type of
 statistical or machine-learning prediction model as long as it uses baseline
 covariates to predict outcomes under treatment and control.")
     (license license:gpl2+)))
+
+(define-public r-predictsr
+  (package
+    (name "r-predictsr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "predictsr" version))
+       (sha256
+        (base32 "1v6nlwicqmkr5m4l247nz443vpq926225fyhy6h1wc9zg86nvm54"))))
+    (properties `((upstream-name . "predictsr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-logger r-jsonlite r-httr2 r-glue))
+    (native-inputs (list r-knitr))
+    (home-page "https://biodiversity-futures-lab.github.io/predictsr/")
+    (synopsis "Access the 'PREDICTS' Biodiversity Database")
+    (description
+     "Fetches the PREDICTS database and relevant metadata from the Data Portal at the
+Natural History Museum, London <https://data.nhm.ac.uk>.  Data were collated
+from over 400 existing spatial comparisons of local-scale biodiversity exposed
+to different intensities and types of anthropogenic pressures, from sites around
+the world.  These data are described in Hudson et al. (2013)
+<doi:10.1002/ece3.2579>.")
+    (license license:expat)))
 
 (define-public r-predicts
   (package
@@ -33345,39 +33409,6 @@ cubic spline, periodic restricted cubic spline, periodic cubic spline.  Periodic
 splines can be used to model data that has periodic nature / seasonality.")
     (license license:gpl3)))
 
-(define-public r-performanceestimation
-  (package
-    (name "r-performanceestimation")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "performanceEstimation" version))
-       (sha256
-        (base32 "08jx2zl6xh0rp54xa70gb717wbfdzfrx9b47i3b3ly41qaf85vrc"))))
-    (properties `((upstream-name . "performanceEstimation")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-parallelmap r-ggplot2 r-dplyr))
-    (home-page "https://github.com/ltorgo/performanceEstimation")
-    (synopsis
-     "An Infra-Structure for Performance Estimation of Predictive Models")
-    (description
-     "An infra-structure for estimating the predictive performance of predictive
-models.  In this context, it can also be used to compare and/or select among
-different alternative ways of solving one or more predictive tasks.  The main
-goal of the package is to provide a generic infra-structure to estimate the
-values of different metrics of predictive performance using different estimation
-procedures.  These estimation tasks can be applied to any solutions (workflows)
-to the predictive tasks.  The package provides easy to use standard workflows
-that allow the usage of any available R modeling algorithm together with some
-pre-defined data pre-processing steps and also prediction post- processing
-methods.  It also provides means for addressing issues related with the
-statistical significance of the observed differences.")
-    (license license:gpl2+)))
-
 (define-public r-perfit
   (package
     (name "r-perfit")
@@ -44672,31 +44703,6 @@ Applications of this package include books, letters, reports, papers, business
 cards, resumes, and posters.")
     (license license:expat)))
 
-(define-public r-pafr
-  (package
-    (name "r-pafr")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pafr" version))
-       (sha256
-        (base32 "0ali4m1pv73y88x1dk5rvmg1ysy48janjnc1hnqfcndszfz2b0wm"))))
-    (properties `((upstream-name . "pafr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble r-stringr r-rlang r-ggplot2 r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://dwinter.github.io/pafr/")
-    (synopsis "Read, Manipulate and Visualize 'Pairwise mApping Format' Data")
-    (description
-     "This package provides functions to read, process and visualize pairwise sequence
-alignments in the PAF format used by minimap2 and other whole-genome aligners.
-minimap2 is described by Li H. (2018) <doi:10.1093/bioinformatics/bty191>.")
-    (license license:expat)))
-
 (define-public r-pafit
   (package
     (name "r-pafit")
@@ -44793,13 +44799,13 @@ imputing records where observations were absent (pad).")
 (define-public r-pade
   (package
     (name "r-pade")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Pade" version))
        (sha256
-        (base32 "1rs3wap5rx4kq1vabhcfj2qbzfq2b78nvs4bc5h0jg3z32g99220"))))
+        (base32 "0bx6ngz1kiifw2jkzvx7ajgqndf2m8z04n6lfpccbaxhlqhp7njs"))))
     (properties `((upstream-name . "Pade")))
     (build-system r-build-system)
     (arguments

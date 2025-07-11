@@ -17626,13 +17626,13 @@ using the method presented in Wu, Cheung, and Leung (2020)
 (define-public r-modelbased
   (package
     (name "r-modelbased")
-    (version "0.11.2")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelbased" version))
        (sha256
-        (base32 "18fk4m0i363ynihd0q7nybkfn3mv3d37mpyjmf0vyv3bdf2ngl68"))))
+        (base32 "0i4c9pszanqs8fpwqpqdf2q8xjmq0vnw1jhd1vn19qmk2yk538z4"))))
     (properties `((upstream-name . "modelbased")))
     (build-system r-build-system)
     (arguments
@@ -20688,13 +20688,13 @@ importances and effects, and fairness metrics.")
 (define-public r-mlr3spatiotempcv
   (package
     (name "r-mlr3spatiotempcv")
-    (version "2.3.2")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3spatiotempcv" version))
        (sha256
-        (base32 "06kb8v0g1kn1z2107g1ik2r2hydcxljs8hb77cffhz2l7ac5cnq2"))))
+        (base32 "0h9f0snqx6m15p8nqgrmqv1ww7npxq75vy1a8jbk47pa8z9rwj1i"))))
     (properties `((upstream-name . "mlr3spatiotempcv")))
     (build-system r-build-system)
     (arguments
@@ -26914,37 +26914,6 @@ minimax approximation.")
 family, but computationally a lot more tractible.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-minimapr
-  (package
-    (name "r-minimapr")
-    (version "0.0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "minimapR" version))
-       (sha256
-        (base32 "1kj2yr17jq5pawx23n8sf8g3fxm1y7g16694rln3gyc3j15gdvl6"))))
-    (properties `((upstream-name . "minimapR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsamtools r-pafr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jake-bioinfo/minimapR")
-    (synopsis "Wrapper for 'minimap2'")
-    (description
-     "Wrapper for Minimap2'.  Minimap2 is a very valuable long read aligner for the
-Pacbio and Oxford Nanopore Technologies sequencing platforms. @code{minimapR} is
-an R wrapper for minimap2 which was developed by Heng Li <me@@liheng.org>.
-*SPECIAL NOTES 1.  Examples can only be run from @code{GitHub} installation.  2.
- conda or mamba must be used to install @code{minimapR} on your system.  3.  For
-Windows users, minimap2 and samtools can be installed via MSYS2, instructions
-are provided when @code{minimap2_installation()} is run.  Li, Heng (2018)
-<doi:10.1093/bioinformatics/bty191> \"Minimap2: pairwise alignment for nucleotide
-sequences\".")
-    (license license:expat)))
-
 (define-public r-minimap
   (package
     (name "r-minimap")
@@ -31545,34 +31514,6 @@ England et al. (2017) <doi:10.3133/tm4B5>.")
 multivariate GJR (bivariate asymmetric GARCH model) specification.")
     (license license:gpl3)))
 
-(define-public r-mg1stationaryprobability
-  (package
-    (name "r-mg1stationaryprobability")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MG1StationaryProbability" version))
-       (sha256
-        (base32 "151ygjpykc9jccfh6jhgywg82j006a8yqba6nvzhd1v9qb60yd4a"))))
-    (properties `((upstream-name . "MG1StationaryProbability")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-memoise r-foreach r-doparallel))
-    (home-page "https://github.com/MashroomMole/MG1StationaryProbability")
-    (synopsis "Computes Stationary Distribution for M/G/1 Queuing System")
-    (description
-     "The idea of a computational algorithm described in the article by Andronov M. et
-al. (2022) <https://link.springer.com/chapter/10.1007/978-3-030-92507-9_13>.
-The purpose of this package is to automate computations for a Markov-Modulated
-M/G/1 queuing system with alternating Poisson flow of arrivals.  It offers a set
-of functions to calculate various mean indices of the system, including mean
-flow intensity, mean service busy and idle times, and the system's stationary
-probability.")
-    (license license:expat)))
-
 (define-public r-mfx
   (package
     (name "r-mfx")
@@ -35162,54 +35103,6 @@ data extraction and meta-analysis with the metagear package for R. Methods in
 Ecology and Evolution 7, 323-330 <doi:10.1111/2041-210X.12472>.")
     (license license:gpl2+)))
 
-(define-public r-metage
-  (package
-    (name "r-metage")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "metaGE" version))
-       (sha256
-        (base32 "0kpviym3sfz005xq4mrrfrak07wpl6cm48m7xn2gyf1kl5jqx1c7"))))
-    (properties `((upstream-name . "metaGE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yarrr
-                             r-viridis
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rfast
-                             r-qqman
-                             r-purrr
-                             r-ks
-                             r-gplots
-                             r-ggrepel
-                             r-ggplot2
-                             r-future
-                             r-furrr
-                             r-emdbook
-                             r-dplyr
-                             r-data-table
-                             r-corrplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=metaGE")
-    (synopsis
-     "Meta-Analysis for Detecting Genotype x Environment Associations")
-    (description
-     "This package provides functions to perform all steps of genome-wide association
-meta-analysis for studying Genotype x Environment interactions, from collecting
-the data to the manhattan plot.  The procedure accounts for the potential
-correlation between studies.  In addition to the Fixed and Random models, one
-can investigate the relationship between QTL effects and some qualitative or
-quantitative covariate via the test of contrast and the meta-regression,
-respectively.  The methodology is available from: (De Walsche, A., et al. (2025)
-\\doi{10.1371/journal.pgen.1011553}).")
-    (license license:gpl3)))
-
 (define-public r-metagam
   (package
     (name "r-metagam")
@@ -37183,64 +37076,6 @@ integration.")
      "This package provides a simple way to memoize function results to improve
 performance by eliminating unnecessary computation or data retrieval activities.")
     (license license:gpl3)))
-
-(define-public r-memochange
-  (package
-    (name "r-memochange")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "memochange" version))
-       (sha256
-        (base32 "04qv201vcyfipp7p32i9b1paanimbi3h39mzsx26b7nm46pp1nws"))))
-    (properties `((upstream-name . "memochange")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-strucchange
-                             r-sandwich
-                             r-longmemoryts
-                             r-longmemo
-                             r-fracdiff
-                             r-forecast))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=memochange")
-    (synopsis
-     "Testing for Structural Breaks under Long Memory and Testing for Changes in Persistence")
-    (description
-     "Test procedures and break point estimators for persistent processes that exhibit
-structural breaks in mean or in persistence.  On the one hand the package
-contains the most popular approaches for testing whether a time series exhibits
-a break in persistence from I(0) to I(1) or vice versa, such as those of Busetti
-and Taylor (2004) and Leybourne, Kim, and Taylor (2007).  The approach by
-Martins and Rodrigues (2014), which allows to detect changes from I(d1) to I(d2)
-with d1 and d2 being non-integers, is included as well.  In case the tests
-reject the null of constant persistence, various breakpoint estimators are
-available to detect the point of the break as well as the order of integration
-in the two regimes.  On the other hand the package contains the most popular
-approaches to test for a change-in-mean of a long-memory time series, which were
-recently reviewed by Wenger, Leschinski, and Sibbertsen (2018).  These include
-memory robust versions of the CUSUM, sup-Wald, and Wilcoxon type tests.  The
-tests either utilize consistent estimates of the long-run variance or a self
-normalization approach in their test statistics.  Betken (2016)
-<doi:10.1111/jtsa.12187> Busetti and Taylor (2004)
-<doi:10.1016/j.jeconom.2003.10.028> Dehling, Rooch and Taqqu (2012)
-<doi:10.1111/j.1467-9469.2012.00799.x> Harvey, Leybourne and Taylor (2006)
-<doi:10.1016/j.jeconom.2005.07.002> Horvath and Kokoszka (1997)
-<doi:10.1016/S0378-3758(96)00208-X> Hualde and Iacone (2017)
-<doi:10.1016/j.econlet.2016.10.014> Iacone, Leybourne and Taylor (2014)
-<doi:10.1111/jtsa.12049> Leybourne, Kim, Smith, and Newbold (2003)
-<doi:10.1111/1368-423X.t01-1-00110> Leybourne and Taylor (2004)
-<doi:10.1016/j.econlet.2003.12.015> Leybourne, Kim, and Taylor (2007):
-<doi:10.1111/j.1467-9892.2006.00517.x> Martins and Rodrigues (2014)
-<doi:10.1016/j.csda.2012.07.021> Shao (2011)
-<doi:10.1111/j.1467-9892.2010.00717.x> Sibbertsen and Kruse (2009)
-<doi:10.1111/j.1467-9892.2009.00611.x> Wang (2008)
-<doi:10.1080/00949650701216604> Wenger, Leschinski and Sibbertsen (2018)
-<doi:10.1016/j.econlet.2017.12.007>.")
-    (license license:gpl2)))
 
 (define-public r-memo
   (package
@@ -41235,29 +41070,6 @@ in the estimated posterior model probabilities and (b) estimate the effective
 sample size of the MCMC output.")
     (license license:gpl3)))
 
-(define-public r-mcmcplots
-  (package
-    (name "r-mcmcplots")
-    (version "0.4.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mcmcplots" version))
-       (sha256
-        (base32 "0187z79gmvcrwqybxh3ckhcrqi0nqhvcvlczgxfkpq95y5czprdq"))))
-    (properties `((upstream-name . "mcmcplots")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sfsmisc r-denstrip r-colorspace r-coda))
-    (home-page "https://cran.r-project.org/package=mcmcplots")
-    (synopsis "Create Plots from MCMC Output")
-    (description
-     "This package provides functions for convenient plotting and viewing of MCMC
-output.")
-    (license license:gpl2+)))
-
 (define-public r-mcmcoutput
   (package
     (name "r-mcmcoutput")
@@ -43133,13 +42945,13 @@ assessment through model-informed and model-based strategies
 (define-public r-mbanalysis
   (package
     (name "r-mbanalysis")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBAnalysis" version))
        (sha256
-        (base32 "1b1s7s1qa82y8054f3mdpq7s13lk7dks900li5k0gr7sqfqdg1fz"))))
+        (base32 "1gxnnhc4dcfs2xjak3gjka1jvn9rvvxc2ajxgkc7xvarqhsllc66"))))
     (properties `((upstream-name . "MBAnalysis")))
     (build-system r-build-system)
     (arguments

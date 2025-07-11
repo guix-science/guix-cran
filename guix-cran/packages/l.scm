@@ -1263,36 +1263,6 @@ format, stratify a cohort, and calculate SMRs from the stratified cohort and
 rate file.")
     (license license:expat)))
 
-(define-public r-ltar
-  (package
-    (name "r-ltar")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LTAR" version))
-       (sha256
-        (base32 "0jn0fym0v6j9c7pam1samafph9fiqrdr141n3mqj9xks0vaqrqqh"))))
-    (properties `((upstream-name . "LTAR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vars r-rtensor2 r-rtensor r-gsignal))
-    (home-page "https://cran.r-project.org/package=LTAR")
-    (synopsis "Tensor Forecasting Functions")
-    (description
-     "This package provides a set of tools for forecasting the next step in a
-multidimensional setting using tensors.  In the examples, a forecast is made of
-sea surface temperatures of a geographic grid (i.e.  lat/long).  Each
-observation is a matrix, the entries in the matrix and the sea surface
-temperature at a particular lattitude/longitude.  Cates, J., Hoover, R. C.,
-Caudle, K., Kopp, R., & Ozdemir, C. (2021) \"Transform-Based Tensor Auto
-Regression for Multilinear Time Series Forecasting\" in 2021 20th IEEE
-International Conference on Machine Learning and Applications (ICMLA) (pp.
-461-466), IEEE <doi:10.1109/ICMLA52953.2021.00078>.")
-    (license license:gpl3)))
-
 (define-public r-ltable
   (package
     (name "r-ltable")
@@ -4321,35 +4291,6 @@ matrices are hierarchically clustered as in @code{ConsensusClusterPlus}'.  By
 using the flexibility from flexmix and @code{FactoMineR}', one can use mixed
 data types for the clustering.")
     (license license:gpl2+)))
-
-(define-public r-longmemoryts
-  (package
-    (name "r-longmemoryts")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LongMemoryTS" version))
-       (sha256
-        (base32 "0n378sad8i283vs7q63spdhwpwjly2d5zj15d4v2085j7sc7z8vi"))))
-    (properties `((upstream-name . "LongMemoryTS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-partitions
-                             r-mvtnorm
-                             r-longmemo
-                             r-fracdiff))
-    (home-page "https://cran.r-project.org/package=LongMemoryTS")
-    (synopsis "Long Memory Time Series")
-    (description
-     "Long Memory Time Series is a collection of functions for estimation, simulation
-and testing of long memory processes, spurious long memory processes and
-fractionally cointegrated systems.")
-    (license license:gpl2)))
 
 (define-public r-longmemo
   (package
@@ -9954,40 +9895,6 @@ Wolpert.  Coupling computer models through linking their statistical emulators.
 SIAM/ASA Journal on Uncertainty Quantification, 6(3): 1151-1171,
 (2018).<DOI:10.1137/17M1157702>.")
     (license license:gpl3+)))
-
-(define-public r-linkcomm
-  (package
-    (name "r-linkcomm")
-    (version "1.0-14")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "linkcomm" version))
-       (sha256
-        (base32 "15xm4c7sqpid1vjra250dnvdx98qgzbzmvaycf3zqqnqcmy5bw9n"))))
-    (properties `((upstream-name . "linkcomm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-rcolorbrewer r-igraph r-dynamictreecut))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://alextkalinka.github.io/linkcomm/")
-    (synopsis
-     "Tools for Generating, Visualizing, and Analysing Link Communities in Networks")
-    (description
-     "Link communities reveal the nested and overlapping structure in networks, and
-uncover the key nodes that form connections to multiple communities.  linkcomm
-provides a set of tools for generating, visualizing, and analysing link
-communities in networks of arbitrary size and type.  The linkcomm package also
-includes tools for generating, visualizing, and analysing Overlapping Cluster
-Generator (OCG) communities.  Kalinka and Tomancak (2011)
-<doi:10.1093/bioinformatics/btr311>.")
-    (license license:gpl2+)))
 
 (define-public r-linkagemapview
   (package
@@ -19369,122 +19276,6 @@ maps may also be represented using polygonal sets as the foreground, however for
 most computations such maps are converted into raster images.  The package is
 based on research conducted during the author's @code{PhD} studies.")
     (license license:gpl2+)))
-
-(define-public r-lactcurves
-  (package
-    (name "r-lactcurves")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lactcurves" version))
-       (sha256
-        (base32 "1ksllpgz519gzrs8gwfgg7743vj3j7ikmbwgisdjs77sdxxl7xyz"))))
-    (properties `((upstream-name . "lactcurves")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-polynom r-orthopolynom))
-    (home-page "https://cran.r-project.org/package=lactcurves")
-    (synopsis "Lactation Curve Parameter Estimation")
-    (description
-     "@code{AllCurves()} runs multiple lactation curve models and extracts selection
-criteria for each model.  This package summarises the most common lactation
-curve models from the last century and provides a tool for researchers to
-quickly decide on which model fits their data best to proceed with their
-analysis.  Start parameters were optimized based on a dataset with 1.7 million
-Holstein-Friesian cows.  If convergence fails, the start parameters need to be
-manually adjusted.  The models included in the package are taken from: (1)
-Michaelis-Menten: Michaelis, L. and M.L. Menten (1913).
-<www.plantphys.info/plant_physiology/copyright/@code{MichaelisMentenTranslation2.pdf>}
-(1a) Michaelis-Menten (Rook): Rook, A.J., J. France, and M.S. Dhanoa (1993).
-<doi:10.1017/S002185960007684X> (1b) Michaelis-Menten + exponential (Rook):
-Rook, A.J., J. France, and M.S. Dhanoa (1993). <doi:10.1017/S002185960007684X>
-(2) Brody (1923): Brody, S., A.C. Ragsdale, and C.W. Turner (1923).
-<doi:10.1085/jgp.5.6.777> (3) Brody (1924): Brody, S., C.W. Tuner, and A.C.
-Ragsdale (1924). <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2140670/> (4)
-Schumacher: Schumacher, F.X. (1939) in Thornley, J.H.M. and J. France (2007).
-<https://books.google.com.au/books/about/Mathematical_Models_in_Agriculture.html?id=@code{rlwBCRSHobcC&redir_esc=y>}
-(4a) Schumacher (Lopez et al.  2015): Lopez, S. J. France, N.E. Odongo, R.A.
-@code{McBride}, E. Kebreab, O. @code{AlZahal}, B.W. @code{McBride}, and J.
-Dijkstra (2015). <doi:10.3168/jds.2014-8132> (5) Parabolic exponential
-(Adediran): Adediran, S.A., D.A. Ratkowsky, D.J. Donaghy, and A.E.O. Malau-Aduli
-(2012). <doi:10.3168/jds.2011-4663> (6) Wood: Wood, P.D.P. (1967).
-<doi:10.1038/216164a0> (6a) Wood reparameterized (Dhanoa): Dhanoa, M.S. (1981).
-<doi:10.1017/S0003356100027276> (6b) Wood non-linear (Cappio-Borlino):
-Cappio-Borlino, A., G. Pulina, and G. Rossi (1995).
-<doi:10.1016/0921-4488(95)00713-U> (7) Quadratic Polynomial (Dave): Dave, B.K.
-(1971) in Adediran, S.A., D.A. Ratkowsky, D.J. Donaghy, and A.E.O. Malau-Aduli
-(2012). <doi:10.3168/jds.2011-4663> (8) Cobby and Le Du (Vargas): Vargas, B.,
-W.J. Koops, M. Herrero, and J.A.M Van Arendonk (2000).
-<doi:10.3168/jds.S0022-0302(00)75005-3> (9) Papajcsik and Bodero 1: Papajcsik,
-I.A. and J. Bodero (1988). <doi:10.1017/S0003356100003275> (10) Papajcsik and
-Bodero 2: Papajcsik, I.A. and J. Bodero (1988). <doi:10.1017/S0003356100003275>
-(11) Papajcsik and Bodero 3: Papajcsik, I.A. and J. Bodero (1988).
-<doi:10.1017/S0003356100003275> (12) Papajcsik and Bodero 4: Papajcsik, I.A. and
-J. Bodero (1988). <doi:10.1017/S0003356100003275> (13) Papajcsik and Bodero 6:
-Papajcsik, I.A. and J. Bodero (1988). <doi:10.1017/S0003356100003275> (14) Mixed
-log model 1 (Guo and Swalve): Guo, Z. and H.H. Swalve (1995).
-<https://journal.interbull.org/index.php/ib/issue/view/11> (15) Mixed log model
-3 (Guo and Swalve): Guo, Z. and H.H. Swalve (1995).
-<https://journal.interbull.org/index.php/ib/issue/view/11> (16) Log-quadratic
-(Adediran et al.  2012): Adediran, S.A., D.A. Ratkowsky, D.J. Donaghy, and
-A.E.O. Malau-Aduli (2012). <doi:10.3168/jds.2011-4663> (17) Wilmink: J.B.M.
-Wilmink (1987). <doi:10.1016/0301-6226(87)90003-0> (17a) modified Wilmink
-(Jakobsen): Jakobsen J.H., P. Madsen, J. Jensen, J. Pedersen, L.G. Christensen,
-and D.A. Sorensen (2002). <doi:10.3168/jds.S0022-0302(02)74231-8> (17b) modified
-Wilmink (Laurenson & Strucken): Strucken E.M., Brockmann G.A., and Y.C.S.M.
-Laurenson (2019).
-<http://www.aaabg.org/aaabghome/AAABG23papers/35Strucken23139.pdf> (18)
-Bicompartemental (Ferguson and Boston 1993): Ferguson, J.D., and R. Boston
-(1993) in Adediran, S.A., D.A. Ratkowsky, D.J. Donaghy, and A.E.O. Malau-Aduli
-(2012). <doi:10.3168/jds.2011-4663> (19) Dijkstra: Dijkstra, J., J. France, M.S.
-Dhanoa, J.A. Maas, M.D. Hanigan, A.J. Rook, and D.E. Beever (1997).
-<doi:10.3168/jds.S0022-0302(97)76185-X> (20) Morant and Gnanasakthy (Pollott et
-al 2000): Pollott, G.E. and E. Gootwine (2000). <doi:10.1017/S1357729800055028>
-(21) Morant and Gnanasakthy (Vargas et al 2000): Vargas, B., W.J. Koops, M.
-Herrero, and J.A.M Van Arendonk (2000). <doi:10.3168/jds.S0022-0302(00)75005-3>
-(22) Morant and Gnanasakthy (Adediran et al.  2012): Adediran, S.A., D.A.
-Ratkowsky, D.J. Donaghy, and A.E.O. Malau-Aduli (2012).
-<doi:10.3168/jds.2011-4663> (23) Khandekar (Guo and Swalve): Guo, Z. and H.H.
-Swalve (1995). <https://journal.interbull.org/index.php/ib/issue/view/11> (24)
-Ali and Schaeffer: Ali, T.E. and L.R. Schaeffer (1987).
-<https://cdnsciencepub.com/doi/pdf/10.4141/cjas87-067> (25) Fractional
-Polynomial (Elvira et al.  2013): Elvira, L., F. Hernandez, P. Cuesta, S. Cano,
-J.-V. Gonzalez-Martin, and S. Astiz (2012). <doi:10.1017/S175173111200239X> (26)
-Pollott multiplicative (Elvira): Elvira, L., F. Hernandez, P. Cuesta, S. Cano,
-J.-V. Gonzalez-Martin, and S. Astiz (2012). <doi:10.1017/S175173111200239X> (27)
-Pollott modified: Adediran, S.A., D.A. Ratkowsky, D.J. Donaghy, and A.E.O.
-Malau-Aduli (2012). <doi:10.3168/jds.2011-4663> (28) Monophasic Grossman:
-Grossman, M. and W.J. Koops (1988). <doi:10.3168/jds.S0022-0302(88)79723-4> (29)
-Monophasic Power Transformed (Grossman 1999): Grossman, M., S.M. Hartz, and W.J.
-Koops (1999). <doi:10.3168/jds.S0022-0302(99)75464-0> (30) Diphasic (Grossman
-1999): Grossman, M., S.M. Hartz, and W.J. Koops (1999).
-<doi:10.3168/jds.S0022-0302(99)75464-0> (31) Diphasic Power Transformed
-(Grossman 1999): Grossman, M., S.M. Hartz, and W.J. Koops (1999).
-<doi:10.3168/jds.S0022-0302(99)75464-0> (32) Legendre Polynomial (3th order):
-Jakobsen J.H., P. Madsen, J. Jensen, J. Pedersen, L.G. Christensen, and D.A.
-Sorensen (2002). <doi:10.3168/jds.S0022-0302(02)74231-8> (33) Legendre
-Polynomial (4th order): Jakobsen J.H., P. Madsen, J. Jensen, J. Pedersen, L.G.
-Christensen, and D.A. Sorensen (2002). <doi:10.3168/jds.S0022-0302(02)74231-8>
-(34) Legendre + Wilmink (Lidauer): Lidauer, M. and E.A. Mantysaari (1999).
-<https://journal.interbull.org/index.php/ib/article/view/417> (35) Natural Cubic
-Spline (3 percentiles): White, I.M.S., R. Thompson, and S. Brotherstone (1999).
-<doi:10.3168/jds.S0022-0302(99)75277-X> (36) Natural Cubic Spline (4
-percentiles): White, I.M.S., R. Thompson, and S. Brotherstone (1999).
-<doi:10.3168/jds.S0022-0302(99)75277-X> (37) Natural Cubic Spline (5
-percentiles): White, I.M.S., R. Thompson, and S. Brotherstone (1999)
-<doi:10.3168/jds.S0022-0302(99)75277-X> (38) Natural Cubic Spline (defined knots
-according to Harrell 2001): Jr.  Harrell, F.E. (2001).
-<https://link.springer.com/book/10.1007/978-3-319-19425-7> The selection
-criteria measure the goodness of fit of the model and include: Residual standard
-error (RSE), R-square (R2), log likelihood, Akaike information criterion (AIC),
-Akaike information criterion corrected (AICC), Bayesian Information Criterion
-(BIC), Durbin Watson coefficient (DW).  The following model parameters are
-included: Residual sum of squares (RSS), Residual standard deviation (RSD),
-F-value (F) based on F-ratio test.")
-    (license license:gpl3)))
 
 (define-public r-lactater
   (package

@@ -492,29 +492,29 @@ experiences.  Reference: Avanzi B, Taylor G, Wang M, Wong B (2020)
 (define-public r-synthesizer
   (package
     (name "r-synthesizer")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "synthesizer" version))
        (sha256
-        (base32 "09njg6wmls9p03mrdw3rwy4jv413cmnylg5xhlys6x47z1m1vwb9"))))
+        (base32 "1zn3m406d97i3hghji6gfvnxjh0112q5c5kxxra6km5f04p1kij5"))))
     (properties `((upstream-name . "synthesizer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-randomforest))
     (native-inputs (list r-simplermarkdown))
     (home-page "https://github.com/markvanderloo/synthesizer")
     (synopsis
-     "Synthesize Data Based on Empirical Quantile Functions and Rank Order Matching")
+     "Fast, Robust, and High-Quality Synthetic Data Generation with a Tuneable Privacy-Utility Trade-Off")
     (description
-     "Data is synthesized using a combination of inverse transform sampling using the
-empirical quantile functions for each variable, and then copying the rank order
-structure from the original dataset.  The syntesizer method has a tunable
-parameter allowing to gradually move from realistic and possibly unsafe
-synthetic data to decorrelated data of less utility.")
+     "Synthesize numeric, categorical, mixed and time series data.  Data circumstances
+including mixed (or zero-inflated) distributions and missing data patterns are
+reproduced in the synthetic data.  A single parameter allows balancing between
+high-quality synthetic data that represents correlations of the original data
+and lower quality but more privacy safe synthetic data without correlations.
+Tuning can be done per variable or for the whole dataset.")
     (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-synthesisr
@@ -8600,32 +8600,6 @@ analyze Substack content or integrate it into their applications.  For more
 information, visit the API documentation at
 <https://substackapi.dev/introduction>.")
     (license license:expat)))
-
-(define-public r-subspace
-  (package
-    (name "r-subspace")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "subspace" version))
-       (sha256
-        (base32 "0p2j0lnwj3ym1v4xla6r97zjikb8alnibdc690xn9c0z21hmv43v"))))
-    (properties `((upstream-name . "subspace")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list openjdk))
-    (propagated-inputs (list r-stringr r-rjava r-ggvis r-colorspace))
-    (home-page "https://cran.r-project.org/package=subspace")
-    (synopsis "Interface to OpenSubspace")
-    (description
-     "An interface to @code{OpenSubspace}', an open source framework for evaluation
-and exploration of subspace clustering algorithms in WEKA (see
-<http://dme.rwth-aachen.de/de/opensubspace> for more information).  Also
-performs visualization.")
-    (license license:gpl2)))
 
 (define-public r-subsemble
   (package
@@ -23350,13 +23324,13 @@ of response trajectories.")
 (define-public r-splinecox
   (package
     (name "r-splinecox")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splineCox" version))
        (sha256
-        (base32 "00jd0gf7ls4pais4bgy48pmgqz5kn2g3aqhksyyyfdc2rk2fvxmh"))))
+        (base32 "1qqzryisx1zw985j9pdy11wjam7f4iliazrq410qqb7d38rc40vr"))))
     (properties `((upstream-name . "splineCox")))
     (build-system r-build-system)
     (arguments
@@ -23375,7 +23349,9 @@ described in Teranishi et al.(2025).  In addition, the package provides
 functions for constructing and evaluating B-spline copulas based on five
 M-spline or I-spline basis functions, allowing users to flexibly model and
 compute bivariate dependence structures.  Both the copula function and its
-density can be evaluated.")
+density can be evaluated.  Furthermore, the package supports computation of
+dependence measures such as Kendall's tau and Spearman's rho, derived
+analytically from the copula parameters.")
     (license license:gpl3+)))
 
 (define-public r-splice
@@ -43016,34 +42992,6 @@ Jean-Daniel Boissonnat and ClÃ©ment Maria (2014)
 <doi:10.1007/s00453-014-9887-3>.")
     (license license:expat)))
 
-(define-public r-simplexreg
-  (package
-    (name "r-simplexreg")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "simplexreg" version))
-       (sha256
-        (base32 "1zkh00xbddhgz0qn0a5pj12n0hpx4f5kihpfj71x92pmxpzglcxh"))))
-    (properties `((upstream-name . "simplexreg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plotrix r-formula))
-    (home-page "https://cran.r-project.org/package=simplexreg")
-    (synopsis
-     "Regression Analysis of Proportional Data Using Simplex Distribution")
-    (description
-     "Simplex density, distribution, quantile functions as well as random variable
-generation of the simplex distribution are given.  Regression analysis of
-proportional data using various kinds of simplex models is available.  In
-addition, GEE method can be applied to longitudinal data to model the
-correlation.  Residual analysis is also involved.  Some subroutines are written
-in C with GNU Scientific Library (GSL) so as to facilitate the computation.")
-    (license license:gpl2)))
-
 (define-public r-simpletex
   (package
     (name "r-simpletex")
@@ -49972,13 +49920,13 @@ tracking, and agile workflows within shiny apps.")
 (define-public r-shinyitemanalysis
   (package
     (name "r-shinyitemanalysis")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ShinyItemAnalysis" version))
        (sha256
-        (base32 "00ys8jpgzcg14lq4qjw2919zdp85xb7ss3568nb96626r22k9gzp"))))
+        (base32 "0m8m0gqw8fiardny6ydnpxyh5vr88qp3yjfz96bi48mdj868xaki"))))
     (properties `((upstream-name . "ShinyItemAnalysis")))
     (build-system r-build-system)
     (arguments
@@ -49996,7 +49944,7 @@ tracking, and agile workflows within shiny apps.")
                              r-ggplot2
                              r-dplyr
                              r-difr))
-    (home-page "https://www.ShinyItemAnalysis.org")
+    (home-page "https://shinyitemanalysis.org/")
     (synopsis "Test and Item Analysis via Shiny")
     (description
      "Package including functions and interactive shiny application for the
@@ -59292,43 +59240,6 @@ use of this package in an effort to maintain a repository of dietary selections
 studies.")
     (license license:gpl2+)))
 
-(define-public r-select
-  (package
-    (name "r-select")
-    (version "1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Select" version))
-       (sha256
-        (base32 "1qx4wwxxwjq31vf645xvwb0y2z5h4v6ca8fcrfpaj5kc33f333v2"))))
-    (properties `((upstream-name . "Select")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsolnp r-latticeextra r-lattice r-fd r-ade4))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Select")
-    (synopsis "Determines Species Probabilities Based on Functional Traits")
-    (description
-     "The objective of these functions is to derive a species assemblage that
-satisfies a functional trait profile.  Restoring resilient ecosystems requires a
-flexible framework for selecting assemblages that are based on the functional
-traits of species.  However, current trait-based models have been limited to
-algorithms that can only select species by optimising specific trait values, and
-could not elegantly accommodate the common desire among restoration ecologists
-to produce functionally diverse assemblages.  We have solved this problem by
-applying a non-linear optimisation algorithm that optimises Rao Q, a closed-form
-functional trait diversity index that incorporates species abundances, subject
-to other linear constraints.  This framework generalises previous models that
-only optimised the entropy of the community, and can optimise both functional
-diversity and entropy simultaneously.  This package can also be used to generate
-experimental assemblages to test the effects of community-level traits on
-community dynamics and ecosystem function.  The method is based on theory
-discussed in Laughlin (2014, Ecology Letters) <doi.org/10.1111/ele.12288>.")
-    (license license:gpl2+)))
-
 (define-public r-selcorr
   (package
     (name "r-selcorr")
@@ -60410,39 +60321,6 @@ canonical correlation analysis, following Cook, Li and Chiaromonte (2007)
 \\doi{10.1093/biomet/asm038} and Lee and Yoo (2014) \\doi{10.1111/anzs.12057}.
 Then, the canonical correlation is finalized with the initially-reduced two sets
 of variables.")
-    (license license:gpl2+)))
-
-(define-public r-seedcalc
-  (package
-    (name "r-seedcalc")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SeedCalc" version))
-       (sha256
-        (base32 "1p8ncf3l2zhpbbblpjagg8cg9gf7f2izdcgc48n1aq4f7bmjbqgk"))))
-    (properties `((upstream-name . "SeedCalc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=SeedCalc")
-    (synopsis "Seed Germination and Seedling Growth Indexes")
-    (description
-     "This package provides functions to calculate seed germination and seedling
-emergence and growth indexes.  The main indexes for germination and seedling
-emergence, considering the time for seed germinate are: T10, T50 and T90, in
-Farooq et al. (2005) <10.1111/j.1744-7909.2005.00031.x>; and MGT, in Labouriau
-(1983).  Considering the germination speed are: Germination Speed Index, in
-Maguire (1962), Mean Germination Rate, in Labouriau (1983); considering the
-homogeneity of germination are: Coefficient of Variation of the Germination
-Time, in Carvalho et al. (2005) <10.1590/S0100-84042005000300018>, and Variance
-of Germination, in Labouriau (1983); Uncertainty, in Labouriau and Valadares
-(1976) <ISSN:0001-3765>; and Synchrony, in Primack (1980).  The main seedling
-indexes are Growth, in Sako (2001), Uniformity, in Sako (2001) and Castan et al.
-(2018) <doi:10.1590/1678-992x-2016-0401>; and Vigour, in Medeiros and Pereira
-(2018) <doi:10.1590/1983-40632018v4852340>.")
     (license license:gpl2+)))
 
 (define-public r-seecolor
@@ -63568,47 +63446,6 @@ top of the scripts.")
 interactively or when sourced.  Attempts to support RStudio environment.  Based
 on <https://stackoverflow.com/a/32016824/2292993> and
 <https://stackoverflow.com/a/35842176/2292993>.")
-    (license license:gpl3)))
-
-(define-public r-scrip
-  (package
-    (name "r-scrip")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SCRIP" version))
-       (sha256
-        (base32 "1cv8443y2s67q3krsyj7r2d1vqv01w8xr0iz8dz4kijmhksyg7ng"))))
-    (properties `((upstream-name . "SCRIP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-summarizedexperiment
-                             r-singlecellexperiment
-                             r-seurat
-                             r-s4vectors
-                             r-mgcv
-                             r-knitr
-                             r-fitdistrplus
-                             r-edger
-                             r-crayon
-                             r-checkmate
-                             r-biocmanager
-                             r-biocgenerics))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/thecailab/SCRIP")
-    (synopsis "An Accurate Simulator for Single-Cell RNA Sequencing Data")
-    (description
-     "We provide a comprehensive scheme that is capable of simulating Single Cell RNA
-Sequencing data for various parameters of Biological Coefficient of Variation,
-busting kinetics, differential expression (DE), cell or sample groups, cell
-trajectory, batch effect and other experimental designs.  SCRIP proposed and
-compared two frameworks with Gamma-Poisson and Beta-Gamma-Poisson models for
-simulating Single Cell RNA Sequencing data.  Other reference is available in
-Zappia et al. (2017)
-<https://genomebiology.biomedcentral.com/articles/10.1186/s13059-017-1305-0>.")
     (license license:gpl3)))
 
 (define-public r-scribe
@@ -67454,32 +67291,6 @@ Biswas, Lester Mackey and Xiao-Li Meng, \"Scalable Spike-and-Slab\" (2022)
      "Perform a probabilistic linkage of two data files using a scaling procedure
 using the methods described in Goldstein, H., Harron, K. and Cortina-Borja, M.
 (2017) <doi:10.1002/sim.7287>.")
-    (license license:gpl2+)))
-
-(define-public r-scaleboot
-  (package
-    (name "r-scaleboot")
-    (version "1.0-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "scaleboot" version))
-       (sha256
-        (base32 "1q0bs5f1vgja5gj3id1ny6raja8ljgd8dk50fs1wn90f6080afy7"))))
-    (properties `((upstream-name . "scaleboot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pvclust r-mvtnorm))
-    (home-page "http://stat.sys.i.kyoto-u.ac.jp/prog/scaleboot/")
-    (synopsis "Approximately Unbiased P-Values via Multiscale Bootstrap")
-    (description
-     "Calculating approximately unbiased (AU) p-values from multiscale bootstrap
-probabilities.  See Shimodaira (2004) <doi:10.1214/009053604000000823>,
-Shimodaira (2008) <doi:10.1016/j.jspi.2007.04.001>, Terada ans Shimodaira (2017)
-<@code{arXiv:1711.00949>}, and Shimodaira and Terada (2019)
-<doi.org/10.3389/fevo.2019.00174>.")
     (license license:gpl2+)))
 
 (define-public r-scalealign
@@ -73437,31 +73248,6 @@ implementation of the @code{MapCurve} method (Hargrove et al. (2006)
 depth (intensity) and allele specific read depth (intensity) for whole genome
 sequencing (WGS), whole exome sequencing (WES) and SNP array data.")
     (license license:gpl2+)))
-
-(define-public r-s4vd
-  (package
-    (name "r-s4vd")
-    (version "1.1-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "s4vd" version))
-       (sha256
-        (base32 "1rp3z42nxmrvb942h3c5cl544lngzx7nrnnr4zjw7dq495bym7yp"))))
-    (properties `((upstream-name . "s4vd")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-irlba r-foreach r-biclust))
-    (home-page "https://cran.r-project.org/package=s4vd")
-    (synopsis
-     "Biclustering via Sparse Singular Value Decomposition Incorporating Stability Selection")
-    (description
-     "The main function @code{s4vd()} performs a biclustering via sparse singular
-value decomposition with a nested stability selection.  The results is an
-biclust object and thus all methods of the biclust package can be applied.")
-    (license license:gpl2)))
 
 (define-public r-s4dm
   (package

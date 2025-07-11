@@ -2407,13 +2407,13 @@ given target value in smaller computation time than algorithm B.")
 (define-public r-ttservice
   (package
     (name "r-ttservice")
-    (version "0.4.1")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ttservice" version))
        (sha256
-        (base32 "1r0prv3p3xlcfn16bxjyvkr255rsaf5m26c394qxc78y6qf6wrbd"))))
+        (base32 "127q2f6ahh6527ni2ywhgmks9pqxj2ih8dmqcrlb6s2x4v385vqx"))))
     (properties `((upstream-name . "ttservice")))
     (build-system r-build-system)
     (arguments
@@ -8922,19 +8922,19 @@ Markus, Verhamme, Kors, and Rijnbeek (2022) <doi:10.1016/j.cmpb.2022.107081>.")
 (define-public r-treasury
   (package
     (name "r-treasury")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treasury" version))
        (sha256
-        (base32 "0dg7yik152gikxn35khcrc098li6n3ppb7d78cwmxl2ikvzcgbbm"))))
+        (base32 "0fk0yah540v1izz8v05ifl26rfis2iylp5f134fl4gq8w0y3hr7q"))))
     (properties `((upstream-name . "treasury")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-tidyr r-rlang r-readxl r-httr2))
+    (propagated-inputs (list r-xml2 r-httr2 r-data-table))
     (home-page "https://m-muecke.github.io/treasury/")
     (synopsis "Client for US Treasury XML Feed and Published Data")
     (description
@@ -22131,13 +22131,13 @@ website.")
 (define-public r-theftdlc
   (package
     (name "r-theftdlc")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "theftdlc" version))
        (sha256
-        (base32 "0gc5xfizqdljkg4cqz6a0zp981804sfcjd07zrqc8pkjvq8489j8"))))
+        (base32 "091ixj2jn4kg48fidqd8hww7y58bakcqv73x0rp7wjdsfxgw56sg"))))
     (properties `((upstream-name . "theftdlc")))
     (build-system r-build-system)
     (arguments
@@ -22156,7 +22156,10 @@ website.")
                              r-mclust
                              r-mass
                              r-janitor
+                             r-glmnet
                              r-ggplot2
+                             r-future
+                             r-furrr
                              r-e1071
                              r-dplyr
                              r-correctr
@@ -22175,13 +22178,13 @@ Henderson, T., Bryant, A., and Fulcher, B. (2023)
 (define-public r-theft
   (package
     (name "r-theft")
-    (version "0.6.3")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "theft" version))
        (sha256
-        (base32 "03ppazjwjg30a01nkawxg8bb2gzv7qnkbav5c25allsbw8gfbshh"))))
+        (base32 "1kci6qmy7gl27xsvgcagzw8lkz60l3a0yjgxhlg2sdzbfx348hmh"))))
     (properties `((upstream-name . "theft")))
     (build-system r-build-system)
     (arguments
@@ -22190,7 +22193,6 @@ Henderson, T., Bryant, A., and Fulcher, B. (2023)
     (propagated-inputs (list r-tsibble
                              r-tsfeatures
                              r-tidyr
-                             r-tibble
                              r-rlang
                              r-reticulate
                              r-rcatch22
@@ -25933,41 +25935,6 @@ discussed in Li et al (2021) <doi:10.48550/@code{arXiv.2110.00928>}, Chen et al
 <DOI:10.1016/j.jeconom.2020.07.015>, and Xiao et al (2020)
 <doi:10.48550/@code{arXiv.2006.02611>}.")
     (license license:gpl2+)))
-
-(define-public r-tensortools
-  (package
-    (name "r-tensortools")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TensorTools" version))
-       (sha256
-        (base32 "0x16raj8xhjzjhrpj9l5rz66rfiy8hf6ap3l7gqmx53vfk3fpsqq"))))
-    (properties `((upstream-name . "TensorTools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wavethresh
-                             r-raster
-                             r-png
-                             r-matrixcalc
-                             r-matrix
-                             r-gsignal))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=TensorTools")
-    (synopsis "Multilinear Algebra")
-    (description
-     "This package provides a set of tools for basic tensor operators.  A tensor in
-the context of data analysis in a multidimensional array.  The tools in this
-package rely on using any discrete transformation (e.g. Fast Fourier Transform
-(FFT)).  Standard tools included are the Eigenvalue decomposition of a tensor,
-the QR decomposition and LU decomposition.  Other functionality includes the
-inverse of a tensor and the transpose of a symmetric tensor.  Functionality in
-the package is outlined in Kernfeld, E., Kilmer, M., and Aeron, S. (2015)
-<doi:10.1016/j.laa.2015.07.021>.")
-    (license license:gpl3)))
 
 (define-public r-tensortest2d
   (package

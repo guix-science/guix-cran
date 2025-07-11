@@ -1176,19 +1176,20 @@ directory within functions and wrap console messages around other functions.")
 (define-public r-wrappedtools
   (package
     (name "r-wrappedtools")
-    (version "0.9.7")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrappedtools" version))
        (sha256
-        (base32 "1ymy6dkf5nc2pwf83bamm0n1fnr0xd6dh4pvmniafy8qfsn289vs"))))
+        (base32 "01di3p49165d14an496rxn872x5inljrlkywp02imi96q2s3cavy"))))
     (properties `((upstream-name . "wrappedtools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-rlist
@@ -2528,13 +2529,13 @@ where available, or direct download from
 (define-public r-wordmap
   (package
     (name "r-wordmap")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordmap" version))
        (sha256
-        (base32 "1rsg4nh4gi2km3px3z5c8prcs32anlc2lr0zkbz0h34i2h6dk1w1"))))
+        (base32 "180mwy47j33c6ssw56jaay10zh10d82pmvaacacfhzca4w0x3fq1"))))
     (properties `((upstream-name . "wordmap")))
     (build-system r-build-system)
     (arguments
@@ -9494,13 +9495,13 @@ Georgia Institute of Technology.
 (define-public r-warden
   (package
     (name "r-warden")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WARDEN" version))
        (sha256
-        (base32 "1xzlbidh85pxlwib6949i5i5w2xfgp6i79c2n7xb7xvf1mndzi21"))))
+        (base32 "1z06n57dgaxlq3qqr4hx6i15arhpb85ni9471msmzam3lfzvi3wr"))))
     (properties `((upstream-name . "WARDEN")))
     (build-system r-build-system)
     (arguments
@@ -9527,8 +9528,8 @@ Georgia Institute of Technology.
 constraints in the context of health technology assessments (HTA).  The package
 focuses on cost-effectiveness modelling and aims to be submission-ready to
 relevant HTA bodies in alignment with NICE TSD 15
-<https://www.sheffield.ac.uk/nice-dsu/tsds/patient-level-simulation>.  More
-details an examples can be found in the package website
+<https://sheffield.ac.uk/nice-dsu/tsds/patient-level-simulation>.  More details
+an examples can be found in the package website
 <https://jsanchezalv.github.io/WARDEN/>.")
     (license license:gpl3+)))
 

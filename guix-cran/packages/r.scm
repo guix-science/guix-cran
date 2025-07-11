@@ -1350,31 +1350,6 @@ M.J.M., Walker B.E., Black N., Govaerts R., Ondo I., Turner R., Nic Lughadha E.
 Vascular Plants\".  New Phytologist.")
     (license license:gpl3+)))
 
-(define-public r-rwclust
-  (package
-    (name "r-rwclust")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rwclust" version))
-       (sha256
-        (base32 "0c7q2i9n22sqj3wq9m0j49y5h14848myjbixrdkic8lvv91dm438"))))
-    (properties `((upstream-name . "Rwclust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Rwclust")
-    (synopsis "Random Walk Clustering on Weighted Graphs")
-    (description
-     "This package implements the random walk clustering algorithm for weighted graphs
-as found in Harel and Koren (2001)
-<https://link.springer.com/chapter/10.1007/3-540-45294-X_3>.")
-    (license license:expat)))
-
 (define-public r-rwc
   (package
     (name "r-rwc")
@@ -4576,42 +4551,6 @@ heterogeneous) atmosphere over custom topography.  Includes a Lagrangian
 model as png files.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-rtensor2
-  (package
-    (name "r-rtensor2")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rTensor2" version))
-       (sha256
-        (base32 "0bangmph2hmk50gx21dkky0b22aimh168bndbp7a0s5vg2m49ijz"))))
-    (properties `((upstream-name . "rTensor2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wavethresh
-                             r-rtensor
-                             r-raster
-                             r-png
-                             r-matrixcalc
-                             r-matrix
-                             r-gsignal))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rTensor2")
-    (synopsis "MultiLinear Algebra")
-    (description
-     "This package provides a set of tools for basic tensor operators.  A tensor in
-the context of data analysis in a multidimensional array.  The tools in this
-package rely on using any discrete transformation (e.g. Fast Fourier Transform
-(FFT)).  Standard tools included are the Eigenvalue decomposition of a tensor,
-the QR decomposition and LU decomposition.  Other functionality includes the
-inverse of a tensor and the transpose of a symmetric tensor.  Functionality in
-the package is outlined in Kernfeld et al. (2015)
-<https://www.sciencedirect.com/science/article/pii/S0024379515004358>.")
-    (license license:gpl3)))
-
 (define-public r-rtensor
   (package
     (name "r-rtensor")
@@ -6782,64 +6721,6 @@ The constraints can be defined using the validate package.  The core algorithms
 have recently been moved to the lintools package, refer to lintools for a more
 basic interface and access to a version of the algorithm that works with sparse
 matrices.")
-    (license license:gpl3)))
-
-(define-public r-rsp
-  (package
-    (name "r-rsp")
-    (version "0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RSP" version))
-       (sha256
-        (base32 "126lag0i2k4fwlr7gnc9jfn63pyi6d6gzzmypyr6jk666pwsk5f6"))))
-    (properties `((upstream-name . "RSP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xlsx
-                             r-shinywidgets
-                             r-shinythemes
-                             r-shinyjs
-                             r-shinyitemanalysis
-                             r-shinycustomloader
-                             r-shinybs
-                             r-shiny
-                             r-semplot
-                             r-scales
-                             r-rstudioapi
-                             r-rjava
-                             r-psych
-                             r-polycor
-                             r-plyr
-                             r-mvn
-                             r-mirt
-                             r-metrics
-                             r-ltm
-                             r-lavaan
-                             r-igraph
-                             r-hornpa
-                             r-gt
-                             r-gparotation
-                             r-ggplot2
-                             r-foreign
-                             r-dt
-                             r-catr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RSP")
-    (synopsis "'shiny' Applications for Statistical and Psychometric Analysis")
-    (description
-     "Toolbox with shiny applications for widely used psychometric methods.  Those
-methods include following analysis: Item analysis, item response theory
-calibration, principal component analysis, confirmatory factor analysis -
-structural equation modeling, generating simulated data.  References: Chalmers
-(2012, <doi:10.18637/jss.v048.i06>); Revelle (2022,
-<https://CRAN.R-project.org/package=psych Version = 2.2.9.>); Rosseel (2012,
-<doi:10.18637/jss.v048.i02>); Magis & Raiche (2012,
-<doi:10.18637/jss.v048.i08>); Magis & Barrada (2017,
-<doi:10.18637/jss.v076.c01>).")
     (license license:gpl3)))
 
 (define-public r-rsomoclu
@@ -24108,35 +23989,6 @@ distribution.  The J-QPD system was developed by Hadlock and Bickel (2017)
 CDF and random number generator functions.")
     (license license:expat)))
 
-(define-public r-rjmcmc
-  (package
-    (name "r-rjmcmc")
-    (version "0.4.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rjmcmc" version))
-       (sha256
-        (base32 "14rzvp6z5avlcnmlmvb6w4gvlh6v4ncbcai3v4c4svnjv555vz45"))))
-    (properties `((upstream-name . "rjmcmc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-madness r-coda))
-    (home-page "https://cran.r-project.org/package=rjmcmc")
-    (synopsis "Reversible-Jump MCMC Using Post-Processing")
-    (description
-     "This package performs reversible-jump Markov chain Monte Carlo (Green, 1995)
-<doi:10.2307/2337340>, specifically the restriction introduced by Barker & Link
-(2013) <doi:10.1080/00031305.2013.791644>.  By utilising a universal parameter
-space, RJMCMC is treated as a Gibbs sampling problem.  Previously-calculated
-posterior distributions are used to quickly estimate posterior model
-probabilities.  Jacobian matrices are found using automatic differentiation.
-For a detailed description of the package, see Gelling, Schofield & Barker
-(2019) <doi:10.1111/anzs.12263>.")
-    (license license:gpl3)))
-
 (define-public r-rje
   (package
     (name "r-rje")
@@ -25491,6 +25343,48 @@ p-values to test for etiologic heterogeneity across individual risk factors.
 Begg CB, Zabor EC, Bernstein JL, Bernstein L, Press MF, Seshan VE (2013)
 <doi:10.1002/sim.5902>.")
     (license license:gpl2)))
+
+(define-public r-risk-assessr
+  (package
+    (name "r-risk-assessr")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "risk.assessr" version))
+       (sha256
+        (base32 "1lr5818b2r2w9pn1zzlzx58yvqlfx87iyr42yz6m6abj3l4nx5m1"))))
+    (properties `((upstream-name . "risk.assessr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-remotes
+                             r-rcmdcheck
+                             r-purrr
+                             r-jsonlite
+                             r-gh
+                             r-fs
+                             r-dplyr
+                             r-devtools
+                             r-desc
+                             r-curl
+                             r-covr
+                             r-checkmate
+                             r-callr))
+    (native-inputs (list r-knitr))
+    (home-page "https://sanofi-public.github.io/risk.assessr/")
+    (synopsis "Assessing Package Risk Metrics")
+    (description
+     "This package provides a structured approach to assess the quality and
+trustworthiness of R packages (documentation, testing, popularity,
+dependencies), supporting informed decisions in production or research by
+highlighting strengths and potential risks in adoption or development.")
+    (license license:gpl2+)))
 
 (define-public r-risk
   (package
@@ -31201,41 +31095,6 @@ documentation is available at <https://rui-api.redoc.ly/>.  This package is not
 supported by Flexera (owner of the software).")
     (license license:cc0)))
 
-(define-public r-revecor
-  (package
-    (name "r-revecor")
-    (version "0.99.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RevEcoR" version))
-       (sha256
-        (base32 "1nym263ynjdir5kxv35jnmki9mshlplq0sk3xnjd4ac6f1cfbfqj"))))
-    (properties `((upstream-name . "RevEcoR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml
-                             r-stringr
-                             r-purrr
-                             r-plyr
-                             r-matrix
-                             r-magrittr
-                             r-igraph
-                             r-gtools))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RevEcoR")
-    (synopsis "Reverse Ecology Analysis on Microbiome")
-    (description
-     "An implementation of the reverse ecology framework.  Reverse ecology refers to
-the use of genomics to study ecology with no a priori assumptions about the
-organism(s) under consideration, linking organisms to their environment.  It
-allows researchers to reconstruct the metabolic networks and study the ecology
-of poorly characterized microbial species from their genomic information, and
-has substantial potentials for microbial community ecological analysis.")
-    (license license:gpl2+)))
-
 (define-public r-revealjs
   (package
     (name "r-revealjs")
@@ -35029,45 +34888,6 @@ analysis,especially MANOVA. The dataset names correspond to their numbering in
 the third edition of the book, such as table6.27.  Based on the book by Rencher
 and Christensen (2012, ISBN:9780470178966).")
     (license license:gpl3)))
-
-(define-public r-rena
-  (package
-    (name "r-rena")
-    (version "0.2.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rENA" version))
-       (sha256
-        (base32 "136rlzm4pkip0j1zhn4ycsfmq4hjwvhp4d5359wsjkym6lr9n846"))))
-    (properties `((upstream-name . "rENA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-r6
-                             r-plotly
-                             r-magrittr
-                             r-foreach
-                             r-doparallel
-                             r-data-table
-                             r-concatenate))
-    (home-page "https://gitlab.com/epistemic-analytics/qe-packages/rENA")
-    (synopsis "Epistemic Network Analysis")
-    (description
-     "ENA (Shaffer, D. W. (2017) Quantitative Ethnography.  ISBN: 0578191687) is a
-method used to identify meaningful and quantifiable patterns in discourse or
-reasoning.  ENA moves beyond the traditional frequency-based assessments by
-examining the structure of the co-occurrence, or connections in coded data.
-Moreover, compared to other methodological approaches, ENA has the novelty of
-(1) modeling whole networks of connections and (2) affording both quantitative
-and qualitative comparisons between different network models.  Shaffer, D.W.,
-Collier, W., & Ruis, A.R. (2016).")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-ren
   (package
@@ -40406,13 +40226,13 @@ package developers.")
 (define-public r-rebus-numbers
   (package
     (name "r-rebus-numbers")
-    (version "0.0-1")
+    (version "0.0-1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rebus.numbers" version))
        (sha256
-        (base32 "0drgszz0824j49c6jk9ry0cfjky7g843ldlxrx3g2vjp0v7hznj3"))))
+        (base32 "11z8471laxymyq8yzw0wf6fkhxi20jg4s1rz15f7vvk89w8kr5lk"))))
     (properties `((upstream-name . "rebus.numbers")))
     (build-system r-build-system)
     (arguments
@@ -43445,39 +43265,6 @@ version if the original data file is unavailable.  Works best for small datasets
 (a few hundred observations).")
     (license license:gpl3)))
 
-(define-public r-rddtools
-  (package
-    (name "r-rddtools")
-    (version "2.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rddtools" version))
-       (sha256
-        (base32 "0pwbz4i5f2qnrnxj4lhn6yzbxz3gqs6w7ad0jci2q1nh0qq47rfh"))))
-    (properties `((upstream-name . "rddtools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sandwich
-                             r-rdrobust
-                             r-rdd
-                             r-np
-                             r-locpol
-                             r-lmtest
-                             r-kernsmooth
-                             r-ggplot2
-                             r-formula
-                             r-aer))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/bquast/rddtools")
-    (synopsis "Toolbox for Regression Discontinuity Design ('RDD')")
-    (description
-     "Set of functions for Regression Discontinuity Design ('RDD'), for data
-visualisation, estimation and testing.")
-    (license license:gpl2+)))
-
 (define-public r-rddi
   (package
     (name "r-rddi")
@@ -43566,32 +43353,6 @@ and assumption checks.  Introductions to the underlying logic and analysis of
 RDDs are in Thistlethwaite, D. L., Campbell, D. T. (1960) <doi:10.1037/h0044319>
 and Lee, D. S., Lemieux, T. (2010) <doi:10.1257/jel.48.2.281>.")
     (license license:gpl2+)))
-
-(define-public r-rdd
-  (package
-    (name "r-rdd")
-    (version "0.57")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rdd" version))
-       (sha256
-        (base32 "1lpkzcjd18x51wzr4d1prdjfsw5978z6zap65psfs02nszy69nqp"))))
-    (properties `((upstream-name . "rdd")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sandwich r-lmtest r-formula r-aer))
-    (home-page "https://cran.r-project.org/package=rdd")
-    (synopsis "Regression Discontinuity Estimation")
-    (description
-     "This package provides the tools to undertake estimation in Regression
-Discontinuity Designs.  Both sharp and fuzzy designs are supported.  Estimation
-is accomplished using local linear regression.  A provided function will utilize
-Imbens-Kalyanaraman optimal bandwidth calculation.  A function is also included
-to test the assumption of no-sorting effects.")
-    (license license:asl2.0)))
 
 (define-public r-rdbnomics
   (package
@@ -47284,52 +47045,6 @@ measures preferences for the items by analyzing the responses.  For details,
 refer to Aizaki and Fogarty (2023) <doi:10.1016/j.jocm.2022.100394>.")
     (license license:gpl2+)))
 
-(define-public r-rcmdrplugin-biclustgui
-  (package
-    (name "r-rcmdrplugin-biclustgui")
-    (version "1.1.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RcmdrPlugin.BiclustGUI" version))
-       (sha256
-        (base32 "1wb1pbwghq1xxpwlihfixx42yf1f1py3hdwh8sfpqklh63ymwifk"))))
-    (properties `((upstream-name . "RcmdrPlugin.BiclustGUI")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-superbiclust
-                             r-s4vd
-                             r-rcmdr
-                             r-gplots
-                             r-biclust
-                             r-bicare
-                             r-bibitr
-                             r-bcdiag))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RcmdrPlugin.BiclustGUI")
-    (synopsis "'Rcmdr' Plug-in GUI for Biclustering")
-    (description
-     "This package provides a plug-in for R Commander ('Rcmdr').  The package is a
-Graphical User Interface (GUI) in which several biclustering methods can be
-executed, followed by diagnostics and plots of the results.  Further, the GUI
-also has the possibility to connect the methods to more general diagnostic
-packages for biclustering.  Biclustering methods from biclust', fabia', s4vd',
-@code{iBBiG}', isa2', @code{BiBitR}', rqubic and @code{BicARE} are implemented.
-Additionally, superbiclust and @code{BcDiag} are also implemented to be able to
-further investigate results.  The GUI also provides a couple of extra utilities
-to export, save, search through and plot the results.
-@code{RcmdrPlugin.BiclustGUI} also provides a very specific framework for
-biclustering in which new methods, diagnostics and plots can be added.  Scripts
-were prepared so that R-package developers can freely design their own dialogs
-in the GUI which can then be added by the maintainer of
-@code{RcmdrPlugin.BiclustGUI}'.  These scripts do not required any knowledge of
-tcltk and Rcmdr and are easy to fill in. (Note: rqubic currently requires manual
-installation through @code{BiocManager::install('rqubic}').).")
-    (license license:gpl3)))
-
 (define-public r-rcmdrplugin-arnova
   (package
     (name "r-rcmdrplugin-arnova")
@@ -50050,6 +49765,47 @@ with Gaussian Processes.")
 client-implementation of the client/server protocol for @code{BaseX} and
 provides functionalities to create, manipulate and query on XML-data.")
     (license license:expat)))
+
+(define-public r-rbam
+  (package
+    (name "r-rbam")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RBaM" version))
+       (sha256
+        (base32 "02wqjy4ch9cshbf5b5zxvps64x0zzzysy00g515a7hw6yd7h891c"))))
+    (properties `((upstream-name . "RBaM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-rjson
+                             r-r-utils
+                             r-gridextra
+                             r-ggplot2))
+    (home-page "https://github.com/BaM-tools/RBaM")
+    (synopsis
+     "Bayesian Modeling: Estimate a Computer Model and Make Uncertain Predictions")
+    (description
+     "An interface to the @code{BaM} (Bayesian Modeling) engine, a Fortran'-based
+executable aimed at estimating a model with a Bayesian approach and using it for
+prediction, with a particular focus on uncertainty quantification.  Classes are
+defined for the various building blocks of @code{BaM} inference (model, data,
+error models, Markov Chain Monte Carlo (MCMC) samplers, predictions).  The
+typical usage is as follows: (1) specify the model to be estimated; (2) specify
+the inference setting (dataset, parameters, error models...); (3) perform
+Bayesian-MCMC inference; (4) read, analyse and use MCMC samples; (5) perform
+prediction experiments.  Technical details are available (in French) in Renard
+(2017) <https://hal.science/hal-02606929v1>.  Examples of applications include
+Mansanarez et al. (2019) <doi:10.1029/2018WR023389>, Le Coz et al. (2021)
+<doi:10.1002/hyp.14169>, Perret et al. (2021) <doi:10.1029/2020WR027745>,
+Darienzo et al. (2021) <doi:10.1029/2020WR028607> and Perret et al. (2023)
+<doi:10.1061/JHEND8.HYENG-13101>.")
+    (license license:gpl3)))
 
 (define-public r-rbahadur
   (package
@@ -55134,6 +54890,36 @@ searching for polynomials, the package provides a statistically valid algorithm
 to run and terminate stepwise regression.  For more information, see Johnson,
 Stine, and Foster (2019) <@code{arXiv:1510.06322>}.")
     (license license:gpl3)))
+
+(define-public r-ragtop
+  (package
+    (name "r-ragtop")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ragtop" version))
+       (sha256
+        (base32 "1qkl7hmbhbhbgn5n3k5ll7yllvj1km2038gals169sh0zwxaz6ni"))))
+    (properties `((upstream-name . "ragtop")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-limsolve r-futile-logger))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ragtop")
+    (synopsis "Pricing Equity Derivatives with Extensions of Black-Scholes")
+    (description
+     "Algorithms to price American and European equity options, convertible bonds and
+a variety of other financial derivatives.  It uses an extension of the usual
+Black-Scholes model in which jump to default may occur at a probability
+specified by a power-law link between stock price and hazard rate as found in
+the paper by Takahashi, Kobayashi, and Nakagawa (2001)
+<doi:10.3905/jfi.2001.319302>.  We use ideas and techniques from Andersen and
+Buffum (2002) <doi:10.2139/ssrn.355308> and Linetsky (2006)
+<doi:10.1111/j.1467-9965.2006.00271.x>.")
+    (license license:gpl2+)))
 
 (define-public r-rags2ridges
   (package

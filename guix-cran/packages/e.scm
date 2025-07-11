@@ -9946,36 +9946,6 @@ for high dimensional covariance matrices.\" Li and Chen (2012)
 <@code{arXiv:1206.0917>}.")
     (license license:gpl2)))
 
-(define-public r-eqtesting
-  (package
-    (name "r-eqtesting")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "eqtesting" version))
-       (sha256
-        (base32 "1zr45yw0qj1w0ak509nbhs5m4xrf1lazj9xk6bv94if4wxs8liy9"))))
-    (properties `((upstream-name . "eqtesting")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdd r-data-table))
-    (home-page "https://github.com/jack-fitzgerald/eqtesting")
-    (synopsis "Equivalence Testing Functions")
-    (description
-     "This package contains several functions for equivalence testing and practical
-significance testing.  First, the @code{tsti()} command provides an automatic
-computation of three-sided testing results for a given estimate, standard error,
-and region of practical equivalence.  For details, see Goeman, Solari, & Stijnen
-(2010) <doi:10.1002/sim.4002> and Isager & Fitzgerald (2024)
-<doi:10.31234/osf.io/8y925>.  Second, the @code{lddtest()} command performs
-logarithmic density discontinuity equivalence testing for regression
-discontinuity designs.  For reference, see Fitzgerald (2025)
-<doi:10.31222/osf.io/2dgrp_v1>.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
-
 (define-public r-eqrn
   (package
     (name "r-eqrn")
@@ -11454,43 +11424,6 @@ templates for epidemic modeling include SI, SIR, and SIS disease types.
 @code{EpiModel} features an API for extending these templates to address novel
 scientific research aims.  Full methods for @code{EpiModel} are detailed in
 Jenness et al. (2018, <doi:10.18637/jss.v084.i08>).")
-    (license license:gpl3)))
-
-(define-public r-epimdr2
-  (package
-    (name "r-epimdr2")
-    (version "1.0-9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "epimdr2" version))
-       (sha256
-        (base32 "1lx1zibp2ziwdyj180jf9y5xczfs2xfkb5bw7q4f7i9p70jlqcrz"))))
-    (properties `((upstream-name . "epimdr2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny
-                             r-polspline
-                             r-plotly
-                             r-phaser
-                             r-ggplot2
-                             r-desolve))
-    (home-page "<https://github.com/objornstad/epimdr2>")
-    (synopsis
-     "Functions and Data for \"Epidemics: Models and Data in R (2nd Edition)\"")
-    (description
-     "Functions, data sets and shiny apps for \"Epidemics: Models and Data in R (2nd
-edition)\" by Ottar N. Bjornstad (2022, ISBN: 978-3-031-12055-8)
-<https://link.springer.com/book/10.1007/978-3-319-97487-3>.  The package
-contains functions to study the Susceptible-Exposed-Infected-Removed SEIR model,
-spatial and age-structured Susceptible-Infected-Removed SIR models; time-series
-SIR and chain-binomial stochastic models; catalytic disease models; coupled map
-lattice models of spatial transmission and network models for social spread of
-infection.  The package is also an advanced quantitative companion to the
-Coursera Epidemics Massive Online Open Course
-<https://www.coursera.org/learn/epidemics>.")
     (license license:gpl3)))
 
 (define-public r-epimdr

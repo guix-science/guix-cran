@@ -2046,57 +2046,6 @@ University),Class PPT. 3. <https://zhuanlan.zhihu.com/p/389710022>.  4.
 <https://www.zhangshengrong.com/p/281@code{oqR9JNw/>}.")
     (license license:agpl3)))
 
-(define-public r-autoscore
-  (package
-    (name "r-autoscore")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AutoScore" version))
-       (sha256
-        (base32 "14wn566xm308zir12rckwc5fagm2x1mrphy0a7iri0cbrffgnkz4"))))
-    (properties `((upstream-name . "AutoScore")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tableone
-                             r-survminer
-                             r-survival
-                             r-survauc
-                             r-rlang
-                             r-randomforestsrc
-                             r-randomforest
-                             r-proc
-                             r-plotly
-                             r-ordinal
-                             r-magrittr
-                             r-knitr
-                             r-hmisc
-                             r-ggplot2
-                             r-dplyr
-                             r-coxed
-                             r-car))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/nliulab/AutoScore")
-    (synopsis
-     "An Interpretable Machine Learning-Based Automatic Clinical Score Generator")
-    (description
-     "This package provides a novel interpretable machine learning-based framework to
-automate the development of a clinical scoring model for predefined outcomes.
-Our novel framework consists of six modules: variable ranking with machine
-learning, variable transformation, score derivation, model selection, domain
-knowledge-based score fine-tuning, and performance evaluation.The The original
-@code{AutoScore} structure is described in the research
-paper<doi:10.2196/21798>.  A full tutorial can be found
-here<https://nliulab.github.io/@code{AutoScore/>}.  Users or clinicians could
-seamlessly generate parsimonious sparse-score risk models (i.e., risk scores),
-which can be easily implemented and validated in clinical practice.  We hope to
-see its application in various medical case studies.")
-    (license license:gpl2+)))
-
 (define-public r-autoregressionmde
   (package
     (name "r-autoregressionmde")
@@ -2735,56 +2684,6 @@ package includes functions for plotting networks and network-related metrics
 with sensible and pretty defaults.  It includes ggplot2'-based plot methods for
 many popular network package classes.  It also includes some novel layout
 algorithms, and options for straightforward, consistent themes.")
-    (license license:expat)))
-
-(define-public r-autogo
-  (package
-    (name "r-autogo")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "autoGO" version))
-       (sha256
-        (base32 "0gd7kgnq390wzg5j1v8x4793mdc5hjyyag1b7hibkjqan2jfzj0q"))))
-    (properties `((upstream-name . "autoGO")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-textshape
-                             r-summarizedexperiment
-                             r-stringr
-                             r-reshape2
-                             r-readr
-                             r-rcolorbrewer
-                             r-purrr
-                             r-openxlsx
-                             r-msigdbr
-                             r-imgur
-                             r-gsva
-                             r-ggrepel
-                             r-ggplot2
-                             r-enrichr
-                             r-dplyr
-                             r-dichromat
-                             r-deseq2
-                             r-complexheatmap
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=autoGO")
-    (synopsis
-     "Auto-GO: Reproducible, Robust and High Quality Ontology Enrichment Visualizations")
-    (description
-     "Auto-GO is a framework that enables automated, high quality Gene Ontology
-enrichment analysis visualizations.  It also features a handy wrapper for
-Differential Expression analysis around the DESeq2 package described in Love et
-al. (2014) <doi:10.1186/s13059-014-0550-8>.  The whole framework is structured
-in different, independent functions, in order to let the user decide which steps
-of the analysis to perform and which plot to produce.")
     (license license:expat)))
 
 (define-public r-autogam

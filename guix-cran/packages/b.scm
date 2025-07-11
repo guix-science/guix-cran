@@ -2826,34 +2826,6 @@ framework (not described at Bootstrap site).  Please note this package was
 designed for Bootstrap 3.3.")
     (license license:expat)))
 
-(define-public r-bsplinepsd
-  (package
-    (name "r-bsplinepsd")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bsplinePsd" version))
-       (sha256
-        (base32 "0f785l02hiq3f7anxqhm09f7lrqgkkqhly7f1x78cxm22hvrqyhg"))))
-    (properties `((upstream-name . "bsplinePsd")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=bsplinePsd")
-    (synopsis
-     "Bayesian Nonparametric Spectral Density Estimation Using B-Spline Priors")
-    (description
-     "Implementation of a Metropolis-within-Gibbs MCMC algorithm to flexibly estimate
-the spectral density of a stationary time series.  The algorithm updates a
-nonparametric B-spline prior using the Whittle likelihood to produce
-pseudo-posterior samples and is based on the work presented in Edwards, M.C.,
-Meyer, R. and Christensen, N., Statistics and Computing (2018).
-<doi.org/10.1007/s11222-017-9796-9>.")
-    (license license:gpl3+)))
-
 (define-public r-bspline
   (package
     (name "r-bspline")
@@ -6402,13 +6374,13 @@ methylation Infinium 450K array data) without reference samples.")
 (define-public r-bplsr
   (package
     (name "r-bplsr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bplsr" version))
        (sha256
-        (base32 "0jfr3fxmb2azm37p089690sql89ca5zghd51syf96pzxxh3wjiqm"))))
+        (base32 "0w3zq0i0jspjwl1yxk924ppfirmhwx0bzbzzmhk06xswv7mjx0s7"))))
     (properties `((upstream-name . "bplsr")))
     (build-system r-build-system)
     (arguments
@@ -7798,6 +7770,35 @@ analysis (e.g. microarray data, NGS expression data and other genomics and
 proteomics applications).")
     (license license:gpl2+)))
 
+(define-public r-bootlrtpairwise
+  (package
+    (name "r-bootlrtpairwise")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bootLRTpairwise" version))
+       (sha256
+        (base32 "1lym425nrji9si0q66a6xh22zjrmxv8nbnv0hqargxpaf1w31mjk"))))
+    (properties `((upstream-name . "bootLRTpairwise")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=bootLRTpairwise")
+    (synopsis
+     "Bootstrap Hypothesis Tests for Treatment Effects in One-Way ANOVA with Unequal Variances")
+    (description
+     "This package implements three test procedures using bootstrap resampling
+techniques for assessing treatment effects in one-way ANOVA models with unequal
+variances (heteroscedasticity).  It includes a parametric bootstrap likelihood
+ratio test @code{(PB_LRT()}), a pairwise parametric bootstrap mean test
+@code{(PPBMT()}), and a Rademacher wild pairwise non-parametric bootstrap test
+@code{(RWPNPBT()}).  These methods provide robust alternatives to classical
+ANOVA and standard pairwise comparisons when the assumption of homogeneity of
+variances is violated.")
+    (license license:expat)))
+
 (define-public r-bootlr
   (package
     (name "r-bootlr")
@@ -9160,30 +9161,6 @@ or predictor variables) is used to estimate total percent body fat in humans.
 BODS transport information from the API (<https://www.bus-data.dft.gov.uk/>).
 This includes timetable and fare metadata (including links for full datasets),
 timetable data at line level, and real-time location data.")
-    (license license:expat)))
-
-(define-public r-bodi
-  (package
-    (name "r-bodi")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Bodi" version))
-       (sha256
-        (base32 "1z3xamj4qh3g5asrl3kbvcnx3r66mch34d0hlz9vg0498s9fwn6s"))))
-    (properties `((upstream-name . "Bodi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rpart r-ranger r-opera r-mgcv r-gbm))
-    (home-page "https://cran.r-project.org/package=Bodi")
-    (synopsis "Boosting Diversity in Regression Ensembles")
-    (description
-     "This package provides a gradient boosting-based algorithm by incorporating a
-diversity term to guide the gradient boosting iterations, see Bourel, Cugliari,
-Goude, Poggi (2021) <https://hal.archives-ouvertes.fr/hal-03041309/>.")
     (license license:expat)))
 
 (define-public r-bodenmiller
@@ -25841,44 +25818,6 @@ number of split points in the hazard and the number of variables included in the
 hazard.  The function saves all posterior quantities to the desired path.")
     (license license:gpl2)))
 
-(define-public r-bayesorddesign
-  (package
-    (name "r-bayesorddesign")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BayesOrdDesign" version))
-       (sha256
-        (base32 "1417zd1n5sip999n6q6bgs85c0000ksl73a4p94y0lmdn27i8pmj"))))
-    (properties `((upstream-name . "BayesOrdDesign")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-superdiag
-                             r-schoolmath
-                             r-rjmcmc
-                             r-rjags
-                             r-r2jags
-                             r-ordinal
-                             r-madness
-                             r-gsdesign
-                             r-ggplot2
-                             r-coda))
-    (home-page "https://cran.r-project.org/package=BayesOrdDesign")
-    (synopsis "Bayesian Group Sequential Design for Ordinal Data")
-    (description
-     "The proposed group-sequential trial design is based on Bayesian methods for
-ordinal endpoints, including three methods, the proportional-odds-model
-(PO)-based, non-proportional-odds-model (NPO)-based, and PO/NPO
-switch-model-based designs, which makes our proposed methods generic to be able
-to deal with various scenarios.  Richard J. Barker, William A. Link (2013)
-<doi:10.1080/00031305.2013.791644>.  Thomas A. Murray, Ying Yuan, Peter F.
-Thall, Joan H. Elizondo, Wayne L.Hofstetter (2018) <doi:10.1111/biom.12842>.
-Chengxue Zhong, Haitao Pan, Hongyu Miao (2021) <@code{arXiv:2108.06568>}.")
-    (license license:gpl2)))
-
 (define-public r-bayesnsgp
   (package
     (name "r-bayesnsgp")
@@ -26183,13 +26122,13 @@ details regarding part of this framework can be found in Cullen et al. (2021)
 (define-public r-bayesmortalityplus
   (package
     (name "r-bayesmortalityplus")
-    (version "0.2.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMortalityPlus" version))
        (sha256
-        (base32 "15g87wpaj7rsm8dnz7w57vw9bpkj0aj5f6hi8v7m8kamki8m7chm"))))
+        (base32 "1f1ccnp18a2x4wsq0cs7n1jsvnlmaj6casnzlgrjhwxhc1w48css"))))
     (properties `((upstream-name . "BayesMortalityPlus")))
     (build-system r-build-system)
     (arguments
@@ -26219,7 +26158,8 @@ dynamic linear model were also implemented according to Dodd, Erengul, et al.
 is also implemented to fit historical mortality tables time series to predict
 the mortality in the following years and to do improvement analysis, as seen in
 Lee, R. D., & Carter, L. R. (1992) <doi:10.1080/01621459.1992.10475265> and
-Pedroza, C. (2006) <doi:10.1093/biostatistics/kxj024>.")
+Pedroza, C. (2006) <doi:10.1093/biostatistics/kxj024>.  Journal publication
+available at <doi:10.18637/jss.v113.i09>.")
     (license license:gpl3)))
 
 (define-public r-bayesmlogit
