@@ -9258,13 +9258,13 @@ testing: valid inference and practical considerations\",
 (define-public r-validatetools
   (package
     (name "r-validatetools")
-    (version "0.5.2")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "validatetools" version))
        (sha256
-        (base32 "16pgqk96daz0dgsq2r9kfl6mkc4fffkai0ir1sh2js9v6d5c74k0"))))
+        (base32 "12l8sp66m16wk39n5bzmjnks7fmrwb2bdn8146k64f6dyfy5hv9h"))))
     (properties `((upstream-name . "validatetools")))
     (build-system r-build-system)
     (arguments

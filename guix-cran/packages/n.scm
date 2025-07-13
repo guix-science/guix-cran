@@ -14668,13 +14668,13 @@ Stasinopoulos, M. D., Heller, G. Z., & Bastiani, F. D. (2019)
 (define-public r-neodistr
   (package
     (name "r-neodistr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neodistr" version))
        (sha256
-        (base32 "1g27z8qnk98fgblpprvb55lfly79dcfa9kcfz7rhx1hnarbzf85p"))))
+        (base32 "08rvry8qdcrvh6nfxz1dgxzpbhl17ar2ygc3crlwlpj0vmbvymlc"))))
     (properties `((upstream-name . "neodistr")))
     (build-system r-build-system)
     (arguments
@@ -14687,20 +14687,20 @@ Stasinopoulos, M. D., Heller, G. Z., & Bastiani, F. D. (2019)
                              r-plotly
                              r-ggplot2
                              r-brms))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/madsyair/neodistr")
     (synopsis "Neo-Normal Distribution")
     (description
-     "This package provides functions for calculating the density, cumulative
-distribution, quantile, and random number of neo-normal distribution.  It also
-interfaces with the brms package, allowing the use of the neo-normal
-distribution as a custom family.  This integration enables the application of
-various brms formulas for neo-normal regression.  The package implements the
-following distributions: Modified to be Stable as Normal from Burr (MSNBurr),
-Modified to be Stable as Normal from Burr-IIa (MSNBurr-IIa), Generalized of
-MSNBurr (GMSNBurr), and Jones-Faddy Skew-t.  References: Choir, A. S.
-(2020).Unpublished Dissertation.  Iriawan, N. (2000).Unpublished Dissertation.
-Jones, M. C. and Faddy,M. J. (2003).<doi:10.1111/1467-9868.00378>.  Rigby, R.
-A., Stasinopoulos, M. D., Heller, G. Z., & Bastiani, F. D. (2019)
+     "Calculating the density, cumulative distribution, quantile, and random number of
+neo-normal distribution.  It also interfaces with the brms package, allowing the
+use of the neo-normal distribution as a custom family.  This integration enables
+the application of various brms formulas for neo-normal regression.  Modified to
+be Stable as Normal from Burr (MSNBurr), Modified to be Stable as Normal from
+Burr-IIa (MSNBurr-IIa), Generalized of MSNBurr (GMSNBurr), Jones-Faddy Skew-t,
+Fernandez-Osiewalski-Steel Skew Exponential Power, and Jones Skew Exponential
+Power distributions are supported.  References: Choir, A. S. (2020).Unpublished
+Dissertation, Iriawan, N. (2000).Unpublished Dissertation, Rigby, R. A.,
+Stasinopoulos, M. D., Heller, G. Z., & Bastiani, F. D. (2019)
 <doi:10.1201/9780429298547>.")
     (license license:gpl3)))
 

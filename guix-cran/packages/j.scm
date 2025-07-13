@@ -225,6 +225,54 @@ based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2022,
 <doi:10.1111/1755-0998.13519>).")
     (license license:gpl2+)))
 
+(define-public r-junco
+  (package
+    (name "r-junco")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "junco" version))
+       (sha256
+        (base32 "1fm6jxnn1glq199kq57bknzqffmndqbx45w6q4613scax30ma63a"))))
+    (properties `((upstream-name . "junco")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidytlg
+                             r-tibble
+                             r-tern
+                             r-survival
+                             r-rtables
+                             r-rlistings
+                             r-rbmi
+                             r-mmrm
+                             r-generics
+                             r-formatters
+                             r-emmeans
+                             r-dplyr
+                             r-checkmate
+                             r-broom
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/johnsonandjohnson/junco")
+    (synopsis "Create Common Tables and Listings Used in Clinical Trials")
+    (description
+     "Structure and formatting requirements for clinical trial table and listing
+outputs vary between pharmaceutical companies.  junco provides additional
+tooling for use alongside the rtables', rlistings and tern packages when
+creating table and listing outputs.  While motivated by the specifics of Johnson
+and Johnson Clinical and Statistical Programming's table and listing shells,
+junco provides functionality that is general and reusable.  Major features
+include a) alternative and extended statistical analyses beyond what tern
+supports for use in standard safety and efficacy tables, b) a robust
+production-grade Rich Text Format (RTF) exporter for both tables and listings,
+c) structural support for spanning column headers and risk difference columns in
+tables, and d) robust font-aware automatic column width algorithms for both
+listings and tables.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-jumps
   (package
     (name "r-jumps")
@@ -1439,6 +1487,58 @@ function is used to automatically compare and select models, as well as to
 present a variety of model-based statistics.  Plotting functions are used to
 present category curves, as well as information, reliability and standard error
 functions.")
+    (license license:gpl3)))
+
+(define-public r-jrsicklsnmf
+  (package
+    (name "r-jrsicklsnmf")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jrSiCKLSNMF" version))
+       (sha256
+        (base32 "1fiw72mk70fh4mnsmzq0a08ahxl9hl9da0wj48f4b18j512jhjvl"))))
+    (properties `((upstream-name . "jrSiCKLSNMF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-umap
+                             r-scran
+                             r-rlang
+                             r-rdpack
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pbapply
+                             r-matrix
+                             r-mass
+                             r-kknn
+                             r-irlba
+                             r-igraph
+                             r-ggrepel
+                             r-ggplot2
+                             r-foreach
+                             r-factoextra
+                             r-data-table
+                             r-clvalid
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=jrSiCKLSNMF")
+    (synopsis "Multimodal Single-Cell Omics Dimensionality Reduction")
+    (description
+     "This package provides methods to perform Joint graph Regularized Single-Cell
+Kullback-Leibler Sparse Non-negative Matrix Factorization ('@code{jrSiCKLSNMF}',
+pronounced \"junior sickles NMF\") on quality controlled single-cell multimodal
+omics count data. @code{jrSiCKLSNMF} specifically deals with dual-assay
+@code{scRNA-seq} and @code{scATAC-seq} data.  This package contains functions to
+extract meaningful latent factors that are shared across omics modalities.
+These factors enable accurate cell-type clustering and facilitate
+visualizations.  Methods for pre-processing, clustering, and mini-batch updates
+and other adaptations for larger datasets are also included.  For further
+details on the methods used in this package please see Ellis, Roy, and Datta
+(2023) <doi:10.3389/fgene.2023.1179439>.")
     (license license:gpl3)))
 
 (define-public r-jrich

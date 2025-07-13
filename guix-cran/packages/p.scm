@@ -8040,13 +8040,13 @@ Maciak, Mizera, and PeÅ¡ta (2022) <doi:10.1017/asb.2022.4>.")
 (define-public r-profileci
   (package
     (name "r-profileci")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "profileCI" version))
        (sha256
-        (base32 "08akp2wdb4iy15b8k0ncwwmpbb9ipc52hp8jnr25mbaanbsgaqnf"))))
+        (base32 "1v5ysx8b0kn9mq4w392hyhy138g4cjh0gp77w3nam01pcv856jwc"))))
     (properties `((upstream-name . "profileCI")))
     (build-system r-build-system)
     (arguments
@@ -8062,8 +8062,10 @@ computation can be improved by adjusting the step sizes in the profiling and/or
 starting the profiling from limits based on the approximate large sample normal
 distribution for the maximum likelihood estimator of a parameter.  The accuracy
 of the limits can be set by the user.  A plot method visualises the
-log-likelihood and confidence interval.  Only convex log-likelihoods are
-supported, that is, disjoint confidence intervals will not be found.")
+log-likelihood and confidence interval.  Cases where the profile log-likelihood
+flattens above the value at which a confidence limit is defined can be handled,
+leading to a limit at plus or minus infinity.  Disjoint confidence intervals
+will not be found.")
     (license license:gpl3+)))
 
 (define-public r-profile
@@ -10417,6 +10419,31 @@ simplex method, see Haotian Pang (2017)
     (description
      "Patient Rule Induction Method (PRIM) for bump hunting in high-dimensional data.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-pridit
+  (package
+    (name "r-pridit")
+    (version "1.0-4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pridit" version))
+       (sha256
+        (base32 "0b0ap48fvg3gqnv88b816p7x098g884dcn719psiad2wjqb1v4hm"))))
+    (properties `((upstream-name . "pridit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/rlieberthal/PRIDIT")
+    (synopsis "Principal Component Analysis Applied to Ridit Scoring")
+    (description
+     "This package implements the PRIDIT (Principal Component Analysis applied to
+RIDITs') scoring system described in Brockett et al. (2002)
+<doi:10.1111/1539-6975.00027>.  Provides functions for ridit scoring originally
+developed by Bross (1958) <doi:10.2307/2527727>, calculating PRIDIT weights, and
+computing final PRIDIT scores for multivariate analysis of ordinal data.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-pricesensitivitymeter
   (package
@@ -13152,13 +13179,13 @@ described in Nagraj and Turner (2023) <doi:10.48550/@code{arXiv.2303.07876>}.")
 (define-public r-praatpicture
   (package
     (name "r-praatpicture")
-    (version "1.4.3")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "praatpicture" version))
        (sha256
-        (base32 "1j3092d40vjygd2ybmxnx02bd14384yplc7hyvmlamfn7l4w9aq7"))))
+        (base32 "0h7ln81n84rrvzz72xlw6g8iysi2c8ni5s4pzwhhwv09q4z7px5p"))))
     (properties `((upstream-name . "praatpicture")))
     (build-system r-build-system)
     (arguments
@@ -13172,7 +13199,6 @@ described in Nagraj and Turner (2023) <doi:10.48550/@code{arXiv.2303.07876>}.")
                              r-shiny
                              r-rstudioapi
                              r-rpraat
-                             r-reticulate
                              r-phontools
                              r-ipa
                              r-gsignal
@@ -16655,13 +16681,13 @@ included for reference and examples.")
 (define-public r-poputils
   (package
     (name "r-poputils")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poputils" version))
        (sha256
-        (base32 "0s4srswgr74m7yf2rdv002f4hr6v9wwbrp6ahw2icwplmlkrkg2r"))))
+        (base32 "0c7gxsx2wb3pvf582ik33y1sjyzba7g17l8iy5zybsk56ghyn4fk"))))
     (properties `((upstream-name . "poputils")))
     (build-system r-build-system)
     (arguments
@@ -25746,13 +25772,13 @@ For more details on generating pkgdown websites, see Wickham et al. (2025)
 (define-public r-pkgdiff
   (package
     (name "r-pkgdiff")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgdiff" version))
        (sha256
-        (base32 "0m9m012sslr60wgji4gp8bjrj3665zvc9xfyfa9d84qpmfl2zvda"))))
+        (base32 "1m201bmn0p038hmmaxggd5cfz9jjhmb8rqch07q4zp7kddc6ixmq"))))
     (properties `((upstream-name . "pkgdiff")))
     (build-system r-build-system)
     (arguments
@@ -40410,13 +40436,13 @@ framework discussed in Millstein et al. (2020)
 (define-public r-partimeroc
   (package
     (name "r-partimeroc")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parTimeROC" version))
        (sha256
-        (base32 "15khi8zfjr2lxr4839nd8b80m2r7lh01vpggakq5wkv734rj445w"))))
+        (base32 "0cww4wzybzcym6fgqjpzds7a511ynisw555qp9d6m3fzj7h3zs6h"))))
     (properties `((upstream-name . "parTimeROC")))
     (build-system r-build-system)
     (arguments

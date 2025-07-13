@@ -13822,13 +13822,13 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
 (define-public r-hce
   (package
     (name "r-hce")
-    (version "0.7.2")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hce" version))
        (sha256
-        (base32 "1vhmk96xm802inbg0h3xzyzf5kd8pbwr8ih15hfda7d2vnzj0859"))))
+        (base32 "1azk98qrnhkhysqaraqvpq46l19gsvrmxmxv91wmz1gxx4jkh6bx"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
     (arguments
@@ -13838,11 +13838,15 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
     (home-page "https://cran.r-project.org/package=hce")
     (synopsis "Design and Analysis of Hierarchical Composite Endpoints")
     (description
-     "Simulate and analyze hierarchical composite endpoints.  Win odds, also called
-Wilcoxon-Mann-Whitney or success odds, is the main analysis method.  Other win
-statistics (win probability, win ratio, net benefit) are also implemented in the
-univariate case, provided there is no censoring.  The win probability analysis
-is based on the Brunner-Munzel test and uses the
+     "Simulate and analyze hierarchical composite endpoints.  Includes implementation
+for the kidney hierarchical composite endpoint as defined in Heerspink HL et al
+(2023) âDevelopment and validation of a new hierarchical composite end point
+for clinical trials of kidney disease progressionâ (Journal of the American
+Society of Nephrology 34 (2): 2025â2038, <doi:10.1681/ASN.0000000000000243>).
+Win odds, also called Wilcoxon-Mann-Whitney or success odds, is the main
+analysis method.  Other win statistics (win probability, win ratio, net benefit)
+are also implemented in the univariate case, provided there is no censoring.
+The win probability analysis is based on the Brunner-Munzel test and uses the
 @code{DeLong-DeLong-Clarke-Pearson} variance estimator, as described by Brunner
 and Konietschke (2025) in âAn unbiased rank-based estimator of the
 MannâWhitney variance including the case of tiesâ (Statistical Papers 66

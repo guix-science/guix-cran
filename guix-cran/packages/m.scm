@@ -5449,13 +5449,13 @@ data.  Bryer & Pruzek (2011) <doi:10.1080/00273171.2011.636693>.")
 (define-public r-multileveloptimalbayes
   (package
     (name "r-multileveloptimalbayes")
-    (version "0.0.1.6")
+    (version "0.0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiLevelOptimalBayes" version))
        (sha256
-        (base32 "1a4qp8y8lz37np1np07g7fzgc3776dmy6ybinqfm3j58q31v545l"))))
+        (base32 "1x46nsjf0xfryhym4vb170w2qw8742lxzi4c3c13r743pw3bb0y9"))))
     (properties `((upstream-name . "MultiLevelOptimalBayes")))
     (build-system r-build-system)
     (arguments
@@ -10870,6 +10870,48 @@ parallel using @code{mclapply()} or @code{future_lapply()}
 and all federal entities.  Filter the census data table by municipal data and
 build a data.frame for all federal entities and several years.")
     (license license:gpl2)))
+
+(define-public r-mrg
+  (package
+    (name "r-mrg")
+    (version "0.3.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MRG" version))
+       (sha256
+        (base32 "1xihzy96jyx604cb43z6fwda8vsicmjfr6barqf666nhs884lz4y"))))
+    (properties `((upstream-name . "MRG")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-vardpoor
+                             r-tidyselect
+                             r-tidyr
+                             r-terra
+                             r-stars
+                             r-sjmisc
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-plyr
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MRG")
+    (synopsis "Create Non-Confidential Multi-Resolution Grids")
+    (description
+     "The need for anonymization of individual survey responses often leads to many
+suppressed grid cells in a regular grid.  Here we provide functionality for
+creating multi-resolution gridded data, respecting the confidentiality rules,
+such as a minimum number of units and dominance by one or more units for each
+grid cell.  The functions also include the possibility for contextual
+suppression of data.  For more details see Skoien et al. (2025)
+<doi:10.48550/@code{arXiv.2410.17601>}.")
+    (license license:gpl3+)))
 
 (define-public r-mrfse
   (package
@@ -30657,13 +30699,13 @@ in linear regression models, which were proposed by Johndrow et al. (2020)
 (define-public r-mhmmbayes
   (package
     (name "r-mhmmbayes")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mHMMbayes" version))
        (sha256
-        (base32 "1z13zzim90akaz82dbp8s81zyhcd3xmx3wmqvkcaq5wqh2p64s7a"))))
+        (base32 "1syy1nrsx8j8rb7zz6lamplvylk9n1xkq1h79dql0hvz59hnbvws"))))
     (properties `((upstream-name . "mHMMbayes")))
     (build-system r-build-system)
     (arguments
@@ -38684,6 +38726,40 @@ were programed by several mlr developers.")
 <https://developers.google.com/analytics/devguides/collection/protocol/ga4>
 allows sending HTTP tracking events from R code.")
     (license license:expat)))
+
+(define-public r-measurementdiagnostics
+  (package
+    (name "r-measurementdiagnostics")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MeasurementDiagnostics" version))
+       (sha256
+        (base32 "12sgjml4vza143ahdm9nc8ip847k428x4kn2050gmf5cr4gv0bq0"))))
+    (properties `((upstream-name . "MeasurementDiagnostics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-patientprofiles
+                             r-omopgenerics
+                             r-magrittr
+                             r-dplyr
+                             r-dbi
+                             r-cohortconstructor
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MeasurementDiagnostics")
+    (synopsis "Diagnostics for Lists of Codes Based on Measurements")
+    (description
+     "Diagnostics of list of codes based on concepts from the domains measurement and
+observation.  This package works for data mapped to the Observational Medical
+Outcomes Partnership Common Data Model.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-measr
   (package
@@ -48880,6 +48956,33 @@ to help researchers work with and contribute to event datasets on global
 governance.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-mantar
+  (package
+    (name "r-mantar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mantar" version))
+       (sha256
+        (base32 "1200wwy9ijmp3jll19m239swbgpmwlqg685ykgjg1b6368sdwk1v"))))
+    (properties `((upstream-name . "mantar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=mantar")
+    (synopsis "Missingness Alleviation for Network Analysis")
+    (description
+     "This package provides functionality for estimating cross-sectional network
+structures representing partial correlations in R, while accounting for missing
+values in the data.  Networks are estimated via neighborhood selection, i.e.,
+node-wise multiple regression, with model selection guided by information
+criteria.  Missing data can be handled primarily via multiple imputation or a
+maximum likelihood-based approach; deletion techniques are available but
+secondary <doi:10.31234/osf.io/qpj35>.")
+    (license license:gpl3+)))
+
 (define-public r-mantaid
   (package
     (name "r-mantaid")
@@ -50758,6 +50861,39 @@ Gaussian process Inference) of Yang, Wong, and Kou (2021)
 <doi:10.1073/pnas.2020397118>.  A user guide is provided by the accompanying
 software paper Wong, Yang, and Kou (2024) <doi:10.18637/jss.v109.i04>.")
     (license license:expat)))
+
+(define-public r-magee
+  (package
+    (name "r-magee")
+    (version "1.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MAGEE" version))
+       (sha256
+        (base32 "1rcf352q88cyx5ivifkbihbii8xp86iva2hxfbjrc75i7pbpfb89"))))
+    (properties `((upstream-name . "MAGEE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-gmmat
+                             r-foreach
+                             r-data-table
+                             r-compquadform))
+    (home-page "https://cran.r-project.org/package=MAGEE")
+    (synopsis "Mixed Model Association Test for GEne-Environment Interaction")
+    (description
+     "Use a glmmkin class object (GMMAT package) from the null model to perform
+generalized linear mixed model-based single-variant and variant set main effect
+tests, gene-environment interaction tests, and joint tests for association, as
+proposed in Wang et al. (2020) <DOI:10.1002/gepi.22351>.")
+    (license license:gpl3+)))
 
 (define-public r-magclass
   (package

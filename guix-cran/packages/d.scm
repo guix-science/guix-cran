@@ -7680,13 +7680,13 @@ modelling.  See Marsh et.  al. (2018) <doi:10.18637/jss.v086.c03>.")
 (define-public r-downloadthis
   (package
     (name "r-downloadthis")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "downloadthis" version))
        (sha256
-        (base32 "09hbcb9yj45l6v9iyv5pr4wz01l8624b34x45107d7a62djil1x9"))))
+        (base32 "0352mqcq61vaj3lxrgj2428g45alzbqdl9j1n219ysrcxhnmywwk"))))
     (properties `((upstream-name . "downloadthis")))
     (build-system r-build-system)
     (arguments
@@ -7701,7 +7701,7 @@ modelling.  See Marsh et.  al. (2018) <doi:10.18637/jss.v086.c03>.")
                              r-ggplot2
                              r-fs
                              r-bsplus
-                             r-b64))
+                             r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/fmmattioni/downloadthis")
     (synopsis "Implement Download Buttons in 'rmarkdown'")
@@ -13300,19 +13300,19 @@ settings.")
 (define-public r-distance
   (package
     (name "r-distance")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Distance" version))
        (sha256
-        (base32 "1q3xv5wvpmck19ziq7md8q274br7dbwm3xizbdgj5rq18n1yfcsr"))))
+        (base32 "17cbjsmxc59hxm5j8z2jcc978w0f34g37kprc9vnlj3s7iprqlx6"))))
     (properties `((upstream-name . "Distance")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-mrds r-dplyr))
+    (propagated-inputs (list r-rlang r-rdpack r-mrds r-dplyr))
     (home-page "https://github.com/DistanceDevelopment/Distance/")
     (synopsis "Distance Sampling Detection Function and Abundance Estimation")
     (description
@@ -13322,7 +13322,8 @@ left and right truncation as well as monotonicity constraints and binning are
 supported.  Abundance and density estimates can also be calculated (via a
 Horvitz-Thompson-like estimator) if survey area information is provided.  See
 Miller et al. (2019) <doi:10.18637/jss.v089.i01> for more information on methods
-and <https://examples.distancesampling.org/> for example analyses.")
+and <https://distancesampling.org/resources/vignettes.html> for example
+analyses.")
     (license license:gpl2+)))
 
 (define-public r-dissmod

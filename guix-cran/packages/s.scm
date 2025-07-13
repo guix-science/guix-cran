@@ -402,13 +402,13 @@ used, see Reiter & Raghunathan (2007) <doi:10.1198/016214507000000932>.")
 (define-public r-synthpop
   (package
     (name "r-synthpop")
-    (version "1.9-1.1")
+    (version "1.9-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "synthpop" version))
        (sha256
-        (base32 "139x14w1aipxbxfkl2r9v85c1z6nlds5kgbcbd3dhd90irrxys15"))))
+        (base32 "1n5pc7226i1wrcjrfj985n12qcnps4s3gp26dy1qld59sj5liqy0"))))
     (properties `((upstream-name . "synthpop")))
     (build-system r-build-system)
     (arguments
@@ -21138,13 +21138,13 @@ models can be found in next references Minguez, R., Lopez, F.A., and Mur, J.
 (define-public r-spstack
   (package
     (name "r-spstack")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spStack" version))
        (sha256
-        (base32 "11ikxhm7iqb3pk6q2nw2mym23znvlxqfzs9b1569hh33znki2p7m"))))
+        (base32 "07s0pcgxj365ry8f0xv4cb1g9p0qf7dkfqd840g91nk1akjqrb29"))))
     (properties `((upstream-name . "spStack")))
     (build-system r-build-system)
     (arguments
@@ -21157,19 +21157,20 @@ models can be found in next references Minguez, R., Lopez, F.A., and Mur, J.
                              r-future
                              r-cvxr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/SPan-18/spStack-dev")
+    (home-page "https://span-18.github.io/spStack-dev/")
     (synopsis "Bayesian Geostatistics Using Predictive Stacking")
     (description
-     "Fits Bayesian hierarchical spatial process models for point-referenced Gaussian,
-Poisson, binomial, and binary data using stacking of predictive densities.  It
-involves sampling from analytically available posterior distributions
-conditional upon some candidate values of the spatial process parameters and,
-subsequently assimilate inference from these individual posterior distributions
-using Bayesian predictive stacking.  Our algorithm is highly parallelizable and
-hence, much faster than traditional Markov chain Monte Carlo algorithms while
-delivering competitive predictive performance.  See Zhang, Tang, and Banerjee
-(2024) <doi:10.48550/@code{arXiv.2304.12414>}, and, Pan, Zhang, Bradley, and
-Banerjee (2024) <doi:10.48550/@code{arXiv.2406.04655>} for details.")
+     "Fits Bayesian hierarchical spatial and spatial-temporal process models for
+point-referenced Gaussian, Poisson, binomial, and binary data using stacking of
+predictive densities.  It involves sampling from analytically available
+posterior distributions conditional upon candidate values of the spatial process
+parameters and, subsequently assimilate inference from these individual
+posterior distributions using Bayesian predictive stacking.  Our algorithm is
+highly parallelizable and hence, much faster than traditional Markov chain Monte
+Carlo algorithms while delivering competitive predictive performance.  See
+Zhang, Tang, and Banerjee (2025) <doi:10.48550/@code{arXiv.2304.12414>}, and,
+Pan, Zhang, Bradley, and Banerjee (2025) <doi:10.48550/@code{arXiv.2406.04655>}
+for details.")
     (license license:gpl3)))
 
 (define-public r-spsp
@@ -23658,6 +23659,38 @@ graphics, and allows for exporting as an .html widget and as an .gif,
 respectively.  This work is fully discussed in Spyrison & Cook (2020)
 <doi:10.32614/RJ-2020-027>.")
     (license license:expat)))
+
+(define-public r-spinebil
+  (package
+    (name "r-spinebil")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spinebil" version))
+       (sha256
+        (base32 "1kkzz4klsd1k8sn7jg9igl2kcahrmzv2ziwa2rwisw97a7gdnd0b"))))
+    (properties `((upstream-name . "spinebil")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tourr
+                             r-tidyr
+                             r-tictoc
+                             r-tibble
+                             r-ggplot2
+                             r-dplyr
+                             r-cassowaryr))
+    (home-page "https://cran.r-project.org/package=spinebil")
+    (synopsis "Investigating New Projection Pursuit Index Functions")
+    (description
+     "Projection pursuit is used to find interesting low-dimensional projections of
+high-dimensional data by optimizing an index over all possible projections.  The
+spinebil package contains methods to evaluate the performance of projection
+pursuit index functions using tour methods.  A paper describing the methods can
+be found at <doi:10.1007/s00180-020-00954-8>.")
+    (license license:gpl3)))
 
 (define-public r-spind
   (package
@@ -29627,13 +29660,13 @@ algebra, and a class to implement sparse LDL decomposition and solvers.  See
 (define-public r-sparsebiplots
   (package
     (name "r-sparsebiplots")
-    (version "4.0.2")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SparseBiplots" version))
        (sha256
-        (base32 "1cadisjw0g3gyng6h5cfgpmn243k31kh58iifmbw1176nyfln84p"))))
+        (base32 "0sv9a9zp3ab5gpp89214vf515bg8sx5xamgc9k0fiagg64b1nkn7"))))
     (properties `((upstream-name . "SparseBiplots")))
     (build-system r-build-system)
     (arguments
@@ -32817,13 +32850,13 @@ Collaborative Research on Sustainable Intensification (SIIL) projects.")
 (define-public r-soiltaxonomy
   (package
     (name "r-soiltaxonomy")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SoilTaxonomy" version))
        (sha256
-        (base32 "057hcd7013y0s1xg0x3233phy0wrz4cp565djdyynm8pkhx4wiq7"))))
+        (base32 "19m4p53zy18asz6ja2gv3q1liv4qsi1y752pp07wn5n54h102p0c"))))
     (properties `((upstream-name . "SoilTaxonomy")))
     (build-system r-build-system)
     (arguments
@@ -33155,13 +33188,13 @@ distribution by Perfect et al. (1992)
 (define-public r-soildb
   (package
     (name "r-soildb")
-    (version "2.8.9")
+    (version "2.8.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilDB" version))
        (sha256
-        (base32 "19vsikdm05l7w3q6k0mzgfirwbch0px2jwkqkpaami34phkw28yb"))))
+        (base32 "1rdpxafvaj6rw5558mbpyzz7f9d1rqblljxd56p5lxc8mjfk1zah"))))
     (properties `((upstream-name . "soilDB")))
     (build-system r-build-system)
     (arguments
@@ -57697,13 +57730,13 @@ associated R code, which provided the base for the development of this package."
 (define-public r-semptools
   (package
     (name "r-semptools")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semptools" version))
        (sha256
-        (base32 "0hyf1zr592hrl45xd678vma3g6wa3qdj4bchr3a7bvvr42nhcsyf"))))
+        (base32 "0g2wrcynh2f8l3sm2csrfa11g3p4j7483ifv10yh7m7kx96k8gmq"))))
     (properties `((upstream-name . "semptools")))
     (build-system r-build-system)
     (arguments
@@ -62066,13 +62099,13 @@ Deconfounded Random Forests (Ulmer, Scheidegger, and BÃ¼hlmann (2025)
 (define-public r-sdm
   (package
     (name "r-sdm")
-    (version "1.2-55")
+    (version "1.2-59")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdm" version))
        (sha256
-        (base32 "0bnypbhym7rnkc4hd7yzm6ga1p3vkpxsjpiaji5mc145qvqnwyij"))))
+        (base32 "0s2agg091bsg6jz165silbfwl4zfq8m5vgx4bmh901hgxi20vf05"))))
     (properties `((upstream-name . "sdm")))
     (build-system r-build-system)
     (arguments
@@ -65655,13 +65688,13 @@ focus is set to prime-calculation.")
 (define-public r-schooldatait
   (package
     (name "r-schooldatait")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SchoolDataIT" version))
        (sha256
-        (base32 "1agjr4a2hv18k7gbinaww52c4x3wn36gyjy1bfhaf1yzxcl4wffg"))))
+        (base32 "0568viqfkzv37dfvahl9mffjp8hdd889bsqvvmm3riqgp65fn0lq"))))
     (properties `((upstream-name . "SchoolDataIT")))
     (build-system r-build-system)
     (arguments

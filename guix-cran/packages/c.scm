@@ -20224,6 +20224,33 @@ advances\".  Communications in Statistics--Theory and Methods, 52(16):
 5535--5567. <doi:10.1080/03610926.2021.2014890>.")
     (license license:gpl2+)))
 
+(define-public r-compositionalhdda
+  (package
+    (name "r-compositionalhdda")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CompositionalHDDA" version))
+       (sha256
+        (base32 "0dcm9nva1z297g94qy098bbgjy1fpsi2kzm43wms3lh30zw7mv1d"))))
+    (properties `((upstream-name . "CompositionalHDDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast r-hdclassif r-compositional))
+    (home-page "https://cran.r-project.org/package=CompositionalHDDA")
+    (synopsis "High Dimensional Discriminant Analysis with Compositional Data")
+    (description
+     "High dimensional discriminant analysis with compositional data is performed.
+The compositional data are first transformed using the alpha-transformation of
+Tsagris M., Preston S. and Wood A.T.A. (2011)
+<doi:10.48550/@code{arXiv.1106.1451>}, and then the High Dimensional
+Discriminant Analysis (HDDA) algorithm of Bouveyron C. Girard S. and Schmid C.
+(2007) <doi:10.1080/03610920701271095> is applied.")
+    (license license:gpl2+)))
+
 (define-public r-compositional
   (package
     (name "r-compositional")
@@ -26282,13 +26309,13 @@ longitudinal treatments.")
 (define-public r-coat
   (package
     (name "r-coat")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coat" version))
        (sha256
-        (base32 "07vmczrzjha46knhlrm3nqrgdpskbqgyk0r3adpmh94df9y87sh2"))))
+        (base32 "1j2la7msa5xqfnc41qx3avw8qmg18hd8xyyxmhrc4pnr3ngbv8wk"))))
     (properties `((upstream-name . "coat")))
     (build-system r-build-system)
     (arguments
@@ -26301,11 +26328,10 @@ longitudinal treatments.")
      "Agreement of continuously scaled measurements made by two techniques, devices or
 methods is usually evaluated by the well-established Bland-Altman analysis or
 plot.  Conditional method agreement trees (COAT), proposed by Karapetyan,
-Zeileis, Henriksen, and Hapfelmeier (2023)
-<doi:10.48550/@code{arXiv.2306.04456>}, embed the Bland-Altman analysis in the
-framework of recursive partitioning to explore heterogeneous method agreement in
-dependence of covariates.  COAT can also be used to perform a Bland-Altman test
-for differences in method agreement.")
+Zeileis, Henriksen, and Hapfelmeier (2025) <doi:10.1093/jrsssc/qlae077>, embed
+the Bland-Altman analysis in the framework of recursive partitioning to explore
+heterogeneous method agreement in dependence of covariates.  COAT can also be
+used to perform a Bland-Altman test for differences in method agreement.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-coastlinefd

@@ -24727,13 +24727,13 @@ survival models using @code{flexsurv::flexsurvreg()}',
 (define-public r-easystats
   (package
     (name "r-easystats")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easystats" version))
        (sha256
-        (base32 "1c3xnzjwn46pdw7dz45704r38fq21qk8j5gsra0cizj1mi54cd2d"))))
+        (base32 "1x53ibvsq96nay4xjj6bq621a85hc3zbx3cwm7428n65ynlanfyj"))))
     (properties `((upstream-name . "easystats")))
     (build-system r-build-system)
     (arguments
@@ -25645,22 +25645,27 @@ tidal catalogs.")
 (define-public r-earthdatalogin
   (package
     (name "r-earthdatalogin")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "earthdatalogin" version))
        (sha256
-        (base32 "1g044i4kjl5ica9dlg0y2xnhaiqb3xi9ha81ljcz4w8f5mkj7y46"))))
+        (base32 "051c8hbp0kdfapi68p5jm1xl60b0715cwdrsjhgfqkxxldcph919"))))
     (properties `((upstream-name . "earthdatalogin")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-purrr r-openssl r-httr))
+    (propagated-inputs (list r-purrr
+                             r-openssl
+                             r-jsonlite
+                             r-httr2
+                             r-httr
+                             r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://boettiger-lab.github.io/earthdatalogin/")
-    (synopsis "NASA 'EarthData' Login Utilities")
+    (synopsis "NASA 'EarthData' Access Utilities")
     (description
      "Providing easy, portable access to NASA @code{EarthData} products through the
 use of bearer tokens.  Much of NASA's public data catalogs hosted and maintained
@@ -25670,8 +25675,7 @@ standard S3 API is restricted to only to compute resources running inside
 us-west-2 Data Center in Portland, Oregon, which allows NASA to avoid being
 charged data egress rates.  This package provides public access to the data from
 any networked device by using the @code{EarthData} login application programming
-interface (API),
-<https://www.earthdata.nasa.gov/eosdis/science-system-description/eosdis-components/earthdata-login>,
+interface (API), <https://www.earthdata.nasa.gov/data/earthdata-login>,
 providing convenient authentication and access to cloud-hosted NASA
 @code{EarthData} products.  This makes access to a wide range of earth
 observation data from any location straight forward and compatible with R

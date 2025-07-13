@@ -7302,6 +7302,32 @@ probability distribution specified by its (potentially unnormalised) log
 density.")
     (license license:expat)))
 
+(define-public r-armaoptions
+  (package
+    (name "r-armaoptions")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "armaOptions" version))
+       (sha256
+        (base32 "0xbaqph01ghx7pssilina8z5r0h5mjrkv3gyzrfkn7jipmymb2jq"))))
+    (properties `((upstream-name . "armaOptions")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-forecast))
+    (home-page "https://cran.r-project.org/package=armaOptions")
+    (synopsis "ARMA Models to Value Stock Options")
+    (description
+     "Providing ways to estimate the value of European stock options given historical
+stock price data.  It includes functions for calculating option values based on
+autoregressiveâmoving-average (ARMA) models and generates information about
+these models.  This package is make to be easy to understand and for financial
+analysis capabilities.")
+    (license license:gpl3)))
+
 (define-public r-armalstm
   (package
     (name "r-armalstm")
@@ -8335,6 +8361,33 @@ database can be found at the following URL
 West (1997).  Particular cases include the extraction of trend and seasonal
 components.")
     (license license:gpl2+)))
+
+(define-public r-arctosr
+  (package
+    (name "r-arctosr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ArctosR" version))
+       (sha256
+        (base32 "0icqbx0w4v6696xd277a52jf39xqi9arb6rxvc5sp64zwl0gndky"))))
+    (properties `((upstream-name . "ArctosR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-jsonlite r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hrhwilliams/arctosr")
+    (synopsis "An Interface to the 'Arctos' Database")
+    (description
+     "This package performs requests to the Arctos API to download data.  Provides a
+set of builder classes for performing complex requests, as well as a set of
+simple functions for automating many common requests and workflows.  More
+information about Arctos can be found in Cicero et al. (2024)
+<doi:10.1371/journal.pone.0296478> or on their website <https://arctosdb.org/>.")
+    (license license:gpl3)))
 
 (define-public r-arctools
   (package
@@ -25681,13 +25734,13 @@ X, Lu W and Rabinowitz J (2017) <doi:10.1021/acs.analchem.7b00396>.")
 (define-public r-accsamplingdesign
   (package
     (name "r-accsamplingdesign")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AccSamplingDesign" version))
        (sha256
-        (base32 "1g5wm0i2rz4b4q105r4grxby5h102gxcf0c661ipr29zq86hsmkw"))))
+        (base32 "19wj9f8zidlj6qwwkd1kvd9h8v969dc3c13xm0gdkpm652brhdhv"))))
     (properties `((upstream-name . "AccSamplingDesign")))
     (build-system r-build-system)
     (arguments

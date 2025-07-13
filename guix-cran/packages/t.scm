@@ -3954,13 +3954,13 @@ proximal gradient descent algorithm (Chen et al. (2012)
 (define-public r-tsissm
   (package
     (name "r-tsissm")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsissm" version))
        (sha256
-        (base32 "17knl2x4lhzvbf03vl4pdl619vg609zwvk2ylhp01fvgk19vzadg"))))
+        (base32 "1klm2hnwk4mj53n99jcwr1w167prdrbbplzjrj4qsadb3snjb4q3"))))
     (properties `((upstream-name . "tsissm")))
     (build-system r-build-system)
     (arguments
@@ -6043,13 +6043,13 @@ more information on the API, see
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "1z1m96l114saf26jv9p0dazspva7x11k654isa0p5am8iynv9pa0"))))
+        (base32 "03ssvdghwyscdpvdfcm8204l7bwk38xqgyr1rk78as8x0ap8lfd6"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (arguments
@@ -12885,6 +12885,68 @@ edge direction), stable sort variants as well as cycle detection with detailed
 diagnosis.")
     (license license:expat)))
 
+(define-public r-topolow
+  (package
+    (name "r-topolow")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "topolow" version))
+       (sha256
+        (base32 "0jrndnybc2zwy9vr87ngzvkgiwfx0l6jngfscvdjysdzy2hp4jgc"))))
+    (properties `((upstream-name . "topolow")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-umap
+                             r-scales
+                             r-rtsne
+                             r-rlang
+                             r-rgl
+                             r-reshape2
+                             r-racmacs
+                             r-plotly
+                             r-mass
+                             r-lhs
+                             r-igraph
+                             r-gridextra
+                             r-ggrepel
+                             r-ggplot2
+                             r-filelock
+                             r-dplyr
+                             r-data-table
+                             r-coda
+                             r-ape))
+    (home-page "https://github.com/omid-arhami/topolow")
+    (synopsis "Antigenic Mapping and Antigenic Velocity Algorithm")
+    (description
+     "An implementation of the @code{TopoLow} algorithm, a novel, physics-inspired
+method for antigenic cartography. @code{TopoLow} addresses significant
+challenges in mapping antigenic relationships, especially from sparse and noisy
+experimental data.  The package transforms cross-reactivity and binding affinity
+measurements into accurate spatial representations in a phenotype space.  Key
+features include: * Robust Mapping from Sparse Data: Effectively creates
+complete and consistent maps even with high proportions of missing data (e.g.,
+>95%). * Physics-Inspired Optimization: Models antigens as particles connected
+by springs (for measured interactions) and subject to repulsive forces (for
+missing interactions), reducing the need for complex gradient computations. *
+Automatic Dimensionality Detection: Employs a likelihood-based approach to
+determine the optimal number of dimensions for the antigenic map, avoiding
+distortions common in methods with fixed low dimensions. * Noise and Bias
+Reduction: Naturally mitigates experimental noise and bias through its
+network-based, error-dampening mechanism. * Antigenic Velocity Calculation:
+Introduces and quantifies \"antigenic velocity,\" a vector that describes the rate
+and direction of antigenic drift for each pathogen isolate.  This can help
+identify cluster transitions and potential lineage replacements. * Broad
+Applicability: Analyzes data from various pathogens, including influenza, HIV,
+and Dengue viruses.  It can be applied to any continuous and relational
+phenotype under directional selection pressure.  Methods are described in Arhami
+and Rohani (2025) <doi:10.1093/bioinformatics/btaf372>.")
+    (license license:bsd-3)))
+
 (define-public r-topologygsa
   (package
     (name "r-topologygsa")
@@ -15918,13 +15980,13 @@ project template for Rstudio'.")
 (define-public r-tinyplot
   (package
     (name "r-tinyplot")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyplot" version))
        (sha256
-        (base32 "1v8jjj9ygl9lk94l2qr95irljzg7zanljnn5h31nwcpb54fkzcf6"))))
+        (base32 "02ij8cr1nqixkk492f68yy28phx1c03y616aw4qgj7c1b58ng702"))))
     (properties `((upstream-name . "tinyplot")))
     (build-system r-build-system)
     (arguments
@@ -17815,6 +17877,38 @@ created functionally, using a standard TLG process, or by specifying table and
 column metadata to create generic analysis summaries.  The envsetup package can
 also be leveraged to create environments for table creation.")
     (license license:asl2.0)))
+
+(define-public r-tidytitanic
+  (package
+    (name "r-tidytitanic")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidytitanic" version))
+       (sha256
+        (base32 "1hql3j84hw19x77n0jyv9fgvriin075a0sjc6lljm5wmg6gckn0l"))))
+    (properties `((upstream-name . "tidytitanic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=tidytitanic")
+    (synopsis "Dataframes Based on Titanic Passengers and Crew")
+    (description
+     "This package provides a version of the Titanic survival data tailored for people
+analytics demonstrations and practice.  While another package, titanic',
+reproduces the Kaggle competition files with minimal preprocessing, tidytitanic
+combines the train and test datasets into the single dataset, passengers', for
+exploration and summary across all passengers.  It also extracts personal
+identifiersâsuch as first names, last names, and titles from the raw name
+field, enabling demographic analysis.  The passengers data does not cover the
+crew, but this package also provides the more bare-bones, crew-containing
+datasets tidy_titanic and flat_titanic based on the Titanic data set from
+datasets for further exploration.  This human-centered data package is designed
+to support exploratory data analysis, feature engineering, and pedagogical use
+cases.")
+    (license license:expat)))
 
 (define-public r-tidytidbits
   (package

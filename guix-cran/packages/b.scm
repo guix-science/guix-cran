@@ -13235,13 +13235,13 @@ curve under the two-parameter logistic model.")
 (define-public r-birp
   (package
     (name "r-birp")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "birp" version))
        (sha256
-        (base32 "02nqlbp8gccz9402kmmb5nhik1bgvcw9b417fq2a5h5vwrk59q7h"))))
+        (base32 "13cijyqkr2a23yyws269cr5bq1z7a47kr39nz9awgr1nbxychwff"))))
     (properties `((upstream-name . "birp")))
     (build-system r-build-system)
     (arguments

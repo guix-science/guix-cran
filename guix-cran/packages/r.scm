@@ -1919,13 +1919,13 @@ MÃ¼ller (2022) <https://CRAN.R-project.org/package=dplyr>.")
 (define-public r-rvec
   (package
     (name "r-rvec")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvec" version))
        (sha256
-        (base32 "0m30jyzrbywlbhqc6k2178fmq7z6169qwr8pckijnx63al3qsyxn"))))
+        (base32 "1jv9va1xkj5wq7fr50s8qkbyapfv9ij2qbqhys460gdxk1qk67kp"))))
     (properties `((upstream-name . "rvec")))
     (build-system r-build-system)
     (arguments
@@ -1940,11 +1940,11 @@ MÃ¼ller (2022) <https://CRAN.R-project.org/package=dplyr>.")
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://bayesiandemography.github.io/rvec/")
-    (synopsis "Vector Representing a Random Variable")
+    (synopsis "Vectors Representing Random Variables")
     (description
      "Random vectors, called rvecs.  An rvec holds multiple draws, but tries to behave
 like a standard R vector, including working well in data frames.  Rvecs are
-useful for working with output from a simulation or a Bayesian analysis.")
+useful for analysing output from a simulation or a Bayesian analysis.")
     (license license:expat)))
 
 (define-public r-rvcompare
@@ -8959,13 +8959,13 @@ and evolutionary biology, but certainly other fields, as well.")
 (define-public r-rrphylo
   (package
     (name "r-rrphylo")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRphylo" version))
        (sha256
-        (base32 "1sadp65prgdymns73lbppdria4a27r8klvkxp1rmwygrqhn1l6mv"))))
+        (base32 "1j49860shz9dz6alrf7i331b00xz09ln8sxmvh8l3a2nfzms81qz"))))
     (properties `((upstream-name . "RRphylo")))
     (build-system r-build-system)
     (arguments
@@ -22274,13 +22274,13 @@ routines implement the algorithm described in Michael, Thronton, Xie, and Tian
 (define-public r-rlumshiny
   (package
     (name "r-rlumshiny")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RLumShiny" version))
        (sha256
-        (base32 "0iyg1j7w2888lgv1palpc0chh7i8fli12qv3rvm5bvmwp4qhgbzj"))))
+        (base32 "1kgzrhi6bm1rk3s22k17wp9ylrl204kasd2gy7g13d58r748v95g"))))
     (properties `((upstream-name . "RLumShiny")))
     (build-system r-build-system)
     (arguments
@@ -22306,7 +22306,8 @@ Luminescence'.  These mainly, but not exclusively, include applications for
 plotting chronometric data from e.g. luminescence or radiocarbon dating.  It
 further provides access to bootstraps tooltip and popover functionality and
 contains the jscolor.js library with a custom shiny output binding.")
-    (license license:gpl3)))
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-rlummodel
   (package
@@ -27986,13 +27987,13 @@ open-source parallel database.  This is an extension of the RPostgres package
 (define-public r-rgrass
   (package
     (name "r-rgrass")
-    (version "0.5-2")
+    (version "0.5-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgrass" version))
        (sha256
-        (base32 "0z2n9rv6y5w2pp8x1xqp00hpsp8m6s9xrcvf2fkhh1ssj2x508lc"))))
+        (base32 "14cy6gwzdpbaymsg3n64dyw2jmh8agx98wqz7knj2gvkgcc455pz"))))
     (properties `((upstream-name . "rgrass")))
     (build-system r-build-system)
     (arguments
@@ -32540,13 +32541,13 @@ For more details on Feature Selection see Theng and Bhoyar (2023)
 (define-public r-resin
   (package
     (name "r-resin")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ResIN" version))
        (sha256
-        (base32 "0kx74xc029yi20l15ri1isv6k26xwybi2hhama232aa17z7dl0bj"))))
+        (base32 "037dlkdzb1j9i5b8pkri6phqbwpi0687w0yhv3b52yp07wvssh2k"))))
     (properties `((upstream-name . "ResIN")))
     (build-system r-build-system)
     (arguments
@@ -39158,13 +39159,13 @@ model with spline rate function following Fu, et al. (2016)
 (define-public r-red
   (package
     (name "r-red")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "red" version))
        (sha256
-        (base32 "1qvzm086lbpphz5x426qpn298mps0qinv8zdzp6scfk9jyzf8h6m"))))
+        (base32 "0xs7qm84ygkcgnddjvz8lfapp8717df32jx21364lf88yr9swrjc"))))
     (properties `((upstream-name . "red")))
     (build-system r-build-system)
     (arguments
@@ -54583,24 +54584,26 @@ detailed technical aspects of the package, see Mirazchiyski', 2021b
 (define-public r-ralger
   (package
     (name "r-ralger")
-    (version "2.2.4")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ralger" version))
        (sha256
-        (base32 "1j0np7h051dglva3dj9b64fagr99hvpsza1q2fnc7g3x1ki7mgni"))))
+        (base32 "0z239ab7bd14w2inwyrbhgc8jp9jc4zf6mamfqw75s48m9bkir8f"))))
     (properties `((upstream-name . "ralger")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
+                             r-urltools
                              r-tidyr
                              r-stringr
                              r-stringi
                              r-rvest
                              r-robotstxt
+                             r-purrr
                              r-dplyr
                              r-curl
                              r-crayon))
@@ -54960,6 +54963,58 @@ supporting functions to employ these estimators in a graphical modeling setting.
  For details, see Peeters, Bilgrau, & van Wieringen (2022)
 <doi:10.18637/jss.v102.i04> and associated publications.")
     (license license:gpl2+)))
+
+(define-public r-ragnar
+  (package
+    (name "r-ragnar")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ragnar" version))
+       (sha256
+        (base32 "155v73gswmh8q0dni5065li82s4m0mbdbkm1m0yxp3469v6w0c92"))))
+    (properties `((upstream-name . "ragnar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-withr
+                             r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-stringi
+                             r-s7
+                             r-rvest
+                             r-rlang
+                             r-reticulate
+                             r-httr2
+                             r-glue
+                             r-duckdb
+                             r-dplyr
+                             r-dotty
+                             r-dbi
+                             r-curl
+                             r-commonmark
+                             r-cli
+                             r-blob))
+    (native-inputs (list r-knitr))
+    (home-page "https://ragnar.tidyverse.org/")
+    (synopsis "Retrieval-Augmented Generation (RAG) Workflows")
+    (description
+     "This package provides tools for implementing Retrieval-Augmented Generation
+(RAG) workflows with Large Language Models (LLM).  Includes functions for
+document processing, text chunking, embedding generation, storage management,
+and content retrieval.  Supports various document types and embedding providers
+('Ollama', @code{OpenAI}'), with @code{DuckDB} as the default storage backend.
+Integrates with the ellmer package to equip chat objects with retrieval
+capabilities.  Designed to offer both sensible defaults and customization
+options with transparent access to intermediate outputs.  For a review of
+retrieval-augmented generation methods, see Gao et al. (2023)
+\"Retrieval-Augmented Generation for Large Language Models: A Survey\"
+<doi:10.48550/@code{arXiv.2312.10997>}.")
+    (license license:expat)))
 
 (define-public r-raggrid
   (package

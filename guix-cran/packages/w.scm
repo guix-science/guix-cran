@@ -4217,19 +4217,23 @@ correct, and receive results in tidy tibbles.")
 (define-public r-wikitools
   (package
     (name "r-wikitools")
-    (version "1.2.8")
+    (version "1.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wikiTools" version))
        (sha256
-        (base32 "076fi6z0jqgz33nh19hz9rms5dj49waxyi2iwwrfwfcjshj8vwms"))))
+        (base32 "0ypwx1zx6i38hq2nljjh6rcsqmbvnznbfq4m2a1nlq5q9i4ypcj4"))))
     (properties `((upstream-name . "wikiTools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ratelimitr r-jsonlite r-httr r-curl
+    (propagated-inputs (list r-ratelimitr
+                             r-netcoin
+                             r-jsonlite
+                             r-httr
+                             r-curl
                              r-collections))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wikiTools")

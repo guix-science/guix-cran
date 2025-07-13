@@ -1370,6 +1370,37 @@ final meta-model.  This package facilitates conducting late integration
 predictive modeling in a systematic, structured, and reproducible way.")
     (license license:gpl3)))
 
+(define-public r-fusedtree
+  (package
+    (name "r-fusedtree")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fusedTree" version))
+       (sha256
+        (base32 "0530cgxjznjrr2ilwqhvla4nmzr1vfn4y6qcpp79ahdnfal09xsz"))))
+    (properties `((upstream-name . "fusedTree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-treeclust r-survival r-splittools r-matrix))
+    (home-page "https://cran.r-project.org/package=fusedTree")
+    (synopsis "Fused Partitioned Regression for Clinical and Omics Data")
+    (description
+     "Fit (generalized) linear regression models in each leaf node of a tree.  The
+tree is constructed using clinical variables only.  The linear regression models
+are constructed using (high-dimensional) omics variables only.  The
+leaf-node-specific regression models are estimated using the penalized
+likelihood including a standard ridge (L2) penalty and a fusion penalty that
+links the leaf-node-specific regression models to one another.  The intercepts
+of the leaf nodes reflect the effects of the clinical variables and are left
+unpenalized.  The tree, fitted with the clinical variables only, should be
+constructed outside of the package with the rpart R package.  See Goedhart and
+others (2024) <doi:10.48550/@code{arXiv.2411.02396>} for details on the method.")
+    (license license:gpl3+)))
+
 (define-public r-fusedmgm
   (package
     (name "r-fusedmgm")

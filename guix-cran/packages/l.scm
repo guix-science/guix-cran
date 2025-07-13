@@ -3379,6 +3379,31 @@ use.  It also provides a number of utility functions such as BIC calculations.")
 complete stories, collected for the purpose of text analysis.")
     (license license:gpl3+)))
 
+(define-public r-lotta
+  (package
+    (name "r-lotta")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LoTTA" version))
+       (sha256
+        (base32 "149idp9gfbpkfyl875z55cl2qfz1sx6fnpdcblfgw2yqdqj58v68"))))
+    (properties `((upstream-name . "LoTTA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-runjags r-ggpubr r-ggplot2 r-bayestestr))
+    (home-page "https://cran.r-project.org/package=LoTTA")
+    (synopsis "Bayesian Inference in Regression Discontinuity Designs")
+    (description
+     "Implementation of the @code{LoTTA} (Local Trimmed Taylor Approximation) model
+described in \"Bayesian Regression Discontinuity Design with Unknown Cutoff\" by
+Kowalska, van de Wiel, van der Pas (2024)
+<doi:10.48550/@code{arXiv.2406.11585>}.")
+    (license license:gpl2+)))
+
 (define-public r-lotri
   (package
     (name "r-lotri")
@@ -4295,13 +4320,13 @@ data types for the clustering.")
 (define-public r-longmemo
   (package
     (name "r-longmemo")
-    (version "1.1-3")
+    (version "1.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longmemo" version))
        (sha256
-        (base32 "0c4ahci4bf630pcm9zfjwipbq2rb7yi55w91yi6qy39fzdj4v568"))))
+        (base32 "1yd06j4zr3k7b4rpk9swvym8347wb06n3czpnsgqlr7zqg4lj21r"))))
     (properties `((upstream-name . "longmemo")))
     (build-system r-build-system)
     (arguments

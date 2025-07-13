@@ -2394,13 +2394,13 @@ Gneiting (2020) <@code{arXiv:1909.03725>}.")
 (define-public r-isocountry
   (package
     (name "r-isocountry")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isocountry" version))
        (sha256
-        (base32 "0gksbq90i0h4pm7mqkwiz8lmd0lyby40z1lc935miz0zgr96n24x"))))
+        (base32 "19y48jjxmqnzabyacik016hd2i2m7a54bb8x4w30x0jgdiq3zqpj"))))
     (properties `((upstream-name . "isocountry")))
     (build-system r-build-system)
     (arguments
@@ -3923,6 +3923,30 @@ reliability based on BartoÅ¡ & MartinkovÃ¡ (2024) <doi:10.1111/bmsp.12343>."
 and nominal data: ICC, Finn-Coefficient, Robinson's A, Kendall's W, Cohen's
 Kappa, ...")
     (license license:gpl2+)))
+
+(define-public r-ironseed
+  (package
+    (name "r-ironseed")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ironseed" version))
+       (sha256
+        (base32 "1mc22y30cd5v5hgvsfrfhfiwchg7mbd6l3fiz6f91hxsdw76l90j"))))
+    (properties `((upstream-name . "ironseed")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/reedacartwright/ironseed")
+    (synopsis "Improved Random Number Generator Seeding")
+    (description
+     "This package provides a procedure for seeding R's built in random number
+generators using a variable-length sequence of values.  Accumulates input
+entropy into a 256-bit hash digest or \"ironseed\" and is able to generate a
+variable-length sequence of output seeds from an ironseed.")
+    (license license:expat)))
 
 (define-public r-iron
   (package
