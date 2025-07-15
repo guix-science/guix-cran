@@ -7533,13 +7533,13 @@ al. (2019) <@code{arXiv:1905.11052>}.")
 (define-public r-himach
   (package
     (name "r-himach")
-    (version "0.3.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "himach" version))
        (sha256
-        (base32 "0j262rkhfadd6n1ypzwv8pj543zinayihnvfsb5i8i6fx2lag88q"))))
+        (base32 "04xp50yrs2gcybip9m2ns0dq7gkij370x8hq70cx3c228rcmjlxm"))))
     (properties `((upstream-name . "himach")))
     (build-system r-build-system)
     (arguments
@@ -7557,7 +7557,7 @@ al. (2019) <@code{arXiv:1905.11052>}.")
                              r-cpprouting))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/david6marsh/himach")
-    (synopsis "High Mach Finds Routes for Supersonic Aircraft")
+    (synopsis "Find Routes for Supersonic Aircraft")
     (description
      "For supersonic aircraft, flying subsonic over land, find the best route between
 airports.  Allow for coastal buffer and potentially closed regions.  Use a

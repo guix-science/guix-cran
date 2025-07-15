@@ -837,19 +837,19 @@ or any function defined by the user) for multiple groups.")
 (define-public r-quickplot
   (package
     (name "r-quickplot")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickPlot" version))
        (sha256
-        (base32 "0228mcv6cz74whzxmgcdb79w0k8mibszw4kwnjjs6pljz41rxcbq"))))
+        (base32 "04rcplcxchrb9lhsvp22m8fl1wqgkficziqy6p02icp8lg5fx9v7"))))
     (properties `((upstream-name . "quickPlot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra r-fpcompare r-data-table))
+    (propagated-inputs (list r-terra r-ggplot2 r-fpcompare r-data-table))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://quickplot.predictiveecology.org")
     (synopsis "System of Plotting Optimized for Speed and Modularity")
@@ -860,9 +860,7 @@ grid package.  The objective of the package is to provide a plotting system that
 is built for speed and modularity.  This is useful for quick visualizations when
 testing code and for plotting multiple figures to the same device from
 independent sources that may be independent of one another (i.e., different
-function or modules the create the visualizations).  The suggested package
-fastshp can be installed from the repository
-(<https://@code{PredictiveEcology.r-universe.dev>}).")
+function or modules the create the visualizations).")
     (license license:gpl3)))
 
 (define-public r-quicknmix

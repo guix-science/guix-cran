@@ -1312,13 +1312,13 @@ ISBN:9781451190052); Amrhein V, Trafimow D, Greenland S. (2019)
 (define-public r-pvaclone
   (package
     (name "r-pvaclone")
-    (version "0.1-7")
+    (version "0.1-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PVAClone" version))
        (sha256
-        (base32 "1fp4ivjs1980456gyzamwpwwy2rc2sv6xwb2mbk12qkpghgdgssl"))))
+        (base32 "0q7l1k6rmhh51bvl8y6mz4c8hsx1gv0s96bhmpbr6q7anhkhf8q1"))))
     (properties `((upstream-name . "PVAClone")))
     (build-system r-build-system)
     (arguments
@@ -19280,19 +19280,24 @@ introduce yourself, ask for permission, take slowly and never ask twice.")
 (define-public r-polisher
   (package
     (name "r-polisher")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PolisheR" version))
        (sha256
-        (base32 "0fmjkjhdss980vx4p5j9yw0nkrydyjga2k2gv5gw3jri8335ky37"))))
+        (base32 "1wwm2ybrgxj4jjk2fpq2rx5ipp5a3sp4871a7np4glaap1a11mrj"))))
     (properties `((upstream-name . "PolisheR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny r-nailer r-dplyr))
+    (propagated-inputs (list r-stringr
+                             r-shinycssloaders
+                             r-shiny
+                             r-nailer
+                             r-factominer
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=PolisheR")
     (synopsis "Interfacing 'NaileR' with 'Shiny'")
     (description
@@ -22677,13 +22682,13 @@ the base graphics plotting tools; and manipulate irregular polygons.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "0vk96g0hlzsa56162wz16mdvcyi66fvcsvz9msjkc63fhn8jzsa3"))))
+        (base32 "0v659baixl5npppqi2w35s5xf9qm0dipyfwblfyh1jvgygh7w0q6"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments
@@ -28291,13 +28296,13 @@ and Lessler (2023).")
 (define-public r-phyloregion
   (package
     (name "r-phyloregion")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phyloregion" version))
        (sha256
-        (base32 "10i5s3dv71nr0m3wmph2rynzg9zj8xqzb6a25r5kj66r8v91jz3d"))))
+        (base32 "15cr2h3dx9h6r63i5x186aqi8jrgf355gc932hny5zj173kkllk8"))))
     (properties `((upstream-name . "phyloregion")))
     (build-system r-build-system)
     (arguments
@@ -34847,13 +34852,13 @@ from wild populations, and for visualizing pedigrees.")
 (define-public r-pedtools
   (package
     (name "r-pedtools")
-    (version "2.8.1")
+    (version "2.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedtools" version))
        (sha256
-        (base32 "0wrzrw4ij0axazvflmlribzjyxa7c2j5cn2w3fzmqyfcddghwkq5"))))
+        (base32 "1dax7wkrym4fkfmil2553g1zfqjjwswid4j49nffl0d9fg5wdlij"))))
     (properties `((upstream-name . "pedtools")))
     (build-system r-build-system)
     (arguments

@@ -11723,13 +11723,13 @@ visualization platform <https://developers.flourish.studio/api/introduction/>.")
 (define-public r-floral
   (package
     (name "r-floral")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FLORAL" version))
        (sha256
-        (base32 "17g20p2f0hm9g5i44g3bwfyy6s9sqjjyzq065x0k7sfmfk5kr686"))))
+        (base32 "1hqqjkfjpqcid37m9p9nk41dbm7pl9a0yi2qgmwxxhi17pzdkz7g"))))
     (properties `((upstream-name . "FLORAL")))
     (build-system r-build-system)
     (arguments

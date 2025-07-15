@@ -7852,6 +7852,42 @@ S.C. (2019) <doi:10.1038/s41598-019-41559-6>; Yang, S., Ning, S. and Kou, S.C.
 (2021) <doi:10.1038/s41598-021-83084-5>.")
     (license license:gpl2)))
 
+(define-public r-argmincs
+  (package
+    (name "r-argmincs")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "argminCS" version))
+       (sha256
+        (base32 "091wpabdfxrnlb54rg5b5z2z5i0n49drf22hcnc5y6xc2b31jdhw"))))
+    (properties `((upstream-name . "argminCS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-rdpack
+                             r-mass
+                             r-ldats
+                             r-glue
+                             r-bsda))
+    (home-page "https://github.com/xu3cl4/argminCS")
+    (synopsis "Argmin Inference over a Discrete Candidate Set")
+    (description
+     "This package provides methods to construct frequentist confidence sets with
+valid marginal coverage for identifying the population-level argmin or argmax
+based on IID data.  For instance, given an n by p loss matrixâwhere n is the
+sample size and p is the number of modelsâthe @code{CS.argmin()} method
+produces a discrete confidence set that contains the model with the minimal
+(best) expected risk with desired probability.  The @code{argmin.HT()} method
+helps check if a specific model should be included in such a confidence set.
+The main implemented method is proposed by Tianyu Zhang, Hao Lee and Jing Lei
+(2024) \"Winners with confidence: Discrete argmin inference with an application
+to model selection\".")
+    (license license:expat)))
+
 (define-public r-argentum
   (package
     (name "r-argentum")
@@ -9755,13 +9791,13 @@ and legends.")
 (define-public r-aqeval
   (package
     (name "r-aqeval")
-    (version "0.6.0")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AQEval" version))
        (sha256
-        (base32 "1208g41km6hiyfzg5v9xcjsndxiq5if8pw5qx5d9qng99zsxyzfc"))))
+        (base32 "1rrs9d6i81bhr3q051jikvw8fim0n343z8348fn78vjc32a2hgcz"))))
     (properties `((upstream-name . "AQEval")))
     (build-system r-build-system)
     (arguments
@@ -12924,13 +12960,13 @@ where gene names may vary among accessions.  Borstein & O'Meara (2018)
 (define-public r-annotater
   (package
     (name "r-annotater")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "annotater" version))
        (sha256
-        (base32 "0ziwkc7z3v8awm7smq38mdj61vjq4qh99d0fmr63sibmg6l3pf7p"))))
+        (base32 "1z2vzhb49hi861xpjwwijzyywrix9njm3yswvy3h9aqg5m5xjqnn"))))
     (properties `((upstream-name . "annotater")))
     (build-system r-build-system)
     (arguments
@@ -12944,6 +12980,7 @@ where gene names may vary among accessions.  Borstein & O'Meara (2018)
                              r-rlang
                              r-readr
                              r-purrr
+                             r-knitr
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/luisDVA/annotater")
@@ -15994,13 +16031,13 @@ Davies, L.; Gather, U. (1993): The identification of multiple outliers, JASA, 88
 (define-public r-alphan
   (package
     (name "r-alphan")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alphaN" version))
        (sha256
-        (base32 "0asm0r1cqbqan0d5dbb7jffqgrcai2kcpw1l2p9s4qxfff9vliva"))))
+        (base32 "15mbhd5bd80dfll0mxrjh1dxhyc606p9zbffc86h884zlzh9mrxc"))))
     (properties `((upstream-name . "alphaN")))
     (build-system r-build-system)
     (arguments
@@ -16014,7 +16051,7 @@ Davies, L.; Gather, U. (1993): The identification of multiple outliers, JASA, 88
 function of the sample size through the use of Jeffreys Approximate Bayes
 factor.  You tell @code{alphaN()} your sample size, and it tells you to which
 value you must lower alpha to avoid Lindley's Paradox.  For details, see Wulff
-and Taylor (2023) <doi:10.31234/osf.io/3cbh7>.")
+and Taylor (2024) <doi:10.1177/14761270231214429>.")
     (license license:expat)))
 
 (define-public r-alphahull
@@ -17328,19 +17365,19 @@ age-structured population dynamics models described in Erguler and others (2016)
 (define-public r-albi
   (package
     (name "r-albi")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aLBI" version))
        (sha256
-        (base32 "15pa431l58w3dym4v0wsma9zjmlw4xwcvjsyw0fd996ckzj1g15j"))))
+        (base32 "1rf8a8d4df9i4nzcb6mcmcypsl7k9s8hbablfhwynss6c8m2a9vm"))))
     (properties `((upstream-name . "aLBI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-dplyr))
+    (propagated-inputs (list r-openxlsx r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Ataher76/aLBI")
     (synopsis "Estimating Length-Based Indicators for Fish Stock")
@@ -17368,8 +17405,9 @@ provides data frames containing calculated values. @code{FishSS()}: Makes
 decisions based on input from Cope and Punt (2009) <doi:10.1577/C08-025.1> and
 parameters calculated by @code{FishPar()} (e.g., Pobj, Pmat, Popt, LM_ratio) to
 determine stock status as target spawning biomass (TSB40) and limit spawning
-biomass (LSB25).  These tools support fisheries management decisions by
-providing robust, data-driven insights.")
+biomass (LSB25). @code{LWR()}: Fits and visualizes length-weight relationships
+using linear regression, with options for log-transformation and customizable
+plotting.")
     (license license:gpl3)))
 
 (define-public r-albatross
@@ -20279,44 +20317,6 @@ counts in to intervals and the splitting of interval counts based on specified
 age distributions.")
     (license license:gpl2)))
 
-(define-public r-agepopdenom
-  (package
-    (name "r-agepopdenom")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AgePopDenom" version))
-       (sha256
-        (base32 "0vwjha2hnpxknkad3h84wcq2lpzsvv96zad86jmz7mah9yh62bgf"))))
-    (properties `((upstream-name . "AgePopDenom")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-tmb
-                             r-tidyr
-                             r-tibble
-                             r-terra
-                             r-sf
-                             r-pdist
-                             r-numderiv
-                             r-httr
-                             r-ggplot2
-                             r-exactextractr
-                             r-dplyr
-                             r-curl
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://truenomad.github.io/AgePopDenom/")
-    (synopsis
-     "Model Fine-Scale Age-Structured Population Data using Open-Source Data")
-    (description
-     "Automate the modelling of age-structured population data using survey data, grid
-population estimates and urban-rural extents.")
-    (license license:expat)))
-
 (define-public r-agena-ai
   (package
     (name "r-agena-ai")
@@ -22789,13 +22789,13 @@ space for ease of reuse.")
 (define-public r-adjustedcurves
   (package
     (name "r-adjustedcurves")
-    (version "0.11.2")
+    (version "0.11.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adjustedCurves" version))
        (sha256
-        (base32 "11bc2hrxr65i1rk2zv7r7daqm7m5v9xhhgk1fwr0jbs6c4dk2niw"))))
+        (base32 "09q8lr5zm0g7p7avaqq8l9q385w2pnagqpads0lwifpclyqz9r4v"))))
     (properties `((upstream-name . "adjustedCurves")))
     (build-system r-build-system)
     (arguments
@@ -23988,13 +23988,13 @@ for analytical applications.")
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.18.0")
+    (version "0.19.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "1lr3nqf08biilkdivpkjfamd0fcim2g18vi7226zm67m39dv4qf0"))))
+        (base32 "1ssh6gkimh63qwy4w0x66h8qqjgklyr7hssmfjcfmcnj38wypany"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (arguments
@@ -24015,13 +24015,13 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.18.0")
+    (version "0.19.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "17yarhcpn05zlci9sv4wrv1j8z706v8qn8i595vwdv2fi8i8hi8m"))))
+        (base32 "1imimks8frqhy2q8lfjakl3a76sbnp93kijq84vw8jmbmil2zawj"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (arguments

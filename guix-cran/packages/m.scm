@@ -5166,6 +5166,34 @@ missing information, Computational Statistics & Data Analysis, 41(3-4),
 429--440.")
     (license license:gpl2+)))
 
+(define-public r-multimediate
+  (package
+    (name "r-multimediate")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multimediate" version))
+       (sha256
+        (base32 "01bs0ai756p59jk3wp8zl9dpdi5h1ay51bsfhfdabpr4f7m161fg"))))
+    (properties `((upstream-name . "multimediate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-timereg r-rmutil r-mvtnorm r-mass))
+    (home-page "https://samarafk.github.io/multimediate/")
+    (synopsis
+     "Causal Mediation Analysis in Presence of Multiple Mediators Uncausally Related")
+    (description
+     "Estimates key quantities in causal mediation analysis - including average causal
+mediation effects (indirect effects), average direct effects, total effects, and
+proportions mediated - in the presence of multiple uncausally related mediators.
+ Methods are described by JÃ©rolon et al., (2021) <doi:10.1515/ijb-2019-0088>
+and extended to accommodate survival outcomes as described by Domingo-Relloso et
+al., (2024) <doi:10.1101/2024.02.16.24302923>.")
+    (license license:gpl3)))
+
 (define-public r-multimedia
   (package
     (name "r-multimedia")
@@ -7989,13 +8017,13 @@ output) and Shiny file editing.")
 (define-public r-mtarm
   (package
     (name "r-mtarm")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mtarm" version))
        (sha256
-        (base32 "03xwfl8jn8bnvswi1riv4qgs2nn8vm4zl7j4v50j41qkp3rsbkpr"))))
+        (base32 "0zrd2i9cv6b7blyn0kfccyrnacc2zsi0al20q9v8sz7w33jhkwl6"))))
     (properties `((upstream-name . "mtarm")))
     (build-system r-build-system)
     (arguments
@@ -35429,13 +35457,13 @@ result of each individual.")
 (define-public r-metacore
   (package
     (name "r-metacore")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metacore" version))
        (sha256
-        (base32 "06ba9p1by6hfagj0s43b6dwwfci5fczl2fr7kw3cchqsr90y3vfr"))))
+        (base32 "0z3wc2xxcga8jhs63xfna4pcpznq4fh85bl1y4cin3bzx0bgl55b"))))
     (properties `((upstream-name . "metacore")))
     (build-system r-build-system)
     (arguments
@@ -35451,7 +35479,8 @@ result of each individual.")
                              r-r6
                              r-purrr
                              r-magrittr
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://atorus-research.github.io/metacore/")
     (synopsis
@@ -37603,13 +37632,13 @@ models are included.")
 (define-public r-mefa4
   (package
     (name "r-mefa4")
-    (version "0.3-11")
+    (version "0.3-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mefa4" version))
        (sha256
-        (base32 "02npawccc316vwgmk0yna7wvlxzsbdishxzmfd4wgl7g218wjk3m"))))
+        (base32 "19rna5h5rkcgc467qvrw7ccjsm3nad4daj21irkmf5j5z0cyyi43"))))
     (properties `((upstream-name . "mefa4")))
     (build-system r-build-system)
     (arguments
@@ -37626,13 +37655,13 @@ Sparse array-like objects are supported via lists of sparse matrices.")
 (define-public r-mefa
   (package
     (name "r-mefa")
-    (version "3.2-9")
+    (version "3.2-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mefa" version))
        (sha256
-        (base32 "1rllkxp218qsa1c0aaa5zdky5bh2rzqbhdc2n14bmvv4jlgzrl8c"))))
+        (base32 "1vcq3ym41q6rj8xrp9s00d2iw52z699v39rd3blsnmv0x5pnwipq"))))
     (properties `((upstream-name . "mefa")))
     (build-system r-build-system)
     (arguments

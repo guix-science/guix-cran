@@ -15197,13 +15197,13 @@ free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusMarine" version))
        (sha256
-        (base32 "0nhrjwp3xav2hsaiiivyi9z6yqmhpwynnv6rgyxhw8rm1clkhwsx"))))
+        (base32 "11r176c0gz6zdi1nwkhlwwkizrpl9vq2pl3gks98h9c4a9i4qysc"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (arguments
@@ -15211,6 +15211,7 @@ free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
       #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tidyr
+                             r-tibble
                              r-stringr
                              r-sf
                              r-rlang
@@ -15218,7 +15219,8 @@ free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
                              r-leaflet
                              r-httr2
                              r-dplyr
-                             r-crayon))
+                             r-cli
+                             r-aws-s3))
     (home-page "https://github.com/pepijn-devries/CopernicusMarine")
     (synopsis
      "Search Download and Handle Data from Copernicus Marine Service Information")
@@ -17767,6 +17769,39 @@ between the nodes.  The results of the non-parametric significance test can be
 included by depicting either all links or only the significant ones.  Tutorial
 see Bodner et al.(2021) <doi:10.3758/s13428-021-01760-w>.")
     (license license:gpl2+)))
+
+(define-public r-conmition
+  (package
+    (name "r-conmition")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "conMItion" version))
+       (sha256
+        (base32 "0s54iqvh15sw165cc7vviy9bspa7dwphss681s742s2d39a9np61"))))
+    (properties `((upstream-name . "conMItion")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=conMItion")
+    (synopsis "Conditional Mutual Information Estimation for Multi-Omics Data")
+    (description
+     "The biases introduced in association measures, particularly mutual information,
+are influenced by factors such as tumor purity, mutation burden, and
+hypermethylation.  This package provides the estimation of conditional mutual
+information (CMI) and its statistical significance with a focus on its
+application to multi-omics data.  Utilizing B-spline functions (inspired by Daub
+et al. (2004) <doi:10.1186/1471-2105-5-118>), the package offers tools to
+estimate the association between heterogeneous multi- omics data, while removing
+the effects of confounding factors.  This helps to unravel complex biological
+interactions.  In addition, it includes methods to evaluate the statistical
+significance of these associations, providing a robust framework for multi-omics
+data integration and analysis.  This package is ideal for researchers in
+computational biology, bioinformatics, and systems biology seeking a
+comprehensive tool for understanding interdependencies in omics data.")
+    (license license:gpl2)))
 
 (define-public r-conmet
   (package
@@ -28954,6 +28989,52 @@ credibility of cluster assignments.  See the vignette for details.")
 soft spatial/geographical constraints.")
     (license license:gpl2+)))
 
+(define-public r-clusterwebapp
+  (package
+    (name "r-clusterwebapp")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clusterWebApp" version))
+       (sha256
+        (base32 "0r7j50k8b9z5ak87jgalzy98fn97nngzjhr4jf5dasy8q4qbl28r"))))
+    (properties `((upstream-name . "clusterWebApp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-shinythemes
+                             r-shinycssloaders
+                             r-shiny
+                             r-rtsne
+                             r-mlbench
+                             r-mclust
+                             r-magrittr
+                             r-kernlab
+                             r-ggplot2
+                             r-factoextra
+                             r-dt
+                             r-dplyr
+                             r-dbscan
+                             r-cluster))
+    (home-page "https://cran.r-project.org/package=clusterWebApp")
+    (synopsis "Universal Clustering Analysis Platform")
+    (description
+     "An interactive platform for clustering analysis and teaching based on the shiny
+web application framework.  Supports multiple popular clustering algorithms
+including k-means, hierarchical clustering, DBSCAN (Density-Based Spatial
+Clustering of Applications with Noise), PAM (Partitioning Around Medoids), GMM
+(Gaussian Mixture Model), and spectral clustering.  Users can upload datasets or
+use built-in ones, visualize clustering results using dimensionality reduction
+methods such as Principal Component Analysis (PCA) and t-distributed Stochastic
+Neighbor Embedding (t-SNE), evaluate clustering quality via silhouette plots,
+and explore method-specific visualizations and guides.  For details on
+implemented methods, see: Reynolds (2009, ISBN:9781598296975) for GMM; Luxburg
+(2007) <doi:10.1007/s11222-007-9033-z> for spectral clustering.")
+    (license license:expat)))
+
 (define-public r-clustervar
   (package
     (name "r-clustervar")
@@ -32977,19 +33058,20 @@ arm binary trial\" by Lloyd, C.J. (2020), Statistics in Medicine, Volume 38,
 (define-public r-classmap
   (package
     (name "r-classmap")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "classmap" version))
        (sha256
-        (base32 "1nx4zs4d511kgh7b4zlj059w9azn57vlm4ka2jr63wfm885437k7"))))
+        (base32 "16r7kqlwvw0zrfbp8s2i64fqrllwi694r1yfm67ycsadbdqf2zxx"))))
     (properties `((upstream-name . "classmap")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rpart
+    (propagated-inputs (list r-scales
+                             r-rpart
                              r-robustbase
                              r-randomforest
                              r-kernlab
@@ -33002,18 +33084,21 @@ arm binary trial\" by Lloyd, C.J. (2020), Statistics in Medicine, Volume 38,
     (home-page "https://doi.org/10.1080/00401706.2021.1927849")
     (synopsis "Visualizing Classification Results")
     (description
-     "This package provides tools to visualize the results of a classification of
-cases.  The graphical displays include stacked plots, silhouette plots, quasi
-residual plots, and class maps.  Implements the techniques described and
-illustrated in Raymaekers J., Rousseeuw P.J., Hubert M. (2021).  Class maps for
-visualizing classification results. \\emph{Technometrics}, 64(2), 151â165.
-\\doi{10.1080/00401706.2021.1927849} (open access) and Raymaekers J., Rousseeuw
-P.J.(2021).  Silhouettes and quasi residual plots for neural nets and tree-based
+     "This package provides tools to visualize the results of a classification or a
+regression.  The graphical displays include stacked plots, silhouette plots,
+quasi residual plots, class maps, predictions plots, and predictions correlation
+plots.  Implements the techniques described and illustrated in Raymaekers J.,
+Rousseeuw P.J., Hubert M. (2022).  Class maps for visualizing classification
+results. \\emph{Technometrics}, 64(2), 151â165.
+\\doi{10.1080/00401706.2021.1927849} (open access), Raymaekers J., Rousseeuw
+P.J.(2022).  Silhouettes and quasi residual plots for neural nets and tree-based
 classifiers. \\emph{Journal of Computational and Graphical Statistics}, 31(4),
-1332â1343. \\doi{10.1080/10618600.2022.2050249}.  Examples can be found in the
-vignettes: \"Discriminant_analysis_examples\",\"K_nearest_neighbors_examples\",
+1332â1343. \\doi{10.1080/10618600.2022.2050249}, and Rousseeuw, P.J. (2025).
+Explainable Linear and Generalized Linear Models by the Predictions Plot.
+<doi:10.48550/@code{arXiv.2412.16980>} (open access).  Examples can be found in
+the vignettes: \"Discriminant_analysis_examples\",\"K_nearest_neighbors_examples\",
 \"Support_vector_machine_examples\", \"Rpart_examples\", \"Random_forest_examples\",
-and \"Neural_net_examples\".")
+\"Neural_net_examples\", and \"predsplot_examples\".")
     (license license:gpl2+)))
 
 (define-public r-classifly

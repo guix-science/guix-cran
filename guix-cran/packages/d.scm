@@ -26856,13 +26856,13 @@ reason about data modification rules as separate entities.")
 (define-public r-dcmle
   (package
     (name "r-dcmle")
-    (version "0.4-1")
+    (version "0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dcmle" version))
        (sha256
-        (base32 "1zh243ya02232z56i0y05l891685my6g9v6wal6z5c92s179g85p"))))
+        (base32 "1gch4hy8xlf8a5aqglfh31pxxaayxf5f7g9wzpn59ir4fk4agdns"))))
     (properties `((upstream-name . "dcmle")))
     (build-system r-build-system)
     (arguments
@@ -26995,13 +26995,13 @@ Karypis and Kumar (2000)
 (define-public r-dclone
   (package
     (name "r-dclone")
-    (version "2.3-2")
+    (version "2.3-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dclone" version))
        (sha256
-        (base32 "1x0fx24fxb7zp9g9lrdb1hbljgmi9szrsh751jidm52fin863qz0"))))
+        (base32 "18fkxf7z4f6i8wn3v9v9wh9mgmaa38z1ym8znd6nfy1wrmx7klas"))))
     (properties `((upstream-name . "dclone")))
     (build-system r-build-system)
     (arguments
@@ -29753,13 +29753,13 @@ and ANCOVA.")
 (define-public r-dataretrieval
   (package
     (name "r-dataretrieval")
-    (version "2.7.19")
+    (version "2.7.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataRetrieval" version))
        (sha256
-        (base32 "16abpj62w6x134v9h1ypmzh8s9p8v53bizfhjzs9day6wcxs3rah"))))
+        (base32 "0fnvwwjsgp48h4pwfi14y7ixak6kz8qvs2x4jsn0qlavm9l1c9vl"))))
     (properties `((upstream-name . "dataRetrieval")))
     (build-system r-build-system)
     (arguments

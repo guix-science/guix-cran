@@ -2006,13 +2006,13 @@ placed in the top r-fraction of units.")
 (define-public r-rvaidememoire
   (package
     (name "r-rvaidememoire")
-    (version "0.9-83-11")
+    (version "0.9-83-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RVAideMemoire" version))
        (sha256
-        (base32 "133wil3sywpyha10mfjryl8crgm0q8hmy2w5xniid888a2jkna0d"))))
+        (base32 "1q52yhg2fhhs7nc77am0jbpd1pd6baqfdp8j8gch6nac9qw04jzc"))))
     (properties `((upstream-name . "RVAideMemoire")))
     (build-system r-build-system)
     (arguments
@@ -13868,13 +13868,13 @@ modeled as coming from a beta-binomial mixture distribution.")
 (define-public r-rootsextremainflections
   (package
     (name "r-rootsextremainflections")
-    (version "1.2.1")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RootsExtremaInflections" version))
        (sha256
-        (base32 "0qd6cmzp8fkb75ac79xbh4032vqwax7nk7d6yykpdbn0bnk2kvdi"))))
+        (base32 "1fvn0j3n4giidzmdskyy64n21fin65rv00g9in6509ccs78klqzd"))))
     (properties `((upstream-name . "RootsExtremaInflections")))
     (build-system r-build-system)
     (arguments
@@ -13890,8 +13890,8 @@ Finding Estimator (IEFE) and Integration Root Finding Estimator (IRFE) for
 roots, extrema and inflections of a curve .  Christopoulos, DT (2019)
 <doi:10.13140/RG.2.2.17158.32324> .  Christopoulos, DT (2016)
 <doi:10.2139/ssrn.3043076> .  Christopoulos, DT (2016)
-<https://veltech.edu.in/wp-content/uploads/2016/04/Paper-04-2016.pdf> .
-Christopoulos, DT (2014) <@code{arXiv:1206.5478v2} [math.NA]> .")
+<https://demovtu.veltech.edu.in/wp-content/uploads/2016/04/Paper-04-2016.pdf> .
+Christopoulos, DT (2014) <doi:10.48550/@code{arXiv.1206.5478>} .")
     (license license:gpl2)))
 
 (define-public r-roots
@@ -35761,13 +35761,13 @@ of useful Tcl/Tk widgets.")
 (define-public r-reliagrowr
   (package
     (name "r-reliagrowr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReliaGrowR" version))
        (sha256
-        (base32 "1g98g445rrkwpgk36zg5c28p3w68l1k8dflplxjdcfmrldph51ab"))))
+        (base32 "0vml5vqrslwxfjprdiv8gkv39nf25scwkh6637d420xh3i27lp61"))))
     (properties `((upstream-name . "ReliaGrowR")))
     (build-system r-build-system)
     (arguments
@@ -44646,20 +44646,24 @@ contributors to both @code{QuantLib} and Quantuccia'.")
 (define-public r-rcppplanc
   (package
     (name "r-rcppplanc")
-    (version "2.0.12")
+    (version "2.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppPlanc" version))
        (sha256
-        (base32 "148yjcbyq72jr0wqjjwj41gd6m2mzghkk8p48bb23w88fzj2m333"))))
+        (base32 "149fkjrfgqkvlr99c8ri1019hr2lrjfrpsdmnxg447wsvxgm39r2"))))
     (properties `((upstream-name . "RcppPlanc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list patch hwloc hdf5 git))
-    (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-matrix
+    (propagated-inputs (list r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-highfive
                              r-hdf5r-extra))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/welch-lab/RcppPlanc/")
@@ -55241,13 +55245,13 @@ analysis.")
 (define-public r-radviz
   (package
     (name "r-radviz")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Radviz" version))
        (sha256
-        (base32 "06mv7y4gi6h1k986blzngrvgnp375p3f5gdj4vgphxq2qg83a8wk"))))
+        (base32 "0ks7vyb46pgdfkkxrcfg9wbglpjgvzv8s601aa6k1f3vnxfg3kz7"))))
     (properties `((upstream-name . "Radviz")))
     (build-system r-build-system)
     (arguments

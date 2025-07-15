@@ -1456,13 +1456,13 @@ Defined).")
 (define-public r-extractox
   (package
     (name "r-extractox")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extractox" version))
        (sha256
-        (base32 "02vmd3zask41qhxrcmjkzrxqjjx94nva16fimxf9rccjlq0n0p05"))))
+        (base32 "1p640q0kvv8pcfjaq98gcyy37k8zns58h9hpv326bvxdcjfzsbvk"))))
     (properties `((upstream-name . "extractox")))
     (build-system r-build-system)
     (arguments
@@ -1471,10 +1471,14 @@ Defined).")
     (propagated-inputs (list r-withr
                              r-webchem
                              r-rvest
+                             r-rlang
                              r-readxl
                              r-pingr
                              r-janitor
                              r-httr2
+                             r-fs
+                             r-curl
+                             r-condathis
                              r-cli))
     (home-page "https://github.com/c1au6i0/extractox")
     (synopsis "Extract Tox Info from Various Databases")
@@ -1482,12 +1486,8 @@ Defined).")
      "Extract toxicological and chemical information from databases maintained by
 scientific agencies and resources, including the Comparative Toxicogenomics
 Database <https://ctdbase.org/>, the Integrated Chemical Environment
-<https://ice.ntp.niehs.nih.gov/>, the Integrated Risk Information System
-<https://cfpub.epa.gov/ncea/iris/>, Provisional Peer-Reviewed Toxicity Values
-<https://www.epa.gov/pprtv/provisional-peer-reviewed-toxicity-values-pprtvs-assessments>,
-the @code{CompTox} Chemicals Dashboard Resource Hub
-<https://www.epa.gov/comptox-tools/comptox-chemicals-dashboard-resource-hub>,
-@code{PubChem} <https://pubchem.ncbi.nlm.nih.gov/>, and others.")
+<https://ice.ntp.niehs.nih.gov/>, the @code{PubChem}
+<https://pubchem.ncbi.nlm.nih.gov/>, and others EPA databases s.")
     (license license:expat)))
 
 (define-public r-extractfaers
@@ -6420,13 +6420,13 @@ hand.")
 (define-public r-eudata
   (package
     (name "r-eudata")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eudata" version))
        (sha256
-        (base32 "10yndk0pczbygn05l311aj511b6ifqbnba6nv732aggz6dz4qa4j"))))
+        (base32 "1i4v967r3fkqg35gzd5ylkyg7i1n94vmi16c5592vzirgj75sxk7"))))
     (properties `((upstream-name . "eudata")))
     (build-system r-build-system)
     (arguments
@@ -13516,13 +13516,13 @@ model applicability domain evaluation, and ensemble predictive modeling with
 (define-public r-enmtools
   (package
     (name "r-enmtools")
-    (version "1.1.2")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ENMTools" version))
        (sha256
-        (base32 "0xz0v378mfy36yc001zr8j8s2dv6jpq2w2da7n3lsxarr8slqp8m"))))
+        (base32 "0wg30xfgrwvzdc19lm0vdwvlpkbbk3sknp4dvg4zvbcrljf0jlz5"))))
     (properties `((upstream-name . "ENMTools")))
     (build-system r-build-system)
     (arguments
@@ -13541,7 +13541,7 @@ model applicability domain evaluation, and ensemble predictive modeling with
                              r-forcats
                              r-enmeval
                              r-dismo))
-    (home-page "https://cran.r-project.org/package=ENMTools")
+    (home-page "https://github.com/danlwarren/ENMTools")
     (synopsis
      "Analysis of Niche Evolution using Niche and Distribution Models")
     (description
@@ -14738,6 +14738,44 @@ designs; visual fast count estimation.")
     (description
      "This package contains data about emojis with relevant metadata, and functions to
 work with emojis when they are in strings.")
+    (license license:expat)))
+
+(define-public r-emodnet-wfs
+  (package
+    (name "r-emodnet-wfs")
+    (version "2.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "emodnet.wfs" version))
+       (sha256
+        (base32 "1jbwnybk44p7gq5y4pc60ravamr79y91izazlrmvjiywbcg48n6f"))))
+    (properties `((upstream-name . "emodnet.wfs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list proj geos gdal))
+    (propagated-inputs (list r-whoami
+                             r-tibble
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-ows4r
+                             r-memoise
+                             r-lifecycle
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/emodnet.wfs/")
+    (synopsis "Access 'EMODnet' Web Feature Service Data")
+    (description
+     "Access and interrogate EMODnet (European Marine Observation and Data Network)
+Web Feature Service data
+<https://emodnet.ec.europa.eu/en/emodnet-web-service-documentation#data-download-services>.
+ This includes listing existing data sources, and getting data from each of
+them.")
     (license license:expat)))
 
 (define-public r-emmreml

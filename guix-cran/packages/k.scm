@@ -6743,13 +6743,13 @@ or the first Wasserstein distance.")
 (define-public r-kanova
   (package
     (name "r-kanova")
-    (version "0.3-18")
+    (version "0.3-19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kanova" version))
        (sha256
-        (base32 "0hzz3ap1qnmpkgfgv4w30qdwnfzf14aj76r8lnizsa0xywfahzpy"))))
+        (base32 "0hdap20xwb6805hv13ifjz4jk8ml0bpmznf15r6lyr31ca9jb27g"))))
     (properties `((upstream-name . "kanova")))
     (build-system r-build-system)
     (arguments

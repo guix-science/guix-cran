@@ -1718,6 +1718,37 @@ statistics courses, and more advanced statistics courses that desire an
 introduction to permutation tests.")
     (license license:gpl2+)))
 
+(define-public r-wper
+  (package
+    (name "r-wper")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wpeR" version))
+       (sha256
+        (base32 "0lzqx60zmr4zczl2rm8pr56jv1pmbk5hd909lnf1ksa357dnrpb4"))))
+    (properties `((upstream-name . "wpeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://gr3602.github.io/wpeR/")
+    (synopsis "Streamlined Analysis of Wild Pedigree Data")
+    (description
+     "Analyzing pedigree data of wild populations.  While primarily designed to
+process outputs from the COLONY (Jones & Wang (2010)
+<doi:10.1111/j.1755-0998.2009.02787.x>) pedigree reconstruction software, it can
+also accommodate data from other sources.  By linking reconstructed pedigrees
+with genetic sample metadata, @code{wpeR} produces spatial and temporal
+visualizations as well as tabular summaries that support interpretation of
+family structures and dynamics.  The main goal of the package is to provide a
+solution for the analysis of complex wild pedigree data and to help the user to
+gain insights into genetic relationships within wild animal populations.")
+    (license license:gpl3+)))
+
 (define-public r-wpa
   (package
     (name "r-wpa")
@@ -2666,13 +2697,13 @@ given parallel corpus.")
 (define-public r-worcs
   (package
     (name "r-worcs")
-    (version "0.1.18")
+    (version "0.1.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worcs" version))
        (sha256
-        (base32 "1ab841yan8q6iqcyr9y61p67j1jcdlxqjy768ax70kjms1yf5jgr"))))
+        (base32 "1q41ijd2pl8bdyv2nf61yh07n2nm9zgqd4n3zlrq357izbj5pl3j"))))
     (properties `((upstream-name . "worcs")))
     (build-system r-build-system)
     (arguments
@@ -5100,13 +5131,13 @@ overview summary log of the entire batch execution.")
 (define-public r-whippr
   (package
     (name "r-whippr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "whippr" version))
        (sha256
-        (base32 "17r1wcgpriynpd3z7l6wa4al72x4ad07y1mr5jjafxgms6l554lx"))))
+        (base32 "19iyj3nrar3wlim8ndbnfrfjg1y6ih7x9hx1z5g1qvn8x6slzxxw"))))
     (properties `((upstream-name . "whippr")))
     (build-system r-build-system)
     (arguments
@@ -5271,13 +5302,13 @@ multiple languages.")
 (define-public r-whatsr
   (package
     (name "r-whatsr")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WhatsR" version))
        (sha256
-        (base32 "0i6mhc3cm7m885v5sznci7bqr6h2bfgnv466v5jwdwidisnzrhgx"))))
+        (base32 "1j1s8avr449sbm8683669n91q94nr9wqy65n05pzmywkzs7nbiis"))))
     (properties `((upstream-name . "WhatsR")))
     (build-system r-build-system)
     (arguments
@@ -5292,14 +5323,14 @@ multiple languages.")
                              r-qdap
                              r-mgsub
                              r-lubridate
+                             r-leaflet
                              r-ggwordcloud
                              r-ggplot2
-                             r-ggmap
                              r-dplyr
                              r-data-table
                              r-checkmate
                              r-anytime))
-    (home-page "https://cran.r-project.org/package=WhatsR")
+    (home-page "https://gesiscss.github.io/WhatsR/")
     (synopsis
      "Parsing, Anonymizing and Visualizing Exported 'WhatsApp' Chat Logs")
     (description
@@ -9706,13 +9737,13 @@ Experimental and Computer Laboratory at ETH Zurich, Switzerland.")
 (define-public r-wals
   (package
     (name "r-wals")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WALS" version))
        (sha256
-        (base32 "0z3863ml85065w23m6wr4hd5a0vdaiavpmrbal8kz4igj6j34ff6"))))
+        (base32 "0rv61z62qfs0ss80lfv2jb537ixqfdwap7xbk0a1fwfr9h4zhfgw"))))
     (properties `((upstream-name . "WALS")))
     (build-system r-build-system)
     (arguments

@@ -1380,6 +1380,31 @@ provides functions to parse URLs into their components, such as scheme, user,
 password, host, port, path, query, and fragment.")
     (license license:expat)))
 
+(define-public r-urlexplorer
+  (package
+    (name "r-urlexplorer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "urlexplorer" version))
+       (sha256
+        (base32 "0ds243hqf807zkjxja09l45796im1vd7vclx8adjwyb8d1vgsmyb"))))
+    (properties `((upstream-name . "urlexplorer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-tibble r-stringr r-rlang r-dplyr))
+    (home-page "https://github.com/MarekProkop/urlexplorer")
+    (synopsis "Structural Analysis and Pattern Discovery in URL Datasets")
+    (description
+     "Offers tools for parsing and analyzing URL datasets, extracting key components
+and identifying common patterns.  It aids in examining website architecture and
+identifying SEO issues, helping users optimize web presence and content
+strategy.")
+    (license license:expat)))
+
 (define-public r-urbin
   (package
     (name "r-urbin")

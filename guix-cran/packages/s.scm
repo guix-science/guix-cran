@@ -21138,13 +21138,13 @@ models can be found in next references Minguez, R., Lopez, F.A., and Mur, J.
 (define-public r-spstack
   (package
     (name "r-spstack")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spStack" version))
        (sha256
-        (base32 "07s0pcgxj365ry8f0xv4cb1g9p0qf7dkfqd840g91nk1akjqrb29"))))
+        (base32 "0qn6nqg9fva9zdn2b3kby0yc57c4wl9gf25c1jkd3ywy7qwgg9wc"))))
     (properties `((upstream-name . "spStack")))
     (build-system r-build-system)
     (arguments
@@ -34776,6 +34776,30 @@ imposition of monotonicity and concavity constraints on the estimated frontier."
     (description
      "Efficient estimation of multivariate skew-normal distribution in closed form.")
     (license license:gpl2+)))
+
+(define-public r-snc
+  (package
+    (name "r-snc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "snc" version))
+       (sha256
+        (base32 "0x9h08241vn25lam4lglrcr6cg1yqk4ma1nflqv3d8lj2vb7v6cn"))))
+    (properties `((upstream-name . "snc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=snc")
+    (synopsis "Strongest Neighbor Coherence")
+    (description
+     "Computes Strongest Neighbor Coherence (SNC), a structural diagnostic that
+replaces Cronbach's alpha using top-k correlation structure.  For methodology,
+see Wells (2025) <https://github.com/@code{TheotherDrWells/snc>}.")
+    (license license:expat)))
 
 (define-public r-snbdata
   (package
@@ -52213,13 +52237,13 @@ Learning Theory\".")
 (define-public r-sharx
   (package
     (name "r-sharx")
-    (version "1.0-6")
+    (version "1.0-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sharx" version))
        (sha256
-        (base32 "0fyz7m8zx2i4r1kj5svzmn6l43f7zg2sj4c3ynyjwa1lzi5wf75v"))))
+        (base32 "0s2h9n9p9nns3bfh2fvzjd95nxkd2lsmssl6xgd3ksq311ymd1s7"))))
     (properties `((upstream-name . "sharx")))
     (build-system r-build-system)
     (arguments
@@ -58894,6 +58918,50 @@ genotypes in the F2 to F7 selfing generations.  The conditional probabilities
 are derived automatically and in symbolic form.  The package also provides
 functionality to extract and evaluate the relevant probabilities.")
     (license license:bsd-3)))
+
+(define-public r-selfcontrolledcaseseries
+  (package
+    (name "r-selfcontrolledcaseseries")
+    (version "6.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SelfControlledCaseSeries" version))
+       (sha256
+        (base32 "0gn78fr62r05zjg3ln5nx8qnkgh5xw7bpg1srfkvbv86rx22j1qj"))))
+    (properties `((upstream-name . "SelfControlledCaseSeries")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sqlrender
+                             r-resultmodelmanager
+                             r-readr
+                             r-rcpp
+                             r-r6
+                             r-parallellogger
+                             r-jsonlite
+                             r-ggplot2
+                             r-empiricalcalibration
+                             r-dplyr
+                             r-digest
+                             r-databaseconnector
+                             r-cyclops
+                             r-checkmate
+                             r-andromeda))
+    (native-inputs (list r-knitr))
+    (home-page "https://ohdsi.github.io/SelfControlledCaseSeries/")
+    (synopsis "Self-Controlled Case Series")
+    (description
+     "Execute the self-controlled case series (SCCS) design using observational data
+in the OMOP Common Data Model.  Extracts all necessary data from the database
+and transforms it to the format required for SCCS. Age and season can be modeled
+using splines assuming constant hazard within calendar months.  Event-dependent
+censoring of the observation period can be corrected for.  Many exposures can be
+included at once (MSCCS), with regularization on all coefficients except for the
+exposure of interest.  Includes diagnostics for all major assumptions of the
+SCCS.")
+    (license license:asl2.0)))
 
 (define-public r-self
   (package
@@ -67189,13 +67257,13 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
 (define-public r-scan
   (package
     (name "r-scan")
-    (version "0.65.0")
+    (version "0.65.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scan" version))
        (sha256
-        (base32 "06nkdnrmzhblb52g1k9j3kydnnsl73hzsyhry6l2ary7x3lphlmz"))))
+        (base32 "1ljjz3w482c6cr043wml3h64rananh2y5skcgy08mc9pzlr9m52a"))))
     (properties `((upstream-name . "scan")))
     (build-system r-build-system)
     (arguments
@@ -67528,13 +67596,13 @@ and <http://foges.github.io/pogs/stp/r>.")
 (define-public r-sbtools
   (package
     (name "r-sbtools")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sbtools" version))
        (sha256
-        (base32 "055klpw4hifbwk4rr9wr7dwqxgvsvqf572pk268qvmixiyil0c3k"))))
+        (base32 "0gwy8hn79b0z8j9dalgkzyq6j127pll13fsd248aiarin884yiax"))))
     (properties `((upstream-name . "sbtools")))
     (build-system r-build-system)
     (arguments
@@ -72433,6 +72501,47 @@ reference, see Rao and Molina (2015) <doi:10.1002/9781118735855>, Torabi and Rao
 <http://www.asasrms.org/Proceedings/y2007/Files/JSM2007-000559.pdf>, and
 Erciulescu et al.(2019) <doi:10.1111/rssa.12390>.")
     (license license:gpl3)))
+
+(define-public r-saehb-tf-beta
+  (package
+    (name "r-saehb-tf-beta")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "saeHB.TF.beta" version))
+       (sha256
+        (base32 "14hnkag0pw82fj88bhrc506dgks6q9834wiyi20sc0wv8c2m6xb8"))))
+    (properties `((upstream-name . "saeHB.TF.beta")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-bh
+                             r-bayesplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Nasyazahira/saeHB.TF.beta")
+    (synopsis "SAE using HB Twofold Subarea Model under Beta Distribution")
+    (description
+     "Estimates area and subarea level proportions using the Small Area Estimation
+(SAE) Twofold Subarea Model with a hierarchical Bayesian (HB) approach under
+Beta distribution.  A number of simulated datasets generated for illustration
+purposes are also included.  The rstan package is employed to estimate
+parameters via the Hamiltonian Monte Carlo and No U-Turn Sampler algorithm.  The
+model-based estimators include the HB mean, the variation of the mean, and
+quantiles.  For references, see Rao and Molina (2015)
+<doi:10.1002/9781118735855>, Torabi and Rao (2014)
+<doi:10.1016/j.jmva.2014.02.001>, Leyla Mohadjer et al.(2007)
+<http://www.asasrms.org/Proceedings/y2007/Files/JSM2007-000559.pdf>, and
+Erciulescu et al.(2019) <doi:10.1111/rssa.12390>.")
+    (license license:gpl3+)))
 
 (define-public r-saehb-spatial
   (package

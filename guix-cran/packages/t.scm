@@ -12211,19 +12211,27 @@ implement new behavior.")
 (define-public r-tourr
   (package
     (name "r-tourr")
-    (version "1.2.4")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tourr" version))
        (sha256
-        (base32 "1qh1cwi1jf58jblbigxgbsxkc8w3vh5kdi9zh0m2xn5mmnyjjspa"))))
+        (base32 "0ywpfa6ip4gyrdmzxx2kbnsa3pir58abq2m9bwim4id6kl862q1p"))))
     (properties `((upstream-name . "tourr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-mass r-dplyr))
+    (propagated-inputs (list r-tibble
+                             r-minerva
+                             r-mgcv
+                             r-mass
+                             r-geozoo
+                             r-energy
+                             r-dplyr
+                             r-cassowaryr
+                             r-ash))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ggobi/tourr")
     (synopsis "Tour Methods for Multivariate Data Visualisation")
@@ -14000,13 +14008,13 @@ nodes in the network.")
 (define-public r-tna
   (package
     (name "r-tna")
-    (version "0.5.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tna" version))
        (sha256
-        (base32 "1fdd59f9njwh64hasircv5kx8zhjy0csl3q28aax7y911wbi7xd0"))))
+        (base32 "0c9j73ygb8d00c1jk1svadg6hxp8m76sl2l6zfq9b0p1553cxrz8"))))
     (properties `((upstream-name . "tna")))
     (build-system r-build-system)
     (arguments
@@ -18046,6 +18054,43 @@ improvements when implementing the method in R. These improvements allow users
 to inspect, visualize, and tune the synthetic control more easily.  A key
 benefit of a tidy implementation is that the entire preparation process for
 building the synthetic control can be accomplished in a single pipe.")
+    (license license:expat)))
+
+(define-public r-tidysummary
+  (package
+    (name "r-tidysummary")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidysummary" version))
+       (sha256
+        (base32 "08fwncwf4wl0m46zvsmkyylkhii6v1dx26psfkqpfpgq15b6yxpi"))))
+    (properties `((upstream-name . "tidysummary")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tidyplots
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-qqplotr
+                             r-glue
+                             r-fbasics
+                             r-dplyr
+                             r-cli
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tidysummary")
+    (synopsis "An Elegant Approach to Summarizing Clinical Data")
+    (description
+     "Streamlines the analysis of clinical data by automatically selecting appropriate
+statistical descriptions and inference methods based on variable types.  For
+method details see Motulsky H J (2016)
+<https://www.graphpad.com/guides/prism/10/statistics/index.htm> and d'Agostino R
+B (1971) <doi:10.1093/biomet/58.2.341>.")
     (license license:expat)))
 
 (define-public r-tidysummaries
@@ -22090,13 +22135,13 @@ function.")
 (define-public r-theorytools
   (package
     (name "r-theorytools")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "theorytools" version))
        (sha256
-        (base32 "0h9i3ksn6wzvcjv5i2pnm96snjznfq9pljldn961z8m5dm0bpmiw"))))
+        (base32 "128p1s0fm3awmc2wsn86ixnblaik7ym02r2w4kjvghd0m0zvli9g"))))
     (properties `((upstream-name . "theorytools")))
     (build-system r-build-system)
     (arguments
@@ -22358,20 +22403,19 @@ package library and maybe say thank you'.")
 (define-public r-thamesmix
   (package
     (name "r-thamesmix")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thamesmix" version))
        (sha256
-        (base32 "00qwzhr9qlja43v0c5p3f51vnyx2c3ij5b738j30b1gzsz41mg8s"))))
+        (base32 "1z7nm9wq2l5ix351a112y4ia9qg446ah2qmj963jjjv9falqyvh3"))))
     (properties `((upstream-name . "thamesmix")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-withr
-                             r-uniformly
                              r-sparsediscrim
                              r-rfast
                              r-quadprog
@@ -22394,27 +22438,27 @@ importance sampling.  Metodiev, Irons, Perrot-DockÃ¨s, Latouche & Raftery (202
 (define-public r-thames
   (package
     (name "r-thames")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thames" version))
        (sha256
-        (base32 "09k4ygi865115c98mgzpvx7ab4kbghasg3fvnmd3c1nhs6h7szmn"))))
+        (base32 "0g886wki7wfvyyf95xr9jz7rgg6vbg5q7jrn0k3czbmxm9ip7lpl"))))
     (properties `((upstream-name . "thames")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-uniformly))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=thames")
     (synopsis "Truncated Harmonic Mean Estimator of the Marginal Likelihood")
     (description
      "This package implements the truncated harmonic mean estimator (THAMES) of the
 reciprocal marginal likelihood using posterior samples and unnormalized log
 posterior values via reciprocal importance sampling.  Metodiev, Perrot-DockÃ¨s,
-Ouadah, Irons, & Raftery (2023) <@code{arXiv:2305.08952>}.")
+Ouadah, Irons, Latouche, & Raftery (2024).  Bayesian Analysis.
+<doi:10.1214/24-BA1422>.")
     (license license:gpl3+)))
 
 (define-public r-thaipdf

@@ -13536,6 +13536,34 @@ biased caused by these.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file LICENCE")))))
 
+(define-public r-glsm
+  (package
+    (name "r-glsm")
+    (version "0.0.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glsm" version))
+       (sha256
+        (base32 "1gr6bbqdyp9bxq6jsh30yqwzvkxlzvji0yz546k6lvm101cj5p8f"))))
+    (properties `((upstream-name . "glsm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam r-plyr r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=glsm")
+    (synopsis "Saturated Model Log-Likelihood for Multinomial Outcomes")
+    (description
+     "When the response variable Y takes one of R > 1 values, the function
+@code{glsm()} computes the maximum likelihood estimates (MLEs) of the parameters
+under four models: null, complete, saturated, and logistic.  It also calculates
+the log-likelihood values for each model.  This method assumes independent,
+non-identically distributed variables.  For grouped data with a multinomial
+outcome, where observations are divided into J populations, the function
+@code{glsm()} provides estimation for any number K of explanatory variables.")
+    (license license:expat)))
+
 (define-public r-glrth
   (package
     (name "r-glrth")
@@ -15222,13 +15250,13 @@ generated.")
 (define-public r-gllvm
   (package
     (name "r-gllvm")
-    (version "2.0.2")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gllvm" version))
        (sha256
-        (base32 "1la0wpds8s65739lbqhp4cx198yq6msliy447nri4jf4bqcsjl8z"))))
+        (base32 "0ashacvv6n76z7dmcbsmp8sn41mhm7az7g05dx82wapcbwvi8wfp"))))
     (properties `((upstream-name . "gllvm")))
     (build-system r-build-system)
     (arguments
@@ -30458,6 +30486,34 @@ names using the Brazilian Institute of Geography and Statistics Census data
 (<https://censo2010.ibge.gov.br/nomes/>).")
     (license license:gpl2+)))
 
+(define-public r-genderapi
+  (package
+    (name "r-genderapi")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "genderapi" version))
+       (sha256
+        (base32 "1hp7cycvml0p4jkmz6rjcn3l09q2dqn85n6dl6jlg904f07ypkxx"))))
+    (properties `((upstream-name . "genderapi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr))
+    (home-page "https://github.com/GenderAPI/genderapi-R")
+    (synopsis "Client for 'GenderAPI.io'")
+    (description
+     "This package provides an interface to the @code{GenderAPI.io} web service
+(<https://www.genderapi.io>) for determining gender from personal names, email
+addresses, or social media usernames.  Functions are available to submit single
+or batch queries and retrieve additional information such as accuracy scores and
+country-specific gender predictions.  This package simplifies integration of
+@code{GenderAPI.io} into R workflows for data cleaning, user profiling, and
+analytics tasks.")
+    (license license:expat)))
+
 (define-public r-gender
   (package
     (name "r-gender")
@@ -30560,13 +30616,13 @@ which low, medium, and high thresholds are user-defined.")
 (define-public r-gencodymo2
   (package
     (name "r-gencodymo2")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GencoDymo2" version))
        (sha256
-        (base32 "1vpwzz8z95kric9wj7l2nc0sd93396rsja4s1vrbip9qjhmdv3ji"))))
+        (base32 "080lvfp58f9b9qvm6z2m4n1jyi474k7m3anvniis26pard1wlqrl"))))
     (properties `((upstream-name . "GencoDymo2")))
     (build-system r-build-system)
     (arguments
@@ -30577,10 +30633,10 @@ which low, medium, and high thresholds are user-defined.")
                              r-rcurl
                              r-progress
                              r-plotrix
+                             r-iranges
                              r-genomicranges
                              r-dplyr
                              r-data-table
-                             r-bsgenome-hsapiens-ucsc-hg38
                              r-bsgenome
                              r-biostrings))
     (native-inputs (list r-knitr))
@@ -32346,13 +32402,13 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalraster" version))
        (sha256
-        (base32 "023j30k63hmkmnynq8ip8h6hphzs292l67adxh5ai53zmj72ydby"))))
+        (base32 "1wkf7fgi2vg40ysmgmakhg9gj9zwdlspl036qggn6hg4217f4ljs"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (arguments

@@ -3209,13 +3209,13 @@ age at peak growth velocity and peak growth velocity.")
 (define-public r-bsims
   (package
     (name "r-bsims")
-    (version "0.3-2")
+    (version "0.3-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bSims" version))
        (sha256
-        (base32 "1aflarz69rk4dlrp5gmgi6hs6mx0m8xhpp7ppv6m5gsjf8g18iaf"))))
+        (base32 "0cahjnn2ip1iv63ym22qb6hrgpz7hsd6nzw06b7mqwx15mrwdw1q"))))
     (properties `((upstream-name . "bSims")))
     (build-system r-build-system)
     (arguments
@@ -18725,6 +18725,47 @@ Hunter and Hunter II. Useful for statistical design of experiments, especially
 factorial experiments.")
     (license license:gpl2+)))
 
+(define-public r-bhetgp
+  (package
+    (name "r-bhetgp")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bhetGP" version))
+       (sha256
+        (base32 "092bsc62k72dnibxnjbpcgbqx16sh8x8vsi0686hv1482dlyxbmj"))))
+    (properties `((upstream-name . "bhetGP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-matrix
+                             r-lagp
+                             r-hetgp
+                             r-gpvecchia
+                             r-gpgp
+                             r-foreach
+                             r-fnn
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=bhetGP")
+    (synopsis "Bayesian Heteroskedastic Gaussian Processes")
+    (description
+     "This package performs Bayesian posterior inference for heteroskedastic Gaussian
+processes.  Models are trained through MCMC including elliptical slice sampling
+(ESS) of latent noise processes and Metropolis-Hastings sampling of kernel
+hyperparameters.  Replicates are handled efficientyly through a Woodbury
+formulation of the joint likelihood for the mean and noise process (Binois, M.,
+Gramacy, R., Ludkovski, M. (2018) <doi:10.1080/10618600.2018.1458625>) For large
+data, Vecchia-approximation for faster computation is leveraged (Sauer, A.,
+Cooper, A., and Gramacy, R., (2023), <doi:10.1080/10618600.2022.2129662>).
+Incorporates @code{OpenMP} and SNOW parallelization and utilizes C'/'C++ under
+the hood.")
+    (license license:lgpl2.0+)))
+
 (define-public r-bhat
   (package
     (name "r-bhat")
@@ -23407,13 +23448,13 @@ exposures and outcomes.  For more details, see Talbot et al. (2015)
 (define-public r-bcea
   (package
     (name "r-bcea")
-    (version "2.4.8")
+    (version "2.4.81")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BCEA" version))
        (sha256
-        (base32 "1m2d6w8dlj3g8q0jinyzyz2k2d8xdwzcyzmnddx9lsb44qkqyq0b"))))
+        (base32 "18247xd1xs6agh3il26rjgi1x7iflhc40lah2fzf9sbcn5r97q8y"))))
     (properties `((upstream-name . "BCEA")))
     (build-system r-build-system)
     (arguments
@@ -26161,6 +26202,48 @@ Lee, R. D., & Carter, L. R. (1992) <doi:10.1080/01621459.1992.10475265> and
 Pedroza, C. (2006) <doi:10.1093/biostatistics/kxj024>.  Journal publication
 available at <doi:10.18637/jss.v113.i09>.")
     (license license:gpl3)))
+
+(define-public r-bayesmofo
+  (package
+    (name "r-bayesmofo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesMoFo" version))
+       (sha256
+        (base32 "1bh8yy1plpkzrd3dphhspn9lliadh9rylrfyxd78p18gcnhcfr63"))))
+    (properties `((upstream-name . "BayesMoFo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyverse
+                             r-rlang
+                             r-rjags
+                             r-magrittr
+                             r-insight
+                             r-dplyr
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BayesMoFo")
+    (synopsis "Bayesian Mortality Forecasting")
+    (description
+     "Carry out Bayesian estimation and forecasting for a variety of stochastic
+mortality models using vague prior distributions.  Models supported include
+numerous well-established approaches introduced in the actuarial and demographic
+literature, such as the Lee-Carter (1992) <doi:10.1080/01621459.1992.10475265>,
+the Cairns-Blake-Dowd (2009) <doi:10.1080/10920277.2009.10597538>, the Li-Lee
+(2005) <doi:10.1353/dem.2005.0021>, and the Plat (2009)
+<doi:10.1016/j.insmatheco.2009.08.006> models.  The package is designed to
+analyse stratified mortality data structured as a 3-dimensional array of
+dimensions p Ã A Ã T (strata Ã age Ã year).  Stratification can represent
+factors such as cause of death, country, deprivation level, sex, geographic
+region, insurance product, marital status, socioeconomic group, or smoking
+behavior.  While the primary focus is on analysing stratified data (p > 1), the
+package can also handle mortality data that are not stratified (p = 1).  Model
+selection via the Deviance Information Criterion (DIC) is supported.")
+    (license license:gpl2+)))
 
 (define-public r-bayesmlogit
   (package
@@ -32996,13 +33079,13 @@ Bayesian phylogenetics easily and reproducibly from R'.")
 (define-public r-babelmixr2
   (package
     (name "r-babelmixr2")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "babelmixr2" version))
        (sha256
-        (base32 "1fgifa1ibq423vhgqzmhvryngszwvjhcnkl6q0ws95y3q9p449wk"))))
+        (base32 "0ifvi00m5nxkkjqyxbb36xai90pk3a7znbd4bfy6y2nvkxzs7gx7"))))
     (properties `((upstream-name . "babelmixr2")))
     (build-system r-build-system)
     (arguments
@@ -33015,9 +33098,12 @@ Bayesian phylogenetics easily and reproducibly from R'.")
                              r-rcpp
                              r-qs
                              r-nonmem2rx
+                             r-nlmixr2plot
+                             r-nlmixr2extra
                              r-nlmixr2est
-                             r-nlmixr2
+                             r-nlmixr2data
                              r-monolix2rx
+                             r-magrittr
                              r-lotri
                              r-digest
                              r-cli
@@ -33066,19 +33152,19 @@ fragment counts given @code{mRNA} counts.")
 (define-public r-b64
   (package
     (name "r-b64")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "b64" version))
        (sha256
-        (base32 "1ccac83ppsfpf6jlh3q368p7yfdk9qgykr7hv7n7aphiq23nl39r"))))
+        (base32 "1vx0x31php5cy07wayq26hh0hgcmjfkmw1mjhz2dc7k7040ky9ab"))))
     (properties `((upstream-name . "b64")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list))
+    (inputs (list xz))
     (home-page "https://extendr.github.io/b64/")
     (synopsis "Fast and Vectorized Base 64 Engine")
     (description

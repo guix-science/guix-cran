@@ -2386,13 +2386,13 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.2.14")
+    (version "0.2.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lrstat" version))
        (sha256
-        (base32 "0i4303v7h8lil5lg67ff09s8cvy7rnmgi3vhlrggfc8qc4nm7wjc"))))
+        (base32 "0f4r5r3i706qi52fih4lx1rkc990pf37332dni5callzfjw88f4v"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
     (arguments
@@ -5608,30 +5608,25 @@ Monte Carlo Logic Regression is described in and Kooperberg and Ruczinski (2005)
 (define-public r-logicforest
   (package
     (name "r-logicforest")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LogicForest" version))
        (sha256
-        (base32 "11f64w80a14yqbngajahw397zfa9yx86asylnmszzx8l2qvw307c"))))
+        (base32 "1sf41sj9l7dfpr3giay9q84v52rscrrfh1x45njx3g9ysn3pl3i3"))))
     (properties `((upstream-name . "LogicForest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-logicreg))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-survival r-logicreg))
     (home-page "https://cran.r-project.org/package=LogicForest")
     (synopsis "Logic Forest")
     (description
-     "Two classification ensemble methods based on logic regression models.
-@code{LogForest()} uses a bagging approach to construct an ensemble of logic
-regression models. @code{LBoost()} uses a combination of boosting and
-cross-validation to construct an ensemble of logic regression models.  Both
-methods are used for classification of binary responses based on binary
-predictors and for identification of important variables and variable
-interactions predictive of a binary outcome.  Wolf, B.J., Slate, E.H., Hill,
+     "Logic Forest is an ensemble machine learning method that identifies important
+and interpretable combinations of binary predictors using logic regression trees
+to model complex relationships with an outcome.  Wolf, B.J., Slate, E.H., Hill,
 E.G. (2010) <doi:10.1093/bioinformatics/btq354>.")
     (license license:gpl3)))
 
@@ -8985,13 +8980,13 @@ In _Digital Humanities 2022: Conference Abstracts_, 636-637.")
 (define-public r-literanger
   (package
     (name "r-literanger")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "literanger" version))
        (sha256
-        (base32 "15y9jmpml0a5j5fafg7i7zgjxy17bcm7il8gb3cjj8nn2zphamy4"))))
+        (base32 "1rsf1f2p31kqjvkpkwfhsdl4fjcdqbffy38xdmxyzlm9q40qhqnh"))))
     (properties `((upstream-name . "literanger")))
     (build-system r-build-system)
     (arguments
@@ -8999,7 +8994,7 @@ In _Digital Humanities 2022: Conference Abstracts_, 636-637.")
       #:tests? #f))
     (propagated-inputs (list r-rcereal r-cpp11))
     (home-page "https://gitlab.com/stephematician/literanger")
-    (synopsis "Random Forests for Multiple Imputation Based on 'ranger'")
+    (synopsis "Fast Serializable Random Forests Based on 'ranger'")
     (description
      "An updated implementation of R package ranger by Wright et al, (2017)
 <doi:10.18637/jss.v077.i01> for training and predicting from random forests,
@@ -9009,10 +9004,10 @@ Imputation by Chained Equations (MICE) by van Buuren (2007)
 trees are currently supported.  Sparse data of class @code{dgCMatrix} (R package
 Matrix') can be directly analyzed.  Conventional bagged predictions are
 available alongside an efficient prediction for MICE via the algorithm proposed
-by Doove et al (2014) <doi:10.1016/j.csda.2013.10.025>.  Survival and
-probability forests are not supported in the update, nor is data of class
-gwaa.data (R package @code{GenABEL}'); use the original ranger package for these
-analyses.")
+by Doove et al (2014) <doi:10.1016/j.csda.2013.10.025>.  Trained forests can be
+written to and read from storage.  Survival and probability forests are not
+supported in the update, nor is data of class gwaa.data (R package
+@code{GenABEL}'); use the original ranger package for these analyses.")
     (license license:gpl3)))
 
 (define-public r-liteq
@@ -17042,13 +17037,13 @@ lavaan path model without having to write the DOT language graph specification."
 (define-public r-lavaangui
   (package
     (name "r-lavaangui")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavaangui" version))
        (sha256
-        (base32 "0pnv3li6844h0802jp02z0r4pgj92ak5mr59hpj0l904ixhlfqag"))))
+        (base32 "1bh3apsq750fv268g6ws8m6m4w7sxclph2gzxr7kjh6f4lphzxpf"))))
     (properties `((upstream-name . "lavaangui")))
     (build-system r-build-system)
     (arguments

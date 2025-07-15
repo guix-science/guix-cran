@@ -1456,13 +1456,13 @@ textbook, 3rd edition.")
 (define-public r-nsm3
   (package
     (name "r-nsm3")
-    (version "1.19")
+    (version "1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NSM3" version))
        (sha256
-        (base32 "1pm4h8khl6vrspwbdbl13m83xm672x30xyzr3cqdqqgsz740bpn4"))))
+        (base32 "1yg8d7n9as81j5z18xjy0l46kqzils6i7bfy83kh92f989wy2193"))))
     (properties `((upstream-name . "NSM3")))
     (build-system r-build-system)
     (arguments
@@ -9750,33 +9750,6 @@ explain the Null Hypothesis Significance Testing process, its use and/or
 shortcomings.")
     (license license:gpl3)))
 
-(define-public r-nhsrwaitinglist
-  (package
-    (name "r-nhsrwaitinglist")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NHSRwaitinglist" version))
-       (sha256
-        (base32 "0gffg38nq2mg7ska3i9bxsajaxjbmj0ida622h067bh1igii517n"))))
-    (properties `((upstream-name . "NHSRwaitinglist")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-randomnames r-dplyr r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://nhs-r-community.github.io/NHSRwaitinglist/")
-    (synopsis "Waiting List Metrics Using Queuing Theory")
-    (description
-     "Waiting list management using queuing theory to analyse, predict and manage
-queues, based on the approach described in Fong et al. (2022)
-<doi:10.1101/2022.08.23.22279117>.  Aimed at UK National Health Service (NHS)
-applications, waiting list summary statistics, target-value calculations,
-waiting list simulation, and scheduling functions are included.")
-    (license license:expat)))
-
 (define-public r-nhsrplotthedots
   (package
     (name "r-nhsrplotthedots")
@@ -14369,20 +14342,19 @@ nephrology.")
 (define-public r-neotoma2
   (package
     (name "r-neotoma2")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neotoma2" version))
        (sha256
-        (base32 "1p6wj7ifg1lgxw8nh2hia6ahx8gszhyqaj59qnm7bd5dycfwifng"))))
+        (base32 "0lhlsfgibg69yl28s9ijyjgy0x713lg83j8xhd3a43d5279wndkp"))))
     (properties `((upstream-name . "neotoma2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-wk
-                             r-uuid
+    (propagated-inputs (list r-uuid
                              r-tidyr
                              r-stringr
                              r-sf
@@ -14397,6 +14369,7 @@ nephrology.")
                              r-gtools
                              r-geojsonsf
                              r-dplyr
+                             r-digest
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/NeotomaDB/neotoma2")
@@ -17848,13 +17821,13 @@ particular clusters and clones within a repertoire.  Yang et al. (2023)
 (define-public r-nailer
   (package
     (name "r-nailer")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NaileR" version))
        (sha256
-        (base32 "070j5nvm09xf5jkcahxz0kl928xfb94vzjqmhvrr8mm9w58v15mw"))))
+        (base32 "1spsy1154xg3g4qb8wpsizpbhdms6k7kr9msn4bx9mr7j2w9m36w"))))
     (properties `((upstream-name . "NaileR")))
     (build-system r-build-system)
     (arguments
@@ -17869,6 +17842,7 @@ particular clusters and clones within a repertoire.  Yang et al. (2023)
                              r-glue
                              r-factominer
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=NaileR")
     (synopsis "Interpreting Latent Variables with AI")
     (description

@@ -2095,13 +2095,13 @@ the @code{voiceR} package is provided in Hildebrand et al.  2020
 (define-public r-voice
   (package
     (name "r-voice")
-    (version "0.4.21")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "voice" version))
        (sha256
-        (base32 "0fh1k0596npm6yah992g3hc79g6lh12b7k97nnxlm1pgpdbb503v"))))
+        (base32 "1b9gqjwci1ysxxf0xmyhng286lc792wj87l5aqlkwd5xmzynyl4v"))))
     (properties `((upstream-name . "voice")))
     (build-system r-build-system)
     (arguments
@@ -2112,18 +2112,23 @@ the @code{voiceR} package is provided in Hildebrand et al.  2020
                              r-tuner
                              r-tidyselect
                              r-tibble
+                             r-tabr
                              r-seewave
                              r-reticulate
                              r-r-utils
-                             r-dplyr))
+                             r-httr
+                             r-htmltools
+                             r-ggplot2
+                             r-dplyr
+                             r-arrangements))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/filipezabala/voice")
     (synopsis
-     "Tools for Voice Analysis, Speaker Recognition and Mood Inference")
+     "Speaker Recognition, Voice Analysis and Mood Inference via Music Theory")
     (description
-     "This package provides tools for voice analysis, speaker recognition and mood
-inference.  Gathers R and Python tools to solve problems concerning voice and
-audio in general.")
+     "This package provides tools for audio data analysis, including feature
+extraction, pitch detection, and speaker identification.  Designed for voice
+research and signal processing applications.")
     (license license:gpl3)))
 
 (define-public r-voi
@@ -6705,13 +6710,13 @@ Keyser & Gijbels (2024) <doi:10.1016/j.jmva.2024.105336>, De Keyser & Gijbels
 (define-public r-vecctmvn
   (package
     (name "r-vecctmvn")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VeccTMVN" version))
        (sha256
-        (base32 "0ylpzdbq5c3cpmyciss9y60b5pg6fg7svv54ilb9ml589320zmax"))))
+        (base32 "0x0nd07015ibp1q989kwnwig0c85vvfc30azswyn4dia8dwd5zzf"))))
     (properties `((upstream-name . "VeccTMVN")))
     (build-system r-build-system)
     (arguments

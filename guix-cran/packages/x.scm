@@ -733,13 +733,13 @@ graphics for data exploration and model diagnostics.")
 (define-public r-xportr
   (package
     (name "r-xportr")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xportr" version))
        (sha256
-        (base32 "167m68ihi93gvxz3zr84mya50jpigbwr47s05g8xdn0jv1vifb7r"))))
+        (base32 "1dxi42813bxlpbd11gqyrm41v8qs772hkpg7y3gkrgvpmca4pf4w"))))
     (properties `((upstream-name . "xportr")))
     (build-system r-build-system)
     (arguments
