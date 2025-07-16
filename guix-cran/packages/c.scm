@@ -21462,19 +21462,19 @@ coastline and administrative regions boundaries.")
 (define-public r-comorbidpgs
   (package
     (name "r-comorbidpgs")
-    (version "0.3.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comorbidPGS" version))
        (sha256
-        (base32 "1dy8yfyy88vw2x8mk6n3nx2dbkf17m4ibvbkxhrywralvll0wspa"))))
+        (base32 "0nzxl11m7913j0h63rzlaji2nvwn2hqmd6mdyf8r9nh1l1a3zxj3"))))
     (properties `((upstream-name . "comorbidPGS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-nnet r-mass r-ggplot2))
+    (propagated-inputs (list r-nnet r-mass r-ivreg r-ggplot2))
     (home-page "https://cran.r-project.org/package=comorbidPGS")
     (synopsis
      "Assessing Predisposition Between Phenotypes using Polygenic Scores")

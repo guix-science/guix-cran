@@ -5043,6 +5043,61 @@ have residual such as: linear regression, mixed model and so on.  Details are
 given in Foreman et al. (2015) <doi:10.1186/1478-7954-10-1>.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-assumpsure
+  (package
+    (name "r-assumpsure")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AssumpSure" version))
+       (sha256
+        (base32 "0qzp3zwkgj8q77105h40wzb26lw9apbj88jqx74181i92szf2w66"))))
+    (properties `((upstream-name . "AssumpSure")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyverse
+                             r-sjplot
+                             r-shinyscreenshot
+                             r-shinyjs
+                             r-shinybs
+                             r-shiny
+                             r-see
+                             r-rstatix
+                             r-performance
+                             r-patchwork
+                             r-nnet
+                             r-mvn
+                             r-modelbased
+                             r-mass
+                             r-lmertest
+                             r-knitr
+                             r-htmltools
+                             r-fontawesome
+                             r-dt
+                             r-dharma
+                             r-correlation
+                             r-compositions
+                             r-car
+                             r-bslib
+                             r-broom-mixed
+                             r-broom
+                             r-bestnormalize))
+    (home-page "https://cran.r-project.org/package=AssumpSure")
+    (synopsis
+     "'shiny' Application for Statistical Test Assumption Checking and Guidance")
+    (description
+     "This package provides a shiny application to assess statistical assumptions and
+guide users toward appropriate tests.  The app is designed for researchers with
+minimal statistical training and provides diagnostics, plots, and test
+recommendations for a wide range of analyses.  Many statistical assumptions are
+implemented using the package rstatix (Kassambara, 2019)
+<doi:10.32614/CRAN.package.rstatix> and performance (LÃ¼decke et al., 2021)
+<doi:10.21105/joss.03139>.")
+    (license license:gpl3)))
+
 (define-public r-assortnet
   (package
     (name "r-assortnet")
@@ -8401,13 +8456,13 @@ components.")
 (define-public r-arctosr
   (package
     (name "r-arctosr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ArctosR" version))
        (sha256
-        (base32 "0icqbx0w4v6696xd277a52jf39xqi9arb6rxvc5sp64zwl0gndky"))))
+        (base32 "08aspnmzlnx9z92plwr5rpvfqwyynnd8piq7jf3d1r6xj0zr4z6j"))))
     (properties `((upstream-name . "ArctosR")))
     (build-system r-build-system)
     (arguments

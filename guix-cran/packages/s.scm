@@ -7068,13 +7068,13 @@ applied to binary classification problems and used for prediction.")
 (define-public r-superspreading
   (package
     (name "r-superspreading")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "superspreading" version))
        (sha256
-        (base32 "0qs23j0d35xakk5qkh2qf6bibffkdc02050p16fhpax1c3991dx1"))))
+        (base32 "11355cd35wka4svhvgn8hl8msw3wh0px8q8dhbw5lfpdjl0q6v61"))))
     (properties `((upstream-name . "superspreading")))
     (build-system r-build-system)
     (arguments
@@ -7087,13 +7087,13 @@ applied to binary classification problems and used for prediction.")
      "Understand Individual-Level Variation in Infectious Disease Transmission")
     (description
      "Estimate and understand individual-level variation in transmission.  Implements
-density and cumulative compound Poisson discrete distribution functions ('Kremer
+density and cumulative compound Poisson discrete distribution functions (Kremer
 et al. (2021) <doi:10.1038/s41598-021-93578-x>), as well as functions to
 calculate infectious disease outbreak statistics given epidemiological
 parameters on individual-level transmission; including the probability of an
-outbreak becoming an epidemic/extinct ('Kucharski et al. (2020)
+outbreak becoming an epidemic/extinct (Kucharski et al. (2020)
 <doi:10.1016/S1473-3099(20)30144-4>), or the cluster size statistics, e.g. what
-proportion of cases cause X\\% of transmission ('Lloyd-Smith et al. (2005)
+proportion of cases cause X\\% of transmission (Lloyd-Smith et al. (2005)
 <doi:10.1038/nature04153>).")
     (license license:expat)))
 

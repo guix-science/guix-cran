@@ -1712,13 +1712,13 @@ segmentation.")
 (define-public r-otargen
   (package
     (name "r-otargen")
-    (version "1.1.5")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "otargen" version))
        (sha256
-        (base32 "1akqdz0qcc5clj2mqn71zqi7d93l5yihzr9d4wsk4pv9rsw3vqry"))))
+        (base32 "0abqf3ibhnm5p1qiwqjvwvg87i7l4q22m35gv7qgxqpwvq8hxn6p"))))
     (properties `((upstream-name . "otargen")))
     (build-system r-build-system)
     (arguments
@@ -1726,24 +1726,19 @@ segmentation.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
-                             r-stringr
-                             r-rlang
                              r-magrittr
                              r-jsonlite
-                             r-janitor
+                             r-httr
                              r-ghql
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggiraphextra
                              r-dplyr
                              r-cli))
     (home-page "https://amirfeizi.github.io/otargen/")
-    (synopsis "Access Open Target Genetics")
+    (synopsis "Access Open Target")
     (description
-     "Interact seamlessly with Open Target Genetics @code{GraphQL} endpoint to query
-and retrieve tidy data tables, facilitating the analysis of genetic data.  For
-more information about the Open Target Genetics API
-(<https://genetics.opentargets.org/api>).")
+     "Interact seamlessly with Open Target @code{GraphQL} endpoint to query and
+retrieve tidy data tables, facilitating the analysis of gene, disease, drug, and
+genetic data.  For more information about the Open Target API
+(<https://platform.opentargets.org/api>).")
     (license license:expat)))
 
 (define-public r-osum
@@ -10017,13 +10012,13 @@ counts and trends.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "16yq749h602rzqm9889hzzk35y3c07dcq6p72p408wlqjf3s42s2"))))
+        (base32 "0gmw2yr6xhr935fr77n89njhvzxpzwicr4gpzlcnwimgldq20nxm"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (arguments

@@ -26758,6 +26758,37 @@ Passfield,Antonio Gavalas-Olea,Philipp Siegel, Richard J. Geider (2017)
 <doi:10.1002/ece3.3576> .")
     (license license:gpl3)))
 
+(define-public r-temper
+  (package
+    (name "r-temper")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "temper" version))
+       (sha256
+        (base32 "1fh4p5kwk6a04ngjj6yfjrldc1xd3xia7k29s32d0jqxiaa67brz"))))
+    (properties `((upstream-name . "temper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch
+                             r-scales
+                             r-purrr
+                             r-lubridate
+                             r-imputets
+                             r-ggplot2))
+    (home-page "https://rpubs.com/giancarlo_vercellino/temper")
+    (synopsis "Temporal Encoder-Masked Probabilistic Ensemble Regressor")
+    (description
+     "This package implements a probabilistic ensemble time-series forecaster that
+combines an auto-encoder with a neural decision forest whose split variables are
+learned through a differentiable feature-mask layer.  Functions are written with
+torch tensors and provide CRPS (Continuous Ranked Probability Scores) training
+plus mixture-distribution post-processing.")
+    (license license:gpl3)))
+
 (define-public r-tempdisagg
   (package
     (name "r-tempdisagg")
@@ -27140,6 +27171,34 @@ falsely detecting a differential effect when the conditional average treatment
 effect is uniform across the study population using parameter selection methods
 proposed in Wolf et al. (2022) <doi:10.1177/17407745221095855>.")
     (license license:gpl3+)))
+
+(define-public r-tedm
+  (package
+    (name "r-tedm")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tEDM" version))
+       (sha256
+        (base32 "1g1s65kshqy2ihvx420wh57hzphjnxpvh5q3zgpf1ivb6jhy2ymj"))))
+    (properties `((upstream-name . "tEDM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppthread r-rcpparmadillo r-rcpp r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://stscl.github.io/tEDM/")
+    (synopsis "Temporal Empirical Dynamic Modeling")
+    (description
+     "Inferring causation from time series data through empirical dynamic modeling
+(EDM), with methods such as convergent cross mapping from Sugihara et al. (2012)
+<doi:10.1126/science.1227079>, partial cross mapping as outlined in Leng et al.
+(2020) <doi:10.1038/s41467-020-16238-0>, and cross mapping cardinality as
+described in Tao et al. (2023) <doi:10.1016/j.fmre.2023.01.007>.")
+    (license license:gpl3)))
 
 (define-public r-teda
   (package

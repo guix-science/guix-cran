@@ -1265,13 +1265,13 @@ package.")
 (define-public r-extrasuperpower
   (package
     (name "r-extrasuperpower")
-    (version "1.4.5")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extraSuperpower" version))
        (sha256
-        (base32 "0hd2gq47d74iw8g8s2ycm6yfvwxp2y1npndiq9a19qy25yx0q0j4"))))
+        (base32 "029xisx7cg38fbbwv9xhxhl48kwgbha1nbsyckvnn40z5vyjzvla"))))
     (properties `((upstream-name . "extraSuperpower")))
     (build-system r-build-system)
     (arguments

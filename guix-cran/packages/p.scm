@@ -2647,13 +2647,13 @@ model for each response.")
 (define-public r-ptxqc
   (package
     (name "r-ptxqc")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PTXQC" version))
        (sha256
-        (base32 "1z425vs9kbpcxkjipng1wgxix19rf8v74240k9hcslszks9za2ip"))))
+        (base32 "05s9nc5ckiv9gz0ind93rq9c8v40lmcy9gxr56hg4dnax16d73gs"))))
     (properties `((upstream-name . "PTXQC")))
     (build-system r-build-system)
     (arguments
@@ -4576,13 +4576,13 @@ Selection Index Method can be found in Maniya K. and Bhatt M. G.(2010)
 (define-public r-psidread
   (package
     (name "r-psidread")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psidread" version))
        (sha256
-        (base32 "0k1rk5bsdhf9x7znmq99snw8p5qfnysz7hlh7s7adg7hn79rifx4"))))
+        (base32 "1l5l8z6r81xrcwqv2by2i9shgqiirpww9c98mq9sidmha5p8nh7v"))))
     (properties `((upstream-name . "psidread")))
     (build-system r-build-system)
     (arguments
@@ -27645,6 +27645,36 @@ on Reinhard (2002) \"Photographic tone reproduction for digital images\"
 <doi:10.1145/566654.566575>.")
     (license license:expat)))
 
+(define-public r-pickmax
+  (package
+    (name "r-pickmax")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pickmax" version))
+       (sha256
+        (base32 "08z0gwh5gk0fy7srbs4q876j0b176s9zsivazl5hj1rlv7yws7v4"))))
+    (properties `((upstream-name . "pickmax")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-magrittr r-dplyr))
+    (home-page "https://cran.r-project.org/package=pickmax")
+    (synopsis "Split and Coalesce Duplicated Records")
+    (description
+     "Deduplicates datasets by retaining the most complete and informative records.
+Identifies duplicated entries based on a specified key column, calculates
+completeness scores for each row, and compares values within groups.  When
+differences between duplicates exceed a user-defined threshold, records are
+split into unique IDs; otherwise, they are coalesced into a single, most
+complete entry.  Returns a list containing the original duplicates, the split
+entries, and the final coalesced dataset.  Useful for cleaning survey or
+administrative data where duplicated IDs may reflect minor data entry
+inconsistencies.")
+    (license license:gpl3)))
+
 (define-public r-picker
   (package
     (name "r-picker")
@@ -31011,6 +31041,31 @@ the CDISC SDTM implementation guide, accessible by creating a free account on
      "This package provides a set of raw datasets used to create SDTM domains in
 pharmaversesdtm package.")
     (license license:asl2.0)))
+
+(define-public r-pharmaverseadamjnj
+  (package
+    (name "r-pharmaverseadamjnj")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pharmaverseadamjnj" version))
+       (sha256
+        (base32 "0z8z6jwhkis885wa4pd3nhj662gr6af6ara4q4z6nm92w82h1mjp"))))
+    (properties `((upstream-name . "pharmaverseadamjnj")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pharmaverseadam))
+    (home-page "https://cran.r-project.org/package=pharmaverseadamjnj")
+    (synopsis "J&J Innovative Medicine ADaM Test Data")
+    (description
+     "This package provides a set of Analysis Data Model (A@code{DaM}) datasets
+constructed by modifying the A@code{DaM} datasets in the pharmaverseadam package
+to meet J&J Innovative Medicine's standard data structure for Clinical and
+Statistical Programming.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-pharmaverseadam
   (package
@@ -39588,13 +39643,13 @@ data related to gene sets and example input/output data.")
 (define-public r-pathfindr
   (package
     (name "r-pathfindr")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathfindR" version))
        (sha256
-        (base32 "1a59wqc733wi0sn6aaanwm2y6gjzvfp0b7wkcpk8zm6xxdzkkck8"))))
+        (base32 "0qzms9hkkbjijrljdrs5i7x7kf4j6jqccg0516byc90z1m45l430"))))
     (properties `((upstream-name . "pathfindR")))
     (build-system r-build-system)
     (arguments

@@ -2206,13 +2206,13 @@ supporting in other packages maintained by Shichen Xie'.")
 (define-public r-xdvir
   (package
     (name "r-xdvir")
-    (version "0.1-2")
+    (version "0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xdvir" version))
        (sha256
-        (base32 "0agnf1sqchd4jipy6yz4mrm04igihp845v56s4r49njsq5mp55v3"))))
+        (base32 "1j9db94kr4ywgj8ja380xbdl1ll9bql47j2zpcnxpmz3xm0n71wm"))))
     (properties `((upstream-name . "xdvir")))
     (build-system r-build-system)
     (arguments
@@ -2221,7 +2221,8 @@ supporting in other packages maintained by Shichen Xie'.")
     (inputs (list freetype))
     (propagated-inputs (list r-tinytex r-systemfonts r-rlang r-hexview))
     (native-inputs (list pkg-config r-knitr))
-    (home-page "https://cran.r-project.org/package=xdvir")
+    (home-page
+     "https://stattech.wordpress.fos.auckland.ac.nz/2025/03/06/2025-01-latex-typesetting-in-r/")
     (synopsis "Render 'LaTeX' in Plots")
     (description
      "High-level functions to render @code{LaTeX} fragments in plots, including as

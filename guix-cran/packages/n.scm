@@ -4916,13 +4916,13 @@ nonlinear mixed effects modeling.  See package?nonmemica'.")
 (define-public r-nonmem2rx
   (package
     (name "r-nonmem2rx")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonmem2rx" version))
        (sha256
-        (base32 "1gw4bw83a1d77y3nj0glqik1j59az30iga53qaci8wxadx95k9lk"))))
+        (base32 "0x0qhj96g07rwhfqwvyx5zz9dli5nil2vygpz5k57kgg6ld1qyx6"))))
     (properties `((upstream-name . "nonmem2rx")))
     (build-system r-build-system)
     (arguments
@@ -6123,13 +6123,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "11.4")
+    (version "11.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "0d5w3yjla0qpxir2a17mn699z7nsxqzpj98418657r9plxqiq3c6"))))
+        (base32 "159mrqndn32vgrikkw95mj3350v5aazwdaqyi82axk8679rsy9bi"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (arguments
@@ -6149,15 +6149,16 @@ chi-square tests.")
     (home-page "https://cran.r-project.org/package=NNS")
     (synopsis "Nonlinear Nonparametric Statistics")
     (description
-     "Nonlinear nonparametric statistics using partial moments.  Partial moments are
-the elements of variance and asymptotically approximate the area of f(x).  These
-robust statistics provide the basis for nonlinear analysis while retaining
-linear equivalences.  NNS offers: Numerical integration, Numerical
-differentiation, Clustering, Correlation, Dependence, Causal analysis, ANOVA,
-Regression, Classification, Seasonality, Autoregressive modeling, Normalization,
-Stochastic dominance and Advanced Monte Carlo sampling.  All routines based on:
-Viole, F. and Nawrocki, D. (2013), Nonlinear Nonparametric Statistics: Using
-Partial Moments (ISBN: 1490523995).")
+     "NNS (Nonlinear Nonparametric Statistics) leverages partial moments â the
+fundamental elements of variance that asymptotically approximate the area under
+f(x) â to provide a robust foundation for nonlinear analysis while maintaining
+linear equivalences.  NNS delivers a comprehensive suite of advanced statistical
+techniques, including: Numerical integration, Numerical differentiation,
+Clustering, Correlation, Dependence, Causal analysis, ANOVA, Regression,
+Classification, Seasonality, Autoregressive modeling, Normalization, Stochastic
+dominance and Advanced Monte Carlo sampling.  All routines based on: Viole, F.
+and Nawrocki, D. (2013), Nonlinear Nonparametric Statistics: Using Partial
+Moments (ISBN: 1490523995).")
     (license license:gpl3)))
 
 (define-public r-nnr
@@ -6645,13 +6646,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "11zfcixrw0d0s1ywqs3ixcwsnpxmigrc8wnnyn1rq1zrhxl12rix"))))
+        (base32 "0srzi3sh0mxlby1yn1l14c4zm6hp1jivs3zk41a14qf79hnzwf9w"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (arguments
@@ -6663,7 +6664,7 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
                              r-mass
                              r-fst
                              r-data-table))
-    (home-page "https://NMautoverse.github.io/NMsim/")
+    (home-page "https://nmautoverse.github.io/NMsim/")
     (synopsis "Seamless 'Nonmem' Simulation Platform")
     (description
      "This package provides a complete and seamless Nonmem simulation interface within
@@ -8231,13 +8232,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "3.0.4")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "0waknqb71djbjd22qh53fwinkmqqs7s2bv2hb6dcmpb8wm5fqnhj"))))
+        (base32 "0kkfy6y5llgwpy4w5bnsrlr3ynj9jp9d8mw1h9lyjcdn6wc06d0q"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (arguments
@@ -9749,6 +9750,33 @@ intended for education purposes, as it provides a helpful support to help
 explain the Null Hypothesis Significance Testing process, its use and/or
 shortcomings.")
     (license license:gpl3)))
+
+(define-public r-nhsrwaitinglist
+  (package
+    (name "r-nhsrwaitinglist")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NHSRwaitinglist" version))
+       (sha256
+        (base32 "02p6ch53xw24cl3zi7fa6kdl3rxnvg1lgqz8r771w9zfhz5v0kdx"))))
+    (properties `((upstream-name . "NHSRwaitinglist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-randomnames r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://nhs-r-community.github.io/NHSRwaitinglist/")
+    (synopsis "Waiting List Metrics Using Queuing Theory")
+    (description
+     "Waiting list management using queuing theory to analyse, predict and manage
+queues, based on the approach described in Fong et al. (2022)
+<doi:10.1101/2022.08.23.22279117>.  Aimed at UK National Health Service (NHS)
+applications, waiting list summary statistics, target-value calculations,
+waiting list simulation, and scheduling functions are included.")
+    (license license:expat)))
 
 (define-public r-nhsrplotthedots
   (package

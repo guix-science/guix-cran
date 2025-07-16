@@ -3620,13 +3620,13 @@ with various criteria, and kinship for the X chromosome.")
 (define-public r-kinmixlite
   (package
     (name "r-kinmixlite")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KinMixLite" version))
        (sha256
-        (base32 "1yq7wkim0cm6p1nm49km5izabkp1cid9z8df7wndnx048kb37qv4"))))
+        (base32 "17501kwm24n6xcjqhmf8sgrnwmrrzqxg4qxqcn40qhqdkxbdw6iw"))))
     (properties `((upstream-name . "KinMixLite")))
     (build-system r-build-system)
     (arguments
@@ -3641,18 +3641,19 @@ with various criteria, and kinship for the X chromosome.")
                              r-grbase
                              r-graven
                              r-dnamixtureslite))
-    (home-page "https://petergreenweb.wordpress.com/kinmix/")
+    (home-page
+     "https://petergreen5678.github.io/research/software/kinmix.html")
     (synopsis "Inference About Relationships from DNA Mixtures")
     (description
-     "This package provides methods for inference about relationships between
-contributors to a DNA mixture and other individuals of known genotype: a basic
-example would be testing whether a contributor to a mixture is the father of a
-child of known genotype.  This provides most of the functionality of the
-@code{KinMix} package, but with some loss of efficiency and restriction on
-problem size, as the latter uses RHugin as the Bayes net engine, while this
-package uses @code{gRain}'.  The package implements the methods introduced in
-Green, P. J. and Mortera, J. (2017) <doi:10.1016/j.fsigen.2017.02.001> and
-Green, P. J. and Mortera, J. (2021) <doi:10.1111/rssc.12498>.")
+     "This package provides methods for inference about/under complex relationships
+using peak height data from DNA mixtures: the most basic example would be
+testing whether a contributor to a mixture is the father of a child of known
+genotype.  This provides most of the functionality of the @code{KinMix} package,
+but with some loss of efficiency and restriction on problem size, as the latter
+uses RHugin as the Bayes net engine, while this package uses @code{gRain}'.  The
+package implements the methods introduced in Green, P. J. and Mortera, J. (2017)
+<doi:10.1016/j.fsigen.2017.02.001> and Green, P. J. and Mortera, J. (2021)
+<doi:10.1111/rssc.12498>.")
     (license license:gpl2+)))
 
 (define-public r-kingcountyhouses
@@ -3680,13 +3681,13 @@ given along with sale prices.")
 (define-public r-kinesis
   (package
     (name "r-kinesis")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kinesis" version))
        (sha256
-        (base32 "17bfiq4n54p6dc3xy20hnsmd5v2rqdrrcakjpb47hzl1vni8pyjw"))))
+        (base32 "0qj5znbh46vaah7cslhhd7wp4yycglv7mi5l823mnhpljldh92h0"))))
     (properties `((upstream-name . "kinesis")))
     (build-system r-build-system)
     (arguments

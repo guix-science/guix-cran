@@ -13707,6 +13707,60 @@ a way compatible with both Latex and HTML outputs.")
 Definitions can be provided inline or in a separate file.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-glossa
+  (package
+    (name "r-glossa")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glossa" version))
+       (sha256
+        (base32 "0pn90mzi9q2wndlndb6bh9lraa2d7vvpqpvnhw407s4sdl7n9dc2"))))
+    (properties `((upstream-name . "glossa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-waiter
+                             r-tidyterra
+                             r-terra
+                             r-svglite
+                             r-sparkline
+                             r-shinywidgets
+                             r-shiny
+                             r-sf
+                             r-proc
+                             r-mcp
+                             r-markdown
+                             r-leaflet
+                             r-htmltools
+                             r-ggplot2
+                             r-geothinner
+                             r-dt
+                             r-dplyr
+                             r-dbarts
+                             r-bs4dash
+                             r-blockcv
+                             r-automap))
+    (home-page "https://github.com/iMARES-group/glossa")
+    (synopsis
+     "User-Friendly 'shiny' App for Bayesian Species Distribution Models")
+    (description
+     "This package provides a user-friendly shiny application for Bayesian machine
+learning analysis of marine species distributions.  GLOSSA (Global Ocean Species
+Spatio-temporal Analysis) uses Bayesian Additive Regression Trees (BART;
+Chipman, George, and @code{McCulloch} (2010) <doi:10.1214/09-AOAS285>) to model
+species distributions with intuitive workflows for data upload, processing,
+model fitting, and result visualization.  It supports presence-absence and
+presence-only data (with pseudo-absence generation), spatial thinning,
+cross-validation, and scenario-based projections.  GLOSSA is designed to
+facilitate ecological research by providing easy-to-use tools for analyzing and
+visualizing marine species distributions across different spatial and temporal
+scales.")
+    (license license:gpl3)))
+
 (define-public r-glorenz
   (package
     (name "r-glorenz")

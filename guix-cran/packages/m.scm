@@ -14672,13 +14672,13 @@ and examples are given by Koutra et al. (2024)
 (define-public r-moocore
   (package
     (name "r-moocore")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moocore" version))
        (sha256
-        (base32 "1w8r7g0iajzy66308pzbx7ga1qqgjrjfvfa5z4wkzmm1yf0cacwg"))))
+        (base32 "11kbccl4npn09kh9h5ad68bxamr2plpyn65ry9wd8qai0z4fi80q"))))
     (properties `((upstream-name . "moocore")))
     (build-system r-build-system)
     (arguments
@@ -14697,7 +14697,7 @@ LÃ³pez-IbÃ¡Ã±ez (2006) <doi:10.1109/CEC.2006.1688440>, epsilon indicator,
 inverted generational distance, and Vorob'ev threshold, expectation and
 deviation, M. Binois, D. Ginsbourger, O. Roustant (2015)
 <doi:10.1016/j.ejor.2014.07.032>, among others.")
-    (license license:lgpl2.0+)))
+    (license license:lgpl2.1+)))
 
 (define-public r-montecarlosem
   (package
@@ -15040,13 +15040,13 @@ and student-t errors (from Geweke) is also provided.")
 (define-public r-monolix2rx
   (package
     (name "r-monolix2rx")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "monolix2rx" version))
        (sha256
-        (base32 "0ij28qrk28s2hcdifvmlnbprfl6nivgx3fbmp7zhclm9i23a793g"))))
+        (base32 "0wiwfxknz1zlsg2xagd9jryfrcrhmq936l8fl0afszqci1b56rgi"))))
     (properties `((upstream-name . "monolix2rx")))
     (build-system r-build-system)
     (arguments

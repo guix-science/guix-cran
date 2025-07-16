@@ -18380,13 +18380,13 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "5.0.1")
+    (version "5.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliometrix" version))
        (sha256
-        (base32 "1ylyxrjpd9cdd18nyyvspw3zdr7lkh0p3chk5xzg4dz870acmkg0"))))
+        (base32 "1gshkp6z4pl598777kc0427qqa0dz2n1hbkzww4asb14ixn6hvnv"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (arguments
@@ -18395,10 +18395,12 @@ They can be used to test the different features of the package bibliometrix
     (propagated-inputs (list r-visnetwork
                              r-tidytext
                              r-tidyr
+                             r-tibble
                              r-stringr
                              r-stringi
                              r-stringdist
                              r-snowballc
+                             r-shinycssloaders
                              r-shiny
                              r-rscopus
                              r-readxl

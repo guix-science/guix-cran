@@ -14664,13 +14664,13 @@ iteratively.  More details can be referred to Huazhen Lin, Wei Liu and Wei Lan.
 (define-public r-ilsastats
   (package
     (name "r-ilsastats")
-    (version "0.3.8")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ILSAstats" version))
        (sha256
-        (base32 "1ly1661ip2cskdzrs0i72wdh4lxh4m1xsz9mv5pm9i37m9831xvx"))))
+        (base32 "1gr6shcmkqr82z63gz9qssgdmfj8xfaia1dm75gkldxqmh6rn3xl"))))
     (properties `((upstream-name . "ILSAstats")))
     (build-system r-build-system)
     (arguments

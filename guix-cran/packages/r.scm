@@ -16662,6 +16662,34 @@ taking into account the detected inconsistencies into the labels.")
 estimation based on Loh and Tan (2018) <doi:10.1214/18-EJS1427>.")
     (license license:gpl3)))
 
+(define-public r-robustcalibration
+  (package
+    (name "r-robustcalibration")
+    (version "0.5.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RobustCalibration" version))
+       (sha256
+        (base32 "1mhaxxifay8xakpj3q5pq2rgrklwxh7b3pca1im0wpn8nl9hiw73"))))
+    (properties `((upstream-name . "RobustCalibration")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-robustgasp r-rcppeigen r-rcpp r-nloptr))
+    (home-page "https://cran.r-project.org/package=RobustCalibration")
+    (synopsis "Robust Calibration of Imperfect Mathematical Models")
+    (description
+     "This package implements full Bayesian analysis for calibrating mathematical
+models with new methodology for modeling the discrepancy function.  It allows
+for emulation, calibration and prediction using complex mathematical model
+outputs and experimental data.  See the reference: Mengyang Gu and Long Wang,
+2018, Journal of Uncertainty Quantification; Mengyang Gu, Fangzheng Xie and Long
+Wang, 2022, Journal of Uncertainty Quantification; Mengyang Gu, Kyle Anderson
+and Erika @code{McPhillips}, 2023, Technometrics.")
+    (license license:gpl2+)))
+
 (define-public r-robustblme
   (package
     (name "r-robustblme")
@@ -36322,25 +36350,19 @@ Learning\", N. Matloff, 2017, CRC, ISBN 9781498710916.")
 (define-public r-regtomean
   (package
     (name "r-regtomean")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regtomean" version))
        (sha256
-        (base32 "1j13sc4lklw4rnfrg62b26sy7rcw3spa0a0bzc0mrbvinsq7b5dc"))))
+        (base32 "1rnyr1cliqvz73awkvnmp0n5ksbkgdi3ns3dypjkzmyl1qp795k4"))))
     (properties `((upstream-name . "regtomean")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sjplot
-                             r-sjmisc
-                             r-plotrix
-                             r-mefa
-                             r-htmlwidgets
-                             r-ggplot2
-                             r-formattable
+    (propagated-inputs (list r-plotrix r-htmlwidgets r-ggplot2 r-formattable
                              r-effsize))
     (home-page "https://cran.r-project.org/package=regtomean")
     (synopsis "Regression Toward the Mean")
