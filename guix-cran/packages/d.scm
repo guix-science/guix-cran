@@ -2304,13 +2304,13 @@ larger-than-memory data while retaining full dplyr compatibility.")
 (define-public r-duckdbfs
   (package
     (name "r-duckdbfs")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdbfs" version))
        (sha256
-        (base32 "1waqbjnq4mykj0jkdddrs3k3mhyvl2y8qdwba9iq351d0am29l59"))))
+        (base32 "0nqgnmqh7f826i3ha0zddgk191vcd6a8kcq4w3k3dq6dij6c3qx3"))))
     (properties `((upstream-name . "duckdbfs")))
     (build-system r-build-system)
     (arguments
@@ -22318,13 +22318,13 @@ brain networks using partial correlation.")
 (define-public r-densityratio
   (package
     (name "r-densityratio")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "densityratio" version))
        (sha256
-        (base32 "1pxig2cajac5b7lnn83wgwka4i729zmzmnhzpffrwvd1gjkj2kx7"))))
+        (base32 "0lsrca7k4m60vywya06x7bmz2bl9cr2nawv4l0m50ahwid0isphn"))))
     (properties `((upstream-name . "densityratio")))
     (build-system r-build-system)
     (arguments
@@ -22335,7 +22335,8 @@ brain networks using partial correlation.")
                              r-rcpp
                              r-pbapply
                              r-osqp
-                             r-ggplot2))
+                             r-ggplot2
+                             r-ggh4x))
     (native-inputs (list r-knitr))
     (home-page "https://thomvolker.github.io/densityratio/")
     (synopsis "Distribution Comparison Through Density Ratio Estimation")
@@ -22590,13 +22591,13 @@ state/ province/ country.")
 (define-public r-dendrotools
   (package
     (name "r-dendrotools")
-    (version "1.2.14")
+    (version "1.2.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dendroTools" version))
        (sha256
-        (base32 "0cg6d6flin0x1hphiwzsmvns6rxbzbjf3rrs7pwv2fqvgvlgj8jw"))))
+        (base32 "02q20ramz2g3ry2rv6f480w9y1vnsnr6mjfcwby9adbfnylrqyp2"))))
     (properties `((upstream-name . "dendroTools")))
     (build-system r-build-system)
     (arguments
@@ -24773,6 +24774,39 @@ fit the detection methodologies.  Performs both detection and estimation of
 change points, providing visualization and summary information of the estimation
 process for each detected change point.")
     (license license:gpl3)))
+
+(define-public r-decorrelate
+  (package
+    (name "r-decorrelate")
+    (version "0.1.6.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "decorrelate" version))
+       (sha256
+        (base32 "1dylqhbydgg075vnrdygs3gxhx32zbx3qim0anqv96xr18h5fblg"))))
+    (properties `((upstream-name . "decorrelate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-irlba
+                             r-cholwishart))
+    (native-inputs (list r-knitr))
+    (home-page "https://gabrielhoffman.github.io/decorrelate/")
+    (synopsis "Decorrelation Projection Scalable to High Dimensional Data")
+    (description
+     "Data whitening is a widely used preprocessing step to remove correlation
+structure since statistical models often assume independence.  Here we use a
+probabilistic model of the observed data to apply a whitening transformation.
+This Gaussian Inverse Wishart Empirical Bayes model substantially reduces
+computational complexity, and regularizes the eigen-values of the sample
+covariance matrix to improve out-of-sample performance.")
+    (license license:artistic2.0)))
 
 (define-public r-decorators
   (package
@@ -32701,6 +32735,44 @@ models, and includes a simple facility for data simulation.")
 with data on population, age and gender from Statistics Denmark
 <https://www.dst.dk/da/>.")
     (license license:expat)))
+
+(define-public r-daghmm
+  (package
+    (name "r-daghmm")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dagHMM" version))
+       (sha256
+        (base32 "0hai26wr0rhiyj366hyqan6262bp6jncc9557p9zwz6iwqgynjym"))))
+    (properties `((upstream-name . "dagHMM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-prroc
+                             r-matrixstats
+                             r-gtools
+                             r-future
+                             r-bnlearn
+                             r-bnclassify))
+    (home-page "https://cran.r-project.org/package=dagHMM")
+    (synopsis "Directed Acyclic Graph HMM with TAN Structured Emissions")
+    (description
+     "Hidden Markov models (HMMs) are a formal foundation for making probabilistic
+models of linear sequence.  They provide a conceptual toolkit for building
+complex models just by drawing an intuitive picture.  They are at the heart of a
+diverse range of programs, including genefinding, profile searches, multiple
+sequence alignment and regulatory site identification.  HMMs are the Legos of
+computational sequence analysis.  In graph theory, a tree is an undirected graph
+in which any two vertices are connected by exactly one path, or equivalently a
+connected acyclic undirected graph.  Tree represents the nodes connected by
+edges.  It is a non-linear data structure.  A poly-tree is simply a directed
+acyclic graph whose underlying undirected graph is a tree.  The model proposed
+in this package is the same as an HMM but where the states are linked via a
+polytree structure rather than a simple path.")
+    (license (license:fsdg-compatible "GPL (>= 2.0.0)"))))
 
 (define-public r-dafs
   (package

@@ -1729,32 +1729,6 @@ C++ functions can be called inline using Rcpp'.  Finally, the package provides
 an ode function to call from R.")
     (license license:expat)))
 
-(define-public r-lsnstat
-  (package
-    (name "r-lsnstat")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lsnstat" version))
-       (sha256
-        (base32 "0ig1ndbnng052ww0fmw5k7lwb0whzg9ychww40h7mdg3dpiyswi5"))))
-    (properties `((upstream-name . "lsnstat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr r-dplyr))
-    (home-page "https://github.com/La-Societe-Nouvelle/lsnstat/")
-    (synopsis "'La Societe Nouvelle' API Access")
-    (description
-     "This package provides tools facilitating access to the macro_data service of the
-La Societe Nouvelle API. It ensures an easy and fully-disclosed access to all
-macro-level data used in the La Societe Nouvelle systems and the related
-metadata.  Related API can be accessed from
-<https://api.lasocietenouvelle.org/>.")
-    (license license:cecill)))
-
 (define-public r-lsmrealoptions
   (package
     (name "r-lsmrealoptions")
@@ -3076,13 +3050,13 @@ data-driven bandwidth selection.")
 (define-public r-lpda
   (package
     (name "r-lpda")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpda" version))
        (sha256
-        (base32 "0hhh4hz7cmmna4rsdwagy9cm0kv6lvv3qzcjnbbs762hbxfj43n7"))))
+        (base32 "0i2qmjgvqr6hqbx820achm56shqb0nd4jn1w1v806kr3n9gx006m"))))
     (properties `((upstream-name . "lpda")))
     (build-system r-build-system)
     (arguments
@@ -3407,13 +3381,13 @@ Kowalska, van de Wiel, van der Pas (2024)
 (define-public r-lotri
   (package
     (name "r-lotri")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lotri" version))
        (sha256
-        (base32 "15myyigrlfc8gmasaf3z9g3dy44c19814ydvql4pi4867cfmgi4x"))))
+        (base32 "0qg69a41fr0py6rqj1w7sv84rvh8mxf1d4djyniaq5vbqrkf3ax3"))))
     (properties `((upstream-name . "lotri")))
     (build-system r-build-system)
     (arguments
@@ -8452,13 +8426,13 @@ median of the distribution.")
 (define-public r-llmr
   (package
     (name "r-llmr")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMR" version))
        (sha256
-        (base32 "0mwqb3srvrhr9qhvcf34g9i705y5fp2za6jan2n73fzsq3n299ql"))))
+        (base32 "04jr1gvl524551xmhv9ydp9d8adp5wkqymx8md8v1dvdw0iyj8jg"))))
     (properties `((upstream-name . "LLMR")))
     (build-system r-build-system)
     (arguments
@@ -8490,13 +8464,14 @@ parallelization, as well as tidyverse integration.  Users can switch between
 different LLM providers seamlessly within R workflows, or call multiple models
 in parallel.  The package enables creation of LLM agents for automated tasks and
 provides consistent error handling across all supported APIs.  APIs include
-@code{OpenAI} (see <https://platform.openai.com/docs/overview> for details),
-Anthropic (see <https://docs.anthropic.com/en/api/getting-started> for details),
-Groq (see <https://console.groq.com/docs/api-reference> for details), Together
-AI (see <https://docs.together.ai/docs/quickstart> for details), @code{DeepSeek}
-(see <https://api-docs.deepseek.com> for details), Gemini (see
-<https://aistudio.google.com> for details), and Voyage AI (see
-<https://docs.voyageai.com/docs/introduction> for details).")
+@code{OpenAI} (see <https://platform.openai.com/docs> for details), Anthropic
+(see <https://docs.anthropic.com/en/api/getting-started> for details), Groq (see
+<https://console.groq.com/docs/api-reference> for details), Together AI (see
+<https://docs.together.ai/docs/quickstart> for details), @code{DeepSeek} (see
+<https://api-docs.deepseek.com> for details), Gemini (see
+<https://aistudio.google.com> for details), @code{xAI} (see <https://docs.x.ai/>
+for details), and Voyage AI (see <https://docs.voyageai.com/docs/introduction>
+for details).")
     (license license:expat)))
 
 (define-public r-llmagentr

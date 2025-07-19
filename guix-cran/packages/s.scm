@@ -7015,6 +7015,33 @@ et al. (2015) <doi:10.1017/CBO9781107337855> for details on best-worst scaling,
 and Aizaki and Fogarty (2023) <doi:10.1016/j.jocm.2022.100394> for the package.")
     (license license:gpl2+)))
 
+(define-public r-support
+  (package
+    (name "r-support")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "support" version))
+       (sha256
+        (base32 "1n1ckvxagbh9xr8r1anf3y6kb0j10ir332019wxd34mm67can62z"))))
+    (properties `((upstream-name . "support")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-randtoolbox r-bh))
+    (home-page "https://cran.r-project.org/package=support")
+    (synopsis "Support Points")
+    (description
+     "The functions @code{sp()} and @code{sp_seq()} compute the support points in Mak
+and Joseph (2018) <DOI:10.1214/17-AOS1629>.  Support points can be used as a
+representative sample of a desired distribution, or a representative reduction
+of a big dataset (e.g., an \"optimal\" thinning of Markov-chain Monte Carlo sample
+chains).  This work was supported by USARO grant W911NF-14-1-0024 and NSF DMS
+grant 1712642.")
+    (license license:gpl2+)))
+
 (define-public r-supmz
   (package
     (name "r-supmz")
@@ -11646,13 +11673,13 @@ version of the archived @code{DiceOptim} R package.")
 (define-public r-stoppingrule
   (package
     (name "r-stoppingrule")
-    (version "0.5.2")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stoppingrule" version))
        (sha256
-        (base32 "0zkqbcnw0bg49ff9sx489qmgwdnc84a6l63w9g28mya25l8j2djl"))))
+        (base32 "1pcmjqdzpmpn6spilh7np1rcbxwiiy94cf7q3vy08pfs8yrkmjnk"))))
     (properties `((upstream-name . "stoppingrule")))
     (build-system r-build-system)
     (arguments
@@ -13016,13 +13043,13 @@ return values are checked in order to make them type stable.")
 (define-public r-stevedata
   (package
     (name "r-stevedata")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stevedata" version))
        (sha256
-        (base32 "1dck595x51gb1b20nx6szz5p91xbw1p6zc0vvw7bb21yph94f165"))))
+        (base32 "0b4sm7j5p8bm0nl7ygalni4hjl6xdv029mqlmkbg3zrjdsmpb5nx"))))
     (properties `((upstream-name . "stevedata")))
     (build-system r-build-system)
     (arguments
@@ -14740,13 +14767,13 @@ database, StÃ¡tnÃ­ pokladna <https://monitor.statnipokladna.cz/>.")
 (define-public r-statnetweb
   (package
     (name "r-statnetweb")
-    (version "0.5.8")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statnetWeb" version))
        (sha256
-        (base32 "12qwx0gnrmb449rz5a2qhds6rparfpw8ak4n0cxk9dmy6d47903l"))))
+        (base32 "0g2fdq8bk2a6c1c4xvc4vnnf88c4rjhgrlgq0d1i9w32x4qv4abr"))))
     (properties `((upstream-name . "statnetWeb")))
     (build-system r-build-system)
     (arguments
@@ -14758,7 +14785,8 @@ database, StÃ¡tnÃ­ pokladna <https://monitor.statnipokladna.cz/>.")
                              r-network
                              r-latticeextra
                              r-lattice
-                             r-ergm))
+                             r-ergm
+                             r-dt))
     (home-page "https://statnet.org")
     (synopsis "Shiny App for Network Modeling with 'statnet'")
     (description
@@ -19550,13 +19578,13 @@ as well as Cint are sampled randomly without replacement.  See Beule & Karlovsky
 (define-public r-srppp
   (package
     (name "r-srppp")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "srppp" version))
        (sha256
-        (base32 "12fxyy7g52d4hhx3g4x3cps8rbnx5s9xw8h5cv3dqr5i1pgcnrxb"))))
+        (base32 "02l2ay9fjrxz18jq1knjifawlkhcv1i5ndfv3rkzph8lafkbj8l6"))))
     (properties `((upstream-name . "srppp")))
     (build-system r-build-system)
     (arguments
@@ -19566,8 +19594,10 @@ as well as Cint are sampled randomly without replacement.  See Beule & Karlovsky
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-rlang
                              r-dplyr
                              r-dm
+                             r-data-tree
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://agroscope-ch.github.io/srppp/")
@@ -21795,13 +21825,13 @@ Statistical Association, 109:505, 11-23, <doi:10.1080/01621459.2013.870904>.")
 (define-public r-spower
   (package
     (name "r-spower")
-    (version "0.2.3")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Spower" version))
        (sha256
-        (base32 "0nf5c9yybv6ilxgbjfdw1bq1nrkhzl7cm7dy8pdyv2ra63d4qy38"))))
+        (base32 "1dg2zzbs00m15wqjkgyzrxk4qcya81s13i81yyrdgfg774s6kkdw"))))
     (properties `((upstream-name . "Spower")))
     (build-system r-build-system)
     (arguments
@@ -21822,15 +21852,16 @@ Statistical Association, 109:505, 11-23, <doi:10.1080/01621459.2013.870904>.")
     (description
      "This package provides a general purpose simulation-based power analysis API for
 routine and customized simulation experimental designs.  The package focuses
-exclusively on Monte Carlo simulation variants of (expected) prospective power
-analyses, criterion analyses, compromise analyses, sensitivity analyses, and a
-priori analyses.  The default simulation experiment functions found within the
-package provide stochastic variants of the power analyses subroutines found in
-the G*Power 3.1 software (Faul, Erdfelder, Buchner, and Lang, 2009)
+exclusively on Monte Carlo simulation experiment variants of (expected)
+prospective power analyses, criterion analyses, compromise analyses, sensitivity
+analyses, and a priori/post-hoc analyses.  The default simulation experiment
+functions defined within the package provide stochastic variants of the power
+analysis subroutines in G*Power 3.1 (Faul, Erdfelder, Buchner, and Lang, 2009)
 <doi:10.3758/brm.41.4.1149>, along with various other parametric and
-non-parametric power analysis examples (e.g., mediation analyses).  Supporting
-functions are also included, such as for building empirical power curve
-estimates, which utilize a similar API structure.")
+non-parametric power analysis applications (e.g., mediation analyses).
+Additional functions for building empirical power curves, reanalyzing simulation
+information, and for increasing the precision of the resulting power estimates
+are also included, each of which utilize similar API structures.")
     (license license:gpl3+)))
 
 (define-public r-spouse
@@ -25513,6 +25544,38 @@ PSD. For didactic reasons an analytical approach for deconvolution of noise
 spectra and sampling function is provided.  A user friendly interface helps to
 interpret the results.")
     (license license:gpl2)))
+
+(define-public r-spectrakit
+  (package
+    (name "r-spectrakit")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spectrakit" version))
+       (sha256
+        (base32 "1bc5lfyypnwcpx929a7jsbbqaypf8bbm6xjyb0zxn1r3aqq2m59q"))))
+    (properties `((upstream-name . "spectrakit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magick
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=spectrakit")
+    (synopsis "Spectral Data Handling and Visualization")
+    (description
+     "This package provides functions to combine, normalize and visualize spectral
+data, and for assembling customizable image grids suitable for
+publication-quality scientific figures.")
+    (license license:expat)))
 
 (define-public r-spectr
   (package
@@ -30145,13 +30208,13 @@ statements in parallel on top of SAS data.")
 (define-public r-spareg
   (package
     (name "r-spareg")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spareg" version))
        (sha256
-        (base32 "0yrfa4b4d2l2a6jk3a9nvqcrjixpbpl8ly0pawafqi1s0sigzxp6"))))
+        (base32 "0x9jw9dzdjjg5lvwndk086y4apkv59j5kqq7mphpsbcqwyd3sq44"))))
     (properties `((upstream-name . "spareg")))
     (build-system r-build-system)
     (arguments
@@ -30162,8 +30225,7 @@ statements in parallel on top of SAS data.")
                              r-rdpack
                              r-matrix
                              r-glmnet
-                             r-ggplot2
-                             r-dplyr))
+                             r-ggplot2))
     (home-page "https://github.com/lauravana/spareg")
     (synopsis "Sparse Projected Averaged Regression")
     (description
@@ -31226,13 +31288,13 @@ package).  For more information, please see Rocha and Romano (2021) and check
 (define-public r-soundgen
   (package
     (name "r-soundgen")
-    (version "2.7.2")
+    (version "2.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soundgen" version))
        (sha256
-        (base32 "1707qcr5dasrszrfac93svysvwjpabcyqshw01hszp46bcnikqrq"))))
+        (base32 "1p0hl3d5jgnricch7rz631c6kphxsvp1ng24k9y7g97pwy6hdcvb"))))
     (properties `((upstream-name . "soundgen")))
     (build-system r-build-system)
     (arguments
@@ -36850,13 +36912,13 @@ Relationship Management, Wiley: New York.")
 (define-public r-smcfcs
   (package
     (name "r-smcfcs")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smcfcs" version))
        (sha256
-        (base32 "1220fm2227pzrwxay2nlgdgan5pfx3ch54ws25yvz618xqkw2hbi"))))
+        (base32 "0hd1az3av1z9sgdn9fx0a1lkkm8w7pp5bnd7p10m1rj66f9pm2kq"))))
     (properties `((upstream-name . "smcfcs")))
     (build-system r-build-system)
     (arguments
@@ -46664,13 +46726,13 @@ batch problems.  Details of the methods can be found in:
 (define-public r-siera
   (package
     (name "r-siera")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "siera" version))
        (sha256
-        (base32 "0dkxbnjq9gq1mhi7q790pr3sbs2m9p197s34yi5nc0cvfzd20zjy"))))
+        (base32 "1fi8ymj0rwg904v7k0fk6y3vn1nainkwd2207mzljdr6i35pjfmc"))))
     (properties `((upstream-name . "siera")))
     (build-system r-build-system)
     (arguments
@@ -46679,10 +46741,12 @@ batch problems.  Details of the methods can be found in:
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
+                             r-readxl
                              r-magrittr
                              r-jsonlite
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=siera")
+    (native-inputs (list r-knitr))
+    (home-page "https://clymbclinical.github.io/siera/")
     (synopsis "Generate Analysis Results Programmes Using ARS Metadata")
     (description
      "Analysis Results Standard (ARS), a foundational standard by CDISC (Clinical Data
@@ -49417,13 +49481,13 @@ has been done by Lantz (2013, ISBN:9781782162148).")
 (define-public r-shinymixr
   (package
     (name "r-shinymixr")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyMixR" version))
        (sha256
-        (base32 "1z73wdv8vc71x3rp0axm3ad8wqj3fz4g9bdvzd3d4m6gblvydvpq"))))
+        (base32 "04xdlppvls4r872dsaggc0qi1i56xdyrvrgyi6annxsh8jif30b3"))))
     (properties `((upstream-name . "shinyMixR")))
     (build-system r-build-system)
     (arguments
@@ -49436,12 +49500,12 @@ has been done by Lantz (2013, ISBN:9781782162148).")
                              r-shinyjs
                              r-shinyace
                              r-shiny
+                             r-rxode2
                              r-r3port
                              r-ps
                              r-plotly
                              r-patchwork
                              r-nlmixr2est
-                             r-nlmixr2
                              r-magrittr
                              r-gridextra
                              r-ggplot2
@@ -49451,7 +49515,7 @@ has been done by Lantz (2013, ISBN:9781782162148).")
                              r-cli
                              r-bs4dash))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=shinyMixR")
+    (home-page "https://github.com/RichardHooijmaijers/shinyMixR/")
     (synopsis "Interactive 'shiny' Dashboard for 'nlmixr2'")
     (description
      "An R shiny user interface for the nlmixr2 (Fidler et al (2019)
@@ -55385,13 +55449,13 @@ Data: A Modern Statistical Perspective\" (Hens, Niel & Shkedy, Ziv & Aerts, Marc
 (define-public r-serolyzer
   (package
     (name "r-serolyzer")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SerolyzeR" version))
        (sha256
-        (base32 "1693w4b8f2622y9ncppjwyzgna20a5kamzrfb3894svfpp16912c"))))
+        (base32 "1bng54y5n4hj88ixpadmimsyjp6i0y6qyanjv9l4r60v64r7rg72"))))
     (properties `((upstream-name . "SerolyzeR")))
     (build-system r-build-system)
     (arguments
@@ -55401,6 +55465,7 @@ Data: A Modern Statistical Perspective\" (Hens, Niel & Shkedy, Ziv & Aerts, Marc
                              r-stringr
                              r-stringi
                              r-scales
+                             r-rlang
                              r-readxl
                              r-r6
                              r-r-utils

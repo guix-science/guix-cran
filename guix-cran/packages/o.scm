@@ -5478,13 +5478,13 @@ Krieger, Michael Sklar and David Azriel (2020) <@code{arXiv:1905.03337>}.")
 (define-public r-optimall
   (package
     (name "r-optimall")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimall" version))
        (sha256
-        (base32 "0pc7bswfaz0fc9mjr8m29xvm9a1015fb80sr7si65zkkmjhxwldz"))))
+        (base32 "13xwj2mb1j1whr8786lam4g3sp7izj8nz0k25cz7fp07h3kzn28r"))))
     (properties `((upstream-name . "optimall")))
     (build-system r-build-system)
     (arguments
@@ -10134,6 +10134,45 @@ frames with different schema (copying, filling, or concatenating columns or
 applying functions before combining).")
     (license license:gpl3+)))
 
+(define-public r-omixvizr
+  (package
+    (name "r-omixvizr")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "omixVizR" version))
+       (sha256
+        (base32 "1ff8a45r0v88gfprcna5ypn3p3jy638g9vild6g0qs08s8yink2a"))))
+    (properties `((upstream-name . "omixVizR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sysfonts
+                             r-showtext
+                             r-scales
+                             r-purrr
+                             r-magrittr
+                             r-ggtext
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggbreak
+                             r-data-table))
+    (home-page "https://leslie-lu.github.io/")
+    (synopsis "Toolkit for Omics Data Visualization")
+    (description
+     "This package provides a suite of tools for the comprehensive visualization of
+multi-omics data, including genomics, transcriptomics, and proteomics.  Offers
+user-friendly functions to generate publication-quality plots, thereby
+facilitating the exploration and interpretation of complex biological datasets.
+Supports seamless integration with popular R visualization frameworks and is
+well-suited for both exploratory data analysis and the presentation of final
+results.  Key formats and methods are presented in Huang, S., et al. (2024) \"The
+Born in Guangzhou Cohort Study enables generational genetic discoveries\"
+<doi:10.1038/s41586-023-06988-4>.")
+    (license license:expat)))
+
 (define-public r-omisc
   (package
     (name "r-omisc")
@@ -13109,13 +13148,13 @@ distributions are implemented as described in OâNeill (2019)
 (define-public r-occumb
   (package
     (name "r-occumb")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "occumb" version))
        (sha256
-        (base32 "1lxngbp0v92ssappc4n8gmxzxzb01jk1xw71jng431a7ha589xxy"))))
+        (base32 "1grn6k7mv2imcrxs9q1w697kwzd991bk5v8mdvm58nhvn9v9dr2z"))))
     (properties `((upstream-name . "occumb")))
     (build-system r-build-system)
     (arguments
@@ -13132,7 +13171,7 @@ collected using spatially-replicated survey design.  Model fitting results can
 be used to evaluate and compare the effectiveness of species detection to find
 an efficient survey design.  Reference: Fukaya et al. (2022)
 <doi:10.1111/2041-210X.13732>, Fukaya and Hasebe (2025)
-<doi:10.1101/2025.01.09.632116>.")
+<doi:10.1002/1438-390X.12219>.")
     (license license:gpl3+)))
 
 (define-public r-occcite

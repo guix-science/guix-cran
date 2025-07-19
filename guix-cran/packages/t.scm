@@ -9062,13 +9062,13 @@ distributions.")
 (define-public r-traveltimer
   (package
     (name "r-traveltimer")
-    (version "1.2.1")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traveltimeR" version))
        (sha256
-        (base32 "1029hxdgzapx0irvq5ir18fpdm5cyj5wjvl1h88x3g1rs88pvfzi"))))
+        (base32 "11kpqk5bw8hk6r2hq9zzl3dv0c7q209z5nd7cc7h2skls2nal6nr"))))
     (properties `((upstream-name . "traveltimeR")))
     (build-system r-build-system)
     (arguments
@@ -12646,26 +12646,31 @@ learning models.")
 (define-public r-torchvision
   (package
     (name "r-torchvision")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "torchvision" version))
        (sha256
-        (base32 "0n78x9dyj9dk2dpsmx5zbm1842nhfnb7jszva320avr72w6a4386"))))
+        (base32 "0dx09wk211wzb0qkvfiv864z63h0c3s7q6pdvqk8a7zysv844w9a"))))
     (properties `((upstream-name . "torchvision")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr
+    (propagated-inputs (list r-zeallot
+                             r-withr
                              r-torch
+                             r-tiff
                              r-rlang
                              r-rappdirs
                              r-png
                              r-magrittr
+                             r-jsonlite
                              r-jpeg
+                             r-glue
                              r-fs
+                             r-cli
                              r-abind))
     (home-page "https://torchvision.mlverse.org")
     (synopsis "Models, Datasets and Transformations for Images")
@@ -12892,6 +12897,34 @@ variety of input data encoding (lists of edges or adjacency matrices, graphs
 edge direction), stable sort variants as well as cycle detection with detailed
 diagnosis.")
     (license license:expat)))
+
+(define-public r-toporanga
+  (package
+    (name "r-toporanga")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "toporanga" version))
+       (sha256
+        (base32 "0wlxylyp2g3i4adi23qcx27rgav65scnk25gsbk2vs3gv1y2azyx"))))
+    (properties `((upstream-name . "toporanga")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://gitlab.com/mbq/toporanga")
+    (synopsis "Topological Sort-Based Hierarchy Inference")
+    (description
+     "Deciphering hierarchy of agents exhibiting observable dominance events is a
+crucial problem in several disciplines, in particular in behavioural analysis of
+social animals, but also in social sciences and game theory.  This package
+implements an inference approach based on graph theory, namely to extract the
+optimal acyclic subset of a weighted graph of dominance; this allows for
+hierarchy estimation through topological sorting.  The package also contains
+infrastructure to investigate partially defined hierarchies and hierarchy
+dynamics.")
+    (license license:gpl3)))
 
 (define-public r-topolow
   (package
@@ -15905,13 +15938,13 @@ framework, and @code{LaTeX} code with the tabularray package.")
 (define-public r-tinysnapshot
   (package
     (name "r-tinysnapshot")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinysnapshot" version))
        (sha256
-        (base32 "0r53c5z8kwg8l8b5px6gqk9cfjpx33h8x8b9dkk50ml20vfx5i1p"))))
+        (base32 "19adi0ylihjz0k8fzx5bwh3aazfwv99a2k02fi7g03fym6sgwyqn"))))
     (properties `((upstream-name . "tinysnapshot")))
     (build-system r-build-system)
     (arguments

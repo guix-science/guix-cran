@@ -1664,13 +1664,13 @@ around the @code{JavaScript} library @code{UpSet.js}'.")
 (define-public r-upset-hp
   (package
     (name "r-upset-hp")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "upset.hp" version))
        (sha256
-        (base32 "0r98nyyndrmvfw3z19l1xhpjjc0p7wmc166y0vilm1ss2p2hja98"))))
+        (base32 "0axakv9156gg9xpnv0a6i06y951ba9j3galg6hqrl02aszv28hcx"))))
     (properties `((upstream-name . "upset.hp")))
     (build-system r-build-system)
     (arguments

@@ -9297,13 +9297,13 @@ upon one another.")
 (define-public r-erah
   (package
     (name "r-erah")
-    (version "2.0.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "erah" version))
        (sha256
-        (base32 "136wh0gaygc7mkj507bjmgzv79jcap0whngd501gg47zf7b8jzxx"))))
+        (base32 "0j3vn9c9izff54n43gz1n36ckhj668kyj151kafxb7znkx49ddz9"))))
     (properties `((upstream-name . "erah")))
     (build-system r-build-system)
     (arguments
@@ -9311,15 +9311,15 @@ upon one another.")
       #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-signal
+                             r-rcpp
                              r-quantreg
                              r-progress
                              r-osd
                              r-igraph
                              r-hiclimr
-                             r-future
                              r-furrr))
     (native-inputs (list r-knitr))
-    (home-page "http://metsyslab.com/")
+    (home-page "https://metsyslab.com/")
     (synopsis
      "Automated Spectral Deconvolution, Alignment, and Metabolite Identification in GC/MS-Based Untargeted Metabolomics")
     (description
@@ -24137,27 +24137,27 @@ non-zero effects.")
 (define-public r-ebdm
   (package
     (name "r-ebdm")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebdm" version))
        (sha256
-        (base32 "1b276jzwxsznsayzbxd2yry2wjljib8rb3npj8xd2xzdidnlr1s4"))))
+        (base32 "16qigjkyxxp8y4hywc2xlnd8his5xn438zf2n2isw27siqzw4lqq"))))
     (properties `((upstream-name . "ebdm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=ebdm")
-    (synopsis
-     "Implementation of Estimating Binary Dependency from Marginal Data")
+    (synopsis "Estimating Bivariate Dependency from Marginal Data")
     (description
-     "This package provides a maximum likelihood estimation method to recover the
-joint distribution of two binary variables using only marginal summary data from
-multiple studies.  This approach allows for privacy-preserving estimation in
-settings where individual-level data are unavailable.  The method is fully
-described in the manuscript by Shang, Tsao and Zhang (2025)
+     "This package provides maximum likelihood methods to estimate bivariate
+dependency (correlation) from marginal summary statistics in multi-study
+settings.  The package supports both binary and continuous variables assumed to
+follow a bivariate normal distribution, enabling privacy-preserving joint
+estimation when individual-level data are unavailable.  The binary method is
+fully described in the manuscript by Shang, Tsao and Zhang (2025)
 <doi:10.48550/@code{arXiv.2505.03995>}: \"Estimating the Joint Distribution of
 Two Binary Variables from Their Marginal Summaries\".")
     (license license:gpl3+)))
@@ -24832,6 +24832,36 @@ implemented independently of @code{sdcTable}'.  The function, @code{PTgui()},
 starts a graphical user interface based on the shiny package.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-easyscielopack
+  (package
+    (name "r-easyscielopack")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easyScieloPack" version))
+       (sha256
+        (base32 "1ihyrqprs69nlrabmvcpm5gwlw8ykiwm6lpmay6y19ar7wp7chlw"))))
+    (properties `((upstream-name . "easyScieloPack")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-rvest
+                             r-magrittr
+                             r-httr
+                             r-dplyr))
+    (home-page "https://github.com/PabloIxcamparij/easyScieloPack")
+    (synopsis "Easy Interface to Search 'SciELO' Database")
+    (description
+     "This package provides a simple interface to search and retrieve scientific
+articles from the @code{SciELO} (Scientific Electronic Library Online) database
+<https://scielo.org>.  It allows querying, filtering, and visualizing results in
+an interactive table.")
+    (license license:expat)))
 
 (define-public r-easyreg
   (package
@@ -25883,13 +25913,13 @@ E., Motsinger-Reif, A.; Dose-Response 18(2):1559325820926734 (2020)
 (define-public r-e2tree
   (package
     (name "r-e2tree")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "e2tree" version))
        (sha256
-        (base32 "0q1djx2x832s59xzn1dkx5224iqq2wzxndfa8ahw85y61kkahm9r"))))
+        (base32 "12s82gkz7hqjwbgg9ppcy341q48m7iq1c4idaqjydhavnld8jra0"))))
     (properties `((upstream-name . "e2tree")))
     (build-system r-build-system)
     (arguments
@@ -25899,6 +25929,7 @@ E., Motsinger-Reif, A.; Dose-Response 18(2):1559325820926734 (2020)
                              r-rspectra
                              r-rpart-plot
                              r-rcpp
+                             r-ranger
                              r-randomforest
                              r-purrr
                              r-partitions

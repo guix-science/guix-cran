@@ -3793,13 +3793,13 @@ vector machine (Artemiou et al. (2021) <doi:10.1016/j.patcog.2020.107768>).")
 (define-public r-psvd
   (package
     (name "r-psvd")
-    (version "0.1-0")
+    (version "1.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psvd" version))
        (sha256
-        (base32 "1j6qlmzpqdjh2vzmn8xyry739rpnfpb57y3gpgv1lg93wcinchhq"))))
+        (base32 "0alav79g1cvci6cnjk2lnn6hnp9lzs6lijascbah6b7b9z9602np"))))
     (properties `((upstream-name . "psvd")))
     (build-system r-build-system)
     (arguments
@@ -4721,6 +4721,38 @@ package have been described by Stephen JJ, Carolan P, Krefman AE, et al. (2024)
 <doi:10.1016/j.patter.2024.101003>.")
     (license license:expat)))
 
+(define-public r-psgp
+  (package
+    (name "r-psgp")
+    (version "0.3-23")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psgp" version))
+       (sha256
+        (base32 "0n2ffqsl9nkg9rwvlzq4fsa60lsk931c8ni37wngh77d38vdkw19"))))
+    (properties `((upstream-name . "psgp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sp
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-intamap
+                             r-gstat
+                             r-foreach
+                             r-doparallel
+                             r-automap))
+    (home-page "https://cran.r-project.org/package=psgp")
+    (synopsis "Projected Spatial Gaussian Process Methods")
+    (description
+     "This package implements projected sparse Gaussian process Kriging ('Ingram et.
+al.', 2008, <doi:10.1007/s00477-007-0163-9>) as an additional method for the
+intamap package.  More details on implementation ('Barillec et.  al.', 2010,
+<doi:10.1016/j.cageo.2010.05.008>).")
+    (license license:gpl2+)))
+
 (define-public r-psgoft
   (package
     (name "r-psgoft")
@@ -5160,13 +5192,13 @@ Weibull, gamma and Birnbaum-Saunders distributions.")
 (define-public r-pscore
   (package
     (name "r-pscore")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pscore" version))
        (sha256
-        (base32 "0flzqr9x0z2mjnbm5cjm8hqndkbv2yp11agkx89mbaafsg0hmjn1"))))
+        (base32 "0drhgsghij4gjgi8pgq26llrrqcxzydsg24iyv9xxfw7m3gzr2gs"))))
     (properties `((upstream-name . "pscore")))
     (build-system r-build-system)
     (arguments
@@ -35694,13 +35726,13 @@ of the Peacock test.")
 (define-public r-peacesciencer
   (package
     (name "r-peacesciencer")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "peacesciencer" version))
        (sha256
-        (base32 "06mlz2yjihm4xbdipv167ldf8z7r0ldwfn9day5c3lphg73fym5b"))))
+        (base32 "0jcaxwinwndmm12id80gjldqkp0w45s5sndg9ri6hyw6kdjhgqdd"))))
     (properties `((upstream-name . "peacesciencer")))
     (build-system r-build-system)
     (arguments
@@ -35712,6 +35744,7 @@ of the Peacock test.")
                              r-rlang
                              r-magrittr
                              r-lifecycle
+                             r-isard
                              r-geosphere
                              r-dplyr))
     (home-page "https://github.com/svmiller/peacesciencer/")
@@ -41317,13 +41350,13 @@ another.")
 (define-public r-parcr
   (package
     (name "r-parcr")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parcr" version))
        (sha256
-        (base32 "0288l0jl246jp44zzi0avgz8yip23b64hg8pgnnadl7271xx0nvx"))))
+        (base32 "07z5p8n6wvvmv4z20m0m868655a28zr7pqgh3q0w3xh3k2ydyl7m"))))
     (properties `((upstream-name . "parcr")))
     (build-system r-build-system)
     (arguments
@@ -44667,31 +44700,6 @@ identifies latent group structures and group-specific coefficients in a single
 step.  On top of that, we extend the PAGFL to time-varying coefficient
 functions.")
     (license license:agpl3+)))
-
-(define-public r-pageviews
-  (package
-    (name "r-pageviews")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pageviews" version))
-       (sha256
-        (base32 "187gy6czxkicxghhklma87pfa23xcm07c4n9jfsr5yl9hwwfcna6"))))
-    (properties `((upstream-name . "pageviews")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr r-curl))
-    (home-page "https://github.com/ironholds/pageviews")
-    (synopsis "An API Client for Wikimedia Traffic Data")
-    (description
-     "Pageview data from the Wikimedia sites, such as Wikipedia
-<https://www.wikipedia.org/>, from entire projects to per-article levels of
-granularity, through the new RESTful API and data source
-<https://wikimedia.org/api/rest_v1/?doc>.")
-    (license license:expat)))
 
 (define-public r-pagenum
   (package

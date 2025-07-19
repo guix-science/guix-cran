@@ -11211,13 +11211,13 @@ in Esarey and Pierce (2012) <DOI:10.1093/pan/mps026>.")
 (define-public r-heatindex
   (package
     (name "r-heatindex")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heatindex" version))
        (sha256
-        (base32 "0xncg2kkvxghyhpbwbpldwz5f91xjcqsidk16wj5nbvx44hrl89c"))))
+        (base32 "0issq20b0csj7ajp08mbh0m2nkg6qilc607bbsqbmrdp94qis3j3"))))
     (properties `((upstream-name . "heatindex")))
     (build-system r-build-system)
     (arguments
@@ -11230,7 +11230,8 @@ in Esarey and Pierce (2012) <DOI:10.1093/pan/mps026>.")
      "This package implements the simpler and faster heat index, which matches the
 values of the original 1979 heat index and its 2022 extension for air
 temperatures above 300 K (27 C, 80 F) and with only minor differences at lower
-temperatures.")
+temperatures.  Also implements an algorithm for calculating the thermodynamic
+(and psychrometric) wet-bulb (and ice-bulb) temperature.")
     (license license:expat)))
 
 (define-public r-heatex
@@ -14012,6 +14013,53 @@ glacier melt simulations.")
 its functions have been implemented for analysing the fitting qualities of those
 models.")
     (license license:gpl2+)))
+
+(define-public r-hbsaems
+  (package
+    (name "r-hbsaems")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hbsaems" version))
+       (sha256
+        (base32 "1fbqfid8ivamrxjgzvv2kps7k9i4pwd7rwryz28vqj7y0k8lhfls"))))
+    (properties `((upstream-name . "hbsaems")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xicor
+                             r-shinywidgets
+                             r-shinydashboard
+                             r-shiny
+                             r-readxl
+                             r-priorsense
+                             r-posterior
+                             r-minerva
+                             r-mice
+                             r-ggplot2
+                             r-energy
+                             r-dt
+                             r-coda
+                             r-brms
+                             r-bridgesampling
+                             r-bayesplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/madsyair/hbsaems")
+    (synopsis "Hierarchical Bayes Small Area Estimation Model using 'Stan'")
+    (description
+     "Implementing Hierarchical Bayesian Small Area Estimation models using the brms
+package as the computational backend.  The modeling framework follows the
+methodological foundations described in area-level models.  This package is
+designed to facilitate a principled Bayesian workflow, enabling users to conduct
+prior predictive checks, model fitting, posterior predictive checks, model
+comparison, and sensitivity analysis in a coherent and reproducible manner.  It
+supports flexible model specifications via brms and promotes transparency in
+model development, aligned with the recommendations of modern Bayesian data
+analysis practices, implementing methods described in Rao and Molina (2015)
+<doi:10.1002/9781118735855>.")
+    (license license:gpl3+)))
 
 (define-public r-hbsae
   (package

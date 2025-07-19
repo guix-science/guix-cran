@@ -5,11 +5,11 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages java)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages cmake)
@@ -134,6 +134,35 @@ run, you do not need to run separate programs to get both types of information."
      "Perform correlation and linear regression test among the numeric fields in a
 data.frame automatically and make plots using pairs or lattice::parallelplot.")
     (license license:cc0)))
+
+(define-public r-mycolorstb
+  (package
+    (name "r-mycolorstb")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mycolorsTB" version))
+       (sha256
+        (base32 "0jw58agwhxl5r20x3dqxc1gwmapg30v6d2daxv8gdzh4fgjjd7za"))))
+    (properties `((upstream-name . "mycolorsTB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggtree r-ggplot2 r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mycolorsTB")
+    (synopsis
+     "Color Palettes for Mycobacterium Tuberculosis Data Visualization")
+    (description
+     "Colour palettes and helper functions for visualising Mycobacterium tuberculosis
+genomic and epidemiological data with ggplot2 and ggtree'.  The package provides
+predefined palettes, scale functions, tree/cladogram helpers, and convenient
+preview tools to ensure consistent branding in pathogen-omics visualisations.
+The palettes were developed as part of the @code{mycolorsTB} project
+<https://github.com/@code{PathoGenOmics-Lab/mycolorsTB>}.")
+    (license license:gpl3)))
 
 (define-public r-mycobacrvr
   (package
@@ -11348,13 +11377,13 @@ Gerber, Schmid and Furrer (2021) <DOI:10.1016/j.spasta.2020.100483>.")
 (define-public r-mrbin
   (package
     (name "r-mrbin")
-    (version "1.9.3")
+    (version "1.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrbin" version))
        (sha256
-        (base32 "0xxxv0kyalar166nmhal4xgnbxkk61j403xabw6dh1i4cfb5q4g7"))))
+        (base32 "0yk3cl87p136bydb7kfxz1d4x3mm7h5jyvwfnrhr4r3xwvd8psg1"))))
     (properties `((upstream-name . "mrbin")))
     (build-system r-build-system)
     (arguments
@@ -15281,20 +15310,19 @@ optional partial monotonicity constraints.")
 (define-public r-monitos
   (package
     (name "r-monitos")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "monitOS" version))
        (sha256
-        (base32 "0hdyxb1f2hy3fjbmjf60xnb0x61cga047g007jr9rpb5cimnpk7b"))))
+        (base32 "0p1jzx69g9phbdybmq8bzhzz3qmy9rf76wzap3k24i386dplm6la"))))
     (properties `((upstream-name . "monitOS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-shinydashboard r-shiny r-glue))
-    (native-inputs (list r-knitr))
     (home-page "https://opensource.nibr.com/monitOS/")
     (synopsis
      "Monitoring Overall Survival in Pivotal Trials in Indolent Cancers")
@@ -15309,7 +15337,7 @@ and drug development setting.  The proposed guidelines facilitate transparent
 discussions between stakeholders focusing on the risks of erroneous decisions
 and what might be an acceptable trade-off between power and the false positive
 error rate.")
-    (license license:gpl3+)))
+    (license license:expat)))
 
 (define-public r-monitor
   (package
@@ -16516,13 +16544,13 @@ downloads of MODIS time series directly to your R workspace or your computer.")
 (define-public r-modisfast
   (package
     (name "r-modisfast")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modisfast" version))
        (sha256
-        (base32 "1shdhvc1bcfrmr8gxqx7qqphq0kj0lmc20sggq3bvs82yml77jda"))))
+        (base32 "1vas9a92qr8b6sdg0q92cm3z9h476639274phrfrp8gyyjl5ld7x"))))
     (properties `((upstream-name . "modisfast")))
     (build-system r-build-system)
     (arguments
@@ -16682,13 +16710,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.34")
+    (version "3.39")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modEvA" version))
        (sha256
-        (base32 "01yn47nx2nm4g51zhpl170544vrh2v7p3q5bxcg9z1jh3s0xypjl"))))
+        (base32 "1735dgpxgpx5dxcxqbzw45xw11hmv614g34nynsbfzzjzcyrn1hp"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (arguments
@@ -20791,13 +20819,13 @@ cross-validation if ignored.  A JSS article is available at
 (define-public r-mlr3spatial
   (package
     (name "r-mlr3spatial")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3spatial" version))
        (sha256
-        (base32 "105wscgkrlgckrmisr1b5xf8wlj9w2w7ir8w1280isyg2zp1gva8"))))
+        (base32 "0yzdxxm0qhxli0gh9lpbmy1m630f22fjgwnwi0y7pikrjj2xq1z8"))))
     (properties `((upstream-name . "mlr3spatial")))
     (build-system r-build-system)
     (arguments
@@ -21020,13 +21048,13 @@ joint tuning of machine learning algorithms and debiasing methods.")
 (define-public r-mlr3db
   (package
     (name "r-mlr3db")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3db" version))
        (sha256
-        (base32 "1cq22h9yj27ighh4clyak1xwx2wb5v4803hd7lrhnlgzs85dmhj2"))))
+        (base32 "1zb8bgfy9sr5n6mvsbbk67v7aqnpzy7nw21ashssf1ykhf1ycff1"))))
     (properties `((upstream-name . "mlr3db")))
     (build-system r-build-system)
     (arguments
@@ -21043,10 +21071,11 @@ joint tuning of machine learning algorithms and debiasing methods.")
     (description
      "Extends the mlr3 package with a backend to transparently work with databases
 such as SQLite', @code{DuckDB}', @code{MySQL}', @code{MariaDB}', or
-@code{PostgreSQL}'.  The package provides two additional backends:
+@code{PostgreSQL}'.  The package provides three additional backends:
 @code{DataBackendDplyr} relies on the abstraction of package dbplyr to interact
 with most DBMS. @code{DataBackendDuckDB} operates on @code{DuckDB} data bases
-and also on Apache Parquet files.")
+and also on Apache Parquet files. @code{DataBackendPolars} operates on Polars
+data frames.")
     (license license:lgpl3)))
 
 (define-public r-mlr3benchmark
@@ -22547,13 +22576,13 @@ graphics.")
 (define-public r-mlbc
   (package
     (name "r-mlbc")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLBC" version))
        (sha256
-        (base32 "1d353mz88lyzhzwb9978hmzrzpqiibx2d53arly6044mr86ff250"))))
+        (base32 "0sw37mr4fgsk8ifx9cgcs1jml3pna009n0msqj0hhww5qcbdninm"))))
     (properties `((upstream-name . "MLBC")))
     (build-system r-build-system)
     (arguments
@@ -22563,11 +22592,9 @@ graphics.")
     (home-page "https://cran.r-project.org/package=MLBC")
     (synopsis "Bias Correction Methods for Models Using Synthetic Data")
     (description
-     "This package implements three bias-correction techniques (additive bias
-correction, multiplicative bias correction, and one-step estimation via Template
-Model Builder (TMB)) based on Battaglia et al. (2025
-<doi:10.48550/@code{arXiv.2402.15585>}) to improve inference using synthetic
-data.")
+     "This package implements three bias-correction techniques from Battaglia et al.
+(2025 <doi:10.48550/@code{arXiv.2402.15585>}) to improve inference in regression
+models with covariates generated by AI or machine learning.")
     (license license:expat)))
 
 (define-public r-ml2pvae
@@ -25003,13 +25030,13 @@ and (7) functions to interact with Blimp and Mplus'.")
 (define-public r-mistral
   (package
     (name "r-mistral")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mistral" version))
        (sha256
-        (base32 "1ssgglw2y1bkhlwcrmw8bv8ic6vl5nj4l482hlq8kv1dgyrnbsas"))))
+        (base32 "1mv0wnsqk6789knghnb0lmfwi73dlp1sar30aa1jmminam3wjwgg"))))
     (properties `((upstream-name . "mistral")))
     (build-system r-build-system)
     (arguments
@@ -32253,6 +32280,39 @@ package allows for a range of applications, from mapping brief discrete scales
 including dozens of shades graded from red to green.")
     (license license:gpl2+)))
 
+(define-public r-mexicodataapi
+  (package
+    (name "r-mexicodataapi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MexicoDataAPI" version))
+       (sha256
+        (base32 "17wg0i7x68vpivy0gm82gjvsx53zyk4hcrgfyc2gksxjkw63zkqz"))))
+    (properties `((upstream-name . "MexicoDataAPI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/mexicodataapi")
+    (synopsis "Access Mexican Data via APIs and Curated Datasets")
+    (description
+     "This package provides functions to access data from the World Bank API and the
+REST Countries API', related to Mexico's economic indicators, population
+statistics, literacy rates, and international geopolitical information.
+Additionally, the package includes curated datasets related to Mexico, including
+air quality monitoring stations, pollution zones, income surveys, postal
+abbreviations, election studies, forest productivity, and demographic data by
+state.  The package supports research and analysis focused on Mexico by
+integrating reliable global APIs with structured national datasets drawn from
+open and academic sources.  For more details on the World Bank API', see
+<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, and for the
+REST Countries API', see <https://restcountries.com/>.")
+    (license license:gpl3)))
+
 (define-public r-mexhaz
   (package
     (name "r-mexhaz")
@@ -33592,13 +33652,13 @@ from a web browser (<https://www.metaumbrella.org/>).")
 (define-public r-metatools
   (package
     (name "r-metatools")
-    (version "0.1.6")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metatools" version))
        (sha256
-        (base32 "09rr7hfzkwk2ddc9cs9x8yvqbizk0bxfflkn9vdlf1b9kvrpknh9"))))
+        (base32 "1gvypr3japml2r654q8p6kl4jjcl38djz85pw0vn96ij9bgvchl0"))))
     (properties `((upstream-name . "metatools")))
     (build-system r-build-system)
     (arguments
@@ -33611,7 +33671,9 @@ from a web browser (<https://www.metaumbrella.org/>).")
                              r-purrr
                              r-metacore
                              r-magrittr
-                             r-dplyr))
+                             r-lifecycle
+                             r-dplyr
+                             r-cli))
     (home-page "https://github.com/pharmaverse/metatools")
     (synopsis "Enable the Use of 'metacore' to Help Create and Check Dataset")
     (description
@@ -34257,6 +34319,31 @@ such as such as reference lines, unity lines, smooths, log transformation, and
 linear fits.  The user may choose between trellis and ggplot output.  Compact
 syntax and integrated metadata promote workflow scalability.")
     (license license:gpl3)))
+
+(define-public r-metaphonebr
+  (package
+    (name "r-metaphonebr")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metaphonebr" version))
+       (sha256
+        (base32 "1n26gia9qfz146nvykl1gm3mn04mv4vk275q5nf25hyqbaf000lx"))))
+    (properties `((upstream-name . "metaphonebr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi r-lifecycle))
+    (home-page "https://github.com/ipeadata-lab/metaphonebr")
+    (synopsis "Custom 'MetaphoneBR' Phonetic Encoding for Brazilian Names")
+    (description
+     "Simplifies Brazilian names phonetically using a custom @code{metaphoneBR}
+algorithm that preserves ending vowels.  Useful for name matching processing
+preserving gender information carried generally by ending vowels in Portuguese.
+Mation (2025) <doi:10.6082/uchicago.15104>.")
+    (license license:expat)))
 
 (define-public r-metapack
   (package
@@ -37776,6 +37863,35 @@ in practice, is described in more detail by Kremers WK (2021)
 <doi:10.1093/jamia/ocz180>.")
     (license license:gpl3)))
 
+(define-public r-medzisc
+  (package
+    (name "r-medzisc")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MedZIsc" version))
+       (sha256
+        (base32 "01x5jj29nc4z4j2c6jy03pqc0ch2b694rmwp63c8a2rbha97fxc8"))))
+    (properties `((upstream-name . "MedZIsc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-glmnet r-betareg))
+    (home-page "https://cran.r-project.org/package=MedZIsc")
+    (synopsis
+     "Statistical Framework for Co-Mediators of Zero-Inflated Single-Cell Data")
+    (description
+     "This package provides a causal mediation framework for single-cell data that
+incorporates two key features ('@code{MedZIsc}', pronounced Magics): (1)
+zero-inflation using beta regression and (2) overdispersed expression counts
+using negative binomial regression.  This approach also includes a screening
+step based on penalized and marginal models to handle high-dimensionality.  Full
+methodological details are available in our recent preprint by Ahn S and Li Z
+(2025) <doi:10.48550/@code{arXiv.2505.22986>}.")
+    (license license:gpl3)))
+
 (define-public r-medseq
   (package
     (name "r-medseq")
@@ -40410,6 +40526,41 @@ refer to CLSI (Clinical & Laboratory Standards Institute) recommendations and
 NMPA (National Medical Products Administration) guidelines.  In additional,
 relevant plots are constructed by ggplot2'.")
     (license license:gpl3+)))
+
+(define-public r-mcptools
+  (package
+    (name "r-mcptools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mcptools" version))
+       (sha256
+        (base32 "1b3y1xbfajrpbw2v3h3z2gi5zvpz4g0y2wpnbfp1n87dxd4gimh6"))))
+    (properties `((upstream-name . "mcptools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-promises
+                             r-processx
+                             r-nanonext
+                             r-jsonlite
+                             r-ellmer
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/posit-dev/mcptools")
+    (synopsis "Model Context Protocol Servers and Clients")
+    (description
+     "This package implements the Model Context Protocol (MCP).  Users can start
+R'-based servers, serving functions as tools for large language models to call
+before responding to the user in MCP-compatible apps like Claude Desktop and
+Claude Code', with options to run those tools inside of interactive R sessions.
+On the other end, when R is the client via the ellmer package, users can
+register tools from third-party MCP servers to integrate additional context into
+chats.")
+    (license license:expat)))
 
 (define-public r-mcptests
   (package
@@ -48099,13 +48250,13 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "0r5vxlg7ryz6kxzr9jxvpacbrq1cig3xrf8lfz797wb8zg95b6gm"))))
+        (base32 "13wngr0czbfm938q5014iah3lfaqfmragq50ds5njgdffrfypkb6"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
     (arguments
@@ -48900,13 +49051,13 @@ instrument tests by Stock and Yogo (2005) <doi:10.1017/CBO9780511614491.006>.")
 (define-public r-manydist
   (package
     (name "r-manydist")
-    (version "0.4.7")
+    (version "0.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manydist" version))
        (sha256
-        (base32 "1zyd3qv7pfv6h3w5kj29i9cwvs96k4nh0sbm9zxy0vk5pmwlpagq"))))
+        (base32 "1j12sc1x5615pb6aar5y76g3lpcq5gf41399x1w7jlxkymgrjkx6"))))
     (properties `((upstream-name . "manydist")))
     (build-system r-build-system)
     (arguments
@@ -51005,13 +51156,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "158rzgf3c7klv8k0d8lqbvzrlicqbk56scwdnnjp8qi7p7bf27l1"))))
+        (base32 "1fr04177q2876v45c23n9r8z4wy2afrlb9vncrxd3kgzc6p469wm"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (arguments

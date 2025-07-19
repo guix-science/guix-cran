@@ -11,6 +11,7 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages tbb)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages web)
   #:use-module (gnu packages haskell-xyz)
@@ -2411,6 +2412,31 @@ multivariate functional principal component analysis
      "Find functions in an unstructured directory and explore their dependencies.
 Sourcing of R source files is performed without side-effects: from R scripts
 that have executable code and function definitions only functions are sourced.")
+    (license license:expat)))
+
+(define-public r-functionals
+  (package
+    (name "r-functionals")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "functionals" version))
+       (sha256
+        (base32 "0xyz1a7zlbcp2slka1f7zgyzlm48yv2p367pxi9acbpjli25yqns"))))
+    (properties `((upstream-name . "functionals")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=functionals")
+    (synopsis "Functional Programming with Parallelism and Progress Tracking")
+    (description
+     "This package provides functional tools such as @code{fmap()}, @code{fwalk()},
+and @code{fapply()} to iterate over vectors, data frames, or grouped data with
+optional parallelism and real-time progress tracking.  Designed for readable and
+reproducible workflows, including support for Monte Carlo simulations and
+benchmarking.")
     (license license:expat)))
 
 (define-public r-functionalcalibration
@@ -6607,6 +6633,35 @@ significance level is evaluated by a fuzzy ranking method in this package.")
      "Efficient approximation of first passage time densities for diffusion processes
 based on the First Passage Time Location (FPTL) function.")
     (license license:gpl2)))
+
+(define-public r-fproc
+  (package
+    (name "r-fproc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fpROC" version))
+       (sha256
+        (base32 "08a3s2qaz5p7rqbxglz93mlm8a5rf7mv87x30gwf8a69dsd530q7"))))
+    (properties `((upstream-name . "fpROC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list tbb))
+    (propagated-inputs (list r-terra r-rcpparmadillo r-rcpp))
+    (home-page "https://luismurao.github.io/fpROC/")
+    (synopsis
+     "Fast Partial Receiver Operating Characteristic (ROC) Test for Ecological Niche Modeling")
+    (description
+     "This package provides optimized C++ code for computing the partial Receiver
+Operating Characteristic (ROC) test used in niche and species distribution
+modeling.  The implementation follows Peterson et al. (2008)
+<doi:10.1016/j.ecolmodel.2007.11.008>.  Parallelization via @code{OpenMP} was
+implemented with assistance from the @code{DeepSeek} Artificial Intelligence
+Assistant (<https://www.deepseek.com/>).")
+    (license license:gpl3)))
 
 (define-public r-fpp3
   (package
@@ -15343,13 +15398,13 @@ estimate fire weather hazard.")
 (define-public r-firebase-auth-rest
   (package
     (name "r-firebase-auth-rest")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "firebase.auth.rest" version))
        (sha256
-        (base32 "1gdrccvh5hlrrpv57swjqvma5pw6ikmn6zyya7z22hwwmzlc97m3"))))
+        (base32 "1f5lxjnl04sv2y10vz6vwlngcdnrh0likchz6sqzf9f7dp177y7k"))))
     (properties `((upstream-name . "firebase.auth.rest")))
     (build-system r-build-system)
     (arguments
@@ -16392,6 +16447,31 @@ Explore models and export directly to PDF and Word using RMarkdown'.")
 data sets from the Internet or from other sources.")
     (license license:gpl2+)))
 
+(define-public r-filtro
+  (package
+    (name "r-filtro")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "filtro" version))
+       (sha256
+        (base32 "1lx1cp4jfknsxy8ppx3101bzzg0qmlmgpk3vhrx6cb81mmi1c7jg"))))
+    (properties `((upstream-name . "filtro")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-purrr))
+    (home-page "https://github.com/tidymodels/filtro")
+    (synopsis "Feature Selection Using Supervised Filter-Based Methods")
+    (description
+     "Tidy tools to apply filter-based supervised feature selection methods.  These
+methods score and rank feature relevance using metrics such as p-values,
+correlation, and importance scores (Kuhn and Johnson (2019)
+<doi:10.1201/9781315108230>).")
+    (license license:expat)))
+
 (define-public r-filters
   (package
     (name "r-filters")
@@ -16920,13 +17000,13 @@ work with convenient functions at a package level.")
 (define-public r-fiestautils
   (package
     (name "r-fiestautils")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FIESTAutils" version))
        (sha256
-        (base32 "10sjr439hn7xzc3qmi8r74408q9fr2fpggq1220syy1k2dnh6sri"))))
+        (base32 "0140wr7rz32w2c2crbpsanxp9c9axzxnxg8gy70iry2jjk3r49p8"))))
     (properties `((upstream-name . "FIESTAutils")))
     (build-system r-build-system)
     (arguments
@@ -17502,30 +17582,6 @@ exploration of genomic features, and post-GWAS functional analysis.")
 creation of new data, structured from basic forest inventory data.  The purpose
 of this package is provide functions to support these activities.")
     (license license:gpl2)))
-
-(define-public r-fgm
-  (package
-    (name "r-fgm")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fgm" version))
-       (sha256
-        (base32 "0i6lbqxxjq78dql14qwqs7slnn0kyls2g3a9biabny2narwf6n3m"))))
-    (properties `((upstream-name . "fgm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jgl r-fdapace))
-    (home-page "https://cran.r-project.org/package=fgm")
-    (synopsis "Partial Separability and Functional Gaussian Graphical Models")
-    (description
-     "Estimates a functional graphical model and a partially separable Karhunen-LoÃ¨ve
-decomposition for a multivariate Gaussian process.  See Zapata J., Oh S. and
-Petersen A. (2019) <@code{arXiv:1910.03134>}.")
-    (license license:gpl2+)))
 
 (define-public r-fglsnet
   (package
@@ -23536,13 +23592,13 @@ written in C++ using Armadillo linear algebra library.")
 (define-public r-fastei
   (package
     (name "r-fastei")
-    (version "0.0.0.7")
+    (version "0.0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastei" version))
        (sha256
-        (base32 "1zfwm8pbc6n9gnv4dx7g8dx9g9w2ab0wa5l4sapdmfh9bg1dwhim"))))
+        (base32 "1mq4rlfyzjpcsql2326q7mpvdx019gg3x7jhn037wqzfsy50rjdb"))))
     (properties `((upstream-name . "fastei")))
     (build-system r-build-system)
     (arguments
@@ -24164,13 +24220,13 @@ regressions, see Lederer & Vogt (2021, JMLR)
 (define-public r-fars
   (package
     (name "r-fars")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FARS" version))
        (sha256
-        (base32 "0r5m66wvh8fp1bs7zz38p93k8v9hq6v106n3ax5qxxfayfg8s6c2"))))
+        (base32 "0qwzv99bgdrihxmykawjfh2nb697mcr4mmk5d7brbs6145gzxaci"))))
     (properties `((upstream-name . "FARS")))
     (build-system r-build-system)
     (arguments
@@ -24190,7 +24246,7 @@ regressions, see Lederer & Vogt (2021, JMLR)
                              r-ellipse
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=FARS")
+    (home-page "https://arxiv.org/abs/2507.10679")
     (synopsis "Factor-Augmented Regression Scenarios")
     (description
      "This package provides a comprehensive framework in R for modeling and

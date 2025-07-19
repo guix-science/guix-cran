@@ -573,26 +573,27 @@ modular functions and modular curves.")
 (define-public r-cyclops
   (package
     (name "r-cyclops")
-    (version "3.5.2")
+    (version "3.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Cyclops" version))
        (sha256
-        (base32 "0j3ff3dprz4zv7b2wb3k58r4jcxn0fgwg562yhsdnzbyvk1r7i7m"))))
+        (base32 "0a7hk0wir7ffkbgj2swq3wprr0jv83zavhxj758nqzj83wmk7km9"))))
     (properties `((upstream-name . "Cyclops")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
+    (propagated-inputs (list r-tidyr
+                             r-survival
                              r-rlang
-                             r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-matrix
                              r-dplyr
                              r-bit64
+                             r-bit
                              r-andromeda))
     (home-page "https://github.com/ohdsi/cyclops")
     (synopsis
@@ -11601,13 +11602,13 @@ imbalance measures.  See Baldi Antognini A, Frieri R, Zagoraiou M and Novelli M
 (define-public r-coursekata
   (package
     (name "r-coursekata")
-    (version "0.18.1")
+    (version "0.19.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coursekata" version))
        (sha256
-        (base32 "0j3c42f3ay3k5w2jrlq0yd2jh0p38q5lywp5rawhvls2ibg45ibm"))))
+        (base32 "124lzp2xw90y1l97zhl2ydkagbzd5qgv2mj1f8il8vss604ffc2n"))))
     (properties `((upstream-name . "coursekata")))
     (build-system r-build-system)
     (arguments
@@ -11634,7 +11635,7 @@ imbalance measures.  See Baldi Antognini A, Frieri R, Zagoraiou M and Novelli M
      "Easily install and load all packages and functions used in @code{CourseKata}
 courses.  Aid teaching with helper functions and augment generic functions to
 provide cohesion between the network of packages.  Learn more about
-@code{CourseKata} at <https://coursekata.org>.")
+@code{CourseKata} at <https://www.coursekata.org>.")
     (license license:agpl3+)))
 
 (define-public r-countts
@@ -27856,6 +27857,35 @@ interface.  It enables programmatic and reproducible access to a wide variety of
 housing data from CMHC.")
     (license license:expat)))
 
+(define-public r-cmgnd
+  (package
+    (name "r-cmgnd")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cmgnd" version))
+       (sha256
+        (base32 "1k0hws823rmqf3z455sv1yqp8i1hq8hz5nrg9k77nnj0x1v2zsfd"))))
+    (properties `((upstream-name . "cmgnd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppalgos r-purrr r-lubridate r-gnorm r-ggplot2))
+    (home-page "https://github.com/pierdutt/cmgnd")
+    (synopsis "Constrained Mixture of Generalized Normal Distributions")
+    (description
+     "The cmgnd implements the constrained mixture of generalized normal distributions
+model, a flexible statistical framework for modelling univariate data exhibiting
+non-normal features such as skewness, multi-modality, and heavy tails.  By
+imposing constraints on model parameters, the cmgnd reduces estimation
+complexity while maintaining high descriptive power, offering an efficient
+solution in the presence of distributional irregularities.  For more details see
+Duttilo and Gattone (2025) <doi:10.1007/s00180-025-01638-x> and Duttilo et al
+(2025) <doi:10.48550/@code{arXiv.2506.03285>}.")
+    (license license:gpl3+)))
+
 (define-public r-cmgfm
   (package
     (name "r-cmgfm")
@@ -32750,13 +32780,13 @@ anything if needed.")
 (define-public r-cleanepi
   (package
     (name "r-cleanepi")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cleanepi" version))
        (sha256
-        (base32 "1w61hpfq1sfddjjgigyg2x8140gah7ci4d1hyrnf30iiqbbc044v"))))
+        (base32 "0hsl86za1xiaiphhrbdjpna0fm05820az5r54rscksyf86lp3gsm"))))
     (properties `((upstream-name . "cleanepi")))
     (build-system r-build-system)
     (arguments
@@ -36838,6 +36868,58 @@ some positive but many zero responses (see Follmann, Fay, and Proschan
 <DOI:10.1111/j.1541-0420.2008.01131.x>).")
     (license license:gpl3)))
 
+(define-public r-chopin
+  (package
+    (name "r-chopin")
+    (version "0.9.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chopin" version))
+       (sha256
+        (base32 "0ldvp4nwfhq6b07vwnlq1pg3f72ivpvha4vylrwvzgx1blgwxas0"))))
+    (properties `((upstream-name . "chopin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list netcdf))
+    (propagated-inputs (list r-terra
+                             r-stars
+                             r-sf
+                             r-rlang
+                             r-mirai
+                             r-igraph
+                             r-future-apply
+                             r-future
+                             r-exactextractr
+                             r-dplyr
+                             r-collapse
+                             r-cli
+                             r-anticlust))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/chopin/")
+    (synopsis "Spatial Parallel Computing by Hierarchical Data Partitioning")
+    (description
+     "Geospatial data computation is parallelized by grid, hierarchy, or raster files.
+ Based on future (Bengtsson, 2024 <doi:10.32614/CRAN.package.future>) and mirai
+(Gao et al., 2025 <doi:10.32614/CRAN.package.mirai>) parallel back-ends, terra
+(Hijmans et al., 2025 <doi:10.32614/CRAN.package.terra>) and sf (Pebesma et al.,
+2024 <doi:10.32614/CRAN.package.sf>) functions as well as convenience functions
+in the package can be distributed over multiple threads.  The simplest way of
+parallelizing generic geospatial computation is to start from @code{par_pad_*()}
+functions to @code{par_grid()}, @code{par_hierarchy()}, or
+@code{par_multirasters()} functions.  Virtually any functions accepting classes
+in terra or sf packages can be used in the three parallelization functions.  A
+common raster-vector overlay operation is provided as a function
+@code{extract_at()}, which uses exactextractr (Baston, 2023
+<doi:10.32614/CRAN.package.exactextractr>), with options for kernel weights for
+summarizing raster values at vector geometries.  Other convenience functions for
+vector-vector operations including simple areal interpolation
+@code{(summarize_aw()}) and summation of exponentially decaying weights
+@code{(summarize_sedc()}) are also provided.")
+    (license license:expat)))
+
 (define-public r-choosepc
   (package
     (name "r-choosepc")
@@ -37534,6 +37616,37 @@ under no event these maps mean there is a cession or occupation of sovereign
 territories against International Laws from Chile.  This package was
 intentionally documented in asciified spanish to make it work without problem on
 different platforms.).")
+    (license license:gpl3)))
+
+(define-public r-chiledataapi
+  (package
+    (name "r-chiledataapi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ChileDataAPI" version))
+       (sha256
+        (base32 "0z8izvidxxqnih9a2h6nip9wyr8mjvgiqr9qk5pk0fzxplfwjbbw"))))
+    (properties `((upstream-name . "ChileDataAPI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/chiledataapi")
+    (synopsis "Access Chilean Data via APIs and Curated Datasets")
+    (description
+     "This package provides functions to access data from the FINDIC API and the REST
+Countries API', related to Chile's financial indicators, international country
+information, and more.  Additionally, the package includes curated datasets
+related to Chile, covering topics such as human rights violations during the
+Pinochet regime, electoral data, census samples, health surveys, seismic events,
+territorial codes, and environmental measurements.  The package supports
+research and analysis focused on Chile by integrating open APIs with
+high-quality datasets from multiple domains.  For more details on FINDIC', see
+<https://findic.cl/>, and for REST Countries', see <https://restcountries.com/>.")
     (license license:gpl3)))
 
 (define-public r-childsds
@@ -44803,6 +44916,47 @@ standard discrete binomial with continuous size parameter and continuous support
 with x in [0, size + 1], following Ilienko (2013) <@code{arXiv:1303.5990>}.")
     (license license:gpl2+)))
 
+(define-public r-cbctools
+  (package
+    (name "r-cbctools")
+    (version "0.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cbcTools" version))
+       (sha256
+        (base32 "0ps6m443mm5shxa5a15mldv9gywzm13byaqbwkfqpk24h4dpdh4j"))))
+    (properties `((upstream-name . "cbcTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-randtoolbox
+                             r-logitr
+                             r-idefix
+                             r-ggplot2
+                             r-fastdummies))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jhelvy/cbcTools")
+    (synopsis "Design and Analyze Choice-Based Conjoint Experiments")
+    (description
+     "Design and evaluate choice-based conjoint survey experiments.  Generate a
+variety of survey designs, including random designs, frequency-based designs,
+and D-optimal designs, as well as \"labeled\" designs (also known as
+\"alternative-specific designs\"), designs with \"no choice\" options, and designs
+with dominant alternatives removed.  Conveniently inspect and compare designs
+using a variety of metrics, including design balance, overlap, and D-error, and
+simulate choice data for a survey design either randomly or according to a
+utility model defined by user-provided prior parameters.  Conduct a power
+analysis for a given survey design by estimating the same model on different
+subsets of the data to simulate different sample sizes.  Bayesian D-efficient
+designs using the cea and modfed methods are obtained using the idefix package
+by Traets et al (2020) <doi:10.18637/jss.v096.i03>.  Choice simulation and model
+estimation in power analyses are handled using the logitr package by Helveston
+(2023) <doi:10.18637/jss.v105.i10>.")
+    (license license:expat)))
+
 (define-public r-cbcgrps
   (package
     (name "r-cbcgrps")
@@ -49418,6 +49572,43 @@ canonical correlation analysis when all predictors are quantitative.")
      "Retrieve cancer screening data for cervical, breast and colorectal cancers from
 the Kenya Health Information System <https://hiskenya.org> in a consistent way.")
     (license license:expat)))
+
+(define-public r-cancerradarr
+  (package
+    (name "r-cancerradarr")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cancerradarr" version))
+       (sha256
+        (base32 "17d07ldvd7jnvxcyc70jj88wj922zg677kggwvrd9yncbyrng03c"))))
+    (properties `((upstream-name . "cancerradarr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rmarkdown
+                             r-rlang
+                             r-purrr
+                             r-plyr
+                             r-openxlsx
+                             r-magrittr
+                             r-epitools
+                             r-dplyr))
+    (native-inputs (list r-quarto))
+    (home-page "https://cran.r-project.org/package=cancerradarr")
+    (synopsis "Cancer RADAR Project Tool")
+    (description
+     "Cancer RADAR is a project which aim is to develop an infrastructure that allows
+quantifying the risk of cancer by migration background across Europe.  This
+package contains a set of functions cancer registries partners should use to
+reshape 5 year-age group cancer incidence data into a set of summary statistics
+(see Boyle & Parkin (1991, ISBN:978-92-832-1195-2)) in lines with Cancer RADAR
+data protections rules.")
+    (license license:gpl3+)))
 
 (define-public r-cancerr
   (package

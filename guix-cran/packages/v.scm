@@ -1719,13 +1719,13 @@ principal component analysis (PCA), partial least squares discriminant analysis
 (define-public r-volumodel
   (package
     (name "r-volumodel")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "voluModel" version))
        (sha256
-        (base32 "1pl4rxqpsh2kvnqph53nbcv4kj9zj7i3krn7y0h1mcvp0pzz1yva"))))
+        (base32 "0qvyysd975p3nrm3k4pnqan4qlgwd0lc5316qqfjfxiiil6vpfgp"))))
     (properties `((upstream-name . "voluModel")))
     (build-system r-build-system)
     (arguments
@@ -1734,6 +1734,7 @@ principal component analysis (PCA), partial least squares discriminant analysis
     (propagated-inputs (list r-viridislite
                              r-terra
                              r-sf
+                             r-rnaturalearth
                              r-rangebuilder
                              r-modeva
                              r-metr
@@ -5773,6 +5774,45 @@ Each gene was assessed on 366 neuroblastoma complementary DNA (@code{cDNA})
 samples and on 18 standard dilution series samples (10-fold 5-point dilution
 series x 3 replicates + no template controls (NTC) x 3 replicates).")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-verifyr2
+  (package
+    (name "r-verifyr2")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "verifyr2" version))
+       (sha256
+        (base32 "0w3xvaqs0avb9ndki72m0r816vm9fz46hbvfgjia09rj2dwa490s"))))
+    (properties `((upstream-name . "verifyr2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-striprtf
+                             r-stringr
+                             r-shiny
+                             r-rappdirs
+                             r-r6
+                             r-mime
+                             r-magrittr
+                             r-jsonlite
+                             r-dplyr
+                             r-diffobj
+                             r-base64enc))
+    (home-page "https://cran.r-project.org/package=verifyr2")
+    (synopsis "Compare and Verify File Contents")
+    (description
+     "Extendable R6 file comparison classes, including a shiny app for combining the
+comparison functionality into a file comparison application.  The package idea
+originates from pharma companies drug development processes, where statisticians
+and statistical programmers need to review and compare different versions of the
+same outputs and datasets.  The package implementation itself is not tied to any
+specific industry and can be used in any context for easy file comparisons
+between different file version sets.")
+    (license license:expat)))
 
 (define-public r-verification
   (package

@@ -1686,19 +1686,19 @@ easier way.")
 (define-public r-issuetracker
   (package
     (name "r-issuetracker")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IssueTrackeR" version))
        (sha256
-        (base32 "1mh5glqbp846bj7hj71gnljyfvmysq2r1wld2fx5cmxci4fyfndp"))))
+        (base32 "0gjbsvfljhf5gw6qr4iab9p42lirq67g0a42jadh4zi6shqvprja"))))
     (properties `((upstream-name . "IssueTrackeR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml r-gh r-crayon))
+    (propagated-inputs (list r-yaml r-gh r-crayon r-cli))
     (home-page "https://github.com/TanguyBarthelemy/IssueTrackeR")
     (synopsis "List Things to Do")
     (description
@@ -3457,13 +3457,13 @@ models from data with different shape and using different software.")
 (define-public r-irtq
   (package
     (name "r-irtq")
-    (version "0.2.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irtQ" version))
        (sha256
-        (base32 "0jql9lz6f2ik5ixv66028h45wh1jcb54rbgmazsgrzvjpb12zybg"))))
+        (base32 "1cg9rxbk7xsbaj4qx9gvda4q3zxlxbq5v8pfng1kpwcsja8bysla"))))
     (properties `((upstream-name . "irtQ")))
     (build-system r-build-system)
     (arguments
@@ -3485,18 +3485,18 @@ models from data with different shape and using different software.")
     (home-page "https://cran.r-project.org/package=irtQ")
     (synopsis "Unidimensional Item Response Theory Modeling")
     (description
-     "Fit unidimensional item response theory (IRT) models to a mixture of dichotomous
-and polytomous data, calibrate online item parameters (i.e., pretest and
-operational items), estimate examinees abilities, and examine the IRT model-data
-fit on item-level in different ways as well as provide useful functions related
-to IRT analyses such as IRT model-data fit evaluation and differential item
-functioning analysis.  The @code{bring.flexmirt()} and @code{write.flexmirt()}
-functions were written by modifying the @code{read.flexmirt()} function
-(Pritikin & Falk (2022) <doi:10.1177/0146621620929431>).  The
-@code{bring.bilog()} and @code{bring.parscale()} functions were written by
-modifying the @code{read.bilog()} and @code{read.parscale()} functions,
-respectively (Weeks (2010) <doi:10.18637/jss.v035.i12>).  The @code{bisection()}
-function was written by modifying the @code{bisection()} function (Howard (2017,
+     "Fit unidimensional item response theory (IRT) models to test data, which
+includes both dichotomous and polytomous items, calibrate pretest item
+parameters, estimate examinees abilities, and examine the IRT model-data fit on
+item-level in different ways as well as provide useful functions related to IRT
+analyses such as IRT model-data fit evaluation and differential item functioning
+analysis.  The @code{bring.flexmirt()} and @code{write.flexmirt()} functions
+were written by modifying the @code{read.flexmirt()} function (Pritikin & Falk
+(2022) <doi:10.1177/0146621620929431>).  The @code{bring.bilog()} and
+@code{bring.parscale()} functions were written by modifying the
+@code{read.bilog()} and @code{read.parscale()} functions, respectively (Weeks
+(2010) <doi:10.18637/jss.v035.i12>).  The @code{bisection()} function was
+written by modifying the @code{bisection()} function (Howard (2017,
 ISBN:9780367657918)).  The code of the inverse test characteristic curve scoring
 in the @code{est_score()} function was written by modifying the
 @code{irt.eq.tse()} function (GonzÃ¡lez (2014) <doi:10.18637/jss.v059.i07>).  In
@@ -5857,13 +5857,13 @@ as well as internationalized ('IDN') domain lookup with and whois query.")
 (define-public r-iotarelr
   (package
     (name "r-iotarelr")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iotarelr" version))
        (sha256
-        (base32 "0sp3qcd5zbz8q2srfa5a34gv9rj4hcqiggbrmr67p8zfrfm950np"))))
+        (base32 "1lzl0py3yv0r8hjs1ipm3iysxd0h0b3yp4mfac63b7qwcv05lgmj"))))
     (properties `((upstream-name . "iotarelr")))
     (build-system r-build-system)
     (arguments
@@ -8675,6 +8675,40 @@ functions to copy the curves into memory, and to plot the curves and their
 underlying data, as well as functions to calibrate radiocarbon dates.")
     (license license:gpl2+)))
 
+(define-public r-intamap
+  (package
+    (name "r-intamap")
+    (version "1.5-10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intamap" version))
+       (sha256
+        (base32 "0107akjscl1wqrcvrdfzhbxvf0s7rzbg6caq5pv5n7rawqqksrf5"))))
+    (properties `((upstream-name . "intamap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sp
+                             r-sf
+                             r-mvtnorm
+                             r-mba
+                             r-mass
+                             r-gstat
+                             r-foreach
+                             r-evd
+                             r-doparallel
+                             r-automap))
+    (home-page "https://cran.r-project.org/package=intamap")
+    (synopsis "Procedures for Automated Interpolation")
+    (description
+     "Geostatistical interpolation has traditionally been done by manually fitting a
+variogram and then interpolating.  Here, we introduce classes and methods that
+can do this interpolation automatically.  Pebesma et al (2010) gives an overview
+of the methods behind and possible usage <doi:10.1016/j.cageo.2010.03.019>.")
+    (license license:gpl2+)))
+
 (define-public r-insusenscalc
   (package
     (name "r-insusenscalc")
@@ -10292,13 +10326,13 @@ calculates melt temperatures and melt shifts for each protein in the experiment.
 (define-public r-inflection
   (package
     (name "r-inflection")
-    (version "1.3.6")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inflection" version))
        (sha256
-        (base32 "11kiclf3jd08im5lkm12p9winkcqp4y8897syvccx07qc99kifn8"))))
+        (base32 "0482g7idw28h42xzb5v15y0wlmxg999cn9wgf92s4v4w0rrcfcpw"))))
     (properties `((upstream-name . "inflection")))
     (build-system r-build-system)
     (arguments
@@ -10311,7 +10345,7 @@ calculates melt temperatures and melt shifts for each protein in the experiment.
      "Implementation of methods Extremum Surface Estimator (ESE) and Extremum Distance
 Estimator (EDE) to identify the inflection point of a curve .  Christopoulos, DT
 (2014) <doi:10.48550/@code{arXiv.1206.5478>} .  Christopoulos, DT (2016)
-<https://veltech.edu.in/wp-content/uploads/2016/04/Paper-04-2016.pdf> .
+<https://demovtu.veltech.edu.in/wp-content/uploads/2016/04/Paper-04-2016.pdf> .
 Christopoulos, DT (2016) <doi:10.2139/ssrn.3043076> .")
     (license license:gpl2+)))
 
@@ -14196,13 +14230,13 @@ color images, both for binary and multi-class image segmentation.")
 (define-public r-imagery
   (package
     (name "r-imagery")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imageRy" version))
        (sha256
-        (base32 "1k2q4bw3mpsj6jmq7n781wmgg6q1dfdlcr0l8b5cpr3ldy371g9r"))))
+        (base32 "06zcw2jsvdbvc28hrcrqw9b8xck0ml3sg27bqi93c68navphcbm7"))))
     (properties `((upstream-name . "imageRy")))
     (build-system r-build-system)
     (arguments
@@ -14852,13 +14886,13 @@ saved from @code{ImageJ} and write TIFF files than can be correctly read by
 (define-public r-ijse
   (package
     (name "r-ijse")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IJSE" version))
        (sha256
-        (base32 "1xnip7c4q2czcbpz488b6n26n3yvsvannjicd1v2h23hl7578ga8"))))
+        (base32 "1wz7rdnb1wr6pp17nx9rf9cp2ha6c593jj28i2a8g9fc4n88agkv"))))
     (properties `((upstream-name . "IJSE")))
     (build-system r-build-system)
     (arguments
@@ -14866,7 +14900,7 @@ saved from @code{ImageJ} and write TIFF files than can be correctly read by
       #:tests? #f))
     (propagated-inputs (list r-posterior r-brms))
     (home-page "https://cran.r-project.org/package=IJSE")
-    (synopsis "Infinite-Jackknife-Based Standard Errors for 'brms' Models")
+    (synopsis "Infinitesimal Jackknife Standard Errors for 'brms' Models")
     (description
      "This package provides a function to calculate infinite-jackknife-based standard
 errors for fixed effects parameters in brms models, handling both clustered and

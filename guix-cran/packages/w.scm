@@ -6352,13 +6352,13 @@ analysis.")
 (define-public r-weibullr-plotly
   (package
     (name "r-weibullr-plotly")
-    (version "0.3")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeibullR.plotly" version))
        (sha256
-        (base32 "1y8w3sgkraqjbmzrrm933574iqj75zn40niga32nn399yxqa9wnv"))))
+        (base32 "0xld1qycznh2980m8mfc2fjdraazqwcqmf8pyyrs7fv64d8bkaak"))))
     (properties `((upstream-name . "WeibullR.plotly")))
     (build-system r-build-system)
     (arguments
@@ -6378,13 +6378,13 @@ interactive web-based graphing library.")
 (define-public r-weibullr-learnr
   (package
     (name "r-weibullr-learnr")
-    (version "0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeibullR.learnr" version))
        (sha256
-        (base32 "0zifz7wbgl2al9av97r5yy5p0vlyfq34s3328l16r9z9ri02hhli"))))
+        (base32 "1q93g5l25br76asz6mmkr8f2dbl0f4d4vcnd38mwx7pbp819lzwh"))))
     (properties `((upstream-name . "WeibullR.learnr")))
     (build-system r-build-system)
     (arguments
@@ -6400,7 +6400,7 @@ interactive web-based graphing library.")
 Analysis, and learnr by Garrick Aden-Buie et al. (2023)
 <https://CRAN.R-project.org/package=learnr>, a framework for building
 interactive learning modules in R.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-weibullr-alt
   (package
@@ -7161,22 +7161,23 @@ to web development.")
 (define-public r-webdav
   (package
     (name "r-webdav")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webdav" version))
        (sha256
-        (base32 "1j3likv9f0k09q0b0i4269qpawfffrf0sa8dkmrza7syi5csd1z5"))))
+        (base32 "1f8h0ivyzi27vhcb9myjw5ygl3nvh86cns1vcsv00i26skdfwr6j"))))
     (properties `((upstream-name . "webdav")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
+                             r-tidyr
                              r-tibble
                              r-stringr
-                             r-magrittr
+                             r-purrr
                              r-httr2
                              r-httpuv
                              r-glue
@@ -9186,13 +9187,13 @@ object created will need to be modified through a theme.")
 (define-public r-watcher
   (package
     (name "r-watcher")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "watcher" version))
        (sha256
-        (base32 "09rm08i0zkzpdgjqcdi67sikcy25gmszi5xmdh0i8ji80w4bx4zw"))))
+        (base32 "0kw6ngrdmb8a7jvdyyw1qgvahkmf7pw0sjz1q3qjvfxs1y5bs59l"))))
     (properties `((upstream-name . "watcher")))
     (build-system r-build-system)
     (arguments
@@ -9571,13 +9572,13 @@ an examples can be found in the package website
 (define-public r-warbler
   (package
     (name "r-warbler")
-    (version "1.1.34")
+    (version "1.1.35")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "warbleR" version))
        (sha256
-        (base32 "005kdz24xgi5nk84msvmcl68x8rmd0p20vip6ln0aj39y3y7zyr7"))))
+        (base32 "1m61lzwy8wg2g6vhrhm6bawb2haz0wcxz2cc6s1p7wr4zqhqd1ck"))))
     (properties `((upstream-name . "warbleR")))
     (build-system r-build-system)
     (arguments
@@ -9607,11 +9608,12 @@ an examples can be found in the package website
      "This package provides functions aiming to facilitate the analysis of the
 structure of animal acoustic signals in R'. @code{warbleR} makes use of the
 basic sound analysis tools from the packages @code{tuneR} and seewave', and
-offers new tools for explore and quantify acoustic signal structure.  The
+offers new tools for exploring and quantifying acoustic signal structure.  The
 package allows to organize and manipulate multiple sound files, create
 spectrograms of complete recordings or individual signals in different formats,
 run several measures of acoustic structure, and characterize different
-structural levels in acoustic signals.")
+structural levels in acoustic signals (Araya-Salas et al 2016
+<doi:10.1111/2041-210X.12624>).")
     (license license:gpl2+)))
 
 (define-public r-warabandi

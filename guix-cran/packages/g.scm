@@ -3733,13 +3733,13 @@ overlapped Quantitative Trait Loci names.")
 (define-public r-gsaot
   (package
     (name "r-gsaot")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsaot" version))
        (sha256
-        (base32 "138cf9jy4a56ws5w7mwqjl78aqrid3f6y71vg15sswhays7i6yrb"))))
+        (base32 "0cpwinvl1kn30p270wwzk553r9xxdaim6p3bzwsxi8dynv5l1f1b"))))
     (properties `((upstream-name . "gsaot")))
     (build-system r-build-system)
     (arguments
@@ -9893,13 +9893,13 @@ categorical and quantitative variables.  Emerson et al. (2013)
 (define-public r-gpabin
   (package
     (name "r-gpabin")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPAbin" version))
        (sha256
-        (base32 "1bcljfjd09nyjywlbqijbpmzl7znsr9la4mllwv0s4h51n9hddxd"))))
+        (base32 "043qmhybvfpw0jvlj3lgz739r0n1whhzz43c77rnyvbpcrf8szq3"))))
     (properties `((upstream-name . "GPAbin")))
     (build-system r-build-system)
     (arguments
@@ -11415,19 +11415,21 @@ PavÃ­a (2015) <doi:10.18637/jss.v066.c01>.")
 (define-public r-gofigr
   (package
     (name "r-gofigr")
-    (version "0.3.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gofigR" version))
        (sha256
-        (base32 "05ncp9a5ybxq2vadq9ihzfahiw6llbl2lrk3wmv2n5f5r853r4z8"))))
+        (base32 "08zs4p7hykryj0lvc7danh5mbrzkk9asvkf2zrcrlw6znmm0ncjf"))))
     (properties `((upstream-name . "gofigR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scriptname
+    (propagated-inputs (list r-shinyjs
+                             r-shiny
+                             r-scriptname
                              r-rsvg
                              r-rstudioapi
                              r-readr
@@ -11438,6 +11440,7 @@ PavÃ­a (2015) <doi:10.18637/jss.v066.c01>.")
                              r-httr
                              r-ggplotify
                              r-getpass
+                             r-digest
                              r-cowplot
                              r-base64enc))
     (home-page "https://github.com/GoFigr/gofigR")
@@ -19950,13 +19953,13 @@ ggplot2'.")
 (define-public r-ggpmx
   (package
     (name "r-ggpmx")
-    (version "1.2.11")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggPMX" version))
        (sha256
-        (base32 "04381iaa52ljpkbi4sy5xgyiv0vznd2k7vnwvsdyk4qkggxxyqw9"))))
+        (base32 "1kmvf4j3wnyadwns3jj00nsn22n4w7hdgwhk3qciw7hbhl9ck2qs"))))
     (properties `((upstream-name . "ggPMX")))
     (build-system r-build-system)
     (arguments
@@ -19996,9 +19999,9 @@ sufficient for publication and submissions using few lines of code.  This
 package focuses on plots recommended by I@code{SoP} <doi:10.1002/psp4.12161>.
 While not required, you can get/install the R @code{lixoftConnectors} package in
 the Monolix installation, as described at the following url
-<https://monolix.lixoft.com/monolix-api/lixoftconnectors_installation/>.  When
-@code{lixoftConnectors} is available, R can use Monolix directly to create the
-required Chart Data instead of exporting it from the Monolix gui.")
+<https://monolixsuite.slp-software.com/r-functions/2024R1/installation-and-initialization>.
+ When @code{lixoftConnectors} is available, R can use Monolix directly to create
+the required Chart Data instead of exporting it from the Monolix gui.")
     (license license:gpl2)))
 
 (define-public r-ggplotgui
@@ -22850,6 +22853,32 @@ based on Gabriel Graph.  References for this method can be found in L.C.B.
 Torres et al. (2015) <doi:10.1049/el.2015.1644>.")
     (license license:gpl2+)))
 
+(define-public r-ggchord
+  (package
+    (name "r-ggchord")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggchord" version))
+       (sha256
+        (base32 "1kxfpy11zlhcs1x91spay0cijyyd5za20wavf7z9bfzxv3yx0m1a"))))
+    (properties `((upstream-name . "ggchord")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcolorbrewer r-ggplot2 r-ggnewscale))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DangJem/ggchord")
+    (synopsis
+     "Multi-Sequence 'BLAST' Alignment Chord Diagram Visualization Tool")
+    (description
+     "This package provides a function built on ggplot2 that visualizes pairwise BLAST
+alignment results as chord diagrams, intuitively displaying homologous regions
+between query and subject sequences.")
+    (license license:expat)))
+
 (define-public r-ggchernoff
   (package
     (name "r-ggchernoff")
@@ -24400,6 +24429,43 @@ the estimator and diagnostics tests can be fully user-specified, see Sucarrat
 (2021) <doi:10.32614/RJ-2021-024>.")
     (license license:gpl2+)))
 
+(define-public r-getrad
+  (package
+    (name "r-getrad")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "getRad" version))
+       (sha256
+        (base32 "0hjclh3iy9mvakzivfps0drrg6i95p5s04ayjpx6cpvzvjqn75nw"))))
+    (properties `((upstream-name . "getRad")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-vroom
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-lubridate
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli
+                             r-cachem
+                             r-biorad))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/aloftdata/getRad")
+    (synopsis "Download Radar Data for Biological Research")
+    (description
+     "Load polar volume and vertical profile data for aeroecological research directly
+into R. With @code{getRad} you can access data from several sources in Europe
+and the US and standardize it to facilitate further exploration in tools such as
+@code{bioRad}'.")
+    (license license:expat)))
+
 (define-public r-getquandldata
   (package
     (name "r-getquandldata")
@@ -25767,13 +25833,13 @@ Theoretical background and worked examples are available at
 (define-public r-geostan
   (package
     (name "r-geostan")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geostan" version))
        (sha256
-        (base32 "0z1zqyd762pzxqxd0923n7r2jdshrlvwjk38zpbdyayw305a71pg"))))
+        (base32 "0nqns6cxyis23l7xqar2i4ly7j6s8yx3jxwsprdb9sc2yh4a2jl4"))))
     (properties `((upstream-name . "geostan")))
     (build-system r-build-system)
     (arguments
@@ -26463,13 +26529,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.1.6")
+    (version "2.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "0l7fbw2a50bd41a6b4cgqq39mwi3shd7g8zgpzkj769nr9vrijkc"))))
+        (base32 "1i95ib5mw82bhg6ff8dyiiz7lil9xr06hmd3g6q7v7nb4kl1mdfp"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (arguments
@@ -26491,14 +26557,13 @@ classes and functions.")
                              r-mapproj
                              r-lamw
                              r-hypergeo
+                             r-future-apply
                              r-future
                              r-foreach
                              r-fields
                              r-fastgp
                              r-dotcall64
-                             r-dofuture
-                             r-codetools))
-    (native-inputs (list gfortran))
+                             r-dofuture))
     (home-page "https://vmoprojs.github.io/GeoModels-page/")
     (synopsis
      "Procedures for Gaussian and Non Gaussian Geostatistical (Large) Data Analysis")
@@ -32985,6 +33050,77 @@ the user to download contents to use as a reference for related services like
 Google Trends'.")
     (license license:gpl3)))
 
+(define-public r-gcestim
+  (package
+    (name "r-gcestim")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GCEstim" version))
+       (sha256
+        (base32 "0q0jr2xzbwdrxrbphfqnqjl6vw3k4s2p5pnwgbp6zfrllk1z9ay4"))))
+    (properties `((upstream-name . "GCEstim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-viridis
+                             r-simstudy
+                             r-shinywidgets
+                             r-shinydashboardplus
+                             r-shiny
+                             r-rstudioapi
+                             r-rsolnp
+                             r-rlang
+                             r-readxl
+                             r-pracma
+                             r-plotly
+                             r-pathviewr
+                             r-optimx
+                             r-optimparallel
+                             r-miniui
+                             r-meboot
+                             r-magrittr
+                             r-lbfgsb3c
+                             r-lbfgs
+                             r-latex2exp
+                             r-hdrcde
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggdist
+                             r-dt
+                             r-downlit
+                             r-data-table
+                             r-clustergeneration
+                             r-bayestestr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jorgevazcabral/GCEstim")
+    (synopsis
+     "Regression Coefficients Estimation Using the Generalized Cross Entropy")
+    (description
+     "Estimation and inference using the Generalized Maximum Entropy (GME) and
+Generalized Cross Entropy (GCE) framework, a flexible method for solving
+ill-posed inverse problems and parameter estimation under uncertainty (Golan,
+Judge, and Miller (1996, ISBN:978-0471145925) \"Maximum Entropy Econometrics:
+Robust Estimation with Limited Data\").  The package includes routines for
+generalized cross entropy estimation of linear models including the
+implementation of a GME-GCE two steps approach.  Diagnostic tools, and options
+to incorporate prior information through support and prior distributions are
+available (Macedo, Cabral, Afreixo, Macedo and Angelelli (2025)
+<doi:10.1007/978-3-031-97589-9_21>).  In particular, support spaces can be
+defined by the user or be internally computed based on the ridge trace or on the
+distribution of standardized regression coefficients.  Different optimization
+methods for the objective function can be used.  An adaptation of the normalized
+entropy aggregation (Macedo and Costa (2019) <doi:10.1007/978-3-030-26036-1_2>
+\"Normalized entropy aggregation for inhomogeneous large-scale data\") and a
+two-stage maximum entropy approach for time series regression (Macedo (2022)
+<doi:10.1080/03610918.2022.2057540>) are also available.  Suitable for
+applications in econometrics, health, signal processing, and other fields
+requiring robust estimation under data constraints.")
+    (license license:gpl3)))
+
 (define-public r-gcerisk
   (package
     (name "r-gcerisk")
@@ -36411,40 +36547,6 @@ Anders Nielsen, Casper W. Berg, Hans Skaug, Bradley M. Bell (2016)
 Approximation.\".  Begley, J., & Howell, D. (2004)
 <https://core.ac.uk/download/pdf/225936648.pdf> \"An overview of Gadget, the
 globally applicable area-disaggregated general ecosystem toolbox.  ICES.\".")
-    (license license:gpl2)))
-
-(define-public r-gadget2
-  (package
-    (name "r-gadget2")
-    (version "2.3.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gadget2" version))
-       (sha256
-        (base32 "0ka5mbr9nppgsr95l33k510h278z49j6chbbqvbba0gan9842kwg"))))
-    (properties `((upstream-name . "gadget2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=gadget2")
-    (synopsis
-     "Gadget is the Globally-Applicable Area Disaggregated General Ecosystem Toolbox")
-    (description
-     "This package provides a statistical ecosystem modelling package, taking many
-features of the ecosystem into account.  Gadget works by running an internal
-model based on many parameters, and then comparing the data from the output of
-this model to real data to get a goodness-of-fit likelihood score.  These
-parameters can then be adjusted, and the model re-run, until an optimum is
-found, which corresponds to the model with the lowest likelihood score.  Gadget
-allows the user to include a number of features into an ecosystem model: One or
-more species, each of which may be split into multiple stocks; multiple areas
-with migration between areas; predation between and within species; maturation;
-reproduction and recruitment; multiple commercial and survey fleets taking
-catches from the populations.  For more details see
-<https://gadget-framework.github.io/gadget2/>.  This is the C++ Gadget2 runtime,
-making it available for R.")
     (license license:gpl2)))
 
 (define-public r-gadag

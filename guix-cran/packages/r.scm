@@ -534,13 +534,13 @@ which runs the nlmixr2 models during estimation.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "3.0.4")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "1d67md4rr08csv47yrls0ssq4lh6yhkm9n201zfyn1f9h731jhsj"))))
+        (base32 "0jfdhmzvi2b2ixfmc4d50cdi31shcm376m6xh8bxpygf64p2s2mh"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (arguments
@@ -1488,20 +1488,26 @@ and interactive way.")
 (define-public r-rwa
   (package
     (name "r-rwa")
-    (version "0.0.3")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rwa" version))
        (sha256
-        (base32 "11irb6ayr1a1rbmhc9zqwyb1vjfc0fq7imji0lfa30zplwgf1mqh"))))
+        (base32 "0qdw88w3zgnfzi2k8a8m64pix4vb2v0y99063w01jvncvd1jibg3"))))
     (properties `((upstream-name . "rwa")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-magrittr r-ggplot2 r-dplyr))
-    (home-page "https://github.com/martinctc/rwa")
+    (propagated-inputs (list r-tidyr
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://martinctc.github.io/rwa/")
     (synopsis "Perform a Relative Weights Analysis")
     (description
      "Perform a Relative Weights Analysis (RWA) (a.k.a.  Key Drivers Analysis) as per
@@ -2697,38 +2703,6 @@ C5.0 rules (Quinlan, 1992 ISBN: 1558602380), and Cubist (Kuhn and Johnson, 2013)
 reports.  This package offers a framework for exploring and validating data
 frame like objects using dplyr grammar of data manipulation.")
     (license license:expat)))
-
-(define-public r-ruimtehol
-  (package
-    (name "r-ruimtehol")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ruimtehol" version))
-       (sha256
-        (base32 "1fjyrcqb1hv86xwdq5zds8gdgnvcv1nnbh5j7mf17870miy0vzln"))))
-    (properties `((upstream-name . "ruimtehol")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-bh))
-    (home-page "https://github.com/bnosac/ruimtehol")
-    (synopsis "Learn Text 'Embeddings' with 'Starspace'")
-    (description
-     "Wraps the @code{StarSpace} library
-<https://github.com/facebookresearch/@code{StarSpace>} allowing users to
-calculate word, sentence, article, document, webpage, link and entity
-embeddings'.  By using the embeddings', you can perform text based multi-label
-classification, find similarities between texts and categories, do
-collaborative-filtering based recommendation as well as content-based
-recommendation, find out relations between entities, calculate graph embeddings
-as well as perform semi-supervised learning and multi-task learning on plain
-text.  The techniques are explained in detail in the paper: @code{StarSpace}:
-Embed All The Things! by Wu et al. (2017), available at
-<@code{arXiv:1709.03856>}.")
-    (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-ruijter
   (package
@@ -9710,13 +9684,13 @@ additive relationship matrix or a Gaussian kernel.")
 (define-public r-rraven
   (package
     (name "r-rraven")
-    (version "1.0.14")
+    (version "1.0.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rraven" version))
        (sha256
-        (base32 "1sfzsf1f758sicild58hi5lqbs1vmzma9znni3is2vlcsn9pyn5s"))))
+        (base32 "1vrs81z9wva39iby9pangvf9vmdipv7sa180856w63kx08dw71yl"))))
     (properties `((upstream-name . "Rraven")))
     (build-system r-build-system)
     (arguments
@@ -9980,6 +9954,35 @@ objects (able to report both columns produced and columns used), optimized SQL
 generation as an explicit user visible table modeling step, plus explicit query
 reasoning and checking.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-rquefts
+  (package
+    (name "r-rquefts")
+    (version "1.2-5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rquefts" version))
+       (sha256
+        (base32 "10nbvmvyv8srqvvqz8kpdi5bnsmqppq6877h85nnfgs04l87bixq"))))
+    (properties `((upstream-name . "Rquefts")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-meteor))
+    (home-page "https://CRAN.R-project.org/package=Rquefts")
+    (synopsis
+     "Quantitative Evaluation of the Native Fertility of Tropical Soils")
+    (description
+     "An implementation of the QUEFTS (Quantitative Evaluation of the Native Fertility
+of Tropical Soils) model.  The model (1) estimates native nutrient (N, P, K)
+supply of soils from a few soil chemical properties; and (2) computes crop yield
+given that supply, crop parameters, fertilizer application, and crop attainable
+yield.  See Janssen et al. (1990) <doi:10.1016/0016-7061(90)90021-Z> for the
+technical details and Sattari et al. (2014) <doi:10.1016/j.fcr.2013.12.005> for
+a recent evaluation and improvements.")
+    (license license:gpl3+)))
 
 (define-public r-rquantlib
   (package
@@ -15556,6 +15559,49 @@ This package is to get a p value from the non-inferiority test for ROC curves
 from diagnostic test.")
     (license license:gpl3)))
 
+(define-public r-rocngo
+  (package
+    (name "r-rocngo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ROCnGO" version))
+       (sha256
+        (base32 "0ipbkfr8sx4c5wf4zcfscx1vfrwvcyh2m2qjhjb26bg2bd7pc5kg"))))
+    (properties `((upstream-name . "ROCnGO")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-summarizedexperiment
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://pablopnc.github.io/ROCnGO/")
+    (synopsis "Fast Analysis of ROC Curves")
+    (description
+     "This package provides a toolkit for analyzing classifier performance by using
+receiver operating characteristic (ROC) curves.  Performance may be assessed on
+a single classifier or multiple ones simultaneously, making it suitable for
+comparisons.  In addition, different metrics allow the evaluation of local
+performance when working within restricted ranges of sensitivity and
+specificity.  For details on the different implementations, see @code{McClish}
+D. K. (1989) <doi:10.1177/0272989X8900900307>, Vivo J.-M., Franco M. and Vicari
+D. (2018) <doi:10.1007/S11634-017-0295-9>, Jiang Y., et al (1996)
+<doi:10.1148/radiology.201.3.8939225>, Franco M. and Vivo J.-M. (2021)
+<doi:10.3390/math9212826> and Carrington, AndrÃ© M., et al (2020) <doi:
+10.1186/s12911-019-1014-6>.")
+    (license license:gpl3+)))
+
 (define-public r-roclang
   (package
     (name "r-roclang")
@@ -19611,13 +19657,13 @@ a list object.")
 (define-public r-rmzqc
   (package
     (name "r-rmzqc")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmzqc" version))
        (sha256
-        (base32 "0igk2a1fs2pfp405ski862kwjwq8xvq9324y4kydygd75g0mmw1s"))))
+        (base32 "0smipf6rf8gii0cidws8jyamhfxnr1ywba0p3xmi9nkrarwvxys6"))))
     (properties `((upstream-name . "rmzqc")))
     (build-system r-build-system)
     (arguments
@@ -20066,13 +20112,13 @@ panels.  The full documentation and tutorials are at
 (define-public r-rmss
   (package
     (name "r-rmss")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMSS" version))
        (sha256
-        (base32 "01hf291czmdijm1152ckdrd33a8w2m0rdwclaj607b81hb1431q0"))))
+        (base32 "1dfnaj8fpkyh7m9ydm4qyl5g26nxfh3iw3ap6j22i92p9fihpv59"))))
     (properties `((upstream-name . "RMSS")))
     (build-system r-build-system)
     (arguments
@@ -23804,13 +23850,13 @@ package.")
 (define-public r-rjwsacruncher
   (package
     (name "r-rjwsacruncher")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjwsacruncher" version))
        (sha256
-        (base32 "01vnn0i00yflw07kn52bk13swmf88chnb482cs660qdnq5lzkm7k"))))
+        (base32 "0ybkxnfc4h6bkplk7l3hwb0mnl14305plf1h4fmsy59n8bsdyhsz"))))
     (properties `((upstream-name . "rjwsacruncher")))
     (build-system r-build-system)
     (arguments
@@ -23818,16 +23864,17 @@ package.")
       #:tests? #f))
     (propagated-inputs (list r-xml))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/AQLT/rjwsacruncher")
+    (home-page "https://aqlt.github.io/rjwsacruncher/")
     (synopsis "Interface to the 'JWSACruncher' of 'JDemetra+'")
     (description
      "JDemetra+ (<https://github.com/jdemetra/jdemetra-app>) is the seasonal
 adjustment software officially recommended to the members of the European
 Statistical System and the European System of Central Banks.  Seasonal
 adjustment models performed with JDemetra+ can be stored into workspaces.
-JWSACruncher (<https://github.com/jdemetra/jwsacruncher/releases>) is a console
-tool that re-estimates all the multi-processing defined in a workspace and to
-export the result.  rjwsacruncher allows to launch easily the JWSACruncher'.")
+JWSACruncher (<https://github.com/jdemetra/jwsacruncher/releases> for v2 and
+<https://github.com/jdemetra/jdplus-main/releases> for v3) is a console tool
+that re-estimates all the multi-processing defined in a workspace and to export
+the result.  rjwsacruncher allows to launch easily the JWSACruncher'.")
     (license license:gpl3)))
 
 (define-public r-rjtools
@@ -26098,6 +26145,34 @@ in plots or for fun!")
 (<https://imagej.net>) Region of Interest (ROI) files, to plot the ROIs and to
 convert them to spatstat (<https://spatstat.org/>) spatial patterns.")
     (license license:gpl3)))
+
+(define-public r-rim
+  (package
+    (name "r-rim")
+    (version "0.8.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rim" version))
+       (sha256
+        (base32 "1hg1xgr7agbz9rlmrm1l77yv9h1gnqzz9c5h696b51492jsiigvg"))))
+    (properties `((upstream-name . "rim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list maxima))
+    (propagated-inputs (list r-rcpp r-r6 r-knitr r-globaloptions))
+    (home-page "https://rcst.github.io/rim/")
+    (synopsis "Interface to 'Maxima', Enabling Symbolic Computation")
+    (description
+     "An interface to the powerful and fairly complete computer algebra system
+Maxima'.  It can be used to start and control Maxima from within R by entering
+Maxima commands.  Results from Maxima can be parsed and evaluated in R. It
+facilitates outputting results from Maxima in @code{LaTeX} and @code{MathML}'.
+2D and 3D plots can be displayed directly.  This package also registers a
+knitr'-engine enabling Maxima code chunks to be written in RMarkdown documents.")
+    (license license:gpl3+)))
 
 (define-public r-rilostat
   (package
@@ -29563,6 +29638,74 @@ explained for least median of squares in Hawkins (1993)
 with model forms of a specific type that can have fixed variables, higher order
 interactions and their lower order terms.")
     (license license:gpl2)))
+
+(define-public r-rfriend
+  (package
+    (name "r-rfriend")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rfriend" version))
+       (sha256
+        (base32 "00xfba6vmwylba328kz3qadck6pss5gy5yiyz5kj5paingwcnkfc"))))
+    (properties `((upstream-name . "rfriend")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list pandoc))
+    (propagated-inputs (list r-xfun
+                             r-writexl
+                             r-this-path
+                             r-stringr
+                             r-rstudioapi
+                             r-rstatix
+                             r-rmarkdown
+                             r-pander
+                             r-nortest
+                             r-mumin
+                             r-multcompview
+                             r-multcomp
+                             r-magick
+                             r-knitr
+                             r-ggplot2
+                             r-emmeans
+                             r-dharma
+                             r-crayon
+                             r-bestnormalize))
+    (home-page "https://cran.r-project.org/package=rfriend")
+    (synopsis
+     "Provides Batch Functions and Visualisation for Basic Statistical Procedures")
+    (description
+     "Designed to streamline data analysis and statistical testing, reducing the
+length of R scripts while generating well-formatted outputs in pdf', Microsoft
+Word', and Microsoft Excel formats.  In essence, the package contains functions
+which are sophisticated wrappers around existing R functions that are called by
+using f_ (user f_riendly) prefix followed by the normal function name.  This
+first version of the rfriend package focuses primarily on data exploration,
+including tools for creating summary tables, @code{f_summary()}, performing data
+transformations, @code{f_boxcox()} in part based on MASS/boxcox and rcompanion',
+and @code{f_bestNormalize()} which wraps and extends functionality from the
+@code{bestNormalize} package.  Furthermore, rfriend can automatically (or on
+request) generate visualizations such as boxplots, @code{f_boxplot()}, QQ-plots,
+@code{f_qqnorm()}, histograms @code{f_hist()}, and density plots.  Additionally,
+the package includes four statistical test functions: @code{f_aov()},
+@code{f_kruskal_test()}, @code{f_glm()}, f_chisq_test for sequential testing and
+visualisation of the stats functions: @code{aov()}, @code{kruskal.test()},
+@code{glm()} and chisq.test.  These functions support testing multiple response
+variables and predictors, while also handling assumption checks, data
+transformations, and post hoc tests.  Post hoc results are automatically
+summarized in a table using the compact letter display (cld) format for easy
+interpretation.  The package also provides a function to do model comparison,
+@code{f_model_comparison()}, and several utility functions to simplify common R
+tasks.  For example, @code{f_clear()} clears the workspace and restarts R with a
+single command; @code{f_setwd()} sets the working directory to match the
+directory of the current script; @code{f_theme()} quickly changes RStudio
+themes; and @code{f_factors()} converts multiple columns of a data frame to
+factors, and much more.  If you encounter any issues or have feature requests,
+please feel free to contact me via email.")
+    (license license:gpl3)))
 
 (define-public r-rfractran
   (package
@@ -43021,19 +43164,20 @@ Repertoire Dissimilarity Index.  Citation: Bolen and Rubelt, et al (2017)
 (define-public r-rdhte
   (package
     (name "r-rdhte")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdhte" version))
        (sha256
-        (base32 "0v38i7hjxqdw801gfd3hlb485v8sb1pkl240qvhjr4qn72fhszf4"))))
+        (base32 "1wk759h2dcf52pyrk4qsl8kzjr2g9q92d56ck6iiah3fjij8sdry"))))
     (properties `((upstream-name . "rdhte")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sandwich r-rdrobust))
+    (propagated-inputs (list r-sandwich r-rdrobust r-multcomp))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rdhte")
     (synopsis
      "Heterogeneous Treatment Effects in Regression Discontinuity Designs")
@@ -43046,9 +43190,9 @@ this package provides tools for estimation and inference of heterogeneous
 treatment effects in Regression Discontinuity (RD) Designs.  The package
 includes two main commands: rdhte to conduct estimation and robust
 bias-corrected inference for conditional RD treatment effects (given choice of
-bandwidth parameter); and rdbwhte', which implements automatic bandwidth
-selection methods.")
-    (license license:gpl2)))
+bandwidth parameter); rdbwhte', which implements automatic bandwidth selection
+methods; and rdhte_lincom to test linear combinations of parameters.")
+    (license license:gpl3)))
 
 (define-public r-rdhs
   (package
@@ -45134,13 +45278,13 @@ approximation.")
 (define-public r-rcppcwb
   (package
     (name "r-rcppcwb")
-    (version "0.6.7")
+    (version "0.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCWB" version))
        (sha256
-        (base32 "0n2npdr7cvvch0667f3axx4an08vrp9rmb5dr0apg4wpannai5zf"))))
+        (base32 "1h64gaww45h1hbsnk01r88a77awi0af8s8g6ayvyylpvg5lainh4"))))
     (properties `((upstream-name . "RcppCWB")))
     (build-system r-build-system)
     (arguments
@@ -47562,13 +47706,13 @@ change-points is not required.  The code is written in Go and interfaced with R.
 (define-public r-rcheology
   (package
     (name "r-rcheology")
-    (version "4.5.0.0")
+    (version "4.5.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcheology" version))
        (sha256
-        (base32 "1kijqma4gpi868czw99hkjgldylj5kmxdkgkjy5j9cz5n0ckkibc"))))
+        (base32 "1dvic1vkhrxlpm1nmz5218kw7n8g31iycpvgvgs73q0xiyd71x2b"))))
     (properties `((upstream-name . "rcheology")))
     (build-system r-build-system)
     (arguments

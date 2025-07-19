@@ -5385,6 +5385,39 @@ addresses, find places near a set of coordinates and return spatial objects on
 sf format.")
     (license license:expat)))
 
+(define-public r-nomesbr
+  (package
+    (name "r-nomesbr")
+    (version "0.0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nomesbr" version))
+       (sha256
+        (base32 "0zjsqv420wydn8q7jv247i7i549zybk81q71n9xs4zx6n620hn7v"))))
+    (properties `((upstream-name . "nomesbr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tictoc r-stringr r-httr2 r-dplyr r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ipeadata-lab/nomesbr")
+    (synopsis
+     "Limpa e Simplifica Nomes de Pessoas (Name Cleaner and Simplifier)")
+    (description
+     "Limpa e simplifica nomes de pessoas para auxiliar no pareamento de banco de
+dados na ausÃªncia de chaves Ãºnicas nÃ£o ambÃ­guas.  Detecta e corrige erros
+tipogrÃ¡ficos mais comuns, simplifica opcionalmente termos sujeitos
+eventualmente a omissÃ£o em cadastros, e simplifica foneticamente suas palavras,
+aplicando variaÃ§Ã£o prÃ³pria do algoritmo @code{metaphoneBR}. (Cleans and
+simplifies person names to assist in database matching when unambiguous unique
+keys are unavailable.  Detects and corrects common typos, optionally simplifies
+terms prone to omission in records, and applies phonetic simplification using a
+custom variation of the @code{metaphoneBR} algorithm.) Mation (2025)
+<doi:10.6082/uchicago.15104>.")
+    (license license:expat)))
+
 (define-public r-nomclust
   (package
     (name "r-nomclust")
@@ -8085,13 +8118,13 @@ Research) <doi:10.1177/0962280220903763>.")
 (define-public r-nlmixr2rpt
   (package
     (name "r-nlmixr2rpt")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2rpt" version))
        (sha256
-        (base32 "1lc7pmh97wggfms2in37f5bdrri914ninr58ah92215p3fxcqmls"))))
+        (base32 "0x1kgia70ggj6fyrpsx3qyspvj94xqg5qh42if6bmkx2h6a96ajk"))))
     (properties `((upstream-name . "nlmixr2rpt")))
     (build-system r-build-system)
     (arguments
@@ -8104,7 +8137,7 @@ Research) <doi:10.1177/0962280220903763>.")
                              r-rxode2
                              r-onbrand
                              r-nlmixr2extra
-                             r-nlmixr2
+                             r-nlmixr2est
                              r-ggpubr
                              r-ggplot2
                              r-ggforce
@@ -8304,26 +8337,31 @@ Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
 (define-public r-nlmixr2
   (package
     (name "r-nlmixr2")
-    (version "3.0.2")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2" version))
        (sha256
-        (base32 "0pf24k0773bmc3bv9853z2ldj9fj622c3ibsyhx8n62f4wfqsx2m"))))
+        (base32 "0g460n23k4yl9avaqh8l1nfci83b30x88gqiwj7iwvq7ky4c0zll"))))
     (properties `((upstream-name . "nlmixr2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rxode2
+    (propagated-inputs (list r-tibble
+                             r-rxode2
+                             r-rstudioapi
+                             r-purrr
                              r-nlmixr2plot
                              r-nlmixr2extra
                              r-nlmixr2est
-                             r-nlmixr2data
                              r-magrittr
                              r-lotri
+                             r-dplyr
                              r-crayon
+                             r-crayon
+                             r-cli
                              r-cli))
     (home-page "https://nlmixr2.org/")
     (synopsis "Nonlinear Mixed Effects Models in Population PK/PD")
@@ -10023,13 +10061,13 @@ transition probabilities.")
 (define-public r-nhlscraper
   (package
     (name "r-nhlscraper")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhlscraper" version))
        (sha256
-        (base32 "1day35808ynzananpsmhbdbbhn4z58z7jl6xhsvdlyf0w3479j1s"))))
+        (base32 "0p6462a3xns2ck96ib7nhvqf6sg66rswwzx9p80kqknsl5iy208a"))))
     (properties `((upstream-name . "nhlscraper")))
     (build-system r-build-system)
     (arguments
@@ -10040,10 +10078,13 @@ transition probabilities.")
     (home-page "https://github.com/RentoSaijo/nhlscraper")
     (synopsis "Scraper for National Hockey League Data")
     (description
-     "Scrapes data from the NHL API into tibble's.  It primarily wraps endpoints
-documented by Zach Maludzinski (2023)
-<https://github.com/Zmalski/NHL-API-Reference>.  It covers data from high-level
-multi-season summaries to low-level play-by-play logs.")
+     "Scrapes data from the NHL and ESPN APIs into tibble's.  It primarily wraps
+endpoints documented by Zach Maludzinski (2023)
+<https://github.com/Zmalski/NHL-API-Reference>, Drew Hynes (2018)
+<https://gitlab.com/dword4/nhlapi/>, and Joseph Wilson (2023)
+<https://github.com/pseudo-r/Public-ESPN-API>, covering data from high-level
+multi-season summaries and award winners to low-level play-by-play logs and
+sports books odds.")
     (license license:expat)))
 
 (define-public r-nhldata
@@ -14830,13 +14871,13 @@ are out of control.")
 (define-public r-nemsqar
   (package
     (name "r-nemsqar")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nemsqar" version))
        (sha256
-        (base32 "1qv6839r1444i3bjggmff40m9m8h4kisif4w6jq4ziqxrl0a43xi"))))
+        (base32 "0clzn42zlbyy9s7xpakn206zkwygl6lcvbj69zvsg8dshgk46xvj"))))
     (properties `((upstream-name . "nemsqar")))
     (build-system r-build-system)
     (arguments
@@ -14847,6 +14888,7 @@ are out of control.")
                              r-rlang
                              r-lubridate
                              r-lifecycle
+                             r-glue
                              r-dplyr
                              r-cli))
     (home-page "https://github.com/bemts-hhs/nemsqar")

@@ -6541,13 +6541,13 @@ NB-frequent itemsets and NB-precise rules.  Michael Hahsler (2006)
 (define-public r-arulescba
   (package
     (name "r-arulescba")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arulesCBA" version))
        (sha256
-        (base32 "0d8nfqbk3y4vw5n3xnns2gy9jwj07a1zbaag9n0hmxrcs8m5ml83"))))
+        (base32 "1jx9zgzpfwg89vpxllg6s14mlaz4lyi3l5lvas79rznjhbsb7l35"))))
     (properties `((upstream-name . "arulesCBA")))
     (build-system r-build-system)
     (arguments
@@ -12090,13 +12090,13 @@ pair of sampling points.")
 (define-public r-antibodyforests
   (package
     (name "r-antibodyforests")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AntibodyForests" version))
        (sha256
-        (base32 "1mk7nr88k8imadnc23b3cq04366x3pwqvk5i6240i6xv74b5fg8a"))))
+        (base32 "0ndp1lhgdvrh13dchl88wyfpcamnq2hksp92m3y61zch1jcv15n3"))))
     (properties `((upstream-name . "AntibodyForests")))
     (build-system r-build-system)
     (arguments
@@ -13821,6 +13821,31 @@ Andrews, D. F. (1972) Plots of High-Dimensional Data.  Biometrics, 28(1),
      "Construct language-aware lists.  Make \"and\"-separated and \"or\"-separated lists
 that automatically conform to the user's language settings.")
     (license license:expat)))
+
+(define-public r-ancreg
+  (package
+    (name "r-ancreg")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AncReg" version))
+       (sha256
+        (base32 "06ab812yja82kd3z546fx6h4jl4y7680lqhkrdrhfp0vsd5mjvi6"))))
+    (properties `((upstream-name . "AncReg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tsutils r-rdpack))
+    (home-page "http://www.markus-ulmer.ch/AncReg/")
+    (synopsis "Ancestor Regression")
+    (description
+     "Causal discovery in linear structural equation models (Schultheiss, and
+BÃ¼hlmann (2023) <doi:10.1093/biomet/asad008>) and vector autoregressive models
+(Schultheiss, Ulmer, and BÃ¼hlmann (2025) <doi:10.1515/jci-2024-0011>) with
+explicit error control for false discovery, at least asymptotically.")
+    (license license:gpl3)))
 
 (define-public r-anchorregression
   (package
@@ -16474,6 +16499,30 @@ from multiple classes or atypical values are also identified.")
 allometric growth.  This procedure is a theoretical generalization of the
 technique used by Thorpe (1975) <doi:10.1111/j.1095-8312.1975.tb00732.x> and
 Thorpe (1976) <doi:10.1111/j.1469-185X.1976.tb01063.x>.")
+    (license license:gpl3+)))
+
+(define-public r-allometry
+  (package
+    (name "r-allometry")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "allometry" version))
+       (sha256
+        (base32 "1kscdir0dkzn7cqmwdrkqcbjbgfc511vzlxj9h7fkizvysp3rlpl"))))
+    (properties `((upstream-name . "allometry")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=allometry")
+    (synopsis "Examples of Datasets on Allometry")
+    (description
+     "Examples of datasets on allometry, the study of the relationship of biological
+traits to body size.  This package contains the dataset of morphological
+measurement taken from 113 maritime earwigs (Anisolabis maritima) by Matsuzawa
+and Konuma (2025) <doi:10.1093/biolinnean/blaf031>.")
     (license license:gpl3+)))
 
 (define-public r-allofus
@@ -22604,13 +22653,13 @@ extension package of the admiral package.")
 (define-public r-admiralmetabolic
   (package
     (name "r-admiralmetabolic")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralmetabolic" version))
        (sha256
-        (base32 "1xj1l33ss9hpqx5i5wml051izf2c36q57xh7drrjpyi4lizwzzcj"))))
+        (base32 "1j0w4mniqwpdw9haqnnxgkxx568gvklv8kp8pm39qic4i6ndwf2l"))))
     (properties `((upstream-name . "admiralmetabolic")))
     (build-system r-build-system)
     (arguments
@@ -24570,6 +24619,34 @@ score-based signal detection approaches are also supplied.  See Courtois et al
 <doi:10.1186/s12874-021-01450-3>.")
     (license license:gpl2)))
 
+(define-public r-adapt3
+  (package
+    (name "r-adapt3")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adapt3" version))
+       (sha256
+        (base32 "0b4pcv680910i4ypdd21v2l23xlqj435i1ibbj9kwp7sngnp3mmr"))))
+    (properties `((upstream-name . "adapt3")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rcpparmadillo r-rcpp r-lefko3 r-bh))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/dormancy1/adapt3")
+    (synopsis "Adaptive Dynamics and Community Matrix Model Projections")
+    (description
+     "Runs projections of groups of matrix projection models (MPMs), allowing density
+dependence mechanisms to work across MPMs. This package was developed to run
+both adaptive dynamics simulations such as pairwise and multiple invasibility
+analyses, and community projections in which species are represented by MPMs.
+All forms of MPMs are allowed, including integral projection models (IPMs).
+Also includes individual-based modeling (IBM) versions of these.")
+    (license license:gpl2+)))
+
 (define-public r-adana
   (package
     (name "r-adana")
@@ -25789,13 +25866,13 @@ X, Lu W and Rabinowitz J (2017) <doi:10.1021/acs.analchem.7b00396>.")
 (define-public r-accsamplingdesign
   (package
     (name "r-accsamplingdesign")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AccSamplingDesign" version))
        (sha256
-        (base32 "19wj9f8zidlj6qwwkd1kvd9h8v969dc3c13xm0gdkpm652brhdhv"))))
+        (base32 "13df3863xcix82ga3acqvf2d6wwq4sg8xhn3cc0hprlfmwyazy45"))))
     (properties `((upstream-name . "AccSamplingDesign")))
     (build-system r-build-system)
     (arguments

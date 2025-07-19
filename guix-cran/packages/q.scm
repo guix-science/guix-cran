@@ -3860,6 +3860,32 @@ Additionally, the qs2 format can be directly converted to the standard RDS
 format, ensuring long-term compatibility with future versions of R.")
     (license license:gpl3)))
 
+(define-public r-qryflow
+  (package
+    (name "r-qryflow")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qryflow" version))
+       (sha256
+        (base32 "03zly94ld976dv1imk4gr9d0n1a2whsxarwxq3an478qckihflq6"))))
+    (properties `((upstream-name . "qryflow")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://christian-million.github.io/qryflow/")
+    (synopsis "Execute Multi-Step 'SQL' Workflows")
+    (description
+     "Execute multi-step SQL workflows by leveraging specially formatted comments to
+define and control execution.  This enables users to mix queries, commands, and
+metadata within a single script.  Results are returned as named objects for use
+in downstream workflows.")
+    (license license:expat)))
+
 (define-public r-qrnn
   (package
     (name "r-qrnn")

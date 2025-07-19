@@ -3461,13 +3461,13 @@ ability to export the figures in SVG or PNG formats.")
 (define-public r-bsamgp
   (package
     (name "r-bsamgp")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsamGP" version))
        (sha256
-        (base32 "1x41ppc0j6rkh3lqimihkbvsxfb9p2yyi1v95mqh0sywi636x73v"))))
+        (base32 "0vhg6ra951nd9wh0y9qp9fn4cxgllx5lrwrv8qnahblnigyfzff3"))))
     (properties `((upstream-name . "bsamGP")))
     (build-system r-build-system)
     (arguments
@@ -14673,13 +14673,13 @@ RÃ©jou-MÃ©chain et al. (2017) <doi:10.1111/2041-210X.12753>.")
 (define-public r-biom2
   (package
     (name "r-biom2")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioM2" version))
        (sha256
-        (base32 "1p61w98q5h08yramikqc017ahr93yxwb361j5wj28j0w4kmm0ib1"))))
+        (base32 "10chzn3p3ga8xjd18mz589xa744dqb452f4f9bav9lkw01anmcvg"))))
     (properties `((upstream-name . "BioM2")))
     (build-system r-build-system)
     (arguments
@@ -18730,13 +18730,13 @@ factorial experiments.")
 (define-public r-bhetgp
   (package
     (name "r-bhetgp")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bhetGP" version))
        (sha256
-        (base32 "092bsc62k72dnibxnjbpcgbqx16sh8x8vsi0686hv1482dlyxbmj"))))
+        (base32 "0jz7h5j20wrxh52rylhg0fmkdf679064q5rz41c8g1m814d8i33d"))))
     (properties `((upstream-name . "bhetGP")))
     (build-system r-build-system)
     (arguments
@@ -19084,13 +19084,13 @@ Knowledge, Journal of Statistical Software <doi:10.18637/jss.v047.i03>.")
 (define-public r-bgmisc
   (package
     (name "r-bgmisc")
-    (version "1.4.3.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGmisc" version))
        (sha256
-        (base32 "0hhalx81i5ilfk6fhiyd0cnwfvbjndwpvniqllm5fa9yy3cbd4iy"))))
+        (base32 "0d6nmd7zm5f7hms1gr1ij3amjxg256ibrmps2nmgb9lxp69nysh4"))))
     (properties `((upstream-name . "BGmisc")))
     (build-system r-build-system)
     (arguments
@@ -28775,13 +28775,13 @@ common frequentist hypothesis test such as the t-test and chi-sq test.")
 (define-public r-bayes4psy
   (package
     (name "r-bayes4psy")
-    (version "1.2.12")
+    (version "1.2.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayes4psy" version))
        (sha256
-        (base32 "1i6yc871bbygj6sw2v2l0diiz03n3n4mw46n905fsjkpdrx8rfhj"))))
+        (base32 "092jrk52ax1i36m5jcnnp3a3fqd6s1gyjk1725d3wzhh0zaavkr7"))))
     (properties `((upstream-name . "bayes4psy")))
     (build-system r-build-system)
     (arguments
@@ -30451,13 +30451,13 @@ necessarily reflect the views of the National Science Foundation.")
 (define-public r-barulho
   (package
     (name "r-barulho")
-    (version "2.1.3")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baRulho" version))
        (sha256
-        (base32 "15mk65an0cg4mvhiyh4xksb11wdpm6b7prpdc978zgw2i0xsw5qj"))))
+        (base32 "0l0a0nyq6p4gidwip3bk3f8569l6wpbyk56s731ni5y2d2nrrd43"))))
     (properties `((upstream-name . "baRulho")))
     (build-system r-build-system)
     (arguments
@@ -30478,7 +30478,7 @@ necessarily reflect the views of the National Science Foundation.")
     (home-page "https://github.com/ropensci/baRulho")
     (synopsis "Quantifying (Animal) Sound Degradation")
     (description
-     "Intended to facilitate acoustic analysis of (animal) sound transmission
+     "Intended to facilitate acoustic analysis of (animal) sound propagation
 experiments, which typically aim to quantify changes in signal structure when
 transmitted in a given habitat by broadcasting and re-recording animal sounds at
 increasing distances.  The package offers a workflow with functions to prepare
@@ -30491,13 +30491,13 @@ attenuation and envelope correlation among others (Dabelsteen et al 1993
 (define-public r-bartxviz
   (package
     (name "r-bartxviz")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bartXViz" version))
        (sha256
-        (base32 "1p322k6sps0nnwsi7vim4p2y9rrq5rbxzdm2hmrd4ipqvaszrz1z"))))
+        (base32 "0d4i9gzbjd3ilvzjcqzirnk9b4h46yq7yx28ysmghjbxj0xfwd0y"))))
     (properties `((upstream-name . "bartXViz")))
     (build-system r-build-system)
     (arguments
@@ -30520,7 +30520,6 @@ attenuation and envelope correlation among others (Dabelsteen et al 1993
                              r-forcats
                              r-dplyr
                              r-dbarts
-                             r-data-table
                              r-data-table
                              r-bartmachine
                              r-bart
