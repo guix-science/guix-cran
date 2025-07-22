@@ -7648,13 +7648,13 @@ functions to display the descriptive statistics.")
 (define-public r-forrel
   (package
     (name "r-forrel")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forrel" version))
        (sha256
-        (base32 "0i1114xw4np4sb3yw22pc8j1wcnyqvl1wgcgns1xccmh5pzvwkl5"))))
+        (base32 "1jfxbppkkpqq44djxkl2wwcz6dpvaj44yrdbi7jg6md3pdn5k2jv"))))
     (properties `((upstream-name . "forrel")))
     (build-system r-build-system)
     (arguments
@@ -9955,13 +9955,13 @@ details, see Wang (2024) <doi:10.48550/@code{arXiv.2409.03136>}.")
 (define-public r-foghorn
   (package
     (name "r-foghorn")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "foghorn" version))
        (sha256
-        (base32 "1x3zgjy1pnjv0a2dra5a36fwg3lgq8yfqdm731r28kdwy6d1az85"))))
+        (base32 "1n2cb2gw63zf314wwlb4gggiwkckxswhhr73l1fqyvnpdgsqxxz3"))))
     (properties `((upstream-name . "foghorn")))
     (build-system r-build-system)
     (arguments
@@ -11033,13 +11033,13 @@ to calculate equilibrium stability.")
 (define-public r-fluxtools
   (package
     (name "r-fluxtools")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxtools" version))
        (sha256
-        (base32 "0m5l045j32s5pyyqwd7qkspk0swnx06hjchkaajzgcpq9hzir6pr"))))
+        (base32 "1gkqdxdknxfcnxcgd7kanj7ld7db3jjh49gyi5rrwihla52ipa60"))))
     (properties `((upstream-name . "fluxtools")))
     (build-system r-build-system)
     (arguments

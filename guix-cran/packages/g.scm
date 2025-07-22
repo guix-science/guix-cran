@@ -21852,13 +21852,13 @@ that is genomics data.")
 (define-public r-gggda
   (package
     (name "r-gggda")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gggda" version))
        (sha256
-        (base32 "01vdhk66vl746pns1k532bxf6n61wzghny0lh76nk3wh9lykjmcj"))))
+        (base32 "0yy78jhiz6kk0992x5dnmknl2nfy1sb27bgj4dhr9gn8w79b235h"))))
     (properties `((upstream-name . "gggda")))
     (build-system r-build-system)
     (arguments
@@ -22514,6 +22514,36 @@ normal plots, main and interaction effect plots for factorial designs, contour
 plots for response surface methodology, Pareto plot, and two dimensional
 projections of a latin hypercube design.")
     (license license:expat)))
+
+(define-public r-ggdmcmodel
+  (package
+    (name "r-ggdmcmodel")
+    (version "0.2.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggdmcModel" version))
+       (sha256
+        (base32 "0d6wi775j7i896wc6a96b7w5w11y3w5zkcnwqyr2f1dfh9bj2rhk"))))
+    (properties `((upstream-name . "ggdmcModel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggdmcheaders))
+    (home-page "https://github.com/yxlin/ggdmcModel")
+    (synopsis "Model Builders for 'ggdmc' Package")
+    (description
+     "This package provides a suite of tools for specifying and examining experimental
+designs related to choice response time models (e.g., the Diffusion Decision
+Model).  This package allows users to define how experimental factors influence
+one or more model parameters using R-style formula syntax, while also checking
+the logical consistency of these associations.  Additionally, it integrates with
+the ggdmc package, which employs Differential Evolution Markov Chain Monte Carlo
+(DE-MCMC) sampling to optimise model parameters.  For further details on the
+model-building approach, see Heathcote, Lin, Reynolds, Strickland, Gretton, and
+Matzke (2019) <doi:10.3758/s13428-018-1067-y>.")
+    (license license:gpl2+)))
 
 (define-public r-ggdmcheaders
   (package
@@ -26444,19 +26474,23 @@ functions from this package.")
 (define-public r-geomtextpath
   (package
     (name "r-geomtextpath")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomtextpath" version))
        (sha256
-        (base32 "1paq6xv6mmljzgwk25sb8dsdag4m52lpnn5x1r55zfss5x3s1bz0"))))
+        (base32 "1h7kp93vmfnwrg4qj7sfi2ki3iv0sb66wq2qx1qpvhd5g1w1jp06"))))
     (properties `((upstream-name . "geomtextpath")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-textshaping r-systemfonts r-scales r-rlang
+    (propagated-inputs (list r-vctrs
+                             r-textshaping
+                             r-systemfonts
+                             r-scales
+                             r-rlang
                              r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://allancameron.github.io/geomtextpath/")
@@ -28149,6 +28183,30 @@ M, Foulkes, M A (1986) <doi:10.2307/2531201>, Whitehead J(1993)
 guide
 <https://github.com/@code{TuCai/phuse/blob/master/inst/examples/07_genTS/www/Simplified_TS_Creation_Guide_v2.pdf>}.")
     (license license:expat)))
+
+(define-public r-gentransmuted
+  (package
+    (name "r-gentransmuted")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gentransmuted" version))
+       (sha256
+        (base32 "17y36jdwvkddxk0jwpj56zvlj8pk6rxfmci62cagghp4gqfnxsz8"))))
+    (properties `((upstream-name . "gentransmuted")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam r-pracma))
+    (home-page "https://cran.r-project.org/package=gentransmuted")
+    (synopsis "Estimation and Other Tools for Generalized Transmuted Models")
+    (description
+     "Provide estimation and data generation tools for a generalization of the
+transmuted distributions discussed in Shaw and Buckley (2007).  See
+<doi:10.48550/@code{arXiv.0901.0434>} for more information.")
+    (license license:gpl2+)))
 
 (define-public r-gentag
   (package
@@ -31622,6 +31680,61 @@ meant to emphasize the use of the Matrix package, which allows for an
 implementation based fully in R.")
     (license license:gpl3)))
 
+(define-public r-geelite
+  (package
+    (name "r-geelite")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geeLite" version))
+       (sha256
+        (base32 "06jcvvvzk2m4pzxsnsf658qaqmdaqavpvfnlzj07yh7b77iqgxrm"))))
+    (properties `((upstream-name . "geeLite")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyrgee
+                             r-tidyr
+                             r-stringr
+                             r-sf
+                             r-rstudioapi
+                             r-rsqlite
+                             r-rnaturalearthdata
+                             r-rnaturalearth
+                             r-rgee
+                             r-reticulate
+                             r-reshape2
+                             r-purrr
+                             r-progress
+                             r-magrittr
+                             r-lubridate
+                             r-knitr
+                             r-jsonlite
+                             r-h3jsr
+                             r-googledrive
+                             r-geojsonio
+                             r-dplyr
+                             r-data-table
+                             r-crayon
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=geeLite")
+    (synopsis
+     "Building and Managing Local Databases from 'Google Earth Engine'")
+    (description
+     "Simplifies the creation, management, and updating of local databases using data
+extracted from Google Earth Engine ('GEE').  It integrates with GEE to store,
+aggregate, and process spatio-temporal data, leveraging SQLite for efficient,
+serverless storage.  The @code{geeLite} package provides utilities for data
+transformation and supports real-time monitoring and analysis of geospatial
+features, making it suitable for researchers and practitioners in geospatial
+science.  For details, see Kurbucz and AndrÃ©e (2025) \"Building and Managing
+Local Databases from Google Earth Engine with the @code{geeLite} R Package\"
+<https://hdl.handle.net/10986/43165>.")
+    (license (license:fsdg-compatible "MPL-2.0"))))
+
 (define-public r-geecure
   (package
     (name "r-geecure")
@@ -33028,13 +33141,13 @@ Description of the method is available from: Han and @code{DeOliveira} (2018)
 (define-public r-gchartsmap
   (package
     (name "r-gchartsmap")
-    (version "0.1.3")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gchartsmap" version))
        (sha256
-        (base32 "1dkpc5hqdhzygj4rbl8s0i0sbj2081j0by76x96iy86f8saj2xj5"))))
+        (base32 "1m7x32sd8zp34dx8ypmkyfvp5cc466zlhzsl1rvj7wg2fzj5f235"))))
     (properties `((upstream-name . "gchartsmap")))
     (build-system r-build-system)
     (arguments
@@ -33044,10 +33157,10 @@ Description of the method is available from: Han and @code{DeOliveira} (2018)
     (home-page "https://github.com/odeleongt/gchartsmap")
     (synopsis "Access 'Google Charts' Map Data")
     (description
-     "Connects to the Google Charts geographic data resources hosted at
-<https://www.gstatic.com/charts/geochart/10/mapfiles/US-500_METROS.js>, allowing
-the user to download contents to use as a reference for related services like
-Google Trends'.")
+     "Connects to the Google Charts geographic data resources described in
+<https://developers.google.com/chart/interactive/docs/gallery/geochart>,
+allowing the user to download contents to use as a reference for related
+services like Google Trends'.")
     (license license:gpl3)))
 
 (define-public r-gcestim
@@ -36153,6 +36266,37 @@ others.")
 linear algebra and computational experiments.  Includes well-known matrices for
 benchmarking and testing the performance, stability, and accuracy of linear
 algebra algorithms.  Inspired by MATLAB gallery functions.")
+    (license license:expat)))
+
+(define-public r-galisats
+  (package
+    (name "r-galisats")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "galisats" version))
+       (sha256
+        (base32 "1a3z2gqcb4vdnr8dq5425aqrr7p3fj3xmibczqw6my6dpbca5bzf"))))
+    (properties `((upstream-name . "galisats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-png))
+    (home-page "https://lechjaszowski.github.io/galilean_satellites/")
+    (synopsis "Configuration of Jupiter's Four Largest Satellites")
+    (description
+     "Calculate and plot the configuration of Jupiter's four largest satellites (known
+as Galilean satellites) for a given date and time (ET - Ephemeris Time).  The
+galsat function returns numerical values of the satellitesâ positions.  x â
+the apparent rectangular coordinate of the satellite with respect to the center
+of Jupiterâs disk in the equatorial plane in the units of Jupiterâs
+equatorial radius; X is positive toward the west, y â the apparent rectangular
+coordinate of the satellite with respect to the center of Jupiterâs disk from
+the equatorial plane in the units of Jupiterâs equatorial radius; Y is
+positive toward the north.  For more details see Meeus (1988, ISBN
+0-943396-22-0) \"Astronomical Formulae for Calculators\".")
     (license license:expat)))
 
 (define-public r-galigor

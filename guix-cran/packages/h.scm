@@ -5229,23 +5229,26 @@ variables with different degrees of variance, covariance, and effect size.")
 (define-public r-holobiont
   (package
     (name "r-holobiont")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "holobiont" version))
        (sha256
-        (base32 "1m22x1la59kh7z57s05rsmxf44y2fzk32159wjnfs4wvqdfskzkl"))))
+        (base32 "0rv1rd0q1kacflq2p517fmkghy4y5c76410ahz4dg560adkb8gwv"))))
     (properties `((upstream-name . "holobiont")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-vegan
+                             r-tibble
                              r-phytools
                              r-phyloseq
                              r-ggplot2
                              r-dplyr
+                             r-data-table
+                             r-castor
                              r-ape))
     (home-page "https://cran.r-project.org/package=holobiont")
     (synopsis "Microbiome Analysis Tools")
@@ -5260,8 +5263,7 @@ provides two options for constructing the core community phylogeny, a tip-based
 approach, where the core community phylogeny is identified based on incidence of
 leaf nodes and a branch-based approach, where the core community phylogeny is
 identified based on incidence of individual branches.  We suggest use of the
-@code{microViz} package, which can be downloaded from the website provided under
-Additional repositories.")
+@code{microViz} package.")
     (license license:gpl2)))
 
 (define-public r-hollr
@@ -6661,13 +6663,13 @@ using either lmer in the lme4 package or lme in the nlme package.")
 (define-public r-hlatools
   (package
     (name "r-hlatools")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HLAtools" version))
        (sha256
-        (base32 "0m4vc00a7l0qg0ar1lhil3xf6r05n55qy8d3fic4pyb34zgxjdfr"))))
+        (base32 "0x7skrcqrznbq60kdxkr9yrcl5ng2420ic650y03in14qvf7acql"))))
     (properties `((upstream-name . "HLAtools")))
     (build-system r-build-system)
     (arguments
@@ -14872,6 +14874,37 @@ elevation models, state borders, spatial databases, cadastral parcels, and more.
  There also access to point clouds data ('LIDAR') and specifics API
 (<https://apicarto.ign.fr/api/doc/>).")
     (license license:gpl3+)))
+
+(define-public r-haplovar
+  (package
+    (name "r-haplovar")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HaploVar" version))
+       (sha256
+        (base32 "0hr015bkyg92hqcdvqrjs4fhlx83l51nrqn524arjh8qsyb5mjl0"))))
+    (properties `((upstream-name . "HaploVar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-tibble r-magrittr r-dplyr r-dbscan))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=HaploVar")
+    (synopsis
+     "Defining Local Haplotype Variants for Use in Trait Association and Trait Prediction Analyses")
+    (description
+     "This package provides a local haplotyping tool for use in trait association and
+trait prediction analyses pipelines. @code{HaploVar} enables users take single
+nucleotide polymorphisms (SNPs) (in VCF format) and a linkage disequilibrium
+(LD) matrix, calculate local haplotypes and format the output to be compatible
+with a wide range of trait association and trait prediction tools.  The local
+haplotypes are calculated from the LD matrix using a clustering algorithm called
+density-based spatial clustering of applications with noise ('DBSCAN') (Ester et
+al., 1996) <ISBN: 1577350049>.")
+    (license license:expat)))
 
 (define-public r-haplotypes
   (package

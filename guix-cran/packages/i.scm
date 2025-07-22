@@ -1334,13 +1334,13 @@ convenient function call inside the loop.")
 (define-public r-iterativehardthresholding
   (package
     (name "r-iterativehardthresholding")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IterativeHardThresholding" version))
        (sha256
-        (base32 "0vv8v61pzlykdyjivl19q8nr9p22c845y902yljgrvc9ayidczqm"))))
+        (base32 "0b1b2jddn8s5182gb38ws0yxr5gwczk3pzkd3wkzd0prl6bvnv2r"))))
     (properties `((upstream-name . "IterativeHardThresholding")))
     (build-system r-build-system)
     (arguments
@@ -3331,13 +3331,13 @@ community, but do not impose many dependencies on the user.")
 (define-public r-isar
   (package
     (name "r-isar")
-    (version "0.1.12")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ISAR" version))
        (sha256
-        (base32 "0c6ahpkpbmy8zg7ac0j3v01jw59g3h8n6s8c6lkrmk1my42yzr1c"))))
+        (base32 "1c0294nya9dv3h3lnb23d0q8yh88d7dcrc5jxvc6aa8gnr034c74"))))
     (properties `((upstream-name . "ISAR")))
     (build-system r-build-system)
     (arguments
@@ -3346,9 +3346,8 @@ community, but do not impose many dependencies on the user.")
     (home-page "https://github.com/rtelmore/ISAR")
     (synopsis "Introduction to Sports Analytics using R (ISAR) Data")
     (description
-     "We provide data sets used in the forthcoming textbook \"Introduction to Sports
-Analytics using R\" by Elmore and Urbaczweski (2024).  The package currently
-contains sixteen datasets and should be published in early 2024.")
+     "We provide data sets used in the textbook \"Introduction to Sports Analytics
+using R\" by Elmore and Urbaczweski (2025).")
     (license license:expat)))
 
 (define-public r-isa2
@@ -9099,13 +9098,13 @@ estimated using a (wild) binary segmentation scheme.")
 (define-public r-insilicova
   (package
     (name "r-insilicova")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "InSilicoVA" version))
        (sha256
-        (base32 "15x6d928rk9in2swbaal6hcw2nikj153fgqyd7nhdkcbs1agrsl1"))))
+        (base32 "1f17yibp3q58adm3b02ja38qnmjscfxc3nc8rgw17c9ydd35mblz"))))
     (properties `((upstream-name . "InSilicoVA")))
     (build-system r-build-system)
     (arguments

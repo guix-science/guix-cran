@@ -3767,13 +3767,13 @@ creating consensus loop datasets.")
 (define-public r-loopevd
   (package
     (name "r-loopevd")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loopevd" version))
        (sha256
-        (base32 "1fa72qysz30l18jgr27kycwdwbxhh2jh4dsf58jkgl43fb8nsp1g"))))
+        (base32 "0g75m3sjkyzp3b2d3hcmyw68dz1az1g705816irg0inkqc0yfwvc"))))
     (properties `((upstream-name . "loopevd")))
     (build-system r-build-system)
     (arguments
@@ -11258,13 +11258,13 @@ included.  View a demo online at <https://daattali.com/shiny/lightsout/>.")
 (define-public r-lightr
   (package
     (name "r-lightr")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lightr" version))
        (sha256
-        (base32 "0pw2kdw4izhnlzis6mn52c3m8x3nhrhknlh6mk7i5ri8phv237w8"))))
+        (base32 "0g49l7cqg485svwfc07i87626mcdv13g99mvmlkgl2fhsm69dibr"))))
     (properties `((upstream-name . "lightr")))
     (build-system r-build-system)
     (arguments
@@ -12118,6 +12118,36 @@ compared to other libraries.")
 functions and data types common in computer graphics applications, including a
 16-bit floating-point type.")
     (license license:bsd-3)))
+
+(define-public r-libdeflate
+  (package
+    (name "r-libdeflate")
+    (version "1.24-7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "libdeflate" version))
+       (sha256
+        (base32 "1jq8wr2a9hzalpiilywankcpxgd3v7cy7xnf5xc4ff00ilbb6qal"))))
+    (properties `((upstream-name . "libdeflate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list cmake))
+    (native-inputs (list pkg-config))
+    (home-page "https://cran.r-project.org/package=libdeflate")
+    (synopsis "DEFLATE Compression and Static Library")
+    (description
+     "Whole-buffer DEFLATE-based compression and decompression of raw vectors using
+the libdeflate library (see <https://github.com/ebiggers/libdeflate>).  Provides
+the user with additional control over the speed and the quality of DEFLATE
+compression compared to the fixed level of compression offered in R's
+@code{memCompress()} function.  Also provides the libdeflate static library and
+C headers along with a CMake target and packageâconfig file that ease linking
+of libdeflate in packages that compile and statically link bundled libraries
+using CMake'.")
+    (license license:expat)))
 
 (define-public r-libbib
   (package

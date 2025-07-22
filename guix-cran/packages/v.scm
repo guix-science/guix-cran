@@ -9675,6 +9675,33 @@ Valection: Design Optimization for Validation and Verification Studies; Biorxiv
 2018; <doi:10.1101/254839>.")
     (license license:gpl3)))
 
+(define-public r-valdr
+  (package
+    (name "r-valdr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valdr" version))
+       (sha256
+        (base32 "14va4jflpm2dqxgs3sqv9sps5z02sgsq351snzmv50092rk068r4"))))
+    (properties `((upstream-name . "valdr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-keyring r-jsonlite r-httr r-base64enc))
+    (home-page "https://cran.r-project.org/package=valdr")
+    (synopsis "Access and Analyse 'VALD' Data via Our External 'APIs'")
+    (description
+     "This package provides helper functions and wrappers to simplify authentication,
+data retrieval, and result processing from the VALD APIs'.  Designed to
+streamline integration for analysts and researchers working with VALD's external
+APIs'.  For further documentation, please see
+<https://support.vald.com/hc/en-au/articles/23415335574553-How-to-integrate-with-VALD-APIs>
+for documentation.")
+    (license license:expat)))
+
 (define-public r-valaddin
   (package
     (name "r-valaddin")

@@ -4833,13 +4833,13 @@ publication.")
 (define-public r-keyatm
   (package
     (name "r-keyatm")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "keyATM" version))
        (sha256
-        (base32 "1xp9w3z3d9wcag8chysg8bmkyp84wz1nifyg3g0blb9fprxcl1np"))))
+        (base32 "09mk832ws42v0pf65p90cggwmz087dkfsksp3xg0l2fj3f0l0bdf"))))
     (properties `((upstream-name . "keyATM")))
     (build-system r-build-system)
     (arguments

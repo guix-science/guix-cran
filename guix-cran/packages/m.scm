@@ -2857,13 +2857,13 @@ Acoustic detection of NMR experiments.  OMICS. 2015;19(3):147-56.
 (define-public r-musicmct
   (package
     (name "r-musicmct")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "musicMCT" version))
        (sha256
-        (base32 "0llvpbhqlvpn5f5l36fsig4rwnr45d694w87apdb7pinql23r1k0"))))
+        (base32 "1cihcmkr1x0vjxm5adwcrkldc58ixrw2hjys3228s772iyz169n3"))))
     (properties `((upstream-name . "musicMCT")))
     (build-system r-build-system)
     (arguments
@@ -2875,14 +2875,14 @@ Acoustic detection of NMR experiments.  OMICS. 2015;19(3):147-56.
     (synopsis "Analyze the Structure of Musical Scales")
     (description
      "Analysis of musical scales (& modes, grooves, etc.) in the vein of Sherrill 2025
-<https://collections.lib.utah.edu/ark:/87278/s6d2gr78>.  The initials MCT in the
-package title refer to the article's title: \"Modal Color Theory.\" Offers support
-for conventional musical pitch class set theory as developed by Forte (1973,
-ISBN: 9780300016109) and David Lewin (1987, ISBN: 9780300034936), as well as for
-the continuous geometries of Callender, Quinn, & Tymoczko (2008)
-<doi:10.1126/science.1153021>.  Identifies structural properties of scales and
-calculates derived values (sign vector, color number, brightness ratio, etc.).
-Creates plots such as \"brightness graphs\" which visualize these properties.")
+<doi:10.1215/00222909-11595194>.  The initials MCT in the package title refer to
+the article's title: \"Modal Color Theory.\" Offers support for conventional
+musical pitch class set theory as developed by Forte (1973, ISBN: 9780300016109)
+and David Lewin (1987, ISBN: 9780300034936), as well as for the continuous
+geometries of Callender, Quinn, & Tymoczko (2008) <doi:10.1126/science.1153021>.
+ Identifies structural properties of scales and calculates derived values (sign
+vector, color number, brightness ratio, etc.).  Creates plots such as
+\"brightness graphs\" which visualize these properties.")
     (license license:gpl3+)))
 
 (define-public r-musclesynergies
@@ -9625,26 +9625,26 @@ key.  Without an API key, this package will not work properly.")
 (define-public r-mscstts
   (package
     (name "r-mscstts")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mscstts" version))
        (sha256
-        (base32 "1yqb9p7404yh9bjjjpy83k7yssvvpn3v9vddy47pgwjv4hbpbq19"))))
+        (base32 "12lblsykwxcn4zwjmjysmmswk1xmfpsdb94zyrr2gmdncmb6z3bc"))))
     (properties `((upstream-name . "mscstts")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tuner r-jsonlite r-httr))
-    (home-page "https://github.com/muschellij2/mscstts")
+    (home-page "https://github.com/jhudsl/mscstts")
     (synopsis
      "R Client for the Microsoft Cognitive Services 'Text-to-Speech' REST API")
     (description
      "R Client for the Microsoft Cognitive Services Text-to-Speech REST API, including
 voice synthesis.  A valid account must be registered at the Microsoft Cognitive
-Services website <https://azure.microsoft.com/services/cognitive-services/> in
+Services website <https://azure.microsoft.com/en-us/products/ai-services/> in
 order to obtain a (free) API key.  Without an API key, this package will not
 work properly.")
     (license license:gpl3)))
@@ -15649,13 +15649,13 @@ should be easy to plug in, or develop from, on top of this canvas.")
 (define-public r-momentuhmm
   (package
     (name "r-momentuhmm")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "momentuHMM" version))
        (sha256
-        (base32 "0isd18b0fdf75gk6lbm34hgrhwj1fnl7airpv56xffsdvhvj6xjq"))))
+        (base32 "14hig6jw6zni4fvadmfhdkgyq8cay5dbrraihsah4w867b5l1n45"))))
     (properties `((upstream-name . "momentuHMM")))
     (build-system r-build-system)
     (arguments
@@ -15825,19 +15825,19 @@ Joseph, V. R., Gul, E., and Ba, S. (2015) <doi:10.1093/biomet/asv002>.")
 (define-public r-molgenisauth
   (package
     (name "r-molgenisauth")
-    (version "0.0.25")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MolgenisAuth" version))
        (sha256
-        (base32 "1ggij166zy0z05hmpwzdx2s1j38s9zr2ldayxljmcl348ds7rk7n"))))
+        (base32 "08144p4hq4pzj4qk1a7x9k9ilz63f6jy281xnp52kkapy9k69x96"))))
     (properties `((upstream-name . "MolgenisAuth")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-urltools r-httr))
+    (propagated-inputs (list r-urltools r-httr2 r-assertthat))
     (home-page "https://github.com/molgenis/molgenis-r-auth/")
     (synopsis "'OpenID Connect' Discovery and Authentication")
     (description
@@ -23360,6 +23360,32 @@ missing data.  Celeux and Govaert (1995) <doi:10.1016/0031-3203(94)00125-6>,
 Browne and @code{McNicholas} (2014) <doi:10.1007/s11634-013-0139-1>, Browne and
 @code{McNicholas} (2015) <doi:10.1002/cjs.11246>.")
     (license license:gpl2+)))
+
+(define-public r-mixtur
+  (package
+    (name "r-mixtur")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mixtur" version))
+       (sha256
+        (base32 "1irx7fbv04w8cc3zci5hn08z6czi7shlysvyccxyb17wdm96ncni"))))
+    (properties `((upstream-name . "mixtur")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-rlang r-ggplot2 r-dplyr))
+    (home-page "https://github.com/JimGrange/mixtur")
+    (synopsis "Modelling Continuous Report Visual Short-Term Memory Studies")
+    (description
+     "This package provides a set of utility functions for analysing and modelling
+data from continuous report short-term memory experiments using either the
+2-component mixture model of Zhang and Luck (2008) <doi:10.1038/nature06860> or
+the 3-component mixture model of Bays et al. (2009) <doi:10.1167/9.10.7>.  Users
+are also able to simulate from these models.")
+    (license license:gpl3)))
 
 (define-public r-mixtree
   (package
@@ -33823,6 +33849,45 @@ treatment effect parameter which are described in Guenhan, Roever, and Friede
 (2020) <doi:10.1002/jrsm.1370>.")
     (license license:gpl3+)))
 
+(define-public r-metasplines
+  (package
+    (name "r-metasplines")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metasplines" version))
+       (sha256
+        (base32 "1055bw8g4gkhba5pql69sqgli5k2avhs8g0gggb91809f98mlqpb"))))
+    (properties `((upstream-name . "metasplines")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-optimization
+                             r-meta
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=metasplines")
+    (synopsis
+     "Pool Literature-Based and Individual Participant Data Based Spline Estimates")
+    (description
+     "Pooling estimates reported in meta-analyses (literature-based, LB) and estimates
+based on individual participant data (IPD) is not straight-forward as the
+details of the LB nonlinear function estimate are not usually reported.  This
+package pools the nonlinear IPD dose-response estimates based on a natural cubic
+spline from lm or glm with the pointwise LB estimates and their estimated
+variances.  Details will be presented in HÃ¤rkÃ¤nen, Tapanainen, Sares-JÃ¤ske,
+MÃ¤nnistÃ¶, Kaartinen and Paalanen (2025) \"Novel pooling method for nonlinear
+cohort analysis and meta-analysis estimates: Predicting health outcomes based on
+climate-friendly diets\" (under revision)
+<https://journals.lww.com/epidem/pages/default.aspx>.")
+    (license license:gpl3+)))
+
 (define-public r-metasnf
   (package
     (name "r-metasnf")
@@ -35260,6 +35325,53 @@ data extraction and meta-analysis with the metagear package for R. Methods in
 Ecology and Evolution 7, 323-330 <doi:10.1111/2041-210X.12472>.")
     (license license:gpl2+)))
 
+(define-public r-metage
+  (package
+    (name "r-metage")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metaGE" version))
+       (sha256
+        (base32 "0ida7vksm5irh9vmm6jk2wsjfgxjrv5qr2mwa9xcq09mfp8yxsfb"))))
+    (properties `((upstream-name . "metaGE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rfast
+                             r-qqman
+                             r-purrr
+                             r-ks
+                             r-gplots
+                             r-ggrepel
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-emdbook
+                             r-dplyr
+                             r-data-table
+                             r-corrplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=metaGE")
+    (synopsis
+     "Meta-Analysis for Detecting Genotype x Environment Associations")
+    (description
+     "This package provides functions to perform all steps of genome-wide association
+meta-analysis for studying Genotype x Environment interactions, from collecting
+the data to the manhattan plot.  The procedure accounts for the potential
+correlation between studies.  In addition to the Fixed and Random models, one
+can investigate the relationship between QTL effects and some qualitative or
+quantitative covariate via the test of contrast and the meta-regression,
+respectively.  The methodology is available from: (De Walsche, A., et al. (2025)
+\\doi{10.1371/journal.pgen.1011553}).")
+    (license license:gpl3)))
+
 (define-public r-metagam
   (package
     (name "r-metagam")
@@ -35544,13 +35656,13 @@ result of each individual.")
 (define-public r-metacore
   (package
     (name "r-metacore")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metacore" version))
        (sha256
-        (base32 "0z3wc2xxcga8jhs63xfna4pcpznq4fh85bl1y4cin3bzx0bgl55b"))))
+        (base32 "05sbj0kcl86farm8ps12zljd3c4l573rjahfbc8bzy8310x8bd0z"))))
     (properties `((upstream-name . "metacore")))
     (build-system r-build-system)
     (arguments
@@ -42497,13 +42609,13 @@ series data, conducting feature selection on the regression component.")
 (define-public r-mbsp
   (package
     (name "r-mbsp")
-    (version "4.0")
+    (version "5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBSP" version))
        (sha256
-        (base32 "1rfjykm2363m67ycm9vsxnddcsmlqxg5gx8sfg9ma8alwnh0s3fb"))))
+        (base32 "1b91xdwlwnsls56h5c31d7ykwbngxgg4xzzhwqspq9961i6nqkax"))))
     (properties `((upstream-name . "MBSP")))
     (build-system r-build-system)
     (arguments

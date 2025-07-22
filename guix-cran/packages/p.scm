@@ -10109,19 +10109,20 @@ more information on principal surfaces, see Ganey, R. (2019,
 (define-public r-prindt
   (package
     (name "r-prindt")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PrInDT" version))
        (sha256
-        (base32 "0z03d87bnp2cf2k4m25il2wqglj53g5mdz7wpjzvsklnzsmxdbmy"))))
+        (base32 "0wvb9p14nyf9ny006qavghbfrbc6iav3x5dgghmp6sbp11h1smrd"))))
     (properties `((upstream-name . "PrInDT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-splitstackshape r-party r-mass))
+    (propagated-inputs (list r-stringr r-splitstackshape r-party r-mass
+                             r-gdata))
     (home-page "https://cran.r-project.org/package=PrInDT")
     (synopsis
      "Prediction and Interpretation in Decision Trees for Classification and Regression")
@@ -10142,14 +10143,25 @@ and @code{PrInDTMulab()} deal with multilevel and multilabel classification.  In
 addition to these @code{PrInDT()} variants for classification, the function
 @code{PrInDTreg()} has been developed for regression problems.  Finally, the
 function @code{PostPrInDT()} allows for a posterior analysis of the distribution
-of a specified variable in the terminal nodes of a given tree.  References are:
--- Weihs, C., Buschfeld, S. (2021a) \"Combining Prediction and Interpretation in
-Decision Trees (@code{PrInDT}) - a Linguistic Example\"
-<@code{arXiv:2103.02336>}; -- Weihs, C., Buschfeld, S. (2021b)
-\"@code{NesPrInDT}: Nested undersampling in @code{PrInDT}\"
-<@code{arXiv:2103.14931>}; -- Weihs, C., Buschfeld, S. (2021c) \"Repeated
-undersampling in @code{PrInDT} (@code{RePrInDT}): Variation in undersampling and
-prediction, and ranking of predictors in ensembles\" <@code{arXiv:2108.05129>}.")
+of a specified variable in the terminal nodes of a given tree.  In version 2,
+additionally structured sampling is implemented in functions
+@code{PrInDTCstruc()} and @code{PrInDTRstruc()}.  In these functions, repeated
+measurements data can be analyzed, too.  Moreover, multilabel 2-stage versions
+of classification and regression trees are implemented in functions
+@code{C2SPrInDT()} and @code{R2SPrInDT()} as well as interdependent multilabel
+models in functions @code{SimCPrInDT()} and @code{SimRPrInDT()}.  Finally, for
+mixtures of classification and regression models functions @code{Mix2SPrInDT()}
+and @code{SimMixPrInDT()} are implemented.  These extensions of @code{PrInDT}
+are all described in Buschfeld & Weihs (2025Fc).  References: -- Buschfeld, S.,
+Weihs, C. (2025Fc) \"Optimizing decision trees for the analysis of World
+Englishes and sociolinguistic data\", Cambridge Elements. -- Weihs, C.,
+Buschfeld, S. (2021a) \"Combining Prediction and Interpretation in Decision Trees
+(@code{PrInDT}) - a Linguistic Example\" <doi:10.48550/@code{arXiv.2103.02336>};
+-- Weihs, C., Buschfeld, S. (2021b) \"@code{NesPrInDT}: Nested undersampling in
+@code{PrInDT}\" <doi:10.48550/@code{arXiv.2103.14931>}; -- Weihs, C., Buschfeld,
+S. (2021c) \"Repeated undersampling in @code{PrInDT} (@code{RePrInDT}): Variation
+in undersampling and prediction, and ranking of predictors in ensembles\"
+<doi:10.48550/@code{arXiv.2108.05129>}.")
     (license license:gpl2)))
 
 (define-public r-primme
@@ -10455,18 +10467,19 @@ simplex method, see Haotian Pang (2017)
 (define-public r-pridit
   (package
     (name "r-pridit")
-    (version "1.0-4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pridit" version))
        (sha256
-        (base32 "0b0ap48fvg3gqnv88b816p7x098g884dcn719psiad2wjqb1v4hm"))))
+        (base32 "1q15dz0918ln3zrw149vg7m42sf21zj7c0h090896lshncdq64y2"))))
     (properties `((upstream-name . "pridit")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/rlieberthal/PRIDIT")
     (synopsis "Principal Component Analysis Applied to Ridit Scoring")
     (description
@@ -41601,13 +41614,13 @@ the pedsuite package ecosystem, presented in Pedigree Analysis in R (Vigeland,
 (define-public r-paramlink
   (package
     (name "r-paramlink")
-    (version "1.1-5")
+    (version "1.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paramlink" version))
        (sha256
-        (base32 "0a21cy8q3zv96zdq5q2hfkb2ga1fham00in7wfyyd9wpck9gp009"))))
+        (base32 "0izphg3vw1kz30c8zjxa3big5niq8hamr25qs11cds6f5f8fnsp0"))))
     (properties `((upstream-name . "paramlink")))
     (build-system r-build-system)
     (arguments
@@ -41618,7 +41631,7 @@ the pedsuite package ecosystem, presented in Pedigree Analysis in R (Vigeland,
     (home-page "https://github.com/magnusdv/paramlink")
     (synopsis "Parametric Linkage and Other Pedigree Analysis in R")
     (description
-     "NOTE: PARAMLINK HAS BEEN SUPERSEDED BY THE PED SUITE PACKAGES
+     "NOTE: PARAMLINK HAS BEEN SUPERSEDED BY THE PEDSUITE PACKAGES
 (<https://magnusdv.github.io/pedsuite/>).  PARAMLINK IS MAINTAINED ONLY FOR
 LEGACY PURPOSES AND SHOULD NOT BE USED IN NEW PROJECTS. A suite of tools for
 analysing pedigrees with marker data, including parametric linkage analysis,
@@ -44796,6 +44809,42 @@ have its page size, page numbers, margin boxes, and running headers, etc.
 Applications of this package include books, letters, reports, papers, business
 cards, resumes, and posters.")
     (license license:expat)))
+
+(define-public r-page
+  (package
+    (name "r-page")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PAGE" version))
+       (sha256
+        (base32 "0jfkmp0ygk99f2bdk279j1b38l93xxjck26jxk8qih79pqv4rkwg"))))
+    (properties `((upstream-name . "PAGE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-randomforest
+                             r-network
+                             r-metrica
+                             r-mass
+                             r-lars
+                             r-glasso
+                             r-ggally
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=PAGE")
+    (synopsis "Predictor-Assisted Graphical Models under Error-in-Variables")
+    (description
+     "We consider the network structure detection for variables Y with auxiliary
+variables X accommodated, which are possibly subject to measurement error.  The
+following three functions are designed to address various structures by
+different methods : one is @code{NP_Graph()} that is used for handling the
+nonlinear relationship between the responses and the covariates, another is
+@code{Joint_Gaussian()} that is used for correction in linear regression models
+via the Gaussian maximum likelihood, and the other @code{Cond_Gaussian()} is for
+linear regression models via conditional likelihood function.")
+    (license license:gpl3)))
 
 (define-public r-pafit
   (package

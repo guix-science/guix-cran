@@ -6990,6 +6990,42 @@ Assessment Methods toolkit) packages.  By loading and installing
 these packages.  Learn more about @code{openMSE} at <https://openmse.com/>.")
     (license license:gpl3)))
 
+(define-public r-openmpp
+  (package
+    (name "r-openmpp")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openmpp" version))
+       (sha256
+        (base32 "1a5d8zfqbi76bdyxsinhrf97k37v1li5xjfbd73185xan51aj0zp"))))
+    (properties `((upstream-name . "openmpp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readr
+                             r-r6
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-curl
+                             r-cli))
+    (home-page "https://github.com/mattwarkentin/openmpp")
+    (synopsis "Programmatic Interface to 'OpenM++'")
+    (description
+     "This package provides a programmatic interface to the @code{OpenM++}
+microsimulation platform (<https://openmpp.org>).  The primary goal of this
+package is to wrap the @code{OpenM++} Web Service (OMS) to provide
+@code{OpenM++} users a programmatic interface for the R language.")
+    (license license:expat)))
+
 (define-public r-openml
   (package
     (name "r-openml")
@@ -10137,13 +10173,13 @@ applying functions before combining).")
 (define-public r-omixvizr
   (package
     (name "r-omixvizr")
-    (version "1.0.5")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omixVizR" version))
        (sha256
-        (base32 "1ff8a45r0v88gfprcna5ypn3p3jy638g9vild6g0qs08s8yink2a"))))
+        (base32 "0qig9l4j62v1nzg1z487x7pb2hzw0rszd5n3lxn3ymh7xlcgq2wy"))))
     (properties `((upstream-name . "omixVizR")))
     (build-system r-build-system)
     (arguments
@@ -10155,11 +10191,14 @@ applying functions before combining).")
                              r-purrr
                              r-magrittr
                              r-ggtext
+                             r-ggsci
                              r-ggrepel
                              r-ggplot2
                              r-ggbreak
+                             r-genpwr
+                             r-dplyr
                              r-data-table))
-    (home-page "https://leslie-lu.github.io/")
+    (home-page "https://github.com/Leslie-Lu/omixVizR")
     (synopsis "Toolkit for Omics Data Visualization")
     (description
      "This package provides a suite of tools for the comprehensive visualization of

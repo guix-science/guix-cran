@@ -2562,13 +2562,13 @@ of GPU-accelerated machine learning libraries powered by CUDA
 (define-public r-cucumber
   (package
     (name "r-cucumber")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cucumber" version))
        (sha256
-        (base32 "1fjk7vkf28yb3xvbmy955ph92n57cpk5vnxw80vxb63milxva0bg"))))
+        (base32 "1xkac688szxjs9sfnc3zwin6dg9072fizrcwaklwvqy62r1gri8q"))))
     (properties `((upstream-name . "cucumber")))
     (build-system r-build-system)
     (arguments
@@ -6988,19 +6988,19 @@ useful for methods development.  Main reference: E. Smith, G. Evans, J. Foadi
 (define-public r-cronbach
   (package
     (name "r-cronbach")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Cronbach" version))
        (sha256
-        (base32 "0c9lc6w9lba0j530n3kyrsvr9gn75gddbc6igns5friaz5j6jrla"))))
+        (base32 "0g40dxzcfrp18s5m791ppplrpwdjrhj7ks45c24pidvr1rsvx0li"))))
     (properties `((upstream-name . "Cronbach")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rfast r-boot))
+    (propagated-inputs (list r-rfast2 r-rfast r-boot))
     (home-page "https://cran.r-project.org/package=Cronbach")
     (synopsis "Cronbach's Alpha")
     (description
@@ -9129,13 +9129,13 @@ and scientific computing.")
 (define-public r-cpp11armadillo
   (package
     (name "r-cpp11armadillo")
-    (version "0.5.2")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpp11armadillo" version))
        (sha256
-        (base32 "0gck7wzp4z75z57xxg0k4bcc2my9xmzy387msvmlapmq0mw6yxfz"))))
+        (base32 "132d5qliphxlamf55vrb8vmfk1rbxrpcbbs909d0qbkvn35b3l80"))))
     (properties `((upstream-name . "cpp11armadillo")))
     (build-system r-build-system)
     (arguments
@@ -22891,13 +22891,13 @@ colors to make plots in base R', ggplot2', or other graphics frameworks.")
 (define-public r-colorrepel
   (package
     (name "r-colorrepel")
-    (version "0.4.1")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colorrepel" version))
        (sha256
-        (base32 "0ba2fr274wwqr4ra8srn3jy3b9y2w0wf4yxdkhimkmwwnb0sfrg8"))))
+        (base32 "1568jgvnr25fph8varc27phgklspbjklh6826qn3sk61mddibxxc"))))
     (properties `((upstream-name . "colorrepel")))
     (build-system r-build-system)
     (arguments
@@ -22915,7 +22915,6 @@ colors to make plots in base R', ggplot2', or other graphics frameworks.")
                              r-gtools
                              r-ggrepel
                              r-ggplot2
-                             r-ggalt
                              r-dqrng
                              r-dplyr
                              r-distances))
@@ -29580,20 +29579,19 @@ calculates such probability from relative frequencies.")
 (define-public r-clustergvis
   (package
     (name "r-clustergvis")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClusterGVis" version))
        (sha256
-        (base32 "09fwxvym6fpbp73iv4icpljvmxhjvc4k3nxnhl3qzp99ry7f2k5n"))))
+        (base32 "02y47pfsinbkfhkav48xvly0c322j3lp2kannp0z5lffdpa0cdan"))))
     (properties `((upstream-name . "ClusterGVis")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
-                             r-summarizedexperiment
                              r-singlecellexperiment
                              r-scales
                              r-reshape2
@@ -29604,12 +29602,7 @@ calculates such probability from relative frequencies.")
                              r-factoextra
                              r-e1071
                              r-dplyr
-                             r-complexheatmap
-                             r-colorramps
-                             r-clusterprofiler
-                             r-circlize
-                             r-biocmanager
-                             r-biobase))
+                             r-colorramps))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/junjunlab/ClusterGVis/")
     (synopsis "One-Step to Cluster and Visualize Gene Expression Data")
@@ -35986,13 +35979,13 @@ C (2021) <doi:10.1101/2021.03.29.437525> for more details.")
 (define-public r-cici
   (package
     (name "r-cici")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CICI" version))
        (sha256
-        (base32 "1fxwd0sgsrs8g97mg7n53knhr51gf858qymcd98i1m0qjdvlaxwd"))))
+        (base32 "0yad8v8sml6d5vl8wsl6p8v82ryp37g1ig9cn6s1b3f1r0i75g8n"))))
     (properties `((upstream-name . "CICI")))
     (build-system r-build-system)
     (arguments
@@ -36102,6 +36095,40 @@ publication in Journal of Business & Economic Statistics.")
 univariate parameters based on confidence intervals or parameter estimates with
 standard errors (Pawel et al., 2022) <doi:10.48550/@code{arXiv.2206.12290>}.")
     (license license:gpl3)))
+
+(define-public r-cicalc
+  (package
+    (name "r-cicalc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cicalc" version))
+       (sha256
+        (base32 "1sv3rg89ycqkm3y8ci3xmnhcwzpa3cw5jzfhfa1qyjbisk1wbqfa"))))
+    (properties `((upstream-name . "cicalc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-glue
+                             r-forcats
+                             r-dplyr
+                             r-cli
+                             r-broom))
+    (home-page "https://gsk-biostatistics.github.io/cicalc/")
+    (synopsis "Calculate Confidence Intervals")
+    (description
+     "This calculates a variety of different CIs for proportions and difference of
+proportions that are commonly used in the pharmaceutical industry including
+Wald, Wilson, Clopper-Pearson, Agresti-Coull and Jeffreys for proprotions.  And
+Miettinen-Nurminen (1985) <doi:10.1002/sim.4780040211>, Wald, Haldane, and Mee
+<https://www.lexjansen.com/wuss/2016/127_Final_Paper_PDF.pdf> for difference in
+proportions.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-cica
   (package
@@ -38490,13 +38517,13 @@ Inc. \"@code{CompTox} Chemicals Dashboard v2.2.1\",
 (define-public r-cheetahr
   (package
     (name "r-cheetahr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheetahR" version))
        (sha256
-        (base32 "1i43vpcnx1rfs8djzaa5276l9x7n89a04ap0wx4zr4z7n0h6fwvh"))))
+        (base32 "071irh8r0sy2kv4ab5si1jpgign42swzji9r5klanp6mkgji1kv8"))))
     (properties `((upstream-name . "cheetahR")))
     (build-system r-build-system)
     (arguments
@@ -41832,36 +41859,6 @@ and gene-set analysis procedure. <doi:10.1093/bioinformatics/btt008>.")
     (description "Optimization solver based on the Cross-Entropy method.")
     (license license:gpl2+)))
 
-(define-public r-ceodata
-  (package
-    (name "r-ceodata")
-    (version "1.3.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CEOdata" version))
-       (sha256
-        (base32 "0cf8d3qw2x2lww6hxw96b1b6dl6pq2n0w1ffl2d7870vcvzl3lwr"))))
-    (properties `((upstream-name . "CEOdata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-urltools r-stringr r-jsonlite r-haven r-dplyr))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://ceo.gencat.cat/ca/inici/")
-    (synopsis
-     "Datasets of the CEO (Centre d'Estudis d'Opinio) for Opinion Polls in Catalonia")
-    (description
-     "Easy and convenient access to the datasets of the \"Centre d'Estudis d'Opinio\",
-the Catalan institution for polling and public opinion.  The package uses the
-data stored in the servers of the CEO and returns it in a tidy format.")
-    (license license:gpl3)))
-
 (define-public r-centrifuger
   (package
     (name "r-centrifuger")
@@ -42887,6 +42884,31 @@ Gaussian mixture models, for performing the reduction of unnecessary clusters,
 and for discovering new clusters by splitting them.  CEC is based on the work of
 Spurek, P. and Tabor, J. (2014) <doi:10.1016/j.patcog.2014.03.006>.")
     (license license:gpl3)))
+
+(define-public r-ceblr
+  (package
+    (name "r-ceblr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ceblR" version))
+       (sha256
+        (base32 "130ysfwz4df1i88vhl14qj4mx6650syd1y33sr1mha5n2cmb8sn3"))))
+    (properties `((upstream-name . "ceblR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readr r-magrittr r-lifecycle r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/awosoga/ceblR")
+    (synopsis "Extract Data from the Canadian Elite Basketball League")
+    (description
+     "Gather boxscore and play-by-play data from the Canadian Elite Basketball League
+(CEBL) <https://www.cebl.ca> to create a repository of basic and advanced
+statistics for teams and players.")
+    (license license:expat)))
 
 (define-public r-ceas
   (package

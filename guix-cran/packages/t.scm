@@ -7731,13 +7731,13 @@ package.")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "1.14.0")
+    (version "1.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeTools" version))
        (sha256
-        (base32 "1qc3kwz1js073sjgn0vnqzjcic5b8xg4a9p6q01yl565wjyd7iy1"))))
+        (base32 "06a3bwc3gnhhrf0zr44s6ycfi8z0q4rwsyvcxwj9frz3248k2niy"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (arguments
@@ -7747,7 +7747,8 @@ package.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-rdpack
+    (propagated-inputs (list r-stringi
+                             r-rdpack
                              r-rcurl
                              r-rcpp
                              r-r-cache
@@ -15762,13 +15763,13 @@ tensors.")
 (define-public r-tinyvast
   (package
     (name "r-tinyvast")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyVAST" version))
        (sha256
-        (base32 "0ghsyvbn33vbcbqnwqk6q5lgg697wvq8sr58vp6xjnwmfchpwha0"))))
+        (base32 "0w0j0428swhxmadmbflszcn38rajkh07fpzwmy2lchschrjq0n3y"))))
     (properties `((upstream-name . "tinyVAST")))
     (build-system r-build-system)
     (arguments
@@ -21838,13 +21839,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-thisutils
   (package
     (name "r-thisutils")
-    (version "0.0.5")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisutils" version))
        (sha256
-        (base32 "0z71i6jf26vf106wgl10db7yhlbsyy0dwsp9dkh9pvmbb2480cdx"))))
+        (base32 "1v41w0djkywzkafkjpi5mdyjxwadlxxv6kzdycipj7dd3xm8ydwf"))))
     (properties `((upstream-name . "thisutils")))
     (build-system r-build-system)
     (arguments
@@ -21863,10 +21864,9 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
     (synopsis
      "Collection of Utility Functions for Data Analysis and Computing")
     (description
-     "This package provides a collection of utility functions commonly used in data
-analysis and scientific computing.  Includes functions for parallel processing,
-matrix operations, correlation calculations, and other computational tasks to
-streamline R workflows.")
+     "This package provides utility functions for data analysis and scientific
+computing.  Includes functions for parallel processing, and other computational
+tasks to streamline workflows.")
     (license license:expat)))
 
 (define-public r-this-path
@@ -25681,6 +25681,41 @@ Allows custom annotation, interpolating, contouring and scaling of plotting
 region.  Includes a Shiny user interface for point-and-click ternary plotting.
 An alternative to ggtern', which uses the ggplot2 family of plotting functions.")
     (license license:gpl2+)))
+
+(define-public r-tern-rbmi
+  (package
+    (name "r-tern-rbmi")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tern.rbmi" version))
+       (sha256
+        (base32 "1skhm6wsapy5pyq6vrnzjai2jg742g7267vqc1q4z7xqh3mjcvmm"))))
+    (properties `((upstream-name . "tern.rbmi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tern
+                             r-rtables
+                             r-rbmi
+                             r-magrittr
+                             r-lifecycle
+                             r-formatters
+                             r-checkmate
+                             r-broom))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/insightsengineering/tern.rbmi")
+    (synopsis "Create Interface for 'RBMI' and 'tern'")
+    (description
+     "RBMI implements standard and reference based multiple imputation methods for
+continuous longitudinal endpoints (Gower-Page et al. (2022)
+<doi:10.21105/joss.04251>).  This package provides an interface for RBMI uses
+the tern <https://cran.r-project.org/package=tern> framework by Zhu et al.
+(2023) and tabulate results easily using rtables
+<https://cran.r-project.org/package=rtables> by Becker et al. (2023).")
+    (license license:asl2.0)))
 
 (define-public r-tern-mmrm
   (package

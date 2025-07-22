@@ -27419,13 +27419,13 @@ do not contain much overhead in memory.")
 (define-public r-spatialromle
   (package
     (name "r-spatialromle")
-    (version "0.1.0")
+    (version "0.1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatialRoMLE" version))
        (sha256
-        (base32 "1m80vcd27g11v0gxnjz6p4ghljpxdb8jpkns8ry5yzhfvcpf29jc"))))
+        (base32 "1rkgas0xlai9k7gppd78pysicpfxa5ybwb1dzn4ksy2vcgjqcm66"))))
     (properties `((upstream-name . "SpatialRoMLE")))
     (build-system r-build-system)
     (arguments
@@ -43888,13 +43888,13 @@ Carlo simulation studies.")
 (define-public r-simmer-plot
   (package
     (name "r-simmer-plot")
-    (version "0.1.18")
+    (version "0.1.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simmer.plot" version))
        (sha256
-        (base32 "0wxn6g27i4fk4xkl9l8qbsqg61jr7hz5n974gfld38cigp1f62n9"))))
+        (base32 "1z322zja8744kjc2xyniynavkz1iffm0iwjrsw8lhzdfbhj2lch7"))))
     (properties `((upstream-name . "simmer.plot")))
     (build-system r-build-system)
     (arguments
@@ -47505,6 +47505,30 @@ Cadonna et al. (2020) <doi:10.3390/econometrics8020020>.")
 covariance matrix that are suitable in high dimensional settings, that is when
 the number of variables is larger than the sample size.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-shrinkagetrees
+  (package
+    (name "r-shrinkagetrees")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ShrinkageTrees" version))
+       (sha256
+        (base32 "1p9ax1n650vrp9p390v4mrvf5036sc9vv3wwxh6b80p3hix37mz4"))))
+    (properties `((upstream-name . "ShrinkageTrees")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/tijn-jacobs/ShrinkageTrees")
+    (synopsis "Regression Trees with Shrinkage Priors")
+    (description
+     "Bayesian regression tree models with shrinkage priors on step heights.  Supports
+continuous, binary, and right-censored (survival) outcomes.  Used for
+high-dimensional prediction and causal inference.")
+    (license license:expat)))
 
 (define-public r-shrink
   (package
@@ -61228,13 +61252,13 @@ checking the case-crossover code.")
 (define-public r-seasepi
   (package
     (name "r-seasepi")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SeasEpi" version))
        (sha256
-        (base32 "0kzsivc9kfg95bz8rkja5j55sxxdzgpdmm0yifnh9f0vq3qjydah"))))
+        (base32 "1yvhl04hifa6rgxf8dw19900r7i0f3j0r98w2h4ffhdj98i9039w"))))
     (properties `((upstream-name . "SeasEpi")))
     (build-system r-build-system)
     (arguments

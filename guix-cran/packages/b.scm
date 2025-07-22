@@ -11,8 +11,8 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages web)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages tls)
@@ -4717,13 +4717,13 @@ Gaussian.")
 (define-public r-brickster
   (package
     (name "r-brickster")
-    (version "0.2.8")
+    (version "0.2.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brickster" version))
        (sha256
-        (base32 "1lamksgnn89nc497l2zfa2npbrfqh7gffqzl24dhwvxni5jp0hm4"))))
+        (base32 "1gia15h9v9bsi9p1kvhik5c0jk3a1jxh92wa4y2qv3dhd0m2vxsx"))))
     (properties `((upstream-name . "brickster")))
     (build-system r-build-system)
     (arguments
@@ -4731,6 +4731,7 @@ Gaussian.")
       #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
+                             r-r6
                              r-purrr
                              r-nanoarrow
                              r-jsonlite
@@ -8561,13 +8562,13 @@ aorsf (Jaeger et al, 2022 <doi:10.5281/zenodo.7116854>).")
 (define-public r-bonn
   (package
     (name "r-bonn")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bonn" version))
        (sha256
-        (base32 "1z22cdizz8sgw4fry98adcjvn23ag3qvvcinbg3kmafksdk1ivmb"))))
+        (base32 "0bwawj68cahvmaj0kb04xd70m74nxcl98rqdhvprpr2zgk5qqg0a"))))
     (properties `((upstream-name . "bonn")))
     (build-system r-build-system)
     (arguments
@@ -13230,41 +13231,6 @@ and Seock-Ho Kim (Springer, 2017, ISBN-13: 978-3-319-54204-1) including
 @code{groupinv()}, @code{tcc()}, @code{ability()}, @code{tif()}, and
 @code{rasch()}.  For example, @code{iccplot()} plots an item characteristic
 curve under the two-parameter logistic model.")
-    (license license:gpl2+)))
-
-(define-public r-birp
-  (package
-    (name "r-birp")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "birp" version))
-       (sha256
-        (base32 "13cijyqkr2a23yyws269cr5bq1z7a47kr39nz9awgr1nbxychwff"))))
-    (properties `((upstream-name . "birp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://bitbucket.org/wegmannlab/birpr/wiki/Home")
-    (synopsis
-     "Testing for Population Trends Using Low-Cost Ecological Count Data")
-    (description
-     "This package provides a Bayesian tool to test for population trends and changes
-in trends under arbitrary designs, including before-after (BA),
-control-intervention (CI) and before-after-control-intervention (BACI) designs
-commonly used to assess conservation impact.  It infers changes in trends
-jointly from data obtained with multiple survey methods, as well as from limited
-and noisy data not necessarily collected in standardized ecological surveys.
-Observed counts can be modeled as following either a Poisson or a negative
-binomial model, and both deterministic and stochastic trend models are
-available.  For more details on the model see Singer et al. (2025)
-<doi:10.1101/2025.01.08.631844>, and the file AUTHORS for a list of copyright
-holders and contributors.")
     (license license:gpl2+)))
 
 (define-public r-birk
@@ -21900,13 +21866,13 @@ external and internal data.  This methodology based on Psioda et al (2025)
 (define-public r-beastjar
   (package
     (name "r-beastjar")
-    (version "1.10.6")
+    (version "10.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeastJar" version))
        (sha256
-        (base32 "0581q9m7lb681d12vld231vn6wqv5s2sqkvav4fd0xllvjighlx7"))))
+        (base32 "1qddk86fjirl8ikhfxrs8lwdy4bx3fkfyn2k8c9qa6qfix7vrhfw"))))
     (properties `((upstream-name . "BeastJar")))
     (build-system r-build-system)
     (arguments
@@ -21918,13 +21884,13 @@ external and internal data.  This methodology based on Psioda et al (2025)
     (synopsis "JAR Dependency for MCMC Using 'BEAST'")
     (description
      "This package provides JAR to perform Markov chain Monte Carlo (MCMC) inference
-using the popular Bayesian Evolutionary Analysis by Sampling Trees BEAST
-software library of Suchard et al (2018) <doi:10.1093/ve/vey016>.  BEAST
-supports auto-tuning Metropolis-Hastings, slice, Hamiltonian Monte Carlo and
+using the popular Bayesian Evolutionary Analysis by Sampling Trees BEAST X
+software library of Baele et al (2025) <doi:10.1038/s41592-025-02751-x>.  BEAST
+X supports auto-tuning Metropolis-Hastings, slice, Hamiltonian Monte Carlo and
 Sequential Monte Carlo sampling for a large variety of composable standard and
 phylogenetic statistical models using high performance computing.  By placing
-the BEAST JAR in this package, we offer an efficient distribution system for
-BEAST use by other R packages using CRAN.")
+the BEAST X JAR in this package, we offer an efficient distribution system for
+BEAST X use by other R packages using CRAN.")
     (license license:asl2.0)))
 
 (define-public r-beastier
@@ -25462,13 +25428,13 @@ using the algorithms summarized in Makalic and Schmidt (2016)
 (define-public r-bayesrecon
   (package
     (name "r-bayesrecon")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesRecon" version))
        (sha256
-        (base32 "05x6x95dka571pidm4bs531qbnfrj59x81ji9h2n8iccfnqx38yl"))))
+        (base32 "08dy4mw39vh57rwnwm70d7agpi8l3j8h40pi5jpijbc4sx89n0hc"))))
     (properties `((upstream-name . "bayesRecon")))
     (build-system r-build-system)
     (arguments
@@ -25485,8 +25451,8 @@ reconciliation (Corani et al., 2021) <doi:10.1007/978-3-030-67664-3_13>, MCMC
 reconciliation of count time series (Corani et al., 2024)
 <doi:10.1016/j.ijforecast.2023.04.003>, Bottom-Up Importance Sampling (Zambon et
 al., 2024) <doi:10.1007/s11222-023-10343-y>, methods for the reconciliation of
-mixed hierarchies (Mix-Cond and TD-cond) (Zambon et al., 2024.  The 40th
-Conference on Uncertainty in Artificial Intelligence, accepted).")
+mixed hierarchies (Mix-Cond and TD-cond) (Zambon et al., 2024)
+<https://proceedings.mlr.press/v244/zambon24a.html>.")
     (license license:lgpl3+)))
 
 (define-public r-bayesqr
@@ -32460,13 +32426,13 @@ name \"Bagged @code{OutlierTrees}\".  To learn more about the base procedure
 (define-public r-bage
   (package
     (name "r-bage")
-    (version "0.9.0")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bage" version))
        (sha256
-        (base32 "0gwi563bgryxcvp3lw06qk9cp7blnz0272l87s3avk9n7gr75f7j"))))
+        (base32 "0rs98g8klrpcjzz66xnk5c2j5hjnv0h73b0i49xyk5j3g7jqlydz"))))
     (properties `((upstream-name . "bage")))
     (build-system r-build-system)
     (arguments

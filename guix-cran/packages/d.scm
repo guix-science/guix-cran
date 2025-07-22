@@ -4570,6 +4570,43 @@ trials.  For details of the methodology, please refer to D.O. Dixon and R. Simon
 (1991), Biometrics, 47: 871-881.")
     (license license:gpl2+)))
 
+(define-public r-dsbase
+  (package
+    (name "r-dsbase")
+    (version "6.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dsBase" version))
+       (sha256
+        (base32 "0n98mzg8204xz9f81f27c53dj9rwjnhgx9qyjya7j69kfq1ifvw4"))))
+    (properties `((upstream-name . "dsBase")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-reshape2
+                             r-rann
+                             r-polycor
+                             r-mice
+                             r-lme4
+                             r-gamlss-dist
+                             r-gamlss
+                             r-dplyr
+                             r-childsds))
+    (home-page "https://cran.r-project.org/package=dsBase")
+    (synopsis "'DataSHIELD' Server Site Base Functions")
+    (description
+     "Base @code{DataSHIELD} functions for the server side. @code{DataSHIELD} is a
+software package which allows you to do non-disclosive federated analysis on
+sensitive data. @code{DataSHIELD} analytic functions have been designed to only
+share non disclosive summary statistics, with built in automated output checking
+based on statistical disclosure control.  With data sites setting the threshold
+values for the automated output checks.  For more details, see
+citation(\"@code{dsBase}\")'.")
+    (license license:gpl3)))
+
 (define-public r-dsample
   (package
     (name "r-dsample")
@@ -5922,6 +5959,50 @@ Bayesian model averaging framework as outlined in Payne, Ray, and Thomann (2024)
 various posterior quantities (e.g. posterior mean, quantiles, probability of
 minimum efficacious dose, etc.) are also implemented.  Copyright Eli Lilly and
 Company (2019).")
+    (license license:expat)))
+
+(define-public r-dream
+  (package
+    (name "r-dream")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dream" version))
+       (sha256
+        (base32 "1bs4s8vwdxfqvdj19l327m3mv778992h85px6568y4gf65gahhrd"))))
+    (properties `((upstream-name . "dream")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp
+                             r-foreach
+                             r-fastmatch
+                             r-dqrng
+                             r-doparallel
+                             r-data-table
+                             r-collapse))
+    (home-page "https://cran.r-project.org/package=dream")
+    (synopsis "Dynamic Relational Event Analysis and Modeling")
+    (description
+     "This package provides a set of tools for relational and event analysis,
+including two- and one-mode network brokerage and structural measures, and
+helper functions optimized for relational event analysis with large datasets,
+including creating relational risk sets, computing network statistics,
+estimating relational event models, and simulating relational event sequences.
+For more information on relational event models, see Butts (2008)
+<doi:10.1111/j.1467-9531.2008.00203.x>, Lerner and Lomi (2020)
+<doi:10.1017/nws.2019.57>, Bianchi et al. (2024)
+<doi:10.1146/annurev-statistics-040722-060248>, and Butts et al. (2023)
+<doi:10.1017/nws.2023.9>.  In terms of the structural measures in this package,
+see Leal (2025) <doi:10.1177/00491241251322517>, Burchard and Cornwell (2018)
+<doi:10.1016/j.socnet.2018.04.001>, and Fujimoto et al. (2018)
+<doi:10.1017/nws.2018.11>.  This package was developed with support from the
+National Science Foundationâs (NSF) Human Networks and Data Science Program
+(HNDS) under award number 2241536 (PI: Diego F. Leal).  Any opinions, findings,
+and conclusions, or recommendations expressed in this material are those of the
+authors and do not necessarily reflect the views of the NSF.")
     (license license:expat)))
 
 (define-public r-drdrtest
@@ -15037,6 +15118,50 @@ retrieve a user-defined sample of disaster events from @code{ReliefWeb},
 providing an easy alternative to scraping the @code{ReliefWeb} website.  It
 enables a seamless integration of regular data updates into the research work
 flow.")
+    (license license:gpl3)))
+
+(define-public r-disasteralert
+  (package
+    (name "r-disasteralert")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DisasterAlert" version))
+       (sha256
+        (base32 "1y5yrqlmh7gyfx5hbhasdk4xw1m039anwghn8jinmkc5s9541zwb"))))
+    (properties `((upstream-name . "DisasterAlert")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wordcloud
+                             r-tidyverse
+                             r-tidytext
+                             r-tidyr
+                             r-textdata
+                             r-stringr
+                             r-scales
+                             r-rcolorbrewer
+                             r-quanteda
+                             r-plotly
+                             r-leaflet
+                             r-htmlwidgets
+                             r-ggplot2
+                             r-dt
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=DisasterAlert")
+    (synopsis "Disaster Alert and Sentiment Analysis")
+    (description
+     "By systematically aggregating and processing textual reports from earthquakes,
+floods, storms, wildfires, and other natural disasters, the framework enables a
+holistic assessment of crisis narratives.  Intelligent cleaning and
+normalization techniques transform raw commentary into structured data, ensuring
+precise extraction of disaster-specific insights.  Collective sentiments of
+affected communities are quantitatively scored and qualitatively categorized,
+providing a multifaceted view of societal responses under duress.  Interactive
+geographic maps and temporal charts illustrate the evolution and spatial
+dispersion of emotional reactions and impact indicators.")
     (license license:gpl3)))
 
 (define-public r-disaggregation
@@ -27265,13 +27390,13 @@ for social networks.  Fushing, @code{VanderWaal}, @code{McCowan}, & Koehl (2013)
 (define-public r-dcetool
   (package
     (name "r-dcetool")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DCEtool" version))
        (sha256
-        (base32 "1rz8vi51krznlzfdmhqk9hsf168fvglmki2950d6k0n6c8578y7h"))))
+        (base32 "1jgdlhsb9z3vvdf8xam2j1dph8jzs9b1d6mwvf7dg1hbaddv7bss"))))
     (properties `((upstream-name . "DCEtool")))
     (build-system r-build-system)
     (arguments
@@ -27279,9 +27404,9 @@ for social networks.  Fushing, @code{VanderWaal}, @code{McCowan}, & Koehl (2013)
       #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-usethis
-                             r-tidyr
                              r-survival
                              r-shinywidgets
+                             r-shinyhelper
                              r-shinycssloaders
                              r-shinybs
                              r-shiny
@@ -27289,16 +27414,11 @@ for social networks.  Fushing, @code{VanderWaal}, @code{McCowan}, & Koehl (2013)
                              r-remotes
                              r-readxl
                              r-mvtnorm
-                             r-mlogit
-                             r-mass
                              r-magrittr
-                             r-knitr
                              r-idefix
                              r-htmltools
                              r-ggplot2
-                             r-dt
-                             r-dfidx
-                             r-adjustedcranlogs))
+                             r-dt))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DCEtool")
     (synopsis "Efficient and Accessible Discrete Choice Experiments")
@@ -29128,13 +29248,13 @@ Self-Organization and Swarm Intelligence\" (2018)
 (define-public r-dataviewr
   (package
     (name "r-dataviewr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataviewR" version))
        (sha256
-        (base32 "0sn5v617k9mkc74bsai7f93d8ss802rirda338vyrsvfsx8bq4ca"))))
+        (base32 "13bnajf3j5yv6ahhin5yhk7p5nyw7y9qixwndk9vq98jwfdkmj9f"))))
     (properties `((upstream-name . "dataviewR")))
     (build-system r-build-system)
     (arguments
@@ -29152,8 +29272,8 @@ Self-Organization and Swarm Intelligence\" (2018)
                              r-dplyr
                              r-datamods))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=dataviewR")
-    (synopsis "dataviewR: An Interactive and Feature-Rich Data Viewer")
+    (home-page "https://github.com/madhankumarnagaraji/dataviewR")
+    (synopsis "An Interactive and Feature-Rich Data Viewer")
     (description
      "This package provides an interactive viewer for data.frame and tibble objects
 using shiny <https://shiny.posit.co/> and DT <https://rstudio.github.io/DT/>.
@@ -30260,19 +30380,19 @@ Publishing.")
 (define-public r-datana
   (package
     (name "r-datana")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datana" version))
        (sha256
-        (base32 "0f83hp1gcc5dn4lxr28ia9sa46lsmsj83vdg6k3fdvch036mlaag"))))
+        (base32 "0f28gw9nj7aiqkzb499xby3adxz8bn484fhlmqsf5rx9jw9zbh52"))))
     (properties `((upstream-name . "datana")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-hmisc r-ggplot2))
+    (propagated-inputs (list r-scales r-hmisc r-ggplot2))
     (home-page "https://cran.r-project.org/package=datana")
     (synopsis "Datasets and Functions to Accompany Analisis De Datos Con R")
     (description

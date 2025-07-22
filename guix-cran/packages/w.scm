@@ -1970,13 +1970,13 @@ synonyms, as well as fetching taxonomic children and taxonomic classification.")
 (define-public r-wormtensor
   (package
     (name "r-wormtensor")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WormTensor" version))
        (sha256
-        (base32 "1xnjp6m3h0q6phmn2c2wkbjzyl8lpx07jsryz0i8rxr6ny591ja2"))))
+        (base32 "0laaia9y3pm8kq0ajl6k1dw6aj15blb7xxhy3jn555hxs2dypwhd"))))
     (properties `((upstream-name . "WormTensor")))
     (build-system r-build-system)
     (arguments
@@ -4524,38 +4524,6 @@ collection of functions and datas used in the german @code{WikiBook} \"GNU R\"."
     (description "Import WIG data into R in long format.")
     (license license:expat)))
 
-(define-public r-wiesbaden
-  (package
-    (name "r-wiesbaden")
-    (version "1.2.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wiesbaden" version))
-       (sha256
-        (base32 "0kmapfksrxkr3dry8didznhv3q0827183532s78bai9l2hm8is1p"))))
-    (properties `((upstream-name . "wiesbaden")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-stringr
-                             r-stringi
-                             r-readr
-                             r-keyring
-                             r-jsonlite
-                             r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sumtxt/wiesbaden/")
-    (synopsis
-     "Access Databases from the Federal Statistical Office of Germany")
-    (description
-     "Retrieve and import data from different databases of the Federal Statistical
-Office of Germany (DESTATIS) using their SOAP XML web service
-<https://www-genesis.destatis.de/>.")
-    (license license:gpl3)))
-
 (define-public r-wienr
   (package
     (name "r-wienr")
@@ -6321,13 +6289,13 @@ bounds to existing plots are supported.")
 (define-public r-weibullr-shiny
   (package
     (name "r-weibullr-shiny")
-    (version "0.3")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeibullR.shiny" version))
        (sha256
-        (base32 "1iadi0gzbyj359kbn9ycv4l3jzbrn2wfas7412hgbh51ahhkqblh"))))
+        (base32 "061miq7d3h9gbz5br0j7a006h5jccx67yq1zxxlfh3gw1vvnp10n"))))
     (properties `((upstream-name . "WeibullR.shiny")))
     (build-system r-build-system)
     (arguments

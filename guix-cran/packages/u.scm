@@ -1664,13 +1664,13 @@ around the @code{JavaScript} library @code{UpSet.js}'.")
 (define-public r-upset-hp
   (package
     (name "r-upset-hp")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "upset.hp" version))
        (sha256
-        (base32 "0axakv9156gg9xpnv0a6i06y951ba9j3galg6hqrl02aszv28hcx"))))
+        (base32 "02yz5hn0zph3y7aamanppihvjd3l4klrphlns71g79r0i6qpzap3"))))
     (properties `((upstream-name . "upset.hp")))
     (build-system r-build-system)
     (arguments
@@ -5058,13 +5058,13 @@ datasets from 1998-2014.")
 (define-public r-ucomp
   (package
     (name "r-ucomp")
-    (version "5.1")
+    (version "5.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UComp" version))
        (sha256
-        (base32 "026n2gvmihdhpcm6glkpbsq260gpccfnhiaazdhj89pmkmwqmr6z"))))
+        (base32 "0a3jxdw3aicllbabfqabyfzvdq1mxz9xd60j90288bb7bxynp4j4"))))
     (properties `((upstream-name . "UComp")))
     (build-system r-build-system)
     (arguments

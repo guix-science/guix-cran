@@ -288,13 +288,13 @@ described in Gade (2010) <doi:10.1017/S0373463309990415>.")
 (define-public r-nvcssl
   (package
     (name "r-nvcssl")
-    (version "2.0")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NVCSSL" version))
        (sha256
-        (base32 "1nsdhmay2blfa07ri1kfb204di8s5i7zk7qwwlbkhdjjl0qa3vd7"))))
+        (base32 "0fgihyzk7g3f5jk1vamjgrlg9vxf2vy2da2v0lsa7rklqc9j9f0q"))))
     (properties `((upstream-name . "NVCSSL")))
     (build-system r-build-system)
     (arguments
@@ -313,12 +313,12 @@ described in Gade (2010) <doi:10.1017/S0373463309990415>.")
     (description
      "Fits Bayesian regularized varying coefficient models with the Nonparametric
 Varying Coefficient Spike-and-Slab Lasso (NVC-SSL) introduced by Bai et al.
-(2023) <@code{arXiv:1907.06477>}.  Functions to fit frequentist penalized
-varying coefficients are also provided, with the option of employing the group
-lasso penalty of Yuan and Lin (2006) <doi:10.1111/j.1467-9868.2005.00532.x>, the
-group minimax concave penalty (MCP) of Breheny and Huang
-<doi:10.1007/s11222-013-9424-2>, or the group smoothly clipped absolute
-deviation (SCAD) penalty of Breheny and Huang (2015)
+(2023) <https://jmlr.org/papers/volume24/20-1437/20-1437.pdf>.  Functions to fit
+frequentist penalized varying coefficients are also provided, with the option of
+employing the group lasso penalty of Yuan and Lin (2006)
+<doi:10.1111/j.1467-9868.2005.00532.x>, the group minimax concave penalty (MCP)
+of Breheny and Huang <doi:10.1007/s11222-013-9424-2>, or the group smoothly
+clipped absolute deviation (SCAD) penalty of Breheny and Huang (2015)
 <doi:10.1007/s11222-013-9424-2>.")
     (license license:gpl3)))
 
@@ -8265,13 +8265,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "4.0.0")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "0kkfy6y5llgwpy4w5bnsrlr3ynj9jp9d8mw1h9lyjcdn6wc06d0q"))))
+        (base32 "1x0n5vxmh2lrkfqc73vrbkdy3vvyw6844bxzmiwk01yv131vj01l"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (arguments
@@ -13991,13 +13991,13 @@ the main utility of @code{netClust}'.")
 (define-public r-netassoc
   (package
     (name "r-netassoc")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netassoc" version))
        (sha256
-        (base32 "0hbyg31r9sjp0dyxlbsbw7r1kb1dwr0apilsw8saf1vlqwsiasga"))))
+        (base32 "1m1p8bs64gxrran4aicq1s2ddq6sz6hflv1a5icbb9miz294dc15"))))
     (properties `((upstream-name . "netassoc")))
     (build-system r-build-system)
     (arguments
@@ -14871,13 +14871,13 @@ are out of control.")
 (define-public r-nemsqar
   (package
     (name "r-nemsqar")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nemsqar" version))
        (sha256
-        (base32 "0clzn42zlbyy9s7xpakn206zkwygl6lcvbj69zvsg8dshgk46xvj"))))
+        (base32 "021gsrz0b1r034qc89yppvr63ri8dzwjc9iy1qk82jzrj6hgz5x9"))))
     (properties `((upstream-name . "nemsqar")))
     (build-system r-build-system)
     (arguments

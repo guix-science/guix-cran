@@ -13516,13 +13516,13 @@ model applicability domain evaluation, and ensemble predictive modeling with
 (define-public r-enmtools
   (package
     (name "r-enmtools")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ENMTools" version))
        (sha256
-        (base32 "0wg30xfgrwvzdc19lm0vdwvlpkbbk3sknp4dvg4zvbcrljf0jlz5"))))
+        (base32 "09f1k4z2pn6iyvxlldy0qjmj9a8k8rdma08sby1qg44nwsy1izr4"))))
     (properties `((upstream-name . "ENMTools")))
     (build-system r-build-system)
     (arguments
@@ -19333,13 +19333,13 @@ densities from multipass pass removal data.")
 (define-public r-eespca
   (package
     (name "r-eespca")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EESPCA" version))
        (sha256
-        (base32 "0bj1wi1almj7rb7sad4i47mnfh4y83mbdd1x5clda6nd738adl2b"))))
+        (base32 "0hyznkl893bpqf3qq3b6q1clnb8hhgc0j801d42bxd50pwqswmgh"))))
     (properties `((upstream-name . "EESPCA")))
     (build-system r-build-system)
     (arguments
@@ -20198,13 +20198,13 @@ Chen et al. (2021) <doi:10.1007/s11336-021-09750-9>, Yinyin Chen et al. (2020)
 (define-public r-edlibr
   (package
     (name "r-edlibr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edlibR" version))
        (sha256
-        (base32 "0pncj573n95g6vnjnyihhac94qxq63p15lxy1xy7pd2p63p5hs4f"))))
+        (base32 "01xlbdavj5kfw18ypqky6i5dfjk64fjrc4zl7bspdy944bg6k61r"))))
     (properties `((upstream-name . "edlibR")))
     (build-system r-build-system)
     (arguments

@@ -534,13 +534,13 @@ which runs the nlmixr2 models during estimation.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "4.0.1")
+    (version "4.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "0jfdhmzvi2b2ixfmc4d50cdi31shcm376m6xh8bxpygf64p2s2mh"))))
+        (base32 "1c19ilw11i38ws47yf19733zy0bm73wanb1z7a1p6ib4yhp8m8bb"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (arguments
@@ -39902,13 +39902,13 @@ sheets, including recoding variables and converting them to PMML.")
 (define-public r-recocrop
   (package
     (name "r-recocrop")
-    (version "0.4-1")
+    (version "0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Recocrop" version))
        (sha256
-        (base32 "1drh1qssnb42p1zl45phpggxhx6is435k9f1vzga0q0dddr5q770"))))
+        (base32 "0n7k8wgpn90ilz8gq81l6z5jafyrcbgr5363wkj09qqrhj81v8lh"))))
     (properties `((upstream-name . "Recocrop")))
     (build-system r-build-system)
     (arguments
@@ -42476,13 +42476,13 @@ and Tak (2020) <@code{arXiv:2005.08049>}.")
 (define-public r-rdrobust
   (package
     (name "r-rdrobust")
-    (version "2.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdrobust" version))
        (sha256
-        (base32 "1p9k8gd39090r5ml1sk30k3hvfns2v6laysbaswsn9i2ka70zj42"))))
+        (base32 "18r79c6k1nxm0lf6g751q0bb6zvq5pbc5cszvzm0rsp4vbbd1g5i"))))
     (properties `((upstream-name . "rdrobust")))
     (build-system r-build-system)
     (arguments
@@ -42499,11 +42499,11 @@ employed to study the (local) causal effect of a treatment, intervention or
 policy.  This package provides tools for data-driven graphical and analytical
 statistical inference in RD	designs: @code{rdrobust()} to construct
 local-polynomial point estimators and robust confidence intervals for average
-treatment effects at the 	cutoff in Sharp, Fuzzy and Kink RD settings,
+treatment effects at the cutoff in Sharp, Fuzzy and Kink RD settings,
 @code{rdbwselect()} to perform bandwidth selection for the different procedures
 implemented, and @code{rdplot()} to conduct exploratory data analysis (RD
 plots).")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-rdracor
   (package
@@ -46218,6 +46218,42 @@ the Continuity in Street Networks (COINS) method from Tripathy et al. (2021)
 network as the line strings that maximize the angles between consecutive
 segments.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-rcoinbase
+  (package
+    (name "r-rcoinbase")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rCoinbase" version))
+       (sha256
+        (base32 "1caik34slr9mqji4fp7n60a8v56s8x5ibvjaqj7as8nycyrsgxrh"))))
+    (properties `((upstream-name . "rCoinbase")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uuid
+                             r-tidyr
+                             r-tibble
+                             r-purrr
+                             r-openssl
+                             r-lubridate
+                             r-jose
+                             r-httr2
+                             r-httr
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rCoinbase")
+    (synopsis "'Coinbase Advance Trade API Interface'")
+    (description
+     "The Coinbase Advanced Trade API
+<https://docs.cdp.coinbase.com/api-reference/advanced-trade-api/rest-api/introduction>
+lets you manage orders, portfolios, products, and fees with the new v3
+endpoints.")
+    (license license:gpl3)))
 
 (define-public r-rcognito
   (package
