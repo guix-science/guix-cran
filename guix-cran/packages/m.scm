@@ -8796,6 +8796,33 @@ original name of this book will be \"R Uygulamalari ile Cok Degiskenli
 Istatistiksel Yontemler\".")
     (license license:gpl3)))
 
+(define-public r-msmu
+  (package
+    (name "r-msmu")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MSMU" version))
+       (sha256
+        (base32 "0jqmgckxayaflfpm173n4p2yyxk5cmkd2znf4k6p6y1msn9mbmx4"))))
+    (properties `((upstream-name . "MSMU")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=MSMU")
+    (synopsis "Descriptive Statistics Functions for Numeric Data")
+    (description
+     "This package provides fundamental functions for descriptive statistics,
+including @code{MODE()}, @code{estimate_mode()}, @code{center_stats()},
+@code{position_stats()}, @code{pct()}, @code{spread_stats()}, @code{kurt()},
+@code{skew()}, and @code{shape_stats()}, which assist in summarizing the center,
+spread, and shape of numeric data.  For more details, see @code{McCurdy} (2025),
+\"Introduction to Data Science with R\"
+<https://jonmccurdy.github.io/Introduction-to-Data-Science/>.")
+    (license license:expat)))
+
 (define-public r-msml
   (package
     (name "r-msml")
@@ -13454,13 +13481,13 @@ For more information, visit <https://www.aggieerin.com/shiny-server>.")
 (define-public r-motbfs
   (package
     (name "r-motbfs")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MoTBFs" version))
        (sha256
-        (base32 "03c1k5vvswlhbsivw6yznw1v0cdl8avs514iaa2v2994j2yk40j6"))))
+        (base32 "0ayzc9d95pzaj36p3nqfnmrv11x6andq684i58591v866ldjmrnl"))))
     (properties `((upstream-name . "MoTBFs")))
     (build-system r-build-system)
     (arguments
@@ -16303,13 +16330,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "0lhrvy6fp7h87yfxq7i761ycjwqs4dh0pzfhdx38y4ib475ibh4c"))))
+        (base32 "13bizkm1yynd2zx6wr9my4z2dxjgdbk4q660179mlb87vqz5z5pp"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (arguments
@@ -16325,10 +16352,14 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
                              r-mvtnorm
                              r-mvnfast
                              r-mplusautomation
+                             r-mass
                              r-lavaan
                              r-ggplot2
                              r-fastghquad
-                             r-dplyr))
+                             r-dplyr
+                             r-deriv
+                             r-cli
+                             r-amelia))
     (native-inputs (list r-knitr))
     (home-page "https://modsem.org")
     (synopsis
@@ -16340,18 +16371,18 @@ approach (Algina & Moulder, 2001).  The unconstrained approach (Marsh et al.,
 2004).  The residual centering approach (Little et al., 2006).  The double
 centering approach (Lin et al., 2010).  The latent moderated structural
 equations (LMS) approach (Klein & Moosbrugger, 2000).  The quasi-maximum
-likelihood (QML) approach (Klein & MuthÃ©n, 2007) (temporarily unavailable) The
-constrained- unconstrained, residual- and double centering- approaches are
-estimated via lavaan (Rosseel, 2012), whilst the LMS- and QML- approaches are
-estimated via modsem it self.  Alternatively model can be estimated via Mplus
-(MuthÃ©n & MuthÃ©n, 1998-2017).  References: Algina, J., & Moulder, B. C.
-(2001). <doi:10.1207/S15328007SEM0801_3>. \"A note on estimating the
-JÃ¶reskog-Yang model for latent variable interaction using LISREL 8.3.\" Klein,
-A., & Moosbrugger, H. (2000). <doi:10.1007/BF02296338>. \"Maximum likelihood
-estimation of latent interaction effects with the LMS method.\" Klein, A. G., &
-MuthÃ©n, B. O. (2007). <doi:10.1080/00273170701710205>. \"Quasi-maximum
-likelihood estimation of structural equation models with multiple interaction
-and quadratic effects.\" Lin, G. C., Wen, Z., Marsh, H. W., & Lin, H. S. (2010).
+likelihood (QML) approach (Klein & MuthÃ©n, 2007) The constrained-
+unconstrained, residual- and double centering- approaches are estimated via
+lavaan (Rosseel, 2012), whilst the LMS- and QML- approaches are estimated via
+modsem it self.  Alternatively model can be estimated via Mplus (MuthÃ©n &
+MuthÃ©n, 1998-2017).  References: Algina, J., & Moulder, B. C. (2001).
+<doi:10.1207/S15328007SEM0801_3>. \"A note on estimating the JÃ¶reskog-Yang model
+for latent variable interaction using LISREL 8.3.\" Klein, A., & Moosbrugger, H.
+(2000). <doi:10.1007/BF02296338>. \"Maximum likelihood estimation of latent
+interaction effects with the LMS method.\" Klein, A. G., & MuthÃ©n, B. O. (2007).
+<doi:10.1080/00273170701710205>. \"Quasi-maximum likelihood estimation of
+structural equation models with multiple interaction and quadratic effects.\"
+Lin, G. C., Wen, Z., Marsh, H. W., & Lin, H. S. (2010).
 <doi:10.1080/10705511.2010.488999>. \"Structural equation models of latent
 interactions: Clarification of orthogonalizing and double-mean-centering
 strategies.\" Little, T. D., Bovaird, J. A., & Widaman, K. F. (2006).
@@ -20206,6 +20237,72 @@ converted into C++ codes.  That allows one to implement very easily complex
 ODE-based models and complex statistical models, including mixed effects models,
 for continuous, count, categorical, and time-to-event data.")
     (license license:bsd-2)))
+
+(define-public r-mlwrap
+  (package
+    (name "r-mlwrap")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MLwrap" version))
+       (sha256
+        (base32 "0v8vysd3w57f45za1xcxr963mxzpkk8m9g52vfwf37zpa3983aia"))))
+    (properties `((upstream-name . "MLwrap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-workflows
+                             r-vip
+                             r-tune
+                             r-tidyr
+                             r-tibble
+                             r-sensitivity
+                             r-rsample
+                             r-rlang
+                             r-recipes
+                             r-r6
+                             r-patchwork
+                             r-parsnip
+                             r-magrittr
+                             r-innsight
+                             r-glue
+                             r-ggplot2
+                             r-ggbeeswarm
+                             r-fastshap
+                             r-dplyr
+                             r-dials
+                             r-diagrammer
+                             r-cli))
+    (home-page "https://github.com/JMartinezGarcia/MLwrap")
+    (synopsis "Machine Learning Modelling for Everyone")
+    (description
+     "This package provides a minimalistic library specifically designed to make the
+estimation of Machine Learning (ML) techniques as easy and accessible as
+possible, particularly within the framework of the Knowledge Discovery in
+Databases (KDD) process in data mining.  The package provides all the essential
+tools needed to efficiently structure and execute each stage of a predictive or
+classification modeling workflow, aligning closely with the fundamental steps of
+the KDD methodology, from data selection and preparation, through model building
+and tuning, to the interpretation and evaluation of results using Sensitivity
+Analysis.  The MLwrap workflow is organized into four core steps;
+@code{preprocessing()}, @code{build_model()}, @code{fine_tuning()}, and
+@code{sensitivity_analysis()}.  These steps correspond, respectively, to data
+preparation and transformation, model construction, hyperparameter optimization,
+and sensitivity analysis.  The user can access comprehensive model evaluation
+results including fit assessment metrics, plots, predictions, and performance
+diagnostics for ML models implemented through Neural Networks, Random Forest,
+XGBoost, and Support Vector Machines algorithms.  By streamlining these phases,
+MLwrap aims to simplify the implementation of ML techniques, allowing analysts
+and data scientists to focus on extracting actionable insights and meaningful
+patterns from large datasets, in line with the objectives of the KDD process.
+Inspired by James et al. (2021) \"An Introduction to Statistical Learning: with
+Applications in R (2nd ed.)\" <doi:10.1007/978-1-0716-1418-1> and Molnar (2025)
+\"Interpretable Machine Learning: A Guide for Making Black Box Models Explainable
+(3rd ed.)\" <https://christophm.github.io/interpretable-ml-book/>.")
+    (license license:gpl3)))
 
 (define-public r-mlvsbm
   (package
@@ -35690,6 +35787,38 @@ enabling programming activities and functionality of other packages within the
 clinical programming workflow.")
     (license license:expat)))
 
+(define-public r-metacor
+  (package
+    (name "r-metacor")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metacor" version))
+       (sha256
+        (base32 "00s09snfxpipsyv72ji3jh7kc49hhsi7agc44hf6r1b39zyckpkm"))))
+    (properties `((upstream-name . "metacor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-officer))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=metacor")
+    (synopsis
+     "Meta-Analytic Effect Size Calculation for Pre-Post Designs with Correlation Imputation")
+    (description
+     "This package provides tools for the calculation of effect sizes (standardised
+mean difference) and mean difference in pre-post controlled studies, including
+robust imputation of missing variances (standard deviation of changes) and
+correlations (Pearson correlation coefficient).  The main function
+@code{metacor_dual()} implements several methods for imputing missing standard
+deviation of changes or Pearson correlation coefficient, and generates
+transparent imputation reports.  Designed for meta-analyses with incomplete
+summary statistics.  For more details on the methods, see Higgins et al. (2023)
+and Fu et al. (2013).")
+    (license license:expat)))
+
 (define-public r-metaconvert
   (package
     (name "r-metaconvert")
@@ -37399,13 +37528,13 @@ at each invocation.")
 (define-public r-memgene
   (package
     (name "r-memgene")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "memgene" version))
        (sha256
-        (base32 "1f1v651vab4b3bfxn8wp5p848h6vy7ylr52zirwhnhxj37fzhkq6"))))
+        (base32 "0gmim6c5rqwgvcs0gpjxlfkvnaw3x1wiz9w4jjc9jqxhzpd595pa"))))
     (properties `((upstream-name . "memgene")))
     (build-system r-build-system)
     (arguments
@@ -40173,6 +40302,45 @@ number of higher level functions for exploring and manipulating markdown
 abstract syntax trees as well as translating and displaying the documents.")
     (license license:expat)))
 
+(define-public r-md2sample
+  (package
+    (name "r-md2sample")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MD2sample" version))
+       (sha256
+        (base32 "0x9s8d04kgclprhbqyry2ycp4wk9lg86c6q1zvj7ywzigpiq1y5p"))))
+    (properties `((upstream-name . "MD2sample")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp
+                             r-mvtnorm
+                             r-microbenchmark
+                             r-lsa
+                             r-igraph
+                             r-gtests
+                             r-fnn
+                             r-copula
+                             r-ball
+                             r-ade4))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MD2sample")
+    (synopsis "Various Methods for the Two Sample Problem in D>1 Dimensions")
+    (description
+     "The routine @code{twosample_test()} in this package runs the two-sample test
+using various test statistic for multivariate data.  The user can also run
+several tests and then find a p value adjusted for simultaneous inference.  The
+p values are found via permutation or via the parametric bootstrap.  The routine
+@code{twosample_power()} allows the estimation of the power of the tests.  The
+routine @code{run.studies()} allows a user to quickly study the power of a new
+method and how it compares to those included in the package.  For details of the
+methods and references see the included vignettes.")
+    (license license:gpl2+)))
+
 (define-public r-md-log
   (package
     (name "r-md-log")
@@ -41398,13 +41566,13 @@ Monte Carlo Markov Chain (MCMC) samples.  For more information see Brooks et al.
 (define-public r-mcmcprecision
   (package
     (name "r-mcmcprecision")
-    (version "0.4.0")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MCMCprecision" version))
        (sha256
-        (base32 "0r0qchiv61sk3drrb0rhwsk55gci4w343hd2gsvclrlyb8r9qhaf"))))
+        (base32 "017sp56hdgzi5r5abq7j1khq50ijgrhp89vq59ypw53zb8b0j8gw"))))
     (properties `((upstream-name . "MCMCprecision")))
     (build-system r-build-system)
     (arguments
@@ -50798,41 +50966,6 @@ initial version (0.1.2) contains a collection of easy-to-implement tools for
 checking whether a MAIC can be conducted, as well as an alternative way of
 calculating weights (see Glimm & Yau (2021) <doi:10.1002/pst.2210>.).")
     (license license:gpl3+)))
-
-(define-public r-maic
-  (package
-    (name "r-maic")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "maic" version))
-       (sha256
-        (base32 "0ba0kg5kgnn2g33mmhj9x8ichckyybbpn5xxc56qxvk2w2xv2wpj"))))
-    (properties `((upstream-name . "maic")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-weights r-matrixstats r-hmisc))
-    (home-page "https://github.com/heorltd/maic")
-    (synopsis "Matching-Adjusted Indirect Comparison")
-    (description
-     "This package provides a generalised workflow for generation of subject weights
-to be used in Matching-Adjusted Indirect Comparison (MAIC) per Signorovitch et
-al. (2012) <doi:10.1016/j.jval.2012.05.004>, Signorovitch et al (2010)
-<doi:10.2165/11538370-000000000-00000>.  In MAIC, unbiased comparison between
-outcomes of two trials is facilitated by weighting the subject-level outcomes of
-one trial with weights derived such that the weighted aggregate measures of the
-prognostic or effect modifying variables are equal to those of the sample in the
-comparator trial.  The functions and classes included in this package wrap and
-abstract the process demonstrated in the UK National Institute for Health and
-Care Excellence Decision Support Unit (NICE DSU)'s example (Phillippo et al,
-(2016) [see URL]), providing a repeatable and easily specifiable workflow for
-producing multiple comparison variable sets against a variety of target studies,
-with preprocessing for a number of aggregate target forms (e.g. mean, median,
-domain limits).")
-    (license license:gpl3)))
 
 (define-public r-magui
   (package

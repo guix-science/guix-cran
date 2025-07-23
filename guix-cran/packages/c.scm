@@ -10111,13 +10111,13 @@ gradient descent algorithm for batch data.")
 (define-public r-coxphm
   (package
     (name "r-coxphm")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coxphm" version))
        (sha256
-        (base32 "1xiymqskxvi9vxq9zi3hzpxfjb97d5dagwzvdg46imzxv8bbzaia"))))
+        (base32 "1wgdnl85z5v6nbiw5zh82z9yvckyibg782ajfjshcg9r99np09kg"))))
     (properties `((upstream-name . "coxphm")))
     (build-system r-build-system)
     (arguments
@@ -16057,6 +16057,51 @@ modeling: Blei et al. (2003) <doi:10.1162/jmlr.2003.3.4-5.993>; Landauer et al.
 <https://github.com/trinker/sentimentr>.")
     (license license:gpl3+)))
 
+(define-public r-conversationalign
+  (package
+    (name "r-conversationalign")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ConversationAlign" version))
+       (sha256
+        (base32 "1c6rz5z56achzz5lzf5nv4z7fj76gv1av47l3liaxm452a6lfyag"))))
+    (properties `((upstream-name . "ConversationAlign")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-yrmisc
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-textstem
+                             r-stringr
+                             r-stringi
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-httr
+                             r-dplyr
+                             r-desctools))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://github.com/Reilly-ConceptsCognitionLab/ConversationAlign")
+    (synopsis
+     "Process Text and Compute Linguistic Alignment in Conversation Transcripts")
+    (description
+     "Imports conversation transcripts into R, concatenates them into a single
+dataframe appending event identifiers, cleans and formats the text, then yokes
+user-specified psycholinguistic database values to each word.
+@code{ConversationAlign} then computes alignment indices between two
+interlocutors across each transcript for >40 possible semantic, lexical, and
+affective dimensions.  In addition to alignment, @code{ConversationAlign} also
+produces a table of analytics (e.g., token count, type-token-ratio) in a summary
+table describing your particular text corpus.")
+    (license license:gpl3+)))
+
 (define-public r-convergeu
   (package
     (name "r-convergeu")
@@ -18406,35 +18451,6 @@ references for the code are: Diquigiovanni, Fontana, and Vantini (2021)
 <doi:10.1007/978-3-642-41142-7_36>) and inductive conformal prediction (see
 Balasubramanian et al., 2014, ISBN:9780124017153) for classification problems.")
     (license license:gpl3)))
-
-(define-public r-conformalbayes
-  (package
-    (name "r-conformalbayes")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "conformalbayes" version))
-       (sha256
-        (base32 "0pl1ajix5v3zckny5angk1rqnalln4agf65yrdva210zl6wp7fzm"))))
-    (properties `((upstream-name . "conformalbayes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rstantools r-matrixstats r-loo r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/CoryMcCartan/conformalbayes")
-    (synopsis "Jackknife(+) Predictive Intervals for Bayesian Models")
-    (description
-     "This package provides functions to construct finite-sample calibrated predictive
-intervals for Bayesian models, following the approach in Barber et al. (2021)
-<doi:10.1214/20-AOS1965>.  These intervals are calculated efficiently using
-importance sampling for the leave-one-out residuals.  By default, the intervals
-will also reflect the relative uncertainty in the Bayesian model, using the
-locally-weighted conformal methods of Lei et al. (2018)
-<doi:10.1080/01621459.2017.1307116>.")
-    (license license:expat)))
 
 (define-public r-confmatrix
   (package
@@ -21728,6 +21744,45 @@ The other is a suite of semiparametric kernel machine methods that allow for
 statistical inference to be performed to test for potential associations between
 these community structures and an outcome of interest (binary or continuous).")
     (license license:gpl2+)))
+
+(define-public r-commecometrics
+  (package
+    (name "r-commecometrics")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "commecometrics" version))
+       (sha256
+        (base32 "1nrmw71snr0ywinyx781g31in1mip7z7px2wd4q1lmlqsgp352v6"))))
+    (properties `((upstream-name . "commecometrics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tibble
+                             r-sf
+                             r-rnaturalearth
+                             r-raster
+                             r-purrr
+                             r-leaflet
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mariahm1995/commecometrics")
+    (synopsis
+     "Ecometric Models of TraitâEnvironment Relationships at the Community Level")
+    (description
+     "This package provides a framework for modeling relationships between functional
+traits and both quantitative and qualitative environmental variables at the
+community level.  It includes tools for trait binning, likelihood-based
+environmental estimation, model evaluation, fossil projection into modern
+ecometric space, and result visualization.  For more details see Vermillion et
+al. (2018) <doi:10.1007/978-3-319-94265-0_17>, Polly et al. (2011)
+<doi:10.1098/rspb.2010.2233> and Polly and Head (2015)
+<doi:10.1017/S1089332600002953>.")
+    (license license:expat)))
 
 (define-public r-commecol
   (package
@@ -37306,35 +37361,6 @@ any specified antipsychotic) equivalents.  The use of the package is described
 in the included vignette.  Not for clinical use.")
     (license license:gpl3)))
 
-(define-public r-chkptstanr
-  (package
-    (name "r-chkptstanr")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "chkptstanr" version))
-       (sha256
-        (base32 "0p0pzpzyg3sw4gnvzdx34f96yxidpykq49v5xlhnrsnpjzajjfs3"))))
-    (properties `((upstream-name . "chkptstanr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rstan r-rdpack r-brms r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=chkptstanr")
-    (synopsis "Checkpoint MCMC Sampling with 'Stan'")
-    (description
-     "Fit Bayesian models in Stan <doi: 10.18637/jss.v076.i01> with checkpointing,
-that is, the ability to stop the MCMC sampler at will, and then pick right back
-up where the MCMC sampler left off.  Custom Stan models can be fitted, or the
-popular package brms <doi: 10.18637/jss.v080.i01> can be used to generate the
-Stan code.  This package is fully compatible with the R packages brms',
-posterior', cmdstanr', and bayesplot'.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-chisquare
   (package
     (name "r-chisquare")
@@ -45476,13 +45502,13 @@ generalized linear model conditional on its causal parents.")
 (define-public r-causalqueries
   (package
     (name "r-causalqueries")
-    (version "1.3.3")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalQueries" version))
        (sha256
-        (base32 "1jdmsy970bx2qv8bmvkvn9dpiny77rf0r0pw1rz8hg8bnxd07l0f"))))
+        (base32 "0ykcc7k8a1agcwcnwxw1l4nykkd233awbdb72japfprjaxvm3brr"))))
     (properties `((upstream-name . "CausalQueries")))
     (build-system r-build-system)
     (arguments
@@ -49298,13 +49324,13 @@ Arias-Pulido H et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS
 (define-public r-canvasxpress
   (package
     (name "r-canvasxpress")
-    (version "1.56.1")
+    (version "1.57.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "canvasXpress" version))
        (sha256
-        (base32 "1x4k7h0vvpn628yy3nqwnq2n53mb09iqzglx6s65m7arjc7wjbgh"))))
+        (base32 "16lpivcfqv2hvyf0hy4i9xmlkl6q2p932qwi49dnd7kk8qqnx5af"))))
     (properties `((upstream-name . "canvasXpress")))
     (build-system r-build-system)
     (arguments
@@ -50989,6 +51015,32 @@ via integration with the htmltools and shiny packages.  Pre-built and
 interactive components can be used to generate either static html or interactive
 web applications.  Learn more about the Calcite Design System at
 <https://developers.arcgis.com/calcite-design-system/>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-calcal
+  (package
+    (name "r-calcal")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "calcal" version))
+       (sha256
+        (base32 "1ffqpq7r2pqf1534flx9yqlah7xich846kb4l6nyyrzar1kx1549"))))
+    (properties `((upstream-name . "calcal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs))
+    (native-inputs (list r-knitr))
+    (home-page "https://pkg.robjhyndman.com/calcal/")
+    (synopsis "Calendrical Calculations")
+    (description
+     "An R implementation of the algorithms described in Reingold and Dershowitz (4th
+ed., Cambridge University Press, 2018) <doi:10.1017/9781107415058>, allowing
+conversion between many different calendar systems.  Cultural and religious
+holidays from several calendars can be calculated.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-calango

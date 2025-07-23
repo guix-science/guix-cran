@@ -670,13 +670,13 @@ your probability of winning a battle.  This speeds the game up significantly.")
 (define-public r-aws-wrfsmn
   (package
     (name "r-aws-wrfsmn")
-    (version "0.0.5")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aws.wrfsmn" version))
        (sha256
-        (base32 "0xkbf6ydn6l177q6ch99ymriq1y46hqlkah3sxl3db30ihkhrkrd"))))
+        (base32 "1sszc8nqyph8ly4wvfmqgbm6qf09spb94wz5rfsqmz3j6acvip7b"))))
     (properties `((upstream-name . "aws.wrfsmn")))
     (build-system r-build-system)
     (arguments
@@ -1913,13 +1913,13 @@ relationships between categorical and continuous variables in the data set.")
 (define-public r-autoslider-core
   (package
     (name "r-autoslider-core")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoslider.core" version))
        (sha256
-        (base32 "1xf95qbxna6rh8x6bn6024l57v4aa3rwh0vlz6b0r0a6lnn39xf3"))))
+        (base32 "1cc4ciqb07n8g2nvy30k3450jd7xhh1d52bw49hrjv5w5yfwwn2z"))))
     (properties `((upstream-name . "autoslider.core")))
     (build-system r-build-system)
     (arguments
@@ -3819,13 +3819,13 @@ ARIMA in SAS.")
 (define-public r-atrrr
   (package
     (name "r-atrrr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atrrr" version))
        (sha256
-        (base32 "1h3qizyhi59lh6n11z8kl0af6x8r0k0jd63njl4bkg4l7b2l3b4b"))))
+        (base32 "1n5d5dmim3hns9ckbkascl1b9f3kim8m5nivn2xynql5w0lnf8rh"))))
     (properties `((upstream-name . "atrrr")))
     (build-system r-build-system)
     (arguments
@@ -20420,6 +20420,49 @@ conversion from an age to an interval, aggregation of ages with associated
 counts in to intervals and the splitting of interval counts based on specified
 age distributions.")
     (license license:gpl2)))
+
+(define-public r-agepopdenom
+  (package
+    (name "r-agepopdenom")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AgePopDenom" version))
+       (sha256
+        (base32 "03v0lc93s39n8vnn0wpvp0dg3if7i5jfx5nq2545d1djvg2yhpdx"))))
+    (properties `((upstream-name . "AgePopDenom")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-tmb
+                             r-tidyr
+                             r-terra
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-rdhs
+                             r-purrr
+                             r-here
+                             r-haven
+                             r-gstat
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-curl
+                             r-crayon
+                             r-countrycode
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://truenomad.github.io/AgePopDenom/")
+    (synopsis
+     "Model Fine-Scale Age-Structured Population Data using Open-Source Data")
+    (description
+     "Automate the modelling of age-structured population data using survey data, grid
+population estimates and urban-rural extents.")
+    (license license:expat)))
 
 (define-public r-agena-ai
   (package

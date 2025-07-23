@@ -4259,13 +4259,13 @@ growth curves) at isolated time points.")
 (define-public r-growthpheno
   (package
     (name "r-growthpheno")
-    (version "3.1.12")
+    (version "3.1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growthPheno" version))
        (sha256
-        (base32 "0fy8r7289qwm2snvdlbjhfb705p9vxll0kr9x5vm0dw7zx4h281v"))))
+        (base32 "1k4kjd7nhihs3h0ajjr4jj44z4ap8kvrr3avw3ajlg8jvl090wcv"))))
     (properties `((upstream-name . "growthPheno")))
     (build-system r-build-system)
     (arguments
@@ -5617,13 +5617,13 @@ association, function, or causality.")
 (define-public r-gridgraphviz
   (package
     (name "r-gridgraphviz")
-    (version "0.3-1")
+    (version "0.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gridGraphviz" version))
        (sha256
-        (base32 "0yzy7w4bk3rn9yjqy06gzkcs0dla3n49z3v1z0mjikg8cd97d5ni"))))
+        (base32 "1klgw04g3fx27xk34dhsh5qkpyyfmji65awjn8zymfw5nf3v2lpd"))))
     (properties `((upstream-name . "gridGraphviz")))
     (build-system r-build-system)
     (arguments
@@ -9458,41 +9458,6 @@ employs a Fisher scoring algorithm described in Guinness (2019)
 <doi:10.48550/@code{arXiv.1905.08374>}.")
     (license license:expat)))
 
-(define-public r-gpgame
-  (package
-    (name "r-gpgame")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GPGame" version))
-       (sha256
-        (base32 "1xxilr1ify9ip3vs000jawxplcbf1vqli40frhnwwjqf01kj8jq5"))))
-    (properties `((upstream-name . "GPGame")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp
-                             r-mvtnorm
-                             r-mnormt
-                             r-matrixstats
-                             r-mass
-                             r-kriginv
-                             r-gpareto
-                             r-dicekriging
-                             r-dicedesign))
-    (home-page "https://github.com/vpicheny/GPGame")
-    (synopsis "Solving Complex Game Problems using Gaussian Processes")
-    (description
-     "Sequential strategies for finding a game equilibrium are proposed in a black-box
-setting (expensive pay-off evaluations, no derivatives).  The algorithm handles
-noiseless or noisy evaluations.  Two acquisition functions are available.
-Graphical outputs can be generated automatically.  V. Picheny, M. Binois, A.
-Habbal (2018) <doi:10.1007/s10898-018-0688-0>.  M. Binois, V. Picheny, P.
-Taillandier, A. Habbal (2020) <@code{arXiv:1902.06565v2>}.")
-    (license license:gpl3)))
-
 (define-public r-gpfda
   (package
     (name "r-gpfda")
@@ -9729,13 +9694,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.5.8")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "0x01gfb4rr3f9kspyv8wjyd8wadwhh8yil6vqbjqvbz39rf21mad"))))
+        (base32 "1lk3jkbj11sfmkgii49bgfw7djnv3z7r8rwcxxlzh0w76yc2433w"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (arguments
@@ -14669,13 +14634,13 @@ this package can be found in Watson, Hemming, and Girling (2023)
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrBase" version))
        (sha256
-        (base32 "0znc9qpqm9c0n1kh1vqc14yhraj97z45ag4y84i37hc5m0m3ph27"))))
+        (base32 "0svfmmhw5xg6hbky0l1r2q3r2nk05hd90psj6nm6fmbhd7ljwv0a"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (arguments
@@ -31224,13 +31189,13 @@ quantitative trait locus studies.")
 (define-public r-gemini-r
   (package
     (name "r-gemini-r")
-    (version "0.15.0")
+    (version "0.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gemini.R" version))
        (sha256
-        (base32 "02jw12pi2n94y4bkv25cmckvsqp8h628frmq9l2cdrxbapfafb5z"))))
+        (base32 "0s84yfq89qwnimaazi49nlh9dplf3746njfwnzy30sg8zac8aw5q"))))
     (properties `((upstream-name . "gemini.R")))
     (build-system r-build-system)
     (arguments
@@ -34189,6 +34154,31 @@ Remillard (2013) <doi:10.1201/b14285>.")
     (description
      "Display a random fact about Carl Friedrich Gauss based the on collection curated
 by Mike Cavers via the <http://gaussfacts.com> site.")
+    (license license:gpl2+)))
+
+(define-public r-gaussdiff
+  (package
+    (name "r-gaussdiff")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gaussDiff" version))
+       (sha256
+        (base32 "0ipriazck2j62nwalrgbrdn9gb8lg1iiin0id8if5hdj75j194lq"))))
+    (properties `((upstream-name . "gaussDiff")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://gitlab.met.fu-berlin.de/StatMet/gaussDiff")
+    (synopsis
+     "Difference Measures for Multivariate Gaussian Probability Density Functions")
+    (description
+     "This package provides a collection difference measures for multivariate Gaussian
+probability density functions, such as the Euclidea mean, the Mahalanobis
+distance, the Kullback-Leibler divergence, the J-Coefficient, the Minkowski
+L2-distance, the Chi-square divergence and the Hellinger Coefficient.")
     (license license:gpl2+)))
 
 (define-public r-gausscov

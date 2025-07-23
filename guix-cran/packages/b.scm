@@ -2031,13 +2031,13 @@ to each terminal node.")
 (define-public r-btllasso
   (package
     (name "r-btllasso")
-    (version "0.1-13")
+    (version "0.1-14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BTLLasso" version))
        (sha256
-        (base32 "19r45qm1iq3sjb6r5ficgv8q9zwpbilxwrf6rxvqdl333xcnnjy4"))))
+        (base32 "015by5qnv5rzvw8ll9n0kxgy5bm4hdii179filmvpnmzhkkq7z3b"))))
     (properties `((upstream-name . "BTLLasso")))
     (build-system r-build-system)
     (arguments
@@ -17859,13 +17859,13 @@ Anticipate, and Validate), along with a comprehensive concept dictionary.")
 (define-public r-bidsr
   (package
     (name "r-bidsr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bidsr" version))
        (sha256
-        (base32 "1c3p6bnn27f11mv28fm50gfm03k81y6lfm1lnnh6pw5wsagzzjbn"))))
+        (base32 "0nk1yqh4zkrzx18amjxhgp3amwicyk1inq178sppdgplqzxwkvkg"))))
     (properties `((upstream-name . "bidsr")))
     (build-system r-build-system)
     (arguments
@@ -19689,13 +19689,13 @@ the duration of the trial, in various realistic setting.")
 (define-public r-bfboin
   (package
     (name "r-bfboin")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfboin" version))
        (sha256
-        (base32 "0mjk8384ram3ywxnclnrwz5483260b9vvbzshzs3adc6h872fqdz"))))
+        (base32 "019wd3lwqlqq6in3933lika0kbf3dg52f5w3il6dfq6nm7f8v9nf"))))
     (properties `((upstream-name . "bfboin")))
     (build-system r-build-system)
     (arguments
@@ -22959,6 +22959,30 @@ Bayesian Context Trees <@code{arXiv:2203.04341>} [stat.ME], March 2022].")
 <https://www.openbsd.org/papers/bcrypt-paper.pdf> derived from the
 @code{OpenBSD} implementation.")
     (license license:bsd-2)))
+
+(define-public r-bcrp
+  (package
+    (name "r-bcrp")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bcRP" version))
+       (sha256
+        (base32 "1a3hs1kkrsc3ip5a10cgw8mm0zng7kpmpiyj914fpr6f61hfcv00"))))
+    (properties `((upstream-name . "bcRP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yyjsonr r-tibble r-readr r-httr2))
+    (home-page "https://github.com/JulioCollazos64/bcRP")
+    (synopsis "Access 'BCRPDATA' API")
+    (description
+     "Search and access more than ten thousand datasets included in BCRPDATA (see
+<https://estadisticas.bcrp.gob.pe/estadisticas/series/ayuda/bcrpdata> for more
+information).")
+    (license license:gpl3+)))
 
 (define-public r-bcrocsurface
   (package

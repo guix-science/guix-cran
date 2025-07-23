@@ -576,13 +576,13 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
 (define-public r-eyeris
   (package
     (name "r-eyeris")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyeris" version))
        (sha256
-        (base32 "0bhq1n5xczn7xdg8diwv3kqj8szr5g4zn5l4ypgs4kc1jjp2q0j2"))))
+        (base32 "0gb51hqa7zyml5brk9ag3x62xiwvzjzmxzss9hswxa76zxbnz9ja"))))
     (properties `((upstream-name . "eyeris")))
     (build-system r-build-system)
     (arguments
@@ -593,11 +593,13 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
                              r-viridis
                              r-tidyr
                              r-stringr
+                             r-rmarkdown
                              r-rlang
                              r-purrr
                              r-progress
                              r-mass
                              r-lifecycle
+                             r-jsonlite
                              r-gsignal
                              r-fields
                              r-eyelinker
@@ -6088,40 +6090,6 @@ J. & Zhang, X. (2018) <doi:10.1214/17-AOAS1092>.")
 De Vries, \"European Urbanization, 1500-1800\" (1984).")
     (license license:cc0)))
 
-(define-public r-europeanar
-  (package
-    (name "r-europeanar")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "europeanaR" version))
-       (sha256
-        (base32 "11cr8n64yv50zwib9wkvk1j43p9a1cmxmzznxykczv43l193kjg7"))))
-    (properties `((upstream-name . "europeanaR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack r-magrittr r-jsonlite r-httr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/AleKoure/europeanaR")
-    (synopsis
-     "Interact with Metadata Records and Media on the Europeana Repository")
-    (description
-     "Interact with the Europeana Data Model via a variety of API endpoints that
-contains digital collections from thousands of institutions around Europe.  This
-translates to millions of Cultural Heritage Objects in the form of image, text,
-video, sound and 3D, accompanied by rich metadata.  The Data Model design
-principles are based on the core principles and best practices of the Semantic
-Web and Linked Data efforts to which Europeana contributes (see, e.g., Doerr,
-Martin, et al.  The europeana data model (edm).  World Library and Information
-Congress: 76th IFLA general conference and assembly.  Vol.  10.  2010.).  The
-package also provides methods for bulk downloads of specific subsets of items,
-including both their metadata and their associated media files.")
-    (license license:expat)))
-
 (define-public r-euroleaguer
   (package
     (name "r-euroleaguer")
@@ -8744,13 +8712,13 @@ updating of the dependence modelling (see Sheu et al., 2016,
 (define-public r-ernm
   (package
     (name "r-ernm")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ernm" version))
        (sha256
-        (base32 "1hqzx92pn13brmq4bsrsainam52c6f3x6a8n2vsll01bhwc8fhh0"))))
+        (base32 "11j84qs6ric15d8dzzh0qmd5izs9dqijc170gmfrvdmq4z14kncv"))))
     (properties `((upstream-name . "ernm")))
     (build-system r-build-system)
     (arguments
@@ -24658,6 +24626,41 @@ rankings of importance of input variables in the analysis.  Additionally, an
 adaptation of Random Forest by a set of individual Efficiency Analysis Trees for
 estimating technical efficiency is also included.  More details in:
 <doi:10.1016/j.eswa.2020.113783>.")
+    (license license:gpl3)))
+
+(define-public r-easyviz
+  (package
+    (name "r-easyviz")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easyViz" version))
+       (sha256
+        (base32 "06ayjfi8l4zmkvsf95krkh5rxmzqdh46mxy76l5s4hij2dm2yjvi"))))
+    (properties `((upstream-name . "easyViz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=easyViz")
+    (synopsis
+     "Easy Visualization of Conditional Effects from Regression Models")
+    (description
+     "Offers a flexible and user-friendly interface for visualizing conditional
+effects from a broad range of regression models, including mixed-effects and
+generalized additive (mixed) models.  Compatible model types include
+@code{lm()}, @code{rlm()}, @code{glm()}, @code{glm.nb()}, and @code{gam()} (from
+mgcv'); nonlinear models via @code{nls()}; and generalized least squares via
+@code{gls()}.  Mixed-effects models with random intercepts and/or slopes can be
+fitted using @code{lmer()}, @code{glmer()}, @code{glmer.nb()}, @code{glmmTMB()},
+or @code{gam()} (from mgcv', via smooth terms).  Plots are rendered using base R
+graphics with extensive customization options.  Robust standard errors for
+@code{rlm()} are computed using the sandwich estimator (Zeileis 2004)
+<doi:10.18637/jss.v011.i10>.  For mixed models using @code{glmmTMB}', see Brooks
+et al. (2017) <doi:10.32614/RJ-2017-066>.  For linear mixed-effects models with
+lme4', see Bates et al. (2015) <doi:10.18637/jss.v067.i01>.  Methods for
+generalized additive models follow Wood (2017) <doi:10.1201/9781315370279>.")
     (license license:gpl3)))
 
 (define-public r-easyverification

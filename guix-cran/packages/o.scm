@@ -642,6 +642,36 @@ different file formats.  For more information, visit
 <https://overturemaps.org/download/>.")
     (license license:expat)))
 
+(define-public r-overshiny
+  (package
+    (name "r-overshiny")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "overshiny" version))
+       (sha256
+        (base32 "06w17n6wy4lag1kll1iyb1pj5cibdpsc2l1bx4slikpl1ibj85gs"))))
+    (properties `((upstream-name . "overshiny")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-shinyjs
+                             r-shinyjqui
+                             r-shiny
+                             r-htmltools
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nicholasdavies/overshiny")
+    (synopsis "Interactive Overlays on 'shiny' Plots")
+    (description
+     "This package provides rectangular elements that can be dragged and resized over
+plots in shiny apps.  This may be useful in applications where users need to
+mark regions on the plot for further input or processing.")
+    (license license:expat)))
+
 (define-public r-overlapptest
   (package
     (name "r-overlapptest")
@@ -3281,13 +3311,13 @@ and org helps you take care of the details.")
 (define-public r-orfid
   (package
     (name "r-orfid")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ORFID" version))
        (sha256
-        (base32 "11g4l45x3jwyffamr2qd0h7y15kyynqqwxh1mp1mnv0lchmdyr89"))))
+        (base32 "0aqywssfzqr50g3prfralql9f6xzyng5hw0z60hhn0lh3qlr9xs9"))))
     (properties `((upstream-name . "ORFID")))
     (build-system r-build-system)
     (arguments
@@ -8762,13 +8792,13 @@ nonassociative.  See the package vignette for more details.")
 (define-public r-onewaytests
   (package
     (name "r-onewaytests")
-    (version "3.0")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onewaytests" version))
        (sha256
-        (base32 "0qmzgg869pdj3sfi8znd02z62px9n04fxl1psrfw8mxl4ainp0v7"))))
+        (base32 "06fjaascmalcxfbsrgdf3i2039iqjpgdg4vsgwysiqff28hk9fs2"))))
     (properties `((upstream-name . "onewaytests")))
     (build-system r-build-system)
     (arguments
@@ -9693,13 +9723,13 @@ data with a single line of code.")
 (define-public r-onbrand
   (package
     (name "r-onbrand")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onbrand" version))
        (sha256
-        (base32 "1hnhnhzfmd3cjl9ibkydzcy9i7if1f1ykqj0a74wmawh37cv4iiv"))))
+        (base32 "1yhis24g5yjdjc5kzc7kdxxbblk4fhsnqpnz35g4gl5y8qd0aazp"))))
     (properties `((upstream-name . "onbrand")))
     (build-system r-build-system)
     (arguments
@@ -9709,13 +9739,12 @@ data with a single line of code.")
                              r-stringr
                              r-rlang
                              r-officer
-                             r-magrittr
                              r-ggplot2
                              r-flextable
                              r-dplyr
                              r-digest))
     (native-inputs (list r-knitr))
-    (home-page "https://onbrand.ubiquity.tools/")
+    (home-page "https://onbrand.ubiquity.tools")
     (synopsis "Templated Reporting Workflows in Word and PowerPoint")
     (description
      "Automated reporting in Word and @code{PowerPoint} can require customization for
@@ -11031,13 +11060,13 @@ ordinal data.")
 (define-public r-ohun
   (package
     (name "r-ohun")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ohun" version))
        (sha256
-        (base32 "0l3c6p1q2mjvr03q905ygmaax94bn3a0fkfn8kfjr6d5bs60283s"))))
+        (base32 "14j23y3mv1yw42gm5n8lsb48cn32piy2lz1mr1mqffq6ls7zi499"))))
     (properties `((upstream-name . "ohun")))
     (build-system r-build-system)
     (arguments

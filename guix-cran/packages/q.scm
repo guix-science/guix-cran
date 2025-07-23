@@ -405,36 +405,44 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-quollr
   (package
     (name "r-quollr")
-    (version "0.1.1")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quollr" version))
        (sha256
-        (base32 "1qvgajd7bx38nhisb7y5i48fmw9vx6di34s08dkna34rjhafak0a"))))
+        (base32 "0kfdf029j6r104bavjiq4k5h21fxdb4hy8x87ikv4x3plklv29dz"))))
     (properties `((upstream-name . "quollr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-rsample
-                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
                              r-proxy
+                             r-plotly
+                             r-patchwork
                              r-langevitour
                              r-interp
+                             r-htmltools
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-crosstalk
+                             r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/JayaniLakshika/quollr")
+    (home-page "https://jayanilakshika.github.io/quollr/")
     (synopsis "Visualising How Nonlinear Dimension Reduction Warps Your Data")
     (description
-     "To construct a model in 2D space from 2D embedding data and then lift it to the
-high-dimensional space.  Additionally, it provides tools to visualize the model
-in 2D space and to overlay the fitted model on data using the tour technique.
-Furthermore, it facilitates the generation of summaries of high-dimensional
-distributions.")
+     "To construct a model in 2-D space from 2-D nonlinear dimension reduction data
+and then lift it to the high-dimensional space.  Additionally, provides tools to
+visualise the model overlay the data in 2-D and high-dimensional space.
+Furthermore, provides summaries and diagnostics to evaluate the nonlinear
+dimension reduction layout.")
     (license license:expat)))
 
 (define-public r-quint
@@ -5649,13 +5657,13 @@ association analyses.  Rohde et al. (2019) <doi:10.1101/503631>.")
 (define-public r-qgcompint
   (package
     (name "r-qgcompint")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qgcompint" version))
        (sha256
-        (base32 "12zkzlfjfpazmz1cp713nqf1wsbhnqvm63jc9s2hvpsdrwzhdd52"))))
+        (base32 "1mripval0w7qdm1nzw56y18jrmb72f99h9fmfmzwi8kj42s4pk25"))))
     (properties `((upstream-name . "qgcompint")))
     (build-system r-build-system)
     (arguments

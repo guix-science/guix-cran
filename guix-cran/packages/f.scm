@@ -2561,6 +2561,32 @@ assist with cross-validation, tuning, and the display of estimated functional
 weights.")
     (license license:gpl3)))
 
+(define-public r-funcmapper
+  (package
+    (name "r-funcmapper")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "funcMapper" version))
+       (sha256
+        (base32 "0p16n1va8vgriszm3p4wyraq8h2kncqwpkg819h0px2ncaldi7gw"))))
+    (properties `((upstream-name . "funcMapper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visnetwork r-magrittr r-htmlwidgets r-glue
+                             r-functiondepends))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=funcMapper")
+    (synopsis "Map User-Created Functions")
+    (description
+     "Create an interactive function map by analyzing a specified R script.  It uses
+the @code{find_dependencies()} function from the functiondepends package to
+recursively trace all user-defined function dependencies.")
+    (license license:expat)))
+
 (define-public r-funcmap
   (package
     (name "r-funcmap")
@@ -4292,13 +4318,13 @@ repositories, and more.  File paths are specified with function arguments, or
 (define-public r-frogger
   (package
     (name "r-frogger")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "froggeR" version))
        (sha256
-        (base32 "03krjzm489hymc13b0s9x8nm9f01x6mwbc28jvg0gb16h64nc975"))))
+        (base32 "10ndbl8yh8rh01cifk56fx0yhjvzmdbd3ifmwmd5bm5whn38221c"))))
     (properties `((upstream-name . "froggeR")))
     (build-system r-build-system)
     (arguments
@@ -18844,6 +18870,31 @@ forecasting and backtesting functions for value-at-risk (@code{VaR}) and
 expected shortfall (ES) based on the package's models are provided.")
     (license license:gpl3)))
 
+(define-public r-fee
+  (package
+    (name "r-fee")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fee" version))
+       (sha256
+        (base32 "0wkl2il9bdl6a4vrwb3ki10ay6iciz1j5nm1gd4j87sl12bjafvf"))))
+    (properties `((upstream-name . "fee")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-oneinfl))
+    (home-page "https://cran.r-project.org/package=fee")
+    (synopsis
+     "Estimate the First-Exposure Effect (FEE) using Count Data Models")
+    (description
+     "Estimates the first-exposure effect (FEE) using a one-inflated positive Poisson
+model, or a one-inflated zero-truncated negative binomial model.  In addition,
+estimates the marginal FEE, and standard errors for the FEE and marginal FEE.")
+    (license license:gpl3+)))
+
 (define-public r-fedz1
   (package
     (name "r-fedz1")
@@ -20880,13 +20931,13 @@ for modeling and simulating dynamic systems.")
 (define-public r-fclust
   (package
     (name "r-fclust")
-    (version "2.1.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fclust" version))
        (sha256
-        (base32 "1d5qa30jlx6qn6npvccl97fcmh5a4wf3nw0d7jvn3y7mcb5yqlqk"))))
+        (base32 "1i4khfkh0wzi4jpcgvdgsjjvxk5nfcdb1r0079ys1lyvx07x0qj6"))))
     (properties `((upstream-name . "fclust")))
     (build-system r-build-system)
     (arguments
@@ -25383,13 +25434,13 @@ approach from Scutari, Panero and Proissl (2022)
 (define-public r-fairmetrics
   (package
     (name "r-fairmetrics")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fairmetrics" version))
        (sha256
-        (base32 "1nnjr3di3k9vw3nwn7sgm33w4jkp9wbga8q8qzgbw0g9jz5xbwbl"))))
+        (base32 "0gibjhyf3l78m3b32f762imgd5wdfxg2nj40y5y58hsy5gjvc85h"))))
     (properties `((upstream-name . "fairmetrics")))
     (build-system r-build-system)
     (arguments

@@ -4716,6 +4716,34 @@ logistic regression as a technique to estimate propensities.  The package
 options to work with data coming from a non-probabilistic sample.")
     (license license:gpl2+)))
 
+(define-public r-nonpartrendr
+  (package
+    (name "r-nonpartrendr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonparTrendR" version))
+       (sha256
+        (base32 "1i3bg9hrwa6168s4z96s1rlz3qz0bcjm133pr7n9842zly8zryvx"))))
+    (properties `((upstream-name . "nonparTrendR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=nonparTrendR")
+    (synopsis "Nonparametric Trend Test for Independent and Dependent Samples")
+    (description
+     "This package implements the nonparametric trend test for one or several samples
+as proposed by Bathke (2009) <doi:10.1007/s00184-008-0171-x>.  The method
+provides a unified framework for analyzing trends in both independent and
+dependent data samples, making it a versatile tool for various study designs.
+The package allows for the evaluation of different trend alternatives, including
+two-sided (general trend), monotonic increasing, and monotonic decreasing
+trends.  As a nonparametric procedure, it does not require the assumption of
+data normality, offering a robust alternative to parametric tests.")
+    (license license:expat)))
+
 (define-public r-nonparrolcor
   (package
     (name "r-nonparrolcor")
@@ -14451,27 +14479,30 @@ nephrology.")
 (define-public r-neonutilities
   (package
     (name "r-neonutilities")
-    (version "2.4.3")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neonUtilities" version))
        (sha256
-        (base32 "0jpfgiaznpglc499qa6kqbyswpm9nf5004sqqxg797fv4n9z72jy"))))
+        (base32 "0c04j8vq7g7kakvwgd23w6b7nv86gf3bngp3zjrsn1iqlkjv5qx4"))))
     (properties `((upstream-name . "neonUtilities")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-stringr
+                             r-rlang
                              r-r-utils
                              r-pbapply
                              r-jsonlite
+                             r-jose
                              r-httr
+                             r-dplyr
                              r-downloader
                              r-data-table
-                             r-curl))
+                             r-curl
+                             r-arrow))
     (home-page "https://github.com/NEONScience/NEON-utilities")
     (synopsis "Utilities for Working with NEON Data")
     (description
@@ -16019,13 +16050,13 @@ using NCA metrics.  The methods are described in Acharya et al. (2016)
 (define-public r-ncaavolleyballr
   (package
     (name "r-ncaavolleyballr")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncaavolleyballr" version))
        (sha256
-        (base32 "04jcwkvs0l8s5znxxs25wmzazs3q5nqdy7m6dvqm8rz0hb3fvsa4"))))
+        (base32 "1zrqv2mmjfmnsf6vfcsbp09an8cxgs29hw992114d8nmsfll29xl"))))
     (properties `((upstream-name . "ncaavolleyballr")))
     (build-system r-build-system)
     (arguments

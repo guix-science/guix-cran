@@ -5480,13 +5480,13 @@ analytics in Java.")
 (define-public r-rsubbotools
   (package
     (name "r-rsubbotools")
-    (version "0.0.0.9")
+    (version "0.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rsubbotools" version))
        (sha256
-        (base32 "1iqc5fqhxqp867pi6pb0zbhjag86ydadclq53jw9wcby6z7w0spn"))))
+        (base32 "10zj3jqcrr5flv2v9wxyprsp1vis0mm92y4m7wx4b6v8qd2xcp7j"))))
     (properties `((upstream-name . "Rsubbotools")))
     (build-system r-build-system)
     (arguments
@@ -8831,13 +8831,13 @@ approximation can be found in Razaviyayn, M., Sanjabi, M., & Luo, Z. Q. (2016)
 (define-public r-rrreg
   (package
     (name "r-rrreg")
-    (version "0.7.5")
+    (version "0.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRreg" version))
        (sha256
-        (base32 "105hv4izzbm5b89mg1k99zkms8ppjafj6x2fvh71yhaszh79fh88"))))
+        (base32 "1hskns7h57z9jg3rfazd4gnx6pyq90ga1vprxj6n1j513x6zam1q"))))
     (properties `((upstream-name . "RRreg")))
     (build-system r-build-system)
     (arguments
@@ -10354,13 +10354,13 @@ the reference: Portnoy (2022) <doi:10.1016/j.jmva.2022.105071>.")
 (define-public r-rpymat
   (package
     (name "r-rpymat")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpymat" version))
        (sha256
-        (base32 "0zrq4j0xw4blv9bsdrnkf0wb61bsm1lrlh92a2qw8p3daa48833q"))))
+        (base32 "1yajp34ns3q2nyqw29f155db171lim9ya852smvf9bllg5k732r3"))))
     (properties `((upstream-name . "rpymat")))
     (build-system r-build-system)
     (arguments
@@ -10417,13 +10417,13 @@ package.")
 (define-public r-rpyants
   (package
     (name "r-rpyants")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpyANTs" version))
        (sha256
-        (base32 "11044d5vi825g1b597hwkrw121m0q7vf5p5v17dq56zkrnr5jyx8"))))
+        (base32 "0ikq4j666vl87ywmhq5jymxdxs1vxa2fnldsj8nwjjf9n78l77mm"))))
     (properties `((upstream-name . "rpyANTs")))
     (build-system r-build-system)
     (arguments
@@ -22772,6 +22772,36 @@ account.")
 jobs, share updates with their network, and create group discussions.  For more
 information about using the API please visit <https://developer.linkedin.com/>.")
     (license license:gpl2)))
+
+(define-public r-rlibkriging
+  (package
+    (name "r-rlibkriging")
+    (version "0.9-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rlibkriging" version))
+       (sha256
+        (base32 "0wva9dzxfd1b2a4qf2fyx9b7qz1vrrgbyvgb6l9nak82gvwsc514"))))
+    (properties `((upstream-name . "rlibkriging")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list gfortran gcc cmake))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-dicekriging))
+    (native-inputs (list gfortran))
+    (home-page "https://github.com/libKriging")
+    (synopsis "Kriging Models using the 'libKriging' Library")
+    (description
+     "Interface to @code{libKriging} C++ library
+<https://github.com/@code{libKriging>} that should provide most standard Kriging
+/ Gaussian process regression features (like in @code{DiceKriging}', kergp or
+@code{RobustGaSP} packages). @code{libKriging} relies on Armadillo linear
+algebra library (Apache 2 license) by Conrad Sanderson, lbfgsb_cpp is a C++ port
+around by Pascal Have of lbfgsb library (BSD-3 license) by Ciyou Zhu, Richard
+Byrd, Jorge Nocedal and Jose Luis Morales used for hyperparameters optimization.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rlibkdv
   (package
@@ -39870,6 +39900,29 @@ recogito <https://github.com/recogito/recogito-js> and annotorious
 <https://github.com/recogito/annotorious> libraries.")
     (license license:bsd-3)))
 
+(define-public r-recoder
+  (package
+    (name "r-recoder")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "recoder" version))
+       (sha256
+        (base32 "0kgn563hsqxrw19y5s1kkxbck9r66qxb0rqbj914lkxg9d510mnn"))))
+    (properties `((upstream-name . "recoder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr))
+    (home-page "https://cran.r-project.org/package=recoder")
+    (synopsis "Simple and Flexible Recoder")
+    (description
+     "Simple, easy to use, and flexible functionality for recoding variables.  It
+allows for simple piecewise definition of transformations.")
+    (license license:gpl2+)))
+
 (define-public r-recodeflow
   (package
     (name "r-recodeflow")
@@ -50471,13 +50524,13 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
 (define-public r-ravetools
   (package
     (name "r-ravetools")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ravetools" version))
        (sha256
-        (base32 "0h8c3hgnjwknzqz8lmdv44f36n1zrkgg7vr84r90dzc4i4vk0533"))))
+        (base32 "1qh5j5c34ahk1l9y6l2ksxzawy28z9r4vx9fdwdnagkr34mgl3r9"))))
     (properties `((upstream-name . "ravetools")))
     (build-system r-build-system)
     (arguments
@@ -53565,13 +53618,13 @@ classification task on the projected data.")
 (define-public r-randpedpca
   (package
     (name "r-randpedpca")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "randPedPCA" version))
        (sha256
-        (base32 "1p2hzczcb0fzi4rfp3mlfrayrcb0m78zh9cs8n5sznxsv1mkjvmw"))))
+        (base32 "116aqjijs20ilckdz2xqgvichjgd8pwlw90p4h3n26q7aw3ypbl4"))))
     (properties `((upstream-name . "randPedPCA")))
     (build-system r-build-system)
     (arguments
@@ -53586,7 +53639,7 @@ classification task on the projected data.")
 found in breeding populations! This package exploits sparse matrices and
 randomised linear algebra to deliver a gazillion-times speed-up compared to
 naive singular value decoposition (SVD) (and eigen decomposition).")
-    (license license:expat)))
+    (license license:gpl2+)))
 
 (define-public r-randomwalker
   (package

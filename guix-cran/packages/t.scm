@@ -7626,32 +7626,18 @@ sending digital rewards and incentives directly from R.")
 (define-public r-trelliscopejs
   (package
     (name "r-trelliscopejs")
-    (version "0.2.6")
+    (version "0.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trelliscopejs" version))
        (sha256
-        (base32 "16i1km57yz8bl4ni919d3qmj8aj5l88l7byhd6ksh88ygpfl7wq8"))))
+        (base32 "1hj4n5cdm4w3fwmm9m1ijic7jsyck64jqgi0h1mxlx8d2yma2lp9"))))
     (properties `((upstream-name . "trelliscopejs")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
+      #:tests? #f))
     (propagated-inputs (list r-webshot
                              r-tidyr
                              r-rlang
@@ -7663,13 +7649,14 @@ sending digital rewards and incentives directly from R.")
                              r-htmltools
                              r-gtable
                              r-ggplot2
+                             r-fidelius
                              r-dplyr
                              r-distributionutils
                              r-digest
                              r-base64enc
                              r-autocogs))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/hafen/trelliscopejs")
+    (native-inputs (list r-knitr))
+    (home-page "https://hafen.github.io/trelliscopejs/")
     (synopsis "Create Interactive Trelliscope Displays")
     (description
      "Trelliscope is a scalable, flexible, interactive approach to visualizing data
@@ -13148,13 +13135,13 @@ estimation\" by Tracy Ke and Minzhe Wang (2017) <@code{arXiv:1704.07016>}.")
 (define-public r-topics
   (package
     (name "r-topics")
-    (version "0.50")
+    (version "0.60")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topics" version))
        (sha256
-        (base32 "1xjs9kay0p82ci497rgbmgi2mq66r1nzvyq3qqk6rwnf4mvv8dg1"))))
+        (base32 "126q3n202jc7wmzm6c3vqr6w2jarmjy654p3aibcgn7mvrsn8nrf"))))
     (properties `((upstream-name . "topics")))
     (build-system r-build-system)
     (arguments
@@ -13167,7 +13154,6 @@ estimation\" by Tracy Ke and Minzhe Wang (2017) <@code{arXiv:1704.07016>}.")
                              r-stringr
                              r-stopwords
                              r-rlang
-                             r-rjava
                              r-readr
                              r-purrr
                              r-ngram
@@ -13175,6 +13161,7 @@ estimation\" by Tracy Ke and Minzhe Wang (2017) <@code{arXiv:1704.07016>}.")
                              r-mallet
                              r-ggwordcloud
                              r-ggplot2
+                             r-ggforce
                              r-dplyr
                              r-data-table))
     (native-inputs (list r-knitr))
@@ -15300,6 +15287,53 @@ Finally, TKCat provides tools to easily subset, filter and combine MDBs and
 create new catalogs suited for specific needs.")
     (license license:gpl3)))
 
+(define-public r-tivy
+  (package
+    (name "r-tivy")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Tivy" version))
+       (sha256
+        (base32 "0as5fkbi3mlx9hfjsf30zdpbz72nd211zysf1swz0xymxp27ydfg"))))
+    (properties `((upstream-name . "Tivy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-stringi
+                             r-scales
+                             r-rvest
+                             r-rlang
+                             r-rcolorbrewer
+                             r-pdftools
+                             r-patchwork
+                             r-lubridate
+                             r-leaflet
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/HansTtito/Tivy")
+    (synopsis "Processing and Analysis of Peruvian Fishery Logbook Data")
+    (description
+     "Specialized toolkit for processing biological and fisheries data from Peru's
+anchovy (Engraulis ringens) fishery.  Provides functions to analyze fishing
+logbooks, calculate biological indicators (length-weight relationships, juvenile
+percentages), generate spatial fishing indicators, and visualize regulatory
+measures from Peru's Ministry of Production.  Features automated data processing
+from multiple file formats, coordinate validation, spatial analysis of fishing
+zones, and tools for analyzing fishing closure announcements and regulatory
+compliance.  Includes built-in datasets of Peruvian coastal coordinates and
+parallel lines for analyzing fishing activities within regulatory zones.")
+    (license license:expat)))
+
 (define-public r-titrationcurves
   (package
     (name "r-titrationcurves")
@@ -17058,30 +17092,6 @@ Tak et al. (2017) <doi:10.1214/17-AOAS1027>, Tak et al. (2018)
 <doi:10.1080/10618600.2017.1415911>, Hu and Tak (2020)
 <@code{arXiv:2005.08049>}.")
     (license license:gpl2)))
-
-(define-public r-time-slots
-  (package
-    (name "r-time-slots")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "time.slots" version))
-       (sha256
-        (base32 "04qh8cgk3ixvvc67m2hal935m5kisq2n67cvjmsg1frz1bf2yvld"))))
-    (properties `((upstream-name . "time.slots")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales r-lubridate r-ggplot2 r-ggfittext
-                             r-dplyr))
-    (home-page "https://bitbucket.org/annalectnz/time.slots")
-    (synopsis "Display Data in a Weekly Calendar View")
-    (description
-     "Generate weekly timetables as a ggplot2 layer.  Add informative timeslots with
-elements such as title, key-value pairs, or colour to reveal trends.")
-    (license license:expat)))
 
 (define-public r-timbr
   (package
@@ -19564,13 +19574,13 @@ minimal code.")
 (define-public r-tidyheatmap
   (package
     (name "r-tidyheatmap")
-    (version "1.11.6")
+    (version "1.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyHeatmap" version))
        (sha256
-        (base32 "0fk0zgh0i4wv1fcqsd9bha6096c8y5a0cwpykqqq4sa1v3ji58pb"))))
+        (base32 "0ymm05qpy58jbmhb7agfy4pm62zd8lpchi00lsgnnbkmljdkdhx2"))))
     (properties `((upstream-name . "tidyHeatmap")))
     (build-system r-build-system)
     (arguments
@@ -24244,13 +24254,13 @@ molecular sequences.")
 (define-public r-text
   (package
     (name "r-text")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "text" version))
        (sha256
-        (base32 "12yn9cl9g7w699b3dnb3w5hc9kxa7nzkkhv8i8f2y9nyidhka625"))))
+        (base32 "0zkqdx6q6qri3l8hzbysw1g4qv7ilmwfm2g4n9n7ccmbvcfc7gwr"))))
     (properties `((upstream-name . "text")))
     (build-system r-build-system)
     (arguments
@@ -24271,6 +24281,7 @@ molecular sequences.")
                              r-purrr
                              r-parsnip
                              r-magrittr
+                             r-hardhat
                              r-ggrepel
                              r-ggplot2
                              r-future
@@ -28950,13 +28961,13 @@ coded up in Cuda cpp by TCwindgen
 (define-public r-tcgsa
   (package
     (name "r-tcgsa")
-    (version "0.12.10")
+    (version "0.12.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TcGSA" version))
        (sha256
-        (base32 "1bdffzq3zwvr0qsp71mp0fqf9dgx9n3f08c53adwavycwr6zg1l7"))))
+        (base32 "1dgxc5zm5rx40cpwq8sxm513x1d5dn7q2qzqj5z9wyqrnp73qghy"))))
     (properties `((upstream-name . "TcGSA")))
     (build-system r-build-system)
     (arguments

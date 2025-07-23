@@ -12208,13 +12208,13 @@ Brouwer (2020) <doi:10.1002/9781119632757>.")
 (define-public r-dittoviz
   (package
     (name "r-dittoviz")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dittoViz" version))
        (sha256
-        (base32 "12awba85sbr4ig7lk2d47ll19avlv2vmhyp9fnh9yn41wfmqnzlh"))))
+        (base32 "013dbv1n7wpv759vqzxlal802aapig114sxq58ihxbpxfphdhmp4"))))
     (properties `((upstream-name . "dittoViz")))
     (build-system r-build-system)
     (arguments
@@ -16583,13 +16583,13 @@ capture specific behaviors and provide predictions.")
 (define-public r-diflasso
   (package
     (name "r-diflasso")
-    (version "1.0-4")
+    (version "1.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIFlasso" version))
        (sha256
-        (base32 "13ls5018l790cdr26431li4gi9zw03ilypszfqglg4hj485h7dyw"))))
+        (base32 "074z430ljgs4dfnx2yncjmrzirypx98s4lspvr5c07jzmpss590g"))))
     (properties `((upstream-name . "DIFlasso")))
     (build-system r-build-system)
     (arguments
@@ -17201,13 +17201,13 @@ differential correlation analyses.  Please see
 (define-public r-difboost
   (package
     (name "r-difboost")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIFboost" version))
        (sha256
-        (base32 "07x31ccy2l0drv1356g1v4jw71i7zqb3d0v856gsd3kpqhclpvx0"))))
+        (base32 "01zsbaz3d7ypb5kjh59z7sdb9al9dsjysxahgbiq5ly4f8q4a39v"))))
     (properties `((upstream-name . "DIFboost")))
     (build-system r-build-system)
     (arguments
@@ -20726,19 +20726,24 @@ textbook Auer, L.v. (2023, ISBN: 978-3-658-42699-6).")
 (define-public r-desirability2
   (package
     (name "r-desirability2")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "desirability2" version))
        (sha256
-        (base32 "0x5v6mak68h6a03hccf8gksj3wmgcd3l84bplx1s4jr755wdm5ih"))))
+        (base32 "1jrbf9mapmrwdcxmpw7wrbx69i9qhwb19ph1acr02vgl8riaa6mx"))))
     (properties `((upstream-name . "desirability2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rlang r-purrr r-glue))
+    (propagated-inputs (list r-tibble
+                             r-s7
+                             r-rlang
+                             r-purrr
+                             r-dplyr
+                             r-cli))
     (home-page "https://desirability2.tidymodels.org")
     (synopsis "Desirability Functions for Multiparameter Optimization")
     (description

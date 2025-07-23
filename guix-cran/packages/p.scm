@@ -3688,18 +3688,22 @@ multi-methods, spherical representation of a correlation matrix.")
 (define-public r-psweight
   (package
     (name "r-psweight")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PSweight" version))
        (sha256
-        (base32 "07kmcack636gj1xa6ggxvd737svnvxsa5bp2pkf7a236sjygziaj"))))
+        (base32 "065avyp2c61zn69ry0vivrnbxfimmjjidjq7mr47b634pm83h5cv"))))
     (properties `((upstream-name . "PSweight")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-survey
                              r-superlearner
                              r-numderiv
@@ -3708,7 +3712,7 @@ multi-methods, spherical representation of a correlation matrix.")
                              r-lme4
                              r-ggplot2
                              r-gbm))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/thuizhou/PSweight")
     (synopsis
      "Propensity Score Weighting for Causal Inference with Observational Studies and Randomized Trials")
@@ -8664,56 +8668,6 @@ should (not) happen x number of times), order (succession between activities)
 and exclusiveness (and and exclusive choice between activities).")
     (license license:expat)))
 
-(define-public r-processanimater
-  (package
-    (name "r-processanimater")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "processanimateR" version))
-       (sha256
-        (base32 "054m578ifb4hhlalijkdmjxifn36vy61sdzjgcr1gg4yxfi2fbx3"))))
-    (properties `((upstream-name . "processanimateR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-rlang
-                             r-processmapr
-                             r-magrittr
-                             r-htmlwidgets
-                             r-htmltools
-                             r-dplyr
-                             r-diagrammer
-                             r-bupar))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/bupaverse/processanimateR/")
-    (synopsis "Process Map Token Replay Animation")
-    (description
-     "This package provides animated process maps based on the @code{procesmapR}
-package.  Cases stored in event logs created with with @code{bupaR} S3 class
-@code{eventlog()} are rendered as tokens (SVG shapes) and animated according to
-their occurrence times on top of the process map.  For rendering SVG animations
-('SMIL') and the htmlwidget package are used.")
-    (license license:expat)))
-
 (define-public r-proceduralnames
   (package
     (name "r-proceduralnames")
@@ -10553,13 +10507,13 @@ Data Warehouse (2020) <https://sdw.ecb.europa.eu/@code{curConverter.do>}.")
 (define-public r-pricelevels
   (package
     (name "r-pricelevels")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pricelevels" version))
        (sha256
-        (base32 "1mi949l7fczcsha81qlviaq14882062v7wr4raxavhb5hg1m057r"))))
+        (base32 "1a9zzdzb0279dvzwql6axjxdrmb8mx3rrnp4r31sk2j0bax90a52"))))
     (properties `((upstream-name . "pricelevels")))
     (build-system r-build-system)
     (arguments
@@ -12019,13 +11973,13 @@ models.")
 (define-public r-predint
   (package
     (name "r-predint")
-    (version "2.2.1")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predint" version))
        (sha256
-        (base32 "1db5nzwhj2zjzqpdrp0phcwxxgn4pdphb05hjlyc9r58hspg8k11"))))
+        (base32 "013r4mp92436g1rkicgmcqhvqaazid9208cb6ibzhikjqrr1i72b"))))
     (properties `((upstream-name . "predint")))
     (build-system r-build-system)
     (arguments
@@ -15257,6 +15211,32 @@ instances to normality after optimising fitting parameters on other data.  A
 test for central normality allows for rejecting transformations that fail to
 produce a suitably normal distribution, independent of sample number.")
     (license (license:fsdg-compatible "EUPL"))))
+
+(define-public r-power
+  (package
+    (name "r-power")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PoweR" version))
+       (sha256
+        (base32 "19xjc23gxpnssijsd9mcfki8cswfwzr1m6yd8gym96rrwaqwsxps"))))
+    (properties `((upstream-name . "PoweR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=PoweR")
+    (synopsis "Computation of Power and Level Tables for Hypothesis Tests")
+    (description
+     "Computes power and level tables for goodness-of-fit tests for the normal,
+Laplace, and uniform distributions.  Generates output in @code{LaTeX} format to
+facilitate reporting and reproducibility.  Explanatory graphs help visualize the
+statistical power of test statistics under various alternatives.  For more
+details, see Lafaye De Micheaux and Tran (2016) <doi:10.18637/jss.v069.i03>.")
+    (license license:gpl2+)))
 
 (define-public r-powdist
   (package
@@ -30775,38 +30755,6 @@ data for Phase-type distributions.  The methods of Bladt et al (2003)
 <https://www.louisaslett.com/@code{PhD_Thesis.pdf>} are provided.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-phaser
-  (package
-    (name "r-phaser")
-    (version "2.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "phaseR" version))
-       (sha256
-        (base32 "1gq882r4jkq8f0xm3qmjh4zx540sgpdhlj8894dhf5g6vhgaa1kd"))))
-    (properties `((upstream-name . "phaseR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-desolve))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mjg211/phaseR")
-    (synopsis
-     "Phase Plane Analysis of One- And Two-Dimensional Autonomous ODE Systems")
-    (description
-     "This package performs a qualitative analysis of one- and two-dimensional
-autonomous ordinary differential equation systems, using phase plane methods.
-Programs are available to identify and classify equilibrium points, plot the
-direction field, and plot trajectories for multiple initial conditions.  In the
-one-dimensional case, a program is also available to plot the phase portrait.
-Whilst in the two-dimensional case, programs are additionally available to plot
-nullclines and stable/unstable manifolds of saddle points.  Many example systems
-are provided for the user.  For further details can be found in Grayling (2014)
-<doi:10.32614/RJ-2014-023>.")
-    (license license:expat)))
-
 (define-public r-phase1rmd
   (package
     (name "r-phase1rmd")
@@ -37234,13 +37182,13 @@ binary, continuous, and count outcomes (Zhang et al., 2014
 (define-public r-pcmrs
   (package
     (name "r-pcmrs")
-    (version "0.1-4")
+    (version "0.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PCMRS" version))
        (sha256
-        (base32 "0bf85zv3nl13gsdi96cd2qg7mfppsccs0ci7l204hws8nmbvri83"))))
+        (base32 "11rkvsgz24nharal1z68g2l7px6mhq5rm8sc8c3kjiiq4f8wz83p"))))
     (properties `((upstream-name . "PCMRS")))
     (build-system r-build-system)
     (arguments
@@ -42171,6 +42119,31 @@ PS1 images. (see <https://outerspace.stsci.edu/display/PANSTARRS/> for more
 information).  You can use it to plan astronomical observations, make guidance
 pictures, find magnitudes in five broadband filters (g, r, i, z, y) and more.")
     (license license:expat)))
+
+(define-public r-panprsnext
+  (package
+    (name "r-panprsnext")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PANPRSnext" version))
+       (sha256
+        (base32 "1cjk46lwhrg2k109iadlf7mknfxdbahkvg83xk1p2866rjigxfws"))))
+    (properties `((upstream-name . "PANPRSnext")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-gtools))
+    (home-page "https://cran.r-project.org/package=PANPRSnext")
+    (synopsis "Building PRS Models Based on Summary Statistics of GWAs")
+    (description
+     "Shrinkage estimator for polygenic risk prediction (PRS) models based on summary
+statistics of genome-wide association (GWA) studies.  Based upon the methods and
+original PANPRS package as found in: Chen, Chatterjee, Landi, and Shi (2020)
+<doi:10.1080/01621459.2020.1764849>.")
+    (license license:gpl3)))
 
 (define-public r-pannotator
   (package

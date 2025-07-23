@@ -3356,13 +3356,13 @@ complete stories, collected for the purpose of text analysis.")
 (define-public r-lotta
   (package
     (name "r-lotta")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LoTTA" version))
        (sha256
-        (base32 "149idp9gfbpkfyl875z55cl2qfz1sx6fnpdcblfgw2yqdqj58v68"))))
+        (base32 "1lhcdf5g5nbc3cx984c3gmq9h76y6cvs2ka9np72i4fcily1hh9r"))))
     (properties `((upstream-name . "LoTTA")))
     (build-system r-build-system)
     (arguments

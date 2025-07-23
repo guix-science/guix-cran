@@ -8127,13 +8127,13 @@ Kleen, and Sjoerup (2022, <doi:10.18637/jss.v104.i08>).")
 (define-public r-highfive
   (package
     (name "r-highfive")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HighFive" version))
        (sha256
-        (base32 "0plfnrn0965fhdynlw7wkx0wgs32c86xix1nzq4b08waq6rhmaz3"))))
+        (base32 "1zj4rrbl09k6cqn9js1ky0cd779dy0zq6m1wvhanxqgy53r6dhjg"))))
     (properties `((upstream-name . "HighFive")))
     (build-system r-build-system)
     (arguments
@@ -11678,13 +11678,13 @@ body mass index etc.  related to fitness and health of a person.")
 (define-public r-healthatlas
   (package
     (name "r-healthatlas")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthatlas" version))
        (sha256
-        (base32 "10qz7ibba3qjvp1bf75m4313ymxgvfvinnsplzmdakp5j76hg153"))))
+        (base32 "1pqljkhrsxdbzmjrwygb7dj6h9h3jfff9jzj015kb4120hz7jiys"))))
     (properties `((upstream-name . "healthatlas")))
     (build-system r-build-system)
     (arguments

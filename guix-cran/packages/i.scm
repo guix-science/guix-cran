@@ -693,6 +693,33 @@ cluster effect ratio.  To test the third estimand, user needs to install Gurobi
 <https://www.gurobi.com/documentation/9.0/refman/ins_the_r_package.html>.")
     (license license:gpl3)))
 
+(define-public r-ivdesc
+  (package
+    (name "r-ivdesc")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivdesc" version))
+       (sha256
+        (base32 "04ap12ff5aqr2sgwkmzq4xzzp9hy0pchvjza5kk55mm228hqv1n4"))))
+    (properties `((upstream-name . "ivdesc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsample r-purrr r-knitr))
+    (home-page "https://github.com/sumtxt/ivdesc/")
+    (synopsis
+     "Profiling Compliers and Non-Compliers for Instrumental Variable Analysis")
+    (description
+     "Estimating the mean and variance of a covariate for the complier, never-taker
+and always-taker subpopulation in the context of instrumental variable
+estimation.  This package implements the method described in Marbach and
+Hangartner (2020) <doi:10.1017/pan.2019.48> and Hangartner, Marbach, Henckel,
+Maathuis, Kelz and Keele (2021) <doi:10.48550/@code{arXiv.2103.06328>}.")
+    (license license:gpl3)))
+
 (define-public r-ivcor
   (package
     (name "r-ivcor")
@@ -11793,13 +11820,13 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncidencePrevalence" version))
        (sha256
-        (base32 "0jwhgwm2dbnb5hgxv5fwzrqyn2r604k26s2p687hlzm23p01cfby"))))
+        (base32 "0mvpyz3r6kkpny13yz72bb3jdcfm8wy5a6awp39ar8yz6g7dxijp"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
     (arguments
@@ -16270,13 +16297,13 @@ the reference sources, respectively.")
 (define-public r-ieegio
   (package
     (name "r-ieegio")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieegio" version))
        (sha256
-        (base32 "1ma8dhv43brq3lgp18hd05gjabhv1wwacas93y7xg3sdfahyhkqm"))))
+        (base32 "0q980v593fpa9k3k2f93xrbkly6p7zhysmg8y19zr634x8vdphlb"))))
     (properties `((upstream-name . "ieegio")))
     (build-system r-build-system)
     (arguments
@@ -17155,13 +17182,13 @@ performed using an expectation-maximisation algorithm.")
 (define-public r-idf
   (package
     (name "r-idf")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IDF" version))
        (sha256
-        (base32 "19mg7a83badb3wqnrmx5ric0nlfdb33wcxfmq9457s8019ghvpvv"))))
+        (base32 "1h6wamq7fhjijr1s64q4q14i1kgrky4vyv9anvspnvh2pl0dklyd"))))
     (properties `((upstream-name . "IDF")))
     (build-system r-build-system)
     (arguments
@@ -20330,13 +20357,13 @@ management.")
 (define-public r-ibdsim2
   (package
     (name "r-ibdsim2")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibdsim2" version))
        (sha256
-        (base32 "1sqh1sqm8pw6fwfc06pwsyid4z5dkdhl9cgjzsi64hij4h18xc5b"))))
+        (base32 "088ljmr6fkqj9zy04xpw7vsjkjvqd6s79330gi16x840vapagk02"))))
     (properties `((upstream-name . "ibdsim2")))
     (build-system r-build-system)
     (arguments

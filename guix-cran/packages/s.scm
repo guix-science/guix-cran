@@ -2781,19 +2781,19 @@ estimation by Taylor series linearisation or replicate weights.")
 (define-public r-svycdiff
   (package
     (name "r-svycdiff")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svycdiff" version))
        (sha256
-        (base32 "1hfgrcrkwgsi3d71aih9w866cwnidhkl45bnw29g0gz3wyvxj9gs"))))
+        (base32 "1smi4zcvs7ihik5l489klj3hg4mbzgnkw9zzw9hly4g3crha3j6p"))))
     (properties `((upstream-name . "svycdiff")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survey r-numderiv r-betareg))
+    (propagated-inputs (list r-survey r-numderiv r-mass r-betareg))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/salernos/svycdiff")
     (synopsis "Controlled Difference Estimation for Complex Surveys")
@@ -5935,6 +5935,44 @@ completed using Markov chain Monte Carlo via the Stan modeling language.
 References: Donegan, Hughes, and Lee (2022) <doi:10.2196/34589>; Stan
 Development Team (2021) <https://mc-stan.org>; Theil (1972, ISBN:0-444-10378-3).")
     (license license:gpl3+)))
+
+(define-public r-survdnn
+  (package
+    (name "r-survdnn")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survdnn" version))
+       (sha256
+        (base32 "0xqdf3i95lbzxmrjjvwzdsrc6zw9zy6625yvfias4ca91mdqrj7f"))))
+    (properties `((upstream-name . "survdnn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch
+                             r-tidyr
+                             r-tibble
+                             r-survival
+                             r-rsample
+                             r-purrr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/ielbadisy/survdnn")
+    (synopsis "Deep Neural Networks for Survival Analysis Using 'torch'")
+    (description
+     "This package provides deep learning models for right-censored survival data
+using the torch backend.  Supports multiple loss functions, including Cox
+partial likelihood, L2-penalized Cox, time-dependent Cox, and accelerated
+failure time (AFT) loss.  Offers a formula-based interface, built-in support for
+cross-validation, hyperparameter tuning, survival curve plotting, and evaluation
+metrics such as the C-index, Brier score, and integrated Brier score.  For
+methodological details, see Kvamme et al. (2019)
+<https://www.jmlr.org/papers/v20/18-424.html>.")
+    (license license:expat)))
 
 (define-public r-survdisc
   (package
@@ -14080,13 +14118,13 @@ effects.")
 (define-public r-stdistance
   (package
     (name "r-stdistance")
-    (version "0.6.4")
+    (version "0.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "STDistance" version))
        (sha256
-        (base32 "1jy2sa37crb91hl72i2qlc53wvpbq2byxgcky8hszdqqb5xk3fm2"))))
+        (base32 "18scd94v91awi4q261q8nqpqvi9hsw4rby6zraafqsqz63mlakd2"))))
     (properties `((upstream-name . "STDistance")))
     (build-system r-build-system)
     (arguments
@@ -35869,6 +35907,40 @@ likelihood in the parametric approach and by penalized maximum likelihood in the
 semi-parametric approach.")
     (license license:gpl2+)))
 
+(define-public r-smoothemplik
+  (package
+    (name "r-smoothemplik")
+    (version "0.0.14")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smoothemplik" version))
+       (sha256
+        (base32 "16bwkb2a424lwpb4hv0frk2ph2nq1vlb88hc885wkirxxmdzb2xa"))))
+    (properties `((upstream-name . "smoothemplik")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-testthat
+                             r-rdpack
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Fifis/smoothemplik")
+    (synopsis "Smoothed Empirical Likelihood")
+    (description
+     "Empirical likelihood methods for asymptotically efficient estimation of models
+based on conditional or unconditional moment restrictions; see Kitamura,
+Tripathi & Ahn (2004) <doi:10.1111/j.1468-0262.2004.00550.x> and Owen (2013)
+<doi:10.1002/cjs.11183>.  Kernel-based non-parametric methods for
+density/regression estimation and numerical routines for empirical likelihood
+maximisation are implemented in Rcpp for speed.")
+    (license (license:fsdg-compatible "EUPL"))))
+
 (define-public r-smoothedlasso
   (package
     (name "r-smoothedlasso")
@@ -47643,6 +47715,30 @@ format.  Supports inference from range statistics such as extreme spread.
 Includes a set of web-based graphical user interfaces.")
     (license license:gpl2+)))
 
+(define-public r-shortuuid
+  (package
+    (name "r-shortuuid")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shortuuid" version))
+       (sha256
+        (base32 "1kd6pgdn01bsxzabkdfmzr08nwf82d2n6njvb128bgyr5jdc61s8"))))
+    (properties `((upstream-name . "shortuuid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=shortuuid")
+    (synopsis "Generate and Translate Standard UUIDs")
+    (description
+     "Generate and translate standard Universally Unique Identifiers (UUIDs) into
+shorter - or just different - formats and back.  Also implements base58 encoders
+and decoders.")
+    (license license:expat)))
+
 (define-public r-shorts
   (package
     (name "r-shorts")
@@ -47897,6 +47993,40 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
     (description
      "Block-diagonal covariance selection for high dimensional Gaussian graphical
 models.  The selection procedure is based on the slope heuristics.")
+    (license license:gpl3+)))
+
+(define-public r-shiva
+  (package
+    (name "r-shiva")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ShiVa" version))
+       (sha256
+        (base32 "0ms48qdir5hb12h50mz63f0h2wbicpjaf6sqisx4pp4r76g3hlgi"))))
+    (properties `((upstream-name . "ShiVa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-psych
+                             r-phylolm
+                             r-mass
+                             r-igraph
+                             r-glmnet
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ShiVa")
+    (synopsis
+     "Detection of Evolutionary Shifts in Both Optimal Value and Variance")
+    (description
+     "This package implements statistical methods for detecting evolutionary shifts in
+both the optimal trait value (mean) and evolutionary diffusion variance.  The
+method uses an L1-penalized optimization framework to identify branches where
+shifts occur, and the shift magnitudes.  It also supports the inclusion of
+measurement error.  For more details, see Zhang, Ho, and Kenney (2023)
+<doi:10.48550/@code{arXiv.2312.17480>}.")
     (license license:gpl3+)))
 
 (define-public r-shipunov
@@ -58200,6 +58330,31 @@ even though any parametric model that satisfies certain identifiability
 conditions could be used.  Implemented methods are described in the article
 \"Copula based Cox proportional hazards models for dependent censoring\" by Deresa
 and Van Keilegom (2024) <doi:10.1080/01621459.2022.2161387>.")
+    (license license:gpl3)))
+
+(define-public r-seminrextras
+  (package
+    (name "r-seminrextras")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "seminrExtras" version))
+       (sha256
+        (base32 "1xfj03qc5wzvk561dn8flv3bww12305chqs25chcbmy9yya3j1b1"))))
+    (properties `((upstream-name . "seminrExtras")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-seminr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sem-in-r/seminr")
+    (synopsis "Conduct Additional Modeling and Analysis for 'seminr'")
+    (description
+     "Supplemental functions for estimating and analysing structural equation models
+including Cross Validated Prediction and Testing (CVPAT, Liengaard et al., 2021
+<doi:10.1111/deci.12445>).")
     (license license:gpl3)))
 
 (define-public r-seminr

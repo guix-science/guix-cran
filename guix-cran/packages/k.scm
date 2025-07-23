@@ -5802,6 +5802,41 @@ redundancy in the spirit of the \"Don't repeat yourself\" principle of software
 development (<https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>).")
     (license license:gpl3+)))
 
+(define-public r-kdps
+  (package
+    (name "r-kdps")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kdps" version))
+       (sha256
+        (base32 "0wff0xmmk951mbmdnj3fvyg51qy6h9zfnajhslixvrd1br7gd1r1"))))
+    (properties `((upstream-name . "kdps")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-progress r-dplyr r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/UCSD-Salem-Lab/kdps")
+    (synopsis "Kinship Decouple and Phenotype Selection (KDPS)")
+    (description
+     "This package provides a phenotype-aware algorithm for resolving cryptic
+relatedness in genetic studies.  It removes related individuals based on kinship
+or identity-by-descent (IBD) scores while prioritizing subjects with phenotypes
+of interest.  This approach helps maximize the retention of informative
+subjects, particularly for rare or valuable traits, and improves statistical
+power in genetic and epidemiological studies.  KDPS supports both categorical
+and quantitative phenotypes, composite scoring, and customizable pruning
+strategies using a fuzziness parameter.  Benchmark results show improved
+phenotype retention and high computational efficiency on large-scale datasets
+like the UK Biobank.  Methods used include Manichaikul et al. (2010)
+<doi:10.1093/bioinformatics/btq559> for kinship estimation, Purcell et al.
+(2007) <doi:10.1086/519795> for IBD estimation, and Bycroft et al. (2018)
+<doi:10.1038/s41586-018-0579-z> for UK Biobank data reference.")
+    (license license:expat)))
+
 (define-public r-kdml
   (package
     (name "r-kdml")

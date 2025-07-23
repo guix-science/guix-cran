@@ -5897,6 +5897,31 @@ Rouanet, Mba, Philipps, Dartigues (2020) for details
 <doi:10.1177/0962280220909986>.")
     (license license:gpl2+)))
 
+(define-public r-weightmyitems
+  (package
+    (name "r-weightmyitems")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WeightMyItems" version))
+       (sha256
+        (base32 "14l4a79ws2yay2a7vdj7kq39rpi8q4wdysckh1vsyz1snw1rs2jy"))))
+    (properties `((upstream-name . "WeightMyItems")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-psychometric))
+    (home-page "https://cran.r-project.org/package=WeightMyItems")
+    (synopsis "An Item Weighting Method for Item Response Matrices")
+    (description
+     "Applies the item weighting method from Kilic & Dogan (2019)
+<doi:10.21031/epod.516057>.  To improve construct validity, this method
+re-computes scores by utilizing the item discrimination index in conjunction
+with a condition established upon person ability and item difficulty.")
+    (license license:gpl3)))
+
 (define-public r-weightit
   (package
     (name "r-weightit")
@@ -7165,13 +7190,13 @@ protocol.")
 (define-public r-webanalytics
   (package
     (name "r-webanalytics")
-    (version "0.9.12")
+    (version "0.9.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WebAnalytics" version))
        (sha256
-        (base32 "031gyndk605841ns33pifhfwlasa39jhrmvigw84iqc2dgxqqpgl"))))
+        (base32 "1jfpkhxf44bd935my25jm2gray2v6bfc3gylbgh0hkjv1v9hq7sv"))))
     (properties `((upstream-name . "WebAnalytics")))
     (build-system r-build-system)
     (arguments
