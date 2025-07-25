@@ -1792,13 +1792,13 @@ group by individual data according to methods described in Godde et al. (2013)
 (define-public r-hwep
   (package
     (name "r-hwep")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hwep" version))
        (sha256
-        (base32 "0cvy9s9kwc1jp4klgbjahidpk8gkvfa43vry8i0y77nvfys7x9v9"))))
+        (base32 "1gqjblh7cq5kcqjwjvrzfw159kvbg2qv7w4fpa8kfkx92gvcszqn"))))
     (properties `((upstream-name . "hwep")))
     (build-system r-build-system)
     (arguments
@@ -1834,8 +1834,8 @@ double reduction.  The main function is @code{hwefit()}.  This material is based
 upon work supported by the National Science Foundation under Grant No.  2132247.
  The opinions, findings, and conclusions or recommendations expressed are those
 of the author and do not necessarily reflect the views of the National Science
-Foundation.  For details of these methods, see Gerard (2022a)
-<doi:10.1111/biom.13722> and Gerard (2022b) <doi:10.1101/2022.08.11.503635>.")
+Foundation.  For details of these methods, see Gerard (2023a)
+<doi:10.1111/biom.13722> and Gerard (2023b) <doi:10.1111/1755-0998.13856>.")
     (license license:gpl3+)))
 
 (define-public r-hweintrinsic
@@ -2592,13 +2592,13 @@ performance.")
 (define-public r-httk
   (package
     (name "r-httk")
-    (version "2.6.1")
+    (version "2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "httk" version))
        (sha256
-        (base32 "1ll3j8750jabh2h5xz69rd9h300kksq80j1cnk3h27wkw9zsplyf"))))
+        (base32 "0ppdvqy049iw9b5hn0270ljr04srm1l5wm5ji9i7dbxyg9j8zis8"))))
     (properties `((upstream-name . "httk")))
     (build-system r-build-system)
     (arguments
@@ -6878,6 +6878,53 @@ Hierarchical Approach Using Marginal Summary Statistics for Multiple
 Intermediates in a Mendelian Randomization or Transcriptome Analysis.\"
 <@code{bioRxiv><doi:10.1101/2020.02.03.924241>}.")
     (license license:expat)))
+
+(define-public r-hiviz
+  (package
+    (name "r-hiviz")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HIViz" version))
+       (sha256
+        (base32 "0ddmqfpxn3wg3y9z6n3cwrjj3w6y0wlq82a9kkl8wmcksah6cjg8"))))
+    (properties `((upstream-name . "HIViz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wordcloud
+                             r-tidyr
+                             r-shinywidgets
+                             r-shinydashboard
+                             r-shiny
+                             r-readxl
+                             r-plotly
+                             r-paletteer
+                             r-haven
+                             r-ggrepel
+                             r-ggplot2
+                             r-dt
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Atefehrashidi/HIViz")
+    (synopsis "Interactive Dashboard for 'HIV' Data Visualization")
+    (description
+     "An interactive Shiny dashboard for visualizing and exploring key metrics related
+to HIV/AIDS, including prevalence, incidence, mortality, and treatment coverage.
+ The dashboard is designed to work with a dataset containing specific columns
+with standardized names.  These columns must be present in the input data for
+the app to function properly: year: Numeric year of the data (e.g. 2010, 2021);
+sex: Gender classification (e.g. Male, Female); age_group: Age bracket (e.g.
+15â24, 25â34); hiv_prevalence: Estimated HIV prevalence percentage;
+hiv_incidence: Number of new HIV cases per year; aids_deaths: Total AIDS-related
+deaths; plhiv: Estimated number of people living with HIV; art_coverage:
+Percentage receiving antiretroviral therapy (ART); testing_coverage: HIV testing
+services coverage; causes: Description of likely HIV transmission cause (e.g.
+unprotected sex, drug use).  The dataset structure must strictly follow this
+column naming convention for the dashboard to render correctly.")
+    (license license:gpl3)))
 
 (define-public r-hiver
   (package

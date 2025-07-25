@@ -842,13 +842,13 @@ Generalised Least Squares approach.  For details see Veiga et al.(2014)
 (define-public r-pwir
   (package
     (name "r-pwir")
-    (version "0.0.3")
+    (version "0.0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PWIR" version))
        (sha256
-        (base32 "05f4mj8id8ikfz63c8c1lkbxl7s1b2q5xri8iicn1xv2m3w89p2v"))))
+        (base32 "1fslzlnafmhq62l4l1m1aap1pp8k7glsx9529gxybrs8i5bwxvbj"))))
     (properties `((upstream-name . "PWIR")))
     (build-system r-build-system)
     (arguments
@@ -2328,13 +2328,13 @@ version updates.")
 (define-public r-publish
   (package
     (name "r-publish")
-    (version "2023.01.17")
+    (version "2025.07.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Publish" version))
        (sha256
-        (base32 "0lsr27014zm389xzyddklkql05zh4x9d7jcjz3yv78fwbjzw4v23"))))
+        (base32 "1ay89c0ldxnavp9dlphawjcfbi3291wksdsfgrjv8x1wn7ziy57y"))))
     (properties `((upstream-name . "Publish")))
     (build-system r-build-system)
     (arguments
@@ -8051,13 +8051,13 @@ maximum profile likelihood estimates and the kth likelihood support intervals.")
 (define-public r-profileladder
   (package
     (name "r-profileladder")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProfileLadder" version))
        (sha256
-        (base32 "0qrw6k12pbdribjlk25rvmlvkgbs5w9b3lf5lazff0xx0hqhkb7w"))))
+        (base32 "03v2ph3ms5r63i90a9cc6wl7pdav01fg6zff36ncx77mgcmhch1p"))))
     (properties `((upstream-name . "ProfileLadder")))
     (build-system r-build-system)
     (arguments
@@ -12023,13 +12023,13 @@ covariates to predict outcomes under treatment and control.")
 (define-public r-predictsr
   (package
     (name "r-predictsr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predictsr" version))
        (sha256
-        (base32 "1v6nlwicqmkr5m4l247nz443vpq926225fyhy6h1wc9zg86nvm54"))))
+        (base32 "161q2ni36hm6b1hwhbzrcp8q1qd1kqhqqysbz8vf7fz2r8ja1vqb"))))
     (properties `((upstream-name . "predictsr")))
     (build-system r-build-system)
     (arguments
@@ -14143,19 +14143,20 @@ see Wood, S.N., Pya, N. & Safken, B. (2016) <doi:10.1080/01621459.2016.1180986>.
 (define-public r-ppforest
   (package
     (name "r-ppforest")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PPforest" version))
        (sha256
-        (base32 "1byn2l91nws91xgjjal610vv4yns12z861rq3iks4kv4giwgdfq1"))))
+        (base32 "1vk2986yqfzylgdv4p400y34vd8qm9z1s6hqgdz67w2w9h5yjjip"))))
     (properties `((upstream-name . "PPforest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-rcpparmadillo
                              r-rcpp
@@ -18879,13 +18880,13 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
 (define-public r-polyglotr
   (package
     (name "r-polyglotr")
-    (version "1.6.1")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyglotr" version))
        (sha256
-        (base32 "05kx23k5962q6jk0ny4jfibd6vwk7hz5c86c9492a9b8384x48zd"))))
+        (base32 "1bwvynfgmsz8avz9f3frr21rr8wram284l3cslsqblnfq64dmksr"))))
     (properties `((upstream-name . "polyglotr")))
     (build-system r-build-system)
     (arguments
@@ -24181,13 +24182,13 @@ variation.  Yousefi et al. (2023) <doi:10.1101/2023.01.22.525058>.")
 (define-public r-plelma
   (package
     (name "r-plelma")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pleLMA" version))
        (sha256
-        (base32 "1n6q4x8qv00j0hikzzr600xgikhr462zm73zllb9n0valhmzy18z"))))
+        (base32 "1ywdz27x1l5x7n6isz8kncbr9w48q6gnf0xb5zmd5m3h3lfbm4vh"))))
     (properties `((upstream-name . "pleLMA")))
     (build-system r-build-system)
     (arguments
@@ -35362,13 +35363,13 @@ two-samples t-tests in a multivariate framework.")
 (define-public r-pec
   (package
     (name "r-pec")
-    (version "2023.04.12")
+    (version "2025.06.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pec" version))
        (sha256
-        (base32 "15ggf3fa1p5r0dl7k2j99cc920jvmk0p1ny0jzyrpddh8fcgwlk5"))))
+        (base32 "07yab2zrs45wmwd0fmicm7383g8izv8n2dln5hc2z082sz77mfwf"))))
     (properties `((upstream-name . "pec")))
     (build-system r-build-system)
     (arguments
@@ -37497,13 +37498,13 @@ Network Learning Algorithm\".  Mathematics 2022, 10(15): 2604.
 (define-public r-pch
   (package
     (name "r-pch")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pch" version))
        (sha256
-        (base32 "15dvrcrbcql54wf011r1a3pl3v2b551mq0pf4wcr7wjrf330h1w3"))))
+        (base32 "1cg1hjyczvhcx44gmkb5n6yd266lqmphi7p618zd6ip0qx015ank"))))
     (properties `((upstream-name . "pch")))
     (build-system r-build-system)
     (arguments
@@ -40249,6 +40250,34 @@ Also referred to the following implementation:
     (description "An R package for polygenic trait analysis.")
     (license license:gpl2+)))
 
+(define-public r-parzer
+  (package
+    (name "r-parzer")
+    (version "0.4.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "parzer" version))
+       (sha256
+        (base32 "09w06pb8gbcdy6839br6q728b3qdffiba1hjc4jcj26cdp8l99np"))))
+    (properties `((upstream-name . "parzer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-rcpp))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/ropensci/parzer")
+    (synopsis "Parse Messy Geographic Coordinates")
+    (description
+     "Parse messy geographic coordinates from various character formats to decimal
+degree numeric values.  Parse coordinates into their parts (degree, minutes,
+seconds); calculate hemisphere from coordinates; pull out individually degrees,
+minutes, or seconds; add and subtract degrees, minutes, and seconds.  C++ code
+herein originally inspired from code written by Jeffrey D. Bogan, but then
+completely re-written.")
+    (license license:expat)))
+
 (define-public r-parttree
   (package
     (name "r-parttree")
@@ -41169,13 +41198,13 @@ Quality Standards (NAAQS).")
 (define-public r-parfm
   (package
     (name "r-parfm")
-    (version "2.7.7")
+    (version "2.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parfm" version))
        (sha256
-        (base32 "12kcvdpmp99lqgr1775xqjkcn3s5agng1hwhjq2sa3bgrjgmhsh5"))))
+        (base32 "149dsnka40gbwwc45ccrkdjwcgzf5p61v9h0mpcghm48pn84sy5g"))))
     (properties `((upstream-name . "parfm")))
     (build-system r-build-system)
     (arguments

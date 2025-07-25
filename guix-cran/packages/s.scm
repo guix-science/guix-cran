@@ -14653,13 +14653,13 @@ of our methods.")
 (define-public r-statquotes
   (package
     (name "r-statquotes")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statquotes" version))
        (sha256
-        (base32 "0y805alr98zz306jjnikggdd02c3yrp5izzwhh457bsb85i22yri"))))
+        (base32 "1vgm5wyyllymbj8xngilhc4sdpn6kbm4kn6g2j6hlxgg8m44wq3d"))))
     (properties `((upstream-name . "statquotes")))
     (build-system r-build-system)
     (arguments
@@ -15089,13 +15089,13 @@ international (<https://vsni.co.uk/software/asreml-r/>).")
 (define-public r-statgenqtlxt
   (package
     (name "r-statgenqtlxt")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenQTLxT" version))
        (sha256
-        (base32 "1lq8v49zf9l6gaifdwc0qpx8kknnhqw2jg19v2vr7da1xqd7wfdi"))))
+        (base32 "0pwb5sdviwwzvipbyif1nd2ifjxs8rxwgg14mvj0amla36kd55rp"))))
     (properties `((upstream-name . "statgenQTLxT")))
     (build-system r-build-system)
     (arguments
@@ -15712,13 +15712,13 @@ are explained in the text book of Montgomery and Runger (2010) <ISBN:
 (define-public r-statar
   (package
     (name "r-statar")
-    (version "0.7.6")
+    (version "0.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statar" version))
        (sha256
-        (base32 "0fjlmzndcm88dlqf6kmd1ssy0ll2g7vap6cai954lh37zbbbb674"))))
+        (base32 "12vzahbgdrwi89x9gms60z04vl5zwndhrraylpdlpx30dy0ir6w9"))))
     (properties `((upstream-name . "statar")))
     (build-system r-build-system)
     (arguments
@@ -15740,28 +15740,6 @@ are explained in the text book of Montgomery and Runger (2010) <ISBN:
 ('summarize', tabulate', xtile', pctile', binscatter', elapsed quarters/month,
 lead/lag).")
     (license license:gpl2)))
-
-(define-public r-statamarkdown
-  (package
-    (name "r-statamarkdown")
-    (version "0.9.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Statamarkdown" version))
-       (sha256
-        (base32 "1ir2qh492q0rn6rwnmvj2cxqsssmsd5hm9vlyg0r7dk22grh19z0"))))
-    (properties `((upstream-name . "Statamarkdown")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-xfun r-knitr))
-    (home-page "https://cran.r-project.org/package=Statamarkdown")
-    (synopsis "'Stata' Markdown")
-    (description "Settings and functions to extend the knitr Stata engine.")
-    (license license:expat)))
 
 (define-public r-stat2data
   (package
@@ -17183,13 +17161,13 @@ infer a causal model.")
 (define-public r-stablelearner
   (package
     (name "r-stablelearner")
-    (version "0.1-5")
+    (version "0.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stablelearner" version))
        (sha256
-        (base32 "0a1fsy9hf63c1yfp4dallfsiknzsnhjl91yzqsgvni3gyx0vjykm"))))
+        (base32 "0pam43vkfwxjv0dynpg0w8csc6yjs32g0kniabj1436llm73i09y"))))
     (properties `((upstream-name . "stablelearner")))
     (build-system r-build-system)
     (arguments
@@ -21325,13 +21303,13 @@ at a single spatial scale.")
 (define-public r-spscomps
   (package
     (name "r-spscomps")
-    (version "0.3.3.0")
+    (version "0.3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spsComps" version))
        (sha256
-        (base32 "1yhd2iw9z614mcb2lnq43x5ixfpc5lbdm5avgawp726c3fvflky8"))))
+        (base32 "1l69yigdabwwsixk364jvmc1c5nc8d4djc77cf0jlzshhdsjbqx8"))))
     (properties `((upstream-name . "spsComps")))
     (build-system r-build-system)
     (arguments
@@ -26738,13 +26716,13 @@ journal Bayesian Analysis.")
 (define-public r-spbayessurv
   (package
     (name "r-spbayessurv")
-    (version "1.1.8")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spBayesSurv" version))
        (sha256
-        (base32 "0z91k88m5bh8ipicb43kknxshjr6dwr6whfkm28j49xwjrm4ydsy"))))
+        (base32 "1q95vq26zzfkg6adqy65p6yc73inn5w2wwb2vv8vrxxz1n6j9d1r"))))
     (properties `((upstream-name . "spBayesSurv")))
     (build-system r-build-system)
     (arguments
@@ -27675,13 +27653,13 @@ implementations from the works of @code{LeSage} and Pace (2009, ISBN:
 (define-public r-spatialposition
   (package
     (name "r-spatialposition")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatialPosition" version))
        (sha256
-        (base32 "12xglqrw4mqdfshd325gicrd3gnrkiaj1i2p5mlpklhdciahv1pi"))))
+        (base32 "1pa3sr7jmjs6vyv4212ybhsxqzdmxkhc0h685ncxy6nrhcni5jvh"))))
     (properties `((upstream-name . "SpatialPosition")))
     (build-system r-build-system)
     (arguments
@@ -33116,13 +33094,13 @@ collect the management data.")
 (define-public r-soilhypfit
   (package
     (name "r-soilhypfit")
-    (version "0.1-7")
+    (version "0.1-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilhypfit" version))
        (sha256
-        (base32 "1ssz9w9ibw8mban0fq50j4lgr8vmkrsn8v9cpkg0wl28z1hqbhz3"))))
+        (base32 "1y0idnwrdslj8qj4l3rl7rpckg2w3r8qf63i71qxmginzifqhgg0"))))
     (properties `((upstream-name . "soilhypfit")))
     (build-system r-build-system)
     (arguments
@@ -35879,13 +35857,13 @@ reference.  Confidence bands for these curves are also derived.")
 (define-public r-smoothhazard
   (package
     (name "r-smoothhazard")
-    (version "2024.04.10")
+    (version "2025.07.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SmoothHazard" version))
        (sha256
-        (base32 "18nn6c94lr1l49z9wj5grxck72dk9rkppg0qh5qbgcdkfxww4096"))))
+        (base32 "0175pnfmqzrkrl6173szw51yfrn4kgs2jvs9czzybdgabs1za8r9"))))
     (properties `((upstream-name . "SmoothHazard")))
     (build-system r-build-system)
     (arguments
@@ -39386,13 +39364,13 @@ the selected 2 service provider.")
 (define-public r-sklarsomega
   (package
     (name "r-sklarsomega")
-    (version "3.0-2")
+    (version "3.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sklarsomega" version))
        (sha256
-        (base32 "027rx1x5hsn0qx7s6s2sqf13p49jbhi6g7w0fzfqf619p3fzkghg"))))
+        (base32 "0dgarg73lcv4jzr4hkzgm3ch1w3lzgnqsyrqjxkxyz4l4l5b5185"))))
     (properties `((upstream-name . "sklarsomega")))
     (build-system r-build-system)
     (arguments
@@ -39410,8 +39388,8 @@ the selected 2 service provider.")
     (home-page "https://cran.r-project.org/package=sklarsomega")
     (synopsis "Measuring Agreement Using Sklar's Omega Coefficient")
     (description
-     "This package provides tools for applying Sklar's Omega (Hughes, 2018)
-<@code{arXiv:1803.02734>} methodology to nominal scores, ordinal scores,
+     "This package provides tools for applying Sklar's Omega (Hughes, 2022)
+<doi:10.1007/s11222-022-10105-2> methodology to nominal scores, ordinal scores,
 percentages, counts, amounts (i.e., non-negative real numbers), and balances
 (i.e., any real number).  The framework can accommodate any number of units, any
 number of coders, and missingness; and can be used to measure agreement with a
@@ -40464,13 +40442,13 @@ consistency.")
 (define-public r-sits
   (package
     (name "r-sits")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sits" version))
        (sha256
-        (base32 "0298z2gisds07hsflchy7qi0686f833w2n25j5asxvvh1g0s7c9w"))))
+        (base32 "03hgkk9jry2mw597w4qqn9137crfsn36xndj4vyxmcrxxv37l421"))))
     (properties `((upstream-name . "sits")))
     (build-system r-build-system)
     (arguments
@@ -40493,6 +40471,7 @@ consistency.")
                              r-luz
                              r-lubridate
                              r-leaflet
+                             r-leafgl
                              r-dplyr))
     (home-page "https://github.com/e-sensing/sits/")
     (synopsis
@@ -40501,15 +40480,17 @@ consistency.")
      "An end-to-end toolkit for land use and land cover classification using big Earth
 observation data.  Builds satellite image data cubes from cloud collections.
 Supports visualization methods for images and time series and smoothing filters
-for dealing with noisy time series.  Includes functions for quality assessment
-of training samples using self-organized maps and to reduce training samples
-imbalance.  Provides machine learning algorithms including support vector
-machines, random forests, extreme gradient boosting, multi-layer perceptrons,
-temporal convolution neural networks, and temporal attention encoders.  Performs
+for dealing with noisy time series.  Enables merging of multi-source imagery
+(SAR, optical, DEM).  Includes functions for quality assessment of training
+samples using self-organized maps and to reduce training samples imbalance.
+Provides machine learning algorithms including support vector machines, random
+forests, extreme gradient boosting, multi-layer perceptrons, temporal
+convolution neural networks, and temporal attention encoders.  Performs
 efficient classification of big Earth observation data cubes and includes
 functions for post-classification smoothing based on Bayesian inference.
 Enables best practices for estimating area and assessing accuracy of land
-change.  Minimum recommended requirements: 16 GB RAM and 4 CPU dual-core.")
+change.  Includes object-based spatio-temporal segmentation for space-time OBIA.
+Minimum recommended requirements: 16 GB RAM and 4 CPU dual-core.")
     (license license:gpl2)))
 
 (define-public r-sitreee
@@ -42608,13 +42589,13 @@ fit evaluation, power analysis, or missing data handling and planning.")
 (define-public r-simsalapar
   (package
     (name "r-simsalapar")
-    (version "1.0-12")
+    (version "1.0-13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simsalapar" version))
        (sha256
-        (base32 "0aac4mjx4pdfhy52jvr3v2d8hp20qglzfhrvqmrvvn5pcn2qmlh4"))))
+        (base32 "0vqwi2xac8kq919xzpq361sb1rf9br94lxp004d6y9qn233091vk"))))
     (properties `((upstream-name . "simsalapar")))
     (build-system r-build-system)
     (arguments
@@ -47947,6 +47928,30 @@ provided, along with basic tools for visualising and evaluating the location of
 sites.")
     (license license:gpl3+)))
 
+(define-public r-shoppingwords
+  (package
+    (name "r-shoppingwords")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shoppingwords" version))
+       (sha256
+        (base32 "0n83xc16ydgmi0g6ggayfj36mhmwrppbbdgkxgz6ajdrjdyw0yfc"))))
+    (properties `((upstream-name . "shoppingwords")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-stringi r-stringdist r-stopwords))
+    (native-inputs (list r-knitr))
+    (home-page "https://bkanx.github.io/shoppingwords/")
+    (synopsis "Text Processing Tools for Turkish E-Commerce Data")
+    (description
+     "This package provides several datasets useful for processing and analysis of
+text in Turkish from an online shopping platform.")
+    (license license:expat)))
+
 (define-public r-shopifyadsr
   (package
     (name "r-shopifyadsr")
@@ -52663,13 +52668,13 @@ illustrate function usage.")
 (define-public r-sharp
   (package
     (name "r-sharp")
-    (version "1.4.7")
+    (version "1.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sharp" version))
        (sha256
-        (base32 "1fx9kj6316pd04wpfd1dz76wf56jp2rax172f2x7r7ymmqj1p5sk"))))
+        (base32 "1cr2850pr775wmmkmj43m72m645ggp8c40sl3wd6giji72z98789"))))
     (properties `((upstream-name . "sharp")))
     (build-system r-build-system)
     (arguments
@@ -57218,13 +57223,13 @@ clustering and imputation simultaneously.")
 (define-public r-sensominer
   (package
     (name "r-sensominer")
-    (version "1.27")
+    (version "1.28")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SensoMineR" version))
        (sha256
-        (base32 "0si7zklv94li8payg4zxcac1a7ivk90q4ckcyak536sqfinihpb3"))))
+        (base32 "1x65scrzr5xya03637xp3kpfvim86i9iwa14v2avbw8sxfnbgmqn"))))
     (properties `((upstream-name . "SensoMineR")))
     (build-system r-build-system)
     (arguments
@@ -57248,13 +57253,13 @@ sensory data analysis.  S. Le and F. Husson (2008).")
 (define-public r-sensobol
   (package
     (name "r-sensobol")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sensobol" version))
        (sha256
-        (base32 "0vw53aqlgdqncy8cpwlc959bavrsfqam7yq99ic6ij8kxqf4h9xl"))))
+        (base32 "0irdiknzrjd6mk2652qljawj4li1r9ii4m4fhbyl1wf9rh5gkg6n"))))
     (properties `((upstream-name . "sensobol")))
     (build-system r-build-system)
     (arguments
@@ -58360,13 +58365,13 @@ including Cross Validated Prediction and Testing (CVPAT, Liengaard et al., 2021
 (define-public r-seminr
   (package
     (name "r-seminr")
-    (version "2.3.4")
+    (version "2.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seminr" version))
        (sha256
-        (base32 "0zh5slwrsv20z1irfy944cd0x7940yv84p5mjj7jj9isgr9a8wbz"))))
+        (base32 "1sdqcdlbfc6jyn32a9dhva8cc35ni64b05m8fd69glh91q7lflmw"))))
     (properties `((upstream-name . "seminr")))
     (build-system r-build-system)
     (arguments
@@ -58384,11 +58389,11 @@ including Cross Validated Prediction and Testing (CVPAT, Liengaard et al., 2021
     (home-page "https://github.com/sem-in-r/seminr")
     (synopsis "Building and Estimating Structural Equation Models")
     (description
-     "This package provides a powerful, easy to syntax for specifying and estimating
-complex Structural Equation Models.  Models can be estimated using Partial Least
-Squares Path Modeling or Covariance-Based Structural Equation Modeling or
-covariance based Confirmatory Factor Analysis.  Methods described in Ray, Danks,
-and Valdez (2021).")
+     "This package provides a powerful, easy to use syntax for specifying and
+estimating complex Structural Equation Models.  Models can be estimated using
+Partial Least Squares Path Modeling or Covariance-Based Structural Equation
+Modeling or covariance based Confirmatory Factor Analysis.  Methods described in
+Ray, Danks, and Valdez (2021).")
     (license license:gpl3)))
 
 (define-public r-semimarkov
@@ -60865,13 +60870,13 @@ Streicher (2024)
 (define-public r-secsse
   (package
     (name "r-secsse")
-    (version "3.1.0")
+    (version "3.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secsse" version))
        (sha256
-        (base32 "0v4qjsjmc7shqx8cy92c99fh6bfy2zdkwi2as05r2h4c2vk3p73z"))))
+        (base32 "0cmjf21rlj6r6gbspvpfv0f3slxv174d8mzk49qfdm9394fsvrcw"))))
     (properties `((upstream-name . "secsse")))
     (build-system r-build-system)
     (arguments
@@ -63819,13 +63824,13 @@ use with Rscript'.")
 (define-public r-scregclust
   (package
     (name "r-scregclust")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scregclust" version))
        (sha256
-        (base32 "0pcnwyv3qx1wbjr27576zp0jfi1axplmghgc0yf9rjdxsh6hp44b"))))
+        (base32 "0caawk4028csa17rxvj655ms1h2kwjz2p4g6k4nyy7yrrcvy11zm"))))
     (properties `((upstream-name . "scregclust")))
     (build-system r-build-system)
     (arguments
@@ -65486,50 +65491,6 @@ includes functions for Winsorizing data based on a Z-statistic cutoff.")
 bars for data collected from one-way or higher factorial designs.")
     (license license:gpl2+)))
 
-(define-public r-scintruler
-  (package
-    (name "r-scintruler")
-    (version "0.99.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SCIntRuler" version))
-       (sha256
-        (base32 "1ap23iighbx1x3blfh0b9srgk5mzinl3gy0addfwd6i40a160brp"))))
-    (properties `((upstream-name . "SCIntRuler")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-summarizedexperiment
-                             r-singlecellexperiment
-                             r-seuratobject
-                             r-seurat
-                             r-rcpp
-                             r-matrixgenerics
-                             r-matrix
-                             r-magrittr
-                             r-harmony
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr
-                             r-cowplot
-                             r-coin
-                             r-batchelor))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/yuelyu21/SCIntRuler")
-    (synopsis
-     "Guiding the Integration of Multiple Single-Cell RNA-Seq Datasets")
-    (description
-     "The accumulation of single-cell RNA-seq ('@code{scRNA-seq}') studies highlights
-the potential benefits of integrating multiple datasets.  By augmenting sample
-sizes and enhancing analytical robustness, integration can lead to more
-insightful biological conclusions.  However, challenges arise due to the
-inherent diversity and batch discrepancies within and across studies.
-SC@code{IntRuler}', a novel R package, addresses these challenges by guiding the
-integration of multiple @code{scRNA-seq} datasets.")
-    (license license:expat)))
-
 (define-public r-scinsight
   (package
     (name "r-scinsight")
@@ -65594,13 +65555,13 @@ expressed in each category.  See Zhang Z, et al (2019)
 (define-public r-scimo
   (package
     (name "r-scimo")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scimo" version))
        (sha256
-        (base32 "1fvljxn6m01wv4hmljcrki2wzbc0nlr3zrbyw80jbzw3p55vqgls"))))
+        (base32 "1mly3l0gyzf2ifx4x4zagd01pib75r1r5f4sml6vm8d01f7d0k8q"))))
     (properties `((upstream-name . "scimo")))
     (build-system r-build-system)
     (arguments
@@ -68932,39 +68893,16 @@ Milliken, Stroup and Wolfinger (1996), \"SAS System for Mixed Models\", SAS
 Institute.")
     (license license:gpl2+)))
 
-(define-public r-sasmarkdown
-  (package
-    (name "r-sasmarkdown")
-    (version "0.8.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SASmarkdown" version))
-       (sha256
-        (base32 "0xrrmb2zmm0mdg4akm5rnzbxxx690w9mv90mp830kbs42i0haqqg"))))
-    (properties `((upstream-name . "SASmarkdown")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-xfun r-knitr))
-    (home-page
-     "https://www.ssc.wisc.edu/~hemken/SASworkshops/sas.html#writing-sas-documentation")
-    (synopsis "'SAS' Markdown")
-    (description "Settings and functions to extend the knitr SAS engine.")
-    (license license:expat)))
-
 (define-public r-saslm
   (package
     (name "r-saslm")
-    (version "0.10.5")
+    (version "0.10.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sasLM" version))
        (sha256
-        (base32 "1m44rf8mpw9pc5jlxw8ab5z62knj0fjfvbrs53yvfvlbh39xjbq4"))))
+        (base32 "10yfyj5fara54dgdc3ir3ygns63ahh7aidb3ifbi7xby5i39nn3s"))))
     (properties `((upstream-name . "sasLM")))
     (build-system r-build-system)
     (arguments
@@ -69605,13 +69543,13 @@ polygons.")
 (define-public r-sapfluxnetr
   (package
     (name "r-sapfluxnetr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sapfluxnetr" version))
        (sha256
-        (base32 "0x437nhv3g327apxnihr1wnp4mmzxn9pfk24shpj6a8amxphlzxd"))))
+        (base32 "17x1dnnavcqzlc7rsgh10nj2qhcmywiwkq0x4wx39mv688q72brw"))))
     (properties `((upstream-name . "sapfluxnetr")))
     (build-system r-build-system)
     (arguments
@@ -69633,9 +69571,8 @@ polygons.")
     (home-page "https://github.com/sapfluxnet/sapfluxnetr")
     (synopsis "Working with 'Sapfluxnet' Project Data")
     (description
-     "Access, modify, aggregate and plot data from the Sapfluxnet project
-(<http://sapfluxnet.creaf.cat>), the first global database of sap flow
-measurements.")
+     "Access, modify, aggregate and plot data from the Sapfluxnet project, the first
+global database of sap flow measurements.")
     (license license:expat)))
 
 (define-public r-sapevom

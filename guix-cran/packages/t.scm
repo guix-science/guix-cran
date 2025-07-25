@@ -6535,6 +6535,39 @@ enhanced standard errors based on Lashley and Bond (1997)
 <DOI:10.1037/1082-989X.2.3.278>.  Handling for missing values is provided.")
     (license license:gpl2+)))
 
+(define-public r-triplediff
+  (package
+    (name "r-triplediff")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "triplediff" version))
+       (sha256
+        (base32 "1y403b80pfq41l3fhglc6nddcqdj6lbcxfvx45zd5qbw3pynkq2j"))))
+    (properties `((upstream-name . "triplediff")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-speedglm
+                             r-rcpp
+                             r-parglm
+                             r-matrix
+                             r-data-table
+                             r-bmisc))
+    (home-page "http://marcelortiz.com/triplediff/")
+    (synopsis "Triple-Difference Estimators")
+    (description
+     "This package implements triple-difference (DDD) estimators for both average
+treatment effects and event-study parameters.  Methods include regression
+adjustment, inverse-probability weighting, and doubly-robust estimators, all of
+which rely on a conditional DDD parallel-trends assumption and allow covariate
+adjustment across multiple pre- and post-treatment periods.  The methodology is
+detailed in Ortiz-Villavicencio and Sant'Anna (2025)
+<doi:10.48550/@code{arXiv.2505.09942>}.")
+    (license license:expat)))
+
 (define-public r-tripestimation
   (package
     (name "r-tripestimation")
@@ -11950,13 +11983,13 @@ analysis of cancer (TPAC)\" <doi:10.1101/2022.03.17.484779>.")
 (define-public r-tpac
   (package
     (name "r-tpac")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TPAC" version))
        (sha256
-        (base32 "1k3nd3yrv1kxidjwaff4q9aqf7yqqwa6946a154y2h3k21kfmwcc"))))
+        (base32 "0d7chkd5xr9n7hqclw53pbd5x27w8ib330qpf2mbpb085c8fdbyn"))))
     (properties `((upstream-name . "TPAC")))
     (build-system r-build-system)
     (arguments
@@ -15290,13 +15323,13 @@ create new catalogs suited for specific needs.")
 (define-public r-tivy
   (package
     (name "r-tivy")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Tivy" version))
        (sha256
-        (base32 "0as5fkbi3mlx9hfjsf30zdpbz72nd211zysf1swz0xymxp27ydfg"))))
+        (base32 "0lc9vbrk6d27xkkr8xkgw6isi97y1q2wqa6nc83gd4skj5hppjgn"))))
     (properties `((upstream-name . "Tivy")))
     (build-system r-build-system)
     (arguments
@@ -15321,7 +15354,7 @@ create new catalogs suited for specific needs.")
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/HansTtito/Tivy")
-    (synopsis "Processing and Analysis of Peruvian Fishery Logbook Data")
+    (synopsis "Toolkit for Investigation and Visualization of Young Anchovies")
     (description
      "Specialized toolkit for processing biological and fisheries data from Peru's
 anchovy (Engraulis ringens) fishery.  Provides functions to analyze fishing
@@ -19161,13 +19194,13 @@ analysis are provided.")
 (define-public r-tidymc
   (package
     (name "r-tidymc")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyMC" version))
        (sha256
-        (base32 "0mf2xxckxxvcgw1381yscmzppwgmmn44zpfyw6glkbw6963z542k"))))
+        (base32 "0cyiihfkzviziqzr3r86kzw3fqrrh8gkbmfrvcdz7vz1y3w2z96w"))))
     (properties `((upstream-name . "tidyMC")))
     (build-system r-build-system)
     (arguments
@@ -20112,13 +20145,13 @@ for tibbles and methods for dplyr'.")
 (define-public r-tidydensity
   (package
     (name "r-tidydensity")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TidyDensity" version))
        (sha256
-        (base32 "1ncs8c0gwb54snn9xbndgjc9cgqf8hgqmr5ki2bsxad0vqgjl9vq"))))
+        (base32 "1q272wjavyzqsmlsgb2gw0cjh85yfk8jdbanwqw9vpn9y7ancjdq"))))
     (properties `((upstream-name . "TidyDensity")))
     (build-system r-build-system)
     (arguments
@@ -20602,13 +20635,13 @@ packages.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.7.1")
+    (version "1.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycensus" version))
        (sha256
-        (base32 "1l2fgbd2mpkpjryk0kmlb1j530bc47k4x9grvskh18fnff6a8z9m"))))
+        (base32 "11642pmwb74r4sbbxdkxnxr396baiy9f0fdfdhr5xhl4hl9yigjz"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (arguments
@@ -26092,13 +26125,13 @@ theoretical uniform elongation.")
 (define-public r-tensr
   (package
     (name "r-tensr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tensr" version))
        (sha256
-        (base32 "1z6b3ra7fgn88mxbhsq65x3frj5j7p17n119s9kbw7sg9y633vfx"))))
+        (base32 "14agzkh0i5qfbz6vkb81d3a34gvw2rm3lm4rfag5ql3df863whz6"))))
     (properties `((upstream-name . "tensr")))
     (build-system r-build-system)
     (arguments
@@ -26106,7 +26139,7 @@ theoretical uniform elongation.")
       #:tests? #f))
     (propagated-inputs (list r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tensr")
+    (home-page "https://github.com/dcgerard/tensr")
     (synopsis "Covariance Inference and Decompositions for Tensor Datasets")
     (description
      "This package provides a collection of functions for Kronecker structured
@@ -28647,13 +28680,13 @@ Biotechnologies, and @code{ImMunoGeneTics} (IMGT) nomenclatures.")
 (define-public r-tcplfit2
   (package
     (name "r-tcplfit2")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tcplfit2" version))
        (sha256
-        (base32 "12dx2frvwlm5r5wyrzw3izmrqpiik0zjra2r8vm9dq7k55llk9gh"))))
+        (base32 "1cl06hax9izlffz38hlhnw37dchv74fpazcwg4w3yy2lkybm3n5i"))))
     (properties `((upstream-name . "tcplfit2")))
     (build-system r-build-system)
     (arguments
@@ -30041,13 +30074,13 @@ CBS data <https://www.cbs.nl/>, and OECD data <https://www.oecd.org/en.html>.")
 (define-public r-tatoo
   (package
     (name "r-tatoo")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tatoo" version))
        (sha256
-        (base32 "0lvnl2lqp16af4rkmijl47bx5xf17gpji21s0h8xxzpbxbmy3xwx"))))
+        (base32 "0gwqrp0y8hdgv5nrb8sg9y87makjd3s2ndfw8z7abad1fyi45ni0"))))
     (properties `((upstream-name . "tatoo")))
     (build-system r-build-system)
     (arguments
@@ -30518,13 +30551,13 @@ for fast dimension reduction, see package?tapkee and
 (define-public r-tapes
   (package
     (name "r-tapes")
-    (version "0.13.3")
+    (version "0.13.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TapeS" version))
        (sha256
-        (base32 "0hbskhixvgijl0kppzcld89in5skpaqk8b0an5fn5gmnkjm7cpsg"))))
+        (base32 "1b4ia8h6k947klnnj7r8q5bz5758g7kjrch05aqa24449gaicacg"))))
     (properties `((upstream-name . "TapeS")))
     (build-system r-build-system)
     (arguments

@@ -4872,13 +4872,13 @@ and additional statistical attributes are provided.")
 (define-public r-whitestripe
   (package
     (name "r-whitestripe")
-    (version "2.4.3")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WhiteStripe" version))
        (sha256
-        (base32 "0r9gjmdilyfj317gr2z00xgz1bjx4802nb522341fw1gklgf7y5i"))))
+        (base32 "0l87wpkfad3dzkl9ay92xdgaalq796c3jl4y2w71kv7msjs1mlfd"))))
     (properties `((upstream-name . "WhiteStripe")))
     (build-system r-build-system)
     (arguments

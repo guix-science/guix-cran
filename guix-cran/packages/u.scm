@@ -1883,13 +1883,13 @@ a message is shown in the console indicating whether the package is out of date.
 (define-public r-upcm
   (package
     (name "r-upcm")
-    (version "0.0-3")
+    (version "0.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UPCM" version))
        (sha256
-        (base32 "1apah04qdgvxxf6q6xr53716pcrmds86sn8f7ykxj93ggg8k0bvl"))))
+        (base32 "1c6fc1yrbhsia33qxjq29fgwa1hynpd006jvvb79dx1klwmmn4kk"))))
     (properties `((upstream-name . "UPCM")))
     (build-system r-build-system)
     (arguments

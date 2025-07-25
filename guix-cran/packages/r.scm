@@ -534,13 +534,13 @@ which runs the nlmixr2 models during estimation.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "4.0.2")
+    (version "4.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "1c19ilw11i38ws47yf19733zy0bm73wanb1z7a1p6ib4yhp8m8bb"))))
+        (base32 "1lm711vjci053v1fds3xsn06n1shf5vjiv2prsfp2hk7rb5c33yv"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (arguments
@@ -2574,13 +2574,13 @@ possibility of generating one-step-ahead and multi-step-ahead forecasts.")
 (define-public r-rum
   (package
     (name "r-rum")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rUM" version))
        (sha256
-        (base32 "0frdbcslz44f2pw8f899g5mwrl5abvyd0pqfhn2pnkjb2gpqkh28"))))
+        (base32 "167v9mdg9hs3y7i9vjczq8wf8wzrcwwqngdw0abfxpm8847hl1fa"))))
     (properties `((upstream-name . "rUM")))
     (build-system r-build-system)
     (arguments
@@ -2597,17 +2597,23 @@ possibility of generating one-step-ahead and multi-step-ahead forecasts.")
                              r-rio
                              r-readr
                              r-quarto
+                             r-purrr
+                             r-lifecycle
+                             r-labelled
                              r-here
                              r-gtsummary
                              r-glue
+                             r-fs
+                             r-dplyr
                              r-conflicted
                              r-bookdown))
     (native-inputs (list r-knitr))
     (home-page "https://raymondbalise.github.io/rUM/")
     (synopsis "R Templates from the University of Miami")
     (description
-     "This holds some r markdown and quarto templates and a template to create a
-research project in \"R Studio\".")
+     "This holds r markdown and quarto templates for academic papers and slide decks.
+It also has templates to create research projects which contain academic papers
+as vignettes.")
     (license license:expat)))
 
 (define-public r-rulestools
@@ -2953,13 +2959,13 @@ tools for fractal analysis of point clouds.")
 (define-public r-rtumblr
   (package
     (name "r-rtumblr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rtumblr" version))
        (sha256
-        (base32 "19vl079icyh615ac8wxw810dfqlj3c1lpr0gjkkc030jpl2g0yzr"))))
+        (base32 "06dahnasdm8vc0dn1ylxhy4gnrflwb8677sp450gr8w3afvca1yz"))))
     (properties `((upstream-name . "Rtumblr")))
     (build-system r-build-system)
     (arguments
@@ -3698,13 +3704,13 @@ by SkÃ¸ien et al (2014) <doi:10.1016/j.cageo.2014.02.009>.")
 (define-public r-rtoot
   (package
     (name "r-rtoot")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtoot" version))
        (sha256
-        (base32 "1fdr1v7v7828gfd9mh0br2fzqx6p7rpy2avr58brli4i3lq25rgx"))))
+        (base32 "0dzmgfxh3dlibyj9zaiyf5plp75nn2267gcx8shdhn5j48g227c5"))))
     (properties `((upstream-name . "rtoot")))
     (build-system r-build-system)
     (arguments
@@ -3715,7 +3721,8 @@ by SkÃ¸ien et al (2014) <doi:10.1016/j.cageo.2014.02.009>.")
                              r-httr
                              r-dplyr
                              r-curl
-                             r-clipr))
+                             r-clipr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://gesistsa.github.io/rtoot/")
     (synopsis "Collecting and Analyzing Mastodon Data")
@@ -12445,13 +12452,13 @@ reconstruction <doi:10.1111/2041-210X.13683>.")
 (define-public r-rpact
   (package
     (name "r-rpact")
-    (version "4.2.0")
+    (version "4.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpact" version))
        (sha256
-        (base32 "1qfjqvdall6vnpflzj334xyskp8cwsl7831bidiajaw8j8w9bky4"))))
+        (base32 "0lff42fh00933lklzq4fhp5m57jgklqpm6i3ki6mbsj2y8y838gm"))))
     (properties `((upstream-name . "rpact")))
     (build-system r-build-system)
     (arguments
@@ -16797,13 +16804,13 @@ modified maximum likelihood (AMML) estimators derived by Tiku and Surucu (2009)
 (define-public r-robustbetareg
   (package
     (name "r-robustbetareg")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustbetareg" version))
        (sha256
-        (base32 "09f4binbi5gcf80fhpxzrmpm2k2xf6f7rcw9g2xzmni8b4cs2l6p"))))
+        (base32 "04a6h0d6q7rz3py42qnic5ijln89pzjhkb4xi4lbmvlkd03qzqqa"))))
     (properties `((upstream-name . "robustbetareg")))
     (build-system r-build-system)
     (arguments
@@ -16831,7 +16838,8 @@ They depend on a tuning constant which may be fixed or selected by a data-driven
 algorithm also implemented in the package.  Diagnostic tools associated with the
 fitted model, such as the residuals and goodness-of-fit statistics, are
 implemented.  Robust Wald-type tests are available.  More details about robust
-beta regression are described in Maluf et al. (2022) <@code{arXiv:2209.11315>}.")
+beta regression are described in Maluf et al. (2025)
+<doi:10.1007/s00184-024-00949-1>.")
     (license license:gpl3)))
 
 (define-public r-robustbayesiancopas
@@ -19802,13 +19810,13 @@ Grange et al. (2021) <doi:10.5194/acp-2020-1171>.")
 (define-public r-rmvp
   (package
     (name "r-rmvp")
-    (version "1.4.0")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rMVP" version))
        (sha256
-        (base32 "1f4qrfqbil953wqy22p4jks6zgp5w3pdbx0dlkkjma4sjd8qm26p"))))
+        (base32 "1ah0v8b780s9b8vz3j6ms9p99mh1dl26v78gdk2bc2dp8v701w8c"))))
     (properties `((upstream-name . "rMVP")))
     (build-system r-build-system)
     (arguments
@@ -22776,13 +22784,13 @@ information about using the API please visit <https://developer.linkedin.com/>."
 (define-public r-rlibkriging
   (package
     (name "r-rlibkriging")
-    (version "0.9-2")
+    (version "0.9-2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlibkriging" version))
        (sha256
-        (base32 "0wva9dzxfd1b2a4qf2fyx9b7qz1vrrgbyvgb6l9nak82gvwsc514"))))
+        (base32 "1m7q7mys1rg9pd20jlyi8nhj3pykv70yc0vlqc7y4cfy1v558rxs"))))
     (properties `((upstream-name . "rlibkriging")))
     (build-system r-build-system)
     (arguments
@@ -26978,13 +26986,13 @@ position type and the chromosome number.")
 (define-public r-rice
   (package
     (name "r-rice")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rice" version))
        (sha256
-        (base32 "0npnngr9xrrb33wn12gi87j2crdqf184gm8ba2n0y68l8m0j76p6"))))
+        (base32 "0npppmhl9m1bhlcq39wx9qf81hij61k6fzbv0izy14spy51xwsq4"))))
     (properties `((upstream-name . "rice")))
     (build-system r-build-system)
     (arguments
@@ -28154,19 +28162,19 @@ still permitting the use of GRASS 7'.")
 (define-public r-rgraphspace
   (package
     (name "r-rgraphspace")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RGraphSpace" version))
        (sha256
-        (base32 "1fhs2bh1zcld4yr7yp5j9bgyjykh6rkccg6l76xyk44pn5z02prj"))))
+        (base32 "0nx4fz956sl4fxivq3wy5i3zd7bir3hqp7ffyam87f5sbb19p9da"))))
     (properties `((upstream-name . "RGraphSpace")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-igraph r-ggplot2))
+    (propagated-inputs (list r-scales r-lifecycle r-igraph r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sysbiolab/RGraphSpace")
     (synopsis "Lightweight Interface Between 'ggplot2' and 'igraph' Objects")
@@ -33703,13 +33711,13 @@ aware of.) The PROJ library is available at <https://proj.org/>.")
 (define-public r-reproduciblerchunks
   (package
     (name "r-reproduciblerchunks")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reproducibleRchunks" version))
        (sha256
-        (base32 "1lqg9b5kdmvij1nvx7mgnz7l6zv4ggayc4ch2k76fxnvrwrq6n1k"))))
+        (base32 "12z9xbhdh5wg2zk294kdljvxx2ppkg1f6z6r0mdbyhybjvxggg9b"))))
     (properties `((upstream-name . "reproducibleRchunks")))
     (build-system r-build-system)
     (arguments
@@ -37189,13 +37197,13 @@ lasso) or multiple exposures, multiple mediators, and multiple outcome variables
 (define-public r-reglogit
   (package
     (name "r-reglogit")
-    (version "1.2-7")
+    (version "1.2-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reglogit" version))
        (sha256
-        (base32 "0mknx71h24kbh4agarkhrfp2wz1kjvd34kv0c6qy0f1jwvr3kzr6"))))
+        (base32 "0fn8ls0ijlawxak354jphnvmqx4f4jg3259d1ml7dic3v07bi869"))))
     (properties `((upstream-name . "reglogit")))
     (build-system r-build-system)
     (arguments
@@ -38305,19 +38313,19 @@ prior on a vector of spatial random effects.")
 (define-public r-reemtree
   (package
     (name "r-reemtree")
-    (version "0.90.5")
+    (version "0.90.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REEMtree" version))
        (sha256
-        (base32 "1iapqwhis2vz19c3mivmwpj0nlgzb8fm3j2w060ypydwzmar0qmj"))))
+        (base32 "0lxnj2pdkn2w5b3681y510f7dln9d7055aismriipiq7znz9k6ya"))))
     (properties `((upstream-name . "REEMtree")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rpart r-nlme))
+    (propagated-inputs (list r-rpart r-nlme r-aer))
     (home-page "http://pages.stern.nyu.edu/~jsimonof/REEMtree/")
     (synopsis
      "Regression Trees with Random Effects for Longitudinal (Panel) Data")
@@ -41764,20 +41772,35 @@ false discovery rate.")
 (define-public r-reactrouter
   (package
     (name "r-reactrouter")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reactRouter" version))
        (sha256
-        (base32 "0ymh40ihznb15vz2jaaa25a5hzzrgajyz5cazwg70p2859scvrb5"))))
+        (base32 "0iqfnk6vp2cks7fbv0dcxq9fgb1af5vrvzwri7d9lkldsiss0gw4"))))
     (properties `((upstream-name . "reactRouter")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny-react r-shiny r-htmltools r-checkmate))
-    (native-inputs (list r-knitr))
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-uuid r-shiny-react r-shiny r-htmltools
+                             r-checkmate))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://felixluginbuhl.com/reactRouter/")
     (synopsis "'React Router' for 'shiny' Apps and 'Quarto'")
     (description
@@ -42855,6 +42878,41 @@ Vazquez-Bare (2020)
 for further methodological details.")
     (license license:gpl2)))
 
+(define-public r-rdml
+  (package
+    (name "r-rdml")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RDML" version))
+       (sha256
+        (base32 "0r113yds2090pys41aigpp2wkrmbm891j045g0in5l9j9zw136yj"))))
+    (properties `((upstream-name . "RDML")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-rlist
+                             r-readxl
+                             r-r6
+                             r-piper
+                             r-lubridate
+                             r-data-table
+                             r-checkmate))
+    (home-page "https://github.com/PCRuniversum/RDML")
+    (synopsis
+     "Importing Real-Time Thermo Cycler (qPCR) Data from RDML Format Files")
+    (description
+     "Imports real-time thermo cycler (@code{qPCR}) data from Real-time PCR Data
+Markup Language (RDML) and transforms to the appropriate formats of the
+@code{qpcR} and @code{chipPCR} packages, as described in Rodiger et al. (2017)
+<doi:10.1093/bioinformatics/btx528>.  Contains a dendrogram visualization for
+the structure of RDML object and GUI for RDML editing.")
+    (license license:expat)))
+
 (define-public r-rdm
   (package
     (name "r-rdm")
@@ -43541,13 +43599,13 @@ selection, and @code{rdplotdensity()} to construct density plots.")
 (define-public r-rddapp
   (package
     (name "r-rddapp")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rddapp" version))
        (sha256
-        (base32 "1bb76v35cpcvmjnkzficl1rvwkz37z0i56bq81m7nb87cb9p1hkv"))))
+        (base32 "087h10sm5i74kjwckzj5ciggk4wk3n4s62zigadi6zlph56q1bll"))))
     (properties `((upstream-name . "rddapp")))
     (build-system r-build-system)
     (arguments
@@ -47336,13 +47394,13 @@ effect sizes and post hoc analysis for @code{multiWayAnova()}.")
 (define-public r-rcmdrmisc
   (package
     (name "r-rcmdrmisc")
-    (version "2.9-1")
+    (version "2.9-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrMisc" version))
        (sha256
-        (base32 "0khp8dw1b3v5jqbhnqxjcyyjz9hj9pb98niacn17cf9iln9rr7mc"))))
+        (base32 "07apdqwrr3bkhg53cpq7sxlx74x455754dihhn1s4jqys3437g68"))))
     (properties `((upstream-name . "RcmdrMisc")))
     (build-system r-build-system)
     (arguments
@@ -47361,7 +47419,7 @@ effect sizes and post hoc analysis for @code{multiWayAnova()}.")
                              r-colorspace
                              r-car
                              r-abind))
-    (home-page "https://www.r-project.org")
+    (home-page "https://cran.r-project.org/package=RcmdrMisc")
     (synopsis "R Commander Miscellaneous Functions")
     (description
      "Various statistical, graphics, and data-management functions used by the Rcmdr
@@ -47719,52 +47777,6 @@ Binary (Probit and Logit), Ordered (Probit and Logit) and Poisson models with
 random parameters for cross-sectional and longitudinal data as presented in
 Sarrias (2016) <doi:10.18637/jss.v074.i10>.")
     (license license:gpl2+)))
-
-(define-public r-rchivaltag
-  (package
-    (name "r-rchivaltag")
-    (version "0.1.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RchivalTag" version))
-       (sha256
-        (base32 "0sz6hmcpsgp5am5g89q15was8im6wr2c18fjsychjxngj6ii0cy0"))))
-    (properties `((upstream-name . "RchivalTag")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xts
-                             r-suntools
-                             r-stringr
-                             r-sp
-                             r-shiny
-                             r-sf
-                             r-readr
-                             r-raster
-                             r-pracma
-                             r-plyr
-                             r-plotly
-                             r-oceanmap
-                             r-ncdf4
-                             r-maps
-                             r-mapdata
-                             r-lubridate
-                             r-leaflet-extras2
-                             r-leaflet
-                             r-htmlwidgets
-                             r-ggplot2
-                             r-ggedit
-                             r-dygraphs
-                             r-cleangeo))
-    (home-page "https://cran.r-project.org/package=RchivalTag")
-    (synopsis
-     "Analyzing and Interactive Visualization of Archival Tagging Data")
-    (description
-     "This package provides a set of functions to generate, access and analyze
-standard data products from archival tagging data.")
-    (license license:gpl3+)))
 
 (define-public r-rchest
   (package
@@ -48510,13 +48522,13 @@ space as proposed by <doi:10.1007/s10618-019-00647-x>.")
 (define-public r-rcartocolor
   (package
     (name "r-rcartocolor")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcartocolor" version))
        (sha256
-        (base32 "0lqipmrcvgjlh7ya4r3vf7qiypc2pwgqcxzmg4xmb5h5p5l37cq0"))))
+        (base32 "1hd8j6w2sa5ibm7hklm1z1y9y20rd71ak9b9m331k7lay52mp1k5"))))
     (properties `((upstream-name . "rcartocolor")))
     (build-system r-build-system)
     (arguments
@@ -51232,13 +51244,13 @@ proposed statistic in case of nominal and ordinal data.")
 (define-public r-rater
   (package
     (name "r-rater")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rater" version))
        (sha256
-        (base32 "0ipgjhxn8d9g6yv369hckvq84v8rrw5b230zz24h72dy9s2nyr44"))))
+        (base32 "0r14bdskl64afhkyvj2dgfn8ljdww1i10lh2krxz7paggmxh7wmi"))))
     (properties `((upstream-name . "rater")))
     (build-system r-build-system)
     (arguments
@@ -51704,13 +51716,13 @@ algorithms and code examples are presented in Fuentes et al. (2022).
 (define-public r-rashnu
   (package
     (name "r-rashnu")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rashnu" version))
        (sha256
-        (base32 "11axr7jsfibnnrfn8bb2l8nfwnibh3qvd2nq419qd5ikccw7yhs9"))))
+        (base32 "1m38gzyfzaqg5v9pm0mxzvk39lp79bjr06k7g8c8hkplpxqqf1ph"))))
     (properties `((upstream-name . "rashnu")))
     (build-system r-build-system)
     (arguments
@@ -53795,13 +53807,13 @@ appearing in a large scale data base of real names.")
 (define-public r-randommachines
   (package
     (name "r-randommachines")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "randomMachines" version))
        (sha256
-        (base32 "1b34jwvs2x67kbjmxa5rpxlrqsvghgnyddz250nwpchj2s4lgc17"))))
+        (base32 "04fld2i7s64km0jck9nbpnsjr1y307z97cvvn60jyxhxv7xgv5c3"))))
     (properties `((upstream-name . "randomMachines")))
     (build-system r-build-system)
     (arguments
@@ -57220,13 +57232,13 @@ formats ('xml2', tibble', sf').")
 (define-public r-r2winbugs
   (package
     (name "r-r2winbugs")
-    (version "2.1-22.1")
+    (version "2.1-23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2WinBUGS" version))
        (sha256
-        (base32 "199qkp4ar0kkdf7a2fn9aq17253ss97mddaivydcywvbp50n53j3"))))
+        (base32 "1czz9rqpfzqfhfk8sg08nxn9zlv4qr1xf89pyw5wsc7hrnpaxsza"))))
     (properties `((upstream-name . "R2WinBUGS")))
     (build-system r-build-system)
     (arguments
@@ -57239,7 +57251,10 @@ formats ('xml2', tibble', sf').")
      "Invoke a BUGS model in @code{OpenBUGS} or @code{WinBUGS}', a class \"bugs\" for
 BUGS results and functions to work with that class.  Function
 @code{write.model()} allows a BUGS model file to be written.  The class and
-auxiliary functions could be used with other MCMC programs, including JAGS'.")
+auxiliary functions could be used with other MCMC programs, including JAGS'.
+The suggested package BRugs (only needed for function @code{openbugs()}) is only
+available from the CRAN archives, see
+<https://cran.r-project.org/package=BRugs>.")
     (license license:gpl2)))
 
 (define-public r-r2wd

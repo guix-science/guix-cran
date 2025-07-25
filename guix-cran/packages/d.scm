@@ -985,13 +985,13 @@ and Xie (2021) <@code{arXiv:1906.07757v2>} and Li, Sung and Xie (2021)
 (define-public r-dynaspec
   (package
     (name "r-dynaspec")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynaSpec" version))
        (sha256
-        (base32 "07k3s2nd17i8gakp1jagx9dvj7ra1wi1byqbg92xnj7qryxfcb9p"))))
+        (base32 "1dz1dbbd41ybs3qamp4lxksk9iwac0hqkihz98i82rxx0ik173dz"))))
     (properties `((upstream-name . "dynaSpec")))
     (build-system r-build-system)
     (arguments
@@ -1005,8 +1005,7 @@ and Xie (2021) <@code{arXiv:1906.07757v2>} and Li, Sung and Xie (2021)
                              r-scales
                              r-png
                              r-ggplot2
-                             r-gganimate
-                             r-ari))
+                             r-gganimate))
     (home-page "https://github.com/maRce10/dynaSpec")
     (synopsis "Dynamic Spectrogram Visualizations")
     (description
@@ -3380,13 +3379,13 @@ and Qiguang Chen (1999) <doi:10.3969/j.issn.1002-3674.1999.04.004>.")
 (define-public r-dtat
   (package
     (name "r-dtat")
-    (version "0.3-7")
+    (version "0.3-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DTAT" version))
        (sha256
-        (base32 "0rh09bdygqwzdlx0girs2ir5dy3jd3r2m4xia46njxvh3jld5vsg"))))
+        (base32 "107ziajbappl4xvi555g2df35lcyb3514jnwj661kv535bsj5ind"))))
     (properties `((upstream-name . "DTAT")))
     (build-system r-build-system)
     (arguments
@@ -4064,13 +4063,13 @@ APIs, including @code{OpenTopography}
 (define-public r-dsmolgenisarmadillo
   (package
     (name "r-dsmolgenisarmadillo")
-    (version "2.0.9")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSMolgenisArmadillo" version))
        (sha256
-        (base32 "0myhpkblj8dl1csqd91wk7xr4zvnk400ygqbwbajayjn6l7dvqmd"))))
+        (base32 "0jj04z70m3xg7ipj7wk6ngl9rpisdizpdk0qwsigv9ak6dlbc8ny"))))
     (properties `((upstream-name . "DSMolgenisArmadillo")))
     (build-system r-build-system)
     (arguments
@@ -4079,6 +4078,7 @@ APIs, including @code{OpenTopography}
     (propagated-inputs (list r-urltools
                              r-stringr
                              r-molgenisauth
+                             r-lifecycle
                              r-jsonlite
                              r-httr
                              r-dsi
@@ -11329,18 +11329,19 @@ or applied to fishery data to provide management recommendations.")
 (define-public r-dlmrmv
   (package
     (name "r-dlmrmv")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DLMRMV" version))
        (sha256
-        (base32 "1dsy8k2b7d2hp07pqllw8ng67dkqqbma9sj6vknsih11fygsn9gp"))))
+        (base32 "0nlv81jli35k6ywaqjbgw5p2v73jjz5svss2qfslw797nqz4ln5v"))))
     (properties `((upstream-name . "DLMRMV")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-mass r-glmnet))
     (home-page "https://cran.r-project.org/package=DLMRMV")
     (synopsis
      "Distributed Linear Regression Models with Response Missing Variables")
@@ -19429,13 +19430,13 @@ following Bai and Ng (2002) <doi:10.1111/1468-0262.00273>.")
 (define-public r-dfmirror
   (package
     (name "r-dfmirror")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfmirroR" version))
        (sha256
-        (base32 "0npd9yllsjbb49mqdwaw75lbgx4lr8qgga70yybd6c16wdfkg396"))))
+        (base32 "114mswfrnm824026sb9z89xnqbkk6q8m32jrzy6nn5fjq3g46485"))))
     (properties `((upstream-name . "dfmirroR")))
     (build-system r-build-system)
     (arguments
@@ -22142,6 +22143,34 @@ package, or call polite functions to ask a user to install other packages.
 Finally, you find a set of thematic sets of packages you may use to set up new
 environments quickly, installing them in a single call.")
     (license license:gpl3)))
+
+(define-public r-dependentsimr
+  (package
+    (name "r-dependentsimr")
+    (version "1.0.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dependentsimr" version))
+       (sha256
+        (base32 "0mfacpmm10bqw5lki0r6xqx967xhghp5bk83plwyvb6yw9qhl0vh"))))
+    (properties `((upstream-name . "dependentsimr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dependentsimr")
+    (synopsis "Simulate Omics-Scale Data with Dependency")
+    (description
+     "Using a Gaussian copula approach, this package generates simulated data
+mimicking a target real dataset.  It supports normal, Poisson, empirical, and
+DESeq2 (negative binomial with size factors) marginal distributions.  It uses an
+low-rank plus diagonal covariance matrix to efficiently generate omics-scale
+data.  Methods are described in: Yang, Grant, and Brooks (2025)
+<doi:10.1101/2025.01.31.634335>.")
+    (license license:expat)))
 
 (define-public r-depend-truncation
   (package
@@ -30719,13 +30748,13 @@ dramatically reduces data coding time.")
 (define-public r-dataexplorer
   (package
     (name "r-dataexplorer")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataExplorer" version))
        (sha256
-        (base32 "11a0b6jrvf81sa0a8595q48j66qky4xya3mvr3vr41vj0k98p90y"))))
+        (base32 "16c5rr4h8bv4m7ynlhaahmahfb1206ld0r06hxpfkkw6s67hnydz"))))
     (properties `((upstream-name . "DataExplorer")))
     (build-system r-build-system)
     (arguments

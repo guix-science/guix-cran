@@ -2741,31 +2741,6 @@ the expression is available synchronously via $result or asynchronously with
 callbacks or through the promises package framework.")
     (license license:expat)))
 
-(define-public r-jnplots
-  (package
-    (name "r-jnplots")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "JNplots" version))
-       (sha256
-        (base32 "0k1jdy5wdzdswzl6kz9d1r6imj3cqcmkyz7ka1d6pcbysjsj9ynn"))))
-    (properties `((upstream-name . "JNplots")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales r-nlme r-ape))
-    (home-page "https://github.com/kenstoyama/JNplots")
-    (synopsis "Visualize Outputs from the 'Johnson-Neyman' Technique")
-    (description
-     "Aids in the calculation and visualization of regions of non-significance using
-the Johnson-Neyman technique and its extensions as described by Bauer and Curran
-(2005) <doi:10.1207/s15327906mbr4003_5> to assess the influence of categorical
-and continuous moderators.  Allows correcting for phylogenetic relatedness.")
-    (license license:expat)))
-
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
@@ -3987,13 +3962,13 @@ reduce user dependencies.")
 (define-public r-jdcruncher
   (package
     (name "r-jdcruncher")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JDCruncheR" version))
        (sha256
-        (base32 "1q0p3my7py3p33zllmw8q2kvvrmla1js6qwh059h1bv4p13zgx8s"))))
+        (base32 "011lx1pwp3mrnzx7psg2chmlxhk4nak09w3nf154q5g5dvgjxhxa"))))
     (properties `((upstream-name . "JDCruncheR")))
     (build-system r-build-system)
     (arguments

@@ -7330,36 +7330,6 @@ size optimization for clinical trials using graphical approaches for
 multiplicity adjustment, Technical Report.")
     (license license:gpl3)))
 
-(define-public r-graphtweets
-  (package
-    (name "r-graphtweets")
-    (version "0.5.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "graphTweets" version))
-       (sha256
-        (base32 "0jf52lclwvqgybdj6fknzx046bh6jgwxvqs4c5g1ii8f2lsz9y07"))))
-    (properties `((upstream-name . "graphTweets")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zeallot
-                             r-tidyr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-igraph
-                             r-dplyr
-                             r-combinat))
-    (home-page "http://graphTweets.john-coene.com")
-    (synopsis "Visualise Twitter Interactions")
-    (description
-     "Allows building an edge table from data frame of tweets, also provides function
-to build nodes and another create a temporal graph.")
-    (license license:expat)))
-
 (define-public r-graphsim
   (package
     (name "r-graphsim")
@@ -8176,20 +8146,19 @@ Montanari, 2018 <@code{arXiv:1803.00374>}.")
 (define-public r-grand
   (package
     (name "r-grand")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grand" version))
        (sha256
-        (base32 "08lgwpkbamb7p5a59q0dp1n7np9kmmvccvg97bl7937ishx50mg5"))))
+        (base32 "0lrwzrpd15241q6wb78q3bx12zxfmqgxn2i9sa1bbaflakdkml8r"))))
     (properties `((upstream-name . "grand")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-igraph))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/zpneal/grand")
     (synopsis "Guidelines for Reporting About Network Data")
     (description
@@ -9589,13 +9558,13 @@ mixed models, and predicting cross performance based on weighted marker effects.
 (define-public r-gpcmlasso
   (package
     (name "r-gpcmlasso")
-    (version "0.1-7")
+    (version "0.1-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPCMlasso" version))
        (sha256
-        (base32 "0hlhm780xyila4idk5r87pw046xi3lxhhpr0a22smhf4klvnlfgc"))))
+        (base32 "1amxi8g8sql2z9yjxpc436k99fr3zr96bfzzi4ijwv4nyd7crhpa"))))
     (properties `((upstream-name . "GPCMlasso")))
     (build-system r-build-system)
     (arguments
@@ -9694,13 +9663,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "1lk3jkbj11sfmkgii49bgfw7djnv3z7r8rwcxxlzh0w76yc2433w"))))
+        (base32 "000q23yzby62qgb9wyc2c7595fz13fragmxs8rkf0r1syrv8wynn"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (arguments
@@ -15400,13 +15369,13 @@ exponential family distribution were known.  Huang (2014)
 (define-public r-gldreg
   (package
     (name "r-gldreg")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GLDreg" version))
        (sha256
-        (base32 "1cp5mgbvq0g9ss2cv5yincfjvs8jmciz0h3g5jrr8gda1gvf357i"))))
+        (base32 "04219j32dqf6n6hwxxxw3qmq0dkf754y9j6vvkz86gwwvkry0915"))))
     (properties `((upstream-name . "GLDreg")))
     (build-system r-build-system)
     (arguments
@@ -19817,13 +19786,13 @@ between groups of interest and annotates the test results on the plot.")
 (define-public r-ggpolypath
   (package
     (name "r-ggpolypath")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggpolypath" version))
        (sha256
-        (base32 "0ipn1lhmpcdxim3235kxsw6vkj7cf7smqdm534jfa75ski4q9xpy"))))
+        (base32 "1kx3f2nyyy97y790krspsggwrardhscv23s5px0i2snjm3qcv2r7"))))
     (properties `((upstream-name . "ggpolypath")))
     (build-system r-build-system)
     (arguments
@@ -21891,13 +21860,13 @@ of ggplot2 plots which is otherwise not a trivial task to accomplish.")
 (define-public r-ggfx
   (package
     (name "r-ggfx")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfx" version))
        (sha256
-        (base32 "1lys5lzlilzvd6dm7rkxv7nvnp80fajl5yzhpwcbb5az5832ik27"))))
+        (base32 "0qa8ck7r1vmgha108z4vydfvj2p0rlkjhm2d8f41sipwa4qlg4s2"))))
     (properties `((upstream-name . "ggfx")))
     (build-system r-build-system)
     (arguments
@@ -22479,6 +22448,34 @@ normal plots, main and interaction effect plots for factorial designs, contour
 plots for response surface methodology, Pareto plot, and two dimensional
 projections of a latin hypercube design.")
     (license license:expat)))
+
+(define-public r-ggdmcprior
+  (package
+    (name "r-ggdmcprior")
+    (version "0.2.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggdmcPrior" version))
+       (sha256
+        (base32 "1q7q876p4gwcs3i3b4r4ili33krmp4fld4rh5b8l9h2a4f1814vs"))))
+    (properties `((upstream-name . "ggdmcPrior")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-lattice r-ggdmcheaders))
+    (home-page "https://cran.r-project.org/package=ggdmcPrior")
+    (synopsis
+     "Prior Probability Functions of the Standard and Truncated Distribution")
+    (description
+     "This package provides tools for specifying and evaluating standard and truncated
+probability distributions, with support for log-space computation and joint
+distribution specification.  It enables Bayesian computation for cognition
+models and includes utilities for density calculation, sampling, and
+visualisation, facilitating prior distribution specification and model
+assessment in hierarchical Bayesian frameworks.")
+    (license license:gpl2+)))
 
 (define-public r-ggdmcmodel
   (package
@@ -23321,13 +23318,13 @@ built-in many line-based geom layers.")
 (define-public r-ggarchery
   (package
     (name "r-ggarchery")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggarchery" version))
        (sha256
-        (base32 "1fgcy26gq0cpk4vhc412yw5wj8j4afs21lp7fcqsdah1xmpnhym2"))))
+        (base32 "0fhwj8l975m94hsyclxvb36c8k8xczcmc1925q516fih08a1pi4r"))))
     (properties `((upstream-name . "ggarchery")))
     (build-system r-build-system)
     (arguments
@@ -23518,20 +23515,20 @@ auto-selected based on whether variables are categorical or numeric.")
 (define-public r-gfunctions
   (package
     (name "r-gfunctions")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gfunctions" version))
        (sha256
-        (base32 "1rjrw4g0daw219spcz0pmy78m68gidk7vdbxd31wqgn1p7xwa4jb"))))
+        (base32 "1ignj6jshm1gw4w85fspj0wbk3si9bllk8il9xys6wmsdxc2iq44"))))
     (properties `((upstream-name . "gfunctions")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zoo r-sandwich))
-    (home-page "https://cran.r-project.org/package=gfunctions")
+    (home-page "https://www.sucarrat.net/")
     (synopsis "G-Functions")
     (description
      "Modified versions of the @code{lag()} and @code{summary()} functions:
@@ -26317,20 +26314,20 @@ the @code{GeoNode} API, see <https://geonode.org/>.")
 (define-public r-geonetwork
   (package
     (name "r-geonetwork")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geonetwork" version))
        (sha256
-        (base32 "0yg6pp2ya62qws6jdjxmhqjh5gdn4cfm6zbljazc35xf7d97jjnx"))))
+        (base32 "13i7wl66snvfkxg0grdbcw7ybgzwxhv19lmpf6lsy9xim937wbbv"))))
     (properties `((upstream-name . "geonetwork")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sf r-igraph r-geosphere))
-    (home-page "https://umr-astre.pages.mia.inra.fr/geonetwork")
+    (home-page "https://astre.gitlab.cirad.fr/geonetwork")
     (synopsis "Geographic Networks")
     (description
      "This package provides classes and methods for handling networks or graphs whose
@@ -29140,41 +29137,36 @@ genotype data.")
 (define-public r-genieclust
   (package
     (name "r-genieclust")
-    (version "1.1.6")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genieclust" version))
        (sha256
-        (base32 "131nax76dsg3b6700qwgq3gpin4pl152rjsfqgh41m89ffchk0m4"))))
+        (base32 "1kk5zcq4mw9dqzdvgw1wfc234xawjydr8awbn41iscxa6sisnvmj"))))
     (properties `((upstream-name . "genieclust")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcpp r-quitefastmst))
     (home-page "https://genieclust.gagolewski.com/")
     (synopsis
-     "Fast and Robust Hierarchical Clustering with Noise Points Detection")
+     "Fast and Robust Hierarchical Clustering with Noise Point Detection")
     (description
-     "This package provides a retake on the Genie algorithm (Gagolewski, 2021
-<DOI:10.1016/j.softx.2021.100722>) - a robust hierarchical clustering method
-(Gagolewski, Bartoszuk, Cena, 2016 <DOI:10.1016/j.ins.2016.05.003>).  Now faster
-and more memory efficient; determining the whole hierarchy for datasets of 10M
-points in low dimensional Euclidean spaces or 100K points in high-dimensional
-ones takes only 1-2 minutes.  Allows clustering with respect to mutual
-reachability distances so that it can act as a noise point detector or a
-robustified version of HDBSCAN* (that is able to detect a predefined number of
-clusters and hence it does not dependent on the somewhat fragile eps parameter).
- The package also features an implementation of inequality indices (the Gini,
-Bonferroni index), external cluster validity measures (e.g., the normalised
-clustering accuracy and partition similarity scores such as the adjusted Rand,
-Fowlkes-Mallows, adjusted mutual information, and the pair sets index), and
-internal cluster validity indices (e.g., the Calinski-Harabasz, Davies-Bouldin,
-Ball-Hall, Silhouette, and generalised Dunn indices).  See also the Python
-version of genieclust available on @code{PyPI}', which supports sparse data,
-more metrics, and even larger datasets.")
+     "The Genie algorithm (Gagolewski, 2021 <DOI:10.1016/j.softx.2021.100722>) is a
+robust and outlier-resistant hierarchical clustering method (Gagolewski,
+Bartoszuk, Cena, 2016 <DOI:10.1016/j.ins.2016.05.003>).  This package features
+its faster and more powerful version.  It allows clustering with respect to
+mutual reachability distances, enabling it to act as a noise point detector or a
+version of HDBSCAN* that can identify a predefined number of clusters.  The
+package also features an implementation of the Gini and Bonferroni inequality
+indices, external cluster validity measures (e.g., the normalised clustering
+accuracy, the adjusted Rand index, the Fowlkes-Mallows index, and normalised
+mutual information), and internal cluster validity indices (e.g., the
+Calinski-Harabasz, Davies-Bouldin, Ball-Hall, Silhouette, and generalised Dunn
+indices).  The Python version of genieclust is available via @code{PyPI}'.")
     (license license:agpl3)))
 
 (define-public r-geniebpc
@@ -31767,13 +31759,13 @@ the conditional linear family method in Qaqish (2003)
 (define-public r-geeasy
   (package
     (name "r-geeasy")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geeasy" version))
        (sha256
-        (base32 "0hfxryqn5dxpyl0s16ibbg1n8w19wl5ldxa8g437akb760pmsmvl"))))
+        (base32 "18hb3smwcazgns1kjl44xrikbxy5j1cda19wpgdj4z7s8k8mxj15"))))
     (properties `((upstream-name . "geeasy")))
     (build-system r-build-system)
     (arguments
@@ -31907,13 +31899,13 @@ threat data, developed by the authors.")
 (define-public r-gecal
   (package
     (name "r-gecal")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GECal" version))
        (sha256
-        (base32 "0i5l15v3g0mpr3byhg55pib5x84fjhp7yxwzm3hb04dfn1dx07lj"))))
+        (base32 "13ymhql3xzf6nr3vihpdmxj0zs6b23ykprk95gb3nkcvgjf7cgaf"))))
     (properties `((upstream-name . "GECal")))
     (build-system r-build-system)
     (arguments
@@ -31926,9 +31918,9 @@ threat data, developed by the authors.")
      "Generalized Entropy Calibration produces calibration weights using generalized
 entropy as the objective function for optimization.  This approach, as
 implemented in the GECal package, is based on Kwon, Kim, and Qiu (2024)
-<doi:10.48550/@code{arXiv.2404.01076>}.  Unlike traditional methods, GECal
-incorporates design weights into the constraints to maintain design consistency,
-rather than including them in the objective function itself.")
+<doi:10.48550/@code{arXiv.2404.01076>}.  GECal incorporates design weights into
+the constraints to maintain design consistency, rather than including them in
+the objective function itself.")
     (license license:expat)))
 
 (define-public r-gec

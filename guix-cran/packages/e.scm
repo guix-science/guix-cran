@@ -1267,13 +1267,13 @@ package.")
 (define-public r-extrasuperpower
   (package
     (name "r-extrasuperpower")
-    (version "1.5.0")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extraSuperpower" version))
        (sha256
-        (base32 "029xisx7cg38fbbwv9xhxhl48kwgbha1nbsyckvnn40z5vyjzvla"))))
+        (base32 "0lglhjrp5y2hzhwh018jl6hdmd5yppbdjlv9g1g1igd4bgm8izi6"))))
     (properties `((upstream-name . "extraSuperpower")))
     (build-system r-build-system)
     (arguments
@@ -6678,13 +6678,13 @@ function for re-coding vectors.")
 (define-public r-etl
   (package
     (name "r-etl")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "etl" version))
        (sha256
-        (base32 "1msc5mpnw4wd5f798q8rjdxyky6b2bqn6vncgq40jscab83hk9hi"))))
+        (base32 "0cggfdw98v70wigifqvnz01lg362mpbvvcla4apcvkysmpsyqlz1"))))
     (properties `((upstream-name . "etl")))
     (build-system r-build-system)
     (arguments
@@ -8540,13 +8540,13 @@ included in this package as a vignette; see citation(\"errors\") for details.")
 (define-public r-errorlocate
   (package
     (name "r-errorlocate")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "errorlocate" version))
        (sha256
-        (base32 "1qml2qd63iqswb0zvnx9m3ia0zq7q20ycllhds3bwa4fwg25pfsp"))))
+        (base32 "01j2pxcfmvgw6y0dmi321g6hqljs80gy55jw2kk1z85d6z3vy6gg"))))
     (properties `((upstream-name . "errorlocate")))
     (build-system r-build-system)
     (arguments
@@ -11083,13 +11083,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.84")
+    (version "2.0.85")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "0fjanfsbczbyx7f0664igsk8y1hc051x3n00k3vwvvkzfscx69kj"))))
+        (base32 "1gn99qqfnz03xzq522pjm09wvszcqdhkavppxryj0zw1wvcc2lky"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (arguments
@@ -14169,6 +14169,30 @@ detection in univariate time series using the Ensemble Binary Segmentation of
 Korkas (2022) <Journal of the Korean Statistical Society, 51(1), pp.65-86.>.")
     (license license:gpl2+)))
 
+(define-public r-enaho
+  (package
+    (name "r-enaho")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "enaho" version))
+       (sha256
+        (base32 "04nx5642bjbli22jb7a85jb9byg8kxby45j5qr82z8a8vn7g8vxs"))))
+    (properties `((upstream-name . "enaho")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-haven))
+    (home-page "https://dopatendo.github.io/enaho/")
+    (synopsis "Encuesta Nacional de Hogares (Peruvian Home National Survey)")
+    (description
+     "Descarga, lee y combina bases de la Encuesta Nacional de Hogares (ENAHO) del
+Instituto Nacional de EstadÃ­stica e InformÃ¡tica (INEI) del PerÃº. (Downloads,
+reads, and combines data from the Peruvian Home National Survey.).")
+    (license license:gpl2+)))
+
 (define-public r-emur
   (package
     (name "r-emur")
@@ -15205,13 +15229,13 @@ maximum likelihood method, introduced by introduced by Ozaki (1979)
 (define-public r-emgaussian
   (package
     (name "r-emgaussian")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMgaussian" version))
        (sha256
-        (base32 "0gl3lfww7chwsvg16m5x6agbza4xx482b56wqccb9zqin0j89dfb"))))
+        (base32 "103lrfkclhr4myas1sdscs7rr1mcxhdvymy45hpr8rlyi4ddxn1r"))))
     (properties `((upstream-name . "EMgaussian")))
     (build-system r-build-system)
     (arguments
@@ -16371,13 +16395,13 @@ Guang-Bin Huang, Qin-Yu Zhu, Chee-Kheong Siew (2006), Elsevier B.V,
 (define-public r-ellmer
   (package
     (name "r-ellmer")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ellmer" version))
        (sha256
-        (base32 "0b2qniil7g9v5ayklqz38pmqgfzwngc002ig9g8plaa80nnz0w9f"))))
+        (base32 "0rrd7whwa2mpy9rqvp7gg0sjdf7mgp6nfzkzpkw640w4dq4nv6nm"))))
     (properties `((upstream-name . "ellmer")))
     (build-system r-build-system)
     (arguments
@@ -21288,49 +21312,6 @@ For details about ecp distribution, see Sousa-Ferreira, I., Abreu, A.M. & Rocha,
 C. (2023). <doi:10.57805/revstat.v21i2.405>.")
     (license license:gpl3)))
 
-(define-public r-ecpc
-  (package
-    (name "r-ecpc")
-    (version "3.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ecpc" version))
-       (sha256
-        (base32 "0vi9k3p1xicx53rmccmx1ykdidqb22hkwgr7l5hc0bjzsv7h2w38"))))
-    (properties `((upstream-name . "ecpc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-quadprog
-                             r-proc
-                             r-pracma
-                             r-mvtnorm
-                             r-multiridge
-                             r-mgcv
-                             r-matrix
-                             r-jops
-                             r-glmnet
-                             r-gglasso
-                             r-cvxr
-                             r-checkmate))
-    (home-page "http://dx.doi.org/10.1002/sim.9162")
-    (synopsis "Flexible Co-Data Learning for High-Dimensional Prediction")
-    (description
-     "Fit linear, logistic and Cox survival regression models penalised with adaptive
-multi-group ridge penalties.  The multi-group penalties correspond to groups of
-covariates defined by (multiple) co-data sources.  Group hyperparameters are
-estimated with an empirical Bayes method of moments, penalised with an extra
-level of hyper shrinkage.  Various types of hyper shrinkage may be used for
-various co-data.  Co-data may be continuous or categorical.  The method
-accommodates inclusion of unpenalised covariates, posterior selection of
-covariates and multiple data types.  The model fit is used to predict for new
-samples.  The name ecpc stands for Empirical Bayes, Co-data learnt, Prediction
-and Covariate selection.  See Van Nee et al. (2020) <@code{arXiv:2005.04010>}.")
-    (license license:gpl3+)))
-
 (define-public r-ecoval
   (package
     (name "r-ecoval")
@@ -23763,34 +23744,6 @@ extraction.  The method handles a non-parametric estimation for the correlation
 of the errors.  See \"Krivobokova\", \"Serra\", \"Rosales\" and \"Klockmann\" (2021)
 <@code{arXiv:1812.06948>} for details.")
     (license license:gpl2)))
-
-(define-public r-ebreg
-  (package
-    (name "r-ebreg")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ebreg" version))
-       (sha256
-        (base32 "1xrs9afjd5hkdmhglj3md5i5hm7awlcdlccz3y2lw4c73lx31ywz"))))
-    (properties `((upstream-name . "ebreg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack r-lars))
-    (home-page "https://cran.r-project.org/package=ebreg")
-    (synopsis "Implementation of the Empirical Bayes Method")
-    (description
-     "This package implements a Bayesian-like approach to the high-dimensional sparse
-linear regression problem based on an empirical or data-dependent prior
-distribution, which can be used for estimation/inference on the model
-parameters, variable selection, and prediction of a future response.  The method
-was first presented in Martin, Ryan and Mess, Raymond and Walker, Stephen G
-(2017) <doi:10.3150/15-BEJ797>.  More details focused on the prediction problem
-are given in Martin, Ryan and Tang, Yiqi (2019) <@code{arXiv:1903.00961>}.")
-    (license license:gpl3)))
 
 (define-public r-ebrank
   (package

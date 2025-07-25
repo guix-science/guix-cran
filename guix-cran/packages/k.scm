@@ -2908,13 +2908,13 @@ Yifan Yang (2015)<doi: 10.1007/s00180-015-0567-9> and Mai Zhou and Yifan Yang
 (define-public r-kmblock
   (package
     (name "r-kmblock")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kmBlock" version))
        (sha256
-        (base32 "07y1gadn5givrx4ww9vzgcqdkchgd1ndjq65v6ssrbcxsx1lbgxl"))))
+        (base32 "1j68fjs826skg59jgrilsd5d4xssj03wq5mpdx4drb6baxjlpjmk"))))
     (properties `((upstream-name . "kmBlock")))
     (build-system r-build-system)
     (arguments
@@ -4720,13 +4720,13 @@ linguistics as described in Mildenberger (2023) <@code{arXiv:2308.13383>}.")
 (define-public r-keyholder
   (package
     (name "r-keyholder")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "keyholder" version))
        (sha256
-        (base32 "19xbzpanwyfxywzki3m5jvams40ppxkplm7p1jqm6d5rviidiq1j"))))
+        (base32 "08v7hsbsdf2hdyzr2z1bgyxdg64dvkz828n772jxb77qq9h5k901"))))
     (properties `((upstream-name . "keyholder")))
     (build-system r-build-system)
     (arguments
@@ -5064,20 +5064,20 @@ Estimation for Statistics and Data Analysis.  Chapman & Hall, London.")
 (define-public r-kernscr
   (package
     (name "r-kernscr")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kernscr" version))
        (sha256
-        (base32 "0vk0ppb24la6876sw96kk5s3lw4qqs56m507xncbdvjjgw6pq180"))))
+        (base32 "1v4z5zbx3z2m6p7blkhq8r7m9wx156x4vmifmni3455ls8g7b341"))))
     (properties `((upstream-name . "kernscr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-mass))
-    (home-page "https://cran.r-project.org/package=kernscr")
+    (home-page "http://borishejblum.github.io/kernscr/")
     (synopsis "Kernel Machine Score Test for Semi-Competing Risks")
     (description
      "Kernel Machine Score Test for Pathway Analysis in the Presence of Semi-Competing

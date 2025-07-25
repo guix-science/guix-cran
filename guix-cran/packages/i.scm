@@ -5342,13 +5342,13 @@ considering their options, and securing admission into their school of choice.")
 (define-public r-ipec
   (package
     (name "r-ipec")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IPEC" version))
        (sha256
-        (base32 "1zmh2ck80xh7gzh6d23lw155bny1afkzv1jr3b6i2451c439ybdr"))))
+        (base32 "0715nihjq7acrv77b5xkspc7s2qxah3rbswliqmg90rnc3amn992"))))
     (properties `((upstream-name . "IPEC")))
     (build-system r-build-system)
     (arguments
@@ -10263,13 +10263,13 @@ observations through data visualization.")
 (define-public r-influence-sem
   (package
     (name "r-influence-sem")
-    (version "2.3")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "influence.SEM" version))
        (sha256
-        (base32 "0z83rvlri9g30291p0wv4s0jhiy6445lcrqrd4n1crach9672yzy"))))
+        (base32 "1f4l7h66s537xgfplfd36vsaca1i0913cji33hmiqmbw23fbrhja"))))
     (properties `((upstream-name . "influence.SEM")))
     (build-system r-build-system)
     (arguments
@@ -11994,19 +11994,25 @@ Package for Incremental Calculation of Dynamic Time Warping\" by Leodolter et al
 (define-public r-incase
   (package
     (name "r-incase")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incase" version))
        (sha256
-        (base32 "06qzzvxxwi0dp7ln864qszvk9xqbb4rgx5mbnkcvji7in6k2yj0n"))))
+        (base32 "1550cqza64qfqbh6wpicv84lipzk8sixkkjihbgl49v8nvrnaw58"))))
     (properties `((upstream-name . "incase")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-plu r-magrittr r-cli r-backports))
+    (propagated-inputs (list r-rlang
+                             r-plu
+                             r-magrittr
+                             r-lifecycle
+                             r-glue
+                             r-cli
+                             r-backports))
     (home-page "https://pkg.rossellhayes.com/incase/")
     (synopsis "Pipe-Friendly Vector Replacement with Case Statements")
     (description
@@ -18012,13 +18018,13 @@ tests.  Please see the vignette for a quickstart guide.")
 (define-public r-icsclust
   (package
     (name "r-icsclust")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICSClust" version))
        (sha256
-        (base32 "0sw8ck9384xc0rfj7q7yd0fjacilp64fx8b0l0cw5k920rnzskbj"))))
+        (base32 "1pghld3pqlfbvd6x0fn9viii2s06xwg7j7jbw1mrpcj508xzp2iy"))))
     (properties `((upstream-name . "ICSClust")))
     (build-system r-build-system)
     (arguments
@@ -18046,7 +18052,7 @@ tests.  Please see the vignette for a quickstart guide.")
      "Implementation of tandem clustering with invariant coordinate selection with
 different scatter matrices and several choices for the selection of components
 as described in Alfons, A., Archimbaud, A., Nordhausen, K.and Ruiz-Gazen, A.
-(2022) <@code{arXiv:2212.06108>}.")
+(2024) <doi:10.1016/j.ecosta.2024.03.002>.")
     (license license:gpl3+)))
 
 (define-public r-ics

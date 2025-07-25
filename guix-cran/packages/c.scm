@@ -277,13 +277,13 @@ An overview of the field is presented in Caicedo (2016)
 (define-public r-cytometree
   (package
     (name "r-cytometree")
-    (version "2.0.2")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cytometree" version))
        (sha256
-        (base32 "18g7av73lmnyga1kk24bf8jy599zn9n6qhr13mxsqgi0zdinicfa"))))
+        (base32 "03z5hjghbjzq3ajdz9wzjrmd05rf1pw4aijqw3swxm736sz92la1"))))
     (properties `((upstream-name . "cytometree")))
     (build-system r-build-system)
     (arguments
@@ -297,7 +297,7 @@ An overview of the field is presented in Caicedo (2016)
                              r-ggplot2
                              r-cowplot))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cytometree")
+    (home-page "https://sistm.github.io/cytometree/")
     (synopsis "Automated Cytometry Gating and Annotation")
     (description
      "Given the hypothesis of a bi-modal distribution of cells for each marker, the
@@ -3364,13 +3364,13 @@ density, ring width and percent latewood for each ring) are then obtained.")
 (define-public r-ctqr
   (package
     (name "r-ctqr")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctqr" version))
        (sha256
-        (base32 "050v5am4cmr6y35ygppabs32hlzpngfqy1wdpqwc76kc3m097mlr"))))
+        (base32 "1pm4q0p8vldjiv29sa7c86rrs2f36ssjlcdch806yxygb68xs7dm"))))
     (properties `((upstream-name . "ctqr")))
     (build-system r-build-system)
     (arguments
@@ -15554,13 +15554,13 @@ of three or four players.")
 (define-public r-cooltools
   (package
     (name "r-cooltools")
-    (version "2.4")
+    (version "2.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cooltools" version))
        (sha256
-        (base32 "1ammi354y2cbaarf29s9kjks8k0zdimcxif6crakn9p3vi30h0nk"))))
+        (base32 "1xl3k63zwqb42ax0jww6r9nbwsx23wbnclp2k3qpjjdd6x0m78vp"))))
     (properties `((upstream-name . "cooltools")))
     (build-system r-build-system)
     (arguments
@@ -15575,7 +15575,9 @@ of three or four players.")
                              r-plotrix
                              r-mass
                              r-jpeg
+                             r-hdf5r
                              r-fnn
+                             r-float
                              r-data-table
                              r-cubature
                              r-celestial
@@ -16264,13 +16266,13 @@ Cools (2019) <doi:10.1111/biom.12845>.")
 (define-public r-contsurvplot
   (package
     (name "r-contsurvplot")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contsurvplot" version))
        (sha256
-        (base32 "0z0s1ym9np9l8pmgbja46w25zr415laa1w68mjz04hq9wrzjjaca"))))
+        (base32 "0wq7n3zlk706kz9m1ksqip46xjc6ih5k2vhh3vybskpp0w1ck0sv"))))
     (properties `((upstream-name . "contsurvplot")))
     (build-system r-build-system)
     (arguments
@@ -26179,13 +26181,13 @@ memory-efficient computations when handling densely sampled domains.")
 (define-public r-coconots
   (package
     (name "r-coconots")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coconots" version))
        (sha256
-        (base32 "1cyj6wqh7xplpkmp1x0b2pq6jc12jmgi2xjd3rbj048lxz6mj8sn"))))
+        (base32 "1m0sq3bgdkf8ks60qbx69p8irw7jw7hdf30zjk2fkn52k9rak90q"))))
     (properties `((upstream-name . "coconots")))
     (build-system r-build-system)
     (arguments
@@ -30154,39 +30156,6 @@ Parametric and semi-parametric approaches described in Marbac et al. (2020)
 <@code{arXiv:2012.14159>} are implemented.")
     (license license:gpl2+)))
 
-(define-public r-clusevol
-  (package
-    (name "r-clusevol")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clusEvol" version))
-       (sha256
-        (base32 "192zi43flpwfazgjd5ci0620hbad77z6s527vp6qwywcly3aqxmw"))))
-    (properties `((upstream-name . "clusEvol")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-plotly
-                             r-ggplot2
-                             r-fpc
-                             r-dplyr
-                             r-clustersim
-                             r-cluster))
-    (home-page "https://github.com/vmoprojs/clusEvol")
-    (synopsis "Procedure for Cluster Evolution Analytics")
-    (description
-     "Cluster Evolution Analytics allows us to use exploratory what if questions in
-the sense that the present information of an object is plugged-in a dataset in a
-previous time frame so that we can explore its evolution (and of its neighbors)
-to the present.  See the URL for the papers associated with this package, as for
-instance, Morales-OÃ±ate and Morales-OÃ±ate (2024)
-<https://mpra.ub.uni-muenchen.de/120220>.")
-    (license license:gpl3+)))
-
 (define-public r-cluscov
   (package
     (name "r-cluscov")
@@ -32238,13 +32207,13 @@ solar radiation).")
 (define-public r-clickstream
   (package
     (name "r-clickstream")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clickstream" version))
        (sha256
-        (base32 "1pbw74kd1ig6xc9llv8idizx0rya2454kpd9z62ybwvy68vyargs"))))
+        (base32 "06srgcck6j1k4ysla5bww5ai9bhnny5x8lgx2wa6p6y74hh3rwfy"))))
     (properties `((upstream-name . "clickstream")))
     (build-system r-build-system)
     (arguments
@@ -34053,31 +34022,6 @@ object is returned.  The package name is a contraption of CRAN Incoming
 Watcher'.")
     (license license:gpl2+)))
 
-(define-public r-civis
-  (package
-    (name "r-civis")
-    (version "3.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "civis" version))
-       (sha256
-        (base32 "0ahrav9gd0dy05vxapg5x0csadwcnm4nfcwwk752j9nksd1hl3wg"))))
-    (properties `((upstream-name . "civis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-memoise r-jsonlite r-httr r-future))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/civisanalytics/civis-r")
-    (synopsis "R Client for the 'Civis Platform API'")
-    (description
-     "This package provides a convenient interface for making requests directly to the
-Civis Platform API <https://www.civisanalytics.com/platform/>.  Full
-documentation available here <https://civisanalytics.github.io/civis-r/>.")
-    (license license:bsd-3)))
-
 (define-public r-civ
   (package
     (name "r-civ")
@@ -34507,13 +34451,13 @@ provided by the @code{citation()} function in the utils package.")
 (define-public r-citan
   (package
     (name "r-citan")
-    (version "2022.1.1")
+    (version "2025.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CITAN" version))
        (sha256
-        (base32 "09m9f6s9y7ygbixcymg93vsrqz5jsjp968cjhxnj1v73hzalk168"))))
+        (base32 "0krlljwwxx4n5xzm7p1x5l5ql8mvssf8cy69fg80mqyqnj2kk80m"))))
     (properties `((upstream-name . "CITAN")))
     (build-system r-build-system)
     (arguments
@@ -34525,9 +34469,9 @@ provided by the @code{citation()} function in the utils package.")
     (description
      "Supports quantitative research in scientometrics and bibliometrics.  Provides
 various tools for preprocessing bibliographic data retrieved, e.g., from
-Elsevier's @code{SciVerse} Scopus, computing bibliometric impact of individuals,
-or modelling phenomena encountered in the social sciences.  This package is
-deprecated, see agop instead.")
+Elsevier's Scopus, computing bibliometric impact of individuals, or modelling
+phenomena encountered in the social sciences.  This package is deprecated; see
+agop instead.")
     (license license:lgpl3+)))
 
 (define-public r-cit
@@ -35994,42 +35938,6 @@ absence of the direct effect.  Additionally, standard multiple regression,
 regression of residuals, and the structural equation modeling approach are
 implemented for comparison.")
     (license license:gpl2)))
-
-(define-public r-cider
-  (package
-    (name "r-cider")
-    (version "0.99.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CIDER" version))
-       (sha256
-        (base32 "16cv4w38x9zadc28x0z1hajfyy32vhf0w818zcqcakarrz6y7d08"))))
-    (properties `((upstream-name . "CIDER")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-seurat
-                             r-pheatmap
-                             r-limma
-                             r-kernlab
-                             r-igraph
-                             r-ggplot2
-                             r-foreach
-                             r-edger
-                             r-doparallel
-                             r-dbscan))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/zhiyuan-hu-lab/CIDER")
-    (synopsis "Meta-Clustering for scRNA-Seq Integration and Evaluation")
-    (description
-     "This package provides a workflow of (a) meta-clustering based on inter-group
-similarity measures and (b) a ground-truth-free test metric to assess the
-biological correctness of integration in real datasets.  See Hu Z, Ahmed A, Yau
-C (2021) <doi:10.1101/2021.03.29.437525> for more details.")
-    (license license:expat)))
 
 (define-public r-cici
   (package
@@ -38571,13 +38479,13 @@ Cheetah Grid <https://github.com/future-architect/cheetah-grid>.")
 (define-public r-cheese
   (package
     (name "r-cheese")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheese" version))
        (sha256
-        (base32 "0g935mlf2hkbhd8cif8nmvg477if8sv7ga50ddb0cvghdaqjd183"))))
+        (base32 "16lswrjh6q6rpy1qmq0q4a51hvchd3wkz5397gpfkpvdi8gvskc3"))))
     (properties `((upstream-name . "cheese")))
     (build-system r-build-system)
     (arguments
@@ -38976,13 +38884,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "1zm312mjly5kxk41vsz2vp5nc793xyghydkn906m55zk8n78dydn"))))
+        (base32 "164v45dyv5czzhh6d1vjcy1zpi2skr437h1l2k23r3d1fzcfc785"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (arguments
@@ -41014,13 +40922,13 @@ linear coefficients in regression models with grouped data.")
 (define-public r-ces
   (package
     (name "r-ces")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ces" version))
        (sha256
-        (base32 "0li48bclx113gqhs1plni4v1dyp5aakv87ll76k0a2c0ka675fw6"))))
+        (base32 "15dg5c7b5miqch575hs9si6jzwq95aabvjqyr8a2xwxi3bkyhvzg"))))
     (properties `((upstream-name . "ces")))
     (build-system r-build-system)
     (arguments
@@ -41036,10 +40944,11 @@ data.  The package simplifies the process of downloading, cleaning, and using
 CES datasets for political science research and analysis.  The Canadian Election
 Study ('CES') has been conducted during federal elections since 1965, surveying
 Canadians on their political preferences, engagement, and demographics.  Data is
-accessed from the Borealis Data repository <https://borealisdata.ca/>, which
-serves as the official host for CES datasets.  This package is not officially
-affiliated with the Canadian Election Study or Borealis Data, and users should
-cite the original data sources in their work.")
+accessed from multiple sources including the Borealis Data repository
+<https://borealisdata.ca/> and the official Canadian Election Study website
+<https://ces-eec.arts.ubc.ca/>.  This package is not officially affiliated with
+the Canadian Election Study, Borealis Data, or the University of British
+Columbia, and users should cite the original data sources in their work.")
     (license license:expat)))
 
 (define-public r-certara-xpose-nlme
@@ -47681,13 +47590,13 @@ Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014)
 (define-public r-cartography
   (package
     (name "r-cartography")
-    (version "3.1.4")
+    (version "3.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cartography" version))
        (sha256
-        (base32 "1sww3n7glkzrpf1ki31z8309qr5496m1rm5gj3cprwif8fxfyjx5"))))
+        (base32 "1nkws1fhxm46fh470i1xz3r9vn3zy7xcp0309851c90axd996ywq"))))
     (properties `((upstream-name . "cartography")))
     (build-system r-build-system)
     (arguments

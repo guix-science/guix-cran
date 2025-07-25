@@ -859,13 +859,13 @@ Methods & Applications <doi: 10.1007/s10260-017-0404-0>.")
 (define-public r-mvslouch
   (package
     (name "r-mvslouch")
-    (version "2.7.6")
+    (version "2.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvSLOUCH" version))
        (sha256
-        (base32 "1l11dza28m5l6iam90z2vvmpabp91s3rmnb7b1x78c77ss1r7gig"))))
+        (base32 "1k2zq27fjmzb4bqwzzc7ykvlc7q51my8wgiyqwz53fdbpjq81xwk"))))
     (properties `((upstream-name . "mvSLOUCH")))
     (build-system r-build-system)
     (arguments
@@ -886,8 +886,11 @@ Methods & Applications <doi: 10.1007/s10260-017-0404-0>.")
      "Fits multivariate Ornstein-Uhlenbeck types of models to continues trait data
 from species related by a common evolutionary history.  See K. Bartoszek, J,
 Pienaar, P. Mostad, S. Andersson, T. F. Hansen (2012)
-<doi:10.1016/j.jtbi.2012.08.005>.  The suggested PCM@code{BaseCpp} package
-(which significantly speeds up the likelihood calculations) can be obtained from
+<doi:10.1016/j.jtbi.2012.08.005> and K. Bartoszek, and J. Tredgett Clarke, J.
+Fuentes-Gonzalez, V. Mitov, J. Pienaar, M. Piwczynski, R. Puchalka, K. Spalik,
+K. L. Voje (2024) <doi:10.1111/2041-210X.14376>.  The suggested
+PCM@code{BaseCpp} package (which significantly speeds up the likelihood
+calculations) can be obtained from
 <https://github.com/venelin/PCM@code{BaseCpp/>}.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file LICENCE")))))
@@ -1975,13 +1978,13 @@ Danilova L, Hayward MC, Hayes DN, 2018.  Cancer Research
 (define-public r-mvinfluence
   (package
     (name "r-mvinfluence")
-    (version "0.9.0")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvinfluence" version))
        (sha256
-        (base32 "0yzp8sybmmr2nfa0g0v14kb2fqa5ayi0awlrb05vbyxvr5pg4f8h"))))
+        (base32 "0c5pbg5z1342cw68q44kinw830ch9jp1gy0wh6yn0ip3wpzaxsxj"))))
     (properties `((upstream-name . "mvinfluence")))
     (build-system r-build-system)
     (arguments
@@ -7900,32 +7903,6 @@ the algorithms proposed in Tian, Y., Weng, H., & Feng, Y. (2022)
 DNA Haplogroups.  Based on formulae by Samuels et al.  AJHG, 2006.
 78(4):713-720. <DOI:10.1086/502682>.")
     (license license:gpl3)))
-
-(define-public r-mtest
-  (package
-    (name "r-mtest")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MTest" version))
-       (sha256
-        (base32 "19sz6s5hbrvm4jv54hv8g3d2ixf9pk72ch5j9418skal4dawh1yn"))))
-    (properties `((upstream-name . "MTest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plotly r-ggplot2 r-car))
-    (home-page "https://github.com/vmoprojs/MTest")
-    (synopsis "Procedure for Multicollinearity Testing using Bootstrap")
-    (description
-     "This package provides functions for detecting multicollinearity.  This test
-gives statistical support to two of the most famous methods for detecting
-multicollinearity in applied work: Kleinâs rule and Variance Inflation Factor
-(VIF).  See the URL for the papers associated with this package, as for
-instance, Morales-OÃ±ate and Morales-OÃ±ate (2015) <doi:10.33333/rp.vol51n2.05>.")
-    (license license:gpl3+)))
 
 (define-public r-mte
   (package
@@ -17162,13 +17139,13 @@ forecasting at scale\"
 (define-public r-modeltests
   (package
     (name "r-modeltests")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeltests" version))
        (sha256
-        (base32 "112pwkrg3d1lmcqhs946nm4dxhp9h7gvjibvhcjzlmd1d0qhlivc"))))
+        (base32 "0fmsn2cbfx05mzrg2j2j756vapvf26p9qvqj3bywny59nv7p9jbm"))))
     (properties `((upstream-name . "modeltests")))
     (build-system r-build-system)
     (arguments
@@ -21031,13 +21008,13 @@ predictions on a test set.")
 (define-public r-mlr3oml
   (package
     (name "r-mlr3oml")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3oml" version))
        (sha256
-        (base32 "0qlgqq22zy5kdgp6l6fg3yx8ywxpy4yaa2567j9z1pg5ij9yd49h"))))
+        (base32 "0dmz5rclvs01nl0w2mlwknwagv69s6fgrx3yb7gqvdrrgil3p0xl"))))
     (properties `((upstream-name . "mlr3oml")))
     (build-system r-build-system)
     (arguments
@@ -21970,13 +21947,13 @@ dissimilarity.")
 (define-public r-mlgl
   (package
     (name "r-mlgl")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLGL" version))
        (sha256
-        (base32 "1vn9r867mj6g407ca2ncd1f2c3x83jcdllyxfalm3962xgwrg08m"))))
+        (base32 "11w76jalyy1fsmji81x8mv0403ncgqa8rr2lyc14vms7jhj6zvxp"))))
     (properties `((upstream-name . "MLGL")))
     (build-system r-build-system)
     (arguments
@@ -23688,41 +23665,6 @@ their data structure and research questions, via options for fixed/ random
 effects, source data types, priors, and error terms. @code{MixSIAR} incorporates
 several years of advances since @code{MixSIR} and SIAR'.")
     (license license:gpl3)))
-
-(define-public r-mixsemirob
-  (package
-    (name "r-mixsemirob")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MixSemiRob" version))
-       (sha256
-        (base32 "0rvpwb4skd5s0f7qnm2mjrhfz4ppa6inqyfz970mpycihig3vilc"))))
-    (properties `((upstream-name . "MixSemiRob")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ucminf
-                             r-robustbase
-                             r-rlab
-                             r-quadprog
-                             r-pracma
-                             r-mvtnorm
-                             r-mixtools
-                             r-mass
-                             r-gofkernel))
-    (home-page "https://cran.r-project.org/package=MixSemiRob")
-    (synopsis "Mixture Models: Parametric, Semiparametric, and Robust")
-    (description
-     "Various functions are provided to estimate parametric mixture models (with
-Gaussian, t, Laplace, log-concave distributions, etc.) and non-parametric
-mixture models.  The package performs hypothesis tests and addresses label
-switching issues in mixture models.  The package also allows for parameter
-estimation in mixture of regressions, proportion-varying mixture of regressions,
-and robust mixture of regressions.")
-    (license license:gpl2+)))
 
 (define-public r-mixsal
   (package
@@ -25500,13 +25442,13 @@ Completely at Random (MCAR)\", Journal of Statistical Software, 56(6), 1-31.
 (define-public r-missmda
   (package
     (name "r-missmda")
-    (version "1.19")
+    (version "1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missMDA" version))
        (sha256
-        (base32 "0p76jlzqayhwqwinaxhf69s3c5hxk4hmncvw4dsyybwvha25hrzr"))))
+        (base32 "0c7xdy27yvinqgld8z2l7ii3fijpkxl5sh1wf3rc1l0fagji00gr"))))
     (properties `((upstream-name . "missMDA")))
     (build-system r-build-system)
     (arguments
@@ -29306,13 +29248,13 @@ time.  This version contains network visualisation functions.")
 (define-public r-microplot
   (package
     (name "r-microplot")
-    (version "1.0-45")
+    (version "1.0-47")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microplot" version))
        (sha256
-        (base32 "0qprvn5zv9ai30lhd8qykffc5f8va886kc5qka34940lin63v389"))))
+        (base32 "175bk01h8akgz8l3xl6hyfc4m7sq80r23gz29dwqbxflm6v8jbjy"))))
     (properties `((upstream-name . "microplot")))
     (build-system r-build-system)
     (arguments
@@ -36606,13 +36548,13 @@ al. (2021) <doi:10.3390/axioms10040267>, Taketomi et al. (2022)
 (define-public r-meta
   (package
     (name "r-meta")
-    (version "8.1-0")
+    (version "8.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meta" version))
        (sha256
-        (base32 "1cgfyyyc40s24a1aw6jpha99p42pd6h75sp0cbpsig9xxzg9rrb5"))))
+        (base32 "1b66ki7px7ns6pmpki0kvw1wsfk7dngw74v6izxavix125xr3mkd"))))
     (properties `((upstream-name . "meta")))
     (build-system r-build-system)
     (arguments
@@ -38827,13 +38769,13 @@ by Chan, Imai, Yam and Zhang (2016) <@code{arXiv:1601.03501>}.")
 (define-public r-mecoturn
   (package
     (name "r-mecoturn")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mecoturn" version))
        (sha256
-        (base32 "1qr7p50wplg3nwvaz595nxfrf5b1dc8l4y13jx65r8kvksqrl07g"))))
+        (base32 "1svwv9510kqdxbb1mmdl5hk0ndwn59c35lyvj556fig1b2f640rq"))))
     (properties `((upstream-name . "mecoturn")))
     (build-system r-build-system)
     (arguments
@@ -40188,6 +40130,47 @@ medical product e.g. drugs, vaccines) pairs, a data generation function for
 simulating pharmacovigilance datasets, and various utility functions.  For more
 details please see Liu A., Mukhopadhyay R., and Markatou M.
 <doi:10.48550/@code{arXiv.2410.01168>}.")
+    (license license:gpl3)))
+
+(define-public r-mdccure
+  (package
+    (name "r-mdccure")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MDCcure" version))
+       (sha256
+        (base32 "0xwy960z6xkg19fyq2w07v686xm627p2qniibfpkls1g8aq0cmha"))))
+    (properties `((upstream-name . "MDCcure")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list tbb))
+    (propagated-inputs (list r-survival
+                             r-smcure
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-npcure
+                             r-gridextra
+                             r-ggtext
+                             r-ggplot2
+                             r-future-apply
+                             r-future))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CastleMon/MDCcure")
+    (synopsis
+     "Martingale Dependence Tools and Testing for Mixture Cure Models")
+    (description
+     "Computes martingale difference correlation (MDC), martingale difference
+divergence, and their partial extensions to assess conditional mean dependence.
+The methods are based on Shao and Zhang (2014)
+<doi:10.1080/01621459.2014.887012>.  Additionally, introduces a novel hypothesis
+test for evaluating covariate effects on the cure rate in mixture cure models,
+using MDC-based statistics.  The methodology is described in Monroy-Castillo et
+al. (2025, manuscript submitted).")
     (license license:gpl3)))
 
 (define-public r-mdbr
@@ -41638,13 +41621,13 @@ parameters.")
 (define-public r-mcmcensemble
   (package
     (name "r-mcmcensemble")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmcensemble" version))
        (sha256
-        (base32 "0cbld6yr91jzi084pkzvfhqlqympqv9f91sj5gxvannnwszw3454"))))
+        (base32 "0hdcgh8cc5b5mwx2qp1h7y1fhwq45jqx0w9gcx8r8g2jry3lzwj8"))))
     (properties `((upstream-name . "mcmcensemble")))
     (build-system r-build-system)
     (arguments
@@ -42388,13 +42371,13 @@ mcca package in Li, Gao and D'Agostino (2019) <doi:10.1002/sim.8103>.")
 (define-public r-mcboost
   (package
     (name "r-mcboost")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcboost" version))
        (sha256
-        (base32 "17zflvafz6w91lxbr8saasxp9bn18bla1jqg53fka2k8fnziz4g8"))))
+        (base32 "14svsgkq11zy0l4nwr7f8ri68b3cfmzygqj20bbfcy42470hkvwr"))))
     (properties `((upstream-name . "mcboost")))
     (build-system r-build-system)
     (arguments
@@ -42686,19 +42669,27 @@ Olkin (1985, ISBN:978-0123363800), Silagy, Lancaster, Stead, Mant, & Fowler
 (define-public r-mbx
   (package
     (name "r-mbx")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mbX" version))
        (sha256
-        (base32 "1pmdnj8wa4fvfpf22qvvfnp7l4hvv1pa19had7z3skgimawl3krr"))))
+        (base32 "0ngg5jz25hqgdd992cn1lgagwr9d33qaryn8n50dbc7rh0daxpjd"))))
     (properties `((upstream-name . "mbX")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-readxl r-openxlsx r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rstatix
+                             r-readxl
+                             r-openxlsx
+                             r-multcompview
+                             r-ggplot2
+                             r-fsa
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mbX")
     (synopsis "Comprehensive Microbiome Data Processing Pipeline")
@@ -42707,9 +42698,11 @@ Olkin (1985, ISBN:978-0123363800), Silagy, Lancaster, Stead, Mant, & Fowler
 sequencing data (e.g., 16S @code{rRNA}) for downstream analysis.  Supports CSV,
 TXT, and Excel file formats.  The main function, @code{ezclean()}, automates
 microbiome data transformation, including format validation, transposition,
-numeric conversion, and metadata integration.  Also ensures efficient handling
-of taxonomic levels, resolves duplicated taxa entries, and outputs a
-well-structured, analysis-ready dataset.")
+numeric conversion, and metadata integration.  It also handles taxonomic levels
+efficiently, resolves duplicated taxa entries, and outputs a well-structured,
+analysis-ready dataset.  The companion functions @code{ezstat()} run statistical
+tests and summarize results, while @code{ezviz()} produces publication-ready
+visualizations.")
     (license license:expat)))
 
 (define-public r-mbvs
@@ -45304,13 +45297,13 @@ their original counterparts, with more to come as this package grows.")
 (define-public r-maths-genealogy
   (package
     (name "r-maths-genealogy")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maths.genealogy" version))
        (sha256
-        (base32 "0366krr4wlgcsrnv6vgzss3blgmb03054siayhnk1dsiwk1z37gd"))))
+        (base32 "1sia676vd6i3070r8g3sahswfyf7qkm9v3zq8w2r7gkp7q9jcgcj"))))
     (properties `((upstream-name . "maths.genealogy")))
     (build-system r-build-system)
     (arguments
@@ -45322,6 +45315,7 @@ their original counterparts, with more to come as this package grows.")
                              r-later
                              r-jsonlite
                              r-httr2
+                             r-curl
                              r-cli
                              r-checkmate))
     (native-inputs (list r-knitr))

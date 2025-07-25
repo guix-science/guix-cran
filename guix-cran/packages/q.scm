@@ -445,6 +445,35 @@ Furthermore, provides summaries and diagnostics to evaluate the nonlinear
 dimension reduction layout.")
     (license license:expat)))
 
+(define-public r-quitefastmst
+  (package
+    (name "r-quitefastmst")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quitefastmst" version))
+       (sha256
+        (base32 "1lyy6m1hvbf2a0wqsga7m7k6vjg0q6cwf6xlikxrksj2z4bdalm2"))))
+    (properties `((upstream-name . "quitefastmst")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://quitefastmst.gagolewski.com/")
+    (synopsis "Euclidean and Mutual Reachability Minimum Spanning Trees")
+    (description
+     "This package provides functions to compute Euclidean minimum spanning trees
+using single-, sesqui-, and dual-tree Boruvka algorithms.  Thanks to K-d trees,
+they are fast in spaces of low intrinsic dimensionality.  Mutual reachability
+distances (used in the definition of the HDBSCAN* algorithm) are also supported.
+ The package also features relatively fast fallback minimum spanning tree and
+nearest-neighbours algorithms for spaces of higher dimensionality.  The Python
+version of quitefastmst is available via @code{PyPI}'.")
+    (license license:agpl3)))
+
 (define-public r-quint
   (package
     (name "r-quint")
@@ -5238,13 +5267,13 @@ recoding of nominal data.")
 (define-public r-qlcal
   (package
     (name "r-qlcal")
-    (version "0.0.15")
+    (version "0.0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qlcal" version))
        (sha256
-        (base32 "1sqx2blqbgv9g10kzvav9fawsd2pvd4psbrc6lcm9slidcbxrgyk"))))
+        (base32 "07v4ardvpp6a9b1smn4fbsvyn6jmiplj1wsvrlidk26xxc1vwlm1"))))
     (properties `((upstream-name . "qlcal")))
     (build-system r-build-system)
     (arguments
@@ -5482,13 +5511,13 @@ to denote the quantity factor.")
 (define-public r-qhscrnomo
   (package
     (name "r-qhscrnomo")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QHScrnomo" version))
        (sha256
-        (base32 "1axl0scvk5q127rcffdfv8k9ikvq0wamrbnqaimm3smcyfbcyyqm"))))
+        (base32 "1jpn2fl324cgp63d8w8v9bnyji7nl1n8rpk4x9m65hivlzfqdsk2"))))
     (properties `((upstream-name . "QHScrnomo")))
     (build-system r-build-system)
     (arguments

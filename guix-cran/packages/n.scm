@@ -1980,13 +1980,13 @@ or Castillo-Paez et al. (2019) <doi:10.1016/j.csda.2019.01.017>.")
 (define-public r-npsm
   (package
     (name "r-npsm")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npsm" version))
        (sha256
-        (base32 "0d2pa55jcxrphmsnv0wcv3xsdidjcr8b8s9krbal27rjrvqqh27s"))))
+        (base32 "185j428pv23nj8b64c0bvbj11qk99gcdddp4ax2vhpchrqqmmf5a"))))
     (properties `((upstream-name . "npsm")))
     (build-system r-build-system)
     (arguments
@@ -7313,13 +7313,13 @@ additivity.")
 (define-public r-nltm
   (package
     (name "r-nltm")
-    (version "1.4.5")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nltm" version))
        (sha256
-        (base32 "10w8nagb51wcbf5v082lgqw13f1dznhas77cmhsqp9d23iw52waq"))))
+        (base32 "0pf1pgsgvq5mjvhck4dr2mrs1g9iqih1cnjw1fmqi6ix6hprm8nh"))))
     (properties `((upstream-name . "nltm")))
     (build-system r-build-system)
     (arguments
@@ -8293,13 +8293,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "4.0.1")
+    (version "4.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "1x0n5vxmh2lrkfqc73vrbkdy3vvyw6844bxzmiwk01yv131vj01l"))))
+        (base32 "1nw4p4cxiij1arqjl83icwhpxl5qf3m9acjf5fi5i2sfynq0rccb"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (arguments
@@ -11784,13 +11784,13 @@ change-point detection algorithms, as described by Hocking et al.
 (define-public r-neurobase
   (package
     (name "r-neurobase")
-    (version "1.32.4")
+    (version "1.33.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neurobase" version))
        (sha256
-        (base32 "0jgf7zv4j2r09is0r8fkizgy0mz3c0iyldhw8f1fgys4gwzia7cc"))))
+        (base32 "1cpvi1jcsmpr5kl0gglswzq4kcrgy3nqd2j6jb6mk91ilby1gm1j"))))
     (properties `((upstream-name . "neurobase")))
     (build-system r-build-system)
     (arguments

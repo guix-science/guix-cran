@@ -605,13 +605,13 @@ Equivalence Bound: A New Procedure of Hypothesis Testing\"
 (define-public r-buysetest
   (package
     (name "r-buysetest")
-    (version "3.3.1")
+    (version "3.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BuyseTest" version))
        (sha256
-        (base32 "013d5z506bbsrw7h6dbb0bxx6hvpd547v5msh22njb141w8m0phm"))))
+        (base32 "0ihp597hmrm3zkiz1i0l5lr79md8z9y8nmr71ibgdc43lfgppx24"))))
     (properties `((upstream-name . "BuyseTest")))
     (build-system r-build-system)
     (arguments
@@ -4144,13 +4144,13 @@ methodology and applications.")
 (define-public r-brokenadaptiveridge
   (package
     (name "r-brokenadaptiveridge")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BrokenAdaptiveRidge" version))
        (sha256
-        (base32 "0f46wwyfcqslk25cbm63pbnp8bwamqhr4g4wdlrqn666yiwn1sc2"))))
+        (base32 "08kpfiyzs5147hhml21akqa6vylnfbdbyj333353f8m4nd41ms02"))))
     (properties `((upstream-name . "BrokenAdaptiveRidge")))
     (build-system r-build-system)
     (arguments
@@ -7031,13 +7031,13 @@ expansion, following the article Derumigny, Girard, Guyonvarch (2021)
 (define-public r-boundarystats
   (package
     (name "r-boundarystats")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoundaryStats" version))
        (sha256
-        (base32 "18a0xjs2qg8lfxh5riqdh8c6pwpg72r2m1bl1p4qgcclrkcvdsx7"))))
+        (base32 "1q4f6b3q3r60gw6a3gk9c90bmcnf9m3www84vfnrrs1fmsqamnk9"))))
     (properties `((upstream-name . "BoundaryStats")))
     (build-system r-build-system)
     (arguments
@@ -7045,11 +7045,10 @@ expansion, following the article Derumigny, Girard, Guyonvarch (2021)
       #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-terra
-                             r-sf
                              r-scales
-                             r-pdqr
                              r-magrittr
                              r-igraph
+                             r-gstat
                              r-ggplot2
                              r-fields
                              r-dplyr))
@@ -9372,13 +9371,13 @@ Exact Test on significant parameters.")
 (define-public r-bnrep
   (package
     (name "r-bnrep")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnRep" version))
        (sha256
-        (base32 "10ia4p2x3zks6wvfyapmja5mq3byp2ri02vb7gfhdya43ykps0yd"))))
+        (base32 "1jjxrs4iick0pxqcnsphh7102vkbn8l9n9hsdllqmx53rbiaf1ld"))))
     (properties `((upstream-name . "bnRep")))
     (build-system r-build-system)
     (arguments
@@ -10052,25 +10051,22 @@ system identifications, J. Biomol.  NMR. 32 (2005) 13â22.
 (define-public r-bmm
   (package
     (name "r-bmm")
-    (version "1.0.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bmm" version))
        (sha256
-        (base32 "11fl9a0350602ipjzcwqh2fcbh1zhbachxb37wd4n25qaraqds6l"))))
+        (base32 "07h4cq8z7ymi8r7ff19qprqr4bx29wl32y6z07gpszybc6y9a7lh"))))
     (properties `((upstream-name . "bmm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-withr
-                             r-tidyr
                              r-matrixstats
-                             r-magrittr
                              r-glue
                              r-fs
-                             r-dplyr
                              r-crayon
                              r-brms))
     (home-page "https://github.com/venpopov/bmm")
@@ -12279,6 +12275,38 @@ new data.  It provides the similar functionality as the Python package
 <https://github.com/CAHLR/@code{pyBKT>}.")
     (license license:expat)))
 
+(define-public r-bkp
+  (package
+    (name "r-bkp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BKP" version))
+       (sha256
+        (base32 "14229948ly34jxc72mhqpwgci9zmzn6rshggqhf93rc4dcicns1a"))))
+    (properties `((upstream-name . "BKP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tgp r-optimx r-lattice r-gridextra))
+    (home-page "https://github.com/Jiangyan-Zhao/BKP")
+    (synopsis
+     "Beta and Dirichlet Kernel Processes for Binomial and Multinomial Modeling")
+    (description
+     "This package provides methods for nonparametric modeling of binomial and
+multinomial success probabilities via the Beta Kernel Process and its extension,
+the Dirichlet Kernel Process.  Supports model fitting, predictive inference with
+uncertainty quantification, posterior simulation, and visualization in one- and
+two-dimensional input spaces.  The package implements multiple kernel functions
+(Gaussian, Matern 5/2, and Matern 3/2), and performs hyperparameter optimization
+using multi-start gradient-based search.  Applications include spatial
+statistics, probabilistic classification, and Bayesian experimental design.  For
+more details, see @code{MacKenzie}, Trafalis, and Barker (2014)
+<doi:10.1002/sam.11241>.")
+    (license license:gpl3)))
+
 (define-public r-bkmrhat
   (package
     (name "r-bkmrhat")
@@ -13357,13 +13385,13 @@ year.  Kahl, S., Wood, C. M., Eibl, M., & Klinck, H. (2021)
 (define-public r-birdie
   (package
     (name "r-birdie")
-    (version "0.6.1")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "birdie" version))
        (sha256
-        (base32 "1xh3ga5f16p46jrw7xj2mwv41mnib0mijin2005q9wrfr5pr54yc"))))
+        (base32 "1vpnlhdzk5ccc0wmq6bawcdfsmr2v45065g3sa6y63nv15rn5s97"))))
     (properties `((upstream-name . "birdie")))
     (build-system r-build-system)
     (arguments
@@ -13390,7 +13418,7 @@ year.  Kahl, S., Wood, C. M., Eibl, M., & Klinck, H. (2021)
      "Bayesian models for accurately estimating conditional distributions by race,
 using Bayesian Improved Surname Geocoding (BISG) probability estimates of
 individual race.  Implements the methods described in @code{McCartan}, Fisher,
-Goldin, Ho and Imai (2024) <doi:10.3386/w32373>.")
+Goldin, Ho and Imai (2025) <doi:10.1080/01621459.2025.2526695>.")
     (license license:gpl3+)))
 
 (define-public r-birankr
@@ -13946,13 +13974,13 @@ The package also includes 19 datasets which are used in the tutorials.")
 (define-public r-biostat3
   (package
     (name "r-biostat3")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biostat3" version))
        (sha256
-        (base32 "0gggiqnbflqx4h89wk17k556ifn26mz07czfpy5zq2pr2y6qfqjd"))))
+        (base32 "1jd1clvhgf67znrrlqdi0x7l67jl9ml109c9l92jkqkbgi595zx4"))))
     (properties `((upstream-name . "biostat3")))
     (build-system r-build-system)
     (arguments
@@ -14939,13 +14967,13 @@ n-gram data.")
 (define-public r-biogeom
   (package
     (name "r-biogeom")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biogeom" version))
        (sha256
-        (base32 "0wzj99ldk0654s1a8d1b4q57mahv4mjzndx5bj1hakmsdrwa6q8b"))))
+        (base32 "166ll1yvygxnh79lry1yfr5c4pz9cz905wh1qll96mqln97zbxf3"))))
     (properties `((upstream-name . "biogeom")))
     (build-system r-build-system)
     (arguments
@@ -19386,13 +19414,13 @@ modeling).")
 (define-public r-bfsmaps
   (package
     (name "r-bfsmaps")
-    (version "1.99.3")
+    (version "1.99.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfsMaps" version))
        (sha256
-        (base32 "1sjvlfwcp52l2bpnbbalrcr978lwmkrr9kz47jvnkgy3vg9ppd14"))))
+        (base32 "0cs6m8z9l8g4pfkhzckj2zjdslibig9azizqcjfx5xf0m0iz8g02"))))
     (properties `((upstream-name . "bfsMaps")))
     (build-system r-build-system)
     (arguments
@@ -19402,7 +19430,7 @@ modeling).")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-sf r-desctools))
+    (propagated-inputs (list r-sf r-httr r-desctools))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/AndriSignorell/bfsMaps/")
     (synopsis "Plot Maps from Switzerland by Swiss Federal Statistical Office")
@@ -20135,13 +20163,13 @@ data and graphing functionality for visual comparisons.")
 (define-public r-betapart
   (package
     (name "r-betapart")
-    (version "1.6")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betapart" version))
        (sha256
-        (base32 "1ap1z9pvih66la7qh1bfihq0s5csnacgnx3i31gnj5ylaf72z9ds"))))
+        (base32 "1kvyp48gs0kbvbc4ychadj8yjpynpgzayxrgjdny8jsv7p4xvixh"))))
     (properties `((upstream-name . "betapart")))
     (build-system r-build-system)
     (arguments

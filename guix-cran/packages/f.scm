@@ -1867,13 +1867,13 @@ also be tailored.")
 (define-public r-funnelplotr
   (package
     (name "r-funnelplotr")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FunnelPlotR" version))
        (sha256
-        (base32 "0h3nq5dd14n49zzgwaqqsh5qdx1xcsgskzqsajz1qpy86bm4ji89"))))
+        (base32 "1gj7x3dbnjz0v2h9vbdjgxvca0wvr8q5v37qnnxwvfpmgll1dc4l"))))
     (properties `((upstream-name . "FunnelPlotR")))
     (build-system r-build-system)
     (arguments
@@ -2564,13 +2564,13 @@ weights.")
 (define-public r-funcmapper
   (package
     (name "r-funcmapper")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funcMapper" version))
        (sha256
-        (base32 "0p16n1va8vgriszm3p4wyraq8h2kncqwpkg819h0px2ncaldi7gw"))))
+        (base32 "1cxd0kci7bjda5w0hkaa6a10sbd1izxj9rmxaba8pmmmsb0vr2sk"))))
     (properties `((upstream-name . "funcMapper")))
     (build-system r-build-system)
     (arguments
@@ -2579,7 +2579,7 @@ weights.")
     (propagated-inputs (list r-visnetwork r-magrittr r-htmlwidgets r-glue
                              r-functiondepends))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=funcMapper")
+    (home-page "https://github.com/antoniof1704/funcMapper")
     (synopsis "Map User-Created Functions")
     (description
      "Create an interactive function map by analyzing a specified R script.  It uses
@@ -12375,6 +12375,41 @@ on its own and also by using the Julia package Jflimo available on the git page
 of the project: <https://metabarcoding.org/flimo>.")
     (license license:cecill)))
 
+(define-public r-flightsbr
+  (package
+    (name "r-flightsbr")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flightsbr" version))
+       (sha256
+        (base32 "1xp9d9acl1337b8jl0ngjj2nlrasg0g68g92ajxj971a82k5kabc"))))
+    (properties `((upstream-name . "flightsbr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rvest
+                             r-pbapply
+                             r-parzer
+                             r-lifecycle
+                             r-janitor
+                             r-fs
+                             r-data-table
+                             r-curl
+                             r-archive))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ipeaGIT/flightsbr")
+    (synopsis "Download Flight and Airport Data from Brazil")
+    (description
+     "Download flight and airport data from Brazilâs Civil Aviation Agency (ANAC)
+<https://www.gov.br/anac/pt-br>.  The data covers detailed information on
+aircraft, airports, and airport operations registered with ANAC. It also
+includes data on airfares, all international flights to and from Brazil, and
+domestic flights within the country.")
+    (license license:expat)))
+
 (define-public r-flightr
   (package
     (name "r-flightr")
@@ -21825,13 +21860,13 @@ results for the g parameter.")
 (define-public r-fat2lpoly
   (package
     (name "r-fat2lpoly")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fat2Lpoly" version))
        (sha256
-        (base32 "08bbd17aqmfcacvk283bpf9cp1isf5pgfdciwxn0f7ahdzd81g4s"))))
+        (base32 "01s679c7jhq2zb6c1k9i4l52ygrngjp2i6x6ws59d8qc2rbxjc2f"))))
     (properties `((upstream-name . "fat2Lpoly")))
     (build-system r-build-system)
     (arguments
@@ -22312,13 +22347,13 @@ Hockey League's stats API <https://www.nhl.com/>.")
 (define-public r-fastrg
   (package
     (name "r-fastrg")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastRG" version))
        (sha256
-        (base32 "1ig6z8azl2vsl79nfs3s4f9v1f6f27vzc0kxb9zmvkpx3hfnlm7k"))))
+        (base32 "0w269x4cmcv062srvkzd781h1bm955627z7rsksbr65a3adaw4da"))))
     (properties `((upstream-name . "fastRG")))
     (build-system r-build-system)
     (arguments
@@ -22328,11 +22363,11 @@ Hockey League's stats API <https://www.nhl.com/>.")
                              r-tidygraph
                              r-tibble
                              r-rspectra
+                             r-rlang
                              r-matrix
                              r-igraph
                              r-glue
                              r-ggplot2
-                             r-ellipsis
                              r-dplyr))
     (home-page "https://rohelab.github.io/fastRG/")
     (synopsis "Sample Generalized Random Dot Product Graphs in Linear Time")
@@ -22868,13 +22903,13 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
 (define-public r-fastml
   (package
     (name "r-fastml")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastml" version))
        (sha256
-        (base32 "06c61lffg479p5izmspfpwycnzjx4hkd17ryh65vz8p354lk1hgs"))))
+        (base32 "1cgmi5ggkf0y2ik5spb106g98y9gyw85pk6c44rp8qcbbxhxdhz5"))))
     (properties `((upstream-name . "fastml")))
     (build-system r-build-system)
     (arguments
@@ -23290,13 +23325,13 @@ computing to reduce overall processing time.")
 (define-public r-fastjm
   (package
     (name "r-fastjm")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastJM" version))
        (sha256
-        (base32 "1rs76kaib5p0sy7cdjq0129wnclzqqn70ydbaq7qd3mpd51q7b6a"))))
+        (base32 "0f3m3qzhrvicab8c6mzj554zxwhih85b8s3a20apsp1qvh47j9wl"))))
     (properties `((upstream-name . "FastJM")))
     (build-system r-build-system)
     (arguments
@@ -23711,13 +23746,13 @@ time-varying covariates and multiple events.")
 (define-public r-fastcub
   (package
     (name "r-fastcub")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastCUB" version))
        (sha256
-        (base32 "11mn7nd629pkxbb5cxw0ahqchl7vjn885f0z6lzs515n54fclkk7"))))
+        (base32 "0hscxq52abfxb8y3l25rjsxikzi8w6amgxl7brvgayp3yici1fwv"))))
     (properties `((upstream-name . "FastCUB")))
     (build-system r-build-system)
     (arguments
@@ -25999,13 +26034,13 @@ of Normal-Gamma priors on the factor loading matrix
 (define-public r-factorplot
   (package
     (name "r-factorplot")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "factorplot" version))
        (sha256
-        (base32 "0gh2rv518hz39sihv9b08v8ldyyac21djz6ynxdaajh0hcicvasf"))))
+        (base32 "007pd621qwi48xbr6p0zr7zxqm3mqi3bsqwgnpmr4m7c7xc4ms4s"))))
     (properties `((upstream-name . "factorplot")))
     (build-system r-build-system)
     (arguments

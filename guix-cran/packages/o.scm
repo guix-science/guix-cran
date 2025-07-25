@@ -16,7 +16,6 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages image)
-  #:use-module (gnu packages imagemagick)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -12939,45 +12938,6 @@ Waterway, Port, Coastal, and Ocean Division, Vol 105, pp 457-459.")
     (description
      "This package provides functions for transforming and viewing 2-D and 3-D
 (oceanographic) data and model output.")
-    (license license:gpl3+)))
-
-(define-public r-oceanmap
-  (package
-    (name "r-oceanmap")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "oceanmap" version))
-       (sha256
-        (base32 "12ppcqk2s14p7hg0a6b3hgnz90dxn3kagfgkpykz6ks93vjy8pd7"))))
-    (properties `((upstream-name . "oceanmap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list imagemagick))
-    (propagated-inputs (list r-sp
-                             r-sf
-                             r-reshape2
-                             r-raster
-                             r-plotrix
-                             r-plotly
-                             r-ncdf4
-                             r-maps
-                             r-mapdata
-                             r-lubridate
-                             r-ggplot2
-                             r-ggedit
-                             r-fields
-                             r-extrafont
-                             r-abind))
-    (home-page "https://cran.r-project.org/package=oceanmap")
-    (synopsis "Plotting Toolbox for 2D Oceanographic Data")
-    (description
-     "Plotting toolbox for 2D oceanographic data (satellite data, sea surface
-temperature, chlorophyll, ocean fronts & bathymetry).  Recognized classes and
-formats include netcdf, Raster, .nc and .gz files.")
     (license license:gpl3+)))
 
 (define-public r-oceanis

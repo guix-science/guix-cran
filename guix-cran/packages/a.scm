@@ -17,6 +17,7 @@
   #:use-module (gnu packages package-management)
   #:use-module (gnu packages backup)
   #:use-module (gnu packages tls)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python)
   #:use-module (gnu packages machine-learning)
@@ -10026,6 +10027,42 @@ about APSIM see (<https://www.apsim.info/>) and for APSIM next generation
 (<https://apsimnextgeneration.netlify.app/>).")
     (license license:gpl3)))
 
+(define-public r-aprscenario
+  (package
+    (name "r-aprscenario")
+    (version "0.0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "APRScenario" version))
+       (sha256
+        (base32 "1vwp04gh33wg0jwl0a7ri09pq2yzv6px3sga1465j8x524vgm33p"))))
+    (properties `((upstream-name . "APRScenario")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list lapack))
+    (propagated-inputs (list r-tidyr
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-psych
+                             r-mass
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=APRScenario")
+    (synopsis
+     "Structural Scenario Analysis for Bayesian Structural Vector Autoregression Models")
+    (description
+     "This package implements the scenario analysis proposed by Antolin-Diaz, Petrella
+and Rubio-Ramirez (2021) \"Structural scenario analysis with SVARs\"
+<doi:10.1016/j.jmoneco.2020.06.001>.")
+    (license license:gpl3+)))
+
 (define-public r-aprof
   (package
     (name "r-aprof")
@@ -10945,13 +10982,13 @@ available here: <https://apexcharts.com/>.")
 (define-public r-apex
   (package
     (name "r-apex")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apex" version))
        (sha256
-        (base32 "1cz51g7s4xfr7fvjq0cc9iwy9sb3wwdfrblcjr9pacj09bk2myh7"))))
+        (base32 "0inlkn4y8xcp73nikfsyf6lcckwld7jg56haargqz9p3bhwfs7fb"))))
     (properties `((upstream-name . "apex")))
     (build-system r-build-system)
     (arguments
@@ -13745,13 +13782,13 @@ evaluation of the outputs.")
 (define-public r-andromeda
   (package
     (name "r-andromeda")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Andromeda" version))
        (sha256
-        (base32 "116gpx9wixa0j83sq3ri0cjak5a0cc5mflah05ay1rnr0zf3qm43"))))
+        (base32 "1rmdsjdlz5gnrf4nmgym6gjnrqxzdbh53bnbavi35170b462jmjz"))))
     (properties `((upstream-name . "Andromeda")))
     (build-system r-build-system)
     (arguments
@@ -13982,6 +14019,33 @@ It combines the tabular and graphical visualization for easier usability.  This
 package also creates an R Notebook with detailed data exploration with one
 function call.  The notebook can be made interactive.")
     (license license:expat)))
+
+(define-public r-analyzefmri
+  (package
+    (name "r-analyzefmri")
+    (version "1.1-25")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AnalyzeFMRI" version))
+       (sha256
+        (base32 "13k41766iz2qmx07h06wn9566m156h6v6y8yb0bjvc2z499jz53j"))))
+    (properties `((upstream-name . "AnalyzeFMRI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r-matlab r-fastica))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=AnalyzeFMRI")
+    (synopsis
+     "Functions for Analysis of fMRI Datasets Stored in the ANALYZE or 'NIFTI' Format")
+    (description
+     "This package provides functions for I/O, visualisation and analysis of
+functional Magnetic Resonance Imaging (@code{fMRI}) datasets stored in the
+ANALYZE or NIFTI format.  Note that the latest version of XQuartz seems to be
+necessary under @code{MacOS}.")
+    (license license:gpl2+)))
 
 (define-public r-analysislin
   (package
@@ -20424,13 +20488,13 @@ age distributions.")
 (define-public r-agepopdenom
   (package
     (name "r-agepopdenom")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AgePopDenom" version))
        (sha256
-        (base32 "03v0lc93s39n8vnn0wpvp0dg3if7i5jfx5nq2545d1djvg2yhpdx"))))
+        (base32 "0ys88hwxs1hnq48rv3f5yv416yx2pxvis6id00w7g8l05kd80mrg"))))
     (properties `((upstream-name . "AgePopDenom")))
     (build-system r-build-system)
     (arguments

@@ -633,13 +633,13 @@ presure deficit Shi et al.(2007) <doi:10.2134/agronj2006.0260>.")
 (define-public r-ludic
   (package
     (name "r-ludic")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ludic" version))
        (sha256
-        (base32 "08j6y65dxalyrcp14mry7a393if42lfh8smkq1q70dsdk6645j7d"))))
+        (base32 "19g38jr9im6shla7paldfddm2gz8ywm7dbqis9slppy9fqpm8dlw"))))
     (properties `((upstream-name . "ludic")))
     (build-system r-build-system)
     (arguments
@@ -651,14 +651,14 @@ presure deficit Shi et al.(2007) <doi:10.2134/agronj2006.0260>.")
                              r-matrix
                              r-landpred
                              r-fgarch))
-    (home-page "https://cran.r-project.org/package=ludic")
+    (home-page "https://borishejblum.github.io/ludic/")
     (synopsis "Linkage Using Diagnosis Codes")
     (description
      "Probabilistic record linkage without direct identifiers using only diagnosis
 codes.  Method is detailed in: Hejblum, Weber, Liao, Palmer, Churchill,
 Szolovits, Murphy, Kohane & Cai (2019) <doi: 10.1038/sdata.2018.298> ; Zhang,
 Hejblum, Weber, Palmer, Churchill, Szolovits, Murphy, Liao, Kohane & Cai (2021)
-<doi: 10.1101/2021.05.02.21256490>.")
+<doi: 10.1093/jamia/ocab187>.")
     (license license:expat)))
 
 (define-public r-lucidus
@@ -6323,13 +6323,13 @@ Lock^5 Includes version of datasets from earlier editions.")
 (define-public r-locits
   (package
     (name "r-locits")
-    (version "1.7.7")
+    (version "1.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locits" version))
        (sha256
-        (base32 "13y313z0wmhrqfzgr3dbcmkdg6507p0wdvyxrnz1vm0rjwqv4911"))))
+        (base32 "07pl34c6mgjym8358kypxlkbnzk16ci5b05lz27194qrbphlhy2h"))))
     (properties `((upstream-name . "locits")))
     (build-system r-build-system)
     (arguments
@@ -7279,13 +7279,13 @@ model inference feature through simulation and games.")
 (define-public r-lmtp
   (package
     (name "r-lmtp")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmtp" version))
        (sha256
-        (base32 "1blh19rgglbkjdzqka359kcic216f7dbx0sinrqibhdhfrkvyz1w"))))
+        (base32 "0wcsmc6xldrz3ni1czxyhq8k5p0ak1izfrpbqbbfkj7iwygcf9j0"))))
     (properties `((upstream-name . "lmtp")))
     (build-system r-build-system)
     (arguments
@@ -12061,6 +12061,33 @@ library.  And the @code{datestep()} function will perform row-by-row data
 processing.")
     (license license:cc0)))
 
+(define-public r-libopenexr
+  (package
+    (name "r-libopenexr")
+    (version "3.4.0-4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "libopenexr" version))
+       (sha256
+        (base32 "04ic2b8m35662yc7d5d0h1c4d9vz10nx1dmblqrbkfhnibad3530"))))
+    (properties `((upstream-name . "libopenexr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list cmake))
+    (propagated-inputs (list r-libimath r-libdeflate))
+    (native-inputs (list pkg-config))
+    (home-page "https://cran.r-project.org/package=libopenexr")
+    (synopsis "Static Library and Headers for 'OpenEXR' Image I/O")
+    (description
+     "This package provides the @code{OpenEXR} static library and C++ headers for
+high-dynamic-range image I/O (see <https://openexr.com/>) needed to link R
+packages against the @code{OpenEXR} library, along with a basic R interface to
+load EXR images.")
+    (license license:bsd-3)))
+
 (define-public r-liblinear
   (package
     (name "r-liblinear")
@@ -12324,24 +12351,25 @@ gene/region.")
 (define-public r-lgrextra
   (package
     (name "r-lgrextra")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lgrExtra" version))
        (sha256
-        (base32 "16hqvnhziyi6as4bl4gh3ggwvyrjkh1i35w0l9cidqik1f051isz"))))
+        (base32 "0bqr8fr8xxndfdjv2xr0b306f2kv55wy386skbldw6a88ssgqbnw"))))
     (properties `((upstream-name . "lgrExtra")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-r6 r-lgr r-data-table))
-    (home-page "https://cran.r-project.org/package=lgrExtra")
+    (home-page "https://s-fleck.github.io/lgrExtra/")
     (synopsis "Extra Appenders for 'lgr'")
     (description
      "Additional appenders for the logging package lgr that support logging to
-databases, email and push notifications.")
+Elasticsearch', Dynatrace', AWS@code{CloudWatchLog}', databases, syslog', email-
+and push notifications, and more.")
     (license license:expat)))
 
 (define-public r-lgrdata
