@@ -1914,13 +1914,13 @@ relationships between categorical and continuous variables in the data set.")
 (define-public r-autoslider-core
   (package
     (name "r-autoslider-core")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoslider.core" version))
        (sha256
-        (base32 "1cc4ciqb07n8g2nvy30k3450jd7xhh1d52bw49hrjv5w5yfwwn2z"))))
+        (base32 "1cwidh4j1qw69c3ghbgnkxkpjy6kd6nrf221257kh95w94fvsys5"))))
     (properties `((upstream-name . "autoslider.core")))
     (build-system r-build-system)
     (arguments
@@ -16831,13 +16831,13 @@ generations.")
 (define-public r-allelematch
   (package
     (name "r-allelematch")
-    (version "2.5.4")
+    (version "2.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "allelematch" version))
        (sha256
-        (base32 "1zzx9ilxh99grjl2dmzmby0kh9rgd1h2x1hvsaxvxxmnahdsprm2"))))
+        (base32 "0605cky95c0l2abmhkiig74is0h1zdn3ncz8m0ag9gqcvlpp5n0l"))))
     (properties `((upstream-name . "allelematch")))
     (build-system r-build-system)
     (arguments

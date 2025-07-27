@@ -3999,13 +3999,13 @@ underlying scores for example.")
 (define-public r-dsopal
   (package
     (name "r-dsopal")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSOpal" version))
        (sha256
-        (base32 "1jhjk2anh5kc421r0l8v0s5cbnqhdwwiirk1zcmmgk62k3an0lsf"))))
+        (base32 "0n06rjj0kp4i1rzb4l8w0nn92a3idwyanrcqvy2z8xdaqgk4qk6x"))))
     (properties `((upstream-name . "DSOpal")))
     (build-system r-build-system)
     (arguments
@@ -4199,13 +4199,13 @@ variance estimation.")
 (define-public r-dslite
   (package
     (name "r-dslite")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSLite" version))
        (sha256
-        (base32 "1xc9igwsxwiirg40br1qckai0lzhijfnpdrxg94r38hngb7r5cy2"))))
+        (base32 "0gm2viwavy04irhl9xmk0sbfgwvv4g6qamjmg4yrcwracx5k7zbz"))))
     (properties `((upstream-name . "DSLite")))
     (build-system r-build-system)
     (arguments
@@ -22518,13 +22518,13 @@ files for references on the specific estimation techniques.")
 (define-public r-densityarea
   (package
     (name "r-densityarea")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "densityarea" version))
        (sha256
-        (base32 "0blcpclwa6507vna9j8ysj0rs57r15f9vhp78d8fnl1436zlm217"))))
+        (base32 "1zwwx4bf3fam71lnj9dmyfmm396fk8k8j95hp73dfhvy9p7m6ggy"))))
     (properties `((upstream-name . "densityarea")))
     (build-system r-build-system)
     (arguments
@@ -22827,13 +22827,13 @@ temporal autocorrelation corrected.")
 (define-public r-dendronetwork
   (package
     (name "r-dendronetwork")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dendroNetwork" version))
        (sha256
-        (base32 "0jns6nfihb9wqz4sh8pbsy01kp0ml2x16jls4vqhixkbfpns4vkf"))))
+        (base32 "0syx1lw1hi2vm447rgrni05sxcm758dj2n5qbgb73anwshc5gihk"))))
     (properties `((upstream-name . "dendroNetwork")))
     (build-system r-build-system)
     (arguments
@@ -27819,13 +27819,13 @@ and then takes reduced matched results and provides best taxonomic assignments."
 (define-public r-dbstats
   (package
     (name "r-dbstats")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbstats" version))
        (sha256
-        (base32 "1rnjgzil98rys9fa0jkamfqrkski3vd7wi59mqg8xk26xw0v5c96"))))
+        (base32 "134wrfzayhl0aqsf8qcrnvhj5hj5vifmhliidxckd0bdhjzk9yis"))))
     (properties `((upstream-name . "dbstats")))
     (build-system r-build-system)
     (arguments

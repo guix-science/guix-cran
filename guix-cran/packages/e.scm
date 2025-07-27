@@ -576,13 +576,13 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
 (define-public r-eyeris
   (package
     (name "r-eyeris")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyeris" version))
        (sha256
-        (base32 "0gb51hqa7zyml5brk9ag3x62xiwvzjzmxzss9hswxa76zxbnz9ja"))))
+        (base32 "0bs2irbygws9am9yi3jmsz7rhf3pmk057z90c35281pv0hnf6n20"))))
     (properties `((upstream-name . "eyeris")))
     (build-system r-build-system)
     (arguments
@@ -10707,13 +10707,13 @@ populations.")
 (define-public r-epitrix
   (package
     (name "r-epitrix")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epitrix" version))
        (sha256
-        (base32 "08cz2p9xxa966a2v8kay00l3pmgfgmwzlh5pnx04s19rmar13z02"))))
+        (base32 "196lykw91z8rrl8w06i8lhavk1dj3n32ivrqb2bwjbfwzljib550"))))
     (properties `((upstream-name . "epitrix")))
     (build-system r-build-system)
     (arguments
@@ -24792,13 +24792,13 @@ starts a graphical user interface based on the shiny package.")
 (define-public r-easyscielopack
   (package
     (name "r-easyscielopack")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyScieloPack" version))
        (sha256
-        (base32 "1ihyrqprs69nlrabmvcpm5gwlw8ykiwm6lpmay6y19ar7wp7chlw"))))
+        (base32 "07zhf6hw10mcpry41k8r8khwnv03mn5b0lyjh3l1jlk18kha89vb"))))
     (properties `((upstream-name . "easyScieloPack")))
     (build-system r-build-system)
     (arguments
@@ -24810,7 +24810,7 @@ starts a graphical user interface based on the shiny package.")
                              r-magrittr
                              r-httr
                              r-dplyr))
-    (home-page "https://github.com/PabloIxcamparij/easyScieloPack")
+    (home-page "https://github.com/Programa-ISA/easyScieloPack")
     (synopsis "Easy Interface to Search 'SciELO' Database")
     (description
      "This package provides a simple interface to search and retrieve scientific

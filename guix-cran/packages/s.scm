@@ -12222,13 +12222,13 @@ a stochastic correlation model\" <doi:10.48550/@code{arXiv.2412.06343>}.")
 (define-public r-stochblock
   (package
     (name "r-stochblock")
-    (version "0.1.2")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StochBlock" version))
        (sha256
-        (base32 "0g0l36imgw3bvqj5g45abwicswcyqprzbkas9pzgha8dsc5s12w3"))))
+        (base32 "1xvdgpayzynxkxrmllz9p8n5w4fk85ka91ysw7s0mbwn6y9gib2r"))))
     (properties `((upstream-name . "StochBlock")))
     (build-system r-build-system)
     (arguments
@@ -12243,9 +12243,9 @@ a stochastic correlation model\" <doi:10.48550/@code{arXiv.2412.06343>}.")
     (home-page "https://cran.r-project.org/package=StochBlock")
     (synopsis "Stochastic Blockmodeling of One-Mode and Linked Networks")
     (description
-     "Stochastic blockmodeling of one-mode and linked networks as implemented in
-Å kulj and Å½iberna (2022) <doi:10.1016/j.socnet.2022.02.001>.  The optimization
-is done via CEM (Classification Expectation Maximization) algorithm that can be
+     "Stochastic blockmodeling of one-mode and linked networks as presented in Å kulj
+and Å½iberna (2022) <doi:10.1016/j.socnet.2022.02.001>.  The optimization is
+done via CEM (Classification Expectation Maximization) algorithm that can be
 initialized by random partitions or the results of k-means algorithm.  The
 development of this package is financially supported by the Slovenian Research
 Agency (<https://www.arrs.si/>) within the research programs P5-0168 and the
@@ -17157,6 +17157,33 @@ models, we consider only the relevant model specifications (structures), i.e.,
 those that are both stable (occur frequently) and parsimonious and use those to
 infer a causal model.")
     (license license:expat)))
+
+(define-public r-stablepopulation
+  (package
+    (name "r-stablepopulation")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StablePopulation" version))
+       (sha256
+        (base32 "05xgq8x907954pm8agzmmv5yj9jsv9grv0zrwpm1c1m2n1a0wkxk"))))
+    (properties `((upstream-name . "StablePopulation")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readxl r-openxlsx))
+    (home-page "https://cran.r-project.org/package=StablePopulation")
+    (synopsis "Calculates Alpha for a Stable Population")
+    (description
+     "This package provides tools to calculate the alpha parameter of the Weibull
+distribution, given beta and the age-specific fertility of a species, so that
+the population remains stable and stationary.  Methods are inspired by \"Survival
+profiles from linear models versus Weibull models: Estimating stable and
+stationary population structures for Pleistocene large mammals\"
+(MartÃ­n-GonzÃ¡lez et al.  2019) <doi:10.1016/j.jasrep.2019.03.031>.")
+    (license license:gpl3)))
 
 (define-public r-stablelearner
   (package
@@ -38467,6 +38494,33 @@ K. (2013). \"Construction of sliced orthogonal Latin hypercube designs\".
 Statistica Sinica, 1117-1130, <doi:10.5705/ss.2012.037>.")
     (license license:gpl2+)))
 
+(define-public r-slic
+  (package
+    (name "r-slic")
+    (version "0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SLIC" version))
+       (sha256
+        (base32 "0hw86ww7rbh1vg20zwvmxw17n2gld0qsi7l9l6rwc8xlvqdn2yqs"))))
+    (properties `((upstream-name . "SLIC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sn r-laplacesdemon))
+    (home-page "https://cran.r-project.org/package=SLIC")
+    (synopsis "LIC for Distributed Skewed Regression")
+    (description
+     "This comprehensive toolkit for skewed regression is designated as \"SLIC\" (The
+LIC for Distributed Skewed Regression Analysis).  It is predicated on the
+assumption that the error term follows a skewed distribution, such as the
+Skew-Normal, Skew-t, or Skew-Laplace.  The methodology and theoretical
+foundation of the package are described in Guo G.(2020)
+<doi:10.1080/02664763.2022.2053949>.")
+    (license license:expat)))
+
 (define-public r-slhd
   (package
     (name "r-slhd")
@@ -39440,13 +39494,13 @@ be outlined in a forthcoming paper, with alternative models from Li et al.
 (define-public r-skimr
   (package
     (name "r-skimr")
-    (version "2.1.5")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skimr" version))
        (sha256
-        (base32 "11w32vfwm6pz4cvmm60na6pjbyjvw2xq489ij5xqzx0n3pma7wq6"))))
+        (base32 "030vfh2lpfvhaa32mx9bb0bhkji6f3b00mjh6vp21v6fvnc18im3"))))
     (properties `((upstream-name . "skimr")))
     (build-system r-build-system)
     (arguments
@@ -39461,7 +39515,6 @@ be outlined in a forthcoming paper, with alternative models from Li et al.
                              r-repr
                              r-purrr
                              r-pillar
-                             r-magrittr
                              r-knitr
                              r-dplyr
                              r-cli))
@@ -41873,13 +41926,13 @@ Engine to Streamline Simulations,\" which is available at
 (define-public r-simulatedce
   (package
     (name "r-simulatedce")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simulateDCE" version))
        (sha256
-        (base32 "17789fzx8qqs2v4jckg3g83s14wx10dqam72fsvl606g444ac7kv"))))
+        (base32 "1558l8iydh86451hy076cgwgs2gpfg855hq05b81pqqfqammnkdq"))))
     (properties `((upstream-name . "simulateDCE")))
     (build-system r-build-system)
     (arguments
@@ -41897,6 +41950,7 @@ Engine to Streamline Simulations,\" which is available at
                              r-mixl
                              r-magrittr
                              r-kableextra
+                             r-glue
                              r-ggplot2
                              r-future
                              r-furrr
@@ -66411,13 +66465,13 @@ need to install them.")
 (define-public r-sce
   (package
     (name "r-sce")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCE" version))
        (sha256
-        (base32 "077j5rgx01wji22752haiimgpla4r3aqcgvpvdkw2ax9p1bk213r"))))
+        (base32 "16mpfi040szxjq99x452hhgx0xnj08prp36p4ji34hka5svv0hzc"))))
     (properties `((upstream-name . "SCE")))
     (build-system r-build-system)
     (arguments

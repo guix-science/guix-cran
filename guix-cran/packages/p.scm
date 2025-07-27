@@ -8473,13 +8473,13 @@ determines which library this instruction pointer corresponds to.")
 (define-public r-proclhmm
   (package
     (name "r-proclhmm")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proclhmm" version))
        (sha256
-        (base32 "05pwa09bkclzshyk3jsnhsj43vdp89miw3zznj082zj9484vfhzj"))))
+        (base32 "0hpv2brfypwh0dgr5asz44zz7pmpkbd1m83bnjdbq73n1y1wg0i7"))))
     (properties `((upstream-name . "proclhmm")))
     (build-system r-build-system)
     (arguments
@@ -13300,13 +13300,13 @@ fixed effects with penalized intercepts by LASSO.")
 (define-public r-pqrbayes
   (package
     (name "r-pqrbayes")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pqrBayes" version))
        (sha256
-        (base32 "05c5d40wgd5g755vai004y6xhwp9acah295m43s797cjs4a17kn8"))))
+        (base32 "01ksdrf702jfx9s5qcgvg1bazr98bmyp22f0vjsmylcnxzgzdljb"))))
     (properties `((upstream-name . "pqrBayes")))
     (build-system r-build-system)
     (arguments
@@ -13316,18 +13316,19 @@ fixed effects with penalized intercepts by LASSO.")
     (home-page "https://github.com/cenwu/pqrBayes")
     (synopsis "Bayesian Penalized Quantile Regression")
     (description
-     "Bayesian regularized quantile regression utilizing sparse priors to impose exact
-sparsity leads to efficient Bayesian shrinkage estimation, variable selection
-and statistical inference.  In this package, we have implemented robust Bayesian
-variable selection with spike-and-slab priors under high-dimensional linear
-regression models (Fan et al. (2024) <doi:10.3390/e26090794> and Ren et al.
-(2023) <doi:10.1111/biom.13670>), and regularized quantile varying coefficient
-models (Zhou et al.(2023) <doi:10.1016/j.csda.2023.107808>).  In particular,
-valid robust Bayesian inferences under both models in the presence of
-heavy-tailed errors can be validated on finite samples.  Additional models
-including robust Bayesian group LASSO and robust Bayesian binary LASSO are also
-included.  The Markov Chain Monte Carlo (MCMC) algorithms of the proposed and
-alternative models are implemented in C++.")
+     "Bayesian regularized quantile regression utilizing sparse priors to promote
+exact sparsity leads to efficient Bayesian shrinkage estimation, variable
+selection and statistical inference.  In this package, we have implemented
+robust Bayesian variable selection with spike-and-slab priors under
+high-dimensional linear regression models (Fan et al. (2024)
+<doi:10.3390/e26090794> and Ren et al. (2023) <doi:10.1111/biom.13670>), and
+regularized quantile varying coefficient models (Zhou et al.(2023)
+<doi:10.1016/j.csda.2023.107808>).  In particular, valid robust Bayesian
+inferences under both models in the presence of heavy-tailed errors can be
+validated on finite samples.  Additional models with spike-and-slab priors
+include robust Bayesian group LASSO and robust binary Bayesian LASSO (Fan and Wu
+(2025) <doi:10.1002/sta4.70078>).  The Markov Chain Monte Carlo (MCMC)
+algorithms of the proposed and alternative models are implemented in C++.")
     (license license:gpl2)))
 
 (define-public r-pqlseq
@@ -23488,13 +23489,13 @@ causal inference modeling process.  Supplements the @code{bartCause} package.")
 (define-public r-plot3drgl
   (package
     (name "r-plot3drgl")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plot3Drgl" version))
        (sha256
-        (base32 "1p8vypid2v1n255hlpxxlbnf1lyv2jywls0jfm7scfms5aisk1vd"))))
+        (base32 "0x6w076paq5vnwlxgdwifl9aqcpjzzfck3a0r1xnp7rnkgpymkkm"))))
     (properties `((upstream-name . "plot3Drgl")))
     (build-system r-build-system)
     (arguments
@@ -26647,13 +26648,13 @@ to predicted output.")
 (define-public r-pipeflow
   (package
     (name "r-pipeflow")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pipeflow" version))
        (sha256
-        (base32 "1kdqgs0phaq1bqp2lbwjbi9zs4g67sy4bl5g3nxnpxmpnscm44xr"))))
+        (base32 "091f7mphw1d453gflyvxsw3256p7sqyqgc3q3i88bc3wjknxwj8m"))))
     (properties `((upstream-name . "pipeflow")))
     (build-system r-build-system)
     (arguments
@@ -34997,13 +34998,13 @@ appended pedigree to an existing pedigree with genotypes.  Mrode, R. A. (2005)
 (define-public r-pedquant
   (package
     (name "r-pedquant")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedquant" version))
        (sha256
-        (base32 "07b2jd3fryv3jdhp5wrsycnzfwhbx55dw34lxll60zn73m4ii24w"))))
+        (base32 "0rxb9vzljjzw1f2z99f59jvc55z947l7xqfwfkvdxn2hl6s0ar6w"))))
     (properties `((upstream-name . "pedquant")))
     (build-system r-build-system)
     (arguments
@@ -35020,6 +35021,7 @@ appended pedigree to an existing pedigree with genotypes.  Mrode, R. A. (2005)
                              r-lubridate
                              r-jsonlite
                              r-httr
+                             r-htmlwidgets
                              r-echarts4r
                              r-data-table
                              r-curl))
@@ -38210,13 +38212,13 @@ original dataset.")
 (define-public r-pcadapt
   (package
     (name "r-pcadapt")
-    (version "4.4.0")
+    (version "4.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcadapt" version))
        (sha256
-        (base32 "1b5sk6dy51465n96qyycy1i1lkiky7lwxycdmynv66xrkyyn3gas"))))
+        (base32 "0w3fmgzg6b1iqssi8hj2s6m3y9s60swlwmicwspxzby41hhn0nh3"))))
     (properties `((upstream-name . "pcadapt")))
     (build-system r-build-system)
     (arguments
@@ -39296,13 +39298,13 @@ Medical Outcomes Partnership (OMOP) common data model.")
 (define-public r-patientlevelprediction
   (package
     (name "r-patientlevelprediction")
-    (version "6.4.1")
+    (version "6.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientLevelPrediction" version))
        (sha256
-        (base32 "0kb97ddar7bj73dxay4wjh6bhkncmsy1wzmdl52i4n253gslh8hq"))))
+        (base32 "0zgyc1qgwmj6xlda9xwwklspginp60akg684bjgd2yvdkhrbiqj9"))))
     (properties `((upstream-name . "PatientLevelPrediction")))
     (build-system r-build-system)
     (arguments
@@ -43280,13 +43282,13 @@ simplifying tedious coding tasks and content searching.")
 (define-public r-palm
   (package
     (name "r-palm")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "palm" version))
        (sha256
-        (base32 "108w8vsb41j1kwvymjcf5123xi8qiprcpiqynlvvfk1bp24jaz45"))))
+        (base32 "167i88ld6222sw7rldq94mb8z07s7haa8ps82dr36hc9mqkqj0ah"))))
     (properties `((upstream-name . "palm")))
     (build-system r-build-system)
     (arguments

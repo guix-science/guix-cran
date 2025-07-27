@@ -9044,13 +9044,13 @@ maximum likelihood and Bayesian approaches are available.")
 (define-public r-lit
   (package
     (name "r-lit")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lit" version))
        (sha256
-        (base32 "1n5avz33d041bl8b9khqbiyprjdrd5nj1n19134sfpqs7h0wcjzp"))))
+        (base32 "0d148s09cd6d4pqn9yg98x9nm1dr8i6yjsh7mf9a6jnnyx8z6z45"))))
     (properties `((upstream-name . "lit")))
     (build-system r-build-system)
     (arguments
@@ -11350,6 +11350,32 @@ the import of data and metadata files, conversion of common file formats,
 validation of light logging data, verification of crucial metadata, calculation
 of common parameters, and semi-automated analysis and visualization.")
     (license license:expat)))
+
+(define-public r-lightfitr
+  (package
+    (name "r-lightfitr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LightFitR" version))
+       (sha256
+        (base32 "1rs740abr9zcwwd37whgf0pd25kivswna3s6q7swv2qdgqp4ggp5"))))
+    (properties `((upstream-name . "LightFitR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-nnls r-lubridate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ginavong/LightFitR/")
+    (synopsis "Design Complex Light Regimes")
+    (description
+     "This package provides a system for accurately designing complex light regimes
+using LEDs.  Takes calibration data and user-defined target irradiances and it
+tells you what intensities to use.  For more details see Vong et al. (2025)
+<doi:10.1101/2025.06.06.658293>.")
+    (license license:gpl3+)))
 
 (define-public r-lightauc
   (package

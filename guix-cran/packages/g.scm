@@ -17,8 +17,8 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages graphviz)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages language)
   #:use-module (gnu packages image)
@@ -8514,6 +8514,48 @@ grab samples selection by using two different methods such as systematic or
 random based on two-state Markov chain model.  For detection probability
 calculation, we used results from Bhat, U. and Lal, R. (1988)
 <doi:10.2307/1427041>.")
+    (license license:gpl2+)))
+
+(define-public r-grab
+  (package
+    (name "r-grab")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GRAB" version))
+       (sha256
+        (base32 "1swbm287w56z6bl31mxzajxqs6rbz2jaapwjrrz6pa83q0pqbrg5"))))
+    (properties `((upstream-name . "GRAB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-survival
+                             r-rsqlite
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ordinal
+                             r-mvtnorm
+                             r-matrix
+                             r-lme4
+                             r-igraph
+                             r-dplyr
+                             r-data-table
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=GRAB")
+    (synopsis "Genome-Wide Robust Analysis for Biobank Data (GRAB)")
+    (description
+     "This package provides a comprehensive suite of genome-wide association study
+(GWAS) methods specifically designed for biobank-scale data.  The package offers
+computationally efficient and robust association tests for time-to-event traits
+(e.g., Bi et al. (2020) <doi:10.1016/j.ajhg.2020.06.003>), ordinal categorical
+traits (e.g., Bi et al. (2021) <doi:10.1016/j.ajhg.2021.03.019>), and
+longitudinal traits (Xu et al. (2025) <doi:10.1038/s41467-025-56669-1>).
+Additionally, it includes functions for simulating genotype and phenotype data
+to support research and method development.")
     (license license:gpl2+)))
 
 (define-public r-gquad

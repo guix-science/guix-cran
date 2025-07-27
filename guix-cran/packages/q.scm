@@ -4416,13 +4416,13 @@ friendly QR codes.")
 (define-public r-qrcmnp
   (package
     (name "r-qrcmnp")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrcmNP" version))
        (sha256
-        (base32 "10yqksn9761fryjvx6srv2z1pzmlr5m69bch16j256j9k2lknsr4"))))
+        (base32 "0637mmg3vvvpblx2ghxi5jis9qiaywkj91n1gcgm2g778p6lric0"))))
     (properties `((upstream-name . "qrcmNP")))
     (build-system r-build-system)
     (arguments
@@ -6071,13 +6071,13 @@ algorithm based on the numerical inversion of Mellin transforms.")
 (define-public r-qest
   (package
     (name "r-qest")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qest" version))
        (sha256
-        (base32 "0vl5nhnjijzqvk2s8l9rr6f7hqjh867w7b3w3j1b4kwzfpzsfcqc"))))
+        (base32 "18qx2vn8gl83hfvvcm20z57yj972pd8c8dxq0ksf7jbr2lf6jw3b"))))
     (properties `((upstream-name . "Qest")))
     (build-system r-build-system)
     (arguments

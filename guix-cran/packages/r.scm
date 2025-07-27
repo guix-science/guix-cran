@@ -10936,13 +10936,13 @@ preferences (see KieÃling (2002) <doi:10.1016/B978-155860869-6/50035-4>).")
 (define-public r-rpql
   (package
     (name "r-rpql")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpql" version))
        (sha256
-        (base32 "065mkdfrhs7jmkwyvkydic04snih1wb18xshddll1r5kam4ixvn2"))))
+        (base32 "0ggw20rn4fw4nk8lnz1lmfgv6x86fi7v4l2jp1jpd5fqd81cn1lc"))))
     (properties `((upstream-name . "rpql")))
     (build-system r-build-system)
     (arguments
@@ -12207,13 +12207,13 @@ misclassification cost.")
 (define-public r-rpart-plot
   (package
     (name "r-rpart-plot")
-    (version "3.1.2")
+    (version "3.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpart.plot" version))
        (sha256
-        (base32 "1ci2nks8knx84f42lpxnpx0s4bvbbyfcxvynkw9baplf39fjmjix"))))
+        (base32 "01jap75v6n5s9mxmvc9f76pmzxyj0wdbvlx2f8xvy0n1xahayqbk"))))
     (properties `((upstream-name . "rpart.plot")))
     (build-system r-build-system)
     (arguments
@@ -48587,13 +48587,13 @@ and Shennan 2017 <doi:10.1016/j.jas.2017.09.007>).")
 (define-public r-rcarb
   (package
     (name "r-rcarb")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCarb" version))
        (sha256
-        (base32 "0p4g41jsyy0kq8v1pva5463cass2924j6i1l5r665pzxya1w5n8p"))))
+        (base32 "01vwk9mf9lbzy8vky9yfs18a0g2bid0jgk0zlp9sd6m04fpd7qhg"))))
     (properties `((upstream-name . "RCarb")))
     (build-system r-build-system)
     (arguments
@@ -50646,13 +50646,13 @@ details.")
 (define-public r-ravenr
   (package
     (name "r-ravenr")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RavenR" version))
        (sha256
-        (base32 "0z1gp1jvh0b80f5bkfg1gg7x116axfgix13hpviyh0c3mfi5yw37"))))
+        (base32 "0idwdxgvyb72cm53zcj0dy7mfvwjx6za8d8whmbwb4qp20ixdd3x"))))
     (properties `((upstream-name . "RavenR")))
     (build-system r-build-system)
     (arguments

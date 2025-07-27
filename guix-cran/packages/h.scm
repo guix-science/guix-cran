@@ -14,6 +14,7 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages python)
   #:use-module (gnu packages java)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages sqlite)
@@ -8650,6 +8651,49 @@ two-factor studies.  Produces corresponding interaction plot and analysis of
 variance tables and p-values from several other tests of non-additivity.")
     (license license:gpl2)))
 
+(define-public r-hicream
+  (package
+    (name "r-hicream")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hicream" version))
+       (sha256
+        (base32 "1q76xk98bjcghrxkf6yv79qby5yn4rzgydmia072pnadlrlnaph6"))))
+    (properties `((upstream-name . "hicream")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python))
+    (propagated-inputs (list r-viridis
+                             r-summarizedexperiment
+                             r-s4vectors
+                             r-rlang
+                             r-reticulate
+                             r-reshape2
+                             r-matrix
+                             r-limma
+                             r-interactionset
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-edger
+                             r-dplyr
+                             r-csaw
+                             r-biocgenerics
+                             r-auk
+                             r-adjclust))
+    (native-inputs (list r-knitr))
+    (home-page "https://forgemia.inra.fr/scales/hicream")
+    (synopsis "HI-C diffeREntial Analysis Method")
+    (description
+     "Perform Hi-C data differential analysis based on pixel-level differential
+analysis and a post hoc inference strategy to quantify signal in clusters of
+pixels.  Clusters of pixels are obtained through a connectivity-constrained
+two-dimensional hierarchical clustering.")
+    (license license:gpl3+)))
+
 (define-public r-hicp
   (package
     (name "r-hicp")
@@ -15229,6 +15273,33 @@ calculation see Joseph de Mendoza y RÃ­os (1795)
 <https://books.google.cat/books?id=030t0@code{OqlX2AC>} (In Spanish).")
     (license license:expat)))
 
+(define-public r-hann
+  (package
+    (name "r-hann")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hann" version))
+       (sha256
+        (base32 "1dxs7ks1mrcd98bhar78an0659isdnpj7x4xi1y40zffndivkpkz"))))
+    (properties `((upstream-name . "hann")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/emmanuelparadis/hann")
+    (synopsis "Hopfield Artificial Neural Networks")
+    (description
+     "Builds and optimizes Hopfield artificial neural networks (Hopfield, 1982,
+<doi:10.1073/pnas.79.8.2554>).  One-layer and three-layer models are
+implemented.  The energy of the Hopfield network is minimized with formula from
+Krotov and Hopfield (2016, <doi:10.48550/ARXIV.1606.01164>).  Optimization
+(supervised learning) is done through a gradient-based method.  Classification
+is done with S3 methods @code{predict()}.  Parallelization with @code{OpenMP} is
+used if available during compilation.")
+    (license license:gpl3)))
+
 (define-public r-handyplots
   (package
     (name "r-handyplots")
@@ -15673,13 +15744,13 @@ instructions are documented at <https://hakaiinstitute.github.io/hakai-api/>.")
 (define-public r-hagis
   (package
     (name "r-hagis")
-    (version "3.1.12")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hagis" version))
        (sha256
-        (base32 "18mcd8vm2dy50wfwfxbih841z1l8yml6fvb6y5qqq7a04h09k590"))))
+        (base32 "1hvzkwffk23d8zsbni7pqncq1kgckcnlax6dc7fplv46hsag80lf"))))
     (properties `((upstream-name . "hagis")))
     (build-system r-build-system)
     (arguments

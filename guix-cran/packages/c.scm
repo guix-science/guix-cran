@@ -3472,13 +3472,13 @@ Cui (2023) \"Continuous-time multivariate analysis\"
 (define-public r-ctmm
   (package
     (name "r-ctmm")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctmm" version))
        (sha256
-        (base32 "0fmihi6ihk4jgg0abyhlfhg4wx91sq06xr11dc0vbhcyaq2090r4"))))
+        (base32 "147spyzcp744gy5mvvwgsmhnkxk8iqrlzc4g9lk7c9x13n16g73c"))))
     (properties `((upstream-name . "ctmm")))
     (build-system r-build-system)
     (arguments
@@ -13194,13 +13194,13 @@ new version.")
 (define-public r-correlplot
   (package
     (name "r-correlplot")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Correlplot" version))
        (sha256
-        (base32 "1kpan2ifpqhw6nzkx1ww6k5xwr624jysz6l6i9xg35np4xfcgrwz"))))
+        (base32 "1vcs1slif1hag7qzgim7apy7az56gbq47j45gjkdx11w5bqjvmmg"))))
     (properties `((upstream-name . "Correlplot")))
     (build-system r-build-system)
     (arguments
@@ -17642,6 +17642,32 @@ and the pins package.  It automates the display of schemata, tables, views, as
 well as the preview of the table's top 1000 records.")
     (license license:expat)))
 
+(define-public r-connection
+  (package
+    (name "r-connection")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Connection" version))
+       (sha256
+        (base32 "1xkp5d1dpaj47gy2vkwgv3c5lg35g1zxyvg7svxx45yrf6cmi34p"))))
+    (properties `((upstream-name . "Connection")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=Connection")
+    (synopsis "Measures of Independence and Connection Without Linear Models")
+    (description
+     "This package provides tools to measure connection and independence between
+variables without relying on linear models.  Includes functions to compute Eta
+squared, Chi-squared, and Cramer V. The main advantage of this package is that
+it works without requiring parametric assumptions.  The methods implemented are
+based on educational material and statistical decomposition techniques, not
+directly on previously published software or articles.")
+    (license license:expat)))
+
 (define-public r-connectednessapproach
   (package
     (name "r-connectednessapproach")
@@ -18453,6 +18479,35 @@ references for the code are: Diquigiovanni, Fontana, and Vantini (2021)
 <doi:10.1007/978-3-642-41142-7_36>) and inductive conformal prediction (see
 Balasubramanian et al., 2014, ISBN:9780124017153) for classification problems.")
     (license license:gpl3)))
+
+(define-public r-conformalbayes
+  (package
+    (name "r-conformalbayes")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "conformalbayes" version))
+       (sha256
+        (base32 "0v13nnz9s2w9rwdy29vy8ff48pzkkc05n3x0vzqspn06ashbpf40"))))
+    (properties `((upstream-name . "conformalbayes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstantools r-matrixstats r-loo r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CoryMcCartan/conformalbayes")
+    (synopsis "Jackknife(+) Predictive Intervals for Bayesian Models")
+    (description
+     "This package provides functions to construct finite-sample calibrated predictive
+intervals for Bayesian models, following the approach in Barber et al. (2021)
+<doi:10.1214/20-AOS1965>.  These intervals are calculated efficiently using
+importance sampling for the leave-one-out residuals.  By default, the intervals
+will also reflect the relative uncertainty in the Bayesian model, using the
+locally-weighted conformal methods of Lei et al. (2018)
+<doi:10.1080/01621459.2017.1307116>.")
+    (license license:expat)))
 
 (define-public r-confmatrix
   (package
@@ -20823,13 +20878,13 @@ to uncover insightful growth dynamics and make informed decisions.")
 (define-public r-compexpdes
   (package
     (name "r-compexpdes")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompExpDes" version))
        (sha256
-        (base32 "01fb3xvg4ykfgl183m1z5ydychjzls6xcsvhzsayjsf9fbc9gbk8"))))
+        (base32 "0qdxsi4ahkwm77wlzlvng9mc7d6sj4x57bhj6ranxr36qqn6cjjq"))))
     (properties `((upstream-name . "CompExpDes")))
     (build-system r-build-system)
     (arguments
@@ -33501,13 +33556,13 @@ are given in the accompanying vignette.")
 (define-public r-clam
   (package
     (name "r-clam")
-    (version "2.6.2")
+    (version "2.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clam" version))
        (sha256
-        (base32 "1ad6cir6kzrmws3yq9xwdiz8mg01z4ibxk7596s6v136z76rxacd"))))
+        (base32 "0kdvmbqmgjjwx872apllasv95iff5cnqg5ay4nippjxm9hlg08sf"))))
     (properties `((upstream-name . "clam")))
     (build-system r-build-system)
     (arguments
@@ -38905,6 +38960,37 @@ saving time and memory.  It aims to provide cheaper alternatives to common base
 R functions, as well as some additional functions.")
     (license license:expat)))
 
+(define-public r-chcd
+  (package
+    (name "r-chcd")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chcd" version))
+       (sha256
+        (base32 "0fl3ad47i7nnws0j7agv16cgbgacmw63yxdrwx1jqs21633c00y5"))))
+    (properties `((upstream-name . "chcd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-progress
+                             r-magrittr
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=chcd")
+    (synopsis "Access Canadian Historical Climate Data")
+    (description
+     "This package provides easy access to historical climate data in Canada from R.
+Search for weather stations and download raw hourly, daily or monthly weather
+data across Canada from 1840 to present.  Implements public API access as
+detailed at <https://climate.weather.gc.ca>.")
+    (license license:gpl3+)))
+
 (define-public r-chauboxplot
   (package
     (name "r-chauboxplot")
@@ -39560,13 +39646,13 @@ written in C++ for improved performance.")
 (define-public r-changepointsvar
   (package
     (name "r-changepointsvar")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "changepointsVar" version))
        (sha256
-        (base32 "0a5g0bafvb1rbw31y8b8plwhxw5svlh4qfjwvdzafbcrp3rn1cs4"))))
+        (base32 "0xw538yhg46myfhl3djs1ynrzb19p9wv1sgmmdm4gbh7mij511wp"))))
     (properties `((upstream-name . "changepointsVar")))
     (build-system r-build-system)
     (arguments
@@ -40922,13 +41008,13 @@ linear coefficients in regression models with grouped data.")
 (define-public r-ces
   (package
     (name "r-ces")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ces" version))
        (sha256
-        (base32 "15dg5c7b5miqch575hs9si6jzwq95aabvjqyr8a2xwxi3bkyhvzg"))))
+        (base32 "095qbq6fgijylg0rbfmh0rahq7rjnb0vjb96vamld5hq8blfzc1b"))))
     (properties `((upstream-name . "ces")))
     (build-system r-build-system)
     (arguments

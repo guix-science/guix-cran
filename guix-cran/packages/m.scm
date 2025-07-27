@@ -3659,13 +3659,13 @@ the linear relation among the output features, see details in Rahman et al
 (define-public r-multivariateanalysis
   (package
     (name "r-multivariateanalysis")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultivariateAnalysis" version))
        (sha256
-        (base32 "1hphl6swqkfjqbybkcpvf0bda6jf434v7l6pqzlviqzlnww94riv"))))
+        (base32 "04g64agjjwqa4spl9d1gmffdsvhxpqhjb8wd0h908aljpdh3dzv8"))))
     (properties `((upstream-name . "MultivariateAnalysis")))
     (build-system r-build-system)
     (arguments
@@ -9983,6 +9983,30 @@ piecewise constant parameters.  Numerical solutions are provided for its
 extensions.")
     (license license:gpl2+)))
 
+(define-public r-mscct
+  (package
+    (name "r-mscct")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MSCCT" version))
+       (sha256
+        (base32 "1z6ivhr698cnyigr661dn5yhghj0mbnrx4g5ycyvfanvwj86pvm2"))))
+    (properties `((upstream-name . "MSCCT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-boot))
+    (home-page "https://github.com/HMinP/MSCCT")
+    (synopsis "Multiple Survival Crossing Curves Tests")
+    (description
+     "Tests of comparison of two or more survival curves.  Allows for comparison of
+more than two survival curves whether the proportional hazards hypothesis is
+verified or not.")
+    (license license:gpl3+)))
+
 (define-public r-msca
   (package
     (name "r-msca")
@@ -13386,13 +13410,13 @@ and Cucuringu (2020) <@code{arXiv:2004.01293>}.")
 (define-public r-motif
   (package
     (name "r-motif")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "motif" version))
        (sha256
-        (base32 "0khvplcnw868cspzvn3mimvsvygxaw7ay6py2da9pjzmcbij9g36"))))
+        (base32 "0dknvy80gzk5cf5661sikcn12bgdy2jv92wpmj1rmdiflba05i8s"))))
     (properties `((upstream-name . "motif")))
     (build-system r-build-system)
     (arguments
@@ -37627,13 +37651,13 @@ framework for the mem R package.")
 (define-public r-mem
   (package
     (name "r-mem")
-    (version "2.18")
+    (version "2.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mem" version))
        (sha256
-        (base32 "1jz2zadwm9gvlgfr1dvi8m6p3zm3bjz4n4apkbpj8g594ghcbrpx"))))
+        (base32 "07ml120qdp3idh9838bnmw37l5y7ixlrp1fpfx4jv0i642fys2b0"))))
     (properties `((upstream-name . "mem")))
     (build-system r-build-system)
     (arguments

@@ -5207,6 +5207,47 @@ application.")
 Evaluation (NSE), for example in ggplot2', dplyr', or data.table'.")
     (license license:expat)))
 
+(define-public r-whep
+  (package
+    (name "r-whep")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "whep" version))
+       (sha256
+        (base32 "1vn49gin894ff53bg8ishl0r0a0q67nhzmxwa8z26jlll03hc3d4"))))
+    (properties `((upstream-name . "whep")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-withr
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-pins
+                             r-nanoparquet
+                             r-mipfp
+                             r-httr
+                             r-fs
+                             r-faostat
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://eduaguilera.github.io/whep/")
+    (synopsis "Processing Agro-Environmental Data")
+    (description
+     "This package provides a set of tools for processing and analyzing data developed
+in the context of the \"Who Has Eaten the Planet\" (WHEP) project, funded by the
+European Research Council (ERC).  For more details on multi-regional
+inputâoutput model \"Food and Agriculture Biomass InputâOutput\" (FABIO) see
+Bruckner et al. (2019) <doi:10.1021/acs.est.9b03554>.")
+    (license license:expat)))
+
 (define-public r-when
   (package
     (name "r-when")
@@ -7865,13 +7906,13 @@ al., (2022) <doi:10.1007/978-3-031-22687-8_20>.  Amaratunga et al., (2009)
 (define-public r-wcep
   (package
     (name "r-wcep")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wcep" version))
        (sha256
-        (base32 "0ydlfd6ngmrccaf9zybyzp11x98kih40kj3i2dq81ixxsgk2pjnq"))))
+        (base32 "1gbxw0hizlsgckcjjhi1xlzd7mmqqjhyzfxdrvriwb2v113x5sy9"))))
     (properties `((upstream-name . "wcep")))
     (build-system r-build-system)
     (arguments
@@ -9489,13 +9530,13 @@ this package.")
 (define-public r-warehousetools
   (package
     (name "r-warehousetools")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "warehouseTools" version))
        (sha256
-        (base32 "19qrx2271cqf5pyj77zvfj76aj2rg95l057wjzgf8p9cr92m15vr"))))
+        (base32 "1d6s58ihl58836clxrpfg9mc106c6rjcx5v8ibrziw3p157b6xk9"))))
     (properties `((upstream-name . "warehouseTools")))
     (build-system r-build-system)
     (arguments

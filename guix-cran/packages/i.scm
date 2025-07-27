@@ -14090,13 +14090,13 @@ as lengths and widths.")
 (define-public r-imak
   (package
     (name "r-imak")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IMak" version))
        (sha256
-        (base32 "1972iwam1kkkb3107pq8jhmm3q0ypn92p519srzm82xnbf0m7828"))))
+        (base32 "09wj8xx30a2lqww8x67nwwyr8k1zsrdbrnnghriv854i6r44dmmf"))))
     (properties `((upstream-name . "IMak")))
     (build-system r-build-system)
     (arguments

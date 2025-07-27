@@ -2287,13 +2287,13 @@ methodologies used in the package can be found in Sharma, A., Mehrotra, R.
 (define-public r-nprcgenekeepr
   (package
     (name "r-nprcgenekeepr")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nprcgenekeepr" version))
        (sha256
-        (base32 "1z3anys5p2gi15fzfaz73ay237rbvwai04qqwx42s0agrh2p6yhn"))))
+        (base32 "0liyhmz90idzq19liip0cwnsfm07fggpcdzi5jjfz7gjxbfsb6ji"))))
     (properties `((upstream-name . "nprcgenekeepr")))
     (build-system r-build-system)
     (arguments
@@ -8462,13 +8462,13 @@ Mixed-Effects Models: A Step-by-Step Approach by Galecki and Burzykowski (2013).
 (define-public r-nlive
   (package
     (name "r-nlive")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlive" version))
        (sha256
-        (base32 "0w5gy53yaclyxvyac78drqa7fcklfpxak1s1wxnznmq4n7c09nj5"))))
+        (base32 "0c2cx3w8415c1wk25894dinkx9vbrmrm4wy73fny62n7dvd7gwp6"))))
     (properties `((upstream-name . "nlive")))
     (build-system r-build-system)
     (arguments

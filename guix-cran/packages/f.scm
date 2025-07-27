@@ -10693,13 +10693,13 @@ Scholbeck, G. Casalicchio, C. Molnar, B. Bischl, and C. Heumann (2022)
 (define-public r-fme
   (package
     (name "r-fme")
-    (version "1.3.6.3")
+    (version "1.3.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FME" version))
        (sha256
-        (base32 "189n3svhlfp86svn8p88wi38lhsz0bqndys0pq87c6grsj5c5i43"))))
+        (base32 "1sgap9knr9486x4aa4rwjilbfa8ysyklw0b1sridhipnipf3jvab"))))
     (properties `((upstream-name . "FME")))
     (build-system r-build-system)
     (arguments

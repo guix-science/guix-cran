@@ -114,13 +114,13 @@ curve allowed to vary along the length of the curve.")
 (define-public r-vvtermtime
   (package
     (name "r-vvtermtime")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvtermtime" version))
        (sha256
-        (base32 "0c7cry87wgk86wydrw0l8icc25lx5fcxzm1wyfs2ls8ppmpkz3l7"))))
+        (base32 "0ym14h0bdrshx62rr156xgacl3989pbwyqabw6c6hhca5ngyl7k4"))))
     (properties `((upstream-name . "vvtermtime")))
     (build-system r-build-system)
     (arguments
@@ -2221,6 +2221,32 @@ segmentation (Luz, 2012) <doi:10.1145/2328967.2328970> and classification (Luz,
 et al. (2009) \"A Heuristic for Nonlinear Global Optimization\"
 <doi:10.1287/ijoc.1090.0343>.")
     (license license:gpl3)))
+
+(define-public r-vmtools
+  (package
+    (name "r-vmtools")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vmTools" version))
+       (sha256
+        (base32 "0a10s8hipvhfsmgpd4rchwbjnnsk96rid233i6jxmh377cd0ll33"))))
+    (properties `((upstream-name . "vmTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/epi-sam/vmTools")
+    (synopsis "Version Management Tools on the File System")
+    (description
+     "Data version management on the file system for smaller projects.  Manage data
+pipeline outputs with symbolic folder links, structured logging and reports,
+using R6 classes for encapsulation and data.table for speed.  Directory-specific
+logs used as source of truth to allow portability of versioned data folders.")
+    (license license:expat)))
 
 (define-public r-vmsae
   (package
@@ -4615,13 +4641,13 @@ different ways (i.e., model structures).")
 (define-public r-vigicaen
   (package
     (name "r-vigicaen")
-    (version "0.15.6")
+    (version "0.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vigicaen" version))
        (sha256
-        (base32 "1frc1qzzs2xfhlmsiqdvl9y6y77r4aa5bfb9vdjh3zhmfnjihkbj"))))
+        (base32 "1g0wpjsf5shjprzng1ngsvwih53chcj7vy4y20gbxlprs41mzn78"))))
     (properties `((upstream-name . "vigicaen")))
     (build-system r-build-system)
     (arguments
@@ -7872,6 +7898,35 @@ random effects (Dambon et al. (2021b) <doi:10.1080/13658816.2022.2097684>).  The
 package and its capabilities are described in (Dambon et al. (2021c)
 <doi:10.48550/@code{arXiv.2106.02364>}).")
     (license license:gpl2)))
+
+(define-public r-vartests
+  (package
+    (name "r-vartests")
+    (version "2.0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VARtests" version))
+       (sha256
+        (base32 "07571vs4c8bf83n3qj8gi9py3s52s9fnc8pj0jv71xrac10n68zr"))))
+    (properties `((upstream-name . "VARtests")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sn r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=VARtests")
+    (synopsis "Bootstrap Tests for Cointegration and Autocorrelation in VARs")
+    (description
+     "This package implements wild bootstrap tests for autocorrelation in Vector
+Autoregressive (VAR) models based on Ahlgren and Catani (2016)
+<doi:10.1007/s00362-016-0744-0>, a combined Lagrange Multiplier (LM) test for
+Autoregressive Conditional Heteroskedasticity (ARCH) in VAR models from Catani
+and Ahlgren (2016) <doi:10.1016/j.ecosta.2016.10.006>, and bootstrap-based
+methods for determining the cointegration rank from Cavaliere, Rahbek, and
+Taylor (2012) <doi:10.3982/ECTA9099> and Cavaliere, Rahbek, and Taylor (2014)
+<doi:10.1080/07474938.2013.825175>.")
+    (license license:gpl3+)))
 
 (define-public r-vartestnlme
   (package

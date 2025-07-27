@@ -11811,6 +11811,33 @@ and Chien (2022) <doi:10.18637/jss.v104.i06>.")
 tools for simulation, data transformation, input validation, and more.")
     (license license:gpl3+)))
 
+(define-public r-oecdoda
+  (package
+    (name "r-oecdoda")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oecdoda" version))
+       (sha256
+        (base32 "1abdffg2m8bj7yp2v3xgqmj6bqb37layg7h4bhknfp205bzmh3fd"))))
+    (properties `((upstream-name . "oecdoda")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-httr2 r-cli))
+    (home-page "https://github.com/tidy-intelligence/r-oecdoda")
+    (synopsis
+     "Seamless Access to OECD Official Development Assistance (ODA) Data")
+    (description
+     "Access and Analyze Official Development Assistance (ODA) data using the OECD API
+<https://gitlab.algobank.oecd.org/public-documentation/dotstat-migration/-/raw/main/OECD_Data_API_documentation.pdf>.
+ ODA data includes sovereign-level aid data such as key aggregates (DAC1),
+geographical distributions (DAC2A), project-level data (CRS), and multilateral
+contributions (Multisystem).")
+    (license license:expat)))
+
 (define-public r-oecd
   (package
     (name "r-oecd")
@@ -12919,13 +12946,13 @@ Waterway, Port, Coastal, and Ocean Division, Vol 105, pp 457-459.")
 (define-public r-oceanview
   (package
     (name "r-oceanview")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OceanView" version))
        (sha256
-        (base32 "0s615mrbwamd85h1q8rg5mciwq0hcjzl5rqjaq578nz5ikr3px9a"))))
+        (base32 "1aackcpqyajrad6j702n8a0krcfiad8vcw3qx9pgqhwaddkb1mkm"))))
     (properties `((upstream-name . "OceanView")))
     (build-system r-build-system)
     (arguments

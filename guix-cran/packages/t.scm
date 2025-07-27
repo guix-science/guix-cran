@@ -2746,13 +2746,13 @@ Time metrics.  Details can be found in MÃ¼ller, Schuhmacher and Mateu (2020)
 (define-public r-ttainterfacetrendanalysis
   (package
     (name "r-ttainterfacetrendanalysis")
-    (version "1.5.10")
+    (version "1.5.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TTAinterfaceTrendAnalysis" version))
        (sha256
-        (base32 "16d37qjz8qcr3j6sz4sxxmv789qkr22gpq5808npbpk9wry723wh"))))
+        (base32 "1rap16nfxalrvvpzkf3x5ms73rkl8xz1n4mlzgl0v1i18v3fwnxd"))))
     (properties `((upstream-name . "TTAinterfaceTrendAnalysis")))
     (build-system r-build-system)
     (arguments
@@ -2770,7 +2770,8 @@ Time metrics.  Details can be found in MÃ¼ller, Schuhmacher and Mateu (2020)
                              r-mvtnorm
                              r-multcomp
                              r-e1071
-                             r-data-table))
+                             r-data-table
+                             r-breakpoints))
     (home-page "https://CRAN.R-project.org/package=TTAinterfaceTrendAnalysis")
     (synopsis "Temporal Trend Analysis Graphical Interface")
     (description
@@ -8218,6 +8219,35 @@ proportional to size sampling.  When plots are located near stand boundaries,
 their sizes and hence their probabilities need to be corrected.")
     (license license:bsd-2)))
 
+(define-public r-treeordertests
+  (package
+    (name "r-treeordertests")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TreeOrderTests" version))
+       (sha256
+        (base32 "0as8kdc9i3j2hhrc4r0f66nn6npbl9nza7nccar92w2x46fi9a9i"))))
+    (properties `((upstream-name . "TreeOrderTests")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=TreeOrderTests")
+    (synopsis "Tests for Tree Ordered Alternatives in One-Way ANOVA")
+    (description
+     "This package implements a likelihood ratio test and two pairwise standardized
+mean difference tests for testing equality of means against tree ordered
+alternatives in one-way ANOVA. The null hypothesis assumes all group means are
+equal, while the alternative assumes the control mean is less than or equal to
+each treatment mean with at least one strict inequality.  Inputs are a list of
+numeric vectors (groups) and a significance level; outputs include the test
+statistic, critical value, and decision.  Methods described in \"Testing Against
+Tree Ordered Alternatives in One-way ANOVA\"
+<doi:10.48550/@code{arXiv.2507.17229>}.")
+    (license license:gpl3)))
+
 (define-public r-treenomial
   (package
     (name "r-treenomial")
@@ -9337,13 +9367,13 @@ data-adaptive weights.  Reference: Ren, M., Zhen Y., and Wang J. (2022).
 (define-public r-transreg
   (package
     (name "r-transreg")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transreg" version))
        (sha256
-        (base32 "0z1n8n04h78lqxwyskdm7hjbdyhmmiscwwkc2gn7k1lklfn1gwl2"))))
+        (base32 "0kygikv9hra0przwyq38ji47abj7b094xh0c68yqdhinw3ppn0bc"))))
     (properties `((upstream-name . "transreg")))
     (build-system r-build-system)
     (arguments
@@ -9358,8 +9388,9 @@ data-adaptive weights.  Reference: Ren, M., Zhen Y., and Wang J. (2022).
      "Improves the predictive performance of ridge and lasso regression exploiting one
 or more sources of prior information on the importance and direction of effects
 (Rauschenberger and others 2023, <doi:10.1093/bioinformatics/btad680>).  For
-running the vignette (optional), install fwelnet from @code{GitHub}
-<https://github.com/kjytay/fwelnet>.")
+running the vignette (optional), install fwelnet and ecpc from
+<https://github.com/kjytay/fwelnet> and <https://github.com/Mirrelijn/ecpc>,
+respectively.")
     (license license:gpl3)))
 
 (define-public r-transpror
@@ -11666,13 +11697,13 @@ three-state progressive model.")
 (define-public r-tpmplt
   (package
     (name "r-tpmplt")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TPMplt" version))
        (sha256
-        (base32 "17nnymcaxh294fz8kbiazzfqf1pn09a3kzjznqxflqbxlxin8kl9"))))
+        (base32 "1i22iyrphnljbp227209b2yq7vzbkrhx6h7c56g3q8ykiprjhj51"))))
     (properties `((upstream-name . "TPMplt")))
     (build-system r-build-system)
     (arguments
@@ -20061,19 +20092,19 @@ analysis-ready format.")
 (define-public r-tidydr
   (package
     (name "r-tidydr")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidydr" version))
        (sha256
-        (base32 "16vghbd4iacw3480jzf12cm37azhz7xfql5z6hzh8nin48wsawiw"))))
+        (base32 "00f6cskln8739xjfgnn1166n49798xmigw6kf65yl85kw37l9bqz"))))
     (properties `((upstream-name . "tidydr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-ggplot2 r-ggfun))
+    (propagated-inputs (list r-rlang r-ggplot2 r-ggfun r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/YuLab-SMU/tidydr/")
     (synopsis "Unify Dimensionality Reduction Results")
@@ -25614,13 +25645,13 @@ approximations for probability integrals.\" <doi:10.1016/0266-8920(89)90024-6>."
 (define-public r-terrainr
   (package
     (name "r-terrainr")
-    (version "0.7.5")
+    (version "0.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "terrainr" version))
        (sha256
-        (base32 "1bxwv94pkd4yskhqcwg891caiknipgr2lwcmy54znr8gchsm5527"))))
+        (base32 "0akssa1c3k57m2arg8zw8b7l813lqzwc4fq9ghhqg7l5kah80rlp"))))
     (properties `((upstream-name . "terrainr")))
     (build-system r-build-system)
     (arguments
@@ -26749,13 +26780,13 @@ include the exponential, gamma, generalized gamma, log-normal, and Weibull.")
 (define-public r-templr
   (package
     (name "r-templr")
-    (version "0.2-0")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "templr" version))
        (sha256
-        (base32 "1s2awbcf3vaalbrwz5ryfiz69vhapy9h6jhy6zgzqqs5l1aw4ad0"))))
+        (base32 "01y0shzwskw27kr9jsv4zxxcvczckm36fki55vr4pmif9s8xwyl8"))))
     (properties `((upstream-name . "templr")))
     (build-system r-build-system)
     (arguments
@@ -26763,12 +26794,13 @@ include the exponential, gamma, generalized gamma, log-normal, and Weibull.")
       #:tests? #f))
     (propagated-inputs (list r-xml2 r-remotes r-jsonlite))
     (home-page "https://github.com/MASCOTNUM/templr")
-    (synopsis "MASCOTNUM Algorithms Template Tools")
+    (synopsis "MASCOTNUM / RT-UQ Algorithms Template Tools")
     (description
-     "Helper functions for MASCOTNUM algorithm template, for design of numerical
-experiments practice: algorithm template parser to support MASCOTNUM
-specification <https://www.gdr-mascotnum.fr/template.html>, ask & tell
-decoupling injection (inspired by
+     "Helper functions for MASCOTNUM / RT-UQ <https://uq.math.cnrs.fr/> algorithm
+template, for design of numerical experiments practice: algorithm template
+parser to support MASCOTNUM specification
+<https://github.com/MASCOTNUM/algorithms>, ask & tell decoupling injection
+(inspired by
 <https://search.r-project.org/CRAN/refmans/sensitivity/html/decoupling.html>) to
 use \"crimped\" algorithms (like @code{uniroot()}, @code{optim()}, ...) from
 outside R, basic template examples: Brent algorithm for 1 dim root finding and

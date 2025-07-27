@@ -5120,13 +5120,13 @@ in the estimated degrees of relatedness.")
 (define-public r-brea
   (package
     (name "r-brea")
-    (version "0.3.1")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brea" version))
        (sha256
-        (base32 "1sh0m4hfik0kzc19ygqcbrxn67n52zz9l90gs494iqqwj1fzs8f7"))))
+        (base32 "18vnx73n9g4bwzq9d49a4mhxf3i8j9xpzg58gvmhklxbql7a913r"))))
     (properties `((upstream-name . "brea")))
     (build-system r-build-system)
     (arguments
@@ -8169,6 +8169,31 @@ stability selection.")
 and time using gradient boosting approach.")
     (license license:gpl2+)))
 
+(define-public r-boostmath
+  (package
+    (name "r-boostmath")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "boostmath" version))
+       (sha256
+        (base32 "1km77ni0awjxnn1v3pqzpabi28vhgaw6p7d7lcvz0qrx3skcqkz2"))))
+    (properties `((upstream-name . "boostmath")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cpp11 r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/andrjohns/boostmath")
+    (synopsis "'R' Bindings for the 'Boost' Math Functions")
+    (description
+     "R bindings for the various functions and statistical distributions provided by
+the Boost Math library
+<https://www.boost.org/doc/libs/boost_1_88_0/libs/math/doc/html/index.html>.")
+    (license license:expat)))
+
 (define-public r-boostingdea
   (package
     (name "r-boostingdea")
@@ -8639,6 +8664,48 @@ for paleontological and ecological studies.  See Girondot and Laurin (2003)
 and GÃ´net, Laurin and Girondot (2022)
 <https://palaeo-electronica.org/content/2022/3590-bone-section-compactness-model>.")
     (license license:gpl2)))
+
+(define-public r-bonedensitymapping
+  (package
+    (name "r-bonedensitymapping")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BoneDensityMapping" version))
+       (sha256
+        (base32 "0f92n3mpc5qk8sdyvfj0iygx6fcjqgzlq5xid7z1ivyl1qqn71va"))))
+    (properties `((upstream-name . "BoneDensityMapping")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sp
+                             r-rvcg
+                             r-rnifti
+                             r-rjson
+                             r-rgl
+                             r-rdist
+                             r-ptinpoly
+                             r-oro-nifti
+                             r-nat
+                             r-jsonlite
+                             r-ggpubr
+                             r-ggplot2
+                             r-geometry
+                             r-fnn
+                             r-cowplot
+                             r-concaveman))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BoneDensityMapping")
+    (synopsis "Maps Bone Densities from CT Scans to Surface Models")
+    (description
+     "Allows local bone density estimates to be derived from CT data and mapped to 3D
+bone models in a reproducible manner.  Processing can be performed at the
+individual bone or group level.  Also includes tools for visualizing the bone
+density estimates.  Example methods are described in Telfer et al., (2021)
+<doi:10.1002/jor.24792>, Telfer et al., (2021) <doi:10.1016/j.jse.2021.05.011>.")
+    (license license:expat)))
 
 (define-public r-bondvaluation
   (package
@@ -20954,13 +21021,13 @@ future updates via @code{GitHub}.")
 (define-public r-bennu
   (package
     (name "r-bennu")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bennu" version))
        (sha256
-        (base32 "04vgpk549fr5wwg11f5979iqd40yqamdch46vwxb57wxhraphcxy"))))
+        (base32 "08fzjy7s7xnbyzfnk9hrbn1w4w828xbin0nb6fjgsapangkc7c8y"))))
     (properties `((upstream-name . "bennu")))
     (build-system r-build-system)
     (arguments
@@ -20980,6 +21047,7 @@ future updates via @code{GitHub}.")
                              r-lifecycle
                              r-glue
                              r-ggplot2
+                             r-generics
                              r-dplyr
                              r-bh))
     (native-inputs (list r-knitr))

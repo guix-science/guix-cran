@@ -2335,13 +2335,13 @@ Hornstein, Fan, Shedden, and Zhou (2018) <doi:10.1080/01621459.2018.1429275>.")
 (define-public r-jointfpm
   (package
     (name "r-jointfpm")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JointFPM" version))
        (sha256
-        (base32 "0ak3si4hzym3v0jkiarjkiq3v9zzgbyhvj99rmvrvy1ax0yl7c2v"))))
+        (base32 "124ibpbddyv0fg3yq1is1q1hv49wdmbdpfams1iyqkndspg3narz"))))
     (properties `((upstream-name . "JointFPM")))
     (build-system r-build-system)
     (arguments
@@ -2361,7 +2361,7 @@ Hornstein, Fan, Shedden, and Zhou (2018) <doi:10.1080/01621459.2018.1429275>.")
     (description
      "Implementation of a parametric joint model for modelling recurrent and competing
 event processes using generalised survival models as described in Entrop et al.,
-(2005) <doi:10.1002/bimj.70038>.  The joint model can subsequently be used to
+(2025) <doi:10.1002/bimj.70038>.  The joint model can subsequently be used to
 predict the mean number of events in the presence of competing risks at
 different time points.  Comparisons of the mean number of event functions, e.g.
 the differences in mean number of events between two exposure groups, are also
@@ -2739,6 +2739,31 @@ which can be called to terminate the background job.  Also provides timeouts and
 other mechanisms for automatically terminating a background job.  The result of
 the expression is available synchronously via $result or asynchronously with
 callbacks or through the promises package framework.")
+    (license license:expat)))
+
+(define-public r-jnplots
+  (package
+    (name "r-jnplots")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JNplots" version))
+       (sha256
+        (base32 "1hcrv38qhfcap10rnm70sbd3gxxxsv1032swjv1nc9ww490x08w9"))))
+    (properties `((upstream-name . "JNplots")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-nlme r-ape))
+    (home-page "https://github.com/kenstoyama/JNplots")
+    (synopsis "Visualize Outputs from the 'Johnson-Neyman' Technique")
+    (description
+     "Aids in the calculation and visualization of regions of non-significance using
+the Johnson-Neyman technique and its extensions as described by Bauer and Curran
+(2005) <doi:10.1207/s15327906mbr4003_5> to assess the influence of categorical
+and continuous moderators.  Allows correcting for phylogenetic relatedness.")
     (license license:expat)))
 
 (define-public r-jmvreadwrite
