@@ -10776,6 +10776,52 @@ jackknifing, or an unbiased method.  Smith and Hillis (2020)
 <doi:10.1117/12.2549075>.")
     (license license:gpl3)))
 
+(define-public r-mriml
+  (package
+    (name "r-mriml")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mrIML" version))
+       (sha256
+        (base32 "0b7sylysr8cbqkapm2vgsm19ihq73fp1aw668j41lwg3ds15pc4g"))))
+    (properties `((upstream-name . "mrIML")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-workflows
+                             r-tune
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rsample
+                             r-rlang
+                             r-recipes
+                             r-purrr
+                             r-patchwork
+                             r-metricsweighted
+                             r-magrittr
+                             r-hstats
+                             r-ggplot2
+                             r-future-apply
+                             r-flashlight
+                             r-finetune
+                             r-dplyr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/nickfountainjones/mrIML")
+    (synopsis "Multi-Response (Multivariate) Interpretable Machine Learning")
+    (description
+     "Builds and interprets multi-response machine learning models using tidymodels
+syntax.  Users can supply a tidy model, and @code{mrIML} automates the process
+of fitting multiple response models to multivariate data and applying
+interpretable machine learning techniques across them.  For more details see
+Fountain-Jones (2021) <doi:10.1111/1755-0998.13495> and Fountain-Jones et al.
+(2024) <doi:10.22541/au.172676147.77148600/v1>.")
+    (license license:expat)))
+
 (define-public r-mri
   (package
     (name "r-mri")
@@ -10903,13 +10949,13 @@ inputs, simulating scenarios and plotting outputs.")
 (define-public r-mrgsim-parallel
   (package
     (name "r-mrgsim-parallel")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrgsim.parallel" version))
        (sha256
-        (base32 "074c47fkwy5n9x89dswi3ybnck1f0rlbyad6by32jyslw8bz76ln"))))
+        (base32 "1crw8547l1f1jk9g8c1zhpmpi1c1m44aqsyhibq2srl576appldv"))))
     (properties `((upstream-name . "mrgsim.parallel")))
     (build-system r-build-system)
     (arguments
@@ -12420,13 +12466,13 @@ Pasaniuc, WJ Gauderman, JS Witte (2020) <doi:10.1101/2020.07.06.190256>.")
 (define-public r-mpdir
   (package
     (name "r-mpdir")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MPDiR" version))
        (sha256
-        (base32 "0n7zrcxqfvd0y4qiqsx0qf5rgqdrci5026wkdpffngamxlm80f86"))))
+        (base32 "156y9mkispq1whydnjza05kj0afyapbw5jhc0lzpxh6mfbzphvnq"))))
     (properties `((upstream-name . "MPDiR")))
     (build-system r-build-system)
     (arguments
@@ -19293,13 +19339,13 @@ informative hypotheses evaluation models from bain'.")
 (define-public r-mmgfm
   (package
     (name "r-mmgfm")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MMGFM" version))
        (sha256
-        (base32 "1alsgv7wjb6mcg0zgcxkpfr89hr3yclgc68yv88wzq8ad9py9wzg"))))
+        (base32 "0a9gw29yzqd7xb0zd3hxamkpkb355gm5wvs85pfidgi7hl98ga74"))))
     (properties `((upstream-name . "MMGFM")))
     (build-system r-build-system)
     (arguments
@@ -19311,6 +19357,7 @@ informative hypotheses evaluation models from bain'.")
                              r-mass
                              r-irlba
                              r-gfm))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MMGFM")
     (synopsis "Multi-Study Multi-Modality Generalized Factor Model")
     (description
@@ -19320,8 +19367,8 @@ study-shared and specified factors.  Our factor models account for heterogeneous
 noises and overdispersion among modality variables with augmented covariates.
 We propose an efficient and speedy variational estimation procedure for
 estimating model parameters, along with a novel criterion for selecting the
-optimal number of factors.  More details can be referred to Liu et al. (2024)
-<doi:10.48550/@code{arXiv.2408.10542>}.")
+optimal number of factors.  More details can be referred to Liu et al. (2025)
+<doi:10.48550/@code{arXiv.2507.09889>}.")
     (license license:gpl3)))
 
 (define-public r-mmeta
@@ -21535,46 +21582,6 @@ effects regression models.  Searle, S. R., Casella, G., & @code{McCulloch}, C.
 E. (2009, ISBN:978-0470009598).  Bates, D., MÃ¤chler, M., Bolker, B., & Walker,
 S. (2014) <doi:10.18637/jss.v067.i01>.")
     (license license:gpl3+)))
-
-(define-public r-mlms
-  (package
-    (name "r-mlms")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mlms" version))
-       (sha256
-        (base32 "1yijs5lda2yqly871lwxq5iw61zkig096jvvdkkvdviav75vklgx"))))
-    (properties `((upstream-name . "mlms")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringi
-                             r-sf
-                             r-readxl
-                             r-plotrix
-                             r-jsonlite
-                             r-checkmate))
-    (home-page "https://code.usgs.gov/inl/mlms")
-    (synopsis
-     "Multilevel Monitoring System Data for Wells in the USGS INL Aquifer Monitoring Network")
-    (description
-     "Analysis-ready datasets detailing the Multilevel Monitoring System (MLMS) wells
-within the U.S. Geological Survey's (USGS) aquifer-monitoring network at the
-Idaho National Laboratory (INL) in Idaho, and the data collected within these
-wells.  Supported by the U.S. Department of Energy (DOE), the USGS collected
-discrete measurements of hydraulic head at various depths from wells in the
-eastern Snake River Plain (ESRP) aquifer over several years.  These measurements
-were derived from data on fluid pressure, fluid temperature, and atmospheric
-pressure.  Each well was equipped with an MLMS, which included valved
-measurement ports, packer bladders, casing segments, and couplers.  The MLMS
-facilitated monitoring at multiple hydraulically isolated depth intervals,
-reaching significant depths below the land surface.  Additionally, groundwater
-samples were collected from these wells over multiple years and analyzed for
-various chemical and physical parameters.")
-    (license license:cc0)))
 
 (define-public r-mlmrev
   (package
@@ -35756,13 +35763,13 @@ clinical programming workflow.")
 (define-public r-metacor
   (package
     (name "r-metacor")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metacor" version))
        (sha256
-        (base32 "00s09snfxpipsyv72ji3jh7kc49hhsi7agc44hf6r1b39zyckpkm"))))
+        (base32 "0slc49j67zchabv6v6rphx6kb6axh7k1222yj84a1fb7f5g56dv4"))))
     (properties `((upstream-name . "metacor")))
     (build-system r-build-system)
     (arguments
@@ -36808,6 +36815,32 @@ specialized syntax.")
      "This package provides a mixed collection of useful and semi-useful diverse
 statistical functions, some of which may even be referenced in The R Primer
 book.")
+    (license license:gpl2)))
+
+(define-public r-mesonet
+  (package
+    (name "r-mesonet")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mesonet" version))
+       (sha256
+        (base32 "13c3cijw6g0h4dcr07xxrmkgp0ziwcxdk5hw7b3g7r5pajn7nl75"))))
+    (properties `((upstream-name . "mesonet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units))
+    (home-page "https://cran.r-project.org/package=mesonet")
+    (synopsis "Download and Process Oklahoma Mesonet Data")
+    (description
+     "This package provides a collection of functions to download and process weather
+data from the Oklahoma Mesonet <https://mesonet.org>.  Functions are available
+for downloading station metadata, downloading Mesonet time series (MTS) files,
+importing MTS files into R, and converting soil temperature change measurements
+into soil matric potential and volumetric soil moisture.")
     (license license:gpl2)))
 
 (define-public r-meshed
@@ -44357,6 +44390,33 @@ Thornton (2017), \"Robustness of Reconstructed Ancestral Protein Functions to
 Statistical Uncertainty\" <doi:10.1093/molbev/msw223>.")
     (license license:gpl3+)))
 
+(define-public r-mave
+  (package
+    (name "r-mave")
+    (version "1.3.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MAVE" version))
+       (sha256
+        (base32 "089xkqj7kfck93v9q6hsw21a70njl9livrd63i91mndv6jwjrw27"))))
+    (properties `((upstream-name . "MAVE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MAVE")
+    (synopsis "Methods for Dimension Reduction")
+    (description
+     "This package provides functions for dimension reduction, using MAVE (Minimum
+Average Variance Estimation), OPG (Outer Product of Gradient) and KSIR (sliced
+inverse regression of kernel version).  Methods for selecting the best dimension
+are also included.  Xia (2002) <doi:10.1111/1467-9868.03411>; Xia (2007)
+<doi:10.1214/009053607000000352>; Wang (2008) <doi:10.1198/016214508000000418>.")
+    (license license:gpl2+)))
+
 (define-public r-mauricer
   (package
     (name "r-mauricer")
@@ -44990,13 +45050,13 @@ Carter. (2020, Journal of Creation 34(3):41-50),
 (define-public r-matrixcorrelation
   (package
     (name "r-matrixcorrelation")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MatrixCorrelation" version))
        (sha256
-        (base32 "1na3y1crlj57c1xq9ja3v94cx2dr0myrlx9bxvhhwss3q3r1lgby"))))
+        (base32 "0kil8ykzflvpiicwsbwfzshbs0whj6nv970w369i60kgxdcgvnmf"))))
     (properties `((upstream-name . "MatrixCorrelation")))
     (build-system r-build-system)
     (arguments
@@ -47332,6 +47392,31 @@ variables For more details see Bates et al. (2015) <doi:10.18637/jss.v067.i01>."
 marginal (or partial) effects from model objects.")
     (license license:expat)))
 
+(define-public r-marginme
+  (package
+    (name "r-marginme")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "marginme" version))
+       (sha256
+        (base32 "1vgnwiclnz0drh4cllj78584w4panbkjpj8sfb2d6qakbwfi37fp"))))
+    (properties `((upstream-name . "marginme")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glmmrbase))
+    (home-page "https://github.com/samuel-watson/marginme")
+    (synopsis
+     "Estimation of Relative Risks, Risk Differences, and Marginal Effects from Mixed Models Using Marginal Standardization")
+    (description
+     "Functionality to estimate relative risks, risk differences, and partial effects
+from mixed model.  Marginalisation over random effect terms is accomplished
+using Markov Chain Monte Carlo.")
+    (license license:gpl2+)))
+
 (define-public r-marginalmediation
   (package
     (name "r-marginalmediation")
@@ -47669,13 +47754,13 @@ developed in C++'.")
 (define-public r-maraca
   (package
     (name "r-maraca")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maraca" version))
        (sha256
-        (base32 "130ammd7vkccw8j3wy5rrglfrcgivzn2qygfwcrxmfiv4xy8w9i0"))))
+        (base32 "1mfj74pzi57pwp9zmjn8vxmwl61gbs75rpxnpjh7v0qbaf3h10bs"))))
     (properties `((upstream-name . "maraca")))
     (build-system r-build-system)
     (arguments
@@ -48223,13 +48308,13 @@ each level set.  3.  Generate a complex from the clustering results.")
 (define-public r-mapper
   (package
     (name "r-mapper")
-    (version "2.2.1")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mappeR" version))
        (sha256
-        (base32 "0m4b6pvnlmyd6jdf6bxb73yiqbymkhx13mcjh29vaj831d8ww90k"))))
+        (base32 "1bg62yap2xgwdjw0l0zv3ackmnwglpajkz1mbsr5wqcg870y9p20"))))
     (properties `((upstream-name . "mappeR")))
     (build-system r-build-system)
     (arguments
@@ -49434,6 +49519,44 @@ to help researchers work with and contribute to event datasets on global
 governance.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-mantis
+  (package
+    (name "r-mantis")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mantis" version))
+       (sha256
+        (base32 "0agv55ch99s8zp41yg6lnl9jb6lwwl7zlxw39mv8drn18ai2cgc7"))))
+    (properties `((upstream-name . "mantis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xts
+                             r-tidyr
+                             r-scales
+                             r-rmarkdown
+                             r-reactable
+                             r-purrr
+                             r-knitr
+                             r-htmltools
+                             r-ggplot2
+                             r-dygraphs
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/phuongquan/mantis")
+    (synopsis "Multiple Time Series Scanner")
+    (description
+     "Generate interactive html reports that enable quick visual review of multiple
+related time series stored in a data frame.  For static datasets, this can help
+to identify any temporal artefacts that may affect the validity of subsequent
+analyses.  For live data feeds, regularly scheduled reports can help to
+pro-actively identify data feed problems or unexpected trends that may require
+action.  The reports are self-contained and shareable without a web server.")
+    (license license:gpl3+)))
+
 (define-public r-mantar
   (package
     (name "r-mantar")
@@ -50113,13 +50236,13 @@ of analysis needed.")
 (define-public r-maldirppa
   (package
     (name "r-maldirppa")
-    (version "1.1.0-2")
+    (version "1.1.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MALDIrppa" version))
        (sha256
-        (base32 "1afwkc8dyq51z610z7wnhm95f5j04yj90pxxa33mhdnm2dwsc963"))))
+        (base32 "08ag876sipkcxmlz3i4yzqyr5nd3wdfvcss7dx6d2dnf5hvsyrwa"))))
     (properties `((upstream-name . "MALDIrppa")))
     (build-system r-build-system)
     (arguments

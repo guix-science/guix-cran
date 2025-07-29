@@ -6454,6 +6454,53 @@ for computer science, mathematics, physics, quantitative biology, quantitative
 finance, and statistics.")
     (license license:expat)))
 
+(define-public r-arutools
+  (package
+    (name "r-arutools")
+    (version "0.7.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ARUtools" version))
+       (sha256
+        (base32 "0v6m5fjlai25ms9qzdshc2pqjq09v6cnzrm8f1kpmafpryqdr4fx"))))
+    (properties `((upstream-name . "ARUtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-units
+                             r-tidyr
+                             r-suncalc
+                             r-stringr
+                             r-spsurvey
+                             r-sf
+                             r-seewave
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-parzer
+                             r-lutz
+                             r-lubridate
+                             r-lifecycle
+                             r-hms
+                             r-here
+                             r-glue
+                             r-fs
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://arutools.github.io/ARUtools/")
+    (synopsis
+     "Management and Processing of Autonomous Recording Unit (ARU) Data")
+    (description
+     "Parse Autonomous Recording Unit (ARU) data and for sub-sampling recordings.
+Extract Metadata from your recordings, select a subset of recordings for
+interpretation, and prepare files for processing on the @code{WildTrax}
+<https://wildtrax.ca/> platform.  Read and process metadata from recordings
+collected using the @code{SongMeter} and BAR-LT types of ARUs.")
+    (license license:expat)))
+
 (define-public r-arulesviz
   (package
     (name "r-arulesviz")
@@ -9156,25 +9203,24 @@ via @code{ArcGIS} location services REST API endpoints
 (define-public r-arcgisgeocode
   (package
     (name "r-arcgisgeocode")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgisgeocode" version))
        (sha256
-        (base32 "0g3cipci6s38xzb1pfz124ngi29l9zdjw79zzzv4w4k71cbckbnr"))))
+        (base32 "0zhi8gsm7ksw3lkkfqidwm5rlx82f2mz24n5s9lwm9z43ixbyir2"))))
     (properties `((upstream-name . "arcgisgeocode")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list))
+    (inputs (list xz))
     (propagated-inputs (list r-sf
                              r-rlang
                              r-rcppsimdjson
                              r-jsonify
                              r-httr2
-                             r-curl
                              r-cli
                              r-arcgisutils))
     (home-page "https://github.com/r-arcgis/arcgisgeocode")
@@ -18568,26 +18614,26 @@ more information.")
 (define-public r-air
   (package
     (name "r-air")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "air" version))
        (sha256
-        (base32 "0r54kq6iiad3g07sz69napw5qx6qp9sx2qp6jy7frynh8s60bss9"))))
+        (base32 "0cwn809g0g6jjb6nwmymxlxz5mmjvgzmmjywlnzagggpw7wasqak"))))
     (properties `((upstream-name . "air")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rjson r-keyring r-httr))
+    (propagated-inputs (list r-rjson r-result r-keyring r-httr))
     (home-page "https://github.com/soumyaray/air")
     (synopsis "AI Assistant to Write and Understand R Code")
     (description
      "An R console utility that lets you ask R related questions to the @code{OpenAI}
-large language model.  It can answer @code{how-to()} questions by providing
-code, and @code{whatis()} questions by explaining what given code does.  You
-must provision your own key for the @code{OpenAI} API
+large language model.  It can answer how-to questions by providing code, and
+what-is questions by explaining what given code does.  You must provision your
+own key for the @code{OpenAI} API
 <https://platform.openai.com/docs/api-reference>.")
     (license license:expat)))
 
@@ -20578,6 +20624,43 @@ local API).")
 and age distributions.  These functions may be helpful when related age and
 custom age distributions are desired given a vector of birth dates.")
     (license license:expat)))
+
+(define-public r-agebanddecomposition
+  (package
+    (name "r-agebanddecomposition")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AgeBandDecomposition" version))
+       (sha256
+        (base32 "19nc60qbjxad2z7i598r9nyb1m5ibgljnrb7w98qdjljr8bhdzbf"))))
+    (properties `((upstream-name . "AgeBandDecomposition")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-readxl
+                             r-patchwork
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://gitlab.com/Puletti/agebanddecomposition_rpackage")
+    (synopsis "Age Band Decomposition Method for Tree Ring Standardization")
+    (description
+     "This package implements the Age Band Decomposition (ABD) method for
+standardizing tree ring width data while preserving both low and high frequency
+variability.  Unlike traditional detrending approaches that can distort long
+term growth trends, ABD decomposes ring width series into multiple age classes,
+detrends each class separately, and then recombines them to create standardized
+chronologies.  This approach improves the detection of growth signals linked to
+past climatic and environmental factors, making it particularly valuable for
+dendroecological and dendroclimatological studies.  The package provides
+functions to perform ABD-based standardization, compare results with other
+common methods (e.g., BAI, C method, RCS), and facilitate the interpretation of
+growth patterns under current and future climate variability.")
+    (license license:gpl3+)))
 
 (define-public r-agd
   (package

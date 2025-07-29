@@ -2917,13 +2917,13 @@ customization.")
 (define-public r-qtools
   (package
     (name "r-qtools")
-    (version "1.5.9")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qtools" version))
        (sha256
-        (base32 "167c8mfj0if4j9m3rjbi1gnhwypq5ky297zyb437p42b3856qagi"))))
+        (base32 "02nda27829ckxzicvrn5iy70aypbgnihck0sc3ln0cmc29sj3fyl"))))
     (properties `((upstream-name . "Qtools")))
     (build-system r-build-system)
     (arguments
@@ -2939,6 +2939,7 @@ customization.")
                              r-mass
                              r-gtools
                              r-glmx
+                             r-corpcor
                              r-conquer
                              r-boot))
     (native-inputs (list r-knitr))
@@ -3345,13 +3346,13 @@ handle multiple traits together.  See <https://github.com/byandell/qtl2pattern>.
 (define-public r-qtl2ggplot
   (package
     (name "r-qtl2ggplot")
-    (version "1.2.4")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qtl2ggplot" version))
        (sha256
-        (base32 "0ygadcm05fqkpa8j2h6rpcxpd287g2av7qnlwlqp1s86zfxshk96"))))
+        (base32 "1a51p184xsswiyswj0ww53sjbqr2cqfd9by5d5qq3fh4fkn1d6l4"))))
     (properties `((upstream-name . "qtl2ggplot")))
     (build-system r-build-system)
     (arguments
@@ -3369,7 +3370,7 @@ handle multiple traits together.  See <https://github.com/byandell/qtl2pattern>.
                              r-dplyr
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/byandell/qtl2ggplot")
+    (home-page "https://github.com/byandell-sysgen/qtl2ggplot")
     (synopsis "Data Visualization for QTL Experiments")
     (description
      "This package provides functions to plot QTL (quantitative trait loci) analysis

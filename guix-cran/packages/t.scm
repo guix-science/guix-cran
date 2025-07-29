@@ -629,28 +629,29 @@ scheme to make test building simple for others.")
 (define-public r-twophasecorr
   (package
     (name "r-twophasecorr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TwoPhaseCorR" version))
        (sha256
-        (base32 "0vl8r2hycsrdnspiqz0v44d1qb4zq28pklv31wxzhhss0iqr1xvv"))))
+        (base32 "1xy5y0jdya6h16c0b3i1ilcbsbdlhryh3sa28q8plpxjl1jjhfq3"))))
     (properties `((upstream-name . "TwoPhaseCorR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix r-mass r-ggplot2))
+    (propagated-inputs (list r-matrix r-mass r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=TwoPhaseCorR")
     (synopsis
-     "Construction and Analysis of Two-Phase Experimental Designs with Correlated Errors")
+     "Construct Two-Phase Experimental Designs with Correlated Errors")
     (description
      "This package provides tools for constructing and analyzing two-phase
-experimental designs under correlated error structures.  Includes cyclic
-constructions of designs and computes information matrices for Phase I residual
-treatment effects, Phase II direct treatment effects, and their interaction
-along with the canonical efficiency factor.")
+experimental designs under correlated error structures.  Version 1.1.0 includes
+improved efficiency factor classification with tolerance control, updated plot
+visualizations, and improved clarity of the results.  The conceptual framework
+and the term two-phase were introduced by @code{McIntyre} (1955)
+<doi:10.2307/3001770>).")
     (license license:gpl3)))
 
 (define-public r-twopexp
@@ -29941,13 +29942,13 @@ authorities and provides functions that can quickly query this data.")
 (define-public r-taxa
   (package
     (name "r-taxa")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxa" version))
        (sha256
-        (base32 "1vvvj7gm0xh42bd1zh6zl14lpvyi5naxp8qsm59aynahw02s6w49"))))
+        (base32 "1s0lhrgbvdfmd86gk1vzcrli2xfmwdqr4cqlyyi8i5rc9mjygfly"))))
     (properties `((upstream-name . "taxa")))
     (build-system r-build-system)
     (arguments
@@ -30583,13 +30584,13 @@ for fast dimension reduction, see package?tapkee and
 (define-public r-tapes
   (package
     (name "r-tapes")
-    (version "0.13.4")
+    (version "0.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TapeS" version))
        (sha256
-        (base32 "1b4ia8h6k947klnnj7r8q5bz5758g7kjrch05aqa24449gaicacg"))))
+        (base32 "0c4vzb1bs2l1nq7r9qhwhvl34gz3agzrxix306f3r8cwvyc325yf"))))
     (properties `((upstream-name . "TapeS")))
     (build-system r-build-system)
     (arguments
@@ -31413,13 +31414,13 @@ of evenness: TADeve).")
 (define-public r-tactile
   (package
     (name "r-tactile")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tactile" version))
        (sha256
-        (base32 "1yly05zin0isad69d6j1k2nb9ykvz0gj2xs9mqiq2cda0mdxmh65"))))
+        (base32 "1smb0zm7sn8clnppljc4d9a54frimjbx09p7i31b76g7k4mys0pr"))))
     (properties `((upstream-name . "tactile")))
     (build-system r-build-system)
     (arguments
@@ -32473,13 +32474,13 @@ to facilitate some common operations on a subset of the data.")
 (define-public r-tablaxlsx
   (package
     (name "r-tablaxlsx")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tablaxlsx" version))
        (sha256
-        (base32 "1cwjqxsqspyrv19wx1fvqk2x2jc3vv6h7k8flpr74a5la1jmxsbd"))))
+        (base32 "1di2dykjfni2f2ylrp9h4rv2amxwwvy1mhj5xfzx1hfzmp9sw7dh"))))
     (properties `((upstream-name . "tablaxlsx")))
     (build-system r-build-system)
     (arguments

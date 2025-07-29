@@ -8395,13 +8395,13 @@ can be found in \"Elements of Statistical Learning (2nd Edition)\" in Section
 (define-public r-procs
   (package
     (name "r-procs")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "procs" version))
        (sha256
-        (base32 "06hsdzw23854pc9zirbbfzm451ybllrp5gx6b4bk0pd8wv1iza01"))))
+        (base32 "0bfnjclf08lqv6nwdhb8j1z6am2i3hlyjw6hh83cm0sd2dmaqa7y"))))
     (properties `((upstream-name . "procs")))
     (build-system r-build-system)
     (arguments
@@ -18816,13 +18816,13 @@ Liao et al. (2021) <doi:10.1007/s00122-021-03834-x>.")
 (define-public r-polykde
   (package
     (name "r-polykde")
-    (version "1.1.4")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polykde" version))
        (sha256
-        (base32 "02gw7xwyfdblf13b9r4ww6v46l5kff6irzsnnv5afgjf71n7fw9c"))))
+        (base32 "0bhyjhx2w423q0igxasal8r1izrq5bzx25lp6d6ifniksqi8lyqr"))))
     (properties `((upstream-name . "polykde")))
     (build-system r-build-system)
     (arguments
@@ -18846,8 +18846,8 @@ Liao et al. (2021) <doi:10.1007/s00122-021-03834-x>.")
      "Kernel density estimation on the polysphere, (hyper)sphere, and circle.
 Includes functions for density estimation, regression estimation, ridge
 estimation, bandwidth selection, kernels, samplers, and homogeneity tests.
-Companion package to GarcÃ­a-PortuguÃ©s and MeilÃ¡n-Vila (2024)
-<doi:10.48550/@code{arXiv.2411.04166>} and GarcÃ­a-PortuguÃ©s and MeilÃ¡n-Vila
+Companion package to GarcÃ­a-PortuguÃ©s and MeilÃ¡n-Vila (2025)
+<doi:10.1080/01621459.2025.2521898> and GarcÃ­a-PortuguÃ©s and MeilÃ¡n-Vila
 (2023) <doi:10.1007/978-3-031-32729-2_4>.")
     (license license:gpl3)))
 
@@ -29896,13 +29896,13 @@ Mendelian disease and rare genetic variants.  See Bastarache et al.  2018
 (define-public r-phenthauproc
   (package
     (name "r-phenthauproc")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PHENTHAUproc" version))
        (sha256
-        (base32 "1bhd147mhv1xj4q6yqz92n8vi6nji093y78pi1jkav1plwx2qf3c"))))
+        (base32 "1x6g7lm4b534s97h652n1rgx28hdfyh4wcmpcpz8qfjidj42by04"))))
     (properties `((upstream-name . "PHENTHAUproc")))
     (build-system r-build-system)
     (arguments
@@ -39421,13 +39421,13 @@ biomarker of prognostic and predictive for cancer immunotherapy.")
 (define-public r-pathwayspace
   (package
     (name "r-pathwayspace")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PathwaySpace" version))
        (sha256
-        (base32 "0a91984f5zkvkcd0vkpr10h5ji6v3ls2451lmcsj5wfzcxxr94gn"))))
+        (base32 "1gmc938n5sr4kmqab27b1wlk3l6nb3vimcmp1hpljr4dmn1r7m5q"))))
     (properties `((upstream-name . "PathwaySpace")))
     (build-system r-build-system)
     (arguments

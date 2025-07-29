@@ -61,13 +61,13 @@ principal component analysis plots, and prediction plots.")
 (define-public r-zoomr
   (package
     (name "r-zoomr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zoomr" version))
        (sha256
-        (base32 "0yaxxv5jiv25rx737zqz901pmbfys7rpqpngnhy1w6wgfq2pfdnp"))))
+        (base32 "0l1ii1a0mk2drcrblfw5q4n5k2yihyh9pmn7nm0qs8al5zfkxfik"))))
     (properties `((upstream-name . "zoomr")))
     (build-system r-build-system)
     (arguments

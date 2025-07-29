@@ -5312,6 +5312,31 @@ contains some old VGAM family functions which have been replaced by newer ones
 (often because they are now special cases).")
     (license license:gpl2)))
 
+(define-public r-vfunc
+  (package
+    (name "r-vfunc")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vfunc" version))
+       (sha256
+        (base32 "1frwv124vm3la6zhykwpngvlzlics00za3qdydfjgz55a1pcgzln"))))
+    (properties `((upstream-name . "vfunc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=vfunc")
+    (synopsis "Manipulate Virtual Functions")
+    (description
+     "If f <- function(x){x^2} and g <- function(x){x+1} it is a constant source of
+annoyance that \"f+g\" is not defined.  Package vfunc allows you to do this, and
+we have (f+g)(2) returning 5.  The other arithmetic operators are similarly
+implemented.  A wide class of coding bugs is eliminated.")
+    (license license:gpl2)))
+
 (define-public r-vfs
   (package
     (name "r-vfs")

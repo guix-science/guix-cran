@@ -2010,13 +2010,13 @@ O'Neill, M., and Collins, J. J. (2018) <doi:10.1007/978-3-319-78717-6>.")
 (define-public r-xegagagene
   (package
     (name "r-xegagagene")
-    (version "1.0.0.2")
+    (version "1.0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaGaGene" version))
        (sha256
-        (base32 "0i1v178d7vr98syas7bw6k4s1i7mf8ndwk878dcb9lc0br0nvkdd"))))
+        (base32 "182vml7kmxnkvlqi13xrw1p86q1lchzki3pnc1gzk8f90ga1d27f"))))
     (properties `((upstream-name . "xegaGaGene")))
     (build-system r-build-system)
     (arguments

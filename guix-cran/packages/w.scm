@@ -9606,13 +9606,13 @@ an examples can be found in the package website
 (define-public r-warbler
   (package
     (name "r-warbler")
-    (version "1.1.35")
+    (version "1.1.36")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "warbleR" version))
        (sha256
-        (base32 "1m61lzwy8wg2g6vhrhm6bawb2haz0wcxz2cc6s1p7wr4zqhqd1ck"))))
+        (base32 "1bgb5mj4p9xsmnq6hgr95kcq206x3czps1799qqjv2933m5ww6hw"))))
     (properties `((upstream-name . "warbleR")))
     (build-system r-build-system)
     (arguments

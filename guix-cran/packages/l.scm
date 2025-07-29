@@ -17323,6 +17323,41 @@ projections designs proposed in Xu He (2021) <doi:10.1093/biomet/asaa057> and Xu
 He (2018) <doi:10.48550/@code{arXiv.1709.02062>}.")
     (license license:lgpl2.1)))
 
+(define-public r-latticedensity
+  (package
+    (name "r-latticedensity")
+    (version "1.2.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "latticeDensity" version))
+       (sha256
+        (base32 "14znz7qfnrgixpcc48iyja1qqz102vanzayymzrv7wfail1rp8w6"))))
+    (properties `((upstream-name . "latticeDensity")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-splancs
+                             r-spdep
+                             r-spatstat-geom
+                             r-spatstat
+                             r-spatialreg
+                             r-spam
+                             r-sp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=latticeDensity")
+    (synopsis
+     "Density Estimation and Nonparametric Regression on Irregular Regions")
+    (description
+     "This package provides functions that compute the lattice-based density and
+regression estimators for two-dimensional regions with irregular boundaries and
+holes.  The density estimation technique is described in Barry and
+@code{McIntyre} (2011) <doi:10.1016/j.ecolmodel.2011.02.016>, while the
+non-parametric regression technique is described in @code{McIntyre} and Barry
+(2018) <doi:10.1080/10618600.2017.1375935>.")
+    (license license:gpl2)))
+
 (define-public r-latte
   (package
     (name "r-latte")

@@ -25114,13 +25114,13 @@ and sector levels (No.  w19677).  National Bureau of Economic Research.")
 (define-public r-decomposer
   (package
     (name "r-decomposer")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DecomposeR" version))
        (sha256
-        (base32 "0f5bagmn0s15qhw0c7fiv96r2ih365fak1rz3pxfnaqmm20l2j8i"))))
+        (base32 "1kq8ga0wrbgjpyy45zhs13gnhrlxya9mxxq0p8ljg9mqnf93yni9"))))
     (properties `((upstream-name . "DecomposeR")))
     (build-system r-build-system)
     (arguments

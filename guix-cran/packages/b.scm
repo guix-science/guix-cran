@@ -1400,13 +1400,13 @@ which identifies the groove locations.")
 (define-public r-bulkreadr
   (package
     (name "r-bulkreadr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bulkreadr" version))
        (sha256
-        (base32 "1q3k310jn0lyssd9fzxp1wk0f78cp74iigc1a31wv1ksgsvy47wf"))))
+        (base32 "1jkngd6yfhjgzj8cb2l7awkqmv29d75y7whk9kh50mlapviqzfbi"))))
     (properties `((upstream-name . "bulkreadr")))
     (build-system r-build-system)
     (arguments
@@ -8668,13 +8668,13 @@ and GÃ´net, Laurin and Girondot (2022)
 (define-public r-bonedensitymapping
   (package
     (name "r-bonedensitymapping")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoneDensityMapping" version))
        (sha256
-        (base32 "0f92n3mpc5qk8sdyvfj0iygx6fcjqgzlq5xid7z1ivyl1qqn71va"))))
+        (base32 "1c0r6sm5yqmvgacrf3xaxym9b9vn0ynid7xbfknld472za71wp1l"))))
     (properties `((upstream-name . "BoneDensityMapping")))
     (build-system r-build-system)
     (arguments
@@ -8689,7 +8689,6 @@ and GÃ´net, Laurin and Girondot (2022)
                              r-ptinpoly
                              r-oro-nifti
                              r-nat
-                             r-jsonlite
                              r-ggpubr
                              r-ggplot2
                              r-geometry
@@ -9732,13 +9731,13 @@ M. Leonelli, R. Ramanathan, R.L. Wilkerson (2022)
 (define-public r-bnma
   (package
     (name "r-bnma")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnma" version))
        (sha256
-        (base32 "0z2kd9x5hi192dlr36r4vh9c66dzprm63y1l9v8av6dfnz63sj5b"))))
+        (base32 "03kkk3zzxlrh5dbcr8wrp6pxmdipvib7byv32fmac40zpsgkf2s9"))))
     (properties `((upstream-name . "bnma")))
     (build-system r-build-system)
     (arguments
@@ -10433,19 +10432,19 @@ Zhang and Wang (2013, <doi:10.1007/s11336-012-9301-5>), Zhang (2014,
 (define-public r-bmemapping
   (package
     (name "r-bmemapping")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BMEmapping" version))
        (sha256
-        (base32 "0qpvfwlibmacn3ddr99b84c199c18xrq60ybfsribjk9plckwjlc"))))
+        (base32 "0rb85sragwiyp065s613c1aqv3nvkr3ph6sbqn0bx0yzlhfa1l7s"))))
     (properties `((upstream-name . "BMEmapping")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm))
+    (propagated-inputs (list r-mvtnorm r-gridextra r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/KinsprideDuah/BMEmapping")
     (synopsis "Spatial Interpolation using Bayesian Maximum Entropy (BME)")
@@ -20812,13 +20811,13 @@ and Zhang for landscape mosaics (Zhao and Zhang (2019)
 (define-public r-berryfunctions
   (package
     (name "r-berryfunctions")
-    (version "1.22.5")
+    (version "1.22.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "berryFunctions" version))
        (sha256
-        (base32 "1kd1r8ha1dggqmpiiwxvgfk5igshkfaqnkhkrjn7s79xqz2bsq1k"))))
+        (base32 "0lfz6mr1d3gi33dx9kf8c2cynxb94w7fs02iwrl4rh9cca8x3wd0"))))
     (properties `((upstream-name . "berryFunctions")))
     (build-system r-build-system)
     (arguments
@@ -27167,6 +27166,36 @@ and Westerhausen, Laterality: Asymmetries of Body, Brain and Cognition, 2020,
 <doi:10.1080/1357650X.2020.1769124>).")
     (license license:gpl3)))
 
+(define-public r-bayesianlasso
+  (package
+    (name "r-bayesianlasso")
+    (version "0.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesianLasso" version))
+       (sha256
+        (base32 "05qixcihnplzbfkns22vhcs820hg7iddxhlc7vbgglpv7aijk81z"))))
+    (properties `((upstream-name . "BayesianLasso")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcppclock
+                             r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://garthtarr.github.io/BayesianLasso/")
+    (synopsis "Bayesian Lasso Regression and Tools for the Lasso Distribution")
+    (description
+     "This package implements Bayesian Lasso regression using efficient Gibbs sampling
+algorithms, including modified versions of the Hans and ParkâCasella (PC)
+samplers.  Includes functions for working with the Lasso distribution, such as
+its density, cumulative distribution, quantile, and random generation functions,
+along with moment calculations.  Also includes a function to compute the Mills
+ratio.  Designed for sparse linear models and suitable for high-dimensional
+regression problems.")
+    (license license:gpl3)))
+
 (define-public r-bayesianglasso
   (package
     (name "r-bayesianglasso")
@@ -30577,13 +30606,13 @@ attenuation and envelope correlation among others (Dabelsteen et al 1993
 (define-public r-bartxviz
   (package
     (name "r-bartxviz")
-    (version "1.0.6")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bartXViz" version))
        (sha256
-        (base32 "0d4i9gzbjd3ilvzjcqzirnk9b4h46yq7yx28ysmghjbxj0xfwd0y"))))
+        (base32 "0vrwpxjc06nxlj0ahi8vnf4n6jsjarrqi6x1498658d5kvys6fjb"))))
     (properties `((upstream-name . "bartXViz")))
     (build-system r-build-system)
     (arguments
@@ -30623,10 +30652,15 @@ is grounded in data obtained via MCMC sampling.  Similar to the BART model
 introduced by Chipman, George, and @code{McCulloch} (2010)
 <doi:10.1214/09-AOAS285>, this package leverages Bayesian posterior samples
 generated during model estimation, allowing variable contributions to be
-computed without requiring additional sampling.  For XGBoost and baseline
+computed without requiring additional sampling.  The BART model is designed to
+work with the following R packages: BART <doi:10.18637/jss.v097.i01>,
+@code{bartMachine} <doi:10.18637/jss.v070.i04>, and dbarts
+<https://CRAN.R-project.org/package=dbarts>.  For XGBoost and baseline
 adjustments, the approach by Lundberg et al. (2020)
-<doi:10.1038/s42256-019-0138-9> is also considered.The BARP model proposed by
-Bisbee (2019) <doi:10.1017/S0003055419000480> extends post-stratification by
+<doi:10.1038/s42256-019-0138-9> is also considered.  The BARP model proposed by
+Bisbee (2019) <doi:10.1017/S0003055419000480> was implemented with reference to
+<https://github.com/jbisbee1/BARP> and is designed to work with modified
+functions based on that implementation.  BARP extends post-stratification by
 computing variable contributions within each stratum defined by stratifying
 variables.  The resulting Shapley values are visualized through both global and
 local explanation methods.")

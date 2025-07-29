@@ -953,13 +953,13 @@ confidence bands for the extremograms.")
 (define-public r-extremestat
   (package
     (name "r-extremestat")
-    (version "1.5.9")
+    (version "1.5.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extremeStat" version))
        (sha256
-        (base32 "19ayk8nx6yb14mhgglhy3mq606mm17r3is0x6apxqic7vadvmiqg"))))
+        (base32 "0cv91x6ncyddbmw79hpb845plwbk00kw41466a4g1qp3kh2ixddw"))))
     (properties `((upstream-name . "extremeStat")))
     (build-system r-build-system)
     (arguments
@@ -2012,13 +2012,13 @@ Serrano, and Foster (2004) <doi:10.1890/02-4057>.")
 (define-public r-export
   (package
     (name "r-export")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "export" version))
        (sha256
-        (base32 "1b238d6aa1m2pcg7vdjbrvjj748j3fim5zvhng7lgkag2rzjqa56"))))
+        (base32 "0960sbwrlzfvwz5hbp31xksd9bnmhhsrn9vm9dvqgd1wbqqm1bym"))))
     (properties `((upstream-name . "export")))
     (build-system r-build-system)
     (arguments
@@ -2028,7 +2028,6 @@ Serrano, and Foster (2004) <doi:10.1890/02-4057>.")
                              r-xml2
                              r-stargazer
                              r-rvg
-                             r-rgl
                              r-openxlsx
                              r-officer
                              r-flextable
@@ -8712,13 +8711,13 @@ updating of the dependence modelling (see Sheu et al., 2016,
 (define-public r-ernm
   (package
     (name "r-ernm")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ernm" version))
        (sha256
-        (base32 "11j84qs6ric15d8dzzh0qmd5izs9dqijc170gmfrvdmq4z14kncv"))))
+        (base32 "08xqjqn6q4y61x4a66rpjp6grz1grfz9dr236v4l787sf7f22m45"))))
     (properties `((upstream-name . "ernm")))
     (build-system r-build-system)
     (arguments
@@ -9333,13 +9332,13 @@ types, type-stable arithmetic with years, and pretty-printing in tables.")
 (define-public r-er
   (package
     (name "r-er")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ER" version))
        (sha256
-        (base32 "1hsp5sqhnsz175nc2cq2w4g6dgld1429ib7w58piw6982b7m6zn6"))))
+        (base32 "1vsvcdpq6izfjy1h6h8lfs403fdr9biw4s69pan9kx24pwmxc2ry"))))
     (properties `((upstream-name . "ER")))
     (build-system r-build-system)
     (arguments
@@ -9350,7 +9349,8 @@ types, type-stable arithmetic with years, and pretty-printing in tables.")
                              r-pls
                              r-gridextra
                              r-glmnet
-                             r-ggplot2))
+                             r-ggplot2
+                             r-crayon))
     (home-page "https://cran.r-project.org/package=ER")
     (synopsis "Effect + Residual Modelling")
     (description
@@ -9913,6 +9913,36 @@ on the pooled sample.  The test even works for sample sizes as small as 2.")
 for high dimensional covariance matrices.\" Li and Chen (2012)
 <@code{arXiv:1206.0917>}.")
     (license license:gpl2)))
+
+(define-public r-eqtesting
+  (package
+    (name "r-eqtesting")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eqtesting" version))
+       (sha256
+        (base32 "0jc0fjcrmibwf22k5bm3nlcnmn85jb1cia5whkacydkpkakhzb75"))))
+    (properties `((upstream-name . "eqtesting")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table))
+    (home-page "https://github.com/jack-fitzgerald/eqtesting")
+    (synopsis "Equivalence Testing Functions")
+    (description
+     "This package contains several functions for equivalence testing and practical
+significance testing.  First, the @code{tsti()} command provides an automatic
+computation of three-sided testing results for a given estimate, standard error,
+and region of practical equivalence.  For details, see Goeman, Solari, & Stijnen
+(2010) <doi:10.1002/sim.4002> and Isager & Fitzgerald (2024)
+<doi:10.31234/osf.io/8y925>.  Second, the @code{lddtest()} command performs
+logarithmic density discontinuity equivalence testing for regression
+discontinuity designs.  For reference, see Fitzgerald (2025)
+<doi:10.31222/osf.io/2dgrp_v1>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-eqrn
   (package
@@ -15011,13 +15041,13 @@ serializations such as RDF and SPARQL queries.")
 (define-public r-eml
   (package
     (name "r-eml")
-    (version "2.0.6.1")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EML" version))
        (sha256
-        (base32 "1k2chfz6qixa6jsikqgilqp8j49mcshn725ck1h77bacfxfhf7za"))))
+        (base32 "0q432jgfl4wc9mrgfyksnl6b9fz404pc06q3214wi8l34w7317bq"))))
     (properties `((upstream-name . "EML")))
     (build-system r-build-system)
     (arguments

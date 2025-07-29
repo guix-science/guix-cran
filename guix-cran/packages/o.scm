@@ -1980,13 +1980,13 @@ Factorization\" which will be submitted to BBRC.")
 (define-public r-osmscale
   (package
     (name "r-osmscale")
-    (version "0.5.20")
+    (version "0.5.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OSMscale" version))
        (sha256
-        (base32 "14n5574j083xllj0xs87cl8szc0favb8wp3v10bbdljbk35qvmbm"))))
+        (base32 "1dsl67rmmw7mvyhzz47kf7n9xzkqj6jq9ndh1s273d6l0m91czmq"))))
     (properties `((upstream-name . "OSMscale")))
     (build-system r-build-system)
     (arguments
@@ -6189,13 +6189,13 @@ algorithm in Hyun, Wong, Yang (2018) <doi:10.18637/jss.v083.i05>.")
 (define-public r-opsr
   (package
     (name "r-opsr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPSR" version))
        (sha256
-        (base32 "065qgxwv3p0k61d9iqdb5nw0f35klpxsd0kd3vbi0w6sc3qg4l3n"))))
+        (base32 "15sy07vyi6zig5ggx7hbsaa2s9bkbkx3zc3rx3410qgy0v7bb245"))))
     (properties `((upstream-name . "OPSR")))
     (build-system r-build-system)
     (arguments

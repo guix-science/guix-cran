@@ -8341,13 +8341,13 @@ syntax.")
 (define-public r-higarrote
   (package
     (name "r-higarrote")
-    (version "1.1.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HiGarrote" version))
        (sha256
-        (base32 "1gl4ql0cz4av79ax3xzjwa6r4yayhm1zx4yicx717sncw8qwi06a"))))
+        (base32 "1mdkr2flil6wrg5k4b09r8c4sgi3pifm0fd1dhdy2mvsxjl6ckp2"))))
     (properties `((upstream-name . "HiGarrote")))
     (build-system r-build-system)
     (arguments
@@ -8372,8 +8372,8 @@ syntax.")
 hierarchical relationships among variables.  The core function,
 @code{HiGarrote()}, offers an automated approach for analyzing experiments while
 respecting hierarchical structures among effects.  For methodological details,
-refer to Yu and Joseph (2024) <doi:10.48550/@code{arXiv.2411.01383>}.  This work
-is supported by U.S. National Science Foundation grant DMS-2310637.")
+refer to Yu and Joseph (2025) <doi:10.1080/00224065.2025.2513508>.  This work is
+supported by U.S. National Science Foundation grant DMS-2310637.")
     (license license:gpl2+)))
 
 (define-public r-hiersdr
@@ -8697,13 +8697,13 @@ two-dimensional hierarchical clustering.")
 (define-public r-hicp
   (package
     (name "r-hicp")
-    (version "0.6.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hicp" version))
        (sha256
-        (base32 "1zb18sn2az5gval4az4n9g9jipmikd08jj7vpmlqmzdsascp75wg"))))
+        (base32 "04q6j4y69x0pk4bkwisvsy91l9mdhi84wgppp8jg4vrpwzg6qa9q"))))
     (properties `((upstream-name . "hicp")))
     (build-system r-build-system)
     (arguments

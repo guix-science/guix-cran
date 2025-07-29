@@ -2854,13 +2854,13 @@ keeping the column and/or row totals, performing these by blocks...")
 (define-public r-ctypesio
   (package
     (name "r-ctypesio")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctypesio" version))
        (sha256
-        (base32 "14g5j670bqdgalp351xbvr0df45jbw26jzvm5j9xccgyfqvzwr2r"))))
+        (base32 "0hm65vv89pszvmj34yn24a14bdl7z1kf38jbdwv9n8wxldypfij2"))))
     (properties `((upstream-name . "ctypesio")))
     (build-system r-build-system)
     (arguments
@@ -2951,13 +2951,13 @@ robust support for precise and effective process monitoring and analysis.")
 (define-public r-ctv
   (package
     (name "r-ctv")
-    (version "0.9-6")
+    (version "0.9-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctv" version))
        (sha256
-        (base32 "0w300vcvn663zpi5whv3512wchwmhjn6aamynmb6fmayf7ahsmf5"))))
+        (base32 "0d8kac74hncbjiz4jcg7f3931lqdcga3hk8n8fxdj37y33f6dapb"))))
     (properties `((upstream-name . "ctv")))
     (build-system r-build-system)
     (arguments
@@ -6520,6 +6520,38 @@ trait-associated region.  For an example of successful local haplotype analysis,
 see Marsh et al. (2022) <doi:10.1007/s00122-022-04045-8>.")
     (license license:expat)))
 
+(define-public r-crossexpression
+  (package
+    (name "r-crossexpression")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CrossExpression" version))
+       (sha256
+        (base32 "0jiw76y6j88q5d6pcgf6l8n672mxhkl3vp9h5i2zyg6ci5ln1nhq"))))
+    (properties `((upstream-name . "CrossExpression")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-rfast
+                             r-rann
+                             r-matrix
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=CrossExpression")
+    (synopsis "Cross-Expression Analysis of Spatial Transcriptomics Data")
+    (description
+     "Analyzes spatial transcriptomic data using cells-by-genes and cell location
+matrices to find gene pairs that coordinate their expression between spatially
+adjacent cells.  It enables quantitative analysis and graphical assessment of
+these cross-expression patterns.  See Sarwar et al. (2025)
+<doi:10.1101/2024.09.17.613579> and
+<https://github.com/gillislab/@code{CrossExpression/>} for more details.")
+    (license license:expat)))
+
 (define-public r-crossdes
   (package
     (name "r-crossdes")
@@ -9728,13 +9760,13 @@ both, that is, the closure principle computational approach test.")
 (define-public r-cpc
   (package
     (name "r-cpc")
-    (version "2.6.0")
+    (version "2.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CPC" version))
        (sha256
-        (base32 "0n1vsn7b1rllbsad2bshhi0c6pz7zqz6bmcc176qh50hm4hgp99r"))))
+        (base32 "1g6k7m96fc2jp63g0k3vwiq8kh7c66q4cqcc548wqxqa4kh90yx4"))))
     (properties `((upstream-name . "CPC")))
     (build-system r-build-system)
     (arguments
@@ -9748,7 +9780,7 @@ both, that is, the closure principle computational approach test.")
 distributional polarization in single or multiple dimensions, as well as
 associated functions.  Contains support for hierarchical clustering, k-means,
 partitioning around medoids, density-based spatial clustering with noise, and
-manually imposed cluster membership.  Mehlhaff (forthcoming)
+manually imposed cluster membership.  Mehlhaff (2024)
 <doi:10.1017/S0003055423001041>.")
     (license license:cc0)))
 
@@ -25454,13 +25486,13 @@ nickname.")
 (define-public r-codemetar
   (package
     (name "r-codemetar")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codemetar" version))
        (sha256
-        (base32 "0py4qn9148xlc1ldlifpm7vd7l9dih4f7yiadvmz57b3y2vr0b02"))))
+        (base32 "0v7zzf7hh5f56wsvm69alqyim8y3npjdrh85qvw8936la6xlh7db"))))
     (properties `((upstream-name . "codemetar")))
     (build-system r-build-system)
     (arguments
@@ -34682,13 +34714,13 @@ base @code{glm()} function.")
 (define-public r-circumplex
   (package
     (name "r-circumplex")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "circumplex" version))
        (sha256
-        (base32 "19jka0bmp5fgy65vby67ih60ka86jwiq07r90piwjplffm35qlxp"))))
+        (base32 "0xbqd71ybbw2jcqpy1ry444bs7g63civ6sqb0bc995qcr2w6mzxn"))))
     (properties `((upstream-name . "circumplex")))
     (build-system r-build-system)
     (arguments
@@ -36543,13 +36575,13 @@ headless Chrome web browser.")
 (define-public r-chromer
   (package
     (name "r-chromer")
-    (version "0.8")
+    (version "0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chromer" version))
        (sha256
-        (base32 "0x9xhih0a19mqwiqs7bljcdgki874ii653v91frkwsr2y2yd9j7c"))))
+        (base32 "1gbbxaq9bnkj290099ih2kg0cw8ir829qw7a7ckbslf4ahscqx16"))))
     (properties `((upstream-name . "chromer")))
     (build-system r-build-system)
     (arguments
@@ -36560,9 +36592,8 @@ headless Chrome web browser.")
     (synopsis "Interface to Chromosome Counts Database API")
     (description
      "This package provides a programmatic interface to the Chromosome Counts Database
-(<https://taux.evolseq.net/CCDB_web/>), Rice et al. (2014)
-<doi:10.1111/nph.13191>.  This package is part of the R@code{OpenSci} suite
-(<https://ropensci.org>).")
+(<https://ccdb.tau.ac.il/>), Rice et al. (2014) <doi:10.1111/nph.13191>.  This
+package is part of the R@code{OpenSci} suite (<https://ropensci.org>).")
     (license license:expat)))
 
 (define-public r-chromconverter

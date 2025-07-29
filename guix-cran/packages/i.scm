@@ -4627,13 +4627,13 @@ marginal quantiles based on the Inverse Probability Weighting method.")
 (define-public r-ipw
   (package
     (name "r-ipw")
-    (version "1.2.1")
+    (version "1.2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipw" version))
        (sha256
-        (base32 "0xgx9l5s4w71494jfs2jfs1dhch18rb8j7jn68hilh1pzc9hz05k"))))
+        (base32 "0nh4v3rf0awqdfnp1ldxkslqswxmp1fdbn05nk4ywzmy4l8cls09"))))
     (properties `((upstream-name . "ipw")))
     (build-system r-build-system)
     (arguments
@@ -6532,13 +6532,13 @@ Schubert Kabban (2014) <doi:10.32614/RJ-2014-009>.")
 (define-public r-invertiforms
   (package
     (name "r-invertiforms")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "invertiforms" version))
        (sha256
-        (base32 "0n3ksfdryk0g6f60acxh4i9f5z6gi9bsbal95z9pcd1vgvyhr1xw"))))
+        (base32 "15f6li13fyp4mlrwlicz93i1ajhk4akwp8ix06s9b9wsjw2d3f9w"))))
     (properties `((upstream-name . "invertiforms")))
     (build-system r-build-system)
     (arguments
@@ -9528,43 +9528,6 @@ default syntax are that (1) docs are defined in comments near the relevant code,
 defined in R code, not comments.  It is also easy to define a new syntax.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-inldata
-  (package
-    (name "r-inldata")
-    (version "1.2.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "inldata" version))
-       (sha256
-        (base32 "1hi2rzh95in4zgy9vwsnb9vddl64ia9jsb0mvcpgr7fciqnfp0rw"))))
-    (properties `((upstream-name . "inldata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra r-stringi r-sf r-checkmate))
-    (home-page "https://rconnect.usgs.gov/INLPO/inldata-main/")
-    (synopsis "Collection of Datasets for the USGS-INL Monitoring Networks")
-    (description
-     "This package provides a collection of analysis-ready datasets for the U.S.
-Geological Survey - Idaho National Laboratory (USGS-INL) groundwater and
-surface-water monitoring networks, administered by the USGS-INL Project Office
-in cooperation with the U.S. Department of Energy.  The data collected from
-wells and surface-water stations at the Idaho National Laboratory and
-surrounding areas have been used to describe the effects of waste disposal on
-water contained in the eastern Snake River Plain aquifer, located in the
-southeastern part of Idaho, and the availability of water for long-term
-consumptive and industrial use.  The package includes long-term monitoring
-records dating back to measurements from 1922.  Geospatial data describing the
-areas from which samples were collected or observations were made are also
-included in the package.  Bundling this data into a single package significantly
-reduces the magnitude of data processing for researchers and provides a way to
-distribute the data along with its documentation in a standard format.
-Geospatial datasets are made available in a common projection and datum, and
-geohydrologic data have been structured to facilitate analysis.")
-    (license license:cc0)))
-
 (define-public r-inlcolor
   (package
     (name "r-inlcolor")
@@ -11767,13 +11730,13 @@ paired test allowing for missing values\".")
 (define-public r-incidentally
   (package
     (name "r-incidentally")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incidentally" version))
        (sha256
-        (base32 "063m672ym9w5zmzvdhr17smqy1mffkl3vls7nhpsxc4bjswqls2g"))))
+        (base32 "0sj49n6szdl6mxz85vn01cjk1xxdchwpxjv07dp34f81m5bgzi5l"))))
     (properties `((upstream-name . "incidentally")))
     (build-system r-build-system)
     (arguments
@@ -11790,7 +11753,8 @@ sums that follow given distributions, or (4) represent bill sponsorships in the
 US Congress <doi:10.31219/osf.io/ectms>.  It can also generate an incidence
 matrix from an adjacency matrix, or bipartite graph from a unipartite graph, via
 a social process mirroring team, group, or organization formation
-<doi:10.48550/@code{arXiv.2204.13670>}.")
+<doi:10.48550/@code{arXiv.2204.13670>}, or examine the space of binary matrices
+with fixed marginals.")
     (license license:gpl3)))
 
 (define-public r-incidental
@@ -14816,19 +14780,19 @@ smoothing bootstrap resampling.")
 (define-public r-ilrcm
   (package
     (name "r-ilrcm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ILRCM" version))
        (sha256
-        (base32 "0sx8bcxb8xzbb9r4fgjyr4qd21bpfv1sj29sk058xsnzwibrsg6m"))))
+        (base32 "0crnmgg4bwnzz79xwfyazjx73dr9bbdpkh52f105q1533q6y2f8w"))))
     (properties `((upstream-name . "ILRCM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-ggplot2))
+    (propagated-inputs (list r-scales r-rlang r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=ILRCM")
     (synopsis
      "Convert Irregular Longitudinal Data to Regular Intervals and Perform Clustering")

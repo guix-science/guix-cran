@@ -18889,13 +18889,13 @@ binary logistic regression, and Poisson regression.")
 (define-public r-ssfa
   (package
     (name "r-ssfa")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssfa" version))
        (sha256
-        (base32 "1ypfx6k2zbc5n779ikj6pa8kwc6bg3zn4m044v46qn20348ygg0a"))))
+        (base32 "1ini85vajxz36i552qr93nfr91c8an2g9dal9v1i8ka35s535h52"))))
     (properties `((upstream-name . "ssfa")))
     (build-system r-build-system)
     (arguments
@@ -22061,13 +22061,13 @@ information about the Web API'.")
 (define-public r-sportyr
   (package
     (name "r-sportyr")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sportyR" version))
        (sha256
-        (base32 "1br7wbxr488pknqq3ik6w86rrkx5cn61jrm2b8az27zh8k362dv6"))))
+        (base32 "03sfkgiy8ja8q8jvacxi5m43hfj2j9kaf04396572j69xjiqjnph"))))
     (properties `((upstream-name . "sportyR")))
     (build-system r-build-system)
     (arguments
@@ -24236,13 +24236,13 @@ effects of functional variables -Application to agri-environmental issues\"
 (define-public r-sphunif
   (package
     (name "r-sphunif")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sphunif" version))
        (sha256
-        (base32 "125w91cz60j3lkx8dm74c8gh67k5j2k8mypx7rihym9rsdibdric"))))
+        (base32 "11xsxw84209yiw2gjvbdr4iknhnxxbhsx7pygpg68lryc1ryc9nd"))))
     (properties `((upstream-name . "sphunif")))
     (build-system r-build-system)
     (arguments
@@ -25515,13 +25515,13 @@ MCMC).  It uses R environments to store GP objects as references/pointers.")
 (define-public r-spectralclmixed
   (package
     (name "r-spectralclmixed")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpectralClMixed" version))
        (sha256
-        (base32 "10nx03kr35irvvink8kfx6gbv90wnlsx514r7921hrjvcjiqn82s"))))
+        (base32 "0n3pailmiqwpr9ij2fgvmrc59lpwzi7934xw8h03hh2mxhi0n74d"))))
     (properties `((upstream-name . "SpectralClMixed")))
     (build-system r-build-system)
     (arguments
@@ -26162,13 +26162,13 @@ communities.  For more detailed info see: Martinez-Lopez et al. (2015)
 (define-public r-spduration
   (package
     (name "r-spduration")
-    (version "0.17.2")
+    (version "0.17.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spduration" version))
        (sha256
-        (base32 "1cgrpfljb43qay38qjhb2xccawh8llrp545bm5bv29k7h1nsa9cb"))))
+        (base32 "00c0dfpfr7nb7w6baflylm5ijgr7hsacxpzblpiaa6jdm593jdrv"))))
     (properties `((upstream-name . "spduration")))
     (build-system r-build-system)
     (arguments
@@ -57919,13 +57919,13 @@ object that can handle deciphering and checking versions.")
 (define-public r-semtree
   (package
     (name "r-semtree")
-    (version "0.9.20")
+    (version "0.9.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semtree" version))
        (sha256
-        (base32 "1dcxnlnl5j9dha5bdmj4rn117cbssdzp1gwdnch2pc0234ziq4ys"))))
+        (base32 "15hdikqrmjm8pmqycz102sl9v9d980dipxpi4ynbhyywp9is0q3r"))))
     (properties `((upstream-name . "semtree")))
     (build-system r-build-system)
     (arguments
@@ -57943,6 +57943,7 @@ object that can handle deciphering and checking versions.")
                              r-ggplot2
                              r-future-apply
                              r-expm
+                             r-dplyr
                              r-data-table
                              r-crayon
                              r-cluster
@@ -63878,13 +63879,13 @@ use with Rscript'.")
 (define-public r-scregclust
   (package
     (name "r-scregclust")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scregclust" version))
        (sha256
-        (base32 "0caawk4028csa17rxvj655ms1h2kwjz2p4g6k4nyy7yrrcvy11zm"))))
+        (base32 "07cicq7lbp6x4gk2rk9q2c9lh98zkjlg3j9qsg50x8xc216x6462"))))
     (properties `((upstream-name . "scregclust")))
     (build-system r-build-system)
     (arguments
@@ -63899,7 +63900,6 @@ use with Rscript'.")
                              r-igraph
                              r-ggplot2
                              r-cli))
-    (native-inputs (list r-knitr))
     (home-page "https://scmethods.github.io/scregclust/")
     (synopsis
      "Reconstructing the Regulatory Programs of Target Genes in scRNA-Seq Data")

@@ -591,13 +591,13 @@ their names easy to remember and easy to deploy.")
 (define-public r-numericensembles
   (package
     (name "r-numericensembles")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NumericEnsembles" version))
        (sha256
-        (base32 "1pzidh7lyccgj3c78fmdjwv2mhsqn0cdq0y4zshdfci0m95b1acg"))))
+        (base32 "1zzhd73blwycp76z3qpm0xx31dj04hxdaxq5fln0pi44j94dlmzr"))))
     (properties `((upstream-name . "NumericEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -8107,13 +8107,13 @@ August 28, 2012.")
 (define-public r-nlmm
   (package
     (name "r-nlmm")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmm" version))
        (sha256
-        (base32 "0mi9nsdzsvaxfb3n3z3rijd8saw4l7x3g2gq8ivzxyilyav5anxb"))))
+        (base32 "1scvm7caxh4ap4gqx327gs0r1ahf0nw447zr0pc8z1n0yank49vi"))))
     (properties `((upstream-name . "nlmm")))
     (build-system r-build-system)
     (arguments

@@ -2682,13 +2682,13 @@ C5.0 rules (Quinlan, 1992 ISBN: 1558602380), and Cubist (Kuhn and Johnson, 2013)
 (define-public r-ruler
   (package
     (name "r-ruler")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ruler" version))
        (sha256
-        (base32 "0k6xvb06cqiinvkpbmylzm0r11h52yay6k70jfmz2c0g5rb6bj4r"))))
+        (base32 "1q9lqjfdpqk9ywjwji3crp0rfh8kd3zsxqm3hym9yhzggqjhb364"))))
     (properties `((upstream-name . "ruler")))
     (build-system r-build-system)
     (arguments
@@ -3940,13 +3940,13 @@ Persian and Hebrew.")
 (define-public r-rtlknitr
   (package
     (name "r-rtlknitr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTLknitr" version))
        (sha256
-        (base32 "125sx7gy8gnyhz15cjrmqwrh32w3nd49d8qwg0grj3q12v03i8ca"))))
+        (base32 "0a1bxbadmwmsscmsgdq4pw5skssp6dbddyv6d4ysl6xllqx9pppy"))))
     (properties `((upstream-name . "RTLknitr")))
     (build-system r-build-system)
     (arguments
@@ -9429,13 +9429,13 @@ functionality on Redshift'.")
 (define-public r-rredlist
   (package
     (name "r-rredlist")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rredlist" version))
        (sha256
-        (base32 "188difrf4v4bidw1ihgwi29vicv3fsmvmqhpm7h7z25fds3y4xp5"))))
+        (base32 "0kghiyjrawr5j55i4dxj50dix68rcrkj9l9j0ghkmgh1prwv7f6x"))))
     (properties `((upstream-name . "rredlist")))
     (build-system r-build-system)
     (arguments
@@ -13118,13 +13118,13 @@ partitions of the feature set.")
 (define-public r-rotasym
   (package
     (name "r-rotasym")
-    (version "1.1.5")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rotasym" version))
        (sha256
-        (base32 "04vmxfj7jwd6h1d5ns4hq8xbc4sm008vsyiw5jlp212a4fdrplaj"))))
+        (base32 "0z97i9a659lvv9a0cmjkkcqqk2d6ikc231yljk9l11716q3hyzhi"))))
     (properties `((upstream-name . "rotasym")))
     (build-system r-build-system)
     (arguments
@@ -17727,13 +17727,13 @@ discussion on robust mediation analysis can be found in Alfons & Schley (2024)
 (define-public r-robma
   (package
     (name "r-robma")
-    (version "3.5.0")
+    (version "3.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RoBMA" version))
        (sha256
-        (base32 "0c1dfvlridvnxgnrq6q97zlj3693v0pppf6lmvzwl972pnm70jkg"))))
+        (base32 "0nihhr6aipgwiskvvfbniqbnyhwfxzqzb1wkyq6wz98cb0kkmick"))))
     (properties `((upstream-name . "RoBMA")))
     (build-system r-build-system)
     (arguments
@@ -21763,6 +21763,41 @@ such as (Gaussian) random walk and Langevin proposals.  Optionally, if
 @code{BridgeStan} can be used to specify the target distribution to sample from.")
     (license license:expat)))
 
+(define-public r-rmclab
+  (package
+    (name "r-rmclab")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RMCLab" version))
+       (sha256
+        (base32 "06z6zb085s1j1vvwm0mdb2rnfi6r117f51rql43b2xg19jcx0imn"))))
+    (properties `((upstream-name . "RMCLab")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-softimpute r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/aalfons/RMCLab")
+    (synopsis
+     "Lab for Matrix Completion and Imputation of Discrete Rating Data")
+    (description
+     "Collection of methods for rating matrix completion, which is a statistical
+framework for recommender systems.  Another relevant application is the
+imputation of rating-scale survey data in the social and behavioral sciences.
+Note that matrix completion and imputation are synonymous terms used in
+different streams of the literature.  The main functionality implements robust
+matrix completion for discrete rating-scale data with a low-rank constraint on a
+latent continuous matrix (Archimbaud, Alfons, and Wilms (2025)
+<doi:10.48550/@code{arXiv.2412.20802>}).  In addition, the package provides
+wrapper functions for @code{softImpute} (Mazumder, Hastie, and Tibshirani, 2010,
+<https://www.jmlr.org/papers/v11/mazumder10a.html>; Hastie, Mazumder, Lee,
+Zadeh, 2015, <https://www.jmlr.org/papers/v16/hastie15a.html>) for easy tuning
+of the regularization parameter, as well as benchmark methods such as median
+imputation and mode imputation.")
+    (license license:gpl3+)))
+
 (define-public r-rmcfs
   (package
     (name "r-rmcfs")
@@ -25062,13 +25097,13 @@ Kunihiro M et al (2022) <doi:10.1093/eurjpc/zwac176>.")
 (define-public r-riskscores
   (package
     (name "r-riskscores")
-    (version "1.2.1")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskscores" version))
        (sha256
-        (base32 "1wj3ccclk72l7lgxc2kv6dhj46jivxg0440v958llcc8khw02qf6"))))
+        (base32 "0fsx5y827zbsfq6x63c1xglw8n7wg8cqc0x9ippfz00p0xzfygk7"))))
     (properties `((upstream-name . "riskscores")))
     (build-system r-build-system)
     (arguments
@@ -26708,13 +26743,13 @@ standard errors of them.")
 (define-public r-ridgetorus
   (package
     (name "r-ridgetorus")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ridgetorus" version))
        (sha256
-        (base32 "04wabvf7agyk8djfqn41zcsj33940vx32zzf6811h4n5bs14kp65"))))
+        (base32 "11bbn8dy8ydl9m3z9xdpzlksf4fzkllvv16i3h257g4zgiv7lpjg"))))
     (properties `((upstream-name . "ridgetorus")))
     (build-system r-build-system)
     (arguments
@@ -31779,13 +31814,13 @@ from Names\" by Fangzhou Xie (2021) <doi:10.48550/@code{arXiv.2109.09228>}.")
 (define-public r-retel
   (package
     (name "r-retel")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "retel" version))
        (sha256
-        (base32 "1rajv6y3zsk7hd9wr7szxi685rh377hhvj69rvg77fn0pk56g40b"))))
+        (base32 "0wpm2swnx7p74xh9vxwsv860swj4n031gh8qqwvshw8dyb0xsr6c"))))
     (properties `((upstream-name . "retel")))
     (build-system r-build-system)
     (arguments
@@ -31796,7 +31831,7 @@ from Names\" by Fangzhou Xie (2021) <doi:10.48550/@code{arXiv.2109.09228>}.")
     (synopsis "Regularized Exponentially Tilted Empirical Likelihood")
     (description
      "This package implements the regularized exponentially tilted empirical
-likelihood method.  Details of the methods are given in Kim, @code{MacEachern},
+likelihood method.  Details of the method are given in Kim, @code{MacEachern},
 and Peruggia (2023) <doi:10.48550/@code{arXiv.2312.17015>}.  This work was
 supported by the U.S. National Science Foundation under Grants No.  SES-1921523
 and DMS-2015552.")
@@ -38933,13 +38968,13 @@ documents, e.g. using Sweave'.")
 (define-public r-redcaptidier
   (package
     (name "r-redcaptidier")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapTidieR" version))
        (sha256
-        (base32 "17pn2k5r9mn1762xn4nvm6x6zfk0gac7vw04qs3gif9nywbfl71r"))))
+        (base32 "192a2mdv0zcm8rqas58cx23xaqjs4awibakb3jgp7ybpmhpcvs5n"))))
     (properties `((upstream-name . "REDCapTidieR")))
     (build-system r-build-system)
     (arguments
@@ -38975,13 +39010,13 @@ instruments and event arms.")
 (define-public r-redcapr
   (package
     (name "r-redcapr")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapR" version))
        (sha256
-        (base32 "0qjcp8s1fvc47am21dnxgdvgjrnpma8qfzdbfv41n5jyva18scbz"))))
+        (base32 "0gsf4p76lkd1sr1ni5ylrpsw0s9qy33zsxzpyzsg248rv3chaddq"))))
     (properties `((upstream-name . "REDCapR")))
     (build-system r-build-system)
     (arguments
@@ -39557,13 +39592,13 @@ times.")
 (define-public r-recordlinkage
   (package
     (name "r-recordlinkage")
-    (version "0.4-12.4")
+    (version "0.4-12.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RecordLinkage" version))
        (sha256
-        (base32 "0jfissk9gcf1w78dhly01dpjlb8nyk32iz1s2n38ggk8ywd4zgbk"))))
+        (base32 "14dpwnkymkzs2j714vxj0nsi2yqglcgdqr80772lr8y6v0pkxc1x"))))
     (properties `((upstream-name . "RecordLinkage")))
     (build-system r-build-system)
     (arguments
@@ -40404,13 +40439,13 @@ of the package, please refer to the bachelor's thesis available bellow.")
 (define-public r-reca
   (package
     (name "r-reca")
-    (version "1.7")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RECA" version))
        (sha256
-        (base32 "1xikj20flqajpkw4wyynmqd1pafbylzwfrmc8bz9pqgggjjhrqql"))))
+        (base32 "07wwsch9242npbqz11alqjqpa0di3s7h6aawl6pq0a8yrr44cxy2"))))
     (properties `((upstream-name . "RECA")))
     (build-system r-build-system)
     (arguments
@@ -40423,8 +40458,7 @@ of the package, please refer to the bachelor's thesis available bellow.")
      "Relevant Component Analysis (RCA) tries to find a linear transformation of the
 feature space such that the effect of irrelevant variability is reduced in the
 transformed space.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
+    (license license:gpl3+)))
 
 (define-public r-rebus-unicode
   (package
@@ -45900,13 +45934,13 @@ Analysis, 3rd Edition,\" Thousand Oaks, CA: Sage Publications.")
 (define-public r-rcpa
   (package
     (name "r-rcpa")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCPA" version))
        (sha256
-        (base32 "0hy8v2nz17c2n85pg3w775wrl5if6ch15h1y1hk7yld7rl7b2i3l"))))
+        (base32 "05k1kr76yi2i650lhr77kfnx1ca7i2hwflqy8531378qxk79lbb6"))))
     (properties `((upstream-name . "RCPA")))
     (build-system r-build-system)
     (arguments
@@ -48546,13 +48580,13 @@ of palettes: aggregation, diverging, qualitative, and quantitative.")
 (define-public r-rcarbon
   (package
     (name "r-rcarbon")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcarbon" version))
        (sha256
-        (base32 "0wgf0jia5iwa7v1aln80521rj1q7rhx3l9rpf3df3za73kn4z7gm"))))
+        (base32 "05mj9ylh8ssm9mmf9iyxs65ck56swpjy7yg87mkhl38gy3aaxn61"))))
     (properties `((upstream-name . "rcarbon")))
     (build-system r-build-system)
     (arguments
@@ -57688,13 +57722,13 @@ converts R models to Predictive Model Markup Language (PMML).")
 (define-public r-r2openbugs
   (package
     (name "r-r2openbugs")
-    (version "3.2-3.2.1")
+    (version "3.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2OpenBUGS" version))
        (sha256
-        (base32 "0689aqa034xkbyy46m3sjanjkxrii4ma1crm5qw5kaqbx7dg153c"))))
+        (base32 "0isrfwvzvz4jlxmwrn6jfwcfccndk2q6645cwh11y4qrbf70yazz"))))
     (properties `((upstream-name . "R2OpenBUGS")))
     (build-system r-build-system)
     (arguments

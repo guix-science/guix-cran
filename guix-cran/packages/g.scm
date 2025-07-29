@@ -9777,13 +9777,13 @@ allow easy specification of various GPs'.")
 (define-public r-gparotatedf
   (package
     (name "r-gparotatedf")
-    (version "2023.11-1")
+    (version "2025.7-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPArotateDF" version))
        (sha256
-        (base32 "161mml6pwcqza6asn7315lqkn69k9k1l9rwa59f9m68v427a5lr0"))))
+        (base32 "0x0h8ybycasfv91030awphrz6ag5byi99m09kxggx8rjf4j2231z"))))
     (properties `((upstream-name . "GPArotateDF")))
     (build-system r-build-system)
     (arguments
@@ -20108,6 +20108,31 @@ Kaplan-Meier lines and ticks additions to plots.  All functions are tested to
 make sure that they work reliably.")
     (license license:asl2.0)))
 
+(define-public r-ggplayfair
+  (package
+    (name "r-ggplayfair")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggplayfair" version))
+       (sha256
+        (base32 "02n2p49cyl3rfbsc5ys9w6kwxc8p7b6ibvn7rwqi81zbf5q6pacx"))))
+    (properties `((upstream-name . "ggplayfair")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/DerekStevens99/ggplayfair")
+    (synopsis "Geoms for Playfair-Style Charts")
+    (description
+     "Currently provides @code{geom_balance_of_trade()}, a ggplot2 layer that fills
+the area between exports and imports series (with automatic crossing detection
+and conditional coloring for surplus vs. deficit), and overlays lines and points
+by default.")
+    (license license:expat)))
+
 (define-public r-ggplate
   (package
     (name "r-ggplate")
@@ -22791,6 +22816,38 @@ on ggplot2 allowing for easy integration so that users can customize their
 visualizations as required.  Users can create corset plots using data in either
 wide or long format using the functions @code{gg_corset()} or
 @code{gg_corset_elongated()}, respectively.")
+    (license license:expat)))
+
+(define-public r-ggcorrheatmap
+  (package
+    (name "r-ggcorrheatmap")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggcorrheatmap" version))
+       (sha256
+        (base32 "0hhvs3yapy3mz188qfz6dbgff3dx9v2bbmvwvy7n21ys2wdc3pdl"))))
+    (properties `((upstream-name . "ggcorrheatmap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-ggplot2
+                             r-ggnewscale
+                             r-dplyr
+                             r-dendextend
+                             r-cli))
+    (home-page "https://github.com/leod123/ggcorrheatmap")
+    (synopsis "Make Flexible 'ggplot2' Correlation Heatmaps")
+    (description
+     "Create correlation heatmaps with ggplot2 and customise them with flexible
+annotation and clustering.  Symmetric heatmaps can use triangular or mixed
+layouts, removing redundant information or displaying complementary information
+in the two halves.  There is also support for general heatmaps not displaying
+correlations.")
     (license license:expat)))
 
 (define-public r-ggcompare
