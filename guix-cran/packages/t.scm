@@ -629,13 +629,13 @@ scheme to make test building simple for others.")
 (define-public r-twophasecorr
   (package
     (name "r-twophasecorr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TwoPhaseCorR" version))
        (sha256
-        (base32 "1xy5y0jdya6h16c0b3i1ilcbsbdlhryh3sa28q8plpxjl1jjhfq3"))))
+        (base32 "03xrcwxk8bvxdph530gq6kq41z7zjh0ril4wa386k6br47rfk47f"))))
     (properties `((upstream-name . "TwoPhaseCorR")))
     (build-system r-build-system)
     (arguments
@@ -647,7 +647,7 @@ scheme to make test building simple for others.")
      "Construct Two-Phase Experimental Designs with Correlated Errors")
     (description
      "This package provides tools for constructing and analyzing two-phase
-experimental designs under correlated error structures.  Version 1.1.0 includes
+experimental designs under correlated error structures.  Version 1.1.1 includes
 improved efficiency factor classification with tolerance control, updated plot
 visualizations, and improved clarity of the results.  The conceptual framework
 and the term two-phase were introduced by @code{McIntyre} (1955)
@@ -2198,13 +2198,13 @@ Tufte-style handouts in html formats with full support for rmarkdown features.")
 (define-public r-tufte
   (package
     (name "r-tufte")
-    (version "0.13")
+    (version "0.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tufte" version))
        (sha256
-        (base32 "130g2dz49pinhcwzax4d90wv8wdgz621qiq92yhhd845zs55gqzi"))))
+        (base32 "0jkp90678xrgzq6qd7n6wxmbd0s52q32n30d33jlg1w511adss8b"))))
     (properties `((upstream-name . "tufte")))
     (build-system r-build-system)
     (arguments
@@ -15990,13 +15990,13 @@ its dependency.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "1dp1cdkdr9gxwi7s3pz5i21fsyi6xk9qinb8f8qirbllf5csax5d"))))
+        (base32 "19aswc3nckfssicyzb92rynkfvmgm471cn5qmpbx4najh240mwcr"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (arguments
@@ -18475,13 +18475,13 @@ interact seamlessly with the tidyverse.")
 (define-public r-tidysem
   (package
     (name "r-tidysem")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidySEM" version))
        (sha256
-        (base32 "0ghixlv0riz09d7lrh6w1jxydfsz4j1amyhbcc7s4syfkvcnrw9d"))))
+        (base32 "11a3mahkl4s97j4am2b7087fggrylxcz4sbvs69x8f8wwfns0m5k"))))
     (properties `((upstream-name . "tidySEM")))
     (build-system r-build-system)
     (arguments
@@ -18499,9 +18499,7 @@ interact seamlessly with the tidyverse.")
                              r-ggplot2
                              r-future-apply
                              r-dbscan
-                             r-car
-                             r-blavaan
-                             r-bain))
+                             r-car))
     (native-inputs (list r-knitr))
     (home-page "https://cjvanlissa.github.io/tidySEM/")
     (synopsis "Tidy Structural Equation Modeling")
@@ -18510,7 +18508,7 @@ interact seamlessly with the tidyverse.")
 plotting structural equation models using lavaan', @code{OpenMx}', or Mplus'.
 Throughout this workflow, elements of syntax, results, and graphs are
 represented as tidy data, making them easy to customize.  Includes functionality
-to estimate latent class analyses.")
+to estimate latent class analyses, and to plot dagitty and igraph objects.")
     (license license:gpl3+)))
 
 (define-public r-tidysdm
@@ -18669,6 +18667,43 @@ Robinson (2017) <doi:10.21105/joss.00341>.")
     (description
      "With the objective of including data from RSS feeds into your analysis,
 @code{tidyRSS} parses RSS, Atom and JSON feeds and returns a tidy data frame.")
+    (license license:expat)))
+
+(define-public r-tidyrhrv
+  (package
+    (name "r-tidyrhrv")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyrhrv" version))
+       (sha256
+        (base32 "0p42d6ms3siqqmysbpz21l70aikcwn8zvjrrfvjawx9xs946larv"))))
+    (properties `((upstream-name . "tidyrhrv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rhrv
+                             r-purrr
+                             r-pracma
+                             r-magrittr
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=tidyrhrv")
+    (synopsis "Read, Iteratively Filter, and Analyze Multiple ECG Datasets")
+    (description
+     "Allows users to quickly load multiple patients electrocardiographic (ECG) data
+at once and conduct relevant time analysis of heart rate variability (HRV)
+without manual edits from a physician or data cleaning specialist.  The package
+provides the unique ability to iteratively filter, plot, and store time analysis
+results in a data frame while writing plots to a predefined folder.  This
+streamlines the workflow for HRV analysis across multiple datasets.  Methods are
+based on RodrÃ­guez-LiÃ±ares et al. (2011) <doi:10.1016/j.cmpb.2010.05.012>.
+Examples of applications using this package include Kwon et al. (2022)
+<doi:10.1007/s10286-022-00865-2> and Lawrence et al. (2023)
+<doi:10.1016/j.autneu.2022.103056>.")
     (license license:expat)))
 
 (define-public r-tidyrgee
@@ -19570,13 +19605,13 @@ tidy data principles.")
 (define-public r-tidyhte
   (package
     (name "r-tidyhte")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyhte" version))
        (sha256
-        (base32 "0c19b7yh09gixgicrr7x65a9vzyvzapr4pv130ysx4jksjcqvdfp"))))
+        (base32 "0wgs8r7isaaqk57yzypvjhjnznl5ykwlvwvzkx8a6x7b7qy5pk1z"))))
     (properties `((upstream-name . "tidyhte")))
     (build-system r-build-system)
     (arguments
@@ -19598,7 +19633,7 @@ tidy data principles.")
     (description
      "Estimates heterogeneous treatment effects using tidy semantics on experimental
 or observational data.  Methods are based on the doubly-robust learner of
-Kennedy (n.d.) <@code{arXiv:2004.14497>}.  You provide a simple recipe for what
+Kennedy (2023) <doi:10.1214/23-EJS2157>.  You provide a simple recipe for what
 machine learning algorithms to use in estimating the nuisance functions and
 tidyhte will take care of cross-validation, estimation, model selection,
 diagnostics and construction of relevant quantities of interest about the
@@ -22378,13 +22413,13 @@ website.")
 (define-public r-theftdlc
   (package
     (name "r-theftdlc")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "theftdlc" version))
        (sha256
-        (base32 "091ixj2jn4kg48fidqd8hww7y58bakcqv73x0rp7wjdsfxgw56sg"))))
+        (base32 "0cdmkdxcp03cdrm9m646vfxvwcw3jq6xm15lvxj2xqp3v8630x5y"))))
     (properties `((upstream-name . "theftdlc")))
     (build-system r-build-system)
     (arguments
@@ -22425,13 +22460,13 @@ Henderson, T., Bryant, A., and Fulcher, B. (2023)
 (define-public r-theft
   (package
     (name "r-theft")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "theft" version))
        (sha256
-        (base32 "1kci6qmy7gl27xsvgcagzw8lkz60l3a0yjgxhlg2sdzbfx348hmh"))))
+        (base32 "1bxi0j7jw6iwv5s4hniwfa0zxhvnjjsn8q5r7aj9vvn5l1j5gvvn"))))
     (properties `((upstream-name . "theft")))
     (build-system r-build-system)
     (arguments

@@ -2012,28 +2012,27 @@ calculated distance matrices from figshare <https://figshare.com>.")
 (define-public r-worldmet
   (package
     (name "r-worldmet")
-    (version "0.9.9")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worldmet" version))
        (sha256
-        (base32 "0fadyla3f48cx7bb6q2sf4bz23ni30pl0inp0llphc9aqg6m9vf3"))))
+        (base32 "0ps1swfk13lv7jqz9p2qw90x2ynrsz0wzm5dynsfih5ad2z4d210"))))
     (properties `((upstream-name . "worldmet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-tibble
+                             r-sf
+                             r-rlang
                              r-readr
                              r-purrr
                              r-openair
-                             r-magrittr
                              r-leaflet
-                             r-foreach
                              r-dplyr
-                             r-doparallel))
+                             r-cli))
     (home-page "https://openair-project.github.io/worldmet/")
     (synopsis
      "Import Surface Meteorological Data from NOAA Integrated Surface Database (ISD)")
@@ -7231,13 +7230,13 @@ protocol.")
 (define-public r-webanalytics
   (package
     (name "r-webanalytics")
-    (version "0.9.13")
+    (version "0.9.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WebAnalytics" version))
        (sha256
-        (base32 "1jfpkhxf44bd935my25jm2gray2v6bfc3gylbgh0hkjv1v9hq7sv"))))
+        (base32 "1z12lvb7qln08zg42gsjrjxp5ksg8awbdwnw3y8cfv7zmh316sf6"))))
     (properties `((upstream-name . "WebAnalytics")))
     (build-system r-build-system)
     (arguments
@@ -7245,7 +7244,6 @@ protocol.")
       #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-uaparserjs
-                             r-tinytex
                              r-scales
                              r-reshape2
                              r-ggplot2

@@ -6432,13 +6432,13 @@ Dirk F. Moore, Springer, 2016, ISBN: 978-3-319-31243-9,
 (define-public r-arxiv
   (package
     (name "r-arxiv")
-    (version "0.10")
+    (version "0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aRxiv" version))
        (sha256
-        (base32 "0fm22lcifq2lmbv2il0jkkp7b426924vwph7yrcqprvlvb3g33id"))))
+        (base32 "0fhrdfr525hgn1ms5w096cw2mbf81qy65f5qf3757h98553qj8s7"))))
     (properties `((upstream-name . "aRxiv")))
     (build-system r-build-system)
     (arguments
@@ -8441,13 +8441,13 @@ and Tzeremes (2022) <doi:10.1002/jae.2919>.")
 (define-public r-ardeco
   (package
     (name "r-ardeco")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ARDECO" version))
        (sha256
-        (base32 "0ns4dgp3rv12mfv9h65hkr41j6zgsligxghjdd8d3nvz0zb1mqj3"))))
+        (base32 "08xa2yy6xwgd1v0jnyjjmqib71v7ikq61k27jgf3apzv9hk95918"))))
     (properties `((upstream-name . "ARDECO")))
     (build-system r-build-system)
     (arguments
@@ -8475,7 +8475,7 @@ as refers to total values plus additional dimensions like economic sectors,
 gender, age classes.  Data can be also aggregated at country level according to
 the tercet classes as defined by EUROSTAT. The description of the ARDECO
 database can be found at the following URL
-<https://urban.jrc.ec.europa.eu/ardeco>.")
+<https://territorial.ec.europa.eu/ardeco>.")
     (license license:gpl3)))
 
 (define-public r-ardec
@@ -9411,13 +9411,13 @@ Compositional Data, Chapman and Hall].")
 (define-public r-arakno
   (package
     (name "r-arakno")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arakno" version))
        (sha256
-        (base32 "1mbbb4bzcck78wma9nrmpava81cii92rzjq0yl3p38zvnym2i2m9"))))
+        (base32 "00wpsiwspz2b9in0c35a404amrpwjd4h166pm1yvl2v8qw0z1f7q"))))
     (properties `((upstream-name . "arakno")))
     (build-system r-build-system)
     (arguments
@@ -15339,13 +15339,13 @@ trawl processes and weighted trawl processes.")
 (define-public r-ambiorix
   (package
     (name "r-ambiorix")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ambiorix" version))
        (sha256
-        (base32 "1kpbfznzxwkmn8svrhhzm2rb2zpbbgx8j4a2pbylmm7040v5hd1g"))))
+        (base32 "10x3rbqh53i61mws32x35b302q7y2zswgmwqa2ykmvd6g1q02a5h"))))
     (properties `((upstream-name . "ambiorix")))
     (build-system r-build-system)
     (arguments
@@ -22946,13 +22946,13 @@ the admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiral" version))
        (sha256
-        (base32 "0y57i4a3pbh3d32sl6z67hkf33ckmhkgc85cra0yb7khnwv7icy0"))))
+        (base32 "07ahbilcsvf1gdzi7mah0k8915cakzypf5r0450vx4hj9wgvpsq2"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (arguments
@@ -22971,7 +22971,7 @@ the admiral package.")
                              r-cli
                              r-admiraldev))
     (native-inputs (list r-knitr))
-    (home-page "https://pharmaverse.github.io/admiral/cran-release/")
+    (home-page "https://pharmaverse.github.io/admiral/")
     (synopsis "ADaM in R Asset Library")
     (description
      "This package provides a toolbox for programming Clinical Data Interchange
@@ -24394,13 +24394,13 @@ Ormerod, J., Liu, W., Ma, C., Zomaya, A., Yang, J. (2018)
 (define-public r-adas-utils
   (package
     (name "r-adas-utils")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adas.utils" version))
        (sha256
-        (base32 "0057r2ahmaxdcp6rmmpwfk6cbicl2mbqc84rdvjrn1lxlsx4lgas"))))
+        (base32 "0lj02asmj4xsjd1g69n705n83dvc25msv7mbmjq1b9rks4jj5pfd"))))
     (properties `((upstream-name . "adas.utils")))
     (build-system r-build-system)
     (arguments

@@ -3620,13 +3620,13 @@ with various criteria, and kinship for the X chromosome.")
 (define-public r-kinmixlite
   (package
     (name "r-kinmixlite")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KinMixLite" version))
        (sha256
-        (base32 "17501kwm24n6xcjqhmf8sgrnwmrrzqxg4qxqcn40qhqdkxbdw6iw"))))
+        (base32 "1kxzqywwjlxf2l0kc7ywbyhggw1im5kvfrypzbckc84hn6hsd8gl"))))
     (properties `((upstream-name . "KinMixLite")))
     (build-system r-build-system)
     (arguments

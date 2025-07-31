@@ -3200,20 +3200,19 @@ obtained from short time-course or dose-response microarray experiments.")
 (define-public r-orgutils
   (package
     (name "r-orgutils")
-    (version "0.5-0")
+    (version "0.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orgutils" version))
        (sha256
-        (base32 "1gvj82m67xmi0kwd883zmqgxnc621q30bgbnnszm5fnb3y2ni7d6"))))
+        (base32 "1f4n9l218brbg5jvxlx9px74r669czkd5iwrq53nwb2iaj4wcr7n"))))
     (properties `((upstream-name . "orgutils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-textutils))
-    (home-page "http://enricoschumann.net/R/packages/orgutils/")
+    (home-page "https://enricoschumann.net/R/packages/orgutils/")
     (synopsis "Helper Functions for Org Files")
     (description
      "Helper functions for Org files (<https://orgmode.org/>): a generic function
@@ -6512,13 +6511,13 @@ manipulation.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.17")
+    (version "1.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "0q7qg8jr8h1kylkqn5kgs5vgi7d7anj9flp0r83bb3m8r2hfmfs9"))))
+        (base32 "1v1hsk3nrkji1ryyn9knkqp0x4h6b7c09xjs769abybmk95k7mvp"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (arguments
@@ -7408,13 +7407,13 @@ data and parse.  Kass-Hout TA, Xu Z, Mohebbi M et al. (2016)
 (define-public r-openeo
   (package
     (name "r-openeo")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openeo" version))
        (sha256
-        (base32 "1b20b2zns81a5apmvcm4nv22acxngbvnxb2xzaq32kpw0mkm4hvf"))))
+        (base32 "1wyhbb7bkr2bpvr0cmd7i0lkhsfczgg0110l4c9mr5p02gdj6hjk"))))
     (properties `((upstream-name . "openeo")))
     (build-system r-build-system)
     (arguments
@@ -10444,13 +10443,13 @@ using omics data.")
 (define-public r-omicnavigator
   (package
     (name "r-omicnavigator")
-    (version "1.15.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmicNavigator" version))
        (sha256
-        (base32 "1b49w0jpzg8ijj0znncnv3mcpnl17rrmhyjhmnhd1q4x4x8q277z"))))
+        (base32 "1pc0k790y0qnsgc5baiq2ng94plw7akrrk6jm04d0b1lbxpzg4bs"))))
     (properties `((upstream-name . "OmicNavigator")))
     (build-system r-build-system)
     (arguments
@@ -13623,13 +13622,13 @@ defining enumerated types, as well as other bounded types, as S4 classes.")
 (define-public r-obic
   (package
     (name "r-obic")
-    (version "3.0.3")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OBIC" version))
        (sha256
-        (base32 "0bhmry7214i018r5cjxlrf07x5wbbg0aysish053wdcgrkzjplrs"))))
+        (base32 "1iaxxfl9xjf7pmpa3lj7bcmlglg1d6fzrqzdjyz4qshvy9zw2a34"))))
     (properties `((upstream-name . "OBIC")))
     (build-system r-build-system)
     (arguments

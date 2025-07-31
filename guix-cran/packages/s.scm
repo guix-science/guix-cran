@@ -715,13 +715,13 @@ work of Murray and Reiter (2016) <doi:10.1080/01621459.2016.1174132>.")
 (define-public r-synergylmm
   (package
     (name "r-synergylmm")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SynergyLMM" version))
        (sha256
-        (base32 "0ryri6z4hza9sb9q86vwv1afm3l7kgqssxrvz8v0v1i5hfh9avsz"))))
+        (base32 "1028r3r2d5diw2d1dps7ffxgx809lp1cjvwhikvp0ixzxh0nm1f7"))))
     (properties `((upstream-name . "SynergyLMM")))
     (build-system r-build-system)
     (arguments
@@ -747,9 +747,9 @@ work of Murray and Reiter (2016) <doi:10.1080/01621459.2016.1174132>.")
     (description
      "This package provides a framework for evaluating drug combination effects in
 preclinical in vivo studies. @code{SynergyLMM} provides functions to analyze
-longitudinal tumor growth experiments using linear mixed-effects models, perform
-time-dependent analyses of synergy and antagonism, evaluate model diagnostics
-and performance, and assess both post-hoc and a priori statistical power.  The
+longitudinal tumor growth experiments using mixed-effects models, perform
+time-resolved analyses of synergy and antagonism, evaluate model diagnostics and
+performance, and assess both post-hoc and a priori statistical power.  The
 calculation of drug combination synergy follows the statistical framework
 provided by Demidenko and Miller (2019, <doi:10.1371/journal.pone.0224137>).
 The implementation and analysis of linear mixed-effect models is based on the
@@ -14950,6 +14950,37 @@ histograms with overlapping bins, a function for making all possible formulae
 within a set of constraints, amongst others.")
     (license license:gpl3+)))
 
+(define-public r-statiovar
+  (package
+    (name "r-statiovar")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "statioVAR" version))
+       (sha256
+        (base32 "0c8xj6jv8h2z5aaba79m06hi3ii7q4x5v07wwgj3bd34wddl4qj3"))))
+    (properties `((upstream-name . "statioVAR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-dplyr))
+    (home-page "https://github.com/g-corbelli/statioVAR")
+    (synopsis "Trend Removal for Vector Autoregressive Workflows")
+    (description
+     "Detrending multivariate time-series to approximate stationarity when dealing
+with intensive longitudinal data, prior to Vector Autoregressive (VAR) or
+multilevel-VAR estimation.  Classical VAR assumes weak stationarity (constant
+first two moments), and deterministic trends inflate spurious autocorrelation,
+biasing Granger-causality and impulse-response analyses.  All functions operate
+on raw panel data and write detrended columns back to the data set, but differ
+in the level at which the trend is estimated.  See, for instance, Wang & Maxwell
+(2015) <doi:10.1037/met0000030>; Burger et al. (2022)
+<doi:10.4324/9781003111238-13>; Epskamp et al. (2018)
+<doi:10.1177/2167702617744325>.")
+    (license license:gpl3)))
+
 (define-public r-stationary
   (package
     (name "r-stationary")
@@ -16516,6 +16547,36 @@ the MCMC simulations for each parameter, the log likelihoods and predictions.
 Moreover, the package includes tools for model selection and Bayesian model
 averaging by leave future-out validation.")
     (license license:gpl3)))
+
+(define-public r-staninside
+  (package
+    (name "r-staninside")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "staninside" version))
+       (sha256
+        (base32 "0v48dlfd6xay4hgcrc5kvrgnmbc256m4f8vm3jfndhr523iz3j4r"))))
+    (properties `((upstream-name . "staninside")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rappdirs r-fs r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/medewitt/staninside")
+    (synopsis "Facilitating the Use of 'Stan' Within Packages")
+    (description
+     "Infrastructure and functions that can be used for integrating Stan (Carpenter et
+al. (2017) <doi:10.18637/jss.v076.i01>) code into stand alone R packages which
+in turn use the @code{CmdStan} engine which is often accessed through
+@code{CmdStanR}'.  Details given in Stan Development Team (2025)
+<https://mc-stan.org/cmdstanr/>.  Using @code{CmdStanR} and pre-written Stan
+code can make package installation easy.  Using staninside offers a way to cache
+user-compiled Stan models in user-specified directories reducing the need to
+recompile the same model multiple times.")
+    (license license:expat)))
 
 (define-public r-standby
   (package
@@ -20788,48 +20849,6 @@ Parkin (1994) <doi:10.1016/j.geoderma.2008.08.007>
      "Data on the Spy vs. Spy comic strip of Mad magazine, created and written by
 Antonio Prohias.")
     (license license:lgpl3)))
-
-(define-public r-sputnik
-  (package
-    (name "r-sputnik")
-    (version "1.4.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SPUTNIK" version))
-       (sha256
-        (base32 "1v6f0iahp9wlr85zdbg2q46fyayq0hn8b5jyv3pwb9bykk8rmyzw"))))
-    (properties `((upstream-name . "SPUTNIK")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-spatstat-geom
-                             r-spatstat-explore
-                             r-reshape
-                             r-irlba
-                             r-infotheo
-                             r-imager
-                             r-ggplot2
-                             r-foreach
-                             r-edger
-                             r-e1071
-                             r-dosnow))
-    (home-page "https://github.com/piplus2/SPUTNIK")
-    (synopsis
-     "Spatially Automatic Denoising for Imaging Mass Spectrometry Toolkit")
-    (description
-     "Set of tools for peak filtering of mass spectrometry imaging data based on
-spatial distribution of signal.  Given a region-of-interest, representing the
-spatial region where the informative signal is expected to be localized, a
-series of filters determine which peak signals are characterized by an
-implausible spatial distribution.  The filters reduce the dataset dimension and
-increase its information vs noise ratio, improving the quality of the
-unsupervised analysis results, reducing data dimension and simplifying the
-chemical interpretation.  The methods are described in Inglese P. et al (2019)
-<doi:10.1093/bioinformatics/bty622>.")
-    (license license:gpl3+)))
 
 (define-public r-spurs
   (package
@@ -30399,13 +30418,13 @@ Scott-Knott.")
 (define-public r-spanishoddata
   (package
     (name "r-spanishoddata")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spanishoddata" version))
        (sha256
-        (base32 "1hmhwcbxfzvmm8vmvrif04dh3k3846sh4n6yxgl80gxabaayi0bi"))))
+        (base32 "04x508vny94fx7xwisgmhr17h1k8cwaa0r2cv5pc41ynd6iq6yjz"))))
     (properties `((upstream-name . "spanishoddata")))
     (build-system r-build-system)
     (arguments
@@ -32225,13 +32244,13 @@ For more details see: <doi:10.5281/zenodo.10137768>.")
 (define-public r-sommer
   (package
     (name "r-sommer")
-    (version "4.4.2")
+    (version "4.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sommer" version))
        (sha256
-        (base32 "0j9ip8m5pfyyjngibrbp4gr938njg154cfxhhvrilwgr545959av"))))
+        (base32 "1p3aqr9jd696s2s5v1qcpx0hahrp05p5w33bcn2bw2dbcfj7fa24"))))
     (properties `((upstream-name . "sommer")))
     (build-system r-build-system)
     (arguments
@@ -33704,6 +33723,31 @@ selection problem for semi-parametric models with continuous responses.")
 utility functions for graphs and several sample data sets.  See Healy (2019)
 <ISBN 978-0691181622>.")
     (license license:expat)))
+
+(define-public r-socratadata
+  (package
+    (name "r-socratadata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "socratadata" version))
+       (sha256
+        (base32 "0xx33hpxad077kjhqfv2360g3vir3flniw6kyr1g4f1jwyq6fw40"))))
+    (properties `((upstream-name . "socratadata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-tibble r-sf r-rlang r-httr2 r-cli))
+    (home-page "https://ryanzomorrodi.github.io/socratadata/")
+    (synopsis "Explore Socrata Data with Ease")
+    (description
+     "This package provides an interface to search, read, query, and retrieve metadata
+for datasets hosted on Socrata open data portals.  Supports all Socrata data
+types, including spatial data returned as sf objects.")
+    (license license:gpl3+)))
 
 (define-public r-sociome
   (package
@@ -38315,6 +38359,51 @@ sparse implicit positive feedback systems.  SLIM is decomposed into multiple
 elasticnet optimization problems which are solved in parallel over multiple
 cores.  The package is based on \"SLIM: Sparse Linear Methods for Top-N
 Recommender Systems\" by Xia Ning and George Karypis <doi:10.1109/ICDM.2011.134>.")
+    (license license:gpl3)))
+
+(define-public r-slimr
+  (package
+    (name "r-slimr")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SlimR" version))
+       (sha256
+        (base32 "1lnl9wghp00s578gjcmfq2jnjvbd9jmim128rsjiyby7izb63jbs"))))
+    (properties `((upstream-name . "SlimR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-seurat
+                             r-scales
+                             r-readxl
+                             r-pheatmap
+                             r-patchwork
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot))
+    (home-page "https://cran.r-project.org/package=SlimR")
+    (synopsis
+     "Marker-Based Package for Single-Cell and Spatial-Transcriptomic Annotation")
+    (description
+     "Annotating single-cell and spatial-transcriptomic (ST) data based on the Marker
+dataset.  It supports the creation of a unified marker list, Markers_list, using
+sources including: the package's built-in curated species-specific cell type and
+marker reference databases (e.g., Cellmarker2', @code{PanglaoDB}'), Seurat
+objects containing cell label information, or user-provided Excel tables mapping
+cell types to markers.  Based on the Markers_list, @code{SlimR} can iterate
+through different cell types to generate corresponding annotation reference
+plots (e.g., Markers_Dotplot', Metric_Heatmap', Mean_expression_Box_plot').
+Furthermore, it enables one-click generation of an annotation heatmap
+('Annotation_Heatmap') visualizing the relationship between input cell types and
+the reference marker list.  For more details see Kabacoff (2015,
+ISBN:9781617291388) and Hu et al. (2023) <doi:10.1093/nar/gkac947> and FranzÃ©n
+et al. (2019) <doi:10.1093/database/baz046>.")
     (license license:gpl3)))
 
 (define-public r-slim
@@ -45850,6 +45939,43 @@ another.  The methods are inspired by the simplicial complex
 forms that relate spatial data structures to this mathematical construct.")
     (license license:gpl3)))
 
+(define-public r-silhouette
+  (package
+    (name "r-silhouette")
+    (version "0.9.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Silhouette" version))
+       (sha256
+        (base32 "0f5yapdfca9zdbhj22hdnlqf8srijv6qqfzbg1y4l0dp66s3rbcw"))))
+    (properties `((upstream-name . "Silhouette")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggpubr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://kskbhat.github.io/Silhouette/")
+    (synopsis
+     "Proximity Measure Based Diagnostics for Standard, Soft, and Multi-Way Clustering")
+    (description
+     "Quantifies clustering quality by measuring both cohesion within clusters and
+separation between clusters.  Implements advanced silhouette width computations
+for diverse clustering structures, including: simplified silhouette (Van der
+Laan et al., 2003) <doi:10.1080/0094965031000136012>, Probability of Alternative
+Cluster normalization methods (Raymaekers & Rousseeuw, 2022)
+<doi:10.1080/10618600.2022.2050249>, fuzzy clustering and silhouette diagnostics
+using membership probabilities (Campello & Hruschka, 2006; Bhat & Kiruthika,
+2024) <doi:10.1016/j.fss.2006.07.006>, <doi:10.1080/23737484.2024.2408534>, and
+multi-way clustering extensions such as block and tensor clustering (Schepers et
+al., 2008; Bhat & Kiruthika, 2025) <doi:10.1007/s00357-008-9005-9>,
+<doi:10.21203/rs.3.rs-6973596/v1>.  Provides tools for computation and
+visualization (Rousseeuw, 1987) <doi:10.1016/0377-0427(87)90125-7> to support
+robust and reproducible cluster diagnostics across standard, soft, and multi-way
+clustering settings.")
+    (license license:gpl2)))
+
 (define-public r-silggm
   (package
     (name "r-silggm")
@@ -46833,13 +46959,13 @@ batch problems.  Details of the methods can be found in:
 (define-public r-siera
   (package
     (name "r-siera")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "siera" version))
        (sha256
-        (base32 "1fi8ymj0rwg904v7k0fk6y3vn1nainkwd2207mzljdr6i35pjfmc"))))
+        (base32 "135r0b8lzf8vava1i9acksh2nkacp03hgv7c9as243nxa2ln1n3l"))))
     (properties `((upstream-name . "siera")))
     (build-system r-build-system)
     (arguments
@@ -46851,7 +46977,8 @@ batch problems.  Details of the methods can be found in:
                              r-readxl
                              r-magrittr
                              r-jsonlite
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://clymbclinical.github.io/siera/")
     (synopsis "Generate Analysis Results Programmes Using ARS Metadata")
@@ -47722,20 +47849,19 @@ This package just does that.  Currently it supports PNG files.")
 (define-public r-shotgroups
   (package
     (name "r-shotgroups")
-    (version "0.8.2")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shotGroups" version))
        (sha256
-        (base32 "0m3n3ja6ny45rdd13s9f7nm1ml3p3y7nisbhfg0fj369wym95r1p"))))
+        (base32 "01hp6kzkj8fr5qri2qk64kz5jn77a0xhkig58rnl6j9q0smwhzga"))))
     (properties `((upstream-name . "shotGroups")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-robustbase r-kernsmooth r-compquadform r-coin
-                             r-boot))
+    (propagated-inputs (list r-kernsmooth r-compquadform r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=shotGroups")
     (synopsis "Analyze Shot Group Data")
@@ -47745,9 +47871,9 @@ This includes graphical methods, descriptive statistics, and inference tests
 using standard, but also non-parametric and robust statistical methods.
 Implements distributions for radial error in bivariate normal variables.  Works
 with files exported by @code{OnTarget} PC/TDS', Silver Mountain e-target,
-@code{ShotMarker} e-target, or Taran', as well as with custom data files in text
-format.  Supports inference from range statistics such as extreme spread.
-Includes a set of web-based graphical user interfaces.")
+@code{ShotMarker} e-target, SIUS e-target, or Taran', as well as with custom
+data files in text format.  Supports inference from range statistics such as
+extreme spread.  Includes a set of web-based graphical user interfaces.")
     (license license:gpl2+)))
 
 (define-public r-shortuuid
@@ -54601,13 +54727,13 @@ can also be used via the website interface at <http://sfinx.ugent.be>.")
 (define-public r-sfhotspot
   (package
     (name "r-sfhotspot")
-    (version "0.9.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfhotspot" version))
        (sha256
-        (base32 "0827wff1bldd90swrj6cxyhn9nisyzb6kb24wpmaxpryjdclhjkw"))))
+        (base32 "1cy157rq1f9fyqnlcsfryjl8snar48dzgxqs4flg7ba44wlrmx3p"))))
     (properties `((upstream-name . "sfhotspot")))
     (build-system r-build-system)
     (arguments
@@ -54620,7 +54746,7 @@ can also be used via the website interface at <http://sfinx.ugent.be>.")
                              r-rlang
                              r-ggplot2
                              r-cli))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "http://pkgs.lesscrime.info/sfhotspot/")
     (synopsis "Hot-Spot Analysis with Simple Features")
     (description
@@ -62354,13 +62480,13 @@ viewer pane during their execution.")
 (define-public r-sdmtmb
   (package
     (name "r-sdmtmb")
-    (version "0.7.2")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdmTMB" version))
        (sha256
-        (base32 "15vgsxlqd5arisw03n3j7ps4r2lwmc6l4v5q18h3nwi2gayhm0l9"))))
+        (base32 "04r0c7l6lqgyax44r3p7xzhf85wz49i10ddw2x8k9qvl725vigs4"))))
     (properties `((upstream-name . "sdmTMB")))
     (build-system r-build-system)
     (arguments

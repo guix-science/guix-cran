@@ -1053,6 +1053,32 @@ whitespace around punctuation and capitalization appropriate for prose
 sentences.")
     (license license:expat)))
 
+(define-public r-yarrr
+  (package
+    (name "r-yarrr")
+    (version "0.1.14")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yarrr" version))
+       (sha256
+        (base32 "0p7ir1danj4w6sillff40s34jakvl2kkclf53rq7kzlqyayn17ah"))))
+    (properties `((upstream-name . "yarrr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jpeg r-circlize r-bayesfactor))
+    (native-inputs (list r-knitr))
+    (home-page "https://bookdown.org/ndphillips/YaRrr/")
+    (synopsis "Companion to the e-Book \"YaRrr!: The Pirate's Guide to R\"")
+    (description
+     "This package contains a mixture of functions and data sets referred to in the
+introductory e-book \"@code{YaRrr}!: The Pirate's Guide to R\".  The latest
+version of the e-book is available for free at
+<https://bookdown.org/ndphillips/@code{YaRrr/>}.")
+    (license license:gpl2)))
+
 (define-public r-yamlme
   (package
     (name "r-yamlme")

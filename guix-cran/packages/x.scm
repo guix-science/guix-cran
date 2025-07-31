@@ -1886,13 +1886,13 @@ ISBN:1-55860-066-3), Wickham, Hadley (2019, ISBN:978-815384571).")
 (define-public r-xegapopulation
   (package
     (name "r-xegapopulation")
-    (version "1.0.0.7")
+    (version "1.0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaPopulation" version))
        (sha256
-        (base32 "0gbiv9v83gda1mcr3k7lzp0am88k6hfr028yr38n2jnkbwz4zngc"))))
+        (base32 "0vj0rp7w6gc1cs6rgxmrnvpzfzvdrxrn62vh2xg1dnnna0z2q598"))))
     (properties `((upstream-name . "xegaPopulation")))
     (build-system r-build-system)
     (arguments
@@ -2040,13 +2040,13 @@ ISBN:0-18-201-031-7).")
 (define-public r-xegadfgene
   (package
     (name "r-xegadfgene")
-    (version "1.0.0.3")
+    (version "1.0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaDfGene" version))
        (sha256
-        (base32 "0r13gchfx2pvsl25nqqnv2xpqdyad70x13kb4i42h5ysffkbfakr"))))
+        (base32 "1fwxwl6bzn0z6idqzd4qda47sxbq9ylxpfviz2ms29kby9ypsz2v"))))
     (properties `((upstream-name . "xegaDfGene")))
     (build-system r-build-system)
     (arguments
@@ -2062,7 +2062,8 @@ feature of the gene operations is that all of them are useful for
 derivation-free optimization algorithms.  At the moment the package implements
 initialization, mutation, crossover, and replication operations for differential
 evolution as described in Price, Kenneth V., Storn, Rainer M. and Lampinen,
-Jouni A. (2005) <doi:10.1007/3-540-31306-0>.")
+Jouni A. (2005) <doi:10.1007/3-540-31306-0>.  In addition, several (more recent)
+methods for determining the scale factor are provided.")
     (license license:expat)))
 
 (define-public r-xegaderivationtrees
@@ -2138,13 +2139,13 @@ APL2 implementation in Geyer-Schulz, Andreas (1997, ISBN:978-3-7908-0830-X).")
 (define-public r-xega
   (package
     (name "r-xega")
-    (version "0.9.0.8")
+    (version "0.9.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xega" version))
        (sha256
-        (base32 "1z9x1596c7hg05mxd4q2l222fsrz2cf259n2q6jz3xm0nhkmh6wj"))))
+        (base32 "1y1lw2wkjfyv8593wrnx31wdrn9j8wsbdgc1qmm8kammicfya6x7"))))
     (properties `((upstream-name . "xega")))
     (build-system r-build-system)
     (arguments
@@ -2455,13 +2456,13 @@ genomic admixture data and generating customizable stacked barplots.")
 (define-public r-xactonomial
   (package
     (name "r-xactonomial")
-    (version "1.0.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xactonomial" version))
        (sha256
-        (base32 "1dmxbcksybznhd0hcvpzxgpkcxyz0rjlvmpy195qby23g51f3l4w"))))
+        (base32 "1gjyg8fbm0n48hhlsvdw2p8y6w0nm6b785xrnapblrra2vc4g17y"))))
     (properties `((upstream-name . "xactonomial")))
     (build-system r-build-system)
     (arguments

@@ -5927,13 +5927,13 @@ models and visualising them.")
 (define-public r-grex
   (package
     (name "r-grex")
-    (version "1.9")
+    (version "1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grex" version))
        (sha256
-        (base32 "0s6nan76rrmh3yhgvzb7pqdrzx2w9px8ay4v9yiib4bamy9wmhpb"))))
+        (base32 "0hcnjg1him16zvwj3dh1jfwyff61fpjqrz3svq1lvsyfgfd7ayhx"))))
     (properties `((upstream-name . "grex")))
     (build-system r-build-system)
     (arguments
@@ -5946,8 +5946,7 @@ models and visualising them.")
      "Convert Ensembl gene identifiers from Genotype-Tissue Expression (GTEx) data to
 identifiers in other annotation systems, including Entrez', HGNC', and
 @code{UniProt}'.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
+    (license license:gpl3+)))
 
 (define-public r-gretlr
   (package
@@ -8519,13 +8518,13 @@ calculation, we used results from Bhat, U. and Lal, R. (1988)
 (define-public r-grab
   (package
     (name "r-grab")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GRAB" version))
        (sha256
-        (base32 "1swbm287w56z6bl31mxzajxqs6rbz2jaapwjrrz6pa83q0pqbrg5"))))
+        (base32 "0xmkjnyx27qwfirss0n8nhg8ahbmd2apjcmk27id6vyx3p6nzk9s"))))
     (properties `((upstream-name . "GRAB")))
     (build-system r-build-system)
     (arguments
@@ -8551,9 +8550,9 @@ calculation, we used results from Bhat, U. and Lal, R. (1988)
      "This package provides a comprehensive suite of genome-wide association study
 (GWAS) methods specifically designed for biobank-scale data.  The package offers
 computationally efficient and robust association tests for time-to-event traits
-(e.g., Bi et al. (2020) <doi:10.1016/j.ajhg.2020.06.003>), ordinal categorical
-traits (e.g., Bi et al. (2021) <doi:10.1016/j.ajhg.2021.03.019>), and
-longitudinal traits (Xu et al. (2025) <doi:10.1038/s41467-025-56669-1>).
+(e.g., Bi et al., 2020 <doi:10.1016/j.ajhg.2020.06.003>), ordinal categorical
+traits (e.g., Bi et al., 2021 <doi:10.1016/j.ajhg.2021.03.019>), and
+longitudinal traits (Xu et al., 2025 <doi:10.1038/s41467-025-56669-1>).
 Additionally, it includes functions for simulating genotype and phenotype data
 to support research and method development.")
     (license license:gpl2+)))
@@ -13685,60 +13684,6 @@ a way compatible with both Latex and HTML outputs.")
      "Add glossaries to markdown and quarto documents by tagging individual words.
 Definitions can be provided inline or in a separate file.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
-
-(define-public r-glossa
-  (package
-    (name "r-glossa")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "glossa" version))
-       (sha256
-        (base32 "0pn90mzi9q2wndlndb6bh9lraa2d7vvpqpvnhw407s4sdl7n9dc2"))))
-    (properties `((upstream-name . "glossa")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zip
-                             r-waiter
-                             r-tidyterra
-                             r-terra
-                             r-svglite
-                             r-sparkline
-                             r-shinywidgets
-                             r-shiny
-                             r-sf
-                             r-proc
-                             r-mcp
-                             r-markdown
-                             r-leaflet
-                             r-htmltools
-                             r-ggplot2
-                             r-geothinner
-                             r-dt
-                             r-dplyr
-                             r-dbarts
-                             r-bs4dash
-                             r-blockcv
-                             r-automap))
-    (home-page "https://github.com/iMARES-group/glossa")
-    (synopsis
-     "User-Friendly 'shiny' App for Bayesian Species Distribution Models")
-    (description
-     "This package provides a user-friendly shiny application for Bayesian machine
-learning analysis of marine species distributions.  GLOSSA (Global Ocean Species
-Spatio-temporal Analysis) uses Bayesian Additive Regression Trees (BART;
-Chipman, George, and @code{McCulloch} (2010) <doi:10.1214/09-AOAS285>) to model
-species distributions with intuitive workflows for data upload, processing,
-model fitting, and result visualization.  It supports presence-absence and
-presence-only data (with pseudo-absence generation), spatial thinning,
-cross-validation, and scenario-based projections.  GLOSSA is designed to
-facilitate ecological research by providing easy-to-use tools for analyzing and
-visualizing marine species distributions across different spatial and temporal
-scales.")
-    (license license:gpl3)))
 
 (define-public r-glorenz
   (package
@@ -20866,13 +20811,13 @@ for population structure in high dimensional prediction models\", 2020,
 (define-public r-ggmice
   (package
     (name "r-ggmice")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmice" version))
        (sha256
-        (base32 "14fb8889fqx3r0rky7rfnagfrrlhspj74zlp7wz7wj232y3j923h"))))
+        (base32 "1rc4cjcsaqznizw2g420sy3lv35p715hw7kyi5wkv5whnr395nrw"))))
     (properties `((upstream-name . "ggmice")))
     (build-system r-build-system)
     (arguments
@@ -20881,6 +20826,7 @@ for population structure in high dimensional prediction models\", 2020,
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
+                             r-scales
                              r-rlang
                              r-purrr
                              r-mice
@@ -20889,7 +20835,7 @@ for population structure in high dimensional prediction models\", 2020,
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/amices/ggmice")
+    (home-page "https://amices.org/ggmice/")
     (synopsis "Visualizations for 'mice' with 'ggplot2'")
     (description
      "Enhance a mice imputation workflow with visualizations for incomplete and/or
@@ -22572,6 +22518,35 @@ the ggdmc package, which employs Differential Evolution Markov Chain Monte Carlo
 (DE-MCMC) sampling to optimise model parameters.  For further details on the
 model-building approach, see Heathcote, Lin, Reynolds, Strickland, Gretton, and
 Matzke (2019) <doi:10.3758/s13428-018-1067-y>.")
+    (license license:gpl2+)))
+
+(define-public r-ggdmclikelihood
+  (package
+    (name "r-ggdmclikelihood")
+    (version "0.2.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggdmcLikelihood" version))
+       (sha256
+        (base32 "0nihaxhrj2wbwf1qvsx6kr2vigqigjxl0nzs322ssk9rm53rianw"))))
+    (properties `((upstream-name . "ggdmcLikelihood")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggdmcheaders))
+    (home-page "https://github.com/yxlin/ggdmcLikelihood")
+    (synopsis "Likelihood Computation for 'ggdmc' Package")
+    (description
+     "Efficient computation of likelihoods in design-based choice response time
+models, including the Decision Diffusion Model, is supported.  The package
+enables rapid evaluation of likelihood functions for both single- and
+multi-subject models across trial-level data.  It also offers fast
+initialisation of starting parameters for genetic sampling with many Markov
+chains, facilitating estimation in complex models typically found in
+experimental psychology and behavioural science.  These optimisations help
+reduce computational overhead in large-scale model fitting tasks.")
     (license license:gpl2+)))
 
 (define-public r-ggdmcheaders
@@ -26624,20 +26599,19 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.1.7")
+    (version "2.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "1i95ib5mw82bhg6ff8dyiiz7lil9xr06hmd3g6q7v7nb4kl1mdfp"))))
+        (base32 "1036lwwg9114835pnjkj6rb4nqm5fssmq3x70r42sjhn1103rwff"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zipfr
-                             r-vgam
+    (propagated-inputs (list r-vgam
                              r-spam
                              r-sp
                              r-sn
@@ -26650,7 +26624,6 @@ classes and functions.")
                              r-nabor
                              r-minqa
                              r-mapproj
-                             r-lamw
                              r-hypergeo
                              r-future-apply
                              r-future
@@ -32969,13 +32942,13 @@ to quantify model sensitivities.")
 (define-public r-gcplyr
   (package
     (name "r-gcplyr")
-    (version "1.11.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gcplyr" version))
        (sha256
-        (base32 "1vxslc0n6dimalxqiw3qzpva4aqjkarnp88k81zrmr8j1qgwhf7v"))))
+        (base32 "1rpjj7mpfrd75f39nw7m3j5fsd9wksqd713mp3is50v7bg3fl5ag"))))
     (properties `((upstream-name . "gcplyr")))
     (build-system r-build-system)
     (arguments
@@ -36037,13 +36010,13 @@ copulas.")
 (define-public r-gamclass
   (package
     (name "r-gamclass")
-    (version "0.62.5")
+    (version "0.62.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamclass" version))
        (sha256
-        (base32 "0y34970qwgssdnwnhb1hnkyav8j7pq3hkdskw63qs8cin4cknq7j"))))
+        (base32 "1mqmq4qdk37rihai1dxfvk3g56lb4f1mjzgbxyw5vxpbnlrzjqlz"))))
     (properties `((upstream-name . "gamclass")))
     (build-system r-build-system)
     (arguments
@@ -36051,7 +36024,7 @@ copulas.")
       #:tests? #f))
     (propagated-inputs (list r-rpart r-randomforest r-latticeextra r-lattice))
     (native-inputs (list r-rmarkdown r-knitr r-bookdown))
-    (home-page "https://cran.r-project.org/package=gamclass")
+    (home-page "https://github.com/jhmaindonald/gamclass")
     (synopsis
      "Functions and Data for a Course on Modern Regression and Classification")
     (description

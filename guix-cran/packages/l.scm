@@ -379,13 +379,13 @@ script output, switching logs, and logging to files or connections.")
 (define-public r-luz
   (package
     (name "r-luz")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "luz" version))
        (sha256
-        (base32 "02p1h6rhjvdkw10az1zzz0fd4l8nhn04bwkr71l73a94fbwm6dpz"))))
+        (base32 "0agpcs4m3yil19bzanj08qqnsirnld4pdkqwzfyynalsi7hgvmzl"))))
     (properties `((upstream-name . "luz")))
     (build-system r-build-system)
     (arguments
@@ -402,7 +402,6 @@ script output, switching logs, and logging to files or connections.")
                              r-glue
                              r-generics
                              r-fs
-                             r-ellipsis
                              r-coro
                              r-cli))
     (native-inputs (list r-knitr))
@@ -413,8 +412,8 @@ script output, switching logs, and logging to files or connections.")
 reduce the the amount of code needed for common tasks, abstract away torch
 details and make the same code work on both the CPU and GPU'.  It's flexible
 enough to support expressing a large range of models.  It's heavily inspired by
-fastai by Howard et al. (2020) <@code{arXiv:2002.04688>}, Keras by Chollet et
-al. (2015) and @code{PyTorch} Lightning by Falcon et al. (2019)
+fastai by Howard et al. (2020) <doi:10.48550/@code{arXiv.2002.04688>}, Keras by
+Chollet et al. (2015) and @code{PyTorch} Lightning by Falcon et al. (2019)
 <doi:10.5281/zenodo.3828935>.")
     (license license:expat)))
 
@@ -15526,19 +15525,19 @@ described in Paulon et al. (2021) <doi:10.1080/01621459.2020.1801448>.")
 (define-public r-ldcorsv
   (package
     (name "r-ldcorsv")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LDcorSV" version))
        (sha256
-        (base32 "0wr8i9q9p48vpcia8v3rd8bb2pfijr9r6kg9x26k4wncpg7n83cp"))))
+        (base32 "1vj1zf2glj9xp1b1bk211wyyz6nhj13ww9j7s4347qixzfm603j1"))))
     (properties `((upstream-name . "LDcorSV")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=LDcorSV")
+    (home-page "https://gitlab.in2p3.fr/aursiber/ldcorsv")
     (synopsis
      "Linkage Disequilibrium Corrected by the Structure and the Relatedness")
     (description

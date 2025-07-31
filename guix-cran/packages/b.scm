@@ -1212,13 +1212,13 @@ documentation and examples <https://magosil86.github.io/bumblebee/>.")
 (define-public r-bumbl
   (package
     (name "r-bumbl")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bumbl" version))
        (sha256
-        (base32 "16fpd62wkvjd25wv80rlp01q57sacx1jjww5j1v6hifc8097wj0i"))))
+        (base32 "1a4jmygca1di499xan7hpn7jxw6x88pw5snd36izgfm226nsl9jg"))))
     (properties `((upstream-name . "bumbl")))
     (build-system r-build-system)
     (arguments
@@ -1243,7 +1243,7 @@ provides tools for modeling and visualizing this pattern by identifying a
 switchpoint with a growth rate before and a decline rate after the switchpoint.
 The mathematical models fit by bumbl are described in Crone and Williams (2016)
 <doi:10.1111/ele.12581>.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
+    (license license:expat)))
 
 (define-public r-bullwhipgame
   (package
@@ -3666,52 +3666,6 @@ friendly interface for estimating test reliability.  Here, reliability is
 modeled as a beta distributed random variable with shape parameters alpha=true
 score variance and beta=error variance (Tanzer & Harlow, 2020)
 <doi:10.1080/00273171.2020.1854082>.")
-    (license license:expat)))
-
-(define-public r-brvm
-  (package
-    (name "r-brvm")
-    (version "5.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BRVM" version))
-       (sha256
-        (base32 "0vkx0lbamfkmpcpd7kp85jqzf2fivp898yw0dvkgan8kkfqclra5"))))
-    (properties `((upstream-name . "BRVM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xts
-                             r-xml2
-                             r-tseries
-                             r-timedate
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-nortest
-                             r-magrittr
-                             r-lubridate
-                             r-httr2
-                             r-httr
-                             r-highcharter
-                             r-gsheet
-                             r-goftest
-                             r-formattable
-                             r-fbasics
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://rpubs.com/Fredysessie/Readme_BRVM_Stock")
-    (synopsis
-     "Retrieve Historical Data of Companies Listed on the 'BRVM' Stock Exchange")
-    (description
-     "Provide real-time access to data from the Regional Securities Exchange
-SA(<https://www.brvm.org/en>), commonly known as the BRVM stock exchange.  The
-goal is to facilitate data access for users of the R programming language.  The
-package includes a variety of data that can be accessed by calling functions.")
     (license license:expat)))
 
 (define-public r-brunnermunzel
@@ -9565,13 +9519,13 @@ Corradin et al. (2021) <doi:10.18637/jss.v100.i15> for more details.")
 (define-public r-bnpdensity
   (package
     (name "r-bnpdensity")
-    (version "2023.3.8")
+    (version "2025.7.29")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BNPdensity" version))
        (sha256
-        (base32 "0b0hv634k5vnc74iw2c0arx9rl3bh5hahhrhp14gx324jv279fs5"))))
+        (base32 "1209n082spkjkg4lpymyjncj3g4b8zgarddzyzd8sj5k8l3c66qc"))))
     (properties `((upstream-name . "BNPdensity")))
     (build-system r-build-system)
     (arguments
@@ -11538,35 +11492,6 @@ further methodological developments.  Reference: Hornung, R. & Wright, M. N.
 data.  BMC Bioinformatics 20:358. <doi:10.1186/s12859-019-2942-y>.")
     (license license:gpl3)))
 
-(define-public r-blockcv
-  (package
-    (name "r-blockcv")
-    (version "3.1-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "blockCV" version))
-       (sha256
-        (base32 "0l421z05sjm6y10w5rx5yv9xqckda76rrdwcashbz65f4jckz64d"))))
-    (properties `((upstream-name . "blockCV")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sf r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rvalavi/blockCV")
-    (synopsis
-     "Spatial and Environmental Blocking for K-Fold and LOO Cross-Validation")
-    (description
-     "Creating spatially or environmentally separated folds for cross-validation to
-provide a robust error estimation in spatially structured environments;
-Investigating and visualising the effective range of spatial autocorrelation in
-continuous raster covariates and point samples to find an initial realistic
-distance band to separate training and testing datasets spatially described in
-Valavi, R. et al. (2019) <doi:10.1111/2041-210X.13107>.")
-    (license license:gpl3+)))
-
 (define-public r-blockcov
   (package
     (name "r-blockcov")
@@ -12212,13 +12137,13 @@ format and checked for compatibility.  Supports dataframes, tibbles and
 (define-public r-blackmarbler
   (package
     (name "r-blackmarbler")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blackmarbler" version))
        (sha256
-        (base32 "1scrkn7kagb8wkz0h87xnbbkpdqyvwc110km890rakm0qgpgf1w9"))))
+        (base32 "1l384xlqz0xdf18wd6r203g0cf0qqc1gv4mcigvrzd898ksygr77"))))
     (properties `((upstream-name . "blackmarbler")))
     (build-system r-build-system)
     (arguments
@@ -16805,13 +16730,13 @@ additional metadata on stations and weather.")
 (define-public r-bigutilsr
   (package
     (name "r-bigutilsr")
-    (version "0.3.4")
+    (version "0.3.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigutilsr" version))
        (sha256
-        (base32 "096h0v277n39bvipfbfd730lz3qkplfnv58zmzsyy3al9f7lajxl"))))
+        (base32 "1wiy8dc1sawb6w1pchzihlb0v52asnajbgjnl6h9ii5vj31z5irw"))))
     (properties `((upstream-name . "bigutilsr")))
     (build-system r-build-system)
     (arguments
@@ -16819,6 +16744,8 @@ additional metadata on stations and weather.")
       #:tests? #f))
     (propagated-inputs (list r-rspectra
                              r-robustbase
+                             r-rcppeigen
+                             r-rcpparmadillo
                              r-rcpp
                              r-nabor
                              r-bigparallelr
@@ -22662,13 +22589,13 @@ See Kopp-Schneider et al. (2018) <doi:10.1002/bimj.201700209>.")
 (define-public r-bdots
   (package
     (name "r-bdots")
-    (version "1.2.5")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bdots" version))
        (sha256
-        (base32 "18sciji8xy1s53d7d5q1g5zqdn25wd7w5vyiisigf54sbz13vqg6"))))
+        (base32 "1kd33m1p3pzi2fvfda85yyglki8jll5hzslzxyrq2hfxkjxvica7"))))
     (properties `((upstream-name . "bdots")))
     (build-system r-build-system)
     (arguments
@@ -22683,8 +22610,7 @@ See Kopp-Schneider et al. (2018) <doi:10.1002/bimj.201700209>.")
      "Analyze differences among time series curves with p-value adjustment for
 multiple comparisons introduced in Oleson et al (2015)
 <DOI:10.1177/0962280215607411>.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
+    (license license:gpl3)))
 
 (define-public r-bdlp
   (package
@@ -24833,13 +24759,13 @@ Chipman, George, @code{McCulloch} (2010).")
 (define-public r-bayestools
   (package
     (name "r-bayestools")
-    (version "0.2.19")
+    (version "0.2.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesTools" version))
        (sha256
-        (base32 "0bb4ywfj2592m5hgn0xvza381g1029ar848sjkw46z0fwq7kwi6v"))))
+        (base32 "1fxa09i3ha0d9wnv6nzbxc6d7h9nifzgzy7gn6a6q3yrnyxqms42"))))
     (properties `((upstream-name . "BayesTools")))
     (build-system r-build-system)
     (arguments
@@ -29525,13 +29451,13 @@ that will install Github starred R packages whether available on CRAN or not.")
 (define-public r-bat
   (package
     (name "r-bat")
-    (version "2.10.0")
+    (version "2.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAT" version))
        (sha256
-        (base32 "0gs6l0azb4qikv4ia37gavxzd028dqnhr9ga93ncm10kg4kl3jwr"))))
+        (base32 "1qhvidnyv9r8p3czhzcpmmjw42ga8mx8b6ayfxymkksqd10wqg8l"))))
     (properties `((upstream-name . "BAT")))
     (build-system r-build-system)
     (arguments
@@ -29545,6 +29471,7 @@ that will install Github starred R packages whether available on CRAN or not.")
                              r-mass
                              r-hypervolume
                              r-geometry
+                             r-boot
                              r-ape))
     (home-page "https://cran.r-project.org/package=BAT")
     (synopsis "Biodiversity Assessment Tools")
@@ -32944,13 +32871,13 @@ add-in that can be bound to a keyboard shortcut.")
 (define-public r-backbone
   (package
     (name "r-backbone")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "backbone" version))
        (sha256
-        (base32 "05b493cfzi85hnczl56d81sc7j5xfwybsmnc4i4q984sw0gpgvll"))))
+        (base32 "0pan4lpmr02d57kp0xjj0vj4g7ba548f839w5k1lmsgqaybzqwq2"))))
     (properties `((upstream-name . "backbone")))
     (build-system r-build-system)
     (arguments

@@ -12589,13 +12589,13 @@ to extract colors from all types of figures and pdf files.")
 (define-public r-eodhdr2
   (package
     (name "r-eodhdr2")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eodhdR2" version))
        (sha256
-        (base32 "1r1fxgqh9sv6gkcggjjrbby2jjz2bv5pm9kq46rkq1arfsmagxr7"))))
+        (base32 "0q1zlc0q5hhhg1kb7vakcvxzhpxlkbzc94azpp8x7p8awcmy1z56"))))
     (properties `((upstream-name . "eodhdR2")))
     (build-system r-build-system)
     (arguments
@@ -13482,13 +13482,13 @@ associations based on, for example, the mix-lasso model (Zhao et al., 2022
 (define-public r-enpls
   (package
     (name "r-enpls")
-    (version "6.1")
+    (version "6.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enpls" version))
        (sha256
-        (base32 "12088v9xnj5b3dlakqz1hbzxz4mdai7xi7s2fpx8lj3y3lx7znmb"))))
+        (base32 "0k61nbpcdv1qpym197mks2yw0rmg817yiib1zcpb5dpwnj693ypv"))))
     (properties `((upstream-name . "enpls")))
     (build-system r-build-system)
     (arguments
@@ -13508,8 +13508,7 @@ associations based on, for example, the mix-lasso model (Zhao et al., 2022
      "An algorithmic framework for measuring feature importance, outlier detection,
 model applicability domain evaluation, and ensemble predictive modeling with
 (sparse) partial least squares regressions.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
+    (license license:gpl3+)))
 
 (define-public r-enmtools
   (package
@@ -19165,13 +19164,13 @@ conditions.")
 (define-public r-efatools
   (package
     (name "r-efatools")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFAtools" version))
        (sha256
-        (base32 "0zgqwdrczkdld0wmzd7s1mh387dsdf374l3bca44yivv48yfwbby"))))
+        (base32 "0x2c1a1fwa79pdam2day57rpcyxf195a4kqsnwzr2xh6x1fjrnad"))))
     (properties `((upstream-name . "EFAtools")))
     (build-system r-build-system)
     (arguments
@@ -23676,13 +23675,13 @@ about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
 (define-public r-ebvcube
   (package
     (name "r-ebvcube")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebvcube" version))
        (sha256
-        (base32 "1b808rv6g2kilcmwl97rp6h16d2x6px0p03b13q3p5c9j73sbp04"))))
+        (base32 "1pr8adwmqar11r89zjnxnyg2hya282nhap8fyhmharpqq8swm681"))))
     (properties `((upstream-name . "ebvcube")))
     (build-system r-build-system)
     (arguments

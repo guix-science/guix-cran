@@ -2564,13 +2564,13 @@ weights.")
 (define-public r-funcmapper
   (package
     (name "r-funcmapper")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funcMapper" version))
        (sha256
-        (base32 "1cxd0kci7bjda5w0hkaa6a10sbd1izxj9rmxaba8pmmmsb0vr2sk"))))
+        (base32 "04q03zax1yy5a03yaxxcrrh6896wap4zliji6f9di0ws3863drqm"))))
     (properties `((upstream-name . "funcMapper")))
     (build-system r-build-system)
     (arguments
@@ -7551,16 +7551,44 @@ Regression Analysis, First Edition.  New York: Springer.")
      "This package provides a collection of fortunes from the R community.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-fortniter
+  (package
+    (name "r-fortniter")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fortniteR" version))
+       (sha256
+        (base32 "1linykhm2mp4sgwvxgyrmrz5gr748fd8ygz1i2c9vv3ywkrgz5r6"))))
+    (properties `((upstream-name . "fortniteR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-purrr r-httr2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=fortniteR")
+    (synopsis "Access 'Fortnite Ecosystem' API")
+    (description
+     "Interface for accessing the Fortnite Ecosystem API, allowing users to retrieve
+island metadata and engagement metrics.  The package provides functions to
+search for Fortnite Creative islands, retrieve detailed metadata about specific
+islands including titles, descriptions, and tags, and access engagement metrics
+such as daily active users and play duration.  It supports pagination for large
+result sets and time-series analysis of island performance.  The API endpoint is
+<https://api.fortnite.com/ecosystem/v1>.")
+    (license license:expat)))
+
 (define-public r-fortls
   (package
     (name "r-fortls")
-    (version "1.5.3")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FORTLS" version))
        (sha256
-        (base32 "12nzqysz7msgvg56djsfh7ysngadag6c4dzw11v1cflciv0wbcx8"))))
+        (base32 "1cfxcj8ivpbbsnjgwba7bv6r0pwp2kiv8i50rxlfb82jw46hr6xk"))))
     (properties `((upstream-name . "FORTLS")))
     (build-system r-build-system)
     (arguments
@@ -7569,10 +7597,8 @@ Regression Analysis, First Edition.  New York: Springer.")
     (propagated-inputs (list r-vroom
                              r-voxr
                              r-tidyr
-                             r-terra
                              r-sf
                              r-scales
-                             r-rfast
                              r-reticulate
                              r-rcsf
                              r-rcppeigen
@@ -7582,11 +7608,9 @@ Regression Analysis, First Edition.  New York: Springer.")
                              r-progress
                              r-plotly
                              r-moments
-                             r-mapview
                              r-lidr
                              r-htmlwidgets
                              r-glue
-                             r-dplyr
                              r-distance
                              r-dbscan
                              r-data-table))
@@ -8676,51 +8700,6 @@ the FIA also has access to remotely sensed data for all land in the state.  The
 forested package contains a data frame by the same name intended for use in
 predictive modeling applications where the more easily-accessible remotely
 sensed data can be used to predict whether a plot is forested or non-forested.")
-    (license license:expat)))
-
-(define-public r-forestecology
-  (package
-    (name "r-forestecology")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "forestecology" version))
-       (sha256
-        (base32 "0pvh50sdiscgkshlmyngz7pkmpaz03c8x3gfjp5ir52f8710ngb7"))))
-    (properties `((upstream-name . "forestecology")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yardstick
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-snakecase
-                             r-sfheaders
-                             r-sf
-                             r-rlang
-                             r-purrr
-                             r-patchwork
-                             r-mvnfast
-                             r-magrittr
-                             r-glue
-                             r-ggridges
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-blockcv))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rudeboybert/forestecology")
-    (synopsis
-     "Fitting and Assessing Neighborhood Models of the Effect of Interspecific Competition on the Growth of Trees")
-    (description
-     "Code for fitting and assessing models for the growth of trees.  In particular
-for the Bayesian neighborhood competition linear regression model of Allen
-(2020): methods for model fitting and generating fitted/predicted values,
-evaluating the effect of competitor species identity using permutation tests,
-and evaluating model performance using spatial cross-validation.")
     (license license:expat)))
 
 (define-public r-forestdisc
@@ -22493,13 +22472,13 @@ multivariable linear regression model and outliers detection.")
 (define-public r-fastr2
   (package
     (name "r-fastr2")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastR2" version))
        (sha256
-        (base32 "1bmqsjqa13i4dm2pblrwsj1wa80mpi71mpmznc1i199kd4afscgz"))))
+        (base32 "1ryc1315bvqdf6g5zdq7jimy8j11vhckq89x3843carr7qrm1h5s"))))
     (properties `((upstream-name . "fastR2")))
     (build-system r-build-system)
     (arguments
@@ -25087,13 +25066,13 @@ Software 97 (7), 1-30.")
 (define-public r-fameta
   (package
     (name "r-fameta")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAMetA" version))
        (sha256
-        (base32 "0hn4g0qqiy15jg42g27v0rmplm8gh84fr0kpp7q56c21mcs5w4h3"))))
+        (base32 "1klyh2bh2343x4lsiibqm522kjwq7wp70p19cbwdhx9idfn4arwg"))))
     (properties `((upstream-name . "FAMetA")))
     (build-system r-build-system)
     (arguments

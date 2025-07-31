@@ -15165,13 +15165,13 @@ example, k-means.  Implements work developed in Moya B., Walker S. G. (2022).
 (define-public r-cophescan
   (package
     (name "r-cophescan")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cophescan" version))
        (sha256
-        (base32 "0lnc20f1xaijibza4px9m47fy70jz9y9y5m7wk5h50kb4dh6ywxh"))))
+        (base32 "008ajabw40m1d18rjc9dyxrw8dhlgs64ki5yr14204dm3jvgb712"))))
     (properties `((upstream-name . "cophescan")))
     (build-system r-build-system)
     (arguments
@@ -15195,8 +15195,8 @@ example, k-means.  Implements work developed in Moya B., Walker S. G. (2022).
      "This package provides a Bayesian method for Phenome-wide association studies
 (@code{PheWAS}) that identifies causal associations between genetic variants and
 traits, while simultaneously addressing confounding due to linkage
-disequilibrium.  For details see Manipur et al (2023)
-<doi:10.1101/2023.06.29.546856>.")
+disequilibrium.  For details see Manipur et al (2024, Nature Communications)
+<doi:10.1038/s41467-024-49990-8>.")
     (license license:gpl3)))
 
 (define-public r-copernicusr
@@ -16094,13 +16094,13 @@ modeling: Blei et al. (2003) <doi:10.1162/jmlr.2003.3.4-5.993>; Landauer et al.
 (define-public r-conversationalign
   (package
     (name "r-conversationalign")
-    (version "0.2.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ConversationAlign" version))
        (sha256
-        (base32 "1c6rz5z56achzz5lzf5nv4z7fj76gv1av47l3liaxm452a6lfyag"))))
+        (base32 "07qxk98rgal1rxa8xfwb0y0kxqm5n0y5jn4qnq42n4m37ql745f4"))))
     (properties `((upstream-name . "ConversationAlign")))
     (build-system r-build-system)
     (arguments
@@ -16134,7 +16134,7 @@ interlocutors across each transcript for >40 possible semantic, lexical, and
 affective dimensions.  In addition to alignment, @code{ConversationAlign} also
 produces a table of analytics (e.g., token count, type-token-ratio) in a summary
 table describing your particular text corpus.")
-    (license license:gpl3+)))
+    (license license:lgpl3+)))
 
 (define-public r-convergeu
   (package
@@ -17799,13 +17799,13 @@ correctly, OAuth token caching, and refresh behaviour.")
 (define-public r-connectapi
   (package
     (name "r-connectapi")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "connectapi" version))
        (sha256
-        (base32 "08ypacyv8rpalk5i6cccv8qhqbrmjqg3k55s5c2xcsg0fhgikbv4"))))
+        (base32 "1600gxivq5qmlf8bbyw29vr996w5m77rh5l2f33sm35c5dhl2pc5"))))
     (properties `((upstream-name . "connectapi")))
     (build-system r-build-system)
     (arguments
@@ -24567,13 +24567,13 @@ profiles.")
 (define-public r-cohortconstructor
   (package
     (name "r-cohortconstructor")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortConstructor" version))
        (sha256
-        (base32 "198wnnirm7iwls0k0m4sbnsll473fraggn6wrxh366z1c7hk3dy7"))))
+        (base32 "1b4g8axjfq2ybjm31nblp5q1jbc3hshf2lnrb7ygkjqv0xgvi68i"))))
     (properties `((upstream-name . "CohortConstructor")))
     (build-system r-build-system)
     (arguments
@@ -39394,6 +39394,38 @@ studies for a given set of target and outcome cohorts for data mapped to the
 Observational Medical Outcomes Partnership Common Data Model.")
     (license license:asl2.0)))
 
+(define-public r-chapensk
+  (package
+    (name "r-chapensk")
+    (version "0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chapensk" version))
+       (sha256
+        (base32 "0s52wnb3k9qvv16i31c04nyhrq8jbvszad6nsxc06lpnj18294ma"))))
+    (properties `((upstream-name . "chapensk")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-bessel))
+    (home-page "https://github.com/langenbergstefan/chapensk")
+    (synopsis "Estimation of Gas Properties from the Lennard-Jones Potential")
+    (description
+     "Estimation of gas transport properties (viscosity, diffusion, thermal
+conductivity) using Chapman-Enskok theory (Chapman and Larmor 1918,
+<doi:10.1098/rsta.1918.0005>) and of the second virial coefficient (Vargas et
+al.  2001, <doi:10.1016/s0378-4371(00)00362-9>) using the Lennard-Jones (12-6)
+potential.  Up to the third order correction is taken into account for viscosity
+and thermal conductivity.  It is also possible to calculate the binary diffusion
+coefficients of polar and non-polar gases in non-polar bath gases (Brown et al.
+2011, <doi:10.1016/j.pecs.2010.12.001>).  16 collision integrals are calculated
+with four digit accuracy over the reduced temperature range [0.3, 400] using an
+interpolation function of Kim and Monroe (2014,
+<doi:10.1016/j.jcp.2014.05.018>).")
+    (license license:gpl3)))
+
 (define-public r-chaosgame
   (package
     (name "r-chaosgame")
@@ -44500,13 +44532,13 @@ Fleiss (1986) <doi:10.1002/9781118032923> and Carrasco et al. (2013)
 (define-public r-cccp
   (package
     (name "r-cccp")
-    (version "0.3-1")
+    (version "0.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cccp" version))
        (sha256
-        (base32 "06ds1f954m2g3g85rccpvk1bhxqn544qqxg7wzs4jkb97h590dzn"))))
+        (base32 "1i9v40kz05hqar537cnkzw3gbfwlzgd6waxr9wcy086wxpf3wm28"))))
     (properties `((upstream-name . "cccp")))
     (build-system r-build-system)
     (arguments

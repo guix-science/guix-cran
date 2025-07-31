@@ -14485,13 +14485,13 @@ autocorrelation of process jumps on time intervals separated by a lag.")
 (define-public r-hatchr
   (package
     (name "r-hatchr")
-    (version "0.3.2")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hatchR" version))
        (sha256
-        (base32 "1v47kd4hz5mg28bmxxdg3p82skhiv6pds688x7mq1ss76wl0ixyw"))))
+        (base32 "1vnl7yn1i1ki4rps1fys0hr0d5872b8bzh6wh0mghc1r4r2kvh0y"))))
     (properties `((upstream-name . "hatchR")))
     (build-system r-build-system)
     (arguments
@@ -14933,13 +14933,13 @@ including most of the delicious Cantonese cuisine.")
 (define-public r-happign
   (package
     (name "r-happign")
-    (version "0.3.3")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "happign" version))
        (sha256
-        (base32 "1yrv0j2xdwwadi1q1slwr9fbb72d4dfp59j064s2anyzl02q9xrm"))))
+        (base32 "13qd3b83174h3mixp1sr9flyggs0w2j5ffpvcg9fyrkjca7fai83"))))
     (properties `((upstream-name . "happign")))
     (build-system r-build-system)
     (arguments
@@ -14952,8 +14952,7 @@ including most of the delicious Cantonese cuisine.")
                              r-sf
                              r-jsonlite
                              r-httr2
-                             r-dplyr
-                             r-archive))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/paul-carteron")
     (synopsis "R Interface to 'IGN' Web Services")
@@ -14962,8 +14961,7 @@ including most of the delicious Cantonese cuisine.")
 Information Geographique et forestiere') (<https://www.ign.fr/>).  Available
 datasets include various types of raster and vector data, such as digital
 elevation models, state borders, spatial databases, cadastral parcels, and more.
- There also access to point clouds data ('LIDAR') and specifics API
-(<https://apicarto.ign.fr/api/doc/>).")
+ happign also provide access to API Carto (<https://apicarto.ign.fr/api/doc/>).")
     (license license:gpl3+)))
 
 (define-public r-haplovar

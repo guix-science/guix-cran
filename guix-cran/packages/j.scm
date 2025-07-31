@@ -1219,13 +1219,13 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.5.13")
+    (version "0.5.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jskm" version))
        (sha256
-        (base32 "0dmpfpjy4spv5f81sz6ciydqx7d7mvli8fnw4gp7vqn1hxs37ly3"))))
+        (base32 "19y99gnmkf5lqip56iizs0s4lcl7y3300rj41jlgdpmrsr73jjzd"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
     (arguments
@@ -4290,13 +4290,13 @@ Simple AWT and Swing implementations are included.")
 (define-public r-jatsdecoder
   (package
     (name "r-jatsdecoder")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JATSdecoder" version))
        (sha256
-        (base32 "01nqj3w690gn4iqy35v215451agfx1dfgc5vbmmc5wp5r2rk2p09"))))
+        (base32 "13cxqbxi83j2hblncv3s8vg7jp1a8cyw20yaa3s5x0a9fx8m6s3p"))))
     (properties `((upstream-name . "JATSdecoder")))
     (build-system r-build-system)
     (arguments
@@ -4316,14 +4316,18 @@ NISO-JATS'-tagged XML files to a structured list with elements title, author,
 journal, history, DOI', abstract, sectioned text and reference list.
 @code{study.character()} extracts multiple study characteristics like number of
 included studies, statistical methods used, alpha error, power, statistical
-results, correction method for multiple testing, software used.  An estimation
-of the involved sample size is performed based on reports within the abstract
-and the reported degrees of freedom within statistical results.  In addition,
-the package contains some useful functions to process text
-@code{(text2sentences()}, @code{text2num()}, @code{ngram()}, @code{strsplit2()},
-@code{grep2()}).  See BÃ¶schen, I. (2021) <doi:10.1007/s11192-021-04162-z>
-BÃ¶schen, I. (2021) <doi:10.1038/s41598-021-98782-3> and BÃ¶schen, I (2023)
-<doi:10.1038/s41598-022-27085-y>.")
+results, correction method for multiple testing, software used.  The function
+@code{get.stats()} extracts all statistical results from text and recomputes
+p-values for many standard test statistics.  It performs a consistency check of
+the reported with the recalculated p-values.  An estimation of the involved
+sample size is performed based on textual reports within the abstract and the
+reported degrees of freedom within statistical results.  In addition, the
+package contains some useful functions to process text @code{(text2sentences()},
+@code{text2num()}, @code{ngram()}, @code{strsplit2()}, @code{grep2()}).  See
+BÃ¶schen, I. (2021) <doi:10.1007/s11192-021-04162-z> BÃ¶schen, I. (2021)
+<doi:10.1038/s41598-021-98782-3>, BÃ¶schen, I. (2023)
+<doi:10.1038/s41598-022-27085-y>, and BÃ¶schen, I. (2024)
+<doi:10.48550/@code{arXiv.2408.07948>}.")
     (license license:gpl3)))
 
 (define-public r-jarbes
@@ -4441,13 +4445,13 @@ deep-neural networks using tensorflow'.")
 (define-public r-jane
   (package
     (name "r-jane")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JANE" version))
        (sha256
-        (base32 "11g6zag8qrp4vvjf7c5wizh7b8ai5wlzi2cmr84fbwk80vli1sa5"))))
+        (base32 "0cwsgdkfd94wzm86q53swlh4dvzgigl2wfpbvycsrnbh6r4bv2ly"))))
     (properties `((upstream-name . "JANE")))
     (build-system r-build-system)
     (arguments
@@ -4467,18 +4471,19 @@ deep-neural networks using tensorflow'.")
                              r-future
                              r-extradistr
                              r-aricode))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/a1arakkal/JANE")
     (synopsis "Just Another Latent Space Network Clustering Algorithm")
     (description
      "Fit latent space network cluster models using an expectation-maximization
 algorithm.  Enables flexible modeling of unweighted or weighted network data
 (with or without noise edges), supporting both directed and undirected networks
-(with or without degree heterogeneity).  Designed to handle large networks
-efficiently, it allows users to explore network structure through latent space
-representations, identify clusters (i.e., community detection) within network
-data, and simulate networks with varying clustering, connectivity patterns, and
-noise edges.  Methodology for the implementation is described in Arakkal and
-Sewell (2025) <doi:10.1016/j.csda.2025.108228>.")
+(with or without degree and strength heterogeneity).  Designed to handle large
+networks efficiently, it allows users to explore network structure through
+latent space representations, identify clusters (i.e., community detection)
+within network data, and simulate networks with varying clustering, connectivity
+patterns, and noise edges.  Methodology for the implementation is described in
+Arakkal and Sewell (2025) <doi:10.1016/j.csda.2025.108228>.")
     (license license:gpl3+)))
 
 (define-public r-jamendor

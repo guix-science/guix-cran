@@ -2200,13 +2200,13 @@ either be used offline, or hosted on a server to provide online access to the
 (define-public r-isoplotr
   (package
     (name "r-isoplotr")
-    (version "6.6")
+    (version "6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotR" version))
        (sha256
-        (base32 "04kjxdnvj28gbq5lxlhnbf7hsl9sd1vg7k8d38imc22qd59255ym"))))
+        (base32 "02nzxpw36ic60iv14fcxaijh004k1km45k94c4g0wair60ljxgww"))))
     (properties `((upstream-name . "IsoplotR")))
     (build-system r-build-system)
     (arguments
@@ -6219,13 +6219,13 @@ Seasonal-Trend Decomposition Procedure Based on Loess\".")
 (define-public r-inzighttools
   (package
     (name "r-inzighttools")
-    (version "2.0.1")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNZightTools" version))
        (sha256
-        (base32 "0qmpj8hwg4gmbyhp4r1li3rrq2f5743kg04r7s7ii0j9gwsw3y0s"))))
+        (base32 "1hg1lqdwp790dni6dj1c55qapwxi1jci91grm3z2964lrv4dam3l"))))
     (properties `((upstream-name . "iNZightTools")))
     (build-system r-build-system)
     (arguments
@@ -6245,7 +6245,7 @@ Seasonal-Trend Decomposition Procedure Based on Loess\".")
                              r-forcats
                              r-dplyr
                              r-dbi))
-    (home-page "https://inzight.nz")
+    (home-page "https://tools.inzight.nz")
     (synopsis "Tools for 'iNZight'")
     (description
      "This package provides a collection of wrapper functions for common variable and
@@ -6259,13 +6259,13 @@ effort to bridge the gap between GUI and coding.")
 (define-public r-inzightregression
   (package
     (name "r-inzightregression")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNZightRegression" version))
        (sha256
-        (base32 "0zqfb25gz4dwf0hqccgq3pb5wv2zmkw3ldkpscwkmc12pz2xm7im"))))
+        (base32 "1xgvwidnx4gk5a6zakk9ik2f07wwjhkx9dy1377ggjz1qf337q7j"))))
     (properties `((upstream-name . "iNZightRegression")))
     (build-system r-build-system)
     (arguments
@@ -6785,53 +6785,6 @@ with elastic net penalty following Masud et al. (2018)
 <doi:10.1111/j.1467-9868.2005.00503.x>, and weighted concordance index for cure
 models proposed by Asano and Hirakawa (2017)
 <doi:10.1080/10543406.2017.1293082>.")
-    (license license:gpl3+)))
-
-(define-public r-intsdm
-  (package
-    (name "r-intsdm")
-    (version "2.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "intSDM" version))
-       (sha256
-        (base32 "13qh4aa96hkrq1q7n22m8b6g64i5nw4n2wq320izqnc8nkrq3hv5"))))
-    (properties `((upstream-name . "intSDM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-units
-                             r-tidyterra
-                             r-terra
-                             r-sf
-                             r-rgbif
-                             r-r6
-                             r-pointedsdms
-                             r-inlabru
-                             r-giscor
-                             r-ggplot2
-                             r-geodata
-                             r-fmesher
-                             r-blockcv))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=intSDM")
-    (synopsis
-     "Reproducible Integrated Species Distribution Models Across Norway using 'INLA'")
-    (description
-     "Integration of disparate datasets is needed in order to make efficient use of
-all available data and thereby address the issues currently threatening
-biodiversity.  Data integration is a powerful modeling framework which allows us
-to combine these datasets together into a single model, yet retain the strengths
-of each individual dataset.  We therefore introduce the package, @code{intSDM}':
-an R package designed to help ecologists develop a reproducible workflow of
-integrated species distribution models, using data both provided from the user
-as well as data obtained freely online.  An introduction to data integration
-methods is discussed in Issac, Jarzyna, Keil, Dambly, Boersch-Supan, Browning,
-Freeman, Golding, Guillera-Arroita, Henrys, Jarvis, Lahoz-Monfort, Pagel,
-Pescott, Schmucki, Simmonds and OâHara (2020)
-<doi:10.1016/j.tree.2019.08.006>.")
     (license license:gpl3+)))
 
 (define-public r-intrvals
@@ -8401,6 +8354,35 @@ Lynam DR, Olino TM (2023). \"Tutorial: Power analyses for interaction effects in
 cross-sectional regressions.\" <doi:10.1177/25152459231187531>.")
     (license license:gpl3+)))
 
+(define-public r-inteq
+  (package
+    (name "r-inteq")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inteq" version))
+       (sha256
+        (base32 "16a9qvrsskz61y9qj5spqpffm5a8y9ziyszki5nznj98805r9474"))))
+    (properties `((upstream-name . "inteq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=inteq")
+    (synopsis "Numerical Solution of Integral Equations")
+    (description
+     "An R implementation of Matthew Thomas's Python library inteq'.  First, this
+solves Fredholm integral equations of the first kind ($f(s) = \\int_a^b K(s, y)
+g(y) dy$) using methods described by Twomey (1963) <doi:10.1145/321150.321157>.
+Second, this solves Volterra integral equations of the first kind ($f(s) =
+\\int_0^s K(s,y) g(t) dt$) using methods from Betto and Thomas (2021)
+<doi:10.48550/@code{arXiv.2106.08496>}.  Third, this solves Voltera integral
+equations of the second kind ($g(s) = f(s) + \\int_a^s K(s,y) g(y) dy$) using
+methods from Linz (1969) <doi:10.1137/0706034>.")
+    (license license:expat)))
+
 (define-public r-intensitynet
   (package
     (name "r-intensitynet")
@@ -8704,13 +8686,13 @@ underlying data, as well as functions to calibrate radiocarbon dates.")
 (define-public r-intamap
   (package
     (name "r-intamap")
-    (version "1.5-10")
+    (version "1.5-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intamap" version))
        (sha256
-        (base32 "0107akjscl1wqrcvrdfzhbxvf0s7rzbg6caq5pv5n7rawqqksrf5"))))
+        (base32 "1prpri38r0j5n7kl4w11593vc4k6ywp4hc57d5m9g4nmhh50637m"))))
     (properties `((upstream-name . "intamap")))
     (build-system r-build-system)
     (arguments
@@ -14639,29 +14621,29 @@ more details see Rutter, Ozik, @code{DeYoreo}, and Collier (2018)
 (define-public r-ilsm
   (package
     (name "r-ilsm")
-    (version "1.0.3.2")
+    (version "1.1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ILSM" version))
        (sha256
-        (base32 "1wqw33yg3r6bdwhhczaxhkdpzpmxjd58ns2j9q55lx5vvk4q97dh"))))
+        (base32 "1lszgals6k9klba3gh0q98pabvgfl34nl9hb9nq231fsvq73k6cr"))))
     (properties `((upstream-name . "ILSM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix r-igraph))
+    (propagated-inputs (list r-vegan r-plot-matrix r-igraph))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ILSM")
+    (home-page "https://github.com/WeichengSun/ILSM")
     (synopsis
-     "Analyze Interconnection Structure of Multilayer Interaction Networks")
+     "Analyze Interconnection Structure of Tripartite Interaction Networks")
     (description
-     "In view of the analysis of the structural characteristics of the multilayer
+     "In view of the analysis of the structural characteristics of the tripartite
 network has been complete, however, there is still a lack of a unified operation
-that can quickly obtain the corresponding characteristics of the multilayer
+that can quickly obtain the corresponding characteristics of the tripartite
 network.  To solve this insufficiency, ILSM was designed for supporting
-calculating such metrics of multilayer networks by functions of this R package.")
+calculating such metrics of tripartite networks by functions of this R package.")
     (license license:expat)))
 
 (define-public r-ilse
@@ -17426,13 +17408,13 @@ freely delivered under formal request through the official web page
 (define-public r-ideafilter
   (package
     (name "r-ideafilter")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IDEAFilter" version))
        (sha256
-        (base32 "0clr5jkrmwp6nd491rm67i794kh0dcjlhf6z56a8pvjhhia29hpy"))))
+        (base32 "0nynip92nb51f782j2r8n1dqyq21grnhxcsjvgh7ifjczbxw8wbg"))))
     (properties `((upstream-name . "IDEAFilter")))
     (build-system r-build-system)
     (arguments

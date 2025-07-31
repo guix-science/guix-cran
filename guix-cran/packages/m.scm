@@ -6230,13 +6230,13 @@ package, both methodological and graphical.")
 (define-public r-multideggs
   (package
     (name "r-multideggs")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiDEGGs" version))
        (sha256
-        (base32 "0fs4l8bs92bmf9zf7vnj335ii2kwbnmp599k6h42ypg92sp076y0"))))
+        (base32 "0z91l72rb1hzh9c6d07y73z0b87vnc8dk6nb50mdbfkzm1z8nn4l"))))
     (properties `((upstream-name . "multiDEGGs")))
     (build-system r-build-system)
     (arguments
@@ -9986,13 +9986,13 @@ extensions.")
 (define-public r-mscct
   (package
     (name "r-mscct")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSCCT" version))
        (sha256
-        (base32 "1z6ivhr698cnyigr661dn5yhghj0mbnrx4g5ycyvfanvwj86pvm2"))))
+        (base32 "1b19bwvd1lyjfcs32cph5fi2hzd1xzfk2h2xspq7vpimav9i7k8f"))))
     (properties `((upstream-name . "MSCCT")))
     (build-system r-build-system)
     (arguments
@@ -12881,13 +12881,13 @@ maximum likelihood approach.")
 (define-public r-movementsync
   (package
     (name "r-movementsync")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "movementsync" version))
        (sha256
-        (base32 "132m7df76hj96xpbh1k9s1p8j8jy51mv9v6xrlm35kgwxgk912zk"))))
+        (base32 "15ydc2anks4wxyyryyzmqck68zlcfqn6ck51svxis0gmabq64ik9"))))
     (properties `((upstream-name . "movementsync")))
     (build-system r-build-system)
     (arguments
@@ -13035,13 +13035,13 @@ over time.")
 (define-public r-movedesign
   (package
     (name "r-movedesign")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "movedesign" version))
        (sha256
-        (base32 "19qrldazrrjzsgk0nyv2nyciif3gxz803s2z9rhvqxhi0xb1bam1"))))
+        (base32 "0xagcqf7yxbydpxydri19q0mh8bgiysilgiv9w2ldb5sak19iqni"))))
     (properties `((upstream-name . "movedesign")))
     (build-system r-build-system)
     (arguments
@@ -35501,22 +35501,26 @@ models.")
 (define-public r-metaforest
   (package
     (name "r-metaforest")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaforest" version))
        (sha256
-        (base32 "1b578s08621x5g2sqgi88sdlknq3zaql5xbhdggzml8c0n7lhbc1"))))
+        (base32 "0bi53dkqsgivqqzl0nxxrsjlgfgwx1g7sxp6wng924pzxdzn0sw9"))))
     (properties `((upstream-name . "metaforest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ranger r-metafor r-gtable r-ggplot2
+    (propagated-inputs (list r-ranger
+                             r-metafor
+                             r-metadat
+                             r-gtable
+                             r-ggplot2
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=metaforest")
+    (home-page "https://cjvanlissa.github.io/metaforest/")
     (synopsis "Exploring Heterogeneity in Meta-Analysis using Random Forests")
     (description
      "Conduct random forests-based meta-analysis, obtain partial dependence plots for
@@ -38199,13 +38203,13 @@ test, and Sobel's test under the composite null hypothesis.  Du et al (2023)
 (define-public r-medparser
   (package
     (name "r-medparser")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medparser" version))
        (sha256
-        (base32 "1xgylvgjcaxw49sy65chwr56iinsmfm0bj32mw1f4ssc6l0bm2ab"))))
+        (base32 "0swc2glm59wdcl4nscm88k7mks79g24r7n6xivabpvbqb1yk8p93"))))
     (properties `((upstream-name . "medparser")))
     (build-system r-build-system)
     (arguments
@@ -39115,13 +39119,13 @@ allows sending HTTP tracking events from R code.")
 (define-public r-measurementdiagnostics
   (package
     (name "r-measurementdiagnostics")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MeasurementDiagnostics" version))
        (sha256
-        (base32 "12sgjml4vza143ahdm9nc8ip847k428x4kn2050gmf5cr4gv0bq0"))))
+        (base32 "01w63mpgfgbs91jph6wqq4b29n574maj74macvddjhb3pzg04kpp"))))
     (properties `((upstream-name . "MeasurementDiagnostics")))
     (build-system r-build-system)
     (arguments
@@ -39138,7 +39142,7 @@ allows sending HTTP tracking events from R code.")
                              r-cohortconstructor
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MeasurementDiagnostics")
+    (home-page "https://ohdsi.github.io/MeasurementDiagnostics/")
     (synopsis "Diagnostics for Lists of Codes Based on Measurements")
     (description
      "Diagnostics of list of codes based on concepts from the domains measurement and
@@ -46758,13 +46762,13 @@ Bias.")
 (define-public r-marmap
   (package
     (name "r-marmap")
-    (version "1.0.10")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marmap" version))
        (sha256
-        (base32 "0zmik6hpc44syknn7k9pbmy01jpnlp4sc9n3rhslrpnks39l0hvq"))))
+        (base32 "15c8q3yiq10q7l5navk1xrjxqy89bap9hh4mvlyja4b98y5j7rbf"))))
     (properties `((upstream-name . "marmap")))
     (build-system r-build-system)
     (arguments
@@ -46790,12 +46794,13 @@ Bias.")
     (home-page "https://github.com/ericpante/marmap")
     (synopsis "Import, Plot and Analyze Bathymetric and Topographic Data")
     (description
-     "Import xyz data from the NOAA (National Oceanic and Atmospheric Administration,
-<https://www.noaa.gov>), GEBCO (General Bathymetric Chart of the Oceans,
-<https://www.gebco.net>) and other sources, plot xyz data to prepare
-publication-ready figures, analyze xyz data to extract transects, get depth /
-altitude based on geographical coordinates, or calculate z-constrained
-least-cost paths.")
+     "Import bathymetric and hypsometric data from the NOAA (National Oceanic and
+Atmospheric Administration,
+<https://www.ncei.noaa.gov/products/etopo-global-relief-model>), GEBCO (General
+Bathymetric Chart of the Oceans, <https://www.gebco.net>) and other sources,
+plot xyz data to prepare publication-ready figures, analyze xyz data to extract
+transects, get depth / altitude based on geographical coordinates, or calculate
+z-constrained least-cost paths.")
     (license license:gpl3+)))
 
 (define-public r-marlod

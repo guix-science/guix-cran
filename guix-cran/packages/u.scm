@@ -4735,13 +4735,13 @@ month.")
 (define-public r-ufs
   (package
     (name "r-ufs")
-    (version "0.5.12")
+    (version "25.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ufs" version))
        (sha256
-        (base32 "002xvhn1mcgfjzaslarra0bv33plyz1a4akjxxbmh4q4v6abxk88"))))
+        (base32 "1ryf4a2fkr83xbpwb4y9nmkn14jpqmqr3qigwb8jg5idji0q6wps"))))
     (properties `((upstream-name . "ufs")))
     (build-system r-build-system)
     (arguments

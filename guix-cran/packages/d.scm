@@ -2241,13 +2241,13 @@ writing, and performing some geometric operations.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckplyr" version))
        (sha256
-        (base32 "1cl8snkm87wf3xm989h4bwv8skjljblhi66ry16h9r1gbfrvngny"))))
+        (base32 "03l99swgcyy1fjfpwvza6f6r7g6j3485753bdjl7wk3f9c7ydjbi"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
     (arguments
@@ -3010,34 +3010,6 @@ Chain(s) based on transition probabilities and an initial distribution.  The
 function FPTime determines the first passage time into each state.  The function
 statdistr determines the stationary distribution of a Markov Chain.")
     (license license:gpl2+)))
-
-(define-public r-dtmapi
-  (package
-    (name "r-dtmapi")
-    (version "0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dtmapi" version))
-       (sha256
-        (base32 "1hb50z1w5x6zs4k0kpwyg4qa3i6r9qmfpiiym99rf9d4mx3k4scb"))))
-    (properties `((upstream-name . "dtmapi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-magrittr r-jsonlite r-httr2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Displacement-Tracking-Matrix/dtmapi-R")
-    (synopsis "Fetching Data from the 'Displacement Tracking Matrix'")
-    (description
-     "Allows humanitarian community, academia, media, government, and non-governmental
-organizations to utilize the data collected by the Displacement Tracking Matrix
-(<https://dtm.iom.int>), a unit in the International Organization for Migration.
- This also provides non-sensitive Internally Displaced Person figures,
-aggregated at the country, Admin 1 (states, provinces, or equivalent), and Admin
-2 (smaller administrative areas) levels.")
-    (license license:expat)))
 
 (define-public r-dtlcor
   (package
@@ -9163,13 +9135,13 @@ Nascimento (2021)
 (define-public r-dogoftest
   (package
     (name "r-dogoftest")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Dogoftest" version))
        (sha256
-        (base32 "0rbnxaplzbicflr1fpm660cs3zizdn7pkb7vjb74zbx18yczslci"))))
+        (base32 "12j9j3qf3i9ifh61qwi3fdz229nz4pvhyrcybhvxzgd8nqpxs89b"))))
     (properties `((upstream-name . "Dogoftest")))
     (build-system r-build-system)
     (arguments
@@ -10955,13 +10927,13 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
 (define-public r-dma
   (package
     (name "r-dma")
-    (version "1.4-0")
+    (version "1.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dma" version))
        (sha256
-        (base32 "003snr09hazszwqnvjrbv8vyz6ihgcfcfhrlshg451dddn920615"))))
+        (base32 "12pqwpvahhk5f4m72npzbx6fir3d9vrxcmv0l5724lpj57s1hq9c"))))
     (properties `((upstream-name . "dma")))
     (build-system r-build-system)
     (arguments
@@ -26106,13 +26078,13 @@ see Rodriguez-Alvarez, Inacio et al. (2025) for more details.")
 (define-public r-ddpna
   (package
     (name "r-ddpna")
-    (version "0.3.3")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DDPNA" version))
        (sha256
-        (base32 "10asskc757c2xmp2xc4v6gzp43jj4db93xjdq8hqqfvr0vyvmffy"))))
+        (base32 "1kynw40r9vrp8ilg3nmb7zjadymfczf4711k9zkc2bpqd1figv10"))))
     (properties `((upstream-name . "DDPNA")))
     (build-system r-build-system)
     (arguments
@@ -26124,8 +26096,9 @@ see Rodriguez-Alvarez, Inacio et al. (2025) for more details.")
                              r-megena
                              r-igraph
                              r-hmisc
+                             r-ggrepel
                              r-ggplot2
-                             r-ggalt))
+                             r-ggfun))
     (home-page "https://github.com/liukf10/DDPNA")
     (synopsis
      "Disease-Drived Differential Proteins Co-Expression Network Analysis")
@@ -27424,13 +27397,13 @@ for social networks.  Fushing, @code{VanderWaal}, @code{McCowan}, & Koehl (2013)
 (define-public r-dcetool
   (package
     (name "r-dcetool")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DCEtool" version))
        (sha256
-        (base32 "1jgdlhsb9z3vvdf8xam2j1dph8jzs9b1d6mwvf7dg1hbaddv7bss"))))
+        (base32 "0wk97ljabvns1338zs030kq53vqhffz6bm7v45xz9qqyb5falpr1"))))
     (properties `((upstream-name . "DCEtool")))
     (build-system r-build-system)
     (arguments
@@ -27450,9 +27423,11 @@ for social networks.  Fushing, @code{VanderWaal}, @code{McCowan}, & Koehl (2013)
                              r-mvtnorm
                              r-magrittr
                              r-idefix
+                             r-httr
                              r-htmltools
                              r-ggplot2
-                             r-dt))
+                             r-dt
+                             r-adjustedcranlogs))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DCEtool")
     (synopsis "Efficient and Accessible Discrete Choice Experiments")

@@ -2284,54 +2284,6 @@ methodologies used in the package can be found in Sharma, A., Mehrotra, R.
 (2006). <doi:10.1016/j.advwatres.2005.08.007>.")
     (license license:gpl3)))
 
-(define-public r-nprcgenekeepr
-  (package
-    (name "r-nprcgenekeepr")
-    (version "1.0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nprcgenekeepr" version))
-       (sha256
-        (base32 "0liyhmz90idzq19liip0cwnsfm07fggpcdzi5jjfz7gjxbfsb6ji"))))
-    (properties `((upstream-name . "nprcgenekeepr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-writexls
-                             r-stringi
-                             r-shiny
-                             r-sessioninfo
-                             r-rlabkey
-                             r-readxl
-                             r-plotrix
-                             r-matrix
-                             r-lubridate
-                             r-lifecycle
-                             r-htmltable
-                             r-futile-logger
-                             r-data-table
-                             r-anytime))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://rmsharp.github.io/nprcgenekeepr/")
-    (synopsis "Genetic Tools for Colony Management")
-    (description
-     "This package provides genetic tools for colony management and is a derivation of
-the work in Amanda Vinson and Michael J Raboin (2015)
-<https://pmc.ncbi.nlm.nih.gov/articles/PMC4671785/> \"A Practical Approach for
-Designing Breeding Groups to Maximize Genetic Diversity in a Large Colony of
-Captive Rhesus Macaques ('Macaca mulatto')\".  It provides a Shiny application
-with an exposed API. The application supports five groups of functions: (1)
-Quality control of studbooks contained in text files or Excel workbooks and of
-pedigrees within @code{LabKey} Electronic Health Records (EHR); (2) Creation of
-pedigrees from a list of animals using the @code{LabKey} EHR integration; (3)
-Creation and display of an age by sex pyramid plot of the living animals within
-the designated pedigree; (4) Generation of genetic value analysis reports; and
-(5) Creation of potential breeding groups with and without proscribed sex ratios
-and defined maximum kinships.")
-    (license license:expat)))
-
 (define-public r-npphen
   (package
     (name "r-npphen")
@@ -9213,13 +9165,13 @@ occupancy, hidden Markov, dynamic hidden Markov, and N-mixture models. (Jolly
 (define-public r-nimblecarbon
   (package
     (name "r-nimblecarbon")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nimbleCarbon" version))
        (sha256
-        (base32 "0gqzdiid3x5k8286j3wy31pha76diniyj7si0mzrmq13kw77lsls"))))
+        (base32 "0k9k3k5qm5saj5xgz0niydc6m91dcr2428vhmh1vka7zz4cwfvfv"))))
     (properties `((upstream-name . "nimbleCarbon")))
     (build-system r-build-system)
     (arguments
@@ -9785,13 +9737,13 @@ COVID-19 scale, NIAID OS.")
 (define-public r-nhstplot
   (package
     (name "r-nhstplot")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhstplot" version))
        (sha256
-        (base32 "162v85h9prl2kcchm219577ljw2an2hjapxyqxiv6xymp06cw4bn"))))
+        (base32 "04hayyfi0f0288v9wvwciyf0hwiy8kdp9vjyn030p1373slxjgrn"))))
     (properties `((upstream-name . "nhstplot")))
     (build-system r-build-system)
     (arguments

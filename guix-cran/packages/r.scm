@@ -11,11 +11,11 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages java)
   #:use-module (gnu packages spreadsheet)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages image)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages maths)
-  #:use-module (gnu packages web)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages backup)
   #:use-module (gnu packages xml)
@@ -1703,19 +1703,34 @@ licensed under the GNU GPL version 3.")
 (define-public r-rvif
   (package
     (name "r-rvif")
-    (version "2.0")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvif" version))
        (sha256
-        (base32 "0w7any6km13jnad9jx1a8gkfmzbz345dwkhm5mxi06zfk65yv65r"))))
+        (base32 "0jkp5kh1aq2gwww6zxfila6fb7fis9hlihfl40f95vn8hdjwsxfg"))))
     (properties `((upstream-name . "rvif")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
-    (propagated-inputs (list r-multicoll))
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-multicoll r-car))
+    (native-inputs (list r-knitr esbuild))
     (home-page "http://colldetreat.r-forge.r-project.org/")
     (synopsis
      "Collinearity Detection using Redefined Variance Inflation Factor and Graphical Methods")
@@ -1728,9 +1743,12 @@ variation.  For more details see SalmerÃ³n R., GarcÃ­a C.B. and GarcÃ­a J.
 (2018) <doi:10.1080/00949655.2018.1463376>, SalmerÃ³n, R., RodrÃ­guez, A. and
 GarcÃ­a C. (2020) <doi:10.1007/s00180-019-00922-x>, SalmerÃ³n, R., GarcÃ­a, C.B,
 RodrÃ­guez, A. and GarcÃ­a, C. (2022) <doi:10.32614/RJ-2023-010>, SalmerÃ³n, R.,
-GarcÃ­a, C.B. and GarcÃ­a, J. (2024) <doi:10.1007/s10614-024-10575-8> and
+GarcÃ­a, C.B. and GarcÃ­a, J. (2025) <doi:10.1007/s10614-024-10575-8> and
 SalmerÃ³n, R., GarcÃ­a, C.B, GarcÃ­a J. (2023, working paper)
-<doi:10.48550/@code{arXiv.2005.02245>}.")
+<doi:10.48550/@code{arXiv.2005.02245>}.  You can also view the package vignette
+using @code{browseVignettes(\"rvif}\")', the package website using
+@code{browseURL(system.file(\"docs/index.html}\", package = \"rvif\")) or version
+control on @code{GitHub} (<https://github.com/rnoremlas/rvif_package>).")
     (license license:gpl2+)))
 
 (define-public r-rviewgraph
@@ -2266,13 +2284,13 @@ convolutions via Fast Fourier Transform (FFT).")
 (define-public r-runonce
   (package
     (name "r-runonce")
-    (version "0.2.3")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "runonce" version))
        (sha256
-        (base32 "04lmzw9ldc3b6zdc7sr3mrfiam24372j11l5p1y9i2zjb9rxk1nn"))))
+        (base32 "1if51m0lb85v6cfi6dy071g8q04hzm1rfa6lzlb9qk2f0w897fkm"))))
     (properties `((upstream-name . "runonce")))
     (build-system r-build-system)
     (arguments
@@ -8046,13 +8064,13 @@ function call.  An API key from the U.S. Department of Education is required.")
 (define-public r-rscopus
   (package
     (name "r-rscopus")
-    (version "0.8.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rscopus" version))
        (sha256
-        (base32 "1cqgidnr8w20cs6l4rgaddj4n5n3zamqf6bvh9pzd2f616hl1nfv"))))
+        (base32 "1m6sc56hsfr2xyd3ry20b6qxa40znq97dnvjp08vp7r53w48c0pc"))))
     (properties `((upstream-name . "rscopus")))
     (build-system r-build-system)
     (arguments
@@ -29020,13 +29038,13 @@ search for related songs or song information.  More information:
 (define-public r-rgenerateprec
   (package
     (name "r-rgenerateprec")
-    (version "1.2.9")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RGENERATEPREC" version))
        (sha256
-        (base32 "0bnw77vny61pkhp9pb3v3ckz6immm4pp9f7qzyhc97646fci9ysl"))))
+        (base32 "13qk00gd5gpf20rb7fb569bf5gs54gkl2zs04jd7iybwmnphxby4"))))
     (properties `((upstream-name . "RGENERATEPREC")))
     (build-system r-build-system)
     (arguments
@@ -29036,10 +29054,11 @@ search for related songs or song information.  More information:
                              r-rmawgen
                              r-rgenerate
                              r-matrix
+                             r-lubridate
                              r-copula
                              r-blockmatrix))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ecor/RGENERATEPREC")
+    (home-page "https://ecor.github.io/RGENERATEPREC/")
     (synopsis "Tools to Generate Daily-Precipitation Time Series")
     (description
      "The method @code{generate()} is extended for spatial multi-site stochastic
@@ -29051,19 +29070,19 @@ approach by D.S. Wilks (1998) <doi:10.1016/S0022-1694(98)00186-3> .")
 (define-public r-rgenerate
   (package
     (name "r-rgenerate")
-    (version "1.3.7")
+    (version "1.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RGENERATE" version))
        (sha256
-        (base32 "0w6hqrf2lr6qz79skml2vjpfwfv5vxj94rghxxa3rp9dqzhi7rc0"))))
+        (base32 "19l35hhxy5hbdyk2q2vqad146crykap7wb179gwbwfqzl9v1ryd9"))))
     (properties `((upstream-name . "RGENERATE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rmawgen r-magrittr))
+    (propagated-inputs (list r-vars r-rmawgen r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ecor/RGENERATE")
     (synopsis "Tools to Generate Vector Time Series")
@@ -29648,13 +29667,13 @@ in: <http://forsys.sefs.uw.edu/fusion/fusionlatest.html>).")
 (define-public r-rfssa
   (package
     (name "r-rfssa")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rfssa" version))
        (sha256
-        (base32 "0knz199h29ph6qxbasrjqdyhgsqnrmp83syz3d3mblqnlz3ar1mi"))))
+        (base32 "0cbmz30gnrv6qxa6svr1rkbq4y7vk4arzamvfiq24sfbfvrr82nc"))))
     (properties `((upstream-name . "Rfssa")))
     (build-system r-build-system)
     (arguments
@@ -32785,13 +32804,13 @@ For more details on Feature Selection see Theng and Bhoyar (2023)
 (define-public r-resin
   (package
     (name "r-resin")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ResIN" version))
        (sha256
-        (base32 "037dlkdzb1j9i5b8pkri6phqbwpi0687w0yhv3b52yp07wvssh2k"))))
+        (base32 "0mgx4k0rsqf4wxlxjsfw7zp8ri7fpwj4xrjqaag45mk08rxkx21p"))))
     (properties `((upstream-name . "ResIN")))
     (build-system r-build-system)
     (arguments
@@ -32915,18 +32934,22 @@ licence Sandercock et al. (2011) <doi:10.7488/ds/104>, Sandercock et al. (2011)
 (define-public r-resi
   (package
     (name "r-resi")
-    (version "1.3.0")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RESI" version))
        (sha256
-        (base32 "04pi6j8yzcxfzq3irdwg4zd3wmkf3mw8ra9d0kcgabpmdf48bg9q"))))
+        (base32 "0g8gbbdxlf8wxbkhjjbpwdgis5g7ibm4gl3fcdrr7g894i14vfjm"))))
     (properties `((upstream-name . "RESI")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-sandwich
                              r-nlme
                              r-lmtest
@@ -32935,7 +32958,7 @@ licence Sandercock et al. (2011) <doi:10.7488/ds/104>, Sandercock et al. (2011)
                              r-car
                              r-boot
                              r-aod))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://statimagcoll.github.io/RESI/")
     (synopsis "Robust Effect Size Index (RESI) Estimation")
     (description
@@ -33710,6 +33733,41 @@ REPSD values, a simulated null distribution of possible REPSD values, and the
 simulated p-values identifying items possibly displaying DIF without requiring
 enormous sample sizes.")
     (license license:expat)))
+
+(define-public r-reps
+  (package
+    (name "r-reps")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "REPS" version))
+       (sha256
+        (base32 "042avc8zd33lykjcqc5ly3vlfygvh1wq2jmk846gka1mi6yjl78r"))))
+    (properties `((upstream-name . "REPS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-lmtest r-kfas r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vivekag7/REPS")
+    (synopsis
+     "Hedonic and Multilateral Index Methods for Real Estate Price Statistics")
+    (description
+     "Compute price indices using various Hedonic and multilateral methods, including
+Laspeyres, Paasche, Fisher, and HMTS (Hedonic Multilateral Time series
+re-estimation with splicing).  The central function
+@code{calculate_price_index()} offers a unified interface for running these
+methods on structured datasets.  This package is designed to support index
+construction workflows across a wide range of domains â including but not
+limited to real estate â where quality-adjusted price comparisons over time
+are essential.  The development of this package was funded by Eurostat and
+Statistics Netherlands (CBS), and carried out by Statistics Netherlands.  The
+HMTS method implemented here is described in Ishaak, Ouwehand and RemÃ¸y (2024)
+<doi:10.1177/0282423X241246617>.  For broader methodological context, see
+Eurostat (2013, ISBN:978-92-79-25984-5, <doi:10.2785/34007>).")
+    (license (license:fsdg-compatible "EUPL-1.2"))))
 
 (define-public r-reproj
   (package
@@ -38799,13 +38857,13 @@ convenient way.")
 (define-public r-reddyproc
   (package
     (name "r-reddyproc")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REddyProc" version))
        (sha256
-        (base32 "0ss8zyvvhkkw42vk3v4qx21i9navb74kjlgj3dikz0a19z93nrrz"))))
+        (base32 "0aif078c7zkvym7bmkgylf9fd81q6vn5js7va5brv6zr1mjij1vc"))))
     (properties `((upstream-name . "REddyProc")))
     (build-system r-build-system)
     (arguments
@@ -39046,13 +39104,13 @@ programming.")
 (define-public r-redcapexporter
   (package
     (name "r-redcapexporter")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapExporter" version))
        (sha256
-        (base32 "0pwyv6wz03d38yi9xgwzjfy2sjwq30h11nji1jb30h24ls4ynxyp"))))
+        (base32 "09agay7glhfzwp9h3j0f71r65d1d6b2ccar04bkbas5fgbfv8xl7"))))
     (properties `((upstream-name . "REDCapExporter")))
     (build-system r-build-system)
     (arguments
@@ -54263,13 +54321,13 @@ as they check for incompatible values, and more reproducible.")
 (define-public r-randnet
   (package
     (name "r-randnet")
-    (version "0.7")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "randnet" version))
        (sha256
-        (base32 "1zb2arx63avjlqjpbf37cvix080khkihh6bb0g1h2alv4lbaaaak"))))
+        (base32 "0ai5r6ypkr8879dhw368q3rh2w60vgvb1kv11wlrdhns6wzi0v23"))))
     (properties `((upstream-name . "randnet")))
     (build-system r-build-system)
     (arguments
@@ -54277,6 +54335,8 @@ as they check for incompatible values, and more reproducible.")
       #:tests? #f))
     (propagated-inputs (list r-sparseflmm
                              r-rspectra
+                             r-rcppeigen
+                             r-rcpp
                              r-pracma
                              r-powerlaw
                              r-nnls
@@ -54290,23 +54350,10 @@ as they check for incompatible values, and more reproducible.")
     (synopsis
      "Random Network Model Estimation, Selection and Parameter Tuning")
     (description
-     "Model selection and parameter tuning procedures for a class of random network
-models.  The model selection can be done by a general cross-validation framework
-called ECV from Li et.  al. (2016) <@code{arXiv:1612.04717>} .  Several other
-model-based and task-specific methods are also included, such as NCV from Chen
-and Lei (2016) <@code{arXiv:1411.1715>}, likelihood ratio method from Wang and
-Bickel (2015) <@code{arXiv:1502.02069>}, spectral methods from Le and Levina
-(2015) <@code{arXiv:1507.00827>}.  Many network analysis methods are also
-implemented, such as the regularized spectral clustering (Amini et.  al.  2013
-<doi:10.1214/13-AOS1138>) and its degree corrected version and graphon
-neighborhood smoothing (Zhang et.  al.  2015 <@code{arXiv:1509.08588>}).  It
-also includes the consensus clustering of Gao et.  al. (2014)
-<@code{arXiv:1410.5837>}, the method of moments estimation of nomination SBM of
-Li et.  al. (2020) <arxiv:2008.03652>, and the network mixing method of Li and
-Le (2021) <arxiv:2106.02803>.  It also includes the informative core-periphery
-data processing method of Miao and Li (2021) <@code{arXiv:2101.06388>}.  The
-work to build and improve this package is partially supported by the NSF grants
-DMS-2015298 and DMS-2015134.")
+     "Model fitting, model selection and parameter tuning procedures for a class of
+random network models.  Many useful network modeling, estimation, and processing
+methods are included.  The work to build and improve this package is partially
+supported by the NSF grants DMS-2015298 and DMS-2015134.")
     (license license:gpl2+)))
 
 (define-public r-randmeta
@@ -56990,13 +57037,13 @@ that enables advertisers to display advertising to web users (see
 (define-public r-r4goodpersonalfinances
   (package
     (name "r-r4goodpersonalfinances")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R4GoodPersonalFinances" version))
        (sha256
-        (base32 "01cac18gdg5dkspwk3kzvcbi5mrskxgic2whyk4awcbzm468z7ir"))))
+        (base32 "1ms27kbi0b1nfk7hx01fgfjl0g1j093bnkhsm5sc2nnz6i9vl5n4"))))
     (properties `((upstream-name . "R4GoodPersonalFinances")))
     (build-system r-build-system)
     (arguments
@@ -57014,6 +57061,7 @@ that enables advertisers to display advertising to web users (see
                              r-nloptr
                              r-memoise
                              r-lubridate
+                             r-gt
                              r-glue
                              r-ggtext
                              r-ggrepel

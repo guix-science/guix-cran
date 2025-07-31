@@ -9081,13 +9081,13 @@ joint probability of superior performance and stability is also provided.")
 (define-public r-probably
   (package
     (name "r-probably")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "probably" version))
        (sha256
-        (base32 "1rpv9mn4w52d49rr5s359is1jfyzbv3syf8fid2z3k77hbh203vy"))))
+        (base32 "03n2f066l1yb59y7zf884zsj06y0jzni8x8m9jfmdy92wpm63zz5"))))
     (properties `((upstream-name . "probably")))
     (build-system r-build-system)
     (arguments
@@ -20208,52 +20208,6 @@ for more details on the identification and estimation of a directive behind a
 point forecast.")
     (license license:cc0)))
 
-(define-public r-pointedsdms
-  (package
-    (name "r-pointedsdms")
-    (version "2.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PointedSDMs" version))
-       (sha256
-        (base32 "1gscdi8gzl9hd794iwxvl41m2jrhh3chb8h7dxqghln1s1bqi6g3"))))
-    (properties `((upstream-name . "PointedSDMs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra
-                             r-sp
-                             r-sf
-                             r-raster
-                             r-r6
-                             r-r-devices
-                             r-inlabru
-                             r-ggplot2
-                             r-fnn
-                             r-fmesher
-                             r-blockcv))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/PhilipMostert/PointedSDMs")
-    (synopsis
-     "Fit Models Derived from Point Processes to Species Distributions using 'inlabru'")
-    (description
-     "Integrated species distribution modeling is a rising field in quantitative
-ecology thanks to significant rises in the quantity of data available, increases
-in computational speed and the proven benefits of using such models.  Despite
-this, the general software to help ecologists construct such models in an
-easy-to-use framework is lacking.  We therefore introduce the R package
-@code{PointedSDMs}': which provides the tools to help ecologists set up
-integrated models and perform inference on them.  There are also functions
-within the package to help run spatial cross-validation for model selection, as
-well as generic plotting and predicting functions.  An introduction to these
-methods is discussed in Issac, Jarzyna, Keil, Dambly, Boersch-Supan, Browning,
-Freeman, Golding, Guillera-Arroita, Henrys, Jarvis, Lahoz-Monfort, Pagel,
-Pescott, Schmucki, Simmonds and OâHara (2020)
-<doi:10.1016/j.tree.2019.08.006>.")
-    (license license:gpl3+)))
-
 (define-public r-pointdensityp
   (package
     (name "r-pointdensityp")
@@ -22709,13 +22663,13 @@ the base graphics plotting tools; and manipulate irregular polygons.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "0v659baixl5npppqi2w35s5xf9qm0dipyfwblfyh1jvgygh7w0q6"))))
+        (base32 "0q076a905p12j0ii24y8n23a6wfkjvy1ga1zx4ag6lg04s4k83sf"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments
@@ -26931,13 +26885,13 @@ this solely using the raw trade-level data.")
 (define-public r-pinsplus
   (package
     (name "r-pinsplus")
-    (version "2.0.7")
+    (version "2.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PINSPlus" version))
        (sha256
-        (base32 "1r4fw3hm0bp3spxkcrwwcmirkp4a8myqwpw8d6cxmz7ns6202860"))))
+        (base32 "145v53bw4phjb06k7gz7hx93qy9y8l189gcw03hhxcqnw1sm43ry"))))
     (properties `((upstream-name . "PINSPlus")))
     (build-system r-build-system)
     (arguments
@@ -28055,13 +28009,13 @@ with the INLA package (<https://www.r-inla.org>).")
 (define-public r-phylter
   (package
     (name "r-phylter")
-    (version "0.9.11")
+    (version "0.9.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylter" version))
        (sha256
-        (base32 "1dkm6wfrmbbx7ygfbvk68mv4ay3986wzy0wadxskbbvbvqcshjqa"))))
+        (base32 "1x96j5wj9hgs6d9zg03cim7l6ja3y27zv3893i8h7k27bz7rai7m"))))
     (properties `((upstream-name . "phylter")))
     (build-system r-build-system)
     (arguments
@@ -28076,7 +28030,7 @@ with the INLA package (<https://www.r-inla.org>).")
                              r-ggplot2
                              r-ape))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=phylter")
+    (home-page "https://github.com/damiendevienne/phylter")
     (synopsis "Detect and Remove Outliers in Phylogenomics Datasets")
     (description
      "Analyzis and filtering of phylogenomics datasets.  It takes an input either a
@@ -38918,13 +38872,13 @@ timescales\" <doi:10.7554/@code{eLife.57258>}.")
 (define-public r-pawacc
   (package
     (name "r-pawacc")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pawacc" version))
        (sha256
-        (base32 "150bvmnv5myq856x19kg1ca9favcsh1cid70y8hv3wd9f25w9r8c"))))
+        (base32 "03795i0k993rzjdzf1qhcs6x3f3bpz5z4xqwakvdn7fh9p9m1i28"))))
     (properties `((upstream-name . "pawacc")))
     (build-system r-build-system)
     (arguments
@@ -43172,13 +43126,13 @@ Michael Oswald.")
 (define-public r-pam
   (package
     (name "r-pam")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pam" version))
        (sha256
-        (base32 "0hg8ax25pi4sbl6gasms6rpfmxhkk50b9gfa6v55mczji7jkgv1y"))))
+        (base32 "0smwp4imymgzv9vfcmmn8nv5mmfp6zmpd4sphqlvd9ak0jq3i8gp"))))
     (properties `((upstream-name . "pam")))
     (build-system r-build-system)
     (arguments
@@ -43809,13 +43763,13 @@ provided.  Details can be found in: Jones et al., (2023) <doi:
 (define-public r-palaeosig
   (package
     (name "r-palaeosig")
-    (version "2.1-3")
+    (version "2.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "palaeoSig" version))
        (sha256
-        (base32 "121akb42lqzp2vvfj6kjlaxsivxd71r7vnwyg6pcymkin94r8c3k"))))
+        (base32 "1l8sdsk0wg28wwlnb6jn52sgfr4r94z10c7jp3jkpi89jlc5pi3w"))))
     (properties `((upstream-name . "palaeoSig")))
     (build-system r-build-system)
     (arguments
@@ -43837,7 +43791,7 @@ provided.  Details can be found in: Jones et al., (2023) <doi:
                              r-dplyr
                              r-assertr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/richardjtelford/palaeoSig")
+    (home-page "https://richardjtelford.github.io/palaeoSig/")
     (synopsis "Significance Tests for Palaeoenvironmental Reconstructions")
     (description
      "Several tests of quantitative palaeoenvironmental reconstructions from
@@ -44817,19 +44771,20 @@ cards, resumes, and posters.")
 (define-public r-page
   (package
     (name "r-page")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAGE" version))
        (sha256
-        (base32 "0jfkmp0ygk99f2bdk279j1b38l93xxjck26jxk8qih79pqv4rkwg"))))
+        (base32 "1f869zkk7zdpldbqj5kxdy4xyl6gsc3cxlmcz2hc38cmq0885by4"))))
     (properties `((upstream-name . "PAGE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-randomforest
+    (propagated-inputs (list r-rsqlite
+                             r-randomforest
                              r-network
                              r-metrica
                              r-mass
