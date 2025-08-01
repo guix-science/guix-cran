@@ -6712,6 +6712,41 @@ data.  Poster presenterad at: NJF seminar no.  336, Implementation of Precision
 Farming in Practical Agriculture, 10-12 June 2002, Skara, Sweden.")
     (license license:expat)))
 
+(define-public r-surface-analytics
+  (package
+    (name "r-surface-analytics")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "suRface.analytics" version))
+       (sha256
+        (base32 "0par5jciz5k1bxsy867zv7y4bf4aw3k8miwppk78kaxgsd821g0y"))))
+    (properties `((upstream-name . "suRface.analytics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-randomforest
+                             r-multcompview
+                             r-ggplot2
+                             r-factominer
+                             r-factoextra
+                             r-effectsize
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=suRface.analytics")
+    (synopsis
+     "Statistical Analysis and Visualization of Surface-Engineered Material Properties")
+    (description
+     "This package provides a collection of functions for statistical and multivariate
+analysis of surface-related data, with a focus on antimicrobial activity and
+omniphobicity.  Designed to support materials scientists and researchers in
+exploring structureâfunction relationships in surface-engineered materials
+through reproducible and interpretable workflows.  For more details, see Li et
+al. (2021) <doi:10.1002/advs.202100368>, and Kwon et al. (2020)
+<doi:10.3390/polym12081826>.")
+    (license license:gpl3)))
+
 (define-public r-surface
   (package
     (name "r-surface")
@@ -12059,13 +12094,13 @@ approximation.  The models are fitted via TMB (Template Model Builder)
 (define-public r-stochvol
   (package
     (name "r-stochvol")
-    (version "3.2.5")
+    (version "3.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stochvol" version))
        (sha256
-        (base32 "1adzkd7m1lpcqbqqr39v558qfwjgs23h600z0dm2p1rf4cs51f5f"))))
+        (base32 "0sna6naiayyl3i1257818fzpz6d6qy551ck3grfhp0l0601ppvkw"))))
     (properties `((upstream-name . "stochvol")))
     (build-system r-build-system)
     (arguments
@@ -23027,13 +23062,13 @@ panel data.")
 (define-public r-splitwise
   (package
     (name "r-splitwise")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SplitWise" version))
        (sha256
-        (base32 "1rsks07sg3720g9sg508y3cyy8d2dw8838qrzra72cijz9yg58hx"))))
+        (base32 "088yzy62g9gs9sqcw4km3ski250p6mvhhn7axwjaqp5l9lqmjdw7"))))
     (properties `((upstream-name . "SplitWise")))
     (build-system r-build-system)
     (arguments
@@ -23042,8 +23077,7 @@ panel data.")
     (propagated-inputs (list r-rpart))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SplitWise")
-    (synopsis
-     "'SplitWise': Hybrid Stepwise Regression with Single-Split Dummy Encoding")
+    (synopsis "Hybrid Stepwise Regression with Single-Split Dummy Encoding")
     (description
      "This package implements @code{SplitWise}', a hybrid regression approach that
 transforms numeric variables into either single-split (0/1) dummy variables or
@@ -35784,6 +35818,31 @@ is done in compiled C++ written using the Scythe Statistical Library Version
 0.3.")
     (license license:gpl2+)))
 
+(define-public r-smoothroctime
+  (package
+    (name "r-smoothroctime")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smoothROCtime" version))
+       (sha256
+        (base32 "1d0lfjkvlvpnqis6vcv4mdsmhhhpwhswjf8mgd8rsjlxxmfzhksy"))))
+    (properties `((upstream-name . "smoothROCtime")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ks))
+    (home-page "https://cran.r-project.org/package=smoothROCtime")
+    (synopsis "Smooth Time-Dependent ROC Curve Estimation")
+    (description
+     "Computes smooth estimations for the Cumulative/Dynamic and Incident/Dynamic ROC
+curves, in presence of right censorship, based on the bivariate kernel density
+estimation of the joint distribution function of the Marker and Time-to-event
+variables.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-smoothr
   (package
     (name "r-smoothr")
@@ -38771,13 +38830,13 @@ Course in Methods of Data Analysis (2nd ed)\", Duxbury.")
 (define-public r-slendr
   (package
     (name "r-slendr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slendr" version))
        (sha256
-        (base32 "1gz2ln9dx8r47f0parxpjcy68xbx8zq4076p7cg5bh96naxbgaaz"))))
+        (base32 "0z5336zv8mp3q8a78x77rwg7wwkk9i435qc663njz0lidiy2q45y"))))
     (properties `((upstream-name . "slendr")))
     (build-system r-build-system)
     (arguments
@@ -44528,6 +44587,34 @@ and multiple correlated outcomes that are interval censored.  Interval-censored
 data arises when the exact time of the onset of an outcome of interest is
 unknown but known to fall between two time points.")
     (license license:gpl3)))
+
+(define-public r-simic
+  (package
+    (name "r-simic")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simIC" version))
+       (sha256
+        (base32 "15h4xj4j43nalbdvw8d1lyrnd4bah3m6sjv6k36zjn5hixbchvhw"))))
+    (properties `((upstream-name . "simIC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/jayarasan/simIC")
+    (synopsis
+     "Simulate and Analyze Interval- and Mixed-Censored Survival Data")
+    (description
+     "This package provides tools to simulate and analyze survival data with
+interval-, left-, right-, and uncensored observations under common parametric
+distributions, including \"Weibull\", \"Exponential\", \"Log-Normal\", \"Log-Logistic\",
+\"Gamma\", \"Gompertz\", \"Normal\", \"Logistic\", and \"EMV\".  The package supports both
+direct maximum likelihood estimation and imputation-based methods, making it
+suitable for methodological research, simulation benchmarking, and teaching.  A
+web-based companion app is also available for demonstration purposes.")
+    (license license:expat)))
 
 (define-public r-simhelpers
   (package
@@ -70326,13 +70413,13 @@ R, 2nd Edition'.")
 (define-public r-sanba
   (package
     (name "r-sanba")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sanba" version))
        (sha256
-        (base32 "084nhbg8a8b8nh2fxg4if3cfyhrkscnb171n8j9s9xb3zdmbhhzk"))))
+        (base32 "1k9r63m4fc3v70887br8w4rd8x6fbm6076wq534mq9020hpwbj34"))))
     (properties `((upstream-name . "sanba")))
     (build-system r-build-system)
     (arguments
@@ -70344,8 +70431,7 @@ R, 2nd Edition'.")
                              r-rcpparmadillo
                              r-rcpp
                              r-rcolorbrewer
-                             r-matrixstats
-                             r-cpp11))
+                             r-matrixstats))
     (home-page "https://github.com/fradenti/sanba")
     (synopsis
      "Fitting Shared Atoms Nested Models via MCMC or Variational Bayes")
@@ -72678,13 +72764,13 @@ estimation.")
 (define-public r-saemix
   (package
     (name "r-saemix")
-    (version "3.3")
+    (version "3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saemix" version))
        (sha256
-        (base32 "1xx6254sj6lyarkkdkl3lajflyh8c2y8261bl9a19d1457l1h8wv"))))
+        (base32 "1az3wrmw9digjkq58gc0619114nyr0miia6d7nsp5fgbn9khd7q6"))))
     (properties `((upstream-name . "saemix")))
     (build-system r-build-system)
     (arguments
@@ -72702,19 +72788,18 @@ estimation.")
      "Stochastic Approximation Expectation Maximization (SAEM) Algorithm")
     (description
      "The saemix package implements the Stochastic Approximation EM algorithm for
-parameter estimation in (non)linear mixed effects models.  The SAEM algorithm
-(i) computes the maximum likelihood estimator of the population parameters,
-without any approximation of the model (linearisation, quadrature
-approximation,...), using the Stochastic Approximation Expectation Maximization
-(SAEM) algorithm, (ii) provides standard errors for the maximum likelihood
-estimator (iii) estimates the conditional modes, the conditional means and the
-conditional standard deviations of the individual parameters, using the
-Hastings-Metropolis algorithm (see Comets et al. (2017)
-<doi:10.18637/jss.v080.i03>).  Many applications of SAEM in agronomy, animal
-breeding and PKPD analysis have been published by members of the Monolix group.
-The full PDF documentation for the package including references about the
-algorithm and examples can be downloaded on the github of the IAME research
-institute for saemix':
+parameter estimation in (non)linear mixed effects models.  It (i) computes the
+maximum likelihood estimator of the population parameters, without any
+approximation of the model (linearisation, quadrature approximation,...), using
+the Stochastic Approximation Expectation Maximization (SAEM) algorithm, (ii)
+provides standard errors for the maximum likelihood estimator (iii) estimates
+the conditional modes, the conditional means and the conditional standard
+deviations of the individual parameters, using the Hastings-Metropolis algorithm
+(see Comets et al. (2017) <doi:10.18637/jss.v080.i03>).  Many applications of
+SAEM in agronomy, animal breeding and PKPD analysis have been published by
+members of the Monolix group.  The full PDF documentation for the package
+including references about the algorithm and examples can be downloaded on the
+github of the IAME research institute for saemix':
 <https://github.com/iame-@code{researchCenter/saemix/blob/7638e1b09ccb01cdff173068e01c266e906f76eb/docsaem.pdf>}.")
     (license license:gpl2+)))
 

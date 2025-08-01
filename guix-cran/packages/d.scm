@@ -982,37 +982,6 @@ and Xie (2021) <@code{arXiv:1906.07757v2>} and Li, Sung and Xie (2021)
 <@code{arXiv:2103.11085v2>}.")
     (license license:gpl3)))
 
-(define-public r-dynaspec
-  (package
-    (name "r-dynaspec")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dynaSpec" version))
-       (sha256
-        (base32 "1dz1dbbd41ybs3qamp4lxksk9iwac0hqkihz98i82rxx0ik173dz"))))
-    (properties `((upstream-name . "dynaSpec")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list ffmpeg))
-    (propagated-inputs (list r-warbler
-                             r-viridis
-                             r-tuner
-                             r-seewave
-                             r-scales
-                             r-png
-                             r-ggplot2
-                             r-gganimate))
-    (home-page "https://github.com/maRce10/dynaSpec")
-    (synopsis "Dynamic Spectrogram Visualizations")
-    (description
-     "This package provides a set of tools to generate dynamic spectrogram
-visualizations in video format.")
-    (license license:gpl2+)))
-
 (define-public r-dynarer
   (package
     (name "r-dynarer")
@@ -1867,13 +1836,13 @@ packages for pedigree analysis.")
 (define-public r-dvhmetrics
   (package
     (name "r-dvhmetrics")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DVHmetrics" version))
        (sha256
-        (base32 "0dxbjqiqhzjrv867qhxmqavzklq0j3qjv4qwdacyrq8faz82vhv7"))))
+        (base32 "0rs31mbadfli1w1gair8ycrnsbc29mm2qm7fprbla3krzspfwg8f"))))
     (properties `((upstream-name . "DVHmetrics")))
     (build-system r-build-system)
     (arguments

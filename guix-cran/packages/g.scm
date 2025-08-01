@@ -2926,13 +2926,13 @@ regularization.  Journal of Machine Learning Research, to appear, 2017\".")
 (define-public r-gsodr
   (package
     (name "r-gsodr")
-    (version "4.1.3")
+    (version "4.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GSODR" version))
        (sha256
-        (base32 "0zqc0md2h2r0f0h9k8q70kdjnx35lvn8dnmzpxq0vwlkd0vzfyrn"))))
+        (base32 "12wyapbxbdf4rr8adc5y9c4clpz2mm24awxdidpq18gcjmg1v8za"))))
     (properties `((upstream-name . "GSODR")))
     (build-system r-build-system)
     (arguments
@@ -11390,13 +11390,13 @@ PavÃ­a (2015) <doi:10.18637/jss.v066.c01>.")
 (define-public r-gofigr
   (package
     (name "r-gofigr")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gofigR" version))
        (sha256
-        (base32 "08zs4p7hykryj0lvc7danh5mbrzkk9asvkf2zrcrlw6znmm0ncjf"))))
+        (base32 "01qdnbvsc7204ivn0aj61fcmz6ldrrzbjk410rk74yb36g71i7qi"))))
     (properties `((upstream-name . "gofigR")))
     (build-system r-build-system)
     (arguments
@@ -22607,6 +22607,36 @@ underlying models, see the works by Voss, Rothermund, and Voss (2004)
      "Hierarchical Bayesian models.  The package provides tools to fit two response
 time models, using the population-based Markov Chain Monte Carlo.")
     (license license:gpl2)))
+
+(define-public r-ggdibbler
+  (package
+    (name "r-ggdibbler")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggdibbler" version))
+       (sha256
+        (base32 "1zpmlldc11i3x48hiksqd298yg0l2xvwq5fs7gmy3mrmpqjmb53f"))))
+    (properties `((upstream-name . "ggdibbler")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-rlang r-ggplot2 r-dplyr r-distributional))
+    (native-inputs (list r-knitr))
+    (home-page "https://harriet-mason.github.io/ggdibbler/")
+    (synopsis "Add Uncertainty to Data Visualisations")
+    (description
+     "This package provides a ggplot2 extension for visualising uncertainty with the
+goal of signal suppression.  Usually, uncertainty visualisation focuses on
+expressing uncertainty as a distribution or probability, whereas ggdibbler
+differentiates itself by viewing an uncertainty visualisation as an adjustment
+to an existing graphic that incorporates the inherent uncertainty in the
+estimates.  You provide the code for an existing plot, but replace one of the
+variables with a vector of distributions, and it will convert the visualisation
+into it's signal suppression counterpart.")
+    (license license:gpl3)))
 
 (define-public r-ggdensity
   (package

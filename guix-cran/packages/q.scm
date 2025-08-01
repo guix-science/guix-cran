@@ -6892,13 +6892,13 @@ follow tidyverse philosophy.")
 (define-public r-qbms
   (package
     (name "r-qbms")
-    (version "1.5.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QBMS" version))
        (sha256
-        (base32 "1b75qvcwm7c1f0387igw5ayafl66k8yrp1b78cb0yczhmaxx3bvm"))))
+        (base32 "0ysqyikykw2nyxq1xqbmnjji1s3h7xw3mwj2za5ld04gr577349r"))))
     (properties `((upstream-name . "QBMS")))
     (build-system r-build-system)
     (arguments
@@ -6913,17 +6913,18 @@ follow tidyverse philosophy.")
                              r-future
                              r-dbi))
     (native-inputs (list r-knitr))
-    (home-page "https://icarda-git.github.io/QBMS/")
+    (home-page "https://icarda.github.io/QBMS/")
     (synopsis "Query the Breeding Management System(s)")
     (description
      "This R package assists breeders in linking data systems with their analytic
 pipelines, a crucial step in digitizing breeding processes.  It supports
 querying and retrieving phenotypic and genotypic data from systems like EBS
 <https://ebs.excellenceinbreeding.org/>, BMS <https://bmspro.io>,
-@code{BreedBase} <https://breedbase.org>, and GIGWA
+@code{BreedBase} <https://breedbase.org>, GIGWA
 <https://github.com/@code{SouthGreenPlatform/Gigwa2>} (using @code{BrAPI}
-<https://brapi.org> calls).  Extra helper functions support environmental data
-sources, including @code{TerraClimate}
+<https://brapi.org> calls), , and Germinate
+<https://germinateplatform.github.io/get-germinate/>.  Extra helper functions
+support environmental data sources, including @code{TerraClimate}
 <https://www.climatologylab.org/terraclimate.html> and FAO HWSDv2
 <https://gaez.fao.org/pages/hwsd> soil database.")
     (license license:gpl3+)))

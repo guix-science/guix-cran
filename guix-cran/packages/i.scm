@@ -2160,13 +2160,13 @@ normal profiles.")
 (define-public r-isoplotrgui
   (package
     (name "r-isoplotrgui")
-    (version "6.6")
+    (version "6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotRgui" version))
        (sha256
-        (base32 "10a0icbcf2nngsjcai66m4qdhjzn7ysapvw2j24d9qam32zy39xs"))))
+        (base32 "1kzhy20mikxs7lpalqkb5ib8k8vx90w3cr8ai3hh8bgyb6gbb7js"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
     (arguments
@@ -2892,19 +2892,19 @@ Statistical Learning with Applications in R'.")
 (define-public r-islasso
   (package
     (name "r-islasso")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "islasso" version))
        (sha256
-        (base32 "100sb5795xk45cm7zb0zmqy3flz0hy32alqqi1wfv10v06dbdlbd"))))
+        (base32 "185i72l1748gf06vwifgpk17rwgx811402l90fa8q2d67ip9z3fy"))))
     (properties `((upstream-name . "islasso")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix r-glmnet))
+    (propagated-inputs (list r-gridextra r-glmnet r-ggplot2 r-cli))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=islasso")
     (synopsis "The Induced Smoothed Lasso")
@@ -14317,13 +14317,13 @@ background of the methods.")
 (define-public r-imagedata
   (package
     (name "r-imagedata")
-    (version "0.1-62")
+    (version "0.1.64")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imageData" version))
        (sha256
-        (base32 "1q5s6zda1vvinp23afxjys3zl17xaidb11a7iibxpz6rla75183d"))))
+        (base32 "080s3grhhqafs13gwmzyqij6vzx8qkrfk69qlxgmp21ghcpklgk1"))))
     (properties `((upstream-name . "imageData")))
     (build-system r-build-system)
     (arguments
@@ -16131,13 +16131,13 @@ software is described in Pritikin & Falk (2020) <doi:10.1177/0146621620929431>."
 (define-public r-ieugwasr
   (package
     (name "r-ieugwasr")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieugwasr" version))
        (sha256
-        (base32 "08b9lw48xgjky4i9ar2drlxripfimq7rlzms8hrnvr1p7mwi2xwd"))))
+        (base32 "0p56qxs3ap8hicqq9zxy00h7jnckph4lniq46wm9iix2l92z1qn6"))))
     (properties `((upstream-name . "ieugwasr")))
     (build-system r-build-system)
     (arguments

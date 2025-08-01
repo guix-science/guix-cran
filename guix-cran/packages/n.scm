@@ -2546,13 +2546,13 @@ summarising grouped data, among others.")
 (define-public r-nplstoolbox
   (package
     (name "r-nplstoolbox")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NPLStoolbox" version))
        (sha256
-        (base32 "01f1cimkpakprj5jg7r7k12as84gnqdfib8s1ksph727q6zblc0h"))))
+        (base32 "0r20ps2z8v3809afh5yv672668gbc0mdi1b1dw8z36kxkwsi6xb2"))))
     (properties `((upstream-name . "NPLStoolbox")))
     (build-system r-build-system)
     (arguments
@@ -5306,39 +5306,6 @@ styling, R Markdown and exporting diagrams in the PNG format.  Note: you need a
 chromium based browser installed on your system.")
     (license license:expat)))
 
-(define-public r-nomisr
-  (package
-    (name "r-nomisr")
-    (version "0.4.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nomisr" version))
-       (sha256
-        (base32 "0mf301nhsl71h79jxfkwa27j5nifsxp7y6vxbnx87rybr80b3hg1"))))
-    (properties `((upstream-name . "nomisr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-snakecase
-                             r-rsdmx
-                             r-rlang
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/nomisr")
-    (synopsis "Access 'Nomis' UK Labour Market Data")
-    (description
-     "Access UK official statistics from the Nomis database.  Nomis includes data from
-the Census, the Labour Force Survey, DWP benefit statistics and other economic
-and demographic data from the Office for National Statistics, based around
-statistical geographies.  See <https://www.nomisweb.co.uk/api/v01/help> for full
-API documentation.")
-    (license license:expat)))
-
 (define-public r-nominatimlite
   (package
     (name "r-nominatimlite")
@@ -7615,7 +7582,6 @@ global minimum.")
      (list
       #:tests? #f))
     (inputs (list udunits
-                  proj.4
                   pandoc
                   openssl
                   libxml2

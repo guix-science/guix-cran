@@ -1649,6 +1649,32 @@ the null hypothesis and under the alternative.  Perform a two-sample test on
 multivariate data using these limiting distributions and binning.")
     (license license:gpl2)))
 
+(define-public r-otel
+  (package
+    (name "r-otel")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "otel" version))
+       (sha256
+        (base32 "1zpfldzp319xdbaq1mch9ccpl7nk3s202zk422g34lwswgryjifa"))))
+    (properties `((upstream-name . "otel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://otel.r-lib.org")
+    (synopsis "'OpenTelemetry' 'R' 'API'")
+    (description
+     "@code{OpenTelemetry} is a collection of tools, APIs', and SDKs used to
+instrument, generate, collect, and export telemetry data (metrics, logs, and
+traces) for analysis in order to understand your software's performance and
+behavior.  This package implements the @code{OpenTelemetry} API':
+<https://opentelemetry.io/docs/specs/otel/> Use this package as a dependency if
+you want to instrument your R package for @code{OpenTelemetry}'.")
+    (license license:expat)))
+
 (define-public r-ote
   (package
     (name "r-ote")
@@ -4318,13 +4344,13 @@ classification.")
 (define-public r-orcamentobr
   (package
     (name "r-orcamentobr")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orcamentoBR" version))
        (sha256
-        (base32 "1fjscbhhf6p8mhp50rm77yczpq4jfsh3g36zhlyzj3bzmfspg49m"))))
+        (base32 "0dd7ym65qhbsac0rbwgf2y01gglil236y9v24hycn8gjpxnl66kn"))))
     (properties `((upstream-name . "orcamentoBR")))
     (build-system r-build-system)
     (arguments
@@ -10768,13 +10794,13 @@ you run open-source large language models locally on your machine.")
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "4.3.0")
+    (version "4.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlinkAnalyze" version))
        (sha256
-        (base32 "157h5p8i2xk1g2wwry7akrdiqmw8sdpvzpgxx9ia39nrdqzgwagd"))))
+        (base32 "1rmn3mpj3s4amlpd6zp3llr9yjhprw1s00mislcsi1a57s077vbs"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (arguments
@@ -11054,42 +11080,6 @@ Internet Institute (OII), University of Oxford, but the functions should be
 useful for general data analysis and especially for analysis of categorical and
 ordinal data.")
     (license license:expat)))
-
-(define-public r-ohun
-  (package
-    (name "r-ohun")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ohun" version))
-       (sha256
-        (base32 "14j23y3mv1yw42gm5n8lsb48cn32piy2lz1mr1mqffq6ls7zi499"))))
-    (properties `((upstream-name . "ohun")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-warbler
-                             r-tuner
-                             r-sf
-                             r-seewave
-                             r-rlang
-                             r-igraph
-                             r-ggplot2
-                             r-fftw
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/ohun/")
-    (synopsis "Optimizing Acoustic Signal Detection")
-    (description
-     "Facilitates the automatic detection of acoustic signals, providing functions to
-diagnose and optimize the performance of detection routines.  Detections from
-other software can also be explored and optimized.  This package has been
-peer-reviewed by @code{rOpenSci}.  Araya-Salas et al. (2022)
-<doi:10.1101/2022.12.13.520253>.")
-    (license license:gpl2+)))
 
 (define-public r-ohsome
   (package

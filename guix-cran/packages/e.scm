@@ -4768,13 +4768,13 @@ periods.")
 (define-public r-evola
   (package
     (name "r-evola")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evola" version))
        (sha256
-        (base32 "0c8nd804gg3hwpf5nd2f4jmi9im0cccvxn7zdh05yczlr5bvc148"))))
+        (base32 "10pyz1n0hiswxz7z1ikvwwdrcjmg8y8gi1kbx65ccq4r3v4zgi4i"))))
     (properties `((upstream-name . "evola")))
     (build-system r-build-system)
     (arguments
@@ -21833,13 +21833,13 @@ models, for running these models, and for visualizing their results.")
 (define-public r-ecos
   (package
     (name "r-ecos")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecos" version))
        (sha256
-        (base32 "1syqh2ivznz5swify1gc34m1iqgnp10rhk7b8giil7fwdzifalfj"))))
+        (base32 "1pn75rv9dylr015czgxjzvld6asl3zshlkqmam5s2jph01rgs82p"))))
     (properties `((upstream-name . "ecos")))
     (build-system r-build-system)
     (arguments

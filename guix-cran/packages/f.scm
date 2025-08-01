@@ -373,13 +373,13 @@ calculate the differences between sequences.")
 (define-public r-fuzzysts
   (package
     (name "r-fuzzysts")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzySTs" version))
        (sha256
-        (base32 "01bzkq9aj2afj87vz6vn6i8cs2368ppb5z9fpwlpkyjpp2a0cxsv"))))
+        (base32 "0shc6ib8ip8hhp8lg7vccdd5kqljb8s91lznbrqb6hrvjmjjvvay"))))
     (properties `((upstream-name . "FuzzySTs")))
     (build-system r-build-system)
     (arguments
@@ -3616,13 +3616,13 @@ Bork (Preprint) <https://psyarxiv.com/qktsd>.")
 (define-public r-fso
   (package
     (name "r-fso")
-    (version "2.1-2")
+    (version "2.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fso" version))
        (sha256
-        (base32 "15jvq063j05wpiwcm80zbnr1rf5g7xhv60qh3b8c43l398n4frhw"))))
+        (base32 "0linrn5r3l3rcgr05iqc8bjrg042p0i3vjrxkcppi6apnq0mnvqa"))))
     (properties `((upstream-name . "fso")))
     (build-system r-build-system)
     (arguments

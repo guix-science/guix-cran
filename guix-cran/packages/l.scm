@@ -8176,13 +8176,13 @@ Caamal-Pat et.al. (2021) <doi:10.3389/fgene.2021.680569>.")
 (define-public r-lme4breeding
   (package
     (name "r-lme4breeding")
-    (version "1.0.63")
+    (version "1.0.70")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lme4breeding" version))
        (sha256
-        (base32 "0sc3xkgk7s1kbryrja1svk90fkc6g6sd0ynimva3jj1wbjvj0a0y"))))
+        (base32 "1mn9knb7sgzgfhy4c30li8hikjnp07nqly1b8q3yq3vhi84ipjsf"))))
     (properties `((upstream-name . "lme4breeding")))
     (build-system r-build-system)
     (arguments
@@ -18285,13 +18285,13 @@ time series from given drift and diffusion coefficients.")
 (define-public r-landsepi
   (package
     (name "r-landsepi")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landsepi" version))
        (sha256
-        (base32 "1n0ymmycgpfmv7drlazkws7vyw868lwkdyw2gfsb7fl615qwg6j3"))))
+        (base32 "0j76g1lv7l9kf2b8vj3yhc346sf1k38q8b1ajpzjckh7rn0slmys"))))
     (properties `((upstream-name . "landsepi")))
     (build-system r-build-system)
     (arguments
@@ -18312,7 +18312,7 @@ time series from given drift and diffusion coefficients.")
                              r-desolve
                              r-dbi))
     (native-inputs (list r-knitr))
-    (home-page "https://csiro-inra.pages.biosp.inrae.fr/landsepi/")
+    (home-page "https://landsepi.pages-forge.inrae.fr/landsepi")
     (synopsis "Landscape Epidemiology and Evolution")
     (description
      "This package provides a stochastic, spatially-explicit, demo-genetic model
@@ -19838,13 +19838,13 @@ using various relabelling algorithms.")
 (define-public r-labdsv
   (package
     (name "r-labdsv")
-    (version "2.1-0")
+    (version "2.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "labdsv" version))
        (sha256
-        (base32 "1lawc8fm766p7z6kk0c3lda71i8lywg30znzyfkrx94sbr8r5nlr"))))
+        (base32 "0n7sd5j8b2bq88744gsbzsxwkpv5l8siik47gg6bzh0ch9g2ycii"))))
     (properties `((upstream-name . "labdsv")))
     (build-system r-build-system)
     (arguments

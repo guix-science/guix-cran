@@ -1456,13 +1456,13 @@ pricing and Greeks are also provided.")
 (define-public r-jrt
   (package
     (name "r-jrt")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jrt" version))
        (sha256
-        (base32 "03k5dgqqzhhd6n4pdpcyq0zy4dj35yj41c6wnz4pa2i0i16jgfdq"))))
+        (base32 "0k6jxjpvscc0yw0dhk33fcd5k6al8fbai7zwf9cbkwaxjr65wc4m"))))
     (properties `((upstream-name . "jrt")))
     (build-system r-build-system)
     (arguments

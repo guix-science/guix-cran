@@ -1334,6 +1334,42 @@ error and missing data.  The package can be used to fit, compare, predict, and
 forecast various growth model types using data cloning.")
     (license license:gpl2)))
 
+(define-public r-pv3rs
+  (package
+    (name "r-pv3rs")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Pv3Rs" version))
+       (sha256
+        (base32 "1kjd8fh7din9gacqlppmvdn8bnagnx8718f3hlr2wnd9w15fr0qj"))))
+    (properties `((upstream-name . "Pv3Rs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcolorbrewer
+                             r-purrr
+                             r-partitions
+                             r-multicool
+                             r-matrixstats
+                             r-igraph
+                             r-fields
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://aimeertaylor.github.io/Pv3Rs/")
+    (synopsis
+     "Estimate the Cause of Recurrent Vivax Malaria using Genetic Data")
+    (description
+     "Plot malaria parasite genetic data on two or more episodes.  Compute per-person
+posterior probabilities that each Plasmodium vivax (Pv) recurrence is a
+recrudescence, relapse, or reinfection (3Rs) using per-person P. vivax genetic
+data on two or more episodes and a statistical model described in Taylor, Foo
+and White (2022) <doi:10.1101/2022.11.23.22282669>.  Plot per-recurrence
+posterior probabilities.")
+    (license license:expat)))
+
 (define-public r-puzzle
   (package
     (name "r-puzzle")
@@ -29282,13 +29318,13 @@ materials.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiology
   (package
     (name "r-photobiology")
-    (version "0.13.1")
+    (version "0.13.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiology" version))
        (sha256
-        (base32 "1vgklizbs6bfr9709v3pbj67j8lys5gzw376k3rb3g6z1lagzb8a"))))
+        (base32 "15yd576mvbnad80cvq0268jhbzbds9i1073fg5bck60ky69l38jx"))))
     (properties `((upstream-name . "photobiology")))
     (build-system r-build-system)
     (arguments
@@ -29315,9 +29351,8 @@ and radiation meteorology and climatology.  Calculation of effective (weighted)
 and not-weighted irradiances/doses, fluence rates, transmittance, reflectance,
 absorptance, absorbance and diverse ratios and other derived quantities from
 spectral data.  Local maxima and minima: peaks, valleys and spikes.  Conversion
-between energy-and photon-based units.  Wavelength interpolation.  Astronomical
-calculations related solar angles and day length.  Colours and vision.  This
-package is part of the r4photobiology suite, Aphalo, P. J. (2015)
+between energy-and photon-based units.  Wavelength interpolation.  Colours and
+vision.  This package is part of the r4photobiology suite, Aphalo, P. J. (2015)
 <doi:10.19232/uv4pb.2015.1.14>.")
     (license license:gpl2+)))
 
@@ -29928,13 +29963,13 @@ bimbam', plink', snptest', @code{LiMMBo}').")
 (define-public r-phenotyper
   (package
     (name "r-phenotyper")
-    (version "0.1.6")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhenotypeR" version))
        (sha256
-        (base32 "1cs26fdrq4rbxahqkjarvxdhbzcrs0i9v7qpgb4yfsmcahm3jwyd"))))
+        (base32 "1bw0hz0d76yygsrgir7cdgys3mgvcddaznl8pygc2rw3jq0n8klw"))))
     (properties `((upstream-name . "PhenotypeR")))
     (build-system r-build-system)
     (arguments
@@ -29942,9 +29977,11 @@ bimbam', plink', snptest', @code{LiMMBo}').")
       #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-rlang
+                             r-readr
                              r-purrr
                              r-omopsketch
                              r-omopgenerics
+                             r-measurementdiagnostics
                              r-magrittr
                              r-incidenceprevalence
                              r-dplyr
@@ -41900,13 +41937,13 @@ automation with delayed execution (e.g. for executing functions in parallel).")
 (define-public r-parafac4microbiome
   (package
     (name "r-parafac4microbiome")
-    (version "1.2.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parafac4microbiome" version))
        (sha256
-        (base32 "0fjbkcskwc9l4b4sk5n6nijr2sj0dfv9xpf7j8nan0jagl2dihvv"))))
+        (base32 "11pdhxs6cayyymf8zshqwpznnrb7xrdyh5viann53lk8iw9zx571"))))
     (properties `((upstream-name . "parafac4microbiome")))
     (build-system r-build-system)
     (arguments
@@ -41917,7 +41954,6 @@ automation with delayed execution (e.g. for executing functions in parallel).")
                              r-rlang
                              r-pracma
                              r-multiway
-                             r-mize
                              r-magrittr
                              r-lifecycle
                              r-ggpubr

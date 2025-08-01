@@ -13122,19 +13122,20 @@ a non-hierarchical setting the package produces a single derivative curve.")
 (define-public r-hdcuremodels
   (package
     (name "r-hdcuremodels")
-    (version "0.0.1")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdcuremodels" version))
        (sha256
-        (base32 "09ih9jlz7l4vcgqhpy9h5c8j19c5fdfn4hhka85as762lxxbkwrl"))))
+        (base32 "12l7g2rk2ij6hyyn73jvwi703g3czsi6lkzhmha189d4jr009drs"))))
     (properties `((upstream-name . "hdcuremodels")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
+    (propagated-inputs (list r-withr
+                             r-survival
                              r-plyr
                              r-mvnfast
                              r-knockoff
@@ -13146,8 +13147,8 @@ a non-hierarchical setting the package produces a single derivative curve.")
                              r-flexsurv
                              r-doparallel))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=hdcuremodels")
-    (synopsis "Penalized Mixture Cure Models for High-Dimensional Data")
+    (home-page "https://github.com/kelliejarcher/hdcuremodels")
+    (synopsis "High-Dimensional Cure Models")
     (description
      "This package provides functions for fitting various penalized parametric and
 semi-parametric mixture cure models with different penalty functions, testing

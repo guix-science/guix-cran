@@ -206,13 +206,13 @@ access signature (SAS).  Part of the @code{AzureR} family of packages.")
 (define-public r-azurermr
   (package
     (name "r-azurermr")
-    (version "2.4.4")
+    (version "2.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AzureRMR" version))
        (sha256
-        (base32 "09mjc5ibk1g1azskqnrcgfb5bi88aw55g96cyas5vlwgi54xzs70"))))
+        (base32 "0z3vw4lf903grjhpc7m38pcw1li6xp1fnm928pkik5f08nbhzy0h"))))
     (properties `((upstream-name . "AzureRMR")))
     (build-system r-build-system)
     (arguments
@@ -379,13 +379,13 @@ package for importing and exporting cryptographic objects.  Part of the
 (define-public r-azuregraph
   (package
     (name "r-azuregraph")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AzureGraph" version))
        (sha256
-        (base32 "0x7ya1yxk0cga9cfbfkd332l2syswdqjamzr2xqvb6ybwc5lpcy2"))))
+        (base32 "10lk1sha1amw5w500yk3gfkrh9g64rj39hivvm18sxjdrfvbng5h"))))
     (properties `((upstream-name . "AzureGraph")))
     (build-system r-build-system)
     (arguments
@@ -18166,6 +18166,35 @@ description of the app can be found in Meyer et al.
 <DOI:10.1016/j.softx.2023.101347> or the vignettes on @code{GitHub}'.")
     (license license:gpl3)))
 
+(define-public r-airscreen
+  (package
+    (name "r-airscreen")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AirScreen" version))
+       (sha256
+        (base32 "1qmpnr2pdrwkjqx8gpf6mkilc28r7k2gwwb6nmr80vmka9fmmax2"))))
+    (properties `((upstream-name . "AirScreen")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/Logic314/Air-HOLP")
+    (synopsis
+     "Feature Screening via Adaptive Iterative Ridge (Air-HOLP and Air-OLS)")
+    (description
+     "This package implements two complementary high-dimensional feature screening
+methods, Adaptive Iterative Ridge High-dimensional Ordinary Least-squares
+Projection (Air-HOLP, suitable when the number of predictors p is greater than
+or equal to the sample size n) and Adaptive Iterative Ridge Ordinary Least
+Squares (Air-OLS, for n greater than p).  Also provides helper functions to
+generate compound-symmetry and AR(1) correlated data, plus a unified
+@code{Air()} front end and a summary method.  For methodological details see
+Joudah, Muller and Zhu (2025) <doi:10.1007/s11222-025-10599-6>.")
+    (license license:expat)))
+
 (define-public r-airr
   (package
     (name "r-airr")
@@ -25133,13 +25162,13 @@ COVID-19 and actuarial data\".  Open Physics, 21(1), 20220242.
 (define-public r-actuare
   (package
     (name "r-actuare")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "actuaRE" version))
        (sha256
-        (base32 "02f90vdbfz6shsw4ndhqbqjsrwiwmi1jp66bsl897cb8fnywnzs4"))))
+        (base32 "0nx2zm0f4gnbkx92lyz5wsjxq35pij7c8y6zf69wyqb6m9wlsp0a"))))
     (properties `((upstream-name . "actuaRE")))
     (build-system r-build-system)
     (arguments
@@ -25974,13 +26003,13 @@ PRISM raster.  See the examples, testing versions and more details from:
 (define-public r-acdcquery
   (package
     (name "r-acdcquery")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acdcquery" version))
        (sha256
-        (base32 "03ip3fvc1qcq0vmcidv1rbih85v3dxhx08047vjlf21kfcr9cizk"))))
+        (base32 "0zilw7bwblayhfs0sf11dl7kcb5azzljx93679syscvkmjn5myil"))))
     (properties `((upstream-name . "acdcquery")))
     (build-system r-build-system)
     (arguments

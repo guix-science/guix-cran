@@ -30710,13 +30710,13 @@ tests to run on the table columns.")
 (define-public r-tangram
   (package
     (name "r-tangram")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tangram" version))
        (sha256
-        (base32 "1r4wvz3nrms3mh06a7zykhkbsi4hz57xdn7af49yiypynhrxiin5"))))
+        (base32 "1bfiy88jfpz4hsk21i53qiwif8fj7sb5lgyc3lwkw8rbwvd6hj00"))))
     (properties `((upstream-name . "tangram")))
     (build-system r-build-system)
     (arguments

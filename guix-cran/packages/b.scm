@@ -8126,13 +8126,13 @@ and time using gradient boosting approach.")
 (define-public r-boostmath
   (package
     (name "r-boostmath")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boostmath" version))
        (sha256
-        (base32 "1km77ni0awjxnn1v3pqzpabi28vhgaw6p7d7lcvz0qrx3skcqkz2"))))
+        (base32 "0aqyqc2pmw5gffk4al51hv57fc1xs65gqfyi476chznyw3rb3056"))))
     (properties `((upstream-name . "boostmath")))
     (build-system r-build-system)
     (arguments
@@ -8145,7 +8145,7 @@ and time using gradient boosting approach.")
     (description
      "R bindings for the various functions and statistical distributions provided by
 the Boost Math library
-<https://www.boost.org/doc/libs/boost_1_88_0/libs/math/doc/html/index.html>.")
+<https://www.boost.org/doc/libs/latest/libs/math/doc/html/index.html>.")
     (license license:expat)))
 
 (define-public r-boostingdea
@@ -24003,13 +24003,13 @@ Barreto-Souza, Mayrink and Simas (2020) <@code{arXiv:2003.05157>}.")
 (define-public r-bbnet
   (package
     (name "r-bbnet")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbnet" version))
        (sha256
-        (base32 "1nyfjfqrnwp0438kjjb126gi5pkdbrcfif79521d5248zyr8hvr6"))))
+        (base32 "1p8y0qhkvqpkssv3akij25wv6r4937rw4irjx2f97zbyrii23c01"))))
     (properties `((upstream-name . "bbnet")))
     (build-system r-build-system)
     (arguments
@@ -26548,13 +26548,13 @@ Useful for logistic regression.")
 (define-public r-bayesln
   (package
     (name "r-bayesln")
-    (version "0.2.10")
+    (version "0.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesLN" version))
        (sha256
-        (base32 "0p8g0h4zqz5njr7lkkv2hhq9qas9lvrxamg8xb9hkqrxfxd0d3nn"))))
+        (base32 "1v2qi70zdrym4q9lyghjm2y10fsga7pkfa5szrpp7c8j7ryaghl0"))))
     (properties `((upstream-name . "BayesLN")))
     (build-system r-build-system)
     (arguments
@@ -30490,46 +30490,6 @@ recommendations expressed in this material are those of the author(s) and do not
 necessarily reflect the views of the National Science Foundation.")
     (license license:gpl3+)))
 
-(define-public r-barulho
-  (package
-    (name "r-barulho")
-    (version "2.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "baRulho" version))
-       (sha256
-        (base32 "0l0a0nyq6p4gidwip3bk3f8569l6wpbyk56s731ni5y2d2nrrd43"))))
-    (properties `((upstream-name . "baRulho")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-warbler
-                             r-viridis
-                             r-tuner
-                             r-sim-diffproc
-                             r-seewave
-                             r-rlang
-                             r-png
-                             r-ohun
-                             r-fftw
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/baRulho")
-    (synopsis "Quantifying (Animal) Sound Degradation")
-    (description
-     "Intended to facilitate acoustic analysis of (animal) sound propagation
-experiments, which typically aim to quantify changes in signal structure when
-transmitted in a given habitat by broadcasting and re-recording animal sounds at
-increasing distances.  The package offers a workflow with functions to prepare
-the data set for analysis as well as to calculate and visualize several
-degradation metrics, including blur ratio, signal-to-noise ratio, excess
-attenuation and envelope correlation among others (Dabelsteen et al 1993
-<doi:10.1121/1.406682>).")
-    (license license:gpl2+)))
-
 (define-public r-bartxviz
   (package
     (name "r-bartxviz")
@@ -32598,13 +32558,13 @@ outside of decennial census years.")
 (define-public r-badger
   (package
     (name "r-badger")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "badger" version))
        (sha256
-        (base32 "1d41xcynl2g63mb4qmhkj8hrs193fq7n0ymh6v2ygabn2n6029kc"))))
+        (base32 "17x1307qm826lvd4awr4b0s2m66byjmq784sdc8aa3bqz20mrlr4"))))
     (properties `((upstream-name . "badger")))
     (build-system r-build-system)
     (arguments

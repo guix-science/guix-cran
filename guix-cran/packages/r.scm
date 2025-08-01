@@ -761,13 +761,13 @@ retrieving a time series based on spatial location and temporal filters.")
 (define-public r-rwsearch
   (package
     (name "r-rwsearch")
-    (version "5.2.4")
+    (version "5.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RWsearch" version))
        (sha256
-        (base32 "1mb6kpqmpiy2zw4rklwx65aiw0khnfwvdgia7agp42nfnalihi21"))))
+        (base32 "01dyyyim7r0flp37jzwbh9c5rkzq6cqsixpxdxhv5xkagjmklpfd"))))
     (properties `((upstream-name . "RWsearch")))
     (build-system r-build-system)
     (arguments
@@ -9705,31 +9705,6 @@ et al. (2008) <doi:10.1016/j.csda.2007.11.006>).")
 effects by ridge regression; alternatively, BLUPs can be calculated based on an
 additive relationship matrix or a Gaussian kernel.")
     (license license:gpl3)))
-
-(define-public r-rraven
-  (package
-    (name "r-rraven")
-    (version "1.0.15")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rraven" version))
-       (sha256
-        (base32 "1vrs81z9wva39iby9pangvf9vmdipv7sa180856w63kx08dw71yl"))))
-    (properties `((upstream-name . "Rraven")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-warbler r-tuner r-seewave r-pbapply))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/maRce10/Rraven")
-    (synopsis "Connecting R and 'Raven' Sound Analysis Software")
-    (description
-     "This package provides a tool to exchange data between R and Raven sound analysis
-software (Cornell Lab of Ornithology).  Functions work on data formats
-compatible with the R package @code{warbleR}'.")
-    (license license:gpl2+)))
 
 (define-public r-rrate
   (package
@@ -23300,13 +23275,13 @@ format versions 1.0 to 1.4 <https://laszip.org/>.")
 (define-public r-rlandfire
   (package
     (name "r-rlandfire")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlandfire" version))
        (sha256
-        (base32 "122vjg0wbmc7p4w8gwi84ffag9hgf3pg0qxl2vrm8xkz6bvpikpf"))))
+        (base32 "1dsykbzgmlh0y5qw4jhsm07lvhax9mpfsfxv4pdncrwyfwf2m7pn"))))
     (properties `((upstream-name . "rlandfire")))
     (build-system r-build-system)
     (arguments
@@ -30629,44 +30604,6 @@ the functions.  References: Tsagris M., Papadakis M. (2018).  Taking R to its
 limits: 70+ tips. @code{PeerJ} Preprints 6:e26605v1
 <doi:10.7287/peerj.preprints.26605v1>.")
     (license license:gpl2+)))
-
-(define-public r-rfars
-  (package
-    (name "r-rfars")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rfars" version))
-       (sha256
-        (base32 "1wk0gzg50hd7iq7l4c4rdzwvn0i6ikarp4pyqnv4ginvwlxyf591"))))
-    (properties `((upstream-name . "rfars")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-tidyselect
-                             r-tidyr
-                             r-stringr
-                             r-sas7bdat
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-janitor
-                             r-haven
-                             r-dplyr
-                             r-downloader
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/s87jackson/rfars")
-    (synopsis "Download and Analyze Crash Data")
-    (description
-     "Download crash data from the National Highway Traffic Safety Administration and
-prepare it for research.")
-    (license license:cc0)))
 
 (define-public r-rfacts
   (package
@@ -42672,38 +42609,6 @@ treatment effects at the cutoff in Sharp, Fuzzy and Kink RD settings,
 implemented, and @code{rdplot()} to conduct exploratory data analysis (RD
 plots).")
     (license license:gpl3)))
-
-(define-public r-rdracor
-  (package
-    (name "r-rdracor")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rdracor" version))
-       (sha256
-        (base32 "1bypz0llvr05zvhfw76yinvr2qsbqnbws0mkif2mmckd57a7395x"))))
-    (properties `((upstream-name . "rdracor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rdpack
-                             r-purrr
-                             r-jsonlite
-                             r-igraph
-                             r-httr
-                             r-data-table))
-    (home-page "https://github.com/dracor-org/rdracor")
-    (synopsis "Access to the 'DraCor' API")
-    (description
-     "Provide an interface for Drama Corpora Project ('@code{DraCor}') API:
-<https://dracor.org/documentation/api>.")
-    (license license:gpl3+)))
 
 (define-public r-rdpower
   (package

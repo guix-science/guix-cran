@@ -19895,7 +19895,7 @@ connected components of a triangle rgl mesh is also provided.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list proj.4 geos gdal))
+    (inputs (list geos gdal))
     (propagated-inputs (list r-v8 r-sf r-magrittr r-jsonlite r-dplyr))
     (home-page "https://joelgombin.github.io/concaveman/")
     (synopsis "Very Fast 2D Concave Hull Algorithm")
@@ -24492,13 +24492,13 @@ cohorts.")
 (define-public r-cohortgenerator
   (package
     (name "r-cohortgenerator")
-    (version "0.11.2")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortGenerator" version))
        (sha256
-        (base32 "02fsdwswdpgv0cf2naqj9p0fv8qxvcsani68dl05hcnsj7qrhgs6"))))
+        (base32 "0z8g9a232i59ajygjshbxwblr8y2cjxqwn08r3ys34yfzmbz96pi"))))
     (properties `((upstream-name . "CohortGenerator")))
     (build-system r-build-system)
     (arguments
@@ -24508,7 +24508,6 @@ cohorts.")
                              r-stringi
                              r-sqlrender
                              r-rlang
-                             r-rjsonio
                              r-resultmodelmanager
                              r-readr
                              r-r6
@@ -30957,6 +30956,37 @@ implemented models are based on Leloup and Goldbeter (1998)
 keeping data.")
     (license license:gpl3)))
 
+(define-public r-clmplus
+  (package
+    (name "r-clmplus")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clmplus" version))
+       (sha256
+        (base32 "0xvn7jzc8yhvzf1jpb0qadz5dyaqb67h56wvhrfq1r81w4wda33v"))))
+    (properties `((upstream-name . "clmplus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stmomo
+                             r-reshape2
+                             r-gridextra
+                             r-ggplot2
+                             r-forecast
+                             r-chainladder))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/gpitt71/clmplus")
+    (synopsis "Tool-Box of Chain Ladder Plus Models")
+    (description
+     "Implementation of the ageâperiodâcohort models for claim development
+presented in Pittarello G, Hiabu M, Villegas A (2025) âReplicating and
+Extending ChainâLadder via an AgeâPeriodâCohort Structure on the Claim
+Development in a RunâOff Triangleâ <doi:10.1080/10920277.2025.2496725>.")
+    (license license:gpl2+)))
+
 (define-public r-clme
   (package
     (name "r-clme")
@@ -33297,13 +33327,13 @@ for easy modification.  Debug your binary classifiers faster and easier!")
 (define-public r-classificationensembles
   (package
     (name "r-classificationensembles")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClassificationEnsembles" version))
        (sha256
-        (base32 "0ihagai3dd0fdczvg21j7f8623pzs4bf4q80nn31q7nqa0kaz6vk"))))
+        (base32 "01hcc27xc4wgbbkw4rbfx567fb7l3xv46is2iiiv9axgz4yifan1"))))
     (properties `((upstream-name . "ClassificationEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -38288,13 +38318,13 @@ and tries to create consistent graphical output and to be very user friendly.")
 (define-public r-chemospec
   (package
     (name "r-chemospec")
-    (version "6.2.0")
+    (version "6.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChemoSpec" version))
        (sha256
-        (base32 "0hklq96f12m8ms4xcbnw385clilqfgfqr9arvds4lqh7xlpag21y"))))
+        (base32 "1payl8s526si7qgfp76x9zyw8flvjsynqdjch2b8lhsdfgpsjdax"))))
     (properties `((upstream-name . "ChemoSpec")))
     (build-system r-build-system)
     (arguments
@@ -38305,6 +38335,7 @@ and tries to create consistent graphical output and to be very user friendly.")
                              r-plotly
                              r-patchwork
                              r-magrittr
+                             r-lattice
                              r-ggplot2
                              r-chemospecutils))
     (home-page "https://bryanhanson.github.io/ChemoSpec/")
@@ -50062,13 +50093,13 @@ and to create an account, please see
 (define-public r-campsismod
   (package
     (name "r-campsismod")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsismod" version))
        (sha256
-        (base32 "1b67br0hsxfgzrlqlajfk9r3yazwm4xw81sapd3wjdkmd3fnmvzq"))))
+        (base32 "1jzyznk1cr25pjwsnrxlh9c4pka4wzydgvs4ajy7456hc64h7895"))))
     (properties `((upstream-name . "campsismod")))
     (build-system r-build-system)
     (arguments
