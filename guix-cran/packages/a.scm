@@ -2047,6 +2047,54 @@ University),Class PPT. 3. <https://zhuanlan.zhihu.com/p/389710022>.  4.
 <https://www.zhangshengrong.com/p/281@code{oqR9JNw/>}.")
     (license license:agpl3)))
 
+(define-public r-autoscore
+  (package
+    (name "r-autoscore")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AutoScore" version))
+       (sha256
+        (base32 "0hn9972df580kxs13fsxp2lzc1rfja72ypxnvvsbgv5fbqi5f0mj"))))
+    (properties `((upstream-name . "AutoScore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tableone
+                             r-survminer
+                             r-survival
+                             r-survauc
+                             r-rlang
+                             r-randomforestsrc
+                             r-randomforest
+                             r-proc
+                             r-plotly
+                             r-ordinal
+                             r-magrittr
+                             r-knitr
+                             r-hmisc
+                             r-ggplot2
+                             r-dplyr
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nliulab/AutoScore")
+    (synopsis
+     "An Interpretable Machine Learning-Based Automatic Clinical Score Generator")
+    (description
+     "This package provides a novel interpretable machine learning-based framework to
+automate the development of a clinical scoring model for predefined outcomes.
+Our novel framework consists of six modules: variable ranking with machine
+learning, variable transformation, score derivation, model selection, domain
+knowledge-based score fine-tuning, and performance evaluation.The details are
+described in our research paper<doi:10.2196/21798>.  Users or clinicians could
+seamlessly generate parsimonious sparse-score risk models (i.e., risk scores),
+which can be easily implemented and validated in clinical practice.  We hope to
+see its application in various medical case studies.")
+    (license license:gpl2+)))
+
 (define-public r-autoregressionmde
   (package
     (name "r-autoregressionmde")

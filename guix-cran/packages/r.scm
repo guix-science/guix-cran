@@ -11,11 +11,11 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages java)
   #:use-module (gnu packages spreadsheet)
-  #:use-module (gnu packages web)
   #:use-module (gnu packages image)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages backup)
   #:use-module (gnu packages xml)
@@ -1699,57 +1699,6 @@ releases, vinecopulib is licensed under the MIT License, and rvinecopulib is
 licensed under the GNU GPL version 3.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-rvif
-  (package
-    (name "r-rvif")
-    (version "3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rvif" version))
-       (sha256
-        (base32 "0jkp5kh1aq2gwww6zxfila6fb7fis9hlihfl40f95vn8hdjwsxfg"))))
-    (properties `((upstream-name . "rvif")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-multicoll r-car))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "http://colldetreat.r-forge.r-project.org/")
-    (synopsis
-     "Collinearity Detection using Redefined Variance Inflation Factor and Graphical Methods")
-    (description
-     "The detection of troubling approximate collinearity in a multiple linear
-regression model is a classical problem in Econometrics.  The objective of this
-package is to detect it using the variance inflation factor redefined and the
-scatterplot between the variance inflation factor and the coefficient of
-variation.  For more details see SalmerÃ³n R., GarcÃ­a C.B. and GarcÃ­a J.
-(2018) <doi:10.1080/00949655.2018.1463376>, SalmerÃ³n, R., RodrÃ­guez, A. and
-GarcÃ­a C. (2020) <doi:10.1007/s00180-019-00922-x>, SalmerÃ³n, R., GarcÃ­a, C.B,
-RodrÃ­guez, A. and GarcÃ­a, C. (2022) <doi:10.32614/RJ-2023-010>, SalmerÃ³n, R.,
-GarcÃ­a, C.B. and GarcÃ­a, J. (2025) <doi:10.1007/s10614-024-10575-8> and
-SalmerÃ³n, R., GarcÃ­a, C.B, GarcÃ­a J. (2023, working paper)
-<doi:10.48550/@code{arXiv.2005.02245>}.  You can also view the package vignette
-using @code{browseVignettes(\"rvif}\")', the package website using
-@code{browseURL(system.file(\"docs/index.html}\", package = \"rvif\")) or version
-control on @code{GitHub} (<https://github.com/rnoremlas/rvif_package>).")
-    (license license:gpl2+)))
 
 (define-public r-rviewgraph
   (package

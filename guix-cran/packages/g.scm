@@ -10512,13 +10512,13 @@ identification.")
 (define-public r-googlelanguager
   (package
     (name "r-googlelanguager")
-    (version "0.3.0")
+    (version "0.3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "googleLanguageR" version))
        (sha256
-        (base32 "0lm50g3gshp18nvygi6is2rayzhcx0rw2rvb4lvm0jlx5m96xgxb"))))
+        (base32 "17gmyf0kj922zxqpnafvvvnpb5d2bzf8j0xlyv1q2rmwz8f8l0ii"))))
     (properties `((upstream-name . "googleLanguageR")))
     (build-system r-build-system)
     (arguments
@@ -10532,7 +10532,7 @@ identification.")
                              r-base64enc
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "http://code.markedmondson.me/googleLanguageR/")
+    (home-page "https://code.markedmondson.me/googleLanguageR/")
     (synopsis
      "Call Google's 'Natural Language' API, 'Cloud Translation' API, 'Cloud Speech' API and 'Cloud Text-to-Speech' API")
     (description
@@ -15394,13 +15394,13 @@ model\"<doi:10.1080/10543406.2021.1934854>.")
 (define-public r-glcmtextures
   (package
     (name "r-glcmtextures")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GLCMTextures" version))
        (sha256
-        (base32 "1hvb76zdcdmbzai1ddb0067my1bl11vh50230nlz1whby7k5q6ls"))))
+        (base32 "1xb4p43c8mac5bm4br54d9qbf6znbj0s8wiyjymdj7jnjl1pv91x"))))
     (properties `((upstream-name . "GLCMTextures")))
     (build-system r-build-system)
     (arguments

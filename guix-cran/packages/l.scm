@@ -11055,13 +11055,13 @@ Alpha), and response distribution plots.")
 (define-public r-likert
   (package
     (name "r-likert")
-    (version "1.3.5")
+    (version "1.3.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "likert" version))
        (sha256
-        (base32 "0c4irxs7pp1z8nj4s8cq23daw4h94n3h7x4f6q1d85614qcl9l3p"))))
+        (base32 "08dx4n6056fzlv2p6y6fi0w0alm36bb1wjcviq9vah251ds075n9"))))
     (properties `((upstream-name . "likert")))
     (build-system r-build-system)
     (arguments
@@ -11074,7 +11074,7 @@ Alpha), and response distribution plots.")
                              r-gridextra
                              r-ggplot2))
     (native-inputs (list))
-    (home-page "http://jason.bryer.org/likert")
+    (home-page "https://github.com/jbryer/likert")
     (synopsis "Analysis and Visualization Likert Items")
     (description
      "An approach to analyzing Likert response items, with an emphasis on

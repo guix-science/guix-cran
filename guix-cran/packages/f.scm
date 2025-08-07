@@ -3986,30 +3986,6 @@ Implementation is based on autoencoders with monotonicity and orthogonality
 constraints.")
     (license license:gpl2+)))
 
-(define-public r-fscaret
-  (package
-    (name "r-fscaret")
-    (version "0.9.4.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fscaret" version))
-       (sha256
-        (base32 "18fhyfl3f8syyc3g937qx87dmwbv7dray6b97p1s6lnssiv61gsw"))))
-    (properties `((upstream-name . "fscaret")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-hmeasure r-gsubfn r-caret))
-    (home-page "https://cran.r-project.org/package=fscaret")
-    (synopsis "Automated Feature Selection from 'caret'")
-    (description
-     "Automated feature selection using variety of models provided by caret package.
-This work was funded by Poland-Singapore bilateral cooperation project no
-2/3/POL-SIN/2012.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-fscache
   (package
     (name "r-fscache")

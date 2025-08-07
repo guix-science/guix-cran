@@ -31557,13 +31557,13 @@ sampled Functions (<https://cs.brown.edu/people/pfelzens/dt/index.html>).")
 (define-public r-pgnorm
   (package
     (name "r-pgnorm")
-    (version "2.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pgnorm" version))
        (sha256
-        (base32 "1k9z7pvmranr8m62v7amc0pj6lwzh3wqi79gg3mflifn1mr6c057"))))
+        (base32 "1w8a15dxkppcirivdd1wr6js0nbiibmns80g90h4xyxdsr9bixga"))))
     (properties `((upstream-name . "pgnorm")))
     (build-system r-build-system)
     (arguments

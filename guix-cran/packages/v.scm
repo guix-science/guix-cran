@@ -2694,42 +2694,6 @@ based on Ceteris Paribus profile and global variable importance measure based on
 Partial Dependence Profiles.")
     (license license:gpl2)))
 
-(define-public r-vivid
-  (package
-    (name "r-vivid")
-    (version "0.2.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vivid" version))
-       (sha256
-        (base32 "13iagv585a5z7pggzlcgc8h17r5lx4nq2gljy58238nsi0xc9549"))))
-    (properties `((upstream-name . "vivid")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sp
-                             r-rcolorbrewer
-                             r-igraph
-                             r-ggplot2
-                             r-ggnewscale
-                             r-ggalt
-                             r-ggally
-                             r-flashlight
-                             r-dplyr
-                             r-dendser
-                             r-condvis2
-                             r-colorspace))
-    (native-inputs (list r-knitr))
-    (home-page "https://alaninglis.github.io/vivid/")
-    (synopsis "Variable Importance and Variable Interaction Displays")
-    (description
-     "This package provides a suite of plots for displaying variable importance and
-two-way variable interaction jointly.  Can also display partial dependence plots
-laid out in a pairs plot or zenplots style.")
-    (license license:gpl2+)))
-
 (define-public r-vivaldi
   (package
     (name "r-vivaldi")

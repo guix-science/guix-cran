@@ -6261,35 +6261,6 @@ Vernon, I. (2010) <doi:10.1214/10-BA524>.  Craig, P.S., Goldstein, M., Seheult,
 A.H., and Smith, J.A. (1997) <doi:10.1007/978-1-4612-2290-3_2>.")
     (license license:expat)))
 
-(define-public r-hmeasure
-  (package
-    (name "r-hmeasure")
-    (version "1.0-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hmeasure" version))
-       (sha256
-        (base32 "0l4nlny532kddiaa1nmgd37971whhwzb54mb1pvbwax7fsg6hmhw"))))
-    (properties `((upstream-name . "hmeasure")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "http://www.hmeasure.net")
-    (synopsis
-     "The H-Measure and Other Scalar Classification Performance Metrics")
-    (description
-     "Classification performance metrics that are derived from the ROC curve of a
-classifier.  The package includes the H-measure performance metric as described
-in <http://link.springer.com/article/10.1007/s10994-009-5119-5>, which computes
-the minimum total misclassification cost, integrating over any uncertainty about
-the relative misclassification costs, as per a user-defined prior.  It also
-offers a one-stop-shop for other scalar metrics of performance, including
-sensitivity, specificity and many others, and also offers plotting tools for ROC
-curves and related statistics.")
-    (license license:expat)))
-
 (define-public r-hmdhfdplus
   (package
     (name "r-hmdhfdplus")

@@ -49527,13 +49527,13 @@ governance.")
 (define-public r-mantis
   (package
     (name "r-mantis")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mantis" version))
        (sha256
-        (base32 "0agv55ch99s8zp41yg6lnl9jb6lwwl7zlxw39mv8drn18ai2cgc7"))))
+        (base32 "1y2ifn5bz5mz62vrl84pn43r7mx65p1zqh5s9zmk7hnfhfcklh5z"))))
     (properties `((upstream-name . "mantis")))
     (build-system r-build-system)
     (arguments
