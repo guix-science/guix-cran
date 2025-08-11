@@ -3757,38 +3757,6 @@ allow to construct spherical curves.  References: Barry and Goldman
 <doi:10.1145/54852.378511>, Kochanek and Bartels <doi:10.1145/800031.808575>.")
     (license license:gpl3)))
 
-(define-public r-qsort
-  (package
-    (name "r-qsort")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qsort" version))
-       (sha256
-        (base32 "1xvp29dijfa2207wyw3z09rmffn61fngfy0f00qjk284n1jnnvrg"))))
-    (properties `((upstream-name . "qsort")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-purrr r-gridextra r-ggplot2 r-cowplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=qsort")
-    (synopsis "Scoring Q-Sort Data")
-    (description
-     "Computes scores from Q-sort data, using criteria sorts and derived scales from
-subsets of items.  The qsort package includes descriptions and scoring
-procedures for four different Q-sets commonly used in developmental psychology
-research: Attachment Q-set (version 3.0) (Waters, 1995,
-<doi:10.1111/j.1540-5834.1995.tb00214.x>); California Child Q-set (Block and
-Block, 1969, <doi:10.1037/0012-1649.21.3.508>); Maternal Behaviour Q-set
-(version 3.1) (Pederson et al., 1999,
-<https://ir.lib.uwo.ca/cgi/viewcontent.cgi?article=1000&context=psychologypub>);
-Preschool Q-set (Baumrind, 1968 revised by Wanda Bronson,
-<doi:10.1111/j.1540-5834.1995.tb00214.x>).")
-    (license license:gpl3)))
-
 (define-public r-qslice
   (package
     (name "r-qslice")
