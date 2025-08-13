@@ -1169,38 +1169,6 @@ Montoliu, I., Rezzi S., Martin F., Guy P., Bruce S., and Kochhar S.(2009)
 <doi:10.18637/jss.v047.i08>).")
     (license license:gpl2)))
 
-(define-public r-vpc
-  (package
-    (name "r-vpc")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vpc" version))
-       (sha256
-        (base32 "15s9f6hmqawv2594xqv58hnqg2wm1fm8qaj8h9k4m55cx4sf1hik"))))
-    (properties `((upstream-name . "vpc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-survival
-                             r-stringr
-                             r-readr
-                             r-mass
-                             r-ggplot2
-                             r-dplyr
-                             r-classint))
-    (home-page "https://github.com/ronkeizer/vpc")
-    (synopsis "Create Visual Predictive Checks")
-    (description
-     "Visual predictive checks are a commonly used diagnostic plot in pharmacometrics,
-showing how certain statistics (percentiles) for observed data compare to those
-same statistics for data simulated from a model.  The package can generate VPCs
-for continuous, categorical, censored, and (repeated) time-to-event data.")
-    (license license:expat)))
-
 (define-public r-voxr
   (package
     (name "r-voxr")
