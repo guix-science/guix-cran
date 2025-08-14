@@ -7569,6 +7569,38 @@ that allow you to download and interactively check all countries and rounds
 available.")
     (license license:expat)))
 
+(define-public r-esshist
+  (package
+    (name "r-esshist")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "essHist" version))
+       (sha256
+        (base32 "0rvlxfcl42h4pjqf37mx7bc4k21iwvnys6l5rf2jsl7yk1b9hmbn"))))
+    (properties `((upstream-name . "essHist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=essHist")
+    (synopsis "The Essential Histogram")
+    (description
+     "Provide an optimal histogram, in the sense of probability density estimation and
+features detection, by means of multiscale variational inference.  In other
+words, the resulting histogram servers as an optimal density estimator, and
+meanwhile recovers the features, such as increases or modes, with both false
+positive and false negative controls.  Moreover, it provides a parsimonious
+representation in terms of the number of blocks, which simplifies data
+interpretation.  The only assumption for the method is that data points are
+independent and identically distributed, so it applies to fairly general
+situations, including continuous distributions, discrete distributions, and
+mixtures of both.  For details see Li, Munk, Sieling and Walther (2016)
+<@code{arXiv:1612.07216>}.")
+    (license license:gpl3)))
+
 (define-public r-essentials
   (package
     (name "r-essentials")
