@@ -777,13 +777,13 @@ Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
 (define-public r-fuzzylink
   (package
     (name "r-fuzzylink")
-    (version "0.2.1")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzylink" version))
        (sha256
-        (base32 "1r3rqvxapx6gx6pry9hbadk7wggr4g0w68pb4d9a9n4vx3dyrwng"))))
+        (base32 "17h35jn7cvi6adxhbc8x2p0d3xg84qgf5wgqh165ia9vf5hyavw5"))))
     (properties `((upstream-name . "fuzzylink")))
     (build-system r-build-system)
     (arguments
@@ -6636,6 +6636,33 @@ significance level is evaluated by a fuzzy ranking method in this package.")
 based on the First Passage Time Location (FPTL) function.")
     (license license:gpl2)))
 
+(define-public r-fpsim
+  (package
+    (name "r-fpsim")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fpsim" version))
+       (sha256
+        (base32 "1l7wiqnwjflzf3za9k2lvplzcf5lbxy2dyd04wgjd48pch4330yx"))))
+    (properties `((upstream-name . "fpsim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=fpsim")
+    (synopsis "Compute Measures of Foreign Policy Similarity/Agreement")
+    (description
+     "This package provides functions for calculating various measures of foreign
+policy similarity or association commonly used in the study of international
+relations.  These include Signorino and Ritter's S statistic (weighted and
+unweighted), Cohen's weighted kappa, Scott's pi, and Kendall's tau-b.  The
+package facilitates the generation of dyadic similarity scores for empirical
+analyses and can also serve as an educational resource for understanding how
+such measures are derived.")
+    (license license:gpl2+)))
+
 (define-public r-fproc
   (package
     (name "r-fproc")
@@ -8654,28 +8681,29 @@ mensuration, refer to the textbooks by Kershaw et al. (2017)
 (define-public r-forested
   (package
     (name "r-forested")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forested" version))
        (sha256
-        (base32 "0aaikr5n2x1ap78diyvn56hnshdqk65x7ykrrx4mjb3w4c66jw9b"))))
+        (base32 "0950iwfb9nzmyhd1cc36539k132fy6cm1wj5q336ndgfx3qs4cnq"))))
     (properties `((upstream-name . "forested")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://github.com/simonpcouch/forested")
-    (synopsis "Forest Attributes in Washington State")
+    (synopsis "Forest Attributes in U.S. States")
     (description
-     "This package provides a small subset of plots in Washington State are sampled
+     "This package provides a small subset of plots throughout the U.S. are sampled
 and assessed \"on-the-ground\" as forested or non-forested by the U.S. Department
 of Agriculture, Forest Service, Forest Inventory and Analysis (FIA) Program, but
-the FIA also has access to remotely sensed data for all land in the state.  The
-forested package contains a data frame by the same name intended for use in
-predictive modeling applications where the more easily-accessible remotely
-sensed data can be used to predict whether a plot is forested or non-forested.")
+the FIA also has access to remotely sensed data for all land in the country.
+The forested package contains data frames intended for use in predictive
+modeling applications where the more easily-accessible remotely sensed data can
+be used to predict whether a plot is forested or non-forested.  Currently, the
+package provides data for Washington and Georgia.")
     (license license:expat)))
 
 (define-public r-forestdisc
@@ -10823,13 +10851,13 @@ as asymmetrical factorial designs.")
 (define-public r-fmat
   (package
     (name "r-fmat")
-    (version "2025.4")
+    (version "2025.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FMAT" version))
        (sha256
-        (base32 "07r25dn7cbid28y9xry35jwir1zwxafg3mmyld4bhifzy7wsncab"))))
+        (base32 "1ya9fgqig5h8ysrqn81zazm1lv6gmqg5z8875pk5m15xnr09zsp7"))))
     (properties `((upstream-name . "FMAT")))
     (build-system r-build-system)
     (arguments
@@ -13274,13 +13302,13 @@ function names.")
 (define-public r-flashmm
   (package
     (name "r-flashmm")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FLASHMM" version))
        (sha256
-        (base32 "0vm3s7b1hbkim48qdibcg5pipkbyz5zkd5g522ia5si2bvapbsvf"))))
+        (base32 "05byc6vqwv1qqwsad7wdja9ydj9qp7rh62y19m13p93qil3swmmy"))))
     (properties `((upstream-name . "FLASHMM")))
     (build-system r-build-system)
     (arguments
@@ -16594,13 +16622,13 @@ topic.")
 (define-public r-filibustr
   (package
     (name "r-filibustr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filibustr" version))
        (sha256
-        (base32 "1ppaza1p134b57zbjs03n799k0qipgczmqr453v07hzdbixnw7ih"))))
+        (base32 "15g8xyfq5h1mrwvmj8xqvvi91yja84qfjwyi6agb432wq1g8c1s8"))))
     (properties `((upstream-name . "filibustr")))
     (build-system r-build-system)
     (arguments
@@ -20949,13 +20977,13 @@ following references: <https://en.wikipedia.org/wiki/Modified_Dietz_method>,
 (define-public r-fcirt
   (package
     (name "r-fcirt")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fcirt" version))
        (sha256
-        (base32 "1wiyiz51mkm5kd95xmpvlwng51awpp4y133dd5q88mnafrxyij1h"))))
+        (base32 "1afjxw1hac3rxpz6wppdl7aif7vhjk8gdbdjafi1jngmsx25lccj"))))
     (properties `((upstream-name . "fcirt")))
     (build-system r-build-system)
     (arguments
@@ -20968,6 +20996,7 @@ following references: <https://en.wikipedia.org/wiki/Modified_Dietz_method>,
                              r-rcppeigen
                              r-rcpp
                              r-numderiv
+                             r-edstan
                              r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Naidantu/fcirt")
@@ -25816,32 +25845,6 @@ documentation on the @code{GitHub} repository for more information.")
 represents complex multi-dimensional array of data.  These classes help in the
 serialization and deserialization of STACH V2 formatted data.  See @code{GitHub}
 repository documentation for more information.")
-    (license license:asl2.0)))
-
-(define-public r-factset-analyticsapi-engines
-  (package
-    (name "r-factset-analyticsapi-engines")
-    (version "3.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "factset.analyticsapi.engines" version))
-       (sha256
-        (base32 "0v96z837dii1q7mbpd48zwpl2qjzqnhignb80g0xkc4iygsnrrms"))))
-    (properties `((upstream-name . "factset.analyticsapi.engines")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-r6 r-jsonlite r-httr r-catools))
-    (home-page "https://github.com/factset/analyticsapi-engines-r-sdk")
-    (synopsis "'FactSet' Engines API Client")
-    (description
-     "Allow clients to fetch analytics through API for Portfolio Analytics'('PA'),
-Style Performance Risk('SPAR') and Vault products of @code{FactSet}'.  Visit
-<https://github.com/factset/analyticsapi-engines-r-sdk/tree/master/Engines> for
-more information on the usage of package.  Visit
-<https://developer.factset.com/> for more information on products.")
     (license license:asl2.0)))
 
 (define-public r-factreg

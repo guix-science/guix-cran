@@ -606,13 +606,13 @@ are also provided.")
 (define-public r-usl
   (package
     (name "r-usl")
-    (version "3.0.3")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usl" version))
        (sha256
-        (base32 "0hql4bc40xa62r465lm4x14yf8dbhsl046i5k8xlq1qr93cw6pnx"))))
+        (base32 "0cz837n5kaaa199gci2m9sa4kchz3qy18msq8byxwbx7mr9k6w3c"))))
     (properties `((upstream-name . "usl")))
     (build-system r-build-system)
     (arguments
@@ -3623,13 +3623,13 @@ for UNC men's basketball team.")
 (define-public r-uncertainucdp
   (package
     (name "r-uncertainucdp")
-    (version "0.5.2")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uncertainUCDP" version))
        (sha256
-        (base32 "0jrwwdnb7ss5w8ihlxvpjwi2c039kys9lmbdkxsdglkf2a0ck6hx"))))
+        (base32 "1426cxapg8yrsdj32l40labhxh1xpky0m84xwnzyj2wdpz15alvg"))))
     (properties `((upstream-name . "uncertainUCDP")))
     (build-system r-build-system)
     (arguments

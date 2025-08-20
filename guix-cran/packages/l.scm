@@ -1905,13 +1905,13 @@ likelihood (PL) or penalized least squares (PLS).  For details, please see Huang
 (define-public r-lsirm12pl
   (package
     (name "r-lsirm12pl")
-    (version "1.3.5")
+    (version "1.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lsirm12pl" version))
        (sha256
-        (base32 "0v2pdw0g56qz1z0cm3q2sxs92qry21xfv7pspb55g68bkyfjjjqb"))))
+        (base32 "0vp0axw32b52g3h275lcmwij2jv2y6y6jmxya95j5ppcmbralq13"))))
     (properties `((upstream-name . "lsirm12pl")))
     (build-system r-build-system)
     (arguments
@@ -10045,13 +10045,13 @@ authoring with R Markdown is also provided.")
 (define-public r-lingtypology
   (package
     (name "r-lingtypology")
-    (version "1.1.22")
+    (version "1.1.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lingtypology" version))
        (sha256
-        (base32 "14bk3dd4811vs7m02b730h33i696rvz8gzb5rri0c2qfwcjvmka9"))))
+        (base32 "08a8dqcdnx8lmd5f6dlqf9nn7zad3j2sgl3985393z6gzdn9yqj8"))))
     (properties `((upstream-name . "lingtypology")))
     (build-system r-build-system)
     (arguments
@@ -11891,13 +11891,13 @@ forest maturity mapping (Fuhr et al. (2022) <doi:10.1002/rse2.274>).")
 (define-public r-licoread
   (package
     (name "r-licoread")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "licoread" version))
        (sha256
-        (base32 "0js1r6xp4rjnnq6v0ahmy72s5mp4irndwmhyj8gvxh7r0z22wjdg"))))
+        (base32 "0gq1k1z2a67jcm1ly8s1bq3lxd78hqkfc2gljqdmcny5cpnx6gy4"))))
     (properties `((upstream-name . "licoread")))
     (build-system r-build-system)
     (arguments
@@ -13945,13 +13945,13 @@ function for VES.")
 (define-public r-legendry
   (package
     (name "r-legendry")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "legendry" version))
        (sha256
-        (base32 "0mcfqvs2fb3g4q062w9rpb8h751n7g6r73xq05hg7cfn0x83s3ax"))))
+        (base32 "012p3r9bngq5cy7c7pi0sbvwcjy5vc2i8mqlgdzs2bzkpzwk0i44"))))
     (properties `((upstream-name . "legendry")))
     (build-system r-build-system)
     (arguments
@@ -17095,13 +17095,13 @@ lavaan path model without having to write the DOT language graph specification."
 (define-public r-lavaangui
   (package
     (name "r-lavaangui")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavaangui" version))
        (sha256
-        (base32 "1bh3apsq750fv268g6ws8m6m4w7sxclph2gzxr7kjh6f4lphzxpf"))))
+        (base32 "0vzsacdm8v4nqrpx02jsd392vc0gfcfcqxjvdlz46jaj5y4bxa30"))))
     (properties `((upstream-name . "lavaangui")))
     (build-system r-build-system)
     (arguments
@@ -17294,18 +17294,19 @@ Atmospheric Research.")
 (define-public r-latticedesign
   (package
     (name "r-latticedesign")
-    (version "3.0-1")
+    (version "4.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LatticeDesign" version))
        (sha256
-        (base32 "05gqazrqq3mpkhkcrgs64bsl9c0lwddvw3pkjd660mipy3chdr31"))))
+        (base32 "0gxwpj3bbzbb5rlvbay0fy2grp7sdyg1xisjhsy0c1hlx1fm6dp8"))))
     (properties `((upstream-name . "LatticeDesign")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-nloptr))
     (home-page "https://cran.r-project.org/package=LatticeDesign")
     (synopsis "Lattice-Based Space-Filling Designs")
     (description
@@ -17314,12 +17315,16 @@ including interleaved lattice-based minimax distance designs proposed in Xu He
 (2017) <doi:10.1093/biomet/asx036>, interleaved lattice-based maximin distance
 designs proposed in Xu He (2018) <doi:10.1093/biomet/asy069>, interleaved
 lattice-based designs with low fill and high separation distance properties
-proposed in Xu He (2024) <doi:10.1137/23M156940X>, rotated sphere packing
-designs proposed in Xu He (2017) <doi:10.1080/01621459.2016.1222289>, sliced
-rotated sphere packing designs proposed in Xu He (2019)
-<doi:10.1080/00401706.2018.1458655>, and densest packing-based maximum
-projections designs proposed in Xu He (2021) <doi:10.1093/biomet/asaa057> and Xu
-He (2018) <doi:10.48550/@code{arXiv.1709.02062>}.")
+proposed in Xu He (2024) <doi:10.1137/23M156940X>, (sliced) rotated sphere
+packing designs proposed in Xu He (2017) <doi:10.1080/01621459.2016.1222289> and
+Xu He (2019) <doi:10.1080/00401706.2018.1458655>, densest packing-based maximum
+projections designs proposed in Xu He (2020) <doi:10.1093/biomet/asaa057> and Xu
+He (2018) <doi:10.48550/@code{arXiv.1709.02062>}, maximin distance designs for
+mixed continuous, ordinal, and binary variables proposed in Hui Lan and Xu He
+(2025) <doi:10.48550/@code{arXiv.2507.23405>}, and optimized and regularly
+repeated lattice-based Latin hypercube designs for large-scale computer
+experiments proposed in Xu He, Junpeng Gong, and Zhaohui Li (2025)
+<doi:10.48550/@code{arXiv.2506.04582>}.")
     (license license:lgpl2.1)))
 
 (define-public r-latticedensity
@@ -18074,13 +18079,13 @@ visualization tools.")
 (define-public r-lares
   (package
     (name "r-lares")
-    (version "5.3.1")
+    (version "5.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lares" version))
        (sha256
-        (base32 "14qswq667s0cpxdlwlvrzzdzgrfkhm119ah5vxwyzpvsmw6chcm3"))))
+        (base32 "18zmbb0c3nxz9v4pf5kxdz17my31a1nrkgh9y0h8lcg73vqm6mad"))))
     (properties `((upstream-name . "lares")))
     (build-system r-build-system)
     (arguments

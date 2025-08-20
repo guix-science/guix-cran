@@ -915,13 +915,13 @@ among others.  For more details, refer to Alcala et al. (2023)
 (define-public r-ycevo
   (package
     (name "r-ycevo")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ycevo" version))
        (sha256
-        (base32 "0gih1dq62k7163pjsjl32smdqy54wjhsp31mv7ddhp4xmr6qb7cw"))))
+        (base32 "116xbmmi0nyzjdwry49dang96vji5ans9v1l2k54dawvbscxhg4j"))))
     (properties `((upstream-name . "ycevo")))
     (build-system r-build-system)
     (arguments
@@ -930,6 +930,7 @@ among others.  For more details, refer to Alcala et al. (2023)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
+                             r-scales
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp

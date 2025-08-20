@@ -3358,13 +3358,13 @@ community, but do not impose many dependencies on the user.")
 (define-public r-isar
   (package
     (name "r-isar")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ISAR" version))
        (sha256
-        (base32 "1c0294nya9dv3h3lnb23d0q8yh88d7dcrc5jxvc6aa8gnr034c74"))))
+        (base32 "05bms74kdv9ah1gmvj3ygw01nfb6xjhcm5fd6dxsi73jrfiwx067"))))
     (properties `((upstream-name . "ISAR")))
     (build-system r-build-system)
     (arguments
@@ -6438,6 +6438,75 @@ package can also be used as a teaching demo for introductory Bayesian courses.")
 1-compartment and 2-compartment models for each chemical.  These methods are
 described in detail in \"Informatics for Toxicokinetics\" (submitted).")
     (license license:gpl3)))
+
+(define-public r-invitrotkstats
+  (package
+    (name "r-invitrotkstats")
+    (version "0.0.13")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "invitroTKstats" version))
+       (sha256
+        (base32 "0kmm6a59nwihydsyk1jylwsa58mj7771jpkp6pnszwjhsg3lbb3w"))))
+    (properties `((upstream-name . "invitroTKstats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-scales
+                             r-runjags
+                             r-rlang
+                             r-readxl
+                             r-rdpack
+                             r-ggplot2
+                             r-dplyr
+                             r-coda))
+    (native-inputs (list r-r-rsp r-knitr))
+    (home-page "https://github.com/USEPA/invitroTKstats")
+    (synopsis "In Vitro Toxicokinetic Data Processing and Analysis Pipeline")
+    (description
+     "This package provides a set of tools for processing and analyzing in vitro
+toxicokinetic measurements in a standardized and reproducible pipeline.  The
+package was developed to perform frequentist and Bayesian estimation on a
+variety of in vitro toxicokinetic measurements including -- but not limited to
+-- chemical fraction unbound in the presence of plasma (f_up), intrinsic hepatic
+clearance (Clint, @code{uL/min/million} hepatocytes), and membrane permeability
+for oral absorption (Caco2).  The methods provided by the package were described
+in Wambaugh et al. (2019) <doi:10.1093/toxsci/kfz205>.")
+    (license license:expat)))
+
+(define-public r-invitrotkdata
+  (package
+    (name "r-invitrotkdata")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "invitroTKdata" version))
+       (sha256
+        (base32 "0wxb450vz6jf1ll2avrsp1wwmpmnjlgnyhhjbw675hcc1ng8bvkb"))))
+    (properties `((upstream-name . "invitroTKdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack))
+    (home-page "https://github.com/USEPA/invitroTKdata")
+    (synopsis
+     "In Vitro Toxicokinetic Data Processed with the 'invitroTKstats' Pipeline")
+    (description
+     "This package provides a collection of datasets containing a variety of in vitro
+toxicokinetic measurements including -- but not limited to -- chemical fraction
+unbound in the presence of plasma (f_up), intrinsic hepatic clearance (Clint,
+@code{uL/min/million} hepatocytes), and membrane permeability for oral
+absorption (Caco2).  The datasets provided by the package were processed and
+analyzed with the companion @code{invitroTKstats} package.")
+    (license license:expat)))
 
 (define-public r-invgauss
   (package
@@ -13190,13 +13259,13 @@ to harness AI for predictive analytics.")
 (define-public r-immunogenetr
   (package
     (name "r-immunogenetr")
-    (version "0.3.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "immunogenetr" version))
        (sha256
-        (base32 "0zmkjxba4bkanns9z2q2dyp3cdhm4a23flzmla7qhvldykmkckgn"))))
+        (base32 "0065z2h9lh4vz349yyskd2nvgf6k8c5093w359d1yar9sgpb2i1h"))))
     (properties `((upstream-name . "immunogenetr")))
     (build-system r-build-system)
     (arguments
@@ -14036,13 +14105,13 @@ as lengths and widths.")
 (define-public r-imak
   (package
     (name "r-imak")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IMak" version))
        (sha256
-        (base32 "09wj8xx30a2lqww8x67nwwyr8k1zsrdbrnnghriv854i6r44dmmf"))))
+        (base32 "1d4i8wxapxpk5fwxah0x20gfl1vl1v6nik6ysa8rwzwjxaap1j6b"))))
     (properties `((upstream-name . "IMak")))
     (build-system r-build-system)
     (arguments
@@ -15983,13 +16052,13 @@ References describing the methods: JefmaÅski (2020)
 (define-public r-ife
   (package
     (name "r-ife")
-    (version "0.1.12")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ife" version))
        (sha256
-        (base32 "0gljx4czqlr3yv4m76n3p0q23q3lhrgaam40fwqns5n9cv0pyli0"))))
+        (base32 "08m04hzqvc7dpg8mqa5drmmzx0hgbqy2ihcknm6c6a57y0jdnadp"))))
     (properties `((upstream-name . "ife")))
     (build-system r-build-system)
     (arguments
@@ -15997,10 +16066,11 @@ References describing the methods: JefmaÅski (2020)
       #:tests? #f))
     (propagated-inputs (list r-s7 r-generics r-cli))
     (home-page "https://cran.r-project.org/package=ife")
-    (synopsis "Influence Function Based Estimate Objects")
+    (synopsis "Autodiff for Influence Function Based Estimates")
     (description
-     "This package implements an S7 class for estimates based on influence functions.
-Standard arithmetic operations are defined for the class.")
+     "This package implements an S7 class for estimates based on influence functions,
+with forward mode automatic differentiation defined for standard arithmetic
+operations.")
     (license license:gpl3+)))
 
 (define-public r-ifctools
@@ -20393,6 +20463,33 @@ also provides asymptotic confidence intervals to support valid statistical
 inference.")
     (license license:expat)))
 
+(define-public r-ibdfindr
+  (package
+    (name "r-ibdfindr")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ibdfindr" version))
+       (sha256
+        (base32 "0idzp4zq330z2pl2qimndlz3vk4x20k7dps3f3pryfnkh0plp8ly"))))
+    (properties `((upstream-name . "ibdfindr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ribd r-pedtools r-ibdsim2 r-ggplot2 r-forrel))
+    (home-page "https://github.com/magnusdv/ibdfindr")
+    (synopsis "HMM Toolkit for Inferring IBD Segments from SNP Genotypes")
+    (description
+     "This package implements continuous-time hidden Markov models (HMMs) to infer
+identity-by-descent (IBD) segments shared by two individuals from their
+single-nucleotide polymorphism (SNP) genotypes.  Provides posterior
+probabilities at each marker (forward-backward algorithm), prediction of IBD
+segments (Viterbi algorithm), and functions for visualising results.  Supports
+both autosomal data and X-chromosomal data.")
+    (license license:gpl3+)))
+
 (define-public r-ibd
   (package
     (name "r-ibd")
@@ -20522,13 +20619,13 @@ Montesinos-LÃ³pez et al. (2017) <doi:10.1534/g3.117.300309>.")
 (define-public r-ibawds
   (package
     (name "r-ibawds")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibawds" version))
        (sha256
-        (base32 "1bldwig1psgn4z496blzbs6qwjxwhyhv2410axqk1w41a1zxsl5f"))))
+        (base32 "098rxab5sgm50j3bhms95bfall4g83hficc13a7k4s8ri2gbhsxy"))))
     (properties `((upstream-name . "ibawds")))
     (build-system r-build-system)
     (arguments
@@ -20542,6 +20639,7 @@ Montesinos-LÃ³pez et al. (2017) <doi:10.1534/g3.117.300309>.")
                              r-remotes
                              r-readr
                              r-purrr
+                             r-memuse
                              r-magrittr
                              r-ggplot2
                              r-dslabs

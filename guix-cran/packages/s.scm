@@ -3376,13 +3376,13 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svemnet
   (package
     (name "r-svemnet")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVEMnet" version))
        (sha256
-        (base32 "1jwb0m9w513d9b1i8h52ya9zkaf4r73kr07avbx7ngh3cj632ggx"))))
+        (base32 "1abhy3h4x7viyh4w679k2w229xnzrnpw50h50wfjna0srvn8m1fh"))))
     (properties `((upstream-name . "SVEMnet")))
     (build-system r-build-system)
     (arguments
@@ -7633,13 +7633,13 @@ number of robust (or super) biclusters with none or low overlap.")
 (define-public r-superb
   (package
     (name "r-superb")
-    (version "0.95.19")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "superb" version))
        (sha256
-        (base32 "003b7r79kc3sx3jp661f3p974jgczchd7b9f3jw89xrh0jh3214a"))))
+        (base32 "16m7bwdr7n0fjzk7vygn4y3i5bmnqpq81c4m8zldvd8hcv618cpw"))))
     (properties `((upstream-name . "superb")))
     (build-system r-build-system)
     (arguments
@@ -7649,6 +7649,7 @@ number of robust (or super) biclusters with none or low overlap.")
                              r-shinybs
                              r-shiny
                              r-rrapply
+                             r-reshape2
                              r-rdpack
                              r-plyr
                              r-mass
@@ -7656,20 +7657,21 @@ number of robust (or super) biclusters with none or low overlap.")
                              r-ggplot2
                              r-foreign))
     (native-inputs (list r-knitr))
-    (home-page "https://dcousin3.github.io/superb/")
+    (home-page "https://github.com/dcousin3/superb/")
     (synopsis "Summary Plots with Adjusted Error Bars")
     (description
      "Computes standard error and confidence interval of various descriptive
 statistics under various designs and sampling schemes.  The main function,
-@code{superbPlot()}, return a plot. @code{superbData()} returns a dataframe with
-the statistic and its precision interval so that other plotting package can be
-used.  See Cousineau and colleagues (2021) <doi:10.1177/25152459211035109> or
-Cousineau (2017) <doi:10.5709/acp-0214-z> for a review as well as Cousineau
-(2005) <doi:10.20982/tqmp.01.1.p042>, Morey (2008)
+@code{superb()}, return a plot.  It can also be used to obtain a dataframe with
+the statistics and their precision intervals so that other plotting environments
+(e.g., Excel) can be used.  See Cousineau and colleagues (2021)
+<doi:10.1177/25152459211035109> or Cousineau (2017) <doi:10.5709/acp-0214-z> for
+a review as well as Cousineau (2005) <doi:10.20982/tqmp.01.1.p042>, Morey (2008)
 <doi:10.20982/tqmp.04.2.p061>, Baguley (2012) <doi:10.3758/s13428-011-0123-7>,
 Cousineau & Laurencelle (2016) <doi:10.1037/met0000055>, Cousineau & O'Brien
 (2014) <doi:10.3758/s13428-013-0441-z>, Calderini & Harding
-<doi:10.20982/tqmp.15.1.p001> for specific references.")
+<doi:10.20982/tqmp.15.1.p001> for specific references.  The documentation is
+available at <https://dcousin3.github.io/superb/> .")
     (license license:gpl3)))
 
 (define-public r-super
@@ -18295,13 +18297,13 @@ autoregression methods.")
 (define-public r-ssn2
   (package
     (name "r-ssn2")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSN2" version))
        (sha256
-        (base32 "0yzhg5pvmm7bpv8c2qy345iv4r3s2liaxwmz87p9fscv01wx7m3i"))))
+        (base32 "1bc4s0hwbjv3qk87sml089pj345xnbbq2y3zss3j3iarrychliic"))))
     (properties `((upstream-name . "SSN2")))
     (build-system r-build-system)
     (arguments
@@ -18313,7 +18315,12 @@ autoregression methods.")
                              r-sf
                              r-rsqlite
                              r-matrix
-                             r-generics))
+                             r-itertools
+                             r-iterators
+                             r-generics
+                             r-foreach
+                             r-filematrix
+                             r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://usepa.github.io/SSN2/")
     (synopsis "Spatial Modeling on Stream Networks")
@@ -19428,13 +19435,13 @@ better than classical supervised classifiers.")
 (define-public r-ssbtools
   (package
     (name "r-ssbtools")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSBtools" version))
        (sha256
-        (base32 "1j9nwws8k9h1irbsjqlqa5y8qga8myy4ic13im28fa6f9zlpfn0z"))))
+        (base32 "01bchr5rvs5vxj8l39hm7b1b1qw74m1g72vxj3lsszgv3h6qcx4z"))))
     (properties `((upstream-name . "SSBtools")))
     (build-system r-build-system)
     (arguments
@@ -19925,31 +19932,43 @@ preparation.")
 (define-public r-sreg
   (package
     (name "r-sreg")
-    (version "1.0.1")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sreg" version))
        (sha256
-        (base32 "1smv58b3maj9p8w934map7ws0g1w0mwkxzjsmpdhci1657y5blk4"))))
+        (base32 "099j80qkcbdlj7ljahyfk8wcr3nwv7pp7d8d928q9qv2m1csqq96"))))
     (properties `((upstream-name . "sreg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-rlang r-extradistr r-dplyr r-cli))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-ggplot2
+                             r-extradistr
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jutrifonov/sreg")
     (synopsis "Stratified Randomized Experiments")
     (description
      "Estimate average treatment effects (ATEs) in stratified randomized experiments.
-sreg is designed to accommodate scenarios with multiple treatments and
-cluster-level treatment assignments, and accommodates optimal linear covariate
-adjustment based on baseline observable characteristics.  sreg computes
-estimators and standard errors based on Bugni, Canay, Shaikh (2018)
+`sreg` supports a wide range of stratification designs, including matched pairs,
+n-tuple designs, and larger strata with many units â possibly of unequal size
+across strata.  sreg is designed to accommodate scenarios with multiple
+treatments and cluster-level treatment assignments, and accommodates optimal
+linear covariate adjustment based on baseline observable characteristics.  sreg
+computes estimators and standard errors based on Bugni, Canay, Shaikh (2018)
 <doi:10.1080/01621459.2017.1375934>; Bugni, Canay, Shaikh, Tabord-Meehan (2024+)
-<doi:10.48550/@code{arXiv.2204.08356>}; and Jiang, Linton, Tang, Zhang (2023+)
-<doi:10.48550/@code{arXiv.2201.13004>}.")
+<doi:10.48550/@code{arXiv.2204.08356>}; Jiang, Linton, Tang, Zhang (2023+)
+<doi:10.48550/@code{arXiv.2201.13004>}; Bai, Jiang, Romano, Shaikh, and Zhang
+(2024) <doi:10.1016/j.jeconom.2024.105740>; Liu (2024+)
+<doi:10.48550/@code{arXiv.2301.09016>}; and Cytrynbaum (2024)
+<doi:10.3982/QE2475>.")
     (license license:expat)))
 
 (define-public r-srdpdata
@@ -20569,13 +20588,13 @@ including the model's response function.")
 (define-public r-sqlrender
   (package
     (name "r-sqlrender")
-    (version "1.19.2")
+    (version "1.19.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SqlRender" version))
        (sha256
-        (base32 "1c6pxba5zrc5ksrd2ykinv3v4f9pynlk6i6p1h67lqrqizl17jyy"))))
+        (base32 "0vygxvrid369i3ih255k69nfyqy4p3bi1pdzz663qphi9kvaqrz8"))))
     (properties `((upstream-name . "SqlRender")))
     (build-system r-build-system)
     (arguments
@@ -24289,13 +24308,13 @@ effects of functional variables -Application to agri-environmental issues\"
 (define-public r-sphunif
   (package
     (name "r-sphunif")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sphunif" version))
        (sha256
-        (base32 "11xsxw84209yiw2gjvbdr4iknhnxxbhsx7pygpg68lryc1ryc9nd"))))
+        (base32 "1f3j3b5qq80yi4w83c9aqzbx6kgyn19vg40sca85m7x5ajhjn8h4"))))
     (properties `((upstream-name . "sphunif")))
     (build-system r-build-system)
     (arguments
@@ -24325,9 +24344,9 @@ function @code{unif_stat_distr()}.  The core of sphunif is coded in C++ by
 relying on the Rcpp package.  The package also provides several novel datasets
 and gives the replicability for the data applications/simulations in
 GarcÃ­a-PortuguÃ©s et al. (2021) <doi:10.1007/978-3-030-69944-4_12>,
-GarcÃ­a-PortuguÃ©s et al. (2023) <doi:10.3150/21-BEJ1454>, GarcÃ­a-PortuguÃ©s et
-al. (2024) <doi:10.48550/@code{arXiv.2108.09874>}, and FernÃ¡ndez-de-Marcos and
-GarcÃ­a-PortuguÃ©s (2024) <doi:10.48550/@code{arXiv.2405.13531>}.")
+GarcÃ­a-PortuguÃ©s et al. (2023) <doi:10.3150/21-BEJ1454>, FernÃ¡ndez-de-Marcos
+and GarcÃ­a-PortuguÃ©s (2024) <doi:10.1016/j.spl.2024.110218>, and
+GarcÃ­a-PortuguÃ©s et al. (2024) <doi:10.48550/@code{arXiv.2108.09874>}.")
     (license license:gpl3)))
 
 (define-public r-sphet
@@ -27299,13 +27318,13 @@ in htmlwidgets mapping libraries.")
 (define-public r-spatialwarnings
   (package
     (name "r-spatialwarnings")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialwarnings" version))
        (sha256
-        (base32 "0k3xzc5xrdmgx2ax85qn2gb8cchwj031x1n3b2hsajrfwl6cgwzi"))))
+        (base32 "0nb4dlxildh9p37ffj45g2n3yds8jzaxj98q0w6c0m8598jg8dyb"))))
     (properties `((upstream-name . "spatialwarnings")))
     (build-system r-build-system)
     (arguments
@@ -27323,10 +27342,10 @@ in htmlwidgets mapping libraries.")
     (synopsis "Spatial Early Warning Signals of Ecosystem Degradation")
     (description
      "This package provides tools to compute and assess significance of early-warnings
-signals (EWS) of ecosystem degradation on raster data sets.  EWS are spatial
-metrics derived from raster data -- e.g. spatial autocorrelation -- that
-increase before an ecosystem undergoes a non-linear transition (Genin et al.
-(2018) <doi:10.1111/2041-210X.13058>).")
+signals (EWS) of ecosystem degradation.  EWS are spatial metrics derived from
+raster data -- e.g. spatial autocorrelation -- that increase before an ecosystem
+undergoes a non-linear transition (Genin et al. (2018)
+<doi:10.1111/2041-210X.13058>).")
     (license license:expat)))
 
 (define-public r-spatialvx
@@ -30304,13 +30323,13 @@ statements in parallel on top of SAS data.")
 (define-public r-spareg
   (package
     (name "r-spareg")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spareg" version))
        (sha256
-        (base32 "0x9jw9dzdjjg5lvwndk086y4apkv59j5kqq7mphpsbcqwyd3sq44"))))
+        (base32 "1agz28rxv42dsi61zpa0yk633xyvlz2hf79vggnvsaslgb7sdf85"))))
     (properties `((upstream-name . "spareg")))
     (build-system r-build-system)
     (arguments
@@ -30363,13 +30382,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "3.4.0")
+    (version "3.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "055hhni4j8sswl99jzv8v6l579wklg4721b38mixjj8kpcj6bqbk"))))
+        (base32 "03995dslbkk7inrbw2b6vid1kikmq92ncfbygk2shkavxibzl9fi"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (arguments
@@ -32438,13 +32457,13 @@ dedicated to the visualization of time-dependent variables Licen et al. (2020)
 (define-public r-sombrero
   (package
     (name "r-sombrero")
-    (version "1.4-3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SOMbrero" version))
        (sha256
-        (base32 "1l4b0jzcawmxaz0x7i8il8fjm0fsky11jx21x8xnkcdkdli977f0"))))
+        (base32 "0nh9fvdgqs0v54ivjnaw4jnm5as101qrx1dmxahh444bl4m305gm"))))
     (properties `((upstream-name . "SOMbrero")))
     (build-system r-build-system)
     (arguments
@@ -35238,13 +35257,13 @@ components manually.")
 (define-public r-smvr
   (package
     (name "r-smvr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smvr" version))
        (sha256
-        (base32 "1k5g29lv6w8rci4lnrc8175dqr6l45f5gn0wggr85h6pggcgis2k"))))
+        (base32 "0hh0sgrinq32aac98ds5a4bcxjvp3qw4l5jnvlwi3ylkpcfq41h6"))))
     (properties `((upstream-name . "smvr")))
     (build-system r-build-system)
     (arguments
@@ -36018,13 +36037,13 @@ semi-parametric approach.")
 (define-public r-smoothemplik
   (package
     (name "r-smoothemplik")
-    (version "0.0.14")
+    (version "0.0.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smoothemplik" version))
        (sha256
-        (base32 "16bwkb2a424lwpb4hv0frk2ph2nq1vlb88hc885wkirxxmdzb2xa"))))
+        (base32 "0fb18yw5jqf367zqbapv9k6l8k417dwmjrmgg2yqz3mp900rfhkr"))))
     (properties `((upstream-name . "smoothemplik")))
     (build-system r-build-system)
     (arguments
@@ -38423,13 +38442,13 @@ Recommender Systems\" by Xia Ning and George Karypis <doi:10.1109/ICDM.2011.134>
 (define-public r-slimr
   (package
     (name "r-slimr")
-    (version "1.0.3")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SlimR" version))
        (sha256
-        (base32 "1lnl9wghp00s578gjcmfq2jnjvbd9jmim128rsjiyby7izb63jbs"))))
+        (base32 "033680si12fbj48wzdwqfnc2w5ml4ckxflyd6cmz3cs5ygbrfdyy"))))
     (properties `((upstream-name . "SlimR")))
     (build-system r-build-system)
     (arguments
@@ -38442,7 +38461,6 @@ Recommender Systems\" by Xia Ning and George Karypis <doi:10.1109/ICDM.2011.134>
                              r-readxl
                              r-pheatmap
                              r-patchwork
-                             r-magrittr
                              r-ggplot2
                              r-dplyr
                              r-cowplot))
@@ -38453,17 +38471,18 @@ Recommender Systems\" by Xia Ning and George Karypis <doi:10.1109/ICDM.2011.134>
      "Annotating single-cell and spatial-transcriptomic (ST) data based on the Marker
 dataset.  It supports the creation of a unified marker list, Markers_list, using
 sources including: the package's built-in curated species-specific cell type and
-marker reference databases (e.g., Cellmarker2', @code{PanglaoDB}'), Seurat
-objects containing cell label information, or user-provided Excel tables mapping
-cell types to markers.  Based on the Markers_list, @code{SlimR} can iterate
-through different cell types to generate corresponding annotation reference
-plots (e.g., Markers_Dotplot', Metric_Heatmap', Mean_expression_Box_plot').
-Furthermore, it enables one-click generation of an annotation heatmap
-('Annotation_Heatmap') visualizing the relationship between input cell types and
-the reference marker list.  For more details see Kabacoff (2015,
-ISBN:9781617291388) and Hu et al. (2023) <doi:10.1093/nar/gkac947> and FranzÃ©n
-et al. (2019) <doi:10.1093/database/baz046>.")
-    (license license:gpl3)))
+marker reference databases (e.g., Cellmarker2', @code{PanglaoDB}',
+@code{scIBD}', T@code{CellSI}'), Seurat objects containing cell label
+information, or user-provided Excel tables mapping cell types to markers.  Based
+on the Markers_list, @code{SlimR} can calculate gene expression of different
+cell types and predict annotation information and calculate corresponding AUC by
+@code{Celltype_Calculate()}', and annotate it by @code{Celltype_Annotation()}',
+then verify it by @code{Celltype_Verification()}'.  At the same time, it can
+calculate gene expression corresponding to the cell type to generate the
+corresponding annotation reference map for manual annotation (e.g., Heatmap',
+Features plot', Combined plot').  For more details see Kabacoff (2020,
+ISBN:9787115420572).")
+    (license license:expat)))
 
 (define-public r-slim
   (package
@@ -47710,13 +47729,13 @@ multivariate extension, see the @code{shrinkTVPVAR} package.")
 (define-public r-shrinkgpr
   (package
     (name "r-shrinkgpr")
-    (version "1.0.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shrinkGPR" version))
        (sha256
-        (base32 "0yhlg82pc0r3d99a4z90j0a27rfn5fzy92744s80ivp858pjc3j4"))))
+        (base32 "0mmb51fbhhbrpj1xmziydgfv65w7rwlxdkbgx5v2mcl39bg3xzfi"))))
     (properties `((upstream-name . "shrinkGPR")))
     (build-system r-build-system)
     (arguments
@@ -56097,13 +56116,13 @@ images/containers.")
 (define-public r-sequoia
   (package
     (name "r-sequoia")
-    (version "2.11.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sequoia" version))
        (sha256
-        (base32 "09ji88hylic73m23gq24m9fp2zqlfz06xypd8sajj2k6q8105nbn"))))
+        (base32 "1f7imr6gfyiyky3dxkj57a0lcyiila8zh86hmcs04v5xxk4g67iy"))))
     (properties `((upstream-name . "sequoia")))
     (build-system r-build-system)
     (arguments
@@ -57930,13 +57949,13 @@ for more informations.")
 (define-public r-sensiat
   (package
     (name "r-sensiat")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SensIAT" version))
        (sha256
-        (base32 "0327bb7zkw07qs7lq5nqh845yb65m9b5xx7wjy8pfa2f7mxwg7f2"))))
+        (base32 "11kqdgv6jq4k267r5gvbri7krwh0rbk3dn5qsryk5baf9rq8jin9"))))
     (properties `((upstream-name . "SensIAT")))
     (build-system r-build-system)
     (arguments
@@ -57950,9 +57969,12 @@ for more informations.")
                              r-purrr
                              r-pracma
                              r-orthogonalsplinebasis
+                             r-mave
                              r-mass
                              r-kernsmooth
                              r-glue
+                             r-ggplot2
+                             r-generics
                              r-dplyr
                              r-assertthat))
     (home-page "https://github.com/UofUEpiBio/SensIAT")
@@ -60499,13 +60521,13 @@ from the Residential Segregation Literature\"
 (define-public r-segen
   (package
     (name "r-segen")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "segen" version))
        (sha256
-        (base32 "1l60rb1w0rfp1rv5favi4yxzyqs1nb1881mcz66xv789r3awhp11"))))
+        (base32 "0qd8qzn5r182sfak2xywzbl5zf3a7krrdnxrmhgs7x5gp676m7h1"))))
     (properties `((upstream-name . "segen")))
     (build-system r-build-system)
     (arguments
@@ -60524,9 +60546,13 @@ from the Residential Segregation Literature\"
                              r-imputets
                              r-greybox
                              r-ggplot2
+                             r-future
+                             r-furrr
                              r-fastdummies
                              r-fancova
-                             r-entropy))
+                             r-entropy
+                             r-dtw
+                             r-digest))
     (home-page "https://rpubs.com/giancarlo_vercellino/segen")
     (synopsis "Sequence Generalization Through Similarity Network")
     (description
@@ -61228,19 +61254,20 @@ keys specified during encryption.")
 (define-public r-secretsprovider
   (package
     (name "r-secretsprovider")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SecretsProvider" version))
        (sha256
-        (base32 "1da3pvdfjkf5899wgxx64xw9s2zwkpb1w0c5hkf45bli5md1sph3"))))
+        (base32 "06dvza4ad3sblyanfhrzh6bzx3s9ngbd7b0k2yx3rxqdsandqy7r"))))
     (properties `((upstream-name . "SecretsProvider")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=SecretsProvider")
+    (propagated-inputs (list r-getpass))
+    (home-page "https://CRAN.R-project.org/package=SecretsProvider")
     (synopsis "Save and Retrieve Name-Value Pairs to and from a File")
     (description
      "Facilitates secret management by storing credentials in a dedicated file,
@@ -68875,13 +68902,13 @@ preparation).")
 (define-public r-sats
   (package
     (name "r-sats")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SATS" version))
        (sha256
-        (base32 "1fv0jhr9iws0n078g8afnpb7h2qxz1jkpia4bmv4a66124p84c0p"))))
+        (base32 "1l87q7s8jn5h545d8pga8an0isnlbqjh2yv9xaysnm74bqsql1mx"))))
     (properties `((upstream-name . "SATS")))
     (build-system r-build-system)
     (arguments
@@ -68891,6 +68918,7 @@ preparation).")
                              r-glmnet
                              r-genomicranges
                              r-dplyr
+                             r-bsgenome-hsapiens-ucsc-hg38
                              r-bsgenome-hsapiens-ucsc-hg19
                              r-biostrings))
     (home-page "https://cran.r-project.org/package=SATS")
@@ -68902,8 +68930,8 @@ the mutation counts matrix into a panel context matrix (measuring the size of
 the targeted sequenced genome for each tumor in the unit of million base pairs
 (Mb)), a signature profile matrix, and a signature activity matrix.  SATS also
 calculates the expected number of mutations attributed by a signature, namely
-signature expectancy, for each targeted sequenced tumor.  For more details see
-Lee et al. (2024) <doi:10.1101/2023.05.18.23290188>.")
+signature burden, for each targeted sequenced tumor.  For more details see Lee
+et al. (2024) <doi:10.1101/2023.05.18.23290188>.")
     (license license:gpl2)))
 
 (define-public r-satres
@@ -71658,13 +71686,13 @@ with valid standard errors as proposed in Beesley and Mukherjee (2020)
 (define-public r-samadb
   (package
     (name "r-samadb")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "samadb" version))
        (sha256
-        (base32 "1qbjjnchx9h3wrhf23cpmwfaixdkm4jcpkgniz3h5ghrhqv32grr"))))
+        (base32 "07p1ihk032sww1hzp7zidfbxbfzsjqi5snv8y4i26hl8dsc78q3r"))))
     (properties `((upstream-name . "samadb")))
     (build-system r-build-system)
     (arguments

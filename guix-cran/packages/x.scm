@@ -2401,13 +2401,13 @@ whole lot more!")
 (define-public r-xaringan
   (package
     (name "r-xaringan")
-    (version "0.30")
+    (version "0.31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xaringan" version))
        (sha256
-        (base32 "0gz52xwxa1w5im3rns805mgfagaqg9f8whjsrsk0yv9kc3j7mc5i"))))
+        (base32 "1gv2p52yilyrzq4jc9fs3bdhrv18achvi7psrrag4x5bzajybw9r"))))
     (properties `((upstream-name . "xaringan")))
     (build-system r-build-system)
     (arguments

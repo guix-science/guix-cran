@@ -2883,22 +2883,24 @@ performance that's why the basis and Jacobian calculation is implemented in C++.
 (define-public r-bspcov
   (package
     (name "r-bspcov")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bspcov" version))
        (sha256
-        (base32 "0hyxkyddr3i932ya5pbjw7l6p4nci08x2bci8w6ahn0qlayrv1fh"))))
+        (base32 "1x2fx39fa3g1l2dfq43cs9lyhj79qzz4yqynnlr1ksyhyqglc8a7"))))
     (properties `((upstream-name . "bspcov")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rspectra
+                             r-reshape2
                              r-purrr
                              r-progress
                              r-plyr
+                             r-patchwork
                              r-mvtnorm
                              r-mvnfast
                              r-matrixstats
@@ -2910,6 +2912,7 @@ performance that's why the basis and Jacobian calculation is implemented in C++.
                              r-gigrvg
                              r-ggplot2
                              r-ggmcmc
+                             r-future-apply
                              r-future
                              r-furrr
                              r-fincovregularization
@@ -4774,13 +4777,13 @@ downstream analyses.")
 (define-public r-bregr
   (package
     (name "r-bregr")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bregr" version))
        (sha256
-        (base32 "11imzpivqg8lh02qriplr3qi31dwnq01kdknixv8irh3dk7bmwi7"))))
+        (base32 "1lw4sxdl14qk9fzfpra089hw10rbw57dm7la68mdnvzbpgzd7y3m"))))
     (properties `((upstream-name . "bregr")))
     (build-system r-build-system)
     (arguments
@@ -4792,6 +4795,7 @@ downstream analyses.")
                              r-s7
                              r-rlang
                              r-purrr
+                             r-mirai
                              r-lifecycle
                              r-insight
                              r-glue
@@ -4805,9 +4809,9 @@ downstream analyses.")
     (home-page "https://github.com/WangLabCSU/bregr")
     (synopsis "Easy and Efficient Batch Processing of Regression Models")
     (description
-     "Easily process batches of univariate or multivariate regression models.  Returns
-results in a tidy format and generates visualization plots for straightforward
-interpretation (Wang, Shixiang, et al. (2021)
+     "Easily processes batches of univariate or multivariate regression models.
+Returns results in a tidy format and generates visualization plots for
+straightforward interpretation (Wang, Shixiang, et al. (2021)
 <DOI:10.48550/@code{arXiv.2110.14232>}).")
     (license license:gpl3+)))
 
@@ -10386,13 +10390,13 @@ Zhang and Wang (2013, <doi:10.1007/s11336-012-9301-5>), Zhang (2014,
 (define-public r-bmemapping
   (package
     (name "r-bmemapping")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BMEmapping" version))
        (sha256
-        (base32 "0rb85sragwiyp065s613c1aqv3nvkr3ph6sbqn0bx0yzlhfa1l7s"))))
+        (base32 "0aj02x3klfqq745x187yzs3ps07jngmgs2l8w58df1rvk35yzgmg"))))
     (properties `((upstream-name . "BMEmapping")))
     (build-system r-build-system)
     (arguments
@@ -12269,33 +12273,32 @@ new data.  It provides the similar functionality as the Python package
 (define-public r-bkp
   (package
     (name "r-bkp")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BKP" version))
        (sha256
-        (base32 "14229948ly34jxc72mhqpwgci9zmzn6rshggqhf93rc4dcicns1a"))))
+        (base32 "1dys81gms9pgv0fy7fdmiwf53657csmbdsbdlygimcrs3nr5qpy1"))))
     (properties `((upstream-name . "BKP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tgp r-optimx r-lattice r-gridextra))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/Jiangyan-Zhao/BKP")
-    (synopsis
-     "Beta and Dirichlet Kernel Processes for Binomial and Multinomial Modeling")
+    (synopsis "Beta Kernel Process Modeling")
     (description
-     "This package provides methods for nonparametric modeling of binomial and
-multinomial success probabilities via the Beta Kernel Process and its extension,
-the Dirichlet Kernel Process.  Supports model fitting, predictive inference with
-uncertainty quantification, posterior simulation, and visualization in one- and
-two-dimensional input spaces.  The package implements multiple kernel functions
-(Gaussian, Matern 5/2, and Matern 3/2), and performs hyperparameter optimization
-using multi-start gradient-based search.  Applications include spatial
-statistics, probabilistic classification, and Bayesian experimental design.  For
-more details, see @code{MacKenzie}, Trafalis, and Barker (2014)
-<doi:10.1002/sam.11241>.")
+     "This package implements the Beta Kernel Process (BKP) for nonparametric modeling
+of spatially varying binomial probabilities, together with its extension, the
+Dirichlet Kernel Process (DKP), for categorical or multinomial data.  The
+package provides functions for model fitting, predictive inference with
+uncertainty quantification, posterior simulation, and visualization in one-and
+two-dimensional input spaces.  Multiple kernel functions (Gaussian, Matern 5/2,
+and Matern 3/2) are supported, with hyperparameters optimized through
+multi-start gradient-based search.  For more details, see Zhao, Qing, and Xu
+(2025) <doi:10.48550/@code{arXiv.2508.10447>}.")
     (license license:gpl3)))
 
 (define-public r-bkmrhat
@@ -12364,13 +12367,13 @@ of multiple concurrent exposures, as described in Bobb et al (2015)
 (define-public r-bizicount
   (package
     (name "r-bizicount")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bizicount" version))
        (sha256
-        (base32 "0f6qjyc81mh3f8amqm6wipr41zglv8y3khs5g8rnsx247xpshqdv"))))
+        (base32 "0qhsr6pl00p13w8wgm0dq5x05w3dqw2mdhlbllvk27ixcmw3wqcv"))))
     (properties `((upstream-name . "bizicount")))
     (build-system r-build-system)
     (arguments
@@ -12397,8 +12400,8 @@ DHARMa', and testing for marginal zero-modification via
 data, see Genest and NeÅ¡lehovÃ¡ (2007) <doi:10.1017/S0515036100014963> as well
 as Nikoloulopoulos (2013) <doi:10.1007/978-3-642-35407-6_11>.  For information
 on zero-inflated count regression generally, see Lambert (1992)
-<https://www.jstor.org/stable/1269547?origin=crossref>.  The author acknowledges
-support by NSF DMS-1925119 and DMS-212324.")
+<https://www.jstor.org/stable/1269547>.  The author acknowledges support by NSF
+DMS-1925119 and DMS-212324.")
     (license license:gpl3+)))
 
 (define-public r-bizdays
@@ -15065,13 +15068,13 @@ implementation can be understood by running examples in @code{modelFrame()}, and
 (define-public r-biodiversityr
   (package
     (name "r-biodiversityr")
-    (version "2.17-2")
+    (version "2.17-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiodiversityR" version))
        (sha256
-        (base32 "15wiwfd2667dm8f4j6wjj6s61db4cwp9mp9zcsj446kvpj17y1dm"))))
+        (base32 "1gcbbqz6khrmzc8w1kg8jd8m5qzvbfgc02ag0b1rqc0i4sbp5fng"))))
     (properties `((upstream-name . "BiodiversityR")))
     (build-system r-build-system)
     (arguments
@@ -16306,29 +16309,35 @@ prefers Fira', and IQSS requires Libertinus'.")
 (define-public r-binaryrl
   (package
     (name "r-binaryrl")
-    (version "0.9.0")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binaryRL" version))
        (sha256
-        (base32 "0a08rhlp65i2p4yywcyijcd3jym0pabxadjv2m456c627s5g7akp"))))
+        (base32 "1j6625jslsq5rchh63hs4jhpdd71llmhbw9q36vpklliwii5n7pn"))))
     (properties `((upstream-name . "binaryRL")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-progressr r-future r-foreach r-dorng r-dofuture))
+    (propagated-inputs (list r-rcpp
+                             r-progressr
+                             r-future
+                             r-foreach
+                             r-dorng
+                             r-dofuture))
     (home-page "https://yuki-961004.github.io/binaryRL/")
     (synopsis
      "Reinforcement Learning Tools for Two-Alternative Forced Choice Tasks")
     (description
-     "This package provides tools for building reinforcement learning (RL) models
-specifically tailored for Two-Alternative Forced Choice (TAFC) tasks, commonly
-employed in psychological research.  These models build upon the foundational
-principles of model-free reinforcement learning detailed in Sutton and Barto
-(2018) <ISBN:9780262039246>.  The package allows for the intuitive definition of
-RL models using simple if-else statements.  Our approach to constructing and
+     "This package provides tools for building Rescorla-Wagner Models for
+Two-Alternative Forced Choice tasks, commonly employed in psychological
+research.  Most concepts and ideas within this R package are referenced from
+Sutton and Barto (2018) <ISBN:9780262039246>.  The package allows for the
+intuitive definition of RL models using simple if-else statements and three
+basic models built into this R package are referenced from Niv et al.
+(2012)<doi:10.1523/JNEUROSCI.5498-10.2012>.  Our approach to constructing and
 evaluating these computational models is informed by the guidelines proposed in
 Wilson & Collins (2019) <doi:10.7554/@code{eLife.49547>}.  Example datasets
 included with the package are sourced from the work of Mason et al. (2024)
@@ -19735,13 +19744,13 @@ Back Filling Design for dose escalation in early-phase oncology trials.")
 (define-public r-bfast
   (package
     (name "r-bfast")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfast" version))
        (sha256
-        (base32 "1i6rhzxj6c8hfg9pfzcnwc98lm3jj4fx8ybldjg0gxl1p1h9yy9n"))))
+        (base32 "16svk55yd9ymwl7vl4p70bym2lgp5vsh7r2yckfzh3y72i7afs9g"))))
     (properties `((upstream-name . "bfast")))
     (build-system r-build-system)
     (arguments
@@ -24003,13 +24012,13 @@ Barreto-Souza, Mayrink and Simas (2020) <@code{arXiv:2003.05157>}.")
 (define-public r-bbnet
   (package
     (name "r-bbnet")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbnet" version))
        (sha256
-        (base32 "1p8y0qhkvqpkssv3akij25wv6r4937rw4irjx2f97zbyrii23c01"))))
+        (base32 "1ggwf0s967f99dlva2483jak0m1adf5ncvqizp24yq8rkdcciq8f"))))
     (properties `((upstream-name . "bbnet")))
     (build-system r-build-system)
     (arguments
@@ -25621,13 +25630,13 @@ Duan et al. (2006) <doi:10.1002/env.752> and Ibrahim et al. (2015)
 (define-public r-bayespostest
   (package
     (name "r-bayespostest")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesPostEst" version))
        (sha256
-        (base32 "0r05by4w80j6hb22v3ibj686ixxbj7lkxq499fciz5lqs4lxzf3h"))))
+        (base32 "1la1mg6zaj6x16rfx981fazaq103gxz9bwp60hxvym5x4n6bwzf7"))))
     (properties `((upstream-name . "BayesPostEst")))
     (build-system r-build-system)
     (arguments
@@ -25636,23 +25645,18 @@ Duan et al. (2006) <doi:10.1002/env.752> and Ibrahim et al. (2015)
     (inputs (list jags))
     (propagated-inputs (list r-tidyr
                              r-texreg
-                             r-runjags
-                             r-rstanarm
                              r-rocr
                              r-rlang
                              r-rjags
                              r-reshape2
-                             r-r2winbugs
                              r-r2jags
-                             r-mcmcpack
                              r-hdinterval
                              r-ggridges
                              r-ggplot2
                              r-dplyr
                              r-coda
                              r-catools
-                             r-cardata
-                             r-brms))
+                             r-cardata))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ShanaScogin/BayesPostEst")
     (synopsis
@@ -25944,13 +25948,13 @@ package from @code{GitHub}.")
 (define-public r-bayesnec
   (package
     (name "r-bayesnec")
-    (version "2.1.3.0")
+    (version "2.1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesnec" version))
        (sha256
-        (base32 "0pac8s3zqg6z2x3jf4j2kkvra6mpc5aa723b4mp2pygs9x6sjn41"))))
+        (base32 "10kvhzn2n2pd2irxmhml9q26qg9y39gb4anva1dg0am5yz32ii1x"))))
     (properties `((upstream-name . "bayesnec")))
     (build-system r-build-system)
     (arguments
@@ -27177,21 +27181,25 @@ criterion.")
 (define-public r-bayesianfitforecast
   (package
     (name "r-bayesianfitforecast")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianFitForecast" version))
        (sha256
-        (base32 "1z4mlr0ki2sy8p3qrc4qavmxiffcma9kpga7s8wc1f5k6frlv8mq"))))
+        (base32 "0sfilnyf7cgpr21rlng1w698z73x9sgp5cwdrbzbdwdc2f1vwxpw"))))
     (properties `((upstream-name . "BayesianFitForecast")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rstan
+    (propagated-inputs (list r-xlsx
+                             r-stringr
+                             r-rstan
                              r-readxl
                              r-openxlsx
+                             r-loo
+                             r-gridextra
                              r-ggplot2
                              r-dplyr
                              r-bayesplot))

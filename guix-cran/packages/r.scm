@@ -1246,13 +1246,13 @@ in a separate package RWekajars'.  For more information on Weka see
 (define-public r-rweaveextra
   (package
     (name "r-rweaveextra")
-    (version "1.2-0")
+    (version "1.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RweaveExtra" version))
        (sha256
-        (base32 "05jb4nwzgq8y3pdvxrh87201nwsw5frqqjvm9nlql6wx9d6m57an"))))
+        (base32 "0cb3kcjjda6wd8bfsvl5i8391r1k4438a7ddc0pb72l0kkg1ylgp"))))
     (properties `((upstream-name . "RweaveExtra")))
     (build-system r-build-system)
     (arguments
@@ -10827,13 +10827,13 @@ was taken.  References were Wickham (2016) <doi:10.1007/978-3-319-24277-4>.")
 (define-public r-rpref
   (package
     (name "r-rpref")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rPref" version))
        (sha256
-        (base32 "1ylb4mc5fjvmi8wly9w4v25l7sc8i9hk28lfidgzaavp5447af2w"))))
+        (base32 "1gkkcnj1iriadmj3j0dhbdq7560rjhfkrpfjdlng7536swp6cpxi"))))
     (properties `((upstream-name . "rPref")))
     (build-system r-build-system)
     (arguments
@@ -20062,13 +20062,13 @@ panels.  The full documentation and tutorials are at
 (define-public r-rmss
   (package
     (name "r-rmss")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMSS" version))
        (sha256
-        (base32 "1dfnaj8fpkyh7m9ydm4qyl5g26nxfh3iw3ap6j22i92p9fihpv59"))))
+        (base32 "09kd55qa43nql0rrbgz4xasqzpbsj2q7683ijmd5frijzxhjzahh"))))
     (properties `((upstream-name . "RMSS")))
     (build-system r-build-system)
     (arguments
@@ -35749,13 +35749,13 @@ similarities, cycles or triads can be calculated and analyzed over time.")
 (define-public r-relsurv
   (package
     (name "r-relsurv")
-    (version "2.3-2")
+    (version "2.3-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "relsurv" version))
        (sha256
-        (base32 "099aywvhzz5jxf7zirwxncj3ms5ng3jizr70pbvp4wlrnab6af1v"))))
+        (base32 "07pch3d835qf0x7g49pf8d5i434rnhlbflzz4dph8bczlyvcbbbq"))))
     (properties `((upstream-name . "relsurv")))
     (build-system r-build-system)
     (arguments
@@ -36958,13 +36958,13 @@ for making the graphs for the respective models.")
 (define-public r-regport
   (package
     (name "r-regport")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regport" version))
        (sha256
-        (base32 "0mbx1ja1mbhd0z7jcxjrs6b8ldp87ym21fyqigx3w295kh9zm0xx"))))
+        (base32 "0q33rhd47sghmaa5y9cdp0vrz8whq9zz549yqnnig4cyky0qw7d7"))))
     (properties `((upstream-name . "regport")))
     (build-system r-build-system)
     (arguments
@@ -39119,13 +39119,13 @@ interoperability with external sources (Harris et al (2009)
 (define-public r-redcapapi
   (package
     (name "r-redcapapi")
-    (version "2.11.0")
+    (version "2.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redcapAPI" version))
        (sha256
-        (base32 "0g1gzi94sh57zs549b7xhjzcs6kqaxlw4wd5sa318mjh5nn2i01q"))))
+        (base32 "0gzhahlrg9mviws25hay74zgic8iszd5kar90j9pa4mz0khpllka"))))
     (properties `((upstream-name . "redcapAPI")))
     (build-system r-build-system)
     (arguments
@@ -40002,13 +40002,13 @@ assumptions of latent variables or latent variable structures.")
 (define-public r-recmap
   (package
     (name "r-recmap")
-    (version "1.0.17")
+    (version "1.0.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "recmap" version))
        (sha256
-        (base32 "1q59fw72g6nkc9gzx06mnhwavplxybc0srjb10h5h8l1wwf1s67i"))))
+        (base32 "03sx184vmnpp7gnhsfif5f8c84x8b20mdkfwjj44a8nci2r5gbkd"))))
     (properties `((upstream-name . "recmap")))
     (build-system r-build-system)
     (arguments
@@ -40024,10 +40024,9 @@ assumptions of latent variables or latent variable structures.")
 statistical value, e.g., election results, population, or epidemiological data.
 The basic idea of the @code{RecMap} algorithm is that each map region, e.g.,
 different countries, is represented by a rectangle.  The area of each rectangle
-represents the statistical value given as input (maintain zero cartographic
-error).  C++ is used to implement the computationally intensive tasks.  The
-vignette included in this package provides documentation about the usage of the
-recmap algorithm.")
+represents the statistical value provided as input to maintain zero cartographic
+error.  Computationally intensive tasks are implemented in C++.  The included
+vignette documents recmap algorithm usage.")
     (license license:gpl3)))
 
 (define-public r-recluster
@@ -41103,13 +41102,13 @@ datasets from providers like the Roper Center <https://ropercenter.cornell.edu>.
 (define-public r-readrba
   (package
     (name "r-readrba")
-    (version "0.1.11")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readrba" version))
        (sha256
-        (base32 "0ja8di5jmiiq9kkigwahhhdfkppfqfkan7iqgrxa3gp838dxlq2r"))))
+        (base32 "0ckj8vnnkdynnxqk0l81d27c8fnn8crny7bp4gk8scj5cp7zcqr0"))))
     (properties `((upstream-name . "readrba")))
     (build-system r-build-system)
     (arguments
@@ -42147,13 +42146,13 @@ IDW-PLUS.")
 (define-public r-rdwd
   (package
     (name "r-rdwd")
-    (version "1.8.0")
+    (version "1.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdwd" version))
        (sha256
-        (base32 "0lb9r2wcdyix3im460wvv2q7yni3yixl7z8py4nbzp7ah0dc7g1z"))))
+        (base32 "04krkn5j5rgralncfmbwq943sm5s66c0xl5rzkimqm5b3hbxz0j6"))))
     (properties `((upstream-name . "rdwd")))
     (build-system r-build-system)
     (arguments
@@ -42161,7 +42160,7 @@ IDW-PLUS.")
       #:tests? #f))
     (propagated-inputs (list r-pbapply r-berryfunctions))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/brry/rdwd")
+    (home-page "https://bookdown.org/brry/rdwd/")
     (synopsis
      "Select and Download Climate Data from 'DWD' (German Weather Service)")
     (description
@@ -53602,13 +53601,13 @@ naive singular value decoposition (SVD) (and eigen decomposition).")
 (define-public r-randomwalker
   (package
     (name "r-randomwalker")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RandomWalker" version))
        (sha256
-        (base32 "0gisklmgywmyj2pynx7n9igvj5f63lcgh0vcxa9mkas7ndrwxb09"))))
+        (base32 "1sk25vqv9gxi727xvxxr44ska2692l89is43cy1cya30y1ql51zw"))))
     (properties `((upstream-name . "RandomWalker")))
     (build-system r-build-system)
     (arguments
@@ -55173,13 +55172,13 @@ supporting functions to employ these estimators in a graphical modeling setting.
 (define-public r-ragnar
   (package
     (name "r-ragnar")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ragnar" version))
        (sha256
-        (base32 "155v73gswmh8q0dni5065li82s4m0mbdbkm1m0yxp3469v6w0c92"))))
+        (base32 "0r0485h0ay2n0qnnvsav80j8hhaxrqsyl70nj51lawz0vlkyym14"))))
     (properties `((upstream-name . "ragnar")))
     (build-system r-build-system)
     (arguments
@@ -55189,7 +55188,6 @@ supporting functions to employ these estimators in a graphical modeling setting.
                              r-withr
                              r-vctrs
                              r-tidyr
-                             r-tibble
                              r-stringi
                              r-s7
                              r-rvest
@@ -55199,7 +55197,7 @@ supporting functions to employ these estimators in a graphical modeling setting.
                              r-glue
                              r-duckdb
                              r-dplyr
-                             r-dotty
+                             r-dbplyr
                              r-dbi
                              r-curl
                              r-commonmark

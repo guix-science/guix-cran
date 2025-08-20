@@ -568,6 +568,34 @@ paper of Liu et al. (2007), <doi:10.1111/j.1541-0420.2007.00799.x>.")
 and Levy (2016) <@code{arXiv:1701.07266>}.")
     (license license:gpl2+)))
 
+(define-public r-ksic
+  (package
+    (name "r-ksic")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KSIC" version))
+       (sha256
+        (base32 "16p7as2jm2372kckygvydkw1c9gssi7p5g9dnzpyk8k9g1b3xx0k"))))
+    (properties `((upstream-name . "KSIC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/urbanjj/KSIC")
+    (synopsis "Korea Standard Industrial Classification (KSIC)")
+    (description
+     "This package provides tools for working with the Korea Standard Industrial
+Classification (KSIC).  Includes datasets for the 9th, 10th, and 11th revisions.
+ Functions include searching codes and names by keyword, converting codes across
+revisions, validating KSIC codes, and navigating the classification hierarchy
+(e.g., identifying parent or child categories).  Intended for use in statistical
+analysis, data processing, and research involving South Koreaâs industrial
+classification system.")
+    (license license:gpl3+)))
+
 (define-public r-ksharp
   (package
     (name "r-ksharp")
@@ -3379,13 +3407,13 @@ variables are independent, and deviates from this the more dependence exists.")
 (define-public r-kitagawa
   (package
     (name "r-kitagawa")
-    (version "3.1.2")
+    (version "3.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kitagawa" version))
        (sha256
-        (base32 "0xn1gwa0whw6glypsf8wwrw0rlzy3xglqr7gdl5c7ldd5v1dffq9"))))
+        (base32 "0rj46p6km4b50xhiyisz5qvi7qf4c8nl96wwpvfzijgv37w1f8q2"))))
     (properties `((upstream-name . "kitagawa")))
     (build-system r-build-system)
     (arguments
@@ -5921,13 +5949,13 @@ al. (2024)<doi:10.48550/@code{arXiv.2403.13069>}.")
 (define-public r-kdevine
   (package
     (name "r-kdevine")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kdevine" version))
        (sha256
-        (base32 "0d157kl8x9jq4h8h0r8iia25wwdw1syc4f1iqp5mgn3l4kgark9s"))))
+        (base32 "0q3llw6b3qqrwysalh8kpy0lf59pgy20yv4zg6l33y07axzmq7qh"))))
     (properties `((upstream-name . "kdevine")))
     (build-system r-build-system)
     (arguments
@@ -5988,13 +6016,13 @@ and bandwidths are supported.")
 (define-public r-kdemcmc
   (package
     (name "r-kdemcmc")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KDEmcmc" version))
        (sha256
-        (base32 "1y2zxm5qmc1y1bddh6cx5if4bichxiy2r50jb34j25q93p10qz38"))))
+        (base32 "1g1283icgn7y9421ygjnz2w9gkf42jd5wsnmkxai0wr4bc34k3sa"))))
     (properties `((upstream-name . "KDEmcmc")))
     (build-system r-build-system)
     (arguments
@@ -6779,13 +6807,13 @@ or the first Wasserstein distance.")
 (define-public r-kanova
   (package
     (name "r-kanova")
-    (version "0.3-19")
+    (version "0.3-20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kanova" version))
        (sha256
-        (base32 "0hdap20xwb6805hv13ifjz4jk8ml0bpmznf15r6lyr31ca9jb27g"))))
+        (base32 "13r527z9lp1dbisy3zknr54myj4bdymrljj1jg8pipcixxl47jc9"))))
     (properties `((upstream-name . "kanova")))
     (build-system r-build-system)
     (arguments

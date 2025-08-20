@@ -1097,13 +1097,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.6.11")
+    (version "1.6.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "1g1srmcbmqlpmga32wb97jcq2sw6pgvxr5dxz7bfgbxy01hd8n2f"))))
+        (base32 "0i1875ix9gr7jh5hgd1m5i5khnxfvd2zlz0hq0dp5r09a62ayc01"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (arguments
@@ -1124,7 +1124,6 @@ available at the following URL:
                              r-riskregression
                              r-readxl
                              r-readr
-                             r-rcolorbrewer
                              r-r6
                              r-purrr
                              r-proc
@@ -1219,13 +1218,13 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.5.14")
+    (version "0.5.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jskm" version))
        (sha256
-        (base32 "19y99gnmkf5lqip56iizs0s4lcl7y3300rj41jlgdpmrsr73jjzd"))))
+        (base32 "1k4ffibfpxxwrfcfbaim5r2l05sp4054vi2v93paklmsp8nayky1"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
     (arguments
@@ -1235,6 +1234,7 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
                              r-survey
                              r-scales
                              r-patchwork
+                             r-ggsci
                              r-ggpubr
                              r-ggplot2
                              r-cmprsk))
@@ -4266,13 +4266,13 @@ stem diameter at the lowest major living branch (R^2 = 0.996).")
 (define-public r-javagd
   (package
     (name "r-javagd")
-    (version "0.6-5")
+    (version "0.6-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JavaGD" version))
        (sha256
-        (base32 "1wl31k02x3j9hpf8c8gsmi3k3b3vz9a3y38pz6wa9r41r791rnr1"))))
+        (base32 "1w4wcwazkkgbkc6mn30sdv9w51hm4chb8w5nfsmpfg0rmpa97c2g"))))
     (properties `((upstream-name . "JavaGD")))
     (build-system r-build-system)
     (arguments

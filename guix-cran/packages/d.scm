@@ -693,13 +693,13 @@ described for a survival outcome in: Devaux, Helmer, Genuer & Proust-Lima (2023)
 (define-public r-dynemu
   (package
     (name "r-dynemu")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynemu" version))
        (sha256
-        (base32 "16459cg2s0md1cg1l3lg4k6rspkpcv4fd7x0r23psvrfnwzry6pj"))))
+        (base32 "0cm63np094z0crlwms0ra3fh9hnm99z2vlwn07jbfqz50v4gbbfw"))))
     (properties `((upstream-name . "dynemu")))
     (build-system r-build-system)
     (arguments
@@ -716,9 +716,10 @@ systems.  It is specifically designed for nonlinear dynamic systems where full
 simulations may be costly.  The underlying Gaussian process model accounts for
 temporal dependency through the one-step-ahead formulation, allowing for
 accurate emulation of complex dynamics.  Hyperparameters are estimated via
-maximum likelihood.  See Heo (2025, <doi:10.48550/@code{arXiv.2503.20250>}) for
-exact method, and Mohammadi, Challenor, and Goodfellow (2019,
-<doi:10.1016/j.csda.2019.05.006>) for methodological details.")
+maximum likelihood.  For methodological details, see Heo (2025,
+<doi:10.48550/@code{arXiv.2503.20250>}) for exact method, and Mohammadi,
+Challenor, and Goodfellow (2019, <doi:10.1016/j.csda.2019.05.006>) for Monte
+Carlo method.")
     (license license:expat)))
 
 (define-public r-dyndimred
@@ -1894,13 +1895,13 @@ meta-package, it helps create a comprehensive reference for its website.")
 (define-public r-durga
   (package
     (name "r-durga")
-    (version "2.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Durga" version))
        (sha256
-        (base32 "0iq29ga1cn5fnnj1b90pprqcldygmy695si0vq4pr8d59q029ah9"))))
+        (base32 "0a23n6i64d527cxxdawlnfwkmkwppa24q56982z3qj2ka4bzxks6"))))
     (properties `((upstream-name . "Durga")))
     (build-system r-build-system)
     (arguments
@@ -3907,6 +3908,62 @@ derivative or discrete spline bases matrices, and interpolation within discrete
 spline spaces.  These techniques are described in Tibshirani (2020)
 <doi:10.48550/@code{arXiv.2003.03886>}.")
     (license license:expat)))
+
+(define-public r-dsp
+  (package
+    (name "r-dsp")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dsp" version))
+       (sha256
+        (base32 "0zrqqjzqn0na5g62594lhawzmgklkjp391adyxprlmz9gdrrasyc"))))
+    (properties `((upstream-name . "dsp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncdist
+                             r-stochvol
+                             r-spam
+                             r-rlang
+                             r-rcppziggurat
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-progress
+                             r-pgdraw
+                             r-msm
+                             r-mgcv
+                             r-mcmcpack
+                             r-matrix
+                             r-lifecycle
+                             r-glue
+                             r-fda
+                             r-coda
+                             r-bayeslogit))
+    (home-page "https://github.com/schafert/dsp")
+    (synopsis "Dynamic Shrinkage Process and Change Point Detection")
+    (description
+     "This package provides efficient Markov chain Monte Carlo (MCMC) algorithms for
+dynamic shrinkage processes, which extend global-local shrinkage priors to the
+time series setting by allowing shrinkage to depend on its own past.  These
+priors yield locally adaptive estimates, useful for time series and regression
+functions with irregular features.  The package includes full MCMC
+implementations for trend filtering using dynamic shrinkage on signal
+differences, producing locally constant or linear fits with adaptive credible
+bands.  Also included are models with static shrinkage and normal-inverse-Gamma
+priors for comparison.  Additional tools cover dynamic regression with
+time-varying coefficients and B-spline models with shrinkage on basis
+differences, allowing for flexible curve-fitting with unequally spaced data.
+Some support for heteroscedastic errors, outlier detection, and change point
+estimation.  Methods in this package are described in Kowal et al. (2019)
+<doi:10.1111/rssb.12325>, Wu et al. (2024) <doi:10.1080/07350015.2024.2362269>,
+Schafer and Matteson (2024) <doi:10.1080/00401706.2024.2407316>, and Cho and
+Matteson (2024) <doi:10.48550/@code{arXiv.2408.11315>}.")
+    (license license:gpl3+)))
 
 (define-public r-dsos
   (package
@@ -9622,13 +9679,13 @@ tools for common low-level tasks.")
 (define-public r-doconv
   (package
     (name "r-doconv")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "doconv" version))
        (sha256
-        (base32 "1ppzryd1kv5v96b2dwfzfy6cj7wx5sx8insj06gf2m2f442c8aph"))))
+        (base32 "1lkxiamvxa6glcb4dj8fnik4l4z0mqfqw734s3c5jv82r9cwv0b0"))))
     (properties `((upstream-name . "doconv")))
     (build-system r-build-system)
     (arguments
@@ -10547,13 +10604,13 @@ approach is detailed in the work of Adatorwovor et al. (2022)
 (define-public r-dmrnet
   (package
     (name "r-dmrnet")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DMRnet" version))
        (sha256
-        (base32 "11niqsnkyrcwsirrsjp7gkdcjgdlddah92i5mndw4idadjg0cnrc"))))
+        (base32 "0r14272w3ibkywc7711gh590qqv8zyljwq10176536vckcy73dwv"))))
     (properties `((upstream-name . "DMRnet")))
     (build-system r-build-system)
     (arguments
@@ -12181,13 +12238,13 @@ in addition to the carefully selected @code{dittoColors()}.")
 (define-public r-dittodb
   (package
     (name "r-dittodb")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dittodb" version))
        (sha256
-        (base32 "13w78vhl1skc9073k5aplxm21l0cny8aklp75qljhla5p6ggq02w"))))
+        (base32 "0957zwcpr1w3awjk3amwd1ixqvhcw5i68a8hr95fsj2bvlrsiqky"))))
     (properties `((upstream-name . "dittodb")))
     (build-system r-build-system)
     (arguments
@@ -16026,21 +16083,22 @@ Dooley et al. (2015) <doi:10.1111/ele.12504>.")
 (define-public r-dimodels
   (package
     (name "r-dimodels")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DImodels" version))
        (sha256
-        (base32 "1ykdjqbli32awx6fwyff0l522dclhfyjp83svsjrfnm0517rlg4w"))))
+        (base32 "1ankmhv1i294cfz4yvb5b71ym1csgc7lpwg9lgd6737xxarax2pi"))))
     (properties `((upstream-name . "DImodels")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rootsolve r-multcomp r-hnp r-ggplot2))
+    (propagated-inputs (list r-rootsolve r-multcompview r-multcomp r-hnp
+                             r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DImodels")
+    (home-page "https://dimodels.com/")
     (synopsis "Diversity-Interactions (DI) Models")
     (description
      "The DImodels package is suitable for analysing data from biodiversity and
@@ -17409,13 +17467,13 @@ using the imputation-based approach proposed by Borusyak, Jaravel, and Spiess
 (define-public r-didhad
   (package
     (name "r-didhad")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDHAD" version))
        (sha256
-        (base32 "1cmzsa1yn19gw5mc5lyrsnf1ghil7a3mgh2a1ana6rfzb5bpq4fq"))))
+        (base32 "1g3i3qy8pckrmgwmb3c8mg7787kf35ir9klrvpcxjly85x02vm6k"))))
     (properties `((upstream-name . "DIDHAD")))
     (build-system r-build-system)
     (arguments
@@ -17426,17 +17484,16 @@ using the imputation-based approach proposed by Borusyak, Jaravel, and Spiess
                              r-rlang
                              r-plm
                              r-nprobust
-                             r-mass
                              r-haven
                              r-ggplot2
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=DIDHAD")
     (synopsis
-     "Difference-in-Differences in Heterogeneous Adoption Designs with Quasi Stayers")
+     "Difference-in-Differences in Heterogeneous Adoption Designs with Quasi Untreated Groups")
     (description
      "Estimation of Difference-in-Differences (@code{DiD}) estimators from de
-Chaisemartin and D'Haultfoeuille (2024) <doi:10.2139/ssrn.4284811> in
-Heterogeneous Adoption Designs with no stayers but with quasi stayers.")
+Chaisemartin et al. (2025) <doi:10.48550/@code{arXiv.2405.04465>} in
+Heterogeneous Adoption Designs with Quasi Untreated Groups.")
     (license license:expat)))
 
 (define-public r-didforbigdata
@@ -17842,13 +17899,13 @@ clusters.")
 (define-public r-diceplot
   (package
     (name "r-diceplot")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diceplot" version))
        (sha256
-        (base32 "17q9apx89p8p3d726q9z0w9xg7sb0898ibv00rblnp5cxn5lcb4c"))))
+        (base32 "1a91zgbq27c4skngqcl0j8mcglmp541liysy1yqmqa15qwjpgzas"))))
     (properties `((upstream-name . "diceplot")))
     (build-system r-build-system)
     (arguments
@@ -23129,13 +23186,13 @@ fertility rates, net migration numbers; and stochastic population forecasting.")
 (define-public r-demographictable
   (package
     (name "r-demographictable")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DemographicTable" version))
        (sha256
-        (base32 "17asfdpqw81dcqk44vsr4xzfan9a54z3pwib091xwp949qgzik0d"))))
+        (base32 "17x45a87rlqx1nv7s9my3znyjvfiia3y7clqqxr8nl3pxxk0ixdf"))))
     (properties `((upstream-name . "DemographicTable")))
     (build-system r-build-system)
     (arguments
@@ -25349,13 +25406,13 @@ supports basemaps from mapbox <https://www.mapbox.com/> via mapbox-gl-js
 (define-public r-decisionsupport
   (package
     (name "r-decisionsupport")
-    (version "1.114")
+    (version "1.115")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "decisionSupport" version))
        (sha256
-        (base32 "1vd18v0wi56qd8anhwvvwab98lgh3aj785f6c6nd41ifwp2phzm3"))))
+        (base32 "1wayy7qk23akzmsbzfd2ykbn37frwisi259i1hn16jgjs5bjyy0v"))))
     (properties `((upstream-name . "decisionSupport")))
     (build-system r-build-system)
     (arguments
@@ -30358,13 +30415,13 @@ Publishing.")
 (define-public r-datana
   (package
     (name "r-datana")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datana" version))
        (sha256
-        (base32 "0f28gw9nj7aiqkzb499xby3adxz8bn484fhlmqsf5rx9jw9zbh52"))))
+        (base32 "134c34gnqq430ijs5si4l19l3dz0frvnsi44y8fpvgm7izj274im"))))
     (properties `((upstream-name . "datana")))
     (build-system r-build-system)
     (arguments

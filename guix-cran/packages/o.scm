@@ -394,6 +394,31 @@ than 5,000 charts focusing on global problems such as poverty, disease, hunger,
 climate change, war, existential risks, and inequality.")
     (license license:expat)))
 
+(define-public r-owenq
+  (package
+    (name "r-owenq")
+    (version "1.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OwenQ" version))
+       (sha256
+        (base32 "1qph33r981rvcgylgxpq3hhc5ss7awbrj3g4i6hqy28nqkm9q237"))))
+    (properties `((upstream-name . "OwenQ")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcpp r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stla/OwenQ")
+    (synopsis "Owen Q-Function")
+    (description
+     "Evaluates the Owen Q-function for an integer value of the degrees of freedom, by
+applying Owen's algorithm (1965) <doi:10.1093/biomet/52.3-4.437>.  It is useful
+for the calculation of the power of equivalence tests.")
+    (license license:bsd-3)))
+
 (define-public r-owea
   (package
     (name "r-owea")
@@ -2120,13 +2145,13 @@ Krantz (2023) <https://www.ssrn.com/abstract=4537867>.")
 (define-public r-osmapir
   (package
     (name "r-osmapir")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osmapiR" version))
        (sha256
-        (base32 "1rnzzpf30f124yvgzws7k7aiga29gkqcx20n0d1ig0j4qdqd5iq8"))))
+        (base32 "1a5116srf0g46h8v89spxnjnr6igm017v0lri6r95dwx2fzsdx7w"))))
     (properties `((upstream-name . "osmapiR")))
     (build-system r-build-system)
     (arguments
@@ -8631,13 +8656,13 @@ Public Health Ontario website:
 (define-public r-onls
   (package
     (name "r-onls")
-    (version "0.1-2")
+    (version "0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onls" version))
        (sha256
-        (base32 "19pgrhr7xzas4s592l4sgv1dfynf3s3d227zwcdv6z6wrxh40hyj"))))
+        (base32 "0zy1n9x3xbxya2igl0jkzqfcv826qzr8l3hn4c99y8zf2j9faqla"))))
     (properties `((upstream-name . "onls")))
     (build-system r-build-system)
     (arguments
@@ -8649,7 +8674,9 @@ Public Health Ontario website:
     (description
      "Fits two-dimensional data by means of orthogonal nonlinear least-squares using
 Levenberg-Marquardt minimization and provides functionality for fit diagnostics
-and plotting.")
+and plotting.  Delivers the same results as the ODRPACK Fortran implementation
+described in Boggs et al. (1989) <doi:10.1145/76909.76913>, but is implemented
+in pure R.")
     (license license:gpl2+)))
 
 (define-public r-onlineretail
@@ -11764,13 +11791,13 @@ and Chien (2022) <doi:10.18637/jss.v104.i06>.")
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "1606l1d3c6wcynk0g5vz6dds3qxmqrda578d0qg1kh9wbxfv8vj7"))))
+        (base32 "0fzvinn4qny6d2vsgq94pmjpsn7qnm5pxj4ivwgkbpc49wx4gf81"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (arguments
@@ -11783,12 +11810,14 @@ and Chien (2022) <doi:10.18637/jss.v104.i06>.")
                              r-rcpp
                              r-r6
                              r-progressr
+                             r-mvtnorm
                              r-hexsticker
                              r-glue
                              r-ggplot2
                              r-future-apply
                              r-future
                              r-dplyr
+                             r-cubature
                              r-cli
                              r-checkmate
                              r-benchmarkme))

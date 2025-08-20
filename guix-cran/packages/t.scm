@@ -21,6 +21,7 @@
   #:use-module (gnu packages video)
   #:use-module (gnu packages imagemagick)
   #:use-module (gnu packages perl)
+  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages tex)
   #:use-module (gnu packages multiprecision)
   #:use-module (guix-cran packages z)
@@ -6010,35 +6011,34 @@ reporting a \"good\" outcome.")
 (define-public r-trud
   (package
     (name "r-trud")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trud" version))
        (sha256
-        (base32 "1mknagpm7m6m48hbzwc9r6sx657h792wmv6qpwb0x88rgla3wrn9"))))
+        (base32 "0fcbykg8r15i2mfslaalr91ddavw4nymxsldx8198a0sdbyh904p"))))
     (properties `((upstream-name . "trud")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tibble
+    (propagated-inputs (list r-tibble
                              r-stringr
                              r-rvest
                              r-rlang
                              r-purrr
-                             r-magrittr
                              r-httr2
                              r-dplyr
                              r-cli))
-    (home-page "https://rmgpanw.github.io/trud/")
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/trud/")
     (synopsis "Query the 'NHS TRUD API'")
     (description
      "This package provides a convenient R interface to the National Health Service
-(NHS) Technology Reference Update Distribution (TRUD) API'.  Retrieve available
-releases for items that you are subscribed to and download these with ease.  For
-more information on the API, see
+NHS Technology Reference Update Distribution (TRUD) API', allowing users to list
+available releases for their subscribed items, retrieve metadata, and download
+release files.  For more information on the API, see
 <https://isd.digital.nhs.uk/trud/users/guest/filters/0/api>.")
     (license license:expat)))
 
@@ -12982,63 +12982,64 @@ dynamics.")
 (define-public r-topolow
   (package
     (name "r-topolow")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topolow" version))
        (sha256
-        (base32 "0jrndnybc2zwy9vr87ngzvkgiwfx0l6jngfscvdjysdzy2hp4jgc"))))
+        (base32 "0j4pwnsy13s23w61l3afvck5cs5l3kxm872m2wlh8jkqxz5nr4n7"))))
     (properties `((upstream-name . "topolow")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-umap
-                             r-scales
-                             r-rtsne
-                             r-rlang
-                             r-rgl
+    (propagated-inputs (list r-rlang
                              r-reshape2
-                             r-racmacs
-                             r-plotly
-                             r-mass
+                             r-lifecycle
                              r-lhs
-                             r-igraph
-                             r-gridextra
-                             r-ggrepel
                              r-ggplot2
+                             r-future
                              r-filelock
                              r-dplyr
-                             r-data-table
-                             r-coda
-                             r-ape))
+                             r-data-table))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/omid-arhami/topolow")
-    (synopsis "Antigenic Mapping and Antigenic Velocity Algorithm")
+    (synopsis "Force-Directed Euclidean Embedding of Dissimilarity Data")
     (description
-     "An implementation of the @code{TopoLow} algorithm, a novel, physics-inspired
-method for antigenic cartography. @code{TopoLow} addresses significant
-challenges in mapping antigenic relationships, especially from sparse and noisy
-experimental data.  The package transforms cross-reactivity and binding affinity
-measurements into accurate spatial representations in a phenotype space.  Key
-features include: * Robust Mapping from Sparse Data: Effectively creates
-complete and consistent maps even with high proportions of missing data (e.g.,
->95%). * Physics-Inspired Optimization: Models antigens as particles connected
-by springs (for measured interactions) and subject to repulsive forces (for
-missing interactions), reducing the need for complex gradient computations. *
-Automatic Dimensionality Detection: Employs a likelihood-based approach to
-determine the optimal number of dimensions for the antigenic map, avoiding
-distortions common in methods with fixed low dimensions. * Noise and Bias
-Reduction: Naturally mitigates experimental noise and bias through its
-network-based, error-dampening mechanism. * Antigenic Velocity Calculation:
-Introduces and quantifies \"antigenic velocity,\" a vector that describes the rate
-and direction of antigenic drift for each pathogen isolate.  This can help
-identify cluster transitions and potential lineage replacements. * Broad
-Applicability: Analyzes data from various pathogens, including influenza, HIV,
-and Dengue viruses.  It can be applied to any continuous and relational
-phenotype under directional selection pressure.  Methods are described in Arhami
-and Rohani (2025) <doi:10.1093/bioinformatics/btaf372>.")
+     "This package provides a robust implementation of Topolow algorithm.  It embeds
+objects into a low-dimensional Euclidean space from a matrix of pairwise
+dissimilarities, even when the data do not satisfy metric or Euclidean axioms.
+The package is particularly well-suited for sparse, incomplete, and censored
+(thresholded) datasets such as antigenic relationships.  The core is a
+physics-inspired, gradient-free optimization framework that models objects as
+particles in a physical system, where observed dissimilarities define spring
+rest lengths and unobserved pairs exert repulsive forces.  The package also
+provides functions specific to antigenic mapping to transform cross-reactivity
+and binding affinity measurements into accurate spatial representations in a
+phenotype space.  Key features include: * Robust Embedding from Sparse Data:
+Effectively creates complete and consistent maps (in optimal dimensions) even
+with high proportions of missing data (e.g., >95%). * Physics-Inspired
+Optimization: Models objects (e.g., antigens, landmarks) as particles connected
+by springs (for measured dissimilarities) and subject to repulsive forces (for
+missing dissimilarities), and simulates the physical system using laws of
+mechanics, reducing the need for complex gradient computations. * Automatic
+Dimensionality Detection: Employs a likelihood-based approach to determine the
+optimal number of dimensions for the embedding/map, avoiding distortions common
+in methods with fixed low dimensions. * Noise and Bias Reduction: Naturally
+mitigates experimental noise and bias through its network-based, error-dampening
+mechanism. * Antigenic Velocity Calculation (for antigenic data): Introduces and
+quantifies \"antigenic velocity,\" a vector that describes the rate and direction
+of antigenic drift for each pathogen isolate.  This can help identify cluster
+transitions and potential lineage replacements. * Broad Applicability: Analyzes
+data from various objects that their dissimilarity may be of interest, ranging
+from complex biological measurements such as continuous and relational
+phenotypes, antibody-antigen interactions, and protein folding to abstract
+concepts, such as customer perception of different brands.  Methods are
+described in the context of bioinformatics applications in Arhami and Rohani
+(2025a) <doi:10.1093/bioinformatics/btaf372>, and mathematical proofs and
+Euclidean embedding details are in Arhami and Rohani (2025b)
+<doi:10.48550/@code{arXiv.2508.01733>}.")
     (license license:bsd-3)))
 
 (define-public r-topologygsa
@@ -15990,13 +15991,13 @@ its dependency.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.11.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "19aswc3nckfssicyzb92rynkfvmgm471cn5qmpbx4najh240mwcr"))))
+        (base32 "0g2w6kivzsainhv4l2vbw7y9nmz8p16km42qjhlgqhp5hxjw4cfw"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (arguments
@@ -16800,13 +16801,13 @@ implemented in the package.")
 (define-public r-timereg
   (package
     (name "r-timereg")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timereg" version))
        (sha256
-        (base32 "1jscqask74l8hr68grjfvgm30v00aixf1459ws5s332l5brp7awb"))))
+        (base32 "0pwv918s9wih0s5y2ys0dn1v75a7iybvlxpqkisjyz2hhlvzz1yw"))))
     (properties `((upstream-name . "timereg")))
     (build-system r-build-system)
     (arguments
@@ -18030,13 +18031,13 @@ cases.")
 (define-public r-tidytidbits
   (package
     (name "r-tidytidbits")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytidbits" version))
        (sha256
-        (base32 "1zbm165bimjag7azhy77zlzqilygybqxz35q4r3d7hi7p6m96w78"))))
+        (base32 "1djiyh024krfh4qjds8ib4cp55sbh96flhq7b72yvm1h4hq7arlc"))))
     (properties `((upstream-name . "tidytidbits")))
     (build-system r-build-system)
     (arguments
@@ -18889,26 +18890,27 @@ documentation and examples.")
 (define-public r-tidyprompt
   (package
     (name "r-tidyprompt")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyprompt" version))
        (sha256
-        (base32 "15i3d94ar88rrmniwl4dldi6xx5icyvv08ax37v5rb0b0xy4ka2c"))))
+        (base32 "049hf9j1w0wrcm7lnzdar4wxlffs7w9h4jsvhhpx313q2v1xqnvk"))))
     (properties `((upstream-name . "tidyprompt")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-stringr
+                             r-r6
                              r-jsonlite
                              r-httr2
                              r-glue
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/tjarkvandemerwe/tidyprompt")
+    (home-page "https://github.com/KennispuntTwente/tidyprompt")
     (synopsis "Prompt Large Language Models and Enhance Their Functionality")
     (description
      "Easily construct prompts and associated logic for interacting with large
@@ -21949,13 +21951,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-thisutils
   (package
     (name "r-thisutils")
-    (version "0.0.7")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisutils" version))
        (sha256
-        (base32 "1v41w0djkywzkafkjpi5mdyjxwadlxxv6kzdycipj7dd3xm8ydwf"))))
+        (base32 "1m1bd3wmwq1rmx03bk35rgh0w6yzq22nwg0wa8881yp8rgfp5anb"))))
     (properties `((upstream-name . "thisutils")))
     (build-system r-build-system)
     (arguments
@@ -23192,6 +23194,43 @@ histograms in the tfevent record file format.  Logged data can be visualized on
 the fly using @code{TensorBoard}', a web based tool that focuses on visualizing
 the training progress of machine learning models.")
     (license license:expat)))
+
+(define-public r-tfestimators
+  (package
+    (name "r-tfestimators")
+    (version "1.9.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tfestimators" version))
+       (sha256
+        (base32 "1j3ylz8hh9fvcvxs2dw6584z4ayf97kd0rrp0fzaccjss16nxgjv"))))
+    (properties `((upstream-name . "tfestimators")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list tensorflow))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-tfruns
+                             r-tensorflow
+                             r-rlang
+                             r-reticulate
+                             r-purrr
+                             r-progress
+                             r-magrittr
+                             r-forge))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rstudio/tfestimators")
+    (synopsis "Interface to 'TensorFlow' Estimators")
+    (description
+     "Interface to @code{TensorFlow} Estimators
+<https://www.tensorflow.org/guide/estimator>, a high-level API that provides
+implementations of many different model types including linear models and deep
+neural networks.")
+    (license license:asl2.0)))
 
 (define-public r-tfer
   (package
@@ -25284,13 +25323,13 @@ imputation (see Finch, 2008 <doi: 10.1111/j.1745-3984.2008.00062.x>).")
 (define-public r-testdat
   (package
     (name "r-testdat")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "testdat" version))
        (sha256
-        (base32 "0ybmw0i7pr40h720iwpzvyyr26zb7akjkwbmw6243f644yl4rr0w"))))
+        (base32 "099lj7mdb1w3vswhsaddin24qdhbzp3dspch80v9ks8p3s0m57dr"))))
     (properties `((upstream-name . "testdat")))
     (build-system r-build-system)
     (arguments
@@ -26142,13 +26181,13 @@ de-escalated only if an unacceptable level of toxicity is experienced.")
 (define-public r-tepr
   (package
     (name "r-tepr")
-    (version "1.1.8")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tepr" version))
        (sha256
-        (base32 "0agbaxs5dggyx5jhcmsc534k0yv08ahy358770sv98kgykfkg1h3"))))
+        (base32 "0br4bc5s0yhay7m54vpgawdvxilnimfss55z4rdm8s6grznb289s"))))
     (properties `((upstream-name . "tepr")))
     (build-system r-build-system)
     (arguments
@@ -26941,13 +26980,13 @@ Passfield,Antonio Gavalas-Olea,Philipp Siegel, Richard J. Geider (2017)
 (define-public r-temper
   (package
     (name "r-temper")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "temper" version))
        (sha256
-        (base32 "1fh4p5kwk6a04ngjj6yfjrldc1xd3xia7k29s32d0jqxiaa67brz"))))
+        (base32 "1xm17rjii01nj8b0lsfz4khr9mkzsgp1hh9fnkgpay0bfdml2qsp"))))
     (properties `((upstream-name . "temper")))
     (build-system r-build-system)
     (arguments
@@ -27102,13 +27141,13 @@ seeks to create a profile that define a social group.")
 (define-public r-telescope
   (package
     (name "r-telescope")
-    (version "0.2-0")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "telescope" version))
        (sha256
-        (base32 "09z91jmy82zvqiyvf3wj5fdl7fs07x1n6cjvrpfd0amqxym2227c"))))
+        (base32 "1qljr5hww2agxzyl3hzih2zamiikwlcsax5gvgslvs0zzvs90aa3"))))
     (properties `((upstream-name . "telescope")))
     (build-system r-build-system)
     (arguments
@@ -27520,13 +27559,13 @@ Okajima et al. (2012) <doi:10.1007/s11284-011-0905-5>.")
 (define-public r-teal-widgets
   (package
     (name "r-teal-widgets")
-    (version "0.4.3")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.widgets" version))
        (sha256
-        (base32 "1kibv8xm8r6gbvjlpfl4xdzlx6ngblipcsf028zarq08wwjfkxfs"))))
+        (base32 "10nqlcsp2xz5rynxdzg9kpff8xmwvm1zpd9jmdvimvf57b5j2r6r"))))
     (properties `((upstream-name . "teal.widgets")))
     (build-system r-build-system)
     (arguments
@@ -27635,13 +27674,13 @@ displays filtered and unfiltered observation counts.")
 (define-public r-teal-reporter
   (package
     (name "r-teal-reporter")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.reporter" version))
        (sha256
-        (base32 "0q36pw6db7f4xf09sc3akn7icxyr6345im17ag0p802fbbwk4q24"))))
+        (base32 "0mby6ib3l7fixws4s9yxsaqkv97hzc9ifxl59kfavixgksjnci88"))))
     (properties `((upstream-name . "teal.reporter")))
     (build-system r-build-system)
     (arguments
@@ -27649,7 +27688,9 @@ displays filtered and unfiltered observation counts.")
       #:tests? #f))
     (propagated-inputs (list r-zip
                              r-yaml
+                             r-sortable
                              r-shinywidgets
+                             r-shinyjs
                              r-shinybusy
                              r-shiny
                              r-rtables-officer
@@ -27662,7 +27703,8 @@ displays filtered and unfiltered observation counts.")
                              r-htmltools
                              r-flextable
                              r-checkmate
-                             r-bslib))
+                             r-bslib
+                             r-bsicons))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/insightsengineering/teal.reporter")
     (synopsis "Reporting Tools for 'shiny' Modules")
@@ -27815,13 +27857,13 @@ various log destinations, vectorization, and more.")
 (define-public r-teal-data
   (package
     (name "r-teal-data")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.data" version))
        (sha256
-        (base32 "1v2790ddfjvqayz8qvi0lcmzf2dbafzm47kcps92cd7mag7ygz76"))))
+        (base32 "1zl7kg834rr1cqd1g5jbp5nwgj06pfvgjrw69pss1n6msrpiqmsf"))))
     (properties `((upstream-name . "teal.data")))
     (build-system r-build-system)
     (arguments
@@ -27839,19 +27881,19 @@ applications focusing on reproducibility and relational data.")
 (define-public r-teal-code
   (package
     (name "r-teal-code")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.code" version))
        (sha256
-        (base32 "1766iih2n1rcr71h6yx6axc9q2gfd2r22wrwcrffq9r267p3nmb6"))))
+        (base32 "02v5qllyykldrvnqhvyh2axp2g6f42xd1d6771myqb4rridmy7bp"))))
     (properties `((upstream-name . "teal.code")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-lifecycle r-cli r-checkmate))
+    (propagated-inputs (list r-rlang r-lifecycle r-evaluate r-cli r-checkmate))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/teal.code/")
     (synopsis "Code Storage and Execution Class for 'teal' Applications")
@@ -29244,13 +29286,13 @@ types) and it allows to detect cell-type-specific statistical relations
 (define-public r-tbrf
   (package
     (name "r-tbrf")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tbrf" version))
        (sha256
-        (base32 "04pqgmxknnhrxfx8976l3jvnnjbarnfyfjc2q1iaaxrgahnb92ff"))))
+        (base32 "1w430qwld5syygj972j28r6dczs8cxm1awwjhdps14s6lp66jnk4"))))
     (properties `((upstream-name . "tbrf")))
     (build-system r-build-system)
     (arguments
@@ -29261,6 +29303,7 @@ types) and it allows to detect cell-type-specific statistical relations
                              r-rlang
                              r-purrr
                              r-lubridate
+                             r-ggplot2
                              r-dplyr
                              r-boot))
     (native-inputs (list r-knitr))
@@ -29463,13 +29506,13 @@ optionally with generalized Pareto p-value estimation.")
 (define-public r-tbea
   (package
     (name "r-tbea")
-    (version "1.6.1")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tbea" version))
        (sha256
-        (base32 "0nkmrw8l0xka0hvcmgdf654aq0jvmqsgkx3m9kzsw9k437r5ja49"))))
+        (base32 "0528amnsd9g5q1jrankgd1wd0023fgpss0v144br6690kwzazaac"))))
     (properties `((upstream-name . "tbea")))
     (build-system r-build-system)
     (arguments

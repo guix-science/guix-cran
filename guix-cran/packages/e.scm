@@ -1088,13 +1088,13 @@ contexts.  This is the implementation of the index in Taillardat et al. (2019)
 (define-public r-extremefit
   (package
     (name "r-extremefit")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extremefit" version))
        (sha256
-        (base32 "1apv26dvzd9ak8lzrcvykgnpwxi6zf9l07b70i1mqwpqhmkqszx1"))))
+        (base32 "0yjbr4gsiksflywh63qrvlrsnhv0kzgqviq87ahbq6dxgdfp7b1v"))))
     (properties `((upstream-name . "extremefit")))
     (build-system r-build-system)
     (arguments
@@ -1267,13 +1267,13 @@ package.")
 (define-public r-extrasuperpower
   (package
     (name "r-extrasuperpower")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extraSuperpower" version))
        (sha256
-        (base32 "0lglhjrp5y2hzhwh018jl6hdmd5yppbdjlv9g1g1igd4bgm8izi6"))))
+        (base32 "0k5rv1pr6fr8vyq77rp4xj8rd71kx79cy73zwqil5blx9wqyi81q"))))
     (properties `((upstream-name . "extraSuperpower")))
     (build-system r-build-system)
     (arguments
@@ -2012,13 +2012,13 @@ Serrano, and Foster (2004) <doi:10.1890/02-4057>.")
 (define-public r-export
   (package
     (name "r-export")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "export" version))
        (sha256
-        (base32 "0960sbwrlzfvwz5hbp31xksd9bnmhhsrn9vm9dvqgd1wbqqm1bym"))))
+        (base32 "18wnz1z7wl20k4vkbnb9bzcnxlcwwr33qcbar7hwfrhdkxnh81ys"))))
     (properties `((upstream-name . "export")))
     (build-system r-build-system)
     (arguments
@@ -3760,13 +3760,13 @@ R.")
 (define-public r-exametrika
   (package
     (name "r-exametrika")
-    (version "1.5.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exametrika" version))
        (sha256
-        (base32 "1d2xwid579dikaqz1kwlw1h5irabv47yngq5r43j1dryjzpbrjd6"))))
+        (base32 "1b5lh38rh4a7ycjjm9wxvwjf5n90h321sb751qlhb64pmy65b0vn"))))
     (properties `((upstream-name . "exametrika")))
     (build-system r-build-system)
     (arguments
@@ -6868,13 +6868,13 @@ the induced seismicity; the parametrization has been changed; Chiodi, Adelfio
 (define-public r-etasbootstrap
   (package
     (name "r-etasbootstrap")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ETASbootstrap" version))
        (sha256
-        (base32 "1d0vdd3ldp2w6p15b8jj74l3fd28sjrcxhq1w4zdqh6r38m0cshg"))))
+        (base32 "0hynr31d5bpi3b6c1whq1fr22gvy1vlzr7c4968p29vy5h1j5cf6"))))
     (properties `((upstream-name . "ETASbootstrap")))
     (build-system r-build-system)
     (arguments
@@ -8564,13 +8564,13 @@ validate'.  See also Van der Loo and De Jonge (2018)
 (define-public r-errorist
   (package
     (name "r-errorist")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "errorist" version))
        (sha256
-        (base32 "195c8bbxi22l9qyhj4ndjmwhcmk2b019vxcggsp2iaas48y4v6wi"))))
+        (base32 "0hybn6c816zb1fkimfkc5znl34yjmi8pb6xy7skfwy5f2nplpxzh"))))
     (properties `((upstream-name . "errorist")))
     (build-system r-build-system)
     (arguments
@@ -9730,13 +9730,13 @@ estimation are also provided.")
 (define-public r-equatags
   (package
     (name "r-equatags")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equatags" version))
        (sha256
-        (base32 "028mpd5idi84znlry494f96p8p178v9yccw4cxg56m1agbw391hs"))))
+        (base32 "0il0gs0cwnjwgqkkqxbxs0xsm7ndnsqfmvigjm6gy7k4rvz6d8jd"))))
     (properties `((upstream-name . "equatags")))
     (build-system r-build-system)
     (arguments
@@ -15651,13 +15651,13 @@ al. (2024) <doi:10.31234/osf.io/2e4dq>.")
 (define-public r-embryogrowth
   (package
     (name "r-embryogrowth")
-    (version "10.2")
+    (version "10.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "embryogrowth" version))
        (sha256
-        (base32 "0mjsc3k942f0rmq0sw887dfy1imdjf0skwplcap6bki30zx7a1xq"))))
+        (base32 "0644afm0hr6d0zhcmwfksdjqz0b3qnpp5c22kca7f1p85sbvv8yj"))))
     (properties `((upstream-name . "embryogrowth")))
     (build-system r-build-system)
     (arguments
@@ -21461,13 +21461,13 @@ respect to reference conditions [Sturbois et al. (2023)
 (define-public r-ecotoxr
   (package
     (name "r-ecotoxr")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ECOTOXr" version))
        (sha256
-        (base32 "19dzgvrixlv5m2q266pqm66xmv1sfqnvwdi340vn2hc74c64ffwg"))))
+        (base32 "10rwmx8clljs81drcr629ijg5nchjsqag2bybj9m8lavphhwaw50"))))
     (properties `((upstream-name . "ECOTOXr")))
     (build-system r-build-system)
     (arguments
@@ -24789,13 +24789,13 @@ and visualizations with minimal programming.")
 (define-public r-easysdctable
   (package
     (name "r-easysdctable")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easySdcTable" version))
        (sha256
-        (base32 "0wxb4bmjwc1ivwi1ismy127w54k7wkgnr0df5lrngzrn9ysy73zb"))))
+        (base32 "1gs9prfd12qspi4v3s1ahld3vpjbynvr8bdkbvrf1ijf5jkwpvma"))))
     (properties `((upstream-name . "easySdcTable")))
     (build-system r-build-system)
     (arguments

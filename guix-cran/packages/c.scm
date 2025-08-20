@@ -2770,13 +2770,13 @@ the Journal of Statistical Software reference: <doi:10.18637/jss.v110.i07>.")
 (define-public r-cubar
   (package
     (name "r-cubar")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cubar" version))
        (sha256
-        (base32 "0sdns7kfp6p3vrij56w6klfqlvzrppfqyrip4bw8ghydak3rnx0v"))))
+        (base32 "0v3i7n452zma836gp6di40kq4wnbpa69gnaf6gkqngpkb7p3742m"))))
     (properties `((upstream-name . "cubar")))
     (build-system r-build-system)
     (arguments
@@ -3218,13 +3218,13 @@ could benefit from the general framework provided by ctsfeatures'.")
 (define-public r-ctsemomx
   (package
     (name "r-ctsemomx")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctsemOMX" version))
        (sha256
-        (base32 "1vr7zpxfhwzj8v54dzgk42hvjb4433y9r8al9069prkrvlv74gx8"))))
+        (base32 "168gvlgkkq264mvyvkxkx6wj27b5qra23amaaiw3c7mf4vsy7q7i"))))
     (properties `((upstream-name . "ctsemOMX")))
     (build-system r-build-system)
     (arguments
@@ -4860,6 +4860,48 @@ postestimation procedures (e.g., verify admissibility of the estimates, assess
 the model fit, test the model fit etc.).")
     (license license:gpl3)))
 
+(define-public r-csdb
+  (package
+    (name "r-csdb")
+    (version "2025.7.30")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "csdb" version))
+       (sha256
+        (base32 "18cc0ksqrq1g966wf1f1j2kiv8w81j6gf5isi9wzrrb047766jiq"))))
+    (properties `((upstream-name . "csdb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uuid
+                             r-stringr
+                             r-s7
+                             r-r6
+                             r-odbc
+                             r-glue
+                             r-ggplot2
+                             r-fs
+                             r-dplyr
+                             r-dbi
+                             r-data-table
+                             r-csutil))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.csids.no/csdb/")
+    (synopsis
+     "An Abstracted System for Easily Working with Databases with Large Datasets")
+    (description
+     "This package provides object-oriented database management tools for working with
+large datasets across multiple database systems.  Features include robust
+connection management for SQL Server and @code{PostgreSQL} databases, advanced
+table operations with bulk data loading and upsert functionality, comprehensive
+data validation through customizable field type and content validators,
+efficient index management, and cross-database compatibility.  Designed for
+high-performance data operations in surveillance systems and large-scale data
+processing workflows.")
+    (license license:expat)))
+
 (define-public r-csdata
   (package
     (name "r-csdata")
@@ -5469,13 +5511,13 @@ Climatic Research Unit (CRU) Time-Series (TS) Version 3.21 data.")
 (define-public r-crunch
   (package
     (name "r-crunch")
-    (version "1.31.0")
+    (version "1.31.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crunch" version))
        (sha256
-        (base32 "1p3wbwjcnwbw2z083im7qljyvjlp1bb1xwn6ax1jf6pd0r4n1fqs"))))
+        (base32 "0hc8pizrhh9np4p5vw9qc7aniyyxb0f1gd8f8gryla2q0pyz2cws"))))
     (properties `((upstream-name . "crunch")))
     (build-system r-build-system)
     (arguments
@@ -10010,13 +10052,13 @@ method uses Inverse-Probability-Weighting estimating equations.")
 (define-public r-coxrobust
   (package
     (name "r-coxrobust")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coxrobust" version))
        (sha256
-        (base32 "1g8z82y12b2lkw4ifxiidmwy3nrvgp2y2cwcahhdg616shwc27sb"))))
+        (base32 "1l5jy0n3c00ap67rhmqkh4p85idxxiipvs90ynrr7ra56a9h0ssq"))))
     (properties `((upstream-name . "coxrobust")))
     (build-system r-build-system)
     (arguments
@@ -11175,6 +11217,41 @@ on COVID-19 in France.")
 smaller version from dbdataset package.  It contains only information about
 COVID-19 possible treatment.")
     (license license:cc0)))
+
+(define-public r-covid19br
+  (package
+    (name "r-covid19br")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "covid19br" version))
+       (sha256
+        (base32 "00jak3fg4fh4av9sr2wix1b632sd1lwkylp94mn6pmrkwlwnlmpz"))))
+    (properties `((upstream-name . "covid19br")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sf
+                             r-rlang
+                             r-httr2
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://fndemarqui.github.io/covid19br/")
+    (synopsis "Brazilian COVID-19 Pandemic Data")
+    (description
+     "Set of functions to import COVID-19 pandemic data into R. The Brazilian COVID-19
+data, obtained from the official Brazilian repository at
+<https://covid.saude.gov.br/>, is available at the country, region, state, and
+city levels.  The package also downloads world-level COVID-19 data from Johns
+Hopkins University's repository.  COVID-19 data is available from the start of
+follow-up until to May 5, 2023, when the World Health Organization (WHO)
+declared an end to the Public Health Emergency of International Concern (PHEIC)
+for COVID-19.")
+    (license license:expat)))
 
 (define-public r-covid19-analytics
   (package
@@ -13029,13 +13106,13 @@ dependence.  Details of the method can be found in Young and Buehlmann (2025)
 (define-public r-corrr
   (package
     (name "r-corrr")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corrr" version))
        (sha256
-        (base32 "0hdas6pd6adv89wp8s5v4slv6i9agrbbn2jcnfij1l7hq01a30j5"))))
+        (base32 "06pi4an3a5d66rqxvmk859scpq6m4yrhy9q5icbh95fvhpaqfr1q"))))
     (properties `((upstream-name . "corrr")))
     (build-system r-build-system)
     (arguments
@@ -17582,13 +17659,13 @@ gallery contained within a static or interactive R Markdown page.")
 (define-public r-connector
   (package
     (name "r-connector")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "connector" version))
        (sha256
-        (base32 "1sgaa24l1whw1i7fvi94axm8cknnnhwnjh9i0lj5h3igaxy4c38w"))))
+        (base32 "1y3cxm9r7zfrf3b20rlk027a11alspxh4cqa6cz8jcqzar6ljqdl"))))
     (properties `((upstream-name . "connector")))
     (build-system r-build-system)
     (arguments
@@ -17603,6 +17680,7 @@ gallery contained within a static or interactive R Markdown page.")
                              r-readr
                              r-r6
                              r-purrr
+                             r-lifecycle
                              r-jsonlite
                              r-haven
                              r-glue
@@ -18896,6 +18974,31 @@ useful for exploring potential differences or similarities across subgroups
 within a dataset.  Varmuza and Filzmoser (2009, ISBN:978-1-4200-5947-2).
 Johnson and Wichern (2007, ISBN:0-13-187715-1).  Raymaekers and Rousseeuw (2019)
 <DOI:10.1080/00401706.2019.1677270>.")
+    (license license:expat)))
+
+(define-public r-confidencecurves
+  (package
+    (name "r-confidencecurves")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "confidenceCurves" version))
+       (sha256
+        (base32 "01a3n5k3ra19mw9i950443ff0y6rii7n1m0ns5ga337dd4666lsg"))))
+    (properties `((upstream-name . "confidenceCurves")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2 r-desctools r-cowplot))
+    (home-page "https://cran.r-project.org/package=confidenceCurves")
+    (synopsis "Frequentist Confidence Analysis for Clinical Trials")
+    (description
+     "Frequentist confidence analysis answers the question: How confident are we in a
+particular treatment effect? This package calculates the frequentist confidence
+in a treatment effect of interest given observed data, and returns the family of
+confidence curves associated with that data.")
     (license license:expat)))
 
 (define-public r-confidence
@@ -20395,13 +20498,13 @@ Discriminant Analysis (HDDA) algorithm of Bouveyron C. Girard S. and Schmid C.
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "7.6")
+    (version "7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compositional" version))
        (sha256
-        (base32 "0fzprvxvw8lw0xv138g4adhp10igfw740wfqlgsl1bhsk054nynf"))))
+        (base32 "08f3axwwhh5l4hvdsf091yk49wsk887yj3rvi29llb2hnkhvnxyq"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (arguments
@@ -20436,9 +20539,9 @@ textbook for such data is John Aitchison's (1986) \"The statistical analysis of
 compositional data\".  Relevant papers include: a) Tsagris M.T., Preston S. and
 Wood A.T.A. (2011). \"A data-based power transformation for compositional data\".
 Fourth International International Workshop on Compositional Data Analysis.
-<doi:10.48550/@code{arXiv.1106.1451>} b) Tsagris M. (2014). \"The k-NN algorithm
-for compositional data: a revised approach with and without zero values
-present\".  Journal of Data Science, 12(3): 519--534.
+<doi:10.48550/@code{arXiv.1106.1451>}.  b) Tsagris M. (2014). \"The k-NN
+algorithm for compositional data: a revised approach with and without zero
+values present\".  Journal of Data Science, 12(3): 519--534.
 <doi:10.6339/JDS.201407_12(3).0008>.  c) Tsagris M. (2015). \"A novel, divergence
 based, regression for compositional data\".  Proceedings of the 28th Panhellenic
 Statistics Conference, 15-18 April 2015, Athens, Greece, 430--444.
@@ -21305,13 +21408,13 @@ pages, including providing new figure components.")
 (define-public r-comparegroups
   (package
     (name "r-comparegroups")
-    (version "4.9.1")
+    (version "4.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "compareGroups" version))
        (sha256
-        (base32 "0n67avlikmvn2lin7g677cibijfgyy22a26byxw806wznbczb9cy"))))
+        (base32 "104p0bxji3rvdd2i4d9r905i9cp9xqabyn1f3567avnmkyh573mv"))))
     (properties `((upstream-name . "compareGroups")))
     (build-system r-build-system)
     (arguments
@@ -21319,6 +21422,8 @@ pages, including providing new figure components.")
       #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-survival
+                             r-rstatix
+                             r-rmdformats
                              r-rmarkdown
                              r-pmcmrplus
                              r-officer
@@ -24351,13 +24456,13 @@ Common Data Model.")
 (define-public r-cohortsurvival
   (package
     (name "r-cohortsurvival")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSurvival" version))
        (sha256
-        (base32 "0vy1blarcawkm70iygv00cx9wa0flpywgyxfayzmlp89b7d0221x"))))
+        (base32 "00h4xb0d1lx32qskan48dfs6s0x47474yb11v05xv604f5hrxpiz"))))
     (properties `((upstream-name . "CohortSurvival")))
     (build-system r-build-system)
     (arguments
@@ -30614,6 +30719,40 @@ navigate Cloudstor from R.")
 @code{CloudOS} in the R environment for analysis.")
     (license license:expat)))
 
+(define-public r-cloudml
+  (package
+    (name "r-cloudml")
+    (version "0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cloudml" version))
+       (sha256
+        (base32 "0iamijxck6mxk7yihphkx5y494vwl87c5sldwnh4kb6mxvj7q9zq"))))
+    (properties `((upstream-name . "cloudml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python))
+    (propagated-inputs (list r-yaml
+                             r-withr
+                             r-tfruns
+                             r-rstudioapi
+                             r-rprojroot
+                             r-processx
+                             r-packrat
+                             r-jsonlite
+                             r-config))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rstudio/cloudml")
+    (synopsis "Interface to the Google Cloud Machine Learning Platform")
+    (description
+     "Interface to the Google Cloud Machine Learning Platform
+<https://cloud.google.com/vertex-ai>, which provides cloud tools for training
+machine learning models.")
+    (license license:asl2.0)))
+
 (define-public r-cloudfs
   (package
     (name "r-cloudfs")
@@ -31333,36 +31472,30 @@ number needed to treat, number needed to diagnose, and predictive summary index.
 (define-public r-clinpubr
   (package
     (name "r-clinpubr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinpubr" version))
        (sha256
-        (base32 "0kz9z2cn33ndaghdp9s38vjsdcrimnikh0hgwqy0ffmayjjf6iam"))))
+        (base32 "1ylcp784hr4c9m0fbrqgc6ccvfhjsxswd47jfszj3nz5psqqzi1x"))))
     (properties `((upstream-name . "clinpubr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-tableone
                              r-survminer
                              r-survival
                              r-stringr
                              r-stringi
-                             r-rstatix
                              r-rms
                              r-rlang
-                             r-resourceselection
-                             r-proc
                              r-ggplot2
                              r-forestploter
                              r-fbasics
                              r-dplyr
                              r-desctools
-                             r-dcurves
-                             r-caret
                              r-car
                              r-broom))
     (home-page "https://github.com/yotasama/clinpubr")
@@ -36467,25 +36600,24 @@ chronological charts.")
 (define-public r-chronicler
   (package
     (name "r-chronicler")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chronicler" version))
        (sha256
-        (base32 "024y9n21zr9pzblnr3ixhvd7hcar24xh0xwch7cp7kab1nw90p84"))))
+        (base32 "1gwb74grj2v6h9v0i2sqvvn90zsmyv6y8a3z4avzawv91q539nrc"))))
     (properties `((upstream-name . "chronicler")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
-                             r-stringr
                              r-rlang
                              r-maybe
+                             r-ggplot2
                              r-dplyr
-                             r-diffobj
-                             r-clipr))
+                             r-diffobj))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=chronicler")
     (synopsis "Add Logging to Functions")
@@ -37058,13 +37190,13 @@ Press.")
 (define-public r-choosegcm
   (package
     (name "r-choosegcm")
-    (version "1.0.2")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chooseGCM" version))
        (sha256
-        (base32 "1iwd6favpk03g00m3zx8a2fkygcpwprfmbwm9crwx2id122js0by"))))
+        (base32 "0jhn2s8p1zsml2fnv0swijk4f6yas4zg805jlv4b89gj44lyww08"))))
     (properties `((upstream-name . "chooseGCM")))
     (build-system r-build-system)
     (arguments
@@ -37080,7 +37212,6 @@ Press.")
                              r-cowplot
                              r-cluster
                              r-checkmate))
-    (native-inputs (list r-knitr))
     (home-page "https://luizesser.github.io/chooseGCM/")
     (synopsis
      "Selecting General Circulation Models for Species Distribution Modeling")
@@ -37520,13 +37651,13 @@ et al. (2015) <doi:10.1093/bioinformatics/btv205>.")
 (define-public r-chinesenames
   (package
     (name "r-chinesenames")
-    (version "2023.8")
+    (version "2025.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChineseNames" version))
        (sha256
-        (base32 "10y5b1ca4xcdp6czdp21mwg07f2346wr8sm6czlj8bb475xp8bjs"))))
+        (base32 "0xbd8y2cligxm66w2mz8zf2rjdlqiyyd4fm824f1q4yy8kc8im7g"))))
     (properties `((upstream-name . "ChineseNames")))
     (build-system r-build-system)
     (arguments
@@ -37536,14 +37667,15 @@ et al. (2015) <doi:10.1093/bioinformatics/btv205>.")
     (home-page "https://psychbruce.github.io/ChineseNames/")
     (synopsis "Chinese Name Database 1930-2008")
     (description
-     "This package provides a database of Chinese surnames and Chinese given names
+     "This package provides a database of Chinese surnames and given names
 (1930-2008).  This database contains nationwide frequency statistics of 1,806
 Chinese surnames and 2,614 Chinese characters used in given names, covering
-about 1.2 billion Han Chinese population (96.8% of the Han Chinese
+about 1.2 billion Han Chinese population (96.8 percent of the Han Chinese
 household-registered population born from 1930 to 2008 and still alive in 2008).
- This package also contains a function for computing multiple features of
-Chinese surnames and Chinese given names for scientific research (e.g., name
-uniqueness, name gender, name valence, and name warmth/competence).")
+ This package also contains a function for computing multiple indices of Chinese
+surnames and given names for social science research (e.g., name uniqueness,
+name gender, name valence, and name warmth/competence).  Details are provided at
+<https://psychbruce.github.io/@code{ChineseNames/>}.")
     (license license:gpl3)))
 
 (define-public r-chillr
@@ -39083,13 +39215,13 @@ with function @code{chau_boxplot()}, and in ggplot2 with function
 (define-public r-chattr
   (package
     (name "r-chattr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chattr" version))
        (sha256
-        (base32 "1h7b8l5ksigz4dwvk1q7fsd2ppss9qqmi8vzlcqdir6qh911s75h"))))
+        (base32 "0wi46xq3nj2abigbncc7yhj8ajmzzry2m8as2gjg58287vv2q7bn"))))
     (properties `((upstream-name . "chattr")))
     (build-system r-build-system)
     (arguments
@@ -39125,44 +39257,35 @@ comes with back-ends for @code{OpenAI}', @code{GitHub} Copilot', and
 (define-public r-chatrater
   (package
     (name "r-chatrater")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chatRater" version))
        (sha256
-        (base32 "0fkzlmv9jlpmhlis79kz055fdxgak9vcx8rfyrjmfvmlal9r47ik"))))
+        (base32 "182dwpgvpk5gm4szzvf3bybbgvrfr7hqclg2fscd2a48j3xp52h4"))))
     (properties `((upstream-name . "chatRater")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-openai r-jsonlite r-httr))
+    (propagated-inputs (list r-openai))
     (home-page "https://cran.r-project.org/package=chatRater")
-    (synopsis "Rating and Evaluating Texts Using Large Language Models")
+    (synopsis "Tool for Rating Text/Image Stimuli")
     (description
-     "Generates ratings and psycholinguistic metrics for textual stimuli using large
-language models.  It enables users to evaluate idioms and other language
-materials by combining context, prompts, and stimulus inputs.  It supports
-multiple LLM APIs (such as @code{OpenAI}', @code{DeepSeek}', Anthropic',
-Cohere', Google @code{PaLM}', and Ollama') by allowing users to switch models
-with a single parameter.  In addition to generating numeric ratings,
-@code{chatRater} provides functions for obtaining detailed psycholinguistic
-metrics including word frequency (with optional corpus input), lexical coverage
-(with customizable vocabulary size and test basis), Zipf metric, Levenshtein
-distance, and semantic transparency.")
+     "Evaluates stimuli using Large Language Models APIs with URL support.")
     (license license:expat)))
 
 (define-public r-chatllm
   (package
     (name "r-chatllm")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chatLLM" version))
        (sha256
-        (base32 "0lkd4ij22i2xbibvix7acqdjbmx3gn7ps3j99bc7dcaa5pc286a8"))))
+        (base32 "1jw257mwddyxvi9wcg4691j1ivfxxxp77ijhg8sysbbvzy4p8p2v"))))
     (properties `((upstream-name . "chatLLM")))
     (build-system r-build-system)
     (arguments
@@ -39174,11 +39297,11 @@ distance, and semantic transparency.")
     (description
      "This package provides a flexible interface for interacting with Large Language
 Model ('LLM') providers including @code{OpenAI}', Groq', Anthropic',
-@code{DeepSeek}', @code{DashScope}', and @code{GitHub} Models'.  Supports both
-synchronous and asynchronous chat-completion APIs, with features such as retry
-logic, dynamic model selection, customizable parameters, and multi-message
-conversation handling.  Designed to streamline integration with state-of-the-art
-LLM services across multiple platforms.")
+@code{DeepSeek}', @code{DashScope}', Gemini', Grok and @code{GitHub} Models'.
+Supports both synchronous and asynchronous chat-completion APIs, with features
+such as retry logic, dynamic model selection, customizable parameters, and
+multi-message conversation handling.  Designed to streamline integration with
+state-of-the-art LLM services across multiple platforms.")
     (license license:expat)))
 
 (define-public r-chatgpt
@@ -44370,6 +44493,41 @@ Cross-covariance isolate detect: A new change-point method for estimating
 dynamic functional connectivity.  Medical Image Analysis, Volume 75.")
     (license license:gpl3)))
 
+(define-public r-cci
+  (package
+    (name "r-cci")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CCI" version))
+       (sha256
+        (base32 "12nx1cc4dmipc5jc5zhjijc3amxqjv2gc36znz332nxnaa4wiq2c"))))
+    (properties `((upstream-name . "CCI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-rlang
+                             r-ranger
+                             r-progress
+                             r-ggplot2
+                             r-e1071
+                             r-dplyr
+                             r-data-table
+                             r-dagitty
+                             r-caret))
+    (home-page "https://github.com/khliland/CCI")
+    (synopsis "Computational Test for Conditional Independence")
+    (description
+     "Tool for performing computational testing for conditional independence between
+variables in a dataset.  CCI implements permutation in combination with Monte
+Carlo Cross-Validation in generating null distributions and test statistics.
+For more details see Computational Test for Conditional Independence (2024)
+<doi:10.3390/a17080323>.")
+    (license license:gpl2+)))
+
 (define-public r-cchsflow
   (package
     (name "r-cchsflow")
@@ -44692,6 +44850,31 @@ history of such processes and flag outlying measurements: out-of-control
 signals.  Montgomery, D. (2009, ISBN:978-0-470-16992-6) contains an extensive
 discussion of the methodology.")
     (license license:gpl2+)))
+
+(define-public r-cbtf
+  (package
+    (name "r-cbtf")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CBTF" version))
+       (sha256
+        (base32 "0p0g2qn84aqn73yl8ix54bab1ff7kq2yj3mak8ihh8ys6xn4ib7g"))))
+    (properties `((upstream-name . "CBTF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (home-page "https://mcol.github.io/caught-by-the-fuzz/")
+    (synopsis "Caught by the Fuzz! - A Minimalistic Fuzz-Test Runner")
+    (description
+     "This package provides a simple runner for fuzz-testing functions in an R
+package's public interface.  Fuzz testing helps identify functions lacking
+sufficient argument validation, and uncovers problematic inputs that, while
+valid by function signature, may cause issues within the function body.")
+    (license license:gpl3)))
 
 (define-public r-cbt
   (package
@@ -47804,13 +47987,13 @@ graphic presentation of maps, for instance, map palettes, layout elements
 (define-public r-cartographr
   (package
     (name "r-cartographr")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cartographr" version))
        (sha256
-        (base32 "0difm4rnsbjr103fhabvg4g41qwa9klpp65k2yzn25x02caypg4v"))))
+        (base32 "1377s159vdkyy8j1lncb6wrrib1z8qjyzv07n03949i55gp4kfyn"))))
     (properties `((upstream-name . "cartographr")))
     (build-system r-build-system)
     (arguments
@@ -49454,13 +49637,13 @@ for more information.")
 (define-public r-cansim
   (package
     (name "r-cansim")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cansim" version))
        (sha256
-        (base32 "0l2ar3hygavzd3nhdqa1galv3ap6kfzr6v96l3qwgmd1czvf72df"))))
+        (base32 "0d7zjij6lx3sc0cnhajdhmnd55528kx89lyrjykk6k5car5mhsbv"))))
     (properties `((upstream-name . "cansim")))
     (build-system r-build-system)
     (arguments
@@ -51918,13 +52101,13 @@ the regional level (mostly NUTS 3) for 31 EU/EFTA countries.")
 (define-public r-c060
   (package
     (name "r-c060")
-    (version "0.3-0")
+    (version "0.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "c060" version))
        (sha256
-        (base32 "0dmr9xyml69a3xggjahpc5r6kg2qf9h7hkl7kdz7qkl8aslca0zn"))))
+        (base32 "1hvjcs813w5l46nksbz24ry9xsn079mwl43s1n24jfh4jxxsf8mh"))))
     (properties `((upstream-name . "c060")))
     (build-system r-build-system)
     (arguments

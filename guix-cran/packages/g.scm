@@ -1889,6 +1889,56 @@ geographic representation of the results can be displayed.")
 health research data to query Google Trends'.")
     (license license:expat)))
 
+(define-public r-gtregression
+  (package
+    (name "r-gtregression")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gtregression" version))
+       (sha256
+        (base32 "1bbn0hls61k9jdi78zwccl6405qvd6ga55bi83iw9wj5jxqc2r45"))))
+    (properties `((upstream-name . "gtregression")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sandwich
+                             r-rlang
+                             r-risks
+                             r-purrr
+                             r-patchwork
+                             r-officer
+                             r-mass
+                             r-lmtest
+                             r-gtsummary
+                             r-gt
+                             r-ggtext
+                             r-ggplot2
+                             r-flextable
+                             r-dplyr
+                             r-broom-helpers
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://thinkdenominator.github.io/gtregression/")
+    (synopsis "Tools for Creating Publication-Ready Regression Tables")
+    (description
+     "Simplifies regression modeling in R by integrating multiple modeling and
+summarization tools into a cohesive, user-friendly interface.  Designed to be
+accessible for researchers, particularly those in Low- and Middle-Income
+Countries (LMIC).  Built upon widely accepted statistical methods, including
+logistic regression (Hosmer et al.  2013, ISBN:9781118548429), log-binomial
+regression (Spiegelman and Hertzmark 2005 <doi:10.1093/aje/kwi188>), Poisson and
+robust Poisson regression (Zou 2004 <doi:10.1093/aje/kwh090>), negative binomial
+regression (Hilbe 2011, ISBN:9780521179515), and linear regression (Kutner et
+al.  2005, ISBN:9780071122214).  Leverages multiple dependencies to ensure
+high-quality output and generate reproducible, publication-ready tables in
+alignment with best practices in epidemiology and applied statistics.")
+    (license license:expat)))
+
 (define-public r-gtreg
   (package
     (name "r-gtreg")
@@ -2274,13 +2324,13 @@ opinionated niche capabilities and helpers functions.")
 (define-public r-gtexr
   (package
     (name "r-gtexr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtexr" version))
        (sha256
-        (base32 "1r0crgv59kkz6xpc2ahr53mp71raapl1z3lhj2y8d1iinx2a59wn"))))
+        (base32 "10fj8vhc89a2sscpww8y27ifcn548dl6vkm10h7fmny2ml9nk0v5"))))
     (properties `((upstream-name . "gtexr")))
     (build-system r-build-system)
     (arguments
@@ -6388,13 +6438,13 @@ networks using data from @code{OpenStreetMap} <https://www.openstreetmap.org>.")
 (define-public r-greenfeedr
   (package
     (name "r-greenfeedr")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greenfeedr" version))
        (sha256
-        (base32 "1c4s47w4702r7krq2lgivhd1a0yhn4l3r4scgc78wbgsnz3ny602"))))
+        (base32 "03dl49ksik8dh6p34vfrbfn5k1i7si7nfih2b8362chccihw7ynk"))))
     (properties `((upstream-name . "greenfeedr")))
     (build-system r-build-system)
     (arguments
@@ -6402,6 +6452,7 @@ networks using data from @code{OpenStreetMap} <https://www.openstreetmap.org>.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
+                             r-shiny
                              r-rmarkdown
                              r-readxl
                              r-readr
@@ -7209,13 +7260,13 @@ lines.")
 (define-public r-gratia
   (package
     (name "r-gratia")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gratia" version))
        (sha256
-        (base32 "1b5qkjmip4sb64q65d7pw1cjhb2npvkh0q21a072jkra009lzaih"))))
+        (base32 "1pgccbnxn7jff7wbsl7zzw7hisdxb6i5k90n98v9b0jfa578i6p8"))))
     (properties `((upstream-name . "gratia")))
     (build-system r-build-system)
     (arguments
@@ -7234,6 +7285,7 @@ lines.")
                              r-patchwork
                              r-nlme
                              r-mvnfast
+                             r-mirai
                              r-mgcv
                              r-lifecycle
                              r-ggplot2
@@ -8518,13 +8570,13 @@ calculation, we used results from Bhat, U. and Lal, R. (1988)
 (define-public r-grab
   (package
     (name "r-grab")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GRAB" version))
        (sha256
-        (base32 "0xmkjnyx27qwfirss0n8nhg8ahbmd2apjcmk27id6vyx3p6nzk9s"))))
+        (base32 "08r5axnk5wx46d7inh7gf04rqgir72fb01k5i8lc87nybrk5by7d"))))
     (properties `((upstream-name . "GRAB")))
     (build-system r-build-system)
     (arguments
@@ -12230,13 +12282,13 @@ diagnostic plots, for the underlying manuscript see Fischer, Oja (2015)
 (define-public r-gmwmx2
   (package
     (name "r-gmwmx2")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmwmx2" version))
        (sha256
-        (base32 "1701q7f3l873wx7ak0lk2sj5gskaydhv6ifl42m4shsfbnl22pqw"))))
+        (base32 "0rvjp2k8iw1pijnn2q3r8ls87rrc5p0fvwj2b71km6mm2l9p00km"))))
     (properties `((upstream-name . "gmwmx2")))
     (build-system r-build-system)
     (arguments
@@ -14362,13 +14414,13 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (define-public r-glmnetr
   (package
     (name "r-glmnetr")
-    (version "0.6-1")
+    (version "0.6-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmnetr" version))
        (sha256
-        (base32 "0qr09fy2nvr07nh5m2yhc93z9fs4bkl5d1n2ddkm3zpdn5vj61hp"))))
+        (base32 "1v1vasi5gdlx6cp37g4n9cjj8w6mf7n89wph7lj7jg23lh6mcsjg"))))
     (properties `((upstream-name . "glmnetr")))
     (build-system r-build-system)
     (arguments
@@ -14407,9 +14459,11 @@ generated, again based upon (outer nested) cross validation or bootstrap leave
 out (out of bag) samples.  For some datasets, for example when the design matrix
 is not of full rank, glmnet may have very long run times when fitting the
 relaxed lasso model, from our experience when fitting Cox models on data with
-many predictors and many patients.  This may be remedied by using the path=TRUE
-option, which is passed to the @code{glmnet()} and @code{cv.glmnet()} calls.
-Other packages doing similar include nestedcv
+many predictors and many patients, making it difficult to get solutions from
+either @code{glmnet()} or @code{cv.glmnet()}.  This may be remedied by using the
+path=TRUE option when calling @code{glmnet()} and @code{cv.glmnet()}.  Within
+the glmnetr package the approach of path=TRUE is taken by default.  other
+packages doing similar include nestedcv
 <https://cran.r-project.org/package=nestedcv>, @code{glmnetSE}
 <https://cran.r-project.org/package=@code{glmnetSE>} which may provide different
 functionality when performing a nested CV. Use of the glmnetr has many
@@ -16018,13 +16072,13 @@ that all targets remain up to date.")
 (define-public r-gitstats
   (package
     (name "r-gitstats")
-    (version "2.3.4")
+    (version "2.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitStats" version))
        (sha256
-        (base32 "1q8w3dbb5dv53svi31marhimzabns1lygq9ia2a7id0850lvlgsl"))))
+        (base32 "1pdbginqffj5zccfgqdynq83mid3cbj047darqn9vlzx5b90mxzr"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
     (arguments
@@ -21232,13 +21286,13 @@ ggiraph'.")
 (define-public r-ggiraph
   (package
     (name "r-ggiraph")
-    (version "0.8.13")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggiraph" version))
        (sha256
-        (base32 "1jghnz8mi7xfba1r8pvvxc38fddhbydvzsrzfdkz5sskbpkl37aw"))))
+        (base32 "1kga06mg06b80a9hd66rxxks8jd8mjs8ifj3l7wrmhj3i675vq2p"))))
     (properties `((upstream-name . "ggiraph")))
     (build-system r-build-system)
     (arguments
@@ -22637,6 +22691,58 @@ estimates.  You provide the code for an existing plot, but replace one of the
 variables with a vector of distributions, and it will convert the visualisation
 into it's signal suppression counterpart.")
     (license license:gpl3)))
+
+(define-public r-ggdiagram
+  (package
+    (name "r-ggdiagram")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggdiagram" version))
+       (sha256
+        (base32 "1srrab7964apfwmhrwbvpvwra1973prqis0vd3v6gcf4v7dkv4ly"))))
+    (properties `((upstream-name . "ggdiagram")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tinytex
+                             r-tinter
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-signs
+                             r-scales
+                             r-s7
+                             r-rlang
+                             r-purrr
+                             r-pdftools
+                             r-magrittr
+                             r-magick
+                             r-lavaan
+                             r-janitor
+                             r-ggtext
+                             r-ggplot2
+                             r-ggforce
+                             r-ggarrow
+                             r-geomtextpath
+                             r-farver
+                             r-dplyr
+                             r-cli
+                             r-bezier
+                             r-arrowheadr))
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://github.com/wjschne/ggdiagram")
+    (synopsis "Object-Oriented Diagram Plots with 'ggplot2'")
+    (description
+     "This package creates diagrams with an object-oriented approach.  Geometric
+objects have computed properties with information about themselves (e.g., their
+area) or about their relationships with other objects (e.g, the distance between
+their edges).  The objects have methods to convert them to geoms that can be
+plotted in ggplot2'.")
+    (license license:cc0)))
 
 (define-public r-ggdensity
   (package
@@ -25367,13 +25473,13 @@ format.  Massimo Aria, Corrado Cuccurullo. (2017)
 (define-public r-gerda
   (package
     (name "r-gerda")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gerda" version))
        (sha256
-        (base32 "1s9li84ph5wxpl6j696ysfi2km62s03231avwk36hp74fxj1sgwr"))))
+        (base32 "1rhqf5gy2djlss5wl3zalakgpls1l9z69a9hk737y1hmwhwda190"))))
     (properties `((upstream-name . "gerda")))
     (build-system r-build-system)
     (arguments
@@ -25385,14 +25491,14 @@ format.  Massimo Aria, Corrado Cuccurullo. (2017)
     (synopsis "German Election Database (GERDA)")
     (description
      "This package provides tools to download comprehensive datasets of local, state,
-and federal election results in Germany from 1990 to 2021.  The package
+and federal election results in Germany from 1990 to 2025.  The package
 facilitates access to data on turnout, vote shares for major parties, and
 demographic information across different levels of government (municipal, state,
 and federal).  It offers access to geographically harmonized datasets that
 account for changes in municipal boundaries over time and incorporate mail-in
 voting districts.  Users can easily retrieve, clean, and standardize German
 electoral data, making it ready for analysis.  Data is sourced from
-<http://www.german-elections.com>.")
+<https://github.com/awiedem/german_election_data>.")
     (license license:expat)))
 
 (define-public r-gerbil
@@ -29610,24 +29716,19 @@ discrete space.")
 (define-public r-genesysr
   (package
     (name "r-genesysr")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genesysr" version))
        (sha256
-        (base32 "0gf63gmhxvyxms2xhbgwmg8c5xpc4bswbpvfv4nyx25zr97ba7vi"))))
+        (base32 "0rzrppini3hgg774mh3lk7idgjd4fdvqgg3fxi5nxwb35y6dkk9r"))))
     (properties `((upstream-name . "genesysr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-readr
-                             r-magrittr
-                             r-jsonlite
-                             r-httr2
-                             r-dplyr))
+    (propagated-inputs (list r-readr r-magrittr r-jsonlite r-httr2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.croptrust.org/genesys-pgr/genesysr")
     (synopsis "Genesys PGR Client")
@@ -34605,13 +34706,13 @@ Computer Model Via Analysis of Variance and Visualization\",
 (define-public r-gasmodel
   (package
     (name "r-gasmodel")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gasmodel" version))
        (sha256
-        (base32 "0l2iv67irw7sc5k2f0pgwwzx1ijbxnd83a1iakinichw1i4kjl89"))))
+        (base32 "05klhv55fjdjmsmpdv9wflkmlv05c9r5234g2bjfp0vvhiia3rjx"))))
     (properties `((upstream-name . "gasmodel")))
     (build-system r-build-system)
     (arguments

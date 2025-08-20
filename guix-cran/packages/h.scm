@@ -391,13 +391,13 @@ Hediger & Michel & Naef (2022).")
 (define-public r-hypetools
   (package
     (name "r-hypetools")
-    (version "1.6.5")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HYPEtools" version))
        (sha256
-        (base32 "1p9k0jp7qms1sl5msrqm12bf5f48h8jrw2im72f150yv3q5yadjy"))))
+        (base32 "085yhx6v6073h7qg082fw3g54h3bnq5aq4y89pbv7pkxh2j8253w"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
     (arguments
@@ -1913,13 +1913,13 @@ problems.")
 (define-public r-huxtable
   (package
     (name "r-huxtable")
-    (version "5.6.0")
+    (version "5.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "huxtable" version))
        (sha256
-        (base32 "16bc82zxzqswgr9fz3v5knylmr0xbdhw9nvq9h3g4y37ws8yy0x6"))))
+        (base32 "1wb97w9rcxf46qca19zin5g2mnh9bw0429l87ln5cjhx63dld9g3"))))
     (properties `((upstream-name . "huxtable")))
     (build-system r-build-system)
     (arguments
@@ -5454,13 +5454,13 @@ the package to build on previous lab members code.")
 (define-public r-hockeystick
   (package
     (name "r-hockeystick")
-    (version "0.8.5")
+    (version "0.8.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hockeystick" version))
        (sha256
-        (base32 "1kfv5f2zzw9dr549carnjwa59xz69iy2dbldllqg99lpqhigs4z0"))))
+        (base32 "1rriibp32nwaqkaihn2jbgl1fdd8y8qzagqxdn98774i3xzjgm5b"))))
     (properties `((upstream-name . "hockeystick")))
     (build-system r-build-system)
     (arguments
@@ -5471,6 +5471,7 @@ the package to build on previous lab members code.")
                              r-tibble
                              r-scales
                              r-rvest
+                             r-readxl
                              r-readr
                              r-rcolorbrewer
                              r-patchwork
@@ -5478,6 +5479,7 @@ the package to build on previous lab members code.")
                              r-jsonlite
                              r-ggplot2
                              r-dplyr))
+    (native-inputs (list r-quarto))
     (home-page "https://cortinah.github.io/hockeystick/")
     (synopsis "Download and Visualize Essential Climate Change Data")
     (description
@@ -10466,22 +10468,18 @@ through comms.")
 (define-public r-heplots
   (package
     (name "r-heplots")
-    (version "1.7.5")
+    (version "1.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heplots" version))
        (sha256
-        (base32 "0m951dq8d9w88wq1zkp05npfj991c535clygknx5wczk2ln3xlcb"))))
+        (base32 "0a4xvajq5n3n3wi2jacy6l6xg7jy6yw41pi53myh24kndh680j6w"))))
     (properties `((upstream-name . "heplots")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rgl
                              r-purrr
@@ -10489,8 +10487,8 @@ through comms.")
                              r-magrittr
                              r-car
                              r-broom))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "http://friendly.github.io/heplots/")
+    (native-inputs (list r-knitr))
+    (home-page "https://friendly.github.io/heplots/")
     (synopsis "Visualizing Hypothesis Tests in Multivariate Linear Models")
     (description
      "This package provides HE plot and other functions for visualizing hypothesis
@@ -14264,13 +14262,13 @@ various computational models with a single line of coding (Ahn et al., 2017)
 (define-public r-hbamr
   (package
     (name "r-hbamr")
-    (version "2.4.2")
+    (version "2.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbamr" version))
        (sha256
-        (base32 "0wmgh0ma2a26ji5fal9mfy40gfpj770s6qyrwfni5a0m0kpczxvd"))))
+        (base32 "1ybpp47mzfxzy1zbl5wdirm4iz1l0riv015i4rb0rxjwmwwqbc61"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
     (arguments

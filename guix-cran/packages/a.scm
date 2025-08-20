@@ -2735,6 +2735,55 @@ many popular network package classes.  It also includes some novel layout
 algorithms, and options for straightforward, consistent themes.")
     (license license:expat)))
 
+(define-public r-autogo
+  (package
+    (name "r-autogo")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autoGO" version))
+       (sha256
+        (base32 "17684xirv39l1ispww1j4zxkmpn0kcq07ry6nqhw2ywyq7zwvfl6"))))
+    (properties `((upstream-name . "autoGO")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-textshape
+                             r-summarizedexperiment
+                             r-stringr
+                             r-reshape2
+                             r-readr
+                             r-rcolorbrewer
+                             r-purrr
+                             r-openxlsx
+                             r-msigdbr
+                             r-gsva
+                             r-ggrepel
+                             r-ggplot2
+                             r-enrichr
+                             r-dplyr
+                             r-dichromat
+                             r-deseq2
+                             r-complexheatmap
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=autoGO")
+    (synopsis
+     "Auto-GO: Reproducible, Robust and High Quality Ontology Enrichment Visualizations")
+    (description
+     "Auto-GO is a framework that enables automated, high quality Gene Ontology
+enrichment analysis visualizations.  It also features a handy wrapper for
+Differential Expression analysis around the DESeq2 package described in Love et
+al. (2014) <doi:10.1186/s13059-014-0550-8>.  The whole framework is structured
+in different, independent functions, in order to let the user decide which steps
+of the analysis to perform and which plot to produce.")
+    (license license:expat)))
+
 (define-public r-autogam
   (package
     (name "r-autogam")
@@ -5095,13 +5144,13 @@ given in Foreman et al. (2015) <doi:10.1186/1478-7954-10-1>.")
 (define-public r-assumpsure
   (package
     (name "r-assumpsure")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AssumpSure" version))
        (sha256
-        (base32 "0qzp3zwkgj8q77105h40wzb26lw9apbj88jqx74181i92szf2w66"))))
+        (base32 "1pxchvi2k91g7ziw000980n0b8y9mya9xlq72xz7sm0i0ji2v671"))))
     (properties `((upstream-name . "AssumpSure")))
     (build-system r-build-system)
     (arguments
@@ -5123,18 +5172,23 @@ given in Foreman et al. (2015) <doi:10.1186/1478-7954-10-1>.")
                              r-mass
                              r-lmertest
                              r-knitr
+                             r-kableextra
                              r-htmltools
+                             r-glmmtmb
                              r-fontawesome
+                             r-effectsize
                              r-dt
                              r-dharma
                              r-correlation
                              r-compositions
+                             r-coin
                              r-car
                              r-bslib
                              r-broom-mixed
                              r-broom
+                             r-brglm2
                              r-bestnormalize))
-    (home-page "https://cran.r-project.org/package=AssumpSure")
+    (home-page "https://github.com/Ahmedbargheet/AssumpSure")
     (synopsis
      "'shiny' Application for Statistical Test Assumption Checking and Guidance")
     (description
@@ -5998,13 +6052,13 @@ given in Feng et al. (2024) <doi:10.48550/@code{arXiv.2403.16688>}.")
 (define-public r-aslib
   (package
     (name "r-aslib")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aslib" version))
        (sha256
-        (base32 "1hy0ncanc3mb20yrby8s9hd8v2fg3x41vkj0jwl2b8znzl5n5b2n"))))
+        (base32 "1c6d3cgwpc414zqpwp69m0d8dqghlk9awqav81wvnrjcl67svd5i"))))
     (properties `((upstream-name . "aslib")))
     (build-system r-build-system)
     (arguments
@@ -6029,7 +6083,7 @@ given in Feng et al. (2024) <doi:10.48550/@code{arXiv.2403.16688>}.")
     (synopsis "Interface to the Algorithm Selection Benchmark Library")
     (description
      "This package provides an interface to the algorithm selection benchmark library
-at <http://www.aslib.net> and the LLAMA package
+at <https://www.coseal.net/aslib/> and the LLAMA package
 (<https://cran.r-project.org/package=llama>) for building algorithm selection
 models; see Bischl et al. (2016) <doi:10.1016/j.artint.2016.04.003>.")
     (license license:gpl3)))
@@ -7278,13 +7332,13 @@ et al, 2021 <doi:10.1002/ajpa.24340>).")
 (define-public r-aroma-core
   (package
     (name "r-aroma-core")
-    (version "3.3.1")
+    (version "3.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aroma.core" version))
        (sha256
-        (base32 "0i2yh0w7hjljgsbn00vy9wyh03470f5xgqnahm7b83km16jvq9ps"))))
+        (base32 "151njvi70csbzz54lk4mrmvwyv9rdvp51ngchbb4jbk2n2xqrwsr"))))
     (properties `((upstream-name . "aroma.core")))
     (build-system r-build-system)
     (arguments
@@ -7387,13 +7441,13 @@ not be used elsewhere.).")
 (define-public r-aroma-affymetrix
   (package
     (name "r-aroma-affymetrix")
-    (version "3.2.2")
+    (version "3.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aroma.affymetrix" version))
        (sha256
-        (base32 "0h4w7i7hrkfvlkphxz9c0hbaxz455pzx0sb7y3zvsh9ykr3wkq8q"))))
+        (base32 "077a26mas49s68bqjnf87vr18jwhgj9qkrqh7b38scdbn61z65z1"))))
     (properties `((upstream-name . "aroma.affymetrix")))
     (build-system r-build-system)
     (arguments
@@ -10877,6 +10931,46 @@ Lemeshow and R.X. Sturdivant (3rd ed., 2013) containing the dataset used in the
 book.")
     (license license:gpl3)))
 
+(define-public r-aplcms
+  (package
+    (name "r-aplcms")
+    (version "6.8.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "apLCMS" version))
+       (sha256
+        (base32 "0y5xqv8iv1ik674521nb7gqv77gpr4a12yi6fj7j85dvm1g79ad7"))))
+    (properties `((upstream-name . "apLCMS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rocs
+                             r-rocr
+                             r-rgl
+                             r-rcpp
+                             r-randomforest
+                             r-mzr
+                             r-mass
+                             r-iterators
+                             r-gbm
+                             r-foreach
+                             r-e1071
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=apLCMS")
+    (synopsis "Adaptive Processing of LC-MS Data")
+    (description
+     "This package provides methods for the processing of liquid chromatography-mass
+spectrometry (LC/MS) based metabolomics data, including adaptive tolerance level
+searching, non-parametric intensity grouping, the use of run filter to preserve
+weak signals, model-based estimation of peak intensities, and peak detection
+based on existing knowledge.  Related references include Yu et al. (2009)
+<doi:10.1093/bioinformatics/btp291>, Liu et al. (2020)
+<doi:10.1038/s41598-020-70850-0>, Yu et al. (2014)
+<doi:10.1093/bioinformatics/btu430>, Yu et al. (2013) <doi:10.1021/pr301053d>.")
+    (license license:gpl2+)))
+
 (define-public r-apisensr
   (package
     (name "r-apisensr")
@@ -11450,13 +11544,13 @@ transcription errors and reduces the number commands needed by the user.")
 (define-public r-apackoftheclones
   (package
     (name "r-apackoftheclones")
-    (version "1.2.4")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APackOfTheClones" version))
        (sha256
-        (base32 "16c99d404ppzhgkj7g816h24fpfpfyqis21gdsbi6wcizh6w90qz"))))
+        (base32 "14j6pg70pcf005w10q2kbbr3xmq2m98pvd378rcjqjvjj2rfmrvm"))))
     (properties `((upstream-name . "APackOfTheClones")))
     (build-system r-build-system)
     (arguments
@@ -11466,6 +11560,7 @@ transcription errors and reduces the number commands needed by the user.")
                              r-seurat
                              r-rlang
                              r-rcpp
+                             r-magrittr
                              r-lifecycle
                              r-hash
                              r-ggplot2
@@ -12727,13 +12822,13 @@ package function as well as at <https://tinyurl.com/ANOVA@code{StatsTool>}.")
 (define-public r-anopa
   (package
     (name "r-anopa")
-    (version "0.1.3")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ANOPA" version))
        (sha256
-        (base32 "1i6flm4rwl0d0wmw001pwq45jysxb2d2bld25r10gjk3xlfrbr7i"))))
+        (base32 "14vg85r2fdvpzak41hz75ns24g5r05l5akv6bdffmlxsk72hjd3j"))))
     (properties `((upstream-name . "ANOPA")))
     (build-system r-build-system)
     (arguments
@@ -15872,13 +15967,13 @@ Department of Energy Alternate Fuel database as a data set.")
 (define-public r-alternativeroc
   (package
     (name "r-alternativeroc")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alternativeROC" version))
        (sha256
-        (base32 "09a3rq3m51nw7cvrj3a64m8rkjrlh0slr79wdksg0fihis7lnysb"))))
+        (base32 "04ghg12nhx662yk37in4k4yxld6mx65xrm8yh2whjqsvbdsj8n7b"))))
     (properties `((upstream-name . "alternativeROC")))
     (build-system r-build-system)
     (arguments
@@ -18064,13 +18159,13 @@ hazards model.")
 (define-public r-aiscreenr
   (package
     (name "r-aiscreenr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AIscreenR" version))
        (sha256
-        (base32 "16rbkncjy6gcf9q6qxmar2z1l46wgj43bkg4bdd38495rjh8nsmk"))))
+        (base32 "1zs8h0yxpxbf9n4harakky733q0hhskr8cpvwlpwrv3wkczyifnd"))))
     (properties `((upstream-name . "AIscreenR")))
     (build-system r-build-system)
     (arguments
@@ -18099,7 +18194,7 @@ Pre-trained Transformer (GPT) models from @code{OpenAI}
 title and abstract screenings while reducing the total screening time
 significantly.  In addition, the package includes tools for quality assessment
 of title and abstract screenings, as described in Vembye, Christensen,
-MÃ¸lgaard, and Schytt (2024) <DOI:10.31219/osf.io/yrhzm>.")
+MÃ¸lgaard, and Schytt (2025) <DOI:10.1037/met0000769>.")
     (license license:gpl3+)))
 
 (define-public r-airthermo
@@ -18912,13 +19007,13 @@ and
 (define-public r-aifeducation
   (package
     (name "r-aifeducation")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aifeducation" version))
        (sha256
-        (base32 "1gafwamppzklxv4bs0ypxvwwfk97hq4hk3nphd3g6agxbjxvvzdr"))))
+        (base32 "0j43229710jyljgnk00ik87njx6ziynmiwhbkamqbvplw0w248an"))))
     (properties `((upstream-name . "aifeducation")))
     (build-system r-build-system)
     (arguments
@@ -18926,13 +19021,11 @@ and
       #:tests? #f))
     (inputs (list python-pytorch))
     (propagated-inputs (list r-stringi
-                             r-smotefamily
                              r-rlang
                              r-reticulate
                              r-reshape2
                              r-rcpparmadillo
                              r-rcpp
-                             r-irrcac
                              r-iotarelr
                              r-foreach
                              r-doparallel))
@@ -18953,15 +19046,14 @@ people without skills in writing python/R scripts.  The tools integrate existing
 mathematical and statistical methods for dealing with small data sets via
 pseudo-labeling (e.g. Cascante-Bonilla et al. (2020)
 <doi:10.48550/@code{arXiv.2001.06001>}) and imbalanced data via the creation of
-synthetic cases (e.g. Bunkhumpornpat et al. (2012)
-<doi:10.1007/s10489-011-0287-y>).  Performance evaluation of AI is connected to
-measures from content analysis which educational and social researchers are
-generally more familiar with (e.g. Berding & Pargmann (2022)
-<doi:10.30819/5581>, Gwet (2014) <ISBN:978-0-9708062-8-4>, Krippendorff (2019)
-<doi:10.4135/9781071878781>).  Estimation of energy consumption and CO2
-emissions during model training is done with the python library codecarbon'.
-Finally, all objects created with this package allow to share trained AI models
-with other people.")
+synthetic cases (e.g. Islam et al. (2012) <doi:10.1016/j.asoc.2021.108288>).
+Performance evaluation of AI is connected to measures from content analysis
+which educational and social researchers are generally more familiar with (e.g.
+Berding & Pargmann (2022) <doi:10.30819/5581>, Gwet (2014)
+<ISBN:978-0-9708062-8-4>, Krippendorff (2019) <doi:10.4135/9781071878781>).
+Estimation of energy consumption and CO2 emissions during model training is done
+with the python library codecarbon'.  Finally, all objects created with this
+package allow to share trained AI models with other people.")
     (license license:gpl3)))
 
 (define-public r-aies
@@ -23357,13 +23449,13 @@ phylogenetic differences between communities.")
 (define-public r-adismf
   (package
     (name "r-adismf")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AdIsMF" version))
        (sha256
-        (base32 "1ddwnn6jmj0sm1b9mxdaa88rngn4vfw59malqqg5whq0hnl4mhwx"))))
+        (base32 "05bc4davs63ykiqw3fswbqly5n4233dhnlvxff29g3jcymdpbmkd"))))
     (properties `((upstream-name . "AdIsMF")))
     (build-system r-build-system)
     (arguments
@@ -25746,13 +25838,13 @@ making it a valuable resource for researchers.")
 (define-public r-acne
   (package
     (name "r-acne")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ACNE" version))
        (sha256
-        (base32 "12i1b5bbdn4wz80p8v6xygap7pkgdvidxmsd927ks7qf1yvaq93k"))))
+        (base32 "1k8rl0k8wlw2azclf0c6f2xiwqx1san79xzy0aqrbnadacsj1ibr"))))
     (properties `((upstream-name . "ACNE")))
     (build-system r-build-system)
     (arguments

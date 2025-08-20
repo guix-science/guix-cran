@@ -115,19 +115,19 @@ al. (2021) <doi:10.1016/j.wocn.2021.101096> and Wilson Black et al. (2023)
 (define-public r-nzilbb-labbcat
   (package
     (name "r-nzilbb-labbcat")
-    (version "1.4-0")
+    (version "1.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nzilbb.labbcat" version))
        (sha256
-        (base32 "18x12i5c16c81md99a20iyhpd5jgwk4vmxz3s3rmvwpq241nsl90"))))
+        (base32 "0c6r4kf8gi29lzwkc3v2nx5934iildrky50ap2d73czgmm7p8hc1"))))
     (properties `((upstream-name . "nzilbb.labbcat")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-rstudioapi r-jsonlite r-httr))
+    (propagated-inputs (list r-xml2 r-stringr r-rstudioapi r-jsonlite r-httr))
     (home-page "https://nzilbb.github.io/labbcat-R/")
     (synopsis "Accessing Data Stored in 'LaBB-CAT' Instances")
     (description
@@ -4832,6 +4832,34 @@ its variations.")
 Test, The 2 Sample Median Test, Miller's Jackknife Procedure, Cochran's Q Test,
 & The Stuart-Maxwell Test.")
     (license license:gpl3)))
+
+(define-public r-nonnormvtdist
+  (package
+    (name "r-nonnormvtdist")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NonNorMvtDist" version))
+       (sha256
+        (base32 "17nmlrdw7fhyz90a0xc758s521ngk4h4r9hbav61438vfsnm12pa"))))
+    (properties `((upstream-name . "NonNorMvtDist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cubature))
+    (home-page "https://cran.r-project.org/package=NonNorMvtDist")
+    (synopsis
+     "Multivariate Lomax (Pareto Type II) and Its Related Distributions")
+    (description
+     "This package implements calculation of probability density function, cumulative
+distribution function, equicoordinate quantile function and survival function,
+and random numbers generation for the following multivariate distributions:
+Lomax (Pareto Type II), generalized Lomax, Mardiaâs Pareto of Type I,
+Logistic, Burr, Cook-Johnsonâs uniform, F and Inverted Beta.  See Tapan Nayak
+(1987) <doi:10.2307/3214068>.")
+    (license license:gpl3+)))
 
 (define-public r-nonneg-cg
   (package
@@ -10587,13 +10615,13 @@ Analytics at the NFL, Lopez (2019)
 (define-public r-nflseedr
   (package
     (name "r-nflseedr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflseedR" version))
        (sha256
-        (base32 "1i7nx475vwabdzgmxs9rm3cam1qbsd5jv0zqsj2krmxx43hrggys"))))
+        (base32 "0x69fn8qb5mqs52czm542blvg74qqmqrhwldxh54a0wzf4nvh0pf"))))
     (properties `((upstream-name . "nflseedR")))
     (build-system r-build-system)
     (arguments
@@ -16866,13 +16894,13 @@ contains 15 color schemes and checks for colorblind-friendliness of palettes.")
 (define-public r-natmanager
   (package
     (name "r-natmanager")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "natmanager" version))
        (sha256
-        (base32 "1lfz73zg95bv2wfk5pk0jb1r9n0w8ikfsza1cldfgffa93ii9ivd"))))
+        (base32 "1caj421hz3hdzgi0llxf05gl5yi3mbq4whw28rqdkwl2bj333w2b"))))
     (properties `((upstream-name . "natmanager")))
     (build-system r-build-system)
     (arguments
@@ -16951,13 +16979,13 @@ functions for working with zip and gzip files including integrity tests.")
 (define-public r-nat-templatebrains
   (package
     (name "r-nat-templatebrains")
-    (version "1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nat.templatebrains" version))
        (sha256
-        (base32 "13fwh9lqd7yz3j8ndhx650a6mf5hn2f0w3lqfha24vb2zrv0crsg"))))
+        (base32 "0fxkkksk1gh46rvb3a69ccvlvb65ld1zmxpkhpcizjwpgjpg8sg4"))))
     (properties `((upstream-name . "nat.templatebrains")))
     (build-system r-build-system)
     (arguments
@@ -16966,7 +16994,6 @@ functions for working with zip and gzip files including integrity tests.")
     (propagated-inputs (list r-rgl
                              r-rappdirs
                              r-nat
-                             r-morpho
                              r-memoise
                              r-igraph
                              r-digest))
@@ -16981,13 +17008,13 @@ functions for handling template brains.")
 (define-public r-nat-nblast
   (package
     (name "r-nat-nblast")
-    (version "1.6.7")
+    (version "1.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nat.nblast" version))
        (sha256
-        (base32 "0m3x69m366ir5r2cf0msbwkrz32ds1cjyychw5l9z9cmdd8gmlsw"))))
+        (base32 "1whmis8r1wwhg744sihs8qd5nj2v5nazid1hp5qd21a51i0vb6w6"))))
     (properties `((upstream-name . "nat.nblast")))
     (build-system r-build-system)
     (arguments
@@ -17012,13 +17039,13 @@ NBLAST-related functions for neuronal morphology comparison (Costa et al. (2016)
 (define-public r-nat
   (package
     (name "r-nat")
-    (version "1.8.24")
+    (version "1.8.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nat" version))
        (sha256
-        (base32 "1r3p5vwk96d93z8qm1lrb6g16l9fm2gcwy4h4n8clmxnpnimkj3k"))))
+        (base32 "1qwl8ynncn4swa5l1dg8z7qlyhwk05p9s9z9wm6dcmcczmivmdga"))))
     (properties `((upstream-name . "nat")))
     (build-system r-build-system)
     (arguments

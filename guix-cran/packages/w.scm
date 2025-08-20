@@ -2211,13 +2211,13 @@ or tidyverse functions.  This package has been peer-reviewed by @code{rOpenSci}
 (define-public r-workflowr
   (package
     (name "r-workflowr")
-    (version "1.7.1")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "workflowr" version))
        (sha256
-        (base32 "0ziknnnjqdlzxgxhcqlvpnjlqd33mdglp0wss2pl655slpizzjb4"))))
+        (base32 "1zkpsaj1klc0k05k5dwyp6z8mxi0araypjb3nma26sirj0cfq1hl"))))
     (properties `((upstream-name . "workflowr")))
     (build-system r-build-system)
     (arguments
@@ -2238,7 +2238,7 @@ or tidyverse functions.  This package has been peer-reviewed by @code{rOpenSci}
                              r-fs
                              r-callr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/workflowr/workflowr")
+    (home-page "https://workflowr.github.io/workflowr/")
     (synopsis "Framework for Reproducible and Collaborative Data Science")
     (description
      "This package provides a workflow for your analysis projects by combining
@@ -3756,6 +3756,49 @@ including information on input expenditure aggregated at the farm level and
 acreage shares.  It also considers in fairly way the weighting data and can
 allow integrating time-varying and time-constant control variables.")
     (license license:gpl3+)))
+
+(define-public r-wingen
+  (package
+    (name "r-wingen")
+    (version "2.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wingen" version))
+       (sha256
+        (base32 "0aga1gf16a6s2vxhspic8ls1zjq1071z707qcy3qhkawvlsfsaz7"))))
+    (properties `((upstream-name . "wingen")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-vcfr
+                             r-tidyselect
+                             r-tidyr
+                             r-terra
+                             r-sf
+                             r-rlang
+                             r-raster
+                             r-purrr
+                             r-pegas
+                             r-magrittr
+                             r-lifecycle
+                             r-hierfstat
+                             r-gstat
+                             r-ggplot2
+                             r-gdistance
+                             r-furrr
+                             r-dplyr
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AnushaPB/wingen")
+    (synopsis "Continuous Mapping of Genetic Diversity")
+    (description
+     "Generate continuous maps of genetic diversity using moving windows with options
+for rarefaction, interpolation, and masking as described in Bishop et al. (2023)
+<doi:10.1111/2041-210X.14090>.")
+    (license license:expat)))
 
 (define-public r-winfapreader
   (package
@@ -5469,13 +5512,13 @@ association scan, candidate region scan and single window test.")
 (define-public r-wget
   (package
     (name "r-wget")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wget" version))
        (sha256
-        (base32 "0vnrnfcsacic57r730cjhrrb743qiq2yga9abhqi9w3fd5vixsni"))))
+        (base32 "0bqlcwj4bzkjr10i8kqxjjmz1lbh69l2k21dhwj56dmfvk8kfc0i"))))
     (properties `((upstream-name . "wget")))
     (build-system r-build-system)
     (arguments
@@ -7723,6 +7766,42 @@ geospatial terminology.")
 including the World Development Indicators ('WDI'), International Debt
 Statistics, Doing Business, Human Capital Index, and Sub-national Poverty
 indicators.")
+    (license license:gpl3)))
+
+(define-public r-wdata
+  (package
+    (name "r-wdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WData" version))
+       (sha256
+        (base32 "01gr1sgga65rdm90jcp6bcppis0jx7p6y58r9va9bfhck2fb596a"))))
+    (properties `((upstream-name . "WData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack
+                             r-rcpp
+                             r-progress
+                             r-latex2exp
+                             r-kscorrect
+                             r-evmix
+                             r-bayesmeta))
+    (home-page "https://github.com/noeliasanchmrt/WData")
+    (synopsis "Statistical Inference for Weighted Data")
+    (description
+     "Analyzes and models data subject to sampling biases.  Provides functions to
+estimate the density and cumulative distribution functions from biased samples
+of continuous distributions.  Includes the estimators proposed by Bhattacharyya
+et al. (1988) <doi:10.1080/03610928808829825> and Jones (1991)
+<doi:10.2307/2337020> for density, and by Cox (2005, ISBN:052184939X) and Bose
+and Dutta (2022) <doi:10.1007/s00184-021-00824-3> for distribution, with
+different bandwidth selectors.  Also includes a real length-biased dataset on
+shrub width from Muttlak (1988)
+<https://www.proquest.com/openview/3dd74592e623cdbcfa6176e85bd3d390/1?cbl=18750&diss=y&pq-origsite=gscholar>.")
     (license license:gpl3)))
 
 (define-public r-wcox

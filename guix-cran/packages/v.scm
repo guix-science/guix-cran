@@ -1981,13 +1981,13 @@ birds and other biological signals in weather radar data.  See Dokter et al.
 (define-public r-voigt
   (package
     (name "r-voigt")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "voigt" version))
        (sha256
-        (base32 "104p1s8d6py7zqg09wncxs0z9gb6rx86glcfa914ikk6a6wypxhz"))))
+        (base32 "0xh5rmr06rwvb2md234f8kq46jj3q4i299kkx9rnr7lklixhjxhl"))))
     (properties `((upstream-name . "voigt")))
     (build-system r-build-system)
     (arguments
@@ -2001,9 +2001,9 @@ birds and other biological signals in weather radar data.  See Dokter et al.
 distribution.  The main objective of this package is to provide R users with
 efficient estimation of Voigt parameters using classic iid data in a Bayesian
 framework.  The estimating function allows flexible prior specification,
-specification of fixed parameters and several options for MCMC posterior
-simulation.  A basic version of the algorithm is described in: Cannas M. and
-Piras, N. (2025) <doi:10.1007/978-3-031-96303-2_53>.")
+specification of fixed parameters and several options for Markov Chain Monte
+Carlo posterior simulation.  A basic version of the algorithm is described in:
+Cannas M. and Piras, N. (2025) <doi:10.1007/978-3-031-96303-2_53>.")
     (license license:gpl2)))
 
 (define-public r-voicer
@@ -5574,13 +5574,13 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "09brbgb8xc0pysvki5hlnx84pl0q949gf79r24141g7r580532sp"))))
+        (base32 "1lwq1i6pn1g633x4wd2df9z1ay7nn7xzz72asra66k7l5s9zc3iw"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
     (arguments
@@ -5602,8 +5602,7 @@ Factorization algorithms - Random generators of diferent types of integers.")
                              r-freesurferformats
                              r-foreach
                              r-dosnow
-                             r-doparallel
-                             r-ciftitools))
+                             r-doparallel))
     (native-inputs (list r-r-rsp))
     (home-page "https://cogbrainhealthlab.github.io/VertexWiseR/")
     (synopsis
@@ -6734,13 +6733,13 @@ Keyser & Gijbels (2024) <doi:10.1016/j.jmva.2024.105336>, De Keyser & Gijbels
 (define-public r-vecctmvn
   (package
     (name "r-vecctmvn")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VeccTMVN" version))
        (sha256
-        (base32 "0x0nd07015ibp1q989kwnwig0c85vvfc30azswyn4dia8dwd5zzf"))))
+        (base32 "1lsdclv8538blcxhhy6hzp7i4ysgc76fpf7c1jaydb18v227rni3"))))
     (properties `((upstream-name . "VeccTMVN")))
     (build-system r-build-system)
     (arguments
@@ -7464,13 +7463,13 @@ description of the features.")
 (define-public r-vc2copula
   (package
     (name "r-vc2copula")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VC2copula" version))
        (sha256
-        (base32 "1kadz36cw12qipf25dqykm58hh775wk3aq793ckphl7y9vqpvl36"))))
+        (base32 "05d66iqdkf09lyvc8qy9fwdsqd2ck0dpj36p29kpx9q5qzgkdxm5"))))
     (properties `((upstream-name . "VC2copula")))
     (build-system r-build-system)
     (arguments

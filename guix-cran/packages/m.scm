@@ -488,13 +488,13 @@ summary functions are from the spatstat package <https://spatstat.org/>.")
 (define-public r-mxcc
   (package
     (name "r-mxcc")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mxcc" version))
        (sha256
-        (base32 "0wzlc2lp3ahwiacf1i4xv72bz8sdwi9z05d0dqhwi1lqa6h0jm88"))))
+        (base32 "0jr418dvzrkbp7izllcv3d7747vvafsdnjljsksdzj7ly9x7lkjd"))))
     (properties `((upstream-name . "mxcc")))
     (build-system r-build-system)
     (arguments
@@ -8160,13 +8160,13 @@ showcasing their reliable performance in finite-sample cases.")
 (define-public r-mt
   (package
     (name "r-mt")
-    (version "2.0-1.20")
+    (version "2.0-1.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mt" version))
        (sha256
-        (base32 "12r7hs83ijn7vw1qqgfrmd5ff7x6p3hxmaxnr3bjr5h2gd6sj42l"))))
+        (base32 "0b9yxr4az5b97np1i3qaz9pbq5mzvnl6n12ml3hh576p5vwr6f4i"))))
     (properties `((upstream-name . "mt")))
     (build-system r-build-system)
     (arguments
@@ -9926,13 +9926,13 @@ this package, please visit our @code{GitHub} repository
 (define-public r-mschart
   (package
     (name "r-mschart")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mschart" version))
        (sha256
-        (base32 "0znylmkzqsk9qw640bhqnn4np748s9q1zcwgyavb3b808nfcv6ri"))))
+        (base32 "0w0x4vlrndyrr1zn74yh8m8x19v178ms9szarj2v6amlz6ri3zg8"))))
     (properties `((upstream-name . "mschart")))
     (build-system r-build-system)
     (arguments
@@ -9940,6 +9940,7 @@ this package, please visit our @code{GitHub} repository
       #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-writexl
+                             r-scales
                              r-officer
                              r-htmltools
                              r-data-table
@@ -14747,13 +14748,13 @@ allows the definition of quizzes to be included in the question bank.")
 (define-public r-moode
   (package
     (name "r-moode")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MOODE" version))
        (sha256
-        (base32 "198i665rhc7kibl5z3gjkk7m8hsnrlyb7w3dg8qh2jb7358qwf2r"))))
+        (base32 "0ggfpghdfhd327gqj4nvyi0gq8a1vs6fl4j4vk64mn5s1ndhd56h"))))
     (properties `((upstream-name . "MOODE")))
     (build-system r-build-system)
     (arguments
@@ -15865,6 +15866,32 @@ method.")
 model selection and information criteria (BIC, EBIC, AIC, GIC).")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-mom
+  (package
+    (name "r-mom")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MOM" version))
+       (sha256
+        (base32 "1mnqrs9vqzfh6b5j27lrsw9q6xiqis7vi66198zvffvg4vxav35b"))))
+    (properties `((upstream-name . "MOM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam r-actuar))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MOM")
+    (synopsis "Estimation and Testing of Hypothesis")
+    (description
+     "This package provides a collection of functions to do some statistical
+inferences.  On estimation, it has the function to get the method of moments
+estimates, the sampling interval.  In terms of testing it has function of doing
+most powerful test.")
+    (license license:expat)))
 
 (define-public r-molhd
   (package
@@ -20077,13 +20104,13 @@ Xu and Tian (2019) <doi:10.5705/ss.202016.0516>, Zhang and Huang (2022)
 (define-public r-mmac
   (package
     (name "r-mmac")
-    (version "0.1.2")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MMAC" version))
        (sha256
-        (base32 "1xwz48iizf0lvmhc7krsraabc49ky85qvgr23w4ip6jzfv4sn1jr"))))
+        (base32 "09dbcqm4ldd93pmv3bx1ilnwk7540z26d6c7lf9j2g6nqgdm6fm4"))))
     (properties `((upstream-name . "MMAC")))
     (build-system r-build-system)
     (arguments
@@ -20092,9 +20119,11 @@ Xu and Tian (2019) <doi:10.5705/ss.202016.0516>, Zhang and Huang (2022)
     (home-page "https://cran.r-project.org/package=MMAC")
     (synopsis "Data for Mathematical Modeling and Applied Calculus")
     (description
-     "This package contains the data sets for the textbook \"Mathematical Modeling and
-Applied Calculus\" by Joel Kilty and Alex M. @code{McAllister}.  The book will be
-published by Oxford University Press in 2018 with ISBN-13: 978-019882472.")
+     "This package contains the data sets for the first and second editions of the
+textbook \"Mathematical Modeling and Applied Calculus\" by Joel Kilty and Alex M.
+@code{McAllister}.  The first edition of the book was published by Oxford
+University Press in 2018 with ISBN-13: 978-019882472.  The second edition is
+expected to be published in January 2027.")
     (license license:gpl2+)))
 
 (define-public r-mmabig
@@ -24641,13 +24670,13 @@ Gaussian copula model.  The methods are described in Yoon, Carroll and Gaynanova
 (define-public r-mixedbiastest
   (package
     (name "r-mixedbiastest")
-    (version "0.3.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedbiastest" version))
        (sha256
-        (base32 "0xy388hqj5gscx8q5wklx3n5gsaqsm56qi0dl9mq1agxy2jpjynm"))))
+        (base32 "14cbxx8ndc2yq30ypgbb0xn7zljzh7p8as7si2lh2883i8gcr8sl"))))
     (properties `((upstream-name . "mixedbiastest")))
     (build-system r-build-system)
     (arguments
@@ -25089,13 +25118,13 @@ of Health and Human Services.")
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "0x4qv4nvm453sxdbw2vsa1w56sj94lvg623m4q3clwzqmkm1ci9w"))))
+        (base32 "0v2wcgqy4x70vk2y0l52i1b64lv5nval9b4bgl09i1snfn6icbsg"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (arguments
@@ -25105,7 +25134,7 @@ of Health and Human Services.")
     (home-page "https://cran.r-project.org/package=misty")
     (synopsis "Miscellaneous Functions 'T. Yanagida'")
     (description
-     "Miscellaneous functions for (1) data management (e.g., grand-mean and group-mean
+     "Miscellaneous functions for (1) data handling (e.g., grand-mean and group-mean
 centering, coding variables and reverse coding items, scale and cluster scores,
 reading and writing Excel and SPSS files), (2) descriptive statistics (e.g.,
 frequency table, cross tabulation, effect size measures), (3) missing data
@@ -27989,13 +28018,13 @@ G. (2017, submitted).")
 (define-public r-mildsvm
   (package
     (name "r-mildsvm")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mildsvm" version))
        (sha256
-        (base32 "02n93ck8458xliqwp226v5b7691a9jx5i7b1q9n0nqc74xkm8h1i"))))
+        (base32 "1x4xlgr6azi7vy65ghyagw2jbif6gyvgk1zdn6hg0xd06ml0sxl4"))))
     (properties `((upstream-name . "mildsvm")))
     (build-system r-build-system)
     (arguments
@@ -28021,7 +28050,7 @@ prediction on whole slide images.  The mildsvm package provides an easy way to
 learn from this data by training Support Vector Machine (SVM)-based classifiers.
  It also contains helpful functions for building and printing multiple instance
 data frames.  The core methods from mildsvm come from the following references:
-Kent and Yu (2022) <@code{arXiv:2206.14704>}; Xiao, Liu, and Hao (2018)
+Kent and Yu (2024) <doi:10.1214/24-AOAS1876>; Xiao, Liu, and Hao (2018)
 <doi:10.1109/TNNLS.2017.2766164>; Muandet et al. (2012)
 <https://proceedings.neurips.cc/paper/2012/file/9bf31c7ff062936a96d3c8bd1f8f2ff3-Paper.pdf>;
 Chu and Keerthi (2007) <doi:10.1162/neco.2007.19.3.792>; and Andrews et al.
@@ -33825,6 +33854,44 @@ statistics: next to t- and z-tests, the likelihood ratio, bartlett corrected
 likelihood ratio and permutation tests are performed on the model coefficients.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-metasvr
+  (package
+    (name "r-metasvr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metaSVR" version))
+       (sha256
+        (base32 "1jlx081j41ks5vji4bqd07ihyyrv2zfvd5mzpppc9cqh1p7mff0q"))))
+    (properties `((upstream-name . "metaSVR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-hms r-e1071))
+    (home-page "https://github.com/rechtianaputri/metaSVR")
+    (synopsis
+     "Support Vector Regression with Metaheuristic Algorithms Optimization")
+    (description
+     "This package provides a hybrid modeling framework combining Support Vector
+Regression (SVR) with metaheuristic optimization algorithms, including the
+Archimedes Optimization Algorithm (AO) (Hashim et al. (2021)
+<doi:10.1007/s10489-020-01893-z>), Coot Bird Optimization (CBO) (Naruei & Keynia
+(2021) <doi:10.1016/j.eswa.2021.115352>), and their hybrid (AOCBO), as well as
+several others such as Harris Hawks Optimization (HHO) (Heidari et al. (2019)
+<doi:10.1016/j.future.2019.02.028>), Gray Wolf Optimizer (GWO) (Mirjalili et al.
+(2014) <doi:10.1016/j.advengsoft.2013.12.007>), Ant Lion Optimization (ALO)
+(Mirjalili (2015) <doi:10.1016/j.advengsoft.2015.01.010>), and Enhanced Harris
+Hawk Optimization with Coot Bird Optimization (EHHOCBO) (Cui et al. (2023)
+<doi:10.32604/cmes.2023.026019>).  The package enables automatic tuning of SVR
+hyperparameters (cost, gamma, and epsilon) to enhance prediction performance.
+Suitable for regression tasks in domains such as renewable energy forecasting
+and hourly data prediction.  For more details about implementation and parameter
+bounds see: Setiawan et al. (2021) <doi:10.1016/j.procs.2020.12.003> and Liu et
+al. (2018) <doi:10.1155/2018/6076475>.")
+    (license license:gpl3+)))
+
 (define-public r-metasurvival
   (package
     (name "r-metasurvival")
@@ -36004,13 +36071,13 @@ and find the best clustering algorithm for binning.")
 (define-public r-metacart
   (package
     (name "r-metacart")
-    (version "3.0.0")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metacart" version))
        (sha256
-        (base32 "1lfc2xlk157mvb59jzp8fkx8wngmcxhxc33ijksf39v4w7509z9g"))))
+        (base32 "1wisxwqyl2myn0r85r4mc0dx0sc3x6599dps97vlps0z39glfwaa"))))
     (properties `((upstream-name . "metacart")))
     (build-system r-build-system)
     (arguments
@@ -40675,13 +40742,13 @@ distribution.  Initially 	created for statistics at Middlebury College.")
 (define-public r-mcsimmod
   (package
     (name "r-mcsimmod")
-    (version "0.9.1")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MCSimMod" version))
        (sha256
-        (base32 "1ncrjwn0wm040sbsm8v5w1ycxc0qsi0jyv1hfrg68b94q6v2xgka"))))
+        (base32 "0yr6qm0p71h5h8pjfmk1hffyzid06aba0kf1wzs9vrxg5pbxhbfx"))))
     (properties `((upstream-name . "MCSimMod")))
     (build-system r-build-system)
     (arguments
@@ -44037,6 +44104,36 @@ The second data projection in the output is the most skewed among all data
 projections orthogonal to the first one, and so on.")
     (license license:gpl2)))
 
+(define-public r-maxrgain
+  (package
+    (name "r-maxrgain")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "maxRgain" version))
+       (sha256
+        (base32 "0mvp4nqyz6wxjaa6q0q1bm785mkn325fskpnlh0k3vnf2v3akzjn"))))
+    (properties `((upstream-name . "maxRgain")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lpsolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=maxRgain")
+    (synopsis
+     "Maximizing Polyclonal Selection Gains Using Integer Programming")
+    (description
+     "This package implements an Integer Programming-based method for optimising
+genetic gain in polyclonal selection, where the goal is to select a group of
+genotypes that jointly meet multi-trait selection criteria.  The method uses
+predictors of genotypic effects obtained from the fitting of mixed models.  Its
+application is demonstrated with grapevine data, but is applicable to other
+species and breeding contexts.  For more details see Surgy et al. (2025)
+<doi:10.1007/s00122-025-04885-0>.")
+    (license license:gpl3+)))
+
 (define-public r-maxpro
   (package
     (name "r-maxpro")
@@ -44142,13 +44239,13 @@ Maximized Monte Carlo, @code{mmc()}, for statistics with nuisance parameters.")
 (define-public r-maxlike
   (package
     (name "r-maxlike")
-    (version "0.1-11")
+    (version "0.1-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maxlike" version))
        (sha256
-        (base32 "1s81vqx10nckr2g9c1h8m0a2xj0k3pyw4970zshhjmbdljs7ppkd"))))
+        (base32 "06gzyjp61436ms0ii0zpq2s99s5c8q1f687spwf0fkbvvvs5c584"))))
     (properties `((upstream-name . "maxlike")))
     (build-system r-build-system)
     (arguments
@@ -45445,13 +45542,13 @@ and use of the API is subject to their terms and conditions.")
 (define-public r-mathml
   (package
     (name "r-mathml")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mathml" version))
        (sha256
-        (base32 "12w8hbvz6sb6mk0vgix80r9ifvzmh1cvcvwdqkr4jprfiw4zxc65"))))
+        (base32 "14zgavhnyy4hb0pzkbp29g9fddcj4i3igr00kwacgbynpzis18fn"))))
     (properties `((upstream-name . "mathml")))
     (build-system r-build-system)
     (arguments
@@ -46672,13 +46769,13 @@ standard deviation across subgroups.  See A. Marradi \"L'analisi monovariata\"
 (define-public r-marquee
   (package
     (name "r-marquee")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marquee" version))
        (sha256
-        (base32 "080nw8k9ws1ciwly1cbkqmshgy62zkdxw890rzcvnmjzaks808pi"))))
+        (base32 "0p77naa51z93glnkcd4g1andyvfxzi57qicazirv38hq1sk3h5ip"))))
     (properties `((upstream-name . "marquee")))
     (build-system r-build-system)
     (arguments
@@ -47093,13 +47190,13 @@ test suites.")
 (define-public r-markets
   (package
     (name "r-markets")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "markets" version))
        (sha256
-        (base32 "1by2cm3hlw6jgdd5l30frjm5q83llizp09z6v1ajmb51lkrdnqf5"))))
+        (base32 "05w9zfgb09987sw7872nmy766ax64jily5dc0nr9526wjzr4zj1n"))))
     (properties `((upstream-name . "markets")))
     (build-system r-build-system)
     (arguments
@@ -48638,13 +48735,13 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "13wngr0czbfm938q5014iah3lfaqfmragq50ds5njgdffrfypkb6"))))
+        (base32 "1ayx1krfz550i81c0cdpjg3k38g3c9qd8rcd4a81q78h11mbflnh"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
     (arguments
@@ -50209,13 +50306,13 @@ package uses the @code{rJava} package to connect to a JVM.")
 (define-public r-mall
   (package
     (name "r-mall")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mall" version))
        (sha256
-        (base32 "1367g2f9idlr463h8aw3bz02fzggy76mhq0k32zf1n0qh1m2900z"))))
+        (base32 "15gyyns3rwr8v5g10kaanwk0ax12bj2ajyl6709jwcld0jxvrvg8"))))
     (properties `((upstream-name . "mall")))
     (build-system r-build-system)
     (arguments
@@ -50226,6 +50323,7 @@ package uses the @code{rJava} package to connect to a JVM.")
                              r-jsonlite
                              r-glue
                              r-fs
+                             r-ellmer
                              r-dplyr
                              r-cli))
     (home-page "https://mlverse.github.io/mall/")
@@ -50437,13 +50535,13 @@ in cancer networks.")
 (define-public r-malan
   (package
     (name "r-malan")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "malan" version))
        (sha256
-        (base32 "1m11rxzmvkdvpkcnhjwwgrhkmbylwjpqnn47zyy5wna66c3zzvr6"))))
+        (base32 "1vicd8s0nqq0yjdwk4c92184qsi4704m9zavv02qlk88mlzk141g"))))
     (properties `((upstream-name . "malan")))
     (build-system r-build-system)
     (arguments
@@ -50458,7 +50556,7 @@ in cancer networks.")
                              r-igraph
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=malan")
+    (home-page "https://mikldk.github.io/malan/")
     (synopsis "MAle Lineage ANalysis")
     (description
      "MAle Lineage ANalysis by simulating genealogies backwards and imposing short
@@ -52039,13 +52137,13 @@ with mean differences data.  It uses recommended procedures as	described in The
 (define-public r-maczic
   (package
     (name "r-maczic")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maczic" version))
        (sha256
-        (base32 "02papbs1pw470cxzwcgvn8px5hvvg1p8zpmcrk5zqmlpzgjsdx2l"))))
+        (base32 "0h79vhwcidrpr9xgx5iix81jsqbdipn912imy4c2wwa7vjcssmmh"))))
     (properties `((upstream-name . "maczic")))
     (build-system r-build-system)
     (arguments
@@ -52517,13 +52615,13 @@ ranking with the optimal option will be generated.")
 (define-public r-maat
   (package
     (name "r-maat")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maat" version))
        (sha256
-        (base32 "0slyigq90bn2dn09s2ipc13glsywwzs7y5d80zyazwwr51i23xsq"))))
+        (base32 "055yai18hrd5y35zhmmv2j2bwspy6s5sd2v8pn8nzi0y80z9x06l"))))
     (properties `((upstream-name . "maat")))
     (build-system r-build-system)
     (arguments

@@ -3403,13 +3403,13 @@ and easy-to-read output.")
 (define-public r-psychwordvec
   (package
     (name "r-psychwordvec")
-    (version "2025.3")
+    (version "2025.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PsychWordVec" version))
        (sha256
-        (base32 "0v86jpzbji05f6iama08qr496mmdrnr0frnssqr2zhm2ll36x31q"))))
+        (base32 "06adahbkd9qp3zyf92vr99fagm8w8sgrhhn321scvavwcs3lagyp"))))
     (properties `((upstream-name . "PsychWordVec")))
     (build-system r-build-system)
     (arguments
@@ -6798,13 +6798,13 @@ details can be found at Zuo et al. (2021) <doi:10.1080/00031305.2021.1946150>.")
 (define-public r-prosetta
   (package
     (name "r-prosetta")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PROsetta" version))
        (sha256
-        (base32 "1b013cwng8k17yfm4zrwjg7vc4papr2wmqq3a5kawl7bfy4ibaqw"))))
+        (base32 "0adfnp2myr82rhfba0hjyr3a5ypzx48qqwn7r9hmgw6lshk5n9rj"))))
     (properties `((upstream-name . "PROsetta")))
     (build-system r-build-system)
     (arguments
@@ -8087,26 +8087,27 @@ maximum profile likelihood estimates and the kth likelihood support intervals.")
 (define-public r-profileladder
   (package
     (name "r-profileladder")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProfileLadder" version))
        (sha256
-        (base32 "03v2ph3ms5r63i90a9cc6wl7pdav01fg6zff36ncx77mgcmhch1p"))))
+        (base32 "0ri7gg89131bi2bqaki2p607p43hh2s001lk3v8fkxvpbjx2fx7x"))))
     (properties `((upstream-name . "ProfileLadder")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-raw r-chainladder))
+    (propagated-inputs (list r-raw r-crayon r-chainladder))
     (home-page "https://cran.r-project.org/package=ProfileLadder")
-    (synopsis "Functional Profile Chain Ladder for Claims Reserving")
+    (synopsis "Functional-Based Chain Ladder for Claims Reserving")
     (description
      "Functional claims reserving methods based on aggregated chain-ladder data, also
-known as the run-off triangle (functional) development profiles, implemented in
-three nonparametric algorithms (PARALLAX, REACT, and MACRAME) proposed in
-Maciak, Mizera, and PeÅ¡ta (2022) <doi:10.1017/asb.2022.4>.")
+known as a run-off triangle, implemented in three nonparametric algorithms
+(PARALLAX, REACT, and MACRAME) proposed in Maciak, Mizera, and PeÅ¡ta (2022)
+<doi:10.1017/asb.2022.4>.  Additional methods including permutation bootstrap
+for completed run-off triangles are also provided.")
     (license license:gpl2+)))
 
 (define-public r-profileci
@@ -9913,13 +9914,13 @@ binomial experiment.")
 (define-public r-priorcon
   (package
     (name "r-priorcon")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorCON" version))
        (sha256
-        (base32 "1k96ammlrdp9ryvmm8yjmdd5rvq98b5l7mz4bs7znv0fdghp4338"))))
+        (base32 "0xbnz8yp8kcm1vpj2sq7mry94l18vzjs3jqrn73kq1iq9phggyi1"))))
     (properties `((upstream-name . "priorCON")))
     (build-system r-build-system)
     (arguments
@@ -11710,13 +11711,13 @@ rendered HTML doc.")
 (define-public r-prefmod
   (package
     (name "r-prefmod")
-    (version "0.8-36")
+    (version "0.8-37")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prefmod" version))
        (sha256
-        (base32 "1xac3x07yrhrk5j4aq798yk3hf0ig5p84n40cw85i75k3qxddk6f"))))
+        (base32 "1jlc0hx02bw36vhfm4kvq6fjidpmqqgdbl8vl7ajkwibwxbqmngs"))))
     (properties `((upstream-name . "prefmod")))
     (build-system r-build-system)
     (arguments
@@ -17270,13 +17271,13 @@ ISBN:9780198829546).")
 (define-public r-popgenhelpr
   (package
     (name "r-popgenhelpr")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PopGenHelpR" version))
        (sha256
-        (base32 "0pbbjb2kiyphlv7xmrania4pi5nv9h1m3n8242qwnkljxxixkz9q"))))
+        (base32 "1zmzfq5fczrizvw4h7q95mxrik9mfq927nvhfbfwxcmlnwr4nijs"))))
     (properties `((upstream-name . "PopGenHelpR")))
     (build-system r-build-system)
     (arguments
@@ -22296,13 +22297,13 @@ data.")
 (define-public r-plsrbeta
   (package
     (name "r-plsrbeta")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plsRbeta" version))
        (sha256
-        (base32 "0xikaxg1n298j8mm4vzzn7bfma1lmhak39aawfhp3ny3j1d8llr4"))))
+        (base32 "13ids9n9czcjh09982v28m25zadfzqxgw4p27azswsmaypwb05av"))))
     (properties `((upstream-name . "plsRbeta")))
     (build-system r-build-system)
     (arguments
@@ -22319,22 +22320,23 @@ data.")
     (synopsis "Partial Least Squares Regression for Beta Regression Models")
     (description
      "This package provides Partial least squares Regression for (weighted) beta
-regression models (Bertrand 2013, <http://journal-sfds.fr/article/view/215>) and
-k-fold cross-validation of such models using various criteria.  It allows for
-missing data in the explanatory variables.  Bootstrap confidence intervals
+regression models (Bertrand 2013,
+<https://ojs-test.apps.ocp.math.cnrs.fr/index.php/J-S@code{FdS/article/view/215>})
+and k-fold cross-validation of such models using various criteria.  It allows
+for missing data in the explanatory variables.  Bootstrap confidence intervals
 constructions are also available.")
     (license license:gpl3)))
 
 (define-public r-plspm
   (package
     (name "r-plspm")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plspm" version))
        (sha256
-        (base32 "00kbyi5qqm51wsli3h8kfshjs99wa602rbmi1jss65vw3p1jhsqs"))))
+        (base32 "0fmkfi76v52fdfs38c7l1sy1kh9xnz9897i1y3p6bs1zp9v5h8ky"))))
     (properties `((upstream-name . "plspm")))
     (build-system r-build-system)
     (arguments
@@ -23961,13 +23963,13 @@ the curve and ROC curve are provided.")
 (define-public r-pliman
   (package
     (name "r-pliman")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pliman" version))
        (sha256
-        (base32 "17bklypca08r4p1cczvmy6pf9awp1hc04vjyr8d06nyw23yr13b7"))))
+        (base32 "1w6mr8ihdki66qykl70c2fc0slnp396dgqjv5m3p1vh585y5csvh"))))
     (properties `((upstream-name . "pliman")))
     (build-system r-build-system)
     (arguments
@@ -23978,11 +23980,10 @@ the curve and ROC curve are provided.")
                              r-rcpparmadillo
                              r-rcpp
                              r-purrr
-                             r-future
-                             r-foreach
+                             r-mirai
                              r-exactextractr
                              r-dplyr
-                             r-dofuture))
+                             r-cli))
     (home-page "https://nepem-ufsc.github.io/pliman/")
     (synopsis "Tools for Plant Image Analysis")
     (description
@@ -25043,13 +25044,13 @@ binomial distribution.")
 (define-public r-plainview
   (package
     (name "r-plainview")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plainview" version))
        (sha256
-        (base32 "1ckcwbkygflb25pz5k4d76dsc608zyd1q35hbfhym7h44krx5cz9"))))
+        (base32 "1vqqy7a7f4b2kn0q2ipsgxm90sk5zhydg6wv8g4ji22zriycrn19"))))
     (properties `((upstream-name . "plainview")))
     (build-system r-build-system)
     (arguments
@@ -25364,13 +25365,13 @@ analytical equations is also supported (Abuhelwa et al. (2015)
 (define-public r-pknca
   (package
     (name "r-pknca")
-    (version "0.12.0")
+    (version "0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PKNCA" version))
        (sha256
-        (base32 "0zrickq6vhjv0cb71a8w73d3104fkg26jhknzym3kgmyyqjgpbpx"))))
+        (base32 "0hpm44w5mbz2w9z1amxxh7sv2li1473fkfgbi0pgi0kaljhbw86r"))))
     (properties `((upstream-name . "PKNCA")))
     (build-system r-build-system)
     (arguments
@@ -25386,7 +25387,7 @@ analytical equations is also supported (Abuhelwa et al. (2015)
                              r-digest
                              r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://billdenney.github.io/pknca/")
+    (home-page "https://humanpred.github.io/pknca/")
     (synopsis "Perform Pharmacokinetic Non-Compartmental Analysis")
     (description
      "Compute standard Non-Compartmental Analysis (NCA) parameters for typical
@@ -29567,13 +29568,13 @@ module for calculating the Phoenix pediatric sepsis score and criteria\" by
 (define-public r-phoenics
   (package
     (name "r-phoenics")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phoenics" version))
        (sha256
-        (base32 "0pjlsbbwdfwac5609wwqwxnmfq842abzw0chbdwbbmn2nfdww3w8"))))
+        (base32 "1iykk7h3q2z1w353i263qkjljzd891rawap4mpig71zh2d1b8wcz"))))
     (properties `((upstream-name . "phoenics")))
     (build-system r-build-system)
     (arguments
@@ -29586,14 +29587,15 @@ module for calculating the Phoenix pediatric sepsis score and criteria\" by
                              r-factoextra
                              r-blme))
     (native-inputs (list r-knitr))
-    (home-page "https://forgemia.inra.fr/panoramics/phoenics")
+    (home-page "https://forge.inrae.fr/panoramics/phoenics")
     (synopsis
      "Pathways Longitudinal and Differential Analysis in Metabolomics")
     (description
      "Perform a differential analysis at pathway level based on metabolite
-quantifications and information on pathway metabolite composition.  The method
-is based on a Principal Component Analysis step and on a linear mixed model.
-Automatic query of metabolic pathways is also implemented.")
+quantifications and information on pathway metabolite composition.  The method,
+described in Guilmineau et al (2025) <doi:10.1186/s12859-025-06118-z> is based
+on a Principal Component Analysis step and on a linear mixed model.  Automatic
+query of metabolic pathways is also implemented.")
     (license license:gpl3)))
 
 (define-public r-phm
@@ -32246,13 +32248,13 @@ these PE tests are presented in Yu, Li, and Xue (2022)
 (define-public r-petersenlab
   (package
     (name "r-petersenlab")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "petersenlab" version))
        (sha256
-        (base32 "00kgc9m39hwmkfyk7c4jm4fpgfyfr0v1w8cy193n33ark6vzjqs7"))))
+        (base32 "06zdp6gxs0zdq3scqkwckb49rswir3ywak9x6m4if13jmzb44i88"))))
     (properties `((upstream-name . "petersenlab")))
     (build-system r-build-system)
     (arguments
@@ -32272,6 +32274,7 @@ these PE tests are presented in Yu, Li, and Xue (2022)
                              r-mvtnorm
                              r-mix
                              r-mitools
+                             r-lme4
                              r-lavaan
                              r-hmisc
                              r-ggplot2
@@ -32289,11 +32292,12 @@ modeling, various plotting capabilities, and other miscellaneous useful
 functions.  By making the package available, we hope to make our methods
 reproducible and replicable by others and to help others perform their data
 processing and analysis methods more easily and efficiently.  The codebase is
-provided in Petersen (2024) <doi:10.5281/zenodo.7602890> and on CRAN: <doi:
+provided in Petersen (2025) <doi:10.5281/zenodo.7602890> and on CRAN': <doi:
 10.32614/CRAN.package.petersenlab>.  The package is described in \"Principles of
-Psychological Assessment: With Applied Examples in R\" (Petersen, 2024, 2025)
+Psychological Assessment: With Applied Examples in R\" (Petersen, 2024, 2025a)
 <doi:10.1201/9781003357421>, <doi:10.25820/work.007199>,
-<doi:10.5281/zenodo.6466589>.")
+<doi:10.5281/zenodo.6466589> and in \"Fantasy Football Analytics: Statistics,
+Prediction, and Empiricism Using R\" (Petersen, 2025b).")
     (license license:expat)))
 
 (define-public r-petersen
@@ -34813,13 +34817,13 @@ estimate, and order statistic estimate.")
 (define-public r-peerperformance
   (package
     (name "r-peerperformance")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PeerPerformance" version))
        (sha256
-        (base32 "1mk7iylmzb1rr8vdxckkv0q2sm11qmransh17g53na0ihxbb42kj"))))
+        (base32 "03iliikahbnil4f6fvsz127lcqflqn0wrd4w3s5kyjfbqf9b8ggc"))))
     (properties `((upstream-name . "PeerPerformance")))
     (build-system r-build-system)
     (arguments
@@ -35964,19 +35968,19 @@ Calculations and Graphs are provided.")
 (define-public r-pdr
   (package
     (name "r-pdr")
-    (version "1.9.3")
+    (version "1.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdR" version))
        (sha256
-        (base32 "1rf7wpdswhn0m6nikzsj0xr0v1rdl4g96gkp59ikbvwjvzf58l7s"))))
+        (base32 "0b31fwlh2diab0aifllxlibyny0nr4zyg44d4mlcbpilxyb1cs09"))))
     (properties `((upstream-name . "pdR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plm r-pglm r-lme4 r-glmmtmb))
+    (propagated-inputs (list r-uroot r-plm r-pglm r-lme4 r-glmmtmb))
     (home-page "https://cran.r-project.org/package=pdR")
     (synopsis
      "Threshold Model and Unit Root Tests in Cross-Section and Time Series Data")
@@ -36546,13 +36550,13 @@ websites: <https://github.com/Penncil/pda>, and <https://pdamethods.org/>.")
 (define-public r-pcvr
   (package
     (name "r-pcvr")
-    (version "1.2.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcvr" version))
        (sha256
-        (base32 "0yacdlz0vg097gpmr2z76gdjzmk1dr97qxh9hby04zqayxvzcg7q"))))
+        (base32 "1kr6lh7yjr5fjfrqsq8v53k18d5bf2r7cq4ki0lmlglj1b34pnjp"))))
     (properties `((upstream-name . "pcvr")))
     (build-system r-build-system)
     (arguments
@@ -40825,13 +40829,13 @@ functionalities are parallelized for fast and efficient analyses.")
 (define-public r-parsermd
   (package
     (name "r-parsermd")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parsermd" version))
        (sha256
-        (base32 "1xlqbgx65b137849f7w01xkkj2gi8sqfm0scjjzvxmi6kr0x5awh"))))
+        (base32 "1bracqmyfszxcllzlfyfxk3x9q0cnpl6cgm4k56dpghb4zbc000c"))))
     (properties `((upstream-name . "parsermd")))
     (build-system r-build-system)
     (arguments
@@ -40842,19 +40846,21 @@ functionalities are parallelized for fast and efficient analyses.")
                              r-tidyselect
                              r-tidyr
                              r-tibble
+                             r-s7
                              r-rmarkdown
                              r-rlang
                              r-readr
                              r-rcpp
+                             r-quarto
                              r-purrr
                              r-pillar
                              r-magrittr
-                             r-lifecycle
+                             r-fs
                              r-dplyr
                              r-cli
                              r-checkmate
                              r-bh))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://rundel.github.io/parsermd/")
     (synopsis "Formal Parser and Related Tools for R Markdown Documents")
     (description
@@ -44807,13 +44813,13 @@ cards, resumes, and posters.")
 (define-public r-page
   (package
     (name "r-page")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAGE" version))
        (sha256
-        (base32 "1f869zkk7zdpldbqj5kxdy4xyl6gsc3cxlmcz2hc38cmq0885by4"))))
+        (base32 "1ylp0jhkcx8f99lavb4k0hr7xklg74nfc6vpv9ac2nalvwb4d54x"))))
     (properties `((upstream-name . "PAGE")))
     (build-system r-build-system)
     (arguments
@@ -45652,13 +45658,13 @@ analysis.")
 (define-public r-p3state-msm
   (package
     (name "r-p3state-msm")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "p3state.msm" version))
        (sha256
-        (base32 "1gklkgimpmhyxkga0g4s3m7ap3c5lwg2wyl4gvvfv4n4vbnfazis"))))
+        (base32 "12mgx200brafwvc2n1c4mf7k4lwa1xp2q47wxahz5fws2c250lv5"))))
     (properties `((upstream-name . "p3state.msm")))
     (build-system r-build-system)
     (arguments
