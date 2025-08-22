@@ -6745,13 +6745,13 @@ available via @code{run_app()} or online at
 (define-public r-openskies
   (package
     (name "r-openskies")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openSkies" version))
        (sha256
-        (base32 "0ky11gpgnf2afv6kzhwbzwzrmril99ixxxzzmav3h9hzcig3igyj"))))
+        (base32 "11hmra9qas6ng2bzbgi3mqvqshz8aa2q29p62pm2v8c2qvvnnnmh"))))
     (properties `((upstream-name . "openSkies")))
     (build-system r-build-system)
     (arguments
@@ -12006,13 +12006,13 @@ serve as supplements to the classical CART of Breiman (1984)
 (define-public r-odr
   (package
     (name "r-odr")
-    (version "1.5.0")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odr" version))
        (sha256
-        (base32 "1m6lr75v7ig87c6xv22smq6mwlmp5ka8im6blp5mcvcw2dxc930w"))))
+        (base32 "0g0gnbim1c15ii4j9si246xqd4jyvwc8rghnipnxyd0qy5mw0zcf"))))
     (properties `((upstream-name . "odr")))
     (build-system r-build-system)
     (arguments

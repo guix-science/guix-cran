@@ -2792,20 +2792,20 @@ Observatorio de Ciudades UC. The full methodology is available at \"ISMT\"
 (define-public r-ismev
   (package
     (name "r-ismev")
-    (version "1.42")
+    (version "1.43")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ismev" version))
        (sha256
-        (base32 "19giigxwf62cdkf7mglsca649n2ignb9bxyg9zl7im1vm3ngnmqd"))))
+        (base32 "0dn3x48n4isgzmpx5sy3vk667nvvva8bl5d2jbylwjlrsypdvdxj"))))
     (properties `((upstream-name . "ismev")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-mgcv))
-    (home-page "http://www.ral.ucar.edu/~ericg/softextreme.php")
+    (home-page "https://cran.r-project.org/package=ismev")
     (synopsis "An Introduction to Statistical Modeling of Extreme Values")
     (description
      "This package provides functions to support the computations carried out in `An
@@ -3953,13 +3953,13 @@ Kappa, ...")
 (define-public r-ironseed
   (package
     (name "r-ironseed")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ironseed" version))
        (sha256
-        (base32 "1mc22y30cd5v5hgvsfrfhfiwchg7mbd6l3fiz6f91hxsdw76l90j"))))
+        (base32 "0iqbzwxr26m5cfd0ssk1biikcha0qyfjhsv4cc6dqrv23rb794pm"))))
     (properties `((upstream-name . "ironseed")))
     (build-system r-build-system)
     (arguments
@@ -12850,6 +12850,43 @@ attention to the date variables and the labelled ones.")
 prevent namespace conflicts.")
     (license license:gpl3)))
 
+(define-public r-important
+  (package
+    (name "r-important")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "important" version))
+       (sha256
+        (base32 "1z2a36sldv9ghfpynsbkf0z5pq0dgyfnq5q0qv8ymwzzw36igvw4"))))
+    (properties `((upstream-name . "important")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-workflows
+                             r-withr
+                             r-vctrs
+                             r-tune
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-hardhat
+                             r-ggplot2
+                             r-generics
+                             r-dplyr
+                             r-cli))
+    (home-page "https://important.tidymodels.org/")
+    (synopsis "Supervised Feature Selection")
+    (description
+     "Interfaces for choosing important predictors in supervised regression,
+classification, and censored regression models.  Permuted importance scores
+(Biecek and Burzykowski (2021) <doi:10.1201/9780429027192>) can be computed for
+tidymodels model fits.")
+    (license license:expat)))
+
 (define-public r-importanceindice
   (package
     (name "r-importanceindice")
@@ -18463,13 +18500,13 @@ Kan Ling and Chaoyu Yuan (2024, <doi:10.48550/@code{arXiv.2411.19878>}).")
 (define-public r-iclick
   (package
     (name "r-iclick")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iClick" version))
        (sha256
-        (base32 "0yq0r9nz1mf9ci6l30ylqxbgl8mf1ahyqzr7m6nks0ygxabipdnd"))))
+        (base32 "1zvmw4ihi16k1hixyn0qmsmasgd4znrw0jgnr70kv7wb2p1wplcx"))))
     (properties `((upstream-name . "iClick")))
     (build-system r-build-system)
     (arguments
@@ -18481,11 +18518,15 @@ Kan Ling and Chaoyu Yuan (2024, <doi:10.48550/@code{arXiv.2411.19878>}).")
                              r-timedate
                              r-sandwich
                              r-rugarch
+                             r-quantmod
                              r-paper
                              r-openair
                              r-lubridate
                              r-lmtest
                              r-lattice
+                             r-jfe
+                             r-frapo
+                             r-fportfolio
                              r-forecast
                              r-fbasics
                              r-coefplot

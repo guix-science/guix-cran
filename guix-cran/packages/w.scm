@@ -1000,13 +1000,13 @@ Wasserstein autoregressive models.")
 (define-public r-wrgraph
   (package
     (name "r-wrgraph")
-    (version "1.3.10")
+    (version "1.3.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrGraph" version))
        (sha256
-        (base32 "0lffq2vp5p9g7nqwpnafmv1ym1hhhs53zkpm360fjsqb66wwh424"))))
+        (base32 "14gx1vr9mkr4bmjg5kamdlgykbbhrh7vif1g8fwpcij0av1hr0yg"))))
     (properties `((upstream-name . "wrGraph")))
     (build-system r-build-system)
     (arguments
@@ -2007,13 +2007,13 @@ calculated distance matrices from figshare <https://figshare.com>.")
 (define-public r-worldmet
   (package
     (name "r-worldmet")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worldmet" version))
        (sha256
-        (base32 "0ps1swfk13lv7jqz9p2qw90x2ynrsz0wzm5dynsfih5ad2z4d210"))))
+        (base32 "0f72np6ibwminbn90yb1a807sgqgbzmninf08rhqq49rvalhi4s1"))))
     (properties `((upstream-name . "worldmet")))
     (build-system r-build-system)
     (arguments
@@ -6137,13 +6137,13 @@ example-specific cost values).")
 (define-public r-weightedrank
   (package
     (name "r-weightedrank")
-    (version "0.3.7")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weightedRank" version))
        (sha256
-        (base32 "149xvsl20grf8wicx3xxyp9qpi7dga7ghklmrqam0y5rrkqp8y4j"))))
+        (base32 "1765iccxaz55ib9svb31fcbsmw809mn1ybsbcxgl9w97kxlsbl8n"))))
     (properties `((upstream-name . "weightedRank")))
     (build-system r-build-system)
     (arguments
@@ -10334,19 +10334,19 @@ event in the presence of death.")
 (define-public r-w3cmarkupvalidator
   (package
     (name "r-w3cmarkupvalidator")
-    (version "0.1-7")
+    (version "0.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "W3CMarkupValidator" version))
        (sha256
-        (base32 "1ns504i3567z90bz1p02mnfmnsgkk7wy2a772v2imiwjgzp0qia5"))))
+        (base32 "0ay3y3i9p93idl5pfbkq242qnlkh2hmlhygmj1hhi5qrdmyk947x"))))
     (properties `((upstream-name . "W3CMarkupValidator")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-curl))
+    (propagated-inputs (list r-jsonlite r-curl))
     (home-page "https://cran.r-project.org/package=W3CMarkupValidator")
     (synopsis "R Interface to W3C Markup Validation Services")
     (description

@@ -185,13 +185,13 @@ name, extract prepositions or extract the first name.")
 (define-public r-utilityfunctiontools
   (package
     (name "r-utilityfunctiontools")
-    (version "0.1.1")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "utilityFunctionTools" version))
        (sha256
-        (base32 "1225nl83yka31j0adm1210kc89vs3hi9i2pqrykax109sgk0nw97"))))
+        (base32 "05qvz1m3kklgp5nw2zxx896987zy2y7i094mby8jqnsi4zrhj6f5"))))
     (properties `((upstream-name . "utilityFunctionTools")))
     (build-system r-build-system)
     (arguments
@@ -202,7 +202,7 @@ name, extract prepositions or extract the first name.")
     (synopsis "P-Spline Regression for Utility Functions and Derived Measures")
     (description
      "Predicts a smooth and continuous (individual) utility function from utility
-points, and computes measures of intensity for risk and higher order risk
+points, and computes measures of intensity for risk and higher-order risk
 measures (or any other measure computed with user-written function) based on
 this utility function and its derivatives according to the method introduced in
 Schneider (2017) <http://hdl.handle.net/21.11130/00-1735-0000-002E-E306-0>.")
@@ -4946,13 +4946,13 @@ documentation]<https://www.industrydocuments.ucsf.edu/wp-content/uploads/2020/08
 (define-public r-ucscxenatools
   (package
     (name "r-ucscxenatools")
-    (version "1.4.8")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UCSCXenaTools" version))
        (sha256
-        (base32 "0w0rps6jsiw67k6h8j1g0nqzwwhl1kb2by90xd4w61i71vk0fda7"))))
+        (base32 "1gnmayvjgar1q74lmndsdf9cvw3l3vsr36jw9m6qy558qkc6n4hf"))))
     (properties `((upstream-name . "UCSCXenaTools")))
     (build-system r-build-system)
     (arguments

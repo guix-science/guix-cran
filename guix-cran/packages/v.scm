@@ -300,13 +300,13 @@ of Student Analytics.")
 (define-public r-vvdoctor
   (package
     (name "r-vvdoctor")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvdoctor" version))
        (sha256
-        (base32 "1sxj7a6pg1kynwsb1fc28l3ipj3jf5azn4cyck0489hsxqnyjn5p"))))
+        (base32 "18jr9ra8ngnlivvac7fjmdv1dw9ab30k4bwfxvlfmv4ifd1173zd"))))
     (properties `((upstream-name . "vvdoctor")))
     (build-system r-build-system)
     (arguments
@@ -314,6 +314,7 @@ of Student Analytics.")
       #:tests? #f))
     (propagated-inputs (list r-shinywidgets
                              r-shinyjs
+                             r-shinycssloaders
                              r-shiny
                              r-rstatix
                              r-rintrojs
@@ -840,13 +841,13 @@ example are included.  For details see (Klockmann, Krivobokova; 2023),
 (define-public r-vsp
   (package
     (name "r-vsp")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vsp" version))
        (sha256
-        (base32 "0i1syjh64v0wwdr9r2rp853spvxq79rqlv6j9bdhd9ldpys103aw"))))
+        (base32 "0vxbh1sf506vph013kgpniycx3gpvibh91m6nv9j175cm04fdi1j"))))
     (properties `((upstream-name . "vsp")))
     (build-system r-build-system)
     (arguments
@@ -2804,13 +2805,13 @@ of mortality models.")
 (define-public r-vital
   (package
     (name "r-vital")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vital" version))
        (sha256
-        (base32 "0qmqalqzqzzsc8fvzrqj5wzwaw90lf161524wibjzc89knz6z0g4"))))
+        (base32 "1v8rj3s1n0zxii30blijphk1ya75ryr1f5714s1n9l2il9vzqng9"))))
     (properties `((upstream-name . "vital")))
     (build-system r-build-system)
     (arguments
@@ -2821,26 +2822,26 @@ of mortality models.")
                              r-tidyselect
                              r-tidyr
                              r-tibble
+                             r-stmomo
                              r-rlang
                              r-purrr
-                             r-progressr
                              r-patchwork
+                             r-mortalitylaws
                              r-mgcv
                              r-hmdhfdplus
                              r-ggplot2
-                             r-generics
-                             r-future-apply
                              r-fabletools
                              r-fable
                              r-dplyr
                              r-distributional
                              r-cobs))
+    (native-inputs (list r-knitr))
     (home-page "https://pkg.robjhyndman.com/vital/")
     (synopsis
      "Tidy Analysis Tools for Mortality, Fertility, Migration and Population Data")
     (description
      "Analysing vital statistics based on tools consistent with the tidyverse.  Tools
-are provided for data visualization, lifetable calculations, computing net
+are provided for data visualization, life table calculations, computing net
 migration numbers, Lee-Carter modelling; functional data modelling and
 forecasting.")
     (license license:gpl3)))
@@ -3424,13 +3425,13 @@ test independence either by @code{chisq.test()} or @code{fisher.test()}.")
 (define-public r-visreg
   (package
     (name "r-visreg")
-    (version "2.7.0")
+    (version "2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visreg" version))
        (sha256
-        (base32 "070yhyxxh3w16i54k790n47bgcjn4b10b6g1z553x6afjc3l3a6d"))))
+        (base32 "00l499vjgn60xam8lx3pd24viryq1abraf62q8w76m63f28qilza"))))
     (properties `((upstream-name . "visreg")))
     (build-system r-build-system)
     (arguments
@@ -3438,7 +3439,7 @@ test independence either by @code{chisq.test()} or @code{fisher.test()}.")
       #:tests? #f))
     (propagated-inputs (list r-lattice))
     (native-inputs (list r-knitr))
-    (home-page "http://pbreheny.github.io/visreg")
+    (home-page "https://pbreheny.github.io/visreg/")
     (synopsis "Visualization of Regression Models")
     (description
      "This package provides a convenient interface for constructing plots to visualize
@@ -5183,13 +5184,13 @@ provide details on the variational algorithms.")
 (define-public r-vgamextra
   (package
     (name "r-vgamextra")
-    (version "0.0-7")
+    (version "0.0-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VGAMextra" version))
        (sha256
-        (base32 "131f3kfsacfcqiv4h1xrg0n97d2f3yp4kkh4l7hx62l4zpqlfbrn"))))
+        (base32 "0q6a06lzcdv02mw44sqkfngnv0571ynvqcvcapa6rjj5z29kd235"))))
     (properties `((upstream-name . "VGAMextra")))
     (build-system r-build-system)
     (arguments
@@ -5800,13 +5801,13 @@ between different file version sets.")
 (define-public r-verification
   (package
     (name "r-verification")
-    (version "1.44")
+    (version "1.45")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "verification" version))
        (sha256
-        (base32 "095b0s2i2j655xfwjrddlz9pia0a1njzh7r3cjnfk84dp43a03hl"))))
+        (base32 "0mbdb0snlwlbnmsdclw7xx57c101wraf0m25dc6fdw0bly28114n"))))
     (properties `((upstream-name . "verification")))
     (build-system r-build-system)
     (arguments
@@ -5814,7 +5815,7 @@ between different file version sets.")
       #:tests? #f))
     (propagated-inputs (list r-mass r-fields r-dtw r-circstats r-boot))
     (home-page "https://cran.r-project.org/package=verification")
-    (synopsis "Weather Forecast Verification Utilities")
+    (synopsis "Weather Forecast Verification")
     (description
      "Utilities for verifying discrete, continuous and probabilistic forecasts, and
 forecasts expressed as parametric distributions are included.")
@@ -5890,6 +5891,32 @@ described in Van Buuren and Groothuis-Oudshoorn (2011)
 human rights violations that occurred in the Colombian conflict accounting for
 the impact of missing fields and fully missing observations.")
     (license license:gpl2)))
+
+(define-public r-verdadecu
+  (package
+    (name "r-verdadecu")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "verdadecu" version))
+       (sha256
+        (base32 "1iq5xi0dn3hlvvigsgnda7dmdgsaacrsdcpr27apjl06z88w7q2d"))))
+    (properties `((upstream-name . "verdadecu")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Demografiando/verdadecu")
+    (synopsis "Data from the Ecuador Truth Commission")
+    (description
+     "This package provides access to data collected by the Ecuadorian Truth
+Commission.  Allows users to extract and analyze systematized information for
+human rights research in Ecuador.  The package contains datasets documenting
+human rights violations from 1984-2008, including victim information, violation
+types, perpetrators, and geographic distribution.")
+    (license license:gpl2+)))
 
 (define-public r-verbalisr
   (package
@@ -6527,13 +6554,13 @@ analyses.")
 (define-public r-vectorsurvr
   (package
     (name "r-vectorsurvr")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectorsurvR" version))
        (sha256
-        (base32 "01yj3w039jim0gfni67k6famj91r116lggnrf85nikavm56995ar"))))
+        (base32 "056dvyjkyij19fdsy65x1x24h6clrvsm9ghagvxgra4iq871chnz"))))
     (properties `((upstream-name . "vectorsurvR")))
     (build-system r-build-system)
     (arguments
@@ -6806,13 +6833,13 @@ for use with RStudio'.")
 (define-public r-vec2dtransf
   (package
     (name "r-vec2dtransf")
-    (version "1.1.3")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vec2dtransf" version))
        (sha256
-        (base32 "0sxsbm1q7v58b907xvpppwfljmqm2pyrch2zc82nmb10wfiha8k8"))))
+        (base32 "1h9x631xk84f0whsn79fjm7csb2cwszdyaq74b5kr0spy7a4h2f4"))))
     (properties `((upstream-name . "vec2dtransf")))
     (build-system r-build-system)
     (arguments
@@ -8869,13 +8896,13 @@ testing, prediction for stationary vector autoregressive models.")
 (define-public r-vapour
   (package
     (name "r-vapour")
-    (version "0.11.0")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vapour" version))
        (sha256
-        (base32 "0cl51zij80pjmrsnpgryl4piqcffnm0s9vppwzyq9mmyk8hfybn6"))))
+        (base32 "0fqvzl7chbqn64j2cj0w8m9rvkqms6h5bjfhgzqk11czygfl3mpp"))))
     (properties `((upstream-name . "vapour")))
     (build-system r-build-system)
     (arguments
@@ -8888,11 +8915,10 @@ testing, prediction for stationary vector autoregressive models.")
                   openssh
                   gdal
                   curl))
-    (propagated-inputs (list r-wk r-rcpp r-nanoarrow r-jsonlite))
+    (propagated-inputs (list r-wk r-stringr r-rcpp r-nanoarrow r-jsonlite))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/hypertidy/vapour")
-    (synopsis
-     "Lightweight Access to the 'Geospatial Data Abstraction Library' ('GDAL')")
+    (synopsis "Access to the 'Geospatial Data Abstraction Library' ('GDAL')")
     (description
      "This package provides low-level access to GDAL functionality.  GDAL is the
 Geospatial Data Abstraction Library a translator for raster and vector
@@ -8972,23 +8998,26 @@ includes simplified formulae, such as @code{mode()}, @code{scatter()},
 (define-public r-vangogh
   (package
     (name "r-vangogh")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vangogh" version))
        (sha256
-        (base32 "1ny4dgwkk54pgwgg3lwcv8vcdnizlajdck68ihpzh2s1yz4n38bm"))))
+        (base32 "1a69cvhnhm3xis5nc1j4jrz0fw66iqz46y7j628nn5a9h4nn98ki"))))
     (properties `((upstream-name . "vangogh")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-rlang r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cherylisabella/vangogh")
-    (synopsis "Vincent Van Gogh Color Palette Generator")
-    (description "Palettes generated from Vincent van Gogh's paintings.")
+    (synopsis "Vincent Van Gogh Colour Palette Generator")
+    (description
+     "This package provides ggplot2'-compatible colour palettes inspired by Vincent
+van Gogh's paintings.  Each palette contains five colours, manually selected by
+hexadecimal values.")
     (license license:expat)))
 
 (define-public r-vandalico

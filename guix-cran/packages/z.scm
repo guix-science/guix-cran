@@ -1236,13 +1236,13 @@ the software).")
 (define-public r-zcurve
   (package
     (name "r-zcurve")
-    (version "2.4.3")
+    (version "2.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zcurve" version))
        (sha256
-        (base32 "18f3nb8hpc0b2i836j2jfcj0c31ba8xcjj8lwmhl05xr1vym4n3s"))))
+        (base32 "0kh956ra35vq1a460gpxkfx8cq2iihhsvv1fjiyafk07bbqmv3mx"))))
     (properties `((upstream-name . "zcurve")))
     (build-system r-build-system)
     (arguments

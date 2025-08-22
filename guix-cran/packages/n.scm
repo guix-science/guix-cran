@@ -2339,18 +2339,19 @@ from partially-balanced incomplete block-design experiments.")
 (define-public r-npp
   (package
     (name "r-npp")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NPP" version))
        (sha256
-        (base32 "1jyxnblr8ibzlwb78k98idf856m5gnaba3b53qz0pfgxf2k8wdhv"))))
+        (base32 "0fhc00fi11yvjg69kkqxhs2fdm268sjj2nrxp1cg32qln4p55kw5"))))
     (properties `((upstream-name . "NPP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-mvtnorm r-mass r-kernsmooth))
     (home-page "https://cran.r-project.org/package=NPP")
     (synopsis "Normalized Power Prior Bayesian Analysis")
     (description
@@ -2895,13 +2896,13 @@ multivariate normal approximation to the set of selected parameters.")
 (define-public r-npflow
   (package
     (name "r-npflow")
-    (version "0.13.5")
+    (version "0.13.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NPflow" version))
        (sha256
-        (base32 "14i5pfvpjj25frvxrfvch5a8ja8y4mnsk9h2ikcwh949br6mjq52"))))
+        (base32 "1r19hminxni2xzdp795z5dnwcplv2s2nh9pbg7pxp33kw4wk4nch"))))
     (properties `((upstream-name . "NPflow")))
     (build-system r-build-system)
     (arguments
@@ -2916,7 +2917,7 @@ multivariate normal approximation to the set of selected parameters.")
                              r-ggally
                              r-fastcluster
                              r-ellipse))
-    (home-page "https://cran.r-project.org/package=NPflow")
+    (home-page "http://sistm.github.io/NPflow/")
     (synopsis
      "Bayesian Nonparametrics for Automatic Gating of Flow-Cytometry Data")
     (description
@@ -4588,13 +4589,13 @@ further details, see the paper by John R.J. Thompson (2024)
 (define-public r-nonprobsvy
   (package
     (name "r-nonprobsvy")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonprobsvy" version))
        (sha256
-        (base32 "1j5x5ysfcmisr4k9f05w1qaa5hryw3f70p6jf4hqldpri3lwx30x"))))
+        (base32 "1ryx99ib3r2l4nhzvk8bdp7j11v9z5nvw0rb0s0rn7vyyrj0czni"))))
     (properties `((upstream-name . "nonprobsvy")))
     (build-system r-build-system)
     (arguments
@@ -6131,13 +6132,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "11.4.1")
+    (version "11.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "159mrqndn32vgrikkw95mj3350v5aazwdaqyi82axk8679rsy9bi"))))
+        (base32 "07jh6qnpp1rsdz77g5j19j50i4n695alk6pl0cq9nj83dvj3cbhh"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (arguments
@@ -7704,13 +7705,13 @@ approximations for nonlinear models with possibly non constant variance.")
 (define-public r-nlraa
   (package
     (name "r-nlraa")
-    (version "1.9.7")
+    (version "1.9.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlraa" version))
        (sha256
-        (base32 "0xl2vinwj6pclmq1lcyibff0fwr3jnmi96ddgj42vvki19n9c84c"))))
+        (base32 "1qpma06wbrryn4qxmd6p3fq2m2cdyvd15fszvxk0mzpcyz5wxiv1"))))
     (properties `((upstream-name . "nlraa")))
     (build-system r-build-system)
     (arguments
@@ -8712,13 +8713,13 @@ diverse at-site parameters.  The methods are described in Winkler et al. (2021)
 (define-public r-nivm
   (package
     (name "r-nivm")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nivm" version))
        (sha256
-        (base32 "194kc743hqjalvkvh80y2rj25b8caklcb15pi72d6r02apyvw43d"))))
+        (base32 "08caif7v96g29n42gf2a4ch864fq9aa3vqg8sg0d1ssxpqqgirgm"))))
     (properties `((upstream-name . "nivm")))
     (build-system r-build-system)
     (arguments
@@ -11223,6 +11224,32 @@ Distribution, EP Distribution, Akash Distribution, Ishita Distribution, Maxwell
 Distribution, the Standard Omega Distribution, Slashed Generalized Rayleigh
 Distribution, Two-Parameter Rayleigh Distribution, Muth Distribution,
 Uniform-Geometric Distribution, Discrete Weibull Distribution.")
+    (license license:gpl3)))
+
+(define-public r-neverhpfilter
+  (package
+    (name "r-neverhpfilter")
+    (version "0.5-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neverhpfilter" version))
+       (sha256
+        (base32 "1gfz2lvl23mnxvxjc3y0jnkdc1j6b60riwnbldvm7r7jkl8gxcjw"))))
+    (properties `((upstream-name . "neverhpfilter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-xts))
+    (native-inputs (list r-simplermarkdown))
+    (home-page "https://justinmshea.github.io/neverhpfilter/")
+    (synopsis "An Alternative to the Hodrick-Prescott Filter")
+    (description
+     "In the working paper titled \"Why You Should Never Use the Hodrick-Prescott
+Filter\", James D. Hamilton proposes a new alternative to economic time series
+filtering.  The neverhpfilter package provides functions and data for
+reproducing his work.  Hamilton (2017) <doi:10.3386/w23429>.")
     (license license:gpl3)))
 
 (define-public r-nevada
@@ -14913,6 +14940,32 @@ blockmodeling dynamic networks by simulations with application to Slovenian
 co-authorship networks).")
     (license license:gpl2)))
 
+(define-public r-nematode
+  (package
+    (name "r-nematode")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Nematode" version))
+       (sha256
+        (base32 "0hdsxy28hjh93j3ng5w1fszspfxzfrwxvnw197sxd5if9ajb1vh9"))))
+    (properties `((upstream-name . "Nematode")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan r-stringdist r-purrr r-dplyr))
+    (home-page "https://cran.r-project.org/package=Nematode")
+    (synopsis "Ecological Indices Calculator for Nematode Communities")
+    (description
+     "Nematode communities serve as crucial bioindicators in ecological studies,
+reflecting soil health, ecosystem functioning, and trophic interactions.  To
+standardize these assessments, we developed a computational toolkit for
+quantifying nematode-based ecological indicators, including metabolic
+footprints, energy flow metrics, and community structure analysis.")
+    (license license:gpl3+)))
+
 (define-public r-neldermead
   (package
     (name "r-neldermead")
@@ -15267,13 +15320,13 @@ structure in multi-subject single-cell data.  See He et al. (2021)
 (define-public r-neatstats
   (package
     (name "r-neatstats")
-    (version "1.13.3")
+    (version "1.13.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neatStats" version))
        (sha256
-        (base32 "1fj042mwmmjza8giv0f2m7y11j8rnzrcmifyxrv4z9rfqddcvh2s"))))
+        (base32 "0wd4qa642b3hp4vlfhc1002l6j5ahvvxp3i30c5sw5ynvqz371y8"))))
     (properties `((upstream-name . "neatStats")))
     (build-system r-build-system)
     (arguments

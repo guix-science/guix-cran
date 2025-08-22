@@ -1141,13 +1141,13 @@ users to customize all aspects of the analysis.")
 (define-public r-extremaldep
   (package
     (name "r-extremaldep")
-    (version "0.0.4-5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExtremalDep" version))
        (sha256
-        (base32 "08d808qpc6mknd7n0jzv2r3vf4wa95iq7dfhlwrdr9wbyhjl0fa9"))))
+        (base32 "0s0dvapkzk5bxx0iapah3wgri2wf89n32ja6ca4fkjcbcryinhss"))))
     (properties `((upstream-name . "ExtremalDep")))
     (build-system r-build-system)
     (arguments
@@ -3615,13 +3615,13 @@ with R function names, @code{LaTeX} names, discreteness, and package origins.")
 (define-public r-exams-forge
   (package
     (name "r-exams-forge")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exams.forge" version))
        (sha256
-        (base32 "0kj6c26nhzvwqdfc61hfssq8mwm665ay0p4ycn1161d3ixm7p9j9"))))
+        (base32 "0l12ifxpzwjy500fgzig0s8bwslxv4jgmmr8ig1l4h5sqc1z9z8v"))))
     (properties `((upstream-name . "exams.forge")))
     (build-system r-build-system)
     (arguments
@@ -3637,13 +3637,11 @@ with R function names, @code{LaTeX} names, discreteness, and package origins.")
                              r-spelling
                              r-rstudioapi
                              r-rjson
-                             r-psych
                              r-polynom
                              r-mass
                              r-magrittr
                              r-knitr
                              r-extradistr
-                             r-exams
                              r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=exams.forge")
@@ -3968,13 +3966,13 @@ independent or dependent proportions.")
 (define-public r-exactci
   (package
     (name "r-exactci")
-    (version "1.4-4")
+    (version "1.4-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exactci" version))
        (sha256
-        (base32 "011y7sjsspn02z914c7x2w3h4fg38hlbqwg6s43rnsmrk398q76h"))))
+        (base32 "057w41cfgs2khkih41m280bcinh2y7f6iddjfbgvihxcb4axa1y9"))))
     (properties `((upstream-name . "exactci")))
     (build-system r-build-system)
     (arguments
@@ -4031,13 +4029,13 @@ visualizing results.")
 (define-public r-exact2x2
   (package
     (name "r-exact2x2")
-    (version "1.6.9")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exact2x2" version))
        (sha256
-        (base32 "0lqxnljrlwc94sb6niiass7k2xb6gcl4ysh5ap25d9dy4mkymkl2"))))
+        (base32 "0n2hn183a4srzn328x7xlmcbfizgkic2zjr37rm39nkvsbj02p6k"))))
     (properties `((upstream-name . "exact2x2")))
     (build-system r-build-system)
     (arguments
@@ -10511,13 +10509,13 @@ two-step estimator.  For technical details, see Naghi, Varadi and Zhelonkin
 (define-public r-epm
   (package
     (name "r-epm")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epm" version))
        (sha256
-        (base32 "1sdd21v3v8f65028q0kpdz5axxw17kd3v94vssfqsv728jdnh5xn"))))
+        (base32 "1y259qi6sp0jib7mx2r944jn8kk94syki4yfrnvr7zmx8g77waff"))))
     (properties `((upstream-name . "epm")))
     (build-system r-build-system)
     (arguments
@@ -11642,13 +11640,13 @@ in the tibble data frame format.")
 (define-public r-epiforsk
   (package
     (name "r-epiforsk")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiForsk" version))
        (sha256
-        (base32 "0p8znwcx11sa5rqljsa38iwqwd91pvkw01g674grw2705cagjdnj"))))
+        (base32 "0s0g0wl8cm8l635v4drrqqg85bff9hkwcb0bqvca1hval4k69pm9"))))
     (properties `((upstream-name . "EpiForsk")))
     (build-system r-build-system)
     (arguments
@@ -11678,9 +11676,9 @@ in the tibble data frame format.")
                              r-cowplot
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=EpiForsk")
+    (home-page "https://github.com/Laksafoss/EpiForsk")
     (synopsis
-     "Code Sharing at the Department of Epidemiological Research at Statens Serum Institut")
+     "Code Sharing at the Department of Epidemiology Research at Statens Serum Institut")
     (description
      "This is a collection of assorted functions and examples collected from various
 projects.  Currently we have functionalities for simplifying overlapping time
@@ -23201,13 +23199,13 @@ package is to provide tools for use in courses in analytical chemistry.")
 (define-public r-echelon
   (package
     (name "r-echelon")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echelon" version))
        (sha256
-        (base32 "14qpzsasjbmgfffvijxpx8mlr5kyvv6b47d2a9m15mr9wzz7rgk0"))))
+        (base32 "1db7bwjkv71s41cdbiw03invrabp3z85v7zmsjik1y06knbplbpz"))))
     (properties `((upstream-name . "echelon")))
     (build-system r-build-system)
     (arguments
@@ -23336,49 +23334,6 @@ generated by ECharts library developed by Baidu (<http://echarts.baidu.com/>).
 Current version supports line chart, bar chart, pie chart, scatter plot, gauge,
 word cloud, radar chart, tree map, and heat map.")
     (license license:gpl2)))
-
-(define-public r-ech
-  (package
-    (name "r-ech")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ech" version))
-       (sha256
-        (base32 "092djklyw9j5cjbkndb1jby2mn896y93yrysrg704dfcjd04yv2g"))))
-    (properties `((upstream-name . "ech")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list proj geos gdal))
-    (propagated-inputs (list r-tidyr
-                             r-survey
-                             r-stringr
-                             r-statar
-                             r-srvyr
-                             r-rlang
-                             r-laeken
-                             r-labelled
-                             r-janitor
-                             r-haven
-                             r-glue
-                             r-geouy
-                             r-fs
-                             r-dplyr
-                             r-curl
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ech")
-    (synopsis "Downloading and Processing Microdata from ECH-INE (Uruguay)")
-    (description
-     "This package provides a consistent tool for downloading ECH data, processing
-them and generating new indicators: poverty, education, employment, etc.  All
-data are downloaded from the official site of the National Institute of
-Statistics at
-<https://www.gub.uy/instituto-nacional-estadistica/datos-y-estadisticas/encuestas/encuesta-continua-hogares>.")
-    (license license:gpl3)))
 
 (define-public r-ecgoftestdx
   (package
@@ -24138,13 +24093,13 @@ Bayes estimation procedure based on Dynamic Bayesian Networks.")
 (define-public r-ebcobart
   (package
     (name "r-ebcobart")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EBcoBART" version))
        (sha256
-        (base32 "1wx6s913b3mywbhzm597ff09mnhgp4lrppnh0r7xph9vc9d3v333"))))
+        (base32 "1fw554g5hnwk0m2i0n4l6fnvqg31djbqzr1nss2pmzhkv698p4x3"))))
     (properties `((upstream-name . "EBcoBART")))
     (build-system r-build-system)
     (arguments
@@ -24160,7 +24115,7 @@ These weights correspond to the probabilities of the variables being selected in
 the splitting rules of the sum-of-trees.  Weights are estimated using empirical
 Bayes and external information on the explanatory variables (co-data).  BART
 models are fitted using the dbarts R package.  See Goedhart and others (2023)
-<doi:10.48550/@code{arXiv.2311.09997>} for details.")
+<doi:10.1002/sim.70004> for details.")
     (license license:gpl3+)))
 
 (define-public r-ebci
@@ -24613,13 +24568,13 @@ estimating technical efficiency is also included.  More details in:
 (define-public r-easyviz
   (package
     (name "r-easyviz")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyViz" version))
        (sha256
-        (base32 "06ayjfi8l4zmkvsf95krkh5rxmzqdh46mxy76l5s4hij2dm2yjvi"))))
+        (base32 "0ymzi831hnn2vbpcnjvbpdhszk8z3cxq93krlkfvfgfxkzg2gbzd"))))
     (properties `((upstream-name . "easyViz")))
     (build-system r-build-system)
     (arguments
@@ -24637,12 +24592,13 @@ mgcv'); nonlinear models via @code{nls()}; and generalized least squares via
 @code{gls()}.  Mixed-effects models with random intercepts and/or slopes can be
 fitted using @code{lmer()}, @code{glmer()}, @code{glmer.nb()}, @code{glmmTMB()},
 or @code{gam()} (from mgcv', via smooth terms).  Plots are rendered using base R
-graphics with extensive customization options.  Robust standard errors for
-@code{rlm()} are computed using the sandwich estimator (Zeileis 2004)
-<doi:10.18637/jss.v011.i10>.  For mixed models using @code{glmmTMB}', see Brooks
-et al. (2017) <doi:10.32614/RJ-2017-066>.  For linear mixed-effects models with
-lme4', see Bates et al. (2015) <doi:10.18637/jss.v067.i01>.  Methods for
-generalized additive models follow Wood (2017) <doi:10.1201/9781315370279>.")
+graphics with extensive customization options.  Approximate confidence intervals
+for @code{nls()} models are computed using the delta method.  Robust standard
+errors for @code{rlm()} are computed using the sandwich estimator (Zeileis 2004)
+<doi:10.18637/jss.v011.i10>.  Methods for generalized additive models follow
+Wood (2017) <doi:10.1201/9781315370279>.  For linear mixed-effects models with
+lme4', see Bates et al. (2015) <doi:10.18637/jss.v067.i01>.  For mixed models
+using @code{glmmTMB}', see Brooks et al. (2017) <doi:10.32614/RJ-2017-066>.")
     (license license:gpl3)))
 
 (define-public r-easyverification

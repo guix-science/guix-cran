@@ -5481,13 +5481,13 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
 (define-public r-surveydown
   (package
     (name "r-surveydown")
-    (version "0.12.6")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveydown" version))
        (sha256
-        (base32 "1qnzsp7wl76m43cjs33vk0ik681raas1gxvp06sv1a3hza43qcf2"))))
+        (base32 "0ia1qkgqph9vl8v2qysygm8kndk2frmw45hm21wm1869mfac4bzx"))))
     (properties `((upstream-name . "surveydown")))
     (build-system r-build-system)
     (arguments
@@ -5508,11 +5508,9 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
                              r-jsonlite
                              r-htmltools
                              r-fs
-                             r-dt
                              r-dotenv
                              r-dbi
-                             r-cli
-                             r-bslib))
+                             r-cli))
     (home-page "https://pkg.surveydown.org")
     (synopsis "Markdown-Based Programmable Surveys Using 'Quarto' and 'shiny'")
     (description
@@ -12096,13 +12094,13 @@ approximation.  The models are fitted via TMB (Template Model Builder)
 (define-public r-stochvol
   (package
     (name "r-stochvol")
-    (version "3.2.6")
+    (version "3.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stochvol" version))
        (sha256
-        (base32 "0sna6naiayyl3i1257818fzpz6d6qy551ck3grfhp0l0601ppvkw"))))
+        (base32 "02pfcrj403ck376pmi23h637inlah4jjqjpjgd7wq4fw211h3kfj"))))
     (properties `((upstream-name . "stochvol")))
     (build-system r-build-system)
     (arguments
@@ -12590,13 +12588,13 @@ diagnostics.")
 (define-public r-stlnpp
   (package
     (name "r-stlnpp")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stlnpp" version))
        (sha256
-        (base32 "1r80qzrvz5nmspark5xk59wi3r1kxjhrqpscwqrab9lnl7cal76s"))))
+        (base32 "1qc36jcdsq7fjvpmf0bg4vll8lsf59z2jjb903i5njaj4mz80p90"))))
     (properties `((upstream-name . "stlnpp")))
     (build-system r-build-system)
     (arguments
@@ -12613,7 +12611,8 @@ diagnostics.")
     (description
      "Statistical analysis of spatio-temporal point processes on linear networks.
 This packages provides tools to visualise and analyse spatio-temporal point
-patterns on linear networks using first- and second-order summary statistics.")
+patterns on linear networks using first, second, and higher-order summary
+statistics.")
     (license license:gpl2+)))
 
 (define-public r-stlelm
@@ -14990,13 +14989,13 @@ within a set of constraints, amongst others.")
 (define-public r-statiovar
   (package
     (name "r-statiovar")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statioVAR" version))
        (sha256
-        (base32 "0c8xj6jv8h2z5aaba79m06hi3ii7q4x5v07wwgj3bd34wddl4qj3"))))
+        (base32 "1fmwpb31ancm1w7b5x2cyjs4gsvmmz77yci4iknhxld2kyz3rghc"))))
     (properties `((upstream-name . "statioVAR")))
     (build-system r-build-system)
     (arguments
@@ -26658,13 +26657,13 @@ data, taking estimation error into account.")
 (define-public r-spc4sts
   (package
     (name "r-spc4sts")
-    (version "0.6.3")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spc4sts" version))
        (sha256
-        (base32 "0lvsixjgdfgnr7y7kk2227bcs8sqy2mrpw50dwwgdjvm5q0sr7l7"))))
+        (base32 "0n9dph0wz6n2hr8i1w9iq2axg84niv70gi2yrgxx0j0g4zwd8rw6"))))
     (properties `((upstream-name . "spc4sts")))
     (build-system r-build-system)
     (arguments
@@ -26683,7 +26682,7 @@ nature of stochastic textured surfaces, which was proposed by Bui and Apley
 (2018b) <doi:10.1080/00224065.2018.1507559>. (4) computation of dissimilarity
 matrix of stochastic textured surface images, which was proposed by Bui and
 Apley (2019b) <doi:10.1016/j.csda.2019.01.019>.")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-spc
   (package
@@ -38543,19 +38542,23 @@ approach.")
 (define-public r-slideview
   (package
     (name "r-slideview")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slideview" version))
        (sha256
-        (base32 "031ahdqswl14sw0nxmhaam37g14cifb83dyp2zjz1mh6qpkzl2gs"))))
+        (base32 "0kwxim6wb2zg6j3zh5jbrppyhwdj53s0il0gm26vb2qjzggcg7d3"))))
     (properties `((upstream-name . "slideview")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-viridislite r-raster r-lattice r-htmlwidgets
+    (propagated-inputs (list r-viridislite
+                             r-terra
+                             r-raster
+                             r-lattice
+                             r-htmlwidgets
                              r-htmltools))
     (home-page "https://r-spatial.github.io/slideview/")
     (synopsis "Compare Raster Images Side by Side with a Slider")
@@ -48262,30 +48265,6 @@ text in Turkish from an online shopping platform.")
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
 
-(define-public r-shock
-  (package
-    (name "r-shock")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shock" version))
-       (sha256
-        (base32 "11m52al591xjznl62q1waxsg5m1a1afmd0yqcc5zsjlrplykg4lp"))))
-    (properties `((upstream-name . "shock")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-igraph r-glasso r-ggmselect r-capushe))
-    (home-page "https://cran.r-project.org/package=shock")
-    (synopsis
-     "Slope Heuristic for Block-Diagonal Covariance Selection in High Dimensional Gaussian Graphical Models")
-    (description
-     "Block-diagonal covariance selection for high dimensional Gaussian graphical
-models.  The selection procedure is based on the slope heuristics.")
-    (license license:gpl3+)))
-
 (define-public r-shiva
   (package
     (name "r-shiva")
@@ -55785,25 +55764,28 @@ weighted particles.")
 (define-public r-serpstatr
   (package
     (name "r-serpstatr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "serpstatr" version))
        (sha256
-        (base32 "087rlfqdx74rx9fil4lgchl0v8mzs3ld46ji89nx885913wfhjf2"))))
+        (base32 "1wap8fbzi19vgjspdlszaq8sz48ik20a79188cyhb0sb2rqz21by"))))
     (properties `((upstream-name . "serpstatr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-httr))
-    (home-page "https://serpstat.com/api/")
+    (home-page
+     "https://api-docs.serpstat.com/docs/serpstat-public-api/jenasqbwtxdlr-introduction-to-serpstat-api")
     (synopsis "'Serpstat' API Wrapper")
     (description
-     "The primary goal of Serpstat API <https://serpstat.com/api/> is to reduce manual
-SEO (search engine optimization) and PPC (pay-per-click) tasks.  You can
-automate your keywords research or competitors analysis with this API wrapper.")
+     "The primary goal of Serpstat API
+<https://api-docs.serpstat.com/docs/serpstat-public-api/jenasqbwtxdlr-introduction-to-serpstat-api>
+is to reduce manual SEO (search engine optimization) and PPC (pay-per-click)
+tasks.  You can automate your keywords research or competitors analysis with
+this API wrapper.")
     (license license:expat)))
 
 (define-public r-serp
@@ -56222,19 +56204,19 @@ ratio test (Wald, A. 1945 <http://www.jstor.org/stable/2235829>).")
 (define-public r-sequential
   (package
     (name "r-sequential")
-    (version "4.3.4")
+    (version "4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Sequential" version))
        (sha256
-        (base32 "0qa16qj2c9gmwy80ypyqx2fcc9dl89hr1d9y68zx2m91fby06m7i"))))
+        (base32 "0zg1bd4djfvp7psvz6lwcnx1sr6a9f9rbcdzcrr9rczkark72zny"))))
     (properties `((upstream-name . "Sequential")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-boot))
+    (propagated-inputs (list r-pmultinom r-boot))
     (home-page "https://cran.r-project.org/package=Sequential")
     (synopsis "Exact Sequential Analysis for Poisson and Binomial Data")
     (description
@@ -56244,7 +56226,8 @@ sequential analysis.  All these	calculations can be done for either Poisson or
 binomial data, for continuous or group sequential analyses, and for different
 types of rejection boundaries.  In case of group sequential analyses, the group
 sizes do not have to be specified in advance and the alpha spending can be
-arbitrarily settled.")
+arbitrarily settled.  For regression versions of the methods, Monte Carlo and
+asymptotic methods are used.")
     (license license:gpl2)))
 
 (define-public r-sequencespikeslab
@@ -61681,21 +61664,21 @@ seasonalview package.  Uses the X-13-binaries from the x13binary package.")
 (define-public r-season
   (package
     (name "r-season")
-    (version "0.3.15")
+    (version "0.3.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "season" version))
        (sha256
-        (base32 "0f63ichlnj49g0ni9560avr4415iyj5061pixkjmqj83y7bbsz22"))))
+        (base32 "0vv8dsaddss4pbv32s23afdmj1ljfr3hlhznps7r7plpz9a82j1c"))))
     (properties `((upstream-name . "season")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-mass r-ggplot2))
+    (propagated-inputs (list r-survival r-stringr r-mass r-ggplot2 r-coda))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=season")
+    (home-page "https://github.com/agbarnett/season")
     (synopsis "Seasonal Analysis of Health Data")
     (description
      "Routines for the seasonal analysis of health data, including regression models,
@@ -64399,13 +64382,13 @@ assumptions.  Methods developed in Hazlett (2019) <doi:10.1002/sim.8717>.")
 (define-public r-scpubr
   (package
     (name "r-scpubr")
-    (version "2.0.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCpubr" version))
        (sha256
-        (base32 "121q8f823rcmn56sz17d2khismvf9hnr3d7dwmjavxwy25bhb76b"))))
+        (base32 "0lmx9wz39y7f9l67wwbwfxq925q2ihi51vxhgznh9d6ay37lb3qr"))))
     (properties `((upstream-name . "SCpubr")))
     (build-system r-build-system)
     (arguments
@@ -65165,13 +65148,13 @@ underwriting scorecard development, extensively used in financial domain.")
 (define-public r-scorecard
   (package
     (name "r-scorecard")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scorecard" version))
        (sha256
-        (base32 "0aql9rfvq1fhlq13vj5dmz37nd31c1rrm808zh8mzx6425vx72d1"))))
+        (base32 "17mqypvxk5ffrnhcpy1ycbvky1jhbqy1hlbbj345f5664pd9xc6q"))))
     (properties `((upstream-name . "scorecard")))
     (build-system r-build-system)
     (arguments
@@ -67342,13 +67325,13 @@ cellular heterogeneity is inferred.")
 (define-public r-scbiclust
   (package
     (name "r-scbiclust")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCBiclust" version))
        (sha256
-        (base32 "1vmymdrci4kynjb074c10sg27labx7axnlbb9dqhwby7s55a6c78"))))
+        (base32 "04hdnhpb3i35gccsq1zcyyg853hlh2dicci77v5dzh2x1k59vyj8"))))
     (properties `((upstream-name . "SCBiclust")))
     (build-system r-build-system)
     (arguments
@@ -67366,7 +67349,7 @@ identified to maximize the sum of weighted between cluster feature differences.
 The method is described in Helgeson et al. (2020) <doi:10.1111/biom.13136>.
 SCBiclust can be used to identify biclusters which differ based on feature
 means, feature variances, or more general differences.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-scatterplotmatrix
   (package
@@ -67395,13 +67378,13 @@ means, feature variances, or more general differences.")
 (define-public r-scatterdensity
   (package
     (name "r-scatterdensity")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ScatterDensity" version))
        (sha256
-        (base32 "0qdsk8091ahxzp3irfl13aigim9ccbbxb3c2v977plf2llh7g1n2"))))
+        (base32 "0ir6igwv8vw47pzrkjcgbxd6wlfsqcb26p7ihryavbpg0rflhzh6"))))
     (properties `((upstream-name . "ScatterDensity")))
     (build-system r-build-system)
     (arguments
@@ -69007,13 +68990,13 @@ Global Ocean Physical Reanalysis and Global Ocean Biogeochemistry Hindcast.")
 (define-public r-satellite
   (package
     (name "r-satellite")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "satellite" version))
        (sha256
-        (base32 "1bd1f8mimx53dcy3fnlhjk7yam08jvr3lhh39zcb5c2yj0pkhk1y"))))
+        (base32 "1awcbwi85fis9py3bcid64chnsrxd9ndq6hm2f11j36y95lwsyac"))))
     (properties `((upstream-name . "satellite")))
     (build-system r-build-system)
     (arguments
@@ -70392,13 +70375,13 @@ raw data can be downloaded.  See
 (define-public r-sandbox
   (package
     (name "r-sandbox")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sandbox" version))
        (sha256
-        (base32 "0k86dgfjg7ib79cl6nwxv1g9i15pk501kd8ynlaj3mijpnhgvbal"))))
+        (base32 "1lgi3gl1lmgxym1kka2lm83ng6c51wmbwgwwqqbdwy9mv04wj761"))))
     (properties `((upstream-name . "sandbox")))
     (build-system r-build-system)
     (arguments
@@ -71512,37 +71495,6 @@ missing data pattern the data exhibit intermittent missing values (see the
      "This package provides a novel semi-supervised machine learning algorithm to
 predict phenotype event times using Electronic Health Record (EHR) data.")
     (license license:gpl3)))
-
-(define-public r-samesies
-  (package
-    (name "r-samesies")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "samesies" version))
-       (sha256
-        (base32 "1i5yw196xbyw6m5q4q6hpdz1dgpv7mkyhv1hxf2hb6bjj53gyid5"))))
-    (properties `((upstream-name . "samesies")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringdist
-                             r-scales
-                             r-purrr
-                             r-ggplot2
-                             r-ggbeeswarm
-                             r-dplyr
-                             r-cli))
-    (home-page "https://dylanpieper.github.io/samesies/")
-    (synopsis "Compare Similarity Across Text, Factors, or Numbers")
-    (description
-     "Compare lists of texts, factors, or numerical values to measure their
-similarity.  The motivating use case is evaluating the similarity of large
-language model responses across models, providers, or prompts.  Approximate
-string matching is implemented using stringdist'.")
-    (license license:expat)))
 
 (define-public r-same
   (package

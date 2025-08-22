@@ -5694,13 +5694,13 @@ the effects of exposure mixtures; <doi:10.1289/EHP5838>.")
 (define-public r-qgcomp
   (package
     (name "r-qgcomp")
-    (version "2.18.4")
+    (version "2.18.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qgcomp" version))
        (sha256
-        (base32 "1pzd5v3xi9sksda8pr7rgrxg8fpdl5m3qfkdkww5sa77sccsk32v"))))
+        (base32 "1cx1mxj8qc7sp8qmzi74y6g8x2cvw90ny3bslqfy92cmb99pj4wl"))))
     (properties `((upstream-name . "qgcomp")))
     (build-system r-build-system)
     (arguments

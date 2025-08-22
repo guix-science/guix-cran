@@ -2330,13 +2330,13 @@ from drones\" (Bierlich et al., 2021, <doi:10.3354/meps13814>).")
 (define-public r-xaringanthemer
   (package
     (name "r-xaringanthemer")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xaringanthemer" version))
        (sha256
-        (base32 "006cqs42r4i6s73kf59n9yg7zwpliq9wsxac473rq48yal7nja46"))))
+        (base32 "0pivim1p8vj42qj7k83az6q21npm33bnyp3hhbzavnyvkn95n2s3"))))
     (properties `((upstream-name . "xaringanthemer")))
     (build-system r-build-system)
     (arguments
@@ -2526,13 +2526,13 @@ to the 3D surface measurements.")
 (define-public r-x13binary
   (package
     (name "r-x13binary")
-    (version "1.1.61")
+    (version "1.1.61.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "x13binary" version))
        (sha256
-        (base32 "0v7cwgq3xkz4k9l2drxa4bjgam1drs43chfwvs8hbcl1ybrxi2h4"))))
+        (base32 "1dgax6rpjc9sprpqjwr5y5r1xlzkf43m77bpji0850z69wlirq4x"))))
     (properties `((upstream-name . "x13binary")))
     (build-system r-build-system)
     (arguments

@@ -1189,13 +1189,13 @@ palettes from users photos directly.")
 (define-public r-ltcdm
   (package
     (name "r-ltcdm")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LTCDM" version))
        (sha256
-        (base32 "0q9lj69vpkyc6a40m9xj46qi5h8h2r6rl4k49bs3z19661gcxydd"))))
+        (base32 "1a4b3gns0qynrqdkagbisa3h4cpmirc6y30j51h8qwr9gij1qvwb"))))
     (properties `((upstream-name . "LTCDM")))
     (build-system r-build-system)
     (arguments
@@ -1205,11 +1205,15 @@ palettes from users photos directly.")
     (home-page "https://cran.r-project.org/package=LTCDM")
     (synopsis "Latent Transition Cognitive Diagnosis Model with Covariates")
     (description
-     "Implementation of the three-step approach of latent transition cognitive
-diagnosis model (CDM) with covariates.  This approach can be used to assess
-changes in attribute mastery status and to evaluate the covariate effects on
-both the initial states and transition probabilities over time using latent
-logistic regression.  Because stepwise approaches often yield biased estimates,
+     "Implementation of the three-step approach of (latent transition) cognitive
+diagnosis model (CDM) with covariates.  This approach can be used for single
+time-point situations (cross-sectional data) and multiple time-point situations
+(longitudinal data) to investigate how the covariates are associated with
+attribute mastery.  For multiple time-point situations, the three-step approach
+of latent transition CDM with covariates allows researchers to assess changes in
+attribute mastery status and to evaluate the covariate effects on both the
+initial states and transition probabilities over time using latent logistic
+regression.  Because stepwise approaches often yield biased estimates,
 correction for classification error probabilities (CEPs) is considered in this
 approach.  The three-step approach for latent transition CDM with covariates
 involves the following steps: (1) fitting a CDM to the response data without
@@ -1905,13 +1909,13 @@ likelihood (PL) or penalized least squares (PLS).  For details, please see Huang
 (define-public r-lsirm12pl
   (package
     (name "r-lsirm12pl")
-    (version "1.3.6")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lsirm12pl" version))
        (sha256
-        (base32 "0vp0axw32b52g3h275lcmwij2jv2y6y6jmxya95j5ppcmbralq13"))))
+        (base32 "1d6zn6kyk9kv7w1m3q443a4jxr1bdwbg8lphxa6lslfhbhjs3j1h"))))
     (properties `((upstream-name . "lsirm12pl")))
     (build-system r-build-system)
     (arguments
@@ -2815,13 +2819,13 @@ arboreal plants.")
 (define-public r-lpl
   (package
     (name "r-lpl")
-    (version "0.12")
+    (version "0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpl" version))
        (sha256
-        (base32 "0rx0zl3vxza5bjq9564l4gvscbj2wg1b4k2lpfb6m08cslllykiy"))))
+        (base32 "12awb8yr0k9n6m43jy0san1017ccbsdsrcc4xzdhsqrc8yz6cd97"))))
     (properties `((upstream-name . "lpl")))
     (build-system r-build-system)
     (arguments
@@ -3521,13 +3525,13 @@ are described in Robin, Josse, Moulines and Sardy (2019)
 (define-public r-lorenzregression
   (package
     (name "r-lorenzregression")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LorenzRegression" version))
        (sha256
-        (base32 "1bw6nbj56s5vfswmm1qdab2rflnzkvfms3ilfgijlx6w21zv9phl"))))
+        (base32 "1qazn33caiskh1bnrfxd2pazlrbfnip8nh6blk9dvk9x1z3h32yv"))))
     (properties `((upstream-name . "LorenzRegression")))
     (build-system r-build-system)
     (arguments
@@ -7676,13 +7680,13 @@ to covariates only or also to outcome values.")
 (define-public r-lmmsolver
   (package
     (name "r-lmmsolver")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMMsolver" version))
        (sha256
-        (base32 "03c1c367m8pmxaij7ml9y0w40sndmgdk9ylvks1hwry0v4irlynv"))))
+        (base32 "0sz3dcha9973pcp7xdys54dh9p01fjhkyyc45z25jpdwnhqdxk3r"))))
     (properties `((upstream-name . "LMMsolver")))
     (build-system r-build-system)
     (arguments
@@ -7696,7 +7700,7 @@ to covariates only or also to outcome values.")
      "An efficient and flexible system to solve sparse mixed model equations.
 Important applications are the use of splines to model spatial or temporal
 trends as described in Boer (2023). (<doi:10.1177/1471082X231178591>).")
-    (license (list license:gpl2+ license:gpl3+))))
+    (license license:gpl3)))
 
 (define-public r-lmmpar
   (package
@@ -8760,13 +8764,13 @@ dependencies.")
 (define-public r-liver
   (package
     (name "r-liver")
-    (version "1.19")
+    (version "1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "liver" version))
        (sha256
-        (base32 "0w4f3bl5f6l6728lnwj15zp45wawx7f0zaczcvvdfafwzr9r93mn"))))
+        (base32 "0844szrdczd55pw2p91sxs30w9974jq3mv41f3cg3ky9gfraj357"))))
     (properties `((upstream-name . "liver")))
     (build-system r-build-system)
     (arguments
@@ -8774,15 +8778,19 @@ dependencies.")
       #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-class))
     (native-inputs (list r-knitr))
-    (home-page "https://uncovering-data-science.netlify.app")
-    (synopsis "\"Eating the Liver of Data Science\"")
+    (home-page "https://book-data-science-r.netlify.app/")
+    (synopsis "Foundations Toolkit and Datasets for Data Science")
     (description
-     "This package provides a suite of helper functions and a collection of datasets
-used in the book <https://uncovering-data-science.netlify.app>.  It is designed
-to make data science techniques accessible to individuals with minimal coding
-experience.  Inspired by an ancient Persian idiom, the package likens this
-learning process to \"eating the liver of data science,\" symbolizing deep and
-immersive engagement with the field.")
+     "This package provides a collection of helper functions and illustrative datasets
+to support learning and teaching of data science with R. The package is designed
+as a companion to the book <https://book-data-science-r.netlify.app/>, making
+key data science techniques accessible to individuals with minimal coding
+experience.  Functions include tools for data partitioning, performance
+evaluation, and data transformations (e.g., z-score and min-max scaling).  The
+included datasets are curated to highlight practical applications in data
+exploration, modeling, and multivariate analysis.  An early inspiration for the
+package came from an ancient Persian idiom about \"eating the liver,\" symbolizing
+deep and immersive engagement with knowledge.")
     (license license:gpl2+)))
 
 (define-public r-live
@@ -8852,32 +8860,29 @@ Liu (1993) <doi:10.1080/03610929308831027> v.  Liu (2001)
 (define-public r-litterfitter
   (package
     (name "r-litterfitter")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "litterfitter" version))
        (sha256
-        (base32 "095jdrf0bfc465kabxnkdii1idqfnk4q7130kby0z499a88k1zpp"))))
+        (base32 "0xxfx8xvwvlwysdh978mfmk82nsbyl69cv19rx89pnap38ax5bjk"))))
     (properties `((upstream-name . "litterfitter")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/traitecoevo/litterfitter/issues")
-    (synopsis "Fit a Collection of Curves to Single Cohort Decomposition Data")
+    (home-page "http://traitecoevo.github.io/litterfitter/")
+    (synopsis
+     "Fits a Collection of Curves to Single-Cohort Decomposition Data")
     (description
-     "There is a long tradition of studying the flux of carbon from the biosphere to
-the atmosphere by following a particular cohort of litter (wood, leaves, roots,
-or other organic material) through time.  The resulting data are mass remaining
-and time.  A variety of functional forms may be used to fit the resulting data.
-Some work better empirically.  Some are better connected to a process-based
-understanding.  Some have a small number of free parameters; others have more.
-This package matches decomposition data to a family of these curves using
-likelihood--based fitting.  This package is based on published research by
-Cornwell & Weedon (2013) <doi:10.1111/2041-210X.12138>.")
+     "Fit different model forms to single-cohort litter decomposition data (mass
+remaining through time) using likelihood-based estimation.  Models span simple
+empirical to process-motivated forms with differing numbers of free parameters.
+Provides parameter estimates, uncertainty, and tools for model
+comparison/selection.  Based on Cornwell & Weedon (2013)
+<doi:10.1111/2041-210X.12138>.")
     (license license:expat)))
 
 (define-public r-litter
@@ -16495,13 +16500,13 @@ convergence issues.")
 (define-public r-lbi
   (package
     (name "r-lbi")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LBI" version))
        (sha256
-        (base32 "1g265caip36vgpbx7lsjb8bpkk3ag86xxdl03hr81yh6gxx3gv98"))))
+        (base32 "12bj9b1ym2jr6vkjr194cvnn30rbfdx3ax9v2149jcjrq96b9aw0"))))
     (properties `((upstream-name . "LBI")))
     (build-system r-build-system)
     (arguments

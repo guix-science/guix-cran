@@ -1374,19 +1374,20 @@ predictive modeling in a systematic, structured, and reproducible way.")
 (define-public r-fusedtree
   (package
     (name "r-fusedtree")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fusedTree" version))
        (sha256
-        (base32 "0530cgxjznjrr2ilwqhvla4nmzr1vfn4y6qcpp79ahdnfal09xsz"))))
+        (base32 "0ll3mbsa48wbsgnkjvd95gh0h7siqpw2hqzizd2df8g6jhz33294"))))
     (properties `((upstream-name . "fusedTree")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-treeclust r-survival r-splittools r-matrix))
+    (propagated-inputs (list r-treeclust r-survival r-splittools r-partykit
+                             r-matrix))
     (home-page "https://cran.r-project.org/package=fusedTree")
     (synopsis "Fused Partitioned Regression for Clinical and Omics Data")
     (description
@@ -4294,13 +4295,13 @@ repositories, and more.  File paths are specified with function arguments, or
 (define-public r-frogger
   (package
     (name "r-frogger")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "froggeR" version))
        (sha256
-        (base32 "10ndbl8yh8rh01cifk56fx0yhjvzmdbd3ifmwmd5bm5whn38221c"))))
+        (base32 "0vpbmdggdvqlk0x9v58g9gapmvx50v72nmp0c4hpx9aj3xwaf6sb"))))
     (properties `((upstream-name . "froggeR")))
     (build-system r-build-system)
     (arguments
@@ -4318,7 +4319,7 @@ repositories, and more.  File paths are specified with function arguments, or
                              r-fs
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://azimuth-project.tech/froggeR/")
+    (home-page "https://www.kyleGrealis.com/froggeR/")
     (synopsis "Enhance 'Quarto' Project Workflows and Standards")
     (description
      "Streamlines Quarto workflows by providing tools for consistent project setup and
@@ -6495,13 +6496,13 @@ and read tabular-data-resources to and from disk.")
 (define-public r-fqar
   (package
     (name "r-fqar")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fqar" version))
        (sha256
-        (base32 "0f84bs88mpcybrnaqy3jplxfm1hm7g0zgc7yzwdqsjzqx4qvfv2j"))))
+        (base32 "0v8b556qfmdvnk2y1j7pchp62nqimij422iwhg2kfinnkm4sn6x6"))))
     (properties `((upstream-name . "fqar")))
     (build-system r-build-system)
     (arguments
@@ -9222,13 +9223,13 @@ series prediction\" <doi:10.1016/j.csda.2017.11.003>.")
 (define-public r-forecastlsw
   (package
     (name "r-forecastlsw")
-    (version "1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forecastLSW" version))
        (sha256
-        (base32 "0gwc0kfcl2qxfxnzxw65ij83njw8x6bxxb63sfajcm71kfbnsipa"))))
+        (base32 "1byjyrjnph0wc25lsvy44xnznrgrq1i8p930rnv3nvx1bwv6lb5g"))))
     (properties `((upstream-name . "forecastLSW")))
     (build-system r-build-system)
     (arguments
@@ -11042,28 +11043,29 @@ to calculate equilibrium stability.")
 (define-public r-fluxtools
   (package
     (name "r-fluxtools")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxtools" version))
        (sha256
-        (base32 "1gkqdxdknxfcnxcgd7kanj7ld7db3jjh49gyi5rrwihla52ipa60"))))
+        (base32 "0lh6znlpahlh3j1xwnahx61wmkmak646zqjmgv8nx0rl1n4p9l9d"))))
     (properties `((upstream-name . "fluxtools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny r-plotly r-dplyr))
+    (propagated-inputs (list r-tibble r-shiny r-plotly r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kesondrakey/fluxtools")
     (synopsis "'shiny' App for Reproducible QA/QC of Eddy Covariance Data")
     (description
-     "An interactive shiny'-based tool for quality assurance and quality control
-(QA/QC) of eddy covariance flux tower data processing.  It generates data-point
-removal code via user-directed selection from a scatterplot, and can export a
-cleaned .csv with removed points set to NA plus an R script for reproducibility.
- Reference: Key (2025) <DOI:10.5281/zenodo.15597159>.")
+     "An interactive shiny'-based tool for exploration and quality assurance and
+quality control (QA/QC) of eddy covariance flux tower data processing.  It
+generates data-point removal code via user-directed selection from a
+scatterplot, and can export a cleaned .csv with removed points set to NA plus an
+R script for reproducibility.  Reference: Key (2025)
+<DOI:10.5281/zenodo.15597159>.")
     (license license:gpl3)))
 
 (define-public r-fluxible
@@ -11112,6 +11114,33 @@ fluxes from the raw data, quality assessment, plotting for visual check and
 calculation of fluxes based on the setup specific parameters (chamber size, plot
 area, ...).")
     (license license:gpl3+)))
+
+(define-public r-fluxfinder
+  (package
+    (name "r-fluxfinder")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fluxfinder" version))
+       (sha256
+        (base32 "0b972c8z0zsv9nwg5k9j0bgri6fzzzf3hskzflwijrc77q1aalhs"))))
+    (properties `((upstream-name . "fluxfinder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-lubridate r-jsonlite r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/COMPASS-DOE/fluxfinder")
+    (synopsis
+     "Parsing, Computation, and Diagnostics for Greenhouse Gas Measurements")
+    (description
+     "Parse static-chamber greenhouse gas measurement files generated by a variety of
+instruments; compute flux rates using multi-observation metadata; and generate
+diagnostic metrics and plots.  Designed to be easy to integrate into
+reproducible scientific workflows.")
+    (license license:expat)))
 
 (define-public r-flux
   (package
@@ -11626,13 +11655,13 @@ style-polymorphic plant populations.\".")
 (define-public r-flowcluster
   (package
     (name "r-flowcluster")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flowcluster" version))
        (sha256
-        (base32 "18nnvr6yihw1acgadk4q9zirrbgxjnninxa1gxn178wiyq24gjgr"))))
+        (base32 "08i4kqa9f7wiazvdd1lfyd0svl5hqklz4ylxg6xa9x90b0sjvnaz"))))
     (properties `((upstream-name . "flowcluster")))
     (build-system r-build-system)
     (arguments
@@ -11643,6 +11672,8 @@ style-polymorphic plant populations.\".")
                              r-tidyr
                              r-tibble
                              r-sf
+                             r-rlang
+                             r-purrr
                              r-lwgeom
                              r-glue
                              r-dplyr
@@ -11654,7 +11685,10 @@ style-polymorphic plant populations.\".")
 pairs, representing desire lines (or flows).  This includes creating distance
 matrices between OD pairs and passing distance matrices to a clustering
 algorithm.  See the academic paper Tao and Thill (2016) <doi:10.1111/gean.12100>
-for more details on spatial clustering of flows.")
+for more details on spatial clustering of flows.  See the paper on delineating
+demand-responsive operating areas by Mahfouz et al. (2025)
+<doi:10.1016/j.urbmob.2025.100135> for an example of how this package can be
+used to cluster flows for applied transportation research.")
     (license license:expat)))
 
 (define-public r-flowchart
@@ -17089,29 +17123,32 @@ Service, Forest Inventory and Analysis (FIA) Program.")
 (define-public r-fiery
   (package
     (name "r-fiery")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fiery" version))
        (sha256
-        (base32 "127ighz937rgqbg0kiq7wrms7z3r5pf77ixcfa7if35mcv7yrg8s"))))
+        (base32 "1ywq3sqj1d73k8fx7dwkxp22arifx7h0yswg4h1bm0j5s9wj35nc"))))
     (properties `((upstream-name . "fiery")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-uuid
+    (propagated-inputs (list r-yaml
                              r-stringi
+                             r-sodium
                              r-rlang
                              r-reqres
                              r-r6
+                             r-promises
                              r-parallelly
+                             r-lifecycle
                              r-later
                              r-httpuv
                              r-glue
                              r-future
-                             r-crayon
+                             r-fs
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://fiery.data-imaginist.com")

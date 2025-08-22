@@ -6306,13 +6306,13 @@ legacy of @code{ProTracker} and the Commodore Amiga alive.")
 (define-public r-protr
   (package
     (name "r-protr")
-    (version "1.7-4")
+    (version "1.7-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "protr" version))
        (sha256
-        (base32 "0r7ccnj34m26r91pgcvwpvdm0n7k6yd4cbkl8d5zdvghgj7md4ld"))))
+        (base32 "0dhz48zn4v69l6h8v6hg5c28a00ghjfny2km2342gnviz8myjnbb"))))
     (properties `((upstream-name . "protr")))
     (build-system r-build-system)
     (arguments
@@ -6912,13 +6912,13 @@ and will be added in future updates.")
 (define-public r-proreg
   (package
     (name "r-proreg")
-    (version "1.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PROreg" version))
        (sha256
-        (base32 "0x3gaadd9nd5mcs6l2jv0874afps13qgq81bqwcg1hhgjzy2k4mm"))))
+        (base32 "01ccfxprl62vrz9nnpkmwx5ffw4lb6c9yd577kwvkd5vwcsh2p9y"))))
     (properties `((upstream-name . "PROreg")))
     (build-system r-build-system)
     (arguments
@@ -7151,6 +7151,40 @@ well.")
      "Allows to parse Java properties files in the context of R Service Bus
 applications.")
     (license license:gpl2)))
+
+(define-public r-propertee
+  (package
+    (name "r-propertee")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "propertee" version))
+       (sha256
+        (base32 "0pm68wl2zmakq84i1ak68vcqnvdk9gd5pg6vz8xp4nl768nzdp6k"))))
+    (properties `((upstream-name . "propertee")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/benbhansen-stats/propertee")
+    (synopsis
+     "Standardization-Based Effect Estimation with Optional Prior Covariance Adjustment")
+    (description
+     "The Prognostic Regression Offsets with Propagation of ERrors (for Treatment
+Effect Estimation) package facilitates direct adjustment for experiments and
+observational studies that is compatible with a range of study designs and
+covariance adjustment strategies.  It uses explicit specification of clusters,
+blocks and treatment allocations to furnish probability of assignment-based
+weights targeting any of several average treatment effect parameters, and for
+standard error calculations reflecting these design parameters.  For covariance
+adjustment of its Hajek and (one-way) fixed effects estimates, it enables
+offsetting the outcome against predictions from a dedicated covariance model,
+with standard error calculations propagating error as appropriate from the
+covariance model.")
+    (license license:expat)))
 
 (define-public r-propclust
   (package
@@ -16040,13 +16074,13 @@ adjustment.  The methods are described in HÃ¸jbjerre-Frandsen et al. (2025)
 (define-public r-possa
   (package
     (name "r-possa")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "POSSA" version))
        (sha256
-        (base32 "02lla3q3wkiw78b5v7pf7ali7s2l6aqc1bbaqf35zyihgiz3598g"))))
+        (base32 "13wsws72qimvp53yw7cdp0bvl753lcv1i4w1a0kcfb7kl30sbsrp"))))
     (properties `((upstream-name . "POSSA")))
     (build-system r-build-system)
     (arguments
@@ -17074,6 +17108,45 @@ mortality rates and net international migration flows, at the national level.")
      "This package provides functions that facilitate the elaboration of population
 pyramids.")
     (license license:gpl3)))
+
+(define-public r-poppsiseqr
+  (package
+    (name "r-poppsiseqr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PopPsiSeqR" version))
+       (sha256
+        (base32 "11hycqjmzm263yc0ndirmrxzb519am392sdqxh1xld2xp0zcysfn"))))
+    (properties `((upstream-name . "PopPsiSeqR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-s4vectors
+                             r-rtracklayer
+                             r-rlang
+                             r-patchwork
+                             r-magrittr
+                             r-ggplot2
+                             r-ggbio
+                             r-genomicranges
+                             r-dplyr
+                             r-devtools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/csoeder/PopPsiSeq")
+    (synopsis "Process and Visualize Evolve & Resequence Experiments")
+    (description
+     "Handle data from evolve and resequence experiments.  Measured allele frequencies
+(e.g., from variants called from high-throughput sequencing data) are compared
+using an update of the @code{PsiSeq} algorithm (Earley, Eric and Corbin Jones
+(2011) <doi:10.1534/genetics.111.129445>).  Functions for saving and loading
+important files are also included, as well as functions for basic data
+visualization.")
+    (license license:expat)))
 
 (define-public r-poppr
   (package
@@ -30985,13 +31058,13 @@ Medicine's standard data structure for Clinical and Statistical Programming.")
 (define-public r-pharmaversesdtm
   (package
     (name "r-pharmaversesdtm")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaversesdtm" version))
        (sha256
-        (base32 "1xalp0l305n1ixwy19nvisb83vrnjv7qh2w4h89hphhad9gbzixn"))))
+        (base32 "11xhqrv05lplagnj6g9sfwxfgszx2i1qqk6ln4rkbyw0dkr3qs3g"))))
     (properties `((upstream-name . "pharmaversesdtm")))
     (build-system r-build-system)
     (arguments
@@ -44777,13 +44850,13 @@ graphics.")
 (define-public r-pagedown
   (package
     (name "r-pagedown")
-    (version "0.22")
+    (version "0.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pagedown" version))
        (sha256
-        (base32 "0i3jsq3bvmr3r5xlbihpb65ss71b5y86xv0s4km9d534322jvcaz"))))
+        (base32 "0rq16rwys45i45vprfnri33pfc5hvgqb4wic6l0qq2yknzr473x5"))))
     (properties `((upstream-name . "pagedown")))
     (build-system r-build-system)
     (arguments

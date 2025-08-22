@@ -3959,13 +3959,13 @@ construction and @code{GxE} testing (Lau et al., 2023,
 (define-public r-grshiny
   (package
     (name "r-grshiny")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GRShiny" version))
        (sha256
-        (base32 "0i8qcqk97lm2pwjl2s6lfa4p6c69p8xl3q88bpn706ib687f5j3x"))))
+        (base32 "0rnzhbwy1laqcwsim0kwzxmqa09cpp7960483npg6x2bhq8g6kzq"))))
     (properties `((upstream-name . "GRShiny")))
     (build-system r-build-system)
     (arguments
@@ -12981,13 +12981,13 @@ Most of the algorithms are described in the @code{PhD} thesis of Roos (2018)
 (define-public r-gmgeostats
   (package
     (name "r-gmgeostats")
-    (version "0.11.3")
+    (version "0.11.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmGeostats" version))
        (sha256
-        (base32 "19kf409yhq13689akqz88dj0fq02falbh0j0kkvh0l0vymx4hj7y"))))
+        (base32 "00kp64dpj09nq1h2x2cid52dc6m8zqd7wsf5cn4nph4ng7qgz6r4"))))
     (properties `((upstream-name . "gmGeostats")))
     (build-system r-build-system)
     (arguments
@@ -16909,13 +16909,13 @@ this package can be referenced from Brown MC (1994) <doi:
 (define-public r-gimms
   (package
     (name "r-gimms")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gimms" version))
        (sha256
-        (base32 "0dhvi05mpwyx6cpcyk2nzvgd6c8byd7cmrd9crx83lvfa03smpng"))))
+        (base32 "1k1x47jm9fbirw12sryh7yx7q7i37q7jgms21gk3p58rnh92897m"))))
     (properties `((upstream-name . "gimms")))
     (build-system r-build-system)
     (arguments
@@ -18330,13 +18330,13 @@ annotation.")
 (define-public r-ggtranslate
   (package
     (name "r-ggtranslate")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggtranslate" version))
        (sha256
-        (base32 "0k7074j4pyffg8k7iyinxv5zqbrwnqxqhvhbsdjlgr00n4yirsvx"))))
+        (base32 "0aavdwssyi9f1mciwvds3cy6pgqjmyjas0789swqbx8l2wykls3j"))))
     (properties `((upstream-name . "ggtranslate")))
     (build-system r-build-system)
     (arguments
@@ -20722,32 +20722,6 @@ comparative analysis across different genetic studies.  Reference: Uffelmann, E.
 et al. (2021) <doi:10.1038/s43586-021-00056-9>.")
     (license license:expat)))
 
-(define-public r-ggmselect
-  (package
-    (name "r-ggmselect")
-    (version "0.1-12.7.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GGMselect" version))
-       (sha256
-        (base32 "0zv2g8vdwz02hkw199zj95bsdp93nbwkc6zdkbsvcqnanqr4akx6"))))
-    (properties `((upstream-name . "GGMselect")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-lars r-gtools))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=GGMselect")
-    (synopsis "Gaussian Graphs Models Selection")
-    (description
-     "Graph estimation in Gaussian Graphical Models, following the method developed by
-C. Giraud, S. Huet and N. Verzelen (2012) <doi:10.1515/1544-6115.1625>.  The
-main functions return the adjacency matrix of an undirected graph estimated from
-a data matrix.")
-    (license license:gpl3+)))
-
 (define-public r-ggmrscu
   (package
     (name "r-ggmrscu")
@@ -22662,6 +22636,33 @@ underlying models, see the works by Voss, Rothermund, and Voss (2004)
 time models, using the population-based Markov Chain Monte Carlo.")
     (license license:gpl2)))
 
+(define-public r-ggdiceplot
+  (package
+    (name "r-ggdiceplot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggdiceplot" version))
+       (sha256
+        (base32 "1ykkw7asa33h6qskd0h23s1n837c9pa9i41lvdsfnxmmdx1ib47k"))))
+    (properties `((upstream-name . "ggdiceplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-legendry r-ggplot2 r-dplyr))
+    (home-page "https://github.com/maflot/ggdiceplot")
+    (synopsis "Dice Plot Visualization for 'ggplot2'")
+    (description
+     "This package provides ggplot2 extensions for creating dice-based visualizations
+where each dot position represents a specific categorical variable.  The package
+includes @code{geom_dice()} for displaying presence/absence of categorical
+variables using traditional dice patterns.  Each dice position (1-6) represents
+a different category, with dots shown only when that category is present.  This
+allows intuitive visualization of up to 6 categorical variables simultaneously.")
+    (license license:expat)))
+
 (define-public r-ggdibbler
   (package
     (name "r-ggdibbler")
@@ -22964,13 +22965,13 @@ correlations.")
 (define-public r-ggcompare
   (package
     (name "r-ggcompare")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggcompare" version))
        (sha256
-        (base32 "03gjcwsq9dn076rcwgv1i3bmwzyhb41i8q222rlhfrw10id0p2yz"))))
+        (base32 "0pys67rvyqc7pfgr1mmr1pyb3dgj618h3napfz005kn2rvb0v9wd"))))
     (properties `((upstream-name . "ggcompare")))
     (build-system r-build-system)
     (arguments
@@ -25714,49 +25715,6 @@ multiplicative volatility factor with heterogeneous factor loadings.  Estimation
 is carried out as a maximization-maximization procedure, where GEOVOL and the
 GEOVOL loadings are estimated iteratively until convergence.")
     (license license:gpl2+)))
-
-(define-public r-geouy
-  (package
-    (name "r-geouy")
-    (version "0.2.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geouy" version))
-       (sha256
-        (base32 "02x52fid3pmaaj22b729zvrh8giwb2a4az66xxwp0lw03pf188zi"))))
-    (properties `((upstream-name . "geouy")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list proj geos gdal))
-    (propagated-inputs (list r-viridis
-                             r-tidyselect
-                             r-stringr
-                             r-sp
-                             r-sf
-                             r-rlang
-                             r-rjson
-                             r-raster
-                             r-magrittr
-                             r-glue
-                             r-ggthemes
-                             r-ggspatial
-                             r-ggplot2
-                             r-fs
-                             r-dplyr
-                             r-curl
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=geouy")
-    (synopsis "Geographic Information of Uruguay")
-    (description
-     "The toolbox have functions to load and process geographic information for
-Uruguay.  And extra-function to get address coordinates and orthophotos through
-the uruguayan IDE API
-<https://www.gub.uy/infraestructura-datos-espaciales/tramites-y-servicios/servicios/sistema-unico-direcciones-geograficas>.")
-    (license license:gpl3)))
 
 (define-public r-geots
   (package
@@ -30953,13 +30911,13 @@ which low, medium, and high thresholds are user-defined.")
 (define-public r-gencodymo2
   (package
     (name "r-gencodymo2")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GencoDymo2" version))
        (sha256
-        (base32 "080lvfp58f9b9qvm6z2m4n1jyi474k7m3anvniis26pard1wlqrl"))))
+        (base32 "08f6jmx6yjczw2i2gg0z1m88p9wwbbpyi457a3vsa5fddpma35mw"))))
     (properties `((upstream-name . "GencoDymo2")))
     (build-system r-build-system)
     (arguments
@@ -31681,13 +31639,13 @@ variance corrections.")
 (define-public r-geeverse
   (package
     (name "r-geeverse")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geeVerse" version))
        (sha256
-        (base32 "1z3lfi9n7jrnh62wjhkmy1xqaxw3xmfm69djw0wgbd9l3k4n2lpd"))))
+        (base32 "00algckarni5x8424vpa6fl04v2dhyz8k4lxq2rvaljrhpn5ahd5"))))
     (properties `((upstream-name . "geeVerse")))
     (build-system r-build-system)
     (arguments
@@ -34100,13 +34058,13 @@ detailed description of the estimation procedure.")
 (define-public r-gb2
   (package
     (name "r-gb2")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GB2" version))
        (sha256
-        (base32 "05hvyyjlxckhgqipssb7qkfqv3dq202jpjyp9y7hgmka0vsix2yr"))))
+        (base32 "1l31y7f8gzpq7rf0wglkdj8sj8w2w5999jdz6b1r443l3aanhrfp"))))
     (properties `((upstream-name . "GB2")))
     (build-system r-build-system)
     (arguments
@@ -34118,9 +34076,9 @@ detailed description of the estimation procedure.")
     (synopsis
      "Generalized Beta Distribution of the Second Kind: Properties, Likelihood, Estimation")
     (description
-     "Package GB2 explores the Generalized Beta distribution of the second kind.
+     "The GB2 package explores the Generalized Beta distribution of the second kind.
 Density, cumulative distribution function, quantiles and moments of the
-distributions are given.  Functions for the full log-likelihood, the profile
+distribution are given.  Functions for the full log-likelihood, the profile
 log-likelihood and the scores are provided.  Formulas for various indicators of
 inequality and poverty under the GB2 are implemented.  The GB2 is fitted by the
 methods of maximum pseudo-likelihood estimation using the full and profile

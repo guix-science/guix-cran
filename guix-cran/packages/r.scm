@@ -3286,13 +3286,13 @@ analysis are available in : Page, R., Yoshida, R. & Zhang L. (2020)
 (define-public r-rtrng
   (package
     (name "r-rtrng")
-    (version "4.23.1-2")
+    (version "4.23.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rTRNG" version))
        (sha256
-        (base32 "0rba3dxy97r75mxfn8rxrk2081my79la2m5m9h5ms2z5px07llqd"))))
+        (base32 "1i2xhn4jn39f14mb281hch75l3g3j3fcx5xid781j0vapmxx354m"))))
     (properties `((upstream-name . "rTRNG")))
     (build-system r-build-system)
     (arguments
@@ -11723,6 +11723,39 @@ mitigation measures.  References: Hepp et al. (2022)
 <http://hdl.handle.net/20.500.12708/9468>.")
     (license license:agpl3+)))
 
+(define-public r-rpgconn
+  (package
+    (name "r-rpgconn")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rpgconn" version))
+       (sha256
+        (base32 "1g32z7l04bxn96sxhfwc8wdi5s1h81qwnxf1fib55cs357fglcs3"))))
+    (properties `((upstream-name . "rpgconn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-usethis
+                             r-stringr
+                             r-rpostgres
+                             r-fs
+                             r-dbi))
+    (home-page "https://github.com/r-data-science/rpgconn")
+    (synopsis "User-Friendly PostgreSQL Connection Management")
+    (description
+     "This package provides a user-friendly interface for managing @code{PostgreSQL}
+database connection settings.  The package supplies helper functions to create,
+edit and load connection and option configuration files stored in a
+user-specific directory using the odbc and RPostgres back ends.  These helpers
+make it easy to construct a reproducible connection string from a configuration
+file, either by reading user-defined YAML files or by parsing an environment
+variable.")
+    (license license:expat)))
+
 (define-public r-rpexe-rpext
   (package
     (name "r-rpexe-rpext")
@@ -12671,24 +12704,27 @@ package provides much of the infrastructure.")
 (define-public r-routr
   (package
     (name "r-routr")
-    (version "0.4.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "routr" version))
        (sha256
-        (base32 "0sqllafwxqlkf8bl5nc3fpf17aqg5nbimrmc8l3z95y3gwhnqhkb"))))
+        (base32 "1v5asspq0ipflh6vbhbwpbawpd86pyrixg0ckjv104s4w1m4j335"))))
     (properties `((upstream-name . "routr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-uuid
-                             r-stringi
+    (propagated-inputs (list r-stringi
+                             r-rlang
                              r-reqres
                              r-r6
-                             r-digest
-                             r-assertthat))
+                             r-promises
+                             r-lifecycle
+                             r-fs
+                             r-cli
+                             r-brio))
     (home-page "https://routr.data-imaginist.com")
     (synopsis "Simple Router for HTTP and WebSocket Requests")
     (description
@@ -14296,13 +14332,13 @@ nonparticipants.  For more details, please reference Witman et al. (2018)
 (define-public r-rollinglda
   (package
     (name "r-rollinglda")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rollinglda" version))
        (sha256
-        (base32 "0xnj7p1b737308syqrgjcavjppb11rv8hrmyld31xwvnzkfarw01"))))
+        (base32 "1vgnzzivv7v91mgvy0amns1qjnxj1bami6s9d9qhzxj98k94z40k"))))
     (properties `((upstream-name . "rollinglda")))
     (build-system r-build-system)
     (arguments
@@ -17033,19 +17069,19 @@ package extends the survey <https://CRAN.R-project.org/package=survey> package."
 (define-public r-robstepsplitreg
   (package
     (name "r-robstepsplitreg")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robStepSplitReg" version))
        (sha256
-        (base32 "04azi5pk8jpq5lcssbax8jyf1lb0g8grmxpj56kaifzp764y66wn"))))
+        (base32 "09ik0fd1vfbgl7xwacncgqma2r6pil41ifshr1xgkicvj18sch6i"))))
     (properties `((upstream-name . "robStepSplitReg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-glmnet r-cellwise))
+    (propagated-inputs (list r-glmnet r-cellwise))
     (home-page "https://cran.r-project.org/package=robStepSplitReg")
     (synopsis "Robust Stepwise Split Regularized Regression")
     (description
@@ -30587,13 +30623,13 @@ reproducibility.  For more information on FACTS itself, please visit
 (define-public r-rfacebookstat
   (package
     (name "r-rfacebookstat")
-    (version "2.12.0")
+    (version "2.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfacebookstat" version))
        (sha256
-        (base32 "04ky7xrddqybrw1sx9650i967yq3fsgrnv2ac9xa1mk8yd0vnkrz"))))
+        (base32 "0x56wn42d5r6x0mdyvspdzqbaf0v5dl24j44cmadqxap1dapdvi9"))))
     (properties `((upstream-name . "rfacebookstat")))
     (build-system r-build-system)
     (arguments
@@ -30605,6 +30641,7 @@ reproducibility.  For more information on FACTS itself, please visit
                              r-purrr
                              r-pbapply
                              r-jsonlite
+                             r-httr2
                              r-httr
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -30614,7 +30651,7 @@ reproducibility.  For more information on FACTS itself, please visit
      "Load data by campaigns, ads, ad sets and insights, ad account and business
 manager from Facebook Marketing API into R. For more details see official
 documents by Facebook Marketing API
-<https://developers.facebook.com/docs/marketing-apis/>.")
+<https://developers.facebook.com/docs/marketing-api>.")
     (license license:expat)))
 
 (define-public r-rfacebook
@@ -32497,13 +32534,13 @@ the resources.")
 (define-public r-resourcecode
   (package
     (name "r-resourcecode")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resourcecode" version))
        (sha256
-        (base32 "1dsiyhsb0nbb1ylh44vxxhvycjj7rlyv2c39bl5l7ns8ad1sspjn"))))
+        (base32 "16z0qyc2cja3c0l3lypsjp3c5sf06rs7w36cfa3lpdqf93hvg3v8"))))
     (properties `((upstream-name . "resourcecode")))
     (build-system r-build-system)
     (arguments
@@ -33445,13 +33482,13 @@ objects into R. It requires EQS 6.2 (build 98 or higher).")
 (define-public r-reqres
   (package
     (name "r-reqres")
-    (version "0.2.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reqres" version))
        (sha256
-        (base32 "1j8gxacbfnaqvrhjqy851yb8shc73issv08yca6mbnx6aq34wcrd"))))
+        (base32 "1d6az8cs4swv5ch9g1h89a5xvcccflfqwi2pl8q8y6fikir21ylz"))))
     (properties `((upstream-name . "reqres")))
     (build-system r-build-system)
     (arguments
@@ -33461,10 +33498,16 @@ objects into R. It requires EQS 6.2 (build 98 or higher).")
                              r-webutils
                              r-urltools
                              r-stringi
+                             r-sodium
+                             r-rlang
                              r-r6
+                             r-promises
+                             r-mirai
+                             r-lifecycle
                              r-jsonlite
+                             r-cli
                              r-brotli
-                             r-assertthat))
+                             r-base64enc))
     (home-page "https://reqres.data-imaginist.com")
     (synopsis "Powerful Classes for HTTP Requests and Responses")
     (description
@@ -36777,13 +36820,13 @@ generate novel regression problems.")
 (define-public r-regressinator
   (package
     (name "r-regressinator")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regressinator" version))
        (sha256
-        (base32 "1wl8xsy0q1g9rv203yl9jkqxi2cwfb80zax43vs6zr1ibyb3vf2d"))))
+        (base32 "1dw80nk3pq84ji9flcm88gmcbqmlifdlpj4gm2s0jac4zsidckns"))))
     (properties `((upstream-name . "regressinator")))
     (build-system r-build-system)
     (arguments
@@ -38448,6 +38491,33 @@ categories and criteria.  See the IUCN website for detailed guidelines, the
 criteria, publications and other information.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-redlist
+  (package
+    (name "r-redlist")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "redlist" version))
+       (sha256
+        (base32 "023k00blz96gyydl3y4i53r4ma1acs0w5yrinbxblmr1jszijb4s"))))
+    (properties `((upstream-name . "redlist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rvest r-magrittr r-httr2 r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stangandaho/redlist")
+    (synopsis "Interface to the IUCN Red List Data")
+    (description
+     "This package provides an interface to access data from the International Union
+for Conservation of Nature (IUCN) Red List
+<https://api.iucnredlist.org/api-docs/index.html>.  It allows users to retrieve
+up-to-date information on species conservation status, supporting biodiversity
+research and conservation efforts.")
+    (license license:expat)))
 
 (define-public r-redistverse
   (package
@@ -40890,6 +40960,48 @@ regressive behaviour.  It can also be used for monitoring third-party software
 projects for changes.")
     (license license:gpl2+)))
 
+(define-public r-readyomics
+  (package
+    (name "r-readyomics")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "readyomics" version))
+       (sha256
+        (base32 "04ybqd5mm5jd4fks7kjb2an2djg9ph4mgaqh4axc0s1qvj5rdgvm"))))
+    (properties `((upstream-name . "readyomics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zcompositions
+                             r-vegan
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-permute
+                             r-lmertest
+                             r-lme4
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://lmartinezgili.github.io/readyomics/")
+    (synopsis
+     "Ready-to-Use Omics Formatting, Analysis, and Visualization Pipeline")
+    (description
+     "This package provides a flexible and streamlined pipeline for formatting,
+analyzing, and visualizing omics data, regardless of omics type (e.g.
+transcriptomics, proteomics, metabolomics).  The package includes tools for
+shaping input data into analysis-ready structures, fitting linear or
+mixed-effect models, extracting key contrasts, and generating a rich variety of
+ready-to-use publication-quality plots.  Designed for transparency and
+reproducibility across a wide range of study designs, with customizable
+components for statistical modeling.")
+    (license license:expat)))
+
 (define-public r-ready4
   (package
     (name "r-ready4")
@@ -42708,13 +42820,13 @@ by a domain.")
 (define-public r-rdocdump
   (package
     (name "r-rdocdump")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdocdump" version))
        (sha256
-        (base32 "0qrlfv2n1x5r39mxsi6pqzr373c0jr7m21fwpf1kghwl2917kc3x"))))
+        (base32 "0xgxmbmhbsbaiia5y0hdn26vlh7js0xacpzdw3vd9jkh644z5lpz"))))
     (properties `((upstream-name . "rdocdump")))
     (build-system r-build-system)
     (arguments
@@ -43893,20 +44005,25 @@ developed in Cattaneo, Titiunik, and Yu (2025)
 (define-public r-rczechia
   (package
     (name "r-rczechia")
-    (version "1.12.6")
+    (version "1.12.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCzechia" version))
        (sha256
-        (base32 "0vh6x70w7q26r5yiy7ng9ikj51fg3w3jb7v36ms92p0nlx1i5fb6"))))
+        (base32 "0ll0sazywr76312rjf18v8i20cdyh6k31s13zkmxdv07279ad23b"))))
     (properties `((upstream-name . "RCzechia")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list proj geos gdal))
-    (propagated-inputs (list r-sf r-magrittr r-jsonlite r-httr r-curl))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://rczechia.jla-data.net")
     (synopsis "Spatial Objects of the Czech Republic")
@@ -44344,13 +44461,13 @@ command.  See the INSTALL file for further details.")
 (define-public r-rcrossref
   (package
     (name "r-rcrossref")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcrossref" version))
        (sha256
-        (base32 "0hqvhqmfmbhvxv555x3vjwz7rh4r2cw6wj8p3wq4hcf107r555c0"))))
+        (base32 "015b5xpkyhb5mix8sq3wlgkk6ywl8hl07v1412qhw86sfzkdlvff"))))
     (properties `((upstream-name . "rcrossref")))
     (build-system r-build-system)
     (arguments
@@ -44360,6 +44477,7 @@ command.  See the INSTALL file for further details.")
                              r-tibble
                              r-stringr
                              r-shiny
+                             r-rlang
                              r-r6
                              r-plyr
                              r-miniui
@@ -44461,13 +44579,13 @@ and will be transformed into a R data frame.")
 (define-public r-rcrisp
   (package
     (name "r-rcrisp")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcrisp" version))
        (sha256
-        (base32 "0zjc5bcaw1yd2jhbkcmbk5687rcj77ni0p3yynha0xz7hc0v8rna"))))
+        (base32 "09gsgqq26vv7v0fb5pzpy2dslpb08x08578b34i6d5yv54h2zymc"))))
     (properties `((upstream-name . "rcrisp")))
     (build-system r-build-system)
     (arguments
@@ -44487,17 +44605,20 @@ and will be transformed into a R data frame.")
                              r-osmdata
                              r-lwgeom
                              r-dplyr
-                             r-dbscan))
+                             r-dbscan
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://cityriverspaces.github.io/rcrisp/")
     (synopsis "Automate the Delineation of Urban River Spaces")
     (description
      "This package provides tools to automate the morphological delineation of
-riverside urban areas, based on a method introduced in Forgaci (2018)
+riverside urban areas based on a method introduced in Forgaci (2018)
 <doi:10.7480/abe.2018.31>.  Delineation entails the identification of corridor
-boundaries, segmentation of the corridor, and delineation of the river space.
-The resulting delineation can be used to characterise spatial phenomena that can
-be related to the river as a central element.")
+boundaries, segmentation of the corridor, and delineation of the river space
+using two-dimensional spatial information from street network data and digital
+elevation data in a projected CRS. The resulting delineation can be used to
+characterise spatial phenomena that can be related to the river as a central
+element.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rcrimeanalysis
@@ -46250,13 +46371,13 @@ handle and analyse.")
 (define-public r-rcoins
   (package
     (name "r-rcoins")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcoins" version))
        (sha256
-        (base32 "1a4arl81hh98vj2zkfpn3lwwayhll9jifq2nsah0sslld1vndzni"))))
+        (base32 "00sa1dq2baiabvv16qcrl1rhhi441affmcy3iqixz0f7llik0syl"))))
     (properties `((upstream-name . "rcoins")))
     (build-system r-build-system)
     (arguments
@@ -56673,13 +56794,13 @@ S3/S4 generics and methods for dispatch.  Also allows piping for R6 objects.")
 (define-public r-r5r
   (package
     (name "r-r5r")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r5r" version))
        (sha256
-        (base32 "1rprwm7fxk9mh6xi8d23kbq9v6ip37ag7akq6h1dadcfhpmcfnja"))))
+        (base32 "0akxj932w9wqd9pgb4gf1kximdf6md6c9s747hlnrvf1jxf44wji"))))
     (properties `((upstream-name . "r5r")))
     (build-system r-build-system)
     (arguments
@@ -56690,6 +56811,7 @@ S3/S4 generics and methods for dispatch.  Also allows piping for R6 objects.")
                              r-sf
                              r-rlang
                              r-rjava
+                             r-lifecycle
                              r-jsonlite
                              r-data-table
                              r-concaveman

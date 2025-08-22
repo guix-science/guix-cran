@@ -6137,19 +6137,20 @@ goodness-of-fit measures.  See Malyutina A., Tang J., and Pessia A. (2023)
 (define-public r-drcte
   (package
     (name "r-drcte")
-    (version "1.0.30")
+    (version "1.0.65")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drcte" version))
        (sha256
-        (base32 "0gpzpmk5v1lr03gl710kp4d4ldfskjr5s66wcl00abg3kz8jpixn"))))
+        (base32 "0w27dapfs28vdk827c4rl7b0y2jzcfxnyi8z34h39l9qy94bn4n5"))))
     (properties `((upstream-name . "drcte")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-survival
                              r-sandwich
                              r-plyr
@@ -6159,7 +6160,8 @@ goodness-of-fit measures.  See Malyutina A., Tang J., and Pessia A. (2023)
                              r-mass
                              r-lmtest
                              r-drc
-                             r-dplyr))
+                             r-dplyr
+                             r-car))
     (home-page "https://www.statforbiology.com")
     (synopsis "Statistical Approaches for Time-to-Event Data in Agriculture")
     (description
@@ -6168,8 +6170,8 @@ time-to-event data in agriculture.  Fit non-parametric and parametric
 time-to-event models.  Compare time-to-event curves for different experimental
 groups.  Plots and other displays.  It is particularly tailored to the analyses
 of data from germination and emergence assays.  The methods are described in
-Onofri et al. (2020) \"A unified framework for the analysis of germination,
-emergence, and other time-to-event data in weed science\"\", Weed Science, 70,
+Onofri et al. (2022) \"A unified framework for the analysis of germination,
+emergence, and other time-to-event data in weed science\", Weed Science, 70,
 259-271 <doi:10.1017/wsc.2022.8>.")
     (license license:gpl2+)))
 
@@ -7414,31 +7416,36 @@ dataset has been analyzed.")
 (define-public r-dpi
   (package
     (name "r-dpi")
-    (version "2025.6")
+    (version "2025.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPI" version))
        (sha256
-        (base32 "1h2csfv7f5s3a9q4dr9iri77yxim5c1yd0m0gn4rcfxkhhzimag1"))))
+        (base32 "07kbdsya1id0yrz8glnii2sfg0h7w1sxlva44jldcway51k98dg1"))))
     (properties `((upstream-name . "DPI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-qgraph r-glue r-ggplot2 r-crayon r-cli))
+    (propagated-inputs (list r-qgraph
+                             r-glue
+                             r-ggplot2
+                             r-crayon
+                             r-cowplot
+                             r-cli
+                             r-bnlearn))
     (home-page "https://psychbruce.github.io/DPI/")
     (synopsis "The Directed Prediction Index")
     (description
-     "The Directed Prediction Index ('DPI') is a simulation-based and conservative
-method for quantifying the relative endogeneity (relative dependence) of outcome
-(Y) versus predictor (X) variables in multiple linear regression models.  By
-comparing the proportion of variance explained (R-squared) between the
-Y-as-outcome model and the X-as-outcome model while controlling for a sufficient
-number of potential confounding variables, it suggests a more plausible
-influence direction from a more exogenous variable (X) to a more endogenous
-variable (Y).  Methodological details are provided at
-<https://psychbruce.github.io/DPI/>.")
+     "The Directed Prediction Index ('DPI') is a simulation-based method for
+quantifying the relative endogeneity (relative dependence) of outcome (Y) versus
+predictor (X) variables in multiple linear regression models.  By comparing the
+proportion of variance explained (R-squared) between the Y-as-outcome model and
+the X-as-outcome model while controlling for a sufficient number of potential
+confounding variables, it suggests a more plausible influence direction from a
+more exogenous variable (X) to a more endogenous variable (Y).  Methodological
+details are provided at <https://psychbruce.github.io/DPI/>.")
     (license license:gpl3)))
 
 (define-public r-dpcr
@@ -10123,28 +10130,30 @@ a normal distribution.  More details can be found at Liu, Huang, and Bai (2024)
 (define-public r-dnn
   (package
     (name "r-dnn")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dnn" version))
        (sha256
-        (base32 "0mij6d69hhzrcp3yvqwmajhn4bm2bnc3lk9hrkh5ly2a21g46yg4"))))
+        (base32 "1ni65n83xj65r84pffad8x1gaapg2mcyasif2qa0ngydyrhhr3sc"))))
     (properties `((upstream-name . "dnn")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-ggplot2))
+    (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-lpl r-ggplot2))
     (home-page "https://cran.r-project.org/package=dnn")
     (synopsis "Deep Neural Network Tools for Probability and Statistic Models")
     (description
-     "This package contains tools to build deep neural network with flexible users
-define loss function and probability models.  Several applications included in
-this package are, 1) The (@code{deepAFT}) model, a deep neural network model for
-accelerated failure time (AFT) model for survival data.  2) The (@code{deepGLM})
-model, a deep neural network model for generalized linear model (glm) for
-continuous, categorical and Poisson data.")
+     "This package contains a robust set of tools designed for constructing deep
+neural networks, which are highly adaptable with user-defined loss function and
+probability models.  It includes several practical applications, such as the
+(@code{deepAFT}) model, which utilizes a deep neural network approach to enhance
+the accelerated failure time (AFT) model for survival data.  Another example is
+the (@code{deepGLM}) model that applies deep neural network to the generalized
+linear model (glm), accommodating data types with continuous, categorical and
+Poisson distributions.")
     (license license:gpl2+)))
 
 (define-public r-dnmf
@@ -10730,13 +10739,13 @@ and sediment budgets from a field or a catchment on a daily basis.")
 (define-public r-dmm
   (package
     (name "r-dmm")
-    (version "3.2-1")
+    (version "3.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dmm" version))
        (sha256
-        (base32 "167zrcmwihidgs374c4vwdvldd17s2cfaj1r7cbhpglkjk6lmcw7"))))
+        (base32 "0ssvn9mnm3lm6x15b3cz2dyn3f86w3g3pd2qcfydxparci08h2yx"))))
     (properties `((upstream-name . "dmm")))
     (build-system r-build-system)
     (arguments
@@ -10751,8 +10760,8 @@ pedigree-based partitioning of individual variation into a range of
 environmental and genetic variance components for individual and maternal
 effects.  Method documented in @code{dmmOverview.pdf}; dmm is an implementation
 of dispersion mean model described by Searle et al. (1992) \"Variance
-Components\", Wiley, NY. DMM can do MINQUE', bias-corrected-ML', and REML
-variance and covariance component estimates.")
+Components\", Wiley, NY. @code{Dmm()} can do MINQUE', bias-corrected-ML', and
+REML variance and covariance component estimates.")
     (license (list license:gpl2 license:gpl2+ license:gpl3))))
 
 (define-public r-dmlalg
@@ -16006,13 +16015,13 @@ of the competitive or collaborative transition.")
 (define-public r-dimodelsvis
   (package
     (name "r-dimodelsvis")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DImodelsVis" version))
        (sha256
-        (base32 "1j224j3xj1scf1smy2zk0dwv3calkx3jzpn989w9hjck96x657n5"))))
+        (base32 "08hy1ch23jkrbhmpr1pjdzi91l5lhszvxwixwkjpwr7qj493dnbg"))))
     (properties `((upstream-name . "DImodelsVis")))
     (build-system r-build-system)
     (arguments
@@ -16032,6 +16041,7 @@ of the competitive or collaborative transition.")
                              r-forcats
                              r-dplyr
                              r-dimodels
+                             r-colorspace
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://rishvish.github.io/DImodelsVis/")
@@ -16048,13 +16058,13 @@ ggplot2 plotting framework and can be extended like every other ggplot object.")
 (define-public r-dimodelsmulti
   (package
     (name "r-dimodelsmulti")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DImodelsMulti" version))
        (sha256
-        (base32 "1av5kfvshy05xqipp4qa5fhj4yd55wfpznx91l2fgdklxbnjr0v4"))))
+        (base32 "0qmmqy21lcgqr715vx3jlxv3jfbqvk1jbg24aia9sk5cfwmla93w"))))
     (properties `((upstream-name . "DImodelsMulti")))
     (build-system r-build-system)
     (arguments
@@ -18372,13 +18382,13 @@ with several cutpoints.")
 (define-public r-diagl1
   (package
     (name "r-diagl1")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diagL1" version))
        (sha256
-        (base32 "1rl51a5gjzf41la0rbigz4n8brn1prji6hp862hlxwscdni9w2f9"))))
+        (base32 "0hilg2dzwfaybfjda295ifl0wk5br04m6rcdv9baad5z2cmkv437"))))
     (properties `((upstream-name . "diagL1")))
     (build-system r-build-system)
     (arguments
@@ -19391,13 +19401,13 @@ Riviere Marie-Karelle et al. (2016) <doi:10.1177/0962280216631763>.")
 (define-public r-dfms
   (package
     (name "r-dfms")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfms" version))
        (sha256
-        (base32 "0cwfn6gz6bw1mq6c6bb9ayg7xv7bgjzg6ialwqibg840mqlln5yd"))))
+        (base32 "1bkkv7bk3z4j8wbayiybwa2qw6vgvkd50yb8p42wqnhkmsrp1dbx"))))
     (properties `((upstream-name . "dfms")))
     (build-system r-build-system)
     (arguments
@@ -22660,13 +22670,13 @@ binomial distribution.")
 (define-public r-denim
   (package
     (name "r-denim")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "denim" version))
        (sha256
-        (base32 "00d6c27iy9xarq3d8dw7s4rvy990xxprrj5pzwjr0z9sal0bavvf"))))
+        (base32 "0qvyqhjydkg48fiqw3vd6zbqk6a9xmhcgw3ffjp0lwdl258s9773"))))
     (properties `((upstream-name . "denim")))
     (build-system r-build-system)
     (arguments
@@ -22675,12 +22685,11 @@ binomial distribution.")
     (propagated-inputs (list r-testthat r-rlang r-rcpp r-glue r-colorspace))
     (native-inputs (list r-knitr))
     (home-page "https://drthinhong.com/denim/")
-    (synopsis
-     "Generate and Simulate Deterministic Discrete-Time Compartmental Models")
+    (synopsis "Generate and Simulate Deterministic Compartmental Models")
     (description
-     "R package to build and simulate deterministic discrete-time compartmental models
-that can be non-Markov.  Length of stay in each compartment can be defined to
-follow a parametric distribution @code{(d_exponential()}, @code{d_gamma()},
+     "R package to build and simulate deterministic compartmental models that can be
+non-Markovian.  Length of stay in each compartment can be defined to follow a
+parametric distribution @code{(d_exponential()}, @code{d_gamma()},
 @code{d_weibull()}, @code{d_lognormal()}) or a non-parametric distribution
 @code{(nonparametric()}).  Other supported types of transition from one
 compartment to another includes fixed transition @code{(constant()}),
@@ -27070,6 +27079,31 @@ make package development easy as a breeze with data cloning for hierarchical
 models.")
     (license license:gpl2)))
 
+(define-public r-dcmdata
+  (package
+    (name "r-dcmdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dcmdata" version))
+       (sha256
+        (base32 "0ann27may91qv20p412mzandx27r5p8jjc3faljvkk763p6hjnlf"))))
+    (properties `((upstream-name . "dcmdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-cli))
+    (home-page "https://dcmdata.r-dcm.org")
+    (synopsis "Data Sets for Diagnostic Classification Modeling")
+    (description
+     "Access data sets for demonstrating or testing diagnostic classification models.
+Simulated data sets can be used to compare estimated model output to true
+data-generating values.  Real data sets can be used to demonstrate real-world
+applications of diagnostic models.")
+    (license license:expat)))
+
 (define-public r-dcm2
   (package
     (name "r-dcm2")
@@ -29942,13 +29976,13 @@ and ANCOVA.")
 (define-public r-dataretrieval
   (package
     (name "r-dataretrieval")
-    (version "2.7.20")
+    (version "2.7.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataRetrieval" version))
        (sha256
-        (base32 "0fnvwwjsgp48h4pwfi14y7ixak6kz8qvs2x4jsn0qlavm9l1c9vl"))))
+        (base32 "1y71k6hsrf481n6s5pw7qykp4449j7bsn2hw5f52v2dvvdckdzmn"))))
     (properties `((upstream-name . "dataRetrieval")))
     (build-system r-build-system)
     (arguments
@@ -31439,13 +31473,13 @@ individuals (samples).  For more information visit the @code{GitHub} pages
 (define-public r-dartr-spatial
   (package
     (name "r-dartr-spatial")
-    (version "0.78")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dartR.spatial" version))
        (sha256
-        (base32 "1fjajinsc2ikvhz4igjyldvfd5skdqhnay5209dzx4xjpnkik5vv"))))
+        (base32 "0nfrw1k37fxkf58h87b38p29hpgfp33vpgjjqw9rrcjgasmgdfd3"))))
     (properties `((upstream-name . "dartR.spatial")))
     (build-system r-build-system)
     (arguments
@@ -31458,6 +31492,7 @@ individuals (samples).  For more information visit the @code{GitHub} pages
                              r-raster
                              r-mass
                              r-ggplot2
+                             r-dismo
                              r-data-table
                              r-dartr-data
                              r-dartr-base
@@ -32452,13 +32487,13 @@ available in Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
 (define-public r-daltoolbox
   (package
     (name "r-daltoolbox")
-    (version "1.2.727")
+    (version "1.2.737")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolbox" version))
        (sha256
-        (base32 "1kkpkhwl39fbvqr931fscbh9ap69zahjdlqb9v79mabadxjnbd6p"))))
+        (base32 "0jxb6a23vqwzd0wcqfw428h3ihw7z3714cg1rfxsjrdg0p0lfxs7"))))
     (properties `((upstream-name . "daltoolbox")))
     (build-system r-build-system)
     (arguments

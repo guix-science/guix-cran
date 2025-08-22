@@ -2683,13 +2683,13 @@ is tested with yeast genome and gene expression data of Yassour, et al. (2009)
 (define-public r-cubeview
   (package
     (name "r-cubeview")
-    (version "0.2.4")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cubeview" version))
        (sha256
-        (base32 "0d9dg3mmdqfbh209g318k6qax5a8i9059ih0qaf3w5xgxms3mxqx"))))
+        (base32 "0mfib3iqqn36hx3y4xxm7vzqqs6czrk4phx6xa57jgpn54j7dwad"))))
     (properties `((upstream-name . "cubeview")))
     (build-system r-build-system)
     (arguments
@@ -2712,7 +2712,6 @@ is tested with yeast genome and gene expression data of Yassour, et al. (2009)
     (propagated-inputs (list r-viridislite
                              r-svglite
                              r-stars
-                             r-raster
                              r-lattice
                              r-htmlwidgets
                              r-htmltools
@@ -4387,13 +4386,13 @@ Rao, and Junho Yang.")
 (define-public r-csodata
   (package
     (name "r-csodata")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csodata" version))
        (sha256
-        (base32 "11sgkf6xy3wh73yqhcjcpif9w73026rmiwm5vcgm21fg9fl4hyfk"))))
+        (base32 "1s6ssjsm9m8gdn9af47zawzjk6y5ha5rkg7wqc1xds5g1b40scjm"))))
     (properties `((upstream-name . "csodata")))
     (build-system r-build-system)
     (arguments
@@ -4421,10 +4420,10 @@ Rao, and Junho Yang.")
 wide format.  The Central Statistics Office (CSO) is the national statistical
 institute of Ireland and @code{PxStat} is the CSOs online database of Official
 Statistics.  This database contains current and historical data series compiled
-from CSO statistical releases and is accessed at <http://data.cso.ie>.  The CSO
+from CSO statistical releases and is accessed at <https://data.cso.ie>.  The CSO
 @code{PxStat} Application Programming Interface (API), which is accessed in this
 package, provides access to @code{PxStat} data in JSON-stat format at
-<http://data.cso.ie>.  This dissemination tool allows developers machine to
+<https://data.cso.ie>.  This dissemination tool allows developers machine to
 machine access to CSO @code{PxStat} data.")
     (license license:gpl3)))
 
@@ -4587,19 +4586,19 @@ conditions.")
 (define-public r-csmaps
   (package
     (name "r-csmaps")
-    (version "2023.5.22")
+    (version "2025.8.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csmaps" version))
        (sha256
-        (base32 "02w3g6qc928fbic462nn22s6fcqxr4v9hhhrv632azcc2x83k100"))))
+        (base32 "0vb292llrz21bm2dfm7c54wpr4k05mak365zpbvbjm77gcq06sbv"))))
     (properties `((upstream-name . "csmaps")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-data-table))
+    (propagated-inputs (list r-ggplot2 r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://www.csids.no/csmaps/")
     (synopsis "Preformatted Maps of Norway that Don't Need Geolibraries")
@@ -26556,13 +26555,13 @@ patient enrichment in two-stage clinical designs.  Technical Report.")
 (define-public r-cobalt
   (package
     (name "r-cobalt")
-    (version "4.6.0")
+    (version "4.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cobalt" version))
        (sha256
-        (base32 "0af5zw0by6jj4hi5094gn9mskfp9v15rlrkj7p7z6aippdyhqp29"))))
+        (base32 "16p82mmdjyl11s3ahykifdiwlsgawfdrjpsn3wmhdm01ii5jiahv"))))
     (properties `((upstream-name . "cobalt")))
     (build-system r-build-system)
     (arguments
@@ -27202,13 +27201,13 @@ distribution.")
 (define-public r-cnaopt
   (package
     (name "r-cnaopt")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cnaOpt" version))
        (sha256
-        (base32 "1ciqh0d88270hizlsks7d05kggaszzl6add2n143z7cswkgfvkyr"))))
+        (base32 "1xxd4z6rlk05im5mszmqvci6vj0sjq8vqm2jp4kxy1fr8530nk0f"))))
     (properties `((upstream-name . "cnaOpt")))
     (build-system r-build-system)
     (arguments
@@ -29866,22 +29865,21 @@ visualization and analysis.  See Lokesh Kumar and Matthias E Futschik (2007)
 (define-public r-clusterbootstrap
   (package
     (name "r-clusterbootstrap")
-    (version "1.1.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClusterBootstrap" version))
        (sha256
-        (base32 "1ha50yzc2arlz4c2g7r9w891fk775xfbhz0gky3zxawlsa02213s"))))
+        (base32 "1baqjwz3d96ll73dmz0llyh5s1l53qd1shyrv5h64x8xzplz0bdp"))))
     (properties `((upstream-name . "ClusterBootstrap")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-magrittr r-dplyr))
+    (propagated-inputs (list r-data-table))
     (home-page "https://github.com/mathijsdeen/ClusterBootstrap")
-    (synopsis
-     "Analyze Clustered Data with Generalized Linear Models using the Cluster Bootstrap")
+    (synopsis "Analyze Clustered Data using the Cluster Bootstrap")
     (description
      "This package provides functionality for the analysis of clustered data using the
 cluster bootstrap.")
@@ -34989,30 +34987,6 @@ e2667.")
     (home-page "https://cran.r-project.org/package=CircularDDM")
     (synopsis "Circular Drift-Diffusion Model")
     (description "Circular drift-diffusion model for continuous reports.")
-    (license license:gpl2)))
-
-(define-public r-circstats
-  (package
-    (name "r-circstats")
-    (version "0.2-7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CircStats" version))
-       (sha256
-        (base32 "0mp463w7myizvidhjnljzhyb1vrc1ajyay876g2w7k919klsnvcz"))))
-    (properties `((upstream-name . "CircStats")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-boot))
-    (home-page "https://cran.r-project.org/package=CircStats")
-    (synopsis
-     "Circular Statistics, from \"Topics in Circular Statistics\" (2001)")
-    (description
-     "Circular Statistics, from \"Topics in Circular Statistics\" (2001) S. Rao
-Jammalamadaka and A. @code{SenGupta}, World Scientific.")
     (license license:gpl2)))
 
 (define-public r-circspacetime
@@ -41530,13 +41504,13 @@ installation of packages from non-standard repositories.")
 (define-public r-certara-nlme8
   (package
     (name "r-certara-nlme8")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Certara.NLME8" version))
        (sha256
-        (base32 "0ddwlrkb1cxjkpq12fy7ig3vp1wyxgvfa6lsvdbm111r6xbwz79j"))))
+        (base32 "0prs83jlh0yaz3mmsswcfyq3ix9l1nkmnimmrsvwgddn2ip5dhsw"))))
     (properties `((upstream-name . "Certara.NLME8")))
     (build-system r-build-system)
     (arguments
@@ -41550,13 +41524,12 @@ installation of packages from non-standard repositories.")
      "Perform Nonlinear Mixed-Effects (NLME) Modeling using Certara's NLME-Engine.
 Access the same Maximum Likelihood engines used in the Phoenix platform,
 including algorithms for parametric methods, individual, and pooled data
-analysis
-<https://www.certara.com/app/uploads/2020/06/BR_@code{PhoenixNLME-v4.pdf>}.  The
-Quasi-Random Parametric Expectation-Maximization Method (QRPEM) is also
-supported <https://www.page-meeting.org/default.asp?abstract=2338>.  Execution
-is supported both locally or on remote machines.  Remote execution includes
-support for Linux Sun Grid Engine (SGE), Terascale Open-source Resource and
-Queue Manager (TORQUE) grids, Linux and Windows multicore, and individual runs.")
+analysis.  The Quasi-Random Parametric Expectation-Maximization Method (QRPEM)
+is also supported <https://www.page-meeting.org/default.asp?abstract=2338>.
+Execution is supported both locally or on remote machines.  Remote execution
+includes support for Linux Sun Grid Engine (SGE), Simple Linux Utility for
+Resource Management (SLURM) grids, Linux and Windows multicore, and individual
+runs.")
     (license license:lgpl3)))
 
 (define-public r-certara-modelresults
@@ -44854,13 +44827,13 @@ discussion of the methodology.")
 (define-public r-cbtf
   (package
     (name "r-cbtf")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CBTF" version))
        (sha256
-        (base32 "0p0g2qn84aqn73yl8ix54bab1ff7kq2yj3mak8ihh8ys6xn4ib7g"))))
+        (base32 "0fqn5mnrfk639v9mdsqc7d8vfswf6l0n19z0c0z1v84ba1ziv56y"))))
     (properties `((upstream-name . "CBTF")))
     (build-system r-build-system)
     (arguments
@@ -45239,13 +45212,13 @@ with x in [0, size + 1], following Ilienko (2013) <@code{arXiv:1303.5990>}.")
 (define-public r-cbctools
   (package
     (name "r-cbctools")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cbcTools" version))
        (sha256
-        (base32 "0ps6m443mm5shxa5a15mldv9gywzm13byaqbwkfqpk24h4dpdh4j"))))
+        (base32 "0975z8yk9czx296gsrkzl3nn3cgwx1lx7yh28h56z51l1kl4jhx2"))))
     (properties `((upstream-name . "cbcTools")))
     (build-system r-build-system)
     (arguments
@@ -47885,13 +47858,13 @@ city).  It is taken from the @code{JavaScript} library @code{PrimeReact}'.")
 (define-public r-cascadedata
   (package
     (name "r-cascadedata")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CascadeData" version))
        (sha256
-        (base32 "0cbnp8mqv3alsz7b5fa8djg1yd46zkn1f3b0pqww2yn8zavd4fih"))))
+        (base32 "08130kldxxmffmqx0pg81181k4yly6qpj2hhhkgq9izs34jw0i9k"))))
     (properties `((upstream-name . "CascadeData")))
     (build-system r-build-system)
     (arguments
@@ -47911,13 +47884,13 @@ Maumy-Bertrand, M. (2014) <doi:10.1093/bioinformatics/btt705>.")
 (define-public r-cascade
   (package
     (name "r-cascade")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Cascade" version))
        (sha256
-        (base32 "1hfbv9129rnrjqspjd8wnhw0qrp1m142bixlwddzr6j2sg7r8s20"))))
+        (base32 "0ismqq96qlhsch84v70kb9z1m0xsmhz070wlg9jbrrarz9vz4dy1"))))
     (properties `((upstream-name . "Cascade")))
     (build-system r-build-system)
     (arguments
@@ -48821,29 +48794,35 @@ clinical research.")
 (define-public r-cardinalr
   (package
     (name "r-cardinalr")
-    (version "0.1.1")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cardinalR" version))
        (sha256
-        (base32 "1hqdvxialk41r6l0k7vllh4bxdqx2ci4rcppd7nl0w1d3lz9561i"))))
+        (base32 "1m0ddfkx95880b4yqg0azbbz3wviwd78y4i8wwzwifwfzzkqkw6z"))))
     (properties `((upstream-name . "cardinalR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-purrr))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-purrr
+                             r-mvtnorm
+                             r-mass
+                             r-gtools
+                             r-geozoo
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/JayaniLakshika/cardinalR")
+    (home-page "https://jayanilakshika.github.io/cardinalR/")
     (synopsis "Collection of Data Structures")
     (description
-     "This package provides a collection of simple simulation datasets designed for
-generating Nonlinear Dimension Reduction representations techniques such as
-t-distributed Stochastic Neighbor Embedding, and Uniform Manifold Approximation
-and Projection.  These datasets serve as a valuable resource for understanding
-the reliability of Nonlinear Dimension Reduction representations in various
-contexts.")
+     "This package provides a collection of functions to generate a large variety of
+structures in high dimensions.  These data structures are useful for testing,
+validating, and improving algorithms used in dimensionality reduction,
+clustering, machine learning, and visualization.")
     (license license:expat)))
 
 (define-public r-cardidates
@@ -51911,13 +51890,13 @@ microarray expression data using C3NET.")
 (define-public r-c3dr
   (package
     (name "r-c3dr")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "c3dr" version))
        (sha256
-        (base32 "0rwc7snxdqyjahvn56byprd158pnw5f0665wmld6jiqbs407z4xh"))))
+        (base32 "07lap0karadkzl7wsr76p0a0b3s3dsn1a2rp62f366zysj6bh6jc"))))
     (properties `((upstream-name . "c3dr")))
     (build-system r-build-system)
     (arguments

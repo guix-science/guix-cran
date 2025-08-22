@@ -5013,20 +5013,28 @@ R code.")
 (define-public r-asterisk
   (package
     (name "r-asterisk")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asteRisk" version))
        (sha256
-        (base32 "0rfbm5c2lgs921ncajsjyyxzfiqls40xlxqp2pwp7c0rxhiz2rd6"))))
+        (base32 "0fdfii4g42ydp1x0hay1wq69xnbnxs222zg2gilp0zb01760zc8j"))))
     (properties `((upstream-name . "asteRisk")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppparallel r-rcpp r-onion r-nanotime
-                             r-desolve))
+    (propagated-inputs (list r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-polynom
+                             r-onion
+                             r-nanotime
+                             r-httr
+                             r-gsl
+                             r-desolve
+                             r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=asteRisk")
     (synopsis "Computation of Satellite Position")
@@ -5659,13 +5667,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.4.49")
+    (version "4.4.51")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asremlPlus" version))
        (sha256
-        (base32 "09wj9mgalrk3ky5r22zsbv1949gh9is8g4lgpcjir2z0gdgad4gg"))))
+        (base32 "0gd0mrv50kzxjwr8szwvc1xxffh4zdpf02w7cpb8byjva238fz7f"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (arguments
@@ -6122,13 +6130,13 @@ models; see Bischl et al. (2016) <doi:10.1016/j.artint.2016.04.003>.")
 (define-public r-asht
   (package
     (name "r-asht")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asht" version))
        (sha256
-        (base32 "08wrqhrlna2vg5icgqcaxciv51gq7rfmd458qy7dqmh7ydxcrxk6"))))
+        (base32 "1il9py6jxgld0qkqjcyszbr6p06592d2l04y03i163cc66ypn1aq"))))
     (properties `((upstream-name . "asht")))
     (build-system r-build-system)
     (arguments
@@ -6606,13 +6614,13 @@ collected using the @code{SongMeter} and BAR-LT types of ARUs.")
 (define-public r-arulesviz
   (package
     (name "r-arulesviz")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arulesViz" version))
        (sha256
-        (base32 "1alma9fk92y55zrxr1a5ri2gpkn8kp2wbc3i2vqkmwj48za1a29j"))))
+        (base32 "1kh063pmh6s3kvnw9ssvi8zajh91d76ikf2yafq3jbxvfwy2khhx"))))
     (properties `((upstream-name . "arulesViz")))
     (build-system r-build-system)
     (arguments
@@ -10477,23 +10485,19 @@ published sequences with experimental, in vitro, evidence of amyloid formation."
 (define-public r-applypolygenicscore
   (package
     (name "r-applypolygenicscore")
-    (version "3.0.1")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ApplyPolygenicScore" version))
        (sha256
-        (base32 "12cjmnaqlvfsdrwp37jyiabmvq71i2l8i4x9sxzn6j5prcgig3hx"))))
+        (base32 "04nqcvgwc6xkyh3wz4bqkx2q0mphpmanfja9by38785zz83zdgbd"))))
     (properties `((upstream-name . "ApplyPolygenicScore")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vcfr
-                             r-reshape2
-                             r-proc
-                             r-lattice
-                             r-data-table
+    (propagated-inputs (list r-vcfr r-proc r-lattice r-data-table
                              r-boutroslab-plotting-general))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ApplyPolygenicScore")
@@ -13739,13 +13743,13 @@ networks (in preparation).")
 (define-public r-animalekf
   (package
     (name "r-animalekf")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "animalEKF" version))
        (sha256
-        (base32 "1qhmgwmg9nw8hcsd8gkvk0h8rmk82zkqjyd94a1d79cwmryxls9b"))))
+        (base32 "0c91yh5k9jz9y3d2fa666n7xcgwfwm877wnn902hrvg9bywassmm"))))
     (properties `((upstream-name . "animalEKF")))
     (build-system r-build-system)
     (arguments
@@ -22781,13 +22785,13 @@ format is also provided.")
 (define-public r-admix
   (package
     (name "r-admix")
-    (version "2.4.2")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admix" version))
        (sha256
-        (base32 "1cmq9n401ax7n1kzsqqnm1a8lwgncf7w2vql7fkdhwa12w0w4s1q"))))
+        (base32 "1hln9rasnz8b02y2mmsg37hnp1jhv9hff9mgbmyv8vf1ki0wjgq5"))))
     (properties `((upstream-name . "admix")))
     (build-system r-build-system)
     (arguments
@@ -22897,13 +22901,13 @@ implemented in accordance with the \"Analysis Data Model Implementation Guide\"
 (define-public r-admiralpeds
   (package
     (name "r-admiralpeds")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralpeds" version))
        (sha256
-        (base32 "05zyg8gxgj72vz63y6fjxz1wki0524y3g8nfrky0y53wfchl2fdw"))))
+        (base32 "1gf0ndr7r7khbyn9yl2c223lkl8p73nhkdnn9i15xxajyv3w0mgk"))))
     (properties `((upstream-name . "admiralpeds")))
     (build-system r-build-system)
     (arguments
@@ -26445,13 +26449,13 @@ ISBN: 978-0387310732).")
 (define-public r-accelstab
   (package
     (name "r-accelstab")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AccelStab" version))
        (sha256
-        (base32 "1k3vkqdyg42d5mxx7c8ky78nyyshy0h6kqky7rwpkq5pk6s75xga"))))
+        (base32 "0l2zscfk2vqci71xc7ghz5kbcdajyk2h83nkhq9v20470lj1hpqc"))))
     (properties `((upstream-name . "AccelStab")))
     (build-system r-build-system)
     (arguments
@@ -26926,13 +26930,13 @@ screening <doi:10.1111/j.1467-9868.2008.00674.x> are also provided.")
 (define-public r-aberrance
   (package
     (name "r-aberrance")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aberrance" version))
        (sha256
-        (base32 "1v53sxl1vdw7lff385q8s1yc0895vdkrdjv0s64ly5czrxhbk6j0"))))
+        (base32 "14p6vn8krnk3fmf02xiplnq281hz854qm31wi33whaqkw919cc8m"))))
     (properties `((upstream-name . "aberrance")))
     (build-system r-build-system)
     (arguments
@@ -26943,8 +26947,8 @@ screening <doi:10.1111/j.1467-9868.2008.00674.x> are also provided.")
     (synopsis "Detect Aberrant Behavior in Test Data")
     (description
      "Detect several types of aberrant behavior, including answer copying, answer
-similarity, nonparametric misfit, parametric misfit, preknowledge, rapid
-guessing, and test tampering.")
+similarity, change point, nonparametric misfit, parametric misfit, preknowledge,
+rapid guessing, and test tampering.")
     (license license:gpl3+)))
 
 (define-public r-abdiv

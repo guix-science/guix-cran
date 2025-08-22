@@ -3762,13 +3762,13 @@ regression as well as multilayer perceptrons.")
 (define-public r-brucer
   (package
     (name "r-brucer")
-    (version "2024.6")
+    (version "2025.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bruceR" version))
        (sha256
-        (base32 "0ih2l2yf9vfmzx1l2npj8yp0brnqdiszq0ip26nw5vdgv9b7rm5l"))))
+        (base32 "0g2azpn64915fss96j9f2xfyjqhnb2hiqz3wadp6yq851wmsj46g"))))
     (properties `((upstream-name . "bruceR")))
     (build-system r-build-system)
     (arguments
@@ -3781,9 +3781,7 @@ regression as well as multilayer perceptrons.")
                              r-rio
                              r-psych
                              r-plyr
-                             r-performance
                              r-mediation
-                             r-lmertest
                              r-lavaan
                              r-jtools
                              r-interactions
@@ -9717,13 +9715,13 @@ Includes standard diagnostics and visualization tools to evaluate the results.")
 (define-public r-bnlearn
   (package
     (name "r-bnlearn")
-    (version "5.0.2")
+    (version "5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnlearn" version))
        (sha256
-        (base32 "054cvgcxh48x1zc36zivplnaf9i6x4hdkk7an1mmnwd78a47dadw"))))
+        (base32 "15nvdxhj16a700dbhdkpjf06pddzk0c6plzzcx496wvpgvf6hmb2"))))
     (properties `((upstream-name . "bnlearn")))
     (build-system r-build-system)
     (arguments
@@ -10164,13 +10162,13 @@ of distributions, including Mohammadi and et al. (2013)
 (define-public r-bmiselect
   (package
     (name "r-bmiselect")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BMIselect" version))
        (sha256
-        (base32 "0xlh82iiq2k1aracc294zc8hhrcfaija8l7g22q6y9s75i7l8b59"))))
+        (base32 "18n8h15vvidn56w84qcnaj4aj66zqlsld7xp5p1cbk15l0xrjqzg"))))
     (properties `((upstream-name . "BMIselect")))
     (build-system r-build-system)
     (arguments
@@ -10196,12 +10194,12 @@ of distributions, including Mohammadi and et al. (2013)
 methods for multiply-imputed datasets.  The package includes four Bayesian
 MI-LASSO models using shrinkage (Multi-Laplace, Horseshoe, ARD) and
 Spike-and-Slab (Spike-and-Laplace) priors, along with tools for model fitting
-via MCMC, three-step projection predictive variable selection, and
-hyperparameter calibration.  Methods are suitable for both continuous and binary
-covariates under missing-at-random assumptions.  See Zou, J., Wang, S. and Chen,
-Q. (2022), Variable Selection for Multiply-imputed Data: A Bayesian Framework.
-@code{ArXiv}, 2211.00114. <doi:10.48550/@code{arXiv.2211.00114>} for more
-details.  We also provide the frequentist`s MI-LASSO function.")
+via MCMC, four-step projection predictive variable selection, and hyperparameter
+calibration.  Methods are suitable for both continuous and binary covariates
+under missing-at-random assumptions.  See Zou, J., Wang, S. and Chen, Q. (2025),
+Bayesian MI-LASSO for Variable Selection on Multiply-Imputed Data. @code{ArXiv},
+2211.00114. <doi:10.48550/@code{arXiv.2211.00114>} for more details.  We also
+provide the frequentist`s MI-LASSO function.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-bmisc
@@ -11495,6 +11493,41 @@ further methodological developments.  Reference: Hornung, R. & Wright, M. N.
 (2019) Block Forests: random forests for blocks of clinical and omics covariate
 data.  BMC Bioinformatics 20:358. <doi:10.1186/s12859-019-2942-y>.")
     (license license:gpl3)))
+
+(define-public r-blockcv
+  (package
+    (name "r-blockcv")
+    (version "3.2-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blockCV" version))
+       (sha256
+        (base32 "0lyj2x4ybvbym7938rj4ikkvfbqbmzyxpw1gl7dn53j1k9p5rpw8"))))
+    (properties `((upstream-name . "blockCV")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sp
+                             r-sf
+                             r-rcpp
+                             r-ggplot2
+                             r-cowplot
+                             r-automap))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rvalavi/blockCV")
+    (synopsis
+     "Spatial and Environmental Blocking for K-Fold and LOO Cross-Validation")
+    (description
+     "Creating spatially or environmentally separated folds for cross-validation to
+provide a robust error estimation in spatially structured environments;
+Investigating and visualising the effective range of spatial autocorrelation in
+continuous raster covariates and point samples to find an initial realistic
+distance band to separate training and testing datasets spatially described in
+Valavi, R. et al. (2019) <doi:10.1111/2041-210X.13107>.")
+    (license license:gpl3+)))
 
 (define-public r-blockcov
   (package
@@ -13918,13 +13951,13 @@ ISBN:978-1-118-62561-3) Levin & Chen (1999) <doi:10.1080/00031305.1999.10474431>
 (define-public r-biostatr
   (package
     (name "r-biostatr")
-    (version "4.0.1")
+    (version "4.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioStatR" version))
        (sha256
-        (base32 "0w8ly4pk0zv6rnmbzfq3i8sd4h4gjsxlnhj5nlyfr72687jjx5cm"))))
+        (base32 "0mjc3c2c6l7l7psfykjhwxl1i3a8pqqmri78jmllbk6qqfxd71yx"))))
     (properties `((upstream-name . "BioStatR")))
     (build-system r-build-system)
     (arguments
@@ -14599,27 +14632,26 @@ file for local installation/updating (see <https://asreml.kb.vsni.co.uk/>).")
 (define-public r-biometrics
   (package
     (name "r-biometrics")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biometrics" version))
        (sha256
-        (base32 "102lm58gj58m87zhbcnkclnk5i0q5d540wwf0pkjvx7y3zhgks02"))))
+        (base32 "19cm0vk17n3mpw7kv94h3x38kzaxpbyz3ml1xg7yq0sj2r0zm1r9"))))
     (properties `((upstream-name . "biometrics")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lattice r-ggplot2 r-datana))
-    (home-page "https://eljatib.com")
+    (home-page "https://cran.r-project.org/package=biometrics")
     (synopsis "Functions and Datasets for Forest Biometrics and Modelling")
     (description
      "This package provides a system of functions and data aiming to apply
-quantitative analyses to forest ecology, silviculture and decision-support
-systems.  Besides, the package helps to carry out data management, exploratory
-analysis, and model assessment.")
-    (license license:gpl3)))
+quantitative analyses to forest ecology, silviculture and decision-making.
+Besides, the package helps to carry out data management, exploratory analysis,
+and model assessment.")
+    (license license:gpl3+)))
 
 (define-public r-biomass
   (package
@@ -16971,13 +17003,13 @@ compact format is also now available.")
 (define-public r-bigsnpr
   (package
     (name "r-bigsnpr")
-    (version "1.12.18")
+    (version "1.12.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigsnpr" version))
        (sha256
-        (base32 "0jlf1x7k6pjzdhm765jds3f19c3s00ya6vznxlykds89rfb24b29"))))
+        (base32 "0898q0ny1gmv2idcc9pkdymh66anx2r99kcrh8xdk5ic6kamak07"))))
     (properties `((upstream-name . "bigsnpr")))
     (build-system r-build-system)
     (arguments
@@ -17729,13 +17761,13 @@ synchronicity'.")
 (define-public r-bigalgebra
   (package
     (name "r-bigalgebra")
-    (version "1.1.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigalgebra" version))
        (sha256
-        (base32 "0zk0n3lxqrhxzwdm47yhvv8n0m30bp9b7bvany3gg7a6vrz43yqn"))))
+        (base32 "06m9hic9hy6lxh7zsqzsddrd6cbk2r552c5xf3y9gvxl7xh9da11"))))
     (properties `((upstream-name . "bigalgebra")))
     (build-system r-build-system)
     (arguments
@@ -21400,13 +21432,13 @@ efficiently ethomics (high-throughput behavioural) data.")
 (define-public r-behaviorchange
   (package
     (name "r-behaviorchange")
-    (version "0.5.5")
+    (version "25.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "behaviorchange" version))
        (sha256
-        (base32 "1nvmrl5nif10kw1risfsmvdlc4q6bkcfxpw26vwanm6ks3lamdc3"))))
+        (base32 "028xwz7v2hb6kv50q5d1g4ydmfjy408n38pg13zlij9ch37lyfs7"))))
     (properties `((upstream-name . "behaviorchange")))
     (build-system r-build-system)
     (arguments
@@ -21426,7 +21458,7 @@ efficiently ethomics (high-throughput behavioural) data.")
                              r-data-tree
                              r-biasedurn))
     (native-inputs (list r-knitr))
-    (home-page "https://r-packages.gitlab.io/behaviorchange")
+    (home-page "https://behaviorchange.opens.science")
     (synopsis "Tools for Behavior Change Researchers and Professionals")
     (description
      "This package contains specialised analyses and visualisation tools for behavior
@@ -21897,13 +21929,13 @@ external and internal data.  This methodology based on Psioda et al (2025)
 (define-public r-beastjar
   (package
     (name "r-beastjar")
-    (version "10.5.0")
+    (version "10.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeastJar" version))
        (sha256
-        (base32 "1qddk86fjirl8ikhfxrs8lwdy4bx3fkfyn2k8c9qa6qfix7vrhfw"))))
+        (base32 "11zr6a97wwgzf8pxwxq8pkp9s5zkdzh4fjn4rg08xzfys9zjvcnl"))))
     (properties `((upstream-name . "BeastJar")))
     (build-system r-build-system)
     (arguments
@@ -29288,46 +29320,6 @@ generated across several batches.  See Coleman et al. (2022)
      "This package provides consistent batch means estimation of Monte Carlo standard
 errors.")
     (license license:gpl2+)))
-
-(define-public r-batchllm
-  (package
-    (name "r-batchllm")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "batchLLM" version))
-       (sha256
-        (base32 "0y7s0m2gdynqcnnf4yar8ga7y53km7a03izaf4ds254349dhkk0y"))))
-    (properties `((upstream-name . "batchLLM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spscomps
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shinydashboard
-                             r-shiny
-                             r-rlang
-                             r-readxl
-                             r-readr
-                             r-openai
-                             r-jsonlite
-                             r-httr
-                             r-gemini-r
-                             r-dt
-                             r-dplyr
-                             r-digest))
-    (home-page "https://github.com/dylanpieper/batchLLM")
-    (synopsis "Batch Process LLM Text Completions Using a Data Frame")
-    (description
-     "Batch process large language model (LLM) text completions using data frame rows,
-with support for @code{OpenAI's} GPT (<https://chat.openai.com>), Anthropic's
-Claude (<https://claude.ai>), and Google's Gemini (<https://gemini.google.com>).
- Includes features such as local storage, metadata logging, API rate limiting
-delays, and a shiny app addin.")
-    (license license:expat)))
 
 (define-public r-batchgetsymbols
   (package

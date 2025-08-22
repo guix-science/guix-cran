@@ -3416,13 +3416,13 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
 (define-public r-tspredit
   (package
     (name "r-tspredit")
-    (version "1.2.727")
+    (version "1.2.737")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tspredit" version))
        (sha256
-        (base32 "18d6i1g7d482gjj92rqfkr8vs05rvscwkfz06f1rq69mqq8sk1gb"))))
+        (base32 "08rqnam9232xrqnccvcgpdr6a1mrwqrwb6dyrav5vrdby4slsdjd"))))
     (properties `((upstream-name . "tspredit")))
     (build-system r-build-system)
     (arguments
@@ -17921,13 +17921,13 @@ common support calculations, and plotting useful summaries of these.")
 (define-public r-tidytransit
   (package
     (name "r-tidytransit")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytransit" version))
        (sha256
-        (base32 "174h4ly85bn7c4sr9nnzdfybnm2nm33hw8rvk6j9xwj78bg5m0k7"))))
+        (base32 "16i7jg6dz7vz2nvc8h1d6y8jkkpg67d42j0ii4y8dcnmrhklczds"))))
     (properties `((upstream-name . "tidytransit")))
     (build-system r-build-system)
     (arguments
@@ -21497,13 +21497,13 @@ Skaltsa et al. (2010) <doi:10.1002/bimj.200900294> and Heagerty et al. (2000)
 (define-public r-thresholdroc
   (package
     (name "r-thresholdroc")
-    (version "2.9.4")
+    (version "2.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ThresholdROC" version))
        (sha256
-        (base32 "1vh4fx8vbk5w6nrgkldnhxbhcdcrdc7sxhvm0gsn1gh7w5cgndq7"))))
+        (base32 "1gz72yy34j6h6fs0bh58rahj96yycmi2djfyc3kwckaibxl9kc50"))))
     (properties `((upstream-name . "ThresholdROC")))
     (build-system r-build-system)
     (arguments
@@ -23015,13 +23015,13 @@ or ?tframe.Intro for more details. (User utilities are in package tfplot.).")
 (define-public r-tfprobability
   (package
     (name "r-tfprobability")
-    (version "0.15.1")
+    (version "0.15.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfprobability" version))
        (sha256
-        (base32 "0as8lciyh463x91gv290zzp9sjsrrvgcwiliyi9y5dp0qbj4505x"))))
+        (base32 "0v6l3g9b23819q3c711v4jz9m1syfpfjvqxy26m32hka754f2s4j"))))
     (properties `((upstream-name . "tfprobability")))
     (build-system r-build-system)
     (arguments
@@ -23288,20 +23288,19 @@ provides a local server for testing cloudml compatible services.")
 (define-public r-tfdatasets
   (package
     (name "r-tfdatasets")
-    (version "2.17.0")
+    (version "2.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfdatasets" version))
        (sha256
-        (base32 "1bvm1yk204c64ywva672q1pf9safnkyb7jlwaqz9jkgmqa9wwlxy"))))
+        (base32 "0fyzi69g98ljlya1dk2c9gwkvh6n1spxbq1ycm93wsnvdrpi95lv"))))
     (properties `((upstream-name . "tfdatasets")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-tensorflow
                              r-rlang
                              r-reticulate
@@ -27596,13 +27595,13 @@ manipulation of application layout and plot or table settings.")
 (define-public r-teal-transform
   (package
     (name "r-teal-transform")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.transform" version))
        (sha256
-        (base32 "0fpbynnsi1nd44c71wqy1pf2578ysxcpyzhbn43y7q6shkrzg5dw"))))
+        (base32 "0wwfqcgwnqdcdzzp5rdnfj11qdafwvbxxr24zyx4z7mgb37kjnya"))))
     (properties `((upstream-name . "teal.transform")))
     (build-system r-build-system)
     (arguments
@@ -27618,7 +27617,7 @@ manipulation of application layout and plot or table settings.")
                              r-shiny
                              r-rlang
                              r-logger
-                             r-lifecycle
+                             r-htmltools
                              r-dplyr
                              r-checkmate))
     (native-inputs (list r-rmarkdown r-knitr))
@@ -27633,13 +27632,13 @@ facilitates dataset merging in teal framework.")
 (define-public r-teal-slice
   (package
     (name "r-teal-slice")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.slice" version))
        (sha256
-        (base32 "1lrp0db68bw8bpcmssfza5iic5crmq4j0ixj9c696bqgbfm3951j"))))
+        (base32 "1c6kskzf7qd4kfdfx6fvlh72qvqlq7c9lxqx8njr60l37l48rzwz"))))
     (properties `((upstream-name . "teal.slice")))
     (build-system r-build-system)
     (arguments
@@ -27656,12 +27655,12 @@ facilitates dataset merging in teal framework.")
                              r-r6
                              r-plotly
                              r-logger
-                             r-lifecycle
                              r-jsonlite
                              r-htmltools
                              r-dplyr
                              r-checkmate
-                             r-bslib))
+                             r-bslib
+                             r-bsicons))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/teal.slice/")
     (synopsis "Filter Module for 'teal' Applications")
@@ -27716,13 +27715,13 @@ supporting reproducible research and analysis.")
 (define-public r-teal-modules-general
   (package
     (name "r-teal-modules-general")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.modules.general" version))
        (sha256
-        (base32 "1pimw2kmhzg1sx8jia8xc3qqyc06q70ma1ri0m5yja7n2f9jrjnb"))))
+        (base32 "01hmiwvdcnwg88xanibrvw2hy1n9gn7n9cvd00flvq0gjyg5dpvg"))))
     (properties `((upstream-name . "teal.modules.general")))
     (build-system r-build-system)
     (arguments
@@ -27765,7 +27764,8 @@ supporting reproducible research and analysis.")
                              r-dt
                              r-dplyr
                              r-colourpicker
-                             r-checkmate))
+                             r-checkmate
+                             r-bslib))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/teal.modules.general/")
     (synopsis "General Modules for 'teal' Applications")
@@ -27779,13 +27779,13 @@ and analysis.")
 (define-public r-teal-modules-clinical
   (package
     (name "r-teal-modules-clinical")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.modules.clinical" version))
        (sha256
-        (base32 "1hkd2vgkivmmy4fwp9bc58vqdhq5bxilsb7hlkdv5gayxh09wmga"))))
+        (base32 "1qjpx7hiaax89n7xb35ifmqpkl2w9vqq3qw7m6m88dhgyjzlz6cj"))))
     (properties `((upstream-name . "teal.modules.clinical")))
     (build-system r-build-system)
     (arguments
@@ -27813,10 +27813,12 @@ and analysis.")
                              r-lifecycle
                              r-ggrepel
                              r-ggplot2
+                             r-formatters
                              r-dt
                              r-dplyr
                              r-cowplot
                              r-checkmate
+                             r-bslib
                              r-broom))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/teal.modules.clinical/")
@@ -27905,13 +27907,13 @@ reproducibility in teal applications.")
 (define-public r-teal
   (package
     (name "r-teal")
-    (version "0.16.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal" version))
        (sha256
-        (base32 "00vvvq3953mlhydyky0dchpfy0hpmp55p58wsjprc9k62dkl5g1m"))))
+        (base32 "0257dvkvfbdk12jam4x6v1xjs4h8sh68n04zm6qb2hsrk4pp7h21"))))
     (properties `((upstream-name . "teal")))
     (build-system r-build-system)
     (arguments
@@ -27931,7 +27933,9 @@ reproducibility in teal applications.")
                              r-jsonlite
                              r-htmltools
                              r-cli
-                             r-checkmate))
+                             r-checkmate
+                             r-bslib
+                             r-bsicons))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/teal/")
     (synopsis "Exploratory Web Apps for Analyzing Clinical Trials Data")

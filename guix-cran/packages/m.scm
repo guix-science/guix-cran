@@ -22094,13 +22094,13 @@ increments (BAI) was described by JevÅ¡enak and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.22.1")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "0253shqbif5kbrfm840wabivdhsca2n9qb9fckwbw4i6jczl52k7"))))
+        (base32 "04iy3x6ys53zjfjxq35pw0av9hwwkzd0n2z7jrd8j1m844ng5xww"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (arguments
@@ -22122,7 +22122,6 @@ increments (BAI) was described by JevÅ¡enak and Skudnik (2021)
                              r-glue
                              r-git2r
                              r-fs
-                             r-forge
                              r-base64enc))
     (home-page "https://github.com/mlflow/mlflow")
     (synopsis "Interface to 'MLflow'")
@@ -22950,23 +22949,25 @@ tests, and generation of similarity matrices.")
 (define-public r-mkmeans
   (package
     (name "r-mkmeans")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MKMeans" version))
        (sha256
-        (base32 "1gfh53v65g7c102w787wvjzdnw3n1ifx0f5hf8mwz4l6s6nfz3r3"))))
+        (base32 "09n4d87m7d9500ix24mncn80ap44daa1g836ykmwpcazysb0ag02"))))
     (properties `((upstream-name . "MKMeans")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=MKMeans")
     (synopsis "Modern K-Means (MKMeans) Clustering Algorithm")
     (description
-     "It's a Modern K-Means clustering algorithm allowing data of any number of
-dimensions, any initial center, and any number of clusters to expect.")
+     "It's a Modern K-Means clustering algorithm which works for data of any number of
+dimensions, has no limit with number of clusters expected, and can start with
+any initial cluster centers.")
     (license license:gpl2)))
 
 (define-public r-mkle
@@ -24041,13 +24042,13 @@ normal and t mixture models.")
 (define-public r-mixlm
   (package
     (name "r-mixlm")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixlm" version))
        (sha256
-        (base32 "1dvcq2apqwnabhi383n2zhpkfg3hcdwszrarx7nbfhmpj3h3v7hq"))))
+        (base32 "0bins35cgkzgzwfgq459p10z78p9j901mpgxhc1m00rgp0nzs4f8"))))
     (properties `((upstream-name . "mixlm")))
     (build-system r-build-system)
     (arguments
@@ -24698,13 +24699,13 @@ o1-preview for code structure and documentation.")
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "10hzc5c3k8v8nz2m2ca0zim7q3gragv0ajwab42hky7018zbnd68"))))
+        (base32 "11dcqr7gg60fm3alcfikilv4gns474w5imhw28j3phiwaimkqfg0"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (arguments
@@ -34274,13 +34275,13 @@ and Brown, Sibly and Kodric-Brown (2012) <doi:10.1002/9781119968535.ch>).")
 (define-public r-metaquant
   (package
     (name "r-metaquant")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaquant" version))
        (sha256
-        (base32 "03dykasfxfhyn0cjka0mzy987d2ca2rkmb94f6rivrnvfjk1h159"))))
+        (base32 "1m80nzfixc9jg4b66id1kkpf5a7k90fdv96a3hv262vfkz442mz2"))))
     (properties `((upstream-name . "metaquant")))
     (build-system r-build-system)
     (arguments
@@ -34621,13 +34622,13 @@ procedure.")
 (define-public r-metanlp
   (package
     (name "r-metanlp")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetaNLP" version))
        (sha256
-        (base32 "1aahcwpy1vxxlbkhk6q1fq23nq1h7d5k0yvr2s9fa40i5a3jhk3p"))))
+        (base32 "1fc5cwzbdmc0kskly3m55gg52wm530fn42rxpnqrnjjxcj5h2szb"))))
     (properties `((upstream-name . "MetaNLP")))
     (build-system r-build-system)
     (arguments
@@ -40091,13 +40092,13 @@ using NVIDIA GPGPUs.  R. Piliszek et al. (2019) <doi:10.32614/RJ-2019-019>.")
 (define-public r-mdendro
   (package
     (name "r-mdendro")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdendro" version))
        (sha256
-        (base32 "0am5kda7ydwiniqmypzmmqnaz4pkd9hp82vm0pdk3plak5b0dz6w"))))
+        (base32 "1z5zxxyska9zk6dgwbi403hdpjqs0s99f7i40hqp8yl7779i5vfh"))))
     (properties `((upstream-name . "mdendro")))
     (build-system r-build-system)
     (arguments
@@ -48054,13 +48055,13 @@ or Thunderforest').")
 (define-public r-mapstats
   (package
     (name "r-mapstats")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapStats" version))
        (sha256
-        (base32 "1jf5dgf9i9339xzk9fbipy9b2fkwdv6sy1ciif921snwj176zck9"))))
+        (base32 "19s3wvsbyybz096zxjm1vvpi75g1hayrl3xzhz38v1dskvdl52j9"))))
     (properties `((upstream-name . "mapStats")))
     (build-system r-build-system)
     (arguments
@@ -49113,13 +49114,13 @@ in R; and Mapbox Tiling Service and tippecanoe for generating map tiles.  See
 (define-public r-mapbayr
   (package
     (name "r-mapbayr")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapbayr" version))
        (sha256
-        (base32 "07bl6vp86c7ydwln130d2ccvizwjvd7zq1l4ifl1nspbh6p0i359"))))
+        (base32 "1kbrg30wyplkvrzdxmr8ch4na5z8qxgn3dbs9b6nsfp0arf3px9r"))))
     (properties `((upstream-name . "mapbayr")))
     (build-system r-build-system)
     (arguments
@@ -51645,13 +51646,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "1fr04177q2876v45c23n9r8z4wy2afrlb9vncrxd3kgzc6p469wm"))))
+        (base32 "10vm3r6xa60grgsb5f97ifwdwm3s5glg9gz37gb310w6xi52z3ih"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (arguments

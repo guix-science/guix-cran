@@ -5613,13 +5613,13 @@ Ministry of Agriculture and Fishing of France.")
 (define-public r-keng
   (package
     (name "r-keng")
-    (version "2024.12.15")
+    (version "2025.8.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Keng" version))
        (sha256
-        (base32 "1cgb56p6hhrnajhplh4dambidikza4h7v67g0vz5szfnwsh1h0mh"))))
+        (base32 "1z0zxlp099a4l098dsbvvj20pvb37mwzjx6fw37c6fv4dxkbshjr"))))
     (properties `((upstream-name . "Keng")))
     (build-system r-build-system)
     (arguments
@@ -5633,14 +5633,14 @@ Ministry of Agriculture and Fishing of France.")
 Keng currently has a built-in dataset depress, and could (1) scale a vector; (2)
 compute the cut-off values of Pearson's r with known sample size; (3) test the
 significance and compute the post-hoc power for Pearson's r with known sample
-size; (4) conduct prior power analysis and plan the sample size for Pearson's r;
-(5) compare @code{lm()}'s fitted outputs using R-squared, f_squared, post-hoc
+size; (4) conduct a priori power analysis and plan the sample size for Pearson's
+r; (5) compare @code{lm()}'s fitted outputs using R-squared, f_squared, post-hoc
 power, and PRE (Proportional Reduction in Error, also called partial R-squared
 or partial Eta-squared); (6) calculate PRE from partial correlation, Cohen's f,
-or f_squared; (7) conduct prior power analysis and plan the sample size for one
-or a set of predictors in regression analysis; (8) conduct post-hoc power
+or f_squared; (7) conduct a priori power analysis and plan the sample size for
+one or a set of predictors in regression analysis; (8) conduct post-hoc power
 analysis for one or a set of predictors in regression analysis with known sample
-size.")
+size; (9) randomly pick numbers for Chinese Super Lotto and Double Color Balls.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-kendallrandomwalks

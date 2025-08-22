@@ -2593,13 +2593,13 @@ performance.")
 (define-public r-httk
   (package
     (name "r-httk")
-    (version "2.7.0")
+    (version "2.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "httk" version))
        (sha256
-        (base32 "0ppdvqy049iw9b5hn0270ljr04srm1l5wm5ji9i7dbxyg9j8zis8"))))
+        (base32 "1qzg62fpbyhfnscwd6aawh3wpdckcjzpzw1dfzsdx2a3xn0928xi"))))
     (properties `((upstream-name . "httk")))
     (build-system r-build-system)
     (arguments
@@ -2646,7 +2646,7 @@ These functions and data provide a set of tools for using IVIVE to convert
 concentrations from high-throughput screening experiments (for example, Tox21,
 @code{ToxCast}) to real-world exposures via reverse dosimetry (also known as
 \"RTK\") (Wetmore et al., 2015 <doi:10.1093/toxsci/kfv171>).")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-htt
   (package
@@ -10718,42 +10718,6 @@ R's @code{data.frame()} and @code{as.data.frame()} with @code{stringsAsFactors}
 option set to HELLNO ( which in turn equals FALSE ) by default.")
     (license license:expat)))
 
-(define-public r-hellmer
-  (package
-    (name "r-hellmer")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hellmer" version))
-       (sha256
-        (base32 "1g00cpfr3nn1f1c38ll3hwxhzc93y0p0gs428d0jdihnsbv5yd7d"))))
-    (properties `((upstream-name . "hellmer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-s7
-                             r-purrr
-                             r-jsonlite
-                             r-future
-                             r-furrr
-                             r-ellmer
-                             r-cli
-                             r-beepr))
-    (native-inputs (list r-knitr))
-    (home-page "https://dylanpieper.github.io/hellmer/")
-    (synopsis "Batch Processing for Chat Models")
-    (description
-     "Batch processing framework for ellmer chat models.  Provides both sequential and
-parallel processing of chat interactions with features including tool calling
-and structured data extraction.  Enables workflow management through progress
-tracking and recovery and automatic retry with backoff.  Additional
-quality-of-life features include verbosity (or echo) control and sound
-notifications.  Parallel processing is implemented via the future framework.
-Includes methods for retrieving progress status, chat texts, and chat objects.")
-    (license license:expat)))
-
 (define-public r-hellcor
   (package
     (name "r-hellcor")
@@ -14487,13 +14451,13 @@ flexibility to incorporate custom parameterizations using external datasets.")
 (define-public r-hassediagrams
   (package
     (name "r-hassediagrams")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hassediagrams" version))
        (sha256
-        (base32 "054h5nykv180mrarfg1v4byl1v73bmjlws02xcin90alxlpm29l0"))))
+        (base32 "1d5p0yb24b1p88x2q8d6zzy3dgc3ch93sajnfs6brbr8a13j7mkk"))))
     (properties `((upstream-name . "hassediagrams")))
     (build-system r-build-system)
     (arguments
@@ -14835,13 +14799,13 @@ rate only in the weak sense, rather than the strong sense as intended.")
 (define-public r-harbinger
   (package
     (name "r-harbinger")
-    (version "1.2.727")
+    (version "1.2.737")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harbinger" version))
        (sha256
-        (base32 "1ca6d7dj05139ylcv8b3dhlw4dkyf6rg0zqvvpylhhak4zimfh62"))))
+        (base32 "0z5xvfv29fc57fcprc477r9pky9ak90hkhqj1hnd2r6n2k8i2rqj"))))
     (properties `((upstream-name . "harbinger")))
     (build-system r-build-system)
     (arguments
@@ -15244,13 +15208,13 @@ calculation see Joseph de Mendoza y RÃ­os (1795)
 (define-public r-hann
   (package
     (name "r-hann")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hann" version))
        (sha256
-        (base32 "1dxs7ks1mrcd98bhar78an0659isdnpj7x4xi1y40zffndivkpkz"))))
+        (base32 "10cl8adcib98qjwkbin2plsrjdzgsnj5p8r94hrkg48yxbw80ziy"))))
     (properties `((upstream-name . "hann")))
     (build-system r-build-system)
     (arguments
