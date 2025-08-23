@@ -2707,20 +2707,23 @@ possible by representing R expressions using a tree structure.")
 (define-public r-autograph
   (package
     (name "r-autograph")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autograph" version))
        (sha256
-        (base32 "1h3raj1l1q78xachspzsv280j0d2c6ac9ah2fzczrs2da07gjb46"))))
+        (base32 "0qldzzzk3g7aiv3x35klf4amb7bslxrkf47mh4p970lp1am10gqr"))))
     (properties `((upstream-name . "autograph")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-tidygraph
                              r-manynet
+                             r-igraph
+                             r-ggraph
                              r-ggplot2
                              r-ggdendro
                              r-dplyr
@@ -8611,6 +8614,40 @@ West (1997).  Particular cases include the extraction of trend and seasonal
 components.")
     (license license:gpl2+)))
 
+(define-public r-ard
+  (package
+    (name "r-ard")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aRD" version))
+       (sha256
+        (base32 "0f82bp57hvwallm21hnl3qq8w8phgs5pbnrg5hzlsk10gyali7hg"))))
+    (properties `((upstream-name . "aRD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quadprog
+                             r-osqp
+                             r-matrixstats
+                             r-matrix
+                             r-checkmate
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/UdS-MF-IMBEI/aRD")
+    (synopsis
+     "Adjusted Risk Differences via Specifically Penalized Likelihood")
+    (description
+     "Fits a linear-binomial model using a modified Newton-type algorithm for solving
+the maximum likelihood estimation problem under linear box constraints.  Similar
+methods are described in Wagenpfeil, SchÃ¶pe and Bekhit (2025,
+ISBN:9783111341972) \"Estimation of adjusted relative risks in log-binomial
+regression using the BSW algorithm\".  In: Mau, Mukhin, Wang and Xu (Eds.),
+Biokybernetika.  De Gruyter, Berlin, pp.  665â676.")
+    (license license:gpl3+)))
+
 (define-public r-arctosr
   (package
     (name "r-arctosr")
@@ -13975,13 +14012,13 @@ evaluation of the outputs.")
 (define-public r-andromeda
   (package
     (name "r-andromeda")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Andromeda" version))
        (sha256
-        (base32 "1rmdsjdlz5gnrf4nmgym6gjnrqxzdbh53bnbavi35170b462jmjz"))))
+        (base32 "001glbcqr442ijk9dyzymnyd0lzards2b8yqkriml8ad56my1gfd"))))
     (properties `((upstream-name . "Andromeda")))
     (build-system r-build-system)
     (arguments

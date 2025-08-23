@@ -13690,13 +13690,13 @@ GPL-3).")
 (define-public r-biovizseq
   (package
     (name "r-biovizseq")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioVizSeq" version))
        (sha256
-        (base32 "05sw51g3yqmn5m9r1dcwlqdbw490yrgzd7d0jk4vwk4kq0viphsq"))))
+        (base32 "1y7bn5xh18v7kq57bs11cq8ivkjzwh2bz0nhcg4x8zrd99rsnprz"))))
     (properties `((upstream-name . "BioVizSeq")))
     (build-system r-build-system)
     (arguments
@@ -18122,13 +18122,13 @@ hidden activity for each transcription factor.")
 (define-public r-biclustermd
   (package
     (name "r-biclustermd")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biclustermd" version))
        (sha256
-        (base32 "1knhz96k5giq3d16i3akl5gbxrzx3vxm97cb3ivaw835fr9zrmr5"))))
+        (base32 "0q3lmw93l3vdy8bk36q5c3vw1kmxy65i17a5yi2k4g19bmmgzs2m"))))
     (properties `((upstream-name . "biclustermd")))
     (build-system r-build-system)
     (arguments
@@ -19901,13 +19901,13 @@ scaffolds from low-depth sequencing data.")
 (define-public r-bevimed
   (package
     (name "r-bevimed")
-    (version "6.0")
+    (version "7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeviMed" version))
        (sha256
-        (base32 "05br55m97c1wlsig9z3kyv7d3sab3gcis0bkqn1w6rlsknxajmdm"))))
+        (base32 "0qyrlv19pxbzfmsdif63lin88j2c6lavazwylyds2xppp9psa50d"))))
     (properties `((upstream-name . "BeviMed")))
     (build-system r-build-system)
     (arguments
@@ -30556,19 +30556,20 @@ local explanation methods.")
 (define-public r-bartman
   (package
     (name "r-bartman")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bartMan" version))
        (sha256
-        (base32 "10g9ymfjnjzykrxkws4iayzz69mi4a5vjba49js740ds6i1r3zq5"))))
+        (base32 "02snf2az95jg44pjx91gzwxlwy78j1izb7nb2qwfw4h9a747az5n"))))
     (properties `((upstream-name . "bartMan")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidytreatment
+    (propagated-inputs (list r-vctrs
+                             r-tidytreatment
                              r-tidyr
                              r-tidygraph
                              r-tidybayes

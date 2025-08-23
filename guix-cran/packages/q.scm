@@ -2406,13 +2406,13 @@ Eckert, S. Morin, and D. Verfaillie. (2019) <doi:10.1175/JCLI-D-18-0606.1>.")
 (define-public r-qualtrics
   (package
     (name "r-qualtrics")
-    (version "3.2.1")
+    (version "3.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qualtRics" version))
        (sha256
-        (base32 "1f63524a4xwdd2wgv4b8ny24xqc4kgcca7ql9c0v71l7yx6ia06r"))))
+        (base32 "1q40hlx983lrm4xak7gx2z1hkbnqaa7g109ssysdqk6x0l9ic4m0"))))
     (properties `((upstream-name . "qualtRics")))
     (build-system r-build-system)
     (arguments

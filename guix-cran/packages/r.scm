@@ -3533,13 +3533,13 @@ the theory part of the vignette.")
 (define-public r-rtrack
   (package
     (name "r-rtrack")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rtrack" version))
        (sha256
-        (base32 "0aq4487vj0c9hcq1vgqcyjr3pzyjx4w008x8lrhimjvsqxd5vngd"))))
+        (base32 "1l2hsmgn51psrv567ggvcp3gjibjrl40ffkf2jcvdmplynsdd8ds"))))
     (properties `((upstream-name . "Rtrack")))
     (build-system r-build-system)
     (arguments
@@ -3551,7 +3551,6 @@ the theory part of the vignette.")
                              r-scales
                              r-rjson
                              r-readxl
-                             r-rcurl
                              r-randomforest
                              r-pbapply
                              r-openxlsx
@@ -7839,13 +7838,13 @@ on the SDMX XML standard format (SDMX-ML).")
 (define-public r-rsdi
   (package
     (name "r-rsdi")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rSDI" version))
        (sha256
-        (base32 "1rmbxl010n38lrn0z9prn2hzb6afk889gipbahchmcv7f767sdwa"))))
+        (base32 "0bik8l5mk48qp8xr37r4290m5hzxhvxibvd7mlanh68pjyahhl1c"))))
     (properties `((upstream-name . "rSDI")))
     (build-system r-build-system)
     (arguments
@@ -10411,6 +10410,36 @@ memory.  See citation(\"@code{rpyANTs}\") for more reference information.")
      "Client for accessing data journalism APIs from @code{ProPublica}
 <http://www.propublica.org/>.")
     (license license:gpl2)))
+
+(define-public r-rpublic
+  (package
+    (name "r-rpublic")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rPublic" version))
+       (sha256
+        (base32 "1vqjrkih417f9bqmk9i1mryrjjxhxwhakb2xf59y9vpfph4f2g1h"))))
+    (properties `((upstream-name . "rPublic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uuid
+                             r-stringr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rPublic")
+    (synopsis "'Public Trading API'")
+    (description
+     "The Public Trading API <https://public.com/api/docs> allows clients to access
+their brokerage accounts, request market data, and place stock/etf/option
+orders.")
+    (license license:gpl3)))
 
 (define-public r-rptr
   (package
@@ -14454,13 +14483,13 @@ generative large language models locally.")
 (define-public r-roll
   (package
     (name "r-roll")
-    (version "1.1.7")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roll" version))
        (sha256
-        (base32 "0kl3ag3yslw91nwhlyk16qfxs336n6x9087h7vgchi09i41cr04g"))))
+        (base32 "1zk7xjjavg2jhniwf24yzyj1a26g7651ls48a30hqjm3wjd8xpkf"))))
     (properties `((upstream-name . "roll")))
     (build-system r-build-system)
     (arguments
@@ -15590,13 +15619,13 @@ D. (2018) <doi:10.1007/S11634-017-0295-9>, Jiang Y., et al (1996)
 (define-public r-roclang
   (package
     (name "r-roclang")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roclang" version))
        (sha256
-        (base32 "1irqscbj89mfkbq66kb7k1cx2ygilqwr6spxsm36rgqfbk1j5g6m"))))
+        (base32 "042pw627p4453dry6l7whp6p5065m5lllmz0zpwi4lhdqgnylp0p"))))
     (properties `((upstream-name . "roclang")))
     (build-system r-build-system)
     (arguments
@@ -18294,13 +18323,13 @@ proposed in Gerstenberger, Vogel and Wendler (2020)
 (define-public r-robcompositions
   (package
     (name "r-robcompositions")
-    (version "2.4.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robCompositions" version))
        (sha256
-        (base32 "1kln6b95hjx3cyr9957ga7a5p6lnafn49q3pnb7vlvcw3p0zyhrf"))))
+        (base32 "0wa8l6rqyf504ivdx3w2cskpixhwaa78bya5ylbirrr99c3miz1q"))))
     (properties `((upstream-name . "robCompositions")))
     (build-system r-build-system)
     (arguments
@@ -18309,6 +18338,7 @@ proposed in Gerstenberger, Vogel and Wendler (2020)
     (propagated-inputs (list r-zcompositions
                              r-vim
                              r-tidyr
+                             r-sparsepca
                              r-rrcov
                              r-robusthd
                              r-robustbase
@@ -18323,9 +18353,7 @@ proposed in Gerstenberger, Vogel and Wendler (2020)
                              r-ggplot2
                              r-ggfortify
                              r-ggally
-                             r-fpc
                              r-fda
-                             r-e1071
                              r-dplyr
                              r-data-table
                              r-cvtools
@@ -19743,13 +19771,13 @@ values for further processing.")
 (define-public r-rmweather
   (package
     (name "r-rmweather")
-    (version "0.2.62")
+    (version "0.2.63")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmweather" version))
        (sha256
-        (base32 "0s2y0a6fskczxn3v0d2qdlz40nhv0sxmvpiwsw07hpbhn4zgp0zx"))))
+        (base32 "1g98qip4p1vnzdsxgg1fp4jis1m873gwxswhlj0s4c6v6qif1pdl"))))
     (properties `((upstream-name . "rmweather")))
     (build-system r-build-system)
     (arguments
@@ -25474,13 +25502,13 @@ Begg CB, Zabor EC, Bernstein JL, Bernstein L, Press MF, Seshan VE (2013)
 (define-public r-risk-assessr
   (package
     (name "r-risk-assessr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "risk.assessr" version))
        (sha256
-        (base32 "1lr5818b2r2w9pn1zzlzx58yvqlfx87iyr42yz6m6abj3l4nx5m1"))))
+        (base32 "1sc6c9w43h0nyj04mk2n4ya6y54xd0jl8xxla7hv9y3byzy464b0"))))
     (properties `((upstream-name . "risk.assessr")))
     (build-system r-build-system)
     (arguments
@@ -57553,13 +57581,13 @@ of a new method and how it compares to some of the standard ones.")
 (define-public r-r2rtf
   (package
     (name "r-r2rtf")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2rtf" version))
        (sha256
-        (base32 "01pfdkx2xnyb035zl1vjpnbyhxx1i0z0244hk98i9fmmc68vvaaj"))))
+        (base32 "117a9v0mn8l9h6z87idgx68lmh10pf0f381lb0jfyxkb0szmvhgh"))))
     (properties `((upstream-name . "r2rtf")))
     (build-system r-build-system)
     (arguments

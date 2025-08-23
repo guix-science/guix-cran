@@ -788,13 +788,13 @@ Operating Policy (SOP).")
 (define-public r-wrproteo
   (package
     (name "r-wrproteo")
-    (version "1.13.1")
+    (version "1.13.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrProteo" version))
        (sha256
-        (base32 "0disi2ylkhqxwcz1q6sgq3l14373wjamwk0qfnxp924ylspp1nyk"))))
+        (base32 "02vg6rq5fj4hl9clp56i0107g1hfdh3aj0wrnyk3klwgy04pb0x6"))))
     (properties `((upstream-name . "wrProteo")))
     (build-system r-build-system)
     (arguments

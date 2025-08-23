@@ -715,13 +715,13 @@ work of Murray and Reiter (2016) <doi:10.1080/01621459.2016.1174132>.")
 (define-public r-synergylmm
   (package
     (name "r-synergylmm")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SynergyLMM" version))
        (sha256
-        (base32 "1028r3r2d5diw2d1dps7ffxgx809lp1cjvwhikvp0ixzxh0nm1f7"))))
+        (base32 "1cl9sskvfvw915z6cya9zrc582bl8jr3bnpmn8yqjpcf5n1qsqjq"))))
     (properties `((upstream-name . "SynergyLMM")))
     (build-system r-build-system)
     (arguments
@@ -791,6 +791,33 @@ GaÅecki and Burzykowski (2013, <doi:10.1007/978-1-4614-3900-4>).")
 using stacked imputations.  Gu, T., Taylor, J.M.G. and Mukherjee, B. (2021) A
 synthetic data integration framework to leverage external summary-level
 information from heterogeneous populations <@code{arXiv:2106.06835>}.")
+    (license license:gpl2)))
+
+(define-public r-syncsa
+  (package
+    (name "r-syncsa")
+    (version "1.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SYNCSA" version))
+       (sha256
+        (base32 "0kgzz6ami08n4cxfqvc76ik2rx233nfd1krx8hwv3q4pi05pswd2"))))
+    (properties `((upstream-name . "SYNCSA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan r-rcpparmadillo r-permute r-fd))
+    (home-page "https://cran.r-project.org/package=SYNCSA")
+    (synopsis
+     "Analysis of Functional and Phylogenetic Patterns in Metacommunities")
+    (description
+     "Analysis of metacommunities based on functional traits and phylogeny of the
+community components.  The functions that are offered here implement for the R
+environment methods that have been available in the SYNCSA application written
+in C++ (by Valerio Pillar, available at
+<http://ecoqua.ecologia.ufrgs.br/SYNCSA.html>).")
     (license license:gpl2)))
 
 (define-public r-syncrng
@@ -3376,13 +3403,13 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svemnet
   (package
     (name "r-svemnet")
-    (version "1.4.0")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVEMnet" version))
        (sha256
-        (base32 "1abhy3h4x7viyh4w679k2w229xnzrnpw50h50wfjna0srvn8m1fh"))))
+        (base32 "0m769xpvpkq9ikw8i866jpnqhp8mp5wm44fw4cyjwpg1wxxcmfph"))))
     (properties `((upstream-name . "SVEMnet")))
     (build-system r-build-system)
     (arguments
@@ -7226,13 +7253,13 @@ information.")
 (define-public r-superpower
   (package
     (name "r-superpower")
-    (version "0.2.4")
+    (version "0.2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Superpower" version))
        (sha256
-        (base32 "0wmkdl14wdhm7hr30843rm8lzd6z5jpbpm94sxqh74w6ypxw89kf"))))
+        (base32 "1rdx4y3j3xg9m8czy25iwm0986i76r1kaj0b12lviihn87dqlwki"))))
     (properties `((upstream-name . "Superpower")))
     (build-system r-build-system)
     (arguments
@@ -15900,13 +15927,13 @@ function as well as at
 (define-public r-starwarsdb
   (package
     (name "r-starwarsdb")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "starwarsdb" version))
        (sha256
-        (base32 "00n9qqw4lbfk698qgvw8i42sy3dv5i5fiiqma3zks4rr9yspkldq"))))
+        (base32 "1v10sbx8csb70prkzxjvsdcynqhw7yzlwgl7xg9b8b1acqnddc6m"))))
     (properties `((upstream-name . "starwarsdb")))
     (build-system r-build-system)
     (arguments
@@ -15919,7 +15946,7 @@ function as well as at
     (description
      "This package provides data about the Star Wars movie franchise in a set of
 relational tables or as a complete @code{DuckDB} database.  All data was
-collected from the open source Star Wars API <https://swapi.dev/>.")
+collected from the open source Star Wars API.")
     (license license:expat)))
 
 (define-public r-starvz
@@ -22212,13 +22239,13 @@ Brodersen et al. (2015) <doi:10.1214/14-AOAS788>.")
 (define-public r-sport
   (package
     (name "r-sport")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sport" version))
        (sha256
-        (base32 "1vifh5x3rqnj0y7lzxhxa8jiiq9gza7r55kajcdib0hr65amwssk"))))
+        (base32 "15i43sa6ryyh9lp1hdkz99cm4845g74qmn2fw02ksgn924srihjr"))))
     (properties `((upstream-name . "sport")))
     (build-system r-build-system)
     (arguments
@@ -22237,7 +22264,7 @@ inversions nor likelihood estimation.  Parameters are updated sequentially, and
 computation doesn't require any additional RAM to make estimation feasible.
 Additionally, base of the package is written in C++ what makes sport computation
 even faster.  Methods used in the package refer to Mark E. Glickman (1999)
-<http://www.glicko.net/research/glicko.pdf>; Mark E. Glickman (2001)
+<https://www.glicko.net/research/glicko.pdf>; Mark E. Glickman (2001)
 <doi:10.1080/02664760120059219>; Ruby C. Weng, Chih-Jen Lin (2011)
 <https://www.jmlr.org/papers/volume12/weng11a/weng11a.pdf>; W. Penny, Stephen J.
 Roberts (1999) <doi:10.1109/IJCNN.1999.832603>.")
@@ -23769,13 +23796,13 @@ options for message passing and feature embedding.")
 (define-public r-spinifex
   (package
     (name "r-spinifex")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spinifex" version))
        (sha256
-        (base32 "11p8kjv9ws2qjx4gx8smsi4sqbzhr1jwgr7im4ayz5p7mq3w6r16"))))
+        (base32 "1hj08frhiqc2lk231b5qffzqdx0qdfydmgkp0q4yv8kr7j3x6mgx"))))
     (properties `((upstream-name . "spinifex")))
     (build-system r-build-system)
     (arguments
@@ -36883,13 +36910,13 @@ Kulldorff (1997) <doi:10.1080/03610929708831995>.")
 (define-public r-smer
   (package
     (name "r-smer")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smer" version))
        (sha256
-        (base32 "1k5z40agsn785h56wmnas89b1sdfhms25gm5zy7rvi751cz14638"))))
+        (base32 "1l075m8bslblm6043hpwcyg3vg0sfjx8166rfywpwp1in14xzyb0"))))
     (properties `((upstream-name . "smer")))
     (build-system r-build-system)
     (arguments
@@ -36902,6 +36929,7 @@ Kulldorff (1997) <doi:10.1080/03610929708831995>.")
                              r-rcpp
                              r-mvmapit
                              r-logging
+                             r-highfive
                              r-genio
                              r-dplyr
                              r-bh))
@@ -42523,13 +42551,13 @@ right-censoring times, and model parameters.")
 (define-public r-simsurvey
   (package
     (name "r-simsurvey")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimSurvey" version))
        (sha256
-        (base32 "0as8cifaymnd9rccynyhs4pfs27z0rhz18pbl0am0xvp3y7avbs0"))))
+        (base32 "12zbhvzl97skw44n2v2jyq89yawnd7g26kpdrxs93xbfbcgdiy8f"))))
     (properties `((upstream-name . "SimSurvey")))
     (build-system r-build-system)
     (arguments
@@ -42540,7 +42568,6 @@ right-censoring times, and model parameters.")
                              r-rlang
                              r-progress
                              r-plotly
-                             r-magrittr
                              r-lifecycle
                              r-foreach
                              r-doparallel
@@ -43620,13 +43647,13 @@ Lee, S., & Lee, D. K. (2018) <doi:10.4097/kja.d.18.00242>.")
 (define-public r-simplecolors
   (package
     (name "r-simplecolors")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simplecolors" version))
        (sha256
-        (base32 "1rckbcc2clxxj61q7z7d1d72q96fd9gvcl8hh8586ffcj5chvmgf"))))
+        (base32 "09y2vldzsi20qzhb4mf0xvhjbm4qivk0vrv5yljsa6myb3ph5rf2"))))
     (properties `((upstream-name . "simplecolors")))
     (build-system r-build-system)
     (arguments
@@ -48268,13 +48295,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-shiva
   (package
     (name "r-shiva")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ShiVa" version))
        (sha256
-        (base32 "0ms48qdir5hb12h50mz63f0h2wbicpjaf6sqisx4pp4r76g3hlgi"))))
+        (base32 "0smsbafni5xr1nj2b2fmabcj4fzwzip53r67glwmdc6qjfggc0nj"))))
     (properties `((upstream-name . "ShiVa")))
     (build-system r-build-system)
     (arguments
@@ -49905,13 +49932,13 @@ has been done by Lantz (2013, ISBN:9781782162148).")
 (define-public r-shinymixr
   (package
     (name "r-shinymixr")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyMixR" version))
        (sha256
-        (base32 "04xdlppvls4r872dsaggc0qi1i56xdyrvrgyi6annxsh8jif30b3"))))
+        (base32 "1kbbgp60q7yhq8hmyjxla9md3f5v9zr2gc22pz01sw8pq3pyljbw"))))
     (properties `((upstream-name . "shinyMixR")))
     (build-system r-build-system)
     (arguments
@@ -57968,6 +57995,43 @@ based on a new influence function-based, augmented inverse intensity-weighted
 estimator.")
     (license license:expat)))
 
+(define-public r-senseweight
+  (package
+    (name "r-senseweight")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "senseweight" version))
+       (sha256
+        (base32 "06nnzglagh9q9iqd27yr10c18hhr0nn5wyhbaaidb4gxvxjkyiv1"))))
+    (properties `((upstream-name . "senseweight")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-weightit
+                             r-survey
+                             r-rlang
+                             r-metr
+                             r-kableextra
+                             r-ggrepel
+                             r-ggplot2
+                             r-estimatr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://melodyyhuang.github.io/senseweight/")
+    (synopsis "Sensitivity Analysis for Weighted Estimators")
+    (description
+     "This package provides tools to conduct interpretable sensitivity analyses for
+weighted estimators, introduced in Huang (2024) <doi:10.1093/jrsssa/qnae012> and
+Hartman and Huang (2024) <doi:10.1017/pan.2023.12>.  The package allows
+researchers to generate the set of recommended sensitivity summaries to evaluate
+the sensitivity in their underlying weighting estimators to omitted moderators
+or confounders.  The tools can be flexibly applied in causal inference settings
+(i.e., in external and internal validity contexts) or survey contexts.")
+    (license license:expat)))
+
 (define-public r-sensemakr
   (package
     (name "r-sensemakr")
@@ -58276,13 +58340,13 @@ the functions to be chained by a pipe operator.")
 (define-public r-sempower
   (package
     (name "r-sempower")
-    (version "2.1.1")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semPower" version))
        (sha256
-        (base32 "000daccgvw0ld4iihj6zih85wirsfmj5wk7r8zhbzkmjyiw3xf3s"))))
+        (base32 "19r2c3awi65zi63fhm4mm7i3vj4xlhyblmh14c602ns4a2zmbbm0"))))
     (properties `((upstream-name . "semPower")))
     (build-system r-build-system)
     (arguments
@@ -61919,13 +61983,13 @@ PCI Archaeology, <doi:10.5281/zenodo.7674698>).")
 (define-public r-seagraphs
   (package
     (name "r-seagraphs")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SeaGraphs" version))
        (sha256
-        (base32 "03lw2bqihhb2qsrn2kpnf61r10vj819gag2vbpa4c6np1jw2dba0"))))
+        (base32 "0i5rcld6k4v5lbxfhb2m3l43c1p6jigcf9swwqhx4n3ll4sygcv3"))))
     (properties `((upstream-name . "SeaGraphs")))
     (build-system r-build-system)
     (arguments
@@ -61943,8 +62007,8 @@ PCI Archaeology, <doi:10.5281/zenodo.7674698>).")
     (description
      "Transformation of sea currents to connectivity data.  Two files of horizontal
 and vertical currents flows are transformed into connectivity data in the form
-of sfnetwork, shapefile, edge list and adjacency matrix.  An application example
-is shown at Nagkoulis et al. (2025) <doi:10.1016/j.dib.2024.111268>.")
+of sfnetwork', shapefile, edge list and adjacency matrix.  An application
+example is shown at Nagkoulis et al. (2025) <doi:10.1016/j.dib.2024.111268>.")
     (license license:gpl3)))
 
 (define-public r-seagle
@@ -63009,13 +63073,13 @@ measures and the loglinear model approach.")
 (define-public r-sdcmicro
   (package
     (name "r-sdcmicro")
-    (version "5.7.8")
+    (version "5.7.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdcMicro" version))
        (sha256
-        (base32 "18qd30rvhqxyh8sxmajc0cs4wys0wvpl7nqw0dhapjkgygwk5nrq"))))
+        (base32 "1skqmvljspxaz687syc2hpg03dfv4hghwp0h3wywwcypdjycs3xh"))))
     (properties `((upstream-name . "sdcMicro")))
     (build-system r-build-system)
     (arguments
@@ -63663,13 +63727,13 @@ Scryfall card data API <https://scryfall.com/docs/api>.")
 (define-public r-scrutiny
   (package
     (name "r-scrutiny")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scrutiny" version))
        (sha256
-        (base32 "0f03nd378ks6cr15gkjmq0756cbzvrz5gp912nvdgc5r59q7j665"))))
+        (base32 "18753025dxgkcj8fp4846rnhw0vdg9a67dygiimvijpyli0d9r3f"))))
     (properties `((upstream-name . "scrutiny")))
     (build-system r-build-system)
     (arguments

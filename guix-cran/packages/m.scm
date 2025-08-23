@@ -10881,13 +10881,13 @@ Stindl and Chen (2018) <doi:10.1016/j.csda.2018.01.021>.")
 (define-public r-mrgsolve
   (package
     (name "r-mrgsolve")
-    (version "1.5.2")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrgsolve" version))
        (sha256
-        (base32 "19c3bq58sca4i3iizpnvkgig62bhnq4c4lwi8gxihv00vrl9lil2"))))
+        (base32 "0qrbcv8k77kbf5n59d76srqfnksabdykfv5xvp3y4nr6fcbrpjjx"))))
     (properties `((upstream-name . "mrgsolve")))
     (build-system r-build-system)
     (arguments
@@ -13007,13 +13007,13 @@ unbalanced acoustic receiver array designs, and satellite tag data.")
 (define-public r-moveez
   (package
     (name "r-moveez")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moveEZ" version))
        (sha256
-        (base32 "09kfm54kckxp1dysx42n5kchia5ahh98k4rfh7xa2vsqpmy1d0i8"))))
+        (base32 "1qs5bm4wjk3wn0fl85w6dl6rac1j4vdlw89ll1j6lpc1a18s030x"))))
     (properties `((upstream-name . "moveEZ")))
     (build-system r-build-system)
     (arguments
@@ -13021,7 +13021,7 @@ unbalanced acoustic receiver array designs, and satellite tag data.")
       #:tests? #f))
     (propagated-inputs (list r-gpabin r-ggplot2 r-gganimate r-dplyr r-biplotez))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=moveEZ")
+    (home-page "https://muvisu.github.io/moveEZ/")
     (synopsis "Animated Biplots")
     (description
      "Create animated biplots that enables dynamic visualisation of temporal or
@@ -16724,13 +16724,13 @@ M. (1975).  Multivariate analysis.  Charles Griffin&Company Ltd,.  sen, P. K.
 (define-public r-modi
   (package
     (name "r-modi")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modi" version))
        (sha256
-        (base32 "1rs80j6f2aq202mpls2dxwifiaipqphi1hsydnicfxl0m8qmcnvc"))))
+        (base32 "0w7174fcma4mlhrjs7nls0sbs9vpdi6cdxbbsi7b3pm0day9jcj8"))))
     (properties `((upstream-name . "modi")))
     (build-system r-build-system)
     (arguments
@@ -16995,13 +16995,13 @@ into R and the Tidyverse\" available at <https://moderndive.com/>.")
 (define-public r-moderate-mediation
   (package
     (name "r-moderate-mediation")
-    (version "0.0.11")
+    (version "0.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moderate.mediation" version))
        (sha256
-        (base32 "0vva539nnjqhj30wjifhvn1adx4lmlprm469c6i544w6irqpldsn"))))
+        (base32 "09mqkliridlznlknc0mkiicqv0p6hg1604i5sr6ni11hlk3vcspg"))))
     (properties `((upstream-name . "moderate.mediation")))
     (build-system r-build-system)
     (arguments
@@ -17694,13 +17694,13 @@ University of Technology, Faculty of Mathematics and Information Science.")
 (define-public r-modeldb
   (package
     (name "r-modeldb")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeldb" version))
        (sha256
-        (base32 "109ggy93ikcc5mv8jx8z8kx41pzzbz96mgqzwf8z7175ir6bql6z"))))
+        (base32 "1fdapgjzsy67lkwpk8rlj5hdcfa935y70j0fhkn73ffc08shb1ni"))))
     (properties `((upstream-name . "modeldb")))
     (build-system r-build-system)
     (arguments
@@ -28098,19 +28098,20 @@ in Ecology and Evolution, 15, 301â307 <doi:10.1111/2041-210X.14269>.")
 (define-public r-mikropml
   (package
     (name "r-mikropml")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mikropml" version))
        (sha256
-        (base32 "13dlzrwyl4sqklypva35qq5194yc95fcpsyclvisdrky040xgxsy"))))
+        (base32 "177h5qlrxw287qc86qwzqfhac6ph32gd5ih68gvx9h0pzryh8mrr"))))
     (properties `((upstream-name . "mikropml")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xgboost
+                             r-tidyselect
                              r-rpart
                              r-rlang
                              r-randomforest
@@ -42022,6 +42023,32 @@ analysis and variationist studies (comparison of linguistic variants and of
 linguistic varieties).")
     (license license:gpl2)))
 
+(define-public r-mclink
+  (package
+    (name "r-mclink")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mclink" version))
+       (sha256
+        (base32 "0bq4an5d5lwgasqddd5gs5bdrc0k4i0zwk9k8vkwqj1xbpqf20jv"))))
+    (properties `((upstream-name . "mclink")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-stringr r-dplyr r-data-table))
+    (home-page "https://github.com/LiuyangLee/mclink")
+    (synopsis "Metabolic Pathway Completeness and Abundance Calculation")
+    (description
+     "This package provides tools for analyzing metabolic pathway completeness,
+abundance, and transcripts using KEGG Orthology (KO) data from (meta)genomic and
+(meta)transcriptomic studies.  Supports both completeness (presence/absence) and
+abundance-weighted analyses.  Includes built-in KEGG reference datasets.  For
+more details see Li et al. (2023) <doi:10.1038/s41467-023-42193-7>.")
+    (license license:gpl3)))
+
 (define-public r-mcl
   (package
     (name "r-mcl")
@@ -48380,19 +48407,20 @@ re-labelling categorical variables.")
 (define-public r-mapperalgo
   (package
     (name "r-mapperalgo")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MapperAlgo" version))
        (sha256
-        (base32 "1ardgaf6pji7r106j8lxynnvl1xygf7cxqcv1nwwri7afqh6hxxv"))))
+        (base32 "0r545cdnydapvd2rwxcriac78j7b22bl663pvirqmbzdcq4aqcjb"))))
     (properties `((upstream-name . "MapperAlgo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidygraph
+                             r-rlang
                              r-networkd3
                              r-igraph
                              r-htmlwidgets
@@ -49364,13 +49392,13 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "1.5.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "1kwmhag6lb7cxb97gqrh32c04inizy4yvkqa276v2n8lypalbsjl"))))
+        (base32 "1mr4px7ps8zxjs61lapy0wd0q8s9fiswd53afjnn56f2zaz04wnj"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (arguments
@@ -49380,21 +49408,17 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
                              r-pillar
                              r-network
                              r-igraph
-                             r-ggraph
-                             r-ggplot2
                              r-dplyr
                              r-cli))
     (home-page "https://stocnet.github.io/manynet/")
-    (synopsis
-     "Many Ways to Make, Modify, Map, Mark, and Measure Myriad Networks")
+    (synopsis "Many Ways to Make, Modify, Mark, and Measure Myriad Networks")
     (description
-     "Many tools for making, modifying, mapping, marking, measuring, and motifs and
-memberships of many different types of networks.  All functions operate with
-matrices, edge lists, and igraph', network', and tidygraph objects, and on
-one-mode, two-mode (bipartite), and sometimes three-mode networks.  The package
-includes functions for importing and exporting, creating and generating
-networks, modifying networks and node and tie attributes, and describing and
-visualizing networks with sensible defaults.")
+     "Many tools for making, modifying, marking, measuring, and motifs and memberships
+of many different types of networks.  All functions operate with matrices, edge
+lists, and igraph', network', and tidygraph objects, on directed, multiplex,
+multimodal, signed, and other networks.  The package includes functions for
+importing and exporting, creating and generating networks, modifying networks
+and node and tie attributes, and describing networks with sensible defaults.")
     (license license:expat)))
 
 (define-public r-manymome-table
@@ -49424,13 +49448,13 @@ visualizing networks with sensible defaults.")
 (define-public r-manymome
   (package
     (name "r-manymome")
-    (version "0.2.9")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymome" version))
        (sha256
-        (base32 "004h739ypci56sbqq2yamw2q3653lws5i5wclsridv9j5fnm3fdv"))))
+        (base32 "1zd2dzpsz660afykd6dmnyrh6p0wfj2n5338kwz0z5vxnf8ik5mf"))))
     (properties `((upstream-name . "manymome")))
     (build-system r-build-system)
     (arguments
@@ -49438,6 +49462,7 @@ visualizing networks with sensible defaults.")
       #:tests? #f))
     (propagated-inputs (list r-pbapply
                              r-mass
+                             r-lmhelprs
                              r-lavaan
                              r-igraph
                              r-ggplot2
@@ -49464,23 +49489,24 @@ structural equation modeling using @code{lavaan()} or regression using
 (define-public r-manymodelr
   (package
     (name "r-manymodelr")
-    (version "0.3.9")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymodelr" version))
        (sha256
-        (base32 "06211f763hafr5lyz0jkh9rd41xjdf78mqvjyknxqcfsb2f5lysk"))))
+        (base32 "0s0xj4f9bc9i7hvmabl3cwssb5wqpdsnflj9npm2l379p2lj5f63"))))
     (properties `((upstream-name . "manymodelr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-usethis
+                             r-testthat
+                             r-stringr
                              r-metrics
                              r-lme4
                              r-ggplot2
-                             r-e1071
                              r-dplyr
                              r-caret))
     (native-inputs (list r-knitr))

@@ -3789,6 +3789,35 @@ dimensionality assessment, and network structure visualization for educational,
 psychological, and social science research.")
     (license license:expat)))
 
+(define-public r-exactvartest
+  (package
+    (name "r-exactvartest")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ExactVaRTest" version))
+       (sha256
+        (base32 "02iwldzpd96a5csb2b2r8mhbs3n3ry4lx895f10f19wcab6nxdy9"))))
+    (properties `((upstream-name . "ExactVaRTest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/YujianCHEN219/ExactVaRTest")
+    (synopsis "Exact Finite-Sample Value-at-Risk Back-Testing")
+    (description
+     "This package provides fast dynamic-programming algorithms in C++'/'Rcpp (with
+pure R fallbacks) for the exact finite-sample distributions and p-values of
+Christoffersen (1998) independence (IND) and conditional-coverage (CC)
+@code{VaR} backtests.  For completeness, it also provides the exact
+unconditional-coverage (UC) test following Kupiec (1995) via a closed-form
+binomial enumeration.  See Christoffersen (1998) <doi:10.2307/2527341> and
+Kupiec (1995) <doi:10.3905/jod.1995.407942>.")
+    (license license:gpl3+)))
+
 (define-public r-exactmultinom
   (package
     (name "r-exactmultinom")
@@ -9785,13 +9814,13 @@ equality of intercepts.  For more information, see Yuan, K. H., & Chan, W.
 (define-public r-equalstats
   (package
     (name "r-equalstats")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EQUALSTATS" version))
        (sha256
-        (base32 "0vv2p4757sqjf9k2iynbigsa4n4pzd1wkrli3gbgnx6rk8b0r77b"))))
+        (base32 "1rv8k77gm1kjijgsxyg6rmcyli88bdhpw6bnhz9a315a7h03d7c0"))))
     (properties `((upstream-name . "EQUALSTATS")))
     (build-system r-build-system)
     (arguments
@@ -22383,13 +22412,13 @@ Approach to Ecological Analysis and Inference''.  Politica, Aarhus, Denmark.")
 (define-public r-ecolottery
   (package
     (name "r-ecolottery")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecolottery" version))
        (sha256
-        (base32 "0286c12ri07z28w345iji52gqx9xxxc6ni4f7nr2g2wamr4il7jb"))))
+        (base32 "1j2bjjhfjqyjalr2z9slkgr3rq5046hhfi5x13kryfjqhd8bb8jk"))))
     (properties `((upstream-name . "ecolottery")))
     (build-system r-build-system)
     (arguments
@@ -22545,6 +22574,31 @@ Souza et al. (2016) <doi:10.1002/hyp.10953>.")
      "Fit and sample from the ensemble model described in Spence et al (2018): \"A
 general framework for combining ecosystem models\"<doi:10.1111/faf.12310>.")
     (license license:gpl3+)))
+
+(define-public r-ecodive
+  (package
+    (name "r-ecodive")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ecodive" version))
+       (sha256
+        (base32 "1mbnm8qzqxbaiaydr7f7bgscxqpwjszjh7j0amsa6s09wkxjraym"))))
+    (properties `((upstream-name . "ecodive")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cmmr.github.io/ecodive/")
+    (synopsis "Parallel and Memory-Efficient Ecological Diversity Metrics")
+    (description
+     "Computes alpha and beta diversity metrics using concurrent C threads.  Metrics
+include @code{UniFrac}', Faith's phylogenetic diversity, Bray-Curtis
+dissimilarity, Shannon diversity index, and many others.  Also parses newick
+trees into phylo objects and rarefies feature tables.")
+    (license license:expat)))
 
 (define-public r-ecodist
   (package

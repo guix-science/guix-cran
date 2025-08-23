@@ -2010,13 +2010,13 @@ absolute quantification under uncertainty.  See Comoglio et al. (2013)
 (define-public r-dunlin
   (package
     (name "r-dunlin")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dunlin" version))
        (sha256
-        (base32 "027dk1cnajsbadnz4c7s6cb5s4p0f6kfadskmamymb2h6gy86b6k"))))
+        (base32 "1w1qpjnn6fpqa7lv3asa0m8xi95xcxkjg3i147c64xp46xxsjjgz"))))
     (properties `((upstream-name . "dunlin")))
     (build-system r-build-system)
     (arguments
@@ -8786,13 +8786,13 @@ capabilities of the parabar package.  Learn more about parabar and
 (define-public r-door
   (package
     (name "r-door")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "door" version))
        (sha256
-        (base32 "1z7pfy4j5nxk21bjba6zgvcy5asd0g5xhq2q74d1y49jz3vsqsx9"))))
+        (base32 "06xy7086g47cdfcmkilyb7gschhkbdmz1vz8dfi5kzd6c0rc3gg9"))))
     (properties `((upstream-name . "door")))
     (build-system r-build-system)
     (arguments
@@ -14113,13 +14113,13 @@ and Boisjoly, G. (2023) <doi:10.1007/978-3-031-20719-8>.")
 (define-public r-discrim
   (package
     (name "r-discrim")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "discrim" version))
        (sha256
-        (base32 "098021yq1bdqd0hnpv3lh4w7zna2v0kn4pbsffgbkigg0qi8cgm0"))))
+        (base32 "1xmj2y873z736s9gqh5b02a21wkg8y5xgfy2v2h80q93a0fmallr"))))
     (properties `((upstream-name . "discrim")))
     (build-system r-build-system)
     (arguments
@@ -15175,13 +15175,13 @@ dispersion of emotional reactions and impact indicators.")
 (define-public r-disaggregation
   (package
     (name "r-disaggregation")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disaggregation" version))
        (sha256
-        (base32 "02sn3byrw2smflimycdlax8yd0wf42qlmyjlknc74v1zc69xaw1h"))))
+        (base32 "19rhp131sls41l6whlcnw67cjvdcz2x4ks2aqrawkh6gkjbf5i8y"))))
     (properties `((upstream-name . "disaggregation")))
     (build-system r-build-system)
     (arguments
@@ -20735,13 +20735,13 @@ textbook Auer, L.v. (2023, ISBN: 978-3-658-42699-6).")
 (define-public r-desirability2
   (package
     (name "r-desirability2")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "desirability2" version))
        (sha256
-        (base32 "1jrbf9mapmrwdcxmpw7wrbx69i9qhwb19ph1acr02vgl8riaa6mx"))))
+        (base32 "1nwlsqbwkx691irijpd160c13kslyyn545qm7qsgwd9rfw822cva"))))
     (properties `((upstream-name . "desirability2")))
     (build-system r-build-system)
     (arguments
@@ -23266,19 +23266,20 @@ into document file.")
 (define-public r-demodelr
   (package
     (name "r-demodelr")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "demodelr" version))
        (sha256
-        (base32 "1jldvlw8xl5hbyw4m443r41nw9ck7dmkd4rmag4wqw4scra7qj46"))))
+        (base32 "0zkbgvybpjl0bbvas8dsj6iyds4wxh68c4jqal0psyyhrr3j4gmg"))))
     (properties `((upstream-name . "demodelr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-rlang
                              r-purrr
@@ -29111,19 +29112,20 @@ the @code{JavaScript} library daterangepicker which is available at
 (define-public r-datefixr
   (package
     (name "r-datefixr")
-    (version "1.7.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datefixR" version))
        (sha256
-        (base32 "1nsfi0hjamd83icxqdx4s284jrjxp13nygxbzd9vaknfl2fv3dpi"))))
+        (base32 "0apvzb7ypm3wx7m2gkrq933cgbkd1yx0fm974b4qvbsfx41fmlq8"))))
     (properties `((upstream-name . "datefixR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-rlang r-rcpp r-lifecycle))
+    (inputs (list))
+    (propagated-inputs (list r-rlang r-lifecycle))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/datefixR/")
     (synopsis "Standardize Dates in Different Formats or with Missing Data")

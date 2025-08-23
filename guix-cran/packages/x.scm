@@ -1886,13 +1886,13 @@ ISBN:1-55860-066-3), Wickham, Hadley (2019, ISBN:978-815384571).")
 (define-public r-xegapopulation
   (package
     (name "r-xegapopulation")
-    (version "1.0.0.8")
+    (version "1.0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaPopulation" version))
        (sha256
-        (base32 "0vj0rp7w6gc1cs6rgxmrnvpzfzvdrxrn62vh2xg1dnnna0z2q598"))))
+        (base32 "11x0c81c3af6j9pfrlx1k72j7zsc3ncggsl4jmp1wjzjprrrgjyk"))))
     (properties `((upstream-name . "xegaPopulation")))
     (build-system r-build-system)
     (arguments
@@ -1953,13 +1953,13 @@ randomly.")
 (define-public r-xegagpgene
   (package
     (name "r-xegagpgene")
-    (version "1.0.0.2")
+    (version "1.0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaGpGene" version))
        (sha256
-        (base32 "1lvk4ycbzjk7w1iip284k02mxwci5wxixiibyry0abqbilkfyx2i"))))
+        (base32 "1dy0hz546dr6rkif4b7s8zms35s53sg87fxvq8gz1nbazm06ydjd"))))
     (properties `((upstream-name . "xegaGpGene")))
     (build-system r-build-system)
     (arguments
@@ -2010,19 +2010,19 @@ O'Neill, M., and Collins, J. J. (2018) <doi:10.1007/978-3-319-78717-6>.")
 (define-public r-xegagagene
   (package
     (name "r-xegagagene")
-    (version "1.0.0.4")
+    (version "1.0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaGaGene" version))
        (sha256
-        (base32 "182vml7kmxnkvlqi13xrw1p86q1lchzki3pnc1gzk8f90ga1d27f"))))
+        (base32 "0dwhzz8jlj9cl1dljpi7c4d9q62kh9wpygbmc5gsf7kv2sdhzb4j"))))
     (properties `((upstream-name . "xegaGaGene")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xegaselectgene))
+    (propagated-inputs (list r-xegaselectgene r-rlang))
     (home-page "https://github.com/ageyerschulz/xegaGaGene")
     (synopsis "Binary Gene Operations for Genetic Algorithms")
     (description
@@ -2040,19 +2040,19 @@ ISBN:0-18-201-031-7).")
 (define-public r-xegadfgene
   (package
     (name "r-xegadfgene")
-    (version "1.0.0.5")
+    (version "1.0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaDfGene" version))
        (sha256
-        (base32 "1fwxwl6bzn0z6idqzd4qda47sxbq9ylxpfviz2ms29kby9ypsz2v"))))
+        (base32 "1l5gzqfnh6vmaidc2wd5z82b55v4xdrkgbfcj0niwb3ysc6506pd"))))
     (properties `((upstream-name . "xegaDfGene")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xegaselectgene))
+    (propagated-inputs (list r-xegaselectgene r-rlang))
     (home-page "https://github.com/ageyerschulz/xegaDfGene")
     (synopsis "Gene Operations for Real-Coded Genes")
     (description
@@ -2139,13 +2139,13 @@ APL2 implementation in Geyer-Schulz, Andreas (1997, ISBN:978-3-7908-0830-X).")
 (define-public r-xega
   (package
     (name "r-xega")
-    (version "0.9.0.12")
+    (version "0.9.0.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xega" version))
        (sha256
-        (base32 "1y1lw2wkjfyv8593wrnx31wdrn9j8wsbdgc1qmm8kammicfya6x7"))))
+        (base32 "0gskl50nn7pbk6wndn76q37vm0d4lzc4iy3hz0p0v27jydrs72vv"))))
     (properties `((upstream-name . "xega")))
     (build-system r-build-system)
     (arguments
@@ -2173,11 +2173,13 @@ genetic algorithms (Goldberg, D. E. (1989, ISBN:0-201-15767-5)), differential
 evolution (Price, Kenneth V., Storn, Rainer M. and Lampinen, Jouni A. (2005)
 <doi:10.1007/3-540-31306-0>), simulated annealing (Aarts, E., and Korst, J.
 (1989, ISBN:0-471-92146-7)), grammar-based genetic programming (Geyer-Schulz
-(1997, ISBN:978-3-7908-0830-X)), and grammatical evolution (Ryan, C., O'Neill,
-M., and Collins, J. J. (2018) <doi:10.1007/978-3-319-78717-6>).  All algorithms
-reuse basic adaptive mechanisms for performance optimization.  Sequential or
-parallel execution (on multi-core machines, local clusters, and high-performance
-computing environments) is available for all algorithms.  See
+(1997, ISBN:978-3-7908-0830-X)), grammatical evolution (Ryan, C., O'Neill, M.,
+and Collins, J. J. (2018) <doi:10.1007/978-3-319-78717-6>), and grammatical
+differential evolution (O'Neill, M. and Brabazon, A. (2006) in Arabinia, H.
+(2006, ISBN:978-193-241596-3).  All algorithms reuse basic adaptive mechanisms
+for performance optimization.  Sequential or parallel execution (on multi-core
+machines, local clusters, and high-performance computing environments) is
+available for all algorithms.  See
 <https://github.com/ageyerschulz/xega/tree/main/examples/@code{executionModel>}.")
     (license license:expat)))
 

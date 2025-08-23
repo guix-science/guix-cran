@@ -5670,13 +5670,13 @@ Sissades Tongsima (2020) <doi:10.1101/2020.03.21.001206>.")
 (define-public r-ipaddress
   (package
     (name "r-ipaddress")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipaddress" version))
        (sha256
-        (base32 "0dqxyrc2bbqbsxbzdpn9xw76gnqzjqkrzlrc203v6kd4v81npk7w"))))
+        (base32 "11ksygdizdwdyci5wyayhaxlmz8yd773y4xl398qyq3zadgiifjd"))))
     (properties `((upstream-name . "ipaddress")))
     (build-system r-build-system)
     (arguments
@@ -12982,13 +12982,13 @@ are available, including basic normalization, Shin's method (Hyun Song Shin,
 (define-public r-implicitmeasures
   (package
     (name "r-implicitmeasures")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "implicitMeasures" version))
        (sha256
-        (base32 "0zyx9fsch9arny61b4swk0nrfy8l8am09y5vzggalgc8hhx6zbqy"))))
+        (base32 "06s7dflkz9sg6575ihq56z2vdm1gmfvwjz1i0chnk9rivi0bm2da"))))
     (properties `((upstream-name . "implicitMeasures")))
     (build-system r-build-system)
     (arguments
@@ -13780,6 +13780,38 @@ offers control over the order of HSV color dimensions to sort by.  This package
 differs from other related packages like R@code{ImagePalette} in approaches to
 quantizing and extracting colors in images to assemble color palettes and the
 level of user control over palettes construction.")
+    (license license:expat)))
+
+(define-public r-imfweo
+  (package
+    (name "r-imfweo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imfweo" version))
+       (sha256
+        (base32 "0j4zhd905zhzfx4wmavjh0qnib0sdyabwfbdi6i5q7r4kq2gjb84"))))
+    (properties `((upstream-name . "imfweo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://teal-insights.github.io/r-imfweo/")
+    (synopsis "Seamless Access to IMF World Economic Outlook (WEO) Data")
+    (description
+     "This package provides tools to download, process, and analyze data from the
+International Monetary Fund's World Economic Outlook (WEO) database
+<https://www.imf.org/en/Publications/SPROLLs/world-economic-outlook-databases>.
+Functions support downloading complete WEO releases, accessing specific economic
+indicators for selected countries, and listing available data.")
     (license license:expat)))
 
 (define-public r-imfor
@@ -20420,13 +20452,13 @@ management.")
 (define-public r-ibdsim2
   (package
     (name "r-ibdsim2")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibdsim2" version))
        (sha256
-        (base32 "088ljmr6fkqj9zy04xpw7vsjkjvqd6s79330gi16x840vapagk02"))))
+        (base32 "1zywhk62z462ngk3cakp33fsg1zk98r9axzqk1av0k64iwg458i1"))))
     (properties `((upstream-name . "ibdsim2")))
     (build-system r-build-system)
     (arguments

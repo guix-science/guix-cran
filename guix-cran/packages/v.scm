@@ -5028,19 +5028,24 @@ variations in language, character set, and spelling.  For more information go to
 (define-public r-viafoundry
   (package
     (name "r-viafoundry")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viafoundry" version))
        (sha256
-        (base32 "06lli76b0abixczfajk11byc5gwygxbgmik90rmarmcj9wca4mxw"))))
+        (base32 "0ijqm865g7kw3la8jdma7z9hbj6m65a2kn80p6iikj8pvbwm19lh"))))
     (properties `((upstream-name . "viafoundry")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-purrr r-jsonlite r-httr r-dplyr r-askpass))
+    (propagated-inputs (list r-stringr
+                             r-mime
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-askpass))
     (home-page "https://github.com/ViaScientific/viafoundry-R-SDK")
     (synopsis "R Client for 'Via Foundry' API")
     (description

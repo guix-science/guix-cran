@@ -11071,13 +11071,13 @@ R script for reproducibility.  Reference: Key (2025)
 (define-public r-fluxible
   (package
     (name "r-fluxible")
-    (version "1.2.6")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxible" version))
        (sha256
-        (base32 "1phqplf7703r9ws75bs9kw47m6h2jyssh84949qjp0aylmkr44sz"))))
+        (base32 "0gjg9sxgs364wz17cxcnqqcxav2g48ccgwjhj442f5c1yx6b8hvp"))))
     (properties `((upstream-name . "fluxible")))
     (build-system r-build-system)
     (arguments
@@ -11086,6 +11086,7 @@ R script for reproducibility.  Reference: Key (2025)
     (propagated-inputs (list r-zoo
                              r-tidyselect
                              r-tidyr
+                             r-tibble
                              r-stringr
                              r-rlang
                              r-purrrlyr
@@ -11096,6 +11097,7 @@ R script for reproducibility.  Reference: Key (2025)
                              r-haven
                              r-ggplot2
                              r-ggforce
+                             r-forcats
                              r-dplyr
                              r-broom))
     (native-inputs (list r-knitr))
@@ -11103,16 +11105,20 @@ R script for reproducibility.  Reference: Key (2025)
     (synopsis
      "Ecosystem Gas Fluxes Calculations for Closed Loop Chamber Setup")
     (description
-     "Processes the raw data from closed loop flux chamber (or tent) setups into
+     "Toolbox to process raw data from closed loop flux chamber (or tent) setups into
 ecosystem gas fluxes usable for analysis.  It goes from a data frame of gas
 concentration over time (which can contain several measurements) and a meta data
 file indicating which measurement was done when, to a data frame of ecosystem
-gas fluxes including quality diagnostics.  Functions provided include different
-models (exponential as described in Zhao et al (2018)
-<doi:10.1016/j.agrformet.2018.08.022>, quadratic and linear) to estimate the
-fluxes from the raw data, quality assessment, plotting for visual check and
-calculation of fluxes based on the setup specific parameters (chamber size, plot
-area, ...).")
+gas fluxes including quality diagnostics.  Organized with one function per step,
+maximizing user flexibility and backwards compatibility.  Different models to
+estimate the fluxes from the raw data are available: exponential as described in
+Zhao et al (2018) <doi:10.1016/j.agrformet.2018.08.022>, exponential as
+described in Hutchinson and Mosier (1981)
+<doi:10.2136/sssaj1981.03615995004500020017x>, quadratic, and linear.  Other
+functions include quality assessment, plotting for visual check, calculation of
+fluxes based on the setup specific parameters (chamber size, plot area, ...),
+gross primary production and transpiration rate calculation, and light response
+curves.")
     (license license:gpl3+)))
 
 (define-public r-fluxfinder
@@ -11694,13 +11700,13 @@ used to cluster flows for applied transportation research.")
 (define-public r-flowchart
   (package
     (name "r-flowchart")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flowchart" version))
        (sha256
-        (base32 "1il5cbg7qgsw95rx3mxgy789wja0fpn40my0asyj1vrac0w8kgvq"))))
+        (base32 "0i5l2qw434shwrsllfxwgjd1gknv9vivwfy0cnikgx3bi349wiwk"))))
     (properties `((upstream-name . "flowchart")))
     (build-system r-build-system)
     (arguments
@@ -16329,13 +16335,13 @@ computational finance.")
 (define-public r-finbif
   (package
     (name "r-finbif")
-    (version "0.9.10")
+    (version "0.9.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finbif" version))
        (sha256
-        (base32 "1rzd2rb4fd6qgskg8bl6c25rf6fkmm3xn2h7k1ijq8kd6fh4lzgr"))))
+        (base32 "0jsvnxdmwp2qb47qw050cvadj6aqrzqxf7mnck1jjhpd571frs93"))))
     (properties `((upstream-name . "finbif")))
     (build-system r-build-system)
     (arguments

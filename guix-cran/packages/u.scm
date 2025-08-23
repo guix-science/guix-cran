@@ -553,13 +553,13 @@ non-asymptotic Type I error control at the nominal level.")
 (define-public r-usmapdata
   (package
     (name "r-usmapdata")
-    (version "0.6.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usmapdata" version))
        (sha256
-        (base32 "1nji6r0cx7vdfgjji1c50095ad5wchas9m832znd80jkg373i1vs"))))
+        (base32 "1vgs29sfbxsjdfrvvnhyfqi2j7x7xm1aqrfqj31vfwx0cmhdp5i1"))))
     (properties `((upstream-name . "usmapdata")))
     (build-system r-build-system)
     (arguments

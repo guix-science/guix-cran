@@ -7753,13 +7753,13 @@ package.")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "1.15.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeTools" version))
        (sha256
-        (base32 "06a3bwc3gnhhrf0zr44s6ycfi8z0q4rwsyvcxwj9frz3248k2niy"))))
+        (base32 "1za6ypy2f6q70ynjgg6js2r0zqi1p1kh42jpkv0ps45kf6p2bhwi"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (arguments
@@ -8391,13 +8391,13 @@ data.")
 (define-public r-treedist
   (package
     (name "r-treedist")
-    (version "2.9.2")
+    (version "2.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeDist" version))
        (sha256
-        (base32 "1w5s1dqrcgvz0n06kv3kasjvh8acgax5q208v45lmam8f5aa16hl"))))
+        (base32 "132gybb8lvwrr32ayq23df5rgc20wf028j75qzj29d7agzajqzpf"))))
     (properties `((upstream-name . "TreeDist")))
     (build-system r-build-system)
     (arguments
@@ -8409,7 +8409,6 @@ data.")
                              r-shiny
                              r-rdpack
                              r-rcpp
-                             r-memoise
                              r-colorspace
                              r-cli
                              r-ape))
@@ -12422,13 +12421,13 @@ from decennial census and American Community Survey 1-year and 5-year estimates.
 (define-public r-toster
   (package
     (name "r-toster")
-    (version "0.8.4")
+    (version "0.8.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TOSTER" version))
        (sha256
-        (base32 "0j6sp54b5fj4n93b3nllza821yzlx4qbxxf2dz7wjpa7lz7i8s4r"))))
+        (base32 "02ixz77xlyf374qf091ynfyknl9b3ahikjyz4gryv1057pg8ymhw"))))
     (properties `((upstream-name . "TOSTER")))
     (build-system r-build-system)
     (arguments
@@ -18515,19 +18514,20 @@ to estimate latent class analyses, and to plot dagitty and igraph objects.")
 (define-public r-tidysdm
   (package
     (name "r-tidysdm")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidysdm" version))
        (sha256
-        (base32 "1gdlnbg8xpyp6qqzx6yqwvrcy8b12zl2k2mq9k2kqm5pzgk66kcb"))))
+        (base32 "1f479944rcmzv4gyg377wga5jwrkzw9g5mb3bl5sdh20a1p1lyhk"))))
     (properties `((upstream-name . "tidysdm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-yardstick
+                             r-xgboost
                              r-workflowsets
                              r-workflows
                              r-tune
@@ -18543,7 +18543,6 @@ to estimate latent class analyses, and to plot dagitty and igraph objects.")
                              r-patchwork
                              r-parsnip
                              r-maxnet
-                             r-magrittr
                              r-lubridate
                              r-ggplot2
                              r-dplyr
@@ -19389,13 +19388,13 @@ approach, but an uninformative prior is also available.")
 (define-public r-tidyllm
   (package
     (name "r-tidyllm")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyllm" version))
        (sha256
-        (base32 "1lhcpy8945pkcgd3kqnkc7qik35n4r7xiasrpz72lpqpwl3xr0yz"))))
+        (base32 "1c2bl3qkffvs3ka7gcx0yw8xysjafdvvy4d9fpkrlpwc0ahxbg2s"))))
     (properties `((upstream-name . "tidyllm")))
     (build-system r-build-system)
     (arguments
@@ -27779,13 +27778,13 @@ and analysis.")
 (define-public r-teal-modules-clinical
   (package
     (name "r-teal-modules-clinical")
-    (version "0.11.0")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.modules.clinical" version))
        (sha256
-        (base32 "1qjpx7hiaax89n7xb35ifmqpkl2w9vqq3qw7m6m88dhgyjzlz6cj"))))
+        (base32 "065m4irbdl4fl4fkmc55574iq4qxnphlizy3dmzkhgkg9p3h7ga3"))))
     (properties `((upstream-name . "teal.modules.clinical")))
     (build-system r-build-system)
     (arguments

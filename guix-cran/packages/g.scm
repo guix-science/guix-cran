@@ -1005,6 +1005,49 @@ package is implementation of method proposed in Xu et al (2019)
 <DOI:10.1038/s41598-019-50229-6>.")
     (license license:gpl2+)))
 
+(define-public r-gwas2crispr
+  (package
+    (name "r-gwas2crispr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gwas2crispr" version))
+       (sha256
+        (base32 "1mr5d72v6safsrfs3b1yqr5zcpcdh90w2rab546vqakml84rrlz1"))))
+    (properties `((upstream-name . "gwas2crispr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-readr
+                             r-purrr
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/leopard0ly/gwas2crispr")
+    (synopsis
+     "GWAS-to-CRISPR Data Pipeline for High-Throughput SNP Target Extraction")
+    (description
+     "This package provides a reproducible pipeline to conduct genomeâwide
+association studies (GWAS) and extract singleânucleotide polymorphisms (SNPs)
+for a human trait or disease.  Given aggregated GWAS dataset(s) and a
+userâdefined significance threshold, the package retrieves significant SNPs
+from the GWAS Catalog and the Experimental Factor Ontology (EFO), annotates
+their gene context, and can write a harmonised metadata table in comma-separated
+values (CSV) format, genomic intervals in the Browser Extensible Data (BED)
+format, and sequences in the FASTA (text-based sequence) format with
+user-defined flanking regions for clustered regularly interspaced short
+palindromic repeats (CRISPR) guide design.  For details on the resources and
+methods see: Buniello et al. (2019) <doi:10.1093/nar/gky1120>; Sollis et al.
+(2023) <doi:10.1093/nar/gkac1010>; Jinek et al. (2012)
+<doi:10.1126/science.1225829>; Malone et al. (2010)
+<doi:10.1093/bioinformatics/btq099>; Experimental Factor Ontology (EFO)
+<https://www.ebi.ac.uk/efo>.")
+    (license license:expat)))
+
 (define-public r-gwars
   (package
     (name "r-gwars")
@@ -1844,13 +1887,13 @@ appropriate column headers.")
 (define-public r-gtrendsr
   (package
     (name "r-gtrendsr")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtrendsR" version))
        (sha256
-        (base32 "05bfcc77bg2ndl83l0lv7rs4slxcflv9h2pfij8a3j1k9r9lwp2x"))))
+        (base32 "1a5fhbsb02cplz1w36p6kin7lx6hm23zcgp351avdcsjap1x53km"))))
     (properties `((upstream-name . "gtrendsR")))
     (build-system r-build-system)
     (arguments
@@ -8193,6 +8236,45 @@ and conditional Granger-causality spectra, bootstrap inference on both, and
 inference on the difference between them via the bootstrap approach of Farne and
 Montanari, 2018 <@code{arXiv:1803.00374>}.")
     (license license:gpl2+)))
+
+(define-public r-grandpriv
+  (package
+    (name "r-grandpriv")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GRANDpriv" version))
+       (sha256
+        (base32 "1xpp0j8x3a84nmjrgsh398s7llin49578w7b9iya2x0az41f70s7"))))
+    (properties `((upstream-name . "GRANDpriv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncnorm
+                             r-transport
+                             r-rspectra
+                             r-rmutil
+                             r-randnet
+                             r-igraph
+                             r-hcd
+                             r-envstats
+                             r-diffpriv))
+    (home-page "https://github.com/lsq0000/GRANDpriv")
+    (synopsis "Graph Release with Assured Node Differential Privacy")
+    (description
+     "This package implements a novel method for privatizing network data using
+differential privacy.  Provides functions for generating synthetic networks
+based on LSM (Latent Space Model), applying differential privacy to network
+latent positions to achieve overall network privatization, and evaluating the
+utility of privatized networks through various network statistics.  The
+privatize and evaluate functions support both LSM and RDPG (Random Dot Product
+Graph).  For generating RDPG networks, users are encouraged to use the randnet
+package <https://CRAN.R-project.org/package=randnet>.  For more details, see the
+\"proposed method\" section of Liu, Bi, and Li (2025)
+<doi:10.48550/@code{arXiv.2507.00402>}.")
+    (license license:gpl3+)))
 
 (define-public r-grand
   (package
@@ -16379,13 +16461,13 @@ changes in their source code, in relation to features requests.")
 (define-public r-gitai
   (package
     (name "r-gitai")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitAI" version))
        (sha256
-        (base32 "1z82gax3p5l4jbmmgf1ki4hd08pqckw3824zmq82jhz6rbglr03q"))))
+        (base32 "13j66xa2is1i03px6b97pvb3yj94lqfyjwg9y3aicvc3yyy3mzgn"))))
     (properties `((upstream-name . "GitAI")))
     (build-system r-build-system)
     (arguments
@@ -16403,7 +16485,7 @@ changes in their source code, in relation to features requests.")
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GitAI")
+    (home-page "https://github.com/r-world-devs/GitAI")
     (synopsis "Extracts Knowledge from 'Git' Repositories")
     (description
      "Scan multiple Git repositories, pull specified files content and process it with
@@ -17007,13 +17089,13 @@ Waldorp, Mottus & Borsboom (2018) <doi:10.1080/00273171.2018.1454823>.")
 (define-public r-gimme
   (package
     (name "r-gimme")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gimme" version))
        (sha256
-        (base32 "09gj4zqls9025dr8zxdwlxqmm4cpp5m6jrx53sp4pg69p1sq5rd8"))))
+        (base32 "18kidrdxrgqcsjqp2c6fqgfykbh00v8bk1sz0rvxmib4yiwgmcmj"))))
     (properties `((upstream-name . "gimme")))
     (build-system r-build-system)
     (arguments
@@ -17440,13 +17522,13 @@ level.")
 (define-public r-gicf
   (package
     (name "r-gicf")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gicf" version))
        (sha256
-        (base32 "0j3a6wwia61hhc53zcz74vfck4fm0w05s28prx743v064pvcgwdh"))))
+        (base32 "1k2hkraf2873sb0g54bm5qhyf681ab3d3ir86jwczddvydalspj1"))))
     (properties `((upstream-name . "gicf")))
     (build-system r-build-system)
     (arguments
@@ -17458,7 +17540,10 @@ level.")
     (description
      "Penalised likelihood estimation of a covariance matrix via the ridge-regularised
 covglasso estimator described in Cibinel et al. (2024)
-<doi:10.48550/@code{arXiv.2410.02403>}.")
+<doi:10.48550/@code{arXiv.2410.02403>}.  Based on the C++ code of the R package
+covglasso (by Michael Fop, <https://orcid.org/0000-0003-3936-2757>) and the R
+code of icf (by Mathias Drton, <https://orcid.org/0000-0001-5614-3025>) within
+the R package ggm'.")
     (license license:gpl3)))
 
 (define-public r-gic
@@ -23271,13 +23356,13 @@ chart but instead of squares the layout resembles a brick wall.")
 (define-public r-ggbrain
   (package
     (name "r-ggbrain")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggbrain" version))
        (sha256
-        (base32 "1mn469svn3ghxp7b2rywkf9kdfcrg1gp7wfby8b2b6isxkdqlwcf"))))
+        (base32 "1aqjqmahd0y8hr4zsc51dilw84vd1ffpw3z5av3fd4vlzbw0zg1g"))))
     (properties `((upstream-name . "ggbrain")))
     (build-system r-build-system)
     (arguments
@@ -23341,19 +23426,19 @@ text. @code{stat_brace()} plots braces/brackets to embrace data.
 (define-public r-ggborderline
   (package
     (name "r-ggborderline")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggborderline" version))
        (sha256
-        (base32 "1acb3z2dwasmn4ngc7wqk3y4n34ah3fhdxsbdl3dmbc75nmdsn5a"))))
+        (base32 "1riar7gxj8nzgnjd4dsvmf3nfy2bfmzcgilvbn2hl8y8i470536s"))))
     (properties `((upstream-name . "ggborderline")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs r-rlang r-ggplot2 r-cli))
+    (propagated-inputs (list r-vctrs r-scales r-rlang r-ggplot2 r-cli))
     (home-page "https://github.com/wurli/ggborderline")
     (synopsis "Line Plots that Pop")
     (description
@@ -32752,13 +32837,13 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalraster" version))
        (sha256
-        (base32 "1wkf7fgi2vg40ysmgmakhg9gj9zwdlspl036qggn6hg4217f4ljs"))))
+        (base32 "0wd752rfl0zr3rprk35y4w1kw4ga6gyjgjbxxpsa28a2jl19fkc1"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (arguments
@@ -32787,15 +32872,13 @@ functions wrap much of the GDAL API and provide additional functionality.
 Calling signatures resemble the native C, C++ and Python APIs provided by the
 GDAL project.  Class GDALRaster encapsulates a GDALDataset and its raster band
 objects.  Class GDALVector encapsulates an OGRLayer and the GDALDataset that
-contains it.  Class VSIFile provides bindings to the GDAL
-VSI@code{VirtualHandle} API. Additional classes include @code{CmbTable} for
-counting unique combinations of integers, and @code{RunningStats} for computing
-summary statistics efficiently on large data streams.  C++ stand-alone functions
-provide bindings to most GDAL raster and vector utilities including OGR
-facilities for vector geoprocessing, several algorithms, the Geometry API ('GEOS
+contains it.  Initial bindings are provided to the unified gdal command line
+interface added in GDAL 3.11.  C++ stand-alone functions provide bindings to
+most GDAL \"traditional\" raster and vector utilities, including OGR facilities
+for vector geoprocessing, several algorithms, as well as the Geometry API ('GEOS
 via GDAL headers), the Spatial Reference Systems API, and methods for coordinate
 transformation.  Bindings to the Virtual Systems Interface ('VSI') API implement
-standard file system operations, abstracted for URLs, cloud storage services,
+standard file system operations abstracted for URLs, cloud storage services,
 Zip'/'GZip'/'7z'/'RAR', in-memory files, as well as regular local file systems.
 This provides a single interface for operating on file system objects that works
 the same for any storage backend.  A custom raster calculator evaluates a

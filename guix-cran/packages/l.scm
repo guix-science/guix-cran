@@ -3189,13 +3189,13 @@ summarized in a CD-plot as described in Algeri S. (2019)
 (define-public r-lpacf
   (package
     (name "r-lpacf")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpacf" version))
        (sha256
-        (base32 "0lg1r7pjg9f5msvjqaq93v43mssvq7jqgv2canhp3wybnmcw0p8v"))))
+        (base32 "00rzb8cmi4kkjbmlvm3y8qn1q9yi7inml5n7alcnjjbc7kaq2x9l"))))
     (properties `((upstream-name . "lpacf")))
     (build-system r-build-system)
     (arguments
@@ -4498,13 +4498,13 @@ Using R and @code{OpenBUGS}\" by Bhattacharjee A (2020)
 (define-public r-longevity
   (package
     (name "r-longevity")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longevity" version))
        (sha256
-        (base32 "0d1sfbq0z6b46yzwvqm8sbjk73arj69gy8dx189x816rl2qd460h"))))
+        (base32 "0y3kaxydjnwlcjg9fr3j8qvsmj2q60i09i381kp6wkq0xdmj48ac"))))
     (properties `((upstream-name . "longevity")))
     (build-system r-build-system)
     (arguments
@@ -13266,6 +13266,40 @@ Bahia (Brazil).  The approach implemented in the package is presented in the
 textbook of Tukey (1977) <ISBN: 978-0201076165>.")
     (license license:expat)))
 
+(define-public r-letsrept
+  (package
+    (name "r-letsrept")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "letsRept" version))
+       (sha256
+        (base32 "0kpzl6hb059a6vnvxch2azz3zvf0w80i8cbcli791ydf9j4ma6d7"))))
+    (properties `((upstream-name . "letsRept")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-pbmcapply
+                             r-pbapply
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/joao-svalencar/letsRept")
+    (synopsis "An Interface to the Reptile Database")
+    (description
+     "This package provides tools to retrieve and summarize taxonomic information and
+synonymy data for reptile species using data scraped from The Reptile Database
+website (<https://reptile-database.reptarium.cz/>).  Outputs include clean and
+structured data frames useful for ecological, evolutionary, and conservation
+research.")
+    (license license:expat)))
+
 (define-public r-letsr
   (package
     (name "r-letsr")
@@ -13415,13 +13449,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.4.4")
+    (version "4.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "1is297rg8sjj4jfhrhk5ad3rsi1lmjlz0w2ca7ygmbxdkmizwq46"))))
+        (base32 "0lw2v9g6569ibrbhysw0jd6kcib2p0bsh9v8vwmsdxvb1051k2n6"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (arguments
@@ -18629,29 +18663,29 @@ coordinates.")
 (define-public r-lancor
   (package
     (name "r-lancor")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lancor" version))
        (sha256
-        (base32 "1wb50jy9qkb7knkmg2ghjb6h1s1c0y8mghaxn41pmbm9jzk8q6ym"))))
+        (base32 "1bwxdxphkb24v5kh3qphdzgrmm890x2f3l1gqc92bhmwb59gj0np"))))
     (properties `((upstream-name . "lancor")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sn r-boot r-arrangements r-acepack))
+    (propagated-inputs (list r-sn r-boot r-arrangements))
     (home-page "https://cran.r-project.org/package=lancor")
     (synopsis "Statistical Inference via Lancaster Correlation")
     (description
-     "Implementation of the methods described in Holzmann, Klar (2024)
-<doi:10.48550/@code{arXiv.2303.17872>}.  Lancaster correlation is a correlation
-coefficient which equals the absolute value of the Pearson correlation for the
-bivariate normal distribution, and is equal to or slightly less than the maximum
-correlation coefficient for a variety of bivariate distributions.  Rank and
-moment-based estimators and corresponding confidence intervals are implemented,
-as well as independence tests based on these statistics.")
+     "Implementation of the methods described in Holzmann, Klar (2024) <doi:
+10.1111/sjos.12733>.  Lancaster correlation is a correlation coefficient which
+equals the absolute value of the Pearson correlation for the bivariate normal
+distribution, and is equal to or slightly less than the maximum correlation
+coefficient for a variety of bivariate distributions.  Rank and moment-based
+estimators and corresponding confidence intervals are implemented, as well as
+independence tests based on these statistics.")
     (license license:gpl2)))
 
 (define-public r-lamme

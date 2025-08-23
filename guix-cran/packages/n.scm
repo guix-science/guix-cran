@@ -8134,13 +8134,13 @@ outputs (e.g. R Markdown).")
 (define-public r-nlmixr2plot
   (package
     (name "r-nlmixr2plot")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2plot" version))
        (sha256
-        (base32 "18x72r1qm05svvyzbfa63m5zh245ka91rvgjvrrqphclw5szrxm0"))))
+        (base32 "1lnp346yflg516kndx4mbhx1xvijjlvh53h6syxgd76kdk4iwwwr"))))
     (properties `((upstream-name . "nlmixr2plot")))
     (build-system r-build-system)
     (arguments

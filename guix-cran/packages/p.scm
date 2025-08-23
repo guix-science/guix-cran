@@ -5339,13 +5339,13 @@ use the sampling functions from cmdstanr which can be installed from
 (define-public r-psborrow
   (package
     (name "r-psborrow")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psborrow" version))
        (sha256
-        (base32 "06jmhg0n091b90bfv053mhlm2xq9s79hnj1r82rav60rl3zkn54w"))))
+        (base32 "0q98bqyir4f9a589wlj4z0wcdlsjcnah2l7pddijikyv9c7w6z2i"))))
     (properties `((upstream-name . "psborrow")))
     (build-system r-build-system)
     (arguments
@@ -6602,13 +6602,13 @@ Marie Chion and Arthur Leroy (2023) <@code{arXiv:2307.08975>}.")
 (define-public r-proteinpca
   (package
     (name "r-proteinpca")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProteinPCA" version))
        (sha256
-        (base32 "06gb4ihdryb8dvp0a812p6i32szxip6m4c4frphrsizp301z0mbn"))))
+        (base32 "1pl7hw37dps716riasb8bqg7ifl20gjpx19x7grw9psp97jy80yf"))))
     (properties `((upstream-name . "ProteinPCA")))
     (build-system r-build-system)
     (arguments
@@ -9686,13 +9686,13 @@ visualizations are also provided.")
 (define-public r-priorsense
   (package
     (name "r-priorsense")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorsense" version))
        (sha256
-        (base32 "1s3fcb34aa1hg5cmkpr5ar7sa4ccr9z5na43npr1gadbd9dpllaa"))))
+        (base32 "0pjkry6fc9z72k8l1m7kwch212jk95w8pjm69hyxs0d6skb3wv5j"))))
     (properties `((upstream-name . "priorsense")))
     (build-system r-build-system)
     (arguments
@@ -17272,13 +17272,13 @@ by machine learning.  See Miao, Miao, Wu, Zhao, and Lu (2023)
 (define-public r-popgenreport
   (package
     (name "r-popgenreport")
-    (version "3.1")
+    (version "3.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PopGenReport" version))
        (sha256
-        (base32 "19df1178kznrrzfkhaaf0lkmfk6kasl0x39k3zv3b5w6k7697igs"))))
+        (base32 "1h6d8g1382qg81i8av9gklnr0vc87bhyl5d22k7ma7x6zxj040vz"))))
     (properties `((upstream-name . "PopGenReport")))
     (build-system r-build-system)
     (arguments
@@ -23517,6 +23517,31 @@ rendered as a graphic using base plot command if it is printed.")
 causal inference modeling process.  Supplements the @code{bartCause} package.")
     (license license:expat)))
 
+(define-public r-plotannotate
+  (package
+    (name "r-plotannotate")
+    (version "1.4-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plotannotate" version))
+       (sha256
+        (base32 "0lhs18s838j2lyy7k92x2aa37xrxrpc123lzqz8nwir09xasj30j"))))
+    (properties `((upstream-name . "plotannotate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-conicfit))
+    (home-page "https://cran.r-project.org/package=plotannotate")
+    (synopsis "Annotate Plots")
+    (description
+     "Interactively annotate base R graphics plots with freehand drawing, symbols
+(points, lines, arrows, rectangles, circles, ellipses), and text.  This is
+useful for teaching, for example to visually explain certain plot elements, and
+creating quick sketches.")
+    (license license:gpl3)))
+
 (define-public r-plot4fun
   (package
     (name "r-plot4fun")
@@ -27436,13 +27461,13 @@ repositories.")
 (define-public r-pieglyph
   (package
     (name "r-pieglyph")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PieGlyph" version))
        (sha256
-        (base32 "1fjcxap6af2h9j2v26r3f4f1gyhgkar06p2y8p7j862i1fpgrrcd"))))
+        (base32 "1bncy25sx4qs8b33g84f3d0ndrp6f4kkb5wc0hhyamrs1lgamqj8"))))
     (properties `((upstream-name . "PieGlyph")))
     (build-system r-build-system)
     (arguments

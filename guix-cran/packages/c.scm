@@ -12450,22 +12450,18 @@ to multi-species distribution models <DOI:10.48550/@code{arXiv.2201.13095>}.")
 (define-public r-cotima
   (package
     (name "r-cotima")
-    (version "0.8.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoTiMA" version))
        (sha256
-        (base32 "15kc15jax3z4bfwq0mf7dahwv68nq4njj5a0gwzbr1ww4rrwg1r1"))))
+        (base32 "0lss6wd80h4mmdil8mzii1z01mpzyc3k7gygr4pz16hb785435g1"))))
     (properties `((upstream-name . "CoTiMA")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-zcurve
                              r-stringi
                              r-scholar
@@ -12475,6 +12471,7 @@ to multi-species distribution models <DOI:10.48550/@code{arXiv.2201.13095>}.")
                              r-openxlsx
                              r-openmx
                              r-mbess
+                             r-matrix
                              r-mass
                              r-lavaan
                              r-foreach
@@ -12482,7 +12479,6 @@ to multi-species distribution models <DOI:10.48550/@code{arXiv.2201.13095>}.")
                              r-ctsem
                              r-crayon
                              r-abind))
-    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/CoTiMA/CoTiMA")
     (synopsis "Continuous Time Meta-Analysis ('CoTiMA')")
     (description
@@ -26371,13 +26367,13 @@ memory-efficient computations when handling densely sampled domains.")
 (define-public r-coconots
   (package
     (name "r-coconots")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coconots" version))
        (sha256
-        (base32 "1m0sq3bgdkf8ks60qbx69p8irw7jw7hdf30zjk2fkn52k9rak90q"))))
+        (base32 "1pi9jcz7400fnxf96q3sgm55197vka8f0af8grk7xdqdaa362hi1"))))
     (properties `((upstream-name . "coconots")))
     (build-system r-build-system)
     (arguments
@@ -27319,6 +27315,45 @@ selection that are custom-made for the problem of INUS-discovery.")
      "Various utilities for the complex multivariate Gaussian distribution and complex
 Gaussian processes.")
     (license license:gpl2)))
+
+(define-public r-cmtftoolbox
+  (package
+    (name "r-cmtftoolbox")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CMTFtoolbox" version))
+       (sha256
+        (base32 "0zcjgl2s7liwi4wzn2q6lf49wdzc28aq7pfpmdrrwrb7pm3ifmv5"))))
+    (properties `((upstream-name . "CMTFtoolbox")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rtensor
+                             r-pracma
+                             r-multiway
+                             r-mize
+                             r-magrittr
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-clue))
+    (native-inputs (list r-knitr))
+    (home-page "https://grvanderploeg.com/CMTFtoolbox/")
+    (synopsis
+     "Create (Advanced) Coupled Matrix and Tensor Factorization Models")
+    (description
+     "Creation and selection of (Advanced) Coupled Matrix and Tensor Factorization
+(ACMTF) and ACMTF-Regression (ACMTF-R) models.  Selection of the optimal number
+of components can be done using @code{ACMTF_modelSelection()} and
+@code{ACMTFR_modelSelection()}'.  The CMTF and ACMTF methods were originally
+described by Acar et al., 2011 <doi:10.48550/@code{arXiv.1105.3422>} and Acar et
+al., 2014 <doi:10.1186/1471-2105-15-239>, respectively.")
+    (license license:expat)))
 
 (define-public r-cmtest
   (package
@@ -40906,13 +40941,13 @@ This package provides core utilities to generate and validate this metadata.")
 (define-public r-cffdrs
   (package
     (name "r-cffdrs")
-    (version "1.9.0")
+    (version "1.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cffdrs" version))
        (sha256
-        (base32 "0y4w045fgn1q63w9bk4qwzzxij34agjsg396vmydljz3w86insib"))))
+        (base32 "1ma2va11hagrndv7vy10pg5mzwb7dkrfh64yhfiamba6ds6zjlh1"))))
     (properties `((upstream-name . "cffdrs")))
     (build-system r-build-system)
     (arguments
@@ -40924,17 +40959,18 @@ This package provides core utilities to generate and validate this metadata.")
                              r-foreach
                              r-doparallel
                              r-data-table))
-    (home-page "https://r-forge.r-project.org/projects/cffdrs/")
+    (home-page "https://github.com/cffdrs/cffdrs_r")
     (synopsis "Canadian Forest Fire Danger Rating System")
     (description
      "This project provides a group of new functions to calculate the outputs of the
 two main components of the Canadian Forest Fire Danger Rating System (CFFDRS)
-Van Wagner and Pickett (1985) <https://cfs.nrcan.gc.ca/publications?id=19973>)
+Van Wagner and Pickett (1985)
+<https://ostrnrcan-dostrncan.canada.ca/entities/publication/29706108-2891-4e5d-a59a-a77c96bc507c>)
 at various time scales: the Fire Weather Index (FWI) System Wan Wagner (1985)
-<https://cfs.nrcan.gc.ca/publications?id=19927> and the Fire Behaviour
-Prediction (FBP) System Forestry Canada Fire Danger Group (1992)
-<https://cfs.nrcan.gc.ca/pubwarehouse/pdfs/10068.pdf>.  Some functions have two
-versions, table and raster based.")
+<https://ostrnrcan-dostrncan.canada.ca/entities/publication/d96e56aa-e836-4394-ba29-3afe91c3aa6c>
+and the Fire Behaviour Prediction (FBP) System Forestry Canada Fire Danger Group
+(1992) <https://cfs.nrcan.gc.ca/pubwarehouse/pdfs/10068.pdf>.  Some functions
+have two versions, table and raster based.")
     (license license:gpl2)))
 
 (define-public r-cff
@@ -41400,13 +41436,13 @@ in the user interface.")
 (define-public r-certara-rsnlme
   (package
     (name "r-certara-rsnlme")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Certara.RsNLME" version))
        (sha256
-        (base32 "1b531ilcmlz4h538a3jp3lywmsp2ibdfhrwpxms8wrpmpfwvkpdx"))))
+        (base32 "1zc2cyh36lagfk7c4mk83r5a2jc4yc3mapir7yqwnldax1k2xdja"))))
     (properties `((upstream-name . "Certara.RsNLME")))
     (build-system r-build-system)
     (arguments
@@ -41425,8 +41461,8 @@ in the user interface.")
 with powerful tools for Nonlinear Mixed-Effects (NLME) modeling.  The package
 provides access to the same advanced Maximum Likelihood algorithms used by the
 NLME-Engine in the Phoenix platform.  These tools support a range of analyses,
-from parametric methods to individual and pooled data analysis
-<https://www.certara.com/app/uploads/2020/06/BR_@code{PhoenixNLME-v4.pdf>}.
+from parametric methods to individual and pooled data, and support integrated
+use within the Pirana pharmacometric workbench <doi:10.1002/psp4.70067>.
 Execution is supported both locally or on remote machines.")
     (license license:lgpl3)))
 
@@ -46402,13 +46438,13 @@ R-squared values as sensitivity parameters (Park, Kang, Lee, and Ma, 2023).")
 (define-public r-causact
   (package
     (name "r-causact")
-    (version "0.5.7")
+    (version "0.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causact" version))
        (sha256
-        (base32 "1n6m32g9z9294yn20vpqfps2fbydz52mpshqna8zxwdmnacirnr6"))))
+        (base32 "17x356dn8pxrb302v7k03mnlyy2s7h3965f3j0b1xn7b0hpgz5nc"))))
     (properties `((upstream-name . "causact")))
     (build-system r-build-system)
     (arguments
@@ -48927,13 +48963,13 @@ methods exist for analysis of procedural billing codes.")
 (define-public r-carcass
   (package
     (name "r-carcass")
-    (version "1.7")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "carcass" version))
        (sha256
-        (base32 "09l9yk7knfjhrcpwfwmgla9ghnpg1b10aljmdl70j5kxdiafkfn7"))))
+        (base32 "1j09s2rc1r5a78cscnkg1z7pwqgw61906ak7p0167xm89imsmwxf"))))
     (properties `((upstream-name . "carcass")))
     (build-system r-build-system)
     (arguments

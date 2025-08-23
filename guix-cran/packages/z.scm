@@ -929,13 +929,13 @@ to the Bootstrap\" Efron (1983) <0-412-04231-2>.")
 (define-public r-zephyr
   (package
     (name "r-zephyr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zephyr" version))
        (sha256
-        (base32 "0ly3hsnv8kpsbc9ifwpiqfqrcdazqnm0g2ifmik7zgdxqi8gz949"))))
+        (base32 "0r7jrjprcii6rfq852gzd089hmgg70l60dzlc801hl9c6qpnqvc3"))))
     (properties `((upstream-name . "zephyr")))
     (build-system r-build-system)
     (arguments
