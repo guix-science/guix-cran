@@ -615,13 +615,13 @@ Described in the book \"Extending R\".")
 (define-public r-xpose-xtras
   (package
     (name "r-xpose-xtras")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpose.xtras" version))
        (sha256
-        (base32 "0zrwjm2m692f4lv1wiyjmmyc7qcr1wihf3fygp0n8jvb590wspk6"))))
+        (base32 "0pl8lyhl9dblhsnfcphkapxfwmvivb43r25h2zssxv39r8vpxj5j"))))
     (properties `((upstream-name . "xpose.xtras")))
     (build-system r-build-system)
     (arguments

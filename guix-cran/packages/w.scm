@@ -10334,13 +10334,13 @@ event in the presence of death.")
 (define-public r-w3cmarkupvalidator
   (package
     (name "r-w3cmarkupvalidator")
-    (version "0.2-0")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "W3CMarkupValidator" version))
        (sha256
-        (base32 "0ay3y3i9p93idl5pfbkq242qnlkh2hmlhygmj1hhi5qrdmyk947x"))))
+        (base32 "1gwk9j4dkwdw7mqw6xirhh0ry86ng8v3qhp78pdfsm4dipi3jlww"))))
     (properties `((upstream-name . "W3CMarkupValidator")))
     (build-system r-build-system)
     (arguments

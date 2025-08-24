@@ -7985,13 +7985,13 @@ directional and fluctuating selection in age-structured populations.")
 (define-public r-lmest
   (package
     (name "r-lmest")
-    (version "3.2.6")
+    (version "3.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMest" version))
        (sha256
-        (base32 "0czy4yb07n71g6gvg6f3bgzywizkm4bjqszwhxx9ccw2ch48wm5j"))))
+        (base32 "0p2im3cj81cyi3i6a7wkdbkrgg79dfz94d4z5y0xcnibz7r5xypw"))))
     (properties `((upstream-name . "LMest")))
     (build-system r-build-system)
     (arguments
@@ -11597,42 +11597,6 @@ transition probabilities.  This package is useful for actuarial analyses and
 life insurance modeling, facilitating accurate financial projections.")
     (license license:gpl3)))
 
-(define-public r-lifemapr
-  (package
-    (name "r-lifemapr")
-    (version "1.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LifemapR" version))
-       (sha256
-        (base32 "00lz5nfggfqd3ccq2srrxbdkkz9d0vivbg7ady7yz14qm9njqkix"))))
-    (properties `((upstream-name . "LifemapR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-shiny
-                             r-rlang
-                             r-rcurl
-                             r-leaflet-minicharts
-                             r-leaflet
-                             r-jsonlite
-                             r-htmltools
-                             r-fastmatch
-                             r-dplyr
-                             r-arrow))
-    (native-inputs (list r-knitr))
-    (home-page "https://lifemap-tol.github.io/LifemapR/")
-    (synopsis "Data Visualisation on 'Lifemap' Tree")
-    (description
-     "Allow to visualise data on the NCBI phylogenetic tree as presented in Lifemap
-<https://lifemap.cnrs.fr/>.  It takes as input a dataframe with at least a
-\"taxid\" column containing NCBI format @code{TaxIds} and allows to draw multiple
-layers with different visualisation tools.")
-    (license license:expat)))
-
 (define-public r-lifeinsurer
   (package
     (name "r-lifeinsurer")
@@ -13269,13 +13233,13 @@ textbook of Tukey (1977) <ISBN: 978-0201076165>.")
 (define-public r-letsrept
   (package
     (name "r-letsrept")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "letsRept" version))
        (sha256
-        (base32 "0kpzl6hb059a6vnvxch2azz3zvf0w80i8cbcli791ydf9j4ma6d7"))))
+        (base32 "176jkd7amwmzzd8mn738zfayvq36q0v4k8klnlvvscgrc434x2z0"))))
     (properties `((upstream-name . "letsRept")))
     (build-system r-build-system)
     (arguments

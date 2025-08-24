@@ -20006,13 +20006,13 @@ are implemented purely in C++ providing faster speed than existing packages.")
 (define-public r-fdboost
   (package
     (name "r-fdboost")
-    (version "1.1-2")
+    (version "1.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FDboost" version))
        (sha256
-        (base32 "0fmcwjrcj4axdajavlyg7d200yb6wkxkd7fidmcsxpvpnbbb7wgj"))))
+        (base32 "0lb2zgypqjhqb1g3iqwfy7nwlz7gqh2h0hp5qllr54s108dpn977"))))
     (properties `((upstream-name . "FDboost")))
     (build-system r-build-system)
     (arguments

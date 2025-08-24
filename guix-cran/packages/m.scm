@@ -7959,13 +7959,13 @@ reliability of scenarios with equal or different probabilities of occurrence
 (define-public r-mtdesign
   (package
     (name "r-mtdesign")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mtdesign" version))
        (sha256
-        (base32 "1fk48z40yg3pgdbf9bqivw33k88m2ns8y2cjxszp5686h68nn01v"))))
+        (base32 "192niqw43szcdn83riib73wx1i3lr3rm1x4d7s17khhdbgai0i8y"))))
     (properties `((upstream-name . "mtdesign")))
     (build-system r-build-system)
     (arguments

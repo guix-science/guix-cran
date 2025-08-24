@@ -15835,6 +15835,28 @@ are explained in the text book of Montgomery and Runger (2010) <ISBN:
 lead/lag).")
     (license license:gpl2)))
 
+(define-public r-statamarkdown
+  (package
+    (name "r-statamarkdown")
+    (version "0.9.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Statamarkdown" version))
+       (sha256
+        (base32 "1m2fivg5ipj22kp7pgzladjjlxrmj6kqdcyw9iyq8ks1ffghcbaw"))))
+    (properties `((upstream-name . "Statamarkdown")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-xfun r-knitr))
+    (home-page "https://cran.r-project.org/package=Statamarkdown")
+    (synopsis "'Stata' Markdown")
+    (description "Settings and functions to extend the knitr Stata engine.")
+    (license license:expat)))
+
 (define-public r-stat2data
   (package
     (name "r-stat2data")
@@ -21459,35 +21481,6 @@ components.  However, installing the whole framework is heavy and takes some
 time.  If you would like to use UI and server components from SPS in your own
 Shiny apps, do not hesitate to try this package.")
     (license license:gpl3+)))
-
-(define-public r-sps
-  (package
-    (name "r-sps")
-    (version "0.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sps" version))
-       (sha256
-        (base32 "16rs7r2nlivb5czhakxih3a04asgqjj236hzz1m023vb1szbd3j9"))))
-    (properties `((upstream-name . "sps")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://marberts.github.io/sps/")
-    (synopsis "Sequential Poisson Sampling")
-    (description
-     "Sequential Poisson sampling is a variation of Poisson sampling for drawing
-probability-proportional-to-size samples with a given number of units, and is
-commonly used for price-index surveys.  This package gives functions to draw
-stratified sequential Poisson samples according to the method by Ohlsson (1998,
-ISSN:0282-423X), as well as other order sample designs by RosÃ©n (1997,
-<doi:10.1016/S0378-3758(96)00186-3>), and generate appropriate bootstrap
-replicate weights according to the generalized bootstrap method by Beaumont and
-Patak (2012, <doi:10.1111/j.1751-5823.2011.00166.x>).")
-    (license license:expat)))
 
 (define-public r-sprtt
   (package
@@ -52311,13 +52304,13 @@ distribution.")
 (define-public r-shide
   (package
     (name "r-shide")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shide" version))
        (sha256
-        (base32 "0wf84npx431c9hb09yxgbi0w1apzrfh7qisamlybvq3mhs8aaqdr"))))
+        (base32 "0i2xv293kywg4iwb68nvn6h5xfjnrgjk4sbwhry1g4ih4mb3rw12"))))
     (properties `((upstream-name . "shide")))
     (build-system r-build-system)
     (arguments

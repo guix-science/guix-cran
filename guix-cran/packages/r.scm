@@ -49804,34 +49804,26 @@ and Qunhua Li (2016).  Robust bent line regression, submitted.\".")
 (define-public r-rbedrock
   (package
     (name "r-rbedrock")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbedrock" version))
        (sha256
-        (base32 "0ybwifhhdwxgqfn4hgv10ldzw83bx61bxnjcxp3wyik25a694zhw"))))
+        (base32 "034c0fzd4fhf8cmj6vp8x0z77n11wxr37l03vfw2rlj53ivwzmsi"))))
     (properties `((upstream-name . "rbedrock")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list zlib zlib cmake))
-    (propagated-inputs (list r-vctrs
-                             r-tidyr
-                             r-tibble
-                             r-stringr
+    (propagated-inputs (list r-tibble
                              r-rlang
-                             r-readr
                              r-rappdirs
                              r-r6
-                             r-purrr
-                             r-magrittr
-                             r-fs
-                             r-dplyr
                              r-digest
                              r-bit64))
-    (home-page "https://github.com/reedacartwright/rbedrock")
+    (home-page "https://reedacartwright.github.io/rbedrock/")
     (synopsis
      "Analysis and Manipulation of Data from Minecraft Bedrock Edition")
     (description

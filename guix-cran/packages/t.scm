@@ -8121,13 +8121,13 @@ models in polynomial time.  Currently supported models include gbm',
 (define-public r-treesearch
   (package
     (name "r-treesearch")
-    (version "1.6.1")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeSearch" version))
        (sha256
-        (base32 "0kg6d7r0cqyr1g41s07jfcyckifibh6kf0mkn1i8p8cm5kq9kn6x"))))
+        (base32 "11wbmk8z1fglnwdcc4x52my42cr5781qq89mfaimmslx0n1325nm"))))
     (properties `((upstream-name . "TreeSearch")))
     (build-system r-build-system)
     (arguments
@@ -8135,6 +8135,7 @@ models in polynomial time.  Currently supported models include gbm',
       #:tests? #f))
     (propagated-inputs (list r-treetools
                              r-treedist
+                             r-stringi
                              r-shinyjs
                              r-shiny
                              r-rogue
@@ -8146,6 +8147,7 @@ models in polynomial time.  Currently supported models include gbm',
                              r-future
                              r-fs
                              r-fastmatch
+                             r-fastmap
                              r-cluster
                              r-cli
                              r-ape))

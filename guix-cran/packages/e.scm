@@ -120,13 +120,13 @@ variables.")
 (define-public r-ezplot
   (package
     (name "r-ezplot")
-    (version "0.7.13")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ezplot" version))
        (sha256
-        (base32 "1apfchy9s09hvympq1ipvxsqizwgx05sza8k38yf9vl8nphcdpkc"))))
+        (base32 "14ik2j26nasfrq28z15imz65lvkv5vnmqfry4b9g8zqzi5qz7dhc"))))
     (properties `((upstream-name . "ezplot")))
     (build-system r-build-system)
     (arguments
@@ -134,7 +134,7 @@ variables.")
       #:tests? #f))
     (propagated-inputs (list r-rlang r-lubridate r-ggplot2 r-forcats r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ezplot")
+    (home-page "https://github.com/wkostelecki/ezplot")
     (synopsis "Functions for Common Chart Types")
     (description
      "Wrapper for the ggplot2 package that creates a variety of common charts (e.g.
@@ -15461,13 +15461,13 @@ forecasting.  For method details see (i) Choudhury (2019)
 (define-public r-emdi
   (package
     (name "r-emdi")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emdi" version))
        (sha256
-        (base32 "1zdb2bg8gdpjlg104f5cpnrrdnpdqdcp95gxlbnadq6rds94ipcx"))))
+        (base32 "1vwdphywnxy3prakifb2gjgmz54lwjr5g7zz6pfx9dz1wnwxg4wk"))))
     (properties `((upstream-name . "emdi")))
     (build-system r-build-system)
     (arguments
@@ -22814,29 +22814,32 @@ Continuous Tree Cover data (Sexton et al., 2013)
 (define-public r-ecocbo
   (package
     (name "r-ecocbo")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecocbo" version))
        (sha256
-        (base32 "1dixh1rdrfw419wdcp81hac2sali03wg7x9fr1x77rgy2q059370"))))
+        (base32 "09cwy75cbkahysy93c4llzf41bdgs8vbn3v2sqnrlf75bsqb96qx"))))
     (properties `((upstream-name . "ecocbo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vegan
+                             r-tidyselect
+                             r-tidyr
                              r-ssp
                              r-sampling
                              r-rlang
+                             r-plotly
+                             r-parallelly
+                             r-parabar
                              r-ggpubr
                              r-ggplot2
-                             r-foreach
-                             r-dosnow
-                             r-doparallel))
+                             r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ecocbo")
+    (home-page "https://github.com/arturoSP/ecocbo")
     (synopsis "Calculating Optimum Sampling Effort in Community Ecology")
     (description
      "This package provides a system for calculating the optimal sampling effort,
@@ -22844,12 +22847,16 @@ based on the ideas of \"Ecological cost-benefit optimization\" as developed by A
 Underwood (1997, ISBN 0 521 55696 1).  Data is obtained from simulated
 ecological communities with @code{prep_data()} which formats and arranges the
 initial data, and then the optimization follows the following procedure of four
-functions: (1) @code{scompvar()} calculates the variation components necessary
-for (2) @code{sim_cbo()} to calculate the optimal combination of number of sites
-and samples depending on either an economic budget or on a desired statistical
-accuracy.  Additionally, (3) @code{sim_beta()} estimates statistical power and
-type 2 error by using Permutational Multivariate Analysis of Variance, and (6)
-@code{plot_power()} represents the results of the previous function.")
+functions: (1) @code{prep_data()} takes the original dataset and creates
+simulated sets that can be used as a basis for estimating statistical power and
+type II error. (2) @code{sim_beta()} is used to estimate the statistical power
+for the different sampling efforts specified by the user. (3) @code{sim_cbo()}
+calculates then the optimal sampling effort, based on the statistical power and
+the sampling costs.  Additionally, (4) @code{scompvar()} calculates the
+variation components necessary for (5) @code{Underwood_cbo()} to calculate the
+optimal combination of number of sites and samples depending on either an
+economic budget or on a desired statistical accuracy.  Lastly, (6)
+@code{plot_power()} helps the user visualize the results of @code{sim_beta()}.")
     (license license:gpl3+)))
 
 (define-public r-ecmwfr

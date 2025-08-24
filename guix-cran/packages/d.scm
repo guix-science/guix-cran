@@ -2981,6 +2981,34 @@ function FPTime determines the first passage time into each state.  The function
 statdistr determines the stationary distribution of a Markov Chain.")
     (license license:gpl2+)))
 
+(define-public r-dtmapi
+  (package
+    (name "r-dtmapi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dtmapi" version))
+       (sha256
+        (base32 "11208sdi6w8saqsji820c5vx9jyg2k56rvrxg5mqhfackcd5w8x9"))))
+    (properties `((upstream-name . "dtmapi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-testthat r-httr2 r-askpass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Displacement-Tracking-Matrix/dtmapi-R")
+    (synopsis "Fetching Data from the 'Displacement Tracking Matrix'")
+    (description
+     "Allows humanitarian community, academia, media, government, and non-governmental
+organizations to utilize the data collected by the Displacement Tracking Matrix
+(<https://dtm.iom.int>), a unit in the International Organization for Migration.
+ This also provides non-sensitive Internally Displaced Person figures,
+aggregated at the country, Admin 1 (states, provinces, or equivalent), and Admin
+2 (smaller administrative areas) levels.")
+    (license license:expat)))
+
 (define-public r-dtlcor
   (package
     (name "r-dtlcor")
@@ -16015,13 +16043,13 @@ of the competitive or collaborative transition.")
 (define-public r-dimodelsvis
   (package
     (name "r-dimodelsvis")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DImodelsVis" version))
        (sha256
-        (base32 "08hy1ch23jkrbhmpr1pjdzi91l5lhszvxwixwkjpwr7qj493dnbg"))))
+        (base32 "196c8nfss9x18wzbx9ajfp9rali5kxji5rnkwg7sg6kr2647nd45"))))
     (properties `((upstream-name . "DImodelsVis")))
     (build-system r-build-system)
     (arguments
@@ -30539,13 +30567,13 @@ and to manipulate them after that.")
 (define-public r-datametprocess
   (package
     (name "r-datametprocess")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataMetProcess" version))
        (sha256
-        (base32 "1hnm5bpc7v3jddsnd5m5qyjkf26rhk6vs1kylkkqjbx4ys5cxxmh"))))
+        (base32 "0qmxvag2i5wyqmzsrk6k8zs4ykyj80n3d13444fb5xdd0nisixsl"))))
     (properties `((upstream-name . "DataMetProcess")))
     (build-system r-build-system)
     (arguments

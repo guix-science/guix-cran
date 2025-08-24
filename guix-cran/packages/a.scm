@@ -1109,13 +1109,13 @@ switching between week-based date definitions.")
 (define-public r-awdb
   (package
     (name "r-awdb")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "awdb" version))
        (sha256
-        (base32 "0bpq4w17f4zx9r9awfyc0h5gdlb18kzwrnnxsk3f2ad7qbkxlh8i"))))
+        (base32 "01nf64rn8kz0429qqwq6lqdkh5mfn0732hjpik7igwnqgi7fssj6"))))
     (properties `((upstream-name . "awdb")))
     (build-system r-build-system)
     (arguments
@@ -5634,13 +5634,13 @@ principal components using singular spectrum analysis (de Carvalho and Rua
 (define-public r-asrgenomics
   (package
     (name "r-asrgenomics")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ASRgenomics" version))
        (sha256
-        (base32 "1k6qyp5ac8q3z7ifbqv2kkryh27ii0zbfmlcjl6i3y7s1mfyigg8"))))
+        (base32 "04qrdl8rl0fw4c4a87gvgz4day7mf30i95j7fyi4hmwrzd9sd1hv"))))
     (properties `((upstream-name . "ASRgenomics")))
     (build-system r-build-system)
     (arguments
@@ -14617,13 +14617,13 @@ from RStudio', in shiny applications, and in rmarkdown documents.")
 (define-public r-amt
   (package
     (name "r-amt")
-    (version "0.2.2.0")
+    (version "0.3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amt" version))
        (sha256
-        (base32 "1yx5rvc18ppk37z1m72a1j80ai4b84zc8fh5py2zipvc7phwqfsw"))))
+        (base32 "0x4diq570dvyd52l6199ybsnf2lmvfq4s8b53zpmy6vrhqyp9kyz"))))
     (properties `((upstream-name . "amt")))
     (build-system r-build-system)
     (arguments
@@ -19048,13 +19048,13 @@ and
 (define-public r-aifeducation
   (package
     (name "r-aifeducation")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aifeducation" version))
        (sha256
-        (base32 "0j43229710jyljgnk00ik87njx6ziynmiwhbkamqbvplw0w248an"))))
+        (base32 "1ikpzjzggjysvjvlna7r047j4x66vqksqcrckknrgdb0yk4zmj29"))))
     (properties `((upstream-name . "aifeducation")))
     (build-system r-build-system)
     (arguments

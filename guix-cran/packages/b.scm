@@ -21660,13 +21660,13 @@ Ye et al (2023) <doi:10.1080/24754269.2023.2205802>.")
 (define-public r-beebdc
   (package
     (name "r-beebdc")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeBDC" version))
        (sha256
-        (base32 "10gqj889m931m80ir5m5qz7mh2j5g8d2yc4yxakvjq4ipncvjvkm"))))
+        (base32 "0lnd07lcl6lajskdkmwfa1n03i49xlkd3kmwc733g9gw5pyzpam1"))))
     (properties `((upstream-name . "BeeBDC")))
     (build-system r-build-system)
     (arguments
@@ -21690,7 +21690,6 @@ Ye et al (2023) <doi:10.1080/24754269.2023.2205802>.")
                              r-cowplot
                              r-coordinatecleaner
                              r-circlize))
-    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BeeBDC")
     (synopsis "Occurrence Data Cleaning")
     (description
@@ -26871,13 +26870,13 @@ filter.")
 (define-public r-bayesianreasoning
   (package
     (name "r-bayesianreasoning")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianReasoning" version))
        (sha256
-        (base32 "0bl0crj9z0grgfsqzc403jd74f411ib827gkfqis0hbdi5y57gyw"))))
+        (base32 "11zacaj6zb8y5jpcwwla11qjgxkigng96vjrk79jf3sgql7bdh4n"))))
     (properties `((upstream-name . "BayesianReasoning")))
     (build-system r-build-system)
     (arguments

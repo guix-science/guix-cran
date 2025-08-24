@@ -2423,50 +2423,6 @@ implements the mixture of truncated normals model for p-hacking described in
 Moss and De Bin (2019) <@code{arXiv:1911.12445>}.")
     (license license:gpl3)))
 
-(define-public r-publicworksfinanceit
-  (package
-    (name "r-publicworksfinanceit")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PublicWorksFinanceIT" version))
-       (sha256
-        (base32 "0pvkxf0425np1ld6z7s3sfphiykf2gm1a4410l0hj07f860pmrsh"))))
-    (properties `((upstream-name . "PublicWorksFinanceIT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-spdep
-                             r-sf
-                             r-scales
-                             r-rvest
-                             r-rlang
-                             r-plotly
-                             r-magrittr
-                             r-lubridate
-                             r-leaflet
-                             r-knitr
-                             r-httr
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=PublicWorksFinanceIT")
-    (synopsis
-     "Soil Defense Investments in Italy: Data Retrieval, Analysis, Visualization")
-    (description
-     "Facilitates the retrieval and analysis of financial data related to public works
-in Italy, focusing on soil defense investments.  It extracts data from
-@code{OpenCoesione}', @code{OpenBDAP}', and the @code{ReNDiS} database,
-eliminating the need for direct access to these platforms.  The package boasts a
-user-friendly design, featuring real time updates and a set of functions
-tailored for data retrieval and visualization.  See the webpages for further
-information <http://www.rendis.isprambiente.it/rendisweb/>,
-<https://opencoesione.gov.it/en/>, and <https://bdap-opendata.rgs.mef.gov.it/>.")
-    (license license:gpl3+)))
-
 (define-public r-publicationbias
   (package
     (name "r-publicationbias")
@@ -10518,13 +10474,13 @@ computing final PRIDIT scores for multivariate analysis of ordinal data.")
 (define-public r-pricesensitivitymeter
   (package
     (name "r-pricesensitivitymeter")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pricesensitivitymeter" version))
        (sha256
-        (base32 "136y3dfm6chznp8bnyw6xd9wkv265j3ykqicxib1vwgwaprg6zdm"))))
+        (base32 "02ihqcb5zq3bhf0i1n8a8kwv3p36cb8nqdcwnh28iqi6n8ymchfg"))))
     (properties `((upstream-name . "pricesensitivitymeter")))
     (build-system r-build-system)
     (arguments
@@ -17151,13 +17107,13 @@ visualization.")
 (define-public r-poppr
   (package
     (name "r-poppr")
-    (version "2.9.7")
+    (version "2.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poppr" version))
        (sha256
-        (base32 "1ax9mifdc3x6jxjj68fw5p4nypsm3i192n6s6lc5if1bq5982mfz"))))
+        (base32 "0b8swc82r4jxj8h0fxh9g563d0y22hm3n1y9gpf5w0i13x49q7g3"))))
     (properties `((upstream-name . "poppr")))
     (build-system r-build-system)
     (arguments
@@ -22774,13 +22730,13 @@ the base graphics plotting tools; and manipulate irregular polygons.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "0q076a905p12j0ii24y8n23a6wfkjvy1ga1zx4ag6lg04s4k83sf"))))
+        (base32 "1vkyhckd6h0mb1m7y6wvgdibnqqxwsmgdqhrz5mdzwsgr32zy4kp"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments
@@ -24061,13 +24017,13 @@ the curve and ROC curve are provided.")
 (define-public r-pliman
   (package
     (name "r-pliman")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pliman" version))
        (sha256
-        (base32 "1w6mr8ihdki66qykl70c2fc0slnp396dgqjv5m3p1vh585y5csvh"))))
+        (base32 "12ip3c6864fl2kqm3xyf1plj08wmwfk0qrkagsnalb0z1qqqrv25"))))
     (properties `((upstream-name . "pliman")))
     (build-system r-build-system)
     (arguments
@@ -37109,6 +37065,35 @@ significance using two-group tests and linear regression Yuan et al. (2006)
 <doi: 10.1186/1471-2105-7-85>.")
     (license license:gpl3)))
 
+(define-public r-pcps
+  (package
+    (name "r-pcps")
+    (version "1.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PCPS" version))
+       (sha256
+        (base32 "0b96fgmh9qqywipd1py70n7x3v2490p82arxrbykps65wiaklj87"))))
+    (properties `((upstream-name . "PCPS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-syncsa
+                             r-rcpparmadillo
+                             r-picante
+                             r-phylobase
+                             r-nlme
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=PCPS")
+    (synopsis "Principal Coordinates of Phylogenetic Structure")
+    (description
+     "Set of functions for analysis of Principal Coordinates of Phylogenetic Structure
+(PCPS).")
+    (license license:gpl2)))
+
 (define-public r-pcpr
   (package
     (name "r-pcpr")
@@ -45400,13 +45385,13 @@ spaghetti-plot, build multi-contingency tables...")
 (define-public r-packetllm
   (package
     (name "r-packetllm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PacketLLM" version))
        (sha256
-        (base32 "01x4nydz6bzynjq4r2ar12qcbv8adl9wgg1y1annc7krlwa7qvvb"))))
+        (base32 "0p2x05fqlzvgpaw3al4h5z6v35f8dpgiymcbvrk9391bydhcszp7"))))
     (properties `((upstream-name . "PacketLLM")))
     (build-system r-build-system)
     (arguments
@@ -45424,16 +45409,16 @@ spaghetti-plot, build multi-contingency tables...")
     (synopsis "Interactive 'OpenAI' Model Integration in 'RStudio'")
     (description
      "Offers an interactive RStudio gadget interface for communicating with
-@code{OpenAI} large language models (e.g., gpt-4o', gpt-4o-mini', gpt-4.1', o1',
-o3-mini') (<https://platform.openai.com/docs/api-reference>).  Enables users to
-conduct multiple chat conversations simultaneously in separate tabs.  Supports
-uploading local files (R, PDF, DOCX) to provide context for the models.  Allows
-per-conversation configuration of model parameters such as temperature and
-system messages (where supported by the model).  API interactions via the httr
-package are performed asynchronously using promises and future to avoid blocking
-the R console.  Useful for tasks like code generation, text summarization, and
-document analysis directly within the RStudio environment.  Requires an
-@code{OpenAI} API key set as an environment variable.")
+@code{OpenAI} large language models (e.g., gpt-5', gpt-5-mini', gpt-5-nano')
+(<https://platform.openai.com/docs/api-reference>).  Enables users to conduct
+multiple chat conversations simultaneously in separate tabs.  Supports uploading
+local files (R, PDF, DOCX) to provide context for the models.  Allows
+per-conversation configuration of system messages (where supported by the
+model).  API interactions via the httr package are performed asynchronously
+using promises and future to avoid blocking the R console.  Useful for tasks
+like code generation, text summarization, and document analysis directly within
+the RStudio environment.  Requires an @code{OpenAI} API key set as an
+environment variable.")
     (license license:expat)))
 
 (define-public r-packer

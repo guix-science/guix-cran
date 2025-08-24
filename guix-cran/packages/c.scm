@@ -12638,13 +12638,13 @@ regression, logistic regression and the Cox regression models.")
 (define-public r-cosmos
   (package
     (name "r-cosmos")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoSMoS" version))
        (sha256
-        (base32 "149mybfxaqssawp8fqhjiv3xljzflc02y4pfvavz7rklfplidqkb"))))
+        (base32 "01vamg2y41d2h5dl7n3jblbgbj4mphkrvd9j1ivhwjgshqk87cch"))))
     (properties `((upstream-name . "CoSMoS")))
     (build-system r-build-system)
     (arguments
@@ -12675,7 +12675,7 @@ do the rest. @code{CoSMoS} is based on the framework described in Papalexiou
 Papalexiou and Serinaldi (2020, <doi:10.1029/2019WR026331>), and further
 advanced in Papalexiou et al. (2021, <doi:10.1029/2020WR029466>) to allow
 fine-scale space-time simulation of storms (or even cyclone-mimicking fields).")
-    (license license:gpl3)))
+    (license license:agpl3)))
 
 (define-public r-cosmofns
   (package
@@ -17476,13 +17476,13 @@ dialects that are identified by locale.")
 (define-public r-conquestr
   (package
     (name "r-conquestr")
-    (version "1.5.1")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conquestr" version))
        (sha256
-        (base32 "1b3jpzf2n6w4brn69r5p746vys9yxmmj7m79af0yw23xj0pl47cr"))))
+        (base32 "0z2bl2vaa907n593lmlmimi0267hpnw9yb7kijg1z76v1k5zi3h1"))))
     (properties `((upstream-name . "conquestr")))
     (build-system r-build-system)
     (arguments
@@ -37199,13 +37199,13 @@ Press.")
 (define-public r-choosegcm
   (package
     (name "r-choosegcm")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chooseGCM" version))
        (sha256
-        (base32 "0jhn2s8p1zsml2fnv0swijk4f6yas4zg805jlv4b89gj44lyww08"))))
+        (base32 "1cafqrr18ka1lr91acl9iaifvq2a360nbzww4fhmsvczq7kk8g04"))))
     (properties `((upstream-name . "chooseGCM")))
     (build-system r-build-system)
     (arguments
@@ -40554,13 +40554,13 @@ variables with respect to this measure.")
 (define-public r-cgam
   (package
     (name "r-cgam")
-    (version "1.28")
+    (version "1.29")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgam" version))
        (sha256
-        (base32 "1cn6ivvad6md6pp6905yd3q37rp4w6qvgwbshqpb906cri44zs6j"))))
+        (base32 "12197wd8vqb62k9wsxi8kqv24blkyi46llnzw38r4lvradnni4bk"))))
     (properties `((upstream-name . "cgam")))
     (build-system r-build-system)
     (arguments

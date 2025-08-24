@@ -10524,19 +10524,19 @@ of this package is @code{nFunNNmodel()}.")
 (define-public r-nftbart
   (package
     (name "r-nftbart")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nftbart" version))
        (sha256
-        (base32 "1vxmjk5bbxyqmrb3mndafcnpx9n8q9rlxm3d1i6fncs78mqqjsnm"))))
+        (base32 "002nzf0vh96s1fyrhl3dsl0ig3ps1pv6gpz9snjs7j8747ncfcp6"))))
     (properties `((upstream-name . "nftbart")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-rcpp r-nnet))
+    (propagated-inputs (list r-survival r-rcpp r-nnet r-lattice))
     (home-page "https://cran.r-project.org/package=nftbart")
     (synopsis "Nonparametric Failure Time Bayesian Additive Regression Trees")
     (description
@@ -10546,7 +10546,7 @@ Trees (HBART) and Low Information Omnibus (LIO) Dirichlet Process Mixtures
 (DPM).  An NFT BART model is of the form Y = mu + f(x) + sd(x) E where functions
 f and sd have BART and HBART priors, respectively, while E is a nonparametric
 error distribution due to a DPM LIO prior hierarchy.  See the following for a
-complete description of the model at <doi:10.1111/biom.13857>.")
+description of the model at <doi:10.1111/biom.13857>.")
     (license license:gpl2+)))
 
 (define-public r-nflverse

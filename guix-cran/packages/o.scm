@@ -2079,13 +2079,13 @@ several providers.")
 (define-public r-osmdata
   (package
     (name "r-osmdata")
-    (version "0.2.5")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osmdata" version))
        (sha256
-        (base32 "0073dnnznq479ffnizrv8wqmfiv3gmdmmlkmkh1hxgr7p32v1i4z"))))
+        (base32 "05gmxizy4c8rgvgi27dv19jczxg6vf7srfd45zrl0n8wgw6ygjr6"))))
     (properties `((upstream-name . "osmdata")))
     (build-system r-build-system)
     (arguments
@@ -2094,15 +2094,11 @@ several providers.")
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-rvest
-                             r-reproj
                              r-rcpp
-                             r-magrittr
-                             r-lubridate
                              r-httr2
                              r-curl))
     (native-inputs (list r-knitr))
-    (home-page
-     "https://docs.ropensci.org/osmdata/https://github.com/ropensci/osmdata/")
+    (home-page "https://docs.ropensci.org/osmdata/")
     (synopsis
      "Import 'OpenStreetMap' Data as Simple Features or Spatial Objects")
     (description
