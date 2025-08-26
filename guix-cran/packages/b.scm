@@ -3566,13 +3566,13 @@ trials with the objective of equivalence assessment.")
 (define-public r-bs4dash
   (package
     (name "r-bs4dash")
-    (version "2.3.4")
+    (version "2.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bs4Dash" version))
        (sha256
-        (base32 "1swh87gx6qzkxqa9wf2x7f20pnpq94gm4dgvkhh3kwwz1gv9c2g2"))))
+        (base32 "1nhcp3yi1znngxjxab5y3fdq1awk2xykjmwf8bg9ac63rjyin5n2"))))
     (properties `((upstream-name . "bs4Dash")))
     (build-system r-build-system)
     (arguments
@@ -3594,12 +3594,14 @@ trials with the objective of equivalence assessment.")
                                   '())))))))
     (propagated-inputs (list r-waiter
                              r-shiny
+                             r-rlang
                              r-lifecycle
                              r-jsonlite
                              r-httr
                              r-httpuv
                              r-htmltools
                              r-fresh
+                             r-cli
                              r-bslib))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/RinteRface/bs4Dash")
@@ -6001,45 +6003,6 @@ supports padding the resulting numbers with zeros.")
 bias) in estimating the treatment effect in a proportional hazard model, as
 described in Williamson et al. (2022) <doi:10.1158/1078-0432.ccr-21-2468>.")
     (license license:gpl3+)))
-
-(define-public r-bracatus
-  (package
-    (name "r-bracatus")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bRacatus" version))
-       (sha256
-        (base32 "0jz5c1sbnnl5db0iiqh1paq55rwsbpz6srshcf4yf3ki58m3a9sm"))))
-    (properties `((upstream-name . "bRacatus")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sp
-                             r-sf
-                             r-rnaturalearth
-                             r-rgbif
-                             r-raster
-                             r-plotfunctions
-                             r-jsonlite
-                             r-geojsonio
-                             r-data-table))
-    (home-page "https://github.com/EduardoArle/bRacatus")
-    (synopsis
-     "Method to Estimate the Accuracy and Biogeographical Status of Georeferenced Biological Data")
-    (description
-     "Automated assessment of accuracy and geographical status of georeferenced
-biological data.  The methods rely on reference regions, namely checklists and
-range maps.  Includes functions to obtain data from the Global Biodiversity
-Information Facility <https://www.gbif.org/> and from the Global Inventory of
-Floras and Traits <https://gift.uni-goettingen.de/home>.  Alternatively, the
-user can input their own data.  Furthermore, provides easy visualisation of the
-data and the results through the plotting functions.  Especially suited for
-large datasets.  The reference for the methodology is: ArlÃ© et al. (under
-review).")
-    (license license:gpl2+)))
 
 (define-public r-bqror
   (package
@@ -10162,13 +10125,13 @@ of distributions, including Mohammadi and et al. (2013)
 (define-public r-bmiselect
   (package
     (name "r-bmiselect")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BMIselect" version))
        (sha256
-        (base32 "18n8h15vvidn56w84qcnaj4aj66zqlsld7xp5p1cbk15l0xrjqzg"))))
+        (base32 "1phcrrqdr3vxn0aaw26awla07ykmp66ivc7b202xjnyak1jam0m6"))))
     (properties `((upstream-name . "BMIselect")))
     (build-system r-build-system)
     (arguments
@@ -10186,6 +10149,7 @@ of distributions, including Mohammadi and et al. (2013)
                              r-doparallel
                              r-arm
                              r-abind))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BMIselect")
     (synopsis
      "Bayesian MI-LASSO for Variable Selection on Multiply-Imputed Datasets")
@@ -10196,10 +10160,11 @@ MI-LASSO models using shrinkage (Multi-Laplace, Horseshoe, ARD) and
 Spike-and-Slab (Spike-and-Laplace) priors, along with tools for model fitting
 via MCMC, four-step projection predictive variable selection, and hyperparameter
 calibration.  Methods are suitable for both continuous and binary covariates
-under missing-at-random assumptions.  See Zou, J., Wang, S. and Chen, Q. (2025),
-Bayesian MI-LASSO for Variable Selection on Multiply-Imputed Data. @code{ArXiv},
-2211.00114. <doi:10.48550/@code{arXiv.2211.00114>} for more details.  We also
-provide the frequentist`s MI-LASSO function.")
+under missing-at-random or missing-completely-at-random assumptions.  See Zou,
+J., Wang, S. and Chen, Q. (2025), Bayesian MI-LASSO for Variable Selection on
+Multiply-Imputed Data. @code{ArXiv}, 2211.00114.
+<doi:10.48550/@code{arXiv.2211.00114>} for more details.  We also provide the
+frequentist`s MI-LASSO function.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-bmisc
@@ -12913,13 +12878,13 @@ handle confounding.")
 (define-public r-bitrina
   (package
     (name "r-bitrina")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiTrinA" version))
        (sha256
-        (base32 "09x3w3njdm7pgjjcqc1g3lp8nj31qkq3hmn21dqgvq7acyblan08"))))
+        (base32 "09zydlb76k55zl005rhz3yw1q2bk00sk9q4lalwgi2daidzlygyr"))))
     (properties `((upstream-name . "BiTrinA")))
     (build-system r-build-system)
     (arguments
@@ -14993,19 +14958,19 @@ n-gram data.")
 (define-public r-biogeom
   (package
     (name "r-biogeom")
-    (version "1.4.4")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biogeom" version))
        (sha256
-        (base32 "166ll1yvygxnh79lry1yfr5c4pz9cz905wh1qll96mqln97zbxf3"))))
+        (base32 "0wvnwgglww7xpmgjvmny211hd8ynfz3hnv60m6sk6nflibbkya66"))))
     (properties `((upstream-name . "biogeom")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-spatstat-geom))
+    (propagated-inputs (list r-spatstat-geom r-bmp))
     (home-page "https://cran.r-project.org/package=biogeom")
     (synopsis "Biological Geometries")
     (description
@@ -24166,27 +24131,37 @@ now can be used with Seurat seamlessly.")
 (define-public r-bbk
   (package
     (name "r-bbk")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbk" version))
        (sha256
-        (base32 "07mc6lxjlwrldrns2wkdsyvgvip8jabrvis8l453qanbsvldk44x"))))
+        (base32 "0j0mzkiriy6c91yckb6j4ckl49s79xr2c0fl02p05aa35virkp7j"))))
     (properties `((upstream-name . "bbk")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-jsonlite r-httr2 r-data-table r-curl))
+    (propagated-inputs (list r-xml2
+                             r-jsonlite
+                             r-httr2
+                             r-data-table
+                             r-curl
+                             r-checkmate))
     (home-page "https://m-muecke.github.io/bbk/")
     (synopsis "Client for Central Bank APIs")
     (description
      "This package provides a client for retrieving data and metadata from major
 central bank APIs.  It supports access to the Bundesbank SDMX Web Service API
 (<https://www.bundesbank.de/en/statistics/time-series-databases/help-for-sdmx-web-service/web-service-interface-data>),
-the Swiss National Bank Data Portal (<https://data.snb.ch/en>), and the European
-Central Bank Data Portal API (<https://data.ecb.europa.eu/help/api/overview>).")
+the Swiss National Bank Data Portal (<https://data.snb.ch/en>), the European
+Central Bank Data Portal API (<https://data.ecb.europa.eu/help/api/overview>),
+the Bank of England Interactive Statistical Database
+(<https://www.bankofengland.co.uk/boeapps/database>), the Banco de EspaÃ±a API
+(<https://www.bde.es/webbe/en/estadisticas/recursos/api-estadisticas-bde.html>),
+and the Banque de France Web Service
+(<https://webstat.banque-france.fr/en/pages/guide-migration-api/>).")
     (license license:expat)))
 
 (define-public r-bbi

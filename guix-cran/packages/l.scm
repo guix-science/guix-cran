@@ -1051,52 +1051,6 @@ traditional time-to-event genome-wide association studies, where family history
 was not considered.")
     (license license:gpl3)))
 
-(define-public r-ltfgrs
-  (package
-    (name "r-ltfgrs")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LTFGRS" version))
-       (sha256
-        (base32 "0i3qk1lsks6mv6fasabfz69y9x5ml8k8yn28jk5r82varw1cdhgd"))))
-    (properties `((upstream-name . "LTFGRS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-tmvtnorm
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-rcpp
-                             r-purrr
-                             r-lubridate
-                             r-igraph
-                             r-future-apply
-                             r-future
-                             r-dplyr
-                             r-batchmeans))
-    (native-inputs (list r-knitr))
-    (home-page "https://emilmip.github.io/LTFGRS/")
-    (synopsis
-     "Implementation of Several Phenotype-Based Family Genetic Risk Scores")
-    (description
-     "Implementation of several phenotype-based family genetic risk scores with
-unified input data and data preparation functions to help facilitate the
-required data preparation and management.  The implemented family genetic risk
-scores are the extended liability threshold model conditional on family history
-(LT-FH++) from Pedersen (2022) <doi:10.1016/j.ajhg.2022.01.009> and Pedersen
-(2023) <https://www.nature.com/articles/s41467-023-41210-z>, Pearson-Aitken
-Family Genetic Risk Scores (PA-FGRS) from Krebs (2024)
-<doi:10.1016/j.ajhg.2024.09.009>, and family genetic risk score by Kendler
-(2021) <doi:10.1001/jamapsychiatry.2021.0336>.")
-    (license license:gpl3+)))
-
 (define-public r-ltertools
   (package
     (name "r-ltertools")
@@ -5087,13 +5041,13 @@ and Santi (2025) <doi:10.48550/@code{arXiv.2505.22507>}.")
 (define-public r-logmult
   (package
     (name "r-logmult")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logmult" version))
        (sha256
-        (base32 "1k9izgna3bfi8gvnpks85gj3zv3lp35991ml58q7pcqqr78giii2"))))
+        (base32 "1gfrb17d7rd40jwrm62mzgl1nfi3qnq6hgpskr29s6f6174lvwbr"))))
     (properties `((upstream-name . "logmult")))
     (build-system r-build-system)
     (arguments
@@ -5342,13 +5296,13 @@ is helpful to detect patients that may present cognitive decline.")
 (define-public r-logisticensembles
   (package
     (name "r-logisticensembles")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LogisticEnsembles" version))
        (sha256
-        (base32 "04n2541kcy84jiwm03bw1ccz2gbhv6f3bjlsy0insydq18ry7lhr"))))
+        (base32 "0w484242zdkk3qf7gmi95glk5jppjdxkish9wf03gvg5j5fynh48"))))
     (properties `((upstream-name . "LogisticEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -7501,13 +7455,13 @@ analysis: an approach based on L-moments\".")
 (define-public r-lmompi
   (package
     (name "r-lmompi")
-    (version "0.6.6")
+    (version "0.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmomPi" version))
        (sha256
-        (base32 "0a9ddfaa3micj3q7wcpkcsxhbd6dv3gn19rdy7ll3f76g63pknf1"))))
+        (base32 "1ahm38ssmiwzcl8b4jsjxvl1z8rf33jrjdzx5jpkliwa40sav4ff"))))
     (properties `((upstream-name . "lmomPi")))
     (build-system r-build-system)
     (arguments
@@ -8016,20 +7970,20 @@ Bartolucci, Pandolfi, Pennoni (2017)<doi:10.18637/jss.v081.i04>.")
 (define-public r-lmesplines
   (package
     (name "r-lmesplines")
-    (version "1.1-12")
+    (version "1.1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmeSplines" version))
        (sha256
-        (base32 "140l95c6yys2rdpyh7clqx4x4qfd4w36hpz6jkb2ygbh90ikzi2r"))))
+        (base32 "0lm6akw90y9irvnalj8kl996kxn2whbk5daiq14214xqiwbhv5dc"))))
     (properties `((upstream-name . "lmeSplines")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-nlme))
-    (home-page "https://cran.r-project.org/package=lmeSplines")
+    (home-page "https://github.com/agalecki/lmeSplines")
     (synopsis "Add Smoothing Spline Modelling Capability to `nlme`")
     (description
      "Adds smoothing spline modelling capability to nlme.  Fits smoothing spline terms
@@ -12345,13 +12299,13 @@ gene/region.")
 (define-public r-lgrextra
   (package
     (name "r-lgrextra")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lgrExtra" version))
        (sha256
-        (base32 "0bqr8fr8xxndfdjv2xr0b306f2kv55wy386skbldw6a88ssgqbnw"))))
+        (base32 "0x9azmxwm5x1wlmi6l909pnsvybc6s6h8w2bz95frfa90pgbsa62"))))
     (properties `((upstream-name . "lgrExtra")))
     (build-system r-build-system)
     (arguments
@@ -12556,13 +12510,13 @@ data follows a Gamma distribution.  Methods are based on Madrid-Alvarez et al.
 (define-public r-lgcp
   (package
     (name "r-lgcp")
-    (version "2.0")
+    (version "2.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lgcp" version))
        (sha256
-        (base32 "0f7s53sypj5l6ry437albypf1j2g3vxh137vfjfx3n84r0bmp5mw"))))
+        (base32 "1zibzjzizivqm6q7cj1m4fqljd3jah9abj1jjvj3rw4zam8bid67"))))
     (properties `((upstream-name . "lgcp")))
     (build-system r-build-system)
     (arguments
@@ -13377,13 +13331,13 @@ identically to the originals.")
 (define-public r-lesssem
   (package
     (name "r-lesssem")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessSEM" version))
        (sha256
-        (base32 "10wh8rx3rbr3gprmd5x633k68hxc1afqm6m5l3cinib4acdp0r22"))))
+        (base32 "0i3ac8kwa5zjx858yqqb6913dzy1ink152yyfqagiwnx311nal2h"))))
     (properties `((upstream-name . "lessSEM")))
     (build-system r-build-system)
     (arguments
@@ -13398,6 +13352,7 @@ identically to the originals.")
                              r-numderiv
                              r-mvtnorm
                              r-lavaan
+                             r-ggrepel
                              r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jhorzek/lessSEM")

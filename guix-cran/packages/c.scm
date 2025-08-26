@@ -935,13 +935,13 @@ Association (AHA) as described in Dâagostino, et al (2008)
 (define-public r-cvms
   (package
     (name "r-cvms")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvms" version))
        (sha256
-        (base32 "0d3fgrrphvpfd5drk4rrxwq77zaz8byrajnm2zzwqs3rn1ry8d17"))))
+        (base32 "0pvqkhh69jpqy0pjh8kgzgpr52zbp0wy2hwjbvxflxhyi2fg43y7"))))
     (properties `((upstream-name . "cvms")))
     (build-system r-build-system)
     (arguments
@@ -2920,19 +2920,23 @@ EPA Computational Toxicology and Exposure Online Resources
 (define-public r-ctxcc
   (package
     (name "r-ctxcc")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CTxCC" version))
        (sha256
-        (base32 "0igh3lrvsbgw8xjwf6nkypshasq0i4mh78x4i5k2m2k227bxak7k"))))
+        (base32 "1v9d5r2j99ssgkrgvwp9d4jmji6nk7dpgnsaigi1cl9nx8q6r4k7"))))
     (properties `((upstream-name . "CTxCC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-matrixcalc r-expm r-compquadform
+    (propagated-inputs (list r-mvtnorm
+                             r-matrixcalc
+                             r-ggplot2
+                             r-expm
+                             r-compquadform
                              r-combinat))
     (home-page "https://cran.r-project.org/package=CTxCC")
     (synopsis
@@ -7957,13 +7961,13 @@ Computers & Geosciences (0098-3004),<DOI:10.1016/0098-3004(84)90020-7>.")
 (define-public r-creditas
   (package
     (name "r-creditas")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CRediTas" version))
        (sha256
-        (base32 "163m37bz99g6qvfbnbvvdv02x6984x5prsbj1d7mq08bnlmj9zr0"))))
+        (base32 "1cx8i69wb0nwsb3aadbm0b3a68d6724sidrmr8nx8gjwsn8zscvm"))))
     (properties `((upstream-name . "CRediTas")))
     (build-system r-build-system)
     (arguments
@@ -8479,13 +8483,13 @@ distribution <doi:10.1111/stan.12355>, of which functions are provided.")
 (define-public r-cramr
   (package
     (name "r-cramr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cramR" version))
        (sha256
-        (base32 "0gklijv4w1bw66q7yb5qm8lrz2pxxzbazhcn25z45s6511j30if1"))))
+        (base32 "0fp58s6mdni05m511698xjfih49xwpdv04jqj3w8lc67wxvijhc1"))))
     (properties `((upstream-name . "cramR")))
     (build-system r-build-system)
     (arguments
@@ -11375,6 +11379,32 @@ Reference:
 <https://www.nytimes.com/2017/05/31/us/politics/covfefe-trump-twitter.html>.
 Inspiration thanks to:
 <https://codegolf.stackexchange.com/questions/123685/covfefify-a-string>.")
+    (license license:gpl3)))
+
+(define-public r-covercorr
+  (package
+    (name "r-covercorr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "covercorr" version))
+       (sha256
+        (base32 "0gk6hc4j4nhh84qwziprg70kdf9knbvadkpx0b0w4fj28ap47qnq"))))
+    (properties `((upstream-name . "covercorr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-transport))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=covercorr")
+    (synopsis "Coverage Correlation Coefficient and Testing for Independence")
+    (description
+     "Computes the coverage correlation coefficient introduced in
+<doi:10.48550/@code{arXiv.2508.06402>} , a statistical measure that quantifies
+dependence between two random vectors by computing the union volume of
+data-centered hypercubes in a uniform space.")
     (license license:gpl3)))
 
 (define-public r-cover2
@@ -19022,31 +19052,6 @@ is reporting the chemical and ecological status of surface waters according to
 the European Water Framework Directive.")
     (license license:gpl3+)))
 
-(define-public r-confcons
-  (package
-    (name "r-confcons")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "confcons" version))
-       (sha256
-        (base32 "1a9v2dzldnbmhn5fz30d8y8nhbgczgp20rag6ck6h4xjgwqm4yv1"))))
-    (properties `((upstream-name . "confcons")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/bfakos/confcons")
-    (synopsis "Confidence and Consistency of Predictive Distribution Models")
-    (description
-     "Calculate confidence and consistency that measure the goodness-of-fit and
-transferability of predictive/potential distribution models (including species
-distribution models) as described by Somodi & Bede-Fazekas et al. (2024)
-<doi:10.1016/j.ecolmodel.2024.110667>.")
-    (license license:gpl3+)))
-
 (define-public r-conf-design
   (package
     (name "r-conf-design")
@@ -21281,41 +21286,6 @@ category, Kappa (unweighted), Kappa (quadratic weighted) and symmetry tests
 Edelstein DW, Castle PE. Estimating the agreement and diagnostic accuracy of two
 diagnostic tests when one test is conducted on only a subsample of specimens.
 Stat Med.  2012 Feb 28; 31(5) <doi:10.1002/sim.4422>.")
-    (license license:gpl3)))
-
-(define-public r-comparer
-  (package
-    (name "r-comparer")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "comparer" version))
-       (sha256
-        (base32 "0jyqnma93z9fihcnpgxm6d6r2dah15ap5ii3l1d3ddbhs1b56y37"))))
-    (properties `((upstream-name . "comparer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rmarkdown
-                             r-r6
-                             r-progress
-                             r-plyr
-                             r-mixopt
-                             r-gaupro))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/CollinErickson/comparer")
-    (synopsis "Compare Output and Run Time")
-    (description
-     "Quickly run experiments to compare the run time and output of code blocks.  The
-function @code{mbc()} can make fast comparisons of code, and will calculate
-statistics comparing the resulting outputs.  It can be used to compare model
-fits to the same data or see which function runs faster.  The R6 class
-@code{ffexp$new()} runs a function using all possible combinations of selected
-inputs.  This is useful for comparing the effect of different parameter values.
-It can also run in parallel and automatically save intermediate results, which
-is very useful for long computations.")
     (license license:gpl3)))
 
 (define-public r-comparemultiplemodels
@@ -31906,13 +31876,13 @@ configuration files and template R Markdown reports contained in the package.")
 (define-public r-climwin
   (package
     (name "r-climwin")
-    (version "1.2.31")
+    (version "1.2.32")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climwin" version))
        (sha256
-        (base32 "0pjs0bg50jnqxgfl6mfa29w6nf82yzgyrav6n4d6qcnnk8mf7nrg"))))
+        (base32 "1r5m17gzhr26y4i4c3vc39k1i4c6sx3a98v7a0dpm3l42jazqv9z"))))
     (properties `((upstream-name . "climwin")))
     (build-system r-build-system)
     (arguments
@@ -32284,13 +32254,13 @@ distances to the nearest stations.")
 (define-public r-climarep
   (package
     (name "r-climarep")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClimaRep" version))
        (sha256
-        (base32 "0ynhri2r13ga4rp7px0p05nj28163vwzyvz1gyn8zrcsvxy9j6zi"))))
+        (base32 "1028yh1gzwdbi8a7i8pjgcln4pmsnnv3zwrfbvpnbzka0dfw8qh6"))))
     (properties `((upstream-name . "ClimaRep")))
     (build-system r-build-system)
     (arguments
@@ -44048,13 +44018,13 @@ analysis and linear discriminant analysis.")
 (define-public r-cctensor
   (package
     (name "r-cctensor")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ccTensor" version))
        (sha256
-        (base32 "1r1cqx5kn12xkczpw7f8ij16csnnfy3gjf3kcgr95f070lhd1qna"))))
+        (base32 "1zb2q5vasc0g0bk5vj1r6mqg4l0s2r87nffscmiba0mh320pyqbn"))))
     (properties `((upstream-name . "ccTensor")))
     (build-system r-build-system)
     (arguments
@@ -44068,7 +44038,7 @@ analysis and linear discriminant analysis.")
 Multidimensional CX Decomposition factorizes a tensor into a core tensor and
 some factor matrices.  See the reference section of @code{GitHub} README.md
 <https://github.com/rikenbit/@code{ccTensor>}, for details of the methods.")
-    (license license:artistic2.0)))
+    (license license:expat)))
 
 (define-public r-ccss
   (package

@@ -275,41 +275,6 @@ functions for data preprocessing (`Epoch`), fragility computation
 (`@code{calcAdjFrag`}), and visualization.")
     (license license:gpl3+)))
 
-(define-public r-ezeda
-  (package
-    (name "r-ezeda")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ezEDA" version))
-       (sha256
-        (base32 "1qcgvcjksdajn2rhv52bgqz3n0lnxynjdx4gwhkgsy29ffa0sq2c"))))
-    (properties `((upstream-name . "ezEDA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-scales
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-ggplot2
-                             r-ggally
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/kviswana/ezEDA")
-    (synopsis "Task Oriented Interface for Exploratory Data Analysis")
-    (description
-     "Enables users to create visualizations using functions based on the data
-analysis task rather than on plotting mechanics.  It hides the details of the
-individual ggplot2 function calls and allows the user to focus on the end goal.
-Useful for quick preliminary explorations.  Provides functions for common
-exploration patterns.  Some of the ideas in this package are motivated by Fox
-(2015, ISBN:1938377052).")
-    (license license:expat)))
-
 (define-public r-ezecm
   (package
     (name "r-ezecm")
@@ -1267,13 +1232,13 @@ package.")
 (define-public r-extrasuperpower
   (package
     (name "r-extrasuperpower")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extraSuperpower" version))
        (sha256
-        (base32 "0k5rv1pr6fr8vyq77rp4xj8rd71kx79cy73zwqil5blx9wqyi81q"))))
+        (base32 "0903lmaxbfdrrfhf2wmpqxq6ij7swwh1j2j0z3qhqj93rf0makkj"))))
     (properties `((upstream-name . "extraSuperpower")))
     (build-system r-build-system)
     (arguments
@@ -1285,16 +1250,15 @@ package.")
                              r-scales
                              r-rlist
                              r-rlang
-                             r-rfit
                              r-reshape2
                              r-plyr
                              r-permuco
-                             r-nparld
                              r-matrix
                              r-mass
                              r-ggthemes
                              r-ggplot2
                              r-fgarch
+                             r-artool
                              r-afex))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/luisrmacias/extraSuperpower")
@@ -1402,13 +1366,13 @@ those values that are true.")
 (define-public r-extrafrail
   (package
     (name "r-extrafrail")
-    (version "1.13")
+    (version "1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extrafrail" version))
        (sha256
-        (base32 "145xibidkkzfs0255nsngq01hjqdjc4s1zqg6yzmwqwwwmnd0i3k"))))
+        (base32 "1zfh1jbikd86niiphca2a08163paqvjln5jwinfky7rshk142g54"))))
     (properties `((upstream-name . "extrafrail")))
     (build-system r-build-system)
     (arguments
@@ -1419,15 +1383,17 @@ those values that are true.")
     (synopsis
      "Estimation and Additional Tools for Alternative Shared Frailty Models")
     (description
-     "Provide estimation and data generation tools for some new multivariate frailty
+     "Provide estimation and data generation tools for new multivariate frailty
 models.  This version includes the gamma, inverse Gaussian, weighted Lindley,
 Birnbaum-Saunders, truncated normal, mixture of inverse Gaussian, mixture of
-Birnbaum-Saunders and generalized exponential as the distribution for the
-frailty terms.  For the basal model, it is considered a parametric approach
-based on the exponential, Weibull and the piecewise exponential distributions as
-well as a semiparametric approach.  For details, see Gallardo and Bourguignon
-(2025) <doi:10.1002/bimj.70044> and Gallardo et al. (2024)
-<doi:10.1007/s11222-024-10458-w>.")
+Birnbaum-Saunders, generalized exponential and Jorgensen-Seshadri-Whitmore as
+the distribution for frailty terms.  For the basal model, it is considered a
+parametric approach based on the exponential, Weibull and the piecewise
+exponential distributions as well as a semiparametric approach.  For details,
+see Gallardo et al. (2024) <doi:10.1007/s11222-024-10458-w>, Gallardo et al.
+(2025) <doi:10.1002/bimj.70044>, Kiprotich et al. (2025)
+<doi:10.1177/09622802251338984> and Gallardo et al. (2025)
+<doi:10.1038/s41598-025-15903-y>.")
     (license license:gpl2+)))
 
 (define-public r-extracttraindata
@@ -1454,43 +1420,6 @@ table will be generated for classification, regression or other processing.  The
 data table will be contained by band wise raster values and shapefile ids (User
 Defined).")
     (license license:gpl3)))
-
-(define-public r-extractox
-  (package
-    (name "r-extractox")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "extractox" version))
-       (sha256
-        (base32 "1p640q0kvv8pcfjaq98gcyy37k8zns58h9hpv326bvxdcjfzsbvk"))))
-    (properties `((upstream-name . "extractox")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-webchem
-                             r-rvest
-                             r-rlang
-                             r-readxl
-                             r-pingr
-                             r-janitor
-                             r-httr2
-                             r-fs
-                             r-curl
-                             r-condathis
-                             r-cli))
-    (home-page "https://github.com/c1au6i0/extractox")
-    (synopsis "Extract Tox Info from Various Databases")
-    (description
-     "Extract toxicological and chemical information from databases maintained by
-scientific agencies and resources, including the Comparative Toxicogenomics
-Database <https://ctdbase.org/>, the Integrated Chemical Environment
-<https://ice.ntp.niehs.nih.gov/>, the @code{PubChem}
-<https://pubchem.ncbi.nlm.nih.gov/>, and others EPA databases s.")
-    (license license:expat)))
 
 (define-public r-extractfaers
   (package
@@ -13219,13 +13148,13 @@ exponentially fast.")
 (define-public r-entropicstatistics
   (package
     (name "r-entropicstatistics")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EntropicStatistics" version))
        (sha256
-        (base32 "1wi6kn4fhs3qsfikp9h9xjbdy5qcnvlm6zzyc2xprnjchg3lq5r5"))))
+        (base32 "11jw1s7k6wwn45g0jzglxs005nvw72xndgbwrdccvbadni4pn5dy"))))
     (properties `((upstream-name . "EntropicStatistics")))
     (build-system r-build-system)
     (arguments
@@ -16451,13 +16380,13 @@ Guang-Bin Huang, Qin-Yu Zhu, Chee-Kheong Siew (2006), Elsevier B.V,
 (define-public r-ellmer
   (package
     (name "r-ellmer")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ellmer" version))
        (sha256
-        (base32 "0rrd7whwa2mpy9rqvp7gg0sjdf7mgp6nfzkzpkw640w4dq4nv6nm"))))
+        (base32 "0z9h148hri98p2w2b4xs5dhpamsdrd5dq51c0xr029zwidvzn9m5"))))
     (properties `((upstream-name . "ellmer")))
     (build-system r-build-system)
     (arguments
@@ -18652,13 +18581,13 @@ Thomson (1998) <doi:10.2307/3315677>, and Rolf Turner (2008)
 (define-public r-eggcounts
   (package
     (name "r-eggcounts")
-    (version "2.4")
+    (version "2.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eggCounts" version))
        (sha256
-        (base32 "089psh98w8kcy52h8vv3z8n0sigp46far0a0w4wfsyv2ijzc2l2p"))))
+        (base32 "1hw078x1ankz0xfzgcmg88mznrh90pm80czhxh7g70gnkn0qxphl"))))
     (properties `((upstream-name . "eggCounts")))
     (build-system r-build-system)
     (arguments
@@ -21837,13 +21766,13 @@ Functions are written so they will work in a parallel-computing environment.")
 (define-public r-ecosim
   (package
     (name "r-ecosim")
-    (version "1.3-4")
+    (version "1.3-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecosim" version))
        (sha256
-        (base32 "0v17iqrlm62vckglxkn3a617q4300pb40wdnyn4vpkxgiav9s86f"))))
+        (base32 "125rcjand4gqy43z1yybqjqjm26fh6c2vr7x2brq34x2gda85acz"))))
     (properties `((upstream-name . "ecosim")))
     (build-system r-build-system)
     (arguments
@@ -24928,18 +24857,19 @@ through @code{GitHub}.")
 (define-public r-easypubmed
   (package
     (name "r-easypubmed")
-    (version "2.13")
+    (version "3.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyPubMed" version))
        (sha256
-        (base32 "1wd8idyqz7kgygp34mjp2abx82775ry8l07vsqdlqnc6fdnvg55d"))))
+        (base32 "0ada5dk9j58bswa725zlfq2wx457yrnbripf6q3i1r440jkaq80s"))))
     (properties `((upstream-name . "easyPubMed")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rlang))
     (native-inputs (list r-knitr))
     (home-page "https://www.data-pulse.com/dev_site/easypubmed/")
     (synopsis "Search and Retrieve Scientific Publication Records from PubMed")
@@ -24948,7 +24878,7 @@ through @code{GitHub}.")
 Process @code{PubMed} records by extracting and aggregating data from selected
 fields.  A large number of records can be easily downloaded via this
 simple-to-use interface to the NCBI @code{PubMed} API.")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-easypsid
   (package

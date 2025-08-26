@@ -3786,31 +3786,6 @@ dimension reduction update procedure using the principal least squares support
 vector machine (Artemiou et al. (2021) <doi:10.1016/j.patcog.2020.107768>).")
     (license license:gpl2)))
 
-(define-public r-psvd
-  (package
-    (name "r-psvd")
-    (version "1.0-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "psvd" version))
-       (sha256
-        (base32 "0alav79g1cvci6cnjk2lnn6hnp9lzs6lijascbah6b7b9z9602np"))))
-    (properties `((upstream-name . "psvd")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=psvd")
-    (synopsis "Eigendecomposition, Singular-Values and the Power Method")
-    (description
-     "For a data matrix with m rows and n columns (m>=n), the power method is used to
-compute, simultaneously, the eigendecomposition of a square symmetric matrix.
-This result is used to obtain the singular value decomposition (SVD) and the
-principal component analysis (PCA) results.  Compared to the classical SVD
-method, the first r singular values can be computed.")
-    (license license:gpl2+)))
-
 (define-public r-pstrata
   (package
     (name "r-pstrata")
@@ -10090,13 +10065,13 @@ more information on principal surfaces, see Ganey, R. (2019,
 (define-public r-prindt
   (package
     (name "r-prindt")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PrInDT" version))
        (sha256
-        (base32 "0wvb9p14nyf9ny006qavghbfrbc6iav3x5dgghmp6sbp11h1smrd"))))
+        (base32 "1wf3rp7iirmncvp05n188mqzlyn2h0ib3sx2xbw66gjr9q0nivjq"))))
     (properties `((upstream-name . "PrInDT")))
     (build-system r-build-system)
     (arguments
@@ -10132,10 +10107,10 @@ of classification and regression trees are implemented in functions
 @code{C2SPrInDT()} and @code{R2SPrInDT()} as well as interdependent multilabel
 models in functions @code{SimCPrInDT()} and @code{SimRPrInDT()}.  Finally, for
 mixtures of classification and regression models functions @code{Mix2SPrInDT()}
-and @code{SimMixPrInDT()} are implemented.  These extensions of @code{PrInDT}
-are all described in Buschfeld & Weihs (2025Fc).  References: -- Buschfeld, S.,
-Weihs, C. (2025Fc) \"Optimizing decision trees for the analysis of World
-Englishes and sociolinguistic data\", Cambridge Elements. -- Weihs, C.,
+and @code{SimMixPrInDT()} are implemented.  Most of these extensions of
+@code{PrInDT} are described in Buschfeld & Weihs (2025Fc).  References: --
+Buschfeld, S., Weihs, C. (2025Fc) \"Optimizing decision trees for the analysis of
+World Englishes and sociolinguistic data\", Cambridge Elements. -- Weihs, C.,
 Buschfeld, S. (2021a) \"Combining Prediction and Interpretation in Decision Trees
 (@code{PrInDT}) - a Linguistic Example\" <doi:10.48550/@code{arXiv.2103.02336>};
 -- Weihs, C., Buschfeld, S. (2021b) \"@code{NesPrInDT}: Nested undersampling in
@@ -13205,13 +13180,13 @@ described in Nagraj and Turner (2023) <doi:10.48550/@code{arXiv.2303.07876>}.")
 (define-public r-praatpicture
   (package
     (name "r-praatpicture")
-    (version "1.5.0")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "praatpicture" version))
        (sha256
-        (base32 "0h7ln81n84rrvzz72xlw6g8iysi2c8ni5s4pzwhhwv09q4z7px5p"))))
+        (base32 "0pdzwh6k0vq954hizfvp4v95llm52dj5i7ydndl3zsl3r1kv21ds"))))
     (properties `((upstream-name . "praatpicture")))
     (build-system r-build-system)
     (arguments
@@ -13226,6 +13201,7 @@ described in Nagraj and Turner (2023) <doi:10.48550/@code{arXiv.2303.07876>}.")
                              r-rstudioapi
                              r-rpraat
                              r-phontools
+                             r-multitaper
                              r-ipa
                              r-gsignal
                              r-gifski
@@ -15011,13 +14987,13 @@ any screening.")
 (define-public r-powerest
   (package
     (name "r-powerest")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PoweREST" version))
        (sha256
-        (base32 "0y101jbazh2hfly08p5yfipdqyahxx668dm135ik20arqpfl01cl"))))
+        (base32 "0dhp79j34wxxjfgkgvg1y5h300pw98836ng7ajv1fjc6k9wmbp0v"))))
     (properties `((upstream-name . "PoweREST")))
     (build-system r-build-system)
     (arguments
@@ -15039,8 +15015,8 @@ any screening.")
     (description
      "Power estimation and sample size calculation for 10X Visium Spatial
 Transcriptomics data to detect differential expressed genes between two
-conditions based on bootstrap resampling.  See Shui et al. (2024)
-<doi:10.1101/2024.08.30.610564> for method details.")
+conditions based on bootstrap resampling.  See Shui et al. (2025)
+<doi:10.1371/journal.pcbi.1013293> for method details.")
     (license license:expat)))
 
 (define-public r-powereqtl
@@ -21024,13 +21000,13 @@ analysis must be made using package survey'.")
 (define-public r-pmxtools
   (package
     (name "r-pmxtools")
-    (version "1.3")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmxTools" version))
        (sha256
-        (base32 "1is56is0xg9syfwma90wqp7rxbgcv36qcpmcxnz0dlf7ypnvqsak"))))
+        (base32 "1vxjjkzi95hl7hmacw96dhczbi8lakd8kdymcq4nps7qbrfyh7xg"))))
     (properties `((upstream-name . "pmxTools")))
     (build-system r-build-system)
     (arguments
@@ -21045,7 +21021,6 @@ analysis must be made using package survey'.")
                              r-mass
                              r-magrittr
                              r-ggplot2
-                             r-gghalves
                              r-ggdist
                              r-dplyr
                              r-data-tree
@@ -21059,10 +21034,10 @@ calculating concentrations at given times after dosing based on compartmental PK
 models (1-compartment, 2-compartment and 3-compartment, covering infusions,
 zero- and first-order absorption, and lag times, after single doses and at
 steady state, per Bertrand & Mentre (2008)
-<http://lixoft.com/wp-content/uploads/2016/03/PKPDlibrary.pdf>); parametric
-simulation from NONMEM-generated parameter estimates and other output; and
-parsing, tabulating and plotting results generated by Perl-speaks-NONMEM
-(@code{PsN}).")
+<https://www.facm.ucl.ac.be/cooperation/Vietnam/WBI-Vietnam-October-2011/Modelling/Monolix32_PKPD_library.pdf>);
+parametric simulation from NONMEM-generated parameter estimates and other
+output; and parsing, tabulating and plotting results generated by
+Perl-speaks-NONMEM (@code{PsN}).")
     (license license:gpl2)))
 
 (define-public r-pmxpartab
@@ -21092,22 +21067,22 @@ pharmacometric models.")
 (define-public r-pmxcv
   (package
     (name "r-pmxcv")
-    (version "0.0.1.0")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmxcv" version))
        (sha256
-        (base32 "0x74pjmj9335bnh2zbhidxwzq28f4a9281dhgnkbyllfq2kw2dsc"))))
+        (base32 "15ah3qimxzlnxh38lq3mslpda79004mlfpp5aphw06ylj44700n4"))))
     (properties `((upstream-name . "pmxcv")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=pmxcv")
-    (synopsis "Integration-Based Coefficients of Variance")
+    (synopsis "Integration-Based Coefficients of Variation")
     (description
-     "Estimate coefficient of variance percent (CV%) for any arbitrary distribution,
+     "Estimate coefficient of variation percent (CV%) for any arbitrary distribution,
 including some built-in estimates for commonly-used transformations in
 pharmacometrics.  Methods are described in various sources, but applied here as
 summarized in: Prybylski, (2024) <doi:10.1007/s40262-023-01343-2>.")
@@ -23235,13 +23210,13 @@ within \"stat_function\" in a ggplot2 object.")
 (define-public r-plotftir
   (package
     (name "r-plotftir")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PlotFTIR" version))
        (sha256
-        (base32 "0dv48861nsmgyp97lclzinrx3j25nv60574jxgzvbfw3bn1dc2lm"))))
+        (base32 "11prn7z3y63lg8ffjf4ap0v2inv7r3h7s4v4m1n87dyd3yi763m1"))))
     (properties `((upstream-name . "PlotFTIR")))
     (build-system r-build-system)
     (arguments
@@ -29119,13 +29094,13 @@ photon instances to enable offline geocoding.")
 (define-public r-photogea
   (package
     (name "r-photogea")
-    (version "1.3.3")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhotoGEA" version))
        (sha256
-        (base32 "1la50bvxipzlkw8zfcc2s51nwjaabx2dgbkrrivzyzz6dsk10q7b"))))
+        (base32 "1vihxxxgs4g7gcm0l37x89k1d3b885s9jsqi3266cqz53zxa6m1w"))))
     (properties `((upstream-name . "PhotoGEA")))
     (build-system r-build-system)
     (arguments
@@ -34651,45 +34626,6 @@ issues that can hinder efforts to standardise PEMS research.")
 estimation of the prevalence of an emerging or rare infectious diseases using
 the methods proposed in Guerrier et al. (2023) <@code{arXiv:2012.10745>}.")
     (license license:agpl3)))
-
-(define-public r-pema
-  (package
-    (name "r-pema")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pema" version))
-       (sha256
-        (base32 "1dhpk7f1my0ia20am0bmd4cqx1a256ziqslq6bzgq38ksjc39rni"))))
-    (properties `((upstream-name . "pema")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stanheaders
-                             r-sn
-                             r-shiny
-                             r-rstantools
-                             r-rstan
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-ggplot2
-                             r-cli
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/cjvanlissa/pema")
-    (synopsis "Penalized Meta-Analysis")
-    (description
-     "Conduct penalized meta-analysis, see Van Lissa, Van Erp, & Clapper (2023)
-<doi:10.31234/osf.io/6phs5>.  In meta-analysis, there are often between-study
-differences.  These can be coded as moderator variables, and controlled for
-using meta-regression.  However, if the number of moderators is large relative
-to the number of studies, such an analysis may be overfit.  Penalized
-meta-regression is useful in these cases, because it shrinks the regression
-slopes of irrelevant moderators towards zero.")
-    (license license:gpl3+)))
 
 (define-public r-pelvis
   (package

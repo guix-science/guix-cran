@@ -800,13 +800,13 @@ ggplot2'.")
 (define-public r-quickr
   (package
     (name "r-quickr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickr" version))
        (sha256
-        (base32 "01hig7fc0p152qwa7zrr2a72s22ikshdw895qzxx955jikvlqplh"))))
+        (base32 "0507fb47025jkg7j944fs7iw8izj1gfksxhx33hlygc5l8rhy63i"))))
     (properties `((upstream-name . "quickr")))
     (build-system r-build-system)
     (arguments
@@ -816,10 +816,10 @@ ggplot2'.")
     (home-page "https://github.com/t-kalinowski/quickr")
     (synopsis "Compiler for R")
     (description
-     "Compiles R functions annotated with type and shape declarations to provide
-extremely fast performance and robust runtime type checking.  Supports both
-just-in-time (JIT) and ahead-of-time (AOT) compilation.  Compilation is
-performed by lowering R code to Fortran.")
+     "Compile R functions annotated with type and shape declarations for extremely
+fast performance and robust runtime type checking.  Supports both just-in-time
+(JIT) and ahead-of-time (AOT) compilation.  Compilation is performed by lowering
+R code to Fortran.")
     (license license:expat)))
 
 (define-public r-quickpwcr

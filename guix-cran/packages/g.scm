@@ -1591,13 +1591,13 @@ facilitate statistical analysis and manipulation of survey data.")
 (define-public r-guidedpls
   (package
     (name "r-guidedpls")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "guidedPLS" version))
        (sha256
-        (base32 "1gmprd6a5nyglm36sdyk9dqbgqavf3a7gzjbm5jzb5ybhj9r2w61"))))
+        (base32 "06mcls7cwiv2db9qbb2lkwhlia58hggba30p9b9jdl3sg91xyilz"))))
     (properties `((upstream-name . "guidedPLS")))
     (build-system r-build-system)
     (arguments
@@ -1611,8 +1611,12 @@ facilitate statistical analysis and manipulation of survey data.")
     (description
      "Guided partial least squares (guided-PLS) is the combination of partial least
 squares by singular value decomposition (PLS-SVD) and guided principal component
-analysis (guided-PCA).  For the details of the methods, see the reference
-section of @code{GitHub} README.md
+analysis (guided-PCA).  This package provides implementations of PLS-SVD,
+guided-PLS, and guided-PCA for supervised dimensionality reduction.  The
+guided-PCA function (new in v1.1.0) automatically handles mixed data types
+(continuous and categorical) in the supervision matrix and provides detailed
+contribution analysis for interpretability.  For the details of the methods, see
+the reference section of @code{GitHub} README.md
 <https://github.com/rikenbit/@code{guidedPLS>}.")
     (license license:expat)))
 
@@ -2478,13 +2482,13 @@ results in datasets with low batch effects.")
 (define-public r-gte
   (package
     (name "r-gte")
-    (version "1.2-3")
+    (version "1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gte" version))
        (sha256
-        (base32 "0fnrpgfji5f1n8nra0d8xghqgsjil7r2j6xnbmfm7mjafcav4wwk"))))
+        (base32 "081dkw6bckv1p1l2nkfc0zib4c2945h6wrgfv0591ysaqak6nzn5"))))
     (properties `((upstream-name . "gte")))
     (build-system r-build-system)
     (arguments
@@ -3525,13 +3529,13 @@ logrank tests in Yung and Liu (2019) <doi:10.1111/biom.13196>, and
 (define-public r-gsdesign
   (package
     (name "r-gsdesign")
-    (version "3.6.9")
+    (version "3.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign" version))
        (sha256
-        (base32 "1pvdl8qyqx0476csbk5l7s7qglqdxshighpgpnjc46jnv66rhzmp"))))
+        (base32 "1z2ppv0ihqzsi7w0ld6yaiyjwn8w0w50ydab5ha3414l1pfiqyz2"))))
     (properties `((upstream-name . "gsDesign")))
     (build-system r-build-system)
     (arguments
@@ -7303,13 +7307,13 @@ lines.")
 (define-public r-gratia
   (package
     (name "r-gratia")
-    (version "0.11.0")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gratia" version))
        (sha256
-        (base32 "1pgccbnxn7jff7wbsl7zzw7hisdxb6i5k90n98v9b0jfa578i6p8"))))
+        (base32 "0y1vgqdy3dk1my582j4mm3ihwips7a4v6y9bs8vgc4m6f36hmp6d"))))
     (properties `((upstream-name . "gratia")))
     (build-system r-build-system)
     (arguments
@@ -7317,6 +7321,7 @@ lines.")
       #:tests? #f))
     (propagated-inputs (list r-withr
                              r-vctrs
+                             r-tweedie
                              r-tidyselect
                              r-tidyr
                              r-tibble
@@ -8447,13 +8452,13 @@ information: <doi:10.5117/CCR2023.1.003.CHAN>.")
 (define-public r-grafify
   (package
     (name "r-grafify")
-    (version "5.0.0.1")
+    (version "5.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grafify" version))
        (sha256
-        (base32 "18631xqbi4123i55mp7ajkc5bxfhg31784ha123ygvbyggw6sgb3"))))
+        (base32 "060mqx90zhkq88jdwnlkmyy2l88znbyzdnja8176qwqy23diax5j"))))
     (properties `((upstream-name . "grafify")))
     (build-system r-build-system)
     (arguments
@@ -9230,6 +9235,44 @@ are given in Wang H, Dwyer-Lindgren L, Lofgren KT, et al. (2012)
 et al. (2017) <doi:10.1016/S2214-109X(17)30105-5>.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-gppm
+  (package
+    (name "r-gppm")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gppm" version))
+       (sha256
+        (base32 "0sr7q98ff9142rhh28gr2y88xcfp55rrbd3plgjkj5q3zpqxr4al"))))
+    (properties `((upstream-name . "gppm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-mvtnorm
+                             r-mass
+                             r-ggthemes
+                             r-ggplot2
+                             r-bh))
+    (home-page "https://github.com/karchjd/gppm")
+    (synopsis "Gaussian Process Panel Modeling")
+    (description
+     "This package provides an implementation of Gaussian process panel modeling
+(GPPM).  GPPM is described in Karch, Brandmaier & Voelkle (2020;
+<DOI:10.3389/fpsyg.2020.00351>) and Karch (2016; <DOI:10.18452/17641>).
+Essentially, GPPM is Gaussian process based modeling of longitudinal panel data.
+ gppm also supports regular Gaussian process regression (with a focus on
+flexible model specification), and multi-task learning.")
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-gpp
   (package
     (name "r-gpp")
@@ -9935,13 +9978,13 @@ Jennrich (2005) <doi:10.1177/0013164404272507>.")
 (define-public r-gpareto
   (package
     (name "r-gpareto")
-    (version "1.1.8")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPareto" version))
        (sha256
-        (base32 "1grs7pxxl9nymmg1qx8a7ln25c2bz47bv06pahq7ackhsh6zlvk9"))))
+        (base32 "1ppmaxn54lp764fasrd7yk855qhkl8gzbgdd59qbmw3k931xcply"))))
     (properties `((upstream-name . "GPareto")))
     (build-system r-build-system)
     (arguments
@@ -10646,13 +10689,13 @@ identification.")
 (define-public r-googlelanguager
   (package
     (name "r-googlelanguager")
-    (version "0.3.0.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "googleLanguageR" version))
        (sha256
-        (base32 "17gmyf0kj922zxqpnafvvvnpb5d2bzf8j0xlyv1q2rmwz8f8l0ii"))))
+        (base32 "0zjs7amar27f5yi2ssz3zwm7lf0h8v5rczy1mg7ny3zwj5fhn1yp"))))
     (properties `((upstream-name . "googleLanguageR")))
     (build-system r-build-system)
     (arguments
@@ -10660,23 +10703,23 @@ identification.")
       #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-purrr
-                             r-magrittr
                              r-jsonlite
                              r-googleauthr
                              r-base64enc
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://code.markedmondson.me/googleLanguageR/")
+    (home-page "https://github.com/ropensci/googleLanguageR")
     (synopsis
      "Call Google's 'Natural Language' API, 'Cloud Translation' API, 'Cloud Speech' API and 'Cloud Text-to-Speech' API")
     (description
      "Call Google Cloud machine learning APIs for text and speech tasks.  Call the
-Cloud Translation API <https://cloud.google.com/translate/> for detection and
+Cloud Translation API <https://cloud.google.com/translate> for detection and
 translation of text, the Natural Language API
-<https://cloud.google.com/natural-language/> to analyse text for sentiment,
-entities or syntax, the Cloud Speech API <https://cloud.google.com/speech/> to
-transcribe sound files to text and the Cloud Text-to-Speech API
-<https://cloud.google.com/text-to-speech/> to turn text into sound files.")
+<https://cloud.google.com/natural-language> to analyse text for sentiment,
+entities or syntax, the Cloud Speech API
+<https://cloud.google.com/speech-to-text> to transcribe sound files to text and
+the Cloud Text-to-Speech API <https://cloud.google.com/text-to-speech> to turn
+text into sound files.")
     (license license:expat)))
 
 (define-public r-googleknowledgegraphr
@@ -11886,45 +11929,6 @@ lists of genes and provides a workflow to analyze them between two species via
 weighted graphs.  Methods are described in Sosa et al. (2023)
 <doi:10.1016/j.ygeno.2022.110528>.")
     (license license:gpl3+)))
-
-(define-public r-goat
-  (package
-    (name "r-goat")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "goat" version))
-       (sha256
-        (base32 "023lv7r4q3yw9mrj3w420nrxc0kbmhm633fsw9c6n43smbim0rhq"))))
-    (properties `((upstream-name . "goat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-writexl
-                             r-vctrs
-                             r-treemap
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-readxl
-                             r-rcpp
-                             r-pheatmap
-                             r-monopoly
-                             r-matrix
-                             r-igraph
-                             r-ggraph
-                             r-ggplot2
-                             r-dplyr
-                             r-data-table))
-    (home-page "https://github.com/ftwkoopmans/goat/")
-    (synopsis "Gene Set Analysis Using the Gene Set Ordinal Association Test")
-    (description
-     "Perform gene set enrichment analyses using the Gene set Ordinal Association Test
-(GOAT) algorithm and visualize your results.  Koopmans, F. (2024)
-<doi:10.1038/s42003-024-06454-5>.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-goalp
   (package
@@ -18922,13 +18926,13 @@ suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
 (define-public r-ggspatial
   (package
     (name "r-ggspatial")
-    (version "1.1.9")
+    (version "1.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggspatial" version))
        (sha256
-        (base32 "14q3fc33cjy8vc85mb9a6h8fgciypnlcxjihbgc6jbzjksd0l38p"))))
+        (base32 "07xiax2b24gh9a2l7rcccbgpn5d80xi2rw3z5cs87zf4jc1a99q4"))))
     (properties `((upstream-name . "ggspatial")))
     (build-system r-build-system)
     (arguments
@@ -21549,13 +21553,13 @@ PNG files, external resources, or as a list column containing raster image data.
 (define-public r-ggimage
   (package
     (name "r-ggimage")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggimage" version))
        (sha256
-        (base32 "0jm316dqnnnsifrwkh6q2xs07dqazaa77s713pr7h94q1r8ab1bs"))))
+        (base32 "1av2nyxxqxcqy69dnp5mpj2wlcvpd74yqjk13k9q8wzlia22ac6g"))))
     (properties `((upstream-name . "ggimage")))
     (build-system r-build-system)
     (arguments
@@ -21564,12 +21568,15 @@ PNG files, external resources, or as a list column containing raster image data.
     (propagated-inputs (list r-withr
                              r-tibble
                              r-scales
+                             r-rlang
+                             r-purrr
                              r-magick
                              r-jsonlite
                              r-ggplotify
                              r-ggplot2
+                             r-ggiraph
                              r-ggfun))
-    (home-page "https://github.com/GuangchuangYu/ggimage")
+    (home-page "https://github.com/YuLab-SMU/ggimage")
     (synopsis "Use Image in 'ggplot2'")
     (description
      "Supports image files and graphic objects to be visualized in ggplot2 graphic
@@ -23018,13 +23025,13 @@ wide or long format using the functions @code{gg_corset()} or
 (define-public r-ggcorrheatmap
   (package
     (name "r-ggcorrheatmap")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggcorrheatmap" version))
        (sha256
-        (base32 "0hhvs3yapy3mz188qfz6dbgff3dx9v2bbmvwvy7n21ys2wdc3pdl"))))
+        (base32 "02lbs6vz9bc9v58ysn37n7rj3wdqxvb6wzccwp9jf8q0szqg8sny"))))
     (properties `((upstream-name . "ggcorrheatmap")))
     (build-system r-build-system)
     (arguments
@@ -24720,19 +24727,20 @@ the estimator and diagnostics tests can be fully user-specified, see Sucarrat
 (define-public r-getrad
   (package
     (name "r-getrad")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "getRad" version))
        (sha256
-        (base32 "0hjclh3iy9mvakzivfps0drrg6i95p5s04ayjpx6cpvzvjqn75nw"))))
+        (base32 "0w76xjns7pa6n9vps9hsw6k67lcdvggg62hx0f0ybkfnjfmjpy1f"))))
     (properties `((upstream-name . "getRad")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
+                             r-withr
                              r-vroom
                              r-tibble
                              r-rlang
@@ -34235,13 +34243,13 @@ an analytic or a numerical solution, both available in the function.")
 (define-public r-gausssuppression
   (package
     (name "r-gausssuppression")
-    (version "1.1.0")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaussSuppression" version))
        (sha256
-        (base32 "0zifs7cgl3cmrgianqhqgkkxgmbvl1591x9xx19nkdczb9hjwrvb"))))
+        (base32 "1sm8nrxmp8hy4jy5bqiqyqs1fg33mwzbkx56r2l3kvwz51zvhwnn"))))
     (properties `((upstream-name . "GaussSuppression")))
     (build-system r-build-system)
     (arguments

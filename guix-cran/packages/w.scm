@@ -5092,13 +5092,13 @@ citation: Lindsay (2016) <doi:10.1016/j.cageo.2016.07.003>.")
 (define-public r-whirl
   (package
     (name "r-whirl")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "whirl" version))
        (sha256
-        (base32 "1fb35sk9jcjgij833d6zi50ciq3v8c8brq3bk37hjhd2cn308j06"))))
+        (base32 "05sk9qhh3ll1hw2flzsdah88i8043yhzlwcn184fr8sny2w5x3yw"))))
     (properties `((upstream-name . "whirl")))
     (build-system r-build-system)
     (arguments
@@ -5108,7 +5108,6 @@ citation: Lindsay (2016) <doi:10.1016/j.cageo.2016.07.003>.")
                              r-yaml
                              r-withr
                              r-unglue
-                             r-tidyr
                              r-tibble
                              r-stringr
                              r-sessioninfo
@@ -7378,64 +7377,6 @@ performance of analyses, empowering users to effectively analyze and interpret
 Twitter data for research and commercial purposes.")
     (license license:gpl3)))
 
-(define-public r-weatheroz
-  (package
-    (name "r-weatheroz")
-    (version "2.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "weatherOz" version))
-       (sha256
-        (base32 "1gky86zhcr2fimr51knfj4ffmrjrdwzl999x460ya70mxj3n04lj"))))
-    (properties `((upstream-name . "weatherOz")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-terra
-                             r-stars
-                             r-sf
-                             r-magick
-                             r-lubridate
-                             r-knitr
-                             r-jsonlite
-                             r-foreign
-                             r-data-table
-                             r-curl
-                             r-crul
-                             r-crayon
-                             r-clock
-                             r-apsimx))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/weatherOz/")
-    (synopsis
-     "An API Client for Australian Weather and Climate Data Resources")
-    (description
-     "This package provides automated downloading, parsing and formatting of weather
-data for Australia through API endpoints provided by the Department of Primary
-Industries and Regional Development ('DPIRD') of Western Australia and by the
-Science and Technology Division of the Queensland Government's Department of
-Environment and Science ('DES').  As well as the Bureau of Meteorology ('BOM')
-of the Australian government precis and coastal forecasts, and downloading and
-importing radar and satellite imagery files.  DPIRD weather data are accessed
-through public APIs provided by DPIRD',
-<https://www.agric.wa.gov.au/weather-api-20>, providing access to weather
-station data from the DPIRD weather station network.  Australia-wide weather
-data are based on data from the Australian Bureau of Meteorology ('BOM') data
-and accessed through SILO (Scientific Information for Land Owners) Jeffrey et
-al. (2001) <doi:10.1016/S1364-8152(01)00008-1>.  DPIRD data are made available
-under a Creative Commons Attribution 3.0 Licence (CC BY 3.0 AU) license
-<https://creativecommons.org/licenses/by/3.0/au/deed.en>.  SILO data are
-released under a Creative Commons Attribution 4.0 International licence (CC BY
-4.0) <https://creativecommons.org/licenses/by/4.0/>.  BOM data are (c)
-Australian Government Bureau of Meteorology and released under a Creative
-Commons (CC) Attribution 3.0 licence or Public Access Licence ('PAL') as
-appropriate, see <http://www.bom.gov.au/other/copyright.shtml> for further
-details.")
-    (license license:gpl3+)))
-
 (define-public r-weathermetrics
   (package
     (name "r-weathermetrics")
@@ -8122,39 +8063,6 @@ change-points in a time series using the Wild Binary Segmentation and the
 Locally Stationary Wavelet model of Korkas and Fryzlewicz (2017)
 <doi:10.5705/ss.202015.0262>.")
     (license license:gpl2+)))
-
-(define-public r-wbstats
-  (package
-    (name "r-wbstats")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wbstats" version))
-       (sha256
-        (base32 "1va3lrksr5zg4k729xvbh176f8zcp9vfrvwxcp04znyh1rvmh6vz"))))
-    (properties `((upstream-name . "wbstats")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-magrittr
-                             r-lubridate
-                             r-lifecycle
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/nset-ornl/wbstats")
-    (synopsis
-     "Programmatic Access to Data and Statistics from the World Bank API")
-    (description "Search and download data from the World Bank Data API.")
-    (license license:expat)))
 
 (define-public r-wbsd
   (package

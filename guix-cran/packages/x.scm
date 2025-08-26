@@ -2238,13 +2238,13 @@ render \"DVI\" objects.")
 (define-public r-xdnuts
   (package
     (name "r-xdnuts")
-    (version "1.6")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XDNUTS" version))
        (sha256
-        (base32 "01xj8pzvgynr4h6s98ny2607kr1cn8jc4yvjnd2b0y7b1fcybnbz"))))
+        (base32 "0d8ql2v06skckfn4mhprmsqzbrw5sqam70rfn8jhv8v0gadzbf8m"))))
     (properties `((upstream-name . "XDNUTS")))
     (build-system r-build-system)
     (arguments

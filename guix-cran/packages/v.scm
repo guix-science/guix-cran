@@ -7361,13 +7361,13 @@ storyteller.  VChart examples and documentation are available here:
 (define-public r-vcfppr
   (package
     (name "r-vcfppr")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcfppR" version))
        (sha256
-        (base32 "1ccd3da0cpadvym9k4pv58s1r4kgngwc2wzi6r8fdlcqgzcnmn8f"))))
+        (base32 "1w05am3ilyvrybnq7sy8g4dy5qdlircxg6fzhszj53klmm7305vi"))))
     (properties `((upstream-name . "vcfppR")))
     (build-system r-build-system)
     (arguments
@@ -7998,13 +7998,13 @@ Estelle Kuhn (2019) <doi:10.18637/jss.v107.i06>.")
 (define-public r-vartest
   (package
     (name "r-vartest")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vartest" version))
        (sha256
-        (base32 "0bnfyp6qh19nxsl9hzkz7ib9jgbv00vywzqwz6jvvcrxlii7023z"))))
+        (base32 "0g6i971ps3fzydirzql88d9x8nrh5v0nzrgfvwxmw3yd1l0bvjpj"))))
     (properties `((upstream-name . "vartest")))
     (build-system r-build-system)
     (arguments

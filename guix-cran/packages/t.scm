@@ -2305,13 +2305,13 @@ out Tucker Models.")
 (define-public r-tuber
   (package
     (name "r-tuber")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tuber" version))
        (sha256
-        (base32 "1591r2yi5287cawb6535yip0l52lb3mmmqhnrp9g8803xf6648z2"))))
+        (base32 "0ss96yjmabr3vg83i8cfgsa9b1xwv7gw5zv0d3k5yjy37vbn8c33"))))
     (properties `((upstream-name . "tuber")))
     (build-system r-build-system)
     (arguments
@@ -7753,13 +7753,13 @@ package.")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeTools" version))
        (sha256
-        (base32 "1za6ypy2f6q70ynjgg6js2r0zqi1p1kh42jpkv0ps45kf6p2bhwi"))))
+        (base32 "0cx4i2fh2qw1w00vmw8pn32dqpnliycbnvazxv693xnnwvx2w5p9"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (arguments
@@ -8393,13 +8393,13 @@ data.")
 (define-public r-treedist
   (package
     (name "r-treedist")
-    (version "2.10.0")
+    (version "2.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeDist" version))
        (sha256
-        (base32 "132gybb8lvwrr32ayq23df5rgc20wf028j75qzj29d7agzajqzpf"))))
+        (base32 "0gqa8f58yj9cqcgyr5xa92mvwg21kgyj6khh8iwdbp06l25v5dch"))))
     (properties `((upstream-name . "TreeDist")))
     (build-system r-build-system)
     (arguments
@@ -8938,13 +8938,13 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "02ixaba0fdhwal6c2hhh12kqw04ssnpqgchx4rm2xqh1m82cckga"))))
+        (base32 "13ziyd05r1cv8f8s8xj24hyz2qzgds54d444m9ny5xvnvspb2mff"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (arguments
@@ -11647,13 +11647,13 @@ function, and maximum likelihood estimation.")
 (define-public r-tpn
   (package
     (name "r-tpn")
-    (version "1.11")
+    (version "1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tpn" version))
        (sha256
-        (base32 "0cfyqcsjlk964mxn8phb4paaads1fbph8ac0m7q4nbz1lvgjjp1m"))))
+        (base32 "00drpyh0i340i46k5bjjqmpjky48y554ri45f50c2nygwphaw3nx"))))
     (properties `((upstream-name . "tpn")))
     (build-system r-build-system)
     (arguments
@@ -13908,51 +13908,6 @@ TOAST UI <https://ui.toast.com/> libraries to integrate in shiny applications or
 rmarkdown HTML documents.")
     (license license:expat)))
 
-(define-public r-tntpr
-  (package
-    (name "r-tntpr")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tntpr" version))
-       (sha256
-        (base32 "0qvga8f72ylh3rxqdsqq5y1b24f7ds96rbwsxf2nfqxi2cmsz47n"))))
-    (properties `((upstream-name . "tntpr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-scales
-                             r-rstudioapi
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-microsoft365r
-                             r-lubridate
-                             r-labelled
-                             r-keyring
-                             r-janitor
-                             r-ggplot2
-                             r-formattable
-                             r-extrafont
-                             r-dplyr
-                             r-colorspace
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tntp/tntpr")
-    (synopsis "Data Analysis Tools Customized for TNTP")
-    (description
-     "An assortment of functions and templates customized to meet the needs of data
-analysts at the non-profit organization TNTP. Includes functions for branded
-colors and plots, credentials management, repository set-up, and other common
-analytic tasks.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
-
 (define-public r-tnrs
   (package
     (name "r-tnrs")
@@ -14703,6 +14658,34 @@ preserving geographic positions as much as possible.")
      "Thematic maps are geographical maps in which spatial data distributions are
 visualized.  This package offers a flexible, layer-based, and easy to use
 approach to create thematic maps, such as choropleths and bubble maps.")
+    (license license:gpl3)))
+
+(define-public r-tma
+  (package
+    (name "r-tma")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tma" version))
+       (sha256
+        (base32 "0g3nfgdd07lv2p46lagr95xnqacgydakcy2x3ga0hc6v6w7qc96c"))))
+    (properties `((upstream-name . "tma")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rcpparmadillo r-rcpp r-jsonlite
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=tma")
+    (synopsis "Transmodal Analysis (TMA)")
+    (description
+     "This package provides a robust computational framework for analyzing complex
+multimodal data.  Extends existing state-dependent models to account for diverse
+data streams, addressing challenges such as varying temporal scales and learner
+characteristics to improve the robustness and interpretability of findings.  For
+methodological details, see Shaffer, Wang, and Ruis (2025) \"Transmodal Analysis\"
+<doi:10.18608/jla.2025.8423>.")
     (license license:gpl3)))
 
 (define-public r-tm1r
@@ -17729,13 +17712,13 @@ get tidy data frames in response, and cache data in a local database.")
 (define-public r-tidywater
   (package
     (name "r-tidywater")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidywater" version))
        (sha256
-        (base32 "0si1pkbg1ib1dinl8karvy8ya0dcrj30nr03jg1qkr01sknh06sz"))))
+        (base32 "0rsp8md3rfb03gxp5yxsysh57b059d7wjh3hq0idb0chg9by77as"))))
     (properties `((upstream-name . "tidywater")))
     (build-system r-build-system)
     (arguments
@@ -17743,12 +17726,11 @@ get tidy data frames in response, and cache data in a local database.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
-                             r-purrr
                              r-magrittr
+                             r-lifecycle
                              r-knitr
                              r-ggrepel
                              r-ggplot2
-                             r-furrr
                              r-forcats
                              r-dplyr
                              r-desolve))
@@ -18891,19 +18873,20 @@ documentation and examples.")
 (define-public r-tidyprompt
   (package
     (name "r-tidyprompt")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyprompt" version))
        (sha256
-        (base32 "049hf9j1w0wrcm7lnzdar4wxlffs7w9h4jsvhhpx313q2v1xqnvk"))))
+        (base32 "1zcmqdyhif2r3wqi70ydzh0j3pp28d5c273mgigwm4z6ay0d06rd"))))
     (properties `((upstream-name . "tidyprompt")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-stringr
+                             r-rlang
                              r-r6
                              r-jsonlite
                              r-httr2
@@ -20484,62 +20467,6 @@ packages is useful for anyone doing data science, data analysis, or quantitative
 consulting.  The functions in these packages range from data cleaning, data
 validation, data binning, statistical modeling, and file exporting.")
     (license license:expat)))
-
-(define-public r-tidycomm
-  (package
-    (name "r-tidycomm")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidycomm" version))
-       (sha256
-        (base32 "07izzm2ywdjs8z4yfkrrdy0mn54vqc3gnpiymgag8wkxsmxqpz64"))))
-    (properties `((upstream-name . "tidycomm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-pillar
-                             r-misty
-                             r-mbess
-                             r-mass
-                             r-magrittr
-                             r-lubridate
-                             r-lm-beta
-                             r-glue
-                             r-ggplot2
-                             r-ggally
-                             r-forcats
-                             r-fastdummies
-                             r-dplyr
-                             r-car))
-    (native-inputs (list r-knitr))
-    (home-page "https://joon-e.github.io/tidycomm/")
-    (synopsis "Data Modification and Analysis for Communication Research")
-    (description
-     "This package provides convenience functions for common data modification and
-analysis tasks in communication research.  This includes functions for
-univariate and bivariate data analysis, index generation and reliability
-computation, and intercoder reliability tests.  All functions follow the style
-and syntax of the tidyverse, and are construed to perform their computations on
-multiple variables at once.  Functions for univariate and bivariate data
-analysis comprise summary statistics for continuous and categorical variables,
-as well as several tests of bivariate association including effect sizes.
-Functions for data modification comprise index generation and automated
-reliability analysis of index variables.  Functions for intercoder reliability
-comprise tests of several intercoder reliability estimates, including simple and
-mean pairwise percent agreement, Krippendorff's Alpha (Krippendorff 2004, ISBN:
-9780761915454), and various Kappa coefficients (Brennan & Prediger 1981 <doi:
-10.1177/001316448104100307>; Cohen 1960 <doi: 10.1177/001316446002000104>;
-Fleiss 1971 <doi: 10.1037/h0031619>).")
-    (license license:gpl3)))
 
 (define-public r-tidycode
   (package
@@ -24877,19 +24804,19 @@ of the test/testthat directory.")
 (define-public r-testthatmulti
   (package
     (name "r-testthatmulti")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "testthatmulti" version))
        (sha256
-        (base32 "1w1bwqjk721g4zvz3chx65rfvr47w3z2savx0qnh0sk09rj0zx50"))))
+        (base32 "15pwkfya928f7xmg664x3rjwkln18hvy0m2nrrpf4z12aksak8kd"))))
     (properties `((upstream-name . "testthatmulti")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=testthatmulti")
+    (home-page "https://github.com/CollinErickson/testthatmulti")
     (synopsis "Testing for R Packages with Multiple Attempts for Noisy Tests")
     (description
      "Runs tests using the testthat package but allows for multiple attempts for a
@@ -27394,13 +27321,13 @@ proposed in Wolf et al. (2022) <doi:10.1177/17407745221095855>.")
 (define-public r-tedm
   (package
     (name "r-tedm")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tEDM" version))
        (sha256
-        (base32 "1g1s65kshqy2ihvx420wh57hzphjnxpvh5q3zgpf1ivb6jhy2ymj"))))
+        (base32 "1mh57w0xq7q0d0xc5dn8acsjps6k928nlfysnfw7ck1v0gsdxmv8"))))
     (properties `((upstream-name . "tEDM")))
     (build-system r-build-system)
     (arguments
@@ -29071,13 +28998,13 @@ and Gregg (1993) <doi:10.1007/BF01070999>; Schnider et al. (1998)
 (define-public r-tchazards
   (package
     (name "r-tchazards")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TCHazaRds" version))
        (sha256
-        (base32 "1w51j6gvzhh26nzx67hjrcjawwpfm43zkm6jzz3ab877dkhw7sc3"))))
+        (base32 "1j6b9p5d2pwxnsn31ja02154fwybdnhj3h5fcl2iy8qlhy6647wp"))))
     (properties `((upstream-name . "TCHazaRds")))
     (build-system r-build-system)
     (arguments
@@ -30088,20 +30015,20 @@ documentation is available at
 (define-public r-taustar
   (package
     (name "r-taustar")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TauStar" version))
        (sha256
-        (base32 "1lr0p9ilm5mg4ks6bmp2q8kh45n2dq03k3n1cldc8myy512w4ivp"))))
+        (base32 "1fxkay7h333nr3wv9crn3y0dxzbkdp3qylzpmvih1cp9wqkckv06"))))
     (properties `((upstream-name . "TauStar")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=TauStar")
+    (home-page "https://github.com/karchjd/TauStar")
     (synopsis
      "Efficient Computation and Testing of the Bergsma-Dassios Sign Covariance")
     (description
@@ -30251,13 +30178,13 @@ hypotheses without needing to correct p-values.")
 (define-public r-tastypie
   (package
     (name "r-tastypie")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tastypie" version))
        (sha256
-        (base32 "0a7wq8jg3f0852y9pla1f63dqnkwn3vnb9p7fh9jq9rf75ljcpjk"))))
+        (base32 "0xvnqkhxn86basfwq9k41812bq2jqfmgi4kz1lp76rgaiv7q3kra"))))
     (properties `((upstream-name . "tastypie")))
     (build-system r-build-system)
     (arguments
@@ -31166,6 +31093,43 @@ proposed by Asmussen and Lehtomaa (2017) <doi:10.3390/risks5010010>,
 distinguishes between log-convex and log-concave tail behavior.  The package
 also includes methods for visualizing these estimators and their associated
 confidence intervals across various threshold values.")
+    (license license:expat)))
+
+(define-public r-tailor
+  (package
+    (name "r-tailor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tailor" version))
+       (sha256
+        (base32 "1sh1kibw28m803f1z7wy1bz6rwyshqli89gm2jni927v3agw281s"))))
+    (properties `((upstream-name . "tailor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-hardhat
+                             r-generics
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/tidymodels/tailor")
+    (synopsis "Iterative Steps for Postprocessing Model Predictions")
+    (description
+     "Postprocessors refine predictions outputted from machine learning models to
+improve predictive performance or better satisfy distributional limitations.
+This package introduces tailor objects, which compose iterative adjustments to
+model predictions.  A number of pre-written adjustments are provided with the
+package, such as calibration.  See Lichtenstein, Fischhoff, and Phillips (1977)
+<doi:10.1007/978-94-010-1276-8_19>.  Other methods and utilities to compose new
+adjustments are also included.  Tailors are tightly integrated with the
+tidymodels framework.")
     (license license:expat)))
 
 (define-public r-tailloss

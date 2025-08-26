@@ -4501,13 +4501,13 @@ model as png files.")
 (define-public r-rtensor
   (package
     (name "r-rtensor")
-    (version "1.4.8")
+    (version "1.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rTensor" version))
        (sha256
-        (base32 "1ks4rwaish24sg5gc2jkfdqfq6h8gh9f3wdxk3dxjgpwjqwijz8f"))))
+        (base32 "0pj3j5nx1g95kkq6ldfgil51c21sa2glhqpkd12s47w81q2jx8d8"))))
     (properties `((upstream-name . "rTensor")))
     (build-system r-build-system)
     (arguments
@@ -4529,7 +4529,7 @@ Tucker.  For tensors with 3 modes, @code{rTensor} also implements transpose,
 t-product, and t-SVD, as defined in Kilmer et al. (2013).  Some auxiliary
 functions include the Khatri-Rao product, Kronecker product, and the Hadamard
 product for a list of matrices.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-rtemps
   (package
@@ -10691,19 +10691,20 @@ groups or related samples; Ruscio & Gera, 2013). <DOI:
 (define-public r-rprobitb
   (package
     (name "r-rprobitb")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RprobitB" version))
        (sha256
-        (base32 "0345cq3kjkhlbykwqzdjagixjdlw6a0ipckchky1hfm8kb4nkyzy"))))
+        (base32 "0yp554j4i809njanwd86dzydn61ii54vcs8df8942aprprg7kk6i"))))
     (properties `((upstream-name . "RprobitB")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-viridis
+                             r-testthat
                              r-rlang
                              r-rdpack
                              r-rcpparmadillo
@@ -10711,7 +10712,6 @@ groups or related samples; Ruscio & Gera, 2013). <DOI:
                              r-progress
                              r-plotroc
                              r-oeli
-                             r-mvtnorm
                              r-mixtools
                              r-mass
                              r-gridextra
@@ -10725,18 +10725,17 @@ groups or related samples; Ruscio & Gera, 2013). <DOI:
     (home-page "https://loelschlaeger.de/RprobitB/")
     (synopsis "Bayesian Probit Choice Modeling")
     (description
-     "Bayes estimation of probit choice models, both in the cross-sectional and panel
-setting.  The package can analyze binary, multivariate, ordered, and ranked
-choices, as well as heterogeneity of choice behavior among deciders.  The main
-functionality includes model fitting via Markov chain Monte Carlo m ethods,
-tools for convergence diagnostic, choice data simulation, in-sample and
-out-of-sample choice prediction, and model selection using information criteria
-and Bayes factors.  The latent class model extension facilitates
-preference-based decider classification, where the number of latent classes can
-be inferred via the Dirichlet process or a weight-based updating heuristic.
-This allows for flexible modeling of choice behavior without the need to impose
-structural constraints.  For a reference on the method see Oelschlaeger and
-Bauer (2021) <https://trid.trb.org/view/1759753>.")
+     "Bayes estimation of probit choice models in cross-sectional and panel settings.
+The package can analyze binary, multivariate, ordered, and ranked choices, as
+well as heterogeneity of choice behavior among deciders.  The main functionality
+includes model fitting via Gibbs sampling, tools for convergence diagnostic,
+choice data simulation, in-sample and out-of-sample choice prediction, and model
+selection using information criteria and Bayes factors.  The latent class model
+extension facilitates preference-based decider classification, where the number
+of latent classes can be inferred via the Dirichlet process or a weight-based
+updating heuristic.  This allows for flexible modeling of choice behavior
+without the need to impose structural constraints.  For a reference on the
+method, see Oelschlaeger and Bauer (2021) <https://trid.trb.org/view/1759753>.")
     (license license:gpl3)))
 
 (define-public r-rprintf
@@ -17669,40 +17668,6 @@ overdispersed linear model is obtained by including a normally distributed
 random effect in the linear predictor of the generalized linear model.")
     (license license:gpl2+)))
 
-(define-public r-robmedextra
-  (package
-    (name "r-robmedextra")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "robmedExtra" version))
-       (sha256
-        (base32 "0k7w9hjz760wam4kakcmibqf0lynnv8ks782bc5fzirsqdgpdd0w"))))
-    (properties `((upstream-name . "robmedExtra")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny
-                             r-robmed
-                             r-officer
-                             r-ggplot2
-                             r-flextable
-                             r-dt))
-    (home-page "https://github.com/aalfons/robmedExtra")
-    (synopsis "Extra Functionality for (Robust) Mediation Analysis")
-    (description
-     "This companion package extends the package robmed (Alfons, Ates & Groenen,
-2022b; <doi:10.18637/jss.v103.i13>) in various ways.  Most notably, it provides
-a graphical user interface for the robust bootstrap test ROBMED (Alfons, Ates &
-Groenen, 2022a; <doi:10.1177/1094428121999096>) to make the method more
-accessible to less proficient R users, as well as functions to export the
-results as a table in a Microsoft Word or Microsoft Powerpoint document, or as a
-@code{LaTeX} table.  Furthermore, the package contains a shiny app to compare
-various bootstrap procedures for mediation analysis on simulated data.")
-    (license license:gpl3+)))
-
 (define-public r-robmed
   (package
     (name "r-robmed")
@@ -18735,13 +18700,13 @@ for your user.")
 (define-public r-rnrfa
   (package
     (name "r-rnrfa")
-    (version "2.1.0.6")
+    (version "2.1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnrfa" version))
        (sha256
-        (base32 "0j3cl8sg2srqp2j3aaymq6m9yf7xr21np53ckjxa9dyv4kw11371"))))
+        (base32 "0abdjg7d07wkwdr3kqz7wippz02n9p26a09asf9s0fnsr1y44yfi"))))
     (properties `((upstream-name . "rnrfa")))
     (build-system r-build-system)
     (arguments
@@ -18762,8 +18727,8 @@ for your user.")
     (description
      "Utility functions to retrieve data from the UK National River Flow Archive
 (<https://nrfa.ceh.ac.uk/>, terms and conditions:
-<https://nrfa.ceh.ac.uk/costs-terms-and-conditions>).  The package contains R
-wrappers to the UK NRFA data temporary-API. There are functions to retrieve
+<https://nrfa.ceh.ac.uk/help/costs-terms-and-conditions>).  The package contains
+R wrappers to the UK NRFA data temporary-API. There are functions to retrieve
 stations falling in a bounding box, to generate a map and extracting time series
 and general information.  The package is fully described in Vitolo et al (2016)
 \"rnrfa: An R package to Retrieve, Filter and Visualize Data from the UK National
@@ -18799,13 +18764,13 @@ et al. (2017) <@code{arXiv:1702.04690>} based on Rosenbaum and Rubin (1983)
 (define-public r-rnpn
   (package
     (name "r-rnpn")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnpn" version))
        (sha256
-        (base32 "0ywjsr2nwk75sim578jhpckarjnlvkiaclp9z6m48hrvmb7jr80z"))))
+        (base32 "0da1pr294f393510i04b85y6h8cfwhxll9602q1zan3vlh7b9v7w"))))
     (properties `((upstream-name . "rnpn")))
     (build-system r-build-system)
     (arguments
@@ -22821,36 +22786,6 @@ account.")
 jobs, share updates with their network, and create group discussions.  For more
 information about using the API please visit <https://developer.linkedin.com/>.")
     (license license:gpl2)))
-
-(define-public r-rlibkriging
-  (package
-    (name "r-rlibkriging")
-    (version "0.9-2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rlibkriging" version))
-       (sha256
-        (base32 "1m7q7mys1rg9pd20jlyi8nhj3pykv70yc0vlqc7y4cfy1v558rxs"))))
-    (properties `((upstream-name . "rlibkriging")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list gfortran gcc cmake))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-dicekriging))
-    (native-inputs (list gfortran))
-    (home-page "https://github.com/libKriging")
-    (synopsis "Kriging Models using the 'libKriging' Library")
-    (description
-     "Interface to @code{libKriging} C++ library
-<https://github.com/@code{libKriging>} that should provide most standard Kriging
-/ Gaussian process regression features (like in @code{DiceKriging}', kergp or
-@code{RobustGaSP} packages). @code{libKriging} relies on Armadillo linear
-algebra library (Apache 2 license) by Conrad Sanderson, lbfgsb_cpp is a C++ port
-around by Pascal Have of lbfgsb library (BSD-3 license) by Ciyou Zhu, Richard
-Byrd, Jorge Nocedal and Jose Luis Morales used for hyperparameters optimization.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rlibkdv
   (package
@@ -27336,32 +27271,6 @@ uses these matrices to calculate hypergraph spectra and perform spectral
 comparison.  Functionality coming soon includes calculation of hyperpaths and
 hypergraph centrality measures.")
     (license license:gpl3+)))
-
-(define-public r-rhymer
-  (package
-    (name "r-rhymer")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rhymer" version))
-       (sha256
-        (base32 "1pcbffrpyz5hp38ln5z63rg1h7f5lshydn8vj08l5q4l37zxd2k5"))))
-    (properties `((upstream-name . "rhymer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://landesbergn.github.io/rhymer/index.html")
-    (synopsis
-     "Wrapper for the 'Datamuse' API to Find Rhyming and Associated Words")
-    (description
-     "Wrapper for Datamuse API to find rhyming and other associated words.  This
-includes words of similar meaning, spelling, or other related words.  Learn more
-about the Datamuse API here <https://www.datamuse.com/api/>.")
-    (license license:expat)))
 
 (define-public r-rhybridfinder
   (package
@@ -46732,13 +46641,13 @@ directories of raw text files, as well as from Dow Jones Factiva',
 (define-public r-rcmdrplugin-teachstat
   (package
     (name "r-rcmdrplugin-teachstat")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.TeachStat" version))
        (sha256
-        (base32 "1l73zpy94av30x31rskzggaf6bmj7wfx1k6mksmpjmy47hk07qlg"))))
+        (base32 "1am6s0n80wszlrqhyfqvvwr9ar8vq3v7dl2hxa1dwf3mc07l7sm2"))))
     (properties `((upstream-name . "RcmdrPlugin.TeachStat")))
     (build-system r-build-system)
     (arguments
@@ -49487,45 +49396,6 @@ This is an ongoing project; New databases and services will be added
 periodically.  Feel free to suggest any databases or services you often use.")
     (license license:gpl3)))
 
-(define-public r-rbioacc
-  (package
-    (name "r-rbioacc")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rbioacc" version))
-       (sha256
-        (base32 "0yz3mlkz6869rlg56m49bl5bq16gnmr69lznlvcsz7vmwli2ic4x"))))
-    (properties `((upstream-name . "rbioacc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-stringr
-                             r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-loo
-                             r-ggplot2
-                             r-ggmcmc
-                             r-ggally
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.in2p3.fr/mosaic-software/rbioacc")
-    (synopsis "Inference and Prediction of ToxicoKinetic (TK) Models")
-    (description
-     "The MOSAICbioacc application is a turnkey package providing bioaccumulation
-factors (BCF/BMF/BSAF) from a toxicokinetic (TK) model fitted to
-accumulation-depuration data.  It is designed to fulfil the requirements of
-regulators when examining applications for market authorization of active
-substances.  See Ratier et al. (2021) <doi:10.1101/2021.09.08.459421>.")
-    (license license:expat)))
-
 (define-public r-rbin
   (package
     (name "r-rbin")
@@ -49804,13 +49674,13 @@ and Qunhua Li (2016).  Robust bent line regression, submitted.\".")
 (define-public r-rbedrock
   (package
     (name "r-rbedrock")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbedrock" version))
        (sha256
-        (base32 "034c0fzd4fhf8cmj6vp8x0z77n11wxr37l03vfw2rlj53ivwzmsi"))))
+        (base32 "0nc8rcysbncwph7f16a591gp38ihz6pzwassgn3fg5qs9kp625d4"))))
     (properties `((upstream-name . "rbedrock")))
     (build-system r-build-system)
     (arguments
@@ -58436,6 +58306,46 @@ the epidemic curve (collected data) and an adjusted model, whereas real-time
 methods will also show the R(t) variations throughout the outbreak time period.
 Sensitivity analysis tools are also provided, and allow for investigating
 effects of varying Generation Time distribution or time window on estimates.")
+    (license license:gpl2+)))
+
+(define-public r-r-temis
+  (package
+    (name "r-r-temis")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "R.temis" version))
+       (sha256
+        (base32 "1vipm0wixn7xxayrfd8kcbhwgfqbkdgmwgkpi55y0sg9fipbjb8l"))))
+    (properties `((upstream-name . "R.temis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wordcloud
+                             r-tm-plugin-lexisnexis
+                             r-tm-plugin-factiva
+                             r-tm-plugin-europresse
+                             r-tm-plugin-alceste
+                             r-tm
+                             r-stringi
+                             r-snowballc
+                             r-slam
+                             r-nlp
+                             r-igraph
+                             r-factominer
+                             r-explor
+                             r-crayon))
+    (home-page "https://github.com/nalimilan/R.TeMiS")
+    (synopsis "Integrated Text Mining Solution")
+    (description
+     "An integrated solution to perform a series of text mining tasks such as
+importing and cleaning a corpus, and analyses like terms and documents counts,
+lexical summary, terms co-occurrences and documents similarity measures, graphs
+of terms, correspondence analysis and hierarchical clustering.  Corpora can be
+imported from spreadsheet-like files, directories of raw text files, as well as
+from Dow Jones Factiva', @code{LexisNexis}', Europresse and Alceste files.")
     (license license:gpl2+)))
 
 (define-public r-r-proxy

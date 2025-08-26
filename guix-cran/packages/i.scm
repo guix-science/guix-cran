@@ -12330,13 +12330,13 @@ found here:
 (define-public r-imputets
   (package
     (name "r-imputets")
-    (version "3.3")
+    (version "3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imputeTS" version))
        (sha256
-        (base32 "0y5nam1flciw4sbnzbjsjakmvznfvlpxh1y5d48g4pn5173bxzgx"))))
+        (base32 "0vxzya8w0dn00a3vcdzij6mf5xyy5q6nz333gynbybmm0p7ifwna"))))
     (properties `((upstream-name . "imputeTS")))
     (build-system r-build-system)
     (arguments

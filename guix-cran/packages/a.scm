@@ -170,13 +170,13 @@ Part of the @code{AzureR} family of packages.")
 (define-public r-azurestor
   (package
     (name "r-azurestor")
-    (version "3.7.0")
+    (version "3.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AzureStor" version))
        (sha256
-        (base32 "0jrc4m8p0hss07hna157z510rh84lhjmyqsa47wirpr0b5ba6kr3"))))
+        (base32 "1y25q0qprskad5lfh10zwbnacid613c2vlr9k8x1v45sj0dw0h6k"))))
     (properties `((upstream-name . "AzureStor")))
     (build-system r-build-system)
     (arguments
@@ -194,7 +194,7 @@ Part of the @code{AzureR} family of packages.")
     (synopsis "Storage Management in 'Azure'")
     (description
      "Manage storage in Microsoft's Azure cloud:
-<https://azure.microsoft.com/en-us/product-categories/storage/>.  On the admin
+<https://azure.microsoft.com/en-us/products/category/storage/>.  On the admin
 side, @code{AzureStor} includes features to create, modify and delete storage
 accounts.  On the client side, it includes an interface to blob storage, file
 storage, and Azure Data Lake Storage Gen2': upload and download files and blobs;
@@ -1518,13 +1518,13 @@ Checks for unintended meanings by querying Wiktionary and Wikipedia.")
 (define-public r-av
   (package
     (name "r-av")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "av" version))
        (sha256
-        (base32 "0y51j85rdxh96yzqs1sab2hijqcmc4cq4mwfv9ljbffxzk59pmvd"))))
+        (base32 "1s2ycrynvq2lfgbzlym2yannfgp5w6nrs7hwrnyschrvqzi342s1"))))
     (properties `((upstream-name . "av")))
     (build-system r-build-system)
     (arguments
@@ -1914,13 +1914,13 @@ relationships between categorical and continuous variables in the data set.")
 (define-public r-autoslider-core
   (package
     (name "r-autoslider-core")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoslider.core" version))
        (sha256
-        (base32 "1cwidh4j1qw69c3ghbgnkxkpjy6kd6nrf221257kh95w94fvsys5"))))
+        (base32 "01288vlkb04m41xvwg644xg2vlxhcjzbh7m2s0hfs2phc35iz18n"))))
     (properties `((upstream-name . "autoslider.core")))
     (build-system r-build-system)
     (arguments
@@ -15836,13 +15836,13 @@ described in the Llambrich et al. (2021) <doi:10.1093/bioinformatics/btab591>.")
 (define-public r-amadeus
   (package
     (name "r-amadeus")
-    (version "1.2.3")
+    (version "1.2.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amadeus" version))
        (sha256
-        (base32 "0czy5vpxyss419jcc9bnvsidyxdq2sxijvslq06xgwa8r2f0zkiq"))))
+        (base32 "1szpd6cds10r3dgm0mvqlbk6pm8j48jxlvlzd0x18njaq1zv0nry"))))
     (properties `((upstream-name . "amadeus")))
     (build-system r-build-system)
     (arguments
@@ -16603,13 +16603,13 @@ samples.")
 (define-public r-alookr
   (package
     (name "r-alookr")
-    (version "0.3.9")
+    (version "0.3.91")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alookr" version))
        (sha256
-        (base32 "13lvbfgqb6ivrik1jcbfz3zn6p41aqwq68bk9ric3xnyjnczc5wg"))))
+        (base32 "1pxzy8qypwnymsa6kbiy6jcjsqpay58l77h5ycqxj174is9d5mr5"))))
     (properties `((upstream-name . "alookr")))
     (build-system r-build-system)
     (arguments
@@ -16638,7 +16638,7 @@ samples.")
                              r-cli
                              r-catools))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=alookr")
+    (home-page "https://choonghyunryu.github.io/alookr/")
     (synopsis "Model Classifier for Binary Classification")
     (description
      "This package provides a collection of tools that support data splitting,

@@ -2624,13 +2624,13 @@ Calculus.")
 (define-public r-mutualinf
   (package
     (name "r-mutualinf")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mutualinf" version))
        (sha256
-        (base32 "1cva93ck88d5j03a92m5v593xklas49pcfr5p144mzwbhvmpzg72"))))
+        (base32 "1yd6x1k7vj56gsnqcxgpjl00bvvkyqxvq07qd2h6kipri36w5jw4"))))
     (properties `((upstream-name . "mutualinf")))
     (build-system r-build-system)
     (arguments
@@ -17262,13 +17262,13 @@ users about returned objects.")
 (define-public r-modelsummary
   (package
     (name "r-modelsummary")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelsummary" version))
        (sha256
-        (base32 "1v1wy7lmp0wk7fxac7x9lkyzbpp3q98agq9mp3y0hc9p7gl6rb3v"))))
+        (base32 "147prvgdnn0jhy4cz4njmidv0p0wyd7h6mcnv0y6423x80pb8acn"))))
     (properties `((upstream-name . "modelsummary")))
     (build-system r-build-system)
     (arguments
@@ -20955,39 +20955,6 @@ the mlr3 ecosystem.  The package takes inspiration from the summary function for
 (generalized) linear models but extends it to non-parametric machine learning
 models, based on generalization performance, model complexity, feature
 importances and effects, and fairness metrics.")
-    (license license:lgpl3)))
-
-(define-public r-mlr3spatiotempcv
-  (package
-    (name "r-mlr3spatiotempcv")
-    (version "2.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mlr3spatiotempcv" version))
-       (sha256
-        (base32 "0h9f0snqx6m15p8nqgrmqv1ww7npxq75vy1a8jbk47pa8z9rwj1i"))))
-    (properties `((upstream-name . "mlr3spatiotempcv")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6
-                             r-paradox
-                             r-mlr3misc
-                             r-mlr3
-                             r-ggplot2
-                             r-data-table
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://mlr3spatiotempcv.mlr-org.com/")
-    (synopsis "Spatiotemporal Resampling Methods for 'mlr3'")
-    (description
-     "Extends the mlr3 machine learning framework with spatio-temporal resampling
-methods to account for the presence of spatiotemporal autocorrelation (STAC) in
-predictor variables.  STAC may cause highly biased performance estimates in
-cross-validation if ignored.  A JSS article is available at
-<doi:10.18637/jss.v111.i07>.")
     (license license:lgpl3)))
 
 (define-public r-mlr3spatial
@@ -30033,13 +30000,13 @@ the covariates, using a backfitting approach to maximize the likelihood.")
 (define-public r-micompr
   (package
     (name "r-micompr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micompr" version))
        (sha256
-        (base32 "1mr0i4q6aih59xv5jfbxb72v49006dc0qyrhws9lja1j44gbk72y"))))
+        (base32 "0934694lpchzgz9cmsm52zpqsmkik1g0y3six49q0zhfm2rlj6pp"))))
     (properties `((upstream-name . "micompr")))
     (build-system r-build-system)
     (arguments
@@ -33445,20 +33412,20 @@ a landscape [De Caceres et al. (2018) <doi:10.1016/j.envsoft.2018.08.003>].")
 (define-public r-meteoforecast
   (package
     (name "r-meteoforecast")
-    (version "0.56")
+    (version "0.57")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meteoForecast" version))
        (sha256
-        (base32 "0nbjl4x06ni6jk8ji6n3cgd07iszw87lwg52rp8avvsz3kh19p5c"))))
+        (base32 "0dg98x2afgnvz0dx20j775cm92750j988gs84w7sngydsn9sl5zk"))))
     (properties `((upstream-name . "meteoForecast")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zoo r-xml r-sp r-raster r-ncdf4))
-    (home-page "https://github.com/oscarperpinan/meteoForecast")
+    (home-page "https://codeberg.org/oscarperpinan/meteoForecast")
     (synopsis "Numerical Weather Predictions")
     (description
      "Access to several Numerical Weather Prediction services both in raster format
@@ -37683,13 +37650,13 @@ required unless gif functionality is desired.")
 (define-public r-meme
   (package
     (name "r-meme")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meme" version))
        (sha256
-        (base32 "009gkl9zmj2s6wmd7rl0khf04m05zcbbjjds2w7krnbr8h0dqpqm"))))
+        (base32 "1007a8bkm71gdb015gfbnnm5ks7b9sv09c7g6lz848088wqm41rk"))))
     (properties `((upstream-name . "meme")))
     (build-system r-build-system)
     (arguments

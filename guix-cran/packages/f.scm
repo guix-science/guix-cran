@@ -1117,13 +1117,13 @@ change, it gives identical results, and behaves exactly the same.")
 (define-public r-future-batchtools
   (package
     (name "r-future-batchtools")
-    (version "0.12.2")
+    (version "0.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "future.batchtools" version))
        (sha256
-        (base32 "1ccl79426syv90mpyvrrrv259yjzvmp4qzfzzn506dk6rjpdwnhb"))))
+        (base32 "1za3alksij97fyw3nj4zqn1gj1a4imzak95w5wmz49s4w5395fd5"))))
     (properties `((upstream-name . "future.batchtools")))
     (build-system r-build-system)
     (arguments
@@ -18252,6 +18252,41 @@ compute the a-posteriori alpha-error are implemented.  Risk-based targeted
 sampling is supported.")
     (license license:gpl2+)))
 
+(define-public r-ffaframework
+  (package
+    (name "r-ffaframework")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ffaframework" version))
+       (sha256
+        (base32 "1d39ck1kvzizaklnczfifqpv06nqmigl3gxfzlcsjs5bclb5ynff"))))
+    (properties `((upstream-name . "ffaframework")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-patchwork
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-ggplot2
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://rileywheadon.github.io/ffa-framework/")
+    (synopsis "Flood Frequency Analysis Framework")
+    (description
+     "This package provides tools to support systematic and reproducible workflows for
+both stationary and nonstationary flood frequency analysis, with applications
+extending to other hydroclimate extremes, such as precipitation frequency
+analysis.  This package implements the FFA framework proposed by Vidrio-
+SahagÃºn et al. (2024) <doi:10.1016/j.envsoft.2024.105940>, originally developed
+in MATLAB, now adapted for the R environment.  This work was funded by the Flood
+Hazard Identification and Mapping Program of Environment and Climate Change
+Canada, as well as the Canada Research Chair (Tier 1) awarded to Dr. Pietroniro.")
+    (license license:agpl3+)))
+
 (define-public r-fextremes
   (package
     (name "r-fextremes")
@@ -19142,42 +19177,51 @@ USGS).")
 (define-public r-fect
   (package
     (name "r-fect")
-    (version "1.0.0")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fect" version))
        (sha256
-        (base32 "1m2ap1ispc2z1qdj341vx1knsjkqfzi6ys4z3hd9bp4g7bi0xsyx"))))
+        (base32 "07hz80bs6w209857szbwx03z0hj6z6j05rqzs0cdpc9jbznlqnyp"))))
     (properties `((upstream-name . "fect")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-reshape2
+                             r-rcpparmadillo
                              r-rcpp
-                             r-panelview
                              r-mvtnorm
                              r-mass
                              r-gridextra
                              r-ggplot2
                              r-ggally
+                             r-future-apply
                              r-future
                              r-foreach
                              r-fixest
+                             r-dplyr
                              r-dorng
                              r-doparallel
                              r-abind))
-    (home-page "https://yiqingxu.org/packages/fect/articles/tutorial.html")
-    (synopsis "Fixed Effects Counterfactuals")
+    (home-page "https://yiqingxu.org/packages/fect/")
+    (synopsis "Fixed Effects Counterfactual Estimators")
     (description
-     "Estimates causal effects with panel data using the counterfactual methods.  It
-is suitable for panel or time-series cross-sectional analysis with binary
-treatments under (hypothetically) baseline randomization.It allows a treatment
-to switch on and off and limited carryover effects.  It supports linear factor
-models, a generalization of gsynth and the matrix completion method.
-Implementation details can be found in Liu, Wang and Xu (2022)
-<@code{arXiv:2107.00856>}.")
+     "This package provides tools for estimating causal effects in panel data using
+counterfactual methods, as well as other modern DID estimators.  It is designed
+for causal panel analysis with binary treatments under the parallel trends
+assumption.  The package supports scenarios where treatments can switch on and
+off and allows for limited carryover effects.  It includes several imputation
+estimators, such as Gsynth (Xu 2017), linear factor models, and the matrix
+completion method.  Detailed methodology is described in Liu, Wang, and Xu
+(2024) <doi:10.48550/@code{arXiv.2107.00856>} and Chiu et al. (2025)
+<doi:10.48550/@code{arXiv.2309.15983>}.  Optionally integrates with the
+\"@code{HonestDiDFEct}\" package for sensitivity analyses compatible with
+imputation estimators. \"@code{HonestDiDFEct}\" is not on CRAN but can be obtained
+from <https://github.com/lzy318/@code{HonestDiDFEct>}.")
     (license license:expat)))
 
 (define-public r-fechner

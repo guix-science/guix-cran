@@ -591,13 +591,13 @@ their names easy to remember and easy to deploy.")
 (define-public r-numericensembles
   (package
     (name "r-numericensembles")
-    (version "0.9.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NumericEnsembles" version))
        (sha256
-        (base32 "1zzhd73blwycp76z3qpm0xx31dj04hxdaxq5fln0pi44j94dlmzr"))))
+        (base32 "19bpxs10qk5zmy5i5c1zig2x2fzlh5vqrwdyfmjia9jiasqs4dmp"))))
     (properties `((upstream-name . "NumericEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -613,6 +613,7 @@ their names easy to remember and easy to deploy.")
                              r-randomforest
                              r-purrr
                              r-pls
+                             r-olsrr
                              r-nnet
                              r-metrics
                              r-leaps
@@ -635,29 +636,30 @@ their names easy to remember and easy to deploy.")
                              r-arm))
     (native-inputs (list r-knitr))
     (home-page "http://www.NumericEnsembles.com")
-    (synopsis "Automatically Runs 23 Individual and 17 Ensembles of Models")
+    (synopsis "Automatically Runs 18 Individual and 14 Ensembles of Models")
     (description
-     "Automatically runs 23 individual models and 17 ensembles on numeric data.  The
-package automatically returns complete results on all 40 models, 25 charts,
-multiple tables.  The user simply provides the data, and answers a few questions
-(for example, how many times would you like to resample the data).  From there
-the package randomly splits the data into train, test and validation sets,
-builds models on the training data, makes predictions on the test and validation
-sets, measures root mean squared error (RMSE), removes features above a user-set
-level of Variance Inflation Factor, and has several optional features including
-scaling all numeric data, four different ways to handle strings in the data.
-Perhaps the most significant feature is the package's ability to make
-predictions using the 40 pre trained models on totally new (untrained) data if
-the user selects that feature.  This feature alone represents a very effective
-solution to the issue of reproducibility of models in data science.  The package
-can also randomly resample the data as many times as the user sets, thus giving
-more accurate results than a single run.  The graphs provide many results that
-are not typically found.  For example, the package automatically calculates the
-Kolmogorov-Smirnov test for each of the 40 models and plots a bar chart of the
-results, a bias bar chart of each of the 40 models, as well as several plots for
+     "Automatically runs 18 individual models and 14 ensembles on numeric data, for a
+total of 32 models.  The package automatically returns complete results on all
+32 models, 25 charts, multiple tables.  The user simply provides the tidy data,
+and answers a few questions (for example, how many times would you like to
+resample the data).  From there the package randomly splits the data into train,
+test and validation sets, fits each of models on the training data, makes
+predictions on the test and validation sets, measures root mean squared error
+(RMSE), removes features above a user-set level of Variance Inflation Factor,
+and has several optional features including scaling all numeric data, four
+different ways to handle strings in the data.  Perhaps the most significant
+feature is the package's ability to make predictions using the 32 pre trained
+models on totally new (untrained) data if the user selects that feature.  This
+feature alone represents a very effective solution to the issue of
+reproducibility of models in data science.  The package can also randomly
+resample the data as many times as the user sets, thus giving more accurate
+results than a single run.  The graphs provide many results that are not
+typically found.  For example, the package automatically calculates the
+Kolmogorov-Smirnov test for each of the 32 models and plots a bar chart of the
+results, a bias bar chart of each of the 32 models, as well as several plots for
 exploratory data analysis (automatic histograms of the numeric data, automatic
 histograms of the numeric data).  The package also automatically creates a
-summary report that can be both sorted and searched for each of the 40 models,
+summary report that can be both sorted and searched for each of the 32 models,
 including RMSE, bias, train RMSE, test RMSE, validation RMSE, overfitting and
 duration.  The best results on the holdout data typically beat the best results
 in data science competitions and published results for the same data set.")
@@ -1554,6 +1556,43 @@ distance, tournament selection, simulated binary crossover, and polynomial
 mutation are called in the main program.  The methods are described in Deb et
 al. (2002) <doi:10.1109/4235.996017>.")
     (license license:lgpl3)))
+
+(define-public r-nser
+  (package
+    (name "r-nser")
+    (version "1.5.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nser" version))
+       (sha256
+        (base32 "0wb374ynqyy7v2x48azvaaphszc14spmbi107pr94dk07z7ah62v"))))
+    (properties `((upstream-name . "nser")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-rvest
+                             r-reticulate
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-httr
+                             r-googlevis
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nandp1/nser/")
+    (synopsis
+     "Bhavcopy and Live Market Data from National Stock Exchange (NSE) & Bombay Stock Exchange (BSE) India")
+    (description
+     "Download Current & Historical Bhavcopy.  Get Live Market data from NSE India of
+Equities and Derivatives (F&O) segment.  Data source
+<https://www.nseindia.com/>.")
+    (license license:gpl3)))
 
 (define-public r-nseq
   (package
@@ -8383,28 +8422,28 @@ coverage plots (Karlsson and Holford, 2008,
 (define-public r-nlmeu
   (package
     (name "r-nlmeu")
-    (version "0.70-9")
+    (version "0.71.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmeU" version))
        (sha256
-        (base32 "10vk098mv8h9hv6cn8sih2fmg9cjsqmvndqzqm8bbaahla1v6n7q"))))
+        (base32 "0lqvbxgyyy8dm0igqlra9v7cy09xw0anhjp9v85iw9r5kqj09pyw"))))
     (properties `((upstream-name . "nlmeU")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-nlme))
-    (home-page "http://www-personal.umich.edu/~agalecki/")
+    (home-page "https://github.com/agalecki/nlmeU")
     (synopsis
-     "Datasets and Utility Functions Enhancing Functionality of 'nlme' Package")
+     "Functions and Data Supporting 'Linear Mixed-Effects Models: A Step-by-Step Approach'")
     (description
-     "Datasets and utility functions enhancing functionality of nlme package.
-Datasets, functions and scripts are described in book titled Linear
-Mixed-Effects Models: A Step-by-Step Approach by Galecki and Burzykowski (2013).
- Package is under development.")
-    (license license:gpl2+)))
+     "This package provides functions and datasets to support the book by Galecki and
+Burzykowski (2013), Linear Mixed-Effects Models: A Step-by-Step Approach',
+Springer.  Includes functions for power calculations, log-likelihood
+contributions, and data simulation for linear mixed-effects models.")
+    (license license:gpl2)))
 
 (define-public r-nlive
   (package
@@ -14533,13 +14572,13 @@ that are far to big to fit into memory.")
 (define-public r-neonsoilflux
   (package
     (name "r-neonsoilflux")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neonSoilFlux" version))
        (sha256
-        (base32 "0mi03k83q7hr1i9wi91dkbg4a6kydpxxxs5cihr6h47jaz2m87aj"))))
+        (base32 "1skf32fffd5mwi48ishd168m5ijh5b5k39xv3ncbwmrbhib81q25"))))
     (properties `((upstream-name . "neonSoilFlux")))
     (build-system r-build-system)
     (arguments
@@ -15254,13 +15293,13 @@ with an external data frame and plotted as a thematic map.")
 (define-public r-necklaces
   (package
     (name "r-necklaces")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Necklaces" version))
        (sha256
-        (base32 "0caq7l3xqhxssag42qi122j2ixmzng8hi4qjb0f114d9r88x64l7"))))
+        (base32 "1kyrmyahm70hb7cj4q9xvx2aslnwgrr5cw1qfqlqak3yipkj3jnw"))))
     (properties `((upstream-name . "Necklaces")))
     (build-system r-build-system)
     (arguments
@@ -15273,7 +15312,7 @@ with an external data frame and plotted as a thematic map.")
      "This package provides tools to generate Necklaces, Bracelets, Lyndon words and
 de Bruijn sequences.  The generation relies on integer partitions and uses the
 KStatistics package.  Methods used in the package refers to E. Di Nardo and G.
-Guarino (2022) <@code{arXiv:2208.06855>}.")
+Guarino (2022) <doi:10.48550/@code{arXiv.2208.06855>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-nebula

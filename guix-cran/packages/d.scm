@@ -4086,41 +4086,6 @@ APIs, including @code{OpenTopography}
 <https://apps.nationalmap.gov/tnmaccess/#/>.")
     (license license:gpl3)))
 
-(define-public r-dsmolgenisarmadillo
-  (package
-    (name "r-dsmolgenisarmadillo")
-    (version "3.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DSMolgenisArmadillo" version))
-       (sha256
-        (base32 "0jj04z70m3xg7ipj7wk6ngl9rpisdizpdk0qwsigv9ak6dlbc8ny"))))
-    (properties `((upstream-name . "DSMolgenisArmadillo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-urltools
-                             r-stringr
-                             r-molgenisauth
-                             r-lifecycle
-                             r-jsonlite
-                             r-httr
-                             r-dsi
-                             r-dplyr
-                             r-base64enc))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/molgenis/molgenis-r-datashield/")
-    (synopsis "'DataSHIELD' Client for 'MOLGENIS Armadillo'")
-    (description
-     "@code{DataSHIELD} is an infrastructure and series of R packages that enables the
-remote and non-disclosive analysis of sensitive research data.  This package is
-the @code{DataSHIELD} interface implementation to analyze data shared on a
-MOLGENIS Armadillo server.  MOLGENIS Armadillo is a light-weight
-@code{DataSHIELD} server using a file store and an RServe server.")
-    (license license:lgpl2.1+)))
-
 (define-public r-dsmmr
   (package
     (name "r-dsmmr")
@@ -4595,43 +4560,6 @@ Dixon-Simon model for subgroup analysis (with binary covariates) in clinical
 trials.  For details of the methodology, please refer to D.O. Dixon and R. Simon
 (1991), Biometrics, 47: 871-881.")
     (license license:gpl2+)))
-
-(define-public r-dsbase
-  (package
-    (name "r-dsbase")
-    (version "6.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dsBase" version))
-       (sha256
-        (base32 "0n98mzg8204xz9f81f27c53dj9rwjnhgx9qyjya7j69kfq1ifvw4"))))
-    (properties `((upstream-name . "dsBase")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-reshape2
-                             r-rann
-                             r-polycor
-                             r-mice
-                             r-lme4
-                             r-gamlss-dist
-                             r-gamlss
-                             r-dplyr
-                             r-childsds))
-    (home-page "https://cran.r-project.org/package=dsBase")
-    (synopsis "'DataSHIELD' Server Site Base Functions")
-    (description
-     "Base @code{DataSHIELD} functions for the server side. @code{DataSHIELD} is a
-software package which allows you to do non-disclosive federated analysis on
-sensitive data. @code{DataSHIELD} analytic functions have been designed to only
-share non disclosive summary statistics, with built in automated output checking
-based on statistical disclosure control.  With data sites setting the threshold
-values for the automated output checks.  For more details, see
-citation(\"@code{dsBase}\")'.")
-    (license license:gpl3)))
 
 (define-public r-dsample
   (package
@@ -11196,13 +11124,13 @@ G. (2020) <doi:10.1080/02331888.2020.1823979>.")
 (define-public r-dlookr
   (package
     (name "r-dlookr")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dlookr" version))
        (sha256
-        (base32 "047f616pcjvv9bd7crphrbvql5qn6j50495px9244fl50vyklzx6"))))
+        (base32 "1ndy7ncqv4xdr562xz3wziy5pm12x0syb276pjqm90rafxz2xijc"))))
     (properties `((upstream-name . "dlookr")))
     (build-system r-build-system)
     (arguments
@@ -20053,13 +19981,13 @@ independent sample.")
 (define-public r-devrate
   (package
     (name "r-devrate")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "devRate" version))
        (sha256
-        (base32 "06060wxji3mfwq6c58gmb07mz9sk9d5ls9d152vywjnz20ndpscd"))))
+        (base32 "1ffydn6gy5xjgl27fan1pvdxdf74mm0dfhnf85y9w0330x1k5cqd"))))
     (properties `((upstream-name . "devRate")))
     (build-system r-build-system)
     (arguments
@@ -23907,6 +23835,37 @@ Generalized Linear Mixed Model with the negative binomial distribution, followed
 by a Wald test to assess the regression coefficients.")
     (license license:artistic2.0)))
 
+(define-public r-degradr
+  (package
+    (name "r-degradr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "degradr" version))
+       (sha256
+        (base32 "0km176905ymwjhfc3jnz95ihpici9ic10vf7nm4rq3z7dl2jd57k"))))
+    (properties `((upstream-name . "degradr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quadprog r-nlme r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=degradr")
+    (synopsis
+     "Estimating Remaining Useful Life with Linear Mixed Effects Models")
+    (description
+     "This package provides tools for estimating the Remaining Useful Life (RUL) of
+degrading systems using linear mixed-effects models and creating a health index.
+ It supports both univariate and multivariate degradation signals.  For
+multivariate inputs, the signals are merged into a univariate health index prior
+to modeling.  Linear and exponential degradation trajectories are supported (the
+latter using a log transformation).  Remaining Useful Life (RUL) distributions
+are estimated using Bayesian updating for new units, enabling on-site predictive
+maintenance.  Based on the methodology of Liu and Huang (2016)
+<doi:10.1109/TASE.2014.2349733>.")
+    (license license:gpl3)))
+
 (define-public r-degday
   (package
     (name "r-degday")
@@ -24396,13 +24355,13 @@ rstudioapi'.")
 (define-public r-deepregression
   (package
     (name "r-deepregression")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deepregression" version))
        (sha256
-        (base32 "1w5n65kz4j9rs5v3m8grg4nyns01q6r1axqrygk00nkyvr0vc271"))))
+        (base32 "0r9pkhkpmkh11q0c4j989lzpsjfd2ksx6l8i9c4gvfskrgkg9s6v"))))
     (properties `((upstream-name . "deepregression")))
     (build-system r-build-system)
     (arguments
@@ -24716,13 +24675,13 @@ solutions, dimension reduction is applied at each layer by way of factor models.
 (define-public r-deepdep
   (package
     (name "r-deepdep")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deepdep" version))
        (sha256
-        (base32 "1pz07zznlpqjkkpf5r1ik0shl7kj0vn4l5dmvs7ggc7k5n7ig3b2"))))
+        (base32 "06l7p4ldz4y1f7rncphwyryj6nmxkxkpd820mg78w8fadg2ksvra"))))
     (properties `((upstream-name . "deepdep")))
     (build-system r-build-system)
     (arguments
@@ -26800,13 +26759,13 @@ according to an external variable of the user's interest.")
 (define-public r-dctensor
   (package
     (name "r-dctensor")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dcTensor" version))
        (sha256
-        (base32 "1z62kz9558fj5nwp2nq6vh7ikbxbg8nm0w08y5p5dc0nzhcd4kxn"))))
+        (base32 "1b4krkhp29zd1v17r4czix56axs3hg19z1ilpksbw75g5xp57z4n"))))
     (properties `((upstream-name . "dcTensor")))
     (build-system r-build-system)
     (arguments
@@ -29295,13 +29254,13 @@ to illustrate paired data sets (such as before-after, male-female).")
 (define-public r-datavisualizations
   (package
     (name "r-datavisualizations")
-    (version "1.3.3")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataVisualizations" version))
        (sha256
-        (base32 "1wxys6jds16pin670lkr7b87w87zgg36l3fva9408l2nkf8dndxp"))))
+        (base32 "1m002j6dc2kj3w8afvxh23zjigp9832vhr32ihmhfznl5b5myn22"))))
     (properties `((upstream-name . "DataVisualizations")))
     (build-system r-build-system)
     (arguments
@@ -29309,7 +29268,7 @@ to illustrate paired data sets (such as before-after, male-female).")
       #:tests? #f))
     (propagated-inputs (list r-sp
                              r-reshape2
-                             r-rcpparmadillo
+                             r-rcppparallel
                              r-rcpp
                              r-pracma
                              r-ggplot2))
