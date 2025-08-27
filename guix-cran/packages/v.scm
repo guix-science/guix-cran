@@ -6398,13 +6398,13 @@ a means to interact with signals, events, and datasets in a Vega chart using
 (define-public r-vegan3d
   (package
     (name "r-vegan3d")
-    (version "1.4-0")
+    (version "1.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vegan3d" version))
        (sha256
-        (base32 "031cgbixrlaqv6gwyhwxpn0vyr6dgc0lyqwimna4gam8j3qnw4wm"))))
+        (base32 "1903a46hg1rkzq9vgn29l68wvvq2qk3f7510wdynfyk3yqv52f34"))))
     (properties `((upstream-name . "vegan3d")))
     (build-system r-build-system)
     (arguments
@@ -7195,13 +7195,13 @@ information in a collection of time series.")
 (define-public r-vcrpart
   (package
     (name "r-vcrpart")
-    (version "1.0-6")
+    (version "1.0-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcrpart" version))
        (sha256
-        (base32 "0vz8wss290q6m0234syqwxnrk6c3jm64r2rccsj44sypbf887db5"))))
+        (base32 "1z0rxx5lsinmxnxvvwqv8b7725ii502w1r6j17zasp3an1nmy7g6"))))
     (properties `((upstream-name . "vcrpart")))
     (build-system r-build-system)
     (arguments
@@ -7305,20 +7305,20 @@ time computing other summary statistics which are summarily ignored.")
 (define-public r-vcmeta
   (package
     (name "r-vcmeta")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcmeta" version))
        (sha256
-        (base32 "0122xzfwsvxv0rwdaf331nwlikcwm409lya9wm8k037dk46gx2w3"))))
+        (base32 "1c162v27jlwbcij1mdwnwk9ig5fhg66awn2h7xiz38q7i9mxjj53"))))
     (properties `((upstream-name . "vcmeta")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rdpack r-mathjaxr r-ggplot2))
-    (home-page "https://github.com/dgbonett/vcmeta")
+    (home-page "https://github.com/dgbonett/vcmeta/")
     (synopsis "Varying Coefficient Meta-Analysis")
     (description
      "This package implements functions for varying coefficient meta-analysis methods.

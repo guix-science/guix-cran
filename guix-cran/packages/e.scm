@@ -3684,40 +3684,6 @@ R.")
 <https://exampa.net/>.")
     (license license:expat)))
 
-(define-public r-exametrika
-  (package
-    (name "r-exametrika")
-    (version "1.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "exametrika" version))
-       (sha256
-        (base32 "1b5lh38rh4a7ycjjm9wxvwjf5n90h321sb751qlhb64pmy65b0vn"))))
-    (properties `((upstream-name . "exametrika")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-igraph))
-    (home-page "https://kosugitti.github.io/exametrika/")
-    (synopsis "Test Theory Analysis and Biclustering")
-    (description
-     "This package implements comprehensive test data engineering methods as described
-in Shojima (2022, ISBN:978-9811699856).  Provides statistical techniques for
-engineering and processing test data: Classical Test Theory (CTT) with
-reliability coefficients for continuous ability assessment; Item Response Theory
-(IRT) including Rasch, 2PL, and 3PL models with item/test information functions;
-Latent Class Analysis (LCA) for nominal clustering; Latent Rank Analysis (LRA)
-for ordinal clustering with automatic determination of cluster numbers;
-Biclustering methods including infinite relational models for simultaneous
-clustering of examinees and items without predefined cluster numbers; and
-Bayesian Network Models (BNM) for visualizing inter-item dependencies.  Features
-local dependence analysis through LRA and biclustering, parameter estimation,
-dimensionality assessment, and network structure visualization for educational,
-psychological, and social science research.")
-    (license license:expat)))
-
 (define-public r-exactvartest
   (package
     (name "r-exactvartest")
@@ -4950,13 +4916,13 @@ Observational Studies by Paul R. Rosenbaum (2021) <doi:10.1201/9781003039648>.")
 (define-public r-evidencesynthesis
   (package
     (name "r-evidencesynthesis")
-    (version "0.5.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EvidenceSynthesis" version))
        (sha256
-        (base32 "0zyah27p1j7sxpcgpr05ws1whw7dd876nzygcvh5pyiikkahfmcm"))))
+        (base32 "1qar7gdvm7b6z8xjsj0rly0gkg7xmkkn7q32l6cjn4s2mn2qlprs"))))
     (properties `((upstream-name . "EvidenceSynthesis")))
     (build-system r-build-system)
     (arguments
@@ -9047,13 +9013,13 @@ networks whose edge weights are counts.  See Krivitsky (2012)
 (define-public r-ergm
   (package
     (name "r-ergm")
-    (version "4.9.0")
+    (version "4.9.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm" version))
        (sha256
-        (base32 "1kb95gzi9ahspydg09rj4j008jakjang342wj59wxdhffis6plmm"))))
+        (base32 "1zdhzq4kifrysrnlhr16xwjc5nm2lbhd6hfyyf3cky71n3160fp4"))))
     (properties `((upstream-name . "ergm")))
     (build-system r-build-system)
     (arguments
@@ -9567,19 +9533,19 @@ measure the performance of these designs.  It consist of the function
 (define-public r-equatiomatic
   (package
     (name "r-equatiomatic")
-    (version "0.3.7")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equatiomatic" version))
        (sha256
-        (base32 "10qrkq2wzyzip9226c0vhpjc6ws8zysaqiwzr2qyxf223pg42483"))))
+        (base32 "0yvq63xp8mrx802a3bdn9zxb4y2r052i3mn220pf9a3vh4hq7sj7"))))
     (properties `((upstream-name . "equatiomatic")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny r-knitr r-broom-mixed r-broom))
+    (propagated-inputs (list r-shiny r-rmarkdown r-knitr r-broom-mixed r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/datalorax/equatiomatic")
     (synopsis "Transform Models into 'LaTeX' Equations")
@@ -9821,6 +9787,34 @@ complex statistical analysis.  Gurusamy,K (2024)<doi:10.5281/zenodo.13354162>.")
 classifies the data and performs appropriate statistical tests.  EQUAL-STATS
 software is a shiny application with an user-friendly interface to perform
 complex statistical analysis.  Gurusamy,K (2024)<doi:10.5281/zenodo.13354162>.")
+    (license license:gpl3+)))
+
+(define-public r-equalencrypt
+  (package
+    (name "r-equalencrypt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EQUALencrypt" version))
+       (sha256
+        (base32 "0qmnm1ldw44nr7rkikhip92m7gcga664jngpraw47kf4zfwj2j02"))))
+    (properties `((upstream-name . "EQUALencrypt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip r-uuid r-stringr r-openssl))
+    (home-page "https://sites.google.com/view/equal-group/home")
+    (synopsis
+     "Encryption and Decryption of Files and Data for Researchers Without Coding Skills")
+    (description
+     "Support functions for R-based \"EQUALencrypt - Encrypt and decrypt whole files\"
+and \"EQUALencrypt - Encrypt and decrypt columns of data\" shiny applications
+which allow researchers without coding skills or expertise in encryption
+algorithms to share data after encryption.  Gurusamy,K
+(2025)<doi:10.5281/zenodo.16743676> and Gurusamy,K
+(2025)<doi:10.5281/zenodo.16744058>.")
     (license license:gpl3+)))
 
 (define-public r-equalden-hd
@@ -15185,13 +15179,13 @@ constrains, and variables restricted to be integers.")
 (define-public r-emhawkes
   (package
     (name "r-emhawkes")
-    (version "0.9.7")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emhawkes" version))
        (sha256
-        (base32 "0zhy1y80m548y9nbbjb2h795qky2637mxlqb548bakn7ps847qps"))))
+        (base32 "1fnmx0zp4hhpv1pqcxdspl8vr9xcgbhjkccwm1m50b3zm91xxv24"))))
     (properties `((upstream-name . "emhawkes")))
     (build-system r-build-system)
     (arguments
@@ -15199,7 +15193,7 @@ constrains, and variables restricted to be integers.")
       #:tests? #f))
     (propagated-inputs (list r-maxlik))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=emhawkes")
+    (home-page "https://github.com/ksublee/emhawkes")
     (synopsis "Exponential Multivariate Hawkes Model")
     (description
      "Simulate and fitting exponential multivariate Hawkes model.  This package
@@ -20751,34 +20745,6 @@ and provides HTML view of SEC filings.")
 and rfun'.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-edftest
-  (package
-    (name "r-edftest")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EDFtest" version))
-       (sha256
-        (base32 "1z6ayi0513ibyk0gjfxcd1rybp5374xhbf9zkkm669wdmfggx26h"))))
-    (properties `((upstream-name . "EDFtest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rmutil r-compquadform))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=EDFtest")
-    (synopsis "Goodness of Fit Based on Empirical Distribution Function")
-    (description
-     "This repository contains software for the calculation of goodness-of-fit test
-statistics and their P-values.  The three statistics computed are the Empirical
-Distribution function statistics called Cramer-von Mises, Anderson-Darling, and
-Watson statistics.  The statistics and their P-values can be used to assess an
-assumed distribution.The following distributions are available: Uniform, Normal,
-Gamma, Logistic, Laplace, Weibull, Extreme Value, and Exponential.")
-    (license license:expat)))
-
 (define-public r-edfreader
   (package
     (name "r-edfreader")
@@ -20805,6 +20771,35 @@ Gamma, Logistic, Laplace, Weibull, Extreme Value, and Exponential.")
 files are read in two steps: first the header is read and then the signals
 (using the header object as a parameter).")
     (license license:gpl3)))
+
+(define-public r-edfinr
+  (package
+    (name "r-edfinr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "edfinr" version))
+       (sha256
+        (base32 "1nc6ix0f1y3mvllj05vqmps04361qldrwyxhyh67qfhvblb1cp4m"))))
+    (properties `((upstream-name . "edfinr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bellwetherorg/edfinr")
+    (synopsis "Access Tidy Education Finance Data")
+    (description
+     "This package provides easy access to tidy education finance data using
+Bellwether's methodology to combine NCES F-33 Survey, Census Bureau Small Area
+Income Poverty Estimates (SAIPE), and community data from the ACS 5-Year
+Estimates.  The package simplifies downloading, caching, and filtering education
+finance data by year and state, enabling researchers and analysts to explore
+K-12 education funding patterns, revenue sources, expenditure categories, and
+demographic factors across U.S. school districts.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-edf
   (package
@@ -25880,5 +25875,54 @@ E., Motsinger-Reif, A.; Dose-Response 18(2):1559325820926734 (2020)
 decision tree ensemble models using a single tree-like structure.  e2tree is a
 new way of explaining an ensemble tree trained through @code{randomForest} or
 xgboost packages.")
+    (license license:expat)))
+
+(define-public r-e2e
+  (package
+    (name "r-e2e")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "E2E" version))
+       (sha256
+        (base32 "13v2h44zwgn0k258si3f38y9an00n2kb2fkgpwjbp9ry0vhqjjy8"))))
+    (properties `((upstream-name . "E2E")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-timeroc
+                             r-survminer
+                             r-survivalroc
+                             r-survival
+                             r-survcomp
+                             r-shapviz
+                             r-rsnns
+                             r-readr
+                             r-randomforestsrc
+                             r-prroc
+                             r-proc
+                             r-patchwork
+                             r-mass
+                             r-magrittr
+                             r-glmnet
+                             r-ggplot2
+                             r-gbm
+                             r-dplyr
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://xiaojie0519.github.io/E2E/")
+    (synopsis
+     "Ensemble Learning Framework for Diagnostic and Prognostic Modeling")
+    (description
+     "This package provides a framework to build and evaluate diagnosis or prognosis
+models using stacking, voting, and bagging ensemble techniques with various base
+learners.  The package also includes tools for visualization and interpretation
+of models.  The development version of the package is available on @code{GitHub}
+at <https://github.com/xiaojie0519/E2E>.  The methods are based on the
+foundational work of Breiman (1996) <doi:10.1007/BF00058655> on bagging and
+Wolpert (1992) <doi:10.1016/S0893-6080(05)80023-1> on stacking.")
     (license license:expat)))
 

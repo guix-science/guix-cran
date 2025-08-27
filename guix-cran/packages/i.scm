@@ -6398,20 +6398,19 @@ package can also be used as a teaching demo for introductory Bayesian courses.")
 (define-public r-invivopkfit
   (package
     (name "r-invivopkfit")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "invivoPKfit" version))
        (sha256
-        (base32 "1x7fkj60jkvi5aj89qkm5qz2mcvjjc433h8zzp6sn6ligj21a80w"))))
+        (base32 "0j2ilnlc3hnwkb7h2sr2crwxlvi8ysmp9giq5dca0y3mw295bkaz"))))
     (properties `((upstream-name . "invivoPKfit")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-scales
                              r-rlang
@@ -6420,15 +6419,12 @@ package can also be used as a teaching demo for introductory Bayesian courses.")
                              r-pk
                              r-optimx
                              r-numderiv
-                             r-multidplyr
+                             r-mirai
                              r-matrix
                              r-mass
-                             r-magrittr
                              r-httk
-                             r-glue
                              r-ggplot2
                              r-dplyr
-                             r-devtools
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=invivoPKfit")
@@ -6436,7 +6432,7 @@ package can also be used as a teaching demo for introductory Bayesian courses.")
     (description
      "Takes in vivo toxicokinetic concentration-time data and fits parameters of
 1-compartment and 2-compartment models for each chemical.  These methods are
-described in detail in \"Informatics for Toxicokinetics\" (submitted).")
+described in detail in \"Informatics for Toxicokinetics\" (2025).")
     (license license:gpl3)))
 
 (define-public r-invitrotkstats
@@ -11216,6 +11212,40 @@ Non-compensatory Indices\" <DOI:10.1007/s11205-017-1577-5> and De Muro P.,
 Mazziotta M., Pareto A. (2011), \"Composite Indices of Development and Poverty:
 An Application to MDGs\" <DOI:10.1007/s11205-010-9727-z>.")
     (license (license:fsdg-compatible "Unlimited"))))
+
+(define-public r-indiapis
+  (package
+    (name "r-indiapis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IndiAPIs" version))
+       (sha256
+        (base32 "0b3vz5p22150211482ih80mnhxf96s2hfwhw0j5ds6zfp050r39d"))))
+    (properties `((upstream-name . "IndiAPIs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-scales r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/indiapis")
+    (synopsis "Access Indian Data via Public APIs and Curated Datasets")
+    (description
+     "This package provides functions to access data from public RESTful APIs
+including World Bank API', and REST Countries API', retrieving real-time or
+historical data related to India, such as economic indicators, and international
+demographic and geopolitical indicators.  Additionally, the package includes one
+of the largest curated collections of open datasets focused on India, covering
+topics such as population, economy, weather, politics, health, biodiversity,
+sports, agriculture, cybercrime, infrastructure, and more.  The package supports
+reproducible research and teaching by integrating reliable international APIs
+and structured datasets from public, academic, and government sources.  For more
+information on the APIs, see: World Bank API
+<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, REST
+Countries API <https://restcountries.com/>.")
+    (license license:expat)))
 
 (define-public r-india
   (package

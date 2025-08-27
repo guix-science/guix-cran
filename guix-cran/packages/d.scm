@@ -29838,13 +29838,13 @@ Dataset JSON schema file, as described in CDISC (2023)
 (define-public r-dataset
   (package
     (name "r-dataset")
-    (version "0.3.9")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataset" version))
        (sha256
-        (base32 "1z2am4ln51ybkrm8i763n9ddksjc2wsjad2kvvpc511v0pyakv1m"))))
+        (base32 "082k3magcj08z9a581ds9ry3gdfj6hqkxxf9pqrdnmp6mvz3lypj"))))
     (properties `((upstream-name . "dataset")))
     (build-system r-build-system)
     (arguments
@@ -29852,7 +29852,6 @@ Dataset JSON schema file, as described in CDISC (2023)
       #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tibble
-                             r-rlang
                              r-pillar
                              r-labelled
                              r-isocodes
@@ -29860,12 +29859,12 @@ Dataset JSON schema file, as described in CDISC (2023)
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://dataset.dataobservatory.eu/")
-    (synopsis "Create Data Frames that are Easier to Exchange and Reuse")
+    (synopsis "Create Data Frames for Exchange and Reuse")
     (description
-     "The aim of the dataset package is to make tidy datasets easier to release,
-exchange and reuse.  It organizes and formats data frame R objects into
-well-referenced, well-described, interoperable datasets into release and reuse
-ready form.")
+     "The dataset package helps create semantically rich, machine-readable, and
+interoperable datasets in R. It extends tidy data frames with metadata that
+preserves meaning, improves interoperability, and makes datasets easier to
+publish, exchange, and reuse in line with ISO and W3C standards.")
     (license license:gpl3+)))
 
 (define-public r-dataseries

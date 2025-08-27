@@ -4617,13 +4617,13 @@ without any geolibraries.")
 (define-public r-cshshydrology
   (package
     (name "r-cshshydrology")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSHShydRology" version))
        (sha256
-        (base32 "0f90k32ngfkb7cp9s79h50qmxxxggkkm8a72diz9981wz6n3zjaa"))))
+        (base32 "1rkgmsh94z0ybvz8mf32hhj0nhzri903czfvwwz4ygfd3s9qc031"))))
     (properties `((upstream-name . "CSHShydRology")))
     (build-system r-build-system)
     (arguments
@@ -4632,10 +4632,13 @@ without any geolibraries.")
     (propagated-inputs (list r-whitebox
                              r-timedate
                              r-tidyhydat
+                             r-teachingdemos
                              r-stringr
                              r-sf
                              r-raster
                              r-plotrix
+                             r-outliers
+                             r-mgbt
                              r-magrittr
                              r-lubridate
                              r-kendall
@@ -37657,6 +37660,41 @@ name gender, name valence, and name warmth/competence).  Details are provided at
 <https://psychbruce.github.io/@code{ChineseNames/>}.")
     (license license:gpl3)))
 
+(define-public r-chinapis
+  (package
+    (name "r-chinapis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ChinAPIs" version))
+       (sha256
+        (base32 "1gssmjndbc4a6a9g7jv7hfh3d7l89bi1xj6l7cdvyfp1wb370dq4"))))
+    (properties `((upstream-name . "ChinAPIs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-scales r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/chinapis")
+    (synopsis "Access Chinese Data via Public APIs and Curated Datasets")
+    (description
+     "This package provides functions to access data from public RESTful APIs
+including Nager.Date', World Bank API', and REST Countries API', retrieving
+real-time or historical data related to China, such as holidays, economic
+indicators, and international demographic and geopolitical indicators.
+Additionally, the package includes one of the largest curated collections of
+open datasets focused on China and Hong Kong, covering topics such as air
+quality, demographics, input-output tables, epidemiology, political structure,
+names, and social indicators.  The package supports reproducible research and
+teaching by integrating reliable international APIs and structured datasets from
+public, academic, and government sources.  For more information on the APIs,
+see: Nager.Date <https://date.nager.at/Api>, World Bank API
+<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, and REST
+Countries API <https://restcountries.com/>.")
+    (license license:expat)))
+
 (define-public r-chillr
   (package
     (name "r-chillr")
@@ -38745,13 +38783,13 @@ are motivated by the functional programming concept.")
 (define-public r-cheem
   (package
     (name "r-cheem")
-    (version "0.4.0.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheem" version))
        (sha256
-        (base32 "1b6gf2ax30rhpkmawvpar4cria4gkrcrzgyrvlrhcaialx40sjlz"))))
+        (base32 "171bqs9c057irzgfdvbj8ia17l6zggvbn6h2r7yhz6bpfxa3i9a5"))))
     (properties `((upstream-name . "cheem")))
     (build-system r-build-system)
     (arguments
@@ -45679,13 +45717,13 @@ Huber (2014) <doi:10.1002/jae.2341>, Froelich and Huber (2017)
 (define-public r-causalslse
   (package
     (name "r-causalslse")
-    (version "0.3-1")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalSLSE" version))
        (sha256
-        (base32 "0qi3mnkdcirj4dyrvvgs2r9752x8zfkiq5rzqaj1501w2k9kwir9"))))
+        (base32 "1m69d7bcls77bnps7f628qdjp9mimw05jac7v3w8fwynwy086h4a"))))
     (properties `((upstream-name . "causalSLSE")))
     (build-system r-build-system)
     (arguments
@@ -47252,6 +47290,34 @@ is the interface for managing a metastore (aka metadata catalog) of relational
 entities (e.g. database(s), tables, functions, table columns and temporary
 views).")
     (license license:gpl2+)))
+
+(define-public r-catacode
+  (package
+    (name "r-catacode")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CATAcode" version))
+       (sha256
+        (base32 "14mcsfi2g04c9aj13ys108ik3nw9rz5848fff8ggmahjv4n1rwgh"))))
+    (properties `((upstream-name . "CATAcode")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-rlang r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/knickodem/CATAcode")
+    (synopsis
+     "Explore and Code Responses to Check-All-that-Apply Survey Items")
+    (description
+     "Analyzing responses to check-all-that-apply survey items often requires data
+transformations and subjective decisions for combining categories.  CATAcode
+contains tools for exploring response patterns, facilitating data
+transformations, applying a set of decision rules for coding responses, and
+summarizing response frequencies.")
+    (license license:gpl3+)))
 
 (define-public r-cata
   (package

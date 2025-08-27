@@ -6982,13 +6982,13 @@ and panel-to-key synchronization/management.")
 (define-public r-lnpar
   (package
     (name "r-lnpar")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LNPar" version))
        (sha256
-        (base32 "0y2v5kshbqhinyfjx9iri3zp04wzmfx6csxjn6pqzja21g07z063"))))
+        (base32 "18i07k4g1i3yi81pjhalcdakgc391bizicv98f49s7w636liicqb"))))
     (properties `((upstream-name . "LNPar")))
     (build-system r-build-system)
     (arguments
@@ -8383,52 +8383,41 @@ median of the distribution.")
 (define-public r-llmr
   (package
     (name "r-llmr")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMR" version))
        (sha256
-        (base32 "04jr1gvl524551xmhv9ydp9d8adp5wkqymx8md8v1dvdw0iyj8jg"))))
+        (base32 "01r51yff2qci1h7iwgpw7q1pns2dq73hdimrzagq9agpm51bpw59"))))
     (properties `((upstream-name . "LLMR")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-tidyr
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
                              r-tibble
                              r-rlang
                              r-purrr
                              r-mime
                              r-memoise
+                             r-jsonlite
                              r-httr2
                              r-glue
                              r-future-apply
                              r-future
                              r-dplyr
+                             r-cli
                              r-base64enc))
-    (native-inputs (list r-r-rsp))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/asanaei/LLMR")
     (synopsis "Interface for Large Language Model APIs in R")
     (description
-     "This package provides a unified interface to interact with multiple Large
-Language Model (LLM) APIs.  The package supports text generation, embeddings,
-parallelization, as well as tidyverse integration.  Users can switch between
-different LLM providers seamlessly within R workflows, or call multiple models
-in parallel.  The package enables creation of LLM agents for automated tasks and
-provides consistent error handling across all supported APIs.  APIs include
-@code{OpenAI} (see <https://platform.openai.com/docs> for details), Anthropic
-(see <https://docs.anthropic.com/en/api/getting-started> for details), Groq (see
-<https://console.groq.com/docs/api-reference> for details), Together AI (see
-<https://docs.together.ai/docs/quickstart> for details), @code{DeepSeek} (see
-<https://api-docs.deepseek.com> for details), Gemini (see
-<https://aistudio.google.com> for details), @code{xAI} (see <https://docs.x.ai/>
-for details), and Voyage AI (see <https://docs.voyageai.com/docs/introduction>
-for details).")
+     "This package provides a unified interface to large language models across
+multiple providers.  Supports text generation, structured output with optional
+JSON Schema validation, and embeddings.  Includes tidyverse-friendly helpers,
+chat session, consistent error handling, and parallel batch tools.")
     (license license:expat)))
 
 (define-public r-llmagentr

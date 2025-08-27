@@ -17668,6 +17668,40 @@ overdispersed linear model is obtained by including a normally distributed
 random effect in the linear predictor of the generalized linear model.")
     (license license:gpl2+)))
 
+(define-public r-robmedextra
+  (package
+    (name "r-robmedextra")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "robmedExtra" version))
+       (sha256
+        (base32 "0k7w9hjz760wam4kakcmibqf0lynnv8ks782bc5fzirsqdgpdd0w"))))
+    (properties `((upstream-name . "robmedExtra")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-robmed
+                             r-officer
+                             r-ggplot2
+                             r-flextable
+                             r-dt))
+    (home-page "https://github.com/aalfons/robmedExtra")
+    (synopsis "Extra Functionality for (Robust) Mediation Analysis")
+    (description
+     "This companion package extends the package robmed (Alfons, Ates & Groenen,
+2022b; <doi:10.18637/jss.v103.i13>) in various ways.  Most notably, it provides
+a graphical user interface for the robust bootstrap test ROBMED (Alfons, Ates &
+Groenen, 2022a; <doi:10.1177/1094428121999096>) to make the method more
+accessible to less proficient R users, as well as functions to export the
+results as a table in a Microsoft Word or Microsoft Powerpoint document, or as a
+@code{LaTeX} table.  Furthermore, the package contains a shiny app to compare
+various bootstrap procedures for mediation analysis on simulated data.")
+    (license license:gpl3+)))
+
 (define-public r-robmed
   (package
     (name "r-robmed")
@@ -22188,20 +22222,22 @@ without ties.  Based on Adkins and Flinger (1998)
 (define-public r-rmake
   (package
     (name "r-rmake")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmake" version))
        (sha256
-        (base32 "00qlki2vps505nxzmfykf1iyq4b0y20nb75hbfcj63ap46z7zk3c"))))
+        (base32 "0808yq2rv1129dw1mb65s04n8x43mwirb5sf8jyzrhpg2a046w2p"))))
     (properties `((upstream-name . "rmake")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-visnetwork r-rmarkdown r-pryr r-assertthat))
-    (home-page "https://cran.r-project.org/package=rmake")
+    (propagated-inputs (list r-visnetwork r-rmarkdown r-pryr r-knitr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/beerda/rmake")
     (synopsis "Makefile Generator for R Analytical Projects")
     (description
      "This package creates and maintains a build process for complex analytic tasks in
@@ -30615,13 +30651,13 @@ documents by Facebook Marketing API
 (define-public r-rextendr
   (package
     (name "r-rextendr")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rextendr" version))
        (sha256
-        (base32 "1flfw2lnm9fagpq4x7llqkj8kfr75snfrikr3kdjc4fymq1dxkyl"))))
+        (base32 "1xl1zqahjq3rs80ci9w4x5psl85crwc52b749f7n356ki0yz7l9v"))))
     (properties `((upstream-name . "rextendr")))
     (build-system r-build-system)
     (arguments
@@ -30642,7 +30678,7 @@ documents by Facebook Marketing API
                              r-callr
                              r-brio))
     (native-inputs (list r-knitr))
-    (home-page "https://extendr.github.io/rextendr/")
+    (home-page "https://extendr.rs/rextendr/")
     (synopsis "Call Rust Code from R using the 'extendr' Crate")
     (description
      "This package provides functions to compile and load Rust code from R, similar to
@@ -51426,13 +51462,13 @@ them in one PDF file.")
 (define-public r-rasterlist
   (package
     (name "r-rasterlist")
-    (version "0.5.20")
+    (version "0.5.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rasterList" version))
        (sha256
-        (base32 "09w91kjya5bmdi1z6i5m82yaihnzxqh9b3cyadfzd1c68bpsplii"))))
+        (base32 "15w8fndykhb2d4k5abvk9m78l7d9kf50bfcp441pfy1dy2m0dk3a"))))
     (properties `((upstream-name . "rasterList")))
     (build-system r-build-system)
     (arguments

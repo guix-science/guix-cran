@@ -4404,6 +4404,41 @@ results of observational studies (OS).")
 formatting.")
     (license license:expat)))
 
+(define-public r-japanapis
+  (package
+    (name "r-japanapis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JapanAPIs" version))
+       (sha256
+        (base32 "1gpcn4jg48z603paps3vbp8l04gn7adlp0z2pcirkrqd7hfg3n89"))))
+    (properties `((upstream-name . "JapanAPIs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-scales r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/japanapis")
+    (synopsis "Access Japanese Data via Public APIs and Curated Datasets")
+    (description
+     "This package provides functions to access data from public RESTful APIs
+including Nager.Date', World Bank API', and REST Countries API', retrieving
+real-time or historical data related to Japan, such as holidays, economic
+indicators, and international demographic and geopolitical indicators.
+Additionally, the package includes one of the largest curated collections of
+open datasets focused on Japan, covering topics such as natural disasters,
+economic production, vehicle industry, air quality, demographics, and
+administrative divisions.  The package supports reproducible research and
+teaching by integrating reliable international APIs and structured datasets from
+public, academic, and government sources.  For more information on the APIs,
+see: Nager.Date <https://date.nager.at/Api>, World Bank API
+<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, and REST
+Countries API <https://restcountries.com/>.")
+    (license license:expat)))
+
 (define-public r-janus
   (package
     (name "r-janus")

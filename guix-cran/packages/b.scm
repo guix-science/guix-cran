@@ -8587,13 +8587,13 @@ and GÃ´net, Laurin and Girondot (2022)
 (define-public r-bonedensitymapping
   (package
     (name "r-bonedensitymapping")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoneDensityMapping" version))
        (sha256
-        (base32 "1c0r6sm5yqmvgacrf3xaxym9b9vn0ynid7xbfknld472za71wp1l"))))
+        (base32 "0m89vfpjq0vl27xi9w0dgcbj7nfmn4a66dw9dj1szlm8ny6cqam4"))))
     (properties `((upstream-name . "BoneDensityMapping")))
     (build-system r-build-system)
     (arguments
@@ -18084,44 +18084,6 @@ associations for each gene, regulation strength for each binding event and the
 hidden activity for each transcription factor.")
     (license license:gpl2)))
 
-(define-public r-biclustermd
-  (package
-    (name "r-biclustermd")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "biclustermd" version))
-       (sha256
-        (base32 "0q3lmw93l3vdy8bk36q5c3vw1kmxy65i17a5yi2k4g19bmmgzs2m"))))
-    (properties `((upstream-name . "biclustermd")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-phyclust
-                             r-nycflights13
-                             r-magrittr
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-biclust))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jreisner/biclustermd")
-    (synopsis "Biclustering with Missing Data")
-    (description
-     "Biclustering is a statistical learning technique that simultaneously partitions
-and clusters rows and columns of a data matrix.  Since the solution space of
-biclustering is in infeasible to completely search with current computational
-mechanisms, this package uses a greedy heuristic.  The algorithm featured in
-this package is, to the best our knowledge, the first biclustering algorithm to
-work on data with missing values.  Li, J., Reisner, J., Pham, H., Olafsson, S.,
-and Vardeman, S. (2020) Biclustering with Missing Data.  Information Sciences,
-510, 304â316.")
-    (license license:expat)))
-
 (define-public r-biclassify
   (package
     (name "r-biclassify")
@@ -25011,13 +24973,13 @@ effects is described in Zhao et al. (2024) <doi:10.1093/jrsssc/qlad102>.")
 (define-public r-bayesssm
   (package
     (name "r-bayesssm")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesSSM" version))
        (sha256
-        (base32 "10s3afd35qd88v90kb7nn7b61k4riv2qaxwhydwgx4a8kh53cybi"))))
+        (base32 "1g1vf7fxrfsmxjwb09rzbyqqpy84fcf3m5lqglwvqk01wb9l3sca"))))
     (properties `((upstream-name . "bayesSSM")))
     (build-system r-build-system)
     (arguments
@@ -25025,10 +24987,10 @@ effects is described in Zhao et al. (2024) <doi:10.1093/jrsssc/qlad102>.")
       #:tests? #f))
     (propagated-inputs (list r-rcpp
                              r-mass
-                             r-lifecycle
                              r-future-apply
                              r-future
-                             r-dplyr))
+                             r-dplyr
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/BjarkeHautop/bayesSSM")
     (synopsis "Bayesian Methods for State Space Models")
@@ -29946,13 +29908,13 @@ Bodik (2017) <doi:10.1080/10618600.2016.1172487>.")
 (define-public r-basicdrm
   (package
     (name "r-basicdrm")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basicdrm" version))
        (sha256
-        (base32 "130s8h54760lnjh0m2i7pjs9cx2sc6xxjkm3x93727azxzgxpk09"))))
+        (base32 "0qg60d948q30ni5ld78ll5n8cqh3yxy1cd0l7h3rvcc1wzadhmja"))))
     (properties `((upstream-name . "basicdrm")))
     (build-system r-build-system)
     (arguments

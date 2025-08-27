@@ -354,6 +354,31 @@ for publication.")
 search for emojis and include them in your text.")
     (license license:expat)))
 
+(define-public r-utest
+  (package
+    (name "r-utest")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "utest" version))
+       (sha256
+        (base32 "0vgfikn5n1kkh0gws97pszm7bcm3jviwx0mas3752g4ylcidcyiq"))))
+    (properties `((upstream-name . "utest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/jotlind/utest")
+    (synopsis "Lind/Mehlum Utest")
+    (description
+     "An implementation of Lind and Mehlum's (2010)
+<doi:10.1111/j.1468-0084.2009.00569.x> Utest to test for the presence of a U
+shaped or inverted U shaped relationship between variables in (generalized)
+linear models.  It also implements a test of upward/downward sloping
+relationships at the lower and upper boundary of the data range.")
+    (license license:expat)))
+
 (define-public r-utc
   (package
     (name "r-utc")
@@ -3467,6 +3492,41 @@ is suitable for many demographic and epidemiological applications.  For a
 detailed description of the method and applications see Rizzi et al. (2015)
 <doi:10.1093/aje/kwv020>.")
     (license license:expat)))
+
+(define-public r-unfold
+  (package
+    (name "r-unfold")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unfold" version))
+       (sha256
+        (base32 "1yhqaq574zglh6rkg51ffgabj73zbmkrsbfmngj9a3sz5xl14l4z"))))
+    (properties `((upstream-name . "unfold")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch
+                             r-scales
+                             r-purrr
+                             r-lubridate
+                             r-imputets
+                             r-ggplot2
+                             r-coro
+                             r-abind))
+    (home-page "https://rpubs.com/giancarlo_vercellino/unfold")
+    (synopsis "Mapping Hidden Geometry into Future Sequences")
+    (description
+     "This package provides a variational mapping approach that reveals and expands
+future temporal dynamics from folded high-dimensional geometric distance spaces,
+unfold turns a set of time series into a 4D block of pairwise distances between
+reframed windows, learns a variational mapper that maps those distances to the
+next reframed window, and produces horizon-wise predictive functions for each
+input series.  In short: it unfolds the future path of each series from a folded
+geometric distance representation.")
+    (license license:gpl3)))
 
 (define-public r-undidr
   (package

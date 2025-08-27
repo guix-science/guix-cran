@@ -299,6 +299,41 @@ Azure Machine Learning visit the website:
 <https://docs.microsoft.com/en-us/azure/machine-learning/service/overview-what-is-azure-ml>.")
     (license license:expat)))
 
+(define-public r-azuremapsr
+  (package
+    (name "r-azuremapsr")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "azuremapsr" version))
+       (sha256
+        (base32 "1v7286n6jvf0krq5sjxmj5m3p8z8aylx3g3jxw0aah3dppmlhlr4"))))
+    (properties `((upstream-name . "azuremapsr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-sf
+                             r-rlist
+                             r-purrr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr2
+                             r-geojsonsf))
+    (home-page "https://github.com/juanfonsecaLS1/azuremapsr")
+    (synopsis "Interface to the 'Azure Maps' API")
+    (description
+     "This package provides a wrapper for the Microsoft Azure Maps REST APIs
+<https://learn.microsoft.com/en-us/rest/api/maps/route?view=rest-maps-2025-01-01>,
+enabling users to access mapping and geospatial services directly from R. This
+package simplifies authenticating, building, and sending requests for services
+like route directions.  It handles conversions between R objects (such as sf
+objects) and the @code{GeoJSON+JSON} format required by the API, making it
+easier to integrate Azure Maps into R-based data analysis workflows.")
+    (license license:gpl3+)))
+
 (define-public r-azurekusto
   (package
     (name "r-azurekusto")
@@ -9447,13 +9482,13 @@ converted into an address.  No API key required.")
 (define-public r-arcensreg
   (package
     (name "r-arcensreg")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ARCensReg" version))
        (sha256
-        (base32 "0qrzxa93cj1ql4iw93ksk58ycfgmncry7q29axhydwh9hsh3lyms"))))
+        (base32 "0vg395ll23rzmr26fmd8h7xpff713ap30vd831zvyq7khcmq3r2z"))))
     (properties `((upstream-name . "ARCensReg")))
     (build-system r-build-system)
     (arguments
@@ -9485,9 +9520,9 @@ Statistics, 45(4), 375-392 <doi:10.1002/cjs.11338>.  Schumacher, F. L., Lachos,
 V. H., Vilca-Labra, F. E., & Castro, L. M. (2018).  Influence diagnostics for
 censored regression models with autoregressive errors.  Australian & New Zealand
 Journal of Statistics, 60(2), 209-229 <doi:10.1111/anzs.12229>.  Valeriano, K.
-A., Schumacher, F. L., Galarza, C. E., & Matos, L. A. (2021).  Censored
-autoregressive regression models with Student-t innovations. @code{arXiv}
-preprint <@code{arXiv:2110.00224>}.")
+A., Schumacher, F. L., Galarza, C. E., & Matos, L. A. (2024).  Censored
+autoregressive regression models with Studentât innovations.  Canadian Journal
+of Statistics, 52(3), 804-828 <doi:10.1002/cjs.11804>.")
     (license license:gpl2+)))
 
 (define-public r-arc

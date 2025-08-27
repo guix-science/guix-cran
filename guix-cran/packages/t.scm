@@ -8975,19 +8975,19 @@ Markus, Verhamme, Kors, and Rijnbeek (2022) <doi:10.1016/j.cmpb.2022.107081>.")
 (define-public r-treasury
   (package
     (name "r-treasury")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treasury" version))
        (sha256
-        (base32 "0fk0yah540v1izz8v05ifl26rfis2iylp5f134fl4gq8w0y3hr7q"))))
+        (base32 "1icsyc3kbzyc84vc4szlal81ripg63iyr7zncy6vvc70jvrfsimg"))))
     (properties `((upstream-name . "treasury")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-httr2 r-data-table))
+    (propagated-inputs (list r-xml2 r-httr2 r-data-table r-curl))
     (home-page "https://m-muecke.github.io/treasury/")
     (synopsis "Client for US Treasury XML Feed and Published Data")
     (description
@@ -9140,13 +9140,13 @@ personalisation and delivers a more relevant search.")
 (define-public r-traumar
   (package
     (name "r-traumar")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traumar" version))
        (sha256
-        (base32 "1dkix7q78h5bpf1i0ahxmcyalx9y6cm8l74dgdpg04kdy435h04d"))))
+        (base32 "036q0n6qavjjk04c2xirfnvj46b3lxcq1cbkg5qqxcvd8bjrmnjh"))))
     (properties `((upstream-name . "traumar")))
     (build-system r-build-system)
     (arguments
@@ -9398,13 +9398,13 @@ respectively.")
 (define-public r-transpror
   (package
     (name "r-transpror")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TransProR" version))
        (sha256
-        (base32 "0fxr4y3qj5836rpij4mdiq46s8yp6c022ih7zr22wfawiy9rxnc3"))))
+        (base32 "1c9yfs63qmqi3bsz76ardxkm9rs54cc4z8nvk3nj6aqvcybli7p9"))))
     (properties `((upstream-name . "TransProR")))
     (build-system r-build-system)
     (arguments
@@ -9419,7 +9419,6 @@ respectively.")
                              r-rlang
                              r-magrittr
                              r-limma
-                             r-hrbrthemes
                              r-hmisc
                              r-ggvenndiagram
                              r-ggtree

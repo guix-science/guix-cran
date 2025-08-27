@@ -13342,13 +13342,13 @@ function names.")
 (define-public r-flashmm
   (package
     (name "r-flashmm")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FLASHMM" version))
        (sha256
-        (base32 "05byc6vqwv1qqwsad7wdja9ydj9qp7rh62y19m13p93qil3swmmy"))))
+        (base32 "1dj54v33fcqjxql129jwhq7rhlm2p8lqhzq2nk7rhbh1f7wjmkk9"))))
     (properties `((upstream-name . "FLASHMM")))
     (build-system r-build-system)
     (arguments
@@ -16507,19 +16507,30 @@ data sets from the Internet or from other sources.")
 (define-public r-filtro
   (package
     (name "r-filtro")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filtro" version))
        (sha256
-        (base32 "1lx1cp4jfknsxy8ppx3101bzzg0qmlmgpk3vhrx6cb81mmi1c7jg"))))
+        (base32 "0yaf79ig782yzcrv8zmnl4j2rr40v2mw964djz04h98mmklcnh5s"))))
     (properties `((upstream-name . "filtro")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rlang r-purrr))
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-s7
+                             r-rlang
+                             r-purrr
+                             r-proc
+                             r-generics
+                             r-dplyr
+                             r-desirability2
+                             r-cli))
+    (native-inputs (list r-quarto r-knitr))
     (home-page "https://github.com/tidymodels/filtro")
     (synopsis "Feature Selection Using Supervised Filter-Based Methods")
     (description
@@ -25859,13 +25870,13 @@ provided by the package FADA.")
 (define-public r-fad
   (package
     (name "r-fad")
-    (version "0.9-1")
+    (version "0.9-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fad" version))
        (sha256
-        (base32 "19j8n13r50sc1srpi4vj58h15yp89im2x7ga5323rmwklx1yj6zg"))))
+        (base32 "1w1xmdvym21b1xj779f2bng805407w6iljldiwd54hklwzzx2jyw"))))
     (properties `((upstream-name . "fad")))
     (build-system r-build-system)
     (arguments

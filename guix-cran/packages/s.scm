@@ -3243,13 +3243,13 @@ copula models for time series, see Nagler et al. (2022)
 (define-public r-svhttp
   (package
     (name "r-svhttp")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svHttp" version))
        (sha256
-        (base32 "1j0lb2fy8hp63g6zyryk9w50fzgxa5gjh0g0f9dc2z6i4n3fqfsh"))))
+        (base32 "059ns79s9r3i5bdi88rnpgnnmrzhdg53mqnk23x2zlf9rajc3maw"))))
     (properties `((upstream-name . "svHttp")))
     (build-system r-build-system)
     (arguments
@@ -3258,7 +3258,7 @@ copula models for time series, see Nagler et al. (2022)
     (propagated-inputs (list r-svmisc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/SciViews/svHttp")
-    (synopsis "'SciViews' - HTTP Server")
+    (synopsis "'SciViews::R' - HTTP Server")
     (description
      "This package provides a simple HTTP server allows to connect GUI clients to R.")
     (license license:gpl2)))
@@ -3556,13 +3556,13 @@ and Clark (2019) <doi:10.1007/s13524-019-00785-3>.")
 (define-public r-svdialogstcltk
   (package
     (name "r-svdialogstcltk")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svDialogstcltk" version))
        (sha256
-        (base32 "03rxw1m1ixisj0z9csmn3xff3rl1wqdvkcl1x7kmx64d0x6jwyfy"))))
+        (base32 "10i82ss3rpfl47hwl3c1p0j97d462c1282jkp78frdd0lxk8c4jq"))))
     (properties `((upstream-name . "svDialogstcltk")))
     (build-system r-build-system)
     (arguments
@@ -3571,7 +3571,7 @@ and Clark (2019) <doi:10.1007/s13524-019-00785-3>.")
     (propagated-inputs (list r-svgui r-svdialogs))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/SciViews/svDialogstcltk")
-    (synopsis "'SciViews' - Standard Dialog Boxes using Tcl/Tk")
+    (synopsis "'SciViews::R' - Standard Dialog Boxes using Tcl/Tk")
     (description
      "Reimplementation of the @code{svDialogs} dialog boxes in Tcl/Tk.")
     (license license:gpl2)))
@@ -5323,13 +5323,13 @@ details on sampling methodology, see, Cochran (1977) \"Sampling Techniques\"
 (define-public r-surveysd
   (package
     (name "r-surveysd")
-    (version "1.3.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveysd" version))
        (sha256
-        (base32 "16l17ying9xshfn563kp7nn3hdqrg03ny578sgi08b7zfds5yf8b"))))
+        (base32 "1mcgv9isnh3xjdhy6pjrpxwpkgbdqig3wbdiwz7ma29mqxcd9dsj"))))
     (properties `((upstream-name . "surveysd")))
     (build-system r-build-system)
     (arguments
@@ -19868,13 +19868,13 @@ expression level in the parent species.")
 (define-public r-srmdata
   (package
     (name "r-srmdata")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SRMData" version))
        (sha256
-        (base32 "0m38rrva9xdqp95wdiaq5b01iai8bcrvzg4gzkabaciphvbcxzfc"))))
+        (base32 "0nhngl6f40cpim2qs6ad9qdd9axzq1z7qs2z9wwkpqczj3cymk0i"))))
     (properties `((upstream-name . "SRMData")))
     (build-system r-build-system)
     (arguments
@@ -19885,7 +19885,7 @@ expression level in the parent species.")
      "Data Files Supporting \"Scientific Research and Methodology\" by Peter K. Dunn (2025)")
     (description
      "This package provides most of the data files used in the textbook \"Scientific
-Research and Methodology\" by Dunn (2025, ISBN:9781032496726; forthcoming).")
+Research and Methodology\" by Dunn (2025, ISBN: 9781032496726).")
     (license license:gpl2+)))
 
 (define-public r-srm
@@ -28306,6 +28306,32 @@ and for spatial data that arise on irregularly shaped regions like counties or
 zipcodes by laying a fine grid of rectangles and aggregating the integrals in a
 form of Riemann integration.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-spatialcatalogueviewer
+  (package
+    (name "r-spatialcatalogueviewer")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spatialCatalogueViewer" version))
+       (sha256
+        (base32 "1p7jkiy61z4x6aix1xiyfx0dpmajdcycywf1457yy98n0rgwkdls"))))
+    (properties `((upstream-name . "spatialCatalogueViewer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinythemes r-shiny r-leaflet-extras r-leaflet
+                             r-dt))
+    (home-page "https://github.com/sebastien-plutniak/spatialCatalogueViewer")
+    (synopsis
+     "'Shiny' Tool to Create Interactive Catalogues for Geospatial Data")
+    (description
+     "Seamlessly create interactive online catalogues for geospatial data.  Items can
+be mapped as points or areas and retrieved using either a map or a dynamic table
+with search form and optional column filters.")
+    (license license:gpl3)))
 
 (define-public r-spatialbss
   (package
@@ -51773,13 +51799,13 @@ facilitates the setup of CI/CD pipelines for building Docker images on both
 (define-public r-shiny-telemetry
   (package
     (name "r-shiny-telemetry")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shiny.telemetry" version))
        (sha256
-        (base32 "1kn89gfz9a8j3ymmv2mpgazixyig6g1vxjd1a5incnj5qd58inv5"))))
+        (base32 "16hwagggygwp16gqlwwbgbdjfvzww5pdbp1fbdv19a44zqm7rh8d"))))
     (properties `((upstream-name . "shiny.telemetry")))
     (build-system r-build-system)
     (arguments
@@ -60235,13 +60261,13 @@ Foundation.")
 (define-public r-segregatr
   (package
     (name "r-segregatr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "segregatr" version))
        (sha256
-        (base32 "12par5appi94jliz8lghrhj3q6ws99hw49r2mcgs8g5c0mzgmp4x"))))
+        (base32 "1kf186kh6jgjpdhh8aa1jmp4f22dr4l1gxpaph9p2vz858c6qvvb"))))
     (properties `((upstream-name . "segregatr")))
     (build-system r-build-system)
     (arguments
@@ -65640,13 +65666,13 @@ S., Hannachi, A., Trendafilov, N. T., & Jolliffe, I. T. (2011)
 (define-public r-scitb
   (package
     (name "r-scitb")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scitb" version))
        (sha256
-        (base32 "11gv2whjc62vxrgk3hc175pz3f56zfpnyk62hxg4hvqlypl6g75r"))))
+        (base32 "0xwh451cjm3048hknb9xsh7sr0n218qjbvkdh2sjgfcxk913c8xw"))))
     (properties `((upstream-name . "scitb")))
     (build-system r-build-system)
     (arguments
@@ -69409,13 +69435,13 @@ functions are provided.")
 (define-public r-sarp-snowprofile-pyface
   (package
     (name "r-sarp-snowprofile-pyface")
-    (version "0.1.3")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sarp.snowprofile.pyface" version))
        (sha256
-        (base32 "0nnl4bdvvbn6wf3zhv7n710y8fn07rnsb2f9j9lkr5g9a52356bf"))))
+        (base32 "0l00b7mkzyc2glz0ixs0wwr1nk55p2x55lkqwcik313rdrpvzr8d"))))
     (properties `((upstream-name . "sarp.snowprofile.pyface")))
     (build-system r-build-system)
     (arguments
@@ -69427,11 +69453,11 @@ functions are provided.")
     (description
      "The development of post-processing functionality for simulated snow profiles by
 the snow and avalanche community is often done in python'.  This package aims to
-make these tools accessible to R users.  Currently integrated modules contain
-functions to calculate dry snow layer instabilities in support of avalache
-hazard assessments following the publications of Richter, Schweizer, Rotach, and
-Van Herwijnen (2019) <doi:10.5194/tc-13-3353-2019>, and Mayer, Van Herwijnen,
-Techel, and Schweizer (2022) <doi:10.5194/tc-2022-34>.")
+make some of these tools accessible to R users.  Currently integrated modules
+contain functions to calculate dry snow layer instabilities in support of
+avalache hazard assessments following the publications of Richter, Schweizer,
+Rotach, and Van Herwijnen (2019) <doi:10.5194/tc-13-3353-2019>, and Mayer, Van
+Herwijnen, Techel, and Schweizer (2022) <doi:10.5194/tc-2022-34>.")
     (license license:cc-by-sa4.0)))
 
 (define-public r-sarp-snowprofile-alignment
@@ -73378,13 +73404,13 @@ al. (2025) <doi:10.48550/@code{arXiv.2505.01467>}.")
 (define-public r-sae2
   (package
     (name "r-sae2")
-    (version "1.2-1")
+    (version "1.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sae2" version))
        (sha256
-        (base32 "1ahq2gha8q3k6aj1a1qclibq209a3426sb77qy3fdgph9zkpij1x"))))
+        (base32 "1jdh2kmbqli9dwaj5b17i6srhrmw6c0yv49s8v90rb94lxvg0zyx"))))
     (properties `((upstream-name . "sae2")))
     (build-system r-build-system)
     (arguments
@@ -73396,17 +73422,16 @@ al. (2025) <doi:10.48550/@code{arXiv.2505.01467>}.")
     (description
      "Time series area-level models for small area estimation.  The package
 supplements the functionality of the sae package.  Specifically, it includes
-EBLUP fitting of the original Rao-Yu model, which in the original form did not
-have a spatial component.  The package also offers a modified ('dynamic')
-version of the Rao-Yu model, replacing the assumption of stationarity.  Both
-univariate and multivariate applications are supported.  Of particular note is
-the allowance for covariance of the area-level sample estimates over time, as
-encountered in rotating panel designs such as the U.S. National Crime
-Victimization Survey or present in a time-series of 5-year estimates from the
-American Community Survey.  Key references to the methods include J.N.K. Rao and
-I. Molina (2015, ISBN:9781118735787), J.N.K. Rao and M. Yu (1994)
-<doi:10.2307/3315407>, and R.E. Fay and R.A. Herriot (1979)
-<doi:10.1080/01621459.1979.10482505>.")
+EBLUP fitting of the Rao-Yu model in the original form without a spatial
+component.  The package also offers a modified (\"dynamic\") version of the Rao-Yu
+model, replacing the assumption of stationarity.  Both univariate and
+multivariate applications are supported.  Of particular note is the allowance
+for covariance of the area-level sample estimates over time, as encountered in
+rotating panel designs such as the U.S. National Crime Victimization Survey or
+present in a time-series of 5-year estimates from the American Community Survey.
+ Key references to the methods include J.N.K. Rao and I. Molina (2015,
+ISBN:9781118735787), J.N.K. Rao and M. Yu (1994) <doi:10.2307/3315407>, and R.E.
+Fay and R.A. Herriot (1979) <doi:10.1080/01621459.1979.10482505>.")
     (license license:gpl2)))
 
 (define-public r-sae-prop

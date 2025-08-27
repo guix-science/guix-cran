@@ -7086,13 +7086,13 @@ applications.")
 (define-public r-propertee
   (package
     (name "r-propertee")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "propertee" version))
        (sha256
-        (base32 "0pm68wl2zmakq84i1ak68vcqnvdk9gd5pg6vz8xp4nl768nzdp6k"))))
+        (base32 "17r5jgh9ljwj9658fx1z3m6qvx8hvky81myjb7ni0nin9bznhc93"))))
     (properties `((upstream-name . "propertee")))
     (build-system r-build-system)
     (arguments
@@ -19615,13 +19615,13 @@ variables.  Also known as latent structure analysis.")
 (define-public r-polarzonoid
   (package
     (name "r-polarzonoid")
-    (version "0.1-2")
+    (version "0.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polarzonoid" version))
        (sha256
-        (base32 "1rwcnyviifi07yi4ggfzg035v9q61lq65c5z8480dy8z7kfssln7"))))
+        (base32 "0v0hfsv6nc4l59vyp5vc2kkf1p3qrphq0ib4q66vwr5i08pax0gm"))))
     (properties `((upstream-name . "polarzonoid")))
     (build-system r-build-system)
     (arguments
@@ -19629,15 +19629,16 @@ variables.  Also known as latent structure analysis.")
       #:tests? #f))
     (propagated-inputs (list r-logger))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=polarzonoid")
+    (home-page "https://github.com/glenndavis52/polarzonoid")
     (synopsis "Compute Maps and Properties of Polar Zonoids")
     (description
      "In each odd dimension is a convex body - the polar zonoid - whose generating
 functions are trigonometric polynomials.  The polar zonoid is a straightforward
-generalization of the polar zonohedron in dimension 3.  The package has some
-applications of the polar zonoid, including the properties of configuration
-spaces of arcs on the circle and 3x3 rotation matrices.  There is also a root
-solver for trigonometric polynomials.")
+generalization of the polar zonohedron in dimension 3, as defined by Chilton and
+Coxeter (1963) <doi:10.2307/2313051>.  The package has some applications of the
+polar zonoid, including the properties of configuration spaces of arcs on the
+circle and 3x3 rotation matrices.  There is also a root solver for trigonometric
+polynomials.")
     (license license:gpl2+)))
 
 (define-public r-polaroid
@@ -32568,13 +32569,13 @@ matrices/networks.")
 (define-public r-persval
   (package
     (name "r-persval")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "persval" version))
        (sha256
-        (base32 "12gij3lvd8lvdpcmnyzxjwy4060xv3q5smvaz3ni82165f90dw47"))))
+        (base32 "1vd62368z6cjgcqwp2m08rlvk9nlqnyx5kkz2zalc64f0yy7li0z"))))
     (properties `((upstream-name . "persval")))
     (build-system r-build-system)
     (arguments
@@ -32590,9 +32591,7 @@ researchers and practitioners in psychology, sociology, and related fields, the
 package facilitates the quantification and visualization of different dimensions
 related to personal values from survey data.  It incorporates the recommended
 statistical adjustment to enhance the accuracy and interpretation of the
-results.  Note: The package persval is independently developed based on the
-personal values theoretical framework, and is not directly endorsed by professor
-Schwartz.")
+results.")
     (license license:gpl3)))
 
 (define-public r-perspectev

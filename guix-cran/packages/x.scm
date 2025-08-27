@@ -1196,13 +1196,13 @@ different SQL flavors.")
 (define-public r-xml2r
   (package
     (name "r-xml2r")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XML2R" version))
        (sha256
-        (base32 "1vssxy5bn46likkba8ycajkni14s7js31255swflr8007mc3pwmz"))))
+        (base32 "0q01hc7iil3hx5dvmrhpz3bw6a7lwhv2dm97p0a3gkjp3lvd33iv"))))
     (properties `((upstream-name . "XML2R")))
     (build-system r-build-system)
     (arguments

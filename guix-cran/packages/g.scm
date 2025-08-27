@@ -7354,13 +7354,13 @@ well as tidyverse compatible representations of estimated smooths.")
 (define-public r-grates
   (package
     (name "r-grates")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grates" version))
        (sha256
-        (base32 "0wx9ly4mcq5m0hcxmms88q1a72rbp5silvl6rpvf4a56kf67958k"))))
+        (base32 "05pzyx0km5s0zvj62gnx0gv1cq5140c9iix0gj7an72ic5wgg472"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
     (arguments
@@ -13290,13 +13290,13 @@ easy interface for accessing it.")
 (define-public r-gmcplite
   (package
     (name "r-gmcplite")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gMCPLite" version))
        (sha256
-        (base32 "1qykizcq42hj6v9fb9hyi59zi1m4hpk10il7why9s9cwyii1m69z"))))
+        (base32 "153miwm6j4m11qqn0qi7x90pki2lyzaf40vs9l4ckjhcjjvlqj6j"))))
     (properties `((upstream-name . "gMCPLite")))
     (build-system r-build-system)
     (arguments
@@ -34514,13 +34514,13 @@ Existence in the journal Ecology and Evolution.")
 (define-public r-gaupro
   (package
     (name "r-gaupro")
-    (version "0.2.15")
+    (version "0.2.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GauPro" version))
        (sha256
-        (base32 "1s0wwwdnfh0fpzl0d8bfiyvwqlhi0yx820fs6cwlj507qwggkhln"))))
+        (base32 "1qnvxhcv66yn6gh491v3318nc6arf4rgynqz49pr9bbh1gfsy1q8"))))
     (properties `((upstream-name . "GauPro")))
     (build-system r-build-system)
     (arguments

@@ -1747,13 +1747,13 @@ gain insights into genetic relationships within wild animal populations.")
 (define-public r-wpa
   (package
     (name "r-wpa")
-    (version "1.9.2")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wpa" version))
        (sha256
-        (base32 "0qk748dzr0a338p6lf8y99snxyqj59xcnpffhh0d3973vlv2rqix"))))
+        (base32 "1na7s9r31sf74h8xmc5j3hrw0dggwlsnarhyhrni4wbidpdf13cj"))))
     (properties `((upstream-name . "wpa")))
     (build-system r-build-system)
     (arguments
@@ -9480,6 +9480,34 @@ general functions, parameters representing the projection onto B- spline basis
 of a part of the warping functions.  Warped data are modelled by a linear mixed
 effect functional model, the noise is Gaussian and independent from the warping
 functions.")
+    (license license:gpl3+)))
+
+(define-public r-warnepi
+  (package
+    (name "r-warnepi")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WarnEpi" version))
+       (sha256
+        (base32 "1p1hdgxy4y7sap0kcqcz4y5d65lxqgxsga7qmkdfkspiwfyprf8b"))))
+    (properties `((upstream-name . "WarnEpi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/pan-mingyue/WarnEpi")
+    (synopsis "Comprehensive Tool for Early Warning in Infectious Disease")
+    (description
+     "Infectious disease surveillance requires early outbreak detection.  This package
+provides statistical tools for analyzing time-series monitoring data through
+three core methods: a) EWMA (Exponentially Weighted Moving Average) b)
+Modified-CUSUM (Modified Cumulative Sum) c) Adjusted-Serfling models
+Methodologies are based on: - Wang et al. (2010) <doi:10.1016/j.jbi.2009.08.003>
+- Wang et al. (2015) <doi:10.1371/journal.pone.0119923> Designed for
+epidemiologists and public health researchers working with disease surveillance
+systems.")
     (license license:gpl3+)))
 
 (define-public r-warn

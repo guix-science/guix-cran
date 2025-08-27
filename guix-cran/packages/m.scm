@@ -2225,13 +2225,13 @@ future and making them easily accessible to users.")
 (define-public r-mverse
   (package
     (name "r-mverse")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mverse" version))
        (sha256
-        (base32 "0wbdb9nfjrn3pca3x3gr03lnhsvnkksr36hl4iq7rp9mpab6pw7n"))))
+        (base32 "1zjk7wf117gslbsxdjiw3q1vfimhahk5sfdy2qhyskcs51q5ykdr"))))
     (properties `((upstream-name . "mverse")))
     (build-system r-build-system)
     (arguments
@@ -15774,13 +15774,13 @@ and simulation.  See @code{McClintock} and Michelot (2018)
 (define-public r-momentfit
   (package
     (name "r-momentfit")
-    (version "0.5")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "momentfit" version))
        (sha256
-        (base32 "0867yx1w8fxi7z4qqx6awihm726i0wgs4jd1dc6pj8zi8l2yjs2z"))))
+        (base32 "00z6axcwwqjqa6a8x9pqff88lax2js68wwrvfhdan63nkkiy73mf"))))
     (properties `((upstream-name . "momentfit")))
     (build-system r-build-system)
     (arguments
@@ -15801,7 +15801,10 @@ systems of equation, and the Generalized Empirical Likelihood (Smith 1997;
 <doi:10.1111/j.0013-0133.1997.174.x>, Kitamura 1997;
 <doi:10.1214/aos/1069362388>, Newey and Smith 2004;
 <doi:10.1111/j.1468-0262.2004.00482.x>, and Anatolyev 2005
-<doi:10.1111/j.1468-0262.2005.00601.x>).")
+<doi:10.1111/j.1468-0262.2005.00601.x>).  Some work is being done to add tools
+to deal with weak and/or many instruments.  This includes K-Class estimators
+(Limited Information Maximum Likelihood and Fuller), Anderson and Rubin
+statistic test, etc.")
     (license license:gpl2+)))
 
 (define-public r-momentchi2
@@ -20675,6 +20678,51 @@ side.  The user must have adequate credentials.  Please see
 <https://opaldoc.obiba.org/> for complete documentation.")
     (license license:gpl3)))
 
+(define-public r-mlspatial
+  (package
+    (name "r-mlspatial")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlspatial" version))
+       (sha256
+        (base32 "15j0fs7rgn5nq85drl050r2bsingd06fl7ydilqj7s8c2g13sf3p"))))
+    (properties `((upstream-name . "mlspatial")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-tmap
+                             r-spdep
+                             r-sf
+                             r-readxl
+                             r-randomforest
+                             r-ggpubr
+                             r-ggplot2
+                             r-e1071
+                             r-dplyr
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mlspatial")
+    (synopsis "Machine Learning and Mapping for Spatial Epidemiology")
+    (description
+     "This package provides tools for the integration, visualisation, and modelling of
+spatial epidemiological data using the method described in Azeez, A., & Noel, C.
+(2025).  Predictive Modelling and Spatial Distribution of Pancreatic Cancer in
+Africa Using Machine Learning-Based Spatial Model <doi:10.5281/zenodo.16529986>
+and <doi:10.5281/zenodo.16529016>.  It facilitates the analysis of geographic
+health data by combining modern spatial mapping tools with advanced machine
+learning (ML) algorithms.  mlspatial enables users to import and pre-process
+shapefile and associated demographic or disease incidence data, generate richly
+annotated thematic maps, and apply predictive models, including Random Forest,
+XGBoost', and Support Vector Regression, to identify spatial patterns and risk
+factors.  It is suited for spatial epidemiologists, public health researchers,
+and GIS analysts aiming to uncover hidden geographic patterns in health-related
+outcomes and inform evidence-based interventions.")
+    (license license:expat)))
+
 (define-public r-mlsjunkgen
   (package
     (name "r-mlsjunkgen")
@@ -20863,13 +20911,13 @@ composed to form preprocessing pipelines.")
 (define-public r-mlr3torch
   (package
     (name "r-mlr3torch")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3torch" version))
        (sha256
-        (base32 "0d5j7i6dwl3w1mfim2chq5dqpl74pc5vxgv1jbyyx8if89wvcwy2"))))
+        (base32 "1bsbg74f36ffbis3lqdl04gv7zpk3isp6ybdwf0n00mmilbfgyh8"))))
     (properties `((upstream-name . "mlr3torch")))
     (build-system r-build-system)
     (arguments
@@ -20884,6 +20932,7 @@ composed to form preprocessing pipelines.")
                              r-mlr3
                              r-lgr
                              r-data-table
+                             r-cli
                              r-checkmate
                              r-backports))
     (home-page "https://mlr3torch.mlr-org.com/")
@@ -21075,13 +21124,13 @@ predictions on a test set.")
 (define-public r-mlr3oml
   (package
     (name "r-mlr3oml")
-    (version "0.10.1")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3oml" version))
        (sha256
-        (base32 "0dmz5rclvs01nl0w2mlwknwagv69s6fgrx3yb7gqvdrrgil3p0xl"))))
+        (base32 "1xg49nqidcb3igmg0wkhjkgag2yprdcgpbvr9s0kjsnh22miqylk"))))
     (properties `((upstream-name . "mlr3oml")))
     (build-system r-build-system)
     (arguments
@@ -27929,13 +27978,13 @@ simultaneous parameter estimation and variable selection.")
 (define-public r-milorgwas
   (package
     (name "r-milorgwas")
-    (version "0.7")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "milorGWAS" version))
        (sha256
-        (base32 "052bavj7wmkjcnm6vjswpg1zkawqjn5yy3z6zi4gklxci53a1z1i"))))
+        (base32 "0z0njw8b5y69m4rm6vapbqnc2x78rs08lwg56sv5b3g9gwq83ws1"))))
     (properties `((upstream-name . "milorGWAS")))
     (build-system r-build-system)
     (arguments
@@ -45173,6 +45222,37 @@ r1, r2, r3, r4, Yanai's GCD, RV, RV2, adjusted RV, Rozeboom's linear correlation
 and Coxhead's coefficient are included for comparison and flexibility.")
     (license license:gpl2)))
 
+(define-public r-matrixcorr
+  (package
+    (name "r-matrixcorr")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "matrixCorr" version))
+       (sha256
+        (base32 "0smlljck2zj6sid1blhxrizxbl04qdfvqnx7hzih74f9wm3pn4gs"))))
+    (properties `((upstream-name . "matrixCorr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggplot2 r-cpp11))
+    (home-page "https://github.com/Prof-ThiagoOliveira/matrixCorr")
+    (synopsis "Collection of Correlation and Association Estimators")
+    (description
+     "Compute correlation and other association matrices from small to very large
+datasets with simple, @code{cor()}'-like functions and sensible defaults.
+Includes options for shrinkage and robustness to improve results in noisy or
+high-dimensional settings (p >= n), plus convenient print/plot methods for
+inspection.  Implemented with optimised C++ backends using BLAS'/'@code{OpenMP}
+and memory-aware symmetric updates.  Works with base matrices and data frames,
+returning standard R objects via a consistent S3 interface.  Useful across
+genomics, agriculture, and machine-learning workflows.  Methods based on Ledoit
+and Wolf (2004) <doi:10.1016/S0047-259X(03)00096-4>; SchÃ¤fer and Strimmer
+(2005) <doi:10.2202/1544-6115.1175>; Lin (1989) <doi:10.2307/2532051>.")
+    (license license:expat)))
+
 (define-public r-matrisk
   (package
     (name "r-matrisk")
@@ -50219,13 +50299,13 @@ vignette in this package and
 (define-public r-mams
   (package
     (name "r-mams")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAMS" version))
        (sha256
-        (base32 "0pmrwp0ldafiv7aw1k9dqf0p4ifs34fmi2rcvklxna9dpz6nk182"))))
+        (base32 "0lrq6w11pz250mc6hczs0gb3r75ymys0qvpbq76a2r942m7qysjn"))))
     (properties `((upstream-name . "MAMS")))
     (build-system r-build-system)
     (arguments
