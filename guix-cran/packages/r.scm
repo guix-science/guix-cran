@@ -3644,13 +3644,13 @@ rate and optimum temperature.  See Padfield et al. (2021)
 (define-public r-rtop
   (package
     (name "r-rtop")
-    (version "0.6-9")
+    (version "0.6-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtop" version))
        (sha256
-        (base32 "0ksvjyrcyygv68sp8ygnh2fd1vpp1vf10xviclnlm2rm829hjmr1"))))
+        (base32 "08mpc19qcbyjxy07vnazmb6did97lkbyhn4x0n1195j0hbhwkqx4"))))
     (properties `((upstream-name . "rtop")))
     (build-system r-build-system)
     (arguments
@@ -11293,32 +11293,6 @@ also provides methods modeling a \"boosted\" tree or forest model and a tree mod
 for zero-inflated data as well as a number of functions and methods available
 for use with these object types.")
     (license license:cc0)))
-
-(define-public r-rpmodel
-  (package
-    (name "r-rpmodel")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rpmodel" version))
-       (sha256
-        (base32 "1vpgc38waijd670pydankq0vqz53zi3jxj8621xxg3wiwga91sl3"))))
-    (properties `((upstream-name . "rpmodel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/geco-bern/rpmodel")
-    (synopsis "P-Model")
-    (description
-     "This package implements the P-model (Stocker et al., 2020
-<doi:10.5194/gmd-13-1545-2020>), predicting acclimated parameters of the enzyme
-kinetics of C3 photosynthesis, assimilation, and dark respiration rates as a
-function of the environment (temperature, CO2, vapour pressure deficit, light,
-atmospheric pressure).")
-    (license license:gpl3)))
 
 (define-public r-rpmg
   (package
@@ -22823,6 +22797,36 @@ jobs, share updates with their network, and create group discussions.  For more
 information about using the API please visit <https://developer.linkedin.com/>.")
     (license license:gpl2)))
 
+(define-public r-rlibkriging
+  (package
+    (name "r-rlibkriging")
+    (version "0.9-2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rlibkriging" version))
+       (sha256
+        (base32 "1lkdhg04m3ifzxkfiqcvbgx5whvw1lzmz59h7w04vm1084yxbcyf"))))
+    (properties `((upstream-name . "rlibkriging")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list gfortran gcc cmake))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-dicekriging))
+    (native-inputs (list gfortran))
+    (home-page "https://github.com/libKriging")
+    (synopsis "Kriging Models using the 'libKriging' Library")
+    (description
+     "Interface to @code{libKriging} C++ library
+<https://github.com/@code{libKriging>} that should provide most standard Kriging
+/ Gaussian process regression features (like in @code{DiceKriging}', kergp or
+@code{RobustGaSP} packages). @code{libKriging} relies on Armadillo linear
+algebra library (Apache 2 license) by Conrad Sanderson, lbfgsb_cpp is a C++ port
+around by Pascal Have of lbfgsb library (BSD-3 license) by Ciyou Zhu, Richard
+Byrd, Jorge Nocedal and Jose Luis Morales used for hyperparameters optimization.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-rlibkdv
   (package
     (name "r-rlibkdv")
@@ -25035,13 +25039,13 @@ non-proportional hazard assumption of Heagerty & Zheng (Biometrics, Vol 61 No 1,
 (define-public r-riskscorescvd
   (package
     (name "r-riskscorescvd")
-    (version "0.2.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RiskScorescvd" version))
        (sha256
-        (base32 "0mv4xk98l8pq7s6bx246h5w8k49yhv4x5m5gajrg5kxq1mgcjfh4"))))
+        (base32 "157jq9mbhz60r65hn3z5pdw0j95jlbfz2rvwzps8lwqyjcla2181"))))
     (properties `((upstream-name . "RiskScorescvd")))
     (build-system r-build-system)
     (arguments
@@ -25053,20 +25057,21 @@ non-proportional hazard assumption of Heagerty & Zheng (Biometrics, Vol 61 No 1,
     (synopsis "Cardiovascular Risk Scores Calculator")
     (description
      "This package provides a tool to calculate Cardiovascular Risk Scores in large
-data frames.  Cardiovascular risk scores are statistical tools used to assess an
-individual's likelihood of developing a cardiovascular disease based on various
-risk factors, such as age, gender, blood pressure, cholesterol levels, and
-smoking.  Here we bring together the six most commonly used in the emergency
-department.  Using @code{RiskScorescvd}', you can calculate all the risk scores
-in an extended dataset in seconds.  PCE (ASCVD) described in Goff, et al (2013)
-<doi:10.1161/01.cir.0000437741.48606.98>.  EDACS described in Mark DG, et al
-(2016) <doi:10.1016/j.jacc.2017.11.064>.  GRACE described in Fox KA, et al
-(2006) <doi:10.1136/bmj.38985.646481.55>.  HEART is described in Mahler SA, et
-al (2017) <doi:10.1016/j.clinbiochem.2017.01.003>.  SCORE2/OP described in
-SCORE2 working group and ESC Cardiovascular risk collaboration (2021)
-<doi:10.1093/eurheartj/ehab309>.  TIMI described in Antman EM, et al (2000)
-<doi:10.1001/jama.284.7.835>.  SCORE2-Diabetes described in SCORE2-Diabetes
-working group and ESC Cardiovascular risk collaboration (2023)
+data frames as published in Perez-Vicencio, et al (2024)
+<doi:10.1136/openhrt-2024-002755>.  Cardiovascular risk scores are statistical
+tools used to assess an individual's likelihood of developing a cardiovascular
+disease based on various risk factors, such as age, gender, blood pressure,
+cholesterol levels, and smoking.  Here we bring together the six most commonly
+used in the emergency department.  Using @code{RiskScorescvd}', you can
+calculate all the risk scores in an extended dataset in seconds.  PCE (ASCVD)
+described in Goff, et al (2013) <doi:10.1161/01.cir.0000437741.48606.98>.  EDACS
+described in Mark DG, et al (2016) <doi:10.1016/j.jacc.2017.11.064>.  GRACE
+described in Fox KA, et al (2006) <doi:10.1136/bmj.38985.646481.55>.  HEART is
+described in Mahler SA, et al (2017) <doi:10.1016/j.clinbiochem.2017.01.003>.
+SCORE2/OP described in SCORE2 working group and ESC Cardiovascular risk
+collaboration (2021) <doi:10.1093/eurheartj/ehab309>.  TIMI described in Antman
+EM, et al (2000) <doi:10.1001/jama.284.7.835>.  SCORE2-Diabetes described in
+SCORE2-Diabetes working group and ESC Cardiovascular risk collaboration (2023)
 <doi:10.1093/eurheartj/ehab260>.  SCORE2/OP with CKD add-on described in
 Kunihiro M et al (2022) <doi:10.1093/eurjpc/zwac176>.")
     (license license:expat)))
@@ -34997,13 +35002,13 @@ power generation for hydro power, wind power, and solar power.")
 (define-public r-renext
   (package
     (name "r-renext")
-    (version "3.1-4")
+    (version "3.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Renext" version))
        (sha256
-        (base32 "17vg9mjijy80qs9asjbsjfp5nhk056nlqj3w7mld6lbprlbyhkkh"))))
+        (base32 "0rv0qdgn1b47hl21bjrarf50akxqxf1822apksasqsh9kb5gh0wy"))))
     (properties `((upstream-name . "Renext")))
     (build-system r-build-system)
     (arguments
@@ -37938,13 +37943,13 @@ Klawonn and colleagues (2020) <doi:10.1515/labmed-2020-0005>, (2022)
 (define-public r-reflectr
   (package
     (name "r-reflectr")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reflectR" version))
        (sha256
-        (base32 "1jf8zk4gca78rf7fjv0ksfag0n3i5b3n8wn22cgxrlky02sp7nd0"))))
+        (base32 "1wk04c8c83vp6gf141s0vi3z797lm2z95nizpmr6ya16pqkskii2"))))
     (properties `((upstream-name . "reflectR")))
     (build-system r-build-system)
     (arguments
@@ -37954,37 +37959,18 @@ Klawonn and colleagues (2020) <doi:10.1515/labmed-2020-0005>, (2022)
     (home-page "https://github.com/g-corbelli/reflectR")
     (synopsis "Automatic Scoring of the Cognitive Reflection Test")
     (description
-     "This package provides a tool for researchers and psychologists to automatically
-code open-ended responses to the Cognitive Reflection Test (CRT), a widely used
-class of tests in cognitive science and psychology for assessing an individual's
-propensity to override an incorrect gut response and engage in further
-reflection to find a correct answer.  This package facilitates the
-standardization of Cognitive Reflection Test responses analysis across large
-datasets in cognitive psychology, decision-making, and related fields.  By
-automating the coding process, it not only reduces manual effort but also aims
-to reduce the variability introduced by subjective interpretation of open-ended
-responses, contributing to a more consistent and reliable analysis.
-@code{reflectR} supports automatic coding and machine scoring for the original
-English-language version of CRT (Frederick, 2005)
-<doi:10.1257/089533005775196732>, as well as for CRT4 and CRT7, 4- and 7-item
-versions, respectively (Toplak et al., 2014) <doi:10.1080/13546783.2013.844729>,
-for the CRT-long version built via Item Response Theory by Primi and colleagues
-(2016) <doi:10.1002/bdm.1883>, and for CRT-2 by Thomson & Oppenheimer (2016)
-<doi:10.1017/s1930297500007622>.  Note: While @code{reflectR} draws inspiration
-from the principles and scientific literature underlying the different versions
-of the Cognitive Reflection Test, it has been independently developed and does
-not hold any affiliation with any of the original authors.  The development of
-this package benefited significantly from the kind insight and suggestion
-provided by Dr. Keela Thomson, whose contribution is gratefully acknowledged.
-Additional gratitude is extended to Dr. Paolo Giovanni Cicirelli, Prof.
-Marinella Paciello, Dr. Carmela Sportelli, and Prof. Francesca D'Errico, who not
-only contributed to the manual multi-rater coding of CRT-2 items but also
-profoundly influenced the understanding of the importance and practical
-relevance of cognitive reflection within personality, social, and cognitive
-psychology research.  Acknowledgment is also due to the European project
-STERHEOTYPES (STudying European Racial Hoaxes and @code{sterEOTYPES}) for
-funding the data collection that produced the datasets initially used for manual
-multi-rater coding of CRT-2 items.")
+     "Automatic coding of open-ended responses to the Cognitive Reflection Test (CRT),
+a widely used class of tests in cognitive science and psychology that assess the
+tendency to override an initial intuitive (but incorrect) answer and engage in
+reflection to reach a correct solution.  The package standardizes CRT response
+coding across datasets in cognitive psychology, decision-making, and related
+fields.  Automated coding reduces manual effort and improves reproducibility by
+limiting variability from subjective interpretation of open-ended responses.
+The package supports automatic coding and machine scoring for the original
+English-language CRT (Frederick, 2005) <doi:10.1257/089533005775196732>, CRT4
+and CRT7 (Toplak et al., 2014) <doi:10.1080/13546783.2013.844729>, CRT-long
+(Primi et al., 2016) <doi:10.1002/bdm.1883>, and CRT-2 (Thomson & Oppenheimer,
+2016) <doi:10.1017/s1930297500007622>.")
     (license license:gpl3)))
 
 (define-public r-refitme
@@ -40936,13 +40922,13 @@ projects for changes.")
 (define-public r-readyomics
   (package
     (name "r-readyomics")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readyomics" version))
        (sha256
-        (base32 "04ybqd5mm5jd4fks7kjb2an2djg9ph4mgaqh4axc0s1qvj5rdgvm"))))
+        (base32 "1xqpadiwpdqfgbq7bnxd1m4i38ihsidwy98yx3rywvxslx20nxn6"))))
     (properties `((upstream-name . "readyomics")))
     (build-system r-build-system)
     (arguments
@@ -42642,6 +42628,38 @@ treatment effects at the cutoff in Sharp, Fuzzy and Kink RD settings,
 implemented, and @code{rdplot()} to conduct exploratory data analysis (RD
 plots).")
     (license license:gpl3)))
+
+(define-public r-rdracor
+  (package
+    (name "r-rdracor")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rdracor" version))
+       (sha256
+        (base32 "1di1nqj6j96h8f0zqag2n89k4v96yga7swb09s6zsh2wf7igwmnn"))))
+    (properties `((upstream-name . "rdracor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rdpack
+                             r-purrr
+                             r-jsonlite
+                             r-igraph
+                             r-httr
+                             r-data-table))
+    (home-page "https://github.com/dracor-org/rdracor")
+    (synopsis "Access to the 'DraCor' API")
+    (description
+     "Provide an interface for Drama Corpora Project ('@code{DraCor}') API:
+<https://dracor.org/documentation/api>.")
+    (license license:gpl3+)))
 
 (define-public r-rdpower
   (package
@@ -48369,48 +48387,6 @@ of hyperplane arrangements.  See J. Gu and R. Koenker (2020)
 <DOI:10.1080/01621459.2020.1802284>.")
     (license license:gpl2+)))
 
-(define-public r-rcbayes
-  (package
-    (name "r-rcbayes")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rcbayes" version))
-       (sha256
-        (base32 "1qwbpx9snqgaz7gshvyhq9ylsf59grjhx56f7cnq25h2f76km9cc"))))
-    (properties `((upstream-name . "rcbayes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidybayes
-                             r-tibble
-                             r-stanheaders
-                             r-shinythemes
-                             r-shiny
-                             r-rstantools
-                             r-rstan
-                             r-rlang
-                             r-rdpack
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-magrittr
-                             r-dplyr
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rcbayes")
-    (synopsis
-     "Estimate Rogers-Castro Migration Age Schedules with Bayesian Models")
-    (description
-     "This package provides a collection of functions to estimate Rogers-Castro
-migration age schedules using Stan'.  This model which describes the fundamental
-relationship between migration and age in the form of a flexible
-multi-exponential migration model was most notably proposed in Rogers and Castro
-(1978) <doi:10.1068/a100475>.")
-    (license license:expat)))
-
 (define-public r-rcbalance
   (package
     (name "r-rcbalance")
@@ -48532,6 +48508,38 @@ effects by encoding generative modeling, which can be applied in both discrete
 and continuous treatment settings.  A description of the methods is given in Liu
 (2022) <@code{arXiv:2212.05925>}.")
     (license license:expat)))
+
+(define-public r-rcauctile
+  (package
+    (name "r-rcauctile")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RCaucTile" version))
+       (sha256
+        (base32 "07j8rax54pyhmxq2zz7qqcg03qkslx1rpg0ksm859j9rp4rj980r"))))
+    (properties `((upstream-name . "RCaucTile")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cran.r-project.org/package=RCaucTile")
+    (synopsis "Tile Grid Maps for East Caucasian Languages")
+    (description
+     "Generates tile maps for the East Caucasian language family, inspired by the
+Typological Atlas of the Languages of Daghestan (TALD,
+<https://lingconlab.ru/tald/>).  It leverages ggplot2 to create visually
+informative maps, displaying rectangles for each language and allowing for
+color-coding based on linguistic features.  The package includes a built-in
+dataset of 56 languages and the template for their distribution and provides
+flexibility to customize the tile map's appearance.  The default template can be
+modified via the ability to hide or rename languages.  It's designed to be used
+with external data tables containing language information and features, offering
+a tool for visualizing the geographic distribution and linguistic
+characteristics of East Caucasian languages.")
+    (license license:gpl3+)))
 
 (define-public r-rcatch22
   (package
@@ -52420,6 +52428,41 @@ system.")
 created, rapport templates can be exported to various external formats (HTML,
 @code{LaTeX}, PDF, ODT etc.) with pandoc as the converter backend.")
     (license license:agpl3)))
+
+(define-public r-rappleads
+  (package
+    (name "r-rappleads")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rappleads" version))
+       (sha256
+        (base32 "0b5slcn25drvm4ap41vn59bj6c3g6rxm7qcbfbsirlxh73hngyss"))))
+    (properties `((upstream-name . "rappleads")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-tidyr
+                             r-stringr
+                             r-snakecase
+                             r-retry
+                             r-rappdirs
+                             r-purrr
+                             r-pbapply
+                             r-openssl
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/selesnow/rappleads")
+    (synopsis "Get Data from 'Apple Ads Campaign Management API'")
+    (description
+     "This package provides functions to load and manage data from Apple Ads accounts
+using the Apple Ads Campaign Management API
+<https://developer.apple.com/documentation/apple_ads>.")
+    (license license:expat)))
 
 (define-public r-rapparmor
   (package

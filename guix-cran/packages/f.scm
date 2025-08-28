@@ -8707,6 +8707,49 @@ be used to predict whether a plot is forested or non-forested.  Currently, the
 package provides data for Washington and Georgia.")
     (license license:expat)))
 
+(define-public r-forestecology
+  (package
+    (name "r-forestecology")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forestecology" version))
+       (sha256
+        (base32 "0vxqab9xk63pb42j202b1sghfkglkrv1sapp8zck5vbnab7ickil"))))
+    (properties `((upstream-name . "forestecology")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-snakecase
+                             r-sfheaders
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-mvnfast
+                             r-magrittr
+                             r-glue
+                             r-ggridges
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rudeboybert/forestecology")
+    (synopsis
+     "Fitting and Assessing Neighborhood Models of the Effect of Interspecific Competition on the Growth of Trees")
+    (description
+     "Code for fitting and assessing models for the growth of trees.  In particular
+for the Bayesian neighborhood competition linear regression model of Allen
+(2020): methods for model fitting and generating fitted/predicted values,
+evaluating the effect of competitor species identity using permutation tests,
+and evaluating model performance using spatial cross-validation.")
+    (license license:expat)))
+
 (define-public r-forestdisc
   (package
     (name "r-forestdisc")
@@ -11043,13 +11086,13 @@ to calculate equilibrium stability.")
 (define-public r-fluxtools
   (package
     (name "r-fluxtools")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxtools" version))
        (sha256
-        (base32 "0lh6znlpahlh3j1xwnahx61wmkmak646zqjmgv8nx0rl1n4p9l9d"))))
+        (base32 "0cprn51fd868c6jsyvml4id8s969cgdqc6yhhy6035x87pnqinlz"))))
     (properties `((upstream-name . "fluxtools")))
     (build-system r-build-system)
     (arguments
@@ -13491,6 +13534,32 @@ For a given number of components, the flap method achieves maximum forecast
 variance reduction among linear projections.")
     (license license:gpl3+)))
 
+(define-public r-flankr
+  (package
+    (name "r-flankr")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flankr" version))
+       (sha256
+        (base32 "0dgp5j453vpg8j2znjf0dskmkx5v8l1jrgdvy8giyk6gakzla85c"))))
+    (properties `((upstream-name . "flankr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/JimGrange/flankr")
+    (synopsis "Implementing Computational Models of Attentional Selectivity")
+    (description
+     "This package provides a set of methods to simulate from and fit computational
+models of attentional selectivity.  The package implements the dual-stage
+two-phase (DSTP) model of HÃ¼bner et al. (2010) <doi:10.1037/a0019471>, and the
+shrinking spotlight (SSP) model of White et al. (2011)
+<doi:10.1016/j.cogpsych.2011.08.001>.")
+    (license license:gpl3)))
+
 (define-public r-flan
   (package
     (name "r-flan")
@@ -15384,6 +15453,30 @@ selection procedure based on total Sobol indices.  Please see Huang and Joseph
 National Science Foundation grants DMS-2310637 and DMREF-1921873.")
     (license license:gpl2+)))
 
+(define-public r-firesale
+  (package
+    (name "r-firesale")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "firesale" version))
+       (sha256
+        (base32 "0axyr6z61c1hpcz05bpzbbd6laa793wx5631zzhbn76zh0icrcp8"))))
+    (properties `((upstream-name . "firesale")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-storr r-rlang r-reqres r-r6 r-cli))
+    (home-page "https://github.com/thomasp85/firesale")
+    (synopsis "Datastore for 'fiery' Web Servers")
+    (description
+     "This package provides a persistent datastore for fiery apps.  The datastore is
+build on top of the storr package and can thus be based on a variety of
+backends.  The datastore contains both a global and session-scoped section.")
+    (license license:expat)))
+
 (define-public r-fireexposur
   (package
     (name "r-fireexposur")
@@ -15921,45 +16014,50 @@ completeness.")
 (define-public r-fingerpro
   (package
     (name "r-fingerpro")
-    (version "1.1")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fingerPro" version))
        (sha256
-        (base32 "1a1lj8gyrbgcg8hr03cj2bjzlaafddspri7abc83ys1raqwd4j68"))))
+        (base32 "1xa166a9ccz78axsbmv8i6gia8vqlmw9d087z05xbb7gdrdjncj1"))))
     (properties `((upstream-name . "fingerPro")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales
+    (propagated-inputs (list r-ternary
+                             r-scales
                              r-rgl
                              r-reshape
                              r-rcppprogress
                              r-rcppgsl
                              r-rcpp
-                             r-rcmdr
                              r-plyr
+                             r-plotly
                              r-mass
                              r-klar
                              r-gridextra
                              r-ggplot2
                              r-ggally
+                             r-dplyr
+                             r-crayon
                              r-car))
-    (home-page "https://github.com/eead-csic-eesa")
-    (synopsis "Sediment Source Fingerprinting")
+    (home-page "https://github.com/eead-csic-eesa/fingerPro")
+    (synopsis "Comprehensive Package for Sediment Source Unmixing")
     (description
-     "Quantifies the provenance of the sediments in a catchment or study area.  Based
-on a comprehensive characterization of the sediment sources and the end sediment
-mixtures a mixing model algorithm is applied to the sediment mixtures in order
-to estimate the relative contribution of each potential source.  The package
-includes several statistical methods such as Kruskal-Wallis test, discriminant
-function analysis ('DFA'), principal component plot ('PCA') to select the
-optimal subset of tracer properties.  The variability within each sediment
-source is also considered to estimate the statistical distribution of the
-sources contribution.")
-    (license license:gpl2+)))
+     "\"This package quantifies the provenance of sediments in a catchment or study
+area.  Based on a characterization of the sediment sources and the end sediment
+mixtures, a mixing model algorithm is applied to the sediment mixtures to
+estimate the relative contribution of each potential source.  The package
+includes several graphs to help users in their data understanding, such as box
+plots, correlation, PCA, and LDA graphs.  In addition, new developments such as
+the Consensus Ranking (CR), Consistent Tracer Selection (CTS), and Linear
+Variability Propagation (LVP) methods are included to correctly apply the
+fingerprinting technique and increase dataset and model understanding.  A new
+method based on Conservative Balance (CB) method has also been included to
+enable the use of isotopic tracers.\".")
+    (license license:gpl3+)))
 
 (define-public r-finetune
   (package
@@ -19541,13 +19639,13 @@ financial risk assessment.")
 (define-public r-feasts
   (package
     (name "r-feasts")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "feasts" version))
        (sha256
-        (base32 "18xysg5vp29n0nbz2zdq7n8pbdggkjjifx40q839pvaij6sk4mp3"))))
+        (base32 "0zpzqs41rkf2igfg74g2rc6s8xlh723ckgflh7lh9bd39b7nqrl1"))))
     (properties `((upstream-name . "feasts")))
     (build-system r-build-system)
     (arguments
@@ -23594,13 +23692,13 @@ Raimondo (2019), IEEE International Conference on Image Processing (ICIP), pp.
 (define-public r-fastgasp
   (package
     (name "r-fastgasp")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastGaSP" version))
        (sha256
-        (base32 "065ml5f9i8pca8mqli0gfgikal115ycaixqfg2kcl4s368vfz4yx"))))
+        (base32 "134w804n5qan2adgi0snkh8v2nlxq61kjbw2lfs7y6f9bizf5i7i"))))
     (properties `((upstream-name . "FastGaSP")))
     (build-system r-build-system)
     (arguments

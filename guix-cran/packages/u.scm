@@ -5277,13 +5277,13 @@ form.")
 (define-public r-ubstats
   (package
     (name "r-ubstats")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UBStats" version))
        (sha256
-        (base32 "1x8pc1lb7xbjbydyl6bsckws7as6mgxr0nvmgg06kilk7s07ahmm"))))
+        (base32 "1cwng8yp5ba2zk7dpj05d2cpcb46ddk81vqicjjilardsvwbjn7j"))))
     (properties `((upstream-name . "UBStats")))
     (build-system r-build-system)
     (arguments

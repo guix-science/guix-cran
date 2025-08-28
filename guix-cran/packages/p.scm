@@ -28142,13 +28142,13 @@ to read in FASTA'-formatted sequence data.")
 (define-public r-phylotop
   (package
     (name "r-phylotop")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phyloTop" version))
        (sha256
-        (base32 "1f7sr0qp5i0kj1j2xr7fwpkjnpfnpdjy51dx33yz2q8jmn2axxdf"))))
+        (base32 "12iiqx4n3pwwknkkjpx1yj5fzfvjnapb322jdxpd7xqb5nbfbi0g"))))
     (properties `((upstream-name . "phyloTop")))
     (build-system r-build-system)
     (arguments
@@ -41934,13 +41934,13 @@ not split into subsets.")
 (define-public r-parallellogger
   (package
     (name "r-parallellogger")
-    (version "3.4.2")
+    (version "3.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ParallelLogger" version))
        (sha256
-        (base32 "1gqg0cz1amg9llglf44lm2kg04sq1dp2fjvc03lgn0g3mjqshm96"))))
+        (base32 "13x0nvbghbiiaifxj777fx10w1jcw16fkbg3j62xgivfv885qxr0"))))
     (properties `((upstream-name . "ParallelLogger")))
     (build-system r-build-system)
     (arguments
@@ -43186,13 +43186,13 @@ Michael Oswald.")
 (define-public r-pam
   (package
     (name "r-pam")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pam" version))
        (sha256
-        (base32 "0smwp4imymgzv9vfcmmn8nv5mmfp6zmpd4sphqlvd9ak0jq3i8gp"))))
+        (base32 "0xncsmn6gbvqb8pjv21k3fad3i0011sjg8i47hv13wazmx265qc7"))))
     (properties `((upstream-name . "pam")))
     (build-system r-build-system)
     (arguments
@@ -43672,25 +43672,25 @@ et al (2016) <doi:10.1111/2041-210X.12526>.")
 (define-public r-paleobiodb
   (package
     (name "r-paleobiodb")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paleobioDB" version))
        (sha256
-        (base32 "146p6pn3y6ca9vrdbkg3gyqfpb9drvbkkzq50y3qnzwiz15hmxq5"))))
+        (base32 "16vkc0l1s9np8b8srfqvjcy6929q337362kslhgj99hwjcc41l15"))))
     (properties `((upstream-name . "paleobioDB")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra r-rjson r-maps r-gtools r-curl))
+    (propagated-inputs (list r-terra r-maps r-jsonlite r-curl))
     (home-page "https://docs.ropensci.org/paleobioDB/")
     (synopsis "Download and Process Data from the Paleobiology Database")
     (description
-     "Includes functions to wrap most endpoints of the @code{PaleobioDB} API and
-functions to visualize and process the fossil data.  The API documentation for
-the Paleobiology Database can be found at <https://paleobiodb.org/data1.2/>.")
+     "Includes functions to wrap most endpoints of the @code{PaleobioDB} API and to
+visualize and process the obtained fossil data.  The API documentation for the
+Paleobiology Database can be found at <https://paleobiodb.org/data1.2/>.")
     (license license:gpl2)))
 
 (define-public r-paleoam

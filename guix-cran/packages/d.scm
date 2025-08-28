@@ -12003,13 +12003,13 @@ and installs all these related packages in a single step.")
 (define-public r-divent
   (package
     (name "r-divent")
-    (version "0.5-2")
+    (version "0.5-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "divent" version))
        (sha256
-        (base32 "1ljd4kfjdyc6qpi3bbqwli52mqkblvqc5syk5pbgjpwqfqbh9830"))))
+        (base32 "0yl9p7qhv8sh23bnd4n4752naazhmancdxds16i3jy2f9lpwbl4q"))))
     (properties `((upstream-name . "divent")))
     (build-system r-build-system)
     (arguments
@@ -22761,13 +22761,13 @@ nonlinear regression algorithms on the task of climate reconstruction.")
 (define-public r-dendrosync
   (package
     (name "r-dendrosync")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DendroSync" version))
        (sha256
-        (base32 "0jypfdjcjqv2vd3l52hq696gdni303dw5l0nq9hhngc18v2imqa2"))))
+        (base32 "0m40g1rapzpb8yjr32cbz35z7yi064bbamygn67jl25kw9gg0qhq"))))
     (properties `((upstream-name . "DendroSync")))
     (build-system r-build-system)
     (arguments

@@ -7188,6 +7188,40 @@ meta-analysis dataset.  INLA package can be obtained from
 <https://www.r-inla.org>.")
     (license license:gpl2+)))
 
+(define-public r-nmaforest
+  (package
+    (name "r-nmaforest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMAforest" version))
+       (sha256
+        (base32 "1hyd6mpdyapqgz0hffknbzqaij3j88xv0w968aclzs49k1c9lw0c"))))
+    (properties `((upstream-name . "NMAforest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-scales
+                             r-rlist
+                             r-netmeta
+                             r-meta
+                             r-magrittr
+                             r-igraph
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=NMAforest")
+    (synopsis
+     "Forest Plots for Network Meta-Analysis with Proportion for Paths and Studies")
+    (description
+     "This package provides customized forest plots for network meta-analysis
+incorporating direct, indirect, and network meta-analysis effects.  Includes
+visualizations of evidence contributions through proportion bars based on the
+hat matrix and evidence flow decomposition.")
+    (license license:gpl2)))
+
 (define-public r-nma
   (package
     (name "r-nma")

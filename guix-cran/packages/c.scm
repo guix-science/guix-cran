@@ -2920,13 +2920,13 @@ EPA Computational Toxicology and Exposure Online Resources
 (define-public r-ctxcc
   (package
     (name "r-ctxcc")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CTxCC" version))
        (sha256
-        (base32 "1v9d5r2j99ssgkrgvwp9d4jmji6nk7dpgnsaigi1cl9nx8q6r4k7"))))
+        (base32 "0xc12mhcxdl49hsr4j2b9vd104mrkwvmaaalpcrjpmawrwgsk9f5"))))
     (properties `((upstream-name . "CTxCC")))
     (build-system r-build-system)
     (arguments
@@ -3072,22 +3072,22 @@ scoring routines, and empirical ICCs.")
 (define-public r-ctsmtmb
   (package
     (name "r-ctsmtmb")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctsmTMB" version))
        (sha256
-        (base32 "1n2d2wrc3wrj88p1n4nsml76d14gv0b8hc1ixbsk6nzh3ikl4ax5"))))
+        (base32 "1vxih8ja5bxmpdkvvd949y8yy4m22m1vc9m2g9pavfbricwjfqr3"))))
     (properties `((upstream-name . "ctsmTMB")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tmb
+    (propagated-inputs (list r-zigg
+                             r-tmb
                              r-stringr
                              r-rtmb
-                             r-rcppziggurat
                              r-rcppxptrutils
                              r-rcppeigen
                              r-rcpp
@@ -3096,7 +3096,7 @@ scoring routines, and empirical ICCs.")
                              r-matrix
                              r-ggplot2
                              r-ggfortify
-                             r-desolve
+                             r-geomtextpath
                              r-deriv))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/phillipbvetter/ctsmTMB")
@@ -19080,13 +19080,13 @@ manipulating confounded and fractional factorial designs.")
 (define-public r-conf
   (package
     (name "r-conf")
-    (version "1.9.1")
+    (version "1.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conf" version))
        (sha256
-        (base32 "12zc5psfaldgyqmlfa8bf04ibqyxcszmry9fw1ab8brn7fh6vg7i"))))
+        (base32 "03977qjsv2g7rs08flf45zpsiafm1qff4xpsbw1lfhmjq38nsb0j"))))
     (properties `((upstream-name . "conf")))
     (build-system r-build-system)
     (arguments
@@ -32650,6 +32650,32 @@ a @code{tableGrob}', all of these features are controllable.  In particular, the
 ggplot2 grid system allows exact positioning of the table relative to other
 graphics etc.")
     (license license:gpl2+)))
+
+(define-public r-clic
+  (package
+    (name "r-clic")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CLIC" version))
+       (sha256
+        (base32 "1h3z8bsjvwa0anqq83dg3g120zfvzxm65bd9c4f8lr6xmk35wxka"))))
+    (properties `((upstream-name . "CLIC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-laplacesdemon r-fbasics))
+    (home-page "https://cran.r-project.org/package=CLIC")
+    (synopsis "The LIC for Distributed Cosine Regression Analysis")
+    (description
+     "This comprehensive framework for periodic time series modeling is designated as
+\"CLIC\" (The LIC for Distributed Cosine Regression Analysis) analysis.  It is
+predicated on the assumption that the underlying data exhibits complex periodic
+structures beyond simple harmonic components.  The philosophy of the method is
+articulated in Guo G. (2020) <doi:10.1080/02664763.2022.2053949>.")
+    (license license:expat)))
 
 (define-public r-cliapp
   (package
@@ -46411,36 +46437,44 @@ more than two groups.")
 (define-public r-causal-decomp
   (package
     (name "r-causal-decomp")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causal.decomp" version))
        (sha256
-        (base32 "12iy64dnb91l47vai9qawlwvg17x5amqg0kdj8npk1mgzm2zfz4j"))))
+        (base32 "0g5h53rgvv9jngb9gjndlg9hi07z6dib1m5hkaqdh1y6qhih73yn"))))
     (properties `((upstream-name . "causal.decomp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-suppdists
-                             r-spelling
+                             r-rpart
+                             r-rlang
                              r-psweight
                              r-nnet
+                             r-modelobj
                              r-mass
-                             r-cbps))
+                             r-magrittr
+                             r-knitr
+                             r-dyntxregime
+                             r-dplyr
+                             r-distr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=causal.decomp")
     (synopsis "Causal Decomposition Analysis")
     (description
-     "We implement causal decomposition analysis using the methods proposed by Park,
-Lee, and Qin (2020) and Park, Kang, and Lee (2021+) <@code{arXiv:2109.06940>}.
-This package allows researchers to use the multiple-mediator-imputation,
-single-mediator-imputation, and product-of-coefficients regression methods to
-estimate the initial disparity, disparity reduction, and disparity remaining.
-It also allows to make the inference conditional on baseline covariates.  We
-also implement sensitivity analysis for the causal decomposition analysis using
-R-squared values as sensitivity parameters (Park, Kang, Lee, and Ma, 2023).")
+     "We implement causal decomposition analysis using methods proposed by Park, Lee,
+and Qin (2022) and Park, Kang, and Lee (2023), which provide researchers with
+multiple-mediator imputation, single-mediator imputation, and
+product-of-coefficients regression approaches to estimate the initial disparity,
+disparity reduction, and disparity remaining (<doi:10.1177/00491241211067516>;
+<doi:10.1177/00811750231183711>).  We also implement sensitivity analysis for
+causal decomposition using R-squared values as sensitivity parameters (Park,
+Kang, Lee, and Ma, 2023 <doi:10.1515/jci-2022-0031>).  Finally, we include
+individualized causal decomposition and sensitivity analyses proposed by Park,
+Kang, and Lee (2025+) <doi:10.48550/@code{arXiv.2506.19010>}.")
     (license license:gpl2)))
 
 (define-public r-causact
@@ -49027,13 +49061,13 @@ and the estimated detection probability.")
 (define-public r-carbonr
   (package
     (name "r-carbonr")
-    (version "0.2.1")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "carbonr" version))
        (sha256
-        (base32 "173yy0rf5sahncvghz1nh74k2qhzvx3mpa8gwyz6acnfg08m0ygj"))))
+        (base32 "02v42sa618jsn115b079bgb76lqb9v5c89gmahmvk3rqqgrh57bd"))))
     (properties `((upstream-name . "carbonr")))
     (build-system r-build-system)
     (arguments
@@ -49041,9 +49075,7 @@ and the estimated detection probability.")
       #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
-                             r-tibble
                              r-stringr
-                             r-sp
                              r-shinydashboard
                              r-shiny
                              r-rlang
@@ -49065,7 +49097,7 @@ and the estimated detection probability.")
      "This package provides a flexible tool for calculating carbon-equivalent
 emissions.  Mostly using data from the UK Government's Greenhouse Gas Conversion
 Factors report
-<https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2023>,
+<https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024>,
 it facilitates transparent emissions calculations for various sectors, including
 travel, accommodation, and clinical activities.  The package is designed for
 easy integration into R workflows, with additional support for shiny
@@ -49321,13 +49353,13 @@ symbolic sums and other important quantities.")
 (define-public r-capybara
   (package
     (name "r-capybara")
-    (version "1.0.1")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "capybara" version))
        (sha256
-        (base32 "1w62wkm4wxd42l1gv3wj3h0l4z9fflhvnv8rv2j6gdgxvwd6zvc8"))))
+        (base32 "0ywpab3lqa9hl0ailb6b5psrw6wmqhdq2r6kw8k65dschb943zvs"))))
     (properties `((upstream-name . "capybara")))
     (build-system r-build-system)
     (arguments
@@ -49349,8 +49381,10 @@ symbolic sums and other important quantities.")
      "Fast and user-friendly estimation of generalized linear models with multiple
 fixed effects and cluster the standard errors.  The method to obtain the
 estimated fixed-effects coefficients is based on Stammann (2018)
-<doi:10.48550/@code{arXiv.1707.01815>} and Gaure (2013)
-<doi:10.1016/j.csda.2013.03.024>.")
+<doi:10.48550/@code{arXiv.1707.01815>}, Gaure (2013)
+<doi:10.1016/j.csda.2013.03.024>, Berge (2018)
+<https://ideas.repec.org/p/luc/wpaper/18-13.html>, and Correia et al. (2020)
+<doi: 10.1177/1536867X20909691>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-captr

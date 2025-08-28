@@ -3684,6 +3684,40 @@ R.")
 <https://exampa.net/>.")
     (license license:expat)))
 
+(define-public r-exametrika
+  (package
+    (name "r-exametrika")
+    (version "1.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "exametrika" version))
+       (sha256
+        (base32 "1fikl54zj9zbfj1fmgzr8fnzgmrp2mw7xyz7m6gc624mj0yd70vf"))))
+    (properties `((upstream-name . "exametrika")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm r-igraph))
+    (home-page "https://kosugitti.github.io/exametrika/")
+    (synopsis "Test Theory Analysis and Biclustering")
+    (description
+     "This package implements comprehensive test data engineering methods as described
+in Shojima (2022, ISBN:978-9811699856).  Provides statistical techniques for
+engineering and processing test data: Classical Test Theory (CTT) with
+reliability coefficients for continuous ability assessment; Item Response Theory
+(IRT) including Rasch, 2PL, and 3PL models with item/test information functions;
+Latent Class Analysis (LCA) for nominal clustering; Latent Rank Analysis (LRA)
+for ordinal clustering with automatic determination of cluster numbers;
+Biclustering methods including infinite relational models for simultaneous
+clustering of examinees and items without predefined cluster numbers; and
+Bayesian Network Models (BNM) for visualizing inter-item dependencies.  Features
+local dependence analysis through LRA and biclustering, parameter estimation,
+dimensionality assessment, and network structure visualization for educational,
+psychological, and social science research.")
+    (license license:expat)))
+
 (define-public r-exactvartest
   (package
     (name "r-exactvartest")
@@ -4410,13 +4444,13 @@ package and the implemented models.")
 (define-public r-evophylo
   (package
     (name "r-evophylo")
-    (version "0.3.2")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EvoPhylo" version))
        (sha256
-        (base32 "1jgvvi355dxrjqniwcga7gzfj0jw3hgwbii2cv055rq9z5f442mr"))))
+        (base32 "0c0j0nx6f0mz26yzqycfi32qgnif1kcrla5lhrxac35y8ybsqxw7"))))
     (properties `((upstream-name . "EvoPhylo")))
     (build-system r-build-system)
     (arguments
@@ -4424,13 +4458,16 @@ package and the implemented models.")
       #:tests? #f))
     (propagated-inputs (list r-unglue
                              r-treeio
+                             r-tidyr
+                             r-tibble
                              r-rtsne
+                             r-phangorn
                              r-patchwork
+                             r-magrittr
                              r-ggtree
                              r-ggrepel
                              r-ggplot2
                              r-dplyr
-                             r-devtools
                              r-deeptime
                              r-cluster
                              r-ape))
@@ -9013,13 +9050,13 @@ networks whose edge weights are counts.  See Krivitsky (2012)
 (define-public r-ergm
   (package
     (name "r-ergm")
-    (version "4.9.0.1")
+    (version "4.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm" version))
        (sha256
-        (base32 "1zdhzq4kifrysrnlhr16xwjc5nm2lbhd6hfyyf3cky71n3160fp4"))))
+        (base32 "0g99nkyh22qsyb4pmkycxp8afavqqw5zvs5jqapip76ivzq0xwwk"))))
     (properties `((upstream-name . "ergm")))
     (build-system r-build-system)
     (arguments
@@ -9036,6 +9073,7 @@ networks whose edge weights are counts.  See Krivitsky (2012)
                              r-purrr
                              r-network
                              r-memoise
+                             r-matrix
                              r-magrittr
                              r-lpsolveapi
                              r-knitr
@@ -25009,13 +25047,13 @@ regression models.")
 (define-public r-easyncdf
   (package
     (name "r-easyncdf")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyNCDF" version))
        (sha256
-        (base32 "1pz9yjz1ydgxawfx5y698fv5j51jsd0bx00bplpapkywf3kxgkig"))))
+        (base32 "1d6lazfx304kf627nid9pywbc4b1yssq1vrfq6zqcbxii1as783p"))))
     (properties `((upstream-name . "easyNCDF")))
     (build-system r-build-system)
     (arguments

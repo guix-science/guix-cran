@@ -11540,6 +11540,42 @@ transition probabilities.  This package is useful for actuarial analyses and
 life insurance modeling, facilitating accurate financial projections.")
     (license license:gpl3)))
 
+(define-public r-lifemapr
+  (package
+    (name "r-lifemapr")
+    (version "1.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LifemapR" version))
+       (sha256
+        (base32 "0srdass4zc4l86d46bzkck1an878vyl11fnrbsxr4lb14xjh7ahn"))))
+    (properties `((upstream-name . "LifemapR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-shiny
+                             r-rlang
+                             r-rcurl
+                             r-leaflet-minicharts
+                             r-leaflet
+                             r-jsonlite
+                             r-htmltools
+                             r-fastmatch
+                             r-dplyr
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://lifemap-tol.github.io/LifemapR/")
+    (synopsis "Data Visualisation on 'Lifemap' Tree")
+    (description
+     "Allow to visualise data on the NCBI phylogenetic tree as presented in Lifemap
+<https://lifemap.cnrs.fr/>.  It takes as input a dataframe with at least a
+\"taxid\" column containing NCBI format @code{TaxIds} and allows to draw multiple
+layers with different visualisation tools.")
+    (license license:expat)))
+
 (define-public r-lifeinsurer
   (package
     (name "r-lifeinsurer")
@@ -14841,13 +14877,13 @@ single map.")
 (define-public r-leaflet-extras2
   (package
     (name "r-leaflet-extras2")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leaflet.extras2" version))
        (sha256
-        (base32 "102n18bdnf23l7cblkn0m0qqa479m73bdzqyk0wgrd8lybd45g8m"))))
+        (base32 "179r780r6dnhwricxxd4xp640lbs0k11qw662sc6pfglzb44cvas"))))
     (properties `((upstream-name . "leaflet.extras2")))
     (build-system r-build-system)
     (arguments
@@ -16186,6 +16222,33 @@ capture-recapture data.  See Bartolucci, F. and Forcina, A. (2022), Estimating
 the size of a closed population by modeling latent and observed heterogeneity,
 Biometrics, 80(2), ujae017.")
     (license license:gpl2+)))
+
+(define-public r-lccknn
+  (package
+    (name "r-lccknn")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LCCkNN" version))
+       (sha256
+        (base32 "1gi720syjn1iiy7xw9g2i2bl1fcsrihml9sja6vqr8nirvd9mvm2"))))
+    (properties `((upstream-name . "LCCkNN")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mlmetrics r-fnn r-class r-caret))
+    (home-page "https://github.com/Gabrielforest/LCCkNN")
+    (synopsis
+     "Adaptive k-Nearest Neighbor Classifier Based on Local Curvature Estimation")
+    (description
+     "This package implements the @code{kK-NN} algorithm, an adaptive k-nearest
+neighbor classifier that adjusts the neighborhood size based on local data
+curvature.  The method estimates local Gaussian curvature by approximating the
+shape operator of the data manifold.  This approach aims to improve
+classification performance, particularly in datasets with limited samples.")
+    (license license:expat)))
 
 (define-public r-lcc
   (package
@@ -19273,13 +19336,13 @@ Additional information is provided in Chianucci and Cesaretti (2022)
 (define-public r-lacunr
   (package
     (name "r-lacunr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lacunr" version))
        (sha256
-        (base32 "132k5vis9k3snhfy3zl0py039pm1b12k70qijdkq11knhlng7b1b"))))
+        (base32 "0p37i6xg2xlshs6wdwv3v2rrz37hsnnm72gdank8bg1y9xv541y3"))))
     (properties `((upstream-name . "lacunr")))
     (build-system r-build-system)
     (arguments

@@ -6227,6 +6227,32 @@ methods and techniques.  As a result, we encourage suggested additions to the
 package, both methodological and graphical.")
     (license license:gpl3+)))
 
+(define-public r-multideploy
+  (package
+    (name "r-multideploy")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multideploy" version))
+       (sha256
+        (base32 "0kjgc8ahzp2lvia6gl87c05pyhjllwnql3z7v19g9dlsc724axyi"))))
+    (properties `((upstream-name . "multideploy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gh r-cli r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://r-pkg.thecoatlessprofessor.com/multideploy/")
+    (synopsis "Deploy File Changes Across Multiple 'GitHub' Repositories")
+    (description
+     "Deploy file changes across multiple @code{GitHub} repositories using the
+@code{GitHub} Web API <https://docs.github.com/en/rest>.  Allows synchronizing
+common files, Continuous Integration ('CI') workflows, or configurations across
+many repositories with a single command.")
+    (license license:agpl3+)))
+
 (define-public r-multideggs
   (package
     (name "r-multideggs")
@@ -16373,13 +16399,13 @@ importance and a tuning function for the parameters.")
 (define-public r-modstatr
   (package
     (name "r-modstatr")
-    (version "1.3.3")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ModStatR" version))
        (sha256
-        (base32 "0rind0v0s9n1z9852hr2cc36c2jpkasrhkprqqvz1qvfjkhg4c6v"))))
+        (base32 "0i8sg5y5ja4msrjcywmaih8vz21y8jpscddpijabgfkr76ypd3nw"))))
     (properties `((upstream-name . "ModStatR")))
     (build-system r-build-system)
     (arguments
@@ -16407,13 +16433,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.11")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "13bizkm1yynd2zx6wr9my4z2dxjgdbk4q660179mlb87vqz5z5pp"))))
+        (base32 "1adqha2dzhqshp2b86nqkpkgyrl730h60bvf9pmhlj7zgr6kd2b3"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (arguments
@@ -16421,6 +16447,7 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
       #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rlang
+                             r-rhpcblasctl
                              r-rcpparmadillo
                              r-rcpp
                              r-purrr
@@ -22965,13 +22992,13 @@ tests, and generation of similarity matrices.")
 (define-public r-mkmeans
   (package
     (name "r-mkmeans")
-    (version "3.2")
+    (version "3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MKMeans" version))
        (sha256
-        (base32 "09n4d87m7d9500ix24mncn80ap44daa1g836ykmwpcazysb0ag02"))))
+        (base32 "1wpa7chbbl0ln7s9zj36xqwd1jcsammsiqzx6h4h2r0bgqs2xw06"))))
     (properties `((upstream-name . "MKMeans")))
     (build-system r-build-system)
     (arguments
@@ -28501,13 +28528,13 @@ settings.")
 (define-public r-migconnectivity
   (package
     (name "r-migconnectivity")
-    (version "0.4.7")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MigConnectivity" version))
        (sha256
-        (base32 "08bzis7rkczymvr2bqiih59yn94l0fjhkn0p9lpv875pwbvhmw1j"))))
+        (base32 "1vna7j4cbr30x7j0k73za6c0nhqipx35xypfdpp5yj0l6qdk6bp5"))))
     (properties `((upstream-name . "MigConnectivity")))
     (build-system r-build-system)
     (arguments
@@ -28539,8 +28566,9 @@ incorporating uncertainty from multiple sources of sampling error.  For
 cross-species comparisons, methods are provided to estimate differences in
 migratory connectivity strength, incorporating uncertainty.  See Cohen et al.
 (2018) <doi:10.1111/2041-210X.12916>, Cohen et al. (2019)
-<doi:10.1111/ecog.03974>, and Roberts et al. (2023) <doi:10.1002/eap.2788> for
-details on some of these methods.")
+<doi:10.1111/ecog.03974>, Roberts et al. (2023) <doi:10.1002/eap.2788>, and
+Hostetler et al. (2025) <doi:10.1111/2041-210X.14467> for details on some of
+these methods.")
     (license license:gpl3+)))
 
 (define-public r-mig
@@ -28697,19 +28725,19 @@ Batista and Ferreira (2023) <doi:10.28951/bjb.v41i4.640>.")
 (define-public r-midr
   (package
     (name "r-midr")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "midr" version))
        (sha256
-        (base32 "0bixb1szwnhzgyjdk753qh0vyqvkhgyd28d288g1xf2318xjamib"))))
+        (base32 "163fv68hpmxghwfdc2fwh77jnzkvqdjmjzpkc8z2q56dglg4zf51"))))
     (properties `((upstream-name . "midr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-rcppeigen))
+    (propagated-inputs (list r-rlang r-rcppeigen r-rcpp))
     (home-page "https://github.com/ryo-asashi/midr")
     (synopsis
      "Learning from Black-Box Models by Maximum Interpretation Decomposition")
@@ -30210,13 +30238,13 @@ two classification results.")
 (define-public r-micemd
   (package
     (name "r-micemd")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micemd" version))
        (sha256
-        (base32 "1rzn4iiv9zml6c0d5j36c4z1kdn03j05m4q03wca7z0k35icsis6"))))
+        (base32 "1lxy004i808gxxr0laaxy2vgh3an20q3sfx3gi36vmrisas76qwa"))))
     (properties `((upstream-name . "micemd")))
     (build-system r-build-system)
     (arguments
@@ -31922,13 +31950,13 @@ Kosztyan (2022) <doi:10.1016/j.softx.2022.100973>.")
 (define-public r-mfpca
   (package
     (name "r-mfpca")
-    (version "1.3-10")
+    (version "1.3-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MFPCA" version))
        (sha256
-        (base32 "0qpmy9cxskz4ii3qa5kvrdka4gbvlnch2blis6jjr4vic86a5mgi"))))
+        (base32 "09aiwvr05l1c3mvm88482wr0nhb6h0shvxs14zgykn7d4fykdwxf"))))
     (properties `((upstream-name . "MFPCA")))
     (build-system r-build-system)
     (arguments
@@ -38693,13 +38721,13 @@ including spatial processes such as lateral water transfer and seed dispersal.")
 (define-public r-medfate
   (package
     (name "r-medfate")
-    (version "4.8.1")
+    (version "4.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medfate" version))
        (sha256
-        (base32 "17alsx1368n93is2f6xm7056gzppl3nai1ajmw4ymcsc5grq93n1"))))
+        (base32 "1z98pz6gmw0jnaksv35b3yzqxyp300hyq7v42i7z1q881avk57ik"))))
     (properties `((upstream-name . "medfate")))
     (build-system r-build-system)
     (arguments
@@ -46844,13 +46872,13 @@ standard deviation across subgroups.  See A. Marradi \"L'analisi monovariata\"
 (define-public r-marquee
   (package
     (name "r-marquee")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marquee" version))
        (sha256
-        (base32 "0p77naa51z93glnkcd4g1andyvfxzi57qicazirv38hq1sk3h5ip"))))
+        (base32 "0id8hapfa9ybfixni2x2fx1n6js023ibv78gadygdhxgd9nhidjk"))))
     (properties `((upstream-name . "marquee")))
     (build-system r-build-system)
     (arguments
@@ -46859,6 +46887,7 @@ standard deviation across subgroups.  See A. Marradi \"L'analisi monovariata\"
     (propagated-inputs (list r-vctrs
                              r-textshaping
                              r-systemfonts
+                             r-s7
                              r-rlang
                              r-png
                              r-jpeg

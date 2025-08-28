@@ -7883,13 +7883,13 @@ total evidence dating analyses.")
 (define-public r-treespace
   (package
     (name "r-treespace")
-    (version "1.1.4.3")
+    (version "1.1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treespace" version))
        (sha256
-        (base32 "1f5kcydlnbbwf2q2rgb64y3i7x9p7prcw1xc5pjk8wqp2zyr0ijj"))))
+        (base32 "10b8mfmzq2j3dg6ghxlqhsc5czlq1mg76c1nl94bqji3r65bzshn"))))
     (properties `((upstream-name . "treespace")))
     (build-system r-build-system)
     (arguments
@@ -13759,6 +13759,32 @@ obtained from text analyses (e.g., topic modeling, word scaling) can be used to
 annotate the texts.")
     (license license:gpl3)))
 
+(define-public r-tok
+  (package
+    (name "r-tok")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tok" version))
+       (sha256
+        (base32 "1p5ybh22xkjyyh4fx5in3wb5wpxwdlcfbhdy9xs924rqnfzmshzh"))))
+    (properties `((upstream-name . "tok")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-r6 r-cli))
+    (home-page "https://github.com/mlverse/tok")
+    (synopsis "Fast Text Tokenization")
+    (description
+     "Interfaces with the Hugging Face tokenizers library to provide implementations
+of today's most used tokenizers such as the Byte-Pair Encoding algorithm
+<https://huggingface.co/docs/tokenizers/index>.  It's extremely fast for both
+training new vocabularies and tokenizing texts.")
+    (license license:expat)))
+
 (define-public r-tohm
   (package
     (name "r-tohm")
@@ -18909,6 +18935,54 @@ with any LLM provider that offers chat completion.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-tidypopgen
+  (package
+    (name "r-tidypopgen")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidypopgen" version))
+       (sha256
+        (base32 "098bwg8nxlp5rbrripasydy78fgrd1kaings84x4paxzryv6pb3q"))))
+    (properties `((upstream-name . "tidypopgen")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-vctrs
+                             r-upsetr
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-sf
+                             r-runner
+                             r-rmio
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-patchwork
+                             r-mass
+                             r-ggplot2
+                             r-generics
+                             r-foreach
+                             r-dplyr
+                             r-bigstatsr
+                             r-bigsnpr
+                             r-bigparallelr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EvolEcolGroup/tidypopgen")
+    (synopsis "Tidy Population Genetics")
+    (description
+     "We provide a tidy grammar of population genetics, facilitating the manipulation
+and analysis of data on biallelic single nucleotide polymorphisms (SNPs).
+tidypopgen scales to very large genetic datasets by storing genotypes on disk,
+and performing operations on them in chunks, without ever loading all data in
+memory.  The full functionalities of the package are described in Carter et al.
+(2025) <doi:10.1101/2025.06.06.658325>.")
+    (license license:gpl3+)))
+
 (define-public r-tidypmc
   (package
     (name "r-tidypmc")
@@ -20466,6 +20540,62 @@ packages is useful for anyone doing data science, data analysis, or quantitative
 consulting.  The functions in these packages range from data cleaning, data
 validation, data binning, statistical modeling, and file exporting.")
     (license license:expat)))
+
+(define-public r-tidycomm
+  (package
+    (name "r-tidycomm")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidycomm" version))
+       (sha256
+        (base32 "0qlfsy489xsmjg7dlhban46qddg63sffg3gsjwszf5j1h6gc1w53"))))
+    (properties `((upstream-name . "tidycomm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-pillar
+                             r-misty
+                             r-mbess
+                             r-mass
+                             r-magrittr
+                             r-lubridate
+                             r-lm-beta
+                             r-glue
+                             r-ggplot2
+                             r-ggally
+                             r-forcats
+                             r-fastdummies
+                             r-dplyr
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://tidycomm.github.io/tidycomm/")
+    (synopsis "Data Modification and Analysis for Communication Research")
+    (description
+     "This package provides convenience functions for common data modification and
+analysis tasks in communication research.  This includes functions for
+univariate and bivariate data analysis, index generation and reliability
+computation, and intercoder reliability tests.  All functions follow the style
+and syntax of the tidyverse, and are construed to perform their computations on
+multiple variables at once.  Functions for univariate and bivariate data
+analysis comprise summary statistics for continuous and categorical variables,
+as well as several tests of bivariate association including effect sizes.
+Functions for data modification comprise index generation and automated
+reliability analysis of index variables.  Functions for intercoder reliability
+comprise tests of several intercoder reliability estimates, including simple and
+mean pairwise percent agreement, Krippendorff's Alpha (Krippendorff 2004, ISBN:
+9780761915454), and various Kappa coefficients (Brennan & Prediger 1981 <doi:
+10.1177/001316448104100307>; Cohen 1960 <doi: 10.1177/001316446002000104>;
+Fleiss 1971 <doi: 10.1037/h0031619>).")
+    (license license:gpl3)))
 
 (define-public r-tidycode
   (package

@@ -8748,6 +8748,37 @@ functions to copy the curves into memory, and to plot the curves and their
 underlying data, as well as functions to calibrate radiocarbon dates.")
     (license license:gpl2+)))
 
+(define-public r-intamapinteractive
+  (package
+    (name "r-intamapinteractive")
+    (version "1.2-7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intamapInteractive" version))
+       (sha256
+        (base32 "0f2fql0x6h0qqk7n6s2j1vkbbaz6sjbbr6pg2q17m5q2gx0rdfna"))))
+    (properties `((upstream-name . "intamapInteractive")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spcosa
+                             r-spatstat-geom
+                             r-sp
+                             r-sf
+                             r-intamap
+                             r-gstat
+                             r-automap))
+    (home-page "https://cran.r-project.org/package=intamapInteractive")
+    (synopsis "Interactive Add-on Functionality for 'intamap'")
+    (description
+     "The methods in this package adds to the functionality of the intamap package,
+such as bias correction and network optimization.  Pebesma et al (2010) gives an
+overview of the methods behind and possible usage
+<doi:10.1016/j.cageo.2010.03.019>.")
+    (license license:gpl2+)))
+
 (define-public r-intamap
   (package
     (name "r-intamap")

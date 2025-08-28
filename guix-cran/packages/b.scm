@@ -22840,13 +22840,13 @@ details, see Karasiewicz et al. (2022) <doi:10.3390/jmse10020174>.")
 (define-public r-bda
   (package
     (name "r-bda")
-    (version "18.3.2")
+    (version "19.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bda" version))
        (sha256
-        (base32 "0kdm46rq939pqk0hv9x0fk9nkv45d8k2bakyhm0p4l9jcjb0vwfa"))))
+        (base32 "1z3x200sxz078y6a06kn8w6ypdc0jm7x5350xrcval3y3gw5fg6l"))))
     (properties `((upstream-name . "bda")))
     (build-system r-build-system)
     (arguments
@@ -29030,20 +29030,20 @@ original set of variables.")
 (define-public r-batss
   (package
     (name "r-batss")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BATSS" version))
        (sha256
-        (base32 "1rkzw4sz3qn09ihjwnwj35gafh196gcnl75xqjjimga5bd7y7m7s"))))
+        (base32 "1icwfavwkjgls843splnnx3asw2vqvl3n7kn3319z9qnzng6cg62"))))
     (properties `((upstream-name . "BATSS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rlang r-r-utils r-plyr r-cli r-abind))
-    (home-page "https://batss-dev.github.io/BATSS/")
+    (home-page "https://batss-stable.github.io/BATSS/")
     (synopsis
      "Bayesian Adaptive Trial Simulator Software (BATSS) for Generalised Linear Models")
     (description

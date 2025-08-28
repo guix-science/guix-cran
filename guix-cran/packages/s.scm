@@ -10503,13 +10503,13 @@ to create dyadic data sets.")
 (define-public r-stratpal
   (package
     (name "r-stratpal")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StratPal" version))
        (sha256
-        (base32 "0ip8fydnly85da4mg3gylc9a7k0hrzj69vr0xvjagv5svsrqyb3g"))))
+        (base32 "19g8sbj7rajnh24dzyrh5g8q8w4caq08l8an95ljrjh219nmb40c"))))
     (properties `((upstream-name . "StratPal")))
     (build-system r-build-system)
     (arguments
@@ -10526,11 +10526,11 @@ and stratigraphic processes (Holland and Patzkowsky, 2012, ISBN:978-0226649382).
 (e.g., trait evolution, fossil abundance, phylogenetic trees), and examine how
 their expression in the rock record (stratigraphic domain) is influenced based
 on age-depth models, ecological niche models, and taphonomic effects.  Functions
-simulating common processes used in modeling trait evolution or event type data
-such as first/last occurrences are provided and can be used standalone or as
-part of a pipeline.  The package comes with example data sets and tutorials in
-several vignettes, which can be used as a template to set up one's own
-simulation.")
+simulating common processes used in modeling trait evolution, biostratigraphy or
+event type data such as first/last occurrences are provided and can be used
+standalone or as part of a pipeline.  The package comes with example data sets
+and tutorials in several vignettes, which can be used as a template to set up
+one's own simulation.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-stratigrapher
@@ -12927,13 +12927,13 @@ objects.")
 (define-public r-stgam
   (package
     (name "r-stgam")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stgam" version))
        (sha256
-        (base32 "1rv1v6xnd60ijvvgc4vr4x1gc91y7lhbdmf13m3kk4krf5y0c5m8"))))
+        (base32 "0n8xkmq03vsafr9m7mk66v8kxnj6ha4sbffpmnhyfrgiwm2pg4v2"))))
     (properties `((upstream-name . "stgam")))
     (build-system r-build-system)
     (arguments
@@ -27706,6 +27706,31 @@ functional relationship between the variables considered, while the term regime
 is linked to a regressive relationship underlying the spatial process.")
     (license license:gpl2+)))
 
+(define-public r-spatialreg-hp
+  (package
+    (name "r-spatialreg-hp")
+    (version "0.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spatialreg.hp" version))
+       (sha256
+        (base32 "0q9fdk20081szwvlhlljmhfbrlspb5p8vh6qyn9j8xdrx15d4zig"))))
+    (properties `((upstream-name . "spatialreg.hp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan r-spdep r-spatialreg r-ggplot2))
+    (home-page "https://cran.r-project.org/package=spatialreg.hp")
+    (synopsis
+     "Hierarchical Partitioning of R2 for Spatial Simultaneous Autoregressive Model")
+    (description
+     "Conducts hierarchical partitioning to calculate individual contributions of
+spatial and predictors (groups) towards total R2 for spatial simultaneous
+autoregressive model.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-spatialrdd
   (package
     (name "r-spatialrdd")
@@ -28310,13 +28335,13 @@ form of Riemann integration.")
 (define-public r-spatialcatalogueviewer
   (package
     (name "r-spatialcatalogueviewer")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialCatalogueViewer" version))
        (sha256
-        (base32 "1p7jkiy61z4x6aix1xiyfx0dpmajdcycywf1457yy98n0rgwkdls"))))
+        (base32 "17msky6h2zvcplrqg58irykj3i1ypgp347jyzisvnzw3yk78wa10"))))
     (properties `((upstream-name . "spatialCatalogueViewer")))
     (build-system r-build-system)
     (arguments
@@ -45372,13 +45397,13 @@ facilitate communicating the simulation setup.")
 (define-public r-simdag
   (package
     (name "r-simdag")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simDAG" version))
        (sha256
-        (base32 "1bfmah009qgh8xcrpbkzcjil8sf0dbc6sp0jc3m45dk4fqn6xba8"))))
+        (base32 "0slggfyhqmmky7b1pa8h9xi2aqba52664dgnw9dfhbzyh51as24v"))))
     (properties `((upstream-name . "simDAG")))
     (build-system r-build-system)
     (arguments
@@ -45393,9 +45418,10 @@ facilitate communicating the simulation setup.")
 each individual node.  Root nodes are simply sampled from the specified
 distribution.  Child Nodes are simulated according to one of many implemented
 regressions, such as logistic regression, linear regression, poisson regression
-and more.  Also includes a comprehensive framework for discrete-time simulation,
-which can generate even more complex longitudinal data.  For more details, see
-Robin Denz, Nina Timmesfeld (2025) <doi:10.48550/@code{arXiv.2506.01498>}.")
+or any other function.  Also includes a comprehensive framework for
+discrete-time simulation, and networks-based simulation which can generate even
+more complex longitudinal and dependent data.  For more details, see Robin Denz,
+Nina Timmesfeld (2025) <doi:10.48550/@code{arXiv.2506.01498>}.")
     (license license:gpl3+)))
 
 (define-public r-simctest
@@ -47300,6 +47326,39 @@ Estatistica, see <https://www.ibge.gov.br/> for more information) SIDRA API in a
 flexible way.  SIDRA is the acronym to \"Sistema IBGE de Recuperacao Automatica\"
 and is the system where IBGE turns available aggregate data from their
 researches.")
+    (license license:gpl3)))
+
+(define-public r-sidra
+  (package
+    (name "r-sidra")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sidra" version))
+       (sha256
+        (base32 "0zlh6n8bjfa61dwd5xnd70vymq6nl9ys3iqwadjg3p8h5r39paya"))))
+    (properties `((upstream-name . "sidra")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rodrigoesborges/sidra")
+    (synopsis "Acesso aos Dados do 'SIDRA' do IBGE")
+    (description
+     "This package provides functions for accessing and manipulating data from
+Brazilian Institute of Geography and Statistics (IBGE)'s API SIDRA (acronym for
+IBGE System of Automatic Retrieval) from the new endpoints at
+<https://servicodados.ibge.gov.br/api/docs/agregados?versao=3>.  Ferramentas
+para acessar e manipular dados via API do Sistema IBGE De RecuperaÃ§Ã£o
+AutomÃ¡tica SIDRA do Instituto Brasileiro de Geografia e EstatÃ­stica (IBGE).")
     (license license:gpl3)))
 
 (define-public r-sidier
@@ -55473,6 +55532,29 @@ dashboard capable of common visualizations for single cell RNA-seq.
 or qs2 file.")
     (license license:gpl3+)))
 
+(define-public r-setwidth
+  (package
+    (name "r-setwidth")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "setwidth" version))
+       (sha256
+        (base32 "0wzcnw6agvjpyp3w7syrq70gcf9rzxkf9cvc3iiwspb5z1n3r5ws"))))
+    (properties `((upstream-name . "setwidth")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=setwidth")
+    (synopsis "Automatically Set the Width Option on Terminal Emulators")
+    (description
+     "Automatically sets the value of options(\"width\") when the terminal emulator is
+resized.  The functions of this package only work if R is compiled for Unix
+systems and it is running interactively in a terminal emulator.")
+    (license license:gpl2+)))
+
 (define-public r-settingssync
   (package
     (name "r-settingssync")
@@ -62557,13 +62639,13 @@ occur.")
 (define-public r-sdmtune
   (package
     (name "r-sdmtune")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SDMtune" version))
        (sha256
-        (base32 "13i80qi52x18gmd9l3f028ib68dd16ykj9ifqd40s76yca3nnb27"))))
+        (base32 "1874x92vh74nb97pxwhzs4wjxczmvjqp2hyl12i1nir4bmf6nywg"))))
     (properties `((upstream-name . "SDMtune")))
     (build-system r-build-system)
     (arguments
@@ -64173,13 +64255,13 @@ regulatory program.")
 (define-public r-screenshot
   (package
     (name "r-screenshot")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "screenshot" version))
        (sha256
-        (base32 "16b1dzagy92jk1y1dymq6r2yzri3lynaj9a2bjqqjn0bh21aqsxr"))))
+        (base32 "0pl5112hhgf7q5yl7lcxghzdq7q46rr6hnjlw7z5rkx3c2q61vhl"))))
     (properties `((upstream-name . "screenshot")))
     (build-system r-build-system)
     (arguments
@@ -64189,6 +64271,7 @@ regulatory program.")
                              r-stringr
                              r-rlang
                              r-purrr
+                             r-magick
                              r-imager
                              r-fs
                              r-dplyr))
@@ -71232,6 +71315,41 @@ sensitivity, specificity, prevalence, and desired precision.  Based on Buderer
 are also several helper functions for working with probability, odds, relative
 risk, and odds ratio values.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-samplesizecalculator
+  (package
+    (name "r-samplesizecalculator")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SampleSizeCalculator" version))
+       (sha256
+        (base32 "1fpybq644ndjrafyr0gpbvirnx62bzhh68a5dhnxmznnpvp604yx"))))
+    (properties `((upstream-name . "SampleSizeCalculator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinythemes r-shiny r-dt r-bslib))
+    (home-page "https://cran.r-project.org/package=SampleSizeCalculator")
+    (synopsis "Sample Size Calculator under Complex Survey Design")
+    (description
+     "It helps in determination of sample size for estimating population mean or
+proportion under simple random sampling with or without replacement and
+stratified random sampling without replacement.  When prior information on the
+population coefficient of variation (CV) is unavailable, then a preliminary
+sample is drawn to estimate the CV which is used to compute the final sample
+size.  If the final size exceeds the preliminary sample size, then additional
+units are drawn; otherwise, the preliminary sample size is considered as final
+sample size.  For stratified random sampling without replacement design, it also
+calculates the sample size in each stratum under different allocation methods
+for estimation of population mean and proportion based upon the availability of
+prior information on sizes of the strata, standard deviations of the strata and
+costs of drawing a sampling unit in the strata.For details on sampling
+methodology, see, Cochran (1977) \"Sampling Techniques\"
+<https://archive.org/details/samplingtechniqu0000coch_t4x6>.")
+    (license license:gpl2+)))
 
 (define-public r-samplesize4surveys
   (package

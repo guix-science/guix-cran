@@ -302,13 +302,13 @@ Azure Machine Learning visit the website:
 (define-public r-azuremapsr
   (package
     (name "r-azuremapsr")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "azuremapsr" version))
        (sha256
-        (base32 "1v7286n6jvf0krq5sjxmj5m3p8z8aylx3g3jxw0aah3dppmlhlr4"))))
+        (base32 "19sw88836w2g49bnpvw77cqh9kh4q05v1id187gbh1y44ir8vnfb"))))
     (properties `((upstream-name . "azuremapsr")))
     (build-system r-build-system)
     (arguments
@@ -16895,6 +16895,32 @@ decreasing reliance of All of Us tools and allowing for cohort creation via
 Atlas'.  Improve reproducible and transparent research using All of Us'.")
     (license license:expat)))
 
+(define-public r-allocation
+  (package
+    (name "r-allocation")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "allocation" version))
+       (sha256
+        (base32 "0cvnq4m0gy51fw0kjaklr9jc0g1bw1q32k5f94g4qjjvdcsb516s"))))
+    (properties `((upstream-name . "allocation")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rmpfr))
+    (native-inputs (list r-quarto))
+    (home-page "https://cran.r-project.org/package=allocation")
+    (synopsis "Exact Optimal Allocation Algorithms for Stratified Sampling")
+    (description
+     "This package implements several exact methods for allocating optimal sample
+sizes when designing stratified samples.  These methods are discussed in Wright
+(2012) <doi:10.1080/00031305.2012.733679> and Wright (2017)
+<doi:10.1016/j.spl.2017.04.026>.")
+    (license license:expat)))
+
 (define-public r-allmt
   (package
     (name "r-allmt")
@@ -25081,6 +25107,38 @@ analyses, and community projections in which species are represented by MPMs.
 All forms of MPMs are allowed, including integral projection models (IPMs).
 Also includes individual-based modeling (IBM) versions of these.")
     (license license:gpl2+)))
+
+(define-public r-adapdiscom
+  (package
+    (name "r-adapdiscom")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AdapDiscom" version))
+       (sha256
+        (base32 "0kqc0f7jf7i6pdmq2hs10v38jjd1bg03x1r24hzjggd6xpdxmyas"))))
+    (properties `((upstream-name . "AdapDiscom")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-softimpute r-scout r-robustbase r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://doi.org/10.48550/arXiv.2508.00120")
+    (synopsis "Adaptive Sparse Regression for Block Missing Multimodal Data")
+    (description
+     "This package provides adaptive direct sparse regression for high-dimensional
+multimodal data with heterogeneous missing patterns and measurement errors.
+@code{AdapDISCOM} extends the DISCOM framework with modality-specific adaptive
+weighting to handle varying data structures and error magnitudes across blocks.
+The method supports flexible block configurations (any K blocks) and includes
+robust variants for heavy-tailed distributions ('@code{AdapDISCOM'-Huber}) and
+fast implementations for large-scale applications (Fast-'@code{AdapDISCOM}').
+Designed for realistic multimodal scenarios where different data sources exhibit
+distinct missing data patterns and contamination levels.  DiakitÃ© et al. (2025)
+<doi:10.48550/@code{arXiv.2508.00120>}.")
+    (license license:gpl3)))
 
 (define-public r-adana
   (package

@@ -12395,13 +12395,13 @@ calibration, and comparison for high-dimensional data.")
 (define-public r-hdmtd
   (package
     (name "r-hdmtd")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdMTD" version))
        (sha256
-        (base32 "08gpqb1pix1lh283r6a17hmj7cml32qqx15rb4cm8afiwaaanxb8"))))
+        (base32 "10x05k7yx2szz20hn6krfqidc2qw43gkypvzn7cw03zvwiasq36s"))))
     (properties `((upstream-name . "hdMTD")))
     (build-system r-build-system)
     (arguments
@@ -12421,7 +12421,7 @@ Expectation-Maximization algorithm.  Additionally, @code{hdMTD} includes a
 perfect sampling algorithm that generates samples of an MTD model from its
 invariant distribution.  For theory, see Ost & Takahashi (2023)
 <http://jmlr.org/papers/v24/22-0266.html>.")
-    (license license:expat)))
+    (license license:gpl3)))
 
 (define-public r-hdmt
   (package
@@ -14670,6 +14670,29 @@ function to manipulate distance matrices and phylogenetic trees to make it
 easier to plot with ggplot2 and to manipulate using tidyverse tools.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-harr
+  (package
+    (name "r-harr")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HARr" version))
+       (sha256
+        (base32 "0n31p9ajqprdb0qjvxv0byrc4brb1kqgdnf6kvlf5lxzngr3yx49"))))
+    (properties `((upstream-name . "HARr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi))
+    (home-page "https://cran.r-project.org/package=HARr")
+    (synopsis "'HAR' ('GEMPACK') File Read/Write Utility")
+    (description
+     "HAR files are generated and consumed by GEMPACK applications.  This package
+reads/writes HAR files (and SL4 files) directly using basic R functions.")
+    (license license:cc0)))
 
 (define-public r-harplus
   (package

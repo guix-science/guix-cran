@@ -9881,13 +9881,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "000q23yzby62qgb9wyc2c7595fz13fragmxs8rkf0r1syrv8wynn"))))
+        (base32 "0x7nx1gh1in1pjk8d8ljdd2szz38r8b610zmkg8waai1xsn3ahm4"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (arguments
@@ -11717,6 +11717,48 @@ models with various link functions.  Michael Arthur Stephens (1976)
 <http://www.jstor.org/stable/2958206>.")
     (license license:gpl3+)))
 
+(define-public r-gofcopula
+  (package
+    (name "r-gofcopula")
+    (version "0.4-3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gofCopula" version))
+       (sha256
+        (base32 "12ckllshqwnpvvcrrf6p0dly62vb6x7zzslr62rmccs1gzy6d8sv"))))
+    (properties `((upstream-name . "gofCopula")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yarrr
+                             r-vinecopula
+                             r-sparsegrid
+                             r-r-utils
+                             r-progress
+                             r-numderiv
+                             r-mass
+                             r-foreach
+                             r-dosnow
+                             r-crayon
+                             r-copula))
+    (home-page "https://cran.r-project.org/package=gofCopula")
+    (synopsis "Goodness-of-Fit Tests for Copulae")
+    (description
+     "Several Goodness-of-Fit (@code{GoF}) tests for Copulae are provided.  A new
+hybrid test, Zhang et al. (2016) <doi:10.1016/j.jeconom.2016.02.017> is
+implemented which supports all of the individual tests in the package, e.g.
+Genest et al. (2009) <doi:10.1016/j.insmatheco.2007.10.005>.  Estimation methods
+for the margins are provided and all the tests support parameter estimation and
+predefined values.  The parameters are estimated by pseudo maximum likelihood
+but if it fails the estimation switches automatically to inversion of Kendall's
+tau.  For reproducibility of results, the functions support the definition of
+seeds.  Also all the tests support automatized parallelization of the
+bootstrapping tasks.  The package provides an interface to perform new
+@code{GoF} tests by submitting the test statistic.")
+    (license license:gpl3+)))
+
 (define-public r-gofcens
   (package
     (name "r-gofcens")
@@ -11929,6 +11971,45 @@ lists of genes and provides a workflow to analyze them between two species via
 weighted graphs.  Methods are described in Sosa et al. (2023)
 <doi:10.1016/j.ygeno.2022.110528>.")
     (license license:gpl3+)))
+
+(define-public r-goat
+  (package
+    (name "r-goat")
+    (version "1.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "goat" version))
+       (sha256
+        (base32 "1hk3jb3qydrp41z2napzr4as4590c815vnzcr9nrshgssmdpajbk"))))
+    (properties `((upstream-name . "goat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl
+                             r-vctrs
+                             r-treemap
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-readxl
+                             r-rcpp
+                             r-pheatmap
+                             r-monopoly
+                             r-matrix
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://github.com/ftwkoopmans/goat/")
+    (synopsis "Gene Set Analysis Using the Gene Set Ordinal Association Test")
+    (description
+     "Perform gene set enrichment analyses using the Gene set Ordinal Association Test
+(GOAT) algorithm and visualize your results.  Koopmans, F. (2024)
+<doi:10.1038/s42003-024-06454-5>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-goalp
   (package
@@ -13822,6 +13903,63 @@ a way compatible with both Latex and HTML outputs.")
      "Add glossaries to markdown and quarto documents by tagging individual words.
 Definitions can be provided inline or in a separate file.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-glossa
+  (package
+    (name "r-glossa")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glossa" version))
+       (sha256
+        (base32 "1vncyinr9gqif0b2yg9ah8l48y7k8hx8m1q686alzzab70qq6gbq"))))
+    (properties `((upstream-name . "glossa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-waiter
+                             r-tidyterra
+                             r-terra
+                             r-svglite
+                             r-sparkline
+                             r-shinywidgets
+                             r-shiny
+                             r-sf
+                             r-proc
+                             r-mcp
+                             r-markdown
+                             r-leaflet
+                             r-htmltools
+                             r-ggplot2
+                             r-geothinner
+                             r-dt
+                             r-dplyr
+                             r-dbarts
+                             r-bs4dash
+                             r-blockcv
+                             r-automap))
+    (home-page "https://github.com/iMARES-group/glossa")
+    (synopsis
+     "User-Friendly 'shiny' App for Bayesian Species Distribution Models")
+    (description
+     "This package provides a user-friendly shiny application for Bayesian machine
+learning analysis of marine species distributions.  GLOSSA (Global Ocean Species
+Spatio-temporal Analysis) uses Bayesian Additive Regression Trees (BART;
+Chipman, George, and @code{McCulloch} (2010) <doi:10.1214/09-AOAS285>) to model
+species distributions with intuitive workflows for data upload, processing,
+model fitting, and result visualization.  It supports presence-absence and
+presence-only data (with pseudo-absence generation), spatial thinning,
+cross-validation, and scenario-based projections.  GLOSSA is designed to
+facilitate ecological research by providing easy-to-use tools for analyzing and
+visualizing marine species distributions across different spatial and temporal
+scales.  Optionally, pseudo-absences can be generated within the environmental
+space using the external package flexsdm (not on CRAN), which can be downloaded
+from <https://github.com/sjevelazco/flexsdm>; this functionality is used
+conditionally when available and all core features work without it.")
+    (license license:gpl3)))
 
 (define-public r-glorenz
   (package
@@ -20017,13 +20155,13 @@ ggplot2'.")
 (define-public r-ggpmx
   (package
     (name "r-ggpmx")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggPMX" version))
        (sha256
-        (base32 "1kmvf4j3wnyadwns3jj00nsn22n4w7hdgwhk3qciw7hbhl9ck2qs"))))
+        (base32 "1xfkak72vbbdl60ip5nhs4lwh9kc1a84v68lshwy2ml7cn7wsfn7"))))
     (properties `((upstream-name . "ggPMX")))
     (build-system r-build-system)
     (arguments
@@ -30323,13 +30461,13 @@ tips.  See Vinod (2019) \\doi{10.1080/03610918.2015.1122048}.")
 (define-public r-genepop
   (package
     (name "r-genepop")
-    (version "1.2.2")
+    (version "1.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genepop" version))
        (sha256
-        (base32 "13h3azszr42bzm5af8rkxw1lnd1x5c9lpawfcg3m5xgwvwzlzl3l"))))
+        (base32 "189bgc0h3mqf95pcc7p5ndsvmvpiqvpxqjrnlzrzmw8n92slq2g0"))))
     (properties `((upstream-name . "genepop")))
     (build-system r-build-system)
     (arguments
