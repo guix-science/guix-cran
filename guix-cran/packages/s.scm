@@ -2177,30 +2177,26 @@ This package has been developed by using the concept of Pavlidis and Alachiotis
 (define-public r-sweep
   (package
     (name "r-sweep")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sweep" version))
        (sha256
-        (base32 "1h9skkcpygj6y8hw3zawcdhvhjyqrr41fqn8jyf9wyvmhz6n84fb"))))
+        (base32 "0gawdbcwhgdlcmxkc4pvv3hycw9bl6aqk78yswvr69i0rjhgrba8"))))
     (properties `((upstream-name . "sweep")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-timetk
-                             r-tidyverse
-                             r-tidyr
-                             r-tidyquant
                              r-tibble
                              r-rlang
-                             r-lubridate
                              r-forecast
                              r-dplyr
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/business-science/sweep")
+    (home-page "https://business-science.github.io/sweep/")
     (synopsis "Tidy Tools for Forecasting")
     (description
      "Tidies up the forecasting modeling and prediction work flow, extends the broom
@@ -10868,6 +10864,31 @@ certain input and output so they can be called from the Strategy-constructor.")
 subjects for a network intervention in which you have a group of targets, a
 group of avoiders, and a group that is neither.")
     (license license:gpl3)))
+
+(define-public r-stratcols
+  (package
+    (name "r-stratcols")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stratcols" version))
+       (sha256
+        (base32 "0mdzvbns3kd3b64lwf8lb4pzgcca7gk9a4aaj0vfcwnp1f66f2w3"))))
+    (properties `((upstream-name . "stratcols")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stratigrapher))
+    (native-inputs (list r-knitr))
+    (home-page "https://mindthegap-erc.github.io/stratcols/")
+    (synopsis "Stratigraphic Columns and Order Metrics")
+    (description
+     "Quantify stratigraphic disorder using the metrics defined by Burgess (2016)
+<doi:10.2110/jsr.2016.10>.  Contains a range of utility tools to construct and
+manipulate stratigraphic columns.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-stratbr
   (package
@@ -26196,13 +26217,13 @@ designed to bring reproducible phonetic research into R.")
 (define-public r-speakeasyr
   (package
     (name "r-speakeasyr")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "speakeasyR" version))
        (sha256
-        (base32 "1vj2i3pb5z6gvrya73i8f85p06rq9d8sry13jrcrim5q480r7anq"))))
+        (base32 "042h93fzlx6nr1m3pzmnabvzayb068xcc1jfrnis52qlf2a1gqr9"))))
     (properties `((upstream-name . "speakeasyR")))
     (build-system r-build-system)
     (arguments
@@ -36475,6 +36496,34 @@ heterogeneous data, see Lund, Mogensen and Hansen (2022)
 implemented.  Note this package subsumes and replaces the SMMA package.")
     (license license:expat)))
 
+(define-public r-smmal
+  (package
+    (name "r-smmal")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SMMAL" version))
+       (sha256
+        (base32 "1gyzrys5v1y1h5jgq661rg53xzrlki3p8k663174vas6ym0wi57i"))))
+    (properties `((upstream-name . "SMMAL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost r-splines2 r-randomforest r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SMMAL")
+    (synopsis "Semi-Supervised Estimation of Average Treatment Effects")
+    (description
+     "This package provides a pipeline for estimating the average treatment effect via
+semi-supervised learning.  Outcome regression is fit with cross-fitting using
+various machine learning method or user customized function.  Doubly robust ATE
+estimation leverages both labeled and unlabeled data under a semi-supervised
+missing-data framework.  For more details see Hou et al. (2021)
+<doi:10.48550/arxiv.2110.12336>.  A detailed vignette is included.")
+    (license license:expat)))
+
 (define-public r-smma
   (package
     (name "r-smma")
@@ -42126,19 +42175,23 @@ purposes.")
 (define-public r-simulist
   (package
     (name "r-simulist")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simulist" version))
        (sha256
-        (base32 "0ckards17v5d0064bs4izg9mbkrzq6ylxcmcrjpaxrck10m78lrw"))))
+        (base32 "1kzazg95jff5rs6vi5096vccwfm5s8j6vlx65849d15fx33q3wla"))))
     (properties `((upstream-name . "simulist")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-randomnames r-epiparameter r-english
+    (propagated-inputs (list r-rlang
+                             r-randomnames
+                             r-grates
+                             r-epiparameter
+                             r-english
                              r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/epiverse-trace/simulist")
@@ -47186,13 +47239,13 @@ batch problems.  Details of the methods can be found in:
 (define-public r-siera
   (package
     (name "r-siera")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "siera" version))
        (sha256
-        (base32 "0z6kybmrg4pv46gny90fnc3vzvy7mpk8c4sndddh27s15ckkvwmy"))))
+        (base32 "1siddi156lplzns25pkfczj6d3gh2wyyyznd2khz5y93m6afza4d"))))
     (properties `((upstream-name . "siera")))
     (build-system r-build-system)
     (arguments
@@ -61939,6 +61992,52 @@ graphics.")
 aforementioned search results.")
     (license license:gpl2+)))
 
+(define-public r-searchanalyzer
+  (package
+    (name "r-searchanalyzer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "searchAnalyzeR" version))
+       (sha256
+        (base32 "1nydbnhhsahq50knjwr13gvmcm5dvz4fbyhc1k81xvfq41cy3z20"))))
+    (properties `((upstream-name . "searchAnalyzeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringdist
+                             r-r6
+                             r-openxlsx
+                             r-lubridate
+                             r-ggplot2
+                             r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/chaoliu-cl/searchAnalyzeR")
+    (synopsis
+     "Advanced Analytics and Testing Framework for Systematic Review Search Strategies")
+    (description
+     "This package provides comprehensive analytics, reporting, and testing
+capabilities for systematic review search strategies.  The package focuses on
+validating search performance, generating standardized PRISMA'-compliant
+reports, and ensuring reproducibility in evidence synthesis.  Features include
+precision-recall analysis, cross-database performance comparison, benchmark
+validation against gold standards, sensitivity analysis, temporal coverage
+assessment, automated report generation, and statistical comparison of search
+strategies.  Supports multiple export formats including CSV', Excel', RIS',
+@code{BibTeX}', and @code{EndNote}'.  Includes tools for duplicate detection,
+search strategy optimization, cross-validation frameworks, meta-analysis of
+benchmark results, power analysis for study design, and reproducibility package
+creation.  Optionally connects to @code{PubMed} for direct database searching
+and real-time strategy comparison using the E-utilities API'.  Enhanced with
+bootstrap comparison methods, @code{McNemar} test for strategy evaluation, and
+comprehensive visualization tools for performance assessment.  Methods based on
+Manning et al. (2008) for information retrieval metrics, Moher et al. (2009) for
+PRISMA guidelines, and Sampson et al. (2006) for systematic review search
+methodology.")
+    (license license:gpl3)))
+
 (define-public r-seamless
   (package
     (name "r-seamless")
@@ -64563,6 +64662,52 @@ independent Poisson distribution) of Unique Molecular Identifier (UMI) based
 single cell RNA sequencing (@code{scRNA-seq}) data, and explore cell clustering
 based on model departure as a novel data representation.")
     (license license:expat)))
+
+(define-public r-scpoem
+  (package
+    (name "r-scpoem")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scPOEM" version))
+       (sha256
+        (base32 "1q6biw89asz6j93f34zs5vp63m1dcqgd4nb3ajfsnpfapi51hjrg"))))
+    (properties `((upstream-name . "scPOEM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-vgam
+                             r-tictoc
+                             r-stringr
+                             r-sctenifoldnet
+                             r-reticulate
+                             r-monocle
+                             r-matrix
+                             r-magrittr
+                             r-glmnet
+                             r-foreach
+                             r-doparallel
+                             r-cicero
+                             r-biocgenerics
+                             r-biobase))
+    (home-page "https://cran.r-project.org/package=scPOEM")
+    (synopsis "Single-Cell Meta-Path Based Omic Embedding")
+    (description
+     "Provide a workflow to jointly embed chromatin accessibility peaks and expressed
+genes into a shared low-dimensional space using paired single-cell ATAC-seq
+(@code{scATAC-seq}) and single-cell RNA-seq (@code{scRNA-seq}) data.  It
+integrates regulatory relationships among peak-peak interactions (via Cicero'),
+peak-gene interactions (via Lasso, random forest, and XGBoost), and gene-gene
+interactions (via principal component regression).  With the input of paired
+@code{scATAC-seq} and @code{scRNA-seq} data matrices, it assigns a
+low-dimensional feature vector to each gene and peak.  Additionally, it supports
+the reconstruction of gene-gene network with low-dimensional projections (via
+epsilon-NN) and then the comparison of the networks of two conditions through
+manifold alignment implemented in @code{scTenifoldNet}'.")
+    (license license:gpl2+)))
 
 (define-public r-scplot
   (package

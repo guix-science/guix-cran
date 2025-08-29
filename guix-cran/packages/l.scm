@@ -1051,6 +1051,52 @@ traditional time-to-event genome-wide association studies, where family history
 was not considered.")
     (license license:gpl3)))
 
+(define-public r-ltfgrs
+  (package
+    (name "r-ltfgrs")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LTFGRS" version))
+       (sha256
+        (base32 "0vm0qmzsxiyarn26s77p1cjavwa33sm4fhq416qsmdwzkbsn3nka"))))
+    (properties `((upstream-name . "LTFGRS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-tmvtnorm
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rcpp
+                             r-purrr
+                             r-lubridate
+                             r-igraph
+                             r-future-apply
+                             r-future
+                             r-dplyr
+                             r-batchmeans))
+    (native-inputs (list r-knitr))
+    (home-page "https://emilmip.github.io/LTFGRS/")
+    (synopsis
+     "Implementation of Several Phenotype-Based Family Genetic Risk Scores")
+    (description
+     "Implementation of several phenotype-based family genetic risk scores with
+unified input data and data preparation functions to help facilitate the
+required data preparation and management.  The implemented family genetic risk
+scores are the extended liability threshold model conditional on family history
+from Pedersen (2022) <doi:10.1016/j.ajhg.2022.01.009> and Pedersen (2023)
+<https://www.nature.com/articles/s41467-023-41210-z>, Pearson-Aitken Family
+Genetic Risk Scores from Krebs (2024) <doi:10.1016/j.ajhg.2024.09.009>, and
+family genetic risk score from Kendler (2021)
+<doi:10.1001/jamapsychiatry.2021.0336>.")
+    (license license:gpl3+)))
+
 (define-public r-ltertools
   (package
     (name "r-ltertools")
@@ -14992,13 +15038,13 @@ browser using @code{WebGl}'.")
 (define-public r-leafem
   (package
     (name "r-leafem")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leafem" version))
        (sha256
-        (base32 "1if5x8s75a0bbkfakf0iav2j8ybdswiv4viarnfzlh7x2lql5pki"))))
+        (base32 "0ijjf1zjjl3p5a19hzm8jn0j2a01n8igll752ysrax4q1i72bavc"))))
     (properties `((upstream-name . "leafem")))
     (build-system r-build-system)
     (arguments

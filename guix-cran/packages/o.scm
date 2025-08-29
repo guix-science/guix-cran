@@ -669,13 +669,13 @@ different file formats.  For more information, visit
 (define-public r-overshiny
   (package
     (name "r-overshiny")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "overshiny" version))
        (sha256
-        (base32 "06w17n6wy4lag1kll1iyb1pj5cibdpsc2l1bx4slikpl1ibj85gs"))))
+        (base32 "08qafwih6x90dj7r7113g8c96c91p4a8i6mgl8zagz8g8k4fhqbd"))))
     (properties `((upstream-name . "overshiny")))
     (build-system r-build-system)
     (arguments
@@ -686,7 +686,8 @@ different file formats.  For more information, visit
                              r-shinyjqui
                              r-shiny
                              r-htmltools
-                             r-ggplot2))
+                             r-ggplot2
+                             r-cowplot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/nicholasdavies/overshiny")
     (synopsis "Interactive Overlays on 'shiny' Plots")
@@ -7901,13 +7902,13 @@ and air mass trajectories.")
 (define-public r-openair
   (package
     (name "r-openair")
-    (version "2.18-2")
+    (version "2.19.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openair" version))
        (sha256
-        (base32 "1pw4bdqkd515n7fdcjavjmanhpaywxamzywgiaz4nk5bqq5mh84b"))))
+        (base32 "0cj3bkynq43q5a8q99p0x938j9fv9vslyffkbgdivhm1wgz0jgpw"))))
     (properties `((upstream-name . "openair")))
     (build-system r-build-system)
     (arguments
@@ -7929,7 +7930,7 @@ and air mass trajectories.")
                              r-dplyr
                              r-cluster
                              r-cli))
-    (home-page "https://davidcarslaw.github.io/openair/")
+    (home-page "https://openair-project.github.io/openair/")
     (synopsis "Tools for the Analysis of Air Pollution Data")
     (description
      "This package provides tools to analyse, interpret and understand air pollution
@@ -7937,7 +7938,7 @@ data.  Data are typically regular time series and air quality measurement,
 meteorological data and dispersion model output can be analysed.  The package is
 described in Carslaw and Ropkins (2012, <doi:10.1016/j.envsoft.2011.09.008>) and
 subsequent papers.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-opdoe
   (package
@@ -12473,13 +12474,13 @@ the data sets with variables \"harmonized\" across different years.")
 (define-public r-odbc
   (package
     (name "r-odbc")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odbc" version))
        (sha256
-        (base32 "0l9cjp0vdzdkl18i8hbyba84lgws18n1nsqd11ww35qnqkm9p2ha"))))
+        (base32 "1vlmg12qgwknv5csm2iflixr9511hascnbjysha64n8q1x1nivcg"))))
     (properties `((upstream-name . "odbc")))
     (build-system r-build-system)
     (arguments

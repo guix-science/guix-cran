@@ -2511,6 +2511,52 @@ rows, cols, navbars, etc.  Intended to be used with the html5 package.  Learn
 more at <https://getbootstrap.com/>.")
     (license license:gpl2+)))
 
+(define-public r-bstfa
+  (package
+    (name "r-bstfa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BSTFA" version))
+       (sha256
+        (base32 "1zh8d40vz0kw6m9ijml59jdyv6rhiqnlpbxvcgzx1rjd9wfjm3pr"))))
+    (properties `((upstream-name . "BSTFA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf
+                             r-scatterplot3d
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-npreg
+                             r-mgcv
+                             r-mcmcpack
+                             r-matrixcalc
+                             r-matrix
+                             r-mass
+                             r-lubridate
+                             r-ggpubr
+                             r-ggplot2
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BSTFA")
+    (synopsis "Bayesian Spatio-Temporal Factor Analysis Model")
+    (description
+     "This package implements Bayesian spatio-temporal factor analysis models for
+multivariate data observed across space and time.  The package provides tools
+for model fitting via Markov chain Monte Carlo (MCMC), spatial and temporal
+interpolation, and visualization of latent factors and loadings to support
+inference and exploration of underlying spatio-temporal patterns.  Designed for
+use in environmental, ecological, or public health applications, with support
+for posterior prediction and uncertainty quantification.  Includes functions
+such as @code{BSTFA()} for model fitting and @code{plot_factor()} to visualize
+the latent processes.  Functions are based on and extended from methods
+described in Berrett, et al. (2020) <doi:10.1002/env.2609>.")
+    (license license:gpl2+)))
+
 (define-public r-bst
   (package
     (name "r-bst")
@@ -7772,13 +7818,13 @@ and Bartlett (2021) <doi:10.1214/20-STS793>.")
 (define-public r-bootgof
   (package
     (name "r-bootgof")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootGOF" version))
        (sha256
-        (base32 "11nn4lc9wdx1z35mfpc3zkk1xr0pvvjyvjzpjlq3z4gm0hmniifz"))))
+        (base32 "03y38ji706ghhzgl30529zaqjczcvbwvzrbqpfarsm8haqxwwr0p"))))
     (properties `((upstream-name . "bootGOF")))
     (build-system r-build-system)
     (arguments
@@ -26989,22 +27035,23 @@ mediation effects are reported as analytic results.")
 (define-public r-bayesianmcpmod
   (package
     (name "r-bayesianmcpmod")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianMCPMod" version))
        (sha256
-        (base32 "07dzirqnjq7s97ww3lyxm47gw7bf351yvaiv8vr4jlzbp089w8c8"))))
+        (base32 "0r5il36kdqd9fgh19alwflymr1ga51rbad39m5bnxl2ycn99jpb3"))))
     (properties `((upstream-name . "BayesianMCPMod")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rbest
+    (propagated-inputs (list r-tidyr
+                             r-rbest
                              r-nloptr
                              r-ggplot2
-                             r-future-apply
+                             r-dplyr
                              r-dosefinding
                              r-checkmate))
     (native-inputs (list r-knitr))
@@ -32565,13 +32612,13 @@ Confounding (BAC) algorithm.")
 (define-public r-bacprior
   (package
     (name "r-bacprior")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BACprior" version))
        (sha256
-        (base32 "1z5wxkik8ziqsgiq6arxsp772scz9jfsa1kz9wz07gpfvv1pl53z"))))
+        (base32 "05rk4mz73ygik5wfv13jigqgd3acrx9s3s765ydvn7xl2wvzrj66"))))
     (properties `((upstream-name . "BACprior")))
     (build-system r-build-system)
     (arguments

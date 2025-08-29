@@ -5545,13 +5545,13 @@ numbers from different sources.")
 (define-public r-rstrava
   (package
     (name "r-rstrava")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rStrava" version))
        (sha256
-        (base32 "0fclv44qjhca61xlwykvp82w4w2c0q5gcdryvyawgbhvmdryqnyy"))))
+        (base32 "1yr9s06m7ixj6gkrnqnxf3hg3nzf84yghd7v7lbzyy49v2rpmk00"))))
     (properties `((upstream-name . "rStrava")))
     (build-system r-build-system)
     (arguments
@@ -11293,6 +11293,32 @@ also provides methods modeling a \"boosted\" tree or forest model and a tree mod
 for zero-inflated data as well as a number of functions and methods available
 for use with these object types.")
     (license license:cc0)))
+
+(define-public r-rpmodel
+  (package
+    (name "r-rpmodel")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rpmodel" version))
+       (sha256
+        (base32 "1vpgc38waijd670pydankq0vqz53zi3jxj8621xxg3wiwga91sl3"))))
+    (properties `((upstream-name . "rpmodel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/geco-bern/rpmodel")
+    (synopsis "P-Model")
+    (description
+     "This package implements the P-model (Stocker et al., 2020
+<doi:10.5194/gmd-13-1545-2020>), predicting acclimated parameters of the enzyme
+kinetics of C3 photosynthesis, assimilation, and dark respiration rates as a
+function of the environment (temperature, CO2, vapour pressure deficit, light,
+atmospheric pressure).")
+    (license license:gpl3)))
 
 (define-public r-rpmg
   (package
@@ -37164,13 +37190,13 @@ models are supported for the outcome model.")
 (define-public r-regmed
   (package
     (name "r-regmed")
-    (version "2.1.0")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regmed" version))
        (sha256
-        (base32 "1m74865y2pahk50a149nv8aqkiilg23hbyijwmdcpqgi94ys40h3"))))
+        (base32 "0z5r9ah9kcj9qm5qyj60jin6ys8dbpzn4zmmmrqllj2ikn3bxysv"))))
     (properties `((upstream-name . "regmed")))
     (build-system r-build-system)
     (arguments
@@ -48199,6 +48225,46 @@ fingerprints, calculate molecular descriptors and so on.  In addition, the CDK
 API allows the user to view structures in 2D.")
     (license license:lgpl2.0+)))
 
+(define-public r-rcdf
+  (package
+    (name "r-rcdf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcdf" version))
+       (sha256
+        (base32 "0jj6pns24d9swmqj1ij9gavxzw98m67f54j40k1zdjncmfy7ghbr"))))
+    (properties `((upstream-name . "rcdf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-uuid
+                             r-stringr
+                             r-rsqlite
+                             r-openxlsx
+                             r-openssl
+                             r-jsonlite
+                             r-haven
+                             r-glue
+                             r-fs
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://yng-me.github.io/rcdf/")
+    (synopsis "Comprehensive Toolkit for Working with Encrypted Parquet Files")
+    (description
+     "Utilities for reading, writing, and managing RCDF files, including encryption
+and decryption support.  It offers a flexible interface for handling data stored
+in encrypted Parquet format, along with metadata extraction, key management, and
+secure operations using Advanced Encryption Standard (AES) and
+Rivest-Shamir-Adleman (RSA) encryption.")
+    (license license:expat)))
+
 (define-public r-rcdea
   (package
     (name "r-rcdea")
@@ -48386,6 +48452,48 @@ binary response models and some related functionality for sequential processing
 of hyperplane arrangements.  See J. Gu and R. Koenker (2020)
 <DOI:10.1080/01621459.2020.1802284>.")
     (license license:gpl2+)))
+
+(define-public r-rcbayes
+  (package
+    (name "r-rcbayes")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcbayes" version))
+       (sha256
+        (base32 "01fxscvpxwg5wly8xf09wclcn9v4l25avawfbgr0q0wxvkjz7i14"))))
+    (properties `((upstream-name . "rcbayes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidybayes
+                             r-tibble
+                             r-stanheaders
+                             r-shinythemes
+                             r-shiny
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rdpack
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-magrittr
+                             r-dplyr
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rcbayes")
+    (synopsis
+     "Estimate Rogers-Castro Migration Age Schedules with Bayesian Models")
+    (description
+     "This package provides a collection of functions to estimate Rogers-Castro
+migration age schedules using Stan'.  This model which describes the fundamental
+relationship between migration and age in the form of a flexible
+multi-exponential migration model was most notably proposed in Rogers and Castro
+(1978) <doi:10.1068/a100475>.")
+    (license license:expat)))
 
 (define-public r-rcbalance
   (package

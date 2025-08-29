@@ -11086,19 +11086,19 @@ to calculate equilibrium stability.")
 (define-public r-fluxtools
   (package
     (name "r-fluxtools")
-    (version "0.6.0")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxtools" version))
        (sha256
-        (base32 "0cprn51fd868c6jsyvml4id8s969cgdqc6yhhy6035x87pnqinlz"))))
+        (base32 "0apvq3nbjsx9g7b9lm8d0dp1agjyg69byblszxpjgchlhq42i1b7"))))
     (properties `((upstream-name . "fluxtools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-shiny r-plotly r-dplyr))
+    (propagated-inputs (list r-tibble r-shiny r-readr r-plotly r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kesondrakey/fluxtools")
     (synopsis "'shiny' App for Reproducible QA/QC of Eddy Covariance Data")
@@ -24830,13 +24830,13 @@ FAO Irrigation and drainage paper 56\".")
 (define-public r-fanyi
   (package
     (name "r-fanyi")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fanyi" version))
        (sha256
-        (base32 "1wl5sgnk154ivmnwdmp7bqm3q30rplc1c2gqfj3w3g3wlnzalvaa"))))
+        (base32 "15f6ffl0m11clsy2rkvy2psljnwgsyif1ghmny7ki9wnp2jkin57"))))
     (properties `((upstream-name . "fanyi")))
     (build-system r-build-system)
     (arguments

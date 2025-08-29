@@ -2715,13 +2715,13 @@ wine, beer, champagne, and tobacco products as individual data sets.")
 (define-public r-ttbary
   (package
     (name "r-ttbary")
-    (version "0.3-1")
+    (version "0.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ttbary" version))
        (sha256
-        (base32 "0dp9jjl33p0r67nk7qxwjkniy7pxp8w7xbymm61hl29hqqbpmszh"))))
+        (base32 "0vsa86wxb28spv8gcrfkvyzx8pv09b14m2c3krw1fifn0kikwm4y"))))
     (properties `((upstream-name . "ttbary")))
     (build-system r-build-system)
     (arguments
@@ -22205,6 +22205,44 @@ Subtype-Free Average Causal Effect For Heterogeneous Disease Etiology\" (soon on
 @code{arXiv}).")
     (license license:gpl2+)))
 
+(define-public r-theseusplot
+  (package
+    (name "r-theseusplot")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TheseusPlot" version))
+       (sha256
+        (base32 "1smms0cgjhn27hxbmqygh9hwbinj1dp7z1qlrirxic635k497ilq"))))
+    (properties `((upstream-name . "TheseusPlot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-waterfalls
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-r6
+                             r-memoise
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (home-page "https://github.com/hoxo-m/TheseusPlot")
+    (synopsis "Visualizing Decomposition of Differences in Rate Metrics")
+    (description
+     "This package provides tools for decomposing differences in rate metrics between
+two groups into contributions from individual subgroups and visualizing them as
+a \"Theseus Plot\".  Inspired by the story of the Ship of Theseus, the method
+replaces subgroup data from one group with that of another step by step,
+recalculating the overall metric at each stage to quantify subgroup
+contributions.  A Theseus Plot combines the stepwise progression of a waterfall
+plot with the comparative bars of a bar chart, offering an intuitive way to
+understand subgroup-level effects.")
+    (license license:expat)))
+
 (define-public r-thermocouple
   (package
     (name "r-thermocouple")
@@ -26053,6 +26091,32 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
      "Table, Listings, and Graphs (TLG) library for common outputs used in clinical
 trials.")
     (license license:asl2.0)))
+
+(define-public r-terminalgraphics
+  (package
+    (name "r-terminalgraphics")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "terminalgraphics" version))
+       (sha256
+        (base32 "1vflmfn6x12crj7yy9nhgav1rnf1p80h7yqz2yca8smp0nnkp053"))))
+    (properties `((upstream-name . "terminalgraphics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-ragg r-base64enc))
+    (home-page "https://codeberg.org/djvanderlaan/terminalgraphics")
+    (synopsis "Graphical Output in Terminals")
+    (description
+     "Defines a graphics device and functions for graphical output in terminal
+emulators that support graphical output.  Currently terminals that support the
+Terminal Graphics Protocol
+(<https://sw.kovidgoyal.net/kitty/graphics-protocol/>) and terminal supporting
+Sixel (<https://en.wikipedia.org/wiki/Sixel>) are supported.")
+    (license license:gpl3)))
 
 (define-public r-terminaldigits
   (package

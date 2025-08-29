@@ -153,21 +153,21 @@ at Arick Grootveld, Eva R. Kozak, Carmen Franco-Gordo (2023)
 (define-public r-zonohedra
   (package
     (name "r-zonohedra")
-    (version "0.4-0")
+    (version "0.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zonohedra" version))
        (sha256
-        (base32 "0b84ba66v17bindn43zr0s5a9sfb53wja45w2rvycvvs865f8204"))))
+        (base32 "1jdlh4xi5svdbjfcb7ddrhmisma2mr8j2b8j8wv4d9k1nlrqsf9g"))))
     (properties `((upstream-name . "zonohedra")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-logger))
+    (propagated-inputs (list r-rgl r-logger))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=zonohedra")
+    (home-page "https://github.com/glenndavis52/zonohedra")
     (synopsis "Compute and Plot Zonohedra from Vector Generators")
     (description
      "Computes a zonohedron from real vector generators.  The package also computes

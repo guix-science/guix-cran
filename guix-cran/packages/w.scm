@@ -3583,13 +3583,13 @@ productos de vida') for supporting this research.")
 (define-public r-wintime
   (package
     (name "r-wintime")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wintime" version))
        (sha256
-        (base32 "1ijwnyn9n48a9gzcpc4d3i5bvcgnn0xag5vfm4y8pb5wnizmk81k"))))
+        (base32 "1xiqy3ynk2ksnm5nynjn03xzqlf8z797i6j7bmdfv5jx9n5rn8lq"))))
     (properties `((upstream-name . "wintime")))
     (build-system r-build-system)
     (arguments

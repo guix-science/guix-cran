@@ -4377,6 +4377,34 @@ supported by the DOE-EERE @code{SunShot} award DE-EE-0007140. [1] W. Koeppen,
 I. Auer, (2016) <doi:10.1127/metz/2016/0816>.")
     (license license:bsd-2)))
 
+(define-public r-kfre
+  (package
+    (name "r-kfre")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kfre" version))
+       (sha256
+        (base32 "0xwylnm4fwc73zqnxcq3fn2clffzcz5mmycbxgzi2fjg6z0ab97q"))))
+    (properties `((upstream-name . "kfre")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lshpaner/kfre_r")
+    (synopsis "Kidney Failure Risk Equation (KFRE) Tools")
+    (description
+     "This package implements the Kidney Failure Risk Equation (KFRE; Tangri and
+colleagues (2011) <doi:10.1001/jama.2011.451>; Tangri and colleagues (2016)
+<doi:10.1001/jama.2015.18202>) to compute 2- and 5-year kidney failure risk
+using 4-, 6-, and 8-variable models.  Includes helpers to append risk columns to
+data frames, classify chronic kidney disease (CKD) stages and end-stage renal
+disease (ESRD) outcomes, and evaluate and plot model performance.")
+    (license license:expat)))
+
 (define-public r-kfpls
   (package
     (name "r-kfpls")

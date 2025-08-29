@@ -2609,6 +2609,42 @@ Functions are available to retrieve data in different formats, perform searches,
 and access detailed annotations.")
     (license license:gpl2+)))
 
+(define-public r-pubchem-bio
+  (package
+    (name "r-pubchem-bio")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pubchem.bio" version))
+       (sha256
+        (base32 "0q8d1xq706zr7h49jjnbphlr747pmnblxjv4jnzfw16y5np8z48q"))))
+    (properties `((upstream-name . "pubchem.bio")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-rcdk
+                             r-r-utils
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pubchem.bio")
+    (synopsis "Biologically Informed Metabolomic Databases from 'PubChem'")
+    (description
+     "All @code{PubChem} compounds are downloaded to a local computer, but for each
+compound, only partial records are used.  The data are organized into small
+files referenced by @code{PubChem} CID. This package also contains functions to
+parse the biologically relevant compounds from all @code{PubChem} compounds,
+using biological database sources, pathway presence, and taxonomic
+relationships.  Taxonomy is used to generate a lowest common ancestor taxonomy
+ID (NCBI) for each biological metabolite, which then enables creation of
+taxonomically specific metabolome databases for any taxon.")
+    (license license:gpl3)))
+
 (define-public r-ptycho
   (package
     (name "r-ptycho")
@@ -6297,13 +6333,13 @@ distributions.")
 (define-public r-protoshiny
   (package
     (name "r-protoshiny")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "protoshiny" version))
        (sha256
-        (base32 "0ms8sy8p5cd8vg82m7pny6jcg5mis1l7548m2g392gjcf3hf1sf7"))))
+        (base32 "03jnwj65cwyhq26g4a0kaqmbf2vr3c4w15nzwc8h55h7kyw6i3k8"))))
     (properties `((upstream-name . "protoshiny")))
     (build-system r-build-system)
     (arguments
@@ -24033,13 +24069,13 @@ satellite-based imagery.")
 (define-public r-plgraphics
   (package
     (name "r-plgraphics")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plgraphics" version))
        (sha256
-        (base32 "04i79hrsqqygiq64n7bqzfvrhl1c3k2j3y58zzbqq79v9vshjy7p"))))
+        (base32 "01rv5fm017h6qghcdrj0921ijls18ahdc8gp5hwh8fs8n5i35fyq"))))
     (properties `((upstream-name . "plgraphics")))
     (build-system r-build-system)
     (arguments
@@ -24047,7 +24083,7 @@ satellite-based imagery.")
       #:tests? #f))
     (propagated-inputs (list r-survival r-mass r-lme4 r-chron))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=plgraphics")
+    (home-page "https://regdevelop.r-forge.r-project.org/")
     (synopsis "User Oriented Plotting Functions")
     (description
      "Plots with high flexibility and easy handling, including informative regression
@@ -32098,13 +32134,13 @@ functional independent component analysis for EEG artifact removalâ,
 (define-public r-pez
   (package
     (name "r-pez")
-    (version "1.2-4")
+    (version "1.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pez" version))
        (sha256
-        (base32 "1z3lpbijivr32r9y0lh2yxsww7sz9kqmsvnril1gzn09d498xz3b"))))
+        (base32 "0m78y5b9piycaf5k0vwnba6fi5jym95wy0i2zc95y760swikn2q5"))))
     (properties `((upstream-name . "pez")))
     (build-system r-build-system)
     (arguments
@@ -35322,6 +35358,30 @@ source comes from Martin et.al. (2022) <doi:10.1542/hpeds.2021-005998>.")
 Scale in Children With Traumatic Brain Injury: A Prospective Cohort Study\" by
 Bennett, Dixon, et al (2016) <doi:10.1097/PCC.0000000000000934>.")
     (license license:gpl2)))
+
+(define-public r-pecv
+  (package
+    (name "r-pecv")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pECV" version))
+       (sha256
+        (base32 "0qwalm8zqpdf6yc1warv2wi79nhy383ha5jjnf60i0k964snivnv"))))
+    (properties `((upstream-name . "pECV")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-irlba))
+    (home-page "https://github.com/wangATsu/ECV")
+    (synopsis "Entrywise Splitting Cross-Validation for Factor Models")
+    (description
+     "This package implements entrywise splitting cross-validation (ECV) and its
+penalized variant (@code{pECV}) for selecting the number of factors in
+generalized factor models.")
+    (license license:gpl3)))
 
 (define-public r-pecora
   (package

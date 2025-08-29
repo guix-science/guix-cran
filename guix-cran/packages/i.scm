@@ -7701,37 +7701,6 @@ and paired samples and proportion difference.  Plot the confidence intervals.
 Generate documents explaining the statistical result step by step.")
     (license license:gpl3)))
 
-(define-public r-interpret
-  (package
-    (name "r-interpret")
-    (version "0.1.34")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "interpret" version))
-       (sha256
-        (base32 "0fclf4nfa27n90d08f92svalyyw1vp452lkz9qydzkw7w98m645p"))))
-    (properties `((upstream-name . "interpret")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/interpretml/interpret")
-    (synopsis "Fit Interpretable Machine Learning Models")
-    (description
-     "Package for training interpretable machine learning models.  Historically, the
-most interpretable machine learning models were not very accurate, and the most
-accurate models were not very interpretable.  Microsoft Research has developed
-an algorithm called the Explainable Boosting Machine (EBM) which has both high
-accuracy and interpretable characteristics.  EBM uses machine learning
-techniques like bagging and boosting to breathe new life into traditional GAMs
-(Generalized Additive Models).  This makes them as accurate as random forests
-and gradient boosted trees, and also enhances their intelligibility and
-editability.  Details on the EBM algorithm can be found in the paper by Rich
-Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad
-(2015, <doi:10.1145/2783258.2788613>).")
-    (license license:expat)))
-
 (define-public r-interpolators
   (package
     (name "r-interpolators")
@@ -18070,13 +18039,13 @@ required by these approaches.")
 (define-public r-icsoutlier
   (package
     (name "r-icsoutlier")
-    (version "0.4-0")
+    (version "0.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICSOutlier" version))
        (sha256
-        (base32 "07ngszaq2i0l90fjnqsizw8y2xlb3b0gdsavwcm1l8fh2z1cf1b6"))))
+        (base32 "1ifaifpbks2ylsv09bfkvz4rbiqbfjwc43ans4wcjg5q9myfcgrb"))))
     (properties `((upstream-name . "ICSOutlier")))
     (build-system r-build-system)
     (arguments
@@ -18365,13 +18334,13 @@ explicit smooth estimate of the baseline log-hazard with P-splines.")
 (define-public r-icosa
   (package
     (name "r-icosa")
-    (version "0.11.1")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icosa" version))
        (sha256
-        (base32 "07jg847p3x0i8rim10bvj8v6jkms4m547rwy9h8s5n3rc6dxnizp"))))
+        (base32 "0sm0cqliqyzncl1fg2jiyanc5f9w5m2b862wmnw6s89jbpwd9i0p"))))
     (properties `((upstream-name . "icosa")))
     (build-system r-build-system)
     (arguments

@@ -5766,13 +5766,13 @@ and visualizing health data.  Federica Gazzelloni (2024)
 (define-public r-hmsc
   (package
     (name "r-hmsc")
-    (version "3.0-13")
+    (version "3.3-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Hmsc" version))
        (sha256
-        (base32 "13gqwjniwxc5lgsj044qjq6ic0ibwvj3mviw4hq31s89m834gvyb"))))
+        (base32 "16d624lxlg449jxxcn4zzbd2wmm4jzvwin1d3hvp7r09r1fybzvl"))))
     (properties `((upstream-name . "Hmsc")))
     (build-system r-build-system)
     (arguments
@@ -15492,6 +15492,39 @@ plotting functions are provided for unsupervised and supervised machine learning
 as well as longitudinal mixed-effects modeling of tumor growth response
 patterns.")
     (license license:gpl2+)))
+
+(define-public r-ham
+  (package
+    (name "r-ham")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ham" version))
+       (sha256
+        (base32 "0v2m0h7d56b69a6a71afzrx6argxwh1pp3pmdiid5hai8k6ip616"))))
+    (properties `((upstream-name . "ham")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/szuniga07/ham")
+    (synopsis "Healthcare Analysis Methods")
+    (description
+     "Conducts analyses for healthcare program evaluations or intervention studies.
+Calculates regression analyses for standard ordinary least squares (OLS or
+linear) or logistic models.  Performs regression models used for causal modeling
+such as differences-in-differences (DID) and interrupted time series (ITS)
+models.  Provides limited interpretations of model results and a ranking of
+variable importance in models.  Performs propensity score models, top-coding of
+model outcome variables, and can return new data with the newly formed
+variables.  Also performs Cronbach's alpha for various scale items (e.g., survey
+questions).  See Github URL for examples in the README file.  For more details
+on the statistical methods, see Allen & Yen (1979, ISBN:0-8185-0283-5), Angrist
+& Pischke (2009, ISBN:9780691120355), Harrell (2016, ISBN:978-3-319-19424-0),
+Kline (1999, ISBN:9780415211581), and Linden (2015)
+<doi:10.1177/1536867X1501500208>.")
+    (license license:expat)))
 
 (define-public r-halk
   (package

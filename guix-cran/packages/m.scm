@@ -17114,13 +17114,13 @@ that text derived from a regression model.")
 (define-public r-modeltime-resample
   (package
     (name "r-modeltime-resample")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeltime.resample" version))
        (sha256
-        (base32 "0prc4q5s6iwhknxlbaq43cyhmzwnmi52akpaf1zizw4c6flgny3v"))))
+        (base32 "0khb5wi56swjzr2bz96csfaamspwcd8yfrnbiyw9w3497ibfy0ch"))))
     (properties `((upstream-name . "modeltime.resample")))
     (build-system r-build-system)
     (arguments
@@ -17144,15 +17144,12 @@ that text derived from a regression model.")
                              r-modeltime
                              r-magrittr
                              r-hardhat
-                             r-glue
                              r-ggplot2
-                             r-forcats
                              r-dplyr
                              r-dials
-                             r-crayon
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/business-science/modeltime.resample")
+    (home-page "https://business-science.github.io/modeltime.resample/")
     (synopsis "Resampling Tools for Time Series Forecasting")
     (description
      "This package provides a modeltime extension that implements forecast resampling
@@ -17163,13 +17160,13 @@ series, panel data, and cross-sectional time series analysis.")
 (define-public r-modeltime-ensemble
   (package
     (name "r-modeltime-ensemble")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeltime.ensemble" version))
        (sha256
-        (base32 "1262p4lp4vr3d6s5x5cwrbib5vfr9apl4fvyhxzpvvc1vck5a94p"))))
+        (base32 "18wq9m5qzq68fvsbcg9dw8r68zf60x1jgw3fsyqifgcb65ahf0qd"))))
     (properties `((upstream-name . "modeltime.ensemble")))
     (build-system r-build-system)
     (arguments
@@ -17209,13 +17206,13 @@ stability.")
 (define-public r-modeltime
   (package
     (name "r-modeltime")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeltime" version))
        (sha256
-        (base32 "0wrr5phca5iaamhiv3hp5v7pbc57zhz9fk3bxk1wmgh54cgfddbi"))))
+        (base32 "0nas2k9n3c9c7yfzaziiif92214zp69zhqbrkdvzx9lvxirn254h"))))
     (properties `((upstream-name . "modeltime")))
     (build-system r-build-system)
     (arguments
@@ -38680,13 +38677,13 @@ Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>."
 (define-public r-medfateland
   (package
     (name "r-medfateland")
-    (version "2.6.0")
+    (version "2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medfateland" version))
        (sha256
-        (base32 "02s1rsx77pyrw9yrz6agpixyqvsgwkgsvhhzax7apv4w20i8732m"))))
+        (base32 "1ghry3k1ha6bk18gfasw24xngy5l26bnd9wprv7z9d0fns1ai5qq"))))
     (properties `((upstream-name . "medfateland")))
     (build-system r-build-system)
     (arguments
@@ -48064,13 +48061,13 @@ in experimental or observational settings under unconfoundedness.")
 (define-public r-mapview
   (package
     (name "r-mapview")
-    (version "2.11.2")
+    (version "2.11.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapview" version))
        (sha256
-        (base32 "1c18fc8r5anc9wn541dzhchys2pmxc7pp797bq065brs5drpyka1"))))
+        (base32 "17fafwr148d0lr34w6297qs74agdp9snb6niwh6v5klq9yzsrdcc"))))
     (properties `((upstream-name . "mapview")))
     (build-system r-build-system)
     (arguments

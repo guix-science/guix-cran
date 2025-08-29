@@ -20261,13 +20261,13 @@ Computational and Graphical Statistics (2018)
 (define-public r-detourr
   (package
     (name "r-detourr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "detourr" version))
        (sha256
-        (base32 "1kic6a5s8wm59za9zr8n2z33kfvahgfaa0izy2lp4j75am0jxlra"))))
+        (base32 "02hs7qdcmqa9hyprk8pjidbh80ymvsb0k2n8cwk0vxs7iplicfds"))))
     (properties `((upstream-name . "detourr")))
     (build-system r-build-system)
     (arguments
@@ -20279,7 +20279,8 @@ Computational and Graphical Statistics (2018)
                              r-tibble
                              r-rlang
                              r-purrr
-                             r-htmlwidgets))
+                             r-htmlwidgets
+                             r-cli))
     (home-page "https://casperhart.github.io/detourr/")
     (synopsis "Portable and Performant Tour Animations")
     (description
@@ -20578,6 +20579,31 @@ Biodiversity Monitoring Institute and the Boreal Avian Modelling Project.")
      "Create a details HTML tag around R objects to place in a Markdown, Rmarkdown and
 roxygen2 documentation.")
     (license license:expat)))
+
+(define-public r-det
+  (package
+    (name "r-det")
+    (version "3.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DET" version))
+       (sha256
+        (base32 "1j3hdgcp8zcx9y3h2my2a9r77y0wi6yvhls0brck17mljpvqcjva"))))
+    (properties `((upstream-name . "DET")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-proc r-doparallel))
+    (home-page "https://github.com/jmcurran/DET")
+    (synopsis "Representation of DET Curve with Confidence Intervals")
+    (description
+     "Builds both ROC (Receiver Operating Characteristic) and DET (Detection Error
+Tradeoff) curves from a set of predictors, which are the results of a binary
+classification system.  The curves give a general vision of the performance of
+the classifier, and are useful for comparing performance of different systems.")
+    (license license:gpl2)))
 
 (define-public r-desplot
   (package
@@ -31042,6 +31068,32 @@ the server of the application.  The main ones are @code{comparedf()} from
 arsenal and @code{skim()} from skimr'.  For more details see the description of
 @code{comparedf()} from the arsenal package and that of @code{skim()} from the
 skimr package.")
+    (license license:expat)))
+
+(define-public r-datacommons
+  (package
+    (name "r-datacommons")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datacommons" version))
+       (sha256
+        (base32 "1yqs63jx9jpi5dhs3j4g9nvvj2z3r6zlxxsljr1p6hy3f4991sn3"))))
+    (properties `((upstream-name . "datacommons")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tidy-intelligence/r-datacommons")
+    (synopsis "Client for the 'Google Data Commons API V2'")
+    (description
+     "Access the Google Data Commons API V2
+<https://docs.datacommons.org/api/rest/v2/>.  Data Commons provides programmatic
+access to statistical and demographic data from dozens of sources organized in a
+knowledge graph.")
     (license license:expat)))
 
 (define-public r-datacleanr

@@ -16991,13 +16991,13 @@ research.")
 (define-public r-constructive
   (package
     (name "r-constructive")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "constructive" version))
        (sha256
-        (base32 "126k4dpcmsqn3wdvjni8w8d30srfl33a8mnvavplz8gfdxkh3zq2"))))
+        (base32 "0w2vqdhaskr5nf0kjv4dak6gas659a7gn85ksnjaq20f4572z7da"))))
     (properties `((upstream-name . "constructive")))
     (build-system r-build-system)
     (arguments
@@ -19053,6 +19053,31 @@ confidence curves associated with that data.")
 and corresponding confidence intervals and distributions.  A potential use case
 is reporting the chemical and ecological status of surface waters according to
 the European Water Framework Directive.")
+    (license license:gpl3+)))
+
+(define-public r-confcons
+  (package
+    (name "r-confcons")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "confcons" version))
+       (sha256
+        (base32 "1zpknsa8wni7nlwrvmg575j9br7x0f9p7qk9b2cavniiyi91cc3q"))))
+    (properties `((upstream-name . "confcons")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bfakos/confcons")
+    (synopsis "Confidence and Consistency of Predictive Distribution Models")
+    (description
+     "Calculate confidence and consistency that measure the goodness-of-fit and
+transferability of predictive/potential distribution models (including species
+distribution models) as described by Somodi & Bede-Fazekas et al. (2024)
+<doi:10.1016/j.ecolmodel.2024.110667>.")
     (license license:gpl3+)))
 
 (define-public r-conf-design
@@ -22788,13 +22813,13 @@ to ensure command line output looks nice on dark as well as light consoles.")
 (define-public r-cols4all
   (package
     (name "r-cols4all")
-    (version "0.8")
+    (version "0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cols4all" version))
        (sha256
-        (base32 "19r7b9ndq80sbzfnksh6869ffbwx5jvlqvccwrijczbls1xhhnlr"))))
+        (base32 "03j5zcyhrxaypgr96hmx0vbi8xwpljk1ldp81p96909zv5d2ahv3"))))
     (properties `((upstream-name . "cols4all")))
     (build-system r-build-system)
     (arguments
@@ -22802,7 +22827,7 @@ to ensure command line output looks nice on dark as well as light consoles.")
       #:tests? #f))
     (propagated-inputs (list r-stringdist r-spacesxyz r-png r-colorspace
                              r-abind))
-    (home-page "https://mtennekes.github.io/cols4all/")
+    (home-page "https://cols4all.github.io/cols4all-R/")
     (synopsis "Colors for all")
     (description
      "Color palettes for all people, including those with color vision deficiency.
@@ -44539,13 +44564,13 @@ dynamic functional connectivity.  Medical Image Analysis, Volume 75.")
 (define-public r-cci
   (package
     (name "r-cci")
-    (version "0.2.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCI" version))
        (sha256
-        (base32 "12nx1cc4dmipc5jc5zhjijc3amxqjv2gc36znz332nxnaa4wiq2c"))))
+        (base32 "0vwb949xcqqviwr2p915msxicqrzyw8byhbsl7l0871bdcbmhizh"))))
     (properties `((upstream-name . "CCI")))
     (build-system r-build-system)
     (arguments
@@ -44559,7 +44584,6 @@ dynamic functional connectivity.  Medical Image Analysis, Volume 75.")
                              r-e1071
                              r-dplyr
                              r-data-table
-                             r-dagitty
                              r-caret))
     (home-page "https://github.com/khliland/CCI")
     (synopsis "Computational Test for Conditional Independence")
@@ -49324,6 +49348,40 @@ are optimal with regard to a multi-objective target (Monteil et al.
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-caradpt
+  (package
+    (name "r-caradpt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "caradpt" version))
+       (sha256
+        (base32 "02mxsl1q9h49ky34k9xd2g0ns1rvjnwwfmagwvf17xdh2ngzb90r"))))
+    (properties `((upstream-name . "caradpt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival))
+    (home-page "https://cran.r-project.org/package=caradpt")
+    (synopsis
+     "Covariate-Adjusted Response-Adaptive Designs for Clinical Trials")
+    (description
+     "This package provides tools for implementing covariate-adjusted
+response-adaptive procedures for binary, continuous and survival responses.
+Users can flexibly choose between two functions based on their specific needs
+for each procedure: use real patient data from clinical trials to compute
+allocation probabilities directly, or use built-in simulation functions to
+generate synthetic patient data.  Detailed methodologies and algorithms used in
+this package are described in the following references: Zhang, L. X., Hu, F.,
+Cheung, S. H., & Chan, W. S. (2007)<doi:10.1214/009053606000001424> Zhang, L. X.
+& Hu, F. (2009) <doi:10.1007/s11766-009-0001-6> Hu, J., Zhu, H., & Hu, F. (2015)
+<doi:10.1080/01621459.2014.903846> Zhao, W., Ma, W., Wang, F., & Hu, F. (2022)
+<doi:10.1002/pst.2160> Mukherjee, A., Jana, S., & Coad, S. (2024)
+<doi:10.1177/09622802241287704>.")
+    (license license:gpl3)))
+
 (define-public r-caracas
   (package
     (name "r-caracas")
@@ -50680,6 +50738,48 @@ for three-category probability forecasts, as proposed by Wilks (2013)
 API. @code{CalPASS} Plus.  MMAP API V1.
 <https://mmap.calpassplus.org/docs/index.html>.")
     (license license:gpl3)))
+
+(define-public r-calms
+  (package
+    (name "r-calms")
+    (version "1.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "calms" version))
+       (sha256
+        (base32 "0hn08yhfg2ivslwqyd7335bkl7d7k978mwmms1r2s61w5snri30g"))))
+    (properties `((upstream-name . "calms")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-shinyjs
+                             r-shiny
+                             r-matchit
+                             r-lsr
+                             r-lavaan
+                             r-foreign
+                             r-dt
+                             r-dplyr
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=calms")
+    (synopsis "Comprehensive Analysis of Latent Means")
+    (description
+     "This package provides a Shiny application to conduct comprehensive analysis of
+latent means including the examination of group equivalency, propensity score
+analysis, measurement invariance analysis, and assessment of latent mean
+differences of equivalent groups with invariant data.  Group equivalency and
+propensity score analyses are implemented using the @code{MatchIt} package [Ho
+et al. (2011) <doi:10.18637/jss.v042.i08>], ensuring robust control for
+covariates.  Structural equation modeling and invariance testing rely heavily on
+the lavaan package [Rosseel (2012) <doi:10.18637/jss.v048.i02>], providing a
+flexible and powerful modeling framework.  The application also integrates
+modified functions from Hammack-Brown et al. (2021) <doi:10.1002/hrdq.21452> to
+support factor ratio testing and the list-and-delete procedure.")
+    (license license:gpl2+)))
 
 (define-public r-calmr
   (package

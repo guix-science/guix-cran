@@ -1853,13 +1853,13 @@ regression analysis.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtsummary" version))
        (sha256
-        (base32 "1nkx78n7xf8hcd9c3adbdplj39mv819bd83n8ii6mq0j9vp5bpls"))))
+        (base32 "1kw0j0x8p9zckgzdd2b8pap39hv48rfjn6zykffac9zzrx4nin90"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (arguments
@@ -1873,6 +1873,7 @@ regression analysis.")
                              r-glue
                              r-dplyr
                              r-cli
+                             r-cardx
                              r-cards))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ddsjoberg/gtsummary")
@@ -5710,6 +5711,33 @@ distribution via preserving clusters in the original data (Wang et al 2020)
 data transformation step to prepare data for model-free inference of
 association, function, or causality.")
     (license license:lgpl3+)))
+
+(define-public r-gridify
+  (package
+    (name "r-gridify")
+    (version "0.7.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gridify" version))
+       (sha256
+        (base32 "1rgwnb302g04vbf74jmjz1f8zb48vyg6kx3wq7cl29z8gis17181"))))
+    (properties `((upstream-name . "gridify")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://pharmaverse.github.io/gridify/")
+    (synopsis
+     "Enrich Figures and Tables with Custom Headers and Footers and More")
+    (description
+     "This package provides a simple and flexible tool designed to create enriched
+figures and tables by providing a way to add text around them through predefined
+or custom layouts.  Any input which is convertible to grob is supported, like
+ggplot', gt or flextable'.  Based on R grid graphics, for more details see Paul
+Murrell (2018) <doi:10.1201/9780429422768>.")
+    (license license:asl2.0)))
 
 (define-public r-gridgraphviz
   (package
@@ -17572,26 +17600,26 @@ dithering with thousands of colors per frame.")
 (define-public r-gifi
   (package
     (name "r-gifi")
-    (version "0.4-0")
+    (version "1.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Gifi" version))
        (sha256
-        (base32 "0a8xxr0qn72x2kkzlk9pm9nqp1pr74qh6p2g6l63km6c1imhc4i7"))))
+        (base32 "0rx99lgld00nzrhs4x8vvzpj8n5vp89xiwi4m44zh3z89ah5im0m"))))
     (properties `((upstream-name . "Gifi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-colorspace))
-    (native-inputs (list gfortran))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://r-forge.r-project.org/projects/psychor/")
     (synopsis "Multivariate Analysis with Optimal Scaling")
     (description
-     "This package implements categorical principal component analysis ('PRINCALS'),
-multiple correspondence analysis ('HOMALS'), monotone regression analysis
-('MORALS').  It replaces the homals package.")
+     "This package implements various Gifi methods in a user-friendly way: categorical
+principal component analysis (princals), multiple correspondence analysis
+(homals), monotone regression analysis (morals).")
     (license license:gpl3)))
 
 (define-public r-gif
@@ -25950,13 +25978,13 @@ GEOVOL loadings are estimated iteratively until convergence.")
 (define-public r-geots
   (package
     (name "r-geots")
-    (version "0.1.8")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoTS" version))
        (sha256
-        (base32 "0hjhc68pl1gq9wcgvvagn903vlhwsayf7kka88rdcb6y7rgdlp5v"))))
+        (base32 "15r62j5lay6qch4g0pv15dzga3y0r1g5iiicjqpcilvhckqaf6lk"))))
     (properties `((upstream-name . "geoTS")))
     (build-system r-build-system)
     (arguments
@@ -28875,6 +28903,30 @@ coefficients responsible for the identified differences).  The package also
 allows running the hybrid multi-group approach (Lamberti (2021)
 <doi:10.1007/s11135-021-01096-9>).")
     (license license:gpl3)))
+
+(define-public r-genou
+  (package
+    (name "r-genou")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GenOU" version))
+       (sha256
+        (base32 "1vx1rzx8vg6hfkimvyp9gdmzfw6nww7q3k78qp5dpzqbkwls4qrp"))))
+    (properties `((upstream-name . "GenOU")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=GenOU")
+    (synopsis
+     "Sequential Change-Point Tests for Generalized Ornstein-Uhlenbeck Processes")
+    (description
+     "Sequential change-point tests, parameters estimation, and goodness-of-fit tests
+for generalized Ornstein-Uhlenbeck processes.")
+    (license license:gpl2+)))
 
 (define-public r-genotriplo
   (package

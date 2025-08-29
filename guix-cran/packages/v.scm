@@ -4477,13 +4477,13 @@ Lacaille, A. Mourer and M. Olteanu
 (define-public r-vimp
   (package
     (name "r-vimp")
-    (version "2.3.5")
+    (version "2.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vimp" version))
        (sha256
-        (base32 "1893nqdcwc35skgga6x45rn207n1ayrmdmn8khc7j2vk34fysab0"))))
+        (base32 "0i6x9p69qw6g5lbjxkvkm9mrvp5axz4vix6n879k4hig0dgf8yl6"))))
     (properties `((upstream-name . "vimp")))
     (build-system r-build-system)
     (arguments

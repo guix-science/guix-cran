@@ -12613,13 +12613,13 @@ and WAIC are also provided.")
 (define-public r-networkabc
   (package
     (name "r-networkabc")
-    (version "0.8-1")
+    (version "0.9-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "networkABC" version))
        (sha256
-        (base32 "0754770z3db7faadh8bxk0h70frjk6v8zjklkhclxnach1vag2k6"))))
+        (base32 "1dg133inkbpgxflr6xnnm8n8wndbz1ligyqgpryqmja01w2zwp49"))))
     (properties `((upstream-name . "networkABC")))
     (build-system r-build-system)
     (arguments
@@ -14525,13 +14525,13 @@ nephrology.")
 (define-public r-neonutilities
   (package
     (name "r-neonutilities")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neonUtilities" version))
        (sha256
-        (base32 "0c04j8vq7g7kakvwgd23w6b7nv86gf3bngp3zjrsn1iqlkjv5qx4"))))
+        (base32 "1jd6z007jk5qiza55wa2r3g36sp8cwcdh71i3nwrqbqlz77a0drl"))))
     (properties `((upstream-name . "neonUtilities")))
     (build-system r-build-system)
     (arguments

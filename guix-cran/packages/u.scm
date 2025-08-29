@@ -1783,20 +1783,20 @@ Journal of the American Statistical Association
 (define-public r-updown
   (package
     (name "r-updown")
-    (version "1.2.1")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UpDown" version))
        (sha256
-        (base32 "0c1mi43mkadhpalrd3wlp94ri1sp9ii5wcn44pgz35ki7nngrnaj"))))
+        (base32 "1fbbicnm17dhb04qqd8lw097f8jb6ddzkfyqbj1l6ij5scx523i6"))))
     (properties `((upstream-name . "UpDown")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny
-                             r-reshape2
+    (propagated-inputs (list r-tidyr
+                             r-shiny
                              r-mixtools
                              r-mclust
                              r-ggplot2

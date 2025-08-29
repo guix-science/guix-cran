@@ -1578,6 +1578,41 @@ This package interfaces directly to the C API and does not require any command
 line utilities.")
     (license license:expat)))
 
+(define-public r-auxveclasso
+  (package
+    (name "r-auxveclasso")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "auxvecLASSO" version))
+       (sha256
+        (base32 "0jwx7qc3rawsxz4i4396phq6pcg164dqsj24adcmv5vplbf3272c"))))
+    (properties `((upstream-name . "auxvecLASSO")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survey
+                             r-proc
+                             r-parallelly
+                             r-matrix
+                             r-glmnet
+                             r-doparallel
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gustafanderssons/auxvecLASSO-R-Package")
+    (synopsis
+     "LASSO Auxiliary Variable Selection and Auxiliary Vector Diagnostics")
+    (description
+     "This package provides tools for assessing and selecting auxiliary variables
+using LASSO. The package includes functions for variable selection and
+diagnostics, facilitating survey calibration analysis with emphasis on robust
+auxiliary vector selection.  For more details see Tibshirani (1996)
+<doi:10.1111/j.2517-6161.1996.tb02080.x> and Caughrey and Hartman (2017)
+<doi:10.2139/ssrn.3494436>.")
+    (license license:expat)))
+
 (define-public r-auxsurvey
   (package
     (name "r-auxsurvey")
@@ -7556,13 +7591,13 @@ density.")
 (define-public r-armaoptions
   (package
     (name "r-armaoptions")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "armaOptions" version))
        (sha256
-        (base32 "0xbaqph01ghx7pssilina8z5r0h5mjrkv3gyzrfkn7jipmymb2jq"))))
+        (base32 "1xf3cqv15zzrpjg5yh8igayz211p0q6pvslnrg2qsca62qimz306"))))
     (properties `((upstream-name . "armaOptions")))
     (build-system r-build-system)
     (arguments
@@ -7575,7 +7610,7 @@ density.")
      "Providing ways to estimate the value of European stock options given historical
 stock price data.  It includes functions for calculating option values based on
 autoregressiveâmoving-average (ARMA) models and generates information about
-these models.  This package is make to be easy to understand and for financial
+these models.  This package is made to be easy to understand and for financial
 analysis capabilities.")
     (license license:gpl3)))
 
@@ -21246,13 +21281,13 @@ Institute for the World Economy <https://www.ifw-kiel.de/>.")
 (define-public r-afr
   (package
     (name "r-afr")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AFR" version))
        (sha256
-        (base32 "07i6slw5ksw6s1n0i9p2x6898k4fqx5n13qycshfllczrp0pwwyf"))))
+        (base32 "06bvi44hfwsyslp6dn9imdl2b6kxb1n2fpn3j2y639xs95g6hvap"))))
     (properties `((upstream-name . "AFR")))
     (build-system r-build-system)
     (arguments

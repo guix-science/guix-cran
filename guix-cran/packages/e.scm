@@ -5745,24 +5745,19 @@ explore diverse ET data at different resolutions.")
 (define-public r-evalue
   (package
     (name "r-evalue")
-    (version "4.1.3")
+    (version "4.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EValue" version))
        (sha256
-        (base32 "0ip4cyipbs6g0znrdh5zs4xizmqgdznq8riggkgyv06wipgx9a2j"))))
+        (base32 "0wqpbfmcwyybbbn2f7hi8i3cpbpcpzcajccsl71fi7hvb4nai4sb"))))
     (properties `((upstream-name . "EValue")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-metautility
-                             r-metafor
-                             r-metadat
-                             r-ggplot2
-                             r-dplyr
-                             r-boot))
+    (propagated-inputs (list r-metautility r-metafor r-ggplot2 r-dplyr r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=EValue")
     (synopsis
@@ -5772,12 +5767,12 @@ explore diverse ET data at different resolutions.")
 measurement error (individually or in combination; @code{VanderWeele} & Ding
 (2017) <doi:10.7326/M16-2607>; Smith & @code{VanderWeele} (2019)
 <doi:10.1097/EDE.0000000000001032>; @code{VanderWeele} & Li (2019)
-<doi:10.1093/aje/kwz133>; Smith & @code{VanderWeele} (2021)
-<@code{arXiv:2005.02908>}).  Also conducts sensitivity analyses for unmeasured
-confounding in meta-analyses (Mathur & @code{VanderWeele} (2020a)
+<doi:10.1093/aje/kwz133>; Smith, Mathur, & @code{VanderWeele} (2021)
+<doi:10.1097/EDE.0000000000001380>).  Also conducts sensitivity analyses for
+unmeasured confounding in meta-analyses (Mathur & @code{VanderWeele} (2020a)
 <doi:10.1080/01621459.2018.1529598>; Mathur & @code{VanderWeele} (2020b)
 <doi:10.1097/EDE.0000000000001180>) and for additive measures of effect
-modification (Mathur et al., under review).")
+modification (Mathur et al., <doi:10.1093/ije/dyac073>).")
     (license license:gpl2)))
 
 (define-public r-evaluationmeasures
@@ -21419,13 +21414,13 @@ variables.")
 (define-public r-ecotraj
   (package
     (name "r-ecotraj")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecotraj" version))
        (sha256
-        (base32 "1gpd1rhvxhfycx3jha75r8cq707scnsvpci9rjrllzqkviv2wpab"))))
+        (base32 "09y9a6vsm7g8x7bah92bdn18zc61khkzxn7jvmqyyimmgkfnwhq2"))))
     (properties `((upstream-name . "ecotraj")))
     (build-system r-build-system)
     (arguments
