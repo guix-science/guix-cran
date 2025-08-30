@@ -777,13 +777,13 @@ Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
 (define-public r-fuzzylink
   (package
     (name "r-fuzzylink")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzylink" version))
        (sha256
-        (base32 "17h35jn7cvi6adxhbc8x2p0d3xg84qgf5wgqh165ia9vf5hyavw5"))))
+        (base32 "0jsif8nnq0mx83c0dvi0zd9czi3pwrns83aprgvjrmnpi7f6ap3m"))))
     (properties `((upstream-name . "fuzzylink")))
     (build-system r-build-system)
     (arguments
@@ -805,8 +805,7 @@ Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
 Produces more accurate record linkage when lexical string distance metrics are a
 poor guide to match quality (e.g., \"Patricia\" is more lexically similar to
 \"Patrick\" than it is to \"Trish\").  Capable of performing multilingual record
-linkage.  Methods are described in Ornstein (2025)
-<https://joeornstein.github.io/publications/fuzzylink.pdf>.")
+linkage.  Methods are described in Ornstein (2025) <doi:10.1017/pan.2025.10016>.")
     (license license:expat)))
 
 (define-public r-fuzzyimputationtest
@@ -1302,13 +1301,13 @@ and Mukherjee (2017) <@code{arXiv:1611.00953>}.")
 (define-public r-fusen
   (package
     (name "r-fusen")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fusen" version))
        (sha256
-        (base32 "06ff4lmhiszawydgs6520qw81z6jy0qxkq7ba6813gf1ss220482"))))
+        (base32 "0jpa900s5vadpdkjbd0ljq4rfw926yar8vxa3pjbggyxqzs1129z"))))
     (properties `((upstream-name . "fusen")))
     (build-system r-build-system)
     (arguments
@@ -10491,13 +10490,13 @@ detailed by Friedman and Glover (2006) <doi:10.1002/jmri.20583>.")
 (define-public r-fmradio
   (package
     (name "r-fmradio")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FMradio" version))
        (sha256
-        (base32 "02d5imhagkr2cwgs6r77mbd2jg8k5ga17xp3rwaryykg2k4glacs"))))
+        (base32 "08wxpn1sklq7fvy8f698vjy7sn62hxiyhqknjaclpl3hzcq31y6j"))))
     (properties `((upstream-name . "FMradio")))
     (build-system r-build-system)
     (arguments
@@ -10509,7 +10508,7 @@ detailed by Friedman and Glover (2006) <doi:10.1002/jmri.20583>.")
     (description
      "This package provides functions that support stable prediction and
 classification with radiomics data through factor-analytic modeling.  For
-details, see Peeters et al. (2019) <@code{arXiv:1903.11696>}.")
+details, see Peeters et al. (2019) <doi:10.48550/@code{arXiv.1903.11696>}.")
     (license license:gpl2+)))
 
 (define-public r-fmpcloudr
@@ -18364,13 +18363,13 @@ sampling is supported.")
 (define-public r-ffaframework
   (package
     (name "r-ffaframework")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ffaframework" version))
        (sha256
-        (base32 "1d39ck1kvzizaklnczfifqpv06nqmigl3gxfzlcsjs5bclb5ynff"))))
+        (base32 "0d42dm6wrmm81w2kc1y4s2r8ryq2qfxmpq2mxy49b4sppspid0cq"))))
     (properties `((upstream-name . "ffaframework")))
     (build-system r-build-system)
     (arguments
@@ -18391,9 +18390,10 @@ both stationary and nonstationary flood frequency analysis, with applications
 extending to other hydroclimate extremes, such as precipitation frequency
 analysis.  This package implements the FFA framework proposed by Vidrio-
 SahagÃºn et al. (2024) <doi:10.1016/j.envsoft.2024.105940>, originally developed
-in MATLAB, now adapted for the R environment.  This work was funded by the Flood
-Hazard Identification and Mapping Program of Environment and Climate Change
-Canada, as well as the Canada Research Chair (Tier 1) awarded to Dr. Pietroniro.")
+in MATLAB', now adapted for the R environment.  This work was funded by the
+Flood Hazard Identification and Mapping Program of Environment and Climate
+Change Canada, as well as the Canada Research Chair (Tier 1) awarded to Dr.
+Pietroniro.")
     (license license:agpl3+)))
 
 (define-public r-fextremes

@@ -5816,13 +5816,13 @@ the Haskell library combinat', and is based on Birman and Brendle (2005)
 (define-public r-braidrm
   (package
     (name "r-braidrm")
-    (version "1.0.3")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "braidrm" version))
        (sha256
-        (base32 "16wj2bnjpr93vsiyngn4agyiizslzpglld5kr3xxhmn8n2dfmc3k"))))
+        (base32 "1c1b40pfy8fq84qkwi2fynvp8aqwlr620qbi7w64gvxykax148c4"))))
     (properties `((upstream-name . "braidrm")))
     (build-system r-build-system)
     (arguments
@@ -14349,19 +14349,20 @@ non-hierarchical clustering algorithms (Kreft & Jetz (2010)
 (define-public r-biorad
   (package
     (name "r-biorad")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioRad" version))
        (sha256
-        (base32 "1da7jj544ygz6kxbbr0wx11ygm53r21vv5zpx4cfjhnpcs26c33d"))))
+        (base32 "17p682di5s0j1igzlwv1h4xm4wbx0fjav8k801dsaldgf2rxzwf8"))))
     (properties `((upstream-name . "bioRad")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-viridislite
+    (propagated-inputs (list r-xml2
+                             r-viridislite
                              r-viridis
                              r-tidyselect
                              r-tidyr
@@ -14377,6 +14378,7 @@ non-hierarchical clustering algorithms (Kreft & Jetz (2010)
                              r-lubridate
                              r-lifecycle
                              r-jsonlite
+                             r-httr2
                              r-glue
                              r-ggplot2
                              r-fields
@@ -17899,13 +17901,13 @@ or item response models.")
 (define-public r-bidux
   (package
     (name "r-bidux")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bidux" version))
        (sha256
-        (base32 "0z2rfbn47yj78gcrxfqbfjxsss7d9j649hjf1b6sfqn010l2f6s4"))))
+        (base32 "1whkd07hgcxj9r15ny7lhrm123sfrvji3i39wc39vzz6af3akgny"))))
     (properties `((upstream-name . "bidux")))
     (build-system r-build-system)
     (arguments
@@ -17914,12 +17916,14 @@ or item response models.")
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-stringdist
+                             r-rsqlite
                              r-readr
                              r-jsonlite
                              r-dplyr
+                             r-dbi
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=bidux")
+    (home-page "https://jrwinget.github.io/bidux/")
     (synopsis
      "Behavior Insight Design: A Toolkit for Integrating Behavioral Science in UI/UX Design")
     (description
@@ -24782,13 +24786,13 @@ Chipman, George, @code{McCulloch} (2010).")
 (define-public r-bayestools
   (package
     (name "r-bayestools")
-    (version "0.2.20")
+    (version "0.2.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesTools" version))
        (sha256
-        (base32 "1fxa09i3ha0d9wnv6nzbxc6d7h9nifzgzy7gn6a6q3yrnyxqms42"))))
+        (base32 "1wax72y3sx728wg67gzp545lyp8hx9hp4gxmcdbmib0p8xx69p6j"))))
     (properties `((upstream-name . "BayesTools")))
     (build-system r-build-system)
     (arguments
@@ -26412,13 +26416,13 @@ split population survival estimator is described in Bagozzi et al. (2019)
 (define-public r-bayesmeta
   (package
     (name "r-bayesmeta")
-    (version "3.4")
+    (version "3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesmeta" version))
        (sha256
-        (base32 "1w9xz0wix4nggp6d1az8i9m1r7s288n1cksnnrdan0f3lpk5aai4"))))
+        (base32 "1m61n5p5pjxxfbjh6y5n5z9h8qc45hrh3bm35zhx30dx4ld0649m"))))
     (properties `((upstream-name . "bayesmeta")))
     (build-system r-build-system)
     (arguments
@@ -30729,13 +30733,13 @@ outcomes.  For more information see Sparapani, Spanbauer and @code{McCulloch}
 (define-public r-barrks
   (package
     (name "r-barrks")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "barrks" version))
        (sha256
-        (base32 "11hl1gz9zf5m5p93i8hcmsk7ynkiw364ycncfinf60x6rkcp3g06"))))
+        (base32 "07xd33wlm5m25xypq5ahg79891mb46w4zwq6c7lifi6q64a1h58m"))))
     (properties `((upstream-name . "barrks")))
     (build-system r-build-system)
     (arguments

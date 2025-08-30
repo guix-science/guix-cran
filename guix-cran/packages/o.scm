@@ -1678,27 +1678,28 @@ multivariate data using these limiting distributions and binning.")
 (define-public r-otel
   (package
     (name "r-otel")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "otel" version))
        (sha256
-        (base32 "1zpfldzp319xdbaq1mch9ccpl7nk3s202zk422g34lwswgryjifa"))))
+        (base32 "05yxv2yafgp4bsigp7v2mkwa2j7kkrlk8hd8p2z4n1y83ddgx2pg"))))
     (properties `((upstream-name . "otel")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://otel.r-lib.org")
-    (synopsis "'OpenTelemetry' 'R' 'API'")
+    (synopsis "OpenTelemetry R API")
     (description
-     "@code{OpenTelemetry} is a collection of tools, APIs', and SDKs used to
-instrument, generate, collect, and export telemetry data (metrics, logs, and
-traces) for analysis in order to understand your software's performance and
-behavior.  This package implements the @code{OpenTelemetry} API':
-<https://opentelemetry.io/docs/specs/otel/> Use this package as a dependency if
-you want to instrument your R package for @code{OpenTelemetry}'.")
+     "High-quality, ubiquitous, and portable telemetry to enable effective
+observability. @code{OpenTelemetry} is a collection of tools, APIs, and SDKs
+used to instrument, generate, collect, and export telemetry data (metrics, logs,
+and traces) for analysis in order to understand your software's performance and
+behavior.  This package implements the @code{OpenTelemetry} API:
+<https://opentelemetry.io/docs/specs/otel/>.  Use this package as a dependency
+if you want to instrument your R package for @code{OpenTelemetry}.")
     (license license:expat)))
 
 (define-public r-ote
@@ -4443,13 +4444,13 @@ your workflow for optimal productivity.")
 (define-public r-orbital
   (package
     (name "r-orbital")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orbital" version))
        (sha256
-        (base32 "08nhyh73fkyzh1q65lnx4m2z279my595b672p8cwyaf9sl08g1cn"))))
+        (base32 "03mc96hgf1x65zjq7y900bd74mls3l94zz5hyb8qpc913448cjh7"))))
     (properties `((upstream-name . "orbital")))
     (build-system r-build-system)
     (arguments

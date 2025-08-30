@@ -6830,13 +6830,13 @@ performed through a greedy algorithm described in Rastelli, R. and Friel, N.
 (define-public r-greed
   (package
     (name "r-greed")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greed" version))
        (sha256
-        (base32 "05p24991s97h0hmvv88s3hca9b50384hm6qm771dqznqs5m4ggrq"))))
+        (base32 "1kmchx7infd2rjkniv6n9dawl07iv6qm9hszpki7z2y28027xzgr"))))
     (properties `((upstream-name . "greed")))
     (build-system r-build-system)
     (arguments
@@ -19775,19 +19775,19 @@ diagnostic plots.")
 (define-public r-ggredist
   (package
     (name "r-ggredist")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggredist" version))
        (sha256
-        (base32 "1p5bzqi4g5ri0m0nlwra6vps4sil7qc56cd8nzp0xh7k1gl598ig"))))
+        (base32 "0lki8rajp7sy4phv77c0w6ihqvl34b0b517l140y7j2j44w0dmf7"))))
     (properties `((upstream-name . "ggredist")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-ggplot2))
+    (propagated-inputs (list r-scales r-palette r-ggplot2))
     (home-page "https://github.com/alarm-redist/ggredist")
     (synopsis
      "Scales, Geometries, and Extensions of 'ggplot2' for Election Mapping")
@@ -26639,13 +26639,13 @@ degree cells occupied.")
 (define-public r-geor
   (package
     (name "r-geor")
-    (version "1.9-5")
+    (version "1.9-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoR" version))
        (sha256
-        (base32 "0y9g9c5vij0j9icydjzz7x2m42n5xp6azin79zqm8sgz5vj0nmp1"))))
+        (base32 "1ck65xmlxclq64f4l53zy2v2krnks0mpp76hbb1anzsx1ccgkalv"))))
     (properties `((upstream-name . "geoR")))
     (build-system r-build-system)
     (arguments
@@ -33035,13 +33035,13 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalraster" version))
        (sha256
-        (base32 "0wd752rfl0zr3rprk35y4w1kw4ga6gyjgjbxxpsa28a2jl19fkc1"))))
+        (base32 "1y2wny4snin3j1xb82qmjish1gyx74vd0975h9hyakavk5jbqyab"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (arguments
@@ -34775,13 +34775,13 @@ Biocollections (@code{iDigBio}) and the Global Biodiversity Information Facility
 (define-public r-gater
   (package
     (name "r-gater")
-    (version "0.1.15")
+    (version "0.1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gateR" version))
        (sha256
-        (base32 "1a818bypdiingv6kmrfmx7ivxybs8k7261vfqlmb4gdl87n71rb2"))))
+        (base32 "12cd2zj6kf1jpbkgkw7bg5qsf4ila5zf9qc4wksawcrcs9305ip6"))))
     (properties `((upstream-name . "gateR")))
     (build-system r-build-system)
     (arguments
@@ -37084,6 +37084,33 @@ that may be substituted into that expression.  The genetic algorithm attempts to
 make the result of the expression as low as possible (usually this would be the
 sum of residuals squared).")
     (license license:gpl2)))
+
+(define-public r-gadjid
+  (package
+    (name "r-gadjid")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gadjid" version))
+       (sha256
+        (base32 "0m7y4rlasgzqn6rx9yr0vay91p7bxzsmjmd1bhrfcijrz9nckf09"))))
+    (properties `((upstream-name . "gadjid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://github.com/CausalDisco/gadjid")
+    (synopsis "Graph Adjustment Identification Distances for Causal Graphs")
+    (description
+     "Make efficient Rust implementations of graph adjustment identification distances
+available in R. These distances (based on ancestor, optimal, and parent
+adjustment) count how often the respective adjustment identification strategy
+leads to causal inferences that are incorrect relative to a ground-truth graph
+when applied to a candidate graph instead.  See also Henckel, WÃ¼rtzen,
+Weichwald (2024) <doi:10.48550/@code{arXiv.2402.08616>}.")
+    (license (license:fsdg-compatible "MPL"))))
 
 (define-public r-gadget3
   (package

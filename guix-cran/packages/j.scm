@@ -4333,13 +4333,13 @@ BÃ¶schen, I. (2021) <doi:10.1007/s11192-021-04162-z> BÃ¶schen, I. (2021)
 (define-public r-jarbes
   (package
     (name "r-jarbes")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jarbes" version))
        (sha256
-        (base32 "0fw769m9qrzwi7jaaqnswwwv3kggba7bkqzwc4m85llkn4mj5fi4"))))
+        (base32 "0vsyhp7sbsrldfb5jp5mzmi1rad0b40rf9szxa3h36ddjvp9c057"))))
     (properties `((upstream-name . "jarbes")))
     (build-system r-build-system)
     (arguments
@@ -4356,8 +4356,7 @@ BÃ¶schen, I. (2021) <doi:10.1007/s11192-021-04162-z> BÃ¶schen, I. (2021)
                              r-ggplot2
                              r-ggextra
                              r-ggally
-                             r-bookdown
-                             r-bayesplot))
+                             r-bookdown))
     (home-page "https://cran.r-project.org/package=jarbes")
     (synopsis "Just a Rather Bayesian Evidence Synthesis")
     (description

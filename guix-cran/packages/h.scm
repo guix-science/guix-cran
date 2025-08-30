@@ -2593,13 +2593,13 @@ performance.")
 (define-public r-httk
   (package
     (name "r-httk")
-    (version "2.7.1")
+    (version "2.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "httk" version))
        (sha256
-        (base32 "1qzg62fpbyhfnscwd6aawh3wpdckcjzpzw1dfzsdx2a3xn0928xi"))))
+        (base32 "1y2azla90sgwihwmrfcrsc0xrn44h570iqm6s1mx1rbghvhl99ii"))))
     (properties `((upstream-name . "httk")))
     (build-system r-build-system)
     (arguments
@@ -13606,13 +13606,13 @@ provided in the multi-split algorithm.")
 (define-public r-hctdesign
   (package
     (name "r-hctdesign")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HCTDesign" version))
        (sha256
-        (base32 "1nncyyw1dlbdl9f1pncwa9xdqrd7w2aw4ghnf01vwyq0m7pj90l1"))))
+        (base32 "0qr2rvpaya2w3pc6i71qw20l8q3n7rz0v5rcj8jwggljir00ran1"))))
     (properties `((upstream-name . "HCTDesign")))
     (build-system r-build-system)
     (arguments
@@ -16051,6 +16051,32 @@ and Graphical Statistics, 13, 621-638. <doi:10.1198/106186004X2697>.")
 <https://CRAN.R-project.org/package=h3lib>.  h3r is designed to mimic the H3
 Application Programming Interface (API) <https://h3geo.org/docs/api/indexing/>,
 so that any function in the API is also available in h3r'.")
+    (license license:expat)))
+
+(define-public r-h3o
+  (package
+    (name "r-h3o")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "h3o" version))
+       (sha256
+        (base32 "1ayynb09m5nxvkihq37ahlqy93jf5fd689a16qi408wqrcr2mi12"))))
+    (properties `((upstream-name . "h3o")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-vctrs r-rlang))
+    (home-page "https://github.com/extendr/h3o")
+    (synopsis "H3 Geospatial Indexing System")
+    (description
+     "This package provides a dependency free interface to the H3 geospatial indexing
+system utilizing the Rust library h3o
+<https://github.com/@code{HydroniumLabs/h3o>} via the extendr library
+<https://github.com/extendr/extendr>.")
     (license license:expat)))
 
 (define-public r-h3lib

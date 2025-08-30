@@ -10351,22 +10351,28 @@ methodology developed in Sample Size Calculations for Micro-randomized Trials in
 (define-public r-mrtanalysis
   (package
     (name "r-mrtanalysis")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRTAnalysis" version))
        (sha256
-        (base32 "19s30k2crlnracwld0c1dhkvnwfyb32bhr06w7mbxm748lwhkwdh"))))
+        (base32 "07l2qg37p8vp7c2d06mk31j7qkpc55s1j6cqb0nplj9fwrgmhbh0"))))
     (properties `((upstream-name . "MRTAnalysis")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sandwich r-rootsolve r-geepack))
+    (propagated-inputs (list r-sandwich
+                             r-rootsolve
+                             r-ranger
+                             r-randomforest
+                             r-mgcv
+                             r-geepack))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MRTAnalysis")
-    (synopsis "Primary and Secondary Analyses for Micro-Randomized Trials")
+    (synopsis
+     "Assessing Proximal and Distal Causal Excursion Effects for Micro-Randomized Trials")
     (description
      "Estimates marginal causal excursion effects and moderated causal excursion
 effects for micro-randomized trial (MRT).  Applicable to MRT with binary
@@ -10374,7 +10380,16 @@ treatment options and continuous or binary outcomes.  The method for MRT with
 continuous outcomes is the weighted centered least squares (WCLS) by Boruvka et
 al. (2018) <doi:10.1080/01621459.2017.1305274>.  The method for MRT with binary
 outcomes is the estimator for marginal excursion effect (EMEE) by Qian et al.
-(2021) <doi:10.1093/biomet/asaa070>.")
+(2021) <doi:10.1093/biomet/asaa070>.  Estimates marginal and moderated causal
+excursion effects for micro-randomized trials (MRTs) with binary treatment
+options.  Supports continuous and binary proximal outcomes as well as distal
+outcomes.  Methods include weighted and centered least squares (WCLS) for
+continuous proximal outcomes by Boruvka et al. (2018)
+<doi:10.1080/01621459.2017.1305274>, the estimator for marginal excursion effect
+(EMEE) for binary proximal outcomes by Qian et al. (2021)
+<doi:10.1093/biomet/asaa070>, and two-stage estimation of distal causal
+excursion effects (DCEE) for continuous distal outcomes
+<doi:10.48550/@code{arXiv.2502.13500>}.")
     (license license:gpl3)))
 
 (define-public r-mrregression
@@ -15170,13 +15185,13 @@ and student-t errors (from Geweke) is also provided.")
 (define-public r-monolix2rx
   (package
     (name "r-monolix2rx")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "monolix2rx" version))
        (sha256
-        (base32 "0wiwfxknz1zlsg2xagd9jryfrcrhmq936l8fl0afszqci1b56rgi"))))
+        (base32 "1agz9hw61rwq1kdd5a1vsmv6i7x7y3xw7q07iljznnknkvmcfwg3"))))
     (properties `((upstream-name . "monolix2rx")))
     (build-system r-build-system)
     (arguments
@@ -25196,13 +25211,13 @@ and (7) functions to interact with Blimp and Mplus'.")
 (define-public r-mistral
   (package
     (name "r-mistral")
-    (version "2.2.3")
+    (version "2.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mistral" version))
        (sha256
-        (base32 "1mv0wnsqk6789knghnb0lmfwi73dlp1sar30aa1jmminam3wjwgg"))))
+        (base32 "0sg59wbkhd17dw2h8ja3ih7nhw6aya7hqbwh2i1ki0m0nc6nr3cf"))))
     (properties `((upstream-name . "mistral")))
     (build-system r-build-system)
     (arguments
@@ -29173,13 +29188,13 @@ are constrained to be non-negative.")
 (define-public r-micsim
   (package
     (name "r-micsim")
-    (version "2.0.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MicSim" version))
        (sha256
-        (base32 "1l9dd3ina9zasnxvkqn8rbrcvnp8lwfqnzxm516adg9x0ng2bimg"))))
+        (base32 "1aw253ms1ss99943p07rz7mshfsym0gyvlvpbya84kn1arnkxaaq"))))
     (properties `((upstream-name . "MicSim")))
     (build-system r-build-system)
     (arguments
@@ -29194,7 +29209,7 @@ are constrained to be non-negative.")
 of life science (demography, social sciences, epidemiology) applications.
 Individual life-courses are specified by a continuous-time multi-state model as
 described in Zinn (2014) <doi:10.34196/IJM.00105>.")
-    (license license:gpl2)))
+    (license license:gpl2+)))
 
 (define-public r-microsynth
   (package
@@ -50045,13 +50060,13 @@ MÃ¼ller (2021) <doi:10.1111/biom.13385>.")
 (define-public r-manifestor
   (package
     (name "r-manifestor")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manifestoR" version))
        (sha256
-        (base32 "1ghzhsd7apib775h2nmv33mvwg5yqwp5w9bn7alppgfa16yznf31"))))
+        (base32 "1i6vadlmncp84jnhfnf7nf6qxwkl4qlb0xvxf2ir8ffxby4v0xq0"))))
     (properties `((upstream-name . "manifestoR")))
     (build-system r-build-system)
     (arguments
@@ -50061,25 +50076,20 @@ MÃ¼ller (2021) <doi:10.1111/biom.13385>.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-zoo
-                             r-tm
+    (propagated-inputs (list r-tm
                              r-tidyselect
                              r-tibble
                              r-readr
                              r-purrr
-                             r-psych
                              r-nlp
                              r-magrittr
                              r-jsonlite
                              r-httr
-                             r-htmlwidgets
-                             r-htmltools
                              r-functional
-                             r-dt
                              r-dplyr
                              r-base64enc))
     (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/ManifestoProject/manifestoR")
+    (home-page "https://manifesto-project.wzb.eu/manifestoR")
     (synopsis "Access and Process Data and Documents of the Manifesto Project")
     (description
      "This package provides access to coded election programmes from the Manifesto

@@ -9757,13 +9757,13 @@ Ukrainian strings into Latin symbols.")
 (define-public r-transition
   (package
     (name "r-transition")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Transition" version))
        (sha256
-        (base32 "0j7hgrqrwwhi78s0v3z94i83bsvjgaqp4fv9qdiz89gswsazim64"))))
+        (base32 "1fc2mhsqbxbjwq766sxlb3lwacj0g5a7bky7gblzwmmcl2ifxs23"))))
     (properties `((upstream-name . "Transition")))
     (build-system r-build-system)
     (arguments
@@ -11120,13 +11120,13 @@ package.")
 (define-public r-tracker
   (package
     (name "r-tracker")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trackeR" version))
        (sha256
-        (base32 "06fyki3w73hdmwlsmp6k5g5x6vs60ysznji3bgi9kpphcbn85frg"))))
+        (base32 "1di4vkacasnw0zhra6d4sg2hd00dknjkn9lxmx186fy5bzdpmbk1"))))
     (properties `((upstream-name . "trackeR")))
     (build-system r-build-system)
     (arguments
@@ -11138,10 +11138,9 @@ package.")
                              r-scam
                              r-rsqlite
                              r-raster
+                             r-patchwork
                              r-leaflet
                              r-jsonlite
-                             r-gtable
-                             r-gridextra
                              r-ggridges
                              r-ggplot2
                              r-ggmap
@@ -13201,13 +13200,13 @@ estimation\" by Tracy Ke and Minzhe Wang (2017) <@code{arXiv:1704.07016>}.")
 (define-public r-topics
   (package
     (name "r-topics")
-    (version "0.60")
+    (version "0.62")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topics" version))
        (sha256
-        (base32 "126q3n202jc7wmzm6c3vqr6w2jarmjy654p3aibcgn7mvrsn8nrf"))))
+        (base32 "07a3r2yfxihfxhrr3xvvkdjw27m41bgy6frl0ccd7x93wwibnwhx"))))
     (properties `((upstream-name . "topics")))
     (build-system r-build-system)
     (arguments
@@ -13224,7 +13223,6 @@ estimation\" by Tracy Ke and Minzhe Wang (2017) <@code{arXiv:1704.07016>}.")
                              r-purrr
                              r-ngram
                              r-matrix
-                             r-mallet
                              r-ggwordcloud
                              r-ggplot2
                              r-ggforce
@@ -16677,13 +16675,13 @@ regular time base).")
 (define-public r-timetk
   (package
     (name "r-timetk")
-    (version "2.9.0")
+    (version "2.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timetk" version))
        (sha256
-        (base32 "1f6v6gipxi0ydj6fcckk6hgxdx8cfj0f1fyyf092lqx9a7flfp3g"))))
+        (base32 "1vihm37nkvhavhr61rw9fkgcfn8k91q58bavxqjg6hra0ahwjay7"))))
     (properties `((upstream-name . "timetk")))
     (build-system r-build-system)
     (arguments
@@ -24189,13 +24187,13 @@ sufficient space to add all of the text labels.")
 (define-public r-textannotator
   (package
     (name "r-textannotator")
-    (version "0.1.4")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textAnnotatoR" version))
        (sha256
-        (base32 "113lmlww135gwv6l3230vfh8vgwfhiw96inlyanwwc13bhq331dk"))))
+        (base32 "0ckki4l8z26nk2rry52vr5cayrk5fzazz5659ml73yzz4y80i4i3"))))
     (properties `((upstream-name . "textAnnotatoR")))
     (build-system r-build-system)
     (arguments
@@ -24210,15 +24208,14 @@ sufficient space to add all of the text labels.")
                              r-jsonlite
                              r-dt
                              r-data-tree))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/chaoliu-cl/textAnnotatoR")
     (synopsis "Interactive Text Annotation Tool with 'shiny' GUI")
     (description
-     "This package provides a comprehensive text annotation tool built with shiny'.
-Provides an interactive graphical user interface for coding text documents,
-managing code hierarchies, creating memos, and analyzing coding patterns.
-Features include code co-occurrence analysis, visualization of coding patterns,
-comparison of multiple coding sets, and export capabilities.  Supports
+     "This package provides a lightweight and focused text annotation tool built with
+shiny'.  Provides an interactive graphical user interface for coding text
+documents, managing code hierarchies, creating memos, and analyzing coding
+patterns.  Features include code co-occurrence analysis, visualization of coding
+patterns, comparison of multiple coding sets, and export capabilities.  Supports
 collaborative qualitative research through standardized annotation formats and
 analysis tools.")
     (license license:gpl3)))
@@ -30367,6 +30364,33 @@ greatly enhance reliability or reproducibility of discoveries in biology and
 medicine.  The ta-test can test single null hypothesis or multiple null
 hypotheses without needing to correct p-values.")
     (license license:gpl3)))
+
+(define-public r-tastyr
+  (package
+    (name "r-tastyr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tastyR" version))
+       (sha256
+        (base32 "12afggyy0r367h7nxrdj1a5yn8lgad564m2kqy79fr7c5wzl889a"))))
+    (properties `((upstream-name . "tastyR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=tastyR")
+    (synopsis "Recipe Data from 'Allrecipes.com'")
+    (description
+     "This package provides a collection of recipe datasets scraped from
+<https://www.allrecipes.com/>, containing two complementary datasets: allrecipes
+with 14,426 general recipes, and cuisines with 2,218 recipes categorized by
+country of origin.  Both datasets include comprehensive recipe information such
+as ingredients, nutritional facts (calories, fat, carbs, protein), cooking times
+(preparation and cooking), ratings, and review metadata.  All data has been
+cleaned and standardized, ready for analysis.")
+    (license license:cc0)))
 
 (define-public r-tastypie
   (package

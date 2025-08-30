@@ -10347,13 +10347,13 @@ whisker packages.")
 (define-public r-epos
   (package
     (name "r-epos")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epos" version))
        (sha256
-        (base32 "13ajaiin7n9z9rhmczlxbrpma5d3wa1wh7gcnw7xa39wsinvmn9s"))))
+        (base32 "0l0iv1y3n4155n2i7yj07cc5hw7sziqpg10mdc2lvzwyqqn1fshq"))))
     (properties `((upstream-name . "epos")))
     (build-system r-build-system)
     (arguments
@@ -12944,13 +12944,13 @@ environmental analysis.")
 (define-public r-envi
   (package
     (name "r-envi")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "envi" version))
        (sha256
-        (base32 "1xmv25m87si45dqz889cmis41djyx0ay1ad83f3rf9838i9qrlhp"))))
+        (base32 "1hpdpgw9p1xih2kvr0b94icnhxyggf1pvd64fa10wkyaacdammqh"))))
     (properties `((upstream-name . "envi")))
     (build-system r-build-system)
     (arguments

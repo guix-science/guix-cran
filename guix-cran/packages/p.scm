@@ -2571,13 +2571,13 @@ is for educational purposes only.")
 (define-public r-pubchemr
   (package
     (name "r-pubchemr")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PubChemR" version))
        (sha256
-        (base32 "09m904vwhlya7x8s8ix87w3qp6n8lmrxk55ddj1bmf9hvrmnygjx"))))
+        (base32 "0vkj9qdv19kxp83php8q3pgc2cp4dlm8mfpkj770b5zpx8qsddwl"))))
     (properties `((upstream-name . "PubChemR")))
     (build-system r-build-system)
     (arguments
@@ -2794,6 +2794,36 @@ from the Portuguese Wikipedia (<https://pt.wikipedia.org/>).")
 <https://www.ptv.vic.gov.au/footer/data-and-reporting/datasets/ptv-timetable-api/>,
 with results returned as familiar R data structures.  Retrieve information on
 stops, routes, disruptions, departures, and more.")
+    (license license:expat)))
+
+(define-public r-ptvalue
+  (package
+    (name "r-ptvalue")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ptvalue" version))
+       (sha256
+        (base32 "172r8c39grll6602x3j621gmhp06kw09xz1pw96ffh2gh9mqm5w7"))))
+    (properties `((upstream-name . "ptvalue")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-rlang r-cli))
+    (home-page "https://github.com/agkamel/ptvalue")
+    (synopsis "Working with Precision Teaching Values")
+    (description
+     "An implementation of an S3 class based on a double vector for storing and
+displaying precision teaching measures, representing a growing or a decaying
+(multiplicative) change between two frequencies.  The main format method allows
+researchers to display measures (including data.frame) that respect the
+established conventions in the precision teaching community (i.e., prefixed
+multiplication or division symbol, displayed number <= 1).  Basic multiplication
+and division methods are allowed and other useful functions are provided for
+creating, converting or inverting precision teaching measures.  For more
+details, see Pennypacker, Gutierrez and Lindsley (2003, ISBN: 1-881317-13-7).")
     (license license:expat)))
 
 (define-public r-pttstability
@@ -20286,6 +20316,54 @@ Reserve.  See Schmidt, Katzfuss and Gneiting (2015) <@code{arXiv:1506.01917>}
 for more details on the identification and estimation of a directive behind a
 point forecast.")
     (license license:cc0)))
+
+(define-public r-pointedsdms
+  (package
+    (name "r-pointedsdms")
+    (version "2.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PointedSDMs" version))
+       (sha256
+        (base32 "1s18j2vdx88q4y1kbsg5i05vfci61nrmz6vp0x89qylr45y8nipp"))))
+    (properties `((upstream-name . "PointedSDMs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sp
+                             r-sf
+                             r-raster
+                             r-r6
+                             r-r-devices
+                             r-lifecycle
+                             r-inlabru
+                             r-ggplot2
+                             r-fnn
+                             r-fmesher
+                             r-dplyr
+                             r-blockcv))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PhilipMostert/PointedSDMs")
+    (synopsis
+     "Fit Models Derived from Point Processes to Species Distributions using 'inlabru'")
+    (description
+     "Integrated species distribution modeling is a rising field in quantitative
+ecology thanks to significant rises in the quantity of data available, increases
+in computational speed and the proven benefits of using such models.  Despite
+this, the general software to help ecologists construct such models in an
+easy-to-use framework is lacking.  We therefore introduce the R package
+@code{PointedSDMs}': which provides the tools to help ecologists set up
+integrated models and perform inference on them.  There are also functions
+within the package to help run spatial cross-validation for model selection, as
+well as generic plotting and predicting functions.  An introduction to these
+methods is discussed in Issac, Jarzyna, Keil, Dambly, Boersch-Supan, Browning,
+Freeman, Golding, Guillera-Arroita, Henrys, Jarvis, Lahoz-Monfort, Pagel,
+Pescott, Schmucki, Simmonds and OâHara (2020)
+<doi:10.1016/j.tree.2019.08.006>.")
+    (license license:gpl3+)))
 
 (define-public r-pointdensityp
   (package

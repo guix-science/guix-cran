@@ -4964,13 +4964,13 @@ nonlinear mixed effects modeling.  See package?nonmemica'.")
 (define-public r-nonmem2rx
   (package
     (name "r-nonmem2rx")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonmem2rx" version))
        (sha256
-        (base32 "0x0qhj96g07rwhfqwvyx5zz9dli5nil2vygpz5k57kgg6ld1qyx6"))))
+        (base32 "0ny82l430z9w8y0nq49cz134h315jxllgp9jsn5k1zvddzypw4zr"))))
     (properties `((upstream-name . "nonmem2rx")))
     (build-system r-build-system)
     (arguments
@@ -8313,13 +8313,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "4.0.2")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "1nw4p4cxiij1arqjl83icwhpxl5qf3m9acjf5fi5i2sfynq0rccb"))))
+        (base32 "1jyi2fffzfiz0sf74nd2acb2pqw60n11qirkrz32x6v9m2qvn8p3"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (arguments
@@ -8385,13 +8385,13 @@ Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
 (define-public r-nlmixr2
   (package
     (name "r-nlmixr2")
-    (version "4.0.0")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2" version))
        (sha256
-        (base32 "0g460n23k4yl9avaqh8l1nfci83b30x88gqiwj7iwvq7ky4c0zll"))))
+        (base32 "17vk2wwvmq7i7r5bkc4j5ga1a1l26lyq29jzqcy2qy539zd3iiav"))))
     (properties `((upstream-name . "nlmixr2")))
     (build-system r-build-system)
     (arguments
@@ -8408,8 +8408,6 @@ Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
                              r-lotri
                              r-dplyr
                              r-crayon
-                             r-crayon
-                             r-cli
                              r-cli))
     (home-page "https://nlmixr2.org/")
     (synopsis "Nonlinear Mixed Effects Models in Population PK/PD")

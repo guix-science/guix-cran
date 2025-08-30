@@ -3384,13 +3384,13 @@ Kowalska, van de Wiel, van der Pas (2024)
 (define-public r-lotri
   (package
     (name "r-lotri")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lotri" version))
        (sha256
-        (base32 "0qg69a41fr0py6rqj1w7sv84rvh8mxf1d4djyniaq5vbqrkf3ax3"))))
+        (base32 "1swnhams909qc7sr0zychsjjr738h1ms8z42vgf72d20kyvs3vp3"))))
     (properties `((upstream-name . "lotri")))
     (build-system r-build-system)
     (arguments
@@ -14005,13 +14005,13 @@ colour displays.")
 (define-public r-lefko3
   (package
     (name "r-lefko3")
-    (version "6.5.0")
+    (version "6.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lefko3" version))
        (sha256
-        (base32 "1xgls4ixmzwvaffc7fp9aj5aqjb3gs6wqqkvd4xhpifn6qlkmjlq"))))
+        (base32 "0llgs9g7g5jf4yar125ibwjl55vwgn1iqcx7iclvaxp50kpasl7p"))))
     (properties `((upstream-name . "lefko3")))
     (build-system r-build-system)
     (arguments
@@ -19417,13 +19417,13 @@ algorithm originated by Allain & Cloitre (1991)
 (define-public r-lacunaritycovariance
   (package
     (name "r-lacunaritycovariance")
-    (version "1.1-7")
+    (version "1.1-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lacunaritycovariance" version))
        (sha256
-        (base32 "10l5q4plnh1nnbcb3zh68mglrilcmlxsviznli8w8vzj2h5yfnhm"))))
+        (base32 "08s1iwqzrl6rw6401hgl4pw6hpa7arxq08z4x20163q3vq4aqcmm"))))
     (properties `((upstream-name . "lacunaritycovariance")))
     (build-system r-build-system)
     (arguments

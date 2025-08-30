@@ -591,6 +591,33 @@ number (unless specifically overridden).  The goal is visual simplicity, because
 who has time to waste looking at a cluttered graph?")
     (license license:expat)))
 
+(define-public r-wscdata
+  (package
+    (name "r-wscdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WSCdata" version))
+       (sha256
+        (base32 "06ndzb3p0rsb9yn48z92bvhac8walw2l915lwg5vyrgfsf798hqd"))))
+    (properties `((upstream-name . "WSCdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/jzangela/WSCdata")
+    (synopsis
+     "New Four-Arm Within-Study Comparison Data on Math and Vocabulary Training")
+    (description
+     "This dataset was collected using a new four-arm within-study comparison design.
+The study aimed to examine the impact of a mathematics training intervention and
+a vocabulary study session on post-test scores in mathematics and vocabulary,
+respectively.  The innovative four-arm within-study comparison design
+facilitates both experimental and quasi-experimental identification of average
+causal effects.")
+    (license license:expat)))
+
 (define-public r-wsbackfit
   (package
     (name "r-wsbackfit")
@@ -2144,13 +2171,13 @@ static since 2013.")
 (define-public r-worldbank
   (package
     (name "r-worldbank")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worldbank" version))
        (sha256
-        (base32 "0rmg5x5cwkd1b2m5fqp6y1dnwc7nmaly7ifvaclsvi6hi13y47kd"))))
+        (base32 "0d2pdgq0fv4lnxywk0h4l933cxqpinp2invzgbznqczzk6kgaiss"))))
     (properties `((upstream-name . "worldbank")))
     (build-system r-build-system)
     (arguments

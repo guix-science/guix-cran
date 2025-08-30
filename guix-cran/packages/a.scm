@@ -5334,13 +5334,13 @@ association strength between individuals using each method.")
 (define-public r-assocbin
   (package
     (name "r-assocbin")
-    (version "1.1-0")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AssocBin" version))
        (sha256
-        (base32 "063iqmxrnir2qpa9hh8pi0mmya2i24yn4d1wxapz6wrbmfryc306"))))
+        (base32 "0f3d5ijkngw7y2a4qgxgyk1vk9p3gbajnj7jah1b861ab9v6jqw3"))))
     (properties `((upstream-name . "AssocBin")))
     (build-system r-build-system)
     (arguments
@@ -5355,7 +5355,7 @@ measure pairwise dependence with a modular design that allows user specification
 of the splitting logic and stop criteria.  Helper functions provide suggested
 versions of both and support visualization and the computation of summary
 statistics on final binnings.  For a complete description of the functionality
-and algorithm, see Salahub and Oldford (2023)
+and algorithm, see Salahub and Oldford (2025)
 <doi:10.48550/@code{arXiv.2311.08561>}.")
     (license license:gpl3+)))
 
@@ -17690,6 +17690,58 @@ Hafner et al. (2018) <doi:10.1016/j.atmosenv.2018.11.034> for information on the
 model and Hafner et al. (2019) <doi:10.1016/j.agrformet.2017.11.027> for more on
 the measurement data used for parameter development.")
     (license license:gpl3)))
+
+(define-public r-ale
+  (package
+    (name "r-ale")
+    (version "0.5.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ale" version))
+       (sha256
+        (base32 "02nzas11wszj02b4nn4dsb5v8lz21dyn9508myq8al59mwzmzapb"))))
+    (properties `((upstream-name . "ale")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-univariateml
+                             r-tidyr
+                             r-stringr
+                             r-staccuracy
+                             r-s7
+                             r-rlang
+                             r-purrr
+                             r-progressr
+                             r-patchwork
+                             r-insight
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-cli
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tripartio/ale")
+    (synopsis
+     "Interpretable Machine Learning and Statistical Inference with Accumulated Local Effects (ALE)")
+    (description
+     "Accumulated Local Effects (ALE) were initially developed as a model-agnostic
+approach for global explanations of the results of black-box machine learning
+algorithms.  ALE has a key advantage over other approaches like partial
+dependency plots (PDP) and SHapley Additive @code{exPlanations} (SHAP): its
+values represent a clean functional decomposition of the model.  As such, ALE
+values are not affected by the presence or absence of interactions among
+variables in a mode.  Moreover, its computation is relatively rapid.  This
+package reimplements the algorithms for calculating ALE data and develops highly
+interpretable visualizations for plotting these ALE values.  It also extends the
+original ALE concept to add bootstrap-based confidence intervals and ALE-based
+statistics that can be used for statistical inference.  For more details, see
+Okoli, Chitu.  2023.  âStatistical Inference Using Machine Learning and
+Classical Techniques Based on Accumulated Local Effects (ALE).â @code{arXiv}.
+<doi:10.48550/@code{arXiv.2310.09877>}.")
+    (license license:expat)))
 
 (define-public r-aldvmm
   (package

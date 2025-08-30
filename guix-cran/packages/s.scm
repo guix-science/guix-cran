@@ -9129,6 +9129,35 @@ treatment effect.  And, a sample size calculation procedure for the subgroup
 detection test.")
     (license license:gpl3)))
 
+(define-public r-stype-est
+  (package
+    (name "r-stype-est")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Stype.est" version))
+       (sha256
+        (base32 "0jxh9w7n78g3f91drf9gqyiwsrhm26mlphv7l0a8x88075nf6iql"))))
+    (properties `((upstream-name . "Stype.est")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/filizkrdg/S-type.est")
+    (synopsis "S-Type Estimators")
+    (description
+     "This package implements the S-type estimators, novel robust estimators for
+general linear regression models, addressing challenges such as outlier
+contamination and leverage points.  This package introduces robust regression
+techniques to provide a robust alternative to classical methods and includes
+diagnostic tools for assessing model fit and performance.  The methodology is
+based on the study, \"Comparison of the Robust Methods in the General Linear
+Regression Model\" by Sazak and Mutlu (2023).  This package is designed for
+statisticians and applied researchers seeking advanced tools for robust
+regression analysis.")
+    (license license:expat)))
+
 (define-public r-stylo
   (package
     (name "r-stylo")
@@ -18979,13 +19008,13 @@ directly to the client.")
 (define-public r-ssgraph
   (package
     (name "r-ssgraph")
-    (version "1.15")
+    (version "1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssgraph" version))
        (sha256
-        (base32 "1ya5pbdjsi34bqv8r89jc7pr7p0smq7bpwfllvzjrviq08r935nd"))))
+        (base32 "14c7wflz2zfbjinbh8fym8x8bsywhx4sxg7pvwm9lqdi5xmzmlxp"))))
     (properties `((upstream-name . "ssgraph")))
     (build-system r-build-system)
     (arguments
@@ -29964,13 +29993,13 @@ representations using ggplot2'.")
 (define-public r-sparrpowr
   (package
     (name "r-sparrpowr")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparrpowR" version))
        (sha256
-        (base32 "0lzsm04m80l9h20xc1ifzw30fzbmg3xqspf1arzw5hk5081iid0q"))))
+        (base32 "1y8ncsmsrrfr53k054wy7frqw5ffyxgn4nrihyr5r2y9qybrykj1"))))
     (properties `((upstream-name . "sparrpowR")))
     (build-system r-build-system)
     (arguments
@@ -32614,13 +32643,13 @@ to drive cancer.")
 (define-public r-somadataio
   (package
     (name "r-somadataio")
-    (version "6.3.0")
+    (version "6.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SomaDataIO" version))
        (sha256
-        (base32 "0v64yjmscq2ai3k0i9w0vk60p064dgfa6my6n24h35yjmx1qm3c7"))))
+        (base32 "1kia8452s5d3p60r8cn6hkgxjsa58l9dxz80nb3sfbr5l6h9bkkp"))))
     (properties `((upstream-name . "SomaDataIO")))
     (build-system r-build-system)
     (arguments
@@ -33462,13 +33491,13 @@ distribution by Perfect et al. (1992)
 (define-public r-soildb
   (package
     (name "r-soildb")
-    (version "2.8.11")
+    (version "2.8.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilDB" version))
        (sha256
-        (base32 "1rdpxafvaj6rw5558mbpyzz7f9d1rqblljxd56p5lxc8mjfk1zah"))))
+        (base32 "1j0ri9is9xgi51lqs4l16crdd4qbvvci4w1ysw3ndibk54cgkl0g"))))
     (properties `((upstream-name . "soilDB")))
     (build-system r-build-system)
     (arguments
@@ -49736,6 +49765,31 @@ debugging of @code{ShinyProxy} deployments.")
     (description
      "Shiny Module to create, visualize, customize and export Excel-like pivot table.")
     (license license:gpl3)))
+
+(define-public r-shinypayload
+  (package
+    (name "r-shinypayload")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinypayload" version))
+       (sha256
+        (base32 "1vczprh1vwskrm06y19mq0dgvy65i4g0knc64fbazqi59pybj7x1"))))
+    (properties `((upstream-name . "shinypayload")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-jsonlite))
+    (home-page "https://github.com/PawanRamaMali/shinypayload")
+    (synopsis
+     "Accept POST Data and URL Parameters in 'shiny' (Same-Port Integration)")
+    (description
+     "Handle POST requests on a custom path (e.g., /ingress) inside the same shiny
+HTTP server using user interface functions and HTTP responses.  Expose latest
+payload as a reactive and provide helpers for query parameters.")
+    (license license:expat)))
 
 (define-public r-shinypanels
   (package
@@ -72067,13 +72121,13 @@ within the constrained space.")
 (define-public r-salso
   (package
     (name "r-salso")
-    (version "0.3.53")
+    (version "0.3.57")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "salso" version))
        (sha256
-        (base32 "0dn3z0nxm70ji07fcilfy99vgvag44bkb62184vygkvkgywmlscc"))))
+        (base32 "1c7ysx4v4mhydfprsp60c35x37d3bmpzly2vb86zk03p0v5678bs"))))
     (properties `((upstream-name . "salso")))
     (build-system r-build-system)
     (arguments

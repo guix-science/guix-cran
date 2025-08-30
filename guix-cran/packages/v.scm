@@ -2575,13 +2575,13 @@ based in Russia.")
 (define-public r-viztest
   (package
     (name "r-viztest")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VizTest" version))
        (sha256
-        (base32 "1bv8jbhprg77ffz966zz0xpsddhr1v19ss39ik5qf7d3pml1h6s4"))))
+        (base32 "084fjknbsvrqxwvxh8vw51nijgsbyhgqpb28yxkfaysmczmwi9ck"))))
     (properties `((upstream-name . "VizTest")))
     (build-system r-build-system)
     (arguments
@@ -4120,6 +4120,38 @@ with different life traits and niche features.  It also provides the means to
 simulate quasi-realistic pollen-data conditions by applying simulated
 accumulation rates and given depth intervals between consecutive samples.")
     (license license:gpl2+)))
+
+(define-public r-virf
+  (package
+    (name "r-virf")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VIRF" version))
+       (sha256
+        (base32 "0hzp432sy6hpwhvld3p570sq3nz2lp98p10lsy1azjq2p06znnh0"))))
+    (properties `((upstream-name . "VIRF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rmgarch
+                             r-mgarchbekk
+                             r-matrixcalc
+                             r-matlib
+                             r-ks
+                             r-gnm
+                             r-expm
+                             r-bigvar))
+    (home-page "https://cran.r-project.org/package=VIRF")
+    (synopsis
+     "Computation of Volatility Impulse Response Function of Multivariate Time Series")
+    (description
+     "Computation of volatility impulse response function for multivariate time series
+model using algorithm by Jin, Lin and Tamvakis (2012)
+<doi:10.1016/j.eneco.2012.03.003>.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-viralx
   (package

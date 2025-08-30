@@ -534,13 +534,13 @@ which runs the nlmixr2 models during estimation.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "4.0.3")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "1lm711vjci053v1fds3xsn06n1shf5vjiv2prsfp2hk7rb5c33yv"))))
+        (base32 "1s731mixxn61csxqa19h1ngyfriw56z3pvqbsy4x6cjkliiixq6d"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (arguments
@@ -55330,13 +55330,13 @@ Buffum (2002) <doi:10.2139/ssrn.355308> and Linetsky (2006)
 (define-public r-rags2ridges
   (package
     (name "r-rags2ridges")
-    (version "2.2.7")
+    (version "2.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rags2ridges" version))
        (sha256
-        (base32 "09dp04y8wl7cws5y94k9j2rlrmm2ci1lk8y77cb17lxr0i1yv6gb"))))
+        (base32 "10l93gq15w4lz0sfgcasbp40vg2l85sn5m8n047facs16hhnmk2d"))))
     (properties `((upstream-name . "rags2ridges")))
     (build-system r-build-system)
     (arguments

@@ -3698,13 +3698,13 @@ the existence of change point, for the paper, \"Feipeng Zhang and Qunhua Li
 (define-public r-cthist
   (package
     (name "r-cthist")
-    (version "2.1.11")
+    (version "2.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cthist" version))
        (sha256
-        (base32 "01d5fkc15k96bp3ymvxlf27789d4wl1913w0vlshq0sdaknsq1xy"))))
+        (base32 "1wys5i4v6vjsq1am9k9rpjwk6s811n97fnn7xpgd0711ggl5c3k8"))))
     (properties `((upstream-name . "cthist")))
     (build-system r-build-system)
     (arguments
@@ -8419,24 +8419,31 @@ sorting.")
 (define-public r-crane
   (package
     (name "r-crane")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crane" version))
        (sha256
-        (base32 "01pq9q77lykddz36nh7s4hgdqgvx1cqci2mxb135dnjv5r4m5yb2"))))
+        (base32 "0fvp0p984wc32b14f1fiwv7gapmf06cmmhdvxygcy35l72x1mhdr"))))
     (properties `((upstream-name . "crane")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-tidyr
+                             r-survival
+                             r-rlang
+                             r-lifecycle
                              r-gtsummary
                              r-gt
+                             r-glue
                              r-flextable
                              r-dplyr
-                             r-cli))
+                             r-cli
+                             r-cardx
+                             r-cards
+                             r-broom))
     (home-page "https://github.com/insightsengineering/crane")
     (synopsis
      "Supplements the 'gtsummary' Package for Pharmaceutical Reporting")
@@ -34329,6 +34336,31 @@ object is returned.  The package name is a contraption of CRAN Incoming
 Watcher'.")
     (license license:gpl2+)))
 
+(define-public r-civis
+  (package
+    (name "r-civis")
+    (version "3.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "civis" version))
+       (sha256
+        (base32 "0d949paq67zxvijczbl7azgy2is5jpn7vb5l65wvx0n49p8is3s7"))))
+    (properties `((upstream-name . "civis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-memoise r-jsonlite r-httr r-future))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/civisanalytics/civis-r")
+    (synopsis "R Client for the 'Civis Platform API'")
+    (description
+     "This package provides a convenient interface for making requests directly to the
+Civis Platform API <https://www.civisanalytics.com/platform>.  Full
+documentation available here <https://civisanalytics.github.io/civis-r/>.")
+    (license license:bsd-3)))
+
 (define-public r-civ
   (package
     (name "r-civ")
@@ -41294,13 +41326,13 @@ linear coefficients in regression models with grouped data.")
 (define-public r-ces
   (package
     (name "r-ces")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ces" version))
        (sha256
-        (base32 "095qbq6fgijylg0rbfmh0rahq7rjnb0vjb96vamld5hq8blfzc1b"))))
+        (base32 "1jn6ibs2q9hdsqpzyyvk3264xq94hhi7vn1h9gsfzhcq9sayq788"))))
     (properties `((upstream-name . "ces")))
     (build-system r-build-system)
     (arguments
@@ -45767,13 +45799,13 @@ Huber (2014) <doi:10.1002/jae.2341>, Froelich and Huber (2017)
 (define-public r-causalslse
   (package
     (name "r-causalslse")
-    (version "0.4")
+    (version "0.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalSLSE" version))
        (sha256
-        (base32 "1m69d7bcls77bnps7f628qdjp9mimw05jac7v3w8fwynwy086h4a"))))
+        (base32 "0yic7pg64yavngqasn6bzzgpx9figk0ani2i1z4jlklrmxvv05zc"))))
     (properties `((upstream-name . "causalSLSE")))
     (build-system r-build-system)
     (arguments
@@ -48598,13 +48630,13 @@ H, q) process given the model parameters and observation times.")
 (define-public r-caretsdm
   (package
     (name "r-caretsdm")
-    (version "1.1.0.1")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caretSDM" version))
        (sha256
-        (base32 "0g6qi5p3jmqwc03bb5qkh07avp4973iv84r1gw71yp0s787qcrr5"))))
+        (base32 "014nwcm4ihqkiwb8hxrzqgk340sq8krdar89r8vlyp34i3fg3c2b"))))
     (properties `((upstream-name . "caretSDM")))
     (build-system r-build-system)
     (arguments

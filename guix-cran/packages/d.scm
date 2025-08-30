@@ -21093,13 +21093,13 @@ Assigning shortcuts to these addins will save you quite a few keystrokes.")
 (define-public r-desctable
   (package
     (name "r-desctable")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "desctable" version))
        (sha256
-        (base32 "1i0124lnmzdbx468lyqmzbd6disxjifqjy8ss10fl8cin4f868lb"))))
+        (base32 "06qnpgyjp4mn177yx85934rkdsrs8dj9j3nas4mkkg5a8a1ymkv4"))))
     (properties `((upstream-name . "desctable")))
     (build-system r-build-system)
     (arguments
@@ -28457,13 +28457,13 @@ competitor to the db distribution.")
 (define-public r-dbcvindex
   (package
     (name "r-dbcvindex")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DBCVindex" version))
        (sha256
-        (base32 "0dx6g6yl1sqxg1l3gry3sb3c1j7yhmbjk5z78azyxyjj83v2cvig"))))
+        (base32 "1fx6p406rcpp9r2jklla8vzxfaif21cpdvqshnb022fglhqcqb9f"))))
     (properties `((upstream-name . "DBCVindex")))
     (build-system r-build-system)
     (arguments
@@ -28482,7 +28482,11 @@ implementation by Pablo Andretta Jaskowiak.  Original DBCV index article:
 Moulavi, D., Jaskowiak, P. A., Campello, R. J., Zimek, A., and Sander, J. (April
 2014), \"Density-based clustering validation\", Proceedings of SDM 2014 -- the
 2014 SIAM International Conference on Data Mining (pp.  839-847),
-<doi:10.1137/1.9781611973440.96>.")
+<doi:10.1137/1.9781611973440.96>.  A more recent article on the DBCV index:
+Chicco, D., Sabino, G.; Oneto, L.; Jurman, G. (August 2025), \"The DBCV index is
+more informative than DCSI, CDbw, and VIASCKDE indices for unsupervised
+clustering internal assessment of concave-shaped and density-based clusters\",
+@code{PeerJ} Computer Science 11:e3095 (pp.  1-), <doi:10.7717/peerj-cs.3095>.")
     (license license:gpl3)))
 
 (define-public r-dbcsp
