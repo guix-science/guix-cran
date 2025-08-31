@@ -7248,13 +7248,13 @@ wrappers to functions in the gstat and sp packages.")
 (define-public r-inti
   (package
     (name "r-inti")
-    (version "0.6.7")
+    (version "0.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inti" version))
        (sha256
-        (base32 "1p919g7visvwywxg5qihk95z8ymv2ij553rfgv5ccanxka380ixk"))))
+        (base32 "0dw5g2mlzq4h4f5813y8wf85wvkisaz2qk1vp1wqja81sl85bm7p"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (arguments
@@ -7273,7 +7273,7 @@ wrappers to functions in the gstat and sp packages.")
                              r-dt
                              r-dplyr
                              r-agricolae))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://inkaverse.com/")
     (synopsis "Tools and Statistical Procedures in Plant Science")
     (description
@@ -7281,7 +7281,7 @@ wrappers to functions in the gstat and sp packages.")
 procedures and tools used in plant science and experimental designs.  The mean
 aim of the package is to support researchers during the planning of experiments
 and data collection @code{(tarpuy()}), data analysis and graphics
-@code{(yupana()}) , and technical writing.  Learn more about the inkaverse
+@code{(yupana()}) , and scientific writing.  Learn more about the inkaverse
 project at <https://inkaverse.com/>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))

@@ -12981,13 +12981,13 @@ dynamics.")
 (define-public r-topolow
   (package
     (name "r-topolow")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topolow" version))
        (sha256
-        (base32 "0j4pwnsy13s23w61l3afvck5cs5l3kxm872m2wlh8jkqxz5nr4n7"))))
+        (base32 "0r0hrhsakm9n1qkmqgmgh7yzfiy2nw2wvbkjalq3ak1j71bmdnwg"))))
     (properties `((upstream-name . "topolow")))
     (build-system r-build-system)
     (arguments
@@ -14341,13 +14341,13 @@ al (2019) <doi:10.1093/bioinformatics/btz447>.")
 (define-public r-tmle
   (package
     (name "r-tmle")
-    (version "2.0.1.1")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmle" version))
        (sha256
-        (base32 "1xl71md4rld9yk0z47qki1pg4mhgblmc9adqzwd2157dfvqlh94c"))))
+        (base32 "0cxihdw87jqm198s137crd6hgnqlag53wz8rp1b394mzlypcq7sy"))))
     (properties `((upstream-name . "tmle")))
     (build-system r-build-system)
     (arguments

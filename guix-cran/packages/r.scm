@@ -15761,13 +15761,13 @@ Subtil (2014) and Cai & Pepe (2004).")
 (define-public r-rocker
   (package
     (name "r-rocker")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rocker" version))
        (sha256
-        (base32 "15l6m8cmanw0av0c0wgn4m4ms6ablkj4hd0i9i9vq4003gafh9va"))))
+        (base32 "17f6vbw8cy8px9fdwwzpm4pn6c62iv2iyl9d1dd9wj3ild5nvc1b"))))
     (properties `((upstream-name . "rocker")))
     (build-system r-build-system)
     (arguments
@@ -26098,13 +26098,13 @@ version is available at <https://github.com/kdevkdev/rineq>.")
 (define-public r-rinat
   (package
     (name "r-rinat")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rinat" version))
        (sha256
-        (base32 "05vi5fggqkj64z0sndngjs7vdvxgy2j5xarccllkcrk9mbzyipvc"))))
+        (base32 "1n1mp3z9k2aqd6h22mnwqvjvanpn2shi0m5ghh5d484czbhdz63q"))))
     (properties `((upstream-name . "rinat")))
     (build-system r-build-system)
     (arguments

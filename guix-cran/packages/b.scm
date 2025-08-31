@@ -5124,13 +5124,13 @@ in the estimated degrees of relatedness.")
 (define-public r-brea
   (package
     (name "r-brea")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brea" version))
        (sha256
-        (base32 "18vnx73n9g4bwzq9d49a4mhxf3i8j9xpzg58gvmhklxbql7a913r"))))
+        (base32 "0cc565238r4fswwhgjm2d5i0m3741mfhw179bgr3gzp227bkd9x5"))))
     (properties `((upstream-name . "brea")))
     (build-system r-build-system)
     (arguments
@@ -24604,13 +24604,13 @@ are required in spatial analyses performed with @code{BayesX}.")
 (define-public r-bayeswatch
   (package
     (name "r-bayeswatch")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesWatch" version))
        (sha256
-        (base32 "04kfx68cq5cjg1ykzl8i55prnw2mvqgnmgbjav5nv2rmh9psny61"))))
+        (base32 "107i1xw6f7d0cyyyvh3zpp4xppk576j8rl7kxas0sj3kryb4m078"))))
     (properties `((upstream-name . "bayesWatch")))
     (build-system r-build-system)
     (arguments
@@ -24640,7 +24640,7 @@ which gives meaningful expressions on the probability of every possible
 change-point.  Bayes Watch also allows for an effective and efficient fault
 detection system that assesses what features in the data where the most
 responsible for a given change-point.  For further details, see: Alexander C.
-Murph et al. (2023) <@code{arXiv:2310.02940>}.")
+Murph et al. (2023) <doi:10.48550/@code{arXiv.2310.02940>}.")
     (license license:gpl3)))
 
 (define-public r-bayesvl

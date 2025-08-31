@@ -13491,13 +13491,13 @@ available at <https://gateway.prod.wekeo2.eu/hda-broker/docs>.")
 (define-public r-hdanova
   (package
     (name "r-hdanova")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDANOVA" version))
        (sha256
-        (base32 "0jwndfyryy86sa7kr838pmcqjbfir4gzvlhk3lsqk203hniswq23"))))
+        (base32 "0mgmzl9yci8nk0k0n0hp6bxmgbdcfzq8nwjn0fs1wc5xc1frj4jl"))))
     (properties `((upstream-name . "HDANOVA")))
     (build-system r-build-system)
     (arguments
@@ -13508,6 +13508,7 @@ available at <https://gateway.prod.wekeo2.eu/hda-broker/docs>.")
                              r-pracma
                              r-pls
                              r-mixlm
+                             r-mass
                              r-lme4
                              r-car))
     (native-inputs (list r-knitr))

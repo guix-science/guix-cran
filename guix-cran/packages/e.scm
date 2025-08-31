@@ -25338,20 +25338,25 @@ Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
 (define-public r-easybio
   (package
     (name "r-easybio")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easybio" version))
        (sha256
-        (base32 "0wd09lsymfyvp63jj69q9xrajbjzb11pih5llidrnbr4x7a2nf3r"))))
+        (base32 "1lfc21rk5b38zwqgwhivwa7400f9ifwn6biyqi2h8bqhn08nbhkm"))))
     (properties `((upstream-name . "easybio")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-r6 r-httr2 r-ggplot2 r-data-table))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-xml2
+                             r-r6
+                             r-httr2
+                             r-ggplot2
+                             r-data-table
+                             r-checkmate))
+    (native-inputs (list r-litedown))
     (home-page "https://github.com/person-c/easybio")
     (synopsis
      "Comprehensive Single-Cell Annotation and Transcriptomic Analysis Toolkit")

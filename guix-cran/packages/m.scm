@@ -17871,13 +17871,13 @@ using the method presented in Wu, Cheung, and Leung (2020)
 (define-public r-modelbased
   (package
     (name "r-modelbased")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelbased" version))
        (sha256
-        (base32 "0i4c9pszanqs8fpwqpqdf2q8xjmq0vnw1jhd1vn19qmk2yk538z4"))))
+        (base32 "0lvdxwbc55fj0r8mpr4k19gp0gg0n079gcrlc3fcm6zcx6lf2nbl"))))
     (properties `((upstream-name . "modelbased")))
     (build-system r-build-system)
     (arguments
@@ -32702,13 +32702,13 @@ is possible with or without available data from a pilot study.")
 (define-public r-mets
   (package
     (name "r-mets")
-    (version "1.3.6")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mets" version))
        (sha256
-        (base32 "0k2k5icjg95d0x9vyrn47iy7177gm3z4j3zr9b0qs43iwdb5c9km"))))
+        (base32 "0za38llxn5cmnn8y8bny5g5cfkp30j8h7xihpnwx174j3c9q21vb"))))
     (properties `((upstream-name . "mets")))
     (build-system r-build-system)
     (arguments
@@ -52024,13 +52024,13 @@ based on the methodology presented on Quachie Asenso, T., & Zucknick, M. (2023)
 (define-public r-maditr
   (package
     (name "r-maditr")
-    (version "0.8.5")
+    (version "0.8.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maditr" version))
        (sha256
-        (base32 "0f0l25l3j84akswmbk0gxl5jrp6grs8vp24dqnaxrhqimz6iy8i1"))))
+        (base32 "0wl2lkgpwsakpnaraj11bn0w1k8ylvm771h94m4xi1p6wkrbbc3p"))))
     (properties `((upstream-name . "maditr")))
     (build-system r-build-system)
     (arguments

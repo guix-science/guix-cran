@@ -3551,19 +3551,20 @@ can also be used as a standalone package for text analysis.")
 (define-public r-qte-rd
   (package
     (name "r-qte-rd")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QTE.RD" version))
        (sha256
-        (base32 "13cs1l2x0lz36zpy8bpz0jwgq5yg4rm7vvjsaadzli5drky6ymip"))))
+        (base32 "09wmdp0rz9pdqw88dzzz8vjpfddslns8yfbxpwjkb2imq1f309vl"))))
     (properties `((upstream-name . "QTE.RD")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-quantreg r-plotrix))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=QTE.RD")
     (synopsis
      "Quantile Treatment Effects under the Regression Discontinuity Design")

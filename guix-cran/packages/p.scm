@@ -7692,13 +7692,13 @@ projects.")
 (define-public r-projecttemplate
   (package
     (name "r-projecttemplate")
-    (version "0.11.0")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProjectTemplate" version))
        (sha256
-        (base32 "1898dfrfrilpa9gackifgnyf5m5j6r9359c7m8avcxn0qsygiviz"))))
+        (base32 "1w4awq58crr83i8cmzwv9yn21spaag9prgss3jjf4wry3vqc5ram"))))
     (properties `((upstream-name . "ProjectTemplate")))
     (build-system r-build-system)
     (arguments
@@ -10515,13 +10515,13 @@ computing final PRIDIT scores for multivariate analysis of ordinal data.")
 (define-public r-pricesensitivitymeter
   (package
     (name "r-pricesensitivitymeter")
-    (version "1.3.1")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pricesensitivitymeter" version))
        (sha256
-        (base32 "02ihqcb5zq3bhf0i1n8a8kwv3p36cb8nqdcwnh28iqi6n8ymchfg"))))
+        (base32 "149cl2ajgr0icjhf5n3hvv0pkllp68d9xsy36z1jrflm0bjhqn6r"))))
     (properties `((upstream-name . "pricesensitivitymeter")))
     (build-system r-build-system)
     (arguments
@@ -31155,13 +31155,13 @@ the CDISC SDTM implementation guide, accessible by creating a free account on
 (define-public r-pharmaverseraw
   (package
     (name "r-pharmaverseraw")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaverseraw" version))
        (sha256
-        (base32 "1zrhckdbhf30lvf2lpr7208nkv4yb7547asr8clnyrhxpfzm9qp9"))))
+        (base32 "1rfhxxs2mpjxxzjx93d45sm9g49sqanvqa1vzw11arqnbp38rfyx"))))
     (properties `((upstream-name . "pharmaverseraw")))
     (build-system r-build-system)
     (arguments

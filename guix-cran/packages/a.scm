@@ -8239,13 +8239,13 @@ API', see <https://argentinadatos.com/> and for REST Countries', see
 (define-public r-arfima
   (package
     (name "r-arfima")
-    (version "1.8-1")
+    (version "1.8-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arfima" version))
        (sha256
-        (base32 "1msbd52989yqxqxgapgjvzfzzpkr2w9dp7ig8racqpzwqnjhpswb"))))
+        (base32 "059xc3ah1adi8354w8xgzrka06lkr9f3w35v656nbiln48a5id59"))))
     (properties `((upstream-name . "arfima")))
     (build-system r-build-system)
     (arguments
