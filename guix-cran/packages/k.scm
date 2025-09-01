@@ -461,13 +461,13 @@ handle, and manipulate knowledge structures and knowledge spaces.")
 (define-public r-kssa
   (package
     (name "r-kssa")
-    (version "0.0.1")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kssa" version))
        (sha256
-        (base32 "1vrd7zlwigg7ipfq2pjnndp5mwkc0yglvrdiirv3kqm5lq0f14qa"))))
+        (base32 "1m166zq6b1yjq7h25fn34s288hbnzh77j6x43fgrv0m60ab7hi7m"))))
     (properties `((upstream-name . "kssa")))
     (build-system r-build-system)
     (arguments
@@ -482,7 +482,7 @@ handle, and manipulate knowledge structures and knowledge spaces.")
                              r-ggplot2
                              r-forecast
                              r-dplyr))
-    (home-page "https://github.com/pipeben/kssa")
+    (home-page "https://github.com/steffenmoritz/kssa")
     (synopsis "Known Sub-Sequence Algorithm")
     (description
      "This package implements the Known Sub-Sequence Algorithm
@@ -5641,13 +5641,13 @@ Ministry of Agriculture and Fishing of France.")
 (define-public r-keng
   (package
     (name "r-keng")
-    (version "2025.8.16")
+    (version "2025.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Keng" version))
        (sha256
-        (base32 "1z0zxlp099a4l098dsbvvj20pvb37mwzjx6fw37c6fv4dxkbshjr"))))
+        (base32 "1bwh687dq6a27xmzm0g98slb6ys85p4xjz41qxjlxwfaq35vs0h1"))))
     (properties `((upstream-name . "Keng")))
     (build-system r-build-system)
     (arguments
@@ -5668,7 +5668,8 @@ or partial Eta-squared); (6) calculate PRE from partial correlation, Cohen's f,
 or f_squared; (7) conduct a priori power analysis and plan the sample size for
 one or a set of predictors in regression analysis; (8) conduct post-hoc power
 analysis for one or a set of predictors in regression analysis with known sample
-size; (9) randomly pick numbers for Chinese Super Lotto and Double Color Balls.")
+size; (9) randomly pick numbers for Chinese Super Lotto and Double Color Balls;
+(10) assess course objective achievement in Outcome-Based Education.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-kendallrandomwalks
@@ -5702,13 +5703,13 @@ information about Kendall random walks see Jasiulis-GoÅdyn (2014)
 (define-public r-kendallknight
   (package
     (name "r-kendallknight")
-    (version "0.7.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kendallknight" version))
        (sha256
-        (base32 "0mnnp2sdgx282888qkssw8lnqi3868lh4j4bia9fn1b0hhakchrh"))))
+        (base32 "0502bp1ri2681i7i643mnyjcpv6agksw3smwbdqrm5gsg53wcvsz"))))
     (properties `((upstream-name . "kendallknight")))
     (build-system r-build-system)
     (arguments
@@ -5728,7 +5729,7 @@ the speed difference can be substantial and the numerical difference is minimal.
  The references are Knight (1966) <doi:10.2307/2282833>, Abrevaya (1999)
 <doi:10.1016/S0165-1765(98)00255-9>, Christensen (2005) <doi:10.1007/BF02736122>
 and Emara (2024) <https://learningcpp.org/>.  This implementation is described
-in Vargas Sepulveda (2024) <doi:10.48550/@code{arXiv.2408.09618>}.")
+in Vargas Sepulveda (2025) <doi:10.1371/journal.pone.0326090>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-kelvin

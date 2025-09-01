@@ -1920,13 +1920,13 @@ duplicate or other replicated elements.")
 (define-public r-tuneranger
   (package
     (name "r-tuneranger")
-    (version "0.7")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tuneRanger" version))
        (sha256
-        (base32 "17hsqwg4h2pjns4bx3yjrkml8yn1vdxarf8lc4g9d4z01k4m7jk8"))))
+        (base32 "19jslzw6xgvq0y4qv0b5qmhjjdp97sm79a7fxana7w600wqjb5cs"))))
     (properties `((upstream-name . "tuneRanger")))
     (build-system r-build-system)
     (arguments

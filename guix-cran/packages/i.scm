@@ -16100,13 +16100,13 @@ association data, especially with large controls re-sequenced data.")
 (define-public r-ifo
   (package
     (name "r-ifo")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ifo" version))
        (sha256
-        (base32 "0qhchmv2mv8bg4nnygayi5jw27gabgvf2pv06h61jabf2mx7xcrs"))))
+        (base32 "02if8fa49bfmfbk9bkjmayfsr6jx7j28i9z9kw48g2j7s31ajx20"))))
     (properties `((upstream-name . "ifo")))
     (build-system r-build-system)
     (arguments

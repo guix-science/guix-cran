@@ -11124,13 +11124,13 @@ G. (2020) <doi:10.1080/02331888.2020.1823979>.")
 (define-public r-dlookr
   (package
     (name "r-dlookr")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dlookr" version))
        (sha256
-        (base32 "1ndy7ncqv4xdr562xz3wziy5pm12x0syb276pjqm90rafxz2xijc"))))
+        (base32 "0w5p1n8kd6d4gfr01b7wdmhx35i66k7l4gy0r7pm3iiwih2l29hj"))))
     (properties `((upstream-name . "dlookr")))
     (build-system r-build-system)
     (arguments
@@ -11152,7 +11152,6 @@ G. (2020) <doi:10.1080/02331888.2020.1823979>.")
                              r-knitr
                              r-kableextra
                              r-htmltools
-                             r-hrbrthemes
                              r-gridextra
                              r-ggplot2
                              r-dplyr))
@@ -21550,13 +21549,13 @@ transformations to amplitude-frequency domain.")
 (define-public r-descide
   (package
     (name "r-descide")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DeSciDe" version))
        (sha256
-        (base32 "1qh94kgqqw2vjs0cgrnp2048jk0pzlz8dcz8h68df3pmnga4b32g"))))
+        (base32 "106lfyp7rkgb5l5anbvm2ykpawyjddbv1z1hfy1h9mry2zig592p"))))
     (properties `((upstream-name . "DeSciDe")))
     (build-system r-build-system)
     (arguments

@@ -776,13 +776,13 @@ and Mancini (2023) <doi:10.1080/09535314.2022.2153221>, Miroudot and Ye (2021)
 (define-public r-exuber
   (package
     (name "r-exuber")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exuber" version))
        (sha256
-        (base32 "1r3hb4nlaph1a2s0dmd1n22ax9xgmdrg75w2xlbf8v1j3ifamvl9"))))
+        (base32 "1avmzc62zjdiqp17dghfi3fwvw9r9cqga4zv7lhw0g2wa7l68205"))))
     (properties `((upstream-name . "exuber")))
     (build-system r-build-system)
     (arguments
@@ -805,7 +805,7 @@ and Mancini (2023) <doi:10.1080/09535314.2022.2153221>, Miroudot and Ye (2021)
                              r-dorng
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/kvasilopoulos/exuber")
+    (home-page "https://kvasilopoulos.github.io/exuber/")
     (synopsis "Econometric Analysis of Explosive Time Series")
     (description
      "Testing for and dating periods of explosive dynamics (exuberance) in time series
@@ -11096,13 +11096,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.85")
+    (version "2.0.86")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "1gn99qqfnz03xzq522pjm09wvszcqdhkavppxryj0zw1wvcc2lky"))))
+        (base32 "0vjbdnv05yqvxn8xa98xdi70xmzdizcvjgqmmsv86zvm1w314d6q"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (arguments

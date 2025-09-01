@@ -7384,13 +7384,13 @@ transform.  It has applications in wavelet shrinkage.")
 (define-public r-nlsylinks
   (package
     (name "r-nlsylinks")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NlsyLinks" version))
        (sha256
-        (base32 "1qc6d45whj89darnsn09dklppamg27bz8md38lc94ikimigpdsnj"))))
+        (base32 "10r4hkvdb1fh903v928pqbsm9ilx733crn4lbrqfi11563ikhkzl"))))
     (properties `((upstream-name . "NlsyLinks")))
     (build-system r-build-system)
     (arguments
@@ -8454,13 +8454,13 @@ coverage plots (Karlsson and Holford, 2008,
 (define-public r-nlmeu
   (package
     (name "r-nlmeu")
-    (version "0.71.6")
+    (version "0.71.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmeU" version))
        (sha256
-        (base32 "0lqvbxgyyy8dm0igqlra9v7cy09xw0anhjp9v85iw9r5kqj09pyw"))))
+        (base32 "1nd0myc5d7whpfxy3l42n3pcpffffhn6j64a7n4aj4yjx46fi34m"))))
     (properties `((upstream-name . "nlmeU")))
     (build-system r-build-system)
     (arguments
@@ -10076,13 +10076,13 @@ and simulation of non homogeneous Poisson processes in time.")
 (define-public r-nhm
   (package
     (name "r-nhm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhm" version))
        (sha256
-        (base32 "1xc2kfc4g9f9nmsgm2fk5qhvlghgcyqiz9b5vr34a1x73cs9g0b8"))))
+        (base32 "1kiiplzh2gd662m6vwns8nlsj14n1hl1fckdgvx1s4grkkjxl2m3"))))
     (properties `((upstream-name . "nhm")))
     (build-system r-build-system)
     (arguments
@@ -17679,13 +17679,13 @@ technique was published in 2017 <doi:10.1016/j.ymeth.2017.12.001>.")
 (define-public r-nametagger
   (package
     (name "r-nametagger")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nametagger" version))
        (sha256
-        (base32 "1m6g8fx9fvd8zzvv4c9dh1dw63dkvl9i5mz8rqgvwqgqdvvvw1vi"))))
+        (base32 "14i0l4r0xx8j8g6ygfbkp3rqix167v9m14ians89dg0gj5q7zdds"))))
     (properties `((upstream-name . "nametagger")))
     (build-system r-build-system)
     (arguments

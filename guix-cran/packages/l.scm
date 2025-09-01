@@ -5342,13 +5342,13 @@ is helpful to detect patients that may present cognitive decline.")
 (define-public r-logisticensembles
   (package
     (name "r-logisticensembles")
-    (version "0.6.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LogisticEnsembles" version))
        (sha256
-        (base32 "0w484242zdkk3qf7gmi95glk5jppjdxkish9wf03gvg5j5fynh48"))))
+        (base32 "033cdfr4v0pb1rn8z6vv8igxlmakm7h3b5r75h1aadbfgrwniiak"))))
     (properties `((upstream-name . "LogisticEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -5375,6 +5375,7 @@ is helpful to detect patients that may present cognitive decline.")
                              r-ipred
                              r-gt
                              r-gridextra
+                             r-glmnet
                              r-ggplotify
                              r-ggplot2
                              r-gbm
@@ -5394,18 +5395,18 @@ is helpful to detect patients that may present cognitive decline.")
     (synopsis
      "Automatically Runs 36 Logistic Models (Individual and Ensembles)")
     (description
-     "Automatically returns 36 logistic models including 23 individual models and 13
-ensembles of models of logistic data.  The package also returns 10 plots, 5
-tables, and a summary report.  The package automatically builds all 36 models,
+     "Automatically returns 24 logistic models including 13 individual models and 11
+ensembles of models of logistic data.  The package also returns 25 plots, 5
+tables, and a summary report.  The package automatically builds all 24 models,
 reports all results, and provides graphics to show how the models performed.
-This can be used for a wide range of data sets.  The package includes medical
-data (the Pima Indians data set), and information about the performance of
-Lebron James.  The package can be used to analyze many other examples, such as
-stock market data.  The package automatically returns many values for each
-model, such as True Positive Rate, True Negative Rate, False Positive Rate,
-False Negative Rate, Positive Predictive Value, Negative Predictive Value, F1
-Score, Area Under the Curve.  The package also returns 36 Receiver Operating
-Characteristic (ROC) curves for each of the 36 models.")
+This can be used for a wide range of data, such as sports or medical data.  The
+package includes medical data (the Pima Indians data set), and information about
+the performance of Lebron James.  The package can be used to analyze many other
+examples, such as stock market data.  The package automatically returns many
+values for each model, such as True Positive Rate, True Negative Rate, False
+Positive Rate, False Negative Rate, Positive Predictive Value, Negative
+Predictive Value, F1 Score, Area Under the Curve.  The package also returns 36
+Receiver Operating Characteristic (ROC) curves for each of the 24 models.")
     (license license:expat)))
 
 (define-public r-logisticcurvefitting
@@ -8016,13 +8017,13 @@ Bartolucci, Pandolfi, Pennoni (2017)<doi:10.18637/jss.v081.i04>.")
 (define-public r-lmesplines
   (package
     (name "r-lmesplines")
-    (version "1.1.15")
+    (version "1.1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmeSplines" version))
        (sha256
-        (base32 "0lm6akw90y9irvnalj8kl996kxn2whbk5daiq14214xqiwbhv5dc"))))
+        (base32 "0v2qhvqjwcphyw0kbk2a52wkiac6dm5030m959khrpyjmjb6d1mc"))))
     (properties `((upstream-name . "lmeSplines")))
     (build-system r-build-system)
     (arguments
@@ -13616,18 +13617,19 @@ palettes, including some colour blind friendly options.")
 (define-public r-leontief
   (package
     (name "r-leontief")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leontief" version))
        (sha256
-        (base32 "0ms50fqnbfvwj5a2a0s647nyzpcbxyzf61f3rcp9h1qf1wil860b"))))
+        (base32 "0rhagsgsnf3bnc3nhqn0638ayx2mxcwn55h14jjdw80l936a9lm0"))))
     (properties `((upstream-name . "leontief")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-cpp11armadillo r-cpp11))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pachadotdev/leontief")
     (synopsis "Input-Output Analysis")
@@ -13635,7 +13637,7 @@ palettes, including some colour blind friendly options.")
      "An implementation of the Input-Output model developed by Wassily Leontief that
 represents the interdependencies between different sectors of a national economy
 or different regional economies.")
-    (license license:expat)))
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-lenses
   (package

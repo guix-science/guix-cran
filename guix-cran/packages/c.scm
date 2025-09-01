@@ -40121,13 +40121,13 @@ There are options for different types of graphics to assess the influence.")
 (define-public r-changepoint-geo
   (package
     (name "r-changepoint-geo")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "changepoint.geo" version))
        (sha256
-        (base32 "0zwj4wwwh99diz0vn5f06ygs93afahnn5glvab2k7wgk2qyf5jgq"))))
+        (base32 "162js614jzhmwwdwxzi6nrvnvzz096nk9397v5q7aqf4d4gy7bmc"))))
     (properties `((upstream-name . "changepoint.geo")))
     (build-system r-build-system)
     (arguments

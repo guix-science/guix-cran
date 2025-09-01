@@ -2612,13 +2612,13 @@ and access detailed annotations.")
 (define-public r-pubchem-bio
   (package
     (name "r-pubchem-bio")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pubchem.bio" version))
        (sha256
-        (base32 "0q8d1xq706zr7h49jjnbphlr747pmnblxjv4jnzfw16y5np8z48q"))))
+        (base32 "1nj3h4gari29s5g9qp0k4baxkpm00kbaycprmzm6jw33qswrk0ny"))))
     (properties `((upstream-name . "pubchem.bio")))
     (build-system r-build-system)
     (arguments
@@ -2630,7 +2630,9 @@ and access detailed annotations.")
                              r-foreach
                              r-dplyr
                              r-doparallel
-                             r-data-table))
+                             r-data-table
+                             r-curl
+                             r-chnosz))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=pubchem.bio")
     (synopsis "Biologically Informed Metabolomic Databases from 'PubChem'")
@@ -43022,13 +43024,13 @@ personalized oncology.  Bioinformatics <doi:10.1093/bioinformatics/btad022>.")
 (define-public r-pamscapes
   (package
     (name "r-pamscapes")
-    (version "0.14.0")
+    (version "0.14.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMscapes" version))
        (sha256
-        (base32 "18kv25bmgzsqvrz70p1mqqvz4d98n6shxscsv86gf99hvy1kmni8"))))
+        (base32 "0whaz5dgxi22hb3sz8ynilnirmzj0ny18ipy1560vssnng7fl2gy"))))
     (properties `((upstream-name . "PAMscapes")))
     (build-system r-build-system)
     (arguments

@@ -2167,13 +2167,13 @@ Krantz (2023) <https://www.ssrn.com/abstract=4537867>.")
 (define-public r-osldecomposition
   (package
     (name "r-osldecomposition")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OSLdecomposition" version))
        (sha256
-        (base32 "0xz27p4wd1a5y8x24sqgpyvgdwi2dzk4qh2s50xrdr82prb2znkv"))))
+        (base32 "1s2h3q6a6xsia3x9w4sqyqakaajxghhp5mhvw22ym581fcyallk4"))))
     (properties `((upstream-name . "OSLdecomposition")))
     (build-system r-build-system)
     (arguments

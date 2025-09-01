@@ -26952,13 +26952,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.1.8")
+    (version "2.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "1036lwwg9114835pnjkj6rb4nqm5fssmq3x70r42sjhn1103rwff"))))
+        (base32 "066hjygzih2dv5s6lnmrmf1yj2h9i33lk1ymmb36kg1812n6wba4"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (arguments

@@ -13221,13 +13221,13 @@ same files.")
 (define-public r-biscale
   (package
     (name "r-biscale")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biscale" version))
        (sha256
-        (base32 "1bjlw2vlgb9c50iah1w38b1g8bgdys86vr7bnbv0fapzp584d36g"))))
+        (base32 "0nmfbnx2p3q1jb9hvbifbdc3cg7x4r0q53m7pbn1n4yp7ri7fng3"))))
     (properties `((upstream-name . "biscale")))
     (build-system r-build-system)
     (arguments
@@ -32515,13 +32515,13 @@ nowadays popular in various infographics to visualize any proportional ratios.")
 (define-public r-baf
   (package
     (name "r-baf")
-    (version "0.0.1")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baf" version))
        (sha256
-        (base32 "1zjn6iqxsa0qby285dhn86047gkzz05nknqqj3dw3bcdhsl91gim"))))
+        (base32 "1bcz209dlkavd6v3cr54vgj4mbimar2c9a9jabdnicnqn9nk7izj"))))
     (properties `((upstream-name . "baf")))
     (build-system r-build-system)
     (arguments
@@ -33075,13 +33075,13 @@ Bayesian phylogenetics easily and reproducibly from R'.")
 (define-public r-babelmixr2
   (package
     (name "r-babelmixr2")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "babelmixr2" version))
        (sha256
-        (base32 "0ifvi00m5nxkkjqyxbb36xai90pk3a7znbd4bfy6y2nvkxzs7gx7"))))
+        (base32 "1kyhi3pxjdvyzll405han4y9gc6kd2l0pk4x120hcmv0865swklg"))))
     (properties `((upstream-name . "babelmixr2")))
     (build-system r-build-system)
     (arguments

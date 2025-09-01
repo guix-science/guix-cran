@@ -25341,13 +25341,13 @@ intervention of a single legislator.")
 (define-public r-spedm
   (package
     (name "r-spedm")
-    (version "1.7")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spEDM" version))
        (sha256
-        (base32 "0cil76rgzq5pqgmkjz4c5ndfwmgs3ya8hzpdf4nf6mriarblwsmm"))))
+        (base32 "0kkdlvv9r6k43ip5v69pmwv6236cjlavyzp46d26ws8cmksyayid"))))
     (properties `((upstream-name . "spEDM")))
     (build-system r-build-system)
     (arguments
@@ -65334,13 +65334,13 @@ Palshikar (2009)
 (define-public r-scorematchingad
   (package
     (name "r-scorematchingad")
-    (version "0.1.1")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scorematchingad" version))
        (sha256
-        (base32 "1ir7zcxawcq6i78xih66181snqdq9k18f77qpgv9g97633jgypla"))))
+        (base32 "1ddwikl69mc3svj30xlwx91imrgc42l2lblqvygqjy3dyigjjrd5"))))
     (properties `((upstream-name . "scorematchingad")))
     (build-system r-build-system)
     (arguments

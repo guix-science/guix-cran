@@ -21201,13 +21201,13 @@ and Robinson (2023) <doi:10.18637/jss.v107.i09>.")
 (define-public r-rmgarch
   (package
     (name "r-rmgarch")
-    (version "1.3-9")
+    (version "1.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmgarch" version))
        (sha256
-        (base32 "0sg10j4jp74s65lzs2da2qqdcwgkf71rss9p7f1b14n2yz7xdf1v"))))
+        (base32 "03v65hxb4jrkyh3d82w6ki441ym968qs2camfq8i8ilzpcxwbk3n"))))
     (properties `((upstream-name . "rmgarch")))
     (build-system r-build-system)
     (arguments
@@ -21227,7 +21227,7 @@ and Robinson (2023) <doi:10.18637/jss.v107.i09>.")
                              r-ff
                              r-corpcor
                              r-bessel))
-    (home-page "http://www.unstarched.net")
+    (home-page "https://github.com/alexiosg/rmgarch")
     (synopsis "Multivariate GARCH Models")
     (description
      "Feasible multivariate GARCH models including DCC, GO-GARCH and Copula-GARCH.")

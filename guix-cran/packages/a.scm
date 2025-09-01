@@ -10357,13 +10357,13 @@ profiling tools and is not a wrapper for them.")
 (define-public r-aprean3
   (package
     (name "r-aprean3")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aprean3" version))
        (sha256
-        (base32 "17rnq02sncl6rzwyln10200s43b8z1s2j0kdi9kgcb6qr51v12rv"))))
+        (base32 "01df30rbydw2qran1z9l8y044j317q00l6wi1yac5bcpiwp9pdiz"))))
     (properties `((upstream-name . "aprean3")))
     (build-system r-build-system)
     (arguments
