@@ -26498,6 +26498,40 @@ Analysis (COCA) and Consensus Clustering (CC).  For further details please see
 Cabassi and Kirk (2020) <doi:10.1093/bioinformatics/btaa593>.")
     (license license:expat)))
 
+(define-public r-cobin
+  (package
+    (name "r-cobin")
+    (version "1.0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cobin" version))
+       (sha256
+        (base32 "0dncf73avaxjfkgrwb33vnc4xagh02vh2v3lxgyhl5qa336lpnv6"))))
+    (properties `((upstream-name . "cobin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spnngp
+                             r-spam
+                             r-rcpp
+                             r-matrixstats
+                             r-matrix
+                             r-lme4
+                             r-fields
+                             r-coda))
+    (home-page "https://github.com/changwoo-lee/cobin")
+    (synopsis
+     "Cobin and Micobin Regression Models for Continuous Proportional Data")
+    (description
+     "This package provides functions for cobin and micobin regression models, a new
+family of generalized linear models for continuous proportional data (Y in the
+closed unit interval [0, 1]).  It also includes an exact, efficient sampler for
+the Kolmogorov-Gamma random variable.  For details, see Lee et al. (2025+)
+<doi:10.48550/@code{arXiv.2504.15269>}.")
+    (license license:expat)))
+
 (define-public r-cobiclust
   (package
     (name "r-cobiclust")
@@ -31943,6 +31977,36 @@ sensitivity (climate windows) for a given biological response.  Please see van
 de Pol et al. (2016) <doi:10.1111/2041-210X.12590> and Bailey and van de Pol
 (2016) <doi:10.1371/journal.pone.0167980> for details.")
     (license license:gpl2)))
+
+(define-public r-climprojdiags
+  (package
+    (name "r-climprojdiags")
+    (version "0.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ClimProjDiags" version))
+       (sha256
+        (base32 "190fh3mpwmzby16lp4hychj311lzfp29blxcw4yk2ni68s0wsxqj"))))
+    (properties `((upstream-name . "ClimProjDiags")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-multiapply))
+    (native-inputs (list r-knitr))
+    (home-page "https://earth.bsc.es/gitlab/es/ClimProjDiags")
+    (synopsis "Set of Tools to Compute Various Climate Indices")
+    (description
+     "Set of tools to compute metrics and indices for climate analysis.  The package
+provides functions to compute extreme indices, evaluate the agreement between
+models and combine theses models into an ensemble.  Multi-model time series of
+climate indices can be computed either after averaging the 2-D fields from
+different models provided they share a common grid or by combining time series
+computed on the model native grid.  Indices can be assigned weights and/or
+combined to construct new indices.  The package makes use of some of the methods
+described in: N. Manubens et al. (2018) <doi:10.1016/j.envsoft.2018.01.018>.")
+    (license license:gpl3)))
 
 (define-public r-climodr
   (package
@@ -42637,13 +42701,13 @@ which flip the role of response variable and the covariate, is also considered."
 (define-public r-censable
   (package
     (name "r-censable")
-    (version "0.0.5")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "censable" version))
        (sha256
-        (base32 "15p4ggnkcddm2lglf798bcjghppx0pqzc8nyljyiw0hwsw14c7yg"))))
+        (base32 "09flzkg5fha4sg9zz9rbh6dg01fj6r4pgh349fz1ihns7cis15bq"))))
     (properties `((upstream-name . "censable")))
     (build-system r-build-system)
     (arguments
@@ -42656,7 +42720,6 @@ which flip the role of response variable and the covariate, is also considered."
                              r-rlang
                              r-purrr
                              r-memoise
-                             r-magrittr
                              r-dplyr
                              r-censusapi))
     (home-page "https://christophertkenny.com/censable/")

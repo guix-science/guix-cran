@@ -4643,6 +4643,35 @@ significance (a lineup plot) can also be displayed to test the null hypothesis
 that the data come from the test distribution.")
     (license license:gpl3)))
 
+(define-public r-qqreflimits
+  (package
+    (name "r-qqreflimits")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QQreflimits" version))
+       (sha256
+        (base32 "11xp1504jh791wp8l9rlz87bcaqb2sxbkjhi6yzxq9974f3h46kv"))))
+    (properties `((upstream-name . "QQreflimits")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=QQreflimits")
+    (synopsis "Reference Limits using QQ Methodology")
+    (description
+     "This package provides a collection of routines for finding reference limits
+using, where appropriate, QQ methodology.  All use a data vector X of cases from
+the reference population.  The default is to get the central 95% reference range
+of the population, namely the 2.5 and 97.5 percentile, with optional adjustment
+of the range.  Along with the reference limits, we want confidence intervals
+which, for historical reasons, are typically at 90% confidence.  A full analysis
+provides six numbers: â the upper and the lower reference limits, and - each
+of their confidence intervals.  For application details, see Hawkins and
+Esquivel (2024) <doi:10.1093/jalm/jfad109>.")
+    (license license:gpl3+)))
+
 (define-public r-qqplotr
   (package
     (name "r-qqplotr")

@@ -4482,13 +4482,13 @@ comparison adjustment, are illustrated.")
 (define-public r-multiplencc
   (package
     (name "r-multiplencc")
-    (version "1.2-4")
+    (version "1.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multipleNCC" version))
        (sha256
-        (base32 "0vgldg31mb57l5lig9l4clv060fiwx842adv1qbdirfrpyrg295i"))))
+        (base32 "0mrizl9ndllzmw8lp0fbawkjysdnp2ysbj2xcn5zbms92jf7rzz9"))))
     (properties `((upstream-name . "multipleNCC")))
     (build-system r-build-system)
     (arguments
@@ -7122,6 +7122,36 @@ Multidimensional Scaling, among many others.  References can be found in the
 help of each procedure.")
     (license license:gpl2+)))
 
+(define-public r-multanova
+  (package
+    (name "r-multanova")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MultANOVA" version))
+       (sha256
+        (base32 "0vmpppcyg0kwqrq5dd8i4zhly158yps068csxxqqq1p10fdg11g0"))))
+    (properties `((upstream-name . "MultANOVA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggrepel r-ggplot2 r-ellipse))
+    (home-page "https://cran.r-project.org/package=MultANOVA")
+    (synopsis
+     "Analysis of Designed High-Dimensional Data using the Comprehensive MultANOVA Framework")
+    (description
+     "This package provides a comprehensive and computationally fast framework to
+analyze high dimensional data associated with an experimental design based on
+Multiple ANOVAs (@code{MultANOVA}).  It includes testing the overall
+significance of terms in the model, post-hoc analyses of significant terms and
+variable selection.  Details may be found in Mahieu, B., & Cariou, V. (2025).
+@code{MultANOVA} Followed by Post Hoc Analyses for Designed HighâDimensional
+Data: A Comprehensive Framework That Outperforms ASCA, @code{rMANOVA}, and
+VASCA. Journal of Chemometrics, 39(7). <doi:10.1002/cem.70039>.")
+    (license license:gpl3+)))
+
 (define-public r-mult-latent-reg
   (package
     (name "r-mult-latent-reg")
@@ -7433,6 +7463,34 @@ EHR data from the general patient population, and (3) existing hierarchical
 medical ontology knowledge shared across different patient populations.  See Li
 et al. (2024) <doi:10.1038/s41746-024-01320-4> for details.")
     (license license:gpl3)))
+
+(define-public r-mufimeshgp
+  (package
+    (name "r-mufimeshgp")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MuFiMeshGP" version))
+       (sha256
+        (base32 "16lqm6mg9qqisz34k5837i32c8fah60wqysll1yv22sh2g3mimg1"))))
+    (properties `((upstream-name . "MuFiMeshGP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-lhs))
+    (home-page "https://cran.r-project.org/package=MuFiMeshGP")
+    (synopsis
+     "Multi-Fidelity Emulator for Computer Experiments with Tunable Fidelity Levels")
+    (description
+     "Multi-Fidelity emulator for data from computer simulations of the same
+underlying system but at different input locations and fidelity level, where
+both the input locations and fidelity level can be continuous.  Active Learning
+can be performed with an implementation of the Integrated Mean Square Prediction
+Error (IMSPE) criterion developed by Boutelet and Sung (2025,
+<doi:10.48550/@code{arXiv.2503.23158>}).")
+    (license license:lgpl2.0+)))
 
 (define-public r-muerelativerisk
   (package
@@ -21483,13 +21541,13 @@ studies.")
 (define-public r-mlpack
   (package
     (name "r-mlpack")
-    (version "4.6.2")
+    (version "4.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlpack" version))
        (sha256
-        (base32 "0bd0ys93bdp2mag2mp7dk7bml25fy21m0wqksh7wn7w4bdxnxai7"))))
+        (base32 "1i1fnm4cqa2c0lj3j0h9nb7lpvkjnx8yg1x8xsximlbq941c38mb"))))
     (properties `((upstream-name . "mlpack")))
     (build-system r-build-system)
     (arguments
@@ -22113,13 +22171,13 @@ Pace (2020, ISBN:978-88-470-4002-1) \"Modelli Lineari Generalizzati\".")
 (define-public r-mlfs
   (package
     (name "r-mlfs")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLFS" version))
        (sha256
-        (base32 "0xrc266hz69vpfi2h59lma0wbyi1wfcw4wb3dbjbnqqwsq1hc0dz"))))
+        (base32 "0pzfb01m14ks61x7rywwsdfrnxc99yp323zg40yyyf9q00y0jlxf"))))
     (properties `((upstream-name . "MLFS")))
     (build-system r-build-system)
     (arguments
@@ -22134,16 +22192,19 @@ Pace (2020, ISBN:978-88-470-4002-1) \"Modelli Lineari Generalizzati\".")
                              r-magrittr
                              r-dplyr
                              r-brnn))
-    (home-page "https://cran.r-project.org/package=MLFS")
+    (home-page "https://CRAN.R-project.org/package=MLFS")
     (synopsis "Machine Learning Forest Simulator")
     (description
-     "Climate-sensitive forest simulator based on the principles of machine learning.
-It stimulates all key processes in the forest: radial growth, height growth,
-mortality, crown recession, regeneration and harvesting.  The method for
-predicting tree heights was described by Skudnik and JevÅ¡enak (2022)
-<doi:10.1016/j.foreco.2022.120017>, while the method for predicting basal area
-increments (BAI) was described by JevÅ¡enak and Skudnik (2021)
-<doi:10.1016/j.foreco.2020.118601>.")
+     "Climate-sensitive, single-tree forest simulator based on data-driven machine
+learning.  It simulates the main forest processesâ radial growth, height
+growth, mortality, crown recession, regeneration, and harvestingâso users can
+assess stand development under climate and management scenarios.  The height
+model is described by Skudnik and JevÅ¡enak (2022)
+<doi:10.1016/j.foreco.2022.120017>, the basal-area increment model by JevÅ¡enak
+and Skudnik (2021) <doi:10.1016/j.foreco.2020.118601>, and an overview of the
+MLFS package, workflow, and applications is provided by JevÅ¡enak, ArniÄ,
+Krajnc, and Skudnik (2023), Ecological Informatics
+<doi:10.1016/j.ecoinf.2023.102115>.")
     (license license:gpl3)))
 
 (define-public r-mlflow
@@ -27170,6 +27231,39 @@ approximation and of Cody et al. (1968) <doi:10.1007/BF02162506> for rational
 minimax approximation.")
     (license (license:fsdg-compatible "MPL-2.0"))))
 
+(define-public r-minimaxalt
+  (package
+    (name "r-minimaxalt")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "minimaxALT" version))
+       (sha256
+        (base32 "0ll1pj56v409lvll4zvxifd0kiaizkkckfgjaiq2999gafn5cmkf"))))
+    (properties `((upstream-name . "minimaxALT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rcppgsl r-rcpparmadillo r-rcpp r-ggplot2))
+    (home-page "https://github.com/hoanglinh171/minimaxALT")
+    (synopsis
+     "Generate Optimal Designs of Accelerated Life Test using PSO-Based Algorithm")
+    (description
+     "This package provides a computationally efficient solution for generating
+optimal experimental designs in Accelerated Life Testing (ALT).  Leveraging a
+Particle Swarm Optimization (PSO)-based hybrid algorithm, the package identifies
+optimal test plans that minimize estimation variance under specified failure
+models and stress profiles.  For more detailed, see Lee et al. (2025), Optimal
+Robust Strategies for Accelerated Life Tests and Fatigue Testing of Polymer
+Composite Materials, submitted to Annals of Applied Statistics,
+<https://imstat.org/journals-and-publications/annals-of-applied-statistics/annals-of-applied-statistics-next-issues/>,
+and Hoang (2025), Model-Robust Minimax Design of Accelerated Life Tests via
+PSO-based Hybrid Algorithm, Master Thesis, Unpublished.")
+    (license license:gpl3+)))
+
 (define-public r-minimax
   (package
     (name "r-minimax")
@@ -30976,13 +31070,13 @@ hidden state sequence for each individual using the Viterbi algorithm.")
 (define-public r-mhda
   (package
     (name "r-mhda")
-    (version "1.4")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MHDA" version))
        (sha256
-        (base32 "0l0ifw2slk5wx9nv6i6xqj79ccpgirk7qzzssy7mvhd249d9ybzb"))))
+        (base32 "1ymxxwz8v97x7bf3b3s711hci8claxvhs2r4ydych95nrdif7a4b"))))
     (properties `((upstream-name . "MHDA")))
     (build-system r-build-system)
     (arguments
@@ -30992,7 +31086,9 @@ hidden state sequence for each individual using the Viterbi algorithm.")
     (synopsis "Massive Hierarchically Data Analysis")
     (description
      "Three main functions about analyzing massive data (missing observations are
-allowed) considered from multiple layers of categories.")
+allowed) considered from multiple layers of categories are demonstrated.
+Flexible and diverse applications of the function parameters make the data
+analyses powerful.")
     (license license:gpl2)))
 
 (define-public r-mhd
@@ -34835,6 +34931,57 @@ and tools for inspecting, manipulating, summarizing and plotting typical
 multi-environment trial data are also provided.")
     (license license:gpl3)))
 
+(define-public r-metamorphr
+  (package
+    (name "r-metamorphr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metamorphr" version))
+       (sha256
+        (base32 "0w89fd0n406hql01axazrgyxm9pi5qkhxl21cb7br4p64grbqwiq"))))
+    (properties `((upstream-name . "metamorphr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-stringi
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-pcamethods
+                             r-missforest
+                             r-magrittr
+                             r-impute
+                             r-ggplot2
+                             r-dplyr
+                             r-crayon
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yasche/metamorphr")
+    (synopsis "Tidy and Streamlined Metabolomics Data Workflows")
+    (description
+     "Facilitate tasks typically encountered during metabolomics data analysis
+including data import, filtering, missing value imputation (Stacklies et al.
+(2007) <doi:10.1093/bioinformatics/btm069>, Stekhoven et al. (2012)
+<doi:10.1093/bioinformatics/btr597>, Tibshirani et al. (2017)
+<doi:10.18129/B9.BIOC.IMPUTE>, Troyanskaya et al. (2001)
+<doi:10.1093/bioinformatics/17.6.520>), normalization (Bolstad et al. (2003)
+<doi:10.1093/bioinformatics/19.2.185>, Dieterle et al. (2006)
+<doi:10.1021/ac051632c >, Zhao et al. (2020) <doi:10.1038/s41598-020-72664-6>)
+transformation, centering and scaling (Van Den Berg et al. (2006)
+<doi:10.1186/1471-2164-7-142>) as well as statistical tests and plotting.
+metamorphr introduces a tidy (Wickham et al. (2019) <doi:10.21105/joss.01686>)
+format for metabolomics data and is designed to make it easier to build
+elaborate analysis workflows and to integrate them with tidyverse packages
+including dplyr and ggplot2'.")
+    (license license:expat)))
+
 (define-public r-metamisc
   (package
     (name "r-metamisc")
@@ -36708,13 +36855,13 @@ al. (2021) <doi:10.3390/axioms10040267>, Taketomi et al. (2022)
 (define-public r-meta
   (package
     (name "r-meta")
-    (version "8.2-0")
+    (version "8.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meta" version))
        (sha256
-        (base32 "1b66ki7px7ns6pmpki0kvw1wsfk7dngw74v6izxavix125xr3mkd"))))
+        (base32 "0il5ya0m67nmkcabsxnffxbnz423xnz3hbmp9s8bykcv0dphv02d"))))
     (properties `((upstream-name . "meta")))
     (build-system r-build-system)
     (arguments

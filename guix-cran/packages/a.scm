@@ -1173,13 +1173,13 @@ nested JSON responses.  The AWDB can be found at
 (define-public r-avseqmc
   (package
     (name "r-avseqmc")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "avseqmc" version))
        (sha256
-        (base32 "0f6xsw6kyr54w1vf5yfi23l74d3q872impqxwgvnl93mp71mm0ld"))))
+        (base32 "1p527sphl90ind6yifzghhzrfwpc8dfffnffi6gfab5ys1l7f29h"))))
     (properties `((upstream-name . "avseqmc")))
     (build-system r-build-system)
     (arguments
@@ -4143,13 +4143,13 @@ map.")
 (define-public r-atom4r
   (package
     (name "r-atom4r")
-    (version "0.3-3")
+    (version "0.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atom4R" version))
        (sha256
-        (base32 "08n9apmliwri1vyqwfvyqi7m8b9nj7zpi1vg8gcqlg17skxndm2m"))))
+        (base32 "0pc7nm6syr0n8bilxc33mk05ahvqsym097bssqlxbmfgpskd6gyd"))))
     (properties `((upstream-name . "atom4R")))
     (build-system r-build-system)
     (arguments
@@ -4168,7 +4168,8 @@ map.")
     (description
      "This package provides tools to read/write/publish metadata based on the Atom XML
 syndication format.  This includes support of Dublin Core XML implementation,
-and a client to API(s) implementing the @code{AtomPub} SWORD API specification.")
+and a client to API(s) implementing the @code{AtomPub} - SWORD API
+specification.")
     (license license:expat)))
 
 (define-public r-atnr
@@ -10544,13 +10545,13 @@ to interpret them when a model is tested.")
 (define-public r-apportion
   (package
     (name "r-apportion")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apportion" version))
        (sha256
-        (base32 "0z8b9qsxsnwy6kmkns6cgri55mvnhsfkwwmljhlp26l93m3llabc"))))
+        (base32 "0rq2ng9cgvgp9m4fip95651yfc4hdmgzvgkh1c6557qdqbf9360c"))))
     (properties `((upstream-name . "apportion")))
     (build-system r-build-system)
     (arguments
@@ -16350,13 +16351,13 @@ symmetric stable and mixture of Cauchy distributions.")
 (define-public r-alphasimr
   (package
     (name "r-alphasimr")
-    (version "1.6.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AlphaSimR" version))
        (sha256
-        (base32 "1ca9n5hfxiapy9nhcapsca4w4qxc8nwjdlysfjc8r68fgbm4m1aq"))))
+        (base32 "1raphb4by4xr56bf3xqjsmbv452y81ji44567ssrfdk155npr2y1"))))
     (properties `((upstream-name . "AlphaSimR")))
     (build-system r-build-system)
     (arguments
@@ -23164,13 +23165,13 @@ Implementation Guide\" (CDISC Analysis Data Model Team, 2021,
 (define-public r-admiralonco
   (package
     (name "r-admiralonco")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralonco" version))
        (sha256
-        (base32 "0ni0czgg6m2bw9rhzvgiskjgkl3hnk96apswy9lsvpkiqacnqa1w"))))
+        (base32 "15226bw62mndgrp56a7xfb437yxr92zqjhgxrsbbzfpj1ilcbi80"))))
     (properties `((upstream-name . "admiralonco")))
     (build-system r-build-system)
     (arguments

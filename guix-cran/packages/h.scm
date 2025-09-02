@@ -13662,6 +13662,42 @@ and sample sizes, the program calculates a significance criteria and power
 estimate that takes into account the among trial variation.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-hcrur
+  (package
+    (name "r-hcrur")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hcruR" version))
+       (sha256
+        (base32 "1ws6jn9cr30rbs9qxr5vzyb58x8cs1cn5d91ggykgd5jrr3dxdr5"))))
+    (properties `((upstream-name . "hcruR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-purrr
+                             r-gtsummary
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/mumbarkar/hcruR")
+    (synopsis
+     "Estimate, Compare, and Visualize Healthcare Resource Utilization for Real-World Evidence")
+    (description
+     "This package provides tools to estimate, compare, and visualize healthcare
+resource utilization using data derived from electronic health records or
+real-world evidence sources.  The package supports pre index and post index
+analysis, patient cohort comparison, and customizable summaries and
+visualizations for clinical and health economics research.  Methods implemented
+are based on Scott et al. (2022) <doi:10.1080/13696998.2022.2037917> and Xia et
+al. (2024) <doi:10.14309/ajg.0000000000002901>.")
+    (license license:expat)))
+
 (define-public r-hcr
   (package
     (name "r-hcr")

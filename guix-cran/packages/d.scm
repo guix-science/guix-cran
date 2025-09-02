@@ -2858,13 +2858,13 @@ Linked Data) format to make it machine readable.")
 (define-public r-dtrackr
   (package
     (name "r-dtrackr")
-    (version "0.4.6")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtrackr" version))
        (sha256
-        (base32 "0rm93mwazp36mp26r4phl9s8iskzsa32zn66pjq95z0znqhl1v9l"))))
+        (base32 "1nkg3vkwhh98cgpaii730qd07xnp3nbvxpirwpphcjpm8j8xd6jy"))))
     (properties `((upstream-name . "dtrackr")))
     (build-system r-build-system)
     (arguments
@@ -2874,6 +2874,7 @@ Linked Data) format to make it machine readable.")
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-scales
                              r-rsvg
                              r-rlang
                              r-purrr
@@ -9358,13 +9359,13 @@ by other packages for designed experiments.")
 (define-public r-dodgr
   (package
     (name "r-dodgr")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dodgr" version))
        (sha256
-        (base32 "1jffvxs2f751lxl747nx7a399dbi1jwcaqiql8drb8bi1m5jnap6"))))
+        (base32 "1bk1pfygdy8b1v3w1m2il5v1jh6jibxyrr4b2cwwn9lbg4qdp2hl"))))
     (properties `((upstream-name . "dodgr")))
     (build-system r-build-system)
     (arguments
@@ -9376,11 +9377,12 @@ by other packages for designed experiments.")
                              r-osmdata
                              r-memoise
                              r-magrittr
+                             r-geodist
                              r-fs
                              r-digest
                              r-callr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/UrbanAnalyst/dodgr")
+    (home-page "https://UrbanAnalyst.github.io/dodgr/")
     (synopsis "Distances on Directed Graphs")
     (description
      "Distances on dual-weighted directed graphs using priority-queue shortest paths
@@ -20526,26 +20528,31 @@ maximum.")
 (define-public r-detect
   (package
     (name "r-detect")
-    (version "0.4-6")
+    (version "0.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "detect" version))
        (sha256
-        (base32 "10cfpmps2r0zcdqskzacflpz8g4wy2cfx920flr93lxmrb6i57sv"))))
+        (base32 "08kab9a8r4qflp74ib9ym85h7fzy3z1p312al48i0cpgl37mf2i8"))))
     (properties `((upstream-name . "detect")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pbapply r-matrix r-formula))
+    (propagated-inputs (list r-pbapply r-matrix r-formula r-extradistr))
     (home-page "https://github.com/psolymos/detect")
     (synopsis "Analyzing Wildlife Data with Detection Error")
     (description
      "Models for analyzing site occupancy and count data models with detection error,
-including single-visit based models, conditional distance sampling and
-time-removal models.  Package development was supported by the Alberta
-Biodiversity Monitoring Institute and the Boreal Avian Modelling Project.")
+including single-visit based models (Lele et al.  2012 <doi:10.1093/jpe/rtr042>,
+Moreno et al.  2010 <doi:10.1890/09-1073.1>, Solymos et al.  2012
+<doi:10.1002/env.1149>, Denes et al.  2016 <doi:10.1111/1365-2664.12818>),
+conditional distance sampling and time-removal models (QPAD) (Solymos et al.
+2013 <doi:10.1111/2041-210X.12106>, Solymos et al.  2018
+<doi:10.1650/CONDOR-18-32.1>), and single bin QPAD (SQPAD) models (Lele &
+Solymos 2025).  Package development was supported by the Alberta Biodiversity
+Monitoring Institute and the Boreal Avian Modelling Project.")
     (license license:gpl2)))
 
 (define-public r-details
@@ -24380,13 +24387,13 @@ rstudioapi'.")
 (define-public r-deepregression
   (package
     (name "r-deepregression")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deepregression" version))
        (sha256
-        (base32 "0r9pkhkpmkh11q0c4j989lzpsjfd2ksx6l8i9c4gvfskrgkg9s6v"))))
+        (base32 "1brfrkz472lbrd9rm63k4n934ayxi3lmvkv2rf36wd52hpac5gi6"))))
     (properties `((upstream-name . "deepregression")))
     (build-system r-build-system)
     (arguments
@@ -26744,13 +26751,13 @@ Pfeiffer (2020) <doi:10.1002/bimj.201800240>.")
 (define-public r-dcur
   (package
     (name "r-dcur")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dCUR" version))
        (sha256
-        (base32 "1blrxgf911b1y2pcp3hsv6cigpnclscjadlf5656kldblzj5w5m1"))))
+        (base32 "1v9gzvb7hz75q19pywkwl58q5sb3am9i54m7s6hvryqacm3miz4s"))))
     (properties `((upstream-name . "dCUR")))
     (build-system r-build-system)
     (arguments
@@ -33519,13 +33526,13 @@ Jacobsen et al. (2017) <doi:10.1162/dint_r_00024>.")
 (define-public r-d4storagehub4r
   (package
     (name "r-d4storagehub4r")
-    (version "0.4-4")
+    (version "0.4-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "d4storagehub4R" version))
        (sha256
-        (base32 "0ixv8wypcvcrn3xig8sg54mizsll4v2665l8hqd1q15d0ln2p789"))))
+        (base32 "1xdq6m2gqiagsp7f282nmq77a4nfpk544fxwyg4msryixxsy4lg5"))))
     (properties `((upstream-name . "d4storagehub4R")))
     (build-system r-build-system)
     (arguments

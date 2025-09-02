@@ -5916,13 +5916,13 @@ and Berding and Pargmann (2022) <doi:10.30819/5581>.")
 (define-public r-iotables
   (package
     (name "r-iotables")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iotables" version))
        (sha256
-        (base32 "15x7i2l298l1fxq2vy7p1naixmy39024y4sb542k8c3ashvp37gi"))))
+        (base32 "1bwnz3kvqrq2xmgachdics3pypbsiij39b71zjpkplh7m14733xi"))))
     (properties `((upstream-name . "iotables")))
     (build-system r-build-system)
     (arguments
@@ -5933,7 +5933,6 @@ and Berding and Pargmann (2022) <doi:10.30819/5581>.")
                              r-tibble
                              r-rlang
                              r-readxl
-                             r-plyr
                              r-magrittr
                              r-lubridate
                              r-knitr
@@ -5946,12 +5945,12 @@ and Berding and Pargmann (2022) <doi:10.30819/5581>.")
     (native-inputs (list r-knitr))
     (home-page "https://iotables.dataobservatory.eu/")
     (synopsis
-     "Reproducible Input-Output Economics Analysis, Economic and Environmental Impact Assessment with Empirical Data")
+     "Reproducible InputâOutput Economics Analysis, Economic and Environmental Impact Assessment with Empirical Data")
     (description
-     "Pre-processing and basic analytical tasks related to working with Eurostat's
-symmetric input-output tables and provide basic input-output economics
-calculations.  The package is part of @code{rOpenGov}
-<http://ropengov.github.io/> to open source open government initiatives.")
+     "Pre-processing and basic analytical tasks for working with Eurostat's symmetric
+inputâoutput tables, and basic inputâoutput economics calculations.  Part of
+@code{rOpenGov} <https://ropengov.github.io/> for open source open government
+initiatives.")
     (license license:expat)))
 
 (define-public r-iosmooth
@@ -9399,6 +9398,44 @@ series (e.g. the ECA&D station data).")
 C++.  Those can be applied on integer|double vectors|matrices.  You have also
 access to sweep operations (in-place).")
     (license license:gpl3)))
+
+(define-public r-inphr
+  (package
+    (name "r-inphr")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inphr" version))
+       (sha256
+        (base32 "11wr1blxhcjbp05f1n2l6b6bbqqafhbv6r343vaykwyq61b233ly"))))
+    (properties `((upstream-name . "inphr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tdavec
+                             r-rlang
+                             r-phutil
+                             r-flipr
+                             r-fdatest
+                             r-cli))
+    (home-page "https://github.com/tdaverse/inphr")
+    (synopsis "Statistical Inference for Persistence Homology Data")
+    (description
+     "This package provides a set of functions for performing null hypothesis testing
+on samples of persistence diagrams using the theory of permutations.  Currently,
+only two-sample testing is implemented.  Inputs can be either samples of
+persistence diagrams themselves or vectorizations.  In the former case, they are
+embedded in a metric space using either the Bottleneck or Wasserstein distance.
+In the former case, persistence data becomes functional data and inference is
+performed using tools available in the fdatest package.  Main reference for the
+interval-wise testing method: Pini A., Vantini S. (2017) \"Interval-wise testing
+for functional data\" <doi:10.1080/10485252.2017.1306627>.  Main reference for
+inference on populations of networks: Lovato, I., Pini, A., Stamm, A., &
+Vantini, S. (2020) \"Model-free two-sample test for network-valued data\"
+<doi:10.1016/j.csda.2019.106896>.")
+    (license license:gpl3+)))
 
 (define-public r-inpdfr
   (package

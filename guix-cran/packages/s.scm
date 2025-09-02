@@ -31445,6 +31445,42 @@ decompositions.")
 the website <https://southpark.fandom.com/wiki/South_Park_Archives>.")
     (license license:expat)))
 
+(define-public r-southkoreapis
+  (package
+    (name "r-southkoreapis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SouthKoreAPIs" version))
+       (sha256
+        (base32 "1j4zw9qbhnm38mh2kyb41sjrzig9yzwmgrrdmbna65p6k4hkqci1"))))
+    (properties `((upstream-name . "SouthKoreAPIs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-scales r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/southkoreapis")
+    (synopsis "Access South Korean Data via Public APIs and Curated Datasets")
+    (description
+     "This package provides functions to access data from public RESTful APIs
+including Nager.Date', World Bank API', and REST Countries API', retrieving
+real-time or historical data related to South Korea, such as holidays, economic
+indicators, and international demographic and geopolitical indicators.
+Additionally, the package includes one of the largest curated collections of
+open datasets focused on South Korea, covering topics such as public health
+outbreaks, demographics, social surveys, elections, economic indicators, natural
+disasters, administrative divisions, air quality, climate data, energy
+consumption, cultural information, and financial markets.  The package supports
+reproducible research and teaching by integrating reliable international APIs
+and structured datasets from public, academic, and government sources.  For more
+information on the APIs, see: Nager.Date <https://date.nager.at/Api>, World Bank
+API <https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, and REST
+Countries API <https://restcountries.com/>.")
+    (license license:expat)))
+
 (define-public r-sourcoise
   (package
     (name "r-sourcoise")
@@ -42345,13 +42381,13 @@ details on choice experiments see Mariel et al. (2021)
 (define-public r-simulariatools
   (package
     (name "r-simulariatools")
-    (version "2.5.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simulariatools" version))
        (sha256
-        (base32 "0zzghs44yll5181mw5nqm49k4q01hzm88fqjq8fjfzza1gplrkf7"))))
+        (base32 "0f4dv8rpny9lad6818vbln8d02d8asqip4ddwm7wfpdldzkb3m6g"))))
     (properties `((upstream-name . "simulariatools")))
     (build-system r-build-system)
     (arguments
@@ -48886,6 +48922,32 @@ separate numeric input for each time component.  The interface with R uses
 date-time objects.  See the project page for more information and examples.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-shinytesters
+  (package
+    (name "r-shinytesters")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinytesters" version))
+       (sha256
+        (base32 "1f4fc98fx739v1srpvsf7yr62ii5p0dl95igfmr2wqcr8ayk5n2j"))))
+    (properties `((upstream-name . "shinytesters")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://ashbaldry.github.io/shinytesters/")
+    (synopsis "Update 'Shiny' Inputs when using testServer()")
+    (description
+     "Create mocked bindings to Shiny update functions within test function calls to
+automatically update input values.  The mocked bindings simulate the
+communication between the server and UI components of a Shiny module in
+@code{testServer()}.")
+    (license license:gpl3)))
 
 (define-public r-shinytester
   (package
@@ -59532,6 +59594,62 @@ positive, then atomically decrement it and unblock.  Any session can increment
 the semaphore.")
     (license license:expat)))
 
+(define-public r-semanticdistance
+  (package
+    (name "r-semanticdistance")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SemanticDistance" version))
+       (sha256
+        (base32 "03gi3hkz0b4ik0ayqwf5yp24fq3fb2hjlp73q0746xs9560rc12a"))))
+    (properties `((upstream-name . "SemanticDistance")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wesanderson
+                             r-tm
+                             r-tidyselect
+                             r-tidyr
+                             r-textstem
+                             r-textclean
+                             r-stringr
+                             r-stringi
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lsa
+                             r-igraph
+                             r-httr
+                             r-dplyr
+                             r-dendextend
+                             r-cluster
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://github.com/Reilly-ConceptsCognitionLab/SemanticDistance")
+    (synopsis "Compute Semantic Distance Between Text Constituents")
+    (description
+     "Cleans and formats language transcripts guided by a series of transformation
+options (e.g., lemmatize words, omit stopwords, split strings across rows).
+@code{SemanticDistance} computes two distinct metrics of cosine semantic
+distance (experiential and embedding).  These values reflect pairwise cosine
+distance between different elements or chunks of a language sample.
+@code{SemanticDistance} can process monologues (e.g., stories, ordered text),
+dialogues (e.g., conversation transcripts), word pairs arrayed in columns, and
+unordered word lists.  Users specify options for how they wish to chunk distance
+calculations.  These options include: rolling ngram-to-word distance (window of
+n-words to each new word), ngram-to-ngram distance (2-word chunk to the next
+2-word chunk), pairwise distance between words arrayed in columns, matrix
+comparisons (i.e., all possible pairwise distances between words in an unordered
+list), turn-by-turn distance (talker to talker in a dialogue transcript).
+@code{SemanticDistance} includes visualization options for analyzing distances
+as time series data and simple semantic network dynamics (e.g., clustering,
+undirected graph network).")
+    (license license:lgpl3+)))
+
 (define-public r-semantic-dashboard
   (package
     (name "r-semantic-dashboard")
@@ -67554,13 +67672,13 @@ sorting and plotting.")
 (define-public r-scbsp
   (package
     (name "r-scbsp")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scBSP" version))
        (sha256
-        (base32 "0cabj2hizmnadq5vijaip4d1wcsycwy5bdpgjwivzgqkhy9r5ss7"))))
+        (base32 "0q90rkwwbirnj84wyxs1gjwj3vsgids9xnhfyngh0gl476pa0srw"))))
     (properties `((upstream-name . "scBSP")))
     (build-system r-build-system)
     (arguments

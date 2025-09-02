@@ -153,13 +153,13 @@ at Arick Grootveld, Eva R. Kozak, Carmen Franco-Gordo (2023)
 (define-public r-zonohedra
   (package
     (name "r-zonohedra")
-    (version "0.5-0")
+    (version "0.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zonohedra" version))
        (sha256
-        (base32 "1jdlh4xi5svdbjfcb7ddrhmisma2mr8j2b8j8wv4d9k1nlrqsf9g"))))
+        (base32 "0wpa7xg0ic7f1cx9xfhcip2k3dk1yww9h48xrhn0sfx0r6qmw7il"))))
     (properties `((upstream-name . "zonohedra")))
     (build-system r-build-system)
     (arguments

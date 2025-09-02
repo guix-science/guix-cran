@@ -8654,13 +8654,13 @@ Public Health Ontario website:
 (define-public r-onls
   (package
     (name "r-onls")
-    (version "0.1-3")
+    (version "0.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onls" version))
        (sha256
-        (base32 "0zy1n9x3xbxya2igl0jkzqfcv826qzr8l3hn4c99y8zf2j9faqla"))))
+        (base32 "1x3qmb050lapgk0vg259m4vz1cggps7azgflzxdshflfijkzsm84"))))
     (properties `((upstream-name . "onls")))
     (build-system r-build-system)
     (arguments
@@ -10163,13 +10163,13 @@ common data model.")
 (define-public r-omock
   (package
     (name "r-omock")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omock" version))
        (sha256
-        (base32 "181k3sqapq927hfpnvg68ld6zlqf5f7cqxrcm43cdp0msmaplf2n"))))
+        (base32 "1gbx91k4j01pv75f1lm9673m40w45ar7083rd5a11dxnrm68bgrp"))))
     (properties `((upstream-name . "omock")))
     (build-system r-build-system)
     (arguments
@@ -10181,6 +10181,7 @@ common data model.")
                              r-purrr
                              r-omopgenerics
                              r-lubridate
+                             r-lifecycle
                              r-dplyr
                              r-cli
                              r-arrow))
@@ -10552,6 +10553,55 @@ regression coefficients are simply scaled correlation) between a dependent
 variable Y and independent variables X, it uses known correlation between X and
 Y to predict Y.")
     (license license:gpl3+)))
+
+(define-public r-omicflow
+  (package
+    (name "r-omicflow")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmicFlow" version))
+       (sha256
+        (base32 "044wgpppp2wni411a57h5wqzqrbc94j81sjir4v9dzc4mkk029ly"))))
+    (properties `((upstream-name . "OmicFlow")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yyjsonr
+                             r-viridis
+                             r-vegan
+                             r-slam
+                             r-rstatix
+                             r-rhdf5
+                             r-rcolorbrewer
+                             r-rbiom
+                             r-r6
+                             r-purrr
+                             r-patchwork
+                             r-matrix
+                             r-magrittr
+                             r-jsonvalidate
+                             r-jsonlite
+                             r-ggrepel
+                             r-ggpubr
+                             r-ggplot2
+                             r-gghalves
+                             r-data-table
+                             r-ape))
+    (home-page "https://github.com/agusinac/OmicFlow")
+    (synopsis "Fast and Efficient (Automated) Analysis of Sparse Omics Data")
+    (description
+     "This package provides a generalised data structure for fast and efficient
+loading and data munching of sparse omics data.  The @code{OmicFlow} requires an
+up-front validated metadata template from the user, which serves as a guide to
+connect all the pieces together by aligning them into a single object that is
+defined as an omics class.  Once this unified structure is established, users
+can perform manual subsetting, visualisation, and statistical analysis, or
+leverage the automated @code{autoFlow} method to generate a comprehensive
+report.")
+    (license license:expat)))
 
 (define-public r-omegag
   (package
@@ -12703,13 +12753,13 @@ study, please see the respective README file at
 (define-public r-ocs4r
   (package
     (name "r-ocs4r")
-    (version "0.2-3")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ocs4R" version))
        (sha256
-        (base32 "09zl9jl1kzvyq0wccp41j32pr3as93qh250iaawhwkpcswjpyl89"))))
+        (base32 "0xj2ick3y092k5n3wjgpwglrxmq62fqv0fwlbz70433nlih61rh0"))))
     (properties `((upstream-name . "ocs4R")))
     (build-system r-build-system)
     (arguments

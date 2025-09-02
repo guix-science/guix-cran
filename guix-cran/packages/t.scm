@@ -1528,13 +1528,13 @@ in the framework presented by Ferreira et al. (2017)
 (define-public r-tvgarch
   (package
     (name "r-tvgarch")
-    (version "2.4.2")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tvgarch" version))
        (sha256
-        (base32 "1f7ylwq3988kqd765768b3qcwk6mrrlhjlfq10yifn3040wpgx8w"))))
+        (base32 "01xpi4amzl30s4fv5vqczzmw97qag1vl03mr16xkpjjh0b0knq5f"))))
     (properties `((upstream-name . "tvgarch")))
     (build-system r-build-system)
     (arguments
@@ -24484,13 +24484,13 @@ molecular sequences.")
 (define-public r-text
   (package
     (name "r-text")
-    (version "1.6")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "text" version))
        (sha256
-        (base32 "0zkqdx6q6qri3l8hzbysw1g4qv7ilmwfm2g4n9n7ccmbvcfc7gwr"))))
+        (base32 "1kgrfhd29m93m7nzaa7bn94hf9yqa41wnyc6c28i6s3ybzndnsj2"))))
     (properties `((upstream-name . "text")))
     (build-system r-build-system)
     (arguments

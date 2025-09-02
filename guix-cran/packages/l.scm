@@ -3186,6 +3186,35 @@ summarized in a CD-plot as described in Algeri S. (2019)
 <@code{arXiv:1906.06615>}.")
     (license license:gpl3)))
 
+(define-public r-lpanda
+  (package
+    (name "r-lpanda")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lpanda" version))
+       (sha256
+        (base32 "1rcpf8ax8w104wv817pj7ff27sljaadr5g64qhpb722qs61zajka"))))
+    (properties `((upstream-name . "lpanda")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-rcolorbrewer r-magrittr r-igraph
+                             r-dplyr))
+    (home-page "https://github.com/localpolitics/lpanda")
+    (synopsis "Local Political Actor Network Diachronic Analysis Tools")
+    (description
+     "This package provides functions to prepare, visualize, and analyse diachronic
+network data on local political actors, with a particular focus on the
+development of local party systems and identification of actor groups.
+Formalizes and automates a continuity diagram method that has been previously
+applied in research on Czech local politics, e.g. Bubenicek and Kubalek (2010,
+ISSN:1803-8220), Kubalek and Bubenicek (2012, ISSN:1803-8220), and Cmejrek,
+Bubenicek, and Copik (2010, ISBN:978-80-247-3061-5).")
+    (license license:expat)))
+
 (define-public r-lpacf
   (package
     (name "r-lpacf")

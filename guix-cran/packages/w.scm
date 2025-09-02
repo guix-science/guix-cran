@@ -2862,13 +2862,13 @@ well.")
 (define-public r-woodburymatrix
   (package
     (name "r-woodburymatrix")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WoodburyMatrix" version))
        (sha256
-        (base32 "0pmm032lyk31bv30dwz7ajz2ihppp13i1ibpnnc9x9ga3axxhpj7"))))
+        (base32 "1bfm778pm94l7n4nikvdxndxa9d87hpml1cxqyhpph5bczsidy9d"))))
     (properties `((upstream-name . "WoodburyMatrix")))
     (build-system r-build-system)
     (arguments
@@ -7971,13 +7971,13 @@ Nabipoor M, Westerhout CM, Rathwell S, and Bakal JA (2023)
 (define-public r-wce
   (package
     (name "r-wce")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WCE" version))
        (sha256
-        (base32 "0wg4nigvry53mb89b89c1yrdlk5z0s1qqmlskwsrlbbkwd11sjch"))))
+        (base32 "0sb1wp073wlyzddk65k39sz3axwkrmjjbjv76b3izbklb0ww69q7"))))
     (properties `((upstream-name . "WCE")))
     (build-system r-build-system)
     (arguments

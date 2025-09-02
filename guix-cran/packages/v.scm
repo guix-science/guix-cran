@@ -878,13 +878,13 @@ overlapping stochastic blockmodels.")
 (define-public r-vsolassobag
   (package
     (name "r-vsolassobag")
-    (version "0.99.1")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VSOLassoBag" version))
        (sha256
-        (base32 "1jmnm435x36jlhbzl7kgjiby7kb7yjhh013zdnnvf9pcjaallqn9"))))
+        (base32 "0s09yjbjidp8qkklf41c4a719x8shs85p411ppjvz8a34khjrb06"))))
     (properties `((upstream-name . "VSOLassoBag")))
     (build-system r-build-system)
     (arguments
@@ -9787,6 +9787,34 @@ required to use this package and can be downloaded from:
 Valection: Design Optimization for Validation and Verification Studies; Biorxiv
 2018; <doi:10.1101/254839>.")
     (license license:gpl3)))
+
+(define-public r-valdr
+  (package
+    (name "r-valdr")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valdr" version))
+       (sha256
+        (base32 "0jnajwifv6irbm7vcjj50jqqg863xyv5aa61gm3snizlgm0hk4cz"))))
+    (properties `((upstream-name . "valdr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-keyring r-jsonlite r-httr r-base64enc))
+    (home-page "https://cran.r-project.org/package=valdr")
+    (synopsis "Access and Analyse 'VALD' Data via Our External 'APIs'")
+    (description
+     "This package provides helper functions and wrappers to simplify authentication,
+data retrieval, and result processing from the VALD APIs'.  Designed to
+streamline integration for analysts and researchers working with VALD's external
+APIs'.  For further documentation on integrating with VALD APIs', see:
+<https://support.vald.com/hc/en-au/articles/23415335574553-How-to-integrate-with-VALD-APIs>.
+ For a step-by-step guide to using this package, see:
+<https://support.vald.com/hc/en-au/articles/48730811824281-A-guide-to-using-the-valdr-R-package>.")
+    (license license:expat)))
 
 (define-public r-valaddin
   (package

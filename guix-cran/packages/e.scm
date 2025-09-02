@@ -23775,6 +23775,38 @@ by expected posterior rank, although computations minimizing other plausible
 rank-loss functions are also given.")
     (license license:cc0)))
 
+(define-public r-ebrahim-gof
+  (package
+    (name "r-ebrahim-gof")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ebrahim.gof" version))
+       (sha256
+        (base32 "0sviy07qwhdwrlh1ny0kys9fb8llamygjfx4cdnq67jn0wwma930"))))
+    (properties `((upstream-name . "ebrahim.gof")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ebrahimkhaled/ebrahim.gof")
+    (synopsis
+     "Ebrahim-Farrington Goodness-of-Fit Test for Logistic Regression")
+    (description
+     "This package implements the Ebrahim-Farrington goodness-of-fit test for logistic
+regression models, particularly effective for sparse data and binary outcomes.
+This test provides an improved alternative to the traditional Hosmer-Lemeshow
+test by using a modified Pearson chi-square statistic with data-dependent
+grouping.  The test is based on Farrington (1996) theoretical framework but
+simplified for practical implementation with binary data.  Includes functions
+for both the original Farrington test (for grouped data) and the new
+Ebrahim-Farrington test (for binary data with automatic grouping).  For more
+details see Hosmer (1980) <doi:10.1080/03610928008827941> and Farrington (1996)
+<doi:10.1111/j.2517-6161.1996.tb02086.x>.")
+    (license license:gpl3)))
+
 (define-public r-ebprs
   (package
     (name "r-ebprs")
@@ -25338,13 +25370,13 @@ Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
 (define-public r-easybio
   (package
     (name "r-easybio")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easybio" version))
        (sha256
-        (base32 "1lfc21rk5b38zwqgwhivwa7400f9ifwn6biyqi2h8bqhn08nbhkm"))))
+        (base32 "043ivli3rx3cr4777kcf8vj397xpkl3ysspb6drzw3yg6nh07rvz"))))
     (properties `((upstream-name . "easybio")))
     (build-system r-build-system)
     (arguments

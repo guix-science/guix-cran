@@ -1739,13 +1739,13 @@ method and a minimum distance estimator.  Mayoral, L. (2007)
 (define-public r-nrlr
   (package
     (name "r-nrlr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nrlR" version))
        (sha256
-        (base32 "011jd5pn8gzwvkf7axcf772d72q2sly5ps2ril0r0xxn46x189xw"))))
+        (base32 "1iq6927v3r1fzmlkpnpzh5srmb54kd8a0g78hc2q8ivci9lpp8mp"))))
     (properties `((upstream-name . "nrlR")))
     (build-system r-build-system)
     (arguments
@@ -1763,14 +1763,16 @@ method and a minimum distance estimator.  Mayoral, L. (2007)
                              r-dplyr
                              r-cli))
     (home-page "https://cran.r-project.org/package=nrlR")
-    (synopsis "Access and Analyze Rugby League Data from Rugby League Project")
+    (synopsis "Functions to Scrape Rugby Data")
     (description
      "This package provides a set of functions to scrape and analyze rugby data.
 Supports competitions including the National Rugby League, New South Wales Cup,
 Queensland Cup, Super League, and various representative and women's
 competitions.  Includes functions to fetch player statistics, match results,
 ladders, venues, and coaching data.  Designed to assist analysts, fans, and
-researchers in exploring historical and current rugby league data.")
+researchers in exploring historical and current rugby league data.  See Woods et
+al. (2017) <doi:10.1123/ijspp.2016-0187> for an example of rugby league
+performance analysis methodology.")
     (license license:expat)))
 
 (define-public r-nricens
@@ -18026,13 +18028,13 @@ provides a name to the latent variable.")
 (define-public r-naijr
   (package
     (name "r-naijr")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naijR" version))
        (sha256
-        (base32 "1aaqzpx8r93lb5gd2ykr7fclh1lgips66jrm1clvmrxb54j3blxi"))))
+        (base32 "0qm7p7klywld0y8d1c5r2smhfpxnhzarwb5b4vhrzzmgp72z0xac"))))
     (properties `((upstream-name . "naijR")))
     (build-system r-build-system)
     (arguments

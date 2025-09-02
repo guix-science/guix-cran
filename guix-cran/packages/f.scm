@@ -15430,13 +15430,13 @@ work is available on github and @code{PyPi} ('@code{FiShPy}').")
 (define-public r-first
   (package
     (name "r-first")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "first" version))
        (sha256
-        (base32 "0lz2nm7rvqyfnxbc3p357k18wbzrzjf39is9xp5ajgq3vpmpjgln"))))
+        (base32 "1r6sfwxjh9vx03r67a7ynzwgaywg2djik5b78pxj38qqqrffacd5"))))
     (properties `((upstream-name . "first")))
     (build-system r-build-system)
     (arguments
@@ -15451,6 +15451,30 @@ selection procedure based on total Sobol indices.  Please see Huang and Joseph
 (2025) <doi:10.1080/00401706.2025.2483531>.  This research is supported by U.S.
 National Science Foundation grants DMS-2310637 and DMREF-1921873.")
     (license license:gpl2+)))
+
+(define-public r-firestorm
+  (package
+    (name "r-firestorm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "firestorm" version))
+       (sha256
+        (base32 "0jc4ckm70yj8524pd0276md0bnnayh9zlmxd3hyy8ip6cvxkab6a"))))
+    (properties `((upstream-name . "firestorm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-websocket r-rlang r-r6 r-cli))
+    (home-page "https://github.com/thomasp85/firestorm")
+    (synopsis "Reverse Proxy and Load Balancing for 'fiery'")
+    (description
+     "This package provides plugins for setting up fiery apps as a reverse proxy.
+This allows you to use a fiery server as a front for multiple services or even
+work as a load-balancer.")
+    (license license:expat)))
 
 (define-public r-firesale
   (package
@@ -19360,13 +19384,13 @@ package?fechner for an overview.")
 (define-public r-fec16
   (package
     (name "r-fec16")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fec16" version))
        (sha256
-        (base32 "1lyqq4vx30bypl5b2yvv9k4zk1li6h43r2xf4dz5m11ycqw0ysja"))))
+        (base32 "1n3qphiaj9lf5sqaprknma43yydb7rs7gsdh9xkcr17zwhr553di"))))
     (properties `((upstream-name . "fec16")))
     (build-system r-build-system)
     (arguments
@@ -19552,13 +19576,13 @@ data.")
 (define-public r-featureextraction
   (package
     (name "r-featureextraction")
-    (version "3.10.0")
+    (version "3.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FeatureExtraction" version))
        (sha256
-        (base32 "0sv6b00h8l13wa5g397z8m04kab9d1xq9rwk8zwclr0vsq1abpm2"))))
+        (base32 "0im4gh1h1qnjhpa8g4qpvcyw3rk7sqg69b71ahhb4w1ylhcxz6sp"))))
     (properties `((upstream-name . "FeatureExtraction")))
     (build-system r-build-system)
     (arguments
@@ -24542,13 +24566,13 @@ Bogetoft & Otto (2011) <doi:10.1007/978-1-4419-7961-2>.")
 (define-public r-farr
   (package
     (name "r-farr")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "farr" version))
        (sha256
-        (base32 "0y7vmxva1wjsplh7wfpz9jm26hz5qinbrp7na2gbmdwj78z4d38q"))))
+        (base32 "1cn9h1sqrgg9bwqz1bb79yzag00ws16rw7fll4gngkhc1i92p7w0"))))
     (properties `((upstream-name . "farr")))
     (build-system r-build-system)
     (arguments
@@ -24569,8 +24593,8 @@ Bogetoft & Otto (2011) <doi:10.1007/978-1-4419-7961-2>.")
     (synopsis "Data and Code for Financial Accounting Research")
     (description
      "Handy functions and data to support a course book for accounting research.  Gow,
-Ian and Tongqing Ding (2022) Accounting Research: An Introductory Course
-<https://iangow.github.io/far_book/>.")
+Ian D. and Tongqing Ding (2024) Empirical Research in Accounting: Tools and
+Methods <https://iangow.github.io/far_book/>.")
     (license license:expat)))
 
 (define-public r-farmtest
@@ -26791,13 +26815,13 @@ within the Description.")
 (define-public r-face
   (package
     (name "r-face")
-    (version "0.1-7")
+    (version "0.1-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "face" version))
        (sha256
-        (base32 "08ri7mrp3az82x3yyydg7vrla8cdl8bxpcnxfv4cfdhxslks9qb7"))))
+        (base32 "1xlasis4mgskiac04yfc07w6287ngj5qji6vy3x01aj3y3a7cksx"))))
     (properties `((upstream-name . "face")))
     (build-system r-build-system)
     (arguments
@@ -27002,13 +27026,13 @@ Representatives algorithm (Papastamoulis and Iliopoulos (2010)
 (define-public r-fabletools
   (package
     (name "r-fabletools")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabletools" version))
        (sha256
-        (base32 "1qw05xh56sjk19a0qaslw0qnwa074pms60zgl0sbxnh8538ba0xh"))))
+        (base32 "1m7h6ppkbg7hjyzghvdl1f9kh9kcv740z6470vcajb28avam79gv"))))
     (properties `((upstream-name . "fabletools")))
     (build-system r-build-system)
     (arguments

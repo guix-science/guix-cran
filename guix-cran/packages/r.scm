@@ -8311,13 +8311,13 @@ creates.")
 (define-public r-rsatools
   (package
     (name "r-rsatools")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSAtools" version))
        (sha256
-        (base32 "0bri0hnq689vlxhi4vjya0hy529ksild62dlz40wybzywpaqa46g"))))
+        (base32 "0ir79gk029y8hgkp1vahqfvqyvdsnbfdygc1i7i2fyzv8gbgzhfh"))))
     (properties `((upstream-name . "RSAtools")))
     (build-system r-build-system)
     (arguments
@@ -8327,6 +8327,7 @@ creates.")
                              r-rsa
                              r-rcolorbrewer
                              r-plyr
+                             r-mass
                              r-lavaan
                              r-lattice
                              r-ggplot2
@@ -32535,6 +32536,30 @@ with \"resolver\" and \"client\" classes to facilitate the access and the usage 
 the resources.")
     (license license:lgpl2.1+)))
 
+(define-public r-resourcecodedata
+  (package
+    (name "r-resourcecodedata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "resourcecodedata" version))
+       (sha256
+        (base32 "1f30mg44jghhllnqkhk87q849iw7f1ycyfzx77zkpzncy0n0w396"))))
+    (properties `((upstream-name . "resourcecodedata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/Resourcecode-project/r-resourcecodedata/")
+    (synopsis "Resourcecode Database Configuration Data")
+    (description
+     "Includes Resourcecode hindcast database (see <https://resourcecode.ifremer.fr>)
+configuration data: nodes locations for both the sea-state parameters and the
+spectra data; examples of time series of 1D and 2D surface elevation variance
+spectral density.")
+    (license license:gpl3+)))
+
 (define-public r-resourcecode
   (package
     (name "r-resourcecode")
@@ -51704,13 +51729,13 @@ algorithm attributed to Wylie et al. (1967) <doi:10.1145/1465611.1465619>.")
 (define-public r-rasterdiv
   (package
     (name "r-rasterdiv")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rasterdiv" version))
        (sha256
-        (base32 "0rdghxfx0ym0dki8w25b347gkp9gbrwl56ap9arvbs1pyjrlnflz"))))
+        (base32 "0bmxr70wd96xmp10gfmmvydv5drdk1r8101b1a19iqpbn17xmj5m"))))
     (properties `((upstream-name . "rasterdiv")))
     (build-system r-build-system)
     (arguments
@@ -51729,9 +51754,9 @@ algorithm attributed to Wylie et al. (1967) <doi:10.1145/1465611.1465619>.")
     (home-page "https://mattmar.github.io/rasterdiv/")
     (synopsis "Diversity Indices for Numerical Matrices")
     (description
-     "This package provides methods to calculate diversity indices on numerical
-matrices based on information theory, as described in Rocchini, Marcantonio and
-Ricotta (2017) <doi:10.1016/j.ecolind.2016.07.039>, and Rocchini et al. (2021)
+     "This package provides methods for calculating diversity indices on numerical
+matrices, based on information theory, following Rocchini, Marcantonio and
+Ricotta (2017) <doi:10.1016/j.ecolind.2016.07.039> and Rocchini et al. (2021)
 <doi:10.1101/2021.01.23.427872>.")
     (license license:gpl2+)))
 

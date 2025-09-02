@@ -14877,13 +14877,13 @@ a simple Poisson regression.")
 (define-public r-powerly
   (package
     (name "r-powerly")
-    (version "1.8.6")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powerly" version))
        (sha256
-        (base32 "0vc2wpx2b4i9vx9jvvlywq5w4dx22bn4r9fcwz123h1m09252ng8"))))
+        (base32 "189mg9wc3z4g73l046490z8a1cbzcffjhmki38ccpnds7xmfrrlb"))))
     (properties `((upstream-name . "powerly")))
     (build-system r-build-system)
     (arguments
@@ -14894,9 +14894,8 @@ a simple Poisson regression.")
                              r-r6
                              r-quadprog
                              r-qgraph
-                             r-progress
                              r-patchwork
-                             r-osqp
+                             r-parabar
                              r-mvtnorm
                              r-ggplot2
                              r-bootnet))
@@ -14904,7 +14903,7 @@ a simple Poisson regression.")
     (synopsis "Sample Size Analysis for Psychological Networks and More")
     (description
      "An implementation of the sample size computation method for network models
-proposed by Constantin et al. (2021) <doi:10.31234/osf.io/j5v7u>.  The
+proposed by Constantin et al. (2023) <doi:10.1037/met0000555>.  The
 implementation takes the form of a three-step recursive algorithm designed to
 find an optimal sample size given a model specification and a performance
 measure of interest.  It starts with a Monte Carlo simulation step for computing
@@ -15169,6 +15168,47 @@ based on estimated means and standard deviations of the conditions.  Please
 refer to the documentation of the @code{boot.power.anova()} function for further
 details.")
     (license license:gpl3+)))
+
+(define-public r-powerbrmsinla
+  (package
+    (name "r-powerbrmsinla")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "powerbrmsINLA" version))
+       (sha256
+        (base32 "0s67cnji29sfzly54cfq4p1lspbclv51ywb7gm72g4fc75h9ln1w"))))
+    (properties `((upstream-name . "powerbrmsINLA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-brms))
+    (home-page "https://github.com/Tony-Myers/powerbrmsINLA")
+    (synopsis "Bayesian Power Analysis Using 'brms' and 'INLA'")
+    (description
+     "This package provides tools for Bayesian power analysis and assurance
+calculations using the statistical frameworks of brms and INLA'.  Includes
+simulation-based approaches, support for multiple decision rules (direction,
+threshold, ROPE), sequential designs, and visualisation helpers.  Methods are
+based on Kruschke (2014, ISBN:9780124058880) \"Doing Bayesian Data Analysis: A
+Tutorial with R, JAGS, and Stan\", O'Hagan & Stevens (2001)
+<doi:10.1177/0272989X0102100307> \"Bayesian Assessment of Sample Size for
+Clinical Trials of Cost-Effectiveness\", Kruschke (2018)
+<doi:10.1177/2515245918771304> \"Rejecting or Accepting Parameter Values in
+Bayesian Estimation\", Rue et al. (2009) <doi:10.1111/j.1467-9868.2008.00700.x>
+\"Approximate Bayesian inference for latent Gaussian models by using integrated
+nested Laplace approximations\", and BÃ¼rkner (2017) <doi:10.18637/jss.v080.i01>
+\"brms: An R Package for Bayesian Multilevel Models using Stan\".")
+    (license license:expat)))
 
 (define-public r-powerbir
   (package
@@ -16981,13 +17021,13 @@ trends, or population indices, from animal or plant count survey data.")
 (define-public r-popstudy
   (package
     (name "r-popstudy")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "popstudy" version))
        (sha256
-        (base32 "09lavka4hr4f8m2j8wqvd4pqxbxhclac1p2f2vq15xk7n4xfbhw3"))))
+        (base32 "1rslhpm19p7gvxigik3jy119qxja963nr5nzhwksqng1rbg2dgqa"))))
     (properties `((upstream-name . "popstudy")))
     (build-system r-build-system)
     (arguments
@@ -28950,6 +28990,37 @@ exemplify the application of this procedure, habitat selection is assessed for a
 population of European Brown Hares settled in central Italy.")
     (license license:gpl2+)))
 
+(define-public r-phsopendata
+  (package
+    (name "r-phsopendata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phsopendata" version))
+       (sha256
+        (base32 "033zksm4cc4g65qym74vq4kn0fd3hj1qc739d9glbwqqj5iqj90b"))))
+    (properties `((upstream-name . "phsopendata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringdist
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-httr
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/Public-Health-Scotland/phsopendata")
+    (synopsis
+     "Extract from the Scottish Health and Social Care Open Data Platform")
+    (description
+     "Extract and interact with data from the Scottish Health and Social Care Open
+Data platform <https://www.opendata.nhs.scot>.")
+    (license license:expat)))
+
 (define-public r-phsmm
   (package
     (name "r-phsmm")
@@ -37400,13 +37471,13 @@ traversal described in Mitov and Stadler (2018) <doi:10.1111/2041-210X.13136>.")
 (define-public r-pcmbase
   (package
     (name "r-pcmbase")
-    (version "1.2.14")
+    (version "1.2.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PCMBase" version))
        (sha256
-        (base32 "0vnkznr7rgvja8l7dikc56xf9gvk7g9lx7qp882rbyj4wbk50dmf"))))
+        (base32 "00kp1m892jix19xaggq58lhr3cd3iar3h2yybmdv08aahi8dvm1w"))))
     (properties `((upstream-name . "PCMBase")))
     (build-system r-build-system)
     (arguments

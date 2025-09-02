@@ -10458,13 +10458,13 @@ Cure (PHMC) model and the Proportional Odds Mixture Cure Model as special cases.
 (define-public r-gor
   (package
     (name "r-gor")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gor" version))
        (sha256
-        (base32 "05wjmp8r58jv0ppq54vjw8xbwdlmksh5zch8cjm3ss20fsvqxdsj"))))
+        (base32 "1xz0c27a3fn44sg6rbskrbmch9znmxs9nm8zzsf1bldl91vk260i"))))
     (properties `((upstream-name . "gor")))
     (build-system r-build-system)
     (arguments
@@ -10476,11 +10476,7 @@ Cure (PHMC) model and the Proportional Odds Mixture Cure Model as special cases.
     (description
      "Informal implementation of some algorithms from Graph Theory and Combinatorial
 Optimization which arise in the subject \"Graphs and Network Optimization\" from
-first course of the EUPLA (Escuela Universitaria Politecnica de La Almunia)
-degree of Data Engineering in Industrial Processes.  References used are: Cook
-et al (1998, ISBN:0-471-55894-X), Korte, Vygen (2018)
-<doi:10.1007/978-3-662-56039-6>, Hromkovic (2004)
-<doi:10.1007/978-3-662-05269-3>, Hartmann, Weigt (2005, ISBN:978-3-527-40473-5).")
+first course of the EUPLA degree of Data Engineering in Industrial Processes.")
     (license license:gpl3)))
 
 (define-public r-googleway
@@ -26477,13 +26473,13 @@ midpoint, bearing and more are derived from <https://www.movable-type.co.uk>.")
 (define-public r-geosapi
   (package
     (name "r-geosapi")
-    (version "0.7-1")
+    (version "0.7-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geosapi" version))
        (sha256
-        (base32 "0zq02xnzqszmkdj99686g2x91gyc8x16yhkixhpd7frap7zy6h23"))))
+        (base32 "13n4b73y2b89204441ww28l3magiwsjmrxnb7kg6x8z5clf8hpji"))))
     (properties `((upstream-name . "geosapi")))
     (build-system r-build-system)
     (arguments
@@ -26716,13 +26712,13 @@ ensuring consistency and ease of use for spatial analysis and visualization.")
 (define-public r-geonode4r
   (package
     (name "r-geonode4r")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geonode4R" version))
        (sha256
-        (base32 "1pyyknkg9dv58vq8w4pmxd36j8l352zb2jv99skvyg0vn07m6bax"))))
+        (base32 "0ma2mbs2pwhw9287idhglm8zs54g1kgh8xgygkhlm7zxi50yajvz"))))
     (properties `((upstream-name . "geonode4R")))
     (build-system r-build-system)
     (arguments
@@ -27273,13 +27269,13 @@ databases, interactive plotting and selection of focus regions.")
 (define-public r-geomander
   (package
     (name "r-geomander")
-    (version "2.3.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomander" version))
        (sha256
-        (base32 "1w47ln4vxxlp45rqmr6diglwmyadhrq7n6smbgipznwkfkr975jm"))))
+        (base32 "1cip7rp9x1csmazwsl1j7vm13l4y4k1jh4qb1f21x65d350ikb45"))))
     (properties `((upstream-name . "geomander")))
     (build-system r-build-system)
     (arguments
@@ -27293,13 +27289,13 @@ databases, interactive plotting and selection of focus regions.")
                              r-rlang
                              r-readr
                              r-rcpp
-                             r-magrittr
                              r-ggplot2
                              r-geos
                              r-dplyr
                              r-dataverse
                              r-cli
-                             r-censable))
+                             r-censable
+                             r-baf))
     (native-inputs (list r-knitr))
     (home-page "https://christophertkenny.com/geomander/")
     (synopsis "Geographic Tools for Studying Gerrymandering")
@@ -31439,13 +31435,13 @@ information, documentation and examples.")
 (define-public r-gen3sis
   (package
     (name "r-gen3sis")
-    (version "1.5.11")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gen3sis" version))
        (sha256
-        (base32 "07r2x0mwrs1ghsfd0a2zj7m2khwq4pg64xiv3n89zy9w9b6vcyw9"))))
+        (base32 "12gnij5san66s6z051g11gy8gy8w6p666d5c1wympn79rgqpwd1p"))))
     (properties `((upstream-name . "gen3sis")))
     (build-system r-build-system)
     (arguments
@@ -31625,13 +31621,13 @@ quantitative trait locus studies.")
 (define-public r-gemini-r
   (package
     (name "r-gemini-r")
-    (version "0.16.0")
+    (version "0.17.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gemini.R" version))
        (sha256
-        (base32 "0s84yfq89qwnimaazi49nlh9dplf3746njfwnzy30sg8zac8aw5q"))))
+        (base32 "0pvb953b1klmvqvg2cwmfrpn1na9226kh9mlr92q0q4kfr98frq8"))))
     (properties `((upstream-name . "gemini.R")))
     (build-system r-build-system)
     (arguments
@@ -32702,13 +32698,13 @@ Richardson K (2007) <doi:10.1111/j.1472-4642.2007.00341.x>.")
 (define-public r-gdldata
   (package
     (name "r-gdldata")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdldata" version))
        (sha256
-        (base32 "19zvchn55d70miqgxnbz3y1svj6gn6236l897qc0cbqmv48mjxh4"))))
+        (base32 "1l10xja39kr1bfyz9rl9sm1jxgw54xdfzfap9ac67n3ivc9yq0j2"))))
     (properties `((upstream-name . "gdldata")))
     (build-system r-build-system)
     (arguments

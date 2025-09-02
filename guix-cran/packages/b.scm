@@ -10,11 +10,11 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages algebra)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages java)
   #:use-module (gnu packages python)
@@ -3773,39 +3773,6 @@ analysts, and developers working with Bruneiâs geographic and demographic
 data, offering a quick and accessible foundation for creating maps and
 conducting spatial studies.")
     (license license:gpl3+)))
-
-(define-public r-brulee
-  (package
-    (name "r-brulee")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "brulee" version))
-       (sha256
-        (base32 "0s8nbm17hdfghqkdanx5sw1bnvxs7xkv1lhwvy4ds12h6mfdsfd1"))))
-    (properties `((upstream-name . "brulee")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-torch
-                             r-tibble
-                             r-rlang
-                             r-hardhat
-                             r-glue
-                             r-ggplot2
-                             r-generics
-                             r-dplyr
-                             r-coro
-                             r-cli))
-    (home-page "https://github.com/tidymodels/brulee")
-    (synopsis "High-Level Modeling Functions with 'torch'")
-    (description
-     "This package provides high-level modeling functions to define and train models
-using the torch R package.  Models include linear, logistic, and multinomial
-regression as well as multilayer perceptrons.")
-    (license license:expat)))
 
 (define-public r-brucer
   (package
@@ -11013,6 +10980,34 @@ routine uses analytic gradients and offers a large number of implemented
 integration methods and optimization routines.")
     (license license:gpl3)))
 
+(define-public r-blosc
+  (package
+    (name "r-blosc")
+    (version "0.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blosc" version))
+       (sha256
+        (base32 "0a70zg4s2b0jr4b562izpyimxg4pq0a6kpvsgjp9wlmzcxin459i"))))
+    (properties `((upstream-name . "blosc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-cpp11))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://pepijn-devries.github.io/blosc/")
+    (synopsis "Compress and Decompress Data Using the 'BLOSC' Library")
+    (description
+     "Arrays of structured data types can require large volumes of disk space to
+store.  Blosc is a library that provides a fast and efficient way to compress
+such data.  It is often applied in storage of n-dimensional arrays, such as in
+the case of the geo-spatial zarr file format.  This package can be used to
+compress and decompress data using Blosc'.")
+    (license license:gpl3+)))
+
 (define-public r-blorr
   (package
     (name "r-blorr")
@@ -12036,13 +12031,13 @@ al (2018) <doi:10.1101/399782>.")
 (define-public r-blapsr
   (package
     (name "r-blapsr")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blapsr" version))
        (sha256
-        (base32 "1vycwglrpb0d041xj3dza25am16ac80r93si8x45b5ry0aq38c46"))))
+        (base32 "090vm9hj74crwfx5bgp8vm7kwfb0v9bhy7gfz8fs4xzggbma0n93"))))
     (properties `((upstream-name . "blapsr")))
     (build-system r-build-system)
     (arguments
@@ -12055,7 +12050,7 @@ al (2018) <doi:10.1101/399782>.")
                              r-mass
                              r-coda))
     (native-inputs (list r-knitr))
-    (home-page "<https://www.blapsr-project.org/>")
+    (home-page "<https://github.com/oswaldogressani/blapsr>")
     (synopsis "Bayesian Inference with Laplace Approximations and P-Splines")
     (description
      "Laplace approximations and penalized B-splines are combined for fast Bayesian
