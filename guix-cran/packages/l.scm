@@ -1100,13 +1100,13 @@ family genetic risk score from Kendler (2021)
 (define-public r-ltertools
   (package
     (name "r-ltertools")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ltertools" version))
        (sha256
-        (base32 "1731v50k3akr2kjwy79l9mkhwcc15rzp0fzjr1zmgmydxyslwi1q"))))
+        (base32 "0c4pqb5k8c5qg8ym43mxawpwaaf6y1jd5pydlz6z14pvqiqdx6pk"))))
     (properties `((upstream-name . "ltertools")))
     (build-system r-build-system)
     (arguments

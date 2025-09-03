@@ -6866,13 +6866,13 @@ K-functions.")
 (define-public r-kanjistat
   (package
     (name "r-kanjistat")
-    (version "0.14.1")
+    (version "0.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kanjistat" version))
        (sha256
-        (base32 "1d6r923xczhr75dmb3vq2pr3l9maigk8zvvk4r5x0jlh8sgrwdr0"))))
+        (base32 "0b5wkkhb36hfb97hhw82f4l6bwyb1gi3qklv12x69dq0llbyfrsl"))))
     (properties `((upstream-name . "kanjistat")))
     (build-system r-build-system)
     (arguments

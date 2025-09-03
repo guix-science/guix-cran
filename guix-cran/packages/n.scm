@@ -3871,6 +3871,32 @@ the official REST API. To learn more about the functionality of the Notion API,
 see <https://developers.notion.com/>.")
     (license license:expat)))
 
+(define-public r-notionapi
+  (package
+    (name "r-notionapi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "notionapi" version))
+       (sha256
+        (base32 "023840llkwkiz2lzfi4mwyz4cqlzfhfyd4j9b384xcfnalvz1j4a"))))
+    (properties `((upstream-name . "notionapi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-r6 r-jsonlite r-httr2 r-cli))
+    (home-page "https://brenwin1.github.io/notionapi/")
+    (synopsis "Client for the 'Notion API'")
+    (description
+     "Enable programmatic interaction with Notion pages, databases, blocks, comments,
+and users through the Notion API <https://developers.notion.com/>.  Provides
+both synchronous and asynchronous client interfaces for building workflows and
+automations that integrate with Notion workspaces.  Supports all Notion API
+endpoints including content creation, data retrieval, and workspace management.")
+    (license license:expat)))
+
 (define-public r-notifyme
   (package
     (name "r-notifyme")
@@ -10724,13 +10750,13 @@ seasons including the sophisticated tie-breaking procedures.")
 (define-public r-nflreadr
   (package
     (name "r-nflreadr")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflreadr" version))
        (sha256
-        (base32 "0c5vbyh56m8mqlwriw0fzcv1bankg4hb81j98j1wsdg886wiab1m"))))
+        (base32 "17dv828jzyfpxajk8121pnv7k2yr92ak4kg64bzbygkz40h7n7i0"))))
     (properties `((upstream-name . "nflreadr")))
     (build-system r-build-system)
     (arguments
@@ -10739,6 +10765,7 @@ seasons including the sophisticated tie-breaking procedures.")
     (propagated-inputs (list r-rlang
                              r-rappdirs
                              r-memoise
+                             r-lifecycle
                              r-glue
                              r-data-table
                              r-curl
@@ -13448,13 +13475,13 @@ ggplot2 grammar.")
 (define-public r-netlogor
   (package
     (name "r-netlogor")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetLogoR" version))
        (sha256
-        (base32 "003il26z4xs90772l66xh21ivkl031w81pvc5zqfr35r2xmmd4cn"))))
+        (base32 "03dy7anvg9zvdyfmxsgyhcsiyfhvirkvhny1wny5xa9g0chg5fap"))))
     (properties `((upstream-name . "NetLogoR")))
     (build-system r-build-system)
     (arguments
@@ -13467,28 +13494,24 @@ ggplot2 grammar.")
     (description
      "Build and run spatially explicit agent-based models using only the R platform.
 @code{NetLogoR} follows the same framework as the @code{NetLogo} software
-(Wilensky (1999) <http://ccl.northwestern.edu/netlogo/>) and is a translation in
-R of the structure and functions of @code{NetLogo}'. @code{NetLogoR} provides
-new R classes to define model agents and functions to implement spatially
-explicit agent-based models in the R environment.  This package allows
-benefiting of the fast and easy coding phase from the highly developed
-@code{NetLogo} framework, coupled with the versatility, power and massive
-resources of the R software.  Examples of two models from the @code{NetLogo}
-software repository (Ants <http://ccl.northwestern.edu/netlogo/models/Ants>) and
-Wolf-Sheep-Predation
-(<http://ccl.northwestern.edu/netlogo/models/@code{WolfSheepPredation>}), and a
+(Wilensky (1999) <https://www.netlogo.org>) and is a translation in R of the
+structure and functions of @code{NetLogo}'. @code{NetLogoR} provides new R
+classes to define model agents and functions to implement spatially explicit
+agent-based models in the R environment.  This package allows benefiting of the
+fast and easy coding phase from the highly developed @code{NetLogo} framework,
+coupled with the versatility, power and massive resources of the R software.
+Examples of two models from the @code{NetLogo} software repository (Ants
+<https://ccl.northwestern.edu/netlogo/models/Ants>) and Wolf-Sheep-Predation
+(<https://ccl.northwestern.edu/netlogo/models/@code{WolfSheepPredation>}), and a
 third, Butterfly, from Railsback and Grimm (2012)
 <https://www.railsback-grimm-abm-book.com/>, all written using @code{NetLogoR}
 are available.  The @code{NetLogo} code of the original version of these models
 is provided alongside.  A programming guide inspired from the @code{NetLogo}
-Programming Guide (<https://ccl.northwestern.edu/netlogo/docs/programming.html>)
-and a dictionary of @code{NetLogo} primitives
-(<https://ccl.northwestern.edu/netlogo/docs/dictionary.html>) equivalences are
-also available.  NOTE: To increment time', these functions can use a for loop or
-can be integrated with a discrete event simulator, such as @code{SpaDES}
-(<https://cran.r-project.org/package=@code{SpaDES>}).  The suggested package
-fastshp can be installed with install.packages(\"fastshp\", repos =
-(\"<https://rforge.net>\"), type = \"source\")'.")
+Programming Guide (<https://docs.netlogo.org/programming.html>) and a dictionary
+of @code{NetLogo} primitives (<https://docs.netlogo.org/dictionary.html>)
+equivalences are also available.  NOTE: To increment time', these functions can
+use a for loop or can be integrated with a discrete event simulator, such as
+@code{SpaDES} (<https://cran.r-project.org/package=@code{SpaDES>}).")
     (license license:gpl3)))
 
 (define-public r-netknitr

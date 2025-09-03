@@ -5335,13 +5335,13 @@ association strength between individuals using each method.")
 (define-public r-assocbin
   (package
     (name "r-assocbin")
-    (version "1.1-1")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AssocBin" version))
        (sha256
-        (base32 "0f3d5ijkngw7y2a4qgxgyk1vk9p3gbajnj7jah1b861ab9v6jqw3"))))
+        (base32 "0qj7f7nz9b2mi6q46pg3ppgik0qdyr64dm6cddzv1r6hcjrpnx7f"))))
     (properties `((upstream-name . "AssocBin")))
     (build-system r-build-system)
     (arguments
@@ -5355,9 +5355,8 @@ association strength between individuals using each method.")
 measure pairwise dependence with a modular design that allows user specification
 of the splitting logic and stop criteria.  Helper functions provide suggested
 versions of both and support visualization and the computation of summary
-statistics on final binnings.  For a complete description of the functionality
-and algorithm, see Salahub and Oldford (2025)
-<doi:10.48550/@code{arXiv.2311.08561>}.")
+statistics on final binnings.  For a thorough discussion and demonstration of
+the algorithm, see Salahub and Oldford (2025) <doi:10.1002/sam.70042>.")
     (license license:gpl3+)))
 
 (define-public r-assistant
@@ -11043,46 +11042,6 @@ Lemeshow and R.X. Sturdivant (3rd ed., 2013) containing the dataset used in the
 book.")
     (license license:gpl3)))
 
-(define-public r-aplcms
-  (package
-    (name "r-aplcms")
-    (version "6.8.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "apLCMS" version))
-       (sha256
-        (base32 "0y5xqv8iv1ik674521nb7gqv77gpr4a12yi6fj7j85dvm1g79ad7"))))
-    (properties `((upstream-name . "apLCMS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rocs
-                             r-rocr
-                             r-rgl
-                             r-rcpp
-                             r-randomforest
-                             r-mzr
-                             r-mass
-                             r-iterators
-                             r-gbm
-                             r-foreach
-                             r-e1071
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=apLCMS")
-    (synopsis "Adaptive Processing of LC-MS Data")
-    (description
-     "This package provides methods for the processing of liquid chromatography-mass
-spectrometry (LC/MS) based metabolomics data, including adaptive tolerance level
-searching, non-parametric intensity grouping, the use of run filter to preserve
-weak signals, model-based estimation of peak intensities, and peak detection
-based on existing knowledge.  Related references include Yu et al. (2009)
-<doi:10.1093/bioinformatics/btp291>, Liu et al. (2020)
-<doi:10.1038/s41598-020-70850-0>, Yu et al. (2014)
-<doi:10.1093/bioinformatics/btu430>, Yu et al. (2013) <doi:10.1021/pr301053d>.")
-    (license license:gpl2+)))
-
 (define-public r-apisensr
   (package
     (name "r-apisensr")
@@ -13691,13 +13650,13 @@ Computational and Graphical Statistics paper,
 (define-public r-animbook
   (package
     (name "r-animbook")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "animbook" version))
        (sha256
-        (base32 "0wbzpcqmr1ysk2xcwmjl1dldz7bpaqsdyq36512lipq60hzq1v81"))))
+        (base32 "1k9bnb4cwwa5jxm2azdpylclxqhqjmqd3zjq2cgr8xxk11qcvn5c"))))
     (properties `((upstream-name . "animbook")))
     (build-system r-build-system)
     (arguments
@@ -13719,7 +13678,9 @@ Computational and Graphical Statistics paper,
      "Visualizing Changes in Performance Measures and Demographic Affiliations using Animation")
     (description
      "Create an interactive visualization to be used for communication purposes.
-Providing the function for preparing, plotting, and animating the data.")
+Providing the function for preparing, plotting, and animating the data.
+Krisanat Anukarnsakulchularp (2023)
+<https://github.com/@code{KrisanatA/animbook-journal>}.")
     (license license:expat)))
 
 (define-public r-animate
@@ -14767,13 +14728,13 @@ et al. (2021) <doi:10.1053/j.gastro.2021.08.050>, Mungroop et al. (2019)
 (define-public r-amregtest
   (package
     (name "r-amregtest")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amregtest" version))
        (sha256
-        (base32 "0c5x95iiqr0fa2ph6zily6qp542yc08vwzgrvfhclmkrn9zjcjap"))))
+        (base32 "02pafnkncrlfh7ix7cafzn1iygm19li7i7yfnzld0h0sgn5lb2l9"))))
     (properties `((upstream-name . "amregtest")))
     (build-system r-build-system)
     (arguments
@@ -17960,13 +17921,13 @@ plotting.")
 (define-public r-albatross
   (package
     (name "r-albatross")
-    (version "0.3-8")
+    (version "0.3-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "albatross" version))
        (sha256
-        (base32 "1cayp4025h14p66alagpvnwm5f05l7gv132x3a2d40cf77nrrpky"))))
+        (base32 "0a7l1xwhd7vqmmfpa9bmckpz56dvl3zz63g3dk4amiswyx2wdnxc"))))
     (properties `((upstream-name . "albatross")))
     (build-system r-build-system)
     (arguments

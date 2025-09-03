@@ -9866,19 +9866,19 @@ privacy.")
 (define-public r-onage
   (package
     (name "r-onage")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OnAge" version))
        (sha256
-        (base32 "1zby5sf92c185b5m19jv4ndgbv6mz107nc47zn1d6bijrypzpc20"))))
+        (base32 "12yfpnmkxcw32l8hzv93xx3my7a9z3zhqss6848dc78sh5sld6xi"))))
     (properties `((upstream-name . "OnAge")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://lbbe.univ-lyon1.fr/OnAge.html")
+    (home-page "https://lbbe.univ-lyon1.fr/fr/onage")
     (synopsis "Test of Between-Group Differences in the Onset of Senescence")
     (description
      "Implementation of a likelihood ratio test of differential onset of senescence

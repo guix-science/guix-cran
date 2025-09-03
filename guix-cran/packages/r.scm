@@ -1521,6 +1521,34 @@ Shapley regression, but with a significant advantage on computational
 performance.")
     (license license:gpl3)))
 
+(define-public r-rvolleydata
+  (package
+    (name "r-rvolleydata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rvolleydata" version))
+       (sha256
+        (base32 "0znz03s1plcg3hxg05h21hrk6z81cx6v4nj8sw849fqdryl7gi9h"))))
+    (properties `((upstream-name . "rvolleydata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-readr r-lubridate r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/awosoga/rvolleydata")
+    (synopsis
+     "Extract Data from Professional Volleyball Leagues in North America")
+    (description
+     "Gather boxscore, play-by-play, and auxiliary data from Major League Volleyball
+(MLV) <https://provolleyball.com>, League One Volleyball Pro (LOVB Pro)
+<https://www.lovb.com/pro-league>, and Athletes Unlimited Pro Volleyball
+<https://auprosports.com/volleyball/> to create a repository of basic and
+advanced statistics for teams and players.")
+    (license license:expat)))
+
 (define-public r-rvmf
   (package
     (name "r-rvmf")
@@ -16319,6 +16347,32 @@ Outcome Prediction Across Data Sources Through Robust Parameter Tuning\"
 <doi:10.1007/s00357-020-09368-z>.")
     (license license:gpl3)))
 
+(define-public r-robustmetrics
+  (package
+    (name "r-robustmetrics")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RobustMetrics" version))
+       (sha256
+        (base32 "0giaikxvcnh0yyf3l417g8zy8yvg4fd3acrlzv5i8lfx8i2cnibl"))))
+    (properties `((upstream-name . "RobustMetrics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/BernhardKlar/RobustMetrics")
+    (synopsis
+     "Calculates Robust Performance Metrics for Imbalanced Classification Problems")
+    (description
+     "Calculates robust Matthews Correlation Coefficient (MCC) and robust F-Beta
+Scores, as introduced by Holzmann and Klar (2024)
+<doi:10.48550/@code{arXiv.2404.07661>}.  These performance metrics are designed
+for imbalanced classification problems.  Plots the receiver operating
+characteristic curve (ROC curve) together with the recall / 1-precision curve.")
+    (license license:gpl3+)))
+
 (define-public r-robustmeta
   (package
     (name "r-robustmeta")
@@ -19490,6 +19544,35 @@ convenient R objects.")
     (synopsis "Image Data Used in the Loon Package Demos")
     (description "Image data used as examples in the loon R package.")
     (license license:gpl2)))
+
+(define-public r-rnaught
+  (package
+    (name "r-rnaught")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rnaught" version))
+       (sha256
+        (base32 "1ph3z3n0iczgx2s6l7irby7iv4az654hsl3w7v068bs318vkn77g"))))
+    (properties `((upstream-name . "Rnaught")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://mi2yorku.github.io/Rnaught/")
+    (synopsis "Estimate the Basic Reproduction Number (R0)")
+    (description
+     "This package provides a collection of methods for estimating the basic
+reproduction number (R0) of infectious diseases.  Features a web application to
+interface with the estimators.  Uses the models from: Fisman et al. (2013)
+<DOI:10.1371/journal.pone.0083622>, Bettencourt and Ribeiro (2008)
+<DOI:10.1371/journal.pone.0002185>, and White and Pagano (2008)
+<DOI:10.1002/sim.3136>.  Includes datasets for Canadian national and provincial
+COVID-19 case counts provided by Berry et al. (2021)
+<DOI:10.1038/s41597-021-00955-2>.")
+    (license license:agpl3+)))
 
 (define-public r-rnassqs
   (package
@@ -26347,6 +26430,39 @@ are made with conventional methods, as described in Rosenbaum (2002)
 <doi:10.1007/978-1-4757-3692-2>, Fogarty (2018) <doi:10.1111/rssb.12290>, and
 Kang et al. (2016) <doi:10.1214/15-aoas894>.")
     (license license:gpl3)))
+
+(define-public r-rigr
+  (package
+    (name "r-rigr")
+    (version "1.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rigr" version))
+       (sha256
+        (base32 "1m3922yycj1pblpsy1rqf6n2h0l2wqh9fk9yg86k7771klw9i596"))))
+    (properties `((upstream-name . "rigr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-sandwich))
+    (native-inputs (list r-knitr))
+    (home-page "https://statdivlab.github.io/rigr/")
+    (synopsis "Regression, Inference, and General Data Analysis Tools in R")
+    (description
+     "This package provides a set of tools to streamline data analysis.  Learning both
+R and introductory statistics at the same time can be challenging, and so we
+created rigr to facilitate common data analysis tasks and enable learners to
+focus on statistical concepts.  We provide easy-to-use interfaces for
+descriptive statistics, one- and two-sample inference, and regression analyses.
+rigr output includes key information while omitting unnecessary details that can
+be confusing to beginners.  Heteroscedasticity-robust (\"sandwich\") standard
+errors are returned by default, and multiple partial F-tests and tests for
+contrasts are easy to specify.  A single regression function can fit both linear
+and generalized linear models, allowing students to more easily make connections
+between different classes of models.")
+    (license license:expat)))
 
 (define-public r-rigma
   (package
@@ -36883,6 +36999,35 @@ families, draw from sampling distributions of regression estimates, and perform
 visual inference on diagnostics from model fits.")
     (license license:expat)))
 
+(define-public r-regress3d
+  (package
+    (name "r-regress3d")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "regress3d" version))
+       (sha256
+        (base32 "1hs5qsgf4zkr7ibarmbw7q1dqdcm7afxmiyjdyrlq26kf1zg9zqp"))))
+    (properties `((upstream-name . "regress3d")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-plotly
+                             r-magrittr
+                             r-dplyr
+                             r-broom))
+    (home-page "https://github.com/ellaFosterMolina/regress3d")
+    (synopsis "Create 3D Regression Surfaces")
+    (description
+     "Plot regression surfaces and marginal effects in three dimensions.  The plots
+are plotly objects and can be customized using functions and arguments from the
+plotly package.")
+    (license license:gpl3+)))
+
 (define-public r-regress
   (package
     (name "r-regress")
@@ -39389,19 +39534,19 @@ their compatibility.")
 (define-public r-reda
   (package
     (name "r-reda")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reda" version))
        (sha256
-        (base32 "1c3zjf282rc5r527kb8281g5ygx7w60fvd12xdzjivd480k03wvd"))))
+        (base32 "0ddcd2yp9a195n36lfph4q1xzwx8sd6gjvkks7sgyx5wv32995pw"))))
     (properties `((upstream-name . "reda")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-splines2 r-rcpparmadillo r-rcpp r-ggplot2))
+    (propagated-inputs (list r-splines2 r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://wwenjie.org/reda")
     (synopsis "Recurrent Event Data Analysis")
@@ -46209,13 +46354,13 @@ ideal for quick prototypes and lightweight projects.")
 (define-public r-rcompendium
   (package
     (name "r-rcompendium")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcompendium" version))
        (sha256
-        (base32 "10df6lr776qr2lhc4phpkl53par60f35c694knzfx4s81mprd842"))))
+        (base32 "0922zhyi8lwhmhbppfrydd5d147a4yrqyh79nbhpzsqijm0d6vgl"))))
     (properties `((upstream-name . "rcompendium")))
     (build-system r-build-system)
     (arguments
@@ -46231,8 +46376,8 @@ ideal for quick prototypes and lightweight projects.")
                              r-gh
                              r-gert
                              r-devtools
-                             r-crayon
-                             r-clisymbols
+                             r-codemetar
+                             r-cli
                              r-cffr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/FRBCesab/rcompendium")
@@ -48897,13 +49042,13 @@ Tan (2020b) <doi:10.1214/19-AOS1824> and Sun and Tan (2020)
 (define-public r-rcaiman
   (package
     (name "r-rcaiman")
-    (version "1.2.2")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcaiman" version))
        (sha256
-        (base32 "1zhs56my1229826ilxfdm5vdgw2n8vql3flmj64604fsyjsnv833"))))
+        (base32 "1g914drf4bygk923m2njl3wzv7fdd8gmwnafxyy621k70amqvnr5"))))
     (properties `((upstream-name . "rcaiman")))
     (build-system r-build-system)
     (arguments
@@ -48916,19 +49061,17 @@ Tan (2020b) <doi:10.1214/19-AOS1824> and Sun and Tan (2020)
                              r-pracma
                              r-magrittr
                              r-lidr
+                             r-foreach
                              r-filenamer
-                             r-colorspace))
+                             r-doparallel))
     (home-page "https://cran.r-project.org/package=rcaiman")
     (synopsis "CAnopy IMage ANalysis")
     (description
-     "Classify hemispherical photographs of the plant canopy with algorithms specially
-developed for such a task and well documented in DÃ­az and Lencinas (2015)
-<doi:10.1109/lgrs.2015.2425931> and DÃ­az and Lencinas (2018)
-<doi:10.1139/cjfr-2018-0006>.  It supports non-circular hemispherical
-photography, such as those acquired with 15mm lenses or with auxiliary fish-eye
-lenses attached to mobile devices.  For smartphone-based hemispherical
-photography see DÃ­az (2023) <doi:10.1111/2041-210x.14059>.  Most of the
-functions also support restricted view photography.")
+     "This package provides tools for preprocessing and processing canopy photographs
+with support for raw data reading.  Provides methods to address variability in
+sky brightness and to mitigate errors from image acquisition in non-diffuse
+light.  Works with all types of fish-eye lenses, and some methods also apply to
+conventional lenses.")
     (license license:gpl3)))
 
 (define-public r-rca
@@ -51729,13 +51872,13 @@ algorithm attributed to Wylie et al. (1967) <doi:10.1145/1465611.1465619>.")
 (define-public r-rasterdiv
   (package
     (name "r-rasterdiv")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rasterdiv" version))
        (sha256
-        (base32 "0bmxr70wd96xmp10gfmmvydv5drdk1r8101b1a19iqpbn17xmj5m"))))
+        (base32 "0l1gzkrgfgg54frfpdwqyg78zmdghfmnl2ankgnpafaggq9nd1x4"))))
     (properties `((upstream-name . "rasterdiv")))
     (build-system r-build-system)
     (arguments

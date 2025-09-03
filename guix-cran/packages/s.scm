@@ -7992,13 +7992,13 @@ to sum their own low level functions as well.  Based on the paper by Braden
 (define-public r-sumo
   (package
     (name "r-sumo")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SUMO" version))
        (sha256
-        (base32 "12n4p7bc9gzp9kddd8qa6j9vx0ccg37bp5d7qyda4izzi7jz4p3i"))))
+        (base32 "1qgw98v4lxxd7qcxbc7dhwak1jqzvhnnacdfxjrzby38d4w0cbh9"))))
     (properties `((upstream-name . "SUMO")))
     (build-system r-build-system)
     (arguments
@@ -9739,13 +9739,13 @@ Modern Concepts, Methods and Applications, CRC Press.")
 (define-public r-stroke
   (package
     (name "r-stroke")
-    (version "24.10.1")
+    (version "25.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stRoke" version))
        (sha256
-        (base32 "0pbhnfvj35v1di8dsm3m9qzdq9v9rq34b0drs3mgcy8nqd4kkavp"))))
+        (base32 "0i37pbc296ri0x5fzih8k88q0jd0dalf8cn5nidnarxnbv9d5y04"))))
     (properties `((upstream-name . "stRoke")))
     (build-system r-build-system)
     (arguments
@@ -10303,6 +10303,32 @@ stream networks as directed acyclic graphs: The R-package @code{streamDAG}\" (Ah
 et al., 2023) <doi:10.1016/j.envsoft.2023.105775>, and in the introductory
 package vignette.")
     (license license:gpl2+)))
+
+(define-public r-streamcattools
+  (package
+    (name "r-streamcattools")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StreamCatTools" version))
+       (sha256
+        (base32 "1brvx4kwvw65ac0kq40yg5x268zp9aqyxi1zdz1127rh9yx6sfji"))))
+    (properties `((upstream-name . "StreamCatTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-nhdplustools r-jsonlite r-httr2 r-curl))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://usepa.github.io/StreamCatTools/")
+    (synopsis "StreamCat Tools")
+    (description
+     "This package provides tools for using the @code{StreamCat} and @code{LakeCat}
+API and interacting with the @code{StreamCat} and @code{LakeCat} database.
+Convenience functions in the package wrap the API for @code{StreamCat} on
+<https://api.epa.gov/@code{StreamCat/streams/metrics>}.")
+    (license license:cc0)))
 
 (define-public r-streambugs
   (package
@@ -11271,13 +11297,13 @@ R objects (e.g., data.frames with only atomic vector columns).")
 (define-public r-str
   (package
     (name "r-str")
-    (version "0.7")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stR" version))
        (sha256
-        (base32 "1ihhz62ajkiq4d5s9zvqfp2h4k7hwgynfdy7walrhpxlcb9pjgay"))))
+        (base32 "1zb054widd0xjb2ik2hmfk1i3xcl52giqrn18r06n6wnplvjl9wc"))))
     (properties `((upstream-name . "stR")))
     (build-system r-build-system)
     (arguments
@@ -30794,13 +30820,13 @@ suggested package NLMR can be installed from the following repository:
 (define-public r-spades-core
   (package
     (name "r-spades-core")
-    (version "2.1.0")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaDES.core" version))
        (sha256
-        (base32 "0avn2fvabwq8hfvpwkvrpmdq9692a8nx3km7343j217y7l4s7qdf"))))
+        (base32 "0f5ww58drfwb3fwwns3657gc6pj5nqz91zr0pgwmcqyns8v5xzzs"))))
     (properties `((upstream-name . "SpaDES.core")))
     (build-system r-build-system)
     (arguments
@@ -34973,19 +34999,25 @@ images.")
 (define-public r-snowflakeauth
   (package
     (name "r-snowflakeauth")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snowflakeauth" version))
        (sha256
-        (base32 "15knmv45kkmdfpc414vcj8mbnwggfv28qqigwnvg0vi5lvwfpnn5"))))
+        (base32 "023bw3a91hj5irfv8b4209890j1pp4j6ccd500w8yqy2vyk903c8"))))
     (properties `((upstream-name . "snowflakeauth")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-rcpptoml r-jsonlite r-curl r-cli))
+    (propagated-inputs (list r-rlang
+                             r-rcpptoml
+                             r-openssl
+                             r-jsonlite
+                             r-jose
+                             r-curl
+                             r-cli))
     (home-page "https://posit-dev.github.io/snowflakeauth/")
     (synopsis "Authentication Helpers for 'Snowflake'")
     (description
@@ -39431,13 +39463,13 @@ a model checking plot to help assess the adequacy of the fitted model.")
 (define-public r-slca
   (package
     (name "r-slca")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slca" version))
        (sha256
-        (base32 "16q2jpbxda7pnmswf372nf1rliwg3jwysn3fifxhqn3pmar7qf9s"))))
+        (base32 "09l9wxvazkmncx20gk842j4haxxar346kcw80knh5cl49fhnznd2"))))
     (properties `((upstream-name . "slca")))
     (build-system r-build-system)
     (arguments
@@ -43855,13 +43887,13 @@ Lee, S., & Lee, D. K. (2018) <doi:10.4097/kja.d.18.00242>.")
 (define-public r-simplecolors
   (package
     (name "r-simplecolors")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simplecolors" version))
        (sha256
-        (base32 "09y2vldzsi20qzhb4mf0xvhjbm4qivk0vrv5yljsa6myb3ph5rf2"))))
+        (base32 "08gvmi579bgzs2yjalyjx67rpsxrkkczwg2hrrvz2js2wc88l4d5"))))
     (properties `((upstream-name . "simplecolors")))
     (build-system r-build-system)
     (arguments
@@ -45308,41 +45340,6 @@ statistical simulations on both local and cluster-based computing
 environments.See full documentation at
 <https://avi-kenny.github.io/@code{SimEngine/>}.")
     (license license:gpl3)))
-
-(define-public r-simed
-  (package
-    (name "r-simed")
-    (version "2.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "simEd" version))
-       (sha256
-        (base32 "1r4ahsfkrymhachdcjj7nvdiplxjla0jlsay3bi04n6rrl758rny"))))
-    (properties `((upstream-name . "simEd")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shape r-rstream))
-    (home-page "https://cran.r-project.org/package=simEd")
-    (synopsis "Simulation Education")
-    (description
-     "This package contains various functions to be used for simulation education,
-including simple Monte Carlo simulation functions, queueing simulation
-functions, variate generation functions capable of producing independent streams
-and antithetic variates, functions for illustrating random variate generation
-for various discrete and continuous distributions, and functions to compute
-time-persistent statistics.  Also contains functions for visualizing:
-event-driven details of a single-server queue model; a Lehmer random number
-generator; variate generation via acceptance-rejection; and of generating a
-non-homogeneous Poisson process via thinning.  Also contains two queueing data
-sets (one fabricated, one real-world) to facilitate input modeling.  More
-details on the use of these functions can be found in Lawson and Leemis (2015)
-<doi:10.1109/WSC.2017.8248124>, in Kudlay, Lawson, and Leemis (2020)
-<doi:10.1109/WSC48552.2020.9384010>, and in Lawson and Leemis (2021)
-<doi:10.1109/WSC52266.2021.9715299>.")
-    (license license:expat)))
 
 (define-public r-simecol
   (package
@@ -68174,20 +68171,22 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
 (define-public r-scan
   (package
     (name "r-scan")
-    (version "0.65.1")
+    (version "0.66.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scan" version))
        (sha256
-        (base32 "1ljjz3w482c6cr043wml3h64rananh2y5skcgy08mc9pzlr9m52a"))))
+        (base32 "1f21qyzm6mkiysnkmk48a31kzsbhnjjivslnj0c393212dcpj02k"))))
     (properties `((upstream-name . "scan")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-readxl
+    (propagated-inputs (list r-rstudioapi
+                             r-readxl
                              r-nlme
+                             r-miniui
                              r-mcmcglmm
                              r-mblm
                              r-magrittr
@@ -68200,14 +68199,15 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
      "Single-Case Data Analyses for Single and Multiple Baseline Designs")
     (description
      "This package provides a collection of procedures for analysing, visualising, and
-managing single-case data.  These include piecewise linear regression models,
-multilevel models, overlap indices ('PND', PEM', PAND', PET', tau-u', baseline
-corrected tau', CDC'), and randomization tests.  Data preparation functions
-support outlier detection, handling missing values, scaling, and custom
-transformations.  An export function helps to generate html, word, and latex
-tables in a publication friendly style.  More details can be found in the online
-book Analyzing single-case data with R and scan', Juergen Wilbert (2025)
-<https://jazznbass.github.io/scan-Book/>.")
+managing single-case data.  These include regression models (multilevel,
+multivariate, bayesian), between case standardised mean difference, overlap
+indices ('PND', PEM', PAND', PET', tau-u', IRD', baseline corrected tau', CDC'),
+and randomization tests.  Data preparation functions support outlier detection,
+handling missing values, scaling, and custom transformations.  An export
+function helps to generate html, word, and latex tables in a publication
+friendly style.  A shiny app allows to use scan in a graphical user interface.
+More details can be found in the online book Analyzing single-case data with R
+and scan', Juergen Wilbert (2025) <https://jazznbass.github.io/scan-Book/>.")
     (license license:gpl3+)))
 
 (define-public r-scam

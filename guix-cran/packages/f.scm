@@ -6695,13 +6695,13 @@ Assistant (<https://www.deepseek.com/>).")
 (define-public r-fpp3
   (package
     (name "r-fpp3")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fpp3" version))
        (sha256
-        (base32 "1dcv1xfpwlq7mcsw0zs2l8i3xn848nxbymncg9y2csy6l9s4wglq"))))
+        (base32 "0kglahbhvjcpi3ndbklciycvh2pyvacbzyfbacjj11zk84ngr2zl"))))
     (properties `((upstream-name . "fpp3")))
     (build-system r-build-system)
     (arguments
@@ -6716,7 +6716,6 @@ Assistant (<https://www.deepseek.com/>).")
                              r-lubridate
                              r-ggplot2
                              r-feasts
-                             r-fabletools
                              r-fable
                              r-dplyr
                              r-crayon
@@ -11166,13 +11165,13 @@ curves.")
 (define-public r-fluxfinder
   (package
     (name "r-fluxfinder")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxfinder" version))
        (sha256
-        (base32 "0b972c8z0zsv9nwg5k9j0bgri6fzzzf3hskzflwijrc77q1aalhs"))))
+        (base32 "1k3q482jf6n7yfcr73w4xzpg18jkz0wz100b52a6f1x1yrbcchf8"))))
     (properties `((upstream-name . "fluxfinder")))
     (build-system r-build-system)
     (arguments
@@ -13196,6 +13195,33 @@ mixtures of regression models with random covariates.  Methods are described in
 Angelo Mazza, Antonio Punzo, Salvatore Ingrassia (2018)
 <doi:10.18637/jss.v086.i02>.")
     (license license:gpl2)))
+
+(define-public r-flex
+  (package
+    (name "r-flex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flex" version))
+       (sha256
+        (base32 "0gdx6h7zhxlfliwwsli412rsqz7flw2icj8g1gdd5vfs62b37sj4"))))
+    (properties `((upstream-name . "flex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-plotly r-magrittr r-ggplot2))
+    (home-page "https://cran.r-project.org/package=flex")
+    (synopsis "Fuzzy Linear Squares Estimation with Explicit Formula (FLEX)")
+    (description
+     "The FLEX method, developed by Yoon and Choi (2013)
+<doi:10.1007/978-3-642-33042-1_21>, performs least squares estimation for fuzzy
+predictors and outcomes, generating crisp regression coefficients by minimizing
+the distance between observed and predicted outcomes.  It also provides
+functions for fuzzifying data and inference tasks, including significance
+testing, fit indices, and confidence interval estimation.")
+    (license license:expat)))
 
 (define-public r-flevr
   (package
@@ -18139,28 +18165,24 @@ transform in the west (FFTW) library <http://www.fftw.org/>.")
 (define-public r-fftrees
   (package
     (name "r-fftrees")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FFTrees" version))
        (sha256
-        (base32 "14nd5bh2vzsv9cmmfdm6yzv6mxc8gkj9x8r2799w72sijs35ij5l"))))
+        (base32 "05sgvcb4zwv7imwwrm9p4fqjmgmjpf2sf6yakv4a0vksgh67z3fl"))))
     (properties `((upstream-name . "FFTrees")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tibble
+    (propagated-inputs (list r-tibble
                              r-testthat
                              r-stringr
                              r-scales
-                             r-rpart
-                             r-randomforest
                              r-magrittr
                              r-knitr
-                             r-e1071
                              r-dplyr
                              r-cli
                              r-caret))
@@ -20356,13 +20378,13 @@ J. L. (2005) <doi:10.1198/016214504000001745>.")
 (define-public r-fdapoifd
   (package
     (name "r-fdapoifd")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdaPOIFD" version))
        (sha256
-        (base32 "1zx4rjb5h9inqgh7db9n69jviyw1i7zcxjkhpcbv5pwa0rchn68a"))))
+        (base32 "0w1wi8pcmail0rqz4352xikrd8fcjs58m050pqfcp3snfmdwgllp"))))
     (properties `((upstream-name . "fdaPOIFD")))
     (build-system r-build-system)
     (arguments

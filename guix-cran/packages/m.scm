@@ -4106,6 +4106,50 @@ outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
 <http://biostats.bepress.com/uwbiostat/paper423/>.).")
     (license license:gpl2)))
 
+(define-public r-multiscaler
+  (package
+    (name "r-multiscaler")
+    (version "0.4.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multiScaleR" version))
+       (sha256
+        (base32 "1ks8lr2dyhs1cgxyx60f7j349m8hmzfc206x884dqjkjggcj2rvp"))))
+    (properties `((upstream-name . "multiScaleR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-unmarked
+                             r-terra
+                             r-sf
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pscl
+                             r-optimparallel
+                             r-matrix
+                             r-insight
+                             r-ggplot2
+                             r-fields
+                             r-exactextractr
+                             r-dplyr
+                             r-crayon
+                             r-cowplot
+                             r-aiccmodavg))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/wpeterman/multiScaleR")
+    (synopsis "Methods for Optimizing Scales of Effect")
+    (description
+     "This package provides a tool for optimizing scales of effect when modeling
+ecological processes in space.  Specifically, the scale parameter of a
+distance-weighted kernel distribution is identified for all environmental layers
+included in the model.  Includes functions to assist in model selection, model
+evaluation, efficient transformation of raster surfaces using fast Fourier
+transformation, and projecting models.  For more details see Peterman (2025)
+<doi:10.21203/rs.3.rs-7246115/v1>.")
+    (license license:gpl3)))
+
 (define-public r-multiscaledtm
   (package
     (name "r-multiscaledtm")
@@ -6809,19 +6853,24 @@ likelihood estimation and Bayesian inference.")
 (define-public r-multiatsm
   (package
     (name "r-multiatsm")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiATSM" version))
        (sha256
-        (base32 "1a8fkw13fgf8l1xr8a8zk8c9kj8608iyiah6qszmbkj53v6s4spm"))))
+        (base32 "04qr2qv9vi2dzh065gyyiphxkpfni5harqz5nv0lw57axa7n9ird"))))
     (properties `((upstream-name . "MultiATSM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-pracma
+                             r-neldermead
+                             r-magic
+                             r-hablar
+                             r-ggplot2
+                             r-cowplot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rubensmoura87/MultiATSM")
     (synopsis "Multicountry Term Structure of Interest Rates Models")
@@ -12359,13 +12408,13 @@ Research, 43, Article 100323. <doi:10.1016/j.alcr.2019.100323>.")
 (define-public r-mplusautomation
   (package
     (name "r-mplusautomation")
-    (version "1.1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MplusAutomation" version))
        (sha256
-        (base32 "0a95m9m7m988ky4sswqyzmyh0fhbbfz1kzsf9mnaswm5xh1gwh4k"))))
+        (base32 "1zm3hcf6wkbhaci1dmffdv4rk7b2f96g47ishrh6g5m904djkkph"))))
     (properties `((upstream-name . "MplusAutomation")))
     (build-system r-build-system)
     (arguments
@@ -21778,6 +21827,41 @@ effects, and predictors can correlate at either level and accommodate models
 with multiple interaction effects.")
     (license license:gpl3)))
 
+(define-public r-mlmorph
+  (package
+    (name "r-mlmorph")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MLmorph" version))
+       (sha256
+        (base32 "1abbix9m79v2mbw08684jsvpz09fsn0hqvi8fa1jkvaymx7rmp1a"))))
+    (properties `((upstream-name . "MLmorph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-shiny
+                             r-randomforest
+                             r-openxlsx
+                             r-magrittr
+                             r-jsonlite
+                             r-caret))
+    (home-page "https://github.com/theogrost/MLmorph")
+    (synopsis
+     "Integrating Morphological Modeling and Machine Learning for Decision Support")
+    (description
+     "Integrating morphological modeling with machine learning to support structured
+decision-making (e.g., in management and consulting).  The package enumerates a
+morphospace of feasible configurations and uses random forests to estimate class
+probabilities over that space, bridging deductive model exploration with
+empirical validation.  It includes utilities for factorizing inputs, model
+training, morphospace construction, and an interactive shiny app for scenario
+exploration.")
+    (license license:expat)))
+
 (define-public r-mlmoi
   (package
     (name "r-mlmoi")
@@ -22042,6 +22126,43 @@ learners for the following algorithms: glmnet
 <https://CRAN.R-project.org/package=lightgbm>.  These can be used directly with
 the mlexperiments R package.")
     (license license:gpl3+)))
+
+(define-public r-mllmcelltype
+  (package
+    (name "r-mllmcelltype")
+    (version "1.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mLLMCelltype" version))
+       (sha256
+        (base32 "1q7z4s3ava236rzy3dfskx6pgqnj3q0ncchw3k0s6qzsv5abdhkf"))))
+    (properties `((upstream-name . "mLLMCelltype")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://cafferyang.com/mLLMCelltype/")
+    (synopsis "Cell Type Annotation Using Large Language Models")
+    (description
+     "Automated cell type annotation for single-cell RNA sequencing data using
+consensus predictions from multiple large language models (LLMs).  LLMs are
+artificial intelligence models trained on vast text corpora to understand and
+generate human-like text.  This package integrates with Seurat objects and
+provides uncertainty quantification for annotations.  Supports various LLM
+providers including @code{OpenAI}', Anthropic', and Google'.  The package
+leverages these models through their respective APIs (Application Programming
+Interfaces) <https://platform.openai.com/docs>, <https://docs.anthropic.com/>,
+and <https://ai.google.dev/gemini-api/docs>.  For details see Yang et al. (2025)
+<doi:10.1101/2025.04.10.647852>.")
+    (license license:expat)))
 
 (define-public r-mlim
   (package
@@ -22791,13 +22912,13 @@ developed.")
 (define-public r-mlbplotr
   (package
     (name "r-mlbplotr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlbplotR" version))
        (sha256
-        (base32 "02509dghl22zwgbb94d794d61970svz1pqrx49bp8l9y3if9n36d"))))
+        (base32 "0g7vdy5bdhsrh41s8fnd1fqrb7rfj3fag61a35lk6ar8j56i01k5"))))
     (properties `((upstream-name . "mlbplotR")))
     (build-system r-build-system)
     (arguments
@@ -22808,6 +22929,7 @@ developed.")
                              r-magrittr
                              r-magick
                              r-lifecycle
+                             r-httr
                              r-gt
                              r-ggplot2
                              r-data-table
@@ -25204,6 +25326,42 @@ DNA Heteroplasmy calculated from single-cell datasets
 <https://github.com/@code{ScialdoneLab/MitoHEAR/tree/master>}.")
     (license license:artistic2.0)))
 
+(define-public r-mitey
+  (package
+    (name "r-mitey")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mitey" version))
+       (sha256
+        (base32 "1nw5jhk1rzw70bkgs76sb5k65f6hczymmw9784pka8037krs3c6z"))))
+    (properties `((upstream-name . "mitey")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-fdrtool))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kylieainslie/mitey")
+    (synopsis "Serial Interval and Case Reproduction Number Estimation")
+    (description
+     "This package provides methods to estimate serial intervals and time-varying case
+reproduction numbers from infectious disease outbreak data.  Serial intervals
+measure the time between symptom onset in linked transmission pairs, while case
+reproduction numbers quantify how many secondary cases each infected individual
+generates over time.  These parameters are essential for understanding
+transmission dynamics, evaluating control measures, and informing public health
+responses.  The package implements the maximum likelihood framework from Vink et
+al. (2014) <doi:10.1093/aje/kwu209> for serial interval estimation and the
+retrospective method from Wallinga & Lipsitch (2007)
+<doi:10.1098/rspb.2006.3754> for reproduction number estimation.  Originally
+developed for scabies transmission analysis but applicable to other infectious
+diseases including influenza, COVID-19, and emerging pathogens.  Designed for
+epidemiologists, public health researchers, and infectious disease modelers
+working with outbreak surveillance data.")
+    (license (license:fsdg-compatible "EUPL-1.2"))))
+
 (define-public r-misuvi
   (package
     (name "r-misuvi")
@@ -25520,13 +25678,13 @@ iterations.")
 (define-public r-missonet
   (package
     (name "r-missonet")
-    (version "1.2.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missoNet" version))
        (sha256
-        (base32 "1k7959wjxxpzgrnwil7n51zf76zyri8c2m4m5h2w9az5pil2qmf0"))))
+        (base32 "10v157pnxr733mq6mx7qw5l6dgb252c4y4yv9raz91f1rmxkl1hy"))))
     (properties `((upstream-name . "missoNet")))
     (build-system r-build-system)
     (arguments
@@ -25537,26 +25695,22 @@ iterations.")
                              r-rcpp
                              r-pbapply
                              r-mvtnorm
-                             r-glasso
+                             r-glassofast
                              r-complexheatmap
                              r-circlize))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/yixiao-zeng/missoNet")
-    (synopsis "Missingness in Multi-Task Regression with Network Estimation")
+    (synopsis "Joint Sparse Regression & Network Learning with Missing Data")
     (description
-     "Efficient procedures for fitting conditional graphical lasso models that link a
-set of predictor variables to a set of response variables (or tasks), even when
-the response data may contain missing values. @code{missoNet} simultaneously
-estimates the predictor coefficients for all tasks by leveraging information
-from one another, in order to provide more accurate predictions in comparison to
-modeling them individually.  Additionally, @code{missoNet} estimates the
-response network structure influenced by conditioning predictor variables using
-a L1-regularized conditional Gaussian graphical model.  Unlike most penalized
-multi-task regression methods (e.g., MRCE), @code{missoNet} is capable of
-obtaining estimates even when the response data is corrupted by missing values.
-The method automatically enjoys the theoretical and computational benefits of
-convexity, and returns solutions that are comparable to the estimates obtained
-without missingness.")
+     "Simultaneously estimates sparse regression coefficients and response network
+structure in multivariate models with missing data.  Unlike traditional
+approaches requiring imputation, handles missingness natively through unbiased
+estimating equations (MCAR/MAR compatible).  Employs dual L1 regularization with
+automated selection via cross-validation or information criteria.  Includes
+parallel computation, warm starts, adaptive grids, publication-ready
+visualizations, and prediction methods.  Ideal for genomics, neuroimaging, and
+multi-trait studies with incomplete high-dimensional outcomes.  See Zeng et al.
+(2025) <doi:10.48550/@code{arXiv.2507.05990>}.")
     (license license:gpl2)))
 
 (define-public r-missmethods

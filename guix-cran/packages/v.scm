@@ -1662,19 +1662,19 @@ port of the original code published in the early 1990's by Steven Fortune.")
 (define-public r-voronoibiomedplot
   (package
     (name "r-voronoibiomedplot")
-    (version "0.1.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VoronoiBiomedPlot" version))
        (sha256
-        (base32 "1k09p23p3zzmpc07ycwfcm04m2nfrc8vfpgzy88r35l0x6fz00v4"))))
+        (base32 "06aw1p6h35scvcjkbiaxs3911qx0hzh7z3wsvfnaihz7rrslg9qa"))))
     (properties `((upstream-name . "VoronoiBiomedPlot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggrepel r-ggplot2 r-deldir))
+    (propagated-inputs (list r-mass r-ggrepel r-ggplot2 r-deldir))
     (home-page "https://cran.r-project.org/package=VoronoiBiomedPlot")
     (synopsis "Projection Visualization Plots for Dimensionally Reduced Data")
     (description
@@ -1945,13 +1945,13 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-vol2birdr
   (package
     (name "r-vol2birdr")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vol2birdR" version))
        (sha256
-        (base32 "0iq4rxxp3x4az63lb9pk1znx76x88gv87x00cizsgrjlrp21df7m"))))
+        (base32 "0pbcwr822jwmny0a16aaqigpn6v0jw1kb4gh34m5nrzkdzj01d2g"))))
     (properties `((upstream-name . "vol2birdR")))
     (build-system r-build-system)
     (arguments
@@ -3510,13 +3510,13 @@ as both viewpoints and occluders.")
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visOmopResults" version))
        (sha256
-        (base32 "0jck3fbjljz3vq84ap3xl0d149i0h5z0aqfz4bfbnx058dzhhyh8"))))
+        (base32 "0gpv39c4x8kbs19xlzbs1byhc47gl84fzdvn5yfh8y6d9wwlvjz3"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
     (arguments
@@ -3926,19 +3926,19 @@ results of analysis in the ggplot2 style.")
 (define-public r-virustotal
   (package
     (name "r-virustotal")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "virustotal" version))
        (sha256
-        (base32 "020kwhki5740857zd24xm18dg3whzhf527qhmfx1cxyqyld404wy"))))
+        (base32 "0rxzjmcijy527z5ypnkqnkd97svygb7x3i8ssijzd6mxb30x0rra"))))
     (properties `((upstream-name . "virustotal")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plyr r-httr))
+    (propagated-inputs (list r-plyr r-httr r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/themains/virustotal")
     (synopsis "R Client for the VirusTotal API")
@@ -3946,7 +3946,7 @@ results of analysis in the ggplot2 style.")
      "Use @code{VirusTotal}, a Google service that analyzes files and URLs for
 viruses, worms, trojans etc., provides category of the content hosted by a
 domain from a variety of prominent services, provides passive DNS information,
-among other things.  See <http://www.virustotal.com> for more information.")
+among other things.  See <https://www.virustotal.com> for more information.")
     (license license:expat)))
 
 (define-public r-virusparies

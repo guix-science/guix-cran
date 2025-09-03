@@ -76,13 +76,13 @@ Cygwin is required!")
 (define-public r-typr
   (package
     (name "r-typr")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "typr" version))
        (sha256
-        (base32 "0sjy0c4cb66cjhykhpkx87c5c9mxz46dvfl9jg7q93xfwgw2smvx"))))
+        (base32 "1mizyamiq5a3bqf44cj732pw4snlpkrwcp1ypvk2z4m8jfj1n9bl"))))
     (properties `((upstream-name . "typr")))
     (build-system r-build-system)
     (arguments
@@ -7442,6 +7442,62 @@ temporal structures.  The procedure is the one proposed by Alquier, P. and
 Marie, N. \"Matrix factorization for multivariate time series analysis.\"
 Electronic Journal of Statistics, 13(2), 4346-4366 (2019).")
     (license license:gpl3)))
+
+(define-public r-trendtestr
+  (package
+    (name "r-trendtestr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trendtestR" version))
+       (sha256
+        (base32 "0r28bwq0qmx8kdnldxr4p4an3i9bfnhx6wv3knhpriw5x0z2kcd0"))))
+    (properties `((upstream-name . "trendtestR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tseries
+                             r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-pscl
+                             r-multcomp
+                             r-mgcv
+                             r-mass
+                             r-lubridate
+                             r-ggpubr
+                             r-ggplot2
+                             r-fsa
+                             r-forecast
+                             r-emmeans
+                             r-e1071
+                             r-dplyr
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GrahnH/trendtestR")
+    (synopsis
+     "Exploratory Trend Analysis and Visualization for Time-Series and Grouped Data")
+    (description
+     "This package provides a set of exploratory data analysis (EDA) tools for
+visualizing trends, diagnosing data types for beginner-friendly workflows, and
+automatically routing to suitable statistical tests or trend exploration models.
+ Includes unified plotting functions for trend lines, grouped boxplots, and
+comparative scatterplots; automated statistical testing (e.g., t-test, Wilcoxon,
+ANOVA, Kruskal-Wallis, Tukey, Dunn) with optional effect size calculation; and
+model-based trend analysis using generalized additive models (GAM) for count
+data, generalized linear models (GLM) for continuous data, and zero-inflated
+models (ZIP/ZINB) for count data with potential zero-inflation.  Also supports
+time-window continuity checks, cross-year handling in
+@code{compare_monthly_cases()}, and ARIMA-ready preparation with stationarity
+diagnostics, ensuring consistent parameter styles for reproducible research and
+user-friendly workflows.Methods are based on R Core Team (2024)
+<https://www.R-project.org/>, Wood, S.N.(2017, ISBN:978-1498728331), Hyndman RJ,
+Khandakar Y (2008) <doi:10.18637/jss.v027.i03>, Simon Jackman (2024)
+<https://github.com/atahk/pscl/>, Achim Zeileis, Christian Kleiber, Simon
+Jackman (2008) <doi:10.18637/jss.v027.i08>.")
+    (license license:gpl3+)))
 
 (define-public r-trendsegmentr
   (package
@@ -22939,13 +22995,13 @@ theme object.")
 (define-public r-tfunhddc
   (package
     (name "r-tfunhddc")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TFunHDDC" version))
        (sha256
-        (base32 "13j0bb2j2qrgbc8l3v1pg4c8frbi8cjfv09n2682z3zn90dz6z6d"))))
+        (base32 "19vwyn4xvivxs9bfa8zrdcvaa2dkmcvpkarm1piwd92w0vib0fv5"))))
     (properties `((upstream-name . "TFunHDDC")))
     (build-system r-build-system)
     (arguments
@@ -31590,13 +31646,13 @@ Office grant W911NF-17-1-0007.")
 (define-public r-taf
   (package
     (name "r-taf")
-    (version "4.2.0")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TAF" version))
        (sha256
-        (base32 "0k64mq4y03nlfcfcyh37srlnc3wssdlsfqgln1slmqlbcpfwz68b"))))
+        (base32 "1nzsb3q8qblpjqpay2gs5b85yvz44pir2zbsx6vckcdyn4baijwm"))))
     (properties `((upstream-name . "TAF")))
     (build-system r-build-system)
     (arguments
@@ -31606,16 +31662,15 @@ Office grant W911NF-17-1-0007.")
     (home-page "https://github.com/ices-tools-prod/TAF")
     (synopsis "Transparent Assessment Framework for Reproducible Research")
     (description
-     "This package provides functions to organize data, methods, and results used in
+     "General framework to organize data, methods, and results used in reproducible
 scientific analyses.  A TAF analysis consists of four scripts (data.R, model.R,
 output.R, report.R) that are run sequentially.  Each script starts by reading
 files from a previous step and ends with writing out files for the next step.
 Convenience functions are provided to version control the required data and
 software, run analyses, clean residues from previous runs, manage files,
 manipulate tables, and produce figures.  With a focus on stability and
-reproducible analyses, TAF is designed to have no package dependencies.  TAF
-forms a base layer for the @code{icesTAF} package and other scientific
-applications.")
+reproducible analyses, the TAF package comes with no dependencies.  TAF forms a
+base layer for the @code{icesTAF} package and other scientific applications.")
     (license license:gpl3)))
 
 (define-public r-tada

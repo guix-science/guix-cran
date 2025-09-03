@@ -1214,13 +1214,13 @@ install that data package, please follow the instructions at
 (define-public r-usa
   (package
     (name "r-usa")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usa" version))
        (sha256
-        (base32 "1hvdflhdwf9dkwqld32kjllr6669mn20v2q6mi06baqfnf5jjmki"))))
+        (base32 "0yirjbhvq39arps1ykykdfw4w5az7ng02zx6gnfsjfifnj4bml78"))))
     (properties `((upstream-name . "usa")))
     (build-system r-build-system)
     (arguments
@@ -3200,13 +3200,13 @@ marginal counts.  The fast enumeration algorithm was based on (Nguyen et al.
 (define-public r-unicol
   (package
     (name "r-unicol")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unicol" version))
        (sha256
-        (base32 "07fxp7gh8sbvr88b4a0kllqskd88w7xfawj6y6gjkgmhn5ykmxx0"))))
+        (base32 "0gnffhkmsbjw16r6x92jd8kvgwrs7vnjq7k3i9rx5dkx9l78gmwr"))))
     (properties `((upstream-name . "unicol")))
     (build-system r-build-system)
     (arguments

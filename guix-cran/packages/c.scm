@@ -1406,13 +1406,13 @@ Some support for GARCH models is provided, as well.")
 (define-public r-cvap
   (package
     (name "r-cvap")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvap" version))
        (sha256
-        (base32 "02ixibmia4v6qdrn3rwi4qjgha920y8qp83as9acr797abahmnm8"))))
+        (base32 "1kzzaqkical0zjx53rvicfg4f6fh314lakvbcmf1xj51la0wfks7"))))
     (properties `((upstream-name . "cvap")))
     (build-system r-build-system)
     (arguments
@@ -8184,13 +8184,13 @@ CRC32C is described in RFC 3270 at
 (define-public r-crayons
   (package
     (name "r-crayons")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crayons" version))
        (sha256
-        (base32 "0pfgkcs5mrdxq63zqkkdi5fb54swp0w342n6pzgn8lzw1wf4svba"))))
+        (base32 "1w8a3468aq0bi6nn765fgd9g5pc1rf4xaknwm9d1qj59m73xcdnd"))))
     (properties `((upstream-name . "crayons")))
     (build-system r-build-system)
     (arguments
@@ -18350,13 +18350,13 @@ identify the citations associated with their searches, and more.")
 (define-public r-congress
   (package
     (name "r-congress")
-    (version "0.0.3")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "congress" version))
        (sha256
-        (base32 "12q3424gmam0fcnagbdbxgmrhlsc363frv2qyvh6vn0vkipv0y4y"))))
+        (base32 "1lchzjgsqaiyb91k359yqygxglnj77kn2b1kck16491715glxas0"))))
     (properties `((upstream-name . "congress")))
     (build-system r-build-system)
     (arguments
@@ -18367,11 +18367,11 @@ identify the citations associated with their searches, and more.")
                              r-stringr
                              r-rlang
                              r-purrr
-                             r-lifecycle
                              r-httr2
                              r-glue
                              r-dplyr
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/christopherkenny/congress")
     (synopsis "Access the Congress.gov API")
     (description
@@ -28591,13 +28591,13 @@ plot.")
 (define-public r-cmanalysis
   (package
     (name "r-cmanalysis")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmAnalysis" version))
        (sha256
-        (base32 "0zv04f4shnfmsphrsfzpl0hqgnjixkvwkbch921pq2kb6jhhqvn6"))))
+        (base32 "0mpx275m3lbhzzqhqbdx46a1kf5xndjiirlg51y6d6lmhhzf62mj"))))
     (properties `((upstream-name . "cmAnalysis")))
     (build-system r-build-system)
     (arguments
@@ -28613,12 +28613,16 @@ plot.")
     (home-page "https://cran.r-project.org/package=cmAnalysis")
     (synopsis "Process and Visualise Concept Mapping Data")
     (description
-     "Processing and visualizing concept mapping data.  Concept maps are versatile
-tools used across disciplines to enhance understanding, teaching, brainstorming,
-and information organization.  The analysis of concept mapping data involves the
-sequential use of cluster analysis (for sorting participants and statements),
-multidimensional scaling (for positioning statements in a conceptual space), and
-visualization techniques, including point cluster maps and dendrograms.")
+     "Concept maps are versatile tools used across disciplines to enhance
+understanding, teaching, brainstorming, and information organization.  This
+package provides functions for processing and visualizing concept mapping data,
+involving the sequential use of cluster analysis (for sorting participants and
+statements), multidimensional scaling (for positioning statements in a
+conceptual space), and visualization techniques, including point cluster maps
+and dendrograms.  The methodology and its validity are discussed in Kampen,
+J.K., Hageman, J.A., Breuer, M., & Tobi, H. (2025). \"The validity of concept
+mapping: let's call a spade a spade.\" Qual Quant.
+<doi:10.1007/s11135-025-02351-z>.")
     (license license:gpl3)))
 
 (define-public r-cmahalanobis
@@ -35877,13 +35881,13 @@ described in the following studies: Baumbusch LO et al.  2013
 (define-public r-cinid
   (package
     (name "r-cinid")
-    (version "1.3-0")
+    (version "1.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CINID" version))
        (sha256
-        (base32 "06n5bwjr44rx0m12xradzaca26rvh01mlimbn0gr3jfzkmyj2f1g"))))
+        (base32 "176dh719di8lfqar9gpjwyk5wa6w17vrh1cs6vjnpz9j61zf9cid"))))
     (properties `((upstream-name . "CINID")))
     (build-system r-build-system)
     (arguments
@@ -43425,13 +43429,13 @@ learning objects).")
 (define-public r-cdse
   (package
     (name "r-cdse")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDSE" version))
        (sha256
-        (base32 "02hrgp5ir4sihfa9hzv1bnavzpmf6fzdz4w9bbq3cxqmn1wbm4i2"))))
+        (base32 "1s5ii08c2hmvr33zkiydyx3hb2j2rc8z92d3p7lxfswj56nx38zd"))))
     (properties `((upstream-name . "CDSE")))
     (build-system r-build-system)
     (arguments
@@ -50410,13 +50414,13 @@ Regions, Economic Regions, Federal Electoral Divisions and Provinces.")
 (define-public r-camtrapr
   (package
     (name "r-camtrapr")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "camtrapR" version))
        (sha256
-        (base32 "02y4y19v2kgc0mazpk4dxfivln7bylgqqwllz2rw7x0wgjab3l3y"))))
+        (base32 "10pjz9q6qil8nwf95s8y4vxzq4csg96pkq1gsk79ngnwkm3hlsh2"))))
     (properties `((upstream-name . "camtrapR")))
     (build-system r-build-system)
     (arguments

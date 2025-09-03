@@ -13200,19 +13200,20 @@ as influenza.")
 (define-public r-impacteffectsize
   (package
     (name "r-impacteffectsize")
-    (version "0.7")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ImpactEffectsize" version))
        (sha256
-        (base32 "1g62p81x6i9gs562m3pdixw27d2cbzhz8drmcfslgs6f48zlir0j"))))
+        (base32 "017bg61xgigjrf1db3nav180f9dlfrfhwlv32ycv9m0xdp3dbs1n"))))
     (properties `((upstream-name . "ImpactEffectsize")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-paralleldist r-matrixstats r-catools))
+    (propagated-inputs (list r-withr r-rcpp r-paralleldist r-matrixstats
+                             r-catools))
     (home-page "https://cran.r-project.org/package=ImpactEffectsize")
     (synopsis
      "Calculation and Visualization of the Impact Effect Size Measure")
@@ -16543,13 +16544,13 @@ Survey (USGS) Contractor and/or USGS employee.")
 (define-public r-ie2misc
   (package
     (name "r-ie2misc")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ie2misc" version))
        (sha256
-        (base32 "09f40nn56s6j70zz1fhkf7yyzdrypjd7khar82ffj1gsr1k0rnzi"))))
+        (base32 "08jf3z78v64dfwnh5kxrmwg1w0l8599qkjcb44w8qqb0ln2nyprs"))))
     (properties `((upstream-name . "ie2misc")))
     (build-system r-build-system)
     (arguments
@@ -18753,19 +18754,26 @@ Council for the Exploration of the Sea) Vocabularies database
 (define-public r-icestaf
   (package
     (name "r-icestaf")
-    (version "4.2.0")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icesTAF" version))
        (sha256
-        (base32 "0xifza8s24gy09fibqdpkh0zc723jkx09ycx44gqffrx0ch8syds"))))
+        (base32 "15kfkil0kx591mxqdvs57sg5fhxynrsxmc4p984zm0ivlzc8zv7s"))))
     (properties `((upstream-name . "icesTAF")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-taf r-roxygen2 r-purrr r-data-tree))
+    (propagated-inputs (list r-taf
+                             r-rlang
+                             r-jsonlite
+                             r-icesvocab
+                             r-icessag
+                             r-icesdatsu
+                             r-icesconnect
+                             r-httr))
     (home-page "https://taf.ices.dk")
     (synopsis "Functions to Support the ICES Transparent Assessment Framework")
     (description

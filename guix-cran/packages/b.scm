@@ -3774,6 +3774,39 @@ data, offering a quick and accessible foundation for creating maps and
 conducting spatial studies.")
     (license license:gpl3+)))
 
+(define-public r-brulee
+  (package
+    (name "r-brulee")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "brulee" version))
+       (sha256
+        (base32 "0m9bsknzgp7rr7nzvvbn7av08kzhwwk9bnpiyqx8w997jm89km4k"))))
+    (properties `((upstream-name . "brulee")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch
+                             r-tibble
+                             r-rlang
+                             r-hardhat
+                             r-glue
+                             r-ggplot2
+                             r-generics
+                             r-dplyr
+                             r-coro
+                             r-cli))
+    (home-page "https://github.com/tidymodels/brulee")
+    (synopsis "High-Level Modeling Functions with 'torch'")
+    (description
+     "This package provides high-level modeling functions to define and train models
+using the torch R package.  Models include linear, logistic, and multinomial
+regression as well as multilayer perceptrons.")
+    (license license:expat)))
+
 (define-public r-brucer
   (package
     (name "r-brucer")
@@ -3875,13 +3908,13 @@ optionally used to sort the heatmap.")
 (define-public r-brpop
   (package
     (name "r-brpop")
-    (version "0.6.0")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brpop" version))
        (sha256
-        (base32 "1s8ccwshzwkinxgj5b0qmq67f320whwryz3yb8wba3a172jbrkr3"))))
+        (base32 "1dws577ghp8d70y9a3psxi0aq8yx4vl2p70sawi6g06qizs4g5w0"))))
     (properties `((upstream-name . "brpop")))
     (build-system r-build-system)
     (arguments
@@ -8225,13 +8258,13 @@ hence the package name.")
 (define-public r-boom
   (package
     (name "r-boom")
-    (version "0.9.15")
+    (version "0.9.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Boom" version))
        (sha256
-        (base32 "00fn41sk0fdv8xv98j3wzc30vkhrw48clkqwpymvrh57rjdh4q2k"))))
+        (base32 "1514q8rvb4p1j27vff60fc2fcfdja0z67v1l0s5aaxplmy4cl5va"))))
     (properties `((upstream-name . "Boom")))
     (build-system r-build-system)
     (arguments
@@ -18380,13 +18413,13 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "5.1.0")
+    (version "5.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliometrix" version))
        (sha256
-        (base32 "1gshkp6z4pl598777kc0427qqa0dz2n1hbkzww4asb14ixn6hvnv"))))
+        (base32 "1jcffgdnfrv1sb1npb8326ajsddkhgvlm0hbdrj6dhdz7r438j3d"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (arguments
@@ -19520,13 +19553,13 @@ the bfsl solution.")
 (define-public r-bfpwr
   (package
     (name "r-bfpwr")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfpwr" version))
        (sha256
-        (base32 "17lbfzl034vw1wdwmj5fw1nzwcf7xcpryp5c52xi6grm2w01qnlg"))))
+        (base32 "09y7lyvissb5cxf8nw3b51mxk7rry8yjd47d0nzmb0z5rxfdjf8h"))))
     (properties `((upstream-name . "bfpwr")))
     (build-system r-build-system)
     (arguments
@@ -22406,13 +22439,13 @@ vectors (BD-SVD), which can be extended to hierarchical variable clustering
 (define-public r-bdsm
   (package
     (name "r-bdsm")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bdsm" version))
        (sha256
-        (base32 "03n3mbk1r3ki7vjj98shzqqdfkxscbs3s2myx530apzs8yrpdgjr"))))
+        (base32 "0cvj8lxdkfc1jfmhqbm29b2vcb8mc7snlbnc48s7lr0gzsyzyjf4"))))
     (properties `((upstream-name . "bdsm")))
     (build-system r-build-system)
     (arguments

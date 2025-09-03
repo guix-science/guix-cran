@@ -288,13 +288,13 @@ regression.  The procedure is described in detail in Pena, D., & Yohai, V.
 (define-public r-pycno
   (package
     (name "r-pycno")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pycno" version))
        (sha256
-        (base32 "1df7fbizm8r705dddb9xhypf39i6avsn5gpq0r7jx07nv1gmbmbw"))))
+        (base32 "189binzcp4vln4h2djklqyn42xj9zynw59d0g5i3n9aa09ffvd37"))))
     (properties `((upstream-name . "pycno")))
     (build-system r-build-system)
     (arguments
@@ -22356,34 +22356,6 @@ methods include filter methods, wrapper methods and embedded methods.  Both
 regression and classification is supported.")
     (license license:gpl2+)))
 
-(define-public r-plstests
-  (package
-    (name "r-plstests")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PLStests" version))
-       (sha256
-        (base32 "0rczyg1jqjim6lfxdkdacq16341l1h2wpi3n81sskhmhy89xjqzp"))))
-    (properties `((upstream-name . "PLStests")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-psych r-mass r-harmonicmeanp r-glmnet))
-    (home-page "https://cran.r-project.org/package=PLStests")
-    (synopsis
-     "Model Checking for High-Dimensional GLMs via Random Projections")
-    (description
-     "This package provides methods for testing the goodness-of-fit of generalized
-linear models (GLMs) using random projections.  It is specifically designed for
-high-dimensional scenarios where the number of predictors substantially exceeds
-the sample size.  The statistical methodologies implemented in this package are
-detailed in the paper by Wen Chen and Falong Tan (2024,
-<doi:10.48550/@code{arXiv.2412.10721>}).")
-    (license license:gpl3)))
-
 (define-public r-plsrglm
   (package
     (name "r-plsrglm")
@@ -27585,13 +27557,13 @@ plot dimensions are changed.")
 (define-public r-piecewisesem
   (package
     (name "r-piecewisesem")
-    (version "2.3.0.1")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piecewiseSEM" version))
        (sha256
-        (base32 "0cgzvfcc0pwz4qvdmx7xj5wl8cki2ss0kjmlqz2kmxklfiz3y5c0"))))
+        (base32 "00ya5azjhmc7aaw0s3ylqxg8k379z922fkayzrvsfc9rsgji3rq6"))))
     (properties `((upstream-name . "piecewiseSEM")))
     (build-system r-build-system)
     (arguments
@@ -31043,6 +31015,45 @@ based on the data collected in the available patient cohorts and to simulate
 trial characteristics given design parameters.  Yin, Jun, et al. (2017)
 <doi:10.1002/sim.7134>.")
     (license license:gpl2+)))
+
+(define-public r-phase12designs
+  (package
+    (name "r-phase12designs")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phase12designs" version))
+       (sha256
+        (base32 "1v8wwcf757rz4gr7hvm92x7v53c14qyc2m089x8bwxipin5hdv4g"))))
+    (properties `((upstream-name . "phase12designs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-trialr r-iso))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=phase12designs")
+    (synopsis
+     "Comprehensive Tools for Running Model-Assisted Phase I/II Trial Simulations")
+    (description
+     "This package provides a comprehensive set of tools to simulate, evaluate, and
+compare model-assisted designs for early-phase (Phase I/II) clinical trials,
+including: - BOIN12 (Bayesian optimal interval phase 1/11 trial design; Lin et
+al. (2020) <doi:10.1200/PO.20.00257>), - BOIN-ET (Takeda, K., Taguri, M., &
+Morita, S. (2018) <doi:10.1002/pst.1864>), - @code{EffTox} (Thall, P. F., &
+Cook, J. D. (2004) <doi:10.1111/j.0006-341X.2004.00218.x>), - Ji3+3 (Joint i3+3
+design; Lin, X., & Ji, Y. (2020) <doi:10.1080/10543406.2020.1818250>), - PRINTE
+(probability intervals of toxicity and efficacy design; Lin, X., & Ji, Y. (2021)
+<doi:10.1177/0962280220977009>), - STEIN (simple toxicity and efficacy interval
+design; Lin, R., & Yin, G. (2017) <doi:10.1002/sim.7428>), - TEPI (toxicity and
+efficacy probability interval design; Li, D. H., Whitmore, J. B., Guo, W., & Ji,
+Y. (2017) <doi:10.1158/1078-0432.CCR-16-1125>), - @code{uTPI} (utility-based
+toxicity Probability interval design; Shi, H., Lin, R., & Lin, X. (2024)
+<doi:10.1002/sim.8922>).  Includes flexible simulation parameters that allow
+researchers to efficiently compute operating characteristics under various fixed
+and random trial scenarios and export the results.")
+    (license license:expat)))
 
 (define-public r-phase12compare
   (package

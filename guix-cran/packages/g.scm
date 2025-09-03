@@ -1246,13 +1246,13 @@ di Mauro, Pesaran and Smith (2007) <DOI:10.1002/jae.932>.")
 (define-public r-guts
   (package
     (name "r-guts")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GUTS" version))
        (sha256
-        (base32 "1dx760bvc5nkdfhknj8ilqqrxwllzqg03rvg0ghd61xadmb3m64x"))))
+        (base32 "13c8wj939ss7n6cd094inivvp99cz1i8rlcnr9p0823ahhyvyghd"))))
     (properties `((upstream-name . "GUTS")))
     (build-system r-build-system)
     (arguments
@@ -1889,6 +1889,32 @@ regression, are automatically identified and the tables are pre-filled with
 appropriate column headers.")
     (license license:expat)))
 
+(define-public r-gtrt
+  (package
+    (name "r-gtrt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GTRT" version))
+       (sha256
+        (base32 "0qkkza73rbw9rpxhvrhp79n96inz6xwjr9hbhnbsd0vr0rlvgdib"))))
+    (properties `((upstream-name . "GTRT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-circular))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GTRT")
+    (synopsis "Graph Theoretic Randomness Tests")
+    (description
+     "This package provides a collection of functions for testing randomness (or
+mutual independence) in linear and circular data as proposed in Gehlot and Laha
+(2025a) <doi:10.48550/@code{arXiv.2506.21157>} and Gehlot and Laha (2025b)
+<doi:10.48550/@code{arXiv.2506.23522>}, respectively.")
+    (license license:gpl3)))
+
 (define-public r-gtrendsr
   (package
     (name "r-gtrendsr")
@@ -2300,13 +2326,13 @@ J. P. B.; Pereira, R. H. M.; Andrade, P. R. (2022) <doi:10.31219/osf.io/8m2cy>."
 (define-public r-gtexture
   (package
     (name "r-gtexture")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtexture" version))
        (sha256
-        (base32 "1smlnnqsh1akjb2npn73qskq3dd3ypy40v3vkmqdf4qa2qx8yayk"))))
+        (base32 "1ly8wkbd2prr5fjjn13v7nzjysb8jlcyxp183wjqiaynzaa4zzmb"))))
     (properties `((upstream-name . "gtexture")))
     (build-system r-build-system)
     (arguments
@@ -2319,7 +2345,7 @@ J. P. B.; Pereira, R. H. M.; Andrade, P. R. (2022) <doi:10.31219/osf.io/8m2cy>."
                              r-fitscape
                              r-dplyr
                              r-dlookr))
-    (home-page "<https://rbarkerclarke.github.io/gtexture/>")
+    (home-page "https://rbarkerclarke.github.io/gtexture/")
     (synopsis
      "Generalized Application of Co-Occurrence Matrices and Haralick Texture")
     (description
@@ -17992,27 +18018,26 @@ options for the resulting figures.")
 (define-public r-ghql
   (package
     (name "r-ghql")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ghql" version))
        (sha256
-        (base32 "19awg98r2hwwwwrwh0166y8ij1clf58vrf02i8fhhfzddx3an6bz"))))
+        (base32 "0c2z0zb7g5x7p4fx7hscyl0xznnw5rimjc52angsqshjzb4rvxb5"))))
     (properties `((upstream-name . "ghql")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-r6 r-jsonlite r-graphql r-crul))
-    (home-page
-     "https://github.com/ropensci/ghqlhttps://docs.ropensci.org/ghql")
+    (home-page "https://docs.ropensci.org/ghql/")
     (synopsis "General Purpose 'GraphQL' Client")
     (description
      "This package provides a @code{GraphQL} client, with an R6 interface for
 initializing a connection to a @code{GraphQL} instance, and methods for
 constructing queries, including fragments and parameterized queries.  Queries
-are checked with the libgraphqlparser C++ parser via the gaphql package.")
+are checked with the libgraphqlparser C++ parser via the graphql package.")
     (license license:expat)))
 
 (define-public r-ghostknockoff
@@ -22247,20 +22272,19 @@ annotated with the details of scored goals.")
 (define-public r-ggfocus
   (package
     (name "r-ggfocus")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfocus" version))
        (sha256
-        (base32 "03q0rz7flm8sc8hrlkcm5fz66qiyxb8z8q4bh9dglhw0jc8q1fvb"))))
+        (base32 "1n56bgl2n67mznpcan9l63a5jyd99shbhlwaf85wk72x23pf9j34"))))
     (properties `((upstream-name . "ggfocus")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-rcolorbrewer r-magrittr r-ggplot2
-                             r-dplyr))
+    (propagated-inputs (list r-rlang r-rcolorbrewer r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Freguglia/ggfocus")
     (synopsis "Scales that Focus Specific Levels in your ggplot()")
@@ -32308,22 +32332,26 @@ modeling, as discussed in the forthcoming work of Dimitrova et al. (2025).")
 (define-public r-gecko
   (package
     (name "r-gecko")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gecko" version))
        (sha256
-        (base32 "0kvzzlw4069csjwbp514gk92y1yarhq5yhrazl6jgvjcqca4mjy9"))))
+        (base32 "0p9ywa5dr16lkxdkvzfj98ihwapnn7x4f8izkga9hmcb4yvw393s"))))
     (properties `((upstream-name . "gecko")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-terra
+                             r-stringr
                              r-sp
+                             r-sf
+                             r-rlang
                              r-red
                              r-kernlab
+                             r-ggplot2
                              r-geosphere
                              r-biomod2))
     (home-page "https://github.com/VascoBranco/gecko")
@@ -33476,6 +33504,38 @@ equations.  Sparse coefficient matrix and diagonal noise are estimated with a
 proximal gradient method for an l1-penalized loss minimization problem.  Varando
 G, Hansen NR (2020) <@code{arXiv:2005.10483>}.")
     (license license:expat)))
+
+(define-public r-gclink
+  (package
+    (name "r-gclink")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gclink" version))
+       (sha256
+        (base32 "1chi6khisryxpb8hbsj327y9bf78jly505c3bpfz7k7kwamk6m38"))))
+    (properties `((upstream-name . "gclink")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-gggenes r-dplyr))
+    (home-page "https://github.com/LiuyangLee/gclink")
+    (synopsis "Gene-Cluster Discovery, Annotation and Visualization")
+    (description
+     "This package performs end-to-end analysis of gene clustersâsuch as
+photosynthesis, carbon/nitrogen/sulfur cycling, carotenoid, antibiotic, or viral
+marker genes (e.g., capsid, polymerase, integrase)âfrom genomes and
+metagenomes.  It parses Basic Local Alignment Search Tool (BLAST) results in
+tab-delimited format produced by tools like NCBI BLAST+ and Diamond BLASTp,
+filters Open Reading Frames (ORFs) by length, detects contiguous clusters of
+reference genes, optionally extracts genomic coordinates, merges functional
+annotations, and generates publication-ready arrow plots.  The package works
+seamlessly with or without the coding sequences input and skips plotting when no
+functional groups are found.  For more details see Li et al. (2023)
+<doi:10.1038/s41467-023-42193-7>.")
+    (license license:gpl3)))
 
 (define-public r-gckrig
   (package
@@ -35650,13 +35710,13 @@ calculation of density values.  These tasks are executed using package
 (define-public r-gamstransfer
   (package
     (name "r-gamstransfer")
-    (version "3.0.6")
+    (version "3.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamstransfer" version))
        (sha256
-        (base32 "1q6609v6zmmkv1cdf21blwr896xy8gyp54jyn1qqjsc77y69mx2j"))))
+        (base32 "1vgbba5dvy62apycpgn2rx8zs5qnxy2ch7wwm7l4sivg49zgq9il"))))
     (properties `((upstream-name . "gamstransfer")))
     (build-system r-build-system)
     (arguments

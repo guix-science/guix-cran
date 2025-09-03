@@ -823,13 +823,13 @@ the hyper column.")
 (define-public r-hyper-fit
   (package
     (name "r-hyper-fit")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyper.fit" version))
        (sha256
-        (base32 "1w6ra4sqdvzcyhsiyi3lgzy9m4ca3898qjdssdfgmarkrc13bk3n"))))
+        (base32 "1sl0z4z2b1mk6z35lxk88bgckwr4vvh5dl2la948qswr07jgjv45"))))
     (properties `((upstream-name . "hyper.fit")))
     (build-system r-build-system)
     (arguments
@@ -15654,21 +15654,21 @@ circles, makes the comparison easier.")
 (define-public r-haldensify
   (package
     (name "r-haldensify")
-    (version "0.2.3")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "haldensify" version))
        (sha256
-        (base32 "071lgx6j92n40bjlrp3khmnavvkla371rkm1ssx20ig5pkay23pw"))))
+        (base32 "0imyyz2skg4i6wrraj3bmwqzwkfvqmd3a6rj08x8ni30prz2f5vi"))))
     (properties `((upstream-name . "haldensify")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
+                             r-stringr
                              r-scales
-                             r-rsample
                              r-rlang
                              r-rdpack
                              r-origami
@@ -15680,24 +15680,24 @@ circles, makes the comparison easier.")
                              r-data-table
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/nhejazi/haldensify")
+    (home-page "https://codex.nimahejazi.org/haldensify/")
     (synopsis "Highly Adaptive Lasso Conditional Density Estimation")
     (description
      "An algorithm for flexible conditional density estimation based on application of
 pooled hazard regression to an artificial repeated measures dataset constructed
-by discretizing the support of the outcome variable.  To facilitate
-non/semi-parametric estimation of the conditional density, the highly adaptive
-lasso, a nonparametric regression function shown to reliably estimate a large
-class of functions at a fast convergence rate, is utilized.  The pooled hazards
-data augmentation formulation implemented was first described by DÃ­az and van
-der Laan (2011) <doi:10.2202/1557-4679.1356>.  To complement the conditional
-density estimation utilities, tools for efficient nonparametric inverse
-probability weighted (IPW) estimation of the causal effects of stochastic shift
-interventions (modified treatment policies), directly utilizing the density
-estimation technique for construction of the generalized propensity score, are
-provided.  These IPW estimators utilize undersmoothing (sieve estimation) of the
-conditional density estimators in order to achieve the non/semi-parametric
-efficiency bound.")
+by discretizing the support of the outcome variable.  To facilitate flexible
+estimation of the conditional density, the highly adaptive lasso, a
+non-parametric regression function shown to estimate cadlag (RCLL) functions at
+a suitably fast convergence rate, is used.  The use of pooled hazards regression
+for conditional density estimation as implemented here was first described for
+by DÃ­az and van der Laan (2011) <doi:10.2202/1557-4679.1356>.  Building on the
+conditional density estimation utilities, non-parametric inverse probability
+weighted (IPW) estimators of the causal effects of additive modified treatment
+policies are implemented, using conditional density estimation to estimate the
+generalized propensity score.  Non-parametric IPW estimators based on this can
+be coupled with undersmoothing of the generalized propensity score estimator to
+attain the semi-parametric efficiency bound (per Hejazi, DÃ­az, and van der Laan
+<doi:10.48550/@code{arXiv.2205.05777>}).")
     (license license:expat)))
 
 (define-public r-hal9001

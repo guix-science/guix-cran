@@ -385,13 +385,13 @@ uses dynamic range boxes to overcome these problems.")
 (define-public r-dynr
   (package
     (name "r-dynr")
-    (version "0.1.16-105")
+    (version "0.1.16-114")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynr" version))
        (sha256
-        (base32 "0s9n62k9cghvqgcpgingcvni3fzq2d9lrnj48i92kb25165446wm"))))
+        (base32 "14cf6s24ykj5v118xhi50zn4ryiqc5nrp5nsa41zj4m1xw9i5kn6"))))
     (properties `((upstream-name . "dynr")))
     (build-system r-build-system)
     (arguments
@@ -4159,13 +4159,13 @@ expanding value combinations.")
 (define-public r-dsm
   (package
     (name "r-dsm")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsm" version))
        (sha256
-        (base32 "159hlllbp4qy5dxmxgsjcl2ksflq7z7v1ra5d7piyanm9c632q8a"))))
+        (base32 "06pzqx95k3kfqrkxs2zpcsznrjjm93m82rwiibikf0vx89imm144"))))
     (properties `((upstream-name . "dsm")))
     (build-system r-build-system)
     (arguments
@@ -8668,13 +8668,13 @@ and presentation of results.")
 (define-public r-doredis
   (package
     (name "r-doredis")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "doRedis" version))
        (sha256
-        (base32 "0vl81hy9aspaxns823m7wsbfxfcbx2xbxl140ci3l79pvz3rwyf5"))))
+        (base32 "04v508d7jjf7yrfq041v168yv3dcfhf3ggjc1bpjim3pzhqilwd1"))))
     (properties `((upstream-name . "doRedis")))
     (build-system r-build-system)
     (arguments
@@ -11736,13 +11736,13 @@ others (2024) <doi:10.1017/pab.2023.36>.")
 (define-public r-divseg
   (package
     (name "r-divseg")
-    (version "0.0.5")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "divseg" version))
        (sha256
-        (base32 "0fbh5qpjszpmkrvb2p7f9rbbc4zj1dchhwk28zclnbxazlg116fs"))))
+        (base32 "0hzrfs0l9fpb8155jyqbnw8annr6iws1pzwwmr9siayb8zykbn7k"))))
     (properties `((upstream-name . "divseg")))
     (build-system r-build-system)
     (arguments
@@ -11753,7 +11753,6 @@ others (2024) <doi:10.1017/pab.2023.36>.")
                              r-tibble
                              r-sf
                              r-rlang
-                             r-magrittr
                              r-dplyr))
     (home-page "https://github.com/christopherkenny/divseg/")
     (synopsis "Calculate Diversity and Segregation Indices")
@@ -26318,6 +26317,40 @@ database to create weights and baseline values is the Indonesia national survey
 in 2017.")
     (license license:gpl3)))
 
+(define-public r-ddmodel
+  (package
+    (name "r-ddmodel")
+    (version "0.2.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ddModel" version))
+       (sha256
+        (base32 "0ndm00kl6a1ac8gaiz8kb2bj3xaqlhf2kliyk5cf7792xc2pv7mx"))))
+    (properties `((upstream-name . "ddModel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggdmcprior r-ggdmcmodel
+                             r-ggdmcheaders))
+    (home-page "https://cran.r-project.org/package=ddModel")
+    (synopsis "The Decision Diffusion Model")
+    (description
+     "This package provides functions for computing the density, distribution, and
+random generation of the Decision Diffusion model (DDM), a widely used cognitive
+model for analysing choice and response time data.  The package allows model
+specification, including the ability to fix, constrain, or vary parameters
+across experimental conditions.  While it does not include a built-in optimiser,
+it supports likelihood evaluation and can be integrated with external tools for
+parameter estimation.  Functions for simulating synthetic datasets are also
+provided.  This package is intended for researchers modelling speeded
+decision-making in behavioural and cognitive experiments.  For more information,
+see Voss, Rothermund, and Voss (2004) <doi:10.3758/BF03196893>, Voss and Voss
+(2007) <doi:10.3758/BF03192967>, and Ratcliff and @code{McKoon} (2008)
+<doi:10.1162/neco.2008.12-06-420>.")
+    (license license:gpl2+)))
+
 (define-public r-ddml
   (package
     (name "r-ddml")
@@ -28498,13 +28531,13 @@ clustering internal assessment of concave-shaped and density-based clusters\",
 (define-public r-dbcsp
   (package
     (name "r-dbcsp")
-    (version "0.0.2.1")
+    (version "0.0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbcsp" version))
        (sha256
-        (base32 "0faq63aqj4ddlfc5dpi8g3ngqidca6czicgvkzdyg4bj87s0kism"))))
+        (base32 "14qd7h9q0r6l73j3wnq9vmwcza50hnns0afgikkqmma10d7my9xz"))))
     (properties `((upstream-name . "dbcsp")))
     (build-system r-build-system)
     (arguments
@@ -30185,13 +30218,13 @@ website
 (define-public r-datapreparation
   (package
     (name "r-datapreparation")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataPreparation" version))
        (sha256
-        (base32 "0ck3g9hymj6i1a9nr58srm8jxbaghh5w5jg9cqbx5zp18fc0w81v"))))
+        (base32 "16lbbxii87zdqj2yc9lyqwm5ip7fcs75vsvjr57a8lp7b7xv5mfg"))))
     (properties `((upstream-name . "dataPreparation")))
     (build-system r-build-system)
     (arguments
@@ -30473,13 +30506,13 @@ Publishing.")
 (define-public r-datana
   (package
     (name "r-datana")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datana" version))
        (sha256
-        (base32 "134c34gnqq430ijs5si4l19l3dz0frvnsi44y8fpvgm7izj274im"))))
+        (base32 "0ds11amw3kml1v6lfczsr68manbvig4yl78hfvgx679aawixchin"))))
     (properties `((upstream-name . "datana")))
     (build-system r-build-system)
     (arguments

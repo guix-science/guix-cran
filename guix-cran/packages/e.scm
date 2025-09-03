@@ -14208,13 +14208,13 @@ reads, and combines data from the Peruvian Home National Survey.).")
 (define-public r-emur
   (package
     (name "r-emur")
-    (version "2.5.0")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emuR" version))
        (sha256
-        (base32 "0mlcqi9lwqrjilc2nynrl7aqkbqixbdcwzw3rn7mgc8m7cb7s8pq"))))
+        (base32 "0ynp35dfzqpbk2phm9pglqn7xws85l070agnl66h62gl6chbx9mn"))))
     (properties `((upstream-name . "emuR")))
     (build-system r-build-system)
     (arguments
@@ -14223,6 +14223,7 @@ reads, and combines data from the Peruvian Home National Survey.).")
     (propagated-inputs (list r-wrassp
                              r-v8
                              r-uuid
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -14236,6 +14237,7 @@ reads, and combines data from the Peruvian Home National Survey.).")
                              r-jsonlite
                              r-httr
                              r-httpuv
+                             r-fs
                              r-dplyr
                              r-dbi
                              r-cli
