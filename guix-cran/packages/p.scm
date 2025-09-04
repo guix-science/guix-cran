@@ -5668,13 +5668,13 @@ Oppenheim, G. (2020) - \"Smooth And Consistent Probabilistic Regression Trees\"
 (define-public r-prt
   (package
     (name "r-prt")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prt" version))
        (sha256
-        (base32 "02f75a9ici0a7fm08r0dhykf73jpixg5cm8ym2z18dhghas4zly4"))))
+        (base32 "0g1kcnd9yfrcqs3icrmi59bpwm7v9paj6cy20w5ia5vmi0ww5f94"))))
     (properties `((upstream-name . "prt")))
     (build-system r-build-system)
     (arguments
@@ -10997,13 +10997,13 @@ prettier versions of the originals.")
 (define-public r-pretestcad
   (package
     (name "r-pretestcad")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pretestcad" version))
        (sha256
-        (base32 "18bb2wqdw71j4gkdxf9blvg8mca2rq5wjwq5wyjqkvaxdlkn5din"))))
+        (base32 "0kj4zb0rg5yf0ybxwjgpjxjdc899nqpy2d3wrrkk8lsxrgz4kfrf"))))
     (properties `((upstream-name . "pretestcad")))
     (build-system r-build-system)
     (arguments
@@ -21053,13 +21053,13 @@ such clustering.")
 (define-public r-pnd
   (package
     (name "r-pnd")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pnd" version))
        (sha256
-        (base32 "05zg7fahyxvkpwdymmz48204rs5zy81pyijbzrfwbf4q823cfmdx"))))
+        (base32 "17r0gyl12sq3ssvmg6phyh8xzq6z6n9vx85z7briyp4lsk1ng3xg"))))
     (properties `((upstream-name . "pnd")))
     (build-system r-build-system)
     (arguments
@@ -25237,13 +25237,13 @@ raster::@code{plotRGB} - but interactive).")
 (define-public r-plackettluce
   (package
     (name "r-plackettluce")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PlackettLuce" version))
        (sha256
-        (base32 "04pid91wsf3m3mg45zis17xa251491011ihbmfsdy7m914l9wcyd"))))
+        (base32 "0fmv2bn3mc9xc3nknd67gnkbirll5qbfgwn048cv91hpyz078dmd"))))
     (properties `((upstream-name . "PlackettLuce")))
     (build-system r-build-system)
     (arguments
@@ -33361,6 +33361,37 @@ updated dabestr functions.")
 <doi:10.1214/22-BA1353> for estimating marginal likelihoods via permutation
 counting.")
     (license license:bsd-2)))
+
+(define-public r-permrand
+  (package
+    (name "r-permrand")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "permRand" version))
+       (sha256
+        (base32 "02sfadcaf47zwflj9brxsdnw0c5f1p0a7p8yq5nflkfvjinq616z"))))
+    (properties `((upstream-name . "permRand")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-stringr r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/m-mellers/permRand")
+    (synopsis "Permutation Randomization")
+    (description
+     "This package provides randomization using permutation for applications.  To
+provide a Quality Control (QC) check, QC samples can be randomized within
+strata.  A second function allows for the ability to âswitchâ samples to
+meet set requirements and perform a certain amount of minimization on these
+switches.  The functions are flexible for users by specifying strata size and
+number of QC samples per strata.  The randomization meets the following
+requirements â¢ QC sample requirements: QC samples not adjacent, QC samples
+from same mother must follow certain patterns.  â¢ Matched sample sets must be
+within a single strata, and next to each other.")
+    (license license:gpl3+)))
 
 (define-public r-permpath
   (package

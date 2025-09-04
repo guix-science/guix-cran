@@ -2148,13 +2148,13 @@ quanteda package and are specially designed for sparse textual data.")
 (define-public r-quanteda-textplots
   (package
     (name "r-quanteda-textplots")
-    (version "0.95")
+    (version "0.96")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quanteda.textplots" version))
        (sha256
-        (base32 "1lgardgbwc3rhla6bxq4cy4wif7w0s3s5pyvyswb9fz6yyfw0wrk"))))
+        (base32 "0hvjf584aaffbcj603ml3vxga1887djs9vnyirs4g5ggvdk97b6z"))))
     (properties `((upstream-name . "quanteda.textplots")))
     (build-system r-build-system)
     (arguments
@@ -2169,8 +2169,7 @@ quanteda package and are specially designed for sparse textual data.")
                              r-matrix
                              r-igraph
                              r-ggrepel
-                             r-ggplot2
-                             r-extrafont))
+                             r-ggplot2))
     (home-page "https://cran.r-project.org/package=quanteda.textplots")
     (synopsis "Plots for the Quantitative Analysis of Textual Data")
     (description

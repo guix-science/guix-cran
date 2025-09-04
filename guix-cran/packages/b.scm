@@ -3908,13 +3908,13 @@ optionally used to sort the heatmap.")
 (define-public r-brpop
   (package
     (name "r-brpop")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brpop" version))
        (sha256
-        (base32 "1dws577ghp8d70y9a3psxi0aq8yx4vl2p70sawi6g06qizs4g5w0"))))
+        (base32 "0gg9yfswa7n1fl37srwzgh3dfd2hsgf7s7wdr9zbl6z51my6glll"))))
     (properties `((upstream-name . "brpop")))
     (build-system r-build-system)
     (arguments
@@ -4030,13 +4030,13 @@ the original data such as predictions, residuals and cluster assignments; and
 (define-public r-broman
   (package
     (name "r-broman")
-    (version "0.86")
+    (version "0.88")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broman" version))
        (sha256
-        (base32 "165bssyahh7pyhy2n4dlkq2m3ipqj2xqrpj5lkyk3ppv0kn8i7j1"))))
+        (base32 "1rq75lrvx553a1cd177c9s31whdpicr0hnc2dmv7za7hi5m4bj2l"))))
     (properties `((upstream-name . "broman")))
     (build-system r-build-system)
     (arguments
@@ -4053,13 +4053,13 @@ base graphics), permutation tests, running mean/median, and general utilities.")
 (define-public r-brolgar
   (package
     (name "r-brolgar")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brolgar" version))
        (sha256
-        (base32 "19ps8faycijfqlmzhmcbf03gpcfwdayica456zqyark4pl2n0gjq"))))
+        (base32 "08lginwz6z9dkrn7m0ynv3m81x30xvna4f3a006jd0xvfwq8qd6c"))))
     (properties `((upstream-name . "brolgar")))
     (build-system r-build-system)
     (arguments
@@ -5843,13 +5843,13 @@ combination index, and additional response surface methods.")
 (define-public r-braidreports
   (package
     (name "r-braidreports")
-    (version "1.0.1")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "braidReports" version))
        (sha256
-        (base32 "1w6bxvpkh8wslnzickwlxk6sw793x142cinn6sn6836ldlhgzlg9"))))
+        (base32 "1mrj9j3kg35p695w6hxlzx38qr4r26j17c8dpgflqb3lvhn19l88"))))
     (properties `((upstream-name . "braidReports")))
     (build-system r-build-system)
     (arguments
@@ -10359,13 +10359,13 @@ models and equivalence testing features may be added over time.")
 (define-public r-bmemlavaan
   (package
     (name "r-bmemlavaan")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bmemLavaan" version))
        (sha256
-        (base32 "0axwc7y7ncvmpnmdlxjdaw2kfhqklxd0zb7n22m6aw67hkqqqcg5"))))
+        (base32 "0676y0dpjggmbssmamxjazlknwr26ciqwk957bbfb4fg1nn3j5mx"))))
     (properties `((upstream-name . "bmemLavaan")))
     (build-system r-build-system)
     (arguments
@@ -10428,13 +10428,13 @@ Christakos (1999) <doi:10.1007/s004770050029>.")
 (define-public r-bmem
   (package
     (name "r-bmem")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bmem" version))
        (sha256
-        (base32 "0acw1xwswf5yi1a0j8pv996qcma3br0xw7a9w9mh7bx5xavlivvl"))))
+        (base32 "04pbnidlgidcsr199d0474yfp1108cz8fph6hlk2bc73zmnjjsz6"))))
     (properties `((upstream-name . "bmem")))
     (build-system r-build-system)
     (arguments
@@ -11875,6 +11875,43 @@ Kieser, M. (2011) <doi:10.3414/ME09-01-0063>.")
      "This package performs a joint analysis of experiments with mixtures and random
 effects, taking on a process variable represented by a covariable.")
     (license license:gpl3)))
+
+(define-public r-blendr
+  (package
+    (name "r-blendr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blendR" version))
+       (sha256
+        (base32 "0wr0cbd384lm4mg1nmn2h0dh9hz5fdg8bjcmynrkha2fkf75zfg7"))))
+    (properties `((upstream-name . "blendR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-survhe
+                             r-sn
+                             r-manipulate
+                             r-ggplot2
+                             r-flexsurv
+                             r-dplyr))
+    (home-page "https://github.com/StatisticsHealthEconomics/blendR/")
+    (synopsis "Blended Survival Curves")
+    (description
+     "Create a blended curve from two survival curves, which is particularly useful
+for survival extrapolation in health technology assessment.  The main idea is to
+mix a flexible model that fits the observed data well with a parametric model
+that encodes assumptions about long-term survival.  The two curves are blended
+into a single survival curve that is identical to the first model over the range
+of observed times and gradually approaches the parametric model over the
+extrapolation period based on a given weight function.  This approach allows for
+the inclusion of external information, such as data from registries or expert
+opinion, to guide long-term extrapolations, especially when dealing with
+immature trial data.  See Che et al. (2022) <doi:10.1177/0272989X221134545>.")
+    (license license:gpl3+)))
 
 (define-public r-blend
   (package

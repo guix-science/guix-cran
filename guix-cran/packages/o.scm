@@ -994,13 +994,13 @@ Alfandi (2020) <doi:10.1145/3381028>, Abir Smiti (2020)
 (define-public r-outliers-ts-oga
   (package
     (name "r-outliers-ts-oga")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "outliers.ts.oga" version))
        (sha256
-        (base32 "02db5a6nzi2j7xm8a086lczc3r16pmkk3avqlk4w450pyg4h9hkf"))))
+        (base32 "17kbgyqjsar3v75mjylapzisczj2jy5i4r2vdpqza3fnjrn9yd2d"))))
     (properties `((upstream-name . "outliers.ts.oga")))
     (build-system r-build-system)
     (arguments
@@ -1010,6 +1010,8 @@ Alfandi (2020) <doi:10.1145/3381028>, Abir Smiti (2020)
                              r-robust
                              r-parallelly
                              r-gsarima
+                             r-future-apply
+                             r-future
                              r-forecast
                              r-caret))
     (home-page "https://cran.r-project.org/package=outliers.ts.oga")
@@ -1020,9 +1022,8 @@ series from homogeneous and heterogeneous databases using an Orthogonal Greedy
 Algorithm (OGA) for saturated linear regression models.  The programs implement
 the procedures presented in the paper entitled \"Efficient Outlier Detection for
 Large Time Series Databases\" by Pedro Galeano, Daniel PeÃ±a and Ruey S. Tsay
-(2025), working paper, Universidad Carlos III de Madrid.  Version 1.0.1 contains
-some improvements to the algorithm, so the results may vary slightly compared to
-those obtained with version 0.0.1.")
+(2025), working paper, Universidad Carlos III de Madrid.  Version 1.1.1 contains
+some improvements in parallelization with respect to version 1.0.1.")
     (license license:gpl3)))
 
 (define-public r-outliermbc

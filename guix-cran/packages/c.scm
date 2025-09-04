@@ -9054,6 +9054,37 @@ continuous outcome\", BMC Medical Research Methodology.")
 methods for finding parsimonious B-spline regression models.")
     (license license:gpl2+)))
 
+(define-public r-cppsim
+  (package
+    (name "r-cppsim")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cppSim" version))
+       (sha256
+        (base32 "18haq46svs11lhmckknkywzzwifn2acy9cmzk5k892g6b2pas9nw"))))
+    (properties `((upstream-name . "cppSim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://ischlo.github.io/cppSim/")
+    (synopsis "Fast and Memory Efficient Spatial Interaction Models")
+    (description
+     "Building on top of the @code{RcppArmadillo} linear algebra functionalities to do
+fast spatial interaction models in the context of urban analytics, geography,
+transport modelling.  It uses the Newton root search algorithm to determine the
+optimal cost exponent and can run country level models with thousands of origins
+and destinations.  It aims at implementing an easy approach based on matrices,
+that can originate from various routing and processing steps earlier in an
+workflow.  Currently, the simplest form of production, destination and doubly
+constrained models are implemented.  Schlosser et al. (2023)
+<doi:10.48550/@code{arXiv.2309.02112>}.")
+    (license license:expat)))
+
 (define-public r-cpprouting
   (package
     (name "r-cpprouting")
@@ -10304,6 +10335,40 @@ functions, key literature is mentioned below.  Terry M Therneau (2024)
 (2020) <doi:10.1002/sim.8671>, Florian Rohart et al. (2017)
 <doi:10.1371/journal.pcbi.1005752>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-coxmk
+  (package
+    (name "r-coxmk")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CoxMK" version))
+       (sha256
+        (base32 "0nvpddh9l69iniggs0hjd9fxwqprhf8is4n7r8j9cahvmrldhcr7"))))
+    (properties `((upstream-name . "CoxMK")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-matrix r-irlba r-gdsfmt r-bedmatrix))
+    (home-page "https://cran.r-project.org/package=CoxMK")
+    (synopsis
+     "Model-X Knockoff Method for Genome-Wide Survival Association Analysis")
+    (description
+     "This package provides a genome-wide survival framework that integrates
+sequential conditional independent tuples and saddlepoint approximation method,
+to provide SNP-level false discovery rate control while improving power,
+particularly for biobank-scale survival analyses with low event rates.  The
+method is based on model-X knockoffs as described in Barber and Candes (2015)
+<doi:10.1214/15-AOS1337> and fast survival analysis methods from Bi et al.
+(2020) <doi:10.1016/j.ajhg.2020.06.003>.  A shrinkage algorithmic leveraging
+accelerates multiple knockoffs generation in large genetic cohorts.  This CRAN
+version uses standard Cox regression for association testing.  For enhanced
+performance on very large datasets, users may optionally install the SPACox
+package from @code{GitHub} which provides saddlepoint approximation methods for
+survival analysis.")
+    (license license:gpl3)))
 
 (define-public r-coxme
   (package
@@ -16817,37 +16882,43 @@ Professor Ron Knott, e.g.,
 (define-public r-context
   (package
     (name "r-context")
-    (version "1.4.3")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conText" version))
        (sha256
-        (base32 "0ahnbmpphzi2xshmsybphkc9vkj2lr2bi1jssdx97288awwcgayb"))))
+        (base32 "1pf8xnbyp19lcgwh3cskic0a2zppw98imgnv6kyxnsqpig71ms52"))))
     (properties `((upstream-name . "conText")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-text2vec
                              r-stringr
                              r-reshape2
                              r-quanteda
                              r-matrix
                              r-ggplot2
+                             r-foreach
                              r-fastdummies
-                             r-dplyr))
+                             r-estimatr
+                             r-dplyr
+                             r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/prodriguezsosa/EmbeddingRegression")
+    (home-page "https://github.com/prodriguezsosa/conText")
     (synopsis "'a la Carte' on Text (ConText) Embedding Regression")
     (description
      "This package provides a fast, flexible and transparent framework to estimate
 context-specific word and short document embeddings using the a la carte
-embeddings approach developed by Khodak et al. (2018) <@code{arXiv:1805.05388>}
-and evaluate hypotheses about covariate effects on embeddings using the
-regression framework developed by Rodriguez et al.
-(2021)<https://github.com/prodriguezsosa/@code{EmbeddingRegression>}.")
+embeddings approach developed by Khodak et al. (2018)
+<doi:10.48550/@code{arXiv.1805.05388>} and evaluate hypotheses about covariate
+effects on embeddings using the regression framework developed by Rodriguez et
+al. (2021)<doi:10.1017/S0003055422001228>.  New version of the package applies a
+new estimator to measure the distance between word embeddings as described in
+Green et al. (2025) <doi:10.1017/pan.2024.22>.")
     (license license:gpl3)))
 
 (define-public r-contentid
@@ -21216,6 +21287,35 @@ temporarily injects additional build flags into the R build process to generate
 such a compilation database.")
     (license license:expat)))
 
+(define-public r-compclassmetrics
+  (package
+    (name "r-compclassmetrics")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CompClassMetrics" version))
+       (sha256
+        (base32 "1wzql34j3a58ixxcdkqwxvhfgwqcxpmpkcx53gsvm5gwp0w2l5gc"))))
+    (properties `((upstream-name . "CompClassMetrics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pracma r-plot3d r-cubature))
+    (home-page "https://cran.r-project.org/package=CompClassMetrics")
+    (synopsis "Classification Measures when Subclasses are Involved")
+    (description
+     "Accuracy metrics are commonly used to assess the discriminating ability of
+diagnostic tests or biomarkers.  Among them, metrics based on the ROC framework
+are particularly popular.  When classification involves subclasses, the package
+@code{CompClassMetrics} includes functions that can provide the point estimate,
+confidence interval as well as true values if a parametric setting is known.
+For more details see Nan and Tian (2025) <doi:10.1177/09622802251343600> and Nan
+and Tian (2023) <doi:10.1002/sim.9908> and Feng and Tian (2020)
+<doi:10.1177/0962280220938077>.")
+    (license license:expat)))
+
 (define-public r-compas
   (package
     (name "r-compas")
@@ -25167,13 +25267,13 @@ complex multi-gradient interaction.")
 (define-public r-coefplot
   (package
     (name "r-coefplot")
-    (version "1.2.8")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coefplot" version))
        (sha256
-        (base32 "0qxa57sm5hncmd4mxab1c7hk34n2s5fsn51ck6ik2ciynhgcqxvn"))))
+        (base32 "1djvb77fkznk27whrrxm0jbg21p931d3vsdsdf7zwhqzwapyxdp0"))))
     (properties `((upstream-name . "coefplot")))
     (build-system r-build-system)
     (arguments
@@ -31323,13 +31423,13 @@ function documentation.")
 (define-public r-clinutils
   (package
     (name "r-clinutils")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinUtils" version))
        (sha256
-        (base32 "1i8bbfj9hbhjq7ppr3s3wxmnlis0j9xapdz88x44gcsmvxmr57dr"))))
+        (base32 "0sq8pz2h62nf9nrzj2r37p19px403nhn71nkb1z1fci6lwmcvqkz"))))
     (properties `((upstream-name . "clinUtils")))
     (build-system r-build-system)
     (arguments
@@ -41595,13 +41695,13 @@ in the user interface.")
 (define-public r-certara-rsnlme
   (package
     (name "r-certara-rsnlme")
-    (version "3.1.0")
+    (version "3.1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Certara.RsNLME" version))
        (sha256
-        (base32 "1zc2cyh36lagfk7c4mk83r5a2jc4yc3mapir7yqwnldax1k2xdja"))))
+        (base32 "1jqkdgc95qkrbl2vj9jr330xdigbz6nrgx1q49k2xs33xyk9jf22"))))
     (properties `((upstream-name . "Certara.RsNLME")))
     (build-system r-build-system)
     (arguments
@@ -43092,13 +43192,13 @@ dissection sequencing products.")
 (define-public r-cellkey
   (package
     (name "r-cellkey")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cellKey" version))
        (sha256
-        (base32 "1brl0747mr9wpk0q299d55z94zhq2783nad1lanm5ia39r0x8i22"))))
+        (base32 "0z4n0mwyyr2rgbpcm2hjw88s3cyg7bn9rsv0djphybz23k1raran"))))
     (properties `((upstream-name . "cellKey")))
     (build-system r-build-system)
     (arguments
@@ -46402,6 +46502,51 @@ selection bias recovery algorithm by Bareinboim, E. and Tian, J. (2015)
 algorithms are based on a causal effect identification algorithm by Tian , J.
 (2002) <http://ftp.cs.ucla.edu/pub/stat_ser/r309.pdf>.")
     (license license:gpl2+)))
+
+(define-public r-causaldt
+  (package
+    (name "r-causaldt")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "causalDT" version))
+       (sha256
+        (base32 "170wy5f8fympwv63dr4xy52qg0784zg3fklk4ciwb0isfrjrl7h7"))))
+    (properties `((upstream-name . "causalDT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-stringr
+                             r-rpart
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r-utils
+                             r-purrr
+                             r-partykit
+                             r-lifecycle
+                             r-grf
+                             r-ggplot2
+                             r-ggparty
+                             r-dplyr
+                             r-bcf))
+    (home-page "https://tiffanymtang.github.io/causalDT/")
+    (synopsis "Causal Distillation Trees")
+    (description
+     "Causal Distillation Tree (CDT) is a novel machine learning method for estimating
+interpretable subgroups with heterogeneous treatment effects.  CDT allows
+researchers to fit any machine learning model (or metalearner) to estimate
+heterogeneous treatment effects for each individual, and then \"distills\" these
+predicted heterogeneous treatment effects into interpretable subgroups by
+fitting an ordinary decision tree to predict the previously-estimated
+heterogeneous treatment effects.  This package provides tools to estimate causal
+distillation trees (CDT), as detailed in Huang, Tang, and Kenney (2025)
+<doi:10.48550/@code{arXiv.2502.07275>}.")
+    (license license:expat)))
 
 (define-public r-causaldrf
   (package

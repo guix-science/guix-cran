@@ -871,13 +871,13 @@ information published on J-STAGE <https://www.jstage.jst.go.jp/browse/-char/ja>.
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.3.16")
+    (version "1.3.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstable" version))
        (sha256
-        (base32 "1l35vh0icmm3fg7b7bal3jzdzk0g3hkc5zzjby0a4wwdr89f75c1"))))
+        (base32 "0c22m7gwpqjnal8avd5ph6nfilpqpb44nzvj3lja5ci6dgs3cyxf"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (arguments
@@ -1990,13 +1990,13 @@ that can be directly used for latex paper writing based on Rmd files.")
 (define-public r-jot
   (package
     (name "r-jot")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jot" version))
        (sha256
-        (base32 "0pzlj9vcz7p3zcg2y32cir593x193cxswkc3y9d1xh58vamrgs60"))))
+        (base32 "0bbzkylcgdp34lj692b9c2xpdh1pxkxb4yiwjx0vdilj3naqqbny"))))
     (properties `((upstream-name . "jot")))
     (build-system r-build-system)
     (arguments

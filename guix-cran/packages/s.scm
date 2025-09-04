@@ -16532,13 +16532,13 @@ estimate unknown parameters and functions. [Li, Y. et al., (2024),
 (define-public r-stardom
   (package
     (name "r-stardom")
-    (version "1.1.28")
+    (version "1.1.30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "staRdom" version))
        (sha256
-        (base32 "1nihk9fyng0skzi2g0rgl85c3ka92bmr1jaiq4l9mi81g823bk3b"))))
+        (base32 "0dy677wdq2gr2xk0aqskyhizm18djcbk36ib1mnb36ssl89j9hfc"))))
     (properties `((upstream-name . "staRdom")))
     (build-system r-build-system)
     (arguments
@@ -16574,8 +16574,8 @@ estimate unknown parameters and functions. [Li, Y. et al., (2024),
 data from dissolved organic matter (DOM) samples (Murphy et al., 2013)
 <doi:10.1039/c3ay41160e>.  The analysis includes profound methods for model
 validation.  Some additional functions allow the calculation of absorbance slope
-parameters and create beautiful plots.")
-    (license (license:fsdg-compatible "AGPL"))))
+parameters and create beautiful plots.'.")
+    (license license:agpl3)))
 
 (define-public r-staplr
   (package
@@ -21336,13 +21336,13 @@ for right-censored data.  RV Panaro (2020) <@code{arXiv:2003.10548>}.")
 (define-public r-spsur
   (package
     (name "r-spsur")
-    (version "1.0.2.5")
+    (version "1.0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spsur" version))
        (sha256
-        (base32 "0ar1b48r2hi50rvzkr432lpcc4c9r72hxkz74gip5gf12i7mx2ci"))))
+        (base32 "1x5b58qsfb44cf8r3fygpr5f61g14ylw91bhr2ww3dmj82hh2yxr"))))
     (properties `((upstream-name . "spsur")))
     (build-system r-build-system)
     (arguments
@@ -25119,6 +25119,35 @@ maximum probability of intended correction out of all possible candidate
 corrections from the original word.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-spell-replacer
+  (package
+    (name "r-spell-replacer")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spell.replacer" version))
+       (sha256
+        (base32 "0nxb43qxsc4axv9m1mvdhll4vqj3wdl48rxhxszc3v04g9hlsb5l"))))
+    (properties `((upstream-name . "spell.replacer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-textclean r-stringr r-stringdist r-hunspell))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=spell.replacer")
+    (synopsis "Probabilistic Spelling Correction in a Character Vector")
+    (description
+     "Automatically replaces \"misspelled\" words in a character vector based on their
+string distance from a list of words sorted by their frequency in a corpus.  The
+default word list provided in the package comes from the Corpus of Contemporary
+American English.  Uses the Jaro-Winkler distance metric for string similarity
+as implemented in van der Loo (2014) <doi:10.32614/RJ-2014-011>.  The word
+frequency data is derived from Davies (2008-) \"The Corpus of Contemporary
+American English (COCA)\" <https://www.english-corpora.org/coca/>.")
+    (license license:expat)))
+
 (define-public r-spei
   (package
     (name "r-spei")
@@ -27255,13 +27284,13 @@ two-dimensional Penalised spline (P-spline) models.")
 (define-public r-spatpomp
   (package
     (name "r-spatpomp")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatPomp" version))
        (sha256
-        (base32 "017m5y1zcnviv9vbcsvmxp50dvl7f8d3aw5b5ig5qi56rqf1fj99"))))
+        (base32 "018r4q21rn9gqlzrj5zqczy0r9rljfr56ff5w987p8b59wq9jgnr"))))
     (properties `((upstream-name . "spatPomp")))
     (build-system r-build-system)
     (arguments
@@ -34298,13 +34327,13 @@ finite-sample bias.  The package is based on the paper SolÃ­s, M. (2018)
 (define-public r-soas
   (package
     (name "r-soas")
-    (version "1.4")
+    (version "1.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SOAs" version))
        (sha256
-        (base32 "1a3gwqyhw9fzb06xmyapxw0xyff1arb4sfsg3id7blkgxsmahd75"))))
+        (base32 "1czpkdalijhjd4hszq1syqj98imlyvxlqsn1jzj39yacj125xv6w"))))
     (properties `((upstream-name . "SOAs")))
     (build-system r-build-system)
     (arguments
@@ -40929,13 +40958,13 @@ consistency.")
 (define-public r-sits
   (package
     (name "r-sits")
-    (version "1.5.3")
+    (version "1.5.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sits" version))
        (sha256
-        (base32 "03hgkk9jry2mw597w4qqn9137crfsn36xndj4vyxmcrxxv37l421"))))
+        (base32 "1gizp2nqsvbs5siivblrx5i2l33h127pjac8h9v7d58hh6dvx47h"))))
     (properties `((upstream-name . "sits")))
     (build-system r-build-system)
     (arguments
@@ -40959,6 +40988,7 @@ consistency.")
                              r-lubridate
                              r-leaflet
                              r-leafgl
+                             r-httr2
                              r-dplyr))
     (home-page "https://github.com/e-sensing/sits/")
     (synopsis
@@ -43629,6 +43659,34 @@ simplices in n-dimensional Euclidean space.  There are exact methods for
 polynomials and adaptive methods for integrating an arbitrary function.")
     (license license:gpl2+)))
 
+(define-public r-simplica
+  (package
+    (name "r-simplica")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SIMPLICA" version))
+       (sha256
+        (base32 "1kqr7gysz0npvss5bgki68y5cldgmdi3gs7p3w7ija3s5nwhjfpl"))))
+    (properties `((upstream-name . "SIMPLICA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggsci r-ggplot2 r-ga))
+    (home-page "https://github.com/joshageman/SIMPLICA")
+    (synopsis "Biclustering via Simplivariate Component Analysis")
+    (description
+     "Identifies constant, additive, multiplicative, and user-defined simplivariate
+components in numeric data matrices using a genetic algorithm.  Supports
+flexible pattern definitions and provides visualization for general biclustering
+applications across diverse domains.  The method builds on simplivariate models
+as introduced in Hageman et al. (2008) <doi:10.1371/journal.pone.0003259> and is
+related to biclustering frameworks as reviewed by Madeira and Oliveira (2004)
+<doi:10.1109/TCBB.2004.2>.")
+    (license license:gpl3)))
+
 (define-public r-simplextree
   (package
     (name "r-simplextree")
@@ -45340,6 +45398,41 @@ statistical simulations on both local and cluster-based computing
 environments.See full documentation at
 <https://avi-kenny.github.io/@code{SimEngine/>}.")
     (license license:gpl3)))
+
+(define-public r-simed
+  (package
+    (name "r-simed")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simEd" version))
+       (sha256
+        (base32 "1v75lg8d5awjwpm9ijcn4d9sxj3zxw00d07p2dddwflprf2i2hw5"))))
+    (properties `((upstream-name . "simEd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shape r-rstream))
+    (home-page "https://cran.r-project.org/package=simEd")
+    (synopsis "Simulation Education")
+    (description
+     "This package contains various functions to be used for simulation education,
+including simple Monte Carlo simulation functions, queueing simulation
+functions, variate generation functions capable of producing independent streams
+and antithetic variates, functions for illustrating random variate generation
+for various discrete and continuous distributions, and functions to compute
+time-persistent statistics.  Also contains functions for visualizing:
+event-driven details of a single-server queue model; a Lehmer random number
+generator; variate generation via acceptance-rejection; and of generating a
+non-homogeneous Poisson process via thinning.  Also contains two queueing data
+sets (one fabricated, one real-world) to facilitate input modeling.  More
+details on the use of these functions can be found in Lawson and Leemis (2015)
+<doi:10.1109/WSC.2017.8248124>, in Kudlay, Lawson, and Leemis (2020)
+<doi:10.1109/WSC48552.2020.9384010>, and in Lawson and Leemis (2021)
+<doi:10.1109/WSC52266.2021.9715299>.")
+    (license license:expat)))
 
 (define-public r-simecol
   (package
@@ -58953,6 +59046,65 @@ conditions could be used.  Implemented methods are described in the article
 and Van Keilegom (2024) <doi:10.1080/01621459.2022.2161387>.")
     (license license:gpl3)))
 
+(define-public r-seminrextras
+  (package
+    (name "r-seminrextras")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "seminrExtras" version))
+       (sha256
+        (base32 "17jyy10c62ynws7fqapx27lhsb09d9lcjq62zls6dy3c7pqdkjr4"))))
+    (properties `((upstream-name . "seminrExtras")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-seminr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sem-in-r/seminr")
+    (synopsis "Conduct Additional Modeling and Analysis for 'seminr'")
+    (description
+     "Supplemental functions for estimating and analysing structural equation models
+including Cross Validated Prediction and Testing (CVPAT, Liengaard et al., 2021
+<doi:10.1111/deci.12445>).")
+    (license license:gpl3)))
+
+(define-public r-seminr
+  (package
+    (name "r-seminr")
+    (version "2.3.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "seminr" version))
+       (sha256
+        (base32 "0hkinkl9zq9p6kakycyg4al5ikj4awm44j39ilp6jaqs4jilc64g"))))
+    (properties `((upstream-name . "seminr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-webp
+                             r-testthat
+                             r-rmarkdown
+                             r-lavaan
+                             r-knitr
+                             r-glue
+                             r-diagrammersvg
+                             r-diagrammer))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sem-in-r/seminr")
+    (synopsis "Building and Estimating Structural Equation Models")
+    (description
+     "This package provides a powerful, easy to use syntax for specifying and
+estimating complex Structural Equation Models.  Models can be estimated using
+Partial Least Squares Path Modeling or Covariance-Based Structural Equation
+Modeling or covariance based Confirmatory Factor Analysis (Ray, Danks, and
+Valdez 2021 <doi:10.2139/ssrn.3900621>).")
+    (license license:gpl3)))
+
 (define-public r-semimarkov
   (package
     (name "r-semimarkov")
@@ -59784,13 +59936,13 @@ functionality to extract and evaluate the relevant probabilities.")
 (define-public r-selfcontrolledcaseseries
   (package
     (name "r-selfcontrolledcaseseries")
-    (version "6.0.1")
+    (version "6.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SelfControlledCaseSeries" version))
        (sha256
-        (base32 "0gn78fr62r05zjg3ln5nx8qnkgh5xw7bpg1srfkvbv86rx22j1qj"))))
+        (base32 "0pm62a6nrk5722gyiiif7xl9m1lsxlr24gc52vbl84qwby7dad3m"))))
     (properties `((upstream-name . "SelfControlledCaseSeries")))
     (build-system r-build-system)
     (arguments
@@ -73424,13 +73576,13 @@ Erciulescu et al.(2019) <doi:10.1111/rssa.12390>.")
 (define-public r-saehb-tf-beta
   (package
     (name "r-saehb-tf-beta")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeHB.TF.beta" version))
        (sha256
-        (base32 "14hnkag0pw82fj88bhrc506dgks6q9834wiyi20sc0wv8c2m6xb8"))))
+        (base32 "02jzcq3sqqp669bpbalzvidfasik88mqsy4sacsimnszwxw3babc"))))
     (properties `((upstream-name . "saeHB.TF.beta")))
     (build-system r-build-system)
     (arguments
@@ -73458,8 +73610,8 @@ model-based estimators include the HB mean, the variation of the mean, and
 quantiles.  For references, see Rao and Molina (2015)
 <doi:10.1002/9781118735855>, Torabi and Rao (2014)
 <doi:10.1016/j.jmva.2014.02.001>, Leyla Mohadjer et al.(2007)
-<http://www.asasrms.org/Proceedings/y2007/Files/JSM2007-000559.pdf>, and
-Erciulescu et al.(2019) <doi:10.1111/rssa.12390>.")
+<http://www.asasrms.org/Proceedings/y2007/Files/JSM2007-000559.pdf>, Erciulescu
+et al.(2019) <doi:10.1111/rssa.12390>, and Yudasena (2024).")
     (license license:gpl3+)))
 
 (define-public r-saehb-spatial

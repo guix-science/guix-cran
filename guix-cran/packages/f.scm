@@ -346,13 +346,13 @@ of data collection or to predict its evolution in future or in the past.")
 (define-public r-fuzzywuzzyr
   (package
     (name "r-fuzzywuzzyr")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzywuzzyR" version))
        (sha256
-        (base32 "1g73xivxyh5fvppccgnxhgar6jsl6zsr2djkg0bhh10i633l56ia"))))
+        (base32 "1w3if59x82ra8070f8q36r8ds0hy6rcrrsalkmsdcfbryjx99mi3"))))
     (properties `((upstream-name . "fuzzywuzzyR")))
     (build-system r-build-system)
     (arguments
@@ -906,20 +906,23 @@ new prediction object individually.")
 (define-public r-fuzzyclass
   (package
     (name "r-fuzzyclass")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyClass" version))
        (sha256
-        (base32 "1ld40qaiig743x21iwzpiabc1ky72hqrdnh855wfgvkmln9jc9by"))))
+        (base32 "1vlk8dr5i9z72ad91n5ibplgfbs2c94laf8nm04knnmc5jpvrkh9"))))
     (properties `((upstream-name . "FuzzyClass")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-trapezoid
+                             r-tidyr
+                             r-tibble
                              r-rootsolve
+                             r-rlang
                              r-rdpack
                              r-purrr
                              r-mvtnorm
@@ -927,6 +930,7 @@ new prediction object individually.")
                              r-foreach
                              r-envstats
                              r-e1071
+                             r-dplyr
                              r-doparallel
                              r-catools))
     (native-inputs (list r-knitr))
@@ -4576,13 +4580,13 @@ modified generalized weights is computed.  Ibrahim et al. (2022)
 (define-public r-frf2-catlg128
   (package
     (name "r-frf2-catlg128")
-    (version "1.2-3")
+    (version "1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FrF2.catlg128" version))
        (sha256
-        (base32 "0jlp3qfikzc01qzlqnwnp96iylhzk0a1fazk6lankplkvxnv0zpc"))))
+        (base32 "1riicmx5wrl5c26f3cc704svmc6vlz4jy5sl5r72lk36wipwa5f9"))))
     (properties `((upstream-name . "FrF2.catlg128")))
     (build-system r-build-system)
     (arguments
@@ -12913,13 +12917,13 @@ aiding in the interpretation of the predictor's effect.")
 (define-public r-flexoki
   (package
     (name "r-flexoki")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexoki" version))
        (sha256
-        (base32 "1fmc8j1vpa30gnybdy9fxk675ncrbs7x90cqg402wchd0gp7magg"))))
+        (base32 "090m0hq1w4mw5lix2b5gk12hkvc6wd3adaj76l1lxi9j46kn3rlk"))))
     (properties `((upstream-name . "flexoki")))
     (build-system r-build-system)
     (arguments
@@ -16588,13 +16592,13 @@ disease, as discussed in Miller (2012) <doi:10.1007/s11538-012-9749-6>.")
 (define-public r-finalfit
   (package
     (name "r-finalfit")
-    (version "1.0.8")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finalfit" version))
        (sha256
-        (base32 "0g0vrzdr0f591q0sh0an0rvbvss05cp5hghbh9jmcprlr018wbm4"))))
+        (base32 "18nk3lc885v2421vmy4415sfy2dml88n8k4wd5jiasmn4hvzj2s8"))))
     (properties `((upstream-name . "finalfit")))
     (build-system r-build-system)
     (arguments
@@ -16610,11 +16614,11 @@ disease, as discussed in Miller (2012) <doi:10.1007/s11538-012-9749-6>.")
                              r-mice
                              r-magrittr
                              r-lme4
-                             r-gridextra
                              r-ggplot2
                              r-ggally
                              r-forcats
                              r-dplyr
+                             r-cowplot
                              r-broom
                              r-boot
                              r-bdsmatrix))

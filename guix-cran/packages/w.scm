@@ -2068,19 +2068,19 @@ Atmospheric Administration (NOAA) Integrated Surface Database (ISD, see
 (define-public r-worldmapr
   (package
     (name "r-worldmapr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WorldMapR" version))
        (sha256
-        (base32 "0br9qmql8g75arm22gmrb39p0gwgn39wmb1fzk1ib5aqgpk3disk"))))
+        (base32 "0rp0xh0wxzbwikvvz91mjpxlw8pp8kb1v7127b2mnbcmb03zc7d7"))))
     (properties `((upstream-name . "WorldMapR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-ggplot2 r-ggfx r-dplyr r-countrycode))
+    (propagated-inputs (list r-sf r-ggplot2 r-ggfx r-countrycode))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Luigi-Annic/WorldMapR/")
     (synopsis "Worldwide or Coordinates-Based Heat Maps")

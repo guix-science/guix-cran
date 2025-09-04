@@ -4278,13 +4278,13 @@ Auton et al. (2015) <doi:10.1038/nature15393> and Byrska-Bishop et al. (2022)
 (define-public r-kgode
   (package
     (name "r-kgode")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KGode" version))
        (sha256
-        (base32 "0q39x34rwya3pqhvly1g0n2ykzvwrwdpdnp3y3ya9cyai63l2sgn"))))
+        (base32 "1659ys3vb8gxslmkiyzj85r8asjvrr38z93kyl60qk072vs0l36j"))))
     (properties `((upstream-name . "KGode")))
     (build-system r-build-system)
     (arguments
@@ -5510,6 +5510,40 @@ providing them with a clean and easy to use API for hypertuning.  Keras Tuner
 makes moving from a base model to a hypertuned one quick and easy by only
 requiring you to change a few lines of code.")
     (license license:asl2.0)))
+
+(define-public r-kerasnip
+  (package
+    (name "r-kerasnip")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kerasnip" version))
+       (sha256
+        (base32 "0kp39qbph48kh4bdabmvc867j8v5xsshxfh53b384l7kcvm670j3"))))
+    (properties `((upstream-name . "kerasnip")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-reticulate
+                             r-recipes
+                             r-purrr
+                             r-parsnip
+                             r-keras3
+                             r-dplyr
+                             r-cli
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=kerasnip")
+    (synopsis "Bridge Between 'keras' and 'tidymodels'")
+    (description
+     "This package provides a seamless bridge between keras and the tidymodels
+ecosystem.  It allows for the dynamic creation of parsnip model specifications
+for keras models.")
+    (license license:expat)))
 
 (define-public r-keras3
   (package

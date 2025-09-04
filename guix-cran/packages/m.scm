@@ -3632,6 +3632,39 @@ analysis that can be easily extended for custom requirements and specific data
 analysis tasks.")
     (license license:expat)))
 
+(define-public r-multivariatetrendanalysis
+  (package
+    (name "r-multivariatetrendanalysis")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MultivariateTrendAnalysis" version))
+       (sha256
+        (base32 "0l8rlgg1apydhf953dssx8f527svzzk81h66a5cas4qnyphrzvns"))))
+    (properties `((upstream-name . "MultivariateTrendAnalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-vgam r-resample r-copula))
+    (home-page "https://cran.r-project.org/package=MultivariateTrendAnalysis")
+    (synopsis "Univariate and Multivariate Trend Testing")
+    (description
+     "With foundations on the work by Goutali and Chebana (2024)
+<doi:10.1016/j.envsoft.2024.106090>, this package contains various univariate
+and multivariate trend tests.  The main functions regard the Multivariate
+Dependence Trend and Multivariate Overall Trend tests as proposed by Goutali and
+Chebana (2024), as well as a plotting function that proves useful as a summary
+and complement of the tests.  Although many packages and methods carry
+univariate tests, the Mann-Kendall and Spearman's rho test implementations are
+included in the package with an adapted version to hydrological formulation
+(e.g. as in Rao and Hamed 1998 <doi:10.1016/S0022-1694(97)00125-X> or Chebana
+2022 <doi:10.1016/C2021-0-01317-1>).  For better understanding of the example
+use of the functions, three datasets are included.  These are synthetic data and
+shouldn't be used beyond that purpose.")
+    (license license:gpl3+)))
+
 (define-public r-multivariaterandomforest
   (package
     (name "r-multivariaterandomforest")
@@ -3829,13 +3862,13 @@ Yang et al. (2022) <doi:10.1016/j.foreco.2022.120540>, Winemiller et al. (2015)
 (define-public r-multitool
   (package
     (name "r-multitool")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multitool" version))
        (sha256
-        (base32 "1z8yby5prfmp0p9gia8pmr54sw017rqbpblhxk6qxz3w9vnl4zp8"))))
+        (base32 "0fhwcg8svabqk4sdm2v64zcqgsslfm1vq1dnaqz19bf1zrf7k0pv"))))
     (properties `((upstream-name . "multitool")))
     (build-system r-build-system)
     (arguments
@@ -3844,6 +3877,7 @@ Yang et al. (2022) <doi:10.1016/j.foreco.2022.120540>, Winemiller et al. (2015)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
+                             r-rstudioapi
                              r-rlang
                              r-purrr
                              r-performance
@@ -3851,15 +3885,10 @@ Yang et al. (2022) <doi:10.1016/j.foreco.2022.120540>, Winemiller et al. (2015)
                              r-moments
                              r-lme4
                              r-glue
-                             r-ggplot2
-                             r-ggdist
-                             r-future
                              r-furrr
-                             r-flextable
                              r-dplyr
                              r-diagrammer
-                             r-correlation
-                             r-clipr))
+                             r-correlation))
     (native-inputs (list r-knitr))
     (home-page "https://ethan-young.github.io/multitool/")
     (synopsis "Run Multiverse Style Analyses")
@@ -5180,6 +5209,41 @@ Martin Fortin, JosÃ© Almirall, and Kathryn Nicholson
 structuring and user-defined linear transformations for standardization.  It
 optionally, includes metadata extraction from filenames in the UCLA
 @code{NewsScape} archive.")
+    (license license:gpl3)))
+
+(define-public r-multimodtest
+  (package
+    (name "r-multimodtest")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multiModTest" version))
+       (sha256
+        (base32 "0jr8kk1iaxfl1ch8cs4vc97dj6mk75pkicgzz9qzxafypm19zrq6"))))
+    (properties `((upstream-name . "multiModTest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyverse
+                             r-survival
+                             r-sis
+                             r-ncvreg
+                             r-mbess
+                             r-mass
+                             r-glmnet
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=multiModTest")
+    (synopsis
+     "Information Assessment for Individual Modalities in Multimodal Regression Models")
+    (description
+     "This package provides methods for quantifying the information gain contributed
+by individual modalities in multimodal regression models.  Information gain is
+measured using Expected Relative Entropy (ERE) or pseudo-RÂ² metrics, with
+corresponding p-values and confidence intervals.  Currently supports linear and
+logistic regression models with plans for extension to additional Generalized
+Linear Models and Cox proportional hazard model.")
     (license license:gpl3)))
 
 (define-public r-multimode
@@ -17236,13 +17300,13 @@ that text derived from a regression model.")
 (define-public r-modeltime-resample
   (package
     (name "r-modeltime-resample")
-    (version "0.2.4")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeltime.resample" version))
        (sha256
-        (base32 "0khb5wi56swjzr2bz96csfaamspwcd8yfrnbiyw9w3497ibfy0ch"))))
+        (base32 "0igrwcciigmdnrkjwqd2slsf12x90fww2izcpx6l112050x6601n"))))
     (properties `((upstream-name . "modeltime.resample")))
     (build-system r-build-system)
     (arguments
@@ -17250,6 +17314,7 @@ that text derived from a regression model.")
       #:tests? #f))
     (propagated-inputs (list r-yardstick
                              r-workflows
+                             r-withr
                              r-tune
                              r-timetk
                              r-tidyr
@@ -17262,13 +17327,11 @@ that text derived from a regression model.")
                              r-purrr
                              r-progressr
                              r-plotly
-                             r-parsnip
                              r-modeltime
                              r-magrittr
                              r-hardhat
                              r-ggplot2
                              r-dplyr
-                             r-dials
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://business-science.github.io/modeltime.resample/")
@@ -26374,13 +26437,13 @@ greatest common divisor of two numbers and so on.")
 (define-public r-misclassglm
   (package
     (name "r-misclassglm")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misclassGLM" version))
        (sha256
-        (base32 "0iph5nz4hnfgx32xwc8z201ap18b543x8by6hcpkbk8jcbxswhjq"))))
+        (base32 "0qx6bjqzspkhhhrb8iz3j5d8sm63mffzgppk3z6xzf0b063l3z1d"))))
     (properties `((upstream-name . "misclassGLM")))
     (build-system r-build-system)
     (arguments
@@ -26401,7 +26464,7 @@ account.  The models require side information from a secondary data set on the
 misclassification process, i.e.  some sort of misclassification probabilities
 conditional on some common covariates.  A detailed description of the algorithm
 can be found in Dlugosz, Mammen and Wilke (2015)
-<https://www.zew.de/publikationen/generalised-partially-linear-regression-with-misclassified-data-and-an-application-to-labour-market-transitions>.")
+<https://ftp.zew.de/pub/zew-docs/dp/dp15043.pdf>.")
     (license license:gpl3)))
 
 (define-public r-miscic
@@ -46018,13 +46081,13 @@ and practical tips of the package is available at
 (define-public r-mateable
   (package
     (name "r-mateable")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mateable" version))
        (sha256
-        (base32 "0w5l4dkrz2bgk0pdiqpbbgkf4hyd6gdldrby8bivz03g93rnpq9g"))))
+        (base32 "0w2p8p1w7nijb6m9qh9mw5pswgd2qb5l2yij32b575dakdn8lndc"))))
     (properties `((upstream-name . "mateable")))
     (build-system r-build-system)
     (arguments
@@ -49206,13 +49269,13 @@ Shiny web applications.")
 (define-public r-mapgam
   (package
     (name "r-mapgam")
-    (version "1.3")
+    (version "1.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MapGAM" version))
        (sha256
-        (base32 "09y06fzw8ari3c06fiz8cl067c9frvfnc0zi484brb9nqlaq24rw"))))
+        (base32 "0a7mxsn5v760n36mic2jyfal0yg8fwpbrbbvjf3whax0p6nhhsz2"))))
     (properties `((upstream-name . "MapGAM")))
     (build-system r-build-system)
     (arguments

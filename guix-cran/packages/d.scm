@@ -9291,13 +9291,13 @@ package @code{AlgDesign} have been implemented.")
 (define-public r-doe-miparray
   (package
     (name "r-doe-miparray")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DoE.MIParray" version))
        (sha256
-        (base32 "0ginm4wqax2azcns4c17rgdfpclbmn058nq0lmpx90s4q7jfppax"))))
+        (base32 "1ngsfxbi3abnzj6s69shvb100sizl9xhc0lb93slqzrksjdigr0h"))))
     (properties `((upstream-name . "DoE.MIParray")))
     (build-system r-build-system)
     (arguments
@@ -9316,10 +9316,10 @@ use with any mixed integer optimization software that can process such files.
 If at least one of the commercial products Gurobi or Mosek (free academic
 licenses available for both) is available, the package also creates arrays by
 optimization.  For installing Gurobi and its R package gurobi', follow
-instructions at <https://www.gurobi.com/products/gurobi-optimizer/> and
-<https://www.gurobi.com/documentation/7.5/refman/r_api_overview.html> (or higher
-version).  For installing Mosek and its R package Rmosek', follow instructions
-at <https://www.mosek.com/downloads/> and
+instructions at
+<https://support.gurobi.com/hc/en-us/articles/14462206790033-How-do-I-install-Gurobi-for-R>.
+ For installing Mosek and its R package Rmosek', follow instructions at
+<https://www.mosek.com/downloads/> and
 <https://docs.mosek.com/8.1/rmosek/install-interface.html>, or use the
 functionality in the stump CRAN R package Rmosek'.")
     (license license:gpl2+)))
@@ -9564,13 +9564,13 @@ for functions provided by packages as well.")
 (define-public r-docovt
   (package
     (name "r-docovt")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Docovt" version))
        (sha256
-        (base32 "1ss7i0q7q05s6m5943yvj1hbp44kb1yp80jgy2fhph10j6bch9jj"))))
+        (base32 "05w3fgxp3zwmphz25vqir6s5jh7s0ff0gg85k559plvlx1ja0bcc"))))
     (properties `((upstream-name . "Docovt")))
     (build-system r-build-system)
     (arguments
@@ -16107,13 +16107,13 @@ Digital Science Dimensions using DSL API
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.14.0")
+    (version "0.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dimensio" version))
        (sha256
-        (base32 "103pihiiy2j7q6fgwlpn0r2i9nj9xhlih8s2azdyfpl80hrbd6vq"))))
+        (base32 "1rsjd37xk1fvrq31qnwd87mw5ra33f88gpzymhrhsmj8dv64zsli"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
     (arguments

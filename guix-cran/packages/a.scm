@@ -24575,13 +24575,13 @@ algorithms are described and reviewed in Zhang and Ball (2017)
 (define-public r-adbi
   (package
     (name "r-adbi")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbi" version))
        (sha256
-        (base32 "17w74ggng77yvpqn0vw1s1gylmchrv2dq6s19fl56dl6nqp6bfpa"))))
+        (base32 "1zj4nbfqii15zn4jqjgl11a4wb5bpjbzb9vrybbh1509v0a15hls"))))
     (properties `((upstream-name . "adbi")))
     (build-system r-build-system)
     (arguments

@@ -10504,13 +10504,13 @@ space when there are more than a few response variables.")
 (define-public r-hemispher
   (package
     (name "r-hemispher")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hemispheR" version))
        (sha256
-        (base32 "1bpkjhdf4dx95wxw8p2b80mpwr0p6b26qx2wm0ha9s33f27bvpgw"))))
+        (base32 "1nnlz4r6dsmbi29wdakj092nggdqknq0ma0arnm905hk2x0kcab7"))))
     (properties `((upstream-name . "hemispheR")))
     (build-system r-build-system)
     (arguments
@@ -14927,21 +14927,20 @@ including most of the delicious Cantonese cuisine.")
 (define-public r-happign
   (package
     (name "r-happign")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "happign" version))
        (sha256
-        (base32 "13qd3b83174h3mixp1sr9flyggs0w2j5ffpvcg9fyrkjca7fai83"))))
+        (base32 "1l7zamh26qq06hb3f0g3d5dpv0vysmrbdifc9srskvsgzsviywyz"))))
     (properties `((upstream-name . "happign")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list sqlite proj geos gdal))
-    (propagated-inputs (list r-yyjsonr
-                             r-xml2
+    (propagated-inputs (list r-xml2
                              r-terra
                              r-sf
                              r-jsonlite

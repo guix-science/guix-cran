@@ -6453,6 +6453,32 @@ clicking the respective buttons.  If the mean is chosen incorrectly, the user is
 asked to correct it.")
     (license license:gpl3)))
 
+(define-public r-etwfe
+  (package
+    (name "r-etwfe")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "etwfe" version))
+       (sha256
+        (base32 "10j1cyclv5dxd97kcjvww1241habb4idl6rcjghvmc5zfdhn2lm2"))))
+    (properties `((upstream-name . "etwfe")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tinyplot r-marginaleffects r-formula r-fixest
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://grantmcdermott.com/etwfe/")
+    (synopsis "Extended Two-Way Fixed Effects")
+    (description
+     "Convenience functions for implementing extended two-way fixed effect regressions
+a la Wooldridge (2021, 2023) <doi:10.2139/ssrn.3906345>,
+<doi:10.1093/ectj/utad016>.")
+    (license license:expat)))
+
 (define-public r-etrm
   (package
     (name "r-etrm")
@@ -10409,6 +10435,41 @@ from an environment.  It allows to delete objects specified with regular
 expression or with other conditions (e.g. if object is numeric), using one
 function call.")
     (license license:expat)))
+
+(define-public r-epoch
+  (package
+    (name "r-epoch")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Epoch" version))
+       (sha256
+        (base32 "19r20b5yj7cv48iikwxfgns89iciyxdaja0gakcjp5nc7533z904"))))
+    (properties `((upstream-name . "Epoch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tablecontainer
+                             r-rlang
+                             r-ramify
+                             r-osfr
+                             r-jsonlite
+                             r-gsignal
+                             r-glue
+                             r-ggtext
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Epoch")
+    (synopsis "IEEG (Intracranial Electroencephalography) Epoch Data Tools")
+    (description
+     "This package provides tools for working with @code{iEEG} matrix data, including
+downloading curated @code{iEEG} data from OSF (The Open Science Framework
+<https://osf.io/>) @code{(EpochDownloader()}), making new objects
+@code{(Epoch()}), processing @code{(crop()} and @code{resample()}), and
+visualizing the data @code{(plot()}).")
+    (license license:gpl3+)))
 
 (define-public r-epocakir
   (package
@@ -16409,13 +16470,13 @@ Guang-Bin Huang, Qin-Yu Zhu, Chee-Kheong Siew (2006), Elsevier B.V,
 (define-public r-ellmer
   (package
     (name "r-ellmer")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ellmer" version))
        (sha256
-        (base32 "0z9h148hri98p2w2b4xs5dhpamsdrd5dq51c0xr029zwidvzn9m5"))))
+        (base32 "1wnd2dpg0whqb3dh30f5x9bvks4wszsgj95jksg0v8fja0knaf67"))))
     (properties `((upstream-name . "ellmer")))
     (build-system r-build-system)
     (arguments
@@ -17566,6 +17627,40 @@ more than two dimensions because the respective operators ('tensor products')
 might not have a standardized name.")
     (license license:expat)))
 
+(define-public r-einops
+  (package
+    (name "r-einops")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "einops" version))
+       (sha256
+        (base32 "0ncy2bkkvg8n4smq2ysk19nfng6khn1n4k68diq5q8pvcins2jgv"))))
+    (properties `((upstream-name . "einops")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-roperators
+                             r-r6
+                             r-r2r
+                             r-magrittr
+                             r-glue
+                             r-fastutils
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Qile0317/einops")
+    (synopsis "Flexible, Powerful, and Readable Tensor Operations")
+    (description
+     "Perform tensor operations using a concise yet expressive syntax inspired by the
+Python library of the same name.  Reshape, rearrange, and combine
+multidimensional arrays for scientific computing, machine learning, and data
+analysis.  Einops simplifies complex manipulations, making code more
+maintainable and intuitive.  The original implementation is demonstrated in
+Rogozhnikov (2022) <https://openreview.net/forum?id=@code{oapKSVM2bcj>}.")
+    (license license:expat)))
+
 (define-public r-einet
   (package
     (name "r-einet")
@@ -18243,13 +18338,13 @@ the prototyping of packages.")
 (define-public r-ehdprep
   (package
     (name "r-ehdprep")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eHDPrep" version))
        (sha256
-        (base32 "0zwh30mz3a1dar8kbc8g43d54adc83rrqqa89gwfpjgah0akaaw8"))))
+        (base32 "01ia7shh9svaabr6bgg8cjc6cv39rzsj9k3w9dhmhqiqq4brp8xa"))))
     (properties `((upstream-name . "eHDPrep")))
     (build-system r-build-system)
     (arguments
@@ -25469,13 +25564,13 @@ and unbalanced data.")
 (define-public r-easyalluvial
   (package
     (name "r-easyalluvial")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyalluvial" version))
        (sha256
-        (base32 "1jn65b4rfzw3hn6n1bmdaqfv2fb7wq0b8rgbflj230k79kravsxm"))))
+        (base32 "0533d3gka654rn7wggx4i6m7xlzlmc9f41rs59ckj6mxp6znla1z"))))
     (properties `((upstream-name . "easyalluvial")))
     (build-system r-build-system)
     (arguments

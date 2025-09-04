@@ -13226,13 +13226,13 @@ seamlessly work with igraph and network objects.")
 (define-public r-netorigin
   (package
     (name "r-netorigin")
-    (version "1.1-6")
+    (version "1.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetOrigin" version))
        (sha256
-        (base32 "0brjg6w79r6bkga9dpqph9l7k6wq5hvsjfhrwx7dnyr437f7z4hk"))))
+        (base32 "0ms5jlpv0kavrnq0cbv3qdpn290h458m1s7idvmvhjd7m7ns3jgm"))))
     (properties `((upstream-name . "NetOrigin")))
     (build-system r-build-system)
     (arguments

@@ -4104,6 +4104,36 @@ encode text into Byte-Pair-Encoding (BPE) tokens and decode tokens back to text.
  This is useful to understand how Large Language Models (LLMs) perceive text.")
     (license license:expat)))
 
+(define-public r-rtiktokads
+  (package
+    (name "r-rtiktokads")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rtiktokads" version))
+       (sha256
+        (base32 "1vk8rk7xpil73h6j1xqha5ckjwcnwlv913gzxc83ciiv6swajshy"))))
+    (properties `((upstream-name . "rtiktokads")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rappdirs
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/selesnow/rtiktokads")
+    (synopsis "Load Data from 'tiktok Marketing API'")
+    (description
+     "Loading data from tiktok Marketing API <https://business-api.tiktok.com/portal>
+by business centers, advertisers, budgets and reports.")
+    (license license:expat)))
+
 (define-public r-rtika
   (package
     (name "r-rtika")
@@ -7914,6 +7944,30 @@ visualizes this index with minimal hassle.")
 includes functions for computing the bivariate depth as well as RS median.
 Drawing functions for depth bags are also provided.")
     (license license:gpl2)))
+
+(define-public r-rsdc
+  (package
+    (name "r-rsdc")
+    (version "1.1-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RSDC" version))
+       (sha256
+        (base32 "1p6nsis2mzccpg0dnpcgydifph12h1yfh5c7c97ly9bbnzm9ijra"))))
+    (properties `((upstream-name . "RSDC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-mvtnorm r-deoptim))
+    (home-page "https://github.com/ArdiaD/RSDC")
+    (synopsis "Regime-Switching Dynamic Correlation Models")
+    (description
+     "Estimation, forecasting, simulation, and portfolio construction for
+regime-switching models with exogenous variables as in Pelletier (2006)
+<doi:10.1016/j.jeconom.2005.01.013>.")
+    (license license:gpl3)))
 
 (define-public r-rsda
   (package
@@ -26981,13 +27035,13 @@ polynomial.  Adaptive threshold selection methods are available, see Fan and Wu
 (define-public r-ricu
   (package
     (name "r-ricu")
-    (version "0.5.6")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ricu" version))
        (sha256
-        (base32 "0ajj15hpmsnhkxsnlsbvrdp3bwsbkrl1479p5zfgmzym8rdfirsj"))))
+        (base32 "08yan8av3g1n05r0sxbsgf1rlf9dq2icxvd176xw1h85gx39myy2"))))
     (properties `((upstream-name . "ricu")))
     (build-system r-build-system)
     (arguments
@@ -28505,13 +28559,13 @@ package.  The user can read data from the excel file into R using
 (define-public r-rgoogleads
   (package
     (name "r-rgoogleads")
-    (version "0.12.0")
+    (version "0.13.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgoogleads" version))
        (sha256
-        (base32 "1ngws2ihqpyfkqn0fngjdh26d8a9mz26x9sjj52cwpwwa04hjb9y"))))
+        (base32 "0ddlcc8mgagr77l9y4d78w0717xww8brg20fr16b2nr5hnxx5scz"))))
     (properties `((upstream-name . "rgoogleads")))
     (build-system r-build-system)
     (arguments

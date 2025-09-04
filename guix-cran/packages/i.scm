@@ -4165,13 +4165,13 @@ rate of green (IRG) according to methods described in Bischoff et al. (2012)
 (define-public r-irfcb
   (package
     (name "r-irfcb")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iRfcb" version))
        (sha256
-        (base32 "17dxb6p8di1qjvhyh4m9hfm35b9va4g77b3c0j05zzaagyn6pf5q"))))
+        (base32 "0paz2cgd4x6jrb8lnymg5fnxn6gpy8mccrzvlnzf9ki4mpydij25"))))
     (properties `((upstream-name . "iRfcb")))
     (build-system r-build-system)
     (arguments
@@ -7288,13 +7288,13 @@ project at <https://inkaverse.com/>.")
 (define-public r-intextsummarytable
   (package
     (name "r-intextsummarytable")
-    (version "3.3.3")
+    (version "3.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inTextSummaryTable" version))
        (sha256
-        (base32 "0zxxny28pra5hcfjijrki7qm29n9ys2mskcnqyvy6nn2b4y7p8wj"))))
+        (base32 "0d1hdrmpfy1hv7y59g23whffs16dpd4x54dz224xyh3d2x3xb563"))))
     (properties `((upstream-name . "inTextSummaryTable")))
     (build-system r-build-system)
     (arguments

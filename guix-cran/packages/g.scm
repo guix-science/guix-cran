@@ -6040,13 +6040,13 @@ details see Hsu, L. and Wang, C. (2007). <doi:10.1016/j.techfore.2006.02.005>.")
 (define-public r-greybox
   (package
     (name "r-greybox")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greybox" version))
        (sha256
-        (base32 "1krw8d595cr13w6n6bcs88ar1iibmka56avr252a0gi9zcaaxn2p"))))
+        (base32 "0q5yn3gfhdhsk0p0ikjkw8xqh0bkr3v8ydqps0wynid3kzqk12b9"))))
     (properties `((upstream-name . "greybox")))
     (build-system r-build-system)
     (arguments
@@ -11920,20 +11920,20 @@ co-sparse factor regression.  Computational Statistics & Data Analysis 157
 (define-public r-goeveg
   (package
     (name "r-goeveg")
-    (version "0.7.6")
+    (version "0.7.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goeveg" version))
        (sha256
-        (base32 "0azkbx3x6bb919b6miv9pn1swr2icxaysx5irdjvbxjd5ymlkz5y"))))
+        (base32 "11h2mwvavqngypg030mr6pp8frqmn0vv3njmdi0gv096895hiymh"))))
     (properties `((upstream-name . "goeveg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vegan r-mgcv r-hmisc r-fields))
-    (home-page "https://github.com/fvlampe/goeveg/")
+    (propagated-inputs (list r-vegan r-mgcv r-hmisc r-fields r-data-table))
+    (home-page "https://github.com/fvlampe/goeveg")
     (synopsis "Functions for Community Data and Ordinations")
     (description
      "This package provides a collection of functions useful in (vegetation) community
@@ -22180,13 +22180,13 @@ of ggplot2 plots which is otherwise not a trivial task to accomplish.")
 (define-public r-ggfx
   (package
     (name "r-ggfx")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfx" version))
        (sha256
-        (base32 "0qa8ck7r1vmgha108z4vydfvj2p0rlkjhm2d8f41sipwa4qlg4s2"))))
+        (base32 "1y7ic51p7wnchx4cdhx4d21ln3m4yrzz0yvvvcqiglwfh7j9ckhm"))))
     (properties `((upstream-name . "ggfx")))
     (build-system r-build-system)
     (arguments

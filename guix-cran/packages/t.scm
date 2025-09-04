@@ -2383,6 +2383,33 @@ gives the probability of an algorithm A finds a solution at least as good as a
 given target value in smaller computation time than algorithm B.")
     (license license:gpl2+)))
 
+(define-public r-tttensor
+  (package
+    (name "r-tttensor")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ttTensor" version))
+       (sha256
+        (base32 "0l1lawcjmjmm2dw8vbbgjdmmzkk0bgan8gk960zjjq38v49ap0b9"))))
+    (properties `((upstream-name . "ttTensor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rtensor r-ptak r-matrix))
+    (home-page "https://github.com/rikenbit/ttTensor")
+    (synopsis "Tensor-Train Decomposition")
+    (description
+     "Tensor-train is a compact representation for higher-order tensors.  Some
+algorithms for performing tensor-train decomposition are available such as
+TT-SVD, TT-WOPT, and TT-Cross.  For the details of the algorithms, see I. V.
+Oseledets (2011) <doi:10.1137/090752286>, Yuan Longao, et al (2017)
+<doi:10.48550/@code{arXiv.1709.02641>}, I. V. Oseledets (2010)
+<doi:10.1016/j.laa.2009.07.024>.")
+    (license license:expat)))
+
 (define-public r-ttt
   (package
     (name "r-ttt")
@@ -6045,13 +6072,13 @@ release files.  For more information on the API, see
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "03ssvdghwyscdpvdfcm8204l7bwk38xqgyr1rk78as8x0ap8lfd6"))))
+        (base32 "13vzc32n9r6hdcd4ka4imr45hyb3qjrr439vkarazbk8zrb8ml7k"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (arguments
@@ -7105,6 +7132,42 @@ parameters.")
      "This package provides functions and Examples in Sample Size Calculation in
 Clinical Research.")
     (license (license:fsdg-compatible "GPL (>= 2.15.1)"))))
+
+(define-public r-trialsimulator
+  (package
+    (name "r-trialsimulator")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TrialSimulator" version))
+       (sha256
+        (base32 "1c6ys5fwh3n7vapjc26lfzl8n71n8maixbhhvmcl4w2vfsginx79"))))
+    (properties `((upstream-name . "TrialSimulator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-rstudioapi
+                             r-rpact
+                             r-rlang
+                             r-r6
+                             r-mvtnorm
+                             r-htmltools
+                             r-gmcplite
+                             r-ggplot2
+                             r-emmeans
+                             r-dplyr
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://zhangh12.github.io/TrialSimulator/")
+    (synopsis "Clinical Trial Simulator")
+    (description
+     "Simulate phase II and/or phase III clinical trials.  It supports various types
+of endpoints and adaptive strategies.  Tools for carrying out graphical testing
+procedure and combination test under group sequential design are also provided.")
+    (license license:expat)))
 
 (define-public r-trialr
   (package
@@ -8663,6 +8726,35 @@ Germany, as well as by the the project @code{ArtIGROW}, which is a part of the
 WIR!-Alliance @code{ArtIFARM} â Artificial Intelligence in Farming funded by
 the German Federal Ministry of Education and Research (FKZ: 03WIR4805).")
     (license license:gpl3)))
+
+(define-public r-treedater
+  (package
+    (name "r-treedater")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "treedater" version))
+       (sha256
+        (base32 "0229cmw4cngcjb0sgja26cgakqb9n26pwybscz9ij46a9y6y5lj7"))))
+    (properties `((upstream-name . "treedater")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-limsolve r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=treedater")
+    (synopsis
+     "Fast Molecular Clock Dating of Phylogenetic Trees with Rate Variation")
+    (description
+     "This package provides functions for estimating times of common ancestry and
+molecular clock rates of evolution using a variety of evolutionary models,
+parametric and nonparametric bootstrap confidence intervals, methods for
+detecting outlier lineages, root-to-tip regression, and a statistical test for
+selecting molecular clock models.  For more details see Volz and Frost (2017)
+<doi:10.1093/ve/vex025>.")
+    (license license:gpl2)))
 
 (define-public r-treeda
   (package
@@ -25955,13 +26047,13 @@ forecasts, as discussed in the paper by Jupp (2012)
 (define-public r-ternary
   (package
     (name "r-ternary")
-    (version "2.3.4")
+    (version "2.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ternary" version))
        (sha256
-        (base32 "09dqq44p5m4r981chz0z1w4spaag7dsvaq07xyqi2vkpkbm1kww2"))))
+        (base32 "1vhgp7j9h7p9s0jc9p6pkpq5wrbp8s43m8lkg0xcprdj88ixl6fx"))))
     (properties `((upstream-name . "Ternary")))
     (build-system r-build-system)
     (arguments
@@ -26354,13 +26446,13 @@ de-escalated only if an unacceptable level of toxicity is experienced.")
 (define-public r-tepr
   (package
     (name "r-tepr")
-    (version "1.1.9")
+    (version "1.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tepr" version))
        (sha256
-        (base32 "0br4bc5s0yhay7m54vpgawdvxilnimfss55z4rdm8s6grznb289s"))))
+        (base32 "105abmmjl1a3m6cjd7jic0zalhsijnvbxy7fxhqxwpc5q9694lqq"))))
     (properties `((upstream-name . "tepr")))
     (build-system r-build-system)
     (arguments
@@ -26375,6 +26467,7 @@ de-escalated only if an unacceptable level of toxicity is experienced.")
                              r-purrr
                              r-pracma
                              r-matrixstats
+                             r-mass
                              r-magrittr
                              r-ggrepel
                              r-ggplot2

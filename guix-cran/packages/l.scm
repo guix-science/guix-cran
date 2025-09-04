@@ -193,20 +193,20 @@ Langa-Weir classification system.  For details regarding the; HRS
 (define-public r-lvplot
   (package
     (name "r-lvplot")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lvplot" version))
        (sha256
-        (base32 "0zby40866kvqxdz4hk6r0f4rfh7rzmy0n899cjjg5rqzcap7s5di"))))
+        (base32 "0ynx3s32psjrfgll5r227pxiaazp0jf8q97zg50kbl81nm06ky81"))))
     (properties `((upstream-name . "lvplot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble r-rcolorbrewer r-ggplot2))
-    (home-page "https://cran.r-project.org/package=lvplot")
+    (home-page "https://github.com/hadley/lvplot")
     (synopsis "Letter Value 'Boxplots'")
     (description
      "This package implements the letter value boxplot which extends the standard
@@ -4794,13 +4794,13 @@ a range of benchmark simulations and real data applications.")
 (define-public r-lolog
   (package
     (name "r-lolog")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lolog" version))
        (sha256
-        (base32 "0hc95ff1radpc8q0xnrvhsgbhf902fhhhkjmj51sxds4mn5wdaj3"))))
+        (base32 "03rkf2s5wg5bp5nscsin59033s4jjdnh2yyiwrcs9r4p4x1jpd5j"))))
     (properties `((upstream-name . "lolog")))
     (build-system r-build-system)
     (arguments
@@ -4821,7 +4821,8 @@ a range of benchmark simulations and real data applications.")
 flexible and fully general class of statistical graph models.  This package
 provides functions for performing MOM, GMM and variational inference.  Visual
 diagnostics and goodness of fit metrics are provided.  See Fellows (2018)
-<@code{arXiv:1804.04583>} for a detailed description of the methods.")
+<doi:10.48550/@code{arXiv.1804.04583>} for a detailed description of the
+methods.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
 (define-public r-lolliplot
