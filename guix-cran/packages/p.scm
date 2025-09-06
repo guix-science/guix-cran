@@ -13980,13 +13980,13 @@ weights are implemented.")
 (define-public r-ppmf
   (package
     (name "r-ppmf")
-    (version "0.1.3")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppmf" version))
        (sha256
-        (base32 "0xphk27frlcr87jwjbgwf77c8bhv0nswmffj9ny2vd1b176bi9xn"))))
+        (base32 "0955hyss54vav3564k1gszgf35vim1yhhldzv8z81pj8ywl8jng2"))))
     (properties `((upstream-name . "ppmf")))
     (build-system r-build-system)
     (arguments
@@ -13998,7 +13998,6 @@ weights are implemented.")
                              r-stringr
                              r-rlang
                              r-readr
-                             r-magrittr
                              r-dplyr
                              r-censable))
     (home-page "https://github.com/christopherkenny/ppmf/")
@@ -15272,6 +15271,40 @@ background and the respective mathematical definitions.  This project was
 supported by the project @code{ArtIGROW}, which is a part of the WIR!-Alliance
 @code{ArtIFARM} â Artificial Intelligence in Farming funded by the German
 Federal Ministry of Education and Research (No.  03WIR4805).")
+    (license license:gpl3+)))
+
+(define-public r-power4mome
+  (package
+    (name "r-power4mome")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "power4mome" version))
+       (sha256
+        (base32 "04jm190wik16hpdqwa97029cm6mq924zy7zd6a9vbh6liyfih0gb"))))
+    (properties `((upstream-name . "power4mome")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-psych
+                             r-pgnorm
+                             r-pbapply
+                             r-manymome
+                             r-lmhelprs
+                             r-lavaan))
+    (native-inputs (list r-knitr))
+    (home-page "https://sfcheung.github.io/power4mome/")
+    (synopsis "Power Analysis for Moderation and Mediation")
+    (description
+     "Power analysis and sample size determination for moderation, mediation, and
+moderated mediation in models fitted by structural equation modelling using the
+lavaan package by Rosseel (2012) <doi:10.18637/jss.v048.i02> or by multiple
+regression.  The package manymome by Cheung and Cheung (2024)
+<doi:10.3758/s13428-023-02224-z> is used to specify the indirect paths or
+conditional indirect paths to be tested.")
     (license license:gpl3+)))
 
 (define-public r-power2stage
@@ -24976,13 +25009,13 @@ Cowan-Farquhar optimization, humidity unit conversions.  See Duursma (2015)
 (define-public r-planscorer
   (package
     (name "r-planscorer")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "planscorer" version))
        (sha256
-        (base32 "1dhhdzbkjchfkdg7ylda6hi7zsc0g9i5fc66mccg6a8vcf4nk3p6"))))
+        (base32 "0jyy6k7xbfip8wfdk3rxvpydhgg0gws3q71iwqkiydz9hsvv2i33"))))
     (properties `((upstream-name . "planscorer")))
     (build-system r-build-system)
     (arguments
@@ -33626,13 +33659,13 @@ Barden R. and Kasprzyk-Hordern B. (2022)
 (define-public r-periscope2
   (package
     (name "r-periscope2")
-    (version "0.2.4")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "periscope2" version))
        (sha256
-        (base32 "17ajm827qq7x7w6gskg66zvkq49bxfvpwj0a7ynd7agk4vrhlfyj"))))
+        (base32 "0hl9gd0z6ij4iwkcc891xrrp50cci3g4nifs85vmam0dj0vpkkb2"))))
     (properties `((upstream-name . "periscope2")))
     (build-system r-build-system)
     (arguments
@@ -33643,6 +33676,7 @@ Barden R. and Kasprzyk-Hordern B. (2022)
                              r-shinywidgets
                              r-shinyfeedback
                              r-shiny
+                             r-reactable
                              r-lubridate
                              r-lifecycle
                              r-fresh
@@ -39406,13 +39440,13 @@ image segmentation.")
 (define-public r-patterncausality
   (package
     (name "r-patterncausality")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "patterncausality" version))
        (sha256
-        (base32 "0w9pl8xdpdpg3llpyrbr7y3c9jlz13983vc24hcdsglfsg862rir"))))
+        (base32 "0azz0qfzmx3s25f2fw23ircd7h6pmli2i4k94rcp6vzywdis5vqq"))))
     (properties `((upstream-name . "patterncausality")))
     (build-system r-build-system)
     (arguments
@@ -39492,13 +39526,13 @@ descending (c, b, a), alternative (a, b, a, b / a, b, c, a, b, c).")
 (define-public r-patientprofilesvis
   (package
     (name "r-patientprofilesvis")
-    (version "2.0.9")
+    (version "2.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "patientProfilesVis" version))
        (sha256
-        (base32 "1jmf86dy5hvw81jc7n0hlhl6hwvcsi270bpq7vjj5r0zdlhgjgb7"))))
+        (base32 "1ppacrrv556wsd85xhx7aqql71fvjhgxamcy10s58f5pdfljb07f"))))
     (properties `((upstream-name . "patientProfilesVis")))
     (build-system r-build-system)
     (arguments
@@ -41635,13 +41669,13 @@ instruments.  Based on a paper by Hutton (1992) <doi:10.1017/S0956796800000411>.
 (define-public r-parcats
   (package
     (name "r-parcats")
-    (version "0.0.5")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parcats" version))
        (sha256
-        (base32 "1imlifi6zdyv1wnvasw8n7cxwq06hj6rr1g2xc1d8j2ic3dbk4ig"))))
+        (base32 "19sya8bkjlvv7wn3ss0yf0q1pgng1pcyx16mv8a1m59zf826mbxq"))))
     (properties `((upstream-name . "parcats")))
     (build-system r-build-system)
     (arguments

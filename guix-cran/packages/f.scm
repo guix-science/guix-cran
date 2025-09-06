@@ -15530,45 +15530,6 @@ build on top of the storr package and can thus be based on a variety of
 backends.  The datastore contains both a global and session-scoped section.")
     (license license:expat)))
 
-(define-public r-fireexposur
-  (package
-    (name "r-fireexposur")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fireexposuR" version))
-       (sha256
-        (base32 "0xr5c8zcdwkbqhzyvnbfkqyw0qnfbaigi1yglmj1v6spd8m3kssz"))))
-    (properties `((upstream-name . "fireexposuR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyterra
-                             r-tidyselect
-                             r-tidyr
-                             r-terra
-                             r-rlang
-                             r-multiscaledtm
-                             r-maptiles
-                             r-magrittr
-                             r-ggspatial
-                             r-ggplot2
-                             r-geosphere
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/fireexposuR")
-    (synopsis "Compute and Visualize Wildfire Exposure")
-    (description
-     "This package provides methods for computing and visualizing wildfire igntion
-exposure and directional vulnerability that are published in a series of
-scientific publications are automated by the functions in this package.  See
-Beverly et al. (2010) <doi:10.1071/WF09071>, Beverly et al. (2021)
-<doi:10.1007/s10980-020-01173-8>, and Beverly and Forbes (2023)
-<doi:10.1007/s11069-023-05885-3> for background and methodology.")
-    (license license:gpl3+)))
-
 (define-public r-firebehavior
   (package
     (name "r-firebehavior")
@@ -15806,13 +15767,13 @@ plus parts of chapters 4 and 11.")
 (define-public r-finnts
   (package
     (name "r-finnts")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finnts" version))
        (sha256
-        (base32 "1345zd9l58jg8bgcpvlvk6byh1jy6j1ry0n7j1ck4wlhzm5kzsb0"))))
+        (base32 "1qmjbi8mdvkrqqnksii32mqwjbhnpaydl68ym0wcv463cbly643j"))))
     (properties `((upstream-name . "finnts")))
     (build-system r-build-system)
     (arguments
@@ -25672,13 +25633,13 @@ approach from Scutari, Panero and Proissl (2022)
 (define-public r-fairmetrics
   (package
     (name "r-fairmetrics")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fairmetrics" version))
        (sha256
-        (base32 "0gibjhyf3l78m3b32f762imgd5wdfxg2nj40y5y58hsy5gjvc85h"))))
+        (base32 "1b78gk4k6ph5hyyhmvamn0i7hd3g7xwwnqagcdsnb1pw229ac2dq"))))
     (properties `((upstream-name . "fairmetrics")))
     (build-system r-build-system)
     (arguments
@@ -25686,14 +25647,15 @@ approach from Scutari, Panero and Proissl (2022)
       #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://jianhuig.github.io/fairmetrics/")
-    (synopsis "Fairness Evaluation Metrics with Confidence Intervals")
+    (synopsis
+     "Fairness Evaluation Metrics with Confidence Intervals for Binary Protected Attributes")
     (description
      "This package provides a collection of functions for computing fairness metrics
 for machine learning and statistical models, including confidence intervals for
 each metric.  The package supports the evaluation of group-level fairness
-criterion commonly used in fairness research, particularly in healthcare.  It is
-based on the overview of fairness in machine learning written by Gao et al
-(2024) <doi:10.48550/@code{arXiv.2406.09307>}.")
+criterion commonly used in fairness research, particularly in healthcare for
+binary protected attributes.  It is based on the overview of fairness in machine
+learning written by Gao et al (2024) <doi:10.48550/@code{arXiv.2406.09307>}.")
     (license license:expat)))
 
 (define-public r-fairmclus

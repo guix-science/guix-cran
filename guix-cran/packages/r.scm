@@ -11,11 +11,11 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages java)
   #:use-module (gnu packages spreadsheet)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages image)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages maths)
-  #:use-module (gnu packages web)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages backup)
   #:use-module (gnu packages xml)
@@ -371,13 +371,13 @@ bids management.")
 (define-public r-ryacas0
   (package
     (name "r-ryacas0")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ryacas0" version))
        (sha256
-        (base32 "0xjpsn3n3x0v37qqypb86vr45fc9cd5dc8n7szzcf87nxa8k5imb"))))
+        (base32 "0mr7mxnn1vm6nmry4zhwpkgfd4zh626fk0cx00c6vpcsajr35f3q"))))
     (properties `((upstream-name . "Ryacas0")))
     (build-system r-build-system)
     (arguments
@@ -1727,6 +1727,57 @@ releases, vinecopulib is licensed under the MIT License, and rvinecopulib is
 licensed under the GNU GPL version 3.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-rvif
+  (package
+    (name "r-rvif")
+    (version "3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rvif" version))
+       (sha256
+        (base32 "09rz211a84956y018qg2x5z92dqp25mds0jly9jqbkzfhsak3qm7"))))
+    (properties `((upstream-name . "rvif")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-multicoll r-car))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "http://colldetreat.r-forge.r-project.org/")
+    (synopsis
+     "Collinearity Detection using Redefined Variance Inflation Factor and Graphical Methods")
+    (description
+     "The detection of troubling approximate collinearity in a multiple linear
+regression model is a classical problem in Econometrics.  The objective of this
+package is to detect it using the variance inflation factor redefined and the
+scatterplot between the variance inflation factor and the coefficient of
+variation.  For more details see SalmerÃ³n R., GarcÃ­a C.B. and GarcÃ­a J.
+(2018) <doi:10.1080/00949655.2018.1463376>, SalmerÃ³n, R., RodrÃ­guez, A. and
+GarcÃ­a C. (2020) <doi:10.1007/s00180-019-00922-x>, SalmerÃ³n, R., GarcÃ­a, C.B,
+RodrÃ­guez, A. and GarcÃ­a, C. (2022) <doi:10.32614/RJ-2023-010>, SalmerÃ³n, R.,
+GarcÃ­a, C.B. and GarcÃ­a, J. (2025) <doi:10.1007/s10614-024-10575-8> and
+SalmerÃ³n, R., GarcÃ­a, C.B, GarcÃ­a J. (2023, working paper)
+<doi:10.48550/@code{arXiv.2005.02245>}.  You can also view the package vignette
+using @code{browseVignettes(\"rvif}\")', the package website using
+@code{browseURL(system.file(\"docs/index.html}\", package = \"rvif\")) or version
+control on @code{GitHub} (<https://github.com/rnoremlas/rvif_package>).")
+    (license license:gpl2+)))
 
 (define-public r-rviewgraph
   (package
@@ -9478,13 +9529,13 @@ functionality on Redshift'.")
 (define-public r-rredlist
   (package
     (name "r-rredlist")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rredlist" version))
        (sha256
-        (base32 "0kghiyjrawr5j55i4dxj50dix68rcrkj9l9j0ghkmgh1prwv7f6x"))))
+        (base32 "1gs56qsg2s8lmi5rpvvd389pm70x56qhx4w7d66nz6cq3hf5548w"))))
     (properties `((upstream-name . "rredlist")))
     (build-system r-build-system)
     (arguments
@@ -19012,13 +19063,13 @@ Pav (2004) <doi:10.48550/@code{arXiv.2410.22698>}.")
 (define-public r-rnndescent
   (package
     (name "r-rnndescent")
-    (version "0.1.6")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnndescent" version))
        (sha256
-        (base32 "1qgmy4sqs14zbv1mm6cany6xxk0hsaaiblsd4am85qj8gbjflm3f"))))
+        (base32 "1p5w1v42dk990ssq7894vcz73hy3binjjizcsgnb8m56y5ri9sn6"))))
     (properties `((upstream-name . "rnndescent")))
     (build-system r-build-system)
     (arguments
@@ -27227,6 +27278,39 @@ follow long-established recommendations such as Stuiver and Polach (1977)
 the data package rintcal'.")
     (license license:gpl2+)))
 
+(define-public r-ricci
+  (package
+    (name "r-ricci")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ricci" version))
+       (sha256
+        (base32 "1abzv57jwwbhafbj2mkvlbl7hd3xd7frgcxw7pd5vw8sbdl8xcnx"))))
+    (properties `((upstream-name . "ricci")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-cli r-calculus))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/lschneiderbauer/ricci")
+    (synopsis "Ricci Calculus")
+    (description
+     "This package provides a compact R interface for performing tensor calculations.
+This is achieved by allowing (upper and lower) index labeling of arrays and
+making use of Ricci calculus conventions to implicitly trigger contractions and
+diagonal subsetting.  Explicit tensor operations, such as addition, subtraction
+and multiplication of tensors via the standard operators, raising and lowering
+indices, taking symmetric or antisymmetric tensor parts, as well as the
+Kronecker product are available.  Common tensors like the Kronecker delta, Levi
+Civita epsilon, certain metric tensors, the Christoffel symbols, the Riemann as
+well as Ricci tensors are provided.  The covariant derivative of tensor fields
+with respect to any metric tensor can be evaluated.  An effort was made to
+provide the user with useful error messages.")
+    (license license:gpl3+)))
+
 (define-public r-ribench
   (package
     (name "r-ribench")
@@ -29539,13 +29623,13 @@ expression data (Microarray/RNA-seq etc).")
 (define-public r-rgbif
   (package
     (name "r-rgbif")
-    (version "3.8.2")
+    (version "3.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgbif" version))
        (sha256
-        (base32 "0b5l1iy075fm2jq8nk354c1q54r3lni3hvx1bxw2njy97jnsa5w9"))))
+        (base32 "1q85jwv8l1qpmdygnfgvfrgi0y54nqjhx67m901s2nl5pfbj7x5l"))))
     (properties `((upstream-name . "rgbif")))
     (build-system r-build-system)
     (arguments
@@ -44901,37 +44985,6 @@ API, identification of repeat crime incidents, spatio-temporal map comparison
 across time intervals, time series analysis (forecasting and decomposition),
 detection of optimal parameters for the identification of near repeat incidents,
 and near repeat analysis with crime network linkage.")
-    (license license:gpl3)))
-
-(define-public r-rcreliability
-  (package
-    (name "r-rcreliability")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RCreliability" version))
-       (sha256
-        (base32 "083n6ix9yjnv4aafp11qac891gdhk62mhxmwkx9z3i0sxddwdb6r"))))
-    (properties `((upstream-name . "RCreliability")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sandwich r-mgcv))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RCreliability")
-    (synopsis "Correct Bias in Estimated Regression Coefficients")
-    (description
-     "This function corrects the bias in estimated regression coefficients due to
-classical additive measurement error (i.e., within-person variation) in logistic
-regressions under the main study/external reliability study design and the main
-study/internal reliability study design.  The output includes the naive and
-corrected estimators for the regression coefficients; for the variance estimates
-of the corrected estimators, the extra variation due to estimating the
-parameters in the measurement error model is ignored or taken into account.
-Reference: Carroll RJ, Ruppert D, Stefanski L, Crainiceanu CM (2006)
-<doi:10.1201/9781420010138>.")
     (license license:gpl3)))
 
 (define-public r-rcprd

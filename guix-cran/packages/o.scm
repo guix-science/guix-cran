@@ -4805,6 +4805,32 @@ user friendly.")
 Gauss-Seidel, Conjugate Gradient Method (CGM) and Cholesky methods.")
     (license license:gpl2+)))
 
+(define-public r-optotrials
+  (package
+    (name "r-optotrials")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptOTrials" version))
+       (sha256
+        (base32 "1l25d2blv4vz3hjyz7z98935ic3vw8fwk7cfhblvvggh57wada9m"))))
+    (properties `((upstream-name . "OptOTrials")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=OptOTrials")
+    (synopsis "Optimal Two-Stage Designs for Ordered Categorical Outcomes")
+    (description
+     "This package provides functions to design and simulate optimal two-stage
+randomized controlled trials (RCTs) with ordered categorical outcomes,
+supporting rank-based tests and group-sequential decision rules.  Methods build
+on classical and modern rank tests and two-stage/Group-Sequential designs, e.g.,
+Park (2025) <doi: 10.1371/journal.pone.0318211>.  Please see the package
+reference manual and vignettes for details.")
+    (license license:gpl3)))
+
 (define-public r-optmatch
   (package
     (name "r-optmatch")
@@ -7399,13 +7425,13 @@ histone modification in plants. <doi:10.1186/s12864-019-5489-4>.")
 (define-public r-opengraph
   (package
     (name "r-opengraph")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opengraph" version))
        (sha256
-        (base32 "0aa83saicrmg724qmm75z6yrpkhps171nr81fdcqi9vpy7bzqz1m"))))
+        (base32 "1a986cn0mhw16sn261cvmkrl5waba2xq8w8bkin27hk52ww0ylk7"))))
     (properties `((upstream-name . "opengraph")))
     (build-system r-build-system)
     (arguments
@@ -7413,7 +7439,7 @@ histone modification in plants. <doi:10.1186/s12864-019-5489-4>.")
       #:tests? #f))
     (propagated-inputs (list r-rvest))
     (home-page "https://github.com/christopherkenny/opengraph")
-    (synopsis "Process Metadata from the Open Graph Protocol")
+    (synopsis "Process Metadata from the 'Open Graph Protocol'")
     (description
      "Social media sites often embed cards when links are shared, based on metadata in
 the Open Graph Protocol (<https://ogp.me/>).  This supports extracting that
@@ -10558,13 +10584,13 @@ Y to predict Y.")
 (define-public r-omicflow
   (package
     (name "r-omicflow")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmicFlow" version))
        (sha256
-        (base32 "044wgpppp2wni411a57h5wqzqrbc94j81sjir4v9dzc4mkk029ly"))))
+        (base32 "0xdsf44b6ifm5jnpjlcwi2kcpb72qg73i61gjczx8747ysk4pj11"))))
     (properties `((upstream-name . "OmicFlow")))
     (build-system r-build-system)
     (arguments
@@ -11878,6 +11904,38 @@ and Chien (2022) <doi:10.18637/jss.v104.i06>.")
 tools for simulation, data transformation, input validation, and more.")
     (license license:gpl3+)))
 
+(define-public r-oefpil
+  (package
+    (name "r-oefpil")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OEFPIL" version))
+       (sha256
+        (base32 "0an6lvpgs4cwx7p1avwa6qsdjcb4pazkk2zmbg44p85k1w07v3f4"))))
+    (properties `((upstream-name . "OEFPIL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plyr
+                             r-minpack-lm
+                             r-matrixcalc
+                             r-mass
+                             r-ggplot2
+                             r-deriv))
+    (home-page "https://cran.r-project.org/package=OEFPIL")
+    (synopsis
+     "Optimal Estimation of Function Parameters by Iterated Linearization")
+    (description
+     "Package for estimating the parameters of a nonlinear function using iterated
+linearization via Taylor series.  Method is based on KubÃ¡Äek (2000) ISBN:
+80-244-0093-6.  The algorithm is a generalization of the procedure given in
+KÃ¶ning, R., Wimmer, G. and WitkovskÃ½, V. (2014)
+<doi:10.1088/0957-0233/25/11/115001>.")
+    (license license:gpl2+)))
+
 (define-public r-oecdoda
   (package
     (name "r-oecdoda")
@@ -12526,13 +12584,13 @@ the data sets with variables \"harmonized\" across different years.")
 (define-public r-odbc
   (package
     (name "r-odbc")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odbc" version))
        (sha256
-        (base32 "1vlmg12qgwknv5csm2iflixr9511hascnbjysha64n8q1x1nivcg"))))
+        (base32 "07qa07whv4bjj26rfv8qf4kpvb1xnn84kh4sy00xrcqaq7hxl7vh"))))
     (properties `((upstream-name . "odbc")))
     (build-system r-build-system)
     (arguments

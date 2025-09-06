@@ -10213,13 +10213,13 @@ classification model pipelines can be implemented using their model name from
 (define-public r-transda
   (package
     (name "r-transda")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transDA" version))
        (sha256
-        (base32 "0is4spm2vajxacp8l6qwai8fyp5lz993xzppnwhi77mc9sfl387v"))))
+        (base32 "0ci2ry7xb3hgnfvf20rswngyg4lnz68lczw61a90d48aymcds9sl"))))
     (properties `((upstream-name . "transDA")))
     (build-system r-build-system)
     (arguments
@@ -13859,13 +13859,13 @@ their sources.")
 (define-public r-tokenizers-bpe
   (package
     (name "r-tokenizers-bpe")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tokenizers.bpe" version))
        (sha256
-        (base32 "0ar84a19c2qafdyx666ggbvl0sqv3pxg3yg3qpv59s7cbbdymwc1"))))
+        (base32 "191mnii9fvh81qsx1sigkk662l4n125w6977wif6fngvsn8a74xi"))))
     (properties `((upstream-name . "tokenizers.bpe")))
     (build-system r-build-system)
     (arguments
@@ -18669,13 +18669,13 @@ to estimate latent class analyses, and to plot dagitty and igraph objects.")
 (define-public r-tidysdm
   (package
     (name "r-tidysdm")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidysdm" version))
        (sha256
-        (base32 "1f479944rcmzv4gyg377wga5jwrkzw9g5mb3bl5sdh20a1p1lyhk"))))
+        (base32 "1f0jbxnambhgc1xa45la6ylcc3wc04f0nw4ip488rm23015ajmmi"))))
     (properties `((upstream-name . "tidysdm")))
     (build-system r-build-system)
     (arguments
@@ -20417,13 +20417,13 @@ for tibbles and methods for dplyr'.")
 (define-public r-tidydensity
   (package
     (name "r-tidydensity")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TidyDensity" version))
        (sha256
-        (base32 "1q272wjavyzqsmlsgb2gw0cjh85yfk8jdbanwqw9vpn9y7ancjdq"))))
+        (base32 "1pr4p475511hr9vbbrrqhndb9iwg060cjagbabz1brl5hpl8wy4c"))))
     (properties `((upstream-name . "TidyDensity")))
     (build-system r-build-system)
     (arguments
@@ -32128,13 +32128,13 @@ retrieval.")
 (define-public r-tabula
   (package
     (name "r-tabula")
-    (version "3.3.1")
+    (version "3.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabula" version))
        (sha256
-        (base32 "06rsx2fj0fb4p3vsm8m49f3dzk9hih5m1mlkv6rbz3ssa0bxy7ym"))))
+        (base32 "0yr5c0rhcgqd0wibq5hvkdz4brylrrbd12ygvcdzvgs7h0f42d4p"))))
     (properties `((upstream-name . "tabula")))
     (build-system r-build-system)
     (arguments

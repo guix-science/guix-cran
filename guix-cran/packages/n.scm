@@ -6722,13 +6722,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "0srzi3sh0mxlby1yn1l14c4zm6hp1jivs3zk41a14qf79hnzwf9w"))))
+        (base32 "1k49ar6s314n5rakfgdx540hcrwldk98p798k68a8p9fqblmdlsv"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (arguments
@@ -12732,13 +12732,13 @@ functions are build upon igraph'.")
 (define-public r-nettskjemar
   (package
     (name "r-nettskjemar")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nettskjemar" version))
        (sha256
-        (base32 "00k2b7g65wlzfgs69zbafrqmgc6c51fp9gf2xvrd7vxwrddnwsm4"))))
+        (base32 "1886x93safnc3h05wsfwzqaq1600c8zb1li0m73cfdijdyfvcifx"))))
     (properties `((upstream-name . "nettskjemar")))
     (build-system r-build-system)
     (arguments
@@ -12751,7 +12751,8 @@ functions are build upon igraph'.")
     (description
      "Enables users to retrieve data, meta-data, and codebooks from
 <https://nettskjema.no/>.  The data from the API is richer than from the online
-data portal.  Mowinckel (2021) <doi:10.5281/zenodo.4745481>.")
+data portal.  This package is not developed by the University of Oslo IT.
+Mowinckel (2021) <doi:10.5281/zenodo.4745481>.")
     (license license:expat)))
 
 (define-public r-nett
@@ -15653,13 +15654,13 @@ based on the Rescorla-Wagner equations and their equilibrium equations.")
 (define-public r-ndi
   (package
     (name "r-ndi")
-    (version "0.1.5")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ndi" version))
        (sha256
-        (base32 "0gfjh6wsdcbjw6xyyr863gc7rxridm84d6x05b0yk105yxhi5vpk"))))
+        (base32 "0964x1gdq5vd4lppwkxg0ca95kap3z247xf72h6kazd6qsfhvkny"))))
     (properties `((upstream-name . "ndi")))
     (build-system r-build-system)
     (arguments
@@ -15669,51 +15670,38 @@ based on the Rescorla-Wagner equations and their equilibrium equations.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-units
+                             r-tigris
+                             r-tidyr
                              r-tidycensus
                              r-stringr
                              r-sf
                              r-psych
                              r-matrix
                              r-mass
+                             r-hmisc
                              r-dplyr
                              r-car))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/idblr/ndi")
     (synopsis "Neighborhood Deprivation Indices")
     (description
-     "Computes various metrics of socio-economic deprivation and disparity in the
-United States.  Some metrics are considered \"spatial\" because they consider the
-values of neighboring (i.e., adjacent) census geographies in their computation,
-while other metrics are \"aspatial\" because they only consider the value within
-each census geography.  Two types of aspatial neighborhood deprivation indices
-(NDI) are available: including: (1) based on Messer et al. (2006)
-<doi:10.1007/s11524-006-9094-x> and (2) based on Andrews et al. (2020)
+     "Computes various geospatial indices of socioeconomic deprivation and disparity
+in the United States.  Some indices are considered \"spatial\" because they
+consider the values of neighboring (i.e., adjacent) census geographies in their
+computation, while other indices are \"aspatial\" because they only consider the
+value within each census geography.  Two types of aspatial neighborhood
+deprivation indices (NDI) are available: including: (1) based on Messer et al.
+(2006) <doi:10.1007/s11524-006-9094-x> and (2) based on Andrews et al. (2020)
 <doi:10.1080/17445647.2020.1750066> and Slotman et al. (2022)
 <doi:10.1016/j.dib.2022.108002> who use variables chosen by Roux and Mair (2010)
 <doi:10.1111/j.1749-6632.2009.05333.x>.  Both are a decomposition of multiple
 demographic characteristics from the U.S. Census Bureau American Community
 Survey 5-year estimates (ACS-5; 2006-2010 onward).  Using data from the ACS-5
-(2005-2009 onward), the package can also (1) compute the spatial Racial
-Isolation Index (RI) based on Anthopolos et al. (2011)
-<doi:10.1016/j.sste.2011.06.002>, (2) compute the spatial Educational Isolation
-Index (EI) based on Bravo et al. (2021) <doi:10.3390/ijerph18179384>, (3)
-compute the aspatial Index of Concentration at the Extremes (ICE) based on
-Feldman et al. (2015) <doi:10.1136/jech-2015-205728> and Krieger et al. (2016)
-<doi:10.2105/AJPH.2015.302955>, (4) compute the aspatial racial/ethnic
-Dissimilarity Index based on Duncan & Duncan (1955) <doi:10.2307/2088328>, (5)
-compute the aspatial income or racial/ethnic Atkinson Index based on Atkinson
-(1970) <doi:10.1016/0022-0531(70)90039-6>, (6) aspatial racial/ethnic Isolation
-Index (II) based on Shevky & Williams (1949; ISBN-13:978-0-837-15637-8) and Bell
-(1954) <doi:10.2307/2574118>, (7) aspatial racial/ethnic Correlation Ratio based
-on Bell (1954) <doi:10.2307/2574118> and White (1986) <doi:10.2307/3644339>, (8)
-aspatial racial/ethnic Location Quotient (LQ) based on Merton (1939)
-<doi:10.2307/2084686> and Sudano et al. (2013)
-<doi:10.1016/j.healthplace.2012.09.015>, and (9) aspatial racial/ethnic Local
-Exposure and Isolation metric based on Bemanian & Beyer (2017)
-<doi:10.1158/1055-9965.EPI-16-0926>.  Also using data from the ACS-5 (2005-2009
-onward), the package can retrieve the aspatial Gini Index based Gini (1921)
-<doi:10.2307/2223319>.")
+(2005-2009 onward), the package can also compute indices of racial or ethnic
+residential segregation, including but limited to those discussed in Massey &
+Denton (1988) <doi:10.1093/sf/67.2.281>, and additional indices of socioeconomic
+disparity.")
     (license license:asl2.0)))
 
 (define-public r-nda

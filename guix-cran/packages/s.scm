@@ -684,13 +684,13 @@ classify participant data as valid or invalid.")
 (define-public r-synmicrodata
   (package
     (name "r-synmicrodata")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "synMicrodata" version))
        (sha256
-        (base32 "08p2ikghjypn6qc5zv7cp8cqf9d7adj894n9hjyf8nnm21n9j7qn"))))
+        (base32 "1b9amsn1cxbcq8w3nj5i7g9w62hpfz7rl57d85k41nmmrz84khl7"))))
     (properties `((upstream-name . "synMicrodata")))
     (build-system r-build-system)
     (arguments
@@ -2307,26 +2307,26 @@ display the outputs.")
 (define-public r-swcrtdesign
   (package
     (name "r-swcrtdesign")
-    (version "4.0")
+    (version "4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swCRTdesign" version))
        (sha256
-        (base32 "0q0f6f2fhjgqwvlhs14x6vz1fjq4iadx2g7cypifzpr1pq474nwf"))))
+        (base32 "0y387k61nwzad1zs07pkh8j43kx4sfh7ngl4blh2fl69352y16v9"))))
     (properties `((upstream-name . "swCRTdesign")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lmertest r-lme4))
+    (propagated-inputs (list r-lmertest r-lme4 r-glmmtmb))
     (home-page "https://cran.r-project.org/package=swCRTdesign")
     (synopsis "Stepped Wedge Cluster Randomized Trial (SW CRT) Design")
     (description
      "This package provides a set of tools for examining the design and analysis
 aspects of stepped wedge cluster randomized trials (SW CRT) based on a repeated
-cross-sectional sampling scheme (Hussey MA and Hughes JP (2007) Contemporary
-Clinical Trials 28:182-191. <doi:10.1016/j.cct.2006.05.007>).")
+cross-sectional or cohort sampling scheme (Hussey MA and Hughes JP (2007)
+Contemporary Clinical Trials 28:182-191).")
     (license license:gpl2)))
 
 (define-public r-swatches
@@ -22042,13 +22042,13 @@ Statistical Association, 109:505, 11-23, <doi:10.1080/01621459.2013.870904>.")
 (define-public r-spower
   (package
     (name "r-spower")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Spower" version))
        (sha256
-        (base32 "1dg2zzbs00m15wqjkgyzrxk4qcya81s13i81yyrdgfg774s6kkdw"))))
+        (base32 "0ambaqrwyghcibahgfb71680xw8q33abs967i180ahwhasw03y9k"))))
     (properties `((upstream-name . "Spower")))
     (build-system r-build-system)
     (arguments
@@ -22075,10 +22075,12 @@ analyses, and a priori/post-hoc analyses.  The default simulation experiment
 functions defined within the package provide stochastic variants of the power
 analysis subroutines in G*Power 3.1 (Faul, Erdfelder, Buchner, and Lang, 2009)
 <doi:10.3758/brm.41.4.1149>, along with various other parametric and
-non-parametric power analysis applications (e.g., mediation analyses).
-Additional functions for building empirical power curves, reanalyzing simulation
-information, and for increasing the precision of the resulting power estimates
-are also included, each of which utilize similar API structures.")
+non-parametric power analysis applications (e.g., mediation analyses) and
+support for Bayesian power analysis by way of Bayes factors or posterior
+probability evaluations.  Additional functions for building empirical power
+curves, reanalyzing simulation information, and for increasing the precision of
+the resulting power estimates are also included, each of which utilize similar
+API structures.")
     (license license:gpl3+)))
 
 (define-public r-spouse
@@ -26301,13 +26303,13 @@ designed to bring reproducible phonetic research into R.")
 (define-public r-speakeasyr
   (package
     (name "r-speakeasyr")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "speakeasyR" version))
        (sha256
-        (base32 "042h93fzlx6nr1m3pzmnabvzayb068xcc1jfrnis52qlf2a1gqr9"))))
+        (base32 "0lyxlxs8jmqjsbaxf5mcbysc58fcnpkx1i4x52hdmrc9q5kzca2x"))))
     (properties `((upstream-name . "speakeasyR")))
     (build-system r-build-system)
     (arguments
@@ -34839,6 +34841,47 @@ with hidden Markov model knockoffs\", Sesia et al., Biometrika, 2019,
 across the genome\", Sesia et al., @code{bioRxiv}, 2019, (<doi:10.1101/631390>).")
     (license license:gpl3)))
 
+(define-public r-snpfiltr
+  (package
+    (name "r-snpfiltr")
+    (version "1.0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SNPfiltR" version))
+       (sha256
+        (base32 "0q03iyb5gl0vz6jbbj6faq8lxa6l6yih0x7vgzddqifh16lxg6f2"))))
+    (properties `((upstream-name . "SNPfiltR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vcfr
+                             r-rtsne
+                             r-gridextra
+                             r-ggridges
+                             r-ggplot2
+                             r-cluster
+                             r-adegenet))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SNPfiltR")
+    (synopsis "Interactively Filter SNP Datasets")
+    (description
+     "Is designed to interactively and reproducibly visualize and filter SNP
+(single-nucleotide polymorphism) datasets.  This R-based implementation of SNP
+and genotype filters facilitates an interactive and iterative SNP filtering
+pipeline, which can be documented reproducibly via rmarkdown'.  SN@code{PfiltR}
+contains functions for visualizing various quality and missing data metrics for
+a SNP dataset, and then filtering the dataset based on user specified cutoffs.
+All functions take @code{vcfR} objects as input, which can easily be generated
+by reading standard vcf (variant call format) files into R using the R package
+@code{vcfR} authored by Knaus and GrÃ¼nwald (2017)
+<doi:10.1111/1755-0998.12549>.  Each SN@code{PfiltR} function can return a newly
+filtered @code{vcfR} object, which can then be written to a local directory in
+standard vcf format using the @code{vcfR} package, for downstream population
+genetic and phylogenetic analyses.")
+    (license license:expat)))
+
 (define-public r-snpassoc
   (package
     (name "r-snpassoc")
@@ -39009,6 +39052,51 @@ Details of the algorithm can be found in Ba, S., Brenneman, W. A. and Myers, W.
 R. (2015), \"Optimal Sliced Latin Hypercube Designs,\" Technometrics.  Important
 function in this package is \"@code{maximinSLHD}\".")
     (license license:lgpl2.1)))
+
+(define-public r-slgp
+  (package
+    (name "r-slgp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SLGP" version))
+       (sha256
+        (base32 "06nw7lrq7083riwqjmw9c7n34acixp8c1xb0vay7x5rva3chhdgh"))))
+    (properties `((upstream-name . "SLGP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-mvnfast
+                             r-gofkernel
+                             r-dicedesign
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SLGP")
+    (synopsis "Spatial Logistic Gaussian Process for Field Density Estimation")
+    (description
+     "This package provides tools for conditional and spatially dependent density
+estimation using Spatial Logistic Gaussian Processes (SLGPs).  The approach
+represents probability densities through finite-rank Gaussian process priors
+transformed via a spatial logistic density transformation, enabling flexible
+non-parametric modeling of heterogeneous data.  Functionality includes density
+prediction, quantile and moment estimation, sampling methods, and preprocessing
+routines for basis functions.  Applications arise in spatial statistics, machine
+learning, and uncertainty quantification.  The methodology builds on the
+framework of Leonard (1978) <doi:10.1111/j.2517-6161.1978.tb01655.x>, Lenk
+(1988) <doi:10.1080/01621459.1988.10478625>, Tokdar (2007)
+<doi:10.1198/106186007X210206>, Tokdar (2010) <doi:10.1214/10-BA605>, and is
+further aligned with recent developments in Bayesian non-parametric modelling:
+see Gautier (2023) <https://boristheses.unibe.ch/4377/>, and Gautier (2025)
+<doi:10.48550/@code{arXiv.2110.02876>}).")
+    (license license:gpl3+)))
 
 (define-public r-slgf
   (package
@@ -45127,13 +45215,13 @@ matches the original data to determine model fit.")
 (define-public r-simfinapi
   (package
     (name "r-simfinapi")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simfinapi" version))
        (sha256
-        (base32 "1i9zf17nn9xbyccmr8blrlybqakrlzrxxm961bgrsb2pzawn6f6j"))))
+        (base32 "082g427i45nw3s7jb3w4c89xg8f2s3wyaz4syyq5fsi6dpxbz0wl"))))
     (properties `((upstream-name . "simfinapi")))
     (build-system r-build-system)
     (arguments
@@ -49448,13 +49536,13 @@ Powered by the html2canvas @code{JavaScript} library.")
 (define-public r-shinyscholar
   (package
     (name "r-shinyscholar")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyscholar" version))
        (sha256
-        (base32 "1h6h5m8cxqdkb4cpfv1wwmfb07949a7w1hh6aawq2dm2racgl40c"))))
+        (base32 "0ih0db70my5h6lm3jd6jfc2d68m1i993g62ncq993c4w7qpa4qhn"))))
     (properties `((upstream-name . "shinyscholar")))
     (build-system r-build-system)
     (arguments
@@ -58331,13 +58419,13 @@ for more informations.")
 (define-public r-sensiat
   (package
     (name "r-sensiat")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SensIAT" version))
        (sha256
-        (base32 "11kqdgv6jq4k267r5gvbri7krwh0rbk3dn5qsryk5baf9rq8jin9"))))
+        (base32 "13crycrp5n5cnjjv0whiagrn75xv4ypyn5y42wzx0d5mk6crfyxw"))))
     (properties `((upstream-name . "SensIAT")))
     (build-system r-build-system)
     (arguments
@@ -71169,13 +71257,13 @@ cancer data <@code{arXiv:2012.06093>}.")
 (define-public r-samtool
   (package
     (name "r-samtool")
-    (version "1.8.1")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAMtool" version))
        (sha256
-        (base32 "0fjbsvjm2nxh0dhv1aad5b5jrc6j05k7v8lynhdklz6a7y3xv2qq"))))
+        (base32 "0zny6bhizanz8qfchg3dyhg4pf80bjsy48vkakjmjmcg9zq7cyyq"))))
     (properties `((upstream-name . "SAMtool")))
     (build-system r-build-system)
     (arguments

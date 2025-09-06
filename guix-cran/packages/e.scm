@@ -1275,13 +1275,13 @@ measure correlation and non-normal distributions.")
 (define-public r-extrasteps
   (package
     (name "r-extrasteps")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extrasteps" version))
        (sha256
-        (base32 "074bxlr22dbh6br7vrj7wimp9mbq3777dlswjkprqsmxv3fb2qa9"))))
+        (base32 "1534mj181m0mr9701bmi9fb6izj05n643984i9gh6vc05sgp0xmr"))))
     (properties `((upstream-name . "extrasteps")))
     (build-system r-build-system)
     (arguments
@@ -4646,13 +4646,13 @@ is provided.")
 (define-public r-evolqg
   (package
     (name "r-evolqg")
-    (version "0.3-4")
+    (version "0.3-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evolqg" version))
        (sha256
-        (base32 "1h4k2sxp67f3qn1cnmy290rgbmpvvj2zlw7gz5lbcgzbf53lb1bd"))))
+        (base32 "1sgghqh9wwvidnxsp7v2sl9acxsmi2zar4v2cg86a9xv6hc7xk7i"))))
     (properties `((upstream-name . "evolqg")))
     (build-system r-build-system)
     (arguments
@@ -15876,13 +15876,13 @@ dependencies.")
 (define-public r-emas
   (package
     (name "r-emas")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMAS" version))
        (sha256
-        (base32 "07y15nbym69iwdy9c5gcdalign7g8qw8hkcy1v29z6j2di6qzn84"))))
+        (base32 "11s6lq6s8pn7zl93idkhim58v5q5nsckjcsm85wyyl6fywqprm2a"))))
     (properties `((upstream-name . "EMAS")))
     (build-system r-build-system)
     (arguments
@@ -16717,6 +16717,32 @@ itself.")
 five- or four-parameter logistic model will be fitted for data of single ELISA.
 Moreover, the batch effect correction/normalization will be carried out, when
 there are more than one batches of ELISAs.  Feng (2018) <doi:10.1101/483800>.")
+    (license license:expat)))
+
+(define-public r-elic
+  (package
+    (name "r-elic")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ELIC" version))
+       (sha256
+        (base32 "1cxpb7d05kbs2rm02rakdzrwgblmm580fqswwddjvdhfvjqapx1x"))))
+    (properties `((upstream-name . "ELIC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-distrellipse r-distr))
+    (home-page "https://cran.r-project.org/package=ELIC")
+    (synopsis "LIC for Distributed Elliptical Model")
+    (description
+     "This comprehensive toolkit for Distributed Elliptical model is designated as
+\"ELIC\" (The LIC for Distributed Elliptical Model Analysis) analysis.  It is
+predicated on the assumption that the error term adheres to a Elliptical
+distribution.  The philosophy of the package is described in Guo G. (2020)
+<doi:10.1080/02664763.2022.2053949>.")
     (license license:expat)))
 
 (define-public r-elhmc
@@ -19494,13 +19520,13 @@ Scholarly Excellence.")
 (define-public r-eeptools
   (package
     (name "r-eeptools")
-    (version "1.2.5")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eeptools" version))
        (sha256
-        (base32 "1l8cjwkqgh9ywm8yc39kw684jhkw9afb0cxzpkjlap78jgb72xxf"))))
+        (base32 "03w72vdkbjqqlz80kc0sq2f4zbcrzrn99pqwk7cp2psspz00pwlg"))))
     (properties `((upstream-name . "eeptools")))
     (build-system r-build-system)
     (arguments
@@ -22121,6 +22147,38 @@ ecological networks and identify resource selection.  Methods in Ecology &
 Evolution, <doi:10.1111/2041-210X.12907>.")
     (license license:expat)))
 
+(define-public r-econtools
+  (package
+    (name "r-econtools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "econtools" version))
+       (sha256
+        (base32 "142y1k9kbnjcs5w43zhnyzw60zz0byh6dcf5c6irk2s9fygjrka4"))))
+    (properties `((upstream-name . "econtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wbwdi
+                             r-rlang
+                             r-imfweo
+                             r-econid
+                             r-dplyr
+                             r-curl
+                             r-cli))
+    (home-page "https://github.com/tidy-intelligence/r-econtools")
+    (synopsis "Enrich and Analyze Sovereign-Level Economic Data")
+    (description
+     "This package provides a consistent set of functions for enriching and analyzing
+sovereign-level economic data.  Economists, data scientists, and financial
+professionals can use the package to add standardized identifiers, demographic
+and macroeconomic indicators, and derived metrics such as gross domestic product
+per capita or government expenditure shares.")
+    (license license:expat)))
+
 (define-public r-economiccomplexity
   (package
     (name "r-economiccomplexity")
@@ -23937,13 +23995,13 @@ presentation of the method.")
 (define-public r-ebnm
   (package
     (name "r-ebnm")
-    (version "1.1-2")
+    (version "1.1-38")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebnm" version))
        (sha256
-        (base32 "14ql990pgwwb8aakg4ikj7p3ijbfaqjrsvrrjwlma3halqs3cy19"))))
+        (base32 "0c0qghm8h3afhg1mq29aczpijivzjah5wr6yd92hh2k5dj90nhr1"))))
     (properties `((upstream-name . "ebnm")))
     (build-system r-build-system)
     (arguments
@@ -23965,8 +24023,8 @@ presentation of the method.")
     (description
      "This package provides simple, fast, and stable functions to fit the normal means
 model using empirical Bayes.  For available models and details, see function
-@code{ebnm()}.  A detailed introduction to the package is provided by
-Willwerscheid and Stephens (2021) <@code{arXiv:2110.00152>}.")
+@code{ebnm()}.  Our JSS article, Willwerscheid, Carbonetto, and Stephens (2025)
+<doi:10.18637/jss.v114.i03>, provides a detailed introduction to the package.")
     (license license:gpl3+)))
 
 (define-public r-ebmstate
@@ -26047,13 +26105,13 @@ xgboost packages.")
 (define-public r-e2e
   (package
     (name "r-e2e")
-    (version "0.0.3")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "E2E" version))
        (sha256
-        (base32 "13v2h44zwgn0k258si3f38y9an00n2kb2fkgpwjbp9ry0vhqjjy8"))))
+        (base32 "1vcbiafkdy7icq2msvawavbsvk7xha5lihvdr1bjaaahbmqz0d4r"))))
     (properties `((upstream-name . "E2E")))
     (build-system r-build-system)
     (arguments

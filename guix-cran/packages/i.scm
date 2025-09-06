@@ -1689,19 +1689,19 @@ easier way.")
 (define-public r-istacr
   (package
     (name "r-istacr")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "istacr" version))
        (sha256
-        (base32 "1hg94p0b5zkj50ckxrgas2a8rdwh0avspykscincxkfi0wk1cx0r"))))
+        (base32 "1r92v46a5297h7xnn8m5ww1nyynsp833cc177acamxndbssl5fq0"))))
     (properties `((upstream-name . "istacr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite))
+    (propagated-inputs (list r-jsonlite r-httr))
     (home-page "https://cran.r-project.org/package=istacr")
     (synopsis
      "Obtaining Open Data from Instituto Canario De Estadistica (ISTAC) API")
@@ -6851,6 +6851,53 @@ models proposed by Asano and Hirakawa (2017)
 <doi:10.1080/10543406.2017.1293082>.")
     (license license:gpl3+)))
 
+(define-public r-intsdm
+  (package
+    (name "r-intsdm")
+    (version "2.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intSDM" version))
+       (sha256
+        (base32 "1hh6asvanyw20blkkyxnk9gyf3a9yplngj1y1q3qgjrqp18qv916"))))
+    (properties `((upstream-name . "intSDM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units
+                             r-tidyterra
+                             r-terra
+                             r-sf
+                             r-rgbif
+                             r-r6
+                             r-pointedsdms
+                             r-inlabru
+                             r-giscor
+                             r-ggplot2
+                             r-geodata
+                             r-fmesher
+                             r-blockcv))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=intSDM")
+    (synopsis
+     "Reproducible Integrated Species Distribution Models Across Norway using 'INLA'")
+    (description
+     "Integration of disparate datasets is needed in order to make efficient use of
+all available data and thereby address the issues currently threatening
+biodiversity.  Data integration is a powerful modeling framework which allows us
+to combine these datasets together into a single model, yet retain the strengths
+of each individual dataset.  We therefore introduce the package, @code{intSDM}':
+an R package designed to help ecologists develop a reproducible workflow of
+integrated species distribution models, using data both provided from the user
+as well as data obtained freely online.  An introduction to data integration
+methods is discussed in Issac, Jarzyna, Keil, Dambly, Boersch-Supan, Browning,
+Freeman, Golding, Guillera-Arroita, Henrys, Jarvis, Lahoz-Monfort, Pagel,
+Pescott, Schmucki, Simmonds and OâHara (2020)
+<doi:10.1016/j.tree.2019.08.006>.")
+    (license license:gpl3+)))
+
 (define-public r-intrvals
   (package
     (name "r-intrvals")
@@ -7754,13 +7801,13 @@ the C++ library CGAL (<https://www.cgal.org/>).")
 (define-public r-interpolater
   (package
     (name "r-interpolater")
-    (version "1.3-4")
+    (version "1.4-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "InterpolateR" version))
        (sha256
-        (base32 "1l3x3bghaxcjsmkv9lvk26f7yipdvn69g5bjv8jkrcgx3x0287qb"))))
+        (base32 "0zhw0m1j1j8a59n0siyqrz7hrvrx5qr10mx6g8025a94af06a8sc"))))
     (properties `((upstream-name . "InterpolateR")))
     (build-system r-build-system)
     (arguments
@@ -12920,13 +12967,13 @@ prevent namespace conflicts.")
 (define-public r-important
   (package
     (name "r-important")
-    (version "0.0.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "important" version))
        (sha256
-        (base32 "1z2a36sldv9ghfpynsbkf0z5pq0dgyfnq5q0qv8ymwzzw36igvw4"))))
+        (base32 "1w6hf1mcz3wlwkip6d7bb8kni61smnvk0hlxissw4lv5drkswxia"))))
     (properties `((upstream-name . "important")))
     (build-system r-build-system)
     (arguments
@@ -12938,12 +12985,16 @@ prevent namespace conflicts.")
                              r-tune
                              r-tidyr
                              r-tibble
+                             r-s7
                              r-rlang
+                             r-recipes
                              r-purrr
                              r-hardhat
                              r-ggplot2
                              r-generics
+                             r-filtro
                              r-dplyr
+                             r-desirability2
                              r-cli))
     (home-page "https://important.tidymodels.org/")
     (synopsis "Supervised Feature Selection")
@@ -13404,35 +13455,38 @@ reading HLA genotypes in HML files and extracting the GL string.")
 (define-public r-immundata
   (package
     (name "r-immundata")
-    (version "0.0.1")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "immundata" version))
        (sha256
-        (base32 "0y2hafdasgj8j2rcbf8mas1xvrv8pzwwdy49wk958l7cz8xqpzc4"))))
+        (base32 "01kkilfdn6asnxqbmciqnz7f1h343n10ji867f50nbfm4k0zpd7y"))))
     (properties `((upstream-name . "immundata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-tibble
+                             r-rlang
                              r-readr
                              r-r6
                              r-lifecycle
+                             r-jsonlite
                              r-glue
+                             r-ggplot2
                              r-duckplyr
                              r-dplyr
+                             r-dbplyr
                              r-cli
                              r-checkmate))
-    (home-page "https://cran.r-project.org/package=immundata")
+    (home-page "https://immunomind.com/")
     (synopsis
-     "Unified Data Layer for Single-Cell, Spatial and Bulk Immunomics")
+     "Unified Data Layer for Large-Scale Single-Cell, Spatial and Bulk Immunomics")
     (description
      "This package provides a unified data layer for single-cell, spatial and bulk
-T-cell and B-cell immune receptor repertoire data, integrating diverse data
-formats such as AIRR and raw sequencing files.  Includes utilities for receptor
-aggregation, metadata normalization, and clonotype filtering.")
+T-cell and B-cell immune receptor repertoire data.  Think @code{AnnData} or
+@code{SeuratObject}, but for AIRR data.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-immunaut
@@ -20832,13 +20886,13 @@ regression function y=f(x) as described in Ye, Senftle, and Li (2023)
 (define-public r-ib
   (package
     (name "r-ib")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ib" version))
        (sha256
-        (base32 "10h3b9ncz59rp8j628axnrl7gksjiyg576672dhcyd3ygd4by7p5"))))
+        (base32 "01jn7bgad1frazxwwjszqaq2571h8zyp5hkcf3222nhvv772prsz"))))
     (properties `((upstream-name . "ib")))
     (build-system r-build-system)
     (arguments
@@ -20851,7 +20905,7 @@ regression function y=f(x) as described in Ye, Senftle, and Li (2023)
                              r-lme4
                              r-formula
                              r-betareg))
-    (home-page "https://github.com/SMAC-Group/ib/")
+    (home-page "https://smac-group.github.io/ib/")
     (synopsis "Bias Correction via Iterative Bootstrap")
     (description
      "An implementation of the iterative bootstrap procedure of Kuk (1995)

@@ -2442,13 +2442,13 @@ more details on the method.")
 (define-public r-bsts
   (package
     (name "r-bsts")
-    (version "0.9.10")
+    (version "0.9.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsts" version))
        (sha256
-        (base32 "1cbiha8pgb2xmpwqbgb16d1dpjj9x41wx3dzly1xxy2fs04bq0m3"))))
+        (base32 "1m9wyk4qn6pifh339k9h96bjb81g06i67dy0q87yr9ac2h45cdci"))))
     (properties `((upstream-name . "bsts")))
     (build-system r-build-system)
     (arguments
@@ -4720,13 +4720,13 @@ Gaussian.")
 (define-public r-brickster
   (package
     (name "r-brickster")
-    (version "0.2.8.1")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brickster" version))
        (sha256
-        (base32 "1gia15h9v9bsi9p1kvhik5c0jk3a1jxh92wa4y2qv3dhd0m2vxsx"))))
+        (base32 "0i5cyysinjwgph3wb4cibd2bq2rgff5vq5b51j0hhidcdgphxyqk"))))
     (properties `((upstream-name . "brickster")))
     (build-system r-build-system)
     (arguments
@@ -4742,6 +4742,8 @@ Gaussian.")
                              r-httr2
                              r-glue
                              r-dplyr
+                             r-dbplyr
+                             r-dbi
                              r-curl
                              r-cli
                              r-base64enc))
@@ -5337,24 +5339,30 @@ high-quality datasets from multiple domains.  For more details on the
 (define-public r-brazilcrime
   (package
     (name "r-brazilcrime")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BrazilCrime" version))
        (sha256
-        (base32 "194ckp3b6yini9z6nh953n7x0yp6x1zwvxg42z6pq5wsd07g76n5"))))
+        (base32 "0nhsd0sibs6m6f6cvhba8ysgig2sfijv9fyjk8rz5ihwxmn6rdan"))))
     (properties `((upstream-name . "BrazilCrime")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-openxlsx r-janitor r-geobr r-dplyr))
+    (propagated-inputs (list r-ggplot2 r-forecast r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BrazilCrime")
     (synopsis "Accesses Brazilian Public Security Data from SINESP Since 2015")
     (description
      "Allows access to data from the Brazilian Public Security Information System
-(SINESP) by state and municipality.
+(SINESP) by state and municipality.  It should be emphasized that the package
+only extracts the data and facilitates its manipulation in R. Therefore, its
+sole purpose is to support empirical research.  All data credits belong to
+SINESP, an integrated information platform developed and maintained by the
+National Secretariat of Public Security (SENASP) of the Ministry of Justice and
+Public Security.
 <https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/sinesp-1>.")
     (license license:expat)))
 
@@ -8137,13 +8145,13 @@ and time using gradient boosting approach.")
 (define-public r-boostmath
   (package
     (name "r-boostmath")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boostmath" version))
        (sha256
-        (base32 "0aqyqc2pmw5gffk4al51hv57fc1xs65gqfyi476chznyw3rb3056"))))
+        (base32 "1hgr70mnkcqydgqdzrcqk2pj7wnga565gz0xfnaz5larlb52d9im"))))
     (properties `((upstream-name . "boostmath")))
     (build-system r-build-system)
     (arguments
@@ -8193,13 +8201,13 @@ the Slacks-Based Measure (SBM).")
 (define-public r-boomspikeslab
   (package
     (name "r-boomspikeslab")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoomSpikeSlab" version))
        (sha256
-        (base32 "0gn6fb68hk0kzpa4mp4465rsbk37fkq7nnx6bvd5bhhk1zi25xl7"))))
+        (base32 "0x5vlzyyl7h484qk5awmv4zccnvwc61ns2mdby130hifcasycv88"))))
     (properties `((upstream-name . "BoomSpikeSlab")))
     (build-system r-build-system)
     (arguments
@@ -8463,6 +8471,39 @@ ISBN:9780429246593) Bertail, P., ClÃ©menÃ§on, S. and Tressou, J. (2009)
 <doi:10.1007/s10687-009-0081-y> Bertail, P., Medina-Garay, A., De Lima-Medina,
 F. and Jales, I. (2024) <doi:10.1080/02331888.2024.2344670>.")
     (license license:gpl2+)))
+
+(define-public r-booami
+  (package
+    (name "r-booami")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "booami" version))
+       (sha256
+        (base32 "06a7gxx03wc01q3ccxnlwqa2y6kx1aacqwc4dfjrwbw7c0mywd0r"))))
+    (properties `((upstream-name . "booami")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-mass))
+    (home-page "https://arxiv.org/abs/2507.21807")
+    (synopsis "Component-Wise Gradient Boosting after Multiple Imputation")
+    (description
+     "Component-wise gradient boosting for analysis of multiply imputed datasets.
+Implements the algorithm Boosting after Multiple Imputation (MIBoost), which
+enforces uniform variable selection across imputations and provides utilities
+for pooling.  Includes a cross-validation workflow that first splits the data
+into training and validation sets and then performs imputation on the training
+data, applying the learned imputation models to the validation data to avoid
+information leakage.  Supports Gaussian and logistic loss.  Methods relate to
+gradient boosting and multiple imputation as in Buehlmann and Hothorn (2007)
+<doi:10.1214/07-STS242>, Friedman (2001) <doi:10.1214/aos/1013203451>, and van
+Buuren (2018, ISBN:9781138588318) and Groothuis-Oudshoorn (2011)
+<doi:10.18637/jss.v045.i03>; see also Kuchen (2025)
+<doi:10.48550/@code{arXiv.2507.21807>}.")
+    (license license:expat)))
 
 (define-public r-bonsaiforest
   (package
@@ -22233,13 +22274,13 @@ high-dimensional data.  Leday and Richardson (2019), Biometrics,
 (define-public r-beakr
   (package
     (name "r-beakr")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beakr" version))
        (sha256
-        (base32 "0l6475l5d58g5ahz4b3vrdlvl656p2rasni17gz4y1l2rd0pvvh4"))))
+        (base32 "08fp577zh1y11xvvb44nwj0kpjggz1gb9a7pzf3r8cpl3plhj8hn"))))
     (properties `((upstream-name . "beakr")))
     (build-system r-build-system)
     (arguments

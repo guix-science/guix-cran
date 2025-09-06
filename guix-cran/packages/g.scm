@@ -6539,13 +6539,13 @@ networks using data from @code{OpenStreetMap} <https://www.openstreetmap.org>.")
 (define-public r-greenfeedr
   (package
     (name "r-greenfeedr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greenfeedr" version))
        (sha256
-        (base32 "03dl49ksik8dh6p34vfrbfn5k1i7si7nfih2b8362chccihw7ynk"))))
+        (base32 "1j5gb1vlq02b5vjs92vq81ymsmlfjmmkqb44489w1jxdb2y1xvc5"))))
     (properties `((upstream-name . "greenfeedr")))
     (build-system r-build-system)
     (arguments
@@ -6898,13 +6898,13 @@ combination of greedy local search and a genetic algorithm (see
 (define-public r-grec
   (package
     (name "r-grec")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grec" version))
        (sha256
-        (base32 "0wnimb9vjdm87zlnkirzmflr0aq14k2m60zgydi8mk9rp6z73qbm"))))
+        (base32 "1c5ci9rwkl7lcqy18f788k68s13ph3yrqcg7md2f6fn23hrxz049"))))
     (properties `((upstream-name . "grec")))
     (build-system r-build-system)
     (arguments
@@ -7432,19 +7432,24 @@ grouped date classes.")
 (define-public r-grateful
   (package
     (name "r-grateful")
-    (version "0.2.12")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grateful" version))
        (sha256
-        (base32 "1dcaxqx7pfng46nx189jx7kszsjs7ki30k4kppdicdmqfrj0qa3z"))))
+        (base32 "1rhhw999yijkfqalxddiwddk7vvfhdwqskgf1mcsjrr2pgdfnmgi"))))
     (properties `((upstream-name . "grateful")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rstudioapi r-rmarkdown r-renv r-remotes r-knitr))
+    (propagated-inputs (list r-rstudioapi
+                             r-rmarkdown
+                             r-renv
+                             r-remotes
+                             r-knitr
+                             r-desc))
     (home-page "https://pakillo.github.io/grateful/")
     (synopsis "Facilitate Citation of R Packages")
     (description
@@ -8963,13 +8968,13 @@ and CPU performance on different matrix operations.")
 (define-public r-gptzeror
   (package
     (name "r-gptzeror")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gptzeror" version))
        (sha256
-        (base32 "1xdzg0xazim7qn54zh4wkix0xn0z49b3grrazr7xhjbqx29aca48"))))
+        (base32 "0ga35r6vv10kpby5g3c6hnqabjp02r890b41va76vbdjfrq1d39c"))))
     (properties `((upstream-name . "gptzeror")))
     (build-system r-build-system)
     (arguments
@@ -15345,13 +15350,13 @@ inference.")
 (define-public r-glmcat
   (package
     (name "r-glmcat")
-    (version "0.2.7")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GLMcat" version))
        (sha256
-        (base32 "0a9gvnrzrhpywmy4zzm0pyah6dflim4zfg4hqj8kh1ks0wynmjbr"))))
+        (base32 "00hpgkyqyj19mxyz5qmlmncyqbvh9nk7mvp41j27jvdv7apd09v6"))))
     (properties `((upstream-name . "GLMcat")))
     (build-system r-build-system)
     (arguments
@@ -15370,7 +15375,10 @@ format.  Following the methodology proposed by Peyhardi, Trottier, and GuÃ©don
 estimate generalized linear models implemented under the unified specification
 (r, F, Z).  Where r represents the ratio of probabilities (reference,
 cumulative, adjacent, or sequential), F the cumulative cdf function for the
-linkage, and Z, the design matrix.")
+linkage, and Z, the design matrix.  The package accompanies the paper \"GLMcat:
+An R Package for Generalized Linear Models for Categorical Responses\" in the
+Journal of Statistical Software, Volume 114, Issue 9 (see
+<doi:10.18637/jss.v114.i09>).")
     (license license:gpl3)))
 
 (define-public r-glmc
@@ -17982,13 +17990,13 @@ authored by Wang(2012) <doi:10.1214/12-BA729>.")
 (define-public r-ghrexplore
   (package
     (name "r-ghrexplore")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GHRexplore" version))
        (sha256
-        (base32 "1bim5g2l6yv74chy79r65vr196krrzxg9fv7x4iffi5r9ijrnafq"))))
+        (base32 "0qfnk4s2szrpr33vh3i3cl6qalpl945iqg0z343nmd2fjja8lkd5"))))
     (properties `((upstream-name . "GHRexplore")))
     (build-system r-build-system)
     (arguments
@@ -19489,19 +19497,20 @@ of how to draw sectors in @code{ComplexHeatmap}'.")
 (define-public r-ggscidca
   (package
     (name "r-ggscidca")
-    (version "0.2.3")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggscidca" version))
        (sha256
-        (base32 "1ggjakfafq6gib7yn684ssv6wdad68an0p13wxl232ikwmw4b66w"))))
+        (base32 "00fd08facgm5gj6kmw4dxsiaapcif3gwxq2anxvxm0mrlrixr9f8"))))
     (properties `((upstream-name . "ggscidca")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
+    (propagated-inputs (list r-xgboost
+                             r-survival
                              r-reshape2
                              r-randomforest
                              r-kernlab
@@ -20204,13 +20213,13 @@ ggplot2'.")
 (define-public r-ggpmx
   (package
     (name "r-ggpmx")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggPMX" version))
        (sha256
-        (base32 "1xfkak72vbbdl60ip5nhs4lwh9kc1a84v68lshwy2ml7cn7wsfn7"))))
+        (base32 "197jn7a88881r6qv100yvb1fgds9gh4v6h5aab3lc67kya1bn47c"))))
     (properties `((upstream-name . "ggPMX")))
     (build-system r-build-system)
     (arguments
@@ -31579,13 +31588,13 @@ normally distributed.")
 (define-public r-gemr
   (package
     (name "r-gemr")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gemR" version))
        (sha256
-        (base32 "03v9dw5lvxcap68liw4ypj0mlqgnhz0hza6bv0ap7yx78drc8q7w"))))
+        (base32 "0k5k1gdf4kmjwn5b3n7dvah5fnp4sdi45nlz3knyay1l2ap5j0sk"))))
     (properties `((upstream-name . "gemR")))
     (build-system r-build-system)
     (arguments
@@ -31595,12 +31604,10 @@ normally distributed.")
                              r-pracma
                              r-plsvarsel
                              r-pls
-                             r-neuralnet
                              r-mixlm
                              r-lme4
                              r-hdanova
                              r-gridextra
-                             r-glmnet
                              r-ggplot2))
     (home-page "https://cran.r-project.org/package=gemR")
     (synopsis "General Effect Modelling")

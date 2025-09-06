@@ -371,13 +371,13 @@ academic year.")
 (define-public r-vvcanvas
   (package
     (name "r-vvcanvas")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvcanvas" version))
        (sha256
-        (base32 "0yksqkpvvzz8dgq6fgfh804agarn3n5anz0qf9l9frmr9z3lhdsw"))))
+        (base32 "1dljkig8mlzn33p91958awp0hn4l34c5x46whhhpfr2cfiz4gif4"))))
     (properties `((upstream-name . "vvcanvas")))
     (build-system r-build-system)
     (arguments
@@ -7527,13 +7527,13 @@ data.  For details on the VCCP methodology, please see Xiong & Cribben (2021).")
 (define-public r-vca
   (package
     (name "r-vca")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VCA" version))
        (sha256
-        (base32 "0bw951rkbxg6ccy1iqmaamx5fwa41c3pp8zyzk2njkcgi4w5b90m"))))
+        (base32 "1imzmaz718xbv15yiabr87qvf21jwks72zxlkpbh46cdcsp2gaac"))))
     (properties `((upstream-name . "VCA")))
     (build-system r-build-system)
     (arguments

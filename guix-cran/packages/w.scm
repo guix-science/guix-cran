@@ -1198,13 +1198,13 @@ directory within functions and wrap console messages around other functions.")
 (define-public r-wrappedtools
   (package
     (name "r-wrappedtools")
-    (version "0.9.8")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrappedtools" version))
        (sha256
-        (base32 "01di3p49165d14an496rxn872x5inljrlkywp02imi96q2s3cavy"))))
+        (base32 "1xnm6jlbgsbidbq44j02gj2jrsrlj6ih3g05q9pix8bqyv8d6hrg"))))
     (properties `((upstream-name . "wrappedtools")))
     (build-system r-build-system)
     (arguments
@@ -8146,13 +8146,13 @@ model.")
 (define-public r-wbids
   (package
     (name "r-wbids")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wbids" version))
        (sha256
-        (base32 "018din2f2w5w8n9z6rgq1ljcdzwf7z337r1rpiqccpwzn69rxvqj"))))
+        (base32 "1hqjm08lqbfx20iwzq1909565flnk5ifis9d16sxbk9pk3c75ywy"))))
     (properties `((upstream-name . "wbids")))
     (build-system r-build-system)
     (arguments
@@ -8160,9 +8160,9 @@ model.")
       #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tidyr
+                             r-tibble
                              r-rlang
                              r-purrr
-                             r-mime
                              r-httr2
                              r-dplyr
                              r-cli))
@@ -8172,7 +8172,7 @@ model.")
      "Seamless Access to World Bank International Debt Statistics (IDS)")
     (description
      "Access and analyze the World Bank's International Debt Statistics (IDS)
-<https://datacatalog.worldbank.org/search/dataset/0038015>.  IDS provides
+<https://www.worldbank.org/en/programs/debt-statistics/ids>.  IDS provides
 creditor-debtor relationships between countries, regions, and institutions.
 wbids enables users to download, process and work with IDS series across
 multiple geographies, counterparts, and time periods.")

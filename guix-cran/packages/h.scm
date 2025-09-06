@@ -8810,13 +8810,13 @@ regionalization results, and exporting region map and mean timeseries into
 (define-public r-hibayes
   (package
     (name "r-hibayes")
-    (version "3.0.3")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hibayes" version))
        (sha256
-        (base32 "04vkvqha82cpmjflxir83208d9mxwip7wlbc3zd12apvrg2c91x6"))))
+        (base32 "07djdhfqsgywx51hq585k96pbbh0z45p0d9zf5p2sd6v1x3jmb4p"))))
     (properties `((upstream-name . "hibayes")))
     (build-system r-build-system)
     (arguments
@@ -8846,8 +8846,9 @@ residual variance, (5) heritability, (6) genomic estimated breeding values
 (8) phenotype/genetic variance explained (PVE) for single or multiple SNPs, (9)
 posterior probability of association of the genomic window (WPPA), (10)
 posterior inclusive probability (PIP).  The functions are not limited, we will
-keep on going in enriching it with more features.  References: Meuwissen et al.
-(2001) <doi:10.1093/genetics/157.4.1819>; Gustavo et al. (2013)
+keep on going in enriching it with more features.  References: Lilin Yin et al.
+(2025) <doi:10.18637/jss.v114.i06>; Meuwissen et al. (2001)
+<doi:10.1093/genetics/157.4.1819>; Gustavo et al. (2013)
 <doi:10.1534/genetics.112.143313>; Habier et al. (2011)
 <doi:10.1186/1471-2105-12-186>; Yi et al. (2008)
 <doi:10.1534/genetics.107.085589>; Zhou et al. (2013)

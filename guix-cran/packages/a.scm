@@ -12273,13 +12273,13 @@ masses (i.e.  mixtures with fixed number of components).")
 (define-public r-antitrust
   (package
     (name "r-antitrust")
-    (version "0.99.26")
+    (version "0.99.29")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antitrust" version))
        (sha256
-        (base32 "172y87vnifxbs4n06v3qvwlxnl3fxhfp9cp1qzm4agcvqh1j7rxz"))))
+        (base32 "02b3nv7k24gl69h5a8n0zg4h6rqi6skk4qwpb6h6kyangfd4vzm1"))))
     (properties `((upstream-name . "antitrust")))
     (build-system r-build-system)
     (arguments
@@ -22932,13 +22932,13 @@ format is also provided.")
 (define-public r-admix
   (package
     (name "r-admix")
-    (version "2.4.3")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admix" version))
        (sha256
-        (base32 "1hln9rasnz8b02y2mmsg37hnp1jhv9hff9mgbmyv8vf1ki0wjgq5"))))
+        (base32 "01gp3lpswkzdnmkm9v1yzdmc6kds6c2f03w1cqv5lc3zn7f0s287"))))
     (properties `((upstream-name . "admix")))
     (build-system r-build-system)
     (arguments
@@ -26053,13 +26053,13 @@ factorization (NMF).")
 (define-public r-acledr
   (package
     (name "r-acledr")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acledR" version))
        (sha256
-        (base32 "0w4zz493klsvp0gmzcq8fv244d8mqw7b0xfkcsg6bz200bwp76gx"))))
+        (base32 "0fjmpc0syhxjdcgkimscl0xcw1896vm29c3qvllpaa4r662k7lb8"))))
     (properties `((upstream-name . "acledR")))
     (build-system r-build-system)
     (arguments
@@ -26071,6 +26071,8 @@ factorization (NMF).")
                              r-purrr
                              r-magrittr
                              r-lubridate
+                             r-lifecycle
+                             r-httr2
                              r-httr
                              r-dplyr))
     (native-inputs (list r-knitr))

@@ -3397,24 +3397,20 @@ in spreadsheet files.")
 (define-public r-unhcrthemes
   (package
     (name "r-unhcrthemes")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unhcrthemes" version))
        (sha256
-        (base32 "1wxm0n5gr36r9350wyhalwik79ch6n5s3b3iy7y0d4b02ys966a4"))))
+        (base32 "01hd9yp03lq4v3i6pfqi07anqmcd3ayrpb4y752bwpzcm5sh5bl0"))))
     (properties `((upstream-name . "unhcrthemes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-systemfonts
-                             r-scales
-                             r-ggtext
-                             r-ggrepel
-                             r-ggplot2
-                             r-extrafont))
+    (propagated-inputs (list r-systemfonts r-scales r-ggtext r-ggrepel
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/unhcr-dataviz/unhcrthemes")
     (synopsis "UNHCR 'ggplot2' Theme and Colour Palettes")
@@ -4510,38 +4506,6 @@ Data (2023) <doi:10.1038/s41597-023-01949-y>.")
 1974 and 2020, and rankings of baby name popularity by decade from 1904 to 1994.")
     (license license:cc0)))
 
-(define-public r-ukb-covid19
-  (package
-    (name "r-ukb-covid19")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "UKB.COVID19" version))
-       (sha256
-        (base32 "02crz9spzl7xpa1csrwrrja9a6z8937rghfkm1awwwv4nrx1cwr6"))))
-    (properties `((upstream-name . "UKB.COVID19")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyverse
-                             r-questionr
-                             r-magrittr
-                             r-here
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/bahlolab/UKB.COVID19")
-    (synopsis
-     "UK Biobank COVID-19 Data Processing and Risk Factor Association Tests")
-    (description
-     "Process UK Biobank COVID-19 test result data for susceptibility, severity and
-mortality analyses, perform potential non-genetic COVID-19 risk factor and
-co-morbidity association tests.  Wang et al. (2021)
-<doi:10.5281/zenodo.5174381>.")
-    (license license:expat)))
-
 (define-public r-uk2us
   (package
     (name "r-uk2us")
@@ -4903,13 +4867,13 @@ Analysis (PCA) algorithm of Yeasin and Paul (2024)
 (define-public r-udpipe
   (package
     (name "r-udpipe")
-    (version "0.8.11")
+    (version "0.8.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "udpipe" version))
        (sha256
-        (base32 "0crjcfrpb0m7f58w7ksz7kvglvmc45axy9kbbvqz9w6i4kg00aaj"))))
+        (base32 "0fqly1xsicig37qjij3jwywqy8ggnnqn2bgw0p1dbmxpq2p0xqxj"))))
     (properties `((upstream-name . "udpipe")))
     (build-system r-build-system)
     (arguments

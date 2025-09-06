@@ -8457,6 +8457,34 @@ L-Logistic distribution with parameters m and phi.  The parameter m is the
 median of the distribution.")
     (license license:gpl3)))
 
+(define-public r-llmtranslate
+  (package
+    (name "r-llmtranslate")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LLMTranslate" version))
+       (sha256
+        (base32 "0jnqqg9z2ricgm7inhhbzx9v0kw9r1xp513qlc0g3js9wq6b1i43"))))
+    (properties `((upstream-name . "LLMTranslate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny))
+    (home-page "https://cran.r-project.org/package=LLMTranslate")
+    (synopsis "'shiny' App for TRAPD/ISPOR Survey Translation with LLMs")
+    (description
+     "This package provides a shiny application to automate forward and back survey
+translation with optional reconciliation using large language models (LLMs).  It
+follows the TRAPD (Translation, Review, Adjudication, Pretesting, Documentation)
+framework and ISPOR (International Society for Pharmacoeconomics and Outcomes
+Research) recommendations.  See Harkness et al. (2010)
+<doi:10.1002/9780470609927.ch7> and Wild et al. (2005)
+<doi:10.1111/j.1524-4733.2005.04054.x>.")
+    (license license:expat)))
+
 (define-public r-llmr
   (package
     (name "r-llmr")
@@ -12705,13 +12733,13 @@ test for conditional independence and a test for financial contagion.")
 (define-public r-lfstat
   (package
     (name "r-lfstat")
-    (version "0.9.12")
+    (version "0.9.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lfstat" version))
        (sha256
-        (base32 "0hl5b78llydcphbrg04fi5b4v7p6xxwlcwpl70m2537gra52wvdr"))))
+        (base32 "1144i40i287ai4pz9i6kzk3qa1pcmcvwqpskyckm8fnqb9zyz3bc"))))
     (properties `((upstream-name . "lfstat")))
     (build-system r-build-system)
     (arguments

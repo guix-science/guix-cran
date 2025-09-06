@@ -2149,13 +2149,13 @@ sampling positive stable variates not chi/sqrt(nu).")
 (define-public r-mvgam
   (package
     (name "r-mvgam")
-    (version "1.1.51")
+    (version "1.1.593")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvgam" version))
        (sha256
-        (base32 "0ahja66nimx2xmggbvm5vfwkx2hlrx4fsh52md86f7gvipmjn3gj"))))
+        (base32 "0x29z4i08qqiaizf6kk9l215j5cfc0km915w3yqy1y56iwisq7ys"))))
     (properties `((upstream-name . "mvgam")))
     (build-system r-build-system)
     (arguments
@@ -6410,19 +6410,20 @@ methods implemented in this package are described in Sciacca et al. (2023)
 (define-public r-multid
   (package
     (name "r-multid")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multid" version))
        (sha256
-        (base32 "0nx8gfsypg00v1hvqzjsbka86j8d1m5nl1y34ir425byzr26gx9v"))))
+        (base32 "1lr230xa8h0306ggfcb6ds07050m9j6zbp71i9nc44xkzsv9bq9r"))))
     (properties `((upstream-name . "multid")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-quantreg
+    (propagated-inputs (list r-rlang
+                             r-quantreg
                              r-proc
                              r-lmertest
                              r-lme4
@@ -6438,12 +6439,12 @@ methods implemented in this package are described in Sciacca et al. (2023)
     (description
      "Estimation of multivariate differences between two groups (e.g., multivariate
 sex differences) with regularized regression methods and predictive approach.
-See LÃ¶nnqvist & Ilmarinen (2021) <doi:10.1007/s11109-021-09681-2> and Ilmarinen
-et al. (2023) <doi:10.1177/08902070221088155>.  Includes tools that help in
-understanding difference score reliability, predictions of difference score
-variables, conditional intra-class correlations, and heterogeneity of variance
-estimates.  Package development was supported by the Academy of Finland research
-grant 338891.")
+See Ilmarinen et al. (2023) <doi:10.1177/08902070221088155>.  Deconstructing
+difference score correlations (e.g., gender-equality paradox), see Ilmarinen &
+LÃ¶nnqvist (2024) <doi:10.1037/pspp0000508>.  Includes also tools that help in
+understanding difference score reliability, conditional intra-class
+correlations, tail-dependency, and heterogeneity of variance estimates.  Package
+development was supported by the Academy of Finland research grant 338891.")
     (license license:gpl3)))
 
 (define-public r-multicoll
@@ -17345,13 +17346,13 @@ series, panel data, and cross-sectional time series analysis.")
 (define-public r-modeltime-ensemble
   (package
     (name "r-modeltime-ensemble")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeltime.ensemble" version))
        (sha256
-        (base32 "18wq9m5qzq68fvsbcg9dw8r68zf60x1jgw3fsyqifgcb65ahf0qd"))))
+        (base32 "1zbhhwchhfqz4sg81r6agvx438525nkq7m1q6fmwk117i9hlmxjm"))))
     (properties `((upstream-name . "modeltime.ensemble")))
     (build-system r-build-system)
     (arguments
@@ -21504,13 +21505,13 @@ benchmark experiments, for mlr3 and beyond.")
 (define-public r-mlr3batchmark
   (package
     (name "r-mlr3batchmark")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3batchmark" version))
        (sha256
-        (base32 "0x428wdf6ixa5j6a60rxfqn7gvcc0lmxscanxmlxcpzli6j5lgmm"))))
+        (base32 "1b5mmicbmgpdkhv07k82acgwyh8sffayfm7rm7ninm8pjpkybr4j"))))
     (properties `((upstream-name . "mlr3batchmark")))
     (build-system r-build-system)
     (arguments
@@ -21523,7 +21524,7 @@ benchmark experiments, for mlr3 and beyond.")
                              r-data-table
                              r-checkmate
                              r-batchtools))
-    (home-page "https:///mlr3batchmark.mlr-org.com")
+    (home-page "https://mlr3batchmark.mlr-org.com")
     (synopsis "Batch Experiments for 'mlr3'")
     (description
      "Extends the mlr3 package with a connector to the package batchtools'.  This
@@ -22394,13 +22395,13 @@ Krajnc, and Skudnik (2023), Ecological Informatics
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "3.2.0")
+    (version "3.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "04iy3x6ys53zjfjxq35pw0av9hwwkzd0n2z7jrd8j1m844ng5xww"))))
+        (base32 "0c1hg566l1wr1w76p1f3b935gqfih28y3sss4i48gvxh4n7w900j"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (arguments
@@ -23126,19 +23127,20 @@ designs.")
 (define-public r-mkpower
   (package
     (name "r-mkpower")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MKpower" version))
        (sha256
-        (base32 "1bsagc422wkbx5sy5azx167xmrv3h0jlb8yg8vxibrjb8hv3wcvd"))))
+        (base32 "0d348qz7vqz937098m4zml4hdda20d054sbm6ccwydwjkrbh8fr2"))))
     (properties `((upstream-name . "MKpower")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-qqplotr
+    (propagated-inputs (list r-rlang
+                             r-qqplotr
                              r-mvtnorm
                              r-mkinfer
                              r-mkdescr
@@ -27331,6 +27333,32 @@ data frames @code{(redatam_query()}, @code{redatam_run()}).")
 groups and any allocation ratios by minimization algorithms.")
     (license license:gpl2+)))
 
+(define-public r-minipdf
+  (package
+    (name "r-minipdf")
+    (version "0.2.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "minipdf" version))
+       (sha256
+        (base32 "1shyy51mxwk3bqvmr54bgjlhap25alr5d6digjq1p9dqbxhck7wa"))))
+    (properties `((upstream-name . "minipdf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glue))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/coolbutuseless/minipdf")
+    (synopsis "PDF Document Creator")
+    (description
+     "PDF is a standard file format for laying out text and images in documents.  At
+its core, these documents are sequences of objects defined in plain text.  This
+package allows for the creation of PDF documents at a very low level without any
+library or graphics device dependencies.")
+    (license license:expat)))
+
 (define-public r-minipch
   (package
     (name "r-minipch")
@@ -27745,6 +27773,32 @@ slow (or zero) Internet access.")
 only includes regularized (quasi-)newton optimization (Kanzow and Steck et al.
 (2023), <doi:10.1007/s12532-023-00238-4>).")
     (license license:gpl2+)))
+
+(define-public r-mini007
+  (package
+    (name "r-mini007")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mini007" version))
+       (sha256
+        (base32 "03c3w688mzr9286kd0l06cs2csly70kg90v55j5n2pd7z718d8vc"))))
+    (properties `((upstream-name . "mini007")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uuid r-r6 r-cli r-checkmate))
+    (home-page "https://cran.r-project.org/package=mini007")
+    (synopsis
+     "Lightweight Framework for Orchestrating Multi-Agent Large Language Models")
+    (description
+     "This package provides tools for creating agents with persistent state using R6
+classes <https://cran.r-project.org/package=R6> and the ellmer package
+<https://cran.r-project.org/package=ellmer>.  Tracks prompts, messages, and
+agent metadata for reproducible, multi-turn large language model sessions.")
+    (license license:expat)))
 
 (define-public r-minfactorial
   (package
@@ -31992,6 +32046,37 @@ misclassification parameters based on a given validation set.  This package is
 an implementation of Chen (2013) <doi:10.1002/bimj.201200195>.")
     (license license:gpl2+)))
 
+(define-public r-mgdrive
+  (package
+    (name "r-mgdrive")
+    (version "1.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MGDrivE" version))
+       (sha256
+        (base32 "1szlpwp2zg70zh9fcyi9akclvg367h6gzq798r6ni0ww4n595ph7"))))
+    (properties `((upstream-name . "MGDrivE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-rcpp r-r6))
+    (native-inputs (list r-knitr))
+    (home-page "https://marshalllab.github.io/MGDrivE/")
+    (synopsis "Mosquito Gene Drive Explorer")
+    (description
+     "This package provides a model designed to be a reliable testbed where various
+gene drive interventions for mosquito-borne diseases control.  It is being
+developed to accommodate the use of various mosquito-specific gene drive systems
+within a population dynamics framework that allows migration of individuals
+between patches in landscape.  Previous work developing the population dynamics
+can be found in Deredec et al. (2001) <doi:10.1073/pnas.1110717108> and Hancock
+& Godfray (2007) <doi:10.1186/1475-2875-6-98>, and extensions to accommodate
+CRISPR homing dynamics in Marshall et al. (2017)
+<doi:10.1038/s41598-017-02744-7>.")
+    (license license:gpl3)))
+
 (define-public r-mgcviz
   (package
     (name "r-mgcviz")
@@ -33319,13 +33404,13 @@ visit the vignettes <https://adriancorrendo.github.io/metrica/>.")
 (define-public r-metr
   (package
     (name "r-metr")
-    (version "0.18.1")
+    (version "0.18.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metR" version))
        (sha256
-        (base32 "0xz9iij0fm2654cka7vr52j79s3srfm3g252sxnf92ca6y0zbp2r"))))
+        (base32 "1s39rx1cv3z8qklrdrwjj9p8k0g030cp33qmamfjkf6xpyzryk90"))))
     (properties `((upstream-name . "metR")))
     (build-system r-build-system)
     (arguments
@@ -33334,6 +33419,7 @@ visit the vignettes <https://adriancorrendo.github.io/metrica/>.")
     (propagated-inputs (list r-stringr
                              r-sf
                              r-scales
+                             r-rlang
                              r-purrr
                              r-plyr
                              r-memoise
@@ -37373,13 +37459,13 @@ R01ES028804.")
 (define-public r-mertools
   (package
     (name "r-mertools")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "merTools" version))
        (sha256
-        (base32 "0wxiflkqhl40rr6ibzk4c362m8jxd97jkskdxghqa45lc5vgn1qh"))))
+        (base32 "1mmr1r6dbwfxm8sigk5jbi5cbq840isi32d4bikbcf1gp2g9v7c5"))))
     (properties `((upstream-name . "merTools")))
     (build-system r-build-system)
     (arguments
@@ -40513,13 +40599,13 @@ using NVIDIA GPGPUs.  R. Piliszek et al. (2019) <doi:10.32614/RJ-2019-019>.")
 (define-public r-mdendro
   (package
     (name "r-mdendro")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdendro" version))
        (sha256
-        (base32 "1z5zxxyska9zk6dgwbi403hdpjqs0s99f7i40hqp8yl7779i5vfh"))))
+        (base32 "1ig6qzs87y5zfi01d0mms29lcz42rcn360d6m1f3257iy6pvv84a"))))
     (properties `((upstream-name . "mdendro")))
     (build-system r-build-system)
     (arguments
@@ -40536,7 +40622,7 @@ or similarities), returning a multifurcated dendrogram or multidendrogram.
 Multidendrograms can group more than two clusters when ties in proximity data
 occur, and therefore they do not depend on the order of the input data.
 Descriptive measures to analyze the resulting dendrogram are additionally
-provided.")
+provided. <doi:10.18637/jss.v114.i02>.")
     (license license:agpl3)))
 
 (define-public r-mdei
@@ -47248,13 +47334,13 @@ standard deviation across subgroups.  See A. Marradi \"L'analisi monovariata\"
 (define-public r-marquee
   (package
     (name "r-marquee")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marquee" version))
        (sha256
-        (base32 "0id8hapfa9ybfixni2x2fx1n6js023ibv78gadygdhxgd9nhidjk"))))
+        (base32 "0km01fiv0i2lg6xkzyvdcvb7zzdrw4ag9x9p96fsly72q5l5x4xv"))))
     (properties `((upstream-name . "marquee")))
     (build-system r-build-system)
     (arguments
@@ -47266,6 +47352,7 @@ standard deviation across subgroups.  See A. Marradi \"L'analisi monovariata\"
                              r-s7
                              r-rlang
                              r-png
+                             r-lifecycle
                              r-jpeg
                              r-glue
                              r-cpp11

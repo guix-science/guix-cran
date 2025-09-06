@@ -190,13 +190,13 @@ Freulon P, Bigot J and Hejblum BP (2023) <doi:10.1214/22-AOAS1660>.")
 (define-public r-cytoprofile
   (package
     (name "r-cytoprofile")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CytoProfile" version))
        (sha256
-        (base32 "19fx0r07irvls72prrqyc6p0nw0n2kry6avw3jd691ddcacdl3lm"))))
+        (base32 "0flnaw5y5qbpzgvq3cx8h8mrridjrlbk2zk5kvmkzb2aza269kvi"))))
     (properties `((upstream-name . "CytoProfile")))
     (build-system r-build-system)
     (arguments
@@ -208,9 +208,9 @@ Freulon P, Bigot J and Hejblum BP (2023) <doi:10.1214/22-AOAS1660>.")
                              r-randomforest
                              r-proc
                              r-plot3d
+                             r-pheatmap
                              r-mixomics
                              r-gridextra
-                             r-gplots
                              r-ggrepel
                              r-ggplot2
                              r-e1071
@@ -9147,6 +9147,33 @@ Algorithm-B (R. B. Dial (2006) <doi:10.1016/j.trb.2006.02.008>).")
 equality operations are calculated using cpp11'.")
     (license license:expat)))
 
+(define-public r-cppcontainers
+  (package
+    (name "r-cppcontainers")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cppcontainers" version))
+       (sha256
+        (base32 "0g4zygmab2f9bn79a7043g8v258lfavbnsaicaxl0sf2ls9774sb"))))
+    (properties `((upstream-name . "cppcontainers")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cdueben/cppcontainers")
+    (synopsis "'C++' Standard Template Library Containers")
+    (description
+     "Use C++ Standard Template Library containers interactively in R. Includes sets,
+unordered sets, multisets, unordered multisets, maps, unordered maps, multimaps,
+unordered multimaps, stacks, queues, priority queues, vectors, deques, forward
+lists, and lists.")
+    (license license:expat)))
+
 (define-public r-cppcheckr
   (package
     (name "r-cppcheckr")
@@ -11295,41 +11322,6 @@ on COVID-19 in France.")
 smaller version from dbdataset package.  It contains only information about
 COVID-19 possible treatment.")
     (license license:cc0)))
-
-(define-public r-covid19br
-  (package
-    (name "r-covid19br")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "covid19br" version))
-       (sha256
-        (base32 "00jak3fg4fh4av9sr2wix1b632sd1lwkylp94mn6pmrkwlwnlmpz"))))
-    (properties `((upstream-name . "covid19br")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-sf
-                             r-rlang
-                             r-httr2
-                             r-dplyr
-                             r-data-table))
-    (home-page "https://fndemarqui.github.io/covid19br/")
-    (synopsis "Brazilian COVID-19 Pandemic Data")
-    (description
-     "Set of functions to import COVID-19 pandemic data into R. The Brazilian COVID-19
-data, obtained from the official Brazilian repository at
-<https://covid.saude.gov.br/>, is available at the country, region, state, and
-city levels.  The package also downloads world-level COVID-19 data from Johns
-Hopkins University's repository.  COVID-19 data is available from the start of
-follow-up until to May 5, 2023, when the World Health Organization (WHO)
-declared an end to the Public Health Emergency of International Concern (PHEIC)
-for COVID-19.")
-    (license license:expat)))
 
 (define-public r-covid19-analytics
   (package
@@ -17762,6 +17754,48 @@ Grid, Table, Search, and Filter can be used to produce a showcase page or
 gallery contained within a static or interactive R Markdown page.")
     (license license:expat)))
 
+(define-public r-connector-databricks
+  (package
+    (name "r-connector-databricks")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "connector.databricks" version))
+       (sha256
+        (base32 "09a01ycnqnag277zyq911l9kwgms6ixiyqcz57c7qw0brmmqq9iv"))))
+    (properties `((upstream-name . "connector.databricks")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zephyr
+                             r-withr
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-odbc
+                             r-hms
+                             r-fs
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-connector
+                             r-cli
+                             r-checkmate
+                             r-brickster
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://novonordisk-opensource.github.io/connector.databricks/")
+    (synopsis "Expand 'connector' Package for 'Databricks' Tables and Volumes")
+    (description
+     "Expands the connector
+<https://github.com/@code{NovoNordisk-OpenSource/connector>} package and
+provides a convenient interface for accessing and interacting with Databricks
+<https://www.databricks.com> volumes and tables directly from R.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-connector
   (package
     (name "r-connector")
@@ -19477,13 +19511,13 @@ tasks.")
 (define-public r-condmvt
   (package
     (name "r-condmvt")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CondMVT" version))
        (sha256
-        (base32 "010zfd2pdmajbicslz0wamv20gc0im5iwcfpjd14awi2v9pg9vg8"))))
+        (base32 "0z7xjcjfjz04ggci4cm5am8qapbv7jzqyidfvg4qqr3mmzxmzhh8"))))
     (properties `((upstream-name . "CondMVT")))
     (build-system r-build-system)
     (arguments
@@ -24697,13 +24731,13 @@ cohorts.")
 (define-public r-cohortgenerator
   (package
     (name "r-cohortgenerator")
-    (version "0.12.0")
+    (version "0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortGenerator" version))
        (sha256
-        (base32 "0z8g9a232i59ajygjshbxwblr8y2cjxqwn08r3ys34yfzmbz96pi"))))
+        (base32 "1s34z1y214g3ww81hy7yg0v2l7vfp63fm2adlwdlnfj4vl726yqq"))))
     (properties `((upstream-name . "CohortGenerator")))
     (build-system r-build-system)
     (arguments
@@ -33629,33 +33663,6 @@ the vignettes: \"Discriminant_analysis_examples\",\"K_nearest_neighbors_examples
 \"Support_vector_machine_examples\", \"Rpart_examples\", \"Random_forest_examples\",
 \"Neural_net_examples\", and \"predsplot_examples\".")
     (license license:gpl2+)))
-
-(define-public r-classifly
-  (package
-    (name "r-classifly")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "classifly" version))
-       (sha256
-        (base32 "195pa9g8764m8ddkz7wwzszh2zqqnx2fm7cdsm9q73k6qgf61xj8"))))
-    (properties `((upstream-name . "classifly")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plyr r-class))
-    (home-page "http://had.co.nz/classifly")
-    (synopsis "Explore Classification Models in High Dimensions")
-    (description
-     "Given $p$-dimensional training data containing $d$ groups (the design space), a
-classification algorithm (classifier) predicts which group new data belongs to.
-Generally the input to these algorithms is high dimensional, and the boundaries
-between groups will be high dimensional and perhaps curvilinear or
-multi-faceted.  This package implements methods for understanding the division
-of space between the groups.")
-    (license license:expat)))
 
 (define-public r-classifierplots
   (package
@@ -46250,6 +46257,31 @@ methods and proofs of tightness and validity of the bounds are described in a
 paper by Sachs, Jonzon, Gabriel, and SjÃ¶lander (2022)
 <doi:10.1080/10618600.2022.2071905>.")
     (license license:expat)))
+
+(define-public r-causalnet
+  (package
+    (name "r-causalnet")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "causalnet" version))
+       (sha256
+        (base32 "0mmg6562vdhsqjkara42cbacr8dbx69548m4ps2bbfxkp0hi961d"))))
+    (properties `((upstream-name . "causalnet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-scales r-ggplot2 r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/KyuriP/causalnet")
+    (synopsis "Directed Causal Network Enumeration and Simulation")
+    (description
+     "Enumerate orientation-consistent directed networks from an undirected or
+partially directed skeleton, detect feedback loops, summarize topology, and
+simulate node dynamics via stochastic differential equations.")
+    (license license:gpl3)))
 
 (define-public r-causalmodels
   (package

@@ -4674,13 +4674,13 @@ Esquivel (2024) <doi:10.1093/jalm/jfad109>.")
 (define-public r-qqplotr
   (package
     (name "r-qqplotr")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qqplotr" version))
        (sha256
-        (base32 "0kj1m7m04599d3b6227vja02zwq5d2vc0cyz2c7jvki4g3q2knxf"))))
+        (base32 "1wpvrh386cvb7igpzx2bx9qyaxbjipy9xjqahfmzyhrla8k10388"))))
     (properties `((upstream-name . "qqplotr")))
     (build-system r-build-system)
     (arguments

@@ -3619,13 +3619,13 @@ as probability of exclusion (PE).")
 (define-public r-kinship2
   (package
     (name "r-kinship2")
-    (version "1.9.6.1")
+    (version "1.9.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kinship2" version))
        (sha256
-        (base32 "0bggc78b3xyz6vczbbqhibn6zxgsw122nzymsndk5nd19yb76nv9"))))
+        (base32 "0kpa1awnm20b62iks3sz7w34iay7gd6vir99yf7pw1wbbg4jidl5"))))
     (properties `((upstream-name . "kinship2")))
     (build-system r-build-system)
     (arguments
@@ -3709,13 +3709,13 @@ given along with sale prices.")
 (define-public r-kinesis
   (package
     (name "r-kinesis")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kinesis" version))
        (sha256
-        (base32 "0qj5znbh46vaah7cslhhd7wp4yycglv7mi5l823mnhpljldh92h0"))))
+        (base32 "0kl8pbbg5vd40a3514w24256xcycyricrbhpmhvic6cr2dkmp762"))))
     (properties `((upstream-name . "kinesis")))
     (build-system r-build-system)
     (arguments
@@ -3730,7 +3730,6 @@ given along with sale prices.")
                              r-kairos
                              r-isopleuros
                              r-gt
-                             r-folio
                              r-dimensio
                              r-config
                              r-bslib
@@ -6312,13 +6311,13 @@ polynomial in the number of observed categories.")
 (define-public r-kbmvtskew
   (package
     (name "r-kbmvtskew")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KbMvtSkew" version))
        (sha256
-        (base32 "14g27a0dkj4gpf5l2k96fd3aa21fz8b85lf5a1jxj0qgjmr4kib0"))))
+        (base32 "0w34rkn9j2n9xsxv7ksw2f1sahw6aqziy8anaxkh2cqhfi0fiwv9"))))
     (properties `((upstream-name . "KbMvtSkew")))
     (build-system r-build-system)
     (arguments
@@ -6333,7 +6332,7 @@ provides several measures of univariate or multivariate skewnesses including,
 Pearsonâs coefficient of skewness, Bowleyâs univariate skewness and Mardia's
 multivariate skewness.  See Khattree, R. and Bahuguna, M. (2019) <doi:
 10.1007/s41060-018-0106-1>.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-kbal
   (package
