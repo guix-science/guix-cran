@@ -49138,13 +49138,13 @@ coefficients.  Both shrinkage as well as empirical estimators are available.")
 (define-public r-cardiodatasets
   (package
     (name "r-cardiodatasets")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CardioDataSets" version))
        (sha256
-        (base32 "0b65nzbnrhr4xy1k3s6zwdg5mbcahp7k8l2rjaay60ajf8qbh5sk"))))
+        (base32 "00hxm9swvr3grgx6vq2r6d53k8fgrfcfqscxx54f210d1495jkki"))))
     (properties `((upstream-name . "CardioDataSets")))
     (build-system r-build-system)
     (arguments

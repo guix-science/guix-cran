@@ -24386,13 +24386,13 @@ rstudioapi'.")
 (define-public r-deepregression
   (package
     (name "r-deepregression")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deepregression" version))
        (sha256
-        (base32 "1brfrkz472lbrd9rm63k4n934ayxi3lmvkv2rf36wd52hpac5gi6"))))
+        (base32 "0ghq91b0nwwpw08xfzhd9pc35j6pdxmqwyv042qs967bds08vzrx"))))
     (properties `((upstream-name . "deepregression")))
     (build-system r-build-system)
     (arguments

@@ -44,13 +44,13 @@
 (define-public r-jwileymisc
   (package
     (name "r-jwileymisc")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JWileymisc" version))
        (sha256
-        (base32 "1wi4jkd7w15l3jw5v62j40lzbjz3l1ww7g06lpr9d64wb1zxiphp"))))
+        (base32 "18ikbbfvpgsm7diwp4w4qf3r6iyxdcyylgqbzdr39b18rdnv4z5l"))))
     (properties `((upstream-name . "JWileymisc")))
     (build-system r-build-system)
     (arguments

@@ -27251,13 +27251,13 @@ position type and the chromosome number.")
 (define-public r-rice
   (package
     (name "r-rice")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rice" version))
        (sha256
-        (base32 "0npppmhl9m1bhlcq39wx9qf81hij61k6fzbv0izy14spy51xwsq4"))))
+        (base32 "0br9853m8s5wpnybyxfh0h66nav7ap15fdpq5ppadw5flhnpf51d"))))
     (properties `((upstream-name . "rice")))
     (build-system r-build-system)
     (arguments
@@ -27269,7 +27269,7 @@ position type and the chromosome number.")
     (synopsis "Radiocarbon Equations")
     (description
      "This package provides functions for the calibration of radiocarbon dates, as
-well as options to calculate different radiocarbon realms (C14 age, F14C,
+well as options to calculate different radiocarbon timescales (C14 age, F14C,
 @code{pMC}, D14C) and estimating the effects of contamination or local reservoir
 offsets (Reimer and Reimer 2001 <doi:10.1017/S0033822200038339>).  The methods
 follow long-established recommendations such as Stuiver and Polach (1977)
@@ -40433,13 +40433,13 @@ at <https://github.com/leondap/recluster>.")
 (define-public r-reclin2
   (package
     (name "r-reclin2")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reclin2" version))
        (sha256
-        (base32 "08jf6r74fmsj2bvhz76vf74hphg8543x4wj1dnbsj44xjzh6abi4"))))
+        (base32 "16mcwfmydz40y12manbk98xjpixv7yfq32cd3g2kh8rvhf6077hh"))))
     (properties `((upstream-name . "reclin2")))
     (build-system r-build-system)
     (arguments

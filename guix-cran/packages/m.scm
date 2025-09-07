@@ -22505,13 +22505,13 @@ SR, @code{McVean} G, Turnbaugh PJ, Lander ES, Mitzenmacher M, Sabeti PC. (2011).
 (define-public r-mlexperiments
   (package
     (name "r-mlexperiments")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlexperiments" version))
        (sha256
-        (base32 "15h4xkkzg8v5cnv46pa0bn2r0gjb8v42f8vzihnbxj8hhr3fghlc"))))
+        (base32 "0jvf4b2g42jfy2angsmwwshwxhd7s0m7dmfyz5nanswhznfqs9wv"))))
     (properties `((upstream-name . "mlexperiments")))
     (build-system r-build-system)
     (arguments
@@ -25458,13 +25458,13 @@ of Health and Human Services.")
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "0v2wcgqy4x70vk2y0l52i1b64lv5nval9b4bgl09i1snfn6icbsg"))))
+        (base32 "0wqahvq63g70r8mjjwwvi1hsh0a6cygcbmhrvjn3w0qlg3lz4xzj"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (arguments

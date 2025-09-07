@@ -22949,13 +22949,13 @@ assessment.")
 (define-public r-spm
   (package
     (name "r-spm")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spm" version))
        (sha256
-        (base32 "0slpy3cmv5l2gbgvy3yfdhzm73427bl39shadpmf3jkkbflcczsn"))))
+        (base32 "1gygqd1mkh88v5ifwmqn7pjg6zmx5s7k6187vv2fd2srq93kny66"))))
     (properties `((upstream-name . "spm")))
     (build-system r-build-system)
     (arguments
@@ -22966,8 +22966,7 @@ assessment.")
                              r-randomforest
                              r-psy
                              r-gstat
-                             r-gbm
-                             r-biomod2))
+                             r-gbm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=spm")
     (synopsis "Spatial Predictive Modeling")
@@ -22980,11 +22979,12 @@ function is for assessing the predictive errors and accuracy of the method based
 on cross-validation.  The other one is for generating spatial predictions using
 the method.  For details please see: Li, J., Potter, A., Huang, Z., Daniell, J.
 J. and Heap, A. (2010)
-<https:www.ga.gov.au/metadata-gateway/metadata/record/gcat_71407> Li, J., Heap,
-A. D., Potter, A., Huang, Z. and Daniell, J. (2011)
+<https://ecat.ga.gov.au/geonetwork/srv/eng/catalog.search#/metadata/71407> Li,
+J., Heap, A. D., Potter, A., Huang, Z. and Daniell, J. (2011)
 <doi:10.1016/j.csr.2011.05.015> Li, J., Heap, A. D., Potter, A. and Daniell, J.
 (2011) <doi:10.1016/j.envsoft.2011.07.004> Li, J., Potter, A., Huang, Z. and
-Heap, A. (2012) <https:www.ga.gov.au/metadata-gateway/metadata/record/74030>.")
+Heap, A. (2012)
+<https://ecat.ga.gov.au/geonetwork/srv/eng/catalog.search#/metadata/74030>.")
     (license license:gpl2+)))
 
 (define-public r-splutil
@@ -47627,13 +47627,13 @@ researches.")
 (define-public r-sidra
   (package
     (name "r-sidra")
-    (version "0.1.7")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sidra" version))
        (sha256
-        (base32 "0zlh6n8bjfa61dwd5xnd70vymq6nl9ys3iqwadjg3p8h5r39paya"))))
+        (base32 "1l88ppkrvqz0nwdixaxcl23dpqmxpgf4mkaa8hy0krrdnd89mrx7"))))
     (properties `((upstream-name . "sidra")))
     (build-system r-build-system)
     (arguments

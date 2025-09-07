@@ -12862,13 +12862,13 @@ clusters across datasets.  More details can be referred to Wei Liu, et al.
 (define-public r-pre
   (package
     (name "r-pre")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pre" version))
        (sha256
-        (base32 "170kfyhnb6hqyknkf4h6cxcaif6z2m8n6gslyj88sfch2xbfx0b1"))))
+        (base32 "0hxfgnaqnx2y1dsrpc9fhgd5alnn2s8w98nmky2zkg3w8ny84cfp"))))
     (properties `((upstream-name . "pre")))
     (build-system r-build-system)
     (arguments
@@ -12889,11 +12889,13 @@ clusters across datasets.  More details can be referred to Wei Liu, et al.
     (description
      "Derives prediction rule ensembles (PREs).  Largely follows the procedure for
 deriving PREs as described in Friedman & Popescu (2008;
-<DOI:10.1214/07-AOAS148>), with adjustments and improvements.  The main function
-@code{pre()} derives prediction rule ensembles consisting of rules and/or linear
-terms for continuous, binary, count, multinomial, and multivariate continuous
-responses.  Function @code{gpe()} derives generalized prediction ensembles,
-consisting of rules, hinge and linear functions of the predictor variables.")
+<DOI:10.1214/07-AOAS148>), with adjustments and improvements described in
+Fokkema (2020; <DOI:10.18637/jss.v092.i12>) and Fokkema & Strobl (2020;
+<DOI:10.1037/met0000256>).  The main function @code{pre()} derives prediction
+rule ensembles consisting of rules and/or linear terms for continuous, binary,
+count, multinomial, survival and multivariate continuous responses.  Function
+@code{gpe()} derives generalized prediction ensembles, consisting of rules,
+hinge and linear functions of the predictor variables.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-prda
@@ -28606,13 +28608,13 @@ al. (2007) <doi:10.1371/journal.pone.0000296> Laffan, S. W. et al. (2016)
 (define-public r-phylopath
   (package
     (name "r-phylopath")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylopath" version))
        (sha256
-        (base32 "1a99b55xi28d0nygnb6y4a1n9y28zjz2sw6k0hfv09kb3xzr03wy"))))
+        (base32 "0zr2sm26kg0843baw62akcvjscq3dqy2w84qkkavdr4gwzzydgzv"))))
     (properties `((upstream-name . "phylopath")))
     (build-system r-build-system)
     (arguments
@@ -31319,18 +31321,19 @@ Statistical Programming.")
 (define-public r-pharmaverseadam
   (package
     (name "r-pharmaverseadam")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaverseadam" version))
        (sha256
-        (base32 "1h5d5ky5pb83rrss16mg8l9s8mk6l1alw3jga5mx5xmg5ii8w6jf"))))
+        (base32 "0r0sfvsfnqj943v2xipl3xfpbv443zsbxvbx6mc3vdb376j0kia7"))))
     (properties `((upstream-name . "pharmaverseadam")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-tibble))
     (home-page "https://pharmaverse.github.io/pharmaverseadam/")
     (synopsis "ADaM Test Data for the 'Pharmaverse' Family of Packages")
     (description

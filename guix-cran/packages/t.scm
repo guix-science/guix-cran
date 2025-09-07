@@ -5718,28 +5718,6 @@ dataset into a transaction on the decentralized blockchain (Stellar network).
 The package makes use of a free service provided by <https://stellarapi.io>.")
     (license license:agpl3)))
 
-(define-public r-truncsp
-  (package
-    (name "r-truncsp")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "truncSP" version))
-       (sha256
-        (base32 "1hdi518j3sg9273g01l1jqlmqya3ppim82ma7zakwqpmsjmzw18q"))))
-    (properties `((upstream-name . "truncSP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-truncreg r-boot))
-    (home-page "https://cran.r-project.org/package=truncSP")
-    (synopsis "Semi-parametric estimators of truncated regression models")
-    (description
-     "Semi-parametric estimation of truncated linear regression models.")
-    (license license:gpl2+)))
-
 (define-public r-truncreg
   (package
     (name "r-truncreg")
@@ -9446,36 +9424,6 @@ principle of transx is to keep the number of observations the same.  Operations
 that reduce this number have to fill the observations gap.")
     (license license:gpl3)))
 
-(define-public r-transurv
-  (package
-    (name "r-transurv")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tranSurv" version))
-       (sha256
-        (base32 "0jccdkhz942kaz3ddvhlcdn0q1g9yvwqczvr9zclg1adwl95yc6k"))))
-    (properties `((upstream-name . "tranSurv")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-truncsp r-survival r-squarem r-rootsolve))
-    (home-page "https://github.com/stc04003/tranSurv")
-    (synopsis "Transformation-Based Regression under Dependent Truncation")
-    (description
-     "This package provides a latent, quasi-independent truncation time is assumed to
-be linked with the observed dependent truncation time, the event time, and an
-unknown transformation parameter via a structural transformation model.  The
-transformation parameter is chosen to minimize the conditional Kendall's tau
-(Martin and Betensky, 2005) <doi:10.1198/016214504000001538> or the regression
-coefficient estimates (Jones and Crowley, 1992) <doi:10.2307/2336782>.  The
-marginal distribution for the truncation time and the event time are completely
-left unspecified.  The methodology is applied to survival curve estimation and
-regression analysis.")
-    (license license:gpl3+)))
-
 (define-public r-transtggm
   (package
     (name "r-transtggm")
@@ -11094,13 +11042,13 @@ power and runtime.")
 (define-public r-trade
   (package
     (name "r-trade")
-    (version "0.8.1")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trade" version))
        (sha256
-        (base32 "198qd3rnw5yh6i2nxsi3d4dvkrpaq37j881ixnabjl496pkkzdnx"))))
+        (base32 "1mnf9k19484a4w8icbcc18siim2wf6j0yazzijm8hiyylqczdy6v"))))
     (properties `((upstream-name . "trade")))
     (build-system r-build-system)
     (arguments
@@ -23154,13 +23102,13 @@ import, modify, and export tables and templates with little to no code.")
 (define-public r-tfrmt
   (package
     (name "r-tfrmt")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfrmt" version))
        (sha256
-        (base32 "1hjjxagcmr3rrg105mbnhddajicm0q8vxgzq72f8gkf5yhsbi9w5"))))
+        (base32 "0xnr35390bsmvk0297v2lmwqrnc017wz9lkzcznslrf063cxklyf"))))
     (properties `((upstream-name . "tfrmt")))
     (build-system r-build-system)
     (arguments
@@ -23179,7 +23127,8 @@ import, modify, and export tables and templates with little to no code.")
                              r-glue
                              r-ggplot2
                              r-forcats
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (home-page "https://GSK-Biostatistics.github.io/tfrmt/")
     (synopsis "Applies Display Metadata to Analysis Results Datasets")
     (description
