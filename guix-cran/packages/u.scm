@@ -1159,30 +1159,6 @@ file according to the format from the U.S. Copyright Office SR Audit Data online
 database.")
     (license license:gpl2+)))
 
-(define-public r-usaidplot
-  (package
-    (name "r-usaidplot")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "usaidplot" version))
-       (sha256
-        (base32 "0ar4raxmmsy8v4qakq2bff9dr85mnbpid5z94nqk43nxwcrhs7lx"))))
-    (properties `((upstream-name . "usaidplot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2 r-extrafontdb r-extrafont))
-    (home-page "https://github.com/jacobpstein/usaid_plot")
-    (synopsis
-     "Make Graphs with US Agency for International Development Colors")
-    (description
-     "Automatically apply the United States Agency for International Development's
-color palette and fonts for either discrete or continuous variables.")
-    (license license:expat)))
-
 (define-public r-usa-state-boundaries
   (package
     (name "r-usa-state-boundaries")
@@ -3854,57 +3830,6 @@ visualization of HTML tables, series, bar and pie charts, maps, etc.  It
 provides the capability to transition from the interactive to the dynamic world
 and from one library to another without changing function or syntax.")
     (license license:gpl3+)))
-
-(define-public r-umx
-  (package
-    (name "r-umx")
-    (version "4.21.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "umx" version))
-       (sha256
-        (base32 "0iyrpqv8z49vcnv021j1iwxpahc2gflfq9nfx7clr7gjnbkxx98k"))))
-    (properties `((upstream-name . "umx")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xtable
-                             r-scales
-                             r-rmarkdown
-                             r-rcurl
-                             r-r2html
-                             r-pwr
-                             r-psychtools
-                             r-psych
-                             r-polycor
-                             r-paran
-                             r-openxlsx
-                             r-openmx
-                             r-nlme
-                             r-mvtnorm
-                             r-mumin
-                             r-matrix
-                             r-mass
-                             r-lavaan
-                             r-knitr
-                             r-kableextra
-                             r-hrbrthemes
-                             r-ggplot2
-                             r-gert
-                             r-foreign
-                             r-diagrammer
-                             r-cowplot))
-    (home-page "https://github.com/tbates/umx#readme")
-    (synopsis "Structural Equation Modeling and Twin Modeling in R")
-    (description
-     "Quickly create, run, and report structural equation models, and twin models.
-See ?umx for help, and umx_open_CRAN_page(\"umx\") for NEWS. Timothy C. Bates,
-Michael C. Neale, Hermine H. Maes, (2019).  umx: A library for Structural
-Equation and Twin Modelling in R. Twin Research and Human Genetics, 22, 27-41.
-<doi:10.1017/thg.2019.2>.")
-    (license license:gpl3)))
 
 (define-public r-umpire
   (package

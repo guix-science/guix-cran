@@ -3543,13 +3543,13 @@ the Observational Medical Outcomes Partnership (OMOP) Common Data Model.")
 (define-public r-vismeteor
   (package
     (name "r-vismeteor")
-    (version "1.8.5")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vismeteor" version))
        (sha256
-        (base32 "059v7qxpkhir066rrw9kxnb8wnyjgwi2fj9mkb7wl0zrqbknhglb"))))
+        (base32 "1q8crp233r4a83lg7v3zj696bdhamvw457ydpw5qfkabp0r9ydnn"))))
     (properties `((upstream-name . "vismeteor")))
     (build-system r-build-system)
     (arguments
@@ -10142,13 +10142,13 @@ vaccineff class.")
 (define-public r-vaccine
   (package
     (name "r-vaccine")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vaccine" version))
        (sha256
-        (base32 "0w7rqhd6ik5bknv56i2vnz2zh1r6bvaygqf2az065ypjjfmpdj3m"))))
+        (base32 "0m9p9qcsdvc19vnclsy72jmcxhlznmk8p5s9sl9cqlvvbvsv1vbb"))))
     (properties `((upstream-name . "vaccine")))
     (build-system r-build-system)
     (arguments

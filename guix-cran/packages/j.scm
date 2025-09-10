@@ -1637,13 +1637,13 @@ Bootstrap.")
 (define-public r-jqbr
   (package
     (name "r-jqbr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jqbr" version))
        (sha256
-        (base32 "1afraa18zwv3lbgxpqj4zkvlhzmv5ziajww1iccpkr7ca1rn4zk3"))))
+        (base32 "09hgp3vr5xwvd72kibim708fxymkdmq2yszmhyp6hi90sxkq51ic"))))
     (properties `((upstream-name . "jqbr")))
     (build-system r-build-system)
     (arguments

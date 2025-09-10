@@ -1616,13 +1616,13 @@ auxiliary vector selection.  For more details see Tibshirani (1996)
 (define-public r-auxsurvey
   (package
     (name "r-auxsurvey")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AuxSurvey" version))
        (sha256
-        (base32 "1qg75i5gv2z2yv944ngjnayq946v0n09ixc3p54hw3vjy8hs6z2b"))))
+        (base32 "02xsprqc1mbmzk3nbchw0s139vjayaw8rdcm4fw2ms21sjch647k"))))
     (properties `((upstream-name . "AuxSurvey")))
     (build-system r-build-system)
     (arguments
@@ -1634,7 +1634,6 @@ auxiliary vector selection.  For more details see Tibshirani (1996)
                              r-rlang
                              r-mgcv
                              r-gtools
-                             r-gridextra
                              r-dplyr
                              r-coda
                              r-bart))
@@ -1843,6 +1842,39 @@ Threshold plugin functionality to R users.  See
 <https://imagej.net/plugins/auto-threshold> and Landini et al. (2017)
 <DOI:10.1111/jmi.12474>.")
     (license license:gpl3)))
+
+(define-public r-autotester
+  (package
+    (name "r-autotester")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autotesteR" version))
+       (sha256
+        (base32 "0w35dkr8x9m1g7gp03p2fqqzmv5jy1qmkrjawmykz997n6r0vgdv"))))
+    (properties `((upstream-name . "autotesteR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nortest
+                             r-multcompview
+                             r-ggplot2
+                             r-fsa
+                             r-dplyr
+                             r-crayon
+                             r-car))
+    (home-page "https://cran.r-project.org/package=autotesteR")
+    (synopsis "Automated Functions for Basic Statistical Tests")
+    (description
+     "This package provides simple and intuitive functions for basic statistical
+analyses.  Methods include the t-test (Student 1908 <doi:10.1093/biomet/6.1.1>),
+the Mann-Whitney U test (Mann and Whitney 1947 <doi:10.1214/aoms/1177730491>),
+Pearson's correlation (Pearson 1895 <doi:10.1098/rspl.1895.0041>), and analysis
+of variance (Fisher 1925, <doi:10.1007/978-1-4612-4380-9_5>).  Functions are
+compatible with ggplot2 and dplyr'.")
+    (license license:expat)))
 
 (define-public r-autostsm
   (package
@@ -16684,13 +16716,13 @@ models, helping to select the best model.")
 (define-public r-alone
   (package
     (name "r-alone")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alone" version))
        (sha256
-        (base32 "09znb8pd58vsjmf3ipw3r5p4lgv4fabhzxklkia6z33wgx6k13x7"))))
+        (base32 "0hk3pgq574wklwjd6v2mbwywzzy30a17xpz1fbzc6wflv93vqpqz"))))
     (properties `((upstream-name . "alone")))
     (build-system r-build-system)
     (arguments

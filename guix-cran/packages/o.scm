@@ -669,13 +669,13 @@ different file formats.  For more information, visit
 (define-public r-overshiny
   (package
     (name "r-overshiny")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "overshiny" version))
        (sha256
-        (base32 "08qafwih6x90dj7r7113g8c96c91p4a8i6mgl8zagz8g8k4fhqbd"))))
+        (base32 "1f2jdfvwirlbbhppdm0sh6rcfrixz2qhyxkivnrhkszmph1ainb6"))))
     (properties `((upstream-name . "overshiny")))
     (build-system r-build-system)
     (arguments
@@ -3605,13 +3605,13 @@ cyclical projection algorithm.")
 (define-public r-ordinalsimr
   (package
     (name "r-ordinalsimr")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordinalsimr" version))
        (sha256
-        (base32 "1g4l2cm5k104kj1pxm6ckgb0wr64yi8f3xvxj2ks9mzi3zdp7kmc"))))
+        (base32 "0dgz5jkmcfig2csapddh6yg4syhl7q1qkizd8sn9c3nhv0psra83"))))
     (properties `((upstream-name . "ordinalsimr")))
     (build-system r-build-system)
     (arguments
@@ -4595,28 +4595,29 @@ information in relation to the OPUS Miner algorithm.")
 (define-public r-optweight
   (package
     (name "r-optweight")
-    (version "0.2.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optweight" version))
        (sha256
-        (base32 "1mfk9sp47flqq7i762wip5191j8m0q9kbyxs4a7f0pd76qwf67q2"))))
+        (base32 "0yyaxp00qnvl1igq7qqcbazckfpbw5snjymy0qxfkcvgx9wj682b"))))
     (properties `((upstream-name . "optweight")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-osqp r-matrix r-ggplot2))
-    (home-page "https://cran.r-project.org/package=optweight")
-    (synopsis "Targeted Stable Balancing Weights Using Optimization")
+    (propagated-inputs (list r-rlang r-osqp r-matrix r-ggplot2 r-chk))
+    (native-inputs (list r-knitr))
+    (home-page "https://ngreifer.github.io/optweight/")
+    (synopsis "Optimization-Based Stable Balancing Weights")
     (description
      "Use optimization to estimate weights that balance covariates for binary,
-multinomial, and continuous treatments in the spirit of Zubizarreta (2015)
-<doi:10.1080/01621459.2015.1023805>.  The degree of balance can be specified for
-each covariate.  In addition, sampling weights can be estimated that allow a
-sample to generalize to a population specified with given target moments of
-covariates.")
+multi-category, continuous, and multivariate treatments in the spirit of
+Zubizarreta (2015) <doi:10.1080/01621459.2015.1023805>.  The degree of balance
+can be specified for each covariate.  In addition, sampling weights can be
+estimated that allow a sample to generalize to a population specified with given
+target moments of covariates.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-opttesting
@@ -5582,13 +5583,13 @@ Krieger, Michael Sklar and David Azriel (2020) <@code{arXiv:1905.03337>}.")
 (define-public r-optimall
   (package
     (name "r-optimall")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimall" version))
        (sha256
-        (base32 "13xwj2mb1j1whr8786lam4g3sp7izj8nz0k25cz7fp07h3kzn28r"))))
+        (base32 "1afwykc5anwj50djw8fh0qcmkblq1dbardys40y6nynib482n1m7"))))
     (properties `((upstream-name . "optimall")))
     (build-system r-build-system)
     (arguments
@@ -5605,7 +5606,9 @@ allocation using Neyman (1934) <doi:10.2307/2342192> or Wright (2012)
 <doi:10.1080/00031305.2012.733679> allocation, split strata based on quantiles
 or values of known variables, randomly select samples from strata, allocate
 sampling waves iteratively, and organize a complex survey design.  Also includes
-a Shiny application for observing the effects of different strata splits.")
+a Shiny application for observing the effects of different strata splits.  A
+paper on this package was published in the Journal of Statistical Software
+<doi:10.18637/jss.v114.i10>.")
     (license license:gpl3)))
 
 (define-public r-optimaldesign
@@ -6091,6 +6094,34 @@ P@code{TaC}.")
      "Aids practitioners to optimally design experiments that measure the slope
 divided by the intercept and provides confidence intervals for the ratio.")
     (license license:gpl3)))
+
+(define-public r-optconerrf
+  (package
+    (name "r-optconerrf")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optconerrf" version))
+       (sha256
+        (base32 "14qh7mqvs5kf6masr55h8299axpyp8k5f9xrlms0y82v6yl69w83"))))
+    (properties `((upstream-name . "optconerrf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/morten-dreher/optconerrf")
+    (synopsis "Optimal Monotone Conditional Error Functions")
+    (description
+     "Design and analysis of confirmatory adaptive clinical trials using the optimal
+conditional error framework according to Brannath and Bauer (2004)
+<doi:10.1111/j.0006-341X.2004.00221.x>.  An extension to the optimal conditional
+error function using interim estimates as described in Brannath and Dreher
+(2024) <doi:10.48550/@code{arXiv.2402.00814>} and functions to ensure that the
+resulting conditional error function is non-increasing are also available.")
+    (license license:gpl3+)))
 
 (define-public r-optcirclust
   (package
@@ -11333,19 +11364,19 @@ a high-dimensional linear regression model via OGA+HDIC+Trim.")
 (define-public r-ohenery
   (package
     (name "r-ohenery")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ohenery" version))
        (sha256
-        (base32 "1mcrn7ia3xc809hzsfj16ig312l2zvbk7sm2mqjrkxfkdnpyn8dy"))))
+        (base32 "174n77z9fmddmzdpxfhs55lcrzkql6kr6876l14lilayzbxqv08m"))))
     (properties `((upstream-name . "ohenery")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-maxlik r-magrittr r-dplyr))
+    (propagated-inputs (list r-rcpp r-maxlik r-magrittr r-generics r-dplyr))
     (home-page "https://github.com/shabbychef/ohenery")
     (synopsis "Modeling of Ordinal Random Variables via Softmax Regression")
     (description
@@ -11753,40 +11784,6 @@ Statistics data release from the U.S. Bureau of Labor Statistics.  The dataset
 covers employment and wages across occupations, industries, states, and at the
 national level.  Metropolitan data is not included.")
     (license license:expat)))
-
-(define-public r-oesr
-  (package
-    (name "r-oesr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "oesr" version))
-       (sha256
-        (base32 "078jjvm9d0g8jaab0x2z4h7h8m2pznamiglhkwv07xc65cskjmpb"))))
-    (properties `((upstream-name . "oesr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-sandwich
-                             r-rlang
-                             r-ggplot2
-                             r-extrafont
-                             r-estimatr
-                             r-dplyr
-                             r-broom))
-    (home-page "https://cran.r-project.org/package=oesr")
-    (synopsis "Methods for the Office of Evaluation Sciences")
-    (description
-     "This package provides methods for statistical analysis and reporting preferred
-by the US Office of Evaluation Sciences (OES).  This package prepares data from
-standard model output objects (such as from @code{\\code{lm()}} and
-@code{\\code{estimatr::lm_robust()}}) and creates visualizations of treatment
-effects from the prepared quantities, according to the standards of the US
-Office of Evaluation Sciences.")
-    (license license:gpl3)))
 
 (define-public r-oenokpm
   (package
@@ -13353,48 +13350,6 @@ an efficient survey design.  Reference: Fukaya et al. (2022)
 <doi:10.1111/2041-210X.13732>, Fukaya and Hasebe (2025)
 <doi:10.1002/1438-390X.12219>.")
     (license license:gpl3+)))
-
-(define-public r-occcite
-  (package
-    (name "r-occcite")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "occCite" version))
-       (sha256
-        (base32 "1k1z6hkf7yid6bqivzzsnpp4bwx6vaqn310qsb8gf4mzlc0f5icr"))))
-    (properties `((upstream-name . "occCite")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-waffle
-                             r-viridis
-                             r-tidyr
-                             r-stringr
-                             r-rpostgresql
-                             r-rlang
-                             r-rgbif
-                             r-refmanager
-                             r-rcolorbrewer
-                             r-lubridate
-                             r-leaflet
-                             r-htmltools
-                             r-ggplot2
-                             r-dplyr
-                             r-dbi
-                             r-curl
-                             r-bien
-                             r-bib2df))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://docs.ropensci.org/occCite/")
-    (synopsis "Querying and Managing Large Biodiversity Occurrence Datasets")
-    (description
-     "Facilitates the gathering of biodiversity occurrence data from disparate
-sources.  Metadata is managed throughout the process to facilitate reporting and
-enhanced ability to repeat analyses.")
-    (license license:gpl3)))
 
 (define-public r-occ
   (package

@@ -12599,6 +12599,33 @@ stems from @code{AdaptGauss}': Ultsch, A, et al. (2015)
 <doi:10.3390/ijms161025897>.")
     (license license:expat)))
 
+(define-public r-distributioniv
+  (package
+    (name "r-distributioniv")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DistributionIV" version))
+       (sha256
+        (base32 "07q8pfasiav2wp2srbnxbh0zlh6pchjv7d7dwdl5cw4ci921hsjw"))))
+    (properties `((upstream-name . "DistributionIV")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-checkmate))
+    (home-page "https://cran.r-project.org/package=DistributionIV")
+    (synopsis "Distributional Instrumental Variable (DIV) Model")
+    (description
+     "Distributional instrumental variable (DIV) model for estimation of the
+interventional distribution of the outcome Y under a do intervention on the
+treatment X. Instruments, predictors and targets can be univariate or
+multivariate.  Functionality includes estimation of the (conditional)
+interventional mean and quantiles, as well as sampling from the fitted
+(conditional) interventional distribution.")
+    (license license:expat)))
+
 (define-public r-distributacalcul
   (package
     (name "r-distributacalcul")
@@ -14420,19 +14447,24 @@ on Dempsey and Wyse (2025) <doi:10.48550/@code{arXiv.2403.03646>}.")
 (define-public r-discretedists
   (package
     (name "r-discretedists")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteDists" version))
        (sha256
-        (base32 "1cag5z4ag1n21ya2fiwrxvflnn4fnqgqfqxgg48r68jvmzdglhbn"))))
+        (base32 "1kwvmvykcky9mv0c8ghy29vvrs14jaxaha4ww0yzwq7dsa7ms315"))))
     (properties `((upstream-name . "DiscreteDists")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack r-rcpp r-pracma r-gamlss-dist r-gamlss))
+    (propagated-inputs (list r-rcpp
+                             r-pracma
+                             r-nleqslv
+                             r-gamlss-dist
+                             r-gamlss
+                             r-compoissonreg))
     (home-page "https://github.com/fhernanb/DiscreteDists")
     (synopsis "Discrete Statistical Distributions")
     (description
@@ -16332,13 +16364,13 @@ index.")
 (define-public r-digestivedatasets
   (package
     (name "r-digestivedatasets")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DigestiveDataSets" version))
        (sha256
-        (base32 "1izzjrlcr64q7ycm5s2hgkb3v0qzc7dbm750rx697qk28891b06n"))))
+        (base32 "1sc59g8x8r7dycra7acy5awq3i7gp1vsi59qw3jxh9kn13rhinr1"))))
     (properties `((upstream-name . "DigestiveDataSets")))
     (build-system r-build-system)
     (arguments
@@ -19696,13 +19728,13 @@ these adjustments.")
 (define-public r-dfa-cancor
   (package
     (name "r-dfa-cancor")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DFA.CANCOR" version))
        (sha256
-        (base32 "09m4913523mba7sf9xf0i5ycmvdcf5w10x5f3hfx391bd9kj3y98"))))
+        (base32 "1shzsl61zn2wnwis27r3scbnmsh4in2w2byvwijki73pz09papd9"))))
     (properties `((upstream-name . "DFA.CANCOR")))
     (build-system r-build-system)
     (arguments
@@ -19869,13 +19901,13 @@ analysis of data from educational and psychological tests.")
 (define-public r-dexisensitivity
   (package
     (name "r-dexisensitivity")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dexisensitivity" version))
        (sha256
-        (base32 "04avsh79xhcm66rl0nzyg5d9llmm6k0jyqza3crvpj6hi9k9scdx"))))
+        (base32 "1jjsw7qbm2wxha4gpf272vylc493cw94xpx1zp8f8ffdr2dhzh96"))))
     (properties `((upstream-name . "dexisensitivity")))
     (build-system r-build-system)
     (arguments
@@ -19905,8 +19937,7 @@ comparison of scenarios.  Whether for in-depth decision modeling or sensitivity
 analysis, this package stands as a comprehensive solution.  Definition of
 sensitivity analyses available in Carpani, Bergez and Monod (2012)
 <doi:10.1016/j.envsoft.2011.10.002> and detailed description of the package soon
-available in Alaphilippe, Allart, Carpani, Cavan, Monod and Bergez (submitted to
-Software Impacts).")
+available in Alaphilippe et al. (2025) <doi:10.1016/j.simpa.2024.100729>.")
     (license license:gpl2+)))
 
 (define-public r-dexir
@@ -21376,13 +21407,13 @@ The package is based on Gerring, Jerzak, and Oncel (2024)
 (define-public r-descriptio
   (package
     (name "r-descriptio")
-    (version "1.4.1")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "descriptio" version))
        (sha256
-        (base32 "1q3wxzip82vv9q5nkz9vx3nxsmpa9a2xxsw5qf0cx8bq2185911d"))))
+        (base32 "0iyksim4w6i5bqwdwgk8p4vfim90vnhhp3zw5hpypqhbr1a788y0"))))
     (properties `((upstream-name . "descriptio")))
     (build-system r-build-system)
     (arguments
@@ -21931,13 +21962,13 @@ and Yu, Fernandez, and Brock (2020) <doi:10.1186/s12859-020-3541-7>.")
 (define-public r-depons2r
   (package
     (name "r-depons2r")
-    (version "1.2.6")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DEPONS2R" version))
        (sha256
-        (base32 "1zki7fwlhjbzqvyz50l3mmgj6d9z1pa2101zphc792lnmsj6ncch"))))
+        (base32 "1y3pwq9nih4kpgml10i2zcpmvyr39482yqrfb4glzp19gajggw7f"))))
     (properties `((upstream-name . "DEPONS2R")))
     (build-system r-build-system)
     (arguments
@@ -21949,7 +21980,8 @@ and Yu, Fernandez, and Brock (2020) <doi:10.1186/s12859-020-3541-7>.")
                              r-sf
                              r-raster
                              r-jsonlite
-                             r-adehabitatlt))
+                             r-adehabitatlt
+                             r-adehabitathr))
     (home-page "https://cran.r-project.org/package=DEPONS2R")
     (synopsis "Read, Plot and Analyse Output from the DEPONS Model")
     (description
@@ -28194,6 +28226,32 @@ and provides confidence intervals for entries of interest.  See: by Chen et al.
 (2019) <doi:10.1073/pnas.1910053116>, Mai (2021) <@code{arXiv:2103.11749>}.")
     (license license:gpl2)))
 
+(define-public r-dbmaps
+  (package
+    (name "r-dbmaps")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DBmaps" version))
+       (sha256
+        (base32 "19rmf6pdp7kccafxjvklkd65b59a6j0klg81vxnkvbxl4r897ynd"))))
+    (properties `((upstream-name . "DBmaps")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/akshat09867/DBmaps")
+    (synopsis "Metadata-Driven Framework for Streamlining Database Joins")
+    (description
+     "Simplifies and automates the process of exploring and merging data from
+relational databases.  This package allows users to discover table
+relationships, create a map of all possible joins, and generate executable plans
+to merge data based on a structured metadata framework.")
+    (license license:expat)))
+
 (define-public r-dblr
   (package
     (name "r-dblr")
@@ -33298,40 +33356,6 @@ ceiling/floor effects.  The package currently includes functions for
 mean/variance estimation and mean comparison tests.  Implemented methods are
 from Aitkin (1964) <doi:10.1007/BF02289723> and Liu & Wang (in prep).")
     (license license:gpl2)))
-
-(define-public r-dacc
-  (package
-    (name "r-dacc")
-    (version "0.0-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dacc" version))
-       (sha256
-        (base32 "0lzmy1f8apn64q446zkd64knv53sjhbfwdbwjfpgqnvbxbxmwbrx"))))
-    (properties `((upstream-name . "dacc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sp
-                             r-pracma
-                             r-ncdf4
-                             r-mass
-                             r-magrittr
-                             r-janitor
-                             r-iso
-                             r-cftime))
-    (home-page "https://github.com/LiYanStat/dacc")
-    (synopsis "Detection and Attribution Analysis of Climate Change")
-    (description
-     "Conduct detection and attribution of climate change using methods including
-optimal fingerprinting via generalized total least squares or estimating
-equation approach from Ma et al. (2023) <doi:10.1175/JCLI-D-22-0681.1>.  Provide
-shrinkage estimators for covariance matrix from Ledoit and Wolf (2004)
-<doi:10.1016/S0047-259X(03)00096-4>, and Ledoit and Wolf (2017)
-<doi:10.2139/ssrn.2383361>.")
-    (license license:gpl3+)))
 
 (define-public r-dabr
   (package

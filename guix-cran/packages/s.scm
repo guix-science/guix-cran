@@ -399,6 +399,32 @@ or multiple imputed data sets.  For more information on the formulas and methods
 used, see Reiter & Raghunathan (2007) <doi:10.1198/016214507000000932>.")
     (license license:gpl2+)))
 
+(define-public r-synthreturn
+  (package
+    (name "r-synthreturn")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "synthReturn" version))
+       (sha256
+        (base32 "0rjnmx4l1qrixdy3vb1x0bb7iza36ydwmpa5ix72dsjhxnr7b36r"))))
+    (properties `((upstream-name . "synthReturn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quadprog r-mirai r-data-table r-corpcor))
+    (home-page "https://github.com/davidkreitmeir/synthReturn")
+    (synopsis "Synthetic Matching Method for Returns")
+    (description
+     "This package implements the revised Synthetic Matching Algorithm of Kreitmeir,
+Lane, and Raschky (2025) <doi:10.2139/ssrn.3751162>, building on the original
+approach of Acemoglu, Johnson, Kermani, Kwak, and Mitton (2016)
+<doi:10.1016/j.jfineco.2015.10.001>, to estimate the cumulative treatment effect
+of an event on treated firmsâ stock returns.")
+    (license license:expat)))
+
 (define-public r-synthpop
   (package
     (name "r-synthpop")
@@ -3399,13 +3425,13 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svemnet
   (package
     (name "r-svemnet")
-    (version "1.5.3")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVEMnet" version))
        (sha256
-        (base32 "0m769xpvpkq9ikw8i866jpnqhp8mp5wm44fw4cyjwpg1wxxcmfph"))))
+        (base32 "151lgd7q6zjr8gxzki58n02d5sljv0vmssmpl7alqwisirak4dsl"))))
     (properties `((upstream-name . "SVEMnet")))
     (build-system r-build-system)
     (arguments
@@ -3420,7 +3446,8 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
                              r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SVEMnet")
-    (synopsis "Self-Validated Ensemble Models with Elastic Net Regression")
+    (synopsis
+     "Self-Validated Ensemble Models with Lasso and Relaxed-Elastic Net Regression")
     (description
      "This package implements Self-Validated Ensemble Models (SVEM, Lemkus et al.
 (2021) <doi:10.1016/j.chemolab.2021.104439>) using Elastic Net regression via
@@ -4567,13 +4594,13 @@ Churpek M. M., Zeng D., and Fine J. P. (2015)
 (define-public r-survivor
   (package
     (name "r-survivor")
-    (version "2.3.6")
+    (version "2.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivoR" version))
        (sha256
-        (base32 "033ch4xnm83h4c4pam721vizvdr2a3l4q3244vy090779n8bjlkq"))))
+        (base32 "18xdqy5zwsma8kcjkjg9wpmcw0s00h7p07rkflli73p2bp31ixrj"))))
     (properties `((upstream-name . "survivoR")))
     (build-system r-build-system)
     (arguments
@@ -4926,51 +4953,6 @@ forest.  Given the distances, we can apply hierarchical clustering algorithms to
 define clusters.  Details about this method is described in
 <https://github.com/luyouepiusf/@code{SurvivalClusteringTree>}.")
     (license license:gpl2+)))
-
-(define-public r-survivalanalysis
-  (package
-    (name "r-survivalanalysis")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "survivalAnalysis" version))
-       (sha256
-        (base32 "1a2lp5wg21mflcyzzs160n5h5l7mmrch952zhkvmbjrk5zvysk1b"))))
-    (properties `((upstream-name . "survivalAnalysis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidytidbits
-                             r-tidyr
-                             r-tibble
-                             r-survminer
-                             r-survival
-                             r-stringr
-                             r-scales
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-gridextra
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-cowplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=survivalAnalysis")
-    (synopsis
-     "High-Level Interface for Survival Analysis and Associated Plots")
-    (description
-     "This package provides a high-level interface to perform survival analysis,
-including Kaplan-Meier analysis and log-rank tests and Cox regression.  Aims at
-providing a clear and elegant syntax, support for use in a pipeline, structured
-output and plotting.  Builds upon the survminer package for Kaplan-Meier plots
-and provides a customizable implementation for forest plots.  Kaplan & Meier
-(1958) <doi:10.1080/01621459.1958.10501452> Cox (1972) Journal of the Royal
-Statistical Society.  Series B (Methodological), Vol.  34, No.  2 (1972), pp.
-187-220 (34 pages) Peto & Peto (1972) <doi:10.2307/2344317>.")
-    (license license:gpl3)))
 
 (define-public r-survival-svb
   (package
@@ -14288,6 +14270,34 @@ studying cell-cell interactions, immune microenvironment characterization, and
 spatial organization of tissues.")
     (license license:gpl3+)))
 
+(define-public r-stcyp
+  (package
+    (name "r-stcyp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "STCYP" version))
+       (sha256
+        (base32 "0bxb575g77r47ad2iblwwn613m2ccai04yzjwaf3xw0gffl3klhv"))))
+    (properties `((upstream-name . "STCYP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rootsolve r-ggplot2 r-copula r-bsts))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=STCYP")
+    (synopsis "Spatio-Temporal Crop Yield Prediction")
+    (description
+     "This package provides crop yield and meteorological data for Ontario, Canada.
+Includes functions for fitting and predicting data using spatio-temporal models,
+as well as tools for visualizing the results.  The package builds upon existing
+R packages, including copula (Hofert et al., 2025)
+<doi:10.32614/CRAN.package.copula>, and bsts (Scott, 2024)
+<doi:10.32614/CRAN.package.bsts>.")
+    (license license:expat)))
+
 (define-public r-stcpr6
   (package
     (name "r-stcpr6")
@@ -15473,13 +15483,13 @@ breeding experiments developed by Biometris.")
 (define-public r-statforbiology
   (package
     (name "r-statforbiology")
-    (version "0.9.9")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statforbiology" version))
        (sha256
-        (base32 "1m0jygm6kps40591cx6z5y82d8b7avpgxikds0kawrq9zfn8cm0h"))))
+        (base32 "0zhii317h0d91rqjvs0w89pdlvk9gja61p2vvp6x7pw2m95s3kz6"))))
     (properties `((upstream-name . "statforbiology")))
     (build-system r-build-system)
     (arguments
@@ -15496,7 +15506,7 @@ breeding experiments developed by Biometris.")
                              r-drc
                              r-car))
     (home-page "https://github.com/OnofriAndreaPG/statforbiology")
-    (synopsis "Tools for Data Analyses in Biology")
+    (synopsis "Data Analyses in Agriculture and Biology")
     (description
      "This package contains several tools for nonlinear regression analyses and
 general data analysis in biology and agriculture.  Contains also datasets for
@@ -20905,13 +20915,13 @@ consistent.")
 (define-public r-sqlcaser
   (package
     (name "r-sqlcaser")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sqlcaser" version))
        (sha256
-        (base32 "0bnrgrmirypzcpyyi3ayi9k6b4phh5cjaa4ldizhsk14d8bbhw40"))))
+        (base32 "0ljm8z8jizcy3pdd5g3h9mqkq0b4d4ljsg0b19fhgvlbhnh125n0"))))
     (properties `((upstream-name . "sqlcaser")))
     (build-system r-build-system)
     (arguments
@@ -20922,7 +20932,7 @@ consistent.")
     (synopsis "'SQL' Case Statement Generator")
     (description
      "Includes built-in methods for generating long SQL CASE statements, and other SQL
-statements that may otherwise be arduous to construct by hand.  The generated
+statements that may otherwise be arduous to construct by hand.The generated
 statement can easily be concatenated to string literals to form queries to
 SQL'-like databases, such as when using the RODBC package.  The current methods
 include @code{casewhen()} for building CASE statements, @code{inlist()} for
@@ -21844,46 +21854,6 @@ package also contains functions that can be used for analyzing time-to-event
 data with right censoring, and with left truncation and right censoring.
 Financial support from NSF and @code{DuPont} are acknowledged.")
     (license license:gpl2)))
-
-(define-public r-spreadr
-  (package
-    (name "r-spreadr")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spreadr" version))
-       (sha256
-        (base32 "180dvr39i1glc0jllsnnglwrxh133q20v7px2fmdi7229pr175id"))))
-    (properties `((upstream-name . "spreadr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp
-                             r-matrix
-                             r-igraph
-                             r-ggplot2
-                             r-extrafont
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=spreadr")
-    (synopsis "Simulating Spreading Activation in a Network")
-    (description
-     "The notion of spreading activation is a prevalent metaphor in the cognitive
-sciences.  This package provides the tools for cognitive scientists and
-psychologists to conduct computer simulations that implement spreading
-activation in a network representation.  The algorithmic method implemented in
-spreadr subroutines follows the approach described in Vitevitch, Ercal, and
-Adagarla (2011, Frontiers), who viewed activation as a fixed cognitive resource
-that could spread among nodes that were connected to each other via edges or
-connections (i.e., a network).  See Vitevitch, M. S., Ercal, G., & Adagarla, B.
-(2011).  Simulating retrieval from a highly clustered network: Implications for
-spoken word recognition.  Frontiers in Psychology, 2, 369.
-<doi:10.3389/fpsyg.2011.00369> and Siew, C. S. Q. (2019).  spreadr: A R package
-to simulate spreading activation in a network.  Behavior Research Methods, 51,
-910-929. <doi: 10.3758/s13428-018-1186-5>.")
-    (license license:gpl3)))
 
 (define-public r-spray
   (package
@@ -29134,6 +29104,36 @@ lasso or elastic-net regularization.  Reference: Congrui Yi and Jian Huang
 (2017) <doi:10.1080/10618600.2016.1256816>.")
     (license license:gpl3)))
 
+(define-public r-sparsesurv
+  (package
+    (name "r-sparsesurv")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sparsesurv" version))
+       (sha256
+        (base32 "1s75zqcj1i953jhlvnrs3gjrcf1js0msiy8dsxb85ncgvq2bmrqy"))))
+    (properties `((upstream-name . "sparsesurv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list jags))
+    (propagated-inputs (list r-r2jags r-coda))
+    (home-page "https://github.com/alexangelakis-ang/sparsesurv")
+    (synopsis "Forecasting and Early Outbreak Detection for Sparse Count Data")
+    (description
+     "This package provides functions for fitting, forecasting, and early detection of
+outbreaks in sparse surveillance count time series.  Supports negative binomial
+(NB), self-exciting NB, generalise autoregressive moving average (GARMA) NB ,
+zero-inflated NB (ZINB), self-exciting ZINB, generalise autoregressive moving
+average ZINB, and hurdle formulations.  Climatic and environmental covariates
+can be included in the regression component and/or the zero-modified components.
+ Includes outbreak-detection algorithms for NB, ZINB, and hurdle models, with
+utilities for prediction and diagnostics.")
+    (license license:gpl3+)))
+
 (define-public r-sparsestep
   (package
     (name "r-sparsestep")
@@ -30561,6 +30561,33 @@ applications.  For more details see Parzer et al (2024a)
 (2010): \"A framework for feature selection in clustering\"; published in Journal
 of the American Statistical Association 105(490): 713-726.")
     (license license:gpl2)))
+
+(define-public r-spantest
+  (package
+    (name "r-spantest")
+    (version "1.1-3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spantest" version))
+       (sha256
+        (base32 "0hqw27bdhv66nkn5d95yp1qc5259yqv8h47kxhl4hlyflkg5zra1"))))
+    (properties `((upstream-name . "spantest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack))
+    (home-page "https://github.com/ArdiaD/spantest")
+    (synopsis "Mean-Variance Spanning Tests")
+    (description
+     "This package provides a comprehensive suite of portfolio spanning tests for
+asset pricing, such as Huberman and Kandel (1987)
+<doi:10.1111/j.1540-6261.1987.tb03917.x>, Gibbons et al. (1989)
+<doi:10.2307/1913625>, Kempf and Memmel (2006) <doi:10.1007/BF03396737>, Pesaran
+and Yamagata (2024) <doi:10.1093/jjfinec/nbad002>, and Gungor and Luger (2016)
+<doi:10.1080/07350015.2015.1019510>.")
+    (license license:gpl3)))
 
 (define-public r-spant
   (package
@@ -39683,13 +39710,13 @@ linear regression model described in Centofanti et al. (2020)
 (define-public r-slash
   (package
     (name "r-slash")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slash" version))
        (sha256
-        (base32 "183x2vmc61c28kbpcxjlnbagd7d0g39jwqljdggb0kfq3iskwfcc"))))
+        (base32 "0la3k8w8vhpn033k7avj9fsc453b3snj81zvwsv26q3i730ppnzz"))))
     (properties `((upstream-name . "slash")))
     (build-system r-build-system)
     (arguments
@@ -39884,13 +39911,13 @@ analyses more reproducible.  For details, see Morgan-Wall et al. (2021)
 (define-public r-sknn
   (package
     (name "r-sknn")
-    (version "4.1")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SKNN" version))
        (sha256
-        (base32 "1iigrps3knwij2z87rbd60si7x19mrfi298l18imqkp8axydmyp2"))))
+        (base32 "14c1aq22ndx29cjmrqpxqam5pm4l2rsl2m0y8xq9zk4gv4srvdgw"))))
     (properties `((upstream-name . "SKNN")))
     (build-system r-build-system)
     (arguments
@@ -39899,9 +39926,10 @@ analyses more reproducible.  For details, see Morgan-Wall et al. (2021)
     (home-page "https://cran.r-project.org/package=SKNN")
     (synopsis "Super K-Nearest Neighbor (SKNN) Classification Algorithm")
     (description
-     "It's a Super K-Nearest Neighbor classification method with using kernel density
-to describe weight of the distance between a training observation and the
-testing sample.")
+     "It's a Super K-Nearest Neighbor(SKNN) classification method with using kernel
+density to describe weight of the distance between a training observation and
+the testing sample.  Comparison of performance between SKNN and KNN shows that
+SKNN is significantly superior to KNN.")
     (license license:gpl2)))
 
 (define-public r-skmeans
@@ -48521,13 +48549,13 @@ force and simulated annealing combinatorial search algorithms.")
 (define-public r-shortirt
   (package
     (name "r-shortirt")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shortIRT" version))
        (sha256
-        (base32 "1z2db31r332dayaprdjrm9r3yihj7jnpk7j106m74q5ckwsaw859"))))
+        (base32 "0h7isjnva1jfalfzarhqkdgxm0f8rqd3qcvpac0a8cnyqh0p4pfd"))))
     (properties `((upstream-name . "shortIRT")))
     (build-system r-build-system)
     (arguments
@@ -53671,62 +53699,6 @@ impute cellwise outliers.  Includes implementations of methods described in
 Mayrhofer and Filzmoser (2023) <doi:10.1016/j.ecosta.2023.04.003>.")
     (license license:gpl3)))
 
-(define-public r-shapley
-  (package
-    (name "r-shapley")
-    (version "0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shapley" version))
-       (sha256
-        (base32 "1m4c6d18b8ndz9br0hc8rjxhyk58dizn557ybg5zp1k3lp5fl008"))))
-    (properties `((upstream-name . "shapley")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-waffle r-pander r-h2o r-ggplot2 r-curl))
-    (home-page "https://github.com/haghish/shapley")
-    (synopsis
-     "Weighted Mean SHAP and CI for Robust Feature Assessment in ML Grid")
-    (description
-     "This R package introduces Weighted Mean SHapley Additive @code{exPlanations}
-(WMSHAP), an innovative method for calculating SHAP values for a grid of
-fine-tuned base-learner machine learning models as well as stacked ensembles, a
-method not previously available due to the common reliance on single
-best-performing models.  By integrating the weighted mean SHAP values from
-individual base-learners comprising the ensemble or individual base-learners in
-a tuning grid search, the package weights SHAP contributions according to each
-model's performance, assessed by multiple either R squared (for both regression
-and classification models).  alternatively, this software also offers weighting
-SHAP values based on the area under the precision-recall curve (AUCPR), the area
-under the curve (AUC), and F2 measures for binary classifiers.  It further
-extends this framework to implement weighted confidence intervals for weighted
-mean SHAP values, offering a more comprehensive and robust feature importance
-evaluation over a grid of machine learning models, instead of solely computing
-SHAP values for the best model.  This methodology is particularly beneficial for
-addressing the severe class imbalance (class rarity) problem by providing a
-transparent, generalized measure of feature importance that mitigates the risk
-of reporting SHAP values for an overfitted or biased model and maintains
-robustness under severe class imbalance, where there is no universal criteria of
-identifying the absolute best model.  Furthermore, the package implements
-hypothesis testing to ascertain the statistical significance of SHAP values for
-individual features, as well as comparative significance testing of SHAP
-contributions between features.  Additionally, it tackles a critical gap in
-feature selection literature by presenting criteria for the automatic feature
-selection of the most important features across a grid of models or stacked
-ensembles, eliminating the need for arbitrary determination of the number of top
-features to be extracted.  This utility is invaluable for researchers analyzing
-feature significance, particularly within severely imbalanced outcomes where
-conventional methods fall short.  Moreover, it is also expected to report
-democratic feature importance across a grid of models, resulting in a more
-comprehensive and generalizable feature selection.  The package further
-implements a novel method for visualizing SHAP values both at subject level and
-feature level as well as a plot for feature selection based on the weighted mean
-SHAP ratios.")
-    (license license:expat)))
-
 (define-public r-shapeselectforest
   (package
     (name "r-shapeselectforest")
@@ -57098,25 +57070,20 @@ methodology behind the NHMMs, see Helske (2025,
 (define-public r-seqhandbook
   (package
     (name "r-seqhandbook")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seqhandbook" version))
        (sha256
-        (base32 "0pr4h19g4sa9g7x3di3k18abmabn6ywigdhx2h4b5y88zcnizfam"))))
+        (base32 "1yxifxp1g9rpsx6gdnrm2kmq6r8jw5l80jxhf9hqyiyknlavjpsz"))))
     (properties `((upstream-name . "seqhandbook")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-traminer))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://nicolas-robette.github.io/seqhandbook/")
+    (home-page "https://framagit.org/nicolas-robette/seqhandbook")
     (synopsis "Miscellaneous Tools for Sequence Analysis")
     (description
      "It provides miscellaneous sequence analysis functions for describing episodes in

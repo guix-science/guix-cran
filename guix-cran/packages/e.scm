@@ -242,13 +242,13 @@ Lin, and Xinwei Deng (2022) <doi:10.1137/19M1288462>.")
 (define-public r-ezfragility
   (package
     (name "r-ezfragility")
-    (version "1.0.3")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EZFragility" version))
        (sha256
-        (base32 "117p4vsfb5l6zrya4zs9cgxqmp3zccjbdhsq54rpdnk0lqqb3al3"))))
+        (base32 "0x919pndmxa139pm5xc9hnrkavxghcp1h64mcia1m5hcai3gdwc2"))))
     (properties `((upstream-name . "EZFragility")))
     (build-system r-build-system)
     (arguments
@@ -262,17 +262,18 @@ Lin, and Xinwei Deng (2022) <doi:10.1137/19M1288462>.")
                              r-glue
                              r-ggtext
                              r-ggplot2
-                             r-foreach))
+                             r-foreach
+                             r-epoch))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=EZFragility")
+    (home-page "https://github.com/Jiefei-Wang/EZFragility")
     (synopsis "Compute Neural Fragility for Ictal iEEG Time Series")
     (description
      "This package provides tools to compute the neural fragility matrix from
 intracranial electrocorticographic (@code{iEEG}) recordings, enabling the
 analysis of brain dynamics during seizures.  The package implements the method
 described by Li et al. (2017) <doi:10.23919/ACC.2017.7963378> and includes
-functions for data preprocessing (`Epoch`), fragility computation
-(`@code{calcAdjFrag`}), and visualization.")
+functions for data preprocessing ('Epoch'), fragility computation
+('@code{calcAdjFrag}'), and visualization.")
     (license license:gpl3+)))
 
 (define-public r-ezecm
@@ -6788,6 +6789,32 @@ ggplot2'.  It ensures lightning-fast computations by integrating
 high-performance C++ code through Rcpp package.")
     (license license:expat)))
 
+(define-public r-etdqualitizer
+  (package
+    (name "r-etdqualitizer")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ETDQualitizer" version))
+       (sha256
+        (base32 "1hhn1n98w1pg43wi4rcissw7hhlcfsnz9yb1c1s23mmv716wqvfq"))))
+    (properties `((upstream-name . "ETDQualitizer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6))
+    (home-page "https://github.com/dcnieho/ETDQualitizer")
+    (synopsis
+     "Automated Eye Tracking Data Quality Determination for Screen-Based Eye Trackers")
+    (description
+     "Compute common data quality metrics for accuracy, precision and data loss for
+screen-based eye trackers.  Supports input data both in pixels on the screen and
+in degrees, output measures are (where appropriate) expressed as angles in
+degrees.")
+    (license license:expat)))
+
 (define-public r-etc
   (package
     (name "r-etc")
@@ -7232,13 +7259,13 @@ possible.")
 (define-public r-estimationtools
   (package
     (name "r-estimationtools")
-    (version "4.0.0")
+    (version "4.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EstimationTools" version))
        (sha256
-        (base32 "1hwlrsxl42n4i25f1izhccj755aydl2r98w1jn12z9a62wk9nnzy"))))
+        (base32 "05dzwq9k65v8fw10pmbs8p7px1ynpifinyj38qrmww28z3h7vzfl"))))
     (properties `((upstream-name . "EstimationTools")))
     (build-system r-build-system)
     (arguments
@@ -7251,6 +7278,7 @@ possible.")
                              r-gaussquad
                              r-ga
                              r-deoptim
+                             r-car
                              r-boot
                              r-bbmisc
                              r-autoimage))
@@ -7266,10 +7294,9 @@ in parameter estimation of probability density or mass functions in any field.
 The main routines @code{maxlogL} and @code{maxlogLreg} are wrapper functions
 specifically developed for ML estimation.  There are included optimization
 procedures such as nlminb and optim from base package, and DEoptim Mullen (2011)
-<doi: 10.18637/jss.v040.i06>.  Standard errors are estimated with
-@code{numDeriv} Gilbert (2011)
-<https://CRAN.R-project.org/package=@code{numDeriv>} or the option Hessian =
-TRUE of optim function.")
+<doi:10.18637/jss.v040.i06>.  Standard errors are estimated with @code{numDeriv}
+Gilbert (2011) <https://CRAN.R-project.org/package=@code{numDeriv>} or the
+option Hessian = TRUE of optim function.")
     (license license:gpl3)))
 
 (define-public r-estimatew
@@ -7324,70 +7351,6 @@ data from different groups or classes via Joint Graphical Lasso.  Tuning
 parameters are selected via information criteria (AIC / BIC / extended BIC) or
 cross validation.")
     (license license:gpl2+)))
-
-(define-public r-estimatebreed
-  (package
-    (name "r-estimatebreed")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EstimateBreed" version))
-       (sha256
-        (base32 "18zd4ryjrh5r76wy4xpm8zy1k26xy5nps2hhi03sc2i25z2197z5"))))
-    (properties `((upstream-name . "EstimateBreed")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-tidyr
-                             r-sommer
-                             r-purrr
-                             r-nasapower
-                             r-minque
-                             r-lubridate
-                             r-lmtest
-                             r-lme4
-                             r-jsonlite
-                             r-httr
-                             r-hrbrthemes
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr
-                             r-cowplot
-                             r-car
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/willyanjnr/EstimateBreed")
-    (synopsis "Estimation of Environmental Variables and Genetic Parameters")
-    (description
-     "This package performs analyzes and estimates of environmental covariates and
-genetic parameters related to selection strategies and development of superior
-genotypes.  It has two main functionalities, the first being about prediction
-models of covariates and environmental processes, while the second deals with
-the estimation of genetic parameters and selection strategies.  Designed for
-researchers and professionals in genetics and environmental sciences, the
-package combines statistical methods for modeling and data analysis.  This
-includes the plastochron estimate proposed by Porta et al. (2024)
-<doi:10.1590/1807-1929/agriambi.v28n10e278299>, Stress indices for genotype
-selection referenced by Ghazvini et al. (2024) <doi:10.1007/s10343-024-00981-1>,
-the Environmental Stress Index described by Tazzo et al. (2024)
-<https://revistas.ufg.br/vet/article/view/77035>, industrial quality indices of
-wheat genotypes (Szareski et al., 2019), <doi:10.4238/gmr18223>, Ear Indexes
-estimation (Rigotti et al., 2024), <doi:10.13083/reveng.v32i1.17394>, Selection
-index for protein and grain yield (de Pelegrin et al., 2017),
-<doi:10.4236/ajps.2017.813224>, Estimation of the ISGR - Genetic Selection Index
-for Resilience for environmental resilience (Bandeira et al., 2024)
-<https://www.cropj.com/Carvalho_18_12_2024_825_830.pdf>, estimation of Leaf Area
-Index (Meira et al., 2015)
-<https://www.fag.edu.br/upload/revista/cultivando_o_saber/55d1ef202e494.pdf>,
-Restriction of control variability (Carvalho et al., 2023)
-<doi:10.4025/actasciagron.v45i1.56156>, Risk of Disease Occurrence in Soybeans
-described by Engers et al. (2024) <doi:10.1007/s40858-024-00649-1> and
-estimation of genetic parameters for selection based on balanced experiments
-(Yadav et al., 2024) <doi:10.1155/2024/9946332>.")
-    (license license:gpl3+)))
 
 (define-public r-ester
   (package
@@ -9922,6 +9885,36 @@ on the pooled sample.  The test even works for sample sizes as small as 2.")
 for high dimensional covariance matrices.\" Li and Chen (2012)
 <@code{arXiv:1206.0917>}.")
     (license license:gpl2)))
+
+(define-public r-equalcompareimages
+  (package
+    (name "r-equalcompareimages")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EQUALCompareImages" version))
+       (sha256
+        (base32 "0kjl39r73hvhzrknshc1961xcs8irjlkhh21d4yhldlmabwmnv18"))))
+    (properties `((upstream-name . "EQUALCompareImages")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-shinybusy
+                             r-magick
+                             r-knitr
+                             r-ggplot2
+                             r-cowplot))
+    (home-page "https://sites.google.com/view/equal-group/home")
+    (synopsis "Comparison of Images for Researchers Without Coding Skills")
+    (description
+     "Support functions for R-based \"EQUAL@code{CompareImages} - Compare similarity
+between and within images\" shiny application which allow researchers without
+coding skills or expertise in image comparison algorithms to compare images.
+Gurusamy,K (2025)<doi:10.5281/zenodo.16994047>.")
+    (license license:gpl3+)))
 
 (define-public r-eqtesting
   (package
@@ -13233,37 +13226,6 @@ generalized Simpson's indices.  The estimators used have a bias that decays
 exponentially fast.")
     (license license:gpl3+)))
 
-(define-public r-entropicstatistics
-  (package
-    (name "r-entropicstatistics")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EntropicStatistics" version))
-       (sha256
-        (base32 "11jw1s7k6wwn45g0jzglxs005nvw72xndgbwrdccvbadni4pn5dy"))))
-    (properties `((upstream-name . "EntropicStatistics")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyverse
-                             r-tidyr
-                             r-tibble
-                             r-hrbrthemes
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=EntropicStatistics")
-    (synopsis "Functions Based on Entropic Statistics")
-    (description
-     "This package contains methods for data analysis in entropic perspective.  These
-entropic perspective methods are nonparametric, and perform better on
-non-ordinal data.  Currently, the package has a function @code{HeatMap()} for
-visualizing distributional characteristics among multiple populations (groups).")
-    (license license:gpl3)))
-
 (define-public r-entropart
   (package
     (name "r-entropart")
@@ -15726,13 +15688,13 @@ thermal reaction norms.  See <doi:10.7717/peerj.8451> for tsd functions; see
 (define-public r-embed
   (package
     (name "r-embed")
-    (version "1.1.5")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "embed" version))
        (sha256
-        (base32 "0jx0l08a2595xmrlwm6zjmmcl75n4kgyr39hd52aazn61svpssvz"))))
+        (base32 "113aa199m5nfm0md940n2420a8clyhh7fxhcknvpix904p48zz9c"))))
     (properties `((upstream-name . "embed")))
     (build-system r-build-system)
     (arguments
@@ -19241,6 +19203,43 @@ example, species, site quality, management regime and ownership category.  See
 Packalen et al. (2015) <doi:10.2788/153990>.")
     (license license:gpl2)))
 
+(define-public r-efcm
+  (package
+    (name "r-efcm")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eFCM" version))
+       (sha256
+        (base32 "1gq1qnakrl58mf68q55r7g8dnk7cbgww363rllq7l295zlcmrv91"))))
+    (properties `((upstream-name . "eFCM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-progress
+                             r-pbmcapply
+                             r-numderiv
+                             r-nsrfa
+                             r-mnormt
+                             r-ismev
+                             r-fields
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=eFCM")
+    (synopsis "Exponential Factor Copula Model")
+    (description
+     "This package implements the exponential Factor Copula Model (@code{eFCM}) of
+Castro-Camilo, D. and Huser, R. (2020) for spatial extremes, with tools for
+dependence estimation, tail inference, and visualization.  The package supports
+likelihood-based inference, Gaussian process modeling via MatÃ©rn covariance
+functions, and bootstrap uncertainty quantification.  See Castro-Camilo and
+Huser (2020) <doi:10.1080/01621459.2019.1647842>.")
+    (license license:gpl3+)))
+
 (define-public r-efautilities
   (package
     (name "r-efautilities")
@@ -21807,13 +21806,13 @@ text with solutions to exercises.")
 (define-public r-ecostate
   (package
     (name "r-ecostate")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecostate" version))
        (sha256
-        (base32 "1brnqksy53fz7l4pvrbny7amh0sb6xwii9f0s22v9qqkql7pm1ir"))))
+        (base32 "1i5h6ksa9f6jch7yiwnz3p0h4g6qb671l421i556ljjlh1765xir"))))
     (properties `((upstream-name . "ecostate")))
     (build-system r-build-system)
     (arguments
@@ -21831,9 +21830,9 @@ text with solutions to exercises.")
     (synopsis "State-Space Mass-Balance Model for Marine Ecosystems")
     (description
      "Fits a state-space mass-balance model for marine ecosystems, which implements
-dynamics derived from Ecopath with Ecosim <https://ecopath.org/> while fitting
-to time-series of fishery catch, biomass indices, age-composition samples, and
-weight-at-age data.  Package ecostate fits biological parameters (e.g.,
+dynamics derived from Ecopath with Ecosim ('@code{EwE}') <https://ecopath.org/>
+while fitting to time-series of fishery catch, biomass indices, age-composition
+samples, and weight-at-age data.  Ecostate fits biological parameters (e.g.,
 equilibrium mass) and measurement parameters (e.g., catchability coefficients)
 jointly with residual variation in process errors, and can include Bayesian
 priors for parameters.")

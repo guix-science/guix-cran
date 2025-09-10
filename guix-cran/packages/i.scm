@@ -5275,13 +5275,13 @@ finance, banking, telecommunications or operational marketing.")
 (define-public r-ipedsuploadables
   (package
     (name "r-ipedsuploadables")
-    (version "2.10.0")
+    (version "2.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IPEDSuploadables" version))
        (sha256
-        (base32 "06dnq83rjbzbz9js6d7mk0syl613dm0pcl03mkmq33f3x8amy54v"))))
+        (base32 "12szyvcrm037xndkv90l4gfjj336d6vjp3qaky7crjkzjl71ql5q"))))
     (properties `((upstream-name . "IPEDSuploadables")))
     (build-system r-build-system)
     (arguments
@@ -9245,6 +9245,30 @@ customization for @code{InSilicoVA} algorithm and basic graphical visualization
 of the output.")
     (license license:gpl2)))
 
+(define-public r-inshiny
+  (package
+    (name "r-inshiny")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inshiny" version))
+       (sha256
+        (base32 "0wcva8gz7i4l2w0jfhick9anb75x5znlcsi8bf4pv8hrrag4lxhf"))))
+    (properties `((upstream-name . "inshiny")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-shiny r-rlang r-htmltools r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nicholasdavies/inshiny")
+    (synopsis "Compact Inline Widgets for 'shiny' Apps")
+    (description
+     "This package provides a basic set of compact widgets for shiny apps which occupy
+less space and can appear inline with surrounding text.")
+    (license license:expat)))
+
 (define-public r-insee
   (package
     (name "r-insee")
@@ -11174,6 +11198,41 @@ time.  It includes parametric and non-parametric tests to study independence,
 and functions for generating and analysing different types of dependence.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-indonesiapis
+  (package
+    (name "r-indonesiapis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IndonesiAPIs" version))
+       (sha256
+        (base32 "0zv42rpgdhxfb0b4viry86zyxsdr0y9b30am8jyn3hxn9cv9glvh"))))
+    (properties `((upstream-name . "IndonesiAPIs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-scales r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/indonesiapis")
+    (synopsis "Access Indonesian Data via Public APIs and Curated Datasets")
+    (description
+     "This package provides functions to access data from public RESTful APIs
+including Nager.Date', World Bank API', and REST Countries API', retrieving
+real-time or historical data related to Indonesia, such as holidays, economic
+indicators, and international demographic and geopolitical indicators.  The
+package also includes a curated collection of open datasets focused on
+Indonesia, covering topics such as consumer prices, poverty probability, food
+prices by region, tourism destinations, and minimum wage statistics.  The
+package supports reproducible research and teaching by integrating reliable
+international APIs and structured datasets from public, academic, and government
+sources.  For more information on the APIs, see: Nager.Date
+<https://date.nager.at/Api>, World Bank API
+<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, and REST
+Countries API <https://restcountries.com/>.")
+    (license license:expat)))
+
 (define-public r-indirect
   (package
     (name "r-indirect")
@@ -13097,35 +13156,6 @@ are available, including basic normalization, Shin's method (Hyun Song Shin,
 (1992) <doi:10.2307/2234526>), and others.")
     (license license:gpl3)))
 
-(define-public r-implicitmeasures
-  (package
-    (name "r-implicitmeasures")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "implicitMeasures" version))
-       (sha256
-        (base32 "06s7dflkz9sg6575ihq56z2vdm1gmfvwjz1i0chnk9rivi0bm2da"))))
-    (properties `((upstream-name . "implicitMeasures")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xtable r-tidyr r-stringr r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=implicitMeasures")
-    (synopsis "Compute Scores for Different Implicit Measures")
-    (description
-     "This package provides a tool for computing the scores for the Implicit
-Association Test (IAT; Greenwald, @code{McGhee} & Schwartz (1998)
-<doi:10.1037/0022-3514.74.6.1464>) and the Single Category-IAT (SC-IAT:
-Karpinski & Steinman (2006) <doi:10.1037/0022-3514.91.1.16>).  Functions for
-preparing the data (both for the IAT and the SC-IAT), plotting the results, and
-obtaining a table with the scores of implicit measures descriptive statistics
-are provided.")
-    (license license:expat)))
-
 (define-public r-implicitexpansion
   (package
     (name "r-implicitexpansion")
@@ -13178,6 +13208,35 @@ in a data set contain set-valued observations; and another to merge two already
 imprecisely imputed data.  The method is described in a technical report by
 Endres, Fink and Augustin (2018, <doi:10.5282/ubm/epub.42423>).")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-impectr
+  (package
+    (name "r-impectr")
+    (version "2.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "impectR" version))
+       (sha256
+        (base32 "0d4kmqc2fb9na8kyk0a40ivy25k19r8ijiw4792z4wlqi8r3620q"))))
+    (properties `((upstream-name . "impectR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=impectR")
+    (synopsis "Access Data from the Impect API")
+    (description
+     "Pull data from the Impect Customer API <https://glossary.impect.com/api-design>.
+ The package can retrieve data such as events or match sums.")
+    (license license:expat)))
 
 (define-public r-impactr
   (package
@@ -19409,6 +19468,31 @@ within the pathways for which the discriminative scores were locally maximal.
 level for these key dysfunctional sub-pathways.")
     (license license:gpl2+)))
 
+(define-public r-icdpicr2
+  (package
+    (name "r-icdpicr2")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icdpicr2" version))
+       (sha256
+        (base32 "0jry59h5mv38570nxsi1py9wx7a94nbxmgw336nnf29f5bx9lai8"))))
+    (properties `((upstream-name . "icdpicr2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-stringr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=icdpicr2")
+    (synopsis "Categorize Injury Diagnosis Codes")
+    (description
+     "This package provides functions read a dataframe containing one or more
+International Classification of Diseases Tenth Revision codes per subject.  They
+return original data with injury categorizations and severity scores added.")
+    (license license:expat)))
+
 (define-public r-icdpicr
   (package
     (name "r-icdpicr")
@@ -19883,13 +19967,13 @@ to analyse the output and performance of models.")
 (define-public r-icarus
   (package
     (name "r-icarus")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icarus" version))
        (sha256
-        (base32 "0nk4z1xw8ca7nkxvkbrblpp42b1pim3dskj9sczpdva0s8ksnq43"))))
+        (base32 "162ifi41z9gyi3dxq9f65clw5b93c062qjfckpsfvh8apszp5fcd"))))
     (properties `((upstream-name . "icarus")))
     (build-system r-build-system)
     (arguments

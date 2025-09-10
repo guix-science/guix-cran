@@ -4652,42 +4652,6 @@ of your BRIC-seq data, calculation of RNA half-life for each transcript and
 comparison of RNA half-lives between two conditions.")
     (license license:expat)))
 
-(define-public r-bridger
-  (package
-    (name "r-bridger")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bridger" version))
-       (sha256
-        (base32 "1rx16zwa3zz4bs7h0b75vsx78dvkif8d9c7prb5pmwccizll7v53"))))
-    (properties `((upstream-name . "bridger")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-scales
-                             r-pdftools
-                             r-patchwork
-                             r-magrittr
-                             r-kableextra
-                             r-gridextra
-                             r-glue
-                             r-ggplot2
-                             r-ggedit
-                             r-dplyr
-                             r-cowplot))
-    (home-page "https://github.com/CommoditiesAI/bridger")
-    (synopsis "Bridge Hand Generator with Criteria Selector")
-    (description
-     "Produce bridge hands, allowing parameters for hands to offer specific for
-bidding sequences.")
-    (license license:gpl3+)))
-
 (define-public r-bridgedist
   (package
     (name "r-bridgedist")
@@ -5747,53 +5711,6 @@ to estimate individual- or population-level partial correlations, identify
 nonzero ones, and find out unequal partial correlation coefficients between two
 populations.")
     (license license:gpl2+)))
-
-(define-public r-brailler
-  (package
-    (name "r-brailler")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BrailleR" version))
-       (sha256
-        (base32 "1gh4n9zl7yczmhy85xmsx1mh9qmc99xvhmm5cdnjcb644i2n214k"))))
-    (properties `((upstream-name . "BrailleR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xtable
-                             r-xml
-                             r-whisker
-                             r-tidyr
-                             r-rolocisccnbs
-                             r-roloc
-                             r-rmarkdown
-                             r-rdpack
-                             r-quarto
-                             r-moments
-                             r-mathjaxr
-                             r-knitr
-                             r-hunspell
-                             r-gridsvg
-                             r-gridgraphics
-                             r-ggplot2
-                             r-extrafont
-                             r-dplyr
-                             r-devtools))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ajrgodfrey/BrailleR")
-    (synopsis "Improved Access for Blind Users")
-    (description
-     "Blind users do not have access to the graphical output from R without printing
-the content of graphics windows to an embosser of some kind.  This is not as
-immediate as is required for efficient access to statistical output.  The
-functions here are created so that blind people can make even better use of R.
-This includes the text descriptions of graphs, convenience functions to replace
-the functionality offered in many GUI front ends, and experimental functionality
-for optimising graphical content to prepare it for embossing as tactile images.")
-    (license license:gpl2)))
 
 (define-public r-braids
   (package
@@ -17880,13 +17797,13 @@ synchronicity'.")
 (define-public r-bigalgebra
   (package
     (name "r-bigalgebra")
-    (version "2.0.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigalgebra" version))
        (sha256
-        (base32 "06m9hic9hy6lxh7zsqzsddrd6cbk2r552c5xf3y9gvxl7xh9da11"))))
+        (base32 "1widjbc6wg8mchymfkplsfxssqxi2rcxlkl7al27g2d70ckanwzk"))))
     (properties `((upstream-name . "bigalgebra")))
     (build-system r-build-system)
     (arguments
@@ -18007,13 +17924,13 @@ or item response models.")
 (define-public r-bidux
   (package
     (name "r-bidux")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bidux" version))
        (sha256
-        (base32 "1whkd07hgcxj9r15ny7lhrm123sfrvji3i39wc39vzz6af3akgny"))))
+        (base32 "1sc22mkgr6czqxjacm1rmp9csrdrgsj42kqxli8gycd5sslpv80y"))))
     (properties `((upstream-name . "bidux")))
     (build-system r-build-system)
     (arguments
@@ -18031,10 +17948,10 @@ or item response models.")
     (native-inputs (list r-knitr))
     (home-page "https://jrwinget.github.io/bidux/")
     (synopsis
-     "Behavior Insight Design: A Toolkit for Integrating Behavioral Science in UI/UX Design")
+     "Behavioral Insight Design: A Toolkit for Integrating Behavioral Science in UI/UX Design")
     (description
      "This package provides a framework and toolkit to guide shiny developers in
-implementing the Behavior Insight Design (BID) framework.  The package offers
+implementing the Behavioral Insight Design (BID) framework.  The package offers
 functions for documenting each of the five stages (Notice, Interpret, Structure,
 Anticipate, and Validate), along with a comprehensive concept dictionary.")
     (license license:expat)))
@@ -23208,13 +23125,13 @@ Marthew PB, Gail MH, et al (2016) <doi:10.1093/jnci/djw215>.")
 (define-public r-bcputility
   (package
     (name "r-bcputility")
-    (version "0.4.3")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bcputility" version))
        (sha256
-        (base32 "11wp0llr8wk96ifl93vw1hadrda61zdkmbazp1khimbx0qgr31gx"))))
+        (base32 "18xinv5r1rh9vv2z6zzliadbfs937ra0xdcqasa2lq9x0n2rshf0"))))
     (properties `((upstream-name . "bcputility")))
     (build-system r-build-system)
     (arguments
@@ -24212,13 +24129,13 @@ prediction on new data. <doi:10.18637/jss.v101.i05>.")
 (define-public r-bbknnr
   (package
     (name "r-bbknnr")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbknnR" version))
        (sha256
-        (base32 "14bfv7bb1lzqw0098qp10l57yr98fsdi9a8w7xqsn51r4gchfb67"))))
+        (base32 "00mvaihvndy25i2n798ljgxcqghcl1jdmpqgdkksi0vmp48m5xwc"))))
     (properties `((upstream-name . "bbknnR")))
     (build-system r-build-system)
     (arguments
@@ -29456,13 +29373,13 @@ errors.")
 (define-public r-batchexperiments
   (package
     (name "r-batchexperiments")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BatchExperiments" version))
        (sha256
-        (base32 "0g3vr2g4v968rwzja1nngji58960p2r494km8wia7x5w3y69p063"))))
+        (base32 "1lrfrry13803jh8qvabv256ircwcwhd94cxhdzpdj33sfk2lljar"))))
     (properties `((upstream-name . "BatchExperiments")))
     (build-system r-build-system)
     (arguments

@@ -2097,62 +2097,6 @@ gives users the ability to add to their existing word documents the tables made
 in gt using the familiar officer package and syntax from the officeverse'.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
-(define-public r-gtfswizard
-  (package
-    (name "r-gtfswizard")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GTFSwizard" version))
-       (sha256
-        (base32 "0v11s7c3j9kql85w6qvly3vn4vznxzax2j90va4gk2rpp4qvkdh0"))))
-    (properties `((upstream-name . "GTFSwizard")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidytransit
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stplanr
-                             r-shiny
-                             r-sfnetworks
-                             r-sf
-                             r-rlang
-                             r-purrr
-                             r-plotly
-                             r-magrittr
-                             r-lubridate
-                             r-leaflet-extras
-                             r-leaflet
-                             r-igraph
-                             r-hrbrthemes
-                             r-hms
-                             r-gtfstools
-                             r-gtfsio
-                             r-glue
-                             r-ggplot2
-                             r-geosphere
-                             r-forcats
-                             r-dplyr
-                             r-data-table
-                             r-crayon
-                             r-checkmate))
-    (home-page "https://github.com/OPATP/GTFSwizard")
-    (synopsis "Exploring and Manipulating 'GTFS' Files")
-    (description
-     "Exploring, analyzing, and manipulating General Transit Feed Specification (GTFS)
-files, which represent public transportation schedules and geographic data.  The
-package allows users to filter data by routes, trips, stops, and time, generate
-spatial visualizations, and perform detailed analyses of transit networks,
-including headway, dwell times, and route frequencies.  Designed for transit
-planners, researchers, and data analysts, GTFSwizard integrates functionalities
-from popular packages to enable efficient GTFS data manipulation and
-visualization.")
-    (license license:gpl3)))
-
 (define-public r-gtfstools
   (package
     (name "r-gtfstools")
@@ -6478,13 +6422,13 @@ Ralston and Philip Rabinowitz (2001) <ISBN:9780486414546>.")
 (define-public r-greenr
   (package
     (name "r-greenr")
-    (version "0.0.1.3")
+    (version "0.0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greenR" version))
        (sha256
-        (base32 "0kqiky9bffna77qx6c7rslbz2ypzq2diz3kq6vigw72ijf9dvbj5"))))
+        (base32 "14v8yy2yvhpiapswwbsafmwjiz04vhrqsfj0lijghfwmpzsjc8mn"))))
     (properties `((upstream-name . "greenR")))
     (build-system r-build-system)
     (arguments
@@ -19529,36 +19473,6 @@ and aesthetics.  This method was described by Balachandran VP (2015)
 <doi:10.1016/S1470-2045(14)71116-7>.")
     (license license:gpl3)))
 
-(define-public r-ggscatridges
-  (package
-    (name "r-ggscatridges")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggScatRidges" version))
-       (sha256
-        (base32 "0iz7np4wn556lz3dn8c19fl3kyr8kzgsiy4yv8cz9h2chpldx3rm"))))
-    (properties `((upstream-name . "ggScatRidges")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-vegan
-                             r-hrbrthemes
-                             r-ggridges
-                             r-ggrepel
-                             r-ggpubr
-                             r-ggplot2
-                             r-cowplot))
-    (home-page "https://github.com/matbou85/ggScatRidges")
-    (synopsis "Scatter Plot Combined with Ridgelines in 'ggplot2'")
-    (description
-     "The function combines a scatter plot with ridgelines to better visualise the
-distribution between sample groups.  The plot is created with ggplot2'.")
-    (license license:gpl3)))
-
 (define-public r-ggsankeyfier
   (package
     (name "r-ggsankeyfier")
@@ -22585,57 +22499,23 @@ visualization tools.  Provides parsing and calculation methods for variables in
 descendant branches of interest.  Uses the Grammar of Graphics.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-ggedit
-  (package
-    (name "r-ggedit")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggedit" version))
-       (sha256
-        (base32 "1mnk2ygnflkp9bx8pbf41vb9fyhcnkqrw8j01vx7p56iga3lwi4g"))))
-    (properties `((upstream-name . "ggedit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-shinybs
-                             r-shinyace
-                             r-shiny
-                             r-scales
-                             r-rstudioapi
-                             r-rlang
-                             r-purrr
-                             r-plyr
-                             r-miniui
-                             r-ggplot2
-                             r-dplyr
-                             r-colourpicker))
-    (home-page "https://github.com/yonicd/ggedit")
-    (synopsis "Interactive 'ggplot2' Layer and Theme Aesthetic Editor")
-    (description
-     "Interactively edit ggplot2 layer and theme aesthetics definitions.")
-    (license license:expat)))
-
 (define-public r-ggeda
   (package
     (name "r-ggeda")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggEDA" version))
        (sha256
-        (base32 "0128rzwax5l1sssbdggjajwiyw3dmf55d2pc51di8sal01529q92"))))
+        (base32 "1xvq44dkzbg4qal4lig1wjwb5cf3n3wpg9pa2lsjwcjs0pzg1mmz"))))
     (properties `((upstream-name . "ggEDA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-scales
+                             r-rlang
                              r-rank
                              r-patchwork
                              r-ggtext
@@ -29724,13 +29604,13 @@ genieclust package.")
 (define-public r-genhmm1d
   (package
     (name "r-genhmm1d")
-    (version "0.2.1")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenHMM1d" version))
        (sha256
-        (base32 "0lvwga4k3wmcdcv4bbhwj7ln7lrn6pqs0spz4zd5is6dp3j42wyb"))))
+        (base32 "0g7apsls4dzrznj8xdx0rzi9bd8wzws74am5fj0r0ah9iw5434c1"))))
     (properties `((upstream-name . "GenHMM1d")))
     (build-system r-build-system)
     (arguments
@@ -36515,31 +36395,6 @@ order to estimate multistate models.")
      "Boosting models for fitting generalized additive models for location, shape and
 scale ('GAMLSS') to potentially high dimensional data.")
     (license license:gpl2)))
-
-(define-public r-gamblers-ruin-gameplay
-  (package
-    (name "r-gamblers-ruin-gameplay")
-    (version "4.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gamblers.ruin.gameplay" version))
-       (sha256
-        (base32 "0h5sfjs2lzs3cfx7q0agq68x4hhqmkiqga04c1gvnzwn8k7i8svc"))))
-    (properties `((upstream-name . "gamblers.ruin.gameplay")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis r-hrbrthemes r-ggplot2 r-gganimate))
-    (home-page "https://cran.r-project.org/package=gamblers.ruin.gameplay")
-    (synopsis
-     "One-Dimensional Random Walks Through Simulation of the Gambler's Ruin Problem")
-    (description
-     "Simulates a gambling game under the gambler's ruin setup, after asking for the
-money you have and the money you want to win, along with your win probability in
-each round of the game.")
-    (license license:expat)))
 
 (define-public r-gambin
   (package

@@ -2007,13 +2007,13 @@ candidates into a specific set of subregions.")
 (define-public r-pulmodatasets
   (package
     (name "r-pulmodatasets")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PulmoDataSets" version))
        (sha256
-        (base32 "01d1hjrh6fr8g5fbrfz7qwb40a8g34yyk08ai06qj5ydaqxhmyil"))))
+        (base32 "0071aq1b2jkrd2i0l5q6q0amf8yx3qk85hh594gzc6lb9jiw9d9l"))))
     (properties `((upstream-name . "PulmoDataSets")))
     (build-system r-build-system)
     (arguments
@@ -4423,13 +4423,13 @@ number of ancillary routines are provided for easy testing and graphics.")
 (define-public r-psminer
   (package
     (name "r-psminer")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psmineR" version))
        (sha256
-        (base32 "0fc30hsqkbfjj7wz2s7yn1w3hrr80k8bmj6ah8diswrq1ms12k3i"))))
+        (base32 "07qzwkbsaqwvzr6h07biprc17fxhnaz8krcrvigfqmpr4l51gh86"))))
     (properties `((upstream-name . "psmineR")))
     (build-system r-build-system)
     (arguments
@@ -4445,6 +4445,7 @@ number of ancillary routines are provided for easy testing and graphics.")
                              r-data-table
                              r-cli
                              r-bupar))
+    (native-inputs (list r-knitr))
     (home-page "https://bupar.net/")
     (synopsis "Performance Spectrum Miner for Event Data")
     (description
@@ -5104,19 +5105,19 @@ mean, survival function based on the Kaplan-Meier estimator see Klein et al.
 (define-public r-psdr
   (package
     (name "r-psdr")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psdr" version))
        (sha256
-        (base32 "02ypgi1gxnp0mn9p1w2j34ypnpbkrwp9i0ma0i7657zddcfnf391"))))
+        (base32 "1zvv60c65c1q67b8czr5av6n95d0k3vagrk4nfvq9niljz8h0p86"))))
     (properties `((upstream-name . "psdr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-qpdf r-ggplot2 r-devtools))
+    (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=psdr")
     (synopsis "Use Time Series to Generate and Compare Power Spectral Density")
@@ -5255,39 +5256,6 @@ composites of metabolic syndrome symptom score (@code{MetSSS}) and allostatic
 load (AL).  Provides a wrapper to calculate the @code{MetSSS} on new data using
 the Healthy Hearts formula.")
     (license license:lgpl3)))
-
-(define-public r-psc
-  (package
-    (name "r-psc")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "psc" version))
-       (sha256
-        (base32 "00222jkc7fgb1vfvhlssnsgw7jdpynailddnmrqzw6h8mddsrqzs"))))
-    (properties `((upstream-name . "psc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-waffle
-                             r-survminer
-                             r-survival
-                             r-rcolorbrewer
-                             r-mvtnorm
-                             r-gtsummary
-                             r-ggplot2
-                             r-flexsurv
-                             r-enrichwith))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/richjjackson/psc/")
-    (synopsis "Personalised Synthetic Controls")
-    (description
-     "Allows the comparison of data cohorts (DC) against a Counter Factual Model (CFM)
-and measures the difference in terms of an efficacy parameter.  Allows the
-application of Personalised Synthetic Controls.")
-    (license license:gpl3)))
 
 (define-public r-psborrow2
   (package
@@ -8707,13 +8675,13 @@ monitoring.  Building on the event log objects class from package @code{bupaR}'.
 (define-public r-processcheckr
   (package
     (name "r-processcheckr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "processcheckR" version))
        (sha256
-        (base32 "1qsmklvlldjw29f10pxn5455xp6nql3qkxm2yak367q4a3z069x6"))))
+        (base32 "0z7193d289vm4w4b9jvycxzc7h33fc7m5dbz1wb301vgx74ahif8"))))
     (properties `((upstream-name . "processcheckR")))
     (build-system r-build-system)
     (arguments
@@ -13463,6 +13431,40 @@ from projection subsets of data and later combined by suitably-chosen unknown
 weights.  The philosophy of the package is described in Guo G. (2020)
 <doi:10.1007/s00180-020-00974-4>.")
     (license license:expat)))
+
+(define-public r-ppwdeming
+  (package
+    (name "r-ppwdeming")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ppwdeming" version))
+       (sha256
+        (base32 "070bzm978irsxljq9fy9cjmx907n0cwz61jx23gv4bas6xa7az8c"))))
+    (properties `((upstream-name . "ppwdeming")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=ppwdeming")
+    (synopsis "Precision Profile Weighted Deming Regression")
+    (description
+     "Weighted Deming regression, also known as \"errors-in-variable\" regression, is
+applied with suitable weights.  Weights are modeled via a precision profile;
+functions are provided for implementing it in both known and unknown precision
+profile situations.  The package provides tools for precision profile weighted
+Deming (PWD) regression.  It covers two settings â one where the precision
+profiles are known either from external studies or from adequate replication of
+the X and Y readings, and one in which there is a plausible functional form for
+the precision profiles but the exact function must be estimated from the
+(generally singlicate) readings.  The function set includes tools for: estimated
+standard errors (via jackknifing); standardized-residual analysis function with
+regression diagnostic tools for normality, linearity and constant variance; and
+an outlier analysis identifying significant outliers for closer investigation.
+Further information on mathematical derivations and applications can be found on
+@code{arXiv}: Hawkins and Kraker (2025) <doi:10.48550/@code{arXiv.2508.02888>}.")
+    (license license:gpl3+)))
 
 (define-public r-pptreeviz
   (package
@@ -21283,13 +21285,13 @@ summarized in: Prybylski, (2024) <doi:10.1007/s40262-023-01343-2>.")
 (define-public r-pmxcode
   (package
     (name "r-pmxcode")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmxcode" version))
        (sha256
-        (base32 "0nycb95vhzkbhw86n1xwjaqlj4qx49a3lfv9c5pqmfag12n74cq9"))))
+        (base32 "15wch2y1vsj58xrhjnmlw4wfsbqm4c720cp7r45bp6wkplpdfcbh"))))
     (properties `((upstream-name . "pmxcode")))
     (build-system r-build-system)
     (arguments
@@ -21441,6 +21443,34 @@ probabilities (P(N1>n1, ..., Nk>nk)), as well as probabilities with both
 constraints (P(l1<N1<=u1, ..., lk<Nk<=uk)).  Uses a method suggested by Bruce
 Levin (1981) <doi:10.1214/aos/1176345593>.")
     (license license:agpl3)))
+
+(define-public r-pmsesampling
+  (package
+    (name "r-pmsesampling")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pmsesampling" version))
+       (sha256
+        (base32 "0jqanqj4swmwc6zj0haanj63a444zzb6skvnm3dapsjswcmxvxqy"))))
+    (properties `((upstream-name . "pmsesampling")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rootsolve r-matrix))
+    (home-page "https://github.com/Chenaters/pmsesampling")
+    (synopsis
+     "Sample Size Determination for Accurate Predictive Linear Regression")
+    (description
+     "This package provides analytic and simulation tools to estimate the minimum
+sample size required for achieving a target prediction mean-squared error (PMSE)
+or a specified proportional PMSE reduction (@code{pPMSEr}) in linear regression
+models.  Functions implement the criteria of Ma (2023)
+<https://digital.wpi.edu/downloads/0g354j58c>, support covariance-matrix
+handling, and include helpers for root-finding and diagnostic plotting.")
+    (license license:expat)))
 
 (define-public r-pmsampsize
   (package
@@ -29696,6 +29726,36 @@ with other packages: @code{rPraat}
 <https://CRAN.R-project.org/package=@code{textgRid>}.")
     (license license:gpl2+)))
 
+(define-public r-phonevalidator
+  (package
+    (name "r-phonevalidator")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PhoneValidator" version))
+       (sha256
+        (base32 "0cypd4cccyna72sngiysx0lyvda2y3j8r3ckl3c4kmq7mmj3gbak"))))
+    (properties `((upstream-name . "PhoneValidator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr))
+    (home-page "https://github.com/GenderAPI/PhoneValidator-R")
+    (synopsis
+     "Client for 'GenderAPI.io' Phone Number Validation and Formatter API")
+    (description
+     "This package provides an interface to the @code{GenderAPI.io} Phone Number
+Validation & Formatter API (<https://www.genderapi.io>) for validating
+international phone numbers, detecting number type (mobile, landline, Voice over
+Internet Protocol (@code{VoIP})), retrieving region and country metadata, and
+formatting numbers to E.164 or national format.  Designed to simplify
+integration into R workflows for data validation, Customer Relationship
+Management (CRM) data cleaning, and analytics tasks.  Full documentation is
+available at <https://www.genderapi.io/docs-phone-validation-formatter-api>.")
+    (license license:expat)))
+
 (define-public r-phonetisr
   (package
     (name "r-phonetisr")
@@ -33908,13 +33968,13 @@ Ansley (1979) <doi:10.1093/biomet/66.1.59> Hurd, H. L., Gerr, N. L. (1991)
 (define-public r-peramo
   (package
     (name "r-peramo")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "peramo" version))
        (sha256
-        (base32 "0ngzf6piglr00r4i1m3r9mvlw67hs96lbfxv832vwisf631fdvlf"))))
+        (base32 "1d371blqlxs60v8b0cw9bah8spldyrgbfjsdw22h4a6as53pg5kl"))))
     (properties `((upstream-name . "peramo")))
     (build-system r-build-system)
     (arguments
@@ -35455,20 +35515,20 @@ pedigree structure ('Vazquez et al., 2010') <doi:10.2527/jas.2009-1952>.")
 (define-public r-pedgene
   (package
     (name "r-pedgene")
-    (version "3.9")
+    (version "4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedgene" version))
        (sha256
-        (base32 "18b0galqql6pci0bfy8k93p29mqsk707wz4lr72plnciqg04l5sf"))))
+        (base32 "0h848mxs564ck6a86adq4ljp3vazlfsbqlpypn25h148hwx8rc9w"))))
     (properties `((upstream-name . "pedgene")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survey r-matrix r-kinship2 r-compquadform))
-    (home-page "https://analytictools.mayo.edu/research/pedgene/")
+    (propagated-inputs (list r-survey r-matrix r-compquadform))
+    (home-page "https://cran.r-project.org/package=pedgene")
     (synopsis "Gene-Level Variant Association Tests for Pedigree Data")
     (description
      "Gene-level variant association tests with disease status for pedigree data:
@@ -36647,6 +36707,32 @@ predicts a probability density function (PDF) for random data using a novel
 iterative scoring function to determine the best fit without overfitting to the
 sample.")
     (license license:gpl2+)))
+
+(define-public r-pdfcombiner
+  (package
+    (name "r-pdfcombiner")
+    (version "1.9.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pdfcombiner" version))
+       (sha256
+        (base32 "1yid4ygg67yz2n3ahwv4009cn70w2l2z4q8f13xfx8wrbirhcszb"))))
+    (properties `((upstream-name . "pdfcombiner")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-qpdf r-pdftools))
+    (home-page "https://github.com/stevechoy/pdfcombiner")
+    (synopsis "Graphical User Interface for Manipulating PDF and Image Files")
+    (description
+     "This package provides a shiny app that supports merging of PDF and/or image
+files with page selection, removal, or rotation options.  It is a fast, free,
+and secure alternative to commercial software or various online websites which
+require users to sign-up, and it avoids any potential risks associated with
+uploading files elsewhere.")
+    (license license:expat)))
 
 (define-public r-pdfcluster
   (package
@@ -40900,13 +40986,13 @@ as well as others such as vector fields, traps, and attractors.")
 (define-public r-particle-swarm-optimisation
   (package
     (name "r-particle-swarm-optimisation")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "particle.swarm.optimisation" version))
        (sha256
-        (base32 "0y3pq129irxifiph40mf027gbc02c4pwkchs305pcbj3vr9pwsyw"))))
+        (base32 "1jwzngkajd9bj5688axqcw087a6yplwid8ykm4ywa0djp11h3v4h"))))
     (properties `((upstream-name . "particle.swarm.optimisation")))
     (build-system r-build-system)
     (arguments
@@ -40920,7 +41006,7 @@ as well as others such as vector fields, traps, and attractors.")
     (description
      "This package provides a toolbox to create a particle swarm optimisation (PSO),
 the package contains two classes: the Particle and the Particle Swarm, this two
-class is used to run the PSO with methods to easily print, plot and save the
+class are used to run the PSO with methods to easily print, plot and save the
 result.")
     (license license:gpl3)))
 
@@ -45158,13 +45244,13 @@ linear regression models via conditional likelihood function.")
 (define-public r-pafit
   (package
     (name "r-pafit")
-    (version "1.2.10")
+    (version "1.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAFit" version))
        (sha256
-        (base32 "10p2q90jbjyzbvn8kgx1i8if144gq2zylqh8h3x4sg2ajqbcv8kg"))))
+        (base32 "1khlkkpfdkr6rhhyhw4rxwqmfpv38iq794snph9wm0rxr8wk9n19"))))
     (properties `((upstream-name . "PAFit")))
     (build-system r-build-system)
     (arguments

@@ -3082,13 +3082,13 @@ smaller than the number of predictors.  For more information see Faisal and Tutz
 (define-public r-wnl
   (package
     (name "r-wnl")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wnl" version))
        (sha256
-        (base32 "0k1lb31qqwnab1fgdmyi0ndghpn80mpxik3z3w35mywr8fh5aak9"))))
+        (base32 "04knhnd01cyrnwjfi1a5d8mcallrp3ifwrm6l003zgvkgw33c5z4"))))
     (properties `((upstream-name . "wnl")))
     (build-system r-build-system)
     (arguments

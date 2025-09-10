@@ -2124,13 +2124,13 @@ manage data that is both zero-inflated and over-dispersed.")
 (define-public r-huraultmisc
   (package
     (name "r-huraultmisc")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HuraultMisc" version))
        (sha256
-        (base32 "0bi1y7icrg0f4n9ah9dsrijnfr39bqg3799rz4hccd1b061f0rvj"))))
+        (base32 "1306j28gqhj148fshddswv39idvf4bdag3fxcxwnz65bb3d60njr"))))
     (properties `((upstream-name . "HuraultMisc")))
     (build-system r-build-system)
     (arguments
@@ -2143,9 +2143,8 @@ manage data that is both zero-inflated and over-dispersed.")
                              r-hmisc
                              r-hdinterval
                              r-ggplot2
-                             r-dplyr
-                             r-cowplot))
-    (home-page "https://github.com/ghurault/HuraultMisc")
+                             r-dplyr))
+    (home-page "https://ghurault.github.io/HuraultMisc/")
     (synopsis "Guillem Hurault Functions' Library")
     (description
      "This package contains various functions for data analysis, notably helpers and
@@ -6340,53 +6339,6 @@ choice selects the differential equation that is fit to the observations.
 Single and multi-individual models are available.  O'Brien et al. (2024)
 <doi:10.1111/2041-210X.14463>.")
     (license license:gpl3+)))
-
-(define-public r-hmda
-  (package
-    (name "r-hmda")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HMDA" version))
-       (sha256
-        (base32 "1xzqzgypgrakaz4spp0h84b9f2ix93wxfvkvaqw9qf4359aiwg7k"))))
-    (properties `((upstream-name . "HMDA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-splittools
-                             r-shapley
-                             r-psych
-                             r-h2otools
-                             r-h2o
-                             r-ggplot2
-                             r-dplyr
-                             r-curl
-                             r-autoensemble))
-    (home-page "http://dx.doi.org/10.13140/RG.2.2.32473.63846")
-    (synopsis
-     "Holistic Multimodel Domain Analysis for Exploratory Machine Learning")
-    (description
-     "Holistic Multimodel Domain Analysis (HMDA) is a robust and transparent framework
-designed for exploratory machine learning research, aiming to enhance the
-process of feature assessment and selection.  HMDA addresses key limitations of
-traditional machine learning methods by evaluating the consistency across
-multiple high-performing models within a fine-tuned modeling grid, thereby
-improving the interpretability and reliability of feature importance
-assessments.  Specifically, it computes Weighted Mean SHapley Additive
-@code{exPlanations} (WMSHAP), which aggregate feature contributions from
-multiple models based on weighted performance metrics.  HMDA also provides
-confidence intervals to demonstrate the stability of these feature importance
-estimates.  This framework is particularly beneficial for analyzing complex,
-multidimensional datasets common in health research, supporting reliable
-exploration of mental health outcomes such as suicidal ideation, suicide
-attempts, and other psychological conditions.  Additionally, HMDA includes
-automated procedures for feature selection based on WMSHAP ratios and performs
-dimension reduction analyses to identify underlying structures among features.
-For more details see Haghish (2025) <doi:10.13140/RG.2.2.32473.63846>.")
-    (license license:expat)))
 
 (define-public r-hmclearn
   (package
@@ -13359,13 +13311,13 @@ continuous shrinkage priors on the effects.")
 (define-public r-hdbinseg
   (package
     (name "r-hdbinseg")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdbinseg" version))
        (sha256
-        (base32 "0q5lfczymrd4ln04lbdysncx6ylcsgrk69mhvm7jjk7pybrpm9wq"))))
+        (base32 "1jvpysv16dy24das15g4wwkzwwniprcrhkqwdgadfmkar81h7hc8"))))
     (properties `((upstream-name . "hdbinseg")))
     (build-system r-build-system)
     (arguments

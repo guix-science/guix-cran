@@ -485,13 +485,13 @@ the @code{FuzzyNumbers} package.")
 (define-public r-fuzzysim
   (package
     (name "r-fuzzysim")
-    (version "4.33")
+    (version "4.34")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzySim" version))
        (sha256
-        (base32 "1hm138mqagz2pqpc31kkq62c8panysbca9ad12pknr0if5qsnsci"))))
+        (base32 "1idyymgkvlq86f4shgnxnaahg414cc80n218c714nzxjpdfhd3d3"))))
     (properties `((upstream-name . "fuzzySim")))
     (build-system r-build-system)
     (arguments
@@ -3702,13 +3702,13 @@ FSM.")
 (define-public r-fslr
   (package
     (name "r-fslr")
-    (version "2.25.3")
+    (version "2.27.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fslr" version))
        (sha256
-        (base32 "0pp1hn80qknxg7w24qqgjq0y96i22qixsdgs2bkjylwh9zhxbg9x"))))
+        (base32 "1gf1jnbbll7whx9lfag3g77gn7k0z4pd3l5b757fcwq3mzpx8iy3"))))
     (properties `((upstream-name . "fslr")))
     (build-system r-build-system)
     (arguments
@@ -4027,13 +4027,13 @@ $HOME/.cache/R/my_app_or_pkg_cache_folder).")
 (define-public r-fsbrain
   (package
     (name "r-fsbrain")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fsbrain" version))
        (sha256
-        (base32 "0zm6gyc0a0ymx40qpwpm8v51mnp3m9si72smpwznnpgymlwh7r0s"))))
+        (base32 "0r005rs5bbjg7yz4vma8vhgzwhbh4nzknjlwq3qrzsv28zrn93f0"))))
     (properties `((upstream-name . "fsbrain")))
     (build-system r-build-system)
     (arguments
@@ -5233,13 +5233,13 @@ computational efficiency.")
 (define-public r-freesurferformats
   (package
     (name "r-freesurferformats")
-    (version "0.1.18")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "freesurferformats" version))
        (sha256
-        (base32 "17g58abcp6fk20zdx0lzvb989g359nk1vl5drlfinfp6p1jjvsbj"))))
+        (base32 "1kdid142d7vxga42w9f62i7ynqdhbavpp9pm32rpbyq9485aa47g"))))
     (properties `((upstream-name . "freesurferformats")))
     (build-system r-build-system)
     (arguments
@@ -8961,47 +8961,6 @@ scenario-neutral approaches occur the tool will be updated to incorporate these
 advances.")
     (license license:gpl3)))
 
-(define-public r-forensit
-  (package
-    (name "r-forensit")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "forensIT" version))
-       (sha256
-        (base32 "093did5jwa7dal2mn0k6b2h67m30kddlvg4yp9d82i6hilar25wp"))))
-    (properties `((upstream-name . "forensIT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-reshape2
-                             r-pedtools
-                             r-pedprobr
-                             r-mispitools
-                             r-magrittr
-                             r-iterators
-                             r-hrbrthemes
-                             r-gtools
-                             r-ggplot2
-                             r-forrel
-                             r-foreach
-                             r-fbnet
-                             r-dplyr
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=forensIT")
-    (synopsis "Information Theory Tools for Forensic Analysis")
-    (description
-     "The @code{forensIT} package is a comprehensive statistical toolkit tailored for
-handling missing person cases.  By leveraging information theory metrics, it
-enables accurate assessment of kinship, particularly when limited genetic
-evidence is available.  With a focus on optimizing statistical power,
-@code{forensIT} empowers investigators to effectively prioritize family members,
-enhancing the reliability and efficiency of missing person investigations.")
-    (license license:gpl3+)))
-
 (define-public r-forensim
   (package
     (name "r-forensim")
@@ -10291,13 +10250,13 @@ multivariate data sets of financial returns.")
 (define-public r-fmtr
   (package
     (name "r-fmtr")
-    (version "1.6.8")
+    (version "1.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmtr" version))
        (sha256
-        (base32 "01v527mh9s22ji1vp4zdh7a0m9h3xb46sjkjhqwiy45i7ziqxcz8"))))
+        (base32 "06gmykz3d1mwwmvrfasv4w4gkcy38q36yw6kl141n97apyw6i8if"))))
     (properties `((upstream-name . "fmtr")))
     (build-system r-build-system)
     (arguments
@@ -11169,13 +11128,13 @@ curves.")
 (define-public r-fluxfinder
   (package
     (name "r-fluxfinder")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxfinder" version))
        (sha256
-        (base32 "1k3q482jf6n7yfcr73w4xzpg18jkz0wz100b52a6f1x1yrbcchf8"))))
+        (base32 "1qc0w9x1kia9hmh24bb7jhmvm2mx4yq5qdwb4k36nykpm210lazi"))))
     (properties `((upstream-name . "fluxfinder")))
     (build-system r-build-system)
     (arguments
@@ -12156,13 +12115,13 @@ data, topological data, functional data or density-valued data.")
 (define-public r-flippant
   (package
     (name "r-flippant")
-    (version "1.5.5")
+    (version "1.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flippant" version))
        (sha256
-        (base32 "0sr5mksgfn06jvx3rbc03dhmh9l7w1s6nz609yyw3rgc7snd1w57"))))
+        (base32 "1m8x3q0cgr5pvq6w5y1qip1ir7clvmpnfw8b8485m9qdb6pmkzns"))))
     (properties `((upstream-name . "flippant")))
     (build-system r-build-system)
     (arguments
@@ -12784,13 +12743,13 @@ registration).  Low memory footprint.")
 (define-public r-flexreg
   (package
     (name "r-flexreg")
-    (version "1.3.1")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FlexReg" version))
        (sha256
-        (base32 "0i201vqgyvb59h94b63zw95p58in0haqbxb9nnvf3113ckmipizy"))))
+        (base32 "1la0qyrlx07sv25n1nqrxdm8h2xmyc2l59l6i2rkxj0fjfjw7jb1"))))
     (properties `((upstream-name . "FlexReg")))
     (build-system r-build-system)
     (arguments
@@ -18726,40 +18685,6 @@ products is available from the Fermi Science Support Center
 (http://fermi.gsfc.nasa.gov/ssc/).")
     (license license:cc0)))
 
-(define-public r-fergm
-  (package
-    (name "r-fergm")
-    (version "1.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fergm" version))
-       (sha256
-        (base32 "1d979z2m5f13i1w9d8kh9rnaafavsap169w0nycpd5j2f3dfhyn7"))))
-    (properties `((upstream-name . "fergm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rstan
-                             r-reshape2
-                             r-network
-                             r-matrixstats
-                             r-ggplot2
-                             r-extrafont
-                             r-ergm))
-    (native-inputs (list r-knitr))
-    (home-page "http://github.com/benjamin-w-campbell/fergm")
-    (synopsis
-     "Estimation and Fit Assessment of Frailty Exponential Random Graph Models")
-    (description
-     "Frailty Exponential Random Graph Models estimated through pseudo likelihood with
-frailty terms estimated using Stan as per Box-Steffensmeier et.  al (2017)
-<doi:10.7910/DVN/K3D1M2>.  Goodness of fit for Frailty Exponential Random Graph
-Models is also available, with easy visualizations for comparison to fit
-Exponential Random Graph Models.")
-    (license license:gpl3)))
-
 (define-public r-fer
   (package
     (name "r-fer")
@@ -24053,6 +23978,48 @@ significantly associated with a particular phenotype, while accounting for
 categorical covariates.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-fastbioclim
+  (package
+    (name "r-fastbioclim")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastbioclim" version))
+       (sha256
+        (base32 "13vfkcqh72ck3ihca9001bvrnc66nddgqs1flcahkc9z3g610plj"))))
+    (properties `((upstream-name . "fastbioclim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-rlang
+                             r-rfast
+                             r-qs
+                             r-purrr
+                             r-progressr
+                             r-glue
+                             r-future-apply
+                             r-exactextractr))
+    (home-page "https://gepinillab.github.io/fastbioclim/")
+    (synopsis "Scalable and Efficient Derivation of Bioclimatic Variables")
+    (description
+     "This package provides a high-performance framework for deriving bioclimatic and
+custom summary variables from large-scale climate raster data.  The package
+features a dual-backend architecture that intelligently switches between fast
+in-memory processing for smaller datasets (via the terra package) and a
+memory-safe tiled approach for massive datasets that do not fit in RAM (via
+exactextractr and Rfast').  The main functions, @code{derive_bioclim()} and
+@code{derive_statistics()}', offer a unified interface with advanced options for
+custom time periods and static indices, making it suitable for a wide range of
+ecological and environmental modeling applications.  A software note is in
+preparation.  In the meantime, you can visit the package website
+<https://gepinillab.github.io/fastbioclim/> to find tutorials in English and
+Spanish.")
+    (license license:gpl3+)))
+
 (define-public r-fastbeta
   (package
     (name "r-fastbeta")
@@ -26822,6 +26789,39 @@ within the Description.")
      "We implement the Fast Covariance Estimation for Sparse Functional Data paper
 published in Statistics and Computing <doi: 10.1007/s11222-017-9744-8>.")
     (license license:gpl3)))
+
+(define-public r-fabricqueryr
+  (package
+    (name "r-fabricqueryr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fabricQueryR" version))
+       (sha256
+        (base32 "0n40ys1xba8ck8w9rjj1gr1p94alj92sdl4br02n81njbprchfa1"))))
+    (properties `((upstream-name . "fabricQueryR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-httr2
+                             r-dplyr
+                             r-cli
+                             r-azureauth))
+    (home-page "https://github.com/kennispunttwente/fabricQueryR")
+    (synopsis "Query Data in 'Microsoft Fabric'")
+    (description
+     "Query data hosted in Microsoft Fabric'.  Provides helpers to open DBI
+connections to SQL endpoints of Lakehouse and Data Warehouse items; submit Data
+Analysis Expressions ('DAX') queries to semantic model datasets in Microsoft
+Fabric and Power BI'; and read Delta Lake tables stored in @code{OneLake}
+('Azure Data Lake Storage Gen2').")
+    (license license:expat)))
 
 (define-public r-fabricerin
   (package

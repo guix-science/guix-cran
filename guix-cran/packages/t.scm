@@ -1236,31 +1236,6 @@ analysis.  The tvtools package for R simplifies exploring and analyzing panel
 data.")
     (license license:gpl3)))
 
-(define-public r-tvthemes
-  (package
-    (name "r-tvthemes")
-    (version "1.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tvthemes" version))
-       (sha256
-        (base32 "0q7rbq6ajvl2b3x8bcfxggdzfawc7p1dlfm4ydwvl74iighvq8sp"))))
-    (properties `((upstream-name . "tvthemes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales r-magick r-ggplot2 r-extrafont))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Ryo-N7/tvthemes")
-    (synopsis "TV Show Themes and Color Palettes for 'ggplot2' Graphics")
-    (description
-     "This package contains various ggplot2 themes and color palettes based on TV
-shows such as Game of Thrones', Brooklyn Nine-Nine', Avatar: The Last
-Airbender', Spongebob Squarepants', and more.")
-    (license license:gpl3)))
-
 (define-public r-tvreg
   (package
     (name "r-tvreg")
@@ -5412,13 +5387,13 @@ cluster evaluation metrics.")
 (define-public r-tsci
   (package
     (name "r-tsci")
-    (version "3.0.4")
+    (version "3.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSCI" version))
        (sha256
-        (base32 "01r09q1bvy8q28xmk28rmd3cx2y1kv9wgvrdmn3l08arjs83qv9g"))))
+        (base32 "0asvns1ykq1gqcynxlvjdb4s0hnlfxyqj9kcgdnryi6vnkpl8gms"))))
     (properties `((upstream-name . "TSCI")))
     (build-system r-build-system)
     (arguments
@@ -5433,10 +5408,10 @@ cluster evaluation metrics.")
 settings when instrumental variable regression is not suitable because of
 potentially invalid instrumental variables.  Based on Guo and Buehlmann (2022)
 \"Two Stage Curvature Identification with Machine Learning: Causal Inference with
-Possibly Invalid Instrumental Variables\" <@code{arXiv:2203.12808>}.  The
-vignette is available in Carl, Emmenegger, BÃ¼hlmann and Guo (2023) \"TSCI: two
-stage curvature identification for causal inference with invalid instruments\"
-<@code{arXiv:2304.00513>}.")
+Possibly Invalid Instrumental Variables\" <doi:10.48550/@code{arXiv.2203.12808>}.
+ The vignette is available in Carl, Emmenegger, BÃ¼hlmann and Guo (2025) \"TSCI:
+Two Stage Curvature Identification for Causal Inference with Invalid Instruments
+in R\" <doi:10.18637/jss.v114.i07>.")
     (license license:gpl3+)))
 
 (define-public r-tsbss
@@ -9830,13 +9805,13 @@ Ukrainian strings into Latin symbols.")
 (define-public r-translate-logit
   (package
     (name "r-translate-logit")
-    (version "1.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "translate.logit" version))
        (sha256
-        (base32 "1klh4aisip0q0899lbybniy38f346m66k5g929l444f26dq9snw0"))))
+        (base32 "0pa55q0pvhv19w7g5kv7dg89h1xdlh23pidzqfdra17qs1lgihik"))))
     (properties `((upstream-name . "translate.logit")))
     (build-system r-build-system)
     (arguments
@@ -10288,13 +10263,13 @@ al. (2016) <arxiv:1703.03373>, respectively.")
 (define-public r-tramme
   (package
     (name "r-tramme")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tramME" version))
        (sha256
-        (base32 "150fh6a7dw5bh240m2dlv3insssdv2qfyngm1faa8rfkcqwbb2p1"))))
+        (base32 "11w1xgh38cmf6q2gvq8qghqpfh5w1qlij4i5gfwqdlvfvjmchph8"))))
     (properties `((upstream-name . "tramME")))
     (build-system r-build-system)
     (arguments
@@ -10329,7 +10304,8 @@ distributed on the scale of the transformation function, the marginal likelihood
 is evaluated using the Laplace approximation, and the gradients are calculated
 with automatic differentiation (Tamasi & Hothorn, 2021)
 <doi:10.32614/RJ-2021-075>.  Penalized smooth shift terms can be defined using
-mgcv'.")
+the mgcv notation.  Additive mixed-effects transformation models are described
+in Tamasi (2025) <doi:10.18637/jss.v114.i11>.")
     (license license:gpl2)))
 
 (define-public r-traminerextras
@@ -18130,43 +18106,6 @@ to support exploratory data analysis, feature engineering, and pedagogical use
 cases.")
     (license license:expat)))
 
-(define-public r-tidytidbits
-  (package
-    (name "r-tidytidbits")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidytidbits" version))
-       (sha256
-        (base32 "1djiyh024krfh4qjds8ib4cp55sbh96flhq7b72yvm1h4hq7arlc"))))
-    (properties `((upstream-name . "tidytidbits")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-forcats
-                             r-extrafont
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=tidytidbits")
-    (synopsis "Collection of Tools and Helpers Extending the Tidyverse")
-    (description
-     "This package provides a selection of various tools to extend a data analysis
-workflow based on the tidyverse packages.  This includes high-level data frame
-editing methods (in the style of mutate'/'mutate_at'), some methods in the style
-of purrr and forcats', lookup methods for dict-like lists, a generic method for
-lumping a data frame by a given count, various low-level methods for special
-treatment of NA values, python'-style tuple-assignment and truthy'/'falsy
-checks, saving to PDF and PNG from a pipe and various small utilities.")
-    (license license:gpl3)))
-
 (define-public r-tidyterra
   (package
     (name "r-tidyterra")
@@ -24434,13 +24373,13 @@ Mata (2021) <@code{arXiv:2110.05856>} for reference.")
 (define-public r-text2sdg
   (package
     (name "r-text2sdg")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "text2sdg" version))
        (sha256
-        (base32 "133cqh9j3akqfh0m3cbi6splbmzp7plm5gxaiv2w0f0qih31f5fk"))))
+        (base32 "04c2242443hcbkjyaiqd6blj3gi9k7c2zjzqajypk8i8zwgi70n3"))))
     (properties `((upstream-name . "text2sdg")))
     (build-system r-build-system)
     (arguments
@@ -24460,14 +24399,14 @@ Mata (2021) <@code{arXiv:2110.05856>} for reference.")
     (home-page "https://github.com/dwulff/text2sdg")
     (synopsis "Detecting UN Sustainable Development Goals in Text")
     (description
-     "The United Nationsâ Sustainable Development Goals (SDGs) have become an
-important guideline for organisations to monitor and plan their contributions to
-social, economic, and environmental transformations.  The text2sdg package is an
+     "The United Nations Sustainable Development Goals (SDGs) have become an important
+guideline for organisations to monitor and plan their contributions to social,
+economic, and environmental transformations.  The text2sdg package is an
 open-source analysis package that identifies SDGs in text using scientifically
 developed query systems, opening up the opportunity to monitor any type of
 text-based data, such as scientific output or corporate publications.  For more
-information regarding the methodology see Meier, Mata & Wulff (2022)
-<@code{arXiv:2110.05856>}.")
+information see Meier, Mata & Wulff (2025) <doi:10.32614/RJ-2024-005> and Wulff,
+Meier & Mata (2024) <doi:10.1007/s11625-024-01516-3>.")
     (license license:gpl3)))
 
 (define-public r-text2map
@@ -24718,13 +24657,13 @@ discriminant analyses.")
 (define-public r-texor
   (package
     (name "r-texor")
-    (version "1.5.6")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "texor" version))
        (sha256
-        (base32 "15g3h6qrps96f92njxqmrffkza80dmsfsc5915wrs6p00ajxqzyb"))))
+        (base32 "1qi9jyvhh5m769gzjq7sq1n1q6645z6850s5zg8bglwai7j8rx3m"))))
     (properties `((upstream-name . "texor")))
     (build-system r-build-system)
     (arguments
@@ -31384,30 +31323,32 @@ distributional tails.  See
 (define-public r-tailplots
   (package
     (name "r-tailplots")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tailplots" version))
        (sha256
-        (base32 "1f71r1dyq3w9i3mfpqm0qjhcgc4m1ljmp1cbsj69zjplj7zi1bg0"))))
+        (base32 "1flqwnp6ky32ab372hzkhwid2wgwd4532abwsxs3ibpicpzffr1x"))))
     (properties `((upstream-name . "tailplots")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-resample))
+    (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=tailplots")
     (synopsis "Estimators and Plots for Gamma and Pareto Tail Detection")
     (description
-     "Estimators for two functionals used to detect Gamma or Pareto distributions, as
-well as distributions exhibiting similar tail behavior, as introduced by
-Iwashita and Klar (2023) <doi:10.1111/stan.12316> and Klar (2024)
+     "Estimators for two functionals used to detect Gamma, Pareto or Lognormal
+distributions, as well as distributions exhibiting similar tail behavior, as
+introduced by Iwashita and Klar (2023) <doi:10.1111/stan.12316> and Klar (2024)
 <doi:10.1080/00031305.2024.2413081>.  One of these functionals, g, originally
 proposed by Asmussen and Lehtomaa (2017) <doi:10.3390/risks5010010>,
-distinguishes between log-convex and log-concave tail behavior.  The package
-also includes methods for visualizing these estimators and their associated
-confidence intervals across various threshold values.")
+distinguishes between log-convex and log-concave tail behavior.  Furthermore the
+characterization of the lognormal distribution is based on the work of Mosimann
+(1970) <doi:10.2307/2284599>.  The package also includes methods for visualizing
+these estimators and their associated confidence intervals across various
+threshold values.")
     (license license:expat)))
 
 (define-public r-tailor

@@ -346,13 +346,13 @@ occasions, moderated nonlinear factor analysis and much more.")
 (define-public r-mxnorm
   (package
     (name "r-mxnorm")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mxnorm" version))
        (sha256
-        (base32 "01845m5h4rd38n0fll2k2d9hw6j9dbjgs7kmwy30g9lkffvv73s8"))))
+        (base32 "1ijgn4wfmc65xq1jhawy6449v2mri458qfgy1xlcmy34xkj9q4br"))))
     (properties `((upstream-name . "mxnorm")))
     (build-system r-build-system)
     (arguments
@@ -368,16 +368,14 @@ occasions, moderated nonlinear factor analysis and much more.")
                              r-lme4
                              r-ksamples
                              r-kernsmooth
-                             r-glue
                              r-ggplot2
                              r-fossil
                              r-fda
-                             r-e1071
                              r-dplyr
                              r-data-table
                              r-caret))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mxnorm")
+    (home-page "https://github.com/ColemanRHarris/mxnorm")
     (synopsis "Apply Normalization Methods to Multiplexed Images")
     (description
      "This package implements methods to normalize multiplexed imaging data, including
@@ -749,30 +747,22 @@ multivariate meta-analysis.")
 (define-public r-mvtests
   (package
     (name "r-mvtests")
-    (version "2.2.2")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVTests" version))
        (sha256
-        (base32 "02rl7f249cis4jxqpszwmxr9fc483yhrni0rdyiwamv5q5j1bifz"))))
+        (base32 "075958fdhh5g6jjpli1520vvqxd7g81s9kj4fijg4w0xyz2c5jlp"))))
     (properties `((upstream-name . "MVTests")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rrcov r-robustbase r-mvtnorm))
+    (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=MVTests")
     (synopsis "Multivariate Hypothesis Tests")
-    (description
-     "Multivariate hypothesis tests and the confidence intervals.  It can be used to
-test the hypothesizes about mean vector or vectors (one-sample, two independent
-samples, paired samples), covariance matrix (one or more matrices), and the
-correlation matrix.  Moreover, it can be used for robust Hotelling T^2 test at
-one sample case in high dimensional data.  For this package, we have benefited
-from the studies Rencher (2003), Nel and Merwe (1986) <DOI:
-10.1080/03610928608829342>, Tatlidil (1996), Tsagris (2014), Villasenor Alva and
-Estrada (2009) <DOI: 10.1080/03610920802474465>.")
+    (description "Multivariate hypothesis tests and confidence intervals...")
     (license license:gpl2)))
 
 (define-public r-mvt
@@ -5548,13 +5538,13 @@ technical details, see Lyrvall et al (2023)
 (define-public r-multileveltools
   (package
     (name "r-multileveltools")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevelTools" version))
        (sha256
-        (base32 "1r8plz99x97d8krd39libizhqvzxcm84ibsas8wcxhy34y9apmnw"))))
+        (base32 "0n2i1aj873y9vfph7hjchja1cx883cy0dfyc3pbdsz347x8adj92"))))
     (properties `((upstream-name . "multilevelTools")))
     (build-system r-build-system)
     (arguments
@@ -5563,6 +5553,7 @@ technical details, see Lyrvall et al (2023)
     (propagated-inputs (list r-zoo
                              r-testthat
                              r-scales
+                             r-reformulas
                              r-nlme
                              r-lmertest
                              r-lme4
@@ -5718,56 +5709,6 @@ simulations by Falk, Vogel, Hammami, and MioÄeviÄ (2024)
 comprises ongoing work.  Currently only continuous mediators and outcomes are
 supported.  Factors for any predictors must be numerically represented.")
     (license license:gpl3)))
-
-(define-public r-multilevelcoda
-  (package
-    (name "r-multilevelcoda")
-    (version "1.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "multilevelcoda" version))
-       (sha256
-        (base32 "1kw2376idi4jx2xnds1sbmr5jrm91hxkxy14q8j58hd04dw90vf9"))))
-    (properties `((upstream-name . "multilevelcoda")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shinystan
-                             r-shiny
-                             r-posterior
-                             r-plotly
-                             r-loo
-                             r-htmltools
-                             r-hrbrthemes
-                             r-ggplot2
-                             r-future
-                             r-fs
-                             r-foreach
-                             r-extraoperators
-                             r-emmeans
-                             r-dt
-                             r-dofuture
-                             r-data-table
-                             r-compositions
-                             r-bslib
-                             r-brms
-                             r-bayestestr
-                             r-bayesplot
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://florale.github.io/multilevelcoda/")
-    (synopsis "Estimate Bayesian Multilevel Models for Compositional Data")
-    (description
-     "Implement Bayesian multilevel modelling for compositional data.  Compute
-multilevel compositional data and perform log-ratio transforms at between and
-within-person levels, fit Bayesian multilevel models for compositional
-predictors and outcomes, and run post-hoc analyses such as isotemporal
-substitution models.  References: Le, Stanford, Dumuid, and Wiley (2025)
-<doi:10.1037/met0000750>, Le, Dumuid, Stanford, and Wiley (2024)
-<doi:10.48550/@code{arXiv.2411.12407>}.")
-    (license license:gpl3+)))
 
 (define-public r-multilcirt
   (package
@@ -6975,13 +6916,13 @@ options.")
 (define-public r-multiapply
   (package
     (name "r-multiapply")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiApply" version))
        (sha256
-        (base32 "0yc63phci4xxb3ja3mi03ckdw9za3dwq2llc681wism1yfm26wlh"))))
+        (base32 "07dvizv2462khc3448db838bj055ihmm7ygqbxfgpfavx2dnnwk7"))))
     (properties `((upstream-name . "multiApply")))
     (build-system r-build-system)
     (arguments
@@ -7697,13 +7638,13 @@ the United States Freedom of Information Act.")
 (define-public r-muchpoint
   (package
     (name "r-muchpoint")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MuChPoint" version))
        (sha256
-        (base32 "0mixy2rcr23rk823r1r3s2bhr22dhsx56xvkk0djvfdb60pq0kfh"))))
+        (base32 "0qza333x99k8mh6xgbxngvm0w1yfhnnx1wpc07wgjnw5889334hx"))))
     (properties `((upstream-name . "MuChPoint")))
     (build-system r-build-system)
     (arguments
@@ -10523,13 +10464,13 @@ methodology developed in Sample Size Calculations for Micro-randomized Trials in
 (define-public r-mrtanalysis
   (package
     (name "r-mrtanalysis")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRTAnalysis" version))
        (sha256
-        (base32 "07l2qg37p8vp7c2d06mk31j7qkpc55s1j6cqb0nplj9fwrgmhbh0"))))
+        (base32 "0cvmqpv2fp4ckfk0i190hlzkqlwmxdi63km57mdclqw3sf2m8h6n"))))
     (properties `((upstream-name . "MRTAnalysis")))
     (build-system r-build-system)
     (arguments
@@ -10544,24 +10485,20 @@ methodology developed in Sample Size Calculations for Micro-randomized Trials in
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MRTAnalysis")
     (synopsis
-     "Assessing Proximal and Distal Causal Excursion Effects for Micro-Randomized Trials")
+     "Assessing Proximal, Distal, and Mediated Causal Excursion Effects for Micro-Randomized Trials")
     (description
-     "Estimates marginal causal excursion effects and moderated causal excursion
-effects for micro-randomized trial (MRT).  Applicable to MRT with binary
-treatment options and continuous or binary outcomes.  The method for MRT with
-continuous outcomes is the weighted centered least squares (WCLS) by Boruvka et
-al. (2018) <doi:10.1080/01621459.2017.1305274>.  The method for MRT with binary
-outcomes is the estimator for marginal excursion effect (EMEE) by Qian et al.
-(2021) <doi:10.1093/biomet/asaa070>.  Estimates marginal and moderated causal
-excursion effects for micro-randomized trials (MRTs) with binary treatment
-options.  Supports continuous and binary proximal outcomes as well as distal
-outcomes.  Methods include weighted and centered least squares (WCLS) for
+     "This package provides methods to analyze micro-randomized trials (MRTs) with
+binary treatment options.  Supports three types of analyses: (1) proximal causal
+excursion effects, including weighted and centered least squares (WCLS) for
 continuous proximal outcomes by Boruvka et al. (2018)
-<doi:10.1080/01621459.2017.1305274>, the estimator for marginal excursion effect
-(EMEE) for binary proximal outcomes by Qian et al. (2021)
-<doi:10.1093/biomet/asaa070>, and two-stage estimation of distal causal
-excursion effects (DCEE) for continuous distal outcomes
-<doi:10.48550/@code{arXiv.2502.13500>}.")
+<doi:10.1080/01621459.2017.1305274> and the estimator for marginal excursion
+effect (EMEE) for binary proximal outcomes by Qian et al. (2021)
+<doi:10.1093/biomet/asaa070>; (2) distal causal excursion effects (DCEE) for
+continuous distal outcomes using a two-stage estimator by Qian (2025)
+<doi:10.48550/@code{arXiv.2502.13500>}; and (3) mediated causal excursion
+effects (MCEE) for continuous distal outcomes, estimating natural direct and
+indirect excursion effects in the presence of time-varying mediators by Qian
+(2025) <doi:10.48550/@code{arXiv.2506.20027>}.")
     (license license:gpl3)))
 
 (define-public r-mrregression
@@ -11764,13 +11701,13 @@ provided assuming homogeneous or heterogeneous group variances.")
 (define-public r-mram
   (package
     (name "r-mram")
-    (version "0.1.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRAM" version))
        (sha256
-        (base32 "0k83db6b4iq1x99hz79vbc1zwngwssv44q43ax6b31hx29wmg4qh"))))
+        (base32 "1ffn5cni3jb1kikbbsx0cr8jmwr840n5zzasmzgnh7xf9wzihb6c"))))
     (properties `((upstream-name . "MRAM")))
     (build-system r-build-system)
     (arguments
@@ -11780,11 +11717,19 @@ provided assuming homogeneous or heterogeneous group variances.")
     (home-page "https://cran.r-project.org/package=MRAM")
     (synopsis "Multivariate Regression Association Measure")
     (description
-     "The multivariate regression association measure quantifies the predictability of
-one random vector from another.  This package provides a function for estimating
-and performing inference on this measure.  A variable selection algorithm based
-on this measure is also included.  For more details, see Shih and Chen (2025)
-<in revision>.")
+     "Implementations of an estimator for the multivariate regression association
+measure (MRAM) proposed in Shih and Chen (2025) <in revision> and its associated
+variable selection algorithm.  The MRAM quantifies the predictability of a
+random vector Y from a random vector X given a random vector Z. It takes the
+maximum value 1 if and only if Y is almost surely a measurable function of X and
+Z, and the minimum value of 0 if Y is conditionally independent of X given Z.
+The MRAM generalizes the Kendall's tau copula correlation ratio proposed in Shih
+and Emura (2021) <doi:10.1016/j.jmva.2020.104708> by employing the spatial sign
+function.  The estimator is based on the nearest neighbor method, and the
+associated variable selection algorithm is adapted from the feature ordering by
+conditional independence (FOCI) algorithm of Azadkia and Chatterjee (2021)
+<doi:10.1214/21-AOS2073>.  For further details, see the paper Shih and Chen
+(2025) <in revision>.")
     (license license:gpl2)))
 
 (define-public r-mr-rgm
@@ -12939,13 +12884,13 @@ aprendizaje estadistico\"
 (define-public r-mpactr
   (package
     (name "r-mpactr")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpactr" version))
        (sha256
-        (base32 "0riy4wvpz87yaz0p93hjaazsjnbnr2yg4973plv6bf1gp960cg8j"))))
+        (base32 "148zkb8jw9sfnmyi98nv7y8i7p7hidgfrdp1g38agdzdzbhj855z"))))
     (properties `((upstream-name . "mpactr")))
     (build-system r-build-system)
     (arguments
@@ -13220,13 +13165,13 @@ unbalanced acoustic receiver array designs, and satellite tag data.")
 (define-public r-moveez
   (package
     (name "r-moveez")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moveEZ" version))
        (sha256
-        (base32 "1qs5bm4wjk3wn0fl85w6dl6rac1j4vdlw89ll1j6lpc1a18s030x"))))
+        (base32 "1zirnwqjbap7m2d60jgzl3bppncfsxp1jjry14x8aq5y1i5pr5id"))))
     (properties `((upstream-name . "moveEZ")))
     (build-system r-build-system)
     (arguments
@@ -16327,6 +16272,29 @@ will appear in the heading rows of the resultant data frame.  mojson also
 provides an alternative way of comparing two different JSON lists, returning the
 left/inner/right-join style results.")
     (license license:expat)))
+
+(define-public r-mogiw
+  (package
+    (name "r-mogiw")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mogiw" version))
+       (sha256
+        (base32 "1d3nbd026isag6dhh1hdr61fnypkhymn801y2sblhby995sp9xvh"))))
+    (properties `((upstream-name . "mogiw")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=mogiw")
+    (synopsis "The MarshalâOlkin Generalized Inverse Weibull Distribution")
+    (description
+     "Density, distribution function, quantile function, and random generation
+function based on Salem, H. M. (2019)<doi:10.5539/mas.v13n2p54>.  In addition, a
+numerical method for maximum likelihood estimation is provided.")
+    (license license:gpl3)))
 
 (define-public r-mofat
   (package
@@ -20823,13 +20791,13 @@ many models from <DOI:10.32614/CRAN.package.tram>.")
 (define-public r-mlsurvlrnrs
   (package
     (name "r-mlsurvlrnrs")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlsurvlrnrs" version))
        (sha256
-        (base32 "1kkxvkknll7xyd5jvsb5lcn69ilx1ga397z837m0xfpgn5g1vkqf"))))
+        (base32 "18xqmw6f2k8krhsc4h2k6ngzs2yyvz14ldc95lvgzh1fkswx1p0i"))))
     (properties `((upstream-name . "mlsurvlrnrs")))
     (build-system r-build-system)
     (arguments
@@ -22164,13 +22132,13 @@ Analysis with Multilevel Additive Models\", P@code{LoS} ONE 15(10): e0241072.")
 (define-public r-mllrnrs
   (package
     (name "r-mllrnrs")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mllrnrs" version))
        (sha256
-        (base32 "0m8mwlcbz42jnb1b3721rjgb3ivwkmq97zdww3lvlhc1pn5gw9j2"))))
+        (base32 "1011l3zdlwr3zlyz16xawqdca8iyrkqycbfi2wxnipm9jg7zahi8"))))
     (properties `((upstream-name . "mllrnrs")))
     (build-system r-build-system)
     (arguments
@@ -22505,13 +22473,13 @@ SR, @code{McVean} G, Turnbaugh PJ, Lander ES, Mitzenmacher M, Sabeti PC. (2011).
 (define-public r-mlexperiments
   (package
     (name "r-mlexperiments")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlexperiments" version))
        (sha256
-        (base32 "0jvf4b2g42jfy2angsmwwshwxhd7s0m7dmfyz5nanswhznfqs9wv"))))
+        (base32 "1fmiic3p7wywka8bgchmcnp0h4fzllzwpf5dvx6h27bjnfv9n4dh"))))
     (properties `((upstream-name . "mlexperiments")))
     (build-system r-build-system)
     (arguments
@@ -23252,25 +23220,26 @@ tests, and generation of similarity matrices.")
 (define-public r-mkmeans
   (package
     (name "r-mkmeans")
-    (version "3.3")
+    (version "3.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MKMeans" version))
        (sha256
-        (base32 "1wpa7chbbl0ln7s9zj36xqwd1jcsammsiqzx6h4h2r0bgqs2xw06"))))
+        (base32 "1dy0brxa2ipjp94nk16vdkvpf606pdn6c36356w4ywz6gyfqd12r"))))
     (properties `((upstream-name . "MKMeans")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mass))
+    (propagated-inputs (list r-mass r-gtools))
     (home-page "https://cran.r-project.org/package=MKMeans")
     (synopsis "Modern K-Means (MKMeans) Clustering Algorithm")
     (description
      "It's a Modern K-Means clustering algorithm which works for data of any number of
-dimensions, has no limit with number of clusters expected, and can start with
-any initial cluster centers.")
+dimensions, has no limit with the number of clusters expected, offers both
+methods with and without initial cluster centers, and can start with any initial
+cluster centers for the method with initial cluster centers.")
     (license license:gpl2)))
 
 (define-public r-mkle
@@ -26196,6 +26165,43 @@ algorithm Strobl, C., Boulesteix, A. L., Zeileis, A., & Hothorn, T. (2007)
 <doi:10.1186/1471-2105-8-25>).")
     (license license:gpl3+)))
 
+(define-public r-missalpha
+  (package
+    (name "r-missalpha")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "missalpha" version))
+       (sha256
+        (base32 "163906h1wyrxfar6qfx6izc1c85pkbb0zwg1rxbhlr2jaasqnqp2"))))
+    (properties `((upstream-name . "missalpha")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nloptr r-ga r-deoptim))
+    (home-page "https://cran.r-project.org/package=missalpha")
+    (synopsis
+     "Find Range of Cronbach Alpha with a Dataset Including Missing Data")
+    (description
+     "This package provides functions to calculate the minimum and maximum possible
+values of Cronbach's alpha when item-level missing data are present.  Cronbach's
+alpha (Cronbach, 1951 <doi:10.1007/BF02310555>) is one of the most widely used
+measures of internal consistency in the social, behavioral, and medical sciences
+(Bland & Altman, 1997 <doi:10.1136/bmj.314.7080.572>; Tavakol & Dennick, 2011
+<doi:10.5116/ijme.4dfb.8dfd>).  However, conventional implementations assume
+complete data, and listwise deletion is often applied when missingness occurs,
+which can lead to biased or overly optimistic reliability estimates (Enders,
+2003 <doi:10.1037/1082-989X.8.3.322>).  This package implements computational
+strategies including enumeration, Monte Carlo sampling, and optimization
+algorithms (e.g., Genetic Algorithm, Differential Evolution, Sequential Least
+Squares Programming) to obtain sharp lower and upper bounds of Cronbach's alpha
+under arbitrary missing data patterns.  The approach is motivated by Manski's
+partial identification framework and pessimistic bounding ideas from
+optimization literature.")
+    (license license:expat)))
+
 (define-public r-misreparma
   (package
     (name "r-misreparma")
@@ -29102,13 +29108,13 @@ Batista and Ferreira (2023) <doi:10.28951/bjb.v41i4.640>.")
 (define-public r-midr
   (package
     (name "r-midr")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "midr" version))
        (sha256
-        (base32 "163fv68hpmxghwfdc2fwh77jnzkvqdjmjzpkc8z2q56dglg4zf51"))))
+        (base32 "07ynnib64zzzxy69z80gz8rrqi9j03pjmczwrh1gxbp3v5j79nm7"))))
     (properties `((upstream-name . "midr")))
     (build-system r-build-system)
     (arguments
@@ -37940,6 +37946,31 @@ for obtaining causal estimates using instrumental variable methods.")
 S and S-PLUS\" (Springer, 2000).")
     (license license:gpl2+)))
 
+(define-public r-memshare
+  (package
+    (name "r-memshare")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "memshare" version))
+       (sha256
+        (base32 "11ppx1fhq1mdcmqxpls11c521phh79mrm39fcgm11bzqm6yy428k"))))
+    (properties `((upstream-name . "memshare")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://www.iap-gmbh.de")
+    (synopsis "Shared Memory Multithreading")
+    (description
+     "This project extends R with a mechanism for efficient parallel data access by
+utilizing C++ shared memory.  Large data objects can be accessed and manipulated
+directly from R without redundant copying, providing both speed and memory
+efficiency.")
+    (license license:gpl3)))
+
 (define-public r-memoria
   (package
     (name "r-memoria")
@@ -41429,13 +41460,13 @@ relevant plots are constructed by ggplot2'.")
 (define-public r-mcptools
   (package
     (name "r-mcptools")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcptools" version))
        (sha256
-        (base32 "1b3y1xbfajrpbw2v3h3z2gi5zvpz4g0y2wpnbfp1n87dxd4gimh6"))))
+        (base32 "187bshljjzvss0z08bd1vyf65cwj1jc0pibp6ysis9qzff6zsqqm"))))
     (properties `((upstream-name . "mcptools")))
     (build-system r-build-system)
     (arguments
@@ -48527,13 +48558,13 @@ in experimental or observational settings under unconfoundedness.")
 (define-public r-mapview
   (package
     (name "r-mapview")
-    (version "2.11.3")
+    (version "2.11.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapview" version))
        (sha256
-        (base32 "17fafwr148d0lr34w6297qs74agdp9snb6niwh6v5klq9yzsrdcc"))))
+        (base32 "0s9h913r8z2cfnhwqxx5c1s31pr0inwxvw0m839ad4i6rxxlpi31"))))
     (properties `((upstream-name . "mapview")))
     (build-system r-build-system)
     (arguments

@@ -331,6 +331,48 @@ Traditional measures do not work as well for those network characteristics.  The
 main reference is @code{DePaolis} at al (2022) <doi:10.1007/s41109-022-00519-2>.")
     (license license:gpl3)))
 
+(define-public r-xtdml
+  (package
+    (name "r-xtdml")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xtdml" version))
+       (sha256
+        (base32 "0igmmh4d6sdw5fh8918yaanm6v8sh9k6w0v5jzfgwrhdyln1dq3z"))))
+    (properties `((upstream-name . "xtdml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readstata13
+                             r-r6
+                             r-mvtnorm
+                             r-mlr3tuning
+                             r-mlr3misc
+                             r-mlr3learners
+                             r-mlr3
+                             r-mlmetrics
+                             r-magrittr
+                             r-dplyr
+                             r-data-table
+                             r-clustergeneration
+                             r-checkmate))
+    (home-page "https://cran.r-project.org/package=xtdml")
+    (synopsis
+     "Double Machine Learning for Static Panel Models with Fixed Effects")
+    (description
+     "Implementation of partially linear panel regression (PLPR) models with
+high-dimensional confounding variables and exogenous treatment variable within
+the double machine learning framework.  It allows the estimation of the
+structural parameter (treatment effect) in static panel data models with fixed
+effects using panel data approaches established in Clarke and Polselli (2025)
+<doi:10.1093/ectj/utaf011>.  xtdml is built on the object-oriented
+@code{DoubleML} (Bach et al., 2024) <doi:10.18637/jss.v108.i03> using the mlr3
+ecosystem.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-xsub
   (package
     (name "r-xsub")
@@ -615,13 +657,13 @@ Described in the book \"Extending R\".")
 (define-public r-xpose-xtras
   (package
     (name "r-xpose-xtras")
-    (version "0.0.3")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpose.xtras" version))
        (sha256
-        (base32 "0pl8lyhl9dblhsnfcphkapxfwmvivb43r25h2zssxv39r8vpxj5j"))))
+        (base32 "0dkrbhgb8sd23bkagxxmm40xzsrdl9wvjzh9cqwa7ag7svswgxn3"))))
     (properties `((upstream-name . "xpose.xtras")))
     (build-system r-build-system)
     (arguments
@@ -647,7 +689,7 @@ Described in the book \"Extending R\".")
                              r-conflicted
                              r-colorspace
                              r-cli
-                             r-assertthat))
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://jprybylski.github.io/xpose.xtras/")
     (synopsis "Extra Functionality for the 'xpose' Package")
@@ -2238,13 +2280,13 @@ render \"DVI\" objects.")
 (define-public r-xdnuts
   (package
     (name "r-xdnuts")
-    (version "1.6.1")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XDNUTS" version))
        (sha256
-        (base32 "0d8ql2v06skckfn4mhprmsqzbrw5sqam70rfn8jhv8v0gadzbf8m"))))
+        (base32 "0r6fj56agyc0vigygblr0da1rsip0wq3vm936jxg409pb28f4c3n"))))
     (properties `((upstream-name . "XDNUTS")))
     (build-system r-build-system)
     (arguments
@@ -2263,9 +2305,9 @@ render \"DVI\" objects.")
      "Discontinuous Hamiltonian Monte Carlo with Varying Trajectory Length")
     (description
      "Hamiltonian Monte Carlo for both continuous and discontinuous posterior
-distributions with customisable trajectory length termination criterion.  See
+distributions with a customizable trajectory length termination criterion.  See
 Nishimura et al. (2020) <doi:10.1093/biomet/asz083> for the original
-Discontinuous Hamiltonian Monte Carlo, Hoffman et al. (2014)
+Discontinuous Hamiltonian Monte Carlo; Hoffman et al. (2014)
 <doi:10.48550/@code{arXiv.1111.4246>} and Betancourt (2016)
 <doi:10.48550/@code{arXiv.1601.00225>} for the definition of possible
 Hamiltonian Monte Carlo termination criteria.")

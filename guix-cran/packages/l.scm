@@ -790,13 +790,13 @@ programmers working with date-time data.")
 (define-public r-luajr
   (package
     (name "r-luajr")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "luajr" version))
        (sha256
-        (base32 "0134ykrwraq66pcd3gfgqdp3agblsl70bvafrag4yhrq52vf7a85"))))
+        (base32 "12w904v7avrzxn2pr9l9j1v91ff69qhyxq5nbzjm8v2cbqlvvqcb"))))
     (properties `((upstream-name . "luajr")))
     (build-system r-build-system)
     (arguments
@@ -2316,13 +2316,13 @@ images, see Taylor et al (2014) <doi:10.1080/00401706.2013.823890>.")
 (define-public r-ls2w
   (package
     (name "r-ls2w")
-    (version "1.3.6")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LS2W" version))
        (sha256
-        (base32 "0qsrf9x45z0waiv10fh0a8rw0zyr5raj6l832yhq76vd9gjfpn9i"))))
+        (base32 "1iqrpwlp6svfc5zi6k68hf70vjdqi8n47psrifdf9bdm3l7g21qb"))))
     (properties `((upstream-name . "LS2W")))
     (build-system r-build-system)
     (arguments
@@ -8812,13 +8812,13 @@ dependencies.")
 (define-public r-liver
   (package
     (name "r-liver")
-    (version "1.20")
+    (version "1.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "liver" version))
        (sha256
-        (base32 "0844szrdczd55pw2p91sxs30w9974jq3mv41f3cg3ky9gfraj357"))))
+        (base32 "1rqf2cx41i587zpn155c0mbpmjcpxa5p6xsfpd9pbhy3gz7lmg8r"))))
     (properties `((upstream-name . "liver")))
     (build-system r-build-system)
     (arguments
@@ -8826,13 +8826,13 @@ dependencies.")
       #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-class))
     (native-inputs (list r-knitr))
-    (home-page "https://book-data-science-r.netlify.app/")
+    (home-page "https://book-data-science-r.netlify.app")
     (synopsis "Foundations Toolkit and Datasets for Data Science")
     (description
      "This package provides a collection of helper functions and illustrative datasets
 to support learning and teaching of data science with R. The package is designed
-as a companion to the book <https://book-data-science-r.netlify.app/>, making
-key data science techniques accessible to individuals with minimal coding
+as a companion to the book <https://book-data-science-r.netlify.app>, making key
+data science techniques accessible to individuals with minimal coding
 experience.  Functions include tools for data partitioning, performance
 evaluation, and data transformations (e.g., z-score and min-max scaling).  The
 included datasets are curated to highlight practical applications in data
@@ -19144,13 +19144,13 @@ conversion equations in Bajocco et al.  2022 <doi:10.3390/rs14153554>.")
 (define-public r-lahman
   (package
     (name "r-lahman")
-    (version "12.0-0")
+    (version "13.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Lahman" version))
        (sha256
-        (base32 "0va8aq63knhwm2dk87bi0c94q0yqbmrplwih4za0mkdmv8r5i7lb"))))
+        (base32 "10i6a4k6vkjhnhbr9n73vb3jxj302f40v5khzxi7vqmkqmsh3y3x"))))
     (properties `((upstream-name . "Lahman")))
     (build-system r-build-system)
     (arguments
@@ -19158,12 +19158,12 @@ conversion equations in Bajocco et al.  2022 <doi:10.3390/rs14153554>.")
       #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://CRAN.R-project.org/package=Lahman")
+    (home-page "https://cdalzell.github.io/Lahman/")
     (synopsis "Sean 'Lahman' Baseball Database")
     (description
      "This package provides the tables from the Sean Lahman Baseball Database as a set
 of R data.frames.  It uses the data on pitching, hitting and fielding
-performance and other tables from 1871 through 2023, as recorded in the 2024
+performance and other tables from 1871 through 2024, as recorded in the 2025
 version of the database.  Documentation examples show how many baseball
 questions can be investigated.")
     (license (list license:gpl2+ license:gpl3+))))

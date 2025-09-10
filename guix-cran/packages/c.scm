@@ -51,13 +51,13 @@
 (define-public r-czso
   (package
     (name "r-czso")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "czso" version))
        (sha256
-        (base32 "1lk0i2dgcaqhslg9s1g5s4b7d968bj96hb7hb8z9yxjbbw1lxgdh"))))
+        (base32 "11zwyg2k1vyk7j5kkga7a79d06hni59dkhkv1y6n6xg4423jz3v0"))))
     (properties `((upstream-name . "czso")))
     (build-system r-build-system)
     (arguments
@@ -78,7 +78,7 @@
     (synopsis "Use Open Data from the Czech Statistical Office in R")
     (description
      "Get programmatic access to the open data provided by the Czech Statistical
-Office (CZSO, <https://czso.cz>).")
+Office (CZSO, <https://csu.gov.cz>).")
     (license license:expat)))
 
 (define-public r-czechrates
@@ -4690,41 +4690,6 @@ Includes functions for data extraction and the computation of distance matrices
 and -lists.")
     (license license:gpl2+)))
 
-(define-public r-csgo
-  (package
-    (name "r-csgo")
-    (version "0.6.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CSGo" version))
-       (sha256
-        (base32 "19awbblkx0g58gvd43xs1dmcsn588k185njw3fri8xxbn26xp5jy"))))
-    (properties `((upstream-name . "CSGo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-ggplot2
-                             r-fuzzyjoin
-                             r-future
-                             r-furrr
-                             r-extrafont
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/adsoncostanzifilho/CSGo")
-    (synopsis "Collecting Counter Strike Global Offensive Data")
-    (description
-     "An implementation of calls designed to collect and organize in an easy way the
-data from the Steam API specifically for the Counter-Strike Global Offensive
-Game (CS Go) <https://developer.valvesoftware.com/wiki/Steam_Web_API>.")
-    (license license:expat)))
-
 (define-public r-csesa
   (package
     (name "r-csesa")
@@ -6297,13 +6262,13 @@ ISBN:978-1-118-14640-8).")
 (define-public r-crosstable
   (package
     (name "r-crosstable")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crosstable" version))
        (sha256
-        (base32 "0wddk7wngmmjgnxrdadqakxaqs72612h02yaia6yasmmn2pl1snm"))))
+        (base32 "1awlwmrr0sz6k22nqppyqv0pc171ajk60vllwpag24jvcbypxqmd"))))
     (properties `((upstream-name . "crosstable")))
     (build-system r-build-system)
     (arguments
@@ -13169,6 +13134,32 @@ populations using genetic data.  Pritchard JK, Stephens M, Donnelly PJ (2000)
 <https://web.stanford.edu/group/pritchardlab/structure.html>.")
     (license license:gpl3+)))
 
+(define-public r-corrselect
+  (package
+    (name "r-corrselect")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "corrselect" version))
+       (sha256
+        (base32 "0bzd5gc923ywih9wwpggns5b04mq3w0hh6nlsvmkjal7x1gvgwmm"))))
+    (properties `((upstream-name . "corrselect")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://gillescolling.com/corrselect/")
+    (synopsis "Correlation-Based Variable Subset Selection")
+    (description
+     "This package provides functions to extract low-correlation variable subsets
+using exact graph-theoretic algorithms (e.g., EppsteinâLÃ¶fflerâStrash,
+BronâKerbosch) as well as greedy and spectral heuristics.  Supports both
+numeric and mixed-type data using generalized association measures.")
+    (license license:expat)))
+
 (define-public r-corrrf
   (package
     (name "r-corrrf")
@@ -18631,43 +18622,6 @@ the confidence of the classification predictions.  For more details, see Tyagi
 and Guo (2023) <https://proceedings.mlr.press/v204/tyagi23a.html>.")
     (license license:expat)))
 
-(define-public r-conformalinference-multi
-  (package
-    (name "r-conformalinference-multi")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "conformalInference.multi" version))
-       (sha256
-        (base32 "1xc879ygv9avamy29a6rdfb6pknaz82f3k6392c8a90sgfn3bx3d"))))
-    (properties `((upstream-name . "conformalInference.multi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-hrbrthemes
-                             r-gridextra
-                             r-glmnet
-                             r-ggplot2
-                             r-future-apply
-                             r-future))
-    (home-page "https://github.com/ryantibs/conformal")
-    (synopsis
-     "Conformal Inference Tools for Regression with Multivariate Response")
-    (description
-     "It computes full conformal, split conformal and multi split conformal prediction
-regions when the response variable is multivariate (i.e.  dimension is greater
-than one).  Moreover, the package also contain plot functions to visualize the
-output of the full and split conformal functions.  To guarantee consistency, the
-package structure mimics the univariate @code{conformalInference} package of
-professor Ryan Tibshirani.  The main references for the code are: Lei et al.
-(2016) <@code{arXiv:1604.04173>}, Diquigiovanni, Fontana, and Vantini (2021)
-<@code{arXiv:2102.06746>}, Diquigiovanni, Fontana, and Vantini (2021)
-<@code{arXiv:2106.01792>}, Solari, and Djordjilovic (2021)
-<@code{arXiv:2103.00627>}.")
-    (license license:gpl2)))
-
 (define-public r-conformalinference-fd
   (package
     (name "r-conformalinference-fd")
@@ -20547,13 +20501,13 @@ sensitivity analyses under dependent censoring (Yeh et al 2023 Biomedicines)
 (define-public r-compositionalrf
   (package
     (name "r-compositionalrf")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompositionalRF" version))
        (sha256
-        (base32 "0hdn15c8alysvmxf2z4rlic50zmsqssh3wbcmpngs0mc6k5skvqx"))))
+        (base32 "1i1dwdh70ch71iajsh59lbdmdn2wvfx9an21aryjqz1rl4lrvs13"))))
     (properties `((upstream-name . "CompositionalRF")))
     (build-system r-build-system)
     (arguments
@@ -20565,9 +20519,10 @@ sensitivity analyses under dependent censoring (Yeh et al 2023 Biomedicines)
     (description
      "Multivariate random forests with compositional responses and Euclidean
 predictors is performed.  The compositional data are first transformed using the
-additive log-ratio transformation, and then the multivariate random forest of
-Rahman R., Otridge J. and Pal R. (2017), <doi:10.1093/bioinformatics/btw765>, is
-applied.")
+additive log-ratio transformation, or the alpha-transformation of Tsagris,
+Preston and Wood (2011), <doi:10.48550/@code{arXiv.1106.1451>}, and then the
+multivariate random forest of Rahman R., Otridge J. and Pal R. (2017),
+<doi:10.1093/bioinformatics/btw765>, is applied.")
     (license license:gpl2+)))
 
 (define-public r-compositionalml
@@ -23831,13 +23786,13 @@ Colombia's data.  For more details on the API-Colombia', see
 (define-public r-colocproptest
   (package
     (name "r-colocproptest")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colocPropTest" version))
        (sha256
-        (base32 "1nz5x1j2xagy6sx85m6cvzhvzj59byircl35ammj860vkp050rm9"))))
+        (base32 "19385jncbr5qs80632d5wf1yci0mw61yvv02ap301lfx59rcrxkw"))))
     (properties `((upstream-name . "colocPropTest")))
     (build-system r-build-system)
     (arguments
@@ -23860,13 +23815,13 @@ coloc'.")
 (define-public r-colocboost
   (package
     (name "r-colocboost")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colocboost" version))
        (sha256
-        (base32 "1w6cambblq9g3ki8sxbq5wjpayrgj7g9jblwwhjpqk14hzms9nv5"))))
+        (base32 "1lcax4p23zkdl3p052b45py6q4scqzq5irkhzm7dkdy35nansimm"))))
     (properties `((upstream-name . "colocboost")))
     (build-system r-build-system)
     (arguments
@@ -24403,6 +24358,34 @@ monitoring procedures for both the cointegration and the stationarity case
 (while the latter is just a special case of the former one) as well as printing
 and plotting methods for a clear presentation of the results.")
     (license license:gpl3)))
+
+(define-public r-coint
+  (package
+    (name "r-coint")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "COINT" version))
+       (sha256
+        (base32 "0dwxkwwb4g34fga8zlhd7qyg48sq2dxlxzfvwy0c2k8ads5p08lg"))))
+    (properties `((upstream-name . "COINT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-timeseries))
+    (home-page "https://cran.r-project.org/package=COINT")
+    (synopsis
+     "Unit Root Tests with Structural Breaks and Fully-Modified Estimators")
+    (description
+     "Procedures include Phillips (1995) FMVAR <doi:10.2307/2171721>, Kitamura and
+Phillips (1997) FMGMM <doi:10.1016/S0304-4076(97)00004-3>, and Park (1992) CCR
+<doi:10.2307/2951679>, and so on.  Tests with 1 or 2 structural breaks include
+Gregory and Hansen (1996) <doi:10.1016/0304-4076(69)41685-7>, Zivot and Andrews
+(1992) <doi:10.2307/1391541>, and Kurozumi (2002)
+<doi:10.1016/S0304-4076(01)00106-3>.")
+    (license license:gpl2+)))
 
 (define-public r-coinr
   (package
@@ -26446,13 +26429,13 @@ repository, as it is a part of RKWard.")
 (define-public r-cocoon
   (package
     (name "r-cocoon")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cocoon" version))
        (sha256
-        (base32 "0b80g616vs8h9gkay7gym6iyvml56xgy9zclfyjjkb8fs9p3f8ll"))))
+        (base32 "0q6gr3fk6yqgkz7l2k1nz9v4mwi525jcm3xbnsdyds24kixz20mz"))))
     (properties `((upstream-name . "cocoon")))
     (build-system r-build-system)
     (arguments
@@ -31270,6 +31253,34 @@ additional clock architectures and other gene circuit models.  Currently
 implemented models are based on Leloup and Goldbeter (1998)
 <doi:10.1177/074873098128999934>.")
     (license license:gpl3+)))
+
+(define-public r-clockplot
+  (package
+    (name "r-clockplot")
+    (version "0.7.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clockplot" version))
+       (sha256
+        (base32 "1hxf7wjpm8nn8ljxzviahcgyg2aps440ckfjq83jbwxsf8cv2cgf"))))
+    (properties `((upstream-name . "clockplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-tibble r-hms r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mahmudstat/clockplot/")
+    (synopsis "Plot Event Times on a 24-Hour Clock")
+    (description
+     "This package provides a novel visualization technique for plotting timestamped
+events on a 24-hour circular clock face.  This is particularly useful for
+analyzing daily patterns, event clustering, and gaps in temporal data.  The
+package also generalizes this approach to create cyclic charts for other
+periods, including weekly and monthly cycles, enabling effective event planning
+and pattern analysis across multiple time frames.")
+    (license license:expat)))
 
 (define-public r-clockify
   (package
@@ -38725,13 +38736,13 @@ and tries to create consistent graphical output and to be very user friendly.")
 (define-public r-chemospec
   (package
     (name "r-chemospec")
-    (version "6.3.0")
+    (version "6.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChemoSpec" version))
        (sha256
-        (base32 "1payl8s526si7qgfp76x9zyw8flvjsynqdjch2b8lhsdfgpsjdax"))))
+        (base32 "1k7ifaw9faqzf6mdzaxai3nm7d5d4frzyc315h9263hh7p7dfg24"))))
     (properties `((upstream-name . "ChemoSpec")))
     (build-system r-build-system)
     (arguments
@@ -41362,6 +41373,52 @@ and software tutorial, see Mahani and Sharabiani (2019)
 <DOI:10.18637/jss.v089.i09>.")
     (license license:gpl2+)))
 
+(define-public r-cfbfastr
+  (package
+    (name "r-cfbfastr")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cfbfastR" version))
+       (sha256
+        (base32 "1prs8mxd2xl0f9mf0sqlggafp7kp80f28iddxsc49n8hhkmg48mh"))))
+    (properties `((upstream-name . "cfbfastR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rcppparallel
+                             r-rcpp
+                             r-purrr
+                             r-progressr
+                             r-nnet
+                             r-mgcv
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-data-table
+                             r-cli))
+    (home-page "https://cfbfastR.sportsdataverse.org/")
+    (synopsis "Access College Football Play by Play Data")
+    (description
+     "This package provides a utility to quickly obtain clean and tidy college
+football data.  Serves as a wrapper around the
+<https://collegefootballdata.com/> API and provides functions to access live
+play by play and box score data from ESPN <https://www.espn.com> when available.
+ It provides users the capability to access a plethora of endpoints, and
+supplement that data with additional information (Expected Points Added/Win
+Probability added).")
+    (license license:expat)))
+
 (define-public r-cfacoop
   (package
     (name "r-cfacoop")
@@ -42448,13 +42505,13 @@ functions.")
 (define-public r-centerline
   (package
     (name "r-centerline")
-    (version "0.2.2")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "centerline" version))
        (sha256
-        (base32 "0nvchfyx4vgf1dpg78q27zsv759zgsvxd5qyyjjzdl0jlbpl4d8r"))))
+        (base32 "1af63n6d3pkgpg7pvc6543jd9inkvcanif3x9d1rxakdhrrvr66y"))))
     (properties `((upstream-name . "centerline")))
     (build-system r-build-system)
     (arguments
@@ -51060,13 +51117,13 @@ support factor ratio testing and the list-and-delete procedure.")
 (define-public r-calmr
   (package
     (name "r-calmr")
-    (version "0.7.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calmr" version))
        (sha256
-        (base32 "19vll9gsgp4wpcjgyvbrhzz1lzknnd9w2kkspdlp5pxxg2j7nan8"))))
+        (base32 "0r6cz4vyv2d4kqj23bbz092wr7hqcscckv0v93yl8hr3zh07ii2w"))))
     (properties `((upstream-name . "calmr")))
     (build-system r-build-system)
     (arguments

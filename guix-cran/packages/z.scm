@@ -7,7 +7,6 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages compression)
-  #:use-module (gnu packages bioconductor)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
   #:use-module (guix-cran packages w)
@@ -1012,28 +1011,30 @@ respecting the website scrapping policies.")
 (define-public r-zenplots
   (package
     (name "r-zenplots")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zenplots" version))
        (sha256
-        (base32 "0rf690qip2x7w037cbq51cfzqmla398a6x857wpz8cy9fd26ns7p"))))
+        (base32 "0ym50prv9ynij02azn1vga711ggba8ydyzrpcymirn7cnqj7idgy"))))
     (properties `((upstream-name . "zenplots")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pairviz r-mass r-graph))
+    (propagated-inputs (list r-pairviz r-mass))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/great-northern-diver/zenplots")
+    (home-page "https://great-northern-diver.github.io/zenplots/")
     (synopsis "Zigzag Expanded Navigation Plots")
     (description
      "Graphical tools for visualizing high-dimensional data along a path of
-alternating one- and two-dimensional plots.  Note that this includes interactive
-graphics plots based on loon in turn based on tcltk (included as part of the
-standard R distribution).  It also requires graph from Bioconductor.  For more
-detail on use and algorithms, see <doi:10.18637/jss.v095.i04>.")
+alternating one- and two-dimensional plots.  Includes optional interactive
+graphics via loon (which uses tcltk from base R).  Support is provided for
+constructing graph structures and, when available, plotting them with
+Bioconductor packages (e.g., graph', Rgraphviz'); these are optional and
+examples/vignettes are skipped if they are not installed.  For algorithms and
+further details, see <doi:10.18637/jss.v095.i04>.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-zendown

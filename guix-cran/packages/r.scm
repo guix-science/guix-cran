@@ -4305,13 +4305,13 @@ into a local @code{TiddlyWiki} node.js server if it is available.")
 (define-public r-rticulate
   (package
     (name "r-rticulate")
-    (version "2.0.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rticulate" version))
        (sha256
-        (base32 "0qd1rhwgm4nkixwrnv2wcki17d4n342iyzd9agyl5pg0p42jfs26"))))
+        (base32 "091j0sa3dzyjg42pr0vj3lhmslk8czg61q7akxc8q9pzkmvxcp36"))))
     (properties `((upstream-name . "rticulate")))
     (build-system r-build-system)
     (arguments
@@ -8363,13 +8363,13 @@ also released and it can be downloaded at <https://rscatree.weebly.com/>.")
 (define-public r-rsc
   (package
     (name "r-rsc")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSC" version))
        (sha256
-        (base32 "106pvrg10f8w0aqbnahqjdii49ijp2659l7kkj5y46pbr90lbpzs"))))
+        (base32 "0nhylmcdnfw4636k5k35k8sd98sm8xgrsc63sjzn776lryqjf9ym"))))
     (properties `((upstream-name . "RSC")))
     (build-system r-build-system)
     (arguments
@@ -17115,6 +17115,29 @@ proposed by Tiku(1967, 1968) <doi:10.2307/2333859>,
 robust accelerated failure time regression for gaussian and log-Weibull case.")
     (license license:gpl2+)))
 
+(define-public r-robustadaptivedecomposition
+  (package
+    (name "r-robustadaptivedecomposition")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RobustAdaptiveDecomposition" version))
+       (sha256
+        (base32 "139x8j4ns41hf38r99xjqj6gfshbmdp19fqlc8bz8whp07ij7rf0"))))
+    (properties `((upstream-name . "RobustAdaptiveDecomposition")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page
+     "https://cran.r-project.org/package=RobustAdaptiveDecomposition")
+    (synopsis "Decomposes a Univariate Time Series into Subcomponents")
+    (description
+     "This package provides a method to decompose a univariate time series into
+meaningful subcomponents for analysis and denoising.")
+    (license license:gpl3)))
+
 (define-public r-robust2sls
   (package
     (name "r-robust2sls")
@@ -17865,13 +17888,13 @@ various bootstrap procedures for mediation analysis on simulated data.")
 (define-public r-robmed
   (package
     (name "r-robmed")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robmed" version))
        (sha256
-        (base32 "0myb9aa4wsdbxx21nn85f7p45sxvl21yhjz4alvys1xqdgmp949n"))))
+        (base32 "1hdjagqfcxly730fdsx80d4p7fmhpyq8yl8b281gfb0f85fiaz1x"))))
     (properties `((upstream-name . "robmed")))
     (build-system r-build-system)
     (arguments
@@ -17886,7 +17909,7 @@ various bootstrap procedures for mediation analysis on simulated data.")
 (Alfons, Ates & Groenen, 2022a; <doi:10.1177/1094428121999096>), as well as
 various other methods.  Details on the implementation and code examples can be
 found in Alfons, Ates, and Groenen (2022b) <doi:10.18637/jss.v103.i13>.  Further
-discussion on robust mediation analysis can be found in Alfons & Schley (2024)
+discussion on robust mediation analysis can be found in Alfons & Schley (2025)
 <doi:10.31234/osf.io/2hqdy>.")
     (license license:gpl2+)))
 
@@ -18134,19 +18157,20 @@ Nicole Mayer-Hamblett, Patrick J. Heagerty, Ting Ye (2025)
 (define-public r-robincar2
   (package
     (name "r-robincar2")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobinCar2" version))
        (sha256
-        (base32 "1mw89wm8j4ib450a833fgrznmpbaah84cwp590m8fzvfrm69ql05"))))
+        (base32 "1p594six0yplqa13kncli265ihmhfnyaq862xj2nr2w72d49wyhs"))))
     (properties `((upstream-name . "RobinCar2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sandwich r-numderiv r-mass r-checkmate))
+    (propagated-inputs (list r-survival r-sandwich r-numderiv r-mass
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/openpharma/RobinCar2/")
     (synopsis
@@ -24145,6 +24169,33 @@ JWSACruncher (<https://github.com/jdemetra/jwsacruncher/releases> for v2 and
 that re-estimates all the multi-processing defined in a workspace and to export
 the result.  rjwsacruncher allows to launch easily the JWSACruncher'.")
     (license license:gpl3)))
+
+(define-public r-rjuliabugs
+  (package
+    (name "r-rjuliabugs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rjuliabugs" version))
+       (sha256
+        (base32 "1b1rcz27m3qh6jbamhzxkb5iix3mns6qlbcd1d3fw0sx6nb3p43g"))))
+    (properties `((upstream-name . "rjuliabugs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-posterior r-juliacall r-coda))
+    (home-page "https://mateusmaiads.github.io/rjuliabugs/")
+    (synopsis "Interface to 'JuliaBUGS.jl' from R")
+    (description
+     "This package provides an R interface to the @code{JuliaBUGS.jl} package
+(<https://github.com/@code{TuringLang/JuliaBUGS.jl>}) for Bayesian inference
+using the BUGS modeling language.  Allows R users to run models in Julia and
+return results as familiar R objects.  Visualization and posterior analysis are
+supported via the bayesplot and posterior packages.")
+    (license license:expat)))
 
 (define-public r-rjtools
   (package
@@ -30788,6 +30839,30 @@ predicting nodes of random forests, and the method based on proximity measures
 of random forests are provided.  More details of the statistical methods can be
 found in Hong et al. (2020) <@code{arXiv:2004.14823>}.")
     (license license:gpl3)))
+
+(define-public r-rfdp
+  (package
+    (name "r-rfdp")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rFDP" version))
+       (sha256
+        (base32 "0k4c2yj4b8970kgm15ds08wmjnl2jkw6m34vxzrmf6x7vyw1gdqz"))))
+    (properties `((upstream-name . "rFDP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=rFDP")
+    (synopsis "Resampling-Based False Discovery Proportion Control")
+    (description
+     "This package provides methods for Resampling-based False Discovery Proportion
+control.  A function is provided that provides simultaneous, multi-resolution
+False Discovery Exceedance (FDX) control as described in Hemerik (2025)
+<doi:10.48550/@code{arXiv.2509.02376>}.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-rfclust
   (package
@@ -44990,19 +45065,23 @@ and near repeat analysis with crime network linkage.")
 (define-public r-rcprd
   (package
     (name "r-rcprd")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcprd" version))
        (sha256
-        (base32 "0l1j85pkbkpivh811b6rf6q1ji9ddvm1gw10bx0gfhw3bmfwxdaj"))))
+        (base32 "1dvkly8al75yz37k9pvk8xzfakq9kcwf36agaa0b3r9s8q5pn16p"))))
     (properties `((upstream-name . "rcprd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-rsqlite r-fastmatch r-dplyr
+    (propagated-inputs (list r-stringr
+                             r-rsqlite
+                             r-lubridate
+                             r-fastmatch
+                             r-dplyr
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://alexpate30.github.io/rcprd/")
@@ -45177,13 +45256,13 @@ R by providing both the header files and all examples.")
 (define-public r-rcppsmc
   (package
     (name "r-rcppsmc")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppSMC" version))
        (sha256
-        (base32 "0x52np5ikdfl9j1i0dqnnaypiwlacm1vnz27hfz5iqzylaah932m"))))
+        (base32 "0fixz5qnkr7iqnafpmr2lqvp84gwz3rg1lgm21g3ily5k4nnqivk"))))
     (properties `((upstream-name . "RcppSMC")))
     (build-system r-build-system)
     (arguments
@@ -51244,52 +51323,6 @@ provided by states about water quality assessments conducted under federal Clean
 Water Act requirements.  ATTAINS information and API information is available at
 <https://www.epa.gov/waterdata/attains>.")
     (license license:expat)))
-
-(define-public r-ratlas
-  (package
-    (name "r-ratlas")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ratlas" version))
-       (sha256
-        (base32 "1pdvrgdp0hxrv1l7zhqdmrhlyc792by63hrmfixd5fr89yqz4ld4"))))
-    (properties `((upstream-name . "ratlas")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xfun
-                             r-xaringan
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-scales
-                             r-rlang
-                             r-purrr
-                             r-officedown
-                             r-magrittr
-                             r-knitr
-                             r-hrbrthemes
-                             r-glue
-                             r-ggplot2
-                             r-fs
-                             r-extrafont
-                             r-dplyr
-                             r-colorspace
-                             r-bookdown))
-    (native-inputs (list r-knitr))
-    (home-page "https://ratlas.netlify.app")
-    (synopsis "ATLAS Formatting Functions and Templates")
-    (description
-     "This package provides templates, formatting tools, and ggplot2 themes tailored
-for the Accessible Teaching, Learning, and Assessment Systems (ATLAS)
-organization.  These templates facilitate the creation of topic guides and
-technical reports, while the formatting functions enable users to customize
-numbers and tables to meet specific requirements.  Additionally, the themes
-ensure a uniform visual style across graphics.")
-    (license license:gpl3)))
 
 (define-public r-ratios
   (package

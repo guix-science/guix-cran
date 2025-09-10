@@ -7219,13 +7219,13 @@ meta-analysis dataset.  INLA package can be obtained from
 (define-public r-nmaforest
   (package
     (name "r-nmaforest")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMAforest" version))
        (sha256
-        (base32 "1hyd6mpdyapqgz0hffknbzqaij3j88xv0w968aclzs49k1c9lw0c"))))
+        (base32 "1bk4b9b4vi4ip8kd2nbnh9w853j053ph28cj4rxa3fcky1ljm6yv"))))
     (properties `((upstream-name . "NMAforest")))
     (build-system r-build-system)
     (arguments
@@ -7245,9 +7245,9 @@ meta-analysis dataset.  INLA package can be obtained from
      "Forest Plots for Network Meta-Analysis with Proportion for Paths and Studies")
     (description
      "This package provides customized forest plots for network meta-analysis
-incorporating direct, indirect, and network meta-analysis effects.  Includes
-visualizations of evidence contributions through proportion bars based on the
-hat matrix and evidence flow decomposition.")
+incorporating direct, indirect, and NMA effects.  Includes visualizations of
+evidence contributions through proportion bars based on the hat matrix and
+evidence flow decomposition.")
     (license license:gpl2)))
 
 (define-public r-nma
@@ -9781,18 +9781,19 @@ Models.")
 (define-public r-niarules
   (package
     (name "r-niarules")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "niarules" version))
        (sha256
-        (base32 "04bnwdlddalck0bxj2pc6qbgjbm35mn71s1br7v9bilk7d86c532"))))
+        (base32 "09h25n5d22hkll7hakmvaxq6adcc9p0dl9yazgvfcncxqk3vywxr"))))
     (properties `((upstream-name . "niarules")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rlang r-rgl r-rcpp r-dplyr))
     (home-page "https://github.com/firefly-cpp/niarules")
     (synopsis
      "Numerical Association Rule Mining using Population-Based Nature-Inspired Algorithms")
@@ -11409,6 +11410,29 @@ data: Analysis of brain networks of patients with autism\"
 <doi:10.1111/rssc.12463>.")
     (license license:gpl3+)))
 
+(define-public r-nev
+  (package
+    (name "r-nev")
+    (version "1.0.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nev" version))
+       (sha256
+        (base32 "18wih1nhbwvwz82i43hv3d20i1q4r8vp86nbqy7shhvwk55cf6ay"))))
+    (properties `((upstream-name . "nev")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pracma r-fourierin r-extradistr))
+    (home-page "https://cran.r-project.org/package=nev")
+    (synopsis "Draw Nested Extreme Value Random Variables")
+    (description
+     "Draw nested extreme value random variables, which are the variables that appear
+in the latent variable formulation of the nested logit model.")
+    (license license:gpl3+)))
+
 (define-public r-neutrosurvey
   (package
     (name "r-neutrosurvey")
@@ -11803,13 +11827,13 @@ decoding analyses.  For more information on neural decoding see Meyers & Kreiman
 (define-public r-neurodatasets
   (package
     (name "r-neurodatasets")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NeuroDataSets" version))
        (sha256
-        (base32 "03mn68frpy621addkm3n4np2zaz8vwnpnrqp9v67mgkgf4lrri3i"))))
+        (base32 "1l6bjmncd84aya936gwyj5vf3sa163d3jfpm97c63iid8xkvyfvw"))))
     (properties `((upstream-name . "NeuroDataSets")))
     (build-system r-build-system)
     (arguments
@@ -12732,13 +12756,13 @@ functions are build upon igraph'.")
 (define-public r-nettskjemar
   (package
     (name "r-nettskjemar")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nettskjemar" version))
        (sha256
-        (base32 "1886x93safnc3h05wsfwzqaq1600c8zb1li0m73cfdijdyfvcifx"))))
+        (base32 "1dinzn7awhba9asj1vs8wg0zgs9lh3q5a4fp94hps0vcqaykdqq3"))))
     (properties `((upstream-name . "nettskjemar")))
     (build-system r-build-system)
     (arguments
@@ -15040,13 +15064,13 @@ co-authorship networks).")
 (define-public r-nematode
   (package
     (name "r-nematode")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Nematode" version))
        (sha256
-        (base32 "0hdsxy28hjh93j3ng5w1fszspfxzfrwxvnw197sxd5if9ajb1vh9"))))
+        (base32 "0wc6s7yvrb5xv35arzilgfrv1isp881pf0jiddfxfh94n72s4dz7"))))
     (properties `((upstream-name . "Nematode")))
     (build-system r-build-system)
     (arguments
@@ -15056,11 +15080,12 @@ co-authorship networks).")
     (home-page "https://cran.r-project.org/package=Nematode")
     (synopsis "Ecological Indices Calculator for Nematode Communities")
     (description
-     "Nematode communities serve as crucial bioindicators in ecological studies,
-reflecting soil health, ecosystem functioning, and trophic interactions.  To
-standardize these assessments, we developed a computational toolkit for
-quantifying nematode-based ecological indicators, including metabolic
-footprints, energy flow metrics, and community structure analysis.")
+     "This package provides a computational toolkit for analyzing nematode communities
+in ecological studies.  Includes methods to quantify nematode-based ecological
+indicators such as metabolic footprints, energy flow metrics, and community
+structure.  These tools support assessments of soil health, ecosystem
+functioning, and trophic interactions, standardizing the use of nematodes as
+bioindicators.")
     (license license:gpl3+)))
 
 (define-public r-neldermead
