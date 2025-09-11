@@ -6379,20 +6379,20 @@ options.")
 (define-public r-bpca
   (package
     (name "r-bpca")
-    (version "1.3-6")
+    (version "1.3-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bpca" version))
        (sha256
-        (base32 "13rb6k50527aiaydapkvjyh3c2pk1anmz537y97mx35malfh1kmd"))))
+        (base32 "0ybwab06ggy9zkfpnhv5qcij0hnrg08a6p41fvxw81v8bflrwjf9"))))
     (properties `((upstream-name . "bpca")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xtable r-scatterplot3d r-rgl))
-    (home-page "https://cran.r-project.org/package=bpca")
+    (home-page "https://github.com/jcfaria/bpca")
     (synopsis
      "Biplot of Multivariate Data Based on Principal Components Analysis")
     (description
@@ -13916,13 +13916,13 @@ Whalley, WHPT, Habitat-specific BMWP, AWIC, LIFE and PSI.")
 (define-public r-biostatsuhnplus
   (package
     (name "r-biostatsuhnplus")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiostatsUHNplus" version))
        (sha256
-        (base32 "0awxjp4sjr4qa7s12s1hk02aqxm2zqvfwp2vr1z4v3rl1cynvhg2"))))
+        (base32 "1lf0f2iwj5xd190fcbyz507x213zrc32mbarzkmrqvkwwcx20w3c"))))
     (properties `((upstream-name . "BiostatsUHNplus")))
     (build-system r-build-system)
     (arguments
@@ -13936,10 +13936,12 @@ Whalley, WHPT, Habitat-specific BMWP, AWIC, LIFE and PSI.")
                              r-reportrmd
                              r-purrr
                              r-plyr
+                             r-parallelly
                              r-openxlsx
                              r-modeest
                              r-mcmcglmm
                              r-lifecycle
+                             r-ggpubr
                              r-ggplot2
                              r-ggh4x
                              r-forcats

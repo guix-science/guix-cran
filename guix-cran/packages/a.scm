@@ -337,13 +337,13 @@ easier to integrate Azure Maps into R-based data analysis workflows.")
 (define-public r-azurekusto
   (package
     (name "r-azurekusto")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AzureKusto" version))
        (sha256
-        (base32 "0n0bkaj9gsg2xcczpbg8nm62ipgh4s6a8lvnaiylh8q3w1z6aqfl"))))
+        (base32 "1cmvlaljzj7wfmaggs3l9nc6bn339ii7q3h5bmc80n008bjdr0bb"))))
     (properties `((upstream-name . "AzureKusto")))
     (build-system r-build-system)
     (arguments
@@ -2809,27 +2809,26 @@ possible by representing R expressions using a tree structure.")
 (define-public r-autograph
   (package
     (name "r-autograph")
-    (version "0.2.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autograph" version))
        (sha256
-        (base32 "0qldzzzk3g7aiv3x35klf4amb7bslxrkf47mh4p970lp1am10gqr"))))
+        (base32 "1pzi280d4nfi25diwcn98xs7j3klq5k2v62gaf4l5z00py05d79j"))))
     (properties `((upstream-name . "autograph")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tidygraph
+    (propagated-inputs (list r-tidygraph
+                             r-patchwork
                              r-manynet
                              r-igraph
                              r-ggraph
                              r-ggplot2
                              r-ggdendro
-                             r-dplyr
-                             r-cli))
+                             r-dplyr))
     (home-page "https://stocnet.github.io/autograph/")
     (synopsis "Automatic Plotting of Many Graphs")
     (description
@@ -11729,6 +11728,48 @@ frames.")
     (description
      "R interface for Apache Sedona based on sparklyr (<https://sedona.apache.org>).")
     (license license:asl2.0)))
+
+(define-public r-apa7
+  (package
+    (name "r-apa7")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "apa7" version))
+       (sha256
+        (base32 "0gmchbc26pmm80ssy83q9mw12ky74sfks95bw0sl35s4jb8nzj57"))))
+    (properties `((upstream-name . "apa7")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-signs
+                             r-shiny
+                             r-scales
+                             r-s7
+                             r-rlang
+                             r-purrr
+                             r-psych
+                             r-performance
+                             r-parameters
+                             r-glue
+                             r-ftextra
+                             r-flextable
+                             r-effectsize
+                             r-dplyr))
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://github.com/wjschne/apa7")
+    (synopsis
+     "Facilitate Writing Documents in American Psychological Association Style, Seventh Edition")
+    (description
+     "Create American Psychological Association Style, Seventh Edition documents.
+Format numbers and text consistent with APA style.  Create tables that comply
+with APA style by extending flextable functions.")
+    (license license:cc0)))
 
 (define-public r-apa
   (package

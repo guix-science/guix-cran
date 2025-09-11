@@ -14267,13 +14267,13 @@ The original version of the default model is described in BÃ¸lstad (2024)
 (define-public r-hbal
   (package
     (name "r-hbal")
-    (version "1.2.12")
+    (version "1.2.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbal" version))
        (sha256
-        (base32 "1r3wlgvjy33cr0vi0lpckim4cybz67lh44fi6d36hms8pirnl4rl"))))
+        (base32 "07q6v1n1wihj0bbg3qv8srdr94jqp29g7xbqslc1ym903d0mqn0z"))))
     (properties `((upstream-name . "hbal")))
     (build-system r-build-system)
     (arguments

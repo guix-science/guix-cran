@@ -11413,6 +11413,32 @@ Inspiration thanks to:
 <https://codegolf.stackexchange.com/questions/123685/covfefify-a-string>.")
     (license license:gpl3)))
 
+(define-public r-covests
+  (package
+    (name "r-covests")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CovEsts" version))
+       (sha256
+        (base32 "0bvsf3l1skk9szm8d8cljjrsh8g3kqqihv937xzmcgcq0iiym7lx"))))
+    (properties `((upstream-name . "CovEsts")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/AdamBilchouris/CovEsts")
+    (synopsis "Nonparametric Estimators for Covariance Functions")
+    (description
+     "Several nonparametric estimators of autocovariance functions.  Procedures for
+constructing their confidence regions by using bootstrap techniques.  Methods to
+correct autocovariance estimators and several tools for analysing and comparing
+them.  Supplementary functions, including kernel computations and discrete
+cosine Fourier transforms.  For more details see Bilchouris and Olenko (2025)
+<doi:10.17713/ajs.v54i1.1975>.")
+    (license license:gpl3+)))
+
 (define-public r-covercorr
   (package
     (name "r-covercorr")
@@ -17540,6 +17566,45 @@ variation.  For the reference, please cite the following paper: Yousefi,
 Melograna, et.  al., (2023) <doi:10.3389/fmicb.2023.1170391>.")
     (license license:gpl3+)))
 
+(define-public r-conscir
+  (package
+    (name "r-conscir")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ConSciR" version))
+       (sha256
+        (base32 "1x0j905fbkwzbza494cv550qml6n7ggfyn9qr2wbkj3l1pxw8drr"))))
+    (properties `((upstream-name . "ConSciR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-shiny
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-padr
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://bhavshah01.github.io/ConSciR/")
+    (synopsis "Tools for Conservation Science")
+    (description
+     "This package provides data science tools for conservation science, including
+methods for environmental analysis applications, humidity calculations,
+sustainability metrics, engineering calculations, and data visualisation.
+Supports conservators, scientists, and engineers working with cultural heritage
+data.  The package was motivated by the developing tools and frameworks outlined
+in Cosaert and Beltran et al. (2022) \"Tools for the Analysis of Collection
+Environments\"
+<https://www.getty.edu/conservation/publications_resources/pdf_publications/tools_for_the_analysis_of_collection_environments.html>.")
+    (license license:gpl3+)))
+
 (define-public r-conrad
   (package
     (name "r-conrad")
@@ -17857,13 +17922,13 @@ individuals with access to the project along with their access level.")
 (define-public r-connections
   (package
     (name "r-connections")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "connections" version))
        (sha256
-        (base32 "1hqsp5y32n0v5rij86clk3wmghc32zh9h3s6pjn0yjjsg3v1bvf6"))))
+        (base32 "15mkcn8yblh7kmb8ygwsx6bp7ahcqbn2rmn3wcpgg2xxqsgn9rsm"))))
     (properties `((upstream-name . "connections")))
     (build-system r-build-system)
     (arguments
@@ -22305,19 +22370,24 @@ to absolute humidity and evaluates the performance of comfort indices.")
 (define-public r-comets
   (package
     (name "r-comets")
-    (version "0.1-1")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comets" version))
        (sha256
-        (base32 "1qxdvayw6ncq8d0rpxi868b8fc6g3xxgzmp4qxwjm3ppxa3r5060"))))
+        (base32 "1vqzbayii05fx9q38i14d2vzi32padpfzrzzcx50np16blhpsmjc"))))
     (properties `((upstream-name . "comets")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-ranger r-glmnet r-formula r-coin))
+    (propagated-inputs (list r-survival
+                             r-rcpp
+                             r-ranger
+                             r-glmnet
+                             r-formula
+                             r-coin))
     (home-page "https://github.com/LucasKook/comets")
     (synopsis "Covariance Measure Tests for Conditional Independence")
     (description
@@ -30540,6 +30610,39 @@ Parametric and semi-parametric approaches described in Marbac et al. (2020)
 <@code{arXiv:2012.14159>} are implemented.")
     (license license:gpl2+)))
 
+(define-public r-clusevol
+  (package
+    (name "r-clusevol")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clusEvol" version))
+       (sha256
+        (base32 "1dl0nfnm9mhia9nqm4pjcyc75kiqpm39qrxric6aq1x9s8c1vgh1"))))
+    (properties `((upstream-name . "clusEvol")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-plotly
+                             r-ggplot2
+                             r-fpc
+                             r-dplyr
+                             r-clustersim
+                             r-cluster))
+    (home-page "https://github.com/vmoprojs/clusEvol")
+    (synopsis "Procedure for Cluster Evolution Analytics")
+    (description
+     "Cluster Evolution Analytics allows us to use exploratory what if questions in
+the sense that the present information of an object is plugged-in a dataset in a
+previous time frame so that we can explore its evolution (and of its neighbors)
+to the present.  See the URL for the papers associated with this package, as for
+instance, Morales-OÃ±ate and Morales-OÃ±ate (2024)
+<doi:10.1016/j.softx.2024.101921>.")
+    (license license:gpl3+)))
+
 (define-public r-cluscov
   (package
     (name "r-cluscov")
@@ -37360,13 +37463,13 @@ some positive but many zero responses (see Follmann, Fay, and Proschan
 (define-public r-chopin
   (package
     (name "r-chopin")
-    (version "0.9.4")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chopin" version))
        (sha256
-        (base32 "0ldvp4nwfhq6b07vwnlq1pg3f72ivpvha4vylrwvzgx1blgwxas0"))))
+        (base32 "1jmawbjvx9w7572ngklag4x8nd5p53i0k1azvkfhnmw6brsbndi1"))))
     (properties `((upstream-name . "chopin")))
     (build-system r-build-system)
     (arguments
@@ -37375,6 +37478,7 @@ some positive but many zero responses (see Follmann, Fay, and Proschan
     (inputs (list netcdf))
     (propagated-inputs (list r-terra
                              r-stars
+                             r-sfheaders
                              r-sf
                              r-rlang
                              r-mirai
@@ -39803,13 +39907,13 @@ vector operations on strings such as reverse, sort, head, and set operations.")
 (define-public r-characterization
   (package
     (name "r-characterization")
-    (version "2.1.3")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Characterization" version))
        (sha256
-        (base32 "031krnry5wda00ca7ghyr23dpbyc959clax9rhq4cyli814qf741"))))
+        (base32 "1ffh95i2rq3mj3q77cjhhx6zjbcfc2f6z7m30a3j66k3iyfn7ghq"))))
     (properties `((upstream-name . "Characterization")))
     (build-system r-build-system)
     (arguments
@@ -42267,6 +42371,32 @@ U.S. Bureau of Labor Statistics (BLS) Handbook of Methods at
 <https://www.bls.gov/opub/hom/cex/calculation.htm>.  For further information
 about CE PUMD please visit <https://www.bls.gov/cex/pumd.htm>.")
     (license license:gpl3+)))
+
+(define-public r-cepreg
+  (package
+    (name "r-cepreg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CepReg" version))
+       (sha256
+        (base32 "06iv6r2k3zgnas9j7s4i7gdkni6w9b5yq1hhd19ra7qvgsry7vpm"))))
+    (properties `((upstream-name . "CepReg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rrpack r-renvlp r-psych r-mass))
+    (home-page "https://cran.r-project.org/package=CepReg")
+    (synopsis "Cepstral Model for Covariate-Dependent Time Series")
+    (description
+     "Modeling associations between covariates and power spectra of replicated time
+series using a cepstral-based semiparametric framework.  Implements a fast
+two-stage estimation procedure via Whittle likelihood and multivariate
+regression.The methodology is based on Li and Dong (2025)
+<doi:10.1080/10618600.2025.2473936>.")
+    (license license:expat)))
 
 (define-public r-cepreader
   (package
@@ -50989,6 +51119,33 @@ chapter sections and page numbers where the datasets are used.")
      "This package implements the board game @code{CamelUp} for use in introductory
 statistics classes using a Shiny app.")
     (license license:gpl3)))
+
+(define-public r-camelscl
+  (package
+    (name "r-camelscl")
+    (version "0.1-10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "camelsCL" version))
+       (sha256
+        (base32 "0pc0gbcxnd0i5l4jn70vqg28ad9xffl8s0i191s84265yr8z6k3w"))))
+    (properties `((upstream-name . "camelsCL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-terra r-hydrotsm r-httr))
+    (home-page "https://gitlab.com/hgarcesf/camelsCL")
+    (synopsis "Easy Handling of the CAMELS-CL Dataset")
+    (description
+     "Download and handle spatial and temporal data from the CAMELS-CL dataset
+(Catchment Attributes and Meteorology for Large Sample Studies, Chile)
+<https://camels.cr2.cl/>, developed by Alvarez-Garreton et al. (2018)
+<doi:10.5194/hess-22-5817-2018>.  The package does not generate new data, it
+only facilitates direct access to the original dataset for hydrological
+analyses.")
+    (license license:gpl2+)))
 
 (define-public r-camcorder
   (package

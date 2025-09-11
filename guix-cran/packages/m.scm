@@ -5608,13 +5608,13 @@ data.  Bryer & Pruzek (2011) <doi:10.1080/00273171.2011.636693>.")
 (define-public r-multileveloptimalbayes
   (package
     (name "r-multileveloptimalbayes")
-    (version "0.0.2.0")
+    (version "0.0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiLevelOptimalBayes" version))
        (sha256
-        (base32 "1x46nsjf0xfryhym4vb170w2qw8742lxzi4c3c13r743pw3bb0y9"))))
+        (base32 "0jc9nv40dpwq8fhb5976a6ppwypa0dc2drximlsmhkbfi0fxjmmm"))))
     (properties `((upstream-name . "MultiLevelOptimalBayes")))
     (build-system r-build-system)
     (arguments
@@ -5633,11 +5633,16 @@ package provides more reliable estimates in scenarios with limited data,
 offering a robust solution for accurate parameter estimation in two-level latent
 variable models.  It is designed for researchers in psychology, education, and
 related fields who face challenges in estimating between-group effects under
-small sample sizes and low intraclass correlation coefficients.  Dashuk et al.
-(2024) <doi:10.13140/RG.2.2.18148.39048> derived the optimal regularized
-Bayesian estimator; Dashuk et al. (2024) <doi:10.13140/RG.2.2.34350.01604>
-extended it to the multivariate case; and Luedtke et al. (2008)
-<doi:10.1037/a0012869> formalized the two-level latent variable framework.")
+small sample sizes and low intraclass correlation coefficients.  The package
+includes comprehensive S3 methods for result objects: @code{print()},
+@code{summary()}, @code{coef()}, @code{se()}, @code{vcov()}, @code{confint()},
+@code{as.data.frame()}, @code{dim()}, @code{length()}, @code{names()}, and
+@code{update()} for enhanced usability and integration with standard R
+workflows.  Dashuk et al. (2024) <doi:10.13140/RG.2.2.18148.39048> derived the
+optimal regularized Bayesian estimator; Dashuk et al. (2024)
+<doi:10.13140/RG.2.2.34350.01604> extended it to the multivariate case; and
+Luedtke et al. (2008) <doi:10.1037/a0012869> formalized the two-level latent
+variable framework.")
     (license license:gpl3)))
 
 (define-public r-multilevelmod
@@ -8043,6 +8048,32 @@ DNA Haplogroups.  Based on formulae by Samuels et al.  AJHG, 2006.
 78(4):713-720. <DOI:10.1086/502682>.")
     (license license:gpl3)))
 
+(define-public r-mtest
+  (package
+    (name "r-mtest")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MTest" version))
+       (sha256
+        (base32 "15gxarwnpg62bjbkf8ay9sjf1kg8zw13nbr7hd90w5saqzdvh6r5"))))
+    (properties `((upstream-name . "MTest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plotly r-ggplot2 r-car))
+    (home-page "https://github.com/vmoprojs/MTest")
+    (synopsis "Procedure for Multicollinearity Testing using Bootstrap")
+    (description
+     "This package provides functions for detecting multicollinearity.  This test
+gives statistical support to two of the most famous methods for detecting
+multicollinearity in applied work: Kleinâs rule and Variance Inflation Factor
+(VIF).  See the URL for the papers associated with this package, as for
+instance, Morales-OÃ±ate and Morales-OÃ±ate (2015) <doi:10.33333/rp.vol51n2.05>.")
+    (license license:gpl3+)))
+
 (define-public r-mte
   (package
     (name "r-mte")
@@ -8162,13 +8193,13 @@ output) and Shiny file editing.")
 (define-public r-mtarm
   (package
     (name "r-mtarm")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mtarm" version))
        (sha256
-        (base32 "0zrd2i9cv6b7blyn0kfccyrnacc2zsi0al20q9v8sz7w33jhkwl6"))))
+        (base32 "12yh2a9rl6hx0h7pbq4dgss699h8icmsd0k3m5p9amsqwfbwdpz4"))))
     (properties `((upstream-name . "mtarm")))
     (build-system r-build-system)
     (arguments
@@ -23381,30 +23412,30 @@ number of factors.")
 (define-public r-mkdescr
   (package
     (name "r-mkdescr")
-    (version "0.8")
+    (version "0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MKdescr" version))
        (sha256
-        (base32 "0y4mg3lg94nvyvj8rns5lffd6qjw1yn6yw8kn03n94rig857amwp"))))
+        (base32 "09wvrygz259gy8lmiz7l6xnkjixjs5skwb892x49hf3kafjwpkdw"))))
     (properties `((upstream-name . "MKdescr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-ggplot2))
+    (propagated-inputs (list r-scales r-rlang r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/stamats/MKdescr")
     (synopsis "Descriptive Statistics")
     (description
      "Computation of standardized interquartile range (IQR), Huber-type skipped mean
 (Hampel (1985), <doi:10.2307/1268758>), robust coefficient of variation (CV)
-(Arachchige et al. (2019), <@code{arXiv:1907.01110>}), robust signal to noise
-ratio (SNR), z-score, standardized mean difference (SMD), as well as functions
-that support graphical visualization such as boxplots based on quartiles (not
-hinges), negative logarithms and generalized logarithms for ggplot2 (Wickham
-(2016), ISBN:978-3-319-24277-4).")
+(Arachchige et al. (2019), <doi:10.48550/@code{arXiv.1907.01110>}), robust
+signal to noise ratio (SNR), z-score, standardized mean difference (SMD), as
+well as functions that support graphical visualization such as boxplots based on
+quartiles (not hinges), negative logarithms and generalized logarithms for
+ggplot2 (Wickham (2016), ISBN:978-3-319-24277-4).")
     (license license:lgpl3)))
 
 (define-public r-mkde
@@ -35889,6 +35920,35 @@ code to prepare data and analyses are available on
 <https://bookdown.org/a2delivera/@code{MetaHD/>}.")
     (license license:gpl3)))
 
+(define-public r-metagroup
+  (package
+    (name "r-metagroup")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metagroup" version))
+       (sha256
+        (base32 "0ci975p9l35ffygg94hq8djijjfaf9nhhcajs58gijyjnh8n3ih2"))))
+    (properties `((upstream-name . "metagroup")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-meta r-magrittr r-ggplot2 r-dplyr))
+    (home-page "https://github.com/asmpro7/metagroup/")
+    (synopsis "Meaningful Grouping of Studies in Meta-Analysis")
+    (description
+     "This package performs meaningful subgrouping in a meta-analysis.  This is a
+two-step process; first, use the iterative grouping functions (e.g.,
+@code{mgbin()}, @code{mgcont()} ) to partition studies into statistically
+homogeneous clusters based on their effect size data.  Second, use the
+@code{meaning()} function to analyze these new subgroups and understand their
+composition based on study-level characteristics (e.g., country, setting).  This
+approach helps to uncover hidden structures in meta-analytic data and provide a
+deeper interpretation of heterogeneity.")
+    (license license:gpl3+)))
+
 (define-public r-metaggr
   (package
     (name "r-metaggr")
@@ -37949,13 +38009,13 @@ S and S-PLUS\" (Springer, 2000).")
 (define-public r-memshare
   (package
     (name "r-memshare")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "memshare" version))
        (sha256
-        (base32 "11ppx1fhq1mdcmqxpls11c521phh79mrm39fcgm11bzqm6yy428k"))))
+        (base32 "1azss8wf2m28iykvs93k77z45h242jlghi1y96m2ggp6npa8xv70"))))
     (properties `((upstream-name . "memshare")))
     (build-system r-build-system)
     (arguments
@@ -41249,13 +41309,13 @@ example can be found on <https://github.com/ielbadisy/mcstatsim>.")
 (define-public r-mcstats
   (package
     (name "r-mcstats")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcStats" version))
        (sha256
-        (base32 "1r8dxdfcvznl2968xr6fbany1rh7wq5z1p7fhdf5g4b5l28j8pf9"))))
+        (base32 "0a4vmarrkkg00wg36kf8iljfq9y3wjx35rlpjs3hr9bp9fz4dws9"))))
     (properties `((upstream-name . "mcStats")))
     (build-system r-build-system)
     (arguments
@@ -47218,13 +47278,13 @@ variables.")
 (define-public r-marss
   (package
     (name "r-marss")
-    (version "3.11.9")
+    (version "3.11.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MARSS" version))
        (sha256
-        (base32 "0iipvlf6franhvbpg5c7wdnyzl9wl27xhnl1k66mi9m8ihjcczrm"))))
+        (base32 "1pdx1baar041h6mazx2zfvxqakq6k151r45x33rf4xl9lp2h7jyy"))))
     (properties `((upstream-name . "MARSS")))
     (build-system r-build-system)
     (arguments

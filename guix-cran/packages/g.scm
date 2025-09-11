@@ -9648,6 +9648,38 @@ employs a Fisher scoring algorithm described in Guinness (2019)
 <doi:10.48550/@code{arXiv.1905.08374>}.")
     (license license:expat)))
 
+(define-public r-gpflexviz
+  (package
+    (name "r-gpflexviz")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GPflexViz" version))
+       (sha256
+        (base32 "00zamwbvdpwhqdbwz23if2pad72a2y5gmpn1kbgmfyhm09ii82bm"))))
+    (properties `((upstream-name . "GPflexViz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reshape2
+                             r-plotly
+                             r-nortest
+                             r-gridextra
+                             r-ggplot2
+                             r-ggforce
+                             r-dplyr
+                             r-cowplot))
+    (home-page "https://github.com/DoviniJ/GPflexViz")
+    (synopsis "Graphical Visualizations Related to Genomic Prediction")
+    (description
+     "This package provides flexible tools for the visualization of genomic data.
+Supports interactive and static plots tailored for presentations and
+publications, with customizable features like colors, themes, and annotations to
+align with specific analytical and presentation goals.")
+    (license license:gpl3)))
+
 (define-public r-gpfda
   (package
     (name "r-gpfda")
@@ -12257,13 +12289,13 @@ basic plots.")
 (define-public r-gnn
   (package
     (name "r-gnn")
-    (version "0.0-4")
+    (version "0.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gnn" version))
        (sha256
-        (base32 "0kwizsqzrb0q6nailnh6k3mzqwxv0d0phrqn7dp97rkgg2qq1kxa"))))
+        (base32 "07131mk5kvyisl7y54zikzcskxwzzq410k7f6s65zadbdcbqng8w"))))
     (properties `((upstream-name . "gnn")))
     (build-system r-build-system)
     (arguments
@@ -23630,13 +23662,13 @@ ggplot2 techniques.")
 (define-public r-ggautomap
   (package
     (name "r-ggautomap")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggautomap" version))
        (sha256
-        (base32 "0fy1saym15l3d76ix26kz9il3nzsypchh028vigcvan7g0yg7168"))))
+        (base32 "1hg005kjdkywm2yk1hb7jsj1dpdws4ak12n95j6di8nirbvarz0w"))))
     (properties `((upstream-name . "ggautomap")))
     (build-system r-build-system)
     (arguments

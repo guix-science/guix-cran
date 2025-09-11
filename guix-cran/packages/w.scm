@@ -3312,31 +3312,6 @@ rewriting the initial high-dimensional logistic model to remove the correlation
 between the predictors and in applying the generalized Lasso criterion.")
     (license license:gpl2)))
 
-(define-public r-wkutils
-  (package
-    (name "r-wkutils")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wkutils" version))
-       (sha256
-        (base32 "01gsvyzxd89j979zdm8q159wgkha277xwsn097ja5absxlny6991"))))
-    (properties `((upstream-name . "wkutils")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wk r-vctrs r-tibble r-rcpp))
-    (home-page "https://paleolimbot.github.io/wkutils/")
-    (synopsis "Utilities for Well-Known Geometry Vectors")
-    (description
-     "This package provides extra utilities for well-known formats in the wk package
-that are outside the scope of that package.  Utilities to parse coordinates from
-data frames, plot well-known geometry vectors, extract meta information from
-well-known geometry vectors, and calculate bounding boxes are provided.")
-    (license license:expat)))
-
 (define-public r-wktmo
   (package
     (name "r-wktmo")

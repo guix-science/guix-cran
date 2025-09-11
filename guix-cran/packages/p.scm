@@ -41320,13 +41320,13 @@ act as wrappers around RSelenium methods.")
 (define-public r-parsec
   (package
     (name "r-parsec")
-    (version "1.2.7")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parsec" version))
        (sha256
-        (base32 "0k6w4nd37yz9jlzwv0bkv90v72y5bjz7rhk8gjpbl6ym63brxps6"))))
+        (base32 "0dww9n0n308v7617p7pql45rvhyf81glvvzim96jqpxsaycbiizp"))))
     (properties `((upstream-name . "parsec")))
     (build-system r-build-system)
     (arguments

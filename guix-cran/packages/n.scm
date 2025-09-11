@@ -222,13 +222,13 @@ about all flights that departed from the three main New York City airports in
 (define-public r-nvmix
   (package
     (name "r-nvmix")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nvmix" version))
        (sha256
-        (base32 "055f99v3l9zzd2r23l7101y0sy5p45zrsh3yblmbmyq8b11bx4rj"))))
+        (base32 "08a5w50npl1n68x5adk1hivyvilz7swx4f12zrmgsi568siwidx6"))))
     (properties `((upstream-name . "nvmix")))
     (build-system r-build-system)
     (arguments
@@ -7219,13 +7219,13 @@ meta-analysis dataset.  INLA package can be obtained from
 (define-public r-nmaforest
   (package
     (name "r-nmaforest")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMAforest" version))
        (sha256
-        (base32 "1bk4b9b4vi4ip8kd2nbnh9w853j053ph28cj4rxa3fcky1ljm6yv"))))
+        (base32 "1jhskbk737g9pk8vip0spak3pwapry9pvdrgyslyyl7b33r2bc4c"))))
     (properties `((upstream-name . "NMAforest")))
     (build-system r-build-system)
     (arguments
@@ -10298,13 +10298,13 @@ Protection Agency <https://www.epa.gov/waterdata/basic-information>.")
 (define-public r-nhanesa
   (package
     (name "r-nhanesa")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhanesA" version))
        (sha256
-        (base32 "15agbx1p69pfcksvz8w8lqg3flimdc294b2m722w8rbvqqxnr8wc"))))
+        (base32 "1nxmfk5cs1yy0q2z2v8bk31z9lhvv46v0qm1xgjmscnr574ykjim"))))
     (properties `((upstream-name . "nhanesA")))
     (build-system r-build-system)
     (arguments
@@ -13025,13 +13025,13 @@ computational companion to Bojanowski & Corten (2014)
 (define-public r-netseer
   (package
     (name "r-netseer")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netseer" version))
        (sha256
-        (base32 "1ivkd13w896sf3rdqrklxxabylm9rjp6hbygp51lgshv9mqvps5c"))))
+        (base32 "0j8w89fbd32mgdzhkjkwlqgax40rcjrl3yg6r64bqiywxdnvmvhh"))))
     (properties `((upstream-name . "netseer")))
     (build-system r-build-system)
     (arguments
@@ -13048,14 +13048,15 @@ computational companion to Bojanowski & Corten (2014)
                              r-fabletools
                              r-fable
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://sevvandi.github.io/netseer/")
     (synopsis "Graph Prediction from a Graph Time Series")
     (description
      "Predicting the structure of a graph including new nodes and edges using a time
 series of graphs.  Flux balance analysis, a linear and integer programming
 technique used in biochemistry is used with time series prediction methods to
-predict the graph structure at a future time point Kandanaarachchi (2024)
-<doi:10.48550/@code{arXiv.2401.04280>}.")
+predict the graph structure at a future time point Kandanaarachchi (2025)
+<doi:10.48550/@code{arXiv.2507.05806>}.")
     (license license:gpl3+)))
 
 (define-public r-netsci
@@ -16643,6 +16644,50 @@ shape parameter equal to zero, i.e.  Poisson scenario.")
 brand choice of consumer products.  We estimate the model and summarize various
 theoretical quantities of interest to marketing researchers.  Also provides
 functions for making tables that compare observed and theoretical statistics.")
+    (license license:gpl3+)))
+
+(define-public r-nbdctools
+  (package
+    (name "r-nbdctools")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NBDCtools" version))
+       (sha256
+        (base32 "0hlf1n5yg79mk4jqjz2far6q8516w6g8br30mags7xbw6g4vd79q"))))
+    (properties `((upstream-name . "NBDCtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sjmisc
+                             r-sjlabelled
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-hms
+                             r-haven
+                             r-glue
+                             r-dplyr
+                             r-cli
+                             r-chk
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://software.nbdc-datahub.org/NBDCtools/")
+    (synopsis
+     "National Institutes of Health Brain Development Cohorts Data Hub Tools")
+    (description
+     "This package provides a suite of functions to work with data from the National
+Institutes of Health Brain Development Cohorts Data Hub.  The package provides
+tools to create, clean, process, and filter datasets and associated metadata.
+These utilities are intended to simplify reproducible data-preparation for
+future research.")
     (license license:gpl3+)))
 
 (define-public r-nbconv

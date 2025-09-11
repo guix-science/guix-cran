@@ -2639,13 +2639,13 @@ base weighting functionality in survey.'.")
 (define-public r-svyvgam
   (package
     (name "r-svyvgam")
-    (version "1.2")
+    (version "1.2-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svyVGAM" version))
        (sha256
-        (base32 "01y372p52xjd7j20xk5gwxkl8sfnwdvixx3pb3f6r407ca7l330h"))))
+        (base32 "19phvz525m18gf5g2yx6ks55gaga1jb1a4ypgj93svny9x9jlf18"))))
     (properties `((upstream-name . "svyVGAM")))
     (build-system r-build-system)
     (arguments
@@ -6463,13 +6463,13 @@ surrogate outcome to improve inference on a partially missing target outcome\"
 (define-public r-surrogaterank
   (package
     (name "r-surrogaterank")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurrogateRank" version))
        (sha256
-        (base32 "1f36y02mf9l1z0cph4f0amn08cblra25fh4w53h3r144hvaa9cqz"))))
+        (base32 "0f4i4n41s7jc2gvz28clml4jl9036h4h7kkz4lwmk9icvzk53785"))))
     (properties `((upstream-name . "SurrogateRank")))
     (build-system r-build-system)
     (arguments
@@ -6481,10 +6481,10 @@ surrogate outcome to improve inference on a partially missing target outcome\"
     (description
      "Uses a novel rank-based nonparametric approach to evaluate a surrogate marker in
 a small sample size setting.  Details are described in Parast et al (2024)
-<doi:10.1093/biomtc/ujad035> and Hughes A et al (2025)
-<doi:10.48550/@code{arXiv.2502.03030>}.  A tutorial for this package can be
-found at <https://www.laylaparast.com/surrogaterank> and a Shiny App
-implementing the package can be found at
+<doi:10.1093/biomtc/ujad035> and Hughes A et al (2025) <doi:10.1002/sim.70241>.
+A tutorial for this package can be found at
+<https://www.laylaparast.com/surrogaterank> and a Shiny App implementing the
+package can be found at
 <https://parastlab.shinyapps.io/@code{SurrogateRankApp/>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
@@ -6658,6 +6658,54 @@ datasets and tools to embed custom text or images into residual structures.
 Allowing users to create intriguing visual demonstrations for teaching model
 diagnostics.")
     (license license:gpl3+)))
+
+(define-public r-surprisalanalysis
+  (package
+    (name "r-surprisalanalysis")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurprisalAnalysis" version))
+       (sha256
+        (base32 "0cnw9lrbn40h040qnxblcniswhhy3a49zwv0ab9i08lynwjkh9g3"))))
+    (properties `((upstream-name . "SurprisalAnalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyverse
+                             r-tidyr
+                             r-shinywidgets
+                             r-shinythemes
+                             r-shinyjs
+                             r-shinycssloaders
+                             r-shiny
+                             r-patchwork
+                             r-org-mm-eg-db
+                             r-org-hs-eg-db
+                             r-matlib
+                             r-latex2exp
+                             r-httpuv
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-clusterprofiler
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SurprisalAnalysis")
+    (synopsis "Information Theoretic Analysis of Gene Expression Data")
+    (description
+     "This package implements Surprisal analysis for gene expression data such as
+RNA-seq or microarray experiments.  Surprisal analysis is an
+information-theoretic method that decomposes gene expression data into a
+baseline state and constraint-associated deviations, capturing coordinated gene
+expression patterns under different biological conditions.  References:
+Kravchenko-Balasha N. et al. (2014) <doi:10.1371/journal.pone.0108549>.  Zadran
+S. et al. (2014) <doi:10.1073/pnas.1414714111>.  Su Y. et al. (2019)
+<doi:10.1371/journal.pcbi.1007034>.  Bogaert K. A. et al. (2018)
+<doi:10.1371/journal.pone.0195142>.")
+    (license license:expat)))
 
 (define-public r-surfrough
   (package
@@ -7417,13 +7465,13 @@ package) to the mice package.  Laqueur, H. S., Shev, A. B., Kagawa, R. M. C.
 (define-public r-supergauss
   (package
     (name "r-supergauss")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SuperGauss" version))
        (sha256
-        (base32 "174gicpk2jwbzg39m44sxp7506cja9cnn95r287sq7049lrj302a"))))
+        (base32 "1sv86j2v82rbs2ck9f54sbkmp6drw6cah8s27wb3fz025yb67v4d"))))
     (properties `((upstream-name . "SuperGauss")))
     (build-system r-build-system)
     (arguments
@@ -7432,7 +7480,7 @@ package) to the mice package.  Laqueur, H. S., Shev, A. B., Kagawa, R. M. C.
     (inputs (list fftw))
     (propagated-inputs (list r-rcppeigen r-rcpp r-r6 r-fftw))
     (native-inputs (list pkg-config r-knitr))
-    (home-page "https://cran.r-project.org/package=SuperGauss")
+    (home-page "https://github.com/mlysy/SuperGauss")
     (synopsis
      "Superfast Likelihood Inference for Stationary Gaussian Time Series")
     (description
@@ -29784,6 +29832,46 @@ Finally, the interface to compiled code avoids unnecessary copies and allows for
 the use of long integers.")
     (license license:expat)))
 
+(define-public r-sparsegfm
+  (package
+    (name "r-sparsegfm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sparseGFM" version))
+       (sha256
+        (base32 "0n1n9idlb77s53470sxkpzdz2a9v01n2gzgcwrb2ggsasg00jnf8"))))
+    (properties `((upstream-name . "sparseGFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-irlba r-gfm))
+    (home-page "https://github.com/zjwang1013/sparseGFM")
+    (synopsis
+     "Sparse Generalized Factor Models with Multiple Penalty Functions")
+    (description
+     "This package implements sparse generalized factor models (@code{sparseGFM}) for
+dimension reduction and variable selection in high-dimensional data with
+automatic adaptation to weak factor scenarios.  The package supports multiple
+data types (continuous, count, binary) through generalized linear model
+frameworks and handles missing values automatically.  It provides 12 different
+penalty functions including Least Absolute Shrinkage and Selection Operator
+(Lasso), adaptive Lasso, Smoothly Clipped Absolute Deviation (SCAD), Minimax
+Concave Penalty (MCP), group Lasso, and their adaptive versions for inducing
+row-wise sparsity in factor loadings.  Key features include cross-validation for
+regularization parameter selection using Sparsity Information Criterion (SIC),
+automatic determination of the number of factors via multiple information
+criteria, and specialized algorithms for row-sparse loading structures.  The
+methodology employs alternating minimization with Singular Value Decomposition
+(SVD)-based identifiability constraints and is particularly effective for
+high-dimensional applications in genomics, economics, and social sciences where
+interpretable sparse dimension reduction is crucial.  For penalty functions, see
+Tibshirani (1996) <doi:10.1111/j.2517-6161.1996.tb02080.x>, Fan and Li (2001)
+<doi:10.1198/016214501753382273>, and Zhang (2010) <doi:10.1214/09-AOS729>.")
+    (license license:gpl3+)))
+
 (define-public r-sparsefunclust
   (package
     (name "r-sparsefunclust")
@@ -35022,25 +35110,34 @@ are described in Jombart (2008) <doi:10.1093/bioinformatics/btn129>.")
 (define-public r-snowquery
   (package
     (name "r-snowquery")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snowquery" version))
        (sha256
-        (base32 "1dp4hwsrn7k6d3cvhqspi0g6p7m70rb4s3pk5yljnfx3fisig9pk"))))
+        (base32 "1a8x291dckhjf5fcpcqqq5d856qpwhdasyfbh4k4k1c88mkc8adv"))))
     (properties `((upstream-name . "snowquery")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml r-rsqlite r-rpostgres r-reticulate r-dbi))
+    (propagated-inputs (list r-yaml
+                             r-rsqlite
+                             r-rpostgres
+                             r-reticulate
+                             r-duckdb
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi))
     (home-page "https://github.com/mermelstein/snowquery")
-    (synopsis "Query 'Snowflake' Databases with 'SQL'")
+    (synopsis
+     "SQL Interface to 'Snowflake', 'Redshift', 'Postgres', 'SQLite', and 'DuckDB'")
     (description
-     "This package provides a wrapper allowing SQL queries to be run on a Snowflake
-instance directly from an R script, by using the snowflake-connector-python
-package in the background.")
+     "Run SQL queries across Snowflake', Amazon Redshift', @code{PostgreSQL}',
+SQLite', and @code{DuckDB} from R with a single function.  Optionally stream and
+cache large query results to a local @code{DuckDB} database for efficient work
+with larger-than-memory datasets.")
     (license license:gpl3+)))
 
 (define-public r-snowft
@@ -40034,13 +40131,13 @@ supported for continuous scores only.")
 (define-public r-skiptrack
   (package
     (name "r-skiptrack")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skipTrack" version))
        (sha256
-        (base32 "0cnih8f9zbjidw8b2wsgx1m2yfhz2qj3gz9i3bk3jm2c8wz0snk4"))))
+        (base32 "18d7a7gkmjfxvf1l3pmalqkfryl3k1xwr2dc9iv5r9hj49qcg90a"))))
     (properties `((upstream-name . "skipTrack")))
     (build-system r-build-system)
     (arguments
@@ -69730,13 +69827,13 @@ empirical graphical methods to visualize tail dependence.")
 (define-public r-sassy
   (package
     (name "r-sassy")
-    (version "1.2.5")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sassy" version))
        (sha256
-        (base32 "1w2hgkwvwzvzmd1gw9x6y5zvxvmp704zk5jny6ppq44wavm7nl52"))))
+        (base32 "03d38brvc6841ncd3md91qfkc8i6rk9l74x4iyaav4vq3vq3hbd3"))))
     (properties `((upstream-name . "sassy")))
     (build-system r-build-system)
     (arguments
@@ -69749,15 +69846,15 @@ empirical graphical methods to visualize tail dependence.")
                              r-fmtr
                              r-common))
     (native-inputs (list r-knitr))
-    (home-page "https://r-sassy.org")
+    (home-page "https://sassy.r-sassy.org")
     (synopsis "Makes 'R' Easier for Everyone")
     (description
      "This package provides a meta-package that aims to make R easier for everyone,
 especially programmers who have a background in SASÂ® software.  This set of
 packages brings many useful concepts to R', including data libraries, data
 dictionaries, formats and format catalogs, a data step, and a traceable log.
-The flagship package is a reporting package that can output in text, rich text,
-PDF', HTML', and DOCX file formats.")
+The system also includes a package that replicates several commonly-used SASÂ®
+procedures, like PROC FREQ', PROC MEANS', and PROC REG'.")
     (license license:cc0)))
 
 (define-public r-sasr
@@ -73211,13 +73308,13 @@ evaluation of Small Area estimators.")
 (define-public r-saetrafo
   (package
     (name "r-saetrafo")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeTrafo" version))
        (sha256
-        (base32 "1sqmymazs3g1xlqvphbwmpvl5yhkmbmpcyc1mxqdxaj3yap44qwr"))))
+        (base32 "034hd7dgsmz31l8pyh46g0xpfd08lpbb0ls69lwnwhspb67wfxaf"))))
     (properties `((upstream-name . "saeTrafo")))
     (build-system r-build-system)
     (arguments

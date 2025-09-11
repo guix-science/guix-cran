@@ -33548,26 +33548,29 @@ population/community structure inference.")
 (define-public r-d4talink-light
   (package
     (name "r-d4talink-light")
-    (version "2.1.18")
+    (version "2.1.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "D4TAlink.light" version))
        (sha256
-        (base32 "161vklfn22skrbxf4xglz71w6lw6i03lz30vj928ri36cbf2047i"))))
+        (base32 "1zpa1s63rbh1m75chfqzg65mvbfn8pnjkrwlki122x62cf3iq3n0"))))
     (properties `((upstream-name . "D4TAlink.light")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rmarkdown
+    (propagated-inputs (list r-rsqlite
+                             r-rmarkdown
+                             r-rjson
                              r-reticulate
+                             r-quarto
                              r-openxlsx
                              r-openssl
                              r-officedown
-                             r-jsonlite
                              r-getpass
                              r-feather
+                             r-dbi
                              r-biobase))
     (native-inputs (list r-knitr))
     (home-page "https://bitbucket.org/SQ4/d4talink.light")

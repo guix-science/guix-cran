@@ -14715,13 +14715,13 @@ preserving geographic positions as much as possible.")
 (define-public r-tmap
   (package
     (name "r-tmap")
-    (version "4.1")
+    (version "4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmap" version))
        (sha256
-        (base32 "1wjkh2kfffl3wbyi5hswd5f4nkarjwaykjzl87j3x86mfirkl9mi"))))
+        (base32 "1a6x67fhli388fdyyjmdczcb0qdb8lp9n72xsyxs1x658m1aswld"))))
     (properties `((upstream-name . "tmap")))
     (build-system r-build-system)
     (arguments
@@ -32358,19 +32358,24 @@ Respects original column order, column labels, and factor level order.  See
 (define-public r-tablespan
   (package
     (name "r-tablespan")
-    (version "0.2.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tablespan" version))
        (sha256
-        (base32 "090b341gf5qbj7pnwwa9nass188jwh55p9sfrsns7sbm0mgxzzlv"))))
+        (base32 "0hma25vh7dga4k6g1dmipz398xl92flcr1n776k2kf22phmz4c8h"))))
     (properties `((upstream-name . "tablespan")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rlang r-openxlsx r-gt r-dplyr))
+    (propagated-inputs (list r-tibble
+                             r-scales
+                             r-rlang
+                             r-openxlsx
+                             r-gt
+                             r-dplyr))
     (home-page "https://github.com/jhorzek/tablespan")
     (synopsis
      "Create Satisficing 'Excel', 'HTML', 'LaTeX', and 'RTF' Tables using a Simple Formula")
@@ -33065,4 +33070,31 @@ T^2-test for equivalence according to Hoffelder (2016)
 <http://www.ecv.de/suse_item.php?@code{suseId=Z|pi|8430>} for the equivalence
 comparison of highly variable dissolution profiles.")
     (license license:gpl3)))
+
+(define-public r-t2dfittailor
+  (package
+    (name "r-t2dfittailor")
+    (version "3.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "T2DFitTailor" version))
+       (sha256
+        (base32 "0q3q3ms12ydsxkhbi2071aizg22mbk97zj476q0n5nzck7iw0zjf"))))
+    (properties `((upstream-name . "T2DFitTailor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr r-fmsb r-dplyr))
+    (home-page "https://cran.r-project.org/package=T2DFitTailor")
+    (synopsis
+     "Tailor the Exercise Plans and Visualize the Outcome for T2D Patients")
+    (description
+     "This package provides a system for personalized exercise plan recommendations
+for T2D (Type 2 Diabetes) patients based on the primary outcome of @code{HbA1c}
+(Glycated Hemoglobin).  You provide the individual's information, and
+T2D@code{FitTailor} details the exercise plan and predicts the intervention's
+effectiveness.")
+    (license license:expat)))
 

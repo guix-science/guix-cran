@@ -3545,13 +3545,13 @@ with R function names, @code{LaTeX} names, discreteness, and package origins.")
 (define-public r-exams-forge
   (package
     (name "r-exams-forge")
-    (version "1.0.11")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exams.forge" version))
        (sha256
-        (base32 "0l12ifxpzwjy500fgzig0s8bwslxv4jgmmr8ig1l4h5sqc1z9z8v"))))
+        (base32 "0xgf6pfsvhrxm8rms10lmsr22wy4hbma5ildg75bbczwdg2fvl3d"))))
     (properties `((upstream-name . "exams.forge")))
     (build-system r-build-system)
     (arguments
@@ -10056,13 +10056,13 @@ data\" by Devlin et al. (2020) <doi:10.1007/978-3-030-47622-9>.")
 (define-public r-eq5d
   (package
     (name "r-eq5d")
-    (version "0.16.0")
+    (version "0.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eq5d" version))
        (sha256
-        (base32 "1777jkpdcnvd2s4617smsv8na3rc8xlyipgvgyly88xs8d796ph3"))))
+        (base32 "1kz5sz3f3j6r9s6md4a50qqyd5rmwgpqbxxzc9xh22ffn5lp8rc6"))))
     (properties `((upstream-name . "eq5d")))
     (build-system r-build-system)
     (arguments
@@ -10090,10 +10090,10 @@ clinical and economic evaluation of health care as well as in population health
 surveys.  The eq5d package provides methods to calculate index scores from a
 subject's dimension scores.  32 TTO and 11 VAS EQ-5D-3L value sets including
 those for countries in Szende et al (2007) <doi:10.1007/1-4020-5511-0> and
-Szende et al (2014) <doi:10.1007/978-94-007-7596-1>, 47 EQ-5D-5L EQ-VT value
+Szende et al (2014) <doi:10.1007/978-94-007-7596-1>, 48 EQ-5D-5L EQ-VT value
 sets, the EQ-5D-5L crosswalk value sets developed by van Hout et al. (2012)
 <doi:10.1016/j.jval.2012.02.008>, the crosswalk value sets for Bermuda, Jordan
-and Russia and the van Hout (2021) reverse crosswalk value sets.  10 EQ-5D-Y
+and Russia and the van Hout (2021) reverse crosswalk value sets.  11 EQ-5D-Y3L
 value sets are also included as are the NICE DSU age-sex based EQ-5D-3L to
 EQ-5D-5L and EQ-5D-5L to EQ-5D-3L mappings.  Methods are also included for the
 analysis of EQ-5D profiles, including those from the book \"Methods for Analyzing
@@ -15659,13 +15659,13 @@ al. (2024) <doi:10.31234/osf.io/2e4dq>.")
 (define-public r-embryogrowth
   (package
     (name "r-embryogrowth")
-    (version "10.3")
+    (version "10.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "embryogrowth" version))
        (sha256
-        (base32 "0644afm0hr6d0zhcmwfksdjqz0b3qnpp5c22kca7f1p85sbvv8yj"))))
+        (base32 "1f3cp3j0yipkgli9fn801p0jyxcpfsdnpzkdp891ynsb0wxv90qz"))))
     (properties `((upstream-name . "embryogrowth")))
     (build-system r-build-system)
     (arguments
@@ -16837,13 +16837,13 @@ free to decide what climate layers they would like to use.")
 (define-public r-elevatr
   (package
     (name "r-elevatr")
-    (version "0.99.0")
+    (version "0.99.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "elevatr" version))
        (sha256
-        (base32 "1l18b72bvb7cfprxi99ylffbvs072g29ly3bcw6s1yv5asp50iw6"))))
+        (base32 "0b41d2z58izi523ci1b9l1k0bv1sr75cwdwfx0rcw2s4cbypmbx9"))))
     (properties `((upstream-name . "elevatr")))
     (build-system r-build-system)
     (arguments
@@ -16862,7 +16862,7 @@ free to decide what climate layers they would like to use.")
                              r-furrr
                              r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/jhollist/elevatr/")
+    (home-page "https://github.com/usepa/elevatr/")
     (synopsis "Access Elevation Data from Various APIs")
     (description
      "Several web services are available that provide access to elevation data.  This
@@ -22407,6 +22407,39 @@ vignette <doi:10.18637/jss.v102.i08>.")
 elasticity, convexity, marginal revenue and manifold of various economics demand
 systems including Linear, Translog, CES, LES and CREMR.")
     (license license:gpl2)))
+
+(define-public r-econdataverse
+  (package
+    (name "r-econdataverse")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "econdataverse" version))
+       (sha256
+        (base32 "0ci5f8phgh267vclin587anziiasxdrv8ml767cj36cvd5xvmp13"))))
+    (properties `((upstream-name . "econdataverse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wbwdi
+                             r-wbids
+                             r-uisapi
+                             r-owidapi
+                             r-oecdoda
+                             r-imfweo
+                             r-econtools
+                             r-econid
+                             r-cli))
+    (home-page "https://github.com/tidy-intelligence/r-econdataverse")
+    (synopsis "Easily Load and Install the 'EconDataverse'")
+    (description
+     "The @code{EconDataverse} is a universe of open-source packages to work
+seamlessly with economic data.  This package is designed to make it easy to
+install and load multiple @code{EconDataverse} packages in a single step.  Learn
+more about the @code{EconDataverse} at <https://www.econdataverse.org>.")
+    (license license:expat)))
 
 (define-public r-econandprodefficiency
   (package

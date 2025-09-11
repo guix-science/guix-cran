@@ -6,14 +6,16 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages cmake)
+  #:use-module (gnu packages curl)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages image)
   #:use-module (guix-cran packages z)
@@ -1675,6 +1677,35 @@ RFC 4226 <https://datatracker.ietf.org/doc/html/rfc4226> and RFC 6238
 the null hypothesis and under the alternative.  Perform a two-sample test on
 multivariate data using these limiting distributions and binning.")
     (license license:gpl2)))
+
+(define-public r-otelsdk
+  (package
+    (name "r-otelsdk")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "otelsdk" version))
+       (sha256
+        (base32 "0k9zxlqy4czblkamrqiyj7l8z6l0npsyc5f9qj3i018wyxlnyx6h"))))
+    (properties `((upstream-name . "otelsdk")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib curl cmake))
+    (propagated-inputs (list r-otel))
+    (native-inputs (list pkg-config))
+    (home-page "https://otelsdk.r-lib.org")
+    (synopsis "'R' 'SDK' and Exporters for 'OpenTelemetry'")
+    (description
+     "@code{OpenTelemetry} is a collection of tools, APIs', and SDKs used to
+instrument, generate, collect, and export telemetry data (metrics, logs, and
+traces) for analysis in order to understand your software's performance and
+behavior.  This package contains the @code{OpenTelemetry} SDK', and exporters.
+Use this package to export traces, metrics, logs from instrumented R code.  Use
+the otel package to instrument your R code for @code{OpenTelemetry}'.")
+    (license license:expat)))
 
 (define-public r-otel
   (package

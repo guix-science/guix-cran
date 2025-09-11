@@ -8402,13 +8402,13 @@ Husch (2016). <doi:10.1002/9781118902028>.")
 (define-public r-forestly
   (package
     (name "r-forestly")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestly" version))
        (sha256
-        (base32 "1gxbap25wgjlj4swwadraxijb18ygkb9qfnhxja1ylir58k2z331"))))
+        (base32 "0i8h4q4cpykclkrm890fvikr92744s3h0rxg2c3axibs1wlmaf32"))))
     (properties `((upstream-name . "forestly")))
     (build-system r-build-system)
     (arguments
@@ -15489,6 +15489,31 @@ build on top of the storr package and can thus be based on a variety of
 backends.  The datastore contains both a global and session-scoped section.")
     (license license:expat)))
 
+(define-public r-firesafety
+  (package
+    (name "r-firesafety")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "firesafety" version))
+       (sha256
+        (base32 "0mkv81kznrmbq7n0h55q5lz4zksqziq5z660nhcvx5xddymj6ld3"))))
+    (properties `((upstream-name . "firesafety")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-routr r-rlang r-r6 r-cli))
+    (home-page "https://github.com/thomasp85/firesafety")
+    (synopsis "Collection of Security Related Plugins for 'fiery'")
+    (description
+     "Provide a range of plugins for fiery web servers that handle different aspects
+of server-side web security.  Be aware that security cannot be handled blindly,
+and even though these plugins will raise the security of your server you should
+not build critical infrastructure without the aid of a security expert.")
+    (license license:expat)))
+
 (define-public r-firebehavior
   (package
     (name "r-firebehavior")
@@ -22346,20 +22371,20 @@ maximal values.")
 (define-public r-fastrweb
   (package
     (name "r-fastrweb")
-    (version "1.2-1")
+    (version "1.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastRWeb" version))
        (sha256
-        (base32 "1kpj38b08xd2zyas1ac5jj1vfyb2b5q2kai55h5plcjlz3h627lp"))))
+        (base32 "156lnpi72qjxf91i55pp3n7s1xq2xczkchii4l19nzygnw9yckcr"))))
     (properties `((upstream-name . "FastRWeb")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-cairo r-base64enc))
-    (home-page "http://www.rforge.net/FastRWeb/")
+    (home-page "https://www.rforge.net/FastRWeb/")
     (synopsis "Fast Interactive Framework for Web Scripting Using R")
     (description
      "Infrastrcture for creating rich, dynamic web content using R scripts while

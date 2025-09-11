@@ -2506,13 +2506,13 @@ nlist package implements many of the methods for its nlist class.")
 (define-public r-universalcvi
   (package
     (name "r-universalcvi")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UniversalCVI" version))
        (sha256
-        (base32 "12va8dv4ni2q1h493mx4h72h5ccya9di5220rp9ia8ishyvy0crk"))))
+        (base32 "1x90004q9d52bh51vy7a3048m1n8p10gw87rhv5b4vhcpmj4m5xa"))))
     (properties `((upstream-name . "UniversalCVI")))
     (build-system r-build-system)
     (arguments

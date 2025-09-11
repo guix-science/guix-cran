@@ -4090,13 +4090,13 @@ individual and their offspring, producing a multi-generation virtual population.
 (define-public r-virtualpollen
   (package
     (name "r-virtualpollen")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "virtualPollen" version))
        (sha256
-        (base32 "0caiyl7h9qn3nv34dafv5rs4v7n4avyjpng0rkz6aw3ri1zn8sa0"))))
+        (base32 "089li4mk2cyycvkd1wdcmyak9c5c5jpqx8n0y9xg07s64h0lljcn"))))
     (properties `((upstream-name . "virtualPollen")))
     (build-system r-build-system)
     (arguments
@@ -4108,7 +4108,6 @@ individual and their offspring, producing a multi-generation virtual population.
                              r-mgcv
                              r-ggplot2
                              r-cowplot))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/BlasBenito/virtualPollen")
     (synopsis
      "Simulating Pollen Curves from Virtual Taxa with Different Life and Niche Traits")
@@ -5020,13 +5019,13 @@ Geosci.  Model Dev., 11, 3481-3496, <doi:10.5194/gmd-11-3481-2018>\".")
 (define-public r-vibass
   (package
     (name "r-vibass")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vibass" version))
        (sha256
-        (base32 "1pzfmdn1q5g52cmjaiy5j008igag3bgjmcvw6bsviq3vbqyxv4nz"))))
+        (base32 "1hwsrm6fxk6v7f242j8vjg1r0g96r1a946qpd33j7742drkf5grb"))))
     (properties `((upstream-name . "vibass")))
     (build-system r-build-system)
     (arguments

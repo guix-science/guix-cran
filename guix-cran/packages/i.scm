@@ -1116,13 +1116,13 @@ for partial matrix correlations and binary data (Aben et al., 2018,
 (define-public r-itol-toolkit
   (package
     (name "r-itol-toolkit")
-    (version "1.1.7")
+    (version "1.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "itol.toolkit" version))
        (sha256
-        (base32 "0p29p8qk03aqcmxdskrf2mjms1isffwwxgh1kr38fxi43f3kc9q0"))))
+        (base32 "12hk992hax34qvxcpy3ip237whwrvcj6dnv2ni5hc9hhvrrpyf9d"))))
     (properties `((upstream-name . "itol.toolkit")))
     (build-system r-build-system)
     (arguments
@@ -1131,19 +1131,21 @@ for partial matrix correlations and binary data (Aben et al., 2018,
     (propagated-inputs (list r-wesanderson
                              r-tidyr
                              r-stringr
+                             r-stringdist
                              r-shiny
                              r-seqinr
                              r-rstudioapi
                              r-rcolorbrewer
                              r-purrr
                              r-miniui
+                             r-magrittr
                              r-ggsci
                              r-dplyr
                              r-data-table
                              r-colourpicker
                              r-ape))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=itol.toolkit")
+    (home-page "https://tongzhou2017.github.io/itol.toolkit/")
     (synopsis "Helper Functions for 'Interactive Tree Of Life'")
     (description
      "The Interactive Tree Of Life <https://itol.embl.de/> online server can edit and
@@ -4082,13 +4084,13 @@ support data returned by web services provided by the IRIS DMC
 (define-public r-irismustangmetrics
   (package
     (name "r-irismustangmetrics")
-    (version "2.4.7")
+    (version "2.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IRISMustangMetrics" version))
        (sha256
-        (base32 "1v034hmb3v8kaw1i7xpjd43wb0hz2ir5m7f6g8n4kq61di64cs7m"))))
+        (base32 "0cyg8qdzim02x828da9cjd7lzz3grnldgvl8j55z5m8k8pzhxavm"))))
     (properties `((upstream-name . "IRISMustangMetrics")))
     (build-system r-build-system)
     (arguments
@@ -4815,6 +4817,32 @@ an array of passive detectors, such as traps.  Models incorporating
 distance-dependent detection are fitted by simulation and inverse prediction as
 proposed by Efford (2004) <doi:10.1111/j.0030-1299.2004.13043.x>.")
     (license license:gpl2+)))
+
+(define-public r-iprsue
+  (package
+    (name "r-iprsue")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iPRSue" version))
+       (sha256
+        (base32 "1dibqrv8fsl504gyp1ryxhjcmnk5y7r6cmraqk8zrgwl67hq9aj0"))))
+    (properties `((upstream-name . "iPRSue")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-logistf r-data-table r-bigstatsr))
+    (home-page "https://github.com/DoviniJ/iPRSue")
+    (synopsis "Individual Polygenic Risk Score Uncertainty Estimation")
+    (description
+     "This package provides tools for estimating uncertainty in individual polygenic
+risk scores (PRSs) using both sampling-based and analytical methods, as well as
+the Best Linear Unbiased Estimator (BLUE).  These methods quantify variability
+in PRS estimates for both binary and quantitative traits.  See Henderson (1975)
+<doi:10.2307/2529430> for more details.")
+    (license license:gpl3)))
 
 (define-public r-iprism
   (package
