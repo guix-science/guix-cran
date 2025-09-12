@@ -5997,13 +5997,13 @@ fatty acid signature analysis (QFASA) to study predator diets.")
 (define-public r-qfa
   (package
     (name "r-qfa")
-    (version "4.1")
+    (version "4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qfa" version))
        (sha256
-        (base32 "04yd9sdfhyzg5b9j2i16gpqm4yni8a0dlsl25djk1li82gn2cgm5"))))
+        (base32 "0x4y45b0mx6vag5ixsd8ax37cg1dwni3kblna74cam82xkpa8lbq"))))
     (properties `((upstream-name . "qfa")))
     (build-system r-build-system)
     (arguments

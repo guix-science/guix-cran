@@ -8051,19 +8051,19 @@ DNA Haplogroups.  Based on formulae by Samuels et al.  AJHG, 2006.
 (define-public r-mtest
   (package
     (name "r-mtest")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MTest" version))
        (sha256
-        (base32 "15gxarwnpg62bjbkf8ay9sjf1kg8zw13nbr7hd90w5saqzdvh6r5"))))
+        (base32 "0a4ipqzmnff9gy69wgnkfib2vh91912w5fk4zvpy1yml47wfppp3"))))
     (properties `((upstream-name . "MTest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plotly r-ggplot2 r-car))
+    (propagated-inputs (list r-plotly r-ggplot2))
     (home-page "https://github.com/vmoprojs/MTest")
     (synopsis "Procedure for Multicollinearity Testing using Bootstrap")
     (description
@@ -26584,19 +26584,19 @@ classification, curve fitting, and spatial data analysis.")
 (define-public r-misaem
   (package
     (name "r-misaem")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misaem" version))
        (sha256
-        (base32 "05m7k8mgbpkv5szislvf3q45pk5f8z54ibddhi8pkhwa9w00xkjk"))))
+        (base32 "0n4k7cn3gs2prr63ibcy764802dgmnv676hdmkirzmhix2g52nlr"))))
     (properties `((upstream-name . "misaem")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-norm r-mvtnorm r-mass))
+    (propagated-inputs (list r-norm r-mvtnorm r-mass r-glmnet r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/julierennes/misaem")
     (synopsis

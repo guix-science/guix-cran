@@ -10101,13 +10101,13 @@ more information on principal surfaces, see Ganey, R. (2019,
 (define-public r-prindt
   (package
     (name "r-prindt")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PrInDT" version))
        (sha256
-        (base32 "1wf3rp7iirmncvp05n188mqzlyn2h0ib3sx2xbw66gjr9q0nivjq"))))
+        (base32 "0yflsc2d412f895p853ihm6b5iiv2px3sibxyqd88ryw7w9kd1hz"))))
     (properties `((upstream-name . "PrInDT")))
     (build-system r-build-system)
     (arguments

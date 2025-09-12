@@ -6194,13 +6194,13 @@ create a structure of directories and scripts.")
 (define-public r-vegtable
   (package
     (name "r-vegtable")
-    (version "0.1.8")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vegtable" version))
        (sha256
-        (base32 "0q854isd0bm53xxj45h64cxnvkck0hm43vrxizyxxgqwqf0syg3z"))))
+        (base32 "1dhikvz586y6ppcbnj2ijm0hdbjwzwifizhwwm77cs96srw1i2zf"))))
     (properties `((upstream-name . "vegtable")))
     (build-system r-build-system)
     (arguments

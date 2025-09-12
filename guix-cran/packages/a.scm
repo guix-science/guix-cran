@@ -2809,13 +2809,13 @@ possible by representing R expressions using a tree structure.")
 (define-public r-autograph
   (package
     (name "r-autograph")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autograph" version))
        (sha256
-        (base32 "1pzi280d4nfi25diwcn98xs7j3klq5k2v62gaf4l5z00py05d79j"))))
+        (base32 "0mqb9zw6h7axnl3ka0hgld6h640ir31qfdk8wifz9zinmnabxfkr"))))
     (properties `((upstream-name . "autograph")))
     (build-system r-build-system)
     (arguments
@@ -27255,6 +27255,43 @@ here are designed to be basic and clear to the reader.")
     (description
      "Multi-category angle-based large-margin classifiers.  See Zhang and Liu (2014)
 <doi:10.1093/biomet/asu017> for details.")
+    (license license:gpl3+)))
+
+(define-public r-abcdscores
+  (package
+    (name "r-abcdscores")
+    (version "6.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ABCDscores" version))
+       (sha256
+        (base32 "0p5f26wyzn9903pdkb8zjlg9by00k2d76ksw9kvnnpid2f5w1w7b"))))
+    (properties `((upstream-name . "ABCDscores")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-glue
+                             r-dplyr
+                             r-cli
+                             r-chk))
+    (native-inputs (list r-knitr))
+    (home-page "https://software.nbdc-datahub.org/ABCDscores/")
+    (synopsis
+     "Summary Scores of the Adolescent Brain Cognitive Development (ABCD) Study")
+    (description
+     "This package provides functions to compute summary scores (besides proprietary
+ones) reported in the tabulated data resource that is released by the Adolescent
+Brain Cognitive Development (ABCD) study.  Feldstein Ewing and Luciana (2018)
+<https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32>.")
     (license license:gpl3+)))
 
 (define-public r-abasequence

@@ -17310,19 +17310,19 @@ Gahegan (2018) <doi:10.1186/s12966-018-0648-6>.")
 (define-public r-diemr
   (package
     (name "r-diemr")
-    (version "1.4.3")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diemr" version))
        (sha256
-        (base32 "0j6883k3bhayqn4gg9933vybgxjlrpf675hx9yff01jvp1b20z7r"))))
+        (base32 "0vfc7wmv5i8jv9q2fik75676niwxvlii7rvzp3vyjl1plp79zxfj"))))
     (properties `((upstream-name . "diemr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo r-vcfr))
+    (propagated-inputs (list r-zoo r-vcfr r-data-table r-circlize))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=diemr")
     (synopsis "Diagnostic Index Expectation Maximisation in R")
@@ -20872,39 +20872,6 @@ techniques are explained by Chow (2007) <doi:10.1201/9781584889830>.")
      "Generate balanced factorial designs with crossed and nested random and fixed
 effects <https://github.com/mmrabe/designr>.")
     (license license:gpl3)))
-
-(define-public r-designmatch
-  (package
-    (name "r-designmatch")
-    (version "0.5.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "designmatch" version))
-       (sha256
-        (base32 "1x3pcwml6pa56ij2bc9jymfp066v7fd2avjl6awgpy3503qr56q1"))))
-    (properties `((upstream-name . "designmatch")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-slam r-mass r-lattice r-highs))
-    (home-page "https://cran.r-project.org/package=designmatch")
-    (synopsis "Matched Samples that are Balanced and Representative by Design")
-    (description
-     "Includes functions for the construction of matched samples that are balanced and
-representative by design.  Among others, these functions can be used for
-matching in observational studies with treated and control units, with cases and
-controls, in related settings with instrumental variables, and in discontinuity
-designs.  Also, they can be used for the design of randomized experiments, for
-example, for matching before randomization.  By default, designmatch uses the
-highs optimization solver, but its performance is greatly enhanced by the Gurobi
-optimization solver and its associated R interface.  For their installation,
-please follow the instructions at
-<https://www.gurobi.com/documentation/quickstart.html> and
-<https://www.gurobi.com/documentation/7.0/refman/r_api_overview.html>.  We have
-also included directions in the gurobi_installation file in the inst folder.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-designlibrary
   (package

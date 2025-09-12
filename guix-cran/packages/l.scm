@@ -479,13 +479,13 @@ environmental covariates.")
 (define-public r-luminescence
   (package
     (name "r-luminescence")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Luminescence" version))
        (sha256
-        (base32 "05jrw2nys0h48b3xqda5m956ya8njzydzy6ph08941i5bm8y1cq8"))))
+        (base32 "1n4v27fqhbaddncihvcxibg7ivlafr0ipdq90v6pb71dlgk2jppg"))))
     (properties `((upstream-name . "Luminescence")))
     (build-system r-build-system)
     (arguments
@@ -17696,13 +17696,13 @@ non-human primates.")
 (define-public r-latentnet
   (package
     (name "r-latentnet")
-    (version "2.11.0")
+    (version "2.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "latentnet" version))
        (sha256
-        (base32 "1vd004bqcgjip2wrs5znk15yy45ay07cv4pa94x93kyri64v1g2g"))))
+        (base32 "1sy79rqspxqqrfnyhqxycrgscrkdc3v6g87jysrr4mvsngp5q794"))))
     (properties `((upstream-name . "latentnet")))
     (build-system r-build-system)
     (arguments
@@ -17712,7 +17712,6 @@ non-human primates.")
                              r-sna
                              r-network
                              r-mvtnorm
-                             r-mass
                              r-ergm
                              r-coda
                              r-abind))

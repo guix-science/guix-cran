@@ -8995,13 +8995,13 @@ using the joint distribution.")
 (define-public r-subincomer
   (package
     (name "r-subincomer")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "subincomeR" version))
        (sha256
-        (base32 "0b95nmhqwpc36wq72znlypy3dd9f5dhfa3y9a50g4br9sgawncr4"))))
+        (base32 "12w24frcpcgvlfkyaghbn0mi8l0p7wki6kkz9rqaa8gzrsdj7zv1"))))
     (properties `((upstream-name . "subincomeR")))
     (build-system r-build-system)
     (arguments
@@ -18607,13 +18607,13 @@ Zhelonkin and Ronchetti (2021) <doi:10.18637/jss.v099.i04>.")
 (define-public r-ssmrcd
   (package
     (name "r-ssmrcd")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssMRCD" version))
        (sha256
-        (base32 "056yk3bahjc2vd8nxg9anjzb3jz61ymgrp0wcv1381ci2qymzrvc"))))
+        (base32 "1f92n721c7705wiij6372glmj9324lkr5blc76lds96c6mgmcrq1"))))
     (properties `((upstream-name . "ssMRCD")))
     (build-system r-build-system)
     (arguments
@@ -18623,27 +18623,28 @@ Zhelonkin and Ronchetti (2021) <doi:10.18637/jss.v099.i04>.")
                              r-rrcov
                              r-rootsolve
                              r-robustbase
-                             r-reshape2
-                             r-plot3d
+                             r-rcpparmadillo
+                             r-rcpp
                              r-matrix
                              r-ggplot2
-                             r-foreach
                              r-expm
-                             r-dplyr
-                             r-doparallel
+                             r-ellipse
                              r-desctools
                              r-dbscan
-                             r-car))
+                             r-cellwise))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ssMRCD")
-    (synopsis "Spatially Smoothed MRCD Estimator")
+    (synopsis "Robust Estimators for Multi-Group and Spatial Data")
     (description
-     "Estimation of the Spatially Smoothed Minimum Regularized Determinant
-(@code{ssMRCD}) estimator and its usage in an @code{ssMRCD-based} outlier
-detection method as described in Puchhammer and Filzmoser (2023)
-<doi:10.1080/10618600.2023.2277875> and for sparse robust PCA for multi-source
-data described in Puchhammer, Wilms and Filzmoser (2024)
-<doi:10.48550/@code{arXiv.2407.16299>}.  Included are also complementary
+     "Estimation of robust estimators for multi-group and spatial data including the
+casewise robust Spatially Smoothed Minimum Regularized Determinant
+(@code{ssMRCD}) estimator and its usage for local outlier detection as described
+in Puchhammer and Filzmoser (2023) <doi:10.1080/10618600.2023.2277875> as well
+as for sparse robust PCA for multi-source data described in Puchhammer, Wilms
+and Filzmoser (2024) <doi:10.48550/@code{arXiv.2407.16299>}.  Moreover, a
+cellwise robust multi-group Gaussian mixture model (MG-GMM) is implemented as
+described in Puchhammer, Wilms and Filzmoser (2024)
+<doi:10.48550/@code{arXiv.2504.02547>}.  Included are also complementary
 visualization and parameter tuning tools.")
     (license license:gpl3)))
 
@@ -30254,13 +30255,13 @@ Davies et al. (2018) <DOI:10.1002/sim.7577>.")
 (define-public r-sparkxgb
   (package
     (name "r-sparkxgb")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparkxgb" version))
        (sha256
-        (base32 "0rfj22ipp78nf6baa6rjzdphb6y7nrg07h5d3f2npdnirigihb3b"))))
+        (base32 "1vnnvjkpdi72bvbnvlmbdn1h4rzazv0ddkyfbxbq46jq256339f5"))))
     (properties `((upstream-name . "sparkxgb")))
     (build-system r-build-system)
     (arguments
@@ -39099,6 +39100,40 @@ cells being compared.  Based on Sen, N., Mukherjee, G., and Arvin, A.M. (2015)
 <DOI:10.1016/j.ymeth.2015.07.008>.")
     (license license:gpl3)))
 
+(define-public r-slick
+  (package
+    (name "r-slick")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Slick" version))
+       (sha256
+        (base32 "03dm8wyj6fprnswlicl6rbss27hfxb3cxv3srwif600wp943r07c"))))
+    (properties `((upstream-name . "Slick")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-shiny
+                             r-scales
+                             r-golem
+                             r-ggrepel
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-cli))
+    (home-page "https://slick.bluematterscience.com/")
+    (synopsis "Interactive Visualization of MSE Results")
+    (description
+     "This package provides a framework for visualizing and exploring results of a
+Management Strategy Evaluation (MSE).  The publication quality figures and
+tables can be developed directly from the R console, or interactively explored
+with the Slick App.  For more details, see the `Slick` website
+<https://slick.bluematterscience.com>.")
+    (license license:gpl2)))
+
 (define-public r-slicedlhd
   (package
     (name "r-slicedlhd")
@@ -39448,13 +39483,13 @@ described in Jetka et al. (2019) <doi:10.1371/journal.pcbi.1007132>.")
 (define-public r-sleev
   (package
     (name "r-sleev")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sleev" version))
        (sha256
-        (base32 "0kxh8lgkv3wyk1wyxf9b8y5lxzxwmic8pjd1f76h3hkgvbmxdwyv"))))
+        (base32 "0jyciag0x232pgw38gcnnn9d3h7s5m13m3j0qzy6dv1zbhvswjwk"))))
     (properties `((upstream-name . "sleev")))
     (build-system r-build-system)
     (arguments
@@ -42781,13 +42816,13 @@ linked to via the URL below.")
 (define-public r-simtrial
   (package
     (name "r-simtrial")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simtrial" version))
        (sha256
-        (base32 "0czlq25p58ld8ligyzlw0kmwrzcpr3dg8kkazw80l13xi8968crz"))))
+        (base32 "0l6mxq2203dphqa7gw66f3jw3q55lv42sh1f09rgvw7a7xn4jzi6"))))
     (properties `((upstream-name . "simtrial")))
     (build-system r-build-system)
     (arguments
@@ -55673,13 +55708,13 @@ visualization, and summarization of clustering results.")
 (define-public r-sfcentral
   (package
     (name "r-sfcentral")
-    (version "0.1.0")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfcentral" version))
        (sha256
-        (base32 "1jvdyalrvk7kzrkwm19fhqrqy1ji6jmz1jp5xdq36myamkj790lg"))))
+        (base32 "1zliyskflkwa9i6izhrnq2yl6hypb01sh40ns39pvs4pvql8qzd0"))))
     (properties `((upstream-name . "sfcentral")))
     (build-system r-build-system)
     (arguments
@@ -55689,7 +55724,7 @@ visualization, and summarization of clustering results.")
     (home-page "https://gavg712.gitlab.io/sfcentral/")
     (synopsis "Spatial Centrality and Dispersion Statistics")
     (description
-     "Computing centrographic statistics (central points, standard distance, standard
+     "Compute centrographic statistics (central points, standard distance, standard
 deviation ellipse, standard deviation box) for observations taken at point
 locations in 2D or 3D. The sfcentral library was inspired in aspace package but
 conceived to be used in a spatial tidyverse context.")
@@ -68475,13 +68510,13 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
 (define-public r-scan
   (package
     (name "r-scan")
-    (version "0.66.0")
+    (version "0.67.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scan" version))
        (sha256
-        (base32 "1f21qyzm6mkiysnkmk48a31kzsbhnjjivslnj0c393212dcpj02k"))))
+        (base32 "1fffvaiw23r1qnn8bpy7xjksgfkvdjxpa6x2z0lm0p1hd8p9fmgp"))))
     (properties `((upstream-name . "scan")))
     (build-system r-build-system)
     (arguments
@@ -70733,13 +70768,13 @@ the fitting procedure.  References: Denti, Camerlenghi, Guindani, Mira (2023)
 (define-public r-santoku
   (package
     (name "r-santoku")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "santoku" version))
        (sha256
-        (base32 "054bl8sgl0rcvymsqsg8br201snw6rlmac54mfb05a4hsd8y7vq4"))))
+        (base32 "16yllpzbm7g07qk0hwh37anazglw10c7kyrkp5f6prg95gf7va4m"))))
     (properties `((upstream-name . "santoku")))
     (build-system r-build-system)
     (arguments

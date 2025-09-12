@@ -5431,13 +5431,13 @@ sf format.")
 (define-public r-nomesbr
   (package
     (name "r-nomesbr")
-    (version "0.0.7")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nomesbr" version))
        (sha256
-        (base32 "0zjsqv420wydn8q7jv247i7i549zybk81q71n9xs4zx6n620hn7v"))))
+        (base32 "1fk23fffqshk4isbcppb46skgym9zrxk5r5j2kzkkbvgzlilamix"))))
     (properties `((upstream-name . "nomesbr")))
     (build-system r-build-system)
     (arguments
@@ -16646,50 +16646,6 @@ theoretical quantities of interest to marketing researchers.  Also provides
 functions for making tables that compare observed and theoretical statistics.")
     (license license:gpl3+)))
 
-(define-public r-nbdctools
-  (package
-    (name "r-nbdctools")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NBDCtools" version))
-       (sha256
-        (base32 "0hlf1n5yg79mk4jqjz2far6q8516w6g8br30mags7xbw6g4vd79q"))))
-    (properties `((upstream-name . "NBDCtools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-sjmisc
-                             r-sjlabelled
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-hms
-                             r-haven
-                             r-glue
-                             r-dplyr
-                             r-cli
-                             r-chk
-                             r-arrow))
-    (native-inputs (list r-knitr))
-    (home-page "https://software.nbdc-datahub.org/NBDCtools/")
-    (synopsis
-     "National Institutes of Health Brain Development Cohorts Data Hub Tools")
-    (description
-     "This package provides a suite of functions to work with data from the National
-Institutes of Health Brain Development Cohorts Data Hub.  The package provides
-tools to create, clean, process, and filter datasets and associated metadata.
-These utilities are intended to simplify reproducible data-preparation for
-future research.")
-    (license license:gpl3+)))
-
 (define-public r-nbconv
   (package
     (name "r-nbconv")
@@ -17344,13 +17300,13 @@ R package uses the Nasdaq Data Link API. For more information go to
 (define-public r-nascar-data
   (package
     (name "r-nascar-data")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nascaR.data" version))
        (sha256
-        (base32 "0nf58nn7dz3dxw149n79zrqi4avbv50f6dz1pb4dcwl9xbngmbcw"))))
+        (base32 "047vwrz6p8k6c5l08c3mdzp0wha1xxif9rs0iqrb1qig7g4x5jlh"))))
     (properties `((upstream-name . "nascaR.data")))
     (build-system r-build-system)
     (arguments
@@ -17363,7 +17319,7 @@ R package uses the Nasdaq Data Link API. For more information go to
                              r-purrr
                              r-glue
                              r-dplyr))
-    (home-page "https://azimuth-project.tech/nascaR.data/")
+    (home-page "https://www.kyleGrealis.com/nascaR.data/")
     (synopsis "NASCAR Race Data")
     (description
      "This package provides a collection of NASCAR race, driver, owner and

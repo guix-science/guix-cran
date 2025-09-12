@@ -1707,25 +1707,23 @@ or estimated by sampling.")
 (define-public r-tutorial-helpers
   (package
     (name "r-tutorial-helpers")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tutorial.helpers" version))
        (sha256
-        (base32 "1wrynn4marhrlbi12z1504jkn85z1jh8dwzvh771kvcrfl927syi"))))
+        (base32 "0m7r5nfs5xpjh9vhfxig4lkpscrlzy4dca6md4kqvfxwlhd7fsxg"))))
     (properties `((upstream-name . "tutorial.helpers")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
-                             r-stringr
                              r-shiny
                              r-rvest
                              r-rstudioapi
                              r-rmarkdown
-                             r-readr
                              r-purrr
                              r-mime
                              r-learnr
@@ -3013,13 +3011,13 @@ life\" functions, such as treating time series for trailing and leading values."
 (define-public r-tstools
   (package
     (name "r-tstools")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tstools" version))
        (sha256
-        (base32 "1wwxbc27yspal4yhck0pw5fz99nck0jdd6hrry90957zyxshyrw7"))))
+        (base32 "1k3wbi76941mckx4kmck0akhq5bb364w7ba114r4f64ycasx193w"))))
     (properties `((upstream-name . "tstools")))
     (build-system r-build-system)
     (arguments
@@ -3027,7 +3025,7 @@ life\" functions, such as treating time series for trailing and leading values."
       #:tests? #f))
     (propagated-inputs (list r-zoo r-yaml r-xts r-jsonlite r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/KOF-ch/tstools")
+    (home-page "https://kof-ch.github.io/tstools/")
     (synopsis "Time Series Toolbox for Official Statistics")
     (description
      "Plot official statistics time series conveniently: automatic legends, highlight
@@ -5693,6 +5691,33 @@ dataset into a transaction on the decentralized blockchain (Stellar network).
 The package makes use of a free service provided by <https://stellarapi.io>.")
     (license license:agpl3)))
 
+(define-public r-truncsp
+  (package
+    (name "r-truncsp")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "truncSP" version))
+       (sha256
+        (base32 "13hh0jf8s1q677icnaid9ny3dfdk66q69z88vqb2ywzv09nvahgg"))))
+    (properties `((upstream-name . "truncSP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncreg r-boot))
+    (home-page "https://cran.r-project.org/package=truncSP")
+    (synopsis "Semi-Parametric Estimators of Truncated Regression Models")
+    (description
+     "Estimators for semi-parametric linear regression models with truncated response
+variables (fixed truncation point).  The estimators implemented are the
+Symmetrically Trimmed Least Squares (STLS) estimator introduced by Powell (1986)
+<doi:10.2307/1914308>, the Quadratic Mode (QME) estimator introduced by Lee
+(1993) <doi:10.1016/0304-4076(93)90056-B>, and the Left Truncated (LT) estimator
+introduced by Karlsson (2006) <doi:10.1007/s00184-005-0023-x>.")
+    (license license:gpl2+)))
+
 (define-public r-truncreg
   (package
     (name "r-truncreg")
@@ -7901,19 +7926,20 @@ Dennis, A., & Didelot, X. (2020) <doi:10.1093/sysbio/syaa009>.")
 (define-public r-treestats
   (package
     (name "r-treestats")
-    (version "1.70.5")
+    (version "1.70.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treestats" version))
        (sha256
-        (base32 "0yka744l2dyszpjrdvipz227l46h1972fscl8ds6027dba5h5rlf"))))
+        (base32 "0s6713sn78zjyaljwkq4xxw1krvnvc8j84fhajl83b8wdnbgjn40"))))
     (properties `((upstream-name . "treestats")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-nloptr r-ape))
+    (propagated-inputs (list r-treebalance r-rcpparmadillo r-rcpp r-nloptr
+                             r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/thijsjanzen/treestats")
     (synopsis "Phylogenetic Tree Statistics")
@@ -22041,23 +22067,20 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-thisutils
   (package
     (name "r-thisutils")
-    (version "0.1.2")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisutils" version))
        (sha256
-        (base32 "1m1bd3wmwq1rmx03bk35rgh0w6yzq22nwg0wa8881yp8rgfp5anb"))))
+        (base32 "1fir7lx1kzm4za2d6d5rpxzb9zhilarjy1zrkmscbj5ggv2r638i"))))
     (properties `((upstream-name . "thisutils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rlang
-                             r-rcppparallel
-                             r-rcpparmadillo
                              r-rcpp
-                             r-purrr
                              r-matrix
                              r-foreach
                              r-doparallel

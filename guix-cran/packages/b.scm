@@ -10974,13 +10974,13 @@ integration methods and optimization routines.")
 (define-public r-blosc
   (package
     (name "r-blosc")
-    (version "0.0.6")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blosc" version))
        (sha256
-        (base32 "0a70zg4s2b0jr4b562izpyimxg4pq0a6kpvsgjp9wlmzcxin459i"))))
+        (base32 "0gla27pir9h4fimmnrj6mbc9qn1s11v783qvmivx5ssb6nq8k8qa"))))
     (properties `((upstream-name . "blosc")))
     (build-system r-build-system)
     (arguments
@@ -14627,13 +14627,13 @@ visualization tools are also available within the package.")
 (define-public r-biometryassist
   (package
     (name "r-biometryassist")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biometryassist" version))
        (sha256
-        (base32 "1aylsj1yyj3whndhzzk40s2v8ihigjlmvf7px01pa75c07zjbrlv"))))
+        (base32 "12r7qab3i1z8ahmfc7n55m5q2s1cs4bcqs07sjdf4rrqjlrclbd4"))))
     (properties `((upstream-name . "biometryassist")))
     (build-system r-build-system)
     (arguments
@@ -18469,13 +18469,13 @@ scientific collaboration and co-word analysis.")
 (define-public r-biblio
   (package
     (name "r-biblio")
-    (version "0.0.10")
+    (version "0.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biblio" version))
        (sha256
-        (base32 "0ml6sh0ki04kqyfixd0cxmxpdxznisifaqnjdshvrvi1yqjq12ih"))))
+        (base32 "1vdgyfs0q6w61w3gc06pwpnkqppbwlk94zm30kavxlc0943fbhdy"))))
     (properties `((upstream-name . "biblio")))
     (build-system r-build-system)
     (arguments

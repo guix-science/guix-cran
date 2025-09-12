@@ -3223,13 +3223,13 @@ ISBN:9780849303166).")
 (define-public r-rts2
   (package
     (name "r-rts2")
-    (version "0.8.3")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rts2" version))
        (sha256
-        (base32 "100zapbwdk952687a38pqimvb3zzpc7xp18y1c987hjmz1xf5adj"))))
+        (base32 "1hcf313w8y6i3hs0jrnn407crsc4y8n4dazsqgm148z8mla2a1zk"))))
     (properties `((upstream-name . "rts2")))
     (build-system r-build-system)
     (arguments
@@ -8522,6 +8522,40 @@ including cloud masking, compositing and gap-filling/smoothing time series of
 images (Militino et al., 2018 <doi:10.3390/rs10030398> and Militino et al., 2019
 <doi:10.1109/TGRS.2019.2904193>).")
     (license license:gpl3)))
+
+(define-public r-rsamplr
+  (package
+    (name "r-rsamplr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsamplr" version))
+       (sha256
+        (base32 "15sprrpdwhgc4c5gzgigm7swqvn92hnxlkhwffkysad82i8kixi5"))))
+    (properties `((upstream-name . "rsamplr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://www.envisim.se/")
+    (synopsis "Sampling Algorithms and Spatially Balanced Sampling")
+    (description
+     "Fast tools for unequal probability sampling in multi-dimensional spaces,
+implemented in Rust for high performance.  The package offers a wide range of
+methods, including Sampford (Sampford, 1967, <doi:10.1093/biomet/54.3-4.499>)
+and correlated Poisson sampling (Bondesson and Thorburn, 2008,
+<doi:10.1111/j.1467-9469.2008.00596.x>), pivotal sampling (Deville and TillÃ©,
+1998, <doi:10.1093/biomet/91.4.893>), and balanced sampling such as the cube
+method (Deville and TillÃ©, 2004, <doi:10.1093/biomet/91.4.893>) to ensure
+auxiliary totals are respected.  Spatially balanced approaches, including the
+local pivotal method (GrafstrÃ¶m et al., 2012,
+<doi:10.1111/j.1541-0420.2011.01699.x>), spatially correlated Poisson sampling
+(GrafstrÃ¶m, 2012, <doi:10.1016/j.jspi.2011.07.003>), and locally correlated
+Poisson sampling (Prentius, 2024, <doi:10.1002/env.2832>), provide efficient
+designs when the target variable is linked to auxiliary information.")
+    (license license:agpl3)))
 
 (define-public r-rsampling
   (package
@@ -18198,13 +18232,13 @@ Nicole Mayer-Hamblett, Patrick J. Heagerty, Ting Ye (2025)
 (define-public r-robincar2
   (package
     (name "r-robincar2")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobinCar2" version))
        (sha256
-        (base32 "1p594six0yplqa13kncli265ihmhfnyaq862xj2nr2w72d49wyhs"))))
+        (base32 "1bdx3i1ll7k4cs2lb9i3dwavggf2zw6ri6m87kwjk1nb08pqv2pd"))))
     (properties `((upstream-name . "RobinCar2")))
     (build-system r-build-system)
     (arguments
@@ -24861,13 +24895,13 @@ implemented with @code{JavaScript} for node and browsers.")
 (define-public r-rix
   (package
     (name "r-rix")
-    (version "0.16.0")
+    (version "0.17.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rix" version))
        (sha256
-        (base32 "0amzdmmmg4b5w8w55dqxidrjbzhciyrj7bsf6fnjchrl790b655l"))))
+        (base32 "1m5jdjyf1gk4n60vq7aqivpm4dk73yr7pbwvpqd5yvv50dg2q2hv"))))
     (properties `((upstream-name . "rix")))
     (build-system r-build-system)
     (arguments
@@ -24883,8 +24917,9 @@ package manager, as described in Dolstra (2006) <ISBN 90-393-4130-3>.  The
 included @code{`rix()}` function generates a complete description of the
 environment as a `default.nix` file, which can then be built using Nix'.  This
 results in project specific software environments with pinned versions of R,
-packages, linked system dependencies, and other tools.  Additional helpers make
-it easy to run R code in Nix software environments for testing and production.")
+packages, linked system dependencies, and other tools or programming languages
+such as Python or Julia.  Additional helpers make it easy to run R code in Nix
+software environments for testing and production.")
     (license license:gpl3+)))
 
 (define-public r-rivretrieve
@@ -28652,13 +28687,13 @@ formats and methods are described in @code{McKay}, B.D. and Piperno, A (2014)
 (define-public r-rgplates
   (package
     (name "r-rgplates")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgplates" version))
        (sha256
-        (base32 "1ym30p2ai23pb2jvvwymh7bv87wa648nfm9z5azwi5hrcrb6n24f"))))
+        (base32 "0zmyw2wfqs5c2i3j9vm3s6vjbb9i4ipjwnq77hjy60g2l0psh3k0"))))
     (properties `((upstream-name . "rgplates")))
     (build-system r-build-system)
     (arguments
@@ -31190,6 +31225,38 @@ dedicated server.  This package can be used to retrieve the results from the
 server, and it is especially helpful with registered experiments, as
 authentication with the server has to happen.")
     (license license:gpl3)))
+
+(define-public r-rexoplanets
+  (package
+    (name "r-rexoplanets")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "REXoplanets" version))
+       (sha256
+        (base32 "073sv0nzlxrn028k7q7jhc0ffwfkfr568xli8av1qz394k0z3y82"))))
+    (properties `((upstream-name . "REXoplanets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readr
+                             r-purrr
+                             r-logger
+                             r-jsonlite
+                             r-httr2
+                             r-ggplot2
+                             r-dplyr
+                             r-checkmate))
+    (home-page "https://cran.r-project.org/package=REXoplanets")
+    (synopsis "Creates Interface with NASA 'Exoplanets Archive API'")
+    (description
+     "This package provides a user-friendly interface to NASA Exoplanets Archive API
+<https://exoplanetarchive.ipac.caltech.edu/>, enabling retrieval and analysis of
+exoplanetary and stellar data.  Includes functions for querying, filtering,
+summarizing, and computing derived parameters from the Exoplanets catalog.")
+    (license license:expat)))
 
 (define-public r-rexer
   (package
@@ -39639,13 +39706,13 @@ interoperability with external sources (Harris et al (2009)
 (define-public r-redcapapi
   (package
     (name "r-redcapapi")
-    (version "2.11.1")
+    (version "2.11.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redcapAPI" version))
        (sha256
-        (base32 "0gzhahlrg9mviws25hay74zgic8iszd5kar90j9pa4mz0khpllka"))))
+        (base32 "1fww73n48g3xdzwsfjgbxpkdn7sy67xj5d55my3x22hd4ggz2bdf"))))
     (properties `((upstream-name . "redcapAPI")))
     (build-system r-build-system)
     (arguments
@@ -45854,6 +45921,37 @@ License 2, @code{RcppArmadillo} (the Rcpp bindings/bridge to Armadillo') is
 licensed under the GNU GPL version 2 or later.  Thus, @code{RcppEnsmallen} is
 also licensed under similar terms.  Note that Ensmallen requires a compiler that
 supports C++14 and Armadillo 10.8.2 or later.")
+    (license license:gpl2+)))
+
+(define-public r-rcppeigenad
+  (package
+    (name "r-rcppeigenad")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RcppEigenAD" version))
+       (sha256
+        (base32 "164hfy8kpnbndyx7pdqbn6i1jc2a306jj3wp33lmvv9dkbkkzz88"))))
+    (properties `((upstream-name . "RcppEigenAD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readr
+                             r-rdpack
+                             r-rcppeigen
+                             r-rcpp
+                             r-memoise
+                             r-functional
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=RcppEigenAD")
+    (synopsis "Generate Partial Derivatives using 'Rcpp', 'Eigen' and 'CppAD'")
+    (description
+     "Compiles C++ code using Rcpp <doi:10.18637/jss.v040.i08>, Eigen
+<doi:10.18637/jss.v052.i05> and @code{CppAD} to produce first and second order
+partial derivatives.  Also provides an implementation of Faa di Bruno's formula
+to combine the partial derivatives of composed functions.")
     (license license:gpl2+)))
 
 (define-public r-rcppdynprog

@@ -1335,13 +1335,13 @@ identify the optimal estimator from among a prespecified set of candidates.")
 (define-public r-cvasi
   (package
     (name "r-cvasi")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvasi" version))
        (sha256
-        (base32 "1hrklwkwwdb5q1126d5daafdka9zc25nmi7qyx8zs8r8bi84hfm5"))))
+        (base32 "0h3z41w8g87k2i4l2hrp746vrqw7aprvwvhzv45bfb2njydf5v2v"))))
     (properties `((upstream-name . "cvasi")))
     (build-system r-build-system)
     (arguments
@@ -5343,13 +5343,13 @@ Wikipedia; (<https://en.wikipedia.org/wiki/Classical_cipher>).")
 (define-public r-crypto2
   (package
     (name "r-crypto2")
-    (version "2.0.3")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crypto2" version))
        (sha256
-        (base32 "1pszqigymlj4sdyi5hhfpdag9zarjgrf3z51q27x9fvzcn9ccgm6"))))
+        (base32 "1sxvyq2n59v999j1mf8kwv368rdrrcvxr57v0zn2cy0cxscsp7ry"))))
     (properties `((upstream-name . "crypto2")))
     (build-system r-build-system)
     (arguments
@@ -6625,13 +6625,13 @@ identification of outlier elements.")
 (define-public r-crosscarry
   (package
     (name "r-crosscarry")
-    (version "0.5.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CrossCarry" version))
        (sha256
-        (base32 "0js86zr38dd7hr9nxmdvj97z7460r9rqnyj6l7nnhrkicrmiry5m"))))
+        (base32 "1sdm17crc074a9iwq945ykfmrjjdnk3wjj0fjygvfs3myfdi917q"))))
     (properties `((upstream-name . "CrossCarry")))
     (build-system r-build-system)
     (arguments
@@ -15416,29 +15416,33 @@ free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.2.6")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusMarine" version))
        (sha256
-        (base32 "11r176c0gz6zdi1nwkhlwwkizrpl9vq2pl3gks98h9c4a9i4qysc"))))
+        (base32 "1plwig6rvc244ikr1hvsx6ilmf03dydwy2jbxjbllra754i9nkfx"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
+                             r-units
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-stars
                              r-sf
                              r-rlang
                              r-purrr
+                             r-lubridate
                              r-leaflet
                              r-httr2
                              r-dplyr
                              r-cli
+                             r-blosc
                              r-aws-s3))
     (home-page "https://github.com/pepijn-devries/CopernicusMarine")
     (synopsis
@@ -24784,13 +24788,13 @@ cohorts.")
 (define-public r-cohortgenerator
   (package
     (name "r-cohortgenerator")
-    (version "0.12.1")
+    (version "0.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortGenerator" version))
        (sha256
-        (base32 "1s34z1y214g3ww81hy7yg0v2l7vfp63fm2adlwdlnfj4vl726yqq"))))
+        (base32 "1sg1g19kksazpgsgsx4yc19dnn8k8pkfa5qg69z3rzgpip8093nj"))))
     (properties `((upstream-name . "CohortGenerator")))
     (build-system r-build-system)
     (arguments
@@ -38220,32 +38224,36 @@ different platforms.).")
 (define-public r-chiledataapi
   (package
     (name "r-chiledataapi")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChileDataAPI" version))
        (sha256
-        (base32 "0z8izvidxxqnih9a2h6nip9wyr8mjvgiqr9qk5pk0fzxplfwjbbw"))))
+        (base32 "1x5z7x4nk6rd0rrmdjfpz63416pbsfj39cns11j0r57df7cpni89"))))
     (properties `((upstream-name . "ChileDataAPI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr r-dplyr))
+    (propagated-inputs (list r-tibble r-scales r-jsonlite r-httr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lightbluetitan/chiledataapi")
     (synopsis "Access Chilean Data via APIs and Curated Datasets")
     (description
-     "This package provides functions to access data from the FINDIC API and the REST
-Countries API', related to Chile's financial indicators, international country
-information, and more.  Additionally, the package includes curated datasets
-related to Chile, covering topics such as human rights violations during the
-Pinochet regime, electoral data, census samples, health surveys, seismic events,
-territorial codes, and environmental measurements.  The package supports
-research and analysis focused on Chile by integrating open APIs with
-high-quality datasets from multiple domains.  For more details on FINDIC', see
-<https://findic.cl/>, and for REST Countries', see <https://restcountries.com/>.")
+     "This package provides functions to access data from public RESTful APIs
+including FINDIC API', REST Countries API', World Bank API', and Nager.Date',
+retrieving real-time or historical data related to Chile such as financial
+indicators, holidays, international demographic and geopolitical indicators, and
+more.  Additionally, the package includes curated datasets related to Chile,
+covering topics such as human rights violations during the Pinochet regime,
+electoral data, census samples, health surveys, seismic events, territorial
+codes, and environmental measurements.  The package supports research and
+analysis focused on Chile by integrating open APIs with high-quality datasets
+from multiple domains.  For more information on the APIs, see: FINDIC
+<https://findic.cl/>, REST Countries <https://restcountries.com/>, World Bank
+API <https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, and
+Nager.Date <https://date.nager.at/Api>.")
     (license license:gpl3)))
 
 (define-public r-childsds
@@ -40655,13 +40663,13 @@ CGP, print.CGP, summary.CGP, predict.CGP and @code{plotCGP}.")
 (define-public r-cgnm
   (package
     (name "r-cgnm")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CGNM" version))
        (sha256
-        (base32 "1d1kkh06xanpmcawaraspfqykgy8yhz6bkjxj3938kl9phk90qyp"))))
+        (base32 "1gpl6ajl5ppjngsj5159invjfc2gklkdz0zahqfhihyh5mbh2ygf"))))
     (properties `((upstream-name . "CGNM")))
     (build-system r-build-system)
     (arguments
@@ -40681,7 +40689,10 @@ and Engineering, 1-31.  Please cite the following paper when profile likelihood
 plot is drawn with this software and used in your research: Aoki and Sugiyama
 (2024) <doi:10.1002/psp4.13055>.  Cluster Gauss-Newton method for a quick
 approximation of profile likelihood: With application to physiologically-based
-pharmacokinetic models.  CPT Pharmacometrics Syst Pharmacol.13(1):54-67.")
+pharmacokinetic models.  CPT Pharmacometrics Syst Pharmacol.13(1):54-67.  GPT
+based helper bot available at
+<https://chatgpt.com/g/g-684936db9e748191a2796debb00cd755-cluster-gauss-newton-method-helper-bot>
+.")
     (license license:expat)))
 
 (define-public r-cgmquantify
@@ -44957,13 +44968,13 @@ dynamic functional connectivity.  Medical Image Analysis, Volume 75.")
 (define-public r-cci
   (package
     (name "r-cci")
-    (version "0.3.1")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCI" version))
        (sha256
-        (base32 "0vwb949xcqqviwr2p915msxicqrzyw8byhbsl7l0871bdcbmhizh"))))
+        (base32 "0vxssb4adja4vvl3nijx43sza4cc4fy8agjwca2xnn8ravxza4kk"))))
     (properties `((upstream-name . "CCI")))
     (build-system r-build-system)
     (arguments
@@ -47843,13 +47854,13 @@ summarizing response frequencies.")
 (define-public r-cata
   (package
     (name "r-cata")
-    (version "0.1.0.27")
+    (version "0.1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cata" version))
        (sha256
-        (base32 "1zyqrza3qjw7nv9b6hn69yrn8yji5ixv5y87n6vjlxz9ircb1fpr"))))
+        (base32 "16gq559w7lbn2facmqgrkl7mshrli2xp85vrzds6swksqs1n3vjf"))))
     (properties `((upstream-name . "cata")))
     (build-system r-build-system)
     (arguments
@@ -47864,11 +47875,10 @@ Penalty-Lift analysis are provided; for details, see Meyners, Castura & Carr
 (2013) <doi:10.1016/j.foodqual.2013.06.010>.  Cluster analysis can be performed
 using b-cluster analysis, then evaluated using various measures; for details,
 see Castura, Meyners, Varela & NÃ¦s (2022) <doi:10.1016/j.foodqual.2022.104564>.
- Methods are adapted to cluster consumers based on their product-related hedonic
-responses; for details, see Castura, Meyners, Pohjanheimo, Varela & NÃ¦s (2023)
-<doi:10.1111/joss.12860>.  Permutation tests based on the L1-norm methods are
-provided; for details, see Chaya, Castura & Greenacre (2025)
-<doi:10.48550/@code{arXiv.2502.15945>}.")
+ Consumers can also be clustered on their product-related hedonic responses; see
+Castura, Meyners, Pohjanheimo, Varela & NÃ¦s (2023) <doi:10.1111/joss.12860>.
+Permutation tests based on the L1-norm methods are provided; for details, see
+Chaya, Castura & Greenacre (2025) <doi:10.1016/j.foodqual.2025.105639>.")
     (license license:gpl2+)))
 
 (define-public r-cat2cat

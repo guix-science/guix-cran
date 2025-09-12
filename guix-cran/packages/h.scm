@@ -5894,13 +5894,13 @@ experiments.")
 (define-public r-hmmtmb
   (package
     (name "r-hmmtmb")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmmTMB" version))
        (sha256
-        (base32 "0zzncmcff3r1s0aqnlihh9ij35rfk5z2wis809xkkhbgj3cgy14j"))))
+        (base32 "0h0rx244jk34p7s2c40w0vhfgnhr1jkkzkjzj1scc2s6gh7vcbff"))))
     (properties `((upstream-name . "hmmTMB")))
     (build-system r-build-system)
     (arguments
@@ -5922,7 +5922,7 @@ experiments.")
      "Fitting hidden Markov models using automatic differentiation and Laplace
 approximation, allowing for fast inference and flexible covariate effects
 (including random effects and smoothing splines) on model parameters.  The
-package is described by Michelot (2022) <doi:10.48550/@code{arXiv.2211.14139>}.")
+package is described by Michelot (2025) <doi:10.18637/jss.v114.i05>.")
     (license license:gpl3)))
 
 (define-public r-hmmrel

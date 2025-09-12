@@ -11075,13 +11075,13 @@ R script for reproducibility.  Reference: Key (2025)
 (define-public r-fluxible
   (package
     (name "r-fluxible")
-    (version "1.3.0")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxible" version))
        (sha256
-        (base32 "0gjg9sxgs364wz17cxcnqqcxav2g48ccgwjhj442f5c1yx6b8hvp"))))
+        (base32 "065p1rgb09h3z3mkyh5lgxv1yyqjb8m1aq2daxvymm4k5i63q85k"))))
     (properties `((upstream-name . "fluxible")))
     (build-system r-build-system)
     (arguments
@@ -12743,13 +12743,13 @@ registration).  Low memory footprint.")
 (define-public r-flexreg
   (package
     (name "r-flexreg")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FlexReg" version))
        (sha256
-        (base32 "1la0qyrlx07sv25n1nqrxdm8h2xmyc2l59l6i2rkxj0fjfjw7jb1"))))
+        (base32 "1adlinchjvmkghamph6z64dh6dfrlfhv7zn5y6byk5i4mfk7369n"))))
     (properties `((upstream-name . "FlexReg")))
     (build-system r-build-system)
     (arguments
@@ -18960,13 +18960,13 @@ version of the Hausman test.")
 (define-public r-fegarch
   (package
     (name "r-fegarch")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fEGarch" version))
        (sha256
-        (base32 "16xszzj97pbfx7krakqfmlsmvdmyvvfz7vnc3j9xbsjpp1fcr8fc"))))
+        (base32 "0n1q2y7k516s7b4qdn60v1c2slbbzbwgyvjfgn93fiz482qiyqaq"))))
     (properties `((upstream-name . "fEGarch")))
     (build-system r-build-system)
     (arguments
@@ -25625,13 +25625,13 @@ approach from Scutari, Panero and Proissl (2022)
 (define-public r-fairmetrics
   (package
     (name "r-fairmetrics")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fairmetrics" version))
        (sha256
-        (base32 "1b78gk4k6ph5hyyhmvamn0i7hd3g7xwwnqagcdsnb1pw229ac2dq"))))
+        (base32 "0d958p61g59dm3iwjfggk1jbhsiagnr0i84kxp8xzn62xicxvjj2"))))
     (properties `((upstream-name . "fairmetrics")))
     (build-system r-build-system)
     (arguments
@@ -26281,6 +26281,35 @@ membership and a sparsity-inducing prior fuses together levels of each factor
 while respecting ANOVA-style sum-to-zero constraints.  Goplerud, Imai, and
 Pashley (2024) <doi:10.48550/ARXIV.2201.01357> provide further details.")
     (license license:gpl2+)))
+
+(define-public r-factorh
+  (package
+    (name "r-factorh")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "factorH" version))
+       (sha256
+        (base32 "02fm2lqz9pvvc6647bwa4qsyzm8vwja56ikciscif05iysaf9hky"))))
+    (properties `((upstream-name . "factorH")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rcompanion r-fsa r-dplyr r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=factorH")
+    (synopsis "Multifactor Nonparametric Rank-Based ANOVA with Post Hoc Tests")
+    (description
+     "Multifactor nonparametric analysis of variance based on ranks.  Builds on the
+Kruskal-Wallis H test and its 2x2 Scheirer-Ray-Hare extension to handle any
+factorial designs.  Provides effect sizes, Dunn-Bonferroni pairwise-comparison
+matrices, and simple-effects analyses.  Tailored for psychology and the social
+sciences, with beginner-friendly R syntax and outputs that can be dropped into
+journal reports.  Includes helpers to export tab-separated results and compact
+tables of descriptive statistics (to APA-style reports).")
+    (license license:expat)))
 
 (define-public r-factorcopula
   (package

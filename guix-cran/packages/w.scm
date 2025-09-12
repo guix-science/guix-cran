@@ -2194,6 +2194,39 @@ access to nearly 16,000 time series indicators.  See
 for further details about the API.")
     (license license:expat)))
 
+(define-public r-workspace
+  (package
+    (name "r-workspace")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "workspace" version))
+       (sha256
+        (base32 "0ysvljq6pc5jrlqybp3wsjalmgzkalal4f501gbifb72jgvlpbqg"))))
+    (properties `((upstream-name . "workspace")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-yaml
+                             r-tibble
+                             r-stringi
+                             r-rlang
+                             r-dplyr
+                             r-cli
+                             r-arrow))
+    (home-page "https://cran.r-project.org/package=workspace")
+    (synopsis "Manage Collections of Datasets and Objects")
+    (description
+     "Create, store, read and manage structured collections of datasets and other
+objects using a workspace', then bundle it into a compressed archive.  Using
+open and interoperable formats makes it possible to exchange bundled data from R
+to other languages such as Python or Julia'.  Multiple formats are supported
+Parquet', JSON', yaml', spatial data and raster data are supported.")
+    (license license:expat)))
+
 (define-public r-workloopr
   (package
     (name "r-workloopr")

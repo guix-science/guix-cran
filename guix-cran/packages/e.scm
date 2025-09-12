@@ -3028,13 +3028,13 @@ R and shiny on their system.")
 (define-public r-exdqlm
   (package
     (name "r-exdqlm")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exdqlm" version))
        (sha256
-        (base32 "1mflapsbi67jabimqbysr0rcgi8bvn05sgmf5ykr9hmvhs16pf0x"))))
+        (base32 "1cl29271zyw72yh5k6x49iyaj4zagl3k4j24vp523rdgr7p35lih"))))
     (properties `((upstream-name . "exdqlm")))
     (build-system r-build-system)
     (arguments
@@ -3519,27 +3519,30 @@ format required by @code{MyLearn}'.")
 (define-public r-exams-forge-data
   (package
     (name "r-exams-forge-data")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exams.forge.data" version))
        (sha256
-        (base32 "1bzla2wqm3x1yi5m8pqaspdf8avp9x2m5axhwn8hsyx6dsbn6cfj"))))
+        (base32 "1j1y0xkkmkc7mq2pysmpdwk0a3cwj25plyjp6r86afzwkxcccxnw"))))
     (properties `((upstream-name . "exams.forge.data")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-exams-forge r-exams))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=exams.forge.data")
-    (synopsis "Precomputed Dataset Collection Used in 'exams.forge'")
+    (synopsis "Sample and Precomputed Data for Use with 'exams.forge'")
     (description
-     "The dataset collection supports Pearson correlation and linear regression
-analysis, with datasets for n=100,200,400,800,1000, where n is the sum of
-squared values in x.  Each dataset has x values summing to zero, with sample
-sizes (observations in x) ranging from 2 to 10.  Additional data frames include
-variables with German names and measurement levels, and distribution details
-with R function names, @code{LaTeX} names, discreteness, and package origins.")
+     "This package provides a small collection of datasets supporting Pearson
+correlation and linear regression analysis.  It includes the precomputed dataset
+sos100', with integer values summing to zero and squared sum equal to 100.  For
+other values of n and user-defined parameters, the @code{sos()} function from
+the exams.forge package can be used to generate datasets on the fly.  In
+addition, the package contains around 500 R Markdown exercises that illustrate
+the usage of exams.forge commands.")
     (license license:gpl3)))
 
 (define-public r-exams-forge
@@ -8909,13 +8912,13 @@ Karlson, Kristian Bernt, Anders Holm, and Richard Breen (2012)
 (define-public r-ergm-rank
   (package
     (name "r-ergm-rank")
-    (version "4.1.1")
+    (version "4.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm.rank" version))
        (sha256
-        (base32 "059s4zdb5fm8wl130nnxww1ry57d3p6rd5zmn9pf94iisjpkxxij"))))
+        (base32 "0p5nsjng1isl6x9rwk1nacwq21fqc1mng57i5pwxd0ij1mix913f"))))
     (properties `((upstream-name . "ergm.rank")))
     (build-system r-build-system)
     (arguments
@@ -9007,13 +9010,13 @@ See Krivitsky and Morris (2017) <doi:10.1214/16-AOAS1010>.")
 (define-public r-ergm-count
   (package
     (name "r-ergm-count")
-    (version "4.1.2")
+    (version "4.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm.count" version))
        (sha256
-        (base32 "085h2dn9dz9i05kjdm3ysgp7lzqdniq16xrvc11b4q1g9av71klv"))))
+        (base32 "1w0p0s0pvka70xabhwsdqrq1y6p0wb1jy339zw1p7nyw6w8nhirp"))))
     (properties `((upstream-name . "ergm.count")))
     (build-system r-build-system)
     (arguments
@@ -13072,18 +13075,19 @@ Collection (Rodriguez-R, L.M. and Konstantinidis, K.T., 2016
 (define-public r-envdocument
   (package
     (name "r-envdocument")
-    (version "2.4.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "envDocument" version))
        (sha256
-        (base32 "074m7adnasvys28kjdgj9071fi90vsl4yv5zvpxik4crlx098dlw"))))
+        (base32 "1w1wls0h5vsh37lcr8nfsz62y9r1kma76i0616xnfyx14nbiqal7"))))
     (properties `((upstream-name . "envDocument")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-renv r-here))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dgJacks0n/envDocument")
     (synopsis "Document the R Working Environment")
@@ -23468,13 +23472,13 @@ build R lists for ECharts API. Lean set of powerful commands.")
 (define-public r-echarts4r
   (package
     (name "r-echarts4r")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echarts4r" version))
        (sha256
-        (base32 "1j7ad6p0xrfwri13px1av5whd7pkfvblnms0v5a879ikzdwff66q"))))
+        (base32 "1915qiss6jrfwl6q4j00m5d3z82kq509g3q4bx1qly2cwss75iyf"))))
     (properties `((upstream-name . "echarts4r")))
     (build-system r-build-system)
     (arguments

@@ -414,6 +414,32 @@ method that first test for global network structural difference with invariance
 test and then inspect specific edge difference with partial pruning.")
     (license license:gpl3+)))
 
+(define-public r-ivolcano
+  (package
+    (name "r-ivolcano")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivolcano" version))
+       (sha256
+        (base32 "0jj583cnk8a7vqs86xd928zr8nhgasjb90gkixrdg780cr4bg8bn"))))
+    (properties `((upstream-name . "ivolcano")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggrepel r-ggplot2 r-ggiraph r-dplyr))
+    (native-inputs (list r-quarto))
+    (home-page "https://cran.r-project.org/package=ivolcano")
+    (synopsis "Interactive Volcano Plot")
+    (description
+     "Generate interactive volcano plots for exploring gene expression data.  Built
+with ggplot2', the plots are rendered interactive using ggiraph', enabling users
+to hover over points to display detailed information or click to trigger custom
+actions.")
+    (license license:gpl3+)))
+
 (define-public r-ivo-table
   (package
     (name "r-ivo-table")
@@ -11137,13 +11163,13 @@ Manrique-Ascencio et al (2024) <doi:10.1111/plb.13683>, Ruiz-Guerra et al(2017)
 (define-public r-ineatlas
   (package
     (name "r-ineatlas")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ineAtlas" version))
        (sha256
-        (base32 "0i20f2n3p3kix62fpqxyk4lfvlccg86a2rb986f7rrxplid7qiv8"))))
+        (base32 "0v9fbfra5c1sfmksnfqs2r29n4shhl7m2hmr9rljm5w7sc6sd9i1"))))
     (properties `((upstream-name . "ineAtlas")))
     (build-system r-build-system)
     (arguments

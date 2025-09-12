@@ -1650,13 +1650,13 @@ multi-label classes.")
 (define-public r-guess
   (package
     (name "r-guess")
-    (version "0.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "guess" version))
        (sha256
-        (base32 "198pxi0yipgm9wccpj3y4a0gkibhyxcmb7v5dz7ipzrk44ha5g6j"))))
+        (base32 "1306f95gv71dz52y7924pgkv8lprqa333lj5vmvbyyl9a5fszh2b"))))
     (properties `((upstream-name . "guess")))
     (build-system r-build-system)
     (arguments
@@ -1664,13 +1664,13 @@ multi-label classes.")
       #:tests? #f))
     (propagated-inputs (list r-rsolnp))
     (native-inputs (list r-knitr))
-    (home-page "http://github.com/soodoku/guess")
+    (home-page "https://github.com/finite-sample/guess")
     (synopsis "Adjust Estimates of Learning for Guessing")
     (description
      "Adjust Estimates of Learning for Guessing.  The package provides standard
 guessing correction, and a latent class model that leverages informative
 pre-post transitions.  For details of the latent class model, see
-<http://gsood.com/research/papers/guess.pdf>.")
+<https://gsood.com/research/papers/guess.pdf>.")
     (license license:expat)))
 
 (define-public r-guescini
@@ -3459,13 +3459,13 @@ Cellwise and Casewise Contamination and Missing Data.")
 (define-public r-gsdesign2
   (package
     (name "r-gsdesign2")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign2" version))
        (sha256
-        (base32 "05ancgf4l19ffvm6fvdagi5a0vlc1z3n4f2kba7c3nslqvg6g14n"))))
+        (base32 "07d75l34x6v2ml8z83bb31asl7yflfp7dlg821hzk1gkhrzllc7m"))))
     (properties `((upstream-name . "gsDesign2")))
     (build-system r-build-system)
     (arguments
@@ -8190,20 +8190,20 @@ individual functions.")
 (define-public r-granova
   (package
     (name "r-granova")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "granova" version))
        (sha256
-        (base32 "0fs8r0q5gvdyppsiil5p3dmfqyn2xygkqarnbmyhr0znbcxzkwxp"))))
+        (base32 "14cchf7n4cp9h3a2yyvvhflqf65a6a6gyfkk3d181swpi4mnhzym"))))
     (properties `((upstream-name . "granova")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-car))
-    (home-page "https://cran.r-project.org/package=granova")
+    (home-page "https://fbertran.github.io/granova/")
     (synopsis "Graphical Analysis of Variance")
     (description
      "This small collection of functions provides what we call elemental graphics for
@@ -23857,13 +23857,13 @@ other available packages.")
 (define-public r-ggalign
   (package
     (name "r-ggalign")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggalign" version))
        (sha256
-        (base32 "0ivjipbinbawdd5qpf3lxdnwhi34df6mbbixndniw6y2bdbgwxbz"))))
+        (base32 "1c8k89apv82gd7xhq5libga6rkz4jay8hv2a5njmgwz8fmddv9ny"))))
     (properties `((upstream-name . "ggalign")))
     (build-system r-build-system)
     (arguments
@@ -23871,22 +23871,23 @@ other available packages.")
       #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-scales
+                             r-s7
                              r-rlang
                              r-lifecycle
                              r-gtable
                              r-ggplot2
                              r-cli))
     (home-page "https://github.com/Yunuuuu/ggalign")
-    (synopsis "'ggplot2' Extension for Consistent Axis Alignment")
+    (synopsis "'ggplot2' Extension for Composable Visualization")
     (description
-     "This package provides a ggplot2 extension offers various tools the creation of
-complex, multi-plot visualizations.  Built on the familiar grammar of graphics,
-it provides intuitive tools to align and organize plots, making it ideal for
-complex visualizations.  It excels in multi-omics researchâsuch as genomics
-and microbiomesâby simplifying the visualization of intricate relationships
-between datasets, for example, linking genes to pathways.  Whether you need to
-stack plots, arrange them around a central figure, or create a circular layout,
-ggalign delivers flexibility and accuracy with minimal effort.")
+     "This package provides a ggplot2 extension providing an integrative framework for
+composable visualization, enabling the creation of complex multi-plot layouts
+such as insets, circular arrangements, and multi-panel compositions.  Built on
+the grammar of graphics, it offers tools to align, stack, and nest plots,
+simplifying the construction of richly annotated figures for high-dimensional
+data contextsâsuch as genomics, transcriptomics, and microbiome studiesâby
+making it easy to link related plots, overlay clustering results, or highlight
+shared patterns.")
     (license license:expat)))
 
 (define-public r-gg1d
@@ -26893,13 +26894,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.1.9")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "066hjygzih2dv5s6lnmrmf1yj2h9i33lk1ymmb36kg1812n6wba4"))))
+        (base32 "0q46pz0pg4nl2cx3qsrij1fdh7snk7m8fmyn52q9mkj9i63nxwp6"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (arguments
@@ -30559,13 +30560,13 @@ ready-to-use output.")
 (define-public r-genenmf
   (package
     (name "r-genenmf")
-    (version "0.8.0")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeneNMF" version))
        (sha256
-        (base32 "0m1702m3lad65hv2i8682vcpa1nwqdfb9m4jnhfny2q7yyap38kj"))))
+        (base32 "0dkap5dpwnrfkfi4qls6lfwx6aw0z6zv0ysjj0hmav90y68n6krc"))))
     (properties `((upstream-name . "GeneNMF")))
     (build-system r-build-system)
     (arguments
@@ -30579,6 +30580,7 @@ ready-to-use output.")
                              r-lsa
                              r-irlba
                              r-dendextend
+                             r-colorspace
                              r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/carmonalab/GeneNMF")
@@ -36645,13 +36647,13 @@ algebra algorithms.  Inspired by MATLAB gallery functions.")
 (define-public r-galisats
   (package
     (name "r-galisats")
-    (version "1.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galisats" version))
        (sha256
-        (base32 "1a3z2gqcb4vdnr8dq5425aqrr7p3fj3xmibczqw6my6dpbca5bzf"))))
+        (base32 "1q1m2haq5lhps7wvf6f8gy523r52mxd4x9sxbsk5acllpd8wfa84"))))
     (properties `((upstream-name . "galisats")))
     (build-system r-build-system)
     (arguments
@@ -36662,15 +36664,16 @@ algebra algorithms.  Inspired by MATLAB gallery functions.")
     (synopsis "Configuration of Jupiter's Four Largest Satellites")
     (description
      "Calculate and plot the configuration of Jupiter's four largest satellites (known
-as Galilean satellites) for a given date and time (ET - Ephemeris Time).  The
-galsat function returns numerical values of the satellitesâ positions.  x â
-the apparent rectangular coordinate of the satellite with respect to the center
-of Jupiterâs disk in the equatorial plane in the units of Jupiterâs
-equatorial radius; X is positive toward the west, y â the apparent rectangular
-coordinate of the satellite with respect to the center of Jupiterâs disk from
-the equatorial plane in the units of Jupiterâs equatorial radius; Y is
-positive toward the north.  For more details see Meeus (1988, ISBN
-0-943396-22-0) \"Astronomical Formulae for Calculators\".")
+as Galilean satellites) for a given date and time (UTC - Coordinated Universal
+Time).  The @code{galsat()} function returns numerical values of the
+satellitesâ positions.  x â the apparent rectangular coordinate of the
+satellite with respect to the center of Jupiterâs disk in the equatorial plane
+in the units of Jupiterâs equatorial radius; X is positive toward the west, y
+â the apparent rectangular coordinate of the satellite with respect to the
+center of Jupiterâs disk from the equatorial plane in the units of Jupiterâs
+equatorial radius; Y is positive toward the north.  For more details see Meeus
+(1988, ISBN 0-943396-22-0) \"Astronomical Formulae for Calculators\".  The
+function @code{delta_t()} returns the value of delta-T in units of seconds.")
     (license license:expat)))
 
 (define-public r-galigor
