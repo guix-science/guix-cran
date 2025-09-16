@@ -1892,6 +1892,34 @@ to their corresponding documentation online.  If you maintain a universe
 meta-package, it helps create a comprehensive reference for its website.")
     (license license:expat)))
 
+(define-public r-dutoolkit
+  (package
+    (name "r-dutoolkit")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DUToolkit" version))
+       (sha256
+        (base32 "158czlzmv3ql1hg5wm8xz5ifkpz7gs7dk844ffkiqr1n6d0nd8j0"))))
+    (properties `((upstream-name . "DUToolkit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-rlang r-ggtext r-ggplot2 r-ggdist))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DUToolkit")
+    (synopsis "Visualizing and Quantifying Decision Uncertainty")
+    (description
+     "This package provides a suite of tools to help modelers and decision-makers
+effectively interpret and communicate decision risk when evaluating multiple
+policy options.  It uses model outputs from uncertainty analysis for baseline
+scenarios and policy alternatives to generate visual representations of
+uncertainty and quantitative measures for assessing associated risks.  For more
+details see <https://dut.ihe.ca/>.")
+    (license license:gpl2+)))
+
 (define-public r-durga
   (package
     (name "r-durga")
@@ -4242,13 +4270,13 @@ non-parametric hypothesis testing and gene set enrichment analysis.")
 (define-public r-dsld
   (package
     (name "r-dsld")
-    (version "0.2.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsld" version))
        (sha256
-        (base32 "1qx5lj7fiaksfp4vc0n0dxjcjpijx5lp4c0ifmzrfsd67d5zhlbb"))))
+        (base32 "0ryr7jgdaz3qndajn60gjj5za041aq92cp3ish653mhglsz6h1vv"))))
     (properties `((upstream-name . "dsld")))
     (build-system r-build-system)
     (arguments
@@ -4422,13 +4450,13 @@ repositories.")
 (define-public r-dsem
   (package
     (name "r-dsem")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsem" version))
        (sha256
-        (base32 "1f8pzn8a0qnqs259xd6182zvvng17ygzmfxkmw8l1api4clpq96j"))))
+        (base32 "0ld0hqqxsw6i5s0zy3c94pfm31sz8cmi2g3hwnbnw1ljn4ia9hm5"))))
     (properties `((upstream-name . "dsem")))
     (build-system r-build-system)
     (arguments
@@ -4737,13 +4765,13 @@ time series.  Bundesbank Discussion Paper 41/2018.")
 (define-public r-ds4psy
   (package
     (name "r-ds4psy")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ds4psy" version))
        (sha256
-        (base32 "1l5qqcpzad2nnhzzcb43slgmdg08v830l5np8mc7qh4wlig1x95l"))))
+        (base32 "0g7g7hh381qln2n1wxqrizd0635sfc49qrb57fc44a2ckn33ai6h"))))
     (properties `((upstream-name . "ds4psy")))
     (build-system r-build-system)
     (arguments
@@ -4755,14 +4783,14 @@ time series.  Bundesbank Discussion Paper 41/2018.")
     (synopsis "Data Science for Psychologists")
     (description
      "All datasets and functions required for the examples and exercises of the book
-\"Data Science for Psychologists\" (by Hansjoerg Neth, Konstanz University, 2022),
-available at <https://bookdown.org/hneth/ds4psy/>.  The book and course
-introduce principles and methods of data science to students of psychology and
-other biological or social sciences.  The ds4psy package primarily provides
-datasets, but also functions for data generation and manipulation (e.g., of text
-and time data) and graphics that are used in the book and its exercises.  All
-functions included in ds4psy are designed to be explicit and instructive, rather
-than efficient or elegant.")
+\"Data Science for Psychologists\" (by Hansjoerg Neth, Konstanz University, 2025),
+freely available at <https://bookdown.org/hneth/ds4psy/>.  The book and
+corresponding courses introduce principles and methods of data science to
+students of psychology and other biological or social sciences.  The ds4psy
+package primarily provides datasets, but also functions for data generation and
+manipulation (e.g., of text and time data) and graphics that are used in the
+book and its exercises.  All functions included in ds4psy are designed to be
+explicit and instructive, rather than efficient or elegant.")
     (license license:cc-by-sa4.0)))
 
 (define-public r-ds
@@ -8245,13 +8273,13 @@ estimates (Rosenblatt, 1956) <doi:10.1214/aoms/1177728190> (Parzen, 1962)
 (define-public r-dots
   (package
     (name "r-dots")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dots" version))
        (sha256
-        (base32 "0g4wvb6qp66dm0pfckjr9xgij58dzlji2iq45m5cz98jzivfd9gm"))))
+        (base32 "1qmhsrldgm9swnr66dkwij9xjcm52d4sds8hwplasmdkkdgj2i5c"))))
     (properties `((upstream-name . "dots")))
     (build-system r-build-system)
     (arguments
@@ -8263,7 +8291,6 @@ estimates (Rosenblatt, 1956) <doi:10.1214/aoms/1177728190> (Parzen, 1962)
                              r-rmapshaper
                              r-rlang
                              r-purrr
-                             r-magrittr
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -12435,19 +12462,19 @@ Poisson factorization and the gamlr package.  For details see: Taddy (2015,
 (define-public r-distro
   (package
     (name "r-distro")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distro" version))
        (sha256
-        (base32 "03b8mkjhxxh93675mmj443a83mgfwhkdar7dfbf3agf6aqnadn2g"))))
+        (base32 "1ys6ic6c4sfr31v0mh51zxv6y4632sakxlqzkc7j9sfkrgjwrcd9"))))
     (properties `((upstream-name . "distro")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=distro")
+    (home-page "https://enpiar.com/distro/")
     (synopsis "Linux Distribution Properties")
     (description
      "In order to provide unified access to Linux distribution details in R, this
@@ -12543,13 +12570,13 @@ description and application of methods available in this package.")
 (define-public r-distributions3
   (package
     (name "r-distributions3")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distributions3" version))
        (sha256
-        (base32 "0av16mpnr18ijj4g8fk85mdvvv7qxqj1i9cn1dm585qgg1q8hd0z"))))
+        (base32 "0jvjhkpci43gi1zqidhswb1vw9ds9ggicb3b9y6nb7l9khbppd8f"))))
     (properties `((upstream-name . "distributions3")))
     (build-system r-build-system)
     (arguments
@@ -33821,49 +33848,4 @@ item-level analysis as well as test development.")
 power of R and the visualization libraries of @code{JavaScript} in one package.
 Barrios, D. & Prieto, C. (2017) <doi:10.1089/cmb.2016.0213>.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-d2mcs
-  (package
-    (name "r-d2mcs")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "D2MCS" version))
-       (sha256
-        (base32 "0rjfjnh8gcbm83cwqk1yjrjv6jsrarr53c629bkg9zw7s5sm35nz"))))
-    (properties `((upstream-name . "D2MCS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-varhandle
-                             r-tictoc
-                             r-recipes
-                             r-r6
-                             r-questionr
-                             r-modelmetrics
-                             r-mltools
-                             r-mccr
-                             r-infotheo
-                             r-gridextra
-                             r-ggrepel
-                             r-ggplot2
-                             r-fselector
-                             r-dplyr
-                             r-devtools
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/drordas/D2MCS")
-    (synopsis "Data Driving Multiple Classifier System")
-    (description
-     "This package provides a novel framework to able to automatically develop and
-deploy an accurate Multiple Classifier System based on the feature-clustering
-distribution achieved from an input dataset.  D2MCS was developed focused on
-four main aspects: (i) the ability to determine an effective method to evaluate
-the independence of features, (ii) the identification of the optimal number of
-feature clusters, (iii) the training and tuning of ML models and (iv) the
-execution of voting schemes to combine the outputs of each classifier comprising
-the Multiple Classifier System.")
-    (license license:gpl3)))
 

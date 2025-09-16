@@ -933,6 +933,34 @@ package & function usage to a Quarto document and enables aggregation of usage
 across a website.")
     (license license:expat)))
 
+(define-public r-use
+  (package
+    (name "r-use")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "USE" version))
+       (sha256
+        (base32 "1sx5wl4kxr55b9v4bxnln1a02ih89m7ia6yr6309jqa6qaw3syyx"))))
+    (properties `((upstream-name . "USE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-sf r-ks r-ggplot2 r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://danddr.github.io/USE/")
+    (synopsis "Uniform Sampling of the Environmental Space")
+    (description
+     "This package provides functions for uniform sampling of the environmental space,
+designed to assist species distribution modellers in gathering ecologically
+relevant pseudo-absence data.  The method ensures balanced representation of
+environmental conditions and helps reduce sampling bias in model calibration.
+Based on the framework described by Da Re et al. (2023)
+<doi:10.1111/2041-210X.14209>.")
+    (license license:gpl2+)))
+
 (define-public r-usdoj
   (package
     (name "r-usdoj")

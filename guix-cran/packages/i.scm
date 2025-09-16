@@ -1854,6 +1854,36 @@ the DISR to handle with distributed PCA-based missing data.  The philosophy of
 the package is described in Guo G. (2024) <doi:10.1080/03610918.2022.2091779>.")
     (license license:expat)))
 
+(define-public r-ispyardswinprobabilitygsdesign
+  (package
+    (name "r-ispyardswinprobabilitygsdesign")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISPYARDSWinProbabilityGSDesign" version))
+       (sha256
+        (base32 "0ryl7j3pylrrys2zxkl9as7vkx79dcmi2wf71kmq1qg7y69f1zcp"))))
+    (properties `((upstream-name . "ISPYARDSWinProbabilityGSDesign")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dfba))
+    (home-page
+     "https://cran.r-project.org/package=ISPYARDSWinProbabilityGSDesign")
+    (synopsis
+     "Trial Design in Respiratory Disease Based on the Win Probability")
+    (description
+     "This package provides analysis results and trial simulation functions for the
+I-SPY Acute Respiratory Disease Syndrome trial based on composite ranked
+outcomes.  The composite ranked outcome is a hierarchical outcome where trial
+participants are ranked first by 28 day mortality, then ventilator days, then by
+advanced respiratory support days.  A Bayesian win probability approach is used
+for analysis.  Trial design options include group sequential looks for safety,
+superiority, futility, and adjustment of randomization probabilities.")
+    (license license:gpl2)))
+
 (define-public r-ispdata
   (package
     (name "r-ispdata")
@@ -2514,13 +2544,13 @@ The most recent version of @code{IsoCor} can be tested online at
 (define-public r-isocir
   (package
     (name "r-isocir")
-    (version "2.0-7.1")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isocir" version))
        (sha256
-        (base32 "0jgm0a26frq4fs5d578c44bpn15nshvzmrqfzcbwydf58x7w6sj2"))))
+        (base32 "1zaajd8wm0wv0j4cipnd872nwnf2a9ki1cb6c50gvhh3rz2b8wjb"))))
     (properties `((upstream-name . "isocir")))
     (build-system r-build-system)
     (arguments
@@ -11196,6 +11226,31 @@ metrics.  The data repository is updated every year when new releases are
 published by INE.")
     (license license:expat)))
 
+(define-public r-ineapir
+  (package
+    (name "r-ineapir")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ineapir" version))
+       (sha256
+        (base32 "07amnn1g80s2dlk89zi2c18c5zz61h0y854jnw424ap5ca7647c6"))))
+    (properties `((upstream-name . "ineapir")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr))
+    (home-page "https://github.com/es-ine/ineapir")
+    (synopsis "Obtaining Data Published by the National Statistics Institute")
+    (description
+     "Get open statistical data and metadata disseminated by the National Statistics
+Institute of Spain (INE).  The functions return data frames with the requested
+information thanks to calls to the INE API
+<https://www.ine.es/dyngs/DAB/index.htm?cid=1100>.")
+    (license (license:fsdg-compatible "EUPL (== 1.2)"))))
+
 (define-public r-industrial
   (package
     (name "r-industrial")
@@ -11798,35 +11853,29 @@ details.")
 (define-public r-indago
   (package
     (name "r-indago")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inDAGO" version))
        (sha256
-        (base32 "08h5pk4q2mis97bmyqnqcssc5wcffn07xmfjv23pqvmk01g45h38"))))
+        (base32 "1ysra4j51bwr3vbrnn5f2lwk6bixyf7m5jl8b1wk8dyc785gz4qq"))))
     (properties `((upstream-name . "inDAGO")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xvector
-                             r-upsetr
+    (propagated-inputs (list r-upsetr
                              r-upsetjs
                              r-tidyr
                              r-tibble
                              r-spscomps
-                             r-shortread
                              r-shinywidgets
                              r-shinyjs
                              r-shinyfiles
                              r-shinycssloaders
                              r-shiny
                              r-seqinr
-                             r-s4vectors
-                             r-rtracklayer
-                             r-rsubread
-                             r-rsamtools
                              r-rintrojs
                              r-reshape2
                              r-readr
@@ -11837,14 +11886,12 @@ details.")
                              r-memuse
                              r-matrixstats
                              r-magrittr
-                             r-limma
                              r-htmltools
                              r-hmisc
                              r-heatmaply
                              r-ggrepel
                              r-ggplot2
                              r-fs
-                             r-edger
                              r-dt
                              r-dplyr
                              r-data-table
@@ -11852,8 +11899,6 @@ details.")
                              r-callr
                              r-bslib
                              r-bsicons
-                             r-biostrings
-                             r-biocgenerics
                              r-bigtabulate))
     (home-page "https://github.com/inDAGOverse/inDAGO")
     (synopsis "GUI for Dual and Bulk RNA-Sequencing Analysis")
@@ -12326,13 +12371,13 @@ markers.")
 (define-public r-inaparc
   (package
     (name "r-inaparc")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inaparc" version))
        (sha256
-        (base32 "0y3m2g5y12wj4af1wiqyi7nlb11avissd59g202rha0wqwzd8q3f"))))
+        (base32 "1b0rmmdw2gz3flhgw56vmpxifz6c7awl6chjgqswmj5b0zzdy5g6"))))
     (properties `((upstream-name . "inaparc")))
     (build-system r-build-system)
     (arguments
@@ -20441,13 +20486,13 @@ API.")
 (define-public r-ibr
   (package
     (name "r-ibr")
-    (version "2.0-4")
+    (version "2.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibr" version))
        (sha256
-        (base32 "1vac4484n9jsn6m5pbdpw6zjjjgnas24176hs6mr51y2bjgywdkp"))))
+        (base32 "1ji3yfs8wvgkf7ar1srg9bag3zdasgnlgdvwgbcfv9r38rmbybaw"))))
     (properties `((upstream-name . "ibr")))
     (build-system r-build-system)
     (arguments

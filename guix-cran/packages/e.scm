@@ -5803,6 +5803,45 @@ as accuracy, sensitivity, specificity, ppv, npv, fmeasure, mcc and ...  will be
 returned.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-evaltest
+  (package
+    (name "r-evaltest")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EvalTest" version))
+       (sha256
+        (base32 "1k8q4kjvlc2dyp2qmsdh1q0yzvkxac62mnxqm2bl6v2dq0l70qg3"))))
+    (properties `((upstream-name . "EvalTest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinydashboard
+                             r-shiny
+                             r-readxl
+                             r-proc
+                             r-openxlsx
+                             r-ggpubr
+                             r-ggplot2
+                             r-dt
+                             r-binom))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=EvalTest")
+    (synopsis "'shiny' App to Evaluate Diagnostic Tests Performance")
+    (description
+     "Evaluate diagnostic test performance using data from laboratory or diagnostic
+research.  It supports both binary and continuous test variables.  It allows
+users to compute key performance indicators and visualize Receiver Operating
+Characteristic (ROC) curves, determine optimal cut-off thresholds, display
+confusion matrix, and export publication-ready plot.  It aims to facilitate the
+application of statistical methods in diagnostic test evaluation by healthcare
+professionals.  The methodology used to compute the performance indicators
+follows the overview described by Habibzadeh (2025)
+<doi:10.11613/BM.2025.010101>.  Thanks to shiny package.")
+    (license license:expat)))
+
 (define-public r-evalr
   (package
     (name "r-evalr")
@@ -6153,13 +6192,13 @@ pre-defined SPARQL queries and GET requests.  See Ovadek (2021)
 (define-public r-eunomia
   (package
     (name "r-eunomia")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Eunomia" version))
        (sha256
-        (base32 "1ma5xsfyj6f1dd6n7k4fqxil3xbgj2d79vb7b4zjqf7cb14vljlg"))))
+        (base32 "08jajlrbcl3965vfdxpi4z4nyfvij0q9yblkjxyq8mp55h0xhl1b"))))
     (properties `((upstream-name . "Eunomia")))
     (build-system r-build-system)
     (arguments
@@ -6171,7 +6210,7 @@ pre-defined SPARQL queries and GET requests.  See Ovadek (2021)
                              r-dbi
                              r-commondatamodel
                              r-arrow))
-    (home-page "https://github.com/OHDSI/Eunomia")
+    (home-page "https://ohdsi.github.io/Eunomia/")
     (synopsis
      "Standard Dataset Manager for Observational Medical Outcomes Partnership Common Data Model Sample Datasets")
     (description
@@ -8872,13 +8911,13 @@ functions for hazard calculation and timing calibration.")
 (define-public r-ergmargins
   (package
     (name "r-ergmargins")
-    (version "1.6")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergMargins" version))
        (sha256
-        (base32 "0fmal672aizrmqqx18disgmwfr9csrzcn00ahcjkj4543vm500ij"))))
+        (base32 "1v700vqhkrin2nq3sv9q18xlipyj27y1lg2s7jh6qxyr3a0qx5hj"))))
     (properties `((upstream-name . "ergMargins")))
     (build-system r-build-system)
     (arguments
@@ -10804,6 +10843,33 @@ populations.")
 analysis and infectious disease modelling.  This includes computation of basic
 reproduction numbers from growth rates, generation of hashed labels to anonymize
 data, and fitting discretized Gamma distributions.")
+    (license license:expat)))
+
+(define-public r-epitraxr
+  (package
+    (name "r-epitraxr")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epitraxr" version))
+       (sha256
+        (base32 "0sj38cd8lwi8k7k8aq2y3a9z5rgypb95rb66ik5qh2b3fril6iap"))))
+    (properties `((upstream-name . "epitraxr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-writexl r-lubridate))
+    (native-inputs (list r-knitr))
+    (home-page "https://epiforesite.github.io/epitraxr/")
+    (synopsis "Manipulate 'EpiTrax' Data and Generate Reports")
+    (description
+     "This package provides a fast, flexible tool for generating disease surveillance
+reports from data exported from @code{EpiTrax}', a central repository for
+epidemiological data used by public health officials.  It provides functions to
+manipulate @code{EpiTrax} datasets, tailor reports to internal or public use,
+and export reports in CSV, Excel xlsx', or PDF formats.")
     (license license:expat)))
 
 (define-public r-epitools
@@ -16404,13 +16470,13 @@ tune is the hidden layer size and the learning function.")
 (define-public r-elmnnrcpp
   (package
     (name "r-elmnnrcpp")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "elmNNRcpp" version))
        (sha256
-        (base32 "1vn3c67p4kd7bs4fsyhkl350aydcqpfda4j6svkc0g4cxd5i33zj"))))
+        (base32 "0qay2yv16q12k4326s69mss7m26rpicy9ym7a4ckc5hhwd1vrjh2"))))
     (properties `((upstream-name . "elmNNRcpp")))
     (build-system r-build-system)
     (arguments
@@ -20464,13 +20530,13 @@ dependencies can be visualized with using the igraph package.")
 (define-public r-edith
   (package
     (name "r-edith")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eDITH" version))
        (sha256
-        (base32 "0bsy0mpacwjglyp7vfqz32lpyd43yj346yvxqrf32fhwqlpfwimc"))))
+        (base32 "1s3y8365h2whcc0nl5ia4kl0lmr7nsabm4arr6sybjwgfq940713"))))
     (properties `((upstream-name . "eDITH")))
     (build-system r-build-system)
     (arguments
@@ -24572,13 +24638,13 @@ interview record using a hierarchy of all common causes for neonates or children
 (define-public r-eattools
   (package
     (name "r-eattools")
-    (version "0.7.8")
+    (version "0.7.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eatTools" version))
        (sha256
-        (base32 "0ias68g4gyhvyw96hdzl4iv4dv7x1rrs8afpi8bbsz8b45yncjk0"))))
+        (base32 "0z7342x82mkkbw4xmcrszryd4xw9w9myqwaaj6gxizb25lnx08yj"))))
     (properties `((upstream-name . "eatTools")))
     (build-system r-build-system)
     (arguments

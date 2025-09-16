@@ -2280,13 +2280,13 @@ render \"DVI\" objects.")
 (define-public r-xdnuts
   (package
     (name "r-xdnuts")
-    (version "1.6.3")
+    (version "1.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XDNUTS" version))
        (sha256
-        (base32 "0r6fj56agyc0vigygblr0da1rsip0wq3vm936jxg409pb28f4c3n"))))
+        (base32 "0rzi9aydwngxz8d7rvnwjx7hq6qmnirc0sgv3m0vz2ww7pdp78q3"))))
     (properties `((upstream-name . "XDNUTS")))
     (build-system r-build-system)
     (arguments
@@ -2296,6 +2296,7 @@ render \"DVI\" objects.")
                              r-rcpparmadillo
                              r-rcpp
                              r-purrr
+                             r-mass
                              r-gridextra
                              r-ggplot2
                              r-coda))

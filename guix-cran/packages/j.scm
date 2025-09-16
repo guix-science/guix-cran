@@ -2198,13 +2198,13 @@ to choose a base or source file and columns to merge or minus on.")
 (define-public r-jointvip
   (package
     (name "r-jointvip")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jointVIP" version))
        (sha256
-        (base32 "0297n9n5n6mjkc5lhbxy8ab5k5b23anj8kwhx73i4zzxbdh7y2h1"))))
+        (base32 "08nz7f4rn4sjx2gyd20i100rq48qnh8g97zjmc33ryxg9g4bhg7q"))))
     (properties `((upstream-name . "jointVIP")))
     (build-system r-build-system)
     (arguments
@@ -2769,13 +2769,13 @@ and continuous moderators.  Allows correcting for phylogenetic relatedness.")
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
-    (version "0.4.11")
+    (version "0.4.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmvReadWrite" version))
        (sha256
-        (base32 "1c9gzfhljgsi87y8dbvxdw38f5hv3ij8bzpsk0l0gv7b7rhfgl2v"))))
+        (base32 "07wklvg318v75ki4kz60hvw3afl4c0yh7jj7q0f8c0m6h7dv1z2p"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
     (arguments

@@ -18,7 +18,6 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
@@ -5282,13 +5281,13 @@ hardware.  The following system functions are used: @code{arc4random_buf()} on
 (define-public r-cryptoquotes
   (package
     (name "r-cryptoquotes")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cryptoQuotes" version))
        (sha256
-        (base32 "0q236w753hw5ckd1d81w1wz9ivkwmmkb3lvmi2m9gxy1y8yyj534"))))
+        (base32 "02hjayan2a75nb1sxc4frgzxi05skjcq8s4dxgvdqaw7r0ip7pm6"))))
     (properties `((upstream-name . "cryptoQuotes")))
     (build-system r-build-system)
     (arguments
@@ -7643,13 +7642,13 @@ analysis.")
 (define-public r-crew-cluster
   (package
     (name "r-crew-cluster")
-    (version "0.3.8")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.cluster" version))
        (sha256
-        (base32 "15yixxsvcgl160app6a59vdmbwc0q9ns5qyc70kdj0x2xyihxylr"))))
+        (base32 "1k9hylhfbi5hf2nckvbjhaavj8wnhgpqv122s5sg2fkbbqxary0x"))))
     (properties `((upstream-name . "crew.cluster")))
     (build-system r-build-system)
     (arguments
@@ -7661,6 +7660,7 @@ analysis.")
                              r-rlang
                              r-r6
                              r-ps
+                             r-nanonext
                              r-lifecycle
                              r-crew))
     (home-page "https://wlandau.github.io/crew.cluster/")
@@ -7682,13 +7682,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew-aws-batch
   (package
     (name "r-crew-aws-batch")
-    (version "0.0.11")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.aws.batch" version))
        (sha256
-        (base32 "03kr765p9rzfr6xdn5wbbrs4q9k0bzlhh7r3vy6qji8fzlcdghlz"))))
+        (base32 "16df01ma5n7ggrdqzcf06kqnwn5csal90kiinngrynskklncy91l"))))
     (properties `((upstream-name . "crew.aws.batch")))
     (build-system r-build-system)
     (arguments
@@ -11549,13 +11549,13 @@ distribution by Johnstone (2008) <DOI:10.1214/08-AOS605>.")
 (define-public r-coveffectsplot
   (package
     (name "r-coveffectsplot")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coveffectsplot" version))
        (sha256
-        (base32 "1725j0wppdj1ww00s8bb12rmnhch346x41pizqj64k3d45yc9jyc"))))
+        (base32 "1zbgnw85ycmn94mjwgzw0apk0mzk5fk7xccsvginfqy9lxm7ziz9"))))
     (properties `((upstream-name . "coveffectsplot")))
     (build-system r-build-system)
     (arguments
@@ -18612,13 +18612,13 @@ they take into account the dependence structure in the data.")
 (define-public r-confreq
   (package
     (name "r-confreq")
-    (version "1.6.1-1")
+    (version "1.6.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "confreq" version))
        (sha256
-        (base32 "05bwsj4xa3k7gngnf3ni8j0qw7yd7iycqkarpxm60dy8ayy68bs8"))))
+        (base32 "0sxpaigksn6b51l6pdxqyq8r4xq3hq3kaqg3gyb7r08sy1s3l4jh"))))
     (properties `((upstream-name . "confreq")))
     (build-system r-build-system)
     (arguments
@@ -18690,6 +18690,39 @@ specifically focuses on providing conformal p-values that can be used to assess
 the confidence of the classification predictions.  For more details, see Tyagi
 and Guo (2023) <https://proceedings.mlr.press/v204/tyagi23a.html>.")
     (license license:expat)))
+
+(define-public r-conformalinference-multi
+  (package
+    (name "r-conformalinference-multi")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "conformalInference.multi" version))
+       (sha256
+        (base32 "13b1b6dsqsq6pq9xy1mram0q0s905bgcyw8lz2745fly5ha0s0j3"))))
+    (properties `((upstream-name . "conformalInference.multi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gridextra r-glmnet r-ggplot2 r-future-apply
+                             r-future))
+    (home-page "https://github.com/ryantibs/conformal")
+    (synopsis
+     "Conformal Inference Tools for Regression with Multivariate Response")
+    (description
+     "It computes full conformal, split conformal and multi-split conformal prediction
+regions when the response variable is multivariate (i.e.  dimension is greater
+than one).  Moreover, the package also contains plot functions to visualize the
+output of the full and split conformal functions.  To guarantee consistency, the
+package structure mimics the univariate package @code{conformalInference} by
+Ryan Tibshirani.  See Lei, Gâsell, Rinaldo, Tibshirani, & Wasserman (2018)
+<doi:10.1080/01621459.2017.1307116> for full and split conformal prediction in
+regression, and Barber, CandÃ¨s, Ramdas, & Tibshirani (2023)
+<doi:10.1214/23-AOS2276> for extensions beyond exchangeability.")
+    (license (list license:gpl2
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-conformalinference-fd
   (package
@@ -26263,7 +26296,7 @@ compositions package and its ecosystem.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list tensorflow))
+    (inputs (list))
     (propagated-inputs (list r-tensorflow r-r6 r-proc r-keras r-gtools))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=codacore")
@@ -27250,13 +27283,13 @@ Iterative Proportional Fitting.")
 (define-public r-cnmap
   (package
     (name "r-cnmap")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cnmap" version))
        (sha256
-        (base32 "17ksinswnj37sj1cdzpxg27rkn8qi4kli48hi1jk8r147d2rykdg"))))
+        (base32 "0778m0f88nqdryx8mzm4883k9yal195kswvsm6jxk5164k15d8zk"))))
     (properties `((upstream-name . "cnmap")))
     (build-system r-build-system)
     (arguments
@@ -27269,9 +27302,8 @@ Iterative Proportional Fitting.")
     (description
      "According to the code or the name of the administrative division at the county
 level and above provided by the Ministry of Civil Affairs of the People's
-Republic of China in 2022
-(<https://www.mca.gov.cn/mzsj/xzqh/2022/202201xzqh.html>), get the map file
-online from the website of @code{AutoNavi} Map
+Republic of China in 2022, get the map file online from the website of
+@code{AutoNavi} Map
 (<http://datav.aliyun.com/portal/school/atlas/area_selector>).")
     (license license:gpl3)))
 
@@ -28819,33 +28851,33 @@ mapping: let's call a spade a spade.\" Qual Quant.
 (define-public r-cmahalanobis
   (package
     (name "r-cmahalanobis")
-    (version "0.5.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmahalanobis" version))
        (sha256
-        (base32 "02i2szrgvp2mxhlqi3ga5i4lklxrlg8ygczk6c064pyg8xr97bkp"))))
+        (base32 "0i8cgyl9wgk0isl7zbpq7py23w6gcjwls2768kk5x20pyxym57a8"))))
     (properties `((upstream-name . "cmahalanobis")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-mice r-ggplot2))
+    (propagated-inputs (list r-reshape2 r-matrixstats r-gridextra r-ggplot2))
     (home-page "https://cran.r-project.org/package=cmahalanobis")
-    (synopsis
-     "Calculate Distance Measures for a Given List of Data Frames with Factors")
+    (synopsis "Calculate Distance Measures for DataFrames")
     (description
      "It provides functions that calculate Mahalanobis distance, Euclidean distance,
 Manhattan distance, Chebyshev distance, Hamming distance, Canberra distance,
-Minkowski distance, Cosine distance, Bhattacharyya distance, Jaccard distance,
-Hellinger distance, Bray-Curtis distance, Sorensen-Dice distance between each
-pair of species in a list of data frames.  These metrics are fundamental in
-various fields, such as cluster analysis, classification, and other applications
-of machine learning and data mining, where assessing similarity or dissimilarity
-between data is crucial.  The package is designed to be flexible and easily
-integrated into data analysis workflows, providing reliable tools for evaluating
-distances in multidimensional contexts.")
+Minkowski dissimilarity (distance defined for p >= 1), Cosine dissimilarity,
+Bhattacharyya dissimilarity, Jaccard distance, Hellinger distance, Bray-Curtis
+dissimilarity, Sorensen-Dice dissimilarity between each pair of species in a
+list of data frames.  These statistics are fundamental in various fields, such
+as cluster analysis, classification, and other applications of machine learning
+and data mining, where assessing similarity or dissimilarity between data is
+crucial.  The package is designed to be flexible and easily integrated into data
+analysis workflows, providing reliable tools for evaluating distances in
+multidimensional contexts.")
     (license license:gpl3)))
 
 (define-public r-cmaes
@@ -31364,19 +31396,24 @@ implemented models are based on Leloup and Goldbeter (1998)
 (define-public r-clockplot
   (package
     (name "r-clockplot")
-    (version "0.7.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clockplot" version))
        (sha256
-        (base32 "1hxf7wjpm8nn8ljxzviahcgyg2aps440ckfjq83jbwxsf8cv2cgf"))))
+        (base32 "1h67cghch1f81xnd3m8vflzcz33mw5sxdmyvl995mv083vygj2ri"))))
     (properties `((upstream-name . "clockplot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-tibble r-hms r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-hms
+                             r-ggplot2
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mahmudstat/clockplot/")
     (synopsis "Plot Event Times on a 24-Hour Clock")
@@ -35235,25 +35272,25 @@ used within the analysis of the paper.")
 (define-public r-cirls
   (package
     (name "r-cirls")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cirls" version))
        (sha256
-        (base32 "0aw5cvn7841ayr2sb4qafjz2jy03i9k8nvpcls3zivjymynn2cx4"))))
+        (base32 "09bqw2zv6yzjn5zfr4p1lv5i4s5jf7i6qy5hc3hnmddaqxbbd578"))))
     (properties `((upstream-name . "cirls")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-truncatednormal r-quadprog r-osqp r-coneproj))
+    (propagated-inputs (list r-truncatednormal r-quadprog r-osqp r-limsolve
+                             r-coneproj))
     (home-page "https://github.com/PierreMasselot/cirls")
     (synopsis "Constrained Iteratively Reweighted Least Squares")
     (description
-     "Routines to fit generalized linear models with constrained coefficients, along
-with inference on the coefficients.  Designed to be used in conjunction with the
-base @code{glm()} function.")
+     "Fitting and inference functions for generalized linear models with constrained
+coefficients.")
     (license license:gpl3+)))
 
 (define-public r-circumplex
@@ -43436,6 +43473,43 @@ which was extended and enhanced by Giessing and Tent (2019)
 <https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.46/2019/mtg1/SDC2019_S2_Germany_Giessing_Tent_AD.pdf>.")
     (license license:gpl2)))
 
+(define-public r-cellgeometry
+  (package
+    (name "r-cellgeometry")
+    (version "0.5.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cellGeometry" version))
+       (sha256
+        (base32 "02746c19632fcmskb18if3nrmwncsbqagx8ai0r30vqklnsxq4rj"))))
+    (properties `((upstream-name . "cellGeometry")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-pbmcapply
+                             r-mcprogress
+                             r-matrixstats
+                             r-gtools
+                             r-ggrepel
+                             r-ggplot2
+                             r-ensembldb
+                             r-dplyr
+                             r-delayedarray
+                             r-complexheatmap
+                             r-circlize))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cellGeometry")
+    (synopsis "Geometric Single Cell Deconvolution")
+    (description
+     "Deconvolution of bulk RNA-Sequencing data into proportions of cells based on a
+reference single-cell RNA-Sequencing dataset using high-dimensional geometric
+methodology.")
+    (license license:gpl3+)))
+
 (define-public r-cego
   (package
     (name "r-cego")
@@ -46978,13 +47052,13 @@ Kang, and Lee (2025+) <doi:10.48550/@code{arXiv.2506.19010>}.")
 (define-public r-causact
   (package
     (name "r-causact")
-    (version "0.5.8")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causact" version))
        (sha256
-        (base32 "17x356dn8pxrb302v7k03mnlyy2s7h3965f3j0b1xn7b0hpgz5nc"))))
+        (base32 "0gwbwmbpfykrg39b1s1lwxsrzg86bq637d3663wplsqsriqycpfy"))))
     (properties `((upstream-name . "causact")))
     (build-system r-build-system)
     (arguments

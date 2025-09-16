@@ -1165,13 +1165,13 @@ metadata handling, and several convenience functions.")
 (define-public r-quest
   (package
     (name "r-quest")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quest" version))
        (sha256
-        (base32 "0a3slzskacp0pj0whnnqysqiclf6fby5x81i4mjdvckidgdyjprf"))))
+        (base32 "0fg6a598py5h19xv2n13sgqybd589c9w66nmql2xq3k84vbdjflg"))))
     (properties `((upstream-name . "quest")))
     (build-system r-build-system)
     (arguments
@@ -3114,13 +3114,13 @@ causality for pairs of phenotypes in system genetics.  Genetics 193 : 1003-1013.
 (define-public r-qtlemm
   (package
     (name "r-qtlemm")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QTLEMM" version))
        (sha256
-        (base32 "10dn9am7qhkv5xy1jb9sx1x9l27q9632f678bq94bgid9g43xlf8"))))
+        (base32 "1c6mqxiwbysmipkjr13734sqhf80nbmzvkzqpgsihs290cxpm5y6"))))
     (properties `((upstream-name . "QTLEMM")))
     (build-system r-build-system)
     (arguments

@@ -18,7 +18,6 @@
   #:use-module (gnu packages tls)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages compression)
-  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages gettext)
   #:use-module (gnu packages sqlite)
@@ -1274,13 +1273,13 @@ into literature are given in vignette.")
 (define-public r-pvaluefunctions
   (package
     (name "r-pvaluefunctions")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pvaluefunctions" version))
        (sha256
-        (base32 "10dxzbz6fw01qgfm6mmxb1xy14pwxgif0d603m3x146337pccc7q"))))
+        (base32 "1zmic5gh5rv27axg512sa8b1jihk8391agk0pzbsjm3kynr7ys7q"))))
     (properties `((upstream-name . "pvaluefunctions")))
     (build-system r-build-system)
     (arguments
@@ -1512,13 +1511,13 @@ explore multivariate statistical data through animation.")
 (define-public r-purrrlyr
   (package
     (name "r-purrrlyr")
-    (version "0.0.8")
+    (version "0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "purrrlyr" version))
        (sha256
-        (base32 "0ql08dka07wi1cxjcn12pxj00j0cm112074l7byj9vmi3rlqynh8"))))
+        (base32 "05pfmnlfmbpr27i1zvfxf5aam9jki5w2zn63wxzjbacz5067pig0"))))
     (properties `((upstream-name . "purrrlyr")))
     (build-system r-build-system)
     (arguments
@@ -8536,13 +8535,13 @@ from and fitting ordinary hidden Markov models.")
 (define-public r-processpredictr
   (package
     (name "r-processpredictr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "processpredictR" version))
        (sha256
-        (base32 "161gbyq21j5yip5p8p235mvcffchm7c8ksks1z7q5cwbrilcx380"))))
+        (base32 "0dl3hk5whnz3dhq144x80mka05k03iq7bwakkclvjp94r9ycyqj1"))))
     (properties `((upstream-name . "processpredictR")))
     (build-system r-build-system)
     (arguments
@@ -8555,7 +8554,6 @@ from and fitting ordinary hidden Markov models.")
                              r-rlang
                              r-reticulate
                              r-purrr
-                             r-progress
                              r-plotly
                              r-mltools
                              r-magrittr
@@ -8563,6 +8561,7 @@ from and fitting ordinary hidden Markov models.")
                              r-glue
                              r-ggplot2
                              r-forcats
+                             r-eventdatar
                              r-edear
                              r-dplyr
                              r-data-table
@@ -8574,11 +8573,11 @@ from and fitting ordinary hidden Markov models.")
     (description
      "Means to predict process flow, such as process outcome, next activity, next
 time, remaining time, and remaining trace.  Off-the-shelf predictive models
-based on the concept of Transformers are provided, as well as multiple ways to
+based on the concept of Transformers are provided, as well as multiple way to
 customize the models.  This package is partly based on work described in Zaharah
 A. Bukhsh, Aaqib Saeed, & Remco M. Dijkman. (2021). \"@code{ProcessTransformer}:
 Predictive Business Process Monitoring with Transformer Network\"
-<@code{arXiv:2104.00721>}.")
+<doi:10.48550/@code{arXiv.2104.00721>}.")
     (license license:expat)))
 
 (define-public r-processmonitr
@@ -8745,7 +8744,7 @@ and combinations of common English or Spanish words.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list tensorflow python))
+    (inputs (list python))
     (propagated-inputs (list r-rcpp r-keras))
     (home-page "https://cran.r-project.org/package=ProcData")
     (synopsis "Process Data Analysis")
@@ -10572,13 +10571,13 @@ sampling and characterizing price data.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PriceIndices" version))
        (sha256
-        (base32 "00vjank2xvf99l59g72hl675vd60j9ymmd3mb17pfscqvw07mc96"))))
+        (base32 "15hfmr5sl5n6260p8warz2p916srp7qnyagy80p2jlssx3clagdz"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (arguments
@@ -11708,6 +11707,39 @@ files for similar reports.  Add in external HTML document within rmarkdown
 rendered HTML doc.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-pregnancy
+  (package
+    (name "r-pregnancy")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pregnancy" version))
+       (sha256
+        (base32 "14flb8gnlgjqsl1gngjzqhc6xr6xc6ynq0qrfvgdmx79agzlff8x"))))
+    (properties `((upstream-name . "pregnancy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-lubridate r-dplyr r-cli r-anytime))
+    (native-inputs (list r-knitr))
+    (home-page "https://ellakaye.github.io/pregnancy/")
+    (synopsis "Calculate and Track Dates and Medications During Pregnancy")
+    (description
+     "This package provides functionality for calculating pregnancy-related dates and
+tracking medications during pregnancy and fertility treatment.  Calculates due
+dates from various starting points including last menstrual period and IVF (In
+Vitro Fertilisation) transfer dates, determines pregnancy progress on any given
+date, and identifies when specific pregnancy weeks are reached.  Includes
+medication tracking capabilities for individuals undergoing fertility treatment
+or during pregnancy, allowing users to monitor remaining doses and quantities
+needed over specified time periods.  Designed for those tracking their own
+pregnancies or supporting partners through the process, making use of options to
+personalise output messages.  For details on due date calculations, see
+<https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2017/05/methods-for-estimating-the-due-date>.")
+    (license license:expat)))
 
 (define-public r-prefmod
   (package
@@ -14112,13 +14144,13 @@ have been extracted from documentation of the PPI found at
 (define-public r-ppgmmga
   (package
     (name "r-ppgmmga")
-    (version "1.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppgmmga" version))
        (sha256
-        (base32 "0ms6pqhdvws6dp27mgvwdm039h6z3psgbdmy2k6wq1wqr5jbsiz1"))))
+        (base32 "17nbxhcs8g9rd7xv0fj95n1kh777rcx9cbkwhcax1fy4y01rja1f"))))
     (properties `((upstream-name . "ppgmmga")))
     (build-system r-build-system)
     (arguments
@@ -19811,6 +19843,48 @@ created @code{hexSticker} as PNG image.  polaroid is built based on
 @code{argonDash}', colourpicker and @code{hexSticker} R package.")
     (license license:expat)))
 
+(define-public r-polarisr
+  (package
+    (name "r-polarisr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "polarisR" version))
+       (sha256
+        (base32 "1v201iimqs8bnjfll48z2bckzf5vkcz6qbr6xxrnd9a6fnmsdiwq"))))
+    (properties `((upstream-name . "polarisR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-umap
+                             r-tourr
+                             r-shiny
+                             r-scales
+                             r-rtsne
+                             r-quollr
+                             r-plotly
+                             r-magrittr
+                             r-ggplot2
+                             r-future
+                             r-fnn
+                             r-dt
+                             r-dplyr
+                             r-detourr
+                             r-crosstalk
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Divendra2006/polarisR")
+    (synopsis "Non-Linear Dimensionality Reduction Visualization Tool")
+    (description
+     "This package provides a shiny application for visualizing high-dimensional data
+using non-linear dimensionality reduction (NLDR) techniques such as t-SNE and
+UMAP. It provides an interactive platform to explore high-dimensional datasets,
+diagnose the quality of the embeddings using the quollr package, and compare
+different NLDR methods.")
+    (license license:expat)))
+
 (define-public r-polarcap
   (package
     (name "r-polarcap")
@@ -20974,6 +21048,32 @@ nonlinear optimisation.  See <https://en.wikipedia.org/wiki/Congestion_game> and
 Knight and Harper (2013) <doi:10.1016/j.ejor.2013.04.003> for more information.")
     (license license:gpl2)))
 
+(define-public r-pnt
+  (package
+    (name "r-pnt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PnT" version))
+       (sha256
+        (base32 "1v71xr40r1m2z0agxdvk6i0w7vx9d0nqkky16s1gcq2ir1y2k41h"))))
+    (properties `((upstream-name . "PnT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PnT")
+    (synopsis "Peak Finder")
+    (description
+     "This program contains a function to find the peaks and troughs of a data set.
+It filters the set of peaks to remove noise based on the expected height and
+expected slope of a peak.  Peaks that are too short (caused by random noise), or
+too shallow (part of the background data) are filtered out.")
+    (license license:expat)))
+
 (define-public r-pnsibge
   (package
     (name "r-pnsibge")
@@ -21789,13 +21889,13 @@ Project Management Institute, Newtown Square, PA, ISBN 9781628256673 (pdf)).")
 (define-public r-pmetar
   (package
     (name "r-pmetar")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmetar" version))
        (sha256
-        (base32 "1x5kdihz5injh02n3yyr2hqy4r20chxyaph5pj59hkxlkys797aq"))))
+        (base32 "1ycx0617aq9w4pfsy2izpn9fsz0rafr4p3hz085w7c2p1a4basjh"))))
     (properties `((upstream-name . "pmetar")))
     (build-system r-build-system)
     (arguments
@@ -21806,7 +21906,7 @@ Project Management Institute, Newtown Square, PA, ISBN 9781628256673 (pdf)).")
                              r-rcurl
                              r-magrittr
                              r-lubridate
-                             r-httr
+                             r-httr2
                              r-dplyr
                              r-curl))
     (native-inputs (list r-knitr))
@@ -22424,13 +22524,13 @@ regression and classification is supported.")
 (define-public r-plsrglm
   (package
     (name "r-plsrglm")
-    (version "1.5.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plsRglm" version))
        (sha256
-        (base32 "1xpf4rz4midrl62yn39bq4ax5yl8h18kcyv2ckxis888yv5b1bqr"))))
+        (base32 "0kk251zncg3lmxbphslch7bpwv6azwkc40k7a2151fbd0nl42abd"))))
     (properties `((upstream-name . "plsRglm")))
     (build-system r-build-system)
     (arguments
@@ -22447,21 +22547,21 @@ regression and classification is supported.")
     (description
      "This package provides (weighted) Partial least squares Regression for
 generalized linear models and repeated k-fold cross-validation of such models
-using various criteria <@code{arXiv:1810.01005>}.  It allows for missing data in
-the explanatory variables.  Bootstrap confidence intervals constructions are
-also available.")
+using various criteria <doi:10.48550/@code{arXiv.1810.01005>}.  It allows for
+missing data in the explanatory variables.  Bootstrap confidence intervals
+constructions are also available.")
     (license license:gpl3)))
 
 (define-public r-plsrcox
   (package
     (name "r-plsrcox")
-    (version "1.7.7")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plsRcox" version))
        (sha256
-        (base32 "1fkbynjlwi070yshnqcmw2f331yzr61f1mvm5dbw3iwg9ldhcbwr"))))
+        (base32 "0cgng4q10562bk4fsl7i77w9kd9zdgdcy9fvfgr3sq46drg55rlf"))))
     (properties `((upstream-name . "plsRcox")))
     (build-system r-build-system)
     (arguments
@@ -22477,7 +22577,7 @@ also available.")
                              r-mixomics
                              r-lars
                              r-kernlab))
-    (home-page "http://fbertran.github.io/plsRcox/")
+    (home-page "https://fbertran.github.io/plsRcox/")
     (synopsis
      "Partial Least Squares Regression for Cox Models and Related Techniques")
     (description
@@ -22486,10 +22586,10 @@ sparse or kernel, techniques for fitting Cox models in high dimensional settings
 <doi:10.1093/bioinformatics/btu660>, Bastien, P., Bertrand, F., Meyer N.,
 Maumy-Bertrand, M. (2015), Deviance residuals-based sparse PLS and sparse kernel
 PLS regression for censored data, Bioinformatics, 31(3):397-404.  Cross
-validation criteria were studied in <@code{arXiv:1810.02962>}, Bertrand, F.,
-Bastien, Ph.  and Maumy-Bertrand, M. (2018), Cross validating extensions of
-kernel, sparse or regular partial least squares regression models to censored
-data.")
+validation criteria were studied in <doi:10.48550/@code{arXiv.1810.02962>},
+Bertrand, F., Bastien, Ph.  and Maumy-Bertrand, M. (2018), Cross validating
+extensions of kernel, sparse or regular partial least squares regression models
+to censored data.")
     (license license:gpl3)))
 
 (define-public r-plsrbeta
@@ -22709,13 +22809,13 @@ adaptive version of the sparse PLS.")
 (define-public r-plsdof
   (package
     (name "r-plsdof")
-    (version "0.3-2")
+    (version "0.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plsdof" version))
        (sha256
-        (base32 "1bqk98f9zyi4hvna1sfx4fwiivndlwanjaphlqa03bg6bghcj60p"))))
+        (base32 "1l1fm2vj90k1d1sh5f8s7w3zh4nhw6xqrv6p58nqs54ngbbyklm7"))))
     (properties `((upstream-name . "plsdof")))
     (build-system r-build-system)
     (arguments
@@ -28906,22 +29006,22 @@ it has functions for IDW interpolation using genetic data and midpoints.")
 (define-public r-phylepic
   (package
     (name "r-phylepic")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylepic" version))
        (sha256
-        (base32 "16ll8w5zsdiw48rhz3gl3svp7xiwjap0bwy6hpjpyvsk6dzjx3mi"))))
+        (base32 "1ljfwb2n7ii99flywip0sv8cnxdam51phfqiky55abqv53ml9c8g"))))
     (properties `((upstream-name . "phylepic")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-tidygraph
+    (propagated-inputs (list r-tidygraph
                              r-scales
                              r-rlang
+                             r-lifecycle
                              r-igraph
                              r-ggraph
                              r-ggplot2
@@ -29344,13 +29444,13 @@ Salesse-Smith, & @code{McGrath} (2025) <doi:10.1111/pce.15501>.")
 (define-public r-photobiologywavebands
   (package
     (name "r-photobiologywavebands")
-    (version "0.5.2")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyWavebands" version))
        (sha256
-        (base32 "0p4as2kpcjy0mc38pmjjlpngbf4568zn5rpz9rhrlc0ynarrgnzj"))))
+        (base32 "0ynr597gdbg8yi1s7kci7pmcp6nmmfw5y79xv9waqw26yqxdv8fd"))))
     (properties `((upstream-name . "photobiologyWavebands")))
     (build-system r-build-system)
     (arguments
@@ -32832,6 +32932,40 @@ Aprueban categorizacion de especies amenazadas de flora
 silvestre`<https://sinia.minam.gob.pe/normas/aprueban-categorizacion-especies-amenazadas-flora-silvestre>.")
     (license license:expat)))
 
+(define-public r-peruapis
+  (package
+    (name "r-peruapis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PeruAPIs" version))
+       (sha256
+        (base32 "0dpbdr32bx1mirzc618szq8vcdbgkjd4prn6lk4i6lagwmak5mrz"))))
+    (properties `((upstream-name . "PeruAPIs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-scales r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/peruapis")
+    (synopsis "Access Peruvian Data via Public APIs and Curated Datasets")
+    (description
+     "This package provides functions to access data from public RESTful APIs
+including Nager.Date', World Bank API', and REST Countries API', retrieving
+real-time or historical data related to Peru, such as holidays, economic
+indicators, and international demographic and geopolitical indicators.
+Additionally, the package includes curated datasets focused on Peru, covering
+topics such as administrative divisions, electoral data, demographics,
+biodiversity and educational classifications.  The package supports reproducible
+research and teaching by integrating reliable international APIs and structured
+datasets from public, academic, and government sources.  For more information on
+the APIs, see: Nager.Date <https://date.nager.at/Api>, World Bank API
+<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, and REST
+Countries API <https://restcountries.com/>.")
+    (license license:expat)))
+
 (define-public r-perturbr
   (package
     (name "r-perturbr")
@@ -34180,13 +34314,13 @@ development.")
 (define-public r-peperr
   (package
     (name "r-peperr")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "peperr" version))
        (sha256
-        (base32 "0045bc206y13467kw5xh3awkwcz24sb5xmdcgh5x1w6q1cab7ygp"))))
+        (base32 "1p6ijvpcywaj90xnb0ayjh90vs095gdzg16q0k0rvj7y86fam6zj"))))
     (properties `((upstream-name . "peperr")))
     (build-system r-build-system)
     (arguments
@@ -34201,7 +34335,7 @@ accelerated by parallel execution on a compute cluster.  Newly developed model
 fitting routines can be easily incorporated.  Methods used in the package are
 detailed in Porzelius Ch., Binder H. and Schumacher M. (2009)
 <doi:10.1093/bioinformatics/btp062> and were used, for instance, in Porzelius
-Ch., Schumacher M.and Binder H. (2011) <doi:10.1007/s00180-011-0236-6>.")
+Ch., Schumacher M. and Binder H. (2011) <doi:10.1007/s00180-011-0236-6>.")
     (license license:gpl2+)))
 
 (define-public r-pepe
@@ -34749,13 +34883,13 @@ ICML2013.")
 (define-public r-penalizedsvm
   (package
     (name "r-penalizedsvm")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "penalizedSVM" version))
        (sha256
-        (base32 "1vafdczbqrwj9cagjd7la81jsrqkn917sxppxvz3i608yfl32igl"))))
+        (base32 "143z6a5qik1bbxxgh602bd2cnv37igdd1aq5c722c9q3g6lnpzvi"))))
     (properties `((upstream-name . "penalizedSVM")))
     (build-system r-build-system)
     (arguments
@@ -34767,7 +34901,7 @@ ICML2013.")
                              r-mass
                              r-e1071
                              r-corpcor))
-    (home-page "https://cran.r-project.org/package=penalizedSVM")
+    (home-page "https://github.com/fbertran/penalizedSVM")
     (synopsis "Feature Selection SVM using Penalty Functions")
     (description
      "Support Vector Machine (SVM) classification with simultaneous feature selection
@@ -39404,13 +39538,13 @@ detection algorithm performance (<https://pubmed.ncbi.nlm.nih.gov/34258524/>).")
 (define-public r-patterns
   (package
     (name "r-patterns")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Patterns" version))
        (sha256
-        (base32 "08fh7vj0c3ishb6m4vgka6nnhi3dhcagldq4y7qwcakgw4nlcpvf"))))
+        (base32 "073p4fcfy97abrffrqaaixgfnplx2pnr9nid2q5ma4mk0yhwfa88"))))
     (properties `((upstream-name . "Patterns")))
     (build-system r-build-system)
     (arguments
@@ -39427,7 +39561,6 @@ detection algorithm performance (<https://pubmed.ncbi.nlm.nih.gov/34258524/>).")
                              r-limma
                              r-lattice
                              r-lars
-                             r-jetset
                              r-igraph
                              r-gplots
                              r-e1071
@@ -39981,19 +40114,19 @@ endpoints require the use of an API key which can be obtained at
 (define-public r-pathling
   (package
     (name "r-pathling")
-    (version "7.0.0")
+    (version "8.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathling" version))
        (sha256
-        (base32 "092pff81qg3pypygakihabi64kgw1fvdsn2pbkcvhnfa07yrirm1"))))
+        (base32 "1xzyjhjig49q4j26agmy12njrxngamwazm6s5v221b5x2n1apfkb"))))
     (properties `((upstream-name . "pathling")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sparklyr r-rlang))
+    (propagated-inputs (list r-sparklyr r-rlang r-purrr r-jsonlite))
     (home-page "https://pathling.csiro.au/")
     (synopsis "Library for using 'Pathling'")
     (description
@@ -43838,13 +43971,13 @@ complements the @code{base::plot()} work flow.")
 (define-public r-palette
   (package
     (name "r-palette")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "palette" version))
        (sha256
-        (base32 "1a19pf7aq6fj1v15almnin8rmz3xwf34ddxg81887ljd9sp7j8vg"))))
+        (base32 "08cdr8g398zjxahdjzinswma06ndls127kyf4s2nncgli93pixzm"))))
     (properties `((upstream-name . "palette")))
     (build-system r-build-system)
     (arguments
@@ -44824,13 +44957,13 @@ further factors.  CI are not adjusted for multiplicity.")
 (define-public r-pairwise
   (package
     (name "r-pairwise")
-    (version "0.6.1-0")
+    (version "0.6.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pairwise" version))
        (sha256
-        (base32 "03dvpyr0hdz5a4wdim791m69825q762pwahlv3vwlnqas7niw3mf"))))
+        (base32 "1hb95rb47vnihcw8d05kasg33y5gil558rx0n4fb9vxl9lglb33z"))))
     (properties `((upstream-name . "pairwise")))
     (build-system r-build-system)
     (arguments

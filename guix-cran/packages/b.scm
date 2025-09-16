@@ -1272,13 +1272,13 @@ the supply chain.  Marchena Marlene (2010) <@code{arXiv:1009.3977>}.")
 (define-public r-bullseye
   (package
     (name "r-bullseye")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bullseye" version))
        (sha256
-        (base32 "0cjccsf08hahpf7z9vxv7kqrfm59vi44b5hd2qlfvi7fsqby7ycf"))))
+        (base32 "0cj7hjksa3ggnfdpxwrj6j1xqgwjcg5slmv41yxc40nvk3mamlwj"))))
     (properties `((upstream-name . "bullseye")))
     (build-system r-build-system)
     (arguments
@@ -4170,6 +4170,41 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
 <doi:10.1016/j.jspi.2020.12.001>.")
     (license license:asl2.0)))
 
+(define-public r-broadcast
+  (package
+    (name "r-broadcast")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "broadcast" version))
+       (sha256
+        (base32 "1n6ha7hmpsbwzrqjk9q29wfgs95jd4b97sm5a3zrln5qq001ym9j"))))
+    (properties `((upstream-name . "broadcast")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/tony-aw/broadcast")
+    (synopsis "Broadcasted Array Operations Like 'NumPy'")
+    (description
+     "This package implements efficient @code{NumPy'-like} broadcasted operations for
+atomic and recursive arrays.  Besides linking to Rcpp', broadcast does not use
+any external libraries in any way; broadcast was essentially made from scratch
+and can be installed out-of-the-box.  The implementations available in broadcast
+include, but are not limited to, the following.  1) Broadcasted element-wise
+operations on any 2 arrays; they support a large set of relational, arithmetic,
+Boolean, string, and bit-wise operations.  2) A faster, more memory efficient,
+and broadcasted abind-like function, for binding arrays along an arbitrary
+dimension.  3) Broadcasted ifelse-like, and apply-like functions.  4) Casting
+functions, that cast subset-groups of an array to a new dimension, cast nested
+lists to dimensional lists, and vice-versa.  5) A few linear algebra functions
+for statistics.  The functions in the broadcast package strive to minimize
+computation time and memory usage (which is not just good for efficient
+computing, but also for the environment).")
+    (license (license:fsdg-compatible "MPL-2.0"))))
+
 (define-public r-brnn
   (package
     (name "r-brnn")
@@ -5270,34 +5305,36 @@ environmental contexts.")
 (define-public r-brazildataapi
   (package
     (name "r-brazildataapi")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BrazilDataAPI" version))
        (sha256
-        (base32 "0j2nfj9prm2dq9g7kcffsi86gizj1z5vv22n125vpms4xxhfsskj"))))
+        (base32 "144livvp8snm7zh4qmxg719m7w19g87kx2j7kc56z56shcba1w22"))))
     (properties `((upstream-name . "BrazilDataAPI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr r-dplyr))
+    (propagated-inputs (list r-tibble r-scales r-jsonlite r-httr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lightbluetitan/brazildataapi")
-    (synopsis
-     "Access Brazilian Economic, Demographic, Environmental, and Geopolitical Data via RESTful APIs and Curated Datasets")
+    (synopsis "Access Brazilian Data via APIs and Curated Datasets")
     (description
-     "This package provides functions to access data from the @code{BrasilAPI} and the
-REST Countries API', related to Brazil's postal codes, banks, holidays, company
-registrations, and international country indicators.  Additionally, the package
-includes curated datasets related to Brazil, covering topics such as demographic
-data (males and females by state and year), river levels, environmental emission
-factors, film festivals, and yellow fever outbreak records.  The package
-supports research and analysis focused on Brazil by integrating open APIs with
-high-quality datasets from multiple domains.  For more details on the
-@code{BrasilAPI}', see <https://brasilapi.com.br/>, and for REST Countries', see
-<https://restcountries.com/>.")
+     "This package provides functions to access data from the @code{BrasilAPI}', REST
+Countries API', Nager.Date API', and World Bank API', related to Brazil's postal
+codes, banks, holidays, company registrations, international country indicators,
+public holidays information, and economic development data.  Additionally, the
+package includes curated datasets related to Brazil, covering topics such as
+demographic data (males and females by state and year), river levels,
+environmental emission factors, film festivals, and yellow fever outbreak
+records.  The package supports research and analysis focused on Brazil by
+integrating open APIs with high-quality datasets from multiple domains.  For
+more information on the APIs, see: @code{BrasilAPI} <https://brasilapi.com.br/>,
+Nager.Date <https://date.nager.at/Api>, World Bank API
+<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, and REST
+Countries API <https://restcountries.com/>.")
     (license license:gpl3)))
 
 (define-public r-brazilcrime
@@ -7552,13 +7589,13 @@ Prediction Intervals for Autoregressive Time Series.")
 (define-public r-bootpls
   (package
     (name "r-bootpls")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootPLS" version))
        (sha256
-        (base32 "1sk7327fwqhy9arxn2shlxhflg4i99864wqs782jh325z18nqxwb"))))
+        (base32 "0n8i6kkz74zm8gb5rbqvr409xqy2ws252dbsdmzxfkn05zs2bd07"))))
     (properties `((upstream-name . "bootPLS")))
     (build-system r-build-system)
     (arguments
@@ -8062,13 +8099,13 @@ and time using gradient boosting approach.")
 (define-public r-boostmath
   (package
     (name "r-boostmath")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boostmath" version))
        (sha256
-        (base32 "1hgr70mnkcqydgqdzrcqk2pj7wnga565gz0xfnaz5larlb52d9im"))))
+        (base32 "1q4qswlll5ph8pd8ql83jwixsr6almbm2hksyxbn2hi5y2qr8lad"))))
     (properties `((upstream-name . "boostmath")))
     (build-system r-build-system)
     (arguments
@@ -11616,6 +11653,46 @@ distribution given in the form of a time series of asset returns and a
 continuous distribution of views provided by the user as an external function.")
     (license license:gpl3)))
 
+(define-public r-blmengineinr
+  (package
+    (name "r-blmengineinr")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BLMEngineInR" version))
+       (sha256
+        (base32 "1lvjzxqc6pcvmzpdm4nymcqwwfbc9hzk9b0rx0p1hqnbxfm0vk5g"))))
+    (properties `((upstream-name . "BLMEngineInR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-openxlsx))
+    (home-page "https://www.windwardenv.com/biotic-ligand-model/")
+    (synopsis "Biotic Ligand Model Engine")
+    (description
+     "This package provides a chemical speciation and toxicity prediction model for
+the toxicity of metals to aquatic organisms.  The Biotic Ligand Model (BLM)
+engine was originally programmed in @code{PowerBasic} by Robert Santore and
+others.  The main way the BLM can be used is to predict the toxicity of a metal
+to an organism with a known sensitivity (i.e., it is known how much of that
+metal must accumulate on that organism's biotic ligand to cause a physiological
+effect in a certain percentage of the population, such as a 20% loss in
+reproduction or a 50% mortality rate).  The second way the BLM can be used is to
+estimate the chemical speciation of the metal and other constituents in water,
+including estimating the amount of metal accumulated to an organism's biotic
+ligand during a toxicity test.  In the first application of the BLM, the amount
+of metal associated with a toxicity endpoint, or regulatory limit will be
+predicted, while in the second application, the amount of metal is known and the
+portions of that metal that exist in various forms will be determined.  This
+version of the engine has been re-structured to perform the calculations in a
+different way that will make it more efficient in R, while also making it more
+flexible and easier to maintain in the future.  Because of this, it does not
+currently match the desktop model exactly, but we hope to improve this
+comparability in the future.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-blmeco
   (package
     (name "r-blmeco")
@@ -13987,13 +14064,13 @@ ISBN:978-1-118-62561-3) Levin & Chen (1999) <doi:10.1080/00031305.1999.10474431>
 (define-public r-biostatr
   (package
     (name "r-biostatr")
-    (version "4.0.2")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioStatR" version))
        (sha256
-        (base32 "0mjc3c2c6l7l7psfykjhwxl1i3a8pqqmri78jmllbk6qqfxd71yx"))))
+        (base32 "14jcn2aaz2is2k6dp51ac5kxx0j8smza9ndm6wwyy9fc1d5n1c9d"))))
     (properties `((upstream-name . "BioStatR")))
     (build-system r-build-system)
     (arguments
@@ -14627,13 +14704,13 @@ visualization tools are also available within the package.")
 (define-public r-biometryassist
   (package
     (name "r-biometryassist")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biometryassist" version))
        (sha256
-        (base32 "12r7qab3i1z8ahmfc7n55m5q2s1cs4bcqs07sjdf4rrqjlrclbd4"))))
+        (base32 "191b0j0y4cwb4927c6j58ngzad762as3s7hril7i1sdlb50ifrvn"))))
     (properties `((upstream-name . "biometryassist")))
     (build-system r-build-system)
     (arguments
@@ -16062,13 +16139,13 @@ functions to obtain boundary crossing probabilities given the design.")
 (define-public r-bingroup2
   (package
     (name "r-bingroup2")
-    (version "1.3.1")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binGroup2" version))
        (sha256
-        (base32 "000a8vci2sfxgbw412i0wajmnwgpx54zalcv4xhvyckh69i1z1db"))))
+        (base32 "0wpw8kxnhs499rpqsxlz1w3j2kb3jibgvfk6g0l2shhacl16a7w6"))))
     (properties `((upstream-name . "binGroup2")))
     (build-system r-build-system)
     (arguments
@@ -16082,7 +16159,7 @@ functions to obtain boundary crossing probabilities given the design.")
                              r-partitions
                              r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=binGroup2")
+    (home-page "https://github.com/bdhitt/binGroup2")
     (synopsis "Identification and Estimation using Group Testing")
     (description
      "This package provides methods for the group testing identification problem: 1)
@@ -22752,6 +22829,33 @@ al. (2017) <doi:10.1093/biostatistics/kxx002>.")
 like quick plotting and map generating using data from bank.")
     (license license:gpl3)))
 
+(define-public r-bdf3
+  (package
+    (name "r-bdf3")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bdf3" version))
+       (sha256
+        (base32 "08mslpavgydjsvm356767n2vn98mrqs6pb1bv7xxrfb2h9kz6p3j"))))
+    (properties `((upstream-name . "bdf3")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://cran.r-project.org/package=bdf3")
+    (synopsis
+     "Efficient Block Designs for 3-Level Factorial Experiments in Block Size 3")
+    (description
+     "This package provides functions to construct efficient block designs for 3-level
+factorial experiments in block size 3.  The designs ensure the estimation of all
+main effects and two-factor interactions in minimum number of replications.  For
+more details, see Dey and Mukerjee (2012) <doi:10.1016/j.spl.2012.06.014> and
+Dash, S., Parsad, R. and Gupta, V.K. (2013) <doi:10.1007/s40003-013-0059-5>.")
+    (license license:gpl3)))
+
 (define-public r-bdesize
   (package
     (name "r-bdesize")
@@ -22832,6 +22936,31 @@ lower.limit and upper.limit are values that can be set by the user.")
      "The shiny application @code{bdDwC} makes biodiversity data field names Darwin
 Core compatible.")
     (license license:gpl3)))
+
+(define-public r-bddkr
+  (package
+    (name "r-bddkr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bddkR" version))
+       (sha256
+        (base32 "0qpm88wkgs0ga57x6a8fg1w1dp0g0dnrdns6abw7m1kf0j8hlgy2"))))
+    (properties `((upstream-name . "bddkR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl r-lubridate r-jsonlite r-httr r-dplyr))
+    (home-page "https://github.com/ozancanozdemir/bddkR")
+    (synopsis "Gathering Monthly Banking Sector Data from BDDK of Turkey")
+    (description
+     "Fetches monthly financial tables and banking sector data published on the
+official website of the Banking Regulation and Supervision Agency of Turkey and
+also enables you to save it as an Excel file.  It is a R implementation of the
+Python package <https://pypi.org/project/bddkdata/>.")
+    (license license:expat)))
 
 (define-public r-bdc
   (package
@@ -24811,13 +24940,13 @@ Chipman, George, @code{McCulloch} (2010).")
 (define-public r-bayestools
   (package
     (name "r-bayestools")
-    (version "0.2.21")
+    (version "0.2.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesTools" version))
        (sha256
-        (base32 "1wax72y3sx728wg67gzp545lyp8hx9hp4gxmcdbmib0p8xx69p6j"))))
+        (base32 "10n7h877hancdcgablb9c4fj1bsjsprgz5znrdvycby6kr8vn2p8"))))
     (properties `((upstream-name . "BayesTools")))
     (build-system r-build-system)
     (arguments
@@ -32844,13 +32973,13 @@ add-in that can be bound to a keyboard shortcut.")
 (define-public r-backbone
   (package
     (name "r-backbone")
-    (version "2.1.5")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "backbone" version))
        (sha256
-        (base32 "0pan4lpmr02d57kp0xjj0vj4g7ba548f839w5k1lmsgqaybzqwq2"))))
+        (base32 "1b1yigz8jqavw064gyxx5pvzi06734iy36rzp7jlqk13wmjlghk6"))))
     (properties `((upstream-name . "backbone")))
     (build-system r-build-system)
     (arguments
@@ -32859,12 +32988,13 @@ add-in that can be bound to a keyboard shortcut.")
     (propagated-inputs (list r-rcpp r-matrix r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://www.zacharyneal.com/backbone")
-    (synopsis "Extracts the Backbone from Graphs")
+    (synopsis "Extracts the Backbone from Networks")
     (description
-     "An implementation of methods for extracting an unweighted unipartite graph (i.e.
- a backbone) from an unweighted unipartite graph, a weighted unipartite graph,
-the projection of an unweighted bipartite graph, or the projection of a weighted
-bipartite graph (Neal, 2022 <doi:10.1371/journal.pone.0269137>).")
+     "An implementation of methods for extracting a sparse unweighted network (i.e.  a
+backbone) from an unweighted network (e.g., Hamann et al., 2016
+<doi:10.1007/s13278-016-0332-2>), a weighted network (e.g., Serrano et al., 2009
+<doi:10.1073/pnas.0808904106>), or a weighted projection (e.g., Neal et al.,
+2021 <doi:10.1038/s41598-021-03238-3>).")
     (license license:gpl3)))
 
 (define-public r-bacistool

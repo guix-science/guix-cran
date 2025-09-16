@@ -28,7 +28,6 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages video)
   #:use-module (gnu packages sqlite)
-  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages perl)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -5174,6 +5173,40 @@ Excel file (e.g. for a Markov model, as often done by modellers and
 practitioners). <doi:10.18637/jss.v095.i14>.")
     (license license:gpl3+)))
 
+(define-public r-survgme
+  (package
+    (name "r-survgme")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurvGME" version))
+       (sha256
+        (base32 "0241j08wnxm6f3h5prh25y96m573kzmsdb8lqg481dyfv0n85gv4"))))
+    (properties `((upstream-name . "SurvGME")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-sna
+                             r-scales
+                             r-network
+                             r-ncvreg
+                             r-mass
+                             r-glmnet
+                             r-ggally
+                             r-ahaz))
+    (home-page "https://cran.r-project.org/package=SurvGME")
+    (synopsis
+     "Analysis of Survival Data under Graphical and Measurement Error Models")
+    (description
+     "The estimation method proposed by Chen and Yi (2021) <doi:10.1111/biom.13331> is
+extended to the analysis of survival data, accommodating commonly used survival
+models while accounting for measurement error and network structures among
+covariates.")
+    (license license:gpl3)))
+
 (define-public r-surveyvoi
   (package
     (name "r-surveyvoi")
@@ -7319,13 +7352,13 @@ Analysis for Factorial Analysis of Variance Designs\".
 (define-public r-superpixelimagesegmentation
   (package
     (name "r-superpixelimagesegmentation")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SuperpixelImageSegmentation" version))
        (sha256
-        (base32 "01j8p1vfnswy41b7nzmwml4aq8s00xwdk3zjcc1b6n9bqv0cgnaz"))))
+        (base32 "12g8imw8ws1nzi1saj8gmnz25vhhbhq2xaq1i3a6b3y7qy7msvgq"))))
     (properties `((upstream-name . "SuperpixelImageSegmentation")))
     (build-system r-build-system)
     (arguments
@@ -10337,13 +10370,13 @@ package vignette.")
 (define-public r-streamcattools
   (package
     (name "r-streamcattools")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StreamCatTools" version))
        (sha256
-        (base32 "1brvx4kwvw65ac0kq40yg5x268zp9aqyxi1zdz1127rh9yx6sfji"))))
+        (base32 "0il6adlkx32d8sc0a7iy85hfkicw7118mh2aajwas217q2n6ca40"))))
     (properties `((upstream-name . "StreamCatTools")))
     (build-system r-build-system)
     (arguments
@@ -10352,7 +10385,7 @@ package vignette.")
     (propagated-inputs (list r-sf r-nhdplustools r-jsonlite r-httr2 r-curl))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://usepa.github.io/StreamCatTools/")
-    (synopsis "StreamCat Tools")
+    (synopsis "'StreamCatTools'")
     (description
      "This package provides tools for using the @code{StreamCat} and @code{LakeCat}
 API and interacting with the @code{StreamCat} and @code{LakeCat} database.
@@ -14097,6 +14130,51 @@ used to retrieve tree height and diameter at breast height (DBH).
      "Manages and display stellar tracks and isochrones from Pisa low-mass database.
 Includes tools for isochrones construction and tracks interpolation.")
     (license license:gpl2+)))
+
+(define-public r-stelfi
+  (package
+    (name "r-stelfi")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stelfi" version))
+       (sha256
+        (base32 "0ksiq03pr9fr0h3g88lpagr83vijbs2zs732mshllf3470mwyzkk"))))
+    (properties `((upstream-name . "stelfi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmb
+                             r-tidyr
+                             r-sf
+                             r-rcppeigen
+                             r-matrix
+                             r-gridextra
+                             r-ggplot2
+                             r-fmesher
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cmjt/stelfi/")
+    (synopsis
+     "Hawkes and Log-Gaussian Cox Point Processes Using Template Model Builder")
+    (description
+     "Fit Hawkes and log-Gaussian Cox process models with extensions.  Introduced in
+Hawkes (1971) <doi:10.2307/2334319> a Hawkes process is a self-exciting temporal
+point process where the occurrence of an event immediately increases the chance
+of another.  We extend this to consider self-inhibiting process and a
+non-homogeneous background rate.  A log-Gaussian Cox process is a Poisson point
+process where the log-intensity is given by a Gaussian random field.  We extend
+this to a joint likelihood formulation fitting a marked log-Gaussian Cox model.
+In addition, the package offers functionality to fit self-exciting
+spatiotemporal point processes.  Models are fitted via maximum likelihood using
+TMB (Template Model Builder).  Where included 1) random fields are assumed to be
+Gaussian and are integrated over using the Laplace approximation and 2) a
+stochastic partial differential equation model, introduced by Lindgren, Rue, and
+LindstrÃ¶m. (2011) <doi:10.1111/j.1467-9868.2011.00777.x>, is defined for the
+field(s).")
+    (license license:gpl3+)))
 
 (define-public r-steiniv
   (package
@@ -17952,13 +18030,13 @@ Bechhofer, Santner, and Goldsman (1995, ISBN:978-0-471-57427-9).")
 (define-public r-sstvars
   (package
     (name "r-sstvars")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sstvars" version))
        (sha256
-        (base32 "0w6fawwwxqns40z3pwcw9zn16y56s1w51828h8rxdjjvgrc1p0id"))))
+        (base32 "05l1pn3dc7n5d0wk05q68dd1lkhj0br2p3pfv18qg9npwspq7liw"))))
     (properties `((upstream-name . "sstvars")))
     (build-system r-build-system)
     (arguments
@@ -17981,7 +18059,7 @@ generalized forecast error variance decompositions, as well as historical
 decompositions.  See Heather Anderson, Farshid Vahid (1998)
 <doi:10.1016/S0304-4076(97)00076-6>, Helmut LÃ¼tkepohl, Aleksei NetÅ¡unajev
 (2017) <doi:10.1016/j.jedc.2017.09.001>, Markku Lanne, Savi Virolainen (2025)
-<doi:10.48550/@code{arXiv.2403.14216>}, Savi Virolainen (2025)
+<doi:10.1016/j.jedc.2025.105162>, Savi Virolainen (2025)
 <doi:10.48550/@code{arXiv.2404.19707>}.")
     (license license:gpl3)))
 
@@ -19259,20 +19337,19 @@ be extended for custom applications.")
 (define-public r-ssdtools
   (package
     (name "r-ssdtools")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssdtools" version))
        (sha256
-        (base32 "1m0dkwrmpfld96c3cja859ix0hdkcn8ylsfigasb91pin37qsn3s"))))
+        (base32 "001q18wyxxc0lykmlacaxkglpx8g8p6ignrmjr8djppy2s0limbh"))))
     (properties `((upstream-name . "ssdtools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-universals
+    (propagated-inputs (list r-universals
                              r-tmb
                              r-tibble
                              r-stringr
@@ -19483,13 +19560,13 @@ software.")
 (define-public r-ssd4mosaic
   (package
     (name "r-ssd4mosaic")
-    (version "1.0.3")
+    (version "1.0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssd4mosaic" version))
        (sha256
-        (base32 "0dw238k6wi2xg70ixi4ikb38rhpsrafqp1acifgrp1rqabim63pf"))))
+        (base32 "1jp7br0nnd7jndqg3as6sjpbblb4pggk74pqy26msdkz436zwmm8"))))
     (properties `((upstream-name . "ssd4mosaic")))
     (build-system r-build-system)
     (arguments
@@ -21660,6 +21737,39 @@ ANOVA (Steinhilber et al. (2023) <doi:10.31234/osf.io/m64ne>).  Learn more about
 the package by using vignettes \"@code{browseVignettes(package} = \"sprtt\")\" or go
 to the website <https://meikesteinhilber.github.io/sprtt/>.")
     (license license:agpl3+)))
+
+(define-public r-sprt
+  (package
+    (name "r-sprt")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SPRT" version))
+       (sha256
+        (base32 "0425g9zbrlikji3ndha1pxi5dab9a6vzdlzyhm16jjwsd51nhidr"))))
+    (properties `((upstream-name . "SPRT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SPRT")
+    (synopsis "Sequential Probability Ratio Test (SPRT) Method")
+    (description
+     "This package provides functions to perform the Sequential Probability Ratio Test
+(SPRT) for hypothesis testing in Binomial, Poisson and Normal distributions.
+The package allows users to specify Type I and Type II error probabilities,
+decision thresholds, and compare null and alternative hypotheses sequentially as
+data accumulate.  It includes visualization tools for plotting the likelihood
+ratio path and decision boundaries, making it easier to interpret results.  The
+methods are based on Wald (1945) <doi:10.1214/aoms/1177731118>, who introduced
+the SPRT as one of the earliest and most powerful sequential analysis
+techniques.  This package is useful in quality control, clinical trials, and
+other applications requiring early decision-making.The term SPRT is an
+abbreviation and used intentionally.")
+    (license license:expat)))
 
 (define-public r-sprintr
   (package
@@ -27712,13 +27822,13 @@ spatial error model, Journal of Statistical Computation and Simulation,
 (define-public r-spatialrisk
   (package
     (name "r-spatialrisk")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialrisk" version))
        (sha256
-        (base32 "1lkqjw0fgjmrnl9jw9zh2j4nhns6076zhzml6naydxnnmpibsiv7"))))
+        (base32 "1jgp0408wdbgvph82w7r1yz4a46r3hhrni4pcfd0hsmpv80zk4za"))))
     (properties `((upstream-name . "spatialrisk")))
     (build-system r-build-system)
     (arguments
@@ -27742,13 +27852,13 @@ spatial error model, Journal of Statistical Computation and Simulation,
     (home-page "https://github.com/mharinga/spatialrisk")
     (synopsis "Calculating Spatial Risk")
     (description
-     "This package provides methods for spatial risk calculations.  It offers an
-efficient approach to determine the sum of all observations within a circle of a
-certain radius.  This might be beneficial for insurers who are required (by a
-recent European Commission regulation) to determine the maximum value of insured
-fire risk policies of all buildings that are partly or fully located within a
-circle of a radius of 200m.  See Church (1974) <doi:10.1007/BF01942293> for a
-description of the problem.")
+     "This package provides methods for spatial risk calculations, focusing on
+efficient determination of the sum of observations within a circle of a given
+radius.  These methods are particularly relevant for applications such as
+insurance, where recent European Commission regulations require the calculation
+of the maximum insured value of fire risk policies for all buildings that are
+partly or fully located within a 200 m radius.  The underlying problem is
+described by Church (1974) <doi:10.1007/BF01942293>.")
     (license license:gpl2+)))
 
 (define-public r-spatialrf
@@ -28395,7 +28505,7 @@ statistical exploratory tools and raster-based metrics.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list tensorflow python))
+    (inputs (list python))
     (propagated-inputs (list r-zinbwave
                              r-tensorflow
                              r-summarizedexperiment
@@ -30315,7 +30425,7 @@ read files from the Common Crawl project <http://commoncrawl.org/>.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list tensorflow))
+    (inputs (list))
     (propagated-inputs (list r-sparklyr))
     (home-page "https://cran.r-project.org/package=sparktf")
     (synopsis
@@ -31621,13 +31731,13 @@ the website <https://southpark.fandom.com/wiki/South_Park_Archives>.")
 (define-public r-southkoreapis
   (package
     (name "r-southkoreapis")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SouthKoreAPIs" version))
        (sha256
-        (base32 "1j4zw9qbhnm38mh2kyb41sjrzig9yzwmgrrdmbna65p6k4hkqci1"))))
+        (base32 "1abr986mcj58kciwbrkwn051w4w0zgi8h8axmk00gfxs7ds1jadz"))))
     (properties `((upstream-name . "SouthKoreAPIs")))
     (build-system r-build-system)
     (arguments
@@ -43069,13 +43179,13 @@ right-censoring times, and model parameters.")
 (define-public r-simsurvey
   (package
     (name "r-simsurvey")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimSurvey" version))
        (sha256
-        (base32 "12zbhvzl97skw44n2v2jyq89yawnd7g26kpdrxs93xbfbcgdiy8f"))))
+        (base32 "0mg61xbx1m3v6q8bx56rryqwaqz024xx2rya9w70vjymgg41vj36"))))
     (properties `((upstream-name . "SimSurvey")))
     (build-system r-build-system)
     (arguments
@@ -43086,6 +43196,7 @@ right-censoring times, and model parameters.")
                              r-rlang
                              r-progress
                              r-plotly
+                             r-matrix
                              r-lifecycle
                              r-foreach
                              r-doparallel
@@ -56934,6 +57045,44 @@ distance metrics).  This work was inspired by a trie implementation in Python:
 proportions in one- and two-samples, and the Pearson's correlation coefficient.")
     (license license:gpl3)))
 
+(define-public r-seqtarget
+  (package
+    (name "r-seqtarget")
+    (version "0.13.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SEQTaRget" version))
+       (sha256
+        (base32 "1z51sly19y1j2hx8906nxvrpn2ixgnfgngvq3mvxb28c6v0xw3g9"))))
+    (properties `((upstream-name . "SEQTaRget")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-stringr
+                             r-knitr
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-fastglm
+                             r-dorng
+                             r-dofuture
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://causalinference.github.io/SEQuential/")
+    (synopsis "Sequential Trial Emulation")
+    (description
+     "Implementation of sequential trial emulation for the analysis of observational
+databases.  The SEQ@code{TaRget} software accommodates time-varying treatments
+and confounders, as well as binary and failure time outcomes.  SEQ@code{TaRget}
+allows to compare both static and dynamic strategies, can be used to estimate
+observational analogs of intention-to-treat and per-protocol effects, and can
+adjust for potential selection bias induced by losses-to-follow-up. (Paper to
+come).")
+    (license license:expat)))
+
 (define-public r-seqshp
   (package
     (name "r-seqshp")
@@ -60481,13 +60630,13 @@ selection index method.")
 (define-public r-selectboost
   (package
     (name "r-selectboost")
-    (version "2.2.2")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SelectBoost" version))
        (sha256
-        (base32 "189hdr50sikg6pr9x9amjmgg9z0c95j65bddmifsy7zvjhllzjiy"))))
+        (base32 "1hi8kfl3agsar294scvdc7ib4jgl62dijr7qn105jxi15zwg477m"))))
     (properties `((upstream-name . "SelectBoost")))
     (build-system r-build-system)
     (arguments
@@ -61689,13 +61838,13 @@ easy-to-use dataframe format manipulable in standard R functions.")
 (define-public r-see
   (package
     (name "r-see")
-    (version "0.11.0")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "see" version))
        (sha256
-        (base32 "01nc36lz7sxkr2mhyl84vqa5j6n01mhs8y132hn3j7sbbz333d12"))))
+        (base32 "0i2a25330zfwygq4palyhwx2n0x231qpvy1h5k149vhcwpp5wg22"))))
     (properties `((upstream-name . "see")))
     (build-system r-build-system)
     (arguments
@@ -63610,6 +63759,32 @@ M. J. del Jesus, A. Weber, M. Grootveld, P. GonzÃ¡lez, D. Elizondo (2015)
 analysis.  The algorithms work with data sets provided in KEEL, ARFF and CSV
 format and also with data.frame objects.")
     (license license:lgpl3+)))
+
+(define-public r-sdear
+  (package
+    (name "r-sdear")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SdeaR" version))
+       (sha256
+        (base32 "1iz16q37qhpi2f14m9l6kcgc4br02r5wbivh2rr7946ynijb9ah3"))))
+    (properties `((upstream-name . "SdeaR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-optisolve r-dear))
+    (home-page "https://cran.r-project.org/package=SdeaR")
+    (synopsis "Stochastic Data Envelopment Analysis")
+    (description
+     "Set of functions for Stochastic Data Envelopment Analysis.  Chance constrained
+versions of radial, directional and additive DEA models are implemented, as long
+as super-efficiency models.  See: Cooper, W.W.; Deng, H.; Huang, Z.; Li, S.X.
+(2002). <doi:10.1057/palgrave.jors.2601433>, BolÃ³s, V.J.; BenÃ­tez, R.;
+Coll-Serrano, V. (2024) <doi:10.1016/j.orp.2024.100307>.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-sde
   (package

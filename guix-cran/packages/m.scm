@@ -20,7 +20,6 @@
   #:use-module (gnu packages tls)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages tbb)
@@ -5080,13 +5079,13 @@ to igraph'.")
 (define-public r-multinet
   (package
     (name "r-multinet")
-    (version "4.2.2")
+    (version "4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multinet" version))
        (sha256
-        (base32 "1v2jr9ppp2i33mhmc5qidbcar1i0gr6cn7z2c3fafd9bhbnkw4qj"))))
+        (base32 "1y3sxaa1y5dh4pisjqa3al5k3gmc99lc1lvpvvlm6i91li9163bb"))))
     (properties `((upstream-name . "multinet")))
     (build-system r-build-system)
     (arguments
@@ -10657,20 +10656,19 @@ several other IMAP features, paving the way for e-mail data analysis in R.")
 (define-public r-mrpc
   (package
     (name "r-mrpc")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRPC" version))
        (sha256
-        (base32 "1hsrcqp4yygz2psxj9m2n1z7pivdf82b3rnqc34ripyql5apmikn"))))
+        (base32 "1gq0rfypq74lcf9a54mjjbshr2h3qdgjpq1ry4fw8anr6s73facy"))))
     (properties `((upstream-name . "MRPC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-wgcna
-                             r-sna
                              r-rgraphviz
                              r-psych
                              r-plyr
@@ -10693,8 +10691,9 @@ Randomization.  This package implements the MRPC (PC with the principle of
 Mendelian randomization) algorithm to infer causal graphs.  It also contains
 functions to simulate data under a certain topology, to visualize a graph in
 different ways, and to compare graphs and quantify the differences.  See Badsha
-and Fu (2019) <doi:10.3389/fgene.2019.00460>,Badsha, Martin and Fu (2021)
-<doi:10.3389/fgene.2021.651812>.")
+and Fu (2019) <doi:10.3389/fgene.2019.00460>, Badsha, Martin and Fu (2021)
+<doi:10.3389/fgene.2021.651812>, Kvamme and Badsha, et al. (2025)
+<doi:10.1093/genetics/iyaf064>.")
     (license license:gpl2+)))
 
 (define-public r-mro
@@ -14584,13 +14583,13 @@ ISBN:2-7108-0735-1).")
 (define-public r-moreparty
   (package
     (name "r-moreparty")
-    (version "0.4")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moreparty" version))
        (sha256
-        (base32 "0zny9bffj8dfl6i76ylrcgrbfbawk6aksdfkn4vf57zg7qfv0yqh"))))
+        (base32 "1fzc63fdpgx38scnivmkylv2f1gbg5zjr2yanz02ljg2v5lkj5di"))))
     (properties `((upstream-name . "moreparty")))
     (build-system r-build-system)
     (arguments
@@ -14614,13 +14613,12 @@ ISBN:2-7108-0735-1).")
                              r-foreach
                              r-dt
                              r-datamods))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=moreparty")
+    (home-page "https://framagit.org/nicolas-robette/moreparty")
     (synopsis "Toolbox for Conditional Inference Trees and Random Forests")
     (description
      "Additions to party and partykit packages : tools for the interpretation of
 forests (surrogate trees, prototypes, etc.), feature selection (see Gregorutti
-et al (2017) <@code{arXiv:1310.5726>}, Hapfelmeier and Ulm (2013)
+et al (2017) <doi:10.48550/@code{arXiv.1310.5726>}, Hapfelmeier and Ulm (2013)
 <doi:10.1016/j.csda.2012.09.020>, Altmann et al (2010)
 <doi:10.1093/bioinformatics/btq134>) and parallelized versions of conditional
 forest and variable importance functions.  Also modules and a shiny app for
@@ -16585,13 +16583,13 @@ importance and a tuning function for the parameters.")
 (define-public r-modstatr
   (package
     (name "r-modstatr")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ModStatR" version))
        (sha256
-        (base32 "0i8sg5y5ja4msrjcywmaih8vz21y8jpscddpijabgfkr76ypd3nw"))))
+        (base32 "182gz1qhs7gl35gw3pjijfs5a59fi061izdf3iw33kmny5qazfwc"))))
     (properties `((upstream-name . "ModStatR")))
     (build-system r-build-system)
     (arguments
@@ -21215,16 +21213,49 @@ models, based on generalization performance, model complexity, feature
 importances and effects, and fairness metrics.")
     (license license:lgpl3)))
 
+(define-public r-mlr3spatiotempcv
+  (package
+    (name "r-mlr3spatiotempcv")
+    (version "2.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlr3spatiotempcv" version))
+       (sha256
+        (base32 "1ambslc0wj81qxn6ckgpxa655x973n7i7jxlyshvfjrxy4zq8id9"))))
+    (properties `((upstream-name . "mlr3spatiotempcv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6
+                             r-paradox
+                             r-mlr3misc
+                             r-mlr3
+                             r-ggplot2
+                             r-data-table
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://mlr3spatiotempcv.mlr-org.com/")
+    (synopsis "Spatiotemporal Resampling Methods for 'mlr3'")
+    (description
+     "Extends the mlr3 machine learning framework with spatio-temporal resampling
+methods to account for the presence of spatiotemporal autocorrelation (STAC) in
+predictor variables.  STAC may cause highly biased performance estimates in
+cross-validation if ignored.  A JSS article is available at
+<doi:10.18637/jss.v111.i07>.")
+    (license license:lgpl3)))
+
 (define-public r-mlr3spatial
   (package
     (name "r-mlr3spatial")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3spatial" version))
        (sha256
-        (base32 "0yzdxxm0qhxli0gh9lpbmy1m630f22fjgwnwi0y7pikrjj2xq1z8"))))
+        (base32 "1nxhnfvbnwi5b52qf3075zwnd493pfp14c65dh4f7r0kc32iy15l"))))
     (properties `((upstream-name . "mlr3spatial")))
     (build-system r-build-system)
     (arguments
@@ -23050,7 +23081,7 @@ models with covariates generated by AI or machine learning.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (inputs (list tensorflow))
+    (inputs (list))
     (propagated-inputs (list r-tfprobability r-tensorflow r-reticulate r-keras))
     (native-inputs (list r-r-rsp))
     (home-page "https://converseg.github.io")
@@ -27516,13 +27547,13 @@ minimax approximation.")
 (define-public r-minimaxalt
   (package
     (name "r-minimaxalt")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minimaxALT" version))
        (sha256
-        (base32 "0ll1pj56v409lvll4zvxifd0kiaizkkckfgjaiq2999gafn5cmkf"))))
+        (base32 "0mh2bs0w46azrd4xi5jg5c49bygflrk9gwk9qa9y677gvmpbw6aj"))))
     (properties `((upstream-name . "minimaxALT")))
     (build-system r-build-system)
     (arguments
@@ -28835,13 +28866,13 @@ Perederiy, V. (2017) <doi:10.48550/@code{arXiv.1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.5.0")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "14dnkip86ag0h2abjj5dlbfqi25sgdz3lw4q0xc62f684h9f0hkw"))))
+        (base32 "0y7bd1rb566vp4ky8gczfh3vq7l1xhkkvgcrl5n5zv9zcxlqfmbn"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (arguments
@@ -28852,7 +28883,8 @@ Perederiy, V. (2017) <doi:10.48550/@code{arXiv.1708.00062>}.")
                              r-generics
                              r-future
                              r-furrr
-                             r-dplyr))
+                             r-dplyr
+                             r-autograph))
     (home-page "https://stocnet.github.io/migraph/")
     (synopsis "Inferential Methods for Multimodal and Other Networks")
     (description
@@ -30929,13 +30961,13 @@ Lott (2018) <doi:10.1080/00031305.2018.1473796>.  Grund (2021)
 (define-public r-miceadds
   (package
     (name "r-miceadds")
-    (version "3.17-44")
+    (version "3.18-36")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miceadds" version))
        (sha256
-        (base32 "0r91rjl44sxdwfdb0z10hnjq7yfiqlcwfm6aa0a7lm1vmk8rvxkf"))))
+        (base32 "0bga5i9w391a02xxkpfzz7wzsd9sfg94gzfzks7vgaxflvz3djiv"))))
     (properties `((upstream-name . "miceadds")))
     (build-system r-build-system)
     (arguments
@@ -32083,6 +32115,39 @@ misclassification parameters based on a given validation set.  This package is
 an implementation of Chen (2013) <doi:10.1002/bimj.201200195>.")
     (license license:gpl2+)))
 
+(define-public r-mgdrive2
+  (package
+    (name "r-mgdrive2")
+    (version "2.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MGDrivE2" version))
+       (sha256
+        (base32 "1nbxqig22i1m68fbw73659jggh69sz26whirya139fm4rnw4fs16"))))
+    (properties `((upstream-name . "MGDrivE2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-statmod r-matrix r-desolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://marshalllab.github.io/MGDrivE/docs_v2/index.html")
+    (synopsis "Mosquito Gene Drive Explorer 2")
+    (description
+     "This package provides a simulation modeling framework which significantly
+extends capabilities from the MG@code{DrivE} simulation package via a new
+mathematical and computational framework based on stochastic Petri nets.  For
+more information about MG@code{DrivE}', see our publication: SÃ¡nchez et al.
+(2019) <doi:10.1111/2041-210X.13318> Some of the notable capabilities of
+MG@code{DrivE2} include: incorporation of human populations, epidemiological
+dynamics, time-varying parameters, and a continuous-time simulation framework
+with various sampling algorithms for both deterministic and stochastic
+interpretations.  MG@code{DrivE2} relies on the genetic inheritance structures
+provided in package MG@code{DrivE}', so we suggest installing that package
+initially.")
+    (license license:gpl3)))
+
 (define-public r-mgdrive
   (package
     (name "r-mgdrive")
@@ -32901,34 +32966,36 @@ including dozens of shades graded from red to green.")
 (define-public r-mexicodataapi
   (package
     (name "r-mexicodataapi")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MexicoDataAPI" version))
        (sha256
-        (base32 "17wg0i7x68vpivy0gm82gjvsx53zyk4hcrgfyc2gksxjkw63zkqz"))))
+        (base32 "1wjngzq279rww3h52hw5555fhxdfgw128xr0pjhpddz7wq5461c7"))))
     (properties `((upstream-name . "MexicoDataAPI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-jsonlite r-httr r-dplyr))
+    (propagated-inputs (list r-tibble r-scales r-jsonlite r-httr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lightbluetitan/mexicodataapi")
     (synopsis "Access Mexican Data via APIs and Curated Datasets")
     (description
-     "This package provides functions to access data from the World Bank API and the
-REST Countries API', related to Mexico's economic indicators, population
-statistics, literacy rates, and international geopolitical information.
-Additionally, the package includes curated datasets related to Mexico, including
-air quality monitoring stations, pollution zones, income surveys, postal
-abbreviations, election studies, forest productivity, and demographic data by
-state.  The package supports research and analysis focused on Mexico by
-integrating reliable global APIs with structured national datasets drawn from
-open and academic sources.  For more details on the World Bank API', see
-<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, and for the
-REST Countries API', see <https://restcountries.com/>.")
+     "This package provides functions to access data from public RESTful APIs
+including REST Countries API', World Bank API', and Nager.Date API', covering
+Mexico's economic indicators, population statistics, literacy rates,
+international geopolitical information and official public holidays.  The
+package also includes curated datasets related to Mexico such as air quality
+monitoring stations, pollution zones, income surveys, postal abbreviations,
+election studies, forest productivity and demographic data by state.  It
+supports research and analysis focused on Mexico by integrating reliable global
+APIs with structured national datasets drawn from open and academic sources.
+For more information on the APIs, see: REST Countries API
+<https://restcountries.com/>, World Bank API
+<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, and
+Nager.Date API <https://date.nager.at/Api>.")
     (license license:gpl3)))
 
 (define-public r-mexhaz
@@ -37430,19 +37497,20 @@ specialized syntax.")
 (define-public r-mess
   (package
     (name "r-mess")
-    (version "0.5.12")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MESS" version))
        (sha256
-        (base32 "1xyw04glhpgdcc3p96yvm346l62lsq37ml6lv59ap2ksws9pkq21"))))
+        (base32 "1r5i5qldl375w9hjlqdpk9cs8y6yplfanl9xpicklzx61hx7c1zr"))))
     (properties `((upstream-name . "MESS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
+    (propagated-inputs (list r-rcppparallel
+                             r-rcpparmadillo
                              r-rcpp
                              r-mvtnorm
                              r-matrix
@@ -37459,7 +37527,7 @@ specialized syntax.")
     (description
      "This package provides a mixed collection of useful and semi-useful diverse
 statistical functions, some of which may even be referenced in The R Primer
-book.")
+book.  See EkstrÃ¸m, C. T. (2016).  The R Primer.  2nd edition.  Chapman & Hall.")
     (license license:gpl2)))
 
 (define-public r-mesonet
@@ -42212,13 +42280,13 @@ plotting Monte Carlo estimates versus sample size.")
 (define-public r-mcmcsae
   (package
     (name "r-mcmcsae")
-    (version "0.7.9")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmcsae" version))
        (sha256
-        (base32 "0639yvwk4azsyh2ghmqa1pkl2sk1657jxl0kddkrxwmqkli6w9l8"))))
+        (base32 "0257h3gmfw8kijpcd5zvn30lkfh8gdzcyjb4pq56qba50sj5lsn3"))))
     (properties `((upstream-name . "mcmcsae")))
     (build-system r-build-system)
     (arguments
@@ -47425,13 +47493,13 @@ standard deviation across subgroups.  See A. Marradi \"L'analisi monovariata\"
 (define-public r-marquee
   (package
     (name "r-marquee")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marquee" version))
        (sha256
-        (base32 "0km01fiv0i2lg6xkzyvdcvb7zzdrw4ag9x9p96fsly72q5l5x4xv"))))
+        (base32 "1aji6h2pyffrb7mfdk6k7f4alq1hanihbi41ydg2vqzpjrcb8qs0"))))
     (properties `((upstream-name . "marquee")))
     (build-system r-build-system)
     (arguments
@@ -50022,13 +50090,13 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "1mr4px7ps8zxjs61lapy0wd0q8s9fiswd53afjnn56f2zaz04wnj"))))
+        (base32 "1xx65ni4cgnw7qaix0l3w48ndjynisprl5pv50xiqj0rnamziv95"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (arguments
@@ -51568,13 +51636,13 @@ squares (SS) of clustering.")
 (define-public r-maint-data
   (package
     (name "r-maint-data")
-    (version "2.7.1")
+    (version "2.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAINT.Data" version))
        (sha256
-        (base32 "0hjrz25jg4a6kcap01rjjgfvvmg1padd57wgjxihaxpsm7pb0fq9"))))
+        (base32 "04c3aphxbxbxaa2f9fnm6xg6q0m9k6x2vilkyxr1ixg14f94a985"))))
     (properties `((upstream-name . "MAINT.Data")))
     (build-system r-build-system)
     (arguments
@@ -52269,6 +52337,44 @@ data order in calculations).")
 See Rozet, Divo and Schnake (2023) <doi:10.5281/zenodo.7625672> and
 Papamakarios, Pavlakou and Murray (2017) <doi:10.48550/@code{arXiv.1705.07057>}.")
     (license license:gpl2+)))
+
+(define-public r-mafld
+  (package
+    (name "r-mafld")
+    (version "3.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MAFLD" version))
+       (sha256
+        (base32 "1mfx3nskrxdnvh338q5lrwia0i1qbxhjc62rcghpx38gx65wf3ck"))))
+    (properties `((upstream-name . "MAFLD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://github.com/jagadishramasamy/mafld")
+    (synopsis
+     "Diagnosis of Metabolic Dysfunction Associated Fatty Liver Disease")
+    (description
+     "The latest guidelines proposed by International Expert Consensus are used for
+the clinical diagnosis of Metabolic Associated Fatty Liver Disease (MAFLD).  The
+new definition takes hepatic steatosis (determined by elastography or histology
+or biomarker-based fatty liver index) as a major criterion.  In addition, race,
+gender, body mass index (BMI), waist circumference (WC), fasting plasma glucose
+(FPG), systolic blood pressure (SBP), diastolic blood pressure (DBP),
+triglycerides (TG), high-density lipoprotein cholesterol (HDLC), homeostatic
+model assessment of insulin resistance (HOMAIR), high sensitive c-reactive
+protein (@code{HsCRP}) for the diagnosis of MAFLD. Each parameter has to be
+interpreted based on the proposed cut-offs, making the diagnosis slightly
+complex and error-prone.  This package is developed by incorporating the latest
+international expert consensus guidelines, and it will aid in the easy and quick
+diagnosis of MAFLD based on @code{FibroScan} in busy healthcare settings and
+also for research purposes.  The new definition for MAFLD as per the
+International Consensus Statement is described by Eslam M et al (2020).
+<doi:10.1016/j.jhep.2020.03.039>.")
+    (license license:gpl3+)))
 
 (define-public r-maeswrap
   (package

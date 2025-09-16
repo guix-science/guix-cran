@@ -2592,13 +2592,13 @@ performance.")
 (define-public r-httk
   (package
     (name "r-httk")
-    (version "2.7.2")
+    (version "2.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "httk" version))
        (sha256
-        (base32 "1y2azla90sgwihwmrfcrsc0xrn44h570iqm6s1mx1rbghvhl99ii"))))
+        (base32 "156pknrpmrq7ps1vsmjdbp8xj5mx4836iilcw92nsapmrxhbb2dr"))))
     (properties `((upstream-name . "httk")))
     (build-system r-build-system)
     (arguments
@@ -5141,22 +5141,20 @@ regression analysis and canonical correlation analysis.")
 (define-public r-holomics
   (package
     (name "r-holomics")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Holomics" version))
        (sha256
-        (base32 "1d2ypgsaq1y4q9q8yis2549m2vaxg4fas6x9zagsw4jx97vi61kh"))))
+        (base32 "1f72s74x8r8ys6mzvjc09zg09199ckfh6qnzw59nlxsxafihsyv4"))))
     (properties `((upstream-name . "Holomics")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-visnetwork
-                             r-uuid
                              r-tippy
-                             r-tidyr
                              r-stringr
                              r-shinywidgets
                              r-shinyvalidate
@@ -5164,16 +5162,11 @@ regression analysis and canonical correlation analysis.")
                              r-shinybusy
                              r-shinyalert
                              r-shiny
-                             r-rspectra
-                             r-reshape2
                              r-readxl
                              r-openxlsx
                              r-mixomics
-                             r-matrixstats
-                             r-markdown
                              r-igraph
                              r-golem
-                             r-ggrepel
                              r-ggplot2
                              r-dt
                              r-dplyr
@@ -5183,7 +5176,7 @@ regression analysis and canonical correlation analysis.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MolinLab/Holomics")
     (synopsis
-     "An User-Friendly R 'shiny' Application for Multi-Omics Data Integration and Analysis")
+     "User-Friendly R 'shiny' Application for Multi-Omics Data Integration and Analysis")
     (description
      "This package provides a shiny application, which allows you to perform single-
 and multi-omics analyses using your own omics datasets.  After the upload of the
@@ -5295,13 +5288,13 @@ annotators, and consistent output formats.")
 (define-public r-holland
   (package
     (name "r-holland")
-    (version "0.1.2-3")
+    (version "0.1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "holland" version))
        (sha256
-        (base32 "0m0cdskdkkf11kqanzry4fvw04yckmjjnq2arzcdkj7f7piplmbz"))))
+        (base32 "00l6bvg5d18594xsqkgdmx90vfydcdv7x810qbl7c2vkd8xmhx1d"))))
     (properties `((upstream-name . "holland")))
     (build-system r-build-system)
     (arguments
@@ -8336,13 +8329,13 @@ of Huling and Yu (2021) <doi:10.1111/biom.13546>.")
 (define-public r-hierportfolios
   (package
     (name "r-hierportfolios")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HierPortfolios" version))
        (sha256
-        (base32 "0hpr8rxpzgbr1v6fh4wxx140nh2017cvrk8anaczv1rnq75j2bdp"))))
+        (base32 "0dxg9ynwgyq68ikvky2gjak2x2smv9aq8jg9360sb8nhj7z6jnm1"))))
     (properties `((upstream-name . "HierPortfolios")))
     (build-system r-build-system)
     (arguments
@@ -11843,39 +11836,6 @@ of threshold effects in high-dimensional nonparametric panel regression models.
 The package accompanies the paper Chen, Keilbar, Su and Wang (2023) \"Inference
 on many jumps in nonparametric panel regression models\". @code{arXiv} preprint
 <doi:10.48550/@code{arXiv.2312.01162>}.")
-    (license license:expat)))
-
-(define-public r-hdtg
-  (package
-    (name "r-hdtg")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hdtg" version))
-       (sha256
-        (base32 "0c30kk2vpydsrwsmgd3xn1a1iryprc0x6jpbp8j3pzvc87fhh2pw"))))
-    (properties `((upstream-name . "hdtg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-rdpack
-                             r-rcppxsimd
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-mgcv))
-    (home-page "https://cran.r-project.org/package=hdtg")
-    (synopsis
-     "Generate Samples from Multivariate Truncated Normal Distributions")
-    (description
-     "Efficient sampling from high-dimensional truncated Gaussian distributions, or
-multivariate truncated normal (MTN).  Techniques include zigzag Hamiltonian
-Monte Carlo as in Akihiko Nishimura, Zhenyu Zhang and Marc A. Suchard (2024)
-<doi:10.1080/01621459.2024.2395587>, and harmonic Monte in Ari Pakman and Liam
-Paninski (2014) <doi:10.1080/10618600.2013.788448>.")
     (license license:expat)))
 
 (define-public r-hdsvm

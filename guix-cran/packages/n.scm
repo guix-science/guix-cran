@@ -15,7 +15,6 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages c)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages web)
   #:use-module (gnu packages pkg-config)
@@ -5791,13 +5790,13 @@ arguments and body.")
 (define-public r-nodiv
   (package
     (name "r-nodiv")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nodiv" version))
        (sha256
-        (base32 "1yz2ynn7cfwjim3bmwvf4v7fflghc2kfx9frwz2m85l9pcr3qlx0"))))
+        (base32 "0smddvslinb950l22bgbzd7y23gyhyw5rmil3rdk85id76h4nd47"))))
     (properties `((upstream-name . "nodiv")))
     (build-system r-build-system)
     (arguments
@@ -5897,13 +5896,13 @@ Leskovec(2016),available at <@code{arXiv:1607.00653>}.")
 (define-public r-noctua
   (package
     (name "r-noctua")
-    (version "2.6.2")
+    (version "2.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "noctua" version))
        (sha256
-        (base32 "1j7ikcviapdddyi71zwybcjyj6f1kyszb44vmbcq7jmvm7iazvmx"))))
+        (base32 "1crd8q9k96ziqf1l2d7b34dh7gszkpvnqbf7p1z9cmm1rfxf4azb"))))
     (properties `((upstream-name . "noctua")))
     (build-system r-build-system)
     (arguments
@@ -5911,7 +5910,7 @@ Leskovec(2016),available at <@code{arXiv:1607.00653>}.")
       #:tests? #f))
     (propagated-inputs (list r-uuid r-paws r-dbi r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/DyfanJones/noctua")
+    (home-page "https://dyfanjones.github.io/noctua/")
     (synopsis
      "Connect to 'AWS Athena' using R 'AWS SDK' 'paws' ('DBI' Interface)")
     (description
@@ -9781,13 +9780,13 @@ Models.")
 (define-public r-niarules
   (package
     (name "r-niarules")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "niarules" version))
        (sha256
-        (base32 "09h25n5d22hkll7hakmvaxq6adcc9p0dl9yazgvfcncxqk3vywxr"))))
+        (base32 "1hh6lwnyj7sl4z3aia347yfkb0zx0kikqqc9vslyj1s7xy4jjn7a"))))
     (properties `((upstream-name . "niarules")))
     (build-system r-build-system)
     (arguments
@@ -12013,7 +12012,7 @@ activation function.  Furthermore, the calculation of generalized weights
     (arguments
      (list
       #:tests? #f))
-    (inputs (list tensorflow python))
+    (inputs (list python))
     (propagated-inputs (list r-tensorflow
                              r-reticulate
                              r-magrittr

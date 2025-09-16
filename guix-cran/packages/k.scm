@@ -5249,13 +5249,13 @@ computations.  Visualizations can be done using the R package shapviz'.")
 (define-public r-kernelknn
   (package
     (name "r-kernelknn")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KernelKnn" version))
        (sha256
-        (base32 "1b361qqkicbdwcmh7fj8rfqqj5yaf2ygmh4hwy5qxbpw8zkagccj"))))
+        (base32 "0kkn7ypla0yf3xxjbpd12pbm5y0sf2ysjs5jfqj2zjzr7i95rvgs"))))
     (properties `((upstream-name . "KernelKnn")))
     (build-system r-build-system)
     (arguments
@@ -5575,6 +5575,40 @@ for keras models.")
     (synopsis "R Interface to 'Keras'")
     (description
      "Interface to Keras <https://keras.io>, a high-level neural networks API. Keras
+was developed with a focus on enabling fast experimentation, supports both
+convolution based networks and recurrent networks (as well as combinations of
+the two), and runs seamlessly on both CPU and GPU devices.")
+    (license license:expat)))
+
+(define-public r-keras
+  (package
+    (name "r-keras")
+    (version "2.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "keras" version))
+       (sha256
+        (base32 "00xq9pxi0w21gm4vs46i6whm1p5vz64gra0b4nzx24av0h6i60sa"))))
+    (properties `((upstream-name . "keras")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zeallot
+                             r-tfruns
+                             r-tensorflow
+                             r-rlang
+                             r-reticulate
+                             r-r6
+                             r-magrittr
+                             r-glue
+                             r-generics))
+    (native-inputs (list r-knitr))
+    (home-page "https://tensorflow.rstudio.com/")
+    (synopsis "R Interface to 'Keras'")
+    (description
+     "Interface to Keras <https://keras.io>, a high-level neural networks API'.  Keras
 was developed with a focus on enabling fast experimentation, supports both
 convolution based networks and recurrent networks (as well as combinations of
 the two), and runs seamlessly on both CPU and GPU devices.")

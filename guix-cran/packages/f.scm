@@ -8895,38 +8895,43 @@ evaluation.  Reference: Lei X, Fu L, Li H, et al (2018)
 (define-public r-foresight
   (package
     (name "r-foresight")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "foreSIGHT" version))
        (sha256
-        (base32 "1nw93xs10qfj489i9xlamjrk8rf73b7511gdsg49vvbgjp4945mr"))))
+        (base32 "0jsc1k2rn00zxxj29cd7z4zfd93xy2z2r3dkbxf5mdyl6brl4p0x"))))
     (properties `((upstream-name . "foreSIGHT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-viridislite
+    (propagated-inputs (list r-zoo
+                             r-viridislite
+                             r-tidyr
                              r-soilhyp
                              r-scales
                              r-rlang
                              r-rgn
                              r-rcpp
-                             r-rcorpora
                              r-progress
                              r-mvtnorm
-                             r-moments
                              r-matrix
+                             r-lubridate
                              r-lattice
                              r-jsonlite
                              r-ggplot2
                              r-ga
+                             r-foreach
                              r-fields
+                             r-dplyr
+                             r-doparallel
                              r-directlabels
                              r-dfoptim
                              r-cowplot
-                             r-cmaes))
+                             r-blrpm
+                             r-airgr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=foreSIGHT")
     (synopsis "Systems Insights from Generation of Hydroclimatic Timeseries")
@@ -21529,21 +21534,26 @@ microarray data by using the FISH probes and their corresponding copy number.")
 (define-public r-fbms
   (package
     (name "r-fbms")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FBMS" version))
        (sha256
-        (base32 "052w4x751350x27jfsw11gfg6bdp6axls41b941s908aiv55q9s8"))))
+        (base32 "0yg33jmj6pwwmk582wg3hx2dsmqn6b4h1xpi76wwf8r57xcpsnvz"))))
     (properties `((upstream-name . "FBMS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-r2r r-gensa r-fastglm))
+    (propagated-inputs (list r-tolerance
+                             r-rcpp
+                             r-r2r
+                             r-gensa
+                             r-fastglm
+                             r-bas))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=FBMS")
+    (home-page "https://github.com/jonlachmann/FBMS")
     (synopsis "Flexible Bayesian Model Selection and Model Averaging")
     (description
      "This package implements the Mode Jumping Markov Chain Monte Carlo algorithm
@@ -23622,13 +23632,13 @@ Multinomial Model\" Townes FW, Hicks SC, Aryee MJ, Irizarry RA (2019)
 (define-public r-fastglcm
   (package
     (name "r-fastglcm")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastGLCM" version))
        (sha256
-        (base32 "1f7mafhsygbz1vrjvpva2zql0d6dphzr31skh9agancghh8hnm3q"))))
+        (base32 "109acxic34cgzy49szsg9cqlxbd05a7sjyh4j3gkjxvkpd89ggzk"))))
     (properties `((upstream-name . "fastGLCM")))
     (build-system r-build-system)
     (arguments
@@ -23792,13 +23802,13 @@ written in C++ using Armadillo linear algebra library.")
 (define-public r-fastei
   (package
     (name "r-fastei")
-    (version "0.0.0.9")
+    (version "0.0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastei" version))
        (sha256
-        (base32 "1mq4rlfyzjpcsql2326q7mpvdx019gg3x7jhn037wqzfsy50rjdb"))))
+        (base32 "1ypd3vczrvzhc5jdikppvnsxiydys7s5dxmp7j9rmjn1139kc4w0"))))
     (properties `((upstream-name . "fastei")))
     (build-system r-build-system)
     (arguments
@@ -26847,13 +26857,13 @@ published in Statistics and Computing <doi: 10.1007/s11222-017-9744-8>.")
 (define-public r-fabricqueryr
   (package
     (name "r-fabricqueryr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabricQueryR" version))
        (sha256
-        (base32 "0n40ys1xba8ck8w9rjj1gr1p94alj92sdl4br02n81njbprchfa1"))))
+        (base32 "0i0rrbv5mbqz4xblqfnz5i32slglqq7iz1q33lvwlc2byf3y2l4b"))))
     (properties `((upstream-name . "fabricQueryR")))
     (build-system r-build-system)
     (arguments
@@ -26863,6 +26873,7 @@ published in Statistics and Computing <doi: 10.1007/s11222-017-9744-8>.")
                              r-stringr
                              r-rlang
                              r-purrr
+                             r-jsonlite
                              r-httr2
                              r-dplyr
                              r-cli
@@ -26873,8 +26884,8 @@ published in Statistics and Computing <doi: 10.1007/s11222-017-9744-8>.")
      "Query data hosted in Microsoft Fabric'.  Provides helpers to open DBI
 connections to SQL endpoints of Lakehouse and Data Warehouse items; submit Data
 Analysis Expressions ('DAX') queries to semantic model datasets in Microsoft
-Fabric and Power BI'; and read Delta Lake tables stored in @code{OneLake}
-('Azure Data Lake Storage Gen2').")
+Fabric and Power BI'; read Delta Lake tables stored in @code{OneLake} ('Azure
+Data Lake Storage Gen2'); and execute Spark code via the Livy API'.")
     (license license:expat)))
 
 (define-public r-fabricerin

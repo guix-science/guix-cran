@@ -18,7 +18,6 @@
   #:use-module (gnu packages graphviz)
   #:use-module (gnu packages java)
   #:use-module (gnu packages compression)
-  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages language)
   #:use-module (gnu packages image)
@@ -5783,6 +5782,35 @@ viewports and grobs that @code{gridGraphviz} produces.")
      "This package provides functions for drawing scene trees representing scenes that
 have been drawn using grid graphics.")
     (license license:gpl2+)))
+
+(define-public r-gridcopula
+  (package
+    (name "r-gridcopula")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GRIDCOPULA" version))
+       (sha256
+        (base32 "132v2xprs1m98hmrxdivyhj1cds2brqdkg4g8rs3dwm84xxbhkj9"))))
+    (properties `((upstream-name . "GRIDCOPULA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsolnp
+                             r-reshape2
+                             r-quadprog
+                             r-pracma
+                             r-ggplot2
+                             r-fields
+                             r-evmix))
+    (home-page "https://cran.r-project.org/package=GRIDCOPULA")
+    (synopsis "Bivariate Copula Functions Based on Regular Grid")
+    (description
+     "Estimates grid type bivariate copula functions, calculates some association
+measures and provides several copula graphics.")
+    (license license:gpl3)))
 
 (define-public r-gridbezier
   (package
@@ -12301,7 +12329,7 @@ basic plots.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list tensorflow))
+    (inputs (list))
     (propagated-inputs (list r-tensorflow r-r6 r-qrng r-keras r-copula))
     (home-page "https://cran.r-project.org/package=gnn")
     (synopsis "Generative Neural Networks")
@@ -18701,19 +18729,19 @@ and seasonal sub-series plots.")
 (define-public r-ggtikz
   (package
     (name "r-ggtikz")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggtikz" version))
        (sha256
-        (base32 "07af96qx8n4mal4jnnn8br3gf7bw22mk82c24csvqhki6q5w460z"))))
+        (base32 "131iwivag6w6nzsvi6fgrkq26n017q4nix91chszg7wr5hhj7idn"))))
     (properties `((upstream-name . "ggtikz")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tikzdevice r-stringr r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-tikzdevice r-stringr r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/osthomas/ggtikz")
     (synopsis
@@ -19940,13 +19968,13 @@ visualisation of mapped data.")
 (define-public r-ggquickeda
   (package
     (name "r-ggquickeda")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggquickeda" version))
        (sha256
-        (base32 "00m4qf51q40aknb20mj08n8s2fpym3qfcbcb37mpm2pdbsqgrzan"))))
+        (base32 "0326fg3f8zfwn8y5xh6mjl8axmg0wzln2hlqzx8q9wdvq82bsj45"))))
     (properties `((upstream-name . "ggquickeda")))
     (build-system r-build-system)
     (arguments
@@ -20455,13 +20483,13 @@ the fly.")
 (define-public r-ggpedigree
   (package
     (name "r-ggpedigree")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggpedigree" version))
        (sha256
-        (base32 "0yafjc19r5491kbnv6h4jhlcx19m7sx4w9vv9hm8z5bx1f71491j"))))
+        (base32 "1m3i40lz9bc1ymy5j9yy2lcbfkv1xl71bpjarbsrcb7kww9fxi8n"))))
     (properties `((upstream-name . "ggpedigree")))
     (build-system r-build-system)
     (arguments
@@ -21537,13 +21565,13 @@ ggiraph'.")
 (define-public r-ggir
   (package
     (name "r-ggir")
-    (version "3.2-6")
+    (version "3.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIR" version))
        (sha256
-        (base32 "0h9lvkyd1mwkfwrvlvyr5j4f6nl4603lk7xnvzb9hanpw0dgsi6y"))))
+        (base32 "1pgdf05ykmgj6qkjjyqs4nnswcp43ij5hhqvpz338mx4n7wcwbc4"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
     (arguments
@@ -22281,13 +22309,13 @@ uses the layered grammar of graphics of ggplot2 to create simple flowcharts.")
 (define-public r-ggfixest
   (package
     (name "r-ggfixest")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfixest" version))
        (sha256
-        (base32 "02v5bcyp748fl82m284cj0j2rb6p5jdj6z1win3mqlf1y1501hgc"))))
+        (base32 "1kmxp5dd01nxjs809k6m35cc81cpdzz07wmv0hhlk3lxhlmff5fc"))))
     (properties `((upstream-name . "ggfixest")))
     (build-system r-build-system)
     (arguments
@@ -22641,13 +22669,13 @@ plus genotype-by-block-of-environments) models.  See Laffont et al. (2013)
 (define-public r-ggdoubleheat
   (package
     (name "r-ggdoubleheat")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggDoubleHeat" version))
        (sha256
-        (base32 "05wlyiqjivw0am20vn0s6rm20xj1r3q75immlvf063li0pxqfp93"))))
+        (base32 "16w9wmfik76rbwq16wa4amagsimxq9k3clcvfm74qcj7snf8yw7i"))))
     (properties `((upstream-name . "ggDoubleHeat")))
     (build-system r-build-system)
     (arguments
@@ -22895,13 +22923,13 @@ into it's signal suppression counterpart.")
 (define-public r-ggdiagram
   (package
     (name "r-ggdiagram")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggdiagram" version))
        (sha256
-        (base32 "1srrab7964apfwmhrwbvpvwra1973prqis0vd3v6gcf4v7dkv4ly"))))
+        (base32 "0mvbr8033g20b1dd9hbkw62n558lvsfz4sfy6y14kfa80pf3hfiq"))))
     (properties `((upstream-name . "ggdiagram")))
     (build-system r-build-system)
     (arguments
@@ -23447,13 +23475,13 @@ function for ggplot2'.")
 (define-public r-ggbrick
   (package
     (name "r-ggbrick")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggbrick" version))
        (sha256
-        (base32 "0w6cw5f8skx1diymsmpvkipk9n9c8yhi18b9mghynv3x0mn8qrwh"))))
+        (base32 "123rs5n5gjv5ka5q0lf41qxpw0g28q6hh9z13ps2j6rhip7wff0c"))))
     (properties `((upstream-name . "ggbrick")))
     (build-system r-build-system)
     (arguments
@@ -23698,13 +23726,13 @@ by the user or by another package.")
 (define-public r-ggarrow
   (package
     (name "r-ggarrow")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggarrow" version))
        (sha256
-        (base32 "14jvrjrzp7wk94c3s0ixdcbhfsx9nlr5rf85a5gmrhvq7qjaicxc"))))
+        (base32 "1fdnyhh777z52snaivlz2pm46i3z5f03yscvpxabck16z035zr2g"))))
     (properties `((upstream-name . "ggarrow")))
     (build-system r-build-system)
     (arguments
@@ -23712,6 +23740,7 @@ by the user or by another package.")
       #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-scales
+                             r-s7
                              r-rlang
                              r-polyclip
                              r-ggplot2
@@ -33696,19 +33725,19 @@ online SQL database at <http://paleofire.org>.")
 (define-public r-gccfactor
   (package
     (name "r-gccfactor")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GCCfactor" version))
        (sha256
-        (base32 "1dcmghvrv3kmrjnzfx5min3lfjxy1f9rgrm9b34h1f29kd0k79qn"))))
+        (base32 "16b6m1biyfmq98jlr8848wg114kblr1v7llb0165caa0jxz3cim7"))))
     (properties `((upstream-name . "GCCfactor")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-sandwich))
+    (propagated-inputs (list r-stringr r-sandwich r-matrix))
     (home-page "https://cran.r-project.org/package=GCCfactor")
     (synopsis "GCC Estimation of the Multilevel Factor Model")
     (description
@@ -35544,7 +35573,7 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list tensorflow))
+    (inputs (list))
     (propagated-inputs (list r-tensorflow r-rcpp r-httr))
     (home-page "https://cran.r-project.org/package=ganGenerativeData")
     (synopsis "Generate Generative Data for a Data Source")
@@ -35612,7 +35641,7 @@ documents.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list tensorflow))
+    (inputs (list))
     (propagated-inputs (list r-tensorflow r-rcpp))
     (home-page "https://cran.r-project.org/package=ganDataModel")
     (synopsis "Build a Metric Subspaces Data Model for a Data Source")

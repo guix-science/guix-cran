@@ -21,7 +21,6 @@
   #:use-module (gnu packages video)
   #:use-module (gnu packages imagemagick)
   #:use-module (gnu packages perl)
-  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages tex)
   #:use-module (gnu packages multiprecision)
   #:use-module (guix-cran packages z)
@@ -709,6 +708,31 @@ effects and predictive margins with standard errors and confidence intervals can
 be calculated from two-part model objects.  Belotti, F., Deb, P., Manning, W.
 G., & Norton, E. C. (2015) <doi:10.1177/1536867X1501500102>.")
     (license license:gpl2+)))
+
+(define-public r-twomodeclusteringga
+  (package
+    (name "r-twomodeclusteringga")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "twomodeclusteringGA" version))
+       (sha256
+        (base32 "029f1z1hmj5v9c9rmnahcsgp8n01p28333bzx3r4asyivps8864h"))))
+    (properties `((upstream-name . "twomodeclusteringGA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-ga))
+    (home-page "https://github.com/joshageman/twomodeclusteringGA")
+    (synopsis "Genetic Algorithm Based Two-Mode Clustering")
+    (description
+     "This package implements two-mode clustering (biclustering) using genetic
+algorithms.  The method was first introduced in Hageman et al. (2008)
+<doi:10.1007/s11306-008-0105-7>.  The package provides tools for fitting,
+visualization, and validation of two-mode cluster structures in data matrices.")
+    (license license:gpl3)))
 
 (define-public r-twoarmsurvsim
   (package
@@ -9495,13 +9519,13 @@ respectively.")
 (define-public r-transpror
   (package
     (name "r-transpror")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TransProR" version))
        (sha256
-        (base32 "1c9yfs63qmqi3bsz76ardxkm9rs54cc4z8nvk3nj6aqvcybli7p9"))))
+        (base32 "0xspvzrhplp8b6iy6w86a62qqq9k0h37dr5qqmkzyk429kvpxp5p"))))
     (properties `((upstream-name . "TransProR")))
     (build-system r-build-system)
     (arguments
@@ -11771,13 +11795,13 @@ flexible tpn model <doi:10.3390/math11214431> and the unit tpn distribution
 (define-public r-tpmsm
   (package
     (name "r-tpmsm")
-    (version "1.2.12")
+    (version "1.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TPmsm" version))
        (sha256
-        (base32 "1s3rcz2bxngpi47ils3z5v5drv66k10mnvzhifj47b5671w1rb6k"))))
+        (base32 "1g2zzcay95hy4dgg4sippywn8vgq23a69l3wfwjn9rckbb53anwc"))))
     (properties `((upstream-name . "TPmsm")))
     (build-system r-build-system)
     (arguments
@@ -15968,13 +15992,13 @@ tensors.")
 (define-public r-tinyvast
   (package
     (name "r-tinyvast")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyVAST" version))
        (sha256
-        (base32 "0w0j0428swhxmadmbflszcn38rajkh07fpzwmy2lchschrjq0n3y"))))
+        (base32 "1jfmvwhqb136wljacpfsymz0f843wcl7j8r33j3a2101yd6mjcf5"))))
     (properties `((upstream-name . "tinyVAST")))
     (build-system r-build-system)
     (arguments
@@ -15982,6 +16006,7 @@ tensors.")
       #:tests? #f))
     (propagated-inputs (list r-units
                              r-tmb
+                             r-sparseinv
                              r-sfnetworks
                              r-sf
                              r-sem
@@ -15991,6 +16016,7 @@ tensors.")
                              r-matrix
                              r-insight
                              r-igraph
+                             r-gstat
                              r-fmesher
                              r-dsem
                              r-cv
@@ -16007,8 +16033,7 @@ spatio-temporal ('VAST') dynamics) for areal, continuous, or network spatial
 domains.  It includes time-variable, space-variable, and space-time-variable
 interactions using dynamic structural equation models ('DSEM') as expressive
 interface, and the mgcv package to specify splines via the formula interface.
-See Thorson et al. (2024) <doi:10.48550/@code{arXiv.2401.10193>} for more
-details.")
+See Thorson et al. (2025) <doi:10.1111/geb.70035> for more details.")
     (license license:gpl3)))
 
 (define-public r-tinytiger
@@ -21524,13 +21549,13 @@ methods used in the package based on the following publications Stipanuk (1973)
 (define-public r-thriftr
   (package
     (name "r-thriftr")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thriftr" version))
        (sha256
-        (base32 "0qx96nd9wdmxgvlvv43q51qrqpmb98vz6hmrhlq3hp91w3g20p5a"))))
+        (base32 "1pd5x46m3ca8z7z1baqdyrpfhy1gccvyhvn5699fkxf6z2d39kgr"))))
     (properties `((upstream-name . "thriftr")))
     (build-system r-build-system)
     (arguments
@@ -23362,7 +23387,7 @@ the training progress of machine learning models.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list tensorflow))
+    (inputs (list))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -23494,6 +23519,29 @@ proportional hazards model as proposed in Jiacheng Wu & Daniela Witten (2019)
 and Graphical Statistics, <DOI:10.1080/10618600.2019.1592758>.  The fitted
 functions are piecewise polynomial with adaptively chosen knots.")
     (license license:gpl2+)))
+
+(define-public r-tfautograph
+  (package
+    (name "r-tfautograph")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tfautograph" version))
+       (sha256
+        (base32 "0fmaq1ggjyxgf2ss7qb8jk74sfwc3s1vc123pd5glclxcy1ib0j2"))))
+    (properties `((upstream-name . "tfautograph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-reticulate r-backports))
+    (home-page "https://t-kalinowski.github.io/tfautograph/")
+    (synopsis "Autograph R for 'Tensorflow'")
+    (description
+     "Translate R control flow expressions into Tensorflow graphs.")
+    (license license:gpl3)))
 
 (define-public r-tfarima
   (package
@@ -26603,6 +26651,44 @@ serves as an alternative resort to handle tensor only as array class.  Some
 functionalities related to missingness are also supported.")
     (license license:gpl3)))
 
+(define-public r-tensorflow
+  (package
+    (name "r-tensorflow")
+    (version "2.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tensorflow" version))
+       (sha256
+        (base32 "1h9ikdsdblihdir8cvfkxdi4c37k4p36s9vd3ymd3yvv0z2qffp6"))))
+    (properties `((upstream-name . "tensorflow")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-tfruns
+                             r-tfautograph
+                             r-rstudioapi
+                             r-reticulate
+                             r-processx
+                             r-lifecycle
+                             r-config))
+    (home-page "https://github.com/rstudio/tensorflow")
+    (synopsis "R Interface to 'TensorFlow'")
+    (description
+     "Interface to @code{TensorFlow} <https://www.tensorflow.org/>, an open source
+software library for numerical computation using data flow graphs.  Nodes in the
+graph represent mathematical operations, while the graph edges represent the
+multidimensional data arrays (tensors) communicated between them.  The flexible
+architecture allows you to deploy computation to one or more CPUs or GPUs in a
+desktop, server, or mobile device with a single API'. @code{TensorFlow} was
+originally developed by researchers and engineers working on the Google Brain
+Team within Google's Machine Intelligence research organization for the purposes
+of conducting machine learning and deep neural networks research, but the system
+is general enough to be applicable in a wide variety of other domains as well.")
+    (license license:asl2.0)))
+
 (define-public r-tensorevd
   (package
     (name "r-tensorevd")
@@ -28364,6 +28450,33 @@ unbiased RMSE and MBE to the total RMSE (Jolliff, J. et al., 2009. \"Summary
 Diagrams for Coupled Hydrodynamic-Ecosystem Model Skill Assessment.\" Journal of
 Marine Systems 76: 64â82.).")
     (license license:gpl2)))
+
+(define-public r-tdprc
+  (package
+    (name "r-tdprc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tdPRC" version))
+       (sha256
+        (base32 "1iym9rg4pmv88jwg37dic1zns23kh72h1f4pc09ajxapfknn3i9s"))))
+    (properties `((upstream-name . "tdPRC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survidm))
+    (home-page "https://cran.r-project.org/package=tdPRC")
+    (synopsis
+     "Time-Dependent Precision-Recall Curve Estimation for Right-Censored Data")
+    (description
+     "This contains functions that can be used to estimate the time-dependent
+precision-recall curve (PRC) and the corresponding area under the PRC for
+right-censored survival data.  It also compute time-dependent ROC curve and its
+corresponding area under the ROC curve (AUC).  See Beyene, Chen and Kifle (2024)
+<doi:10.1002/bimj.202300135>.")
+    (license license:gpl2+)))
 
 (define-public r-tdpanalysis
   (package
@@ -31436,6 +31549,32 @@ distribution using different methods: Panjer recursion, Monte Carlo simulations,
 Markov bound, Cantelli bound, Moment bound, and Chernoff bound.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-tailid
+  (package
+    (name "r-tailid")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TailID" version))
+       (sha256
+        (base32 "006w3jsp5sxsp2bha41r3qd8v7ljfqs9g68x906nbwxy2axg89nv"))))
+    (properties `((upstream-name . "TailID")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-ismev r-ggplot2))
+    (home-page "https://cran.r-project.org/package=TailID")
+    (synopsis "Detect Sensitive Points in the Tail")
+    (description
+     "The goal of @code{TailID} is to detect sensitive points in the tail of a dataset
+using techniques from Extreme Value Theory (EVT).  It utilizes the Generalized
+Pareto Distribution (GPD) for assessing tail behavior and detecting inconsistent
+points with the Identical Distribution hypothesis of the tail.  For more details
+see Manau (2025)<doi:10.4230/LIPIcs.ECRTS.2025.20>.")
+    (license license:gpl3+)))
+
 (define-public r-taildepfun
   (package
     (name "r-taildepfun")
@@ -32725,13 +32864,13 @@ v1.2 - fixed \"missing \"no visible global function definition for ..\".")
 (define-public r-table1
   (package
     (name "r-table1")
-    (version "1.4.3")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "table1" version))
        (sha256
-        (base32 "1wr5cqc6a81b5b2fjvw4swb579q5llf63658l6srhxbxx0qba5l3"))))
+        (base32 "1h246mkqf286rnwizipd7bsv6dgnnwasmdb7lwi6bfi3fgfk12zk"))))
     (properties `((upstream-name . "table1")))
     (build-system r-build-system)
     (arguments

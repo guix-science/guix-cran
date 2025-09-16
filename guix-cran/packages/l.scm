@@ -1295,13 +1295,13 @@ tabulated data.")
 (define-public r-lsx
   (package
     (name "r-lsx")
-    (version "1.4.5")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSX" version))
        (sha256
-        (base32 "1x4zc0nkfr5h4m8pj3zwv6yxmkz7yyb1mr52vd88303ymjsbc9a0"))))
+        (base32 "056rqxwp6dhjcnipzbdk6v2599d3pz7x0a48ipxr73lnvcs0m47v"))))
     (properties `((upstream-name . "LSX")))
     (build-system r-build-system)
     (arguments
@@ -13267,13 +13267,13 @@ J.S. (2021). <doi:10.3758/s13428-021-01667-6>.")
 (define-public r-levitate
   (package
     (name "r-levitate")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "levitate" version))
        (sha256
-        (base32 "1mrpgq5505qs31vw2wif1cz4iqbqnj6mvfk60i5sg6p9nnn328wr"))))
+        (base32 "0ywa5mhi550mhyyx005bi2w217cfhgpm8s9fy6sa7vqaj05f08l3"))))
     (properties `((upstream-name . "levitate")))
     (build-system r-build-system)
     (arguments
@@ -13281,7 +13281,7 @@ J.S. (2021). <doi:10.3758/s13428-021-01667-6>.")
       #:tests? #f))
     (propagated-inputs (list r-stringdist r-rlang))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/lewinfox/levitate/")
+    (home-page "https://lewinfox.com/levitate/")
     (synopsis "Fuzzy String Comparison")
     (description
      "This package provides string similarity calculations inspired by the Python
@@ -14034,13 +14034,13 @@ function for VES.")
 (define-public r-legendry
   (package
     (name "r-legendry")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "legendry" version))
        (sha256
-        (base32 "012p3r9bngq5cy7c7pi0sbvwcjy5vc2i8mqlgdzs2bzkpzwk0i44"))))
+        (base32 "1dsh00v31han57mwdgjj3dqnwqxsgncb54z562p8b3zgxaiq1lif"))))
     (properties `((upstream-name . "legendry")))
     (build-system r-build-system)
     (arguments
@@ -16694,6 +16694,34 @@ various discovery models including ABC', @code{AnC}', LSI', and BITOLA'.  The
 package also includes visualization tools for exploring discovered connections.")
     (license license:gpl3)))
 
+(define-public r-lbamodel
+  (package
+    (name "r-lbamodel")
+    (version "0.2.9.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lbaModel" version))
+       (sha256
+        (base32 "1iqlj2n29jw0qjvnvimjg6jyfbkdcfl8gcam6vw8rvmd22w1g6z1"))))
+    (properties `((upstream-name . "lbaModel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggdmcprior r-ggdmcmodel
+                             r-ggdmcheaders))
+    (home-page "https://cran.r-project.org/package=lbaModel")
+    (synopsis "The Linear Ballistic Accumulation Model")
+    (description
+     "This package provides density, distribution and random generation functions for
+the Linear Ballistic Accumulation (LBA) model, a widely used choice response
+time model in cognitive psychology.  The package supports model specifications,
+parameter estimation, and likelihood computation, facilitating simulation and
+statistical inference for LBA-based experiments.  For details on the LBA model,
+see Brown and Heathcote (2008) <doi:10.1016/j.cogpsych.2007.12.002>.")
+    (license license:gpl2+)))
+
 (define-public r-lba
   (package
     (name "r-lba")
@@ -17253,13 +17281,13 @@ tutorial.")
 (define-public r-lavaanextra
   (package
     (name "r-lavaanextra")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavaanExtra" version))
        (sha256
-        (base32 "1h83a7mxyqqlnjk2vddy6ngshinl0sih3m21hl7qbc84spx1g96b"))))
+        (base32 "0rg79z1pnwhrznpx6nylwv6mpqv8jxg3516iv7fwsfnb3xhh0xhq"))))
     (properties `((upstream-name . "lavaanExtra")))
     (build-system r-build-system)
     (arguments

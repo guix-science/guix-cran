@@ -280,13 +280,13 @@ published in 2006 by Chapman Hall / CRC Press.")
 (define-public r-wvplots
   (package
     (name "r-wvplots")
-    (version "1.3.8")
+    (version "1.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WVPlots" version))
        (sha256
-        (base32 "1zvw8mbgxnsj0r67v96fxnpcqbr2m52ffhhvzab0wlryxf7igs84"))))
+        (base32 "0gn3hf3c3z984y7gfpxgmywbdqcqyrfp2mbs293wzw9dj0939m07"))))
     (properties `((upstream-name . "WVPlots")))
     (build-system r-build-system)
     (arguments
@@ -298,6 +298,7 @@ published in 2006 by Chapman Hall / CRC Press.")
                              r-rqdatatable
                              r-rlang
                              r-mgcv
+                             r-mass
                              r-gridextra
                              r-ggplot2
                              r-cdata))
@@ -8099,6 +8100,39 @@ Locally Stationary Wavelet model of Korkas and Fryzlewicz (2017)
 <doi:10.5705/ss.202015.0262>.")
     (license license:gpl2+)))
 
+(define-public r-wbstats
+  (package
+    (name "r-wbstats")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wbstats" version))
+       (sha256
+        (base32 "0jl9r2rppyc5pi1swylqm4iq3hgq6szp10cxk6d0vrs21yrmznj1"))))
+    (properties `((upstream-name . "wbstats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pachadotdev/wbstats")
+    (synopsis
+     "Programmatic Access to Data and Statistics from the World Bank API")
+    (description "Search and download data from the World Bank Data API.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-wbsd
   (package
     (name "r-wbsd")
@@ -9681,6 +9715,40 @@ irrigated.  It reduces error risk and makes a more reproducible roster.  For
 more details about warabandi system you can found elsewhere in Bandaragoda
 DJ(1995) <https://publications.iwmi.org/pdf/H_17571i.pdf>.")
     (license license:gpl3)))
+
+(define-public r-waou
+  (package
+    (name "r-waou")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "waou" version))
+       (sha256
+        (base32 "1dba05c8dwjdiwhiwnipi8d8lczzinxznirs8vnk1k5fbp2n5d78"))))
+    (properties `((upstream-name . "waou")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survey
+                             r-stringr
+                             r-purrr
+                             r-nonprobsvy
+                             r-mice
+                             r-glue
+                             r-glmnet
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=waou")
+    (synopsis "Weighting All of Us")
+    (description
+     "Utilities for using a probability sample to reweight prevalence estimates
+calculated from the All of Us research program.  Weighted estimates will still
+not be representative of the general U.S. population.  However, they will
+provide an early indication for how unweighted estimates may be biased by the
+sampling bias in the All of Us sample.")
+    (license license:agpl3+)))
 
 (define-public r-wanova
   (package

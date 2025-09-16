@@ -5169,13 +5169,13 @@ tagging messages with a priority level and application type, as well as masking
 (define-public r-rsynthbio
   (package
     (name "r-rsynthbio")
-    (version "2.0.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsynthbio" version))
        (sha256
-        (base32 "0xx5idnpqclgzqzizb1q6cgdd4d3yf1l17f4cnsf340wvw01lwy2"))))
+        (base32 "01zfai4m9ghr16gwmiy588zmkia1fr851agbzjvjyc6czsc2xvmq"))))
     (properties `((upstream-name . "rsynthbio")))
     (build-system r-build-system)
     (arguments
@@ -10334,13 +10334,13 @@ L. Knight (1995) <doi:10.1119/1.17904> for more details.")
 (define-public r-rqdeltact
   (package
     (name "r-rqdeltact")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RQdeltaCT" version))
        (sha256
-        (base32 "0rapmwhh06afpg9c3y8hincn1wy8zg0mxfm1d8psb0hnij6gld5k"))))
+        (base32 "168id0pjk292gy5shhn9k8rhrc84ah8vadprdf3x1y1mqnazdz4k"))))
     (properties `((upstream-name . "RQdeltaCT")))
     (build-system r-build-system)
     (arguments
@@ -12203,13 +12203,13 @@ custom requests, thereby enhancing usability and flexibility for researchers.")
 (define-public r-rpdb
   (package
     (name "r-rpdb")
-    (version "2.3.4")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rpdb" version))
        (sha256
-        (base32 "0nnjbyd3s57669kxy19wmih473s1lgxcznsk3d2ym3cpy7v7k385"))))
+        (base32 "00slhsrlgfh07c5szlmb1frvwazblz8lb50713hsna8yfp06jk8m"))))
     (properties `((upstream-name . "Rpdb")))
     (build-system r-build-system)
     (arguments
@@ -14132,6 +14132,31 @@ are given: a multivariate normal generator, an orthogonal matrix generator, and
 a symmetric positive definite matrix generator, see Mezzadri, F. (2007)
 <@code{arXiv:math-ph/0609050>}.")
     (license (license:fsdg-compatible "CeCILL-2"))))
+
+(define-public r-ronfig
+  (package
+    (name "r-ronfig")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ronfig" version))
+       (sha256
+        (base32 "0wxl6vl4h902q8pj3v1vqdpk8r2hcfrwjba4jmbc7nxy6cvnrc3v"))))
+    (properties `((upstream-name . "ronfig")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (native-inputs (list r-litedown))
+    (home-page "https://timtaylor.codeberg.page/ronfig/")
+    (synopsis "Load Configuration Values")
+    (description
+     "This package provides a simple approach to configuring R projects with different
+parameter values.  Configurations are specified using a reduced subset of base R
+and parsed accordingly.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-ronfhir
   (package
@@ -16814,13 +16839,13 @@ the methodology described by Muler and Yohai (2008)
 (define-public r-robustfa
   (package
     (name "r-robustfa")
-    (version "1.1-0")
+    (version "1.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustfa" version))
        (sha256
-        (base32 "0r7ydyjg0ch1wqngzdar2bd6jh0fvfzylmxmxq97kq1k6p3gb972"))))
+        (base32 "0rl7blmyp52scwzqdx4insxav3110f69x16l2gxl590pwmz9283s"))))
     (properties `((upstream-name . "robustfa")))
     (build-system r-build-system)
     (arguments
@@ -16828,7 +16853,7 @@ the methodology described by Muler and Yohai (2008)
       #:tests? #f))
     (propagated-inputs (list r-rrcov))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=robustfa")
+    (home-page "https://fbertran.github.io/robustfa/")
     (synopsis "Object Oriented Solution for Robust Factor Analysis")
     (description
      "Outliers virtually exist in any datasets of any application field.  To avoid the
@@ -19910,13 +19935,13 @@ nanoflann library is exported and ready to be used via the linking to mechanism.
 (define-public r-rnamf
   (package
     (name "r-rnamf")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNAmf" version))
        (sha256
-        (base32 "0246h8zzvqk6s3597vly3l99cfiy8xag5bs02pp79p34y5lix1hf"))))
+        (base32 "0drhcyq0bpk9k7czvdkg316zxp4b12r5dgjyf26i03zvnawcqxxj"))))
     (properties `((upstream-name . "RNAmf")))
     (build-system r-build-system)
     (arguments
@@ -19931,7 +19956,7 @@ nanoflann library is exported and ready to be used via the linking to mechanism.
 experiments.  The RNA emulator is particularly useful when the simulations with
 different fidelity level are nonlinearly correlated.  The hyperparameters in the
 model are estimated by maximum likelihood estimation.")
-    (license license:expat)))
+    (license license:gpl3)))
 
 (define-public r-rnames
   (package
@@ -25343,13 +25368,13 @@ cases and facilitate adoption. <DOI: 10.1201/9780203910894>. <DOI:
 (define-public r-riskyr
   (package
     (name "r-riskyr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskyr" version))
        (sha256
-        (base32 "1ki3r46d73ws0gnm93llmkv42yfm0mfwvxxafnrhsdcj5kinl4ir"))))
+        (base32 "15vxm8nfmh7a0c04cqxjask6nnsi048pf5ljpib6013f2qpl5lnl"))))
     (properties `((upstream-name . "riskyr")))
     (build-system r-build-system)
     (arguments
@@ -25366,7 +25391,8 @@ providing a toolbox of corresponding metrics and representations, riskyr
 computes, translates, and visualizes risk-related information in a variety of
 ways.  Adopting multiple complementary perspectives provides insights into the
 interplay between key parameters and renders teaching and training programs on
-risk literacy more transparent.")
+risk literacy more transparent (see <doi:10.3389/fpsyg.2020.567817>, for
+details).")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-risksimul
@@ -34872,6 +34898,32 @@ and the proper data.  The repo can then be used for hosting code taught during
 the workshop.")
     (license license:expat)))
 
+(define-public r-repo-data
+  (package
+    (name "r-repo-data")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "repo.data" version))
+       (sha256
+        (base32 "0lymfkfj6l0l112439ykiz8lrl8w561xkgx4ddnd85c3fx820314"))))
+    (properties `((upstream-name . "repo.data")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/llrs/repo.data")
+    (synopsis "R Repository Data")
+    (description
+     "Retrieve metadata about packages from repositories to explore package
+dependencies, links between help pages, aliases, package availability on a given
+date, and other repository dependent outcome.  This metadata can be used to help
+package maintainers and users to navigate changes on dependencies and with
+reproducibility.")
+    (license license:gpl3+)))
+
 (define-public r-repo
   (package
     (name "r-repo")
@@ -35809,13 +35861,13 @@ W., et al. (2015)
 (define-public r-rempsyc
   (package
     (name "r-rempsyc")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rempsyc" version))
        (sha256
-        (base32 "1zhha8yymwyv0nrnsqjcwggs3xqrwgbfr3ahyixi3fc61yqsrdx4"))))
+        (base32 "00sdbad5y2a8y4nn80n15mmgslj10irvk3c9mlnq8mdbvzkjvbp8"))))
     (properties `((upstream-name . "rempsyc")))
     (build-system r-build-system)
     (arguments
@@ -44238,6 +44290,36 @@ RDDs are in Thistlethwaite, D. L., Campbell, D. T. (1960) <doi:10.1037/h0044319>
 and Lee, D. S., Lemieux, T. (2010) <doi:10.1257/jel.48.2.281>.")
     (license license:gpl2+)))
 
+(define-public r-rdcmchecks
+  (package
+    (name "r-rdcmchecks")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rdcmchecks" version))
+       (sha256
+        (base32 "17ss46rx4rgyl174ksd6w5z0vykkr145f4n1xrxxc575k65fpbdk"))))
+    (properties `((upstream-name . "rdcmchecks")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readr
+                             r-dplyr
+                             r-cli))
+    (home-page "https://rdcmchecks.r-dcm.org")
+    (synopsis "Common Argument Checks for 'r-dcm' Packages")
+    (description
+     "Many packages in the r-dcm family take similar arguments, which are checked for
+expected structures and values.  Rather than duplicating code across several
+packages, commonly used check functions are included here.  This package can
+then be imported to access the check functions in other packages.")
+    (license license:expat)))
+
 (define-public r-rdbnomics
   (package
     (name "r-rdbnomics")
@@ -45430,13 +45512,13 @@ Further integration and extensions are planned.")
 (define-public r-rcppsimdjson
   (package
     (name "r-rcppsimdjson")
-    (version "0.1.13")
+    (version "0.1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppSimdJson" version))
        (sha256
-        (base32 "0p1yfdsnikr6j2kcpbkv20fnskdpx6plq1yli6kis2q2cclypn17"))))
+        (base32 "192cfvgnh60qwjvc2ip21ryizcpqgazkqbjnwv5isacgylhbk70m"))))
     (properties `((upstream-name . "RcppSimdJson")))
     (build-system r-build-system)
     (arguments
@@ -46519,13 +46601,13 @@ Analysis, 3rd Edition,\" Thousand Oaks, CA: Sage Publications.")
 (define-public r-rcpa
   (package
     (name "r-rcpa")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCPA" version))
        (sha256
-        (base32 "05k1kr76yi2i650lhr77kfnx1ca7i2hwflqy8531378qxk79lbb6"))))
+        (base32 "1cl6kcmgc2hsmgsyxyv8jf5msbgifd8igi8id5d6xgsikmschpsm"))))
     (properties `((upstream-name . "RCPA")))
     (build-system r-build-system)
     (arguments
@@ -49156,13 +49238,13 @@ and continuous treatment settings.  A description of the methods is given in Liu
 (define-public r-rcauctile
   (package
     (name "r-rcauctile")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCaucTile" version))
        (sha256
-        (base32 "07j8rax54pyhmxq2zz7qqcg03qkslx1rpg0ksm859j9rp4rj980r"))))
+        (base32 "0d3yckwpwz6b7y5jyr1n6bb2s5nmrj8i1x0gawi25a58gfz2rsjb"))))
     (properties `((upstream-name . "RCaucTile")))
     (build-system r-build-system)
     (arguments
@@ -49807,13 +49889,13 @@ text files and more...")
 (define-public r-rbmiutils
   (package
     (name "r-rbmiutils")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbmiUtils" version))
        (sha256
-        (base32 "1969ixngybrl3g5pwj7p5624417ybxdwr22wpr70yjjxr7m15r1y"))))
+        (base32 "0xyif01pqkb6iam8h8gbkinam1zagxwxkdgm2ak3wj2ld7idwa3d"))))
     (properties `((upstream-name . "rbmiUtils")))
     (build-system r-build-system)
     (arguments
@@ -53455,13 +53537,13 @@ subset.  For further details, see Fischler and Bolles (1981)
 (define-public r-ranktreeensemble
   (package
     (name "r-ranktreeensemble")
-    (version "0.23")
+    (version "0.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ranktreeEnsemble" version))
        (sha256
-        (base32 "09nax4h3jajbkbjkxwd8zd075lkhgcfhh42c2zqwwn8bkdyk03gr"))))
+        (base32 "1j777cnlcrgb031g2r57s77d42a1w90zlmggykbky6m3d97a3sg3"))))
     (properties `((upstream-name . "ranktreeEnsemble")))
     (build-system r-build-system)
     (arguments
@@ -57634,13 +57716,13 @@ J. (2023, ISBN:9781119747918).")
 (define-public r-r4ds-tutorials
   (package
     (name "r-r4ds-tutorials")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r4ds.tutorials" version))
        (sha256
-        (base32 "1826rzmvrmwpc03szvd4709mmacn9mmvbhzvy876gg5ca2wp5rw1"))))
+        (base32 "1i4vy3wv08m9g79a0afbw9y8nnyvcq65f3546ahjgz9xxx6bjh36"))))
     (properties `((upstream-name . "r4ds.tutorials")))
     (build-system r-build-system)
     (arguments
@@ -59143,13 +59225,13 @@ structure optimization - Mauro Scanagatta (2016)
 (define-public r-r-alpha-home
   (package
     (name "r-r-alpha-home")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R.AlphA.Home" version))
        (sha256
-        (base32 "12wf6p5xjaaqkpwag8c8b71n2k841yaidn0q2xsq5cjybzm91bx8"))))
+        (base32 "1xgqwhv0xl6mk9wlfbl7cg5sn25jwznsph5pqpk32i4x0dpfn59d"))))
     (properties `((upstream-name . "R.AlphA.Home")))
     (build-system r-build-system)
     (arguments
@@ -59158,17 +59240,22 @@ structure optimization - Mauro Scanagatta (2016)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
+                             r-stringi
                              r-shinywidgets
                              r-shiny
                              r-rstudioapi
+                             r-r6
                              r-r-utils
+                             r-qs
                              r-openxlsx
                              r-magrittr
                              r-lubridate
                              r-ggplot2
                              r-dplyr
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=R.AlphA.Home")
+                             r-diffr
+                             r-data-table
+                             r-arrow))
+    (home-page "https://github.com/R-alpha-act/R.AlphA.Home")
     (synopsis
      "Feel at Home using R, Thanks to Shortcuts Functions Making it Simple")
     (description

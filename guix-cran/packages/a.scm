@@ -5475,13 +5475,13 @@ Ma, C. et al. (2020) <doi:10.1111/2041-210X.13426>.")
 (define-public r-assignpop
   (package
     (name "r-assignpop")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "assignPOP" version))
        (sha256
-        (base32 "0p282yyszjamvzfsrjhy5c4jbfixvf4fafj6k47k2dgpx6wsdrqx"))))
+        (base32 "1s6h1vc3xr873raj4j2kxaf0mshhwplll4mdf58rjj5vr4iwvhm7"))))
     (properties `((upstream-name . "assignPOP")))
     (build-system r-build-system)
     (arguments
@@ -6887,13 +6887,13 @@ that incorporate some form of randomness.")
 (define-public r-artpack
   (package
     (name "r-artpack")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "artpack" version))
        (sha256
-        (base32 "124lybfsxy62qdwr14w8w88kn4fylfff6qd2xy07x2g3lncf6497"))))
+        (base32 "18qwn8qcx4wnzbjh70w11ndmwm66mmvlrnay18m47f0jsn6lmb0n"))))
     (properties `((upstream-name . "artpack")))
     (build-system r-build-system)
     (arguments
@@ -6901,8 +6901,10 @@ that incorporate some form of randomness.")
       #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
+                             r-sf
                              r-rlang
                              r-purrr
+                             r-lifecycle
                              r-knitr
                              r-dplyr
                              r-cli))
@@ -8237,34 +8239,40 @@ these services, see <https://www.ogc.org/publications/standard/wfs/> and
 (define-public r-argentinapi
   (package
     (name "r-argentinapi")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ArgentinAPI" version))
        (sha256
-        (base32 "1g386nv5pwhc5cd198m6v1b6j89vfcdgh5fs98nfqjsf60zvsykl"))))
+        (base32 "1wh9bvxkcw0fpi8pjzk68szizf7v9h3g02w2c788r31pn2srpmmq"))))
     (properties `((upstream-name . "ArgentinAPI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lubridate r-jsonlite r-httr r-dplyr))
+    (propagated-inputs (list r-tibble
+                             r-scales
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lightbluetitan/argentinapi")
-    (synopsis
-     "Access Argentine Economic, Social, and Geopolitical Data via RESTful APIs and Curated Datasets")
+    (synopsis "Access Argentinian Data via APIs and Curated Datasets")
     (description
-     "This package provides functions to access data from the @code{ArgentinaDatos}
-API and the REST Countries API related to Argentina's exchange rates, inflation,
-political figures, holidays, and general country-level indicators.
+     "This package provides functions to access data from public RESTful APIs
+including the @code{ArgentinaDatos} API', REST Countries API', and World Bank
+API related to Argentina's exchange rates, inflation, political figures,
+holidays, economic indicators, and general country-level statistics.
 Additionally, the package includes curated datasets related to Argentina,
 covering topics such as economic indicators, biodiversity, agriculture, human
 rights, genetic data, and consumer prices.  The package supports research and
 analysis focused on Argentina by integrating open APIs with high-quality
-datasets from various domains.  For more details on the @code{ArgentinaDatos}
-API', see <https://argentinadatos.com/> and for REST Countries', see
-<https://restcountries.com/>.")
+datasets from various domains.  For more details on the APIs, see:
+@code{ArgentinaDatos} API <https://argentinadatos.com/>, REST Countries API
+<https://restcountries.com/>, and World Bank API
+<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>.")
     (license license:gpl3)))
 
 (define-public r-arfima
@@ -8550,13 +8558,13 @@ orientation.  The shoelace formula is described at
 (define-public r-ards
   (package
     (name "r-ards")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ards" version))
        (sha256
-        (base32 "1dnq63klzbwvkcaxn9bng4wvh8mhggkwa69ypwf5kdn1rjways88"))))
+        (base32 "0cb0j4m4d28lsv16zzfv6y5hy5n1d4gbv5c9wag3ijgcg828scvy"))))
     (properties `((upstream-name . "ards")))
     (build-system r-build-system)
     (arguments
@@ -8752,13 +8760,13 @@ Biokybernetika.  De Gruyter, Berlin, pp.  665â676.")
 (define-public r-arctosr
   (package
     (name "r-arctosr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ArctosR" version))
        (sha256
-        (base32 "08aspnmzlnx9z92plwr5rpvfqwyynnd8piq7jf3d1r6xj0zr4z6j"))))
+        (base32 "08dr9na41dk72xdnv8q5xb7any3mj9akjgfvw4mqcj85f6d7qkdb"))))
     (properties `((upstream-name . "ArctosR")))
     (build-system r-build-system)
     (arguments
@@ -11710,13 +11718,13 @@ frames.")
 (define-public r-apache-sedona
   (package
     (name "r-apache-sedona")
-    (version "1.7.2")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apache.sedona" version))
        (sha256
-        (base32 "0aq0vj11m8i0ii74ml71km38rrvh7nlxfsd7f1i5ykbmcqks25ay"))))
+        (base32 "172cgn9pgydlmwr8l191pyx3qklmxhsmiqhgzcv0s3dbva3gjrvi"))))
     (properties `((upstream-name . "apache.sedona")))
     (build-system r-build-system)
     (arguments
@@ -12346,13 +12354,13 @@ masses (i.e.  mixtures with fixed number of components).")
 (define-public r-antitrust
   (package
     (name "r-antitrust")
-    (version "0.99.29")
+    (version "0.99.30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antitrust" version))
        (sha256
-        (base32 "02b3nv7k24gl69h5a8n0zg4h6rqi6skk4qwpb6h6kyangfd4vzm1"))))
+        (base32 "12nja330bksh01d0p6blmjff64v754294z7024h7bq0vx8i3syi0"))))
     (properties `((upstream-name . "antitrust")))
     (build-system r-build-system)
     (arguments
@@ -17729,13 +17737,13 @@ the measurement data used for parameter development.")
 (define-public r-ale
   (package
     (name "r-ale")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ale" version))
        (sha256
-        (base32 "02nzas11wszj02b4nn4dsb5v8lz21dyn9508myq8al59mwzmzapb"))))
+        (base32 "1mbv6w7b7njy41cl2ic7w0pilly4bpb2d46vnpkm30qb2jlh5q78"))))
     (properties `((upstream-name . "ale")))
     (build-system r-build-system)
     (arguments
@@ -19715,20 +19723,20 @@ pairwise evaluation.")
 (define-public r-ahpgaussian
   (package
     (name "r-ahpgaussian")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AHPGaussian" version))
        (sha256
-        (base32 "12sfh4nn4aj3jdga47dcwzf0qvhydgh56kv5kqmwg0bxw7g5r9z7"))))
+        (base32 "0jnph1s85mlfb2yn3fjfwzhv6a2l5zyd87my26hxn2iw7zq3p41b"))))
     (properties `((upstream-name . "AHPGaussian")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reshape2))
-    (home-page "https://cran.r-project.org/package=AHPGaussian")
+    (propagated-inputs (list r-tidyr r-magrittr r-ggplot2 r-dplyr))
+    (home-page "https://cidedson.github.io/ahpgaussian/")
     (synopsis "New Multicriteria Method: AHPGaussian")
     (description
      "This package implements the Analytic Hierarchy Process (AHP) method using
@@ -19736,7 +19744,7 @@ Gaussian normalization (AHPGaussian) to derive the relative weights of the
 criteria and alternatives.  It also includes functions for visualizing the
 results and generating graphical outputs.  Method as described in: dos Santos,
 Marcos (2021) <doi:10.13033/ijahp.v13i1.833>.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-ahocorasicktrie
   (package
@@ -22119,13 +22127,13 @@ transformation.  Genetics 200:469-481 <doi:10.1534/genetics.115.176842>.")
 (define-public r-adw
   (package
     (name "r-adw")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adw" version))
        (sha256
-        (base32 "0ng9iabxh15xaj10mi6xdggmx6fcvdmmx1c9nlyfkbnb4f1qzlxp"))))
+        (base32 "056j039lq1bh4v2vfzvx55j0bzvvj88i5dq7zp2drw7cvyl21rh9"))))
     (properties `((upstream-name . "adw")))
     (build-system r-build-system)
     (arguments
@@ -23231,6 +23239,49 @@ derivations are implemented in accordance with the \"Analysis Data Model
 Implementation Guide\" (CDISC Analysis Data Model Team (2021),
 <https://www.cdisc.org/standards/foundational/adam>).  The package is an
 extension package of the admiral package.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-admiralneuro
+  (package
+    (name "r-admiralneuro")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "admiralneuro" version))
+       (sha256
+        (base32 "1si8k447hqgfanmpjsj1vbrf4n5z216xlmxcm584p2nsdqcipcbl"))))
+    (properties `((upstream-name . "admiralneuro")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-lifecycle
+                             r-hms
+                             r-dplyr
+                             r-cli
+                             r-admiraldev
+                             r-admiral))
+    (native-inputs (list r-knitr))
+    (home-page "https://pharmaverse.github.io/admiralneuro/")
+    (synopsis "Neuroscience Extension Package for ADaM in 'R' Asset Library")
+    (description
+     "Programming neuroscience Clinical Data Standards Interchange Consortium (CDISC)
+compliant Analysis Data Model (A@code{DaM}) datasets.  A@code{DaM} datasets are
+a mandatory part of any New Drug or Biologics License Application submitted to
+the United States Food and Drug Administration (FDA).  Analysis derivations are
+implemented in accordance with the \"Analysis Data Model Implementation Guide\"
+(CDISC Analysis Data Model Team, 2021,
+<https://www.cdisc.org/standards/foundational/adam>).  This package extends the
+admiral package.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-admiralmetabolic

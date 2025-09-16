@@ -8965,19 +8965,19 @@ and normality of data in each group via tests and plots (Dag et al., 2018,
 (define-public r-onetwosamples
   (package
     (name "r-onetwosamples")
-    (version "1.1-0")
+    (version "1.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OneTwoSamples" version))
        (sha256
-        (base32 "0qa5v3c1f5mckvgmw8zbxqkk1q8k8dig1xg9k8pfyvfxqjard1ny"))))
+        (base32 "08f02nyg5jpq69mkwfal9xghqymhz81m3jzbvv92m8s0h99cirqd"))))
     (properties `((upstream-name . "OneTwoSamples")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=OneTwoSamples")
+    (home-page "https://github.com/fbertran/OneTwoSamples")
     (synopsis "Deal with One and Two (Normal) Samples")
     (description
      "We introduce an R function @code{one_two_sample()} which can deal with one and
@@ -12895,13 +12895,13 @@ changepoints.")
 (define-public r-ocnet
   (package
     (name "r-ocnet")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OCNet" version))
        (sha256
-        (base32 "1ryb5jbz1dd4b9v45za6li1szdz8n9mmf3n3wx4ivqmcrnp2zqdh"))))
+        (base32 "1qa2p0fhv9zblbbr5zxip2c8m6c2lpiicysy4s9dglmwggcc9gcd"))))
     (properties `((upstream-name . "OCNet")))
     (build-system r-build-system)
     (arguments

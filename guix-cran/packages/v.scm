@@ -636,13 +636,13 @@ as at
 (define-public r-vtree
   (package
     (name "r-vtree")
-    (version "5.6.5")
+    (version "5.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vtree" version))
        (sha256
-        (base32 "0qszya11qh2xzq1blbrcli3l8hhf0dannhh2hn3gi59c9dn3jr16"))))
+        (base32 "1fh0miiqbds3sy2zpwmmxn0p7sb28mc4idpkh7ddpibj348pwf9m"))))
     (properties `((upstream-name . "vtree")))
     (build-system r-build-system)
     (arguments
@@ -659,7 +659,8 @@ as at
     (synopsis "Display Information About Nested Subsets of a Data Frame")
     (description
      "This package provides a tool for calculating and drawing \"variable trees\".
-Variable trees display information about nested subsets of a data frame.")
+Variable trees display information about nested subsets of a data frame.
+<doi:10.18637/jss.v114.i04>.")
     (license license:gpl3)))
 
 (define-public r-vtreat
@@ -2404,13 +2405,13 @@ Das (2020) <http://krishi.icar.gov.in/jspui/handle/123456789/44138>.")
 (define-public r-vmdecomp
   (package
     (name "r-vmdecomp")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VMDecomp" version))
        (sha256
-        (base32 "0iq2lj7n77qmryf95cjl2y869bhy6i0mx44qls7xc07g0qplwqx3"))))
+        (base32 "1s2gvp8p7p1qfd86s9gq3was1pm8r6qb7lnxlyd8qmzznizg0hw9"))))
     (properties `((upstream-name . "VMDecomp")))
     (build-system r-build-system)
     (arguments
@@ -7671,6 +7672,39 @@ loadings matrix, the score functions, the variable selection results, and the
 estimated variance of the random noise.")
     (license license:gpl3)))
 
+(define-public r-vbphenor
+  (package
+    (name "r-vbphenor")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VBphenoR" version))
+       (sha256
+        (base32 "1idh2yicywxsjq4wsb58qwb962866jw8wgsksh1yr4vly3wz345r"))))
+    (properties `((upstream-name . "VBphenoR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pracma
+                             r-knitr
+                             r-ggplot2
+                             r-dbscan
+                             r-data-table
+                             r-cholwishart))
+    (home-page "https://github.com/buckleybrian/VBphenoR")
+    (synopsis "Variational Bayes for Latent Patient Phenotypes in EHR")
+    (description
+     "Identification of Latent Patient Phenotype from Electronic Health Records (EHR)
+Data using Variational Bayes Gaussian Mixture Model for Latent Class Analysis
+and Variational Bayes regression for Biomarker level shifts, both implemented by
+Coordinate Ascent Variational Inference algorithms.  Variational methods are
+used to enable Bayesian analysis of very large Electronic Health Records data.
+For VB GMM details see Bishop (2006,ISBN:9780-387-31073-2).  For Logistic VB see
+Jaakkola and Jordan (2000) <doi:10.1023/A:1008932416310>.")
+    (license (license:fsdg-compatible "MIT + file LICENCE"))))
+
 (define-public r-vblpcm
   (package
     (name "r-vblpcm")
@@ -7809,6 +7843,42 @@ precision of vaccine efficacy evaluation using immune correlate data in
 time-to-event models\" by Julie Dudasova, Zdenek Valenta, and Jeffrey R. Sachs
 (2024).")
     (license license:gpl3)))
+
+(define-public r-vaxiner
+  (package
+    (name "r-vaxiner")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vaxineR" version))
+       (sha256
+        (base32 "044x68h36s93fkdq4l99gdyjgni1jgyfxb5nwqin7whx977mxyi3"))))
+    (properties `((upstream-name . "vaxineR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-scales
+                             r-purrr
+                             r-openxlsx
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=vaxineR")
+    (synopsis "Vaccine Coverage and Outbreak Risk Analysis")
+    (description
+     "This package provides tools to analyze vaccine coverage data and simulate
+potential disease outbreak scenarios.  It allows users to calculate key
+epidemiological metrics such as the effective reproduction number (Re), outbreak
+probabilities, and expected infection counts based on county-level vaccination
+rates, disease characteristics, and vaccine effectiveness.  The package includes
+historical kindergarten vaccination data for Florida counties and offers
+functions for generating summary tables, visualizations, and exporting the
+underlying plot data.")
+    (license license:gpl3+)))
 
 (define-public r-vaultr
   (package
