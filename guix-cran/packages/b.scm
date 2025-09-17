@@ -3905,36 +3905,6 @@ optionally used to sort the heatmap.")
      "Bayesian estimation and variable selection for quantile regression models.")
     (license license:gpl3+)))
 
-(define-public r-brpop
-  (package
-    (name "r-brpop")
-    (version "0.6.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "brpop" version))
-       (sha256
-        (base32 "0gg9yfswa7n1fl37srwzgh3dfd2hsgf7s7wdr9zbl6z51my6glll"))))
-    (properties `((upstream-name . "brpop")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zendown
-                             r-tibble
-                             r-rlang
-                             r-magrittr
-                             r-dtplyr
-                             r-dplyr
-                             r-data-table
-                             r-checkmate))
-    (home-page "https://rfsaldanha.github.io/brpop/")
-    (synopsis "Brazilian Population Estimatives")
-    (description
-     "This package provides functions to handle and aggregate population estimates for
-Brazilian municipalities by sex and age groups.")
-    (license license:expat)))
-
 (define-public r-browndog
   (package
     (name "r-browndog")
@@ -12417,19 +12387,19 @@ new data.  It provides the similar functionality as the Python package
 (define-public r-bkp
   (package
     (name "r-bkp")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BKP" version))
        (sha256
-        (base32 "1dys81gms9pgv0fy7fdmiwf53657csmbdsbdlygimcrs3nr5qpy1"))))
+        (base32 "14zwj703sx9m4ss7bxdwkshvb4gh3ndp2wx0x4q3am0w20758i4a"))))
     (properties `((upstream-name . "BKP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tgp r-optimx r-lattice r-gridextra))
+    (propagated-inputs (list r-tgp r-optimx r-lattice r-gridextra r-dirmult))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Jiangyan-Zhao/BKP")
     (synopsis "Beta Kernel Process Modeling")
@@ -12898,13 +12868,13 @@ color matrix representation on an interactive map.")
 (define-public r-bivarian
   (package
     (name "r-bivarian")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiVariAn" version))
        (sha256
-        (base32 "174n526awa7spiyaghwjbxbs63g8wl550y9i4nvziw21b57ifb3p"))))
+        (base32 "1a4sxn7r0r8a6gfbpbly4mffz8cmpp131kdb8yafsdnv0cfkixpf"))))
     (properties `((upstream-name . "BiVariAn")))
     (build-system r-build-system)
     (arguments
@@ -12912,6 +12882,7 @@ color matrix representation on an interactive map.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-table1
+                             r-systemfonts
                              r-scales
                              r-rrtable
                              r-rlang
@@ -17667,13 +17638,13 @@ simulating networks with local dependence to assess the goodness-of-fit.")
 (define-public r-bigdm
   (package
     (name "r-bigdm")
-    (version "0.5.6")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigDM" version))
        (sha256
-        (base32 "1fp2x59fbdrg33z5hvvyaq2r7vdfnr34hnpirj0j969asr3k416f"))))
+        (base32 "004n75ijvy30fqb6f2xzhkl3vn2dir8z22b83s0gcb1ajn3b5lnz"))))
     (properties `((upstream-name . "bigDM")))
     (build-system r-build-system)
     (arguments
@@ -30419,20 +30390,19 @@ sources such as @code{OpenStreetMap}', Carto', Mapbox and others in R.")
 (define-public r-basedosdados
   (package
     (name "r-basedosdados")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basedosdados" version))
        (sha256
-        (base32 "18gfk7hivp68mgbgx60qbpcy28ysj4llzwdji5a57rrczwffr6p0"))))
+        (base32 "15qi1z3nwy6k7h19s4dllqdvksmyvzgs7x0fh3x4w1izfdb3v4r2"))))
     (properties `((upstream-name . "basedosdados")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-writexl
-                             r-typed
                              r-tibble
                              r-stringr
                              r-scales
@@ -30453,7 +30423,7 @@ sources such as @code{OpenStreetMap}', Carto', Mapbox and others in R.")
     (synopsis "'Base Dos Dados' R Client")
     (description
      "An R interface to the Base dos Dados API
-<https:basedosdados.github.io/mais/py_reference_api/>).  Authenticate your
+<https://basedosdados.org/docs/api_reference_python/>).  Authenticate your
 project, query our tables, save data to disk and memory, all from R.")
     (license license:expat)))
 

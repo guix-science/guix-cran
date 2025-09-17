@@ -9429,13 +9429,13 @@ documentation, README and website creation, and citation management.")
 (define-public r-washi
   (package
     (name "r-washi")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "washi" version))
        (sha256
-        (base32 "04cibvi0d9spx8h0r28m1sz5drrkiblzfp63v6csm2n4dv55x075"))))
+        (base32 "0n1n4vkgcr63vm1b52jfy9jk8rq6paj8hcgfmi9frsi84wbxgvpy"))))
     (properties `((upstream-name . "washi")))
     (build-system r-build-system)
     (arguments

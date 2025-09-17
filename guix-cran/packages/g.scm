@@ -1550,13 +1550,13 @@ from Git', SQLite', and Make to provide a lab notebook for machine learning.")
 (define-public r-guider
   (package
     (name "r-guider")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "guideR" version))
        (sha256
-        (base32 "05shminhnriw0v32vgkc9dzls7f665xlrrdidrh9fgk9rljq8nby"))))
+        (base32 "0x517bj3l7sj4xs0nl0s6z8gi8v5gbw1d10w9a76nq7n8b787i22"))))
     (properties `((upstream-name . "guideR")))
     (build-system r-build-system)
     (arguments
@@ -9104,6 +9104,43 @@ modeled by stationary kernels using fast Fourier methods.  Utility functions are
 provided to compile and fit Stan models using the cmdstanr interface.
 References: Hoffmann and Onnela (2025) <doi:10.18637/jss.v112.i02>.")
     (license license:expat)))
+
+(define-public r-gptcm
+  (package
+    (name "r-gptcm")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GPTCM" version))
+       (sha256
+        (base32 "1j315vjdhh94r4w6fz9nyr65imqxnz3wh1xm98h2pa2innkvz4hc"))))
+    (properties `((upstream-name . "GPTCM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-scales
+                             r-riskregression
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvnfast
+                             r-micoptcm
+                             r-matrix
+                             r-loo
+                             r-ggridges
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ocbe-uio/GPTCM")
+    (synopsis
+     "Generalized Promotion Time Cure Model with Bayesian Shrinkage Priors")
+    (description
+     "Generalized promotion time cure model (GPTCM) via Bayesian hierarchical modeling
+for multiscale data integration (Zhao et al. (2025)
+<doi:10.48550/@code{arXiv.2509.01001>}).  The Bayesian GPTCMs are applicable for
+both low- and high-dimensional data.")
+    (license license:gpl3)))
 
 (define-public r-gpseqclus
   (package
@@ -21519,13 +21556,13 @@ ggiraph'.")
 (define-public r-ggiraph
   (package
     (name "r-ggiraph")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggiraph" version))
        (sha256
-        (base32 "1kga06mg06b80a9hd66rxxks8jd8mjs8ifj3l7wrmhj3i675vq2p"))))
+        (base32 "0sgnphc8xbhg7cvjwl7q0gp1yq83f61wrirn7gvi14q0mz1rhgqc"))))
     (properties `((upstream-name . "ggiraph")))
     (build-system r-build-system)
     (arguments
@@ -26336,6 +26373,57 @@ cross-validation, pocket plot, and design of optimal sampling networks through
 sequential and simultaneous points methods.")
     (license license:gpl2+)))
 
+(define-public r-geospatialsuite
+  (package
+    (name "r-geospatialsuite")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geospatialsuite" version))
+       (sha256
+        (base32 "07hqmswycd8bszf9lsavq352l8xh49k1pv2jjj93bxrhxbb8b18m"))))
+    (properties `((upstream-name . "geospatialsuite")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tigris
+                             r-terra
+                             r-stringr
+                             r-sf
+                             r-rnaturalearth
+                             r-rcolorbrewer
+                             r-mice
+                             r-magrittr
+                             r-leaflet
+                             r-htmlwidgets
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=geospatialsuite")
+    (synopsis
+     "Comprehensive Geospatiotemporal Analysis and Multimodal Integration Toolkit")
+    (description
+     "This package provides a comprehensive toolkit for geospatiotemporal analysis
+featuring 60+ vegetation indices, advanced raster visualization, universal
+spatial mapping, water quality analysis, CDL crop analysis, spatial
+interpolation, temporal analysis, and terrain analysis.  Designed for
+agricultural research, environmental monitoring, remote sensing applications,
+and publication-quality mapping with support for any geographic region and
+robust error handling.  Methods include vegetation indices calculations (Rouse
+et al.  1974), NDVI and enhanced vegetation indices (Huete et al.  1997)
+<doi:10.1016/S0034-4257(97)00104-1>, spatial interpolation techniques (Cressie
+1993, ISBN:9780471002556), water quality indices (@code{McFeeters} 1996)
+<doi:10.1080/01431169608948714>, and crop data layer analysis (USDA NASS 2024)
+<https://www.nass.usda.gov/Research_and_Science/Cropland/>.  Funding: This
+material is based upon financial support by the National Science Foundation, EEC
+Division of Engineering Education and Centers, NSF Engineering Research Center
+for Advancing Sustainable and Distributed Fertilizer production (CASFER), NSF
+20-553 Gen-4 Engineering Research Centers award 2133576.")
+    (license license:expat)))
+
 (define-public r-geospark
   (package
     (name "r-geospark")
@@ -30480,6 +30568,31 @@ portfolio performance is @code{outOFsamp()}.  Panel data implementation is now
 included.  See eight vignettes of the package for theory, examples, and usage
 tips.  See Vinod (2019) \\doi{10.1080/03610918.2015.1122048}.")
     (license license:gpl2+)))
+
+(define-public r-genepopstats
+  (package
+    (name "r-genepopstats")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GenePopStats" version))
+       (sha256
+        (base32 "1lcdivxp7xys9ag4f2p8lixfrnzhsrx52v5ccw2w5gqlf5wmc4a5"))))
+    (properties `((upstream-name . "GenePopStats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vcfr))
+    (home-page "https://cran.r-project.org/package=GenePopStats")
+    (synopsis "Population Genetics Statistics for Selective Sweep")
+    (description
+     "Selective Sweep can be calculated by five significant Population Genetics
+Statistics such as \"Pi\", \"Wattersons_theta\", \"Tajima_D\", \"Kelly_@code{ZnS}\" and
+\"Omega\" Statistics in specified chromosomal region.  It has been developed by
+using the concept of \"Kern\" and \"Schrider\" (2018)<doi:10.1534/g3.118.200262>.")
+    (license license:gpl3)))
 
 (define-public r-genepop
   (package

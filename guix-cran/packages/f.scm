@@ -10454,6 +10454,43 @@ measurements of test objects.  Heavily based on the @code{fBIRN} procedures
 detailed by Friedman and Glover (2006) <doi:10.1002/jmri.20583>.")
     (license license:gpl3)))
 
+(define-public r-fmrihrf
+  (package
+    (name "r-fmrihrf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fmrihrf" version))
+       (sha256
+        (base32 "0162g2bav9kh8zg3hggk8yg9cjablpvyjj6wqwvp1pcyf8zfpphn"))))
+    (properties `((upstream-name . "fmrihrf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-pracma
+                             r-numderiv
+                             r-memoise
+                             r-matrix
+                             r-cli
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://bbuchsbaum.github.io/fmrihrf/")
+    (synopsis "Hemodynamic Response Functions for fMRI Data Analysis")
+    (description
+     "Creates, manipulates, and evaluates hemodynamic response functions and
+event-related regressors for functional magnetic resonance imaging data
+analysis.  Supports multiple basis sets including Canonical, Gamma, Gaussian,
+B-spline, and Fourier bases.  Features decorators for time-shifting and
+blocking, and efficient convolution algorithms for regressor construction.
+Methods are based on standard @code{fMRI} analysis techniques as described in
+Jezzard et al. (2001, ISBN:9780192630711).")
+    (license license:expat)))
+
 (define-public r-fmradio
   (package
     (name "r-fmradio")

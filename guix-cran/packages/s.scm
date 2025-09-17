@@ -13726,6 +13726,39 @@ inference in semi-supervised and unsupervised settings.  Software paper
 available at <doi:10.18637/jss.v113.i08>.")
     (license license:gpl2)))
 
+(define-public r-stepmetrics
+  (package
+    (name "r-stepmetrics")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stepmetrics" version))
+       (sha256
+        (base32 "1s1sx8smrfdfldhiiqp5hry799i8g383jdcd0ypczghwf6hfc40k"))))
+    (properties `((upstream-name . "stepmetrics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-physicalactivity))
+    (home-page "https://github.com/jhmigueles/stepmetrics")
+    (synopsis "Calculate Step and Cadence Metrics from Wearable Data")
+    (description
+     "This package provides functions to calculate step- and cadence-based metrics
+from timestamped accelerometer and wearable device data.  Supports CSV and AGD
+files from @code{ActiGraph} devices, CSV files from Fitbit devices, and step
+counts derived with R package GGIR <https://github.com/wadpac/GGIR>, with
+automatic handling of epoch lengths from 1 to 60 seconds.  Metrics include total
+steps, cadence peaks, minutes and steps in predefined cadence bands, and time
+and steps in moderate-to-vigorous physical activity (MVPA).  Methods and
+thresholds are informed by the literature, e.g., Tudor-Locke and Rowe (2012)
+<doi:10.2165/11599170-000000000-00000>, Barreira et al. (2012)
+<doi:10.1249/MSS.0b013e318254f2a3>, and Tudor-Locke et al. (2018)
+<doi:10.1136/bjsports-2017-097628>.  The package record is also available on
+Zenodo (2023) <doi:10.5281/zenodo.7858094>.")
+    (license license:agpl3+)))
+
 (define-public r-stepjglm
   (package
     (name "r-stepjglm")
@@ -14587,20 +14620,21 @@ Scott (2024) <doi:10.32614/CRAN.package.bsts>, and Stephenson et al'. (2024)
 (define-public r-stbl
   (package
     (name "r-stbl")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stbl" version))
        (sha256
-        (base32 "0hlc73i0qkxixw8z27sc0fj0i613x248i4bwk2zdrsby4zfhbxvq"))))
+        (base32 "008k6005cmpnz3aapdlmxv8dnfhr9cxc8gzmjxp5knv8jhpphii3"))))
     (properties `((upstream-name . "stbl")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vctrs r-rlang r-glue r-cli))
-    (home-page "https://github.com/jonthegeek/stbl")
+    (native-inputs (list r-knitr))
+    (home-page "https://stbl.api2r.org/")
     (synopsis "Stabilize Function Arguments")
     (description
      "This package provides a set of consistent, opinionated functions to quickly
@@ -18063,6 +18097,36 @@ decompositions.  See Heather Anderson, Farshid Vahid (1998)
 <doi:10.48550/@code{arXiv.2404.19707>}.")
     (license license:gpl3)))
 
+(define-public r-sstn
+  (package
+    (name "r-sstn")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sstn" version))
+       (sha256
+        (base32 "0iipr4hl4l59cb7f40sy2szfwky8sfzaras5j42ky3mgbhhjw5n9"))))
+    (properties `((upstream-name . "sstn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=sstn")
+    (synopsis "Self-Similarity Test for Normality")
+    (description
+     "This package implements the Self-Similarity Test for Normality (SSTN), a new
+statistical test designed to assess whether a given sample originates from a
+normal distribution.  The procedure is based on iteratively estimating the
+characteristic function of the sum of standardized i.i.d.  random variables and
+comparing it to the characteristic function of the standard normal distribution.
+ A Monte Carlo procedure is used to determine the empirical distribution of the
+test statistic under the null hypothesis.  Details of the methodology are
+described in Anarat and Schwender (2025), \"A normality test based on
+self-similarity\" (Submitted).")
+    (license license:gpl3)))
+
 (define-public r-sstack
   (package
     (name "r-sstack")
@@ -18685,13 +18749,13 @@ Zhelonkin and Ronchetti (2021) <doi:10.18637/jss.v099.i04>.")
 (define-public r-ssmrcd
   (package
     (name "r-ssmrcd")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssMRCD" version))
        (sha256
-        (base32 "1f92n721c7705wiij6372glmj9324lkr5blc76lds96c6mgmcrq1"))))
+        (base32 "126g1iwgvzhc49jrs7ficn836g79ws0530bvcmr9v8wms9lvgq90"))))
     (properties `((upstream-name . "ssMRCD")))
     (build-system r-build-system)
     (arguments
@@ -20849,6 +20913,35 @@ Server', Oracle', @code{PostgreSql}', Amazon @code{RedShift}', Apache Impala',
 IBM Netezza', Google @code{BigQuery}', Microsoft PDW', Snowflake', Azure Synapse
 Analytics Dedicated', Apache Spark', SQLite', and @code{InterSystems} IRIS'.")
     (license license:asl2.0)))
+
+(define-public r-sqlq
+  (package
+    (name "r-sqlq")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sqlq" version))
+       (sha256
+        (base32 "117dryppyvshj8bb2jgp55fhgksky09wvzs573vv7jygblnwj8zh"))))
+    (properties `((upstream-name . "sqlq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-dbi r-chk))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/cnrgh/databases/r-sqlq")
+    (synopsis "'SQL' Query Builder")
+    (description
+     "Allows to build complex SQL (Structured Query Language) queries dynamically.
+Classes and/or factory functions are used to produce a syntax tree from which
+the final character string is generated.  Strings and identifiers are
+automatically quoted using the right quotes, using either ANSI (American
+National Standards Institute) quoting or the quoting style of an existing
+database connector.  Style can be configured to set uppercase/lowercase for
+keywords, remove unnecessary spaces, or omit optional keywords.")
+    (license license:agpl3)))
 
 (define-public r-sqlparser
   (package
@@ -36478,13 +36571,13 @@ convolution theorem (see Gilleland 2013, <doi:10.5065/D61834G2>).")
 (define-public r-smoothic
   (package
     (name "r-smoothic")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smoothic" version))
        (sha256
-        (base32 "11id442cgnk6a0nd0c20rz5ccxlq3hhpsmvmlvg93jf4v6c2046z"))))
+        (base32 "1mvy5v8k60kys5fxyv4v4cjch38gk4c0kv8cfzv2dg80ds1b0bys"))))
     (properties `((upstream-name . "smoothic")))
     (build-system r-build-system)
     (arguments
@@ -36502,7 +36595,7 @@ convolution theorem (see Gilleland 2013, <doi:10.5065/D61834G2>).")
                              r-dplyr
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/meadhbh-oneill/smoothic")
+    (home-page "https://meadhbh-oneill.github.io/smoothic/")
     (synopsis "Variable Selection Using a Smooth Information Criterion")
     (description
      "Implementation of the SIC epsilon-telescope method, either using single or
@@ -36512,9 +36605,9 @@ Laplace distribution.  The \"smooth generalized normal distribution\" is used,
 where the estimation of an additional shape parameter allows the user to move
 smoothly between both types of regression.  See O'Neill and Burke (2022) \"Robust
 Distributional Regression with Automatic Variable Selection\" for more details.
-<@code{arXiv:2212.07317>}.  This package also contains the data analyses from
-O'Neill and Burke (2023). \"Variable selection using a smooth information
-criterion for distributional regression models\".
+<doi:10.48550/@code{arXiv.2212.07317>}.  This package also contains the data
+analyses from O'Neill and Burke (2023). \"Variable selection using a smooth
+information criterion for distributional regression models\".
 <doi:10.1007/s11222-023-10204-8>.")
     (license license:gpl3)))
 
@@ -40105,13 +40198,13 @@ and @code{DeYoung} (1987) <https://archive.org/details/DTIC_ADA182110>.")
 (define-public r-skpr
   (package
     (name "r-skpr")
-    (version "1.8.2")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skpr" version))
        (sha256
-        (base32 "0zchh94687lpqm6rgxqs9i94jqviqb7h3ldzfadwj5v7pmib7y10"))))
+        (base32 "0m471dpaxlpq37r6nq9r17kfw26fcv9xivmqkak68458fgbwx1w3"))))
     (properties `((upstream-name . "skpr")))
     (build-system r-build-system)
     (arguments

@@ -507,13 +507,13 @@ R-independent extraction reports as fully-embedded .html records.")
 (define-public r-juicedown
   (package
     (name "r-juicedown")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "juicedown" version))
        (sha256
-        (base32 "1fvplx2p8510ayl32l04db728fajyp06jcfzivm47v8px434f2pf"))))
+        (base32 "03wvsq3h29xbmxvyf68wfs292dzqwnwqs4jd541l0d3fvi8kq8lw"))))
     (properties `((upstream-name . "juicedown")))
     (build-system r-build-system)
     (arguments

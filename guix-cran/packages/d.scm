@@ -1895,13 +1895,13 @@ meta-package, it helps create a comprehensive reference for its website.")
 (define-public r-dutoolkit
   (package
     (name "r-dutoolkit")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DUToolkit" version))
        (sha256
-        (base32 "158czlzmv3ql1hg5wm8xz5ifkpz7gs7dk844ffkiqr1n6d0nd8j0"))))
+        (base32 "11x8qx7q7mshb58nbb8akwd67dxx42zgzms0pzdcvc1xykz4s9mq"))))
     (properties `((upstream-name . "DUToolkit")))
     (build-system r-build-system)
     (arguments
@@ -4115,6 +4115,41 @@ APIs, including @code{OpenTopography}
 <https://apps.nationalmap.gov/tnmaccess/#/>.")
     (license license:gpl3)))
 
+(define-public r-dsmolgenisarmadillo
+  (package
+    (name "r-dsmolgenisarmadillo")
+    (version "3.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DSMolgenisArmadillo" version))
+       (sha256
+        (base32 "1swll1f145j3q9cikvvadqxaz0bwv5p566n2j29wzcc2xzgqr65l"))))
+    (properties `((upstream-name . "DSMolgenisArmadillo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-urltools
+                             r-stringr
+                             r-molgenisauth
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr
+                             r-dsi
+                             r-dplyr
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/molgenis/molgenis-r-datashield/")
+    (synopsis "'DataSHIELD' Client for 'MOLGENIS Armadillo'")
+    (description
+     "@code{DataSHIELD} is an infrastructure and series of R packages that enables the
+remote and non-disclosive analysis of sensitive research data.  This package is
+the @code{DataSHIELD} interface implementation to analyze data shared on a
+MOLGENIS Armadillo server.  MOLGENIS Armadillo is a light-weight
+@code{DataSHIELD} server using a file store and an RServe server.")
+    (license license:lgpl2.1+)))
+
 (define-public r-dsmmr
   (package
     (name "r-dsmmr")
@@ -5015,13 +5050,13 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "0v84shp54d3nh1ang7pvd5hy9i5nwgx7sgydkm3lz4yxiwkwfycj"))))
+        (base32 "0krz92420rmqld36d9z6fxjnzam11v9pvbry6cah3aab2d5jscsw"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (arguments
@@ -18173,13 +18208,13 @@ frame with many numeric columns and a factor column.")
 (define-public r-dialrjars
   (package
     (name "r-dialrjars")
-    (version "8.13.36")
+    (version "9.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dialrjars" version))
        (sha256
-        (base32 "1r02wimq3bnb28dz65jm0kmkkkd02k0a4d50cjn5n54ck8lf9hsc"))))
+        (base32 "16ljgcrngz9bd0hyiyy4ml7shpz8gw80s55g2p540dglyryybfgg"))))
     (properties `((upstream-name . "dialrjars")))
     (build-system r-build-system)
     (arguments
@@ -33350,6 +33385,41 @@ ceiling/floor effects.  The package currently includes functions for
 mean/variance estimation and mean comparison tests.  Implemented methods are
 from Aitkin (1964) <doi:10.1007/BF02289723> and Liu & Wang (in prep).")
     (license license:gpl2)))
+
+(define-public r-dacc
+  (package
+    (name "r-dacc")
+    (version "0.0-7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dacc" version))
+       (sha256
+        (base32 "0a95hsl0gb0c25smxrj3sb6ax6dziijk2n67aym8402pi53kaj2h"))))
+    (properties `((upstream-name . "dacc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sp
+                             r-pracma
+                             r-ncdf4
+                             r-mass
+                             r-magrittr
+                             r-janitor
+                             r-iso
+                             r-cftime))
+    (home-page "https://github.com/LiYanStat/dacc")
+    (synopsis "Detection and Attribution Analysis of Climate Change")
+    (description
+     "Detection and attribution of climate change using methods including optimal
+fingerprinting via generalized total least squares or an estimating equation
+approach (Li et al., 2025, <doi:10.1175/JCLI-D-24-0193.1>; Ma et al., 2023,
+<doi:10.1175/JCLI-D-22-0681.1>).  Provides shrinkage estimators for the
+covariance matrix following Ledoit and Wolf (2004,
+<doi:10.1016/S0047-259X(03)00096-4>) and Ledoit and Wolf (2017,
+<doi:10.2139/ssrn.2383361>).")
+    (license license:gpl3+)))
 
 (define-public r-dabr
   (package

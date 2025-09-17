@@ -80,6 +80,43 @@ or validation data are used for optimization because error measures from both
 approaches can be misleading.")
     (license license:gpl3)))
 
+(define-public r-eztrack
+  (package
+    (name "r-eztrack")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ezTrack" version))
+       (sha256
+        (base32 "0yxrk0hyl0g1b9p8ccqc8n5la3g8n6bjfr11x7y6y2qk51f92mxh"))))
+    (properties `((upstream-name . "ezTrack")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sp
+                             r-sf
+                             r-readxl
+                             r-magrittr
+                             r-leaflet
+                             r-kableextra
+                             r-htmltools
+                             r-ggplot2
+                             r-geosphere
+                             r-dplyr
+                             r-adehabitathr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/taylorbcraft/ezTrack")
+    (synopsis "Exploring Animal Movement Data")
+    (description
+     "Streamlines common steps for working with animal tracking data, from raw
+telemetry points to summaries, interactive maps, and home range estimates.
+Designed to be beginner-friendly, it enables rapid exploration of spatial and
+movement data with minimal wrangling, providing a unified workflow for
+importing, summarizing, and visualizing, and analyzing animal movement datasets.")
+    (license license:expat)))
+
 (define-public r-ezr
   (package
     (name "r-ezr")
@@ -21740,6 +21777,31 @@ ISBN: 052108041X); Wheeler, M.W., Park, R.M., and Bailer, A.J. (2006)
 Preisler, H.K. (2007, ISBN: 0849323312).")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-ecotourism
+  (package
+    (name "r-ecotourism")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ecotourism" version))
+       (sha256
+        (base32 "09x93mzswbarx01m4w2873924ry182rkll90r8kl1diadqgv9icj"))))
+    (properties `((upstream-name . "ecotourism")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/vahdatjavad/ecotourism")
+    (synopsis
+     "Collection of Data on Wildlife Sightings, Tourism Counts, and Weather from Australia")
+    (description
+     "This is a collection of data files for exploring sightings of wild things,
+relative to weather and tourism patterns in Australia.")
+    (license license:expat)))
 
 (define-public r-ecotonefinder
   (package

@@ -4522,13 +4522,13 @@ et al. (2021) <https://CRAN.R-project.org/package=survminer>, - Friedman et al.
 (define-public r-csmgmm
   (package
     (name "r-csmgmm")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csmGmm" version))
        (sha256
-        (base32 "0vnqhhhj5lb5pkdvmspncsac9f346qxb1k6zqglibpzfl63l4cln"))))
+        (base32 "12dz4kc1rj4fd11bjdwzif353abfz6rpq866xj0008sp82v44wrk"))))
     (properties `((upstream-name . "csmGmm")))
     (build-system r-build-system)
     (arguments
@@ -4550,9 +4550,8 @@ can reject all K individual nulls.  Please see the vignette for a quickstart
 guide.  The paper describing these methods is \"Testing a Large Number of
 Composite Null Hypotheses Using Conditionally Symmetric Multidimensional
 Gaussian Mixtures in Genome-Wide Studies\" by Sun R, @code{McCaw} Z, & Lin X
-(2024, <doi:10.1080/01621459.2024.2422124>).  The paper is accepted and
-published online (but not yet in print) in the Journal of the American
-Statistical Association as of Dec 1 2024.")
+(Journal of the American Statistical Association 2025,
+<doi:10.1080/01621459.2024.2422124>).")
     (license license:gpl3)))
 
 (define-public r-csmes
@@ -23893,13 +23892,13 @@ Colombia's data.  For more details on the API-Colombia', see
 (define-public r-colocproptest
   (package
     (name "r-colocproptest")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colocPropTest" version))
        (sha256
-        (base32 "19385jncbr5qs80632d5wf1yci0mw61yvv02ap301lfx59rcrxkw"))))
+        (base32 "0icsl4h7s5n814vdijdb39jvsmkpgmkay989avcg5x48x18063sb"))))
     (properties `((upstream-name . "colocPropTest")))
     (build-system r-build-system)
     (arguments
@@ -44005,13 +44004,13 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "0kn7mc5j4wy91dh0lssddy1aqi26j03jwpbzb59p1b7w234srz9l"))))
+        (base32 "1l4sd7phnmmfv13jj4x9ma20lv13lff8aqvnamlsnylwfbp0941i"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (arguments
@@ -45311,6 +45310,50 @@ more information).")
 the cross-classification credibility model.")
     (license license:gpl3)))
 
+(define-public r-ccar3
+  (package
+    (name "r-ccar3")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ccar3" version))
+       (sha256
+        (base32 "0d7yigi19wsial3wcn3i6ava74gkf8fx54j951h8wygzh7yd595n"))))
+    (properties `((upstream-name . "ccar3")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rspectra
+                             r-purrr
+                             r-pracma
+                             r-matrixstats
+                             r-magrittr
+                             r-foreach
+                             r-dplyr
+                             r-corpcor
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=ccar3")
+    (synopsis "Canonical Correlation Analysis via Reduced Rank Regression")
+    (description
+     "Canonical correlation analysis (CCA) via reduced-rank regression with support
+for regularization and cross-validation.  Several methods for estimating CCA in
+high-dimensional settings are implemented.  The first set of methods,
+@code{cca_rrr()} (and variants: @code{cca_group_rrr()} and
+@code{cca_graph_rrr()}), assumes that one dataset is high-dimensional and the
+other is low-dimensional, while the second, @code{ecca()} (for Efficient CCA)
+assumes that both datasets are high-dimensional.  For both methods, standard l1
+regularization as well as group-lasso regularization are available.
+cca_graph_rrr further supports total variation regularization when there is a
+known graph structure among the variables of the high-dimensional dataset.  In
+this case, the loadings of the canonical directions of the high-dimensional
+dataset are assumed to be smooth on the graph.  For more details see Donnat and
+Tuzhilina (2024) <doi:10.48550/@code{arXiv.2405.19539>} and Wu, Tuzhilina and
+Donnat (2025) <doi:10.48550/@code{arXiv.2507.11160>}.")
+    (license license:expat)))
+
 (define-public r-ccapp
   (package
     (name "r-ccapp")
@@ -45510,13 +45553,13 @@ information, see Lee, Glaze, Bradlow, and Kable
 (define-public r-cbsodatar
   (package
     (name "r-cbsodatar")
-    (version "1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cbsodataR" version))
        (sha256
-        (base32 "0pj3c8jgdfqz5m4ws2g6jzx4xghsyji8fmm1vk5l2w07pcm1xs9a"))))
+        (base32 "0nxnr1cv96310n5vabsx4d6hlv8yx2qfcwqz6r6aih94x05s4hm8"))))
     (properties `((upstream-name . "cbsodataR")))
     (build-system r-build-system)
     (arguments

@@ -12422,6 +12422,32 @@ to the rpart package (Breiman, Friedman, Olshen, Stone (1984,
 ISBN:9780412048418).")
     (license license:gpl3)))
 
+(define-public r-rparadox
+  (package
+    (name "r-rparadox")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rparadox" version))
+       (sha256
+        (base32 "0sc8brsx6r3hg79ackb060r8ms2f3n7ca7yi1fpisd98z2vha32r"))))
+    (properties `((upstream-name . "Rparadox")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-hms r-blob))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/celebithil/Rparadox")
+    (synopsis "Read Paradox Database Files into R")
+    (description
+     "This package provides a simple and efficient way to read data from Paradox
+database files (.db) directly into R as modern tibble data frames.  It uses the
+underlying pxlib C library to handle the low-level file format details and
+provides a clean, user-friendly R interface.")
+    (license license:gpl2+)))
+
 (define-public r-rpanel
   (package
     (name "r-rpanel")
@@ -29343,6 +29369,33 @@ text outputs.")
      "This package provides an interface to the Python package Geomstats authored by
 Miolane et al. (2020) <@code{arXiv:2004.04667>}.")
     (license license:expat)))
+
+(define-public r-rgeomorphon
+  (package
+    (name "r-rgeomorphon")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rgeomorphon" version))
+       (sha256
+        (base32 "0jdfmhfvldb1dgrkgin6x13g6wzn7hzj3fph3ldih1x540s5kdsb"))))
+    (properties `((upstream-name . "rgeomorphon")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-litedown))
+    (home-page "https://github.com/brownag/rgeomorphon/")
+    (synopsis "Lightweight Implementation of the 'Geomorphon' Algorithm")
+    (description
+     "This package provides a lightweight implementation of the geomorphon terrain
+form classification algorithm of Jasiewicz and Stepinski (2013)
+<doi:10.1016/j.geomorph.2012.11.005> based largely on the GRASS GIS r.geomorphon
+module.  This implementation employs a novel algorithm written in C++ and
+@code{RcppParallel}'.")
+    (license license:gpl3+)))
 
 (define-public r-rgeode
   (package
