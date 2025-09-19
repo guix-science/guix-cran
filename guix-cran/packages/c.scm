@@ -734,6 +734,38 @@ the two, respectively.")
 sessions.")
     (license license:gpl3)))
 
+(define-public r-cxreg
+  (package
+    (name "r-cxreg")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cxreg" version))
+       (sha256
+        (base32 "06qba55pb0z8bwsmczs4zbravjyn03sdm6a893xsv8ls7sk0pwgp"))))
+    (properties `((upstream-name . "cxreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp
+                             r-mvtnorm
+                             r-matrix
+                             r-gdata
+                             r-foreach
+                             r-fields))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=cxreg")
+    (synopsis "Complex-Valued Lasso and Complex-Valued Graphical Lasso")
+    (description
+     "This package implements glmnet'-style complex-valued lasso and complex-valued
+graphical lasso using a pathwise coordinate descent algorithm for complex-valued
+parameters.  The package provides supporting tools for estimation, simulation,
+and prediction.  See Deb (2024) <doi:10.48550/@code{ArXiv.2401.11128>} for the
+algorithm description.")
+    (license license:expat)))
+
 (define-public r-cxr
   (package
     (name "r-cxr")
@@ -13698,38 +13730,6 @@ associations among positions is based on the latent multivariate normal
 distribution.")
     (license license:gpl2+)))
 
-(define-public r-corrcoverage
-  (package
-    (name "r-corrcoverage")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "corrcoverage" version))
-       (sha256
-        (base32 "0r5n2g341jlinwrxxwxkav9i6qsf097pmfi07aiq663b13r3864x"))))
-    (properties `((upstream-name . "corrcoverage")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrixstats r-magrittr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://annahutch.github.io/corrcoverage")
-    (synopsis
-     "Correcting the Coverage of Credible Sets from Bayesian Genetic Fine Mapping")
-    (description
-     "Using a computationally efficient method, the package can be used to find the
-corrected coverage estimate of a credible set of putative causal variants from
-Bayesian genetic fine-mapping.  The package can also be used to obtain a
-corrected credible set if required; that is, the smallest set of variants
-required such that the corrected coverage estimate of the resultant credible set
-is within some user defined accuracy of the desired coverage.  Maller et al.
-(2012) <doi:10.1038/ng.2435>, Wakefield (2009) <doi:10.1002/gepi.20359>, Fortune
-and Wallace (2018) <doi:10.1093/bioinformatics/bty898>.")
-    (license license:expat)))
-
 (define-public r-corrbin
   (package
     (name "r-corrbin")
@@ -20691,16 +20691,49 @@ Discriminant Analysis (HDDA) algorithm of Bouveyron C. Girard S. and Schmid C.
 (2007) <doi:10.1080/03610920701271095> is applied.")
     (license license:gpl2+)))
 
+(define-public r-compositionalclust
+  (package
+    (name "r-compositionalclust")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CompositionalClust" version))
+       (sha256
+        (base32 "02a63m984riy436ylzilnnzzfb5pkkby4jkz066nba096kpssbrp"))))
+    (properties `((upstream-name . "CompositionalClust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast2
+                             r-rfast
+                             r-mixture
+                             r-lowmemtkmeans
+                             r-foreach
+                             r-doparallel
+                             r-compositional))
+    (home-page "https://cran.r-project.org/package=CompositionalClust")
+    (synopsis "Clustering with Compositional Data")
+    (description
+     "Cluster analysis with compositional data using the alpha--transformation.
+Relevant papers include: Tsagris M. and Kontemeniotis N. (2025),
+<doi:10.48550/@code{arXiv.2509.05945>}.  Tsagris M.T., Preston S. and Wood
+A.T.A. (2011), <doi:10.48550/@code{arXiv.1106.1451>}.  Garcia-Escudero Luis A.,
+Gordaliza Alfonso, Matran Carlos, Mayo-Iscar Agustin. (2008),
+<doi:10.1214/07-AOS515>.")
+    (license license:gpl2+)))
+
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "7.7")
+    (version "7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compositional" version))
        (sha256
-        (base32 "08f3axwwhh5l4hvdsf091yk49wsk887yj3rvi29llb2hnkhvnxyq"))))
+        (base32 "0y517rzwjbcq6h8vrwrnj2pjywzq3kbfahi5zfz237b2b9gzjyaj"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (arguments
@@ -21209,13 +21242,13 @@ to uncover insightful growth dynamics and make informed decisions.")
 (define-public r-compexpdes
   (package
     (name "r-compexpdes")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompExpDes" version))
        (sha256
-        (base32 "0qdxsi4ahkwm77wlzlvng9mc7d6sj4x57bhj6ranxr36qqn6cjjq"))))
+        (base32 "04wnq118ha969vnf3m05mafr3dmhgmk2m7viwfb532cmdprc4n2b"))))
     (properties `((upstream-name . "CompExpDes")))
     (build-system r-build-system)
     (arguments
@@ -23858,35 +23891,39 @@ process.")
 (define-public r-colombiapi
   (package
     (name "r-colombiapi")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ColombiAPI" version))
        (sha256
-        (base32 "14qpg8hih5qcmqyf63lcbckvscb719xqhj08ww5b69saqpxb72z8"))))
+        (base32 "02xgdw2wnav35whk89w579vs75g66lphn8zlwds0jw4wdga910xm"))))
     (properties `((upstream-name . "ColombiAPI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-magrittr r-jsonlite r-httr r-dplyr))
+    (propagated-inputs (list r-tibble r-scales r-jsonlite r-httr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lightbluetitan/colombiapi")
-    (synopsis "Access Colombia's Public Data via 'API-Colombia'")
+    (synopsis "Access Colombian Data via APIs and Curated Datasets")
     (description
-     "This package provides a seamless interface to access diverse public data about
-Colombia through the API-Colombia', a RESTful API. The package enables users to
-explore various aspects of Colombia, including general information, geography,
-and cultural insights.  It includes five API-related functions to retrieve data
-on topics such as Colombia's general information, airports, departments,
-regions, and presidents.  Additionally, @code{ColombiAPI} offers a built-in
-function to view the datasets available within the package.  The package also
-includes curated datasets covering Bogota air stations, business and holiday
-dates, public schools, Colombian coffee exports, cannabis licenses, Medellin
-rainfall, and malls in Bogota, making it a comprehensive tool for exploring
-Colombia's data.  For more details on the API-Colombia', see
-<https://api-colombia.com/>.")
+     "This package provides a comprehensive interface to access diverse public data
+about Colombia through multiple APIs and curated datasets.  The package
+integrates four different APIs: API-Colombia for Colombian-specific data
+including geography, culture, tourism, and government information; World Bank
+API for economic and demographic indicators; Nager.Date for public holidays; and
+REST Countries API for general country information.  The package enables users
+to explore various aspects of Colombia such as geographic locations, cultural
+attractions, economic indicators, demographic data, and public holidays.
+Additionally, @code{ColombiAPI} includes curated datasets covering Bogota air
+stations, business and holiday dates, public schools, Colombian coffee exports,
+cannabis licenses, Medellin rainfall, and malls in Bogota, making it a
+comprehensive tool for exploring Colombia's multifaceted data landscape.  For
+more information on the APIs, see: API-Colombia <https://api-colombia.com/>,
+Nager.Date <https://date.nager.at/Api>, World Bank API
+<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, and REST
+Countries API <https://restcountries.com/>.")
     (license license:gpl3)))
 
 (define-public r-colocproptest
@@ -39200,13 +39237,13 @@ are motivated by the functional programming concept.")
 (define-public r-cheem
   (package
     (name "r-cheem")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheem" version))
        (sha256
-        (base32 "171bqs9c057irzgfdvbj8ia17l6zggvbn6h2r7yhz6bpfxa3i9a5"))))
+        (base32 "1b64lgdsfjsp312w025gfalfdl4sg3fgjxkxvpl28yfqlbajyrk7"))))
     (properties `((upstream-name . "cheem")))
     (build-system r-build-system)
     (arguments
@@ -44557,13 +44594,13 @@ convolution kernel density estimator.")
 (define-public r-cctest
   (package
     (name "r-cctest")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cctest" version))
        (sha256
-        (base32 "132wxxx6h5xndkvp9vmjbdy9lw6pvksaf0v9w7xpzsk6dd4ykz0i"))))
+        (base32 "06lsfkp0k4b2l1632y2n6lal00kgran1bviwp3a4hkf3iwzn0mpj"))))
     (properties `((upstream-name . "cctest")))
     (build-system r-build-system)
     (arguments
@@ -48680,13 +48717,13 @@ graphic presentation of maps, for instance, map palettes, layout elements
 (define-public r-cartographr
   (package
     (name "r-cartographr")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cartographr" version))
        (sha256
-        (base32 "1377s159vdkyy8j1lncb6wrrib1z8qjyzv07n03949i55gp4kfyn"))))
+        (base32 "147kxwms9irhw37hpiwi2spi7n3d6lhq3x28b3k20a9ypssg0wk2"))))
     (properties `((upstream-name . "cartographr")))
     (build-system r-build-system)
     (arguments
@@ -48696,7 +48733,9 @@ graphic presentation of maps, for instance, map palettes, layout elements
                              r-showtext
                              r-sf
                              r-osmdata
+                             r-httr2
                              r-ggplot2
+                             r-curl
                              r-crayon
                              r-cli))
     (native-inputs (list r-knitr))
@@ -51246,33 +51285,6 @@ chapter sections and page numbers where the datasets are used.")
      "This package implements the board game @code{CamelUp} for use in introductory
 statistics classes using a Shiny app.")
     (license license:gpl3)))
-
-(define-public r-camelscl
-  (package
-    (name "r-camelscl")
-    (version "0.1-10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "camelsCL" version))
-       (sha256
-        (base32 "0pc0gbcxnd0i5l4jn70vqg28ad9xffl8s0i191s84265yr8z6k3w"))))
-    (properties `((upstream-name . "camelsCL")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo r-terra r-hydrotsm r-httr))
-    (home-page "https://gitlab.com/hgarcesf/camelsCL")
-    (synopsis "Easy Handling of the CAMELS-CL Dataset")
-    (description
-     "Download and handle spatial and temporal data from the CAMELS-CL dataset
-(Catchment Attributes and Meteorology for Large Sample Studies, Chile)
-<https://camels.cr2.cl/>, developed by Alvarez-Garreton et al. (2018)
-<doi:10.5194/hess-22-5817-2018>.  The package does not generate new data, it
-only facilitates direct access to the original dataset for hydrological
-analyses.")
-    (license license:gpl2+)))
 
 (define-public r-camcorder
   (package

@@ -2545,6 +2545,44 @@ provided for the correction of batch effects and removal of principal
 components.")
     (license license:gpl2+)))
 
+(define-public r-swaglm
+  (package
+    (name "r-swaglm")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "swaglm" version))
+       (sha256
+        (base32 "1098ax3carhfqxwpyhhsysd20mvzijqkd46v0ac6q5yfyygjcjd6"))))
+    (properties `((upstream-name . "swaglm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progress
+                             r-plyr
+                             r-igraph
+                             r-gdata
+                             r-fields
+                             r-fastglm
+                             r-desctools))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=swaglm")
+    (synopsis
+     "Fast Sparse Wrapper Algorithm for Generalized Linear Models and Testing Procedures for Network of Highly Predictive Variables")
+    (description
+     "This package provides a fast implementation of the SWAG algorithm for
+Generalized Linear Models which allows to perform a meta-learning procedure that
+combines screening and wrapper methods to find a set of extremely
+low-dimensional attribute combinations.  The package then performs test on the
+network of selected models to identify the variables that are highly predictive
+by using entropy-based network measures.")
+    (license license:agpl3)))
+
 (define-public r-swag
   (package
     (name "r-swag")
@@ -4196,13 +4234,13 @@ al. (2024) <doi:10.48550/@code{arXiv.2408.00177>}, respectively.")
 (define-public r-survregcenscov
   (package
     (name "r-survregcenscov")
-    (version "1.7")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurvRegCensCov" version))
        (sha256
-        (base32 "02bg0iaqh98gwbzl24dy4piyxfqb3fmn2yc0pkd7y5ygchpfm4ak"))))
+        (base32 "192h82w1xzizq0nhr1ihdvk9ngwwhgbby3h09vnsx4dlbmw58g51"))))
     (properties `((upstream-name . "SurvRegCensCov")))
     (build-system r-build-system)
     (arguments
@@ -4220,7 +4258,7 @@ switch between different parametrizations of Weibull regression used by
 different R functions, inference for the mean difference of two arbitrarily
 censored Normal samples, and estimation of canonical parameters from censored
 samples for several distributional assumptions.  Hubeaux, S. and Rufibach, K.
-(2014) <@code{arXiv:1402.0432>}.")
+(2014) <doi:10.48550/@code{arXiv.1402.0432>}.")
     (license license:gpl2+)))
 
 (define-public r-survpresmooth
@@ -13284,13 +13322,13 @@ return values are checked in order to make them type stable.")
 (define-public r-stevedata
   (package
     (name "r-stevedata")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stevedata" version))
        (sha256
-        (base32 "0b4sm7j5p8bm0nl7ygalni4hjl6xdv029mqlmkbg3zrjdsmpb5nx"))))
+        (base32 "1mc553gkhgngsm6l3ary2lz97ly3s70s8gdmjfjijggqcyp7xn37"))))
     (properties `((upstream-name . "stevedata")))
     (build-system r-build-system)
     (arguments
@@ -18174,34 +18212,6 @@ found in Matlock (2018) <doi:10.1186/s12859-018-2060-2>.")
     (synopsis "State Space Models")
     (description "Simulate, solve state space models.")
     (license license:gpl2+)))
-
-(define-public r-sssc
-  (package
-    (name "r-sssc")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sssc" version))
-       (sha256
-        (base32 "00m5zfd3jnbxa8x76v4pfyl4qdfq90n8rqx4hngany0ka1z5g7m6"))))
-    (properties `((upstream-name . "sssc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vgam r-ggplot2 r-e1071 r-changepoint))
-    (home-page "https://cran.r-project.org/package=sssc")
-    (synopsis "Same Species Sample Contamination Detection")
-    (description
-     "Imports Variant Calling Format file into R. It can detect whether a sample
-contains contaminant from the same species.  In the first stage of the approach,
-a change-point detection method is used to identify copy number variations for
-filtering.  Next, features are extracted from the data for a support vector
-machine model.  For log-likelihood calculation, the deviation parameter is
-estimated by maximum likelihood method.  Using a radial basis function kernel
-support vector machine, the contamination of a sample can be detected.")
-    (license license:gpl2)))
 
 (define-public r-sss
   (package
@@ -24095,13 +24105,13 @@ options for message passing and feature embedding.")
 (define-public r-spinifex
   (package
     (name "r-spinifex")
-    (version "0.3.9")
+    (version "0.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spinifex" version))
        (sha256
-        (base32 "1hj08frhiqc2lk231b5qffzqdx0qdfydmgkp0q4yv8kr7j3x6mgx"))))
+        (base32 "11nynrczp8a7pw9igxiazvf4zsfs8jrhb8if95xn0ya6j9bgmsj7"))))
     (properties `((upstream-name . "spinifex")))
     (build-system r-build-system)
     (arguments
@@ -24134,13 +24144,13 @@ respectively.  This work is fully discussed in Spyrison & Cook (2020)
 (define-public r-spinebil
   (package
     (name "r-spinebil")
-    (version "0.1.6")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spinebil" version))
        (sha256
-        (base32 "1kkzz4klsd1k8sn7jg9igl2kcahrmzv2ziwa2rwisw97a7gdnd0b"))))
+        (base32 "0cyvk0hbk5hpycgjlr2dndqa4r423fm0p8w5x4qcp8aix8r1qqxw"))))
     (properties `((upstream-name . "spinebil")))
     (build-system r-build-system)
     (arguments
@@ -24150,10 +24160,12 @@ respectively.  This work is fully discussed in Spyrison & Cook (2020)
                              r-tidyr
                              r-tictoc
                              r-tibble
+                             r-rlang
                              r-ggplot2
                              r-dplyr
                              r-cassowaryr))
-    (home-page "https://cran.r-project.org/package=spinebil")
+    (native-inputs (list r-quarto))
+    (home-page "https://uschilaa.github.io/spinebil/index.html")
     (synopsis "Investigating New Projection Pursuit Index Functions")
     (description
      "Projection pursuit is used to find interesting low-dimensional projections of
@@ -31170,13 +31182,13 @@ suggested package NLMR can be installed from the following repository:
 (define-public r-spades-core
   (package
     (name "r-spades-core")
-    (version "2.1.6")
+    (version "2.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaDES.core" version))
        (sha256
-        (base32 "0f5ww58drfwb3fwwns3657gc6pj5nqz91zr0pgwmcqyns8v5xzzs"))))
+        (base32 "0glv5g4s0qs94b8q4bxncg418b1gqiangf0af43jzz6q3dpaa4ih"))))
     (properties `((upstream-name . "SpaDES.core")))
     (build-system r-build-system)
     (arguments
@@ -38482,13 +38494,13 @@ statistic, and q nearest neighbors of cases.")
 (define-public r-smacofx
   (package
     (name "r-smacofx")
-    (version "1.21-1")
+    (version "1.22-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smacofx" version))
        (sha256
-        (base32 "13bcwaqqymlc03y9dr5ijprjmq26gwfk3qjp5ya3q9z7yzlywhzr"))))
+        (base32 "0i5aifs7g10pzk5pbhwg3pa5r50l0321jrmbql262pnifrmvvh1w"))))
     (properties `((upstream-name . "smacofx")))
     (build-system r-build-system)
     (arguments
@@ -40246,13 +40258,13 @@ analyses more reproducible.  For details, see Morgan-Wall et al. (2021)
 (define-public r-sknn
   (package
     (name "r-sknn")
-    (version "4.1.1")
+    (version "4.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SKNN" version))
        (sha256
-        (base32 "14c1aq22ndx29cjmrqpxqam5pm4l2rsl2m0y8xq9zk4gv4srvdgw"))))
+        (base32 "0l9v45p0dg92mlx64cai1ji03dyd5sp1102al1301487phbn8y4b"))))
     (properties `((upstream-name . "SKNN")))
     (build-system r-build-system)
     (arguments
@@ -41136,19 +41148,20 @@ HTML-tables to R data.frame objects / knitr::kable-tables.")
 (define-public r-sjsdm
   (package
     (name "r-sjsdm")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sjSDM" version))
        (sha256
-        (base32 "0jmagj162vdq9ikzd92fk61bq6jv3dm5w1bfpjbvzg55d3cqli44"))))
+        (base32 "1jx24w0rga63vfz6jkym48kzbd27ix64kk830d1kbmpradr1xgwl"))))
     (properties `((upstream-name . "sjSDM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales
+    (propagated-inputs (list r-viridis
+                             r-scales
                              r-rstudioapi
                              r-reticulate
                              r-qgam
@@ -41156,7 +41169,6 @@ HTML-tables to R data.frame objects / knitr::kable-tables.")
                              r-mgcv
                              r-metrics
                              r-mathjaxr
-                             r-ggtern
                              r-ggplot2
                              r-crayon
                              r-cli
@@ -49691,6 +49703,35 @@ a minimal wrapper for @code{IndexedDB}'.  Transfer browser link parameters to
 shiny input or output values.  Store app visitor views, likes and followers.")
     (license license:expat)))
 
+(define-public r-shinystate
+  (package
+    (name "r-shinystate")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinystate" version))
+       (sha256
+        (base32 "1rpchw3myrbz7wzjbbs5s615n5vsyk78mp0fp80i1szy16pd9xp7"))))
+    (properties `((upstream-name . "shinystate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-r6
+                             r-pins
+                             r-htmltools
+                             r-fs
+                             r-archive))
+    (native-inputs (list r-knitr))
+    (home-page "https://rpodcast.github.io/shinystate/")
+    (synopsis "Customization of Shiny Bookmarkable State")
+    (description
+     "Enhance the bookmarkable state feature of shiny with additional customization
+such as storage location and storage repositories leveraging the pins package.")
+    (license license:expat)))
+
 (define-public r-shinysir
   (package
     (name "r-shinysir")
@@ -54035,6 +54076,62 @@ impute cellwise outliers.  Includes implementations of methods described in
 Mayrhofer and Filzmoser (2023) <doi:10.1016/j.ecosta.2023.04.003>.")
     (license license:gpl3)))
 
+(define-public r-shapley
+  (package
+    (name "r-shapley")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shapley" version))
+       (sha256
+        (base32 "06w6mpzari8zhxczkx0pm7dd2rgq373p85yz7ga9wvvjwn45ypgn"))))
+    (properties `((upstream-name . "shapley")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pander r-h2o r-ggplot2 r-curl))
+    (home-page "https://github.com/haghish/shapley")
+    (synopsis
+     "Weighted Mean SHAP and CI for Robust Feature Assessment in ML Grid")
+    (description
+     "This R package introduces Weighted Mean SHapley Additive @code{exPlanations}
+(WMSHAP), an innovative method for calculating SHAP values for a grid of
+fine-tuned base-learner machine learning models as well as stacked ensembles, a
+method not previously available due to the common reliance on single
+best-performing models.  By integrating the weighted mean SHAP values from
+individual base-learners comprising the ensemble or individual base-learners in
+a tuning grid search, the package weights SHAP contributions according to each
+model's performance, assessed by multiple either R squared (for both regression
+and classification models).  alternatively, this software also offers weighting
+SHAP values based on the area under the precision-recall curve (AUCPR), the area
+under the curve (AUC), and F2 measures for binary classifiers.  It further
+extends this framework to implement weighted confidence intervals for weighted
+mean SHAP values, offering a more comprehensive and robust feature importance
+evaluation over a grid of machine learning models, instead of solely computing
+SHAP values for the best model.  This methodology is particularly beneficial for
+addressing the severe class imbalance (class rarity) problem by providing a
+transparent, generalized measure of feature importance that mitigates the risk
+of reporting SHAP values for an overfitted or biased model and maintains
+robustness under severe class imbalance, where there is no universal criteria of
+identifying the absolute best model.  Furthermore, the package implements
+hypothesis testing to ascertain the statistical significance of SHAP values for
+individual features, as well as comparative significance testing of SHAP
+contributions between features.  Additionally, it tackles a critical gap in
+feature selection literature by presenting criteria for the automatic feature
+selection of the most important features across a grid of models or stacked
+ensembles, eliminating the need for arbitrary determination of the number of top
+features to be extracted.  This utility is invaluable for researchers analyzing
+feature significance, particularly within severely imbalanced outcomes where
+conventional methods fall short.  Moreover, it is also expected to report
+democratic feature importance across a grid of models, resulting in a more
+comprehensive and generalizable feature selection.  The package further
+implements a novel method for visualizing SHAP values both at subject level and
+feature level as well as a plot for feature selection based on the weighted mean
+SHAP ratios.")
+    (license license:expat)))
+
 (define-public r-shapeselectforest
   (package
     (name "r-shapeselectforest")
@@ -57141,13 +57238,13 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
 (define-public r-seqtarget
   (package
     (name "r-seqtarget")
-    (version "0.13.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEQTaRget" version))
        (sha256
-        (base32 "1z51sly19y1j2hx8906nxvrpn2ixgnfgngvq3mvxb28c6v0xw3g9"))))
+        (base32 "0r9lvgcl5ks4plrpa6k5szd3v12psgz8jx3bis3a2lcxs4knx2f2"))))
     (properties `((upstream-name . "SEQTaRget")))
     (build-system r-build-system)
     (arguments
@@ -57155,6 +57252,7 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
       #:tests? #f))
     (propagated-inputs (list r-survival
                              r-stringr
+                             r-parallelly
                              r-knitr
                              r-ggplot2
                              r-future-apply
@@ -57164,7 +57262,7 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
                              r-dofuture
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://causalinference.github.io/SEQuential/")
+    (home-page "https://causalinference.github.io/SEQTaRget/")
     (synopsis "Sequential Trial Emulation")
     (description
      "Implementation of sequential trial emulation for the analysis of observational
@@ -58668,13 +58766,13 @@ Cochran-Mantel-Haenszel-Birch tests and sensitivity analyses for one or two
 (define-public r-sensitivity
   (package
     (name "r-sensitivity")
-    (version "1.30.1")
+    (version "1.30.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sensitivity" version))
        (sha256
-        (base32 "1k9ka5jszlrbgz57383632znv7n2vdnbf81scmqh87jyay7bp55m"))))
+        (base32 "02ca4xwgm5iwvds95m2302r06qdgkly86mfaw122r07iw0sq45c6"))))
     (properties `((upstream-name . "sensitivity")))
     (build-system r-build-system)
     (arguments
@@ -60087,13 +60185,13 @@ which extend the fitting procedures of the	'SEMgraph R package
 (define-public r-semboottools
   (package
     (name "r-semboottools")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semboottools" version))
        (sha256
-        (base32 "13rh0amnbv65r8k3pimqqahwmr8hfyphj71yrb9l8kx03fmkisq4"))))
+        (base32 "0az0wk1kxjixhfx961j294pj9qx0sbldvcdxqxv71j9y4cb59a2l"))))
     (properties `((upstream-name . "semboottools")))
     (build-system r-build-system)
     (arguments
@@ -60107,7 +60205,7 @@ which extend the fitting procedures of the	'SEMgraph R package
      "This package provides a collection of helper functions for forming bootstrapping
 confidence intervals and examining bootstrap estimates in structural equation
 modelling.  Currently supports models fitted by the lavaan package by Rosseel
-(2012) <doi:10.18637/jss.v048.i02>.")
+(2012) <doi: 10.18637/jss.v048.i02>.")
     (license license:gpl3+)))
 
 (define-public r-semblance
@@ -61682,49 +61780,6 @@ indicator of the storage potential of a seed lot and in ranking various seed
 lots with different qualities.  The vigour index is calculated using the
 equation given by (Ling et al.  2014) <doi:10.1038/srep05859>.")
     (license license:gpl3)))
-
-(define-public r-seedreg
-  (package
-    (name "r-seedreg")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "seedreg" version))
-       (sha256
-        (base32 "07wg48pn2v3wcwf5a34b4hc0s1flfpphrylr4d9bayaxsvi3k0xk"))))
-    (properties `((upstream-name . "seedreg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-sf
-                             r-multcompview
-                             r-multcomp
-                             r-hnp
-                             r-gridextra
-                             r-ggplot2
-                             r-emmeans
-                             r-drc
-                             r-dplyr
-                             r-crayon
-                             r-car
-                             r-boot))
-    (home-page "https://cran.r-project.org/package=seedreg")
-    (synopsis
-     "Regression Analysis for Seed Germination as a Function of Temperature")
-    (description
-     "Regression analysis using common models in seed temperature studies, such as the
-Gaussian model (Martins, JF, Barroso, AAM, & Alves, PLCA (2017)
-<doi:10.1590/s0100-83582017350100039>), quadratic (Nunes, AL, Sossmeier, S,
-Gotz, AP, & Bispo, NB (2018) <doi: 10.17265/2161-6264/2018.06.002>) and others
-with potential for use, such as those implemented in the drc package (Ritz, C,
-Baty, F, Streibig, JC, & Gerhard, D (2015). <doi:10.1371/journal.pone.0146021>),
-in the estimation of the ideal and cardinal temperature for the occurrence of
-plant seed germination.  The functions return graphs with the equations
-automatically.")
-    (license license:gpl2+)))
 
 (define-public r-seedr
   (package

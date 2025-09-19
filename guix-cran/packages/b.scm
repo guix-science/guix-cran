@@ -8820,6 +8820,49 @@ securities of varying prices traded on the Bolivian Securities Exchange, website
 correlation, and descriptive statistics table for the securities.")
     (license license:gpl3)))
 
+(define-public r-boldconnectr
+  (package
+    (name "r-boldconnectr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BOLDconnectR" version))
+       (sha256
+        (base32 "0ilxfk3ijq5mdhd2wszhaz7nd78a1wyd7l1ppcgqnmhrslc7mqkm"))))
+    (properties `((upstream-name . "BOLDconnectR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-skimr
+                             r-sf
+                             r-rnaturalearth
+                             r-reshape2
+                             r-maps
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-bat
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=BOLDconnectR")
+    (synopsis
+     "Retrieve, Transform and Analyze the Barcode of Life Data Systems Data")
+    (description
+     "Facilitates retrieval, transformation and analysis of the data from the Barcode
+of Life Data Systems (BOLD) database <https://boldsystems.org/>.  This package
+allows both public and private user data to be easily downloaded into the R
+environment using a variety of inputs such as: IDs (processid, sampleid), BINs,
+dataset codes, project codes, taxonomy, geography etc.  It provides frictionless
+data conversion into formats compatible with other R-packages and third-party
+tools, as well as functions for sequence alignment & clustering, biodiversity
+analysis and spatial mapping.")
+    (license license:expat)))
+
 (define-public r-bolasso
   (package
     (name "r-bolasso")
@@ -12387,13 +12430,13 @@ new data.  It provides the similar functionality as the Python package
 (define-public r-bkp
   (package
     (name "r-bkp")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BKP" version))
        (sha256
-        (base32 "14zwj703sx9m4ss7bxdwkshvb4gh3ndp2wx0x4q3am0w20758i4a"))))
+        (base32 "1lbcbpalk7f7brz4gdgscan5412dwk4k3k8bsbz7i0ljxiz0jgcy"))))
     (properties `((upstream-name . "BKP")))
     (build-system r-build-system)
     (arguments
@@ -13163,41 +13206,6 @@ the intersection of the set of samples.  For further details, see C Legrand, F
 Tuorto, M Hartmann, R Liebers, D Jakob, M Helm and F Lyko (2017)
 <doi:10.1101/gr.210666.116>.")
     (license license:gpl2+)))
-
-(define-public r-bisque
-  (package
-    (name "r-bisque")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bisque" version))
-       (sha256
-        (base32 "0zp2r1vg29q2ds34hhyjv9pz761mi0qncx9p4ilwnfd5yj9pmzwq"))))
-    (properties `((upstream-name . "bisque")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mvquad
-                             r-itertools
-                             r-foreach))
-    (home-page "https://cran.r-project.org/package=bisque")
-    (synopsis
-     "Approximate Bayesian Inference via Sparse Grid Quadrature Evaluation (BISQuE) for Hierarchical Models")
-    (description
-     "Implementation of the bisque strategy for approximate Bayesian posterior
-inference.  See Hewitt and Hoeting (2019) <@code{arXiv:1904.07270>} for complete
-details.  bisque combines conditioning with sparse grid quadrature rules to
-approximate marginal posterior quantities of hierarchical Bayesian models.  The
-resulting approximations are computationally efficient for many hierarchical
-Bayesian models.  The bisque package allows approximate posterior inference for
-custom models; users only need to specify the conditional densities required for
-the approximation.")
-    (license license:gpl3)))
 
 (define-public r-bispdep
   (package
@@ -17221,13 +17229,13 @@ R on Unix/Linux type operating systems.")
 (define-public r-bigr
   (package
     (name "r-bigr")
-    (version "0.5.5")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BIGr" version))
        (sha256
-        (base32 "147z8vf6zifrcvm4bqpvcqjggxj0xmrpjq7ksy0sw03kcgn2661d"))))
+        (base32 "15p85zl5fafzns6s03hjv3ly86db4cj4s74g9z7gkbbcj1v3z3x5"))))
     (properties `((upstream-name . "BIGr")))
     (build-system r-build-system)
     (arguments
@@ -17236,7 +17244,9 @@ R on Unix/Linux type operating systems.")
     (propagated-inputs (list r-vcfr
                              r-tidyr
                              r-tibble
+                             r-stringr
                              r-rsamtools
+                             r-rlang
                              r-reshape2
                              r-readr
                              r-rdpack
@@ -22171,42 +22181,6 @@ models, and produce posterior inferences about HTE. See Wang et al. (2018)
 and Ozkan (2020) <doi:10.1016/j.compag.2020.105507>.")
     (license license:expat)))
 
-(define-public r-beamr
-  (package
-    (name "r-beamr")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BEAMR" version))
-       (sha256
-        (base32 "0187ka2lgkkqbvkrss4sgfnihicvkyi9zp6dk79cfxjvl3jyh2xm"))))
-    (properties `((upstream-name . "BEAMR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survminer
-                             r-survival
-                             r-stringr
-                             r-rlist
-                             r-purrr
-                             r-mass
-                             r-magrittr
-                             r-logistf
-                             r-ggpubr
-                             r-ggplot2
-                             r-ggmosaic
-                             r-dplyr))
-    (home-page "https://annaseffernick.github.io/BEAMR/")
-    (synopsis "Bootstrap Evaluation of Association Matrices")
-    (description
-     "This package provides a bootstrap-based approach to integrate multiple forms of
-high dimensional genomic data with multiple clinical endpoints.  This method is
-used to find clinically meaningful groups of genomic features, such as genes or
-pathways.  A manuscript describing this method is in preparation.")
-    (license license:gpl3+)))
-
 (define-public r-beam
   (package
     (name "r-beam")
@@ -25441,36 +25415,6 @@ incomplete longitudinal studies on binary and ordinal outcomes that are measured
 repeatedly on subjects over time with drop-outs.  Details about the method can
 be found in the vignette or
 <https://sites.google.com/view/kuojunglee/r-packages/bayesrgmm>.")
-    (license license:gpl2)))
-
-(define-public r-bayesreversepllh
-  (package
-    (name "r-bayesreversepllh")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BayesReversePLLH" version))
-       (sha256
-        (base32 "08zx8paaqg8zkf4d2rfparbi54p1i9wr05iqp7nqy7xv3isq1zfp"))))
-    (properties `((upstream-name . "BayesReversePLLH")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=BayesReversePLLH")
-    (synopsis "Fits the Bayesian Piecewise Linear Log-Hazard Model")
-    (description
-     "This package contains posterior samplers for the Bayesian piecewise linear
-log-hazard and piecewise exponential hazard models, including Cox models.
-Posterior mean restricted survival times are also computed for non-Cox an Cox
-models with only treatment indicators.  The @code{ApproxMean()} function can be
-used to estimate restricted posterior mean survival times given a vector of
-patient covariates in the Cox model.  Functions included to return the posterior
-mean hazard and survival functions for the piecewise exponential and piecewise
-linear log-hazard models.  Chapple, AG, Peak, T, Hemal, A (2020).  Under
-Revision.")
     (license license:gpl2)))
 
 (define-public r-bayesrepdesign
@@ -30667,31 +30611,26 @@ local explanation methods.")
 (define-public r-bartman
   (package
     (name "r-bartman")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bartMan" version))
        (sha256
-        (base32 "02snf2az95jg44pjx91gzwxlwy78j1izb7nb2qwfw4h9a747az5n"))))
+        (base32 "1pl31vfhc4s0b0c252zl4g8hxxz1dg6ak63g3mi8ii57anivqnd8"))))
     (properties `((upstream-name . "bartMan")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-tidytreatment
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tidygraph
-                             r-tidybayes
-                             r-tibble
                              r-scales
                              r-rrapply
                              r-rlang
                              r-rjava
                              r-purrr
                              r-patchwork
-                             r-igraph
                              r-gtable
                              r-ggraph
                              r-ggplot2
@@ -30702,7 +30641,6 @@ local explanation methods.")
                              r-dbarts
                              r-cowplot
                              r-colorspace
-                             r-cli
                              r-bartmachine
                              r-bart))
     (home-page "https://cran.r-project.org/package=bartMan")

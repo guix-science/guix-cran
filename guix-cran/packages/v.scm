@@ -5967,13 +5967,13 @@ the impact of missing fields and fully missing observations.")
 (define-public r-verdadecu
   (package
     (name "r-verdadecu")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "verdadecu" version))
        (sha256
-        (base32 "1iq5xi0dn3hlvvigsgnda7dmdgsaacrsdcpr27apjl06z88w7q2d"))))
+        (base32 "119dmk6fifpgxihxhwdnjijkgbxcna0qmyph48y1cqjwcwl5hhn3"))))
     (properties `((upstream-name . "verdadecu")))
     (build-system r-build-system)
     (arguments
@@ -6565,13 +6565,13 @@ systems, and helpful in examining its impact in the time series analysis domain.
 (define-public r-vecvec
   (package
     (name "r-vecvec")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vecvec" version))
        (sha256
-        (base32 "07fgg4y6zw79xcdbhwfdp6s2awvbamvmb3xx4bzbi8a3ryh7rick"))))
+        (base32 "1l0i1my7yddp6q4aa96x2r66gb4mig9dzx685mw8wdig988mypsb"))))
     (properties `((upstream-name . "vecvec")))
     (build-system r-build-system)
     (arguments
@@ -9068,34 +9068,6 @@ single vector abstract data model to the calling application for all supported
 formats <https://gdal.org/>.  This package is focussed on providing exactly and
 only what GDAL does, to enable developing further tools.")
     (license license:gpl3)))
-
-(define-public r-vanquish
-  (package
-    (name "r-vanquish")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vanquish" version))
-       (sha256
-        (base32 "01di1j36npl7vnyhgsagvyf6j8bxcw867dwf9dgi7l1328s7lf0l"))))
-    (properties `((upstream-name . "vanquish")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vgam r-ggplot2 r-e1071 r-changepoint))
-    (home-page "https://cran.r-project.org/package=vanquish")
-    (synopsis "Variant Quality Investigation Helper")
-    (description
-     "Imports Variant Calling Format file into R. It can detect whether a sample
-contains contaminant from the same species.  In the first stage of the approach,
-a change-point detection method is used to identify copy number variations for
-filtering.  Next, features are extracted from the data for a support vector
-machine model.  For log-likelihood calculation, the deviation parameter is
-estimated by maximum likelihood method.  Using a radial basis function kernel
-support vector machine, the contamination of a sample can be detected.")
-    (license license:gpl2)))
 
 (define-public r-vannstats
   (package

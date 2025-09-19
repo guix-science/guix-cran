@@ -7,8 +7,8 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages statistics)
-  #:use-module (gnu packages geo)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages geo)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages haskell-xyz)
@@ -579,18 +579,32 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
 (define-public r-eyeris
   (package
     (name "r-eyeris")
-    (version "2.1.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyeris" version))
        (sha256
-        (base32 "0bs2irbygws9am9yi3jmsz7rhf3pmk057z90c35281pv0hnf6n20"))))
+        (base32 "06h8b70z9z7m3czbk4ldlj8na05apilzy5akd4kcv4dkzcppj0vy"))))
     (properties `((upstream-name . "eyeris")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-zoo
                              r-withr
                              r-viridis
@@ -604,12 +618,16 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
                              r-lifecycle
                              r-jsonlite
                              r-gsignal
+                             r-glue
                              r-fields
                              r-eyelinker
                              r-dplyr
+                             r-dbi
                              r-data-table
-                             r-cli))
-    (native-inputs (list r-knitr))
+                             r-cli
+                             r-base64enc
+                             r-arrow))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://shawnschwartz.com/eyeris/")
     (synopsis
      "Flexible, Extensible, & Reproducible Pupillometry Preprocessing")
@@ -15094,13 +15112,13 @@ provides deterministic and robust protocols for that purpose.")
 (define-public r-emli
   (package
     (name "r-emli")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMLI" version))
        (sha256
-        (base32 "0zwbbxsmkyrgmva5h8l78f181nz5asc7dpdcmajvj2y3yl1rb278"))))
+        (base32 "09wzhp9np027qs5jgj4cp9jys4kd1ikxmhbrz903fj39x8r0c3b1"))))
     (properties `((upstream-name . "EMLI")))
     (build-system r-build-system)
     (arguments
@@ -15111,12 +15129,12 @@ provides deterministic and robust protocols for that purpose.")
      "Computationally Efficient Maximum Likelihood Identification of Linear Dynamical Systems")
     (description
      "This package provides implementations of computationally efficient maximum
-likelihood parameter estimation algorithms for models that represent linear
-dynamical systems.  Currently, one such algorithm is implemented for the
-one-dimensional cumulative structural equation model with shock-error output
-measurement equation and assumptions of normality and independence.  The
-corresponding scientific paper is yet to be published, therefore the relevant
-reference will be provided later.")
+likelihood parameter estimation algorithms for models representing linear
+dynamical systems.  Currently, two such algorithms (one offline and one online)
+are implemented for the single-output cumulative structural equation model with
+an additive-noise output measurement equation and assumptions of normality and
+independence.  The corresponding scientific papers are referenced in the
+descriptions of the functions implementing these algorithms.")
     (license license:gpl2)))
 
 (define-public r-emld

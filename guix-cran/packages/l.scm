@@ -6096,29 +6096,6 @@ Econometrics\").  Students, teachers, and self-learners will find the data sets
 essential for replicating the results in the book.")
     (license license:gpl3)))
 
-(define-public r-lodr
-  (package
-    (name "r-lodr")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lodr" version))
-       (sha256
-        (base32 "0bmdw489dv1069krnx9yi0bcgx1vx4ymc6s4pix4shha5c5fbiz4"))))
-    (properties `((upstream-name . "lodr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=lodr")
-    (synopsis "Linear Model Fitting with LOD Covariates")
-    (description
-     "This package provides tools to fit linear regression model to data while taking
-into account covariates with lower limit of detection (LOD).")
-    (license license:expat)))
-
 (define-public r-lodi
   (package
     (name "r-lodi")
@@ -10614,31 +10591,6 @@ en.wikipedia.org/wiki/L-system This package provides basic functions for
 exploring L-systems.")
     (license license:gpl3+)))
 
-(define-public r-lincongaussr
-  (package
-    (name "r-lincongaussr")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "linconGaussR" version))
-       (sha256
-        (base32 "10l7qajqa8f8yq3zbjmjxf0va2krq1rab42ihfhz2jyv3mn24xsi"))))
-    (properties `((upstream-name . "linconGaussR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
-    (home-page "https://github.com/YunyiShen/linconGaussR")
-    (synopsis
-     "Sampling Multivariate Normal Distribution under Linear Constraints")
-    (description
-     "Sample truncated multivariate Normal distribution following Gessner, A.,
-Kanjilal, O., & Hennig, P. (2019).  Integrals over Gaussians under Linear Domain
-Constraints.  108. <arxiv:1910.09328>.")
-    (license license:gpl3)))
-
 (define-public r-lincom
   (package
     (name "r-lincom")
@@ -11808,13 +11760,13 @@ dataset (@code{myHouseID}) from the BHPS.")
 (define-public r-lifecontingencies
   (package
     (name "r-lifecontingencies")
-    (version "1.3.12")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lifecontingencies" version))
        (sha256
-        (base32 "03kcfvm01il451hy9rg7adwg5vllv9kr61n58kkqkyvx7cj0xk5b"))))
+        (base32 "085aa5m8kxvzldlz0037lvdal7bl8j3a8fw5xkf6hpba9v7smq2a"))))
     (properties `((upstream-name . "lifecontingencies")))
     (build-system r-build-system)
     (arguments
@@ -15315,13 +15267,13 @@ method please refer to Nguyen and Galelli (2018) <doi:10.1002/2017WR022114>.")
 (define-public r-ldsep
   (package
     (name "r-ldsep")
-    (version "2.1.5")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ldsep" version))
        (sha256
-        (base32 "1abjb4ybxqipq5383r82ngy19p84331sfpi817wv7jsv6q99igrb"))))
+        (base32 "0z2r6rdr5zhf8gams105q5lahcjk79jxbvl5b9r8sjd3sn616qam"))))
     (properties `((upstream-name . "ldsep")))
     (build-system r-build-system)
     (arguments
@@ -15338,7 +15290,7 @@ method please refer to Nguyen and Galelli (2018) <doi:10.1002/2017WR022114>.")
                              r-ashr
                              r-abind))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ldsep")
+    (home-page "https://dcgerard.github.io/ldsep/")
     (synopsis "Linkage Disequilibrium Shrinkage Estimation for Polyploids")
     (description
      "Estimate haplotypic or composite pairwise linkage disequilibrium (LD) in
@@ -15351,7 +15303,7 @@ errors can then be used for shrinkage estimation.  The main functions are
 @code{plot.lddf()}, @code{format_lddf()}, and @code{ldshrink()}.  Details of the
 methods are available in Gerard (2021a) <doi:10.1111/1755-0998.13349> and Gerard
 (2021b) <doi:10.1038/s41437-021-00462-5>.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-ldrtools
   (package

@@ -2239,13 +2239,13 @@ writing, and performing some geometric operations.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckplyr" version))
        (sha256
-        (base32 "03l99swgcyy1fjfpwvza6f6r7g6j3485753bdjl7wk3f9c7ydjbi"))))
+        (base32 "0grb5n98vyi4vbpqxdv3lb1dby51fg96q0adph2d8jgb2rsrdhf0"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
     (arguments
@@ -4341,13 +4341,13 @@ machine learning algorithms.  Python interfaces available.")
 (define-public r-dslabs
   (package
     (name "r-dslabs")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dslabs" version))
        (sha256
-        (base32 "19nx8jjjadwhkk4wp3lv7xddq8pbj6l405xaxk4fhvgcvlxa65zk"))))
+        (base32 "1jkda0z1bllgsf7i7wyzxf5qmly2w2s2pa2pgag63cq5c7h3ad8w"))))
     (properties `((upstream-name . "dslabs")))
     (build-system r-build-system)
     (arguments
@@ -4624,6 +4624,43 @@ Dixon-Simon model for subgroup analysis (with binary covariates) in clinical
 trials.  For details of the methodology, please refer to D.O. Dixon and R. Simon
 (1991), Biometrics, 47: 871-881.")
     (license license:gpl2+)))
+
+(define-public r-dsbase
+  (package
+    (name "r-dsbase")
+    (version "6.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dsBase" version))
+       (sha256
+        (base32 "0s1yb64d4wl4jmrgk6dxnngpx4119nz8my39b6dxkrl1zpzmz2ab"))))
+    (properties `((upstream-name . "dsBase")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-reshape2
+                             r-rann
+                             r-polycor
+                             r-mice
+                             r-lme4
+                             r-gamlss-dist
+                             r-gamlss
+                             r-dplyr
+                             r-childsds))
+    (home-page "https://cran.r-project.org/package=dsBase")
+    (synopsis "'DataSHIELD' Server Side Base Functions")
+    (description
+     "Base @code{DataSHIELD} functions for the server side. @code{DataSHIELD} is a
+software package which allows you to do non-disclosive federated analysis on
+sensitive data. @code{DataSHIELD} analytic functions have been designed to only
+share non disclosive summary statistics, with built in automated output checking
+based on statistical disclosure control.  With data sites setting the threshold
+values for the automated output checks.  For more details, see
+citation(\"@code{dsBase}\")'.")
+    (license license:gpl3)))
 
 (define-public r-dsample
   (package
@@ -7760,13 +7797,13 @@ Citations: Hoehn et al (2022) <doi:10.1371/journal.pcbi.1009885>, Hoehn et al
 (define-public r-downscale
   (package
     (name "r-downscale")
-    (version "5.0.0")
+    (version "5.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "downscale" version))
        (sha256
-        (base32 "1rcmn5f30l004rp8a7pmn0w5izsy31n9lwsk3sgj01fjzk0333wc"))))
+        (base32 "0cngqa1rg5g689ja8p7i61kbngryivl33x0y4naxs8b7kk07iyxc"))))
     (properties `((upstream-name . "downscale")))
     (build-system r-build-system)
     (arguments
@@ -14509,13 +14546,13 @@ on Dempsey and Wyse (2025) <doi:10.48550/@code{arXiv.2403.03646>}.")
 (define-public r-discretedists
   (package
     (name "r-discretedists")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteDists" version))
        (sha256
-        (base32 "1kwvmvykcky9mv0c8ghy29vvrs14jaxaha4ww0yzwq7dsa7ms315"))))
+        (base32 "0bsw8sg9kfzrrr9gk4c7aar3hf3y9rw5vs6kw8mdfr6n1x9sklcs"))))
     (properties `((upstream-name . "DiscreteDists")))
     (build-system r-build-system)
     (arguments
@@ -21126,6 +21163,29 @@ procedure, version 4.1, as described in Speth (2004)
 Statistical Office of Germany.")
     (license license:gpl3)))
 
+(define-public r-descutils
+  (package
+    (name "r-descutils")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "descutils" version))
+       (sha256
+        (base32 "1dwcsm9g8sxbfq5awhjk6biv7vgx0v0ggbp04w3227gja6cyh4l7"))))
+    (properties `((upstream-name . "descutils")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-dplyr))
+    (home-page "https://cran.r-project.org/package=descutils")
+    (synopsis "Utilities for Describing and Comparing Data")
+    (description
+     "This package provides functionality that assists in tabular description and
+statistical comparison of data.")
+    (license license:gpl3)))
+
 (define-public r-desctoolsaddins
   (package
     (name "r-desctoolsaddins")
@@ -26937,42 +26997,6 @@ such as bioinformatics, image analysis, and text classification, where
 high-dimensional data commonly arise.  Learn more about the methodology and
 algorithm at Wang, Zhou, Gu, and Zou (2023) <doi:10.1109/TIT.2022.3222767>.")
     (license license:gpl2)))
-
-(define-public r-dcsmooth
-  (package
-    (name "r-dcsmooth")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DCSmooth" version))
-       (sha256
-        (base32 "19pkj8z9wm4g8kxz1j3jw2n0bwldsyakipxvqpwnmlg2g5j8f5b1"))))
-    (properties `((upstream-name . "DCSmooth")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-plotly
-                             r-fracdiff
-                             r-foreach
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DCSmooth")
-    (synopsis
-     "Nonparametric Regression and Bandwidth Selection for Spatial Models")
-    (description
-     "Nonparametric smoothing techniques for data on a lattice and functional time
-series.  Smoothing is done via kernel regression or local polynomial regression,
-a bandwidth selection procedure based on an iterative plug-in algorithm is
-implemented.  This package allows for modeling a dependency structure of the
-error terms of the nonparametric regression model.  Methods used in this paper
-are described in Feng/Schaefer (2021)
-<https://ideas.repec.org/p/pdn/ciepap/144.html>, Schaefer/Feng (2021)
-<https://ideas.repec.org/p/pdn/ciepap/143.html>.")
-    (license license:gpl3)))
 
 (define-public r-dcpo
   (package

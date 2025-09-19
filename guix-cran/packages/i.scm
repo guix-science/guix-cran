@@ -2476,6 +2476,33 @@ binary response variables and partially ordered covariates.  See Henzi, Ziegel,
 Gneiting (2020) <@code{arXiv:1909.03725>}.")
     (license license:gpl2+)))
 
+(define-public r-isocubes
+  (package
+    (name "r-isocubes")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isocubes" version))
+       (sha256
+        (base32 "0n7j9q369rccycifb8ck5dkw33yd091lcrz87bw8wzmk0vx90y9c"))))
+    (properties `((upstream-name . "isocubes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-colorfast))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/coolbutuseless/isocubes")
+    (synopsis "Voxel Data Visualization with Isometric Cubes")
+    (description
+     "This package provides a voxel is a representation of a value on a regular,
+three-dimensional grid; it is the 3D equivalent of a 2D pixel.  Voxel data can
+be visualised with this package using fixed viewpoint isometric cubes for each
+data point.  This package also provides sample voxel data and tools for
+transforming the data.")
+    (license license:expat)))
+
 (define-public r-isocountry
   (package
     (name "r-isocountry")
@@ -3030,13 +3057,13 @@ the Ising model the distribution can only be computed up to ~10 nodes.")
 (define-public r-isinglenzmc
   (package
     (name "r-isinglenzmc")
-    (version "0.2.5")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isingLenzMC" version))
        (sha256
-        (base32 "1pd1s3a1rv7vlxd5db1pgwdjps8w5im4zz2h3qzal9cwbis0hb51"))))
+        (base32 "1z6ivg5rd2ja2b5slqwb0ks5as7fr13hhd8dipx5bc6bfa6r21vm"))))
     (properties `((upstream-name . "isingLenzMC")))
     (build-system r-build-system)
     (arguments
@@ -11988,13 +12015,13 @@ Implements and extends the method of Kassanjee et al. (2012)
 (define-public r-incr
   (package
     (name "r-incr")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incR" version))
        (sha256
-        (base32 "0mis4hwd9mw7ji322yqidiz8d9qsb4jkpndfdskxrrmpfpha9r91"))))
+        (base32 "0yhlh48a6wvf1k9rwdkfg8r9a8xw70wi86f80lacp062m8v8aw52"))))
     (properties `((upstream-name . "incR")))
     (build-system r-build-system)
     (arguments
@@ -15063,33 +15090,6 @@ that can quickly obtain the corresponding characteristics of the tripartite
 network.  To solve this insufficiency, ILSM was designed for supporting
 calculating such metrics of tripartite networks by functions of this R package.")
     (license license:expat)))
-
-(define-public r-ilse
-  (package
-    (name "r-ilse")
-    (version "1.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ILSE" version))
-       (sha256
-        (base32 "0jx0f7lk18k0wsypi4ynq1zqbb9hsmcmf0chxyrpqkadfqb6mgwr"))))
-    (properties `((upstream-name . "ILSE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pbapply))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/feiyoung/ILSE")
-    (synopsis "Linear Regression Based on 'ILSE' for Missing Data")
-    (description
-     "Linear regression when covariates include missing values by embedding the
-correlation information between covariates.  Especially for block missing data,
-it works well.  ILSE conducts imputation and regression simultaneously and
-iteratively.  More details can be referred to Huazhen Lin, Wei Liu and Wei Lan.
-(2021) <doi:10.1080/07350015.2019.1635486>.")
-    (license license:gpl3)))
 
 (define-public r-ilsastats
   (package

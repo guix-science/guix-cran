@@ -15491,47 +15491,6 @@ allows R to connect to any DBMS that has a ODBC driver.")
     (description "An ODBC database interface.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-roctree
-  (package
-    (name "r-roctree")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rocTree" version))
-       (sha256
-        (base32 "1hd5v47gymffg5829swpd38xscm4vq75d46fibwkrr7jp9iy37ra"))))
-    (properties `((upstream-name . "rocTree")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mass
-                             r-ggplot2
-                             r-flexsurv
-                             r-diagrammer
-                             r-data-tree))
-    (home-page "http://github.com/stc04003/rocTree")
-    (synopsis
-     "Receiver Operating Characteristic (ROC)-Guided Classification and Survival Tree")
-    (description
-     "Receiver Operating Characteristic (ROC)-guided survival trees and ensemble
-algorithms are implemented, providing a unified framework for tree-structured
-analysis with censored survival outcomes.  A time-invariant partition scheme on
-the survivor population was considered to incorporate time-dependent covariates.
- Motivated by ideas of randomized tests, generalized time-dependent ROC curves
-were used to evaluate the performance of survival trees and establish the
-optimality of the target hazard/survival function.  The optimality of the target
-hazard function motivates us to use a weighted average of the time-dependent
-area under the curve (AUC) on a set of time points to evaluate the prediction
-performance of survival trees and to guide splitting and pruning.  A detailed
-description of the implemented methods can be found in Sun et al. (2019)
-<@code{arXiv:1809.05627>}.")
-    (license license:gpl3+)))
-
 (define-public r-rocsvm-path
   (package
     (name "r-rocsvm-path")
@@ -16983,30 +16942,6 @@ inconsistencies.  The method is able afterward to build a robust classifier
 taking into account the detected inconsistencies into the labels.")
     (license license:gpl2)))
 
-(define-public r-robustcov
-  (package
-    (name "r-robustcov")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "robustcov" version))
-       (sha256
-        (base32 "1bgvf9h727aqfb11q976y2ybp3mpghkyd29waypyfp95csp3cf26"))))
-    (properties `((upstream-name . "robustcov")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-glasso r-caret))
-    (home-page "https://cran.r-project.org/package=robustcov")
-    (synopsis
-     "Collection of Robust Covariance and (Sparse) Precision Matrix Estimators")
-    (description
-     "Collection of methods for robust covariance and (sparse) precision matrix
-estimation based on Loh and Tan (2018) <doi:10.1214/18-EJS1427>.")
-    (license license:gpl3)))
-
 (define-public r-robustcalibration
   (package
     (name "r-robustcalibration")
@@ -17627,6 +17562,31 @@ Mueller, C.,(2019) <@code{arXiv:1909.04990>}.")
     (description
      "Three-step regression and inference for cellwise and casewise contamination.")
     (license license:gpl2+)))
+
+(define-public r-robratio
+  (package
+    (name "r-robratio")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "robRatio" version))
+       (sha256
+        (base32 "0ka4xk3hfbyh3rxhr467lv3z40jabfgx0fcqighawkldkmryk0jh"))))
+    (properties `((upstream-name . "robRatio")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "<https://github.com/kazwd2008/robRatio>")
+    (synopsis
+     "M-Estimators for Generalized Ratio and Linear Regression Models")
+    (description
+     "Robust estimators for generalized ratio model (Wada, Sakashita and Tsubaki,
+2021)<doi:10.17713/ajs.v50i1.994> and linear regression model by the
+IRLS(iterative reweighted least squares) algorithm are contained.")
+    (license license:gpl3+)))
 
 (define-public r-robqda
   (package
@@ -23203,36 +23163,6 @@ jobs, share updates with their network, and create group discussions.  For more
 information about using the API please visit <https://developer.linkedin.com/>.")
     (license license:gpl2)))
 
-(define-public r-rlibkriging
-  (package
-    (name "r-rlibkriging")
-    (version "0.9-2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rlibkriging" version))
-       (sha256
-        (base32 "1lkdhg04m3ifzxkfiqcvbgx5whvw1lzmz59h7w04vm1084yxbcyf"))))
-    (properties `((upstream-name . "rlibkriging")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list gfortran gcc cmake))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-dicekriging))
-    (native-inputs (list gfortran))
-    (home-page "https://github.com/libKriging")
-    (synopsis "Kriging Models using the 'libKriging' Library")
-    (description
-     "Interface to @code{libKriging} C++ library
-<https://github.com/@code{libKriging>} that should provide most standard Kriging
-/ Gaussian process regression features (like in @code{DiceKriging}', kergp or
-@code{RobustGaSP} packages). @code{libKriging} relies on Armadillo linear
-algebra library (Apache 2 license) by Conrad Sanderson, lbfgsb_cpp is a C++ port
-around by Pascal Have of lbfgsb library (BSD-3 license) by Ciyou Zhu, Richard
-Byrd, Jorge Nocedal and Jose Luis Morales used for hyperparameters optimization.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-rlibkdv
   (package
     (name "r-rlibkdv")
@@ -23720,13 +23650,13 @@ thermocline depth, lake number, Wedderburn number, Schmidt stability and others.
 (define-public r-rlabkey
   (package
     (name "r-rlabkey")
-    (version "3.4.3")
+    (version "3.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rlabkey" version))
        (sha256
-        (base32 "1rxn53j0awh6w7xnc4n6zh56s7f5m0i7h83dv4ba25cvkqqkhar8"))))
+        (base32 "1906via5cq94axvzq0yqmb0wn1r82yr71mjmsaybdl0qnpnpx629"))))
     (properties `((upstream-name . "Rlabkey")))
     (build-system r-build-system)
     (arguments
@@ -25577,13 +25507,13 @@ models (Spiegelman and Hertzmark 2005, <doi:10.1093/aje/kwi188>), and others.")
 (define-public r-riskregression
   (package
     (name "r-riskregression")
-    (version "2025.05.20")
+    (version "2025.09.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskRegression" version))
        (sha256
-        (base32 "1j2jjzm1nrl9cx4h5fjn8mfkiml8p9kwmjqih6xxr29rvqwh1pgv"))))
+        (base32 "002s8mzq577308l5gyl22q26mx3krq32gp1clpj0hh3pvphbckwy"))))
     (properties `((upstream-name . "riskRegression")))
     (build-system r-build-system)
     (arguments
@@ -32446,13 +32376,13 @@ National University of Jujuy (UNJu).")
 (define-public r-resultmodelmanager
   (package
     (name "r-resultmodelmanager")
-    (version "0.5.11")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ResultModelManager" version))
        (sha256
-        (base32 "14m9nb4pq3c5wasz7npmc2yhf3n8w100nl3hk8105jcwwkddk478"))))
+        (base32 "1mxdm6x9gwrx50kv22l04dxyg7zhvax3sslhsbgfs9bxjg2aai7y"))))
     (properties `((upstream-name . "ResultModelManager")))
     (build-system r-build-system)
     (arguments
@@ -32478,10 +32408,9 @@ National University of Jujuy (UNJu).")
     (synopsis "Result Model Manager")
     (description
      "Database data model management utilities for R packages in the Observational
-Health Data Sciences and Informatics program <https://ohdsi.org>.
-@code{ResultModelManager} provides utility functions to allow package
-maintainers to migrate existing SQL database models, export and import results
-in consistent patterns.")
+Health Data Sciences and Informatics programme. @code{ResultModelManager}
+provides utility functions to allow package maintainers to migrate existing SQL
+database models, export and import results in consistent patterns.")
     (license license:asl2.0)))
 
 (define-public r-result
@@ -41585,13 +41514,13 @@ projects for changes.")
 (define-public r-readyomics
   (package
     (name "r-readyomics")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readyomics" version))
        (sha256
-        (base32 "1xqpadiwpdqfgbq7bnxd1m4i38ihsidwy98yx3rywvxslx20nxn6"))))
+        (base32 "0zbzfriy9qjy2vzy3y3jiydaxyd0x4pha05gmi6a3s4sd4d63vwz"))))
     (properties `((upstream-name . "readyomics")))
     (build-system r-build-system)
     (arguments
@@ -45845,13 +45774,13 @@ to effectively perform tokenization, POS tagging, and lemmatization.")
 (define-public r-rcpphmm
   (package
     (name "r-rcpphmm")
-    (version "1.2.2")
+    (version "1.2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppHMM" version))
        (sha256
-        (base32 "0scdzmns1yw2gbarblzd6cbvndlysz54ff17qijiz17ql5cyzly6"))))
+        (base32 "1rj6wrl5yh5fa9afgfr95jifi6dxhd8j08p2ghsgzfm0ldllafg1"))))
     (properties `((upstream-name . "RcppHMM")))
     (build-system r-build-system)
     (arguments
@@ -45869,7 +45798,7 @@ also a mixture of Poissons for discrete values.  It includes functions for
 random initialization, simulation, backward or forward sequence evaluation,
 Viterbi or forward-backward decoding and parameter estimation using an
 Expectation-Maximization approach.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-rcppgreedysetcover
   (package

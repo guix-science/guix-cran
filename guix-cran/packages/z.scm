@@ -951,27 +951,27 @@ and configuration management for package developers.")
 (define-public r-zep
   (package
     (name "r-zep")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ZEP" version))
        (sha256
-        (base32 "043vlybpxyjczaq2i9s3gnrhdr5fll13d5g722h5brj8v7n4jn2z"))))
+        (base32 "04mlmhlwd6dap4rwx243cpwqibycf2lbxjq2lcyh0nycy6zdp0s5"))))
     (properties `((upstream-name . "ZEP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-fuzzynumbers))
+    (propagated-inputs (list r-fuzzynumbers r-animation))
     (home-page "https://cran.r-project.org/package=ZEP")
     (synopsis
      "Procedures Related to the Zadeh's Extension Principle for Fuzzy Data")
     (description
-     "Procedures for calculation, plotting, and approximation of the outputs for fuzzy
-numbers (see A.I. Ban, L. Coroianu, P. Grzegorzewski \"Fuzzy Numbers:
-Approximations, Ranking and Applications\" (2015)) based on the Zadeh's Extension
-Principle (see de Barros, L.C., Bassanezi, R.C., Lodwick, W.A. (2017)
+     "Procedures for calculation, plotting, animation, and approximation of the
+outputs for fuzzy numbers (see A.I. Ban, L. Coroianu, P. Grzegorzewski \"Fuzzy
+Numbers: Approximations, Ranking and Applications\" (2015)) based on the Zadeh's
+Extension Principle (see de Barros, L.C., Bassanezi, R.C., Lodwick, W.A. (2017)
 <doi:10.1007/978-3-662-53324-6_2>).")
     (license license:gpl3)))
 

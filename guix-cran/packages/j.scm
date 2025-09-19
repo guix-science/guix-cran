@@ -2796,13 +2796,13 @@ easy transfer of data and analyses between jamovi and R.")
 (define-public r-jmvcore
   (package
     (name "r-jmvcore")
-    (version "2.6.3")
+    (version "2.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmvcore" version))
        (sha256
-        (base32 "02micn8g1l21x10sqcw6h2866drb8828723spvn3wg5gqm19f15p"))))
+        (base32 "08bhhpx2f046cz09xwhlhlzhfki2y4rnwvwiw4bqkgldnw7lm5iv"))))
     (properties `((upstream-name . "jmvcore")))
     (build-system r-build-system)
     (arguments
@@ -2848,13 +2848,13 @@ spreadsheet (see <https://www.jamovi.org> for more information) from R.")
 (define-public r-jmv
   (package
     (name "r-jmv")
-    (version "2.7.0")
+    (version "2.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmv" version))
        (sha256
-        (base32 "0y1d63d9vm4v9gwfm48ydnrxadvlwcww6s2bk3ni13v6ik4gwvxb"))))
+        (base32 "07z6lzd4n06zav8msml6zwiqqz0wpqzdfcb5qhdjbwfw03ajzq0l"))))
     (properties `((upstream-name . "jmv")))
     (build-system r-build-system)
     (arguments

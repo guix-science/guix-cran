@@ -3090,13 +3090,13 @@ rendering 2D and 3D models.")
 (define-public r-autodb
   (package
     (name "r-autodb")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autodb" version))
        (sha256
-        (base32 "1sa86wyrvksxmsfplq6c14h8lcl5wj069ivqrac3x6bkk0hxc78d"))))
+        (base32 "1yc2ll6vy536r319ia5sbnn03q9hahfl341gi5ys8pb9g2asbkg3"))))
     (properties `((upstream-name . "autodb")))
     (build-system r-build-system)
     (arguments
@@ -5257,13 +5257,13 @@ given in Foreman et al. (2015) <doi:10.1186/1478-7954-10-1>.")
 (define-public r-assumpsure
   (package
     (name "r-assumpsure")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AssumpSure" version))
        (sha256
-        (base32 "1pxchvi2k91g7ziw000980n0b8y9mya9xlq72xz7sm0i0ji2v671"))))
+        (base32 "020zid8mb4nzdr1sy186fmv9aa0ij2rsd11cf1dzszf78wplpid1"))))
     (properties `((upstream-name . "AssumpSure")))
     (build-system r-build-system)
     (arguments
@@ -5288,6 +5288,7 @@ given in Foreman et al. (2015) <doi:10.1186/1478-7954-10-1>.")
                              r-kableextra
                              r-htmltools
                              r-glmmtmb
+                             r-ggpubr
                              r-fontawesome
                              r-effectsize
                              r-dt
@@ -9417,27 +9418,30 @@ as described in Philippe and Vibet (2020) <doi:10.18637/jss.v093.c01>.")
 (define-public r-arcgisutils
   (package
     (name "r-arcgisutils")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgisutils" version))
        (sha256
-        (base32 "1awf5mjlrdv0wflvzyb7rpwsdw6wq7750frm1c3ggncv4cbb9ra4"))))
+        (base32 "1a74mzzzgd2ppq5ijsfnlxlcrxq329d536ccdikamy6816786f6v"))))
     (properties `((upstream-name . "arcgisutils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-sf
+    (inputs (list xz))
+    (propagated-inputs (list r-yyjsonr
+                             r-sf
+                             r-s7
                              r-rlang
                              r-rcppsimdjson
+                             r-r6
+                             r-lifecycle
                              r-httr2
-                             r-dbplyr
                              r-cli))
     (home-page "https://github.com/R-ArcGIS/arcgisutils")
-    (synopsis "ArcGIS Utility Functions")
+    (synopsis "R-ArcGIS Bridge Utility Functions")
     (description
      "Developer oriented utility functions designed to be used as the building blocks
 of R packages that work with @code{ArcGIS} Location Services.  It provides
@@ -10091,13 +10095,13 @@ APHA(2017,ISBN:9780875532875).")
 (define-public r-aqp
   (package
     (name "r-aqp")
-    (version "2.2")
+    (version "2.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aqp" version))
        (sha256
-        (base32 "1q2pfswa8lm3zra1qvd7jx1jm885cpsa82l4vgg5rc0dw7bd8x0f"))))
+        (base32 "1gfcjyf9q4xx0zpmk75w2br3ccq9rmccaqiy5086ijwwld4j3pvs"))))
     (properties `((upstream-name . "aqp")))
     (build-system r-build-system)
     (arguments
@@ -10112,7 +10116,7 @@ APHA(2017,ISBN:9780875532875).")
                              r-cluster
                              r-ape))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ncss-tech/aqp")
+    (home-page "https://ncss-tech.github.io/aqp/")
     (synopsis "Algorithms for Quantitative Pedology")
     (description
      "The Algorithms for Quantitative Pedology (AQP) project was started in 2009 to
@@ -12367,44 +12371,6 @@ by the anybadge library in python.")
      "Data from the anxiety and confinement study from Alvarado-Aravena et al. (2022)
 <doi:10.3390/bs12100398>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
-
-(define-public r-antman
-  (package
-    (name "r-antman")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AntMAN" version))
-       (sha256
-        (base32 "118jhjjfnp23kbkir66rdvlzsvms316zwr2r5msrjrb3nd8lz5va"))))
-    (properties `((upstream-name . "AntMAN")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-salso
-                             r-rdpack
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mvtnorm
-                             r-mcclust
-                             r-ggally
-                             r-bayesplot))
-    (home-page "https://github.com/bbodin/AntMAN")
-    (synopsis "Anthology of Mixture Analysis Tools")
-    (description
-     "Fits finite Bayesian mixture models with a random number of components.  The
-MCMC algorithm implemented is based on point processes as proposed by Argiento
-and De Iorio (2019) <@code{arXiv:1904.09733>} and offers a more computationally
-efficient alternative to reversible jump.  Different mixture kernels can be
-specified: univariate Gaussian, multivariate Gaussian, univariate Poisson, and
-multivariate Bernoulli (latent class analysis).  For the parameters
-characterising the mixture kernel, we specify conjugate priors, with possibly
-user specified hyper-parameters.  We allow for different choices for the prior
-on the number of components: shifted Poisson, negative binomial, and point
-masses (i.e.  mixtures with fixed number of components).")
-    (license license:expat)))
 
 (define-public r-antitrust
   (package
@@ -16711,39 +16677,6 @@ Journal of the Royal statistical society: series B (Methodological), 57(1),
 289-300\".  For researchers interested in using the exact mathematical formulas
 and procedures as used in the original paper.")
     (license license:expat)))
-
-(define-public r-alpaca
-  (package
-    (name "r-alpaca")
-    (version "0.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "alpaca" version))
-       (sha256
-        (base32 "1fqw8fcahpgdkj25pd6pq4isd0yrdpiypl3q9ir79a56pvjcn8a4"))))
-    (properties `((upstream-name . "alpaca")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-formula
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/amrei-stammann/alpaca")
-    (synopsis "Fit GLM's with High-Dimensional k-Way Fixed Effects")
-    (description
-     "This package provides a routine to partial out factors with many levels during
-the optimization of the log-likelihood function of the corresponding generalized
-linear model (glm).  The package is based on the algorithm described in Stammann
-(2018) <@code{arXiv:1707.01815>} and is restricted to glm's that are based on
-maximum likelihood estimation and nonlinear.  It also offers an efficient
-algorithm to recover estimates of the fixed effects in a post-estimation routine
-and includes robust and multi-way clustered standard errors.  Further the
-package provides analytical bias corrections for binary choice models derived by
-Fernandez-Val and Weidner (2016) <doi:10.1016/j.jeconom.2015.12.014> and Hinz,
-Stammann, and Wanner (2020) <@code{arXiv:2004.12655>}.")
-    (license license:gpl3)))
 
 (define-public r-aloom
   (package
@@ -23139,13 +23072,13 @@ quantities of interest for the target density itself.")
 (define-public r-admiralvaccine
   (package
     (name "r-admiralvaccine")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralvaccine" version))
        (sha256
-        (base32 "14wdqm4zjdsall0lg82f6ypf9sdpp4p8sj15z2jd6z9kp6kfalnh"))))
+        (base32 "1afisaarcric376cpfgmmgyxx5ygzi9ap03x1kcj8dz6gzh4is55"))))
     (properties `((upstream-name . "admiralvaccine")))
     (build-system r-build-system)
     (arguments
@@ -26962,13 +26895,13 @@ This package has been developed using algorithm of Klein and Moeschberger (2003)
 (define-public r-abstr
   (package
     (name "r-abstr")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "abstr" version))
        (sha256
-        (base32 "0ykds1l7bi0h06fjp0d6xshl8ar05n7ccmjbl7hz02l2v7ncfa6v"))))
+        (base32 "1p0k7ix0sspaxsq5xgbyrriffrw6arl91cxm1qvimc5gr9myqdny"))))
     (properties `((upstream-name . "abstr")))
     (build-system r-build-system)
     (arguments

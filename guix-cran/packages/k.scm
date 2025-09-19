@@ -5513,13 +5513,13 @@ requiring you to change a few lines of code.")
 (define-public r-kerasnip
   (package
     (name "r-kerasnip")
-    (version "0.0.1")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kerasnip" version))
        (sha256
-        (base32 "0kp39qbph48kh4bdabmvc867j8v5xsshxfh53b384l7kcvm670j3"))))
+        (base32 "0pwmdz7k19f1ka1da2lljivachsq7zyk1v69bmdr6rmla9bk8c4l"))))
     (properties `((upstream-name . "kerasnip")))
     (build-system r-build-system)
     (arguments
@@ -5540,7 +5540,7 @@ requiring you to change a few lines of code.")
     (synopsis "Bridge Between 'keras' and 'tidymodels'")
     (description
      "This package provides a seamless bridge between keras and the tidymodels
-ecosystem.  It allows for the dynamic creation of parsnip model specifications
+frameworks.  It allows for the dynamic creation of parsnip model specifications
 for keras models.")
     (license license:expat)))
 

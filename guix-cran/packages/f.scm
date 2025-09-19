@@ -10845,33 +10845,6 @@ ISBN 9781420079425).  Among the methods included, we have: Haario (2001)
 et al. (2018) <doi:10.1214/17-BA1084> Mirror transition kernels.")
     (license license:expat)))
 
-(define-public r-fmccsd
-  (package
-    (name "r-fmccsd")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FMCCSD" version))
-       (sha256
-        (base32 "0c50km5ba6biq9p3mycxhy00ij2gr6y5zf3q8ycq0g1mbk8ybfb7"))))
-    (properties `((upstream-name . "FMCCSD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-splines2 r-rcpparmadillo r-rcpp r-orthopolynom
-                             r-numderiv))
-    (home-page "https://cran.r-project.org/package=FMCCSD")
-    (synopsis "Efficient Estimation of Clustered Current Status Data")
-    (description
-     "Current status data abounds in the field of epidemiology and public health,
-where the only observable data for a subject is the random inspection time and
-the event status at inspection.  Motivated by such a current status data from a
-periodontal study where data are inherently clustered, we propose a unified
-methodology to analyze such complex data.")
-    (license license:gpl2)))
-
 (define-public r-fmc
   (package
     (name "r-fmc")
@@ -11089,13 +11062,13 @@ to calculate equilibrium stability.")
 (define-public r-fluxtools
   (package
     (name "r-fluxtools")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxtools" version))
        (sha256
-        (base32 "0apvq3nbjsx9g7b9lm8d0dp1agjyg69byblszxpjgchlhq42i1b7"))))
+        (base32 "0b06zirqz3x3bgznmbq1wcimclhjawwds5j2dz3qpi52168xzjm3"))))
     (properties `((upstream-name . "fluxtools")))
     (build-system r-build-system)
     (arguments
@@ -20885,33 +20858,6 @@ is designed to simplify common tasks in categorical data analysis, making it
 easier to work with factors in a flexible and efficient manner.")
     (license license:gpl3)))
 
-(define-public r-fctbases
-  (package
-    (name "r-fctbases")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fctbases" version))
-       (sha256
-        (base32 "19ay3n7m9r72szzxlyd9yrpgajfl8dy75f54cfvmj130p9sv3jfq"))))
-    (properties `((upstream-name . "fctbases")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/naolsen/fctbases")
-    (synopsis "Functional Bases")
-    (description
-     "Easy-to-use, very fast implementation of various functional bases.  Easily used
-together with other packages.  A functional basis is a collection of basis
-functions [\\phi_1, ..., \\phi_n] that can represent a smooth function, i.e. $f(t)
-= \\sum c_k \\phi_k(t)$.  First- and second-order derivatives are also included.
-These are the mathematically correct ones, no approximations applied.  As of
-version 1.1, this package includes B-splines, Fourier bases and polynomials.")
-    (license license:gpl3)))
-
 (define-public r-fcros
   (package
     (name "r-fcros")
@@ -25140,32 +25086,6 @@ Works on any cost function.  For detailed information see Gabel et al. (2019)
      "Estimate parameters of univariate probability distributions with maximum
 likelihood and Bayesian methods.")
     (license license:gpl2)))
-
-(define-public r-familyrank
-  (package
-    (name "r-familyrank")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FamilyRank" version))
-       (sha256
-        (base32 "0v1b3a6rxbbl7xdy977j02x1ni66879x98vg6ngbaqvh7v9vl82x"))))
-    (properties `((upstream-name . "FamilyRank")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-plyr))
-    (home-page "https://cran.r-project.org/package=FamilyRank")
-    (synopsis
-     "Algorithm for Ranking Predictors Using Graphical Domain Knowledge")
-    (description
-     "Grows families of features by selecting features that maximize a weighted score
-calculated from empirical feature scores and graphical knowledge.  The final
-weighted score for a feature is determined by summing a feature's
-family-weighted scores across all families in which the feature appears.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-families
   (package

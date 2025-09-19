@@ -20525,6 +20525,69 @@ ODE-based models and complex statistical models, including mixed effects models,
 for continuous, count, categorical, and time-to-event data.")
     (license license:bsd-2)))
 
+(define-public r-mlwrap
+  (package
+    (name "r-mlwrap")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MLwrap" version))
+       (sha256
+        (base32 "00y63s21pm8wxn60nza8mk4cfbh4bv46g00d21pxk02dfxh5lpb8"))))
+    (properties `((upstream-name . "MLwrap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-workflows
+                             r-vip
+                             r-tune
+                             r-tidyr
+                             r-tibble
+                             r-sensitivity
+                             r-rsample
+                             r-rlang
+                             r-recipes
+                             r-r6
+                             r-patchwork
+                             r-parsnip
+                             r-magrittr
+                             r-innsight
+                             r-glue
+                             r-ggplot2
+                             r-ggbeeswarm
+                             r-fastshap
+                             r-dplyr
+                             r-dials
+                             r-diagrammer
+                             r-cli))
+    (home-page "https://github.com/AlbertSesePsy/MLwrap")
+    (synopsis "Machine Learning Modelling for Everyone")
+    (description
+     "This package provides a minimal library specifically designed to make the
+estimation of Machine Learning (ML) techniques as easy and accessible as
+possible, particularly within the framework of the Knowledge Discovery in
+Databases (KDD) process in data mining.  The package provides essential tools to
+structure and execute each stage of a predictive or classification modeling
+workflow, aligning closely with the fundamental steps of the KDD methodology,
+from data selection and preparation, through model building and tuning, to the
+interpretation and evaluation of results using Sensitivity Analysis.  The MLwrap
+workflow is organized into four core steps; @code{preprocessing()},
+@code{build_model()}, @code{fine_tuning()}, and @code{sensitivity_analysis()}.
+These steps correspond, respectively, to data preparation and transformation,
+model construction, hyperparameter optimization, and sensitivity analysis.  The
+user can access comprehensive model evaluation results including fit assessment
+metrics, plots, predictions, and performance diagnostics for ML models
+implemented through Neural Networks', Random Forest', XGBoost (Extreme Gradient
+Boosting), and Support Vector Machines (SVM) algorithms.  By streamlining these
+phases, MLwrap aims to simplify the implementation of ML techniques, allowing
+analysts and data scientists to focus on extracting actionable insights and
+meaningful patterns from large datasets, in line with the objectives of the KDD
+process.")
+    (license license:gpl3)))
+
 (define-public r-mlvsbm
   (package
     (name "r-mlvsbm")
@@ -29677,13 +29740,13 @@ analysis.")
 (define-public r-microseq
   (package
     (name "r-microseq")
-    (version "2.1.6")
+    (version "2.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microseq" version))
        (sha256
-        (base32 "1xa8r908jic06kv1qjmdidh3zzslbimjyhsy6v27xqzrh45svq4c"))))
+        (base32 "14wh0jw21a5xlk1bba8yvyy9msi6h77c4x7hrk0baxqr6wzib1sj"))))
     (properties `((upstream-name . "microseq")))
     (build-system r-build-system)
     (arguments
@@ -29695,7 +29758,7 @@ analysis.")
                              r-rcpp
                              r-dplyr
                              r-data-table))
-    (home-page "https://cran.r-project.org/package=microseq")
+    (home-page "https://github.com/larssnip/microseq")
     (synopsis "Basic Biological Sequence Handling")
     (description
      "Basic functions for microbial sequence data analysis.  The idea is to use
@@ -35020,13 +35083,13 @@ syntax and integrated metadata promote workflow scalability.")
 (define-public r-metaphonebr
   (package
     (name "r-metaphonebr")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaphonebr" version))
        (sha256
-        (base32 "1n26gia9qfz146nvykl1gm3mn04mv4vk275q5nf25hyqbaf000lx"))))
+        (base32 "10zv129qlafj2wcbafcxd5zbnk3pph9dy7q525vbf9sl7hmdgca3"))))
     (properties `((upstream-name . "metaphonebr")))
     (build-system r-build-system)
     (arguments
@@ -36948,13 +37011,13 @@ components models to metabolomic spectral data.")
 (define-public r-metabodecon
   (package
     (name "r-metabodecon")
-    (version "1.2.6")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metabodecon" version))
        (sha256
-        (base32 "1fxx9c9bv0jm4jmzx62n52xpz8lcdy1hfi5yfvdy93v9j7jdj57b"))))
+        (base32 "0anxsyyrwv5qr1md4js0jbiryq98g45ar0n469gv9245r3zp4v2v"))))
     (properties `((upstream-name . "metabodecon")))
     (build-system r-build-system)
     (arguments
@@ -36966,6 +37029,7 @@ components models to metabolomic spectral data.")
                              r-readjdx
                              r-mathjaxr
                              r-data-table))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/spang-lab/metabodecon/")
     (synopsis "Deconvolution and Alignment of 1d NMR Spectra")
     (description
@@ -37489,40 +37553,6 @@ for downloading station metadata, downloading Mesonet time series (MTS) files,
 importing MTS files into R, and converting soil temperature change measurements
 into soil matric potential and volumetric soil moisture.")
     (license license:gpl2)))
-
-(define-public r-meshed
-  (package
-    (name "r-meshed")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "meshed" version))
-       (sha256
-        (base32 "061q6b8603jbvlqkl6ddcmw1rgy53sqbxbsxhv218f7px392b1vf"))))
-    (properties `((upstream-name . "meshed")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-magrittr
-                             r-glue
-                             r-fnn
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=meshed")
-    (synopsis "Bayesian Regression with Meshed Gaussian Processes")
-    (description
-     "Fits Bayesian regression models based on latent Meshed Gaussian Processes (MGP)
-as described in Peruzzi, Banerjee, Finley (2020)
-<doi:10.1080/01621459.2020.1833889>, Peruzzi, Banerjee, Dunson, and Finley
-(2021) <@code{arXiv:2101.03579>}, Peruzzi and Dunson (2022)
-<@code{arXiv:2201.10080>}.  Funded by ERC grant 856506 and NIH grant
-R01ES028804.")
-    (license license:gpl3+)))
 
 (define-public r-mertools
   (package
@@ -49218,37 +49248,6 @@ accompanied by legible legends to be fully comprehensible.  This package offers
 a wide range of legends useful for cartography, some of which may also be useful
 for other types of graphics.")
     (license license:gpl3)))
-
-(define-public r-mapitr
-  (package
-    (name "r-mapitr")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MAPITR" version))
-       (sha256
-        (base32 "0vmsdspja4qfs2z14p835g78zggk8h54v25cn268z1hg2p6zxish"))))
-    (properties `((upstream-name . "MAPITR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-doparallel
-                             r-compquadform))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mturchin20/MAPITR")
-    (synopsis "MArginal ePIstasis Test for Regions")
-    (description
-     "This package provides a genetic analysis tool and variance component model for
-identifying marginal epistasis between pathways and the rest of the genome.
-MAPITR uses as input a matrix of genotypes, a vector of phenotypes, and a list
-of pathways.  MAPITR then iteratively tests each pathway for epistasis between
-any variants within the pathway versus any variants remaining in the rest of the
-genome.  MAPITR returns results in the form of p-values for every pathway
-indicating whether the null model of there being no epistatic interactions
-between a pathway and the rest of the genome can be rejected.")
-    (license license:expat)))
 
 (define-public r-mapiso
   (package

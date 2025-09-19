@@ -6333,6 +6333,53 @@ Single and multi-individual models are available.  O'Brien et al. (2024)
 <doi:10.1111/2041-210X.14463>.")
     (license license:gpl3+)))
 
+(define-public r-hmda
+  (package
+    (name "r-hmda")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMDA" version))
+       (sha256
+        (base32 "136vm9paw0nbdhnwddryaiw568q220vk88dacyqz19h9gav9ijbs"))))
+    (properties `((upstream-name . "HMDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-splittools
+                             r-shapley
+                             r-psych
+                             r-h2otools
+                             r-h2o
+                             r-ggplot2
+                             r-dplyr
+                             r-curl
+                             r-autoensemble))
+    (home-page "http://dx.doi.org/10.13140/RG.2.2.32473.63846")
+    (synopsis
+     "Holistic Multimodel Domain Analysis for Exploratory Machine Learning")
+    (description
+     "Holistic Multimodel Domain Analysis (HMDA) is a robust and transparent framework
+designed for exploratory machine learning research, aiming to enhance the
+process of feature assessment and selection.  HMDA addresses key limitations of
+traditional machine learning methods by evaluating the consistency across
+multiple high-performing models within a fine-tuned modeling grid, thereby
+improving the interpretability and reliability of feature importance
+assessments.  Specifically, it computes Weighted Mean SHapley Additive
+@code{exPlanations} (WMSHAP), which aggregate feature contributions from
+multiple models based on weighted performance metrics.  HMDA also provides
+confidence intervals to demonstrate the stability of these feature importance
+estimates.  This framework is particularly beneficial for analyzing complex,
+multidimensional datasets common in health research, supporting reliable
+exploration of mental health outcomes such as suicidal ideation, suicide
+attempts, and other psychological conditions.  Additionally, HMDA includes
+automated procedures for feature selection based on WMSHAP ratios and performs
+dimension reduction analyses to identify underlying structures among features.
+For more details see Haghish (2025) <doi:10.13140/RG.2.2.32473.63846>.")
+    (license license:expat)))
+
 (define-public r-hmclearn
   (package
     (name "r-hmclearn")
@@ -6421,31 +6468,6 @@ identify those that are predictive of the group label.  The tests are valid
 frequentist procedures and yield sparse estimates indicating which features
 contribute to the group differences.")
     (license license:gpl2)))
-
-(define-public r-hmb
-  (package
-    (name "r-hmb")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HMB" version))
-       (sha256
-        (base32 "19z3d0b98fyjcnbxh3g6h2g927nv0408sbxjlzalrjlw9mbpzd2b"))))
-    (properties `((upstream-name . "HMB")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=HMB")
-    (synopsis "Hierarchical Model-Based Estimation Approach")
-    (description
-     "For estimation of a variable of interest using two sources of auxiliary
-information available in a nested structure.  For reference see Saarela et al.
-(2016)<doi:10.1007/s13595-016-0590-1> and Saarela et al. (2018)
-<doi:10.3390/rs10111832>.")
-    (license license:gpl2+)))
 
 (define-public r-hlt
   (package
@@ -9477,19 +9499,23 @@ lost nor inappropriately cut.")
 (define-public r-hexsticker
   (package
     (name "r-hexsticker")
-    (version "0.4.9")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hexSticker" version))
        (sha256
-        (base32 "0d9sz2cshn4lq18kd9fkgvjm3v29h0k22b6228rq2q3zhxi97ra0"))))
+        (base32 "1bldh78znjp97f8qylvdf2y6p0nj2h1c89l82c8g1xla895vb8rx"))))
     (properties `((upstream-name . "hexSticker")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sysfonts r-showtext r-hexbin r-ggplot2
+    (propagated-inputs (list r-sysfonts
+                             r-showtext
+                             r-rlang
+                             r-hexbin
+                             r-ggplot2
                              r-ggimage))
     (home-page "https://github.com/GuangchuangYu/hexSticker")
     (synopsis "Create Hexagon Sticker in R")
@@ -10447,6 +10473,45 @@ candisc package provides visualizations in a reduced-rank canonical discriminant
 space when there are more than a few response variables.")
     (license license:gpl2+)))
 
+(define-public r-henna
+  (package
+    (name "r-henna")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "henna" version))
+       (sha256
+        (base32 "0jb424igsvq2229mpfakv771s5ciadaw6fgbkhlzhzviaf16mwwz"))))
+    (properties `((upstream-name . "henna")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidygraph
+                             r-rlang
+                             r-reshape2
+                             r-liver
+                             r-ggrepel
+                             r-ggraph
+                             r-ggplot2
+                             r-ggnewscale
+                             r-ggforce
+                             r-ggeasy
+                             r-ggalluvial
+                             r-dplyr
+                             r-abdiv))
+    (home-page "https://cran.r-project.org/package=henna")
+    (synopsis "Versatile Visualization Suite")
+    (description
+     "This package provides a visualization suite primarily designed for single-cell
+RNA-sequencing data analysis applications, but adaptable to other purposes as
+well.  It introduces novel plots to represent two-variable and frequency data
+and optimizes some commonly used plotting options (e.g., correlation, network,
+density and alluvial plots) for ease of usage and flexibility.")
+    (license license:expat)))
+
 (define-public r-hemispher
   (package
     (name "r-hemispher")
@@ -11230,6 +11295,51 @@ body and the environment during physical activity based on the principles of
 partitional calorimetry.  The program enables heat exchange calculations for a
 range of environmental conditions when wearing various clothing ensembles.")
     (license license:gpl3)))
+
+(define-public r-heartbeatr
+  (package
+    (name "r-heartbeatr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heartbeatr" version))
+       (sha256
+        (base32 "0k3wkq1vbzmxb8d2agamq3s7rbpqjj3bdcgmi7bbip8zsyzw67sk"))))
+    (properties `((upstream-name . "heartbeatr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-transformr
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr
+                             r-cli
+                             r-av))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=heartbeatr")
+    (synopsis "Workflow to Process Data Collected with PULSE Systems")
+    (description
+     "Given one or multiple paths to files produced by a PULSE multi-channel or a
+PULSE one-channel system (<https://electricblue.eu/pulse>) from a single
+experiment: [1] check pulse files for inconsistencies and read/merge all data,
+[2] split across time windows, [3] interpolate and smooth to optimize the
+dataset, [4] compute the heart rate frequency for each channel/window, and [5]
+facilitate quality control, summarising and plotting.  Heart rate frequency is
+calculated using the Automatic Multi-scale Peak Detection algorithm proposed by
+Felix Scholkmann and team.  For more details see Scholkmann et al (2012)
+<doi:10.3390/a5040588>.  Check original code at
+<https://github.com/ig248/pyampd>. @code{ElectricBlue} is a non-profit
+technology transfer startup creating research-oriented solutions for the
+scientific community (<https://electricblue.eu>).")
+    (license license:expat)))
 
 (define-public r-heapsofpapers
   (package
@@ -13236,37 +13346,6 @@ factors that intervene the observed relationship between an exposure/predicting
 variable and an outcome.  We use a Bayesian adaptive lasso method to take care
 of the hierarchical structures and high dimensional exposures or mediators.")
     (license license:gpl2+)))
-
-(define-public r-hdbm
-  (package
-    (name "r-hdbm")
-    (version "0.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hdbm" version))
-       (sha256
-        (base32 "0lvaica195chl6bb10wvvr7fbmh8b954fpxcm9r0gyp0d0i2a2w4"))))
-    (properties `((upstream-name . "hdbm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=hdbm")
-    (synopsis "High Dimensional Bayesian Mediation Analysis")
-    (description
-     "Perform mediation analysis in the presence of high-dimensional mediators based
-on the potential outcome framework.  High dimensional Bayesian mediation (HDBM),
-developed by Song et al (2018) <doi:10.1101/467399>, relies on two Bayesian
-sparse linear mixed models to simultaneously analyze a relatively large number
-of mediators for a continuous exposure and outcome assuming a small number of
-mediators are truly active.  This sparsity assumption also allows the extension
-of univariate mediator analysis by casting the identification of active
-mediators as a variable selection problem and applying Bayesian methods with
-continuous shrinkage priors on the effects.")
-    (license license:gpl3)))
 
 (define-public r-hdbinseg
   (package

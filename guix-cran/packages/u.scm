@@ -208,33 +208,6 @@ this utility function and its derivatives according to the method introduced in
 Schneider (2017) <http://hdl.handle.net/21.11130/00-1735-0000-002E-E306-0>.")
     (license license:gpl3)))
 
-(define-public r-utilityfrailtyph12
-  (package
-    (name "r-utilityfrailtyph12")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "UtilityFrailtyPH12" version))
-       (sha256
-        (base32 "06f5gmwwk1r14ab6v5jcxz0pmdph7ffi4y57mjg9byn7pjnibflk"))))
-    (properties `((upstream-name . "UtilityFrailtyPH12")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-phase123 r-mvtnorm
-                             r-bindata))
-    (home-page "https://cran.r-project.org/package=UtilityFrailtyPH12")
-    (synopsis
-     "Implementing EFF-TOX and Monotone Utility Based Phase 12 Trials")
-    (description
-     "This package contains functions for simulating phase 12 trial designs described
-by Chapple and Thall (2019) including simulation and the EFF-TOX trial and
-simulation and implementation of the U12 trial.  Functions for implementing the
-EFF-TOX trial are found in the package Phase123'.")
-    (license license:gpl2)))
-
 (define-public r-utility
   (package
     (name "r-utility")
@@ -3789,13 +3762,13 @@ Gaussian noise using Unbalanced Haar wavelets.")
 (define-public r-unalr
   (package
     (name "r-unalr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UnalR" version))
        (sha256
-        (base32 "1zw68ss0jlyg9mm5qy0k7dqbag8qz08yc96kfmib028d72jsh41d"))))
+        (base32 "1wrrj7xlbi22p6fm73ny4jm2rq925004gv9f2l2r1351clqnrk4y"))))
     (properties `((upstream-name . "UnalR")))
     (build-system r-build-system)
     (arguments

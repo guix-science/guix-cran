@@ -8373,38 +8373,6 @@ Tree Ordered Alternatives in One-way ANOVA\"
 <doi:10.48550/@code{arXiv.2507.17229>}.")
     (license license:gpl3)))
 
-(define-public r-treenomial
-  (package
-    (name "r-treenomial")
-    (version "1.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "treenomial" version))
-       (sha256
-        (base32 "0vx5x7078ccn2bsmcxdls3ymmc7jx71xzq0va0n7gyw36gi7k3nn"))))
-    (properties `((upstream-name . "treenomial")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppthread r-rcpparmadillo r-rcpp r-ape))
-    (home-page "https://github.com/gouldmatt/treenomial")
-    (synopsis "Comparison of Trees using a Tree Defining Polynomial")
-    (description
-     "This package provides functionality for creation and comparison of polynomials
-that uniquely describe trees as introduced in Liu (2019,
-<@code{arXiv:1904.03332>}).  The core method converts rooted unlabeled phylo
-objects from ape to the tree defining polynomials described with coefficient
-matrices.  Additionally, a conversion for rooted binary trees with binary trait
-labels is also provided.  Once the polynomials of trees are calculated there are
-functions to calculate distances, distance matrices and plot different distance
-trees from a target tree.  Manipulation and conversion to the tree defining
-polynomials is implemented in C++ with Rcpp and @code{RcppArmadillo}'.
-Furthermore, parallel programming with @code{RcppThread} is used to improve
-performance converting to polynomials and calculating distances.")
-    (license license:gpl2+)))
-
 (define-public r-treeminer
   (package
     (name "r-treeminer")
@@ -8969,13 +8937,13 @@ options to change the diameter, height, and color of the tree's crown and trunk.
 (define-public r-tree-interpreter
   (package
     (name "r-tree-interpreter")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tree.interpreter" version))
        (sha256
-        (base32 "18p1x53q1hhhagglgsq2axnr9l5rpa08vxjayqqmb6rsjrkygn78"))))
+        (base32 "03cxdfj72mmaxasmcrfl7d95dzs71im8l78ipkps3cc88jfs15qk"))))
     (properties `((upstream-name . "tree.interpreter")))
     (build-system r-build-system)
     (arguments
@@ -8992,7 +8960,8 @@ options to change the diameter, height, and color of the tree's crown and trunk.
 as prediction = bias + feature_1_contribution + ... + feature_n_contribution'.
 This decomposition is then used to calculate the Mean Decrease Impurity (MDI)
 and Mean Decrease Impurity using out-of-bag samples (MDI-oob) feature importance
-measures based on the work of Li et al. (2019) <@code{arXiv:1906.10845>}.")
+measures based on the work of Li et al. (2019)
+<doi:10.48550/@code{arXiv.1906.10845>}.")
     (license license:expat)))
 
 (define-public r-tredesigns
@@ -27467,13 +27436,13 @@ accuracy.  It is included here as is, without warranty.")
 (define-public r-telegram-bot
   (package
     (name "r-telegram-bot")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "telegram.bot" version))
        (sha256
-        (base32 "0fqv2piddb8i37rpvw6li25jhc9mbi7fyqmib90xah6qmlaji02g"))))
+        (base32 "0r9kzrqimy7qpz0gq4rzpgx2f2f1b13wq8nr79s3jx6qwxk4k8pm"))))
     (properties `((upstream-name . "telegram.bot")))
     (build-system r-build-system)
     (arguments
@@ -27518,57 +27487,6 @@ interface that takes some work off the programmer.")
      "This package provides a simple wrapper around the Telegram Bot API
 (<https://core.telegram.org/bots/api>) to access Telegram's messaging facilities
 with ease (e.g. you send messages, images, files from R to your smartphone).")
-    (license license:gpl3)))
-
-(define-public r-telefit
-  (package
-    (name "r-telefit")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "telefit" version))
-       (sha256
-        (base32 "0z6dr4ni00dyagbkzr3c7l4h2g23w3bfj99a9755vmrzyy6r45iq"))))
-    (properties `((upstream-name . "telefit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-sp
-                             r-scoringrules
-                             r-scales
-                             r-reshape2
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-raster
-                             r-mvtnorm
-                             r-itertools
-                             r-gtable
-                             r-ggplot2
-                             r-foreach
-                             r-fields
-                             r-dplyr
-                             r-cowplot
-                             r-coda
-                             r-abind))
-    (home-page "https://cran.r-project.org/package=telefit")
-    (synopsis
-     "Estimation and Prediction for Remote Effects Spatial Process Models")
-    (description
-     "Implementation of the remote effects spatial process (RESP) model for
-teleconnection.  The RESP model is a geostatistical model that allows a
-spatially-referenced variable (like average precipitation) to be influenced by
-covariates defined on a remote domain (like sea surface temperatures).  The RESP
-model is introduced in Hewitt et al. (2018) <doi:10.1002/env.2523>.  Sample code
-for working with the RESP model is available at
-<https://jmhewitt.github.io/research/resp_example>.  This material is based upon
-work supported by the National Science Foundation under grant number AGS
-1419558.  Any opinions, findings, and conclusions or recommendations expressed
-in this material are those of the authors and do not necessarily reflect the
-views of the National Science Foundation.")
     (license license:gpl3)))
 
 (define-public r-tejapi
@@ -31791,13 +31709,13 @@ Office grant W911NF-17-1-0007.")
 (define-public r-taf
   (package
     (name "r-taf")
-    (version "4.3.0")
+    (version "4.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TAF" version))
        (sha256
-        (base32 "1nzsb3q8qblpjqpay2gs5b85yvz44pir2zbsx6vckcdyn4baijwm"))))
+        (base32 "0vwxrk58540pjk3mfpf1ca3g7yqbf2dkcxm0n5f5k4l9zg5zk8f3"))))
     (properties `((upstream-name . "TAF")))
     (build-system r-build-system)
     (arguments

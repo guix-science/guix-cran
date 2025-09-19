@@ -2847,13 +2847,13 @@ The references for calculation under non-proportional hazards include Lakatos
 (define-public r-nphmc
   (package
     (name "r-nphmc")
-    (version "2.3")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NPHMC" version))
        (sha256
-        (base32 "0mi92rnpm96nc2ip10022qa7cjrlry9aibw8yx9xmn826bqipwir"))))
+        (base32 "0nlg13w6p17fdbsx6ivlicchb6ara8ypk5mdsckh9x9x9kxwvnac"))))
     (properties `((upstream-name . "NPHMC")))
     (build-system r-build-system)
     (arguments
@@ -7252,36 +7252,41 @@ evidence flow decomposition.")
 (define-public r-nma
   (package
     (name "r-nma")
-    (version "1.4-3")
+    (version "2.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMA" version))
        (sha256
-        (base32 "09y3arzw08054xb1y3nmnnzxybgjm2yyvkc530avpqkl1yrb1ap2"))))
+        (base32 "1s0r4hy6cpm2740klbbva36xhvnk0amzan5s4yvmz7rz8y5idd2j"))))
     (properties `((upstream-name . "NMA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-metafor r-mass r-ggplot2 r-forestplot))
-    (home-page "https://www.ism.ac.jp/~noma/file/software/NMA.r")
+    (propagated-inputs (list r-stringr
+                             r-nleqslv
+                             r-metafor
+                             r-mass
+                             r-ggplot2
+                             r-forestplot))
+    (home-page "https://doi.org/10.1101/2025.09.15.25335823")
     (synopsis
-     "Network Meta-Analysis Based on Multivariate Meta-Analysis Models")
+     "Network Meta-Analysis Based on Multivariate Meta-Analysis and Meta-Regression Models")
     (description
      "Network meta-analysis tools based on contrast-based approach using the
-multivariate meta-analysis and meta-regression models (Noma et al. (2023)
-<Forthcoming>).  Standard analysis tools for network meta-analysis and
-meta-regression (e.g., synthesis analysis, ranking analysis, and creating league
-table) are available by simple commands.  For inconsistency analyses, the local
-and global inconsistency tests based on the Higgins design-by-treatment
-interaction model can be applied.  Also, the side-splitting and the Jackson's
-random inconsistency model are available.  Standard graphical tools for network
-meta-analysis (e.g., network plot, ranked forest plot, and transitivity
-analysis) can also be utilized.  For the synthesis analyses, the Noma-Hamura's
-improved REML (restricted maximum likelihood)-based methods (Noma et al. (2023)
-<doi:10.1002/jrsm.1652> <doi:10.1002/jrsm.1651>) are adopted as the default
-methods.")
+multivariate meta-analysis and meta-regression models (Noma et al. (2025)
+<doi:10.1101/2025.09.15.25335823>).  Comprehensive analysis tools for network
+meta-analysis and meta-regression (e.g., synthesis analysis, ranking analysis,
+and creating league table) are available through simple commands.  For
+inconsistency assessment, the local and global inconsistency tests based on the
+Higgins design-by-treatment interaction model are available.  In addition, the
+side-splitting methods and Jackson's random inconsistency model can be applied.
+Standard graphical tools for network meta-analysis, including network plots,
+ranked forest plots, and transitivity analyses, are also provided.  For the
+synthesis analyses, the Noma-Hamura's improved REML (restricted maximum
+likelihood)-based methods (Noma et al. (2023) <doi:10.1002/jrsm.1652>
+<doi:10.1002/jrsm.1651>) are adopted as the default methods.")
     (license license:gpl3)))
 
 (define-public r-nlwaldtest
@@ -8450,13 +8455,13 @@ C code provided in the rxode2 package (Wang, Hallow, and James 2015
 (define-public r-nlmevpc
   (package
     (name "r-nlmevpc")
-    (version "2.6")
+    (version "2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmeVPC" version))
        (sha256
-        (base32 "0ymiif377c6rjplzvs3s4bgc62ymw2l3cigx8rh779blb0w90qf8"))))
+        (base32 "1vl2vw010h01r7h8lppmkhxbkwx2ajfg6scyl4haf8mlw9iv5pz5"))))
     (properties `((upstream-name . "nlmeVPC")))
     (build-system r-build-system)
     (arguments
@@ -10782,19 +10787,20 @@ repositories of the nflverse project.")
 (define-public r-nflplotr
   (package
     (name "r-nflplotr")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflplotR" version))
        (sha256
-        (base32 "153hw03p1cbrl2nmglspldapyrah35xvnnv6lw37v3aligh7414n"))))
+        (base32 "1k6rh8bapkbvmpxfh3lpikgim0lqrmx84idjvasl732ygrrq5fds"))))
     (properties `((upstream-name . "nflplotR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-scales
+                             r-s7
                              r-rlang
                              r-nflreadr
                              r-memoise
@@ -10805,8 +10811,7 @@ repositories of the nflverse project.")
                              r-ggpath
                              r-data-table
                              r-cli
-                             r-cachem
-                             r-backports))
+                             r-cachem))
     (home-page "https://nflplotr.nflverse.com")
     (synopsis "NFL Logo Plots in 'ggplot2' and 'gt'")
     (description
@@ -14026,44 +14031,6 @@ interventions.  They have been developed and applied in Langendorf and Burgess
 obtain coincidences, co-occurrences and correlations, and the visualization
 libraries of @code{JavaScript} in one package.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-netcmc
-  (package
-    (name "r-netcmc")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "netcmc" version))
-       (sha256
-        (base32 "0w5xnnfglg0nm59wwqh2dpwkz0zlly3r2997wncf5whz5j4vcy88"))))
-    (properties `((upstream-name . "netcmc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mvtnorm
-                             r-mcmcpack
-                             r-mass
-                             r-ggplot2
-                             r-coda))
-    (home-page "https://cran.r-project.org/package=netcmc")
-    (synopsis
-     "Spatio-Network Generalised Linear Mixed Models for Areal Unit and Network Data")
-    (description
-     "This package implements a class of univariate and multivariate spatio-network
-generalised linear mixed models for areal unit and network data, with inference
-in a Bayesian setting using Markov chain Monte Carlo (MCMC) simulation.  The
-response variable can be binomial, Gaussian, or Poisson.  Spatial
-autocorrelation is modelled by a set of random effects that are assigned a
-conditional autoregressive (CAR) prior distribution following the Leroux model
-(Leroux et al. (2000) <doi:10.1007/978-1-4612-1284-3_4>).  Network structures
-are modelled by a set of random effects that reflect a multiple membership
-structure (Browne et al. (2001) <doi:10.1177/1471082X0100100202>).")
-    (license license:gpl2+)))
 
 (define-public r-netcluster
   (package

@@ -13876,13 +13876,13 @@ based on B-spline coefficients is provided.")
 (define-public r-ppmr
   (package
     (name "r-ppmr")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PPMR" version))
        (sha256
-        (base32 "07fky5xc1dmmn23wwdjm46c86i7q20dv5f2147828v52hhky873g"))))
+        (base32 "16s2dn9pwgvy00w6p74babnbx7362kj1if5rjnhqdr2j5r92ca42"))))
     (properties `((upstream-name . "PPMR")))
     (build-system r-build-system)
     (arguments
@@ -16118,13 +16118,13 @@ and easy to personalize single page websites.")
 (define-public r-postcard
   (package
     (name "r-postcard")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "postcard" version))
        (sha256
-        (base32 "110wd7v4rljbmwymsx6z3q1gi5274lnzb61ksgp4f5bj147bzhf8"))))
+        (base32 "1h21s9171p49kwy6szgdm5aw6dmpb3srcgz6yfqgias6awa0a76m"))))
     (properties `((upstream-name . "postcard")))
     (build-system r-build-system)
     (arguments
@@ -16134,13 +16134,14 @@ and easy to personalize single page websites.")
                              r-xgboost
                              r-workflowsets
                              r-tune
-                             r-tidyselect
                              r-stringr
+                             r-scales
                              r-rsample
                              r-rlang
                              r-parsnip
                              r-options
-                             r-magrittr
+                             r-ggplot2
+                             r-gggrid
                              r-generics
                              r-earth
                              r-dplyr
@@ -28129,13 +28130,13 @@ details, see Ferrara et al. (2018) <doi:10.1016/j.agrformet.2018.04.008>.")
 (define-public r-piar
   (package
     (name "r-piar")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piar" version))
        (sha256
-        (base32 "1h9qap7qbf8ybsdf3w5yllxs2g5jfvddhjc8xs0x13jv29040m2x"))))
+        (base32 "16cnr4cpl9c3yxa1ak3j3hn9sqnbn20mrc7ri94i41zfzsjf16c3"))))
     (properties `((upstream-name . "piar")))
     (build-system r-build-system)
     (arguments
@@ -28147,8 +28148,8 @@ details, see Ferrara et al. (2018) <doi:10.1016/j.agrformet.2018.04.008>.")
     (synopsis "Price Index Aggregation")
     (description
      "Most price indexes are made with a two-step procedure, where period-over-period
-elemental indexes are first calculated for a collection of elemental aggregates
-at each point in time, and then aggregated according to a price index
+elementary indexes are first calculated for a collection of elementary
+aggregates at each point in time, and then aggregated according to a price index
 aggregation structure.  These indexes can then be chained together to form a
 time series that gives the evolution of prices with respect to a fixed base
 period.  This package contains a collection of functions that revolve around
@@ -38338,6 +38339,30 @@ Automation uses clustering, change points, or simple statistical models to
 distinguish \"long\" from \"short\" steps in a graph showing the posterior number of
 components as a function of a prior parameter.  See <doi:10.1101/237883>.")
     (license license:asl2.0)))
+
+(define-public r-pcdid
+  (package
+    (name "r-pcdid")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pcdid" version))
+       (sha256
+        (base32 "1iigk1xx810nbanxb236p5s4rzwqkakdik3byg2d2n8g0h3q4lfl"))))
+    (properties `((upstream-name . "pcdid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich r-lmtest))
+    (home-page "https://github.com/adamwang15/pcdid")
+    (synopsis "Principal Components Difference-in-Differences")
+    (description
+     "This package implements the Principal Components Difference-in-Differences
+estimators as described in Chan, M. K., & Kwok, S. S. (2022)
+<doi:10.1080/07350015.2021.1914636>.")
+    (license license:gpl3+)))
 
 (define-public r-pccc
   (package

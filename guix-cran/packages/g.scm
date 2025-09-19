@@ -3800,13 +3800,13 @@ overlapped Quantitative Trait Loci names.")
 (define-public r-gsaot
   (package
     (name "r-gsaot")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsaot" version))
        (sha256
-        (base32 "0cpwinvl1kn30p270wwzk553r9xxdaim6p3bzwsxi8dynv5l1f1b"))))
+        (base32 "14r460lq0hnf7x10sy2nbki7gjbkkq7i91hmya5v38knbvmsg7c7"))))
     (properties `((upstream-name . "gsaot")))
     (build-system r-build-system)
     (arguments
@@ -5622,13 +5622,13 @@ with content analysis.")
 (define-public r-gridot
   (package
     (name "r-gridot")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gridOT" version))
        (sha256
-        (base32 "106h1lk2fyfl68iwmbqbm9h8ip75ibanr1dsi6nrmd54pz475ry8"))))
+        (base32 "192r9kgi5jx0dyhf22k6fjs2m9d9q6q0wy605aixd6fp7haanhl8"))))
     (properties `((upstream-name . "gridOT")))
     (build-system r-build-system)
     (arguments
@@ -5640,8 +5640,8 @@ with content analysis.")
     (description
      "Can be used for optimal transport between two-dimensional grids with respect to
 separable cost functions of l^p form.  It utilizes the Frank-Wolfe algorithm to
-approximate so-called pivot measures: one-dimensional transport plans that fully
-describe the full transport, see G. Auricchio (2021) <@code{arXiv:2105.07278>}.
+approximate so-called pivot measures: One-dimensional transport plans that fully
+describe the full transport, see G. Auricchio (2023) <doi:10.4171/RLM/1026>.
 For these, it offers methods for visualization and to extract the corresponding
 transport plans and costs.  Additionally, related functions for one-dimensional
 optimal transport are available.")
@@ -14923,6 +14923,34 @@ details see Thompson, Wand, and Wang (2025)
 <doi:10.48550/@code{arXiv.2506.20425>}.")
     (license license:gpl3)))
 
+(define-public r-glmmrr
+  (package
+    (name "r-glmmrr")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GLMMRR" version))
+       (sha256
+        (base32 "0n3lzlp7lzgj0jv59kpxjm3fgksnv6r3p5cc5vpg447qys6xkcwq"))))
+    (properties `((upstream-name . "GLMMRR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcolorbrewer r-lme4 r-lattice))
+    (home-page "https://cran.r-project.org/package=GLMMRR")
+    (synopsis
+     "Generalized Linear Mixed Model (GLMM) for Binary Randomized Response Data")
+    (description
+     "Generalized Linear Mixed Model (GLMM) for Binary Randomized Response Data.
+Includes Cauchit, Compl.  Log-Log, Logistic, and Probit link functions for
+Bernoulli Distributed RR data.  RR Designs: Warner, Forced Response, Unrelated
+Question, Kuk, Crosswise, and Triangular.  Reference: Fox, J-P, Veen, D. and
+Klotzke, K. (2018).  Generalized Linear Mixed Models for Randomized Responses.
+Methodology. <doi:10.1027/1614-2241/a000153>.")
+    (license license:gpl3)))
+
 (define-public r-glmmroptim
   (package
     (name "r-glmmroptim")
@@ -16395,13 +16423,13 @@ that all targets remain up to date.")
 (define-public r-gitstats
   (package
     (name "r-gitstats")
-    (version "2.3.5")
+    (version "2.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitStats" version))
        (sha256
-        (base32 "1pdbginqffj5zccfgqdynq83mid3cbj047darqn9vlzx5b90mxzr"))))
+        (base32 "1z3h8k0nkzpanjr1qplwlxp0n05fs02s00g9lsrkf4vi3dl97rzg"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
     (arguments
@@ -19570,6 +19598,34 @@ and aesthetics.  This method was described by Balachandran VP (2015)
 <doi:10.1016/S1470-2045(14)71116-7>.")
     (license license:gpl3)))
 
+(define-public r-ggscatridges
+  (package
+    (name "r-ggscatridges")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggScatRidges" version))
+       (sha256
+        (base32 "0bpsqqd7dgijnyavwyqscb5q5vddrwk4glc2ynp8vhwqvcr21r8x"))))
+    (properties `((upstream-name . "ggScatRidges")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-rcolorbrewer
+                             r-ggridges
+                             r-ggrepel
+                             r-ggplot2
+                             r-cowplot))
+    (home-page "https://github.com/matbou85/ggScatRidges")
+    (synopsis "Scatter Plot Combined with Ridgelines in 'ggplot2'")
+    (description
+     "The function combines a scatter plot with ridgelines to better visualise the
+distribution between sample groups.  The plot is created with ggplot2'.")
+    (license license:gpl3)))
+
 (define-public r-ggsankeyfier
   (package
     (name "r-ggsankeyfier")
@@ -20627,25 +20683,25 @@ framework Wickham (2016) <doi:10.1007/978-3-319-24277-4>.")
 (define-public r-ggpath
   (package
     (name "r-ggpath")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggpath" version))
        (sha256
-        (base32 "19rsshpcgdwccv790bydvp68p4797p5d6zyqwqbahd7xa1bwmg86"))))
+        (base32 "0s68s737fdgsllgk49jcrrg6bkiavim7xk9bvcx8h8bjpphqarba"))))
     (properties `((upstream-name . "ggpath")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-s7
+                             r-rlang
                              r-memoise
                              r-magick
                              r-ggplot2
                              r-cli
-                             r-cachem
-                             r-backports))
+                             r-cachem))
     (home-page "https://github.com/mrcaseb/ggpath")
     (synopsis "Robust Image Rendering Support for 'ggplot2'")
     (description
@@ -24040,47 +24096,6 @@ It creates multiple synthetic imputed datasets under treatment regimes of
 interest using the mice package.  These can then be analysed using rules
 developed for analysing multiple synthetic datasets.")
     (license license:gpl3+)))
-
-(define-public r-gformulaice
-  (package
-    (name "r-gformulaice")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gfoRmulaICE" version))
-       (sha256
-        (base32 "1bpm1mn88byb12fdphshz5jgnz79y7fl595g8f6h8cbk01ih9grb"))))
-    (properties `((upstream-name . "gfoRmulaICE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-speedglm
-                             r-rlang
-                             r-reshape2
-                             r-nnet
-                             r-magrittr
-                             r-hmisc
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=gfoRmulaICE")
-    (synopsis "Parametric Iterative Conditional Expectation G-Formula")
-    (description
-     "This package implements iterative conditional expectation (ICE) estimators of
-the plug-in g-formula (Wen, Young, Robins, and HernÃ¡n (2020) <doi:
-10.1111/biom.13321>).  Both singly robust and doubly robust ICE estimators based
-on parametric models are available.  The package can be used to estimate
-survival curves under sustained treatment strategies (interventions) using
-longitudinal data with time-varying treatments, time-varying confounders,
-censoring, and competing events.  The interventions can be static or dynamic,
-and deterministic or stochastic (including threshold interventions).  Both
-prespecified and user-defined interventions are available.")
-    (license license:expat)))
 
 (define-public r-gformula
   (package
