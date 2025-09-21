@@ -17029,13 +17029,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.39")
+    (version "3.40")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modEvA" version))
        (sha256
-        (base32 "1735dgpxgpx5dxcxqbzw45xw11hmv614g34nynsbfzzjzcyrn1hp"))))
+        (base32 "040i4cmnfy1b2w80n8cpv9d46ia8arqy9km92b13i21gr9vanffw"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (arguments
@@ -22920,6 +22920,36 @@ classification and regression.  The aim of this package is to use data generated
 around health and other domains.")
     (license license:expat)))
 
+(define-public r-mlcopula
+  (package
+    (name "r-mlcopula")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MLCOPULA" version))
+       (sha256
+        (base32 "1brym2nxzd4b3q4ipi3gsarq8cn8p9xasm8aknlvw3law900jf4x"))))
+    (properties `((upstream-name . "MLCOPULA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tsp
+                             r-pracma
+                             r-kde1d
+                             r-igraph
+                             r-gridcopula
+                             r-copula))
+    (home-page "https://cran.r-project.org/package=MLCOPULA")
+    (synopsis "Classification Models with Copula Functions")
+    (description
+     "This package provides several classifiers based on probabilistic models.  These
+classifiers allow to model the dependence structure of continuous features
+through bivariate copula functions and graphical models, see Salinas-GutiÃ©rrez
+et al. (2014) <doi:10.1007/s00180-013-0457-y>.")
+    (license license:gpl3)))
+
 (define-public r-mlcm
   (package
     (name "r-mlcm")
@@ -28409,13 +28439,13 @@ Tubo, B.F. (2024) <doi:10.24412/1932-2321-2024-278-115-123>].")
 (define-public r-milr
   (package
     (name "r-milr")
-    (version "0.3.1")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "milr" version))
        (sha256
-        (base32 "03hihr1w5j0mlvi5vm9m5vb9i6nyb6lsji3xmv0chpczabd85mzy"))))
+        (base32 "0jaa3xydn3jwcs5zbjk1chs78s15f0pzcp741nfcl1x4lhx0hifb"))))
     (properties `((upstream-name . "milr")))
     (build-system r-build-system)
     (arguments
@@ -31132,13 +31162,13 @@ al. (2019; <doi:10.1002/ece3.5654>).")
 (define-public r-mi4p
   (package
     (name "r-mi4p")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mi4p" version))
        (sha256
-        (base32 "0xjbjjfm9ypa8qz1d2aq0zlkwdrr2c9642476i2d63p4aqipx2kb"))))
+        (base32 "10d3ln8z2yyq0qbjiqwvi01wsg89l5r8l52ry0isin8vl2w18hjp"))))
     (properties `((upstream-name . "mi4p")))
     (build-system r-build-system)
     (arguments
@@ -32528,13 +32558,13 @@ ability to achieve such modeling.")
 (define-public r-mfp
   (package
     (name "r-mfp")
-    (version "1.5.4.1")
+    (version "1.5.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mfp" version))
        (sha256
-        (base32 "17sww972ymnddbi54575hdalbshfq81m849795pmi38j3mrhz25m"))))
+        (base32 "1dg74k1ml2b254plr1fgbpzcjn8ydrraaav8mdcr2ff41l76i462"))))
     (properties `((upstream-name . "mfp")))
     (build-system r-build-system)
     (arguments
@@ -32545,8 +32575,9 @@ ability to achieve such modeling.")
     (home-page "https://cran.r-project.org/package=mfp")
     (synopsis "Multivariable Fractional Polynomials")
     (description
-     "Fractional polynomials are used to represent curvature in regression models.  A
-key reference is Royston and Altman, 1994.")
+     "Multivariable Fractional Polynomial algorithm for model-building.  Fractional
+polynomials are used to represent curvature in regression models.  A key
+reference is Royston and Altman, 1994.")
     (license license:gpl2+)))
 
 (define-public r-mfo

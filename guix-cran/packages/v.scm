@@ -3544,13 +3544,13 @@ the Observational Medical Outcomes Partnership (OMOP) Common Data Model.")
 (define-public r-vismeteor
   (package
     (name "r-vismeteor")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vismeteor" version))
        (sha256
-        (base32 "1q8crp233r4a83lg7v3zj696bdhamvw457ydpw5qfkabp0r9ydnn"))))
+        (base32 "15cj4iary8bw4zgd88i713gdvhrfq9y0ibwx1yiavvrwwd82vgxj"))))
     (properties `((upstream-name . "vismeteor")))
     (build-system r-build-system)
     (arguments
@@ -7048,13 +7048,13 @@ publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
 (define-public r-vdiver
   (package
     (name "r-vdiver")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vDiveR" version))
        (sha256
-        (base32 "0xgazc1appn9z1qj7kqaydknskvcphz4y822sryygmngl9608xgz"))))
+        (base32 "0bh7byhlimhm1qrg49mj5avsq307y7fz0071a3zlgff1cyj6yndv"))))
     (properties `((upstream-name . "vDiveR")))
     (build-system r-build-system)
     (arguments
@@ -8161,13 +8161,13 @@ S.-H. Kim (2016) <doi:10.1016/j.csda.2016.03.007> and Ni and Sun (2005)
 (define-public r-varsellcm
   (package
     (name "r-varsellcm")
-    (version "2.1.3.1")
+    (version "2.1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VarSelLCM" version))
        (sha256
-        (base32 "03rg7zh1cq55vfc0ak6j7crs4n7fnbsxz8nllmplklx8wm47krf5"))))
+        (base32 "1glpdwcijis7jhzah8l29bxhbnisqjzgajaw8q22apfj7mx0wm3d"))))
     (properties `((upstream-name . "VarSelLCM")))
     (build-system r-build-system)
     (arguments

@@ -3045,19 +3045,24 @@ the method.")
 (define-public r-svrep
   (package
     (name "r-svrep")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svrep" version))
        (sha256
-        (base32 "0aifjbzj8v8fyj6ygj27p8al4ayx9yhzpc2awc0fxb85w7lx46ry"))))
+        (base32 "0l2pcrfzjq2bn5z5m8zq5ivwilp4pw94fsmlrgpq78qkjiw7p3wn"))))
     (properties `((upstream-name . "svrep")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survey r-sampling r-mvtnorm r-matrix r-dbi))
+    (propagated-inputs (list r-survey
+                             r-sampling
+                             r-rlang
+                             r-mvtnorm
+                             r-matrix
+                             r-dbi))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://bschneidr.github.io/svrep/")
     (synopsis
@@ -18536,19 +18541,19 @@ data.  The theoretical background is described in Guerra-Castro et al. (2020,
 (define-public r-ssosvm
   (package
     (name "r-ssosvm")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSOSVM" version))
        (sha256
-        (base32 "11wlalpw6yhvv95xr8vvgxgl4jafc2ghzsk5wqyv71ahxarmrlss"))))
+        (base32 "1nizwja7hnqxv2b3d4db13ziziwm93qqc2fa17bf5kgmlagfv0v9"))))
     (properties `((upstream-name . "SSOSVM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm r-mass))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm))
     (home-page "https://cran.r-project.org/package=SSOSVM")
     (synopsis "Stream Suitable Online Support Vector Machines")
     (description
@@ -19770,13 +19775,13 @@ better than classical supervised classifiers.")
 (define-public r-ssbtools
   (package
     (name "r-ssbtools")
-    (version "1.8.1")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSBtools" version))
        (sha256
-        (base32 "01bchr5rvs5vxj8l39hm7b1b1qw74m1g72vxj3lsszgv3h6qcx4z"))))
+        (base32 "1libmpmpw14v8yx0bwfcv3xc8n34ih87dvshld5yv8cxjq59qzvi"))))
     (properties `((upstream-name . "SSBtools")))
     (build-system r-build-system)
     (arguments
@@ -44695,13 +44700,13 @@ parameter estimates for nonlinear least squares optimization.  Dattner & Yaari
 (define-public r-simnph
   (package
     (name "r-simnph")
-    (version "0.5.7")
+    (version "0.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimNPH" version))
        (sha256
-        (base32 "0wd1iqv933nk0w5kydw5n39xmikjpf9sa7g2rq8vajpfdj8grk6y"))))
+        (base32 "1yly57ndzxbpxamlj37y2qmp28s8iwp3mk8swd2fs3x9sd0szwf2"))))
     (properties `((upstream-name . "SimNPH")))
     (build-system r-build-system)
     (arguments
@@ -73201,13 +73206,13 @@ for GLM will be added in future.")
 (define-public r-sagmm
   (package
     (name "r-sagmm")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAGMM" version))
        (sha256
-        (base32 "18ig7ncmrfs5cyc28xpbqk9zjhwqfp7gwix7y2v1j4j2wbdc2hzs"))))
+        (base32 "0hm5pw6g42grdia70scbxfc3xbyw41k6h95vap1by1qbh1frgqwn"))))
     (properties `((upstream-name . "SAGMM")))
     (build-system r-build-system)
     (arguments

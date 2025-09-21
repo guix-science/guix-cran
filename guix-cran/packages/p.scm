@@ -22574,13 +22574,13 @@ to censored data.")
 (define-public r-plsrbeta
   (package
     (name "r-plsrbeta")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plsRbeta" version))
        (sha256
-        (base32 "13ids9n9czcjh09982v28m25zadfzqxgw4p27azswsmaypwb05av"))))
+        (base32 "09d6iyxlmqiviw5n52f6gjr7yllz6y3x7xz6dx1218mgq1qkhdza"))))
     (properties `((upstream-name . "plsRbeta")))
     (build-system r-build-system)
     (arguments
@@ -27518,13 +27518,13 @@ has changed in this new version.  The old version is still available at R-Forge.
 (define-public r-pikchr
   (package
     (name "r-pikchr")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pikchr" version))
        (sha256
-        (base32 "1x2fg81fyhfj6961132ai3fs19h38svli48awli2hzyvwbrys9lx"))))
+        (base32 "0n6gsxg10nda3y1dcdqlrygxl25adc5p5arrp93gi6c96vbxx8bl"))))
     (properties `((upstream-name . "pikchr")))
     (build-system r-build-system)
     (arguments
@@ -40165,13 +40165,13 @@ data related to gene sets and example input/output data.")
 (define-public r-pathfindr
   (package
     (name "r-pathfindr")
-    (version "2.5.1")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathfindR" version))
        (sha256
-        (base32 "0qzms9hkkbjijrljdrs5i7x7kf4j6jqccg0516byc90z1m45l430"))))
+        (base32 "0haxhp5qmqm7x0m95cwvn6a359gm5gpv3dpps1clxps2w0bqhxsz"))))
     (properties `((upstream-name . "pathfindR")))
     (build-system r-build-system)
     (arguments

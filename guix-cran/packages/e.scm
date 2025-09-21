@@ -2952,13 +2952,13 @@ Incorporates the easyexif (https://github.com/mayanklahiri/easyexif) library.")
 (define-public r-exhaustivesearch
   (package
     (name "r-exhaustivesearch")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExhaustiveSearch" version))
        (sha256
-        (base32 "1wb3bf1ilml5cilm740rh8ngiybxhxg6h6nzh1rlqd6wgfp17mzh"))))
+        (base32 "01ilwrcnsc9zymprpkw13p9f4azi8qw558xxdz5zfpighs8v8aqv"))))
     (properties `((upstream-name . "ExhaustiveSearch")))
     (build-system r-build-system)
     (arguments
@@ -13934,13 +13934,13 @@ parameters for elastic net penalties are done via cross-validation.")
 (define-public r-enerscape
   (package
     (name "r-enerscape")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enerscape" version))
        (sha256
-        (base32 "098xjzrh5drwh5ylfhdd0spxf6zi678irq5q1nqvn7q7xz3vspjc"))))
+        (base32 "1hh5hw31lin3yd0d2rm74k2yswbwqv9q779mxlr4b6p2wxajhyp7"))))
     (properties `((upstream-name . "enerscape")))
     (build-system r-build-system)
     (arguments
@@ -13951,8 +13951,8 @@ parameters for elastic net penalties are done via cross-validation.")
     (home-page "https://cran.r-project.org/package=enerscape")
     (synopsis "Compute Energy Landscapes")
     (description
-     "Compute energy landscapes using a digital elevation model raster and body mass
-of animals.")
+     "Compute energy landscapes using a digital elevation model and body mass of
+animals.")
     (license license:gpl3)))
 
 (define-public r-energyr
@@ -16930,33 +16930,6 @@ distribution proposed in Afify, A.Z. et al (2017) <doi:10.1214/16-BJPS322>.")
      "This package provides R access to election results data.  Wraps elex
 (https://github.com/newsdev/elex/), a Python package and command line tool for
 fetching and parsing Associated Press election results.")
-    (license license:expat)))
-
-(define-public r-elevdistr
-  (package
-    (name "r-elevdistr")
-    (version "1.0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ElevDistr" version))
-       (sha256
-        (base32 "1cr6pgr1b5aqf78b053v96nr511yz7r25bvfd3z21a8bvqlnq7bi"))))
-    (properties `((upstream-name . "ElevDistr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra r-rann r-ggplot2 r-ggmap))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/LivioBaetscher/ElevDistr")
-    (synopsis "Calculate the Distance to the Nearest Local Treeline")
-    (description
-     "This package provides a method to calculate the distance to the climatic tree
-line for large data sets of coordinates (World Geodetic System 1984) with
-geographical uncertainty.  The default thresholds and the treeline definition is
-based on Paulsen and KÃ¶rner (2014) <doi:10.1007/s00035-014-0124-0>, users are
-free to decide what climate layers they would like to use.")
     (license license:expat)))
 
 (define-public r-elevatr
@@ -22146,13 +22119,13 @@ quantitative analyses.")
 (define-public r-ecorest
   (package
     (name "r-ecorest")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecorest" version))
        (sha256
-        (base32 "0s523zj537bdz47x2lcfd72cqdzz0gwbi6vg79ckz0sjzaiy51kk"))))
+        (base32 "0w2s6sn6nf3xzkafirkk6z9ddl50laya6g9fc83v9gzalx2g2b1z"))))
     (properties `((upstream-name . "ecorest")))
     (build-system r-build-system)
     (arguments

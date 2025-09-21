@@ -14777,20 +14777,19 @@ approach to create thematic maps, such as choropleths and bubble maps.")
 (define-public r-tma
   (package
     (name "r-tma")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tma" version))
        (sha256
-        (base32 "0g3nfgdd07lv2p46lagr95xnqacgydakcy2x3ga0hc6v6w7qc96c"))))
+        (base32 "0q72kr2rvxlfbkypddf6krz45qlal16jsx3r7hag6m9h2cfp4qfn"))))
     (properties `((upstream-name . "tma")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-rcpparmadillo r-rcpp r-jsonlite
-                             r-data-table))
+    (propagated-inputs (list r-rlang r-rcpparmadillo r-rcpp r-data-table))
     (home-page "https://cran.r-project.org/package=tma")
     (synopsis "Transmodal Analysis (TMA)")
     (description
@@ -32782,13 +32781,13 @@ v1.2 - fixed \"missing \"no visible global function definition for ..\".")
 (define-public r-table1
   (package
     (name "r-table1")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "table1" version))
        (sha256
-        (base32 "1h246mkqf286rnwizipd7bsv6dgnnwasmdb7lwi6bfi3fgfk12zk"))))
+        (base32 "0qh5dydb2crfc4s8x6xfsqr258gpiakwf6jg5wwpx0i1xm3jcac1"))))
     (properties `((upstream-name . "table1")))
     (build-system r-build-system)
     (arguments

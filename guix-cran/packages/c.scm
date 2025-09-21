@@ -17081,13 +17081,13 @@ research.")
 (define-public r-constructive
   (package
     (name "r-constructive")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "constructive" version))
        (sha256
-        (base32 "0w2vqdhaskr5nf0kjv4dak6gas659a7gn85ksnjaq20f4572z7da"))))
+        (base32 "1p0m92zrny1zdnw815l5vv27y6dbrgxmgb999ggvskgh2rmhd292"))))
     (properties `((upstream-name . "constructive")))
     (build-system r-build-system)
     (arguments
@@ -34037,13 +34037,13 @@ see Clarke (2007) <doi:10.1093/pan/mpm004>.")
 (define-public r-clarify
   (package
     (name "r-clarify")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clarify" version))
        (sha256
-        (base32 "0cda1xvcfd0lz3802h945jw98ala68z89vfgdixv4z6yn9fqzzcq"))))
+        (base32 "0f7aa1765aamm077vdvy3kqcrc54m4brcypxjfly7zkfj5gqv3m3"))))
     (properties `((upstream-name . "clarify")))
     (build-system r-build-system)
     (arguments
@@ -34051,7 +34051,6 @@ see Clarke (2007) <doi:10.1093/pan/mpm004>.")
       #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-pbapply
-                             r-mvnfast
                              r-marginaleffects
                              r-insight
                              r-ggplot2
@@ -34065,10 +34064,10 @@ method for obtaining valid confidence intervals and p-values for regression
 post-estimation quantities, such as average marginal effects and predictions at
 representative values.  This framework for simulation-based inference is
 especially useful when the resulting quantity is not normally distributed and
-the delta method approximation fails.  The methodology is described in King,
-Tomz, and Wittenberg (2000) <doi:10.2307/2669316>.  clarify is meant to replace
-some of the functionality of the archived package Zelig'; see the vignette
-\"Translating Zelig to clarify\" for replicating this functionality.")
+the delta method approximation fails.  The methodology is described in Greifer,
+et al. (2025) <doi:10.32614/RJ-2024-015>.  clarify is meant to replace some of
+the functionality of the archived package Zelig'; see the vignette \"Translating
+Zelig to clarify\" for replicating this functionality.")
     (license license:gpl3+)))
 
 (define-public r-clarifai
@@ -42459,13 +42458,13 @@ about CE PUMD please visit <https://www.bls.gov/cex/pumd.htm>.")
 (define-public r-cepreg
   (package
     (name "r-cepreg")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CepReg" version))
        (sha256
-        (base32 "06iv6r2k3zgnas9j7s4i7gdkni6w9b5yq1hhd19ra7qvgsry7vpm"))))
+        (base32 "06blrydss7qq3pnym3v61ywn70nqvkz4r584mch94fb30h5rnhqy"))))
     (properties `((upstream-name . "CepReg")))
     (build-system r-build-system)
     (arguments
@@ -43365,13 +43364,13 @@ command \"example(@code{fitVolDist})\".")
 (define-public r-celltrackr
   (package
     (name "r-celltrackr")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "celltrackR" version))
        (sha256
-        (base32 "0gmdxs9s3c1rk8mqc2pp6zdmzy9nij51m29vf24ii8s201f9raj6"))))
+        (base32 "10r5dsncvmpdsi1cm40kficksw3wvp4gga9zr3gcwkmvrqddzp5j"))))
     (properties `((upstream-name . "celltrackR")))
     (build-system r-build-system)
     (arguments
@@ -48615,13 +48614,13 @@ city).  It is taken from the @code{JavaScript} library @code{PrimeReact}'.")
 (define-public r-cascadedata
   (package
     (name "r-cascadedata")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CascadeData" version))
        (sha256
-        (base32 "08130kldxxmffmqx0pg81181k4yly6qpj2hhhkgq9izs34jw0i9k"))))
+        (base32 "0l6iyih3ni1xxbfdm7xjzjlxz75hz18752wp515g93j5cz0a9c9n"))))
     (properties `((upstream-name . "CascadeData")))
     (build-system r-build-system)
     (arguments
@@ -48641,13 +48640,13 @@ Maumy-Bertrand, M. (2014) <doi:10.1093/bioinformatics/btt705>.")
 (define-public r-cascade
   (package
     (name "r-cascade")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Cascade" version))
        (sha256
-        (base32 "0ismqq96qlhsch84v70kb9z1m0xsmhz070wlg9jbrrarz9vz4dy1"))))
+        (base32 "1dls503x1bf40mr9lr9yw589mb19zfrcjik1j38s9csqjhfx57q4"))))
     (properties `((upstream-name . "Cascade")))
     (build-system r-build-system)
     (arguments
@@ -52915,13 +52914,13 @@ the regional level (mostly NUTS 3) for 31 EU/EFTA countries.")
 (define-public r-c060
   (package
     (name "r-c060")
-    (version "0.3-1")
+    (version "0.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "c060" version))
        (sha256
-        (base32 "1hvjcs813w5l46nksbz24ry9xsn079mwl43s1n24jfh4jxxsf8mh"))))
+        (base32 "1k6l56llcppv7y8p9imxaiys23kl0rh8jwnx363313zn09n254zj"))))
     (properties `((upstream-name . "c060")))
     (build-system r-build-system)
     (arguments
@@ -52932,6 +52931,7 @@ the regional level (mostly NUTS 3) for 31 EU/EFTA countries.")
                              r-peperr
                              r-penalizedsvm
                              r-penalized
+                             r-pamr
                              r-mlegp
                              r-lattice
                              r-glmnet))

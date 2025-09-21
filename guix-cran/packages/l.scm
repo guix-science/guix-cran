@@ -3342,13 +3342,13 @@ kernel of lowpass filters can be computed.")
 (define-public r-lowmemtkmeans
   (package
     (name "r-lowmemtkmeans")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lowmemtkmeans" version))
        (sha256
-        (base32 "08zhdw48rzw47yzhg4s37bkliyngxs46cyb57dvng1s3m0w0dhvi"))))
+        (base32 "1jaxckq5l0aypwql9hacgr36rk8wrzc1iapq8skmm7zp3pyjanpq"))))
     (properties `((upstream-name . "lowmemtkmeans")))
     (build-system r-build-system)
     (arguments

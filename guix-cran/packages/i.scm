@@ -243,13 +243,13 @@ than one observation with multiplicity declared in the subtitle.")
 (define-public r-ivx
   (package
     (name "r-ivx")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivx" version))
        (sha256
-        (base32 "1dg09aajk9rqmrlwq4xw7qd5ra1z8wjxipy5l85sl1nzii250drq"))))
+        (base32 "0lzzj6vq4fx8wl7jc9v0smj3qvj6py2mcdii41s3l28hjvajbf5v"))))
     (properties `((upstream-name . "ivx")))
     (build-system r-build-system)
     (arguments
@@ -11880,13 +11880,13 @@ details.")
 (define-public r-indago
   (package
     (name "r-indago")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inDAGO" version))
        (sha256
-        (base32 "1ysra4j51bwr3vbrnn5f2lwk6bixyf7m5jl8b1wk8dyc785gz4qq"))))
+        (base32 "1q8zqcg6z992i1bwhabf5plx6i7xdrmzjm2q9l7s377zjdg1grdx"))))
     (properties `((upstream-name . "inDAGO")))
     (build-system r-build-system)
     (arguments
@@ -20910,13 +20910,13 @@ supported.")
 (define-public r-ibclust
   (package
     (name "r-ibclust")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IBclust" version))
        (sha256
-        (base32 "0arv1m4ya7y3gydp5mxl2x29whxd3xjlxng8qh2gfs7glv0zmcg7"))))
+        (base32 "0dz0x6vls0qqsn2j0lqqq4x88ai1p10p66y8bvl7s6dd0l6fjwz2"))))
     (properties `((upstream-name . "IBclust")))
     (build-system r-build-system)
     (arguments
@@ -20932,18 +20932,17 @@ supported.")
     (synopsis "Information Bottleneck Methods for Clustering Mixed-Type Data")
     (description
      "This package implements multiple variants of the Information Bottleneck ('IB')
-method for clustering datasets containing mixed-type variables (nominal,
-ordinal, and continuous).  The package provides deterministic, agglomerative,
-generalized, and standard IB clustering algorithms that preserve relevant
-information while forming interpretable clusters.  The Deterministic Information
-Bottleneck is described in Costa et al. (2024)
+method for clustering datasets containing continuous, categorical
+(nominal/ordinal) and mixed-type variables.  The package provides deterministic,
+agglomerative, generalized, and standard IB clustering algorithms that preserve
+relevant information while forming interpretable clusters.  The Deterministic
+Information Bottleneck is described in Costa et al. (2024)
 <doi:10.48550/@code{arXiv.2407.03389>}.  The standard IB method originates from
 Tishby et al. (2000) <doi:10.48550/@code{arXiv.physics/0004057>}, the
 agglomerative variant from Slonim and Tishby (1999)
 <https://papers.nips.cc/paper/1651-agglomerative-information-bottleneck>, and
-the generalized IB for Gaussian variables from Chechik et al. (2005)
-<https://www.jmlr.org/papers/volume6/chechik05a/chechik05a.pdf>.")
-    (license license:expat)))
+the generalized IB from Strouse and Schwab (2017) <doi:10.1162/NECO_a_00961>.")
+    (license license:gpl3+)))
 
 (define-public r-ibcf-mtme
   (package

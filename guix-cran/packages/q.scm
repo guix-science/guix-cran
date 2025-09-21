@@ -281,13 +281,13 @@ iterative procedures during Q-matrix validating are available
 (define-public r-qurve
   (package
     (name "r-qurve")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QurvE" version))
        (sha256
-        (base32 "0md97jgyl7lkq46zsl6svgdhyg95is92f8yn5szkaylfdb2cglg3"))))
+        (base32 "0bl6817sm017wwcsibwrr8ka0yi4280p92fyqs9azrrbg80bs20n"))))
     (properties `((upstream-name . "QurvE")))
     (build-system r-build-system)
     (arguments

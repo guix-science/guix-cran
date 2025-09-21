@@ -6821,13 +6821,13 @@ interactive visualization of scientific data; BMC Bioinformatics 2019
 (define-public r-boutliers
   (package
     (name "r-boutliers")
-    (version "1.1-2")
+    (version "2.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boutliers" version))
        (sha256
-        (base32 "0j2y6ndj03shssa7pgvg9cwbm5mv7ahy9kypj9z1ahskdi4xg1m1"))))
+        (base32 "039rw0qcs5xylnp571jxsnqmxbcdwal1ryas8ggv48pn0j9i7w54"))))
     (properties `((upstream-name . "boutliers")))
     (build-system r-build-system)
     (arguments
@@ -6837,9 +6837,13 @@ interactive visualization of scientific data; BMC Bioinformatics 2019
     (home-page "https://cran.r-project.org/package=boutliers")
     (synopsis "Outlier Detection and Influence Diagnostics for Meta-Analysis")
     (description
-     "Computational tools for outlier detection and influence diagnostics of
-meta-analysis.  Bootstrap distributions of the influence statistics are
-calculated, and the thresholds to determine outliers are explicitly provided.")
+     "Computational tools for outlier detection and influence diagnostics in
+meta-analysis (Noma et al. (2025) <doi:10.1101/2025.09.18.25336125>).  Bootstrap
+distributions of influence statistics are computed, and explicit thresholds for
+identifying outliers are provided.  These methods can also be applied to the
+analysis of influential centers or regions in multicenter or multiregional
+clinical trials (Aoki and Noma (2021) <doi:10.1080/24709360.2021.1921944>,
+Nakamura and Noma (2021) <doi:10.5691/jjb.41.117>).")
     (license license:gpl3)))
 
 (define-public r-boussinesq
@@ -13912,13 +13916,13 @@ variables and spatial gene diversity are implemented.")
 (define-public r-biotimer
   (package
     (name "r-biotimer")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioTIMEr" version))
        (sha256
-        (base32 "0rvrcvhhf22fi6s2wnxb0wk735sk8xb4cd3ghbha9kkxvixdxx6z"))))
+        (base32 "123qzdir8k73jd0vg6hhkyjaadfbi6jn24m05vkmvljj010ccv7m"))))
     (properties `((upstream-name . "BioTIMEr")))
     (build-system r-build-system)
     (arguments
@@ -20413,13 +20417,13 @@ package and code examples are presented in Pesigan, Sun, and Cheung (2023)
 (define-public r-betaclust
   (package
     (name "r-betaclust")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaclust" version))
        (sha256
-        (base32 "1kw8ri4244z7ckn4gizz0zbqzwx7dypv6qb974lmj6dzzyjp6922"))))
+        (base32 "1545j55wsm14nvx8c4c66yn887l35wy8nbjwp6v6dapmgd9p69w0"))))
     (properties `((upstream-name . "betaclust")))
     (build-system r-build-system)
     (arguments
@@ -30911,28 +30915,6 @@ BAREB is a cluster-wise linear model based on Yuliang (2020)
 <doi:10.1002/sim.8536>.")
     (license license:gpl3)))
 
-(define-public r-bardr
-  (package
-    (name "r-bardr")
-    (version "0.0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bardr" version))
-       (sha256
-        (base32 "02499b3j10j7qq3whz9qijfp3amp0s1ji8qk76c53dsnkj8f9hvs"))))
-    (properties `((upstream-name . "bardr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=bardr")
-    (synopsis "Complete Works of William Shakespeare in Tidy Format")
-    (description
-     "This package provides R data structures for Shakespeare's complete works, as
-provided by Project Gutenberg <https:www.gutenberg.org/ebooks/100>.")
-    (license license:gpl3)))
-
 (define-public r-barcodingr
   (package
     (name "r-barcodingr")
@@ -31799,13 +31781,13 @@ angular distributions.  Chakraborty and Wong (2021) <doi:10.18637/jss.v099.i11>.
 (define-public r-bama
   (package
     (name "r-bama")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bama" version))
        (sha256
-        (base32 "1ydm9p6msmgi74rhrji2j14qy7cg7fqgg4ffm9rz293k27n5ghnn"))))
+        (base32 "08ycl26a4w11qrj21rb1fqzisn3icx7y36rgqfgq52wf19r34589"))))
     (properties `((upstream-name . "bama")))
     (build-system r-build-system)
     (arguments
@@ -31819,13 +31801,13 @@ angular distributions.  Chakraborty and Wong (2021) <doi:10.18637/jss.v099.i11>.
      "Perform mediation analysis in the presence of high-dimensional mediators based
 on the potential outcome framework.  Bayesian Mediation Analysis (BAMA),
 developed by Song et al (2019) <doi:10.1111/biom.13189> and Song et al (2020)
-<@code{arXiv:2009.11409>}, relies on two Bayesian sparse linear mixed models to
-simultaneously analyze a relatively large number of mediators for a continuous
-exposure and outcome assuming a small number of mediators are truly active.
-This sparsity assumption also allows the extension of univariate mediator
-analysis by casting the identification of active mediators as a variable
-selection problem and applying Bayesian methods with continuous shrinkage priors
-on the effects.")
+<doi:10.48550/@code{arXiv.2009.11409>}, relies on two Bayesian sparse linear
+mixed models to simultaneously analyze a relatively large number of mediators
+for a continuous exposure and outcome assuming a small number of mediators are
+truly active.  This sparsity assumption also allows the extension of univariate
+mediator analysis by casting the identification of active mediators as a
+variable selection problem and applying Bayesian methods with continuous
+shrinkage priors on the effects.")
     (license license:gpl3)))
 
 (define-public r-bam

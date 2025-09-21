@@ -5334,13 +5334,13 @@ have a software installation of SWI'-'Prolog'.")
 (define-public r-rsvddpd
   (package
     (name "r-rsvddpd")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsvddpd" version))
        (sha256
-        (base32 "0p2cpv3ipkvl27zhncpcyxp6lqw54ncdnxyk659qc24l0fqbw7dc"))))
+        (base32 "06bnpbwkmdfzvas39lr26xmkrbi0aagjb75jvj69nlqkllrs4g7s"))))
     (properties `((upstream-name . "rsvddpd")))
     (build-system r-build-system)
     (arguments
@@ -5354,8 +5354,8 @@ have a software installation of SWI'-'Prolog'.")
     (description
      "Computing singular value decomposition with robustness is a challenging task.
 This package provides an implementation of computing robust SVD using density
-power divergence (<@code{arXiv:2109.10680>}).  It combines the idea of
-robustness and efficiency in estimation based on a tuning parameter.  It also
+power divergence (<doi:10.48550/@code{arXiv.2109.10680>}).  It combines the idea
+of robustness and efficiency in estimation based on a tuning parameter.  It also
 provides utility functions to simulate various scenarios to compare performances
 of different algorithms.")
     (license license:expat)))
@@ -22806,13 +22806,13 @@ in quartz and Al2O3 based on published models.")
 (define-public r-rlumcarlo
   (package
     (name "r-rlumcarlo")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RLumCarlo" version))
        (sha256
-        (base32 "1a57nrhnq2q68yi0djh40kk1ms075kpwnmiq33vvy5pl57axnqpr"))))
+        (base32 "0s4ymlmvvsix9cwqbz07b1fksqw1b15n71i1gfb818w1jshyycbc"))))
     (properties `((upstream-name . "RLumCarlo")))
     (build-system r-build-system)
     (arguments
@@ -22831,7 +22831,7 @@ in quartz and Al2O3 based on published models.")
                              r-doparallel
                              r-abind))
     (native-inputs (list r-r-rsp))
-    (home-page "https://CRAN.R-project.org/package=RLumCarlo")
+    (home-page "https://r-lum.github.io/RLumCarlo/")
     (synopsis "Monte-Carlo Methods for Simulating Luminescence Phenomena")
     (description
      "This package provides a collection of functions to simulate luminescence
@@ -31049,6 +31049,42 @@ the functions.  References: Tsagris M., Papadakis M. (2018).  Taking R to its
 limits: 70+ tips. @code{PeerJ} Preprints 6:e26605v1
 <doi:10.7287/peerj.preprints.26605v1>.")
     (license license:gpl2+)))
+
+(define-public r-rfars
+  (package
+    (name "r-rfars")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rfars" version))
+       (sha256
+        (base32 "035bk10pk2d69h1ljlnbpg2f9g79q95yz7xpy8qppp31dsb1lz4b"))))
+    (properties `((upstream-name . "rfars")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-janitor
+                             r-haven
+                             r-dplyr
+                             r-downloader
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/s87jackson/rfars")
+    (synopsis "Download and Analyze Crash Data")
+    (description
+     "Download crash data from the National Highway Traffic Safety Administration and
+prepare it for research.")
+    (license license:cc0)))
 
 (define-public r-rfacts
   (package

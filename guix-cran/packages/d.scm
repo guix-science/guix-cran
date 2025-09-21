@@ -776,13 +776,13 @@ and derivatives.")
 (define-public r-dynconfir
   (package
     (name "r-dynconfir")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynConfiR" version))
        (sha256
-        (base32 "01bnkk9h6nf2xwjq5905swx9xhkbl11ga4drvmbbghb5py8x4y4c"))))
+        (base32 "1rz8jma7f9fqn1srwvnav1bj5spppca4ayi51gq4y38bljk443h0"))))
     (properties `((upstream-name . "dynConfiR")))
     (build-system r-build-system)
     (arguments
@@ -7473,19 +7473,20 @@ dataset has been analyzed.")
 (define-public r-dpi
   (package
     (name "r-dpi")
-    (version "2025.8")
+    (version "2025.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPI" version))
        (sha256
-        (base32 "07kbdsya1id0yrz8glnii2sfg0h7w1sxlva44jldcway51k98dg1"))))
+        (base32 "17n3m2jk4w6qs5zjwn0zq7ifaw8nnpsv7634smsa65v17n5kkfa0"))))
     (properties `((upstream-name . "DPI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-qgraph
+                             r-mass
                              r-glue
                              r-ggplot2
                              r-crayon
@@ -7493,16 +7494,18 @@ dataset has been analyzed.")
                              r-cli
                              r-bnlearn))
     (home-page "https://psychbruce.github.io/DPI/")
-    (synopsis "The Directed Prediction Index")
+    (synopsis
+     "The Directed Prediction Index for Quasi-Causal Inference with Cross-Sectional Data")
     (description
-     "The Directed Prediction Index ('DPI') is a simulation-based method for
-quantifying the relative endogeneity (relative dependence) of outcome (Y) versus
-predictor (X) variables in multiple linear regression models.  By comparing the
-proportion of variance explained (R-squared) between the Y-as-outcome model and
-the X-as-outcome model while controlling for a sufficient number of potential
-confounding variables, it suggests a more plausible influence direction from a
-more exogenous variable (X) to a more endogenous variable (Y).  Methodological
-details are provided at <https://psychbruce.github.io/DPI/>.")
+     "The Directed Prediction Index ('DPI') is a quasi-causal inference method for
+cross-sectional data designed to quantify the relative endogeneity (relative
+dependence) of outcome (Y) versus predictor (X) variables in regression models.
+By comparing the proportion of variance explained (R-squared) between the
+Y-as-outcome model and the X-as-outcome model while controlling for a sufficient
+number of possible confounders, it suggests a plausible (admissible) direction
+of influence from a more exogenous variable (X) to a more endogenous variable
+(Y).  Methodological details are provided at
+<https://psychbruce.github.io/DPI/>.")
     (license license:gpl3)))
 
 (define-public r-dpcr
@@ -11019,13 +11022,13 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
 (define-public r-dma
   (package
     (name "r-dma")
-    (version "1.4-1")
+    (version "1.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dma" version))
        (sha256
-        (base32 "12pqwpvahhk5f4m72npzbx6fir3d9vrxcmv0l5724lpj57s1hq9c"))))
+        (base32 "17xc1ndhv7hmpyb6h19i6rysf9gaynnfjy23xdblrhrh9aljr97k"))))
     (properties `((upstream-name . "dma")))
     (build-system r-build-system)
     (arguments
@@ -17716,25 +17719,25 @@ implementation with tuning parameters, consider the xgboost package.")
 (define-public r-did2s
   (package
     (name "r-did2s")
-    (version "1.0.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "did2s" version))
        (sha256
-        (base32 "0iyz6z4w2im22rvbpabql2w1cncv0pnrh0hp7agf0pazcpzk2jh6"))))
+        (base32 "0p2zdk7dlbxpdpgvxlpmpd7p2i6dy6zcplrv1qdliwzzybw9kj5v"))))
     (properties `((upstream-name . "did2s")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-staggered
-                             r-sparsem
                              r-rlang
-                             r-matrixextra
                              r-matrix
+                             r-honestdid
                              r-ggplot2
                              r-fixest
+                             r-dreamerr
                              r-didimputation
                              r-did
                              r-data-table
@@ -28397,13 +28400,13 @@ be slow.")
 (define-public r-dbi-table
   (package
     (name "r-dbi-table")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbi.table" version))
        (sha256
-        (base32 "0yhjzgbigx2z1gb6x7bvljp6rqh6bqa2fqhh68n5q7xzm1m5n0ig"))))
+        (base32 "1j7lpwywgm40z6vpkhpzmhfr03wvnhi7k9zvg5rfr8wzmlgq1v70"))))
     (properties `((upstream-name . "dbi.table")))
     (build-system r-build-system)
     (arguments

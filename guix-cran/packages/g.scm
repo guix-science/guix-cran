@@ -6132,154 +6132,6 @@ traditional methods are also implemented, as described in Yang, Knoke (2001)
 <doi:10.1016/S0378-8733(01)00043-0>.")
     (license license:gpl3)))
 
-(define-public r-greta-gp
-  (package
-    (name "r-greta-gp")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "greta.gp" version))
-       (sha256
-        (base32 "0mfz958yinhnddai9k3hsg2zb20b1v8csxxfw2q3fgfqz7p2y3i1"))))
-    (properties `((upstream-name . "greta.gp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tensorflow r-rlang r-greta r-glue r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/greta-dev/greta.gp")
-    (synopsis "Gaussian Process Modelling in 'greta'")
-    (description
-     "This package provides a syntax to create and combine Gaussian process kernels in
-greta'.  You can then them to define either full rank or sparse Gaussian
-processes.  This is an extension to the greta software, Golding (2019)
-<doi:10.21105/joss.01601>.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
-(define-public r-greta-gam
-  (package
-    (name "r-greta-gam")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "greta.gam" version))
-       (sha256
-        (base32 "1071pi8pzxjgi9gk7hgm7pln2196lg2xhvh76aqcc7fzgvr3444j"))))
-    (properties `((upstream-name . "greta.gam")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-mgcv r-greta r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/greta-dev/greta.gam")
-    (synopsis "Generalised Additive Models in 'greta' using 'mgcv'")
-    (description
-     "This package provides a greta (Golding (2019) <doi:10.21105/joss.01601>) module
-that lets you use mgcv smoother functions and formula syntax to define smooth
-terms for use in a greta model.  You can then define your own likelihood to
-complete the model, and fit it by Markov Chain Monte Carlo (MCMC).")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
-(define-public r-greta-dynamics
-  (package
-    (name "r-greta-dynamics")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "greta.dynamics" version))
-       (sha256
-        (base32 "0pv74j4j0ggad5akv318bmc14vjgx4fqw3p8dsdi4447ks5z68l7"))))
-    (properties `((upstream-name . "greta.dynamics")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tensorflow r-rlang r-greta r-glue r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/greta-dev/greta.dynamics")
-    (synopsis "Modelling Structured Dynamical Systems in 'greta'")
-    (description
-     "This package provides a greta extension for analysing transition matrices and
-ordinary differential equations representing dynamical systems.  Provides
-functions for analysing transition matrices by iteration, and solving ordinary
-differential equations.  This is an extension to the greta software, Golding
-(2019) <doi:10.21105/joss.01601>.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
-(define-public r-greta-censored
-  (package
-    (name "r-greta-censored")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "greta.censored" version))
-       (sha256
-        (base32 "0j4bfbwsx0hrm6ni64wzmj6sb2696cbn1g9yyp0d69xa41da5194"))))
-    (properties `((upstream-name . "greta.censored")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tensorflow r-reticulate r-greta r-glue))
-    (home-page "https://github.com/mtwesley/greta.censored")
-    (synopsis "Censored Distributions for 'greta'")
-    (description
-     "This package provides additional censored distributions for use with greta', a
-probabilistic programming framework for Bayesian modeling.  Includes censored
-versions of Normal, Log-Normal, Student's T, Gamma, Exponential, Weibull,
-Pareto, and Beta distributions with support for right, left, and interval
-censoring.  For details on greta', see Golding (2019) <doi:10.21105/joss.01601>.
- The methods are implemented using @code{TensorFlow} and @code{TensorFlow}
-Probability for efficient computation.")
-    (license license:asl2.0)))
-
-(define-public r-greta
-  (package
-    (name "r-greta")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "greta" version))
-       (sha256
-        (base32 "01cpa5125h0a9hxqrccfbsxkqvv8y4bdw0fgn43gyfgns90g3g8h"))))
-    (properties `((upstream-name . "greta")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yesno
-                             r-whisker
-                             r-tensorflow
-                             r-rlang
-                             r-reticulate
-                             r-r6
-                             r-progress
-                             r-parallelly
-                             r-glue
-                             r-future
-                             r-coda
-                             r-cli
-                             r-callr
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://greta-stats.org")
-    (synopsis "Simple and Scalable Statistical Modelling in R")
-    (description
-     "Write statistical models in R and fit them by MCMC and optimisation on CPUs and
-GPUs, using Google @code{TensorFlow}'.  greta lets you write your own model like
-in BUGS, JAGS and Stan, except that you write models right in R, it scales well
-to massive datasets, and itâs easy to extend and build on.  See the website
-for more information, including tutorials, examples, package documentation, and
-the greta forum.")
-    (license license:asl2.0)))
-
 (define-public r-greport
   (package
     (name "r-greport")
@@ -14003,13 +13855,13 @@ Definitions can be provided inline or in a separate file.")
 (define-public r-glossa
   (package
     (name "r-glossa")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glossa" version))
        (sha256
-        (base32 "1vncyinr9gqif0b2yg9ah8l48y7k8hx8m1q686alzzab70qq6gbq"))))
+        (base32 "0csmimpjsnid9akcbl7smqb7pddw3f0z65sj8bdxjyx2sg2cak0g"))))
     (properties `((upstream-name . "glossa")))
     (build-system r-build-system)
     (arguments
@@ -19098,19 +18950,24 @@ magnitude trends over time.")
 (define-public r-ggstar
   (package
     (name "r-ggstar")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggstar" version))
        (sha256
-        (base32 "0m2knp1jf1x62nqd8ln4haw90jv69l7vjrhn4pdrywgmwhdrp8gd"))))
+        (base32 "1a02zkphff5hg85rqw8la9m93a7jlxdlaizbhdz7mxn9cb82s612"))))
     (properties `((upstream-name . "ggstar")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-gridextra r-ggplot2 r-cli))
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-gridextra
+                             r-ggplot2
+                             r-ggiraph
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/xiangpin/ggstar/")
     (synopsis "Multiple Geometric Shape Point Layer for 'ggplot2'")
@@ -25084,25 +24941,19 @@ from Lattes <http://lattes.cnpq.br/>.")
 (define-public r-getlattes
   (package
     (name "r-getlattes")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "getLattes" version))
        (sha256
-        (base32 "1rrd9x9jmnsy0770c86lqws4a6b2zxf3384h1dcvzrmlk20hhqxw"))))
+        (base32 "1jn89wvy23y140np1v2c7z7xy4inzlrfs2y6ywfx5mn5z7a257bv"))))
     (properties `((upstream-name . "getLattes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-piper
-                             r-janitor
-                             r-dplyr))
+    (propagated-inputs (list r-xml2 r-tibble r-purrr r-janitor r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/roneyfraga/getLattes")
     (synopsis "Import and Process Data from the 'Lattes' Curriculum Platform")
@@ -36328,13 +36179,13 @@ distribution.")
 (define-public r-gamlss-add
   (package
     (name "r-gamlss-add")
-    (version "5.1-13")
+    (version "5.1-14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamlss.add" version))
        (sha256
-        (base32 "1dhiq3x0dascjsq3c80j6zgx4xdcjljd4ishzpp8j9m5bk55z72z"))))
+        (base32 "0v4m2f6riiikhgdh2pph347c38ngvii52cnmv19w78xd98726rdd"))))
     (properties `((upstream-name . "gamlss.add")))
     (build-system r-build-system)
     (arguments

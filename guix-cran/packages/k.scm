@@ -1614,13 +1614,13 @@ layout based on DIN 5008B'.")
 (define-public r-kollar
   (package
     (name "r-kollar")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kollaR" version))
        (sha256
-        (base32 "1grccrdqzkqflqni79j4y8bz6k9w71p560ngl275frr4r5vzgmkz"))))
+        (base32 "043cmi7vzl0g0lfwrfg97a7h9rq4kgyj6c734ylzsk7q6c1fkn7b"))))
     (properties `((upstream-name . "kollaR")))
     (build-system r-build-system)
     (arguments
@@ -5220,13 +5220,13 @@ for right-censored data including methods of bandwidth selection.")
 (define-public r-kernelshap
   (package
     (name "r-kernelshap")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kernelshap" version))
        (sha256
-        (base32 "0adk5gjapw68wsh97a4fdzf0frazy9c77kf6ci3gj3mh0hwj3bi8"))))
+        (base32 "171mick8z1rry9n1i1si3ca5ax1pasm3p1a14lg7f44xz3d2ggs0"))))
     (properties `((upstream-name . "kernelshap")))
     (build-system r-build-system)
     (arguments

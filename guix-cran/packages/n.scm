@@ -12668,13 +12668,13 @@ and WAIC are also provided.")
 (define-public r-networkabc
   (package
     (name "r-networkabc")
-    (version "0.9-0")
+    (version "0.9-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "networkABC" version))
        (sha256
-        (base32 "1dg133inkbpgxflr6xnnm8n8wndbz1ligyqgpryqmja01w2zwp49"))))
+        (base32 "0l7k7aqz1727yf076imn2b9772708l9m47l498swwkwxgx55qfb3"))))
     (properties `((upstream-name . "networkABC")))
     (build-system r-build-system)
     (arguments

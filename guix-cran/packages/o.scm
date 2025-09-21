@@ -10717,13 +10717,13 @@ Y to predict Y.")
 (define-public r-omicflow
   (package
     (name "r-omicflow")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmicFlow" version))
        (sha256
-        (base32 "0xdsf44b6ifm5jnpjlcwi2kcpb72qg73i61gjczx8747ysk4pj11"))))
+        (base32 "19wykx96b609ia0b82fhmd7xilfrgvvfbp5hgifwaj9psw46r82a"))))
     (properties `((upstream-name . "OmicFlow")))
     (build-system r-build-system)
     (arguments

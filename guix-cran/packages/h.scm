@@ -15881,19 +15881,19 @@ University Press for more information on Hadamard Matrices.")
 (define-public r-hacsim
   (package
     (name "r-hacsim")
-    (version "1.0.6-1")
+    (version "1.0.7-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HACSim" version))
        (sha256
-        (base32 "0hdczpn1x6zcxya8qlp82fzzpli3z2kfvynk5sqk97h1d55d27i4"))))
+        (base32 "0ca6fj650cbhqg8q21d1c3x95v751cb46wcq5xr89c5qw2rvsm3x"))))
     (properties `((upstream-name . "HACSim")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny
+    (propagated-inputs (list r-stringr
                              r-rcpparmadillo
                              r-rcpp
                              r-pegas

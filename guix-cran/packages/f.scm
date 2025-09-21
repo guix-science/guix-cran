@@ -287,13 +287,13 @@ applying it in different contexts (parametric or non-parametric).")
 (define-public r-fwb
   (package
     (name "r-fwb")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fwb" version))
        (sha256
-        (base32 "0wzza6cwj8fbs58dm3ci43gh5ly3pmf0a6xjphkgpky17xigrr99"))))
+        (base32 "0qc4h7rqjibv8p49fbz86njj31nsj36paxwip8hgzmcvff4r7z0y"))))
     (properties `((upstream-name . "fwb")))
     (build-system r-build-system)
     (arguments

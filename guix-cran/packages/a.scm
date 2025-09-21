@@ -9484,13 +9484,13 @@ API reference <https://developers.arcgis.com/rest/places/>.")
 (define-public r-arcgislayers
   (package
     (name "r-arcgislayers")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgislayers" version))
        (sha256
-        (base32 "0nn2pw3ms44sv5ijijqppwpkd7bfdpml8k1f36lpw5bxxi0kcjnj"))))
+        (base32 "04havh43s679mg22qxywvbgdddwfrfdkza9fyynjixmz886fzka9"))))
     (properties `((upstream-name . "arcgislayers")))
     (build-system r-build-system)
     (arguments
@@ -9507,7 +9507,7 @@ API reference <https://developers.arcgis.com/rest/places/>.")
                              r-arcpbf
                              r-arcgisutils))
     (home-page "https://developers.arcgis.com/r-bridge")
-    (synopsis "An Interface to ArcGIS Data Services")
+    (synopsis "Harness ArcGIS Data Services")
     (description
      "Enables users of @code{ArcGIS} Enterprise', @code{ArcGIS} Online', or
 @code{ArcGIS} Platform to read, write, publish, or manage vector and raster data
@@ -10866,13 +10866,13 @@ to analysis ready earth observation data in R.")
 (define-public r-apollo
   (package
     (name "r-apollo")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apollo" version))
        (sha256
-        (base32 "0mnnrwwqh7kg03216d0gffvzq81n4izng7rl9rg2qmmaliqgnvxn"))))
+        (base32 "1gv76fcvxbdfrhrq2g81rsr5d9gp82slz7s20i3b0dldpdyi2mmh"))))
     (properties `((upstream-name . "apollo")))
     (build-system r-build-system)
     (arguments
@@ -10897,7 +10897,7 @@ to analysis ready earth observation data in R.")
                              r-cli
                              r-bgw))
     (native-inputs (list r-knitr))
-    (home-page "http://www.apolloChoiceModelling.com")
+    (home-page "https://www.ApolloChoiceModelling.com")
     (synopsis "Tools for Choice Model Estimation and Application")
     (description
      "Choice models are a widely used technique across numerous scientific
@@ -10911,7 +10911,7 @@ and multiple discrete continuous models are covered in addition to discrete
 choice.  Multi-threading processing is supported for estimation and a large
 number of pre and post-estimation routines, including for computing posterior
 (individual-level) distributions are available.  For examples, a manual, and a
-support forum, visit <http://www.@code{ApolloChoiceModelling.com>}.  For more
+support forum, visit <https://www.@code{ApolloChoiceModelling.com>}.  For more
 information on choice models see Train, K. (2009) <isbn:978-0-521-74738-7> and
 Hess, S. & Daly, A.J. (2014) <isbn:978-1-781-00314-5> for an overview of the
 field.")
@@ -14855,13 +14855,13 @@ and includes negative tests.  The implementation is based on testthat'.")
 (define-public r-amr
   (package
     (name "r-amr")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AMR" version))
        (sha256
-        (base32 "0s0iv4sdg18r25dr5ym4liz2sxrz561an8bhzqqzfpjq8xb23yil"))))
+        (base32 "0h5687c5yvbr7w20cjlclnwxxrmb3kfh2bfqi9k417w3pd32flb2"))))
     (properties `((upstream-name . "AMR")))
     (build-system r-build-system)
     (arguments
@@ -16193,13 +16193,13 @@ tested condition.")
 (define-public r-altdoc
   (package
     (name "r-altdoc")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "altdoc" version))
        (sha256
-        (base32 "0g0p90ir8amlkb0893qchxacxi2l9aazrjif6l1qqfmr7qwbhjbd"))))
+        (base32 "152lrwc5d82fd1pc5qwk428rdc6lpjnmy4655016pvp5z5jrp42c"))))
     (properties `((upstream-name . "altdoc")))
     (build-system r-build-system)
     (arguments
@@ -26164,13 +26164,13 @@ factorization (NMF).")
 (define-public r-acledr
   (package
     (name "r-acledr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acledR" version))
        (sha256
-        (base32 "0fjmpc0syhxjdcgkimscl0xcw1896vm29c3qvllpaa4r662k7lb8"))))
+        (base32 "0q5s76sw47nrgyi3m8wn16xmikzmnqm7pf2rln25sr1zk2w9lj0b"))))
     (properties `((upstream-name . "acledR")))
     (build-system r-build-system)
     (arguments
