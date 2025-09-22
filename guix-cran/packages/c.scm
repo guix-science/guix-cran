@@ -1940,13 +1940,13 @@ M.P. (2010) <DOI:10.1186/1471-2105-11-44>.")
 (define-public r-curvedepth
   (package
     (name "r-curvedepth")
-    (version "0.1.0.9")
+    (version "0.1.0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "curveDepth" version))
        (sha256
-        (base32 "10mhy2nyll4d1q71qnlsal0raccz3awd0j0vi5w58di9wlv1c241"))))
+        (base32 "19nbd4mnwmal9g1i0485gx7xwvpsahjf6sbn5qa91560gbxkrbhm"))))
     (properties `((upstream-name . "curveDepth")))
     (build-system r-build-system)
     (arguments
@@ -1961,7 +1961,7 @@ which are independent of their parametrization.  For the space of such curves,
 the package provides functionalities for reading curves, sampling points on
 curves, calculating distance between curves and for computing Tukey curve depth
 of a curve w.r.t.  to a bundle of curves.  For details see Lafaye De Micheaux,
-Mozharovskyi, and Vimond (2019) <@code{arXiv:1901.00180>}.")
+Mozharovskyi, and Vimond (2021) <doi:10.48550/@code{arXiv.1901.00180>}.")
     (license license:gpl2+)))
 
 (define-public r-curvecomp
@@ -10623,13 +10623,13 @@ tests to documented behaviors.")
 (define-public r-covtools
   (package
     (name "r-covtools")
-    (version "0.5.4")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CovTools" version))
        (sha256
-        (base32 "1bkqg3kzy2ahjqldcf6x55wkrmb4s6y72y9cj0jwb1fph0a1p3sm"))))
+        (base32 "00ri4z4mr1l4mkl04wk7pf7jqqiwm5i522lhwl374w0kfwli15h2"))))
     (properties `((upstream-name . "CovTools")))
     (build-system r-build-system)
     (arguments
@@ -49552,13 +49552,13 @@ clinical research.")
 (define-public r-cardinalr
   (package
     (name "r-cardinalr")
-    (version "0.1.10")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cardinalR" version))
        (sha256
-        (base32 "1m0ddfkx95880b4yqg0azbbz3wviwd78y4i8wwzwifwfzzkqkw6z"))))
+        (base32 "1m6qk3vhqdqbwx1m1g6n66j7f39az24c2hxh8f8fzv1a0mh1gy1z"))))
     (properties `((upstream-name . "cardinalR")))
     (build-system r-build-system)
     (arguments

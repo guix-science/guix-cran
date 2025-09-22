@@ -17589,6 +17589,46 @@ transmission heterogeneity (Lloyd-Smith et al. (2005)
 number (Zhao et al. (2022) <doi:10.1371/journal.pcbi.1010281>).")
     (license license:gpl3)))
 
+(define-public r-modelselection
+  (package
+    (name "r-modelselection")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "modelSelection" version))
+       (sha256
+        (base32 "04n1daz3b1lzxxi0g718c6qjm8kasrbxhq18khz73xlcafbirp0b"))))
+    (properties `((upstream-name . "modelSelection")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-sparsematrixstats
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pracma
+                             r-ncvreg
+                             r-mvtnorm
+                             r-mgcv
+                             r-mclust
+                             r-matrix
+                             r-intervals
+                             r-huge
+                             r-glmnet
+                             r-dplyr))
+    (home-page "https://github.com/davidrusi/modelSelection")
+    (synopsis "High-Dimensional Model Selection")
+    (description
+     "Model selection and averaging for regression, generalized linear models,
+generalized additive models, graphical models and mixtures, focusing on Bayesian
+model selection and information criteria (Bayesian information criterion etc.).
+See Rossell (2025) <doi:10.5281/zenodo.17119597> (see the URL field below for
+its URL) for a hands-on book describing the methods, examples and suggested
+citations if you use the package.")
+    (license license:gpl2+)))
+
 (define-public r-modelobj
   (package
     (name "r-modelobj")
@@ -42247,13 +42287,13 @@ applicable with output from any Bayesian software, not just MCMCtree'.")
 (define-public r-mcmcse
   (package
     (name "r-mcmcse")
-    (version "1.5-0")
+    (version "1.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmcse" version))
        (sha256
-        (base32 "0qvlkv7j35h2lxdzhbsbsrf1cgsbgf4in7lxgwmx7vs85k10v0ja"))))
+        (base32 "08v6ymlmr05ix4n3lw560xj5jxy2shbc11dcmdz67jhr7ad4wdsm"))))
     (properties `((upstream-name . "mcmcse")))
     (build-system r-build-system)
     (arguments
@@ -42262,14 +42302,15 @@ applicable with output from any Bayesian software, not just MCMCtree'.")
     (propagated-inputs (list r-testthat r-rcpparmadillo r-rcpp r-fftwtools
                              r-ellipse))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mcmcse")
+    (home-page "https://github.com/dvats/mcmcse")
     (synopsis "Monte Carlo Standard Errors for MCMC")
     (description
      "This package provides tools for computing Monte Carlo standard errors (MCSE) in
-Markov chain Monte Carlo (MCMC) settings.  MCSE computation for expectation and
-quantile estimators is supported as well as multivariate estimations.  The
-package also provides functions for computing effective sample size and for
-plotting Monte Carlo estimates versus sample size.")
+Markov chain Monte Carlo (MCMC) settings (survey in <doi:10.1201/b10905>,
+Chapter 7).  MCSE computation for expectation and quantile estimators is
+supported as well as multivariate estimations.  The package also provides
+functions for computing effective sample size and for plotting Monte Carlo
+estimates versus sample size.")
     (license license:gpl2+)))
 
 (define-public r-mcmcsae

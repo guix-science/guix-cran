@@ -15539,6 +15539,46 @@ bootstrapping.  See Espeland and Hui (1987) <doi:10.2307/2531553> for general
 approach.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-glioblastomaehrsdata
+  (package
+    (name "r-glioblastomaehrsdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glioblastomaEHRsData" version))
+       (sha256
+        (base32 "123mzzalaa09s49sqkvsvjpc8n00ghhyv0rwairwla92p0lz51bq"))))
+    (properties `((upstream-name . "glioblastomaEHRsData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-tinytex
+                             r-table1
+                             r-summarytools
+                             r-rmarkdown
+                             r-ggplot2
+                             r-flextable
+                             r-dataexplorer))
+    (home-page "https://cran.r-project.org/package=glioblastomaEHRsData")
+    (synopsis "Descriptive Analysis on 3 EHRs Datasets")
+    (description
+     "This package provides functions to load and analyze three open Electronic Health
+Records (EHRs) datasets of patients diagnosed with glioblastoma, previously
+released under the Creative Common Attribution 4.0 International (CC BY 4.0)
+license.  Users can generate basic descriptive statistics, frequency tables and
+save descriptive summary tables, as well as create and export univariate or
+bivariate plots.  The package is designed to work with the included datasets and
+to facilitate quick exploratory data analysis and reporting.  More information
+about these three datasets of EHRs of patients with glioblastoma can be found in
+this article: Gabriel Cerono, Ombretta Melaiu, and Davide Chicco, Clinical
+feature ranking based on ensemble machine learning reveals top survival factors
+for glioblastoma multiforme', Journal of Healthcare Informatics Research 8, 1-18
+(March 2024). <doi:10.1007/s41666-023-00138-1>.")
+    (license license:gpl3)))
+
 (define-public r-glinvci
   (package
     (name "r-glinvci")
@@ -22667,6 +22707,45 @@ plots for response surface methodology, Pareto plot, and two dimensional
 projections of a latin hypercube design.")
     (license license:expat)))
 
+(define-public r-ggdnavis
+  (package
+    (name "r-ggdnavis")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggDNAvis" version))
+       (sha256
+        (base32 "066an2av0b3979cygwxjx1hbj9cc9ms59i9azy9aq8xqkaclz5n6"))))
+    (properties `((upstream-name . "ggDNAvis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-raster
+                             r-ragg
+                             r-png
+                             r-magick
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://ejade42.github.io/ggDNAvis/")
+    (synopsis
+     "'ggplot2'-Based Tools for Visualising DNA Sequences and Modifications")
+    (description
+     "Uses ggplot2 to visualise either (a) a single DNA/RNA sequence split across
+multiple lines, (b) multiple DNA/RNA sequences, each occupying a whole line, or
+(c) base modifications such as DNA methylation called by modified bases models
+in Dorado or Guppy.  Functions starting with @code{visualise_<something>()} are
+the main plotting functions, and functions starting with
+@code{extract_<something>()} are key helper functions for reading files and
+reformatting data.  Source code is available at
+<https://github.com/ejade42/@code{ggDNAvis>} and a full non-expert user guide is
+available at <https://ejade42.github.io/@code{ggDNAvis/>}.")
+    (license license:expat)))
+
 (define-public r-ggdmcprior
   (package
     (name "r-ggdmcprior")
@@ -28310,13 +28389,13 @@ methods.")
 (define-public r-geoarrow
   (package
     (name "r-geoarrow")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoarrow" version))
        (sha256
-        (base32 "0ss13j43fvrxcra20xb5q79ah170abjyfb9rwlx35z8qsddjkcqz"))))
+        (base32 "0imdmg03501zqa334z68pnl5m4a03cj8s1bja1ajmfhjzp5rn16n"))))
     (properties `((upstream-name . "geoarrow")))
     (build-system r-build-system)
     (arguments

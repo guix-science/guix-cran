@@ -1293,13 +1293,13 @@ regressions, using kernel smoothing techniques.")
 (define-public r-tvr
   (package
     (name "r-tvr")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tvR" version))
        (sha256
-        (base32 "1i20z09f714fyn3ipcn9i5g4dx7cyjfkyjqzyqzqapkg0m9ny91m"))))
+        (base32 "0qxqxpmaagg84y3zlrfvz0rs0n4hd4v7c6imi3d5j4f2vd4zhavg"))))
     (properties `((upstream-name . "tvR")))
     (build-system r-build-system)
     (arguments
@@ -16273,13 +16273,13 @@ of lenses, see the lens package wiki:
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
-    (version "0.5.6")
+    (version "0.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinycodet" version))
        (sha256
-        (base32 "0sz2j3n8cidqlflphlk4x4mwhw0n8jw69zzpqjl596j9rx6fbc5b"))))
+        (base32 "10gf86i9xq3gkxgb45df266sdy5xlh3vvxjncwmfbarghp7r2762"))))
     (properties `((upstream-name . "tinycodet")))
     (build-system r-build-system)
     (arguments
@@ -28857,13 +28857,13 @@ pipelines.")
 (define-public r-tdakit
   (package
     (name "r-tdakit")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDAkit" version))
        (sha256
-        (base32 "1gvcv3016kjk98qm07i972fi66bcljj1avmagyc8qxs29cq3ngg3"))))
+        (base32 "0c0cj1qyj05l7yy4jd6v179zb9jc8dbgfynzs241w6pxgxblin8m"))))
     (properties `((upstream-name . "TDAkit")))
     (build-system r-build-system)
     (arguments

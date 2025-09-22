@@ -11315,13 +11315,13 @@ translated messages.")
 (define-public r-strand
   (package
     (name "r-strand")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "strand" version))
        (sha256
-        (base32 "0gd9nnbdilvk4bszg77bxilan6qpg1np7c38w1b7j5sr3r30y5in"))))
+        (base32 "04g8jpiax2c0m9pfrrf0jnhg4n049v7gj6mc4dnrp4z58cwj16s3"))))
     (properties `((upstream-name . "strand")))
     (build-system r-build-system)
     (arguments
@@ -37746,13 +37746,13 @@ Variables.")
 (define-public r-smcure
   (package
     (name "r-smcure")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smcure" version))
        (sha256
-        (base32 "0377dj6wvny2y44phsf7177ivn70a55v316skwf02n03ghqx73k9"))))
+        (base32 "1n7ryvi43wpp60k3gxjhabzmzdsdi9akc73n8wqr9fnw24dxd1bs"))))
     (properties `((upstream-name . "smcure")))
     (build-system r-build-system)
     (arguments
@@ -69402,13 +69402,13 @@ caution.).")
 (define-public r-sbmedian
   (package
     (name "r-sbmedian")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SBmedian" version))
        (sha256
-        (base32 "1pxwsp6z1qvhmzprhr8f8i1id5zy4ppq7dxbd6ny2h1r1zvy16xm"))))
+        (base32 "0njv4qka382s5pj0iymqlc7zir9f3dzrdpkadchzxarlmckrfgr3"))))
     (properties `((upstream-name . "SBmedian")))
     (build-system r-build-system)
     (arguments
@@ -71979,31 +71979,6 @@ Sampling), systematic and PPS (Probability Proportional to Size) sampling
 methods, ensuring a methodical and representative selection of data.  Seamlessly
 allocate predetermined allocations to smaller levels.")
     (license license:expat)))
-
-(define-public r-samplingdatacrt
-  (package
-    (name "r-samplingdatacrt")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "samplingDataCRT" version))
-       (sha256
-        (base32 "0ah3fi2sn642c8nicikhjhl1hdsjzshrf1j02swq0jaqggcqjdvk"))))
-    (properties `((upstream-name . "samplingDataCRT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=samplingDataCRT")
-    (synopsis
-     "Sampling Data Within Different Study Designs for Cluster Randomized Trials")
-    (description
-     "Package provides the possibility to sampling complete datasets from a normal
-distribution to simulate cluster randomized trails for different study designs.")
-    (license license:gpl3)))
 
 (define-public r-samplingbook
   (package

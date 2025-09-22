@@ -12431,37 +12431,6 @@ new data.  It provides the similar functionality as the Python package
 <https://github.com/CAHLR/@code{pyBKT>}.")
     (license license:expat)))
 
-(define-public r-bkp
-  (package
-    (name "r-bkp")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BKP" version))
-       (sha256
-        (base32 "1lbcbpalk7f7brz4gdgscan5412dwk4k3k8bsbz7i0ljxiz0jgcy"))))
-    (properties `((upstream-name . "BKP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tgp r-optimx r-lattice r-gridextra r-dirmult))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Jiangyan-Zhao/BKP")
-    (synopsis "Beta Kernel Process Modeling")
-    (description
-     "This package implements the Beta Kernel Process (BKP) for nonparametric modeling
-of spatially varying binomial probabilities, together with its extension, the
-Dirichlet Kernel Process (DKP), for categorical or multinomial data.  The
-package provides functions for model fitting, predictive inference with
-uncertainty quantification, posterior simulation, and visualization in one-and
-two-dimensional input spaces.  Multiple kernel functions (Gaussian, Matern 5/2,
-and Matern 3/2) are supported, with hyperparameters optimized through
-multi-start gradient-based search.  For more details, see Zhao, Qing, and Xu
-(2025) <doi:10.48550/@code{arXiv.2508.10447>}.")
-    (license license:gpl3)))
-
 (define-public r-bkmrhat
   (package
     (name "r-bkmrhat")
@@ -29154,19 +29123,24 @@ original set of variables.")
 (define-public r-batss
   (package
     (name "r-batss")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BATSS" version))
        (sha256
-        (base32 "1icwfavwkjgls843splnnx3asw2vqvl3n7kn3319z9qnzng6cg62"))))
+        (base32 "1swjqprcflh9sg2dqrfn496m09mzysn7sjqysr951s1dgjcaip17"))))
     (properties `((upstream-name . "BATSS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-r-utils r-plyr r-cli r-abind))
+    (propagated-inputs (list r-sm
+                             r-rlang
+                             r-r-utils
+                             r-plyr
+                             r-cli
+                             r-abind))
     (home-page "https://batss-stable.github.io/BATSS/")
     (synopsis
      "Bayesian Adaptive Trial Simulator Software (BATSS) for Generalised Linear Models")

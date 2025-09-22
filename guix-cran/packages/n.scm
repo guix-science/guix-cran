@@ -12324,13 +12324,13 @@ the estimation and inference function for the model.")
 (define-public r-networkr
   (package
     (name "r-networkr")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "networkR" version))
        (sha256
-        (base32 "07dq3syk0hr1kc2mqd70g0ih09hamd7rxxms60dyvnpm8978c1wz"))))
+        (base32 "0bnbp5bif9q8m6zrsmcmy5kcz7qlh48313had4ir6zb64qhbs78j"))))
     (properties `((upstream-name . "networkR")))
     (build-system r-build-system)
     (arguments
@@ -17465,6 +17465,39 @@ of functions, intersecting along arbitrary dimensions, converting to and from
 data.frames, and many other helper functions.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-narfima
+  (package
+    (name "r-narfima")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "narfima" version))
+       (sha256
+        (base32 "0gbhc4c219qbf4x1w13pc476n3m7x4yy5avfvk1slc0cmhipq7zi"))))
+    (properties `((upstream-name . "narfima")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-nnet r-forecast r-bsts))
+    (home-page "https://cran.r-project.org/package=narfima")
+    (synopsis
+     "Neural AutoRegressive Fractionally Integrated Moving Average Model")
+    (description
+     "This package provides methods and tools for forecasting univariate time series
+using the NARFIMA (Neural @code{AutoRegressive} Fractionally Integrated Moving
+Average) model.  It combines neural networks with fractional differencing to
+capture both nonlinear patterns and long-term dependencies.  The NARFIMA model
+supports seasonal adjustment, Box-Cox transformations, optional exogenous
+variables, and the computation of prediction intervals.  In addition to the
+NARFIMA model, this package provides alternative forecasting models including
+NARIMA (Neural ARIMA), NBSTS (Neural Bayesian Structural Time Series), and
+NNaive (Neural Naive) for performance comparison across different modeling
+approaches.  The methods are based on algorithms introduced by Chakraborty et
+al. (2025) <doi:10.48550/@code{arXiv.2509.06697>}.")
+    (license license:gpl3)))
 
 (define-public r-nardl
   (package

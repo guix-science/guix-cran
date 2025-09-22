@@ -1120,13 +1120,13 @@ change, it gives identical results, and behaves exactly the same.")
 (define-public r-future-batchtools
   (package
     (name "r-future-batchtools")
-    (version "0.20.0")
+    (version "0.21.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "future.batchtools" version))
        (sha256
-        (base32 "1za3alksij97fyw3nj4zqn1gj1a4imzak95w5wmz49s4w5395fd5"))))
+        (base32 "1wi9hml706gkaqi4sv57c5ihl6dd8yn7dw0j3ya7q0a3hlr9gqm1"))))
     (properties `((upstream-name . "future.batchtools")))
     (build-system r-build-system)
     (arguments
@@ -1136,7 +1136,8 @@ change, it gives identical results, and behaves exactly the same.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-parallelly r-future r-batchtools))
+    (propagated-inputs (list r-stringi r-parallelly r-future r-checkmate
+                             r-batchtools))
     (native-inputs (list r-r-rsp))
     (home-page "https://future.batchtools.futureverse.org")
     (synopsis
@@ -12330,13 +12331,13 @@ features? See Aw, Spence and Song (2023) for the accompanying paper.")
 (define-public r-flint
   (package
     (name "r-flint")
-    (version "0.0.5")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flint" version))
        (sha256
-        (base32 "0mfm6acjfsk6z267y1falrg8y7h4kpjgx15cxbp1v1hqcbcw22fl"))))
+        (base32 "1gx5b3118hkh5idgdcnlg897ciz5z07wxl5wkfqmf0baj1yjr38j"))))
     (properties `((upstream-name . "flint")))
     (build-system r-build-system)
     (arguments
@@ -16749,13 +16750,13 @@ over 100 votes in 2022.  The data are analysed in Chapter 3 of the Book Getting
 (define-public r-filling
   (package
     (name "r-filling")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filling" version))
        (sha256
-        (base32 "17vk0pndsc8xhgp4zy5dfyc36pzk2hm5zk6xijdy4xaf7k5j4wls"))))
+        (base32 "14i0cy26scq9n1gkcwb39p4w8d91abmlp6n1xi6xhb8vvis80bj2"))))
     (properties `((upstream-name . "filling")))
     (build-system r-build-system)
     (arguments

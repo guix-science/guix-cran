@@ -1502,6 +1502,28 @@ published after 2014Q3 into structured formats for analysis.  See Yang et al.
 (2022) <doi:10.3389/fphar.2021.772768> for related information.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-extr
+  (package
+    (name "r-extr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "extr" version))
+       (sha256
+        (base32 "0zs8b6aarb30wkgadi9f7hry6j9ispldqmib0h1bb99xfa8q6dck"))))
+    (properties `((upstream-name . "extr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=extr")
+    (synopsis "Extinction Risk Estimation")
+    (description
+     "Estimates extinction risk from population time series under a drifted Wiener
+process using the w-z method for accurate confidence intervals.")
+    (license license:bsd-2)))
+
 (define-public r-extmallows
   (package
     (name "r-extmallows")
@@ -22845,13 +22867,13 @@ general framework for combining ecosystem models\"<doi:10.1111/faf.12310>.")
 (define-public r-ecodive
   (package
     (name "r-ecodive")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecodive" version))
        (sha256
-        (base32 "1mbnm8qzqxbaiaydr7f7bgscxqpwjszjh7j0amsa6s09wkxjraym"))))
+        (base32 "091fjxm1r37a5cl68znvfk211vq0fi453xs432yabcsbm2wxbv84"))))
     (properties `((upstream-name . "ecodive")))
     (build-system r-build-system)
     (arguments

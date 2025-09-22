@@ -9843,6 +9843,34 @@ M. (2006) <doi:10.1103/@code{PhysRevE.73.026120>}, Zhou T. and Zhang Y (2009)
 Saerens M. (2007) <doi:10.1109/TKDE.2007.46>.")
     (license license:expat)))
 
+(define-public r-linker
+  (package
+    (name "r-linker")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "linkeR" version))
+       (sha256
+        (base32 "001mfcc0h6fhlymihvfizjdkxwz4vdlwphibpl7fr9dpmjjmkc3z"))))
+    (properties `((upstream-name . "linkeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-magrittr r-later))
+    (native-inputs (list r-knitr))
+    (home-page "https://epiforesite.github.io/linkeR/")
+    (synopsis "Link Interactive Plots and Tables in 'shiny' Applications")
+    (description
+     "Build powerful, linked-view dashboards in shiny applications.  With a
+declarative, one-line setup, you can create bidirectional links between
+interactive components.  When a user interacts with one element (e.g., clicking
+a map marker), all linked components (such as DT tables or other charts)
+instantly update.  Supports leaflet maps, DT tables, and spatial data via sf
+objects out-of-the-box, with an extensible API for custom components.")
+    (license license:expat)))
+
 (define-public r-linkedmatrix
   (package
     (name "r-linkedmatrix")

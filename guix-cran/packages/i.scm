@@ -7369,13 +7369,13 @@ be more convenient for certain situations.")
 (define-public r-intkrige
   (package
     (name "r-intkrige")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intkrige" version))
        (sha256
-        (base32 "1p3fn5nzn1iliy025187k590qrsw3z3d47p67gzwwd6h050yrl86"))))
+        (base32 "048dlx9d7947bjcsaihcza5pyqvvmydblwbjpw96m33dj4cyl93y"))))
     (properties `((upstream-name . "intkrige")))
     (build-system r-build-system)
     (arguments

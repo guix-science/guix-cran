@@ -1799,30 +1799,6 @@ refers to an overall clustering result.  Jia Li, Beomseok Seo, and Lin Lin
 <doi:10.1093/bioinformatics/btaa165>.")
     (license license:gpl2+)))
 
-(define-public r-otbsegm
-  (package
-    (name "r-otbsegm")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OTBsegm" version))
-       (sha256
-        (base32 "1fign060h2w33bp8n3nrcaqvw3k2q28sp796xccp086r7zdhpvbb"))))
-    (properties `((upstream-name . "OTBsegm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra r-link2gi r-cli))
-    (home-page "https://cidree.github.io/OTBsegm/")
-    (synopsis "Apply Unsupervised Segmentation Algorithms from 'OTB'")
-    (description
-     "Apply unsupervised segmentation algorithms included in Orfeo @code{ToolBox}
-software (<https://www.orfeo-toolbox.org/>), such as mean shift or watershed
-segmentation.")
-    (license license:expat)))
-
 (define-public r-otargen
   (package
     (name "r-otargen")

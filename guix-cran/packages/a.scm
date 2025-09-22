@@ -22935,13 +22935,13 @@ binary matrix, Bombina et al. (2019) <@code{arXiv:1904.03272>}.")
 (define-public r-admm
   (package
     (name "r-admm")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ADMM" version))
        (sha256
-        (base32 "04biinzr0x3jkwss00q6zxfnzk62dafc6386z5vfqs4ch0ifh60n"))))
+        (base32 "0cybq0nyj7vy2xm8nz5sq8x3h6zjsjg5xswj837smz9xh5884pdn"))))
     (properties `((upstream-name . "ADMM")))
     (build-system r-build-system)
     (arguments

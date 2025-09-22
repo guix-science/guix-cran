@@ -36569,13 +36569,13 @@ of useful Tcl/Tk widgets.")
 (define-public r-reliagrowr
   (package
     (name "r-reliagrowr")
-    (version "0.1.5")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReliaGrowR" version))
        (sha256
-        (base32 "0vml5vqrslwxfjprdiv8gkv39nf25scwkh6637d420xh3i27lp61"))))
+        (base32 "0lvlj2f5s93c040r52fxzagsv77dnwih4hn4ihinm9z7d1g1npgl"))))
     (properties `((upstream-name . "ReliaGrowR")))
     (build-system r-build-system)
     (arguments
@@ -45701,6 +45701,29 @@ R, particularly Rcpp'.  The included msgpack-c headers are licensed under the
 Boost Software License (Version 1.0); the code added by this package as well the
 R integration are licensed under the GPL (>= 2).  See the files COPYRIGHTS and
 AUTHORS for a full list of copyright holders and contributors to msgpack-c'.")
+    (license license:gpl2+)))
+
+(define-public r-rcppmlpackexamples
+  (package
+    (name "r-rcppmlpackexamples")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcppmlpackexamples" version))
+       (sha256
+        (base32 "1w102n14shxfnd0qjl686mp3gd7n2zrdzmx96kmm9lrs6hxsms30"))))
+    (properties `((upstream-name . "rcppmlpackexamples")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppensmallen r-rcpparmadillo r-rcpp r-mlpack))
+    (home-page "https://github.com/eddelbuettel/rcppmlpack-examples")
+    (synopsis "Example Use of 'mlpack' from C++ via R")
+    (description
+     "This package provides a Minimal Example Package which demonstrates mlpack use
+via C++ Code from R.")
     (license license:gpl2+)))
 
 (define-public r-rcppmecab

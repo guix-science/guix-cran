@@ -19186,13 +19186,13 @@ Assortment of chromosomes approach to recombination.")
 (define-public r-dga
   (package
     (name "r-dga")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dga" version))
        (sha256
-        (base32 "1q860hzxrbkpmnphdysx4wk1b46wjll8sw7xjsy1lxcaz9hwcnjk"))))
+        (base32 "1hy6k9z4ma4xfyacq0fr5m6ayp9is0shvkc1nfd9xdf15akdl61n"))))
     (properties `((upstream-name . "dga")))
     (build-system r-build-system)
     (arguments
@@ -33160,6 +33160,42 @@ acyclic graph whose underlying undirected graph is a tree.  The model proposed
 in this package is the same as an HMM but where the states are linked via a
 polytree structure rather than a simple path.")
     (license (license:fsdg-compatible "GPL (>= 2.0.0)"))))
+
+(define-public r-dagassist
+  (package
+    (name "r-dagassist")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DAGassist" version))
+       (sha256
+        (base32 "0zck6pc292imsi3njhqnfk5l4yl08hpjmmzh3f5iy9kbb3c2vkp6"))))
+    (properties `((upstream-name . "DAGassist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl
+                             r-magrittr
+                             r-dagitty
+                             r-crayon
+                             r-cli
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/grahamgoff/DAGassist")
+    (synopsis "Test Robustness with Directed Acyclic Graphs")
+    (description
+     "This package provides robustness checks driven by directed acyclic graphs
+(DAGs).  Given a dagitty DAG object and a model specification, DAGassist
+classifies variables by causal roles, flags problematic controls, and generates
+a report comparing the original model with minimal and canonical adjustment
+sets.  Exports publication-grade reports in @code{LaTeX}', Word', Excel', or
+plain text.  DAGassist is built on dagitty', an R package that uses the DAGitty
+web tool (<https://dagitty.net/>) for creating and analyzing DAGs.  Methods draw
+on Pearl (2009) <doi:10.1017/CBO9780511803161> and Textor et al. (2016)
+<doi:10.1093/ije/dyw341>.")
+    (license license:gpl2+)))
 
 (define-public r-dafs
   (package

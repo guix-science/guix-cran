@@ -7836,37 +7836,6 @@ such as reproj', and that the older PROJ.4 and version 5 pathways be provided by
 the proj4 package.")
     (license license:gpl3)))
 
-(define-public r-progmodule
-  (package
-    (name "r-progmodule")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ProgModule" version))
-       (sha256
-        (base32 "16im1ymprfak06vv0m8z0wccvszknzgg5br14q1048g8975rdj1h"))))
-    (properties `((upstream-name . "ProgModule")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survminer
-                             r-survival
-                             r-pathwaytmb
-                             r-patchwork
-                             r-maftools
-                             r-infotheo
-                             r-igraph))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ProgModule")
-    (synopsis "Identification of Prognosis-Related Mutually Exclusive Modules")
-    (description
-     "This package provides a novel tool to identify candidate driver modules for
-predicting the prognosis of patients by integrating exclusive coverage of
-mutations with clinical characteristics in cancer.")
-    (license license:gpl2+)))
-
 (define-public r-proftools
   (package
     (name "r-proftools")
@@ -15290,13 +15259,13 @@ Federal Ministry of Education and Research (No.  03WIR4805).")
 (define-public r-power4mome
   (package
     (name "r-power4mome")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "power4mome" version))
        (sha256
-        (base32 "04jm190wik16hpdqwa97029cm6mq924zy7zd6a9vbh6liyfih0gb"))))
+        (base32 "1rm1w4jw2qw3vr0d5554rj0jm8aa2qd9jqc12gl1511x42xba7a6"))))
     (properties `((upstream-name . "power4mome")))
     (build-system r-build-system)
     (arguments
@@ -26455,6 +26424,38 @@ parameters for the effects of the recurrent events on the survival outcome,
 which allows for variable selection.  Also, our algorithm is computationally
 efficient, which is based on the Gaussian variational approximation method.")
     (license license:gpl2)))
+
+(define-public r-pjccalculator
+  (package
+    (name "r-pjccalculator")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PJCcalculator" version))
+       (sha256
+        (base32 "1whyl42psqh6r085hhw9lv7d74pblishb1qpvx3zgqdi3d4ffvxi"))))
+    (properties `((upstream-name . "PJCcalculator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-dplyr))
+    (home-page "https://cran.r-project.org/package=PJCcalculator")
+    (synopsis "PROs-Joint Contrast (PJC) Calculator")
+    (description
+     "Computes the Patient-Reported Outcomes (PROs) Joint Contrast (PJC), a
+residual-based summary that captures information left over after accounting for
+the clinical Disease Activity index for Psoriatic Arthritis (@code{cDAPSA}).
+PROs (pain and patient global assessment) and joint counts (swollen and tender)
+are standardized, then each component is adjusted for standardized @code{cDAPSA}
+using natural spline coefficients that were derived from previously published
+models.  The resulting residuals are standardized and combined using fixed
+principal component loadings, to yield a continuous PJC score and quartile
+groupings.  This package provides a calculator for applying those published
+coefficients to new datasets; it does not itself estimate spline models or
+principal components.")
+    (license license:expat)))
 
 (define-public r-pixiedust
   (package
@@ -39901,47 +39902,6 @@ results across parameter combinations are then aggregated using a voting scheme,
 prioritizing pathways that are consistently recovered under diverse settings and
 robust to parameter perturbations.")
     (license license:expat)))
-
-(define-public r-pathwaytmb
-  (package
-    (name "r-pathwaytmb")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pathwayTMB" version))
-       (sha256
-        (base32 "1zrs7l9vifrsixk20p0nxs6s8kadc3l3mj933s7ribaby2fb0r8m"))))
-    (properties `((upstream-name . "pathwayTMB")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survminer
-                             r-survival
-                             r-rcolorbrewer
-                             r-randomforest
-                             r-purrr
-                             r-proc
-                             r-maftools
-                             r-glmnet
-                             r-data-table
-                             r-clusterprofiler
-                             r-caret
-                             r-biocgenerics))
-    (native-inputs (list r-rmarkdown r-qpdf r-knitr))
-    (home-page "https://cran.r-project.org/package=pathwayTMB")
-    (synopsis "Pathway Based Tumor Mutational Burden")
-    (description
-     "This package provides a systematic bioinformatics tool to develop a new
-pathway-based gene panel for tumor mutational burden (TMB) assessment
-(pathway-based tumor mutational burden, PTMB), using somatic mutations files in
-an efficient manner from either The Cancer Genome Atlas sources or any in-house
-studies as long as the data is in mutation annotation file (MAF) format.
-Besides, we develop a multiple machine learning method using the sample's PTMB
-profiles to identify cancer-specific dysfunction pathways, which can be a
-biomarker of prognostic and predictive for cancer immunotherapy.")
-    (license license:gpl2+)))
 
 (define-public r-pathwayspace
   (package
