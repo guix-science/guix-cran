@@ -5501,13 +5501,13 @@ python'.")
 (define-public r-multilevlca
   (package
     (name "r-multilevlca")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevLCA" version))
        (sha256
-        (base32 "1issqcw82fwcy48ryvi3h6rm1n7lmc3jhdrlpwn0rsskp41vhhxr"))))
+        (base32 "1ndkww4rpwz3ydqrahw1fxn7fvl9ac3skk2x8dm2qgnpandx5j8z"))))
     (properties `((upstream-name . "multilevLCA")))
     (build-system r-build-system)
     (arguments
@@ -5530,8 +5530,8 @@ python'.")
     (description
      "Efficiently estimates single- and multilevel latent class models with
 covariates, allowing for output visualization in all specifications.  For more
-technical details, see Lyrvall et al (2023)
-<doi:10.48550/@code{arXiv.2305.07276>}.")
+technical details, see Lyrvall et al. (2025)
+<doi:10.1080/00273171.2025.2473935>.")
     (license license:gpl2+)))
 
 (define-public r-multileveltools
@@ -12910,46 +12910,6 @@ R., Costa, J. and Oviedo-de la Fuente, M. (2024) \"Metodos predictivos de
 aprendizaje estadistico\"
 <https://rubenfcasal.github.io/aprendizaje_estadistico/>.")
     (license license:gpl2+)))
-
-(define-public r-mpactr
-  (package
-    (name "r-mpactr")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mpactr" version))
-       (sha256
-        (base32 "148zkb8jw9sfnmyi98nv7y8i7p7hidgfrdp1g38agdzdzbhj855z"))))
-    (properties `((upstream-name . "mpactr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-treemapify
-                             r-readr
-                             r-rcpp
-                             r-r6
-                             r-ggplot2
-                             r-data-table
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.mums2.org/mpactr/")
-    (synopsis "Correction of Preprocessed MS Data")
-    (description
-     "An R implementation of the python program Metabolomics Peak Analysis
-Computational Tool ('MPACT') (Robert M. Samples, Sara P. Puckett, and Marcy J.
-Balunas (2023) <doi:10.1021/acs.analchem.2c04632>).  Filters in the package
-serve to address common errors in tandem mass spectrometry preprocessing,
-including: (1) isotopic patterns that are incorrectly split during
-preprocessing, (2) features present in solvent blanks due to carryover between
-samples, (3) features whose abundance is greater than user-defined abundance
-threshold in a specific group of samples, for example media blanks, (4) ions
-that are inconsistent between technical replicates, and (5) in-source fragment
-ions created during ionization before fragmentation in the tandem mass
-spectrometry workflow.")
-    (license license:gpl3+)))
 
 (define-public r-mp
   (package
@@ -30387,6 +30347,51 @@ CRAN'.  Current version is bare-minimum without any access-control or much
 security.")
     (license license:gpl3)))
 
+(define-public r-microbtisda
+  (package
+    (name "r-microbtisda")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MicrobTiSDA" version))
+       (sha256
+        (base32 "0x4806az9q27r9mzcd7v526y133n1nylnkqqkq5d5p5ai8vkawv3"))))
+    (properties `((upstream-name . "MicrobTiSDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visnetwork
+                             r-vegan
+                             r-tidyr
+                             r-tidygraph
+                             r-tibble
+                             r-scales
+                             r-reshape2
+                             r-randomforest
+                             r-pracma
+                             r-plyr
+                             r-mgcv
+                             r-mass
+                             r-ggraph
+                             r-ggplot2
+                             r-ggdendro
+                             r-dplyr
+                             r-cluster
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Lishijiagg/MicrobTiSDA")
+    (synopsis "Microbiome Time-Series Data Analysis")
+    (description
+     "This package provides tools specifically designed for analyzing longitudinal
+microbiome data.  This tool integrates seven functional modules, providing a
+systematic framework for microbiome time-series analysis.  For more details on
+inferences involving interspecies interactions see Fisher (2014)
+<doi:10.1371/journal.pone.0102451>.  Details on this package are also described
+in an unpublished manuscript.")
+    (license license:expat)))
+
 (define-public r-microbiomesurv
   (package
     (name "r-microbiomesurv")
@@ -42627,13 +42632,13 @@ cross-sectional or longitudinal data.")
 (define-public r-mclustcomp
   (package
     (name "r-mclustcomp")
-    (version "0.3.3")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mclustcomp" version))
        (sha256
-        (base32 "1kxrms77m7n9lv32771zvwg82xqh5kx8al6f0bknsj8idq8aqbh3"))))
+        (base32 "17jargr4n0hvwgrp0wyrfws3h6n4fshs79laiqyfl7d1fjl7dfy2"))))
     (properties `((upstream-name . "mclustcomp")))
     (build-system r-build-system)
     (arguments
@@ -42648,7 +42653,7 @@ where each pair of sets in a partition has no overlapping elements.  This
 package provides 25 methods that play a role somewhat similar to distance or
 metric that measures similarity of two clusterings - or partitions.  For a more
 detailed description, see Meila, M. (2005) <doi:10.1145/1102351.1102424>.")
-    (license license:gpl3+)))
+    (license license:expat)))
 
 (define-public r-mclustaddons
   (package
@@ -45910,32 +45915,35 @@ and Coxhead's coefficient are included for comparison and flexibility.")
 (define-public r-matrixcorr
   (package
     (name "r-matrixcorr")
-    (version "0.3.1")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matrixCorr" version))
        (sha256
-        (base32 "0smlljck2zj6sid1blhxrizxbl04qdfvqnx7hzih74f9wm3pn4gs"))))
+        (base32 "0rxzsx88g7h6y5a5r8xhfd23c32h3d99pj2jdxjnx47ww1pj7pv1"))))
     (properties `((upstream-name . "matrixCorr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggplot2 r-cpp11))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-ggplot2 r-cpp11))
     (home-page "https://github.com/Prof-ThiagoOliveira/matrixCorr")
     (synopsis "Collection of Correlation and Association Estimators")
     (description
-     "Compute correlation and other association matrices from small to very large
-datasets with simple, @code{cor()}'-like functions and sensible defaults.
+     "Compute correlation and other association matrices from small to
+high-dimensional datasets with relative simple functions and sensible defaults.
 Includes options for shrinkage and robustness to improve results in noisy or
 high-dimensional settings (p >= n), plus convenient print/plot methods for
-inspection.  Implemented with optimised C++ backends using BLAS'/'@code{OpenMP}
+inspection.  Implemented with optimised C++ backends using BLAS/@code{OpenMP}
 and memory-aware symmetric updates.  Works with base matrices and data frames,
 returning standard R objects via a consistent S3 interface.  Useful across
-genomics, agriculture, and machine-learning workflows.  Methods based on Ledoit
-and Wolf (2004) <doi:10.1016/S0047-259X(03)00096-4>; SchÃ¤fer and Strimmer
-(2005) <doi:10.2202/1544-6115.1175>; Lin (1989) <doi:10.2307/2532051>.")
+genomics, agriculture, and machine-learning workflows.  Supports Pearson,
+Spearman, Kendall, distance correlation, partial correlation, and robust
+biweight mid-correlation; BlandâAltman analyses and Lin's concordance
+correlation coefficient (including repeated-measures extensions).  Methods based
+on Ledoit and Wolf (2004) <doi:10.1016/S0047-259X(03)00096-4>; SchÃ¤fer and
+Strimmer (2005) <doi:10.2202/1544-6115.1175>; Lin (1989) <doi:10.2307/2532051>.")
     (license license:expat)))
 
 (define-public r-matrisk
@@ -49467,13 +49475,13 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "1ayx1krfz550i81c0cdpjg3k38g3c9qd8rcd4a81q78h11mbflnh"))))
+        (base32 "1hfp987hmmi59jwpgs0gr13i58kpycjnscnwx16rzz64l9ghky4b"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
     (arguments

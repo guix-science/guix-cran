@@ -10304,13 +10304,13 @@ confidence intervals.")
 (define-public r-coxmos
   (package
     (name "r-coxmos")
-    (version "1.1.3")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Coxmos" version))
        (sha256
-        (base32 "0l355fcgmbfziad8gd0vz1x1yi1488avdvzyd4985nix567nqhim"))))
+        (base32 "016dyxvlf6cgngr911xz1igi20ak77ccyzigz3x649g03jmx1vxw"))))
     (properties `((upstream-name . "Coxmos")))
     (build-system r-build-system)
     (arguments
@@ -10563,6 +10563,38 @@ Diego.; Luo & Xu (2022) <doi:10.48550/@code{arXiv.2206.02296>}; Rava (2021)
     (description
      "Allows printing of character strings as messages/warnings/etc.  with ASCII
 animals, including cats, cows, frogs, chickens, ghosts, and more.")
+    (license license:expat)))
+
+(define-public r-cowfootr
+  (package
+    (name "r-cowfootr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cowfootR" version))
+       (sha256
+        (base32 "1qd4qzjs4j6hzh6lsmavns3w2qz5lrp5mhlgc0vny7gc8c6n4528"))))
+    (properties `((upstream-name . "cowfootR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/juanmarcosmoreno-arch/cowfootR")
+    (synopsis "Dairy Farm Carbon Footprint Assessment")
+    (description
+     "Calculates the carbon footprint of dairy farms based on methodologies of the
+International Dairy Federation and the Intergovernmental Panel on Climate
+Change.  Includes tools for single-farm and batch analysis, report generation,
+and visualization.  Methods follow International Dairy Federation (2022) \"The
+IDF global Carbon Footprint standard for the dairy sector\" (Bulletin of the IDF
+nÂ° 520/2022) <doi:10.56169/FKRK7166> and IPCC (2019) \"2019 Refinement to the
+2006 IPCC Guidelines for National Greenhouse Gas Inventories, Chapter 10:
+Emissions from Livestock and Manure Management\"
+<https://www.ipcc-nggip.iges.or.jp/public/2019rf/pdf/4_Volume4/19R_V4_Ch10_Livestock.pdf>
+guidelines.")
     (license license:expat)))
 
 (define-public r-cowbell
@@ -17572,13 +17604,13 @@ Melograna, et.  al., (2023) <doi:10.3389/fmicb.2023.1170391>.")
 (define-public r-conscir
   (package
     (name "r-conscir")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ConSciR" version))
        (sha256
-        (base32 "1x0j905fbkwzbza494cv550qml6n7ggfyn9qr2wbkj3l1pxw8drr"))))
+        (base32 "1bkhvnrir00l7ri2ycjgvbbjdahyiizphn3r75g6jjhki01r7x2i"))))
     (properties `((upstream-name . "ConSciR")))
     (build-system r-build-system)
     (arguments
@@ -17591,6 +17623,7 @@ Melograna, et.  al., (2023) <doi:10.3389/fmicb.2023.1170391>.")
                              r-readxl
                              r-readr
                              r-padr
+                             r-openair
                              r-lubridate
                              r-ggplot2
                              r-dplyr))
@@ -17599,12 +17632,12 @@ Melograna, et.  al., (2023) <doi:10.3389/fmicb.2023.1170391>.")
     (synopsis "Tools for Conservation Science")
     (description
      "This package provides data science tools for conservation science, including
-methods for environmental analysis applications, humidity calculations,
-sustainability metrics, engineering calculations, and data visualisation.
-Supports conservators, scientists, and engineers working with cultural heritage
-data.  The package was motivated by the developing tools and frameworks outlined
-in Cosaert and Beltran et al. (2022) \"Tools for the Analysis of Collection
-Environments\"
+methods for environmental data analysis, humidity calculations, sustainability
+metrics, engineering calculations, and data visualisation.  Supports
+conservators, scientists, and engineers working with cultural heritage
+preventive conservation data.  The package is motivated by the framework
+outlined in Cosaert and Beltran et al. (2022) \"Tools for the Analysis of
+Collection Environments\"
 <https://www.getty.edu/conservation/publications_resources/pdf_publications/tools_for_the_analysis_of_collection_environments.html>.")
     (license license:gpl3+)))
 
@@ -19538,13 +19571,13 @@ Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-condor
   (package
     (name "r-condor")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "condor" version))
        (sha256
-        (base32 "0aix4v1ninz4hk3qwdgpicr3l94sa2n0rzcj4p4ld9mcwahxf5bk"))))
+        (base32 "1zkj19i0lsjkf4fzfr1jvcms5azi7v8ggali0s9d653dhqv364ha"))))
     (properties `((upstream-name . "condor")))
     (build-system r-build-system)
     (arguments
@@ -19552,7 +19585,7 @@ Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
       #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-ssh))
-    (home-page "https://github.com/PacificCommunity/ofp-sam-condor")
+    (home-page "https://github.com/PacificCommunity/condor")
     (synopsis "Interact with 'Condor' from R via SSH")
     (description
      "Interact with Condor from R via SSH connection.  Files are first uploaded from
@@ -28939,18 +28972,22 @@ multidimensional contexts.")
 (define-public r-clvtools
   (package
     (name "r-clvtools")
-    (version "0.11.2")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CLVTools" version))
        (sha256
-        (base32 "0xfnsc7ma3sc21512ifkrrqh9s6fp5cjcbfxwly0d17vwax6w9zn"))))
+        (base32 "084dc8rivfmzrn9x62sls4m4bca30yvyf5yr9w1zq13z5kk94xxq"))))
     (properties `((upstream-name . "CLVTools")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-testthat
                              r-rcppgsl
                              r-rcpparmadillo
@@ -28964,7 +29001,7 @@ multidimensional contexts.")
                              r-formula
                              r-digest
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/bachmannpatrick/CLVTools")
     (synopsis "Tools for Customer Lifetime Value Estimation")
     (description

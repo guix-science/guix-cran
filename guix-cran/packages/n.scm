@@ -12523,13 +12523,13 @@ for network analysis.")
 (define-public r-networkdistance
   (package
     (name "r-networkdistance")
-    (version "0.3.4")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetworkDistance" version))
        (sha256
-        (base32 "0z3q15aq5jqwbyxr4464nq74ib7644f185h8wfzvfi491xkrl4cr"))))
+        (base32 "15qap5xsjplmhncx36fhbj90ya1j13wmvqih6hllhy69f6p7cj01"))))
     (properties `((upstream-name . "NetworkDistance")))
     (build-system r-build-system)
     (arguments
@@ -12730,6 +12730,38 @@ specific statistical methods to reverse engineer the underlying network.")
 to generate circular images for visualizing complex genomic and network data
 analysis features.")
     (license license:gpl3)))
+
+(define-public r-netvar
+  (package
+    (name "r-netvar")
+    (version "0.1-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetVAR" version))
+       (sha256
+        (base32 "0f3mbsp0rl43cccwwrj86pdd904ad2a3vrvzg13iyh6y063350ap"))))
+    (properties `((upstream-name . "NetVAR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fields r-fgarch))
+    (home-page "https://cran.r-project.org/package=NetVAR")
+    (synopsis "Network Structures in VAR Models")
+    (description
+     "Vector @code{AutoRegressive} (VAR) type models with tailored regularisation
+structures are provided to uncover network type structures in the data, such as
+influential time series (influencers).  Currently the package implements the
+LISAR model from Zhang and Trimborn (2023) <doi:10.2139/ssrn.4619531>.  The
+package automatically derives the required regularisation sequences and refines
+it during the estimation to provide the optimal model.  The package allows for
+model optimisation under various loss functions such as Mean Squared Forecasting
+Error (MSFE), Akaike Information Criterion (AIC), and Bayesian Information
+Criterion (BIC).  It provides a dedicated class, allowing for summary prints of
+the optimal model and a plotting function to conveniently analyse the optimal
+model via heatmaps.")
+    (license license:gpl3+)))
 
 (define-public r-netutils
   (package

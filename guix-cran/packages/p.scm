@@ -1540,13 +1540,13 @@ limitations through chunked data retrieval.  For more information about the
 (define-public r-purpleair
   (package
     (name "r-purpleair")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PurpleAir" version))
        (sha256
-        (base32 "17ir79f5r8c9lv4gx9mr9iv26xapygd2azgw6gdm3lcl99r36cgm"))))
+        (base32 "03dy4bgbiqywd78bhdac3wbvb4y0a2bczrp5ms3n1nnf0j9g5bws"))))
     (properties `((upstream-name . "PurpleAir")))
     (build-system r-build-system)
     (arguments
@@ -1567,7 +1567,8 @@ limitations through chunked data retrieval.  For more information about the
 key and get information about the related organization.  Download real-time data
 from a single @code{PurpleAir} sensor or many sensors by sensor identifier,
 geographical bounding box, or time since modified.  Download historical data
-from a single sensor.")
+from a single sensor.  Stream real time data from monitors on a local area
+network.")
     (license license:expat)))
 
 (define-public r-purging
@@ -16465,6 +16466,33 @@ objects.  The relative portion size and the way the portion is selected can be
 chosen.")
     (license license:gpl3+)))
 
+(define-public r-portfoliotester
+  (package
+    (name "r-portfoliotester")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PortfolioTesteR" version))
+       (sha256
+        (base32 "0lw631ir1765f9ls91j3k1a9vn29i2y5nbj679v18136x53ddrpk"))))
+    (properties `((upstream-name . "PortfolioTesteR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-ttr r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/alb3rtazzo/PortfolioTesteR")
+    (synopsis "Test Investment Strategies with English-Like Code")
+    (description
+     "Design, backtest, and analyze portfolio strategies using simple, English-like
+function chains.  Includes technical indicators, flexible stock selection,
+portfolio construction methods (equal weighting, signal weighting, inverse
+volatility, hierarchical risk parity), and a compact backtesting engine for
+portfolio returns, drawdowns, and summary metrics.")
+    (license license:expat)))
+
 (define-public r-portfoliooptim
   (package
     (name "r-portfoliooptim")
@@ -22367,6 +22395,51 @@ so that R code can be used to power Tableau workbooks.")
 @code{DigitalOcean} and other cloud-based servers.")
     (license license:expat)))
 
+(define-public r-plumber2
+  (package
+    (name "r-plumber2")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plumber2" version))
+       (sha256
+        (base32 "0z4297lq26ikjqz4r9r6w6iadwmq25ym0dyj9gz1aik37ggcg3ap"))))
+    (properties `((upstream-name . "plumber2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-webutils
+                             r-svglite
+                             r-stringi
+                             r-roxygen2
+                             r-routr
+                             r-rlang
+                             r-reqres
+                             r-readr
+                             r-rapidoc
+                             r-ragg
+                             r-r6
+                             r-promises
+                             r-jsonlite
+                             r-fs
+                             r-firestorm
+                             r-firesale
+                             r-firesafety
+                             r-fiery
+                             r-cli
+                             r-base64enc))
+    (native-inputs (list r-quarto))
+    (home-page "http://plumber2.posit.co/")
+    (synopsis "Easy and Powerful Web Servers")
+    (description
+     "Automatically create a web server from annotated R files or by building it up
+programmatically.  Provides automatic @code{OpenAPI} documentation, input
+handling, asynchronous evaluation, and plugin support.")
+    (license license:expat)))
+
 (define-public r-plugdensity
   (package
     (name "r-plugdensity")
@@ -24649,6 +24722,41 @@ ranging between 0 and 100; name_col', specifying the name of the column in the
 dataframe that contains the player names; and player_name', representing the
 specific player whose statistics will be visualized in the chart, serving as the
 chart title.")
+    (license license:expat)))
+
+(define-public r-player
+  (package
+    (name "r-player")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "player" version))
+       (sha256
+        (base32 "0kxrbdnbahrrrdivkbc5w5ay7brfjwx3px6whq3mszv0jijkfajp"))))
+    (properties `((upstream-name . "player")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-twenty48
+                             r-stringr
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-plu
+                             r-nnet
+                             r-glue
+                             r-dplyr
+                             r-crayon
+                             r-cli
+                             r-and))
+    (home-page "https://github.com/rossellhayes/player")
+    (synopsis "Play Games in the Console")
+    (description
+     "Games that can be played in the R console.  Includes coin flip, hangman, jumble,
+magic 8 ball, poker, rock paper scissors, shut the box, spelling bee, and 2048.")
     (license license:expat)))
 
 (define-public r-play
@@ -27802,6 +27910,32 @@ useful when dealing with the communication of skewed and highly skewed data.  It
 also provides utilities that recommends a normalisation technique based on the
 distribution of the data.")
     (license license:expat)))
+
+(define-public r-piecemeal
+  (package
+    (name "r-piecemeal")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "piecemeal" version))
+       (sha256
+        (base32 "0af5swhi73rsjljzr2fnsxfs78krlh0vhbh2ghjbh5313kr5cmyh"))))
+    (properties `((upstream-name . "piecemeal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-r6 r-purrr r-filelock))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=piecemeal")
+    (synopsis "Wrangle Large Simulation Studies")
+    (description
+     "An R6 class to set up, run, monitor, collate, and debug large simulation studies
+comprising many small independent replications and treatment configurations.
+Parallel processing, reproducibility, fault- and error-tolerance, and ability to
+resume an interrupted or timed-out simulation study are built in.")
+    (license license:gpl3+)))
 
 (define-public r-piecemaker
   (package
@@ -40077,13 +40211,13 @@ endpoints require the use of an API key which can be obtained at
 (define-public r-pathling
   (package
     (name "r-pathling")
-    (version "8.0.2")
+    (version "8.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathling" version))
        (sha256
-        (base32 "1xzyjhjig49q4j26agmy12njrxngamwazm6s5v221b5x2n1apfkb"))))
+        (base32 "1r9s3aw327nmhck8h7i2x6ccjfvk7mn2g17q14ws6vha01k468v0"))))
     (properties `((upstream-name . "pathling")))
     (build-system r-build-system)
     (arguments

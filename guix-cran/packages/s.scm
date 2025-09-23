@@ -7919,13 +7919,13 @@ al. (2016) <DOI:10.1111/rssb.12174>).")
 (define-public r-suncalcmeeus
   (package
     (name "r-suncalcmeeus")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SunCalcMeeus" version))
        (sha256
-        (base32 "0cwclf8rnb29z234w1s70zkr0klv4jnz7l8c8sqh8anrr4hwc506"))))
+        (base32 "1wcrzr28r95bfzz6z65fzvxhiv983hgpmw1gi40ka3irw2snk51d"))))
     (properties `((upstream-name . "SunCalcMeeus")))
     (build-system r-build-system)
     (arguments
@@ -19155,13 +19155,13 @@ Wang, J. et al. (2024) <doi:10.1080/24694452.2023.2289982>).")
 (define-public r-sshaped
   (package
     (name "r-sshaped")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Sshaped" version))
        (sha256
-        (base32 "0jy926ykyw7a2q0wabbvm2sm2g4d5y8wl6na4xjmf0ybr6rma458"))))
+        (base32 "0pxj0nc0s7vfj32xv3xq1ds458klky8r265zvqh01a5x31s0z0pk"))))
     (properties `((upstream-name . "Sshaped")))
     (build-system r-build-system)
     (arguments
@@ -19820,6 +19820,31 @@ functions for hierarchical computations by sparse model matrices (Langsrud,
      "This package provides a set of functions to calculate sample size for two-sample
 difference in means tests.  Does adjustments for either nonadherence or
 variability that comes from using data to estimate parameters.")
+    (license license:gpl3)))
+
+(define-public r-ssaforecast
+  (package
+    (name "r-ssaforecast")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SSAforecast" version))
+       (sha256
+        (base32 "15dqjppql1kd3z3g42b356x06pl7ib6x3ikrb3v2zq0a3vq9lz64"))))
+    (properties `((upstream-name . "SSAforecast")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rssa))
+    (home-page "https://cran.r-project.org/package=SSAforecast")
+    (synopsis "SSA Based Decomposition and Forecasting")
+    (description
+     "Singular spectrum analysis (SSA) decomposes a time series into interpretable
+components like trends, oscillations, and noise without strict distributional
+and structural assumptions.  For method details see Golyandina N, Zhigljavsky A
+(2013). <doi:10.1007/978-3-642-34913-3>.")
     (license license:gpl3)))
 
 (define-public r-ssabss
@@ -30901,13 +30926,13 @@ and Yamagata (2024) <doi:10.1093/jjfinec/nbad002>, and Gungor and Luger (2016)
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "3.5.0")
+    (version "3.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "03995dslbkk7inrbw2b6vid1kikmq92ncfbygk2shkavxibzl9fi"))))
+        (base32 "1aslyr7s2pg8jq54q4lm52k86gi16cs64phsbl61435cvzwsz21y"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (arguments
@@ -30920,6 +30945,7 @@ and Yamagata (2024) <doi:10.1093/jjfinec/nbad002>, and Gungor and Luger (2016)
                              r-ptw
                              r-pracma
                              r-plyr
+                             r-pbapply
                              r-numderiv
                              r-nloptr
                              r-mmand
@@ -37324,13 +37350,13 @@ smirnov(x))\".")
 (define-public r-smile
   (package
     (name "r-smile")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smile" version))
        (sha256
-        (base32 "1474jfk6vqcx3jv0mlf45l93bnn3f2qgm2j03rbjid4skg811618"))))
+        (base32 "1h03lhv481kinmz3xfphhpvwn0vwri4i6kgnxb4dd9ma0mpxdf3c"))))
     (properties `((upstream-name . "smile")))
     (build-system r-build-system)
     (arguments
@@ -37338,7 +37364,7 @@ smirnov(x))\".")
       #:tests? #f))
     (inputs (list proj geos gdal))
     (propagated-inputs (list r-sf
-                             r-rcpparmadillo
+                             r-rcppeigen
                              r-rcpp
                              r-numderiv
                              r-mvtnorm
@@ -63305,13 +63331,13 @@ package?SDT for an overview.")
 (define-public r-sdsfun
   (package
     (name "r-sdsfun")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdsfun" version))
        (sha256
-        (base32 "1fw029nm978i7l84w7vz1rkkjjbb8lail90xg5fxwd4hmi57zwb8"))))
+        (base32 "1n4cmpdq49a3b6idx5xfyqk28swjf1wx8ljyxaq7jnjjrc54nxzv"))))
     (properties `((upstream-name . "sdsfun")))
     (build-system r-build-system)
     (arguments
@@ -65186,6 +65212,30 @@ of target genes in @code{scRNA-seq} data.  Target genes are clustered into
 modules and each module is associated with a linear model describing the
 regulatory program.")
     (license license:gpl3+)))
+
+(define-public r-screenshotbase
+  (package
+    (name "r-screenshotbase")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "screenshotbase" version))
+       (sha256
+        (base32 "0b7lmy4nk26w331l215j0aahxr5j0k3l9jihgqq6mxsfzb4zs88a"))))
+    (properties `((upstream-name . "screenshotbase")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-httr2))
+    (home-page "https://screenshotbase.com")
+    (synopsis "Client for the 'Screenshotbase' API")
+    (description
+     "Minimal R client for the Screenshotbase API to render website screenshots and
+query account status.  Provides functions to set the API key, call the status
+endpoint, and take a screenshot as a raw image response.")
+    (license license:expat)))
 
 (define-public r-screenshot
   (package
@@ -71979,6 +72029,31 @@ Sampling), systematic and PPS (Probability Proportional to Size) sampling
 methods, ensuring a methodical and representative selection of data.  Seamlessly
 allocate predetermined allocations to smaller levels.")
     (license license:expat)))
+
+(define-public r-samplingdatacrt
+  (package
+    (name "r-samplingdatacrt")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "samplingDataCRT" version))
+       (sha256
+        (base32 "0ah3fi2sn642c8nicikhjhl1hdsjzshrf1j02swq0jaqggcqjdvk"))))
+    (properties `((upstream-name . "samplingDataCRT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=samplingDataCRT")
+    (synopsis
+     "Sampling Data Within Different Study Designs for Cluster Randomized Trials")
+    (description
+     "Package provides the possibility to sampling complete datasets from a normal
+distribution to simulate cluster randomized trails for different study designs.")
+    (license license:gpl3)))
 
 (define-public r-samplingbook
   (package

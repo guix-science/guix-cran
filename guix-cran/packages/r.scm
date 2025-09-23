@@ -4158,13 +4158,13 @@ encode text into Byte-Pair-Encoding (BPE) tokens and decode tokens back to text.
 (define-public r-rtiktokads
   (package
     (name "r-rtiktokads")
-    (version "0.3.2")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtiktokads" version))
        (sha256
-        (base32 "1vk8rk7xpil73h6j1xqha5ckjwcnwlv913gzxc83ciiv6swajshy"))))
+        (base32 "1aqs8q7lshrqw64bkkx9v577azbyjpj4p1y9446dvfwzbirp0hfy"))))
     (properties `((upstream-name . "rtiktokads")))
     (build-system r-build-system)
     (arguments
@@ -12425,13 +12425,13 @@ ISBN:9780412048418).")
 (define-public r-rparadox
   (package
     (name "r-rparadox")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rparadox" version))
        (sha256
-        (base32 "0sc8brsx6r3hg79ackb060r8ms2f3n7ca7yi1fpisd98z2vha32r"))))
+        (base32 "1s9yl22hdg20rmdjcy6mf97bsv2w909ar4s1gkchrvy7bxm3qn4i"))))
     (properties `((upstream-name . "Rparadox")))
     (build-system r-build-system)
     (arguments
@@ -13647,13 +13647,13 @@ driver based on the OCI.")
 (define-public r-roptspace
   (package
     (name "r-roptspace")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROptSpace" version))
        (sha256
-        (base32 "18fz285hr4fdkkbs4b13gmwz0sqbgk6di6m3c6ic0wvs35mpmcfz"))))
+        (base32 "03am9njm58svy20mkjgd3ydqwnqansmdbqfh5qvlh2vf1194j7a6"))))
     (properties `((upstream-name . "ROptSpace")))
     (build-system r-build-system)
     (arguments
@@ -15627,13 +15627,13 @@ consecutive categories for ordinal variables.")
 (define-public r-rococo
   (package
     (name "r-rococo")
-    (version "1.1.9")
+    (version "1.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rococo" version))
        (sha256
-        (base32 "1za16w2b8xazb1crl7701r0mqg0z3v86pyc3rvznwmyh3bzdaq0g"))))
+        (base32 "0s2jqfiyfisy3qgqm8pm4p77z3z0chcyqgb7dx0vgjk8h93pfdq9"))))
     (properties `((upstream-name . "rococo")))
     (build-system r-build-system)
     (arguments
@@ -36838,6 +36838,41 @@ according to the interrelationship between them and classified according to
 different locus types.")
     (license license:gpl3+)))
 
+(define-public r-relativedistclust
+  (package
+    (name "r-relativedistclust")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RelativeDistClust" version))
+       (sha256
+        (base32 "0xbbfrdpc64b0rhxs5ajjvag33w5disj6dz7v1dvpgwp6pqn78cm"))))
+    (properties `((upstream-name . "RelativeDistClust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-proxy r-ggpubr r-ggplot2 r-factoextra
+                             r-compositions))
+    (home-page "https://cran.r-project.org/package=RelativeDistClust")
+    (synopsis "Clustering with a Novel Non Euclidean Relative Distance")
+    (description
+     "Using the novel Relative Distance to cluster datasets.  Implementation of a
+clustering approach based on the k-means algorithm that can be used with any
+distance.  In addition, implementation of the Hartigan and Wong method to
+accommodate alternative distance metrics.  Both methods can operate with any
+distance measure, provided a suitable method is available to compute cluster
+centers under the chosen metric.  Additionally, the k-medoids algorithm is
+implemented, offering a robust alternative for clustering without the need of
+computing cluster centers under the chosen metric.  All three methods are
+designed to support Relative distances, Euclidean distances, and any
+user-defined distance functions.  The Hartigan and Wong method is described in
+Hartigan and Wong (1979) <doi:10.2307/2346830> and an explanation of the
+k-medoids algorithm can be found in Reynolds et al (2006)
+<doi:10.1007/s10852-005-9022-1>.")
+    (license license:gpl3)))
+
 (define-public r-relatedness
   (package
     (name "r-relatedness")
@@ -43779,13 +43814,13 @@ extensive and have been vetted by multiple authors.")
 (define-public r-rdimtools
   (package
     (name "r-rdimtools")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdimtools" version))
        (sha256
-        (base32 "0bl8ffyy9jb6xp1jb350fj5pw3zvc1dnrdhl4vi25kl84pp30xl6"))))
+        (base32 "1a29xw3y4varjcwki3nfbivirhffcxks6kpn6xx7cdz5hqy9dsvd"))))
     (properties `((upstream-name . "Rdimtools")))
     (build-system r-build-system)
     (arguments
@@ -46718,6 +46753,30 @@ occupations; science: elements, planets; words: adjectives, verbs, proverbs, US
 president quotes.")
     (license license:cc0)))
 
+(define-public r-rconvertu
+  (package
+    (name "r-rconvertu")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rconvertu" version))
+       (sha256
+        (base32 "11s9lwy4pl32vj3xwz2wp3mnpmw01zhxgy710178fjphhahp6rnh"))))
+    (properties `((upstream-name . "rconvertu")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite))
+    (home-page "https://github.com/econcz/rconvertu")
+    (synopsis "From/to Classification Converter")
+    (description
+     "Convert text into target classifications (e.g., ISO 3166-1) using a JSON mapping
+with regular expressions.  Provides helpers to return the full mapping and
+associated metadata.")
+    (license license:expat)))
+
 (define-public r-rcontroll
   (package
     (name "r-rcontroll")
@@ -49475,6 +49534,33 @@ graphics.  Groups individual data, merges registry data and population data,
 calculates age-specific rate, age-standardized rate, cumulative risk, estimated
 annual percentage rate with standards error.  Creates graphics across variable
 and time, such as age-specific trends, bar chart and period-cohort trends.")
+    (license license:gpl2+)))
+
+(define-public r-rcamelscl
+  (package
+    (name "r-rcamelscl")
+    (version "0.1-11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RcamelsCL" version))
+       (sha256
+        (base32 "1kkv0lnzh83dyiamnhxd75y0xv3r53lmdz9mll0hjjsjsbl3gfsw"))))
+    (properties `((upstream-name . "RcamelsCL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-terra r-hydrotsm r-httr))
+    (home-page "https://gitlab.com/hgarcesf/RcamelsCL")
+    (synopsis "Easy Handling of the CAMELS-CL Dataset")
+    (description
+     "Download and handle spatial and temporal data from the CAMELS-CL dataset
+(Catchment Attributes and Meteorology for Large Sample Studies, Chile)
+<https://camels.cr2.cl/>, developed by Alvarez-Garreton et al. (2018)
+<doi:10.5194/hess-22-5817-2018>.  The package does not generate new data, it
+only facilitates direct access to the original dataset for hydrological
+analyses.")
     (license license:gpl2+)))
 
 (define-public r-rcali
@@ -53027,13 +53113,13 @@ validated for Picea abies, Larix Siberica, Pinus cembra and Pinus sylvestris.")
 (define-public r-rapsimng
   (package
     (name "r-rapsimng")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rapsimng" version))
        (sha256
-        (base32 "0nlvagjilzjbnpy7h7k6kc1jlg589g74dak8f5pksin3kch1bbb0"))))
+        (base32 "1jpn9x4xn9qyvpphmnsws9r7vl0rzd1qrhzzfmnwgqalyzjqcnc5"))))
     (properties `((upstream-name . "rapsimng")))
     (build-system r-build-system)
     (arguments
@@ -53042,6 +53128,7 @@ validated for Picea abies, Larix Siberica, Pinus cembra and Pinus sylvestris.")
     (propagated-inputs (list r-tibble
                              r-rsqlite
                              r-rlang
+                             r-purrr
                              r-magrittr
                              r-jsonlite
                              r-dplyr
@@ -56968,13 +57055,13 @@ data analysis and visualization can be done easily.")
 (define-public r-ractivecampaign
   (package
     (name "r-ractivecampaign")
-    (version "0.2.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ractivecampaign" version))
        (sha256
-        (base32 "1l7266qryba2zijgs7xj4p073l69q0iin6qgsbnn7dafmggv5mlr"))))
+        (base32 "0wrdlakih8jr7isv2ilhfmssabmpk3amas0l55rbnd9vv32jp54d"))))
     (properties `((upstream-name . "ractivecampaign")))
     (build-system r-build-system)
     (arguments

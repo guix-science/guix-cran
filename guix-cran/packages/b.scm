@@ -4794,13 +4794,13 @@ downstream analyses.")
 (define-public r-bregr
   (package
     (name "r-bregr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bregr" version))
        (sha256
-        (base32 "1lw4sxdl14qk9fzfpra089hw10rbw57dm7la68mdnvzbpgzd7y3m"))))
+        (base32 "057y5pihqd44zd2dzxplcyz8haf3xxh95hkid3jfd6n30bryg18s"))))
     (properties `((upstream-name . "bregr")))
     (build-system r-build-system)
     (arguments
@@ -4829,7 +4829,7 @@ downstream analyses.")
      "Easily processes batches of univariate or multivariate regression models.
 Returns results in a tidy format and generates visualization plots for
 straightforward interpretation (Wang, Shixiang, et al. (2021)
-<DOI:10.48550/@code{arXiv.2110.14232>}).")
+<DOI:10.1002/mdr2.70028>).")
     (license license:gpl3+)))
 
 (define-public r-breeze
@@ -12431,6 +12431,36 @@ new data.  It provides the similar functionality as the Python package
 <https://github.com/CAHLR/@code{pyBKT>}.")
     (license license:expat)))
 
+(define-public r-bkp
+  (package
+    (name "r-bkp")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BKP" version))
+       (sha256
+        (base32 "1lxz4wpqvr4k3n2jj3n95r97ryglmbsgxanr9f4ck8w9af0dp51a"))))
+    (properties `((upstream-name . "BKP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tgp r-optimx r-lattice r-gridextra r-dirmult))
+    (home-page "https://github.com/Jiangyan-Zhao/BKP")
+    (synopsis "Beta Kernel Process Modeling")
+    (description
+     "This package implements the Beta Kernel Process (BKP) for nonparametric modeling
+of spatially varying binomial probabilities, together with its extension, the
+Dirichlet Kernel Process (DKP), for categorical or multinomial data.  The
+package provides functions for model fitting, predictive inference with
+uncertainty quantification, posterior simulation, and visualization in one-and
+two-dimensional input spaces.  Multiple kernel functions (Gaussian, Matern 5/2,
+and Matern 3/2) are supported, with hyperparameters optimized through
+multi-start gradient-based search.  For more details, see Zhao, Qing, and Xu
+(2025) <doi:10.48550/@code{arXiv.2508.10447>}.")
+    (license license:gpl3+)))
+
 (define-public r-bkmrhat
   (package
     (name "r-bkmrhat")
@@ -18933,13 +18963,13 @@ is clear citation of the original publication (see above).")
 (define-public r-bgvar
   (package
     (name "r-bgvar")
-    (version "2.5.8")
+    (version "2.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGVAR" version))
        (sha256
-        (base32 "124vy9dx91sa42z6x4g4drai0gxz2l36p0nn4ng2r0hxj6z2m34x"))))
+        (base32 "0ds9xk2pdcl38jwv94bp1x1z8drx2ri4sd8qp8iyn6bgn73bsfsh"))))
     (properties `((upstream-name . "BGVAR")))
     (build-system r-build-system)
     (arguments
@@ -21693,13 +21723,13 @@ Ye et al (2023) <doi:10.1080/24754269.2023.2205802>.")
 (define-public r-beebdc
   (package
     (name "r-beebdc")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeBDC" version))
        (sha256
-        (base32 "0lnd07lcl6lajskdkmwfa1n03i49xlkd3kmwc733g9gw5pyzpam1"))))
+        (base32 "134bc65iw3ljslhbmlz86w0y8ngdsza0rva4bkjm141d3h9f3fg1"))))
     (properties `((upstream-name . "BeeBDC")))
     (build-system r-build-system)
     (arguments

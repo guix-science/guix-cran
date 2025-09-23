@@ -15756,13 +15756,13 @@ cocktails.")
 (define-public r-emc2
   (package
     (name "r-emc2")
-    (version "3.2.0")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMC2" version))
        (sha256
-        (base32 "0yl1l2ai051sydhp9i2hj6ywjylgh6hmnxzrxqjsq429b210746z"))))
+        (base32 "0l7dif7ifazva8ziqkg1j0w8adfjfmnlp82dkangzq3393b9dfr1"))))
     (properties `((upstream-name . "EMC2")))
     (build-system r-build-system)
     (arguments
@@ -20809,6 +20809,33 @@ non-comparative) experiments using the grammar of experimental designs
 intermediate, mutable object that is built progressively by fundamental
 experimental components like units, treatments, and their relation.  The system
 aids in experimental planning, management and workflow.")
+    (license license:expat)))
+
+(define-public r-edgemodelr
+  (package
+    (name "r-edgemodelr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "edgemodelr" version))
+       (sha256
+        (base32 "14kyj6nqqdkyxm4p31crix6vg6r0wfpv56p7zd8lmqlxfak9nmr5"))))
+    (properties `((upstream-name . "edgemodelr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/PawanRamaMali/edgemodelr")
+    (synopsis "Local Language Model Inference")
+    (description
+     "Enables R users to run large language models locally using GGUF model files and
+the llama.cpp inference engine.  Provides a complete R interface for loading
+models, generating text completions, and streaming responses in real-time.
+Supports local inference without requiring cloud APIs or internet connectivity,
+ensuring complete data privacy and control.  References: Gerganov et al. (2023)
+<https://github.com/ggml-org/llama.cpp>.")
     (license license:expat)))
 
 (define-public r-edgedata

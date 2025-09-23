@@ -28017,6 +28017,43 @@ distances matrix, a squared distances matrix, an inner-products matrix or
 computed from observed predictors.")
     (license license:gpl2)))
 
+(define-public r-dbrobust
+  (package
+    (name "r-dbrobust")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dbrobust" version))
+       (sha256
+        (base32 "1z989hw0609x5l0fwh69wpzxgj11f0ngdxx74frmk8kjm80fwl8b"))))
+    (properties `((upstream-name . "dbrobust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-statmatch
+                             r-rdpack
+                             r-rcolorbrewer
+                             r-qgraph
+                             r-proxy
+                             r-pheatmap
+                             r-mass
+                             r-ggplot2
+                             r-ggally
+                             r-dbstats
+                             r-ade4))
+    (home-page "https://cran.r-project.org/package=dbrobust")
+    (synopsis
+     "Robust Distance-Based Visualization and Analysis of Mixed-Type Data")
+    (description
+     "Robust distance-based methods applied to matrices and data frames, producing
+distance matrices that can be used as input for various visualization techniques
+such as graphs, heatmaps, or multidimensional scaling configurations.  See Boj
+and GranÃ© (2024) <doi:10.1016/j.seps.2024.101992>.")
+    (license license:gpl3)))
+
 (define-public r-dbr
   (package
     (name "r-dbr")

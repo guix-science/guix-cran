@@ -1799,6 +1799,30 @@ refers to an overall clustering result.  Jia Li, Beomseok Seo, and Lin Lin
 <doi:10.1093/bioinformatics/btaa165>.")
     (license license:gpl2+)))
 
+(define-public r-otbsegm
+  (package
+    (name "r-otbsegm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OTBsegm" version))
+       (sha256
+        (base32 "1fign060h2w33bp8n3nrcaqvw3k2q28sp796xccp086r7zdhpvbb"))))
+    (properties `((upstream-name . "OTBsegm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-link2gi r-cli))
+    (home-page "https://cidree.github.io/OTBsegm/")
+    (synopsis "Apply Unsupervised Segmentation Algorithms from 'OTB'")
+    (description
+     "Apply unsupervised segmentation algorithms included in Orfeo @code{ToolBox}
+software (<https://www.orfeo-toolbox.org/>), such as mean shift or watershed
+segmentation.")
+    (license license:expat)))
+
 (define-public r-otargen
   (package
     (name "r-otargen")
@@ -3308,6 +3332,45 @@ provides some help functions like search.parent, gg.pie (visualise working hours
 in ggplot2) and tree.headlines (visualise headline stricture in tree format) to
 help user managing their complex org files.")
     (license license:gpl2+)))
+
+(define-public r-orgheatmap
+  (package
+    (name "r-orgheatmap")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OrgHeatmap" version))
+       (sha256
+        (base32 "0r7qlal34x88wr7iznbn3qfal1f157jsc5al3m2qcip582915qh9"))))
+    (properties `((upstream-name . "OrgHeatmap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-stringdist
+                             r-rlang
+                             r-rcolorbrewer
+                             r-purrr
+                             r-patchwork
+                             r-magrittr
+                             r-ggpolypath
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OrgHeatmap")
+    (synopsis "Visualization Tool for Human Organ Data")
+    (description
+     "This package provides a tool for visualizing numerical data (such as gene
+expression levels) on human organ maps.  It supports custom color schemes, organ
+system filtering, and optional bar charts for quantitative comparison.  The
+package integrates organ coordinate data to plot anatomical contours and map
+data values to specific organs, facilitating intuitive visualization of
+biological data distribution.  The underlying method was described in the
+preprint by Zhou et al. (2022) <doi:10.1101/2022.09.07.506938>.")
+    (license license:expat)))
 
 (define-public r-organizr
   (package
@@ -11652,13 +11715,13 @@ correlated with each of the variates.  More details can be found in Sei (2016)
 (define-public r-ofpetrial
   (package
     (name "r-ofpetrial")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ofpetrial" version))
        (sha256
-        (base32 "0ig54jjanjgxmrsaca8cd72rfyhzxmzcd3p87xay1ncvwsqniyjw"))))
+        (base32 "1avblkv7081v50mnfk9h67m2pzyaxx9xjjlwqxsffahz2x4mf8y0"))))
     (properties `((upstream-name . "ofpetrial")))
     (build-system r-build-system)
     (arguments

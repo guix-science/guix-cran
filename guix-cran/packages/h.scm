@@ -1029,6 +1029,41 @@ special features for Argentina and Chile data-sets).")
 widely used in hydrology and stream ecology.")
     (license license:gpl2+)))
 
+(define-public r-hydrostate
+  (package
+    (name "r-hydrostate")
+    (version "0.2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydroState" version))
+       (sha256
+        (base32 "1agw9jsw3gw4rh4xa7cy12ymhhsazixjbq5y3hqc933gzmvp5pfa"))))
+    (properties `((upstream-name . "hydroState")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-truncnorm
+                             r-sn
+                             r-padr
+                             r-diagram
+                             r-deoptim
+                             r-checkmate))
+    (home-page "https://github.com/peterson-tim-j/HydroState")
+    (synopsis "Hidden Markov Modelling of Hydrological State Change")
+    (description
+     "Identifies regime changes in streamflow runoff not explained by variations in
+precipitation.  The package builds a flexible set of Hidden Markov Models of
+annual, seasonal or monthly streamflow runoff with precipitation as a predictor.
+ Suites of models can be built for a single site, ranging from one to three
+states and each with differing combinations of error models and auto-correlation
+terms.  The most parsimonious model is easily identified by AIC, and useful for
+understanding catchment drought non-recovery: Peterson TJ, Saft M, Peel MC &
+John A (2021) <doi:10.1126/science.abd5085>.")
+    (license license:gpl3)))
+
 (define-public r-hydroroute
   (package
     (name "r-hydroroute")

@@ -1014,6 +1014,33 @@ legislators and their activities.  See <http://www.theyworkforyou.com> for
 details.")
     (license license:gpl3)))
 
+(define-public r-twfeivdecomp
+  (package
+    (name "r-twfeivdecomp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "twfeivdecomp" version))
+       (sha256
+        (base32 "1gydq7rnbdvb6x11azda45800pbqgv13hmgfl9adh1dr45bw0ymk"))))
+    (properties `((upstream-name . "twfeivdecomp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-magrittr r-formula r-dplyr r-aer))
+    (home-page "https://github.com/shomiyaji/twfeiv-decomp")
+    (synopsis "Instrumented Difference-in-Differences Decomposition")
+    (description
+     "This package implements a decomposition of the two-way fixed effects
+instrumental variable estimator into all possible Wald difference-in-differences
+estimators.  Provides functions to summarize the contribution of different
+cohort comparisons to the overall two-way fixed effects instrumental variable
+estimate, with or without controls.  The method is described in Miyaji (2024)
+<doi:10.48550/@code{arXiv.2405.16467>}.")
+    (license license:expat)))
+
 (define-public r-twenty48
   (package
     (name "r-twenty48")
@@ -1816,13 +1843,13 @@ programming.")
 (define-public r-turner
   (package
     (name "r-turner")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "turner" version))
        (sha256
-        (base32 "0qcf018k7kz84hpwp3i3fv270kjb9id1dh8rqcvnmaqn1jy829hq"))))
+        (base32 "066l92kc8v885m43anij4pd73i1j4mb7g63ic3zmx8kgn227qcq3"))))
     (properties `((upstream-name . "turner")))
     (build-system r-build-system)
     (arguments
@@ -9418,6 +9445,36 @@ principle of transx is to keep the number of observations the same.  Operations
 that reduce this number have to fill the observations gap.")
     (license license:gpl3)))
 
+(define-public r-transurv
+  (package
+    (name "r-transurv")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tranSurv" version))
+       (sha256
+        (base32 "1zcbcvas4rdlkn8w2dkrym9rn2961xz4qh6af5p8bics53khvbyq"))))
+    (properties `((upstream-name . "tranSurv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncsp r-survival r-squarem r-rootsolve))
+    (home-page "https://github.com/stc04003/tranSurv")
+    (synopsis "Transformation-Based Regression under Dependent Truncation")
+    (description
+     "This package provides a latent, quasi-independent truncation time is assumed to
+be linked with the observed dependent truncation time, the event time, and an
+unknown transformation parameter via a structural transformation model.  The
+transformation parameter is chosen to minimize the conditional Kendall's tau
+(Martin and Betensky, 2005) <doi:10.1198/016214504000001538> or the regression
+coefficient estimates (Jones and Crowley, 1992) <doi:10.2307/2336782>.  The
+marginal distribution for the truncation time and the event time are completely
+left unspecified.  The methodology is applied to survival curve estimation and
+regression analysis.")
+    (license license:gpl3+)))
+
 (define-public r-transtggm
   (package
     (name "r-transtggm")
@@ -10918,13 +10975,13 @@ about climate risk has been included.")
 (define-public r-tradestatistics
   (package
     (name "r-tradestatistics")
-    (version "5.0.0")
+    (version "6.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tradestatistics" version))
        (sha256
-        (base32 "0a3pf18s06af7czi39hkvb1bmqn47dkva7kvbvpfl1vrl9298fwm"))))
+        (base32 "1fj2waisj2vrv0vhg3qwfpfcv24n3hdiy3p84hkn4fb8di42shsk"))))
     (properties `((upstream-name . "tradestatistics")))
     (build-system r-build-system)
     (arguments
@@ -14680,6 +14737,45 @@ adding network layers such as edges and nodes to tmap maps.  More features may
 be added in future versions.")
     (license license:gpl3)))
 
+(define-public r-tmap-mapgl
+  (package
+    (name "r-tmap-mapgl")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tmap.mapgl" version))
+       (sha256
+        (base32 "04if5cvxxchjdbfnj9qg17sdxrg12gy8vx7bn72p02jjlsim8hc7"))))
+    (properties `((upstream-name . "tmap.mapgl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units
+                             r-tmaptools
+                             r-tmap
+                             r-terra
+                             r-stars
+                             r-sf
+                             r-rlang
+                             r-mapgl
+                             r-htmlwidgets
+                             r-htmltools
+                             r-data-table
+                             r-colorspace
+                             r-cli))
+    (home-page "https://github.com/r-tmap/tmap.mapgl")
+    (synopsis
+     "Extensions to 'tmap' with Two New Modes: 'mapbox' and 'maplibre'")
+    (description
+     "The tmap package provides two plotting modes for static and interactive thematic
+maps.  This package extends tmap with two additional modes based on Mapbox GL JS
+and @code{MapLibre} GL JS'.  These modes feature interactive vector tiles, globe
+views, and other modern web-mapping capabilities, while maintaining a consistent
+tmap interface across all plotting modes.")
+    (license license:gpl3)))
+
 (define-public r-tmap-glyphs
   (package
     (name "r-tmap-glyphs")
@@ -16220,13 +16316,13 @@ project template for Rstudio'.")
 (define-public r-tinyplot
   (package
     (name "r-tinyplot")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyplot" version))
        (sha256
-        (base32 "02ij8cr1nqixkk492f68yy28phx1c03y616aw4qgj7c1b58ng702"))))
+        (base32 "0w8k56scg534f56jvxaibkbiz2n327pan8rdzfg6dgbf6mibzd1m"))))
     (properties `((upstream-name . "tinyplot")))
     (build-system r-build-system)
     (arguments
@@ -17526,6 +17622,49 @@ be inserted into the output stream.")
      "Collect marketing data from @code{TikTok} Ads using the Windsor.ai API
 <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
+
+(define-public r-tikatuwq
+  (package
+    (name "r-tikatuwq")
+    (version "0.4.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tikatuwq" version))
+       (sha256
+        (base32 "0iiy9sk3wliakmmswhgn2l8y5xlcx5cf0wcmnha1ncfxzrj4z7ng"))))
+    (properties `((upstream-name . "tikatuwq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-lubridate
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tikatuwq/tikatuwq")
+    (synopsis "Water Quality Analysis Tools for the Brazilian Context")
+    (description
+     "This package provides tools to import, clean, validate, and analyze freshwater
+quality data in Brazil.  Implements water quality indices including the Water
+Quality Index (WQI/IQA), the Trophic State Index (TSI/IET) after Carlson (1977)
+<doi:10.4319/lo.1977.22.2.0361> and Lamparelli (2004)
+<https://www.teses.usp.br/teses/disponiveis/41/41134/tde-20032006-075813/publico/@code{TeseLamparelli2004.pdf>},
+and the National Sanitation Foundation Water Quality Index (NSF WQI)
+<https://www.nsf.org/education/nsf-water-quality-index>.  The package also
+checks compliance with Brazilian standard CONAMA Resolution 357/2005
+<https://conama.mma.gov.br/?id=450&option=com_sisconama&task=arquivo.download>
+and generates reproducible reports for routine monitoring workflows.")
+    (license license:expat)))
 
 (define-public r-tigris
   (package
@@ -31981,13 +32120,13 @@ big data: if you give it a data.table, @code{tab()} uses data.table syntax.")
 (define-public r-tabularmlc
   (package
     (name "r-tabularmlc")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabularMLC" version))
        (sha256
-        (base32 "1gppzbf780ci4vrvy7rd3xa0bvwxca5f05a9xk194xv913vyd440"))))
+        (base32 "1a7q0w5s97k2jxmyq080n94qky2lpdrqsc2cx2911qd867kvlvzf"))))
     (properties `((upstream-name . "tabularMLC")))
     (build-system r-build-system)
     (arguments
@@ -33050,13 +33189,13 @@ for the general exposition to the study of computational optimal transport.")
 (define-public r-t4cluster
   (package
     (name "r-t4cluster")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "T4cluster" version))
        (sha256
-        (base32 "0wai4qgpkwc1p5wwpvi0z6zrcj9ha1wiy27qjpcfvfa2bhaid2w5"))))
+        (base32 "1fdc79h8r2djh9ravbjpa7rcs9y5fiha8n5kgkfw7bsqz9rd1ndg"))))
     (properties `((upstream-name . "T4cluster")))
     (build-system r-build-system)
     (arguments
@@ -33075,7 +33214,7 @@ for the general exposition to the study of computational optimal transport.")
                              r-ggplot2
                              r-fda
                              r-admm))
-    (home-page "https://kisungyou.com/T4cluster/")
+    (home-page "https://www.kisungyou.com/T4cluster/")
     (synopsis "Tools for Cluster Analysis")
     (description
      "Cluster analysis is one of the most fundamental problems in data science.  We

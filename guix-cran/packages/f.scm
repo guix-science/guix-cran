@@ -8022,13 +8022,13 @@ K., Mandal, A., & Yang, J., (2024)<doi:10.1007/s11222-024-10465-x>.")
 (define-public r-forit
   (package
     (name "r-forit")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ForIT" version))
        (sha256
-        (base32 "118jh1xhls9v6dalbi93dhzc0v4k0jky5vjkpf3gqqsnj5rcswzq"))))
+        (base32 "05nhaslzr3fllap8gnnzshc87zr3f5xqfgm0ir5simb01h5s267h"))))
     (properties `((upstream-name . "ForIT")))
     (build-system r-build-system)
     (arguments
@@ -8040,6 +8040,7 @@ K., Mandal, A., & Yang, J., (2024)<doi:10.1007/s11222-024-10465-x>.")
                              r-rcolorbrewer
                              r-purrr
                              r-metr
+                             r-matrix
                              r-magrittr
                              r-ggplot2
                              r-dplyr))
@@ -23297,6 +23298,49 @@ Using a Probabilistic Model to Assist Merging of Large-scale Administrative
 Records <doi:10.1017/S0003055418000783> and is available at
 <https://imai.fas.harvard.edu/research/linkage.html>.")
     (license license:gpl3+)))
+
+(define-public r-fastkrr
+  (package
+    (name "r-fastkrr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FastKRR" version))
+       (sha256
+        (base32 "08y4hdk0l1wbb1lva2mv89j6n4i3hkv54mb9jd0ifvcchckrh01x"))))
+    (properties `((upstream-name . "FastKRR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-parsnip
+                             r-generics
+                             r-cvst))
+    (home-page "https://github.com/kybak90/FastKRR")
+    (synopsis "Kernel Ridge Regression using 'RcppArmadillo'")
+    (description
+     "This package provides core computational operations in C++ via
+@code{RcppArmadillo}', enabling faster performance than pure R, improved
+numerical stability, and parallel execution with @code{OpenMP} where available.
+On systems without @code{OpenMP} support, the package automatically falls back
+to single-threaded execution with no user configuration required.  For efficient
+model selection, it integrates with CVST to provide sequential-testing
+cross-validation that identifies competitive hyperparameters without exhaustive
+grid search.  The package offers a unified interface for exact kernel ridge
+regression and three scalable approximationsâNystrÃ¶m, Pivoted Cholesky, and
+Random Fourier Featuresâallowing analyses with substantially larger sample
+sizes than are feasible with exact KRR. It also integrates with the tidymodels
+ecosystem via the parsnip model specification krr_reg', the S3 method
+@code{tunable.krr_reg()}, and the direct fitting helper @code{fit_krr()}.  To
+understand the theoretical background, one can refer to Wainwright (2019)
+<doi:10.1017/9781108627771>.")
+    (license license:gpl2+)))
 
 (define-public r-fastkqr
   (package

@@ -26399,13 +26399,13 @@ simple features access like sf but running on Spark distributed system.")
 (define-public r-geosimilarity
   (package
     (name "r-geosimilarity")
-    (version "3.7")
+    (version "3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geosimilarity" version))
        (sha256
-        (base32 "10hdll5niqd1k5kgqzp44dipqwp6mvbq00h0x9h16yswvxrx6ji9"))))
+        (base32 "1wp5qd1jzsxn6wmzwzdr4bjhc570jnhsm7n1bmcb12saqr993cc6"))))
     (properties `((upstream-name . "geosimilarity")))
     (build-system r-build-system)
     (arguments
@@ -28998,27 +28998,27 @@ genome-wide scan, candidate region scan and single window test.")
 (define-public r-genord
   (package
     (name "r-genord")
-    (version "1.4.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenOrd" version))
        (sha256
-        (base32 "17mfrj1fwj8mri1w0bl2pw1rqriidmd67i7gpn9v56g9dzw5rzms"))))
+        (base32 "1kxxc0rcaxixarkmjb8y89bgi99wamzns2vpckllcjkhyfqy6dj0"))))
     (properties `((upstream-name . "GenOrd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-matrix r-mass))
+    (propagated-inputs (list r-mvtnorm r-matrix r-cubature r-bbmle))
     (home-page "https://cran.r-project.org/package=GenOrd")
     (synopsis
-     "Simulation of Discrete Random Variables with Given Correlation Matrix and Marginal Distributions")
+     "Simulation of Discrete Random Variables with Given Correlation Matrix and Marginal Distributions via a Gaussian or Student's t Copula")
     (description
-     "This package provides a gaussian copula based procedure for generating samples
-from discrete random variables with prescribed correlation matrix and marginal
-distributions.")
-    (license (list license:gpl2+ license:gpl3+))))
+     "This package provides a Gaussian or Student's t copula-based procedure for
+generating samples from discrete random variables with prescribed correlation
+matrix and marginal distributions.")
+    (license license:gpl3)))
 
 (define-public r-genopop
   (package

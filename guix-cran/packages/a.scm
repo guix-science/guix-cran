@@ -13348,13 +13348,13 @@ et al. (2017) <doi:10.1007/978-3-319-54819-7_16>.  Cruz Rambaud et al. (2015)
 (define-public r-annotator
   (package
     (name "r-annotator")
-    (version "0.0.3.1")
+    (version "0.0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "annotator" version))
        (sha256
-        (base32 "17jbr414wamxczsnxldz3la4n15d0b4lbhlhk8na9hniidin4f9b"))))
+        (base32 "0jbk97hh0k1ck65bnv4l37zb9ayh05hv5zfvmwqvw97r7y67fm7z"))))
     (properties `((upstream-name . "annotator")))
     (build-system r-build-system)
     (arguments
@@ -13383,7 +13383,7 @@ et al. (2017) <doi:10.1007/978-3-319-54819-7_16>.  Cruz Rambaud et al. (2015)
 outlining.  Annotator has the same function as @code{graphics::locator()} but
 achieves its purpose through drawing, rather than multiple mouse clicks.  It is
 based on the htmlwidgets package and fabric.js @code{JavaScript} library
-<http://fabricjs.com/>.")
+<https://fabricjs.com/>.")
     (license license:gpl3+)))
 
 (define-public r-annotationbustr
@@ -13703,13 +13703,13 @@ a second model trained on the classes of interest.")
 (define-public r-animint2
   (package
     (name "r-animint2")
-    (version "2025.1.28")
+    (version "2025.9.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "animint2" version))
        (sha256
-        (base32 "01fy7wa5qyi1cqgmlcgdakznkssdhqvpdj3ika40ywx79w3vvc2c"))))
+        (base32 "0l5pyrnpzid6hkwfhq6cjms3j2l33fap0z2kwmvjsqqxgc1zdvry"))))
     (properties `((upstream-name . "animint2")))
     (build-system r-build-system)
     (arguments

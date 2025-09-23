@@ -8188,13 +8188,13 @@ Caamal-Pat et.al. (2021) <doi:10.3389/fgene.2021.680569>.")
 (define-public r-lme4breeding
   (package
     (name "r-lme4breeding")
-    (version "1.0.70")
+    (version "1.0.80")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lme4breeding" version))
        (sha256
-        (base32 "1mn9knb7sgzgfhy4c30li8hikjnp07nqly1b8q3yq3vhi84ipjsf"))))
+        (base32 "16jas70qpf8xxqqglz3xshmq7gsl60h58kkk95bm8lbhk9s3ji6p"))))
     (properties `((upstream-name . "lme4breeding")))
     (build-system r-build-system)
     (arguments
@@ -8203,7 +8203,7 @@ Caamal-Pat et.al. (2021) <doi:10.3389/fgene.2021.680569>.")
     (propagated-inputs (list r-matrix r-lme4 r-crayon))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lme4breeding")
-    (synopsis "Relationship-Based Mixed-Effects Models")
+    (synopsis "Breeding-Related Mixed-Effects Models")
     (description
      "Fit relationship-based and customized mixed-effects models with complex
 variance-covariance structures using the lme4 machinery.  The core computational
