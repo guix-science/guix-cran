@@ -11,12 +11,12 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages image)
+  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages xorg)
@@ -7443,43 +7443,6 @@ project at <https://inkaverse.com/>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-intextsummarytable
-  (package
-    (name "r-intextsummarytable")
-    (version "3.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "inTextSummaryTable" version))
-       (sha256
-        (base32 "0d1hdrmpfy1hv7y59g23whffs16dpd4x54dz224xyh3d2x3xb563"))))
-    (properties `((upstream-name . "inTextSummaryTable")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list pandoc))
-    (propagated-inputs (list r-scales
-                             r-reshape2
-                             r-plyr
-                             r-officer
-                             r-magrittr
-                             r-ggrepel
-                             r-ggplot2
-                             r-flextable
-                             r-cowplot
-                             r-clinutils))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/openanalytics/inTextSummaryTable")
-    (synopsis "Creation of in-Text Summary Table")
-    (description
-     "Creation of tables of summary statistics or counts for clinical data (for
-TLFs').  These tables can be exported as in-text table (with the flextable
-package) for a Clinical Study Report (Word format) or a topline presentation
-(@code{PowerPoint} format), or as interactive table (with the DT package) to an
-html document for clinical data review.")
-    (license license:expat)))
-
 (define-public r-intervcomp
   (package
     (name "r-intervcomp")
@@ -10386,35 +10349,6 @@ series data from/to an @code{InfluxDB} server.  Additionally, handy wrappers for
 the Influx Query Language (IQL) to manage and explore a remote database are
 provided.")
     (license license:gpl3)))
-
-(define-public r-influxdbclient
-  (package
-    (name "r-influxdbclient")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "influxdbclient" version))
-       (sha256
-        (base32 "0zyb6ycyw03kwg8f27vhy14i0bh58j040bjbi9vm1m692hcvcqcd"))))
-    (properties `((upstream-name . "influxdbclient")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6
-                             r-plyr
-                             r-nanotime
-                             r-jsonlite
-                             r-httr
-                             r-bit64))
-    (home-page "https://github.com/influxdata/influxdb-client-r")
-    (synopsis "'InfluxDB' 2.x Client")
-    (description
-     "@code{InfluxDB} 2.x time-series database client.  Supports both @code{InfluxDB}
-OSS (<https://portal.influxdata.com/downloads/>) and Cloud
-(<https://cloud2.influxdata.com/>) version.")
-    (license (license:fsdg-compatible "MIT License + file LICENSE"))))
 
 (define-public r-influential
   (package

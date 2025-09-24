@@ -4274,25 +4274,34 @@ tide heights from the harmonics is based on XTide'.")
 (define-public r-rtiddlywiki
   (package
     (name "r-rtiddlywiki")
-    (version "0.1.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtiddlywiki" version))
        (sha256
-        (base32 "1nipbly7b6gn49rwy6mrbg1bnh437qyayxrnskixc0fifzln43xl"))))
+        (base32 "1zw6p7xg6dhldn1v25x0x81lgfbr3xwnwhbg7m447c36crvqcvyp"))))
     (properties `((upstream-name . "rtiddlywiki")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-websocket
+                             r-stringr
+                             r-stringi
                              r-settings
+                             r-rvest
                              r-rmarkdown
+                             r-pingr
+                             r-later
+                             r-knitr
                              r-jsonlite
-                             r-httr
-                             r-bookdown))
-    (native-inputs (list r-knitr))
+                             r-httr2
+                             r-htmlwidgets
+                             r-htmltools
+                             r-digest
+                             r-bookdown
+                             r-base64enc))
     (home-page "https://rtiddlywiki.bangyou.me/")
     (synopsis "R Interface for 'TiddlyWiki'")
     (description
@@ -4972,13 +4981,13 @@ more.")
 (define-public r-rtables-officer
   (package
     (name "r-rtables-officer")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtables.officer" version))
        (sha256
-        (base32 "08k123rw8vvypn8a2b248va8j3pak715ca1w9x2g8ryn46hr0hsb"))))
+        (base32 "1h8gvwhi5z9q312xv0j78ixf6qsqwqwpcngqf5wq4qkqliclcjvw"))))
     (properties `((upstream-name . "rtables.officer")))
     (build-system r-build-system)
     (arguments
@@ -20158,13 +20167,13 @@ and Feng Tian (2014) <DOI:10.1371/journal.pone.0107684>), and HE regression
 (define-public r-rmvl
   (package
     (name "r-rmvl")
-    (version "1.1.0.1")
+    (version "1.1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMVL" version))
        (sha256
-        (base32 "13wyp4ri6b73j8vn787rzf5532maqmq8slv743c69rzgs2vw9hjn"))))
+        (base32 "185an7asgsw0dqqn33p39zyn32i9zajn6r97bvvx0nyxqvsrllh2"))))
     (properties `((upstream-name . "RMVL")))
     (build-system r-build-system)
     (arguments
@@ -20424,13 +20433,13 @@ panels.  The full documentation and tutorials are at
 (define-public r-rmss
   (package
     (name "r-rmss")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMSS" version))
        (sha256
-        (base32 "09kd55qa43nql0rrbgz4xasqzpbsj2q7683ijmd5frijzxhjzahh"))))
+        (base32 "02zp5jmw39pzzjkn5vnj8bd0d9iw9ricg4dbsk8xrlalp95p7prp"))))
     (properties `((upstream-name . "RMSS")))
     (build-system r-build-system)
     (arguments
@@ -21371,44 +21380,6 @@ classification with mixture modelling <doi: 10.18637/jss.v067.i06>.")
 interface is provided to call C function of the bobyqa implementation (See
 <https://github.com/emmt/Algorithms/tree/master/bobyqa>).")
     (license license:gpl2+)))
-
-(define-public r-rminizinc
-  (package
-    (name "r-rminizinc")
-    (version "0.0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rminizinc" version))
-       (sha256
-        (base32 "0yyg8ikdlksxlsc8ms4gb8dvpdjk26np6cpm5a7rjp748x8is6qx"))))
-    (properties `((upstream-name . "rminizinc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list pandoc))
-    (propagated-inputs (list r-rlist
-                             r-rlang
-                             r-rjson
-                             r-rcpp
-                             r-r6
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/acharaakshit/RMiniZinc")
-    (synopsis "R Interface to 'MiniZinc'")
-    (description
-     "Constraint optimization, or constraint programming, is the name given to
-identifying feasible solutions out of a very large set of candidates, where the
-problem can be modeled in terms of arbitrary constraints. @code{MiniZinc} is a
-free and open-source constraint modeling language.  Constraint satisfaction and
-discrete optimization problems can be formulated in a high-level modeling
-language.  Models are compiled into an intermediate representation that is
-understood by a wide range of solvers. @code{MiniZinc} itself provides several
-solvers, for instance @code{GeCode}'.  R users can use the package to solve
-constraint programming problems without using @code{MiniZinc} directly, modify
-existing @code{MiniZinc} models and also create their own models.")
-    (license (license:fsdg-compatible "Mozilla Public License Version 2.0"))))
 
 (define-public r-rminer
   (package
@@ -24297,13 +24268,13 @@ supported via the bayesplot and posterior packages.")
 (define-public r-rjtools
   (package
     (name "r-rjtools")
-    (version "1.0.18")
+    (version "1.0.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjtools" version))
        (sha256
-        (base32 "0m5bp1n644h1d9igcqjav61h1nh7gvqi655jss0hinvfcrf0rx9r"))))
+        (base32 "10mldgkmyv27wl1dqkxmi4ppiz2hdgzj2jvmci25a38l19hcl6dl"))))
     (properties `((upstream-name . "rjtools")))
     (build-system r-build-system)
     (arguments
@@ -26961,13 +26932,13 @@ operations on the manifold of positive definite matrices.")
 (define-public r-riembase
   (package
     (name "r-riembase")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RiemBase" version))
        (sha256
-        (base32 "1ikv7n8hp23a5dbmnfypdkx74vxwjd9br0hvysnhhpg1ffvr5vhi"))))
+        (base32 "1grg6yw9c8rp242bhw9nmixf46x0asd7v5qzhwavdp46114caf89"))))
     (properties `((upstream-name . "RiemBase")))
     (build-system r-build-system)
     (arguments
@@ -41098,13 +41069,13 @@ transformed space.")
 (define-public r-rebus-unicode
   (package
     (name "r-rebus-unicode")
-    (version "0.0-2")
+    (version "0.0-2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rebus.unicode" version))
        (sha256
-        (base32 "185313wh4zpp6addfdr78pjhxzazlfwgsddwk02zrzblf4iwzjdm"))))
+        (base32 "1ngbz16yi6r0c4rkz0kqh29vmvifxsvdi51hd6d68zdz0zrmkis9"))))
     (properties `((upstream-name . "rebus.unicode")))
     (build-system r-build-system)
     (arguments
@@ -51595,6 +51566,50 @@ files, as well as serialize/deserialize data.frames/@code{DataFrames}.")
 from Ravelry.com', an organizational tool for crocheters, knitters, spinners,
 and weavers.  You can retrieve pattern, yarn, author, and shop information by
 search or by a given id.")
+    (license license:expat)))
+
+(define-public r-ravecore
+  (package
+    (name "r-ravecore")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ravecore" version))
+       (sha256
+        (base32 "059wv4482by6wpx6in46rbzaqxghx5m166nkd0ycyfyr7jq63n87"))))
+    (properties `((upstream-name . "ravecore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-threebrain
+                             r-s7
+                             r-ravetools
+                             r-ravepipeline
+                             r-r6
+                             r-jsonlite
+                             r-ieegio
+                             r-fs
+                             r-filearray
+                             r-data-table
+                             r-bidsr))
+    (home-page "https://rave.wiki")
+    (synopsis "Core File Structures and Workflows for 'RAVE'")
+    (description
+     "Defines storage standard for Read, process, and analyze intracranial
+electroencephalography and deep-brain stimulation in RAVE', a reproducible
+framework for analysis and visualization of @code{iEEG} by Magnotti, Wang, and
+Beauchamp, (2020, <doi:10.1016/j.neuroimage.2020.117341>).  Supports brain
+imaging data structure (BIDS) <https://bids.neuroimaging.io> and native file
+structure to ingest signals from Matlab data files, hierarchical data format 5
+(HDF5), European data format (EDF), @code{BrainVision} core data format (BVCDF),
+or @code{BlackRock} Microsystem (NEV/NSx); process images in Neuroimaging
+informatics technology initiative (N@code{IfTI}) and @code{FreeSurfer} formats,
+providing brain imaging normalization to template brain, facilitating
+@code{threeBrain} package for comprehensive electrode localization via YAEL
+(your advanced electrode localizer) by Wang, Magnotti, Zhang, and Beauchamp
+(2023, <doi:10.1523/ENEURO.0328-23.2023>).")
     (license license:expat)))
 
 (define-public r-ravages

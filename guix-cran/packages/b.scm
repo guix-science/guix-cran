@@ -18702,13 +18702,13 @@ also provided.")
 (define-public r-bhmsmafmri
   (package
     (name "r-bhmsmafmri")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BHMSMAfMRI" version))
        (sha256
-        (base32 "0xn4ss422mkshx5kcznaym04i5z5a9vw9hvcb10r38vq031wys8q"))))
+        (base32 "13cvc1d3dgl8mkw8sqs7ixx41yn9afbn4mcwrahy0cz6y09pic42"))))
     (properties `((upstream-name . "BHMSMAfMRI")))
     (build-system r-build-system)
     (arguments
@@ -30321,13 +30321,13 @@ sources such as @code{OpenStreetMap}', Carto', Mapbox and others in R.")
 (define-public r-basefun
   (package
     (name "r-basefun")
-    (version "1.2-3")
+    (version "1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basefun" version))
        (sha256
-        (base32 "1vs2134a85anjkymngd7idp4y8i8limak2gci0739v4jxj8532g0"))))
+        (base32 "18wf6aj90ybc2gfnic1f82kh4hn4gd9mwyrbazib612hmpv1bvpy"))))
     (properties `((upstream-name . "basefun")))
     (build-system r-build-system)
     (arguments

@@ -3684,6 +3684,42 @@ distribution function, only that the data have to be at least ordinal numbers.
 See Konietschke et al. (2015) <doi:10.18637/jss.v064.i09> for details.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-nparact
+  (package
+    (name "r-nparact")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nparACT" version))
+       (sha256
+        (base32 "079qq4adx40i9v1ybd69wz47m6hzlc5nvp25pcrnjrmxdzhshbri"))))
+    (properties `((upstream-name . "nparACT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-stringr r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=nparACT")
+    (synopsis "Non-Parametric Measures of Actigraphy Data")
+    (description
+     "Computes interdaily stability (IS), intradaily variability (IV) & the relative
+amplitude (RA) from actigraphy data as described in Blume et al. (2016) <doi:
+10.1016/j.mex.2016.05.006> and van Someren et al. (1999) <doi:
+10.3109/07420529908998724>.  Additionally, it also computes L5 (i.e.  the 5
+hours with lowest average actigraphy amplitude) and M10 (the 10 hours with
+highest average amplitude) as well as the respective start times.  The flex
+versions will also compute the L-value for a user-defined number of minutes.  IS
+describes the strength of coupling of a rhythm to supposedly stable zeitgebers.
+It varies between 0 (Gaussian Noise) and 1 for perfect IS. IV describes the
+fragmentation of a rhythm, i.e.  the frequency and extent of transitions between
+rest and activity.  It is near 0 for a perfect sine wave, about 2 for Gaussian
+noise and may be even higher when a definite ultradian period of about 2 hrs is
+present.  RA is the relative amplitude of a rhythm.  Note that to obtain
+reliable results, actigraphy data should cover a reasonable number of days.")
+    (license license:gpl3)))
+
 (define-public r-noweb
   (package
     (name "r-noweb")
@@ -12324,13 +12360,13 @@ the estimation and inference function for the model.")
 (define-public r-networkr
   (package
     (name "r-networkr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "networkR" version))
        (sha256
-        (base32 "0bnbp5bif9q8m6zrsmcmy5kcz7qlh48313had4ir6zb64qhbs78j"))))
+        (base32 "0wid7nq6ln82bj6rsp1jrd483157r22cj50rfvji0a3mpdybhzdl"))))
     (properties `((upstream-name . "networkR")))
     (build-system r-build-system)
     (arguments
@@ -18235,6 +18271,42 @@ functions have been created to be used in conjunction with the R package asreml
 for the ASReml software, which can be obtained upon purchase from VSN
 international (<https://vsni.co.uk/software/asreml>).")
     (license license:gpl2+)))
+
+(define-public r-nada2
+  (package
+    (name "r-nada2")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NADA2" version))
+       (sha256
+        (base32 "0a6vj23yq1i3ip64wk27dzyrn73fagid6lhg03zn9jdgzdblvl6d"))))
+    (properties `((upstream-name . "NADA2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-survminer
+                             r-survival
+                             r-perm
+                             r-nbclust
+                             r-multcomp
+                             r-mgcv
+                             r-kendall
+                             r-fitdistrplus
+                             r-envstats
+                             r-coin
+                             r-cengam))
+    (home-page "https://github.com/SwampThingPaul/NADA2")
+    (synopsis "Data Analysis for Censored Environmental Data")
+    (description
+     "This package contains methods described by Dennis Helsel in his book \"Statistics
+for Censored Environmental Data using Minitab and R\" (2011) and courses and
+videos at <https://practicalstats.com>.  This package incorporates functions of
+NADA and adds new functionality.")
+    (license license:expat)))
 
 (define-public r-nacho
   (package

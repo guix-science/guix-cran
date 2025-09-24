@@ -16277,6 +16277,50 @@ packages matching their specified requirement. @code{findPackage(<string>})
 returns a data frame of packages with description containing the input string.")
     (license license:gpl3)))
 
+(define-public r-findit
+  (package
+    (name "r-findit")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FindIt" version))
+       (sha256
+        (base32 "05r1nfcba4626mydbpnqyqaadiawrn9wh5a4hhlmbk0bzvw2rynn"))))
+    (properties `((upstream-name . "FindIt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich
+                             r-quadprog
+                             r-matrix
+                             r-lmtest
+                             r-limsolve
+                             r-lars
+                             r-igraph
+                             r-glmnet
+                             r-glinternet
+                             r-arm))
+    (home-page "https://cran.r-project.org/package=FindIt")
+    (synopsis "Finding Heterogeneous Treatment Effects")
+    (description
+     "The heterogeneous treatment effect estimation procedure proposed by Imai and
+Ratkovic (2013)<DOI: 10.1214/12-AOAS593>.  The proposed method is applicable,
+for example, when selecting a small number of most (or least) efficacious
+treatments from a large number of alternative treatments as well as when
+identifying subsets of the population who benefit (or are harmed by) a treatment
+of interest.  The method adapts the Support Vector Machine classifier by placing
+separate LASSO constraints over the pre-treatment parameters and causal
+heterogeneity parameters of interest.  This allows for the qualitative
+distinction between causal and other parameters, thereby making the variable
+selection suitable for the exploration of causal heterogeneity.  The package
+also contains a class of functions, @code{CausalANOVA}, which estimates the
+average marginal interaction effects (AMIEs) by a regularized ANOVA as proposed
+by Egami and Imai (2019).  It contains a variety of regularization techniques to
+facilitate analysis of large factorial experiments.")
+    (license license:gpl2+)))
+
 (define-public r-findingit
   (package
     (name "r-findingit")
@@ -20202,13 +20246,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "0gy57vdg04im4z9n9g1lys0959c2y2sa83c4qzblzm3f9gl9ndh0"))))
+        (base32 "0a93m6wm4gv5kj7faji9pvg6qpih5s4j2rd0688bjhdmr3775197"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (arguments
@@ -22848,13 +22892,13 @@ available from <https://github.com/randy408/libspng/>.")
 (define-public r-fastplyr
   (package
     (name "r-fastplyr")
-    (version "0.9.0")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastplyr" version))
        (sha256
-        (base32 "0cwh83xgqlr7d3xbw4r9ghxivcdx9f86r8vispxcv0lxrxhjhgkn"))))
+        (base32 "0jrsp7rifcpl156n39vxym9645ical187m618nyjd10k343gnach"))))
     (properties `((upstream-name . "fastplyr")))
     (build-system r-build-system)
     (arguments
@@ -23720,6 +23764,37 @@ Journal of Computational and Graphical Statistics; 2) Xinyi Fang and Mengyang Gu
 (2020), Journal of Machine Learning Research; 4) Yizi Lin, Xubo Liu, Paul Segall
 and Mengyang Gu (2025), <doi:10.48550/@code{arXiv.2501.01324>}.")
     (license license:gpl2+)))
+
+(define-public r-fastfocal
+  (package
+    (name "r-fastfocal")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastfocal" version))
+       (sha256
+        (base32 "0gmnwxw02bck0mr8cp5216bbmv7lj03qn00wawwyvrizv8nvflqw"))))
+    (properties `((upstream-name . "fastfocal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra))
+    (native-inputs (list r-knitr))
+    (home-page "https://hoyiwan.github.io/fastfocal/")
+    (synopsis
+     "Fast Multiscale Raster Extraction and Moving Window Analysis with FFT")
+    (description
+     "This package provides fast moving-window (\"focal\") and buffer-based extraction
+for raster data using the terra package.  Automatically selects between a C++
+backend (via terra') and a Fast Fourier Transform (FFT) backend depending on
+problem size.  The FFT backend supports sum and mean, while other statistics
+(e.g., median, min, max, standard deviation) are handled by the terra backend.
+Supports multiple kernel types (e.g., circle, rectangle, gaussian), with NA
+handling consistent with terra via na.rm and na.policy'.  Operates on
+@code{SpatRaster} objects and returns results with the same geometry.")
+    (license license:expat)))
 
 (define-public r-fastfmm
   (package
@@ -26008,31 +26083,6 @@ function from stats package, @code{fad()} can handle high-dimensional datasets
 where number of variables exceed the sample size and is also substantially
 faster than the EM algorithms.")
     (license license:gpl3)))
-
-(define-public r-factset-protobuf-stachextensions
-  (package
-    (name "r-factset-protobuf-stachextensions")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "factset.protobuf.stachextensions" version))
-       (sha256
-        (base32 "1bs39wylva1zpa8m3b0sdrdszqqxszl1rlwyli400a9zcm7xpwvq"))))
-    (properties `((upstream-name . "factset.protobuf.stachextensions")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-r6 r-jsonlite))
-    (home-page "https://github.com/factset/stach-extensions")
-    (synopsis "'FactSet' 'STACH' Extensions Package")
-    (description
-     "Allow clients to convert @code{FactSet} STACH formatted data to simpler tabular
-formats in the form of data frames.  This package also provides helper methods
-to extract the meta data from @code{FactSet} STACH formatted data.  See
-documentation on the @code{GitHub} repository for more information.")
-    (license license:asl2.0)))
 
 (define-public r-factset-protobuf-stach-v2
   (package

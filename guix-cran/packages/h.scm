@@ -525,13 +525,13 @@ as a vector of absorbance values for discrete wavelengths is suitable.")
 (define-public r-hyperoverlap
   (package
     (name "r-hyperoverlap")
-    (version "1.1.1")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyperoverlap" version))
        (sha256
-        (base32 "10kcphn5zl1pl70xg9bn947i9mbnjxk03p6y7xhdlv152cihffw0"))))
+        (base32 "02lz68a5gp4cnpsny6xvrhfp6qgx70b02j6ddjghzvk7rcaspv82"))))
     (properties `((upstream-name . "hyperoverlap")))
     (build-system r-build-system)
     (arguments
@@ -13787,6 +13787,29 @@ explanatory variables far exceeds the sample size.  The software supports linear
 regression, likelihood-based fitting of generalized linear regression models and
 the proportional hazards model fitted by partial likelihood.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-hclustteach
+  (package
+    (name "r-hclustteach")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hclustTeach" version))
+       (sha256
+        (base32 "1zir3hpbinab95ldhv9vqdg3p9h0dc24y2bklk9q69n8mnzmghlv"))))
+    (properties `((upstream-name . "hclustTeach")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=hclustTeach")
+    (synopsis "Hierarchical Cluster Analysis (Learning Didactically)")
+    (description
+     "This package implements hierarchical clustering methods (single linkage,
+complete linkage, average linkage, and centroid linkage) with stepwise printing
+and dendrograms for didactic purposes.")
+    (license license:expat)))
 
 (define-public r-hclusteasy
   (package

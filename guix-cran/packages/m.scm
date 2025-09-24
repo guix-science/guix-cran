@@ -5079,13 +5079,13 @@ to igraph'.")
 (define-public r-multinet
   (package
     (name "r-multinet")
-    (version "4.3")
+    (version "4.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multinet" version))
        (sha256
-        (base32 "1y3sxaa1y5dh4pisjqa3al5k3gmc99lc1lvpvvlm6i91li9163bb"))))
+        (base32 "0z26iq48fjn23va2vxca25cbk1254lmlirr47196r57736askvfz"))))
     (properties `((upstream-name . "multinet")))
     (build-system r-build-system)
     (arguments
@@ -5607,13 +5607,13 @@ data.  Bryer & Pruzek (2011) <doi:10.1080/00273171.2011.636693>.")
 (define-public r-multileveloptimalbayes
   (package
     (name "r-multileveloptimalbayes")
-    (version "0.0.3.0")
+    (version "0.0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiLevelOptimalBayes" version))
        (sha256
-        (base32 "0jc9nv40dpwq8fhb5976a6ppwypa0dc2drximlsmhkbfi0fxjmmm"))))
+        (base32 "0xdsm6c1cmvvvg8mf05hcmk8pd84hk1p4kv2kr1yyhr46rnxr3k5"))))
     (properties `((upstream-name . "MultiLevelOptimalBayes")))
     (build-system r-build-system)
     (arguments
@@ -5637,9 +5637,9 @@ includes comprehensive S3 methods for result objects: @code{print()},
 @code{summary()}, @code{coef()}, @code{se()}, @code{vcov()}, @code{confint()},
 @code{as.data.frame()}, @code{dim()}, @code{length()}, @code{names()}, and
 @code{update()} for enhanced usability and integration with standard R
-workflows.  Dashuk et al. (2024) <doi:10.13140/RG.2.2.18148.39048> derived the
-optimal regularized Bayesian estimator; Dashuk et al. (2024)
-<doi:10.13140/RG.2.2.34350.01604> extended it to the multivariate case; and
+workflows.  Dashuk et al. (2025a) <doi:10.1017/psy.2025.10045> derived the
+optimal regularized Bayesian estimator; Dashuk et al. (2025b)
+<doi:10.1007/s41237-025-00264-7> extended it to the multivariate case; and
 Luedtke et al. (2008) <doi:10.1037/a0012869> formalized the two-level latent
 variable framework.")
     (license license:gpl3)))
@@ -6355,13 +6355,13 @@ methods implemented in this package are described in Sciacca et al. (2023)
 (define-public r-multid
   (package
     (name "r-multid")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multid" version))
        (sha256
-        (base32 "1lr230xa8h0306ggfcb6ds07050m9j6zbp71i9nc44xkzsv9bq9r"))))
+        (base32 "0iikb5xljzvn08wl6639dwkf0dxbpfd5bq0h2cpplamwlbbkj7l3"))))
     (properties `((upstream-name . "multid")))
     (build-system r-build-system)
     (arguments
@@ -8430,42 +8430,6 @@ gain and symmetrical uncertainty of categorical variables.")
      "Distance between multivariate t distributions, as presented by N. Bouhlel and D.
 Rousseau (2023) <doi:10.1109/LSP.2023.3324594>.")
     (license license:gpl3+)))
-
-(define-public r-mstrio
-  (package
-    (name "r-mstrio")
-    (version "11.3.5.101")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mstrio" version))
-       (sha256
-        (base32 "103xpkcahp3rzw01yb1qmymavl40xzydmn0z6ya2mcxihzfdf2k3"))))
-    (properties `((upstream-name . "mstrio")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-shinyjs
-                             r-shiny
-                             r-rstudioapi
-                             r-r6
-                             r-openssl
-                             r-markdown
-                             r-jsonlite
-                             r-httr
-                             r-data-table
-                             r-crul))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mstrio")
-    (synopsis "Interface for 'MicroStrategy' REST API")
-    (description
-     "Interface for creating data sets and extracting data through the
-@code{MicroStrategy} REST API. Access the demo API at
-<https://demo.microstrategy.com/@code{MicroStrategyLibrary/api-docs/index.html>}.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-mstr
   (package
@@ -20586,34 +20550,6 @@ phases, MLwrap aims to simplify the implementation of ML techniques, allowing
 analysts and data scientists to focus on extracting actionable insights and
 meaningful patterns from large datasets, in line with the objectives of the KDD
 process.")
-    (license license:gpl3)))
-
-(define-public r-mlvsbm
-  (package
-    (name "r-mlvsbm")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MLVSBM" version))
-       (sha256
-        (base32 "1jsaas7crdc3df790c279a5qr8iw63whmkijs86s1y6gyz4qk9vf"))))
-    (properties `((upstream-name . "MLVSBM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6 r-magrittr r-cluster r-blockmodels r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Chabert-Liddell/MLVSBM")
-    (synopsis "Stochastic Block Model for Multilevel Networks")
-    (description
-     "Simulation, inference and clustering of multilevel networks using a Stochastic
-Block Model framework as described in Chabert-Liddell, Barbillon, Donnet and
-Lazega (2021) <doi:10.1016/j.csda.2021.107179>.  A multilevel network is defined
-as the junction of two interaction networks, the upper level or
-inter-organizational level and the lower level or inter-individual level.  The
-inter-level represents an affiliation relationship.")
     (license license:gpl3)))
 
 (define-public r-mlvar
@@ -46615,13 +46551,13 @@ available at <https://www.gurobi.com>.).")
 (define-public r-matchingr
   (package
     (name "r-matchingr")
-    (version "1.3.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matchingR" version))
        (sha256
-        (base32 "1wr1faaixn5scx2c8g2jfvfm489k0ah9isza67gz0db8knja9nig"))))
+        (base32 "1cnkjpl99s1xmybjy4h03z5r6lphy1piyxyf3v32rnyxcm13yij9"))))
     (properties `((upstream-name . "matchingR")))
     (build-system r-build-system)
     (arguments

@@ -1659,13 +1659,13 @@ See Saah and Kozubowski (2025) <doi:10.1016/j.cam.2025.116588>.")
 (define-public r-extdist
   (package
     (name "r-extdist")
-    (version "0.7-3")
+    (version "0.7-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExtDist" version))
        (sha256
-        (base32 "1406d7mzrgka6iq42m33nv32w02xq0ygbfwya6mqmd83dm79cghj"))))
+        (base32 "08ng6djmrcw0bwmwjymbcqfbdhlij65n5sy7z675p6pfxpnwymyy"))))
     (properties `((upstream-name . "ExtDist")))
     (build-system r-build-system)
     (arguments
@@ -2642,20 +2642,19 @@ with different types of operators.")
 (define-public r-expdb
   (package
     (name "r-expdb")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "expDB" version))
        (sha256
-        (base32 "0h7f9127vrd45lg7k0bkgq3cghxwv2z11p4pak20pakk13g82hj4"))))
+        (base32 "1jl1w1cajh09bibyab93m5aifkdy7wdq9bqpa013a122kwsmaqg3"))))
     (properties `((upstream-name . "expDB")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-weaana
-                             r-tidyverse
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -2674,7 +2673,7 @@ with different types of operators.")
      "This package provides a SQLite database is designed to store all information of
 experiment-based data including metadata, experiment design, managements,
 phenotypic values and climate records.  The dataset can be imported from an
-excel file.")
+Excel file.")
     (license license:expat)))
 
 (define-public r-exparma
@@ -5193,13 +5192,13 @@ rate exceeds a threshold.")
 (define-public r-evgam
   (package
     (name "r-evgam")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evgam" version))
        (sha256
-        (base32 "0f8a29c2qxlzqadq694j6gwrj8rdq7x1kqwn79di7ycxfi7ifdbq"))))
+        (base32 "1yqky0jnnqb8a9cxml9597rgm6y1j2dshqpvcqq05rzw5k6slsaz"))))
     (properties `((upstream-name . "evgam")))
     (build-system r-build-system)
     (arguments
@@ -11758,6 +11757,35 @@ short time forecast of the trend incidence curve as described in Morel et al.
 (2022) <doi:10.1101/2022.11.05.22281904>.")
     (license license:gpl2+)))
 
+(define-public r-epiilmct
+  (package
+    (name "r-epiilmct")
+    (version "1.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EpiILMCT" version))
+       (sha256
+        (base32 "0cndqd0j5zsi31vm80c29a7rj3mqz981qfmdwn1rcbdl5q2f4r7a"))))
+    (properties `((upstream-name . "EpiILMCT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-igraph r-coda))
+    (native-inputs (list gfortran))
+    (home-page "https://github.com/waleedalmutiry/EpiILMCT/")
+    (synopsis
+     "Continuous Time Distance-Based and Network-Based Individual Level Models for Epidemics")
+    (description
+     "This package provides tools for simulating from continuous-time individual level
+models of disease transmission, and carrying out infectious disease data
+analyses with the same models.  The epidemic models considered are
+distance-based and/or contact network-based models within
+Susceptible-Infectious-Removed (SIR) or Susceptible-Infectious-Notified-Removed
+(SINR) compartmental frameworks. <doi:10.18637/jss.v098.i10>.")
+    (license license:gpl2+)))
+
 (define-public r-epigrowthfit
   (package
     (name "r-epigrowthfit")
@@ -15311,13 +15339,13 @@ distribution of emissions such as satellite images (Gavidia-Calderon et.  al,
 (define-public r-emirt
   (package
     (name "r-emirt")
-    (version "0.0.14")
+    (version "0.0.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emIRT" version))
        (sha256
-        (base32 "1vdmrad9f0ywrlb3xqwysm8vps5dz9xc3xq6jl82gr6xl3rr54zi"))))
+        (base32 "1wrklm2q0ss858fr25rx2h20d56l2glggjk19kzcirgfpwqhv47k"))))
     (properties `((upstream-name . "emIRT")))
     (build-system r-build-system)
     (arguments

@@ -2593,13 +2593,13 @@ as Kendall tau correlation or sensitivity.")
 (define-public r-gt
   (package
     (name "r-gt")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gt" version))
        (sha256
-        (base32 "06sq5gscf16nkygnfmchg0kjbrd07qyybyg7mqzz0m3a0g81pskf"))))
+        (base32 "0vf5nfrcciqsy4y1in4m5caqz8s5b4wv8gnr5dnlp0cp7mvdllhw"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
     (arguments
@@ -13518,6 +13518,49 @@ R Markdown documents, and R Jupyter Notebooks'.  Internally, uses
 @code{MuseScore} <https://musescore.org/> to convert @code{MusicXML}'.")
     (license license:expat)))
 
+(define-public r-glyrepr
+  (package
+    (name "r-glyrepr")
+    (version "0.7.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glyrepr" version))
+       (sha256
+        (base32 "13yv8ip16h9ghv7pfh9nh4x5wk9fgdwql3g5d4vy3wx6s8dh4zjq"))))
+    (properties `((upstream-name . "glyrepr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-stringr
+                             r-rstackdeque
+                             r-rlang
+                             r-purrr
+                             r-pillar
+                             r-magrittr
+                             r-igraph
+                             r-glue
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://glycoverse.github.io/glyrepr/")
+    (synopsis "Representation for Glycan Compositions and Structures")
+    (description
+     "Computational representations of glycan compositions and structures, including
+details such as linkages, anomers, and substituents.  Supports varying levels of
+monosaccharide specificity (e.g., \"Hex\" or \"Gal\") and ambiguous linkages.
+Provides robust parsing and generation of IUPAC-condensed structure strings.
+Optimized for vectorized operations on glycan structures, with efficient
+handling of duplications.  As the cornerstone of the glycoverse ecosystem, this
+package delivers the foundational data structures that power glycomics and
+glycoproteomics analysis workflows.")
+    (license license:expat)))
+
 (define-public r-glvmfit
   (package
     (name "r-glvmfit")
@@ -13970,13 +14013,13 @@ change methods.")
 (define-public r-globpso
   (package
     (name "r-globpso")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "globpso" version))
        (sha256
-        (base32 "1q4f7smdfcph05jn3b2wrr64flawf3lcwksiqifhxhvf7nsn2y4a"))))
+        (base32 "0kvw308hh24a2pxhyp2p4y0a8xapfan3q2dhd7dssiz93ng3sh4l"))))
     (properties `((upstream-name . "globpso")))
     (build-system r-build-system)
     (arguments

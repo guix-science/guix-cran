@@ -26417,19 +26417,19 @@ and continuous outcomes.")
 (define-public r-coda-plot
   (package
     (name "r-coda-plot")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coda.plot" version))
        (sha256
-        (base32 "08g0xj4lb62vzg1yxny1lqlncqj9yrk7jf9nsddrl38431wcvk9g"))))
+        (base32 "1c6wibkpgn5na8jc2sag5rgiq2yyr16xsxalsrmc4pcyvxhp9vg2"))))
     (properties `((upstream-name . "coda.plot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggtern r-ggplot2 r-coda-base))
+    (propagated-inputs (list r-ggplot2 r-coda-base))
     (home-page "https://cran.r-project.org/package=coda.plot")
     (synopsis "Plots for Compositional Data")
     (description
@@ -35368,13 +35368,13 @@ coefficients.")
 (define-public r-circumplex
   (package
     (name "r-circumplex")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "circumplex" version))
        (sha256
-        (base32 "0xbqd71ybbw2jcqpy1ry444bs7g63civ6sqb0bc995qcr2w6mzxn"))))
+        (base32 "1fm9alnfbszc8qlfg9bkjm2yxnkby5f5pisi8p6vyi8f72v3q1ar"))))
     (properties `((upstream-name . "circumplex")))
     (build-system r-build-system)
     (arguments
@@ -43327,13 +43327,13 @@ Iacus, King, Porro (2012) <DOI:10.1093/pan/mpr013> and Iacus, King, Porro (2019)
 (define-public r-cellwise
   (package
     (name "r-cellwise")
-    (version "2.5.3")
+    (version "2.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cellWise" version))
        (sha256
-        (base32 "0asimy253lxm9yf47pynhxc7sfd3v5rkvnyf1sby7s4qkz06bh49"))))
+        (base32 "0kbivb2g4l7k46h6n4pmvz7jav2682m6v8j26d5as1zcdm4y9c4h"))))
     (properties `((upstream-name . "cellWise")))
     (build-system r-build-system)
     (arguments
@@ -43362,9 +43362,9 @@ algorithms described in Rousseeuw and Van den Bossche (2018)
 (2021) <doi:10.1080/00401706.2019.1677270> (open access), Raymaekers and
 Rousseeuw (2021) <doi:10.1007/s10994-021-05960-5> (open access), Raymaekers and
 Rousseeuw (2021) <doi:10.52933/jdssv.v1i3.18> (open access), Raymaekers and
-Rousseeuw (2022) <@code{arXiv:2207.13493>} (open access) Rousseeuw (2022)
-<doi:10.1016/j.ecosta.2023.01.007> (open access).  Examples can be found in the
-vignettes: \"DDC_examples\", \"@code{MacroPCA_examples}\", \"wrap_examples\",
+Rousseeuw (2022) <doi:10.1080/01621459.2023.2267777> (open access) Rousseeuw
+(2022) <doi:10.1016/j.ecosta.2023.01.007> (open access).  Examples can be found
+in the vignettes: \"DDC_examples\", \"@code{MacroPCA_examples}\", \"wrap_examples\",
 \"transfo_examples\", \"DI_examples\", \"@code{cellMCD_examples}\" ,
 \"Correspondence_analysis_examples\", and \"cellwise_weights_examples\".")
     (license license:gpl2+)))
@@ -45900,13 +45900,13 @@ with x in [0, size + 1], following Ilienko (2013) <@code{arXiv:1303.5990>}.")
 (define-public r-cbctools
   (package
     (name "r-cbctools")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cbcTools" version))
        (sha256
-        (base32 "0975z8yk9czx296gsrkzl3nn3cgwx1lx7yh28h56z51l1kl4jhx2"))))
+        (base32 "1w87bmsqzwmsyjwpj6s1jbkwd4wq23j5f9gd20dh3f7g3gijyddm"))))
     (properties `((upstream-name . "cbcTools")))
     (build-system r-build-system)
     (arguments

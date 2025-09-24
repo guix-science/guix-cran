@@ -18929,13 +18929,13 @@ on Torch'.")
 (define-public r-lama
   (package
     (name "r-lama")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LaMa" version))
        (sha256
-        (base32 "1z33f7cr72swmfsffmpq4s1jy32ixsyy0qimpfk66azdhzi3p6pj"))))
+        (base32 "1aaywczvidw0j7011vi5x4k8h64bz0kdjwyir34ya832pyakcfgm"))))
     (properties `((upstream-name . "LaMa")))
     (build-system r-build-system)
     (arguments

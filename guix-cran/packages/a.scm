@@ -6463,13 +6463,13 @@ anthracnose in a lupin field.")
 (define-public r-asciisetupreader
   (package
     (name "r-asciisetupreader")
-    (version "2.5.2")
+    (version "2.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asciiSetupReader" version))
        (sha256
-        (base32 "116xj2d4hbvf0hgac0nqja758chgyf3ycivj0h3pmb0y75dlcbl9"))))
+        (base32 "1pl7jcj7b82z3p13b9fd6zcyif10jc859h62016xxvpfpriqj2y5"))))
     (properties `((upstream-name . "asciiSetupReader")))
     (build-system r-build-system)
     (arguments
@@ -8816,13 +8816,13 @@ Biokybernetika.  De Gruyter, Berlin, pp.  665â676.")
 (define-public r-arctosr
   (package
     (name "r-arctosr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ArctosR" version))
        (sha256
-        (base32 "08dr9na41dk72xdnv8q5xb7any3mj9akjgfvw4mqcj85f6d7qkdb"))))
+        (base32 "14ddhgfvmv4bhsizz7fmnyac3ykbsv3yailnj42qwy438kfxa71g"))))
     (properties `((upstream-name . "ArctosR")))
     (build-system r-build-system)
     (arguments
@@ -12674,13 +12674,13 @@ visually explore the results of their simulations.")
 (define-public r-antaresread
   (package
     (name "r-antaresread")
-    (version "2.9.0")
+    (version "2.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresRead" version))
        (sha256
-        (base32 "19ci0ymrhvvrzrgh3wavv5a6w8m64sgg2zyn2gpv5yci3lr5fdpv"))))
+        (base32 "1bci61vfnhffahcnslyad4snr69ccmrka424akcs85njj01sh0w2"))))
     (properties `((upstream-name . "antaresRead")))
     (build-system r-build-system)
     (arguments
@@ -21407,26 +21407,20 @@ and non-statisticians.")
 (define-public r-afmtoolkit
   (package
     (name "r-afmtoolkit")
-    (version "0.0.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "afmToolkit" version))
        (sha256
-        (base32 "1pm3xyh9vq10mmfgknlvlfr9f027xprrgy1dvbbxpi7f111hv1gl"))))
+        (base32 "1dh9pb9zwkpbvx7g9lx01llfabh2mi01z5v3235s1fi76qglv6ib"))))
     (properties `((upstream-name . "afmToolkit")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-scales
-                             r-minpack-lm
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr
-                             r-dbi
-                             r-assertthat))
+    (propagated-inputs (list r-scales r-minpack-lm r-gridextra r-ggplot2
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=afmToolkit")
     (synopsis
      "Functions for Atomic Force Microscope Force-Distance Curves Analysis")
@@ -26160,6 +26154,35 @@ making it a valuable resource for researchers.")
 number signals for Affymetrix SNP microarrays using non-negative matrix
 factorization (NMF).")
     (license license:lgpl2.1+)))
+
+(define-public r-acmgscaler
+  (package
+    (name "r-acmgscaler")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "acmgscaler" version))
+       (sha256
+        (base32 "0qqbi3yd5iqwki0zx013m58bjh30f9zg7imbkhq17sgg24719mih"))))
+    (properties `((upstream-name . "acmgscaler")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=acmgscaler")
+    (synopsis "Variant Effect Calibration to ACMG/AMP Evidence Strength")
+    (description
+     "This package provides a function to calibrate variant effect scores against
+evidence strength categories defined by the American College of Medical Genetics
+and Genomics (ACMG) and the Association for Molecular Pathology (AMP)
+guidelines.  The method computes likelihood ratios of pathogenicity via kernel
+density estimation of pathogenic and benign score distributions, and derives
+score intervals corresponding to ACMG/AMP evidence levels.  This enables
+researchers and clinical geneticists to interpret functional and computational
+variant scores in a reproducible and standardised manner.  For details, see
+Badonyi and Marsh (2025) <doi:10.1093/bioinformatics/btaf503>.")
+    (license license:expat)))
 
 (define-public r-acledr
   (package

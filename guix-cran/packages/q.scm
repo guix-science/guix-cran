@@ -405,13 +405,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-quollr
   (package
     (name "r-quollr")
-    (version "0.3.7")
+    (version "0.3.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quollr" version))
        (sha256
-        (base32 "0kfdf029j6r104bavjiq4k5h21fxdb4hy8x87ikv4x3plklv29dz"))))
+        (base32 "00a48wadl3b8s9bshbww1wm5mvybk1c842b2jblgdh6hv5x3x8r9"))))
     (properties `((upstream-name . "quollr")))
     (build-system r-build-system)
     (arguments

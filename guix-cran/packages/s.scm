@@ -50078,31 +50078,6 @@ the basic functions of sbm'.")
 export @code{WebGL} visualization in a shiny-friendly format.")
     (license license:expat)))
 
-(define-public r-shinyreforms
-  (package
-    (name "r-shinyreforms")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shinyreforms" version))
-       (sha256
-        (base32 "1g1blc57c6zkca0m52bqkw8jwgpplabns07x1cwkk46dmv6sgqci"))))
-    (properties `((upstream-name . "shinyreforms")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny r-r6 r-htmltools))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/piotrbajger/shinyreforms")
-    (synopsis "Add Forms to your 'Shiny' App")
-    (description
-     "Allows to create modular, reusable HTML forms which can be embedded in your
-shiny app with minimal effort.  Features include conditional code execution on
-form submission, automatic input validation and input tooltips.")
-    (license license:gpl3)))
-
 (define-public r-shinyrecipes
   (package
     (name "r-shinyrecipes")
@@ -57677,42 +57652,6 @@ Bayes.  Patterns may be point mutations or n-tuple of mutations. @code{SeqFeatR}
 offers several ways to visualize the results of the statistical analyses, see
 Budeus (2016) <doi:10.1371/journal.pone.0146409>.")
     (license license:gpl3+)))
-
-(define-public r-seqexpmatch
-  (package
-    (name "r-seqexpmatch")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SeqExpMatch" version))
-       (sha256
-        (base32 "0i4hsmkapsavhqx99zk9d2qajaqh8kchdf8qy3rbdwgchiiwzybv"))))
-    (properties `((upstream-name . "SeqExpMatch")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6 r-doparallel r-checkmate))
-    (home-page
-     "https://github.com/kapelner/matching_on_the_fly_designs_R_package_and_paper_repr")
-    (synopsis "Sequential Experimental Design via Matching on-the-Fly")
-    (description
-     "Generates the following sequential two-arm experimental designs: (1) completely
-randomized (Bernoulli) (2) balanced completely randomized (3) Efron's (1971)
-Biased Coin (4) Atkinson's (1982) Covariate-Adjusted Biased Coin (5) Kapelner
-and Krieger's (2014) Covariate-Adjusted Matching on the Fly (6) Kapelner and
-Krieger's (2021) CARA Matching on the Fly with Differential Covariate Weights
-(Naive) (7) Kapelner and Krieger's (2021) CARA Matching on the Fly with
-Differential Covariate Weights (Stepwise) and also provides the following types
-of inference: (1) estimation (with both Z-style estimators and OLS estimators),
-(2) frequentist testing (via asymptotic distribution results and via employing
-the nonparametric randomization test) and (3) frequentist confidence intervals
-(only under the superpopulation sampling assumption currently).  Details can be
-found in our publication: Kapelner and Krieger \"A Matching Procedure for
-Sequential Experiments that Iteratively Learns which Covariates Improve Power\"
-(2020) <@code{arXiv:2010.05980>}.")
-    (license license:gpl3)))
 
 (define-public r-seqdetect
   (package
@@ -67273,39 +67212,6 @@ the spline and options for determining behaviour when evaluated outside the
 interpolation domain.")
     (license license:expat)))
 
-(define-public r-schtools
-  (package
-    (name "r-schtools")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "schtools" version))
-       (sha256
-        (base32 "1y3qm08m3sflb5p57z6glxbrc37limm9nyrab09mvqifz5xh4z3h"))))
-    (properties `((upstream-name . "schtools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-rlang
-                             r-glue
-                             r-formatr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "http://www.schlosslab.org/schtools/")
-    (synopsis "Schloss Lab Tools for Reproducible Microbiome Research")
-    (description
-     "This package provides a collection of useful functions and example code created
-and used by the Schloss Lab for reproducible microbiome research.  Perform
-common tasks like read files created by mothur <https://mothur.org/>, tidy up
-your microbiome data, and format R Markdown documents for publication.  See the
-website <http://www.schlosslab.org/schtools/> for more information,
-documentation, and examples.")
-    (license license:expat)))
-
 (define-public r-schrute
   (package
     (name "r-schrute")
@@ -68007,6 +67913,45 @@ randomized experiments, as described in Hedges, Pustejovsky, and Shadish (2012)
 <DOI:10.1002/jrsm.1086>; Pustejovsky, Hedges, and Shadish (2014)
 <DOI:10.3102/1076998614547577>; and Chen, Pustejovsky, Klingbeil, and Van Norman
 (2023) <DOI:10.1016/j.jsp.2023.02.002>.  Includes an interactive web interface.")
+    (license license:gpl3)))
+
+(define-public r-scdha
+  (package
+    (name "r-scdha")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scDHA" version))
+       (sha256
+        (base32 "10zy7aibk3zz96nj86a0vs3wjbyz2k9hjpmn7irjz9g4ckx0vm05"))))
+    (properties `((upstream-name . "scDHA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uwot
+                             r-torch
+                             r-rhpcblasctl
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcppannoy
+                             r-rcpp
+                             r-matrixstats
+                             r-matrix
+                             r-igraph
+                             r-foreach
+                             r-doparallel
+                             r-coro
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/duct317/scDHA")
+    (synopsis "Single-Cell Decomposition using Hierarchical Autoencoder")
+    (description
+     "This package provides a fast and accurate pipeline for single-cell analyses.
+The @code{scDHA} software package can perform clustering, dimension reduction
+and visualization, classification, and time-trajectory inference on single-cell
+data (Tran et.al. (2021) <DOI:10.1038/s41467-021-21312-2>).")
     (license license:gpl3)))
 
 (define-public r-scdensity
@@ -72981,6 +72926,43 @@ mistakes.  Efficient implementations are also provided for Monte Carlo
 estimation of the posterior expected loss of a given clustering estimate.  See
 Dahl, Johnson, MÃ¼ller (2022) <doi:10.1080/10618600.2022.2069779>.")
     (license (list license:expat license:asl2.0))))
+
+(define-public r-salmonmse
+  (package
+    (name "r-salmonmse")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "salmonMSE" version))
+       (sha256
+        (base32 "0b0n3vspcg5mjjlxc5f03igv2m7rdlgjrydfmfji2g436zdainfv"))))
+    (properties `((upstream-name . "salmonMSE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rtmb
+                             r-rmarkdown
+                             r-rlang
+                             r-reshape2
+                             r-msetool
+                             r-gsl
+                             r-ggplot2
+                             r-dplyr
+                             r-abind))
+    (home-page "https://docs.salmonmse.com/")
+    (synopsis "Management Strategy Evaluation for Salmon Species")
+    (description
+     "Simulation tools to evaluate the long-term effects of salmon management
+strategies, including a combination of habitat, harvest, and habitat actions.
+The stochastic age-structured operating model accommodates complex life
+histories, including freshwater survival across early life stages, juvenile
+survival and fishery exploitation in the marine life stage, partial maturity by
+age class, and fitness impacts of hatchery programs on natural spawning
+populations. @code{salmonMSE} also provides an age-structured conditioning model
+to develop operating models fitted to data.")
+    (license license:gpl3+)))
 
 (define-public r-salesforcer
   (package

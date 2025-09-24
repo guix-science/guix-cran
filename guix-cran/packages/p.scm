@@ -14610,13 +14610,13 @@ designs to detect mediated treatment effects (2/1, 3/1, 3/2; <trt.arm.lev> /
 (define-public r-powertost
   (package
     (name "r-powertost")
-    (version "1.5-6")
+    (version "1.5-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PowerTOST" version))
        (sha256
-        (base32 "1yp862b9ibgifdwh8f5ws3qbycdp24hvsigj5ira8isdci7vvyv3"))))
+        (base32 "17ymll9zxk80ygpx73d6zi3wzlngxv6d5inwlrhljgj1ypbplcp7"))))
     (properties `((upstream-name . "PowerTOST")))
     (build-system r-build-system)
     (arguments
@@ -19822,13 +19822,13 @@ created @code{hexSticker} as PNG image.  polaroid is built based on
 (define-public r-polarisr
   (package
     (name "r-polarisr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polarisR" version))
        (sha256
-        (base32 "1v201iimqs8bnjfll48z2bckzf5vkcz6qbr6xxrnd9a6fnmsdiwq"))))
+        (base32 "0hgxcxx6bm4zvmpvhg32mrr0nz6aa9p1jgjj1asil02c0rc9w8jv"))))
     (properties `((upstream-name . "polarisR")))
     (build-system r-build-system)
     (arguments
@@ -23020,13 +23020,13 @@ the base graphics plotting tools; and manipulate irregular polygons.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.7.4")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "1vkyhckd6h0mb1m7y6wvgdibnqqxwsmgdqhrz5mdzwsgr32zy4kp"))))
+        (base32 "05j8vbxsavchcb78hrzcn222913p6xnx5wzkg6zswlfbgjm53xl9"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments
@@ -29000,13 +29000,13 @@ phylogenetically based analyses using GLS.")
 (define-public r-phylogeneticem
   (package
     (name "r-phylogeneticem")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhylogeneticEM" version))
        (sha256
-        (base32 "0w7gh7xlmzbh8hg7da5w4kqfi4x3vm7lcy6hkvfpflpbjn9z1nw1"))))
+        (base32 "174vcjfy6ym096nc5hc2gz857xhmxj94wm54kbrfyk18ix1ys264"))))
     (properties `((upstream-name . "PhylogeneticEM")))
     (build-system r-build-system)
     (arguments
@@ -41724,13 +41724,13 @@ visualizations.  Length of color palettes is configurable.")
 (define-public r-pari
   (package
     (name "r-pari")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pARI" version))
        (sha256
-        (base32 "0c6lbzam854j9c442jxgshkb18zr2jdwlc5kbddll64ijxxk5cym"))))
+        (base32 "1fgklmwd2adpypnhm02qsyzdqwwkgyaxl6s8sv1b3fw1wvglvvyq"))))
     (properties `((upstream-name . "pARI")))
     (build-system r-build-system)
     (arguments

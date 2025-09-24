@@ -7901,31 +7901,24 @@ package.")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "1.16.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeTools" version))
        (sha256
-        (base32 "0cx4i2fh2qw1w00vmw8pn32dqpnliycbnvazxv693xnnwvx2w5p9"))))
+        (base32 "0j1qsa16m31hpgmhfk7k0wb9l3v8jkkh2c3l91arjjin4b2mj3xm"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-stringi
                              r-rdpack
                              r-rcurl
                              r-rcpp
-                             r-r-cache
                              r-plottools
-                             r-lifecycle
                              r-fastmatch
-                             r-colorspace
                              r-bit64
                              r-ape))
     (native-inputs (list r-knitr))
@@ -8821,13 +8814,13 @@ dendroecology, see Zang and Biondi (2015) <doi:10.1111/ecog.01335>.")
 (define-public r-treebugs
   (package
     (name "r-treebugs")
-    (version "1.5.0")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeBUGS" version))
        (sha256
-        (base32 "0nxv2hh7flmyfm2pap97hwjyz29hfzybfv3b1v0ygqffgmh1j7mb"))))
+        (base32 "00my1lw3gjrfx8bp8z3aqsbhihwv1x5pjyipdx5avfqp2597rn0f"))))
     (properties `((upstream-name . "TreeBUGS")))
     (build-system r-build-system)
     (arguments
@@ -8861,7 +8854,7 @@ Gibbs sampler in C++ (only for nonhierarchical and beta MPT models).  Provides
 tests of heterogeneity and MPT-tailored summaries and plotting functions.  A
 detailed documentation is available in Heck, Arnold, & Arnold (2018)
 <DOI:10.3758/s13428-017-0869-7> and a tutorial on MPT modeling can be found in
-Schmidt, Erdfelder, & Heck (2022) <DOI:10.31234/osf.io/gh8md>.")
+Schmidt, Erdfelder, & Heck (2023) <DOI:10.1037/met0000561>.")
     (license license:gpl3)))
 
 (define-public r-treebase
@@ -10493,13 +10486,13 @@ in Kook et al. (2023, <doi:10.1080/01621459.2024.2395588>).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.2-3")
+    (version "1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "1aq3nlql8czcm4x4xfnbz2nggivd8hz69vy9pfm69shmv28zbfij"))))
+        (base32 "1znzka4iz3bwgpzn4rxkl8b0n5gcjs76s846xjbsipyp04r2g9xb"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (arguments
@@ -29113,6 +29106,39 @@ extract key activity metrics such as total distance, total time, calories
 burned, maximum altitude, and power values (watts).  This package is useful for
 analyzing workout and training data from devices that export TCX format.")
     (license license:expat)))
+
+(define-public r-tcv
+  (package
+    (name "r-tcv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tcv" version))
+       (sha256
+        (base32 "16wnzll7grdkfnknb36k54xs1gyq19h9z82fdqcg7vq8nc2q94k9"))))
+    (properties `((upstream-name . "tcv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-irlba r-gfm r-countsplit))
+    (home-page "https://github.com/Wangzhijingwzj/tcv")
+    (synopsis
+     "Determining the Number of Factors in Poisson Factor Models via Thinning Cross-Validation")
+    (description
+     "This package implements methods for selecting the number of factors in Poisson
+factor models, with a primary focus on Thinning Cross-Validation (TCV).  The TCV
+method is based on the data thinning technique, which probabilistically
+partitions each count observation into training and test sets while preserving
+the underlying factor structure.  The Poisson factor model is then fit on the
+training set, and model selection is performed by comparing predictive
+performance on the test set.  This toolkit is designed for researchers working
+with high-dimensional count data in fields such as genomics, text mining, and
+social sciences.  The data thinning methodology is detailed in Dharamshi et al.
+(2025) <doi:10.1080/01621459.2024.2353948> and Wang et al. (2025)
+<doi:10.1080/01621459.2025.2546577>.")
+    (license license:gpl3+)))
 
 (define-public r-tcrconvertr
   (package

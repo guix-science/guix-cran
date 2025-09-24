@@ -3038,6 +3038,34 @@ aggregated at the country, Admin 1 (states, provinces, or equivalent), and Admin
 2 (smaller administrative areas) levels.")
     (license license:expat)))
 
+(define-public r-dtlg
+  (package
+    (name "r-dtlg")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dtlg" version))
+       (sha256
+        (base32 "04jzifssysfb1yjz81faf5p5503zk3f4w86kxldjzz48cwmbp81g"))))
+    (properties `((upstream-name . "dtlg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-data-table))
+    (home-page "https://AscentSoftware.github.io/dtlg/")
+    (synopsis "Performance-Focused Package for Clinical Trial Tables")
+    (description
+     "Create high-performance clinical reporting tables (TLGs) from A@code{DaM-like}
+inputs.  The package provides a consistent, programmatic API to generate common
+tables such as demographics, adverse event incidence, and laboratory summaries,
+using data.table for fast aggregation over large populations.  Functions support
+flexible target-variable selection, stratification by treatment, and
+customizable summary statistics, and return tidy, machine-readable results ready
+to render with downstream table/formatting packages in analysis pipelines.")
+    (license license:expat)))
+
 (define-public r-dtlcor
   (package
     (name "r-dtlcor")
@@ -11717,13 +11745,13 @@ avoid redundancy.")
 (define-public r-diztools
   (package
     (name "r-diztools")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIZtools" version))
        (sha256
-        (base32 "1im6vx879nq96c63qap1lgc9wwm1z0ycwx7cjg6jll903k3b7lri"))))
+        (base32 "0ffz8c2i24al1wzz13hq1afwgx580z5lb0rb3lppswg2cqpg8479"))))
     (properties `((upstream-name . "DIZtools")))
     (build-system r-build-system)
     (arguments
@@ -17435,6 +17463,41 @@ either side of the barrier and barrier strength.  Uses expectation maximisation
 in likelihood framework.  The method is described in Baird et al. (2023)
 <doi:10.1111/2041-210X.14010>.")
     (license license:gpl3+)))
+
+(define-public r-diegr
+  (package
+    (name "r-diegr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "diegr" version))
+       (sha256
+        (base32 "1s332v08xlmfydxq2ncm7kwgbsz9wbr8k395ldmh3xm58f06qb26"))))
+    (properties `((upstream-name . "diegr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-sp
+                             r-scales
+                             r-rlang
+                             r-rgl
+                             r-purrr
+                             r-plotly
+                             r-ggplot2
+                             r-gganimate
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=diegr")
+    (synopsis "Dynamic and Interactive EEG Graphics")
+    (description
+     "Allows to visualize high-density electroencephalography (HD-EEG) data through
+interactive plots and animations, enabling exploratory and communicative
+analysis of temporal-spatial brain signals.  Funder: Masaryk University (Grant
+No.  MUNI/A/1457/2023).")
+    (license license:expat)))
 
 (define-public r-didroorfm
   (package
@@ -29813,13 +29876,13 @@ and new estimates.  For reference see Ehlers et al. (2017)
 (define-public r-dataspice
   (package
     (name "r-dataspice")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataspice" version))
        (sha256
-        (base32 "1pnmb7kdx9wdvi2873rw1a7hc7spsvx4lfvfhfcqwgll46j0f1wm"))))
+        (base32 "1vw5dzvzq897691iphgvckki194k820ar4521nyhwb09jc9k8y9p"))))
     (properties `((upstream-name . "dataspice")))
     (build-system r-build-system)
     (arguments
@@ -30657,13 +30720,13 @@ Publishing.")
 (define-public r-datana
   (package
     (name "r-datana")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datana" version))
        (sha256
-        (base32 "0ds11amw3kml1v6lfczsr68manbvig4yl78hfvgx679aawixchin"))))
+        (base32 "08zx2d6f3b7vzsi5ccrqnk2x08n9kphhrbx8msh0r239pam36hh1"))))
     (properties `((upstream-name . "datana")))
     (build-system r-build-system)
     (arguments
@@ -31438,13 +31501,13 @@ package.")
 (define-public r-databaseconnector
   (package
     (name "r-databaseconnector")
-    (version "6.4.0")
+    (version "7.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DatabaseConnector" version))
        (sha256
-        (base32 "06ig86wswzrxcdgpnhqvkc8r86q8bjxxnyp0advdlsh64kikhfr7"))))
+        (base32 "01izyhdplbfg56072bpjbxq8ifnbfmwbv1dbv3fp9xqynrj802i3"))))
     (properties `((upstream-name . "DatabaseConnector")))
     (build-system r-build-system)
     (arguments

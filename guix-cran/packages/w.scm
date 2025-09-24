@@ -7600,13 +7600,13 @@ Boubacar MaÃ¯nassara, Y. and Saussereau, B. (2018)
 (define-public r-weaana
   (package
     (name "r-weaana")
-    (version "0.1.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weaana" version))
        (sha256
-        (base32 "1wjvn78fkgc28ag1idy7h6sm0rvl57wbqdbxgbl3g5xv844vh8ls"))))
+        (base32 "01wk6z66kr51ja7wc6hyj05f977s24psq0w1ia65k8i8bp24pba3"))))
     (properties `((upstream-name . "weaana")))
     (build-system r-build-system)
     (arguments
@@ -7619,12 +7619,15 @@ Boubacar MaÃ¯nassara, Y. and Saussereau, B. (2018)
                              r-magrittr
                              r-lubridate
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://weaana.bangyou.me/")
     (synopsis "Analysis the Weather Data")
     (description
      "This package provides functions are collected to analyse weather data for
 agriculture purposes including to read weather records in multiple formats,
-calculate extreme climate index.")
+calculate extreme climate index.  Demonstration data are included the SILO daily
+climate data (licensed under CC BY 4.0,
+<https://www.longpaddock.qld.gov.au/silo/>).")
     (license license:expat)))
 
 (define-public r-wdpar

@@ -1681,13 +1681,13 @@ multivariate data using these limiting distributions and binning.")
 (define-public r-otelsdk
   (package
     (name "r-otelsdk")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "otelsdk" version))
        (sha256
-        (base32 "0k9zxlqy4czblkamrqiyj7l8z6l0npsyc5f9qj3i018wyxlnyx6h"))))
+        (base32 "0g3w3dddscrmiqay65cyzrn0hbvijm36hnb461sphq9gz7syrrvq"))))
     (properties `((upstream-name . "otelsdk")))
     (build-system r-build-system)
     (arguments
@@ -8030,31 +8030,6 @@ into R.")
 @code{OpenAlex} database using API <https://docs.openalex.org>.")
     (license license:expat)))
 
-(define-public r-openaistream
-  (package
-    (name "r-openaistream")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "openaistream" version))
-       (sha256
-        (base32 "0zihkpq6p7a3n0qdwpazds4qbpagk7zh6ziflm9194vbygyskv2z"))))
-    (properties `((upstream-name . "openaistream")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6 r-jsonlite r-iterators r-httr2 r-curl))
-    (home-page "https://github.com/libingfei/openaistream")
-    (synopsis "Streaming Capabilities for 'OpenAI API' Interactions")
-    (description
-     "Based on the httr2 framework, the @code{OpenAI} interface supports streaming
-calls and model training.  For more details on the API methods implemented, see
-the @code{OpenAI} platform documentation at
-<https://platform.openai.com/docs/api-reference>.")
-    (license license:expat)))
-
 (define-public r-openairmaps
   (package
     (name "r-openairmaps")
@@ -13071,19 +13046,19 @@ model-based clustering using methods described in Clark and @code{McNicholas}
 (define-public r-ockc
   (package
     (name "r-ockc")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ockc" version))
        (sha256
-        (base32 "1iqv9vjdcv96a8k5ccrh6r3jpjq39g4g0qjhb4hzvfv17p28rpcb"))))
+        (base32 "1imv4f4kxsdayams1mf3xwl7913p9i762g5db1g165bg8dab2xd3"))))
     (properties `((upstream-name . "ockc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-modeltools r-flexclust))
+    (propagated-inputs (list r-seriation r-modeltools r-flexclust))
     (home-page "https://cran.r-project.org/package=ockc")
     (synopsis "Order Constrained Solutions in k-Means Clustering")
     (description
