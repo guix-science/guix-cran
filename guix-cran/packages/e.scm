@@ -16738,6 +16738,35 @@ regression, a second for logistic regression and a last one for generalized
 linear models.")
     (license license:gpl3+)))
 
+(define-public r-elixir
+  (package
+    (name "r-elixir")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "elixir" version))
+       (sha256
+        (base32 "18q3bpkn3a49f0cnj3r694mz32ir872mgmk2vg652pxf6yh6hssg"))))
+    (properties `((upstream-name . "elixir")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-rlang r-glue r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nicholasdavies/elixir")
+    (synopsis "Transmutation of Languages")
+    (description
+     "This package provides tools for transforming R expressions.  Provides functions
+for finding, extracting, and replacing patterns in R language objects, similarly
+to how regular expressions can be used to find, extract, and replace patterns in
+text.  Also provides functions for generating code using specially-formatted
+template files and for translating R expressions into similar expressions in
+other programming languages.  The package may be helpful for advanced uses of R
+expressions, such as developing domain-specific languages.")
+    (license license:expat)))
+
 (define-public r-elitism
   (package
     (name "r-elitism")
@@ -21742,13 +21771,13 @@ respect to reference conditions [Sturbois et al. (2023)
 (define-public r-ecotoxr
   (package
     (name "r-ecotoxr")
-    (version "1.2.2")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ECOTOXr" version))
        (sha256
-        (base32 "10rwmx8clljs81drcr629ijg5nchjsqag2bybj9m8lavphhwaw50"))))
+        (base32 "18p3hyypvvxw373x4x4gdlrwkj6bvgr3ify1jz5g8kh9izvlw6hc"))))
     (properties `((upstream-name . "ECOTOXr")))
     (build-system r-build-system)
     (arguments

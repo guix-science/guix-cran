@@ -6783,13 +6783,13 @@ writing, styling and editing worksheets.")
 (define-public r-openva
   (package
     (name "r-openva")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openVA" version))
        (sha256
-        (base32 "0ywf9hh4liz992ym1xdqpk4pnywy9azasyvqdy3ih8idmj3y5h0d"))))
+        (base32 "0f1r91m2snyhw5ihdg4prhlah6387y94hz5i5mszp73mncc41zpw"))))
     (properties `((upstream-name . "openVA")))
     (build-system r-build-system)
     (arguments
@@ -6800,6 +6800,7 @@ writing, styling and editing worksheets.")
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tariff
+                             r-rlang
                              r-interva5
                              r-interva4
                              r-insilicova
@@ -11043,13 +11044,13 @@ you run open-source large language models locally on your machine.")
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "4.3.1")
+    (version "4.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlinkAnalyze" version))
        (sha256
-        (base32 "1rmn3mpj3s4amlpd6zp3llr9yjhprw1s00mislcsi1a57s077vbs"))))
+        (base32 "1100w8d8ji07d8i5qsmw8bb6lxkzzxki00plx4kcr0k3wdd06m0a"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (arguments

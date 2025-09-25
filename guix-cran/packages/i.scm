@@ -7162,13 +7162,13 @@ dimensions are provided.")
 (define-public r-intrinsic
   (package
     (name "r-intrinsic")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intRinsic" version))
        (sha256
-        (base32 "1nkp2zb0wz1kw61lsm39d72k927hgdvck9asxy7495qa10dpl9ac"))))
+        (base32 "1xsb68ngiax7h6s907h1a03cvr2bp19m7l44x6j0xw0j39dz43p7"))))
     (properties `((upstream-name . "intRinsic")))
     (build-system r-build-system)
     (arguments
@@ -21567,13 +21567,13 @@ tabular datasets.")
 (define-public r-i14y
   (package
     (name "r-i14y")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "I14Y" version))
        (sha256
-        (base32 "1v1vq7kv42k6397ry8dhcyhy5cfvd9si0ms2wbnywr5h4svwbkdn"))))
+        (base32 "1v61d9si8w52znahwabhvqjqb8sqndic8s3q0y715v6i4cjn1fi2"))))
     (properties `((upstream-name . "I14Y")))
     (build-system r-build-system)
     (arguments

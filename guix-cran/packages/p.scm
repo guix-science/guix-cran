@@ -29611,13 +29611,13 @@ the r4photobiology suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
 (define-public r-photobiologysensors
   (package
     (name "r-photobiologysensors")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologySensors" version))
        (sha256
-        (base32 "0jc801c8fm5fdbs67nc8d5cga9c2cfdfrjh6i6qf60g7kxddsnsf"))))
+        (base32 "0lm9lpqpbrm7b54xpbmiky5k5jfg97r6ajydz6j0slw09a78jlm0"))))
     (properties `((upstream-name . "photobiologySensors")))
     (build-system r-build-system)
     (arguments
@@ -29625,7 +29625,7 @@ the r4photobiology suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
       #:tests? #f))
     (propagated-inputs (list r-photobiology))
     (native-inputs (list r-knitr))
-    (home-page "https://www.r4photobiology.info")
+    (home-page "https://docs.r4photobiology.info/photobiologySensors/")
     (synopsis "Response Data for Light Sensors")
     (description
      "Spectral response data for broadband ultraviolet and visible radiation sensors.
@@ -29639,13 +29639,13 @@ suite Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
 (define-public r-photobiologyplants
   (package
     (name "r-photobiologyplants")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyPlants" version))
        (sha256
-        (base32 "0y5009im0vpgck7yg312bzsiq4bisjm8kh9pmp9k9676sh3rcmff"))))
+        (base32 "1y1m2slrb4hdi1k27c35yw1hy7rzv42m2fscwp8b4fip7czzyjpd"))))
     (properties `((upstream-name . "photobiologyPlants")))
     (build-system r-build-system)
     (arguments
@@ -29691,13 +29691,13 @@ as electronic components.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiologylamps
   (package
     (name "r-photobiologylamps")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyLamps" version))
        (sha256
-        (base32 "1sl6340zblq6j3djdygqydf9x0bh5jm0mir8j1jjw2snbppy6dfl"))))
+        (base32 "0934hq36bag7zih9bm7qw7j0m1fx31c6zzyx9brdnkp4zwjabgbx"))))
     (properties `((upstream-name . "photobiologyLamps")))
     (build-system r-build-system)
     (arguments
@@ -29705,7 +29705,7 @@ as electronic components.  Part of the r4photobiology suite, Aphalo P. J. (2015)
       #:tests? #f))
     (propagated-inputs (list r-photobiology))
     (native-inputs (list r-knitr))
-    (home-page "https://www.r4photobiology.info/")
+    (home-page "https://docs.r4photobiology.info/photobiologyLamps/")
     (synopsis "Spectral Irradiance Data for Lamps")
     (description
      "Spectral emission data for some frequently used lamps including bulbs and
@@ -29719,13 +29719,13 @@ r4photobiology suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
 (define-public r-photobiologyinout
   (package
     (name "r-photobiologyinout")
-    (version "0.4.30")
+    (version "0.4.32")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyInOut" version))
        (sha256
-        (base32 "1ahhdcllgkqv6l5pb2a64gi5rj7syhh4ald15lc5yxg97x2s78vb"))))
+        (base32 "0l77lmyhy0gkl5dhjx3wvz4p22j21z31038hzalmd7h8xgl23yg0"))))
     (properties `((upstream-name . "photobiologyInOut")))
     (build-system r-build-system)
     (arguments
@@ -29759,13 +29759,13 @@ packages.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiologyfilters
   (package
     (name "r-photobiologyfilters")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyFilters" version))
        (sha256
-        (base32 "03shhykqwmmcpkzpy42kb3rn5n5kwahhjmbmspqnli5vfdvq4gim"))))
+        (base32 "0svmih611liy4ikxkib3wf9nzyavcpbc9wnfc29bi2dlx25d67n4"))))
     (properties `((upstream-name . "photobiologyFilters")))
     (build-system r-build-system)
     (arguments
@@ -35556,13 +35556,13 @@ appended pedigree to an existing pedigree with genotypes.  Mrode, R. A. (2005)
 (define-public r-pedquant
   (package
     (name "r-pedquant")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedquant" version))
        (sha256
-        (base32 "0rxb9vzljjzw1f2z99f59jvc55z947l7xqfwfkvdxn2hl6s0ar6w"))))
+        (base32 "0bk289nqvlwa4rjv5kgyyzxdj9lrc3c16dgfr7v8dz0kbswygk4p"))))
     (properties `((upstream-name . "pedquant")))
     (build-system r-build-system)
     (arguments
@@ -41243,13 +41243,13 @@ result.")
 (define-public r-partialnetwork
   (package
     (name "r-partialnetwork")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PartialNetwork" version))
        (sha256
-        (base32 "09z8vyg8k9q90aq7x0dmizhqx4kfb7ml10c7hrf84arq7zf1fv0w"))))
+        (base32 "1qdy1nvri354klkbyryglfg5l69abnvj32bvxdpfmacqmkazgd0a"))))
     (properties `((upstream-name . "PartialNetwork")))
     (build-system r-build-system)
     (arguments
@@ -41279,7 +41279,7 @@ Spatial Autoregressive (SAR) model (see @code{LeSage}, 1997
 information about the network structure is available.  Examples are when the
 adjacency matrix is not fully observed or when only consistent estimation of the
 network formation model is available (see Boucher and Houndetoungan
-<https://ahoundetoungan.com/files/Papers/@code{PartialNetwork.pdf>}).")
+<doi:10.48550/@code{arXiv.2509.08145>}).")
     (license license:gpl3)))
 
 (define-public r-partiallyoverlapping

@@ -17977,13 +17977,13 @@ and identity link functions are supported.")
 (define-public r-modelbpp
   (package
     (name "r-modelbpp")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelbpp" version))
        (sha256
-        (base32 "02qy1y57dsgl9sl275ansbnliaafjijg49iakw32jycpf7zfh0rx"))))
+        (base32 "0iz28wzlnyxjv6bcl40sva6fwn9v5i5d1yxwcfkx0c3n54rdnkkj"))))
     (properties `((upstream-name . "modelbpp")))
     (build-system r-build-system)
     (arguments
@@ -22358,13 +22358,13 @@ Krajnc, and Skudnik (2023), Ecological Informatics
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "3.3.2")
+    (version "3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "0c1hg566l1wr1w76p1f3b935gqfih28y3sss4i48gvxh4n7w900j"))))
+        (base32 "0rkmlkhr7zgwy7szdda943g2jzc10ybs6dq5nkjbv9ywl07pscy1"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (arguments
@@ -49938,13 +49938,13 @@ et al. (2019) <doi:10.1093/jamia/ocz066>.).")
 (define-public r-maotai
   (package
     (name "r-maotai")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maotai" version))
        (sha256
-        (base32 "0rsn5dndr2xh6zi27i1swmrpkwk81mp4vf9255ndh4nl1prrpkkn"))))
+        (base32 "1p250smrgw49d3nq6a0gicdi7wh69z1j8cq8h60pxh4nx8vjx0b0"))))
     (properties `((upstream-name . "maotai")))
     (build-system r-build-system)
     (arguments
@@ -49961,6 +49961,7 @@ et al. (2019) <doi:10.1093/jamia/ocz066>.).")
                              r-pracma
                              r-matrix
                              r-labdsv
+                             r-gsignal
                              r-fastcluster
                              r-dbscan
                              r-cluster))

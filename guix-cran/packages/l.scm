@@ -6076,13 +6076,13 @@ antagonism, or Loewe's Additivity.")
 (define-public r-loedata
   (package
     (name "r-loedata")
-    (version "1.0.1")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loedata" version))
        (sha256
-        (base32 "01w0f83n1jzchw12w1wg18lq6idlp9ywr52nipg2l7pn9aa30gvv"))))
+        (base32 "1p98j6cs0m2laxr5qcaahn2b6gxyg1a3q83wn27v802044ivd79g"))))
     (properties `((upstream-name . "loedata")))
     (build-system r-build-system)
     (arguments
@@ -6091,7 +6091,7 @@ antagonism, or Loewe's Additivity.")
     (home-page "https://cran.r-project.org/package=loedata")
     (synopsis "Data Sets from \"Lectures on Econometrics\" by Chirok Han")
     (description
-     "Data sets for Chirok Han (2022, ISBN:979-11-303-1497-6, \"Lectures on
+     "Data sets for Chirok Han (2024, ISBN:979-11-303-1964-3, \"Lectures on
 Econometrics\").  Students, teachers, and self-learners will find the data sets
 essential for replicating the results in the book.")
     (license license:gpl3)))
@@ -7542,13 +7542,13 @@ values.")
 (define-public r-lmomco
   (package
     (name "r-lmomco")
-    (version "2.5.1")
+    (version "2.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmomco" version))
        (sha256
-        (base32 "0jkqm5cavixb1wfcw00k0pa6y8j252h6mhq5ldcz1qakp07rhzb4"))))
+        (base32 "0llz55bn2x03bs8xrl07c7yvbyackj3nslvpkyjcwmfsrk0l6fdb"))))
     (properties `((upstream-name . "lmomco")))
     (build-system r-build-system)
     (arguments
@@ -10164,13 +10164,13 @@ Implements forms of Language Style Matching (Ireland & Pennebaker, 2010)
 (define-public r-lingglosses
   (package
     (name "r-lingglosses")
-    (version "0.0.9")
+    (version "0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lingglosses" version))
        (sha256
-        (base32 "1nlili13y7jwcfwq726hmbvklfdjbic55hs9512p7ldnsxfr6h8w"))))
+        (base32 "0rj4yba20mv2yc83kzj7v01mzdrnvks7ibc8y5x466f3brj75gz0"))))
     (properties `((upstream-name . "lingglosses")))
     (build-system r-build-system)
     (arguments

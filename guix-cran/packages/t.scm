@@ -23020,13 +23020,13 @@ Soto et al. (2011) <doi:10.1139/x11-045>.")
 (define-public r-tgml
   (package
     (name "r-tgml")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tgml" version))
        (sha256
-        (base32 "0s6xkkbnj2mbnrj48f53safrz0zjv43rgm5ch8a0qhwq26q6h6c9"))))
+        (base32 "1kk5ly1ff1qmb70lxh5zxslwmfwy6bs6wj6rskzz6g25jmy08l6v"))))
     (properties `((upstream-name . "tgml")))
     (build-system r-build-system)
     (arguments
@@ -23035,7 +23035,7 @@ Soto et al. (2011) <doi:10.1139/x11-045>.")
     (propagated-inputs (list r-randomforest r-proc r-glmnet r-e1071))
     (home-page "https://cran.r-project.org/package=tgml")
     (synopsis
-     "Treed Guided Machine Learning for Personalized Prediction and Precision Diagnostics")
+     "Tree Guided Machine Learning for Personalized Prediction and Precision Diagnostics")
     (description
      "Generalization of the classification and regression tree (CART) model that
 partitions subjects into terminal nodes and tailors machine learning model to

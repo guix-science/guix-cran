@@ -3523,13 +3523,13 @@ gtsummary packages.")
 (define-public r-dswe
   (package
     (name "r-dswe")
-    (version "1.8.2")
+    (version "1.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSWE" version))
        (sha256
-        (base32 "0xbhbiiq0mhqspxlgzlnrq2zm3gnb8n4rj285rdgq4cbpmfrly6l"))))
+        (base32 "0a98hji3d7hsip5bb5vkqmqy74amv2x265g5hqshmzygw1x9pgjf"))))
     (properties `((upstream-name . "DSWE")))
     (build-system r-build-system)
     (arguments
@@ -19554,13 +19554,13 @@ Riviere Marie-Karelle et al. (2016) <doi:10.1177/0962280216631763>.")
 (define-public r-dfms
   (package
     (name "r-dfms")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfms" version))
        (sha256
-        (base32 "1bkkv7bk3z4j8wbayiybwa2qw6vgvkd50yb8p42wqnhkmsrp1dbx"))))
+        (base32 "1rvxl1i7pznyicz85irmnmlkhpfhk46xgzgr8hlczipfqbp3hc5d"))))
     (properties `((upstream-name . "dfms")))
     (build-system r-build-system)
     (arguments
@@ -20252,6 +20252,36 @@ graphic device that accepts all the required calls from R's graphic engine but
 performs no action.  Apart from benchmarking it is unlikely that this device has
 any practical use.")
     (license license:expat)))
+
+(define-public r-devianlm
+  (package
+    (name "r-devianlm")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "devianLM" version))
+       (sha256
+        (base32 "1lyk9njspypy5vpj03jmjjikfsq5vxrmw353phrqbms7z21h7aaw"))))
+    (properties `((upstream-name . "devianLM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=devianLM")
+    (synopsis "Detecting Extremal Values in a Normal Linear Model")
+    (description
+     "This package provides a method to detect values poorly explained by a Gaussian
+linear model.  The procedure is based on the maximum of the absolute value of
+the studentized residuals, which is a parameter-free statistic.  This approach
+generalizes several procedures used to detect abnormal values during
+longitudinal monitoring of biological markers.  For methodological details, see:
+Berthelot G., SauliÃ¨re G., Dedecker J. (2025). \"DE@code{ViaN-LM} An R Package
+for Detecting Abnormal Values in the Gaussian Linear Model\".  HAL Id:
+hal-05230549. <https://hal.science/hal-05230549>.")
+    (license license:gpl3)))
 
 (define-public r-devfunc
   (package

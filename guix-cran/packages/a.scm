@@ -12745,13 +12745,13 @@ surpluses of consumers, producers and sectors.")
 (define-public r-antareseditobject
   (package
     (name "r-antareseditobject")
-    (version "0.9.0")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresEditObject" version))
        (sha256
-        (base32 "0xi1kdlszmqnlx3kd8iv1zcm9awbqjz28sa7537f8gm6hk3nhhzc"))))
+        (base32 "19yq4h5n19sg40xs7axdlfnpmrg9h3gv6n4c4bw37lba5xw9nq2l"))))
     (properties `((upstream-name . "antaresEditObject")))
     (build-system r-build-system)
     (arguments
@@ -25477,13 +25477,13 @@ component, and push it to an Acumos platform.")
 (define-public r-actxps
   (package
     (name "r-actxps")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "actxps" version))
        (sha256
-        (base32 "0pfh080isw7rcdgqmvss6i6nqi3p41ig1npfvrc08c7masi3w54g"))))
+        (base32 "1kqg5c7c0hcqj16ms27lw15aj98xywq2r8hd06k0sz9104clnras"))))
     (properties `((upstream-name . "actxps")))
     (build-system r-build-system)
     (arguments

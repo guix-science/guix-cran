@@ -605,13 +605,13 @@ Equivalence Bound: A New Procedure of Hypothesis Testing\"
 (define-public r-buysetest
   (package
     (name "r-buysetest")
-    (version "3.3.3")
+    (version "3.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BuyseTest" version))
        (sha256
-        (base32 "0ihp597hmrm3zkiz1i0l5lr79md8z9y8nmr71ibgdc43lfgppx24"))))
+        (base32 "0whn8gzyki2m7z33p0wkq22v2rixdzic8f4pwq90nmi2x35a1kcy"))))
     (properties `((upstream-name . "BuyseTest")))
     (build-system r-build-system)
     (arguments
@@ -2645,13 +2645,13 @@ package is an implementation of the method described in Zhang, Hao and Yao
 (define-public r-bssm
   (package
     (name "r-bssm")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bssm" version))
        (sha256
-        (base32 "121fb12n5z3w97xpj5ga1985drv3h4g7b0xy5yk9sfqfaqf92yyn"))))
+        (base32 "0wqh7f1d8vsh5141qh6dk5gy2iapvm3f5aqba63d50zavf2b8540"))))
     (properties `((upstream-name . "bssm")))
     (build-system r-build-system)
     (arguments
@@ -9502,6 +9502,30 @@ structures.  This simulation approach is now extended to subpopulations related
 by a tree.  Method described in Ochoa and Storey (2021)
 <doi:10.1371/journal.pgen.1009241>.")
     (license license:gpl3+)))
+
+(define-public r-bnpmtp
+  (package
+    (name "r-bnpmtp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bnpMTP" version))
+       (sha256
+        (base32 "19drjv823vm3pxmxfyrabcapir7anfr1c3x1qk3q4la4hyfafy95"))))
+    (properties `((upstream-name . "bnpMTP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=bnpMTP")
+    (synopsis
+     "Bayesian Nonparametric Sensitivity Analysis of Multiple Testing Procedures for p Values")
+    (description
+     "Bayesian Nonparametric sensitivity analysis of multiple testing procedures for p
+values with arbitrary dependencies, based on the Dirichlet process prior
+distribution.")
+    (license license:gpl2+)))
 
 (define-public r-bnpmix
   (package
@@ -21186,13 +21210,13 @@ new trials within your R script itself.")
 (define-public r-bend
   (package
     (name "r-bend")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BEND" version))
        (sha256
-        (base32 "1d4pl73q9dr0r3albxb5mvx84smn3fffi1c5cs7f5slfaigza0mx"))))
+        (base32 "1wn2g13gkagg2ihaqry04689l0aib6b2s37zkla1khmpvr0kph59"))))
     (properties `((upstream-name . "BEND")))
     (build-system r-build-system)
     (arguments
@@ -27912,13 +27936,13 @@ the workflow at <https://genentech.github.io/@code{BayesERbook/>}.")
 (define-public r-bayeseo
   (package
     (name "r-bayeseo")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesEO" version))
        (sha256
-        (base32 "0zs4qqf8881x01wblzmnw7m3zmh4ifrim3a8ws454r2lxf4y7mj5"))))
+        (base32 "0lddzmhvzp8wpy5yfjshg4ddd2hqai1xci5l3db4kyjflsvbzxkr"))))
     (properties `((upstream-name . "bayesEO")))
     (build-system r-build-system)
     (arguments

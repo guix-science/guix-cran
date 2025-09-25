@@ -821,26 +821,30 @@ rare variant association tests in exome sequencing data.")
 (define-public r-zetasuite
   (package
     (name "r-zetasuite")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ZetaSuite" version))
        (sha256
-        (base32 "10b0acz88vc80x49wwv581abym75wswi4z92mnl4xn0vw62vjpqa"))))
+        (base32 "09g67b4lv8vafbvrgv1bh6yiswjc5s6rmdjzmzczzdk32q01fcbh"))))
     (properties `((upstream-name . "ZetaSuite")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rtsne
+    (propagated-inputs (list r-shinyjs
+                             r-shinydashboard
+                             r-shiny
+                             r-rtsne
                              r-reshape2
                              r-rcolorbrewer
+                             r-plotly
                              r-mixtools
                              r-gridextra
                              r-ggplot2
                              r-e1071
-                             r-dplyr))
+                             r-dt))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ZetaSuite")
     (synopsis
@@ -861,7 +865,7 @@ transcriptomics to differentiate rare cells from damaged ones (Vento-Tormo R
 (2018) <doi: 10.1038/s41586-018-0698-6>).  In @code{ZetaSuite}', we have the
 following steps: QC of input datasets, normalization using Z-transformation,
 Zeta score calculation and hits selection based on defined Screen Strength.")
-    (license (list license:gpl2 license:gpl3))))
+    (license license:expat)))
 
 (define-public r-zetadiv
   (package
@@ -951,13 +955,13 @@ and configuration management for package developers.")
 (define-public r-zep
   (package
     (name "r-zep")
-    (version "0.2.0")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ZEP" version))
        (sha256
-        (base32 "04mlmhlwd6dap4rwx243cpwqibycf2lbxjq2lcyh0nycy6zdp0s5"))))
+        (base32 "0x6jsvpkkx16nh9w78ic6yd3pki7zs5638sln85ar3br3sw9gdpk"))))
     (properties `((upstream-name . "ZEP")))
     (build-system r-build-system)
     (arguments

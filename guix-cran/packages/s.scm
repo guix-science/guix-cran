@@ -3734,6 +3734,43 @@ context-minimal approach for sensitivity analysis using extreme bounds to assess
 the sturdiness of regression coefficients.")
     (license license:gpl3)))
 
+(define-public r-svalignr
+  (package
+    (name "r-svalignr")
+    (version "0.9.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SVAlignR" version))
+       (sha256
+        (base32 "1w7pycmzcpz233hwq16xyr1rj1qh627iyh59f6zri6fcqqq5m26w"))))
+    (properties `((upstream-name . "SVAlignR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-stringr
+                             r-polychrome
+                             r-oompabase
+                             r-nameneedle
+                             r-igraph
+                             r-dendextend
+                             r-colorspace
+                             r-biostrings
+                             r-ape))
+    (native-inputs (list r-r-rsp))
+    (home-page "http://oompa.r-forge.r-project.org/")
+    (synopsis
+     "Recovering Structure of Long Molecules from Structural Variation Data")
+    (description
+     "This package implements a method to combine multiple levels of multiple sequence
+alignment to uncover the structure of complex DNA rearrangements.")
+    (license license:asl2.0)))
+
 (define-public r-susy
   (package
     (name "r-susy")
@@ -27084,13 +27121,13 @@ Apley (2019b) <doi:10.1016/j.csda.2019.01.019>.")
 (define-public r-spc
   (package
     (name "r-spc")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spc" version))
        (sha256
-        (base32 "0lp9ngjshkpww28vqsbazh1wila8p1v5x4xq04x58acwhf3cpjxx"))))
+        (base32 "1i9w8syx77wi1rgkx43kw4yxp9iy72bh1x3jp5xhkwa86rgljk4j"))))
     (properties `((upstream-name . "spc")))
     (build-system r-build-system)
     (arguments
@@ -38410,19 +38447,19 @@ smallsets vignette.")
 (define-public r-smallcountrounding
   (package
     (name "r-smallcountrounding")
-    (version "1.2.0")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SmallCountRounding" version))
        (sha256
-        (base32 "0gyc3m4qybj7cscli037vhvp56w5w0a7lp0hgpcscpklbchvlwsy"))))
+        (base32 "0rv71dikakxgviwdx45xq2s6yjqmlgvjp27iy6a65padhs1qspqj"))))
     (properties `((upstream-name . "SmallCountRounding")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ssbtools r-matrix))
+    (propagated-inputs (list r-ssbtools r-rlang r-matrix r-ellipsis))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/statisticsnorway/ssb-smallcountrounding")
     (synopsis "Small Count Rounding of Tabular Data")
@@ -40217,24 +40254,25 @@ orientation of archaeological structures, following Silva (2020)
 (define-public r-skylight
   (package
     (name "r-skylight")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skylight" version))
        (sha256
-        (base32 "1yh3hk1z4c25pkb9gzyc16a68jd1za4h9z4l9xh5avkg68ixff5j"))))
+        (base32 "07x9rnq4gn79bjp21m7mlp45nr5ly30zaz26n3cj3mlg7wsxrw3y"))))
     (properties `((upstream-name . "skylight")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bluegreen-labs/skylight")
     (synopsis "Simple Sky Illuminance Model")
     (description
      "This package provides a tool to calculate sky illuminance values (in lux) for
-both sun and moon.  The model is a verbatim translation of the code by Janiczek
+both sun and moon.  The model is a translation of the Fortran code by Janiczek
 and @code{DeYoung} (1987) <https://archive.org/details/DTIC_ADA182110>.")
     (license license:agpl3)))
 
@@ -42221,6 +42259,48 @@ single-index coefficients via bootstrap, and visualize the estimated univariate
 function.  Please see W., Y., Y. (2010) <doi:10.1016/j.jmva.2010.02.003> for
 details.")
     (license license:gpl3)))
+
+(define-public r-sipmg
+  (package
+    (name "r-sipmg")
+    (version "3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SIPmg" version))
+       (sha256
+        (base32 "1bs048sy3jbnadfj0sli27lw7l55k3mxanck47886xmzl4f3a9g5"))))
+    (properties `((upstream-name . "SIPmg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-plyr
+                             r-phyloseq
+                             r-mass
+                             r-magrittr
+                             r-lazyeval
+                             r-glue
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-deseq2
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://zielslab.github.io/SIPmg.github.io/")
+    (synopsis
+     "Statistical Analysis to Identify Isotope Incorporating Metagenomic Features")
+    (description
+     "Statistical analysis as part of a quantitative stable isotope probing (SIP)
+metagenomics study to identify isotope incorporating metagenomic features.
+Helpful reading and a vignette in bookdown format is provided on the package
+site <https://zielslab.github.io/SIPmg.github.io/>.")
+    (license license:gpl2)))
 
 (define-public r-siplab
   (package
@@ -65904,13 +65984,13 @@ reconstructed trajectory, as well as nice visualisation tools.  Cannoodt et al.
 (define-public r-scorpion
   (package
     (name "r-scorpion")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCORPION" version))
        (sha256
-        (base32 "04iq52mbgw3gpasgad8c4c60hvvaj85cr6dc1ar4anaszgjazd33"))))
+        (base32 "0g608cbidhh9kixb43p0212ms2jcgrmg5qwplvcyh116qjkidpq3"))))
     (properties `((upstream-name . "SCORPION")))
     (build-system r-build-system)
     (arguments
@@ -69684,13 +69764,13 @@ Causal Treatment Effect Estimates\".  Statistics in Medicine, 39(18): 2447- 2476
 (define-public r-sbde
   (package
     (name "r-sbde")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sbde" version))
        (sha256
-        (base32 "0npsf2s3j87j6gxjbpf46qndazjm2al43pxbhnx0jd6gd8fmr631"))))
+        (base32 "1rfz6r1vq7wsl9i4az4nfmlhgf400vhlvxx376m8c9m5jl5bqvla"))))
     (properties `((upstream-name . "sbde")))
     (build-system r-build-system)
     (arguments
@@ -71200,13 +71280,13 @@ parameters can be found at Nasir et al. (2022) <https://murtaza.cc/SANSA/>.")
 (define-public r-sanple
   (package
     (name "r-sanple")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SANple" version))
        (sha256
-        (base32 "1v3yhhfj93zwvngplpfxrrysrfjkyv5hfz02fgjl8fvxsif1dq0g"))))
+        (base32 "1ydw8mppf8bnbmdz3658z5vfrnvn811kgybz0hf4jcpnfgvjb3d4"))))
     (properties `((upstream-name . "SANple")))
     (build-system r-build-system)
     (arguments
@@ -71224,12 +71304,12 @@ parameters can be found at Nasir et al. (2022) <https://murtaza.cc/SANSA/>.")
     (description
      "Estimate Bayesian nested mixture models via Markov Chain Monte Carlo methods.
 Specifically, the package implements the common atoms model (Denti et al.,
-2023), its finite version (D'Angelo et al., 2023), and a hybrid finite-infinite
-model.  All models use Gaussian mixtures with a normal-inverse-gamma prior
-distribution on the parameters.  Additional functions are provided to help
-analyzing the results of the fitting procedure.  References: Denti, Camerlenghi,
-Guindani, Mira (2023) <doi:10.1080/01621459.2021.1933499>, DâAngelo, Canale,
-Yu, Guindani (2023) <doi:10.1111/biom.13626>.")
+2023), and hybrid finite-infinite models.  All models use Gaussian mixtures with
+a normal-inverse-gamma prior distribution on the parameters.  Additional
+functions are provided to help analyzing the results of the fitting procedure.
+References: Denti, Camerlenghi, Guindani, Mira (2023)
+<doi:10.1080/01621459.2021.1933499>, DâAngelo, Denti (2024)
+<doi:10.1214/24-BA1458>.")
     (license license:expat)))
 
 (define-public r-sanon
@@ -71544,13 +71624,13 @@ R, 2nd Edition'.")
 (define-public r-sanba
   (package
     (name "r-sanba")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sanba" version))
        (sha256
-        (base32 "1k9r63m4fc3v70887br8w4rd8x6fbm6076wq534mq9020hpwbj34"))))
+        (base32 "0xprh9hahf1481i27f8rs4m8z1v0nxzkdazy0sadhlqfamkll9m2"))))
     (properties `((upstream-name . "sanba")))
     (build-system r-build-system)
     (arguments
@@ -73293,13 +73373,13 @@ any type of spatial data commonly found in other sciences.")
 (define-public r-sager
   (package
     (name "r-sager")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sageR" version))
        (sha256
-        (base32 "0j7k0sr040s6d4zmfg5hnfswcxjrv4lnq8j6j0knf44xahxm7vry"))))
+        (base32 "0hvmqdww6fhxi90d7khf9dmf215gqa2d3ks48wfzvyqnbqsjadjs"))))
     (properties `((upstream-name . "sageR")))
     (build-system r-build-system)
     (arguments

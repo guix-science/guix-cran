@@ -17059,6 +17059,36 @@ Antonio Punzo, Angelo Mazza, and Paul D @code{McNicholas} (2018)
 <doi:10.18637/jss.v085.i10>.")
     (license license:gpl2)))
 
+(define-public r-containr
+  (package
+    (name "r-containr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "containr" version))
+       (sha256
+        (base32 "1s41fi08v7qwih3asx6xr4lnx16pwzyra4hgma1l3pn3dws5xp87"))))
+    (properties `((upstream-name . "containr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readr r-purrr r-httr r-glue r-dplyr))
+    (home-page "https://github.com/erwinlares/containr")
+    (synopsis "Containerize Your 'R' Project")
+    (description
+     "Automates the process of containerizing R projects.  The core function of
+containr is @code{generate_dockerfile()}', which analyzes an R project's
+environment and dependencies via an renv lock file and generates a ready-to-use
+Dockerfile that encapsulates the computational setup.  The package helps
+researchers build portable and consistent workflows so that analyses can be
+reliably shared, archived, and rerun across systems.  See R Core Team (2025)
+<https://www.R-project.org/>, Ushey et al. (2025)
+<https://CRAN.R-project.org/package=renv>, and Docker Inc. (2025)
+<https://www.docker.com/>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-container
   (package
     (name "r-container")
@@ -20727,13 +20757,13 @@ Discriminant Analysis (HDDA) algorithm of Bouveyron C. Girard S. and Schmid C.
 (define-public r-compositionalclust
   (package
     (name "r-compositionalclust")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompositionalClust" version))
        (sha256
-        (base32 "02a63m984riy436ylzilnnzzfb5pkkby4jkz066nba096kpssbrp"))))
+        (base32 "1jayq5sfblbihqk9173y37ndyd07czfivs5npiqab8s9w4b00a2k"))))
     (properties `((upstream-name . "CompositionalClust")))
     (build-system r-build-system)
     (arguments
@@ -41566,13 +41596,13 @@ statistical analysis on categorical functional data.")
 (define-public r-cfc
   (package
     (name "r-cfc")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFC" version))
        (sha256
-        (base32 "16abn3ydixb819qyyrs351d8v6qaaaz1gif0yfd8gdh7xnr2qzpy"))))
+        (base32 "05laf731xkmq4kkbz6sai18qrdsw2kpy4bril94n0v048fjmfjav"))))
     (properties `((upstream-name . "CFC")))
     (build-system r-build-system)
     (arguments

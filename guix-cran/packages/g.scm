@@ -16893,13 +16893,13 @@ Eurostat.")
 (define-public r-giraf
   (package
     (name "r-giraf")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GiRaF" version))
        (sha256
-        (base32 "1m19jxr6h485v32iqq260cizf30cgrx3pk802r73fbp3ssj7nmvh"))))
+        (base32 "1r68q3blv5nhf0sy2xmpw1l0w24ly7dmzg28k5bfpwgagwzzrj0q"))))
     (properties `((upstream-name . "GiRaF")))
     (build-system r-build-system)
     (arguments
@@ -19096,13 +19096,13 @@ oceanography research communities.")
 (define-public r-ggspectra
   (package
     (name "r-ggspectra")
-    (version "0.3.16")
+    (version "0.3.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggspectra" version))
        (sha256
-        (base32 "0w9msigbd9439882nr8yyr05ia9ghfckfpdym4n4s1p54n3bbcm7"))))
+        (base32 "05vxgfidcn3y5cfvcgr703zzgwq87gj2i7izacwwv7mmwjgslkzj"))))
     (properties `((upstream-name . "ggspectra")))
     (build-system r-build-system)
     (arguments
@@ -21284,6 +21284,42 @@ thematic maps.  Suitable for spatial data analysis and enhancing map
 visualization with flexible styling options.")
     (license license:gpl3)))
 
+(define-public r-gglyph
+  (package
+    (name "r-gglyph")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gglyph" version))
+       (sha256
+        (base32 "1w9n504pi8ym38f4qjnsrqw7cbmfqhk7hsdl1pfp3510siigfiyx"))))
+    (properties `((upstream-name . "gglyph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-magrittr
+                             r-ggtext
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://valentinsvelev.github.io/gglyph/")
+    (synopsis "Network-Style Visualization of Directed Pairwise Relationships")
+    (description
+     "Create network-style visualizations of pairwise relationships using custom edge
+glyphs built on top of ggplot2'.  The package supports both statistical and
+non-statistical data and allows users to represent directed relationships.  This
+enables clear, publication-ready graphics for exploring and communicating
+relational structures in a wide range of domains.  The method was first used in
+Abu-Akel et al. (2021) <doi:10.1371/journal.pone.0245100>.  Code is released
+under the MIT License; included datasets are licensed under the Creative Commons
+Attribution 4.0 International (CC BY 4.0).")
+    (license license:expat)))
+
 (define-public r-gglorenz
   (package
     (name "r-gglorenz")
@@ -23264,13 +23300,13 @@ correlations.")
 (define-public r-ggcompare
   (package
     (name "r-ggcompare")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggcompare" version))
        (sha256
-        (base32 "0pys67rvyqc7pfgr1mmr1pyb3dgj618h3napfz005kn2rvb0v9wd"))))
+        (base32 "090q4biyivwz1vc1i8f0gmikr0qps0j8w1vp6ragfpd6wpvf3hgz"))))
     (properties `((upstream-name . "ggcompare")))
     (build-system r-build-system)
     (arguments

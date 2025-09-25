@@ -8031,13 +8031,13 @@ regime-switching models with exogenous variables as in Pelletier (2006)
 (define-public r-rsda
   (package
     (name "r-rsda")
-    (version "3.2.4")
+    (version "3.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSDA" version))
        (sha256
-        (base32 "0qg7z42x8m70b1arkkcm9idyq72as4zqvmvqvmjhlpap0w4ispw1"))))
+        (base32 "0smg932m9rpyvbvzqsdzj3qcy4q892bpcfh2k9rwqjlbiaaax3fj"))))
     (properties `((upstream-name . "RSDA")))
     (build-system r-build-system)
     (arguments
@@ -11618,13 +11618,13 @@ highly efficient robust PLS estimator.")
 (define-public r-rplotterpkg
   (package
     (name "r-rplotterpkg")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RplotterPkg" version))
        (sha256
-        (base32 "195dz7sa5rg1b85i6fjpm5y9y276d7my02vbbx4rxs71z51iyl98"))))
+        (base32 "04lcpvhy2cs8qgvlwa4qjk8hsabkxz2lxm4dnw30j331ck4qb5x6"))))
     (properties `((upstream-name . "RplotterPkg")))
     (build-system r-build-system)
     (arguments
@@ -12485,13 +12485,13 @@ referred to as cartoons', are provided.")
 (define-public r-rpanda
   (package
     (name "r-rpanda")
-    (version "2.4")
+    (version "2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RPANDA" version))
        (sha256
-        (base32 "17133hisxlzcxpn5ff4n4k63vsy13nggk7lqa2f5j0c6qz5di1yf"))))
+        (base32 "1g49byyn0nj11kl9iy9ix4faqvs3ww2z7xmz63p94qi1878hzxcm"))))
     (properties `((upstream-name . "RPANDA")))
     (build-system r-build-system)
     (arguments
@@ -14171,19 +14171,19 @@ a symmetric positive definite matrix generator, see Mezzadri, F. (2007)
 (define-public r-ronfig
   (package
     (name "r-ronfig")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ronfig" version))
        (sha256
-        (base32 "0wxl6vl4h902q8pj3v1vqdpk8r2hcfrwjba4jmbc7nxy6cvnrc3v"))))
+        (base32 "12b3fc40nndkr6brc1bjh2d79x5mvfp9d2hmyv539sjnrzm77yzq"))))
     (properties `((upstream-name . "ronfig")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-cli))
+    (propagated-inputs (list r-cli r-carrier))
     (native-inputs (list r-litedown))
     (home-page "https://timtaylor.codeberg.page/ronfig/")
     (synopsis "Load Configuration Values")
@@ -22747,13 +22747,13 @@ contains the jscolor.js library with a custom shiny output binding.")
 (define-public r-rlummodel
   (package
     (name "r-rlummodel")
-    (version "0.2.10")
+    (version "0.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RLumModel" version))
        (sha256
-        (base32 "1klb7zvxksij517bi8xi68bia6y7jlp3ils659mmwdm2w0ljmwa6"))))
+        (base32 "19ld4kr9hyhglahsgvqpik291pzsryq1figamc59jhd1419l5r9d"))))
     (properties `((upstream-name . "RLumModel")))
     (build-system r-build-system)
     (arguments

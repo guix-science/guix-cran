@@ -6458,13 +6458,13 @@ analysis.")
 (define-public r-weibullr-plotly
   (package
     (name "r-weibullr-plotly")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeibullR.plotly" version))
        (sha256
-        (base32 "0xld1qycznh2980m8mfc2fjdraazqwcqmf8pyyrs7fv64d8bkaak"))))
+        (base32 "17gwc5alrxhfaybsdisiyxi4pyswqqfl7wbw4bhx11lynn1jxzcm"))))
     (properties `((upstream-name . "WeibullR.plotly")))
     (build-system r-build-system)
     (arguments

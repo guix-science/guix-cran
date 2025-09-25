@@ -1794,13 +1794,13 @@ disturbances simulated according to Le et al.(2022)
 (define-public r-updog
   (package
     (name "r-updog")
-    (version "2.1.5")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "updog" version))
        (sha256
-        (base32 "118i7z797cc7hhsk0i4w7n0p7znw9szvn7mbymc7d9yqnck4x6d9"))))
+        (base32 "0zxaschvj5wbmjz2l9izfkxqrna6izar0pd4lb74d79m4zs3lcra"))))
     (properties `((upstream-name . "updog")))
     (build-system r-build-system)
     (arguments
@@ -1817,7 +1817,7 @@ disturbances simulated according to Le et al.(2022)
                              r-dofuture
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/dcgerard/updog/")
+    (home-page "https://dcgerard.github.io/updog/")
     (synopsis "Flexible Genotyping for Polyploids")
     (description
      "This package implements empirical Bayes approaches to genotype polyploids from
@@ -1832,7 +1832,7 @@ useful for read depth calculations.  Run @code{browseVignettes(package} =
 \"updog\") in R for example usage.  See Gerard et al. (2018)
 <doi:10.1534/genetics.118.301468> and Gerard and Ferrao (2020)
 <doi:10.1093/bioinformatics/btz852> for details on the implemented methods.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-updater
   (package

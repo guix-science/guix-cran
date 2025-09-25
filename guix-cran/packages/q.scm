@@ -4159,13 +4159,13 @@ design for non-R users.  It builds on the methods described by Wu et al. (2020)
 (define-public r-qrjoint
   (package
     (name "r-qrjoint")
-    (version "2.0-9")
+    (version "2.0-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrjoint" version))
        (sha256
-        (base32 "0dvz5adawy143r0ddgrblzac76igwmngnblr6vq57sxlvj1nsm7h"))))
+        (base32 "09qnv9ws4naskn3chv895n79j4lrl9if1ygg11hw6ybaxp1fxr97"))))
     (properties `((upstream-name . "qrjoint")))
     (build-system r-build-system)
     (arguments
