@@ -3467,13 +3467,13 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svemnet
   (package
     (name "r-svemnet")
-    (version "2.1.3")
+    (version "2.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVEMnet" version))
        (sha256
-        (base32 "151lgd7q6zjr8gxzki58n02d5sljv0vmssmpl7alqwisirak4dsl"))))
+        (base32 "0m0z53mjj25fv1k46j4nb1h5s3zjqcd06xh70y36w1ggnf6z8m54"))))
     (properties `((upstream-name . "SVEMnet")))
     (build-system r-build-system)
     (arguments
@@ -3485,21 +3485,20 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
                              r-gamlss-dist
                              r-gamlss
                              r-foreach
-                             r-doparallel))
+                             r-doparallel
+                             r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SVEMnet")
     (synopsis
-     "Self-Validated Ensemble Models with Lasso and Relaxed-Elastic Net Regression")
+     "Self-Validated Ensemble Models with Lasso and Relaxed Elastic Net Regression")
     (description
-     "This package implements Self-Validated Ensemble Models (SVEM, Lemkus et al.
-(2021) <doi:10.1016/j.chemolab.2021.104439>) using Elastic Net regression via
-glmnet (Friedman et al. <doi:10.18637/jss.v033.i01>).  SVEM averages predictions
-from multiple models fitted to fractionally weighted bootstraps of the data,
-tuned with anti-correlated validation weights.  Also implements the randomized
-permutation whole model test for SVEM (Karl (2024)
-<doi:10.1016/j.chemolab.2024.105122>). \\\\Code for the whole model test was taken
-from the supplementary material of Karl (2024).  Development of this package was
-assisted by GPT o1-preview for code structure and documentation.")
+     "This package implements Self-Validated Ensemble Models (SVEM; Lemkus et al.
+(2021) <doi:10.1016/j.chemolab.2021.104439>) using elastic net regression via
+glmnet (Friedman et al. (2010) <doi:10.18637/jss.v033.i01>).  SVEM averages
+predictions from multiple models fitted to fractionally weighted bootstraps of
+the data, tuned with anti-correlated validation weights.  Also implements the
+randomized permutation whole-model test for SVEM (Karl (2024)
+<doi:10.1016/j.chemolab.2024.105122>).")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-svelteplots
@@ -6300,20 +6299,20 @@ differences of two Kaplan-Meier curves.")
 (define-public r-survauc
   (package
     (name "r-survauc")
-    (version "1.3-0")
+    (version "1.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survAUC" version))
        (sha256
-        (base32 "18j3fmn0ac97pl3bwnj0iamgcnva0198g7g09gdqml1dp9vh4k8y"))))
+        (base32 "00gbm925liggxk4zn2vq5l9d2pqvraj3gwixmmxlq63ylmcp4dnc"))))
     (properties `((upstream-name . "survAUC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival r-rms))
-    (home-page "https://cran.r-project.org/package=survAUC")
+    (home-page "https://fbertran.github.io/survAUC/")
     (synopsis "Estimators of Prediction Accuracy for Time-to-Event Data")
     (description
      "This package provides a variety of functions to estimate time-dependent
@@ -9783,13 +9782,13 @@ desired format in a reasonably performant manner.")
 (define-public r-strucchangercpp
   (package
     (name "r-strucchangercpp")
-    (version "1.5-4-1.0.0")
+    (version "1.5-4-1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "strucchangeRcpp" version))
        (sha256
-        (base32 "15csz77hfii23dv8rrsabwilq8z0fa5f0vp6nhwh2nmww4y2fm7v"))))
+        (base32 "0sgjlh24lq8zsaj1smi4ahd5m0n62vqv6xlf0zp4hn0jr8b852wh"))))
     (properties `((upstream-name . "strucchangeRcpp")))
     (build-system r-build-system)
     (arguments
@@ -15991,13 +15990,13 @@ well as on the public pkgdown page at
 (define-public r-statconfr
   (package
     (name "r-statconfr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statConfR" version))
        (sha256
-        (base32 "0ccq4rvnw7880a2vckbq94fsggk56mb0gfz7fizgna63dsmzwgpx"))))
+        (base32 "0l3sgk69khlgpfns18y682ikqaqfkjhz6yssb29g4a3gngv87lhh"))))
     (properties `((upstream-name . "statConfR")))
     (build-system r-build-system)
     (arguments
@@ -16010,8 +16009,8 @@ well as on the public pkgdown page at
      "This package provides fitting functions and other tools for decision confidence
 and metacognition researchers, including meta-d'/d', often considered to be the
 gold standard to measure metacognitive efficiency, and information-theoretic
-measures of metacognition.  Also allows to fit several static models of decision
-making and confidence.")
+measures of metacognition.  Also allows to fit and compare several static models
+of decision making and confidence.")
     (license license:gpl3+)))
 
 (define-public r-statcomp
@@ -20966,13 +20965,13 @@ including the model's response function.")
 (define-public r-sqlrender
   (package
     (name "r-sqlrender")
-    (version "1.19.3")
+    (version "1.19.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SqlRender" version))
        (sha256
-        (base32 "0vygxvrid369i3ih255k69nfyqy4p3bi1pdzz663qphi9kvaqrz8"))))
+        (base32 "0lqjpshh6glxz7b6r22yyywqc2l1v6d30brq59l89k5m26g00vg5"))))
     (properties `((upstream-name . "SqlRender")))
     (build-system r-build-system)
     (arguments
@@ -24599,13 +24598,13 @@ in Brown et al (2012) <doi:10.1111/j.1755-0998.2011.03108.x>.")
 (define-public r-spicy
   (package
     (name "r-spicy")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spicy" version))
        (sha256
-        (base32 "1rfxvw62kv01ai32k6i7l5rgrckabx0nj0yw5p78q35gszk2nc6l"))))
+        (base32 "0izjwpdi3ap9cjgdcpj5kiasgrddfwdcnckld7pqpbajg0s86gb5"))))
     (properties `((upstream-name . "spicy")))
     (build-system r-build-system)
     (arguments
@@ -33983,13 +33982,13 @@ distribution by Perfect et al. (1992)
 (define-public r-soildb
   (package
     (name "r-soildb")
-    (version "2.8.12")
+    (version "2.8.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilDB" version))
        (sha256
-        (base32 "1j0ri9is9xgi51lqs4l16crdd4qbvvci4w1ysw3ndibk54cgkl0g"))))
+        (base32 "0xwrcqw9wca3y4644iysqmd3cscn6ihx71klp034g5qvga374w1i"))))
     (properties `((upstream-name . "soilDB")))
     (build-system r-build-system)
     (arguments
@@ -43502,13 +43501,13 @@ generated using various mechanisms (MCAR, MAR, NMAR).")
 (define-public r-simstatespace
   (package
     (name "r-simstatespace")
-    (version "1.2.10")
+    (version "1.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simStateSpace" version))
        (sha256
-        (base32 "16n682sn1ibp7hdlzl2aj9qg5xv85w1k0lrasx3mswa7yqn6lccz"))))
+        (base32 "0vmhh7cd4fs67xz9rlrbsy43zkdc5pp6r82z2m1qhfy1jxcybmba"))))
     (properties `((upstream-name . "simStateSpace")))
     (build-system r-build-system)
     (arguments
@@ -44601,19 +44600,19 @@ enough for use in large-scale data analysis projects.")
 (define-public r-simple-regression
   (package
     (name "r-simple-regression")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIMPLE.REGRESSION" version))
        (sha256
-        (base32 "1dl59gsf5p3kkafws6v4rk7vldskia5pji8qd9pv5p9ds96nivsx"))))
+        (base32 "1w735rd1ifkz47jd6l995acbamps9d0w0zbna3lx47v28nzrnmiz"))))
     (properties `((upstream-name . "SIMPLE.REGRESSION")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rstanarm r-pscl r-nlme r-mass r-bayesfactor))
+    (propagated-inputs (list r-pscl r-nlme r-mass r-bayesfactor))
     (home-page "https://cran.r-project.org/package=SIMPLE.REGRESSION")
     (synopsis "OLS, Moderated, Logistic, and Count Regressions Made Simple")
     (description
@@ -47969,13 +47968,13 @@ batch problems.  Details of the methods can be found in:
 (define-public r-siera
   (package
     (name "r-siera")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "siera" version))
        (sha256
-        (base32 "1siddi156lplzns25pkfczj6d3gh2wyyyznd2khz5y93m6afza4d"))))
+        (base32 "1y0sq7dkg7b8d4wlxhk8jrb479mi37ijdqn2b8ikbkqlgf6gdf3x"))))
     (properties `((upstream-name . "siera")))
     (build-system r-build-system)
     (arguments
@@ -53741,13 +53740,13 @@ individual SAR studies; as described in Solymos and Lele (2012)
 (define-public r-sharpshootr
   (package
     (name "r-sharpshootr")
-    (version "2.3.3")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sharpshootR" version))
        (sha256
-        (base32 "07v0w2zgnhhx9bip883ladaa9nswklcp0hf5dpr7b8ds2filzzkn"))))
+        (base32 "0dcxrb7shln2g6x2fx5jd6yjdf3wsv7bwdc04i6iimzp3yc96b7l"))))
     (properties `((upstream-name . "sharpshootR")))
     (build-system r-build-system)
     (arguments
@@ -57571,13 +57570,13 @@ invariant the package contains the subroutines @code{seqICP.s} and
 (define-public r-seqhmm
   (package
     (name "r-seqhmm")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seqHMM" version))
        (sha256
-        (base32 "1lh3z39vrrdzhs7g428h0y300haglj4y48smsafjf16pkpnsrnyl"))))
+        (base32 "1pk0qiv78if9xarw9m16bf4ji8djfg7lyixks4ydp7wvqclmksjv"))))
     (properties `((upstream-name . "seqHMM")))
     (build-system r-build-system)
     (arguments
@@ -57600,6 +57599,7 @@ invariant the package contains the subroutines @code{seqICP.s} and
                              r-ggplot2
                              r-future-apply
                              r-data-table
+                             r-collapse
                              r-cli
                              r-checkmate))
     (native-inputs (list r-knitr))
@@ -65571,13 +65571,13 @@ based on model departure as a novel data representation.")
 (define-public r-scpoem
   (package
     (name "r-scpoem")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scPOEM" version))
        (sha256
-        (base32 "1q6biw89asz6j93f34zs5vp63m1dcqgd4nb3ajfsnpfapi51hjrg"))))
+        (base32 "1d5mglfb4vl7vbicfjf2vdcx59v1q7i6x0p949vnlxc2qcmqakr4"))))
     (properties `((upstream-name . "scPOEM")))
     (build-system r-build-system)
     (arguments
@@ -65598,7 +65598,7 @@ based on model departure as a novel data representation.")
                              r-cicero
                              r-biocgenerics
                              r-biobase))
-    (home-page "https://cran.r-project.org/package=scPOEM")
+    (home-page "https://github.com/Houyt23/scPOEM")
     (synopsis "Single-Cell Meta-Path Based Omic Embedding")
     (description
      "Provide a workflow to jointly embed chromatin accessibility peaks and expressed
@@ -65611,7 +65611,8 @@ interactions (via principal component regression).  With the input of paired
 low-dimensional feature vector to each gene and peak.  Additionally, it supports
 the reconstruction of gene-gene network with low-dimensional projections (via
 epsilon-NN) and then the comparison of the networks of two conditions through
-manifold alignment implemented in @code{scTenifoldNet}'.")
+manifold alignment implemented in @code{scTenifoldNet}'.  See
+<doi:10.1093/bioinformatics/btaf483> for more details.")
     (license license:gpl2+)))
 
 (define-public r-scplot
@@ -74758,13 +74759,13 @@ interest by fitting the model to Survey 2 data and predicting values for Survey
 (define-public r-sads
   (package
     (name "r-sads")
-    (version "0.6.3")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sads" version))
        (sha256
-        (base32 "196kzsq3afzj8j69417i6xmbbjgbm5qyinrw6s6drs07yhvnzp0f"))))
+        (base32 "1789m4ib174flxa7vkla9pid441zqc3bdqzqicdidcc1vsp6zvk7"))))
     (properties `((upstream-name . "sads")))
     (build-system r-build-system)
     (arguments
@@ -75250,6 +75251,52 @@ models.  We develop a flexible and fast implementation, written in C++ using
 <doi:10.1080/10618600.2012.657139> for references on the Joint Trained
 Elastic-Net.")
     (license license:gpl2+)))
+
+(define-public r-s2dv
+  (package
+    (name "r-s2dv")
+    (version "2.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "s2dv" version))
+       (sha256
+        (base32 "1dg51nyjg54c9z1ikhvbxc23cq8nlivk7akbrbaglhgm13w7wgkz"))))
+    (properties `((upstream-name . "s2dv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list cdo))
+    (propagated-inputs (list r-specsverification
+                             r-plyr
+                             r-ncdf4
+                             r-nbclust
+                             r-multiapply
+                             r-maps
+                             r-mapproj
+                             r-easyverification
+                             r-easyncdf
+                             r-climprojdiags
+                             r-bigmemory
+                             r-abind))
+    (home-page "https://earth.bsc.es/gitlab/es/s2dv/")
+    (synopsis "Seasonal to Decadal Verification")
+    (description
+     "An advanced version of package s2dverification'.  Intended for seasonal to
+decadal (s2d) climate forecast verification, but also applicable to other types
+of forecasts or general climate analysis.  This package is specifically designed
+for comparing experimental and observational datasets.  It provides
+functionality for data retrieval, post-processing, skill score computation
+against observations, and visualization.  Compared to s2dverification', s2dv is
+more compatible with the package @code{startR}', able to use multiple cores for
+computation and handle multi-dimensional arrays with a higher flexibility.  The
+Climate Data Operators (CDO) version used in development is 1.9.8.  Implements
+methods described in Wilks (2011) <doi:10.1016/B978-0-12-385022-5.00008-7>,
+@code{DelSole} and Tippett (2016) <doi:10.1175/MWR-D-15-0218.1>, Kharin et al.
+(2012) <doi:10.1029/2012GL052647>, Doblas-Reyes et al. (2003)
+<doi:10.1007/s00382-003-0350-4>.")
+    (license license:gpl3)))
 
 (define-public r-s20x
   (package

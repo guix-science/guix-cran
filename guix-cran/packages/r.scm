@@ -8788,13 +8788,13 @@ maintainer of the package.")
 (define-public r-rsa
   (package
     (name "r-rsa")
-    (version "0.10.6")
+    (version "0.10.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSA" version))
        (sha256
-        (base32 "137izjrvicf02bnc6q00wn187754f25dh22swpb46vid18cf1q9h"))))
+        (base32 "0asvx895zp5g2hib6yxjirfppr9wpqgh4iqmfsf651yrpbp0bjx9"))))
     (properties `((upstream-name . "RSA")))
     (build-system r-build-system)
     (arguments
@@ -22687,13 +22687,13 @@ routines implement the algorithm described in Michael, Thronton, Xie, and Tian
 (define-public r-rly
   (package
     (name "r-rly")
-    (version "1.7.4")
+    (version "1.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rly" version))
        (sha256
-        (base32 "044rpc1gs1jhm2hlmdmwinf24qvh2d0d6kg55zicmwdcdf8gnn8z"))))
+        (base32 "1ijpbqh9bcc7xaj1fb3pysg43bshff8hbzjrb5cl34wa0xw5ghzv"))))
     (properties `((upstream-name . "rly")))
     (build-system r-build-system)
     (arguments
@@ -26960,22 +26960,18 @@ optimization on matrix manifolds.")
 (define-public r-riemann
   (package
     (name "r-riemann")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Riemann" version))
        (sha256
-        (base32 "1a3mlfgnzdvl5x1nqnmm4v3xb2nkdq87c21m6xyxbm7zh5vx5b6m"))))
+        (base32 "1nbkrcdj9vd3v7vk5zz0gg5zarakznclzvg5xmsbsrzgzm94k9fx"))))
     (properties `((upstream-name . "Riemann")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-t4cluster
                              r-riembase
                              r-rdpack
@@ -26987,8 +26983,7 @@ optimization on matrix manifolds.")
                              r-lpsolve
                              r-deoptim
                              r-cvxr))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://kisungyou.com/Riemann/")
+    (home-page "https://www.kisungyou.com/Riemann/")
     (synopsis "Learning with Data on Riemannian Manifolds")
     (description
      "We provide a variety of algorithms for manifold-valued data, including FrÃ©chet
@@ -32383,13 +32378,13 @@ National University of Jujuy (UNJu).")
 (define-public r-resultmodelmanager
   (package
     (name "r-resultmodelmanager")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ResultModelManager" version))
        (sha256
-        (base32 "1mxdm6x9gwrx50kv22l04dxyg7zhvax3sslhsbgfs9bxjg2aai7y"))))
+        (base32 "1hrrv04xf8jddz51ifrqf7q9cbj5fwc3j0fmwh5dxm687zfjsafb"))))
     (properties `((upstream-name . "ResultModelManager")))
     (build-system r-build-system)
     (arguments
@@ -34890,13 +34885,13 @@ the workshop.")
 (define-public r-repo-data
   (package
     (name "r-repo-data")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "repo.data" version))
        (sha256
-        (base32 "0lymfkfj6l0l112439ykiz8lrl8w561xkgx4ddnd85c3fx820314"))))
+        (base32 "0vw85cl466k92jvrpl74dy77v20s3cfzsqpk12j1yvzb3nr2hf18"))))
     (properties `((upstream-name . "repo.data")))
     (build-system r-build-system)
     (arguments
@@ -35742,13 +35737,13 @@ for Scientific Research (NWO) Grant and an ERC Starting Grant (758791).")
 (define-public r-remstimate
   (package
     (name "r-remstimate")
-    (version "2.3.13")
+    (version "2.3.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "remstimate" version))
        (sha256
-        (base32 "139hcqgjpn307j7xy1rmwhh2hzaqnq92f2srp6bs1wvl815nlrlj"))))
+        (base32 "13rwjd224cvzy2ws8s5gn5i81i14gwsv1q895781gsxxgjk11aw8"))))
     (properties `((upstream-name . "remstimate")))
     (build-system r-build-system)
     (arguments
@@ -36152,13 +36147,13 @@ things.")
 (define-public r-remify
   (package
     (name "r-remify")
-    (version "3.2.8")
+    (version "3.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "remify" version))
        (sha256
-        (base32 "07096b4isd9dniwb03a9pvm8xfpxrlvvkhh4cbjrml2vnr2871xp"))))
+        (base32 "03xaypi81h6k8bi41y6n9k9jdzhp3y9agf2xrkwp48nqwnm7l9as"))))
     (properties `((upstream-name . "remify")))
     (build-system r-build-system)
     (arguments
@@ -50262,6 +50257,44 @@ This is an ongoing project; New databases and services will be added
 periodically.  Feel free to suggest any databases or services you often use.")
     (license license:gpl3)))
 
+(define-public r-rbioacc
+  (package
+    (name "r-rbioacc")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rbioacc" version))
+       (sha256
+        (base32 "190gikmhippx2hynkxdknhrf4s7hmdhkcykzn4nmd4sbjcfhgbj6"))))
+    (properties `((upstream-name . "rbioacc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-stringr
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-loo
+                             r-ggplot2
+                             r-ggmcmc
+                             r-ggally
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.in2p3.fr/mosaic-software/rbioacc")
+    (synopsis "Inference and Prediction of Toxicokinetic Models")
+    (description
+     "This package provides bioaccumulation factors from a toxicokinetic model fitted
+to accumulation-depuration data.  It is designed to fulfil the requirements of
+regulators when examining applications for market authorization of active
+substances.")
+    (license license:expat)))
+
 (define-public r-rbin
   (package
     (name "r-rbin")
@@ -50325,13 +50358,13 @@ quantitative DNA methylation analyses as described by Moskalev et al. (2011)
 (define-public r-rbi-helpers
   (package
     (name "r-rbi-helpers")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbi.helpers" version))
        (sha256
-        (base32 "1qj5b9wwh40ni549l9xiarp7w5x9q5n22k413azjhnssm7799hbv"))))
+        (base32 "0p9qmmjg6kpyvcfkrp0ijc5ds399swfbamfrj1h5lbvay4dhq0k5"))))
     (properties `((upstream-name . "rbi.helpers")))
     (build-system r-build-system)
     (arguments

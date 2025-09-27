@@ -755,13 +755,13 @@ Associated publications of the data sets: Fu et al. (2020)
 (define-public r-eye
   (package
     (name "r-eye")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eye" version))
        (sha256
-        (base32 "0la9hlpryqczi6v6pyjx2hdhhdgm3aijs45v1nj76a867zmf77k9"))))
+        (base32 "06jbnaxqvl4fh38f7kwgkqw12lfk98fpcsl6hlpmydvbyzgkwywl"))))
     (properties `((upstream-name . "eye")))
     (build-system r-build-system)
     (arguments
@@ -795,7 +795,7 @@ format.  Visual acuity conversion is based on Schulze-Bonsel et al. (2006)
 <doi:10.1167/iovs.05-0981>, Gregori et al. (2010)
 <doi:10.1097/iae.0b013e3181d87e04>, Beck et al. (2003)
 <doi:10.1016/s0002-9394(02)01825-1> and Bach (2007)
-<http:michaelbach.de/sci/acuity.html>.")
+<https://michaelbach.de/sci/acuity.html>.")
     (license license:expat)))
 
 (define-public r-exvatools
@@ -7962,13 +7962,13 @@ L. (2020) <doi:10.6339/JDS.202007_18(3).0003>.")
 (define-public r-eshrink
   (package
     (name "r-eshrink")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eshrink" version))
        (sha256
-        (base32 "0min4j1dyd08i0fyn9a4iasjlhq08bn74bjz8vj1gq9l114v795k"))))
+        (base32 "1hg679h63az48m2hib8gfwabpd1bfi4bcxn2d2j50wmmxq5mavxg"))))
     (properties `((upstream-name . "eshrink")))
     (build-system r-build-system)
     (arguments
@@ -11784,6 +11784,33 @@ analyses with the same models.  The epidemic models considered are
 distance-based and/or contact network-based models within
 Susceptible-Infectious-Removed (SIR) or Susceptible-Infectious-Notified-Removed
 (SINR) compartmental frameworks. <doi:10.18637/jss.v098.i10>.")
+    (license license:gpl2+)))
+
+(define-public r-epiilm
+  (package
+    (name "r-epiilm")
+    (version "1.5.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EpiILM" version))
+       (sha256
+        (base32 "0iawk4846vbwawwr4k0i6r4abf6fbc755ffvw3amjn1qv0ad8j71"))))
+    (properties `((upstream-name . "EpiILM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-laplacesdemon r-coda r-adaptmcmc))
+    (native-inputs (list gfortran))
+    (home-page "https://github.com/waleedalmutiry/EpiILM")
+    (synopsis
+     "Spatial and Network Based Individual Level Models for Epidemics")
+    (description
+     "This package provides tools for simulating from discrete-time individual level
+models for infectious disease data analysis.  This epidemic model class contains
+spatial and contact-network based models with two disease types:
+Susceptible-Infectious (SI) and Susceptible-Infectious-Removed (SIR).")
     (license license:gpl2+)))
 
 (define-public r-epigrowthfit
@@ -22345,13 +22372,13 @@ The discrete Gaussian copula approach is described in Popovic et al. (2018)
 (define-public r-econullnetr
   (package
     (name "r-econullnetr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "econullnetr" version))
        (sha256
-        (base32 "0kdzkk8mlnc71a6n80hgrclwns66zyhr183ad4ifz8b146xh5cl9"))))
+        (base32 "1xcrwx7fhhhad24kxb7clc6ias8jl7s05njs45xgzkjfbj1y58k2"))))
     (properties `((upstream-name . "econullnetr")))
     (build-system r-build-system)
     (arguments
@@ -22362,17 +22389,16 @@ The discrete Gaussian copula approach is described in Popovic et al. (2018)
     (home-page "https://cran.r-project.org/package=econullnetr")
     (synopsis "Null Model Analysis for Ecological Networks")
     (description
-     "This package provides tools for using null models to analyse ecological networks
-(e.g. food webs, flower-visitation networks, seed-dispersal networks) and detect
-resource preferences or non-random interactions among network nodes.  Tools are
-provided to run null models, test for and plot preferences, plot and analyse
-bipartite networks, and export null model results in a form compatible with
-other network analysis packages.  The underlying null model was developed by
-Agusti et al. (2003) Molecular Ecology <doi:10.1046/j.1365-294X.2003.02014.x>
-and the full application to ecological networks by Vaughan et al. (2018)
-econullnetr: an R package using null models to analyse the structure of
-ecological networks and identify resource selection.  Methods in Ecology &
-Evolution, <doi:10.1111/2041-210X.12907>.")
+     "Null models to analyse ecological networks (e.g. food webs, flower-visitation
+networks, seed-dispersal networks) and detect resource preferences or non-random
+interactions among network nodes.  Tools are provided to run null models, test
+for and plot preferences, plot and analyse bipartite networks, and export null
+model results in a form compatible with other network analysis packages.  The
+underlying null model was developed by Agusti et al. (2003) Molecular Ecology
+<doi:10.1046/j.1365-294X.2003.02014.x> and the full application to ecological
+networks by Vaughan et al. (2018) econullnetr: an R package using null models to
+analyse the structure of ecological networks and identify resource selection.
+Methods in Ecology & Evolution, <doi:10.1111/2041-210X.12907>.")
     (license license:expat)))
 
 (define-public r-econtools
@@ -22951,13 +22977,13 @@ general framework for combining ecosystem models\"<doi:10.1111/faf.12310>.")
 (define-public r-ecodive
   (package
     (name "r-ecodive")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecodive" version))
        (sha256
-        (base32 "091fjxm1r37a5cl68znvfk211vq0fi453xs432yabcsbm2wxbv84"))))
+        (base32 "1adh89sm0d8x45syyhclilgmmm7b0vi34avhi8id1vvaw0jxc18y"))))
     (properties `((upstream-name . "ecodive")))
     (build-system r-build-system)
     (arguments

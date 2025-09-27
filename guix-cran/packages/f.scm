@@ -485,13 +485,13 @@ the @code{FuzzyNumbers} package.")
 (define-public r-fuzzysim
   (package
     (name "r-fuzzysim")
-    (version "4.34")
+    (version "4.36")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzySim" version))
        (sha256
-        (base32 "1idyymgkvlq86f4shgnxnaahg414cc80n218c714nzxjpdfhd3d3"))))
+        (base32 "0k4pa855vzp1zp6qvawg70djyg52kr8d8hd1ka4bna2dycax20fc"))))
     (properties `((upstream-name . "fuzzySim")))
     (build-system r-build-system)
     (arguments
@@ -9843,21 +9843,25 @@ TEE.")
 (define-public r-fontcm
   (package
     (name "r-fontcm")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fontcm" version))
        (sha256
-        (base32 "1z6b4qdgj5vhvjqj90sm1hp0fffi1vxzvq71p0flxybzyb7d15la"))))
+        (base32 "0rd246hcl0z5vcha4djsz5ahxrqr8nfppvbs4qi6wnrl9p37m3lm"))))
     (properties `((upstream-name . "fontcm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://github.com/wch/fontcm")
-    (synopsis "Computer Modern font for use with extrafont package")
-    (description "Computer Modern font for use with extrafont package.")
+    (home-page "https://github.com/fbertran/fontcm")
+    (synopsis "Computer Modern Font for Use with Extrafont Package")
+    (description
+     "Computer Modern font with Paul Murrell's symbol extensions.  Is is to be used
+with the **extrafont** package.  When this font package is installed, the CM
+fonts will be available for PDF or Postscript output files; however, this will
+(probably) not make the font available for screen or bitmap output files.")
     (license license:gpl2)))
 
 (define-public r-fomantic-plus
@@ -11092,13 +11096,13 @@ R script for reproducibility.  Reference: Key (2025)
 (define-public r-fluxible
   (package
     (name "r-fluxible")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxible" version))
        (sha256
-        (base32 "065p1rgb09h3z3mkyh5lgxv1yyqjb8m1aq2daxvymm4k5i63q85k"))))
+        (base32 "0d4p1gv6c8zpzds90pkchbxzblrnaxjri5yd83sh636yl4d0pfxz"))))
     (properties `((upstream-name . "fluxible")))
     (build-system r-build-system)
     (arguments
@@ -12729,13 +12733,13 @@ proportional and non linear effects are described in Remontet, L. et al. (2007)
 (define-public r-flexrl
   (package
     (name "r-flexrl")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FlexRL" version))
        (sha256
-        (base32 "00rcvx9cmj1jz4msjmr05x38410w9sy220y5w90hg1s5qvjgqqml"))))
+        (base32 "0liiiwmgpdq32dx7kcbj7dcjkcxr9cykcn9rn4pmimqc4dfhmx2d"))))
     (properties `((upstream-name . "FlexRL")))
     (build-system r-build-system)
     (arguments
@@ -12743,12 +12747,12 @@ proportional and non linear effects are described in Remontet, L. et al. (2007)
       #:tests? #f))
     (propagated-inputs (list r-testit r-rcpp r-progress r-matrix))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=FlexRL")
+    (home-page "https://github.com/robachowyk/FlexRL")
     (synopsis "Flexible Model for Record Linkage")
     (description
      "Implementation of the Stochastic Expectation Maximisation (@code{StEM}) approach
 to Record Linkage described in the paper by K. Robach, S. L. van der Pas, M. A.
-van de Wiel and M. H. Hof (2024, <doi:10.48550/@code{arXiv.2407.06835>}); see
+van de Wiel and M. H. Hof (2024, <doi:10.1093/jrsssc/qlaf016>); see
 citation(\"@code{FlexRL}\") for details.  This is a record linkage method, for
 finding the common set of records among 2 data sources based on Partially
 Identifying Variables (PIVs) available in both sources.  It includes modelling
@@ -21019,21 +21023,36 @@ Archemedean, Elliptical, Extreme Value, and Empirical Copulae.")
 (define-public r-fco
   (package
     (name "r-fco")
-    (version "0.8.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FCO" version))
        (sha256
-        (base32 "1zysqchq59v9ykp012sp870wgmckbq8gq3pqhl0jyh903hxw59qv"))))
+        (base32 "1947n6kn2ylzzrv8zhk9z5pvm3dmqijw9n2p8m93ks5rm2j5qyns"))))
     (properties `((upstream-name . "FCO")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-semtools r-lavaan r-data-table r-checkmate))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-simstandard
+                             r-semtools
+                             r-rcompanion
+                             r-psych
+                             r-poisbinordnor
+                             r-overlapping
+                             r-lavaan
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-data-table
+                             r-cutpointr
+                             r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=FCO")
+    (home-page "https://flexiblecutoffs.org")
     (synopsis
      "Flexible Cutoffs for Model Fit Evaluation in Covariance-Based Structural Models")
     (description

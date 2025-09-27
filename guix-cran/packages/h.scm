@@ -6752,13 +6752,13 @@ Wolfgang Karl HÃ¤rdle, Sigbert Klinke, and Bernd RÃ¶nz (2015)
 (define-public r-hkevp
   (package
     (name "r-hkevp")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hkevp" version))
        (sha256
-        (base32 "1a3wqafgv9rn10zkg27bgill33zhv76infpp4j84hsqmgiix0gfl"))))
+        (base32 "0iiyz5scs79ql11lm2jy2vvrq2kf1hzxyzqgw0bkd6qdfbxsd6qk"))))
     (properties `((upstream-name . "hkevp")))
     (build-system r-build-system)
     (arguments
@@ -11986,13 +11986,13 @@ on many jumps in nonparametric panel regression models\". @code{arXiv} preprint
 (define-public r-hdsvm
   (package
     (name "r-hdsvm")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdsvm" version))
        (sha256
-        (base32 "1dhbdy4b5vn2m4x9gffxicvdz3z9w8hi8r7yiscr4sgmzf424155"))))
+        (base32 "0gcznwdn9av57qif5cap46jy6z0l72il7958m1hgk0amn05rh04r"))))
     (properties `((upstream-name . "hdsvm")))
     (build-system r-build-system)
     (arguments
@@ -12003,11 +12003,12 @@ on many jumps in nonparametric panel regression models\". @code{arXiv} preprint
     (home-page "https://cran.r-project.org/package=hdsvm")
     (synopsis "Fast Algorithm for Support Vector Machine")
     (description
-     "This package implements an efficient algorithm to fit and tune penalized Support
-Vector Machine models using the generalized coordinate descent algorithm.
-Designed to handle high-dimensional datasets effectively, with emphasis on
-precision and computational efficiency.  This package implements the algorithms
-proposed in Tang, Q., Zhang, Y., & Wang, B. (2022)
+     "This package implements an efficient algorithm for fitting the entire
+regularization path of support vector machine models with elastic-net penalties
+using a generalized coordinate descent scheme.  The framework also supports SCAD
+and MCP penalties.  It is designed for high-dimensional datasets and emphasizes
+numerical accuracy and computational efficiency.  This package implements the
+algorithms proposed in Tang, Q., Zhang, Y., & Wang, B. (2022)
 <https://openreview.net/pdf?id=@code{RvwMTDYTOb>}.")
     (license license:gpl2)))
 
@@ -12213,13 +12214,13 @@ Analysis (QFA) method by Chen et al. (2021) and He et al. (2023).")
 (define-public r-hdqr
   (package
     (name "r-hdqr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdqr" version))
        (sha256
-        (base32 "0vv9axz00g4iwz658hvq6ci48d6zsc5yvpmx07i4fzh2c231mrpd"))))
+        (base32 "11p46l2bl3ysipxi9c7js1k7d0a0l2d7xjhw4rc1nh30ghlgjr48"))))
     (properties `((upstream-name . "hdqr")))
     (build-system r-build-system)
     (arguments
@@ -12230,11 +12231,12 @@ Analysis (QFA) method by Chen et al. (2021) and He et al. (2023).")
     (home-page "https://cran.r-project.org/package=hdqr")
     (synopsis "Fast Algorithm for Penalized Quantile Regression")
     (description
-     "This package implements an efficient algorithm to fit and tune penalized
-quantile regression models using the generalized coordinate descent algorithm.
-Designed to handle high-dimensional datasets effectively, with emphasis on
-precision and computational efficiency.  This package implements the algorithms
-proposed in Tang, Q., Zhang, Y., & Wang, B. (2022)
+     "This package implements an efficient algorithm for fitting the entire
+regularization path of quantile regression models with elastic-net penalties
+using a generalized coordinate descent scheme.  The framework also supports SCAD
+and MCP penalties.  It is designed for high-dimensional datasets and emphasizes
+numerical accuracy and computational efficiency.  This package implements the
+algorithms proposed in Tang, Q., Zhang, Y., & Wang, B. (2022)
 <https://openreview.net/pdf?id=@code{RvwMTDYTOb>}.")
     (license license:gpl2)))
 

@@ -2375,13 +2375,13 @@ regression models that account for unmeasured confounders.")
 (define-public r-unmarked
   (package
     (name "r-unmarked")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unmarked" version))
        (sha256
-        (base32 "0kjrbfjxan7micc230vqnx34s3bl62vsrg2gqv3i2j9s348yhmqk"))))
+        (base32 "0gx1l8c3ssyhr1mxbvrv6gwkymkgml1jxn5jl2k9mnbnr32sl9hs"))))
     (properties `((upstream-name . "unmarked")))
     (build-system r-build-system)
     (arguments

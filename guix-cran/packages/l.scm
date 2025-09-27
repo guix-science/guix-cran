@@ -8789,13 +8789,13 @@ dependencies.")
 (define-public r-liver
   (package
     (name "r-liver")
-    (version "1.21")
+    (version "1.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "liver" version))
        (sha256
-        (base32 "1rqf2cx41i587zpn155c0mbpmjcpxa5p6xsfpd9pbhy3gz7lmg8r"))))
+        (base32 "1siqribh8qcashnsiq4b2fvyrim9liyhqi89g4mqid7sndkbwc5c"))))
     (properties `((upstream-name . "liver")))
     (build-system r-build-system)
     (arguments
@@ -10164,13 +10164,13 @@ Implements forms of Language Style Matching (Ireland & Pennebaker, 2010)
 (define-public r-lingglosses
   (package
     (name "r-lingglosses")
-    (version "0.0.10")
+    (version "0.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lingglosses" version))
        (sha256
-        (base32 "0rj4yba20mv2yc83kzj7v01mzdrnvks7ibc8y5x466f3brj75gz0"))))
+        (base32 "1yjbcr7n11xay2bsirx22hv8w23fsshnrs3sd0l23xccdmvvzdm6"))))
     (properties `((upstream-name . "lingglosses")))
     (build-system r-build-system)
     (arguments
@@ -16725,33 +16725,6 @@ see Brown and Heathcote (2008) <doi:10.1016/j.cogpsych.2007.12.002>.")
 table with an exploratory variable and a response variable.  It is specially
 designed for compositional data.")
     (license license:gpl2+)))
-
-(define-public r-lazyweave
-  (package
-    (name "r-lazyweave")
-    (version "3.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lazyWeave" version))
-       (sha256
-        (base32 "1zzj6jp230pby7qnnk31yikcgjpsrq6i68h5vq32dz5wphc4says"))))
-    (properties `((upstream-name . "lazyWeave")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-labelvector r-hmisc))
-    (home-page "https://cran.r-project.org/package=lazyWeave")
-    (synopsis "LaTeX Wrappers for R Users")
-    (description
-     "This package provides the functionality to write @code{LaTeX} code from within R
-without having to learn @code{LaTeX}.  Functionality also exists to create HTML
-and Markdown code.  While the functionality still exists to write complete
-documents with @code{lazyWeave}, it is generally easier to do so with with
-markdown and knitr. @code{lazyWeave's} main strength now is the ability to
-design custom and complex tables for reporting results.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-lazytrade
   (package

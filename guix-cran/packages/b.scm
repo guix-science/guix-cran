@@ -4199,13 +4199,13 @@ computing, but also for the environment).")
 (define-public r-brmsmargins
   (package
     (name "r-brmsmargins")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brmsmargins" version))
        (sha256
-        (base32 "1qdfig1cy5cf3csky995m0jybb2hyp7yq7ka67wircrln919c1nm"))))
+        (base32 "1hy4jbg08idv39l66g1l595ikh5b7blwlqjyv6790xs9yzv51r6c"))))
     (properties `((upstream-name . "brmsmargins")))
     (build-system r-build-system)
     (arguments
@@ -11052,13 +11052,13 @@ integration methods and optimization routines.")
 (define-public r-blosc
   (package
     (name "r-blosc")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blosc" version))
        (sha256
-        (base32 "0gla27pir9h4fimmnrj6mbc9qn1s11v783qvmivx5ssb6nq8k8qa"))))
+        (base32 "0dfk82a2hlf63rfl76sssvhw018vnxg5fiijszni65v3rif7hcpr"))))
     (properties `((upstream-name . "blosc")))
     (build-system r-build-system)
     (arguments
@@ -24553,22 +24553,18 @@ implementations of the methods of Oh and Raftery (2001)
 (define-public r-baylum
   (package
     (name "r-baylum")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayLum" version))
        (sha256
-        (base32 "1vkykrwjmm810m29i2l3yps8snysc8s2qqfbgprr4a0a1qyj4nrg"))))
+        (base32 "141kkdb9i1y05x4w9i5hj2p900xdgd9ikarw71i369gkcycri4d6"))))
     (properties `((upstream-name . "BayLum")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-runjags
                              r-rjags
@@ -24577,7 +24573,7 @@ implementations of the methods of Oh and Raftery (2001)
                              r-hexbin
                              r-coda
                              r-cli))
-    (native-inputs (list r-r-rsp))
+    (native-inputs (list r-knitr))
     (home-page "https://CRAN.r-project.org/package=BayLum")
     (synopsis
      "Chronological Bayesian Models Integrating Optically Stimulated Luminescence and Radiocarbon Age Dating")

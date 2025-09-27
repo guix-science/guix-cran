@@ -23061,13 +23061,13 @@ concept maps and concept landscapes (sets of concept maps).")
 (define-public r-comat
   (package
     (name "r-comat")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comat" version))
        (sha256
-        (base32 "05kvm4wv5m1mk7lkh69vbzb26xqjxdyvx87r9vx2hmz5wv0vhp7y"))))
+        (base32 "1x6q72dag0nm630rgj57a1ryimflvzw1g5jw3kcyzxd9gbyyz4vi"))))
     (properties `((upstream-name . "comat")))
     (build-system r-build-system)
     (arguments
@@ -42329,13 +42329,13 @@ See also Chapter 2 of Green (2017)
 (define-public r-cerfit
   (package
     (name "r-cerfit")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CERFIT" version))
        (sha256
-        (base32 "1mhyn5iyvnqqx881jfvacyxaldvn5q9h1jpsfy14sgkdjf75274s"))))
+        (base32 "0lz8kk4fz515q7mj2a3zv2hcli70sccf6bnrk0yljfaidfdsmi4s"))))
     (properties `((upstream-name . "CERFIT")))
     (build-system r-build-system)
     (arguments
@@ -42349,15 +42349,14 @@ See also Chapter 2 of Green (2017)
                              r-glmnet
                              r-cbps))
     (home-page "https://cran.r-project.org/package=CERFIT")
-    (synopsis "Causal Effect Random Forest of Interaction Tress")
+    (synopsis "Causal Effect Random Forest of Interaction Trees")
     (description
      "Fits a Causal Effect Random Forest of Interaction Tress (CERFIT) which is a
 modification of the Random Forest algorithm where each split is chosen to
 maximize subgroup treatment heterogeneity.  Doing this allows it to estimate the
 individualized treatment effect for each observation in either randomized
-controlled trial (RCT) or observational data.  For more information see X. Su,
-A. T. PeÃ±a, L. Liu, and R. A. Levine (2018)
-<doi:10.48550/@code{arXiv.1709.04862>}.")
+controlled trial (RCT) or observational data.  For more information see L. Li,
+R. A. Levine, and J. Fan (2022) <doi:10.1002/sta4.457>.")
     (license license:gpl2+)))
 
 (define-public r-cereal
@@ -46794,13 +46793,13 @@ The package also includes functions for model building and forecasting.")
 (define-public r-causalimpact
   (package
     (name "r-causalimpact")
-    (version "1.3.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalImpact" version))
        (sha256
-        (base32 "0h3sh35962vdph72svfdvk6b1gl7wnj2kfkkpcjldbiszlfxp7wx"))))
+        (base32 "0sc116hb7mm6bpnxv5jdw9qjd0qjrnpd39n2zvj2rvndk16lm6f1"))))
     (properties `((upstream-name . "CausalImpact")))
     (build-system r-build-system)
     (arguments

@@ -1812,13 +1812,13 @@ parameter to automate the transformation process are proposed in R package
 (define-public r-autothresholdr
   (package
     (name "r-autothresholdr")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autothresholdr" version))
        (sha256
-        (base32 "1fkny4i1fpy5fkya52cw4bzpdi236smq4qq23q1zdba3srmpyzsl"))))
+        (base32 "157sf51639j6cjlr2sql7jyfjnfjlvm5mpvgkbjpqqy7xw1h472r"))))
     (properties `((upstream-name . "autothresholdr")))
     (build-system r-build-system)
     (arguments
@@ -2016,13 +2016,13 @@ relationships between categorical and continuous variables in the data set.")
 (define-public r-autoslider-core
   (package
     (name "r-autoslider-core")
-    (version "0.2.8")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoslider.core" version))
        (sha256
-        (base32 "01288vlkb04m41xvwg644xg2vlxhcjzbh7m2s0hfs2phc35iz18n"))))
+        (base32 "0gc868xjw5zaz2yd0973pi7cai0zyhjd1zx22yr1rsmpfx5ll1rx"))))
     (properties `((upstream-name . "autoslider.core")))
     (build-system r-build-system)
     (arguments
@@ -2048,7 +2048,7 @@ relationships between categorical and continuous variables in the data set.")
                              r-cli
                              r-checkmate
                              r-assertthat))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/insightsengineering/autoslider.core")
     (synopsis "Slide Automation for Tables, Listings and Figures")
     (description
@@ -9303,13 +9303,13 @@ model exploration software.  A demonstration of the app is available at
 (define-public r-archeofrag
   (package
     (name "r-archeofrag")
-    (version "1.2.0")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archeofrag" version))
        (sha256
-        (base32 "1rz46mbz27bbhpvzms8j2valykqx1s3y2ynh4x3yqfi2kllga5j0"))))
+        (base32 "08cfay2gq416np40cwx1yykqrqh8fj8gz4plnkj2vq09s2aqzm48"))))
     (properties `((upstream-name . "archeofrag")))
     (build-system r-build-system)
     (arguments
@@ -9324,15 +9324,15 @@ model exploration software.  A demonstration of the app is available at
 relationships between refitting fragmented objects scattered in these units
 (e.g. stratigraphic layers).  Graphs are used to model archaeological
 observations.  The package is mainly based on the igraph package for graph
-analysis.  Functions can: 1) create, manipulate, and simulate fragmentation
-graphs, 2) measure the cohesion and admixture of archaeological spatial units,
-and 3) characterise the topology of a specific set of refitting relationships.
-Empirical datasets are provided as examples.  Documentation about archeofrag is
-provided by the vignette included in this package, by the accompanying
+analysis.  Functions can: 1) create, manipulate, visualise, and simulate
+fragmentation graphs, 2) measure the cohesion and admixture of archaeological
+spatial units, and 3) characterise the topology of a specific set of refitting
+relationships.  A series of published empirical datasets is included.
+Documentation about archeofrag is provided by a vignette and by the accompanying
 scientific papers: Plutniak (2021, Journal of Archaeological Science,
 <doi:10.1016/j.jas.2021.105501>) and Plutniak (2022, Journal of Open Source
-Software, <doi:10.21105/joss.04335>).  This package is complemented by a
-companion GUI application available at
+Software, <doi:10.21105/joss.04335>).  This package is complemented by the
+archeofrag.gui R package, a companion GUI application available at
 <https://analytics.huma-num.fr/Sebastien.Plutniak/archeofrag/>.")
     (license license:gpl3)))
 
@@ -9386,13 +9386,13 @@ however they exceed current CRAN policy for package size.")
 (define-public r-archaeophases
   (package
     (name "r-archaeophases")
-    (version "2.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ArchaeoPhases" version))
        (sha256
-        (base32 "0sgsni4swnqazghdzvivacq7a67p8zbsmdpl20ayyff0pxppk966"))))
+        (base32 "0a9k5m8949m8x2d3610fm4fa3956hsyi1x54prhs3jlvq29dp6lh"))))
     (properties `((upstream-name . "ArchaeoPhases")))
     (build-system r-build-system)
     (arguments
@@ -14503,13 +14503,13 @@ images.")
 (define-public r-analitica
   (package
     (name "r-analitica")
-    (version "1.8.5")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Analitica" version))
        (sha256
-        (base32 "1mw0jdk2ps2wdpnyr79l4nqwn5rll73mk7rzws2xqa21w65xf931"))))
+        (base32 "1p94n8x6pm1mzmzddnhjyf36k19s22jc9zy3s931v0l11iq2kq22"))))
     (properties `((upstream-name . "Analitica")))
     (build-system r-build-system)
     (arguments
@@ -18091,13 +18091,13 @@ only a single district.")
 (define-public r-alakazam
   (package
     (name "r-alakazam")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alakazam" version))
        (sha256
-        (base32 "01alngdynigvycmpqa71ccndw6v91hmrs3c2ah0r148rxdgbw58v"))))
+        (base32 "0l6xb0x07drm6j88x4cmxq2p9r0xw217d64zcvh98iqfiq0nrnx6"))))
     (properties `((upstream-name . "alakazam")))
     (build-system r-build-system)
     (arguments
@@ -20965,13 +20965,13 @@ population estimates and urban-rural extents.")
 (define-public r-agena-ai
   (package
     (name "r-agena-ai")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agena.ai" version))
        (sha256
-        (base32 "1nn2634r93gg3nwqnlg8c44zajl5jadx0cszah8nq502qby5y36j"))))
+        (base32 "12zmp2mrmr7szfsmh6cbysxvw1ginckq60szhs83spzqb0d876y4"))))
     (properties `((upstream-name . "agena.ai")))
     (build-system r-build-system)
     (arguments

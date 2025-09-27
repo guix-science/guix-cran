@@ -11,12 +11,12 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages image)
-  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages xorg)
@@ -3057,13 +3057,13 @@ the Ising model the distribution can only be computed up to ~10 nodes.")
 (define-public r-isinglenzmc
   (package
     (name "r-isinglenzmc")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isingLenzMC" version))
        (sha256
-        (base32 "1z6ivg5rd2ja2b5slqwb0ks5as7fr13hhd8dipx5bc6bfa6r21vm"))))
+        (base32 "10x772g6b1p2si8hcjacz14xxxs9avb5gir7kb8sax6b7jm3p7p0"))))
     (properties `((upstream-name . "isingLenzMC")))
     (build-system r-build-system)
     (arguments
@@ -3077,7 +3077,10 @@ explains the physics of spin glasses and magnetic materials, and cooperative
 phenomenon in general, for example phase transitions and neural networks.This
 package provides utilities to simulate one dimensional Ising Model with
 Metropolis and Glauber Monte Carlo with single flip dynamics in periodic
-boundary conditions.  Utility functions for exact solutions are provided.")
+boundary conditions.  Utility functions for exact solutions are provided.  Such
+as transfer matrix for 1D. Utility functions for exact solutions are provided.
+Example use cases are as follows: Measuring effective ergodicity and power-laws
+in so called functional-diffusion.")
     (license license:gpl3+)))
 
 (define-public r-isinglandr
@@ -5453,13 +5456,13 @@ considering their options, and securing admission into their school of choice.")
 (define-public r-ipec
   (package
     (name "r-ipec")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IPEC" version))
        (sha256
-        (base32 "0715nihjq7acrv77b5xkspc7s2qxah3rbswliqmg90rnc3amn992"))))
+        (base32 "15hmb8yix6w9r7c10npsfyfq02mh1fq306wb0v8z6fizi0wn4j9d"))))
     (properties `((upstream-name . "IPEC")))
     (build-system r-build-system)
     (arguments
@@ -7442,6 +7445,43 @@ and data collection @code{(tarpuy()}), data analysis and graphics
 project at <https://inkaverse.com/>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-intextsummarytable
+  (package
+    (name "r-intextsummarytable")
+    (version "3.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inTextSummaryTable" version))
+       (sha256
+        (base32 "1q3qr1b91q67giwv1898kdva4spvbiqy90640nqqbyq8vniqmk4p"))))
+    (properties `((upstream-name . "inTextSummaryTable")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list pandoc))
+    (propagated-inputs (list r-scales
+                             r-reshape2
+                             r-plyr
+                             r-officer
+                             r-magrittr
+                             r-ggrepel
+                             r-ggplot2
+                             r-flextable
+                             r-cowplot
+                             r-clinutils))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/openanalytics/inTextSummaryTable")
+    (synopsis "Creation of in-Text Summary Table")
+    (description
+     "Creation of tables of summary statistics or counts for clinical data (for
+TLFs').  These tables can be exported as in-text table (with the flextable
+package) for a Clinical Study Report (Word format) or a topline presentation
+(@code{PowerPoint} format), or as interactive table (with the DT package) to an
+html document for clinical data review.")
+    (license license:expat)))
 
 (define-public r-intervcomp
   (package
@@ -15738,13 +15778,13 @@ faculty friendship network, domestic US flights network, etc.")
 (define-public r-igr
   (package
     (name "r-igr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "igr" version))
        (sha256
-        (base32 "1j6gdn8vh615yy12z801wbbh88sdwlzvl4zhvd6jlgjh8drx30h4"))))
+        (base32 "1c91fzbhj50pgfs41156q8a0f2qlgh804wl14aj26jn09g8zl84l"))))
     (properties `((upstream-name . "igr")))
     (build-system r-build-system)
     (arguments

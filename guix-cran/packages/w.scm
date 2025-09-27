@@ -2925,13 +2925,13 @@ found in Harville, D. A. (1997) <doi:10.1007/b98818>.")
 (define-public r-womblr
   (package
     (name "r-womblr")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "womblR" version))
        (sha256
-        (base32 "0acvv7jylissacvln51pi14a8i9y02q5whrz3sx5dsnvsk00slzm"))))
+        (base32 "1dl0737msnaiy20rg9zs41j46q3yrf6pjf0agz3hynr1i8rxvb5z"))))
     (properties `((upstream-name . "womblR")))
     (build-system r-build-system)
     (arguments
@@ -2951,9 +2951,8 @@ correlation is introduced through a hierarchical structure and can be specified
 as exponential or first-order autoregressive.  Full details of the package can
 be found in the accompanying vignette.  Furthermore, the details of the package
 can be found in \"Diagnosing Glaucoma Progression with Visual Field Data Using a
-Spatiotemporal Boundary Detection Method\", by Berchuck et al (2018),
-<@code{arXiv:1805.11636>}.  The paper is in press at the Journal of the American
-Statistical Association.")
+Spatiotemporal Boundary Detection Method\", by Berchuck et al (2019)
+<doi:10.1080/01621459.2018.1537911>.")
     (license license:gpl2+)))
 
 (define-public r-woebinning

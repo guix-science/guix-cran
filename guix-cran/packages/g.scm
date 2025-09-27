@@ -628,13 +628,13 @@ selection: An application to gastric cancer screening <doi:10.1038/srep26582>.")
 (define-public r-gwlasso
   (package
     (name "r-gwlasso")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWlasso" version))
        (sha256
-        (base32 "1cpxaqk6z55fydd1b18pc90796fdig1ax0llvip60sn0wwbqhqpp"))))
+        (base32 "0n6799j2y3f52lxbg1f1bycv7v3ggymhmqk9jmjlcl2px3dvbnd5"))))
     (properties `((upstream-name . "GWlasso")))
     (build-system r-build-system)
     (arguments
@@ -7467,13 +7467,13 @@ attributable fractions.")
 (define-public r-graphon
   (package
     (name "r-graphon")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "graphon" version))
        (sha256
-        (base32 "1x61pdsb3s1vi1iiy9pjq0iz0m5j5b6q3rqhwvx9kvmg4r8yifpv"))))
+        (base32 "0yd1frzznpfiqczr7qbn38x7palzs01yl6d1brgrgwfx9cadngb7"))))
     (properties `((upstream-name . "graphon")))
     (build-system r-build-system)
     (arguments
@@ -8960,13 +8960,13 @@ References: Hoffmann and Onnela (2025) <doi:10.18637/jss.v112.i02>.")
 (define-public r-gptcm
   (package
     (name "r-gptcm")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPTCM" version))
        (sha256
-        (base32 "1j315vjdhh94r4w6fz9nyr65imqxnz3wh1xm98h2pa2innkvz4hc"))))
+        (base32 "06m8yzq7cd803v90imhnlmi7s36h8vxgj8227i6zx4xwcwzjfm2l"))))
     (properties `((upstream-name . "GPTCM")))
     (build-system r-build-system)
     (arguments
@@ -34576,19 +34576,19 @@ an analytic or a numerical solution, both available in the function.")
 (define-public r-gausssuppression
   (package
     (name "r-gausssuppression")
-    (version "1.1.5")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaussSuppression" version))
        (sha256
-        (base32 "1sm8nrxmp8hy4jy5bqiqyqs1fg33mwzbkx56r2l3kvwz51zvhwnn"))))
+        (base32 "002i34z6l31z2gm5ky695rvhppwkidzqs6203a5wya0fzqzxvq23"))))
     (properties `((upstream-name . "GaussSuppression")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ssbtools r-regsdc r-matrix))
+    (propagated-inputs (list r-ssbtools r-rlang r-regsdc r-matrix r-ellipsis))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/statisticsnorway/ssb-gausssuppression")
     (synopsis "Tabular Data Suppression using Gaussian Elimination")

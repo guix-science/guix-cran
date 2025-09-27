@@ -6234,13 +6234,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "11.5")
+    (version "11.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "07jh6qnpp1rsdz77g5j19j50i4n695alk6pl0cq9nj83dvj3cbhh"))))
+        (base32 "1i5vjyp70r2rjf50cgldkdlsn7yssjvrapqdrxdbk314b19k44rj"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (arguments
@@ -14608,13 +14608,13 @@ nephrology.")
 (define-public r-neonutilities
   (package
     (name "r-neonutilities")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neonUtilities" version))
        (sha256
-        (base32 "1jd6z007jk5qiza55wa2r3g36sp8cwcdh71i3nwrqbqlz77a0drl"))))
+        (base32 "180rw46ph28pkv874w86h7d99mm5bpj1jn6q0cmydp78ac2psxb3"))))
     (properties `((upstream-name . "neonUtilities")))
     (build-system r-build-system)
     (arguments

@@ -765,13 +765,13 @@ on interim data.")
 (define-public r-twn
   (package
     (name "r-twn")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twn" version))
        (sha256
-        (base32 "1bgjy63fb4dj3zz2by0bwz75dkp8qzhr8jhcl66wr68yd9szh8hf"))))
+        (base32 "0bc8gwvzlg1vs3kvzhkh5a4nv07g8599i9bqw643y8kd391kmy5s"))))
     (properties `((upstream-name . "twn")))
     (build-system r-build-system)
     (arguments
@@ -7165,13 +7165,13 @@ Clinical Research.")
 (define-public r-trialsimulator
   (package
     (name "r-trialsimulator")
-    (version "1.0.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialSimulator" version))
        (sha256
-        (base32 "1c6ys5fwh3n7vapjc26lfzl8n71n8maixbhhvmcl4w2vfsginx79"))))
+        (base32 "1h91cr67ls7rgi12sy4vrn2qy925s8szg5jzc1355nc1z2bvyk36"))))
     (properties `((upstream-name . "TrialSimulator")))
     (build-system r-build-system)
     (arguments
@@ -16480,13 +16480,13 @@ based on Cyr, et al. (2004) <doi:10.1503/cmaj.1041405> and Wikipedia
 (define-public r-tint
   (package
     (name "r-tint")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tint" version))
        (sha256
-        (base32 "10c3mlbwbxdzk6k6c4krg52976mnisb7s42mdjvjv807n7mqrqby"))))
+        (base32 "0hxgkbzbsvnaj6asj6yr76qw47kxglxd22d304wbj556c0g117dp"))))
     (properties `((upstream-name . "tint")))
     (build-system r-build-system)
     (arguments
@@ -25894,32 +25894,6 @@ procedure makes use of the @code{mfp2()} function from the mfp2 package to
 explore nonlinear associations between cognition and demographic variables.")
     (license license:gpl2+)))
 
-(define-public r-tesseract
-  (package
-    (name "r-tesseract")
-    (version "5.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tesseract" version))
-       (sha256
-        (base32 "181fbv1qhqxljr67phkrxahbfgsxa73gzq30zq0wvi38gzbfbnv8"))))
-    (properties `((upstream-name . "tesseract")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib))
-    (propagated-inputs (list r-rcpp r-rappdirs r-pdftools r-digest r-curl))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://cran.r-project.org/package=tesseract")
-    (synopsis "Open Source OCR Engine")
-    (description
-     "Bindings to Tesseract': a powerful optical character recognition (OCR) engine
-that supports over 100 languages.  The engine is highly configurable in order to
-tune the detection algorithms and obtain the best possible results.")
-    (license license:asl2.0)))
-
 (define-public r-tesselle
   (package
     (name "r-tesselle")
@@ -32019,13 +31993,13 @@ detailed overview of tacmagic functions.")
 (define-public r-tabxplor
   (package
     (name "r-tabxplor")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabxplor" version))
        (sha256
-        (base32 "165dxpkrra6qlk62vdris136wfn7lwy4plsh9g6bjn4xd1cfwzh6"))))
+        (base32 "0wi6pd0iswfy58qdzvkn7a23qj7lxgsy499s225w6b9zhl4qshv7"))))
     (properties `((upstream-name . "tabxplor")))
     (build-system r-build-system)
     (arguments

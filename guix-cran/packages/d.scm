@@ -4603,13 +4603,13 @@ been published by Bhattacharjee et al.(2024) <doi:10.1038/s41598-024-54149-y>.")
 (define-public r-dscore
   (package
     (name "r-dscore")
-    (version "1.10.0")
+    (version "1.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dscore" version))
        (sha256
-        (base32 "1bxi24s5f9bc0g95gsihf3c4arhpxkca12x4mvvibnlqixks0928"))))
+        (base32 "1972ivmdj5asrk46dcc41z4ywazvwr08yv2wwmd29r045f54dfbd"))))
     (properties `((upstream-name . "dscore")))
     (build-system r-build-system)
     (arguments
@@ -4626,7 +4626,7 @@ milestone scores into a D-score.  It provides tools to calculate the D-score and
 its precision from the child's milestone scores, to convert the D-score into the
 Development-for-Age Z-score (DAZ) using age-conditional references, and to map
 milestone names into a generic 9-position item naming convention.")
-    (license license:agpl3)))
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-dsbayes
   (package
@@ -8677,13 +8677,13 @@ optimal experimental design.")
 (define-public r-dosearch
   (package
     (name "r-dosearch")
-    (version "1.0.11")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dosearch" version))
        (sha256
-        (base32 "0ghwk0h9rrfg4i6xdiybirqvrpzm3rv0w41jqqlhm43jf7796pmj"))))
+        (base32 "1ggmfl3n2pywwf2iyzssz1drvkjzjhqdwyzkbkrkn3bkbqd8sqrw"))))
     (properties `((upstream-name . "dosearch")))
     (build-system r-build-system)
     (arguments
@@ -20032,13 +20032,13 @@ educational and psychological tests.")
 (define-public r-dexter
   (package
     (name "r-dexter")
-    (version "1.6.2")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dexter" version))
        (sha256
-        (base32 "1bvhanfagj85c7dzj5a0xsda95q95bpwgs67zd6wc98xc2hhwzy2"))))
+        (base32 "0vibhm9jakn854vwvvppgf4hqy2faigcmlg8c9jpfzrcjqwjzh2x"))))
     (properties `((upstream-name . "dexter")))
     (build-system r-build-system)
     (arguments

@@ -10889,13 +10889,13 @@ Q test (or @code{McNemarâs} test when the number of modalities is equal to 
 (define-public r-mrmcaov
   (package
     (name "r-mrmcaov")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRMCaov" version))
        (sha256
-        (base32 "0nq4i1ymv3ifp39liz99l51605q2iiin75a02wp9pyaxf6k7b5hd"))))
+        (base32 "0dc6kc20x1wsd6wji8j51gml0kvygmh6f7ix4n8wjswd1w077slp"))))
     (properties `((upstream-name . "MRMCaov")))
     (build-system r-build-system)
     (arguments
@@ -29675,13 +29675,13 @@ emails and mail folders.")
 (define-public r-microsimulation
   (package
     (name "r-microsimulation")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microsimulation" version))
        (sha256
-        (base32 "0fc3ppmj7rl5dnkrvky8d1lj7w2rp7rv0ahmlwd1r5wl4qhh6lmp"))))
+        (base32 "1wjabxlq8qgs0n9i8nfab9kikb2g84fmqm4z97hbgms079w09wdj"))))
     (properties `((upstream-name . "microsimulation")))
     (build-system r-build-system)
     (arguments
@@ -36484,13 +36484,13 @@ clinical programming workflow.")
 (define-public r-metacor
   (package
     (name "r-metacor")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metacor" version))
        (sha256
-        (base32 "0slc49j67zchabv6v6rphx6kb6axh7k1222yj84a1fb7f5g56dv4"))))
+        (base32 "122y1bs18j6gh22725wm0w1xzrzsga65dwaxsxm9bjgj2p0cad8h"))))
     (properties `((upstream-name . "metacor")))
     (build-system r-build-system)
     (arguments
@@ -36498,7 +36498,7 @@ clinical programming workflow.")
       #:tests? #f))
     (propagated-inputs (list r-stringr r-officer))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=metacor")
+    (home-page "https://github.com/ikerugr/metacor")
     (synopsis
      "Meta-Analytic Effect Size Calculation for Pre-Post Designs with Correlation Imputation")
     (description
@@ -36509,8 +36509,8 @@ correlations (Pearson correlation coefficient).  The main function
 @code{metacor_dual()} implements several methods for imputing missing standard
 deviation of changes or Pearson correlation coefficient, and generates
 transparent imputation reports.  Designed for meta-analyses with incomplete
-summary statistics.  For more details on the methods, see Higgins et al. (2023)
-and Fu et al. (2013).")
+summary statistics.  For details on the methods, see Higgins et al. (2023) and
+Fu et al. (2013).")
     (license license:expat)))
 
 (define-public r-metaconvert
@@ -40995,13 +40995,13 @@ multivariate data used in chemometrics.  S. Kucheryavskiy (2020)
 (define-public r-mdag
   (package
     (name "r-mdag")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mDAG" version))
        (sha256
-        (base32 "0k85sl0jmpcpiz92cz6x3kd8jc6yyfv9z4wm1kyaikcf5q4qlad4"))))
+        (base32 "041xjnv1rsh5g2bi29ydd3f1yxay57cyc4fd28li2hzlja7vcsnf"))))
     (properties `((upstream-name . "mDAG")))
     (build-system r-build-system)
     (arguments

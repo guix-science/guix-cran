@@ -4742,13 +4742,13 @@ package have been described by Stephen JJ, Carolan P, Krefman AE, et al. (2024)
 (define-public r-psgp
   (package
     (name "r-psgp")
-    (version "0.3-23")
+    (version "0.3-24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psgp" version))
        (sha256
-        (base32 "0n2ffqsl9nkg9rwvlzq4fsa60lsk931c8ni37wngh77d38vdkw19"))))
+        (base32 "1ybmg41s2by35kr9q5mshmiyj2hcn6pbgq4v89vx0b0xbi8in1sv"))))
     (properties `((upstream-name . "psgp")))
     (build-system r-build-system)
     (arguments
@@ -22649,13 +22649,13 @@ constructions are also available.")
 (define-public r-plspm
   (package
     (name "r-plspm")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plspm" version))
        (sha256
-        (base32 "0fmkfi76v52fdfs38c7l1sy1kh9xnz9897i1y3p6bs1zp9v5h8ky"))))
+        (base32 "067ajbnncx55r6rrhvbzqadb3hghi949k19r2jwla9cndbrcaym0"))))
     (properties `((upstream-name . "plspm")))
     (build-system r-build-system)
     (arguments
@@ -22860,19 +22860,19 @@ Components Regression are available.")
 (define-public r-plsdepot
   (package
     (name "r-plsdepot")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plsdepot" version))
        (sha256
-        (base32 "0n2idfkgisbr6b04dcv47yy5f7j1ndxs53p5hinpghg8ikncbvwf"))))
+        (base32 "1rsvc6c7m6djngapmp3iasgk186cya7h0dfc1xxg7ipgvkdxid5h"))))
     (properties `((upstream-name . "plsdepot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=plsdepot")
+    (home-page "https://github.com/gastonstat/plsdepot/")
     (synopsis "Partial Least Squares (PLS) Data Analysis Methods")
     (description
      "Different methods for PLS analysis of one or two data tables such as Tucker's
@@ -25237,13 +25237,13 @@ saving output from the website.")
 (define-public r-planr
   (package
     (name "r-planr")
-    (version "0.5.1")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "planr" version))
        (sha256
-        (base32 "1i036zvxyn0zzsk2wzgrw1r9i771ksdxm6llc0jxh0sfqx1rmwmw"))))
+        (base32 "108b17p5fl6l45wmya8nda3cgvkmg2hg4pd59l7wwn42czv5kx14"))))
     (properties `((upstream-name . "planr")))
     (build-system r-build-system)
     (arguments
@@ -29787,13 +29787,13 @@ materials.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiology
   (package
     (name "r-photobiology")
-    (version "0.13.2")
+    (version "0.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiology" version))
        (sha256
-        (base32 "15yd576mvbnad80cvq0268jhbzbds9i1073fg5bck60ky69l38jx"))))
+        (base32 "1k1gp3kfxbhgxpi12zcv328ns4spp9q26d2gxgrp45hkykwh5gin"))))
     (properties `((upstream-name . "photobiology")))
     (build-system r-build-system)
     (arguments
@@ -30916,6 +30916,37 @@ that display similar behaviour.")
      "This package provides functions for phenological data preprocessing, modelling
 and result handling.  For more information, please refer to Lange et al. (2016)
 <doi:10.1007/s00484-016-1161-8>.")
+    (license license:gpl2+)))
+
+(define-public r-phenix
+  (package
+    (name "r-phenix")
+    (version "1.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PHENIX" version))
+       (sha256
+        (base32 "02x1liahnbdqhfz0k8ibzzgw5a9q2lnj2h4c410ad6g3s1rbl5rw"))))
+    (properties `((upstream-name . "PHENIX")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-suppdists r-ppcor))
+    (home-page "https://cran.r-project.org/package=PHENIX")
+    (synopsis "Phenotypic Integration Index")
+    (description
+     "This package provides functions to estimate the size-controlled phenotypic
+integration index, a novel method by Torices & MÃ©ndez (2014)
+<doi:10.1086/676622> to solve problems due to individual size when estimating
+integration (namely, larger individuals have larger components, which will drive
+a correlation between components only due to resource availability that might
+obscure the observed measures of integration).  In addition, the package also
+provides the classical estimation by Wagner (1984) <doi:10.1007/BF00275224>,
+bootstrapping and jackknife methods to calculate confidence intervals and a
+significance test for both integration indices.  Further details can be found in
+Torices & MuÃ±oz-Pajares <doi:10.3732/apps.1400104>.")
     (license license:gpl2+)))
 
 (define-public r-phenex
@@ -45651,13 +45682,13 @@ information, please see Gruenstaeudl and Jenke (2020)
 (define-public r-pacu
   (package
     (name "r-pacu")
-    (version "0.1.63")
+    (version "0.1.72")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pacu" version))
        (sha256
-        (base32 "1pyq429sq0g7zxc9zmnl823fj0fi1hd8a5x3zqdz9hb6qqdrpq0q"))))
+        (base32 "0jg5i1s78zlf248fwhxgc193iijh7g14x76lq9dyfipbp0j82p2w"))))
     (properties `((upstream-name . "pacu")))
     (build-system r-build-system)
     (arguments
