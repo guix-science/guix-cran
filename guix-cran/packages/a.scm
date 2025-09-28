@@ -15354,13 +15354,13 @@ instruments simultaneously.")
 (define-public r-amigaffh
   (package
     (name "r-amigaffh")
-    (version "0.4.7")
+    (version "0.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AmigaFFH" version))
        (sha256
-        (base32 "0amc6ypf3qmgb3fm2dj4j5bpgxm8rwgmazh57jdw0flksy46pxvy"))))
+        (base32 "0012havnk71wnmdix53lryii5cwd3bxik3937qi546al6a0a3f5v"))))
     (properties `((upstream-name . "AmigaFFH")))
     (build-system r-build-system)
     (arguments

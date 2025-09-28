@@ -32837,13 +32837,13 @@ options (indicators, levels, countries, regions) as well.")
 (define-public r-gdistance
   (package
     (name "r-gdistance")
-    (version "1.6.4")
+    (version "1.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdistance" version))
        (sha256
-        (base32 "0awrv10adi31inrgxbb83p73fq05i2xifj2xf16z6mp2lwzgvxba"))))
+        (base32 "07byn1d36p2jz16rarmacxc7n5mibnyxqx322l38w4pb86wndh6a"))))
     (properties `((upstream-name . "gdistance")))
     (build-system r-build-system)
     (arguments
@@ -36813,13 +36813,13 @@ algebra algorithms.  Inspired by MATLAB gallery functions.")
 (define-public r-galisats
   (package
     (name "r-galisats")
-    (version "2.0.2")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galisats" version))
        (sha256
-        (base32 "1q1m2haq5lhps7wvf6f8gy523r52mxd4x9sxbsk5acllpd8wfa84"))))
+        (base32 "05200gd55dl1ibf9ms63m0r68m5n2h5gq3bw2x7bln8w7j41rjcc"))))
     (properties `((upstream-name . "galisats")))
     (build-system r-build-system)
     (arguments
@@ -36829,16 +36829,19 @@ algebra algorithms.  Inspired by MATLAB gallery functions.")
     (home-page "https://lechjaszowski.github.io/galilean_satellites/")
     (synopsis "Configuration of Jupiter's Four Largest Satellites")
     (description
-     "Calculate and plot the configuration of Jupiter's four largest satellites (known
-as Galilean satellites) for a given date and time (UTC - Coordinated Universal
-Time).  The @code{galsat()} function returns numerical values of the
-satellitesâ positions.  x â the apparent rectangular coordinate of the
-satellite with respect to the center of Jupiterâs disk in the equatorial plane
-in the units of Jupiterâs equatorial radius; X is positive toward the west, y
-â the apparent rectangular coordinate of the satellite with respect to the
-center of Jupiterâs disk from the equatorial plane in the units of Jupiterâs
-equatorial radius; Y is positive toward the north.  For more details see Meeus
-(1988, ISBN 0-943396-22-0) \"Astronomical Formulae for Calculators\".  The
+     "Calculate, plot and animate the configuration of Jupiter's four largest
+satellites (known as Galilean satellites) for a given date and time (UTC -
+Coordinated Universal Time).  The @code{galsat()} function returns numerical
+values of the satellitesâ positions.  x â the apparent rectangular
+coordinate of the satellite with respect to the center of Jupiterâs disk in
+the equatorial plane in the units of Jupiterâs equatorial radius; X is
+positive toward the west, y â the apparent rectangular coordinate of the
+satellite with respect to the center of Jupiterâs disk from the equatorial
+plane in the units of Jupiterâs equatorial radius; Y is positive toward the
+north.  For more details see Meeus (1988, ISBN 0-943396-22-0) \"Astronomical
+Formulae for Calculators\".  The @code{galsat_animate()} function creates an
+animation of the Galilean satellites positions.  You provide the starting time,
+duration, the time step between frames, and the pause between frames.  The
 function @code{delta_t()} returns the value of delta-T in units of seconds.")
     (license license:expat)))
 

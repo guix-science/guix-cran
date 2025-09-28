@@ -15447,13 +15447,13 @@ free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusMarine" version))
        (sha256
-        (base32 "1plwig6rvc244ikr1hvsx6ilmf03dydwy2jbxjbllra754i9nkfx"))))
+        (base32 "04ajgvb87ms2dbmqsfwywfy35b7lw9yaakm3mdk0133my35hbpx9"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (arguments
@@ -15473,7 +15473,6 @@ free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
                              r-httr2
                              r-dplyr
                              r-cli
-                             r-blosc
                              r-aws-s3))
     (home-page "https://github.com/pepijn-devries/CopernicusMarine")
     (synopsis
@@ -20352,13 +20351,13 @@ referenced at Environmental Protection Agency, United States as follows: EPA
 (define-public r-comtradr
   (package
     (name "r-comtradr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comtradr" version))
        (sha256
-        (base32 "1lh6j5w1arkginnc8f7175b3bqbqa57ghd0rszk1pqq3wwfhpsw2"))))
+        (base32 "122j3zd2ahkrgwl08381fs460ya2bimij7gimdp49iq0vpr21l7d"))))
     (properties `((upstream-name . "comtradr")))
     (build-system r-build-system)
     (arguments
@@ -27345,13 +27344,13 @@ genomic regions where the copy number differs from the norm.")
 (define-public r-cnorm
   (package
     (name "r-cnorm")
-    (version "3.4.1")
+    (version "3.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cNORM" version))
        (sha256
-        (base32 "0dz2lbh683vaqn5cdzsfqhlmd86499l8zvajmal5x7b0v5q3yqyj"))))
+        (base32 "1zk5az36nnbj3980hy62lld1qccgj4zbsmv9mxyr4v38nljgg6rb"))))
     (properties `((upstream-name . "cNORM")))
     (build-system r-build-system)
     (arguments
@@ -27365,11 +27364,11 @@ genomic regions where the copy number differs from the norm.")
      "This package provides a comprehensive toolkit for generating continuous test
 norms in psychometrics and biometrics, and analyzing model fit.  The package
 offers both distribution-free modeling using Taylor polynomials and parametric
-modeling using the beta-binomial distribution.  Originally developed for
-achievement tests, it is applicable to a wide range of mental, physical, or
-other test scores dependent on continuous or discrete explanatory variables.
-The package provides several advantages: It minimizes deviations from
-representativeness in subsamples, interpolates between discrete levels of
+modeling using the beta-binomial and the Sinh-Arcsinh distribution.  Originally
+developed for achievement tests, it is applicable to a wide range of mental,
+physical, or other test scores dependent on continuous or discrete explanatory
+variables.  The package provides several advantages: It minimizes deviations
+from representativeness in subsamples, interpolates between discrete levels of
 explanatory variables, and significantly reduces the required sample size
 compared to conventional norming per age group. @code{cNORM} enables graphical
 and analytical evaluation of model fit, accommodates a wide range of scales
@@ -35348,13 +35347,13 @@ building crossplots and squareplots from a data set.")
 (define-public r-cirt
   (package
     (name "r-cirt")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cIRT" version))
        (sha256
-        (base32 "1iwgxc1jl118j9yjhjix9f7dm75sj82iz7ic58g5625fxzdgnw25"))))
+        (base32 "1yqnd0njgk2qvka9r8ingv9riqz6x8n9fvaf392qfwis9wb5gpkk"))))
     (properties `((upstream-name . "cIRT")))
     (build-system r-build-system)
     (arguments
@@ -39568,13 +39567,13 @@ the box interface for running reverse dependency check.")
 (define-public r-checkdown
   (package
     (name "r-checkdown")
-    (version "0.0.12")
+    (version "0.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "checkdown" version))
        (sha256
-        (base32 "0yn7casmsqcrc31b9g06sjdrwxjyw5cbg3pwwdn5s7gaal881rh1"))))
+        (base32 "0ls8vpnqiffw0vlwjyc4ixnd2qh65b7cn0lvljr0rnx3k396wjvq"))))
     (properties `((upstream-name . "checkdown")))
     (build-system r-build-system)
     (arguments
@@ -45367,13 +45366,13 @@ Fleiss (1986) <doi:10.1002/9781118032923> and Carrasco et al. (2013)
 (define-public r-cccp
   (package
     (name "r-cccp")
-    (version "0.3-2")
+    (version "0.3-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cccp" version))
        (sha256
-        (base32 "1i9v40kz05hqar537cnkzw3gbfwlzgd6waxr9wcy086wxpf3wm28"))))
+        (base32 "1g5gg240q92js6dv6p3azl9wivl0a4mjbhw7nz35kvqdsgr1w4gp"))))
     (properties `((upstream-name . "cccp")))
     (build-system r-build-system)
     (arguments

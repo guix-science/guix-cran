@@ -8822,13 +8822,13 @@ robust, or bootstrapped standard errors and confidence intervals for them.")
 (define-public r-rrum
   (package
     (name "r-rrum")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rrum" version))
        (sha256
-        (base32 "047gsyipvbaw4n2i103fsj1dp0rqwvh5dqhjgiclzb9h7vm840gv"))))
+        (base32 "0q3y4fh1c4g5k37kjr93x3vl2qpi1v07h3njnx0g7nqp6zinm1d1"))))
     (properties `((upstream-name . "rrum")))
     (build-system r-build-system)
     (arguments
@@ -46132,13 +46132,13 @@ approximation.")
 (define-public r-rcppcwb
   (package
     (name "r-rcppcwb")
-    (version "0.6.8")
+    (version "0.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCWB" version))
        (sha256
-        (base32 "1h64gaww45h1hbsnk01r88a77awi0af8s8g6ayvyylpvg5lainh4"))))
+        (base32 "15yky32pscm90qk5g7m7mb6lrbz5smmf659f2zbgyas7a2vs8ydy"))))
     (properties `((upstream-name . "RcppCWB")))
     (build-system r-build-system)
     (arguments

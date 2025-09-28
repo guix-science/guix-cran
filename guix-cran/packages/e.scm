@@ -6634,13 +6634,13 @@ and R. W. Jones (1987) <doi:10.3905/jpm.1987.409131> and H. E. Leland (1980)
 (define-public r-etrep
   (package
     (name "r-etrep")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ETRep" version))
        (sha256
-        (base32 "1xkzw18cp7fkdzhp0bmanpx9p2vf39wdc9whbpzrv245nsnvinz2"))))
+        (base32 "0kv7111b6p4qbps7ap8k04l1b36prihcgmmyvrhlhakqf5m72ay6"))))
     (properties `((upstream-name . "ETRep")))
     (build-system r-build-system)
     (arguments
@@ -6654,6 +6654,7 @@ and R. W. Jones (1987) <doi:10.3905/jpm.1987.409131> and H. E. Leland (1980)
                              r-rgl
                              r-morpho
                              r-matlib
+                             r-htmlwidgets
                              r-fields))
     (home-page "https://github.com/MohsenTaheriShalmani/Elliptical_Tubes")
     (synopsis
@@ -6661,16 +6662,17 @@ and R. W. Jones (1987) <doi:10.3905/jpm.1987.409131> and H. E. Leland (1980)
     (description
      "Analysis of elliptical tubes with applications in biological modeling.  The
 package is based on the references: Taheri, M., Pizer, S. M., & Schulz, J.
-(2024) \"The Mean Shape under the Relative Curvature Condition.\" @code{arXiv}
-<doi:10.48550/@code{arXiv.2404.01043>}.  Mohsen Taheri Shalmani (2024) \"Shape
-Statistics via Skeletal Structures\", @code{PhD} Thesis, University of Stavanger,
-Norway <doi:10.13140/RG.2.2.34500.23685>.  Key features include constructing
-discrete elliptical tubes, calculating transformations, validating structures
-under the Relative Curvature Condition (RCC), computing means, and generating
-simulations.  Supports intrinsic and non-intrinsic mean calculations and
-transformations, size estimation, plotting, and random sample generation based
-on a reference tube.  The intrinsic approach relies on the interior path of the
-original non-convex space, incorporating the RCC, while the non-intrinsic
+(2024) \"The Mean Shape under the Relative Curvature Condition.\" Journal of
+Computational and Graphical Statistics <doi:10.1080/10618600.2025.2535600> and
+@code{arXiv} <doi:10.48550/@code{arXiv.2404.01043>}.  Mohsen Taheri Shalmani
+(2024) \"Shape Statistics via Skeletal Structures\", @code{PhD} Thesis, University
+of Stavanger, Norway <doi:10.13140/RG.2.2.34500.23685>.  Key features include
+constructing discrete elliptical tubes, calculating transformations, validating
+structures under the Relative Curvature Condition (RCC), computing means, and
+generating simulations.  Supports intrinsic and non-intrinsic mean calculations
+and transformations, size estimation, plotting, and random sample generation
+based on a reference tube.  The intrinsic approach relies on the interior path
+of the original non-convex space, incorporating the RCC, while the non-intrinsic
 approach uses a basic robotic arm transformation that disregards the RCC.")
     (license license:expat)))
 
@@ -8551,13 +8553,13 @@ and residuals.")
 (define-public r-errum
   (package
     (name "r-errum")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "errum" version))
        (sha256
-        (base32 "18frrfnhnmg4fjlpfwj8aklzfwafpwqvagm0aschkqc8mz6wnjbz"))))
+        (base32 "14riq50mi4bzvchhq3lb8cn7348v6qyw4vs6qwsj6rjpvax31g7k"))))
     (properties `((upstream-name . "errum")))
     (build-system r-build-system)
     (arguments
@@ -20800,13 +20802,13 @@ information sharing priors provide a reduction of the inference uncertainty.")
 (define-public r-edina
   (package
     (name "r-edina")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edina" version))
        (sha256
-        (base32 "1lpmidyxi54byrsnwwadkh5rr454635xrwa4v2wz8mqr2hngxis3"))))
+        (base32 "0ad7nyrk5abp1hj61658r32r97f7iak2q4d9kych68w62blc9afj"))))
     (properties `((upstream-name . "edina")))
     (build-system r-build-system)
     (arguments

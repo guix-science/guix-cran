@@ -14055,6 +14055,30 @@ Identification of prognostic and predictive biomarkers in high-dimensional data
 with PPLasso.  BMC Bioinformatics.  2023 Jan 23;24(1):25.")
     (license license:gpl2)))
 
+(define-public r-ppks
+  (package
+    (name "r-ppks")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ppks" version))
+       (sha256
+        (base32 "1l607rw7r8b2js2rwjnjhayvn2vlkdpbm1pqmvv3v762vb038jzm"))))
+    (properties `((upstream-name . "ppks")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast))
+    (home-page "https://cran.r-project.org/package=ppks")
+    (synopsis "Permutation Based Paired Kolmogorov-Smirnov Test")
+    (description
+     "Permutation based Kolmogorov-Smirnov test for paired samples.  The test was
+proposed by Wang W.S., Amsler C. and Schmidt, P. (2025)
+<doi:10.1007/s00181-025-02779-0>.")
+    (license license:gpl2+)))
+
 (define-public r-ppitables
   (package
     (name "r-ppitables")
@@ -22269,13 +22293,13 @@ functions to retrieve neighbouring pluscodes'.")
 (define-public r-plume
   (package
     (name "r-plume")
-    (version "0.2.5")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plume" version))
        (sha256
-        (base32 "1zl3mbi6igv3wirg6zjil1l36vlja1h964v6kwh7ma97mfrdh1km"))))
+        (base32 "03d4dn0arhwxfbzg0szs21jnag10shzvhkbn27qb1rp1pdj4znm6"))))
     (properties `((upstream-name . "plume")))
     (build-system r-build-system)
     (arguments
@@ -22301,9 +22325,9 @@ functions to retrieve neighbouring pluscodes'.")
     (synopsis "Simple Author Handler for Scientific Writing")
     (description
      "Handles and formats author information in scientific writing in R Markdown and
-Quarto'.  plume provides easy-to-use and flexible tools for injecting author
-metadata in YAML headers as well as generating author and contribution lists
-(among others) as strings from tabular data.")
+Quarto'.  plume provides easy-to-use and flexible tools for inserting author
+data in YAML as well as generating author and contribution lists (among others)
+as strings from tabular data.")
     (license license:gpl3+)))
 
 (define-public r-plumbr
@@ -29585,13 +29609,13 @@ the electromagnetic spectrum.  Part of the r4photobiology suite, Aphalo P. J.
 (define-public r-photobiologysun
   (package
     (name "r-photobiologysun")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologySun" version))
        (sha256
-        (base32 "00mb44wk5q8slvibr2iafwljr9w7m5qf0zk6bn5zji5i4l01gpi5"))))
+        (base32 "1v584ym148bmc35s83hpg2i69d86a2kdfgrk500arxly0yyfz4iw"))))
     (properties `((upstream-name . "photobiologySun")))
     (build-system r-build-system)
     (arguments
@@ -29599,7 +29623,7 @@ the electromagnetic spectrum.  Part of the r4photobiology suite, Aphalo P. J.
       #:tests? #f))
     (propagated-inputs (list r-photobiology))
     (native-inputs (list r-knitr))
-    (home-page "http://www.r4photobiology.info")
+    (home-page "https://docs.r4photobiology.info/photobiologySun/")
     (synopsis "Data for Sunlight Spectra")
     (description
      "Data for the extraterrestrial solar spectral irradiance and ground level solar
@@ -29666,13 +29690,13 @@ properties of plants.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiologyleds
   (package
     (name "r-photobiologyleds")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyLEDs" version))
        (sha256
-        (base32 "0868ja97wy0cj3nia31xp646yni0q56na87rz63pb33spkw36r6p"))))
+        (base32 "03s2yb4d6pm9a96gf10bp118yh9d4jdphvx1bv770kn514pmdrh2"))))
     (properties `((upstream-name . "photobiologyLEDs")))
     (build-system r-build-system)
     (arguments

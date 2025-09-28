@@ -13355,13 +13355,13 @@ designing and deploying the computations.")
 (define-public r-distatisr
   (package
     (name "r-distatisr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DistatisR" version))
        (sha256
-        (base32 "0r8gp84kbl8kbsw3kbp8sk0xc2gav074qc9qlkq06bp0sxycwhyw"))))
+        (base32 "1sfnwg4f6yx5fm926fh1nxyk8wzfvcv0fcxdg11vx2sixacjg5s9"))))
     (properties `((upstream-name . "DistatisR")))
     (build-system r-build-system)
     (arguments
@@ -16074,13 +16074,13 @@ significance of recurrent DNA copy number aberrations (Bioinformatics (2011)
 (define-public r-dina
   (package
     (name "r-dina")
-    (version "2.0.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dina" version))
        (sha256
-        (base32 "1sq7998xc5qhvd8clc8r32ch7axinh2a2dc7i1w2p148wv130yhd"))))
+        (base32 "1shwfnar0502c1zpr3lk5fb2wjx78vx810shsc4b9g80sb7nwxna"))))
     (properties `((upstream-name . "dina")))
     (build-system r-build-system)
     (arguments
@@ -23532,6 +23532,31 @@ stepwise replacement decomposition proposed by Andreev, Shkolnikov and Begun
 (2002) <doi:10.4054/@code{DemRes.2002.7.14>}, and lifetable response experiments
 proposed by Caswell (1989) <doi:10.1016/0304-3800(89)90019-7>.")
     (license license:gpl3)))
+
+(define-public r-demixr
+  (package
+    (name "r-demixr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DEmixR" version))
+       (sha256
+        (base32 "0qxfsy6m144gvz87lw8c43hsc58cfdbazk6wfawgb924if923na5"))))
+    (properties `((upstream-name . "DEmixR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pbapply r-parallelly r-deoptim))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DEmixR")
+    (synopsis "Fit Two-Component Normal and Lognormal Mixture Models")
+    (description
+     "Fits, bootstraps, and evaluates two-component normal and lognormal mixture
+models.  Includes diagnostic plots and statistical evaluation of mixture model
+fits using differential evolution optimization.")
+    (license license:expat)))
 
 (define-public r-dematel
   (package

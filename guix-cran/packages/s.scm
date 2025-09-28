@@ -9730,6 +9730,36 @@ in areas such as trend analysis, time series decomposition, breakpoint
 identification and anomaly detection.")
     (license license:expat)))
 
+(define-public r-structssi
+  (package
+    (name "r-structssi")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "structSSI" version))
+       (sha256
+        (base32 "1sin2pagyzx4qlxr7wligpwd8hdj3r7vzzwfsw1gyybrsdrdidwc"))))
+    (properties `((upstream-name . "structSSI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reshape2
+                             r-phyloseq
+                             r-multtest
+                             r-jsonlite
+                             r-igraph
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=structSSI")
+    (synopsis
+     "Multiple Testing for Hypotheses with Hierarchical or Group Structure")
+    (description
+     "This package performs multiple testing corrections that take specific structure
+of hypotheses into account, as described in Sankaran & Holmes (2014)
+<doi:10.18637/jss.v059.i13>.")
+    (license license:gpl2)))
+
 (define-public r-structree
   (package
     (name "r-structree")
@@ -21334,6 +21364,31 @@ Antonio Prohias.")
 and A.P. Robinson.  2014.  An Introduction to Scientific Programming and
 Simulation, Using R. 2nd Ed.  Chapman And Hall/CRC.")
     (license license:gpl3)))
+
+(define-public r-spuriouscorrelations
+  (package
+    (name "r-spuriouscorrelations")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spuriouscorrelations" version))
+       (sha256
+        (base32 "1miffm90l68ci54zhmyb645j7mnhv6g15za5nla1ppxmknwsiv2a"))))
+    (properties `((upstream-name . "spuriouscorrelations")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=spuriouscorrelations")
+    (synopsis "Datasets with Strong and Spurious Correlations")
+    (description
+     "This package provides datasets from Vigen (2015)
+<https://web.archive.org/web/20230607181247/https%3A/tylervigen.com/spurious-correlations>
+rescued from the Internet Wayback Machine.  These should be preserved for
+statistics introductory courses as these make it very clear that correlation is
+not causation.")
+    (license license:cc0)))
 
 (define-public r-spup
   (package
@@ -42070,13 +42125,13 @@ selection.")
 (define-public r-sirt
   (package
     (name "r-sirt")
-    (version "4.1-15")
+    (version "4.2-133")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sirt" version))
        (sha256
-        (base32 "0rihmkpnd6hdvb2qga387nw9hxz5ydhjbh9lgaf58nza7fwgqby1"))))
+        (base32 "11igfagkvg98qhdilcphg5ndf5a0xbkxki9400i5lj9y6c1aqx96"))))
     (properties `((upstream-name . "sirt")))
     (build-system r-build-system)
     (arguments
@@ -46800,19 +46855,19 @@ an end-to-end application using this package.")
 (define-public r-silviculture
   (package
     (name "r-silviculture")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "silviculture" version))
        (sha256
-        (base32 "1ahwv3y978434gizwr1imdfrk46jkq63v41af2y3gj2glwcc2wzq"))))
+        (base32 "0vyyci7kalxs63pd3w5jgy9xmpx6jaamwq0gcg5qymp2g3dgvzfk"))))
     (properties `((upstream-name . "silviculture")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-s7 r-dplyr r-cli))
+    (propagated-inputs (list r-s7 r-rlang r-lifecycle r-dplyr r-cli))
     (home-page "https://cidree.github.io/silviculture/")
     (synopsis "Utility Functions for Forest Inventory and Silviculture")
     (description
@@ -62344,13 +62399,13 @@ detector spacing.")
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "5.2.4")
+    (version "5.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secr" version))
        (sha256
-        (base32 "0a6gmzpz3gil3mqln13bp98acwjmpbymyikw9pyiwx4hjhns9wsh"))))
+        (base32 "0vda699zf68v276gc0fcx2r2z7a6jxlqbbiq316impzqy9g14hra"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (arguments
@@ -70375,13 +70430,13 @@ Institute.")
 (define-public r-saslm
   (package
     (name "r-saslm")
-    (version "0.10.6")
+    (version "0.10.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sasLM" version))
        (sha256
-        (base32 "10yfyj5fara54dgdc3ir3ygns63ahh7aidb3ifbi7xby5i39nn3s"))))
+        (base32 "1ay8jgkk6iix1p611b84libjkpfmxkzygd4c1rycb4kcb13ncxgh"))))
     (properties `((upstream-name . "sasLM")))
     (build-system r-build-system)
     (arguments

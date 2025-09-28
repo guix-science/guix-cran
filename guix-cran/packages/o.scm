@@ -3113,26 +3113,19 @@ a correlated-residual structure.")
 (define-public r-orion
   (package
     (name "r-orion")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ORION" version))
        (sha256
-        (base32 "0zzlvx1yd3hy8dy7nbmkj7d2k6609ys91s894qcgx5n7jirqviy3"))))
+        (base32 "0k141rsilma5v9cknbsbsj445c1dx31l86p7pxkbyn0vbq9dw2vh"))))
     (properties `((upstream-name . "ORION")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tunepareto
-                             r-rmarkdown
-                             r-randomforest
-                             r-knitr
-                             r-igraph
-                             r-foreach
-                             r-e1071
-                             r-doparallel))
+    (propagated-inputs (list r-tunepareto r-foreach))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ORION")
     (synopsis "Ordinal Relations")
@@ -11389,13 +11382,13 @@ correlated variables, such as spectroscopic data.")
 (define-public r-ohoegdm
   (package
     (name "r-ohoegdm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ohoegdm" version))
        (sha256
-        (base32 "1p1jica3fr4a5ilz1m2gxyzbapxjvgiw4v5rn90d5qgsmbp1hj42"))))
+        (base32 "1jm9lksgsldqqv93vfqw8f28icbi0862nw0jrm3kxsc41d6wdwbq"))))
     (properties `((upstream-name . "ohoegdm")))
     (build-system r-build-system)
     (arguments
@@ -11408,7 +11401,7 @@ correlated variables, such as spectroscopic data.")
     (description
      "Perform a Bayesian estimation of the ordinal exploratory Higher-order General
 Diagnostic Model (OHOEGDM) for Polytomous Data described by Culpepper, S. A. and
-Balamuta, J. J. (In Press) <doi:10.1080/00273171.2021.1985949>.")
+Balamuta, J. J. (2021) <doi:10.1080/00273171.2021.1985949>.")
     (license license:gpl2+)))
 
 (define-public r-ohmmed

@@ -2176,13 +2176,13 @@ players.")
 (define-public r-tugboat
   (package
     (name "r-tugboat")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tugboat" version))
        (sha256
-        (base32 "0kxhnswyrsy03ad6qc73x5pm60m9jkpv3f0dmg315pk92jln2hv1"))))
+        (base32 "0fd3wcjizmazmmzbdz8jskv5rrsdd2l91jx0yi32j4cdmwq75ksh"))))
     (properties `((upstream-name . "tugboat")))
     (build-system r-build-system)
     (arguments
@@ -7943,28 +7943,27 @@ formats; and analysis of splits and cladistic information.")
 (define-public r-treestructure
   (package
     (name "r-treestructure")
-    (version "0.1.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treestructure" version))
        (sha256
-        (base32 "0514q53bdwv9fwd58srhr6lzw1j56fcd64hml8w4rv4wzcd6c01m"))))
+        (base32 "01gd85g6ac2sxrxzg8grzc1lnnr7lvcsxvkl6dsr8vxjzmjml1lw"))))
     (properties `((upstream-name . "treestructure")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-ape))
+    (propagated-inputs (list r-rlang r-rcpp r-ape))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=treestructure")
+    (home-page "https://emvolz-phylodynamics.github.io/treestructure/")
     (synopsis "Detect Population Structure Within Phylogenetic Trees")
     (description
      "Algorithms for detecting population structure from the history of coalescent
 events recorded in phylogenetic trees.  This method classifies each tip and
 internal node of a tree into disjoint sets characterized by similar coalescent
-patterns.  The methods are described in Volz, E., Wiuf, C., Grad, Y., Frost, S.,
-Dennis, A., & Didelot, X. (2020) <doi:10.1093/sysbio/syaa009>.")
+patterns.")
     (license license:gpl2+)))
 
 (define-public r-treestats
@@ -29379,27 +29378,23 @@ see <https://github.com/pamelarussell/TCIApathfinder> and TCIA's website.")
 (define-public r-tci
   (package
     (name "r-tci")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tci" version))
        (sha256
-        (base32 "15drq6rvakf8jxmb1g5d7jjl7vnbzg314d809zzq19bicivvxsqj"))))
+        (base32 "0ylbp6lbrh8lz1sd19kxwy1aalyqa3hpyy5pfp0vjfq51j7n0a12"))))
     (properties `((upstream-name . "tci")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xtable
-                             r-truncnorm
-                             r-reshape2
-                             r-reshape
+    (propagated-inputs (list r-reshape
                              r-rcpparmadillo
                              r-rcpp
                              r-mvtnorm
                              r-knitr
-                             r-gridextra
                              r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jarretrt/tci")

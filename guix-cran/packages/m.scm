@@ -12875,6 +12875,45 @@ aprendizaje estadistico\"
 <https://rubenfcasal.github.io/aprendizaje_estadistico/>.")
     (license license:gpl2+)))
 
+(define-public r-mpactr
+  (package
+    (name "r-mpactr")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mpactr" version))
+       (sha256
+        (base32 "1g045zymdn04lny3a44l3n9dyxsh01yyga06h1p4j6x16pryjrbc"))))
+    (properties `((upstream-name . "mpactr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-treemapify
+                             r-rcpp
+                             r-r6
+                             r-ggplot2
+                             r-data-table
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.mums2.org/mpactr/")
+    (synopsis "Correction of Preprocessed MS Data")
+    (description
+     "An R implementation of the python program Metabolomics Peak Analysis
+Computational Tool ('MPACT') (Robert M. Samples, Sara P. Puckett, and Marcy J.
+Balunas (2023) <doi:10.1021/acs.analchem.2c04632>).  Filters in the package
+serve to address common errors in tandem mass spectrometry preprocessing,
+including: (1) isotopic patterns that are incorrectly split during
+preprocessing, (2) features present in solvent blanks due to carryover between
+samples, (3) features whose abundance is greater than user-defined abundance
+threshold in a specific group of samples, for example media blanks, (4) ions
+that are inconsistent between technical replicates, and (5) in-source fragment
+ions created during ionization before fragmentation in the tandem mass
+spectrometry workflow.")
+    (license license:gpl3+)))
+
 (define-public r-mp
   (package
     (name "r-mp")

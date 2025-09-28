@@ -13804,6 +13804,38 @@ Adapted from examples at <https://bl.ocks.org/N@code{PashaP>} (released under
 GPL-3).")
     (license license:gpl3)))
 
+(define-public r-bioworldr
+  (package
+    (name "r-bioworldr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BioWorldR" version))
+       (sha256
+        (base32 "0mrbicj17wbs0wx9dzsj2i4qgcvh03gim15rqhjizy5nqnw6zqn6"))))
+    (properties `((upstream-name . "BioWorldR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Monroy31039/BioWorld")
+    (synopsis
+     "Curated Collection of Biodiversity and Species Datasets and Utilities")
+    (description
+     "This package provides a curated collection of biodiversity and species-related
+datasets (birds, plants, reptiles, turtles, mammals, bees, marine data and
+related biological measurements), together with small utilities to load and
+explore them.  The package gathers data sourced from public repositories
+(including Kaggle and well-known ecological/biological R packages) and
+standardizes access for researchers, educators, and data analysts working on
+biodiversity, biogeography, ecology and comparative biology.  It aims to
+simplify reproducible workflows by packaging commonly used example datasets and
+metadata so they can be easily inspected, visualized, and used for teaching,
+testing, and prototyping analyses.")
+    (license license:gpl3)))
+
 (define-public r-biovizseq
   (package
     (name "r-biovizseq")
@@ -19142,28 +19174,33 @@ Nieto-Barajas (2003), Nieto-Barajas & Walker (2007) and Nieto-Barajas & Yin
 (define-public r-bgms
   (package
     (name "r-bgms")
-    (version "0.1.4.2")
+    (version "0.1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bgms" version))
        (sha256
-        (base32 "0jcapsfq55ca3bkm6gbp3c3g0vq1cs74plq9b0vgnq4vw0i2h0cw"))))
+        (base32 "0lxclmqpzb4hp51nxrralvm074nv03k83hrh4phgqd4x6gv99dsx"))))
     (properties `((upstream-name . "bgms")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack r-rcppprogress r-rcpp))
+    (propagated-inputs (list r-rdpack
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-lifecycle
+                             r-dqrng
+                             r-coda
+                             r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://maartenmarsman.github.io/bgms/")
+    (home-page "https://Bayesian-Graphical-Modelling-Lab.github.io/bgms/")
     (synopsis
      "Bayesian Analysis of Networks of Binary and/or Ordinal Variables")
     (description
      "Bayesian variable selection methods for analyzing the structure of a Markov
-Random Field model for a network of binary and/or ordinal variables.  Details of
-the implemented methods can be found in: Marsman, van den Bergh, and Haslbeck
-(in press) <doi:10.31234/osf.io/ukwrf>.")
+random field model for a network of binary and/or ordinal variables.")
     (license license:gpl2+)))
 
 (define-public r-bgmm
@@ -26136,13 +26173,13 @@ rank normalization, which are proposed in Vehtari et al. (2021)
 (define-public r-bayesmultimode
   (package
     (name "r-bayesmultimode")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMultiMode" version))
        (sha256
-        (base32 "10bvfhb5jrxhl5y6yqic6kh0mjfi5biy5f1x7cg4zlraqaj56f72"))))
+        (base32 "081gb80idvzmk2fnrmvp5rx4r50asr8vd42b5d4b5hph0622ld38"))))
     (properties `((upstream-name . "BayesMultiMode")))
     (build-system r-build-system)
     (arguments
