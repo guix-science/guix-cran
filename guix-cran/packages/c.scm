@@ -17273,13 +17273,13 @@ data frames with millions of rows.")
 (define-public r-constants
   (package
     (name "r-constants")
-    (version "1.0.1")
+    (version "2022.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "constants" version))
        (sha256
-        (base32 "11nliijwphqphik95b3xpawpjg7w4s089wdhjci5bw4va4bgd1xm"))))
+        (base32 "18zl49icwmfrpshmjmzv1a075v3hr2m0f5f4g1jmgcc9dg4lmywl"))))
     (properties `((upstream-name . "constants")))
     (build-system r-build-system)
     (arguments
@@ -17295,8 +17295,8 @@ and/or quantities packages are installed.  The Committee on Data for Science and
 Technology (CODATA) is an interdisciplinary committee of the International
 Council for Science which periodically provides the internationally accepted set
 of values of the fundamental physical constants.  This package contains the
-\"2018 CODATA\" version, published on May 2019: Eite Tiesinga, Peter J. Mohr,
-David B. Newell, and Barry N. Taylor (2020)
+\"2022 CODATA\" version, published on May 2024: Eite Tiesinga, Peter J. Mohr,
+David B. Newell, and Barry N. Taylor (2024)
 <https://physics.nist.gov/cuu/Constants/>.")
     (license license:expat)))
 
@@ -40465,13 +40465,13 @@ univariate mean against adversarial attacks: <@code{arXiv:2105.10417>}.")
 (define-public r-changepointga
   (package
     (name "r-changepointga")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "changepointGA" version))
        (sha256
-        (base32 "1w55fbzkdn13fk88z7s66nzimc74ycwjhbq1c04y51ibgx30wab4"))))
+        (base32 "00h96jzvh8d0xwpvhjpl851mz3gbdks8b41jxxkiz77y010lcl71"))))
     (properties `((upstream-name . "changepointGA")))
     (build-system r-build-system)
     (arguments
@@ -51008,13 +51008,13 @@ Regions, Economic Regions, Federal Electoral Divisions and Provinces.")
 (define-public r-camtrapr
   (package
     (name "r-camtrapr")
-    (version "2.3.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "camtrapR" version))
        (sha256
-        (base32 "10pjz9q6qil8nwf95s8y4vxzq4csg96pkq1gsk79ngnwkm3hlsh2"))))
+        (base32 "1kdy1wh55fxdkqqshkwiv7ahqrkp3a6z5z94jfbgdwdj57sqg1ly"))))
     (properties `((upstream-name . "camtrapR")))
     (build-system r-build-system)
     (arguments
@@ -51025,23 +51025,33 @@ Regions, Economic Regions, Federal Electoral Divisions and Provinces.")
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
     (inputs (list perl-image-exiftool))
-    (propagated-inputs (list r-sf
+    (propagated-inputs (list r-terra
+                             r-shinyjs
+                             r-shinydashboard
+                             r-shinybs
+                             r-shiny
+                             r-sf
                              r-secr
                              r-lubridate
+                             r-leaflet
                              r-ggplot2
                              r-generics
+                             r-dt
+                             r-dplyr
                              r-data-table))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/jniedballa/camtrapR")
-    (synopsis
-     "Camera Trap Data Management and Preparation of Occupancy and Spatial Capture-Recapture Analyses")
+    (synopsis "Camera Trap Data Management and Analysis Framework")
     (description
-     "Management of and data extraction from camera trap data in wildlife studies.
-The package provides a workflow for storing and sorting camera trap photos (and
-videos), tabulates records of species and individuals, and creates
-detection/non-detection matrices for occupancy and spatial capture-recapture
-analyses with great flexibility.  In addition, it can visualise species activity
-data and provides simple mapping functions with GIS export.")
+     "Management and analysis of camera trap wildlife data through an integrated
+workflow.  Provides functions for image/video organization and metadata
+extraction, species/individual identification.  Creates detection histories for
+occupancy and spatial capture-recapture analyses, with support for multi-season
+studies.  Includes tools for fitting community occupancy models in JAGS and
+NIMBLE, and an interactive dashboard for survey data visualization and analysis.
+ Features visualization of species distributions and activity patterns, plus
+export capabilities for GIS and reports.  Emphasizes automation and
+reproducibility while maintaining flexibility for different study designs.")
     (license license:gpl2+)))
 
 (define-public r-camtrapdp

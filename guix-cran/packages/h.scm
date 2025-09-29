@@ -9064,13 +9064,13 @@ the results from the paper, see demo(\"hhh4contacts\")'.")
 (define-public r-hgwrr
   (package
     (name "r-hgwrr")
-    (version "0.6-1")
+    (version "0.6-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hgwrr" version))
        (sha256
-        (base32 "19lx5xnxvvxq7yax1i9pn19vjvn5ak6s2khm9bi8h43rj08wc4ck"))))
+        (base32 "0rb2384p3phy60xfhxfrv27prblvz1fs4a2l209s80zygr1y6kbd"))))
     (properties `((upstream-name . "hgwrr")))
     (build-system r-build-system)
     (arguments
@@ -9590,13 +9590,13 @@ for easy rendering of the glyphs in an R terminal or graphics device.")
 (define-public r-hexdensity
   (package
     (name "r-hexdensity")
-    (version "1.4.9")
+    (version "1.4.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hexDensity" version))
        (sha256
-        (base32 "0j7hdn96cj79zcw3l5p5154681bpf3difzillhn7azf2lzz7li9k"))))
+        (base32 "0aszzm070rz4sgsys6yiyxlzijzmknlqak6cpb6p0pklvw62psca"))))
     (properties `((upstream-name . "hexDensity")))
     (build-system r-build-system)
     (arguments
@@ -10239,13 +10239,13 @@ size estimation.")
 (define-public r-hesim
   (package
     (name "r-hesim")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hesim" version))
        (sha256
-        (base32 "0r3hwn60z0ypxw7ylvkkd0kh9kgk0rxhghckla77h2505h7wq2x6"))))
+        (base32 "1zppqmgbki053qp20vs9s74sppkgig4w4lxg41s3xkayilp2y84r"))))
     (properties `((upstream-name . "hesim")))
     (build-system r-build-system)
     (arguments
@@ -12455,13 +12455,13 @@ calibration, and comparison for high-dimensional data.")
 (define-public r-hdmtd
   (package
     (name "r-hdmtd")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdMTD" version))
        (sha256
-        (base32 "10x05k7yx2szz20hn6krfqidc2qw43gkypvzn7cw03zvwiasq36s"))))
+        (base32 "0q1d74dsx6b5dri422vfnk6xv29g478pvj9rwmm8skgk1zg07vz6"))))
     (properties `((upstream-name . "hdMTD")))
     (build-system r-build-system)
     (arguments

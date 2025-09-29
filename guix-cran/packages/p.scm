@@ -11718,6 +11718,36 @@ models for paired comparison, rating and ranking patterns using a non-parametric
 ML approach.")
     (license license:gpl2+)))
 
+(define-public r-prefio
+  (package
+    (name "r-prefio")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "prefio" version))
+       (sha256
+        (base32 "1gy6hfn22jscj8bjfzk9asz72dsnsdbm8m351jj542z9dr4kgb77"))))
+    (properties `((upstream-name . "prefio")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-dplyr))
+    (home-page "https://github.com/fleverest/prefio/")
+    (synopsis "Structures for Preference Data")
+    (description
+     "Convenient structures for creating, sourcing, reading, writing and manipulating
+ordinal preference data.  Methods for writing to/from @code{PrefLib} formats.
+See Nicholas Mattei and Toby Walsh \"@code{PrefLib}: A Library of Preference
+Data\" (2013) <doi:10.1007/978-3-642-41575-3_20>.")
+    (license license:gpl3)))
+
 (define-public r-preference
   (package
     (name "r-preference")

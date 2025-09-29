@@ -802,42 +802,6 @@ trees can be used directly from the R console, from RStudio', in Shiny apps and
 R Markdown documents.")
     (license license:expat)))
 
-(define-public r-jstor
-  (package
-    (name "r-jstor")
-    (version "0.3.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jstor" version))
-       (sha256
-        (base32 "1n5l6wz93bjhhhpikmvmjd5famxbrsk3d6z61bb7sp6xvslychlj"))))
-    (properties `((upstream-name . "jstor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-pryr
-                             r-magrittr
-                             r-furrr
-                             r-dplyr
-                             r-crayon
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/jstor")
-    (synopsis "Read Data from JSTOR/DfR")
-    (description
-     "This package provides functions and helpers to import metadata, ngrams and
-full-texts delivered by Data for Research by JSTOR.")
-    (license license:gpl3)))
-
 (define-public r-jstager
   (package
     (name "r-jstager")

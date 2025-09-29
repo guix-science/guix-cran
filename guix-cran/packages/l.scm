@@ -8913,13 +8913,13 @@ comparison/selection.  Based on Cornwell & Weedon (2013)
 (define-public r-litter
   (package
     (name "r-litter")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "litteR" version))
        (sha256
-        (base32 "1j6wj3dg7lwq6kki0461pzy2k7jhkgn0h5cjh2aa7hgwp6d37s09"))))
+        (base32 "1ilz8rsjrha82chmqhrx7kdgnv4i88xvfp9527g4vravzgn06qf9"))))
     (properties `((upstream-name . "litteR")))
     (build-system r-build-system)
     (arguments
@@ -10103,13 +10103,13 @@ authoring with R Markdown is also provided.")
 (define-public r-lingtypology
   (package
     (name "r-lingtypology")
-    (version "1.1.23")
+    (version "1.1.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lingtypology" version))
        (sha256
-        (base32 "08a8dqcdnx8lmd5f6dlqf9nn7zad3j2sgl3985393z6gzdn9yqj8"))))
+        (base32 "06m9gjl182lf60k4wc2mfv76ljqngnc7hsyxv1942rs90i5p7y3x"))))
     (properties `((upstream-name . "lingtypology")))
     (build-system r-build-system)
     (arguments

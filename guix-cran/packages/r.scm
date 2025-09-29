@@ -13262,13 +13262,13 @@ can be read relative to either axis equally.")
 (define-public r-rotations
   (package
     (name "r-rotations")
-    (version "1.6.5")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rotations" version))
        (sha256
-        (base32 "1gcwz9aq99w54pq03i164kqa0dnf68rkd3ch3l7m97ndf32lawwk"))))
+        (base32 "0qjawdcciz8xq23j6cifmv13jqaxhqf3ihba4z4nnpdx9iw8ygsb"))))
     (properties `((upstream-name . "rotations")))
     (build-system r-build-system)
     (arguments

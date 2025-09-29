@@ -18063,45 +18063,6 @@ features via this package.  To learn more about @code{ForestGEO} visit
 <http://www.forestgeo.si.edu/>.")
     (license license:gpl3)))
 
-(define-public r-fgdr
-  (package
-    (name "r-fgdr")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fgdr" version))
-       (sha256
-        (base32 "12rccdh1dmh8azwid8wgkdz8d7lqrdzr5n294j2fawqf4naff2gm"))))
-    (properties `((upstream-name . "fgdr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-units
-                             r-tibble
-                             r-terra
-                             r-stringr
-                             r-stars
-                             r-sf
-                             r-rlang
-                             r-readr
-                             r-raster
-                             r-purrr
-                             r-magrittr
-                             r-jpmesh
-                             r-data-table))
-    (home-page "https://github.com/uribo/fgdr")
-    (synopsis "Utilities for Fundamental Geo-Spatial Data")
-    (description
-     "Read and Parse for Fundamental Geo-Spatial Data (FGD) which downloads XML file
-from providing site (<https://fgd.gsi.go.jp/download/menu.php>).  The JPGIS
-format file provided by FGD so that it can be handled as an R spatial object
-such as sf and raster', terra or stars'.  Supports the FGD version 4.1, and
-accepts fundamental items and digital elevation models.")
-    (license license:expat)))
-
 (define-public r-fgarch
   (package
     (name "r-fgarch")

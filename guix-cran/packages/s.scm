@@ -21584,13 +21584,13 @@ spatio-temporal dynamic linear models.  Bakar et al., (2016).  Bakar et al.,
 (define-public r-spsutil
   (package
     (name "r-spsutil")
-    (version "0.2.2")
+    (version "0.2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spsUtil" version))
        (sha256
-        (base32 "1hhiz2bmgrvpadag1d4ljynk7mhwknaslja9hcmf665l2x3hzdl6"))))
+        (base32 "12kvdbjaa8hl7i48ah4p2a1zl9awppsarr5hr42nh10wawlgciqj"))))
     (properties `((upstream-name . "spsUtil")))
     (build-system r-build-system)
     (arguments
@@ -27676,21 +27676,21 @@ handling high dimensional processes.  See Asfaw et al. (2024)
 (define-public r-spatpca
   (package
     (name "r-spatpca")
-    (version "1.3.5")
+    (version "1.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatPCA" version))
        (sha256
-        (base32 "1lx429glr6273ssy1in192jx4iynqidkfmj9iibwiij3fk9y0sa5"))))
+        (base32 "1ffz29ygj6nl72vqcc42zbxa6lf1ndvx8wiigq69lqmmbr4gla44"))))
     (properties `((upstream-name . "SpatPCA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/egpivo/SpatPCA")
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggplot2))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://egpivo.github.io/SpatPCA/")
     (synopsis "Regularized Principal Component Analysis for Spatial Data")
     (description
      "Provide regularized principal component analysis incorporating smoothness,
@@ -27698,7 +27698,7 @@ sparseness and orthogonality of eigen-functions by using the alternating
 direction method of multipliers algorithm (Wang and Huang, 2017,
 <DOI:10.1080/10618600.2016.1157483>).  The method can be applied to either
 regularly or irregularly spaced data, including 1D, 2D, and 3D.")
-    (license license:gpl3)))
+    (license license:gpl2+)))
 
 (define-public r-spatopic
   (package
@@ -40017,20 +40017,20 @@ It provides Quantile-Quantile plots and method of L-Moments estimation
 (define-public r-slcm
   (package
     (name "r-slcm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slcm" version))
        (sha256
-        (base32 "0avbgsf3hgvpamw6cbs9l7l8s8bc89sqyjskj7mhjbvxsjdqd416"))))
+        (base32 "14px91sr3b2xwfkq58xm1j90npj9sz770g3yl20j0526qi5vv81i"))))
     (properties `((upstream-name . "slcm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/tmsalab/slcm")
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-edmdata))
+    (home-page "https://tmsalab.github.io/slcm/")
     (synopsis "Sparse Latent Class Model for Cognitive Diagnosis")
     (description
      "Perform a Bayesian estimation of the exploratory Sparse Latent Class Model for
@@ -50688,13 +50688,13 @@ interactively.")
 (define-public r-shinynotes
   (package
     (name "r-shinynotes")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyNotes" version))
        (sha256
-        (base32 "19k4n3ikffxs24c66i9wi7ldw50wjs0gym73n9clnq3hh6l2fzz8"))))
+        (base32 "0f28wz3f207ff51b4bba0i3iwd8907cmirjn8gg8y55grb1k46zd"))))
     (properties `((upstream-name . "shinyNotes")))
     (build-system r-build-system)
     (arguments
@@ -61967,13 +61967,13 @@ the first stages of root water absorption.")
 (define-public r-seededlda
   (package
     (name "r-seededlda")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seededlda" version))
        (sha256
-        (base32 "1c6rgyb8dqqydidnn726yhspavpla7jpbmd2y3f91bcmxkvizpfa"))))
+        (base32 "1cqh7v7n3vz0bgw3llwrpm287cz2xszk620jmqvbaim6y6hcqd8s"))))
     (properties `((upstream-name . "seededlda")))
     (build-system r-build-system)
     (arguments

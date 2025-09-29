@@ -19303,29 +19303,6 @@ package is designed for reproducible and automated analysis in neuroscience
 research.")
     (license license:bsd-3)))
 
-(define-public r-aidar
-  (package
-    (name "r-aidar")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "aidar" version))
-       (sha256
-        (base32 "1q2iz2qzh2yl0v0sc537xq4vbx2nblym3kv419vr7jvrghdpx3vj"))))
-    (properties `((upstream-name . "aidar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml))
-    (home-page "https://cran.r-project.org/package=aidar")
-    (synopsis "Tools for Reading AIDA Files")
-    (description
-     "Read objects from the AIDA (<http://aida.freehep.org/>) file and make them
-available as dataframes in R.")
-    (license license:lgpl2.0+)))
-
 (define-public r-aid
   (package
     (name "r-aid")

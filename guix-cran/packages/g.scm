@@ -3138,13 +3138,13 @@ core data for 0-800 ka <doi:10.5194/cp-12-1-2016>.")
 (define-public r-gslnls
   (package
     (name "r-gslnls")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gslnls" version))
        (sha256
-        (base32 "0anzd5cn78cd01zzjp5agyrynb83r2prdc8bnc9s4jsmpcpklsih"))))
+        (base32 "073kbylasbmpmafj50f2c50fzd0s93sg40vaa6s2pzxvdv9azrqh"))))
     (properties `((upstream-name . "gslnls")))
     (build-system r-build-system)
     (arguments

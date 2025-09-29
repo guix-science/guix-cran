@@ -8502,13 +8502,13 @@ data.")
 (define-public r-treedist
   (package
     (name "r-treedist")
-    (version "2.10.1")
+    (version "2.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeDist" version))
        (sha256
-        (base32 "0gqa8f58yj9cqcgyr5xa92mvwg21kgyj6khh8iwdbp06l25v5dch"))))
+        (base32 "0kz5smq27385n3ghgj192mx7s6z08akklnn8xr98gww87l7bvx5r"))))
     (properties `((upstream-name . "TreeDist")))
     (build-system r-build-system)
     (arguments
@@ -8533,14 +8533,16 @@ Clustering Information Distance, Matching Split Information Distance; Smith
 2020) <doi:10.1093/bioinformatics/btaa614>; Jaccard-Robinson-Foulds distances
 (Bocker et al.  2013) <doi:10.1007/978-3-642-40453-5_13>, including the Nye et
 al. (2006) metric <doi:10.1093/bioinformatics/bti720>; the Matching Split
-Distance (Bogdanowicz & Giaro 2012) <doi:10.1109/TCBB.2011.48>; Maximum
-Agreement Subtree distances; the Kendall-Colijn (2016) distance
-<doi:10.1093/molbev/msw124>, and the Nearest Neighbour Interchange (NNI)
-distance, approximated per Li et al. (1996) <doi:10.1007/3-540-61332-3_168>.
-Includes tools for visualizing mappings of tree space (Smith 2022)
-<doi:10.1093/sysbio/syab100>, for identifying islands of trees (Silva and
-Wilkinson 2021) <doi:10.1093/sysbio/syab015>, for calculating the median of sets
-of trees, and for computing the information content of trees and splits.")
+Distance (Bogdanowicz & Giaro 2012) <doi:10.1109/TCBB.2011.48>; the Hierarchical
+Mutual Information (Perotti et al.  2015)
+<doi:10.1103/@code{PhysRevE.92.062825>}; Maximum Agreement Subtree distances;
+the Kendall-Colijn (2016) distance <doi:10.1093/molbev/msw124>, and the Nearest
+Neighbour Interchange (NNI) distance, approximated per Li et al. (1996)
+<doi:10.1007/3-540-61332-3_168>.  Includes tools for visualizing mappings of
+tree space (Smith 2022) <doi:10.1093/sysbio/syab100>, for identifying islands of
+trees (Silva and Wilkinson 2021) <doi:10.1093/sysbio/syab015>, for calculating
+the median of sets of trees, and for computing the information content of trees
+and splits.")
     (license license:gpl3+)))
 
 (define-public r-treedimensiontest
