@@ -1490,6 +1490,34 @@ the the multilevel p2 model as described in Zijlstra, Van Duijn & Snijders
 (2009) <doi: 10.1348/000711007X255336>, the (multilevel) b2 model.")
     (license license:gpl2+)))
 
+(define-public r-dyadratios
+  (package
+    (name "r-dyadratios")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DyadRatios" version))
+       (sha256
+        (base32 "12q2n67pd16fkv03vcsyjjmalrlprn6v6bznyc8gr9ad6cjrl1fh"))))
+    (properties `((upstream-name . "DyadRatios")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lubridate r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DyadRatios")
+    (synopsis "Dyad Ratios Algorithm")
+    (description
+     "Estimates the Dyad Ratios Algorithm for pooling and smoothing poll estimates.
+The Dyad Ratios Algorithm smooths both forward and backward in time over polling
+results allowing differences in both question type and polling house.  The
+result is an estimate of a single latent variable that describes the systematic
+trend over time in the (noisy) polling results.  See James A. Stimson (2018)
+<doi:10.1177/0759106318761614> and the package's vignette for more details.")
+    (license license:gpl2+)))
+
 (define-public r-dyadicarma
   (package
     (name "r-dyadicarma")
@@ -9744,6 +9772,45 @@ The philosophy of Docovt is described in Guo G.(2025)
      "Basic routines used in scientific coding, such as timing routines, vector/array
 handing functions and I/O support routines.")
     (license license:gpl3)))
+
+(define-public r-docorator
+  (package
+    (name "r-docorator")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "docorator" version))
+       (sha256
+        (base32 "1wylssf6n3cc6v1pf75z5zz5cxvymlx49iiz3agvarjnxxqlw4by"))))
+    (properties `((upstream-name . "docorator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-stringr
+                             r-rstudioapi
+                             r-rmarkdown
+                             r-rlang
+                             r-quarto
+                             r-purrr
+                             r-png
+                             r-lifecycle
+                             r-knitr
+                             r-gt
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://GSK-Biostatistics.github.io/docorator/")
+    (synopsis "Docorate (Decorate + Output) Displays")
+    (description
+     "This package provides a framework for creating production outputs.  Users can
+frame a table, listing, or figure with headers and footers and save to an output
+file.  Stores an intermediate docorator object for reproducibility and rendering
+to multiple output types.")
+    (license license:asl2.0)))
 
 (define-public r-docopulae
   (package
@@ -19352,13 +19419,13 @@ dichotomized functional response regression (dfrr) model.")
 (define-public r-dfr
   (package
     (name "r-dfr")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfr" version))
        (sha256
-        (base32 "13z44b7q416y29fa54xbf5h734nbrgl9ds4rh7zz31shjd0hr85d"))))
+        (base32 "07ma1sj4h817svwcviq7qxhj7bx7x7n4njbiv2jr6bpkgg887bri"))))
     (properties `((upstream-name . "dfr")))
     (build-system r-build-system)
     (arguments
@@ -23816,13 +23883,13 @@ statements in R Markdown or Quarto markdown format, and parse them to EML and
 (define-public r-delimtools
   (package
     (name "r-delimtools")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "delimtools" version))
        (sha256
-        (base32 "06cn8y2i7p55ik1qf6h0lpwvyspprwwpgj5fq8hj8p4ms8byqibr"))))
+        (base32 "1c3h0h099la8l18dzj1dmjrljppfzxwj4i3kqb8aqjgfmmdjvrs9"))))
     (properties `((upstream-name . "delimtools")))
     (build-system r-build-system)
     (arguments

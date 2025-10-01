@@ -3214,13 +3214,13 @@ accommodated.  Rizopoulos (2012, ISBN:9781439872864).")
 (define-public r-jmbayes
   (package
     (name "r-jmbayes")
-    (version "0.8-85")
+    (version "0.9-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JMbayes" version))
        (sha256
-        (base32 "0s11jpzflc2zg60g4ffcw23c2f4zz3mzddrc2cl5y43xl2v304lb"))))
+        (base32 "17jsaaz6kqr2ba9bq3xrwldpn4s6hb6wmhgjywndxpr6vsba5s3g"))))
     (properties `((upstream-name . "JMbayes")))
     (build-system r-build-system)
     (arguments
@@ -4976,21 +4976,20 @@ for biomedical research and other fields requiring robust variance estimation.")
 (define-public r-jackalope
   (package
     (name "r-jackalope")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jackalope" version))
        (sha256
-        (base32 "18k130d95k0zd7f88gbh0gnjmc41kyii82phslmrhyigrizhjq82"))))
+        (base32 "0hws3w8fq7vdi9bwnky5zcyrl4rrlapzwcq7v2dn8mjjq3cpnba5"))))
     (properties `((upstream-name . "jackalope")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list zlib))
-    (propagated-inputs (list r-zlibbioc
-                             r-rhtslib
+    (propagated-inputs (list r-rhtslib
                              r-rcppprogress
                              r-rcpparmadillo
                              r-rcpp

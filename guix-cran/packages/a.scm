@@ -5999,13 +5999,13 @@ regression analysis on social network data.")
 (define-public r-asml
   (package
     (name "r-asml")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ASML" version))
        (sha256
-        (base32 "1r4xkq4r378i49i6rsi85mjagrbb3k8s9y00yfx05rnvwk3mwc20"))))
+        (base32 "1im3b2k7a18gr5m6vpzfs7k5vb9vy9myn8n4g77kl28wbqaskm2n"))))
     (properties `((upstream-name . "ASML")))
     (build-system r-build-system)
     (arguments
@@ -6020,6 +6020,7 @@ regression analysis on social network data.")
                              r-polychrome
                              r-ggplot2
                              r-dplyr
+                             r-dalex
                              r-caret))
     (home-page "https://cran.r-project.org/package=ASML")
     (synopsis "Algorithm Portfolio Selection with Machine Learning")

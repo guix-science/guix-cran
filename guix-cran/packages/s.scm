@@ -5349,13 +5349,13 @@ linear models.  For further details, see Hanson et al. (2023)
 (define-public r-surveytable
   (package
     (name "r-surveytable")
-    (version "0.9.9")
+    (version "0.9.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveytable" version))
        (sha256
-        (base32 "08hb81i5inckam2x7mvaxq68ygil6qp5yjgza3qwh1a85ymj4q0c"))))
+        (base32 "1d4k37i2jdc1fmkhc3hkwpksg74n0gql7ria56q3x6agijj2nicx"))))
     (properties `((upstream-name . "surveytable")))
     (build-system r-build-system)
     (arguments
@@ -5599,13 +5599,13 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
 (define-public r-surveydown
   (package
     (name "r-surveydown")
-    (version "0.13.0")
+    (version "0.13.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveydown" version))
        (sha256
-        (base32 "0ia1qkgqph9vl8v2qysygm8kndk2frmw45hm21wm1869mfac4bzx"))))
+        (base32 "14g0v628q5yjczmzi3fv4hl8z0kjrldbwzp0pqiyy406baxy35wk"))))
     (properties `((upstream-name . "surveydown")))
     (build-system r-build-system)
     (arguments
@@ -9911,13 +9911,13 @@ Modern Concepts, Methods and Applications, CRC Press.")
 (define-public r-stroke
   (package
     (name "r-stroke")
-    (version "25.9.1")
+    (version "25.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stRoke" version))
        (sha256
-        (base32 "0i37pbc296ri0x5fzih8k88q0jd0dalf8cn5nidnarxnbv9d5y04"))))
+        (base32 "1csgs2k5jij9kjg6h9dz2309j4sx9n6hf1wmkn189gqjd7hk70ki"))))
     (properties `((upstream-name . "stRoke")))
     (build-system r-build-system)
     (arguments
@@ -10365,6 +10365,34 @@ collection of street views for various research purposes.")
 into a document selection in RStudio and Positron'.  This is particularly
 helpful for streaming large language model responses into the user's editor.")
     (license license:expat)))
+
+(define-public r-streamsampler
+  (package
+    (name "r-streamsampler")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "streamsampler" version))
+       (sha256
+        (base32 "0dl3cld2yyzv90913b4ijqfvw396jmazxh1920mgr1gpvawf6dvn"))))
+    (properties `((upstream-name . "streamsampler")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-slider))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Kyle-Hurley/streamsampler")
+    (synopsis "Characterize and Subsample Stream Data")
+    (description
+     "Characterize daily stream discharge and water quality data and subsample water
+quality data.  Provide dates, discharge, and water quality measurements and
+streamsampler can find gaps, get summary statistics, and subsample according to
+common stream sampling protocols.  Stream sampling protocols are described in
+Lee et al. (2016) <doi:10.1016/j.jhydrol.2016.08.059> and Lee et al. (2019)
+<doi:10.3133/sir20195084>.")
+    (license license:cc0)))
 
 (define-public r-streammoa
   (package
@@ -13587,13 +13615,13 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
 (define-public r-stepreg
   (package
     (name "r-stepreg")
-    (version "1.5.8")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StepReg" version))
        (sha256
-        (base32 "0w116z9bjga2lqs7iaxwfgrmanm0y12ih2ns2wrc7jamqs97dgf3"))))
+        (base32 "0n26kxqqdkgsf3zznbk1bbrbq2vm9m6b8gn90ca5kbm7bsgjh5vd"))))
     (properties `((upstream-name . "StepReg")))
     (build-system r-build-system)
     (arguments
@@ -13601,6 +13629,7 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-survival
+                             r-survauc
                              r-summarytools
                              r-stringr
                              r-shinythemes
@@ -13608,6 +13637,7 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
                              r-shinycssloaders
                              r-shiny
                              r-rmarkdown
+                             r-proc
                              r-mass
                              r-ggrepel
                              r-ggplot2
@@ -13622,16 +13652,16 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
     (description
      "Stepwise regression is a statistical technique used for model selection.  This
 package streamlines stepwise regression analysis by supporting multiple
-regression types, incorporating popular selection strategies, and offering
-essential metrics.  It enables users to apply multiple selection strategies and
-metrics in a single function call, visualize variable selection processes, and
-export results in various formats.  However, @code{StepReg} should not be used
-for statistical inference unless the variable selection process is explicitly
-accounted for, as it can compromise the validity of the results.  This
-limitation does not apply when @code{StepReg} is used for prediction purposes.
-We validated @code{StepReg's} accuracy using public datasets within the SAS
-software environment.  Additionally, @code{StepReg} features an interactive
-Shiny application to enhance usability and accessibility.")
+regression types(linear, Cox, logistic, Poisson, Gamma, and negative binomial),
+incorporating popular selection strategies(forward, backward, bidirectional, and
+subset), and offering essential metrics.  It enables users to apply multiple
+selection strategies and metrics in a single function call, visualize variable
+selection processes, and export results in various formats. @code{StepReg}
+offers a data-splitting option to address potential issues with invalid
+statistical inference and a randomized forward selection option to avoid
+overfitting.  We validated @code{StepReg's} accuracy using public datasets
+within the SAS software environment.  Additionally, @code{StepReg} features an
+interactive Shiny application to enhance usability and accessibility.")
     (license license:expat)))
 
 (define-public r-stepr
@@ -18703,13 +18733,13 @@ autoregression methods.")
 (define-public r-ssn2
   (package
     (name "r-ssn2")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSN2" version))
        (sha256
-        (base32 "1bc4s0hwbjv3qk87sml089pj345xnbbq2y3zss3j3iarrychliic"))))
+        (base32 "1gg6v3qjp6py1dbb0ms00578q8h1ikqml6lmvgbjj8pmc2n6zcz3"))))
     (properties `((upstream-name . "SSN2")))
     (build-system r-build-system)
     (arguments
@@ -21615,13 +21645,13 @@ package is enough.")
 (define-public r-spsurvey
   (package
     (name "r-spsurvey")
-    (version "5.5.1")
+    (version "5.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spsurvey" version))
        (sha256
-        (base32 "13h25mhb45s2k73a5709zlxfxylxqls0avan6d8pcp0iyrmpxjak"))))
+        (base32 "0yskjmikdi5mdhhgvs0msz21hclsv0ka6kydylznzfddrx2krlpq"))))
     (properties `((upstream-name . "spsurvey")))
     (build-system r-build-system)
     (arguments
@@ -23923,6 +23953,34 @@ Lambert (1999) <doi:10.1080/10618600.1999.10474847>.  This method allows trees
 and forests to be built while considering either level and shape or only shape
 of response trajectories.")
     (license license:expat)))
+
+(define-public r-splineplot
+  (package
+    (name "r-splineplot")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "splineplot" version))
+       (sha256
+        (base32 "0jwggylq22mhl5xl9h83r4lbihdhax9rp9xh4h3fg99blj6svl8k"))))
+    (properties `((upstream-name . "splineplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jinseob2kim/splineplot")
+    (synopsis "Visualization of Spline Effects in GAM and GLM Models")
+    (description
+     "This package creates ggplot2'-based visualizations of smooth effects from GAM
+(Generalized Additive Models) fitted with mgcv and spline effects from GLM
+(Generalized Linear Models).  Supports interaction terms and provides hazard
+ratio plots with histograms for survival analysis.  Wood (2017,
+ISBN:9781498728331) provides comprehensive methodology for generalized additive
+models.")
+    (license license:asl2.0)))
 
 (define-public r-splinecox
   (package
@@ -26658,13 +26716,13 @@ designed to bring reproducible phonetic research into R.")
 (define-public r-speakeasyr
   (package
     (name "r-speakeasyr")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "speakeasyR" version))
        (sha256
-        (base32 "0lyxlxs8jmqjsbaxf5mcbysc58fcnpkx1i4x52hdmrc9q5kzca2x"))))
+        (base32 "03f51y6h8j5vxjgklw780b6y59nx12rfqfifslq3zhcrsmczy7zv"))))
     (properties `((upstream-name . "speakeasyR")))
     (build-system r-build-system)
     (arguments
@@ -26900,13 +26958,13 @@ parameters are optimized by cross-validation.")
 (define-public r-spcp
   (package
     (name "r-spcp")
-    (version "1.3")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spCP" version))
        (sha256
-        (base32 "0rphd8zawr2r14dzwv77plk5xw020pkc26ir72qiqc1acin42xd1"))))
+        (base32 "1ih89z1l5gyhzhqcz4g46429nw56lq7nfkarh85i0ji98aa8pl52"))))
     (properties `((upstream-name . "spCP")))
     (build-system r-build-system)
     (arguments
@@ -26926,9 +26984,9 @@ jointly using a multivariate conditional autoregressive (MCAR) prior.  The MCAR
 is a unique process that allows for a dissimilarity metric to dictate the local
 spatial dependencies.  Full details of the package can be found in the
 accompanying vignette.  Furthermore, the details of the package can be found in
-the corresponding paper on @code{arXiv} by Berchuck et al (2018): \"A spatially
-varying change points model for monitoring glaucoma progression using visual
-field data\", <@code{arXiv:1811.11038>}.")
+the corresponding paper published in Spatial Statistics by Berchuck et al
+(2019): \"A spatially varying change points model for monitoring glaucoma
+progression using visual field data\", <doi:10.1016/j.spasta.2019.02.001>.")
     (license license:gpl2+)))
 
 (define-public r-spcov
@@ -27266,13 +27324,13 @@ demanding scenarios.")
 (define-public r-spbfa
   (package
     (name "r-spbfa")
-    (version "1.3")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spBFA" version))
        (sha256
-        (base32 "1bi3lhbx37zlj2x0nql51x5422zxc1gcbn8vqjf81badwf80fwsp"))))
+        (base32 "1zv3xi1qh9fkjws7dyak8j856daiqlrymx304gbggmrlxi0khv2s"))))
     (properties `((upstream-name . "spBFA")))
     (build-system r-build-system)
     (arguments
@@ -27295,8 +27353,7 @@ factors through a hierarchical structure and can be specified as exponential or
 first-order autoregressive.  Full details of the package can be found in the
 accompanying vignette.  Furthermore, the details of the package can be found in
 \"Bayesian Non-Parametric Factor Analysis for Longitudinal Spatial Surfaces\", by
-Berchuck et al (2019), <@code{arXiv:1911.04337>}.  The paper is in press at the
-journal Bayesian Analysis.")
+Berchuck et al (2019), <doi:10.1214/20-BA1253> in Bayesian Analysis.")
     (license license:gpl2+)))
 
 (define-public r-spbayessurv
@@ -27739,13 +27796,13 @@ single cell.  For more details on the methodology, see
 (define-public r-spatmca
   (package
     (name "r-spatmca")
-    (version "1.0.4")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatMCA" version))
        (sha256
-        (base32 "051c6mdij04n7xc256qx0119gsg337w2xly3ykiy47nrd3svdvc3"))))
+        (base32 "1ss5lw693qf33v7x4420gd0qb1xhdfkxb6jpz430lq2flccddm3q"))))
     (properties `((upstream-name . "SpatMCA")))
     (build-system r-build-system)
     (arguments
@@ -27757,15 +27814,15 @@ single cell.  For more details on the methodology, see
                              r-rcpp
                              r-mass
                              r-ggplot2))
-    (home-page "https://github.com/egpivo/SpatMCA")
+    (home-page "https://egpivo.github.io/SpatMCA/")
     (synopsis "Regularized Spatial Maximum Covariance Analysis")
     (description
      "Provide regularized maximum covariance analysis incorporating smoothness,
 sparseness and orthogonality of couple patterns by using the alternating
 direction method of multipliers algorithm.  The method can be applied to either
 regularly or irregularly spaced data, including 1D, 2D, and 3D (Wang and Huang,
-2017 <doi:10.1002/env.2481>).")
-    (license license:gpl3)))
+2018 <doi:10.1002/env.2481>).")
+    (license license:gpl2+)))
 
 (define-public r-spatialwidget
   (package
@@ -28472,13 +28529,13 @@ Uhlig, S.(2008) <doi:10.1057/palgrave.sj.8350066>.")
 (define-public r-spatialising
   (package
     (name "r-spatialising")
-    (version "0.6.0")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialising" version))
        (sha256
-        (base32 "0q2gj16crhr1s92pazj6zbhr03xjp0pqwdc64qanpxmv4sbm65wq"))))
+        (base32 "0cnvxww37nbgcypxzrv13h90fp80b7xgbiyxdhvjxkbb3c1ydlvg"))))
     (properties `((upstream-name . "spatialising")))
     (build-system r-build-system)
     (arguments
@@ -28486,7 +28543,7 @@ Uhlig, S.(2008) <doi:10.1057/palgrave.sj.8350066>.")
       #:tests? #f))
     (propagated-inputs (list r-terra r-rcpp r-comat))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/Nowosad/spatialising")
+    (home-page "https://jakubnowosad.com/spatialising/")
     (synopsis "Ising Model for Spatial Data")
     (description
      "This package performs simulations of binary spatial raster data using the Ising
@@ -28692,13 +28749,13 @@ mapping.")
 (define-public r-spatialeco
   (package
     (name "r-spatialeco")
-    (version "2.0-2")
+    (version "2.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialEco" version))
        (sha256
-        (base32 "0z5m78x72if7bbhfjb92xv2qg4i7vh5hq9w5djd615piin9qwfsk"))))
+        (base32 "0idpcyfynvrxdsi48kn8nh1d3irswa2jx5fq2k06dc9iy2w436s1"))))
     (properties `((upstream-name . "spatialEco")))
     (build-system r-build-system)
     (arguments
@@ -32075,13 +32132,13 @@ package).  For more information, please see Rocha and Romano (2021) and check
 (define-public r-soundgen
   (package
     (name "r-soundgen")
-    (version "2.7.3")
+    (version "2.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soundgen" version))
        (sha256
-        (base32 "1p0hl3d5jgnricch7rz631c6kphxsvp1ng24k9y7g97pwy6hdcvb"))))
+        (base32 "1j3kndcymwsvzkiaz0qz3psidb9fwh34nb3198lv8674df4rccry"))))
     (properties `((upstream-name . "soundgen")))
     (build-system r-build-system)
     (arguments
@@ -40333,13 +40390,13 @@ and @code{DeYoung} (1987) <https://archive.org/details/DTIC_ADA182110>.")
 (define-public r-skpr
   (package
     (name "r-skpr")
-    (version "1.9.0")
+    (version "1.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skpr" version))
        (sha256
-        (base32 "0m471dpaxlpq37r6nq9r17kfw26fcv9xivmqkak68458fgbwx1w3"))))
+        (base32 "0dksjl8lrfzjd5j9yc5ahld88s6q0pkj4lysg4jlbxba34lbhbhh"))))
     (properties `((upstream-name . "skpr")))
     (build-system r-build-system)
     (arguments
@@ -54494,6 +54551,29 @@ define the value function, it retures the estimated Shapley values based on
 sampling methods or experimental designs.")
     (license license:expat)))
 
+(define-public r-shapboost
+  (package
+    (name "r-shapboost")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SHAPBoost" version))
+       (sha256
+        (base32 "01b64lzr7crldjr2yqh3q5jh4r6y2fg7ac4qzasyysdir54lgjw5"))))
+    (properties `((upstream-name . "SHAPBoost")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost r-shapforxgboost r-matrix r-caret))
+    (home-page "https://github.com/O-T-O-Z/SHAPBoost-R")
+    (synopsis "The SHAPBoost Feature Selection Algorithm")
+    (description
+     "The implementation of SHAPBoost, a boosting-based feature selection technique
+that ranks features iteratively based on Shapley values.")
+    (license license:expat)))
+
 (define-public r-shannon
   (package
     (name "r-shannon")
@@ -54680,13 +54760,13 @@ and sampling approaches.")
 (define-public r-sgs
   (package
     (name "r-sgs")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgs" version))
        (sha256
-        (base32 "1v8a6fsmbfyv734hcifjx5kcr9w3agb4c83911y858ig5hkb0l0d"))))
+        (base32 "0j2x74vf0yxipp43qmm90g0xry0kddz0spnaz601ypyy4iqq2h2m"))))
     (properties `((upstream-name . "sgs")))
     (build-system r-build-system)
     (arguments
@@ -55855,6 +55935,30 @@ association (Getis and Ord (1992) <doi:10.1111/j.1538-4632.1992.tb00261.x>) and
 hot-spot classification (Chainey (2020) ISBN:158948584X).")
     (license license:expat)))
 
+(define-public r-sfhnv
+  (package
+    (name "r-sfhnv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SFHNV" version))
+       (sha256
+        (base32 "0l1igx5vsf66x2gbyzl09p3jk234zwdpsqwsv666q2xz03m0gpma"))))
+    (properties `((upstream-name . "SFHNV")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/MurphyLiCN/SFHNV")
+    (synopsis "Structural Forest for the Heterogeneous Newsvendor Model")
+    (description
+     "This package implements the structural forest methodology for the heterogeneous
+newsvendor model.  The package provides tools to prepare data, fit honest
+newsvendor trees and forests, and obtain point and distributional predictions
+for demand decisions under uncertainty.")
+    (license license:expat)))
+
 (define-public r-sfhelper
   (package
     (name "r-sfhelper")
@@ -55952,13 +56056,13 @@ described in Bass and Wallace (2024) <doi:10.1101/2024.09.24.24314276>.")
 (define-public r-sfdesign
   (package
     (name "r-sfdesign")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SFDesign" version))
        (sha256
-        (base32 "1m4q4wdqa2szm7rk1j9bhmgn0m1gxgllqr2inkaxxj8jb1qq6bhz"))))
+        (base32 "1cmkizklzv1nps18w4j7x3vakxh7pnal1azwga6xx968izmnswzy"))))
     (properties `((upstream-name . "SFDesign")))
     (build-system r-build-system)
     (arguments
@@ -58153,13 +58257,13 @@ includes integration with the Plumber package.")
 (define-public r-sentopics
   (package
     (name "r-sentopics")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sentopics" version))
        (sha256
-        (base32 "1sqlblsy75i0bqn5jplmc6ghrak9d6whn0xzx5mbr6vc3802r28d"))))
+        (base32 "01f2g0m717pxm0pf41pp5df5ijib12dqzm3a2k140bii3cvf459a"))))
     (properties `((upstream-name . "sentopics")))
     (build-system r-build-system)
     (arguments
@@ -70179,13 +70283,13 @@ access by name.")
 (define-public r-satin
   (package
     (name "r-satin")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "satin" version))
        (sha256
-        (base32 "17knbgy89ljp607mkhs62fx9p6b40iqqzgpxr9karlf07l48c0ya"))))
+        (base32 "0ivdf4x3avcd4jd1x7sdp33sjl58glmb13zpi81f9bdi6lirsrh2"))))
     (properties `((upstream-name . "satin")))
     (build-system r-build-system)
     (arguments
@@ -70212,12 +70316,11 @@ chlorophyll concentration, sea surface temperature (SST), and several others.
 Data sources specific for SST that can be imported too includes Pathfinder AVHRR
 <https://www.ncei.noaa.gov/products/avhrr-pathfinder-sst> and GHRSST
 <https://www.ghrsst.org/>.  In addition, ocean productivity data produced by
-Oregon State University
-<http://sites.science.oregonstate.edu/ocean.productivity/> can also be handled
-previous conversion from HDF4 to HDF5 format.  Many other ocean variables can be
-processed by importing @code{netCDF} data files from two European Union's
-Copernicus Marine Service databases <https://marine.copernicus.eu/>, namely
-Global Ocean Physical Reanalysis and Global Ocean Biogeochemistry Hindcast.")
+Oregon State University can also be handled previous conversion from HDF4 to
+HDF5 format.  Many other ocean variables can be processed by importing
+@code{netCDF} data files from two European Union's Copernicus Marine Service
+databases <https://marine.copernicus.eu/>, namely Global Ocean Physical
+Reanalysis and Global Ocean Biogeochemistry Hindcast.")
     (license license:gpl3)))
 
 (define-public r-satellite

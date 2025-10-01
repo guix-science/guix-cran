@@ -723,6 +723,43 @@ Documentation.  NOTE: Zillow deprecated their API on 2021-09-30, and this
 package is now deprecated as a result.")
     (license license:gpl3+)))
 
+(define-public r-zidw
+  (package
+    (name "r-zidw")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZIDW" version))
+       (sha256
+        (base32 "0m3vnzl8jyynxnlspwpxir8f4jh4xcakf8y0mxay312lxlp0d9gj"))))
+    (properties `((upstream-name . "ZIDW")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-purrr
+                             r-maxlik
+                             r-matrixcalc
+                             r-gtools
+                             r-ggplot2
+                             r-dwreg
+                             r-dplyr
+                             r-discreteweibull
+                             r-count
+                             r-actuar))
+    (home-page "https://github.com/dsy109/ZIDW")
+    (synopsis "Zero-Inflated Discrete Weibull Models")
+    (description
+     "Parameter estimation for zero-inflated discrete Weibull (ZIDW) regression
+models, the univariate setting, distribution functions, functions to generate
+randomized quantile residuals a pseudo R2, and plotting of rootograms.  For more
+details, see Kalktawi (2017) <https://bura.brunel.ac.uk/handle/2438/14476>,
+Taconeli and Rodrigues de Lara (2022) <doi:10.1080/00949655.2021.2005597>, and
+Yeh and Young (2025) <doi:10.1080/03610918.2025.2464076>.")
+    (license license:gpl2+)))
+
 (define-public r-zic
   (package
     (name "r-zic")

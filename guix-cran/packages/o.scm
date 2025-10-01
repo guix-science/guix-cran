@@ -18,6 +18,7 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages image)
+  #:use-module (gnu packages imagemagick)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -2065,13 +2066,13 @@ Factorization\" which will be submitted to BBRC.")
 (define-public r-osmscale
   (package
     (name "r-osmscale")
-    (version "0.5.22")
+    (version "0.5.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OSMscale" version))
        (sha256
-        (base32 "1dsl67rmmw7mvyhzz47kf7n9xzkqj6jq9ndh1s273d6l0m91czmq"))))
+        (base32 "1x8kjgdv62bd0pi80lxddhg1i51ydll8hr9w09fl0fskjg25jkgr"))))
     (properties `((upstream-name . "OSMscale")))
     (build-system r-build-system)
     (arguments
@@ -6232,13 +6233,13 @@ divided by the intercept and provides confidence intervals for the ratio.")
 (define-public r-optconerrf
   (package
     (name "r-optconerrf")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optconerrf" version))
        (sha256
-        (base32 "14qh7mqvs5kf6masr55h8299axpyp8k5f9xrlms0y82v6yl69w83"))))
+        (base32 "0x1qwk8hxiqgxd4gfas5wm0j26y6rxm8l8md90sdjcbiikcg3pzq"))))
     (properties `((upstream-name . "optconerrf")))
     (build-system r-build-system)
     (arguments
@@ -6752,13 +6753,13 @@ manipulation.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.19")
+    (version "1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "1k7q2bjaldq1h75s4xvvspxp3qm68id7yy32b2px805b87azk6a1"))))
+        (base32 "1i2g9fnnql00hbjqvbi8x5lp23nabsxl9823dh8i9l0d3djy7z9s"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (arguments
@@ -6863,13 +6864,13 @@ peer-reviewed by @code{rOpenSci} (v.  0.2.0.0).")
 (define-public r-openstreetmap
   (package
     (name "r-openstreetmap")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenStreetMap" version))
        (sha256
-        (base32 "0iq3y3331rjppc8nfx9krrrfybyn1spwfp15hf3vz8mnmcg86dkf"))))
+        (base32 "176k0w6wc1bv56dxvfcgqwcc058fdljchx63wjm0xj9js8knaxg5"))))
     (properties `((upstream-name . "OpenStreetMap")))
     (build-system r-build-system)
     (arguments
@@ -6881,11 +6882,10 @@ peer-reviewed by @code{rOpenSci} (v.  0.2.0.0).")
     (synopsis "Access to Open Street Map Raster Images")
     (description
      "Accesses high resolution raster maps using the @code{OpenStreetMap} protocol.
-Dozens of road, satellite, and topographic map servers are directly supported,
-including Apple, Mapnik, Bing, and stamen.  Additionally raster maps may be
-constructed using custom tile servers.  Maps can be plotted using either base
-graphics, or ggplot2.  This package is not affiliated with the
-@code{OpenStreetMap.org} mapping project.")
+Dozens of road, satellite, and topographic map servers are directly supported.
+Additionally raster maps may be constructed using custom tile servers.  Maps can
+be plotted using either base graphics, or ggplot2.  This package is not
+affiliated with the @code{OpenStreetMap.org} mapping project.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file LICENCE")))))
 
@@ -10328,6 +10328,40 @@ pipelines that query the OMOP (Observational Medical Outcomes Partnership)
 common data model.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-omopconstructor
+  (package
+    (name "r-omopconstructor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmopConstructor" version))
+       (sha256
+        (base32 "0zbbh84ws61n18r18gf92gzgpyqh42aw89pa3y37sc3g0016gkxz"))))
+    (properties `((upstream-name . "OmopConstructor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-patientprofiles
+                             r-omopgenerics
+                             r-glue
+                             r-dplyr
+                             r-clock
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://ohdsi.github.io/OmopConstructor/")
+    (synopsis "Build Tables in the OMOP Common Data Model")
+    (description
+     "This package provides functionality to construct standardised tables from health
+care data formatted according to the Observational Medical Outcomes Partnership
+(OMOP) Common Data Model.  The package includes tools to build key tables such
+as observation period and drug era, among others.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-omock
   (package
     (name "r-omock")
@@ -13199,6 +13233,44 @@ Waterway, Port, Coastal, and Ocean Division, Vol 105, pp 457-459.")
 (oceanographic) data and model output.")
     (license license:gpl3+)))
 
+(define-public r-oceanmap
+  (package
+    (name "r-oceanmap")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oceanmap" version))
+       (sha256
+        (base32 "0wd5yl0dywwwm5m54xj5nfgkvgl7w7f9lwffgab5bx0a8fbdm70z"))))
+    (properties `((upstream-name . "oceanmap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list imagemagick))
+    (propagated-inputs (list r-sp
+                             r-sf
+                             r-reshape2
+                             r-raster
+                             r-plotrix
+                             r-plotly
+                             r-ncdf4
+                             r-maps
+                             r-mapdata
+                             r-lubridate
+                             r-ggplot2
+                             r-fields
+                             r-extrafont
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=oceanmap")
+    (synopsis "Plotting Toolbox for 2D Oceanographic Data")
+    (description
+     "Plotting toolbox for 2D oceanographic data (satellite data, sea surface
+temperature, chlorophyll, ocean fronts & bathymetry).  Recognized classes and
+formats include netcdf, Raster, .nc and .gz files.")
+    (license license:gpl3+)))
+
 (define-public r-oceanis
   (package
     (name "r-oceanis")
@@ -13460,6 +13532,47 @@ an efficient survey design.  Reference: Fukaya et al. (2022)
 <doi:10.1111/2041-210X.13732>, Fukaya and Hasebe (2025)
 <doi:10.1002/1438-390X.12219>.")
     (license license:gpl3+)))
+
+(define-public r-occcite
+  (package
+    (name "r-occcite")
+    (version "0.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "occCite" version))
+       (sha256
+        (base32 "1n3861ipa90w4gvd6b9yp457krq9zf17bqnq6bj0398j61957pxa"))))
+    (properties `((upstream-name . "occCite")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-stringr
+                             r-rpostgresql
+                             r-rlang
+                             r-rgbif
+                             r-refmanager
+                             r-rcolorbrewer
+                             r-lubridate
+                             r-leaflet
+                             r-htmltools
+                             r-ggplot2
+                             r-dplyr
+                             r-dbi
+                             r-curl
+                             r-bien
+                             r-bib2df))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://docs.ropensci.org/occCite/")
+    (synopsis "Querying and Managing Large Biodiversity Occurrence Datasets")
+    (description
+     "Facilitates the gathering of biodiversity occurrence data from disparate
+sources.  Metadata is managed throughout the process to facilitate reporting and
+enhanced ability to repeat analyses.")
+    (license license:gpl3)))
 
 (define-public r-occ
   (package

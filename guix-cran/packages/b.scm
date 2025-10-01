@@ -7246,6 +7246,39 @@ optional method of using the graphical user interface (GUI) R package tcltk to
 ensure that it is user friendly.")
     (license license:gpl2)))
 
+(define-public r-bop2fe
+  (package
+    (name "r-bop2fe")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BOP2FE" version))
+       (sha256
+        (base32 "0j3462m23mwv49sks2sk2n7diadzly5qdxxllbxaqhdi8s11zbim"))))
+    (properties `((upstream-name . "BOP2FE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-patchwork r-gridextra r-ggplot2))
+    (home-page "https://github.com/belayb/BOP2FE")
+    (synopsis
+     "Bayesian Optimal Phase II Design with Futility and Efficacy Stopping Boundaries")
+    (description
+     "Bayesian optimal design with futility and efficacy stopping boundaries (BOP2-FE)
+is a novel statistical framework for single-arm Phase II clinical trials.  It
+enables early termination for efficacy when interim data are promising, while
+explicitly controlling Type I and Type II error rates.  The design supports a
+variety of endpoint structures, including single binary endpoints, nested
+endpoints, co-primary endpoints, and joint monitoring of efficacy and toxicity.
+The package provides tools for enumerating stopping boundaries prior to trial
+initiation and for conducting simulation studies to evaluate the designâs
+operating characteristics.  Users can flexibly specify design parameters to suit
+their specific applications.  For methodological details, refer to Xu et al.
+(2025) <doi:10.1080/10543406.2025.2558142>.")
+    (license license:expat)))
+
 (define-public r-bootwptos
   (package
     (name "r-bootwptos")
@@ -8403,13 +8436,13 @@ F. and Jales, I. (2024) <doi:10.1080/02331888.2024.2344670>.")
 (define-public r-booami
   (package
     (name "r-booami")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "booami" version))
        (sha256
-        (base32 "06a7gxx03wc01q3ccxnlwqa2y6kx1aacqwc4dfjrwbw7c0mywd0r"))))
+        (base32 "083szrv35b9lqvbhafk222ch20wg2mirvd5vxgrbpsdrrdw5k989"))))
     (properties `((upstream-name . "booami")))
     (build-system r-build-system)
     (arguments
@@ -11048,6 +11081,31 @@ described in Berry, Levinsohn and Pakes (1995) <DOI:10.2307/2171802> .  The
 routine uses analytic gradients and offers a large number of implemented
 integration methods and optimization routines.")
     (license license:gpl3)))
+
+(define-public r-blox
+  (package
+    (name "r-blox")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blox" version))
+       (sha256
+        (base32 "16cchlqawmab9svgraxnq3z1wbyq0q70ym97lm6csz0dlsjima0p"))))
+    (properties `((upstream-name . "blox")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrixstats))
+    (home-page "https://cran.r-project.org/package=blox")
+    (synopsis "Block Diagonal Matrix Approximation")
+    (description
+     "Finds the best block diagonal matrix approximation of a symmetric matrix.  This
+can be exploited for divisive hierarchical clustering using singular vectors,
+named HC-SVD. The method is described in Bauer (202Xa)
+<doi:10.48550/@code{arXiv.2308.06820>}.")
+    (license license:gpl2+)))
 
 (define-public r-blosc
   (package
@@ -14281,13 +14339,13 @@ purposes.")
 (define-public r-bioseq
   (package
     (name "r-bioseq")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioseq" version))
        (sha256
-        (base32 "0m93s7vrpd392w2mcv3sdf5kcmpn1671ksplx1fiz7wdakck9fxq"))))
+        (base32 "0vi8adv3kxlayjwqh7688kwz14knrwpg5c0x1ii44zm65gdkmqjf"))))
     (properties `((upstream-name . "bioseq")))
     (build-system r-build-system)
     (arguments
@@ -15024,13 +15082,13 @@ Carlo method for a Bayesian approach to parameter estimation.")
 (define-public r-bioimagetools
   (package
     (name "r-bioimagetools")
-    (version "1.1.8")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioimagetools" version))
        (sha256
-        (base32 "1b7nxjis0p1hiv3w0cr3cyc2xz6sn9qbpssvlp2d7c5gm8x2gnj7"))))
+        (base32 "1aq2inmibb3ii73g7wsslj0ms05k1442sj6jjqpy81bxw3kb1687"))))
     (properties `((upstream-name . "bioimagetools")))
     (build-system r-build-system)
     (arguments
@@ -18755,6 +18813,35 @@ historical decompositions, and posterior distributions of model parameters are
 also provided.")
     (license license:gpl3+)))
 
+(define-public r-bhpm
+  (package
+    (name "r-bhpm")
+    (version "1.8.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bhpm" version))
+       (sha256
+        (base32 "0xgwmji0p4ikdn5iya85zw4j57kbddg1hkgy5wmrnl8s9ffrv9m3"))))
+    (properties `((upstream-name . "bhpm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-coda))
+    (home-page "https://github.com/rcarragh/bhpm")
+    (synopsis
+     "Bayesian Hierarchical Poisson Models for Multiple Grouped Outcomes with Clustering")
+    (description
+     "Bayesian hierarchical methods for the detection of differences in rates of
+related outcomes for multiple treatments for clustered observations (Carragher
+et al. (2020) <doi:10.1002/sim.8563>).  This software was developed for the
+Precision Drug Theraputics: Risk Prediction in Pharmacoepidemiology project as
+part of a Rutherford Fund Fellowship at Health Data Research (UK), Medical
+Research Council (UK) award reference MR/S003967/1 (<https://gtr.ukri.org/>).
+Principal Investigator: Raymond Carragher.")
+    (license license:gpl3)))
+
 (define-public r-bhmsmafmri
   (package
     (name "r-bhmsmafmri")
@@ -19266,13 +19353,13 @@ see [Garrison et al. (2024) <doi:10.21105/joss.06203>].")
 (define-public r-bgmfiles
   (package
     (name "r-bgmfiles")
-    (version "0.0.6")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bgmfiles" version))
        (sha256
-        (base32 "10qldfjjq5fx5jrrakdxc8k2pf0vp8ifg18nq56lvx9n28mqigim"))))
+        (base32 "09ix0gcp81m63n5w4b7nyfl11rzkr7qb9gs9yzjykc4mvi470kr1"))))
     (properties `((upstream-name . "bgmfiles")))
     (build-system r-build-system)
     (arguments
@@ -22522,13 +22609,13 @@ vectors (BD-SVD), which can be extended to hierarchical variable clustering
 (define-public r-bdsm
   (package
     (name "r-bdsm")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bdsm" version))
        (sha256
-        (base32 "0cvj8lxdkfc1jfmhqbm29b2vcb8mc7snlbnc48s7lr0gzsyzyjf4"))))
+        (base32 "0kxi2lk54paj6fph0r47f83p2amjhz0v1c4q6s2xdh1mhvdr4jgq"))))
     (properties `((upstream-name . "bdsm")))
     (build-system r-build-system)
     (arguments
@@ -22539,6 +22626,8 @@ vectors (BD-SVD), which can be extended to hierarchical variable clustering
                              r-rootsolve
                              r-rlang
                              r-rje
+                             r-rcpparmadillo
+                             r-rcpp
                              r-pbapply
                              r-optimbase
                              r-magrittr
@@ -32924,13 +33013,13 @@ add-in that can be bound to a keyboard shortcut.")
 (define-public r-backbone
   (package
     (name "r-backbone")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "backbone" version))
        (sha256
-        (base32 "1b1yigz8jqavw064gyxx5pvzi06734iy36rzp7jlqk13wmjlghk6"))))
+        (base32 "1w4lkxdy67b8pksqkh3nkhlkij673ggzqh045y15irgq2jrwb90q"))))
     (properties `((upstream-name . "backbone")))
     (build-system r-build-system)
     (arguments

@@ -734,6 +734,39 @@ algorithms.  The method was first introduced in Hageman et al. (2008)
 visualization, and validation of two-mode cluster structures in data matrices.")
     (license license:gpl3)))
 
+(define-public r-twodcdapsa
+  (package
+    (name "r-twodcdapsa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TwoDcDAPSA" version))
+       (sha256
+        (base32 "18ixmp9yni9gipkdw80kh1sig2l64jrnjb3bvafi1wal058cv9f0"))))
+    (properties `((upstream-name . "TwoDcDAPSA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-dplyr))
+    (home-page "https://cran.r-project.org/package=TwoDcDAPSA")
+    (synopsis
+     "Calculate TwoDcDAPSA: PROs-Joint Contrast (PJC) Score and Quartiles")
+    (description
+     "This package provides a calculator for the two-dimensional clinical Disease
+Activity index for Psoriatic Arthritis (@code{TwoDcDAPSA}), a principal
+component-derived measure that complements the conventional clinical DAPSA
+score.  The @code{TwoDcDAPSA} captures residual variation in patient-reported
+outcomes (pain and patient global assessment) and joint counts (swollen and
+tender) after adjusting for standardized @code{cDAPSA} using natural spline
+coefficients derived from published models.  Residuals are standardized and
+combined with fixed principal component loadings to yield a continuous
+PROs-Joint Contrast (PJC) score and quartile groupings.  The package applies
+pre-specified coefficients and loadings to new datasets but does not estimate
+spline models or principal components itself.")
+    (license license:expat)))
+
 (define-public r-twoarmsurvsim
   (package
     (name "r-twoarmsurvsim")
@@ -1167,6 +1200,40 @@ utilities for time series preprocessing and visualization.")
      "An open-access tool/framework that constitutes the core functions to analyze
 terrestrial water cycle data across various spatio-temporal scales.")
     (license license:gpl3)))
+
+(define-public r-twbparser
+  (package
+    (name "r-twbparser")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "twbparser" version))
+       (sha256
+        (base32 "0blrvdag9gkcdq3rv84jbxd4cx05hl9gklr4pwdyqhkp27bqwp27"))))
+    (properties `((upstream-name . "twbparser")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-withr
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-igraph
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://prigasg.github.io/twbparser/")
+    (synopsis "Parse 'Tableau' Workbooks into Functional Data")
+    (description
+     "High-performance parsing of Tableau workbook files into tidy data frames and
+dependency graphs for other visualization tools like R Shiny or Power BI
+replication.")
+    (license license:expat)))
 
 (define-public r-twangmediation
   (package
@@ -12274,13 +12341,13 @@ all differences.  The vignettes download example files from
 (define-public r-toxeval
   (package
     (name "r-toxeval")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toxEval" version))
        (sha256
-        (base32 "0d3sa2f1irp6jxz8alalxjjfnd1wbsxrwl3kg41vhqgc93zqhw87"))))
+        (base32 "0sg4cijkdfbcwxkpljfkp567d8i4bxcvd70705x8p88z4pgns0wv"))))
     (properties `((upstream-name . "toxEval")))
     (build-system r-build-system)
     (arguments
@@ -12909,6 +12976,30 @@ and Yarats(2019), <@code{arXiv:1810.06801>}; (h) radam by Liu et al. (2019),
 <@code{arXiv:1712.07628>}; (j) yogi by Zaheer et al.(2019),
 <https://papers.nips.cc/paper/8186-adaptive-methods-for-nonconvex-optimization>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-torchmaum
+  (package
+    (name "r-torchmaum")
+    (version "2025.7.30")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "torchMAUM" version))
+       (sha256
+        (base32 "1riahs4icsz95vc0lxqk6mvhp8vhi7s967lmq9ksrpk47bjjrb01"))))
+    (properties `((upstream-name . "torchMAUM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch r-ggplot2 r-data-table))
+    (home-page "https://github.com/OGuenoun/torchMAUM")
+    (synopsis "Multi-Class Area Under the Minimum in Torch")
+    (description
+     "Torch code for computing multi-class Area Under The Minimum,
+<https://www.jmlr.org/papers/v24/21-0751.html>, Generalization.  Useful for
+optimizing Area under the curve.")
+    (license license:lgpl3)))
 
 (define-public r-torchdatasets
   (package
@@ -13902,13 +13993,13 @@ annotate the texts.")
 (define-public r-tok
   (package
     (name "r-tok")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tok" version))
        (sha256
-        (base32 "1p5ybh22xkjyyh4fx5in3wb5wpxwdlcfbhdy9xs924rqnfzmshzh"))))
+        (base32 "1jp92am22jr0w7wxbnbjk9p8lk8vkwkgwm8q6p6fz4crc8v9d0f0"))))
     (properties `((upstream-name . "tok")))
     (build-system r-build-system)
     (arguments
@@ -16179,13 +16270,13 @@ its dependency.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.13.0")
+    (version "0.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "0g2w6kivzsainhv4l2vbw7y9nmz8p16km42qjhlgqhp5hxjw4cfw"))))
+        (base32 "058vjgwx6adm4sagn8s2563ccixb1shw6424zyz5zzf3pcwxdiis"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (arguments
@@ -17109,13 +17200,13 @@ month, quarter and year.")
 (define-public r-timeordered
   (package
     (name "r-timeordered")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeordered" version))
        (sha256
-        (base32 "1ag58dk5b6fjdpcppn66vq9ybn4xz480whn14gq49fmjk9ci3s6m"))))
+        (base32 "0yqz7yiqnmck9yi86hxa9vg9dbb2mgj5gfn6bk7ydp9bz26k4659"))))
     (properties `((upstream-name . "timeordered")))
     (build-system r-build-system)
     (arguments
@@ -17477,26 +17568,21 @@ support for Python'.")
 (define-public r-tilemaps
   (package
     (name "r-tilemaps")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tilemaps" version))
        (sha256
-        (base32 "06pwwlndb7nvw2b0h0fak3vnpbi11mxsby43qm9ng3k3sqwrqjz2"))))
+        (base32 "0w89spnrzs0whjy071wn2i5c5llhssjzisz9xgv89s0764z5mh9j"))))
     (properties `((upstream-name . "tilemaps")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-smoothr
-                             r-sf
-                             r-lwgeom
-                             r-igraph
-                             r-ggplot2
-                             r-clue))
+    (propagated-inputs (list r-smoothr r-sf r-igraph r-ggplot2 r-clue))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/kaerosen/tilemaps")
+    (home-page "https://kaerosen.github.io/tilemaps/")
     (synopsis "Generate Tile Maps")
     (description
      "This package implements an algorithm for generating maps, known as tile maps, in
@@ -17533,13 +17619,13 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.32.0")
+    (version "0.33.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tiledb" version))
        (sha256
-        (base32 "1s7nayydx760661jak0vc996cq2mni50fr6hqs83rb1v9cvfy6cn"))))
+        (base32 "0qf74qw2xq2mmkyss0yz185ld94y0nmh8fjx3ij4r6194f6ixd4c"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (arguments
@@ -18037,6 +18123,42 @@ intuitive syntax gives users a flexible and powerful method to generate VPCs
 using both traditional binning and a new binless approach Jamsen et al. (2018)
 <doi:10.1002/psp4.12319> with Additive Quantile Regression (AQR) and Locally
 Estimated Scatterplot Smoothing (LOESS) prediction correction.")
+    (license license:expat)))
+
+(define-public r-tidyusmacro
+  (package
+    (name "r-tidyusmacro")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyusmacro" version))
+       (sha256
+        (base32 "1zzj4f7kzz0z5qd0rxwl1aiqw8ay6d7i8yf2a6wl4ijbsyfyagza"))))
+    (properties `((upstream-name . "tidyusmacro")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringi
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=tidyusmacro")
+    (synopsis "Downloading and Cleaning U.S. Macroeconomic Data")
+    (description
+     "Utilities to retrieve and tidy U.S. macroeconomic data series from public
+government data providers.  Functions streamline access to series from the
+Federal Reserve Bank of St.  Louis Federal Reserve Economic Data (FRED), the
+Bureau of Labor Statistics flat files, and the Bureau of Economic Analysis
+National Income and Product Accounts tables, then return consistent, tidy data
+frames ready for modeling and graphics.  The package includes helpers for date
+alignment, log-linear projections, and common macro diagnostics, along with
+convenience plot builders for quick publication-quality charts.")
     (license license:expat)))
 
 (define-public r-tidyusda
@@ -22634,13 +22756,13 @@ generation.")
 (define-public r-thematic
   (package
     (name "r-thematic")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thematic" version))
        (sha256
-        (base32 "0wzwhhn25jlaxl9i4ibr2p7rr6pl5z71mhwgm22x8zb6447gi3vs"))))
+        (base32 "0ia1mlc0qbiwbd1a6khpfb87f4xdpl4qn1src1wydfb4z9fpr6k0"))))
     (properties `((upstream-name . "thematic")))
     (build-system r-build-system)
     (arguments

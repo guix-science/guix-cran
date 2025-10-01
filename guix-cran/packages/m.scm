@@ -5,8 +5,8 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages statistics)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages java)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages gcc)
@@ -81,6 +81,39 @@ population.  Using delta method processes variance estimation can be performed
 instantaneously.  Alternatively, bootstrap standard errors can be used.  We also
 provide functions for cases with exposure-mediator interactions with four-way
 decomposition of total effect.")
+    (license license:expat)))
+
+(define-public r-myownrobs
+  (package
+    (name "r-myownrobs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "myownrobs" version))
+       (sha256
+        (base32 "1m6k0vqyy9jf8q8q6bkxcsiridclzamf27v6jh0fzjy8ljppmclz"))))
+    (properties `((upstream-name . "myownrobs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-uuid
+                             r-shiny
+                             r-rstudioapi
+                             r-rstudio-prefs
+                             r-mirai
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-gargle
+                             r-fs))
+    (home-page "https://myownrobs.github.io/myownrobs/")
+    (synopsis "AI Coding Agent for 'RStudio'")
+    (description
+     "This package provides an RStudio extension with a chat interface for an AI
+coding agent to help users with R programming tasks.")
     (license license:expat)))
 
 (define-public r-mycran
@@ -192,13 +225,13 @@ of this package.")
 (define-public r-myclim
   (package
     (name "r-myclim")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myClim" version))
        (sha256
-        (base32 "0dmlgfyck5jgxk8sc8hhjjm1fh1zfadmf1d31113mrr3cskbhx83"))))
+        (base32 "059300d621nybk9xl2y3b7bkiyn9lkhg16wr2r9xfmf471hk04z9"))))
     (properties `((upstream-name . "myClim")))
     (build-system r-build-system)
     (arguments
@@ -653,13 +686,13 @@ annealing.")
 (define-public r-mwa
   (package
     (name "r-mwa")
-    (version "0.4.4")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mwa" version))
        (sha256
-        (base32 "0f994xpylqhhwwr3rv0y5y68989ssy7q4pb3hawq0ww0l3wj9lmd"))))
+        (base32 "1a6qdvbgn77ichgzcngb28cdp9xkz0jhikkdd19shm65xy33b8ya"))))
     (properties `((upstream-name . "mwa")))
     (build-system r-build-system)
     (arguments
@@ -9542,13 +9575,13 @@ Graphics''.")
 (define-public r-msetool
   (package
     (name "r-msetool")
-    (version "3.7.4")
+    (version "3.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSEtool" version))
        (sha256
-        (base32 "1r1nrcxnrajbiyzznzhahifsdrqp9x7f9hl91zdhnqn03317810i"))))
+        (base32 "1706sc657kam71fg6iacakq389ilsaw30cpw9i5pxk0nqrf8c24d"))))
     (properties `((upstream-name . "MSEtool")))
     (build-system r-build-system)
     (arguments
@@ -9557,10 +9590,9 @@ Graphics''.")
     (propagated-inputs (list r-snowfall
                              r-rcpparmadillo
                              r-rcpp
-                             r-gridextra
-                             r-ggrepel
                              r-ggplot2
                              r-dplyr
+                             r-cli
                              r-abind))
     (home-page "https://msetool.openmse.com/")
     (synopsis "Management Strategy Evaluation Toolkit")
@@ -11729,13 +11761,13 @@ conditional independence (FOCI) algorithm of Azadkia and Chatterjee (2021)
 (define-public r-mr-rgm
   (package
     (name "r-mr-rgm")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MR.RGM" version))
        (sha256
-        (base32 "14fg1pbb3yr7cs1f46zp6qdf51gj8qwqywca330zmhysvq9i6sfw"))))
+        (base32 "16d7y32vbrqrkmnpxwl415m2g8s613b6y3iyq70wa2y8y0lzhiqd"))))
     (properties `((upstream-name . "MR.RGM")))
     (build-system r-build-system)
     (arguments
@@ -17652,13 +17684,13 @@ or new dataset.  This package is created to solve the problem.")
 (define-public r-modelmap
   (package
     (name "r-modelmap")
-    (version "3.4.0.4")
+    (version "3.4.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ModelMap" version))
        (sha256
-        (base32 "022isqdfvrfblmw5lh0wqmyknzm11sdg011brdkwv3rc8xym3gaa"))))
+        (base32 "0bf269c7hh5mwg3x8lsdyc5s4my5vk9ffzsacfv55f79mg407vpa"))))
     (properties `((upstream-name . "ModelMap")))
     (build-system r-build-system)
     (arguments
@@ -26449,13 +26481,13 @@ also provides cross validated variants of these methods.")
 (define-public r-miscmetabar
   (package
     (name "r-miscmetabar")
-    (version "0.14.3")
+    (version "0.14.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MiscMetabar" version))
        (sha256
-        (base32 "00kx28fhzn4wswf87zyqhvw6aq5b43aazwdxchnycvayd5wn5hxv"))))
+        (base32 "1j7hl68fy4jxb4ks7lyp6gcrhm1b9k4i5xlgncpfmzs9vd39yzl9"))))
     (properties `((upstream-name . "MiscMetabar")))
     (build-system r-build-system)
     (arguments
@@ -50304,35 +50336,38 @@ mixed data.  Methods based on van de Velden et al. (2024)
 (define-public r-manydata
   (package
     (name "r-manydata")
-    (version "1.0.3")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manydata" version))
        (sha256
-        (base32 "10sc6ms9xqjl999jb8mwvrw0xdx4ylnsgb8sd0iq79hfaikiln0a"))))
+        (base32 "08zcl7b87c2lnkd64ghwwzrqaiz2fnsx3pzkvabkhsmmdvfyn918"))))
     (properties `((upstream-name . "manydata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-text2vec
                              r-stringr
                              r-remotes
                              r-purrr
                              r-messydates
                              r-jsonlite
                              r-httr
+                             r-glmnet
                              r-ggplot2
                              r-dtplyr
                              r-dplyr
-                             r-cli))
-    (home-page "https://manydata.ch/")
-    (synopsis "Portal for Global Governance Data")
+                             r-cli
+                             r-caret))
+    (home-page "https://www.manydata.ch/")
+    (synopsis "Many Global Governance Datacubes")
     (description
-     "This is the core package for the many packages universe.  It includes functions
-to help researchers work with and contribute to event datasets on global
-governance.")
+     "This is the core package offering a portal to the many packages universe.  It
+includes functions to help researchers access, work across, and maintain
+ensembles of datasets on global governance called datacubes.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-mantis
@@ -50953,6 +50988,31 @@ vignette in this package and
      "Designing multi-arm multi-stage studies with (asymptotically) normal endpoints
 and known variance.")
     (license license:gpl2)))
+
+(define-public r-mammalcol
+  (package
+    (name "r-mammalcol")
+    (version "0.2.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mammalcol" version))
+       (sha256
+        (base32 "1ys3vzzyi5cj1q7w9f8d97k6jjjgdfzshjjbr37fg42k9823f7g4"))))
+    (properties `((upstream-name . "mammalcol")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-magrittr r-ggplot2 r-geodata))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dlizcano/mammalcol")
+    (synopsis "Access to the List of Mammal Species of Colombia")
+    (description
+     "The goal of mammalcol is to provide easy access to a meticulously structured
+dataset of Colombian mammal species in R. The 2025 update includes
+comprehensive, detailed species accounts, and distribution information.")
+    (license license:expat)))
 
 (define-public r-malvinas
   (package

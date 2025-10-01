@@ -342,19 +342,19 @@ and Zamar (2019) <arxiv:1906.08198>).")
 (define-public r-kstmatrix
   (package
     (name "r-kstmatrix")
-    (version "1.2-0")
+    (version "1.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kstMatrix" version))
        (sha256
-        (base32 "0jjayikrg4910mmxycxla7lklb87v74mgybyp149h9alh7xlimp9"))))
+        (base32 "0gyyxy29j5id1k1vfl1lxfzadig55cq3nc39y5xwgh67h1s15z25"))))
     (properties `((upstream-name . "kstMatrix")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sets r-pks r-igraph))
+    (propagated-inputs (list r-tidyr r-sets r-pks r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=kstMatrix")
     (synopsis
@@ -3709,13 +3709,13 @@ given along with sale prices.")
 (define-public r-kinesis
   (package
     (name "r-kinesis")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kinesis" version))
        (sha256
-        (base32 "0kl8pbbg5vd40a3514w24256xcycyricrbhpmhvic6cr2dkmp762"))))
+        (base32 "16nzxij7lkjrhaxfzm3anrja22bbczz6xxnb64p7flc3sf39p8q2"))))
     (properties `((upstream-name . "kinesis")))
     (build-system r-build-system)
     (arguments
@@ -4027,13 +4027,13 @@ Research.  Scientific-Tools.Org, <https://Scientific-Tools.Org>.
 (define-public r-khroma
   (package
     (name "r-khroma")
-    (version "1.16.0")
+    (version "1.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "khroma" version))
        (sha256
-        (base32 "023hrhn0iy0srr68ghqcya63pdhfs1zxb8jsmmw7wcmipxyw9lls"))))
+        (base32 "03qqgivrysxdp0v6463h79ynrjsgdh1ix3cirqzla44pw54hzfj0"))))
     (properties `((upstream-name . "khroma")))
     (build-system r-build-system)
     (arguments

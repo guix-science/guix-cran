@@ -443,19 +443,25 @@ actions.")
 (define-public r-ivo-table
   (package
     (name "r-ivo-table")
-    (version "0.6")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivo.table" version))
        (sha256
-        (base32 "0i5izb85s7z1fsl1jigp129p8xiidm785nqp2bsqpjanszhp638d"))))
+        (base32 "1wf1slijf721f1k5wy4zs3cbhdmfq106i9lf6kzclcxyb6vqiynz"))))
     (properties `((upstream-name . "ivo.table")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-officer r-flextable r-dplyr r-checkmate))
+    (propagated-inputs (list r-tidyr
+                             r-purrr
+                             r-officer
+                             r-gt
+                             r-flextable
+                             r-dplyr
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mthulin/ivo.table")
     (synopsis "Nicely Formatted Contingency Tables and Frequency Tables")
@@ -5083,6 +5089,30 @@ takes time series data from individual biological samples (with technical
 replicates) or multiple samples.")
     (license license:gpl3+)))
 
+(define-public r-ipmrf
+  (package
+    (name "r-ipmrf")
+    (version "1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IPMRF" version))
+       (sha256
+        (base32 "12xpnrw1m9bq3bli16gi6mksca3dj26ys1h592mvl8fx5g0jwiad"))))
+    (properties `((upstream-name . "IPMRF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-randomforest r-party r-gbm))
+    (home-page "https://cran.r-project.org/package=IPMRF")
+    (synopsis "Intervention in Prediction Measure for Random Forests")
+    (description
+     "Computes intervention in prediction measure for assessing variable importance
+for random forests.  See details at I. Epifanio (2017)
+<DOI:10.1186/s12859-017-1650-8>.")
+    (license license:gpl3)))
+
 (define-public r-ipmr
   (package
     (name "r-ipmr")
@@ -6938,13 +6968,13 @@ international assessment studies (TIMSS, PIRLS, PISA, ICILS, and PIAAC).")
 (define-public r-intsurv
   (package
     (name "r-intsurv")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intsurv" version))
        (sha256
-        (base32 "02ds4gikrgg19knylg68ziani702dyhqc37fhf9j7awa1qxy2r9l"))))
+        (base32 "1byhpgb3wi4sl57dzgrylngxf4a8h33d1qfma2dd13h3vbrr0j4r"))))
     (properties `((upstream-name . "intsurv")))
     (build-system r-build-system)
     (arguments
@@ -6954,15 +6984,15 @@ international assessment studies (TIMSS, PIRLS, PISA, ICILS, and PIAAC).")
     (home-page "https://wwenjie.org/intsurv")
     (synopsis "Integrative Survival Modeling")
     (description
-     "This package contains implementations of integrative survival analysis routines,
-including regular Cox cure rate model proposed by Kuk and Chen (1992)
-<doi:10.1093/biomet/79.3.531> via an EM algorithm proposed by Sy and Taylor
-(2000) <doi:10.1111/j.0006-341X.2000.00227.x>, regularized Cox cure rate model
-with elastic net penalty following Masud et al. (2018)
-<doi:10.1177/0962280216677748>, and Zou and Hastie (2005)
-<doi:10.1111/j.1467-9868.2005.00503.x>, and weighted concordance index for cure
-models proposed by Asano and Hirakawa (2017)
-<doi:10.1080/10543406.2017.1293082>.")
+     "This package contains implementations of the integrative Cox model with
+uncertain event times proposed by Wang, et al. (2020) <doi:10.1214/19-AOAS1287>,
+the regularized Cox cure rate model with uncertain event status proposed by
+Wang, et al. (2023) <doi:10.1007/s12561-023-09374-w>, and other survival
+analysis routines including the Cox cure rate model proposed by Kuk and Chen
+(1992) <doi:10.1093/biomet/79.3.531> via an EM algorithm proposed by Sy and
+Taylor (2000) <doi:10.1111/j.0006-341X.2000.00227.x>, the regularized Cox cure
+rate model with elastic net penalty following Masud et al. (2018)
+<doi:10.1177/0962280216677748>.")
     (license license:gpl3+)))
 
 (define-public r-intsdm

@@ -4433,6 +4433,33 @@ lessons must be completed with a \"hour\" field ('ora), so that any two
 prof/cls/ora lessons do not overlap in the same hour. <https://vlad.bazon.net/>.")
     (license license:expat)))
 
+(define-public r-houba
+  (package
+    (name "r-houba")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "houba" version))
+       (sha256
+        (base32 "16rj78dldglal3l52ff3v99jrigqj5wmx2j8s0d3h61jx5idyj7v"))))
+    (properties `((upstream-name . "houba")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=houba")
+    (synopsis
+     "Manipulation of (Large) Memory-Mapped Objects (Vectors, Matrices and Arrays)")
+    (description
+     "Manipulate data through memory-mapped files, as vectors, matrices or arrays.
+Basic arithmetic functions are implemented, but currently no matrix arithmetic.
+Can write and read descriptor files for compatibility with the bigmemory
+package.")
+    (license (license:fsdg-compatible "CeCILL-2"))))
+
 (define-public r-hotspots
   (package
     (name "r-hotspots")

@@ -15663,19 +15663,19 @@ marginal likelihood, and distributional transform), for three types of outcomes
 (define-public r-copbasic
   (package
     (name "r-copbasic")
-    (version "2.2.8")
+    (version "2.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copBasic" version))
        (sha256
-        (base32 "040xar3lc94q0zj9rllzd2mjvcc1kmlxiaamnvxsdawjp6s48l8s"))))
+        (base32 "197lw578waa3ygcz066xf3mnzvx4r09wb5yb03ska4nibl4ir243"))))
     (properties `((upstream-name . "copBasic")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-randtoolbox r-lmomco))
+    (propagated-inputs (list r-randtoolbox r-mvtnorm r-lmomco))
     (home-page "https://cran.r-project.org/package=copBasic")
     (synopsis "General Bivariate Copula Theory and Many Utility Functions")
     (description
@@ -15692,8 +15692,8 @@ Hoeffding Phi, Schweizer- Wolff Sigma, tail dependency, tail order, skewness,
 and bivariate Lmoments are implemented, and positive/negative quadrant
 dependency, left (right) increasing (decreasing) are available.  Other features
 include Kullback-Leibler Divergence, Vuong Procedure, spectral measure, and
-Lcomoments for inference, maximum likelihood, and AIC, BIC, and RMSE for
-goodness-of-fit.")
+Lcomoments for fit and inference, Lcomoment ratio diagrams, maximum likelihood,
+and AIC, BIC, and RMSE for goodness-of-fit.")
     (license license:gpl2)))
 
 (define-public r-coortweet
@@ -18218,13 +18218,13 @@ see Bodner et al.(2021) <doi:10.3758/s13428-021-01760-w>.")
 (define-public r-conmition
   (package
     (name "r-conmition")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conMItion" version))
        (sha256
-        (base32 "0s54iqvh15sw165cc7vviy9bspa7dwphss681s742s2d39a9np61"))))
+        (base32 "035nmrwal4vsbhffbwv6ar4l7s4rpcb3a7akr6j7fv6cgydkzzb1"))))
     (properties `((upstream-name . "conMItion")))
     (build-system r-build-system)
     (arguments
@@ -23953,13 +23953,13 @@ process.")
 (define-public r-colombiapi
   (package
     (name "r-colombiapi")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ColombiAPI" version))
        (sha256
-        (base32 "02xgdw2wnav35whk89w579vs75g66lphn8zlwds0jw4wdga910xm"))))
+        (base32 "0px5vhjfg26k3d9x0v7wb9a5g183za9cg14bap2vip6jv1rjgmiz"))))
     (properties `((upstream-name . "ColombiAPI")))
     (build-system r-build-system)
     (arguments
@@ -23980,11 +23980,16 @@ to explore various aspects of Colombia such as geographic locations, cultural
 attractions, economic indicators, demographic data, and public holidays.
 Additionally, @code{ColombiAPI} includes curated datasets covering Bogota air
 stations, business and holiday dates, public schools, Colombian coffee exports,
-cannabis licenses, Medellin rainfall, and malls in Bogota, making it a
-comprehensive tool for exploring Colombia's multifaceted data landscape.  For
-more information on the APIs, see: API-Colombia <https://api-colombia.com/>,
-Nager.Date <https://date.nager.at/Api>, World Bank API
-<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, and REST
+cannabis licenses, Medellin rainfall, malls in Bogota, as well as datasets on
+indigenous languages, student admissions and school statistics, forest liana
+mortality, municipal and regional data, connectivity and digital infrastructure,
+program graduates, vehicle counts, international visitors, and GDP projections.
+These datasets provide users with a rich and multifaceted view of Colombian
+social, economic, environmental, and technological information, making
+@code{ColombiAPI} a comprehensive tool for exploring Colombia's diverse data
+landscape.  For more information on the APIs, see: API-Colombia
+<https://api-colombia.com/>, Nager.Date <https://date.nager.at/Api>, World Bank
+API <https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, and REST
 Countries API <https://restcountries.com/>.")
     (license license:gpl3)))
 
@@ -25029,13 +25034,13 @@ Outcomes Partnership Common Data Model.")
 (define-public r-cohortcharacteristics
   (package
     (name "r-cohortcharacteristics")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortCharacteristics" version))
        (sha256
-        (base32 "11alkk5xk7nw9v6pzs14im447dbdw1jm4m6bj97ipahn5xgkbbyv"))))
+        (base32 "0dh26hrpkfi527z4xlkl1iph7xwnym5v7rgifn5psypm63ni0lav"))))
     (properties `((upstream-name . "CohortCharacteristics")))
     (build-system r-build-system)
     (arguments
@@ -25050,6 +25055,7 @@ Outcomes Partnership Common Data Model.")
                              r-omopgenerics
                              r-lifecycle
                              r-dplyr
+                             r-clock
                              r-cli
                              r-cdmconnector))
     (native-inputs (list r-knitr))
@@ -25229,6 +25235,36 @@ or group of sources) and a list of quotes linked to relations.  This package is
 linked to the work done during the @code{PhD} of Frederic M. Vanwindekens (CRA-W
 / UCL) hold the 13 of May 2014 at University of Louvain in collaboration with
 the Walloon Agricultural Research Centre (project MIMOSA, MOERMAN fund).")
+    (license license:gpl3)))
+
+(define-public r-coglyphr
+  (package
+    (name "r-coglyphr")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coglyphr" version))
+       (sha256
+        (base32 "1hw6n3dlbbs12ljf9gap95rdx1jby9sl6x71inpy6cdrp8f4dq9k"))))
+    (properties `((upstream-name . "coglyphr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sp r-imager r-dplyr))
+    (home-page "https://github.com/mutopsy/coglyphr")
+    (synopsis "Compute Glyph Centers of Gravity from Image Data")
+    (description
+     "Computes the center of gravity (COG) of character-like binary images using three
+different methods.  This package provides functions for estimating stroke-based,
+contour-based, and potential energy-based COG. It is useful for analyzing glyph
+structure in areas such as visual cognition research and font development.  The
+contour-based method was originally proposed by Kotani et al. (2004)
+<https://ipsj.ixsq.nii.ac.jp/records/36793> and Kotani (2011)
+<https://shonan-it.repo.nii.ac.jp/records/2000243>, while the potential
+energy-based method was introduced by Kotani et al. (2006)
+<doi:10.11371/iieej.35.296>.")
     (license license:gpl3)))
 
 (define-public r-coglasso
@@ -30288,6 +30324,34 @@ visualization and analysis.  See Lokesh Kumar and Matthias E Futschik (2007)
 cluster bootstrap.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-clusterability
+  (package
+    (name "r-clusterability")
+    (version "0.2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clusterability" version))
+       (sha256
+        (base32 "07sf6y3zkvalyi7g71q9mp0vi9wn41fg2bi5yf64f5vhxhhp7jvd"))))
+    (properties `((upstream-name . "clusterability")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sparsepca r-elasticnet r-diptest))
+    (home-page "https://cran.r-project.org/package=clusterability")
+    (synopsis "Performs Tests for Cluster Tendency of a Data Set")
+    (description
+     "Test for cluster tendency (clusterability) of a data set.  The methods
+implemented - reducing the data set to a single dimension using principal
+component analysis or computing pairwise distances, and performing a
+multimodality test like the Dip Test or Silverman's Critical Bandwidth Test -
+are described in Adolfsson, Ackerman, and Brownstein (2019)
+<doi:10.1016/j.patcog.2018.10.026>.  Such methods can inform whether clustering
+algorithms are appropriate for a data set.")
+    (license license:gpl2)))
 
 (define-public r-cluster-obeu
   (package
@@ -50165,6 +50229,31 @@ form a delimited file keeping field information intact.  For more information,
 read <https://shreddr.captricity.com/developer/overview/>.")
     (license license:expat)))
 
+(define-public r-captain
+  (package
+    (name "r-captain")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "captain" version))
+       (sha256
+        (base32 "01r5kli2wwqy8v7v80h10z4yvbala8fmijv28awjgjdvg81xjjpl"))))
+    (properties `((upstream-name . "captain")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-fs r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/alexym1/captain")
+    (synopsis "Running 'git' Pre-Commit Hooks")
+    (description
+     "Git hook scripts are useful for identifying simple issues before submission to
+code review.  captain (hook) is an R package to manage and run git pre-commit
+hooks.")
+    (license license:expat)))
+
 (define-public r-capo4sim
   (package
     (name "r-capo4sim")
@@ -51652,13 +51741,13 @@ used for analyzing the results from random experiments.")
 (define-public r-calidad
   (package
     (name "r-calidad")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calidad" version))
        (sha256
-        (base32 "0pi7qd0c7ssxs8h0x4zp5ns31lmpf9mvpmw2xhr74y8431zirdk4"))))
+        (base32 "0qg0sz60hn6f721xl9nx0gbnbmvkfiyl08j9g6644sjn3pc2pfxx"))))
     (properties `((upstream-name . "calidad")))
     (build-system r-build-system)
     (arguments

@@ -4840,6 +4840,34 @@ use.  Methods derived from R. Telford (2013)
 J.L. Lopez-Martinez (2021) <doi:10.1016/j.ecoinf.2021.101379>.")
     (license license:gpl2+)))
 
+(define-public r-nonparquantilecausality
+  (package
+    (name "r-nonparquantilecausality")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonParQuantileCausality" version))
+       (sha256
+        (base32 "0p7gsimfq2592xxf14nzd5sh0vy2mkyjkcfxnbff5krcm91mx8mk"))))
+    (properties `((upstream-name . "nonParQuantileCausality")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg r-kernsmooth r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.mbalcilar.net")
+    (synopsis "Nonparametric Causality in Quantiles Test")
+    (description
+     "This package implements the nonparametric causality-in-quantiles test (in mean
+or variance), returning a test object with an S3 @code{plot()} method.  The
+current implementation uses one lag of each series (first-order Granger
+causality setup).  Methodology is based on Balcilar, Gupta, and Pierdzioch
+(2016a) <doi:10.1016/j.resourpol.2016.04.004> and Balcilar et al. (2016)
+<doi:10.1007/s11079-016-9388-x>.")
+    (license license:expat)))
+
 (define-public r-nonpareil
   (package
     (name "r-nonpareil")
@@ -9934,33 +9962,38 @@ waiting list simulation, and scheduling functions are included.")
 (define-public r-nhsrplotthedots
   (package
     (name "r-nhsrplotthedots")
-    (version "0.1.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NHSRplotthedots" version))
        (sha256
-        (base32 "1rqryqaxyb3d6kws8mznsnzv19h8nhn1323vkh9zq59la9r3kiai"))))
+        (base32 "0xlldnaarnp6yv7x0gfpnkv4wz5c4f9m3prrmkaqa3rwds3lrz9k"))))
     (properties `((upstream-name . "NHSRplotthedots")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales
+    (propagated-inputs (list r-tidyselect
+                             r-stringr
+                             r-scales
+                             r-rsvg
                              r-rlang
-                             r-nhsrdatasets
+                             r-plotly
+                             r-magrittr
                              r-ggplot2
                              r-dplyr
                              r-crayon
+                             r-base64enc
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://nhs-r-community.github.io/NHSRplotthedots/")
-    (synopsis "Draw XmR Charts for NHSE/I 'Making Data Count' Programme")
+    (home-page "https://nhsrplotthedots.nhsrcommunity.com")
+    (synopsis "Draw XmR Charts for NHS 'Making Data Count' Programme")
     (description
      "This package provides tools for drawing Statistical Process Control (SPC)
-charts.  This package supports the NHSE/I programme Making Data Count', and
-allows users to draw @code{XmR} charts, use change points and apply rules with
-summary indicators for when rules are breached.")
+charts.  This package supports the NHS Making Data Count programme, and allows
+users to draw @code{XmR} charts, use change points and apply rules with summary
+indicators for when rules are breached.")
     (license license:expat)))
 
 (define-public r-nhsrdatasets
@@ -18275,13 +18308,13 @@ international (<https://vsni.co.uk/software/asreml>).")
 (define-public r-nada2
   (package
     (name "r-nada2")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NADA2" version))
        (sha256
-        (base32 "0a6vj23yq1i3ip64wk27dzyrn73fagid6lhg03zn9jdgzdblvl6d"))))
+        (base32 "1smkd5k392ha0h1kbpa99hlcfldyllz1gbn1yd16wc7lg4laihpb"))))
     (properties `((upstream-name . "NADA2")))
     (build-system r-build-system)
     (arguments

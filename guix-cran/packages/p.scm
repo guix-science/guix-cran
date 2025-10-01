@@ -4742,13 +4742,13 @@ package have been described by Stephen JJ, Carolan P, Krefman AE, et al. (2024)
 (define-public r-psgp
   (package
     (name "r-psgp")
-    (version "0.3-24")
+    (version "0.3-25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psgp" version))
        (sha256
-        (base32 "1ybmg41s2by35kr9q5mshmiyj2hcn6pbgq4v89vx0b0xbi8in1sv"))))
+        (base32 "0sdnqfq24nsw760g7bxjkiwkp5h1dn2d8dgjskwa72854z96y8ky"))))
     (properties `((upstream-name . "psgp")))
     (build-system r-build-system)
     (arguments
@@ -5323,20 +5323,19 @@ dynamic borrowing methods.")
 (define-public r-psbcspeedup
   (package
     (name "r-psbcspeedup")
-    (version "2.0.7")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psbcSpeedUp" version))
        (sha256
-        (base32 "12nzqg67wpycalv31d04h8qq519c2i2rkxpqdnf1vb6w84c6nknv"))))
+        (base32 "0ib50c7cfj7rz3y4mys25567vr9mg8vafsldm849lqrh5nz32dlp"))))
     (properties `((upstream-name . "psbcSpeedUp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-survival
+    (propagated-inputs (list r-survival
                              r-riskregression
                              r-rcpparmadillo
                              r-rcpp
@@ -7536,13 +7535,13 @@ Decision Analysis (MCDA) process involving multiple criteria, by PROMETHEE
 (define-public r-prolsirm
   (package
     (name "r-prolsirm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prolsirm" version))
        (sha256
-        (base32 "1nx4bal130r3c7hb0x5j22rh7988p62qll3rm0j8wkiqdnqkyhay"))))
+        (base32 "1psjasbrsdcsmclicn3kd8f7i4v08mzb74zpsrd6iqmj2vswr8im"))))
     (properties `((upstream-name . "prolsirm")))
     (build-system r-build-system)
     (arguments
@@ -8092,13 +8091,13 @@ will not be found.")
 (define-public r-profile
   (package
     (name "r-profile")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "profile" version))
        (sha256
-        (base32 "1pzgmsn961aq6nxyi7f884hazxvf0d9szqiyv7945ap7kc9knyqd"))))
+        (base32 "15il18rdwypa5m5pasr3i7gzfd9y8dzw6j2z2zd6gl466p0wkkif"))))
     (properties `((upstream-name . "profile")))
     (build-system r-build-system)
     (arguments
@@ -13093,13 +13092,13 @@ attained.")
 (define-public r-practools
   (package
     (name "r-practools")
-    (version "1.6.1")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PracTools" version))
        (sha256
-        (base32 "07vn7c2gvqk6zw6i5s2yxpkwm2i411dawz2kgrgns91nk81mjpg2"))))
+        (base32 "1jsmfcgig75f7zqmnlnq754dbvm28j3yr1z1ii9ha1qrlfzj5xac"))))
     (properties `((upstream-name . "PracTools")))
     (build-system r-build-system)
     (arguments
@@ -15088,6 +15087,34 @@ procedures.  It can also calculate power for @code{GxE} and @code{GxG} without
 any screening.")
     (license license:gpl2+)))
 
+(define-public r-powergrid
+  (package
+    (name "r-powergrid")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "powergrid" version))
+       (sha256
+        (base32 "0k02qah2r3jxag28piy6iw7c3zzvhr6wi5wsx3j1m76iz251m4zk"))))
+    (properties `((upstream-name . "powergrid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SwissClinicalTrialOrganisation/powergrid")
+    (synopsis "Power Analysis Across a Grid of Assumptions")
+    (description
+     "Evaluate a function across a grid of parameters.  The function may be evaluated
+once, or many times for simulation.  Parallel computing is facilitated.
+Utilities aim at performing analyses of power and sample size, allowing for easy
+search of minimum n (or min/max of any other parameter) to achieve a desired
+minimal level of power (or maximum of any other objective).  Plotting functions
+are included that present the dependency of n and power in relation to further
+assumptions.")
+    (license license:gpl3)))
+
 (define-public r-powerest
   (package
     (name "r-powerest")
@@ -16523,13 +16550,13 @@ chosen.")
 (define-public r-portfoliotester
   (package
     (name "r-portfoliotester")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PortfolioTesteR" version))
        (sha256
-        (base32 "0lw631ir1765f9ls91j3k1a9vn29i2y5nbj679v18136x53ddrpk"))))
+        (base32 "1iqd9irnb22089qa89591pv8igrrqs881cxrh3lqi52hg4fkd9dg"))))
     (properties `((upstream-name . "PortfolioTesteR")))
     (build-system r-build-system)
     (arguments
@@ -19392,13 +19419,13 @@ supported at this time.")
 (define-public r-pollen
   (package
     (name "r-pollen")
-    (version "0.82.0")
+    (version "0.83.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pollen" version))
        (sha256
-        (base32 "0vmggbvacpbdz4zvn3cinip1b0ac44vgbydmsk6698hwgx9iwmfp"))))
+        (base32 "0qy9nfhzc6hba7xf4hliv2wm6vks0zj43w5g59bq417crwxhssjk"))))
     (properties `((upstream-name . "pollen")))
     (build-system r-build-system)
     (arguments
@@ -19406,7 +19433,7 @@ supported at this time.")
       #:tests? #f))
     (propagated-inputs (list r-purrr r-lubridate r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://nowosad.github.io/pollen/")
+    (home-page "https://jakubnowosad.com/pollen/")
     (synopsis "Analysis of Aerobiological Data")
     (description
      "Supports analysis of aerobiological data.  Available features include
@@ -30153,13 +30180,13 @@ query of metabolic pathways is also implemented.")
 (define-public r-phm
   (package
     (name "r-phm")
-    (version "1.1.5")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phm" version))
        (sha256
-        (base32 "0rc60j9q3hy25zpd0g6vil0g7yajgi81jva16003105yanf4w022"))))
+        (base32 "1bm9lvcq7mp4lall6ybgb1z7i4qs7k891px93a0smf7grzbw1ykz"))))
     (properties `((upstream-name . "phm")))
     (build-system r-build-system)
     (arguments
@@ -30167,7 +30194,7 @@ query of metabolic pathways is also implemented.")
       #:tests? #f))
     (propagated-inputs (list r-tm
                              r-smallstuff
-                             r-shiny
+                             r-rcpp
                              r-nlp
                              r-matrix
                              r-data-table))
@@ -30176,10 +30203,12 @@ query of metabolic pathways is also implemented.")
     (synopsis "Phrase Mining")
     (description
      "This package provides functions to extract and handle commonly occurring
-principal phrases obtained from collections of texts.  This package is based on,
-Small, E., & Cabrera, J. (2025).  Principal phrase mining, an automated method
-for extracting meaningful phrases from text.  International Journal of Computers
-and Applications, 47(1), 84â92.")
+principal phrases obtained from collections of texts.  Major speed improvements
+- core functions rewritten in C++ for faster phrase-document parsing,
+clustering, and text distance computations.  Based on, Small, E., & Cabrera, J.
+(2025).  Principal phrase mining, an automated method for extracting meaningful
+phrases from text.  International Journal of Computers and Applications, 47(1),
+84â92.")
     (license license:gpl3)))
 
 (define-public r-phitestr
@@ -34564,13 +34593,13 @@ level) tables in Latex, and plotting by factor.")
 (define-public r-pepbvs
   (package
     (name "r-pepbvs")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PEPBVS" version))
        (sha256
-        (base32 "1b8f096xw1580q6zn2gxz14nl92vhy7gyzvhlh2c4wm4xf7db0yy"))))
+        (base32 "11438saxgqya5k01fhwg9mxk7w5dy5wi5l4lzmn8h753qz6f9l44"))))
     (properties `((upstream-name . "PEPBVS")))
     (build-system r-build-system)
     (arguments
@@ -36564,13 +36593,13 @@ study\".")
 (define-public r-pdspecest
   (package
     (name "r-pdspecest")
-    (version "1.2.4")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdSpecEst" version))
        (sha256
-        (base32 "1sf2d7vh7a1qc0cq230an8pzg9qi9g640z0ql8x2pp9wfawfzn1f"))))
+        (base32 "1kgjq0p8llacgh8z1dnkcziiy9m9bkrih65mk5ir1dnvw4b5bqfv"))))
     (properties `((upstream-name . "pdSpecEst")))
     (build-system r-build-system)
     (arguments

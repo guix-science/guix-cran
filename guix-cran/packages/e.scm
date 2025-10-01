@@ -2618,20 +2618,20 @@ analysis (Ferreira, Cavalcanti and Nogueira, 2014) <doi:10.4236/am.2014.519280>.
 (define-public r-expde
   (package
     (name "r-expde")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExpDE" version))
        (sha256
-        (base32 "0yjsap92dd1sb23fhw69i0ddk3lyj5f4kwp9rvz4k0vxry10hx7g"))))
+        (base32 "1lmfpmm3w57whqcbhx09hia92wwzpw9f52ymrrr1ig5f12r2w288"))))
     (properties `((upstream-name . "ExpDE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-assertthat))
-    (home-page "http://github.com/fcampelo/ExpDE")
+    (home-page "https://github.com/fcampelo/ExpDE")
     (synopsis
      "Modular Differential Evolution for Experimenting with Operators")
     (description
@@ -3767,19 +3767,19 @@ R.")
 (define-public r-exametrika
   (package
     (name "r-exametrika")
-    (version "1.6.1")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exametrika" version))
        (sha256
-        (base32 "1fikl54zj9zbfj1fmgzr8fnzgmrp2mw7xyz7m6gc624mj0yd70vf"))))
+        (base32 "06h2z0854kmb1v6w2vzwlpy7m7jpqmd3kazvhaih4sjdvnkdnniw"))))
     (properties `((upstream-name . "exametrika")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-igraph))
+    (propagated-inputs (list r-rcpp r-mvtnorm r-igraph))
     (home-page "https://kosugitti.github.io/exametrika/")
     (synopsis "Test Theory Analysis and Biclustering")
     (description
@@ -11297,13 +11297,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.86")
+    (version "2.0.87")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "0vjbdnv05yqvxn8xa98xdi70xmzdizcvjgqmmsv86zvm1w314d6q"))))
+        (base32 "02jvpqfixc2lwhm2g10fqpk66k4bcl9a0jbzw68n45m2jc3q6clr"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (arguments
@@ -13430,6 +13430,31 @@ generalized Simpson's indices.  The estimators used have a bias that decays
 exponentially fast.")
     (license license:gpl3+)))
 
+(define-public r-entropicstatistics
+  (package
+    (name "r-entropicstatistics")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EntropicStatistics" version))
+       (sha256
+        (base32 "0y8fd80k8sj9smh9l331z7qfhavcim66nfnhbks7nvwlhzizaval"))))
+    (properties `((upstream-name . "EntropicStatistics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-tibble r-rlang r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=EntropicStatistics")
+    (synopsis "Functions Based on Entropic Statistics")
+    (description
+     "This package provides methods for data analysis from an entropic perspective.
+These methods are nonparametric and perform well on non-ordinal data.  Currently
+includes @code{HeatMap()} for visualizing distributional characteristics among
+multiple populations (groups).")
+    (license license:gpl3)))
+
 (define-public r-entropart
   (package
     (name "r-entropart")
@@ -14411,25 +14436,27 @@ Korkas (2022) <Journal of the Korean Statistical Society, 51(1), pp.65-86.>.")
 (define-public r-enaho
   (package
     (name "r-enaho")
-    (version "0.2.0")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enaho" version))
        (sha256
-        (base32 "04nx5642bjbli22jb7a85jb9byg8kxby45j5qr82z8a8vn7g8vxs"))))
+        (base32 "006ldxxmip926sgq2mn6rm65vcapslfk84abjhjmrvy8nbb2lcs5"))))
     (properties `((upstream-name . "enaho")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-haven))
+    (propagated-inputs (list r-tidyselect r-tibble r-haven))
+    (native-inputs (list r-knitr))
     (home-page "https://dopatendo.github.io/enaho/")
     (synopsis "Encuesta Nacional de Hogares (Peruvian Home National Survey)")
     (description
-     "Descarga, lee y combina bases de la Encuesta Nacional de Hogares (ENAHO) del
-Instituto Nacional de EstadÃ­stica e InformÃ¡tica (INEI) del PerÃº. (Downloads,
-reads, and combines data from the Peruvian Home National Survey.).")
+     "Descarga, lee y analiza bases de la Encuesta Nacional de Hogares (ENAHO) y otras
+encuestas del Instituto Nacional de EstadÃ­stica e InformÃ¡tica (INEI) del
+PerÃº. (Downloads, reads, and combines data from the Peruvian Home National
+Survey and other surveys from the National Institute for Statistics (INEI).).")
     (license license:gpl2+)))
 
 (define-public r-emur

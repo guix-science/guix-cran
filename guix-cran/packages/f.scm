@@ -9812,6 +9812,36 @@ extended to the entries of value \"1\" within the matrix, indicating the pattern
 of ancestor and descendent functions.")
     (license license:gpl2+)))
 
+(define-public r-foodwebr
+  (package
+    (name "r-foodwebr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "foodwebr" version))
+       (sha256
+        (base32 "1xsmqr06jnywd8838i61wsmhangiswl68iahh7a2nspi4l26xdld"))))
+    (properties `((upstream-name . "foodwebr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidygraph
+                             r-stringr
+                             r-rlang
+                             r-glue
+                             r-diagrammer
+                             r-crayon
+                             r-codetools
+                             r-cli))
+    (home-page "https://lewinfox.com/foodwebr/")
+    (synopsis "Visualise Function Dependencies")
+    (description
+     "Easily create graphs of the inter-relationships between functions in an
+environment.")
+    (license license:expat)))
+
 (define-public r-foodquotient
   (package
     (name "r-foodquotient")
@@ -20085,13 +20115,13 @@ DÃ©cisionnelle\".")
 (define-public r-fdesigns
   (package
     (name "r-fdesigns")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdesigns" version))
        (sha256
-        (base32 "10njbw13achjd5jcb3qj2mzmg1vi1ik7vwlxbhqpjg39jv6ik5cn"))))
+        (base32 "1alsrbidhkzjcsazipbmxfn2wwwgm314sbfzad05h98ywbahqy1f"))))
     (properties `((upstream-name . "fdesigns")))
     (build-system r-build-system)
     (arguments
@@ -20099,6 +20129,7 @@ DÃ©cisionnelle\".")
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm r-mvquad
                              r-matrix))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=fdesigns")
     (synopsis "Optimal Experimental Designs for Dynamic/Functional Models")
     (description
@@ -22781,13 +22812,13 @@ report with result interpretations.")
 (define-public r-fastpos
   (package
     (name "r-fastpos")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastpos" version))
        (sha256
-        (base32 "0a55fydlcn2h27vizv4w3gma26v2a32li81x09hvk519yfy8ph1k"))))
+        (base32 "1i1wifsmynrbnavk3nanhbjyq7v72xxbycjpp6vn91ph96igv19a"))))
     (properties `((upstream-name . "fastpos")))
     (build-system r-build-system)
     (arguments

@@ -5191,13 +5191,13 @@ introductory statistics courses.")
 (define-public r-ubms
   (package
     (name "r-ubms")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ubms" version))
        (sha256
-        (base32 "0q2fz2nz5k1jvyh57c3wlagrb5ik0d7w4imm5yx473aii3a963n7"))))
+        (base32 "1gdkrd90nsp1zqf98linlc002rpwqj0vk5rrisgwbq9mcnr1b926"))))
     (properties `((upstream-name . "ubms")))
     (build-system r-build-system)
     (arguments
@@ -5221,7 +5221,7 @@ introductory statistics courses.")
                              r-ggplot2
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://biodiverse.github.io/ubms/")
+    (home-page "https://ecoverseR.github.io/ubms/")
     (synopsis "Bayesian Models for Data from Unmarked Animals using 'Stan'")
     (description
      "Fit Bayesian hierarchical models of animal abundance and occurrence via the

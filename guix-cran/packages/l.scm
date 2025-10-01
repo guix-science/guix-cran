@@ -7911,13 +7911,13 @@ forecast tests and a new class for working with forecast data, Forecast.")
 (define-public r-lmfor
   (package
     (name "r-lmfor")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmfor" version))
        (sha256
-        (base32 "0zhahfzphyywdnwkj8c94pxm86v296bvvszzcxp37xi4gayaknm6"))))
+        (base32 "06ps1lg0lndnvfw8rls2x645s94sfkr6aqz2qjcwqcayb0wfclig"))))
     (properties `((upstream-name . "lmfor")))
     (build-system r-build-system)
     (arguments
@@ -14306,13 +14306,13 @@ provided as well.")
 (define-public r-learnnonparam
   (package
     (name "r-learnnonparam")
-    (version "1.2.9")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LearnNonparam" version))
        (sha256
-        (base32 "1hs9lss2yamlldn65q21nl1h1s3fl4l0dc4k90wnh99wabqpic3c"))))
+        (base32 "0hg4d6l13bsqif2ynxin5673w3xrw6b1h60z54rkl4jk6a6z0xfl"))))
     (properties `((upstream-name . "LearnNonparam")))
     (build-system r-build-system)
     (arguments

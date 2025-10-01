@@ -946,6 +946,40 @@ sql query or a dataframe to a database table with modes such as create, append,
 insert, update, upsert, patch, delete, overwrite, overwrite_schema.")
     (license license:lgpl3+)))
 
+(define-public r-writealizer
+  (package
+    (name "r-writealizer")
+    (version "1.6.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "writeAlizer" version))
+       (sha256
+        (base32 "0cys8v1gdidgdiiz2qi2k94r2m5s4z10cnsifambqbrg9c93r1zl"))))
+    (properties `((upstream-name . "writeAlizer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-magrittr
+                             r-glue
+                             r-dplyr
+                             r-digest
+                             r-caret))
+    (home-page "https://github.com/shmercer/writeAlizer/")
+    (synopsis "Generate Predicted Writing Quality Scores")
+    (description
+     "Imports variables from @code{ReaderBench} (Dascalu et al.,
+2018)<doi:10.1007/978-3-319-66610-5_48>, Coh-Metrix (@code{McNamara} et al.,
+2014)<doi:10.1017/CBO9780511894664>, and/or GAMET (Crossley et al., 2019)
+<doi:10.17239/jowr-2019.11.02.01> output files; downloads predictive scoring
+models described in Mercer & Cannon (2022)<doi:10.31244/jero.2022.01.03> and
+Mercer et al.(2021)<doi:10.1177/0829573520987753>; and generates predicted
+writing quality and curriculum-based measurement (@code{McMaster} & Espin,
+2007)<doi:10.1177/00224669070410020301> scores.")
+    (license license:gpl3)))
+
 (define-public r-wrightmap
   (package
     (name "r-wrightmap")
@@ -2198,13 +2232,13 @@ for further details about the API.")
 (define-public r-workspace
   (package
     (name "r-workspace")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "workspace" version))
        (sha256
-        (base32 "0ysvljq6pc5jrlqybp3wsjalmgzkalal4f501gbifb72jgvlpbqg"))))
+        (base32 "1ii5sb757ncbpva3fnp0c2vyn5c7hxih1py7mm7rdr8hsycgrm87"))))
     (properties `((upstream-name . "workspace")))
     (build-system r-build-system)
     (arguments
@@ -2218,7 +2252,7 @@ for further details about the API.")
                              r-dplyr
                              r-cli
                              r-arrow))
-    (home-page "https://cran.r-project.org/package=workspace")
+    (home-page "https://github.com/ardata-fr/workspace")
     (synopsis "Manage Collections of Datasets and Objects")
     (description
      "Create, store, read and manage structured collections of datasets and other
@@ -5461,6 +5495,43 @@ Zeng, 2007, \"When Can History Be Our Guide? The Pitfalls of Counterfactual
 Inference,\" International Studies Quarterly 51 (March)
 <DOI:10.1111/j.1468-2478.2007.00445.x>.")
     (license license:gpl3+)))
+
+(define-public r-whapi
+  (package
+    (name "r-whapi")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "whapi" version))
+       (sha256
+        (base32 "07656jl6nsfw9r45rp7dczbw8wqkgpjs6wy5ncahkxhi0f0ny4m0"))))
+    (properties `((upstream-name . "whapi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-stringi
+                             r-readr
+                             r-purrr
+                             r-openssl
+                             r-mime
+                             r-lubridate
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/StrategicProjects/whapi/")
+    (synopsis "R Client for 'whapi.cloud'")
+    (description
+     "This package provides an R interface to the Whapi API <https://whapi.cloud>,
+enabling sending and receiving @code{WhatsApp} messages directly from R'.
+Functions include sending text, images, documents, stickers, geographic
+locations, and interactive messages (buttons and lists).  Also includes webhook
+parsing utilities and channel health checks.")
+    (license license:expat)))
 
 (define-public r-wh
   (package

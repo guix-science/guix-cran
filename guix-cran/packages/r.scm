@@ -12434,26 +12434,26 @@ ISBN:9780412048418).")
 (define-public r-rparadox
   (package
     (name "r-rparadox")
-    (version "0.1.2")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rparadox" version))
        (sha256
-        (base32 "1s9yl22hdg20rmdjcy6mf97bsv2w909ar4s1gkchrvy7bxm3qn4i"))))
+        (base32 "1cs8z39li5x6vpy39wqaggdw12vvam9ngns5xjzxlgvv6f345fa6"))))
     (properties `((upstream-name . "Rparadox")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-hms r-blob))
+    (propagated-inputs (list r-tibble r-stringi r-hms r-blob))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/celebithil/Rparadox")
     (synopsis "Read Paradox Database Files into R")
     (description
      "This package provides a simple and efficient way to read data from Paradox
 database files (.db) directly into R as modern tibble data frames.  It uses the
-underlying pxlib C library to handle the low-level file format details and
+underlying pxlib C library, to handle the low-level file format details and
 provides a clean, user-friendly R interface.")
     (license license:gpl2+)))
 
@@ -12553,19 +12553,19 @@ Perez-Lamarque & Morlon (2022) <DOI:10.1111/mec.16478>, Perez-Lamarque et al.
 (define-public r-rpaleoclim
   (package
     (name "r-rpaleoclim")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpaleoclim" version))
        (sha256
-        (base32 "1fqlqs8l18dy5l24hzyj19hdk6yaxmd25g56hg1c6cm677z1xcli"))))
+        (base32 "1yjwdhhjv5qmyza0gjzw750vgzp9v1i3fvswnfl6d09b0jciqwbm"))))
     (properties `((upstream-name . "rpaleoclim")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra r-rlang r-fs r-curl))
+    (propagated-inputs (list r-terra r-rlang r-httr r-fs r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://rpaleoclim.joeroe.io")
     (synopsis "Download Paleoclimate Data from 'PaleoClim'")
@@ -15378,19 +15378,19 @@ functional data by being robust against the presence of outliers.")
 (define-public r-rodeo
   (package
     (name "r-rodeo")
-    (version "0.8.2")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rodeo" version))
        (sha256
-        (base32 "14bs944nn7avb06j7xb24qphr09n2i011skfdgqgybm9q5dxawpk"))))
+        (base32 "1wv7i6bs8sgnvhcnm4kc0p0v93fw7rf5cwnb1hj9awychz0r2lq4"))))
     (properties `((upstream-name . "rodeo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-readxl r-readods r-r6 r-desolve))
+    (propagated-inputs (list r-readxl r-r6 r-desolve))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/dkneis/rodeo")
     (synopsis "Code Generator for ODE-Based Models")
@@ -22414,13 +22414,13 @@ details.")
 (define-public r-rmarchingcubes
   (package
     (name "r-rmarchingcubes")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmarchingcubes" version))
        (sha256
-        (base32 "0cdmy728irmbd40xsc2k4r2g8am7s72ks7cw465fa92ml2xa6iq8"))))
+        (base32 "1ds6zjdhgqiqq77rv98yzmpy2lk3y8almgk1gy41jsh7hg88gzn4"))))
     (properties `((upstream-name . "rmarchingcubes")))
     (build-system r-build-system)
     (arguments
@@ -30854,13 +30854,13 @@ forest.")
 (define-public r-rfia
   (package
     (name "r-rfia")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rFIA" version))
        (sha256
-        (base32 "1l926823r4ds1akj5ypkxnyln8n0c1hmaslw1vhfjp2dkqwls0r8"))))
+        (base32 "14jb6rjd1aj5n55a3cckqws5cw38ajywzmkaa78hl1jcsk44nfya"))))
     (properties `((upstream-name . "rFIA")))
     (build-system r-build-system)
     (arguments
@@ -35663,6 +35663,44 @@ analysis,especially MANOVA. The dataset names correspond to their numbering in
 the third edition of the book, such as table6.27.  Based on the book by Rencher
 and Christensen (2012, ISBN:9780470178966).")
     (license license:gpl3)))
+
+(define-public r-rena
+  (package
+    (name "r-rena")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rENA" version))
+       (sha256
+        (base32 "0krpgy3p0w1h0ximz4mf90rzyncxr1qzpzj9pairm0m5i8im8f1n"))))
+    (properties `((upstream-name . "rENA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tma
+                             r-scales
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r6
+                             r-plotly
+                             r-glmnet
+                             r-doparallel
+                             r-data-table))
+    (home-page "https://gitlab.com/epistemic-analytics/qe-packages/rENA")
+    (synopsis "Epistemic Network Analysis")
+    (description
+     "ENA (Shaffer, D. W. (2017) Quantitative Ethnography.  ISBN: 0578191687) is a
+method used to identify meaningful and quantifiable patterns in discourse or
+reasoning.  ENA moves beyond the traditional frequency-based assessments by
+examining the structure of the co-occurrence, or connections in coded data.
+Moreover, compared to other methodological approaches, ENA has the novelty of
+(1) modeling whole networks of connections and (2) affording both quantitative
+and qualitative comparisons between different network models.  Shaffer, D.W.,
+Collier, W., & Ruis, A.R. (2016).")
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-ren
   (package
@@ -43261,13 +43299,13 @@ plots).")
 (define-public r-rdracor
   (package
     (name "r-rdracor")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdracor" version))
        (sha256
-        (base32 "1di1nqj6j96h8f0zqag2n89k4v96yga7swb09s6zsh2wf7igwmnn"))))
+        (base32 "032zcxmxbwln1vmdbpvbf71w1qq4y9ncb95s5rssrxqi3h4bi33z"))))
     (properties `((upstream-name . "rdracor")))
     (build-system r-build-system)
     (arguments
@@ -46013,13 +46051,13 @@ package currently does not cover all the features in the package.  The site
 (define-public r-rcppensmallen
   (package
     (name "r-rcppensmallen")
-    (version "0.2.22.1.2")
+    (version "0.3.10.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppEnsmallen" version))
        (sha256
-        (base32 "0x3hprplylz38dmn2h47dihdkqfm41azbb5v0nc6fxywkdg28hr8"))))
+        (base32 "08kdz8ijmr2v9c5zrv8y4ppgcxqgwhw5fwdyhgc5yfab9wzjlg1h"))))
     (properties `((upstream-name . "RcppEnsmallen")))
     (build-system r-build-system)
     (arguments
@@ -46132,13 +46170,13 @@ approximation.")
 (define-public r-rcppcwb
   (package
     (name "r-rcppcwb")
-    (version "0.6.9")
+    (version "0.6.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCWB" version))
        (sha256
-        (base32 "15yky32pscm90qk5g7m7mb6lrbz5smmf659f2zbgyas7a2vs8ydy"))))
+        (base32 "0mrzanr8sjjql60w6j4403b7ffv76r2bwnckr7v51f3v1qc23v1h"))))
     (properties `((upstream-name . "RcppCWB")))
     (build-system r-build-system)
     (arguments
@@ -48350,6 +48388,48 @@ column-store database to enable big data exploration and analytics scaling to
 petabytes of data.  Methods are provided that enable working with Yandex
 Clickhouse databases via DBI methods and using dplyr'/'dbplyr idioms.")
     (license license:gpl2)))
+
+(define-public r-rcldf
+  (package
+    (name "r-rcldf")
+    (version "1.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcldf" version))
+       (sha256
+        (base32 "0bbkass938vl1wlwdydj1hpp8asvz75dnrnhqi2y3q86zkfw97zp"))))
+    (properties `((upstream-name . "rcldf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-urltools
+                             r-rlang
+                             r-remotes
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-logger
+                             r-jsonlite
+                             r-dplyr
+                             r-digest
+                             r-csvwr
+                             r-bib2df
+                             r-archive))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SimonGreenhill/rcldf")
+    (synopsis
+     "Read Linguistic Data in the Cross Linguistic Data Format (CLDF)")
+    (description
+     "Cross-Linguistic Data Format (CLDF) is a framework for storing cross-linguistic
+data, ensuring compatibility and ease of data exchange between different
+linguistic datasets see Forkel et al. (2018) <doi:10.1038/sdata.2018.205>.  The
+rcldf package is designed to facilitate the manipulation and analysis of these
+datasets by simplifying the loading, querying, and visualisation of CLDF
+datasets making it easier to conduct comparative linguistic analyses, manage
+language data, and apply statistical methods directly within R.")
+    (license license:asl2.0)))
 
 (define-public r-rclabels
   (package
@@ -50896,13 +50976,13 @@ provides functionalities to create, manipulate and query on XML-data.")
 (define-public r-rbam
   (package
     (name "r-rbam")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RBaM" version))
        (sha256
-        (base32 "02wqjy4ch9cshbf5b5zxvps64x0zzzysy00g515a7hw6yd7h891c"))))
+        (base32 "1yj1g0jp2yw8yzr9gvppnhp2r6c8a45r0fyhslr8jq870rjqf6sk"))))
     (properties `((upstream-name . "RBaM")))
     (build-system r-build-system)
     (arguments
@@ -50912,6 +50992,8 @@ provides functionalities to create, manipulate and query on XML-data.")
                              r-rlang
                              r-rjson
                              r-r-utils
+                             r-progress
+                             r-mvtnorm
                              r-gridextra
                              r-ggplot2))
     (home-page "https://github.com/BaM-tools/RBaM")
@@ -51930,13 +52012,13 @@ global max).  The function order is replaced by sort.list.")
 (define-public r-rathena
   (package
     (name "r-rathena")
-    (version "2.6.1")
+    (version "2.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RAthena" version))
        (sha256
-        (base32 "1zncmkx93c28z0xf4n5rdc7fzlrdqw3x9ab2ci07f00gjf9gwkf1"))))
+        (base32 "1kzdchk41kgwgbd62v6jp3yavjd984r1p6v831nf7k2x0jl38x9r"))))
     (properties `((upstream-name . "RAthena")))
     (build-system r-build-system)
     (arguments
@@ -51944,7 +52026,7 @@ global max).  The function order is replaced by sort.list.")
       #:tests? #f))
     (propagated-inputs (list r-uuid r-reticulate r-dbi r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/DyfanJones/RAthena")
+    (home-page "https://dyfanjones.github.io/RAthena/")
     (synopsis "Connect to 'AWS Athena' using 'Boto3' ('DBI' Interface)")
     (description
      "Designed to be compatible with the R package DBI (Database Interface) when
@@ -56386,6 +56468,32 @@ and query the Adwords API with ad-hoc reports.  Third, the received data are
 transformed into suitable data formats for further data processing and data
 analysis.")
     (license license:expat)))
+
+(define-public r-radviz3d
+  (package
+    (name "r-radviz3d")
+    (version "2.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "radviz3d" version))
+       (sha256
+        (base32 "0p761idxnd8xp7xz15wkzrvvyiazg3w2spaxivs599nkch8zb202"))))
+    (properties `((upstream-name . "radviz3d")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rgl))
+    (home-page "https://cran.r-project.org/package=radviz3d")
+    (synopsis "3D Radial Visualization")
+    (description
+     "Creating 3D radial visualizations of multivariate data.  The package extends
+traditional radial coordinate visualization (@code{RadViz}) techniques to
+three-dimensional space, enabling enhanced exploration and analysis of
+high-dimensional datasets through interactive 3D plots.  Zhu, Dai & Maitra
+(2022) <doi:10.1080/10618600.2021.2020129>.")
+    (license license:gpl2+)))
 
 (define-public r-radviz
   (package

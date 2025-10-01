@@ -14887,13 +14887,13 @@ this package can be found in Watson, Hemming, and Girling (2023)
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrBase" version))
        (sha256
-        (base32 "0svfmmhw5xg6hbky0l1r2q3r2nk05hd90psj6nm6fmbhd7ljwv0a"))))
+        (base32 "1ggcxbjvdml7cwiwswc6gj2sc35p3k8nm2j039fhkpg2q4hzhalk"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (arguments
@@ -19600,13 +19600,13 @@ ggplot2'.")
 (define-public r-ggrtsy
   (package
     (name "r-ggrtsy")
-    (version "0.1.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggRtsy" version))
        (sha256
-        (base32 "04q9674z0wgpd5igjhggih348jd6lv6nbwz4na597pn5d3pirhvl"))))
+        (base32 "1jaw36nicrxnzqdll8yszlnm649gzgsh0fcspgv30gbkdq9m0lna"))))
     (properties `((upstream-name . "ggRtsy")))
     (build-system r-build-system)
     (arguments
@@ -24931,13 +24931,13 @@ the estimator and diagnostics tests can be fully user-specified, see Sucarrat
 (define-public r-getrad
   (package
     (name "r-getrad")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "getRad" version))
        (sha256
-        (base32 "0w76xjns7pa6n9vps9hsw6k67lcdvggg62hx0f0ybkfnjfmjpy1f"))))
+        (base32 "0b9g31skqww46kavy5cqjbylpgz71h2bskz6y13h01xlbkyhsk48"))))
     (properties `((upstream-name . "getRad")))
     (build-system r-build-system)
     (arguments
@@ -28157,21 +28157,21 @@ Y (Wang et al 2014 <doi:10.1080/13658810802443457>, Wang, Zhang, and Fu 2016
 (define-public r-geodata
   (package
     (name "r-geodata")
-    (version "0.6-2")
+    (version "0.6-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geodata" version))
        (sha256
-        (base32 "0yiir9dslk6l60zf40kbvycd2x755whpp07is5bah1wa1wwgxwn5"))))
+        (base32 "14dgh8nc1ywiskga71139fgs2z2jwhfbssq1zd8kw78z3qbqdrbs"))))
     (properties `((upstream-name . "geodata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra))
+    (propagated-inputs (list r-terra r-rappdirs))
     (home-page "https://cran.r-project.org/package=geodata")
-    (synopsis "Download Geographic Data")
+    (synopsis "Access Geographic Data")
     (description
      "This package provides functions for downloading of geographic data for use in
 spatial analysis and mapping.  The package facilitates access to climate, crops,
@@ -32926,13 +32926,13 @@ Susceptible-Infected-Recovered (SIR) framework.")
 (define-public r-gdilm-seirs
   (package
     (name "r-gdilm-seirs")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GDILM.SEIRS" version))
        (sha256
-        (base32 "1w24s1c729hpzw942zijl7gm65mmsxpjj6g002vh2pffmq8y6pkh"))))
+        (base32 "1vv8g3hs32hsksvw59wpdcjvacndr0hprmw0hid6ipyw41v01xf5"))))
     (properties `((upstream-name . "GDILM.SEIRS")))
     (build-system r-build-system)
     (arguments
@@ -37356,13 +37356,13 @@ solving the problem.")
 (define-public r-gabb
   (package
     (name "r-gabb")
-    (version "0.3.9")
+    (version "0.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GABB" version))
        (sha256
-        (base32 "0ydxyxrs69j6yf9x90g23g38qzx0m6493mgfiy59mkr6883zynw0"))))
+        (base32 "104qpjilkp8l42i169zwjgjnvz8kl9gp5fxaw0l5jqzgx4ih51s7"))))
     (properties `((upstream-name . "GABB")))
     (build-system r-build-system)
     (arguments
