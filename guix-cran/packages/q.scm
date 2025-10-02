@@ -7106,13 +7106,13 @@ checking the convergence of the chains.")
 (define-public r-qad
   (package
     (name "r-qad")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qad" version))
        (sha256
-        (base32 "1jn71nwnzib8rk102l5gqwz1dl1xdjrwlqzrqj2sx4jw37h718pr"))))
+        (base32 "1akg35b0j334lgl1k1fn2n8c24784q7fx3a4qdx0rrhria24fx1j"))))
     (properties `((upstream-name . "qad")))
     (build-system r-build-system)
     (arguments

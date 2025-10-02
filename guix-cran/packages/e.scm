@@ -1656,6 +1656,40 @@ See Saah and Kozubowski (2025) <doi:10.1016/j.cam.2025.116588>.")
      "This package creates family objects identical to stats family but for new links.")
     (license license:gpl3)))
 
+(define-public r-extendedabsurvtdc
+  (package
+    (name "r-extendedabsurvtdc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ExtendedABSurvTDC" version))
+       (sha256
+        (base32 "1g622rv0w7n64i0n2dkqmwcs4lis0wkxkpkmrnpm0lwz83z3ddsb"))))
+    (properties `((upstream-name . "ExtendedABSurvTDC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-readxl))
+    (home-page "https://cran.r-project.org/package=ExtendedABSurvTDC")
+    (synopsis
+     "Survival Analysis using Indicators under Time Dependent Covariates")
+    (description
+     "Survival analysis is employed to model time-to-event data.  This package
+examines the relationship between survival and one or more predictors, termed as
+covariates, which can include both treatment variables (e.g., season of birth,
+represented by indicator functions) and continuous variables.  To this end, the
+Cox-proportional hazard (Cox-PH) model, introduced by Cox in 1972, is a widely
+applicable and commonly used method for survival analysis.  This package enables
+the estimation of the effect of randomization for the treatment variable to
+account for potential confounders, providing adjustment when estimating the
+association with exposure.  It accommodates both fixed and time-dependent
+covariates and computes survival probabilities for lactation periods in dairy
+animals.  The package is built upon the algorithm developed by Klein and
+Moeschberger (2003) <DOI:10.1007/b97377>.")
+    (license license:gpl3)))
+
 (define-public r-extdist
   (package
     (name "r-extdist")
@@ -11333,6 +11367,48 @@ surveillance system sensitivity and functions to support scenario tree modelling
 analyses.")
     (license license:gpl2+)))
 
+(define-public r-epipvr
+  (package
+    (name "r-epipvr")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EpiPvr" version))
+       (sha256
+        (base32 "0sp9vcqjwzhy1dsvfhd3vysw73rri0xm4dbfr76zp5b659gl7s0x"))))
+    (properties `((upstream-name . "EpiPvr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-posterior
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://CRAN.R-project.org/package=EpiPvr")
+    (synopsis
+     "Estimating Plant Pathogen Epidemiology Parameters from Laboratory Assays")
+    (description
+     "This package provides functions for estimating plant pathogen parameters from
+access period (AP) experiments.  Separate functions are implemented for
+semi-persistently transmitted (SPT) and persistently transmitted (PT) pathogens.
+ The common AP experiment exposes insect cohorts to infected source plants,
+healthy test plants, and intermediate plants (for PT pathogens).  The package
+allows estimation of acquisition and inoculation rates during feeding, recovery
+rates, and latent progression rates (for PT pathogens).  Additional functions
+support inference of epidemic risk from pathogen and local parameters, and also
+simulate AP experiment data.  The functions implement probability models for
+epidemiological analysis, as derived in Donnelly et al. (2025),
+<doi:10.32942/X29K9P>.  These models were originally implemented in the
+@code{EpiPv} @code{GitHub} package.")
+    (license license:gpl3)))
+
 (define-public r-epiphy
   (package
     (name "r-epiphy")
@@ -20498,6 +20574,53 @@ traditional surveys, and gear scaling coefficients for traditional gear types.
 Models are implemented with a Bayesian framework (Markov chain Monte Carlo)
 using the Stan probabilistic programming language.")
     (license license:gpl3)))
+
+(define-public r-ednafuns
+  (package
+    (name "r-ednafuns")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eDNAfuns" version))
+       (sha256
+        (base32 "1snnnlyf922qz257d1xhjrmddjw7cbbr15cnaddrd23y17racg9z"))))
+    (properties `((upstream-name . "eDNAfuns")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vroom
+                             r-vegan
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-phyloseq
+                             r-googlesheets4
+                             r-ggplot2
+                             r-dplyr
+                             r-biostrings))
+    (home-page "https://cran.r-project.org/package=eDNAfuns")
+    (synopsis "Working with Metabarcoding Data in a Tidy Format")
+    (description
+     "This package provides a series of R functions that come in handy while working
+with metabarcoding data.  The reasoning of doing this is to have the same
+functions we use all the time stored in a curated, reproducible way.  In a way
+it is all about putting together the grammar of the tidyverse from Wickham et
+al.(2019) <doi:10.21105/joss.01686> with the functions we have used in community
+ecology compiled in packages like vegan from Dixon (2003)
+<doi:10.1111/j.1654-1103.2003.tb02228.x> and phyloseq @code{McMurdie} & Holmes
+(2013) <doi:10.1371/journal.pone.0061217>.  The package includes functions to
+read sequences from FAST(A/Q) into a tibble ('fasta_reader and fastq_reader'),
+to process cutadapt Martin (2011) <doi:10.14806/ej.17.1.200> info-file output.
+When it comes to sequence counts across samples, the package works with the long
+format in mind (a three column tibble with Sample, Sequence and counts ), with
+functions to move from there to the wider format.")
+    (license license:gpl3+)))
 
 (define-public r-edmdata
   (package

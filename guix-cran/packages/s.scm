@@ -13868,13 +13868,13 @@ available at <doi:10.18637/jss.v113.i08>.")
 (define-public r-stepmetrics
   (package
     (name "r-stepmetrics")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stepmetrics" version))
        (sha256
-        (base32 "1s1sx8smrfdfldhiiqp5hry799i8g383jdcd0ypczghwf6hfc40k"))))
+        (base32 "01l6cpb19agjabddiz2zb9s45wxchnzmq471rrhcphzc7aj25970"))))
     (properties `((upstream-name . "stepmetrics")))
     (build-system r-build-system)
     (arguments
@@ -32012,42 +32012,6 @@ decompositions.")
 the website <https://southpark.fandom.com/wiki/South_Park_Archives>.")
     (license license:expat)))
 
-(define-public r-southkoreapis
-  (package
-    (name "r-southkoreapis")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SouthKoreAPIs" version))
-       (sha256
-        (base32 "1abr986mcj58kciwbrkwn051w4w0zgi8h8axmk00gfxs7ds1jadz"))))
-    (properties `((upstream-name . "SouthKoreAPIs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble r-scales r-jsonlite r-httr r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/lightbluetitan/southkoreapis")
-    (synopsis "Access South Korean Data via Public APIs and Curated Datasets")
-    (description
-     "This package provides functions to access data from public RESTful APIs
-including Nager.Date', World Bank API', and REST Countries API', retrieving
-real-time or historical data related to South Korea, such as holidays, economic
-indicators, and international demographic and geopolitical indicators.
-Additionally, the package includes one of the largest curated collections of
-open datasets focused on South Korea, covering topics such as public health
-outbreaks, demographics, social surveys, elections, economic indicators, natural
-disasters, administrative divisions, air quality, climate data, energy
-consumption, cultural information, and financial markets.  The package supports
-reproducible research and teaching by integrating reliable international APIs
-and structured datasets from public, academic, and government sources.  For more
-information on the APIs, see: Nager.Date <https://date.nager.at/Api>, World Bank
-API <https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, and REST
-Countries API <https://restcountries.com/>.")
-    (license license:expat)))
-
 (define-public r-sourcoise
   (package
     (name "r-sourcoise")
@@ -48777,13 +48741,13 @@ multivariate extension, see the @code{shrinkTVPVAR} package.")
 (define-public r-shrinkgpr
   (package
     (name "r-shrinkgpr")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shrinkGPR" version))
        (sha256
-        (base32 "0mmb51fbhhbrpj1xmziydgfv65w7rwlxdkbgx5v2mcl39bg3xzfi"))))
+        (base32 "1srz0cl7c1z8bayq3mg7dlf54z1vxc9sdb58byygvyb32xm6hzx3"))))
     (properties `((upstream-name . "shrinkGPR")))
     (build-system r-build-system)
     (arguments
@@ -57482,13 +57446,13 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
 (define-public r-seqtarget
   (package
     (name "r-seqtarget")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEQTaRget" version))
        (sha256
-        (base32 "0r9lvgcl5ks4plrpa6k5szd3v12psgz8jx3bis3a2lcxs4knx2f2"))))
+        (base32 "05iksmphglb3fw48fz25ny7k8y5sa0bsqphipn0lgm9pjzzl9dw7"))))
     (properties `((upstream-name . "SEQTaRget")))
     (build-system r-build-system)
     (arguments

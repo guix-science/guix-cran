@@ -26568,13 +26568,13 @@ knitr'-engine enabling Maxima code chunks to be written in RMarkdown documents."
 (define-public r-rilostat
   (package
     (name "r-rilostat")
-    (version "2.3.1")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rilostat" version))
        (sha256
-        (base32 "10wkq8cv5cggb0xjn16wawgzshzmzgkch4zx2blkwhycmxc745nd"))))
+        (base32 "1lqg8s6bfh7y0a73swjfibj44f4ab1pbqwqdmqi4k28xgdx2m0kr"))))
     (properties `((upstream-name . "Rilostat")))
     (build-system r-build-system)
     (arguments
@@ -26584,15 +26584,16 @@ knitr'-engine enabling Maxima code chunks to be written in RMarkdown documents."
                              r-stringr
                              r-readr
                              r-plyr
+                             r-httr2
                              r-haven
                              r-dplyr
                              r-data-table))
     (home-page "https://ilostat.github.io/Rilostat/")
-    (synopsis "ILO Open Data via Ilostat Bulk Download Facility")
+    (synopsis "R Interface to ILOSTAT Open Data")
     (description
-     "This package provides tools to download data from the
-[ilostat](<https://ilostat.ilo.org>) database together with search and
-manipulation utilities.")
+     "This package provides tools to access, search, and manipulate ILO's ilostat
+database, including bulk download of statistical data, dictionary lookups, and
+table of contents.")
     (license license:bsd-2)))
 
 (define-public r-riingo
@@ -34882,32 +34883,6 @@ and the proper data.  The repo can then be used for hosting code taught during
 the workshop.")
     (license license:expat)))
 
-(define-public r-repo-data
-  (package
-    (name "r-repo-data")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "repo.data" version))
-       (sha256
-        (base32 "0vw85cl466k92jvrpl74dy77v20s3cfzsqpk12j1yvzb3nr2hf18"))))
-    (properties `((upstream-name . "repo.data")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/llrs/repo.data")
-    (synopsis "R Repository Data")
-    (description
-     "Retrieve metadata about packages from repositories to explore package
-dependencies, links between help pages, aliases, package availability on a given
-date, and other repository dependent outcome.  This metadata can be used to help
-package maintainers and users to navigate changes on dependencies and with
-reproducibility.")
-    (license license:gpl3+)))
-
 (define-public r-repo
   (package
     (name "r-repo")
@@ -39225,13 +39200,13 @@ package seamlessly.")
 (define-public r-redist
   (package
     (name "r-redist")
-    (version "4.3.0")
+    (version "4.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redist" version))
        (sha256
-        (base32 "140kzihidw4x3gx2j2hpzny35x0mg4qy7mp0d13c4sf2mkimlzds"))))
+        (base32 "13cd3r134phxby5gwj58dbwxf7qb2fczrqglfl45nlaxcrxp0m6p"))))
     (properties `((upstream-name . "redist")))
     (build-system r-build-system)
     (arguments
@@ -42226,6 +42201,44 @@ without needing any parameters except the filename.  Other functions provide
 simple ways of handling file paths and extensions, and automatically detecting
 file format and structure.")
     (license license:gpl2+)))
+
+(define-public r-readepi
+  (package
+    (name "r-readepi")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "readepi" version))
+       (sha256
+        (base32 "0qhpphkpm4sz0wjrib2wdixsyl6akqjg4w6vh5kwi8kpbhz5bq76"))))
+    (properties `((upstream-name . "readepi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-tidyr
+                             r-rsqlite
+                             r-rmysql
+                             r-purrr
+                             r-pool
+                             r-odbc
+                             r-httr2
+                             r-dplyr
+                             r-dbi
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://epiverse-trace.github.io/readepi/")
+    (synopsis
+     "Read Data from Relational Database Management Systems and Health Information Systems")
+    (description
+     "Import Data from Relational Database Management Systems (RDBMS) and Health
+Information Systems ('HIS').  The current version of the package supports
+importing data from RDBMS including MS SQL', @code{MySQL}', @code{PostGRESQL}',
+and SQLite', as well as from two HIS platforms: DHIS2 and SORMAS'.")
+    (license license:expat)))
 
 (define-public r-readdim
   (package
@@ -48624,6 +48637,51 @@ Binary (Probit and Logit), Ordered (Probit and Logit) and Poisson models with
 random parameters for cross-sectional and longitudinal data as presented in
 Sarrias (2016) <doi:10.18637/jss.v074.i10>.")
     (license license:gpl2+)))
+
+(define-public r-rchivaltag
+  (package
+    (name "r-rchivaltag")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RchivalTag" version))
+       (sha256
+        (base32 "07nagcr6py9x9z9ls6cz0l439ms3bk1dci3mnraiwycxi373h9ji"))))
+    (properties `((upstream-name . "RchivalTag")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xts
+                             r-suntools
+                             r-stringr
+                             r-sp
+                             r-shiny
+                             r-sf
+                             r-readr
+                             r-raster
+                             r-pracma
+                             r-plyr
+                             r-plotly
+                             r-oceanmap
+                             r-ncdf4
+                             r-maps
+                             r-mapdata
+                             r-lubridate
+                             r-leaflet-extras2
+                             r-leaflet
+                             r-htmlwidgets
+                             r-ggplot2
+                             r-dygraphs
+                             r-cleangeo))
+    (home-page "https://cran.r-project.org/package=RchivalTag")
+    (synopsis
+     "Analyzing and Interactive Visualization of Archival Tagging Data")
+    (description
+     "This package provides a set of functions to generate, access and analyze
+standard data products from archival tagging data.")
+    (license license:gpl3+)))
 
 (define-public r-rchest
   (package
@@ -56784,13 +56842,13 @@ functionality in radiant.data'.")
 (define-public r-radiant-model
   (package
     (name "r-radiant-model")
-    (version "1.6.7")
+    (version "1.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radiant.model" version))
        (sha256
-        (base32 "0442pwj623qrrhiv8yp1r1dhi0jrnkmxd7cydmp87q65fj1xvvyy"))))
+        (base32 "07dh527a2snr9p2rd6m6bb85fx6s6180y5bjn661m6g3akbrj741"))))
     (properties `((upstream-name . "radiant.model")))
     (build-system r-build-system)
     (arguments

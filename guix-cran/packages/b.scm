@@ -6528,6 +6528,36 @@ pressure data of all forms by providing both descriptive and visualization tools
 for researchers.")
     (license license:gpl3)))
 
+(define-public r-boxtest
+  (package
+    (name "r-boxtest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "boxTest" version))
+       (sha256
+        (base32 "05j7qqrmz6d1cmnkb8lfps7cjjdpv0apl5a6g0v4bj2v8g2592xx"))))
+    (properties `((upstream-name . "boxTest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=boxTest")
+    (synopsis "Boxplot and Significance Test for Two Groups")
+    (description
+     "This package provides functions to create side-by-side boxplots for a continuous
+variable grouped by a two-level categorical variable, check normality
+assumptions using the Shapiro-Wilk test (Shapiro and Wilk (1965)
+<doi:10.2307/2333709>), and perform appropriate statistical tests such as the
+independent two-sample t-test (Student (1908) <doi:10.1093/biomet/6.1.1>) or the
+MannâWhitney U test ( MannâWhitney (1947) <doi:10.1214/aoms/1177730491>).
+Returns a publication-ready plot and test statistics including test statistic,
+degrees of freedom, and p-value.")
+    (license license:expat)))
+
 (define-public r-boxr
   (package
     (name "r-boxr")
@@ -11257,6 +11287,34 @@ estimation and plotting.  Users may define voting blocs along a discrete or
 continuous variable.  The package implements methods described in Grimmer,
 Marble, and Tanigawa-Lau (2023) <doi:10.31235/osf.io/c9fkg>.")
     (license license:gpl3+)))
+
+(define-public r-blockwiseranktest
+  (package
+    (name "r-blockwiseranktest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BlockwiseRankTest" version))
+       (sha256
+        (base32 "1pgz00inlkbyxvzq46j1lfck18ia59gv7bmkc5igy6h8i6wnn5h9"))))
+    (properties `((upstream-name . "BlockwiseRankTest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=BlockwiseRankTest")
+    (synopsis
+     "Block-Wise Rank in Similarity Graph Edge-Count Two-Sample Test (BRISE)")
+    (description
+     "This package implements the Block-wise Rank in Similarity Graph Edge-count test
+(BRISE), a rank-based two-sample test designed for block-wise missing data.  The
+method constructs (pattern) pair-wise similarity graphs and derives quadratic
+test statistics with asymptotic chi-square distribution or permutation-based
+p-values.  It provides both vectorized and congregated versions for flexible
+inference.  The methodology is described in Zhang, Liang, Maile, and Zhou (2025)
+<doi:10.48550/@code{arXiv.2508.17411>}.")
+    (license license:gpl2+)))
 
 (define-public r-blocktools
   (package
@@ -24395,13 +24453,13 @@ now can be used with Seurat seamlessly.")
 (define-public r-bbk
   (package
     (name "r-bbk")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbk" version))
        (sha256
-        (base32 "0j0mzkiriy6c91yckb6j4ckl49s79xr2c0fl02p05aa35virkp7j"))))
+        (base32 "1xy2dz2yv439yzb85qwqfyssld2sipvpg7zdq020694z410qb2vs"))))
     (properties `((upstream-name . "bbk")))
     (build-system r-build-system)
     (arguments
@@ -24424,8 +24482,9 @@ Central Bank Data Portal API (<https://data.ecb.europa.eu/help/api/overview>),
 the Bank of England Interactive Statistical Database
 (<https://www.bankofengland.co.uk/boeapps/database>), the Banco de EspaÃ±a API
 (<https://www.bde.es/webbe/en/estadisticas/recursos/api-estadisticas-bde.html>),
-and the Banque de France Web Service
-(<https://webstat.banque-france.fr/en/pages/guide-migration-api/>).")
+the Banque de France Web Service
+(<https://webstat.banque-france.fr/en/pages/guide-migration-api/>), and Bank of
+Canada Valet API (<https://www.bankofcanada.ca/valet/docs>).")
     (license license:expat)))
 
 (define-public r-bbi
@@ -32241,6 +32300,42 @@ signal from background.  Methods to automatically visualize key results and
 detect batch effects are also provided.")
     (license license:expat)))
 
+(define-public r-bakerrr
+  (package
+    (name "r-bakerrr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bakerrr" version))
+       (sha256
+        (base32 "04v20zwic5is71i1izh8nipy716mwbipp4i84ji4nd5wbqsrwgvw"))))
+    (properties `((upstream-name . "bakerrr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s7
+                             r-purrr
+                             r-mirai
+                             r-glue
+                             r-fs
+                             r-config
+                             r-cli
+                             r-carrier
+                             r-callr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/anirbanshaw24/bakerrr")
+    (synopsis "Background-Parallel Jobs")
+    (description
+     "Easily launch, track, and control functions as background-parallel jobs.
+Includes robust utilities for job status, error handling, resource monitoring,
+and result collection.  Designed for scalable workflows in interactive and
+automated settings (local or remote).  Integrates with multiple backends;
+supports flexible automation pipelines and live job tracking.  For more
+information, see <https://anirbanshaw24.github.io/bakerrr/>.")
+    (license license:expat)))
+
 (define-public r-baker
   (package
     (name "r-baker")
@@ -32649,13 +32744,13 @@ name \"Bagged @code{OutlierTrees}\".  To learn more about the base procedure
 (define-public r-bage
   (package
     (name "r-bage")
-    (version "0.9.4")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bage" version))
        (sha256
-        (base32 "0rs98g8klrpcjzz66xnk5c2j5hjnv0h73b0i49xyk5j3g7jqlydz"))))
+        (base32 "11s6jf8lqricky832m3h33q05ig4jbjixbwsyksg00wjlv7w8rwl"))))
     (properties `((upstream-name . "bage")))
     (build-system r-build-system)
     (arguments
@@ -32669,6 +32764,7 @@ name \"Bagged @code{OutlierTrees}\".  To learn more about the base procedure
                              r-rcppeigen
                              r-poputils
                              r-matrix
+                             r-lifecycle
                              r-generics
                              r-cli))
     (native-inputs (list r-knitr))

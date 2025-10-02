@@ -9178,13 +9178,13 @@ workflows (see <http://www.dominodatalab.com> for more information).")
 (define-public r-dominanceanalysis
   (package
     (name "r-dominanceanalysis")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dominanceanalysis" version))
        (sha256
-        (base32 "1kp8x77j20ak5xgp67f2ny00s22q6yr8qz5lc5kdmvdrimqkpnah"))))
+        (base32 "102q5w3nc0bbmdiplrsqzllhygsjh8yw39wxiiggyi36xxwalgxl"))))
     (properties `((upstream-name . "dominanceanalysis")))
     (build-system r-build-system)
     (arguments
@@ -21408,6 +21408,42 @@ directly with the tidyverse family of packages, and pipes.  Tables are produced
 as (nested) dataframes for easy manipulation.")
     (license license:gpl3)))
 
+(define-public r-descsuppr
+  (package
+    (name "r-descsuppr")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "descsuppR" version))
+       (sha256
+        (base32 "07zayrql16mspl38cl89sf974djg9xwm6z9z4mp97zw47q369jr7"))))
+    (properties `((upstream-name . "descsuppR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-rankfd
+                             r-purrr
+                             r-plyr
+                             r-nparcomp
+                             r-glue
+                             r-foreach
+                             r-dplyr
+                             r-descutils
+                             r-desctools
+                             r-circular))
+    (home-page "https://cran.r-project.org/package=descsuppR")
+    (synopsis "Support Functions for (Reproducible) Descriptive Statistics")
+    (description
+     "This package contains functions to help with generating tables with descriptive
+statistics.  In addition, the package can display results of statistical tests
+for group comparisons.  A wide range of test procedures is supported, and
+user-defined test functions can be incorporated.")
+    (license license:gpl3)))
+
 (define-public r-descstatsr
   (package
     (name "r-descstatsr")
@@ -24178,13 +24214,13 @@ by a Wald test to assess the regression coefficients.")
 (define-public r-degradr
   (package
     (name "r-degradr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "degradr" version))
        (sha256
-        (base32 "0km176905ymwjhfc3jnz95ihpici9ic10vf7nm4rq3z7dl2jd57k"))))
+        (base32 "0b312fam0cl8cbxj709jpckz916pb16dac3m6834g218z9n4647r"))))
     (properties `((upstream-name . "degradr")))
     (build-system r-build-system)
     (arguments
@@ -32112,13 +32148,13 @@ the @code{dartRverse} suit of packages.  Gruber et al. (2018)
 (define-public r-dartr-base
   (package
     (name "r-dartr-base")
-    (version "1.0.5")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dartR.base" version))
        (sha256
-        (base32 "1mqxyl54hdhrrih5d9ysm61h5v90c2w105q31nw6q24gpfb66znw"))))
+        (base32 "118yjvl3avvp0qfybywn96vhlswrpx8vn29sc58sdk7ydzg72gia"))))
     (properties `((upstream-name . "dartR.base")))
     (build-system r-build-system)
     (arguments

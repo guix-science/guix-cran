@@ -1095,13 +1095,13 @@ closure can be derived.  Methods adapted from Bartlett, Scoffoni, Sack (2012)
 (define-public r-pvebayes
   (package
     (name "r-pvebayes")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pvEBayes" version))
        (sha256
-        (base32 "0hlcc239yj6p7ybv74s8gx4w4lzal951mpyki1yd5kqan5x35vb2"))))
+        (base32 "1vf1yp7b139922vjji3n81nafh8jv1x11mi65nr9yhmbhr36mmr3"))))
     (properties `((upstream-name . "pvEBayes")))
     (build-system r-build-system)
     (arguments
@@ -12407,13 +12407,13 @@ population, which is used for the evaluation of genetic risk models.")
 (define-public r-predict3d
   (package
     (name "r-predict3d")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predict3d" version))
        (sha256
-        (base32 "1qfr9ixdzcr2v030fds2h3fmyx4xhc5lbbg44i4imzg96w1z3lxy"))))
+        (base32 "1k2gzxihs6b6r386b140z7s81fihxaig8hschn29ddzc1nqzbs92"))))
     (properties `((upstream-name . "predict3d")))
     (build-system r-build-system)
     (arguments
@@ -12792,13 +12792,13 @@ anomaly.")
 (define-public r-precast
   (package
     (name "r-precast")
-    (version "1.6.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRECAST" version))
        (sha256
-        (base32 "1p0bzf1hkcymwja6chm6wfjyql1g0ppq5r4m1d36pqqd108ic4lj"))))
+        (base32 "1a9vv6wx8bl4jwaj2jhm2n0xjzidzxhvllp726y0xaykz28hmvsc"))))
     (properties `((upstream-name . "PRECAST")))
     (build-system r-build-system)
     (arguments
@@ -12815,8 +12815,9 @@ anomaly.")
                              r-mclust
                              r-matrix
                              r-mass
+                             r-irlba
+                             r-harmony
                              r-gtools
-                             r-giraf
                              r-ggthemes
                              r-ggpubr
                              r-ggplot2
@@ -12826,7 +12827,8 @@ anomaly.")
                              r-colorspace))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/feiyoung/PRECAST")
-    (synopsis "Embedding and Clustering with Alignment for Spatial Datasets")
+    (synopsis
+     "Embedding and Clustering with Alignment for Spatial Omics Datasets")
     (description
      "An efficient data integration method is provided for multiple spatial
 transcriptomics data with non-cluster-relevant effects such as the complex batch
@@ -23508,6 +23510,38 @@ observation weights, logarithmic axis scaling, reordering of factor levels, and
 overlaying smoothing curves and median lines.  Plots are drawn using ggplot2'.")
     (license license:expat)))
 
+(define-public r-plotlsirm
+  (package
+    (name "r-plotlsirm")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plotlsirm" version))
+       (sha256
+        (base32 "0c06a6yvc9yr7cll1iqv45lnindmic14sj23mc9dnr5jx82rcrkp"))))
+    (properties `((upstream-name . "plotlsirm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-rlang
+                             r-patchwork
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/jevanluo/plotlsirm")
+    (synopsis "Plot Toolkit for Latent Space Item Response Models")
+    (description
+     "This package provides publicationâquality and interactive plots for exploring
+the posterior output of Latent Space Item Response Models, including Posterior
+Interaction Profiles, radar charts, 2âD latent maps, and itemâsimilarity
+heat maps.  The methods implemented in this package are based on work by Jeon,
+M., Jin, I. H., Schweinberger, M., Baugh, S. (2021)
+<doi:10.1007/s11336-021-09762-5>.")
+    (license license:gpl3+)))
+
 (define-public r-plothmm
   (package
     (name "r-plothmm")
@@ -28399,6 +28433,42 @@ Lippe (2007, <doi:10.3726/978-3-653-01120-3>), and the CPI manual (2020,
 inspection plans based on risks.  It generates a diagram of pallets in a lot,
 highlights the units to be sampled, and documents them based on the selected
 sampling method (simple random or systematic sampling).")
+    (license license:gpl3)))
+
+(define-public r-phytoin
+  (package
+    (name "r-phytoin")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PhytoIn" version))
+       (sha256
+        (base32 "0c9amq06ljjzwqfbm3syjq9xbgdlm68m1ncyd1ni6lj3klbmpfnc"))))
+    (properties `((upstream-name . "PhytoIn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-packcircles r-ggplot2 r-ggforce
+                             r-biomass))
+    (home-page "https://github.com/PhytoIn/PhytoIn")
+    (synopsis "Vegetation Analysis and Forest Inventory")
+    (description
+     "This package provides functions and example datasets for phytosociological
+analysis, forest inventory, biomass and carbon estimation, and visualization of
+vegetation data.  Includes functions to compute structural parameters
+@code{[phytoparam()}, @code{summary.param()}, @code{stats()}], estimate
+above-ground biomass and carbon @code{[AGB()}], stratify wood volume by diameter
+at breast height (DBH) classes @code{[stratvol()}], generate collector and
+rarefaction curves @code{[collector.curve()}, @code{rarefaction()}], and
+visualize basal areas on quadrat maps @code{[BAplot()}, including rectangular
+plots and individual coordinates].  Several example datasets are provided to
+demonstrate the functionality of these tools.  For more details see FAO (1981,
+ISBN:92-5-101132-X) \"Manual of forest inventory\", IBGE (2012,
+ISBN:9788524042720) \"Manual tÃ©cnico da vegetaÃ§Ã£o brasileira\" and Heringer et
+al. (2020) \"Phytosociology in R: A routine to estimate phytosociological
+parameters\" <doi:10.22533/at.ed.3552009033>.")
     (license license:gpl3)))
 
 (define-public r-phytoclass
@@ -39914,13 +39984,13 @@ image segmentation.")
 (define-public r-patterncausality
   (package
     (name "r-patterncausality")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "patterncausality" version))
        (sha256
-        (base32 "0azz0qfzmx3s25f2fw23ircd7h6pmli2i4k94rcp6vzywdis5vqq"))))
+        (base32 "1sr2mi9clc7rd100x6qh125d76xzbr9r5bmyyyjyfnymin77m31p"))))
     (properties `((upstream-name . "patterncausality")))
     (build-system r-build-system)
     (arguments
@@ -39940,10 +40010,8 @@ image segmentation.")
     (home-page "https://github.com/skstavroglou/pattern_causality/")
     (synopsis "Pattern Causality Algorithm")
     (description
-     "This package provides a comprehensive package for detecting and analyzing causal
-relationships in complex systems using pattern-based approaches.  Key features
-include state space reconstruction, pattern identification, and causality
-strength evaluation.")
+     "Pattern causality is a novel approach for detecting the hidden causality in the
+complex system.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -40039,13 +40107,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "1va0ghgzjmjdy7m5l79n35skp2m3c2fj8lyg9qmn0cgvvp86w4lq"))))
+        (base32 "0n828sryim8cpgq2abbny9gippcsm291bdlf5xdyrb1mm5ga4ig9"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (arguments
@@ -40058,8 +40126,8 @@ patient profile report(s) or can be embedded in custom report(s).")
                              r-omopgenerics
                              r-lifecycle
                              r-dplyr
-                             r-cli
-                             r-cdmconnector))
+                             r-clock
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://darwin-eu.github.io/PatientProfiles/")
     (synopsis
@@ -40114,13 +40182,13 @@ algorithms.  This is further described in Reps (2017)
 (define-public r-pathwayvote
   (package
     (name "r-pathwayvote")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PathwayVote" version))
        (sha256
-        (base32 "1qqp5l591mjhhslwqric0wagifsbpdrys84p39ndhgjn78hbcj25"))))
+        (base32 "07isaqcp2svnnkkgn9p3khfmjc3q9a3yf4qdw0bk1snh33fhmvpk"))))
     (properties `((upstream-name . "PathwayVote")))
     (build-system r-build-system)
     (arguments
@@ -40129,6 +40197,7 @@ algorithms.  This is further described in Reps (2017)
     (propagated-inputs (list r-reactome-db
                              r-parallelly
                              r-org-hs-eg-db
+                             r-harmonicmeanp
                              r-go-db
                              r-future
                              r-furrr

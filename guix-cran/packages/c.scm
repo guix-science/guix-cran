@@ -445,13 +445,13 @@ Bogon and Malware Hash Data Services.")
 (define-public r-cylcop
   (package
     (name "r-cylcop")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cylcop" version))
        (sha256
-        (base32 "1kh1h7zmk2d2p81ih1xyf3rv1g9gpjrdwyj3j812kp0krz71km4n"))))
+        (base32 "13bjz50h2c8q67l77qvvm5zm78nhvzs3y5dwqg0y97ai2kwas501"))))
     (properties `((upstream-name . "cylcop")))
     (build-system r-build-system)
     (arguments
@@ -476,7 +476,7 @@ Bogon and Malware Hash Data Services.")
                              r-cowplot
                              r-copula
                              r-circular))
-    (home-page "https://github.com/r-lib/devtools")
+    (home-page "https://github.com/floo66/cylcop")
     (synopsis
      "Circular-Linear Copulas with Angular Symmetry for Movement Data")
     (description
@@ -733,38 +733,6 @@ the two, respectively.")
      "Extend cxxfunction by saving the dynamic shared objects for reusing across R
 sessions.")
     (license license:gpl3)))
-
-(define-public r-cxreg
-  (package
-    (name "r-cxreg")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cxreg" version))
-       (sha256
-        (base32 "06qba55pb0z8bwsmczs4zbravjyn03sdm6a893xsv8ls7sk0pwgp"))))
-    (properties `((upstream-name . "cxreg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp
-                             r-mvtnorm
-                             r-matrix
-                             r-gdata
-                             r-foreach
-                             r-fields))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=cxreg")
-    (synopsis "Complex-Valued Lasso and Complex-Valued Graphical Lasso")
-    (description
-     "This package implements glmnet'-style complex-valued lasso and complex-valued
-graphical lasso using a pathwise coordinate descent algorithm for complex-valued
-parameters.  The package provides supporting tools for estimation, simulation,
-and prediction.  See Deb (2024) <doi:10.48550/@code{ArXiv.2401.11128>} for the
-algorithm description.")
-    (license license:expat)))
 
 (define-public r-cxr
   (package
@@ -19236,13 +19204,13 @@ Johnson and Wichern (2007, ISBN:0-13-187715-1).  Raymaekers and Rousseeuw (2019)
 (define-public r-confidencecurves
   (package
     (name "r-confidencecurves")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "confidenceCurves" version))
        (sha256
-        (base32 "01a3n5k3ra19mw9i950443ff0y6rii7n1m0ns5ga337dd4666lsg"))))
+        (base32 "1nc0alm6vh5wczx54hpcck64h3xy00r63b466dbj316fkgjawnnc"))))
     (properties `((upstream-name . "confidenceCurves")))
     (build-system r-build-system)
     (arguments
@@ -24572,13 +24540,13 @@ and plotting methods for a clear presentation of the results.")
 (define-public r-coint
   (package
     (name "r-coint")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COINT" version))
        (sha256
-        (base32 "0dwxkwwb4g34fga8zlhd7qyg48sq2dxlxzfvwy0c2k8ads5p08lg"))))
+        (base32 "0grvn11bswd8gw7par8r181yijp83vpl2pix6h70jfz1g87iyzpc"))))
     (properties `((upstream-name . "COINT")))
     (build-system r-build-system)
     (arguments
@@ -24590,7 +24558,7 @@ and plotting methods for a clear presentation of the results.")
      "Unit Root Tests with Structural Breaks and Fully-Modified Estimators")
     (description
      "Procedures include Phillips (1995) FMVAR <doi:10.2307/2171721>, Kitamura and
-Phillips (1997) FMGMM <doi:10.1016/S0304-4076(97)00004-3>, and Park (1992) CCR
+Phillips (1997) FMGMM <doi:10.1016/S0304-4076(97)00004-3>, Park (1992) CCR
 <doi:10.2307/2951679>, and so on.  Tests with 1 or 2 structural breaks include
 Gregory and Hansen (1996) <doi:10.1016/0304-4076(69)41685-7>, Zivot and Andrews
 (1992) <doi:10.2307/1391541>, and Kurozumi (2002)
@@ -30717,13 +30685,13 @@ cells.")
 (define-public r-clusroc
   (package
     (name "r-clusroc")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClusROC" version))
        (sha256
-        (base32 "055ppcnzwkapnyf9xvld4bvkccwf494gqcb2qq0vnsa8n6bz5k46"))))
+        (base32 "0d1iafg28j5620vj5mqlsiwd0wr1adkmq40spgq3dda0k77y660h"))))
     (properties `((upstream-name . "ClusROC")))
     (build-system r-build-system)
     (arguments
@@ -32776,13 +32744,13 @@ Guralnick <doi:10.17161/bi.v14i0.9786> Biodiversity Informatics.")
 (define-public r-climate
   (package
     (name "r-climate")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climate" version))
        (sha256
-        (base32 "04nx1ac2m2ml2qf00fa7qnh13w4chfdnimsfbqm59jszpwrpznsw"))))
+        (base32 "0hkw8npc5msc8dwxjlva9p8832ff0f4jl6f9376503khq56wz7jr"))))
     (properties `((upstream-name . "climate")))
     (build-system r-build-system)
     (arguments
@@ -39554,13 +39522,13 @@ following policies.")
 (define-public r-checkglobals
   (package
     (name "r-checkglobals")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "checkglobals" version))
        (sha256
-        (base32 "146d77mkb81d8nanyq3hw7cxn82941wcqxj70kb7m9g77ik4wzdq"))))
+        (base32 "0mzrd4zyancj96zikn366vv7fqf2fcngm87a7wcb6myqbamihv63"))))
     (properties `((upstream-name . "checkglobals")))
     (build-system r-build-system)
     (arguments
@@ -46233,13 +46201,13 @@ functions for efficient computation of cross distances and data manipulation.")
 (define-public r-cb2
   (package
     (name "r-cb2")
-    (version "1.3.4")
+    (version "1.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CB2" version))
        (sha256
-        (base32 "0431bd956hmkrhs9x845vjwbzzwzd7n9nfx9y95mv6qv84zd4wv2"))))
+        (base32 "16dnjqcs4y1msafv9n4008lga2b680xfgmrnlrrba2g0szf5lar1"))))
     (properties `((upstream-name . "CB2")))
     (build-system r-build-system)
     (arguments

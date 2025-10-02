@@ -19812,19 +19812,19 @@ diagnostic plots.")
 (define-public r-ggredist
   (package
     (name "r-ggredist")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggredist" version))
        (sha256
-        (base32 "0lki8rajp7sy4phv77c0w6ihqvl34b0b517l140y7j2j44w0dmf7"))))
+        (base32 "0hw1n9c7lhwrzbyjskxf1s8sify8d5d7hly4agbbscpa6mj1h1y4"))))
     (properties `((upstream-name . "ggredist")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-palette r-ggplot2))
+    (propagated-inputs (list r-scales r-rlang r-palette r-ggplot2))
     (home-page "https://github.com/alarm-redist/ggredist")
     (synopsis
      "Scales, Geometries, and Extensions of 'ggplot2' for Election Mapping")
@@ -22789,13 +22789,13 @@ projections of a latin hypercube design.")
 (define-public r-ggdnavis
   (package
     (name "r-ggdnavis")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggDNAvis" version))
        (sha256
-        (base32 "066an2av0b3979cygwxjx1hbj9cc9ms59i9azy9aq8xqkaclz5n6"))))
+        (base32 "1wm2719wxvv2nv6w1fk80y3i4pc5i96s8kzpzz74iqjsslh1c718"))))
     (properties `((upstream-name . "ggDNAvis")))
     (build-system r-build-system)
     (arguments
@@ -22804,7 +22804,6 @@ projections of a latin hypercube design.")
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
-                             r-raster
                              r-ragg
                              r-png
                              r-magick
@@ -29850,13 +29849,13 @@ on the possibility theory.")
 (define-public r-geneviewer
   (package
     (name "r-geneviewer")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geneviewer" version))
        (sha256
-        (base32 "17x35lycklk2qdghwrs8ibhlxf1xinr9n76wqzgkk8zxm2lj3176"))))
+        (base32 "17ir1gk6ny251136np0kxsy25p7rcn1hg36n5r9kfg66382ci4m9"))))
     (properties `((upstream-name . "geneviewer")))
     (build-system r-build-system)
     (arguments
@@ -31909,6 +31908,51 @@ high-dimensional data. (Mengyun Wu et al (2017),
 <doi:10.1016/j.ygeno.2018.07.006>; Mengyun Wu et al (2021),
 <doi:10.1093/bioinformatics/btab318>).")
     (license license:gpl2)))
+
+(define-public r-geint
+  (package
+    (name "r-geint")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GEint" version))
+       (sha256
+        (base32 "08yx5682mqmkyg6pr6y57cfzsd3ipg6zwh6mss4rb06y150iziqx"))))
+    (properties `((upstream-name . "GEint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-speedglm
+                             r-rje
+                             r-pracma
+                             r-nleqslv
+                             r-mvtnorm
+                             r-geepack
+                             r-bindata))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GEint")
+    (synopsis "Misspecified Models for Gene-Environment Interaction")
+    (description
+     "The first major functionality is to compute the bias in regression coefficients
+of misspecified linear gene-environment interaction models.  The most
+generalized function for this objective is @code{GE_bias()}.  However
+@code{GE_bias()} requires specification of many higher order moments of
+covariates in the model.  If users are unsure about how to calculate/estimate
+these higher order moments, it may be easier to use
+@code{GE_bias_normal_squaredmis()}.  This function places many more assumptions
+on the covariates (most notably that they are all jointly generated from a
+multivariate normal distribution) and is thus able to automatically calculate
+many of the higher order moments automatically, necessitating only that the user
+specify some covariances.  There are also functions to solve for the bias
+through simulation and non-linear equation solvers; these can be used to check
+your work.  Second major functionality is to implement the Bootstrap Inference
+with Correct Sandwich (BICS) testing procedure, which we have found to provide
+better finite-sample performance than other inference procedures for testing
+@code{GxE} interaction.  More details on these functions are available in Sun,
+Carroll, Christiani, and Lin (2018) <doi:10.1111/biom.12813>.")
+    (license license:gpl3)))
 
 (define-public r-geinfo
   (package

@@ -6233,61 +6233,6 @@ models; see Bischl et al. (2016) <doi:10.1016/j.artint.2016.04.003>.")
 @code{OpenAI} (<https://platform.openai.com/>) to answer questions (about R).")
     (license license:gpl3+)))
 
-(define-public r-asiaverse
-  (package
-    (name "r-asiaverse")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Asiaverse" version))
-       (sha256
-        (base32 "03jyvm7i9dh84i8zkhc5sdlcqzfbi8a4hv3j5lvjr6yq7y75yd20"))))
-    (properties `((upstream-name . "Asiaverse")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-southkoreapis
-                             r-japanapis
-                             r-indonesiapis
-                             r-indiapis
-                             r-cli
-                             r-chinapis))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/lightbluetitan/asiaverse")
-    (synopsis
-     "Metapackage for Asian Countries RESTful APIs and Curated Datasets")
-    (description
-     "This package provides a metapackage that brings together a comprehensive
-collection of R packages providing access to APIs functions and curated datasets
-from China, Japan, South Korea, India, and Indonesia.  It includes real-time and
-historical data through public RESTful APIs (Nager.Date, World Bank API, REST
-Countries API) and extensive curated collections of open datasets covering
-economics, demographics, public health, environmental data, natural disasters,
-political indicators, and social metrics.  Designed to provide researchers,
-analysts, educators, and data scientists with centralized access to Asian data
-sources, this metapackage facilitates reproducible research, comparative
-analysis, and teaching applications focused on these five major Asian countries.
- Included packages: - @code{ChinAPIs}': APIs functions and curated datasets for
-China and Hong Kong covering air quality, demographics, input-output tables,
-epidemiology, political structure, and social indicators. - @code{JapanAPIs}':
-APIs functions and curated datasets for Japan including natural disasters,
-economic production, vehicle industry, air quality, demographics, and
-administrative divisions. - @code{SouthKoreAPIs}': APIs functions and curated
-datasets for South Korea covering public health outbreaks, social surveys,
-elections, economic indicators, natural disasters, climate data, energy
-consumption, cultural information, and financial markets. - @code{IndiAPIs}':
-APIs functions and curated datasets for India with comprehensive collections and
-real-time access to economic, demographic, and geopolitical indicators. -
-@code{IndonesiAPIs}': APIs functions and curated datasets for Indonesia covering
-holidays, economic indicators, consumer prices, poverty probability, food prices
-by region, tourism destinations, and minimum wage statistics.  For more
-information on the APIs, see: Nager.Date <https://date.nager.at/Api>, World Bank
-API <https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, and REST
-Countries API <https://restcountries.com/>.")
-    (license license:expat)))
-
 (define-public r-asht
   (package
     (name "r-asht")
@@ -19066,13 +19011,13 @@ Visit: <https://yqzhong7.github.io/AIPW/> for more information.")
 (define-public r-aion
   (package
     (name "r-aion")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aion" version))
        (sha256
-        (base32 "1lvl78zzvvq1dvlchva9qk505k9z82aci2r5x9f009cx9b0k3yid"))))
+        (base32 "08flinh33xqfp7ijz4z6d1mwjfgg1iyxavspx9mcb29y0fdf8pwq"))))
     (properties `((upstream-name . "aion")))
     (build-system r-build-system)
     (arguments

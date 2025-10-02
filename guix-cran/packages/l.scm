@@ -2872,13 +2872,13 @@ Mukhopadhyay, S. and Wang, K. (2020, Biometrika); <@code{arXiv:1810.01724>}.")
 (define-public r-lpirfs
   (package
     (name "r-lpirfs")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpirfs" version))
        (sha256
-        (base32 "19p0hwhcapc72a4b0y7ldpwlrcd497y2rdvmiah10z8vj4msagm2"))))
+        (base32 "0h1jwsrgnnzqm3v7jznqkm82afs6dfqs6laczkfcn0s7a91j079q"))))
     (properties `((upstream-name . "lpirfs")))
     (build-system r-build-system)
     (arguments
@@ -13651,6 +13651,30 @@ ground-up, and much more.")
 dearest butterfly species.  This package provides continuous and categorical
 palettes, including some colour blind friendly options.")
     (license license:gpl3+)))
+
+(define-public r-lepage
+  (package
+    (name "r-lepage")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LePage" version))
+       (sha256
+        (base32 "1kj2j340nhzzz33hqszi4wm170b75cr5pa03svgcz7c0ybknacb1"))))
+    (properties `((upstream-name . "LePage")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast))
+    (home-page "https://cran.r-project.org/package=LePage")
+    (synopsis "LePage Type Tests")
+    (description
+     "Location and scale hypothesis testing using the @code{LePage} test and variants
+of its as proposed by Hussain A. and Tsagris M. (2025),
+<doi:10.48550/@code{arXiv.2509.19126>}.")
+    (license license:gpl2+)))
 
 (define-public r-leontief
   (package

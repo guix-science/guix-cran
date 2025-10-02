@@ -835,13 +835,13 @@ information published on J-STAGE <https://www.jstage.jst.go.jp/browse/-char/ja>.
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.3.17")
+    (version "1.3.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstable" version))
        (sha256
-        (base32 "0c22m7gwpqjnal8avd5ph6nfilpqpb44nzvj3lja5ci6dgs3cyxf"))))
+        (base32 "1wz225qhcjfjqkg2x60m0csswy4d7lh5wlmg0kn5vrzacj9f6l7g"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (arguments
@@ -1182,13 +1182,13 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.5.16")
+    (version "0.5.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jskm" version))
        (sha256
-        (base32 "1k4ffibfpxxwrfcfbaim5r2l05sp4054vi2v93paklmsp8nayky1"))))
+        (base32 "0d6kri0iwqrz86674lgkkwyvcxrphcnjrpw2749zdk9h5ramdmm2"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
     (arguments

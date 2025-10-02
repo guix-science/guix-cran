@@ -1207,13 +1207,13 @@ time.")
 (define-public r-hydroloom
   (package
     (name "r-hydroloom")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydroloom" version))
        (sha256
-        (base32 "1m69bh09ci3zbwpqlkfjjp66l3lsav62sxb0y3ilb57cfswdd7qz"))))
+        (base32 "0h15b2c8lwz21gbr0z4hmcnbkgks2vbpd62y2bn50pmiz1a1rski"))))
     (properties `((upstream-name . "hydroloom")))
     (build-system r-build-system)
     (arguments

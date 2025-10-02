@@ -11098,13 +11098,13 @@ to calculate equilibrium stability.")
 (define-public r-fluxtools
   (package
     (name "r-fluxtools")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxtools" version))
        (sha256
-        (base32 "0b06zirqz3x3bgznmbq1wcimclhjawwds5j2dz3qpi52168xzjm3"))))
+        (base32 "0bxx4mjfsgpaayhqmaf4cac5d3ms598g345n8gbfqhdqzbkmc810"))))
     (properties `((upstream-name . "fluxtools")))
     (build-system r-build-system)
     (arguments
@@ -15286,13 +15286,13 @@ Kirkkojarvi, Finland\".")
 (define-public r-fishgrowth
   (package
     (name "r-fishgrowth")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fishgrowth" version))
        (sha256
-        (base32 "0x43998j7i0m1933syz8nrl1sf874ilxrz18l52lywlscz13r8mp"))))
+        (base32 "04qxvmbcj4cfpj8xy1dgwnslsw5lhf3q77z3y4xj50di73v75mrf"))))
     (properties `((upstream-name . "fishgrowth")))
     (build-system r-build-system)
     (arguments
@@ -15564,6 +15564,47 @@ of server-side web security.  Be aware that security cannot be handled blindly,
 and even though these plugins will raise the security of your server you should
 not build critical infrastructure without the aid of a security expert.")
     (license license:expat)))
+
+(define-public r-fireexposur
+  (package
+    (name "r-fireexposur")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fireexposuR" version))
+       (sha256
+        (base32 "04hr9hm9azyvh08wf5nvbihvnnwywvgc651smjyj0g6m8vvgpq1g"))))
+    (properties `((upstream-name . "fireexposuR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmap
+                             r-tidyterra
+                             r-tidyselect
+                             r-tidyr
+                             r-terra
+                             r-sf
+                             r-rlang
+                             r-multiscaledtm
+                             r-maptiles
+                             r-magrittr
+                             r-ggspatial
+                             r-ggplot2
+                             r-geosphere
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/fireexposuR")
+    (synopsis "Compute and Visualize Wildfire Exposure")
+    (description
+     "This package provides methods for computing and visualizing wildfire ignition
+exposure and directional vulnerability that are published in a series of
+scientific publications are automated by the functions in this package.  See
+Beverly et al. (2010) <doi:10.1071/WF09071>, Beverly et al. (2021)
+<doi:10.1007/s10980-020-01173-8>, and Beverly and Forbes (2023)
+<doi:10.1007/s11069-023-05885-3> for background and methodology.")
+    (license license:gpl3+)))
 
 (define-public r-firebehavior
   (package
@@ -17115,39 +17156,6 @@ complex, integer, logical, and raw).")
 class in microeco package.  The microtable class is the basic class in microeco
 package and is necessary for the downstream microbial community data analysis.")
     (license license:gpl3)))
-
-(define-public r-figures2
-  (package
-    (name "r-figures2")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "figuRes2" version))
-       (sha256
-        (base32 "1s1bvhgzczkpxfmi1cyz4cfvpxvq28fm5867a4w5q0wpjcbhlma4"))))
-    (properties `((upstream-name . "figuRes2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-stringr
-                             r-scales
-                             r-reshape2
-                             r-plyr
-                             r-gtable
-                             r-gridextra
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/gcicc/figures2")
-    (synopsis "Support for a Variety of Figure Production Tasks")
-    (description
-     "We view a figure as a collection of graphs/tables assembled on a page and
-optionally annotated with metadata (titles, headers and footers).  Functions and
-supporting documentation are offered to streamline a variety of figure
-production task.")
-    (license license:gpl2)))
 
 (define-public r-figpatch
   (package
@@ -20006,6 +20014,42 @@ of the analyzes is related to the quality of the data present in the database
 with a focus on consistency , punctuality and completeness of data.")
     (license license:gpl3)))
 
+(define-public r-fdott
+  (package
+    (name "r-fdott")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FDOTT" version))
+       (sha256
+        (base32 "1sh9c8r2zvy0cx7q15b5jgg0f1639956yz96fjapr77wxfm71pyz"))))
+    (properties `((upstream-name . "FDOTT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-transport
+                             r-slam
+                             r-rrapply
+                             r-roi
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progressr
+                             r-future-apply))
+    (home-page "https://cran.r-project.org/package=FDOTT")
+    (synopsis "Optimal Transport Based Testing in Factorial Design")
+    (description
+     "Perform optimal transport based tests in factorial designs as introduced in
+Groppe et al. (2025) <doi:10.48550/@code{arXiv.2509.13970>} via the
+@code{FDOTT()} function.  These tests are inspired by ANOVA and its
+nonparametric counterparts.  They allow for testing linear relationships in
+factorial designs between finitely supported probability measures on a metric
+space.  Such relationships include equality of all measures (no treatment
+effect), interaction effects between a number of factors, as well as main and
+simple factor effects.")
+    (license license:gpl3+)))
+
 (define-public r-fdma
   (package
     (name "r-fdma")
@@ -21938,13 +21982,13 @@ specify multiple values to be replaced with NA using a single function.")
 (define-public r-faux
   (package
     (name "r-faux")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "faux" version))
        (sha256
-        (base32 "06z9bn24pgckg7dysba4yskgh80hw6cdslqpz06w803v6whcn46i"))))
+        (base32 "0kdcxmhab7g6w4zh6i7g8f302dlh4j2i61pv3kmhmfy912cw1c3s"))))
     (properties `((upstream-name . "faux")))
     (build-system r-build-system)
     (arguments
@@ -21957,12 +22001,12 @@ specify multiple values to be replaced with NA using a single function.")
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/debruine/faux")
+    (home-page "https://github.com/scienceverse/faux")
     (synopsis "Simulation for Factorial Designs")
     (description
      "Create datasets with factorial structure through simulation by specifying
 variable parameters.  Extended documentation at
-<https://debruine.github.io/faux/>.  Described in @code{DeBruine} (2020)
+<https://scienceverse.github.io/faux/>.  Described in @code{DeBruine} (2020)
 <doi:10.5281/zenodo.2669586>.")
     (license license:expat)))
 

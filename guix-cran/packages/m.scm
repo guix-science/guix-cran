@@ -3846,13 +3846,13 @@ methods at the masters program of Applied Statistics at University of Ljubljana.
 (define-public r-multitraits
   (package
     (name "r-multitraits")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiTraits" version))
        (sha256
-        (base32 "1yf4v0wh92gikkpmdycm8iq4z9flg9db94s432maaj6b9x0061w0"))))
+        (base32 "19d10plqc8g8jy2iiqhm8c06395j9gpc72lsfq39hhw8h1fcbr20"))))
     (properties `((upstream-name . "MultiTraits")))
     (build-system r-build-system)
     (arguments
@@ -3860,12 +3860,18 @@ methods at the masters program of Applied Statistics at University of Ljubljana.
       #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-scatterplot3d
+                             r-rpart
+                             r-rlang
+                             r-magrittr
                              r-igraph
                              r-hmisc
-                             r-ggtern
+                             r-ggsci
                              r-ggrepel
+                             r-ggraph
                              r-ggplot2
-                             r-corrplot))
+                             r-dplyr
+                             r-corrplot
+                             r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MultiTraits")
     (synopsis "Analyzing and Visualizing Multidimensional Plant Traits")
@@ -3877,8 +3883,8 @@ and Trait Network analysis.  Provides functions for data analysis,
 visualization, and network metrics calculation.  Methods are based on Grime
 (1974) <doi:10.1038/250026a0>, Pierce et al. (2017)
 <doi:10.1111/1365-2435.12882>, Westoby (1998) <doi:10.1023/A:1004327224729>,
-Yang et al. (2022) <doi:10.1016/j.foreco.2022.120540>, Winemiller et al. (2015)
-<doi:10.1111/ele.12462>, He et al. (2020) <doi:10.1016/j.tree.2020.06.003>.")
+Winemiller et al. (2015) <doi:10.1111/ele.12462>, He et al. (2020)
+<doi:10.1016/j.tree.2020.06.003>.")
     (license license:gpl3)))
 
 (define-public r-multitool
@@ -5534,13 +5540,13 @@ python'.")
 (define-public r-multilevlca
   (package
     (name "r-multilevlca")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevLCA" version))
        (sha256
-        (base32 "1ndkww4rpwz3ydqrahw1fxn7fvl9ac3skk2x8dm2qgnpandx5j8z"))))
+        (base32 "12yv1l62ghhabplb5c6w4kqabraphdbw7ayg0cgvj558jd4wi6dc"))))
     (properties `((upstream-name . "multilevLCA")))
     (build-system r-build-system)
     (arguments
@@ -11153,31 +11159,6 @@ using a parallel backend.  Input data sets are split (chunked) and simulated in
 parallel using @code{mclapply()} or @code{future_lapply()}
 <https://cran.r-project.org/package=future.apply>.")
     (license license:gpl2+)))
-
-(define-public r-mrgdp
-  (package
-    (name "r-mrgdp")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mrgdp" version))
-       (sha256
-        (base32 "006h373g6rh5plqkhqd7srac70g7zw093b3b4qzlp1n260bxh0r8"))))
-    (properties `((upstream-name . "mrgdp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "<https://github.com/MarcoAPerezM/mrgdp>")
-    (synopsis "Mexican Regional Gross Domestic Product")
-    (description
-     "Download Mexican economic census for several years (2004, 2009, 2014 and 2019)
-and all federal entities.  Filter the census data table by municipal data and
-build a data.frame for all federal entities and several years.")
-    (license license:gpl2)))
 
 (define-public r-mrg
   (package
@@ -18580,34 +18561,6 @@ functional connectivity networks across multiple subjects.  This package also
 contains an implementation of a novel algorithm through which to simulate
 multiple related precision matrices which exhibit properties frequently reported
 in neuroimaging analysis.")
-    (license license:gpl2)))
-
-(define-public r-mnreadr
-  (package
-    (name "r-mnreadr")
-    (version "2.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mnreadR" version))
-       (sha256
-        (base32 "0dr1xvvz16g7zvq9kqz9701mxdp0wh2lpkimcad43k395ngw1g2g"))))
-    (properties `((upstream-name . "mnreadR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-tibble r-nlme r-ggplot2 r-dplyr))
-    (home-page "https://legge.psych.umn.edu/mnread-acuity-charts")
-    (synopsis "MNREAD Parameters Estimation and Curve Plotting")
-    (description
-     "Allows to analyze the reading data obtained with the MNREAD Acuity Chart, a
-continuous-text reading acuity chart for normal and low vision.  Provides the
-necessary functions to plot the MNREAD curve and estimate automatically the four
-MNREAD parameters: Maximum Reading Speed, Critical Print Size, Reading Acuity
-and Reading Accessibility Index.  Parameters can be estimated either with the
-standard method or with a nonlinear mixed-effects (NLME) modeling.  See
-Calabrese et al.  2018 for more details <doi:10.1167/18.1.8>.")
     (license license:gpl2)))
 
 (define-public r-mnp
@@ -31746,13 +31699,13 @@ Scientific Research, 188-196.
 (define-public r-mgwnbr
   (package
     (name "r-mgwnbr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mgwnbr" version))
        (sha256
-        (base32 "0vmpvfnnq1ylsivizz888akaq74ybz890nspj40zx5wr7dv2rkz7"))))
+        (base32 "179z9xqikdc8kqbb9pz2z7q4ga6mgrf146sfjngds236xcfvjcdr"))))
     (properties `((upstream-name . "mgwnbr")))
     (build-system r-build-system)
     (arguments
@@ -33944,13 +33897,13 @@ Ecology (METE).")
 (define-public r-meteospain
   (package
     (name "r-meteospain")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meteospain" version))
        (sha256
-        (base32 "1jv8zh5vmpwz3vc7j72qawf2ll78qjyzlqmic2zc9dnwqwf17lry"))))
+        (base32 "056z0v464v1rylv1r0832yvy6s6s8xs3l7mh9nqkmf2kw7sgs8wp"))))
     (properties `((upstream-name . "meteospain")))
     (build-system r-build-system)
     (arguments
@@ -49156,19 +49109,20 @@ re-labelling categorical variables.")
 (define-public r-mapperalgo
   (package
     (name "r-mapperalgo")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MapperAlgo" version))
        (sha256
-        (base32 "0r545cdnydapvd2rwxcriac78j7b22bl663pvirqmbzdcq4aqcjb"))))
+        (base32 "1jk345b71hlh2q7y1igwrbjf7yapy52kyv0qa6gvzql1sgcig2ad"))))
     (properties `((upstream-name . "MapperAlgo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidygraph
+    (propagated-inputs (list r-webshot2
+                             r-tidygraph
                              r-rlang
                              r-networkd3
                              r-igraph
@@ -49177,7 +49131,7 @@ re-labelling categorical variables.")
                              r-ggplot2
                              r-foreach
                              r-doparallel))
-    (home-page "https://github.com/kennywang112/MapperAlgo/")
+    (home-page "https://github.com/TDA-R/MapperAlgo")
     (synopsis "Topological Data Analysis: Mapper Algorithm")
     (description
      "The Mapper algorithm from Topological Data Analysis, the steps are as follows 1.

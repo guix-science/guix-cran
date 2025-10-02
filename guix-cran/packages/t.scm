@@ -17706,13 +17706,13 @@ be inserted into the output stream.")
 (define-public r-tikatuwq
   (package
     (name "r-tikatuwq")
-    (version "0.4.6")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tikatuwq" version))
        (sha256
-        (base32 "0iiy9sk3wliakmmswhgn2l8y5xlcx5cf0wcmnha1ncfxzrj4z7ng"))))
+        (base32 "1pzpx8gqbvn9xqpfc9mjbxzdj8kham5rld8hj00nizcbgqhrygg1"))))
     (properties `((upstream-name . "tikatuwq")))
     (build-system r-build-system)
     (arguments
@@ -17726,6 +17726,7 @@ be inserted into the output stream.")
                              r-readr
                              r-purrr
                              r-lubridate
+                             r-leaflet
                              r-glue
                              r-ggplot2
                              r-dplyr
@@ -17740,8 +17741,8 @@ Quality Index (WQI/IQA), the Trophic State Index (TSI/IET) after Carlson (1977)
 <doi:10.4319/lo.1977.22.2.0361> and Lamparelli (2004)
 <https://www.teses.usp.br/teses/disponiveis/41/41134/tde-20032006-075813/publico/@code{TeseLamparelli2004.pdf>},
 and the National Sanitation Foundation Water Quality Index (NSF WQI)
-<https://www.nsf.org/education/nsf-water-quality-index>.  The package also
-checks compliance with Brazilian standard CONAMA Resolution 357/2005
+<doi:10.1007/s11157-023-09650-7>.  The package also checks compliance with
+Brazilian standard CONAMA Resolution 357/2005
 <https://conama.mma.gov.br/?id=450&option=com_sisconama&task=arquivo.download>
 and generates reproducible reports for routine monitoring workflows.")
     (license license:expat)))
