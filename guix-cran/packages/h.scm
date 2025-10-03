@@ -6361,13 +6361,13 @@ Arguments and data are standardized.")
 (define-public r-hmde
   (package
     (name "r-hmde")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmde" version))
        (sha256
-        (base32 "0vj381zzcmmmzm8nyin0r7h9nnl0a6vrs35mgns70h5i8l5zmagb"))))
+        (base32 "14s0npwrfpqfxy6na7a0pm5q8zimxkrd4nf7q109jiyh3472fc8d"))))
     (properties `((upstream-name . "hmde")))
     (build-system r-build-system)
     (arguments

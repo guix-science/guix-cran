@@ -5701,13 +5701,13 @@ numbers from different sources.")
 (define-public r-rstoolbox
   (package
     (name "r-rstoolbox")
-    (version "1.0.2.1")
+    (version "1.0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RStoolbox" version))
        (sha256
-        (base32 "1f73s22i81a1yq6rdh0lpd8jkwkgnz992kl96d741r3jyp1f659j"))))
+        (base32 "1mzmldbknxzgkil63gy2568hfr85rbswv7r74ifilqr77jzkklwx"))))
     (properties `((upstream-name . "RStoolbox")))
     (build-system r-build-system)
     (arguments
@@ -16747,13 +16747,13 @@ variables; test of endogeneity in high dimensions ('Guo et al. (2016)
 (define-public r-robusthd
   (package
     (name "r-robusthd")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustHD" version))
        (sha256
-        (base32 "0f42x3r8g9nppfdd9vfqhq1ccj4sv8q1g7mdwlkmcyak3fajswcv"))))
+        (base32 "1b3kj6qfnzxfljyhwzydi2m6jbyia16a5ga2mp12l5b4pvry7ywp"))))
     (properties `((upstream-name . "robustHD")))
     (build-system r-build-system)
     (arguments
@@ -22895,19 +22895,19 @@ small-scale applications, and lightweight data management needs.")
 (define-public r-rloptimal
   (package
     (name "r-rloptimal")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RLoptimal" version))
        (sha256
-        (base32 "06ry5hvhgrgx4is385sw55n44k3h3kim7w6q79qls03liwklvwbl"))))
+        (base32 "0lv3q1g5xhdvh10ahv48w3hgqvdllzwc18xn1wpynawf8s17j960"))))
     (properties `((upstream-name . "RLoptimal")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reticulate r-r6 r-glue r-dosefinding))
+    (propagated-inputs (list r-zip r-reticulate r-r6 r-glue r-dosefinding))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MatsuuraKentaro/RLoptimal")
     (synopsis "Optimal Adaptive Allocation Using Deep Reinforcement Learning")
@@ -24481,13 +24481,13 @@ combinations, fast transformations, and more...")
 (define-public r-rjdworkspace
   (package
     (name "r-rjdworkspace")
-    (version "1.1.9")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjdworkspace" version))
        (sha256
-        (base32 "154s42323nglipn9cs3qfghhdc3d3lf36c7l82axnnn2720cppz2"))))
+        (base32 "12b6qnz5ivc7mryl85ccgjlcl8fk53zy4gm7zm607af5mhjawn1s"))))
     (properties `((upstream-name . "rjdworkspace")))
     (build-system r-build-system)
     (arguments
@@ -31020,13 +31020,13 @@ limits: 70+ tips. @code{PeerJ} Preprints 6:e26605v1
 (define-public r-rfars
   (package
     (name "r-rfars")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfars" version))
        (sha256
-        (base32 "035bk10pk2d69h1ljlnbpg2f9g79q95yz7xpy8qppp31dsb1lz4b"))))
+        (base32 "1i1p84xj47yicg9ij35pvpnm2zamabh22dp4jf3yppknvcw03hah"))))
     (properties `((upstream-name . "rfars")))
     (build-system r-build-system)
     (arguments
@@ -32379,13 +32379,13 @@ National University of Jujuy (UNJu).")
 (define-public r-resultmodelmanager
   (package
     (name "r-resultmodelmanager")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ResultModelManager" version))
        (sha256
-        (base32 "1hrrv04xf8jddz51ifrqf7q9cbj5fwc3j0fmwh5dxm687zfjsafb"))))
+        (base32 "18hx4c68l2p9g2kq2s45vqdbnpjj7jk3ihmkkiff30mv80sj33w1"))))
     (properties `((upstream-name . "ResultModelManager")))
     (build-system r-build-system)
     (arguments
@@ -44141,13 +44141,13 @@ library.")
 (define-public r-rdeps
   (package
     (name "r-rdeps")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdeps" version))
        (sha256
-        (base32 "1r5vgzgp4j4agl8x3n3dgmxkj5bcwac9bpqz9cf1cqsqhg7lx5jn"))))
+        (base32 "1aa05xqjgkjf48pm9i2wv94aqkafa7ibmjxjs1jmjdpxs57hxb3s"))))
     (properties `((upstream-name . "rdeps")))
     (build-system r-build-system)
     (arguments

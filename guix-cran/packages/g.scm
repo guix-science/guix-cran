@@ -3857,13 +3857,13 @@ allows to identify the most sensitive parameter or parameters of a model.")
 (define-public r-grwat
   (package
     (name "r-grwat")
-    (version "0.0.4")
+    (version "0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grwat" version))
        (sha256
-        (base32 "10sv1kzf9z1c27d99rvxvx1gmhga6rj1mcyfkvyg93gd8i1jwxg9"))))
+        (base32 "17s19wmr8b01qbbj3lzc3ypifnic5m2fdna5xp43l9mjvn4clm6r"))))
     (properties `((upstream-name . "grwat")))
     (build-system r-build-system)
     (arguments
@@ -3878,7 +3878,6 @@ allows to identify the most sensitive parameter or parameters of a model.")
                              r-rcpp
                              r-r-utils
                              r-mblm
-                             r-magrittr
                              r-lubridate
                              r-ggplot2
                              r-dplyr
@@ -9997,13 +9996,13 @@ categorical and quantitative variables.  Emerson et al. (2013)
 (define-public r-gpabin
   (package
     (name "r-gpabin")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPAbin" version))
        (sha256
-        (base32 "043qmhybvfpw0jvlj3lgz739r0n1whhzz43c77rnyvbpcrf8szq3"))))
+        (base32 "0v47h4k233wpfccz8hqz053l04843mmin142ygs8bvgy34mjv1yx"))))
     (properties `((upstream-name . "GPAbin")))
     (build-system r-build-system)
     (arguments
@@ -10016,7 +10015,7 @@ categorical and quantitative variables.  Emerson et al. (2013)
                              r-mi
                              r-jomo
                              r-ca))
-    (home-page "https://cran.r-project.org/package=GPAbin")
+    (home-page "https://jnienk.github.io/GPAbin/")
     (synopsis "Unifying Multiple Biplot Visualisations into a Single Display")
     (description
      "Aligning multiple visualisations by utilising generalised orthogonal Procrustes
@@ -14719,13 +14718,13 @@ restructuring.")
 (define-public r-glmmseq
   (package
     (name "r-glmmseq")
-    (version "0.5.5")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmSeq" version))
        (sha256
-        (base32 "182pgwqqbgpkcvapkps7ahxa4ppic44j10081q0v9lp2cjdiv4qy"))))
+        (base32 "0gskfal5f2hmqi14v6qii5czpmwqzvxzp1v70c0l0dv7n6ncfyb5"))))
     (properties `((upstream-name . "glmmSeq")))
     (build-system r-build-system)
     (arguments
@@ -14733,14 +14732,16 @@ restructuring.")
       #:tests? #f))
     (propagated-inputs (list r-qvalue
                              r-plotly
-                             r-pbmcapply
                              r-pbapply
+                             r-mcprogress
                              r-mass
                              r-lmertest
                              r-lme4
+                             r-kableextra
                              r-glmmtmb
                              r-ggpubr
                              r-ggplot2
+                             r-emmeans
                              r-car))
     (native-inputs (list r-knitr))
     (home-page "https://myles-lewis.github.io/glmmSeq/")
@@ -21168,19 +21169,19 @@ data.")
 (define-public r-ggmcmc
   (package
     (name "r-ggmcmc")
-    (version "1.5.1.1")
+    (version "1.5.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmcmc" version))
        (sha256
-        (base32 "1y6ya2qihm8h6ds84akhmsxn9c8jriw03wakaqzsmi21agz87n21"))))
+        (base32 "0pmmfyhhyh2800snnx489p0q1wnj89nbvq1sd5cpq0ak7liz4yx4"))))
     (properties `((upstream-name . "ggmcmc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-ggplot2 r-ggally r-dplyr))
+    (propagated-inputs (list r-tidyr r-mass r-ggplot2 r-ggally r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "http://xavier-fim.net/packages/ggmcmc/")
     (synopsis "Tools for Analyzing MCMC Simulations from Bayesian Inference")
@@ -28533,13 +28534,13 @@ although an effort is made to also offer annotations in English.")
 (define-public r-geoadjust
   (package
     (name "r-geoadjust")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoAdjust" version))
        (sha256
-        (base32 "0251672j2vl9jck31zfcqzsyw8pphzs934j8ljjmnw9qqd3gzd2p"))))
+        (base32 "036pb3b82881y94jbdqawmyd7iryv6wmxzjk2iybvrwikilwx7xr"))))
     (properties `((upstream-name . "GeoAdjust")))
     (build-system r-build-system)
     (arguments
@@ -28563,10 +28564,10 @@ survey household cluster center coordinates in geostatistical analyses of
 Demographic and Health Surveys program (DHS) data.  Adjustment for jittering can
 be implemented either in the spatial random effect, or in the raster/distance
 based covariates, or in both.  Detailed information about the methods behind the
-package functionality can be found in two preprints.  Umut Altay, John Paige,
-Andrea Riebler, Geir-Arne Fuglstad (2022) <@code{arXiv:2202.11035v2>}.  Umut
-Altay, John Paige, Andrea Riebler, Geir-Arne Fuglstad (2022)
-<@code{arXiv:2211.07442v1>}.")
+package functionality can be found in our two papers.  Umut Altay, John Paige,
+Andrea Riebler, Geir-Arne Fuglstad (2024) <doi:10.32614/RJ-2024-027>.  Umut
+Altay, John Paige, Andrea Riebler, Geir-Arne Fuglstad (2023)
+<doi:10.1177/1471082X231219847>.")
     (license license:gpl2+)))
 
 (define-public r-genwin

@@ -2125,13 +2125,13 @@ remove as much redundant typing as possible.")
 (define-public r-explore
   (package
     (name "r-explore")
-    (version "1.3.5")
+    (version "1.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "explore" version))
        (sha256
-        (base32 "0as72wrnafz56jskz4zllny1abs731na7a3zzllp1047z05knjrr"))))
+        (base32 "0r1d866a69k180p3id3r0ygr3lk715y65fhl3n0qcr3dbq08x03d"))))
     (properties `((upstream-name . "explore")))
     (build-system r-build-system)
     (arguments
@@ -21047,33 +21047,6 @@ experimental components like units, treatments, and their relation.  The system
 aids in experimental planning, management and workflow.")
     (license license:expat)))
 
-(define-public r-edgemodelr
-  (package
-    (name "r-edgemodelr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "edgemodelr" version))
-       (sha256
-        (base32 "14kyj6nqqdkyxm4p31crix6vg6r0wfpv56p7zd8lmqlxfak9nmr5"))))
-    (properties `((upstream-name . "edgemodelr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/PawanRamaMali/edgemodelr")
-    (synopsis "Local Language Model Inference")
-    (description
-     "Enables R users to run large language models locally using GGUF model files and
-the llama.cpp inference engine.  Provides a complete R interface for loading
-models, generating text completions, and streaming responses in real-time.
-Supports local inference without requiring cloud APIs or internet connectivity,
-ensuring complete data privacy and control.  References: Gerganov et al. (2023)
-<https://github.com/ggml-org/llama.cpp>.")
-    (license license:expat)))
-
 (define-public r-edgedata
   (package
     (name "r-edgedata")
@@ -25964,13 +25937,13 @@ Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
 (define-public r-easybio
   (package
     (name "r-easybio")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easybio" version))
        (sha256
-        (base32 "043ivli3rx3cr4777kcf8vj397xpkl3ysspb6drzw3yg6nh07rvz"))))
+        (base32 "1pklvb0mwihlj7ahn6c833wms7iw3m7j0zar8cna8m874k8a34pn"))))
     (properties `((upstream-name . "easybio")))
     (build-system r-build-system)
     (arguments

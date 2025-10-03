@@ -9129,40 +9129,6 @@ hierarchical or grouped time series) in cross-sectional, temporal, or
 cross-temporal frameworks.")
     (license license:gpl3)))
 
-(define-public r-forecasttb
-  (package
-    (name "r-forecasttb")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ForecastTB" version))
-       (sha256
-        (base32 "1wqgw4i65ajwj8la8mgv2qqm4ydgk90i6chdkd8h33rlwh8yddc6"))))
-    (properties `((upstream-name . "ForecastTB")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2
-                             r-rcolorbrewer
-                             r-psf
-                             r-imputetestbench
-                             r-gridextra
-                             r-ggplot2
-                             r-forecast
-                             r-decomposedpsf
-                             r-circlize))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ForecastTB")
-    (synopsis "Test Bench for the Comparison of Forecast Methods")
-    (description
-     "This package provides a test bench for the comparison of forecasting methods in
-uni-variate time series.  Forecasting methods are compared using different error
-metrics.  Proposed forecasting methods and alternative error metrics can be
-used.  Detailed discussion is provided in the vignette.")
-    (license license:cc0)))
-
 (define-public r-forecastsnsts
   (package
     (name "r-forecastsnsts")

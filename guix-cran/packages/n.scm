@@ -6262,13 +6262,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "11.6")
+    (version "11.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "1i5vjyp70r2rjf50cgldkdlsn7yssjvrapqdrxdbk314b19k44rj"))))
+        (base32 "00q8x8yqhd98rn4qgvyrd5j7wb528lz9d9vq90h710ajbjsz8g97"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (arguments
@@ -7219,13 +7219,13 @@ of different treatments.")
 (define-public r-nmaoutlier
   (package
     (name "r-nmaoutlier")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMAoutlier" version))
        (sha256
-        (base32 "1jjypjfscsvi8x78jnrpw05fp8vd1dxlrdqld7m3a540scx056cj"))))
+        (base32 "0sn6jk5d4xgv2pz5n66i18izbjf7lncldmvhczzhlgmbl1aa13ln"))))
     (properties `((upstream-name . "NMAoutlier")))
     (build-system r-build-system)
     (arguments

@@ -10149,13 +10149,13 @@ cohesive plots that can highlight model misspecification.")
 (define-public r-vaccineff
   (package
     (name "r-vaccineff")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vaccineff" version))
        (sha256
-        (base32 "1cvcfp8a229i3i1s725i9g5qgbaj22h9k69yyfpwmbjbp14lmgm7"))))
+        (base32 "0c88dah4cz5kv4mbajnvf5k8g8g3xnk5kk1qz1kv9nr9hvjw41r4"))))
     (properties `((upstream-name . "vaccineff")))
     (build-system r-build-system)
     (arguments

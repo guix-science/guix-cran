@@ -7507,13 +7507,13 @@ Decision Analysis (MCDA) process involving multiple criteria, by PROMETHEE
 (define-public r-prome
   (package
     (name "r-prome")
-    (version "1.9.1.0")
+    (version "2.0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prome" version))
        (sha256
-        (base32 "134nc90av9js4qdq7dxy7z93h621i6w1vbgly38minprfam0wwm0"))))
+        (base32 "05hd3hjzm7l7zai3jr40dqcn4dq1qivv2m1mzfdmd33i3ga0khx9"))))
     (properties `((upstream-name . "prome")))
     (build-system r-build-system)
     (arguments
@@ -7525,6 +7525,7 @@ Decision Analysis (MCDA) process involving multiple criteria, by PROMETHEE
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
+                             r-posterior
                              r-bh))
     (home-page "https://cran.r-project.org/package=prome")
     (synopsis "Patient-Reported Outcome Data Analysis with Stan")
@@ -17276,45 +17277,6 @@ mortality rates and net international migration flows, at the national level.")
      "This package provides functions that facilitate the elaboration of population
 pyramids.")
     (license license:gpl3)))
-
-(define-public r-poppsiseqr
-  (package
-    (name "r-poppsiseqr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PopPsiSeqR" version))
-       (sha256
-        (base32 "11hycqjmzm263yc0ndirmrxzb519am392sdqxh1xld2xp0zcysfn"))))
-    (properties `((upstream-name . "PopPsiSeqR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-tidyr
-                             r-s4vectors
-                             r-rtracklayer
-                             r-rlang
-                             r-patchwork
-                             r-magrittr
-                             r-ggplot2
-                             r-ggbio
-                             r-genomicranges
-                             r-dplyr
-                             r-devtools))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/csoeder/PopPsiSeq")
-    (synopsis "Process and Visualize Evolve & Resequence Experiments")
-    (description
-     "Handle data from evolve and resequence experiments.  Measured allele frequencies
-(e.g., from variants called from high-throughput sequencing data) are compared
-using an update of the @code{PsiSeq} algorithm (Earley, Eric and Corbin Jones
-(2011) <doi:10.1534/genetics.111.129445>).  Functions for saving and loading
-important files are also included, as well as functions for basic data
-visualization.")
-    (license license:expat)))
 
 (define-public r-poppr
   (package

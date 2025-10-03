@@ -8238,19 +8238,19 @@ experiments within the frame of linear models in R, as described in Onofri et al
 (define-public r-lmd
   (package
     (name "r-lmd")
-    (version "1.0.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMD" version))
        (sha256
-        (base32 "0yizv25ssw9a2ydwlabgx6rfksi3bfz6ay4508fz21j18sq49dfy"))))
+        (base32 "01rsi4g2ncdnirbkrsha1qjr0mdqrdgsvdy15y0jnipdwwrnrx6p"))))
     (properties `((upstream-name . "LMD")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-patchwork r-ggplot2 r-emd))
+    (propagated-inputs (list r-shiny r-patchwork r-ggplot2 r-emd))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/shubhra-opensource/LMD")
     (synopsis "Self-Adaptive Approach for Demodulating Multi-Component Signal")

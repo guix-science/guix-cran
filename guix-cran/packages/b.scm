@@ -4143,13 +4143,13 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
 (define-public r-broadcast
   (package
     (name "r-broadcast")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broadcast" version))
        (sha256
-        (base32 "1n6ha7hmpsbwzrqjk9q29wfgs95jd4b97sm5a3zrln5qq001ym9j"))))
+        (base32 "1f5v5kp5i0mp8pmg1vzn3cclwpkjav7wwn1s14nl0z5yn1326c36"))))
     (properties `((upstream-name . "broadcast")))
     (build-system r-build-system)
     (arguments
@@ -4160,19 +4160,21 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
     (synopsis "Broadcasted Array Operations Like 'NumPy'")
     (description
      "This package implements efficient @code{NumPy'-like} broadcasted operations for
-atomic and recursive arrays.  Besides linking to Rcpp', broadcast does not use
-any external libraries in any way; broadcast was essentially made from scratch
-and can be installed out-of-the-box.  The implementations available in broadcast
-include, but are not limited to, the following.  1) Broadcasted element-wise
-operations on any 2 arrays; they support a large set of relational, arithmetic,
-Boolean, string, and bit-wise operations.  2) A faster, more memory efficient,
-and broadcasted abind-like function, for binding arrays along an arbitrary
-dimension.  3) Broadcasted ifelse-like, and apply-like functions.  4) Casting
-functions, that cast subset-groups of an array to a new dimension, cast nested
-lists to dimensional lists, and vice-versa.  5) A few linear algebra functions
-for statistics.  The functions in the broadcast package strive to minimize
-computation time and memory usage (which is not just good for efficient
-computing, but also for the environment).")
+atomic and recursive arrays.  In the context of operations involving 2 (or more)
+arrays, âbroadcastingâ refers to efficiently recycling array dimensions
+without allocating additional memory.  Besides linking to Rcpp', broadcast does
+not use any external libraries in any way; broadcast was essentially made from
+scratch and can be installed out-of-the-box.  The implementations available in
+broadcast include, but are not limited to, the following.  1) Broadcasted
+element-wise operations on any 2 arrays; they support a large set of relational,
+arithmetic, Boolean, string, and bit-wise operations.  2) A faster, more memory
+efficient, and broadcasted abind-like function, for binding arrays along an
+arbitrary dimension.  3) Broadcasted ifelse-like, and apply-like functions.  4)
+Casting functions, that cast subset-groups of an array to a new dimension, cast
+nested lists to dimensional lists, and vice-versa.  5) A few linear algebra
+functions for statistics.  The functions in the broadcast package strive to
+minimize computation time and memory usage (which is not just better for
+efficient computing, but also for the environment).")
     (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-brnn
@@ -28078,13 +28080,13 @@ models.  For a web-based Shiny application related to this package, see
 (define-public r-bayesertools
   (package
     (name "r-bayesertools")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesERtools" version))
        (sha256
-        (base32 "1fy0y549zn77b90dnv94hz07f6f4748n8smbvbadysjjbxmfxf2r"))))
+        (base32 "1lc2zkxzpwj6zd37gmgnc4z1lwmjm6yimn9f77ibvdvrh0vd9nb6"))))
     (properties `((upstream-name . "BayesERtools")))
     (build-system r-build-system)
     (arguments
@@ -29358,13 +29360,13 @@ original set of variables.")
 (define-public r-batss
   (package
     (name "r-batss")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BATSS" version))
        (sha256
-        (base32 "1swjqprcflh9sg2dqrfn496m09mzysn7sjqysr951s1dgjcaip17"))))
+        (base32 "1zw8j8gx0qan4g98r4fm64sxi51mpz8527hqr7y8dbpgzb5a4cjn"))))
     (properties `((upstream-name . "BATSS")))
     (build-system r-build-system)
     (arguments

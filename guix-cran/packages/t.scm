@@ -16216,13 +16216,13 @@ available back to 2000 for most geographies.")
 (define-public r-tinythemes
   (package
     (name "r-tinythemes")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinythemes" version))
        (sha256
-        (base32 "1b90dms48d1xbs36l72wf0n55h09ainijwqjs55ivnzmkyclw6dj"))))
+        (base32 "0620h5y7w8hdjdyq80v02k7hfy5avm51hpmj93nji0fm4dg8ajgm"))))
     (properties `((upstream-name . "tinythemes")))
     (build-system r-build-system)
     (arguments
@@ -16237,7 +16237,7 @@ contains a particularly nice one, but brings along a significant tail of
 dependencies.  So this (currently experimental) package brings along just the
 theme_ipsum_rc theme using the Roboto Condensed font.  Should the font not be
 installed on your system, see the help in the package hrbrthemes on how to
-install Roboto Condensed'.")
+install Roboto Condensed'.  Note that hrbrthemes is now archived at CRAN.")
     (license license:expat)))
 
 (define-public r-tinytest2junit
@@ -18749,13 +18749,13 @@ the results in a tidy format.")
 (define-public r-tidyseurat
   (package
     (name "r-tidyseurat")
-    (version "0.8.0")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyseurat" version))
        (sha256
-        (base32 "0xm1vls01d6pcsh824w6li8wp9nf5xrxm9ranrx673vjkjrdwilf"))))
+        (base32 "1gv74y0g9dvx2phfc675nymssa15d9vailq4696xs8k4r796abdz"))))
     (properties `((upstream-name . "tidyseurat")))
     (build-system r-build-system)
     (arguments
@@ -18778,7 +18778,6 @@ the results in a tidy format.")
                              r-lifecycle
                              r-ggplot2
                              r-fansi
-                             r-ellipsis
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))

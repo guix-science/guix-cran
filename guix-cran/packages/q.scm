@@ -4272,13 +4272,13 @@ individual measurements.")
 (define-public r-qreport
   (package
     (name "r-qreport")
-    (version "1.0-2")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qreport" version))
        (sha256
-        (base32 "1szi0fs3mcw9qrgfb0pviyzcvn38824rjdq9sfa1jf3p0j7rysnm"))))
+        (base32 "1mygxnabid01148w2r43gj2fk6cbj6cl54d05l7i33jkc96fi704"))))
     (properties `((upstream-name . "qreport")))
     (build-system r-build-system)
     (arguments

@@ -12808,13 +12808,13 @@ analysis package.")
 (define-public r-stmgp
   (package
     (name "r-stmgp")
-    (version "1.0.4.1")
+    (version "1.0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stmgp" version))
        (sha256
-        (base32 "103l7zxk45ziwl3k0jm57p5aw9k7dgvkkm5sq5v7mkl7j8zsm1w4"))))
+        (base32 "1mhg8qs6jjfk87lf1l182aaqq7yw7s2r36dbaklq6vj80jndzj6z"))))
     (properties `((upstream-name . "stmgp")))
     (build-system r-build-system)
     (arguments
@@ -57304,19 +57304,19 @@ ratio test (Wald, A. 1945 <http://www.jstor.org/stable/2235829>).")
 (define-public r-sequential
   (package
     (name "r-sequential")
-    (version "4.4")
+    (version "4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Sequential" version))
        (sha256
-        (base32 "0zg1bd4djfvp7psvz6lwcnx1sr6a9f9rbcdzcrr9rczkark72zny"))))
+        (base32 "0r4a2dp54d1bndfrqmhbca08r26v9clrsaq5yq49fpf5k017ikf7"))))
     (properties `((upstream-name . "Sequential")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pmultinom r-boot))
+    (propagated-inputs (list r-pmultinom r-maxlik r-boot))
     (home-page "https://cran.r-project.org/package=Sequential")
     (synopsis "Exact Sequential Analysis for Poisson and Binomial Data")
     (description
@@ -67497,13 +67497,13 @@ focus is set to prime-calculation.")
 (define-public r-schooldatait
   (package
     (name "r-schooldatait")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SchoolDataIT" version))
        (sha256
-        (base32 "0568viqfkzv37dfvahl9mffjp8hdd889bsqvvmm3riqgp65fn0lq"))))
+        (base32 "1vyz4bpqm2241lr8ialjzw62g11ws9kdx605h5gx4ny3jxsf87jm"))))
     (properties `((upstream-name . "SchoolDataIT")))
     (build-system r-build-system)
     (arguments

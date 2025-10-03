@@ -4482,13 +4482,13 @@ scheme and identity standards.")
 (define-public r-uisapi
   (package
     (name "r-uisapi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uisapi" version))
        (sha256
-        (base32 "1yk9arr3hyi5n7qf1dfpkmx6sp2zmvk2rzvfcg7dn61cmjjmgjnp"))))
+        (base32 "0sfk5lpsaamv02k0jxhvr2xn7qv833cjkwpsmbj8ikvb2xcdrkd8"))))
     (properties `((upstream-name . "uisapi")))
     (build-system r-build-system)
     (arguments

@@ -3560,13 +3560,13 @@ al. (2017) <@code{arXiv:1706.10029>}).")
 (define-public r-ctmed
   (package
     (name "r-ctmed")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cTMed" version))
        (sha256
-        (base32 "17cdmaygdqc0y7vrbv5ydb696gj2w0ls3pbj3ypwhbpz8m7zys7c"))))
+        (base32 "1z7q6k7nwcf0ys6f71slyy7n1fqrdzr0dwrkgh9518d374sf3rqk"))))
     (properties `((upstream-name . "cTMed")))
     (build-system r-build-system)
     (arguments
@@ -3576,12 +3576,10 @@ al. (2017) <@code{arXiv:1706.10029>}).")
     (home-page "https://github.com/jeksterslab/cTMed")
     (synopsis "Continuous Time Mediation")
     (description
-     "Calculates standard errors and confidence intervals for effects in
-continuous-time mediation models.  This package extends the work of Deboeck and
-Preacher (2015) <doi:10.1080/10705511.2014.973960> and Ryan and Hamaker (2021)
-<doi:10.1007/s11336-021-09767-0> by providing methods to generate standard
-errors and confidence intervals for the total, direct, and indirect effects in
-these models.")
+     "Calculates effect sizes, standard errors and confidence intervals in
+continuous-time mediation models (Deboeck and Preacher, 2015
+<doi:10.1080/10705511.2014.973960>; Ryan and Hamaker, 2021
+<doi:10.1007/s11336-021-09767-0>).")
     (license license:gpl3+)))
 
 (define-public r-ctmcmove
@@ -32268,13 +32266,13 @@ survival quantiles.")
 (define-public r-clindr
   (package
     (name "r-clindr")
-    (version "2.4.1")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinDR" version))
        (sha256
-        (base32 "06q8ajfa0gj8ddr6vb456vra4id7la50aidx3j2bnyaysbavd108"))))
+        (base32 "1nvns3m7a0waqdjqdr80kcpgdxiwv09ch20481xi55fx48lmv04y"))))
     (properties `((upstream-name . "clinDR")))
     (build-system r-build-system)
     (arguments
@@ -37045,13 +37043,13 @@ chunks, and number lines on code blocks.")
 (define-public r-chunked
   (package
     (name "r-chunked")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chunked" version))
        (sha256
-        (base32 "1j16am4nzwy2ckisksl5mk8h05ala6lpdd5qrb1gwyrhli4lx45a"))))
+        (base32 "04l6vkqdf47b4161zks8jvk14cbqs3q8x7v6mswpwyi97zpqp8ia"))))
     (properties `((upstream-name . "chunked")))
     (build-system r-build-system)
     (arguments
@@ -45490,13 +45488,13 @@ Donnat (2025) <doi:10.48550/@code{arXiv.2507.11160>}.")
 (define-public r-ccapp
   (package
     (name "r-ccapp")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ccaPP" version))
        (sha256
-        (base32 "16bw98wqjm62gjcznlwj24akng1csi3dciw6v5rkg9v2xkjn44d5"))))
+        (base32 "0j7y2in4m73f64c5nf96cfa7blmxxxhgxl9h69fp1y39fb29jymk"))))
     (properties `((upstream-name . "ccaPP")))
     (build-system r-build-system)
     (arguments

@@ -25236,13 +25236,13 @@ all actions are logged.")
 (define-public r-deducer
   (package
     (name "r-deducer")
-    (version "0.9-0")
+    (version "0.9-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Deducer" version))
        (sha256
-        (base32 "1sd67vkxpvfh2kzy5q5kb7y6fkbzj7s9rhffjqsmqq6gcvjrbzw4"))))
+        (base32 "1a32p8biz9kmcs2kif5zqd79r6vyvha3azhgsqx7p7yvfaxr8rkz"))))
     (properties `((upstream-name . "Deducer")))
     (build-system r-build-system)
     (arguments
@@ -30358,13 +30358,13 @@ data format.")
 (define-public r-datarobot
   (package
     (name "r-datarobot")
-    (version "2.18.6")
+    (version "2.18.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datarobot" version))
        (sha256
-        (base32 "0ac51bs16skj808msgriwidaw3vx7cqjjarr70gy0hly3ppxwfyr"))))
+        (base32 "1wvhyjvkvzrrrvbn4pq6v8jzwcriigyj7mbhs1lzhmqavl4h4shl"))))
     (properties `((upstream-name . "datarobot")))
     (build-system r-build-system)
     (arguments
@@ -33478,47 +33478,6 @@ on Pearl (2009) <doi:10.1017/CBO9780511803161> and Textor et al. (2016)
 for Forensic Scientists.\" This book was written by James Curran and published by
 CRC Press in 2010 (ISBN: 978-1-4200-8826-7).")
     (license license:gpl2+)))
-
-(define-public r-dafishr
-  (package
-    (name "r-dafishr")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dafishr" version))
-       (sha256
-        (base32 "1pdw0qrsln6cf7k1r0a09j7va5nzyz7a484nz5fjccxs0lwgxhjx"))))
-    (properties `((upstream-name . "dafishr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vroom
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-sf
-                             r-rlang
-                             r-readxl
-                             r-readr
-                             r-mixtools
-                             r-magrittr
-                             r-lubridate
-                             r-ggplot2
-                             r-fst
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/CBMC-GCMP/dafishr")
-    (synopsis "Download, Wrangle, and Analyse Vessel Monitoring System Data")
-    (description
-     "Allows to download, clean and analyse raw Vessel Monitoring System, VMS, data
-from Mexican government.  You can use the @code{vms_download()} function to
-download raw data, or you can use the sample_dataset provided within the
-package.  You can follow the tutorial in the vignette available at
-<https://cbmc-gcmp.github.io/dafishr/index.html>.")
-    (license license:expat)))
 
 (define-public r-daff
   (package

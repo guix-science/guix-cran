@@ -4815,13 +4815,13 @@ and economics.")
 (define-public r-asymmetry
   (package
     (name "r-asymmetry")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asymmetry" version))
        (sha256
-        (base32 "1zppf4gb0rz9c4ixd6fym2qyjs8ddzq09is1rlf000mcnarfl22b"))))
+        (base32 "0yyz7v71pa8mcjarn3m94zmid7jk1i02knx0accn9kkziyy0isz3"))))
     (properties `((upstream-name . "asymmetry")))
     (build-system r-build-system)
     (arguments
@@ -4833,18 +4833,17 @@ and economics.")
     (synopsis "Multidimensional Scaling of Asymmetric Proximities")
     (description
      "Multidimensional scaling models and methods for the visualization and analysis
-of asymmetric proximity data <doi:10.1111/j.2044-8317.1996.tb01078.x>.  An
-asymmetric data matrix has the same number of rows and columns, and these rows
-and columns refer to the same set of objects.  At least some elements in the
-upper-triangle are different from the corresponding elements in the lower
-triangle.  An example of an asymmetric matrix is a student migration table,
-where the rows correspond to the countries of origin of the students and the
-columns to the destination countries.  This package provides algorithms for
-three multidimensional scaling models.  These are the slide-vector model
-<doi:10.1007/BF02294474>, a scaling model with unique dimensions and the
-asymscal model for asymmetric multidimensional scaling.  Furthermore, a heat map
-for skew-symmetric data, and the decomposition of asymmetry are provided for the
-exploratory analysis of asymmetric tables.")
+of asymmetric proximity data.  An asymmetric data matrix has the same number of
+rows and columns, and these rows and columns refer to the same set of objects.
+At least some elements in the upper-triangle are different from the
+corresponding elements in the lower triangle.  An example of an asymmetric
+matrix is a student migration table, where the rows correspond to the countries
+of origin of the students and the columns to the destination countries.  This
+package provides algorithms for three multidimensional scaling models, the
+slide-vector model, a scaling model with unique dimensions and the asymscal
+model.Furthermore, some other procedures, such as a heat map for skew-symmetric
+data, and the decomposition of asymmetry are also provided for the exploratory
+analysis of asymmetric tables.")
     (license license:gpl3+)))
 
 (define-public r-asymmetricsords
@@ -18037,13 +18036,13 @@ only a single district.")
 (define-public r-alakazam
   (package
     (name "r-alakazam")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alakazam" version))
        (sha256
-        (base32 "0l6xb0x07drm6j88x4cmxq2p9r0xw217d64zcvh98iqfiq0nrnx6"))))
+        (base32 "1kgnhjqmynqkyng97m6f6kwx0k7cqjnxs303b0553gvq82qky9ha"))))
     (properties `((upstream-name . "alakazam")))
     (build-system r-build-system)
     (arguments
@@ -19564,43 +19563,6 @@ matrices (PCMs), the package supports full-hierarchy weight computation,
 intuitive tree-based visualization, sensitivity analysis, along with convenient
 PCM generation from user preferences.")
     (license license:gpl3)))
-
-(define-public r-ahpsurvey
-  (package
-    (name "r-ahpsurvey")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ahpsurvey" version))
-       (sha256
-        (base32 "1r7x4c318nzbx0ppm9272kfpz2bln1cafkv9irnj85nsdcravr33"))))
-    (properties `((upstream-name . "ahpsurvey")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rdpack
-                             r-randomnames
-                             r-magrittr
-                             r-knitr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ahpsurvey")
-    (synopsis "Analytic Hierarchy Process for Survey Data")
-    (description
-     "The Analytic Hierarchy Process is a versatile multi-criteria decision-making
-tool introduced by Saaty (1987) <doi:10.1016/0270-0255(87)90473-8> that allows
-decision-makers to weigh attributes and evaluate alternatives presented to them.
- This package provides a consistent methodology for researchers to reformat data
-and run analytic hierarchy process in R on data that are formatted using the
-survey data entry mode.  It is optimized for performing the analytic hierarchy
-process with many decision-makers, and provides tools and options for
-researchers to aggregate individual preferences and test multiple options.  It
-also allows researchers to quantify, visualize and correct for inconsistency in
-the decision-maker's comparisons.")
-    (license license:expat)))
 
 (define-public r-ahphybrid
   (package
