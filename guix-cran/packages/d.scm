@@ -4631,13 +4631,13 @@ been published by Bhattacharjee et al.(2024) <doi:10.1038/s41598-024-54149-y>.")
 (define-public r-dscore
   (package
     (name "r-dscore")
-    (version "1.11.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dscore" version))
        (sha256
-        (base32 "1972ivmdj5asrk46dcc41z4ywazvwr08yv2wwmd29r045f54dfbd"))))
+        (base32 "148fj786frakkvyimqhspxphr5caini0147fq36z5vwy2lkvzzvq"))))
     (properties `((upstream-name . "dscore")))
     (build-system r-build-system)
     (arguments
@@ -4648,12 +4648,15 @@ been published by Bhattacharjee et al.(2024) <doi:10.1038/s41598-024-54149-y>.")
     (home-page "https://github.com/d-score/dscore")
     (synopsis "D-Score for Child Development")
     (description
-     "The D-score summarizes the child's performance on a set of milestones into a
-single number.  The package implements four Rasch model keys to convert
-milestone scores into a D-score.  It provides tools to calculate the D-score and
-its precision from the child's milestone scores, to convert the D-score into the
-Development-for-Age Z-score (DAZ) using age-conditional references, and to map
-milestone names into a generic 9-position item naming convention.")
+     "The D-score summarizes a child's performance on developmental milestones into a
+single number.  Its key feature is its generic nature.  The method does not
+depend on a specific measurement instrument.  The statistical method underlying
+the D-score is described in van Buuren et al. (2025)
+<doi:10.1177/01650254241294033>.  This package implements model keys to convert
+milestone scores to D-scores; maps instrument-specific item names to a generic
+9-position naming convention; computes D-scores and their precision from a
+child's milestone scores; and converts D-scores to Development-for-Age Z-scores
+(DAZ) using age-conditional reference standards.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-dsbayes
@@ -6324,13 +6327,13 @@ datasets for practicing.")
 (define-public r-drclust
   (package
     (name "r-drclust")
-    (version "0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drclust" version))
        (sha256
-        (base32 "04qi123vdj33dfhgxmwc0c2viwa74lr4x1kj85rgbvvsqhwnp1kz"))))
+        (base32 "0w5kan90wk8by5l28h7pgcy27jfxf8wznindkkqvwvp2zs028jc6"))))
     (properties `((upstream-name . "drclust")))
     (build-system r-build-system)
     (arguments
@@ -6897,13 +6900,13 @@ Gerhard, D. (2015) <doi:10.1371/journal.pone.0146021>.")
 (define-public r-dr-sc
   (package
     (name "r-dr-sc")
-    (version "3.5")
+    (version "3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DR.SC" version))
        (sha256
-        (base32 "1ikxc5qjgg7bc34m50nffzc0jnlvxf6r0kp4vmy5s74lxgrbcqlz"))))
+        (base32 "0j58zwqsk4hh85s0g7r1bx24sbfq1q1iavwjy7lr9g9kgkm7sxmi"))))
     (properties `((upstream-name . "DR.SC")))
     (build-system r-build-system)
     (arguments
@@ -6920,7 +6923,6 @@ Gerhard, D. (2015) <doi:10.1371/journal.pone.0146021>.")
                              r-matrix
                              r-mass
                              r-irlba
-                             r-giraf
                              r-ggplot2
                              r-cowplot
                              r-compquadform))
@@ -12608,13 +12610,13 @@ of the variables of interest (see for example functions @code{dcc5()} and
 (define-public r-distrom
   (package
     (name "r-distrom")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrom" version))
        (sha256
-        (base32 "1j8k8cgh5r8av8jf8miq858j66hmkkcdjqhia77iivx97fg9pcjk"))))
+        (base32 "12yx9z6d26jffd0w3h161qap7zk224bd6bjm4aydcr7n9jr8y0hy"))))
     (properties `((upstream-name . "distrom")))
     (build-system r-build-system)
     (arguments
@@ -12626,7 +12628,8 @@ of the variables of interest (see for example functions @code{dcc5()} and
     (description
      "Fast distributed/parallel estimation for multinomial logistic regression via
 Poisson factorization and the gamlr package.  For details see: Taddy (2015,
-@code{AoAS}), Distributed Multinomial Regression, <@code{arXiv:1311.6139>}.")
+@code{AoAS}), Distributed Multinomial Regression,
+<doi:10.48550/@code{arXiv.1311.6139>}.")
     (license license:gpl3)))
 
 (define-public r-distro

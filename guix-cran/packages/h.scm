@@ -6320,13 +6320,13 @@ A.H., and Smith, J.A. (1997) <doi:10.1007/978-1-4612-2290-3_2>.")
 (define-public r-hmdhfdplus
   (package
     (name "r-hmdhfdplus")
-    (version "2.0.6")
+    (version "2.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HMDHFDplus" version))
        (sha256
-        (base32 "0mbh153jnxhy5kkdigmzprmz9sv4ww069ypq5q0832ygf9c7dcwg"))))
+        (base32 "1k8h5zdwkvfnxpp276yfa4y52a4prqhq9az67i459v9vinxzm52l"))))
     (properties `((upstream-name . "HMDHFDplus")))
     (build-system r-build-system)
     (arguments
@@ -15510,13 +15510,13 @@ Webpage provided at: <https://github.com/CSAFE-ISU/handwriter>.")
 (define-public r-handtill2001
   (package
     (name "r-handtill2001")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HandTill2001" version))
        (sha256
-        (base32 "0av4c56161kpav1mpm79h5z6h4c2dg8bnirhjl1g5gv3hnkm9944"))))
+        (base32 "0c2kkd0zmk91gh46ckw5hlpmc90s0pfrnr4rvrrng2cpvkgq6bh7"))))
     (properties `((upstream-name . "HandTill2001")))
     (build-system r-build-system)
     (arguments

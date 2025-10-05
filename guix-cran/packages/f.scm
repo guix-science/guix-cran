@@ -20252,13 +20252,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.4.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "0a93m6wm4gv5kj7faji9pvg6qpih5s4j2rd0688bjhdmr3775197"))))
+        (base32 "1hby4g6vv6xipsz59qwgdah5srs5j9vz7djlwsg43aq96rv0pk8y"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (arguments
@@ -22058,13 +22058,13 @@ under 2-locus and 1-locus models defined by some design matrix.")
 (define-public r-fastymd
   (package
     (name "r-fastymd")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastymd" version))
        (sha256
-        (base32 "1aff4fc72kp4qaiinrrmnb6j3a2hqjvrvd31wc805p6znscj2010"))))
+        (base32 "0qkc9aw05lm5cdn6k4dcz0qg3scaxxmml8xwqj032bajhcv5r7ph"))))
     (properties `((upstream-name . "fastymd")))
     (build-system r-build-system)
     (arguments

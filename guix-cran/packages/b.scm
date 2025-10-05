@@ -4143,13 +4143,13 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
 (define-public r-broadcast
   (package
     (name "r-broadcast")
-    (version "0.1.5")
+    (version "0.1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broadcast" version))
        (sha256
-        (base32 "1f5v5kp5i0mp8pmg1vzn3cclwpkjav7wwn1s14nl0z5yn1326c36"))))
+        (base32 "1dnjfb4bk0vw2k3lzy372sgym95krgb29wqbcdhw50sc270da2z2"))))
     (properties `((upstream-name . "broadcast")))
     (build-system r-build-system)
     (arguments
@@ -14817,6 +14817,45 @@ help evaluate biomarkers for prognostic enrichment of clinical trials.")
 networks, i.e.  data graph structured.")
     (license license:gpl2+)))
 
+(define-public r-biomor
+  (package
+    (name "r-biomor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BioMoR" version))
+       (sha256
+        (base32 "04h98xd4gdj1r9qyxndajisw9ycnkiksljx4yy2pz2rsgxld5b3a"))))
+    (properties `((upstream-name . "BioMoR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-themis
+                             r-recipes
+                             r-proc
+                             r-magrittr
+                             r-dplyr
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BioMoR")
+    (synopsis
+     "Bioinformatics Modeling with Recursion and Autoencoder-Based Ensemble")
+    (description
+     "This package provides tools for bioinformatics modeling using recursive
+transformer-inspired architectures, autoencoders, random forests, XGBoost, and
+stacked ensemble models.  Includes utilities for cross-validation, calibration,
+benchmarking, and threshold optimization in predictive modeling workflows.  The
+methodology builds on ensemble learning (Breiman 2001
+<doi:10.1023/A:1010933404324>), gradient boosting (Chen and Guestrin 2016
+<doi:10.1145/2939672.2939785>), autoencoders (Hinton and Salakhutdinov 2006
+<doi:10.1126/science.1127647>), and recursive transformer efficiency approaches
+such as Mixture-of-Recursions (Bae et al.  2025
+<doi:10.48550/@code{arXiv.2507.10524>}).")
+    (license license:expat)))
+
 (define-public r-biomod2
   (package
     (name "r-biomod2")
@@ -19321,13 +19360,13 @@ Nieto-Barajas (2003), Nieto-Barajas & Walker (2007) and Nieto-Barajas & Yin
 (define-public r-bgms
   (package
     (name "r-bgms")
-    (version "0.1.6.0")
+    (version "0.1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bgms" version))
        (sha256
-        (base32 "0lxclmqpzb4hp51nxrralvm074nv03k83hrh4phgqd4x6gv99dsx"))))
+        (base32 "0sk0nvp51kr237945k29znfz8n1p0xw7m4xgscw8ryf4gpz70g6m"))))
     (properties `((upstream-name . "bgms")))
     (build-system r-build-system)
     (arguments

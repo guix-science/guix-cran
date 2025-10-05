@@ -13982,6 +13982,29 @@ Gentle Introduction for Computational Linguists and Similar Creatures\"
 valuation methods, loan amortization schedules, and Capital Asset Pricing Model.")
     (license license:gpl2+)))
 
+(define-public r-corplot
+  (package
+    (name "r-corplot")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CORPlot" version))
+       (sha256
+        (base32 "1pqqnaamv2zhn3y1qiiqqsr8rikjkisi9jv7r821q2ac6f65sa3i"))))
+    (properties `((upstream-name . "CORPlot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam r-knitr r-ggplot2))
+    (home-page "https://github.com/Yongxi-Long/CORPlot")
+    (synopsis "Cumulative Odds Ratio Plot")
+    (description
+     "Create cumulative odds ratio plot to visually inspect the proportional odds
+assumption from the proportional odds model.")
+    (license license:expat)))
+
 (define-public r-coronavirus
   (package
     (name "r-coronavirus")
@@ -41784,34 +41807,6 @@ model-agnostic fashion, they are working for any predictive Machine Learning
 model and allow for model comparisons.  Ceteris Paribus Plots supplement the
 Break Down Plots from @code{breakDown} package.")
     (license license:gpl2)))
-
-(define-public r-cesr
-  (package
-    (name "r-cesr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cesR" version))
-       (sha256
-        (base32 "1sw5is461mrylmd8f9qzps368wilrgy41k6cmig445261zzqkikr"))))
-    (properties `((upstream-name . "cesR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-readr r-labelled r-haven r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://hodgettsp.github.io/cesR/")
-    (synopsis "Access the Canadian Election Study Datasets")
-    (description
-     "Makes accessing and loading the Canadian Election Study
-(<http://www.ces-eec.ca/>, <https://ces-eec.arts.ubc.ca/>,
-<https://search1.odesi.ca/#/>) surveys into the R workspace more efficient by
-downloading a requested survey and loading it as a data object.  This removes
-the need to locate, download, load, and change working directories when working
-with the Canadian Election Study surveys.")
-    (license license:expat)))
 
 (define-public r-ceser
   (package

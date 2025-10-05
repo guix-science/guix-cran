@@ -10167,13 +10167,13 @@ for speed and convenience.")
 (define-public r-primertree
   (package
     (name "r-primertree")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "primerTree" version))
        (sha256
-        (base32 "1w2xmmpqsp8plwsacfknkjkgs4x1fksrks614jwlg6fll4zxh42n"))))
+        (base32 "1q1xvgbxygf9jxl35yg50ks5464y28f3fi0kgmg0d5dvr1ipwy46"))))
     (properties `((upstream-name . "primerTree")))
     (build-system r-build-system)
     (arguments
@@ -10185,6 +10185,7 @@ for speed and convenience.")
                              r-reshape2
                              r-plyr
                              r-lubridate
+                             r-httr2
                              r-httr
                              r-gridextra
                              r-ggplot2
@@ -29752,13 +29753,13 @@ suite Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
 (define-public r-photobiologyplants
   (package
     (name "r-photobiologyplants")
-    (version "0.6.1")
+    (version "0.6.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyPlants" version))
        (sha256
-        (base32 "1y1m2slrb4hdi1k27c35yw1hy7rzv42m2fscwp8b4fip7czzyjpd"))))
+        (base32 "0mdg72vna7jn6466jajkrxnip38zdiay9rfbkh4rvfgzhl6q1lps"))))
     (properties `((upstream-name . "photobiologyPlants")))
     (build-system r-build-system)
     (arguments

@@ -21775,13 +21775,13 @@ models can be found in next references Minguez, R., Lopez, F.A., and Mur, J.
 (define-public r-spstack
   (package
     (name "r-spstack")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spStack" version))
        (sha256
-        (base32 "0qn6nqg9fva9zdn2b3kby0yc57c4wl9gf25c1jkd3ywy7qwgg9wc"))))
+        (base32 "1qzqfnnailysqjqi2swbwx9bsglk8f5c8v2xm3j5vhgp900m455y"))))
     (properties `((upstream-name . "spStack")))
     (build-system r-build-system)
     (arguments
@@ -21805,9 +21805,9 @@ parameters and, subsequently assimilate inference from these individual
 posterior distributions using Bayesian predictive stacking.  Our algorithm is
 highly parallelizable and hence, much faster than traditional Markov chain Monte
 Carlo algorithms while delivering competitive predictive performance.  See
-Zhang, Tang, and Banerjee (2025) <doi:10.48550/@code{arXiv.2304.12414>}, and,
-Pan, Zhang, Bradley, and Banerjee (2025) <doi:10.48550/@code{arXiv.2406.04655>}
-for details.")
+Zhang, Tang, and Banerjee (2025) <doi:10.1080/01621459.2025.2566449>, and, Pan,
+Zhang, Bradley, and Banerjee (2025) <doi:10.48550/@code{arXiv.2406.04655>} for
+details.")
     (license license:gpl3)))
 
 (define-public r-spsp
@@ -24711,13 +24711,13 @@ in Brown et al (2012) <doi:10.1111/j.1755-0998.2011.03108.x>.")
 (define-public r-spicy
   (package
     (name "r-spicy")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spicy" version))
        (sha256
-        (base32 "0izjwpdi3ap9cjgdcpj5kiasgrddfwdcnckld7pqpbajg0s86gb5"))))
+        (base32 "0k0cb3q0mhr2nxv8qxq5z3snba3q6dlwm2y333h192br8a9yark4"))))
     (properties `((upstream-name . "spicy")))
     (build-system r-build-system)
     (arguments
@@ -35604,32 +35604,6 @@ authentication approaches supported by the Snowflake Connector for Python
      "This package provides historical datasets related to John Snow's 1854 cholera
 outbreak study in London.  Includes data on cholera cases, water pump locations,
 and the street layout, enabling analysis and visualisation of the outbreak.")
-    (license license:gpl3)))
-
-(define-public r-snowboot
-  (package
-    (name "r-snowboot")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "snowboot" version))
-       (sha256
-        (base32 "0jj3p0g4rwml8vmlwj10rfisxfjlipcrpvq5z134z4j35jp6ggv3"))))
-    (properties `((upstream-name . "snowboot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack r-rcpp r-igraph))
-    (home-page "https://cran.r-project.org/package=snowboot")
-    (synopsis "Bootstrap Methods for Network Inference")
-    (description
-     "This package provides functions for analysis of network objects, which are
-imported or simulated by the package.  The non-parametric methods of analysis
-center on snowball and bootstrap sampling for estimating functions of network
-degree distribution.  For other parameters of interest, see, e.g., bootnet
-package.")
     (license license:gpl3)))
 
 (define-public r-snotelr
@@ -67947,13 +67921,13 @@ need to install them.")
 (define-public r-sce
   (package
     (name "r-sce")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCE" version))
        (sha256
-        (base32 "16mpfi040szxjq99x452hhgx0xnj08prp36p4ji34hka5svv0hzc"))))
+        (base32 "0xvj2g99a4821aq7hcn87yc15xh3xjv0g8ax20sm2dc7q2whif45"))))
     (properties `((upstream-name . "SCE")))
     (build-system r-build-system)
     (arguments

@@ -14334,34 +14334,6 @@ Algorithm to find the best models when an exhaustive screening of the candidates
 is not feasible.")
     (license license:gpl2+)))
 
-(define-public r-glmtree
-  (package
-    (name "r-glmtree")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "glmtree" version))
-       (sha256
-        (base32 "0d0i9qhmib0rr15jm9kwl9jcfwhsagdr56jqgan5sr0hb4wbzzvw"))))
-    (properties `((upstream-name . "glmtree")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-partykit r-magrittr r-dplyr r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://adimajo.github.io")
-    (synopsis "Logistic Regression Trees")
-    (description
-     "This package provides a logistic regression tree is a decision tree with
-logistic regressions at its leaves.  A particular stochastic expectation
-maximization algorithm is used to draw a few good trees, that are then assessed
-via the user's criterion of choice among BIC / AIC / test set Gini.  The formal
-development is given in a @code{PhD} chapter, see Ehrhardt (2019)
-<https://github.com/adimajo/manuscrit_these/releases/>.")
-    (license license:gpl2+)))
-
 (define-public r-glmtrans
   (package
     (name "r-glmtrans")

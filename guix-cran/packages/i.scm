@@ -2357,28 +2357,36 @@ accepting suggestions for species with greater weight and cluster medoids.")
 (define-public r-isoorbi
   (package
     (name "r-isoorbi")
-    (version "1.3.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isoorbi" version))
        (sha256
-        (base32 "0nc1mn7l9jbgg7fkls1zwzvgbi1lj575ksn0m0wmap50c7ladfvn"))))
+        (base32 "1qxj9vlwf0pma1p3c3635wjk8ipa4igj5h2l0vn6cyly1z230mdz"))))
     (properties `((upstream-name . "isoorbi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-withr
+                             r-tidyselect
                              r-tidyr
+                             r-tibble
                              r-scales
                              r-rlang
+                             r-readxl
                              r-readr
                              r-purrr
+                             r-prettyunits
                              r-openxlsx
                              r-lifecycle
+                             r-knitr
+                             r-glue
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-cli
+                             r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://isoorbi.isoverse.org/")
     (synopsis "Process Orbitrap Isotopocule Data")

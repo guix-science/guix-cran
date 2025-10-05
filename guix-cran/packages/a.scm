@@ -24536,6 +24536,32 @@ group sequential designs, adaptive design with coprimary endpoints,
 biomarker-informed adaptive design, etc.")
     (license license:gpl2+)))
 
+(define-public r-adcontabil
+  (package
+    (name "r-adcontabil")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adcontabil" version))
+       (sha256
+        (base32 "03lixcib0rgknqvhx25nqskc43p4769lh107alilxj7f34nymn7q"))))
+    (properties `((upstream-name . "adcontabil")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi r-magrittr r-dplyr r-data-table))
+    (home-page "https://github.com/LissandroSousa/adcontabil.R")
+    (synopsis "Accounting Analysis")
+    (description
+     "This package provides methods for processing corporate balance sheets with a
+focus on the Brazilian reporting format.  Includes data standardization,
+classification by accounting categories, and aggregation of values.  Supports
+accounting and financial analyses of companies, improving efficiency and
+ensuring reproducibility of empirical studies.")
+    (license license:expat)))
+
 (define-public r-adc
   (package
     (name "r-adc")

@@ -6165,13 +6165,13 @@ values, infinities, blank characters, or names attribute; or having length 1).")
 (define-public r-vein
   (package
     (name "r-vein")
-    (version "1.3.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vein" version))
        (sha256
-        (base32 "0iv841b3lpggfi84877cfd885pz7zkx43djl3yvsabc677pysbp7"))))
+        (base32 "0196kz30a108ayjgck9fxfdphx1y1xjdcyx6ap6hsx0yxmgnkqfj"))))
     (properties `((upstream-name . "vein")))
     (build-system r-build-system)
     (arguments

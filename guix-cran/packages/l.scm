@@ -20012,13 +20012,13 @@ the statistical design.")
 (define-public r-lab2clean
   (package
     (name "r-lab2clean")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lab2clean" version))
        (sha256
-        (base32 "1836dr3g32lw71z8fgrbzn6fn9r6a92ckkk85m9fjwxp9xcmb9lj"))))
+        (base32 "0gqffalgc6vcvy0r1v46419y6p6yz5nbm0y7hcwrcx030k5kzn3w"))))
     (properties `((upstream-name . "lab2clean")))
     (build-system r-build-system)
     (arguments
@@ -20027,7 +20027,8 @@ the statistical design.")
     (propagated-inputs (list r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lab2clean")
-    (synopsis "Automation and Standardization of Cleaning Clinical Lab Data")
+    (synopsis
+     "Automation and Standardization of Cleaning Clinical Laboratory Data")
     (description
      "Navigating the shift of clinical laboratory data from primary everyday clinical
 use to secondary research purposes presents a significant challenge.  Given the
@@ -20036,11 +20037,13 @@ and the lack of all-in-one tools tailored for this need, we developed our
 algorithm lab2clean as an open-source R-package.  lab2clean package is set to
 automate and standardize the intricate process of cleaning clinical laboratory
 results.  With a keen focus on improving the data quality of laboratory result
-values, our goal is to equip researchers with a straightforward, plug-and-play
-tool, making it smoother for them to unlock the true potential of clinical
-laboratory data in clinical research and clinical machine learning (ML) model
-development.  Version 1.0 of the algorithm is described in detail in Zayed et
-al. (2024) <doi:10.1186/s12911-024-02652-7>.")
+values and units, our goal is to equip researchers with a straightforward,
+plug-and-play tool, making it smoother for them to unlock the true potential of
+clinical laboratory data in clinical research and clinical machine learning (ML)
+model development.  Functions to clean & validate result values (Version 1.0)
+are described in detail in Zayed et al. (2024) <doi:10.1186/s12911-024-02652-7>.
+ Functions to standardize & harmonize result units (added in Version 2.0) are
+described in detail in Zayed et al. (2025) <doi:10.1016/j.ijmedinf.2025.106131>.")
     (license license:gpl3+)))
 
 (define-public r-la

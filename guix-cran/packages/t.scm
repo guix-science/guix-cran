@@ -13274,6 +13274,31 @@ Euclidean embedding details are in Arhami and Rohani (2025b)
 <doi:10.48550/@code{arXiv.2508.01733>}.")
     (license license:bsd-3)))
 
+(define-public r-topologyr
+  (package
+    (name "r-topologyr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "topologyR" version))
+       (sha256
+        (base32 "106fci8ps2679jvxrrvkqjd64pmdjd75xwh8c8bigijy5myyfkxy"))))
+    (properties `((upstream-name . "topologyR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/IsadoreNabi/topologyR")
+    (synopsis "Topological Connectivity Analysis for Numeric Data")
+    (description
+     "Description: Implementation of topological data analysis methods based on
+graph-theoretic approaches for discovering topological structures in data.  The
+core algorithm constructs topological spaces from graphs following Nada et al.
+(2018) <doi:10.1002/mma.5096> \"New types of topological structures via graphs\".")
+    (license license:expat)))
+
 (define-public r-topologygsa
   (package
     (name "r-topologygsa")
@@ -16620,13 +16645,13 @@ comments.")
 (define-public r-tinkr
   (package
     (name "r-tinkr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinkr" version))
        (sha256
-        (base32 "1p9n97nz5fm9hx2b7smm6d2xhk27nn8ghx8ghv7yqk7sj0g23rlr"))))
+        (base32 "0gnjqh7842d7wfzbsgrnvmacyqxrxfyl3l9sf77vi0v4yx5c0ns2"))))
     (properties `((upstream-name . "tinkr")))
     (build-system r-build-system)
     (arguments
@@ -23312,13 +23337,13 @@ import, modify, and export tables and templates with little to no code.")
 (define-public r-tfrmt
   (package
     (name "r-tfrmt")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfrmt" version))
        (sha256
-        (base32 "0xnr35390bsmvk0297v2lmwqrnc017wz9lkzcznslrf063cxklyf"))))
+        (base32 "05b4zdd16k1793yym26md3hbqwrrcd0x5mivkmrsyf8gvzi87drr"))))
     (properties `((upstream-name . "tfrmt")))
     (build-system r-build-system)
     (arguments
@@ -28654,13 +28679,13 @@ sap flow rates at the tree and plot scale (For more information see : Granier
 (define-public r-tdlm
   (package
     (name "r-tdlm")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDLM" version))
        (sha256
-        (base32 "13dxb1j9q3wsqy9li04w6bz3a61k3gkj3nb6g2r4kax3q6gp6dpb"))))
+        (base32 "1fh1bn9jgrr8f4q6h7p4al3z1aaq4v6w7bpilq6kcliyrp7kb6fq"))))
     (properties `((upstream-name . "TDLM")))
     (build-system r-build-system)
     (arguments
