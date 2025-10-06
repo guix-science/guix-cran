@@ -23240,13 +23240,13 @@ wide or long format using the functions @code{gg_corset()} or
 (define-public r-ggcorrheatmap
   (package
     (name "r-ggcorrheatmap")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggcorrheatmap" version))
        (sha256
-        (base32 "02lbs6vz9bc9v58ysn37n7rj3wdqxvb6wzccwp9jf8q0szqg8sny"))))
+        (base32 "0ai3bzdkg7c8cljwy6l0db9fgwm8ca09harcn28wzn3q12zsiysc"))))
     (properties `((upstream-name . "ggcorrheatmap")))
     (build-system r-build-system)
     (arguments
@@ -23672,13 +23672,13 @@ overlapping lines - Draw more realistic worms.")
 (define-public r-ggblend
   (package
     (name "r-ggblend")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggblend" version))
        (sha256
-        (base32 "0wzy9lnvqxjl3511vk1y6nxpvhk9hvk1xq18bbwsv6886npls56z"))))
+        (base32 "0psjn7iqglj2x8158rzjgwvzr6gl7imj3bssvh7k2d7d5qav9lbz"))))
     (properties `((upstream-name . "ggblend")))
     (build-system r-build-system)
     (arguments

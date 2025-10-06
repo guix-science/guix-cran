@@ -36611,20 +36611,20 @@ medical imaging data in the form of CIFTI files
 (define-public r-ciflyr
   (package
     (name "r-ciflyr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ciflyr" version))
        (sha256
-        (base32 "11wmxk9ax70cps4ci2r969i2dbwiks2gdb7g45id9cmjcs7r9nb8"))))
+        (base32 "12ca7fpz365gamfa3vc0klyr1g04vd4538pjyrdkbxm0b2kfwciw"))))
     (properties `((upstream-name . "ciflyr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (home-page "https://cifly.pages.dev/")
+    (home-page "https://cifly.dev/")
     (synopsis "Reachability-Based Primitives for Graphical Causal Inference")
     (description
      "This package provides a framework for specifying and running flexible

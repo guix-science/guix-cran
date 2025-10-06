@@ -23079,13 +23079,13 @@ on a simple biological intuition.")
 (define-public r-spnetwork
   (package
     (name "r-spnetwork")
-    (version "0.4.4.6")
+    (version "0.4.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spNetwork" version))
        (sha256
-        (base32 "10fpipn9srmc56cjq1s9v4cy8fr2k26h6kykhbiccqnvqb71nflf"))))
+        (base32 "1y6p77gx3asg14wxjjw9mqvqjjpnwxgdc2859wafpnls0hf7fimf"))))
     (properties `((upstream-name . "spNetwork")))
     (build-system r-build-system)
     (arguments
@@ -26463,13 +26463,13 @@ from series of speckle images.")
 (define-public r-speck
   (package
     (name "r-speck")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPECK" version))
        (sha256
-        (base32 "0n67gqwd01klk8x3ds5ik11nwiga0138vdw3yhnrj1pp3pnpnq7k"))))
+        (base32 "0jmjjsil5nzmmw0prq47nr6k1hni5x3xnaic1hjfakkpz6ys6mdv"))))
     (properties `((upstream-name . "SPECK")))
     (build-system r-build-system)
     (arguments
@@ -26491,9 +26491,9 @@ normalization method is described in: Hao et al., (2021)
 <doi:10.1016/j.cell.2019.05.031>, Butler et al., (2018) <doi:10.1038/nbt.4096>
 and Satija et al., (2015) <doi:10.1038/nbt.3192>.  Method for the RRR is further
 detailed in: Erichson et al., (2019) <doi:10.18637/jss.v089.i11> and Halko et
-al., (2009) <@code{arXiv:0909.4061>}.  Clustering method is outlined in: Song et
-al., (2020) <doi:10.1093/bioinformatics/btaa613> and Wang et al., (2011)
-<doi:10.32614/RJ-2011-015>.")
+al., (2009) <doi:10.48550/@code{arXiv.0909.4061>}.  Clustering method is
+outlined in: Song et al., (2020) <doi:10.1093/bioinformatics/btaa613> and Wang
+et al., (2011) <doi:10.32614/RJ-2011-015>.")
     (license license:gpl2+)))
 
 (define-public r-specieschrom
@@ -30796,13 +30796,13 @@ with nested data.")
 (define-public r-sparklyr
   (package
     (name "r-sparklyr")
-    (version "1.9.1")
+    (version "1.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparklyr" version))
        (sha256
-        (base32 "1wajnipp67nmwjb1ivqczax1lhd2caxh78kq6nas7lx9lnqczamw"))))
+        (base32 "0z53myxg744444vkfllajh8ngx5cknjn4n658hv8sjin1d36bnwr"))))
     (properties `((upstream-name . "sparklyr")))
     (build-system r-build-system)
     (arguments
@@ -35604,6 +35604,32 @@ authentication approaches supported by the Snowflake Connector for Python
      "This package provides historical datasets related to John Snow's 1854 cholera
 outbreak study in London.  Includes data on cholera cases, water pump locations,
 and the street layout, enabling analysis and visualisation of the outbreak.")
+    (license license:gpl3)))
+
+(define-public r-snowboot
+  (package
+    (name "r-snowboot")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "snowboot" version))
+       (sha256
+        (base32 "0jj3p0g4rwml8vmlwj10rfisxfjlipcrpvq5z134z4j35jp6ggv3"))))
+    (properties `((upstream-name . "snowboot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-rcpp r-igraph))
+    (home-page "https://cran.r-project.org/package=snowboot")
+    (synopsis "Bootstrap Methods for Network Inference")
+    (description
+     "This package provides functions for analysis of network objects, which are
+imported or simulated by the package.  The non-parametric methods of analysis
+center on snowball and bootstrap sampling for estimating functions of network
+degree distribution.  For other parameters of interest, see, e.g., bootnet
+package.")
     (license license:gpl3)))
 
 (define-public r-snotelr

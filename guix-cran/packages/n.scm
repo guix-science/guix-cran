@@ -16713,6 +16713,50 @@ theoretical quantities of interest to marketing researchers.  Also provides
 functions for making tables that compare observed and theoretical statistics.")
     (license license:gpl3+)))
 
+(define-public r-nbdctools
+  (package
+    (name "r-nbdctools")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NBDCtools" version))
+       (sha256
+        (base32 "0y305gzja6hfvqb2b20xk17gr05xknywjcwnkglpg929i7lpv4iq"))))
+    (properties `((upstream-name . "NBDCtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sjmisc
+                             r-sjlabelled
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-hms
+                             r-haven
+                             r-glue
+                             r-dplyr
+                             r-cli
+                             r-chk
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://software.nbdc-datahub.org/NBDCtools/")
+    (synopsis
+     "National Institutes of Health Brain Development Cohorts Data Hub Tools")
+    (description
+     "This package provides a suite of functions to work with data from the National
+Institutes of Health Brain Development Cohorts Data Hub.  The package provides
+tools to create, clean, process, and filter datasets and associated metadata.
+These utilities are intended to simplify reproducible data-preparation for
+future research.")
+    (license license:gpl3+)))
+
 (define-public r-nbconv
   (package
     (name "r-nbconv")

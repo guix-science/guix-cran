@@ -27209,13 +27209,13 @@ here are designed to be basic and clear to the reader.")
 (define-public r-abclass
   (package
     (name "r-abclass")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "abclass" version))
        (sha256
-        (base32 "1cg8xfzxya585wzk6y2kf4flgjxlspzqqqksbig8nlxmwxxj413p"))))
+        (base32 "0wi0mcycfrk2afy1rb6jilq88lmm85m5yyq3m6ki0x54r603nkh2"))))
     (properties `((upstream-name . "abclass")))
     (build-system r-build-system)
     (arguments
@@ -27223,7 +27223,7 @@ here are designed to be basic and clear to the reader.")
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://wwenjie.org/abclass")
-    (synopsis "Angle-Based Large-Margin Classifiers")
+    (synopsis "Angle-Based Classification")
     (description
      "Multi-category angle-based large-margin classifiers.  See Zhang and Liu (2014)
 <doi:10.1093/biomet/asu017> for details.")

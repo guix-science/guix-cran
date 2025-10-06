@@ -17816,13 +17816,13 @@ back/forwardsolve, crossproduct, and matrix multiplication.")
 (define-public r-bigergm
   (package
     (name "r-bigergm")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigergm" version))
        (sha256
-        (base32 "0bz6y119xg3s93lcbr4d5aqmmszrssx5cm3r61lz8wpzpd3i0qvz"))))
+        (base32 "0jq5lxp811gy4ni2pc9vlzn9s0f6c68gyqvaai1c5jvrn5m7w1d8"))))
     (properties `((upstream-name . "bigergm")))
     (build-system r-build-system)
     (arguments
@@ -18073,20 +18073,20 @@ synchronicity'.")
 (define-public r-bigalgebra
   (package
     (name "r-bigalgebra")
-    (version "2.0.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigalgebra" version))
        (sha256
-        (base32 "1widjbc6wg8mchymfkplsfxssqxi2rcxlkl7al27g2d70ckanwzk"))))
+        (base32 "103p8905mvki9y5by37ig8zxamamzjh036rmqnfkx8h40zwzrsgf"))))
     (properties `((upstream-name . "bigalgebra")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp r-bigmemory r-bh))
-    (native-inputs (list gfortran))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://fbertran.github.io/bigalgebra/")
     (synopsis
      "'BLAS' and 'LAPACK' Routines for Native R Matrices and 'big.matrix' Objects")
@@ -30567,13 +30567,13 @@ sources such as @code{OpenStreetMap}', Carto', Mapbox and others in R.")
 (define-public r-basefun
   (package
     (name "r-basefun")
-    (version "1.2-4")
+    (version "1.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basefun" version))
        (sha256
-        (base32 "18wf6aj90ybc2gfnic1f82kh4hn4gd9mwyrbazib612hmpv1bvpy"))))
+        (base32 "1ig9qrwm5yv5amvnklwyqiixnwjf2calcvc0y3wiymj3hjf7g0rn"))))
     (properties `((upstream-name . "basefun")))
     (build-system r-build-system)
     (arguments

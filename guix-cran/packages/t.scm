@@ -22340,13 +22340,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-thisutils
   (package
     (name "r-thisutils")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisutils" version))
        (sha256
-        (base32 "1fir7lx1kzm4za2d6d5rpxzb9zhilarjy1zrkmscbj5ggv2r638i"))))
+        (base32 "1d12009h7ax3yxs1kqrq5sik495426f6bnshfch2k3vjb8cphcgy"))))
     (properties `((upstream-name . "thisutils")))
     (build-system r-build-system)
     (arguments

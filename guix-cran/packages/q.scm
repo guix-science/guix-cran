@@ -1653,20 +1653,20 @@ fitted curves are allowed, see Muggeo and others (2013)
 (define-public r-quantregglasso
   (package
     (name "r-quantregglasso")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QuantRegGLasso" version))
        (sha256
-        (base32 "0jjjrkj45148s2rymvgzkqpbg2bw7nvf3851153qpl8kp13mxgr1"))))
+        (base32 "099xy1hn5xjyn0ahj6z0hgw8sv73y3n0ck6wz1y6alns5n85aic2"))))
     (properties `((upstream-name . "QuantRegGLasso")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggplot2))
-    (home-page "https://github.com/egpivo/SpatPCA")
+    (home-page "https://github.com/egpivo/QuantRegGLasso")
     (synopsis
      "Adaptively Weighted Group Lasso for Semiparametric Quantile Regression Models")
     (description

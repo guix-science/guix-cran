@@ -20326,13 +20326,13 @@ any practical use.")
 (define-public r-devianlm
   (package
     (name "r-devianlm")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "devianLM" version))
        (sha256
-        (base32 "1lyk9njspypy5vpj03jmjjikfsq5vxrmw353phrqbms7z21h7aaw"))))
+        (base32 "1sprqc75ij33yx9p8sqqs8cycx2kdvzxwi36fx7znn5crgg9fc18"))))
     (properties `((upstream-name . "devianLM")))
     (build-system r-build-system)
     (arguments

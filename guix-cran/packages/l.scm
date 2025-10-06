@@ -8789,13 +8789,13 @@ dependencies.")
 (define-public r-liver
   (package
     (name "r-liver")
-    (version "1.22")
+    (version "1.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "liver" version))
        (sha256
-        (base32 "1siqribh8qcashnsiq4b2fvyrim9liyhqi89g4mqid7sndkbwc5c"))))
+        (base32 "0z8wsnp8apfj5xqkd0k8iwvh2jqfv6qw7hcg9sbsxhdvga3kmkvs"))))
     (properties `((upstream-name . "liver")))
     (build-system r-build-system)
     (arguments
@@ -16789,32 +16789,6 @@ changes using pattern recognition deep regression learning.  Summary of Methods
 used: Awesome H2O tutorials: <https://github.com/h2oai/awesome-h2o>, Market Type
 research of Van Tharp Institute: <https://vantharp.com/>, Reinforcement Learning
 R package: <https://CRAN.R-project.org/package=@code{ReinforcementLearning>}.")
-    (license license:expat)))
-
-(define-public r-lazysql
-  (package
-    (name "r-lazysql")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lazysql" version))
-       (sha256
-        (base32 "18vff80rl8ckjwfqi9dhzs1q35a1wrxvynidji6dy2kvvk38xnpa"))))
-    (properties `((upstream-name . "lazysql")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plyr r-magrittr r-checkmate))
-    (home-page "https://github.com/UweBlock/lazysql")
-    (synopsis "Lazy SQL Programming")
-    (description
-     "Helper functions to build SQL statements for @code{dbGetQuery} or
-@code{dbSendQuery} under program control.  They are intended to increase speed
-of coding and to reduce coding errors.  Arguments are carefully checked, in
-particular SQL identifiers such as names of tables or columns.  More patterns
-will be added as required.")
     (license license:expat)))
 
 (define-public r-lazysf

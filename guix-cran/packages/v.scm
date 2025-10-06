@@ -2841,13 +2841,13 @@ of mortality models.")
 (define-public r-vital
   (package
     (name "r-vital")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vital" version))
        (sha256
-        (base32 "1v8rj3s1n0zxii30blijphk1ya75ryr1f5714s1n9l2il9vzqng9"))))
+        (base32 "0avvnzmgzmjii70j78z01pvlzjskgkygkc1fmi2hnklfqlkwvk41"))))
     (properties `((upstream-name . "vital")))
     (build-system r-build-system)
     (arguments
@@ -3511,13 +3511,13 @@ as both viewpoints and occluders.")
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visOmopResults" version))
        (sha256
-        (base32 "0gpv39c4x8kbs19xlzbs1byhc47gl84fzdvn5yfh8y6d9wwlvjz3"))))
+        (base32 "12vwbv8jy459m0ny71yfx7mm62mxshilacym29h5wjkdzh9g59ck"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
     (arguments
