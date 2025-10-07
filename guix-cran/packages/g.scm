@@ -12508,13 +12508,13 @@ maximisation algorithm.  Bernhardt (2015) <doi:10.1016/j.csda.2014.11.011>.")
 (define-public r-gmvarkit
   (package
     (name "r-gmvarkit")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmvarkit" version))
        (sha256
-        (base32 "09pf4zfj41dw79g7xfd6fkhfn4r64ah9n2k14kj9crw2byl3n4l1"))))
+        (base32 "0yca11bckazjyzkhvsb9w3p1v2wn3xqwnj1p9kskv9bz9cp06kj0"))))
     (properties `((upstream-name . "gmvarkit")))
     (build-system r-build-system)
     (arguments
@@ -12533,8 +12533,8 @@ models, quantile residual tests, graphical diagnostics, simulations,
 forecasting, and estimation of generalized impulse response function and
 generalized forecast error variance decomposition.  Leena Kalliovirta, Mika
 Meitz, Pentti Saikkonen (2016) <doi:10.1016/j.jeconom.2016.02.012>, Savi
-Virolainen (2025) <doi:10.1080/07350015.2024.2322090>, Savi Virolainen (2022)
-<doi:10.48550/@code{arXiv.2109.13648>}.")
+Virolainen (2025) <doi:10.1080/07350015.2024.2322090>, Savi Virolainen (in
+press) <doi:10.1016/j.ecosta.2025.09.003>.")
     (license license:gpl3)))
 
 (define-public r-gmtfd
@@ -25737,13 +25737,13 @@ format.  Massimo Aria, Corrado Cuccurullo. (2017)
 (define-public r-gerda
   (package
     (name "r-gerda")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gerda" version))
        (sha256
-        (base32 "1rhqf5gy2djlss5wl3zalakgpls1l9z69a9hk737y1hmwhwda190"))))
+        (base32 "08d7lx9yszbrvzxjrfzq1hzm0rf8ni7k3dyj3j4hv21c4jd6lh5g"))))
     (properties `((upstream-name . "gerda")))
     (build-system r-build-system)
     (arguments
@@ -37142,6 +37142,32 @@ Y. Ding, and D. Cabezon (2019) <@code{arXiv:1906.05776>}.")
 habitat suitability data to calculate posterior probabilities of breeding origin
 of migrating birds.")
     (license license:cc0)))
+
+(define-public r-gagerr
+  (package
+    (name "r-gagerr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gageRR" version))
+       (sha256
+        (base32 "1m1baxpfm24sxy8p32s4i4fp30rd01vzqr68l0xgsbs3jjfl59ja"))))
+    (properties `((upstream-name . "gageRR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=gageRR")
+    (synopsis "Calculate Gauge Repeatability and Reproducibility")
+    (description
+     "Procedures for calculating variance components, study variation, percent study
+variation, and percent tolerance for gauge repeatability and reproducibility
+study.  Methods included are ANOVA and Average / Range methods.  Requires
+balanced study.")
+    (license license:gpl3+)))
 
 (define-public r-gagblup
   (package

@@ -2251,23 +2251,24 @@ Martinez (2022) <doi:10.48550/@code{arXiv.2206.01779>}.")
 (define-public r-bsw
   (package
     (name "r-bsw")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BSW" version))
        (sha256
-        (base32 "0l6sw8lyk9mxfdw4s72hz6a0b30gi2a2vlcndkgahjlym6i5bz83"))))
+        (base32 "0ddhwphf1hazzg06m4nirqnvwhgr71kdn1xfv35cqxgb9akpg6bg"))))
     (properties `((upstream-name . "BSW")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-quadprog r-matrixstats r-matrix))
+    (propagated-inputs (list r-quadprog r-matrixstats r-matrix r-checkmate
+                             r-boot))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/adam-bec/BSW")
+    (home-page "https://github.com/UdS-MF-IMBEI/BSW")
     (synopsis
-     "Fitting a Log-Binomial Model using the Bekhit-SchÃ¶pe-Wagenpfeil (BSW) Algorithm")
+     "Fitting a Log-Binomial Model Using the BekhitâSchÃ¶peâWagenpfeil (BSW) Algorithm")
     (description
      "This package implements a modified Newton-type algorithm (BSW algorithm) for
 solving the maximum likelihood estimation problem in fitting a log-binomial
@@ -33150,13 +33151,13 @@ add-in that can be bound to a keyboard shortcut.")
 (define-public r-backbone
   (package
     (name "r-backbone")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "backbone" version))
        (sha256
-        (base32 "1w4lkxdy67b8pksqkh3nkhlkij673ggzqh045y15irgq2jrwb90q"))))
+        (base32 "09rgia0siabjk878dd7dbfi5x03ql4lwk25dr6546yl6qszcsjxs"))))
     (properties `((upstream-name . "backbone")))
     (build-system r-build-system)
     (arguments

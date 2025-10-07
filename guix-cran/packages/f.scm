@@ -25577,6 +25577,34 @@ R packages and can not use a proper build system.  Stay away if you can (use a
 proper build system).")
     (license license:bsd-2)))
 
+(define-public r-fakedatar
+  (package
+    (name "r-fakedatar")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FakeDataR" version))
+       (sha256
+        (base32 "1snzfs6dra0m1dlr0x3sgcz43aymfp7j3wlzks57mkbjcfsa09ya"))))
+    (properties `((upstream-name . "FakeDataR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip r-jsonlite r-dplyr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://zobaer09.github.io/FakeDataR/")
+    (synopsis "Privacy-Preserving Synthetic Data for 'LLM' Workflows")
+    (description
+     "Generate privacy-preserving synthetic datasets that mirror structure, types,
+factor levels, and missingness; export bundles for LLM workflows (data plus JSON
+schema and guidance); and build fake data directly from SQL database tables
+without reading real rows.  Methods are related to approaches in Nowok, Raab and
+Dibben (2016) <doi:10.32614/RJ-2016-019> and the foundation-model overview by
+Bommasani et al. (2021) <doi:10.48550/@code{arXiv.2108.07258>}.")
+    (license license:expat)))
+
 (define-public r-fake
   (package
     (name "r-fake")
@@ -25733,13 +25761,13 @@ approach from Scutari, Panero and Proissl (2022)
 (define-public r-fairmetrics
   (package
     (name "r-fairmetrics")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fairmetrics" version))
        (sha256
-        (base32 "0d958p61g59dm3iwjfggk1jbhsiagnr0i84kxp8xzn62xicxvjj2"))))
+        (base32 "10ibddlnrjxb0v3ri5l20yvs5kjvpfy8j9hjwnzrdm0i9ziqf0la"))))
     (properties `((upstream-name . "fairmetrics")))
     (build-system r-build-system)
     (arguments

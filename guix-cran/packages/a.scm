@@ -9463,13 +9463,13 @@ via @code{ArcGIS} location services REST API endpoints
 (define-public r-arcgisgeocode
   (package
     (name "r-arcgisgeocode")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgisgeocode" version))
        (sha256
-        (base32 "0zhi8gsm7ksw3lkkfqidwm5rlx82f2mz24n5s9lwm9z43ixbyir2"))))
+        (base32 "1wzq90igwpmkaznsj6a57gasw2jh85pxfq3m0rs69wydwdmdhplr"))))
     (properties `((upstream-name . "arcgisgeocode")))
     (build-system r-build-system)
     (arguments
@@ -17446,6 +17446,37 @@ text inputs.  This is done using the Algolia Places @code{JavaScript} library.
 See <https://community.algolia.com/places/>.")
     (license license:expat)))
 
+(define-public r-algeriapis
+  (package
+    (name "r-algeriapis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AlgeriAPIs" version))
+       (sha256
+        (base32 "05k7yrxg0hag8wqv5g93bx2qp3whpwy8kl9mfiwbq4ardg4amn25"))))
+    (properties `((upstream-name . "AlgeriAPIs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-scales r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/algeriapis")
+    (synopsis "Access Algerian Data via Public APIs")
+    (description
+     "This package provides functions to access data from public RESTful APIs
+including World Bank API and REST Countries API', retrieving real-time or
+historical information related to Algeria.  The package enables users to query
+economic indicators and international demographic and geopolitical statistics in
+a reproducible way.  It is designed for researchers, analysts, and developers
+who require reliable and programmatic access to Algerian data through
+established APIs.  For more information on the APIs, see: World Bank API
+<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392> and REST
+Countries API <https://restcountries.com/>.")
+    (license license:expat)))
+
 (define-public r-algebraichaplopackage
   (package
     (name "r-algebraichaplopackage")
@@ -25172,6 +25203,42 @@ analyses, and community projections in which species are represented by MPMs.
 All forms of MPMs are allowed, including integral projection models (IPMs).
 Also includes individual-based modeling (IBM) versions of these.")
     (license license:gpl2+)))
+
+(define-public r-adaplots
+  (package
+    (name "r-adaplots")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adaplots" version))
+       (sha256
+        (base32 "18pd4xz94283kgq8qr509pw06rz30055399340fb71hz319qks0c"))))
+    (properties `((upstream-name . "adaplots")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=adaplots")
+    (synopsis
+     "Ada-Plot and Uda-Plot for Assessing Distributional Attributes and Normality")
+    (description
+     "The centralized empirical cumulative average deviation function is utilized to
+develop both Ada-plot and Uda-plot as alternatives to Ad-plot and Ud-plot
+introduced by the author.  Analogous to Ad-plot, Ada-plot can identify symmetry,
+skewness, and outliers of the data distribution.  The Uda-plot is as exceptional
+as Ud-plot in assessing normality.  The d-value that quantifies the degree of
+proximity between the Uda-plot and the graph of the estimated normal density
+function helps guide to make decisions on confirmation of normality.  Extreme
+values in the data can be eliminated using the 1.5IQR rule to create its robust
+version if user demands.  Full description of the methodology can be found in
+the article by Wijesuriya (2025a) <doi:10.1080/03610926.2025.2558108>.  Further,
+the development of Ad-plot and Ud-plot is contained in both article and the
+adplots R package by Wijesuriya (2025b & 2025c)
+<doi:10.1080/03610926.2024.2440583> and <doi:10.32614/CRAN.package.adplots>.")
+    (license license:gpl3)))
 
 (define-public r-adapdiscom
   (package

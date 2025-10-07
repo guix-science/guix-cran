@@ -1923,13 +1923,13 @@ meta-package, it helps create a comprehensive reference for its website.")
 (define-public r-dutoolkit
   (package
     (name "r-dutoolkit")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DUToolkit" version))
        (sha256
-        (base32 "11x8qx7q7mshb58nbb8akwd67dxx42zgzms0pzdcvc1xykz4s9mq"))))
+        (base32 "0k72a0wsgsxr3nxmq2sgfgqkc7wki1z8l9qq4qd6j2jzifs51y72"))))
     (properties `((upstream-name . "DUToolkit")))
     (build-system r-build-system)
     (arguments
@@ -1945,7 +1945,8 @@ effectively interpret and communicate decision risk when evaluating multiple
 policy options.  It uses model outputs from uncertainty analysis for baseline
 scenarios and policy alternatives to generate visual representations of
 uncertainty and quantitative measures for assessing associated risks.  For more
-details see <https://dut.ihe.ca/>.")
+details see Wiggins and colleagues (2025) <doi:10.1371/journal.pone.0332522> and
+<https://dut.ihe.ca/>.")
     (license license:gpl2+)))
 
 (define-public r-durga
@@ -20046,13 +20047,13 @@ column will be converted to the multi-level hierarchy.")
 (define-public r-dextergui
   (package
     (name "r-dextergui")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dextergui" version))
        (sha256
-        (base32 "1xx5nr35xhmn97g5ywk961r48i1d807wjqk1bj79v13fp9q5a7f3"))))
+        (base32 "0rn14dgqmfqp1pzizqj1yq0qkzc829n7k64vf3ak2q3jn47jsncc"))))
     (properties `((upstream-name . "dextergui")))
     (build-system r-build-system)
     (arguments
@@ -23474,13 +23475,13 @@ consideration.")
 (define-public r-demography
   (package
     (name "r-demography")
-    (version "2.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "demography" version))
        (sha256
-        (base32 "0smkfivhhpa5cz5kh33dh3vl4zb102mjazxsxd382z7cwfqldffd"))))
+        (base32 "03vd5rpspkwl87vz0d9g648z4dlklfka4s6m3n1115kw9afg730g"))))
     (properties `((upstream-name . "demography")))
     (build-system r-build-system)
     (arguments

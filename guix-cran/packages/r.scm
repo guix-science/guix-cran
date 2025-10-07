@@ -1860,20 +1860,25 @@ Linux for haplotyping.")
 (define-public r-rvg
   (package
     (name "r-rvg")
-    (version "0.3.5")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvg" version))
        (sha256
-        (base32 "1w01qvjx6d1av9ds5zh7xczhjz79w276s42jq138vafvvc1p34c0"))))
+        (base32 "1z7w4zwclz03iki9bm34d1ymgp2zj87wmxw4lfz74s17izp7swnz"))))
     (properties `((upstream-name . "rvg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list zlib libpng))
-    (propagated-inputs (list r-xml2 r-rlang r-rcpp r-officer r-gdtools))
+    (propagated-inputs (list r-xml2
+                             r-systemfonts
+                             r-rlang
+                             r-rcpp
+                             r-officer
+                             r-gdtools))
     (native-inputs (list pkg-config))
     (home-page "https://ardata-fr.github.io/officeverse/")
     (synopsis "R Graphics Devices for 'Office' Vector Graphics Output")
@@ -14171,13 +14176,13 @@ a symmetric positive definite matrix generator, see Mezzadri, F. (2007)
 (define-public r-ronfig
   (package
     (name "r-ronfig")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ronfig" version))
        (sha256
-        (base32 "12b3fc40nndkr6brc1bjh2d79x5mvfp9d2hmyv539sjnrzm77yzq"))))
+        (base32 "0y9i11rbmfln4yiziq3ykvp392g9s65njd1kh28ldpylzn71jbw6"))))
     (properties `((upstream-name . "ronfig")))
     (build-system r-build-system)
     (arguments
@@ -31017,42 +31022,6 @@ limits: 70+ tips. @code{PeerJ} Preprints 6:e26605v1
 <doi:10.7287/peerj.preprints.26605v1>.")
     (license license:gpl2+)))
 
-(define-public r-rfars
-  (package
-    (name "r-rfars")
-    (version "2.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rfars" version))
-       (sha256
-        (base32 "1i1p84xj47yicg9ij35pvpnm2zamabh22dp4jf3yppknvcw03hah"))))
-    (properties `((upstream-name . "rfars")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-janitor
-                             r-haven
-                             r-dplyr
-                             r-downloader
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/s87jackson/rfars")
-    (synopsis "Download and Analyze Crash Data")
-    (description
-     "Download crash data from the National Highway Traffic Safety Administration and
-prepare it for research.")
-    (license license:cc0)))
-
 (define-public r-rfacts
   (package
     (name "r-rfacts")
@@ -38275,6 +38244,33 @@ regression models.  It has been designed for use with the book Introduction to
 Regression and Modeling with R by Adam Petrie, Cognella Publishers, ISBN:
 978-1-63189-250-9.")
     (license license:gpl2+)))
+
+(define-public r-regcalreliab
+  (package
+    (name "r-regcalreliab")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RegCalReliab" version))
+       (sha256
+        (base32 "0rmi5w46qyjq70id2s5ia1sviqk618d0n1a6hfiv6a95m4135xpc"))))
+    (properties `((upstream-name . "RegCalReliab")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich))
+    (native-inputs (list r-knitr))
+    (home-page "https://lbw080526.github.io/RegCalReliab/")
+    (synopsis "Regression Calibration Using Reliability Studies")
+    (description
+     "This package implements regression calibration methods for correcting
+measurement error in regression models using external or internal reliability
+studies.  Methods are described in Carroll, Ruppert, Stefanski, and Crainiceanu
+(2006) \"Measurement Error in Nonlinear Models: A Modern Perspective\"
+<doi:10.1201/9781420010138>.")
+    (license license:expat)))
 
 (define-public r-regassure
   (package

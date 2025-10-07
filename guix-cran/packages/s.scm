@@ -8252,6 +8252,33 @@ implements similar features as the user-written summclust.ado Stata module
 (@code{MacKinnon}, Nielsen & Webb, 2022; <@code{arXiv:2205.03288v1>}).")
     (license license:expat)))
 
+(define-public r-summarytabl
+  (package
+    (name "r-summarytabl")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "summarytabl" version))
+       (sha256
+        (base32 "1cd9gxwxjjipzp6l9mnhgb3vzwj6ba8vjw70j34w1fvgddhgw44z"))))
+    (properties `((upstream-name . "summarytabl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-tibble r-rlang r-purrr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://anyamemensah.github.io/summarytabl/")
+    (synopsis
+     "Generate Summary Tables for Continuous, Ordinal, and Categorical Data")
+    (description
+     "This package provides functions for tabulating and summarizing continuous,
+ordinal, and categorical variables in data frames.  The package was designed to
+streamline exploratory data analysis and simplify the creation of summary tables
+for reports and other purposes.")
+    (license license:expat)))
+
 (define-public r-summarylasso
   (package
     (name "r-summarylasso")
@@ -8355,6 +8382,40 @@ Assisted approach for the mean squared prediction error estimation of small area
 predictor is provided.  We also provide other existing methods of mean squared
 prediction error estimation such as jackknife method for the mixed logistic
 model.")
+    (license license:expat)))
+
+(define-public r-sulcimap
+  (package
+    (name "r-sulcimap")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sulcimap" version))
+       (sha256
+        (base32 "1y838wn292f8jv4fmbwfam3g3ckpq82lpij2jfhfqwvblb0m6yz6"))))
+    (properties `((upstream-name . "sulcimap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite
+                             r-scales
+                             r-patchwork
+                             r-magick
+                             r-ggplot2
+                             r-cowplot))
+    (home-page "https://cran.r-project.org/package=sulcimap")
+    (synopsis "Mapping Brain Folding Patterns")
+    (description
+     "Visualizes sulcal morphometry data derived from @code{BrainVisa}
+<https://brainvisa.info/> including width, depth, surface area, and length.  The
+package enables mapping of statistical group results or subject-level values
+onto cortical surface maps, with options to focus on all sulci or only selected
+regions of interest.  Users can display all four measures simultaneously or
+restrict plots to chosen measures, creating composite, publication-quality brain
+visualizations in R to support the analysis and interpretation of sulcal
+morphology.")
     (license license:expat)))
 
 (define-public r-sugrrants
@@ -15215,13 +15276,13 @@ et al. (2015) <doi:10.1016/j.ijforecast.2013.11.007>.")
 (define-public r-statnipokladna
   (package
     (name "r-statnipokladna")
-    (version "0.7.4")
+    (version "0.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statnipokladna" version))
        (sha256
-        (base32 "0hdpyqq6qa01kvwa2ml8virm6h75xwlck2xx3madh9jkgijnysfa"))))
+        (base32 "0pimn2s6sp75n0kg10rhqrn6prki196wyv7mc4gqzhgf3h20h28c"))))
     (properties `((upstream-name . "statnipokladna")))
     (build-system r-build-system)
     (arguments
@@ -15248,7 +15309,7 @@ et al. (2015) <doi:10.1016/j.ijforecast.2013.11.007>.")
     (synopsis "Use Data from the Czech Public Finance Database")
     (description
      "Get programmatic access to data from the Czech public budgeting and accounting
-database, StÃ¡tnÃ­ pokladna <https://monitor.statnipokladna.cz/>.")
+database, StÃ¡tnÃ­ pokladna <https://monitor.statnipokladna.gov.cz/>.")
     (license license:expat)))
 
 (define-public r-statnetweb
@@ -18665,13 +18726,13 @@ hinge loss, squared-hinge loss, and logistic loss.")
 (define-public r-ssnbler
   (package
     (name "r-ssnbler")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSNbler" version))
        (sha256
-        (base32 "0jpxkqlka07pa1wj2lmwp41q4d790axl4vh3l9hb8kg48mk3a82k"))))
+        (base32 "0hgrklm615kwx8swzbmf8r606rikbyvbhmb41c9j8wb6j8a0a5v1"))))
     (properties `((upstream-name . "SSNbler")))
     (build-system r-build-system)
     (arguments
@@ -33150,13 +33211,13 @@ dedicated to the visualization of time-dependent variables Licen et al. (2020)
 (define-public r-sombrero
   (package
     (name "r-sombrero")
-    (version "1.4.4")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SOMbrero" version))
        (sha256
-        (base32 "0nh9fvdgqs0v54ivjnaw4jnm5as101qrx1dmxahh444bl4m305gm"))))
+        (base32 "00d1gbq1cz36vj3f5j1hl933rihhakc83m1rb14hsapsv5k97i6q"))))
     (properties `((upstream-name . "SOMbrero")))
     (build-system r-build-system)
     (arguments
@@ -33172,7 +33233,7 @@ dedicated to the visualization of time-dependent variables Licen et al. (2020)
                              r-ggwordcloud
                              r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "http://sombrero.clementine.wf/")
+    (home-page "https://forge.inrae.fr/nathalie.villa-vialaneix/sombrero")
     (synopsis "SOM Bound to Realize Euclidean and Relational Outputs")
     (description
      "The stochastic (also called on-line) version of the Self-Organising Map (SOM)
@@ -34473,19 +34534,19 @@ utility functions for graphs and several sample data sets.  See Healy (2019)
 (define-public r-socratadata
   (package
     (name "r-socratadata")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "socratadata" version))
        (sha256
-        (base32 "0xx33hpxad077kjhqfv2360g3vir3flniw6kyr1g4f1jwyq6fw40"))))
+        (base32 "1ww9bdfwwq4z0y1kfzv9k9bn63yriff2xd6f9c4ask12yqv07vyl"))))
     (properties `((upstream-name . "socratadata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list))
+    (inputs (list xz))
     (propagated-inputs (list r-tibble r-sf r-rlang r-httr2 r-cli))
     (home-page "https://ryanzomorrodi.github.io/socratadata/")
     (synopsis "Explore Socrata Data with Ease")
@@ -43543,13 +43604,13 @@ Lambert (2013) <doi:10.1002/sim.5823>).")
 (define-public r-simstudy
   (package
     (name "r-simstudy")
-    (version "0.8.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simstudy" version))
        (sha256
-        (base32 "1qj0f5c40z1dhxm6wfrl83nd4h1s90qy7aa1ka3ziz8bpkpxkcnw"))))
+        (base32 "0nncwmlwgzkd16b0v1p5k0w816ma64ambvh9b7f58ph6avdmlqmv"))))
     (properties `((upstream-name . "simstudy")))
     (build-system r-build-system)
     (arguments
@@ -44362,6 +44423,36 @@ of any dimension.  The Simplex Tree data structure was originally introduced by
 Jean-Daniel Boissonnat and ClÃ©ment Maria (2014)
 <doi:10.1007/s00453-014-9887-3>.")
     (license license:expat)))
+
+(define-public r-simpleupset
+  (package
+    (name "r-simpleupset")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SimpleUpset" version))
+       (sha256
+        (base32 "03wv3sqknydg334883nkjfi5x9nqql661qv4d879jjni8cm8k11m"))))
+    (properties `((upstream-name . "SimpleUpset")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-scales
+                             r-s7
+                             r-rlang
+                             r-patchwork
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/smped/SimpleUpset")
+    (synopsis "Create Upset Plots")
+    (description
+     "Create Upset plots using a combination of ggplot2 and patchwork'.")
+    (license license:gpl3)))
 
 (define-public r-simpletex
   (package
@@ -48837,20 +48928,21 @@ Cadonna et al. (2020) <doi:10.3390/econometrics8020020>.")
 (define-public r-shrinkcovmat
   (package
     (name "r-shrinkcovmat")
-    (version "1.4.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ShrinkCovMat" version))
        (sha256
-        (base32 "0iyri3syjk9xv49d87fdyhnxg5c5x827vnak8vgckkkp62sdln2q"))))
+        (base32 "1sci38hc65fz0wsmpfjh4mqpncy9fsk42mn8wwzdva82aw9hlhfi"))))
     (properties `((upstream-name . "ShrinkCovMat")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "http://github.com/AnestisTouloumis/ShrinkCovMat")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AnestisTouloumis/ShrinkCovMat")
     (synopsis "Shrinkage Covariance Matrix Estimators")
     (description
      "This package provides nonparametric Steinian shrinkage estimators of the
@@ -48861,13 +48953,13 @@ the number of variables is larger than the sample size.")
 (define-public r-shrinkagetrees
   (package
     (name "r-shrinkagetrees")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ShrinkageTrees" version))
        (sha256
-        (base32 "1p9ax1n650vrp9p390v4mrvf5036sc9vv3wwxh6b80p3hix37mz4"))))
+        (base32 "19inmw0c9fjypmhhmbwylfiwksk8bx33m6d5svn8qm0pzing8v4m"))))
     (properties `((upstream-name . "ShrinkageTrees")))
     (build-system r-build-system)
     (arguments

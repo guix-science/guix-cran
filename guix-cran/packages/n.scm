@@ -4067,6 +4067,33 @@ viral dynamics, transportation, population structure), alone or taken together,
 to create complex but relatively intuitive epidemiological simulations.")
     (license license:gpl3)))
 
+(define-public r-nose
+  (package
+    (name "r-nose")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nose" version))
+       (sha256
+        (base32 "0ng83nm6ckksj1rzdvdzhsybri9866rmwiwb8j7979vfqg1pdpx5"))))
+    (properties `((upstream-name . "nose")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=nose")
+    (synopsis "Classification of Sparseness in 2-by-2 Categorical Data")
+    (description
+     "This package provides functions for classifying sparseness in 2 x 2 categorical
+data where one or more cells have zero counts.  The classification uses three
+widely applied summary measures: Risk Difference (RD), Relative Risk (RR), and
+Odds Ratio (OR).  Helps in selecting suitable continuity corrections for zero
+cells in multi-centre or meta-analysis studies.  Also supports sensitivity
+analysis and can detect phenomena such as Simpson's paradox.  The methodology is
+based on Subbiah and Srinivasan (2008) <doi:10.1016/j.spl.2008.06.023>.")
+    (license license:gpl2)))
+
 (define-public r-nos
   (package
     (name "r-nos")
@@ -4180,6 +4207,41 @@ covering Norway and several broader regional populations: Europe, Africa, South
 America, West Asia, Middle Asia, and East Asia.  Developed and maintained for
 use at the Department of Forensic Sciences, Oslo, Norway.")
     (license license:expat)))
+
+(define-public r-normref
+  (package
+    (name "r-normref")
+    (version "0.0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "normref" version))
+       (sha256
+        (base32 "0mljc68xpmmdrr1qkgjg9rir9094n5wji6xw7dys1yiz1awyjb5y"))))
+    (properties `((upstream-name . "normref")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-rlang
+                             r-rdpack
+                             r-openxlsx2
+                             r-ggplot2
+                             r-gamlss-dist
+                             r-gamlss))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=normref")
+    (synopsis "Continuous Norming")
+    (description
+     "This package provides a toolbox for calculating continuous norms for
+psychological tests, where the norms can be age-dependent.  The norms are based
+Generalized Additive Models for Location, Scale, and Shape (GAMLSS) for the test
+scores in the normative sample.  The package includes functions for model
+selection, reliability estimation, and calculating norms, including confidence
+intervals.  For more details, see Timmerman et al. (2021)
+<doi:10.1037/met0000348>.")
+    (license license:gpl3+)))
 
 (define-public r-normpsy
   (package
@@ -4582,29 +4644,6 @@ meteorological services in Denmark (DMI), Finland (FMI), Iceland (VI), Norway
      "This package provides the Arctic Ice Studio's Nord and Group of Seven inspired
 colour palettes for use with ggplot2 via custom functions.")
     (license license:expat)))
-
-(define-public r-nopp
-  (package
-    (name "r-nopp")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nopp" version))
-       (sha256
-        (base32 "1kcgwhwj02bivqqd86l9gk3gqiws9c4kjcsjmd0arcfd1bcygbj2"))))
-    (properties `((upstream-name . "nopp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mlogit r-mass))
-    (home-page "https://cran.r-project.org/package=nopp")
-    (synopsis "Nash Optimal Party Positions")
-    (description
-     "Estimation of party/candidate ideological positions that correspond to a Nash
-equilibrium along a one-dimensional space.")
-    (license license:gpl2+)))
 
 (define-public r-nopaco
   (package
@@ -9423,13 +9462,13 @@ model-generic algorithms as well.  A full User Manual is available at
 (define-public r-nimaa
   (package
     (name "r-nimaa")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NIMAA" version))
        (sha256
-        (base32 "1lnxh9mak25mji38bifrif6qg0rjg3fj0lacjdgpk8iqjallvq7y"))))
+        (base32 "1jnjb3h1xh788dg54hyrxq62rsf17lpdkz7qx79k8v5vcwrnqidn"))))
     (properties `((upstream-name . "NIMAA")))
     (build-system r-build-system)
     (arguments
@@ -9497,6 +9536,34 @@ extend existing plotting functionality and aesthetics, help prepare data objects
 for imputation, and extend access to command line tools and systems-level
 information.")
     (license license:expat)))
+
+(define-public r-nilsier
+  (package
+    (name "r-nilsier")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nilsier" version))
+       (sha256
+        (base32 "1k8d7c48723287rajclar0ykzbb79ahcff3y02a6547a8bgjccvk"))))
+    (properties `((upstream-name . "nilsier")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/envisim/nilsier/")
+    (synopsis "Design-Based Estimators for NILS")
+    (description
+     "Estimators and variance estimators tailored to the NILS hierarchical design
+(Adler et al.  2020, <https://res.slu.se/id/publ/105630>; GrafstrÃ¶m et al.
+2023, <https://res.slu.se/id/publ/128235>).  The National Inventories of
+Landscapes in Sweden (NILS) is a long-term national monitoring program that
+collects, analyses and presents data on Swedish nature, covering both common and
+rare habitats
+<https://www.slu.se/om-slu/organisation/institutioner/skoglig-resurshushallning/miljoanalys/nils/>.")
+    (license license:agpl3)))
 
 (define-public r-niledam
   (package

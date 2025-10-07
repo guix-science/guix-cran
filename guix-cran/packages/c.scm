@@ -50,13 +50,13 @@
 (define-public r-czso
   (package
     (name "r-czso")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "czso" version))
        (sha256
-        (base32 "11zwyg2k1vyk7j5kkga7a79d06hni59dkhkv1y6n6xg4423jz3v0"))))
+        (base32 "09d5iiw38laksjqzh6kihq4sadcc320saa0cfxrm45s0sjqzj2jh"))))
     (properties `((upstream-name . "czso")))
     (build-system r-build-system)
     (arguments
@@ -18811,6 +18811,35 @@ references for the code are: Diquigiovanni, Fontana, and Vantini (2021)
 <@code{arXiv:2103.00627>}.")
     (license license:gpl2)))
 
+(define-public r-conformalforecast
+  (package
+    (name "r-conformalforecast")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "conformalForecast" version))
+       (sha256
+        (base32 "0hhzy9pmg4a622d9iklmjlmdf652v28kcgz9ysmq1lr6w50f8zpr"))))
+    (properties `((upstream-name . "conformalForecast")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-rlang r-ggdist r-forecast))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/xqnwang/conformalForecast")
+    (synopsis
+     "Conformal Prediction Methods for Multistep-Ahead Time Series Forecasting")
+    (description
+     "This package provides methods and tools for performing multistep-ahead time
+series forecasting using conformal prediction methods including classical
+conformal prediction, adaptive conformal prediction, conformal PID
+(Proportional-Integral-Derivative) control, and autocorrelated multistep-ahead
+conformal prediction.  The methods were described by Wang and Hyndman (2024)
+<doi:10.48550/@code{arXiv.2410.13115>}.")
+    (license license:gpl3)))
+
 (define-public r-conformalclassification
   (package
     (name "r-conformalclassification")
@@ -20232,20 +20261,20 @@ connected components of a triangle rgl mesh is also provided.")
 (define-public r-concaveman
   (package
     (name "r-concaveman")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "concaveman" version))
        (sha256
-        (base32 "0b3fx3y60ibb73pqx5591jq1n86242qajfxbz3vzz6rxxspddlcz"))))
+        (base32 "1cpj3yjky5gd9wxp2rhwixkff66lny7l6jfzrwymgwfmfzqksra8"))))
     (properties `((upstream-name . "concaveman")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list geos gdal))
-    (propagated-inputs (list r-v8 r-sf r-magrittr r-jsonlite r-dplyr))
+    (propagated-inputs (list r-v8 r-sf r-jsonlite))
     (home-page "https://joelgombin.github.io/concaveman/")
     (synopsis "Very Fast 2D Concave Hull Algorithm")
     (description
@@ -22216,13 +22245,13 @@ these community structures and an outcome of interest (binary or continuous).")
 (define-public r-commecometrics
   (package
     (name "r-commecometrics")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "commecometrics" version))
        (sha256
-        (base32 "1nrmw71snr0ywinyx781g31in1mip7z7px2wd4q1lmlqsgp352v6"))))
+        (base32 "1a61l2s76kxya65h3m61bfd9anp5q57m1fb4cklwmrwjh0y68a8s"))))
     (properties `((upstream-name . "commecometrics")))
     (build-system r-build-system)
     (arguments

@@ -740,13 +740,13 @@ diagnostics.")
 (define-public r-xpose
   (package
     (name "r-xpose")
-    (version "0.4.20")
+    (version "0.4.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpose" version))
        (sha256
-        (base32 "171fg04mxcr817kxnq77inqa3pi71dlsdzaijd302cnzyp05n0w7"))))
+        (base32 "0zm2j1agppvkxr38j0d94jsngbwsw4bc21pn6zzvcs8syl95h186"))))
     (properties `((upstream-name . "xpose")))
     (build-system r-build-system)
     (arguments

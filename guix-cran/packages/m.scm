@@ -13088,13 +13088,13 @@ Eerola et al. (2018) <doi:10.1098/rsos.171520>.")
 (define-public r-movehmm
   (package
     (name "r-movehmm")
-    (version "1.11")
+    (version "1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moveHMM" version))
        (sha256
-        (base32 "0kcswpxhylbfsya2sn9awlndl1fl3qfqdvdllqw7651c6i45xljs"))))
+        (base32 "0w42v9z7rclz6xlw6cr55apksgsd8ih79i79aalgf74397cg0w71"))))
     (properties `((upstream-name . "moveHMM")))
     (build-system r-build-system)
     (arguments
@@ -21435,13 +21435,13 @@ joint tuning of machine learning algorithms and debiasing methods.")
 (define-public r-mlr3db
   (package
     (name "r-mlr3db")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3db" version))
        (sha256
-        (base32 "1zb8bgfy9sr5n6mvsbbk67v7aqnpzy7nw21ashssf1ykhf1ycff1"))))
+        (base32 "05i1zkx60gkqs4rmhgpwd7zm7qi2c5ns958rxcgz3wigi13hdb0s"))))
     (properties `((upstream-name . "mlr3db")))
     (build-system r-build-system)
     (arguments
@@ -21453,7 +21453,7 @@ joint tuning of machine learning algorithms and debiasing methods.")
                              r-data-table
                              r-checkmate
                              r-backports))
-    (home-page "https:///mlr3db.mlr-org.com")
+    (home-page "https://mlr3db.mlr-org.com")
     (synopsis "Data Base Backend for 'mlr3'")
     (description
      "Extends the mlr3 package with a backend to transparently work with databases
@@ -27201,6 +27201,35 @@ can also be used to annotate @code{tRFs}.  The detailed information can
 reference to Loher P, Telonis AG, Rigoutsos I (2017) <doi:10.1038/srep41184>.")
     (license license:gpl2+)))
 
+(define-public r-minter
+  (package
+    (name "r-minter")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "minter" version))
+       (sha256
+        (base32 "019ymk1xzr6bcalp6v5yw5dbxjgkar4z1iv399ykq2six2iysa3z"))))
+    (properties `((upstream-name . "minter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://fdecunta.github.io/minter/")
+    (synopsis
+     "Effect Sizes for Meta-Analysis of Interactions from Factorial Experiments")
+    (description
+     "Compute effect sizes and their sampling variances from factorial experimental
+designs.  The package supports calculation of simple effects, overall effects,
+and interaction effects for use in factorial meta-analyses.  See Gurevitch et
+al. (2000) <doi:10.1086/303337>, Morris et al. (2007) <doi:10.1890/06-0442>,
+Lajeunesse (2011) <doi:10.1890/11-0423.1> and Macartney et al. (2022)
+<doi:10.1016/j.neubiorev.2022.104554>.")
+    (license license:expat)))
+
 (define-public r-minsnps
   (package
     (name "r-minsnps")
@@ -30463,13 +30492,13 @@ band.  Growth models are: modified Gompertz model (Zwietering et al. (1990)
 (define-public r-microbial
   (package
     (name "r-microbial")
-    (version "0.0.21")
+    (version "0.0.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microbial" version))
        (sha256
-        (base32 "1d2sr4wwjlxcaxqr57gzf8m2pydgx4kp3h8mgyxzcm4s00i8m5bc"))))
+        (base32 "0gygh8gfz4vb7kbla96s2lbz8llzp63jixkxb75vizzbccfc09x7"))))
     (properties `((upstream-name . "microbial")))
     (build-system r-build-system)
     (arguments
@@ -30920,13 +30949,13 @@ Almost Ideal Demand System (AIDS) suggested by Deaton and Muellbauer (1980).")
 (define-public r-micecon
   (package
     (name "r-micecon")
-    (version "0.6-18")
+    (version "0.6-20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micEcon" version))
        (sha256
-        (base32 "1vdxl93d6fpfp6xfzrypnkwfry9ajfpivarj4glnx3w2sydmi7ql"))))
+        (base32 "1j5273fbg2nyz0gn2b8c20i8njmcvbb69fhv4l4b0cbzrmkkhcwd"))))
     (properties `((upstream-name . "micEcon")))
     (build-system r-build-system)
     (arguments
@@ -49226,13 +49255,13 @@ looking maps in R, with support for map projections.  See Brown (2016)
 (define-public r-mapme-biodiversity
   (package
     (name "r-mapme-biodiversity")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapme.biodiversity" version))
        (sha256
-        (base32 "1a2alavpg7s8kz1dj340ifc6ryf70hnwzh1990s8s91qxd6n44ai"))))
+        (base32 "0pnmxlm8dblqc0yl4w85qff72gssdllc741wc4llq7z2kqygnjkb"))))
     (properties `((upstream-name . "mapme.biodiversity")))
     (build-system r-build-system)
     (arguments
@@ -49248,7 +49277,8 @@ looking maps in R, with support for map projections.  See Brown (2016)
                              r-jsonlite
                              r-httr2
                              r-furrr
-                             r-dplyr))
+                             r-dplyr
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://mapme-initiative.github.io/mapme.biodiversity/")
     (synopsis "Efficient Monitoring of Global Biodiversity Portfolios")
@@ -52406,13 +52436,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "10vm3r6xa60grgsb5f97ifwdwm3s5glg9gz37gb310w6xi52z3ih"))))
+        (base32 "1f9r9i2pkg9akqsg7a57277gjxrparkfbrkn0lrjdbc5abasgsc8"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (arguments

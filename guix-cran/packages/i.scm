@@ -4615,13 +4615,13 @@ multivariate cases.")
 (define-public r-iq
   (package
     (name "r-iq")
-    (version "1.10.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iq" version))
        (sha256
-        (base32 "02k3ccp5flkh007dcbyb67hrlv63cbp0w3vm8c6q1hvys17lbsfh"))))
+        (base32 "11kdql17b493vwz3jld6vr1ggazpqlyv3j0wc2mmrhaa3rj06gs2"))))
     (properties `((upstream-name . "iq")))
     (build-system r-build-system)
     (arguments
@@ -4637,9 +4637,9 @@ multivariate cases.")
 proteomics data in data-independent acquisition mode (Pham et al.  2020
 <doi:10.1093/bioinformatics/btz961>).  It offers additional options for protein
 quantification using the N most intense fragment ions, using all fragment ions,
-and a wrapper for the median polish algorithm by Tukey (1977, ISBN:0201076160).
-In general, the tool can be used to integrate multiple proportional observations
-into a single quantitative value.")
+the median polish algorithm by Tukey (1977, ISBN:0201076160), and a robust
+linear model.  In general, the tool can be used to integrate multiple
+proportional observations into a single quantitative value.")
     (license license:bsd-3)))
 
 (define-public r-ipwerrory
@@ -13164,13 +13164,13 @@ prevent namespace conflicts.")
 (define-public r-important
   (package
     (name "r-important")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "important" version))
        (sha256
-        (base32 "1w6hf1mcz3wlwkip6d7bb8kni61smnvk0hlxissw4lv5drkswxia"))))
+        (base32 "0zcj15nxjdwnm5hia485706iwz4mqx0l4724nb1rbxi7ig0n8z63"))))
     (properties `((upstream-name . "important")))
     (build-system r-build-system)
     (arguments

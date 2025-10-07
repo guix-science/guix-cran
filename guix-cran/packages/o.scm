@@ -4780,6 +4780,32 @@ estimation procedures, the computation for the posterior probabilities, and the
 testing procedure.")
     (license license:gpl2)))
 
+(define-public r-optsize
+  (package
+    (name "r-optsize")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optsize" version))
+       (sha256
+        (base32 "1dpn1kb26yxnx8s39b01srzp7ad5p7w2lg7pb8jslqvgzf43z0ym"))))
+    (properties `((upstream-name . "optsize")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=optsize")
+    (synopsis "Optimal Plot Size Estimation for Field Experiments")
+    (description
+     "This package provides methods for determining optimum plot size and shape in
+field experiments using Fairfield-Smith's variance law approach.  It will
+evaluate field variability, determine optimum plot size and shape and study
+fertility trends across the field.")
+    (license license:gpl3+)))
+
 (define-public r-optsig
   (package
     (name "r-optsig")

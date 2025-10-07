@@ -27652,6 +27652,37 @@ sequence of destinations to ensure the analysis is unbiased and consistent
 across each trace route.")
     (license license:expat)))
 
+(define-public r-pinference
+  (package
+    (name "r-pinference")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Pinference" version))
+       (sha256
+        (base32 "0c7m4fs7nbvp48gjgcz8n9w8c04bkkhh47aph8xgiwd1va7aigw7"))))
+    (properties `((upstream-name . "Pinference")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lpsolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://pglpm.github.io/Pinference/")
+    (synopsis "Probability Inference for Propositional Logic")
+    (description
+     "Implementation of T. Hailperin's procedure to calculate lower and upper bounds
+of the probability for a propositional-logic expression, given equality and
+inequality constraints on the probabilities for other expressions.
+Truth-valuation is included as a special case.  Applications range from
+decision-making and probabilistic reasoning, to pedagogical for probability and
+logic courses.  For more details see T. Hailperin (1965)
+<doi:10.1080/00029890.1965.11970533>, T. Hailperin (1996) \"Sentential
+Probability Logic\" ISBN:0-934223-45-9, and package documentation.  Requires the
+@code{lpSolve} package.")
+    (license license:agpl3+)))
+
 (define-public r-pimeta
   (package
     (name "r-pimeta")
@@ -33472,13 +33503,13 @@ as multi-layered tiff files.")
 (define-public r-persistence
   (package
     (name "r-persistence")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "persistence" version))
        (sha256
-        (base32 "1hapnx4vx3whw72iw1z9cdf49xc4gy0fzivxcx13pg0iya66rnwd"))))
+        (base32 "1lirly0ybdrrn1gq5lc0wv77p392gggmf0ljbr5p833dcbw28ism"))))
     (properties `((upstream-name . "persistence")))
     (build-system r-build-system)
     (arguments
@@ -35346,6 +35377,45 @@ issues that can hinder efforts to standardise PEMS research.")
 estimation of the prevalence of an emerging or rare infectious diseases using
 the methods proposed in Guerrier et al. (2023) <@code{arXiv:2012.10745>}.")
     (license license:agpl3)))
+
+(define-public r-pema
+  (package
+    (name "r-pema")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pema" version))
+       (sha256
+        (base32 "19b0dk4qhqj6p123qxpil6gricn87h4ghqy60l3j5vx0833fkdsg"))))
+    (properties `((upstream-name . "pema")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stanheaders
+                             r-sn
+                             r-shiny
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-ggplot2
+                             r-cli
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cjvanlissa/pema")
+    (synopsis "Penalized Meta-Analysis")
+    (description
+     "Conduct penalized meta-analysis, see Van Lissa, Van Erp, & Clapper (2023)
+<doi:10.31234/osf.io/6phs5>.  In meta-analysis, there are often between-study
+differences.  These can be coded as moderator variables, and controlled for
+using meta-regression.  However, if the number of moderators is large relative
+to the number of studies, such an analysis may be overfit.  Penalized
+meta-regression is useful in these cases, because it shrinks the regression
+slopes of irrelevant moderators towards zero.")
+    (license license:gpl3+)))
 
 (define-public r-pelvis
   (package

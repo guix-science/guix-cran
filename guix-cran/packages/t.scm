@@ -6168,27 +6168,28 @@ release files.  For more information on the API, see
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "13vzc32n9r6hdcd4ka4imr45hyb3qjrr439vkarazbk8zrb8ml7k"))))
+        (base32 "167c5ck6czj2vah8b6w4y13x6ckyr9a74ba4ibyz2d0j4q1a29g1"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcpp r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kaifenglu/trtswitch")
     (synopsis "Treatment Switching")
     (description
      "This package implements rank-preserving structural failure time model (RPSFTM),
 iterative parameter estimation (IPE), inverse probability of censoring weights
-(IPCW), and two-stage estimation (TSE) methods for treatment switching in
-randomized clinical trials.")
+(IPCW), marginal structural model (MSM), simple two-stage estimation (TSEsimp),
+and improved two-stage with g-estimation (TSEgest) methods for treatment
+switching in randomized clinical trials.")
     (license license:gpl2+)))
 
 (define-public r-trtf
@@ -19505,13 +19506,13 @@ Dunnington et al. (2021) <doi:10.18637/jss.v101.i07>.")
 (define-public r-tidynorm
   (package
     (name "r-tidynorm")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidynorm" version))
        (sha256
-        (base32 "0dysyw0paj2gzlkwdl86wq7ifv2zwiapjmg4kxh300n5c75331l9"))))
+        (base32 "0piwaf9v79idddwh4m53ka172hciz06h4bjfwghi9w1lb5q9fdgv"))))
     (properties `((upstream-name . "tidynorm")))
     (build-system r-build-system)
     (arguments
@@ -19526,7 +19527,8 @@ Dunnington et al. (2021) <doi:10.18637/jss.v101.i07>.")
                              r-purrr
                              r-glue
                              r-dplyr
-                             r-cli))
+                             r-cli
+                             r-checkmate))
     (native-inputs (list r-quarto))
     (home-page "https://jofrhwld.github.io/tidynorm/")
     (synopsis "Tools for Tidy Vowel Normalization")
@@ -29388,13 +29390,13 @@ and described in Athanasopoulos et al. (2011)
 (define-public r-tcl
   (package
     (name "r-tcl")
-    (version "0.2.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tcl" version))
        (sha256
-        (base32 "0mawx6ynpjfbqaq53l61rq61wmiqhsgg428aivraiycyyvbqnr59"))))
+        (base32 "0vjv63qm7c03nk80z10yw9v7nnvxpkii3hljg2p025hggr9ncgiz"))))
     (properties `((upstream-name . "tcl")))
     (build-system r-build-system)
     (arguments
@@ -29430,8 +29432,9 @@ user-specified level alpha of the test.  Power and sample size computations are
 based on a Monte Carlo simulation approach.  It is computationally very
 efficient.  The variance of the random error in computing power and sample size
 arising from the simulation approach is analytically derived by using the delta
-method.  Draxler, C., & Alexandrowicz, R. W. (2015),
-<doi:10.1007/s11336-015-9472-y>.")
+method.  Additionally, functions to compute the power of the tests as a function
+of an effect measure interpreted as explained variance are provided.  Draxler,
+C., & Alexandrowicz, R. W. (2015), <doi:10.1007/s11336-015-9472-y>.")
     (license license:gpl2)))
 
 (define-public r-tciu
@@ -31312,38 +31315,6 @@ Journal of Medicine style, Lancet style and @code{Hmisc::summaryM()} statistics
 are provided.  The package contains rendering for HTML5, Rmarkdown and an
 indexing format for use in tracing and tracking are provided.")
     (license license:gpl3)))
-
-(define-public r-tangles
-  (package
-    (name "r-tangles")
-    (version "2.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tangles" version))
-       (sha256
-        (base32 "0sm1pdmg7c2ikhmf8xniv37m3hxiq9am24xvpcx4i1yny78jgqky"))))
-    (properties `((upstream-name . "tangles")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra r-sf r-digest))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tangles")
-    (synopsis "Anonymisation of Spatial Point Patterns and Grids")
-    (description
-     "This package provides methods for anonymisation of spatial datasets while
-preserving spatial structure and relationships.  Original coordinates or raster
-geometries are transformed using randomized or predefined vertical shifts,
-horizontal shifts, and rotations.  Compatible with point-based data in matrix',
-data.frame', or sf formats, as well as terra raster objects.  Supports
-reversible anonymisation workflows, hash-based validation, shapefile export, and
-consistent tangling across related datasets using stored transformation
-sequences.  Approach informed by the De-Identification Decision Making Framework
-(CM OâKeefe, S Otorepec, M Elliot, E Mackey, and K OâHara 2017)
-<doi:10.4225/08/59c169433efd4>.")
-    (license license:gpl2)))
 
 (define-public r-tangledfeatures
   (package

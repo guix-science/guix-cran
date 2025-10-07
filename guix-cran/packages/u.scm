@@ -121,6 +121,38 @@ generalized ensembles).")
 reporting summary statistics.")
     (license license:gpl3)))
 
+(define-public r-uvdose
+  (package
+    (name "r-uvdose")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UVdose" version))
+       (sha256
+        (base32 "08rr58iyfz6q60ddnihzwwi6c4h4lsbn1xx0l68b6b86v1wwz2kr"))))
+    (properties `((upstream-name . "UVdose")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-reshape2
+                             r-purrr
+                             r-ncdf4
+                             r-magrittr
+                             r-lubridate
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=UVdose")
+    (synopsis "Estimate Ambient UV Dose from Location and Date Info")
+    (description
+     "Estimate ambient vitamin D-effective or erythemal dose using ultraviolet
+radiation (UV) data from the TEMIS database, based on date and geographical
+location.")
+    (license license:gpl3)))
+
 (define-public r-utsf
   (package
     (name "r-utsf")
@@ -1091,13 +1123,13 @@ the input variables needed for sending the data inquiry.")
 (define-public r-uscongress
   (package
     (name "r-uscongress")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uscongress" version))
        (sha256
-        (base32 "1rkq7q5w5ki5sh6n196jyxrkf1ai503qjwf6zsghafb2r37jxfik"))))
+        (base32 "1kjk6lcdil8m3c6bp9ilz0sdfwn696ihw6qvaykbarzq0d9ajc71"))))
     (properties `((upstream-name . "uscongress")))
     (build-system r-build-system)
     (arguments

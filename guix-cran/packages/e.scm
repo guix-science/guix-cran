@@ -8505,6 +8505,31 @@ size between a mean and a constant) and e (an effect size between means without
 assuming the variance equality).")
     (license license:expat)))
 
+(define-public r-es
+  (package
+    (name "r-es")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ES" version))
+       (sha256
+        (base32 "1j02ka87zm4ak549fqk4n8snq9nqwd1jvfh3rhj5vmhm444zvx35"))))
+    (properties `((upstream-name . "ES")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=ES")
+    (synopsis "Edge Selection")
+    (description
+     "Implementation of the Edge Selection Algorithm for undirected graph selection.
+The least angle regression-based algorithm selects edges of an undirected graph
+based on the projection of the current residuals on the two dimensional
+edge-planes.  The algorithm selects symmetric adjacency matrix, which many other
+regression-based undirected graph selection procedures cannot do.")
+    (license license:gpl2)))
+
 (define-public r-ertg3d
   (package
     (name "r-ertg3d")
@@ -8808,13 +8833,13 @@ updating of the dependence modelling (see Sheu et al., 2016,
 (define-public r-ernm
   (package
     (name "r-ernm")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ernm" version))
        (sha256
-        (base32 "08xqjqn6q4y61x4a66rpjp6grz1grfz9dr236v4l787sf7f22m45"))))
+        (base32 "1jb2a60n8ljf700y22dcna964ygjm2h23iv8v9ajn30s4g2w3ybk"))))
     (properties `((upstream-name . "ernm")))
     (build-system r-build-system)
     (arguments

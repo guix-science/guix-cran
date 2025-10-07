@@ -246,6 +246,38 @@ Game Theory for Security and Risk Management: From Theory to Practice.
 Springer, <doi:10.1007/978-3-319-75268-6>, ISBN 978-3-319-75267-9.")
     (license license:gpl3)))
 
+(define-public r-hyreg2
+  (package
+    (name "r-hyreg2")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hyreg2" version))
+       (sha256
+        (base32 "1nnm1350zfi5s6rwn2v4sw3mjz98bgv7b4fwb88andfs3ka51s8r"))))
+    (properties `((upstream-name . "hyreg2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-flexmix r-bbmle))
+    (home-page "https://cran.r-project.org/package=hyreg2")
+    (synopsis
+     "Estimate Latent Classes on a Mixture of Continuous and Dichotomous Data")
+    (description
+     "EQ-5D value set estimation can be done using the hybrid model likelihood as
+described by Oppe and van Hout (2010) <doi:10.1002/hec.3560> and Ramos-GoÃ±i et
+al. (2017) <doi:10.1097/MLR.0000000000000283 >.  The package is based on
+@code{`flexmix()}` and among others contains an M-step-driver as described by
+Leisch (2004) <doi:10.18637/jss.v011.i08>.  Users can estimate latent classes
+and address preference heterogeneity.  Both uncensored and censored data are
+supported.  Furthermore, heteroscedasticity can be taken into account.  It is
+possible to control for different covariates on the continuous and dichotomous
+parts of the data and start values can differ between the expected latent
+classes.")
+    (license license:expat)))
+
 (define-public r-hypsoloop
   (package
     (name "r-hypsoloop")
@@ -11666,6 +11698,35 @@ normalization of address information, supporting better data integration and
 analysis in urban studies, geography, and related fields.")
     (license license:gpl2)))
 
+(define-public r-healthmotionr
+  (package
+    (name "r-healthmotionr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "healthmotionR" version))
+       (sha256
+        (base32 "1c80lwrb6z4mh8hv9s10xiznw1z5cs14msqmkyilkrj675yq06rm"))))
+    (properties `((upstream-name . "healthmotionR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/alejandrosialer/healthmotionR")
+    (synopsis "Comprehensive Collection of Health and Human Motion Datasets")
+    (description
+     "This package provides a broad collection of datasets focused on health,
+biomechanics, and human motion.  It includes clinical, physiological, and
+kinematic information from diverse sources, covering aspects such as surgery
+outcomes, vital signs, rheumatoid arthritis, osteoarthritis, accelerometry, gait
+analysis, motion sensing, and biomechanics experiments.  Designed for
+researchers, analysts, and students, the package facilitates exploration and
+analysis of data related to health monitoring, physical activity, and
+rehabilitation.")
+    (license license:expat)))
+
 (define-public r-healthfinance
   (package
     (name "r-healthfinance")
@@ -15070,31 +15131,32 @@ al., 1996) <ISBN: 1577350049>.")
 (define-public r-haplotypes
   (package
     (name "r-haplotypes")
-    (version "1.1.3.1")
+    (version "1.1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "haplotypes" version))
        (sha256
-        (base32 "0w61ww76fq4iqzi6w9q2649925m5agnjaqhij40dwxyzsyqv9zjd"))))
+        (base32 "0rbgwwc2f7gglr9x1vzfxsy54zi3c7pas01sn6ibcj3mz0bhqzj0"))))
     (properties `((upstream-name . "haplotypes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sna r-plotrix r-phangorn r-network r-ape))
-    (home-page "https://cran.r-project.org")
+    (home-page "https://cran.r-project.org/package=haplotypes")
     (synopsis
      "Manipulating DNA Sequences and Estimating Unambiguous Haplotype Network with Statistical Parsimony")
     (description
      "This package provides S4 classes and methods for reading and manipulating
-aligned DNA sequences, supporting an indel coding methods (only simple indel
-coding method is available in the current version), showing base substitutions
-and indels, calculating absolute pairwise distances between DNA sequences, and
-collapses identical DNA sequences into haplotypes or inferring haplotypes using
-user provided absolute pairwise character difference matrix.  This package also
-includes S4 classes and methods for estimating genealogical relationships among
-haplotypes using statistical parsimony and plotting parsimony networks.")
+aligned DNA sequences, supporting an indel-coding method (only simple
+indel-coding method is available in the current version), showing base
+substitutions and indels, calculating absolute pairwise distances between DNA
+sequences, and collapsing identical DNA sequences into haplotypes or inferring
+haplotypes using user-provided absolute pairwise character difference matrix.
+This package also includes S4 classes and methods for estimating genealogical
+relationships among haplotypes using statistical parsimony and plotting
+parsimony networks.")
     (license license:gpl2)))
 
 (define-public r-haplotyper
