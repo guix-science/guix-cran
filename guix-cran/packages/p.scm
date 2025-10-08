@@ -123,13 +123,13 @@ information about the Google Trends API - pytrends', visit
 (define-public r-pysparklyr
   (package
     (name "r-pysparklyr")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pysparklyr" version))
        (sha256
-        (base32 "1jl51i5caa7ms7mi06k5bi0mglfzjidfmc3vyw0xz7sp2b122zxc"))))
+        (base32 "12rg6n1avy1sz73r891xf1kfha7lqac7052h8rcmlrhhdrhar7kh"))))
     (properties `((upstream-name . "pysparklyr")))
     (build-system r-build-system)
     (arguments
@@ -672,6 +672,35 @@ described in Izmirlian, G (2020) Statistics and Probability letters,
 methodology with a simulation study is in preparation.  See
 citation(\"@code{pwrFDR}\").")
     (license license:gpl2+)))
+
+(define-public r-pwranova
+  (package
+    (name "r-pwranova")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pwranova" version))
+       (sha256
+        (base32 "1c215igw75iwsrrvfwj9h0gr9nrqv11mlk6f00x3704fdfwphlhf"))))
+    (properties `((upstream-name . "pwranova")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/mutopsy/pwranova")
+    (synopsis "Power Analysis of Flexible ANOVA Designs and Related Tests")
+    (description
+     "This package provides functions for conducting power analysis in ANOVA designs,
+including between-, within-, and mixed-factor designs, with full support for
+both main effects and interactions.  The package allows calculation of
+statistical power, required total sample size, significance level, and minimal
+detectable effect sizes expressed as partial eta squared or Cohen's f for ANOVA
+terms and planned contrasts.  In addition, complementary functions are included
+for common related tests such as t-tests and correlation tests, making the
+package a convenient toolkit for power analysis in experimental psychology and
+related fields.")
+    (license license:gpl3)))
 
 (define-public r-pwrab
   (package

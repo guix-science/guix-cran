@@ -16593,13 +16593,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.12")
+    (version "1.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "1adqha2dzhqshp2b86nqkpkgyrl730h60bvf9pmhlj7zgr6kd2b3"))))
+        (base32 "0kqprwkxhh6qcrh9hdhy5ry0k15miqd1pyvkaccrhqdfb7sb8k60"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (arguments
@@ -41074,6 +41074,39 @@ multivariate data used in chemometrics.  S. Kucheryavskiy (2020)
      "Learning a mixed directed acyclic graph based on both continuous and categorical
 data.")
     (license license:gpl2+)))
+
+(define-public r-mda-biber
+  (package
+    (name "r-mda-biber")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mda.biber" version))
+       (sha256
+        (base32 "0v0xqznd7pqmycvjz1s50g0c9ym69pwqw05i7nl9smlban569adf"))))
+    (properties `((upstream-name . "mda.biber")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-nfactors
+                             r-ggrepel
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mda.biber")
+    (synopsis "Functions for Multi-Dimensional Analysis")
+    (description
+     "Multi-Dimensional Analysis (MDA) is an adaptation of factor analysis developed
+by Douglas Biber (1992) <doi:10.1007/BF00136979>.  Its most common use is to
+describe language as it varies by genre, register, and use.  This package
+contains functions for carrying out the calculations needed to describe and plot
+MDA results: dimension scores, dimension means, and factor loadings.")
+    (license license:expat)))
 
 (define-public r-md4r
   (package

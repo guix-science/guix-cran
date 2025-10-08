@@ -25,6 +25,7 @@
   #:use-module (gnu packages tcl)
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
+  #:use-module (gnu packages package-management)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages python-science)
@@ -534,13 +535,13 @@ which runs the nlmixr2 models during estimation.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "4.1.0")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "1s731mixxn61csxqa19h1ngyfriw56z3pvqbsy4x6cjkliiixq6d"))))
+        (base32 "1g6qjj9qx56b2kl3v92ypdn4c3iqk1rw75v6fan4qjs8mrbpgv24"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (arguments
@@ -2317,13 +2318,13 @@ convolutions via Fast Fourier Transform (FFT).")
 (define-public r-runonce
   (package
     (name "r-runonce")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "runonce" version))
        (sha256
-        (base32 "1if51m0lb85v6cfi6dy071g8q04hzm1rfa6lzlb9qk2f0w897fkm"))))
+        (base32 "04mjvqq8lrfbjv68zff75xnb45saln5634awxd72rvm4ymwfm18s"))))
     (properties `((upstream-name . "runonce")))
     (build-system r-build-system)
     (arguments
@@ -3898,6 +3899,42 @@ and posterior samples are sampled using a Metropolis-within-Gibbs sampler (for
 exponential RT-MPTs) or Hamiltonian-within-Gibbs sampler (for diffusion
 RT-MPTs).")
     (license license:gpl2+)))
+
+(define-public r-rtmbdist
+  (package
+    (name "r-rtmbdist")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RTMBdist" version))
+       (sha256
+        (base32 "0fli63vn8w91ndp57hwlz1siw7ka5285hv86w8srsdrq4h6lyc92"))))
+    (properties `((upstream-name . "RTMBdist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-statmod
+                             r-sn
+                             r-rtmb
+                             r-movmf
+                             r-gamlss-dist
+                             r-circular))
+    (native-inputs (list r-knitr))
+    (home-page "https://janoleko.github.io/RTMBdist/")
+    (synopsis
+     "Distributions Compatible with Automatic Differentiation by 'RTMB'")
+    (description
+     "Extends the functionality of the RTMB <https://kaskr.r-universe.dev/RTMB>
+package by providing a collection of non-standard probability distributions
+compatible with automatic differentiation (AD).  While RTMB enables flexible and
+efficient modelling, including random effects, its built-in support is limited
+to standard distributions.  The package adds additional AD-compatible
+distributions, broadening the range of models that can be implemented and
+estimated using RTMB'.  Automatic differentiation and Laplace approximation are
+described in Kristensen et al. (2016) <doi:10.18637/jss.v070.i05>.")
+    (license license:expat)))
 
 (define-public r-rtmb
   (package
@@ -23341,19 +23378,19 @@ GJ18-04150Y'.")
 (define-public r-rlescalation
   (package
     (name "r-rlescalation")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RLescalation" version))
        (sha256
-        (base32 "1am8d35k5wxssxg88lajplqbic42wz4lq7qg4m4npk58v5c9z5n6"))))
+        (base32 "0ynbrszy7krdlfckn6vbc8y86wpmfkgn9r2fhicjzaq3n5jmgkmj"))))
     (properties `((upstream-name . "RLescalation")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reticulate r-r6 r-nleqslv r-glue))
+    (propagated-inputs (list r-zip r-reticulate r-r6 r-nleqslv r-glue))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MatsuuraKentaro/RLescalation")
     (synopsis "Optimal Dose Escalation Using Deep Reinforcement Learning")
@@ -24848,6 +24885,37 @@ treatment arms with consistently similar outcomes.")
      "Jade is a high performance template engine heavily influenced by Haml and
 implemented with @code{JavaScript} for node and browsers.")
     (license license:expat)))
+
+(define-public r-rixpress
+  (package
+    (name "r-rixpress")
+    (version "0.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rixpress" version))
+       (sha256
+        (base32 "1n0338pkl6ma7pq76qrcqv83w9a7wavxlr5r3gjr4dbilcpgj7xf"))))
+    (properties `((upstream-name . "rixpress")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list nix))
+    (propagated-inputs (list r-processx r-jsonlite r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/rixpress/")
+    (synopsis "Build Reproducible Analytical Pipelines with 'Nix'")
+    (description
+     "Streamlines the creation of reproducible analytical pipelines using default.nix
+expressions generated via the rix package for reproducibility.  Define
+derivations in R', Python or Julia', chain them into a composition of pure
+functions and build the resulting pipeline using Nix as the underlying
+end-to-end build tool.  Functions to plot the pipeline as a directed acyclic
+graph are included, as well as functions to load and inspect intermediary
+results for interactive analysis.  User experience heavily inspired by the
+targets package.")
+    (license license:gpl3+)))
 
 (define-public r-rix
   (package

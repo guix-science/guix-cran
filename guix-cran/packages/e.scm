@@ -579,13 +579,13 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
 (define-public r-eyeris
   (package
     (name "r-eyeris")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyeris" version))
        (sha256
-        (base32 "06h8b70z9z7m3czbk4ldlj8na05apilzy5akd4kcv4dkzcppj0vy"))))
+        (base32 "1hh7wskpvq1827wq54x23ppzja8wlys5lhf1pd0lp5gh8af01af7"))))
     (properties `((upstream-name . "eyeris")))
     (build-system r-build-system)
     (arguments
@@ -625,8 +625,7 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
                              r-dbi
                              r-data-table
                              r-cli
-                             r-base64enc
-                             r-arrow))
+                             r-base64enc))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://shawnschwartz.com/eyeris/")
     (synopsis

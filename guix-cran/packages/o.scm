@@ -1682,13 +1682,13 @@ multivariate data using these limiting distributions and binning.")
 (define-public r-otelsdk
   (package
     (name "r-otelsdk")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "otelsdk" version))
        (sha256
-        (base32 "0g3w3dddscrmiqay65cyzrn0hbvijm36hnb461sphq9gz7syrrvq"))))
+        (base32 "1zf7r0r2a3r3nqf0w47khszcc05xzh53s84a4mrwfrinhnxk9fji"))))
     (properties `((upstream-name . "otelsdk")))
     (build-system r-build-system)
     (arguments

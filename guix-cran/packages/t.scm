@@ -10360,13 +10360,13 @@ TRFLP profiles across species.")
 (define-public r-tramnet
   (package
     (name "r-tramnet")
-    (version "0.0-8")
+    (version "0.0-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tramnet" version))
        (sha256
-        (base32 "19hx2hn8m5abfzp4sm0myhxlx9hp2rl7dry5izxsfjjls3h8z1n4"))))
+        (base32 "0v1v3xqcbsr21g1nc9ld3dicv7pim0ihd51g38v4xwvjgnq3wjm8"))))
     (properties `((upstream-name . "tramnet")))
     (build-system r-build-system)
     (arguments
@@ -10395,7 +10395,7 @@ tuning is facilitated through model-based optimization functionalities from
 package @code{mlrMBO}'.  The accompanying vignette describes the methodology
 used in tramnet in detail.  Transformation models and model-based optimization
 are described in Hothorn et al. (2019) <doi:10.1111/sjos.12291> and Bischl et
-al. (2016) <arxiv:1703.03373>, respectively.")
+al. (2016) <doi:10.48550/@code{arXiv.1703.03373>}, respectively.")
     (license license:gpl2)))
 
 (define-public r-tramme
@@ -10555,13 +10555,13 @@ in Kook et al. (2023, <doi:10.1080/01621459.2024.2395588>).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.2-4")
+    (version "1.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "1znzka4iz3bwgpzn4rxkl8b0n5gcjs76s846xjbsipyp04r2g9xb"))))
+        (base32 "0a7yg6yacf4ah2fmjlzx3crngr0952d8aahfl2x25rrchgfbcqm1"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (arguments
@@ -14373,13 +14373,13 @@ for more details on TNA.")
 (define-public r-tmvtnsim
   (package
     (name "r-tmvtnsim")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmvtnsim" version))
        (sha256
-        (base32 "15nhk21x9yklpxnqmd6qblmh0g4p9065hkvy26gd8ppaz19law5s"))))
+        (base32 "1h7xkd53h26v46mjv5m0clzckl7c3mm6dmyip2s5dvxz4m9bgzbm"))))
     (properties `((upstream-name . "tmvtnsim")))
     (build-system r-build-system)
     (arguments
@@ -17159,13 +17159,13 @@ recordings as data frame for later use.")
 (define-public r-timeplyr
   (package
     (name "r-timeplyr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeplyr" version))
        (sha256
-        (base32 "1wqjn4cnd0dp6mxcwdvrza4i6axzkxj3xcqa7idy5ngsngs8jz7r"))))
+        (base32 "1klv37g4knscynhxr538cmhcg023vg24b21cx993mccayxnk69hn"))))
     (properties `((upstream-name . "timeplyr")))
     (build-system r-build-system)
     (arguments
@@ -17174,12 +17174,10 @@ recordings as data frame for later use.")
     (propagated-inputs (list r-vctrs
                              r-tzdb
                              r-timechange
-                             r-tidyselect
                              r-stringr
                              r-scales
                              r-rlang
                              r-pillar
-                             r-magrittr
                              r-lubridate
                              r-lifecycle
                              r-ggplot2
@@ -17732,13 +17730,13 @@ be inserted into the output stream.")
 (define-public r-tikatuwq
   (package
     (name "r-tikatuwq")
-    (version "0.5.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tikatuwq" version))
        (sha256
-        (base32 "1pzpx8gqbvn9xqpfc9mjbxzdj8kham5rld8hj00nizcbgqhrygg1"))))
+        (base32 "0plc38aw0f4ha9p8jimzjhy9pjlf1py16if89cfdmmcsxhmx02qa"))))
     (properties `((upstream-name . "tikatuwq")))
     (build-system r-build-system)
     (arguments

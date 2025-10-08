@@ -13574,13 +13574,13 @@ correlation and regression analysis of the local network metrics.")
 (define-public r-anipaths
   (package
     (name "r-anipaths")
-    (version "0.10.5")
+    (version "0.10.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anipaths" version))
        (sha256
-        (base32 "0rjq32vafbc6qgngfxsafasb4a0h2mw6apcgc0bh6xi2cqsjk9v8"))))
+        (base32 "0mvs6fm83wmag3hchbpy9ya2x8cld66panvn5wa00c96jqykbliz"))))
     (properties `((upstream-name . "anipaths")))
     (build-system r-build-system)
     (arguments
@@ -14448,13 +14448,13 @@ images.")
 (define-public r-analitica
   (package
     (name "r-analitica")
-    (version "2.0.0")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Analitica" version))
        (sha256
-        (base32 "1p94n8x6pm1mzmzddnhjyf36k19s22jc9zy3s931v0l11iq2kq22"))))
+        (base32 "0nhv6cwzkm1vxbp1afw86slr2jq94igyikpq6kgpmc7d2788ck7j"))))
     (properties `((upstream-name . "Analitica")))
     (build-system r-build-system)
     (arguments
@@ -14482,7 +14482,9 @@ test, Bartlett's test, and the Fligner-Killeen test, as well as post hoc
 comparison methods such as Tukey, ScheffÃ©, Games-Howell, Brunner-Munzel, and
 others.  This version introduces two new procedures: the Jonckheere-Terpstra
 trend test and the Jarque-Bera test with Glinskiy's (2024) correction.  Designed
-for use in teaching, applied statistical analysis, and reproducible research.")
+for use in teaching, applied statistical analysis, and reproducible research.
+Additionally you can find a post hoc Test Planner, which helps you to make a
+decision on which procedure is most suitable.")
     (license license:expat)))
 
 (define-public r-anacor
@@ -25628,6 +25630,44 @@ run any of our functions to complete the life table until that step, or run
 optional columns.  Methods for creating lifetables are as described in
 Zedstatistics (2021) <https://www.youtube.com/watch?v=Dfe59@code{glNXAQ>}.")
     (license license:expat)))
+
+(define-public r-activelearning4spm
+  (package
+    (name "r-activelearning4spm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ActiveLearning4SPM" version))
+       (sha256
+        (base32 "1nrz3gqj8drvq4czxmii7rbrp8i7ngkbq9vwk3rwaqwlwnmldych"))))
+    (properties `((upstream-name . "ActiveLearning4SPM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rrcov
+                             r-rfast
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-proc
+                             r-mvnfast
+                             r-catools
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=ActiveLearning4SPM")
+    (synopsis "Active Learning for Process Monitoring")
+    (description
+     "This package implements the methodology introduced in Capezza, Lepore, and
+Paynabar (2025) <doi:10.1080/00401706.2025.2561744> for process monitoring with
+limited labeling resources.  The package provides functions to (i) simulate data
+streams with true latent states and multivariate Gaussian observations as done
+in the paper, (ii) fit partially hidden Markov models (@code{pHMMs}) using a
+constrained Baum-Welch algorithm with partial labels, and (iii) perform
+stream-based active learning that balances exploration and exploitation to
+decide whether to request labels in real time.  The methodology is particularly
+suited for statistical process monitoring in industrial applications where
+labeling is costly.")
+    (license license:gpl3)))
 
 (define-public r-activegp
   (package

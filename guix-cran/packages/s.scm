@@ -3045,13 +3045,13 @@ the method.")
 (define-public r-svrep
   (package
     (name "r-svrep")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svrep" version))
        (sha256
-        (base32 "0l2pcrfzjq2bn5z5m8zq5ivwilp4pw94fsmlrgpq78qkjiw7p3wn"))))
+        (base32 "1b8jc33fvmrv4zcx98z4np8ms21w4j4pwa53pdpl9zz0h4ssksaa"))))
     (properties `((upstream-name . "svrep")))
     (build-system r-build-system)
     (arguments
@@ -16285,13 +16285,13 @@ lead/lag).")
 (define-public r-statamarkdown
   (package
     (name "r-statamarkdown")
-    (version "0.9.4")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Statamarkdown" version))
        (sha256
-        (base32 "1m2fivg5ipj22kp7pgzladjjlxrmj6kqdcyw9iyq8ks1ffghcbaw"))))
+        (base32 "0xjl0jz01nyvag5jp5y43waq3132n1i5fbwy5rphbz2rg6f7awhm"))))
     (properties `((upstream-name . "Statamarkdown")))
     (build-system r-build-system)
     (arguments
@@ -41626,13 +41626,13 @@ consistency.")
 (define-public r-sits
   (package
     (name "r-sits")
-    (version "1.5.3-1")
+    (version "1.5.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sits" version))
        (sha256
-        (base32 "1gizp2nqsvbs5siivblrx5i2l33h127pjac8h9v7d58hh6dvx47h"))))
+        (base32 "1cf2kivnr92l6bkh113q9kz08pnzhky1h25wm3ss6h9wff5myk6m"))))
     (properties `((upstream-name . "sits")))
     (build-system r-build-system)
     (arguments
@@ -70480,13 +70480,13 @@ empirical graphical methods to visualize tail dependence.")
 (define-public r-sassy
   (package
     (name "r-sassy")
-    (version "1.2.8")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sassy" version))
        (sha256
-        (base32 "03d38brvc6841ncd3md91qfkc8i6rk9l74x4iyaav4vq3vq3hbd3"))))
+        (base32 "0jrqijp0is2cd1g7vrv84psx35rd2g776yhcfw2nqw6myvic1bj1"))))
     (properties `((upstream-name . "sassy")))
     (build-system r-build-system)
     (arguments

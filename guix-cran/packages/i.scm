@@ -5520,13 +5520,13 @@ model/data set combination is close-to-linear or not.  See Bates and Watts
 (define-public r-ipeaplot
   (package
     (name "r-ipeaplot")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipeaplot" version))
        (sha256
-        (base32 "1f93irgd70yi8zcfs88agdv49w75br95svcxvlwd2awqp6pg00if"))))
+        (base32 "1hz3i4vrcyrc5mfsd8w50smhkc823x85m0w13wq0akdpy3dbgs25"))))
     (properties `((upstream-name . "ipeaplot")))
     (build-system r-build-system)
     (arguments
@@ -5534,6 +5534,7 @@ model/data set combination is close-to-linear or not.  See Bates and Watts
       #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rlang
+                             r-ragg
                              r-paletteer
                              r-ggthemes
                              r-ggplot2
@@ -12273,13 +12274,13 @@ counts from scratch for each time point.")
 (define-public r-incdtw
   (package
     (name "r-incdtw")
-    (version "1.1.4.4")
+    (version "1.1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncDTW" version))
        (sha256
-        (base32 "0q8ssv86gbp3v6gznzm5vkc8qhny6ycbh85jg5z4izldpx8a4fq6"))))
+        (base32 "0yz1gx6xxnih8mmyqjbqq72isqln79xyfj1i0bsdx6051j546jxn"))))
     (properties `((upstream-name . "IncDTW")))
     (build-system r-build-system)
     (arguments

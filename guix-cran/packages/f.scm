@@ -23367,13 +23367,13 @@ Records <doi:10.1017/S0003055418000783> and is available at
 (define-public r-fastkrr
   (package
     (name "r-fastkrr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastKRR" version))
        (sha256
-        (base32 "08y4hdk0l1wbb1lva2mv89j6n4i3hkv54mb9jd0ifvcchckrh01x"))))
+        (base32 "0w5s6cirjxx7qwc9d49czqh18m6cwb59pakym5d2p8bysaa5isyl"))))
     (properties `((upstream-name . "FastKRR")))
     (build-system r-build-system)
     (arguments
@@ -23401,10 +23401,9 @@ grid search.  The package offers a unified interface for exact kernel ridge
 regression and three scalable approximationsâNystrÃ¶m, Pivoted Cholesky, and
 Random Fourier Featuresâallowing analyses with substantially larger sample
 sizes than are feasible with exact KRR. It also integrates with the tidymodels
-ecosystem via the parsnip model specification krr_reg', the S3 method
-@code{tunable.krr_reg()}, and the direct fitting helper @code{fit_krr()}.  To
-understand the theoretical background, one can refer to Wainwright (2019)
-<doi:10.1017/9781108627771>.")
+ecosystem via the parsnip model specification krr_reg', and the S3 method
+@code{tunable.krr_reg()}.  To understand the theoretical background, one can
+refer to Wainwright (2019) <doi:10.1017/9781108627771>.")
     (license license:gpl2+)))
 
 (define-public r-fastkqr
@@ -24596,43 +24595,52 @@ regressions, see Lederer & Vogt (2021, JMLR)
 (define-public r-fars
   (package
     (name "r-fars")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FARS" version))
        (sha256
-        (base32 "0qwzv99bgdrihxmykawjfh2nb697mcr4mmk5d7brbs6145gzxaci"))))
+        (base32 "0hf66b8xwg0y69blwrlmdl7a7z5zaf2kzbcprv17vmwapqgqn189"))))
     (properties `((upstream-name . "FARS")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tidyr
                              r-syscselection
                              r-stringr
                              r-sn
+                             r-rlang
                              r-reshape2
                              r-quantreg
                              r-plotly
                              r-nloptr
                              r-mass
+                             r-magrittr
                              r-ggplot2
                              r-forcats
                              r-ellipse
                              r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://arxiv.org/abs/2507.10679")
     (synopsis "Factor-Augmented Regression Scenarios")
     (description
      "This package provides a comprehensive framework in R for modeling and
 forecasting economic scenarios based on multi-level dynamic factor model.  The
-package enables users to: (i) extract global and block-specific factors using a
-flexible multilevel factor structure; (ii) compute asymptotically valid
+package enables users to: (i) extract global and group-specific factors using a
+flexible multi-level factor structure; (ii) compute asymptotically valid
 confidence regions for the estimated factors, accounting for uncertainty in the
-factor loadings; (iii) estimate factor-augmented quantile regressions; (iv)
-recover full predictive densities from these quantile forecasts; and (v)
-estimate the density when the factors are stressed.")
+factor loadings; (iii) obtain estimates of the parameters of the
+factor-augmented quantile regressions together with their standard deviations;
+(iv) recover full predictive conditional densities from estimated quantiles; (v)
+obtain risk measures based on extreme quantiles of the conditional densities;
+(vi) estimate the conditional density and the corresponding extreme quantiles
+when the factors are stressed.")
     (license license:gpl2+)))
 
 (define-public r-farrell

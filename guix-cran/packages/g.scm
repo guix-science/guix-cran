@@ -9192,6 +9192,34 @@ flexible model specification), and multi-task learning.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-gppenalty
+  (package
+    (name "r-gppenalty")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GPpenalty" version))
+       (sha256
+        (base32 "0d9gfg5c7wkq3sp7jc16p47xjhw93fvn1mhm90x4lr48rs6mdacy"))))
+    (properties `((upstream-name . "GPpenalty")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=GPpenalty")
+    (synopsis "Penalized Likelihood in Gaussian Processes")
+    (description
+     "This package implements maximum likelihood estimation for Gaussian processes,
+supporting both isotropic and separable models with predictive capabilities.
+Includes penalized likelihood estimation following Li and Sudjianto (2005,
+<doi:10.1198/004017004000000671>), using score-based metrics that account for
+uncertainty (See Gneiting and Raftery 2007, <doi:10.1198/016214506000001437>).
+Includes cross validation techniques for tuning parameter selection.  Designed
+specifically for small datasets.")
+    (license license:expat)))
+
 (define-public r-gpp
   (package
     (name "r-gpp")
@@ -19284,20 +19312,19 @@ to get a steampunk style.")
 (define-public r-ggseqplot
   (package
     (name "r-ggseqplot")
-    (version "0.8.7")
+    (version "0.8.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseqplot" version))
        (sha256
-        (base32 "08r6734jmyip820dwpvl56pmk06lj88jmvfn17v6d75r69aws9ic"))))
+        (base32 "0n6fjxdsm2da6mp9frxap0637g8i5czw9n39mgwfw5hr0jar1fij"))))
     (properties `((upstream-name . "ggseqplot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-usethis
-                             r-traminer
+    (propagated-inputs (list r-traminer
                              r-tidyr
                              r-rlang
                              r-rdpack
@@ -21320,13 +21347,13 @@ curve (Shorrocks 1983) <doi:10.2307/2554117>.")
 (define-public r-gglogger
   (package
     (name "r-gglogger")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gglogger" version))
        (sha256
-        (base32 "1h9qblqa64cacp8arylwh8g1da6gl9dhk2y7dd42s7m71z9j0vzz"))))
+        (base32 "0kdlg7cs8bmgf8i2ddaixs7vimfpgs48z05k754idm4r5l4z3xd1"))))
     (properties `((upstream-name . "gglogger")))
     (build-system r-build-system)
     (arguments
@@ -21561,44 +21588,32 @@ ggiraph'.")
 (define-public r-ggiraph
   (package
     (name "r-ggiraph")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggiraph" version))
        (sha256
-        (base32 "0sgnphc8xbhg7cvjwl7q0gp1yq83f61wrirn7gvi14q0mz1rhgqc"))))
+        (base32 "18mla18am3p2mpqac5zml2rz8pdns671x3jy1fr42ya0s6ck3zzg"))))
     (properties `((upstream-name . "ggiraph")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
+      #:tests? #f))
     (inputs (list zlib libpng))
     (propagated-inputs (list r-vctrs
-                             r-uuid
                              r-systemfonts
+                             r-s7
                              r-rlang
                              r-rcpp
                              r-purrr
                              r-htmlwidgets
                              r-htmltools
                              r-ggplot2
+                             r-gdtools
+                             r-dplyr
                              r-cli))
-    (native-inputs (list pkg-config r-knitr esbuild))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://davidgohel.github.io/ggiraph/")
     (synopsis "Make 'ggplot2' Graphics Interactive")
     (description "Create interactive ggplot2 graphics using htmlwidgets'.")
@@ -36666,13 +36681,13 @@ Introduction with R', Wood (2006,2017) CRC.")
 (define-public r-gam-hp
   (package
     (name "r-gam-hp")
-    (version "0.0-3")
+    (version "0.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gam.hp" version))
        (sha256
-        (base32 "1cjjdd2vmn7916401dwr1dcycy7g2xz5bwy3l4bw1hblrs3np7kw"))))
+        (base32 "1sa1r3m5y5hjaidccr7yhmay7jijs54hxa5lq15dqk1vd5n6iif9"))))
     (properties `((upstream-name . "gam.hp")))
     (build-system r-build-system)
     (arguments
@@ -36685,8 +36700,8 @@ Introduction with R', Wood (2006,2017) CRC.")
     (description
      "Conducts hierarchical partitioning to calculate individual contributions of each
 predictor towards adjusted R2 and explained deviance for generalized additive
-models based on output of @code{gam()}in mgcv package, applying the algorithm in
-this paper: Lai(2024) <doi:10.1016/j.pld.2024.06.002>.")
+models based on output of @code{gam()} and @code{bam()} in mgcv package,
+applying the algorithm in this paper: Lai(2024) <doi:10.1016/j.pld.2024.06.002>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-galvanizer

@@ -9846,13 +9846,13 @@ Saerens M. (2007) <doi:10.1109/TKDE.2007.46>.")
 (define-public r-linker
   (package
     (name "r-linker")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "linkeR" version))
        (sha256
-        (base32 "001mfcc0h6fhlymihvfizjdkxwz4vdlwphibpl7fr9dpmjjmkc3z"))))
+        (base32 "029zq10hvz08vm0vwli5g6cnmmp8p0rh8jkgzwwvnrkwrz299yzh"))))
     (properties `((upstream-name . "linkeR")))
     (build-system r-build-system)
     (arguments
@@ -9867,8 +9867,9 @@ Saerens M. (2007) <doi:10.1109/TKDE.2007.46>.")
 declarative, one-line setup, you can create bidirectional links between
 interactive components.  When a user interacts with one element (e.g., clicking
 a map marker), all linked components (such as DT tables or other charts)
-instantly update.  Supports leaflet maps, DT tables, and spatial data via sf
-objects out-of-the-box, with an extensible API for custom components.")
+instantly update.  Supports leaflet maps, DT tables, plotly charts, and spatial
+data via sf objects out-of-the-box, with an extensible API for custom
+components.")
     (license license:expat)))
 
 (define-public r-linkedmatrix
@@ -17977,6 +17978,60 @@ variable(s) in structural equation models onto model-implied variances,
 covariances, and parameter estimates.  The derivation of the methodology
 employed in this package can be obtained from BlÃ¶tner (2023)
 <doi:10.31234/osf.io/dy79z>.")
+    (license license:gpl3)))
+
+(define-public r-latamverse
+  (package
+    (name "r-latamverse")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Latamverse" version))
+       (sha256
+        (base32 "0rj71imwpkkfjy592pkg8r39rd8ng72h284w02qafc3a4jjbh43f"))))
+    (properties `((upstream-name . "Latamverse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-peruapis
+                             r-colombiapi
+                             r-cli
+                             r-chiledataapi
+                             r-brazildataapi
+                             r-argentinapi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/latamverse")
+    (synopsis "Latin American Data via 'RESTful' APIs and Curated Datasets")
+    (description
+     "Brings together a comprehensive collection of R packages providing access to API
+functions and curated datasets from Argentina, Brazil, Chile, Colombia, and
+Peru.  Includes real-time and historical data through public RESTful APIs
+('Nager.Date', World Bank API, REST Countries API, and country-specific APIs)
+and extensive curated collections of open datasets covering economics,
+demographics, public health, environmental data, political indicators, social
+metrics, and cultural information.  Designed to provide researchers, analysts,
+educators, and data scientists with centralized access to Latin American data
+sources, facilitating reproducible research, comparative analysis, and teaching
+applications focused on these five major Latin American countries.  Included
+packages: - @code{ArgentinAPI}': API functions and curated datasets for
+Argentina covering exchange rates, inflation, political figures, national
+holidays and more. - @code{BrazilDataAPI}': API functions and curated datasets
+for Brazil covering postal codes, banks, economic indicators, holidays, company
+registrations and more. - @code{ChileDataAPI}': API functions and curated
+datasets for Chile covering financial indicators ('UF', UTM, Dollar, Euro, Yen,
+Copper, Bitcoin, IPSA index), holidays and more. - @code{ColombiAPI}': API
+functions and curated datasets for Colombia covering geographic locations,
+cultural attractions, economic indicators, demographic data, national holidays
+and more. - @code{PeruAPIs}': API functions and curated datasets for Peru
+covering economic indicators, demographics, national holidays, administrative
+divisions, electoral data, biodiversity and more.  For more information on the
+APIs, see: Nager.Date <https://date.nager.at/Api>, World Bank API
+<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, REST
+Countries API <https://restcountries.com/>, @code{ArgentinaDatos} API
+<https://argentinadatos.com/>, @code{BrasilAPI} <https://brasilapi.com.br/>,
+FINDIC <https://findic.cl/>, and API-Colombia <https://api-colombia.com/>.")
     (license license:gpl3)))
 
 (define-public r-lassosir

@@ -2058,6 +2058,32 @@ attractiveness/strength of the objects.  Suitable L1 penalty terms are used to
 cluster certain effects and to reduce the complexity of the models.")
     (license license:gpl2+)))
 
+(define-public r-btime
+  (package
+    (name "r-btime")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BTIME" version))
+       (sha256
+        (base32 "1askqcdjfgpifplal2zwymski0q13hckj8xvwsm0q9g6qwsyw5pr"))))
+    (properties `((upstream-name . "BTIME")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam r-runjags r-rjags r-matlib r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BTIME")
+    (synopsis "Bayesian Hierarchical Models for Single-Cell Protein Data")
+    (description
+     "Bayesian Hierarchical beta-binomial models for modeling cell population to
+predictors/exposures.  This package utilizes runjags to run Gibbs sampling with
+parallel chains.  Options for different covariances/relationship structures
+between parameters of interest.")
+    (license license:expat)))
+
 (define-public r-btergm
   (package
     (name "r-btergm")
@@ -32786,13 +32812,13 @@ name \"Bagged @code{OutlierTrees}\".  To learn more about the base procedure
 (define-public r-bage
   (package
     (name "r-bage")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bage" version))
        (sha256
-        (base32 "11s6jf8lqricky832m3h33q05ig4jbjixbwsyksg00wjlv7w8rwl"))))
+        (base32 "1bwy092vggra0jg4bqi8yqzfsxfh5qmr78vywwwr6qks0dph95mx"))))
     (properties `((upstream-name . "bage")))
     (build-system r-build-system)
     (arguments

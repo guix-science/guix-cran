@@ -26269,13 +26269,13 @@ the vast majority of the time (>95%).")
 (define-public r-dear
   (package
     (name "r-dear")
-    (version "1.5")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deaR" version))
        (sha256
-        (base32 "0adp4qgq66lg78nlsbdpznp80c92wksdwrjyv2b94ssmjgxrf69p"))))
+        (base32 "1xz1yh5vxf6nv8qlpi0b4pxdc01z543bdj1yifadiv6m4kp0g5nc"))))
     (properties `((upstream-name . "deaR")))
     (build-system r-build-system)
     (arguments
