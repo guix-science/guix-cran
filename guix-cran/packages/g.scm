@@ -2189,13 +2189,13 @@ objects.")
 (define-public r-gtfs2gps
   (package
     (name "r-gtfs2gps")
-    (version "2.1-2")
+    (version "2.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtfs2gps" version))
        (sha256
-        (base32 "0g1mklndk3y49h1ydxmzrmiz2098k1w4b053b6dcr8dsj2gga8wr"))))
+        (base32 "1bymdnlslpi667hdnz11qz4sgx5lbr6q8pvclr7ifbd17ix6ca03"))))
     (properties `((upstream-name . "gtfs2gps")))
     (build-system r-build-system)
     (arguments
@@ -15149,13 +15149,13 @@ capability to fit mixed models.  The cosinor model is described by Cornelissen
 (define-public r-glmm-hp
   (package
     (name "r-glmm-hp")
-    (version "0.1-8")
+    (version "1.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmm.hp" version))
        (sha256
-        (base32 "1hm2v6x4dpg9bls1572qv3avmd2108lh0629szhphsczlaqp2igb"))))
+        (base32 "11p2r46p7g6w80r5hyyjbw2dd65zxbrjmh3zcy8fr68wxrb9z4yq"))))
     (properties `((upstream-name . "glmm.hp")))
     (build-system r-build-system)
     (arguments
@@ -20932,13 +20932,13 @@ normal distributions and confidence intervals.")
 (define-public r-ggmulti
   (package
     (name "r-ggmulti")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmulti" version))
        (sha256
-        (base32 "071h76imfsm6p9ml9pkfsar3d6z1nawd9m7f82smy4csb58iz5i3"))))
+        (base32 "0lm62ls71irz8vhhz30zs1gglhqgbb7907qc94i86s8xyn2qwknz"))))
     (properties `((upstream-name . "ggmulti")))
     (build-system r-build-system)
     (arguments
@@ -28234,13 +28234,13 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
 (define-public r-geocodebr
   (package
     (name "r-geocodebr")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocodebr" version))
        (sha256
-        (base32 "0dxwgfzxgjfm7hhznpbqp0iiljakxg5v7y7q2imryn5lisjbngm3"))))
+        (base32 "1mai94hijkh11i7rmk45q4p7p0ixrv1kpnhni84hwcdd2nalb2a1"))))
     (properties `((upstream-name . "geocodebr")))
     (build-system r-build-system)
     (arguments
@@ -28253,6 +28253,7 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
                              r-purrr
                              r-nanoarrow
                              r-httr2
+                             r-h3r
                              r-glue
                              r-fs
                              r-enderecobr

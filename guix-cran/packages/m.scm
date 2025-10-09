@@ -20705,13 +20705,13 @@ classification evaluation metrics based on confusion matrix.")
 (define-public r-mlt-docreg
   (package
     (name "r-mlt-docreg")
-    (version "1.1-10")
+    (version "1.1-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt.docreg" version))
        (sha256
-        (base32 "0c5x1kk59kd3nc8g3ajf9l3w0w1fk3gk8mjbipj9nin5xwdigbx0"))))
+        (base32 "1n0mx3l4dy25iv156zvijf38awa1pkqn4s53gky1dblvx9k4z77d"))))
     (properties `((upstream-name . "mlt.docreg")))
     (build-system r-build-system)
     (arguments
@@ -20886,6 +20886,31 @@ factors.  It is suited for spatial epidemiologists, public health researchers,
 and GIS analysts aiming to uncover hidden geographic patterns in health-related
 outcomes and inform evidence-based interventions.")
     (license license:expat)))
+
+(define-public r-mlsp
+  (package
+    (name "r-mlsp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MLSP" version))
+       (sha256
+        (base32 "0dgy9za13x6h93j8ijbya6dgwcbaip74ml1hn4is6j3x0fd6lv5d"))))
+    (properties `((upstream-name . "MLSP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-randomforest r-pls r-gsignal r-glmnet r-cubist))
+    (home-page "https://cran.r-project.org/package=MLSP")
+    (synopsis "Machine Learning Models for Soil Properties")
+    (description
+     "This package creates a spectroscopy guideline with a highly accurate prediction
+model for soil properties using machine learning or deep learning algorithms
+such as LASSO, Random Forest, Cubist, etc., and decide which algorithm generates
+the best model for different soil types.")
+    (license license:gpl2)))
 
 (define-public r-mlsjunkgen
   (package
@@ -44358,13 +44383,13 @@ assessment through model-informed and model-based strategies
 (define-public r-mbanalysis
   (package
     (name "r-mbanalysis")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBAnalysis" version))
        (sha256
-        (base32 "1gxnnhc4dcfs2xjak3gjka1jvn9rvvxc2ajxgkc7xvarqhsllc66"))))
+        (base32 "13sal9h85wzd30yck2y6cwgiazhz1g71bn6f3l7qcckaf26rkxv5"))))
     (properties `((upstream-name . "MBAnalysis")))
     (build-system r-build-system)
     (arguments

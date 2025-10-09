@@ -312,13 +312,13 @@ are described in Tobler Waldo R. (1979) <doi:10.1080/01621459.1979.10481647>.")
 (define-public r-pxwebapidata
   (package
     (name "r-pxwebapidata")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PxWebApiData" version))
        (sha256
-        (base32 "14a4w1hd1f1mws8cjc0x32ayjswiyd725zi49j4c7b49mlr4cag4"))))
+        (base32 "1myl1lpl4axnwh1j8s6ryq3996gd3c7h1dx5imn5ap8s1jsk4212"))))
     (properties `((upstream-name . "PxWebApiData")))
     (build-system r-build-system)
     (arguments
@@ -1250,6 +1250,42 @@ neighbors', weighted nearest neighbors or penalized logistic regression'.
 Additionally, it provides graphical displays and quantitative analyses of the
 p-values.")
     (license license:gpl2+)))
+
+(define-public r-pvbcorrect
+  (package
+    (name "r-pvbcorrect")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PVBcorrect" version))
+       (sha256
+        (base32 "1ahskmrn69xrmr1fzyhf8xwczys5w4qhlafjbrbd06ffnadrvlw2"))))
+    (properties `((upstream-name . "PVBcorrect")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mice r-boot))
+    (home-page "https://github.com/wnarifin/PVBcorrect/")
+    (synopsis "Partial Verification Bias Correction for Diagnostic Accuracy")
+    (description
+     "This package performs partial verification bias (PVB) correction for binary
+diagnostic tests, where PVB arises from selective patient verification in
+diagnostic accuracy studies.  Supports correction of important accuracy measures
+-- sensitivity, specificity, positive predictive values and negative predictive
+value -- under missing-at-random and missing-not-at-random missing data
+mechanisms.  Available methods and references are \"Begg and Greenes methods\" in
+Alonzo & Pepe (2005) <doi:10.1111/j.1467-9876.2005.00477.x> and @code{deGroot}
+et al. (2011) <doi:10.1016/j.annepidem.2010.10.004>; \"Multiple imputation\" in
+Harel & Zhou (2006) <doi:10.1002/sim.2494>, \"EM-based logistic regression\" in
+Kosinski & Barnhart (2003) <doi:10.1111/1541-0420.00019>; \"Inverse probability
+weighting\" in Alonzo & Pepe (2005) <doi:10.1111/j.1467-9876.2005.00477.x>;
+\"Inverse probability bootstrap sampling\" in Nahorniak et al. (2015)
+<doi:10.1371/journal.pone.0131765> and Arifin & Yusof (2022)
+<doi:10.3390/diagnostics12112839>; \"Scaled inverse probability resampling
+methods\" in Arifin & Yusof (2025) <doi:10.1371/journal.pone.0321440>.")
+    (license license:expat)))
 
 (define-public r-pvar
   (package
@@ -7536,13 +7572,13 @@ Decision Analysis (MCDA) process involving multiple criteria, by PROMETHEE
 (define-public r-prome
   (package
     (name "r-prome")
-    (version "2.0.1.4")
+    (version "2.0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prome" version))
        (sha256
-        (base32 "05hd3hjzm7l7zai3jr40dqcn4dq1qivv2m1mzfdmd33i3ga0khx9"))))
+        (base32 "0mbv8n5a3ag29dgj6c7bin7c26wbabk086qa1c2apcbdy9b0v1jk"))))
     (properties `((upstream-name . "prome")))
     (build-system r-build-system)
     (arguments
@@ -7551,7 +7587,6 @@ Decision Analysis (MCDA) process involving multiple criteria, by PROMETHEE
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
-                             r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-posterior
@@ -27069,6 +27104,29 @@ small dense problems, vectorized instructions and cache locality can be
 exploited more efficiently.  Allocation free problem updates and re-solves are
 also provided.")
     (license license:bsd-2)))
+
+(define-public r-pipetime
+  (package
+    (name "r-pipetime")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pipetime" version))
+       (sha256
+        (base32 "0cag0pmsi2r2k9m9y728kam57hlqf2pl1p1616l0m1m7dsfr8nyx"))))
+    (properties `((upstream-name . "pipetime")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pipetime")
+    (synopsis "Tools to Time Pipe Operations")
+    (description
+     "Enable users to measure and record the execution time of pipe operations (using
+|>) with optional logging to dataframes and output to the console.")
+    (license license:expat)))
 
 (define-public r-piper
   (package

@@ -3533,6 +3533,32 @@ input series.  In short: it unfolds the future path of each series from a folded
 geometric distance representation.")
     (license license:gpl3)))
 
+(define-public r-unexcel
+  (package
+    (name "r-unexcel")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unexcel" version))
+       (sha256
+        (base32 "1jnnz0nqrb770zcrrgvc9whrlid2k4k70bn79h8qf8i4jy4yhd9p"))))
+    (properties `((upstream-name . "unexcel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/drhrf/unexcel")
+    (synopsis "Revert Excel Serial Dates Back to Intended Day.Month Numerics")
+    (description
+     "Detects values imported from spreadsheets that were auto-converted to Excel date
+serials and reconstructs the originally intended day.month decimals (for
+example, 30.3 that Excel displayed as 30/03/2025').  The functions work in a
+vectorized manner, preserve non-serial values, and support both the 1900 and
+1904 date systems.")
+    (license license:expat)))
+
 (define-public r-undidr
   (package
     (name "r-undidr")
@@ -4371,20 +4397,21 @@ electric power transmission network) in the UK since 2011.")
 (define-public r-ukfe
   (package
     (name "r-ukfe")
-    (version "0.4.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UKFE" version))
        (sha256
-        (base32 "1xx7sn9ia8a7902q65qa7g4lcnj3zvr0ix7p9mkaf3v0pa9kygzc"))))
+        (base32 "1i0025g67pdfn4hg99cq4w43h1fyifzgrlbszn1ja5mkcrlya30z"))))
     (properties `((upstream-name . "UKFE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2 r-sf))
-    (home-page "https://cran.r-project.org/package=UKFE")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/agqhammond/ukfe")
     (synopsis "UK Flood Estimation")
     (description
      "This package provides functions to implement the methods of the Flood Estimation
@@ -4407,7 +4434,7 @@ Institute of Hydrology (1992, ISBN 0 948540 45 1).  Wallingford
 @code{HydroSolutions}, (2016,
 <http://software.hydrosolutions.co.uk/winfap4/Urban-Adjustment-Procedure-Technical-Note.pdf>).
  Data from the UK National River Flow Archive (<https://nrfa.ceh.ac.uk/>, terms
-and conditions: <https://nrfa.ceh.ac.uk/costs-terms-and-conditions>).")
+and conditions: <https://nrfa.ceh.ac.uk/help/costs-terms-and-conditions>).")
     (license license:gpl3)))
 
 (define-public r-ukbnmr

@@ -12112,6 +12112,31 @@ some functions to obtain the latest information about pathways to finish pathway
 enrichment analysis using this method.")
     (license license:gpl2)))
 
+(define-public r-tpddev
+  (package
+    (name "r-tpddev")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TPDDev" version))
+       (sha256
+        (base32 "1043a1m2xndicls2l60yxfjvaf2wmknhnlicllwwjnhfvs0dkj83"))))
+    (properties `((upstream-name . "TPDDev")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-mass))
+    (home-page "https://cran.r-project.org/package=TPDDev")
+    (synopsis "Tool for Construction of Two-Phase Experimental Designs")
+    (description
+     "This package provides functions to construct two-phase design layouts, compute
+treatment- and block-incidence matrices, derive C-matrices for residual, direct,
+and interaction effects, and calculate the efficiency factor for two-phase
+experimental designs with factorial treatment structure.")
+    (license license:gpl3)))
+
 (define-public r-tpd
   (package
     (name "r-tpd")
@@ -21820,13 +21845,13 @@ generation.  To learn more about Thrift go to <https://thrift.apache.org>.")
 (define-public r-threshr
   (package
     (name "r-threshr")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "threshr" version))
        (sha256
-        (base32 "1ws40jlc22p4fb0wcczqf5aqgvsq464nr39rdm6vwwz7spvr8vly"))))
+        (base32 "02brzjsk4myy8jps8i81lsqi08fbmmapxaw7y7whj2r6xfq9p7kz"))))
     (properties `((upstream-name . "threshr")))
     (build-system r-build-system)
     (arguments
@@ -29895,13 +29920,13 @@ distribution along with clinical trials based on the Bayesian distribution.")
 (define-public r-tbm
   (package
     (name "r-tbm")
-    (version "0.3-7")
+    (version "0.3-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tbm" version))
        (sha256
-        (base32 "0hzw5zaiicvvh8knbbycszkkrma474l2891rgx3zi5h7pv45s4si"))))
+        (base32 "0xb4xgb073nzyj8bar5shk478av0xaz54hyxgfdm576ip6idv7l3"))))
     (properties `((upstream-name . "tbm")))
     (build-system r-build-system)
     (arguments

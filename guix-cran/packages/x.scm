@@ -334,13 +334,13 @@ main reference is @code{DePaolis} at al (2022) <doi:10.1007/s41109-022-00519-2>.
 (define-public r-xtdml
   (package
     (name "r-xtdml")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xtdml" version))
        (sha256
-        (base32 "0igmmh4d6sdw5fh8918yaanm6v8sh9k6w0v5jzfgwrhdyln1dq3z"))))
+        (base32 "064dwhz67mkf2ijapp5ij88hbq7fscsg39kv0hqlva46c8d6vxcn"))))
     (properties `((upstream-name . "xtdml")))
     (build-system r-build-system)
     (arguments
@@ -363,12 +363,12 @@ main reference is @code{DePaolis} at al (2022) <doi:10.1007/s41109-022-00519-2>.
     (synopsis
      "Double Machine Learning for Static Panel Models with Fixed Effects")
     (description
-     "Implementation of partially linear panel regression (PLPR) models with
-high-dimensional confounding variables and exogenous treatment variable within
-the double machine learning framework.  It allows the estimation of the
-structural parameter (treatment effect) in static panel data models with fixed
-effects using panel data approaches established in Clarke and Polselli (2025)
-<doi:10.1093/ectj/utaf011>.  xtdml is built on the object-oriented
+     "The xtdml package implements partially linear panel regression (PLPR) models
+with high-dimensional confounding variables and an exogenous treatment variable
+within the double machine learning framework.  The package is used to estimate
+the structural parameter (treatment effect) in static panel data models with
+fixed effects using the approaches established in Clarke and Polselli (2025)
+<doi:10.1093/ectj/utaf011>.  xtdml is built on the object-oriented package
 @code{DoubleML} (Bach et al., 2024) <doi:10.18637/jss.v108.i03> using the mlr3
 ecosystem.")
     (license (list license:gpl2 license:gpl3))))
@@ -653,6 +653,29 @@ evaluators and a combination of functions, classes and methods for
 communication.  Will be used through a specific language interface package.
 Described in the book \"Extending R\".")
     (license license:gpl2+)))
+
+(define-public r-xptr
+  (package
+    (name "r-xptr")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xptr" version))
+       (sha256
+        (base32 "1f2cv5xl7xh91im9axmafy81zxs7bm06hm5ifymhy7k9xp98y29v"))))
+    (properties `((upstream-name . "xptr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/eddelbuettel/xptr/")
+    (synopsis "Manipulating External Pointers")
+    (description
+     "There is limited native support for external pointers in the R interface.  This
+package provides some basic tools to verify, create and modify externalptr
+objects.")
+    (license license:expat)))
 
 (define-public r-xpose-xtras
   (package

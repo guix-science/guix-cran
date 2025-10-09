@@ -443,6 +443,39 @@ distance between fuzzy numbers are included, and a function to calculate the
 value phi-wabl given a sample of trapezoidal fuzzy numbers.")
     (license license:gpl2+)))
 
+(define-public r-fuzzyspec
+  (package
+    (name "r-fuzzyspec")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FuzzySpec" version))
+       (sha256
+        (base32 "1y156qhj2r34nkapl768k3vdhwdkn3ryadhjn3jyxsnsrac34070"))))
+    (properties `((upstream-name . "FuzzySpec")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite
+                             r-thresher
+                             r-np
+                             r-mvtnorm
+                             r-mclust
+                             r-ggplot2
+                             r-fclust))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=FuzzySpec")
+    (synopsis
+     "Fuzzy Spectral Clustering with Variable-Weighted Adjacency Matrices")
+    (description
+     "Implementation of the FVIBES, the Fuzzy Variable-Importance Based Eigenspace
+Separation algorithm as described in the paper by Ghashti, J.S., Hare, W., and
+J.R.J. Thompson (2025).  Variable-Weighted Adjacency Constructions for Fuzzy
+Spectral Clustering.  Submitted.")
+    (license license:gpl2)))
+
 (define-public r-fuzzysimres
   (package
     (name "r-fuzzysimres")
@@ -12332,13 +12365,13 @@ features? See Aw, Spence and Song (2023) for the accompanying paper.")
 (define-public r-flint
   (package
     (name "r-flint")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flint" version))
        (sha256
-        (base32 "1gx5b3118hkh5idgdcnlg897ciz5z07wxl5wkfqmf0baj1yjr38j"))))
+        (base32 "1q82skd45i0vaf7ldwfn2g1681jvj7iksd7s366sn49g8sxgic29"))))
     (properties `((upstream-name . "flint")))
     (build-system r-build-system)
     (arguments
@@ -12356,13 +12389,13 @@ n, finite fields, the rational, p-adic, real, and complex numbers) as well as
 matrices and polynomials over rings.  FLINT implements midpoint-radius interval
 arithmetic, also known as ball arithmetic, in the real and complex numbers,
 enabling computation in arbitrary precision with rigorous propagation of
-rounding errors; see Johansson (2017) <doi:10.1109/TC.2017.2690633>.  Finally,
-FLINT provides ball arithmetic implementations of many special mathematical
-functions, with high coverage of reference works such as the NIST Digital
-Library of Mathematical Functions <https://dlmf.nist.gov/>.  The R interface
-defines S4 classes, generic functions, and methods for representation and basic
-operations as well as plain R functions mirroring and vectorizing entry points
-in the C library.")
+rounding and other errors; see Johansson (2017) <doi:10.1109/TC.2017.2690633>.
+Finally, FLINT provides ball arithmetic implementations of many special
+mathematical functions, with high coverage of reference works such as the NIST
+Digital Library of Mathematical Functions <https://dlmf.nist.gov/>.  The R
+interface defines S4 classes, generic functions, and methods for representation
+and basic operations as well as plain R functions mirroring and vectorizing
+entry points in the C library.")
     (license license:gpl2+)))
 
 (define-public r-flimo
@@ -24595,13 +24628,13 @@ regressions, see Lederer & Vogt (2021, JMLR)
 (define-public r-fars
   (package
     (name "r-fars")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FARS" version))
        (sha256
-        (base32 "0hf66b8xwg0y69blwrlmdl7a7z5zaf2kzbcprv17vmwapqgqn189"))))
+        (base32 "1inr6ra5yrxh2jxs13kkxp74wmr3f7fjzpgkfvwgjkgafw9p4qv1"))))
     (properties `((upstream-name . "FARS")))
     (build-system r-build-system)
     (arguments

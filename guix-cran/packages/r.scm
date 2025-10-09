@@ -39689,13 +39689,13 @@ instruments and event arms.")
 (define-public r-redcapr
   (package
     (name "r-redcapr")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapR" version))
        (sha256
-        (base32 "0gsf4p76lkd1sr1ni5ylrpsw0s9qy33zsxzpyzsg248rv3chaddq"))))
+        (base32 "1mxqxs22shbcfc0g40zkiv11vkbgbslryd3kdya7pkhi818q86hm"))))
     (properties `((upstream-name . "REDCapR")))
     (build-system r-build-system)
     (arguments
@@ -51965,6 +51965,29 @@ provided by states about water quality assessments conducted under federal Clean
 Water Act requirements.  ATTAINS information and API information is available at
 <https://www.epa.gov/waterdata/attains>.")
     (license license:expat)))
+
+(define-public r-rato
+  (package
+    (name "r-rato")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rato" version))
+       (sha256
+        (base32 "0n24kbcia2z4v06pf258g2s3y5qln5ybzh2vqxd2v3l9k8chk0zb"))))
+    (properties `((upstream-name . "Rato")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-igraph r-desolve))
+    (home-page "https://cran.r-project.org/package=Rato")
+    (synopsis "Resilience Analysis Toolkit (RATO)")
+    (description
+     "Collection of tools for the analysis of the resilience of dynamic networks.
+Created as a classroom project.")
+    (license license:gpl3)))
 
 (define-public r-ratios
   (package

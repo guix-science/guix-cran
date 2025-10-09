@@ -1287,13 +1287,13 @@ package.")
 (define-public r-extrasuperpower
   (package
     (name "r-extrasuperpower")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extraSuperpower" version))
        (sha256
-        (base32 "0903lmaxbfdrrfhf2wmpqxq6ij7swwh1j2j0z3qhqj93rf0makkj"))))
+        (base32 "08i09llcs1s6wzzjhfgn0ygz9r8ixyg78rg8jl3szfpgxzzvxv71"))))
     (properties `((upstream-name . "extraSuperpower")))
     (build-system r-build-system)
     (arguments
@@ -4461,13 +4461,13 @@ estimators are implemented.")
 (define-public r-evsim
   (package
     (name "r-evsim")
-    (version "1.6.1")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evsim" version))
        (sha256
-        (base32 "09k370bny8c0hmch1fsay95q84zm72zdg98q0akqhxpvz7l1gc6l"))))
+        (base32 "1v74hsq1a7xpnpssiryv4x15iwwrvl8vs5a5krml6mszmfk5dsfg"))))
     (properties `((upstream-name . "evsim")))
     (build-system r-build-system)
     (arguments
@@ -8343,13 +8343,13 @@ hypothesis test functions.  Data sets are included for all examples from Cumming
 (define-public r-escalation
   (package
     (name "r-escalation")
-    (version "0.1.10")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "escalation" version))
        (sha256
-        (base32 "0qsr58jcw48lypddbyfpkx51riasxzq2c6098zhcypj8kf98rfvw"))))
+        (base32 "0ljscgf6s4nllypq54pbsw29vggjp0rm05rd02cplzjvnic5bjpm"))))
     (properties `((upstream-name . "escalation")))
     (build-system r-build-system)
     (arguments
@@ -8367,6 +8367,7 @@ hypothesis test functions.  Data sets are included for all examples from Cumming
                              r-purrr
                              r-mvtnorm
                              r-magrittr
+                             r-iso
                              r-gtools
                              r-ggplot2
                              r-dplyr
@@ -22845,6 +22846,48 @@ install and load multiple @code{EconDataverse} packages in a single step.  Learn
 more about the @code{EconDataverse} at <https://www.econdataverse.org>.")
     (license license:expat)))
 
+(define-public r-econcausal
+  (package
+    (name "r-econcausal")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EconCausal" version))
+       (sha256
+        (base32 "0x0yib61yggg5k66l6pfb8wxkyk157076gypydv795wmpp6cy27a"))))
+    (properties `((upstream-name . "EconCausal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vars
+                             r-urca
+                             r-tseries
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readxl
+                             r-purrr
+                             r-progressr
+                             r-magrittr
+                             r-future-apply
+                             r-dplyr
+                             r-bsts
+                             r-brms
+                             r-boomspikeslab))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/IsadoreNabi/EconCausal")
+    (synopsis
+     "Causal Analysis for Macroeconomic Time Series (ECM-MARS, BSTS, Bayesian GLM-AR(1))")
+    (description
+     "This package implements three complementary pipelines for causal analysis on
+macroeconomic time series: (1) Error-Correction Models with Multivariate
+Adaptive Regression Splines (ECM-MARS), (2) Bayesian Structural Time Series
+(BSTS), and (3) Bayesian GLM with AR(1) errors validated with Leave-Future-Out
+(LFO).  Heavy backends (Stan) are optional and never used in examples or tests.")
+    (license license:expat)))
+
 (define-public r-econandprodefficiency
   (package
     (name "r-econandprodefficiency")
@@ -25301,13 +25344,13 @@ output SVG elements into a SVG file.")
 (define-public r-easysurv
   (package
     (name "r-easysurv")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easysurv" version))
        (sha256
-        (base32 "065h9wkd930k81jwdj48955nkv2z2q1xky15rg5nh0ig1r10d37p"))))
+        (base32 "1yiwqizc806fmannszyalb3zv6f631pp3f6n5ps599kn8fn5bvrl"))))
     (properties `((upstream-name . "easysurv")))
     (build-system r-build-system)
     (arguments
@@ -25338,10 +25381,10 @@ output SVG elements into a SVG file.")
     (description
      "Inspect survival data, plot Kaplan-Meier curves, assess the proportional hazards
 assumption, fit parametric survival models, predict and plot survival and
-hazards, and export the outputs to Excel.  A simple interface for fitting
-survival models using @code{flexsurv::flexsurvreg()}',
-@code{flexsurv::flexsurvspline()}', @code{flexsurvcure::flexsurvcure()}', and
-@code{survival::survreg()}'.")
+hazards, and export the outputs to Excel'.  A simple interface for fitting
+survival models using @code{flexsurv::flexsurvreg()},
+@code{flexsurv::flexsurvspline()}, @code{flexsurvcure::flexsurvcure()}, and
+@code{survival::survreg()}.")
     (license license:expat)))
 
 (define-public r-easystats

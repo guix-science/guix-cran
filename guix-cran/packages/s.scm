@@ -16577,6 +16577,42 @@ are also provided, see Luedtke, Robitzsch and Wagner (2018)
 <DOI:10.1037/met0000155>.")
     (license license:gpl2+)))
 
+(define-public r-startr
+  (package
+    (name "r-startr")
+    (version "3.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "startR" version))
+       (sha256
+        (base32 "0a2650sm0k3xdm279rfcbqcxxsc9zisq9w83qnb7mx2l17wym45f"))))
+    (properties `((upstream-name . "startR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-s2dv
+                             r-multiapply
+                             r-future
+                             r-easyncdf
+                             r-climprojdiags
+                             r-bigmemory
+                             r-abind))
+    (home-page "https://earth.bsc.es/gitlab/es/startR/")
+    (synopsis "Automatically Retrieve Multidimensional Distributed Data Sets")
+    (description
+     "Automatically fetch, transform and arrange subsets of multidimensional data sets
+(collections of files) stored in local and/or remote file systems or servers,
+using multicore capabilities where possible.  This tool provides an interface to
+perceive a collection of data sets as a single large multidimensional data
+array, and enables the user to request for automatic retrieval, processing and
+arrangement of subsets of the large array.  Wrapper functions to add support for
+custom file formats can be plugged in/out, making the tool suitable for any
+research field where large multidimensional data sets are involved.")
+    (license license:gpl3)))
+
 (define-public r-starter
   (package
     (name "r-starter")
@@ -39321,13 +39357,13 @@ Recommender Systems\" by Xia Ning and George Karypis <doi:10.1109/ICDM.2011.134>
 (define-public r-slimr
   (package
     (name "r-slimr")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SlimR" version))
        (sha256
-        (base32 "033680si12fbj48wzdwqfnc2w5ml4ckxflyd6cmz3cs5ygbrfdyy"))))
+        (base32 "1ipn1qwizqi57mxgqcg8rj6adm10ys4x4v407l1zh948i0s7mazc"))))
     (properties `((upstream-name . "SlimR")))
     (build-system r-build-system)
     (arguments
@@ -39343,24 +39379,22 @@ Recommender Systems\" by Xia Ning and George Karypis <doi:10.1109/ICDM.2011.134>
                              r-ggplot2
                              r-dplyr
                              r-cowplot))
-    (home-page "https://cran.r-project.org/package=SlimR")
+    (home-page "https://github.com/Zhaoqing-wang/SlimR")
     (synopsis
-     "Marker-Based Package for Single-Cell and Spatial-Transcriptomic Annotation")
+     "Machine Learning-Assisted, Marker-Based Tool for Single-Cell and Spatial Transcriptomics Annotation")
     (description
-     "Annotating single-cell and spatial-transcriptomic (ST) data based on the Marker
-dataset.  It supports the creation of a unified marker list, Markers_list, using
-sources including: the package's built-in curated species-specific cell type and
-marker reference databases (e.g., Cellmarker2', @code{PanglaoDB}',
-@code{scIBD}', T@code{CellSI}'), Seurat objects containing cell label
-information, or user-provided Excel tables mapping cell types to markers.  Based
-on the Markers_list, @code{SlimR} can calculate gene expression of different
-cell types and predict annotation information and calculate corresponding AUC by
-@code{Celltype_Calculate()}', and annotate it by @code{Celltype_Annotation()}',
-then verify it by @code{Celltype_Verification()}'.  At the same time, it can
-calculate gene expression corresponding to the cell type to generate the
-corresponding annotation reference map for manual annotation (e.g., Heatmap',
-Features plot', Combined plot').  For more details see Kabacoff (2020,
-ISBN:9787115420572).")
+     "Annotates single-cell and spatial-transcriptomic (ST) data using marker
+datasets.  Supports unified markers list ('Markers_list') creation from built-in
+databases (e.g., Cellmarker2', @code{PanglaoDB}', @code{scIBD}',
+T@code{CellSI}'), Seurat objects, or user-supplied Excel files. @code{SlimR} can
+predict calculate parameters by machine learning algorithms (e.g., Random
+Forest', Gradient Boosting', Support Vector Machine', Ensemble Learning'), and
+based on Markers_list, calculate gene expression of different cell types and
+predict annotation information and calculate corresponding AUC and annotate it,
+then verify it.  At the same time, it can calculate gene expression
+corresponding to the cell type to generate a reference map for manual annotation
+(e.g., Heat Map', Feature Plots', Combined Plots').  For more details see
+Kabacoff (2020, ISBN:9787115420572).")
     (license license:expat)))
 
 (define-public r-slim
@@ -40350,6 +40384,47 @@ package to send well-formatted output from multiple R objects and expressions to
 all teammates at the same time with little effort.  You can also send images
 from the current graphics device, R objects, and upload files.")
     (license license:expat)))
+
+(define-public r-skytrackr
+  (package
+    (name "r-skytrackr")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "skytrackr" version))
+       (sha256
+        (base32 "18jhdzy7v54hw897xrk1a2ncqb9y76szr0nx0f3jwp5pphiv8awa"))))
+    (properties `((upstream-name . "skytrackr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-terra
+                             r-skylight
+                             r-sf
+                             r-rlang
+                             r-plotly
+                             r-patchwork
+                             r-memoise
+                             r-mapview
+                             r-ggplot2
+                             r-geosphere
+                             r-dplyr
+                             r-cli
+                             r-circular
+                             r-bayesiantools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bluegreen-labs/skytrackr")
+    (synopsis "Sky Illuminance Location Tracker")
+    (description
+     "Calculate geolocations by light using template matching.  The routine uses a
+calibration free optimization of a sky illuminance model to determine locations
+robustly using a template matching approach, as described by Ekstrom (2004)
+<https://nipr.repo.nii.ac.jp/records/2496>, and behaviourly informed constraints
+(step-selection).")
+    (license license:agpl3)))
 
 (define-public r-skyscaper
   (package
@@ -43240,13 +43315,13 @@ alpha= 1) also developed by Vichi et al. (2007) <doi:10.1007/s00357-007-0006-x>.
 (define-public r-simts
   (package
     (name "r-simts")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simts" version))
        (sha256
-        (base32 "12v6djqij8w0vy25pndri4kng7zq7bncvbg9h28vg1m8sk3nlfc4"))))
+        (base32 "07jim4wjfbzc53s2jnzb3x6a6pdc4v6kc5ggcbzj4vq7as2mqdib"))))
     (properties `((upstream-name . "simts")))
     (build-system r-build-system)
     (arguments
@@ -45388,6 +45463,39 @@ potential landscape definition by Wang et al. (2008)
 <doi:10.1073/pnas.0800579105> (also see Zhou & Li, 2016 <doi:10.1063/1.4943096>
 for further mathematical discussions) and can be used for a large variety of
 models.")
+    (license license:gpl3+)))
+
+(define-public r-simkid
+  (package
+    (name "r-simkid")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SimKid" version))
+       (sha256
+        (base32 "0nl2bz0fq056jbqak5p38w0vpz4pbd78j09jxlh2xz663jazvzr0"))))
+    (properties `((upstream-name . "SimKid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tmvtnorm
+                             r-tidyr
+                             r-rlang
+                             r-randomizr
+                             r-msm
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/Andy00000000000/SimKid")
+    (synopsis "Simulate Virtual Pediatrics using Anthropometric Growth Charts")
+    (description
+     "Simulate a virtual population of subjects that has demographic distributions
+(height, weight, and BMI) and correlations (height and weight), by sex and age,
+which mimic those reported in real-world anthropometric growth charts (CDC, WHO,
+or Fenton).")
     (license license:gpl3+)))
 
 (define-public r-simjoint
@@ -72182,13 +72290,13 @@ improvements for faster results with large datasets.")
 (define-public r-samplingstrata
   (package
     (name "r-samplingstrata")
-    (version "1.5-4")
+    (version "1.5-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SamplingStrata" version))
        (sha256
-        (base32 "093x9rfilxhgf75p0rfsvglz0sg3imhdm15azxnjiblamyxbhfjm"))))
+        (base32 "1wa1k8pj527b5y72s0ka5ijqdarpzj18xny25w1mqqvlbv4dhmv7"))))
     (properties `((upstream-name . "SamplingStrata")))
     (build-system r-build-system)
     (arguments
@@ -72201,21 +72309,17 @@ improvements for faster results with large datasets.")
     (synopsis
      "Optimal Stratification of Sampling Frames for Multipurpose Sampling Surveys")
     (description
-     "In the field of stratified sampling design, this package offers an approach for
-the determination of the best stratification of a sampling frame, the one that
-ensures the minimum sample cost under the condition to satisfy precision
-constraints in a multivariate and multidomain case.  This approach is based on
-the use of the genetic algorithm: each solution (i.e.  a particular partition in
-strata of the sampling frame) is considered as an individual in a population;
-the fitness of all individuals is evaluated applying the Bethel-Chromy algorithm
-to calculate the sampling size satisfying precision constraints on the target
-estimates.  Functions in the package allows to: (a) analyse the obtained results
-of the optimisation step; (b) assign the new strata labels to the sampling
-frame; (c) select a sample from the new frame accordingly to the best
-allocation.  Functions for the execution of the genetic algorithm are a modified
-version of the functions in the genalg package.  M.Ballin, G.Barcaroli (2020)
-<@code{arXiv:2004.09366>} \"R package @code{SamplingStrata}: new developments and
-extension to Spatial Sampling\".")
+     "This package provides tools for the optimization of stratified sampling design.
+It determines a stratification of a sampling frame that minimizes sample cost
+while satisfying precision constraints in a multivariate and multidomain
+context.  The approach relies on a genetic algorithm; each candidate partition
+of the frame is an individual whose fitness is evaluated via the Bethel-Chromy
+allocation to meet target precisions.  Functions support analysis of
+optimization results, labeling of the frame with new strata, and drawing a
+sample according to the optimal allocation.  Algorithmic components adapt code
+from the genalg package.  See M. Ballin and G. Barcaroli (2020) \"R package
+@code{SamplingStrata}: new developments and extension to Spatial Sampling\"
+<doi:10.48550/@code{arXiv.2004.09366>}.")
     (license license:gpl2+)))
 
 (define-public r-samplingr

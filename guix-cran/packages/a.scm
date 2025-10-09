@@ -20300,13 +20300,13 @@ Haralick (1973) <doi:10.1109/TSMC.1973.4309314>.")
 (define-public r-agridat
   (package
     (name "r-agridat")
-    (version "1.24")
+    (version "1.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agridat" version))
        (sha256
-        (base32 "0bnc2dr5lz2lqjlic8c8siwfcv63864fn857a6pi6zblfv5cfsza"))))
+        (base32 "1d7pfv4b1l1m8lcx8xwq9vc4540hjd5kahxgr9bklx0103bqqkmj"))))
     (properties `((upstream-name . "agridat")))
     (build-system r-build-system)
     (arguments

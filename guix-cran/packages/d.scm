@@ -1298,39 +1298,26 @@ it.")
 (define-public r-dymo
   (package
     (name "r-dymo")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dymo" version))
        (sha256
-        (base32 "0s1gpi5qiafkf91awyx52qw15qs7m18bql51jibgh1lqnqgv1757"))))
+        (base32 "09qn50ih47iv48dld601y2x25awl17d75fngzkgm12m1lnaq3sav"))))
     (properties `((upstream-name . "dymo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tictoc
-                             r-scales
-                             r-readr
-                             r-purrr
-                             r-narray
-                             r-moments
-                             r-modeest
-                             r-matlib
-                             r-mass
-                             r-lubridate
-                             r-imputets
-                             r-greybox
-                             r-ggplot2
-                             r-fancova))
+    (propagated-inputs (list r-rlang r-ggplot2))
     (home-page "https://rpubs.com/giancarlo_vercellino/dymo")
     (synopsis
-     "Dynamic Mode Decomposition for Multivariate Time Feature Prediction")
+     "Dynamic Mode Decomposition Forecasting with Conformal Predictive Sampling")
     (description
-     "An application of Dynamic Mode Decomposition for prediction of time features.
-Automatic search for the best model across the space of all possible feature
-combinations and ranks of Singular Value Decomposition.")
+     "The DYMO package provides tools for multi-feature time-series forecasting using
+a Dynamic Mode Decomposition (DMD) model combined with conformal predictive
+sampling for uncertainty quantification.")
     (license license:gpl3)))
 
 (define-public r-dymep
@@ -16204,13 +16191,13 @@ of the competitive or collaborative transition.")
 (define-public r-dimodelsvis
   (package
     (name "r-dimodelsvis")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DImodelsVis" version))
        (sha256
-        (base32 "196c8nfss9x18wzbx9ajfp9rali5kxji5rnkwg7sg6kr2647nd45"))))
+        (base32 "0c6wknkj68rss33g6wqvqslh0xmqgm6qzs5hzmy4fl68gbwz5h00"))))
     (properties `((upstream-name . "DImodelsVis")))
     (build-system r-build-system)
     (arguments
@@ -23185,35 +23172,42 @@ as described in Visser and Vorst (2022) <DOI:10.1163/27723194-bja10014>.")
 (define-public r-dendrometry
   (package
     (name "r-dendrometry")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dendrometry" version))
        (sha256
-        (base32 "1afxnf4lpfwyzbi0ll9c7mlklv5d1m872prfnx4mndrwcvfhv071"))))
+        (base32 "1jd19f0p7a713xclkf05sy19dkwvii2xk3x2xz44cb6ch945d769"))))
     (properties `((upstream-name . "dendrometry")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-forestfit))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dendrometry")
     (synopsis "Forest Estimations and Dendrometric Computations")
     (description
      "Computation of dendrometric and structural parameters from forest inventory
-data.  The objective is to provide an user-friendly R package for researchers,
-ecologists, foresters, statisticians, loggers and others persons who deal with
-forest inventory data.  Useful conversion of angle value from degree to radian,
+data.  The objective is to provide a user-friendly R package for researchers,
+ecologists, foresters, statisticians, loggers and other persons who deal with
+forest inventory data.  The package includes advanced distribution fitting
+capabilities with multiple estimation methods (Maximum Likelihood, Maximum
+Product Spacing with ties correction methods following Cheng & Amin (1983), and
+Method of Moments) for probability distributions commonly used in forestry.
+Visualization tools with confidence bands using delta method and parametric
+bootstrap are provided for three-parameter Weibull distribution fitting to
+diameter data.  Useful conversion of angle value from degree to radian,
 conversion from angle to slope (in percentage) and their reciprocals as well as
 principal angle determination are also included.  Position and dispersion
 parameters usually found in forest studies are implemented.  The package
 contains Fibonacci series, its extensions and the Golden Number computation.
 Useful references are Arcadius Y. J. Akossou, Soufianou Arzouma, Eloi Y.
-Attakpa, NoÃ«l H. Fonton and Kouami Kokou (2013) <doi:10.3390/d5010099> and W.
+Attakpa, NoÃ«l H. Fonton and Kouami Kokou (2013) <doi:10.3390/d5010099>, W.
 Bonou, R. Glele KakaÃ¯, A.E. Assogbadjo, H.N. Fonton, B. Sinsin (2009)
-<doi:10.1016/j.foreco.2009.05.032> .")
+<doi:10.1016/j.foreco.2009.05.032>, R. C. H. Cheng and N. A. K. Amin (1983)
+<doi:10.1111/j.2517-6161.1983.tb01268.x>, and R. C. H. Cheng and M. A. Stephens
+(1989) <doi:10.1093/biomet/76.2.385>.")
     (license license:gpl3)))
 
 (define-public r-dendrometer

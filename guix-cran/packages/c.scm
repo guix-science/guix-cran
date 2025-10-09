@@ -2879,13 +2879,13 @@ types while checking for values outside the type limits, NA values, etc.")
 (define-public r-ctxr
   (package
     (name "r-ctxr")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctxR" version))
        (sha256
-        (base32 "1zhkrrqx5h1jx0hvfgnmiq6k5hhfp57ca7dhdi154gajv04drmx7"))))
+        (base32 "16pai8rpssm444iwxsy1dnfp43dhv8yk93xg3grzq7r6jwy36r55"))))
     (properties `((upstream-name . "ctxR")))
     (build-system r-build-system)
     (arguments
@@ -2897,6 +2897,7 @@ types while checking for values outside the type limits, NA values, etc.")
                              r-stringr
                              r-rlang
                              r-purrr
+                             r-lifecycle
                              r-jsonlite
                              r-httr
                              r-data-table
@@ -12529,13 +12530,13 @@ correspond to Feb 2011 preprint
 (define-public r-cotram
   (package
     (name "r-cotram")
-    (version "0.5-2")
+    (version "0.5-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cotram" version))
        (sha256
-        (base32 "19z3nsv1cy737mma4q1i8pr8zgnhv8pyrb2airxchbwlf4dxv2vb"))))
+        (base32 "0b7jfii7dd93z3mbfg4phyv1y92yfrl54k9qhm3b519vqzyq8yic"))))
     (properties `((upstream-name . "cotram")))
     (build-system r-build-system)
     (arguments
@@ -28374,13 +28375,13 @@ Hagenaars, 2009, <DOI:10.1007/b12532>.")
 (define-public r-cmls
   (package
     (name "r-cmls")
-    (version "1.0-1")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CMLS" version))
        (sha256
-        (base32 "0vgqdqckkyf0rnxi6hp6xfc1wv2ldz5p8bmc6jq1rgwgz4b66a0p"))))
+        (base32 "19wk05j9z9ljy3m74fjngzfbbj7hbkwv4nraga3hd8wb4k4rw3am"))))
     (properties `((upstream-name . "CMLS")))
     (build-system r-build-system)
     (arguments

@@ -2222,13 +2222,13 @@ logs used as source of truth to allow portability of versioned data folders.")
 (define-public r-vmsae
   (package
     (name "r-vmsae")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vmsae" version))
        (sha256
-        (base32 "0indwpmqz1yv50h8i642wl2lkx2dzgs0hm51p5s31iw4ywyd8nya"))))
+        (base32 "1ylyqb2igd46z5nnqllrsr1npvazx3jx88kpd3v1iz2px80fbjsn"))))
     (properties `((upstream-name . "vmsae")))
     (build-system r-build-system)
     (arguments
@@ -7704,6 +7704,39 @@ used to enable Bayesian analysis of very large Electronic Health Records data.
 For VB GMM details see Bishop (2006,ISBN:9780-387-31073-2).  For Logistic VB see
 Jaakkola and Jordan (2000) <doi:10.1023/A:1008932416310>.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
+
+(define-public r-vbms
+  (package
+    (name "r-vbms")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VBMS" version))
+       (sha256
+        (base32 "0mlgjfcywzn2fc1ar1gp4s06d86dvqy2yavl84n9nspbgkn31m2n"))))
+    (properties `((upstream-name . "VBMS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-selectiveinference r-pracma r-mass))
+    (home-page "https://cran.r-project.org/package=VBMS")
+    (synopsis
+     "Variational Bayesian Algorithm for Multi-Source Heterogeneous Models")
+    (description
+     "This package provides a Variational Bayesian algorithm for high-dimensional
+multi-source heterogeneous linear models.  More details have been written up in
+a paper submitted to the journal Statistics in Medicine, and the details of
+variational Bayesian methods can be found in Ray and Szabo (2021)
+<doi:10.1080/01621459.2020.1847121>.  It simultaneously performs parameter
+estimation and variable selection.  The algorithm supports two model settings:
+(1) local models, where variable selection is only applied to homogeneous
+coefficients, and (2) global models, where variable selection is also performed
+on heterogeneous coefficients.  Two forms of Spike-and-Slab priors are
+available: the Laplace distribution and the Gaussian distribution as the Slab
+component.")
+    (license license:expat)))
 
 (define-public r-vblpcm
   (package

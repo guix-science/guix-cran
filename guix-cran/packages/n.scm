@@ -12141,13 +12141,13 @@ activation function.  Furthermore, the calculation of generalized weights
 (define-public r-neuralgam
   (package
     (name "r-neuralgam")
-    (version "1.1.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neuralGAM" version))
        (sha256
-        (base32 "1dnqbz83px2sd58i6jfsp1nimm6k2ffsas270rsc1av5nr6zd4wh"))))
+        (base32 "10vn2wq7wxm1gf6zby7c5k4m7g1cgs5adwry9va0hv5cp38vppbz"))))
     (properties `((upstream-name . "neuralGAM")))
     (build-system r-build-system)
     (arguments
@@ -12155,18 +12155,20 @@ activation function.  Furthermore, the calculation of generalized weights
       #:tests? #f))
     (inputs (list python))
     (propagated-inputs (list r-tensorflow
+                             r-rlang
                              r-reticulate
+                             r-patchwork
+                             r-matrixstats
                              r-magrittr
                              r-keras
-                             r-gridextra
                              r-ggplot2
                              r-formula-tools))
     (home-page "https://inesortega.github.io/neuralGAM/")
     (synopsis
      "Interpretable Neural Network Based on Generalized Additive Models")
     (description
-     "Neural network framework based on Generalized Additive Models from Hastie &
-Tibshirani (1990, ISBN:9780412343902), which trains a different neural network
+     "Neural Additive Model framework based on Generalized Additive Models from Hastie
+& Tibshirani (1990, ISBN:9780412343902), which trains a different neural network
 to estimate the contribution of each feature to the response variable.  The
 networks are trained independently leveraging the local scoring and backfitting
 algorithms to ensure that the Generalized Additive Model converges and it is

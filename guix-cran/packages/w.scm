@@ -316,13 +316,13 @@ matching theoretical distribution.")
 (define-public r-wv
   (package
     (name "r-wv")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wv" version))
        (sha256
-        (base32 "0dx33bs05k6zi6rnk12v6z2l2pvvx2jdl99vafbpyydf0ls4ppbk"))))
+        (base32 "0s8mbl1bdnrbpfg80rzy9nw1gm6c6vx8yp230x951sk8aw3j090q"))))
     (properties `((upstream-name . "wv")))
     (build-system r-build-system)
     (arguments
@@ -336,7 +336,7 @@ matching theoretical distribution.")
 to classical and robust wavelet variance for time series and regular lattices.
 More details can be found, for example, in Serroukh, A., Walden, A.T., &
 Percival, D.B. (2000) <doi:10.2307/2669537> and Guerrier, S. & Molinari, R.
-(2016) <@code{arXiv:1607.05858>}.")
+(2016) <doi:10.48550/@code{arXiv.1607.05858>}.")
     (license license:agpl3)))
 
 (define-public r-wufoor

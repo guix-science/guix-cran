@@ -8694,13 +8694,13 @@ and GÃ´net, Laurin and Girondot (2022)
 (define-public r-bonedensitymapping
   (package
     (name "r-bonedensitymapping")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoneDensityMapping" version))
        (sha256
-        (base32 "0m89vfpjq0vl27xi9w0dgcbj7nfmn4a66dw9dj1szlm8ny6cqam4"))))
+        (base32 "0kq3lp574fphbzclvxxv6ij0wsajf3f480hzjkp9r9zv0ahmvy4j"))))
     (properties `((upstream-name . "BoneDensityMapping")))
     (build-system r-build-system)
     (arguments
