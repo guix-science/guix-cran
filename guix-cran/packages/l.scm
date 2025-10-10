@@ -570,37 +570,33 @@ modelling in R.")
 (define-public r-lulab-utils
   (package
     (name "r-lulab-utils")
-    (version "0.0.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lulab.utils" version))
        (sha256
-        (base32 "0rll4x1fjxr1308fhymi40cml31ysh0z45vzq8hprplr9f5fqrqc"))))
+        (base32 "1gl5c6v79vlaiikl9mr96mglw11rddm326qbhkrhpc427cl7w3jk"))))
     (properties `((upstream-name . "lulab.utils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-table1
-                             r-stringr
+    (propagated-inputs (list r-stringr
                              r-rappdirs
                              r-purrr
-                             r-openxlsx
                              r-magrittr
                              r-httr2
                              r-dplyr
-                             r-descr
-                             r-car
                              r-boot))
     (native-inputs (list r-knitr))
-    (home-page "https://leslie-lu.github.io/")
+    (home-page "https://github.com/Leslie-Lu/lulab.utils")
     (synopsis "Supporting Functions Maintained by Zhen Lu")
     (description
      "Miscellaneous functions commonly used by @code{LuLab}.  This package aims to
 help more researchers on epidemiology to perform data management and
 visualization more efficiently.")
-    (license license:artistic2.0)))
+    (license license:expat)))
 
 (define-public r-lue
   (package
@@ -5011,6 +5007,41 @@ and allow users to do textual analysis on the data.  The New and Old Testament
 have been provided in their original languages, Greek and Hebrew, respectively.
 Additionally, the Revised American Standard Bible is also provided for users
 who'd rather use a wordâforâword modern English translation.")
+    (license license:gpl3+)))
+
+(define-public r-logolink
+  (package
+    (name "r-logolink")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "logolink" version))
+       (sha256
+        (base32 "0aiw1cd8pdfsak9d8gpwmrr1lfbrmyhgfq3p158x690sws9r2c1j"))))
+    (properties `((upstream-name . "logolink")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-janitor
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (home-page "https://danielvartan.github.io/logolink/")
+    (synopsis "An Interface for Running 'NetLogo' Simulations")
+    (description
+     "An interface for @code{NetLogo} <https://www.netlogo.org> that enables
+programmatic setup and execution of simulations.  Designed to facilitate
+integrating @code{NetLogo} models into reproducible workflows by creating and
+running @code{BehaviorSpace} experiments and retrieving their results.")
     (license license:gpl3+)))
 
 (define-public r-logofgamma
@@ -11037,13 +11068,13 @@ Travers Ching, Xun Zhu, Lana X. Garmire (2018)
 (define-public r-likertmaker
   (package
     (name "r-likertmaker")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LikertMakeR" version))
        (sha256
-        (base32 "1x0npv01jxpn3ry01sg024iwckgnldg8yr5c5anc00jvhb8zlpds"))))
+        (base32 "04qrgd3qd0imhzwfi6jibnfc6c8fjak9q0a7rl55ixgqdxpvfaq0"))))
     (properties `((upstream-name . "LikertMakeR")))
     (build-system r-build-system)
     (arguments
@@ -11058,7 +11089,8 @@ Travers Ching, Xun Zhu, Lana X. Garmire (2018)
      "Generate and correlate synthetic Likert and rating-scale data with predefined
 means, standard deviations, Cronbach's Alpha, Factor Loading table, and other
 summary statistics.  Worked examples and documentation are available in the
-package vignettes, accessible via @code{browseVignettes(\"LikertMakeR}\").")
+package articles, accessible via
+<https://winzarh.github.io/@code{LikertMakeR/>}.")
     (license license:expat)))
 
 (define-public r-likertez
@@ -18883,27 +18915,29 @@ observed variables and multiple	group models.")
 (define-public r-laminr
   (package
     (name "r-laminr")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "laminr" version))
        (sha256
-        (base32 "0q55rq71476kx586rd3663wygyc1c023nf2fxbvsi7zs57ma0lcz"))))
+        (base32 "0w39j2ygr17s0s37mw8nkmv7pd1f3c0gmbs6vn9b1xxl1y87brwc"))))
     (properties `((upstream-name . "laminr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-withr
+                             r-sessioninfo
                              r-rlang
                              r-reticulate
                              r-r6
                              r-r-utils
                              r-purrr
-                             r-pak
+                             r-pkgload
                              r-lifecycle
-                             r-cli))
+                             r-cli
+                             r-callr))
     (native-inputs (list r-knitr))
     (home-page "https://laminr.lamin.ai")
     (synopsis "Client for 'LaminDB'")

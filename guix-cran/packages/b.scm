@@ -7581,13 +7581,13 @@ methods for finite populations, see Mashreghi et Al. (2016)
 (define-public r-bootstatespace
   (package
     (name "r-bootstatespace")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootStateSpace" version))
        (sha256
-        (base32 "0vn84xnjwjf311r1fj37g8qm8bmb0j2kyg8cgf4a1agf8g3hwq82"))))
+        (base32 "0w6g14jh36xx65vi7zjmp59jpwz7viy6h41dy0ffwbm3yil4m88h"))))
     (properties `((upstream-name . "bootStateSpace")))
     (build-system r-build-system)
     (arguments
@@ -7600,9 +7600,8 @@ methods for finite populations, see Mashreghi et Al. (2016)
      "This package provides a streamlined and user-friendly framework for
 bootstrapping in state space models, particularly when the number of
 subjects/units (n) exceeds one, a scenario commonly encountered in social and
-behavioral sciences.  For an introduction to state space models in social and
-behavioral sciences, refer to Chow, Ho, Hamaker, and Dolan (2010)
-<doi:10.1080/10705511003661553>.")
+behavioral sciences.  The parametric bootstrap implemented here was developed
+and applied in Pesigan, Russell, and Chow (2025) <doi:10.1037/met0000779>.")
     (license license:gpl3+)))
 
 (define-public r-bootruin
@@ -14883,6 +14882,34 @@ such as Mixture-of-Recursions (Bae et al.  2025
 <doi:10.48550/@code{arXiv.2507.10524>}).")
     (license license:expat)))
 
+(define-public r-biomontools
+  (package
+    (name "r-biomontools")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BioMonTools" version))
+       (sha256
+        (base32 "1cqnwc1jna3ipy8ci8qfn03pjabnb4jwbk53x5h6iw46qbfw7hil"))))
+    (properties `((upstream-name . "BioMonTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect r-tidyr r-rlang r-maps r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/leppott/BioMonTools")
+    (synopsis "Biomonitoring and Bioassessment Calculations")
+    (description
+     "An aid for manipulating data associated with biomonitoring and bioassessment.
+Calculations include metric calculation, marking of excluded taxa, subsampling,
+and multimetric index calculation.  Targeted communities are benthic
+macroinvertebrates, fish, periphyton, and coral.  As described in the Revised
+Rapid Bioassessment Protocols (Barbour et al.  1999)
+<https://archive.epa.gov/water/archive/web/html/index-14.html>.")
+    (license license:expat)))
+
 (define-public r-biomod2
   (package
     (name "r-biomod2")
@@ -21325,13 +21352,13 @@ future updates via @code{GitHub}.")
 (define-public r-bennu
   (package
     (name "r-bennu")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bennu" version))
        (sha256
-        (base32 "08fzjy7s7xnbyzfnk9hrbn1w4w828xbin0nb6fjgsapangkc7c8y"))))
+        (base32 "0dam81h6s256p6adr4ai2i1mvcnrcq80fpfbg4qazmh6pdjx0cqy"))))
     (properties `((upstream-name . "bennu")))
     (build-system r-build-system)
     (arguments

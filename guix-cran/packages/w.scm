@@ -6606,13 +6606,13 @@ ISBN: 1-471-14328-6).")
 (define-public r-weibullr
   (package
     (name "r-weibullr")
-    (version "1.2.1")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeibullR" version))
        (sha256
-        (base32 "1i83dhd6202myfgsjwc3h68dflfvd74zjskvchbzd2407a30m8n7"))))
+        (base32 "0x8i6js1ar4wkpgh8h48374hfvsvmqs3zfqvz731qig0b7ks8nb3"))))
     (properties `((upstream-name . "WeibullR")))
     (build-system r-build-system)
     (arguments

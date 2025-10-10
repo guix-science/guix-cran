@@ -3487,13 +3487,13 @@ future package.")
 (define-public r-fssf
   (package
     (name "r-fssf")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FSSF" version))
        (sha256
-        (base32 "024g2rv64yqxmbbwrbkpkrzdfshl0n6jll6axsgsp4q4ia4r9401"))))
+        (base32 "1jgs8a7jy7skss9gmnk3bga2pf18lq4wiq3221zlc9l3f13fqijb"))))
     (properties `((upstream-name . "FSSF")))
     (build-system r-build-system)
     (arguments
@@ -3504,8 +3504,7 @@ future package.")
     (synopsis
      "Generate Fully-Sequential Space-Filling Designs Inside a Unit Hypercube")
     (description
-     "This package provides three methods proposed by Shang and Apley (2019)
-<doi:10.1080/00224065.2019.1705207> to generate fully-sequential space-filling
+     "This package provides three methods to generate fully-sequential space-filling
 designs inside a unit hypercube.  A fully-sequential space-filling design means
 a sequence of nested designs (as the design size varies from one point up to
 some maximum number of points) with the design points added one at a time and

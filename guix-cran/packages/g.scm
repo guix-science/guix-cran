@@ -5865,13 +5865,13 @@ Aggregated projection method.")
 (define-public r-grf
   (package
     (name "r-grf")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grf" version))
        (sha256
-        (base32 "1ibb2ylqrvgji899sraywklsq63i65y7hvm4km7hwblxgarbjgxm"))))
+        (base32 "0zcmqmap7mj90fgi4ki2miyl04m6g7qsrnk08p7wlald3bzqv0i9"))))
     (properties `((upstream-name . "grf")))
     (build-system r-build-system)
     (arguments
@@ -7462,6 +7462,33 @@ and fan plots, continuous exposures, for pathway specific population
 attributable fractions, and for joint, average and sequential population
 attributable fractions.")
     (license license:expat)))
+
+(define-public r-graphonmix
+  (package
+    (name "r-graphonmix")
+    (version "0.0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "graphonmix" version))
+       (sha256
+        (base32 "0rz9vcxl6p3s0x0l6hm0g1ijw90fjz1gd6ka8z779c2h1nmdz8j4"))))
+    (properties `((upstream-name . "graphonmix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-imager r-igraph r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://sevvandi.github.io/graphonmix/")
+    (synopsis "Generates Mixture Graphs from Dense and Sparse Graphons")
+    (description
+     "Generates (U,W) mixture graphs where U is a line graph graphon and W is a dense
+graphon.  Graphons are graph limits and graphon U can be written as sequence of
+positive numbers adding to 1.  Graphs are sampled from U and W and joined
+randomly to obtain the mixture graph.  Given a mixture graph, U can be inferred.
+ Kandanaarachchi and Ong (2025) <doi:10.48550/@code{arXiv.2505.13864>}.")
+    (license license:gpl3+)))
 
 (define-public r-graphon
   (package
@@ -27708,6 +27735,90 @@ A test data set of a soil mapping case study in Berne (Switzerland) is provided.
      "Implementation of the ordinary functional kriging method proposed by Giraldo
 (2011) <doi:10.1007/s10651-010-0143-y>.  This implements an alternative method
 to estimate the trace-variogram using Fourier Smoothing and Gaussian Quadrature.")
+    (license license:expat)))
+
+(define-public r-geoflow
+  (package
+    (name "r-geoflow")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geoflow" version))
+       (sha256
+        (base32 "07rg7r46n69y0lb2hivisspfcglpbp5dqm5ffv8k2pbv8c1rqd5k"))))
+    (properties `((upstream-name . "geoflow")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-yaml
+                             r-xml2
+                             r-xml
+                             r-whisker
+                             r-uuid
+                             r-terra
+                             r-sfarrow
+                             r-sf
+                             r-readr
+                             r-rdflib
+                             r-r6
+                             r-png
+                             r-ows4r
+                             r-mime
+                             r-mime
+                             r-jsonlite
+                             r-httr
+                             r-geosapi
+                             r-geonode4r
+                             r-geonapi
+                             r-geometa
+                             r-dplyr
+                             r-dotenv
+                             r-digest
+                             r-curl
+                             r-benchmarkme
+                             r-arrow))
+    (home-page "https://github.com/r-geoflow/geoflow")
+    (synopsis
+     "Orchestrate Geospatial (Meta)Data Management Workflows and Manage FAIR Services")
+    (description
+     "An engine to facilitate the orchestration and execution of metadata-driven data
+management workflows, in compliance with FAIR (Findable, Accessible,
+Interoperable and Reusable) data management principles.  By means of a pivot
+metadata model, relying on the @code{DublinCore} standard
+(<https://dublincore.org/>), a unique source of metadata can be used to operate
+multiple and inter-connected data management actions.  Users can also customise
+their own workflows by creating specific actions but the library comes with a
+set of native actions targeting common geographic information and data
+management, in particular actions oriented to the publication on the web of
+metadata and data resources to provide standard discovery and access services.
+At first, default actions of the library were meant to focus on providing
+turn-key actions for geospatial (meta)data: 1) by creating manage geospatial
+(meta)data complying with ISO/TC211 (<https://committee.iso.org/home/tc211>) and
+OGC (<https://www.ogc.org/standards/>) geographic information standards (eg
+19115/19119/19110/19139) and related best practices (eg.  INSPIRE'); and 2) by
+facilitating extraction, reading and publishing of standard geospatial
+(meta)data within widely used software that compound a Spatial Data
+Infrastructure ('SDI'), including spatial databases (eg. @code{PostGIS}'),
+metadata catalogues (eg. @code{GeoNetwork}', CSW servers), data servers (eg.
+@code{GeoServer}').  The library was then extended to actions for other domains:
+1) biodiversity (meta)data standard management including handling of EML
+metadata, and their management with @code{DataOne} servers, 2) in situ sensors,
+remote sensing and model outputs (meta)data standard management by handling part
+of CF conventions, @code{NetCDF} data format and O@code{PeNDAP} access protocol,
+and their management with Thredds servers, 3) generic / domain agnostic
+(meta)data standard managers ('@code{DublinCore}', @code{DataCite}'), to
+facilitate the publication of data within (meta)data repositories such as Zenodo
+(<https://zenodo.org>) or @code{DataVerse} (<https://dataverse.org/>).  The
+execution of several actions will then allow to cross-reference (meta)data
+resources in each action performed, offering a way to bind resources between
+each other (eg.  reference Zenodo DOI in @code{GeoNetwork'/'GeoServer} metadata,
+or vice versa reference @code{GeoNetwork'/'GeoServer} links in Zenodo or EML
+metadata).  The use of standardized configuration files ('JSON or YAML formats)
+allow fully reproducible workflows to facilitate the work of data and
+information managers.")
     (license license:expat)))
 
 (define-public r-geofkf

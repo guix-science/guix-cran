@@ -1732,13 +1732,13 @@ licensed under the GNU GPL version 3.")
 (define-public r-rvif
   (package
     (name "r-rvif")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvif" version))
        (sha256
-        (base32 "09rz211a84956y018qg2x5z92dqp25mds0jly9jqbkzfhsak3qm7"))))
+        (base32 "0rh2x9gs5baaq5wjy9f5nnn7xnx7d0kr74lpdab6435swr5ykwcl"))))
     (properties `((upstream-name . "rvif")))
     (build-system r-build-system)
     (arguments
@@ -1765,17 +1765,21 @@ licensed under the GNU GPL version 3.")
      "Collinearity Detection using Redefined Variance Inflation Factor and Graphical Methods")
     (description
      "The detection of troubling approximate collinearity in a multiple linear
-regression model is a classical problem in Econometrics.  The objective of this
-package is to detect it using the variance inflation factor redefined and the
-scatterplot between the variance inflation factor and the coefficient of
-variation.  For more details see SalmerÃ³n R., GarcÃ­a C.B. and GarcÃ­a J.
-(2018) <doi:10.1080/00949655.2018.1463376>, SalmerÃ³n, R., RodrÃ­guez, A. and
-GarcÃ­a C. (2020) <doi:10.1007/s00180-019-00922-x>, SalmerÃ³n, R., GarcÃ­a, C.B,
-RodrÃ­guez, A. and GarcÃ­a, C. (2022) <doi:10.32614/RJ-2023-010>, SalmerÃ³n, R.,
-GarcÃ­a, C.B. and GarcÃ­a, J. (2025) <doi:10.1007/s10614-024-10575-8> and
-SalmerÃ³n, R., GarcÃ­a, C.B, GarcÃ­a J. (2023, working paper)
-<doi:10.48550/@code{arXiv.2005.02245>}.  You can also view the package vignette
-using @code{browseVignettes(\"rvif}\")', the package website using
+regression model is a classical problem in Econometrics.  This package is
+focused on determining whether or not the degree of approximate
+multicollinearity in a multiple linear regression model is of concern, meaning
+that it affects the statistical analysis (i.e.  individual significance tests)
+of the model.  This objective is achieved by using the variance inflation factor
+redefined and the scatterplot between the variance inflation factor and the
+coefficient of variation.  For more details see SalmerÃ³n R., GarcÃ­a C.B. and
+GarcÃ­a J. (2018) <doi:10.1080/00949655.2018.1463376>, SalmerÃ³n, R.,
+RodrÃ­guez, A. and GarcÃ­a C. (2020) <doi:10.1007/s00180-019-00922-x>,
+SalmerÃ³n, R., GarcÃ­a, C.B, RodrÃ­guez, A. and GarcÃ­a, C. (2022)
+<doi:10.32614/RJ-2023-010>, SalmerÃ³n, R., GarcÃ­a, C.B. and GarcÃ­a, J. (2025)
+<doi:10.1007/s10614-024-10575-8> and SalmerÃ³n, R., GarcÃ­a, C.B, GarcÃ­a J.
+(2023, working paper) <doi:10.48550/@code{arXiv.2005.02245>}.  You can also view
+the package vignette using @code{browseVignettes(\"rvif}\")', the package website
+(<https://www.ugr.es/local/romansg/rvif/index.html>) using
 @code{browseURL(system.file(\"docs/index.html}\", package = \"rvif\")) or version
 control on @code{GitHub} (<https://github.com/rnoremlas/rvif_package>).")
     (license license:gpl2+)))
@@ -6917,13 +6921,13 @@ sources are described in the help files for each function.")
 (define-public r-rsofun
   (package
     (name "r-rsofun")
-    (version "5.0.0")
+    (version "5.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsofun" version))
        (sha256
-        (base32 "1d32bp9gq9if11g0qn25rjhj9rdffbh4s6cb8bvbn3091skakhaq"))))
+        (base32 "12q905mjna0d3wm55gg2sch17rlp8l3zkqc4gijdb8x5b4xb3vkr"))))
     (properties `((upstream-name . "rsofun")))
     (build-system r-build-system)
     (arguments
@@ -6933,6 +6937,7 @@ sources are described in the help files for each function.")
                              r-purrr
                              r-multidplyr
                              r-magrittr
+                             r-lubridate
                              r-gensa
                              r-dplyr
                              r-bayesiantools))
@@ -23807,13 +23812,13 @@ Foundation grant DMS-2310637.")
 (define-public r-rkorapclient
   (package
     (name "r-rkorapclient")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RKorAPClient" version))
        (sha256
-        (base32 "0g97xnnxf7a811214rdqxmpwj656n2n81aslw9hgcvxbrnb7cw40"))))
+        (base32 "0k99l3f8x4k6076h945s7ds0zwmiwy1xsyb79kgy724dhki3aqwd"))))
     (properties `((upstream-name . "RKorAPClient")))
     (build-system r-build-system)
     (arguments
@@ -23823,7 +23828,8 @@ Foundation grant DMS-2310637.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-urltools
+    (propagated-inputs (list r-xml2
+                             r-urltools
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -25742,13 +25748,13 @@ their robustness.")
 (define-public r-riskmap
   (package
     (name "r-riskmap")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RiskMap" version))
        (sha256
-        (base32 "17najil5lddwbzwd1ja44jpiwp2iva2y27p6lw0s0qhnlyr8vz4y"))))
+        (base32 "0f2bhwcydgnh56yxy9rhyhq73pcdvmgjnlg11xjzhk9df0wr7paj"))))
     (properties `((upstream-name . "RiskMap")))
     (build-system r-build-system)
     (arguments
@@ -25756,19 +25762,24 @@ their robustness.")
       #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-terra
+                             r-stars
+                             r-spatialsample
+                             r-spatialeco
+                             r-sns
                              r-sf
-                             r-maxlik
+                             r-numderiv
                              r-matrix
-                             r-ggplot2))
+                             r-gridextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-deriv))
     (home-page "https://claudiofronterre.github.io/RiskMap/")
-    (synopsis "Geo-Statistical Modeling of Spatially Referenced Data")
+    (synopsis "Geostatistical Modeling of Spatially Referenced Data")
     (description
-     "This package provides functions for geo-statistical analysis of both continuous
-and count data using maximum likelihood methods.  The models implemented in the
-package use stationary Gaussian processes with Matern correlation function to
-carry out spatial prediction in a geographical area of interest.  The
-underpinning theory of the methods implemented in the package are found in
-Diggle and Giorgi (2019, ISBN: 978-1-138-06102-7).")
+     "Geostatistical analysis of continuous and count data.  Implements stationary
+Gaussian processes with MatÃ©rn correlation for spatial prediction, as described
+in Diggle and Giorgi (2019, ISBN: 978-1-138-06102-7).")
     (license license:expat)))
 
 (define-public r-riskdiff
@@ -39027,27 +39038,35 @@ data mining approach for longitudinal and clustered data
 (define-public r-redquack
   (package
     (name "r-redquack")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redquack" version))
        (sha256
-        (base32 "1ma84nigvy2xlpgjq7w7r1gcni8wzfhv5v15y9knsdy8npsyx8mi"))))
+        (base32 "0naccsvjjwf53hib4jdy04avjxgsdqw60ffm87rla4zqdqrg5f8i"))))
     (properties `((upstream-name . "redquack")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-readr r-httr2 r-dbi r-cli r-audio))
+    (propagated-inputs (list r-rlang
+                             r-readr
+                             r-labelled
+                             r-httr2
+                             r-duckdb
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-cli
+                             r-audio))
     (home-page "https://cran.r-project.org/package=redquack")
     (synopsis "Transfer 'REDCap' Data to Database")
     (description
-     "Transfer REDCap (Research Electronic Data Capture) data to a database with
-additional support for @code{DuckDB}'.  Processes data in chunks to handle large
-datasets without exceeding available memory.  Features include resuming
-incomplete transfers, automatically converting data types for @code{DuckDB}',
-tracking progress, and logging operations in the database.")
+     "Transfer REDCap (Research Electronic Data Capture) data to a database,
+specifically optimized for @code{DuckDB}'.  Processes data in chunks to handle
+large datasets without exceeding available memory.  Features include data
+labeling, coded value conversion, and hearing a \"quack\" sound on success.")
     (license license:expat)))
 
 (define-public r-redoc
@@ -46437,19 +46456,19 @@ API in the Rcpp package.")
 (define-public r-rcppcgal
   (package
     (name "r-rcppcgal")
-    (version "6.0.1")
+    (version "6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCGAL" version))
        (sha256
-        (base32 "025ggi16kn6zkfyzc5rgd6kk7yl68mrhq6a6vri0zxl2z176phj4"))))
+        (base32 "0a0spsgxxfxb1k6lyb20pvs9qw3sgimpgsf2bw820hpwgzxxj2h0"))))
     (properties `((upstream-name . "RcppCGAL")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rmarkdown r-rcpp r-knitr))
+    (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ericdunipace/RcppCGAL")
     (synopsis "'Rcpp' Integration for 'CGAL'")
@@ -46459,7 +46478,7 @@ Geometry Algorithms Library) header files in Rcpp'.  There are a variety of
 potential uses for the software such as Hilbert sorting, K-D Tree nearest
 neighbors, and convex hull algorithms.  For more information about how to use
 the header files, see the CGAL documentation at <https://www.cgal.org>.
-Currently downloads version 6.0.1 of the CGAL header files.")
+Currently downloads version 6.1 of the CGAL header files.")
     (license license:gpl3)))
 
 (define-public r-rcppcensspatial

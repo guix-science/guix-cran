@@ -4501,6 +4501,38 @@ of cases of particular performance over time.  Denisov, V., Fahland, D., & van
 der Aalst, W. M. P. (2018) <doi:10.1007/978-3-319-98648-7_9>.")
     (license license:expat)))
 
+(define-public r-psme
+  (package
+    (name "r-psme")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psme" version))
+       (sha256
+        (base32 "1nykx2fr3lfk6arlljcdcx6irzqz0zknhfiza2yibi7bi45vlssj"))))
+    (properties `((upstream-name . "psme")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mgcv r-matrix r-lme4))
+    (home-page "https://github.com/ZheyuanLi/psme")
+    (synopsis "Penalized Splines Mixed-Effects Models")
+    (description
+     "Fit penalized splines mixed-effects models (a special case of additive models)
+for large longitudinal datasets.  The package includes a @code{psme()} function
+that (1) relies on package mgcv for constructing population and subject smooth
+functions as penalized splines, (2) transforms the constructed additive model to
+a linear mixed-effects model, (3) exploits package lme4 for model estimation and
+(4) backtransforms the estimated linear mixed-effects model to the additive
+model for interpretation and visualization.  See Pedersen et al. (2019)
+<doi:10.7717/peerj.6876> and Bates et al. (2015) <doi:10.18637/jss.v067.i01> for
+an introduction.  Unlike the @code{gamm()} function in mgcv', the @code{psme()}
+function is fast and memory-efficient, able to handle datasets with millions of
+observations.")
+    (license license:gpl3)))
+
 (define-public r-psm3mkv
   (package
     (name "r-psm3mkv")
@@ -5650,13 +5682,13 @@ Mitteroecker et al. (2020) <doi:10.5061/dryad.j6q573n8s> and Grunstra et al.
 (define-public r-prtree
   (package
     (name "r-prtree")
-    (version "0.1.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRTree" version))
        (sha256
-        (base32 "0j2d9v789qsdwh3pjg382ldwbbzkh2gr98l368apmw2sfk6zcrlp"))))
+        (base32 "0sai9s1al6yff4kbvnrfpy2hkvf0dpzjxg5rcjg48sg5wj0hvpz4"))))
     (properties `((upstream-name . "PRTree")))
     (build-system r-build-system)
     (arguments
@@ -5666,13 +5698,16 @@ Mitteroecker et al. (2020) <doi:10.5061/dryad.j6q573n8s> and Grunstra et al.
     (home-page "https://cran.r-project.org/package=PRTree")
     (synopsis "Probabilistic Regression Trees")
     (description
-     "Probabilistic Regression Trees (PRTree).  Functions for fitting and predicting
-PRTree models with some adaptations to handle missing values.  The main
-calculations are performed in FORTRAN', resulting in highly efficient
-algorithms.  This package's implementation is based on the PRTree methodology
-described in Alkhoury, S.; Devijver, E.; Clausel, M.; Tami, M.; Gaussier, E.;
-Oppenheim, G. (2020) - \"Smooth And Consistent Probabilistic Regression Trees\"
-<https://proceedings.neurips.cc/paper_files/paper/2020/file/8289889263db4a40463e3f358bb7c7a1-Paper.pdf>.")
+     "Implementation of Probabilistic Regression Trees (PRTree), providing functions
+for model fitting and prediction, with specific adaptations to handle missing
+values.  The main computations are implemented in Fortran for high efficiency.
+The package is based on the PRTree methodology described in Alkhoury et al.
+(2020), \"Smooth and Consistent Probabilistic Regression Trees\"
+<https://proceedings.neurips.cc/paper_files/paper/2020/file/8289889263db4a40463e3f358bb7c7a1-Paper.pdf>.
+ Details on the treatment of missing data and implementation aspects are
+presented in Prass, T.S.; Neimaier, A.S.; Pumi, G. (2025), \"Handling Missing
+Data in Probabilistic Regression Trees: Methods and Implementation in R\"
+<doi:10.48550/@code{arXiv.2510.03634>}.")
     (license license:gpl3+)))
 
 (define-public r-prt
@@ -25883,6 +25918,31 @@ analytical equations is also supported (Abuhelwa et al. (2015)
 <doi:10.1016/j.vascn.2015.03.004>).")
     (license license:expat)))
 
+(define-public r-pkpdindex
+  (package
+    (name "r-pkpdindex")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PKPDindex" version))
+       (sha256
+        (base32 "0yg8wf1n6lp032r4w4yxgjpl44xcxnxa994dkpv551rzhylwsshy"))))
+    (properties `((upstream-name . "PKPDindex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=PKPDindex")
+    (synopsis "Optimal PK/PD Index Finder")
+    (description
+     "Fits Emax models to pharmacokinetic/pharmacodynamic (PK/PD) data, estimate key
+parameters, and visualise model fits for multiple PK/PD indices.  Methods are
+described in Macdougall J (2006) <doi:10.1007/0-387-33706-7_9>, Spiess AN,
+Neumeyer N (2010) <doi:10.1186/1471-2210-10-6>, and Burnham KP, Anderson DR
+(2004) <doi:10.1177/0049124104268644>.")
+    (license license:gpl3+)))
+
 (define-public r-pknca
   (package
     (name "r-pknca")
@@ -33400,6 +33460,51 @@ related to personal values from survey data.  It incorporates the recommended
 statistical adjustment to enhance the accuracy and interpretation of the
 results.")
     (license license:gpl3)))
+
+(define-public r-persuade
+  (package
+    (name "r-persuade")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PERSUADE" version))
+       (sha256
+        (base32 "0snlvdhm95s4cjh3l6a1mb34z8yw95qihzpxl7z3ssbc44ivx833"))))
+    (properties `((upstream-name . "PERSUADE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survminer
+                             r-survival
+                             r-sft
+                             r-rms
+                             r-rmarkdown
+                             r-muhaz
+                             r-ggplot2
+                             r-flexsurvcure
+                             r-flexsurv
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Bram-R/PERSUADE")
+    (synopsis
+     "Parametric Survival Model Selection for Decision-Analytic Models")
+    (description
+     "This package provides a standardized framework to support the selection and
+evaluation of parametric survival models for time-to-event data.  Includes tools
+for visualizing survival data, checking proportional hazards assumptions
+(Grambsch and Therneau, 1994, <doi:10.1093/biomet/81.3.515>), comparing
+parametric (Ishak and colleagues, 2013, <doi:10.1007/s40273-013-0064-3>), spline
+(Royston and Parmar, 2002, <doi:10.1002/sim.1203>) and cure models, examining
+hazard functions, and evaluating model extrapolation.  Methods are consistent
+with recommendations in the NICE Decision Support Unit Technical Support
+Documents (14 and 21 <https://sheffield.ac.uk/nice-dsu/tsds/survival-analysis>).
+ Results are structured to facilitate integration into decision-analytic models,
+and reports can be generated with rmarkdown'.  The package builds on existing
+tools including flexsurv (Jackson, 2016, <doi:10.18637/jss.v070.i08>)) and
+flexsurvcure for estimating cure models.")
+    (license license:gpl3+)))
 
 (define-public r-perspectev
   (package

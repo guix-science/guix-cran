@@ -12,7 +12,6 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages version-control)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages java)
@@ -122,13 +121,13 @@ boundaries.")
 (define-public r-oyster
   (package
     (name "r-oyster")
-    (version "0.1.1")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oysteR" version))
        (sha256
-        (base32 "11zg959h9104hh8wid4003s8c4z9xhmicj39cc5vq1j8g1g7ilr7"))))
+        (base32 "0s2whqrp6rip30rsxzy1sd3g6627hja0i33f4zyx29z9ldh4hhk7"))))
     (properties `((upstream-name . "oysteR")))
     (build-system r-build-system)
     (arguments
@@ -146,6 +145,7 @@ boundaries.")
                              r-glue
                              r-dplyr
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/sonatype-nexus-community/oysteR")
     (synopsis "Scans R Projects for Vulnerable Third Party Dependencies")
     (description
@@ -4184,41 +4184,41 @@ distributions.")
 (define-public r-orderly
   (package
     (name "r-orderly")
-    (version "1.4.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orderly" version))
        (sha256
-        (base32 "0k7xk64schhw9jdbg50hlnf6gfhlgnv1n20rz3fga02z38441xkn"))))
+        (base32 "04vnimir60xmjaa76c30v4lx3z91hl7yxznv8xz5yazlpy6hsygh"))))
     (properties `((upstream-name . "orderly")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list git))
-    (propagated-inputs (list r-zip
-                             r-yaml
+    (propagated-inputs (list r-yaml
                              r-withr
-                             r-rsqlite
+                             r-vctrs
+                             r-rstudioapi
+                             r-rlang
                              r-r6
-                             r-ids
+                             r-openssl
+                             r-jsonlite
+                             r-httr2
                              r-gert
                              r-fs
-                             r-docopt
-                             r-digest
-                             r-dbi
-                             r-crayon))
+                             r-diffobj
+                             r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://www.vaccineimpact.org/orderly/")
+    (home-page "https://github.com/mrc-ide/orderly")
     (synopsis "Lightweight Reproducible Reporting")
     (description
-     "Order, create and store reports from R. By defining a lightweight interface
-around the inputs and outputs of an analysis, a lot of the repetitive work for
-reproducible research can be automated.  We define a simple format for
-organising and describing work that facilitates collaborative reproducible
-research and acknowledges that all analyses are run multiple times over their
-lifespans.")
+     "Distributed reproducible computing framework, adopting ideas from git, docker
+and other software.  By defining a lightweight interface around the inputs and
+outputs of an analysis, a lot of the repetitive work for reproducible research
+can be automated.  We define a simple format for organising and describing work
+that facilitates collaborative reproducible research and acknowledges that all
+analyses are run multiple times over their lifespans.")
     (license license:expat)))
 
 (define-public r-ordering

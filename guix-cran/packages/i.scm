@@ -1451,6 +1451,35 @@ respectively.  For the details of these methods, see the reference section of
 @code{GitHub} README.md <https://github.com/rikenbit/@code{iTensor>}.")
     (license license:expat)))
 
+(define-public r-itemrest
+  (package
+    (name "r-itemrest")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ItemRest" version))
+       (sha256
+        (base32 "0d951891bxmm47hwm5l7fj1z8ll5qcp5zzfh69p1pqy85yyc5z6b"))))
+    (properties `((upstream-name . "ItemRest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-qgraph r-psych r-gtools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ahmetcaliskan1987/ItemRest")
+    (synopsis
+     "Automated Item Removal Strategies for Exploratory Factor Analysis")
+    (description
+     "Automates the identification and comparative evaluation of item-removal
+strategies in exploratory factor analysis, producing transparent summaries
+(explained variance, loading ranges, reliability) to support comfortable,
+reproducible decisions.  The criteria are based on best practices and
+established heuristics (e.g., Costello & Osborne (2005) <doi:10.7275/jyj1-4868>,
+Howard (2016) <doi:10.1080/10447318.2015.1087664>).")
+    (license license:expat)))
+
 (define-public r-itemanalysis
   (package
     (name "r-itemanalysis")
@@ -13653,13 +13682,13 @@ reading HLA genotypes in HML files and extracting the GL string.")
 (define-public r-immundata
   (package
     (name "r-immundata")
-    (version "0.0.3")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "immundata" version))
        (sha256
-        (base32 "01kkilfdn6asnxqbmciqnz7f1h343n10ji867f50nbfm4k0zpd7y"))))
+        (base32 "0g55pk21z8qw7d5k06nqm04csk2654fvww9y7cnbzds2laz19n0n"))))
     (properties `((upstream-name . "immundata")))
     (build-system r-build-system)
     (arguments
@@ -13678,13 +13707,14 @@ reading HLA genotypes in HML files and extracting the GL string.")
                              r-dbplyr
                              r-cli
                              r-checkmate))
-    (home-page "https://immunomind.com/")
+    (home-page "https://immunomind.github.io/docs/")
     (synopsis
      "Unified Data Layer for Large-Scale Single-Cell, Spatial and Bulk Immunomics")
     (description
      "This package provides a unified data layer for single-cell, spatial and bulk
 T-cell and B-cell immune receptor repertoire data.  Think @code{AnnData} or
-@code{SeuratObject}, but for AIRR data.")
+@code{SeuratObject}, but for AIRR data, a.k.a.  Adaptive Immune Receptor
+Repertoire, VDJ-seq, @code{RepSeq}, or VDJ sequencing data.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-immunaut

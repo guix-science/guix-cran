@@ -10568,13 +10568,13 @@ package vignette.")
 (define-public r-streamcattools
   (package
     (name "r-streamcattools")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StreamCatTools" version))
        (sha256
-        (base32 "0il6adlkx32d8sc0a7iy85hfkicw7118mh2aajwas217q2n6ca40"))))
+        (base32 "1wg9p36ylg6z9nm0wd5qld3xkc36dh5aaa3w3xdh8m1y4v7bln5i"))))
     (properties `((upstream-name . "StreamCatTools")))
     (build-system r-build-system)
     (arguments
@@ -15069,40 +15069,44 @@ measures (Anova & Multiple Regression). - Clinical Assay.")
 (define-public r-stats19
   (package
     (name "r-stats19")
-    (version "3.3.1")
+    (version "3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stats19" version))
        (sha256
-        (base32 "1iy4fnii04hmxpifkqzvf9n1l1458jdha56k5yripryxmdsfc63w"))))
+        (base32 "17b6znhvnnxryd9g11560a2qjkda8xhmnsayagj6xc5qz97a9jkq"))))
     (properties `((upstream-name . "stats19")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-readr))
+    (propagated-inputs (list r-sf
+                             r-readr
+                             r-lubridate
+                             r-jsonlite
+                             r-dplyr
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/stats19")
     (synopsis "Work with Open Road Traffic Casualty Data from Great Britain")
     (description
-     "This package provides tools to help download, process and analyse the UK road
-collision data collected using the STATS19 form.  The datasets are provided as
-CSV files with detailed road safety information about the circumstances of car
-crashes and other incidents on the roads resulting in casualties in Great
-Britain from 1979 to present.  Tables are available on colissions with the
-circumstances (e.g. speed limit of road), information about vehicles involved
-(e.g. type of vehicle), and casualties (e.g. age).  The statistics relate only
-to events on public roads that were reported to the police, and subsequently
-recorded, using the STATS19 collision reporting form.  See the Department for
-Transport website
-<https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-accidents-safety-data>
-for more information on these datasets.  The package is described in a paper in
-the Journal of Open Source Software (Lovelace et al.  2019)
-<doi:10.21105/joss.01181>.  See Gilardi et al. (2022) <doi:10.1111/rssa.12823>,
-Vidal-Tortosa et al. (2021) <doi:10.1016/j.jth.2021.101291>, and Tait et al.
-(2023) <doi:10.1016/j.aap.2022.106895> for examples of how the data can be used
-for methodological and empirical road safety research.")
+     "Work with and download road traffic casualty data from Great Britain.  Enables
+access to the UK's official road safety statistics, STATS19'.  Enables users to
+specify a download directory for the data, which can be set permanently by
+adding `STATS19_DOWNLOAD_DIRECTORY=/path/to/a/dir` to your `.Renviron` file,
+which can be opened with @code{`usethis::edit_r_environ()}`.  The data is
+provided as a series of `.csv` files.  This package downloads, reads-in and
+formats the data, making it suitable for analysis.  See the stats19 vignette for
+details.  Data available from 1979 to 2024.  See the official data series at
+<https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-accidents-safety-data>.
+ The package is described in a paper in the Journal of Open Source Software
+(Lovelace et al.  2019) <doi:10.21105/joss.01181>.  See Gilardi et al. (2022)
+<doi:10.1111/rssa.12823>, Vidal-Tortosa et al. (2021)
+<doi:10.1016/j.jth.2021.101291>, Tait et al. (2023)
+<doi:10.1016/j.aap.2022.106895>, and LeÃ³n et al. (2025)
+<doi:10.18637/jss.v114.i09> for examples of how the data can be used for
+methodological and empirical research.")
     (license license:gpl3)))
 
 (define-public r-statrec
@@ -50993,6 +50997,65 @@ shiny apps <https://shiny.posit.co/>, with the power of React @code{JavaScript}
 with tailwind <https://tailwindcss.com/>.")
     (license license:expat)))
 
+(define-public r-shinymrp
+  (package
+    (name "r-shinymrp")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinymrp" version))
+       (sha256
+        (base32 "1n88g5gi048yb1xidr4spmh4w3140cr92qhyzic23kd1ph354vd8"))))
+    (properties `((upstream-name . "shinymrp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-waiter
+                             r-tidyr
+                             r-stringr
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shiny
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-rcolorbrewer
+                             r-r6
+                             r-qs
+                             r-purrr
+                             r-posterior
+                             r-patchwork
+                             r-magrittr
+                             r-lubridate
+                             r-loo
+                             r-httr2
+                             r-htmlwidgets
+                             r-highcharter
+                             r-golem
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-config
+                             r-checkmate
+                             r-bslib
+                             r-bsicons))
+    (native-inputs (list r-knitr))
+    (home-page "https://mrp-interface.github.io/shinymrp/")
+    (synopsis "Interface for Multilevel Regression and Poststratification")
+    (description
+     "Dual interfaces, graphical and programmatic, designed for intuitive applications
+of Multilevel Regression and Poststratification (MRP).  Users can apply the
+method to a variety of datasets, from electronic health records to sample survey
+data, through an end-to-end Bayesian data analysis workflow.  The package
+provides robust tools for data cleaning, exploratory analysis, flexible model
+building, and insightful result visualization.  For more details, see Si et al.
+(2020)
+<https://www150.statcan.gc.ca/n1/en/pub/12-001-x/2020002/article/00003-eng.pdf?st=@code{iF1_Fbrh>}
+and Si (2025) <doi:10.1214/24-STS932>.")
+    (license license:expat)))
+
 (define-public r-shinymonacoeditor
   (package
     (name "r-shinymonacoeditor")
@@ -56336,13 +56399,13 @@ the three-dimensional Hilbert curve.")
 (define-public r-sfcr
   (package
     (name "r-sfcr")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfcr" version))
        (sha256
-        (base32 "05ip1z6rh0k7az0y7nwp9c6rv1s53i0i698yfhx46lfnhzz87anf"))))
+        (base32 "0lff3qg7z7if21fm9fma2a1g4cl0h5ccaynmsj8php8hbllwi2gp"))))
     (properties `((upstream-name . "sfcr")))
     (build-system r-build-system)
     (arguments
@@ -59518,6 +59581,36 @@ Brandmaier, von Oertzen, @code{McArdle}, & Lindenberger (2013)
 <doi:10.1037/a0030001> and Arnold, Voelkle, & Brandmaier (2020)
 <doi:10.3389/fpsyg.2020.564403>.")
     (license license:gpl3)))
+
+(define-public r-semtests
+  (package
+    (name "r-semtests")
+    (version "0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "semTests" version))
+       (sha256
+        (base32 "1wjdniykz7xgg4xh8ag70dr99sxm2f6ns3vj7d5wni2c3wj8nhcb"))))
+    (properties `((upstream-name . "semTests")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rspectra r-matrix r-mass r-lavaan
+                             r-compquadform))
+    (home-page "https://github.com/JonasMoss/semTests")
+    (synopsis "Goodness-of-Fit Testing for Structural Equation Models")
+    (description
+     "Supports eigenvalue block-averaging p-values (Foldnes, GrÃ¸nneberg, 2018)
+<doi:10.1080/10705511.2017.1373021>, penalized eigenvalue block-averaging
+p-values (Foldnes, Moss, GrÃ¸nneberg, 2024) <doi:10.1080/10705511.2024.2372028>,
+penalized regression p-values (Foldnes, Moss, GrÃ¸nneberg, 2024)
+<doi:10.1080/10705511.2024.2372028>, as well as traditional p-values such as
+Satorra-Bentler.  All p-values can be calculated using unbiased or biased gamma
+estimates (Du, Bentler, 2022) <doi:10.1080/10705511.2022.2063870> and two
+choices of chi square statistics.")
+    (license license:gpl3+)))
 
 (define-public r-semsfa
   (package

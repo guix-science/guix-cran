@@ -3511,13 +3511,13 @@ as both viewpoints and occluders.")
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visOmopResults" version))
        (sha256
-        (base32 "12vwbv8jy459m0ny71yfx7mm62mxshilacym29h5wjkdzh9g59ck"))))
+        (base32 "07bdmi0054a5sjp97zidim3s3bfnzs2p0h2k9abxvpqcpja6v49l"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
     (arguments

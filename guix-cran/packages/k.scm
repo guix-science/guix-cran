@@ -5708,13 +5708,13 @@ Ministry of Agriculture and Fishing of France.")
 (define-public r-keng
   (package
     (name "r-keng")
-    (version "2025.9.1")
+    (version "2025.10.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Keng" version))
        (sha256
-        (base32 "1bwh687dq6a27xmzm0g98slb6ys85p4xjz41qxjlxwfaq35vs0h1"))))
+        (base32 "051clnk32mlkhz61i6i5gixf8610b244fk8xk7vw7dlrmbrxg1rl"))))
     (properties `((upstream-name . "Keng")))
     (build-system r-build-system)
     (arguments
@@ -6672,6 +6672,40 @@ systematically unobserved cell types.  Our tool can provide statistical support
 to biologists in gene therapy clonal tracking studies for a deeper understanding
 of clonal reconstitution dynamics.  Further details on the methods can be found
 in L. Del Core et al., (2022) <doi:10.1101/2022.07.08.499353>.")
+    (license license:gpl3)))
+
+(define-public r-kardl
+  (package
+    (name "r-kardl")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kardl" version))
+       (sha256
+        (base32 "0gfscdmbvvanjvs8wd12la9rzzz6w0zwhfvfk3syb2p3b4x4i2ri"))))
+    (properties `((upstream-name . "kardl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nlwaldtest r-msm r-lmtest r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=kardl")
+    (synopsis "Make Symmetric and Asymmetric ARDL Estimations")
+    (description
+     "This package implements estimation procedures for Autoregressive Distributed Lag
+(ARDL) and Nonlinear ARDL (NARDL) models, which allow researchers to investigate
+both short- and long-run relationships in time series data under mixed orders of
+integration.  The package supports simultaneous modeling of symmetric and
+asymmetric regressors, flexible treatment of short-run and long-run asymmetries,
+and automated equation handling.  It includes several cointegration testing
+approaches such as the Pesaran-Shin-Smith F and t bounds tests, the Banerjee
+error correction test, and the restricted ECM test, together with diagnostic
+tools including Wald tests for asymmetry, ARCH tests, and stability procedures
+(CUSUM and CUSUMQ).  Methodological foundations are provided in Pesaran, Shin,
+and Smith (2001) <doi:10.1016/S0304-4076(01)00049-5> and Shin, Yu, and
+Greenwood-Nimmo (2014, ISBN:9780123855079).")
     (license license:gpl3)))
 
 (define-public r-karaoke

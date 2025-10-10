@@ -4926,6 +4926,37 @@ Weisberg, Herbert (2005, ISBN:0-226-89128-3); Biemer, Paul (2010)
 <doi:10.1093/poq/nfq058>; Biemer, Paul et.al. (2017, ISBN:9781119041672); etc.")
     (license license:gpl2+)))
 
+(define-public r-tseffects
+  (package
+    (name "r-tseffects")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tseffects" version))
+       (sha256
+        (base32 "00mvjrjrqrpch959xzxc1mq1x6j7w1yja3cgydyhxm72rhkdjv1s"))))
+    (properties `((upstream-name . "tseffects")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich r-mpoly r-ggplot2 r-car))
+    (home-page "https://sorenjordan.github.io/tseffects/")
+    (synopsis
+     "Dynamic (Causal) Inferences from Time Series (with Interactions)")
+    (description
+     "Autoregressive distributed lag (A[R]DL) models (and their reparameterized
+equivalent, the Generalized Error-Correction Model [GECM]) (see De Boef and
+Keele 2008 <doi:10.1111/j.1540-5907.2007.00307.x>) are the workhorse models in
+uncovering dynamic inferences.  ADL models are simple to estimate; this is what
+makes them attractive.  Once these models are estimated, what is less clear is
+how to uncover a rich set of dynamic inferences from these models.  We provide
+tools for recovering those inferences in three forms: causal inferences from ADL
+models, traditional time series quantities of interest (short- and long-run
+effects), and dynamic conditional relationships.")
+    (license license:gpl2+)))
+
 (define-public r-tseal
   (package
     (name "r-tseal")
@@ -7059,13 +7090,13 @@ Biometrical Journal, 64(2), 301-311.")
 (define-public r-tridimregression
   (package
     (name "r-tridimregression")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TriDimRegression" version))
        (sha256
-        (base32 "1p6dncx53bk7vca193c46idsw6hvn0z5px3p3zh0qky1jan2rycl"))))
+        (base32 "0l2561f6l8170p68yf62g00n7v69zipi5j3sg3p4xvm5jqklfg27"))))
     (properties `((upstream-name . "TriDimRegression")))
     (build-system r-build-system)
     (arguments
@@ -8815,6 +8846,35 @@ detecting outlier lineages, root-to-tip regression, and a statistical test for
 selecting molecular clock models.  For more details see Volz and Frost (2017)
 <doi:10.1093/ve/vex025>.")
     (license license:gpl2)))
+
+(define-public r-treedata-table
+  (package
+    (name "r-treedata-table")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "treedata.table" version))
+       (sha256
+        (base32 "0ihmigx90hqfd350m2sxafw919ym2r61pfwkv1s70wi8vpdgkb8b"))))
+    (properties `((upstream-name . "treedata.table")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lazyeval r-geiger r-data-table r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://ropensci.github.io/treedata.table/")
+    (synopsis
+     "Manipulation of Matched Phylogenies and Data using 'data.table'")
+    (description
+     "An implementation that combines trait data and a phylogenetic tree (or trees)
+into a single object of class treedata.table'.  The resulting object can be
+easily manipulated to simultaneously change the trait- and tree-level sampling.
+Currently implemented functions allow users to use a data.table syntax when
+performing operations on the trait dataset within the treedata.table object.
+For more details see Roman-Palacios et al. (2021) <doi:10.7717/peerj.12450>.")
+    (license license:expat)))
 
 (define-public r-treeda
   (package

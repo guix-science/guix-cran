@@ -15500,6 +15500,40 @@ Registry of Open Data on AWS (Amazon Web Services) and represents the surface of
 the Earth including buildings, infrastructure and vegetation.")
     (license license:gpl3)))
 
+(define-public r-copernicusclimate
+  (package
+    (name "r-copernicusclimate")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CopernicusClimate" version))
+       (sha256
+        (base32 "0zl2s2cqraxm7nckrdwagsx8s2qmarn0l4hi8dp4d0pyw6m4w3k1"))))
+    (properties `((upstream-name . "CopernicusClimate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://pepijn-devries.github.io/CopernicusClimate/")
+    (synopsis
+     "Search Download and Handle Data from Copernicus Climate Data Service")
+    (description
+     "Subset and download data from EU Copernicus Climate Data Service:
+<https://cds.climate.copernicus.eu/>.  Import information about the Earth's
+past, present and future climate from Copernicus into R without the need of
+external software.")
+    (license license:gpl3+)))
+
 (define-public r-copent
   (package
     (name "r-copent")
@@ -23909,13 +23943,13 @@ from <https://github.com/clauswilke/colorblindr>.")
 (define-public r-colorblindcheck
   (package
     (name "r-colorblindcheck")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colorblindcheck" version))
        (sha256
-        (base32 "1vy4ls5fmzy1bx2garhkvy2f4wqwjy2ph9b3jlzdl5f2lpx2mwq2"))))
+        (base32 "15pjnbf388p8mmr5pgbg233hdyla46ik2l6q27b3v36p3chdqcjg"))))
     (properties `((upstream-name . "colorblindcheck")))
     (build-system r-build-system)
     (arguments
@@ -23930,7 +23964,7 @@ from <https://github.com/clauswilke/colorblindr>.")
 deuteranopia, protanopia, and tritanopia.  It includes calculation of distances
 between colors, and creating summaries of differences between a color palette
 and simulations of color vision deficiencies.  This work was inspired by the
-blog post at <http://www.vis4.net/blog/2018/02/automate-colorblind-checking/>.")
+blog post at <https://www.datawrapper.de/blog/colorblind-check>.")
     (license license:expat)))
 
 (define-public r-colopendata
@@ -37945,6 +37979,43 @@ function of unit characteristics variables.")
 @code{MaxDiff} and other tradeoffs).")
     (license license:gpl2+)))
 
+(define-public r-choicedata
+  (package
+    (name "r-choicedata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "choicedata" version))
+       (sha256
+        (base32 "18kv5g0hd7ddbnyl17bcg9rlg6m1157p4hzrjf0phnc93nhm8ld7"))))
+    (properties `((upstream-name . "choicedata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-rdpack
+                             r-patchwork
+                             r-optimizer
+                             r-oeli
+                             r-mvtnorm
+                             r-matrix
+                             r-ggplot2
+                             r-formula
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (home-page "https://github.com/loelschlaeger/choicedata")
+    (synopsis "Working with Choice Data")
+    (description
+     "Offers a set of objects tailored to simplify working with choice data.  It
+enables the computation of choice probabilities and the likelihood of various
+types of choice models based on given data.")
+    (license license:gpl3+)))
+
 (define-public r-chnosz
   (package
     (name "r-chnosz")
@@ -46263,13 +46334,13 @@ in Jeong et al. (2019) <doi:10.1101/gr.245571.118> and Baggerly et al. (2003)
 (define-public r-caviarpd
   (package
     (name "r-caviarpd")
-    (version "0.3.20")
+    (version "0.3.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caviarpd" version))
        (sha256
-        (base32 "18s4z7qkmhjzzpdn639az1lmcya3v6j88nnc6ca1syjm5ac2wazp"))))
+        (base32 "1awwfk9fy8kpsj9kxfc8gsymfk7i59ky0xbmcka7q3i8dsdipkv8"))))
     (properties `((upstream-name . "caviarpd")))
     (build-system r-build-system)
     (arguments
@@ -51439,6 +51510,37 @@ chapter sections and page numbers where the datasets are used.")
      "This package implements the board game @code{CamelUp} for use in introductory
 statistics classes using a Shiny app.")
     (license license:gpl3)))
+
+(define-public r-camea
+  (package
+    (name "r-camea")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CaMeA" version))
+       (sha256
+        (base32 "1a0h3rp6p4jb3blwlymh7ixrj0kzyjyhf0bs686liz9ppdcfs9nk"))))
+    (properties `((upstream-name . "CaMeA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-purrr r-metafor r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CaMeA")
+    (synopsis "Causal Meta-Analysis for Aggregated Data")
+    (description
+     "This package provides a tool for causal meta-analysis.  This package implements
+the aggregation formulas and inference methods proposed in Berenfeld et al.
+(2025) <doi:10.48550/@code{arXiv.2505.20168>}.  Users can input aggregated data
+across multiple studies and compute causally meaningful aggregated effects of
+their choice (risk difference, risk ratio, odds ratio, etc) under user-specified
+population weighting.  The built-in function @code{camea()} allows to obtain
+precise variance estimates for these effects and to compare the latter to a
+classical meta-analysis aggregate, the random effect model, as implemented in
+the metafor package <https://CRAN.R-project.org/package=metafor>.")
+    (license license:expat)))
 
 (define-public r-camcorder
   (package

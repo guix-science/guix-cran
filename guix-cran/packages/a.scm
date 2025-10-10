@@ -13454,13 +13454,13 @@ be useful in various other contexts.")
 (define-public r-ann2
   (package
     (name "r-ann2")
-    (version "2.3.4")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ANN2" version))
        (sha256
-        (base32 "1izljhz3rkzq05dkvg9q3fdyj7q871j8lsky67d5r8ffpzm1lk3z"))))
+        (base32 "1z4ij57hhinc1620xxsf5j99sqcgn55lidfq71pgc3w4fjzm1n7a"))))
     (properties `((upstream-name . "ANN2")))
     (build-system r-build-system)
     (arguments
@@ -13468,6 +13468,7 @@ be useful in various other contexts.")
       #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-testthat
+                             r-rlang
                              r-reshape2
                              r-rcpparmadillo
                              r-rcpp

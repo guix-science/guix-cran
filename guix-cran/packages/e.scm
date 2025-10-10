@@ -1008,13 +1008,13 @@ L-moment Statistics [...] ISBN 1463508417.")
 (define-public r-extremerisks
   (package
     (name "r-extremerisks")
-    (version "0.0.4-1")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExtremeRisks" version))
        (sha256
-        (base32 "1h35063aqkzw6bn36il4ag3i2649s427s1aqr0nmalxqs0z8lr87"))))
+        (base32 "02jm5072yndyzg0wax1m0vg704dmwdpq3l593m3q8sjpa6177h57"))))
     (properties `((upstream-name . "ExtremeRisks")))
     (build-system r-build-system)
     (arguments
@@ -1042,7 +1042,8 @@ Davison et al. (2023) <doi:10.1080/07350015.2022.2078332>, Daouia et al. (2018)
 <doi:10.1111/rssb.12254>, Drees (2000) <doi:10.1214/aoap/1019487617>, Drees
 (2003) <doi:10.3150/bj/1066223272>, de Haan and Ferreira (2006)
 <doi:10.1007/0-387-34471-3>, de Haan et al. (2016)
-<doi:10.1007/s00780-015-0287-6>.")
+<doi:10.1007/s00780-015-0287-6>, Padoan and Rizzelli (2024)
+<doi:10.3150/23-BEJ1668>, Daouia et al. (2024) <doi:10.3150/23-BEJ1632>.")
     (license license:gpl2+)))
 
 (define-public r-extrememix

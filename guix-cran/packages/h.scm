@@ -1452,13 +1452,13 @@ Bollrich (2019, ISBN:978-3-410-29169-5) or Hager (2011, ISBN:978-3-642-77430-0).
 (define-public r-hydraulics
   (package
     (name "r-hydraulics")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydraulics" version))
        (sha256
-        (base32 "0hjvs57zl51b2f49ryawpfnhw1gw27p2dkzpac8k14zwvxq3kjif"))))
+        (base32 "0fljl4agmfqx24kgygd5jvjq6jhzg40yvlqr97pvsgdaady1sdj5"))))
     (properties `((upstream-name . "hydraulics")))
     (build-system r-build-system)
     (arguments

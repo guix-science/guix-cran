@@ -27862,13 +27862,13 @@ slow (or zero) Internet access.")
 (define-public r-minic
   (package
     (name "r-minic")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minic" version))
        (sha256
-        (base32 "12ydk498dk3zhgqi3rh1kp8pnffkqr8l7cfasrsc4w24cb6fypqg"))))
+        (base32 "0dl2i1y5zhwfdn2fc4lq100b8f4bqyazcpm81yfd5abmbadhizax"))))
     (properties `((upstream-name . "minic")))
     (build-system r-build-system)
     (arguments
@@ -29438,13 +29438,13 @@ regressions.")
 (define-public r-midasml
   (package
     (name "r-midasml")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "midasml" version))
        (sha256
-        (base32 "0jhrifvqcis2lj59vybgkzgmdmxwfqmsbxijwcz8hsprshr69xl9"))))
+        (base32 "0dlzndqkz14whpn8hzqvcqspl64dwpxqwswbzdrgc3r0jsxwavxz"))))
     (properties `((upstream-name . "midasml")))
     (build-system r-build-system)
     (arguments
@@ -32170,36 +32170,6 @@ of multivariate generalised Gaussian distributions (methods presented by Gomez,
 Gomez-Villegas and Marin (1998) <doi:10.1080/03610929808832115> and Pascal,
 Bombrun, Tourneret and Berthoumieu (2013) <doi:10.1109/TSP.2013.2282909>).")
     (license license:gpl3+)))
-
-(define-public r-mgee2
-  (package
-    (name "r-mgee2")
-    (version "0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mgee2" version))
-       (sha256
-        (base32 "19h1y6bnqgvvdd9hp1dgvyjmiqd3xpbd1bpxfq0j6hnwr7mwjmp1"))))
-    (properties `((upstream-name . "mgee2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-ggplot2))
-    (home-page "https://cran.r-project.org/package=mgee2")
-    (synopsis "Marginal Analysis of Misclassified Longitudinal Ordinal Data")
-    (description
-     "Three estimating equation methods are provided in this package for marginal
-analysis of longitudinal ordinal data with misclassified responses and
-covariates.  The naive analysis which is solely based on the observed data
-without adjustment may lead to bias.  The corrected generalized estimating
-equations (GEE2) method which is unbiased requires the misclassification
-parameters to be known beforehand.  The corrected generalized estimating
-equations (GEE2) with validation subsample method estimates the
-misclassification parameters based on a given validation set.  This package is
-an implementation of Chen (2013) <doi:10.1002/bimj.201200195>.")
-    (license license:gpl2+)))
 
 (define-public r-mgdrive2
   (package
@@ -35428,13 +35398,13 @@ multi-environment trial data are also provided.")
 (define-public r-metamorphr
   (package
     (name "r-metamorphr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metamorphr" version))
        (sha256
-        (base32 "0w89fd0n406hql01axazrgyxm9pi5qkhxl21cb7br4p64grbqwiq"))))
+        (base32 "11cl2kg3nwbi01yv1897wp5fn4b8ncamxjv42ll9dm0sp8yk39gx"))))
     (properties `((upstream-name . "metamorphr")))
     (build-system r-build-system)
     (arguments
@@ -35467,7 +35437,7 @@ including data import, filtering, missing value imputation (Stacklies et al.
 <doi:10.18129/B9.BIOC.IMPUTE>, Troyanskaya et al. (2001)
 <doi:10.1093/bioinformatics/17.6.520>), normalization (Bolstad et al. (2003)
 <doi:10.1093/bioinformatics/19.2.185>, Dieterle et al. (2006)
-<doi:10.1021/ac051632c >, Zhao et al. (2020) <doi:10.1038/s41598-020-72664-6>)
+<doi:10.1021/ac051632c>, Zhao et al. (2020) <doi:10.1038/s41598-020-72664-6>)
 transformation, centering and scaling (Van Den Berg et al. (2006)
 <doi:10.1186/1471-2164-7-142>) as well as statistical tests and plotting.
 metamorphr introduces a tidy (Wickham et al. (2019) <doi:10.21105/joss.01686>)
@@ -46187,13 +46157,13 @@ development of items.")
 (define-public r-matlib
   (package
     (name "r-matlib")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matlib" version))
        (sha256
-        (base32 "1cbip4xnd854zb42pkr44094bg9jm4gxq37pf3837p1mwkb0w4vc"))))
+        (base32 "0n2akmwiszrfidkh18lf594yq1bq65dkipwg7vndnyv2hfb4zyvy"))))
     (properties `((upstream-name . "matlib")))
     (build-system r-build-system)
     (arguments
@@ -46213,12 +46183,13 @@ development of items.")
      "Matrix Functions for Teaching and Learning Linear Algebra and Multivariate Statistics")
     (description
      "This package provides a collection of matrix functions for teaching and learning
-matrix linear algebra as used in multivariate statistical methods.  These
-functions are mainly for tutorial purposes in learning matrix algebra ideas
-using R. In some cases, functions are provided for concepts available elsewhere
-in R, but where the function call or name is not obvious.  In other cases,
-functions are provided to show or demonstrate an algorithm.  In addition, a
-collection of functions are provided for drawing vector diagrams in 2D and 3D.")
+matrix linear algebra as used in multivariate statistical methods.  Many of
+these functions are designed for tutorial purposes in learning matrix algebra
+ideas using R. In some cases, functions are provided for concepts available
+elsewhere in R, but where the function call or name is not obvious.  In other
+cases, functions are provided to show or demonstrate an algorithm.  In addition,
+a collection of functions are provided for drawing vector diagrams in 2D and 3D
+and for rendering matrix expressions and equations in @code{LaTeX}.")
     (license license:gpl2+)))
 
 (define-public r-matlabr

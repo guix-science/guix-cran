@@ -17498,13 +17498,13 @@ Gahegan (2018) <doi:10.1186/s12966-018-0648-6>.")
 (define-public r-diemr
   (package
     (name "r-diemr")
-    (version "1.5")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diemr" version))
        (sha256
-        (base32 "0vfc7wmv5i8jv9q2fik75676niwxvlii7rvzp3vyjl1plp79zxfj"))))
+        (base32 "11y3cbh81csnmzrvwx157gyzv0cra12mdgy2zjmg20bgjf3i7xh9"))))
     (properties `((upstream-name . "diemr")))
     (build-system r-build-system)
     (arguments
@@ -17512,14 +17512,18 @@ Gahegan (2018) <doi:10.1186/s12966-018-0648-6>.")
       #:tests? #f))
     (propagated-inputs (list r-zoo r-vcfr r-data-table r-circlize))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=diemr")
-    (synopsis "Diagnostic Index Expectation Maximisation in R")
+    (home-page "https://nmartinkova.github.io/genome-polarisation/")
+    (synopsis
+     "Genome Polarization via Diagnostic Index Expectation Maximization")
     (description
-     "Likelihood-based genome polarisation finds which alleles of genomic markers
-belong to which side of the barrier.  Co-estimates which individuals belong to
-either side of the barrier and barrier strength.  Uses expectation maximisation
-in likelihood framework.  The method is described in Baird et al. (2023)
-<doi:10.1111/2041-210X.14010>.")
+     "This package implements a likelihood-based method for genome polarization,
+identifying which alleles of SNV markers belong to either side of a barrier to
+gene flow.  The approach co-estimates individual assignment, barrier strength,
+and divergence between sides, with direct application to studies of
+hybridization.  Includes VCF-to-diem conversion and input checks, support for
+mixed ploidy and parallelization, and tools for visualization and diagnostic
+outputs.  Based on diagnostic index expectation maximization as described in
+Baird et al. (2023) <doi:10.1111/2041-210X.14010>.")
     (license license:gpl3+)))
 
 (define-public r-diegr
@@ -22377,13 +22381,13 @@ reporting the mixture proportions from each sample.")
 (define-public r-deplogo
   (package
     (name "r-deplogo")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DepLogo" version))
        (sha256
-        (base32 "13mk52ssiig76rnc02fq3b2g986b161gvncnr6krk7v9a4s5cjqk"))))
+        (base32 "0yxsf6wi522m5c9g48drr2s5qjbn45rm3sw9n5d6kd97d4fbqv6g"))))
     (properties `((upstream-name . "DepLogo")))
     (build-system r-build-system)
     (arguments
@@ -33825,13 +33829,13 @@ data, and for demonstrations with such data.")
 (define-public r-daag
   (package
     (name "r-daag")
-    (version "1.25.6")
+    (version "1.25.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DAAG" version))
        (sha256
-        (base32 "0vm4r1ds2xxxf4vml6mrb5alnkr72a08nby88h3qk7xalny28xkf"))))
+        (base32 "1sk0xlglhg4jv901178bgmb52s3khvs3ry6vhr5dvj5ra7rmf0ym"))))
     (properties `((upstream-name . "DAAG")))
     (build-system r-build-system)
     (arguments
