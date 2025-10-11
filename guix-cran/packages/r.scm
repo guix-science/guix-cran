@@ -6520,13 +6520,13 @@ format.  See rsppfp website for more information, documentation an examples.")
 (define-public r-rspm
   (package
     (name "r-rspm")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rspm" version))
        (sha256
-        (base32 "15ypr6r4kxi73dg3h6kssn5r3sq8q1fc2fxpj28h69qx9d9yryhl"))))
+        (base32 "12rgaz59s5jj94wyy285zam37ndqj51wc8wvra6055my51lq766w"))))
     (properties `((upstream-name . "rspm")))
     (build-system r-build-system)
     (arguments
@@ -6538,10 +6538,10 @@ format.  See rsppfp website for more information, documentation an examples.")
      "Enables binary package installations on Linux distributions.  Provides access to
 RStudio public repositories at <https://packagemanager.posit.co>, and
 transparent management of system requirements without administrative privileges.
- Currently supported distributions are @code{CentOS} / RHEL 7-9, and several
-RHEL derivatives ('Rocky Linux', @code{AlmaLinux}', Oracle Linux', and Amazon
-Linux'), @code{openSUSE} / SLES 15.4-5, Debian 11-12, and Ubuntu LTS 20-22.")
-    (license (list license:gpl2 license:gpl3 license:expat))))
+ Currently supported distributions are @code{CentOS} / RHEL', and several RHEL
+derivatives ('Rocky Linux', @code{AlmaLinux}', Oracle Linux', and Amazon
+Linux'), @code{openSUSE} / SLES', Debian', and Ubuntu LTS.")
+    (license license:expat)))
 
 (define-public r-rspiro
   (package
@@ -32861,13 +32861,13 @@ quality in surveys with multi-item scales: A unified framework
 (define-public r-respr
   (package
     (name "r-respr")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "respR" version))
        (sha256
-        (base32 "1dcgfqln7q2y1mvgr85f5linsscj6rsla1dbnrmf81gci0lzk19k"))))
+        (base32 "0fgcnj44ymxnqqw9kn74im0x0fwdcr1c55x672i6nm7pacm1sdxw"))))
     (properties `((upstream-name . "respR")))
     (build-system r-build-system)
     (arguments
@@ -53924,6 +53924,30 @@ when the data has common frequencies.  While combining data frames whenever
 possible, it also keeps all requested data available as separate data frames to
 increase efficiency.")
     (license license:expat)))
+
+(define-public r-rap
+  (package
+    (name "r-rap")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RAP" version))
+       (sha256
+        (base32 "11h3lyfccjbkb6zqbfqh1jd69wv8azdl74i9y015i20flmznb3jm"))))
+    (properties `((upstream-name . "RAP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=RAP")
+    (synopsis "Reversal Association Pattern Analysis for Categorical Data")
+    (description
+     "This package implements reversal association pattern analysis for categorical
+data.  Detects sub-tables exhibiting reversal associations in contingency
+tables, provides visualization tools, and supports simulation-based validation
+for complex I Ã J tables.")
+    (license license:gpl2)))
 
 (define-public r-ransac
   (package

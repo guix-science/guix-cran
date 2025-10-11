@@ -7108,13 +7108,13 @@ genes that correctly classify the maximum number of the given tissue samples
 (define-public r-proporz
   (package
     (name "r-proporz")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proporz" version))
        (sha256
-        (base32 "0yqp4d45p0rz7w32c61191f7p2wfn81wnmnwnxnb3ydyvn5w0q58"))))
+        (base32 "1v5cbspc4vpcpmkgxf08cm4pk2bcdvbdb9gbhvrn5szcwwp1xzkl"))))
     (properties `((upstream-name . "proporz")))
     (build-system r-build-system)
     (arguments
@@ -30985,13 +30985,13 @@ history, Laloe J-O, ..., Girondot M, Hays GC (2020)
 (define-public r-phenolocrop
   (package
     (name "r-phenolocrop")
-    (version "0.0.2")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phenolocrop" version))
        (sha256
-        (base32 "07wihmqcj32c40a19ivmva7kmm6j79bkbng08j05cr1m21whz2y9"))))
+        (base32 "1l840rgm0gxx0ish54f7z4xbncr6k21ys71ja68f62myhnx8w4df"))))
     (properties `((upstream-name . "phenolocrop")))
     (build-system r-build-system)
     (arguments
@@ -31007,7 +31007,8 @@ canopy height.  This package returns the model parameters as the summary
 statistics of crop phenology, and these parameters will be useful to
 characterize the growth pattern of each cultivar and predict manually-measured
 traits, such as days to heading and biomass.  Please see Taniguchi et al. (2022)
-<doi:10.3389/fpls.2022.998803> for detail.  This package has been designed for
+<doi:10.3389/fpls.2022.998803> and Taniguchi et al. (2025) <doi:
+10.3389/frai.2024.1477637> for detail.  This package has been designed for
 scientific use.  Use for commercial purposes shall not be allowed.")
     (license (license:fsdg-compatible "CC BY-NC 4.0"))))
 

@@ -1480,19 +1480,19 @@ the the multilevel p2 model as described in Zijlstra, Van Duijn & Snijders
 (define-public r-dyadratios
   (package
     (name "r-dyadratios")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DyadRatios" version))
        (sha256
-        (base32 "12q2n67pd16fkv03vcsyjjmalrlprn6v6bznyc8gr9ad6cjrl1fh"))))
+        (base32 "1b5rgnd52r9zkayrqfj89pnx4ljyasmcdy2a3xhgpxyxn19r9idn"))))
     (properties `((upstream-name . "DyadRatios")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lubridate r-ggplot2))
+    (propagated-inputs (list r-progress r-lubridate r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DyadRatios")
     (synopsis "Dyad Ratios Algorithm")
@@ -8575,29 +8575,30 @@ overlapping samples while the other use nonoverlapping samples.")
 (define-public r-dosesens
   (package
     (name "r-dosesens")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "doseSens" version))
        (sha256
-        (base32 "1srxxfadxsrxpd2ksn59ilmijw5iifjik3mz9q38rsvjdxqls5d6"))))
+        (base32 "0qhwsd1lc9510mhmjlcvsjdv27i4bqp49d32i91j4p3xm57jc47c"))))
     (properties `((upstream-name . "doseSens")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-gtools r-dplyr))
+    (propagated-inputs (list r-nloptr r-lpsolve r-gtools r-dplyr))
     (home-page "https://cran.r-project.org/package=doseSens")
     (synopsis
-     "Conduct Sensitivity Analysis with Continuous Exposures and Binary Outcomes")
+     "Conduct Sensitivity Analysis with Continuous Exposures and Binary or Continuous Outcomes")
     (description
-     "This package performs sensitivity analysis for the sharp null and attributable
-effects in matched studies with continuous exposures and binary outcomes as
-described in Zhang, Small, Heng (2024) <@code{arXiv:2401.06909>}.  Two of the
-functions require installation of the Gurobi optimizer.  Please see
-<https://www.gurobi.com/documentation/9.0/refman/ins_the_r_package.html> for
-guidance.")
+     "This package performs sensitivity analysis for the sharp null, attributable
+effects, and weak nulls in matched studies with continuous exposures and binary
+or continuous outcomes as described in Zhang, Small, Heng (2024)
+<doi:10.48550/@code{arXiv.2401.06909>} and Zhang, Heng (2024)
+<doi:10.48550/@code{arXiv.2409.12848>}.  Two of the functions require
+installation of the Gurobi optimizer.  Please see
+<https://docs.gurobi.com/current/#refman/ins_the_r_package.html> for guidance.")
     (license license:expat)))
 
 (define-public r-doseminer
@@ -30737,13 +30738,13 @@ plugins for additional data types.")
 (define-public r-datapack
   (package
     (name "r-datapack")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datapack" version))
        (sha256
-        (base32 "14vlcgk5sckzkc15cjvrbs113y65rqlwm1az7nsvnsqfx4x76jb1"))))
+        (base32 "1ncklslmhvpm6xx6hp6x4pbdpp3cng4f0h59ja4k557q82cbbpxn"))))
     (properties `((upstream-name . "datapack")))
     (build-system r-build-system)
     (arguments
@@ -30768,7 +30769,7 @@ resource map which describes the relationships between the files.  The OAI- ORE
 standard is described at <https://www.openarchives.org/ore/>.  Data packages can
 be serialized and transported as structured files that have been created
 following the @code{BagIt} specification.  The @code{BagIt} specification is
-described at <https://tools.ietf.org/html/draft-kunze-bagit-08>.")
+described at <https://datatracker.ietf.org/doc/html/draft-kunze-bagit-08>.")
     (license license:asl2.0)))
 
 (define-public r-dataone

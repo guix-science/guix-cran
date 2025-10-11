@@ -1648,13 +1648,13 @@ arbitrary Markov multistate models <ISBN:978-0-387-68560-1>.")
 (define-public r-mvn
   (package
     (name "r-mvn")
-    (version "6.1")
+    (version "6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVN" version))
        (sha256
-        (base32 "1ikd76kdrqz7dfi5gqh11kg6df82v6x5l3grrx53x8d8gz06gzrf"))))
+        (base32 "1bxd7s5y8b5caakaak2vm00rxmac4j249g6km725waxqng5s0gc8"))))
     (properties `((upstream-name . "MVN")))
     (build-system r-build-system)
     (arguments
@@ -27588,13 +27588,13 @@ minimax approximation.")
 (define-public r-minimaxalt
   (package
     (name "r-minimaxalt")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minimaxALT" version))
        (sha256
-        (base32 "0mh2bs0w46azrd4xi5jg5c49bygflrk9gwk9qa9y677gvmpbw6aj"))))
+        (base32 "1irqa1bcmssyr2yagj0h5a4cyip8simfh9s8xmj5f4wnil3wf6vx"))))
     (properties `((upstream-name . "minimaxALT")))
     (build-system r-build-system)
     (arguments
@@ -32170,6 +32170,36 @@ of multivariate generalised Gaussian distributions (methods presented by Gomez,
 Gomez-Villegas and Marin (1998) <doi:10.1080/03610929808832115> and Pascal,
 Bombrun, Tourneret and Berthoumieu (2013) <doi:10.1109/TSP.2013.2282909>).")
     (license license:gpl3+)))
+
+(define-public r-mgee2
+  (package
+    (name "r-mgee2")
+    (version "0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mgee2" version))
+       (sha256
+        (base32 "19h1y6bnqgvvdd9hp1dgvyjmiqd3xpbd1bpxfq0j6hnwr7mwjmp1"))))
+    (properties `((upstream-name . "mgee2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-ggplot2))
+    (home-page "https://cran.r-project.org/package=mgee2")
+    (synopsis "Marginal Analysis of Misclassified Longitudinal Ordinal Data")
+    (description
+     "Three estimating equation methods are provided in this package for marginal
+analysis of longitudinal ordinal data with misclassified responses and
+covariates.  The naive analysis which is solely based on the observed data
+without adjustment may lead to bias.  The corrected generalized estimating
+equations (GEE2) method which is unbiased requires the misclassification
+parameters to be known beforehand.  The corrected generalized estimating
+equations (GEE2) with validation subsample method estimates the
+misclassification parameters based on a given validation set.  This package is
+an implementation of Chen (2013) <doi:10.1002/bimj.201200195>.")
+    (license license:gpl2+)))
 
 (define-public r-mgdrive2
   (package

@@ -995,13 +995,13 @@ short memory, and long memory.  See Fu, H. et al. (2018)
 (define-public r-vscc
   (package
     (name "r-vscc")
-    (version "0.7")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vscc" version))
        (sha256
-        (base32 "082jxk8fw4rplal9672bi6rr1jwpb5h6clrdlv9jj4ffvlbg6vaz"))))
+        (base32 "0dhg4bawf504vh1cvrb62j3ph83javhcg4kjnvlknlh9kxlhizvm"))))
     (properties `((upstream-name . "vscc")))
     (build-system r-build-system)
     (arguments
@@ -1769,13 +1769,13 @@ after the initial release of this package.")
 (define-public r-volker
   (package
     (name "r-volker")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "volker" version))
        (sha256
-        (base32 "0l8wg5ra2dmmb0j7swpfq5qimd1m7plw3ixs8g1r6vjw8dcw0bcs"))))
+        (base32 "1pzqfzrf326gm5r46z55cycwi76vd1w647qnawvy1w5j9v8m47lk"))))
     (properties `((upstream-name . "volker")))
     (build-system r-build-system)
     (arguments

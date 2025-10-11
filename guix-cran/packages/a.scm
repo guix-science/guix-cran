@@ -11597,6 +11597,35 @@ and Nielsen (2008) <DOI:10.1093/biomet/asn026> is used.  Thus, the analysis does
 not rely on ad hoc identification.")
     (license license:gpl3)))
 
+(define-public r-apathe
+  (package
+    (name "r-apathe")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "apathe" version))
+       (sha256
+        (base32 "0l5k3fwcg1mqxh24maipn6pirdl97zd8jgqf80xpji2cmrsnac3g"))))
+    (properties `((upstream-name . "apathe")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rmdfiltr r-rmarkdown r-papaja r-bookdown
+                             r-assertthat))
+    (home-page "https://github.com/crsh/apathe")
+    (synopsis
+     "American Psychological Association Thesis Templates for R Markdown")
+    (description
+     "Facilitates writing computationally reproducible student theses in PDF format
+that conform to the American Psychological Association (APA) manuscript
+guidelines (6th Edition).  The package currently provides two R Markdown
+templates for homework and theses at the Psychology Department of the University
+of Cologne.  The package builds on the package papaja but is tailored to the
+requirements of student theses and omits features for simplicity.")
+    (license license:expat)))
+
 (define-public r-apatext
   (package
     (name "r-apatext")
@@ -16396,13 +16425,13 @@ sequences according to a population demographic history [Chen et al. (2009)
 (define-public r-alphashape3d
   (package
     (name "r-alphashape3d")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alphashape3d" version))
        (sha256
-        (base32 "15903pl63p5l3kmqskq1y4hb75wwq0sz6k88zysx65xyd83wcmh3"))))
+        (base32 "1s7gilxadr4zhsgdgnljw1pb79n6bxmaffdpls2y07rammbzcgbl"))))
     (properties `((upstream-name . "alphashape3d")))
     (build-system r-build-system)
     (arguments
@@ -22457,13 +22486,13 @@ allows to fetch customer details, submit queries to ADH.")
 (define-public r-ads
   (package
     (name "r-ads")
-    (version "1.5-10")
+    (version "1.5-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ads" version))
        (sha256
-        (base32 "0arxwjy13fijf5w5491hyr7l4cbmp83aa4hckjxx43zbrdyvvrpz"))))
+        (base32 "162c31rpg04nlyqbngyp66kjsjx779vkd0lni9zmxr1mqgbd24sk"))))
     (properties `((upstream-name . "ads")))
     (build-system r-build-system)
     (arguments

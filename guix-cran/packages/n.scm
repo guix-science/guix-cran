@@ -2216,13 +2216,13 @@ Cattaneo and Farrell (2019, <doi:10.18637/jss.v091.i08>).")
 (define-public r-npregfast
   (package
     (name "r-npregfast")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npregfast" version))
        (sha256
-        (base32 "1d2p23qqwa06rxfl5v9bcvq2j6pcsvjywq74qgrflkjk45g2kjb5"))))
+        (base32 "1bxcbylsz1jf64la0d5n42wiv1as4bncx6vap6vbbaa1sbdpr4rs"))))
     (properties `((upstream-name . "npregfast")))
     (build-system r-build-system)
     (arguments
@@ -4302,13 +4302,13 @@ mixtures via smart parametrization using the LDL (Cholesky) decomposition, see
 (define-public r-normfluodbf
   (package
     (name "r-normfluodbf")
-    (version "2.0.0")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "normfluodbf" version))
        (sha256
-        (base32 "0q110lyp5hjxg0zi9176s9a7b167l19d8xic8zx5yddaxpnplphz"))))
+        (base32 "19rgyzj5yrzjg2rwb93dmy683nywq0kialjfybjj5w3nr5wjpc8a"))))
     (properties `((upstream-name . "normfluodbf")))
     (build-system r-build-system)
     (arguments
@@ -4325,15 +4325,19 @@ mixtures via smart parametrization using the LDL (Cholesky) decomposition, see
                              r-purrr
                              r-plotly
                              r-pkgsearch
+                             r-pbdzmq
                              r-magrittr
+                             r-httr2
                              r-hexsticker
                              r-gridextra
+                             r-glue
                              r-ggplot2
                              r-foreign
                              r-forcats
                              r-emojifont
                              r-dplyr
                              r-data-table
+                             r-cli
                              r-badger
                              r-assertthat))
     (native-inputs (list r-knitr))
@@ -13935,25 +13939,27 @@ exportation.")
 (define-public r-netdose
   (package
     (name "r-netdose")
-    (version "0.6-0")
+    (version "0.7-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netdose" version))
        (sha256
-        (base32 "1xmf0p1kmnx5jjr8x7g5d3rly4lnpv4h834k0apwqp3ij65ddh24"))))
+        (base32 "01p3wl93mzpbq34kviz7hfp74qk8q41jj5qsj37pmshnwj5ra9ci"))))
     (properties `((upstream-name . "netdose")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-netmeta
+    (propagated-inputs (list r-tidyr
+                             r-netmeta
                              r-meta
                              r-matrix
                              r-mass
                              r-hmisc
-                             r-gridextra
-                             r-ggplot2))
+                             r-ggplot2
+                             r-ggh4x
+                             r-dplyr))
     (home-page "https://github.com/petropouloumaria/netdose")
     (synopsis "Dose-Response Network Meta-Analysis in a Frequentist Way")
     (description

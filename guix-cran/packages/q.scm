@@ -4983,6 +4983,39 @@ output replacing the question columns with the domain-based scale scores in the
 original data set.")
     (license license:gpl3)))
 
+(define-public r-qol
+  (package
+    (name "r-qol")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qol" version))
+       (sha256
+        (base32 "0c43zjr6gkm4njjgiv3ii43qdwa0l2cljz82yr8363qyga8l7bhm"))))
+    (properties `((upstream-name . "qol")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-openxlsx2 r-data-table r-collapse))
+    (home-page "https://github.com/s3rdia/qol")
+    (synopsis
+     "Powerful 'SAS' Inspired Concepts for more Efficient Bigger Outputs")
+    (description
+     "The main goal is to make descriptive evaluations easier to create bigger and
+more complex outputs in less time with less code.  Introducing format containers
+with multilabels
+<https:[https://documentation.sas.com/doc/en/pgmsascdc/v_067/proc/p06ciqes4eaqo6n0zyqtz9p21nfb.htm]>,
+a more powerful summarise which is capable to output every possible combination
+of the provided grouping variables in one go
+<https:[https://documentation.sas.com/doc/en/pgmsascdc/v_067/proc/p0jvbbqkt0gs2cn1lo4zndbqs1pe.htm]>,
+tabulation functions which can create any table in different styles
+<https:[https://documentation.sas.com/doc/en/pgmsascdc/v_067/proc/n1ql5xnu0k3kdtn11gwa5hc7u435.htm]>
+and other more readable functions.  The code is optimized to work fast even with
+datasets of over a million observations.")
+    (license license:expat)))
+
 (define-public r-qoi
   (package
     (name "r-qoi")

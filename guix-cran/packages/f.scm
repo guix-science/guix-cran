@@ -3765,30 +3765,29 @@ returns an R object of class nifti if desired.")
 (define-public r-fsk2r
   (package
     (name "r-fsk2r")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FSK2R" version))
        (sha256
-        (base32 "0hsrg49q42by4i3dywi59wwy5h56fnfdr10s6rk1y9dyliksmj43"))))
+        (base32 "1xpyyi25skdjqaq83dj8mgzxl6na6aw4jl1fzhc8bbwy2pj0q9l2"))))
     (properties `((upstream-name . "FSK2R")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zip
-                             r-xml2
+    (propagated-inputs (list r-xml2
                              r-xml
                              r-tidyr
                              r-tibble
                              r-shiny
                              r-rlang
-                             r-rjson
                              r-readxl
                              r-readtext
                              r-r-utils
                              r-purrr
+                             r-jsonlite
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=FSK2R")
@@ -12364,13 +12363,13 @@ features? See Aw, Spence and Song (2023) for the accompanying paper.")
 (define-public r-flint
   (package
     (name "r-flint")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flint" version))
        (sha256
-        (base32 "1q82skd45i0vaf7ldwfn2g1681jvj7iksd7s366sn49g8sxgic29"))))
+        (base32 "1vrmc5dcw9an5p10c19jd89pimzxdc24s3kmqn96mjnydvx6h21p"))))
     (properties `((upstream-name . "flint")))
     (build-system r-build-system)
     (arguments

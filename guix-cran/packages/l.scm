@@ -3944,13 +3944,13 @@ selfsame shiny app.")
 (define-public r-loon-ggplot
   (package
     (name "r-loon-ggplot")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loon.ggplot" version))
        (sha256
-        (base32 "1ysdzsb2cc6ps3mbssxgnwpd0j4m5zj14f7b49py939yl4qg42cj"))))
+        (base32 "1adzb0gvz2mrssxj464n0dn5sayp2gnh1xwglrdgcxfhvgf9kc1w"))))
     (properties `((upstream-name . "loon.ggplot")))
     (build-system r-build-system)
     (arguments
@@ -3962,8 +3962,7 @@ selfsame shiny app.")
                              r-loon
                              r-gridextra
                              r-ggplot2
-                             r-ggmulti
-                             r-cli))
+                             r-ggmulti))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=loon.ggplot")
     (synopsis "Grammar of Interactive Graphics")
@@ -12874,24 +12873,24 @@ LFMM program present in the LEA package (Frichot and Francois, 2015,
 (define-public r-lfm
   (package
     (name "r-lfm")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LFM" version))
        (sha256
-        (base32 "0i5f8hbdf4dlagj5jsszyqpscb0jbz2pa699ggy50v4l6vlvkhjf"))))
+        (base32 "0wl96b0lqwwbkyn22rhh6g76lrvgznzzhpf8kyyagx0ay8v3y7fy"))))
     (properties `((upstream-name . "LFM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sopc
-                             r-relliptical
+    (propagated-inputs (list r-relliptical
                              r-matrixcalc
                              r-mass
                              r-laplacesdemon
-                             r-farmtest))
+                             r-farmtest
+                             r-elasticnet))
     (home-page "https://cran.r-project.org/package=LFM")
     (synopsis "Laplace Factor Model Analysis and Evaluation")
     (description

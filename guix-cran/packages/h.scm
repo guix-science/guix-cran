@@ -4744,36 +4744,6 @@ and widely applicable information criterion.  See <doi:10.1111/rssc.12377> Maity
 et.  al. (2019) <doi:10.1111/biom.13132> Maity et.  al. (2020).")
     (license license:gpl3)))
 
-(define-public r-horseshoe
-  (package
-    (name "r-horseshoe")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "horseshoe" version))
-       (sha256
-        (base32 "1qhkw6agkhpmgf27429c3kqqhbvpg61l0dvfxg7n564y2ha76r3c"))))
-    (properties `((upstream-name . "horseshoe")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=horseshoe")
-    (synopsis "Implementation of the Horseshoe Prior")
-    (description
-     "This package contains functions for applying the horseshoe prior to high-
-dimensional linear regression, yielding the posterior mean and credible
-intervals, amongst other things.  The key parameter tau can be equipped with a
-prior or estimated via maximum marginal likelihood estimation (MMLE).  The main
-function, horseshoe, is for linear regression.  In addition, there are functions
-specifically for the sparse normal means problem, allowing for faster
-computation of for example the posterior mean and posterior variance.  Finally,
-there is a function available to perform variable selection, using either a form
-of thresholding, or credible intervals.")
-    (license license:gpl3)))
-
 (define-public r-horsekicks
   (package
     (name "r-horsekicks")

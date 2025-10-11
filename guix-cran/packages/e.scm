@@ -24475,13 +24475,13 @@ presentation of the method.")
 (define-public r-ebnm
   (package
     (name "r-ebnm")
-    (version "1.1-38")
+    (version "1.1-42")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebnm" version))
        (sha256
-        (base32 "0c0qghm8h3afhg1mq29aczpijivzjah5wr6yd92hh2k5dj90nhr1"))))
+        (base32 "1ckha79qjv8q742wzw3dlc5cydcrll9c7mzan0ihmkydvpnjzrx1"))))
     (properties `((upstream-name . "ebnm")))
     (build-system r-build-system)
     (arguments
@@ -24492,7 +24492,6 @@ presentation of the method.")
                              r-rlang
                              r-mixsqp
                              r-magrittr
-                             r-horseshoe
                              r-ggplot2
                              r-dplyr
                              r-deconvolver
@@ -25511,6 +25510,31 @@ an interactive table.")
      "This package performs analysis of regression in simple designs with quantitative
 treatments, including mixed models and non linear models.")
     (license license:gpl2)))
+
+(define-public r-easyref
+  (package
+    (name "r-easyref")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easyRef" version))
+       (sha256
+        (base32 "0c0qxwqjwkl2pckmgiwz4m77198p6lf2hprbgw7bndc6qqsqpw4w"))))
+    (properties `((upstream-name . "easyRef")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2 r-rvest))
+    (home-page "https://github.com/rrydbirk/easyRef")
+    (synopsis "Easy Reference Generation for R Packages")
+    (description
+     "Generate citations and references for R packages from CRAN or Bioconductor.
+Supports RIS and @code{BibTeX} formats with automatic DOI retrieval from
+@code{GitHub} repositories and published papers.  Includes command-line
+interface for batch processing.")
+    (license license:gpl3+)))
 
 (define-public r-easyr
   (package

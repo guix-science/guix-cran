@@ -6659,6 +6659,34 @@ work was supported by the National Research Foundation of Korea (NRF) grants
 funded by the Korea government (MSIT) (No.  2022R1A2C1091319, RS-2023-00242528).")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-weibullmodiamr
+  (package
+    (name "r-weibullmodiamr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WeibullModiAMR" version))
+       (sha256
+        (base32 "1hr9inlifq8a5f5cx3ccs187n221yzhhg2miij60q9ic3r3r6i4s"))))
+    (properties `((upstream-name . "WeibullModiAMR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=WeibullModiAMR")
+    (synopsis "Fit Modified Weibull-Type Distributions")
+    (description
+     "This package provides maximum likelihood estimation methods for eight modified
+Weibull-type distributions.  It returns parameter estimates, log-likelihood,
+AIC, and BIC, and also supports model fitting, validation, and comparison across
+different distributional forms.  These methods can be applied to reliability,
+survival, and lifetime data analysis, making the package useful for researchers
+and practitioners in statistics, engineering, and medicine.  The following
+distributions are included: Rangoli2023, Peng2014, Lai2003, Xie1996, Sarhan2009,
+Rangoli2025, Mustafa2012, and Alwasel2009.")
+    (license license:gpl3)))
+
 (define-public r-weibullfit
   (package
     (name "r-weibullfit")

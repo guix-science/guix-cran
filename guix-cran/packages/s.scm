@@ -4672,13 +4672,13 @@ Churpek M. M., Zeng D., and Fine J. P. (2015)
 (define-public r-survivor
   (package
     (name "r-survivor")
-    (version "2.3.7")
+    (version "2.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivoR" version))
        (sha256
-        (base32 "18xdqy5zwsma8kcjkjg9wpmcw0s00h7p07rkflli73p2bp31ixrj"))))
+        (base32 "0vhc9l74yp5jvnsnx5rllzwq2jxsa6gqznj5k3cr25gwg4ahjfyp"))))
     (properties `((upstream-name . "survivoR")))
     (build-system r-build-system)
     (arguments
@@ -6436,13 +6436,13 @@ an incomplete failure time data with surrogate failure time endpoints.")
 (define-public r-surrosurv
   (package
     (name "r-surrosurv")
-    (version "1.1.26")
+    (version "1.1.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surrosurv" version))
        (sha256
-        (base32 "1zkrbc71n06i0fccrv5f15rnkbp3cb8lnizh4z16mmqgvn35hg1j"))))
+        (base32 "1n5p76wsysbl32g70b8ilwkijmhlcbsa3s0wkkcn9nsdryvz4435"))))
     (properties `((upstream-name . "surrosurv")))
     (build-system r-build-system)
     (arguments
@@ -42475,48 +42475,6 @@ function.  Please see W., Y., Y. (2010) <doi:10.1016/j.jmva.2010.02.003> for
 details.")
     (license license:gpl3)))
 
-(define-public r-sipmg
-  (package
-    (name "r-sipmg")
-    (version "3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SIPmg" version))
-       (sha256
-        (base32 "1bs048sy3jbnadfj0sli27lw7l55k3mxanck47886xmzl4f3a9g5"))))
-    (properties `((upstream-name . "SIPmg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-plyr
-                             r-phyloseq
-                             r-mass
-                             r-magrittr
-                             r-lazyeval
-                             r-glue
-                             r-ggpubr
-                             r-ggplot2
-                             r-dplyr
-                             r-deseq2
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://zielslab.github.io/SIPmg.github.io/")
-    (synopsis
-     "Statistical Analysis to Identify Isotope Incorporating Metagenomic Features")
-    (description
-     "Statistical analysis as part of a quantitative stable isotope probing (SIP)
-metagenomics study to identify isotope incorporating metagenomic features.
-Helpful reading and a vignette in bookdown format is provided on the package
-site <https://zielslab.github.io/SIPmg.github.io/>.")
-    (license license:gpl2)))
-
 (define-public r-siplab
   (package
     (name "r-siplab")
@@ -43717,13 +43675,13 @@ generated using various mechanisms (MCAR, MAR, NMAR).")
 (define-public r-simstatespace
   (package
     (name "r-simstatespace")
-    (version "1.2.11")
+    (version "1.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simStateSpace" version))
        (sha256
-        (base32 "0vmhh7cd4fs67xz9rlrbsy43zkdc5pp6r82z2m1qhfy1jxcybmba"))))
+        (base32 "1hsqbqcz1ykrnyz288bv6kzq7shbqkrxk4kjd7rh0baxv8kxvawb"))))
     (properties `((upstream-name . "simStateSpace")))
     (build-system r-build-system)
     (arguments
@@ -43736,8 +43694,8 @@ generated using various mechanisms (MCAR, MAR, NMAR).")
      "This package provides a streamlined and user-friendly framework for simulating
 data in state space models, particularly when the number of subjects/units (n)
 exceeds one, a scenario commonly encountered in social and behavioral sciences.
-For an introduction to state space models in social and behavioral sciences,
-refer to Chow, Ho, Hamaker, and Dolan (2010) <doi:10.1080/10705511003661553>.")
+This package was designed to generate data for the simulations performed in
+Pesigan, Russell, and Chow (2025) <doi:10.1037/met0000779>.")
     (license license:gpl3+)))
 
 (define-public r-simstandard

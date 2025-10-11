@@ -4027,13 +4027,13 @@ the original data such as predictions, residuals and cluster assignments; and
 (define-public r-broman
   (package
     (name "r-broman")
-    (version "0.88")
+    (version "0.90")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broman" version))
        (sha256
-        (base32 "1rq75lrvx553a1cd177c9s31whdpicr0hnc2dmv7za7hi5m4bj2l"))))
+        (base32 "0r09ynspm2z6k2zmd05zzcjf1sk10k8sapy3r6xffm0x05s9ykp4"))))
     (properties `((upstream-name . "broman")))
     (build-system r-build-system)
     (arguments
@@ -4170,13 +4170,13 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
 (define-public r-broadcast
   (package
     (name "r-broadcast")
-    (version "0.1.5.1")
+    (version "0.1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broadcast" version))
        (sha256
-        (base32 "1dnjfb4bk0vw2k3lzy372sgym95krgb29wqbcdhw50sc270da2z2"))))
+        (base32 "16cwapklrgxar9lk9kgivyblf1razhxc8wf5qqmnyclkga7xs0vm"))))
     (properties `((upstream-name . "broadcast")))
     (build-system r-build-system)
     (arguments
@@ -15020,13 +15020,13 @@ and model assessment.")
 (define-public r-biomass
   (package
     (name "r-biomass")
-    (version "2.2.4")
+    (version "2.2.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BIOMASS" version))
        (sha256
-        (base32 "1lczpn7k90a3sxmkwzrff3z1jkbm2xyps6drfiad7y04ayq0q6h3"))))
+        (base32 "0gilby98vqjwmdp4wafvg4981zmxx8qvhfjcc1p4ad26sr2lc219"))))
     (properties `((upstream-name . "BIOMASS")))
     (build-system r-build-system)
     (arguments
@@ -15459,6 +15459,53 @@ and aridity.  Modeled fluctuations (model frames) are compared with Mantel
 correlograms on multiple levels defined by sample design.  Package
 implementation can be understood by running examples in @code{modelFrame()}, and
 @code{muleMan()} functions.")
+    (license license:gpl3)))
+
+(define-public r-biodosetools
+  (package
+    (name "r-biodosetools")
+    (version "3.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "biodosetools" version))
+       (sha256
+        (base32 "0igj508c4klj7h07mm89cicva39slmcajxfy6wkbcvii7xyj90cj"))))
+    (properties `((upstream-name . "biodosetools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-shinywidgets
+                             r-shinydashboard
+                             r-shiny
+                             r-rmarkdown
+                             r-rlang
+                             r-rhandsontable
+                             r-readr
+                             r-pdftools
+                             r-openxlsx
+                             r-msm
+                             r-mixtools
+                             r-maxlik
+                             r-mass
+                             r-magrittr
+                             r-gridextra
+                             r-golem
+                             r-ggplot2
+                             r-dplyr
+                             r-config
+                             r-cli
+                             r-bsplus))
+    (native-inputs (list r-knitr))
+    (home-page "https://biodosetools-team.github.io/biodosetools/")
+    (synopsis "'shiny' Application for Biological Dosimetry")
+    (description
+     "This package provides a tool to perform all different statistical tests and
+calculations needed by Biological dosimetry Laboratories.  Detailed
+documentation is available in
+<https://biodosetools-team.github.io/documentation/>.")
     (license license:gpl3)))
 
 (define-public r-biodiversityr
@@ -27092,13 +27139,13 @@ Subnational projections are also supported.")
 (define-public r-bayesimages
   (package
     (name "r-bayesimages")
-    (version "0.6-1")
+    (version "0.7-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesImageS" version))
        (sha256
-        (base32 "0hz6ynvrhsxp097zswdlascza5n27cq4hfaqdc3r8b7crmh7lrim"))))
+        (base32 "15c98d4clbgpnaqlgwf6sn3180swmml6kzlninb1498hcy2lyiv7"))))
     (properties `((upstream-name . "bayesImageS")))
     (build-system r-build-system)
     (arguments
@@ -27116,8 +27163,8 @@ analysis using the hidden Potts model with external field prior of Moores et al.
 chequerboard updating or Swendsen-Wang.  Algorithms for the smoothing parameter
 include pseudolikelihood, path sampling, the exchange algorithm, approximate
 Bayesian computation (ABC-MCMC and ABC-SMC), and the parametric functional
-approximate Bayesian (PFAB) algorithm.  Refer to
-<doi:10.1007/978-3-030-42553-1_6> for an overview and also to
+approximate Bayesian (PFAB) algorithm.  Refer to Moores, Pettitt & Mengersen
+(2020) <doi:10.1007/978-3-030-42553-1_6> for an overview and also to
 <doi:10.1007/s11222-014-9525-6> and <doi:10.1214/18-BA1130> for further details
 of specific algorithms.")
     (license (list license:gpl2+

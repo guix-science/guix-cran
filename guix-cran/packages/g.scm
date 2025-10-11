@@ -916,40 +916,6 @@ to facilitate and streamline this process and provide the user with a
 comprehensive report.")
     (license license:gpl3)))
 
-(define-public r-gwasinlps
-  (package
-    (name "r-gwasinlps")
-    (version "2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GWASinlps" version))
-       (sha256
-        (base32 "06bd6cyjvihcj166f20wdycww6b2xqb9nvh078sys52fi9nwzwcc"))))
-    (properties `((upstream-name . "GWASinlps")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mombf
-                             r-horseshoe
-                             r-fastglm))
-    (home-page "https://nilotpalsanyal.github.io/GWASinlps/")
-    (synopsis
-     "Non-Local Prior Based Iterative Variable Selection Tool for Genome-Wide Association Studies")
-    (description
-     "This package performs variable selection with data from Genome-wide association
-studies (GWAS), or other high-dimensional data with continuous, binary or
-survival outcomes, combining in an iterative framework the computational
-efficiency of the structured screen-and-select variable selection strategy based
-on some association learning and the parsimonious uncertainty quantification
-provided by the use of non-local priors (see Sanyal et al., 2019
-<DOI:10.1093/bioinformatics/bty472>).")
-    (license license:gpl2+)))
-
 (define-public r-gwasforest
   (package
     (name "r-gwasforest")
@@ -2306,13 +2272,13 @@ mathematical oncology can be found at Rockne et al. (2019)
 (define-public r-gtextras
   (package
     (name "r-gtextras")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtExtras" version))
        (sha256
-        (base32 "1lfa2zvahjfg6x6fwr2fl189i3rki9f1ak39cwly6c892m44d7xw"))))
+        (base32 "0iww95jvjdlm5a28fvnima2rf9rdhzb9wszmq3z5k2dd67v387qb"))))
     (properties `((upstream-name . "gtExtras")))
     (build-system r-build-system)
     (arguments
@@ -3428,13 +3394,13 @@ own gene set enrichment analysis plot.")
 (define-public r-gse
   (package
     (name "r-gse")
-    (version "4.2-1")
+    (version "4.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GSE" version))
        (sha256
-        (base32 "0hxz2m8fn7zkxchvpn0kdw77mxgczff9mk1k0xy2ml50b9vzssm2"))))
+        (base32 "09c1yxkcys8mj66fbm3kjfdj4m7z1322vdf9w7rgzd7wlcqhwnab"))))
     (properties `((upstream-name . "GSE")))
     (build-system r-build-system)
     (arguments
@@ -9887,13 +9853,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "0x7nx1gh1in1pjk8d8ljdd2szz38r8b610zmkg8waai1xsn3ahm4"))))
+        (base32 "0zkdivbgxsw77qay3h06qy3wb5s5xv5zls2x2dlsmwwqqfykvj34"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (arguments
@@ -21281,13 +21247,13 @@ zoomed inset map without having to create and embed a separate plot.")
 (define-public r-ggmapcn
   (package
     (name "r-ggmapcn")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmapcn" version))
        (sha256
-        (base32 "0x5s6z02amh683y5iysg3wxic3cbijbzfswxkbmfifbl11bj8gcz"))))
+        (base32 "1q5154p7y4zqn071jdx3hl90l6r8ys4isp7s0g776mlcqa4gs3rk"))))
     (properties `((upstream-name . "ggmapcn")))
     (build-system r-build-system)
     (arguments
@@ -21297,9 +21263,9 @@ zoomed inset map without having to create and embed a separate plot.")
                              r-terra
                              r-sf
                              r-rlang
-                             r-ggspatial
                              r-ggplot2
                              r-dplyr
+                             r-digest
                              r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://rimagination.github.io/ggmapcn/")
@@ -32760,13 +32726,13 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
 (define-public r-gdverse
   (package
     (name "r-gdverse")
-    (version "1.3-3")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdverse" version))
        (sha256
-        (base32 "0w2cf2lkx67601ddvfmsrq0r76iaczs62kyw0f0v18xynsh6ixph"))))
+        (base32 "1siyj4nys1kp5ys322nz09srghcz96imz07bf15z41mkrqqirrfc"))))
     (properties `((upstream-name . "gdverse")))
     (build-system r-build-system)
     (arguments
