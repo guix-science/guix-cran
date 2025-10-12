@@ -13308,13 +13308,13 @@ bitfield, which can be published alongside any (modelled) data products.")
 (define-public r-bistablehistory
   (package
     (name "r-bistablehistory")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bistablehistory" version))
        (sha256
-        (base32 "114m7banr0h4l7lzq2bsjz9l3qb7xgg297ix9aj62rmz02p7x5hf"))))
+        (base32 "03jchl9gqlq2wy4k3z37y69y4rwn53q1bxsl5mmiq1fil3s9vn87"))))
     (properties `((upstream-name . "bistablehistory")))
     (build-system r-build-system)
     (arguments

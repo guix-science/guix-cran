@@ -1354,13 +1354,13 @@ with the OTTR Template repository to create courses.")
 (define-public r-ottr
   (package
     (name "r-ottr")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ottr" version))
        (sha256
-        (base32 "0glfz21xw5wxzs6hbbr2w2ah2aa3i05kqvv6qf41ahwsrl4xxz01"))))
+        (base32 "1q642c83iwbhnk5pq9w901a439jjlx98dv4knv5bg9i5vv8vh8s8"))))
     (properties `((upstream-name . "ottr")))
     (build-system r-build-system)
     (arguments
@@ -10480,23 +10480,33 @@ applying functions before combining).")
 (define-public r-omixvizr
   (package
     (name "r-omixvizr")
-    (version "1.1.3")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omixVizR" version))
        (sha256
-        (base32 "0qig9l4j62v1nzg1z487x7pb2hzw0rszd5n3lxn3ymh7xlcgq2wy"))))
+        (base32 "1xn0lf8rrnqmminpvycdamq6ybwkwlb9i9br3z0xr0jj5si4c574"))))
     (properties `((upstream-name . "omixVizR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sysfonts
+    (propagated-inputs (list r-tibble
+                             r-systemfonts
+                             r-sysfonts
+                             r-stringr
                              r-showtext
                              r-scales
+                             r-rlang
                              r-purrr
+                             r-pheatmap
+                             r-patchwork
+                             r-matrix
                              r-magrittr
+                             r-lulab-utils
+                             r-gtable
+                             r-gridextra
                              r-ggtext
                              r-ggsci
                              r-ggrepel
@@ -10504,7 +10514,8 @@ applying functions before combining).")
                              r-ggbreak
                              r-genpwr
                              r-dplyr
-                             r-data-table))
+                             r-data-table
+                             r-corpcor))
     (home-page "https://github.com/Leslie-Lu/omixVizR")
     (synopsis "Toolkit for Omics Data Visualization")
     (description

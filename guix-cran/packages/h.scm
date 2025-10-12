@@ -8179,13 +8179,13 @@ Kleen, and Sjoerup (2022, <doi:10.18637/jss.v104.i08>).")
 (define-public r-highfive
   (package
     (name "r-highfive")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HighFive" version))
        (sha256
-        (base32 "1zj4rrbl09k6cqn9js1ky0cd779dy0zq6m1wvhanxqgy53r6dhjg"))))
+        (base32 "0bvbs5jbwhfimimj9gkkd4g4q8izsb1gxkkq872vfln3rdn5dgib"))))
     (properties `((upstream-name . "HighFive")))
     (build-system r-build-system)
     (arguments
@@ -10268,13 +10268,13 @@ size estimation.")
 (define-public r-hesim
   (package
     (name "r-hesim")
-    (version "0.5.6")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hesim" version))
        (sha256
-        (base32 "1zppqmgbki053qp20vs9s74sppkgig4w4lxg41s3xkayilp2y84r"))))
+        (base32 "1gyzjzz3sldcx7s0dh39xvng9vsm5his9lzjmrvk0yv6s94y815n"))))
     (properties `((upstream-name . "hesim")))
     (build-system r-build-system)
     (arguments

@@ -8495,13 +8495,13 @@ Research) recommendations.  See Harkness et al. (2010)
 (define-public r-llmr
   (package
     (name "r-llmr")
-    (version "0.6.0")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMR" version))
        (sha256
-        (base32 "01r51yff2qci1h7iwgpw7q1pns2dq73hdimrzagq9agpm51bpw59"))))
+        (base32 "1mi5bn85kjwy9bvpamn3l1hnwrcq9bds5p6vhzxfk76jpgbdx3c1"))))
     (properties `((upstream-name . "LLMR")))
     (build-system r-build-system)
     (arguments

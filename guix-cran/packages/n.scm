@@ -8305,13 +8305,13 @@ Research) <doi:10.1177/0962280220903763>.")
 (define-public r-nlmixr2rpt
   (package
     (name "r-nlmixr2rpt")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2rpt" version))
        (sha256
-        (base32 "0x1kgia70ggj6fyrpsx3qyspvj94xqg5qh42if6bmkx2h6a96ajk"))))
+        (base32 "1qizvjxfi3k4rvwpv2igm197p8rw0knkn8cwx2i595czyvzgqahg"))))
     (properties `((upstream-name . "nlmixr2rpt")))
     (build-system r-build-system)
     (arguments
@@ -16301,13 +16301,13 @@ using NCA metrics.  The methods are described in Acharya et al. (2016)
 (define-public r-ncaavolleyballr
   (package
     (name "r-ncaavolleyballr")
-    (version "0.4.3")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncaavolleyballr" version))
        (sha256
-        (base32 "1zrqv2mmjfmnsf6vfcsbp09an8cxgs29hw992114d8nmsfll29xl"))))
+        (base32 "0czb8ig88k0s4hx8w90d5dbklcb888h2qfwwqci7pkhpakg3gdcx"))))
     (properties `((upstream-name . "ncaavolleyballr")))
     (build-system r-build-system)
     (arguments
@@ -16324,12 +16324,13 @@ using NCA metrics.  The methods are described in Acharya et al. (2016)
                              r-httr2
                              r-dplyr
                              r-curl
-                             r-cli))
+                             r-cli
+                             r-chromote))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/JeffreyRStevens/ncaavolleyballr")
     (synopsis "Extract Data from NCAA Women's and Men's Volleyball Website")
     (description
-     "Extracts team records/schedules and player statistics for the 2020-2024 National
+     "Extracts team records/schedules and player statistics for the 2020-2025 National
 Collegiate Athletic Association (NCAA) women's and men's divisions I, II, and
 III volleyball teams from <https://stats.ncaa.org>.  Functions can aggregate
 statistics for teams, conferences, divisions, or custom groups of teams.")

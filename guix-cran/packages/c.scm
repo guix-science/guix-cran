@@ -19462,13 +19462,13 @@ contribution to the actual coverage function.")
 (define-public r-coneproj
   (package
     (name "r-coneproj")
-    (version "1.20")
+    (version "1.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coneproj" version))
        (sha256
-        (base32 "142pjja9zjrf5vykx57dh9rpivyyj68ip8nqgsa1d7j1yhm4izf7"))))
+        (base32 "0sdj05ffd2qimvfdqs2nkmfqjwlg76ik5skj54nlb213zk3im4mv"))))
     (properties `((upstream-name . "coneproj")))
     (build-system r-build-system)
     (arguments

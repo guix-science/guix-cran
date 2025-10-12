@@ -31427,13 +31427,13 @@ computational experiments testing the performance of such methods.")
 (define-public r-spades-tools
   (package
     (name "r-spades-tools")
-    (version "2.0.7")
+    (version "2.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaDES.tools" version))
        (sha256
-        (base32 "1kxjwxjr8ncjygj94wpp8z2q58hrb0fyhnz3ajp1jlgpdz3jripi"))))
+        (base32 "1bqvn1g0s1bj1ii2gcirlhkr59zwv6f07m0jnc8lav5vsi5li50p"))))
     (properties `((upstream-name . "SpaDES.tools")))
     (build-system r-build-system)
     (arguments

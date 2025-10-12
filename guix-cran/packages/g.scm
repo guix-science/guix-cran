@@ -3217,46 +3217,6 @@ G-Series essentially come from Dagum, E. B., and P. Cholette (2006)
 <doi:10.1007/0-387-35439-5>.")
     (license license:gpl3+)))
 
-(define-public r-gsema
-  (package
-    (name "r-gsema")
-    (version "0.99.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GSEMA" version))
-       (sha256
-        (base32 "1ynbjm61v1j3m06ixbzil0rxcmvfxpz27dcfiif8bkk9g5mkfs2d"))))
-    (properties `((upstream-name . "GSEMA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-singscore
-                             r-scales
-                             r-rdpack
-                             r-rcolorbrewer
-                             r-progress
-                             r-plyr
-                             r-pheatmap
-                             r-pbapply
-                             r-metafor
-                             r-limma
-                             r-impute
-                             r-gsva
-                             r-doparallel
-                             r-biocparallel
-                             r-biobase))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GSEMA")
-    (synopsis "Gene Set Enrichment Meta-Analysis")
-    (description
-     "Performing the different steps of gene set enrichment meta-analysis.  It
-provides different functions that allow the application of meta-analysis based
-on the combination of effect sizes from different pathways in different studies
-to obtain significant pathways that are common to all of them.")
-    (license license:gpl2)))
-
 (define-public r-gselection
   (package
     (name "r-gselection")

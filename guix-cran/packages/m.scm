@@ -17700,13 +17700,13 @@ prediction for each data chunk, before reading the next chunk of data.")
 (define-public r-modelltest
   (package
     (name "r-modelltest")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeLLtest" version))
        (sha256
-        (base32 "0m9djx3d2k0y38h0wyscwvzj0pvlfjqz2ar7j1rb29mhm7y8np70"))))
+        (base32 "0xc11r5nhpdzirdjsxdscjci4f4fyqi08v429kyhc2ah840afqz3"))))
     (properties `((upstream-name . "modeLLtest")))
     (build-system r-build-system)
     (arguments
@@ -20516,13 +20516,13 @@ for continuous, count, categorical, and time-to-event data.")
 (define-public r-mlwrap
   (package
     (name "r-mlwrap")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLwrap" version))
        (sha256
-        (base32 "00y63s21pm8wxn60nza8mk4cfbh4bv46g00d21pxk02dfxh5lpb8"))))
+        (base32 "1nc1vw2xlanqlafimlx0k70f47p540wz16ld41ywvq3wq3i6iqrh"))))
     (properties `((upstream-name . "MLwrap")))
     (build-system r-build-system)
     (arguments
@@ -20535,6 +20535,7 @@ for continuous, count, categorical, and time-to-event data.")
                              r-tidyr
                              r-tibble
                              r-sensitivity
+                             r-scales
                              r-rsample
                              r-rlang
                              r-recipes

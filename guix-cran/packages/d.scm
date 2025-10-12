@@ -3539,13 +3539,13 @@ gtsummary packages.")
 (define-public r-dswe
   (package
     (name "r-dswe")
-    (version "1.8.3")
+    (version "1.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSWE" version))
        (sha256
-        (base32 "0a98hji3d7hsip5bb5vkqmqy74amv2x265g5hqshmzygw1x9pgjf"))))
+        (base32 "0nq9gb8w441f047xlhmpiym68hyx4yngk0k44q2mi6hvsk5675m1"))))
     (properties `((upstream-name . "DSWE")))
     (build-system r-build-system)
     (arguments
@@ -22087,13 +22087,13 @@ data.")
 (define-public r-depthproc
   (package
     (name "r-depthproc")
-    (version "2.1.5")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DepthProc" version))
        (sha256
-        (base32 "0i7fks5hglf3xj8cj3sghjf0xcldhiqwf0jlpyk2a3mj9gaszc76"))))
+        (base32 "085vmrj51mxr725ghx3a5d34nbd15vf1bhxzpx4gh4iji9csdfby"))))
     (properties `((upstream-name . "DepthProc")))
     (build-system r-build-system)
     (arguments

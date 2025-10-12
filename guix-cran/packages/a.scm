@@ -26056,13 +26056,13 @@ by other users.")
 (define-public r-acsspack
   (package
     (name "r-acsspack")
-    (version "0.0.1.4")
+    (version "1.0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ACSSpack" version))
        (sha256
-        (base32 "18xj0svysm9qm6dyhx7ib2krwcfds8i3rrcd03ph3kz597vf41zi"))))
+        (base32 "1alk08096dhz5whm5w53ys23bkpsckzk8p53bbl25qp1dyk7pr2f"))))
     (properties `((upstream-name . "ACSSpack")))
     (build-system r-build-system)
     (arguments
@@ -26070,7 +26070,7 @@ by other users.")
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-hdci r-extradistr))
     (home-page "https://cran.r-project.org/package=ACSSpack")
-    (synopsis "ACSS, Corresponding ACSS, and GLP Algorithm")
+    (synopsis "ACSS, Corresponding INSS, and GLP Algorithms")
     (description
      "Allow user to run the Adaptive Correlated Spike and Slab (ACSS) algorithm,
 corresponding INdependent Spike and Slab (INSS) algorithm, and Giannone, Lenza
@@ -26081,8 +26081,9 @@ The state-of-the-art GLP algorithm is in Giannone, D., Lenza, M., & Primiceri,
 G. E. (2021, ISBN:978-92-899-4542-4) \"Economic predictions with big data: The
 illusion of sparsity\".  The two new algorithms, ACSS algorithm and INSS
 algorithm, and the discussion on their performance can be seen in Yang, Z.,
-Khare, K., & Michailidis, G. (2024, preprint) \"Bayesian methodology for adaptive
-sparsity and shrinkage in regression\".")
+Khare, K., & Michailidis, G. (2024, submitted to Journal of Business & Economic
+Statistics) \"Bayesian methodology for adaptive sparsity and shrinkage in
+regression\".")
     (license license:gpl3)))
 
 (define-public r-acroname

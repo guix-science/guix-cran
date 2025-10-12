@@ -14005,13 +14005,13 @@ individual level data, the other is @code{PMR_summary()} for summary data.")
 (define-public r-ppmlasso
   (package
     (name "r-ppmlasso")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppmlasso" version))
        (sha256
-        (base32 "082f5ij43iyfw1i864va4cdklfnv5zs4i21f1kcai2dlcqs5kc0v"))))
+        (base32 "0f14afcc40fqx08r0mlkqas2nycn18x24i93mzwdgc96jfj6jkqr"))))
     (properties `((upstream-name . "ppmlasso")))
     (build-system r-build-system)
     (arguments
@@ -24253,13 +24253,13 @@ examples, see the package homepage. <https://pbreheny.github.io/plmmr/>.")
 (define-public r-plmixed
   (package
     (name "r-plmixed")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PLmixed" version))
        (sha256
-        (base32 "1kn9w8xr9y1lnxa5hv95q3hipr7shs8pnhr6nr88v4rskgvvhffm"))))
+        (base32 "1345sslskla0jlqjl2pbp6h6s0jq0k5644l9j77r9r3bn3y4sgim"))))
     (properties `((upstream-name . "PLmixed")))
     (build-system r-build-system)
     (arguments
@@ -28484,38 +28484,40 @@ corresponding functions for general interval-censored data.")
 (define-public r-pic
   (package
     (name "r-pic")
-    (version "1.0.3")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PiC" version))
        (sha256
-        (base32 "1gxl0paj6yvr3bmq9dh1flhx8ggnwp2972fapwah1pjcld6sb8yj"))))
+        (base32 "1xf60f271ynd5v37fx427pd8pa08mky0l4m2205ck57mwdcvqhsp"))))
     (properties `((upstream-name . "PiC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tictoc
+                             r-sf
                              r-magrittr
                              r-foreach
                              r-dplyr
                              r-dbscan
                              r-data-table
+                             r-conicfit
                              r-collapse))
     (home-page "https://github.com/rupppy/PiC")
-    (synopsis
-     "Pointcloud Interactive Computation for Forest Structure Analysis")
+    (synopsis "Pointcloud Interactive Computation")
     (description
-     "This package provides advanced algorithms for analyzing pointcloud data in
-forestry applications.  Key features include fast voxelization of large
-datasets; segmentation of point clouds into forest floor, understorey, canopy,
-and wood components.  The package enables efficient processing of large-scale
-forest pointcloud data, offering insights into forest structure, connectivity,
-and fire risk assessment.  Algorithms to analyze pointcloud data (.xyz input
-file).  For more details, see Ferrara & Arrizza (2025)
-<https://hdl.handle.net/20.500.14243/533471>.  For single tree segmentation
-details, see Ferrara et al. (2018) <doi:10.1016/j.agrformet.2018.04.008>.")
+     "This package provides advanced algorithms for analyzing pointcloud data from
+terrestrial laser scanner in forestry applications.  Key features include fast
+voxelization of large datasets; segmentation of point clouds into forest floor,
+understorey, canopy, and wood components.  The package enables efficient
+processing of large-scale forest pointcloud data, offering insights into forest
+structure, connectivity, and fire risk assessment.  Algorithms to analyze
+pointcloud data (.xyz input file).  For more details, see Ferrara & Arrizza
+(2025) <https://hdl.handle.net/20.500.14243/533471>.  For single tree
+segmentation details, see Ferrara et al. (2018)
+<doi:10.1016/j.agrformet.2018.04.008>.")
     (license license:gpl3+)))
 
 (define-public r-piar
