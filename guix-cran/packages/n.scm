@@ -590,13 +590,13 @@ their names easy to remember and easy to deploy.")
 (define-public r-numericensembles
   (package
     (name "r-numericensembles")
-    (version "0.10.1")
+    (version "0.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NumericEnsembles" version))
        (sha256
-        (base32 "19bpxs10qk5zmy5i5c1zig2x2fzlh5vqrwdyfmjia9jiasqs4dmp"))))
+        (base32 "0bzb1hg3kpr8dvgik5diszycfdsgq31gnjmwv3r8lprjz0m3d5i8"))))
     (properties `((upstream-name . "NumericEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -639,7 +639,7 @@ their names easy to remember and easy to deploy.")
     (description
      "Automatically runs 18 individual models and 14 ensembles on numeric data, for a
 total of 32 models.  The package automatically returns complete results on all
-32 models, 25 charts, multiple tables.  The user simply provides the tidy data,
+32 models, 30 charts and six tables.  The user simply provides the tidy data,
 and answers a few questions (for example, how many times would you like to
 resample the data).  From there the package randomly splits the data into train,
 test and validation sets, fits each of models on the training data, makes

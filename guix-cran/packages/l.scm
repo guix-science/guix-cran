@@ -2927,13 +2927,13 @@ polynomial method.")
 (define-public r-lphom
   (package
     (name "r-lphom")
-    (version "0.3.5-6")
+    (version "0.3.5-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lphom" version))
        (sha256
-        (base32 "1jn6cjg7q1w8aaqxh0zfa14h2bd2mn4zjgsg0xm0rx995j81p3an"))))
+        (base32 "0bxjv2dsbvnyjj2igrg075lxrdadsrvf72j0q667nah34bv158yw"))))
     (properties `((upstream-name . "lphom")))
     (build-system r-build-system)
     (arguments
@@ -2953,9 +2953,10 @@ PavÃ­a and Romero (2024) <doi:10.1093/jrsssa/qnae013>.  PavÃ­a (2023)
 <doi:10.1177/07591063241277064>.  PavÃ­a and PenadÃ©s (2024).  A bottom-up
 approach for ecological inference.  Romero, PavÃ­a, MartÃ­n and Romero (2020)
 <doi:10.1080/02664763.2020.1804842>.  Acknowledgements: The authors wish to
-thank ConsellerÃ­a de EducaciÃ³n, Universidades y Empleo, Generalitat Valenciana
-(grants AICO/2021/257, CIAICO/2023/031) and Ministerio de EconomÃ­a e
-InnovaciÃ³n (grant PID2021-128228NB-I00) for supporting this research.")
+thank ConsellerÃ­a de EducaciÃ³n, Cultura, Universidades y Empleo, Generalitat
+Valenciana (grants AICO/2021/257, CIAICO/2023/031) and
+MICIU/AEI/10.13039/501100011033/FEDER, UE (grant PID2021-128228NB-I00) for
+supporting this research.")
     (license (list (license:fsdg-compatible "EPL")
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -5402,13 +5403,13 @@ is helpful to detect patients that may present cognitive decline.")
 (define-public r-logisticensembles
   (package
     (name "r-logisticensembles")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LogisticEnsembles" version))
        (sha256
-        (base32 "033cdfr4v0pb1rn8z6vv8igxlmakm7h3b5r75h1aadbfgrwniiak"))))
+        (base32 "1qn971l5d64xs22nbn8s0497zazzdrvddlcghh1lfabavbm7x9rb"))))
     (properties `((upstream-name . "LogisticEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -5453,7 +5454,7 @@ is helpful to detect patients that may present cognitive decline.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/InfiniteCuriosity/LogisticEnsembles")
     (synopsis
-     "Automatically Runs 36 Logistic Models (Individual and Ensembles)")
+     "Automatically Runs 24 Logistic Models (Individual and Ensembles)")
     (description
      "Automatically returns 24 logistic models including 13 individual models and 11
 ensembles of models of logistic data.  The package also returns 25 plots, 5
@@ -7436,6 +7437,31 @@ ridge related measures such as MSE, R-squared etc.  REFERENCES i.  Hoerl and
 Kennard (1970) <doi:10.1080/00401706.1970.10488634>, ii.  Halawa and
 El-Bassiouni (2000) <doi:10.1080/00949650008812006>, iii.  Imdadullah, Aslam,
 and Saima (2017), iv.  Marquardt (1970) <doi:10.2307/1267205>.")
+    (license license:gpl2+)))
+
+(define-public r-lmreg
+  (package
+    (name "r-lmreg")
+    (version "1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lmreg" version))
+       (sha256
+        (base32 "1h0ryqw45752di81bsw6cwha8aqx0q5q1ic6xya869vq0v8pxvf8"))))
+    (properties `((upstream-name . "lmreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=lmreg")
+    (synopsis
+     "Data and Functions Used in Linear Models and Regression with R: An Integrated Approach")
+    (description
+     "Data files and a few functions used in the book Linear Models and Regression
+with R: An Integrated Approach by Debasis Sengupta and Sreenivas Rao
+Jammalamadaka (2019).")
     (license license:gpl2+)))
 
 (define-public r-lmqcm
@@ -18473,13 +18499,13 @@ presentation, or used in a Shiny app.")
 (define-public r-langevin
   (package
     (name "r-langevin")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Langevin" version))
        (sha256
-        (base32 "18pri14f9x4svcdq100lmzjjqahnkw83z3a62r48pqrs14zap7hw"))))
+        (base32 "1q3grhpf0a13z87srcbb5f0g206marx4h5dfvk5sjhpayj1s3vad"))))
     (properties `((upstream-name . "Langevin")))
     (build-system r-build-system)
     (arguments

@@ -9794,13 +9794,13 @@ identification and anomaly detection.")
 (define-public r-structssi
   (package
     (name "r-structssi")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "structSSI" version))
        (sha256
-        (base32 "1sin2pagyzx4qlxr7wligpwd8hdj3r7vzzwfsw1gyybrsdrdidwc"))))
+        (base32 "0s8pzr160gcv9y2sn3arqlb60cl0881z49yd11a1wvc0cii2c5c5"))))
     (properties `((upstream-name . "structSSI")))
     (build-system r-build-system)
     (arguments

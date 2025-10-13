@@ -15437,13 +15437,13 @@ free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusMarine" version))
        (sha256
-        (base32 "04ajgvb87ms2dbmqsfwywfy35b7lw9yaakm3mdk0133my35hbpx9"))))
+        (base32 "107a7rh7mq0r76q0wz0chflhl7ihxj0ays42abgvamz1nhx5j59b"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (arguments
@@ -15464,6 +15464,7 @@ free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
                              r-dplyr
                              r-cli
                              r-aws-s3))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/pepijn-devries/CopernicusMarine")
     (synopsis
      "Search Download and Handle Data from Copernicus Marine Service Information")
@@ -24006,13 +24007,13 @@ process.")
 (define-public r-colombiapi
   (package
     (name "r-colombiapi")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ColombiAPI" version))
        (sha256
-        (base32 "0px5vhjfg26k3d9x0v7wb9a5g183za9cg14bap2vip6jv1rjgmiz"))))
+        (base32 "0j4syl1w59x7157x1085bnzkaqzmpbpad5jkajji9ql5lfs99pjn"))))
     (properties `((upstream-name . "ColombiAPI")))
     (build-system r-build-system)
     (arguments
@@ -34073,13 +34074,13 @@ for easy modification.  Debug your binary classifiers faster and easier!")
 (define-public r-classificationensembles
   (package
     (name "r-classificationensembles")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClassificationEnsembles" version))
        (sha256
-        (base32 "01hcc27xc4wgbbkw4rbfx567fb7l3xv46is2iiiv9axgz4yifan1"))))
+        (base32 "133dygsalc50gwc1dnr3iki9940zbxyiacdrsm2bb55wyfah4mis"))))
     (properties `((upstream-name . "ClassificationEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -34108,17 +34109,17 @@ for easy modification.  Debug your binary classifiers faster and easier!")
                              r-c50))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/InfiniteCuriosity/ClassificationEnsembles")
-    (synopsis "Automatically Builds 20 Classification Models")
+    (synopsis "Automatically Builds 12 Classification Models")
     (description
-     "Automatically builds 20 classification models from data.  The package returns 26
-plots, 5 tables and a summary report.  The package automatically builds 12
+     "Automatically builds 12 classification models from data.  The package returns 26
+plots, 5 tables and a summary report.  The package automatically builds six
 individual classification models, including error (RMSE) and predictions.  That
-data is used to create an ensemble, which is then modeled using 8 methods.  The
-process is repeated as many times as the user requests.  The mean of the results
-are presented in a summary table.  The package returns the confusion matrices
-for all 20 models, tables of the correlation of the numeric data, the results of
-the variance inflation process, the head of the ensemble and the head of the
-data frame.")
+data is used to create an ensemble, which is then modeled using six methods.
+The process is repeated as many times as the user requests.  The mean of the
+results are presented in a summary table.  The package returns the confusion
+matrices for all 12 models, tables of the correlation of the numeric data, the
+results of the variance inflation process, the head of the ensemble and the head
+of the data frame.")
     (license license:expat)))
 
 (define-public r-classicaltest

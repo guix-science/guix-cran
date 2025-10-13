@@ -4234,13 +4234,13 @@ by business centers, advertisers, budgets and reports.")
 (define-public r-rtika
   (package
     (name "r-rtika")
-    (version "2.7.0")
+    (version "3.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtika" version))
        (sha256
-        (base32 "11m4czs6wiybdcck3b4s6nzm47zf029mdik7n013yihvxp4q6rbs"))))
+        (base32 "1kbj8kg5jp5mqshrcrkdx2zd3xckr16aa3gjcqqca60d9yzm1aqv"))))
     (properties `((upstream-name . "rtika")))
     (build-system r-build-system)
     (arguments
@@ -49133,13 +49133,13 @@ API allows the user to view structures in 2D.")
 (define-public r-rcdf
   (package
     (name "r-rcdf")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcdf" version))
        (sha256
-        (base32 "0jj6pns24d9swmqj1ij9gavxzw98m67f54j40k1zdjncmfy7ghbr"))))
+        (base32 "1cmdsx01d9q7y8362r1gwxnki5j8wqzlsnnkpcrxzfwsjs5a5cjq"))))
     (properties `((upstream-name . "rcdf")))
     (build-system r-build-system)
     (arguments

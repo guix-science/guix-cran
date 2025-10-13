@@ -10619,13 +10619,13 @@ sampling and characterizing price data.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PriceIndices" version))
        (sha256
-        (base32 "15hfmr5sl5n6260p8warz2p916srp7qnyagy80p2jlssx3clagdz"))))
+        (base32 "04ijm2yj1xxfjcpxz8a8x80jv57yhfw923dl0ma5swmww0nbm876"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (arguments

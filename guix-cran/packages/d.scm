@@ -2317,13 +2317,13 @@ larger-than-memory data while retaining full dplyr compatibility.")
 (define-public r-duckdbfs
   (package
     (name "r-duckdbfs")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdbfs" version))
        (sha256
-        (base32 "0nqgnmqh7f826i3ha0zddgk191vcd6a8kcq4w3k3dq6dij6c3qx3"))))
+        (base32 "086j9535xjdhdrkndhnp60d5wxvm29c52372jilyp6gp4d4q0q5r"))))
     (properties `((upstream-name . "duckdbfs")))
     (build-system r-build-system)
     (arguments

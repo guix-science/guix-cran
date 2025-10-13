@@ -9254,13 +9254,13 @@ examining the local second order structure of the time series.")
 (define-public r-forecastingensembles
   (package
     (name "r-forecastingensembles")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ForecastingEnsembles" version))
        (sha256
-        (base32 "16sz8finpi4q2nay0rhacdmy16wh0dvfhz4z9lgpaf70n27j7gs4"))))
+        (base32 "0i852gmfa30605rxfwya326mvkpk96wmw29lwy9gq090ydpb7vg6"))))
     (properties `((upstream-name . "ForecastingEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -9270,8 +9270,10 @@ examining the local second order structure of the time series.")
                              r-tsibble
                              r-tidyr
                              r-tibble
+                             r-scales
                              r-readr
                              r-magrittr
+                             r-lubridate
                              r-gt
                              r-ggplot2
                              r-fracdiff
@@ -9280,7 +9282,8 @@ examining the local second order structure of the time series.")
                              r-fable-prophet
                              r-fable
                              r-dplyr
-                             r-doparallel))
+                             r-doparallel
+                             r-distributional))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/InfiniteCuriosity/ForecastingEnsembles")
     (synopsis "Time Series Forecasting Using 23 Individual Models")

@@ -31142,13 +31142,13 @@ extraction for reporting purposes.")
 (define-public r-mic
   (package
     (name "r-mic")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MIC" version))
        (sha256
-        (base32 "1qx9rnkqpddm6cclk237911xz7qm7swwm7hmrbdfj9yjjcq6yw1s"))))
+        (base32 "1nfwqg28684dhd8pg3qzsmcdz4m754zxl2yzbcb5xddvhn38x2ks"))))
     (properties `((upstream-name . "MIC")))
     (build-system r-build-system)
     (arguments
@@ -31169,6 +31169,7 @@ extraction for reporting purposes.")
                              r-forcats
                              r-dplyr
                              r-data-table
+                             r-curl
                              r-biostrings
                              r-amr))
     (home-page "https://github.com/agerada/MIC")

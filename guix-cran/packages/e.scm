@@ -14336,13 +14336,13 @@ effect modification.")
 (define-public r-endogeneity
   (package
     (name "r-endogeneity")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "endogeneity" version))
        (sha256
-        (base32 "0wqmpvm5k38nchgahhmlg8s1xb3806anpgkf16bl99m852aixwyi"))))
+        (base32 "0xl5xdavvb6abnsi13d43mfxsxp00d6jzjwykb4f1n8ik331svx8"))))
     (properties `((upstream-name . "endogeneity")))
     (build-system r-build-system)
     (arguments
