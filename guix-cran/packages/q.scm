@@ -1475,13 +1475,13 @@ and the other is relying on an artificial neural network.")
 (define-public r-quarks
   (package
     (name "r-quarks")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quarks" version))
        (sha256
-        (base32 "0srachhn2jxyz3i7ky5hb982232xnngaq66q76ffr3p1v4yfvgw3"))))
+        (base32 "0kvcag9slxjsz4yfgvm0d8fcfmmks1r150w6pc22ji2x4gw5fxy2"))))
     (properties `((upstream-name . "quarks")))
     (build-system r-build-system)
     (arguments
@@ -1593,29 +1593,6 @@ defined generalized expectile function.  The generalized sigmoidal quantile
 function can estimate quantiles beyond the range of the data, which is important
 for certain applications given smaller sample sizes.  The package is based on
 the method introduced in Hutson (2024) <doi:10.1080/03610918.2022.2032161>.")
-    (license license:gpl3)))
-
-(define-public r-quantregranger
-  (package
-    (name "r-quantregranger")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "quantregRanger" version))
-       (sha256
-        (base32 "1a9q2prr790bpw6s0y5ni5ppd3vqkjr0v4nqp6ywcj5n3sk69pvx"))))
-    (properties `((upstream-name . "quantregRanger")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-ranger))
-    (home-page "https://github.com/PhilippPro/quantregRanger")
-    (synopsis "Quantile Regression Forests for 'ranger'")
-    (description
-     "This is the implementation of quantile regression forests for the fast random
-forest package ranger'.")
     (license license:gpl3)))
 
 (define-public r-quantreggrowth

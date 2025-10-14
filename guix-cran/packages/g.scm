@@ -11012,19 +11012,24 @@ Erdos-Renyi (ER) and Beta versions.")
 (define-public r-goodfibes
   (package
     (name "r-goodfibes")
-    (version "0.1.10")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GoodFibes" version))
        (sha256
-        (base32 "0pcjb1266zhwwxqhyn9jlq2mpqwxg77aka5k29zc84izyz6ba3nk"))))
+        (base32 "0w123gkymzqjg8wxhchjwsrvamgama54zwqdr5rk5i1yrjy8nqkm"))))
     (properties `((upstream-name . "GoodFibes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-splines2 r-rgl r-prodlim r-imager r-concaveman))
+    (propagated-inputs (list r-tinycodet
+                             r-splines2
+                             r-rgl
+                             r-prodlim
+                             r-imager
+                             r-concaveman))
     (home-page "https://cran.r-project.org/package=GoodFibes")
     (synopsis
      "Detection and Reconstruction of Muscle Fibers from diceCT Image Data")
@@ -32099,13 +32104,13 @@ variance corrections.")
 (define-public r-geeverse
   (package
     (name "r-geeverse")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geeVerse" version))
        (sha256
-        (base32 "00algckarni5x8424vpa6fl04v2dhyz8k4lxq2rvaljrhpn5ahd5"))))
+        (base32 "1zb0cxx828956s6i46qdr50ryynfx9qhkbsav4l2mab1pqx183x4"))))
     (properties `((upstream-name . "geeVerse")))
     (build-system r-build-system)
     (arguments
@@ -32115,6 +32120,7 @@ variance corrections.")
                              r-rcpp
                              r-quantreg
                              r-mvtnorm
+                             r-mass
                              r-foreach
                              r-doparallel))
     (home-page "https://cran.r-project.org/package=geeVerse")

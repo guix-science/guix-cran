@@ -521,13 +521,13 @@ species distribution modeling.")
 (define-public r-hyperspec
   (package
     (name "r-hyperspec")
-    (version "0.100.2")
+    (version "0.100.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyperSpec" version))
        (sha256
-        (base32 "0g4lc26prwpb7qsk4q0rzhzz7lw9x4hfrnsbzikwv3na6lqkhkip"))))
+        (base32 "0bqf7znn2jnk6g06w09xn06mfb9sjzxhc5z27dap52jpqwfnms0b"))))
     (properties `((upstream-name . "hyperSpec")))
     (build-system r-build-system)
     (arguments
@@ -3353,13 +3353,13 @@ H., and Datta, S. (2017) <doi:10.1002/sim.7288> Dutta, S. and Datta, S. (2015)
 (define-public r-hstats
   (package
     (name "r-hstats")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hstats" version))
        (sha256
-        (base32 "1my1zxwvdzajp75lxyqmwr7z8ci9ldvlmpqxapyqbj0d5ibn2sbn"))))
+        (base32 "0shmb6zdqmz31zxhdmrsj2l6s9jzs9b1sp4md9h77ny318flixnk"))))
     (properties `((upstream-name . "hstats")))
     (build-system r-build-system)
     (arguments
@@ -13056,13 +13056,13 @@ more information, see the reference manual
 (define-public r-hdflex
   (package
     (name "r-hdflex")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdflex" version))
        (sha256
-        (base32 "1ivnc7rj04snfghyxy61h4mhba7v3kjvanwhscmil64dmk3pxd4i"))))
+        (base32 "1px4k8kgs0j167gbspn7x1y089zsnf4f18c3dqf8ccfzyhm4l93p"))))
     (properties `((upstream-name . "hdflex")))
     (build-system r-build-system)
     (arguments
@@ -13083,7 +13083,7 @@ computationally fast manner.  The method proceeds in two steps: First, it
 transforms a predictive signal into a density forecast and, second, it combines
 the resulting candidate density forecasts into an ultimate aggregate density
 forecast.  For a detailed explanation of the method, please refer to Adaemmer et
-al. (2023) <doi:10.2139/ssrn.4342487>.")
+al. (2025) <doi:10.1080/07350015.2025.2526424>.")
     (license license:gpl2+)))
 
 (define-public r-hdf5r-extra

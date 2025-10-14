@@ -34968,19 +34968,19 @@ Fundamentals of People Analytics: With Applications in R\".")
 (define-public r-pensynth
   (package
     (name "r-pensynth")
-    (version "0.5.1")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pensynth" version))
        (sha256
-        (base32 "1ph3552y3jsm9kmv68bx15xn383djq2yhc34rpvazc8dyd3impkv"))))
+        (base32 "0fh9dnvdp2i5vjagr19z4qdcmywa7pd4ld8zgml51macbwbszbv9"))))
     (properties `((upstream-name . "pensynth")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix r-clarabel))
+    (propagated-inputs (list r-matrix r-lifecycle r-cli r-clarabel))
     (home-page "https://github.com/vankesteren/pensynth")
     (synopsis "Penalized Synthetic Control Estimation")
     (description

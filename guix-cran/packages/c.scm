@@ -3561,13 +3561,13 @@ al. (2017) <@code{arXiv:1706.10029>}).")
 (define-public r-ctmed
   (package
     (name "r-ctmed")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cTMed" version))
        (sha256
-        (base32 "1z7q6k7nwcf0ys6f71slyy7n1fqrdzr0dwrkgh9518d374sf3rqk"))))
+        (base32 "1hzqpnpknvfshqsk9q2yvx20818jgaqbfgbkkp945vvhz177am19"))))
     (properties `((upstream-name . "cTMed")))
     (build-system r-build-system)
     (arguments
@@ -3575,12 +3575,11 @@ al. (2017) <@code{arXiv:1706.10029>}).")
       #:tests? #f))
     (propagated-inputs (list r-simstatespace r-rcpparmadillo r-rcpp r-numderiv))
     (home-page "https://github.com/jeksterslab/cTMed")
-    (synopsis "Continuous Time Mediation")
+    (synopsis "Continuous-Time Mediation")
     (description
-     "Calculates effect sizes, standard errors and confidence intervals in
-continuous-time mediation models (Deboeck and Preacher, 2015
-<doi:10.1080/10705511.2014.973960>; Ryan and Hamaker, 2021
-<doi:10.1007/s11336-021-09767-0>).")
+     "Computes effect sizes, standard errors, and confidence intervals for total,
+direct, and indirect effects in continuous-time mediation models as described in
+Pesigan, Russell, and Chow (2025) <doi:10.1037/met0000779>.")
     (license license:gpl3+)))
 
 (define-public r-ctmcmove

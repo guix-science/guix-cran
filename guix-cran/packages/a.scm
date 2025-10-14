@@ -20844,19 +20844,20 @@ bounded, multi-modal, or heavily skewed sampling errors.")
 (define-public r-ageutils
   (package
     (name "r-ageutils")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ageutils" version))
        (sha256
-        (base32 "0y0afgndm64fzd10rh9n8aiqy0s59sfl7sbc9b9xr4i8virsyaj9"))))
+        (base32 "0azmk3hf8wzv36qq2yb9sac9hikkrvfgx3fv7zrf77r5k6wr794p"))))
     (properties `((upstream-name . "ageutils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vctrs r-tibble r-rlang))
+    (native-inputs (list r-litedown))
     (home-page "https://timtaylor.github.io/ageutils/")
     (synopsis "Collection of Functions for Working with Age Intervals")
     (description

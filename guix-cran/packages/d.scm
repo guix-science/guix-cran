@@ -7215,13 +7215,13 @@ the Rmpfr package and hence the underlying MPFR and GMP C libraries.")
 (define-public r-dpq
   (package
     (name "r-dpq")
-    (version "0.6-0")
+    (version "0.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPQ" version))
        (sha256
-        (base32 "0kr1prx189w6bhyhkigcqspw7jcyyspc27jj6g7wsg2vnd9w1fil"))))
+        (base32 "1378py4r09c4grmakd8hmx9fvnz41hq7k2bqhvvpr4jh3fgvwm6v"))))
     (properties `((upstream-name . "DPQ")))
     (build-system r-build-system)
     (arguments
@@ -24295,13 +24295,13 @@ interval with double exponential formulas.")
 (define-public r-deform
   (package
     (name "r-deform")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deform" version))
        (sha256
-        (base32 "0crnwp5z3wy2zx273a7lchvyv5k5fyclhqrb9q0qhhv56drgvm0y"))))
+        (base32 "11d3vjrjnc77y4g5581g5kby2xriyk553pnqyrq5zaryrnpnc33q"))))
     (properties `((upstream-name . "deform")))
     (build-system r-build-system)
     (arguments

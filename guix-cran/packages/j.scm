@@ -3078,13 +3078,13 @@ power on the other.  Wu & Li (2016) <doi:10.1016/j.csda.2016.04.015>.")
 (define-public r-jmcm
   (package
     (name "r-jmcm")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmcm" version))
        (sha256
-        (base32 "1dpm94k2s2vx3dvd5rk7xrsq786phl0hq7xi9fjjxbr8qfmxhsck"))))
+        (base32 "1rylkman0ryrq2s2aa7zlhnxg0i8y9lkvx4qnms00hlgkxvjhp1b"))))
     (properties `((upstream-name . "jmcm")))
     (build-system r-build-system)
     (arguments

@@ -18435,13 +18435,13 @@ the approach by Tobler (1965).")
 (define-public r-bidask
   (package
     (name "r-bidask")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bidask" version))
        (sha256
-        (base32 "09i3mqd8wkyva8r4avw0h9n29zlfj0gacdbbv045m2iy9i8nqm3k"))))
+        (base32 "17xfmvszlxjb1xw42awaysx9vyqiz1wrj1dz8jq5k64zgrf43gz0"))))
     (properties `((upstream-name . "bidask")))
     (build-system r-build-system)
     (arguments

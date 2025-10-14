@@ -1380,13 +1380,13 @@ and sections in the appropriate files required for package development.")
 (define-public r-fusemlr
   (package
     (name "r-fusemlr")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuseMLR" version))
        (sha256
-        (base32 "00v8rf38l3pkld5sfcg5kbbj6qc3llpkv1wdwwb7g1ih9ds53wmb"))))
+        (base32 "0vmxa2ip5phv522027ynhy4q775gayncji0c0gmzzlpvv640ir9q"))))
     (properties `((upstream-name . "fuseMLR")))
     (build-system r-build-system)
     (arguments
@@ -13451,20 +13451,19 @@ the LMM.")
 (define-public r-flashlight
   (package
     (name "r-flashlight")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flashlight" version))
        (sha256
-        (base32 "0nyxx7zrqw8fgy1n81n30m80z7xwkydnhmxj6c22mq83md08rd8c"))))
+        (base32 "0s1dzggb8jpsz0178r33s05z0islwjyjq9fjmrs14c219f2khjm4"))))
     (properties `((upstream-name . "flashlight")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
                              r-rpart-plot
@@ -13472,8 +13471,7 @@ the LMM.")
                              r-rlang
                              r-metricsweighted
                              r-ggplot2
-                             r-dplyr
-                             r-cowplot))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mayer79/flashlight")
     (synopsis "Shed Light on Black Box Machine Learning Models")
@@ -13481,11 +13479,11 @@ the LMM.")
      "Shed light on black box machine learning models by the help of model
 performance, variable importance, global surrogate models, ICE profiles, partial
 dependence (Friedman J. H. (2001) <doi:10.1214/aos/1013203451>), accumulated
-local effects (Apley D. W. (2016) <@code{arXiv:1612.08468>}), further effects
-plots, interaction strength, and variable contribution breakdown (Gosiewska and
-Biecek (2019) <arxiv:1903.11420>).  All tools are implemented to work with case
-weights and allow for stratified analysis.  Furthermore, multiple flashlights
-can be combined and analyzed together.")
+local effects (Apley D. W. (2016) <doi:10.48550/@code{arXiv.1612.08468>}),
+further effects plots, interaction strength, and variable contribution breakdown
+(Gosiewska and Biecek (2019) <doi:10.48550/@code{arXiv.1903.11420>}).  All tools
+are implemented to work with case weights and allow for stratified analysis.
+Furthermore, multiple flashlights can be combined and analyzed together.")
     (license license:gpl2+)))
 
 (define-public r-flashier

@@ -4037,13 +4037,13 @@ rdflib and redland packages.")
 (define-public r-virtualspecies
   (package
     (name "r-virtualspecies")
-    (version "1.6")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "virtualspecies" version))
        (sha256
-        (base32 "1bqrh17fcskklsdkwkg9lvlki67jigr0c32mq4bfl16iisrc1342"))))
+        (base32 "0a4q702j4js3wp9zdb16aqwfzv9931b71hs0m5bkxivw5azi51qv"))))
     (properties `((upstream-name . "virtualspecies")))
     (build-system r-build-system)
     (arguments

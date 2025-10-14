@@ -801,13 +801,13 @@ lineup, and examine the distributions of metrics.")
 (define-public r-nuggets
   (package
     (name "r-nuggets")
-    (version "1.4.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nuggets" version))
        (sha256
-        (base32 "10apa4gwjnv9cgprkyhd855lbamgc10qfw3q9yybimkxh84byj4m"))))
+        (base32 "0y4imq1aas416zvdf4h0qbhk3rf588bpg60p6y5ksasv4ryln4qf"))))
     (properties `((upstream-name . "nuggets")))
     (build-system r-build-system)
     (arguments
@@ -818,25 +818,39 @@ lineup, and examine the distributions of metrics.")
                              r-tibble
                              r-testthat
                              r-stringr
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shiny
                              r-rlang
+                             r-rcppthread
                              r-rcpp
                              r-purrr
                              r-lifecycle
-                             r-cli))
+                             r-htmltools
+                             r-ggplot2
+                             r-generics
+                             r-fastmatch
+                             r-dt
+                             r-cli
+                             r-classint
+                             r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://beerda.github.io/nuggets/")
-    (synopsis "Extensible Data Pattern Searching Framework")
+    (synopsis "Extensible Framework for Data Pattern Exploration")
     (description
-     "Extensible framework for subgroup discovery (Atzmueller (2015)
-<doi:10.1002/widm.1144>), contrast patterns (Chen (2022)
-<doi:10.48550/@code{arXiv.2209.13556>}), emerging patterns (Dong (1999)
-<doi:10.1145/312129.312191>), association rules (Agrawal (1994)
-<https://www.vldb.org/conf/1994/P487.PDF>) and conditional correlations (HÃ¡jek
-(1978) <doi:10.1007/978-3-642-66943-9>).  Both crisp (Boolean, binary) and fuzzy
-data are supported.  It generates conditions in the form of elementary
-conjunctions, evaluates them on a dataset and checks the induced sub-data for
-interesting statistical properties.  A user-defined function may be defined to
-evaluate on each generated condition to search for custom patterns.")
+     "This package provides a framework for systematic exploration of association
+rules (Agrawal et al., 1994, <https://www.vldb.org/conf/1994/P487.PDF>),
+contrast patterns (Chen, 2022, <doi:10.48550/@code{arXiv.2209.13556>}), emerging
+patterns (Dong et al., 1999, <doi:10.1145/312129.312191>), subgroup discovery
+(Atzmueller, 2015, <doi:10.1002/widm.1144>), and conditional correlations
+(HÃ¡jek, 1978, <doi:10.1007/978-3-642-66943-9>).  User-defined functions may
+also be supplied to guide custom pattern searches.  Supports both crisp
+(Boolean) and fuzzy data.  Generates candidate conditions expressed as
+elementary conjunctions, evaluates them on a dataset, and inspects the induced
+sub-data for statistical, logical, or structural properties such as
+associations, correlations, or contrasts.  Includes methods for visualization of
+logical structures and supports interactive exploration through integrated Shiny
+applications.")
     (license license:gpl3+)))
 
 (define-public r-nueton

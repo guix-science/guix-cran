@@ -8601,13 +8601,13 @@ data.")
 (define-public r-treedist
   (package
     (name "r-treedist")
-    (version "2.11.0")
+    (version "2.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeDist" version))
        (sha256
-        (base32 "0kz5smq27385n3ghgj192mx7s6z08akklnn8xr98gww87l7bvx5r"))))
+        (base32 "1scr3fddgpwkg8x3av3x504kgmr2xcpy31cwi76p99v8rp0a0ik4"))))
     (properties `((upstream-name . "TreeDist")))
     (build-system r-build-system)
     (arguments

@@ -24335,13 +24335,13 @@ Analysis of data from order-of-addition mixture experiments is also supported.")
 (define-public r-mixmeta
   (package
     (name "r-mixmeta")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixmeta" version))
        (sha256
-        (base32 "093f6jjq0hc49k5kmjp17s2lv3swpssfxnra80bwv59ggav8w8d8"))))
+        (base32 "11g1jilrpj8b9vwc80x2lc8wyqxy9415jyikd85vwfyl3pafd2k8"))))
     (properties `((upstream-name . "mixmeta")))
     (build-system r-build-system)
     (arguments
@@ -24355,7 +24355,7 @@ meta-analytical models through a unified mixed-effects framework, including
 standard univariate fixed and random-effects meta-analysis and meta-regression,
 and non-standard extensions such as multivariate, multilevel, longitudinal, and
 dose-response models.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-mixmatrix
   (package
@@ -27139,13 +27139,13 @@ distributions.")
 (define-public r-mintyr
   (package
     (name "r-mintyr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mintyr" version))
        (sha256
-        (base32 "0va4r4497j09afac01camqah4vrjgl1w394zx6mikm07nxzsvx9v"))))
+        (base32 "1qwbiq9ryacracgav4is443922ghsfslmfagklxhqi6qcnin9150"))))
     (properties `((upstream-name . "mintyr")))
     (build-system r-build-system)
     (arguments
@@ -39332,13 +39332,13 @@ personal API key is required.")
 (define-public r-medflex
   (package
     (name "r-medflex")
-    (version "0.6-10")
+    (version "0.6-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medflex" version))
        (sha256
-        (base32 "0cybshbk2qvh38n9sc6qf9jwjhzs4zz31awx3bbyqfwzjgzai2dx"))))
+        (base32 "07y7injry12289aqgy8m07jihyn3z92isab0rndjbi4l0ypcd8dn"))))
     (properties `((upstream-name . "medflex")))
     (build-system r-build-system)
     (arguments

@@ -7772,19 +7772,19 @@ this package, see Hanson (2022) <doi:10.21105/joss.04594>.")
 (define-public r-wdnr-gis
   (package
     (name "r-wdnr-gis")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wdnr.gis" version))
        (sha256
-        (base32 "00s1lly2rsgvldchiimxz48nn1gnidff131jj3gixir0bfdkl6fp"))))
+        (base32 "182xhz8gzd6g90xvwqns6d9papc9gas5nifl4qriaw0szgvz9mip"))))
     (properties `((upstream-name . "wdnr.gis")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-rlang r-ggplot2 r-dplyr r-arcpullr))
+    (propagated-inputs (list r-sf r-rlang r-dplyr r-arcpullr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wdnr.gis")
     (synopsis "Pull Spatial Layers from 'WDNR ArcGIS REST API'")
@@ -9801,13 +9801,13 @@ Georgia Institute of Technology.
 (define-public r-warden
   (package
     (name "r-warden")
-    (version "1.2.5")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WARDEN" version))
        (sha256
-        (base32 "1z06n57dgaxlq3qqr4hx6i15arhpb85ni9471msmzam3lfzvi3wr"))))
+        (base32 "14kss9i8j9myxnxml5xzww27r3j1r9fs1jpa4rc30npja9cr05ja"))))
     (properties `((upstream-name . "WARDEN")))
     (build-system r-build-system)
     (arguments
@@ -9815,11 +9815,12 @@ Georgia Institute of Technology.
       #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyr
-                             r-rlang
+                             r-rcpp
                              r-purrr
                              r-progressr
                              r-mass
                              r-magrittr
+                             r-lifecycle
                              r-future
                              r-foreach
                              r-flexsurv
@@ -9830,10 +9831,10 @@ Georgia Institute of Technology.
     (synopsis
      "Workflows for Health Technology Assessments in R using Discrete EveNts")
     (description
-     "Toolkit to support and perform discrete event simulations without resource
-constraints in the context of health technology assessments (HTA).  The package
-focuses on cost-effectiveness modelling and aims to be submission-ready to
-relevant HTA bodies in alignment with NICE TSD 15
+     "Toolkit to support and perform discrete event simulations with and without
+resource constraints in the context of health technology assessments (HTA).  The
+package focuses on cost-effectiveness modelling and aims to be submission-ready
+to relevant HTA bodies in alignment with NICE TSD 15
 <https://sheffield.ac.uk/nice-dsu/tsds/patient-level-simulation>.  More details
 an examples can be found in the package website
 <https://jsanchezalv.github.io/WARDEN/>.")

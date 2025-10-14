@@ -52420,13 +52420,13 @@ summarize posterior distributions.")
 (define-public r-ratelimitr
   (package
     (name "r-ratelimitr")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ratelimitr" version))
        (sha256
-        (base32 "06x759jxr5zcnvg9q120n5bpipkb16piw15kxrpk7i918mby889b"))))
+        (base32 "0lszma81jgsg11fgmp9wz0b1qnhyqwa3dab4ir4jk0l2a2wp2klj"))))
     (properties `((upstream-name . "ratelimitr")))
     (build-system r-build-system)
     (arguments

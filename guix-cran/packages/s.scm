@@ -3467,13 +3467,13 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svemnet
   (package
     (name "r-svemnet")
-    (version "2.2.4")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVEMnet" version))
        (sha256
-        (base32 "0m0z53mjj25fv1k46j4nb1h5s3zjqcd06xh70y36w1ggnf6z8m54"))))
+        (base32 "0vh61pn51v9y0kpg8xzp10srd3lf6kacccqcmzfb1whi8ahln0fd"))))
     (properties `((upstream-name . "SVEMnet")))
     (build-system r-build-system)
     (arguments
@@ -12459,13 +12459,13 @@ approximation.  The models are fitted via TMB (Template Model Builder)
 (define-public r-stochvol
   (package
     (name "r-stochvol")
-    (version "3.2.7")
+    (version "3.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stochvol" version))
        (sha256
-        (base32 "02pfcrj403ck376pmi23h637inlah4jjqjpjgd7wq4fw211h3kfj"))))
+        (base32 "0k7iahryksbl010xv79xjz9pvrazragwf9w4hadfci33ccn0k32a"))))
     (properties `((upstream-name . "stochvol")))
     (build-system r-build-system)
     (arguments
@@ -32606,13 +32606,13 @@ constraints\".  Biometrics, 75, 539-550. <doi:10.1111/biom.12997>.")
 (define-public r-sorcering
   (package
     (name "r-sorcering")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sorcering" version))
        (sha256
-        (base32 "16wia8z97l4f33jvp5sb36sfifsbpjk4ix1xb2c1wzxap881qwd2"))))
+        (base32 "17rfhbsddgahai6i6y2n1xzd4x91kra2cwap36h9w6jrq9an2vp8"))))
     (properties `((upstream-name . "sorcering")))
     (build-system r-build-system)
     (arguments
@@ -36147,13 +36147,13 @@ components manually.")
 (define-public r-smvr
   (package
     (name "r-smvr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smvr" version))
        (sha256
-        (base32 "0hh0sgrinq32aac98ds5a4bcxjvp3qw4l5jnvlwi3ylkpcfq41h6"))))
+        (base32 "0lf78bz81kzly64n5rp1bqn5wx8z34yi696j71ilid8x9vws7s5b"))))
     (properties `((upstream-name . "smvr")))
     (build-system r-build-system)
     (arguments
@@ -61175,13 +61175,13 @@ evaluating the candidates in each stage.")
 (define-public r-selectionbias
   (package
     (name "r-selectionbias")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SelectionBias" version))
        (sha256
-        (base32 "00fk3ljm3x1slffni6g4j61s2766znlmamg16vmbkfjmrbb80nfy"))))
+        (base32 "0ql8cc6nnzxz912spzc7jf5mfazg0pgh6jniqdi83pyp28lr8x6s"))))
     (properties `((upstream-name . "SelectionBias")))
     (build-system r-build-system)
     (arguments
@@ -61189,19 +61189,21 @@ evaluating the candidates in each stage.")
       #:tests? #f))
     (propagated-inputs (list r-lifecycle r-arm))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/stizet/SelectionBias")
+    (home-page "https://github.com/StinaZet/SelectionBias")
     (synopsis
      "Calculates Bounds for the Selection Bias for Binary Treatment and Outcome Variables")
     (description
      "Computes bounds and sensitivity parameters as part of sensitivity analysis for
 selection bias.  Different bounds are provided: the SV (Smith and
-@code{VanderWeele}), AF (assumption-free) bound, GAF (generalized AF), and CAF
-(counterfactual AF) bounds.  The calculation of the sensitivity parameters for
-the SV and GAF bounds assume an additional dependence structure in form of a
-generalized M-structure.  The bounds can be calculated for any structure as long
-as the necessary assumptions hold.  See Smith and @code{VanderWeele} (2019)
-<doi:10.1097/EDE.0000000000001032>, Zetterstrom and Waernbaum (2022)
-<doi:10.1515/em-2022-0108> and Zetterstrom (2024) <doi:10.1515/em-2023-0033>.")
+@code{VanderWeele}), sharp bounds, AF (assumption-free) bound, GAF (generalized
+AF), and CAF (counterfactual AF) bounds.  The calculation of the sensitivity
+parameters for the SV, sharp, and GAF bounds assume an additional dependence
+structure in form of a generalized M-structure.  The bounds can be calculated
+for any structure as long as the necessary assumptions hold.  See Smith and
+@code{VanderWeele} (2019) <doi:10.1097/EDE.0000000000001032>, Zetterstrom,
+SjÃ¶lander, and Waernabum (2025) <doi:10.1177/09622802251374168>, Zetterstrom
+and Waernbaum (2022) <doi:10.1515/em-2022-0108>, and Zetterstrom (2024)
+<doi:10.1515/em-2023-0033>.")
     (license license:expat)))
 
 (define-public r-selection-index
