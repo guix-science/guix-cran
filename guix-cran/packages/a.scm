@@ -19234,13 +19234,13 @@ and
 (define-public r-aifeducation
   (package
     (name "r-aifeducation")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aifeducation" version))
        (sha256
-        (base32 "1ikpzjzggjysvjvlna7r047j4x66vqksqcrckknrgdb0yk4zmj29"))))
+        (base32 "0yv82pshrxspmxmjfny78bqcgkfh5rfpmv81z2y3gxg3f25p7qg0"))))
     (properties `((upstream-name . "aifeducation")))
     (build-system r-build-system)
     (arguments

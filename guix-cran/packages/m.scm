@@ -119,19 +119,19 @@ coding agent to help users with R programming tasks.")
 (define-public r-mycran
   (package
     (name "r-mycran")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myCRAN" version))
        (sha256
-        (base32 "1i8wxvy5vjk1pajyvkq12phqasaasbqyvarja299km2bddihyrqq"))))
+        (base32 "0agiva7fd9ai4fq110fbilss79qzl9j68gvnqv9wjd1sy8l99mcp"))))
     (properties `((upstream-name . "myCRAN")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pkgsearch r-cranlogs))
+    (propagated-inputs (list r-plotrix r-pkgsearch r-lubridate r-cranlogs))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=myCRAN")
     (synopsis "Graph of Daily and Cumulative Downloads of your Packages")
@@ -3132,6 +3132,35 @@ on the work by Paul Centore, \"The Munsell and Kubelka-Munk Toolbox\".")
      "Multidimensional unfolding using Schoenemann's algorithm for metric and
 Procrustes rotation of unfolding results.")
     (license license:gpl2)))
+
+(define-public r-mumarinex
+  (package
+    (name "r-mumarinex")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mumarinex" version))
+       (sha256
+        (base32 "1kbhqkxxpc37nnm1fs95sfi48i2lr15qh40aa04mdx03dmqi97k4"))))
+    (properties `((upstream-name . "mumarinex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan r-knitr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mumarinex")
+    (synopsis "Computation of the Multivariate Marine Recovery Index")
+    (description
+     "Computation of the multivariate marine recovery index, including functions for
+data visualization and ecological diagnostics of marine ecosystems.  The
+computational details are described in the original publication.  Reference:
+Chauvel, N., Grall, J., ThiÃ©baut, E., Houbin, C., Pezy, J.P. (in press). \"A
+general-purpose Multivariate Marine Recovery Index for quantifying the influence
+of human activities on benthic habitat ecological status\".  Ecological
+Indicators.")
+    (license license:gpl3)))
 
 (define-public r-mulvariaterandomforestvarimp
   (package
@@ -25362,41 +25391,6 @@ variate generation, and estimation.  Based on the Laplace-Inversion algorithm by
 Garrappa, R. (2015) <doi:10.1137/140971191>.")
     (license license:gpl2+)))
 
-(define-public r-mitre
-  (package
-    (name "r-mitre")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mitre" version))
-       (sha256
-        (base32 "0r5phzxiibwwhx3qh623grfy070c3vzm4q07rzhsp5q5ycb5jhn5"))))
-    (properties `((upstream-name . "mitre")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-rlang
-                             r-rjsonio
-                             r-plyr
-                             r-jsonlite
-                             r-igraph
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/motherhack3r/mitre")
-    (synopsis "Cybersecurity MITRE Standards Data and Digraphs")
-    (description
-     "Extract, transform and load MITRE standards.  This package gives you an approach
-to cybersecurity data sets.  All data sets are build on runtime downloading raw
-data from MITRE public services.  MITRE <https://www.mitre.org/> is a
-government-funded research organization based in Bedford and @code{McLean}.
-Current version includes most used standards as data frames.  It also provide a
-list of nodes and edges with all relationships.")
-    (license license:cc0)))
-
 (define-public r-mitohear
   (package
     (name "r-mitohear")
@@ -45158,21 +45152,26 @@ A., Zuraw, K. (in press)
 (define-public r-maxeff
   (package
     (name "r-maxeff")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maxEff" version))
        (sha256
-        (base32 "0yl06y3j89853qc0jc2zks0plgy55kqxv62zq112fkhkgsg7isn5"))))
+        (base32 "1zz22cg3ncbd99zz4l78blsiyd2svwvb9f7g0psrd83shczhcc3j"))))
     (properties `((upstream-name . "maxEff")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-spatstat-geom r-rpart r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=maxEff")
+    (propagated-inputs (list r-spatstat-geom
+                             r-rpart
+                             r-groupedhyperframe
+                             r-foreach
+                             r-doparallel
+                             r-caret))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/tingtingzhan/maxEff")
     (synopsis "Additional Predictor with Maximum Effect Size")
     (description
      "This package provides methods of selecting one from many numeric predictors for
@@ -50152,6 +50151,35 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 <doi:10.5170/CERN-2011-006> and Wong and Cox (2007)
 <doi:10.1080/02664760701240014>.")
     (license license:gpl2)))
+
+(define-public r-manystates
+  (package
+    (name "r-manystates")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "manystates" version))
+       (sha256
+        (base32 "0pabanpd57z8kbf3aw2c3xpi3z4wjr4gcd7l7qkaiqvkhwjawq96"))))
+    (properties `((upstream-name . "manystates")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi r-purrr r-manydata r-knitr))
+    (native-inputs (list r-knitr))
+    (home-page "https://globalgov.github.io/manystates/")
+    (synopsis
+     "Many Data on State and State-Like Actors in the International System")
+    (description
+     "Comprehensively identifying states and state-like actors is difficult.  This
+package provides data on states and state-like entities in the international
+system across time.  The package combines and cross-references several existing
+datasets consistent with the aims and functions of the manydata package.  It
+also includes functions for identifying state references in text, and for
+generating fictional state names.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-manynet
   (package

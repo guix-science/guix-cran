@@ -8134,13 +8134,13 @@ to sum their own low level functions as well.  Based on the paper by Braden
 (define-public r-sumo
   (package
     (name "r-sumo")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SUMO" version))
        (sha256
-        (base32 "1qgw98v4lxxd7qcxbc7dhwak1jqzvhnnacdfxjrzby38d4w0cbh9"))))
+        (base32 "05vx0w945pzjixq4rn31f1csvsscf3z2bvll72f1wp7i2xlrkhw6"))))
     (properties `((upstream-name . "SUMO")))
     (build-system r-build-system)
     (arguments
@@ -8387,13 +8387,13 @@ model.")
 (define-public r-sulcimap
   (package
     (name "r-sulcimap")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sulcimap" version))
        (sha256
-        (base32 "1y838wn292f8jv4fmbwfam3g3ckpq82lpij2jfhfqwvblb0m6yz6"))))
+        (base32 "06kk826vzk67lnk7vdbxcilj5sbh9m4l14zikd2lygljplg9v6kj"))))
     (properties `((upstream-name . "sulcimap")))
     (build-system r-build-system)
     (arguments
@@ -26147,13 +26147,13 @@ ISO/CIE 23539 (2023) <doi:10.25039/IS0.CIE.23539.2023>.")
 (define-public r-spectralr
   (package
     (name "r-spectralr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spectralR" version))
        (sha256
-        (base32 "1kz47gydsqa3g47m6z546sf5jnfscsly1v3dpj97ns0qf5sh57bp"))))
+        (base32 "02rb7cpxww7jkjcjkhzf3accwpabgbw0bri61zmzn14zifmiln02"))))
     (properties `((upstream-name . "spectralR")))
     (build-system r-build-system)
     (arguments
@@ -27117,13 +27117,13 @@ Covariance Matrix,\" Biometrika.  98(4).  807--820.")
 (define-public r-spcosa
   (package
     (name "r-spcosa")
-    (version "0.4-4")
+    (version "0.4-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spcosa" version))
        (sha256
-        (base32 "0mj8gjrqapsc1xgvqydn5iw4fkzlvig5rkcb8vi9ijl78w9ydc2j"))))
+        (base32 "1lqqfldlk8jsrk8ab00b05jbb702ykgm1hzw0zl47imlwpdn56az"))))
     (properties `((upstream-name . "spcosa")))
     (build-system r-build-system)
     (arguments
@@ -31427,13 +31427,13 @@ computational experiments testing the performance of such methods.")
 (define-public r-spades-tools
   (package
     (name "r-spades-tools")
-    (version "2.0.8")
+    (version "2.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaDES.tools" version))
        (sha256
-        (base32 "1bqvn1g0s1bj1ii2gcirlhkr59zwv6f07m0jnc8lav5vsi5li50p"))))
+        (base32 "0zknws6h1ya59wyybvhr0467yw99sflr1mp2zd1lh5wysdg506wd"))))
     (properties `((upstream-name . "SpaDES.tools")))
     (build-system r-build-system)
     (arguments
@@ -68301,13 +68301,13 @@ is used.")
 (define-public r-scdiffcom
   (package
     (name "r-scdiffcom")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scDiffCom" version))
        (sha256
-        (base32 "17scb8hhx2d67cbhzxd0l2hzy4sj22x5j9rvc71ba2d958wk4ysa"))))
+        (base32 "1p6r3kw3h0np3pgdskvpw6b571r3pai79yiz8ahvx9d37y2h8jcl"))))
     (properties `((upstream-name . "scDiffCom")))
     (build-system r-build-system)
     (arguments
@@ -68315,6 +68315,7 @@ is used.")
       #:tests? #f))
     (propagated-inputs (list r-seurat
                              r-magrittr
+                             r-lifecycle
                              r-future-apply
                              r-future
                              r-delayedarray
@@ -69332,13 +69333,13 @@ and scan', Juergen Wilbert (2025) <https://jazznbass.github.io/scan-Book/>.")
 (define-public r-scam
   (package
     (name "r-scam")
-    (version "1.2-19")
+    (version "1.2-20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scam" version))
        (sha256
-        (base32 "1lfgwcrlsw49qk9wqzjaxgwy2bvd2gna6dkw1vz8vyaf88m5dpvq"))))
+        (base32 "1xcrqfncxg3gcwga97m8c0xbws5g6cdckjqczx2l8m7f7akpr771"))))
     (properties `((upstream-name . "scam")))
     (build-system r-build-system)
     (arguments
@@ -74213,13 +74214,13 @@ of the package and the methods used see the corresponding vignette.")
 (define-public r-saesim
   (package
     (name "r-saesim")
-    (version "0.11.0")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeSim" version))
        (sha256
-        (base32 "0s0zcls4j3cx7wbvi0l3q4c3b0f9x9i2wcqnz4gzwyqik6pcfaic"))))
+        (base32 "00gm4l7kwnc3y6irr7qxzdsaxzk23czschhih3mzwqqisa5sbdf9"))))
     (properties `((upstream-name . "saeSim")))
     (build-system r-build-system)
     (arguments

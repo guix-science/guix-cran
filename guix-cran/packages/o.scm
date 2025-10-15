@@ -6685,13 +6685,13 @@ Universidad Torcuato Di Tella.")
 (define-public r-opi
   (package
     (name "r-opi")
-    (version "3.0.4")
+    (version "3.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPI" version))
        (sha256
-        (base32 "1hbkvqgnncy6lv5ps2hjvk00q97qx3qjjwaszkfkm6hi303z1px5"))))
+        (base32 "12v0w3z3b4p1j9114dnwl6zcr5gc4h8aaxfhb5v5k8pg5pjxv3ih"))))
     (properties `((upstream-name . "OPI")))
     (build-system r-build-system)
     (arguments

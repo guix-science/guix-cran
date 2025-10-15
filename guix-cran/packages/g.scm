@@ -4893,13 +4893,13 @@ the C++ code file from John Burkardt and John Denker (Brent, 2002).")
 (define-public r-groupedhyperframe-random
   (package
     (name "r-groupedhyperframe-random")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupedHyperframe.random" version))
        (sha256
-        (base32 "09n8bc585rvi2sp1nrgzhzgk01ggqrkh4fmxf0myqr63jzhnfanz"))))
+        (base32 "05cl2kyc2fsiyrdmqy6fl03i8gpccnnj05p2xmq98hpb4v1zyacv"))))
     (properties `((upstream-name . "groupedHyperframe.random")))
     (build-system r-build-system)
     (arguments
@@ -4907,8 +4907,8 @@ the C++ code file from John Burkardt and John Denker (Brent, 2002).")
       #:tests? #f))
     (propagated-inputs (list r-spatstat-random r-spatstat-geom r-mass
                              r-groupedhyperframe r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=groupedHyperframe.random")
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/tingtingzhan/groupedHyperframe.random")
     (synopsis "Simulated Grouped Hyper Data Frame")
     (description
      "An intuitive interface to simulate (1) superimposed (marked) point patterns with
@@ -4920,26 +4920,34 @@ subject-specific random effects.")
 (define-public r-groupedhyperframe
   (package
     (name "r-groupedhyperframe")
-    (version "0.2.4")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupedHyperframe" version))
        (sha256
-        (base32 "0f61n2lhhdcnbmav6z3amjcgg9b14x9pr8qcyrn9z215d7h354qy"))))
+        (base32 "16cgix27dx5pmr772klgvyww9af01274fkgqsddq7rmfp15j4ivf"))))
     (properties `((upstream-name . "groupedHyperframe")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-spatstat-geom
+    (propagated-inputs (list r-spatstat-random
+                             r-spatstat-geom
                              r-spatstat-explore
                              r-spatialpack
+                             r-scales
                              r-pracma
+                             r-patchwork
                              r-matrixstats
+                             r-ggplot2
+                             r-get
+                             r-geomtextpath
+                             r-foreach
+                             r-doparallel
                              r-cli))
     (native-inputs (list r-quarto))
-    (home-page "https://cran.r-project.org/package=groupedHyperframe")
+    (home-page "https://github.com/tingtingzhan/groupedHyperframe")
     (synopsis "Grouped Hyper Data Frame: An Extension of Hyper Data Frame")
     (description
      "An S3 class @code{groupedHyperframe} that inherits from hyper data frame.  Batch
@@ -17151,6 +17159,32 @@ this package can be referenced from Brown MC (1994) <doi:
 10.1016/0277-9536(94)90189-9>.")
     (license license:gpl3)))
 
+(define-public r-ginax
+  (package
+    (name "r-ginax")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GINAX" version))
+       (sha256
+        (base32 "0gg6lfggksydvy9y4knx362m3gn79xhp7x8kc0dx25ncchniwmlp"))))
+    (properties `((upstream-name . "GINAX")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-memoise r-matrix r-ga r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GINAX")
+    (synopsis
+     "Performs Genome-Wide Iterative Fine-Mapping for Non-Gaussian Data using GINA-X")
+    (description
+     "This package implements GINA-X, a genome-wide iterative fine-mapping method
+designed for non-Gaussian traits.  It supports the identification of credible
+sets of genetic variants.")
+    (license license:gpl3)))
+
 (define-public r-gimms
   (package
     (name "r-gimms")
@@ -22919,13 +22953,13 @@ time models, using the population-based Markov Chain Monte Carlo.")
 (define-public r-ggdiceplot
   (package
     (name "r-ggdiceplot")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggdiceplot" version))
        (sha256
-        (base32 "1ykkw7asa33h6qskd0h23s1n837c9pa9i41lvdsfnxmmdx1ib47k"))))
+        (base32 "0bk19cp69vzyij32jk9lnz6dpjv9iv1hp3al7n1xzxxmc1ypnaq6"))))
     (properties `((upstream-name . "ggdiceplot")))
     (build-system r-build-system)
     (arguments
@@ -24876,13 +24910,13 @@ the estimator and diagnostics tests can be fully user-specified, see Sucarrat
 (define-public r-getrad
   (package
     (name "r-getrad")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "getRad" version))
        (sha256
-        (base32 "0b9g31skqww46kavy5cqjbylpgz71h2bskz6y13h01xlbkyhsk48"))))
+        (base32 "1cv7406lifc8bfqc1alqxaclg8yd3c4rrlz3rfrzalnzb3bnnral"))))
     (properties `((upstream-name . "getRad")))
     (build-system r-build-system)
     (arguments
@@ -25810,13 +25844,13 @@ and Probability Letters, 79(24): 2493--2500. <doi:10.1016/j.spl.2009.09.003>.")
 (define-public r-gephiforr
   (package
     (name "r-gephiforr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GephiForR" version))
        (sha256
-        (base32 "0g1aq1k25pipnkm1xbsb7f9nx4j86ra2a39h9nrq9jzh40vd3ldr"))))
+        (base32 "0x0p0rprp9bdkyp1iylrwcpc6m15l68ybzy6m6ncsmj1avsc2mli"))))
     (properties `((upstream-name . "GephiForR")))
     (build-system r-build-system)
     (arguments
@@ -33441,13 +33475,13 @@ details of the method.")
 (define-public r-gcsm
   (package
     (name "r-gcsm")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GCSM" version))
        (sha256
-        (base32 "0apz1wh6nfpg2gyx12xnbdb3hjyrrpwlcrh5khn6cxhxm06q9l95"))))
+        (base32 "1qk2ybxrawrd5383gs1iwxrniikbk77vf6d83xfnwnb0iyvw0szn"))))
     (properties `((upstream-name . "GCSM")))
     (build-system r-build-system)
     (arguments

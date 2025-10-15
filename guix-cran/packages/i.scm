@@ -12122,13 +12122,13 @@ paired test allowing for missing values\".")
 (define-public r-incidentally
   (package
     (name "r-incidentally")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incidentally" version))
        (sha256
-        (base32 "0sj49n6szdl6mxz85vn01cjk1xxdchwpxjv07dp34f81m5bgzi5l"))))
+        (base32 "1ds00xivrimv8rzhy4li4bd6pamg39zpq9p42va0qns5ng98xlsi"))))
     (properties `((upstream-name . "incidentally")))
     (build-system r-build-system)
     (arguments
@@ -13766,77 +13766,68 @@ and refine personalized vaccination strategies across diverse populations.")
 (define-public r-immunarch
   (package
     (name "r-immunarch")
-    (version "0.9.1")
+    (version "0.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "immunarch" version))
        (sha256
-        (base32 "0z44z74zvb1ci931n8zxpvs36cpwx5my6qd77c4z50bgn2hr00rf"))))
+        (base32 "18k90fscfzf2d7lj9haq95vgz6a58729l6f9vjzfh65lzmczy078"))))
     (properties `((upstream-name . "immunarch")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-uuid
-                             r-upsetr
+    (propagated-inputs (list r-vctrs
                              r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
-                             r-stringi
                              r-stringdist
-                             r-shinythemes
-                             r-shiny
                              r-scales
-                             r-rtsne
                              r-rlist
                              r-rlang
                              r-reshape2
-                             r-readxl
                              r-readr
                              r-rcpp
                              r-purrr
                              r-plyr
                              r-pheatmap
-                             r-phangorn
                              r-patchwork
-                             r-mass
                              r-magrittr
-                             r-jsonlite
-                             r-igraph
+                             r-lifecycle
+                             r-immundata
                              r-glue
-                             r-ggseqlogo
-                             r-ggrepel
-                             r-ggraph
-                             r-ggpubr
+                             r-ggthemes
+                             r-ggsci
                              r-ggplot2
-                             r-ggalluvial
-                             r-fpc
-                             r-factoextra
+                             r-duckplyr
                              r-dtplyr
                              r-dplyr
                              r-doparallel
+                             r-dbplyr
                              r-data-table
+                             r-cli
                              r-circlize
+                             r-checkmate
                              r-ape
                              r-airr))
-    (native-inputs (list r-knitr))
-    (home-page "https://immunarch.com/")
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://immunomind.github.io/docs/")
     (synopsis
-     "Bioinformatics Analysis of T-Cell and B-Cell Immune Repertoires")
+     "Multi-Modal Immune Repertoire Analytics for Immunotherapy and Vaccine Design in R")
     (description
-     "This package provides a comprehensive framework for bioinformatics exploratory
-analysis of bulk and single-cell T-cell receptor and antibody repertoires.  It
-provides seamless data loading, analysis and visualisation for AIRR (Adaptive
-Immune Receptor Repertoire) data, both bulk immunosequencing (@code{RepSeq}) and
-single-cell sequencing (@code{scRNAseq}).  Immunarch implements most of the
-widely used AIRR analysis methods, such as: clonality analysis, estimation of
-repertoire similarities in distribution of clonotypes and gene segments,
-repertoire diversity analysis, annotation of clonotypes using external immune
-receptor databases and clonotype tracking in vaccination and cancer studies.  A
-successor to our previously published @code{tcR} immunoinformatics package
-(Nazarov 2015) <doi:10.1186/s12859-015-0613-1>.")
+     "This package provides a comprehensive analytics framework for building
+reproducible pipelines on T-cell and B-cell immune receptor repertoire data.
+Delivers multi-modal immune profiling (bulk, single-cell, CITE-seq/@code{AbSeq},
+spatial, immunogenicity data), feature engineering (ML-ready feature tables and
+matrices), and biomarker discovery workflows (cohort comparisons, longitudinal
+tracking, repertoire similarity, enrichment).  Provides a user-friendly
+interface to widely used AIRR methods â clonality/diversity, V(D)J usage,
+similarity, annotation, tracking, and many more.  Think Scanpy or Seurat, but
+for AIRR data, a.k.a.  Adaptive Immune Receptor Repertoire, VDJ-seq,
+@code{RepSeq}, or VDJ sequencing data.  A successor to our previously published
+\"@code{tcR}\" R package (Nazarov 2015).")
     (license license:asl2.0)))
 
 (define-public r-imml

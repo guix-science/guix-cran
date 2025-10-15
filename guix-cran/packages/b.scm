@@ -8961,13 +8961,13 @@ analysis and spatial mapping.")
 (define-public r-bolasso
   (package
     (name "r-bolasso")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bolasso" version))
        (sha256
-        (base32 "1b31wnpappjhnrfnl5awzcbyxamam0c1sm72shmzscdlfa116ys2"))))
+        (base32 "1kwk64zqcyxjdd3bjrc8s70lkhqvq2c2ygv518ws6rpykwsh11hh"))))
     (properties `((upstream-name . "bolasso")))
     (build-system r-build-system)
     (arguments
@@ -15464,13 +15464,13 @@ implementation can be understood by running examples in @code{modelFrame()}, and
 (define-public r-biodosetools
   (package
     (name "r-biodosetools")
-    (version "3.6.2")
+    (version "3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biodosetools" version))
        (sha256
-        (base32 "0igj508c4klj7h07mm89cicva39slmcajxfy6wkbcvii7xyj90cj"))))
+        (base32 "19f5ikmf1zch158ip93gz73hd5624nlj15ynlsni6pag91qx76dq"))))
     (properties `((upstream-name . "biodosetools")))
     (build-system r-build-system)
     (arguments
@@ -32947,13 +32947,13 @@ nowadays popular in various infographics to visualize any proportional ratios.")
 (define-public r-baf
   (package
     (name "r-baf")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baf" version))
        (sha256
-        (base32 "1bcz209dlkavd6v3cr54vgj4mbimar2c9a9jabdnicnqn9nk7izj"))))
+        (base32 "0l5znxf8jxv5c4inbxgs4zpf2kcgcshl6mm1slnlhy2rjbs5y42x"))))
     (properties `((upstream-name . "baf")))
     (build-system r-build-system)
     (arguments
@@ -33508,13 +33508,13 @@ Bayesian phylogenetics easily and reproducibly from R'.")
 (define-public r-babelmixr2
   (package
     (name "r-babelmixr2")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "babelmixr2" version))
        (sha256
-        (base32 "1kyhi3pxjdvyzll405han4y9gc6kd2l0pk4x120hcmv0865swklg"))))
+        (base32 "1rinm5r5s6kd57cak2zx4a1h3f08lyy7q92sap65jkgcswr358nx"))))
     (properties `((upstream-name . "babelmixr2")))
     (build-system r-build-system)
     (arguments

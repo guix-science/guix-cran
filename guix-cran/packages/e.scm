@@ -7601,13 +7601,13 @@ official statistics of the Japanese government.")
 (define-public r-estadistica
   (package
     (name "r-estadistica")
-    (version "0.2.3")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "estadistica" version))
        (sha256
-        (base32 "1l5ngjqm301rr1amsqdkazf7dg7c8nd0pvwy0hrsjk0m630q1kc4"))))
+        (base32 "11nhlj07wya322ks7cjd4r4xn2wjslf7njg40rmq87bl1y81zrsk"))))
     (properties `((upstream-name . "estadistica")))
     (build-system r-build-system)
     (arguments
@@ -7618,14 +7618,15 @@ official statistics of the Japanese government.")
                              r-shiny
                              r-rio
                              r-plotly
+                             r-openxlsx
                              r-knitr
-                             r-gridextra
                              r-ggplot2
                              r-forecast
                              r-dplyr
-                             r-data-table))
+                             r-cowplot
+                             r-cli))
     (home-page "https://www.uv.es/estadistic/")
-    (synopsis "Fundamentos De Estadistica Descriptiva e Inferencial")
+    (synopsis "Fundamentos de estadÃ­stica descriptiva e inferencial")
     (description
      "Este paquete pretende apoyar el proceso enseÃ±anza-aprendizaje de estadÃ­stica
 descriptiva e inferencial.  Las funciones contenidas en el paquete estadistica
@@ -7638,7 +7639,7 @@ course.  Many concepts are illustrated with dynamic graphs or web apps to make
 the understanding easier.  See: Esteban et al. (2005, ISBN: 9788497323741),
 Newbold et al.(2019, ISBN:9781292315034 ), Murgui et al. (2002,
 ISBN:9788484424673) .")
-    (license (list license:gpl2+ license:gpl3+))))
+    (license license:gpl3)))
 
 (define-public r-essurvey
   (package
@@ -8834,13 +8835,13 @@ updating of the dependence modelling (see Sheu et al., 2016,
 (define-public r-ernm
   (package
     (name "r-ernm")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ernm" version))
        (sha256
-        (base32 "1jb2a60n8ljf700y22dcna964ygjm2h23iv8v9ajn30s4g2w3ybk"))))
+        (base32 "01y417h585l5xj0hfahj8jr4mwvmv5iwi1w7plsacgdzsnaps2m3"))))
     (properties `((upstream-name . "ernm")))
     (build-system r-build-system)
     (arguments
@@ -18960,13 +18961,13 @@ semi-variogram fitting process.")
 (define-public r-egm
   (package
     (name "r-egm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EGM" version))
        (sha256
-        (base32 "0malpx9idfhhavlq5j4awdkicz8ww2gqsfrw5kwycbsvymb5bm2b"))))
+        (base32 "1vy3sk7gx6nr66ia9jw992jia3g6x707l3c8wpn9snngsdsnvfik"))))
     (properties `((upstream-name . "EGM")))
     (build-system r-build-system)
     (arguments
@@ -18975,25 +18976,27 @@ semi-variogram fitting process.")
     (propagated-inputs (list r-xml2
                              r-vctrs
                              r-stringr
+                             r-signal
                              r-rlang
                              r-lifecycle
                              r-ggplot2
                              r-fs
                              r-data-table
+                             r-cpp11
                              r-checkmate
                              r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://shah-in-boots.github.io/EGM/")
-    (synopsis "Evaluating Cardiac Electrophysiology Signals")
+    (synopsis "Intracardiac Electrograms")
     (description
      "This package provides a system for importing electrophysiological signal, based
 on the Waveform Database (WFDB) software package, written by Moody et al 2022
 <doi:10.13026/gjvw-1m31>.  A wrapper for utilizing WFDB functions for reading
 and writing signal data, as well as functions for visualization and analysis are
 provided.  A stable and broadly compatible class for working with signal data,
-supporting the reading in of cardiac electrophysiogical files such as
+supporting the reading in of cardiac electrophysiological files such as
 intracardiac electrograms, is introduced.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-eglhmm
   (package
@@ -19653,13 +19656,13 @@ procedures, like principal axis factoring (PAF), are implemented in C++.")
 (define-public r-efafactors
   (package
     (name "r-efafactors")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFAfactors" version))
        (sha256
-        (base32 "0l1x2wph4jax35qaq4vk10rj32d8345bd4qdzn1frnx7xlm6wq4z"))))
+        (base32 "034sqz3agmla0mjb07pgjrhc2x834hsm58bszzf1bj07cdygr62x"))))
     (properties `((upstream-name . "EFAfactors")))
     (build-system r-build-system)
     (arguments

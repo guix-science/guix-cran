@@ -1595,6 +1595,29 @@ for certain applications given smaller sample sizes.  The package is based on
 the method introduced in Hutson (2024) <doi:10.1080/03610918.2022.2032161>.")
     (license license:gpl3)))
 
+(define-public r-quantregranger
+  (package
+    (name "r-quantregranger")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantregRanger" version))
+       (sha256
+        (base32 "1a9q2prr790bpw6s0y5ni5ppd3vqkjr0v4nqp6ywcj5n3sk69pvx"))))
+    (properties `((upstream-name . "quantregRanger")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-ranger))
+    (home-page "https://github.com/PhilippPro/quantregRanger")
+    (synopsis "Quantile Regression Forests for 'ranger'")
+    (description
+     "This is the implementation of quantile regression forests for the fast random
+forest package ranger'.")
+    (license license:gpl3)))
+
 (define-public r-quantreggrowth
   (package
     (name "r-quantreggrowth")
@@ -4963,13 +4986,13 @@ original data set.")
 (define-public r-qol
   (package
     (name "r-qol")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qol" version))
        (sha256
-        (base32 "0c43zjr6gkm4njjgiv3ii43qdwa0l2cljz82yr8363qyga8l7bhm"))))
+        (base32 "02g1xrambivp50f5fiff7hwic3rpn3pq0cl116x6ama1sma21k59"))))
     (properties `((upstream-name . "qol")))
     (build-system r-build-system)
     (arguments
@@ -4983,12 +5006,12 @@ original data set.")
      "The main goal is to make descriptive evaluations easier to create bigger and
 more complex outputs in less time with less code.  Introducing format containers
 with multilabels
-<https:[https://documentation.sas.com/doc/en/pgmsascdc/v_067/proc/p06ciqes4eaqo6n0zyqtz9p21nfb.htm]>,
+<https://documentation.sas.com/doc/en/pgmsascdc/v_067/proc/p06ciqes4eaqo6n0zyqtz9p21nfb.htm>,
 a more powerful summarise which is capable to output every possible combination
 of the provided grouping variables in one go
-<https:[https://documentation.sas.com/doc/en/pgmsascdc/v_067/proc/p0jvbbqkt0gs2cn1lo4zndbqs1pe.htm]>,
+<https://documentation.sas.com/doc/en/pgmsascdc/v_067/proc/p0jvbbqkt0gs2cn1lo4zndbqs1pe.htm>,
 tabulation functions which can create any table in different styles
-<https:[https://documentation.sas.com/doc/en/pgmsascdc/v_067/proc/n1ql5xnu0k3kdtn11gwa5hc7u435.htm]>
+<https://documentation.sas.com/doc/en/pgmsascdc/v_067/proc/n1ql5xnu0k3kdtn11gwa5hc7u435.htm>
 and other more readable functions.  The code is optimized to work fast even with
 datasets of over a million observations.")
     (license license:expat)))
@@ -5275,13 +5298,13 @@ recoding of nominal data.")
 (define-public r-qlcal
   (package
     (name "r-qlcal")
-    (version "0.0.16")
+    (version "0.0.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qlcal" version))
        (sha256
-        (base32 "07v4ardvpp6a9b1smn4fbsvyn6jmiplj1wsvrlidk26xxc1vwlm1"))))
+        (base32 "1xqg4iv601kpk8bggcssc6145f88gnrwdc8imzd742npq77cvml4"))))
     (properties `((upstream-name . "qlcal")))
     (build-system r-build-system)
     (arguments

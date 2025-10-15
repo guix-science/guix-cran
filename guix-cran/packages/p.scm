@@ -46059,6 +46059,33 @@ information, please see Gruenstaeudl and Jenke (2020)
 <doi:10.1186/s12859-020-3475-0>.")
     (license (license:fsdg-compatible "BSD 3-clause License + file LICENSE"))))
 
+(define-public r-pacviz
+  (package
+    (name "r-pacviz")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pacviz" version))
+       (sha256
+        (base32 "0qw0zsa9p84h14ldv4s6zv6z90mzx3w1ypmcbsgx0yb3hrd5hrmj"))))
+    (properties `((upstream-name . "pacviz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plotrix r-circlize))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pacviz")
+    (synopsis "Pac-Man Visualization Package")
+    (description
+     "This package provides a broad-view perspective on data via linear mapping of
+data onto a radial coordinate system.  The package contains functions to
+visualize the residual values of linear regression and Cartesian data in the
+defined radial scheme.  See the pacviz documentation page for more information:
+<https://pacviz.sriley.dev/>.")
+    (license license:expat)))
+
 (define-public r-pacu
   (package
     (name "r-pacu")
@@ -46410,13 +46437,13 @@ in web applications, and much more.")
 (define-public r-packagerank
   (package
     (name "r-packagerank")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "packageRank" version))
        (sha256
-        (base32 "0hr659khgy42509nq87m8gq1hr8w11khsf6h7b59lblhp4h51yg4"))))
+        (base32 "1nn9h8w8m4yasd3c4if7jgr078h6k8j3i2qbnzngxjg2isdq7vdx"))))
     (properties `((upstream-name . "packageRank")))
     (build-system r-build-system)
     (arguments
@@ -46424,17 +46451,18 @@ in web applications, and much more.")
       #:tests? #f))
     (propagated-inputs (list r-sugrrants
                              r-rversions
-                             r-rlang
                              r-rcurl
                              r-r-utils
                              r-pkgsearch
+                             r-patchwork
                              r-memoise
                              r-isocodes
                              r-ggplot2
                              r-fasttime
                              r-data-table
                              r-curl
-                             r-cranlogs))
+                             r-cranlogs
+                             r-cachem))
     (home-page "https://github.com/lindbrook/packageRank")
     (synopsis
      "Computation and Visualization of Package Download Counts and Percentile Ranks")

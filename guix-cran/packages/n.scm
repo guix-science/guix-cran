@@ -7370,6 +7370,43 @@ evidence contributions through proportion bars based on the hat matrix and
 evidence flow decomposition.")
     (license license:gpl2)))
 
+(define-public r-nmadta
+  (package
+    (name "r-nmadta")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMADTA" version))
+       (sha256
+        (base32 "1r3vgcwcvk00cd0q3n1rs1kjwgmkx42sr3c7s6b2v9mjp9s0m6rz"))))
+    (properties `((upstream-name . "NMADTA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rjags
+                             r-reshape2
+                             r-rdpack
+                             r-plotrix
+                             r-mcmcpack
+                             r-mass
+                             r-ks
+                             r-ggplot2
+                             r-coda))
+    (home-page "https://cran.r-project.org/package=NMADTA")
+    (synopsis "Network Meta-Analysis of Multiple Diagnostic Tests")
+    (description
+     "This package implements HSROC (hierarchical summary receiver operating
+characteristic) model developed by Ma, Lian, Chu, Ibrahim, and Chen (2018)
+<doi:10.1093/biostatistics/kxx025> and hierarchical model developed by Lian,
+Hodges, and Chu (2019) <doi:10.1080/01621459.2018.1476239> for performing
+meta-analysis for 1-5 diagnostic tests to simultaneously compare multiple tests
+within a missing data framework.  This package evaluates the accuracy of
+multiple diagnostic tests and also gives graphical representation of the
+results.")
+    (license license:gpl2+)))
+
 (define-public r-nma
   (package
     (name "r-nma")
@@ -10456,13 +10493,13 @@ Protection Agency <https://www.epa.gov/waterdata/basic-information>.")
 (define-public r-nhanesa
   (package
     (name "r-nhanesa")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhanesA" version))
        (sha256
-        (base32 "1nxmfk5cs1yy0q2z2v8bk31z9lhvv46v0qm1xgjmscnr574ykjim"))))
+        (base32 "088zid9j8bv9sy0jlrng69jn9j5h75lq93sfh8wbilhjfjdb2s87"))))
     (properties `((upstream-name . "nhanesA")))
     (build-system r-build-system)
     (arguments
@@ -16353,13 +16390,13 @@ statistics for teams, conferences, divisions, or custom groups of teams.")
 (define-public r-nca
   (package
     (name "r-nca")
-    (version "4.0.2")
+    (version "4.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NCA" version))
        (sha256
-        (base32 "0lwrks09pskgc23sl174bvkh3zypqpgq3ia2hp1gnbaxwcf0h3zr"))))
+        (base32 "0kvj9zv96wi52jgwjn6hxvs28ksyrd987d3kxp7fsv15sp1c7f2i"))))
     (properties `((upstream-name . "NCA")))
     (build-system r-build-system)
     (arguments
@@ -16375,7 +16412,8 @@ statistics for teams, conferences, divisions, or custom groups of teams.")
                              r-ggplot2
                              r-foreach
                              r-doparallel))
-    (home-page "https://www.erim.eur.nl/necessary-condition-analysis/")
+    (home-page
+     "https://www.eur.nl/en/erim/erim/research-initiatives/necessary-condition-analysis")
     (synopsis "Necessary Condition Analysis")
     (description
      "This package performs a Necessary Condition Analysis (NCA). (Dul, J. 2016.
@@ -17289,13 +17327,13 @@ GITHUB_PAT'.  natmanager will help the end user set this up if necessary.")
 (define-public r-natcpp
   (package
     (name "r-natcpp")
-    (version "0.1.0")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "natcpp" version))
        (sha256
-        (base32 "0fy27dq6w9i9rir2v22zimzxibsaj9n4gbsl70ca4q57mgprl1hn"))))
+        (base32 "1jxldf4gjs92cqb41bs09vzhqy2mardg6bxlxrqi3bg8ccwgja3d"))))
     (properties `((upstream-name . "natcpp")))
     (build-system r-build-system)
     (arguments

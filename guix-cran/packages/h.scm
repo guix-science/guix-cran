@@ -1934,13 +1934,13 @@ problems.")
 (define-public r-hvt
   (package
     (name "r-hvt")
-    (version "25.2.5")
+    (version "25.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HVT" version))
        (sha256
-        (base32 "1k24p0wns7wl87ah56d7np18kcd47d341a0qb1n1sdh51cf9hjx8"))))
+        (base32 "1lz7lpja45pyj1bymy91s28jaan4inp66fjipqafqjrj9av0c45b"))))
     (properties `((upstream-name . "HVT")))
     (build-system r-build-system)
     (arguments

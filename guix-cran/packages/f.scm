@@ -518,13 +518,13 @@ the @code{FuzzyNumbers} package.")
 (define-public r-fuzzysim
   (package
     (name "r-fuzzysim")
-    (version "4.36")
+    (version "4.38")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzySim" version))
        (sha256
-        (base32 "0k4pa855vzp1zp6qvawg70djyg52kr8d8hd1ka4bna2dycax20fc"))))
+        (base32 "1a8qjdlpp07yxi5nwadcdivfhqw591scckyghbppr4pgqrwkbbi8"))))
     (properties `((upstream-name . "fuzzySim")))
     (build-system r-build-system)
     (arguments
@@ -5924,6 +5924,33 @@ frailty distributions using a consistent and asymptotically-normal estimator.
 Currently supports: gamma, power variance function, log-normal, and inverse
 Gaussian frailty models.")
     (license license:lgpl2.0)))
+
+(define-public r-frailtyroc
+  (package
+    (name "r-frailtyroc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "frailtyROC" version))
+       (sha256
+        (base32 "1wxlcf4d7m0dr46gvl6wnjzri52rwy39zdmpwsr280dk8b54fc2j"))))
+    (properties `((upstream-name . "frailtyROC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xpectr r-survival r-frailtypack))
+    (home-page "https://cran.r-project.org/package=frailtyROC")
+    (synopsis
+     "Time-Dependent ROC Curve Estimation for Correlated Right-Censored Survival Data")
+    (description
+     "This contains functions that can be used to estimate a smoothed and a
+non-smoothed (empirical) time-dependent receiver operating characteristic curve
+and the corresponding area under the receiver operating characteristic curve for
+correlated right-censored time-to-event data.  See Beyene and Chen (2024)
+<doi:10.1177/09622802231220496>.")
+    (license license:gpl2+)))
 
 (define-public r-frailtypack
   (package
@@ -11896,13 +11923,13 @@ visualization platform <https://developers.flourish.studio/api/introduction/>.")
 (define-public r-florabr
   (package
     (name "r-florabr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "florabr" version))
        (sha256
-        (base32 "1lrdclync6y61ark4czcl8kbvksakbzf5pj1gkvk1f8wwmfb0kp6"))))
+        (base32 "15frlskwzhx26czgxbn4cqhx48vy5j0iznzk2zygizfkwwjjm72m"))))
     (properties `((upstream-name . "florabr")))
     (build-system r-build-system)
     (arguments
@@ -18981,6 +19008,35 @@ operator displays documents and contents (source or structure) of objects
 simultaneously to help understanding the objects.  The `?p` pseudo-postfix
 operator displays package documents, and is shorter than help(package = foo).")
     (license license:expat)))
+
+(define-public r-fejiv
+  (package
+    (name "r-fejiv")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fejiv" version))
+       (sha256
+        (base32 "04886bnhm14bjac92wr80kwdwwj8lsf2zzmh3g68qwidbnnlg0qb"))))
+    (properties `((upstream-name . "fejiv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-mass))
+    (home-page "https://cran.r-project.org/package=fejiv")
+    (synopsis "Fixed Effect Jackknife Instrumental Variables Estimation")
+    (description
+     "This package implements the Fixed Effect Jackknife Instrumental Variables
+('FEJIV') estimator of Chao, Swanson, and Woutersen (2023)
+<doi:10.1016/j.jeconom.2022.12.011>, allowing consistent IV estimation with many
+(possibly weak) instruments, cluster fixed effects, heteroskedastic errors, and
+many exogenous covariates.  The estimator is recommended by SÅoczyÅski (2024)
+<doi:10.48550/@code{arXiv.2011.06695>} as an alternative to two-stage least
+squares when estimating the interacted specification of Angrist and Imbens
+(1995) <doi:10.1080/01621459.1995.10476535>.")
+    (license license:gpl2+)))
 
 (define-public r-feisr
   (package

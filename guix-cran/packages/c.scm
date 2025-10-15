@@ -4102,13 +4102,13 @@ details.")
 (define-public r-cstime
   (package
     (name "r-cstime")
-    (version "2023.5.3")
+    (version "2025.10.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cstime" version))
        (sha256
-        (base32 "0x6nilc1971fjb5s7im6jp3az13r7rd5z3pc0y7kglggp33aqw6i"))))
+        (base32 "0mlnjrii8rcvjjbv40whn74vvql4p2j70llclnlv7d1sxqsz9q54"))))
     (properties `((upstream-name . "cstime")))
     (build-system r-build-system)
     (arguments
@@ -27433,13 +27433,13 @@ genomic regions where the copy number differs from the norm.")
 (define-public r-cnorm
   (package
     (name "r-cnorm")
-    (version "3.5.0")
+    (version "3.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cNORM" version))
        (sha256
-        (base32 "1zk5az36nnbj3980hy62lld1qccgj4zbsmv9mxyr4v38nljgg6rb"))))
+        (base32 "0fvk9zjgbshdq37qrnibiw6yxj7rb11yv01vk5rlxdacmrf91jy5"))))
     (properties `((upstream-name . "cNORM")))
     (build-system r-build-system)
     (arguments
@@ -27464,7 +27464,11 @@ and analytical evaluation of model fit, accommodates a wide range of scales
 including those with negative and descending values, and even supports
 conventional norming.  It generates norm tables including confidence intervals.
 It also includes methods for addressing representativeness issues through
-Iterative Proportional Fitting.")
+Iterative Proportional Fitting.  Based on Lenhard et al. (2016)
+<doi:10.1177/1073191116656437>, Lenhard et al. (2019)
+<doi:10.1371/journal.pone.0222279>, Lenhard and Lenhard (2021)
+<doi:10.1177/0013164420928457> and Gary et al. (2023)
+<doi:10.1007/s00181-023-02456-0>.")
     (license license:agpl3)))
 
 (define-public r-cnmap
@@ -49946,6 +49950,45 @@ travel, accommodation, and clinical activities.  The package is designed for
 easy integration into R workflows, with additional support for shiny
 applications and community-driven extensions.")
     (license license:lgpl3+)))
+
+(define-public r-carbonpredict
+  (package
+    (name "r-carbonpredict")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "carbonpredict" version))
+       (sha256
+        (base32 "1m6i83322m6kxbvh5kmyh4l893p16a14phdc9bv2p9jnvbl4b3kk"))))
+    (properties `((upstream-name . "carbonpredict")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-progress
+                             r-networkd3
+                             r-lmertest
+                             r-htmlwidgets
+                             r-htmltools
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/david-leake/carbonpredict")
+    (synopsis "Predict Carbon Emissions for UK SMEs")
+    (description
+     "Predict Scope 1, 2 and 3 carbon emissions for UK Small and Medium-sized
+Enterprises (SMEs), using Standard Industrial Classification (SIC) codes and
+annual turnover data.  The carbonpredict package provides single and batch
+prediction, plotting, and workflow tools for carbon accounting and reporting.
+The package utilises pre-trained models, leveraging rich classified transaction
+data to accurately predict Scope 1, 2 and 3 carbon emissions for UK SMEs as well
+as identifying emissions hotspots.  The methodology used to produce the
+estimates in this package is fully detailed in the following peer-reviewed
+publication in the Journal of Industrial Ecology: Phillpotts, A., Owen.  A.,
+Norman, J., Trendl, A., Gathergood, J., Jobst, Norbert., Leake, D. (2025)
+<doi:10.1111/jiec.70106> \"Bridging the SME Reporting Gap: A New Model for
+Predicting Scope 1 and 2 Emissions\".")
+    (license license:expat)))
 
 (define-public r-carbondate
   (package

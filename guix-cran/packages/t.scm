@@ -25580,13 +25580,13 @@ can be used to execute and test studies that use the CDM
 (define-public r-testgardener
   (package
     (name "r-testgardener")
-    (version "3.3.5")
+    (version "3.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestGardener" version))
        (sha256
-        (base32 "1057v6jm7jfw6zq9190837hg4kq0pi86s24j0iip7zsnn6294q1h"))))
+        (base32 "115jf22h21bk3g3r9rrcglhrni11ivsyz461ghng4hpsy5injklm"))))
     (properties `((upstream-name . "TestGardener")))
     (build-system r-build-system)
     (arguments
@@ -25596,7 +25596,6 @@ can be used to execute and test studies that use the CDM
                              r-tidyr
                              r-stringr
                              r-rmarkdown
-                             r-rgl
                              r-pracma
                              r-plotly
                              r-knitr

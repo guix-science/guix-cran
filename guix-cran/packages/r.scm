@@ -3943,13 +3943,13 @@ described in Kristensen et al. (2016) <doi:10.18637/jss.v070.i05>.")
 (define-public r-rtmb
   (package
     (name "r-rtmb")
-    (version "1.7")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTMB" version))
        (sha256
-        (base32 "0wycxsd2hz4akyiwgrnrj7xbqwydvjgyqfwnf2nsynmwdkq5s8wq"))))
+        (base32 "1n8z37mkxf0w9ccz17s6axr01nr37lwvwsgm40i45n0bn89zj9b2"))))
     (properties `((upstream-name . "RTMB")))
     (build-system r-build-system)
     (arguments
@@ -5288,13 +5288,13 @@ what) and clauses (who did what).  Method proposed in Van Atteveldt et al.
 (define-public r-rsyncrosim
   (package
     (name "r-rsyncrosim")
-    (version "2.1.2")
+    (version "2.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsyncrosim" version))
        (sha256
-        (base32 "0q5abi67rrm0qys13r01ris3x5chxww4kff24gvhyz45wnhpbfll"))))
+        (base32 "1rdkf0ag1jnr8fxzk5jcwkyr0si5zs0pmfx41s4f2bklg3gi4fvx"))))
     (properties `((upstream-name . "rsyncrosim")))
     (build-system r-build-system)
     (arguments
@@ -7723,46 +7723,6 @@ SFA toolkit 1.0 by Pietro Berkes and SFA toolkit 2.8 by Wolfgang Konen.")
 generated using a bookdown format.  YAML fields can be further customized.
 Additional helper functions provide extra features to the RSF.")
     (license license:expat)))
-
-(define-public r-rsetse
-  (package
-    (name "r-rsetse")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rsetse" version))
-       (sha256
-        (base32 "095f37a48l9dhz5s3zri6y1kv74x150wrrxinrh177mi3m63shgr"))))
-    (properties `((upstream-name . "rsetse")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-purrr
-                             r-minpack-lm
-                             r-matrix
-                             r-magrittr
-                             r-igraph
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/JonnoB/rSETSe")
-    (synopsis "Strain Elevation Tension Spring Embedding")
-    (description
-     "An R implementation for the Strain Elevation and Tension embedding algorithm
-from Bourne (2020) <doi:10.1007/s41109-020-00329-4>.  The package embeds graphs
-and networks using the Strain Elevation and Tension embedding (SETSe) algorithm.
- SETSe represents the network as a physical system, where edges are elastic, and
-nodes exert a force either up or down based on node features.  SETSe positions
-the nodes vertically such that the tension in the edges of a node is equal and
-opposite to the force it exerts for all nodes in the network.  The resultant
-structure can then be analysed by looking at the node elevation and the edge
-strain and tension.  This algorithm works on weighted and unweighted networks as
-well as networks with or without explicit node features.  Edge elasticity can be
-created from existing edge weights or kept as a constant.")
-    (license license:gpl3)))
 
 (define-public r-rsentiment
   (package
@@ -14218,20 +14178,20 @@ a symmetric positive definite matrix generator, see Mezzadri, F. (2007)
 (define-public r-ronfig
   (package
     (name "r-ronfig")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ronfig" version))
        (sha256
-        (base32 "0y9i11rbmfln4yiziq3ykvp392g9s65njd1kh28ldpylzn71jbw6"))))
+        (base32 "0vmb1hha6lsj4a2idmqgg1rg1s4l6wyglq2lcfc1kdbf2g32hnhn"))))
     (properties `((upstream-name . "ronfig")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-cli r-carrier))
-    (native-inputs (list r-litedown))
+    (native-inputs (list r-quarto))
     (home-page "https://timtaylor.codeberg.page/ronfig/")
     (synopsis "Load Configuration Values")
     (description
@@ -24895,13 +24855,13 @@ implemented with @code{JavaScript} for node and browsers.")
 (define-public r-rixpress
   (package
     (name "r-rixpress")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rixpress" version))
        (sha256
-        (base32 "1n0338pkl6ma7pq76qrcqv83w9a7wavxlr5r3gjr4dbilcpgj7xf"))))
+        (base32 "0rhq3l5nmrla76pvr57aq0a23xj5x57iv2p0fjr0qr6yprmhrphm"))))
     (properties `((upstream-name . "rixpress")))
     (build-system r-build-system)
     (arguments
@@ -27744,13 +27704,13 @@ Hudgens (2015) <doi:10.1002/sim.6384>.")
 (define-public r-ri2
   (package
     (name "r-ri2")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ri2" version))
        (sha256
-        (base32 "0k85rmjl0inida4wx6d612vp35sr4cg2zsmrby8rl7p4gwrbix5v"))))
+        (base32 "12wcfnpmpv1gb8scvhjfx1dmg8izysvh0d7qm5smsdq4w2qz1faq"))))
     (properties `((upstream-name . "ri2")))
     (build-system r-build-system)
     (arguments
@@ -31071,13 +31031,13 @@ Steve Horvath (2006) <doi:10.1198/106186006X94072> & Monti et al (2003)
 (define-public r-rfast2
   (package
     (name "r-rfast2")
-    (version "0.1.5.4")
+    (version "0.1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rfast2" version))
        (sha256
-        (base32 "0w3ikc6yd2a0d4ymqk8lpbrqk1vr74ha6xvnbfphnpgsgjbgi2j3"))))
+        (base32 "1vi456nx4gs81f5ks4v0qvm76z52zfxlbshc1501b9hlxhyk96v3"))))
     (properties `((upstream-name . "Rfast2")))
     (build-system r-build-system)
     (arguments
@@ -45363,13 +45323,13 @@ and will be transformed into a R data frame.")
 (define-public r-rcrisp
   (package
     (name "r-rcrisp")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcrisp" version))
        (sha256
-        (base32 "09gsgqq26vv7v0fb5pzpy2dslpb08x08578b34i6d5yv54h2zymc"))))
+        (base32 "0lmfzvzdhpk1s03jf27xzsvkv9p6912wlf4yyw96m6arz7pb7ahs"))))
     (properties `((upstream-name . "rcrisp")))
     (build-system r-build-system)
     (arguments
@@ -50234,13 +50194,13 @@ analysis methods across imputations, and tidying results for reporting.")
 (define-public r-rbmi
   (package
     (name "r-rbmi")
-    (version "1.4.1")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbmi" version))
        (sha256
-        (base32 "0vr98fybp2115fa8s7z8miiyyj1l8q89b1kxrpx40f5vs9gnc8x8"))))
+        (base32 "05ihl2b3fci6ykkq2zihz0hm9v4d1mw85x5sqajyrwwgymbll5bq"))))
     (properties `((upstream-name . "rbmi")))
     (build-system r-build-system)
     (arguments
@@ -50250,7 +50210,14 @@ analysis methods across imputations, and tidying results for reporting.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-r6 r-pkgload r-mmrm r-matrix r-assertthat))
+    (propagated-inputs (list r-stringr
+                             r-r6
+                             r-pkgload
+                             r-mmrm
+                             r-matrix
+                             r-jinjar
+                             r-fs
+                             r-assertthat))
     (native-inputs (list r-r-rsp))
     (home-page "https://insightsengineering.github.io/rbmi/")
     (synopsis "Reference Based Multiple Imputation")
@@ -51725,13 +51692,13 @@ details.")
 (define-public r-ravenr
   (package
     (name "r-ravenr")
-    (version "2.2.3")
+    (version "2.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RavenR" version))
        (sha256
-        (base32 "0idwdxgvyb72cm53zcj0dy7mfvwjx6za8d8whmbwb4qp20ixdd3x"))))
+        (base32 "0sm594vmciaksdwn1s4xmpgd2a5ig4kf38qz8wvf4gp6mfy0qap7"))))
     (properties `((upstream-name . "RavenR")))
     (build-system r-build-system)
     (arguments

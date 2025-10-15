@@ -3215,6 +3215,48 @@ describing the methodology is under development and will be formally referenced
 upon publication.")
     (license license:gpl3)))
 
+(define-public r-dteassurance
+  (package
+    (name "r-dteassurance")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DTEAssurance" version))
+       (sha256
+        (base32 "0sq1ffvzgl31qwm9ahv47ca6prb49la5h1zmsrc6ybb2ymi12nql"))))
+    (properties `((upstream-name . "DTEAssurance")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-shiny
+                             r-shelf
+                             r-rpact
+                             r-rlang
+                             r-rjags
+                             r-nphrct
+                             r-nph
+                             r-nleqslv
+                             r-magrittr
+                             r-future-apply
+                             r-dplyr))
+    (home-page "https://jamesalsbury.github.io/DTEAssurance/")
+    (synopsis
+     "Assurance Methods for Clinical Trials with a Delayed Treatment Effect")
+    (description
+     "This package provides functions for planning clinical trials subject to a
+delayed treatment effect using assurance-based methods.  Includes two shiny
+applications for interactive exploration, simulation, and visualisation of trial
+designs and outcomes.  The methodology is described in: Salsbury JA, Oakley JE,
+Julious SA, Hampson LV (2024) \"Assurance methods for designing a clinical trial
+with a delayed treatment effect\" <doi:10.1002/sim.10136>, Salsbury JA, Oakley
+JE, Julious SA, Hampson LV (2024) \"Adaptive clinical trial design with delayed
+treatment effects using elicited prior distributions\"
+<doi:10.48550/@code{arXiv.2509.07602>}.")
+    (license license:expat)))
+
 (define-public r-dtda-ni
   (package
     (name "r-dtda-ni")
@@ -7777,19 +7819,20 @@ visualization.")
 (define-public r-dowser
   (package
     (name "r-dowser")
-    (version "2.3")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dowser" version))
        (sha256
-        (base32 "0bd8bnz98g4jawfgbacssngw3ind41zbqdv79g8d3z8rxkndcpjb"))))
+        (base32 "1zlxl813fd2khjwcfnd25ay8wp1apwrazdhxg60w5nvk90in3r1l"))))
     (properties `((upstream-name . "dowser")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-treeio
+                             r-tidyselect
                              r-tidyr
                              r-stringr
                              r-shazam
@@ -8022,13 +8065,13 @@ you to visualize all your data with graphic representation.")
 (define-public r-douconca
   (package
     (name "r-douconca")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "douconca" version))
        (sha256
-        (base32 "00q9xkfmmdy4l1vywyqm0y8rjnqxzrhbsnfj8hdrcwskqy92kdfn"))))
+        (base32 "06x8xhg6l8bp9cv5bn9fbi1llwh0dpwpbhqzs0mnnjr9d2xxhjhr"))))
     (properties `((upstream-name . "douconca")))
     (build-system r-build-system)
     (arguments
@@ -26268,13 +26311,13 @@ the vast majority of the time (>95%).")
 (define-public r-dear
   (package
     (name "r-dear")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deaR" version))
        (sha256
-        (base32 "1xz1yh5vxf6nv8qlpi0b4pxdc01z543bdj1yifadiv6m4kp0g5nc"))))
+        (base32 "1lc949mx5jaf5jngja4yaqkmizvs151lpay1nb4a7n09j4y78pdr"))))
     (properties `((upstream-name . "deaR")))
     (build-system r-build-system)
     (arguments
@@ -26292,11 +26335,11 @@ the vast majority of the time (>95%).")
     (home-page "https://cran.r-project.org/package=deaR")
     (synopsis "Conventional and Fuzzy Data Envelopment Analysis")
     (description
-     "Set of functions for Data Envelopment Analysis.  It runs both classic and fuzzy
-DEA models.  See: Banker, R.; Charnes, A.; Cooper, W.W. (1984).
-<doi:10.1287/mnsc.30.9.1078>, Charnes, A.; Cooper, W.W.; Rhodes, E. (1978).
-<doi:10.1016/0377-2217(78)90138-8> and Charnes, A.; Cooper, W.W.; Rhodes, E.
-(1981). <doi:10.1287/mnsc.27.6.668>.")
+     "Set of functions for Data Envelopment Analysis, including classical, fuzzy,
+cross-efficiency, bootstrapping, and Malmquist models.  See: Banker, R.;
+Charnes, A.; Cooper, W.W. (1984). <doi:10.1287/mnsc.30.9.1078>, Charnes, A.;
+Cooper, W.W.; Rhodes, E. (1978). <doi:10.1016/0377-2217(78)90138-8> and Charnes,
+A.; Cooper, W.W.; Rhodes, E. (1981). <doi:10.1287/mnsc.27.6.668>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-deal
@@ -30881,13 +30924,13 @@ Publishing.")
 (define-public r-datana
   (package
     (name "r-datana")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datana" version))
        (sha256
-        (base32 "08zx2d6f3b7vzsi5ccrqnk2x08n9kphhrbx8msh0r239pam36hh1"))))
+        (base32 "024s3sfs3gmrm4wb3zy9s35c1zslwvjh1a106y07f5q040fwv04x"))))
     (properties `((upstream-name . "datana")))
     (build-system r-build-system)
     (arguments

@@ -1905,13 +1905,13 @@ likelihood (PL) or penalized least squares (PLS).  For details, please see Huang
 (define-public r-lsirm12pl
   (package
     (name "r-lsirm12pl")
-    (version "1.3.7")
+    (version "1.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lsirm12pl" version))
        (sha256
-        (base32 "1d6zn6kyk9kv7w1m3q443a4jxr1bdwbg8lphxa6lslfhbhjs3j1h"))))
+        (base32 "1hrbjrxxyrhlq3rcvfc4qva5dp559id1qmg43faqbk2ldjypgjpq"))))
     (properties `((upstream-name . "lsirm12pl")))
     (build-system r-build-system)
     (arguments

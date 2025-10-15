@@ -2387,6 +2387,35 @@ application in the context of Brain-Computer Interfaces EEG denoising can be
 found in Gouy-Pailler et al (2010) <doi:10.1109/TBME.2009.2032162>.")
     (license license:gpl2+)))
 
+(define-public r-jointcomprisk
+  (package
+    (name "r-jointcomprisk")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jointCompRisk" version))
+       (sha256
+        (base32 "0a9di2ddbvwn6yqf750saw149276qqpkywjjb6zd0hvi40hy5s2a"))))
+    (properties `((upstream-name . "jointCompRisk")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-rlang r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cathyzzzhang/jointCompRisk")
+    (synopsis
+     "Joint Inference for Competing Risks Data Using Multiple Endpoints")
+    (description
+     "This package provides tools for competing risks trials that allow simultaneous
+inference on recovery and mortality endpoints.  Provides data preparation
+helpers, standard cumulative incidence estimators (restricted mean time
+gained/lost), and severity weighted extensions that integrate longitudinal
+ordinal outcomes to summarise treatment benefit.  Methods follow Wen, Wang, and
+Hu (2023) Biometrics 79(3):1635-1645 <doi:10.1111/biom.13752>.")
+    (license license:expat)))
+
 (define-public r-jointcalib
   (package
     (name "r-jointcalib")
@@ -3704,13 +3733,13 @@ Implementation of the method described in Angelini, De Canditiis and Plaksienko
 (define-public r-jetty
   (package
     (name "r-jetty")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jetty" version))
        (sha256
-        (base32 "1f8z4ilqwwzgkba6bmy1xgd88i70wf9ycldnrzwzbmcxl0bclq7c"))))
+        (base32 "136dfwiz5858z8q5x9x5z2wa9gip5cs1qp73h6ynhcm09dlg8w6k"))))
     (properties `((upstream-name . "jetty")))
     (build-system r-build-system)
     (arguments
