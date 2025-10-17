@@ -5955,13 +5955,13 @@ correlated right-censored time-to-event data.  See Beyene and Chen (2024)
 (define-public r-frailtypack
   (package
     (name "r-frailtypack")
-    (version "3.7.0")
+    (version "3.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frailtypack" version))
        (sha256
-        (base32 "0rvixrb7nmybawvvmxmkp747wy3piw7fqm63cykwgd5acdgz1wbr"))))
+        (base32 "1wlfazlnj2myxfi0bfbj1qalpi57fvqz01pf0mdsl60644mlgjff"))))
     (properties `((upstream-name . "frailtypack")))
     (build-system r-build-system)
     (arguments
@@ -13145,47 +13145,6 @@ P-spline is used while the covariate effects are estimated based on a modified
 Fisher-Scoring algorithm.  Overall the estimation relies on the mgcv'-package.")
     (license license:gpl2)))
 
-(define-public r-flexfitr
-  (package
-    (name "r-flexfitr")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "flexFitR" version))
-       (sha256
-        (base32 "1nnh57p539arv7d7frxv40y22bsxdg8mx2qygy0jvp4lvqklqkba"))))
-    (properties `((upstream-name . "flexFitR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-subplex
-                             r-rlang
-                             r-progressr
-                             r-optimx
-                             r-numderiv
-                             r-ggplot2
-                             r-future
-                             r-foreach
-                             r-dplyr
-                             r-dofuture
-                             r-agriutilities))
-    (native-inputs (list r-knitr))
-    (home-page "https://apariciojohan.github.io/flexFitR/")
-    (synopsis "Flexible Non-Linear Least Square Model Fitting")
-    (description
-     "This package provides tools for flexible non-linear least squares model fitting
-using general-purpose optimization techniques.  The package supports a variety
-of optimization algorithms, including those provided by the optimx package,
-making it suitable for handling complex non-linear models.  Features include
-parallel processing support via the future and foreach packages, comprehensive
-model diagnostics, and visualization capabilities.  Implements methods described
-in Nash and Varadhan (2011, <doi:10.18637/jss.v043.i09>).")
-    (license license:expat)))
-
 (define-public r-flexdir
   (package
     (name "r-flexdir")
@@ -13304,13 +13263,13 @@ information about the methods, please see Williamson and Huang (2023+)
 (define-public r-fledge
   (package
     (name "r-fledge")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fledge" version))
        (sha256
-        (base32 "0x6f4xvaz6j86gn05hffimqpk5amhwqkvfzhk6252qp92x6rx33f"))))
+        (base32 "0x77caj2vcya4z7dc6hn1s6r0aaa0rdhs7z9c9knm593s2nlig4f"))))
     (properties `((upstream-name . "fledge")))
     (build-system r-build-system)
     (arguments
@@ -23268,13 +23227,13 @@ extend it to tackle datasets in metric spaces.")
 (define-public r-fastmatrix
   (package
     (name "r-fastmatrix")
-    (version "0.6")
+    (version "0.6-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastmatrix" version))
        (sha256
-        (base32 "1s62avacck9bszws2q8mkf2b9rs2dh3zs04lgm75fkbvcayr7jrx"))))
+        (base32 "180rzxw6a8aqa0h0z6ccylqz0i99yaxa9k8m2m4ri8kkgr13c12a"))))
     (properties `((upstream-name . "fastmatrix")))
     (build-system r-build-system)
     (arguments
@@ -24269,13 +24228,13 @@ Spanish.")
 (define-public r-fastbeta
   (package
     (name "r-fastbeta")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastbeta" version))
        (sha256
-        (base32 "1x49ax4ssip9wnj3j4bxxicc00kdav7lk3ibwjqym502w3sgl68g"))))
+        (base32 "0bhixjdpr316s4fc216486hi47q30v937ad7ddkrf0cvivm0nj71"))))
     (properties `((upstream-name . "fastbeta")))
     (build-system r-build-system)
     (arguments

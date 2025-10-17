@@ -5315,19 +5315,20 @@ Evaluation (NSE), for example in ggplot2', dplyr', or data.table'.")
 (define-public r-whep
   (package
     (name "r-whep")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "whep" version))
        (sha256
-        (base32 "1vn49gin894ff53bg8ishl0r0a0q67nhzmxwa8z26jlll03hc3d4"))))
+        (base32 "1sm3m4hb8hj6iizg4hh8c7k5vvcza92qc723r74fqa7riavpgf1l"))))
     (properties `((upstream-name . "whep")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml
+    (propagated-inputs (list r-zoo
+                             r-yaml
                              r-withr
                              r-tidyr
                              r-stringr

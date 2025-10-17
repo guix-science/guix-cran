@@ -1287,6 +1287,51 @@ weighting\" in Alonzo & Pepe (2005) <doi:10.1111/j.1467-9876.2005.00477.x>;
 methods\" in Arifin & Yusof (2025) <doi:10.1371/journal.pone.0321440>.")
     (license license:expat)))
 
+(define-public r-pvars
+  (package
+    (name "r-pvars")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pvars" version))
+       (sha256
+        (base32 "102d82sa2k2hd8bba9fsd4303fnyx1dkrf3q8kgriix4w5vzp1nb"))))
+    (properties `((upstream-name . "pvars")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vars
+                             r-svars
+                             r-steadyica
+                             r-scales
+                             r-reshape2
+                             r-pbapply
+                             r-mass
+                             r-ggplot2
+                             r-expm
+                             r-deoptim
+                             r-copula
+                             r-clue))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Lenni89/pvars")
+    (synopsis "VAR Modeling for Heterogeneous Panels")
+    (description
+     "This package implements (1) panel cointegration rank tests, (2) estimators for
+panel vector autoregressive (VAR) models, and (3) identification methods for
+panel structural vector autoregressive (SVAR) models as described in the
+accompanying vignette.  The implemented functions allow to account for
+cross-sectional dependence and for structural breaks in the deterministic terms
+of the VAR processes.  Among the large set of functions, particularly noteworthy
+are those that implement (1) the correlation-augmented inverse normal test on
+the cointegration rank by Arsova and Oersal (2021,
+<doi:10.1016/j.ecosta.2020.05.002>), (2) the two-step estimator for pooled
+cointegrating vectors by Breitung (2005, <doi:10.1081/ETC-200067895>), and (3)
+the pooled identification based on independent component analysis by Herwartz
+and Wang (2024, <doi:10.1002/jae.3044>).")
+    (license license:expat)))
+
 (define-public r-pvar
   (package
     (name "r-pvar")
@@ -4793,13 +4838,13 @@ terminal node of the tree.")
 (define-public r-psharmonize
   (package
     (name "r-psharmonize")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psHarmonize" version))
        (sha256
-        (base32 "1x3c5gmmr3i1w8cvpvwm886ggdn2mpjl4kl9qhdrf00141bn8xlx"))))
+        (base32 "1nrjjzyk15yhvkm1n3skx3s5bznxrcni22gmgdflfl5b4b8x9ipy"))))
     (properties `((upstream-name . "psHarmonize")))
     (build-system r-build-system)
     (arguments
@@ -9165,13 +9210,13 @@ joint probability of superior performance and stability is also provided.")
 (define-public r-probably
   (package
     (name "r-probably")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "probably" version))
        (sha256
-        (base32 "03n2f066l1yb59y7zf884zsj06y0jzni8x8m9jfmdy92wpm63zz5"))))
+        (base32 "1xccmyapha9vil0fqy8wxpayr1f7hwacdip9ff5v1a8lar4qgk53"))))
     (properties `((upstream-name . "probably")))
     (build-system r-build-system)
     (arguments
@@ -23165,13 +23210,13 @@ the base graphics plotting tools; and manipulate irregular polygons.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "05j8vbxsavchcb78hrzcn222913p6xnx5wzkg6zswlfbgjm53xl9"))))
+        (base32 "0km4spcc31xvfgw9y25chhckynmbgs0367xsyp55mdm2z5sy75l4"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments
@@ -23628,46 +23673,6 @@ M., Jin, I. H., Schweinberger, M., Baugh, S. (2021)
 provides several functions implemented in C++ for explaining the algorithms used
 for Hidden Markov Models (forward, backward, decoding, learning).")
     (license license:gpl2+)))
-
-(define-public r-plothelper
-  (package
-    (name "r-plothelper")
-    (version "0.1.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "plothelper" version))
-       (sha256
-        (base32 "1ibznjqs4gpbq1vx79gg0fkm842xfqgpmmgqji2m6s712j3bdn5k"))))
-    (properties `((upstream-name . "plothelper")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales
-                             r-plyr
-                             r-magick
-                             r-gridextra
-                             r-ggplot2
-                             r-ggfittext
-                             r-farver))
-    (home-page
-     "https://github.com/githubwwwjjj/plothelper/blob/master/README.md")
-    (synopsis
-     "New Plots Based on 'ggplot2' and Functions to Create Regular Shapes")
-    (description
-     "An extension to ggplot2 and magick'.  It contains three groups of functions:
-Functions in the first group draw ggplot2 - based plots:
-@code{geom_shading_bar()} draws barplot with shading colors in each bar.
-@code{geom_rect_cm()}, @code{geom_circle_cm()} and @code{geom_ellipse_cm()} draw
-rectangles, circles and ellipses with centimeter as their unit.  Thus their
-sizes do not change when the coordinate system or the aspect ratio changes.
-@code{annotation_transparent_text()} draws labels with transparent texts.
-@code{annotation_shading_polygon()} draws irregular polygons with shading
-colors.  Functions in the second group generate coordinates for regular shapes
-and make linear transformations.  Functions in the third group are magick -
-based functions facilitating image processing.")
-    (license license:gpl3)))
 
 (define-public r-plotgmm
   (package
@@ -25414,13 +25419,13 @@ saving output from the website.")
 (define-public r-planr
   (package
     (name "r-planr")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "planr" version))
        (sha256
-        (base32 "108b17p5fl6l45wmya8nda3cgvkmg2hg4pd59l7wwn42czv5kx14"))))
+        (base32 "1mvbnv02n52n139kmvjnpwivx6l3gq4h56zkkbxrd8jvs8xqmszk"))))
     (properties `((upstream-name . "planr")))
     (build-system r-build-system)
     (arguments
@@ -28102,13 +28107,13 @@ more.")
 (define-public r-piecepackr
   (package
     (name "r-piecepackr")
-    (version "1.15.1")
+    (version "1.15.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piecepackr" version))
        (sha256
-        (base32 "1af7cb1zxxl5brfvnjd37xgf2hk88y9lpvxq2nfm4256yn63a3fp"))))
+        (base32 "1w3ip92yv6lg2w6cxkrlnza5mqd42lydlycp24nm9729x79zmlqs"))))
     (properties `((upstream-name . "piecepackr")))
     (build-system r-build-system)
     (arguments
@@ -40368,13 +40373,13 @@ Medical Outcomes Partnership (OMOP) common data model.")
 (define-public r-patientlevelprediction
   (package
     (name "r-patientlevelprediction")
-    (version "6.5.0")
+    (version "6.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientLevelPrediction" version))
        (sha256
-        (base32 "0zgyc1qgwmj6xlda9xwwklspginp60akg684bjgd2yvdkhrbiqj9"))))
+        (base32 "1966im8xf37jzvw9v2qwiy6z71354ngf5gi9pliknhn4mib8sfvv"))))
     (properties `((upstream-name . "PatientLevelPrediction")))
     (build-system r-build-system)
     (arguments
@@ -46248,13 +46253,13 @@ partly supported.")
 (define-public r-pacotest
   (package
     (name "r-pacotest")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pacotest" version))
        (sha256
-        (base32 "0zdrvcrf6ynid2wpngdslxzkpc4grcvrf6bzbrni9rvp94sfzjlf"))))
+        (base32 "0c5qhv1a295g517fvdhabybszb44wynprchb74ww9hfq37nip2nx"))))
     (properties `((upstream-name . "pacotest")))
     (build-system r-build-system)
     (arguments

@@ -4166,41 +4166,6 @@ import, process, validate, query, analyze, report, and export data.  Opal is the
 reference implementation of the @code{DataSHIELD} infrastructure.")
     (license license:lgpl2.1+)))
 
-(define-public r-dsmsearch
-  (package
-    (name "r-dsmsearch")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dsmSearch" version))
-       (sha256
-        (base32 "0xx44hzy97g9cm6lx24r1a2p2fgq6av6srjzznym33vh6dx4sv5k"))))
-    (properties `((upstream-name . "dsmSearch")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra
-                             r-sp
-                             r-sf
-                             r-nominatimlite
-                             r-lidr
-                             r-imager
-                             r-httr2
-                             r-forestdata
-                             r-dplyr))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=dsmSearch")
-    (synopsis "DSM and LiDAR downloader")
-    (description
-     "This package provides a collection of functions to search and donwload DSM
-(Digital Surface Model) and @code{LiDAR} (Light Detection and Ranging) data via
-APIs, including @code{OpenTopography}
-<https://portal.opentopography.org/apidocs/> and TNMAccess
-<https://apps.nationalmap.gov/tnmaccess/#/>.")
-    (license license:gpl3)))
-
 (define-public r-dsmolgenisarmadillo
   (package
     (name "r-dsmolgenisarmadillo")
@@ -7561,13 +7526,13 @@ dataset has been analyzed.")
 (define-public r-dpi
   (package
     (name "r-dpi")
-    (version "2025.9")
+    (version "2025.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPI" version))
        (sha256
-        (base32 "17n3m2jk4w6qs5zjwn0zq7ifaw8nnpsv7634smsa65v17n5kkfa0"))))
+        (base32 "01h1rkf0cnjxd3lnf214yga9snha20r9r3jz3vk3zbc8zn09kb34"))))
     (properties `((upstream-name . "DPI")))
     (build-system r-build-system)
     (arguments
@@ -7583,17 +7548,19 @@ dataset has been analyzed.")
                              r-bnlearn))
     (home-page "https://psychbruce.github.io/DPI/")
     (synopsis
-     "The Directed Prediction Index for Quasi-Causal Inference with Cross-Sectional Data")
+     "The Directed Prediction Index for Causal Inference from Observational Data")
     (description
-     "The Directed Prediction Index ('DPI') is a quasi-causal inference method for
-cross-sectional data designed to quantify the relative endogeneity (relative
-dependence) of outcome (Y) versus predictor (X) variables in regression models.
-By comparing the proportion of variance explained (R-squared) between the
-Y-as-outcome model and the X-as-outcome model while controlling for a sufficient
-number of possible confounders, it suggests a plausible (admissible) direction
-of influence from a more exogenous variable (X) to a more endogenous variable
-(Y).  Methodological details are provided at
-<https://psychbruce.github.io/DPI/>.")
+     "The Directed Prediction Index ('DPI') is a quasi-causal inference (causal
+discovery) method for observational data designed to quantify the relative
+endogeneity (relative dependence) of outcome (Y) versus predictor (X) variables
+in regression models.  By comparing the proportion of variance explained
+(R-squared) between the Y-as-outcome model and the X-as-outcome model while
+controlling for a sufficient number of possible confounders, it can suggest a
+plausible (admissible) direction of influence from a more exogenous variable (X)
+to a more endogenous variable (Y).  Methodological details are provided at
+<https://psychbruce.github.io/DPI/>.  This package also provides functions for
+data simulation and network analysis (correlation, partial correlation, and
+Bayesian networks).")
     (license license:gpl3)))
 
 (define-public r-dpcr
@@ -13923,6 +13890,36 @@ to colors and numeric values, and is useful where smooth animated movement and
 transitions are desired.")
     (license license:expat)))
 
+(define-public r-dispersionindicators
+  (package
+    (name "r-dispersionindicators")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dispersionIndicators" version))
+       (sha256
+        (base32 "0rrzmw8pfhwx37r77z3v28rbwzvfa3nydz93gpm5hylvn4ajp4zf"))))
+    (properties `((upstream-name . "dispersionIndicators")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-corpcor))
+    (home-page "https://cran.r-project.org/package=dispersionIndicators")
+    (synopsis
+     "Indicators for the Analysis of Dispersion of Datasets with Batched and Ordered Samples")
+    (description
+     "This package provides methods for analyzing the dispersion of tabular datasets
+with batched and ordered samples.  Based on convex hull or integrated covariance
+Mahalanobis, several indicators are implemented for inter and intra batch
+dispersion analysis.  It is designed to facilitate robust statistical assessment
+of data variability, supporting applications in exploratory data analysis and
+quality control, for such datasets as the one found in metabololomics studies.
+For more details see Salanon (2024) <doi:10.1016/j.chemolab.2024.105148> and
+Salanon (2025) <doi:10.1101/2025.08.01.668073>.")
+    (license license:expat)))
+
 (define-public r-disperse
   (package
     (name "r-disperse")
@@ -16106,13 +16103,13 @@ handle weights and/or missings.")
 (define-public r-dinamic-duo
   (package
     (name "r-dinamic-duo")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiNAMIC.Duo" version))
        (sha256
-        (base32 "0h0hvbshmhysllsbagw1j3x1dayrlhqc45n908nnnzvzrkdsr06w"))))
+        (base32 "19f5vdzm1ji207ii3vk6mvy10qdjgwfzhlr9q79q36rq2mid4gy2"))))
     (properties `((upstream-name . "DiNAMIC.Duo")))
     (build-system r-build-system)
     (arguments
@@ -16123,7 +16120,7 @@ handle weights and/or missings.")
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
     (inputs (list python))
-    (propagated-inputs (list r-plyr r-dinamic r-curl r-biomart))
+    (propagated-inputs (list r-plyr r-httr r-dinamic r-biomart))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=DiNAMIC.Duo")
     (synopsis "Finding Recurrent DNA Copy Number Alterations and Differences")
@@ -18991,13 +18988,13 @@ Eigen and bindings to R.")
 (define-public r-dgpsi
   (package
     (name "r-dgpsi")
-    (version "2.5.0")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dgpsi" version))
        (sha256
-        (base32 "16af7pdzyqzgikwidszjlzcjm9v2437pgcx884xmvgglddp8znp7"))))
+        (base32 "1lh13p7a4vvsjmj255ygw6vfyrx76yalvzzaf3p6vm59qnpdhc31"))))
     (properties `((upstream-name . "dgpsi")))
     (build-system r-build-system)
     (arguments
@@ -21445,6 +21442,43 @@ Assigning shortcuts to these addins will save you quite a few keystrokes.")
      "Easily create descriptive and comparative tables.  It makes use and integrates
 directly with the tidyverse family of packages, and pipes.  Tables are produced
 as (nested) dataframes for easy manipulation.")
+    (license license:gpl3)))
+
+(define-public r-descsupprplots
+  (package
+    (name "r-descsupprplots")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "descsuppRplots" version))
+       (sha256
+        (base32 "0r9a667p8nbcdl5aqmd1f418bg3vkhzasxc3d3w6liisyncx1xab"))))
+    (properties `((upstream-name . "descsuppRplots")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tibble
+                             r-rlang
+                             r-ggstatsplot
+                             r-ggsignif
+                             r-ggplot2
+                             r-dplyr
+                             r-descutils
+                             r-descsuppr))
+    (home-page "https://cran.r-project.org/package=descsuppRplots")
+    (synopsis "Generate Plots for All Variables in Descriptive Tables")
+    (description
+     "Visualizes variables from descriptive tables produced by
+@code{descsuppR::buildDescrTbl()} using ggstatsplot'.  It automatically maps
+each variable to a suitable ggstatsplot plotting function based on the applied
+or suggested statistical test.  Users can override the automatic mapping via a
+named list of plot specifications.  The package supports grouped and ungrouped
+tables, and forwards additional arguments to the underlying ggstatsplot
+functions, providing quick, reproducible, and customizable default
+visualizations for descriptive summaries.")
     (license license:gpl3)))
 
 (define-public r-descsuppr
@@ -25720,13 +25754,13 @@ CO-expression and Differential Expression) algorithm.")
 (define-public r-declaredesign
   (package
     (name "r-declaredesign")
-    (version "1.0.10")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DeclareDesign" version))
        (sha256
-        (base32 "0f1c1zkg4cd980b6fgh7dy4vfmwnacy3r98cwmwz99fkg7gcjvnl"))))
+        (base32 "1lhd6nhryizx4z4mq0vk2mgdgy5wqm9s141rhkx3bgirwz1jp29i"))))
     (properties `((upstream-name . "DeclareDesign")))
     (build-system r-build-system)
     (arguments
@@ -25734,6 +25768,7 @@ CO-expression and Differential Expression) algorithm.")
       #:tests? #f))
     (propagated-inputs (list r-rlang r-randomizr r-generics r-fabricatr
                              r-estimatr))
+    (native-inputs (list r-knitr))
     (home-page "https://declaredesign.org/r/declaredesign/")
     (synopsis "Declare and Diagnose Research Designs")
     (description
@@ -30506,6 +30541,29 @@ resolution, as well as functions to plot the data.  For more information and
 documentation see
 <https://datarescue.climate.copernicus.eu/st_data-quality-control>.")
     (license license:asl2.0)))
+
+(define-public r-datareportr
+  (package
+    (name "r-datareportr")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datareportR" version))
+       (sha256
+        (base32 "18h5xdbm1viiyz19vmxqmnvjzklla2s50bcb0gp0i37b1mfxfp6a"))))
+    (properties `((upstream-name . "datareportR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-skimr r-rmarkdown r-diffdf))
+    (home-page "https://cran.r-project.org/package=datareportR")
+    (synopsis "Fast Data Summary Reports")
+    (description
+     "Generates an RMarkdown data report with two components: a summary of an input
+dataset and a diff of the dataset relative to an old version.")
+    (license license:expat)))
 
 (define-public r-datareporter
   (package

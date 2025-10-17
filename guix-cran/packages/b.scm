@@ -3013,13 +3013,13 @@ NRF-2020R1C1C1A01013338').")
 (define-public r-bspbss
   (package
     (name "r-bspbss")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BSPBSS" version))
        (sha256
-        (base32 "0ax92x657f8jm731wc1qry19mbi4d3xxcxh5zd07w3705va4k82y"))))
+        (base32 "0cizhhxjcpbzmckkd4qad4v8y0aaa055vnp2glpm61c9sr7gd4jw"))))
     (properties `((upstream-name . "BSPBSS")))
     (build-system r-build-system)
     (arguments
@@ -3048,9 +3048,10 @@ is designed for spatially dependent signals in high dimensional and large-scale
 data, such as neuroimaging.  The method assumes the expectation of the observed
 images as a linear mixture of multiple sparse and piece-wise smooth latent
 source signals, and constructs a Bayesian nonparametric prior by thresholding
-Gaussian processes.  Details can be found in our paper: Wu et al. (2022+)
-\"Bayesian Spatial Blind Source Separation via the Thresholded Gaussian Process\"
-<doi:10.1080/01621459.2022.2123336>.")
+Gaussian processes.  Details can be found in our paper: Wu, B., Guo, Y., & Kang,
+J. (2024).  Bayesian spatial blind source separation via the thresholded
+gaussian process.  Journal of the American Statistical Association, 119(545),
+422-433.")
     (license license:gpl3+)))
 
 (define-public r-bspadata
@@ -4783,6 +4784,43 @@ without the need of a Brickset account and API key are also included.  Includes
 all LEGO since through the end of 2023.")
     (license license:gpl3+)))
 
+(define-public r-brfinance
+  (package
+    (name "r-brfinance")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "brfinance" version))
+       (sha256
+        (base32 "08sa8q903zk36d1zyv9psywg5fxiy4hxxvz2qybxvlqkmb1d90yi"))))
+    (properties `((upstream-name . "brfinance")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-sidrar
+                             r-scales
+                             r-lubridate
+                             r-janitor
+                             r-httr2
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/efram2/brfinance")
+    (synopsis
+     "Simplified Access to Brazilian Financial and Macroeconomic Data")
+    (description
+     "It offers simplified access to Brazilian macroeconomic and financial indicators
+selected from official sources, such as the IBGE (Brazilian Institute of
+Geography and Statistics) via the SIDRA API and the Central Bank of Brazil via
+the SGS API. It allows users to quickly retrieve and visualize data series such
+as the unemployment rate and the Selic interest rate.  This package was
+developed for data access and visualization purposes, without generating
+forecasts or statistical results.  For more information, see the official APIs:
+<https://sidra.ibge.gov.br/> and <https://dadosabertos.bcb.gov.br/dataset/>.")
+    (license license:expat)))
+
 (define-public r-bretigea
   (package
     (name "r-bretigea")
@@ -5685,13 +5723,13 @@ group-level connectivity network.  Kang, Jian (2016)
 (define-public r-braingraph
   (package
     (name "r-braingraph")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brainGraph" version))
        (sha256
-        (base32 "009m3297bn1jl1aacypajkdawgjp3pwx7krz3bxifb0bmrdi0n7b"))))
+        (base32 "0xinixzcmsw9n8ajyrmf1zhiy2y0xpzvyyixcj5r98a23p44m5wv"))))
     (properties `((upstream-name . "brainGraph")))
     (build-system r-build-system)
     (arguments
@@ -7817,6 +7855,37 @@ commonly used in medicine/epidemiology, using the method of Marill et al. (2015)
 or specificity in the sample is 100%.  Note that this does not perform the test
 on nested models--for that, see epicalc::lrtest'.")
     (license license:lgpl2.1)))
+
+(define-public r-bootkmeans
+  (package
+    (name "r-bootkmeans")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bootkmeans" version))
+       (sha256
+        (base32 "0q7vklrh1jrq78jyk09f5xhf9q60jhww8gs2k61vclq267r038sn"))))
+    (properties `((upstream-name . "bootkmeans")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-thresher
+                             r-mvtnorm
+                             r-mass
+                             r-lmtest
+                             r-fclust
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=bootkmeans")
+    (synopsis "Bootstrap Augmented k-Means Algorithm for Fuzzy Partitions")
+    (description
+     "Implementation of the bootkmeans algorithm, a bootstrap augmented k-means
+algorithm that returns probabilistic cluster assignments.  From paper by
+Ghashti, J.S., Andrews, J.L. Thompson, J.R.J., Epp, J. and H.S. Kochar (2025),
+\"A bootstrap augmented k-means algorithm for fuzzy partitions\" (Submitted).")
+    (license license:gpl2)))
 
 (define-public r-bootimpute
   (package
@@ -14115,13 +14184,13 @@ variables and spatial gene diversity are implemented.")
 (define-public r-biotimer
   (package
     (name "r-biotimer")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioTIMEr" version))
        (sha256
-        (base32 "123qzdir8k73jd0vg6hhkyjaadfbi6jn24m05vkmvljj010ccv7m"))))
+        (base32 "0cizspp36dcaw6w3fq8926cllqrfwwbhr59lsn5624w20irimx22"))))
     (properties `((upstream-name . "BioTIMEr")))
     (build-system r-build-system)
     (arguments
@@ -27724,6 +27793,45 @@ which this package is based is Gordon J. Ross - Bayesian Estimation of the ETAS
 Model for Earthquake Occurrences (2016), available from the below URL.")
     (license license:gpl3)))
 
+(define-public r-bayesiandisaggregation
+  (package
+    (name "r-bayesiandisaggregation")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesianDisaggregation" version))
+       (sha256
+        (base32 "0vfbhpyi9c29bwzyy0nqvwikgvmh8q6k0h9lyhy5fl1p89kr691j"))))
+    (properties `((upstream-name . "BayesianDisaggregation")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readxl
+                             r-openxlsx
+                             r-magrittr
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BayesianDisaggregation")
+    (synopsis "Bayesian Methods for Economic Data Disaggregation")
+    (description
+     "This package implements a novel Bayesian disaggregation framework that combines
+Principal Component Analysis (PCA) and Singular Value Decomposition (SVD)
+dimension reduction of prior weight matrices with deterministic Bayesian
+updating rules.  The method provides Markov Chain Monte Carlo (MCMC) free
+posterior estimation with built-in diagnostic metrics.  While based on
+established PCA (Jolliffe, 2002) <doi:10.1007/b98835> and Bayesian principles
+(Gelman et al., 2013) <doi:10.1201/b16018>, the specific integration for
+economic disaggregation represents an original methodological contribution.")
+    (license license:expat)))
+
 (define-public r-bayesian
   (package
     (name "r-bayesian")
@@ -31865,38 +31973,6 @@ the posterior mean and posterior covariance matrix of the NAM parameters based
 on flat priors as input.")
     (license license:gpl3+)))
 
-(define-public r-bamp
-  (package
-    (name "r-bamp")
-    (version "2.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bamp" version))
-       (sha256
-        (base32 "0qzcndjdwbgiwyvc7ikb7jr0n7cmn78v56h5in22j24jjj740l2z"))))
-    (properties `((upstream-name . "bamp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-coda r-abind))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://volkerschmid.github.io/bamp/")
-    (synopsis "Bayesian Age-Period-Cohort Modeling and Prediction")
-    (description
-     "Bayesian Age-Period-Cohort Modeling and Prediction using efficient Markov Chain
-Monte Carlo Methods.  This is the R version of the previous BAMP software as
-described in Volker Schmid and Leonhard Held (2007) <DOI:10.18637/jss.v021.i08>
-Bayesian Age-Period-Cohort Modeling and Prediction - BAMP, Journal of
-Statistical Software 21:8.  This package includes checks of convergence using
-Gelman's R.")
-    (license license:gpl3)))
-
 (define-public r-bammtools
   (package
     (name "r-bammtools")
@@ -32445,13 +32521,13 @@ detect batch effects are also provided.")
 (define-public r-bakerrr
   (package
     (name "r-bakerrr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bakerrr" version))
        (sha256
-        (base32 "04v20zwic5is71i1izh8nipy716mwbipp4i84ji4nd5wbqsrwgvw"))))
+        (base32 "1mivmicklalfhz6xfjrkibl69m0y064gzsjcqfjva30qx3hvmkvf"))))
     (properties `((upstream-name . "bakerrr")))
     (build-system r-build-system)
     (arguments
@@ -32886,13 +32962,13 @@ name \"Bagged @code{OutlierTrees}\".  To learn more about the base procedure
 (define-public r-bage
   (package
     (name "r-bage")
-    (version "0.9.7")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bage" version))
        (sha256
-        (base32 "1bwy092vggra0jg4bqi8yqzfsxfh5qmr78vywwwr6qks0dph95mx"))))
+        (base32 "1bdxxvzlz2rq04654ny6hxxgmlw0wh01y4b59h2di06w8066slgl"))))
     (properties `((upstream-name . "bage")))
     (build-system r-build-system)
     (arguments

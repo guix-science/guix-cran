@@ -723,6 +723,39 @@ Documentation.  NOTE: Zillow deprecated their API on 2021-09-30, and this
 package is now deprecated as a result.")
     (license license:gpl3+)))
 
+(define-public r-zihinar1
+  (package
+    (name "r-zihinar1")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZIHINAR1" version))
+       (sha256
+        (base32 "0x5kma0dwdrhnxf7z1l90dd5qssh6rhhjj2sjc7ywkqk5imqvrww"))))
+    (properties `((upstream-name . "ZIHINAR1")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam
+                             r-rstan
+                             r-matrixstats
+                             r-knitr
+                             r-gridextra
+                             r-ggplot2
+                             r-coda
+                             r-actuar))
+    (home-page "https://cran.r-project.org/package=ZIHINAR1")
+    (synopsis "Zero-Inflated and Hurdle INAR(1) Models")
+    (description
+     "This package provides tools for estimating Zero-Inflated INAR(1) (ZI-INAR(1))
+and Hurdle INAR(1) (H-INAR(1)) models using Stan'.  It allows users to simulate
+time series data for these models, estimate parameters, and evaluate model fit
+using various criteria.  Functions include model estimation, simulation, and
+likelihood-based metrics.")
+    (license license:gpl3)))
+
 (define-public r-zidw
   (package
     (name "r-zidw")

@@ -8134,24 +8134,28 @@ to sum their own low level functions as well.  Based on the paper by Braden
 (define-public r-sumo
   (package
     (name "r-sumo")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SUMO" version))
        (sha256
-        (base32 "05vx0w945pzjixq4rn31f1csvsscf3z2bvll72f1wp7i2xlrkhw6"))))
+        (base32 "1rnkm2im5l679np5yhs9am3nd06y71nb3w617fz6hdskbmgy0c5g"))))
     (properties `((upstream-name . "SUMO")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-tidyverse
+                             r-systemfonts
+                             r-stringr
                              r-rlang
                              r-readxl
                              r-readr
+                             r-ragg
                              r-officer
                              r-magrittr
+                             r-jsonlite
                              r-gridextra
                              r-ggplot2
                              r-dplyr
@@ -8278,6 +8282,41 @@ ordinal, and categorical variables in data frames.  The package was designed to
 streamline exploratory data analysis and simplify the creation of summary tables
 for reports and other purposes.")
     (license license:expat)))
+
+(define-public r-summarysci
+  (package
+    (name "r-summarysci")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "summarySCI" version))
+       (sha256
+        (base32 "180z31r3yihsqrzh95yk554y2h427dnqwn1q01w3ifm3wr8ifgyw"))))
+    (properties `((upstream-name . "summarySCI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-officer
+                             r-labelled
+                             r-hmisc
+                             r-gtsummary
+                             r-forcats
+                             r-flextable
+                             r-dplyr
+                             r-cardx))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SAKK-Statistics/summarySCI/")
+    (synopsis "Produces Publication-Ready Summary Tables")
+    (description
+     "This package produces tables with descriptive statistics for continuous,
+categorical and dichotomous variables.  It is largely based on the package
+gtsummary'; Sjoberg DD et al. (2021) <doi:10.32614/RJ-2021-053>.")
+    (license license:lgpl3)))
 
 (define-public r-summarylasso
   (package
@@ -9693,13 +9732,13 @@ descriptive analysis.  The method was developed in Chen and Mankad (2024)
 (define-public r-strvalidator
   (package
     (name "r-strvalidator")
-    (version "2.4.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "strvalidator" version))
        (sha256
-        (base32 "0s7n26in5fb6lxgffx01743vd4854qg4wclqgsa6mwnrqg8ihg4y"))))
+        (base32 "0ixknwn8lfglm739zpmhwcvp8fvdvk4lyz4dlrin6318kqd0zz8a"))))
     (properties `((upstream-name . "strvalidator")))
     (build-system r-build-system)
     (arguments
@@ -10540,13 +10579,13 @@ equations.")
 (define-public r-streamdag
   (package
     (name "r-streamdag")
-    (version "1.5-9")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "streamDAG" version))
        (sha256
-        (base32 "0p88riahsbla9f9fd00lkgpbf3fqzamc14r7vn1fp0j3z767vcdh"))))
+        (base32 "01j2b7aw3qb3r68g6p84b699550i42dfy724hpbg9x13xhjh2id4"))))
     (properties `((upstream-name . "streamDAG")))
     (build-system r-build-system)
     (arguments
@@ -10568,13 +10607,13 @@ package vignette.")
 (define-public r-streamcattools
   (package
     (name "r-streamcattools")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StreamCatTools" version))
        (sha256
-        (base32 "1wg9p36ylg6z9nm0wd5qld3xkc36dh5aaa3w3xdh8m1y4v7bln5i"))))
+        (base32 "0v5ny1b8b3cnk87fpdyg05b6jnx60ndz0cxcyxkhxxyiwmhw6wcb"))))
     (properties `((upstream-name . "StreamCatTools")))
     (build-system r-build-system)
     (arguments
@@ -22526,13 +22565,13 @@ Statistical Association, 109:505, 11-23, <doi:10.1080/01621459.2013.870904>.")
 (define-public r-spower
   (package
     (name "r-spower")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Spower" version))
        (sha256
-        (base32 "0ambaqrwyghcibahgfb71680xw8q33abs967i180ahwhasw03y9k"))))
+        (base32 "07rzz4prqjcawddskcr5r6pwpq4iscl14l3m9ayp90ylv012y0lp"))))
     (properties `((upstream-name . "Spower")))
     (build-system r-build-system)
     (arguments
@@ -36495,13 +36534,13 @@ the correlation coefficient under sampling from a bivariate normal distribution.
 (define-public r-smotewb
   (package
     (name "r-smotewb")
-    (version "1.2.2")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SMOTEWB" version))
        (sha256
-        (base32 "0720rjfxblfp4w88qf344xq4gjvzkznhw5fj3waklkbcaajpjp5k"))))
+        (base32 "1h49wwsmnv6r820z9saprlsbbix7dkwkgwldzx3836vrhabsani0"))))
     (properties `((upstream-name . "SMOTEWB")))
     (build-system r-build-system)
     (arguments
@@ -40791,6 +40830,45 @@ for the data obtained from block designs with missing observations occurring
 randomly.  A resulting p-value is based on the chi-squared distribution and
 Monte Carlo method.")
     (license license:gpl2+)))
+
+(define-public r-skiftitools
+  (package
+    (name "r-skiftitools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "skiftiTools" version))
+       (sha256
+        (base32 "1qnpbaq5pz5h98315iw6sfpbqrnr7qb2f1lpzwpk15pw4hiv6cj0"))))
+    (properties `((upstream-name . "skiftiTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-s2dv
+                             r-rvcg
+                             r-rnifti
+                             r-rmarchingcubes
+                             r-rgl
+                             r-r-utils
+                             r-png
+                             r-oce
+                             r-abind))
+    (home-page "https://github.com/haanme/skiftiTools")
+    (synopsis
+     "Tools and Operations for Reading, Writing, Viewing, and Manipulating SKIFTI Files")
+    (description
+     "SKIFTI files contain brain imaging data in coordinates across Tract Based
+Spatial Statistics (TBSS) skeleton, which represent the brain white matter
+intensity values. @code{skiftiTools} provides a unified environment for reading,
+writing, visualizing and manipulating SKIFTI-format data.  It supports the
+\"subsetting\", \"concatenating\", and using data as data.frame for R statistical
+functions.  The SKIFTI data is structured for convenient access to the data and
+metadata, and includes support for visualizations.  For more information see
+Merisaari et al. (2024) <doi:10.57736/87d2-0608>.")
+    (license license:gpl3)))
 
 (define-public r-skfcpd
   (package
@@ -45639,6 +45717,35 @@ Approximate Bayesian Computation Sequential Monte Carlo ('ABC-SMC') algorithm of
 Toni and others (2009) <doi:10.1098/rsif.2008.0172>.")
     (license license:gpl3)))
 
+(define-public r-simindep
+  (package
+    (name "r-simindep")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SimIndep" version))
+       (sha256
+        (base32 "0xg61ss7lm7sglxr9biffgy4ppbjv7fg7iq5djhqp29bnhc99v4y"))))
+    (properties `((upstream-name . "SimIndep")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fnn))
+    (home-page "https://cran.r-project.org/package=SimIndep")
+    (synopsis
+     "WISE: a Weighted Similarity Aggregation Test for Serial Independence")
+    (description
+     "This package provides a fast implementation of the weighted information
+similarity aggregation (WISE) test for detecting serial dependence, particularly
+suited for high-dimensional and non-Euclidean time series.  Includes functions
+for constructing similarity matrices and conducting hypothesis testing.  Users
+can use different similarity measures and define their own weighting schemes.
+For more details see Q Zhu, M Liu, Y Han, D Zhou (2025)
+<doi:10.48550/@code{arXiv.2509.05678>}.")
+    (license license:gpl3)))
+
 (define-public r-simile
   (package
     (name "r-simile")
@@ -46416,19 +46523,19 @@ facilitate communicating the simulation setup.")
 (define-public r-simdag
   (package
     (name "r-simdag")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simDAG" version))
        (sha256
-        (base32 "0slggfyhqmmky7b1pa8h9xi2aqba52664dgnw9dfhbzyh51as24v"))))
+        (base32 "0cy1nc0c3jwzgaj1nkvzil1d8hr7hjy9dda1m1zy9rnhnp2yvsn7"))))
     (properties `((upstream-name . "simDAG")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-rfast r-igraph r-data-table))
+    (propagated-inputs (list r-rlang r-rfast r-igraph r-data-table r-dagitty))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinDenz1/simDAG")
     (synopsis "Simulate Data from a DAG and Associated Node Information")
@@ -47188,19 +47295,19 @@ forms that relate spatial data structures to this mathematical construct.")
 (define-public r-silhouette
   (package
     (name "r-silhouette")
-    (version "0.9.4")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Silhouette" version))
        (sha256
-        (base32 "0f5yapdfca9zdbhj22hdnlqf8srijv6qqfzbg1y4l0dp66s3rbcw"))))
+        (base32 "00ahgd4qgs36rwc0b3c9c8ibfyl5hd6d71qgpj7k6qa3z0n0dmwc"))))
     (properties `((upstream-name . "Silhouette")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggpubr r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-lifecycle r-ggpubr r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://kskbhat.github.io/Silhouette/")
     (synopsis
@@ -47212,8 +47319,9 @@ for diverse clustering structures, including: simplified silhouette (Van der
 Laan et al., 2003) <doi:10.1080/0094965031000136012>, Probability of Alternative
 Cluster normalization methods (Raymaekers & Rousseeuw, 2022)
 <doi:10.1080/10618600.2022.2050249>, fuzzy clustering and silhouette diagnostics
-using membership probabilities (Campello & Hruschka, 2006; Bhat & Kiruthika,
-2024) <doi:10.1016/j.fss.2006.07.006>, <doi:10.1080/23737484.2024.2408534>, and
+using membership probabilities (Campello & Hruschka, 2006; Menardi, 2011; Bhat &
+Kiruthika, 2024) <doi:10.1016/j.fss.2006.07.006>,
+<doi:10.1007/s11222-010-9169-0>, <doi:10.1080/23737484.2024.2408534>, and
 multi-way clustering extensions such as block and tensor clustering (Schepers et
 al., 2008; Bhat & Kiruthika, 2025) <doi:10.1007/s00357-008-9005-9>,
 <doi:10.21203/rs.3.rs-6973596/v1>.  Provides tools for computation and
@@ -58442,13 +58550,13 @@ includes integration with the Plumber package.")
 (define-public r-sentopics
   (package
     (name "r-sentopics")
-    (version "0.7.5")
+    (version "0.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sentopics" version))
        (sha256
-        (base32 "01f2g0m717pxm0pf41pp5df5ijib12dqzm3a2k140bii3cvf459a"))))
+        (base32 "0rniick87f48r4qvcqx8rmywbx6g70jz63a7d6kjyhqn1s4qsl1s"))))
     (properties `((upstream-name . "sentopics")))
     (build-system r-build-system)
     (arguments
@@ -59035,6 +59143,35 @@ function.  The package includes parallel methods for individual outcomes,
 including tests in the @code{senm()} function and confidence intervals in the
 @code{senmCI()} function.")
     (license license:gpl2)))
+
+(define-public r-sensitivityixj
+  (package
+    (name "r-sensitivityixj")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sensitivityIxJ" version))
+       (sha256
+        (base32 "0s5hz3s86dlbwy5zsk5cd7n18hwlhfa9ryml79lv03maafnw284v"))))
+    (properties `((upstream-name . "sensitivityIxJ")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=sensitivityIxJ")
+    (synopsis
+     "Exact Nonparametric Sensitivity Analysis for I by J Contingency Tables")
+    (description
+     "This package implements exact, normally approximated, and sampling-based
+sensitivity analysis for observational studies with contingency tables.
+Includes exact (kernel-based), normal approximation, and sequential importance
+sampling (SIS) methods using Rcpp for computational efficiency.  The methods
+build upon the framework introduced in Rosenbaum (2002)
+<doi:10.1007/978-1-4757-3692-2> and the generalized design sensitivity framework
+developed by Chiu (2025) <doi:10.48550/@code{arXiv.2507.17207>}.")
+    (license license:gpl3)))
 
 (define-public r-sensitivityfull
   (package
@@ -64337,13 +64474,13 @@ format and also with data.frame objects.")
 (define-public r-sdear
   (package
     (name "r-sdear")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SdeaR" version))
        (sha256
-        (base32 "1iz16q37qhpi2f14m9l6kcgc4br02r5wbivh2rr7946ynijb9ah3"))))
+        (base32 "1d5fm5lbkk1nqc9q0n1nxg9wq3kw0y9wrglr80p6f4psl8zsqav8"))))
     (properties `((upstream-name . "SdeaR")))
     (build-system r-build-system)
     (arguments
@@ -69228,13 +69365,13 @@ fisheries stock assessment.")
 (define-public r-scanstatistics
   (package
     (name "r-scanstatistics")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scanstatistics" version))
        (sha256
-        (base32 "04pymq6bikmsjqlwszd9ihv85s5qg8ci5y4dr6jmi95dgdm988pj"))))
+        (base32 "113cdwhsg2gaglgq5kgf10znidcqibyprnj7azrvxf8f48wga05i"))))
     (properties `((upstream-name . "scanstatistics")))
     (build-system r-build-system)
     (arguments

@@ -2231,13 +2231,13 @@ A dataset of crashes in Washington state is available for illustrative purposes.
 (define-public r-curephem
   (package
     (name "r-curephem")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "curephEM" version))
        (sha256
-        (base32 "0c24xasgyr9dcbnmscfc9zj3lh1ja03xnzww0qd9rd5ax7hrciks"))))
+        (base32 "0a5xis1ai2qi0pyvg0mw3lmfm6033cj8cajc8lbqq7z84f17h3fa"))))
     (properties `((upstream-name . "curephEM")))
     (build-system r-build-system)
     (arguments
@@ -6774,13 +6774,13 @@ continuous range.")
 (define-public r-cropgrowdays
   (package
     (name "r-cropgrowdays")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cropgrowdays" version))
        (sha256
-        (base32 "08k525882lm1x2igz1pk8g3kjiikcw68yqpic240l3lzq0x2wi3y"))))
+        (base32 "15i11ss32hchf1bj459gq5q0xmlrmphairpicx8bnlp8dp9ckr1x"))))
     (properties `((upstream-name . "cropgrowdays")))
     (build-system r-build-system)
     (arguments
@@ -9182,6 +9182,43 @@ pane as a formatted HTML file.  It is also possible to get this report with a
 shiny application.  Cppcheck can spot many error types and it can also give some
 recommendations on the code.")
     (license license:gpl3)))
+
+(define-public r-cpp4r
+  (package
+    (name "r-cpp4r")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cpp4r" version))
+       (sha256
+        (base32 "0h9yd309kb4sri36lcfmxnszd7f0jz84pjpdll4hx2vsj0g0amnd"))))
+    (properties `((upstream-name . "cpp4r")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-vctrs
+                             r-tibble
+                             r-glue
+                             r-desc
+                             r-decor
+                             r-cli
+                             r-brio))
+    (home-page "https://cpp4r.org")
+    (synopsis "Header-Only 'C++' and 'R' Interface")
+    (description
+     "This package provides a header only, C++ interface to R with enhancements over
+cpp11'.  Enforces copy-on-write semantics consistent with R behavior.  Offers
+native support for ALTREP objects, UTF-8 string handling, modern C++11 features
+and idioms, and reduced memory requirements.  Allows for vendoring, making it
+useful for restricted environments.  Compared to cpp11', it adds support for
+converting C++ maps to R lists, Roxygen documentation directly in C++ code,
+proper handling of matrix attributes, support for nullable external pointers,
+bidirectional copy of complex number types, flexibility in type conversions, use
+of nullable pointers, and various performance optimizations.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-cpp11qpdf
   (package
@@ -14626,27 +14663,27 @@ methods for printing, summarizing, and plotting the result.")
 (define-public r-cord
   (package
     (name "r-cord")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cord" version))
        (sha256
-        (base32 "18xj6cwmx1a7p3vqx5img8qf8s75nc6pcv78v15j081pgn786ma5"))))
+        (base32 "1az8fi2yhd1wqrfiqxiqgavr67hbzkb5d38msllr5mhklh3gwz1h"))))
     (properties `((upstream-name . "cord")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=cord")
+    (home-page "https://doi.org/10.1214/18-AOS1794")
     (synopsis "Community Estimation in G-Models via CORD")
     (description
-     "Partition data points (variables) into communities/clusters, similar to
-clustering algorithms, such as k-means and hierarchical clustering.  This
-package implements a clustering algorithm based on a new metric CORD, defined
-for high dimensional parametric or semi-parametric distributions.  Read
-http://arxiv.org/abs/1508.01939 for more details.")
+     "Partitions data points (variables) into communities/clusters, similar to
+clustering algorithms such as k-means and hierarchical clustering.  This package
+implements a clustering algorithm based on a new metric CORD, defined for
+high-dimensional parametric or semiparametric distributions.  For more details
+see Bunea et al. (2020), Annals of Statistics <doi:10.1214/18-AOS1794>.")
     (license license:gpl3)))
 
 (define-public r-corclass
@@ -22350,6 +22387,31 @@ nestedness is described in Melo, Cianciaruso and Almeida-Neto (2014)
 packages, particularly vegan'.")
     (license license:gpl2)))
 
+(define-public r-command
+  (package
+    (name "r-command")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "command" version))
+       (sha256
+        (base32 "0xs3lx89ll7s31039l219jqxgbz3vp0md5fy20a3lg4kxv8dgamr"))))
+    (properties `((upstream-name . "command")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fs r-cli))
+    (home-page "https://bayesiandemography.github.io/command/")
+    (synopsis "Process Command Line Arguments")
+    (description
+     "Process command line arguments, as part of a data analysis pipeline.  The
+pipeline is controlled by a Makefile or shell script.  Functions to construct
+Makefiles and shell scripts are included in a the package.  The aim is a
+pipeline that is modular, transparent, and reliable.")
+    (license license:expat)))
+
 (define-public r-commafree
   (package
     (name "r-commafree")
@@ -24713,6 +24775,34 @@ relationship between a couple of time series based on the the set of turning
 points of each time series.  The coincident profile establishes if two time
 series are coincident, or one of them leads the second.")
     (license license:gpl2)))
+
+(define-public r-coinmind
+  (package
+    (name "r-coinmind")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CoinMinD" version))
+       (sha256
+        (base32 "10hmrfap58pb132388wal8sg492gzayjia1nzrgd0l8s318qmynv"))))
+    (properties `((upstream-name . "CoinMinD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mcmcpack))
+    (home-page "https://cran.r-project.org/package=CoinMinD")
+    (synopsis "Simultaneous Confidence Intervals for Multinomial Proportions")
+    (description
+     "Several authors have proposed methods for constructing simultaneous confidence
+intervals for multinomial proportions.  The package implements seven classical
+approachesâWilson, Quesenberry and Hurst, Goodman, Wald (with and without
+continuity correction), Fitzpatrick and Scott, and Sison and Glazâalong with
+Bayesian methods based on Dirichlet models.  Both equal and unequal Dirichlet
+priors are supported, providing a broad framework for inference, data analysis,
+and sensitivity evaluation.")
+    (license license:gpl3)))
 
 (define-public r-coinmarketcapr
   (package
@@ -31746,6 +31836,29 @@ the robust residual bootstrap methodology for inference, and can handle some
 structure in the residual variance matrix.")
     (license license:gpl3)))
 
+(define-public r-clitable
+  (package
+    (name "r-clitable")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clitable" version))
+       (sha256
+        (base32 "0zqlfsmd104av5vq9v2mqfrwqqnanchhz49llqy7mnf4p104b475"))))
+    (properties `((upstream-name . "clitable")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-crayon r-cli))
+    (home-page "https://github.com/kforner/clitable")
+    (synopsis "Render Tables in Text for the Terminal")
+    (description
+     "Render tables in text format in the terminal using ANSI strings thanks to the
+cli and crayon packages.")
+    (license license:gpl3+)))
+
 (define-public r-cliquepercolation
   (package
     (name "r-cliquepercolation")
@@ -34077,13 +34190,13 @@ for easy modification.  Debug your binary classifiers faster and easier!")
 (define-public r-classificationensembles
   (package
     (name "r-classificationensembles")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClassificationEnsembles" version))
        (sha256
-        (base32 "133dygsalc50gwc1dnr3iki9940zbxyiacdrsm2bb55wyfah4mis"))))
+        (base32 "1ixq5l907w1wdyd11d1466wvmd2znc15fnf72k08zzd8mickyzxx"))))
     (properties `((upstream-name . "ClassificationEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -35195,13 +35308,13 @@ set in log returns or levels, and making a Dynamic graph.")
 (define-public r-citmic
   (package
     (name "r-citmic")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CITMIC" version))
        (sha256
-        (base32 "1vshnwbskhfz9kz041k5awwg8f3l1hpcnw57j1hnjw1jkidrbayr"))))
+        (base32 "0s7nxz7ybhy4qb736l8l32binkg2dvc7w71dann2viwxn82qdmq0"))))
     (properties `((upstream-name . "CITMIC")))
     (build-system r-build-system)
     (arguments
@@ -35213,10 +35326,10 @@ set in log returns or levels, and making a Dynamic graph.")
     (synopsis "Estimation of Cell Infiltration Based on Cell Crosstalk")
     (description
      "This package provides a systematic biology tool was developed to identify cell
-infiltration via an Individualized Cell crosstalk network.  CITMIC first
-constructed a weighted cell crosstalk network by integrating Cell-target
-interaction information, biological process data from the Gene Ontology (GO)
-database, and gene transcriptomic data in a specific sample, and then, it used a
+infiltration via Individualized Cell-Cell interaction network.  CITMIC first
+constructed a weighted cell interaction network through integrating Cell-target
+interaction information, molecular function data from Gene Ontology (GO)
+database and gene transcriptomic data in specific sample, and then, it used a
 network propagation algorithm on the network to identify cell infiltration for
 the sample.  Ultimately, cell infiltration in the patient dataset was obtained
 by normalizing the centrality scores of the cells.")
@@ -42958,6 +43071,43 @@ on the generated skeletons.  Voronoi, G. (1908) <doi:10.1515/crll.1908.134.198>.
 arbitrary geographies.")
     (license license:expat)))
 
+(define-public r-censuspyrid
+  (package
+    (name "r-censuspyrid")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "censuspyrID" version))
+       (sha256
+        (base32 "1ccgyn5l0ywygvhp9dl27vda5kjj7np9k39ywvp0d0hwapy0329v"))))
+    (properties `((upstream-name . "censuspyrID")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-shinywidgets
+                             r-shinythemes
+                             r-shinyjs
+                             r-shiny
+                             r-scales
+                             r-networkd3
+                             r-ggthemes
+                             r-ggplot2
+                             r-dt
+                             r-dplyr))
+    (home-page "https://github.com/aripurwantosp/censuspyrID")
+    (synopsis
+     "Explorer of Indonesian Population Pyramids from Harmonized and Non-Harmonized Census Data")
+    (description
+     "This package provides harmonized and non-harmonized population pyramid datasets
+from the Indonesian population censuses (1971â2020), along with tools for
+visualization and an interactive shiny'-based explorer application.  Data are
+processed from IPUMS International (1971â2010) and the Population Census 2020
+(BPS Indonesia).")
+    (license license:gpl3)))
+
 (define-public r-censusapi
   (package
     (name "r-censusapi")
@@ -47478,13 +47628,13 @@ default.")
 (define-public r-catsurv
   (package
     (name "r-catsurv")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "catSurv" version))
        (sha256
-        (base32 "0jw7jlam7d44g9sbwmxckm4mywhky2a6h1w5w849g47p7mvi32dc"))))
+        (base32 "0i9wb1vwqi796p88yb4q1cf5x9jk939jdp8bc2a57b11rscd0l9d"))))
     (properties `((upstream-name . "catSurv")))
     (build-system r-build-system)
     (arguments
@@ -47504,7 +47654,7 @@ default.")
      "This package provides methods of computerized adaptive testing for survey
 researchers.  See Montgomery and Rossiter (2020) <doi:10.1093/jssam/smz027>.
 Includes functionality for data fit with the classic item response methods
-including the latent trait model, Birnbaum`s three parameter model, the graded
+including the latent trait model, the Birnbaum three parameter model, the graded
 response, and the generalized partial credit model.  Additionally, includes
 several ability parameter estimation and item selection routines.  During item
 selection, all calculations are done in compiled C++ code.")

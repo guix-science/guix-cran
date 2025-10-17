@@ -6653,6 +6653,33 @@ Guestrin (2016) <doi:10.1145/2939672.2939778>) in which interpretable inputs are
 created based on local rather than global behaviour of each original feature.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-localllm
+  (package
+    (name "r-localllm")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "localLLM" version))
+       (sha256
+        (base32 "1fffhaalxfpqln2ma3dlbmjlmizwr82ma2w2857w8frzpylhlbw0"))))
+    (properties `((upstream-name . "localLLM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/EddieYang211/localLLM")
+    (synopsis "Running Local LLMs with 'llama.cpp' Backend")
+    (description
+     "The @code{localLLM} package provides R bindings to the llama.cpp library for
+running large language models.  The package uses a lightweight architecture
+where the C++ backend library is downloaded at runtime rather than bundled with
+the package.  Package features include text generation, reproducible generation,
+and parallel inference.")
+    (license license:expat)))
+
 (define-public r-localiv
   (package
     (name "r-localiv")
@@ -17274,13 +17301,13 @@ lavaan path model without having to write the DOT language graph specification."
 (define-public r-lavaangui
   (package
     (name "r-lavaangui")
-    (version "0.2.6")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavaangui" version))
        (sha256
-        (base32 "0vzsacdm8v4nqrpx02jsd392vc0gfcfcqxjvdlz46jaj5y4bxa30"))))
+        (base32 "0zxmzx1nhsmphq4vcixq23yc4hym5j6ddb4sc5hx6jgp4jbv3ym9"))))
     (properties `((upstream-name . "lavaangui")))
     (build-system r-build-system)
     (arguments
@@ -17305,12 +17332,12 @@ lavaan path model without having to write the DOT language graph specification."
      "Graphical User Interface with Integrated 'Diagrammer' for 'Lavaan'")
     (description
      "This package provides a graphical user interface with an integrated diagrammer
-for latent variables from the lavaan package.  It offers two core functions:
-first, @code{lavaangui()} launches a web application that allows users to
-specify models by drawing path diagrams, fitting them, assessing model fit, and
-more; second, @code{plot_lavaan()} creates interactive path diagrams from models
-specified in lavaan'.  Karch (2024) <doi: 10.31234/osf.io/f4ary> contains a
-tutorial.")
+for latent variable models from the lavaan package.  It offers two core
+functions: first, @code{lavaangui()} launches a web application that allows
+users to specify models by drawing path diagrams, fitting them, assessing model
+fit, and more; second, @code{plot_lavaan()} creates interactive path diagrams
+from models specified in lavaan'.  Karch (2024) <doi: 10.31234/osf.io/f4ary>
+contains a tutorial.")
     (license license:gpl3+)))
 
 (define-public r-lavaanextra

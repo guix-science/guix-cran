@@ -8962,13 +8962,13 @@ Carvalho, Masini and Medeiros (2016) <DOI:10.2139/ssrn.2823687>.")
 (define-public r-archiveretriever
   (package
     (name "r-archiveretriever")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archiveRetriever" version))
        (sha256
-        (base32 "0zjb4i39s3xkb05h9smk9lwkap7w8gizs5i3ii1qgz2ahi07pywy"))))
+        (base32 "1c57iydf3aficrnqqzkmm7l820viyc94y17h2nnxqv52xlfyzq9d"))))
     (properties `((upstream-name . "archiveRetriever")))
     (build-system r-build-system)
     (arguments
@@ -14175,6 +14175,48 @@ Andrews, D. F. (1972) Plots of High-Dimensional Data.  Biometrics, 28(1),
 125-136. <doi:10.2307/2528964>.")
     (license license:gpl3)))
 
+(define-public r-andorr
+  (package
+    (name "r-andorr")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "andorR" version))
+       (sha256
+        (base32 "19hwk2hd235qq4apwdm0j7fcgqxrh4cpxfb396mbwcpv90m4lxd4"))))
+    (properties `((upstream-name . "andorR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-rlang
+                             r-jsonlite
+                             r-glue
+                             r-dplyr
+                             r-data-tree
+                             r-crayon
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://epimundi.github.io/andorR/")
+    (synopsis "Optimisation of the Analysis of AND-OR Decision Trees")
+    (description
+     "This package provides a decision support tool to strategically prioritise
+evidence gathering in complex, hierarchical AND-OR decision trees.  It is
+designed for situations with incomplete or uncertain information where the goal
+is to reach a confident conclusion as efficiently as possible (responding to the
+minimum number of questions, and only spending resources on generating improved
+evidence when it is of significant value to the final decision).  The framework
+excels in complex analyses with multiple potential successful pathways to a
+conclusion ('OR nodes).  Key features include a dynamic influence index to guide
+users to the most impactful question, a system for propagating answers and
+semi-quantitative confidence scores (0-5) up the tree, and post-conclusion
+guidance to identify the best actions to increase the final confidence.  These
+components are brought together in an interactive command-line workflow that
+guides the analysis from start to finish.")
+    (license license:expat)))
+
 (define-public r-and
   (package
     (name "r-and")
@@ -14385,40 +14427,6 @@ functional Magnetic Resonance Imaging (@code{fMRI}) datasets stored in the
 ANALYZE or NIFTI format.  Note that the latest version of XQuartz seems to be
 necessary under @code{MacOS}.")
     (license license:gpl2+)))
-
-(define-public r-analysislin
-  (package
-    (name "r-analysislin")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AnalysisLin" version))
-       (sha256
-        (base32 "1mf77l74lfjlr856w48spjnn7pvjf9zygy1xcaj3fmi335h77j2x"))))
-    (properties `((upstream-name . "AnalysisLin")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rann
-                             r-plotly
-                             r-magrittr
-                             r-htmltools
-                             r-hmisc
-                             r-ggplot2
-                             r-dt
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=AnalysisLin")
-    (synopsis "Exploratory Data Analysis")
-    (description
-     "This package provides a quick and effective data exploration toolkit.  It
-provides essential features, including a descriptive statistics table for a
-quick overview of your dataset, interactive distribution plots to visualize
-variable patterns, Principal Component Analysis for dimensionality reduction and
-feature analysis, missing value imputation methods, and correlation analysis.")
-    (license license:expat)))
 
 (define-public r-analogue
   (package
@@ -17107,13 +17115,13 @@ series rare variant association test for candidate gene discovery\"
 (define-public r-alleleshift
   (package
     (name "r-alleleshift")
-    (version "1.1-2")
+    (version "1.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AlleleShift" version))
        (sha256
-        (base32 "1lv7ap40bc6l1wp68lbxyavl9dky1mz09zbdjg9kyf1b9ca5siqx"))))
+        (base32 "1qkgmmj924b2khsgpsii43k78468411l3qpivwl1f4bfhf5ms5kx"))))
     (properties `((upstream-name . "AlleleShift")))
     (build-system r-build-system)
     (arguments
@@ -20216,53 +20224,6 @@ are 30, 100, 10 and 250 meters.  User can use data from a single meteorological
 station or a grid of meteorological stations (using any spatial interpolation
 method).  Silva, Teixeira, and Manzione (2019)
 <doi:10.1016/j.envsoft.2019.104497>.")
-    (license license:expat)))
-
-(define-public r-agriutilities
-  (package
-    (name "r-agriutilities")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "agriutilities" version))
-       (sha256
-        (base32 "1gdx642jbzjlz1aylcz0l2jh01941xrsaqd6sp6kldcg2zasazkm"))))
-    (properties `((upstream-name . "agriutilities")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-statgensta
-                             r-spats
-                             r-rlang
-                             r-psych
-                             r-matrix
-                             r-magrittr
-                             r-lmertest
-                             r-lme4
-                             r-ggrepel
-                             r-ggpubr
-                             r-ggplot2
-                             r-emmeans
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/AparicioJohan/agriutilities")
-    (synopsis "Utilities for Data Analysis in Agriculture")
-    (description
-     "Utilities designed to make the analysis of field trials easier and more
-accessible for everyone working in plant breeding.  It provides a simple and
-intuitive interface for conducting single and multi-environmental trial
-analysis, with minimal coding required.  Whether you're a beginner or an
-experienced user, agriutilities will help you quickly and easily carry out
-complex analyses with confidence.  With built-in functions for fitting Linear
-Mixed Models, agriutilities is the ideal choice for anyone who wants to save
-time and focus on interpreting their results.  Some of the functions require the
-R package asreml for the ASReml software, this can be obtained upon purchase
-from VSN international <https://vsni.co.uk/software/asreml-r/>.")
     (license license:expat)))
 
 (define-public r-agritutorial

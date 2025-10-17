@@ -1110,6 +1110,37 @@ and price data.  The package is designed to facilitate efficient data access for
 analysis, strategy development, and monitoring of cryptocurrency market trends.")
     (license license:gpl3+)))
 
+(define-public r-kqm
+  (package
+    (name "r-kqm")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KQM" version))
+       (sha256
+        (base32 "0v10j3rk3jl0ii44gln9n6mh79pq2bldvnwlq62ay7z76qyvvkrs"))))
+    (properties `((upstream-name . "KQM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-gtools r-cluster))
+    (home-page "https://cran.r-project.org/package=KQM")
+    (synopsis "K Quantiles Medoids (KQM) Clustering")
+    (description
+     "K Quantiles Medoids (KQM) clustering applies quantiles to divide data of each
+dimension into K mean intervals.  Combining quantiles of all the dimensions of
+the data and fully permuting quantiles on each dimension is the strategy to
+determine a pool of candidate initial cluster centers.  To find the best initial
+cluster centers from the pool of candidate initial cluster centers, two methods
+based on quantile strategy and PAM strategy respectively are proposed.  During a
+clustering process, medoids of clusters are used to update cluster centers in
+each iteration.  Comparison between KQM and the method of randomly selecting
+initial cluster centers shows that KQM is almost always getting clustering
+results with smaller total sum squares of distances.")
+    (license license:gpl2)))
+
 (define-public r-kpodclustr
   (package
     (name "r-kpodclustr")

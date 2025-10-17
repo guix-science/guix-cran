@@ -5224,13 +5224,13 @@ tagging messages with a priority level and application type, as well as masking
 (define-public r-rsynthbio
   (package
     (name "r-rsynthbio")
-    (version "2.2.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsynthbio" version))
        (sha256
-        (base32 "01zfai4m9ghr16gwmiy588zmkia1fr851agbzjvjyc6czsc2xvmq"))))
+        (base32 "1y7ny570ykxxnxvhbymh7744qnv7xkadgyxv1pm0151kv6n4s5yi"))))
     (properties `((upstream-name . "rsynthbio")))
     (build-system r-build-system)
     (arguments
@@ -9662,13 +9662,13 @@ purposes.")
 (define-public r-rrda
   (package
     (name "r-rrda")
-    (version "0.1.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rrda" version))
        (sha256
-        (base32 "0zw7q8iwllv2lkg03xfgfflpvvmx4csbj57hwdbgw7qzflbd1yr0"))))
+        (base32 "0ydc9hzjsw8vpsn9z63h0km8k70k91xnk2gjnbbqwji9v4nfbazl"))))
     (properties `((upstream-name . "rrda")))
     (build-system r-build-system)
     (arguments
@@ -9677,6 +9677,7 @@ purposes.")
     (propagated-inputs (list r-scales
                              r-rspectra
                              r-reshape2
+                             r-pheatmap
                              r-mass
                              r-ggplot2
                              r-furrr
@@ -11937,13 +11938,13 @@ mitigation measures.  References: Hepp et al. (2022)
 (define-public r-rpgconn
   (package
     (name "r-rpgconn")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpgconn" version))
        (sha256
-        (base32 "1g32z7l04bxn96sxhfwc8wdi5s1h81qwnxf1fib55cs357fglcs3"))))
+        (base32 "0sn3snifmbx68d43q96jkyw2afhk1010d1idvb21mqhyz92avl46"))))
     (properties `((upstream-name . "rpgconn")))
     (build-system r-build-system)
     (arguments
@@ -27962,13 +27963,13 @@ for estimating bispectrum or bicoherence, Lii and Helland (1981)
 (define-public r-rhor
   (package
     (name "r-rhor")
-    (version "1.3.0.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rhoR" version))
        (sha256
-        (base32 "0l387m6l2x3djn1liag4m49835m2mny006sjzqbravb1famrvawi"))))
+        (base32 "1pjsda09pgkn3plk3axd9hr49f7qlsih9nb0qmkygp46763ykp43"))))
     (properties `((upstream-name . "rhoR")))
     (build-system r-build-system)
     (arguments
@@ -29591,13 +29592,13 @@ package.")
 (define-public r-rgee
   (package
     (name "r-rgee")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgee" version))
        (sha256
-        (base32 "1v6xczz7n3gby7ckh323yr5jqvzsvpjy1qszqh9hk7a56m3y31mh"))))
+        (base32 "19nzy5qd5ywjw1kqv59z2jqbzbs6s6kx8qjmjax149g5if4hwgj8"))))
     (properties `((upstream-name . "rgee")))
     (build-system r-build-system)
     (arguments
@@ -36553,6 +36554,29 @@ importance of predictors in a linear or generalized linear model, and a couple
 of useful Tcl/Tk widgets.")
     (license license:gpl2+)))
 
+(define-public r-reliaplotr
+  (package
+    (name "r-reliaplotr")
+    (version "0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ReliaPlotR" version))
+       (sha256
+        (base32 "0ka38nqpdajw6cbhdpzilk5knjgv3a8bv9c9dn9gjcmfm4dl97kj"))))
+    (properties `((upstream-name . "ReliaPlotR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-weibullr r-reliagrowr r-plotly))
+    (home-page "https://paulgovan.github.io/ReliaPlotR/")
+    (synopsis "Interactive Reliability Probability Plots")
+    (description
+     "Build interactive Reliability Probability Plots with plotly by Carson Sievert
+(2020) <https://plotly-r.com>, an interactive web-based graphing library.")
+    (license (license:fsdg-compatible "Apache License"))))
+
 (define-public r-reliagrowr
   (package
     (name "r-reliagrowr")
@@ -37713,13 +37737,13 @@ methods are available for continuous and survival responses.")
 (define-public r-regmmd
   (package
     (name "r-regmmd")
-    (version "0.0.1")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regMMD" version))
        (sha256
-        (base32 "0ph2vs8xbjwsgin13pnpjagqqcj025k7vcv134h1g3djjmk10k63"))))
+        (base32 "164agadr418pgg95zks4rhvmmzidyg8wdbcgy0r6pfyx7m0bk361"))))
     (properties `((upstream-name . "regMMD")))
     (build-system r-build-system)
     (arguments
@@ -38339,13 +38363,13 @@ working with regression models.")
 (define-public r-refund-shiny
   (package
     (name "r-refund-shiny")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refund.shiny" version))
        (sha256
-        (base32 "1qzz9q6bxl9hdr7mqhmva96x12g62m9h9mb6yqhq6003w7cz186g"))))
+        (base32 "00aygn4vyn67dssjhxmhc5x61rhqjli286ymh4kqpnq0vfmqgpa9"))))
     (properties `((upstream-name . "refund.shiny")))
     (build-system r-build-system)
     (arguments
@@ -38360,7 +38384,7 @@ working with regression models.")
                              r-gridextra
                              r-ggplot2
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=refund.shiny")
+    (home-page "https://github.com/refunders/refund.shiny")
     (synopsis "Interactive Plotting for Functional Data Analyses")
     (description
      "This package produces Shiny applications for different types of popular
@@ -48810,6 +48834,45 @@ are also available for models based on latent variables (LVs)
 @code{(gridscorelb()} and @code{gridcvlb()}).")
     (license license:gpl3)))
 
+(define-public r-rchea3
+  (package
+    (name "r-rchea3")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rChEA3" version))
+       (sha256
+        (base32 "1pvwa4rh2whc0nfm2riwyzln6a3z5z5dbwzq4pk9a4pspk25v731"))))
+    (properties `((upstream-name . "rChEA3")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl
+                             r-tidyselect
+                             r-rlang
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-dplyr
+                             r-crayon
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ckntav/rChEA3")
+    (synopsis "R Client for the 'ChEA3' Transcription Factor Enrichment API")
+    (description
+     "Interface to the @code{ChEA3} transcription factor enrichment API. @code{ChEA3}
+integrates evidence from @code{ChIP-seq}, co-expression, and literature
+resources to prioritize transcription factors regulating a given set of genes.
+This package provides convenient R functions to query the API, retrieve ranked
+results across collections (including integrated scores), and standardize output
+for downstream analysis in R/Bioconductor workflows.  See
+<https://maayanlab.cloud/chea3/> or Keenan (2019) <doi:10.1093/nar/gkz446> for
+further details.")
+    (license license:expat)))
+
 (define-public r-rchallenge
   (package
     (name "r-rchallenge")
@@ -49158,6 +49221,33 @@ provide graphs to help with the choice of m.  We relay on the Benchmarking
 package to compute the efficiency scores and on the np package to compute non
 parametric estimation of similarity among units.")
     (license license:gpl2)))
+
+(define-public r-rcd3
+  (package
+    (name "r-rcd3")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcd3" version))
+       (sha256
+        (base32 "1lbsdkg546mlh80avcayxsi3f04r5cc2jzn1j0fvr6xsdkrif38l"))))
+    (properties `((upstream-name . "rcd3")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=rcd3")
+    (synopsis
+     "Efficient Row-Column Designs for 3 Level Factorial Experiments in 3 Rows")
+    (description
+     "This package provides functions to construct efficient row-column designs for
+3-level factorial experiments in 3 rows.  The designs ensure the estimation of
+all main effects (full efficiency) and two factor interactions in minimum
+replications.  For more details, see Dey, A. and Mukerjee, R. (2012)
+<doi:10.1016/j.spl.2012.06.014> and Dash, S., Parsad, R., and Gupta, V. K.
+(2013) <doi:10.1007/s40003-013-0059-5>.")
+    (license license:gpl3)))
 
 (define-public r-rccpca
   (package

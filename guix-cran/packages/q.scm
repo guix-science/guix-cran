@@ -701,43 +701,6 @@ details.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-quicr
-  (package
-    (name "r-quicr")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "quicR" version))
-       (sha256
-        (base32 "04mf5yw533i2k1mnkwvygkky10nf9x7rrczqpdnj163lbc60r1w2"))))
-    (properties `((upstream-name . "quicR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-slider
-                             r-reshape2
-                             r-readxl
-                             r-purrr
-                             r-openxlsx
-                             r-janitor
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=quicR")
-    (synopsis "RT-QuIC Data Formatting and Analysis")
-    (description
-     "Designed for the curation and analysis of data generated from real-time
-quaking-induced conversion (RT-@code{QuIC}) assays first described by Atarashi
-et al. (2011) <doi:10.1038/nm.2294>. @code{quicR} calculates useful metrics such
-as maxpoint ratio: Rowden et al. (2023) <doi:10.1099/vir.0.069906-0>;
-time-to-threshold: Shi et al. (2013) <doi:10.1186/2051-5960-1-44>; and maximum
-slope.  Integration with the output from plate readers allows for seamless input
-of raw data into the R environment.")
-    (license license:gpl3)))
-
 (define-public r-quickregression
   (package
     (name "r-quickregression")
@@ -2503,6 +2466,33 @@ focused on data that are drawn on a map that contains some type of polygon
 features.  For each area identified on the map, the id numbers of these polygons
 can be entered as vectors and transformed using qualmap.")
     (license license:gpl3)))
+
+(define-public r-qualitymeasure
+  (package
+    (name "r-qualitymeasure")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QualityMeasure" version))
+       (sha256
+        (base32 "11kc3nnyg2wwvcr3hlk94cmj6nbd4y6zy2dbzbmjisws0hrjk8nn"))))
+    (properties `((upstream-name . "QualityMeasure")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-lme4 r-ggplot2 r-foreach r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=QualityMeasure")
+    (synopsis "Methods for Analyzing Quality Measure Performance")
+    (description
+     "Quality of care is compared across accountable entities, including hospitals,
+provider groups, and insurance plans, using standardized quality measures.
+However, observed variations in quality measure performance might be the result
+of chance sampling or measurement errors.  Contains functions for estimating the
+reliability of unadjusted and risk-standardized quality measures.")
+    (license license:gpl3+)))
 
 (define-public r-qualitycontrol
   (package
@@ -7016,6 +7006,30 @@ package provides several plotting functions that are all based on quantile
 binning.  The plots are created with ggplot2 and patchwork and can be further
 adjusted.")
     (license license:expat)))
+
+(define-public r-qatarcars
+  (package
+    (name "r-qatarcars")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qatarcars" version))
+       (sha256
+        (base32 "1gxqn0y9hfrx0m08gakq516jz4080b294jm809x26nf39fnvk93b"))))
+    (properties `((upstream-name . "qatarcars")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://profmusgrave.github.io/qatarcars/")
+    (synopsis "Data on Cars in Qatar")
+    (description
+     "Fuel economy, size, performance, and price data for cars in Qatar in 2025.
+Mirrors many of the columns in mtcars, but uses (1) non-US-centric makes and
+models, (2) 2025 prices, and (3) metric measurements, making it more appropriate
+for use as an example dataset outside the United States.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-qapprox
   (package

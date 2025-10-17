@@ -2053,13 +2053,13 @@ Multivariate Analysis.  ISBN: 978-0124712522.  London: Academic Press.")
 (define-public r-mvhist
   (package
     (name "r-mvhist")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvhist" version))
        (sha256
-        (base32 "057yhkivcfjm9yazx0x8rn2xysgyc6y7nlcxpjl00yfi7wcjpmlh"))))
+        (base32 "0yibi8qk274cn0pyckwhgb4narms4dqr0az9nqjv6ccqlhmhldk8"))))
     (properties `((upstream-name . "mvhist")))
     (build-system r-build-system)
     (arguments
@@ -21414,13 +21414,13 @@ with more upload options, see the @code{OpenML} package.")
 (define-public r-mlr3fda
   (package
     (name "r-mlr3fda")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3fda" version))
        (sha256
-        (base32 "0y086z58zbazcxcdqk82rvfs1yifah6y4ps3vd679n09z08wg3mm"))))
+        (base32 "0ipl7fhmga72lzbblfr42bny4p8d33v9lfxjxcwyhz930c4vyflx"))))
     (properties `((upstream-name . "mlr3fda")))
     (build-system r-build-system)
     (arguments
@@ -22547,13 +22547,13 @@ SR, @code{McVean} G, Turnbaugh PJ, Lander ES, Mitzenmacher M, Sabeti PC. (2011).
 (define-public r-mlexperiments
   (package
     (name "r-mlexperiments")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlexperiments" version))
        (sha256
-        (base32 "1fmiic3p7wywka8bgchmcnp0h4fzllzwpf5dvx6h27bjnfv9n4dh"))))
+        (base32 "1fv8yr771hvxpb37i874r92vg2n15gz6cbr41xx3inmnhc5g8pwf"))))
     (properties `((upstream-name . "mlexperiments")))
     (build-system r-build-system)
     (arguments
@@ -25390,6 +25390,41 @@ data.")
 variate generation, and estimation.  Based on the Laplace-Inversion algorithm by
 Garrappa, R. (2015) <doi:10.1137/140971191>.")
     (license license:gpl2+)))
+
+(define-public r-mitre
+  (package
+    (name "r-mitre")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mitre" version))
+       (sha256
+        (base32 "0r5phzxiibwwhx3qh623grfy070c3vzm4q07rzhsp5q5ycb5jhn5"))))
+    (properties `((upstream-name . "mitre")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-rjsonio
+                             r-plyr
+                             r-jsonlite
+                             r-igraph
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/motherhack3r/mitre")
+    (synopsis "Cybersecurity MITRE Standards Data and Digraphs")
+    (description
+     "Extract, transform and load MITRE standards.  This package gives you an approach
+to cybersecurity data sets.  All data sets are build on runtime downloading raw
+data from MITRE public services.  MITRE <https://www.mitre.org/> is a
+government-funded research organization based in Bedford and @code{McLean}.
+Current version includes most used standards as data frames.  It also provide a
+list of nodes and edges with all relationships.")
+    (license license:cc0)))
 
 (define-public r-mitohear
   (package
@@ -38920,6 +38955,41 @@ methodological details are available in our recent preprint by Ahn S and Li Z
 (2025) <doi:10.48550/@code{arXiv.2505.22986>}.")
     (license license:gpl3)))
 
+(define-public r-medxr
+  (package
+    (name "r-medxr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MedxR" version))
+       (sha256
+        (base32 "10zfbjr0xzr6bbfrhmg3jr2vf4lkqiq9fl654azn4glbkjjdp56z"))))
+    (properties `((upstream-name . "MedxR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-memoise r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/medxr")
+    (synopsis "Access Drug Regulatory Data via FDA and Health Canada APIs")
+    (description
+     "This package provides functions to access drug regulatory data from public
+RESTful APIs including the FDA Open API and the Health Canada Drug Product
+Database API', retrieving real-time or historical information on drug approvals,
+adverse events, recalls, and product details.  Additionally, the package
+includes a curated collection of open datasets focused on drugs,
+pharmaceuticals, treatments, and clinical studies.  These datasets cover diverse
+topics such as treatment dosages, pharmacological studies, placebo effects, drug
+reactions, misuses of pain relievers, and vaccine effectiveness.  The package
+supports reproducible research and teaching in pharmacology, medicine, and
+healthcare by integrating reliable international APIs and structured datasets
+from public, academic, and government sources.  For more information on the
+APIs, see: FDA API <https://open.fda.gov/apis/> and Health Canada API
+<https://health-products.canada.ca/api/documentation/dpd-documentation-en.html>.")
+    (license license:gpl3)))
+
 (define-public r-medseq
   (package
     (name "r-medseq")
@@ -39107,6 +39177,31 @@ Featuring several from the Teaching of Statistics in the Health Sciences website
 of historical significance in medical research, some reformatted and extended
 from existing R packages, and some data donations.")
     (license license:expat)))
+
+(define-public r-medicalcoder
+  (package
+    (name "r-medicalcoder")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "medicalcoder" version))
+       (sha256
+        (base32 "1gaiyhljlba77b72dqk7fy00r7v7vk4i7wmks4aqan1zk5iblllz"))))
+    (properties `((upstream-name . "medicalcoder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=medicalcoder")
+    (synopsis "Tools for Working with ICD Codes and Comorbidity Algorithms")
+    (description
+     "This package provides tools for working with medical coding schemas such as the
+International Classification of Diseases (ICD).  Includes functions for
+comorbidity classification algorithms such as the Pediatric Complex Chronic
+Conditions (PCCC), Charlson, and Elixhauser indices.")
+    (license license:gpl2)))
 
 (define-public r-mediationsens
   (package

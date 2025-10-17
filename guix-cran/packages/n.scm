@@ -3891,6 +3891,48 @@ families exponentiated generalized gull alpha power family, exponentiated gull
 alpha powerfamily, gull alpha power family.")
     (license license:expat)))
 
+(define-public r-nova
+  (package
+    (name "r-nova")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NOVA" version))
+       (sha256
+        (base32 "1nm74arzfgld7d4qknnxln8kshclhj5q2qnzgr0m8irnxf1zyhf4"))))
+    (properties `((upstream-name . "NOVA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl
+                             r-viridis
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-rcolorbrewer
+                             r-purrr
+                             r-pheatmap
+                             r-knitr
+                             r-gridextra
+                             r-ggplot2
+                             r-dt
+                             r-dplyr))
+    (home-page "https://github.com/atudoras/NOVA")
+    (synopsis "Neural Output Visualization and Analysis")
+    (description
+     "This package provides a comprehensive toolkit for analyzing and visualizing
+neural data outputs, including Principal Component Analysis (PCA) trajectory
+plotting, Multi-Electrode Array (MEA) heatmap generation, and variable
+importance analysis.  Provides publication-ready visualizations with flexible
+customization options for neuroscience research applications.")
+    (license license:gpl3)))
+
 (define-public r-notionr
   (package
     (name "r-notionr")

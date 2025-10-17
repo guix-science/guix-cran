@@ -4246,13 +4246,13 @@ problematic seismometers.")
 (define-public r-irishdirectorates
   (package
     (name "r-irishdirectorates")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IrishDirectorates" version))
        (sha256
-        (base32 "1mwjrmqga7f0p5w2m4f0i6mb68jimx6791pz03r8iqj3yx0vzkh0"))))
+        (base32 "15ws146dqsra0q01xjb2wrq6vrb7x4vnx3ixsp2lpj0rynn2qclm"))))
     (properties `((upstream-name . "IrishDirectorates")))
     (build-system r-build-system)
     (arguments
@@ -10891,36 +10891,33 @@ package is based on methods described in Sasieni (2003) <doi:
 (define-public r-infercsn
   (package
     (name "r-infercsn")
-    (version "1.1.7")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inferCSN" version))
        (sha256
-        (base32 "0jiw5c1zd95fmlmhpdx4l7xjr9s3cx8fs2c27m7i7ray0m7cs8fk"))))
+        (base32 "0n221k023lycamivgfrcxv1ckkih7wp96bb4ik6vfi065awyysbc"))))
     (properties `((upstream-name . "inferCSN")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppparallel
-                             r-rcpparmadillo
+    (propagated-inputs (list r-thisutils
                              r-rcpp
                              r-purrr
-                             r-pbapply
                              r-matrix
+                             r-l0learn
                              r-ggraph
                              r-ggplot2
                              r-ggnetwork
-                             r-foreach
                              r-dplyr
-                             r-doparallel
                              r-cli))
     (home-page "https://mengxu98.github.io/inferCSN/")
     (synopsis "Inferring Cell-Specific Gene Regulatory Network")
     (description
      "An R package for inferring cell-type specific gene regulatory network from
-single-cell RNA data.")
+single-cell RNA-seq data.")
     (license license:expat)))
 
 (define-public r-infectiousr
@@ -11041,13 +11038,13 @@ et al. (2020) <doi:10.1111/1440-1703.12102> for statistical background.")
 (define-public r-inext-3d
   (package
     (name "r-inext-3d")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNEXT.3D" version))
        (sha256
-        (base32 "12sjg27953ij399rxj0l8kdjc5fyk5sz70rdxclsy23jlk8nx2gn"))))
+        (base32 "0fiqc14f15mj3gh9gc1m6d7f6i8zw99272xiqy4ir46qjfpq3ypv"))))
     (properties `((upstream-name . "iNEXT.3D")))
     (build-system r-build-system)
     (arguments
@@ -13380,13 +13377,13 @@ Endres, Fink and Augustin (2018, <doi:10.5282/ubm/epub.42423>).")
 (define-public r-impectr
   (package
     (name "r-impectr")
-    (version "2.4.3")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "impectR" version))
        (sha256
-        (base32 "0d4kmqc2fb9na8kyk0a40ivy25k19r8ijiw4792z4wlqi8r3620q"))))
+        (base32 "0vx6bm5079gw14zvbr0h9qlzm7rngfjrlafd7cyzjsvncbs7vklw"))))
     (properties `((upstream-name . "impectR")))
     (build-system r-build-system)
     (arguments
@@ -13400,7 +13397,7 @@ Endres, Fink and Augustin (2018, <doi:10.5282/ubm/epub.42423>).")
                              r-httr
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=impectR")
-    (synopsis "Access Data from the Impect API")
+    (synopsis "Access Data from the 'Impect' API")
     (description
      "Pull data from the Impect Customer API <https://glossary.impect.com/api-design>.
  The package can retrieve data such as events or match sums.")

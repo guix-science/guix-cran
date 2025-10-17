@@ -3217,6 +3217,45 @@ G-Series essentially come from Dagum, E. B., and P. Cholette (2006)
 <doi:10.1007/0-387-35439-5>.")
     (license license:gpl3+)))
 
+(define-public r-gsema
+  (package
+    (name "r-gsema")
+    (version "0.99.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GSEMA" version))
+       (sha256
+        (base32 "1g5mfrri8a9kw95gp834piznv3zbmrivr2fyivdla9wbr7zicykn"))))
+    (properties `((upstream-name . "GSEMA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rdpack
+                             r-rcolorbrewer
+                             r-progress
+                             r-plyr
+                             r-pheatmap
+                             r-pbapply
+                             r-metafor
+                             r-limma
+                             r-impute
+                             r-gsva
+                             r-doparallel
+                             r-biocparallel
+                             r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GSEMA")
+    (synopsis "Gene Set Enrichment Meta-Analysis")
+    (description
+     "Performing the different steps of gene set enrichment meta-analysis.  It
+provides different functions that allow the application of meta-analysis based
+on the combination of effect sizes from different pathways in different studies
+to obtain significant pathways that are common to all of them.")
+    (license license:gpl2)))
+
 (define-public r-gselection
   (package
     (name "r-gselection")
@@ -4823,13 +4862,13 @@ DEG, go, and merge.")
 (define-public r-grouper
   (package
     (name "r-grouper")
-    (version "0.3.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grouper" version))
        (sha256
-        (base32 "03nl7xr8ma29sjx6f3ll3lsmqq86k5vcv6r390gym7sw4y0pqnc6"))))
+        (base32 "0v4sw6dqc8v0bmczh2sgagadbpxv9jf6lnif1ybz6k74cx8ia0h9"))))
     (properties `((upstream-name . "grouper")))
     (build-system r-build-system)
     (arguments
@@ -6587,13 +6626,13 @@ Experimental Design by Hybridizing Binary Matching with Imbalance Optimization\"
 (define-public r-greedyepl
   (package
     (name "r-greedyepl")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GreedyEPL" version))
        (sha256
-        (base32 "19bgrgzb7jdqpljcbhr3d98y331k1b8fbwgcipak6zkhk2vr6vqz"))))
+        (base32 "02264sira45bihy6g8xafmsqf4c3ij050nc0ddz6hjdgnhv876al"))))
     (properties `((upstream-name . "GreedyEPL")))
     (build-system r-build-system)
     (arguments
@@ -16325,13 +16364,13 @@ that all targets remain up to date.")
 (define-public r-gitstats
   (package
     (name "r-gitstats")
-    (version "2.3.6")
+    (version "2.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitStats" version))
        (sha256
-        (base32 "1z3h8k0nkzpanjr1qplwlxp0n05fs02s00g9lsrkf4vi3dl97rzg"))))
+        (base32 "12bfqgfs93bcsxrp61vyvsdhsaayv7xdiaa4vzi12n58j27dg2w2"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
     (arguments
@@ -20615,13 +20654,13 @@ framework Wickham (2016) <doi:10.1007/978-3-319-24277-4>.")
 (define-public r-ggpath
   (package
     (name "r-ggpath")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggpath" version))
        (sha256
-        (base32 "0s68s737fdgsllgk49jcrrg6bkiavim7xk9bvcx8h8bjpphqarba"))))
+        (base32 "0sg9pja63pj66pvcvag5djqmm3iq9jdlyz0s37ciimbb357m8bxa"))))
     (properties `((upstream-name . "ggpath")))
     (build-system r-build-system)
     (arguments
@@ -27648,13 +27687,13 @@ Analytical Processing) star format.")
 (define-public r-geogam
   (package
     (name "r-geogam")
-    (version "0.1-3")
+    (version "0.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoGAM" version))
        (sha256
-        (base32 "080rls4rbac809hd4ddjsj2ndb2hv6fvwdnh4yl7j1hnfm1xwv64"))))
+        (base32 "01vhmfzgrlgjd3brxxi7qsx8imq7xfn4p8pwpmwf1kqlhw1g31gf"))))
     (properties `((upstream-name . "geoGAM")))
     (build-system r-build-system)
     (arguments
@@ -30476,13 +30515,13 @@ given, even the generalized linear model output in each group.")
 (define-public r-generalizedwendland
   (package
     (name "r-generalizedwendland")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeneralizedWendland" version))
        (sha256
-        (base32 "1mwinkjnf7wvsa077nzq641fkrj9y44gzmihhkkfgkjddcjnk4s4"))))
+        (base32 "1fa6ayka72ab9bpgl8wwhfd740ynds1ph3ksvip0v0frhayjj6qz"))))
     (properties `((upstream-name . "GeneralizedWendland")))
     (build-system r-build-system)
     (arguments
@@ -30512,8 +30551,8 @@ interpolation, polynomial interpolation, and cubic spline interpolation.  Moreno
 Bevilacqua and Reinhard Furrer and Tarik Faouzi and Emilio Porcu (2019)
 <url:<https://projecteuclid.org/@code{journalArticle/Download?urlId=10.1214%2F17-AOS1652}
 >>.  Moreno Bevilacqua and Christian CaamaÃ±o-Carrillo and Emilio Porcu (2022)
-<@code{arXiv:2008.02904>}.  Reinhard Furrer and Roman Flury and Florian Gerber
-(2022) <url:<https://CRAN.R-project.org/package=spam >>.")
+<doi:10.48550/@code{arXiv.2008.02904>}.  Reinhard Furrer and Roman Flury and
+Florian Gerber (2022) <url:<https://CRAN.R-project.org/package=spam >>.")
     (license license:gpl2+)))
 
 (define-public r-generalizedumatrix
@@ -32726,13 +32765,13 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
 (define-public r-gdverse
   (package
     (name "r-gdverse")
-    (version "1.5")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdverse" version))
        (sha256
-        (base32 "1siyj4nys1kp5ys322nz09srghcz96imz07bf15z41mkrqqirrfc"))))
+        (base32 "0ri8bi65v1ars6snhzgf0600xc6b6kgkchax52j7k7rnrxhxyy8d"))))
     (properties `((upstream-name . "gdverse")))
     (build-system r-build-system)
     (arguments
@@ -37373,13 +37412,13 @@ Weichwald (2024) <doi:10.48550/@code{arXiv.2402.08616>}.")
 (define-public r-gadget3
   (package
     (name "r-gadget3")
-    (version "0.13-0")
+    (version "0.14-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gadget3" version))
        (sha256
-        (base32 "1pqbc3bimv65g9spgjcpn4f9wpvbai30bwd0w251n4c4vc35n5hc"))))
+        (base32 "0ap3dki2vpvypjbsapm4311ghjbh164q20jbqn63wr044lrxzkx8"))))
     (properties `((upstream-name . "gadget3")))
     (build-system r-build-system)
     (arguments

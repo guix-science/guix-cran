@@ -8165,13 +8165,13 @@ using @code{treespaceServer()}.  For further details see Jombart et al. (2017)
 (define-public r-treeslicer
   (package
     (name "r-treeslicer")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treesliceR" version))
        (sha256
-        (base32 "0yq56cxxaz2jvzf8vynnkwywg87q11f4h5smlbb45fsbhlgvzl0g"))))
+        (base32 "1snkw2zh5zqsdbn3pjf5ipxf86f2a0pr7m4lq35zbmbkrvgbbbdm"))))
     (properties `((upstream-name . "treesliceR")))
     (build-system r-build-system)
     (arguments
@@ -14025,6 +14025,29 @@ preserving formatting, comments, and structure.  tomledit enables serialization
 of R objects such as lists, data.frames, numeric, logical, and date vectors.")
     (license license:expat)))
 
+(define-public r-toml
+  (package
+    (name "r-toml")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "toml" version))
+       (sha256
+        (base32 "1kh90fgj663plahgw7yxg0zwwvsyfr27c7j5bk9k8pma55h6l2aw"))))
+    (properties `((upstream-name . "toml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-v8 r-jsonlite))
+    (home-page "https://cran.r-project.org/package=toml")
+    (synopsis "Read, Write, and Modify TOML Files")
+    (description
+     "Simple toolkit for working with TOML text.  Based on tomledit which allows for
+modifying TOML while preserving order, comments,and whitespace.")
+    (license license:expat)))
+
 (define-public r-tomba
   (package
     (name "r-tomba")
@@ -14907,6 +14930,43 @@ sampling and chain visualization.  Sampling can be performed with or without
 Laplace approximation for the random effects.  This is demonstrated in Monnahan
 & Kristensen (2018) <DOI:10.1371/journal.pone.0197954>.")
     (license license:gpl3+)))
+
+(define-public r-tmapverse
+  (package
+    (name "r-tmapverse")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tmapverse" version))
+       (sha256
+        (base32 "0xjhmh9xgs16waziah2dzayjab07x2hc2qavl286l0w9j2xx1r93"))))
+    (properties `((upstream-name . "tmapverse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmap-networks
+                             r-tmap-mapgl
+                             r-tmap-glyphs
+                             r-tmap-cartogram
+                             r-tmap
+                             r-terra
+                             r-stars
+                             r-sf
+                             r-crayon
+                             r-cols4all
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=tmapverse")
+    (synopsis "Meta-Package for Thematic Mapping with 'tmap'")
+    (description
+     "Attaches a set of packages commonly used for spatial plotting with tmap'.  It
+includes tmap and its extensions ('tmap.glyphs', tmap.networks',
+tmap.cartogram', tmap.mapgl'), as well as supporting spatial data packages
+('sf', stars', terra') and cols4all for exploring color palettes.  The
+collection is designed for thematic mapping workflows and does not include the
+full set of packages from the R-spatial ecosystem.")
+    (license license:gpl3)))
 
 (define-public r-tmap-networks
   (package
@@ -15912,13 +15972,13 @@ machine learing.")
 (define-public r-titan2
   (package
     (name "r-titan2")
-    (version "2.4.3")
+    (version "2.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TITAN2" version))
        (sha256
-        (base32 "0lnkgfa3dq38ad0rpyzwq12kv4vb19wzx17sw8f1vfzpkgf5v4qa"))))
+        (base32 "09lavsx1djvasfk3ccjdz770rkx3k6dh1d3qk9w7acgcajrn4w3n"))))
     (properties `((upstream-name . "TITAN2")))
     (build-system r-build-system)
     (arguments
@@ -21127,13 +21187,13 @@ knitr'/'markdown'.")
 (define-public r-tidychangepoint
   (package
     (name "r-tidychangepoint")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidychangepoint" version))
        (sha256
-        (base32 "0pxizc76969rpsajibmr0a3baw42kw6kbwz3xz9sd9blmxny1plj"))))
+        (base32 "1r7ahkkfwbgsxagyg67bx4b7cfsa94bhcakyygq8mpj0mm2fim4l"))))
     (properties `((upstream-name . "tidychangepoint")))
     (build-system r-build-system)
     (arguments

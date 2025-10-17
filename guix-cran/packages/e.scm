@@ -1845,13 +1845,13 @@ experience.")
 (define-public r-expss
   (package
     (name "r-expss")
-    (version "0.11.6")
+    (version "0.11.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "expss" version))
        (sha256
-        (base32 "1qzgy9psxq7w61rqp16qhs02q264izk9bv1hwpa2n9k02milvldw"))))
+        (base32 "0gfyzaqz33n9ni5mgvx6wq626f92jfmdpb0z8793nhyjcpmrdlfv"))))
     (properties `((upstream-name . "expss")))
     (build-system r-build-system)
     (arguments
@@ -1901,13 +1901,13 @@ approach\" by Hyndman, Koehler, Ord and Snyder (Springer, 2008).")
 (define-public r-expsbm
   (package
     (name "r-expsbm")
-    (version "1.3.5")
+    (version "1.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "expSBM" version))
        (sha256
-        (base32 "0k8nkwqrcmmhv0x8a2np1rm5cyc9glyvndwdbnp03v0wrg8121sw"))))
+        (base32 "0fbb3zzwrvhlpb7rhgqlvca5z4q2ar00q56axnh97azyg5yvqy75"))))
     (properties `((upstream-name . "expSBM")))
     (build-system r-build-system)
     (arguments
@@ -1921,8 +1921,8 @@ approach\" by Hyndman, Koehler, Ord and Snyder (Springer, 2008).")
      "Given a continuous-time dynamic network, this package allows one to fit a
 stochastic blockmodel where nodes belonging to the same group create
 interactions and non-interactions of similar lengths.  This package implements
-the methodology described by R. Rastelli and M. Fop (2019)
-<@code{arXiv:1901.09828>}.")
+the methodology described by R. Rastelli and M. Fop (2020)
+<doi:10.1007/s11634-020-00403-w>.")
     (license license:gpl3)))
 
 (define-public r-exprep
@@ -1978,47 +1978,6 @@ been written to accompany the forthcoming paper Computing expectations and
 marginal likelihoods for permutations'.  Publication details will be updated as
 soon as they are finalized.")
     (license license:gpl3)))
-
-(define-public r-expowo
-  (package
-    (name "r-expowo")
-    (version "2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "expowo" version))
-       (sha256
-        (base32 "08w64l73vc83dk7himn7sr487ivjhn5cgql8vqw30vdksxz3nyi5"))))
-    (properties `((upstream-name . "expowo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridislite
-                             r-tibble
-                             r-sp
-                             r-sf
-                             r-scales
-                             r-rnaturalearth
-                             r-rcolorbrewer
-                             r-r-utils
-                             r-pupillometryr
-                             r-plyr
-                             r-magrittr
-                             r-ggplot2
-                             r-flora
-                             r-dplyr
-                             r-data-table
-                             r-cowplot))
-    (home-page "https://dboslab.github.io/expowo/")
-    (synopsis "Data Mining of Plant Diversity and Distribution")
-    (description
-     "This package produces diversity estimates and species lists with associated
-global distribution for any vascular plant family and genus from Plants of the
-World Online database <https://powo.science.kew.org/>, by interacting with the
-source code of each plant taxon page.  It also creates global maps of species
-richness, graphics of species discoveries and nomenclatural changes over time.")
-    (license license:expat)))
 
 (define-public r-exposr
   (package
@@ -5067,13 +5026,13 @@ Observational Studies by Paul R. Rosenbaum (2021) <doi:10.1201/9781003039648>.")
 (define-public r-evidencesynthesis
   (package
     (name "r-evidencesynthesis")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EvidenceSynthesis" version))
        (sha256
-        (base32 "1qar7gdvm7b6z8xjsj0rly0gkg7xmkkn7q32l6cjn4s2mn2qlprs"))))
+        (base32 "089p7wvz18c3ds954wxznqpzh03dxlm29lajcwc1i4jnfwvgv8nb"))))
     (properties `((upstream-name . "EvidenceSynthesis")))
     (build-system r-build-system)
     (arguments
@@ -5409,6 +5368,44 @@ features computed.  The event features extracted from incomplete-events can be
 classified using a partial-observations-classifier (Kandanaarachchi et al.
 2018) <doi:10.1371/journal.pone.0236331>.")
     (license license:expat)))
+
+(define-public r-eventreport
+  (package
+    (name "r-eventreport")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eventreport" version))
+       (sha256
+        (base32 "120skkcv6rl7frrsz2cl1pl0sjk0q6imgvy00kl106zm8rsffjbx"))))
+    (properties `((upstream-name . "eventreport")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sebastianvanbaalen/eventreport")
+    (synopsis "Diagnose, Visualize, and Aggregate Event Report Level Data")
+    (description
+     "Diagnose, visualize, and aggregate event report level data to the event level.
+Users provide an event report level dataset, specify their aggregation rules,
+and the package produces a dataset aggregated at the event level.  Also includes
+the Modes and Agents of Election-Related Violence in CÃ´te d'Ivoire and Kenya
+(MAVERICK) dataset, an event report level dataset that records all documented
+instances of electoral violence from the first multiparty election to 2022 in
+CÃ´te d'Ivoire (1995-2022) and Kenya (1992-2022).")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-eventpredincure
   (package
@@ -5916,13 +5913,13 @@ returned.")
 (define-public r-evaltest
   (package
     (name "r-evaltest")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EvalTest" version))
        (sha256
-        (base32 "1k8q4kjvlc2dyp2qmsdh1q0yzvkxac62mnxqm2bl6v2dq0l70qg3"))))
+        (base32 "11az2j4pjg6697x5j7rfihvd3gn1g7zrx0ifhsk1r5kfgidd0jj5"))))
     (properties `((upstream-name . "EvalTest")))
     (build-system r-build-system)
     (arguments
@@ -13038,6 +13035,39 @@ variable is available before you start an analysis.  Alternatively, you can use
 the package's situation report when filing error reports with your compute
 infrastructure.")
     (license license:expat)))
+
+(define-public r-envsetup
+  (package
+    (name "r-envsetup")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "envsetup" version))
+       (sha256
+        (base32 "17lm10x9ip5xcd2670nc9rdiwfk3jp687w3nyk9mc9686n5vb8qn"))))
+    (properties `((upstream-name . "envsetup")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-usethis
+                             r-rlang
+                             r-purrr
+                             r-fs
+                             r-envnames
+                             r-config))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pharmaverse/envsetup")
+    (synopsis
+     "Support the Setup of the R Environment for Clinical Trial Programming Workflows")
+    (description
+     "The purpose of this package is to support the setup the R environment.  The two
+main features are autos', to automatically source files and/or directories into
+your environment, and paths to consistently set path objects across projects for
+input and output.  Both are implemented using a configuration file to allow
+easy, custom configurations that can be used for multiple or all projects.")
+    (license license:asl2.0)))
 
 (define-public r-envoutliers
   (package
@@ -24729,13 +24759,13 @@ non-zero effects.")
 (define-public r-ebdm
   (package
     (name "r-ebdm")
-    (version "1.1.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebdm" version))
        (sha256
-        (base32 "16qigjkyxxp8y4hywc2xlnd8his5xn438zf2n2isw27siqzw4lqq"))))
+        (base32 "089ykv6vmnk8ng7wkxn5l40lq6sdynq4na9yn0kflmnxazpw20aj"))))
     (properties `((upstream-name . "ebdm")))
     (build-system r-build-system)
     (arguments
@@ -24744,14 +24774,16 @@ non-zero effects.")
     (home-page "https://cran.r-project.org/package=ebdm")
     (synopsis "Estimating Bivariate Dependency from Marginal Data")
     (description
-     "This package provides maximum likelihood methods to estimate bivariate
-dependency (correlation) from marginal summary statistics in multi-study
-settings.  The package supports both binary and continuous variables assumed to
-follow a bivariate normal distribution, enabling privacy-preserving joint
-estimation when individual-level data are unavailable.  The binary method is
-fully described in the manuscript by Shang, Tsao and Zhang (2025)
-<doi:10.48550/@code{arXiv.2505.03995>}: \"Estimating the Joint Distribution of
-Two Binary Variables from Their Marginal Summaries\".")
+     "This package provides statistical methods for estimating bivariate dependency
+(correlation) from marginal summary statistics across multiple studies.  The
+package supports three modules: (1) bivariate correlation estimation for binary
+outcomes, (2) bivariate correlation estimation for continuous outcomes, and (3)
+estimation of component-wise means and variances under a conditional
+two-component Gaussian mixture model for a continuous variable stratified by a
+binary class label.  These methods enable privacy-preserving joint estimation
+when individual-level data are unavailable.  The approaches are detailed in
+Shang, Tsao, and Zhang (2025a) <doi:10.48550/@code{arXiv.2505.03995>} and Shang,
+Tsao, and Zhang (2025b) <doi:10.48550/@code{arXiv.2508.02057>}.")
     (license license:gpl3+)))
 
 (define-public r-ebdbnet
