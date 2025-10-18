@@ -20226,6 +20226,53 @@ method).  Silva, Teixeira, and Manzione (2019)
 <doi:10.1016/j.envsoft.2019.104497>.")
     (license license:expat)))
 
+(define-public r-agriutilities
+  (package
+    (name "r-agriutilities")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "agriutilities" version))
+       (sha256
+        (base32 "19csnz4xl1lvs4df9mnsaal3cvqap3mz29slz3idz6sz1nzdhfmq"))))
+    (properties `((upstream-name . "agriutilities")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-statgensta
+                             r-spats
+                             r-rlang
+                             r-psych
+                             r-matrix
+                             r-magrittr
+                             r-lmertest
+                             r-lme4
+                             r-ggrepel
+                             r-ggpubr
+                             r-ggplot2
+                             r-emmeans
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AparicioJohan/agriutilities")
+    (synopsis "Utilities for Data Analysis in Agriculture")
+    (description
+     "Utilities designed to make the analysis of field trials easier and more
+accessible for everyone working in plant breeding.  It provides a simple and
+intuitive interface for conducting single and multi-environmental trial
+analysis, with minimal coding required.  Whether you're a beginner or an
+experienced user, agriutilities will help you quickly and easily carry out
+complex analyses with confidence.  With built-in functions for fitting Linear
+Mixed Models, agriutilities is the ideal choice for anyone who wants to save
+time and focus on interpreting their results.  Some of the functions require the
+R package asreml for the ASReml software, this can be obtained upon purchase
+from VSN international <https://vsni.co.uk/software/asreml-r/>.")
+    (license license:expat)))
+
 (define-public r-agritutorial
   (package
     (name "r-agritutorial")

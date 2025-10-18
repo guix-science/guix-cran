@@ -3905,13 +3905,13 @@ checking containment in an interval, and an alternative interface to
 (define-public r-kimfilter
   (package
     (name "r-kimfilter")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kimfilter" version))
        (sha256
-        (base32 "19p6wqnp6gs7siwmyngw48lrpyqabmqxs051lx2mmlj3q53risyw"))))
+        (base32 "04z8ih8azsc5b4h9ivkmnqwl9gnlp7fm3rn1w1z9v9c977rh4rqk"))))
     (properties `((upstream-name . "kimfilter")))
     (build-system r-build-system)
     (arguments

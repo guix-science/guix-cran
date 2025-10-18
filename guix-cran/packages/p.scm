@@ -7845,13 +7845,13 @@ subdirectories for specific components, templates for manuscripts, and so on.")
 (define-public r-projectmanagement
   (package
     (name "r-projectmanagement")
-    (version "2.0.2")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProjectManagement" version))
        (sha256
-        (base32 "1lwhi542h1mq1r4501pz0xpf1plzg44zzj04bk9yinvbaqddavmm"))))
+        (base32 "1sdil07dix6pik2nfk94c80qkdqmpzlc481dygnbgr26fvpmcxnj"))))
     (properties `((upstream-name . "ProjectManagement")))
     (build-system r-build-system)
     (arguments
@@ -19172,13 +19172,13 @@ The algorithm is described in Nattino, Song and Lu (2022)
 (define-public r-polymapr
   (package
     (name "r-polymapr")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polymapR" version))
        (sha256
-        (base32 "0aschby014m0j0nrr2q4pfghhakx89jq6wn8pv2dnbfpbg779l18"))))
+        (base32 "1h03lfqaq9ykavnc9p5igm4i90drcmw6bqvklhdv9zjd3h79pn7d"))))
     (properties `((upstream-name . "polymapR")))
     (build-system r-build-system)
     (arguments
@@ -41725,6 +41725,37 @@ the partially overlapping samples z-test: See Derrick, Dobson-Mckittrick, Toher
 and White (2015), Test statistics for comparing two proportions with partially
 overlapping samples.  Journal of Applied Quantitative Methods, 10(3).")
     (license license:gpl3)))
+
+(define-public r-partialling-out
+  (package
+    (name "r-partialling-out")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "partialling.out" version))
+       (sha256
+        (base32 "1nvyvr3fhkpynyqqmmfv1p7a0gj9n877w4djibsp54rsdrbjrr9r"))))
+    (properties `((upstream-name . "partialling.out")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tinyplot
+                             r-rlang
+                             r-lifecycle
+                             r-lfe
+                             r-glue
+                             r-fixest))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/partialling.out/")
+    (synopsis "Residuals from Partial Regressions")
+    (description
+     "This package creates a data frame with the residuals of partial regressions of
+the main explanatory variable and the variable of interest.  This method follows
+the Frisch-Waugh-Lovell theorem, as explained in Lovell (2008)
+<doi:10.3200/JECE.39.1.88-91>.")
+    (license license:gpl3+)))
 
 (define-public r-partialised
   (package

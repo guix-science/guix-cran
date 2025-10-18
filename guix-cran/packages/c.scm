@@ -11678,13 +11678,13 @@ resulting estimates.")
 (define-public r-covcortest
   (package
     (name "r-covcortest")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CovCorTest" version))
        (sha256
-        (base32 "07j06l7n8gm2cfwfmldwnjxfx15899cm2jakl67ls2w6fr47k01m"))))
+        (base32 "0r70yznlj525drzsc2mi6iw2l581zrx0hh8ndlahcvs4yifq2x81"))))
     (properties `((upstream-name . "CovCorTest")))
     (build-system r-build-system)
     (arguments
@@ -24835,13 +24835,13 @@ Cap <https://coinmarketcap.com/api/>.")
 (define-public r-coimp
   (package
     (name "r-coimp")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoImp" version))
        (sha256
-        (base32 "0ly1k1mf50ijki69rwk58870kibb8fxv68in3hb1pxdnlwfbddm1"))))
+        (base32 "0i8ivigyi1s5ap1m2rg1826pj97fxc4n2n4l8j4b8jrkfvylwgpm"))))
     (properties `((upstream-name . "CoImp")))
     (build-system r-build-system)
     (arguments
@@ -30447,6 +30447,31 @@ such as Seurat', Monocle', and WGCNA', enabling seamless downstream
 visualization and analysis.  See Lokesh Kumar and Matthias E Futschik (2007)
 <doi:10.6026/97320630002005> for more details.")
     (license license:expat)))
+
+(define-public r-clusterggm
+  (package
+    (name "r-clusterggm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clusterGGM" version))
+       (sha256
+        (base32 "1jh0sak2nvb3g16zb0zhz8w4wsvmlniw2zkaqvwyc9hqrrqsw668"))))
+    (properties `((upstream-name . "clusterGGM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rcppeigen r-rcpp r-dplyr))
+    (home-page "https://github.com/aalfons/clusterGGM")
+    (synopsis "Sparse Gaussian Graphical Modeling with Variable Clustering")
+    (description
+     "Perform sparse estimation of a Gaussian graphical model (GGM) with node
+aggregation through variable clustering.  Currently, the package implements the
+clusterpath estimator of the Gaussian graphical model (CGGM) (Touw, Alfons,
+Groenen & Wilms, 2025; <doi:10.48550/@code{arXiv.2407.00644>}).")
+    (license license:gpl3+)))
 
 (define-public r-clusterbootstrap
   (package

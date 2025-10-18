@@ -29464,13 +29464,13 @@ independently to support analysis for diverse chemical screening efforts.")
 (define-public r-tcpl
   (package
     (name "r-tcpl")
-    (version "3.3.0")
+    (version "3.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tcpl" version))
        (sha256
-        (base32 "13701c1pn38map6s5nmi258nvfhjlklpy3ri6yr21fmgg5zmm8sn"))))
+        (base32 "1brc1gjjgnq4qcnd3sz3l92rb912rjnknn3sv5ys7a3xrvlhk9zn"))))
     (properties `((upstream-name . "tcpl")))
     (build-system r-build-system)
     (arguments

@@ -2555,6 +2555,32 @@ frequency (MFACT) and mixed data, biplot, scatter plot, projection pursuit (PP),
 grant tour method and other useful functions for the multivariate analysis.")
     (license license:gpl3)))
 
+(define-public r-mvalpha
+  (package
+    (name "r-mvalpha")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mvalpha" version))
+       (sha256
+        (base32 "1nyvf3fpdvczynl5g2g8x775yiqvqy7g1kaicddkjvfm8rfx08q7"))))
+    (properties `((upstream-name . "mvalpha")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rdpack))
+    (home-page "https://github.com/therealcfdrake/mvalpha")
+    (synopsis "Krippendorff's Alpha for Multi-Valued Data")
+    (description
+     "Calculate Krippendorff's alpha for multi-valued data using the methods
+introduced by Krippendorff and Craggs (2016)
+<doi:10.1080/19312458.2016.1228863>.  Nominal, ordinal, interval, and ratio data
+types are supported, with options to create bootstrapped estimates of alpha
+and/or parallelize calculations.")
+    (license license:agpl3+)))
+
 (define-public r-mva
   (package
     (name "r-mva")
@@ -8450,6 +8476,33 @@ Switching Models for Linear and Generalized Models.  Distributions for the
 series include gaussian, Poisson, binomial and gamma cases.  The EM algorithm is
 used for estimation (see Perlin (2012) <doi:10.2139/ssrn.1714016>).")
     (license license:gpl2+)))
+
+(define-public r-msuthemes
+  (package
+    (name "r-msuthemes")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MSUthemes" version))
+       (sha256
+        (base32 "12z8mavyzs32dcrym6ldrkgflav9w6cwn040grpz5x8sms49567l"))))
+    (properties `((upstream-name . "MSUthemes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-systemfonts r-sysfonts r-showtext r-purrr
+                             r-ggplot2))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/emilioxavier/MSUthemes")
+    (synopsis "Michigan State University (MSU) Palettes and Themes")
+    (description
+     "Defines colour palettes and themes for Michigan State University (MSU)
+publications and presentations.  Palettes and themes are supported in both base
+R and ggplot2 graphics, and are intended to provide consistency between those
+creating documents and presentations.")
+    (license license:cc-by-sa4.0)))
 
 (define-public r-msu
   (package

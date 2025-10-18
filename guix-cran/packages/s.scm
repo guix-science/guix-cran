@@ -24463,13 +24463,13 @@ respectively.  This work is fully discussed in Spyrison & Cook (2020)
 (define-public r-spinebil
   (package
     (name "r-spinebil")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spinebil" version))
        (sha256
-        (base32 "0cyvk0hbk5hpycgjlr2dndqa4r423fm0p8w5x4qcp8aix8r1qqxw"))))
+        (base32 "163mkgzvja8db9cil9krcwaa2ys39hp3zw3yr0yvvwb3mzrzkq2j"))))
     (properties `((upstream-name . "spinebil")))
     (build-system r-build-system)
     (arguments
@@ -69736,13 +69736,13 @@ calls are implemented in an easy-to-use and consistent manner.")
 (define-public r-sbw
   (package
     (name "r-sbw")
-    (version "1.1.9")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sbw" version))
        (sha256
-        (base32 "0815xxgzz0b79bv9g4cw144dl6y6f2yi2k2n2khfhpwd8ipgmsr7"))))
+        (base32 "08y22ififnpp5b180f1wabinm614jqjkl5zfsy56cgvzxpg1gbrl"))))
     (properties `((upstream-name . "sbw")))
     (build-system r-build-system)
     (arguments
@@ -69763,8 +69763,8 @@ also posted on CRAN. To enhance the performance of sbw', users are encouraged to
 install other solvers such as gurobi and Rmosek', which require special
 installation.  For the installation of gurobi and pogs, please follow the
 instructions at
-<https://www.gurobi.com/documentation/current/refman/r_ins_the_r_package.html>
-and <http://foges.github.io/pogs/stp/r>.")
+<https://docs.gurobi.com/projects/optimizer/en/current/reference/r.html> and
+<http://foges.github.io/pogs/stp/r>.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-sbtools

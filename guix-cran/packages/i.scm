@@ -7476,18 +7476,19 @@ wrappers to functions in the gstat and sp packages.")
 (define-public r-inti
   (package
     (name "r-inti")
-    (version "0.6.8")
+    (version "0.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inti" version))
        (sha256
-        (base32 "0dw5g2mlzq4h4f5813y8wf85wvkisaz2qk1vp1wqja81sl85bm7p"))))
+        (base32 "15q0irvc42kdv6jnj7jsif3jr2w23wijll3xkbn06p867n0zxpif"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list pandoc))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -7501,7 +7502,7 @@ wrappers to functions in the gstat and sp packages.")
                              r-dt
                              r-dplyr
                              r-agricolae))
-    (native-inputs (list r-quarto))
+    (native-inputs (list r-quarto r-knitr))
     (home-page "https://inkaverse.com/")
     (synopsis "Tools and Statistical Procedures in Plant Science")
     (description
@@ -13377,13 +13378,13 @@ Endres, Fink and Augustin (2018, <doi:10.5282/ubm/epub.42423>).")
 (define-public r-impectr
   (package
     (name "r-impectr")
-    (version "2.5.1")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "impectR" version))
        (sha256
-        (base32 "0vx6bm5079gw14zvbr0h9qlzm7rngfjrlafd7cyzjsvncbs7vklw"))))
+        (base32 "0h4dnbvg6b179kg74dk28lsb9spd2hgk0briv0v6lanlvdq666g9"))))
     (properties `((upstream-name . "impectR")))
     (build-system r-build-system)
     (arguments

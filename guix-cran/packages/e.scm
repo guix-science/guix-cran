@@ -6444,13 +6444,13 @@ plots.  The App is called using @code{eufmdis.adapt::run_adapt()}.")
 (define-public r-eudract
   (package
     (name "r-eudract")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eudract" version))
        (sha256
-        (base32 "1axgi26c9myi7106cqgwrq0mfyscaw3shnr4ncmnckidjb4gf741"))))
+        (base32 "0p2mhrachyhy8g0vcwflvjpl3g8kb3vr60d8zyaj1z5wmf43264k"))))
     (properties `((upstream-name . "eudract")))
     (build-system r-build-system)
     (arguments

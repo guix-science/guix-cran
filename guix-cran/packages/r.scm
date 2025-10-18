@@ -6768,13 +6768,13 @@ surrounding a site, etc.  For more information, please refer to Zhang W,etc.
 (define-public r-rspacer
   (package
     (name "r-rspacer")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rspacer" version))
        (sha256
-        (base32 "16igkl5zh8y7g37rbpb6yk6762p1i94ah8ipjlqdhv0kp7abbbj5"))))
+        (base32 "01zipzxjnfn88lcg936mrhxanp3lnhgz4y2kj5bcrv7mg53ymgp9"))))
     (properties `((upstream-name . "rspacer")))
     (build-system r-build-system)
     (arguments
@@ -6789,6 +6789,7 @@ surrounding a site, etc.  For more information, please refer to Zhang W,etc.
                              r-readxl
                              r-readr
                              r-purrr
+                             r-lubridate
                              r-httr2
                              r-glue
                              r-fs
@@ -6804,7 +6805,7 @@ surrounding a site, etc.  For more information, please refer to Zhang W,etc.
 functions to browse, search, create, and edit your RSpace documents.  In
 addition, it enables filling RSpace templates from R Markdown/Quarto templates
 or tabular data (e.g., Excel files).  This R package is not developed or
-endorsed by Research Space.")
+endorsed by Research Space'.")
     (license license:expat)))
 
 (define-public r-rspa
@@ -22046,13 +22047,13 @@ and Marusich (2017) <doi:10.3389/fpsyg.2017.00456>.")
 (define-public r-rmcmc
   (package
     (name "r-rmcmc")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmcmc" version))
        (sha256
-        (base32 "0v3b2vayfq4cv0rh3skmmf6x8v51f64v61gqngdzx748804x9zbn"))))
+        (base32 "12d8ndwaqc2qm54zgzmiivfzjq07f8m4pyjwzi0kfrvgwin7dy61"))))
     (properties `((upstream-name . "rmcmc")))
     (build-system r-build-system)
     (arguments
@@ -22082,7 +22083,7 @@ under the target distribution.  As well as the default Barker proposal, the
 package also provides implementations of alternative proposal distributions,
 such as (Gaussian) random walk and Langevin proposals.  Optionally, if
 @code{BridgeStan's} R interface
-<https://roualdes.github.io/bridgestan/latest/languages/r.html>, available on
+<https://roualdes.us/bridgestan/latest/languages/r.html>, available on
 @code{GitHub} <https://github.com/roualdes/bridgestan>, is installed, then
 @code{BridgeStan} can be used to specify the target distribution to sample from.")
     (license license:expat)))
@@ -23141,6 +23142,36 @@ account.")
 jobs, share updates with their network, and create group discussions.  For more
 information about using the API please visit <https://developer.linkedin.com/>.")
     (license license:gpl2)))
+
+(define-public r-rlibkriging
+  (package
+    (name "r-rlibkriging")
+    (version "0.9-2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rlibkriging" version))
+       (sha256
+        (base32 "1zvn9z58l9y4rxqkp609vvfy9zszjr54m44hypvdj05rfcaz0r2l"))))
+    (properties `((upstream-name . "rlibkriging")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list gfortran gcc cmake))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-dicekriging))
+    (native-inputs (list gfortran))
+    (home-page "https://github.com/libKriging")
+    (synopsis "Kriging Models using the 'libKriging' Library")
+    (description
+     "Interface to @code{libKriging} C++ library
+<https://github.com/@code{libKriging>} that should provide most standard Kriging
+/ Gaussian process regression features (like in @code{DiceKriging}', kergp or
+@code{RobustGaSP} packages). @code{libKriging} relies on Armadillo linear
+algebra library (Apache 2 license) by Conrad Sanderson, lbfgsb_cpp is a C++ port
+around by Pascal Have of lbfgsb library (BSD-3 license) by Ciyou Zhu, Richard
+Byrd, Jorge Nocedal and Jose Luis Morales used for hyperparameters optimization.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rlibkdv
   (package
@@ -33597,13 +33628,13 @@ persistence using the Hurst coefficient.")
 (define-public r-resemble
   (package
     (name "r-resemble")
-    (version "2.2.4")
+    (version "2.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resemble" version))
        (sha256
-        (base32 "0b2rw25piw6izci4nmxc9qfpxgdwmyzbns1xzfcm0cg51kxfxsvg"))))
+        (base32 "0cwrq7qa6balam0s3cjfxfh1m7mqs6b5z95xrj28bi3fb3nsisbs"))))
     (properties `((upstream-name . "resemble")))
     (build-system r-build-system)
     (arguments
@@ -41999,13 +42030,13 @@ as plain-text tsv and HDF5'.")
 (define-public r-readmzxmldata
   (package
     (name "r-readmzxmldata")
-    (version "2.8.3")
+    (version "2.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readMzXmlData" version))
        (sha256
-        (base32 "1mh6rgy8s0rkvycv99p3zgw831pgzi5cacsj4awb7h4dl11sf8sf"))))
+        (base32 "0h6h10lawgrkb0pjjb0s8pzgkgp6l6sbiv045aj9fbxxazpz9hvv"))))
     (properties `((upstream-name . "readMzXmlData")))
     (build-system r-build-system)
     (arguments

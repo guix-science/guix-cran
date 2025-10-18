@@ -12296,34 +12296,28 @@ algorithms proposed in Tang, Q., Zhang, Y., & Wang, B. (2022)
 (define-public r-hdpglm
   (package
     (name "r-hdpglm")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdpGLM" version))
        (sha256
-        (base32 "0drcvqqaawvndv3xsas0am5xq58kb9fg2s879knvwmd1qa002lam"))))
+        (base32 "1wy2i1gc6marav1w8mi3rga0s41kbwiwlh2m1yb94d5lvcx87ih6"))))
     (properties `((upstream-name . "hdpGLM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyverse
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
-                             r-rprojroot
                              r-rcpparmadillo
                              r-rcpp
-                             r-questionr
                              r-purrr
-                             r-png
                              r-mvtnorm
-                             r-mcmcpack
                              r-mass
                              r-magrittr
                              r-laplacesdemon
-                             r-isotone
                              r-hmisc
                              r-ggridges
                              r-ggpubr

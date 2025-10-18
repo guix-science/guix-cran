@@ -2411,13 +2411,13 @@ community-maintained and is not officially supported by Qualtrics'.")
 (define-public r-qualpalr
   (package
     (name "r-qualpalr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qualpalr" version))
        (sha256
-        (base32 "0fxl9fkhqijl2d3ki89cmvy2d8mwavkiczm6j7nch0djqq488saz"))))
+        (base32 "0a5b480awwwghy0p86zdi0biam96cfnq4j65pd3l4zazw4sxqhg8"))))
     (properties `((upstream-name . "qualpalr")))
     (build-system r-build-system)
     (arguments

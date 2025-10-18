@@ -2584,13 +2584,13 @@ count responses.")
 (define-public r-lqmix
   (package
     (name "r-lqmix")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lqmix" version))
        (sha256
-        (base32 "12yhqr66yx2v23nsavdrlbg46bpirp97mj2mffjwrmw07d2jhgax"))))
+        (base32 "07k93b06xdc79hahccz4d05kg3h7hylpvzi28grsbzgjfsrhhj77"))))
     (properties `((upstream-name . "lqmix")))
     (build-system r-build-system)
     (arguments
@@ -2600,6 +2600,7 @@ count responses.")
                              r-quantreg
                              r-foreach
                              r-dosnow
+                             r-dorng
                              r-doparallel
                              r-diagram))
     (home-page "https://cran.r-project.org/package=lqmix")
@@ -8520,13 +8521,13 @@ median of the distribution.")
 (define-public r-llmtranslate
   (package
     (name "r-llmtranslate")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMTranslate" version))
        (sha256
-        (base32 "0jnqqg9z2ricgm7inhhbzx9v0kw9r1xp513qlc0g3js9wq6b1i43"))))
+        (base32 "1ymq7fapn6v5k1q35liaiv6dp4jiags21r3y21dgsj255nxb0kad"))))
     (properties `((upstream-name . "LLMTranslate")))
     (build-system r-build-system)
     (arguments
@@ -8537,7 +8538,8 @@ median of the distribution.")
     (synopsis "'shiny' App for TRAPD/ISPOR Survey Translation with LLMs")
     (description
      "This package provides a shiny application to automate forward and back survey
-translation with optional reconciliation using large language models (LLMs).  It
+translation with optional reconciliation using large language models (LLMs).
+Supports @code{OpenAI} (GPT), Google Gemini, and Anthropic Claude models.  It
 follows the TRAPD (Translation, Review, Adjudication, Pretesting, Documentation)
 framework and ISPOR (International Society for Pharmacoeconomics and Outcomes
 Research) recommendations.  See Harkness et al. (2010)
@@ -12207,13 +12209,13 @@ processing.")
 (define-public r-libopenexr
   (package
     (name "r-libopenexr")
-    (version "3.4.0-4")
+    (version "3.4.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libopenexr" version))
        (sha256
-        (base32 "04ic2b8m35662yc7d5d0h1c4d9vz10nx1dmblqrbkfhnibad3530"))))
+        (base32 "1cmvs4csbjf89rd6xc0vxvc9lcqyi9biirnam48m5svxskzd9gfc"))))
     (properties `((upstream-name . "libopenexr")))
     (build-system r-build-system)
     (arguments
@@ -12266,13 +12268,13 @@ compared to other libraries.")
 (define-public r-libimath
   (package
     (name "r-libimath")
-    (version "3.1.9-4")
+    (version "3.1.9-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libimath" version))
        (sha256
-        (base32 "1q7hqbq84rk5q4fq3wnrhchm9nb087jkpq87p395mi84njbh7h05"))))
+        (base32 "1wc3m2dzdls6gx6n3h0rvv10hllh11y4mwfaphmv80xmwxg61pdp"))))
     (properties `((upstream-name . "libimath")))
     (build-system r-build-system)
     (arguments

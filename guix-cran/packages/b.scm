@@ -4787,13 +4787,13 @@ all LEGO since through the end of 2023.")
 (define-public r-brfinance
   (package
     (name "r-brfinance")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brfinance" version))
        (sha256
-        (base32 "08sa8q903zk36d1zyv9psywg5fxiy4hxxvz2qybxvlqkmb1d90yi"))))
+        (base32 "0whw2pbrwlf84d7wk7vn0avpj89579xc1w54m35x6flvgdvk315b"))))
     (properties `((upstream-name . "brfinance")))
     (build-system r-build-system)
     (arguments
@@ -28951,13 +28951,13 @@ meta-analysis.")
 (define-public r-bayeschange
   (package
     (name "r-bayeschange")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesChange" version))
        (sha256
-        (base32 "1xbcdn34lbxlc98wnbprrjldj9bbrw9dfp9yscancc7qr92fryjs"))))
+        (base32 "0b1219gi571l2nraq2prhzq9db1jgl8v57ygkj72581ibcckal19"))))
     (properties `((upstream-name . "BayesChange")))
     (build-system r-build-system)
     (arguments
@@ -31972,6 +31972,38 @@ factor of Gu, Mulder, and Hoijtink, (2018) <DOI:10.1111/bmsp.12110> is used with
 the posterior mean and posterior covariance matrix of the NAM parameters based
 on flat priors as input.")
     (license license:gpl3+)))
+
+(define-public r-bamp
+  (package
+    (name "r-bamp")
+    (version "2.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bamp" version))
+       (sha256
+        (base32 "0qzcndjdwbgiwyvc7ikb7jr0n7cmn78v56h5in22j24jjj740l2z"))))
+    (properties `((upstream-name . "bamp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-coda r-abind))
+    (native-inputs (list r-r-rsp r-knitr))
+    (home-page "https://volkerschmid.github.io/bamp/")
+    (synopsis "Bayesian Age-Period-Cohort Modeling and Prediction")
+    (description
+     "Bayesian Age-Period-Cohort Modeling and Prediction using efficient Markov Chain
+Monte Carlo Methods.  This is the R version of the previous BAMP software as
+described in Volker Schmid and Leonhard Held (2007) <DOI:10.18637/jss.v021.i08>
+Bayesian Age-Period-Cohort Modeling and Prediction - BAMP, Journal of
+Statistical Software 21:8.  This package includes checks of convergence using
+Gelman's R.")
+    (license license:gpl3)))
 
 (define-public r-bammtools
   (package

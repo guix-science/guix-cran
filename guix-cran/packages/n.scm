@@ -12118,13 +12118,13 @@ change-point detection algorithms, as described by Hocking et al.
 (define-public r-neurobase
   (package
     (name "r-neurobase")
-    (version "1.33.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neurobase" version))
        (sha256
-        (base32 "1cpvi1jcsmpr5kl0gglswzq4kcrgy3nqd2j6jb6mk91ilby1gm1j"))))
+        (base32 "0cpsq1bs3wc8xah9c3wbzs22awam4313a9c8gdh5l3a5c2yz8833"))))
     (properties `((upstream-name . "neurobase")))
     (build-system r-build-system)
     (arguments
@@ -16723,6 +16723,34 @@ matching.  The @code{assign.grp()} function aids in performing a matched
 randomization.  Note bipartite matching can be performed using the prevent
 option in @code{gendistance()}'.")
     (license license:gpl2+)))
+
+(define-public r-nbpinference
+  (package
+    (name "r-nbpinference")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nbpInference" version))
+       (sha256
+        (base32 "0rdkbqp5gjvhw707mdrmzmqwv9rvqz4f5pj75v1m2gib2p5bfl7d"))))
+    (properties `((upstream-name . "nbpInference")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-nbpmatching))
+    (home-page "https://github.com/AnthonyFrazierCSU/nbpInference")
+    (synopsis
+     "Inference on Average Treatment Effects for Continuous Treatments")
+    (description
+     "Conduct inference on the sample average treatment effect for a matched
+(observational) dataset with a continuous treatment.  Equipped with calipered
+non-bipartite matching, bias-corrected sample average treatment effect
+estimation, and covariate-adjusted variance estimation.  Matching, estimation,
+and inference methods are described in Frazier, Heng and Zhou (2024)
+<doi:10.48550/@code{arXiv.2409.11701>}.")
+    (license license:gpl3+)))
 
 (define-public r-nbody
   (package
