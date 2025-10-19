@@ -8272,13 +8272,13 @@ Caamal-Pat et.al. (2021) <doi:10.3389/fgene.2021.680569>.")
 (define-public r-lme4breeding
   (package
     (name "r-lme4breeding")
-    (version "1.0.80")
+    (version "1.0.90")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lme4breeding" version))
        (sha256
-        (base32 "16jas70qpf8xxqqglz3xshmq7gsl60h58kkk95bm8lbhk9s3ji6p"))))
+        (base32 "1nsz5cb02s4pwjazhhw6fydklbiy1ylbk6slyb2y0rb44ahq95q0"))))
     (properties `((upstream-name . "lme4breeding")))
     (build-system r-build-system)
     (arguments
@@ -13528,13 +13528,13 @@ identically to the originals.")
 (define-public r-lesssem
   (package
     (name "r-lesssem")
-    (version "1.5.6")
+    (version "1.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessSEM" version))
        (sha256
-        (base32 "0i3ac8kwa5zjx858yqqb6913dzy1ink152yyfqagiwnx311nal2h"))))
+        (base32 "0yk4wrarcmbyx4i0r9b1ywdb584qxcs5npk8pgh0ykv5ss5fs1dv"))))
     (properties `((upstream-name . "lessSEM")))
     (build-system r-build-system)
     (arguments

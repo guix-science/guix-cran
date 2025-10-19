@@ -21596,56 +21596,6 @@ of factors, integer series and numerical series either provided as individual
 values or as bins.")
     (license license:gpl2+)))
 
-(define-public r-descrtab2
-  (package
-    (name "r-descrtab2")
-    (version "2.1.16")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DescrTab2" version))
-       (sha256
-        (base32 "07921k8h50wycj0sijy8428p3c8ach90swgzz0s06b6z1yl2mnyg"))))
-    (properties `((upstream-name . "DescrTab2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-scales
-                             r-rmarkdown
-                             r-rlang
-                             r-officer
-                             r-nlme
-                             r-magrittr
-                             r-knitr
-                             r-kableextra
-                             r-hmisc
-                             r-haven
-                             r-forcats
-                             r-flextable
-                             r-exact2x2
-                             r-dplyr
-                             r-desctools
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://imbi-heidelberg.github.io/DescrTab2/")
-    (synopsis "Publication Quality Descriptive Statistics Tables")
-    (description
-     "This package provides functions to create descriptive statistics tables for
-continuous and categorical variables.  By default, summary statistics such as
-mean, standard deviation, quantiles, minimum and maximum for continuous
-variables and relative and absolute frequencies for categorical variables are
-calculated. @code{DescrTab2} features a sophisticated algorithm to choose
-appropriate test statistics for your data and provides p-values.  On top of
-this, confidence intervals for group differences of appropriated summary
-measures are automatically produces for two-group comparison.  Tables generated
-by @code{DescrTab2} can be integrated in a variety of document formats,
-including .html, .tex and .docx documents. @code{DescrTab2} also allows printing
-tables to console and saving table objects for later use.")
-    (license license:gpl3+)))
-
 (define-public r-descriptr
   (package
     (name "r-descriptr")

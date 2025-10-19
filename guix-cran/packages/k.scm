@@ -7106,13 +7106,13 @@ For more information, see Foss, Markatou, Ray, & Heching (2016)
 (define-public r-kalmanfilter
   (package
     (name "r-kalmanfilter")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kalmanfilter" version))
        (sha256
-        (base32 "0d45gx7r7d80bvn57g5xy24pf193ds3nyi5b8alpn4f5y93iy86h"))))
+        (base32 "1vd4nzxkm6d156kw0qzl2i1v92x322dig329g0is1dhnjgxn25dm"))))
     (properties `((upstream-name . "kalmanfilter")))
     (build-system r-build-system)
     (arguments

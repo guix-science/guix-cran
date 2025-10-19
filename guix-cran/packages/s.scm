@@ -19817,13 +19817,13 @@ needed to pre-installed.  Hanzelmann, S., Castelo, R., and Guinney, J. (2013)
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDforR" version))
        (sha256
-        (base32 "02djhx593s1fr4dsks46zs22wgdyxjkw61ify5ipfca60f1ajbg8"))))
+        (base32 "0fk98wp2k9cjvhj1288v755x1ibfj8x90n568wcl8yjfhhr3f7zm"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (arguments
@@ -67453,13 +67453,13 @@ bars for data collected from one-way or higher factorial designs.")
 (define-public r-scinsight
   (package
     (name "r-scinsight")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scINSIGHT" version))
        (sha256
-        (base32 "1zkm2n19px3yh3y2z1g5l84ym36ar31i96i54mm7wa0ki179swap"))))
+        (base32 "0rfckf0sss485a9f2ckkjr8267xyq0sh7wnb35fwj2xfsj1l9i5v"))))
     (properties `((upstream-name . "scINSIGHT")))
     (build-system r-build-system)
     (arguments

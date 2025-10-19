@@ -10,8 +10,8 @@
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages maths)
-  #:use-module (gnu packages web)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages python)
@@ -2369,18 +2369,19 @@ Beffa, Junxi Wang, Jialiang Li, Frank Pessler, Frank Klawonn (2014)
 (define-public r-huito
   (package
     (name "r-huito")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "huito" version))
        (sha256
-        (base32 "08p60mdmnpvqii75psza79yi4wasbnfwf5qay68lsyw836nylnra"))))
+        (base32 "1cwg36ffcnkn2q3y6gsk8yygx3h8f0ridpkw44d820yvvbzx7w6q"))))
     (properties `((upstream-name . "huito")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list pandoc))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-sysfonts
@@ -2392,7 +2393,7 @@ Beffa, Junxi Wang, Jialiang Li, Frank Pessler, Frank Klawonn (2014)
                              r-ggplot2
                              r-dplyr
                              r-cowplot))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto r-knitr))
     (home-page "https://huito.inkaverse.com/")
     (synopsis "Reproducible and Flexible Label Design")
     (description
@@ -8050,13 +8051,13 @@ in two sample populations.")
 (define-public r-highlightr
   (package
     (name "r-highlightr")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "highlightr" version))
        (sha256
-        (base32 "0185wz2lxryk6q0fv6s6j7sp38l6vy253vgdw2dwyvnfcpamkhbx"))))
+        (base32 "05a5x5skp9whv24xdblfbjxfyv83x021i05wyy1brb3p7ykvz94l"))))
     (properties `((upstream-name . "highlightr")))
     (build-system r-build-system)
     (arguments

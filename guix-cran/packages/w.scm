@@ -4354,24 +4354,19 @@ correct, and receive results in tidy tibbles.")
 (define-public r-wikitools
   (package
     (name "r-wikitools")
-    (version "1.2.14")
+    (version "1.2.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wikiTools" version))
        (sha256
-        (base32 "0ypwx1zx6i38hq2nljjh6rcsqmbvnznbfq4m2a1nlq5q9i4ypcj4"))))
+        (base32 "0yg5s7njsimwjhh468ag95q89xjppi313s7i6hqm84b0rg0llcqd"))))
     (properties `((upstream-name . "wikiTools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ratelimitr
-                             r-netcoin
-                             r-jsonlite
-                             r-httr
-                             r-curl
-                             r-collections))
+    (propagated-inputs (list r-netcoin r-jsonlite r-httr r-curl r-collections))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wikiTools")
     (synopsis "Tools for Wikidata and Wikipedia")

@@ -6755,32 +6755,6 @@ hypothesis that all category proportions are equal.  For more information see
 Sarafoglou et al. (2020) <doi:10.31234/osf.io/bux7p>.")
     (license license:gpl2)))
 
-(define-public r-multibreaker
-  (package
-    (name "r-multibreaker")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "multibreakeR" version))
-       (sha256
-        (base32 "1rg5k2ldaf5ygnrjpfk28gqqs7d8cfjq9cm5zli47yavqm43mq78"))))
-    (properties `((upstream-name . "multibreakeR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales r-rlang r-reshape2 r-ggplot2 r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/loicym/multibreakeR")
-    (synopsis "Tests for a Structural Change in Multivariate Time Series")
-    (description
-     "Flexible implementation of a structural change point detection algorithm for
-multivariate time series.  It authorizes inclusion of trends, exogenous
-variables, and break test on the intercept or on the full vector autoregression
-system.  Bai, Lumsdaine, and Stock (1998) <doi:10.1111/1467-937X.00051>.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-multiblock
   (package
     (name "r-multiblock")
@@ -31270,24 +31244,20 @@ genome sequence data stored in the Pathosystems Resource Integration Center
 (define-public r-miamaxent
   (package
     (name "r-miamaxent")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MIAmaxent" version))
        (sha256
-        (base32 "0jshi9p0q8j5j0s65s4n14b5r6gpzsigygdibmhnvvqygflyzzqa"))))
+        (base32 "190c64rlz1py08iml28yr1jxsi11lwzfyy2yrx152l5spap2gf9d"))))
     (properties `((upstream-name . "MIAmaxent")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-terra r-rlang r-e1071 r-dplyr))
-    (native-inputs (list r-r-rsp))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/julienvollering/MIAmaxent")
     (synopsis
      "Modular, Integrated Approach to Maximum Entropy Distribution Modeling")
@@ -36799,56 +36769,6 @@ Mikkelson 2002 <doi:10.1034/j.1600-0706.2002.970210.x>.  The package also
 includes functions to visualize ecological networks, and to calculate modularity
 as a replacement to boundary clumping.")
     (license license:gpl2)))
-
-(define-public r-metacoder
-  (package
-    (name "r-metacoder")
-    (version "0.3.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "metacoder" version))
-       (sha256
-        (base32 "1j51ghvzspzwhnz6j1i3x1sn2qahqdf21a19wm8swx1x7djsd04r"))))
-    (properties `((upstream-name . "metacoder")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-tibble
-                             r-taxize
-                             r-stringr
-                             r-seqinr
-                             r-rlang
-                             r-readr
-                             r-rcurl
-                             r-rcpp
-                             r-r6
-                             r-magrittr
-                             r-lazyeval
-                             r-igraph
-                             r-ggplot2
-                             r-ggfittext
-                             r-ga
-                             r-dplyr
-                             r-crayon
-                             r-cowplot
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://grunwaldlab.github.io/metacoder_documentation/")
-    (synopsis
-     "Tools for Parsing, Manipulating, and Graphing Taxonomic Abundance Data")
-    (description
-     "Reads, plots, and manipulates large taxonomic data sets, like those generated
-from modern high-throughput sequencing, such as metabarcoding (i.e.
-amplification metagenomics, 16S metagenomics, etc).  It provides a tree-based
-visualization called \"heat trees\" used to depict statistics for every taxon in a
-taxonomy using color and size.  It also provides various functions to do common
-tasks in microbiome bioinformatics on data in the taxmap format defined by the
-taxa package.  The metacoder package is described in the publication by Foster
-et al. (2017) <doi:10.1371/journal.pcbi.1005404>.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-metacluster
   (package
@@ -47870,13 +47790,13 @@ z-constrained least-cost paths.")
 (define-public r-marlod
   (package
     (name "r-marlod")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marlod" version))
        (sha256
-        (base32 "0iwa70kdzdf9il7nnkj54ndrmhhac8qzaj4ix033lsrf4bhqpcap"))))
+        (base32 "0spay1w0fwxs7r3i3h8889hnx4mgq6saa1wvcabxgd8n6xy7jbk6"))))
     (properties `((upstream-name . "marlod")))
     (build-system r-build-system)
     (arguments

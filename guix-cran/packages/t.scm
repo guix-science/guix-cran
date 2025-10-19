@@ -14441,13 +14441,13 @@ nodes in the network.")
 (define-public r-tna
   (package
     (name "r-tna")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tna" version))
        (sha256
-        (base32 "0c9j73ygb8d00c1jk1svadg6hxp8m76sl2l6zfq9b0p1553cxrz8"))))
+        (base32 "0vc5sp4yxb8iqggqw6qm9ppwfff9d20bx2i3wid6qjr4h9r1i60b"))))
     (properties `((upstream-name . "tna")))
     (build-system r-build-system)
     (arguments
@@ -14456,6 +14456,7 @@ nodes in the network.")
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
+                             r-stringdist
                              r-rlang
                              r-rcolorbrewer
                              r-qgraph
@@ -14463,6 +14464,7 @@ nodes in the network.")
                              r-ggplot2
                              r-dplyr
                              r-colorspace
+                             r-cluster
                              r-cli
                              r-checkmate))
     (native-inputs (list r-knitr))
@@ -18767,37 +18769,6 @@ of the stringdist package.")
 a way consistent across all the languages supported.  The generated lists are
 based on the morphological tagset from the Universal Dependencies.")
     (license license:gpl3+)))
-
-(define-public r-tidystats
-  (package
-    (name "r-tidystats")
-    (version "0.6.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidystats" version))
-       (sha256
-        (base32 "1dzsd8f7g55xsf4sw8cza82w4md4iydzl1pb56iw294pmsn0ddvd"))))
-    (properties `((upstream-name . "tidystats")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-readr
-                             r-purrr
-                             r-jsonlite
-                             r-dplyr
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://willemsleegers.github.io/tidystats/")
-    (synopsis "Save Output of Statistical Tests")
-    (description
-     "Save the output of statistical tests in an organized file that can be shared
-with others or used to report statistics in scientific papers.")
-    (license license:expat)))
 
 (define-public r-tidysq
   (package
@@ -24444,13 +24415,13 @@ and sentiments.")
 (define-public r-textminer
   (package
     (name "r-textminer")
-    (version "3.0.5")
+    (version "3.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textmineR" version))
        (sha256
-        (base32 "0qpl9fnrirxsvch97pjwws02x67p3dk6fizg7h4wcjaihibbbx3q"))))
+        (base32 "05zn1wr0fs7pzd2m39wqwi4kq2parqynr0wkxkdfcnqhnxhwdlag"))))
     (properties `((upstream-name . "textmineR")))
     (build-system r-build-system)
     (arguments

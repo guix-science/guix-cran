@@ -10612,13 +10612,13 @@ functions.")
 (define-public r-fmpapi
   (package
     (name "r-fmpapi")
-    (version "0.2.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmpapi" version))
        (sha256
-        (base32 "06b03jh3yicdksln5bsw3pk6wilbryybfp2cq2k4f545qdfvlvdg"))))
+        (base32 "05fi4fwb7m2qb14di1ibc81ld4kmqch4q662iypnd9ml2462ng8v"))))
     (properties `((upstream-name . "fmpapi")))
     (build-system r-build-system)
     (arguments
@@ -21181,13 +21181,13 @@ for modeling and simulating dynamic systems.")
 (define-public r-fclust
   (package
     (name "r-fclust")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fclust" version))
        (sha256
-        (base32 "1i4khfkh0wzi4jpcgvdgsjjvxk5nfcdb1r0079ys1lyvx07x0qj6"))))
+        (base32 "0vhnanz8d0ig75md9zw0ajays89ab164ssxpzjf5n0a0y67xb6yi"))))
     (properties `((upstream-name . "fclust")))
     (build-system r-build-system)
     (arguments
@@ -23588,13 +23588,13 @@ computing to reduce overall processing time.")
 (define-public r-fastjm
   (package
     (name "r-fastjm")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastJM" version))
        (sha256
-        (base32 "0f3m3qzhrvicab8c6mzj554zxwhih85b8s3a20apsp1qvh47j9wl"))))
+        (base32 "1agplciavmaca9lwvrx33z8zjj12aq56j49dsk1s8sbnavfp3yx1"))))
     (properties `((upstream-name . "FastJM")))
     (build-system r-build-system)
     (arguments
@@ -23608,6 +23608,8 @@ computing to reduce overall processing time.")
                              r-nlme
                              r-mass
                              r-magrittr
+                             r-future-apply
+                             r-future
                              r-dplyr
                              r-caret))
     (home-page "https://cran.r-project.org/package=FastJM")

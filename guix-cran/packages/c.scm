@@ -9720,13 +9720,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.2-1")
+    (version "1.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "07is8l4pwrvhm6nfqjwavhsrjy7lyjc7h1nhq7d9jnfikm46dmk9"))))
+        (base32 "1k61y9iymyfdphmkz61nk8cs7wgw9lv7ka8slfvrv6bkmivzq0iq"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (arguments
@@ -37656,13 +37656,13 @@ package.")
 (define-public r-choroplethr
   (package
     (name "r-choroplethr")
-    (version "5.0.0")
+    (version "5.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "choroplethr" version))
        (sha256
-        (base32 "01hywyyak9vsdrb8j47qk1zklazqhyv8p8wzh43gfjs05pg27apf"))))
+        (base32 "17br5a7yg88dblqmffkp070ap8rj7pnpa622zli3js3lg03njhil"))))
     (properties `((upstream-name . "choroplethr")))
     (build-system r-build-system)
     (arguments
@@ -37672,25 +37672,19 @@ package.")
                              r-tidycensus
                              r-stringr
                              r-sf
-                             r-rnaturalearth
                              r-r6
                              r-hmisc
                              r-ggrepel
                              r-ggplot2
                              r-dplyr))
-    (home-page "https://github.com/eastnile/choroplethr")
+    (home-page "<https://github.com/eastnile/choroplethr>")
     (synopsis "Create Color-Coded Choropleth Maps in R")
     (description
      "Easily create color-coded (choropleth) maps in R. No knowledge of cartography or
 shapefiles needed; go directly from your geographically identified data to a
 highly customizable map with a single line of code! Supported geographies: U.S.
-states, counties, and census tracts, world countries and sub-country regions
-(e.g., provinces, prefectures, etc.).  One of the suggested packages,
-rnaturalearthhires, is not available on CRAN owing to its larger filesize
-(40MB).  It can be installed from @code{GitHub} using
-remotes::install_github(\"https://github.com/ropensci/rnaturalearthhires\").  This
-package contains higher resolution sub-country maps and is only needed for the
-@code{choropleth_admin1()} function.")
+states, counties, census tracts, and zip codes, world countries and sub-country
+regions (e.g., provinces, prefectures, etc.).")
     (license license:bsd-3)))
 
 (define-public r-chores

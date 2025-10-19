@@ -24012,13 +24012,13 @@ other available packages.")
 (define-public r-ggalign
   (package
     (name "r-ggalign")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggalign" version))
        (sha256
-        (base32 "1c8k89apv82gd7xhq5libga6rkz4jay8hv2a5njmgwz8fmddv9ny"))))
+        (base32 "1nd40hfqzbhnpgwbzlwz7ccadpjhz43yw37pkjms1bp3jdvv7c9l"))))
     (properties `((upstream-name . "ggalign")))
     (build-system r-build-system)
     (arguments
