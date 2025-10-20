@@ -10536,19 +10536,20 @@ space when there are more than a few response variables.")
 (define-public r-henna
   (package
     (name "r-henna")
-    (version "0.2.5")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "henna" version))
        (sha256
-        (base32 "0jb424igsvq2229mpfakv771s5ciadaw6fgbkhlzhzviaf16mwwz"))))
+        (base32 "15i05mscb760f2726ydsmrnwcgw351gcqp1ny3lv9i1qi6z469y0"))))
     (properties `((upstream-name . "henna")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-viridis
+    (propagated-inputs (list r-withr
+                             r-viridis
                              r-tidygraph
                              r-rlang
                              r-reshape2
@@ -12178,13 +12179,13 @@ Alice (2023) \"Health Data Science in R\"
 (define-public r-hdshop
   (package
     (name "r-hdshop")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDShOP" version))
        (sha256
-        (base32 "129j1dr3vjdg23dy45wws470v05j5azq8nq88b670kdgfw1586qm"))))
+        (base32 "04s0p4llx90wxzfwp6d63gvs7ww16f73ih5jn7x0kq699h2605wq"))))
     (properties `((upstream-name . "HDShOP")))
     (build-system r-build-system)
     (arguments
@@ -14834,13 +14835,13 @@ reads/writes HAR files (and SL4 files) directly using basic R functions.")
 (define-public r-harplus
   (package
     (name "r-harplus")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HARplus" version))
        (sha256
-        (base32 "0spqs30na2sk3bdbhmllzb6qvvak09n8lhlj62a8wgc8v0l8mqg2"))))
+        (base32 "0s3kighh4vbik79ynwzpmf44kvq25x3hpbh34hjqhcxmbi0dc4wl"))))
     (properties `((upstream-name . "HARplus")))
     (build-system r-build-system)
     (arguments

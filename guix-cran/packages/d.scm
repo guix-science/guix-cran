@@ -17307,13 +17307,13 @@ structure.  Useful for diffing slowly mutating data.")
 (define-public r-diffdf
   (package
     (name "r-diffdf")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diffdf" version))
        (sha256
-        (base32 "0i9wq31cshxcmg61p610s2r4phi43bxmffbzh74yp9y4f1difil0"))))
+        (base32 "1ba8a8xx6ryg5qj009dbh39zpnqh8bj27nmwkmhygric15v5ybjw"))))
     (properties `((upstream-name . "diffdf")))
     (build-system r-build-system)
     (arguments
@@ -24350,13 +24350,13 @@ create new latent dimensions.")
 (define-public r-deforestable
   (package
     (name "r-deforestable")
-    (version "3.1.1")
+    (version "3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deforestable" version))
        (sha256
-        (base32 "0p8psbsjxmc456flypdw2kh8kjsy2hw13nfcdilg527iy1dpif6i"))))
+        (base32 "0qrhxldydrrjdrn3hqs2f4gk4mr4js5zzpwxacvgnxdjsl3f3kxc"))))
     (properties `((upstream-name . "deforestable")))
     (build-system r-build-system)
     (arguments
@@ -24373,11 +24373,11 @@ create new latent dimensions.")
     (synopsis "Classify RGB Images into Forest or Non-Forest")
     (description
      "This package implements two out-of box classifiers presented in
-<doi:10.48550/@code{arXiv.2112.01063>} for distinguishing forest and non-forest
-terrain images.  Under these algorithms, there are frequentist approaches: one
-parametric, using stable distributions, and another one- non-parametric, using
-the squared Mahalanobis distance.  The package also contains functions for data
-handling and building of new classifiers as well as some test data set.")
+<doi:10.1002/env.2848> for distinguishing forest and non-forest terrain images.
+Under these algorithms, there are frequentist approaches: one parametric, using
+stable distributions, and another one- non-parametric, using the squared
+Mahalanobis distance.  The package also contains functions for data handling and
+building of new classifiers as well as some test data set.")
     (license license:gpl3)))
 
 (define-public r-deflist

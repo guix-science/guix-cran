@@ -5256,13 +5256,13 @@ given in Foreman et al. (2015) <doi:10.1186/1478-7954-10-1>.")
 (define-public r-assumpsure
   (package
     (name "r-assumpsure")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AssumpSure" version))
        (sha256
-        (base32 "020zid8mb4nzdr1sy186fmv9aa0ij2rsd11cf1dzszf78wplpid1"))))
+        (base32 "0csdfqjwbziq32clfcja2qq7bdfdc21v8mw6zxb8scx1gf91d8i0"))))
     (properties `((upstream-name . "AssumpSure")))
     (build-system r-build-system)
     (arguments
@@ -5283,6 +5283,7 @@ given in Foreman et al. (2015) <doi:10.1186/1478-7954-10-1>.")
                              r-modelbased
                              r-mass
                              r-lmertest
+                             r-lme4
                              r-knitr
                              r-kableextra
                              r-htmltools

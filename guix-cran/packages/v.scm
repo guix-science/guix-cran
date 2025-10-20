@@ -3096,13 +3096,13 @@ approaches follow methods developed by Wei & Simko (2021) and Friendly (2002)
 (define-public r-visualpred
   (package
     (name "r-visualpred")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visualpred" version))
        (sha256
-        (base32 "03vdy0rpfw84jwgp48xws30vxbb9zaly1da298ffyk94knpdf5yg"))))
+        (base32 "1dm65kvff7lhwrizawmxks0az8aihfqa5krhkvfz57q12p4ldb01"))))
     (properties `((upstream-name . "visualpred")))
     (build-system r-build-system)
     (arguments

@@ -24858,13 +24858,13 @@ missing multivariate data through conditional copulas.")
 (define-public r-cohorttools
   (package
     (name "r-cohorttools")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cohorttools" version))
        (sha256
-        (base32 "17gz4887vhkk0qr5mcv0vcfaxiws1pk1fdd4y8wqbl57ikn5i9vs"))))
+        (base32 "19gk7vscvhhnm0fs24lg6mif7chh9dkb86yx0lqd3h9pnpv69all"))))
     (properties `((upstream-name . "cohorttools")))
     (build-system r-build-system)
     (arguments

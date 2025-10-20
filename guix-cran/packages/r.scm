@@ -11809,6 +11809,34 @@ wrapper of pivottable', a powerful open-source Pivot Table library implemented
 in @code{JavaScript} by Nicolas Kruchten.  Aligned to pivottable v2.19.0.")
     (license license:expat)))
 
+(define-public r-rpiv
+  (package
+    (name "r-rpiv")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RPIV" version))
+       (sha256
+        (base32 "0q8rsxrp1phghm76yhmb2w3h35znfv64f2xsim7c898g90myvq50"))))
+    (properties `((upstream-name . "RPIV")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ranger))
+    (home-page "https://github.com/cyrillsch/RPIV")
+    (synopsis
+     "Residual Prediction Test for Well-Specification of Instrumental Variable Models")
+    (description
+     "This package provides a test for the well-specification of the linear
+instrumental variable model.  The test is based on trying to predict the
+residuals of a two-stage least-squares regression using a random forest.
+Details can be found in Scheidegger, Londschien and BÃ¼hlmann (2025) \"A residual
+prediction test for the well-specification of linear instrumental variable
+models\" <doi:10.48550/@code{arXiv.2506.12771>}.")
+    (license license:gpl3+)))
+
 (define-public r-rpinterest
   (package
     (name "r-rpinterest")
@@ -20619,13 +20647,13 @@ in RMSD package.  See Wada and Tsubaki (2013)
 (define-public r-rmsd
   (package
     (name "r-rmsd")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMSD" version))
        (sha256
-        (base32 "0n6qcy8biswjsqhhcmahbn09xmnlgaa4hjlngh3kqran91p7c3i0"))))
+        (base32 "0708kla3a5k29hs0vh80k8x1syq6cra5kab0b6zgkyyv4896d6id"))))
     (properties `((upstream-name . "RMSD")))
     (build-system r-build-system)
     (arguments

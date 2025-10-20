@@ -6755,6 +6755,32 @@ hypothesis that all category proportions are equal.  For more information see
 Sarafoglou et al. (2020) <doi:10.31234/osf.io/bux7p>.")
     (license license:gpl2)))
 
+(define-public r-multibreaker
+  (package
+    (name "r-multibreaker")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multibreakeR" version))
+       (sha256
+        (base32 "1rg5k2ldaf5ygnrjpfk28gqqs7d8cfjq9cm5zli47yavqm43mq78"))))
+    (properties `((upstream-name . "multibreakeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-rlang r-reshape2 r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/loicym/multibreakeR")
+    (synopsis "Tests for a Structural Change in Multivariate Time Series")
+    (description
+     "Flexible implementation of a structural change point detection algorithm for
+multivariate time series.  It authorizes inclusion of trends, exogenous
+variables, and break test on the intercept or on the full vector autoregression
+system.  Bai, Lumsdaine, and Stock (1998) <doi:10.1111/1467-937X.00051>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-multiblock
   (package
     (name "r-multiblock")
@@ -20794,13 +20820,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.6-6")
+    (version "1.7-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "1wy267gr5vzljwmn57v14y0m9cc0s2jkgqwv1s749v24bwpp1xxk"))))
+        (base32 "1finhplimkxwyda05yznfz6146rq4wd1crgvm0kkdkkhkgszwwvd"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (arguments
@@ -20814,6 +20840,7 @@ mlt.")
                              r-nloptr
                              r-mvtnorm
                              r-matrix
+                             r-icenreg
                              r-coneproj
                              r-bb
                              r-basefun
@@ -46027,40 +46054,6 @@ method is the Similarity of Matrices Index, while various related measures like
 r1, r2, r3, r4, Yanai's GCD, RV, RV2, adjusted RV, Rozeboom's linear correlation
 and Coxhead's coefficient are included for comparison and flexibility.")
     (license license:gpl2)))
-
-(define-public r-matrixcorr
-  (package
-    (name "r-matrixcorr")
-    (version "0.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "matrixCorr" version))
-       (sha256
-        (base32 "0rxzsx88g7h6y5a5r8xhfd23c32h3d99pj2jdxjnx47ww1pj7pv1"))))
-    (properties `((upstream-name . "matrixCorr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-ggplot2 r-cpp11))
-    (home-page "https://github.com/Prof-ThiagoOliveira/matrixCorr")
-    (synopsis "Collection of Correlation and Association Estimators")
-    (description
-     "Compute correlation and other association matrices from small to
-high-dimensional datasets with relative simple functions and sensible defaults.
-Includes options for shrinkage and robustness to improve results in noisy or
-high-dimensional settings (p >= n), plus convenient print/plot methods for
-inspection.  Implemented with optimised C++ backends using BLAS/@code{OpenMP}
-and memory-aware symmetric updates.  Works with base matrices and data frames,
-returning standard R objects via a consistent S3 interface.  Useful across
-genomics, agriculture, and machine-learning workflows.  Supports Pearson,
-Spearman, Kendall, distance correlation, partial correlation, and robust
-biweight mid-correlation; BlandâAltman analyses and Lin's concordance
-correlation coefficient (including repeated-measures extensions).  Methods based
-on Ledoit and Wolf (2004) <doi:10.1016/S0047-259X(03)00096-4>; SchÃ¤fer and
-Strimmer (2005) <doi:10.2202/1544-6115.1175>; Lin (1989) <doi:10.2307/2532051>.")
-    (license license:expat)))
 
 (define-public r-matrisk
   (package

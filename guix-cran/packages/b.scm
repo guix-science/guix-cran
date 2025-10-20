@@ -4787,13 +4787,13 @@ all LEGO since through the end of 2023.")
 (define-public r-brfinance
   (package
     (name "r-brfinance")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brfinance" version))
        (sha256
-        (base32 "0whw2pbrwlf84d7wk7vn0avpj89579xc1w54m35x6flvgdvk315b"))))
+        (base32 "1d7r6l5zvlghnmaskdy2hb1140r9sq4brzmarh56pgs5qpyag2mg"))))
     (properties `((upstream-name . "brfinance")))
     (build-system r-build-system)
     (arguments
@@ -20593,13 +20593,13 @@ et al. (2022) <doi:10.1037/hea0001188>.")
 (define-public r-betasandwich
   (package
     (name "r-betasandwich")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaSandwich" version))
        (sha256
-        (base32 "0gd6n1xghwhqg981ibb41w2hw3wk5zzr3870wpjbic4k96cnmvyb"))))
+        (base32 "1z7fc3w1smay815njyy6gbbm4lj72lchz2bb2z3k3bhv5xm9kpwv"))))
     (properties `((upstream-name . "betaSandwich")))
     (build-system r-build-system)
     (arguments
@@ -20712,13 +20712,13 @@ functional and phylogenetic beta diversity.")
 (define-public r-betanb
   (package
     (name "r-betanb")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaNB" version))
        (sha256
-        (base32 "113w49x7j4x4qlv0awrrfrf6r2s4br05n41gmzvqzb4asl66y658"))))
+        (base32 "1j1gwryz6zkcgi40il94jlnq6mnm3rs4w6069xcm8yb653q616c5"))))
     (properties `((upstream-name . "betaNB")))
     (build-system r-build-system)
     (arguments
@@ -20738,13 +20738,13 @@ differences in standardized regression coefficients, for models fitted by
 (define-public r-betamc
   (package
     (name "r-betamc")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaMC" version))
        (sha256
-        (base32 "08rw2q8dg51ygmns070qpd1204k9hizpqfzggj542sq2ssgc7byk"))))
+        (base32 "0821scijk3azc9y8fnxsn0az2c5q9ylmlj9frqcmlq8ylfrggp9v"))))
     (properties `((upstream-name . "betaMC")))
     (build-system r-build-system)
     (arguments
@@ -20758,7 +20758,7 @@ coefficients (beta) and other effect sizes, including multiple correlation,
 semipartial correlations, improvement in R-squared, squared partial
 correlations, and differences in standardized regression coefficients, for
 models fitted by @code{lm()}. @code{betaMC} combines ideas from Monte Carlo
-confidence intervals for the indirect effect (Pesigan and Cheung, 2023
+confidence intervals for the indirect effect (Pesigan and Cheung, 2024
 <doi:10.3758/s13428-023-02114-4>) and the sampling covariance matrix of
 regression coefficients (Dudgeon, 2017 <doi:10.1007/s11336-017-9563-z>) to
 generate confidence intervals effect sizes in regression.")
@@ -20804,13 +20804,13 @@ function.  Livingston and Lewis (1995) <doi:10.1111/j.1745-3984.1995.tb00462.x>.
 (define-public r-betadelta
   (package
     (name "r-betadelta")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaDelta" version))
        (sha256
-        (base32 "1d9fdi4bvhqih45iism5mkpqrmfl4mgjhsqkb5jkpyyd3la059y6"))))
+        (base32 "155f0vvzir3jlsh35rv97gdv6dh9vcn1w5340cfwwmprdd618vdw"))))
     (properties `((upstream-name . "betaDelta")))
     (build-system r-build-system)
     (arguments
@@ -32584,52 +32584,6 @@ and result collection.  Designed for scalable workflows in interactive and
 automated settings (local or remote).  Integrates with multiple backends;
 supports flexible automation pipelines and live job tracking.  For more
 information, see <https://anirbanshaw24.github.io/bakerrr/>.")
-    (license license:expat)))
-
-(define-public r-baker
-  (package
-    (name "r-baker")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "baker" version))
-       (sha256
-        (base32 "0k564q7v6pvf6w3qs5cmdbhxjjqg2kqm9yr7ckvd23wbl0gm5rdv"))))
-    (properties `((upstream-name . "baker")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list jags))
-    (propagated-inputs (list r-shinyfiles
-                             r-shinydashboard
-                             r-robcompositions
-                             r-rjags
-                             r-reshape2
-                             r-r2jags
-                             r-mvbutils
-                             r-mgcv
-                             r-lubridate
-                             r-gridextra
-                             r-ggpubr
-                             r-ggplot2
-                             r-coda
-                             r-binom
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/zhenkewu/baker")
-    (synopsis "\"Nested Partially Latent Class Models\"")
-    (description
-     "This package provides functions to specify, fit and visualize nested
-partially-latent class models ( Wu, Deloria-Knoll, Hammitt, and Zeger (2016)
-<doi:10.1111/rssc.12101>; Wu, Deloria-Knoll, and Zeger (2017)
-<doi:10.1093/biostatistics/kxw037>; Wu and Chen (2021) <doi:10.1002/sim.8804>)
-for inference of population disease etiology and individual diagnosis.  In the
-motivating Pneumonia Etiology Research for Child Health (PERCH) study, because
-both quantities of interest sum to one hundred percent, the PERCH scientists
-frequently refer to them as population etiology pie and individual etiology pie,
-hence the name of the package.")
     (license license:expat)))
 
 (define-public r-bakeoff

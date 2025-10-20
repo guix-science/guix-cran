@@ -16443,13 +16443,13 @@ its dependency.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.14.0")
+    (version "0.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "058vjgwx6adm4sagn8s2563ccixb1shw6424zyz5zzf3pcwxdiis"))))
+        (base32 "1xhmjdcqjrhrf3x77zjlh18sfzd94b88i5skhy7pi32asbyqlmfv"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (arguments
@@ -19572,13 +19572,13 @@ standard microplate formats such as 6-well, 12-well, 24-well, 48-well, 96-well,
 (define-public r-tidypaleo
   (package
     (name "r-tidypaleo")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidypaleo" version))
        (sha256
-        (base32 "18z3w068q011a8xw75qm7wd6hqc358q38a5hd2lmm29p65c8mjxj"))))
+        (base32 "0xlm4da84nz64nm2127zbsm7nvh4373ax7qrbqcg4cmd7mqk7vmi"))))
     (properties `((upstream-name . "tidypaleo")))
     (build-system r-build-system)
     (arguments

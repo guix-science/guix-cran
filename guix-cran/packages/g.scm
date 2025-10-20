@@ -1516,13 +1516,13 @@ from Git', SQLite', and Make to provide a lab notebook for machine learning.")
 (define-public r-guider
   (package
     (name "r-guider")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "guideR" version))
        (sha256
-        (base32 "0x517bj3l7sj4xs0nl0s6z8gi8v5gbw1d10w9a76nq7n8b787i22"))))
+        (base32 "1apkcnm4mg2asjyi497wn2shk851z7p0nddyixsszybndm59c5bl"))))
     (properties `((upstream-name . "guideR")))
     (build-system r-build-system)
     (arguments
@@ -4290,13 +4290,13 @@ growth curves) at isolated time points.")
 (define-public r-growthpheno
   (package
     (name "r-growthpheno")
-    (version "3.1.13")
+    (version "3.1.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growthPheno" version))
        (sha256
-        (base32 "1k4kjd7nhihs3h0ajjr4jj44z4ap8kvrr3avw3ajlg8jvl090wcv"))))
+        (base32 "0g27k4sl26w9lr4g9j8in871w3w1dlnpv4pck51gcqnai21sp3da"))))
     (properties `((upstream-name . "growthPheno")))
     (build-system r-build-system)
     (arguments

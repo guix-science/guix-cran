@@ -11374,6 +11374,36 @@ visual application.  Puzzles can also be solved using the automatic solver
 included.  View a demo online at <https://daattali.com/shiny/lightsout/>.")
     (license license:expat)))
 
+(define-public r-lightsf
+  (package
+    (name "r-lightsf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lightsf" version))
+       (sha256
+        (base32 "1gfgiixgj01kldsa8x4v6snxiwkg349nm7vjk39a9zynpc3bizaw"))))
+    (properties `((upstream-name . "lightsf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/roming20/lightsf")
+    (synopsis "Curated Collection of Georeferenced and Spatial Datasets")
+    (description
+     "This package provides a diverse collection of georeferenced and spatial datasets
+from different domains including urban studies, housing markets, environmental
+monitoring, transportation, and socio-economic indicators.  The package
+consolidates datasets from multiple open sources such as Kaggle, chopin,
+@code{spData}, adespatial, and @code{bivariateLeaflet}.  It is designed for
+researchers, analysts, and educators interested in spatial analysis,
+geostatistics, and geographic data visualization.  The datasets include point
+patterns, polygons, socio-economic data frames, and network-like structures,
+allowing flexible exploration of geospatial phenomena.")
+    (license license:gpl3)))
+
 (define-public r-lightr
   (package
     (name "r-lightr")

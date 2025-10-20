@@ -24667,13 +24667,13 @@ blackbox models while remaining completely interpretable.")
 (define-public r-ebirdst
   (package
     (name "r-ebirdst")
-    (version "3.2023.0")
+    (version "3.2023.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebirdst" version))
        (sha256
-        (base32 "03ayzhjhbqnk1klw30gav4ah7yr47h40b48r9vgglxvnyalcndbs"))))
+        (base32 "1y3s7gw8461lxn9lczpsjjzx0wcx2h8i9g5f5gfdn1n76g66jy4j"))))
     (properties `((upstream-name . "ebirdst")))
     (build-system r-build-system)
     (arguments
@@ -24683,6 +24683,7 @@ blackbox models while remaining completely interpretable.")
                              r-terra
                              r-stringr
                              r-sf
+                             r-scales
                              r-rlang
                              r-rcolorbrewer
                              r-magrittr
