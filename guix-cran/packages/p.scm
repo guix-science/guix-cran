@@ -2615,13 +2615,13 @@ CTN-0030 (<https://ctnlibrary.org/protocol/ctn0030/>), and CTN-0051
 (define-public r-pubh
   (package
     (name "r-pubh")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pubh" version))
        (sha256
-        (base32 "1z575vb9b4774p42dyqbbf14dynnym0377zr5i0c6whr67dcz99q"))))
+        (base32 "12viwmbi1sxr5wdf8ykw1ks9kyhilswaqafqxjn7173jxqfg4vnc"))))
     (properties `((upstream-name . "pubh")))
     (build-system r-build-system)
     (arguments
@@ -2636,8 +2636,9 @@ CTN-0030 (<https://ctnlibrary.org/protocol/ctn0030/>), and CTN-0051
                              r-performance
                              r-lmtest
                              r-jtools
+                             r-huxtable
+                             r-gtsummary
                              r-ggplot2
-                             r-ggformula
                              r-epitools
                              r-epi
                              r-emmeans
@@ -16698,13 +16699,13 @@ chosen.")
 (define-public r-portfoliotester
   (package
     (name "r-portfoliotester")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PortfolioTesteR" version))
        (sha256
-        (base32 "1iqd9irnb22089qa89591pv8igrrqs881cxrh3lqi52hg4fkd9dg"))))
+        (base32 "08lykrgsflzfp9kz52m7cg9j8arrk3w88x6x70dyq1kikg6kbrdc"))))
     (properties `((upstream-name . "PortfolioTesteR")))
     (build-system r-build-system)
     (arguments
@@ -16712,7 +16713,7 @@ chosen.")
       #:tests? #f))
     (propagated-inputs (list r-zoo r-ttr r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/alb3rtazzo/PortfolioTesteR")
+    (home-page "https://github.com/AlbertoPallotta/PortfolioTesteR")
     (synopsis "Test Investment Strategies with English-Like Code")
     (description
      "Design, backtest, and analyze portfolio strategies using simple, English-like
@@ -45469,6 +45470,48 @@ local disk as well.  pak has a dependency solver, so it finds version conflicts
 before performing the installation.  This version of pak supports CRAN,
 Bioconductor and @code{GitHub} packages as well.")
     (license license:gpl3)))
+
+(define-public r-paisaje
+  (package
+    (name "r-paisaje")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "paisaje" version))
+       (sha256
+        (base32 "17cnh901arxlvvhqaskpvaawkn460p8z81h1svxqcbv9j0wzb55j"))))
+    (properties `((upstream-name . "paisaje")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-terra
+                             r-spocc
+                             r-sf
+                             r-rvest
+                             r-rlang
+                             r-progress
+                             r-magrittr
+                             r-landscapemetrics
+                             r-httr
+                             r-h3jsr
+                             r-exactextractr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://manuelspinola.github.io/paisaje/")
+    (synopsis "Spatial and Environmental Data Tools for Landscape Ecology")
+    (description
+     "This package provides functions for landscape analysis and data retrieval.  The
+package allows users to download environmental variables from global datasets
+(e.g., @code{WorldClim}, ESA @code{WorldCover}, Nighttime Lights), and to
+compute spatial and landscape metrics using a hexagonal grid system based on the
+H3 spatial index.  It is useful for ecological modeling, biodiversity studies,
+and spatial data processing in landscape ecology.  Fick and Hijmans (2017)
+<doi:10.1002/joc.5086>.  Zanaga et al. (2022) <doi:10.5281/zenodo.7254221>.
+Uber Technologies Inc. (2022) \"H3: Hexagonal hierarchical spatial index\".")
+    (license license:expat)))
 
 (define-public r-pairwiseci
   (package

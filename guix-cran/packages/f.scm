@@ -2837,6 +2837,36 @@ and down regulated genes are known.  The methods are described in a paper
 currently submitted by Orecchioni et al, 2020 in Nanoscale.")
     (license license:gpl3+)))
 
+(define-public r-funbootband
+  (package
+    (name "r-funbootband")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "funbootband" version))
+       (sha256
+        (base32 "1vpg36x2ri8lk2c683bidk5068lwc74k2hvq86ifh9981p84q4ff"))))
+    (properties `((upstream-name . "funbootband")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/koda86/funbootband-cran")
+    (synopsis
+     "Simultaneous Prediction and Confidence Bands for Time Series Data")
+    (description
+     "This package provides methods to compute simultaneous prediction and confidence
+bands for dense time series data.  The implementation builds on the functional
+bootstrap approach proposed by Lenhoff et al. (1999)
+<doi:10.1016/S0966-6362(98)00043-5> and extended by Koska et al. (2023)
+<doi:10.1016/j.jbiomech.2023.111506> to support both independent and clustered
+(hierarchical) data.  Includes a simple API (see @code{band()}) and an Rcpp
+backend for performance.")
+    (license license:gpl3)))
+
 (define-public r-fun
   (package
     (name "r-fun")
@@ -3829,6 +3859,39 @@ are sparse.  It can also be used to perform market basket analysis when supplied
 with a single binary data matrix.  Here it will find collections of columns
 which for many rows contain all 1's.")
     (license license:gpl2)))
+
+(define-public r-fsinr
+  (package
+    (name "r-fsinr")
+    (version "2.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FSinR" version))
+       (sha256
+        (base32 "17z2hx95z9rybkzn465084qfpjanw8773z823ilf9isvia44nxab"))))
+    (properties `((upstream-name . "FSinR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-rdpack
+                             r-purrr
+                             r-prodlim
+                             r-ga
+                             r-e1071
+                             r-dplyr
+                             r-digest
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=FSinR")
+    (synopsis "Feature Selection")
+    (description
+     "Feature subset selection algorithms modularized in search algorithms and measure
+utilities.")
+    (license license:gpl3)))
 
 (define-public r-fsia
   (package
@@ -6425,6 +6488,46 @@ parameter estimation method and fractional kriging model for multivariate data
 modeling.")
     (license license:gpl2)))
 
+(define-public r-fracfixr
+  (package
+    (name "r-fracfixr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FracFixR" version))
+       (sha256
+        (base32 "0f3c55sx4q0mhkdqcs07sxxln58i9ipvbmblx53iksfnh3j2qnyz"))))
+    (properties `((upstream-name . "FracFixR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rcolorbrewer
+                             r-nnls
+                             r-matrixstats
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-dplyr
+                             r-aod))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=FracFixR")
+    (synopsis
+     "Compositional Statistical Framework for RNA Fractionation Analysis")
+    (description
+     "This package provides a compositional statistical framework for absolute
+proportion estimation between fractions in RNA sequencing data. @code{FracFixR}
+addresses the fundamental challenge in fractionated RNA-seq experiments where
+library preparation and sequencing depth obscure the original proportions of RNA
+fractions.  It reconstructs original fraction proportions using non-negative
+linear regression, estimates the \"lost\" unrecoverable fraction, corrects
+individual transcript frequencies, and performs differential proportion testing
+between conditions.  Supports any RNA fractionation protocol including polysome
+profiling, sub-cellular localization, and RNA-protein complex isolation.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-fracdist
   (package
     (name "r-fracdist")
@@ -8849,44 +8952,6 @@ generalization of RFDisc discretization method initially proposed by Berrado and
 Runger (2009) <doi:10.1109/AICCSA.2009.5069327>, and improved by Berrado et al.
 in 2012 by adopting the idea of moment matching optimization related by Hoyland
 and Wallace (2001) <doi: 10.1287/mnsc.47.2.295.9834>.")
-    (license license:gpl3+)))
-
-(define-public r-forestdata
-  (package
-    (name "r-forestdata")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "forestdata" version))
-       (sha256
-        (base32 "1xkl6kv0y863ksd2p6aj2cf377v1kdz3py37vylfawjq5jawqzyy"))))
-    (properties `((upstream-name . "forestdata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-terra
-                             r-stringr
-                             r-stringi
-                             r-sf
-                             r-purrr
-                             r-lifecycle
-                             r-glue
-                             r-foreign
-                             r-dplyr
-                             r-countrycode
-                             r-cli
-                             r-archive))
-    (home-page "https://cidree.github.io/forestdata/")
-    (synopsis "Download Forestry Data")
-    (description
-     "This package provides functions for downloading forestry and land use data for
-use in spatial analysis.  This packages offers a user-friendly solution to
-quickly obtain datasets such as forest height, forest types, tree species under
-various climate change scenarios, or land use data among others.")
     (license license:gpl3+)))
 
 (define-public r-forestcontrol
@@ -22023,6 +22088,32 @@ variable parameters.  Extended documentation at
 <doi:10.5281/zenodo.2669586>.")
     (license license:expat)))
 
+(define-public r-faunabr
+  (package
+    (name "r-faunabr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "faunabr" version))
+       (sha256
+        (base32 "0x84rb474pgn16922wh8w6sadsky4z4f49q6flk6kmkb4k02dc8y"))))
+    (properties `((upstream-name . "faunabr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml r-terra r-httr r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://wevertonbio.github.io/faunabr/")
+    (synopsis "Explore CatÃ¡logo TaxÃ´nomico da Fauna do Brasil Database")
+    (description
+     "This package provides a collection of functions designed to retrieve, filter and
+spatialize data from the CatÃ¡logo TaxÃ´nomico da Fauna do Brasil.  For more
+information about the dataset, please visit
+<http://fauna.jbrj.gov.br/fauna/@code{listaBrasil/>}.")
+    (license license:gpl3+)))
+
 (define-public r-faulttree
   (package
     (name "r-faulttree")
@@ -22294,13 +22385,13 @@ Emergency Department with concurrent local temperature.")
 (define-public r-fasttopics
   (package
     (name "r-fasttopics")
-    (version "0.6-192")
+    (version "0.7-30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastTopics" version))
        (sha256
-        (base32 "17dydlgwzdd4n0d4xjz64z8w4vrmrfn3lqx128840x7zvgg0kg38"))))
+        (base32 "1zv8fc10g4j2a8kqrp6i8rasw3zrmmqnwakl71d50mkwnhqx8ffv"))))
     (properties `((upstream-name . "fastTopics")))
     (build-system r-build-system)
     (arguments
@@ -22309,6 +22400,7 @@ Emergency Department with concurrent local temperature.")
     (propagated-inputs (list r-uwot
                              r-rtsne
                              r-rhpcblasctl
+                             r-reshape2
                              r-rcppparallel
                              r-rcpparmadillo
                              r-rcpp

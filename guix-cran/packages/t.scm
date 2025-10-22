@@ -2704,6 +2704,48 @@ default @code{twoSided} = TRUE'.")
 translators.")
     (license license:gpl2)))
 
+(define-public r-tteice
+  (package
+    (name "r-tteice")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tteICE" version))
+       (sha256
+        (base32 "1j0pz18nkapx7wdrcvvicrq17wmmw6al3slq26pbpilvqnhfkv9f"))))
+    (properties `((upstream-name . "tteICE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-shinywidgets
+                             r-shinythemes
+                             r-shiny
+                             r-psych
+                             r-mass
+                             r-dt
+                             r-cmprsk))
+    (home-page "https://github.com/mephas/tteICE")
+    (synopsis
+     "Treatment Effect Estimation for Time-to-Event Data with Intercurrent Events")
+    (description
+     "Analyzing treatment effects in clinical trials with time-to-event outcomes is
+complicated by intercurrent events.  This package implements methods for
+estimating and inferring the cumulative incidence functions for time-to-event
+(TTE) outcomes with intercurrent events (ICEs) under the five strategies
+outlined in the ICH E9 (R1) addendum, see Deng (2025)<doi:10.1002/sim.70091>.
+This package can be used for analyzing data from both randomized controlled
+trials and observational studies.  In general, we have a primary outcome event
+and possibly an intercurrent event.  Two data structures are allowed: competing
+risks, where only the time to the first event is recorded, and semicompeting
+risks, where the times to both the primary outcome event and intercurrent event
+(or censoring) are recorded.  For estimation methods, users can choose
+nonparametric estimation (which does not use covariates) and semiparametrically
+efficient estimation.")
+    (license license:gpl3)))
+
 (define-public r-ttdo
   (package
     (name "r-ttdo")
@@ -25459,6 +25501,36 @@ single test.  This is useful for noisy or flaky tests that generally pass but
 can fail due to occasional random errors, such as numeric instability or using
 random data.")
     (license license:gpl3+)))
+
+(define-public r-testthatdocs
+  (package
+    (name "r-testthatdocs")
+    (version "1.0.23")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "testthatdocs" version))
+       (sha256
+        (base32 "1zp5k31gwydvj9rciygjvsr68f91vwhvl0gkg2jsbji6r4b7rbhp"))))
+    (properties `((upstream-name . "testthatdocs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/urniaz/testthatdocs")
+    (synopsis
+     "Automated and Idempotent Unit Tests Documentation for Reproducible Quality Assurance")
+    (description
+     "Automates documentation of @code{test_that()} calls within R test files.  The
+package scans test sources, extracts human-readable test titles (even when
+composed with functions like @code{paste()} or @code{glue::glue()}, ...  etc.),
+and generates reproducible roxygen2-style listings that can be inserted both
+globally and per-section.  It ensures idempotent updates and supports
+customizable numbering templates with hierarchical indices.  Designed for
+developers, QA teams, and package maintainers seeking consistent,
+self-documenting test inventories.")
+    (license license:expat)))
 
 (define-public r-testssymmetry
   (package

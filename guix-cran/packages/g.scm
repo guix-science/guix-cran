@@ -1516,13 +1516,13 @@ from Git', SQLite', and Make to provide a lab notebook for machine learning.")
 (define-public r-guider
   (package
     (name "r-guider")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "guideR" version))
        (sha256
-        (base32 "1apkcnm4mg2asjyi497wn2shk851z7p0nddyixsszybndm59c5bl"))))
+        (base32 "0nsfiw930kmkx34najiqdmk0inzngg3da95db4pnzp3jn04qa19a"))))
     (properties `((upstream-name . "guideR")))
     (build-system r-build-system)
     (arguments
@@ -18023,6 +18023,43 @@ inspired by the Bayesian graphical lasso function using blocked sampling,
 authored by Wang(2012) <doi:10.1214/12-BA729>.")
     (license license:gpl2)))
 
+(define-public r-ghrmodel
+  (package
+    (name "r-ghrmodel")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GHRmodel" version))
+       (sha256
+        (base32 "1zq3ahr16w687z36x69ag1ijnvpi17z1901qnhcnv58x148vwazw"))))
+    (properties `((upstream-name . "GHRmodel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-scales
+                             r-rlang
+                             r-ghrexplore
+                             r-ggplot2
+                             r-dplyr
+                             r-dlnm
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.earth.bsc.es/ghr/ghrmodel")
+    (synopsis "Bayesian Hierarchical Modelling of Spatio-Temporal Health Data")
+    (description
+     "Supports modeling health outcomes using Bayesian hierarchical spatio-temporal
+models with complex covariate effects (e.g., linear, non-linear, interactions,
+distributed lag linear and non-linear models) in the INLA framework.  It is
+designed to help users identify key drivers and predictors of disease risk by
+enabling streamlined model exploration, comparison, and visualization of complex
+covariate effects.  See an application of the modelling framework in Lowe, Lee,
+O'Reilly et al. (2021) <doi:10.1016/S2542-5196(20)30292-8>.")
+    (license license:gpl2+)))
+
 (define-public r-ghrexplore
   (package
     (name "r-ghrexplore")
@@ -25719,18 +25756,19 @@ list of citations for the methods implemented.")
 (define-public r-germinar
   (package
     (name "r-germinar")
-    (version "2.1.5")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GerminaR" version))
        (sha256
-        (base32 "1vnvpz4zlsliqmqvdqia4xrcykwlhg99ps1vrzf3567y3m4vkpli"))))
+        (base32 "1n323ipp5bhvqd8gg8vywzwmnpz6bz0rhkdz277af4rygykx7b20"))))
     (properties `((upstream-name . "GerminaR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list pandoc))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-shiny
@@ -25739,7 +25777,7 @@ list of citations for the methods implemented.")
                              r-dt
                              r-dplyr
                              r-agricolae))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto r-knitr))
     (home-page "https://germinar.inkaverse.com/")
     (synopsis "Indices and Graphics for Assess Seed Germination Process")
     (description

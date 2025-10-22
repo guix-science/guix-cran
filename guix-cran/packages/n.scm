@@ -6976,13 +6976,13 @@ Ernst (1969) <doi:10.1016/0022-2364(69)90003-1>, Liland et al. (2010)
 (define-public r-nmof
   (package
     (name "r-nmof")
-    (version "2.10-1")
+    (version "2.11-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMOF" version))
        (sha256
-        (base32 "1y2069kfig1rvp7px2iv7knnj9a0qgv48x1lwbmkfp2mzkrcs9fb"))))
+        (base32 "1jh2ni5zw54mx8vrkqjqb4yk7lsa0rhmlwy4cgvv32nh8h0ss57i"))))
     (properties `((upstream-name . "NMOF")))
     (build-system r-build-system)
     (arguments

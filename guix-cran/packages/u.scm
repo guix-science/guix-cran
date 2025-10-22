@@ -3890,6 +3890,53 @@ provides the capability to transition from the interactive to the dynamic world
 and from one library to another without changing function or syntax.")
     (license license:gpl3+)))
 
+(define-public r-umx
+  (package
+    (name "r-umx")
+    (version "4.59.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "umx" version))
+       (sha256
+        (base32 "1cz7yw3my8p8n343k3bf7xkf6w28r8j6grlxs6lzm7jpjpycv2ag"))))
+    (properties `((upstream-name . "umx")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xtable
+                             r-scales
+                             r-rcurl
+                             r-r2html
+                             r-psychtools
+                             r-psych
+                             r-polycor
+                             r-paran
+                             r-openxlsx
+                             r-openmx
+                             r-nlme
+                             r-mvtnorm
+                             r-mumin
+                             r-matrix
+                             r-mass
+                             r-lavaan
+                             r-knitr
+                             r-kableextra
+                             r-ggplot2
+                             r-gert
+                             r-diagrammer
+                             r-cowplot))
+    (home-page "https://github.com/tbates/umx#readme")
+    (synopsis "Structural Equation Modeling and Twin Modeling in R")
+    (description
+     "Quickly create, run, and report structural equation models, and twin models.
+See ?umx for help, and umx_open_CRAN_page(\"umx\") for NEWS. Timothy C. Bates,
+Michael C. Neale, Hermine H. Maes, (2019).  umx: A library for Structural
+Equation and Twin Modelling in R. Twin Research and Human Genetics, 22, 27-41.
+<doi:10.1017/thg.2019.2>.")
+    (license license:gpl3)))
+
 (define-public r-umpire
   (package
     (name "r-umpire")
@@ -5067,13 +5114,13 @@ datasets from 1998-2014.")
 (define-public r-ucomp
   (package
     (name "r-ucomp")
-    (version "5.1.1")
+    (version "5.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UComp" version))
        (sha256
-        (base32 "0a3jxdw3aicllbabfqabyfzvdq1mxz9xd60j90288bb7bxynp4j4"))))
+        (base32 "1bwxksimywzrshf12vy65n6xqfq1v6k9kj171iqg7askgplrhp8v"))))
     (properties `((upstream-name . "UComp")))
     (build-system r-build-system)
     (arguments

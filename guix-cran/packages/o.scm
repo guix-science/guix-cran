@@ -8029,13 +8029,13 @@ into R.")
 (define-public r-openalexr
   (package
     (name "r-openalexr")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openalexR" version))
        (sha256
-        (base32 "0cnr9k15jhyxn11k3lb81v08kc36aa7swlwx1mx3jkbxlsqcwbqy"))))
+        (base32 "1zflw1597qnafwn4b2dw39ynmgkbqm4bcwrffb0r4lwb0fb79bxf"))))
     (properties `((upstream-name . "openalexR")))
     (build-system r-build-system)
     (arguments

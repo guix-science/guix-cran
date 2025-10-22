@@ -8426,13 +8426,13 @@ model.")
 (define-public r-sulcimap
   (package
     (name "r-sulcimap")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sulcimap" version))
        (sha256
-        (base32 "06kk826vzk67lnk7vdbxcilj5sbh9m4l14zikd2lygljplg9v6kj"))))
+        (base32 "0ir6kryxzcacd78vs5fpwm1vj83p5scpvhrm72sdkpvlk69svd7s"))))
     (properties `((upstream-name . "sulcimap")))
     (build-system r-build-system)
     (arguments
@@ -8445,7 +8445,7 @@ model.")
                              r-ggplot2
                              r-cowplot))
     (home-page "https://cran.r-project.org/package=sulcimap")
-    (synopsis "Mapping Brain Folding Patterns")
+    (synopsis "Mapping Cortical Folding Patterns")
     (description
      "Visualizes sulcal morphometry data derived from @code{BrainVisa}
 <https://brainvisa.info/> including width, depth, surface area, and length.  The
@@ -11145,13 +11145,13 @@ and fisheries.  8pp.")
 (define-public r-stratest
   (package
     (name "r-stratest")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stratEst" version))
        (sha256
-        (base32 "0g5zz7vv5gjli0v49m5xzgzpqfb6ay368bxh513v9j3y84vlm2m8"))))
+        (base32 "03xalic2b3vd76ba2v90zsmjcqmijy5x876m674b0khyzf85qzjg"))))
     (properties `((upstream-name . "stratEst")))
     (build-system r-build-system)
     (arguments
@@ -13453,13 +13453,13 @@ Markdown for things like your CV or your articles and manuscripts.")
 (define-public r-stevemisc
   (package
     (name "r-stevemisc")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stevemisc" version))
        (sha256
-        (base32 "1xbhmz3yh7qjchq07khd8qa61654x3chj3srlyd8c15in0dxch5z"))))
+        (base32 "0kcmjf8x043dy7nkwp2jg5kwdbxwmwdffpvhfdgw1zyf0v2brlj4"))))
     (properties `((upstream-name . "stevemisc")))
     (build-system r-build-system)
     (arguments
@@ -18873,13 +18873,13 @@ autoregression methods.")
 (define-public r-ssn2
   (package
     (name "r-ssn2")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSN2" version))
        (sha256
-        (base32 "1gg6v3qjp6py1dbb0ms00578q8h1ikqml6lmvgbjj8pmc2n6zcz3"))))
+        (base32 "0js3nxdq3cm1bv49bm89g8q81s9z494ypp0qnhrxq4iiwzrlknpi"))))
     (properties `((upstream-name . "SSN2")))
     (build-system r-build-system)
     (arguments
@@ -23161,13 +23161,13 @@ Finley, and Gelfand (2016) <doi:10.1080/01621459.2015.1044091>.")
 (define-public r-spnn
   (package
     (name "r-spnn")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spnn" version))
        (sha256
-        (base32 "1yj89j7nynfyw1ikm6q5kdwdgiiwxx0aa6kgnri5wfnb4l0356l7"))))
+        (base32 "0v5931jv0lfvi366r6qdwlz96r8mszd2ly6sdmzg7gmgijkp1ria"))))
     (properties `((upstream-name . "spnn")))
     (build-system r-build-system)
     (arguments
@@ -26431,6 +26431,37 @@ larger set of satellites.  It is also possible to search the archive for
 available images over the area of interest for a given (past) period, get the
 URL links to download the whole image tiles, or alternatively to download the
 image for just the area of interest based on selected spectral bands.")
+    (license license:gpl3)))
+
+(define-public r-spectacles
+  (package
+    (name "r-spectacles")
+    (version "0.5-5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spectacles" version))
+       (sha256
+        (base32 "1sa9i0jnvvf4jw9pr8agh8qk00nbdwabarm44nlbib29v2zbxzqj"))))
+    (properties `((upstream-name . "spectacles")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-signal
+                             r-reshape2
+                             r-plyr
+                             r-ggplot2
+                             r-epir
+                             r-baseline))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pierreroudier/spectacles/")
+    (synopsis
+     "Storing, Manipulating and Analysis Spectroscopy and Associated Data")
+    (description
+     "Stores and eases the manipulation of spectra and associated data, with dedicated
+classes for spatial and soil-related data.")
     (license license:gpl3)))
 
 (define-public r-spect
@@ -36794,19 +36825,19 @@ variables.")
 (define-public r-smoothr
   (package
     (name "r-smoothr")
-    (version "1.1.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smoothr" version))
        (sha256
-        (base32 "1wyk4k42bbfcm88cmalg1vk0nwb1ziprxg9nv3f3613sldh8fkha"))))
+        (base32 "1c4m95l2nb7y9jq4pgjfyg13al2sinq4gf746af6b4kzfkb7wrg0"))))
     (properties `((upstream-name . "smoothr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-units r-terra r-sf))
+    (propagated-inputs (list r-units r-sf))
     (native-inputs (list r-knitr))
     (home-page "https://strimas.com/smoothr/")
     (synopsis "Smooth and Tidy Spatial Features")
@@ -44484,6 +44515,36 @@ A., Peng, R. (2013)<@code{arXiv:1209.5821>}.  Toivonen, H., Mahler, S., Zhou, F.
 simplices in n-dimensional Euclidean space.  There are exact methods for
 polynomials and adaptive methods for integrating an arbitrary function.")
     (license license:gpl2+)))
+
+(define-public r-simplicialcomplex
+  (package
+    (name "r-simplicialcomplex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SimplicialComplex" version))
+       (sha256
+        (base32 "1zk2pys2shqala4b77ajbrzfc5kn7klgx53sczk8yqxd7drjm0a0"))))
+    (properties `((upstream-name . "SimplicialComplex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-igraph r-gtools r-ggplot2))
+    (home-page "https://github.com/TDA-R/SimplicialComplex")
+    (synopsis "Topological Data Analysis: Simplicial Complex")
+    (description
+     "This package provides an implementation of simplicial complexes for Topological
+Data Analysis (TDA).  The package includes functions to compute faces, boundary
+operators, Betti numbers, Euler characteristic, and to construct simplicial
+complexes.  It also implements persistent homology, from building filtrations to
+computing persistence diagrams, with the aim of helping readers understand the
+core concepts of computational topology.  Methods are based on standard
+references in persistent homology such as Zomorodian and Carlsson (2005)
+<doi:10.1007/s00454-004-1146-y> and Chazal and Michel (2021)
+<doi:10.3389/frai.2021.667963>.")
+    (license license:expat)))
 
 (define-public r-simplica
   (package
@@ -54020,13 +54081,13 @@ employing multiple threads to achieve significant runtime reduction.  Uses
 (define-public r-shazam
   (package
     (name "r-shazam")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shazam" version))
        (sha256
-        (base32 "16bkwm903v4hv6ng6ncfzax2s5x8qfa4ldlwzclry7iggniq7dzh"))))
+        (base32 "01g82n1b5gkw9gpinm4zp6wx6zbpxp6xds15k2fvp38i3vl2zqg0"))))
     (properties `((upstream-name . "shazam")))
     (build-system r-build-system)
     (arguments
@@ -55750,13 +55811,13 @@ discussed in Kidzinski et al. (2022, <http://jmlr.org/papers/v23/20-1104.html>).
 (define-public r-sgd
   (package
     (name "r-sgd")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgd" version))
        (sha256
-        (base32 "0spcv9dysl2vlgrpjxicai9nkg7hylf2wci45pjpl8jph6yj8c70"))))
+        (base32 "06m4w183q9kipzhbywdpb9bpnsdxlyqaw1y9r1k501dhi5mj65xm"))))
     (properties `((upstream-name . "sgd")))
     (build-system r-build-system)
     (arguments
@@ -57305,13 +57366,13 @@ Data: A Modern Statistical Perspective\" (Hens, Niel & Shkedy, Ziv & Aerts, Marc
 (define-public r-serolyzer
   (package
     (name "r-serolyzer")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SerolyzeR" version))
        (sha256
-        (base32 "1bng54y5n4hj88ixpadmimsyjp6i0y6qyanjv9l4r60v64r7rg72"))))
+        (base32 "0gz7vfq5p7acag9hwhwj3hrp3hqmabb60i0kg90dd4l3zw43mvvg"))))
     (properties `((upstream-name . "SerolyzeR")))
     (build-system r-build-system)
     (arguments
@@ -57720,13 +57781,13 @@ al. (2023, <https://hal.inrae.fr/hal-04388845v1>).")
 (define-public r-seqtrie
   (package
     (name "r-seqtrie")
-    (version "0.2.9")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seqtrie" version))
        (sha256
-        (base32 "1l9qjls0dzi39s1iz6cm8hjpz4bihs1zg5p14gyz7qrf99qs1k0h"))))
+        (base32 "1jpvs6hl75wr16578fj30vfhhgqcaw5gk2vc9m09xxd17xi3afpp"))))
     (properties `((upstream-name . "seqtrie")))
     (build-system r-build-system)
     (arguments
@@ -60284,13 +60345,13 @@ see Zhong et al. (2023) <doi:10.1080/01621459.2023.2284988>; Cui and Zhong
 (define-public r-semid
   (package
     (name "r-semid")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEMID" version))
        (sha256
-        (base32 "14x2vir17fp9wm9hzsrc1sw0qgavkpfdvcsfnnklhznl0h526xrr"))))
+        (base32 "08m0vwr7a6zby7wn9dff1gf03gmqgq9ccwpyzgln2n24l4zv91x6"))))
     (properties `((upstream-name . "SEMID")))
     (build-system r-build-system)
     (arguments
@@ -72273,13 +72334,13 @@ cancer data <@code{arXiv:2012.06093>}.")
 (define-public r-samtool
   (package
     (name "r-samtool")
-    (version "1.8.2")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAMtool" version))
        (sha256
-        (base32 "0zny6bhizanz8qfchg3dyhg4pf80bjsy48vkakjmjmcg9zq7cyyq"))))
+        (base32 "031h9l5cwm20mpcgdbrj1qcf46c7lmpvb47x7m1qpcdnfc9lwh21"))))
     (properties `((upstream-name . "SAMtool")))
     (build-system r-build-system)
     (arguments

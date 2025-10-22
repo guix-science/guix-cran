@@ -755,13 +755,13 @@ selection process with minimal tuning required in statistical analysis.")
 (define-public r-vsurf
   (package
     (name "r-vsurf")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VSURF" version))
        (sha256
-        (base32 "14rkd1n7ffy7hz3xgqqysbphy89h6lpmkhjrlpsfmwb2jzhv29y0"))))
+        (base32 "13vld70d6g370cb8sai6m815faikq54w06ydva5fcry13kassv53"))))
     (properties `((upstream-name . "VSURF")))
     (build-system r-build-system)
     (arguments
@@ -780,7 +780,7 @@ Second step aims to select all variables related to the response for
 interpretation purpose.  Third step refines the selection by eliminating
 redundancy in the set of variables selected by the second step, for prediction
 purpose.  Genuer, R. Poggi, J.-M. and Tuleau-Malot, C. (2015)
-<https://journal.r-project.org/archive/2015-2/genuer-poggi-tuleaumalot.pdf>.")
+<https://journal.r-project.org/articles/RJ-2015-018/>.")
     (license license:gpl2+)))
 
 (define-public r-vstsr
@@ -5647,13 +5647,13 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "1kaqsjphhv6wxs17igh0ihksfg292sd4vr0s7i79ib25milzbrck"))))
+        (base32 "1p6cmxacdmnafsj3nfwgkn6zh8sgw70bhp7fwz4jd4z95nlijgcm"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
     (arguments

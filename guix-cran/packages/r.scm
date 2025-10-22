@@ -1525,13 +1525,13 @@ performance.")
 (define-public r-rvolleydata
   (package
     (name "r-rvolleydata")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvolleydata" version))
        (sha256
-        (base32 "0znz03s1plcg3hxg05h21hrk6z81cx6v4nj8sw849fqdryl7gi9h"))))
+        (base32 "0ial32a92j0srakxmdhfcpy404vcj5lpd6qbhpyymnlwf4h15ajx"))))
     (properties `((upstream-name . "rvolleydata")))
     (build-system r-build-system)
     (arguments
@@ -6154,13 +6154,13 @@ reservoirs systems.")
 (define-public r-rssl
   (package
     (name "r-rssl")
-    (version "0.9.7")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSSL" version))
        (sha256
-        (base32 "1am8xv0v5b2z87y8i7m1s41aq55fx30pdnhna5dj87fql5faydqx"))))
+        (base32 "1klbrzpby9wzi92rli0ys9kgc84qw3m64dsy5v8gn9987abdykb1"))))
     (properties `((upstream-name . "RSSL")))
     (build-system r-build-system)
     (arguments
@@ -13643,6 +13643,36 @@ Rosenbrock Distribution for MCMC Testing\" by Pagani, Wiegand and Nadarajah
 (2019) <@code{arXiv:1903.09556>}.")
     (license license:gpl2)))
 
+(define-public r-rosario
+  (package
+    (name "r-rosario")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rosario" version))
+       (sha256
+        (base32 "1x72nw5yfzlyvs5hpsm98jlqpiy6s7xldjn4lr3hp77kgp8r1xdh"))))
+    (properties `((upstream-name . "rosario")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-future
+                             r-furrr
+                             r-broom))
+    (home-page "https://alrobles.github.io/rosario/")
+    (synopsis "Null Model Algorithm to Analyze Cyclical Data in Ecology")
+    (description
+     "This package implements a null model analysis to quantify concurrent temporal
+niche overlap (i.e., activity or phenology) among biological identities (e.g.,
+individuals, populations, species) using the Rosario randomization algorithm
+Castro-Arellano et al. (2010) <doi:10.1111/j.2041-210X.2010.00031.x>.")
+    (license license:gpl3+)))
+
 (define-public r-rorqual-morpho
   (package
     (name "r-rorqual-morpho")
@@ -18437,36 +18467,36 @@ bootstrap procedure of Trucios, Hotta and Ruiz (2017)
 (define-public r-robflreg
   (package
     (name "r-robflreg")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robflreg" version))
        (sha256
-        (base32 "1zhc2m8j4yzd5z54jx2lqks1bvvf4w0w3i7hr4hd46k8i3iy2cj2"))))
+        (base32 "026h4s3w3kic40frj8cckaf6h016njnbyfrjpcvr4za7vbsk874l"))))
     (properties `((upstream-name . "robflreg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-robustbase
+                             r-quantreg
                              r-pcapp
                              r-mvtnorm
+                             r-matrix
                              r-mass
                              r-goffda
                              r-fields
                              r-fda-usc
                              r-fda
-                             r-expm))
+                             r-expm
+                             r-cvtools))
     (home-page "https://cran.r-project.org/package=robflreg")
     (synopsis "Robust Functional Linear Regression")
     (description
      "This package provides functions for implementing robust methods for functional
 linear regression.  In the functional linear regression, we consider
-scalar-on-function linear regression and function-on-function linear regression.
- More details, see Beyaztas, U., and Shang, H. L. (2021)
-<@code{arXiv:2111.01238>} and Beyaztas, U., and Shang, H. L. (2022)
-<@code{arXiv:2203.05065>}.")
+scalar-on-function linear regression and function-on-function linear regression.")
     (license license:gpl3)))
 
 (define-public r-robfilter
@@ -30108,6 +30138,40 @@ which the information gain is computed at each split.  This gain is aggregated
 for each split variable in a tree and averaged across trees.")
     (license license:gpl2+)))
 
+(define-public r-rfuzzycoco
+  (package
+    (name "r-rfuzzycoco")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rfuzzycoco" version))
+       (sha256
+        (base32 "1zxnsvi9dsjvwxlvfxp0xq7l5nm5bma50bjfgrzhlngs2cpj459f"))))
+    (properties `((upstream-name . "Rfuzzycoco")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-generics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Lonza-RND-Data-Science/Rfuzzycoco")
+    (synopsis
+     "Provides an R Interface to the 'FuzzyCoCo' C++ Library and Extends It")
+    (description
+     "This package provides and extends the Fuzzy Coco algorithm by wrapping the
+@code{FuzzyCoCo} C++ Library, cf
+<https://github.com/Lonza-RND-Data-Science/fuzzycoco>.  Fuzzy Coco constructs
+systems that predict the outcome of a human decision-making process while
+providing an understandable explanation of a possible reasoning leading to it.
+The constructed fuzzy systems are composed of rules and linguistic variables.
+This package provides a S3 classic interface
+@code{(fit_xy()/fit()/predict()/evaluate()}) and a tidymodels'/'parsnip
+interface, a custom engine with custom iteration stop criterion and progress bar
+support as well as a systematic implementation that do not rely on genetic
+programming but rather explore all possible combinations.")
+    (license license:gpl3+)))
+
 (define-public r-rfusion
   (package
     (name "r-rfusion")
@@ -41690,13 +41754,13 @@ projects for changes.")
 (define-public r-readyomics
   (package
     (name "r-readyomics")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readyomics" version))
        (sha256
-        (base32 "0zbzfriy9qjy2vzy3y3jiydaxyd0x4pha05gmi6a3s4sd4d63vwz"))))
+        (base32 "18bm5n1w0wqrl554zlbfmw547ld3gs0yf68ggi1y2c9lz8zmjabg"))))
     (properties `((upstream-name . "readyomics")))
     (build-system r-build-system)
     (arguments
@@ -59005,13 +59069,13 @@ easy access in R.")
 (define-public r-r2mlwin
   (package
     (name "r-r2mlwin")
-    (version "0.8-9")
+    (version "0.8-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2MLwiN" version))
        (sha256
-        (base32 "0zzvpsmcfvnr6v0dg5dbfz8sx2h2m6krkb0q8bxxlj552nn2qvgr"))))
+        (base32 "0dbjsrc4vrr8f5csh566qq3r741348xbkf56av4s7lkzfql2vr9m"))))
     (properties `((upstream-name . "R2MLwiN")))
     (build-system r-build-system)
     (arguments
@@ -59020,7 +59084,6 @@ easy access in R.")
     (inputs (list))
     (propagated-inputs (list r-tibble
                              r-texreg
-                             r-r2winbugs
                              r-memisc
                              r-matrix
                              r-lattice
@@ -59030,7 +59093,7 @@ easy access in R.")
                              r-digest
                              r-coda
                              r-broom))
-    (home-page "http://www.bristol.ac.uk/cmm/software/r2mlwin/")
+    (home-page "https://www.bristol.ac.uk/cmm/software/r2mlwin/")
     (synopsis "Running 'MLwiN' from Within R")
     (description
      "An R command interface to the M@code{LwiN} multilevel modelling software

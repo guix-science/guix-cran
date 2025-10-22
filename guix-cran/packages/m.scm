@@ -15969,13 +15969,13 @@ should be easy to plug in, or develop from, on top of this canvas.")
 (define-public r-momentuhmm
   (package
     (name "r-momentuhmm")
-    (version "1.5.6")
+    (version "1.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "momentuHMM" version))
        (sha256
-        (base32 "14hig6jw6zni4fvadmfhdkgyq8cay5dbrraihsah4w867b5l1n45"))))
+        (base32 "1h0h9fh97aykjk6xvqars2agcmawncj0fq1s8cq1wji08f92zv9v"))))
     (properties `((upstream-name . "momentuHMM")))
     (build-system r-build-system)
     (arguments
@@ -17650,13 +17650,13 @@ number (Zhao et al. (2022) <doi:10.1371/journal.pcbi.1010281>).")
 (define-public r-modelselection
   (package
     (name "r-modelselection")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelSelection" version))
        (sha256
-        (base32 "04n1daz3b1lzxxi0g718c6qjm8kasrbxhq18khz73xlcafbirp0b"))))
+        (base32 "0d5i0g7849k6pxfifg2zcc3405lcf5bl5wsf8wz98bylfdwdp76i"))))
     (properties `((upstream-name . "modelSelection")))
     (build-system r-build-system)
     (arguments
@@ -17672,6 +17672,7 @@ number (Zhao et al. (2022) <doi:10.1371/journal.pcbi.1010281>).")
                              r-mgcv
                              r-mclust
                              r-matrix
+                             r-l0learn
                              r-intervals
                              r-huge
                              r-glmnet
@@ -20598,13 +20599,13 @@ for continuous, count, categorical, and time-to-event data.")
 (define-public r-mlwrap
   (package
     (name "r-mlwrap")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLwrap" version))
        (sha256
-        (base32 "1nc1vw2xlanqlafimlx0k70f47p540wz16ld41ywvq3wq3i6iqrh"))))
+        (base32 "03cig8sv0ilbqgxswk4fw48wy638f2vxcxs736gl0lpnwlz2wnn6"))))
     (properties `((upstream-name . "MLwrap")))
     (build-system r-build-system)
     (arguments
@@ -22813,13 +22814,13 @@ maximum likelihood estimate(s) via Cox-Snell Methodology.")
 (define-public r-mle
   (package
     (name "r-mle")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLE" version))
        (sha256
-        (base32 "060c2lm2h6vrfpc0qbvkj41371r93afih63fqcx7sfrqx78k5x8g"))))
+        (base32 "0lk7vxglnjhdi20ysq6ywfypsqj1z4v1p22rl3cr8kc22nirqk95"))))
     (properties `((upstream-name . "MLE")))
     (build-system r-build-system)
     (arguments
@@ -31513,13 +31514,13 @@ more details see van Krugten et al.(2022) <doi:10.1007/s11136-021-02935-w>.")
 (define-public r-mhorseshoe
   (package
     (name "r-mhorseshoe")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Mhorseshoe" version))
        (sha256
-        (base32 "1zpl070v821f089hax4jg4a3w89nm1zlbn9vpcd90zmkgxm09dxq"))))
+        (base32 "0zb42nxc1zbd99arx9fsbmdbxdwk4gbhc0ssp8r49086adbd47n0"))))
     (properties `((upstream-name . "Mhorseshoe")))
     (build-system r-build-system)
     (arguments
@@ -33372,13 +33373,13 @@ is possible with or without available data from a pilot study.")
 (define-public r-mets
   (package
     (name "r-mets")
-    (version "1.3.7")
+    (version "1.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mets" version))
        (sha256
-        (base32 "0za38llxn5cmnn8y8bny5g5cfkp30j8h7xihpnwx174j3c9q21vb"))))
+        (base32 "149mrcwxq2dl5d2ypl58i4kflfrw466ib9vszsq8500l8fby6g3k"))))
     (properties `((upstream-name . "mets")))
     (build-system r-build-system)
     (arguments
@@ -39487,13 +39488,13 @@ including spatial processes such as lateral water transfer and seed dispersal.")
 (define-public r-medfate
   (package
     (name "r-medfate")
-    (version "4.8.3")
+    (version "4.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medfate" version))
        (sha256
-        (base32 "1z98pz6gmw0jnaksv35b3yzqxyp300hyq7v42i7z1q881avk57ik"))))
+        (base32 "0yklniqr4h1jqqan9j4pm4l57xzlvq7flqridnlk5irk0smabnp7"))))
     (properties `((upstream-name . "medfate")))
     (build-system r-build-system)
     (arguments
@@ -48989,13 +48990,13 @@ format by use of point location data.")
 (define-public r-mapsperu
   (package
     (name "r-mapsperu")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapsPERU" version))
        (sha256
-        (base32 "09z9hjpms039m8sjpb91q1f5knnncbyzciw7g5mhw11f9xsijj4k"))))
+        (base32 "0z8p8zrmq7nakqmjiy3lj777adcph3jfhh01y6dbhhlw3in5yi92"))))
     (properties `((upstream-name . "mapsPERU")))
     (build-system r-build-system)
     (arguments
@@ -50216,13 +50217,13 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manystates
   (package
     (name "r-manystates")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manystates" version))
        (sha256
-        (base32 "0pabanpd57z8kbf3aw2c3xpi3z4wjr4gcd7l7qkaiqvkhwjawq96"))))
+        (base32 "0qj19xrqnxa12kvplsr8pp36zdg12dw2dai3v000m1mc4pjjlwnj"))))
     (properties `((upstream-name . "manystates")))
     (build-system r-build-system)
     (arguments
@@ -51693,35 +51694,21 @@ movement.")
 (define-public r-makefiler
   (package
     (name "r-makefiler")
-    (version "1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MakefileR" version))
        (sha256
-        (base32 "1pfjic2lsar8ghbb6byr4rqrs30qrgfih092z4rxdpsiwkk3y7l1"))))
+        (base32 "0a16b9xwrpmv28dj7x3hm6gl5v0icykrind3mn8c3gqsi21r0cfl"))))
     (properties `((upstream-name . "MakefileR")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
+      #:tests? #f))
     (propagated-inputs (list r-magrittr))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "http://krlmlr.github.io/MakefileR")
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/fvafrcu/MakefileR")
     (synopsis "Create 'Makefiles' Using R")
     (description
      "This package provides a user-friendly interface for the construction of
@@ -52437,13 +52424,13 @@ software paper Wong, Yang, and Kou (2024) <doi:10.18637/jss.v109.i04>.")
 (define-public r-magee
   (package
     (name "r-magee")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAGEE" version))
        (sha256
-        (base32 "1rcf352q88cyx5ivifkbihbii8xp86iva2hxfbjrc75i7pbpfb89"))))
+        (base32 "028gvpld3rpn2kq0vpk751727n24nvapr4cmwb3qk6w8yff4d9c7"))))
     (properties `((upstream-name . "MAGEE")))
     (build-system r-build-system)
     (arguments

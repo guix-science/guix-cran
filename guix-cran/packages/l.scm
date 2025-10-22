@@ -4221,13 +4221,13 @@ in Barbati and Farcomeni (2017) <doi:10.1007/s10260-017-0410-2>.")
 (define-public r-longreadvqs
   (package
     (name "r-longreadvqs")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longreadvqs" version))
        (sha256
-        (base32 "07b55vkklz3qrkdlsnydkpj1kgrkqmprvd9p7iqk86cyr4bdhgna"))))
+        (base32 "1rfad14rf753z2n0fcs6maahq0v6q545ag5d32h57ixp9sm51qxk"))))
     (properties `((upstream-name . "longreadvqs")))
     (build-system r-build-system)
     (arguments
@@ -4241,6 +4241,7 @@ in Barbati and Farcomeni (2017) <doi:10.1007/s10260-017-0410-2>.")
                              r-scales
                              r-reshape2
                              r-rcolorbrewer
+                             r-pwalign
                              r-purrr
                              r-plyr
                              r-magrittr
@@ -8585,6 +8586,40 @@ Research) recommendations.  See Harkness et al. (2010)
 multiple providers.  Supports text generation, structured output with optional
 JSON Schema validation, and embeddings.  Includes tidyverse-friendly helpers,
 chat session, consistent error handling, and parallel batch tools.")
+    (license license:expat)))
+
+(define-public r-llming
+  (package
+    (name "r-llming")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LLMing" version))
+       (sha256
+        (base32 "19vyj4h2dsja46zwphaqlbrmxgapl222xag1604vsbsjmzaz0i30"))))
+    (properties `((upstream-name . "LLMing")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-text
+                             r-stringi
+                             r-stopwords
+                             r-reticulate
+                             r-rdpack
+                             r-quanteda
+                             r-pracma
+                             r-dbscan))
+    (home-page "https://github.com/sliplr19/LLMing")
+    (synopsis
+     "Large Language Model (LLM) Tools for Psychological Text Analysis")
+    (description
+     "This package provides a collection of large language model (LLM) text analysis
+methods designed with psychological data in mind.  Currently, LLMing (aka
+\"lemming\") includes a text anomaly detection method based on the angle-based
+subspace approach described by Zhang, Lin, and Karim (2015)
+<doi:10.1016/j.ress.2015.05.025>.")
     (license license:expat)))
 
 (define-public r-llmagentr
@@ -13414,13 +13449,13 @@ textbook of Tukey (1977) <ISBN: 978-0201076165>.")
 (define-public r-letsrept
   (package
     (name "r-letsrept")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "letsRept" version))
        (sha256
-        (base32 "176jkd7amwmzzd8mn738zfayvq36q0v4k8klnlvvscgrc434x2z0"))))
+        (base32 "010vl0vdmmv9b2x2bjyq03qjbz1pcq365rpyy8sp5yx85i4qi2zx"))))
     (properties `((upstream-name . "letsRept")))
     (build-system r-build-system)
     (arguments
@@ -13435,7 +13470,7 @@ textbook of Tukey (1977) <ISBN: 978-0201076165>.")
                              r-httr
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/joao-svalencar/letsRept")
+    (home-page "https://joao-svalencar.github.io/letsRept/")
     (synopsis "An Interface to the Reptile Database")
     (description
      "This package provides tools to retrieve and summarize taxonomic information and
@@ -17128,13 +17163,13 @@ applying a function one row at a time.")
 (define-public r-lax
   (package
     (name "r-lax")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lax" version))
        (sha256
-        (base32 "1ddl7vgf8xmp4scpiifxvjzzqifcp9q6xiw7kg4cl204scm5z39w"))))
+        (base32 "19hdbb35g67qd668hqf7nxd40iz9qd4sppan6wzrc7ajisqfmpv5"))))
     (properties `((upstream-name . "lax")))
     (build-system r-build-system)
     (arguments

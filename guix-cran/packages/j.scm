@@ -2390,13 +2390,13 @@ found in Gouy-Pailler et al (2010) <doi:10.1109/TBME.2009.2032162>.")
 (define-public r-jointcomprisk
   (package
     (name "r-jointcomprisk")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jointCompRisk" version))
        (sha256
-        (base32 "0a9di2ddbvwn6yqf750saw149276qqpkywjjb6zd0hvi40hy5s2a"))))
+        (base32 "09j2j9ljr7cb9xc1zxmckz1apxmqrail29zqcwi9vr4f690k0d9g"))))
     (properties `((upstream-name . "jointCompRisk")))
     (build-system r-build-system)
     (arguments
@@ -2412,8 +2412,8 @@ found in Gouy-Pailler et al (2010) <doi:10.1109/TBME.2009.2032162>.")
 inference on recovery and mortality endpoints.  Provides data preparation
 helpers, standard cumulative incidence estimators (restricted mean time
 gained/lost), and severity weighted extensions that integrate longitudinal
-ordinal outcomes to summarise treatment benefit.  Methods follow Wen, Wang, and
-Hu (2023) Biometrics 79(3):1635-1645 <doi:10.1111/biom.13752>.")
+ordinal outcomes to summarise treatment benefit.  Methods follow Wen, Hu, and
+Wang (2023) Biometrics 79(3):1635-1645 <doi:10.1111/biom.13752>.")
     (license license:expat)))
 
 (define-public r-jointcalib

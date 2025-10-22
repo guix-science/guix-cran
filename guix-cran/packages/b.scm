@@ -9690,13 +9690,13 @@ distribution.")
 (define-public r-bnpmix
   (package
     (name "r-bnpmix")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BNPmix" version))
        (sha256
-        (base32 "114gn80b7yyl6hi5cdnc0rp2hzy7pp8z6q4is1h29yxlqa6acbq4"))))
+        (base32 "054i1nl1hbc9r3zlrdplf2rz0kpvc1xy79irczkz5bsrm6wp6xg4"))))
     (properties `((upstream-name . "BNPmix")))
     (build-system r-build-system)
     (arguments
@@ -17079,36 +17079,6 @@ al. (2009) <https://pmc.ncbi.nlm.nih.gov/articles/PMC2730180/>,
 <doi:10.4137/CIN.S2846>.")
     (license license:asl2.0)))
 
-(define-public r-bimets
-  (package
-    (name "r-bimets")
-    (version "4.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bimets" version))
-       (sha256
-        (base32 "1njlj1qq1878k3h2wff7gv5ckb9ki6vvm3l8j146hncp7fw8zxml"))))
-    (properties `((upstream-name . "bimets")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo r-xts))
-    (home-page "https://github.com/andrea-luciani/bimets")
-    (synopsis "Time Series and Econometric Modeling")
-    (description
-     "Time series analysis, (dis)aggregation and manipulation, e.g. time series
-extension, merge, projection, lag, lead, delta, moving and cumulative average
-and product, selection by index, date and year-period, conversion to daily,
-monthly, quarterly, (semi)annually.  Simultaneous equation models definition,
-estimation, simulation and forecasting with coefficient restrictions, error
-autocorrelation, exogenization, add-factors, impact and interim multipliers
-analysis, conditional equation evaluation, rational expectations, endogenous
-targeting and model renormalization, structural stability, stochastic simulation
-and forecast, optimal control.")
-    (license license:gpl3)))
-
 (define-public r-billboard
   (package
     (name "r-billboard")
@@ -17709,6 +17679,38 @@ particular for the Sequence Kernel Association Test (SKAT) used in genomics
 <doi:10.1002/gepi.22136>.  Also provides stochastic singular value decomposition
 for dense or sparse matrices.")
     (license license:gpl2)))
+
+(define-public r-bigpcacpp
+  (package
+    (name "r-bigpcacpp")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bigPCAcpp" version))
+       (sha256
+        (base32 "1is7gpva2bd6hbiqfb59gblmvb52q5gig446i67y9xpmxj27zshz"))))
+    (properties `((upstream-name . "bigPCAcpp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-rcpp r-bigmemory r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://fbertran.github.io/bigPCAcpp/")
+    (synopsis "Principal Component Analysis for 'bigmemory' Matrices")
+    (description
+     "High performance principal component analysis routines that operate directly on
+bigmemory::big.matrix objects.  The package avoids materialising large matrices
+in memory by streaming data through BLAS and LAPACK kernels and provides helpers
+to derive scores, loadings, correlations, and contribution diagnostics,
+including utilities that stream results into bigmemory'-backed matrices for
+file-based workflows.  Additional interfaces expose scalable singular value
+decomposition, robust PCA, and robust SVD algorithms so that users can explore
+large matrices while tempering the influence of outliers.  Scalable principal
+component analysis is also implemented, Elgamal, Yabandeh, Aboulnaga, Mustafa,
+and Hefeeda (2015) <doi:10.1145/2723372.2751520>.")
+    (license license:gpl2+)))
 
 (define-public r-bignum
   (package

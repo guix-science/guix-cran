@@ -8995,13 +8995,13 @@ features\".  Biometrics, <doi:10.1111/biom.13426>.")
 (define-public r-hhmr
   (package
     (name "r-hhmr")
-    (version "0.0.1")
+    (version "0.0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hhmR" version))
        (sha256
-        (base32 "1fk5sp8yvwhnz5axgp6spq25bnbygm685z7ililx5p3q9yy0jkzy"))))
+        (base32 "18kyhfh923ly1667xwjns1cy2pm0zk9qwq6041raipfkrvigx8a0"))))
     (properties `((upstream-name . "hhmR")))
     (build-system r-build-system)
     (arguments
@@ -13685,13 +13685,13 @@ provided in the multi-split algorithm.")
 (define-public r-hctdesign
   (package
     (name "r-hctdesign")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HCTDesign" version))
        (sha256
-        (base32 "0qr2rvpaya2w3pc6i71qw20l8q3n7rz0v5rcj8jwggljir00ran1"))))
+        (base32 "08qfhk1i8py3sw92l81p8njzn2620p049fvc4gaffw0h3q3hj0nk"))))
     (properties `((upstream-name . "HCTDesign")))
     (build-system r-build-system)
     (arguments
@@ -14835,13 +14835,13 @@ reads/writes HAR files (and SL4 files) directly using basic R functions.")
 (define-public r-harplus
   (package
     (name "r-harplus")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HARplus" version))
        (sha256
-        (base32 "0s3kighh4vbik79ynwzpmf44kvq25x3hpbh34hjqhcxmbi0dc4wl"))))
+        (base32 "1vq5d4n8p8iygf8cnwi1xplinr3849z8zzdmfn7xaw7b7xch7ql0"))))
     (properties `((upstream-name . "HARplus")))
     (build-system r-build-system)
     (arguments

@@ -949,24 +949,27 @@ insert, update, upsert, patch, delete, overwrite, overwrite_schema.")
 (define-public r-writealizer
   (package
     (name "r-writealizer")
-    (version "1.6.5")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "writeAlizer" version))
        (sha256
-        (base32 "0cys8v1gdidgdiiz2qi2k94r2m5s4z10cnsifambqbrg9c93r1zl"))))
+        (base32 "0p409wkcplvsigsg40m6z59zq0wgnv9fg4i4pbg1zmkk1802ixqx"))))
     (properties `((upstream-name . "writeAlizer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyselect
+                             r-rlang
                              r-magrittr
                              r-glue
                              r-dplyr
                              r-digest
+                             r-cli
                              r-caret))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/shmercer/writeAlizer/")
     (synopsis "Generate Predicted Writing Quality Scores")
     (description
@@ -978,7 +981,7 @@ models described in Mercer & Cannon (2022)<doi:10.31244/jero.2022.01.03> and
 Mercer et al.(2021)<doi:10.1177/0829573520987753>; and generates predicted
 writing quality and curriculum-based measurement (@code{McMaster} & Espin,
 2007)<doi:10.1177/00224669070410020301> scores.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-wrightmap
   (package
@@ -5119,13 +5122,13 @@ round to round, rounds 3 and 4 should have a vastly reduced field of search.")
 (define-public r-whitebox
   (package
     (name "r-whitebox")
-    (version "2.4.2")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "whitebox" version))
        (sha256
-        (base32 "02rn9m9g0i8rgfbp9f0zif225wixdxlhplma0j8ps1jwznsq6pfm"))))
+        (base32 "1zi0gi6xj1kzrr4p3vrjjzkzicmkwqlxhlqad99fi7wnk6xvni3z"))))
     (properties `((upstream-name . "whitebox")))
     (build-system r-build-system)
     (arguments
@@ -7852,13 +7855,13 @@ Hollander et al. (2015, ISBN:9780470387375).")
 (define-public r-wdief
   (package
     (name "r-wdief")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wdiEF" version))
        (sha256
-        (base32 "06k30kp95s0h4amafqzm17prpqxhk8h90jpx27z7j9y3sbdqcsyj"))))
+        (base32 "1rsvcl64h8669f79b2sbiyjdkcfdl09jyk9gsx21qdkl79pb4h9m"))))
     (properties `((upstream-name . "wdiEF")))
     (build-system r-build-system)
     (arguments
@@ -7869,10 +7872,11 @@ Hollander et al. (2015, ISBN:9780470387375).")
     (synopsis
      "Calculation of the Water Deficit Index (WDI) and the Evaporative Fraction (EF) on Rasters")
     (description
-     "Calculates the Water Deficit Index (WDI) and the Evaporative Fraction (EF) using
-geospatial data, such as fractional vegetation cover (FVC) and surface-air
-temperature difference (TS-TA).  Terms like \"raster\", \"CRS\" are part of standard
-geospatial terminology.")
+     "This package provides functions to calculate the Water Deficit Index (WDI) and
+the Evaporative Fraction (EF) using geospatial raster data such as fractional
+vegetation cover (FVC) and surface-air temperature difference (TS-TA).  The
+package automates regression-based edge fitting and produces continuous spatial
+maps of surface moisture and evaporative dynamics.")
     (license license:gpl3)))
 
 (define-public r-wdi

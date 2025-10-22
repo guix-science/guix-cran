@@ -1776,13 +1776,13 @@ easier way.")
 (define-public r-issuetracker
   (package
     (name "r-issuetracker")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IssueTrackeR" version))
        (sha256
-        (base32 "0gjbsvfljhf5gw6qr4iab9p42lirq67g0a42jadh4zi6shqvprja"))))
+        (base32 "1iwmnh1pq5fgpws1j0s9alsyzysahqq6bdp70cx9i5ll85d1z5v2"))))
     (properties `((upstream-name . "IssueTrackeR")))
     (build-system r-build-system)
     (arguments
@@ -9752,13 +9752,13 @@ vectors, matrices, and lists.")
 (define-public r-ino
   (package
     (name "r-ino")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ino" version))
        (sha256
-        (base32 "1f1rjckwxbmak7maxyb1s9vhks9kq2j7dr1ddx3p1fkbg6cz9pck"))))
+        (base32 "0afylajc6c6rb58mv3zal9d2mzasz3is8vy21r4s591amr5lw7ys"))))
     (properties `((upstream-name . "ino")))
     (build-system r-build-system)
     (arguments
@@ -11920,13 +11920,13 @@ details.")
 (define-public r-indago
   (package
     (name "r-indago")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inDAGO" version))
        (sha256
-        (base32 "1q8zqcg6z992i1bwhabf5plx6i7xdrmzjm2q9l7s377zjdg1grdx"))))
+        (base32 "12ldaz8wq6j79bf12gcagw89kgij6kjblxb9ka4mncd7h1zhs9rx"))))
     (properties `((upstream-name . "inDAGO")))
     (build-system r-build-system)
     (arguments
@@ -11936,6 +11936,7 @@ details.")
                              r-upsetjs
                              r-tidyr
                              r-tibble
+                             r-svglite
                              r-spscomps
                              r-shinywidgets
                              r-shinyjs

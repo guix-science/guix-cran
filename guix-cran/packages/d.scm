@@ -9122,19 +9122,24 @@ values returned from other functions.")
 (define-public r-dominodatar
   (package
     (name "r-dominodatar")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DominoDataR" version))
        (sha256
-        (base32 "1awiy32sm0n2v1z48v4agqm89jnkgqazbjh9zixmj7yd0db78a9v"))))
+        (base32 "0wn0py9nm2nd9iaxaxv9jcclz1wlz13k1gx2f0jhqf64kgvfijxg"))))
     (properties `((upstream-name . "DominoDataR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reticulate r-httr r-configparser r-arrow))
+    (propagated-inputs (list r-withr
+                             r-urltools
+                             r-reticulate
+                             r-httr
+                             r-configparser
+                             r-arrow))
     (home-page "https://github.com/dominodatalab/DominoDataR")
     (synopsis "'Domino Data R SDK'")
     (description
@@ -30495,13 +30500,13 @@ documentation see
 (define-public r-datareportr
   (package
     (name "r-datareportr")
-    (version "0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datareportR" version))
        (sha256
-        (base32 "18h5xdbm1viiyz19vmxqmnvjzklla2s50bcb0gp0i37b1mfxfp6a"))))
+        (base32 "12sip0pxvv7cjljf3vfjnrdp6lv0is3vpfq46d6kidlvmksc0w70"))))
     (properties `((upstream-name . "datareportR")))
     (build-system r-build-system)
     (arguments

@@ -12984,6 +12984,34 @@ programs.  A plot method allows users to visualize correlation matrices created
 with corx'.")
     (license license:expat)))
 
+(define-public r-cortsinescore
+  (package
+    (name "r-cortsinescore")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CortSineScore" version))
+       (sha256
+        (base32 "15ay90i7v9z7sm56g81srfjldvg2ms0a23z5f1i35v9r38mfjgax"))))
+    (properties `((upstream-name . "CortSineScore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-purrr r-magrittr r-dplyr))
+    (home-page "https://github.com/simone-anza/CortSineScore")
+    (synopsis
+     "Compute Cortisol Sine Score (CSS) for Diurnal Cortisol Analysis")
+    (description
+     "Computes a single scalar metric for diurnal cortisol cycle analysis, the
+Cortisol Sine Score (CSS).  The score is calculated as the sum over time points
+of concentration multiplied by sin(2 * pi * time / 24), giving positive weights
+to morning time points and negative weights to evening ones.  The method is
+model-free, robust, and suitable for regression, classification, clustering, and
+biomarker research.")
+    (license license:expat)))
+
 (define-public r-corto
   (package
     (name "r-corto")
@@ -15368,13 +15396,13 @@ phi-distances for count data or histograms.")
 (define-public r-copre
   (package
     (name "r-copre")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copre" version))
        (sha256
-        (base32 "1lgps3wmjp3ja13xd33q41xb3kc56vmyidjpsmm5c2y263pm1m8i"))))
+        (base32 "0mdrlgq61dd4fdz004q5s7kr7xcznjwjc24vn73n8cws2jffzdh9"))))
     (properties `((upstream-name . "copre")))
     (build-system r-build-system)
     (arguments
@@ -21316,6 +21344,49 @@ on optimal weights and a reduced set of variables, and the linear ordering of
 the analysed objects.")
     (license license:gpl3+)))
 
+(define-public r-compindexbuilder
+  (package
+    (name "r-compindexbuilder")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "compIndexBuilder" version))
+       (sha256
+        (base32 "0cclb2gfc0z86l101qfgncgisq97v30pmcpsvjg74fn5fwjxw477"))))
+    (properties `((upstream-name . "compIndexBuilder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-tibble
+                             r-shinydashboard
+                             r-shiny
+                             r-readxl
+                             r-psych
+                             r-plotly
+                             r-networkd3
+                             r-missforest
+                             r-ggplot2
+                             r-forecast
+                             r-dt
+                             r-dplyr
+                             r-corrplot))
+    (home-page "https://cran.r-project.org/package=compIndexBuilder")
+    (synopsis "Composite Index Builder & Analytics 'shiny' App")
+    (description
+     "This package provides an interactive shiny web application for constructing,
+analyzing, and visualizing composite indices from multidimensional datasets.
+Users can upload or select indicator data, group variables into logical
+categories, apply normalization and weighting methods (such as equal or custom
+schemes), and compute aggregate composite indices.  The shiny interface includes
+tools for exploring results through tables, plots, and data exports, making it
+useful for researchers, policymakers, and analysts interested in index-based
+evaluations.")
+    (license license:gpl3)))
+
 (define-public r-compind
   (package
     (name "r-compind")
@@ -22856,13 +22927,13 @@ classes.")
 (define-public r-combinit
   (package
     (name "r-combinit")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "combinIT" version))
        (sha256
-        (base32 "1l2ypnrm2qi1z10c2qyyaqqcjgk3mgsh80b3j9zrjwq9zdakrhi5"))))
+        (base32 "0526vc8l2s77zqk978lm88787ncmxlyw8gwy3m39a38h8y4ky1lv"))))
     (properties `((upstream-name . "combinIT")))
     (build-system r-build-system)
     (arguments
@@ -28028,13 +28099,13 @@ function as well as at
 (define-public r-cmsafvis
   (package
     (name "r-cmsafvis")
-    (version "1.2.9")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmsafvis" version))
        (sha256
-        (base32 "021dhsa84np86cjbgri0a0z1ymmxs7gr6107c4qq0xyjvh0r427m"))))
+        (base32 "0zg2745q0416ry9213p243yfan1mkg03wgv3bzc3nbl9jlhgxdy3"))))
     (properties `((upstream-name . "cmsafvis")))
     (build-system r-build-system)
     (arguments
@@ -28117,35 +28188,19 @@ are provided on the CM SAF webpage (<http://www.cmsaf.eu/R_toolbox>).")
 (define-public r-cmsaf
   (package
     (name "r-cmsaf")
-    (version "3.5.2")
+    (version "3.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmsaf" version))
        (sha256
-        (base32 "19mp8hf34xnw71facrb7xq081x1lclpp84p1pd8n7fy2jmp6r767"))))
+        (base32 "1w081z0rcd2xvfj5kq9vpj0ja3mqi67i6a3kx5mahrp363nw9asf"))))
     (properties `((upstream-name . "cmsaf")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-shinywidgets
-                             r-shinythemes
-                             r-shinyjs
-                             r-shinyfiles
-                             r-shiny
-                             r-searchtrees
-                             r-raster
-                             r-r-utils
-                             r-ncdf4
-                             r-maps
-                             r-fnn
-                             r-data-table
-                             r-colourpicker
-                             r-colorspace
-                             r-cmsafvis
-                             r-cmsafops))
+    (propagated-inputs (list r-cmsafvis r-cmsafops))
     (home-page "https://www.cmsaf.eu")
     (synopsis "Toolbox for CM SAF NetCDF Data")
     (description
@@ -33097,13 +33152,13 @@ Reefton electronic weather station, is sought.")
 (define-public r-clifford
   (package
     (name "r-clifford")
-    (version "1.1-1")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clifford" version))
        (sha256
-        (base32 "07ishg18qm7aycb3v8bw2gbpwi8zglp1x6nms4c6qf6q4cxz5hhq"))))
+        (base32 "0frm60rirh52g95zsrarwb5nsv6bhirg697vx71m98f2mjaklc03"))))
     (properties `((upstream-name . "clifford")))
     (build-system r-build-system)
     (arguments
@@ -33463,20 +33518,19 @@ superseded by the cli package.  Please use cli instead in new projects.")
 (define-public r-clhs
   (package
     (name "r-clhs")
-    (version "0.9.0")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clhs" version))
        (sha256
-        (base32 "04hd0p51j15294fv1a9qx61p5yfmh8hcx784v3x1s0kx7km34saz"))))
+        (base32 "00hpcl6qlxh612yq45ahdl1zjh4dlnxhv1ia42r41092c6sdsrbc"))))
     (properties `((upstream-name . "clhs")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sp
-                             r-sf
+    (propagated-inputs (list r-sf
                              r-reshape2
                              r-rcpparmadillo
                              r-rcpp
@@ -37011,34 +37065,6 @@ curves.  Details are given in Schomaker, @code{McIlleron}, Denti, Diaz (2024)
     (synopsis "Provide Tours of 'Shiny' Applications")
     (description "Provide step by step guided tours of Shiny applications.")
     (license license:expat)))
-
-(define-public r-ciccr
-  (package
-    (name "r-ciccr")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ciccr" version))
-       (sha256
-        (base32 "0zhhb6dq9js2wx18hq41pdqawc4pccg7wpxii1447c5sj0lmgahf"))))
-    (properties `((upstream-name . "ciccr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-glmnet))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sokbae/ciccr/")
-    (synopsis "Causal Inference in Case-Control and Case-Population Studies")
-    (description
-     "Estimation and inference methods for causal relative and attributable risk in
-case-control and case-population studies under the monotone treatment response
-and monotone treatment selection assumptions.  For more details, see the paper
-by Jun and Lee (2023), \"Causal Inference under Outcome-Based Sampling with
-Monotonicity Assumptions,\" <@code{arXiv:2004.08318} [econ.EM]>, accepted for
-publication in Journal of Business & Economic Statistics.")
-    (license license:gpl3)))
 
 (define-public r-cicalibrate
   (package
@@ -46227,13 +46253,13 @@ with x in [0, size + 1], following Ilienko (2013) <@code{arXiv:1303.5990>}.")
 (define-public r-cbctools
   (package
     (name "r-cbctools")
-    (version "0.6.4")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cbcTools" version))
        (sha256
-        (base32 "1w87bmsqzwmsyjwpj6s1jbkwd4wq23j5f9gd20dh3f7g3gijyddm"))))
+        (base32 "0nab2xd90xmmhzj29wrx0l80hyh2g9f7pr9ymbf8lady8ii946v5"))))
     (properties `((upstream-name . "cbcTools")))
     (build-system r-build-system)
     (arguments

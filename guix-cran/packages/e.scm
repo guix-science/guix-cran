@@ -5853,6 +5853,50 @@ Users can seamlessly integrate the package into their research applications and
 explore diverse ET data at different resolutions.")
     (license license:gpl3)))
 
+(define-public r-evanverse
+  (package
+    (name "r-evanverse")
+    (version "0.3.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evanverse" version))
+       (sha256
+        (base32 "0cd5cqdg9kq2cyscgfqa1qnb8m9lns42ibai1d2aga9zyg57br2y"))))
+    (properties `((upstream-name . "evanverse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-tictoc
+                             r-tibble
+                             r-rlang
+                             r-readxl
+                             r-openxlsx
+                             r-jsonlite
+                             r-ggpubr
+                             r-ggplot2
+                             r-fs
+                             r-dplyr
+                             r-data-table
+                             r-curl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/evanbio/evanverse")
+    (synopsis "Utility Functions for Data Analysis and Visualization")
+    (description
+     "This package provides a comprehensive collection of utility functions for data
+analysis and visualization in R. The package provides 55+ functions for data
+manipulation, file handling, color palette management, bioinformatics workflows,
+plotting, and package management.  Features include void value handling, custom
+infix operators, flexible file I/O, and publication-ready visualizations with
+sensible defaults.  Implementation follows tidyverse principles (Wickham et al.
+(2019) <doi:10.21105/joss.01686>) and incorporates best practices from the R
+community.")
+    (license license:expat)))
+
 (define-public r-evalue
   (package
     (name "r-evalue")
@@ -10723,6 +10767,42 @@ two-step estimator.  For technical details, see Naghi, Varadi and Zhelonkin
 (2022), <doi:10.1016/j.ecosta.2022.05.001>.")
     (license license:gpl2)))
 
+(define-public r-epmfd
+  (package
+    (name "r-epmfd")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epmfd" version))
+       (sha256
+        (base32 "0sqm215lkyqkh8padyfyg66cj4cxmndgchib23dynpscvrz1ld15"))))
+    (properties `((upstream-name . "epmfd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-readr
+                             r-perfit
+                             r-mokken
+                             r-mirt
+                             r-ggplot2
+                             r-fs
+                             r-dplyr))
+    (home-page "https://github.com/hsnbulut/epmfd")
+    (synopsis
+     "Exploratory and Person/Item Misfit Diagnostics for Polytomous Data")
+    (description
+     "Analysis of items and persons in data.  To identify and remove person misfit in
+polytomous item-response data using either mokken or a graded response model
+(GRM, via mirt').  Provides automatic thresholds, visual diagnostics (2D/3D),
+and export utilities.  Methods build on Mokken scaling as in Mokken (1971,
+ISBN:9789027968821) and on the graded response model of Samejima (1969)
+<doi:10.1007/BF03372160>.")
+    (license license:gpl3)))
+
 (define-public r-epm
   (package
     (name "r-epm")
@@ -11355,13 +11435,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.87")
+    (version "2.0.88")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "02jvpqfixc2lwhm2g10fqpk66k4bcl9a0jbzw68n45m2jc3q6clr"))))
+        (base32 "0rf95lsfrr4n072rx2294ivaj3bv6nvri97hnhdx6fv3c1asn2hl"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (arguments
@@ -19235,6 +19315,34 @@ creating panels of related variables with minimal effort and datasets containing
 data sources, releases, and popular FRED tags.")
     (license license:expat)))
 
+(define-public r-efm
+  (package
+    (name "r-efm")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EFM" version))
+       (sha256
+        (base32 "05x9n0zid8i8dqsv687sn9nsgzfn7l7h258539sg1rk9xacfj0y9"))))
+    (properties `((upstream-name . "EFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sopc r-matrixcalc r-mass))
+    (home-page "https://cran.r-project.org/package=EFM")
+    (synopsis "Elliptical Factor Models")
+    (description
+     "The elliptical factor model, as an extension of the traditional factor model,
+effectively overcomes the limitations of the traditional model when dealing with
+heavy-tailed characteristic data.  This package implements sparse principal
+component methods (SPC) and bi-sparse online principal component estimation
+(SPOC) for parameter estimation.  Includes functionality for calculating mean
+squared error, relative error, and loading matrix sparsity.The philosophy of the
+package is described in Guo G. (2023) <doi:10.1007/s00180-022-01270-z>.")
+    (license license:expat)))
+
 (define-public r-efficientmaxeigenpair
   (package
     (name "r-efficientmaxeigenpair")
@@ -23483,6 +23591,39 @@ optimal combination of number of sites and samples depending on either an
 economic budget or on a desired statistical accuracy.  Lastly, (6)
 @code{plot_power()} helps the user visualize the results of @code{sim_beta()}.")
     (license license:gpl3+)))
+
+(define-public r-eco
+  (package
+    (name "r-eco")
+    (version "4.0-4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eco" version))
+       (sha256
+        (base32 "06vbvrvjs1pz39wr904kblw42s7iwahw9crgf52bd3wcwg242bvj"))))
+    (properties `((upstream-name . "eco")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (home-page "https://github.com/kosukeimai/eco")
+    (synopsis "Ecological Inference in 2x2 Tables")
+    (description
+     "This package implements the Bayesian and likelihood methods proposed in Imai,
+Lu, and Strauss (2008 <doi:10.1093/pan/mpm017>) and (2011
+<doi:10.18637/jss.v042.i05>) for ecological inference in 2 by 2 tables as well
+as the method of bounds introduced by Duncan and Davis (1953).  The package fits
+both parametric and nonparametric models using either the
+Expectation-Maximization algorithms (for likelihood models) or the Markov chain
+Monte Carlo algorithms (for Bayesian models).  For all models, the
+individual-level data can be directly incorporated into the estimation whenever
+such data are available.  Along with in-sample and out-of-sample predictions,
+the package also provides a functionality which allows one to quantify the
+effect of data aggregation on parameter estimation and hypothesis testing under
+the parametric likelihood models.")
+    (license license:gpl2+)))
 
 (define-public r-ecmwfr
   (package

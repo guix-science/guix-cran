@@ -1553,13 +1553,13 @@ Checks for unintended meanings by querying Wiktionary and Wikipedia.")
 (define-public r-av
   (package
     (name "r-av")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "av" version))
        (sha256
-        (base32 "1s2ycrynvq2lfgbzlym2yannfgp5w6nrs7hwrnyschrvqzi342s1"))))
+        (base32 "0vl4g94xrbv7glzhssgi6mpm4bica80mydwzm2l53lnn9kg2dx25"))))
     (properties `((upstream-name . "av")))
     (build-system r-build-system)
     (arguments
@@ -4375,20 +4375,20 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2025.5.24")
+    (version "2025.9.30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "09kcynxrgqcrw3ajmbn5whav5s1l87h4jf884ambhzp3iqq5gxpz"))))
+        (base32 "1hcxs3pif25jd1mph423fkvy4q3j9z6jakhkryf0sadhmzwnj586"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-lattice r-git2r r-data-table r-bench))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-litedown))
     (home-page "https://github.com/tdhock/atime")
     (synopsis "Asymptotic Timing")
     (description
@@ -8337,6 +8337,51 @@ inherit many of the benefits of random forests, including speed, flexibility,
 and solid performance with default parameters.  For details, see Watson et al.
 (2023) <https://proceedings.mlr.press/v206/watson23a.html>.")
     (license license:gpl3+)))
+
+(define-public r-arete
+  (package
+    (name "r-arete")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arete" version))
+       (sha256
+        (base32 "0mga902iv9br1rhr569x0vs10scafdi56dgrjsh36bgnr6gpsrj5"))))
+    (properties `((upstream-name . "arete")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-stringr
+                             r-rmarkdown
+                             r-reticulate
+                             r-pdftools
+                             r-kableextra
+                             r-jsonlite
+                             r-irr
+                             r-googledrive
+                             r-ggplot2
+                             r-gecko
+                             r-fedmatch
+                             r-dplyr
+                             r-cld2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=arete")
+    (synopsis "Automated REtrieval from TExt")
+    (description
+     "This package provides a Python based pipeline for extraction of species
+occurrence data through the usage of large language models.  Includes validation
+tools designed to handle model hallucinations for a scientific, rigorous use of
+LLM. Currently supports usage of GPT with more planned, including local and
+non-proprietary models.  For more details on the methodology used please consult
+the references listed under each function, such as Kent, A. et al. (1995)
+<doi:10.1002/asi.5090060209>, van Rijsbergen, C.J. (1979, ISBN:978-0408709293,
+Levenshtein, V.I. (1966)
+<https://nymity.ch/sybilhunting/pdf/Levenshtein1966a.pdf> and Klaus Krippendorff
+(2011) <https://repository.upenn.edu/handle/20.500.14332/2089>.")
+    (license license:gpl3)))
 
 (define-public r-arenar
   (package
@@ -12504,13 +12549,13 @@ intra-antibody repertoire evolution.")
 (define-public r-anthropmmd
   (package
     (name "r-anthropmmd")
-    (version "4.0.3")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AnthropMMD" version))
        (sha256
-        (base32 "03mvlw54a9xz7ggjbfi9yddzq1wv4skjvbv3r4bdrldpbd6scm0b"))))
+        (base32 "09ncdk0zdz709aagvmmbia8wnmcdzzclhk2bdzrzgxvwhhgm90pi"))))
     (properties `((upstream-name . "AnthropMMD")))
     (build-system r-build-system)
     (arguments
@@ -20876,6 +20921,50 @@ conversion from an age to an interval, aggregation of ages with associated
 counts in to intervals and the splitting of interval counts based on specified
 age distributions.")
     (license license:gpl2)))
+
+(define-public r-agetopicmodels
+  (package
+    (name "r-agetopicmodels")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AgeTopicModels" version))
+       (sha256
+        (base32 "0si57xgmz8gz7cp63i0kms03zr58dzwy964vidfgk8sd6h2dlzc5"))))
+    (properties `((upstream-name . "AgeTopicModels")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-reshape2
+                             r-proc
+                             r-magrittr
+                             r-gtools
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=AgeTopicModels")
+    (synopsis "Inferring Age-Dependent Disease Topic from Diagnosis Data")
+    (description
+     "We propose an age-dependent topic modelling (ATM) model, providing a low-rank
+representation of longitudinal records of hundreds of distinct diseases in large
+electronic health record data sets.  The model assigns to each individual topic
+weights for several disease topics; each disease topic reflects a set of
+diseases that tend to co-occur as a function of age, quantified by age-dependent
+topic loadings for each disease.  The model assumes that for each disease
+diagnosis, a topic is sampled based on the individualâs topic weights (which
+sum to 1 across topics, for a given individual), and a disease is sampled based
+on the individualâs age and the age-dependent topic loadings (which sum to 1
+across diseases, for a given topic at a given age).  The model generalises the
+Latent Dirichlet Allocation (LDA) model by allowing topic loadings for each
+topic to vary with age.  References: Jiang (2023)
+<doi:10.1038/s41588-023-01522-8>.")
+    (license license:expat)))
 
 (define-public r-agepopdenom
   (package
