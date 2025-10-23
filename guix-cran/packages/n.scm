@@ -8473,13 +8473,13 @@ nlmixr2 objects.")
 (define-public r-nlmixr2lib
   (package
     (name "r-nlmixr2lib")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2lib" version))
        (sha256
-        (base32 "1026kc00slcx7frbi46mqa506fnm5syy0ks11cam4vnzk554mx9r"))))
+        (base32 "0qaikvpkfbd5i4ilznx6znm1x1qfqmdxbi4l4bx6dx8426l2324v"))))
     (properties `((upstream-name . "nlmixr2lib")))
     (build-system r-build-system)
     (arguments
@@ -15551,6 +15551,47 @@ modeling.")
 confounders in observational studies of vaccine efficacy using negative control
 outcomes.")
     (license license:gpl2)))
+
+(define-public r-needs4bigdata
+  (package
+    (name "r-needs4bigdata")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NeEDS4BigData" version))
+       (sha256
+        (base32 "0yc5r6946qb1rfrjzqlnj9mpfy5n9kjw7bgbdvvca2r9r0mj6mnv"))))
+    (properties `((upstream-name . "NeEDS4BigData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-rfast
+                             r-rdpack
+                             r-psych
+                             r-mvnfast
+                             r-matrixstats
+                             r-ggridges
+                             r-ggplot2
+                             r-ggh4x
+                             r-gam
+                             r-foreach
+                             r-dplyr))
+    (home-page "https://github.com/Amalan-ConStat/NeEDS4BigData")
+    (synopsis "New Experimental Design Based Subsampling Methods for Big Data")
+    (description
+     "Subsampling methods for big data under different models and assumptions.
+Starting with linear regression and leading to Generalised Linear Models,
+softmax regression, and quantile regression.  Specifically, the model-robust
+subsampling method proposed in Mahendran, A., Thompson, H., and @code{McGree},
+J. M. (2023) <doi:10.1007/s00362-023-01446-9>, where multiple models can
+describe the big data, and the subsampling framework for potentially
+misspecified Generalised Linear Models in Mahendran, A., Thompson, H., and
+@code{McGree}, J. M. (2025) <doi:10.48550/@code{arXiv.2510.05902>}.")
+    (license license:expat)))
 
 (define-public r-needs
   (package

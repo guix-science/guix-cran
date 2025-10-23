@@ -31185,6 +31185,42 @@ limits: 70+ tips. @code{PeerJ} Preprints 6:e26605v1
 <doi:10.7287/peerj.preprints.26605v1>.")
     (license license:gpl2+)))
 
+(define-public r-rfars
+  (package
+    (name "r-rfars")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rfars" version))
+       (sha256
+        (base32 "1yb1734iqw9zi1klpq5d3ih98kc3zl1a2s9pv374y99cdxy7z74l"))))
+    (properties `((upstream-name . "rfars")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-janitor
+                             r-haven
+                             r-dplyr
+                             r-downloader
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/s87jackson/rfars")
+    (synopsis "Download and Analyze Crash Data")
+    (description
+     "Easily Download Analysis-Ready Crash Data from the U.S. National Highway Traffic
+Safety Administration.")
+    (license license:cc0)))
+
 (define-public r-rfacts
   (package
     (name "r-rfacts")
@@ -33184,13 +33220,13 @@ spectral density.")
 (define-public r-resourcecode
   (package
     (name "r-resourcecode")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resourcecode" version))
        (sha256
-        (base32 "16z0qyc2cja3c0l3lypsjp3c5sf06rs7w36cfa3lpdqf93hvg3v8"))))
+        (base32 "1pc0z12icm6vg5zkqb4s9w2ims20c4gwxi82qajs56yiyyjzpjia"))))
     (properties `((upstream-name . "resourcecode")))
     (build-system r-build-system)
     (arguments
@@ -33200,11 +33236,15 @@ spectral density.")
                              r-tibble
                              r-sf
                              r-rlang
+                             r-resourcecodedata
                              r-rcpparmadillo
                              r-rcpp
                              r-pracma
+                             r-patchwork
                              r-ncdf4
+                             r-latex2exp
                              r-jsonlite
+                             r-gridtext
                              r-ggplot2
                              r-geosphere
                              r-curl

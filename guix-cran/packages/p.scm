@@ -1997,13 +1997,13 @@ including a detailed technical appendix, see <doi:10.18637/jss.v108.i06>.")
 (define-public r-pumbayes
   (package
     (name "r-pumbayes")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pumBayes" version))
        (sha256
-        (base32 "1gyl3j2awjr2rnh7cd5c7770i84d42apbwybyvpl2f5s3gsv1qcs"))))
+        (base32 "15pnc762jcb982c7nn7c03a55q52x4pirmvgh571f93grwqx5xrk"))))
     (properties `((upstream-name . "pumBayes")))
     (build-system r-build-system)
     (arguments
@@ -3642,13 +3642,13 @@ integration within *.Rnw files.")
 (define-public r-psychonetrics
   (package
     (name "r-psychonetrics")
-    (version "0.13.1")
+    (version "0.13.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychonetrics" version))
        (sha256
-        (base32 "195sni21nc8crh284208xflvn3xw8aajsi26mpgcbxvi5zq1c5qy"))))
+        (base32 "0wjn3g2qr4y57lrxn9dwmv47pjmmlxmziyfa4lv2n38b5cscs89p"))))
     (properties `((upstream-name . "psychonetrics")))
     (build-system r-build-system)
     (arguments
@@ -5628,13 +5628,13 @@ a PSA in a categorical covariate.")
 (define-public r-psaboot
   (package
     (name "r-psaboot")
-    (version "1.3.8")
+    (version "1.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PSAboot" version))
        (sha256
-        (base32 "1y0d5gglmzcnd0yvq33k1canjzhl62df9abgw1w08azm94arfh1q"))))
+        (base32 "1ggkdnq6l4miz8ls7b7jb69q0clcfqh6ljp8bs7sv6h5q6r133n2"))))
     (properties `((upstream-name . "PSAboot")))
     (build-system r-build-system)
     (arguments
@@ -22252,13 +22252,13 @@ phylogeny informative? Measuring the power of comparative methods, Evolution 66
 (define-public r-pmartr
   (package
     (name "r-pmartr")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmartR" version))
        (sha256
-        (base32 "1gvvp8y0b1hqlx5rwbfhqcrpbhyzbx08walpp1ymjcqixwvaihzs"))))
+        (base32 "04zxiszwkq481fn7crr7cg9i58rh7xicm4vvpzkwkb4jvgzrvia4"))))
     (properties `((upstream-name . "pmartR")))
     (build-system r-build-system)
     (arguments
@@ -30333,13 +30333,13 @@ elements (i.e., \"2\" becomes a vector of \"A,\" \"B,\" and \"C\").")
 (define-public r-phoenix
   (package
     (name "r-phoenix")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phoenix" version))
        (sha256
-        (base32 "17ba8i13ikzck1a4nvxnisa979hkn231rwp9gg0qr48r0pr036q4"))))
+        (base32 "0741kai326rbb0drmpx6y79r74blnwkjd2jmmqk5lm5wp6az7l98"))))
     (properties `((upstream-name . "phoenix")))
     (build-system r-build-system)
     (arguments

@@ -13641,13 +13641,13 @@ to harness AI for predictive analytics.")
 (define-public r-immunogenetr
   (package
     (name "r-immunogenetr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "immunogenetr" version))
        (sha256
-        (base32 "0065z2h9lh4vz349yyskd2nvgf6k8c5093w359d1yar9sgpb2i1h"))))
+        (base32 "0z1gfam7rpkr2rb6vmzh7ybin00d84i9q3nqbkb4wc72y5srqk1l"))))
     (properties `((upstream-name . "immunogenetr")))
     (build-system r-build-system)
     (arguments
@@ -13675,7 +13675,10 @@ functionalities include: coercion of HLA data in tabular format to and from GL
 string; calculation of matching and mismatching in all directions, with multiple
 output formats; automatic formatting of HLA data for searching within a GL
 string; truncation of molecular HLA data to a specific number of fields; and
-reading HLA genotypes in HML files and extracting the GL string.")
+reading HLA genotypes in HML files and extracting the GL string.  This library
+is intended for research use.  Any application making use of this package in a
+clinical setting will need to be independently validated according to local
+regulations.")
     (license license:gpl3+)))
 
 (define-public r-immundata

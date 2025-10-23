@@ -1934,13 +1934,13 @@ problems.")
 (define-public r-hvt
   (package
     (name "r-hvt")
-    (version "25.2.6")
+    (version "25.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HVT" version))
        (sha256
-        (base32 "1lz7lpja45pyj1bymy91s28jaan4inp66fjipqafqjrj9av0c45b"))))
+        (base32 "1qw6rjilz1y0ckb1jmh48qy7qjnjiwdggpqgg00bpfx3fnbiq7hh"))))
     (properties `((upstream-name . "HVT")))
     (build-system r-build-system)
     (arguments
@@ -6476,13 +6476,13 @@ Bates, D. (2006) \"Mixed-effects Models in S and S-Plus\" ISBN: 978-1441903174."
 (define-public r-hmcdm
   (package
     (name "r-hmcdm")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmcdm" version))
        (sha256
-        (base32 "0w3ldx8bwcqbc0mv1f8yiby08w4s37jc7gp3p53pmldqk65s7qfb"))))
+        (base32 "02rhrk7fsaawmg9345gq9a3dnvkh8nxzhy4v5xa51y53jz9ifmrq"))))
     (properties `((upstream-name . "hmcdm")))
     (build-system r-build-system)
     (arguments

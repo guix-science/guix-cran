@@ -14,6 +14,11 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages image)
+  #:use-module (gnu packages algebra)
+  #:use-module (gnu packages geo)
+  #:use-module (gnu packages ghostscript)
+  #:use-module (gnu packages pulseaudio)
+  #:use-module (gnu packages audio)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -9839,6 +9844,53 @@ to relevant HTA bodies in alignment with NICE TSD 15
 an examples can be found in the package website
 <https://jsanchezalv.github.io/WARDEN/>.")
     (license license:gpl3+)))
+
+(define-public r-warbler
+  (package
+    (name "r-warbler")
+    (version "1.1.37")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "warbleR" version))
+       (sha256
+        (base32 "1walcj3lpdk5ch42rd1g6ia3gak0zk1pfv7hmpl18dwn6m944fqa"))))
+    (properties `((upstream-name . "warbleR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list sox libsndfile ghostscript gdal fftw))
+    (propagated-inputs (list r-tuner
+                             r-testthat
+                             r-seewave
+                             r-rjson
+                             r-rcurl
+                             r-rcpp
+                             r-pbapply
+                             r-naturesounds
+                             r-monitor
+                             r-knitr
+                             r-httr
+                             r-fftw
+                             r-dtw
+                             r-curl
+                             r-cli
+                             r-bioacoustics))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://marce10.github.io/warbleR/")
+    (synopsis "Streamline Bioacoustic Analysis")
+    (description
+     "This package provides functions aiming to facilitate the analysis of the
+structure of animal acoustic signals in R'. @code{warbleR} makes use of the
+basic sound analysis tools from the packages @code{tuneR} and seewave', and
+offers new tools for exploring and quantifying acoustic signal structure.  The
+package allows to organize and manipulate multiple sound files, create
+spectrograms of complete recordings or individual signals in different formats,
+run several measures of acoustic structure, and characterize different
+structural levels in acoustic signals (Araya-Salas et al 2016
+<doi:10.1111/2041-210X.12624>).")
+    (license license:gpl2+)))
 
 (define-public r-warabandi
   (package

@@ -16891,6 +16891,38 @@ that you can tinker to your hearts content.")
 arbitrary distributions with piecewise twice differentiable densities.")
     (license license:gpl2+)))
 
+(define-public r-tind
+  (package
+    (name "r-tind")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tind" version))
+       (sha256
+        (base32 "00s7lav9lx6lbx5vm70vhdxwi8q3fm33fwibmzcgj69852ifc7b4"))))
+    (properties `((upstream-name . "tind")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dever-pl/tind")
+    (synopsis "Common Representation of Time Indices of Different Types")
+    (description
+     "This package provides an easy-to-use tind class representing time indices of
+different types (years, quarters, months, ISO 8601 weeks, dates, time of day,
+date-time, and arbitrary integer/numeric indices).  Includes an extensive
+collection of functions for calendrical computations (including business
+applications), index conversions, index parsing, and other operations.
+Auxiliary classes representing time differences and time intervals (with set
+operations and index matching functionality) are also provided.  All routines
+have been optimised for speed in order to facilitate computations on large
+datasets.  More details regarding calendars in general and calendrical
+algorithms can be found in \"Calendar FAQ\" by Claus TÃ¸ndering
+<https://www.tondering.dk/claus/calendar.html>.")
+    (license license:gpl3)))
+
 (define-public r-timsac
   (package
     (name "r-timsac")
@@ -17919,13 +17951,13 @@ be inserted into the output stream.")
 (define-public r-tikatuwq
   (package
     (name "r-tikatuwq")
-    (version "0.6.2")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tikatuwq" version))
        (sha256
-        (base32 "0plc38aw0f4ha9p8jimzjhy9pjlf1py16if89cfdmmcsxhmx02qa"))))
+        (base32 "1wj8nj9wfkvv1g1jllfyb8sw8yw9a4v1v2x220q1x1k9qh3qrrly"))))
     (properties `((upstream-name . "tikatuwq")))
     (build-system r-build-system)
     (arguments
@@ -17946,7 +17978,8 @@ be inserted into the output stream.")
                              r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tikatuwq/tikatuwq")
-    (synopsis "Water Quality Analysis Tools for the Brazilian Context")
+    (synopsis
+     "Water Quality Assessment and Environmental Compliance in Brazil")
     (description
      "This package provides tools to import, clean, validate, and analyze freshwater
 quality data in Brazil.  Implements water quality indices including the Water
@@ -28337,13 +28370,13 @@ supporting reproducible research and analysis.")
 (define-public r-teal-modules-general
   (package
     (name "r-teal-modules-general")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.modules.general" version))
        (sha256
-        (base32 "01hmiwvdcnwg88xanibrvw2hy1n9gn7n9cvd00flvq0gjyg5dpvg"))))
+        (base32 "1iwzfysp84dvlkkqgm47k6pnw2p5q34z1rkj7yng0bblkf7sp88d"))))
     (properties `((upstream-name . "teal.modules.general")))
     (build-system r-build-system)
     (arguments
@@ -28379,7 +28412,6 @@ supporting reproducible research and analysis.")
                              r-ggpp
                              r-ggpmisc
                              r-ggplot2
-                             r-ggmosaic
                              r-ggextra
                              r-generics
                              r-forcats

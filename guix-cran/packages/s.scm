@@ -24851,13 +24851,13 @@ in Brown et al (2012) <doi:10.1111/j.1755-0998.2011.03108.x>.")
 (define-public r-spicy
   (package
     (name "r-spicy")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spicy" version))
        (sha256
-        (base32 "0k0cb3q0mhr2nxv8qxq5z3snba3q6dlwm2y333h192br8a9yark4"))))
+        (base32 "0fh90zj3p2sfyydw7sb5njhvnw02rkpz37gn279xn1yrcfhjpkv3"))))
     (properties `((upstream-name . "spicy")))
     (build-system r-build-system)
     (arguments
@@ -24870,18 +24870,21 @@ in Brown et al (2012) <doi:10.1111/j.1755-0998.2011.03108.x>.")
                              r-rlang
                              r-labelled
                              r-haven
+                             r-dt
                              r-dplyr
                              r-collapse
-                             r-clipr))
+                             r-clipr
+                             r-cli))
     (home-page "https://github.com/amaltawfik/spicy/")
     (synopsis "Descriptive Statistics and Data Management Tools")
     (description
      "Extracts and summarizes metadata from data frames, including variable names,
 labels, types, and missing values.  Computes compact descriptive statistics,
 frequency tables, and cross-tabulations to assist with efficient data
-exploration.  Facilitates the identification of missing data patterns and
-structural issues in datasets.  Designed to streamline initial data management
-and exploratory analysis workflows within R'.")
+exploration.  Includes an interactive and exportable codebook generator for
+documenting variable metadata.  Facilitates the identification of missing data
+patterns and structural issues in datasets.  Designed to streamline initial data
+management and exploratory analysis workflows within R'.")
     (license license:expat)))
 
 (define-public r-spichanges
@@ -44603,13 +44606,13 @@ Jean-Daniel Boissonnat and ClÃ©ment Maria (2014)
 (define-public r-simpleupset
   (package
     (name "r-simpleupset")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimpleUpset" version))
        (sha256
-        (base32 "03wv3sqknydg334883nkjfi5x9nqql661qv4d879jjni8cm8k11m"))))
+        (base32 "00qrz012s9zq3drz7rp9q9vw0j986mdxrfwj8dyjg3n8mpwmszwl"))))
     (properties `((upstream-name . "SimpleUpset")))
     (build-system r-build-system)
     (arguments
@@ -68277,6 +68280,34 @@ geometry optimization processes in real-time.  The software supports processing
 .log files remotely using with @code{rbase::url()}.  This software is a suitcase
 for saving time and energy for the researchers, supporting multiple versions of
 Gaussian'.")
+    (license license:expat)))
+
+(define-public r-scf
+  (package
+    (name "r-scf")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scf" version))
+       (sha256
+        (base32 "0gc1cisji4hykvsik57666dhwyjgcvqqyyz7h7mr5mzc8m1rpl0q"))))
+    (properties `((upstream-name . "scf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survey r-rlang r-httr r-haven r-ggplot2))
+    (native-inputs (list r-rmarkdown r-markdown r-knitr))
+    (home-page "https://github.com/jncohen/scf")
+    (synopsis "Analyzing the Survey of Consumer Finances")
+    (description
+     "Analyze public-use micro data from the Survey of Consumer Finances.  Provides
+tools to download prepared data files, construct replicate-weighted multiply
+imputed survey designs, compute descriptive statistics and model estimates, and
+produce plots and tables.  Methods follow design-based inference for complex
+surveys and pooling across multiple imputations.  See the package website and
+the code book for background.")
     (license license:expat)))
 
 (define-public r-scepterbinary

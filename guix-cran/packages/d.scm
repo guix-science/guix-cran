@@ -15652,13 +15652,13 @@ a node, the corresponding text is displayed as a tooltip.")
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "7.2")
+    (version "7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Directional" version))
        (sha256
-        (base32 "127rk32w2524awcdvhcgdc0qb134g4g58871grdf3lm2ipzdqa1a"))))
+        (base32 "0w3jp5s61c5k5d1qx7x3ibkc4gwq2r0nrk24k67wl6fgssgxyjc5"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (arguments
@@ -15697,13 +15697,13 @@ vectors\".  Communications in Statistics-Simulation and Computation, 53(3):
 1387--1408. <doi:10.1080/03610918.2022.2045499>.  e) Yu Z. and Huang X. (2024).
 A new parameterization for elliptically symmetric angular Gaussian distributions
 of arbitrary dimension.  Electronic Journal of Statistics, 18(1): 301--334.
-<doi:10.1214/23-EJS2210>.  f) Tsagris M. and Alzeley O. (2024). \"Circular and
+<doi:10.1214/23-EJS2210>.  f) Tsagris M. and Alzeley O. (2025). \"Circular and
 spherical projected Cauchy distributions: A Novel Framework for Circular and
-Directional Data Modeling\".  Australian & New Zealand Journal of Statistics
-(Accepted for publication). <doi:10.1111/anzs.12434>.  g) Tsagris M.,
-Papastamoulis P. and Kato S. (2024). \"Directional data analysis: spherical
-Cauchy or Poisson kernel-based distribution\".  Statistics and Computing
-(Accepted for publication). <doi:10.48550/@code{arXiv.2409.03292>}.")
+Directional Data Modeling\".  Australian & New Zealand Journal of Statistics,
+67(1): 77--103. <doi:10.1111/anzs.12434>.  g) Tsagris M., Papastamoulis P. and
+Kato S. (2025). \"Directional data analysis: spherical Cauchy or Poisson
+kernel-based distribution\".  Statistics and Computing, 35:51.
+<doi:10.1007/s11222-025-10583-0>.")
     (license license:gpl2+)))
 
 (define-public r-directeffects
@@ -16917,19 +16917,19 @@ images, and data frames).")
 (define-public r-diffval
   (package
     (name "r-diffval")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diffval" version))
        (sha256
-        (base32 "1qhbby9zfckkkxbpvbnym3i1pfapgrjf0m61fly9v7k50j07d4cd"))))
+        (base32 "1m8whpp3mhwnds5y3aaggcswsjkbxqbqp4swyr05v68vpgp6fpp7"))))
     (properties `((upstream-name . "diffval")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://gitlab.com/point-veg/diffval")
+    (home-page "https://point-veg.gitlab.io/diffval/")
     (synopsis "Vegetation Patterns")
     (description
      "Find, visualize and explore patterns of differential taxa in vegetation data
@@ -16937,8 +16937,9 @@ images, and data frames).")
 (@code{DiffVal}).  Patterns are searched through mathematical optimization
 algorithms.  Ultimately, Total Differential Value (TDV) optimization aims at
 obtaining classifications of vegetation data based on differential taxa, as in
-the traditional geobotanical approach.  The Gurobi optimizer, as well as the R
-package gurobi', can be installed from
+the traditional geobotanical approach (Monteiro-Henriques 2025,
+<doi:10.3897/VCS.140466>).  The Gurobi optimizer, as well as the R package
+gurobi', can be installed from
 <https://www.gurobi.com/products/gurobi-optimizer/>.  The useful vignette Gurobi
 Installation Guide, from package prioritizr', can be found here:
 <https://prioritizr.net/articles/gurobi_installation_guide.html>.")
@@ -22244,13 +22245,13 @@ visualization.")
 (define-public r-depower
   (package
     (name "r-depower")
-    (version "2025.1.20")
+    (version "2025.10.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "depower" version))
        (sha256
-        (base32 "1rn2ir31w3pqmr987rj91ipi40pq6hjg1m7cqsf58fy65q49qrkf"))))
+        (base32 "1azs62d00nawdzlblb3bgzc6h6d6pj7kk8sb4v1d551c36ksivk1"))))
     (properties `((upstream-name . "depower")))
     (build-system r-build-system)
     (arguments

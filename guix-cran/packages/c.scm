@@ -28146,13 +28146,13 @@ provided on the CM SAF webpage (<http://www.cmsaf.eu/R_toolbox>).")
 (define-public r-cmsafops
   (package
     (name "r-cmsafops")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmsafops" version))
        (sha256
-        (base32 "0sam7m3z5b8wcla10p58x4vnn6wlnaa92rdi2bw6lsssqkybq48l"))))
+        (base32 "0r8cn3zrgblza74lq1vhfla6dss3chv9gha14gn7jl1cd523fmjd"))))
     (properties `((upstream-name . "cmsafops")))
     (build-system r-build-system)
     (arguments
@@ -30506,13 +30506,13 @@ visualization and analysis.  See Lokesh Kumar and Matthias E Futschik (2007)
 (define-public r-clusterggm
   (package
     (name "r-clusterggm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusterGGM" version))
        (sha256
-        (base32 "1jh0sak2nvb3g16zb0zhz8w4wsvmlniw2zkaqvwyc9hqrrqsw668"))))
+        (base32 "1j5vqhvsvxlh1m1q8fs1apbvq3i9bxdi0nrwp59qvs3xj569z6y0"))))
     (properties `((upstream-name . "clusterGGM")))
     (build-system r-build-system)
     (arguments
@@ -33062,13 +33062,13 @@ distances to the nearest stations.")
 (define-public r-climarep
   (package
     (name "r-climarep")
-    (version "0.7")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClimaRep" version))
        (sha256
-        (base32 "1028yh1gzwdbi8a7i8pjgcln4pmsnnv3zwrfbvpnbzka0dfw8qh6"))))
+        (base32 "1w8kxk6dg0iq2iyi9mydmilcwgljk9l107q1zkvrdzn1ykchfcmq"))))
     (properties `((upstream-name . "ClimaRep")))
     (build-system r-build-system)
     (arguments
@@ -33078,11 +33078,10 @@ distances to the nearest stations.")
     (home-page "https://cran.r-project.org/package=ClimaRep")
     (synopsis "Estimating Climate Representativeness")
     (description
-     "Offers tools to estimate the climate representativeness of defined areas and
-quantifies and analyzes its transformation under future climate change
-scenarios.  Approaches described in Mingarro and Lobo (2018)
-<doi:10.32800/abc.2018.41.0333> and Mingarro and Lobo (2022)
-<doi:10.1017/S037689292100014X>.")
+     "Offers tools to estimate the climate representativeness of reference polygons
+and quantifies its transformation under future climate change scenarios.
+Approaches described in Mingarro and Lobo (2018) <doi:10.32800/abc.2018.41.0333>
+and Mingarro and Lobo (2022) <doi:10.1017/S037689292100014X>.")
     (license license:expat)))
 
 (define-public r-cliftlrd
@@ -37220,6 +37219,41 @@ partition Markov chain Monte Carlo (Kuipers & Moffa, 2017) and several
 additional functions have been added to help with causal inference.  Kuipers and
 Moffa (2017) <doi:10.1080/01621459.2015.1133426>.")
     (license license:expat)))
+
+(define-public r-ci
+  (package
+    (name "r-ci")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ci" version))
+       (sha256
+        (base32 "1nym28qz0ibf6l7vbx1ahc91c3h18w0rqny2jz2nqrx3z9k22hp1"))))
+    (properties `((upstream-name . "ci")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-purrr
+                             r-forcats
+                             r-dplyr
+                             r-desctools
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GegznaV/ci")
+    (synopsis "Confidence Intervals for Education")
+    (description
+     "An educational package providing intuitive functions for calculating confidence
+intervals (CI) for various statistical parameters.  Designed primarily for
+teaching and learning about statistical inference (particularly confidence
+intervals).  Offers user-friendly wrappers around established methods for
+proportions, means, and bootstrap-based intervals.  Integrates seamlessly with
+Tidyverse workflows, making it ideal for classroom demonstrations and student
+exercises.")
+    (license license:gpl3+)))
 
 (define-public r-chyper
   (package
@@ -41707,6 +41741,31 @@ provided URL.")
 cystic fibrosis patients, based on the clinical prediction models published in
 Stanojevic et al. (2019) <doi:10.1183/13993003.00224-2019>.")
     (license license:gpl3)))
+
+(define-public r-cfm
+  (package
+    (name "r-cfm")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CFM" version))
+       (sha256
+        (base32 "1pb2rkhpr587pzgwx4nz74njfjx0in75s0d7r2xi0b4dnv3ph4n5"))))
+    (properties `((upstream-name . "CFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-psych r-matrixcalc r-mass r-crch))
+    (home-page "https://cran.r-project.org/package=CFM")
+    (synopsis "Analyzing Censored Factor Models")
+    (description
+     "This package provides generation and estimation of censored factor models for
+high-dimensional data with censored errors (normal, t, logistic).  Includes
+Sparse Orthogonal Principal Components (SOPC), and evaluation metrics.  Based on
+Guo G. (2023) <doi:10.1007/s00180-022-01270-z>.")
+    (license license:expat)))
 
 (define-public r-cfilt
   (package

@@ -10664,13 +10664,13 @@ identification.")
 (define-public r-googlelanguager
   (package
     (name "r-googlelanguager")
-    (version "0.3.1")
+    (version "0.3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "googleLanguageR" version))
        (sha256
-        (base32 "0zjs7amar27f5yi2ssz3zwm7lf0h8v5rczy1mg7ny3zwj5fhn1yp"))))
+        (base32 "07mh2xibwrrs36qcdlmginal68vz72z5cgknc1lwd64cr8yrfcin"))))
     (properties `((upstream-name . "googleLanguageR")))
     (build-system r-build-system)
     (arguments
@@ -10685,16 +10685,13 @@ identification.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/googleLanguageR")
     (synopsis
-     "Call Google's 'Natural Language' API, 'Cloud Translation' API, 'Cloud Speech' API and 'Cloud Text-to-Speech' API")
+     "Call Google's 'Natural Language', 'Cloud Translation', 'Cloud Speech', and 'Cloud Text-to-Speech' APIs")
     (description
-     "Call Google Cloud machine learning APIs for text and speech tasks.  Call the
-Cloud Translation API <https://cloud.google.com/translate> for detection and
-translation of text, the Natural Language API
-<https://cloud.google.com/natural-language> to analyse text for sentiment,
-entities or syntax, the Cloud Speech API
-<https://cloud.google.com/speech-to-text> to transcribe sound files to text and
-the Cloud Text-to-Speech API <https://cloud.google.com/text-to-speech> to turn
-text into sound files.")
+     "Access Google Cloud machine learning APIs for text and speech tasks.  Use the
+Cloud Translation API for text detection and translation, the Natural Language
+API to analyze sentiment, entities, and syntax, the Cloud Speech API to
+transcribe audio to text, and the Cloud Text-to-Speech API to synthesize text
+into audio files.")
     (license license:expat)))
 
 (define-public r-googleknowledgegraphr
@@ -19574,13 +19571,13 @@ of how to draw sectors in @code{ComplexHeatmap}'.")
 (define-public r-ggscidca
   (package
     (name "r-ggscidca")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggscidca" version))
        (sha256
-        (base32 "00fd08facgm5gj6kmw4dxsiaapcif3gwxq2anxvxm0mrlrixr9f8"))))
+        (base32 "0r8p2j14ma2l5hni401dqp0nl0k7mfky908mcaciagbiph6h42wl"))))
     (properties `((upstream-name . "ggscidca")))
     (build-system r-build-system)
     (arguments
@@ -37082,13 +37079,13 @@ materials.")
 (define-public r-galaxias
   (package
     (name "r-galaxias")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galaxias" version))
        (sha256
-        (base32 "18fjnbb9yc5l05yy0348m5mvs9hr51qbv23dbqyrxwsaz6x5aba4"))))
+        (base32 "0y5fiz92ajqig640qc92xsiqr5873pzjl7jih3pjz1f9ch21r8pl"))))
     (properties `((upstream-name . "galaxias")))
     (build-system r-build-system)
     (arguments

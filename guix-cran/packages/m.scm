@@ -33283,27 +33283,31 @@ references.")
 (define-public r-mev
   (package
     (name "r-mev")
-    (version "1.17")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mev" version))
        (sha256
-        (base32 "0gzi48kwp6hb9p28km43kf76r55cbqgmjkfn8nylhkah7zx1gvxc"))))
+        (base32 "09qf7x5rlzxlnp5kls40yhs3zndyxp53d7aynis17ha7cvqjrmg4"))))
     (properties `((upstream-name . "mev")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rsolnp r-rcpparmadillo r-rcpp r-nleqslv
+    (propagated-inputs (list r-rsolnp
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-numderiv
+                             r-nleqslv
                              r-alabama))
     (native-inputs (list r-knitr))
     (home-page "https://lbelzile.github.io/mev/")
     (synopsis "Modelling of Extreme Values")
     (description
      "Various tools for the analysis of univariate, multivariate and functional
-extremes.  Exact simulation from max-stable processes [Dombry, Engelke and
-Oesting (2016) <doi:10.1093/biomet/asw008>, R-Pareto processes for various
+extremes.  Exact simulation from max-stable processes (Dombry, Engelke and
+Oesting, 2016, <doi:10.1093/biomet/asw008>, R-Pareto processes for various
 parametric models, including Brown-Resnick (Wadsworth and Tawn, 2014,
 <doi:10.1093/biomet/ast042>) and Extremal Student (Thibaud and Opitz, 2015,
 <doi:10.1093/biomet/asv045>).  Threshold selection methods, including Wadsworth
@@ -39447,13 +39451,13 @@ Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>."
 (define-public r-medfateland
   (package
     (name "r-medfateland")
-    (version "2.7.0")
+    (version "2.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medfateland" version))
        (sha256
-        (base32 "1ghry3k1ha6bk18gfasw24xngy5l26bnd9wprv7z9d0fns1ai5qq"))))
+        (base32 "0znrj1ip49671v48b99pdbh44a7g04hykkgq0vrdkd579qflmfcv"))))
     (properties `((upstream-name . "medfateland")))
     (build-system r-build-system)
     (arguments
@@ -42364,6 +42368,35 @@ Comiskey, Alkema, Cahill (2022) <@code{arXiv:2212.03844>}.")
      "Algorithms to approximate the Pareto-front of multi-criteria minimum spanning
 tree problems.")
     (license license:bsd-2)))
+
+(define-public r-mcmodule
+  (package
+    (name "r-mcmodule")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mcmodule" version))
+       (sha256
+        (base32 "0rms7zds28pxq1amcqv43njaz9pdj618rghjjfc1npq3s7cpqdjr"))))
+    (properties `((upstream-name . "mcmodule")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mc2d r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://nataliaciria.github.io/mcmodule/")
+    (synopsis "Modular Monte Carlo Risk Analysis")
+    (description
+     "Framework for building modular Monte Carlo risk analysis models.  It extends the
+capabilities of mc2d to facilitate working with multiple risk pathways, variates
+and scenarios.  It provides tools to organize risk analysis in independent
+flexible modules, perform multivariate Monte Carlo node operations, automate the
+creation of Monte Carlo nodes and visualize risk analysis models.  For more
+details see Ciria (2025)
+<https://nataliaciria.github.io/mcmodule/articles/mcmodule>.")
+    (license license:gpl3+)))
 
 (define-public r-mcmcvis
   (package
@@ -52390,13 +52423,13 @@ More information about @code{WeMo} Switch can be found at
 (define-public r-magi
   (package
     (name "r-magi")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "magi" version))
        (sha256
-        (base32 "0xri39mjq9x8gdj1a69h1sby2i6vcx4vx86zv483128wb0qwgfww"))))
+        (base32 "03f867y5l7kzaky6c0580860znp9binmvm1f3i37bjl58rsb7kzd"))))
     (properties `((upstream-name . "magi")))
     (build-system r-build-system)
     (arguments

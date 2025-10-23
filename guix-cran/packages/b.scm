@@ -18,6 +18,7 @@
   #:use-module (gnu packages tls)
   #:use-module (gnu packages java)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages sqlite)
   #:use-module (guix-cran packages z)
@@ -3932,6 +3933,34 @@ optionally used to sort the heatmap.")
     (description
      "Bayesian estimation and variable selection for quantile regression models.")
     (license license:gpl3+)))
+
+(define-public r-brpl
+  (package
+    (name "r-brpl")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BRPL" version))
+       (sha256
+        (base32 "1xhjx75q6khzflskkk1k4jd1ybh6nsmqr95j8mmrzlwfcw94fd5v"))))
+    (properties `((upstream-name . "BRPL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=BRPL")
+    (synopsis "Methods for Bivariate Poverty Line Calculations")
+    (description
+     "This package provides tools for identifying subgroups within populations based
+on individual response patterns to specific interventions or treatments.
+Designed to support researchers and clinicians in exploring heterogeneous
+treatment effects and developing personalized therapeutic strategies.  Offers
+functionality for analyzing and visualizing the interplay between two variables,
+thereby enhancing the interpretation of social sustainability metrics.  The
+package focuses on bivariate discriminant analysis and aims to clarify
+relationships between indicator variables.")
+    (license license:expat)))
 
 (define-public r-browndog
   (package
@@ -15533,13 +15562,13 @@ implementation can be understood by running examples in @code{modelFrame()}, and
 (define-public r-biodosetools
   (package
     (name "r-biodosetools")
-    (version "3.7")
+    (version "3.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biodosetools" version))
        (sha256
-        (base32 "19f5ikmf1zch158ip93gz73hd5624nlj15ynlsni6pag91qx76dq"))))
+        (base32 "0q96k1yv177w5n2z8sgvhd986zaa7np046icx1y0qk23f1h3vhmq"))))
     (properties `((upstream-name . "biodosetools")))
     (build-system r-build-system)
     (arguments
@@ -26017,6 +26046,42 @@ mixed hierarchies (Mix-Cond and TD-cond) (Zambon et al., 2024)
 <https://proceedings.mlr.press/v244/zambon24a.html>.")
     (license license:lgpl3+)))
 
+(define-public r-bayesqrsurvey
+  (package
+    (name "r-bayesqrsurvey")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesQRsurvey" version))
+       (sha256
+        (base32 "17ndbqdzpch5173jzswva4pr0pccx9rsxg6gxcqgnbpxrgbvnpd2"))))
+    (properties `((upstream-name . "bayesQRsurvey")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list lapack))
+    (propagated-inputs (list r-rlang
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pracma
+                             r-posterior
+                             r-ggplot2))
+    (home-page "https://github.com/torodriguezt/bayesQRsurvey")
+    (synopsis
+     "Bayesian Quantile Regression Models for Complex Survey Data Analysis")
+    (description
+     "This package provides Bayesian quantile regression models for complex survey
+data under informative sampling using survey-weighted estimators.  Both single-
+and multiple-output models are supported.  To accelerate computation, all
+algorithms are implemented in C++ using Rcpp', @code{RcppArmadillo}', and
+@code{RcppEigen}', and are called from R'.  See Nascimento and GonÃ§alves (2024)
+<doi:10.1093/jssam/smae015> and Nascimento and GonÃ§alves (2025, in press)
+<https://academic.oup.com/jssam>.")
+    (license license:expat)))
+
 (define-public r-bayesqr
   (package
     (name "r-bayesqr")
@@ -29533,13 +29598,13 @@ implemented in this package are described in Roman-Palacios et al. (2021)
 (define-public r-bawir
   (package
     (name "r-bawir")
-    (version "1.3.4")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAwiR" version))
        (sha256
-        (base32 "03bap0vcm3i6vwbbb8mqzdqvgxiba4pryh5f89xkxdfbgb2bmahz"))))
+        (base32 "0yhxlzmy45f0nl3a7d57krgc8731fssvznnf0abnqql3hivmb5r6"))))
     (properties `((upstream-name . "BAwiR")))
     (build-system r-build-system)
     (arguments
@@ -29550,20 +29615,20 @@ implemented in this package are described in Roman-Palacios et al. (2021)
                              r-tibble
                              r-stringr
                              r-stringi
-                             r-scales
-                             r-rworldmap
                              r-rvest
+                             r-robotstxt
                              r-reshape2
-                             r-readr
-                             r-qdapregex
                              r-purrr
+                             r-polite
                              r-plyr
                              r-magrittr
                              r-lubridate
+                             r-jsonlite
+                             r-janitor
                              r-httr
+                             r-ggpubr
                              r-ggplot2
-                             r-dplyr
-                             r-anthropometry))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://www.uv.es/vivigui/basketball_platform.html")
     (synopsis "Analysis of Basketball Data")
@@ -29574,13 +29639,14 @@ were obtained from <https://www.euroleaguebasketball.net/euroleague/>,
 <https://www.euroleaguebasketball.net/eurocup/> and <https://www.acb.com/>,
 following the instructions of their respectives robots.txt files, when
 available.  Box score data are available for the three leagues.  Play-by-play
-data are also available for the Spanish league.  Methods for analysis include a
-population pyramid, 2D plots, circular plots of players percentiles, plots of
-players monthly/yearly stats, team heatmaps, team shooting plots, team four
-factors plots, cross-tables with the results of regular season games, maps of
-nationalities, combinations of lineups, possessions-related variables, timeouts,
-performance by periods, personal fouls and offensive rebounds.  Please see Vinue
-(2020) <doi:10.1089/big.2018.0124> and Vinue (2024) <doi:10.1089/big.2023.0177>.")
+and spatial shooting data are also available for the Spanish league.  Methods
+for analysis include a population pyramid, 2D plots, circular plots of players
+percentiles, plots of players monthly/yearly stats, team heatmaps, team shooting
+plots, team four factors plots, cross-tables with the results of regular season
+games, maps of nationalities, combinations of lineups, possessions-related
+variables, timeouts, performance by periods, personal fouls, offensive rebounds
+and different types of shooting charts.  Please see Vinue (2020)
+<doi:10.1089/big.2018.0124> and Vinue (2024) <doi:10.1089/big.2023.0177>.")
     (license license:gpl2+)))
 
 (define-public r-batteryreduction

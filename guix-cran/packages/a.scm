@@ -8924,13 +8924,13 @@ queries.  This package was neither produced nor is maintained by Esri.")
 (define-public r-arcpbf
   (package
     (name "r-arcpbf")
-    (version "0.1.7")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcpbf" version))
        (sha256
-        (base32 "00q0jgfcd9cjnsmga8fd6p7yg8292x8ylvkyjnrrw356cgs2vk7m"))))
+        (base32 "0562igd85vglnpg6mpjz2q00iy97nqbg19vd06gm4nrv1myfdmqg"))))
     (properties `((upstream-name . "arcpbf")))
     (build-system r-build-system)
     (arguments
@@ -9475,13 +9475,13 @@ API reference <https://developers.arcgis.com/rest/places/>.")
 (define-public r-arcgislayers
   (package
     (name "r-arcgislayers")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgislayers" version))
        (sha256
-        (base32 "04havh43s679mg22qxywvbgdddwfrfdkza9fyynjixmz886fzka9"))))
+        (base32 "11jrf4ih3qp6z0j2q5qpqp15hwnhz9ggwgy7y6bb55mq0nzbxxxi"))))
     (properties `((upstream-name . "arcgislayers")))
     (build-system r-build-system)
     (arguments
@@ -13724,13 +13724,13 @@ a second model trained on the classes of interest.")
 (define-public r-animint2
   (package
     (name "r-animint2")
-    (version "2025.9.16")
+    (version "2025.10.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "animint2" version))
        (sha256
-        (base32 "0l5pyrnpzid6hkwfhq6cjms3j2l33fap0z2kwmvjsqqxgc1zdvry"))))
+        (base32 "08kf38xyw9p578k5a20962dhhbp1mladbbicl63h2dpdad1mdyg3"))))
     (properties `((upstream-name . "animint2")))
     (build-system r-build-system)
     (arguments
@@ -16378,6 +16378,33 @@ applied.  Adaptive Lasso presents oracle proprieties, which include Gaussianity
 and correct model selection.  Bayesian information criteria (BIC) estimates the
 optimal tuning parameter lambda.  Plot tools are also available.")
     (license license:gpl2+)))
+
+(define-public r-alpmixbayes
+  (package
+    (name "r-alpmixbayes")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "alpmixBayes" version))
+       (sha256
+        (base32 "1ylljk95vavw18md3dy6wxmbs6d0j1ymhz36amc7sgd8vmpm1dan"))))
+    (properties `((upstream-name . "alpmixBayes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mcmcpack r-gtools))
+    (home-page "https://cran.r-project.org/package=alpmixBayes")
+    (synopsis "Bayesian Estimation for Alpha-Mixture Survival Models")
+    (description
+     "This package implements Bayesian estimation and inference for alpha-mixture
+survival models, including Weibull and Exponential based components, with tools
+for simulation and posterior summaries.  The methods target applications in
+reliability and biomedical survival analysis.  The package implements Bayesian
+estimation for the alpha-mixture methodology introduced in Asadi et al. (2019)
+<doi:10.1017/jpr.2019.72>.")
+    (license license:gpl3)))
 
 (define-public r-alphavantager
   (package

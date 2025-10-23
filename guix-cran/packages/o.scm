@@ -4429,7 +4429,7 @@ hierarchical, dynamic and multivariate modeling.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list))
+    (inputs (list 7zip))
     (propagated-inputs (list r-terra
                              r-sp
                              r-sf
@@ -10317,6 +10317,40 @@ epidemiological studies and explore the different domains to obtain feasibility
 counts and trends.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-omoponspark
+  (package
+    (name "r-omoponspark")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmopOnSpark" version))
+       (sha256
+        (base32 "0hii7bis8cjym4l22r264rd9av0mp5n4la1li1sq8f4w3rim7p6j"))))
+    (properties `((upstream-name . "OmopOnSpark")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-purrr
+                             r-omopgenerics
+                             r-glue
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://OHDSI.github.io/OmopOnSpark/")
+    (synopsis "Using a Common Data Model on 'Spark'")
+    (description
+     "Use health data in the Observational Medical Outcomes Partnership Common Data
+Model format in Spark'.  Functionality includes creating all required tables and
+fields and creation of a single reference to the data.  Native Spark
+functionality is supported.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
@@ -11394,6 +11428,42 @@ Internet Institute (OII), University of Oxford, but the functions should be
 useful for general data analysis and especially for analysis of categorical and
 ordinal data.")
     (license license:expat)))
+
+(define-public r-ohun
+  (package
+    (name "r-ohun")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ohun" version))
+       (sha256
+        (base32 "0a8iw2ni7hgbw6agyz2g18pk874wmnxf1bva8s4sbdsnbkxbcwa0"))))
+    (properties `((upstream-name . "ohun")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-warbler
+                             r-tuner
+                             r-sf
+                             r-seewave
+                             r-rlang
+                             r-igraph
+                             r-ggplot2
+                             r-fftw
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/ohun/")
+    (synopsis "Optimizing Acoustic Signal Detection")
+    (description
+     "Facilitates the automatic detection of acoustic signals, providing functions to
+diagnose and optimize the performance of detection routines.  Detections from
+other software can also be explored and optimized.  This package has been
+peer-reviewed by @code{rOpenSci}.  Araya-Salas et al. (2022)
+<doi:10.1101/2022.12.13.520253>.")
+    (license license:gpl2+)))
 
 (define-public r-ohsome
   (package
