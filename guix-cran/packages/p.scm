@@ -1290,13 +1290,13 @@ methods\" in Arifin & Yusof (2025) <doi:10.1371/journal.pone.0321440>.")
 (define-public r-pvars
   (package
     (name "r-pvars")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pvars" version))
        (sha256
-        (base32 "102d82sa2k2hd8bba9fsd4303fnyx1dkrf3q8kgriix4w5vzp1nb"))))
+        (base32 "0almywr4drdlsrbmv6g4slqzddk4gdrb22wrigfwfbdbif3npci1"))))
     (properties `((upstream-name . "pvars")))
     (build-system r-build-system)
     (arguments
@@ -2182,23 +2182,25 @@ Song, Garvesh Raskutti (2018) <@code{arXiv:1711.08129>}.")
 (define-public r-pugmm
   (package
     (name "r-pugmm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PUGMM" version))
        (sha256
-        (base32 "0bf3vck3f9h3g67xkmq90axk2mc3x1riidc02x2fz2sw9nmyshvr"))))
+        (base32 "07n8l89iagcg0cqbglaahby3468ydkgawr28j2fygzb4chxvcsjc"))))
     (properties `((upstream-name . "PUGMM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ppclust
+    (propagated-inputs (list r-rcpp
+                             r-ppclust
                              r-mcompanion
                              r-mclust
                              r-matrix
                              r-mass
+                             r-manlymix
                              r-igraph
                              r-foreach
                              r-doparallel
@@ -8180,13 +8182,13 @@ maximum profile likelihood estimates and the kth likelihood support intervals.")
 (define-public r-profileladder
   (package
     (name "r-profileladder")
-    (version "0.1.4")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProfileLadder" version))
        (sha256
-        (base32 "0ri7gg89131bi2bqaki2p607p43hh2s001lk3v8fkxvpbjx2fx7x"))))
+        (base32 "14iq0ivv8pgvyinx6hqzppd8prxpl6ssl38lsqw37h0iwaah43yv"))))
     (properties `((upstream-name . "ProfileLadder")))
     (build-system r-build-system)
     (arguments
@@ -16575,6 +16577,35 @@ multidimensional ordinal deprivation\", Social Indicators Research
 <DOI:10.1007/s11205-015-1059-6>, and Fattore M. and Arcagni, A. (2018) \"A
 reduced posetic approach to the measurement of multidimensional ordinal
 deprivation\", Social Indicators Research <DOI:10.1007/s11205-016-1501-4>.")
+    (license license:gpl2+)))
+
+(define-public r-poseticdataanalysis
+  (package
+    (name "r-poseticdataanalysis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "poseticDataAnalysis" version))
+       (sha256
+        (base32 "0na353jppnhbmkx4wfmp0nv3hw1q4yigpg5g723hymyyc90dg8lv"))))
+    (properties `((upstream-name . "poseticDataAnalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://cran.r-project.org/package=poseticDataAnalysis")
+    (synopsis "Posetic Data Analysis")
+    (description
+     "Build and manipulate partially ordered sets (posets), to perform some data
+analysis on them and to implement multi-criteria decision making procedures.
+Several efficient ways for generating linear extensions are implemented,
+together with functions for building mutual ranking probabilities,
+incomparability, dominance and separation scores (Fattore, M., De Capitani, L.,
+Avellone, A., Suardi, A. (2024).  A fuzzy posetic toolbox for multi-criteria
+evaluation on ordinal data systems.  ANNALS OF OPERATIONS RESEARCH
+<doi:10.1007/s10479-024-06352-3>).")
     (license license:gpl2+)))
 
 (define-public r-poset

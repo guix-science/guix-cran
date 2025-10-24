@@ -2916,19 +2916,19 @@ triangular distributions.  Performs power calculations for the binomial test.")
 (define-public r-jmotif
   (package
     (name "r-jmotif")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmotif" version))
        (sha256
-        (base32 "0b2qllpfgs6q5fwfhxl5b4xdyzbvnja7ld766akf0xxznxvglkrg"))))
+        (base32 "02xgnmc8a3pzdlp22nml21a7r83ymbgv1jp443kikcf11arw230n"))))
     (properties `((upstream-name . "jmotif")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/jMotif/jmotif-R")
     (synopsis
      "Time Series Analysis Toolkit Based on Symbolic Aggregate Discretization, i.e. SAX")

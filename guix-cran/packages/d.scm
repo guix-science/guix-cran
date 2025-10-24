@@ -7526,13 +7526,13 @@ dataset has been analyzed.")
 (define-public r-dpi
   (package
     (name "r-dpi")
-    (version "2025.10")
+    (version "2025.10-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPI" version))
        (sha256
-        (base32 "01h1rkf0cnjxd3lnf214yga9snha20r9r3jz3vk3zbc8zn09kb34"))))
+        (base32 "1man2c1qiqb5qmbxs3sx49504a3hrgpyb4lyfkrlkh2fxxllkkpn"))))
     (properties `((upstream-name . "DPI")))
     (build-system r-build-system)
     (arguments
@@ -20282,35 +20282,6 @@ whose design is understood scientifically and end up with a treatment rule that
 is trustworthy statistically, along with an estimation of rule benefit in an
 independent sample.")
     (license license:gpl2+)))
-
-(define-public r-devrate
-  (package
-    (name "r-devrate")
-    (version "0.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "devRate" version))
-       (sha256
-        (base32 "1ffydn6gy5xjgl27fan1pvdxdf74mm0dfhnf85y9w0330x1k5cqd"))))
-    (properties `((upstream-name . "devRate")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/frareb/devRate/")
-    (synopsis
-     "Quantify the Relationship Between Development Rate and Temperature in Ectotherms")
-    (description
-     "This package provides a set of functions to quantify the relationship between
-development rate and temperature and to build phenological models.  The package
-comprises a set of models and estimated parameters borrowed from a literature
-review in ectotherms.  The methods and literature review are described in
-Rebaudo et al. (2018) <doi:10.1111/2041-210X.12935>, Rebaudo and Rabhi (2018)
-<doi:10.1111/eea.12693>, and Regnier et al. (2021) <doi:10.1093/ee/nvab115>.  An
-example can be found in Rebaudo et al. (2017) <doi:10.1007/s13355-017-0480-5>.")
-    (license license:gpl2)))
 
 (define-public r-devore7
   (package

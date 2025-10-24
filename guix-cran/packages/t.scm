@@ -20148,13 +20148,13 @@ describing the methodology can be found at
 (define-public r-tidyhydat
   (package
     (name "r-tidyhydat")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyhydat" version))
        (sha256
-        (base32 "03sid73jffk9cm8g7y79lggqrjg446xss97x6qqcc8x6lbrcy6c3"))))
+        (base32 "0ya3xfq1akc8lyd0ylzhzp4vd50nv9b2hvq8sgd6d4yb6hp5grq8"))))
     (properties `((upstream-name . "tidyhydat")))
     (build-system r-build-system)
     (arguments
@@ -20177,10 +20177,8 @@ describing the methodology can be found at
     (synopsis "Extract and Tidy Canadian 'Hydrometric' Data")
     (description
      "This package provides functions to access historical and real-time national
-hydrometric data from Water Survey of Canada data sources
-(<https://dd.weather.gc.ca/hydrometric/csv/> and
-<https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/>) and then applies
-tidy data principles.")
+hydrometric data from Water Survey of Canada data sources and then applies tidy
+data principles.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -31668,13 +31666,13 @@ available.")
 (define-public r-tall
   (package
     (name "r-tall")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tall" version))
        (sha256
-        (base32 "1mqg9cw0ikvv2zfry6891kh28w14j1hq0039hdgb1hqn4xzfl93s"))))
+        (base32 "1b7vn8a3fq2j57fgzpgkd2qmx9pa3841x6xcp1ybmf101gqz9455"))))
     (properties `((upstream-name . "tall")))
     (build-system r-build-system)
     (arguments

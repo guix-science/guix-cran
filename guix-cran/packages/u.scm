@@ -156,13 +156,13 @@ location.")
 (define-public r-utsf
   (package
     (name "r-utsf")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "utsf" version))
        (sha256
-        (base32 "04bpx4wb92w41z8h54har5jb9cblhs34qhaqcfkywg83rhp5qgaz"))))
+        (base32 "0bcvh4qy545lh5g1is7ibsrkrh8maskikd6mr8hplsab73ymf02r"))))
     (properties `((upstream-name . "utsf")))
     (build-system r-build-system)
     (arguments
@@ -339,13 +339,13 @@ for publication.")
 (define-public r-utf8ify
   (package
     (name "r-utf8ify")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "utf8ify" version))
        (sha256
-        (base32 "18a0glmyc86xnxgz6igjvphhjrnsr4ma57vx5j6w3hj395pgw4rr"))))
+        (base32 "0y61glz3fbk7ah2x2da74ycdhn0ws9bzldvxmlql3c24i8swq3sb"))))
     (properties `((upstream-name . "utf8ify")))
     (build-system r-build-system)
     (arguments

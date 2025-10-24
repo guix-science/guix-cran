@@ -23595,13 +23595,13 @@ economic budget or on a desired statistical accuracy.  Lastly, (6)
 (define-public r-eco
   (package
     (name "r-eco")
-    (version "4.0-4")
+    (version "4.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eco" version))
        (sha256
-        (base32 "06vbvrvjs1pz39wr904kblw42s7iwahw9crgf52bd3wcwg242bvj"))))
+        (base32 "0njq7i9hb0hhx7icxfj0n6fb33whz0x9i3cx679pr95bbyfgd29x"))))
     (properties `((upstream-name . "eco")))
     (build-system r-build-system)
     (arguments
@@ -24052,13 +24052,13 @@ using echelon scan method proposed by Kurihara (2003)
 (define-public r-echarty
   (package
     (name "r-echarty")
-    (version "1.6.6")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echarty" version))
        (sha256
-        (base32 "0abdxvl6b6nf1m4csnpbx169pjw16rjkm23sndcvzww49vs03a7v"))))
+        (base32 "10z772ggs36ckb4c9f70yhwvnbzgppjs3bz705wanahvsk0aqhw0"))))
     (properties `((upstream-name . "echarty")))
     (build-system r-build-system)
     (arguments

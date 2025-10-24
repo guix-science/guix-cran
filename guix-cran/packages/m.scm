@@ -6400,52 +6400,6 @@ common files, Continuous Integration ('CI') workflows, or configurations across
 many repositories with a single command.")
     (license license:agpl3+)))
 
-(define-public r-multideggs
-  (package
-    (name "r-multideggs")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "multiDEGGs" version))
-       (sha256
-        (base32 "0z91l72rb1hzh9c6d07y73z0b87vnc8dk6nb50mdbfkzm1z8nn4l"))))
-    (properties `((upstream-name . "multiDEGGs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-visnetwork
-                             r-shinydashboard
-                             r-shiny
-                             r-sfsmisc
-                             r-rmarkdown
-                             r-pbmcapply
-                             r-pbapply
-                             r-mass
-                             r-magrittr
-                             r-knitr
-                             r-dt))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/elisabettasciacca/multiDEGGs/")
-    (synopsis "Multi-Omic Differentially Expressed Gene-Gene Pairs")
-    (description
-     "This package performs multi-omic differential network analysis by revealing
-differential interactions between molecular entities (genes, proteins,
-transcription factors, or other biomolecules) across the omic datasets provided.
- For each omic dataset, a differential network is constructed where links
-represent statistically significant differential interactions between entities.
-These networks are then integrated into a comprehensive visualization using
-distinct colors to distinguish interactions from different omic layers.  This
-unified display allows interactive exploration of cross-omic patterns, such as
-differential interactions present at both transcript and protein levels.  For
-each link, users can access differential statistical significance metrics (p
-values or adjusted p values, calculated via robust or traditional linear
-regression with interaction term) and differential regression plots.  The
-methods implemented in this package are described in Sciacca et al. (2023)
-<doi:10.1093/bioinformatics/btad192>.")
-    (license license:gpl3)))
-
 (define-public r-multid
   (package
     (name "r-multid")
@@ -6957,35 +6911,33 @@ likelihood estimation and Bayesian inference.")
 (define-public r-multiatsm
   (package
     (name "r-multiatsm")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiATSM" version))
        (sha256
-        (base32 "04qr2qv9vi2dzh065gyyiphxkpfni5harqz5nv0lw57axa7n9ird"))))
+        (base32 "1pnlyprl15p4npwrckkck4hdxyp9202v7757akyb0dpq6gda5gv2"))))
     (properties `((upstream-name . "MultiATSM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pracma
-                             r-neldermead
-                             r-magic
-                             r-hablar
-                             r-ggplot2
-                             r-cowplot))
+    (propagated-inputs (list r-pracma r-magic r-hablar r-ggplot2 r-cowplot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rubensmoura87/MultiATSM")
     (synopsis "Multicountry Term Structure of Interest Rates Models")
     (description
-     "Estimation routines for several classes of affine term structure of interest
-rates models.  All the models are based on the single-country unspanned
-macroeconomic risk framework from Joslin, Priebsch, and Singleton (2014, JF)
-<doi:10.1111/jofi.12131>.  Multicountry extensions such as the ones of
-Jotikasthira, Le, and Lundblad (2015, JFE) <doi:10.1016/j.jfineco.2014.09.004>,
-Candelon and Moura (2023, EM) <doi:10.1016/j.econmod.2023.106453>, and Candelon
-and Moura (2024, JFEC) <doi:10.1093/jjfinec/nbae008> are also available.")
+     "Package for estimating, analyzing, and forecasting multi-country macro-finance
+affine term structure models (ATSMs).  All setups build on the single-country
+unspanned macroeconomic risk framework from Joslin, Priebsch, and Singleton
+(2014, JF) <doi:10.1111/jofi.12131>.  Multicountry extensions by Jotikasthira,
+Le, and Lundblad (2015, JFE) <doi:10.1016/j.jfineco.2014.09.004>, Candelon and
+Moura (2023, EM) <doi:10.1016/j.econmod.2023.106453>, and Candelon and Moura
+(2024, JFEC) <doi:10.1093/jjfinec/nbae008> are also available.  The package also
+provides tools for bias correction as in Bauer Rudebusch and Wu (2012, JBES)
+<doi:10.1080/07350015.2012.693855>, bootstrap analysis, and several
+graphical/numerical outputs.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-multiassetoptions
@@ -8632,13 +8584,13 @@ thermal profiling, see Savitski et al. (2014) <doi:10.1126/science.1255784>.")
 (define-public r-mstest
   (package
     (name "r-mstest")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSTest" version))
        (sha256
-        (base32 "148bk8hszl83fxdw2076ri023qf455drkajbjx85zdwlw4zs0kjw"))))
+        (base32 "0vhxzwdflsv9fwbgq79vh86qacndndjyki0qsnm73l1g8kjzdz3s"))))
     (properties `((upstream-name . "MSTest")))
     (build-system r-build-system)
     (arguments
@@ -8661,7 +8613,7 @@ thermal profiling, see Savitski et al. (2014) <doi:10.1126/science.1255784>.")
 <doi:10.1002/jae.3950070506>, Carrasco, Hu, & Ploberger (2014)
 <doi:10.3982/ECTA8609>, Dufour & Luger (2017)
 <doi:10.1080/07474938.2017.1307548>, and Rodriguez Rondon & Dufour (2024)
-<https://grodriguezrondon.com/files/@code{RodriguezRondon_Dufour_2024_MonteCarlo_LikelihoodRatioTest_MarkovSwitchingModels_20241015.pdf>}
+<https://grodriguezrondon.com/files/@code{RodriguezRondon_Dufour_2025_MonteCarlo_LikelihoodRatioTest_MarkovSwitchingModels_20251014.pdf>}
 that can be used to identify the number of regimes in Markov switching models.")
     (license license:gpl2+)))
 
@@ -23838,13 +23790,13 @@ separately on two latent parameters.  It reports local false discovery rates
 (define-public r-mixturemissing
   (package
     (name "r-mixturemissing")
-    (version "3.0.4")
+    (version "3.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MixtureMissing" version))
        (sha256
-        (base32 "1v5w24y6h7ndqn6639js1g4vsn3arsi26l7brljmmyyalqhhp6d8"))))
+        (base32 "07igdm0msab45qysh9ijhkrck02wjbala5qiagbpcvj051bnnnh9"))))
     (properties `((upstream-name . "MixtureMissing")))
     (build-system r-build-system)
     (arguments
@@ -23871,7 +23823,8 @@ via some special or limiting cases of the multivariate generalized hyperbolic
 distribution are also included: Normal-Inverse Gaussian, Symmetric
 Normal-Inverse Gaussian, Skew-Cauchy, Cauchy, Skew-t, Student's t, Normal,
 Symmetric Generalized Hyperbolic, Hyperbolic Univariate Marginals, Hyperbolic,
-and Symmetric Hyperbolic.")
+and Symmetric Hyperbolic.  Funding: This work was partially supported by the
+National Science foundation NSF Grant NO. 2209974.")
     (license license:gpl2+)))
 
 (define-public r-mixturefitting
@@ -31169,13 +31122,13 @@ and features for the generation of synthetic datasets (Reiter, 2005,
 (define-public r-micd
   (package
     (name "r-micd")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micd" version))
        (sha256
-        (base32 "0scihw884m8cj3c8kg2g83w36wks44s3s7nfbhifqc89nv5q0p8a"))))
+        (base32 "0rylxzvwfpk7l1sici60zyfzk31lpm4qv1lpksabcndjv23f44k4"))))
     (properties `((upstream-name . "micd")))
     (build-system r-build-system)
     (arguments
@@ -31189,8 +31142,8 @@ and features for the generation of synthetic datasets (Reiter, 2005,
 PC and the FCI (Fast Causal Inference) algorithm for constraint-based causal
 discovery in incomplete and multiply imputed datasets.  Foraita R, Friemel J,
 GÃ¼nther K, Behrens T, Bullerdiek J, Nimzyk R, Ahrens W, Didelez V (2020)
-<doi:10.1111/rssa.12565>; Andrews RM, Foraita R, Didelez V, Witte J (2021)
-<@code{arXiv:2108.13395>}; Witte J, Foraita R, Didelez V (2022)
+<doi:10.1111/rssa.12565>; Andrews RM, Bang CW, Didelez V, Witte J, Foraita R
+(2021) <doi:10.1093/ije/dyae113>; Witte J, Foraita R, Didelez V (2022)
 <doi:10.1002/sim.9535>.")
     (license license:gpl3+)))
 
@@ -49271,13 +49224,13 @@ and Mollinari et al. (2020) <doi:10.1534/g3.119.400620>.")
 (define-public r-mappings
   (package
     (name "r-mappings")
-    (version "0.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mappings" version))
        (sha256
-        (base32 "1f7m6nbdzdcxsk4m8rh8fzrck8pzxl2lgfz5c6wramwmp8rxczzb"))))
+        (base32 "144kgixjjaj0dddb5539c8qb3gixsmlw2k9j3x4bribx139dmis6"))))
     (properties `((upstream-name . "mappings")))
     (build-system r-build-system)
     (arguments
@@ -49287,7 +49240,7 @@ and Mollinari et al. (2020) <doi:10.1534/g3.119.400620>.")
     (synopsis "Functions for Transforming Categorical Variables")
     (description
      "Easily create functions to map between different sets of values, such as for
-re-labelling categorical variables.")
+re-labeling categorical variables.")
     (license license:gpl3)))
 
 (define-public r-mapperalgo

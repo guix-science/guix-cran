@@ -8605,13 +8605,13 @@ orientation.  The shoelace formula is described at
 (define-public r-ards
   (package
     (name "r-ards")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ards" version))
        (sha256
-        (base32 "0cb0j4m4d28lsv16zzfv6y5hy5n1d4gbv5c9wag3ijgcg828scvy"))))
+        (base32 "1wgf85flbk664gk7lg5hijvbcfd7arnp3xrr3f5kladazj9abzrf"))))
     (properties `((upstream-name . "ards")))
     (build-system r-build-system)
     (arguments

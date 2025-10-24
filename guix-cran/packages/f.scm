@@ -3863,13 +3863,13 @@ which for many rows contain all 1's.")
 (define-public r-fsinr
   (package
     (name "r-fsinr")
-    (version "2.0.8")
+    (version "2.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FSinR" version))
        (sha256
-        (base32 "17z2hx95z9rybkzn465084qfpjanw8773z823ilf9isvia44nxab"))))
+        (base32 "1w4ibpr8r4df454sg7lzpfqbfpqbl0ydm7wv2n026c67hllj4ykn"))))
     (properties `((upstream-name . "FSinR")))
     (build-system r-build-system)
     (arguments
@@ -3887,7 +3887,7 @@ which for many rows contain all 1's.")
                              r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=FSinR")
-    (synopsis "Feature Selection")
+    (synopsis "Feature Selection in R")
     (description
      "Feature subset selection algorithms modularized in search algorithms and measure
 utilities.")
@@ -23319,13 +23319,13 @@ extend it to tackle datasets in metric spaces.")
 (define-public r-fastmatrix
   (package
     (name "r-fastmatrix")
-    (version "0.6-2")
+    (version "0.6-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastmatrix" version))
        (sha256
-        (base32 "180rzxw6a8aqa0h0z6ccylqz0i99yaxa9k8m2m4ri8kkgr13c12a"))))
+        (base32 "1nsdv8zl2snv5y69mr8y47y50sv5x7rlvjlmvqjldh55jvynnwy2"))))
     (properties `((upstream-name . "fastmatrix")))
     (build-system r-build-system)
     (arguments
@@ -23335,21 +23335,12 @@ extend it to tackle datasets in metric spaces.")
     (home-page "https://github.com/faosorios/fastmatrix")
     (synopsis "Fast Computation of some Matrices Useful in Statistics")
     (description
-     "Small set of functions to fast computation of some matrices and operations
-useful in statistics and econometrics.  Currently, there are functions for
-efficient computation of duplication, commutation and symmetrizer matrices with
-minimal storage requirements.  Some commonly used matrix decompositions (LU and
-LDL), basic matrix operations (for instance, Hadamard, Kronecker products and
-the Sherman-Morrison formula) and iterative solvers for linear systems are also
-available.  In addition, the package includes a number of common statistical
-procedures such as the sweep operator, weighted mean and covariance matrix using
-an online algorithm, linear regression (using Cholesky, QR, SVD, sweep operator
-and conjugate gradients methods), ridge regression (with optimal selection of
-the ridge parameter considering several procedures), omnibus tests for
-univariate normality, functions to compute the multivariate skewness, kurtosis,
-the Mahalanobis distance (checking the positive defineteness), and the
-Wilson-Hilferty transformation of gamma variables.  Furthermore, the package
-provides interfaces to C code callable by another C code from other R packages.")
+     "Small set of functions designed to speed up the computation of certain matrix
+operations that are commonly used in statistics and econometrics.  It provides
+efficient implementations for the computation of several structured matrices,
+matrix decompositions and statistical procedures, many of which have minimal
+memory overhead.  Furthermore, the package provides interfaces to C code
+callable by another C code from other R packages.")
     (license license:gpl3)))
 
 (define-public r-fastm

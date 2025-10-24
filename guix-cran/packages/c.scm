@@ -15568,13 +15568,13 @@ the Earth including buildings, infrastructure and vegetation.")
 (define-public r-copernicusclimate
   (package
     (name "r-copernicusclimate")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusClimate" version))
        (sha256
-        (base32 "0zl2s2cqraxm7nckrdwagsx8s2qmarn0l4hi8dp4d0pyw6m4w3k1"))))
+        (base32 "1qgdx9bl3jaknr02km06dk4l6n6sv89wdirrg8wxms5gglyw033w"))))
     (properties `((upstream-name . "CopernicusClimate")))
     (build-system r-build-system)
     (arguments
@@ -20779,6 +20779,38 @@ sensitivity analyses under dependent censoring (Yeh et al 2023 Biomedicines)
 2024 Stat Methods Med Res) <DOI:10.1177/09622802231215805>.")
     (license license:gpl2)))
 
+(define-public r-compositionalsr
+  (package
+    (name "r-compositionalsr")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CompositionalSR" version))
+       (sha256
+        (base32 "030y1w9xxm1c8vwvgan1nhrnbrs1nfqzq9avjhhrsd81zw2kpgbw"))))
+    (properties `((upstream-name . "CompositionalSR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf
+                             r-rfast
+                             r-minpack-lm
+                             r-foreach
+                             r-doparallel
+                             r-compositional
+                             r-blockcv))
+    (home-page "https://cran.r-project.org/package=CompositionalSR")
+    (synopsis "Spatial Regression Models with Compositional Data")
+    (description
+     "Spatial regression models with compositional responses using the
+alpha--transformation.  Relevant papers include: Tsagris M. (2025),
+<doi:10.48550/@code{arXiv.2510.12663>}, Tsagris M. (2015),
+<https://soche.cl/chjs/volumes/06/02/Tsagris(2015).pdf>, Tsagris M.T., Preston
+S. and Wood A.T.A. (2011), <doi:10.48550/@code{arXiv.1106.1451>}.")
+    (license license:gpl2+)))
+
 (define-public r-compositionalrf
   (package
     (name "r-compositionalrf")
@@ -25248,13 +25280,13 @@ Outcomes Partnership Common Data Model.")
 (define-public r-cohortcharacteristics
   (package
     (name "r-cohortcharacteristics")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortCharacteristics" version))
        (sha256
-        (base32 "0dh26hrpkfi527z4xlkl1iph7xwnym5v7rgifn5psypm63ni0lav"))))
+        (base32 "0nn38wjq50j0ii35b5hgjzla21rhmv046h0f5fbcgszvszb36pzi"))))
     (properties `((upstream-name . "CohortCharacteristics")))
     (build-system r-build-system)
     (arguments

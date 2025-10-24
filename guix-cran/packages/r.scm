@@ -9839,6 +9839,31 @@ effects by ridge regression; alternatively, BLUPs can be calculated based on an
 additive relationship matrix or a Gaussian kernel.")
     (license license:gpl3)))
 
+(define-public r-rraven
+  (package
+    (name "r-rraven")
+    (version "1.0.16")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rraven" version))
+       (sha256
+        (base32 "0jpgp4ymi5kg8gb4yamiwb2sin0bf3lhxaqc009k31vkh310vlbb"))))
+    (properties `((upstream-name . "Rraven")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-warbler r-tuner r-seewave r-pbapply))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/maRce10/Rraven")
+    (synopsis "Connecting R and 'Raven' Sound Analysis Software")
+    (description
+     "This package provides a tool to exchange data between R and Raven sound analysis
+software (Cornell Lab of Ornithology).  Functions work on data formats
+compatible with the R package @code{warbleR}'.")
+    (license license:gpl2+)))
+
 (define-public r-rrate
   (package
     (name "r-rrate")
@@ -11531,13 +11556,13 @@ analysis sessions with simple R commands.")
 (define-public r-rpm
   (package
     (name "r-rpm")
-    (version "0.7-3")
+    (version "0.7-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpm" version))
        (sha256
-        (base32 "1bzlvyrjib7wgv57didcqmlvzv4skp587jmn7vpfwpqb4lkp7ia1"))))
+        (base32 "0wvlsfig8az2zgq327xks78yhkqmhrb9xgcbzpd4nc4p5gy97hfp"))))
     (properties `((upstream-name . "rpm")))
     (build-system r-build-system)
     (arguments
@@ -18118,40 +18143,6 @@ moderator components.  The package provides convenient functions for summary,
 visualizations, and fit diagnostics.")
     (license license:gpl3)))
 
-(define-public r-robloxbioc
-  (package
-    (name "r-robloxbioc")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RobLoxBioC" version))
-       (sha256
-        (base32 "1n191xqxk52mr04996lj5019hp16dylwaf68hyavd3j538mzcfkj"))))
-    (properties `((upstream-name . "RobLoxBioC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-roblox
-                             r-rcolorbrewer
-                             r-lattice
-                             r-distrmod
-                             r-distr
-                             r-biocgenerics
-                             r-biobase
-                             r-beadarray
-                             r-annotationdbi
-                             r-affy))
-    (home-page "https://r-forge.r-project.org/projects/robast/")
-    (synopsis
-     "Infinitesimally Robust Estimators for Preprocessing -Omics Data")
-    (description
-     "This package provides functions for the determination of optimally robust
-influence curves and estimators for preprocessing omics data, in particular gene
-expression data (Kohl and Deigner (2010), <doi:10.1186/1471-2105-11-583>).")
-    (license license:lgpl3)))
-
 (define-public r-roblox
   (package
     (name "r-roblox")
@@ -21451,13 +21442,13 @@ interface is provided to call C function of the bobyqa implementation (See
 (define-public r-rminer
   (package
     (name "r-rminer")
-    (version "1.4.9")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rminer" version))
        (sha256
-        (base32 "1ary3y00kzvm69j6a5qvxn8pbww3csb51c2rn8h8av032p3jmlg2"))))
+        (base32 "0zcn34k7bj8xcyf9k8fsffrl6ah4bj52qc96pn1nk42cnr0ak74y"))))
     (properties `((upstream-name . "rminer")))
     (build-system r-build-system)
     (arguments
@@ -21480,14 +21471,15 @@ interface is provided to call C function of the bobyqa implementation (See
                              r-cubist
                              r-adabag))
     (home-page "https://cran.r-project.org/package=rminer")
-    (synopsis "Data Mining Classification and Regression Methods")
+    (synopsis "Machine Learning Classification and Regression Methods")
     (description
-     "Facilitates the use of data mining algorithms in classification and regression
-(including time series forecasting) tasks by presenting a short and coherent set
-of functions.  Versions: 1.4.9 / 1.4.8 improved help, several warning and error
-code fixes (more stable version, all examples run correctly); 1.4.7 - improved
-Importance function and examples, minor error fixes; 1.4.6 / 1.4.5 / 1.4.4 new
-automated machine learning (@code{AutoML}) and ensembles, via improved
+     "Facilitates the use of machine learning algorithms in classification and
+regression (including time series forecasting) tasks by presenting a short and
+coherent set of functions.  Versions: 1.5.0 improved mparheuristic function (new
+hyperparameter heuristics); 1.4.9 / 1.4.8 improved help, several warning and
+error code fixes (more stable version, all examples run correctly); 1.4.7 -
+improved Importance function and examples, minor error fixes; 1.4.6 / 1.4.5 /
+1.4.4 new automated machine learning (@code{AutoML}) and ensembles, via improved
 @code{fit()}, @code{mining()} and @code{mparheuristic()} functions, and new
 categorical preprocessing, via improved @code{delevels()} function; 1.4.3 new
 metrics (e.g., macro precision, explained variance), new \"lssvm\" model and
@@ -36717,6 +36709,42 @@ importance of predictors in a linear or generalized linear model, and a couple
 of useful Tcl/Tk widgets.")
     (license license:gpl2+)))
 
+(define-public r-reliar
+  (package
+    (name "r-reliar")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "reliaR" version))
+       (sha256
+        (base32 "11byd2rdj04pcpmm4hq3yzm7r315rv7v4vw8jh9smpvg9glajjjp"))))
+    (properties `((upstream-name . "reliaR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=reliaR")
+    (synopsis "Comprehensive Tools for some Probability Distributions")
+    (description
+     "This package provides a comprehensive suite of utilities for univariate
+continuous probability distributions and reliability models.  Includes functions
+to compute the probability density, cumulative distribution, quantile,
+reliability, and hazard functions, along with random variate generation.  Also
+offers diagnostic and model assessment tools such as Quantile-Quantile (Q-Q) and
+Probability-Probability (P-P) plots, the Kolmogorov-Smirnov goodness-of-fit
+test, and model selection criteria including the Akaike Information Criterion
+(AIC) and Bayesian Information Criterion (BIC).  Currently implements the
+following distributions: Burr X, Chen, Exponential Extension, Exponentiated
+Logistic, Exponentiated Weibull, Exponential Power, Flexible Weibull,
+Generalized Exponential, Gompertz, Generalized Power Weibull, Gumbel, Inverse
+Generalized Exponential, Linear Failure Rate, Log-Gamma, Logistic-Exponential,
+Logistic-Rayleigh, Log-log, Marshall-Olkin Extended Exponential, Marshall-Olkin
+Extended Weibull, and Weibull Extension distributions.  Serves as a valuable
+resource for teaching and research in probability theory, reliability analysis,
+and applied statistical modeling.")
+    (license license:gpl2)))
+
 (define-public r-reliaplotr
   (package
     (name "r-reliaplotr")
@@ -44643,6 +44671,32 @@ then be imported to access the check functions in other packages.")
      "R access to hundreds of millions data series from DBnomics API
 (<https://db.nomics.world/>).")
     (license license:agpl3)))
+
+(define-public r-rdav
+  (package
+    (name "r-rdav")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rdav" version))
+       (sha256
+        (base32 "1ya2xhwdh6r2k5anwpyiqqymm2cs3dbxfsq72wlc9f2zi03ny66g"))))
+    (properties `((upstream-name . "rdav")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2 r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gk-crop/rdav")
+    (synopsis "Simple 'WebDAV' Client")
+    (description
+     "This package provides a simple @code{WebDAV} client that provides functions to
+fetch and send files or folders to servers using the @code{WebDAV} protocol (see
+RFC 4918 <https://www.rfc-editor.org/rfc/rfc4918>).  Only a subset of the
+protocol is implemented (e.g. file locks are not yet supported).")
+    (license license:gpl2)))
 
 (define-public r-rdatasets
   (package

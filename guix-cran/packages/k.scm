@@ -3477,13 +3477,13 @@ earth tides.")
 (define-public r-kissmig
   (package
     (name "r-kissmig")
-    (version "2.0-0")
+    (version "2.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kissmig" version))
        (sha256
-        (base32 "0q91ngvfrmvnbgnrhj3zjr1fyzhj6ma201wdijpmqlsqxszr0lh3"))))
+        (base32 "1nsw8vvavkxy8f9d9fp1xbkv8279irahl2y80bvskacyzik4c7xa"))))
     (properties `((upstream-name . "kissmig")))
     (build-system r-build-system)
     (arguments
@@ -3495,7 +3495,7 @@ earth tides.")
     (description
      "Simulating species migration and range dynamics under stable or changing
 environmental conditions based on a simple, raster-based, deterministic or
-stochastic migration model.  Kissmig runs on binary or quantitative suitability
+stochastic migration model.  KISSMig runs on binary or quantitative suitability
 maps, which are pre-calculated with niche-based habitat suitability models (also
 called ecological niche models (ENMs) or species distribution models (SDMs)).
 Nobis & Normand (2014), <doi:10.1111/ecog.00930>.")

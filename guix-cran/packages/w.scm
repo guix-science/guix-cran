@@ -600,13 +600,13 @@ who has time to waste looking at a cluttered graph?")
 (define-public r-wscdata
   (package
     (name "r-wscdata")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WSCdata" version))
        (sha256
-        (base32 "06ndzb3p0rsb9yn48z92bvhac8walw2l915lwg5vyrgfsf798hqd"))))
+        (base32 "1kc5sdhq9ppgair025sllprcpbcldbflzrnr1g3zxm533xawjnjf"))))
     (properties `((upstream-name . "WSCdata")))
     (build-system r-build-system)
     (arguments
@@ -954,13 +954,13 @@ insert, update, upsert, patch, delete, overwrite, overwrite_schema.")
 (define-public r-writealizer
   (package
     (name "r-writealizer")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "writeAlizer" version))
        (sha256
-        (base32 "0p409wkcplvsigsg40m6z59zq0wgnv9fg4i4pbg1zmkk1802ixqx"))))
+        (base32 "0afkpw19ip59kwmb97s1lrwaj3l07vxwl5g0i4fhlvafpd6cn2hs"))))
     (properties `((upstream-name . "writeAlizer")))
     (build-system r-build-system)
     (arguments

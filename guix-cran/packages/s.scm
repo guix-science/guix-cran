@@ -8078,6 +8078,43 @@ infrastructure of an htmlwidget'.")
 ease and simplicity of the \"sum\" and \"tab\" functions from stata'.")
     (license license:expat)))
 
+(define-public r-sumup
+  (package
+    (name "r-sumup")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sumup" version))
+       (sha256
+        (base32 "03k9r7rdg158g8icrl7v14rqxx1w0im482x1jask4hv1j0gpchxi"))))
+    (properties `((upstream-name . "sumup")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-udpipe
+                             r-topicmodels
+                             r-tidytext
+                             r-tidyr
+                             r-tibble
+                             r-textclean
+                             r-stringr
+                             r-rlang
+                             r-reticulate
+                             r-magrittr
+                             r-jsonlite
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=sumup")
+    (synopsis
+     "Utilizing Automated Text Analysis to Support Interpretation of Narrative Feedback")
+    (description
+     "Combine topic modeling and sentiment analysis to identify individual students
+gaps, and highlight their strengths and weaknesses across predefined competency
+domains and professional activities.")
+    (license license:gpl3+)))
+
 (define-public r-sumsome
   (package
     (name "r-sumsome")
@@ -24890,13 +24927,13 @@ management and exploratory analysis workflows within R'.")
 (define-public r-spichanges
   (package
     (name "r-spichanges")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPIChanges" version))
        (sha256
-        (base32 "13hyrgr30b6vpcj86xls5zns17w0dm7ysias0w5j8g83z8nb4rg0"))))
+        (base32 "1s0q0z9283n0lbh87x3gsl7wxc5xx7byarcj7wsk5ir0rpxkzr39"))))
     (properties `((upstream-name . "SPIChanges")))
     (build-system r-build-system)
     (arguments
@@ -66417,13 +66454,13 @@ Abel Folch-Fortuny, Francisco Arteaga and Alberto Ferrer (2020).")
 (define-public r-scoutbar
   (package
     (name "r-scoutbar")
-    (version "0.2.0")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoutbaR" version))
        (sha256
-        (base32 "1089svc16kysi2w45cyj7qzmi6ws3468mbyvvpv6h3c3n24hl8ll"))))
+        (base32 "19c3wqapgkadvf5mkdqs8k5qcbbqlc1nj7jh221rg93l654nyp9i"))))
     (properties `((upstream-name . "scoutbaR")))
     (build-system r-build-system)
     (arguments
