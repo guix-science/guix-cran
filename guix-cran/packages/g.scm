@@ -32456,13 +32456,13 @@ fraction.  A reference is Yi Niu and Yingwei Peng (2014)
 (define-public r-geecrt
   (package
     (name "r-geecrt")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geeCRT" version))
        (sha256
-        (base32 "1p5s9zsaadkcg4pcchr5shzg9hllxs6f58bp43y6xmhg769pi3yi"))))
+        (base32 "1s87z56pmcw4hq7nqqgby2fxmi7nvp9vh0rssjy4691s2ii8cbb5"))))
     (properties `((upstream-name . "geeCRT")))
     (build-system r-build-system)
     (arguments
@@ -36833,13 +36833,13 @@ Introduction with R', Wood (2006,2017) CRC.")
 (define-public r-gam-hp
   (package
     (name "r-gam-hp")
-    (version "0.0-4")
+    (version "0.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gam.hp" version))
        (sha256
-        (base32 "1sa1r3m5y5hjaidccr7yhmay7jijs54hxa5lq15dqk1vd5n6iif9"))))
+        (base32 "1fsyadf9wlj3v7fgp3jd4ls987ys8h8i9pq0y5vlfbgvviw9s7bz"))))
     (properties `((upstream-name . "gam.hp")))
     (build-system r-build-system)
     (arguments

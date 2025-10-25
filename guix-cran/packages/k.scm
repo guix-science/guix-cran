@@ -342,19 +342,25 @@ and Zamar (2019) <arxiv:1906.08198>).")
 (define-public r-kstmatrix
   (package
     (name "r-kstmatrix")
-    (version "1.3-0")
+    (version "2.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kstMatrix" version))
        (sha256
-        (base32 "0gyyxy29j5id1k1vfl1lxfzadig55cq3nc39y5xwgh67h1s15z25"))))
+        (base32 "0rlf0fp3a6fj4qkvmq0j6mm0pqq1kyazn78ygv98qa7202bhkk5l"))))
     (properties `((upstream-name . "kstMatrix")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-sets r-pks r-igraph))
+    (propagated-inputs (list r-tidyr
+                             r-sets
+                             r-rsvg
+                             r-plotrix
+                             r-pks
+                             r-diagrammersvg
+                             r-diagrammer))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=kstMatrix")
     (synopsis
@@ -3293,13 +3299,13 @@ project homepage.")
 (define-public r-klassr
   (package
     (name "r-klassr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "klassR" version))
        (sha256
-        (base32 "006dpcbakxj56zsjq9dz2p0mj9pnqfb0yziyw6k8aywfacnmajj0"))))
+        (base32 "1a264xx1zswzigg1q2ly8r3fcsbchbs7d3rr1xl9dqrw36bgclas"))))
     (properties `((upstream-name . "klassR")))
     (build-system r-build-system)
     (arguments

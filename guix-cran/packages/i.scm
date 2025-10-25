@@ -16704,13 +16704,13 @@ the reference sources, respectively.")
 (define-public r-ieegio
   (package
     (name "r-ieegio")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieegio" version))
        (sha256
-        (base32 "0q980v593fpa9k3k2f93xrbkly6p7zhysmg8y19zr634x8vdphlb"))))
+        (base32 "12ylwih3sk7z3aqd1vybhgpizlaf5a48wjpc2kkjhm0kv5apw2rd"))))
     (properties `((upstream-name . "ieegio")))
     (build-system r-build-system)
     (arguments
@@ -21326,13 +21326,13 @@ ISBN:978-1-84821-222-0).")
 (define-public r-iar
   (package
     (name "r-iar")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iAR" version))
        (sha256
-        (base32 "01bqrb08w6qajda1mqpjk6ly0qi8nyqrigirbi0a889j4xy2k1rh"))))
+        (base32 "0nlzkmdwxw7vfn5522z01vf4i7vcdybv9ch8mf9q9bn76d6py9lr"))))
     (properties `((upstream-name . "iAR")))
     (build-system r-build-system)
     (arguments

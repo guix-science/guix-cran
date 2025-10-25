@@ -13372,13 +13372,13 @@ technological development and demonstration under Grant Agreement no 602552.")
 (define-public r-corrmeta
   (package
     (name "r-corrmeta")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corrmeta" version))
        (sha256
-        (base32 "1l6gidn63yykgwr4ghw3hd5fb18pqnn8s657hlii8w6v7fzylg66"))))
+        (base32 "1iyg50yfgyfxsfcy2qwxal096ww6xmmy1fry4nj1599n6n2qzjvw"))))
     (properties `((upstream-name . "corrmeta")))
     (build-system r-build-system)
     (arguments

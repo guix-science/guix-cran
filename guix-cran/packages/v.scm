@@ -9144,13 +9144,13 @@ includes simplified formulae, such as @code{mode()}, @code{scatter()},
 (define-public r-vangogh
   (package
     (name "r-vangogh")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vangogh" version))
        (sha256
-        (base32 "1a69cvhnhm3xis5nc1j4jrz0fw66iqz46y7j628nn5a9h4nn98ki"))))
+        (base32 "08y6ikfh9y6msb98hghpxwj1m3c6mdh4nm52sswl333mm8b97dap"))))
     (properties `((upstream-name . "vangogh")))
     (build-system r-build-system)
     (arguments
@@ -9159,11 +9159,12 @@ includes simplified formulae, such as @code{mode()}, @code{scatter()},
     (propagated-inputs (list r-rlang r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cherylisabella/vangogh")
-    (synopsis "Vincent Van Gogh Colour Palette Generator")
+    (synopsis "Vincent van Gogh Colour Palette Generator")
     (description
      "This package provides ggplot2'-compatible colour palettes inspired by Vincent
 van Gogh's paintings.  Each palette contains five colours, manually selected by
-hexadecimal values.")
+hexadecimal values.  Includes tools for assessing colour vision deficiency (CVD)
+accessibility.")
     (license license:expat)))
 
 (define-public r-vandalico

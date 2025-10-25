@@ -5173,13 +5173,13 @@ to igraph'.")
 (define-public r-multinet
   (package
     (name "r-multinet")
-    (version "4.3.1")
+    (version "4.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multinet" version))
        (sha256
-        (base32 "0z26iq48fjn23va2vxca25cbk1254lmlirr47196r57736askvfz"))))
+        (base32 "1narw3j2m0x6znym8shg15if5mb6zrznvang2xz48fcvvb9lbyhn"))))
     (properties `((upstream-name . "multinet")))
     (build-system r-build-system)
     (arguments
@@ -6399,6 +6399,52 @@ package, both methodological and graphical.")
 common files, Continuous Integration ('CI') workflows, or configurations across
 many repositories with a single command.")
     (license license:agpl3+)))
+
+(define-public r-multideggs
+  (package
+    (name "r-multideggs")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multiDEGGs" version))
+       (sha256
+        (base32 "1paminw0gi5j7pn165dznmglp9hlvsk6ar621rbjz71l6salh0x7"))))
+    (properties `((upstream-name . "multiDEGGs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visnetwork
+                             r-shinydashboard
+                             r-shiny
+                             r-sfsmisc
+                             r-rmarkdown
+                             r-pbmcapply
+                             r-pbapply
+                             r-mass
+                             r-magrittr
+                             r-knitr
+                             r-dt))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/elisabettasciacca/multiDEGGs/")
+    (synopsis "Multi-Omic Differentially Expressed Gene-Gene Pairs")
+    (description
+     "This package performs multi-omic differential network analysis by revealing
+differential interactions between molecular entities (genes, proteins,
+transcription factors, or other biomolecules) across the omic datasets provided.
+ For each omic dataset, a differential network is constructed where links
+represent statistically significant differential interactions between entities.
+These networks are then integrated into a comprehensive visualization using
+distinct colors to distinguish interactions from different omic layers.  This
+unified display allows interactive exploration of cross-omic patterns, such as
+differential interactions present at both transcript and protein levels.  For
+each link, users can access differential statistical significance metrics (p
+values or adjusted p values, calculated via robust or traditional linear
+regression with interaction term) and differential regression plots.  The
+methods implemented in this package are described in Sciacca et al. (2023)
+<doi:10.1093/bioinformatics/btad192>.")
+    (license license:gpl3)))
 
 (define-public r-multid
   (package
@@ -47432,33 +47478,6 @@ errors and confident intervals, were provided as outputs.  Zeros will not be
 imputed during analysis.  See Wu et al. (2022) <doi:10.3390/genes13061049>.")
     (license license:gpl2)))
 
-(define-public r-marvel
-  (package
-    (name "r-marvel")
-    (version "1.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MARVEL" version))
-       (sha256
-        (base32 "1zsgj3dbqpfjv2x6xpp75n9jxf04svqffiy9gxlbxkns3clwqz5i"))))
-    (properties `((upstream-name . "MARVEL")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales r-plyr r-matrix r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MARVEL")
-    (synopsis "Revealing Splicing Dynamics at Single-Cell Resolution")
-    (description
-     "Alternative splicing represents an additional and underappreciated layer of
-complexity underlying gene expression profiles.  Nevertheless, there remains
-hitherto a paucity of software to investigate splicing dynamics at single-cell
-resolution.  MARVEL enables splicing analysis of single-cell RNA-sequencing data
-generated from plate- and droplet-based library preparation methods.")
-    (license license:gpl3)))
-
 (define-public r-marssvrhybrid
   (package
     (name "r-marssvrhybrid")
@@ -50232,13 +50251,13 @@ generating fictional state names.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "1.6.1")
+    (version "1.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "1xx65ni4cgnw7qaix0l3w48ndjynisprl5pv50xiqj0rnamziv95"))))
+        (base32 "01lz53k2p14ihs54l2i28smdg271bhxdv8yicxh5l6n0k2w43yza"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (arguments

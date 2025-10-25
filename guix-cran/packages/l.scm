@@ -8909,13 +8909,13 @@ dependencies.")
 (define-public r-liver
   (package
     (name "r-liver")
-    (version "1.23")
+    (version "1.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "liver" version))
        (sha256
-        (base32 "0z8wsnp8apfj5xqkd0k8iwvh2jqfv6qw7hcg9sbsxhdvga3kmkvs"))))
+        (base32 "09mw2326lxw1c04w4361907yhwh5dg9ghpv38gcg4d51ci1r1vam"))))
     (properties `((upstream-name . "liver")))
     (build-system r-build-system)
     (arguments

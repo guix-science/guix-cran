@@ -16403,13 +16403,13 @@ See Thorson et al. (2025) <doi:10.1111/geb.70035> for more details.")
 (define-public r-tinytiger
   (package
     (name "r-tinytiger")
-    (version "0.0.10")
+    (version "0.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytiger" version))
        (sha256
-        (base32 "0fr6m47dnql1xhn5kvmibckys7vkrkylg5aavbvix1f2a831sing"))))
+        (base32 "003499z1jy7k87xcg2m7jjka2b4qs3h3c87bb8x57yxxjqfdm6pi"))))
     (properties `((upstream-name . "tinytiger")))
     (build-system r-build-system)
     (arguments
@@ -19460,13 +19460,13 @@ with any LLM provider that offers chat completion.")
 (define-public r-tidypopgen
   (package
     (name "r-tidypopgen")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidypopgen" version))
        (sha256
-        (base32 "098bwg8nxlp5rbrripasydy78fgrd1kaings84x4paxzryv6pb3q"))))
+        (base32 "10c6mayb6qf3yl710nlyq7lnyl5yn5lmf3skz7lax76770qf2y9x"))))
     (properties `((upstream-name . "tidypopgen")))
     (build-system r-build-system)
     (arguments
@@ -26845,13 +26845,13 @@ de-escalated only if an unacceptable level of toxicity is experienced.")
 (define-public r-tepr
   (package
     (name "r-tepr")
-    (version "1.1.10")
+    (version "1.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tepr" version))
        (sha256
-        (base32 "105abmmjl1a3m6cjd7jic0zalhsijnvbxy7fxhqxwpc5q9694lqq"))))
+        (base32 "1zl72phqpxsk6lkwhwcnh6rk3sywsff61inxlsqcnqird15h0vaq"))))
     (properties `((upstream-name . "tepr")))
     (build-system r-build-system)
     (arguments

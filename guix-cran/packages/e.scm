@@ -1288,13 +1288,13 @@ package.")
 (define-public r-extrasuperpower
   (package
     (name "r-extrasuperpower")
-    (version "1.5.5")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extraSuperpower" version))
        (sha256
-        (base32 "08i09llcs1s6wzzjhfgn0ygz9r8ixyg78rg8jl3szfpgxzzvxv71"))))
+        (base32 "1h5bmf9kda7s4sfwfpsikd7r18rcvq9g4iaskpqy0x2ygrbrpbf3"))))
     (properties `((upstream-name . "extraSuperpower")))
     (build-system r-build-system)
     (arguments
@@ -7106,13 +7106,13 @@ feature.")
 (define-public r-etas
   (package
     (name "r-etas")
-    (version "0.6.1.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ETAS" version))
        (sha256
-        (base32 "09nmajzjdrbmq5bh5zg53vmvv9580gi8v8g92ipzzih7a1xvrcgh"))))
+        (base32 "0n9kqiklmgcbq5l38a0kcqvnkkfk8278yfmki3k3zly48d89z0ak"))))
     (properties `((upstream-name . "ETAS")))
     (build-system r-build-system)
     (arguments
@@ -7133,9 +7133,9 @@ feature.")
 earthquake catalogs using a stochastic declustering approach.  The ETAS model is
 a spatio-temporal marked point process model and a special case of the Hawkes
 process.  The package is based on a Fortran program by Jiancang Zhuang
-(available at <http://bemlar.ism.ac.jp/zhuang/software.html>), which is modified
-and translated into C++ and C such that it can be called from R. Parallel
-computing with @code{OpenMP} is possible on supported platforms.")
+(available at <https://bemlar.ism.ac.jp/zhuang/software.html>), which is
+modified and translated into C++ and C such that it can be called from R.
+Parallel computing with @code{OpenMP} is possible on supported platforms.")
     (license license:gpl2+)))
 
 (define-public r-etable

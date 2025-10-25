@@ -4576,13 +4576,13 @@ documentation.")
 (define-public r-rtestim
   (package
     (name "r-rtestim")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtestim" version))
        (sha256
-        (base32 "0psvdmd6f878n3qq39ddsnyd5f200f22vsshi8hnwr581kj73qpl"))))
+        (base32 "078jy5fncvws2g31g4nfgnbcdqm9r45pfqy5kybxy31h4sbjx1qr"))))
     (properties `((upstream-name . "rtestim")))
     (build-system r-build-system)
     (arguments
@@ -42158,13 +42158,13 @@ in a form directly compatible with the rgl package.")
 (define-public r-readnsx
   (package
     (name "r-readnsx")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readNSx" version))
        (sha256
-        (base32 "1fl4lr6yax8nn06pna4mcxjfc4zjf42whaslxvvy40008wm2bkqj"))))
+        (base32 "0ggg4l13x8j8l358snjwmw1aivwzxf30n8r9xpj0025z2swwg8iz"))))
     (properties `((upstream-name . "readNSx")))
     (build-system r-build-system)
     (arguments
@@ -44964,13 +44964,13 @@ into a markdown version of the package reference manual.")
 (define-public r-rd2d
   (package
     (name "r-rd2d")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rd2d" version))
        (sha256
-        (base32 "1zyn8pmg9wwi04iajlc33ldjsaknph0znwdak3sf1wdcx7nd4xxj"))))
+        (base32 "15l0l7j9x2vjgx9bxysriwzf76bqm9csacz7w67h9n2p5xsmnll8"))))
     (properties `((upstream-name . "rd2d")))
     (build-system r-build-system)
     (arguments

@@ -3218,13 +3218,13 @@ upon publication.")
 (define-public r-dteassurance
   (package
     (name "r-dteassurance")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DTEAssurance" version))
        (sha256
-        (base32 "0sq1ffvzgl31qwm9ahv47ca6prb49la5h1zmsrc6ybb2ymi12nql"))))
+        (base32 "1s24kanx7khpaw42a8xdssysrmhj8z3n8v5apgjk7lg06dax6qvb"))))
     (properties `((upstream-name . "DTEAssurance")))
     (build-system r-build-system)
     (arguments
@@ -4165,6 +4165,43 @@ repository under a uniform model.  Opal is such a central repository.  It can
 import, process, validate, query, analyze, report, and export data.  Opal is the
 reference implementation of the @code{DataSHIELD} infrastructure.")
     (license license:lgpl2.1+)))
+
+(define-public r-dsmsearch
+  (package
+    (name "r-dsmsearch")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dsmSearch" version))
+       (sha256
+        (base32 "01m12mwwi21j3pw01i7gca9rwiv8kfb4m386fpp9h5a5ylq58vxw"))))
+    (properties `((upstream-name . "dsmSearch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-stringr
+                             r-sp
+                             r-sf
+                             r-nominatimlite
+                             r-lidr
+                             r-imager
+                             r-httr2
+                             r-dplyr
+                             r-cli
+                             r-aws-s3))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=dsmSearch")
+    (synopsis "DSM and LiDAR Downloader")
+    (description
+     "This package provides a collection of functions to search and download Digital
+Surface Model (DSM) and Light Detection and Ranging (@code{LiDAR}) data via
+APIs, including @code{OpenTopography}
+<https://portal.opentopography.org/apidocs/> and TNMAccess
+<https://apps.nationalmap.gov/tnmaccess/#/>, and canopy tree height data.")
+    (license license:gpl3)))
 
 (define-public r-dsmolgenisarmadillo
   (package

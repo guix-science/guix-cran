@@ -26707,13 +26707,13 @@ Sampler) to generate Markov chain Monte Carlo samples of parameters.")
 (define-public r-bayesmove
   (package
     (name "r-bayesmove")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesmove" version))
        (sha256
-        (base32 "1l6i8qh7l53x0133gjc5jvri4vnnfviq9y3mcr1kfa5j84gfnmsf"))))
+        (base32 "03zqc8hv6sx11020bz2501dxd485cq02rxzp494409x7yqdjkkgk"))))
     (properties `((upstream-name . "bayesmove")))
     (build-system r-build-system)
     (arguments
@@ -26737,7 +26737,8 @@ Sampler) to generate Markov chain Monte Carlo samples of parameters.")
                              r-future
                              r-furrr
                              r-dygraphs
-                             r-dplyr))
+                             r-dplyr
+                             r-datamods))
     (home-page "https://github.com/joshcullen/bayesmove")
     (synopsis "Non-Parametric Bayesian Analyses of Animal Movement")
     (description
@@ -26746,8 +26747,8 @@ biologging data using non-parametric Bayesian methods.  This includes features
 for pre- processing and analysis of data, as well as the visualization of
 results from the models.  This framework does not rely on standard parametric
 density functions, which provides flexibility during model fitting.  Further
-details regarding part of this framework can be found in Cullen et al. (2021)
-<doi:10.1101/2020.11.05.369702>.")
+details regarding part of this framework can be found in Cullen et al. (2022)
+<doi:10.1111/2041-210X.13745>.")
     (license license:gpl3)))
 
 (define-public r-bayesmortalityplus
@@ -31075,6 +31076,46 @@ Sciences grant 1106891.  Any opinions, findings, and conclusions or
 recommendations expressed in this material are those of the author(s) and do not
 necessarily reflect the views of the National Science Foundation.")
     (license license:gpl3+)))
+
+(define-public r-barulho
+  (package
+    (name "r-barulho")
+    (version "2.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "baRulho" version))
+       (sha256
+        (base32 "0zmkl6yb0gy4161ggm652jnl4n0la3m3parsgsa6x32d64s1ck62"))))
+    (properties `((upstream-name . "baRulho")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-warbler
+                             r-viridis
+                             r-tuner
+                             r-sim-diffproc
+                             r-seewave
+                             r-rlang
+                             r-png
+                             r-ohun
+                             r-fftw
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/baRulho")
+    (synopsis "Quantifying (Animal) Sound Degradation")
+    (description
+     "Intended to facilitate acoustic analysis of (animal) sound propagation
+experiments, which typically aim to quantify changes in signal structure when
+transmitted in a given habitat by broadcasting and re-recording animal sounds at
+increasing distances.  The package offers a workflow with functions to prepare
+the data set for analysis as well as to calculate and visualize several
+degradation metrics, including blur ratio, signal-to-noise ratio, excess
+attenuation and envelope correlation among others (Dabelsteen et al 1993
+<doi:10.1121/1.406682>).")
+    (license license:gpl2+)))
 
 (define-public r-bartxviz
   (package

@@ -13752,37 +13752,25 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
 (define-public r-stepreg
   (package
     (name "r-stepreg")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StepReg" version))
        (sha256
-        (base32 "0n26kxqqdkgsf3zznbk1bbrbq2vm9m6b8gn90ca5kbm7bsgjh5vd"))))
+        (base32 "10cfbikz9zm6mq5rzz51fylmxih1sy9b0r0qlpb393rqyp7cv2sv"))))
     (properties `((upstream-name . "StepReg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-survival
+    (propagated-inputs (list r-survival
                              r-survauc
-                             r-summarytools
-                             r-stringr
-                             r-shinythemes
-                             r-shinyjs
-                             r-shinycssloaders
-                             r-shiny
-                             r-rmarkdown
                              r-proc
                              r-mass
                              r-ggrepel
                              r-ggplot2
-                             r-ggcorrplot
-                             r-flextable
-                             r-dt
-                             r-dplyr
-                             r-cowplot))
+                             r-flextable))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=StepReg")
     (synopsis "Stepwise Regression Analysis")
@@ -13797,8 +13785,8 @@ selection processes, and export results in various formats. @code{StepReg}
 offers a data-splitting option to address potential issues with invalid
 statistical inference and a randomized forward selection option to avoid
 overfitting.  We validated @code{StepReg's} accuracy using public datasets
-within the SAS software environment.  Additionally, @code{StepReg} features an
-interactive Shiny application to enhance usability and accessibility.")
+within the SAS software environment.  For an interactive web interface, users
+can install the companion @code{StepRegShiny} package.")
     (license license:expat)))
 
 (define-public r-stepr
@@ -24134,13 +24122,13 @@ of response trajectories.")
 (define-public r-splineplot
   (package
     (name "r-splineplot")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splineplot" version))
        (sha256
-        (base32 "0jwggylq22mhl5xl9h83r4lbihdhax9rp9xh4h3fg99blj6svl8k"))))
+        (base32 "1wqsn8j4vbcnm4l0lgyfgj5xm5r55ca04ngf6ac3lz2445vwbl31"))))
     (properties `((upstream-name . "splineplot")))
     (build-system r-build-system)
     (arguments
@@ -40539,42 +40527,6 @@ robustly using a template matching approach, as described by Ekstrom (2004)
 <https://nipr.repo.nii.ac.jp/records/2496>, and behaviourly informed constraints
 (step-selection).")
     (license license:agpl3)))
-
-(define-public r-skyscaper
-  (package
-    (name "r-skyscaper")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "skyscapeR" version))
-       (sha256
-        (base32 "1x3s003wdmnf0h1k3gl6cvd35g516y7v2yzahr3wxk2np832kjli"))))
-    (properties `((upstream-name . "skyscapeR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-swephr
-                             r-rootsolve
-                             r-rcolorbrewer
-                             r-png
-                             r-plotrix
-                             r-oce
-                             r-numderiv
-                             r-mess
-                             r-httr
-                             r-foreach
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=skyscapeR")
-    (synopsis "Data Analysis and Visualization for Skyscape Archaeology")
-    (description
-     "Data reduction, visualization and statistical analysis of measurements of
-orientation of archaeological structures, following Silva (2020)
-<doi:10.1016/j.jas.2020.105138>.")
-    (license license:gpl2+)))
 
 (define-public r-skylight
   (package
