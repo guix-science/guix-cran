@@ -2399,6 +2399,39 @@ or future looks.  Finally, it offers various options for adjusted p-values,
 including graphical and gatekeeping procedures.")
     (license license:gpl2+)))
 
+(define-public r-lrqvb
+  (package
+    (name "r-lrqvb")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LRQVB" version))
+       (sha256
+        (base32 "14vfakfrdbwafqnb03czdgw70lpclj4h2vjddnrn0nlfsjrh5pqf"))))
+    (properties `((upstream-name . "LRQVB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-mass r-lava r-glmnet))
+    (home-page "https://cran.r-project.org/package=LRQVB")
+    (synopsis
+     "Low Rank Correction Quantile Variational Bayesian Algorithm for Multi-Source Heterogeneous Models")
+    (description
+     "This package provides a Low Rank Correction Variational Bayesian algorithm for
+high-dimensional multi-source heterogeneous quantile linear models.  More
+details have been written up in a paper submitted to the journal Statistics in
+Medicine, and the details of variational Bayesian methods can be found in Ray
+and Szabo (2021) <doi:10.1080/01621459.2020.1847121>.  It simultaneously
+performs parameter estimation and variable selection.  The algorithm supports
+two model settings: (1) local models, where variable selection is only applied
+to homogeneous coefficients, and (2) global models, where variable selection is
+also performed on heterogeneous coefficients.  Two forms of parameter estimation
+are output: one is the standard variational Bayesian estimation, and the other
+is the variational Bayesian estimation corrected with low-rank adjustment.")
+    (license license:expat)))
+
 (define-public r-lrmf3
   (package
     (name "r-lrmf3")
@@ -18130,6 +18163,45 @@ covariances, and parameter estimates.  The derivation of the methodology
 employed in this package can be obtained from BlÃ¶tner (2023)
 <doi:10.31234/osf.io/dy79z>.")
     (license license:gpl3)))
+
+(define-public r-latbias
+  (package
+    (name "r-latbias")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "latbias" version))
+       (sha256
+        (base32 "1irvw14g8hyi64nfa3y9k875n6gsb63yl04zk1yznm3kak4ppi1q"))))
+    (properties `((upstream-name . "latbias")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units
+                             r-tidyr
+                             r-terra
+                             r-sp
+                             r-sf
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-psych
+                             r-ggplot2
+                             r-geosphere
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pierredenelle/latbias")
+    (synopsis "Calculate the Latitudinal Bias Index")
+    (description
+     "Studies that report shifts in species distributions may be biased by the shape
+of the study area.  The main functionality of this package is to calculate the
+Latitudinal Bias Index (LBI) for any given shape.  The LBI is bounded between +1
+(100% probability to exclusively record latitudinal shifts, i.e., range shifts
+data sampled along a perfectly South-North oriented straight line) and -1 (100%
+probability to exclusively record longitudinal shifts, i.e., range shifts data
+sampled along a perfectly East-West oriented straight line).")
+    (license license:gpl2+)))
 
 (define-public r-latamverse
   (package

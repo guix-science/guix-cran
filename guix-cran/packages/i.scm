@@ -8745,6 +8745,31 @@ inconsistencies).  This suite of tables is useful for testing with packages that
 focus on data validation and data documentation.")
     (license license:expat)))
 
+(define-public r-inteli
+  (package
+    (name "r-inteli")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inteli" version))
+       (sha256
+        (base32 "1vfgnghlmv2c618b6n65h78ph9wmvp6jq1g195fk2qk8y2q4vjnf"))))
+    (properties `((upstream-name . "inteli")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=inteli")
+    (synopsis
+     "Interval Estimation by Likelihoodist (LI) Compared to Frequentist (CI)")
+    (description
+     "Parameter estimation via likelihood interval (LI) compared to traditional method
+(CI).  This is the expanded version for LBI'- and wnl'-package, formulated by
+Kyun-Seop Bae <k@@acr.kr>.")
+    (license license:expat)))
+
 (define-public r-integratedjm
   (package
     (name "r-integratedjm")
@@ -14191,6 +14216,35 @@ Michailoff, Meyer, Power, Michaelis-Menten and Wykoff non linear models using
 algorithm of Huang et al. (1992) <doi:10.1139/x92-172> and Zeide et al. (1993)
 <doi:10.1093/forestscience/39.3.594>.")
     (license license:gpl3)))
+
+(define-public r-imfapi
+  (package
+    (name "r-imfapi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imfapi" version))
+       (sha256
+        (base32 "1d5hwpa1235qqm1bp5fwzsw35ia5wwc64b4kn58wckj6c4adfgrd"))))
+    (properties `((upstream-name . "imfapi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://teal-insights.github.io/r-imfapi/")
+    (synopsis "Econdataverse 'IMF Data API' Client")
+    (description
+     "This package provides user-friendly functions for programmatic access to
+macroeconomic data from the International Monetary Fund's SDMX 3.0 IMF Data API
+<https://data.imf.org/en/Resource-Pages/IMF-API>.")
+    (license license:expat)))
 
 (define-public r-imf-data
   (package

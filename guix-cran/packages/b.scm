@@ -3186,13 +3186,13 @@ use this package, see An et al. (2022) <doi:10.18637/jss.v101.i11>.")
 (define-public r-bskyr
   (package
     (name "r-bskyr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bskyr" version))
        (sha256
-        (base32 "1iy464ibmg2qh6rscmkq2ylb5l0h8nd13r8g3cipkxy9d108iw8s"))))
+        (base32 "17xanbqa9h168fd1wry537yd422dldn897rn8qdrfkflf07skx7i"))))
     (properties `((upstream-name . "bskyr")))
     (build-system r-build-system)
     (arguments
@@ -3213,6 +3213,7 @@ use this package, see An et al. (2022) <doi:10.18637/jss.v101.i11>.")
                              r-dplyr
                              r-curl
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/christopherkenny/bskyr")
     (synopsis "Interact with 'Bluesky' Social")
     (description

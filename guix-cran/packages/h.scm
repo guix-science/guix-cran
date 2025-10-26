@@ -12038,6 +12038,33 @@ on many jumps in nonparametric panel regression models\". @code{arXiv} preprint
 <doi:10.48550/@code{arXiv.2312.01162>}.")
     (license license:expat)))
 
+(define-public r-hdtg
+  (package
+    (name "r-hdtg")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdtg" version))
+       (sha256
+        (base32 "0kb5i2vw1g3ms12fq1jk35yba19sign86qph67rba00ym9393cd5"))))
+    (properties `((upstream-name . "hdtg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-rcppparallel r-rcppeigen r-rcpp r-mgcv))
+    (home-page "https://cran.r-project.org/package=hdtg")
+    (synopsis
+     "Generate Samples from Multivariate Truncated Normal Distributions")
+    (description
+     "Efficient sampling from high-dimensional truncated Gaussian distributions, or
+multivariate truncated normal (MTN).  Techniques include zigzag Hamiltonian
+Monte Carlo as in Akihiko Nishimura, Zhenyu Zhang and Marc A. Suchard (2024)
+<doi:10.1080/01621459.2024.2395587>, and harmonic Monte in Ari Pakman and Liam
+Paninski (2014) <doi:10.1080/10618600.2013.788448>.")
+    (license license:expat)))
+
 (define-public r-hdsvm
   (package
     (name "r-hdsvm")

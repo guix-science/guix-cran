@@ -19305,6 +19305,33 @@ inspired by Pythons @code{ConfigParser} module) and the keys can be read, where
 variables.")
     (license license:gpl3)))
 
+(define-public r-confidencesim
+  (package
+    (name "r-confidencesim")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "confidenceSim" version))
+       (sha256
+        (base32 "1ida6xbalx9ny8j2dfdz7y5v5iy1zki1x1h296gg657nn42j2c6f"))))
+    (properties `((upstream-name . "confidenceSim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rpact r-genodds r-confidencecurves))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=confidenceSim")
+    (synopsis
+     "Highly Customizable, Parallelized Simulations of Frequentist Confidence Clinical Trials")
+    (description
+     "Simulate one or many frequentist confidence clinical trials based on a specified
+set of parameters.  From a two-arm, single-stage trial to a perpetually run
+Adaptive Platform Trial, this package offers vast flexibility to customize your
+trial and observe operational characterisitics over thousands of instances.")
+    (license license:expat)))
+
 (define-public r-confidenceellipse
   (package
     (name "r-confidenceellipse")

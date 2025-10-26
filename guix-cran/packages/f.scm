@@ -9662,6 +9662,35 @@ of low-pass filter) are also suggested by Winter (2009)
 <doi:10.1002/9780470549148>.")
     (license license:gpl2+)))
 
+(define-public r-forcausality
+  (package
+    (name "r-forcausality")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ForCausality" version))
+       (sha256
+        (base32 "0d6ji1b5nlcn9w66rsjzj06fiz7hsiaf32kjkwfhcjknn46pwzcr"))))
+    (properties `((upstream-name . "ForCausality")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Toby-codigos/ForCausality")
+    (synopsis "Curated Collection of 'Causal Inference' Datasets and Tools")
+    (description
+     "This package provides a comprehensive set of datasets and tools for causal
+inference research.  The package includes data from clinical trials, cancer
+studies, epidemiological surveys, environmental exposures, and health-related
+observational studies.  Designed to facilitate causal analysis, risk assessment,
+and advanced statistical modeling, it leverages datasets from packages such as
+@code{causalOT}', survival', @code{causalPAF}', evident', melt', and sanon'.
+The package is inspired by the foundational work of Pearl (2009)
+<doi:10.1017/CBO9780511803161> on causal inference frameworks.")
+    (license license:gpl3)))
+
 (define-public r-forams
   (package
     (name "r-forams")
@@ -18406,6 +18435,44 @@ extended to continuous design variables as described in Langsrud et al. (2007)
 <doi:10.1080/02664760701594246>.  This means that the method is invariant to
 scale changes and that common pitfalls are avoided.")
     (license license:gpl2)))
+
+(define-public r-ffiec
+  (package
+    (name "r-ffiec")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ffiec" version))
+       (sha256
+        (base32 "10574z7r41ifd4qy8h117w1swnbxfmh2ad3fy33y8345if2g90jy"))))
+    (properties `((upstream-name . "ffiec")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/ketchbrookanalytics/ffiec")
+    (synopsis
+     "R Interface to 'FFIEC Central Data Repository REST API' Service")
+    (description
+     "This package provides a simplified interface to the Central Data Repository REST
+API service made available by the United States Federal Financial Institutions
+Examination Council ('FFIEC').  Contains functions to retrieve reports of
+Condition and Income (Call Reports) and Uniform Bank Performance Reports
+('UBPR') in list or tidy data frame format for most FDIC insured institutions.
+See
+<https://cdr.ffiec.gov/public/Files/SIS611_-_Retrieve_Public_Data_via_Web_Service.pdf>
+for the official REST API documentation published by the FFIEC'.")
+    (license license:expat)))
 
 (define-public r-ffdownload
   (package

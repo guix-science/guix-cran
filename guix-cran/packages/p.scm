@@ -25474,67 +25474,6 @@ time bucket, daily, weekly or monthly, and any granularity level, product or
 group of products.")
     (license license:expat)))
 
-(define-public r-planningml
-  (package
-    (name "r-planningml")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "planningML" version))
-       (sha256
-        (base32 "1s9lf43kkiciqkrcyq9icxdqfs8a1za60pwpbxnrdsa7gzf76i29"))))
-    (properties `((upstream-name . "planningML")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-proc
-                             r-mess
-                             r-matrix
-                             r-lubridate
-                             r-glmnet
-                             r-dplyr
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=planningML")
-    (synopsis
-     "Sample Size Calculator for Machine Learning Applications in Healthcare")
-    (description
-     "Advances in automated document classification has led to identifying massive
-numbers of clinical concepts from handwritten clinical notes.  These high
-dimensional clinical concepts can serve as highly informative predictors in
-building classification algorithms for identifying patients with different
-clinical conditions, commonly referred to as patient phenotyping.  However, from
-a planning perspective, it is critical to ensure that enough data is available
-for the phenotyping algorithm to obtain a desired classification performance.
-This challenge in sample size planning is further exacerbated by the high
-dimension of the feature space and the inherent imbalance of the response class.
- Currently available sample size planning methods can be categorized into: (i)
-model-based approaches that predict the sample size required for achieving a
-desired accuracy using a linear machine learning classifier and (ii) learning
-curve-based approaches (Figueroa et al. (2012) <doi:10.1186/1472-6947-12-8>)
-that fit an inverse power law curve to pilot data to extrapolate performance.
-We develop model-based approaches for imbalanced data with correlated features,
-deriving sample size formulas for performance metrics that are sensitive to
-class imbalance such as Area Under the receiver operating characteristic Curve
-(AUC) and Matthews Correlation Coefficient (MCC).  This is done using a two-step
-approach where we first perform feature selection using the innovated High
-Criticism thresholding method (Hall and Jin (2010) <doi:10.1214/09-AOS764>),
-then determine the sample size by optimizing the two performance metrics.
-Further, we develop software in the form of an R package named @code{planningML}
-and an R Shiny app to facilitate the convenient implementation of the developed
-model-based approaches and learning curve approaches for imbalanced data.  We
-apply our methods to the problem of phenotyping rare outcomes using the
-MIMIC-III electronic health record database.  We show that our developed methods
-which relate training data size and performance on AUC and MCC, can predict the
-true or observed performance from linear ML classifiers such as LASSO and SVM at
-different training data sizes.  Therefore, in high-dimensional classification
-analysis with imbalanced data and correlated features, our approach can
-efficiently and accurately determine the sample size needed for machine-learning
-based classification.")
-    (license license:gpl2)))
-
 (define-public r-planets
   (package
     (name "r-planets")
@@ -43616,6 +43555,42 @@ familiar arguments such as fmt, estimate, statistic, vcov, conf_level, stars,
 coef_map, coef_omit, coef_rename, gof_map, and gof_omit from modelsummary to
 clean the table, and additionally, add a row for the mean of the dependent
 variable without external manipulation.")
+    (license license:gpl3+)))
+
+(define-public r-panelselect
+  (package
+    (name "r-panelselect")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PanelSelect" version))
+       (sha256
+        (base32 "110h8qy09a776x1rl12fvl5ppwwn283wfqi58gfk5zwhw5q2xdkk"))))
+    (properties `((upstream-name . "PanelSelect")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-statmod
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pbv
+                             r-pbivnorm
+                             r-panelcount
+                             r-maxlik
+                             r-mass
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PanelSelect")
+    (synopsis "Panel Sample Selection Models")
+    (description
+     "Extends the Heckman selection framework to panel data with individual random
+effects.  The first stage models participation via a panel Probit specification,
+while the second stage can take a panel linear, Probit, Poisson, or Poisson
+log-normal form.  Model details are provided in Bailey and Peng (2025)
+<doi:10.2139/ssrn.5475626> and Peng and Van den Bulte (2024)
+<doi:10.1287/mnsc.2019.01897>.")
     (license license:gpl3+)))
 
 (define-public r-panelr

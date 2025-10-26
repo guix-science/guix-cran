@@ -2172,25 +2172,31 @@ segmentation (Luz, 2012) <doi:10.1145/2328967.2328970> and classification (Luz,
 (define-public r-vntrs
   (package
     (name "r-vntrs")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vntrs" version))
        (sha256
-        (base32 "1068l5p7qqjp69yzp72zp975cr2zpnfbnik6h109lhw554m4ckll"))))
+        (base32 "16w5lcbwfi97h99mkqji12iwrc17vvin8hhvlsb5mmzz8ykiln8x"))))
     (properties `((upstream-name . "vntrs")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-trust))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-oeli r-checkmate))
     (home-page "https://loelschlaeger.de/vntrs/")
     (synopsis "Variable Neighborhood Trust Region Search")
     (description
-     "An implementation of the variable neighborhood trust region algorithm Bierlaire
-et al. (2009) \"A Heuristic for Nonlinear Global Optimization\"
-<doi:10.1287/ijoc.1090.0343>.")
+     "An algorithm for nonlinear global optimization based on the variable
+neighbourhood trust region search (VNTRS) algorithm proposed by Bierlaire et al.
+(2009) \"A Heuristic for Nonlinear Global Optimization\"
+<doi:10.1287/ijoc.1090.0343>.  The algorithm combines variable neighbourhood
+exploration with a trust-region framework to efficiently search the solution
+space.  It can terminate a local search early if the iterates are converging
+toward a previously visited local optimum or if further improvement within the
+current region is unlikely.  In addition to global optimization, the algorithm
+can also be applied to identify multiple local optima.")
     (license license:gpl3)))
 
 (define-public r-vmtools

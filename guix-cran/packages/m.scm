@@ -14681,45 +14681,6 @@ forest and variable importance functions.  Also modules and a shiny app for
 conditional inference trees.")
     (license license:gpl2+)))
 
-(define-public r-moranajp
-  (package
-    (name "r-moranajp")
-    (version "0.9.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "moranajp" version))
-       (sha256
-        (base32 "1vzid1j09s7v20y8bpfrl7xcz8lf8f5dg5npw3iz2ibvp2w5vjl7"))))
-    (properties `((upstream-name . "moranajp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringi
-                             r-rvest
-                             r-rlang
-                             r-purrr
-                             r-igraph
-                             r-ggraph
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/matutosi/moranajp")
-    (synopsis "Morphological Analysis for Japanese")
-    (description
-     "Supports morphological analysis for Japanese by using @code{MeCab}
-<https://taku910.github.io/mecab/>, Sudachi
-<https://github.com/@code{WorksApplications/Sudachi>}, Chamame
-<https://chamame.ninjal.ac.jp/>, or Ginza
-<https://github.com/megagonlabs/ginza>.  Can input a data.frame and obtain all
-results of @code{MeCab} and the row number of the original data.frame as a text
-id.")
-    (license license:expat)))
-
 (define-public r-moqa
   (package
     (name "r-moqa")
@@ -27222,13 +27183,13 @@ distributions.")
 (define-public r-mintyr
   (package
     (name "r-mintyr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mintyr" version))
        (sha256
-        (base32 "1qwbiq9ryacracgav4is443922ghsfslmfagklxhqi6qcnin9150"))))
+        (base32 "0sdsqnddiqfg22d0jdpr2f8vm285xqr544blqjcdhjdi549ilvza"))))
     (properties `((upstream-name . "mintyr")))
     (build-system r-build-system)
     (arguments

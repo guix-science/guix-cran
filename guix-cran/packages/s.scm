@@ -10644,13 +10644,13 @@ package vignette.")
 (define-public r-streamcattools
   (package
     (name "r-streamcattools")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StreamCatTools" version))
        (sha256
-        (base32 "0v5ny1b8b3cnk87fpdyg05b6jnx60ndz0cxcyxkhxxyiwmhw6wcb"))))
+        (base32 "0rbxzq38vkwksq19w6a9ahwl69sx2nkrsdarzy5fm9fzyinz2s5w"))))
     (properties `((upstream-name . "StreamCatTools")))
     (build-system r-build-system)
     (arguments
@@ -35884,6 +35884,32 @@ computing the classification error and classification instability of a
 classification procedure.")
     (license license:gpl3)))
 
+(define-public r-snirh-lab
+  (package
+    (name "r-snirh-lab")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "snirh.lab" version))
+       (sha256
+        (base32 "16057fnlx2h6cchrylaw8g886qjq5xy4r5j7g7lmwmaizw4q59pq"))))
+    (properties `((upstream-name . "snirh.lab")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table r-cli))
+    (home-page "https://github.com/lpereira-ue/snirh.lab")
+    (synopsis "Convert Laboratory Water-Quality Data to 'SNIRH' Import Format")
+    (description
+     "Convert laboratory data to the Portuguese Information System for Water Resources
+SNIRH file format.  SNIRH is Portugal's national water resources information
+system <https://snirh.apambiente.pt/>.  The package validates station data,
+converts parameters and units, and generates compliant output files for data
+submission.")
+    (license license:expat)))
+
 (define-public r-snha
   (package
     (name "r-snha")
@@ -39225,6 +39251,39 @@ with continuous covariates.  See also Hansen (1997) <doi:10.2307/2411186>,
 Butler & King (2004) <doi:10.1086/426002>, Hansen et al. (2008)
 <doi:10.1111/j.1558-5646.2008.00412.x>.")
     (license license:gpl2)))
+
+(define-public r-slotlim
+  (package
+    (name "r-slotlim")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SlotLim" version))
+       (sha256
+        (base32 "11yr03ghcmcpqlv64iaw4nl06f39as3f894nhjhbbp230s11x4ns"))))
+    (properties `((upstream-name . "SlotLim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-patchwork r-ggplot2))
+    (home-page "https://cran.r-project.org/package=SlotLim")
+    (synopsis "Catch Advice for Fisheries Managed by Harvest Slot Limits")
+    (description
+     "Catch advice for data-limited vertebrate and invertebrate fisheries managed by
+harvest slot limits using the @code{SlotLim} harvest control rule.  The package
+accompanies the manuscript \"@code{SlotLim}: catch advice for data-limited
+vertebrate and invertebrate fisheries managed by harvest slot limits\" (Pritchard
+et al., in prep).  Minimum data requirements: at least two consecutive years of
+catch data, lengthâfrequency distributions, and biomass or abundance indices
+(all from fishery-dependent sources); species-specific growth rate parameters
+(either von Bertalanffy, Gompertz, or Schnute); and either the natural mortality
+rate ('M') or the maximum observed age ('tmax'), from which M is estimated.  The
+following functions have optional plotting capabilities that require ggplot2
+installed: @code{prop_target()}, @code{TBA()}, @code{SAM()},
+@code{catch_advice()}, @code{catch_adjust()}, and @code{slotlim_once()}.")
+    (license license:gpl3)))
 
 (define-public r-slos
   (package
@@ -66373,6 +66432,40 @@ in SzÃ©kely and Rizzo (2004).")
 other supply chain performance variables.  Marchena Marlene (2010)
 <@code{arXiv:1009.3977>}.")
     (license license:gpl3)))
+
+(define-public r-scov
+  (package
+    (name "r-scov")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scov" version))
+       (sha256
+        (base32 "1w7qpkxh4ncvcv30a01pm8fbf68n8wsf6knwx4xkp0m6vrfmv3lg"))))
+    (properties `((upstream-name . "scov")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-quadprog
+                             r-purrr
+                             r-pracma
+                             r-ohenery
+                             r-mvtnorm
+                             r-missmda
+                             r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=scov")
+    (synopsis
+     "Structured Covariances Estimators for Pairwise and Spatial Covariates")
+    (description
+     "This package implements estimators for structured covariance matrices in the
+presence of pairwise and spatial covariates.  Metodiev, Perrot-DockÃ¨s, Ouadah,
+Fosdick, Robin, Latouche & Raftery (2025)
+<doi:10.48550/@code{arXiv.2411.04520>}.")
+    (license license:gpl3+)))
 
 (define-public r-scouter
   (package

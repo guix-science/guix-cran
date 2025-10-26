@@ -32844,40 +32844,6 @@ respective gold data set that provides information on which records match based
 on id.")
     (license license:cc0)))
 
-(define-public r-restatis
-  (package
-    (name "r-restatis")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "restatis" version))
-       (sha256
-        (base32 "1ris3c3j51mb4psnwb0q937fhvd5sh7i4nvl91bxh8aq275p7xhd"))))
-    (properties `((upstream-name . "restatis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-tibble
-                             r-readr
-                             r-purrr
-                             r-memoise
-                             r-httr2
-                             r-askpass))
-    (native-inputs (list r-knitr))
-    (home-page "https://correlaid.github.io/restatis/")
-    (synopsis
-     "R Wrapper to Access a Wide Range of Germany's Federal Statistical System Databases Based on the GENESIS Web Service RESTful API of the German Federal Statistical Office (Statistisches Bundesamt/Destatis)")
-    (description
-     "This package provides a RESTful API wrapper for accessing the GENESIS database
-of the German Federal Statistical Office (Destatis) as well as its Census
-Database and the database of Germany's regional statistics.  Supports data
-search functions, credential management, result caching, and handling remote
-background jobs for large datasets.")
-    (license license:expat)))
-
 (define-public r-restatapi
   (package
     (name "r-restatapi")
