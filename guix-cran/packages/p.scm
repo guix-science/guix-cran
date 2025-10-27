@@ -5730,13 +5730,13 @@ Mitteroecker et al. (2020) <doi:10.5061/dryad.j6q573n8s> and Grunstra et al.
 (define-public r-prtree
   (package
     (name "r-prtree")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRTree" version))
        (sha256
-        (base32 "1zn3355cbr2pfz0jq8f6l668qngng1scm6il0mbywf1g6abajddd"))))
+        (base32 "1al3hmbacgs3mp4sqhr6hqzfiblnr897m87148dmkn3zx5pgq5c4"))))
     (properties `((upstream-name . "PRTree")))
     (build-system r-build-system)
     (arguments

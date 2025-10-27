@@ -9777,13 +9777,13 @@ vectors, matrices, and lists.")
 (define-public r-ino
   (package
     (name "r-ino")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ino" version))
        (sha256
-        (base32 "0afylajc6c6rb58mv3zal9d2mzasz3is8vy21r4s591amr5lw7ys"))))
+        (base32 "0pbcnsyb9wxcs97jx501acbxpbqrikzid8rnxx99j5c3488wqdmz"))))
     (properties `((upstream-name . "ino")))
     (build-system r-build-system)
     (arguments

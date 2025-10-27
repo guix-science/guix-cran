@@ -1166,13 +1166,13 @@ computing properties of the New Topp-Leone Kumaraswamy Inverse Exponential
 (define-public r-ntfy
   (package
     (name "r-ntfy")
-    (version "0.0.6")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ntfy" version))
        (sha256
-        (base32 "18j64bs44h3gr6q9znm26pw1lz83c9xa6jd3rn5mznarfvgaafsm"))))
+        (base32 "1qkljgppimv98rlwwwbma11bi15zaicdsch4clcsrz6wbwy2a2nw"))))
     (properties `((upstream-name . "ntfy")))
     (build-system r-build-system)
     (arguments

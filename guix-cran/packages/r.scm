@@ -7826,6 +7826,42 @@ modified traits.  Estimates are calculated using a multinomial group testing
 model with maximum likelihood estimation of the parameters.")
     (license license:gpl2)))
 
+(define-public r-rsearch
+  (package
+    (name "r-rsearch")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rsearch" version))
+       (sha256
+        (base32 "03i3bg43li4blbwkc9ha2rqbhi0k3iisr65gr3pknawkqw8z53m1"))))
+    (properties `((upstream-name . "Rsearch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-rcolorbrewer
+                             r-phyloseq
+                             r-microseq
+                             r-ggplot2
+                             r-ggextra
+                             r-dplyr
+                             r-cowplot
+                             r-ape))
+    (home-page "https://cassandrahjo.github.io/Rsearch/")
+    (synopsis "Processing and Analyzing Amplicon Sequence Data")
+    (description
+     "Processing and analysis of targeted sequencing data.  The package provides a
+user-friendly interface for core VSEARCH (Rognes et al. (2016),
+<doi:10.7717/peerj.2584>) functions, in addition to tools for visualization and
+parameter tuning.")
+    (license license:gpl3+)))
+
 (define-public r-rsea
   (package
     (name "r-rsea")
@@ -32843,6 +32879,40 @@ in the data set: id, name, address, city, phone, type.  The data set has a
 respective gold data set that provides information on which records match based
 on id.")
     (license license:cc0)))
+
+(define-public r-restatis
+  (package
+    (name "r-restatis")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "restatis" version))
+       (sha256
+        (base32 "1ris3c3j51mb4psnwb0q937fhvd5sh7i4nvl91bxh8aq275p7xhd"))))
+    (properties `((upstream-name . "restatis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-readr
+                             r-purrr
+                             r-memoise
+                             r-httr2
+                             r-askpass))
+    (native-inputs (list r-knitr))
+    (home-page "https://correlaid.github.io/restatis/")
+    (synopsis
+     "R Wrapper to Access a Wide Range of Germany's Federal Statistical System Databases Based on the GENESIS Web Service RESTful API of the German Federal Statistical Office (Statistisches Bundesamt/Destatis)")
+    (description
+     "This package provides a RESTful API wrapper for accessing the GENESIS database
+of the German Federal Statistical Office (Destatis) as well as its Census
+Database and the database of Germany's regional statistics.  Supports data
+search functions, credential management, result caching, and handling remote
+background jobs for large datasets.")
+    (license license:expat)))
 
 (define-public r-restatapi
   (package

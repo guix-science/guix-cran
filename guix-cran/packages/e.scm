@@ -11,6 +11,7 @@
   #:use-module (gnu packages geo)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages python)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages java)
   #:use-module (gnu packages gcc)
@@ -3352,6 +3353,34 @@ Offering powerful plot features to visualize empirical excess mass
 @code{(exmplot()}).  This includes the possibility of drawing several plots
 (with different maximal number of modes / cut off values) in a single graph.")
     (license license:lgpl2.0+)))
+
+(define-public r-excerptr
+  (package
+    (name "r-excerptr")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "excerptr" version))
+       (sha256
+        (base32 "09ah4hg8b9wpqj6c3c0vvz7cvwwqdci7qyfc7gjj630w7fd7ji8y"))))
+    (properties `((upstream-name . "excerptr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python))
+    (propagated-inputs (list r-reticulate r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/fvafrcu/excerptr")
+    (synopsis
+     "Excerpt Structuring Comments from Your Code File and Set a Table of Contents")
+    (description
+     "Ever read or wrote source files containing sectioning comments? If these
+comments are markdown style section comments, you can excerpt them and set a
+table of contents using the python package excerpts
+(<https://pypi.org/project/excerpts/>).")
+    (license license:bsd-2)))
 
 (define-public r-excelfunctionsr
   (package

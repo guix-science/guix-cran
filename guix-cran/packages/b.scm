@@ -9155,19 +9155,30 @@ adjustments.  The method is described in more detail in Ginker (2023)
 (define-public r-boinet
   (package
     (name "r-boinet")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boinet" version))
        (sha256
-        (base32 "09bdb3vflpl5jw5xrxhkdcccv98hd46qd84akdxhjf1kwbmri75q"))))
+        (base32 "0p5ypbj2i2w2ya30rj0cicp9vpqyly9p6khrz73hrd31d7n0wcm1"))))
     (properties `((upstream-name . "boinet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-mfp r-iso r-gt r-copula))
+    (propagated-inputs (list r-tibble
+                             r-shinydashboard
+                             r-shinybs
+                             r-shiny
+                             r-rhandsontable
+                             r-plotly
+                             r-mfp
+                             r-iso
+                             r-gt
+                             r-ggplot2
+                             r-dt
+                             r-copula))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=boinet")
     (synopsis
@@ -9604,13 +9615,13 @@ Exact Test on significant parameters.")
 (define-public r-bnrep
   (package
     (name "r-bnrep")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnRep" version))
        (sha256
-        (base32 "1jjxrs4iick0pxqcnsphh7102vkbn8l9n9hsdllqmx53rbiaf1ld"))))
+        (base32 "1bjnpawj043qgqldcnzhvvpc0lqb1m3dx80vq1gc0hn9wa7b5nfz"))))
     (properties `((upstream-name . "bnRep")))
     (build-system r-build-system)
     (arguments
@@ -25960,13 +25971,13 @@ model ('Lee', 2007, <doi:10.1002/9780470024737>).")
 (define-public r-bayesregdtr
   (package
     (name "r-bayesregdtr")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesRegDTR" version))
        (sha256
-        (base32 "154zhysln45rrif4v9dlpprmjkqal5rrhlmday07ha6bhvcrsynz"))))
+        (base32 "0ij997yd0007fs0vk80hajdvk4q8f421naqfc5whm1p9ygd2a8d1"))))
     (properties `((upstream-name . "BayesRegDTR")))
     (build-system r-build-system)
     (arguments

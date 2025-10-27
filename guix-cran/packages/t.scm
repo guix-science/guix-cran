@@ -16894,13 +16894,13 @@ arbitrary distributions with piecewise twice differentiable densities.")
 (define-public r-tind
   (package
     (name "r-tind")
-    (version "0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tind" version))
        (sha256
-        (base32 "00s7lav9lx6lbx5vm70vhdxwi8q3fm33fwibmzcgj69852ifc7b4"))))
+        (base32 "062dkr1r3zjjsx99mmarl3h575fxh6z3ps3bazi7mx3ni1gkyvcd"))))
     (properties `((upstream-name . "tind")))
     (build-system r-build-system)
     (arguments
@@ -19695,13 +19695,13 @@ Dunnington et al. (2021) <doi:10.18637/jss.v101.i07>.")
 (define-public r-tidynorm
   (package
     (name "r-tidynorm")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidynorm" version))
        (sha256
-        (base32 "0piwaf9v79idddwh4m53ka172hciz06h4bjfwghi9w1lb5q9fdgv"))))
+        (base32 "0racjfl3zgm49rl3hxq2y7rk80hvqxw7wy75ky5cdhwqcpkw0ik3"))))
     (properties `((upstream-name . "tidynorm")))
     (build-system r-build-system)
     (arguments
@@ -19714,6 +19714,7 @@ Dunnington et al. (2021) <doi:10.18637/jss.v101.i07>.")
                              r-rcpparmadillo
                              r-rcpp
                              r-purrr
+                             r-options
                              r-glue
                              r-dplyr
                              r-cli
@@ -20254,13 +20255,13 @@ minimal code.")
 (define-public r-tidyheatmap
   (package
     (name "r-tidyheatmap")
-    (version "1.12.2")
+    (version "1.12.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyHeatmap" version))
        (sha256
-        (base32 "0ymm05qpy58jbmhb7agfy4pm62zd8lpchi00lsgnnbkmljdkdhx2"))))
+        (base32 "0x8by5vnh2wvdjvyypwnim5yfh37bpp8bjn4mn9ida41vn59x6lc"))))
     (properties `((upstream-name . "tidyHeatmap")))
     (build-system r-build-system)
     (arguments

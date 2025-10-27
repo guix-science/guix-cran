@@ -42864,13 +42864,13 @@ linguistic varieties).")
 (define-public r-mclink
   (package
     (name "r-mclink")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mclink" version))
        (sha256
-        (base32 "0bq4an5d5lwgasqddd5gs5bdrc0k4i0zwk9k8vkwqj1xbpqf20jv"))))
+        (base32 "0w2pnmmx60z4q2b3s8s4r0bn0sjv52qiizwgp2vlxbqimzkmkn4c"))))
     (properties `((upstream-name . "mclink")))
     (build-system r-build-system)
     (arguments

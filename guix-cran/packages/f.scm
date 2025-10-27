@@ -16983,13 +16983,13 @@ topic.")
 (define-public r-filibustr
   (package
     (name "r-filibustr")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filibustr" version))
        (sha256
-        (base32 "15g8xyfq5h1mrwvmj8xqvvi91yja84qfjwyi6agb432wq1g8c1s8"))))
+        (base32 "1c7xpfknx1kc47v2zgai1nbaml35xcyj5lmbxmfngy2y97qhr4mp"))))
     (properties `((upstream-name . "filibustr")))
     (build-system r-build-system)
     (arguments
@@ -17002,12 +17002,12 @@ topic.")
                              r-readr
                              r-purrr
                              r-lifecycle
+                             r-labelled
                              r-httr2
                              r-haven
-                             r-future
-                             r-furrr
                              r-dplyr
                              r-cli))
+    (native-inputs (list r-quarto))
     (home-page "https://feinleib.github.io/filibustr/")
     (synopsis "Data Utilities for Congressional Research")
     (description
@@ -21820,13 +21820,13 @@ closeness test.")
 (define-public r-fbfsearch
   (package
     (name "r-fbfsearch")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FBFsearch" version))
        (sha256
-        (base32 "0rn8pzgk28mjwdrg6x6f46576479a7bwnf9xdij0hfxsfg7wnwf1"))))
+        (base32 "02xfsh9nq568hkvl7kk85744hyscig9izr8yzsa2kld7130bscdq"))))
     (properties `((upstream-name . "FBFsearch")))
     (build-system r-build-system)
     (arguments
@@ -21838,10 +21838,9 @@ closeness test.")
      "Algorithm for Searching the Space of Gaussian Directed Acyclic Graph Models Through Moment Fractional Bayes Factors")
     (description
      "We propose an objective Bayesian algorithm for searching the space of Gaussian
-directed acyclic graph (DAG) models.  The algorithm proposed makes use of moment
-fractional Bayes factors (MFBF) and thus it is suitable for learning sparse
-graph.  The algorithm is implemented by using Armadillo: an open-source C++
-linear algebra library.")
+directed acyclic graph (DAG) models.  The algorithm uses moment fractional Bayes
+factors (MFBF) and is suitable for learning sparse graphs.  The algorithm is
+implemented using Armadillo, an open-source C++ linear algebra library.")
     (license license:gpl2+)))
 
 (define-public r-fbcrm
@@ -24380,13 +24379,13 @@ Spanish.")
 (define-public r-fastbeta
   (package
     (name "r-fastbeta")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastbeta" version))
        (sha256
-        (base32 "0bhixjdpr316s4fc216486hi47q30v937ad7ddkrf0cvivm0nj71"))))
+        (base32 "0z1g33x5v2z4h91p6assy1crhsxss5w659542w0migkyd3m1maik"))))
     (properties `((upstream-name . "fastbeta")))
     (build-system r-build-system)
     (arguments
@@ -24794,13 +24793,13 @@ regressions, see Lederer & Vogt (2021, JMLR)
 (define-public r-fars
   (package
     (name "r-fars")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FARS" version))
        (sha256
-        (base32 "1inr6ra5yrxh2jxs13kkxp74wmr3f7fjzpgkfvwgjkgafw9p4qv1"))))
+        (base32 "17a6817kv95wz83h49s023kkb8jqssi6j6axjw7is9ayj2hcpwbf"))))
     (properties `((upstream-name . "FARS")))
     (build-system r-build-system)
     (arguments
@@ -26070,6 +26069,45 @@ Efficiency and Renewable Energy (EERE) under Solar Energy Technologies Office
 Contract number B647887, and U.S. National Science Foundation Award under Award
 Number 2133576.")
     (license license:bsd-3)))
+
+(define-public r-fairgnn
+  (package
+    (name "r-fairgnn")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fairGNN" version))
+       (sha256
+        (base32 "0fhwxzar3wk9xmllqppayki32va297wsrl717wp4yw0p4fq2iyki"))))
+    (properties `((upstream-name . "fairGNN")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-readr
+                             r-purrr
+                             r-proc
+                             r-magrittr
+                             r-ggplot2
+                             r-ggalluvial
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rhysholland/fairGNN")
+    (synopsis "Fairness-Aware Gated Neural Networks")
+    (description
+     "This package provides tools for training and analysing fairness-aware gated
+neural networks for subgroup-aware prediction and interpretation in clinical
+datasets.  Methods draw on prior work in mixture-of-experts neural networks by
+Jordan and Jacobs (1994) <doi:10.1007/978-1-4471-2097-1_113>, fairness-aware
+learning by Hardt, Price, and Srebro (2016)
+<doi:10.48550/@code{arXiv.1610.02413>}, and personalised treatment prediction
+for depression by Iniesta, Stahl, and @code{McGuffin} (2016)
+<doi:10.1016/j.jpsychires.2016.03.016>.")
+    (license license:expat)))
 
 (define-public r-fairadapt
   (package

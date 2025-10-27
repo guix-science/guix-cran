@@ -14901,6 +14901,43 @@ structural equations.  For details, see Watson et al. (2024)
 <doi:10.48550/@code{arXiv.2404.04446>}.")
     (license license:gpl3+)))
 
+(define-public r-leakr
+  (package
+    (name "r-leakr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "leakr" version))
+       (sha256
+        (base32 "1mn9mr3z9xxbvb7jfhfl7lj3a32i2arjiq8l89l3n7wj65j6c964"))))
+    (properties `((upstream-name . "leakr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-workflows
+                             r-stringr
+                             r-readxl
+                             r-openxlsx
+                             r-jsonlite
+                             r-htmltools
+                             r-ggplot2
+                             r-digest
+                             r-data-table
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=leakr")
+    (synopsis "Data Leakage Detection Tools for Machine Learning")
+    (description
+     "This package provides utilities to detect common data leakage patterns including
+train/test contamination, temporal leakage, and data duplication, enhancing
+model reliability and reproducibility in machine learning workflows.  Generates
+diagnostic reports and visual summaries to support data validation.  Methods
+based on best practices from Hastie, Tibshirani, and Friedman (2009,
+ISBN:978-0387848570).")
+    (license license:expat)))
+
 (define-public r-leaftime
   (package
     (name "r-leaftime")

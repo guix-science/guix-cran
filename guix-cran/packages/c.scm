@@ -17011,6 +17011,31 @@ Professor Ron Knott, e.g.,
 <https://r-knott.surrey.ac.uk/Fibonacci/@code{cfINTRO.html>} .")
     (license license:lgpl3)))
 
+(define-public r-contextfind
+  (package
+    (name "r-contextfind")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "contextFind" version))
+       (sha256
+        (base32 "0fm5gfrp124mzpmd4m5hxk6wgajsly5xkqjr8fg9367514fpi411"))))
+    (properties `((upstream-name . "contextFind")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-rstudioapi r-miniui r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=contextFind")
+    (synopsis
+     "Find Code Snippets with Context and Click to Navigate Directly to Results")
+    (description
+     "Search across R files with contextual results, highlights and clickable links.
+Includes an add-in for further workflow enhancement.")
+    (license license:cc0)))
+
 (define-public r-context
   (package
     (name "r-context")
@@ -26462,58 +26487,6 @@ in the 1970s.  Can you break the code?")
     (description
      "Quickly and easily create codebooks (i.e.  data dictionaries) directly from a
 data frame.")
-    (license license:expat)))
-
-(define-public r-codebook
-  (package
-    (name "r-codebook")
-    (version "0.9.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "codebook" version))
-       (sha256
-        (base32 "15j5g7f6a0g6rx8dds0gdmj7h8glfiakjp43bz2bl1j45di2g6zq"))))
-    (properties `((upstream-name . "codebook")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-skimr
-                             r-rmdpartials
-                             r-rlang
-                             r-purrr
-                             r-likert
-                             r-labelled
-                             r-labeling
-                             r-knitr
-                             r-jsonlite
-                             r-htmltools
-                             r-haven
-                             r-glue
-                             r-ggplot2
-                             r-future
-                             r-forcats
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://rubenarslan.github.io/codebook/")
-    (synopsis
-     "Automatic Codebooks from Metadata Encoded in Dataset Attributes")
-    (description
-     "Easily automate the following tasks to describe data frames: Summarise the
-distributions, and labelled missings of variables graphically and using
-descriptive statistics.  For surveys, compute and summarise reliabilities
-(internal consistencies, retest, multilevel) for psychological scales.  Combine
-this information with metadata (such as item labels and labelled values) that is
-derived from R attributes.  To do so, the package relies on rmarkdown partials,
-so you can generate HTML, PDF, and Word documents.  Codebooks are also available
-as tables (CSV, Excel, etc.) and in JSON-LD, so that search engines can find
-your data and index the metadata.  The metadata are also available at your
-fingertips via RStudio Addins.")
     (license license:expat)))
 
 (define-public r-code
