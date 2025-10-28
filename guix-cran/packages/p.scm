@@ -3920,13 +3920,13 @@ Davidian (2004) <DOI:10.1002/sim.1903>, Li and Greene (2013)
 (define-public r-psvmsdr
   (package
     (name "r-psvmsdr")
-    (version "1.0.2")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psvmSDR" version))
        (sha256
-        (base32 "1mlxrlq3h3q6230xkb15cn7pyccvi7flbkm8q7dsp812dadsf449"))))
+        (base32 "0cpwkbjgs30m68jlwwkhv414cl1qcxqlz3wi8d3p9qwh06yln3r4"))))
     (properties `((upstream-name . "psvmSDR")))
     (build-system r-build-system)
     (arguments
@@ -5961,22 +5961,22 @@ penalty parameters.")
 (define-public r-proxirr
   (package
     (name "r-proxirr")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proxirr" version))
        (sha256
-        (base32 "0fknabfdvcmcpxai9sasnqay9ymy1vm9bvghiw9awx1lvn85024r"))))
+        (base32 "0k4awl9vg6khlmxfjmn92kxbhg6lla3fbkas2iv0lmrjfarr49dv"))))
     (properties `((upstream-name . "proxirr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=proxirr")
-    (synopsis "Alpha and Beta Proximity to Irreplaceability")
+    (synopsis "Alpha, Beta and Gamma Proximity to Irreplaceability")
     (description
-     "This package provides functions to measure Alpha and Beta Proximity to
+     "This package provides functions to measure Alpha, Beta and Gamma Proximity to
 Irreplaceability.  The methods for Alpha and Beta irreplaceability were first
 described in: Baisero D., Schuster R. & Plumptre A.J. Redefining and Mapping
 Global Irreplaceability.  Conservation Biology 2021;1-11.
@@ -33328,26 +33328,41 @@ comprehension.")
 (define-public r-peruflorads43
   (package
     (name "r-peruflorads43")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "peruflorads43" version))
        (sha256
-        (base32 "12wsnnsjf6ih8lkpq4k20awicxwcdv7m466vvw2afmky844kq0ss"))))
+        (base32 "0p5x4dvy9rgzmzxlgr282lfi0yf3m78zi14ch145qqhv7sldrd0n"))))
     (properties `((upstream-name . "peruflorads43")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-progress
+                             r-memoise
+                             r-fuzzyjoin
+                             r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/PaulESantos/peruflorads43")
     (synopsis
-     "Reviewed Official Classification of Endangered Wild Flora Species in Peru")
+     "Check Threatened Plant Species Status Against Peru's DS 043-2006-AG")
     (description
-     "Provide users with a convenient way to access and analyze information on
-endangered plant species in Peru based on `Decreto Supremo N 043-2006-AG -
-Aprueban categorizacion de especies amenazadas de flora
-silvestre`<https://sinia.minam.gob.pe/normas/aprueban-categorizacion-especies-amenazadas-flora-silvestre>.")
+     "This package provides tools to match plant species names against the official
+threatened species list of Peru (Supreme Decree DS 043-2006-AG, 2006).
+Implements a hierarchical matching pipeline with exact, fuzzy, and suffix
+matching algorithms to handle nomenclatural variations and taxonomic changes.
+Supports both the original 2006 nomenclature and updated taxonomic names,
+allowing users to check protection status regardless of nomenclatural changes
+since the decree's publication.  Threat categories follow IUCN standards (CR,
+EN, VU, NT).")
     (license license:expat)))
 
 (define-public r-peruapis

@@ -25546,13 +25546,13 @@ of Health and Human Services.")
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.7.5")
+    (version "0.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "0wqahvq63g70r8mjjwwvi1hsh0a6cygcbmhrvjn3w0qlg3lz4xzj"))))
+        (base32 "0iqczygp4i2541k8x2knfba6nmz2havd1hrd529jpm48s6zy6xlk"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (arguments
@@ -28952,13 +28952,13 @@ Perederiy, V. (2017) <doi:10.48550/@code{arXiv.1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "0y7bd1rb566vp4ky8gczfh3vq7l1xhkkvgcrl5n5zv9zcxlqfmbn"))))
+        (base32 "0qy8dfsngbpcv77ggyzmzfl01qx0l0kr7f799m2rscxyg1kcsyq2"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (arguments
@@ -29644,13 +29644,13 @@ Carrion-i-Silvestre J.L (2004)
 (define-public r-micsr
   (package
     (name "r-micsr")
-    (version "0.1-3")
+    (version "0.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micsr" version))
        (sha256
-        (base32 "1jp3nh5rvcbrsfvqmiiv43il8cm3rjp1z26jsb0hfhvas0mni1gz"))))
+        (base32 "14w5vhhap7ricy5nqxwjd462qnydhd64bh5kriliy0d2n19ndkv6"))))
     (properties `((upstream-name . "micsr")))
     (build-system r-build-system)
     (arguments
@@ -31295,13 +31295,13 @@ imputation for proteomics.")
 (define-public r-mhurdle
   (package
     (name "r-mhurdle")
-    (version "1.3-1")
+    (version "1.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mhurdle" version))
        (sha256
-        (base32 "0dlajmfwd0bz3npa7zy66pa5hxs08l89axnc77mp8q67mp6xwa7y"))))
+        (base32 "1y8pqsd4k3maqg3c8ywlx09ac3ax3n6aj3vydx0lp7wq6rvanvs5"))))
     (properties `((upstream-name . "mhurdle")))
     (build-system r-build-system)
     (arguments
@@ -50474,13 +50474,13 @@ ensembles of datasets on global governance called datacubes.")
 (define-public r-mantis
   (package
     (name "r-mantis")
-    (version "0.4.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mantis" version))
        (sha256
-        (base32 "1y2ifn5bz5mz62vrl84pn43r7mx65p1zqh5s9zmk7hnfhfcklh5z"))))
+        (base32 "034i72f5w44chw6gd1r9vfnpyazmpnlazxswwb10aziajpsg77z2"))))
     (properties `((upstream-name . "mantis")))
     (build-system r-build-system)
     (arguments
@@ -50492,6 +50492,7 @@ ensembles of datasets on global governance called datacubes.")
                              r-rmarkdown
                              r-reactable
                              r-purrr
+                             r-lubridate
                              r-knitr
                              r-htmltools
                              r-ggplot2
@@ -52772,13 +52773,13 @@ variables.  Automatic differentiation is via forward accumulation'.")
 (define-public r-madmmplasso
   (package
     (name "r-madmmplasso")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MADMMplasso" version))
        (sha256
-        (base32 "1r6xdhx7hkvj10r498qwpvkv0b4sw2di2qpz8avca12av9wav1q5"))))
+        (base32 "0gwkz72y5d1xqqvbz2khs8mdx0nngq3zcnv8jm27c2m5qvmh9k7d"))))
     (properties `((upstream-name . "MADMMplasso")))
     (build-system r-build-system)
     (arguments

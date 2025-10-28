@@ -16736,6 +16736,40 @@ Journal of the Royal statistical society: series B (Methodological), 57(1),
 and procedures as used in the original paper.")
     (license license:expat)))
 
+(define-public r-alpaca
+  (package
+    (name "r-alpaca")
+    (version "0.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "alpaca" version))
+       (sha256
+        (base32 "0arczrqrajvhhk639fmjzkngc85n4r4rbhis0kh7lc2yvcbk6wpk"))))
+    (properties `((upstream-name . "alpaca")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-formula
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/amrei-stammann/alpaca")
+    (synopsis "Fit GLM's with High-Dimensional k-Way Fixed Effects")
+    (description
+     "This package provides a routine to partial out factors with many levels during
+the optimization of the log-likelihood function of the corresponding generalized
+linear model (glm).  The package is based on the algorithm described in Stammann
+(2018) <doi:10.48550/@code{arXiv.1707.01815>} and is restricted to glm's that
+are based on maximum likelihood estimation and nonlinear.  It also offers an
+efficient algorithm to recover estimates of the fixed effects in a
+post-estimation routine and includes robust and multi-way clustered standard
+errors.  Further the package provides analytical bias corrections for binary
+choice models derived by Fernandez-Val and Weidner (2016)
+<doi:10.1016/j.jeconom.2015.12.014> and Hinz, Stammann, and Wanner (2020)
+<doi:10.48550/@code{arXiv.2004.12655>}.")
+    (license license:gpl3)))
+
 (define-public r-aloom
   (package
     (name "r-aloom")

@@ -13761,20 +13761,20 @@ Kahane-Rapport and Goldbogen (2018) <doi:10.1002/jmor.20846>.")
 (define-public r-roracle
   (package
     (name "r-roracle")
-    (version "1.3-1.1")
+    (version "1.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROracle" version))
        (sha256
-        (base32 "1k5w6fi1f83mhlc8hx6y305llcwxl22h6lpkib1yvm4557k1c7zz"))))
+        (base32 "0035qd9jdplndzq68wk19sc69rjjy8v2300f1dp78bisxqxyavkw"))))
     (properties `((upstream-name . "ROracle")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-dbi))
-    (home-page "http://www.oracle.com")
+    (home-page "https://www.oracle.com")
     (synopsis "OCI Based Oracle Database Interface for R")
     (description
      "Oracle Database interface (DBI) driver for R. This is a DBI-compliant Oracle
@@ -39417,13 +39417,13 @@ research and conservation efforts.")
 (define-public r-redistverse
   (package
     (name "r-redistverse")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redistverse" version))
        (sha256
-        (base32 "08154l54afih3828xc7zdacj0n3wnahwdq1hjjk3gdyfzl8ad0qy"))))
+        (base32 "0ddc0j3cw5fwzk29fmagik71yijpcqpfxnzyqm4gd6r2px6q2mln"))))
     (properties `((upstream-name . "redistverse")))
     (build-system r-build-system)
     (arguments
@@ -39440,6 +39440,7 @@ research and conservation efforts.")
                              r-cli
                              r-censable
                              r-birdie
+                             r-baf
                              r-alarmdata))
     (home-page "https://github.com/alarm-redist/redistverse")
     (synopsis "Easily Install and Load Redistricting Software")
@@ -41946,19 +41947,26 @@ Hamilton et al. (2024) <doi:10.1007/s40273-024-01378-8>.")
 (define-public r-readtextgrid
   (package
     (name "r-readtextgrid")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readtextgrid" version))
        (sha256
-        (base32 "1nrdgzflhsnq3bm30dj5mq4mwlb4rpr8sl3xr9a8ncx3ga38ciqz"))))
+        (base32 "1f4931gdsx5a9s4ca2fh2cwb17vd6aqjmi880ymwvb3ypr0vfdnf"))))
     (properties `((upstream-name . "readtextgrid")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-stringr r-readr r-purrr r-plyr))
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-dplyr
+                             r-cpp11))
     (home-page "https://github.com/tjmahr/readtextgrid")
     (synopsis "Read in a 'Praat' 'TextGrid' File")
     (description
@@ -42499,13 +42507,13 @@ file format and structure.")
 (define-public r-readepi
   (package
     (name "r-readepi")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readepi" version))
        (sha256
-        (base32 "0qhpphkpm4sz0wjrib2wdixsyl6akqjg4w6vh5kwi8kpbhz5bq76"))))
+        (base32 "16slrdn5zifzgrmzai15y8kbpx71vmvr4d4mfrg580v95q183bvx"))))
     (properties `((upstream-name . "readepi")))
     (build-system r-build-system)
     (arguments

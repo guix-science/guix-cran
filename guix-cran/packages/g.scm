@@ -18210,13 +18210,13 @@ enjoyment.")
 (define-public r-ghcnr
   (package
     (name "r-ghcnr")
-    (version "1.4.5")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GHCNr" version))
        (sha256
-        (base32 "0r20ij9kl69jbk979352a7qhf0691z73r1kdak0zj669p25zpcp1"))))
+        (base32 "0516dcq989sj6i8i199jfh54i6vlzpm5anfzjhmzf6c1nbxns407"))))
     (properties `((upstream-name . "GHCNr")))
     (build-system r-build-system)
     (arguments
@@ -25787,13 +25787,13 @@ techniques for evaluate the seed germination process in ecophysiological studies
 (define-public r-gerefer
   (package
     (name "r-gerefer")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gerefer" version))
        (sha256
-        (base32 "1vnxwclsyclimrhdlvrdh05hp2h8fxz3k4xjayq9wasjz9vylw90"))))
+        (base32 "01y9x1xbjh77syrf285pfd4ckgnzyg4l13cmqmac7ls1pnrn34g5"))))
     (properties `((upstream-name . "gerefer")))
     (build-system r-build-system)
     (arguments

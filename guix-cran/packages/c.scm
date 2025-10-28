@@ -4127,13 +4127,13 @@ week, ISO yearweek, ISO year, calendar month/year, season, season week.")
 (define-public r-cstidy
   (package
     (name "r-cstidy")
-    (version "2023.5.24")
+    (version "2025.10.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cstidy" version))
        (sha256
-        (base32 "01i5b1x6xfg8fbkhaam22ap64x6bqman5b5y57f07wiy413m65j2"))))
+        (base32 "01b9lhl9n8kw9kixbhsj18bk1jrk1by2gp3v32kvgwviid2a10s4"))))
     (properties `((upstream-name . "cstidy")))
     (build-system r-build-system)
     (arguments
@@ -23380,13 +23380,13 @@ to ensure command line output looks nice on dark as well as light consoles.")
 (define-public r-cols4all
   (package
     (name "r-cols4all")
-    (version "0.9")
+    (version "0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cols4all" version))
        (sha256
-        (base32 "03j5zcyhrxaypgr96hmx0vbi8xwpljk1ldp81p96909zv5d2ahv3"))))
+        (base32 "1f32184aj64jpqkg8a2fc6jgd5svh7qp9xk0jkwrpcplnxnm4nc0"))))
     (properties `((upstream-name . "cols4all")))
     (build-system r-build-system)
     (arguments
@@ -28178,13 +28178,13 @@ provided on the CM SAF webpage (<http://www.cmsaf.eu/R_toolbox>).")
 (define-public r-cmsafops
   (package
     (name "r-cmsafops")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmsafops" version))
        (sha256
-        (base32 "0r8cn3zrgblza74lq1vhfla6dss3chv9gha14gn7jl1cd523fmjd"))))
+        (base32 "12hks8yk2r9s25klv09p731fqz22cpzr285ij2234iw64a42ab41"))))
     (properties `((upstream-name . "cmsafops")))
     (build-system r-build-system)
     (arguments
@@ -41825,13 +41825,13 @@ based on Collaborative Filtering Methodology.  See Aggarwal (2016)
 (define-public r-cfid
   (package
     (name "r-cfid")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cfid" version))
        (sha256
-        (base32 "03wfzilxgia12hacwkay2ki94mha8b42g62cx66x1rkqqxgcp6n9"))))
+        (base32 "03sqyqvk2hc348625j6k6m1qivyifgw0qndpymw3yqqplaj4x5fg"))))
     (properties `((upstream-name . "cfid")))
     (build-system r-build-system)
     (arguments
@@ -41842,12 +41842,12 @@ based on Collaborative Filtering Methodology.  See Aggarwal (2016)
     (description
      "Facilitates the identification of counterfactual queries in structural causal
 models via the ID* and IDC* algorithms by Shpitser, I. and Pearl, J. (2007,
-2008) <@code{arXiv:1206.5294>}, <https://jmlr.org/papers/v9/shpitser08a.html>.
-Provides a simple interface for defining causal diagrams and counterfactual
-conjunctions.  Construction of parallel worlds graphs and counterfactual graphs
-is carried out automatically based on the counterfactual query and the causal
-diagram.  See Tikka, S. (2023) <doi:10.32614/RJ-2023-053> for a tutorial of the
-package.")
+2008) <doi:10.48550/@code{arXiv.1206.5294>},
+<https://jmlr.org/papers/v9/shpitser08a.html>.  Provides a simple interface for
+defining causal diagrams and counterfactual conjunctions.  Construction of
+parallel worlds graphs and counterfactual graphs is carried out automatically
+based on the counterfactual query and the causal diagram.  See Tikka, S. (2023)
+<doi:10.32614/RJ-2023-053> for a tutorial of the package.")
     (license license:gpl3+)))
 
 (define-public r-cffr

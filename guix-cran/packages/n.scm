@@ -3609,13 +3609,13 @@ Censored Data and Two Factorial Influencing Variables.")
 (define-public r-nparmd
   (package
     (name "r-nparmd")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nparMD" version))
        (sha256
-        (base32 "0wfmw1d4w8frbimq62749siy28bzci3h3lhsl5jx7zl7mxpl0q9a"))))
+        (base32 "0jw6ybdwyhxzbhca1xn9drgnw03ssk5cki21h3lhgix2srh4jaj0"))))
     (properties `((upstream-name . "nparMD")))
     (build-system r-build-system)
     (arguments
@@ -3635,7 +3635,8 @@ is allowed to be ordinal, quantitative, binary or a mixture of the different
 variable types.  The package offers two functions performing the analysis, one
 for small and the other for large sample sizes.  The underlying methodology is
 largely described in Bathke and Harrar (2016) <doi:10.1007/978-3-319-39065-9_7>
-and in Munzel and Brunner (2000) <doi:10.1016/S0378-3758(99)00212-8>.")
+and in Munzel and Brunner (2000) <doi:10.1016/S0378-3758(99)00212-8> and in
+Kiefel and Bathke (2022) <doi:10.1515/stat-2022-0112>.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-nparld

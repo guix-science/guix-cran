@@ -1776,13 +1776,13 @@ easier way.")
 (define-public r-issuetracker
   (package
     (name "r-issuetracker")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IssueTrackeR" version))
        (sha256
-        (base32 "1iwmnh1pq5fgpws1j0s9alsyzysahqq6bdp70cx9i5ll85d1z5v2"))))
+        (base32 "13pxa7w44xknqbv98yikgjyjinhjr4naxagh4gnpmny87pz5dc73"))))
     (properties `((upstream-name . "IssueTrackeR")))
     (build-system r-build-system)
     (arguments
@@ -2253,13 +2253,13 @@ normal profiles.")
 (define-public r-isoplotrgui
   (package
     (name "r-isoplotrgui")
-    (version "6.7")
+    (version "6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotRgui" version))
        (sha256
-        (base32 "1kzhy20mikxs7lpalqkb5ib8k8vx90w3cr8ai3hh8bgyb6gbb7js"))))
+        (base32 "01aj83b39kykrd6fxv9ls0357hjrszk2lvwzrf4lk4llb6128zm6"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
     (arguments
@@ -2293,13 +2293,13 @@ either be used offline, or hosted on a server to provide online access to the
 (define-public r-isoplotr
   (package
     (name "r-isoplotr")
-    (version "6.7")
+    (version "6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotR" version))
        (sha256
-        (base32 "02nzxpw36ic60iv14fcxaijh004k1km45k94c4g0wair60ljxgww"))))
+        (base32 "06div68y14l2cn73kg4nsn2jajwn1rl4cjdc140x0f95yl5ym2h5"))))
     (properties `((upstream-name . "IsoplotR")))
     (build-system r-build-system)
     (arguments
@@ -14597,13 +14597,13 @@ psychometric quality standards (see Blum & Holling, 2018)
 (define-public r-imagine
   (package
     (name "r-imagine")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imagine" version))
        (sha256
-        (base32 "1g3azzrvj2djr7raiajvmp0jr8qjxbv3pjv55b725dg633kz5f7l"))))
+        (base32 "0pyr8bkbn1ph6cfp10xsxn8rgl1dcl2ddwlxxrx135ynrgbasw71"))))
     (properties `((upstream-name . "imagine")))
     (build-system r-build-system)
     (arguments

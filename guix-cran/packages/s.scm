@@ -17885,13 +17885,13 @@ stationary population structures for Pleistocene large mammals\"
 (define-public r-stablelearner
   (package
     (name "r-stablelearner")
-    (version "0.1-6")
+    (version "0.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stablelearner" version))
        (sha256
-        (base32 "0pam43vkfwxjv0dynpg0w8csc6yjs32g0kniabj1436llm73i09y"))))
+        (base32 "1ynagrmipmr5ihz1md99gwmphcbbj27ghrkgix111cxbrmd2i25h"))))
     (properties `((upstream-name . "stablelearner")))
     (build-system r-build-system)
     (arguments
@@ -37051,13 +37051,13 @@ semi-parametric approach.")
 (define-public r-smoothemplik
   (package
     (name "r-smoothemplik")
-    (version "0.0.15")
+    (version "0.0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smoothemplik" version))
        (sha256
-        (base32 "0fb18yw5jqf367zqbapv9k6l8k417dwmjrmgg2yqz3mp900rfhkr"))))
+        (base32 "0vmhizmih3g8c56bly15sav8f305wjhsy2ll24pnp176prn2y6q0"))))
     (properties `((upstream-name . "smoothemplik")))
     (build-system r-build-system)
     (arguments
@@ -37122,13 +37122,13 @@ cross validation for selection of the regularization parameter is provided.")
 (define-public r-smooth
   (package
     (name "r-smooth")
-    (version "4.3.0")
+    (version "4.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smooth" version))
        (sha256
-        (base32 "068s9yh0w2zgzwcapivivwsybbn7cc04kzir3z7bpanv99ggkhdj"))))
+        (base32 "0891c85acl297fi603fw4rmhaq8fxl6c9xchwm566wr8iprxw697"))))
     (properties `((upstream-name . "smooth")))
     (build-system r-build-system)
     (arguments
@@ -44112,13 +44112,13 @@ species spread, and population dynamics.")
 (define-public r-simrestore
   (package
     (name "r-simrestore")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simRestore" version))
        (sha256
-        (base32 "1psw58k5i7vj7a49cski28dxwryi6qk167w2v003ja209pdpbfx8"))))
+        (base32 "1i3jf6bhia10qwp63240b211slni1z14hyx7ckql4i3b8kbhsy5f"))))
     (properties `((upstream-name . "simRestore")))
     (build-system r-build-system)
     (arguments
@@ -57887,13 +57887,13 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
 (define-public r-seqtarget
   (package
     (name "r-seqtarget")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEQTaRget" version))
        (sha256
-        (base32 "05iksmphglb3fw48fz25ny7k8y5sa0bsqphipn0lgm9pjzzl9dw7"))))
+        (base32 "061cvi84qkcymcyqxdis88d4hh54yr7lg7pb999c80hvzhbp7cpn"))))
     (properties `((upstream-name . "SEQTaRget")))
     (build-system r-build-system)
     (arguments

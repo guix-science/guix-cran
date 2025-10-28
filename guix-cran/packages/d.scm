@@ -32971,13 +32971,13 @@ stochastic disability-adjusted life year (DALY) calculation.")
 (define-public r-daltoolboxdp
   (package
     (name "r-daltoolboxdp")
-    (version "1.2.727")
+    (version "1.2.737")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolboxdp" version))
        (sha256
-        (base32 "1z4iy191lrg6c8zx2r3zbv934fvhxxwfix9p7bz5hnm7rypzyif5"))))
+        (base32 "0qwz4vr5xyx16034pvd2w7c88aara24y8jwwcbc3aipq9vyv8gax"))))
     (properties `((upstream-name . "daltoolboxdp")))
     (build-system r-build-system)
     (arguments
@@ -33010,13 +33010,13 @@ available in Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
 (define-public r-daltoolbox
   (package
     (name "r-daltoolbox")
-    (version "1.2.737")
+    (version "1.2.747")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolbox" version))
        (sha256
-        (base32 "0jxb6a23vqwzd0wcqfw428h3ihw7z3714cg1rfxsjrdg0p0lfxs7"))))
+        (base32 "03fypixq4xb0m9bywk3bv2ybkz0fggw4i091k35784c46xbjc09j"))))
     (properties `((upstream-name . "daltoolbox")))
     (build-system r-build-system)
     (arguments
@@ -33255,13 +33255,13 @@ additional tools to handle and visualize the output.  See the package website
 (define-public r-daiquiri
   (package
     (name "r-daiquiri")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daiquiri" version))
        (sha256
-        (base32 "1vwgsk55sqanqchyxs1aar40d8si5v7k0hn6i4sc9w51wwq4lfwh"))))
+        (base32 "1zzxxfp0wd07ynivp08r6vr3l0vc9mv37x23sy0r5sfzwpxgfb10"))))
     (properties `((upstream-name . "daiquiri")))
     (build-system r-build-system)
     (arguments

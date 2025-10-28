@@ -3084,13 +3084,13 @@ data-driven bandwidth selection.")
 (define-public r-lpda
   (package
     (name "r-lpda")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpda" version))
        (sha256
-        (base32 "0i2qmjgvqr6hqbx820achm56shqb0nd4jn1w1v806kr3n9gx006m"))))
+        (base32 "0ba2c3x1al8lqna2rcvgpi9v9xlqjmra6iy4v1l1xpi0bkkavac1"))))
     (properties `((upstream-name . "lpda")))
     (build-system r-build-system)
     (arguments
@@ -9707,25 +9707,28 @@ the visualizations are based on rigorous statistical models.")
 (define-public r-lipidms
   (package
     (name "r-lipidms")
-    (version "3.0.5")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LipidMS" version))
        (sha256
-        (base32 "1c0dq1b5ns4kmvdf3viam7g7p5bgviqw1z967nkjslxiyxsjrvki"))))
+        (base32 "14p0p2a717nb3c3rzaakjv641fz6gajpsrbf5qa0vs7kfpmq06b7"))))
     (properties `((upstream-name . "LipidMS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shinythemes
-                             r-shiny
-                             r-scales
+    (propagated-inputs (list r-scales
                              r-readmzxmldata
+                             r-r-utils
+                             r-patchwork
+                             r-parallelly
                              r-iterators
-                             r-foreach
-                             r-doparallel
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-dt
                              r-chnosz))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=LipidMS")
@@ -20626,13 +20629,13 @@ performance than methods commonly used in LINCS L1000 data deconvolution.")
 (define-public r-l1centrality
   (package
     (name "r-l1centrality")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "L1centrality" version))
        (sha256
-        (base32 "0dbbdrkyra5wrl9qh78m58siyaxrbbwzjagy19nrgwjayhga06za"))))
+        (base32 "1h7r04g7zh4653rmh9hybxv6lqnrssxibid8ndlcm3gwbbqp78f4"))))
     (properties `((upstream-name . "L1centrality")))
     (build-system r-build-system)
     (arguments
@@ -20645,8 +20648,9 @@ performance than methods commonly used in LINCS L1000 data deconvolution.")
      "Analyze graph/network data using L1 centrality and prestige.  Functions for
 deriving global, local, and group L1 centrality/prestige are provided.  Routines
 for visual inspection of a graph/network are also provided.  Details are in Kang
-and Oh (2024a) <doi:10.48550/@code{arXiv.2404.13233>} and Kang and Oh (2024b)
-<doi:10.48550/@code{arXiv.2408.12078>}.")
+and Oh (2025a) <doi:10.1080/01621459.2025.2520467>, Kang and Oh (2025b)
+<doi:10.1080/00031305.2025.2563730>, and Kang (2025)
+<doi:10.23170/snu.000000188358.11032.0001856>.")
     (license license:gpl3+)))
 
 (define-public r-l1ball

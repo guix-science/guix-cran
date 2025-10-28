@@ -3576,13 +3576,13 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
 (define-public r-tspredit
   (package
     (name "r-tspredit")
-    (version "1.2.737")
+    (version "1.2.747")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tspredit" version))
        (sha256
-        (base32 "08rqnam9232xrqnccvcgpdr6a1mrwqrwb6dyrav5vrdby4slsdjd"))))
+        (base32 "1wj2czwxinb2da9h0x7hfgsm0d95zhd9aib9khm7var6gn6flr9j"))))
     (properties `((upstream-name . "tspredit")))
     (build-system r-build-system)
     (arguments
@@ -13657,13 +13657,13 @@ Dieng, Francisco J. R. Ruiz, David M. Blei (2019), available at
 (define-public r-topiclabels
   (package
     (name "r-topiclabels")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topiclabels" version))
        (sha256
-        (base32 "1njmcbmk7d3yappvmavm1nd5xxqdjm3mikb1nfl2p93wqbsv86ik"))))
+        (base32 "03k8sggdlh1nw81qll35vz1dynlsw2ix1s3i9qwm7cqby9y1p39v"))))
     (properties `((upstream-name . "topiclabels")))
     (build-system r-build-system)
     (arguments
@@ -27908,13 +27908,13 @@ accuracy.  It is included here as is, without warranty.")
 (define-public r-telegram-bot
   (package
     (name "r-telegram-bot")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "telegram.bot" version))
        (sha256
-        (base32 "0r9kzrqimy7qpz0gq4rzpgx2f2f1b13wq8nr79s3jx6qwxk4k8pm"))))
+        (base32 "0i94yzvgswmw1al1r1sab4w24bh66688fd95ni2j9y1hpdn78q2r"))))
     (properties `((upstream-name . "telegram.bot")))
     (build-system r-build-system)
     (arguments

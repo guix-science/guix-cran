@@ -18538,13 +18538,13 @@ sampling is supported.")
 (define-public r-ffaframework
   (package
     (name "r-ffaframework")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ffaframework" version))
        (sha256
-        (base32 "0d42dm6wrmm81w2kc1y4s2r8ryq2qfxmpq2mxy49b4sppspid0cq"))))
+        (base32 "1rpwhjd0wlryw1il3ms4w5k0xh0fzhnnxnyrddyi6afawzd1vy91"))))
     (properties `((upstream-name . "ffaframework")))
     (build-system r-build-system)
     (arguments
