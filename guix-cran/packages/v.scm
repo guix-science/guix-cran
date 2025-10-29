@@ -5582,13 +5582,13 @@ requirements, and auto-composing error messages when they do not.")
 (define-public r-vetiver
   (package
     (name "r-vetiver")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vetiver" version))
        (sha256
-        (base32 "04gpr4h4vzr0xkgf4x8drpkg1j8f1w84h4ndc4ry15n7ayim4s0b"))))
+        (base32 "01p6s5swrq8jlgfv2ypjax3sfjzlj6rwp25wyx8pwb1gldqsm5p6"))))
     (properties `((upstream-name . "vetiver")))
     (build-system r-build-system)
     (arguments
@@ -5608,13 +5608,12 @@ requirements, and auto-composing error messages when they do not.")
                              r-glue
                              r-generics
                              r-fs
-                             r-ellipsis
                              r-cli
                              r-cereal
                              r-butcher
                              r-bundle))
     (native-inputs (list r-knitr))
-    (home-page "https://vetiver.rstudio.com")
+    (home-page "https://vetiver.posit.co")
     (synopsis "Version, Share, Deploy, and Monitor Models")
     (description
      "The goal of vetiver is to provide fluent tooling to version, share, deploy, and

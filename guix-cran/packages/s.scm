@@ -27033,6 +27033,38 @@ in Boag (1949) and Berkson and Gage (1952), and extended in Schmidt and Witte
 Models) using quantile-quantile bias correction technique.")
     (license license:gpl2)))
 
+(define-public r-spdgp
+  (package
+    (name "r-spdgp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spdgp" version))
+       (sha256
+        (base32 "1l0r2m56cl0lxpbc9wca4mw690xnwz4y3klphfq2zc5hxh241cnx"))))
+    (properties `((upstream-name . "spdgp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-spdep
+                             r-spatialreg
+                             r-smoothmest
+                             r-sf
+                             r-rlang
+                             r-matrix
+                             r-mass
+                             r-cli))
+    (home-page "https://josiahparry.github.io/spdgp/")
+    (synopsis "Simulate Spatial Data Generation Processes")
+    (description
+     "This package provides functionality for simulating data generation processes
+across various spatial regression models, conceptually aligned with the dgp
+module of the Python library spreg <https://pysal.org/spreg/api.html#dgp>.")
+    (license license:expat)))
+
 (define-public r-spdesign
   (package
     (name "r-spdesign")
@@ -41820,48 +41852,6 @@ Learning methods that have embedded feature reduction in order to shrink down
 the feature space into a small and yet robust set.")
     (license license:gpl3)))
 
-(define-public r-sivirep
-  (package
-    (name "r-sivirep")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sivirep" version))
-       (sha256
-        (base32 "0kcj1wjk0ks2jl58lzv1l3wwzhi41jrsi42n94nhnym7b7sw4lzb"))))
-    (properties `((upstream-name . "sivirep")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-sysfonts
-                             r-stringr
-                             r-showtext
-                             r-sf
-                             r-rlang
-                             r-readxl
-                             r-kableextra
-                             r-httr2
-                             r-ggplot2
-                             r-epitrix
-                             r-dplyr
-                             r-config))
-    (native-inputs (list r-knitr))
-    (home-page "https://epiverse-trace.github.io/sivirep/")
-    (synopsis "Data Wrangling and Automated Reports from 'SIVIGILA' Source")
-    (description
-     "Data wrangling, pre-processing, and generating automated reports from Colombia's
-epidemiological surveillance system, SIVIGILA
-<https://portalsivigila.ins.gov.co/>.  It provides a customizable R Markdown
-template for analysis and automatic generation of epidemiological reports that
-can be adapted to local, regional, and national contexts.  This tool offers a
-standardized and reproducible workflow that helps to reduce manual labor and
-potential errors in report generation, improving their efficiency and
-consistency.")
-    (license license:expat)))
-
 (define-public r-sits
   (package
     (name "r-sits")
@@ -47082,13 +47072,13 @@ mechanism is known.  For more details, see Awan and Wang (2024),
 (define-public r-simaerep
   (package
     (name "r-simaerep")
-    (version "0.7.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simaerep" version))
        (sha256
-        (base32 "1bcrb23iaxhhg2xhd4aagiagjw5n7zk81nldy7q1rdvbws6xgxmg"))))
+        (base32 "1gw085nv0zj0ja7xgp6pw509pv1zldkiisyms9mszh9501blii9k"))))
     (properties `((upstream-name . "simaerep")))
     (build-system r-build-system)
     (arguments
@@ -47103,6 +47093,7 @@ mechanism is known.  For more details, see Awan and Wang (2024),
                              r-progressr
                              r-magrittr
                              r-knitr
+                             r-glue
                              r-ggplot2
                              r-furrr
                              r-forcats
@@ -47110,13 +47101,17 @@ mechanism is known.  For more details, see Awan and Wang (2024),
                              r-dbplyr
                              r-cowplot))
     (home-page "https://openpharma.github.io/simaerep/")
-    (synopsis "Find Clinical Trial Sites Under-Reporting Adverse Events")
+    (synopsis
+     "Detect Clinical Trial Sites Over- or Under-Reporting Clinical Events")
     (description
-     "Monitoring of Adverse Event (AE) reporting in clinical trials is important for
-patient safety.  Sites that are under-reporting AEs can be detected using
-Bootstrap-based simulations that simulate overall AE reporting.  Based on the
-simulation an AE under-reporting probability is assigned to each site in a given
-trial (Koneswarakantha 2021 <doi:10.1007/s40264-020-01011-5>).")
+     "Monitoring reporting rates of subject-level clinical events (e.g. adverse
+events, protocol deviations) reported by clinical trial sites is an important
+aspect of risk-based quality monitoring strategy.  Sites that are
+under-reporting or over-reporting events can be detected using bootstrap
+simulations during which patients are redistributed between sites.
+Site-specific distributions of event reporting rates are generated that are used
+to assign probabilities to the observed reporting rates. (Koneswarakantha 2024
+<doi:10.1007/s43441-024-00631-8>).")
     (license license:expat)))
 
 (define-public r-sim2dpredictr
@@ -54775,13 +54770,13 @@ and a graphical routine displaying the fitted trajectory of Landsat imagery.")
 (define-public r-shaper
   (package
     (name "r-shaper")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shapeR" version))
        (sha256
-        (base32 "02al1g9ycfb63mcx4s16abniggl825ihjanx6silbpv6dn6g1ms8"))))
+        (base32 "1xacf078yljad1r0smc2jshi0isflqgrm4a3mg89q07wvcf2jd2p"))))
     (properties `((upstream-name . "shapeR")))
     (build-system r-build-system)
     (arguments
@@ -61136,13 +61131,13 @@ functionality to extract and evaluate the relevant probabilities.")
 (define-public r-selfcontrolledcaseseries
   (package
     (name "r-selfcontrolledcaseseries")
-    (version "6.1.0")
+    (version "6.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SelfControlledCaseSeries" version))
        (sha256
-        (base32 "0pm62a6nrk5722gyiiif7xl9m1lsxlr24gc52vbl84qwby7dad3m"))))
+        (base32 "1xggd11s3q1kl82iwivsgiaf5a606ca98c2d3l745zsc2n2g5y2r"))))
     (properties `((upstream-name . "SelfControlledCaseSeries")))
     (build-system r-build-system)
     (arguments

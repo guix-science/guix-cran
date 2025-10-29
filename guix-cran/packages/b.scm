@@ -4989,13 +4989,13 @@ same author.  Stan functions are refactored here for easier testing.")
 (define-public r-breathtestcore
   (package
     (name "r-breathtestcore")
-    (version "0.8.9")
+    (version "0.8.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "breathtestcore" version))
        (sha256
-        (base32 "1zwk5brp8ka9ys4b9lh6vipznzq9jgxpamh7jjrkpjp6s02hhicd"))))
+        (base32 "02chikh7b3v6psyd7w9r4n1lkkjr0h482krqa9l9zaafkpbzsik8"))))
     (properties `((upstream-name . "breathtestcore")))
     (build-system r-build-system)
     (arguments
@@ -11363,13 +11363,13 @@ Research. <doi:10.1080/19466315.2019.1701546>.")
 (define-public r-blogdown
   (package
     (name "r-blogdown")
-    (version "1.21")
+    (version "1.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blogdown" version))
        (sha256
-        (base32 "00sk2mslkcnnxi4cv2l1icp81jb152lqg1yqcz420w4srf7pv28s"))))
+        (base32 "0q4h73y2sgr8svxm8r0hp1yf3idspjybaga1ffflkn333vik3rvc"))))
     (properties `((upstream-name . "blogdown")))
     (build-system r-build-system)
     (arguments
@@ -16862,13 +16862,13 @@ prefers Fira', and IQSS requires Libertinus'.")
 (define-public r-binaryrl
   (package
     (name "r-binaryrl")
-    (version "0.9.7")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binaryRL" version))
        (sha256
-        (base32 "1j6625jslsq5rchh63hs4jhpdd71llmhbw9q36vpklliwii5n7pn"))))
+        (base32 "09ma2r6haacnp6sy0b2bqg35yv0fb9jzl4d261ga2mqvskys0cfj"))))
     (properties `((upstream-name . "binaryRL")))
     (build-system r-build-system)
     (arguments
@@ -18413,24 +18413,25 @@ or item response models.")
 (define-public r-bidux
   (package
     (name "r-bidux")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bidux" version))
        (sha256
-        (base32 "1sc22mkgr6czqxjacm1rmp9csrdrgsj42kqxli8gycd5sslpv80y"))))
+        (base32 "0zpv0823038w09k6n936p4fywjxvh054059b7gq9y7668141xhc2"))))
     (properties `((upstream-name . "bidux")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
-                             r-stringr
                              r-stringdist
                              r-rsqlite
+                             r-rlang
                              r-readr
                              r-jsonlite
+                             r-glue
                              r-dplyr
                              r-dbi
                              r-cli))
@@ -18441,8 +18442,9 @@ or item response models.")
     (description
      "This package provides a framework and toolkit to guide shiny developers in
 implementing the Behavioral Insight Design (BID) framework.  The package offers
-functions for documenting each of the five stages (Notice, Interpret, Structure,
-Anticipate, and Validate), along with a comprehensive concept dictionary.")
+functions for documenting each of the five stages (Interpret, Notice,
+Anticipate, Structure, and Validate), along with a comprehensive concept
+dictionary.")
     (license license:expat)))
 
 (define-public r-bidsr

@@ -1409,6 +1409,35 @@ estimation functions (Maximum Likelihood Estimation, Inference For Margins,
 Moment Based Estimation and Canonical Maximum Likelihood).")
     (license license:gpl2+)))
 
+(define-public r-gulfm
+  (package
+    (name "r-gulfm")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GulFM" version))
+       (sha256
+        (base32 "18wwdvsskjfqifhyclvdz1mw5k41wf6ywg1ipn9xpgmvyxv2smvb"))))
+    (properties `((upstream-name . "GulFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrixstats r-mass))
+    (home-page "https://cran.r-project.org/package=GulFM")
+    (synopsis
+     "General Unilateral Load Estimator for Two-Layer Latent Factor Models")
+    (description
+     "This package implements general unilateral loading estimator for two-layer
+latent factor models with smooth, element-wise factor transformations.  We
+provide data simulation, loading estimation,finite-sample error bounds, and
+diagnostic tools for zero-mean and sub-Gaussian assumptions.  A unified
+interface is given for evaluating estimation accuracy and cosine similarity.
+The philosophy of the package is described in Guo G. (2026)
+<doi:10.1016/j.apm.2025.116280>.")
+    (license license:expat)))
+
 (define-public r-guiplot
   (package
     (name "r-guiplot")
@@ -13550,13 +13579,13 @@ R Markdown documents, and R Jupyter Notebooks'.  Internally, uses
 (define-public r-glyrepr
   (package
     (name "r-glyrepr")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glyrepr" version))
        (sha256
-        (base32 "13yv8ip16h9ghv7pfh9nh4x5wk9fgdwql3g5d4vy3wx6s8dh4zjq"))))
+        (base32 "03749kb1vvk543r2zyqlb1v7h01g6kjag5090a79cqsl3m23n0b5"))))
     (properties `((upstream-name . "glyrepr")))
     (build-system r-build-system)
     (arguments
@@ -16266,13 +16295,13 @@ X-chromosome genotype data through novel methods for location (Chen et al.,
 (define-public r-gjam
   (package
     (name "r-gjam")
-    (version "2.6.2")
+    (version "2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gjam" version))
        (sha256
-        (base32 "1jzgh5hp112gjgqyyhpd4fv1yizb56596wl3izb066rzhhyc4wim"))))
+        (base32 "0rh3glvgv5ssiybxvz7l1k2a2sia40sw9dh4dslli66w35m3hnd9"))))
     (properties `((upstream-name . "gjam")))
     (build-system r-build-system)
     (arguments
@@ -35830,6 +35859,32 @@ model selection with Genetic Algorithms (GA) proposed in {Martinez-de-Pison}
 selection procedure is introduced based on separate cost and complexity
 evaluations.")
     (license license:gpl2+)))
+
+(define-public r-ganttify
+  (package
+    (name "r-ganttify")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ganttify" version))
+       (sha256
+        (base32 "0bx4ph1fg8srwnpfh09qfm2qirgfgnbwqxvr935d7zp4ncmxb0fh"))))
+    (properties `((upstream-name . "ganttify")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-plotly r-magrittr r-htmlwidgets r-dplyr))
+    (home-page "https://github.com/AhmedAredah/Ganttify")
+    (synopsis "Create Interactive Gantt Charts with Work Breakdown Structure")
+    (description
+     "Create Primavera-style interactive Gantt charts with Work Breakdown Structure
+(WBS) hierarchy and activities.  Features include color-coded WBS items,
+indented labels, scrollable views for large projects, dynamic date formatting,
+and the ability to dim past activities.  Built on top of plotly for interactive
+visualizations.")
+    (license license:gpl3)))
 
 (define-public r-ganpadata
   (package

@@ -10718,13 +10718,13 @@ visualizing the data @code{(plot()}).")
 (define-public r-epocakir
   (package
     (name "r-epocakir")
-    (version "0.9.9")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epocakir" version))
        (sha256
-        (base32 "19dlwr7dm8dgpd4pkzz9z979ijq0rkampjw5mxjrbq8xgliz0mfr"))))
+        (base32 "11iwzxi669sw7i5ksjwqdplgimzj92bspdbrn7awqhlyifs6mn86"))))
     (properties `((upstream-name . "epocakir")))
     (build-system r-build-system)
     (arguments
@@ -10736,7 +10736,6 @@ visualizing the data @code{(plot()}).")
                              r-rlang
                              r-magrittr
                              r-lubridate
-                             r-ellipsis
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/alwinw/epocakir")
@@ -25935,6 +25934,53 @@ regression models.")
     (synopsis "Easy Nonlinear Model")
     (description "Fit and plot some nonlinear models.")
     (license license:gpl2)))
+
+(define-public r-easynem
+  (package
+    (name "r-easynem")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easynem" version))
+       (sha256
+        (base32 "0iyk4brz3n8c4wy09y6b95gqwynb913xq84k0q1ybks7pf8az36v"))))
+    (properties `((upstream-name . "easynem")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-tibble
+                             r-ternary
+                             r-shinydashboard
+                             r-shiny
+                             r-rstatix
+                             r-rlang
+                             r-reshape2
+                             r-readr
+                             r-multcompview
+                             r-igraph
+                             r-ggraph
+                             r-ggpubr
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-broom
+                             r-agricolae))
+    (home-page "https://cran.r-project.org/package=easynem")
+    (synopsis "Nematode Community Analysis")
+    (description
+     "This package provides a built-in Nemaplex database for nematodes, which can be
+used to search for various nematodes.  Also supports various nematode community
+and functional analyses such as nematode diversity, maturity index, metabolic
+footprint, and functional guild.  The methods are based on
+<https://shiny.wur.nl/ninja/>, Bongers, T. (1990) <doi:10.1007/BF00324627>,
+Ferris, H. (2010) <doi:10.1016/j.ejsobi.2010.01.003>, Wan, B. et al. (2022)
+<doi:10.1016/j.soilbio.2022.108695>, and Van Den Hoogen, J. et al. (2019)
+<doi:10.1038/s41586-019-1418-6>.")
+    (license license:expat)))
 
 (define-public r-easyncdf
   (package

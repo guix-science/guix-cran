@@ -983,6 +983,37 @@ and Xie (2021) <@code{arXiv:1906.07757v2>} and Li, Sung and Xie (2021)
 <@code{arXiv:2103.11085v2>}.")
     (license license:gpl3)))
 
+(define-public r-dynaspec
+  (package
+    (name "r-dynaspec")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dynaSpec" version))
+       (sha256
+        (base32 "12rp25mfqs52wqs0ianyr9vgc26b0p92lq8m958dpqadmvgih3vs"))))
+    (properties `((upstream-name . "dynaSpec")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list ffmpeg))
+    (propagated-inputs (list r-warbler
+                             r-viridis
+                             r-tuner
+                             r-seewave
+                             r-scales
+                             r-png
+                             r-ggplot2
+                             r-gganimate))
+    (home-page "https://github.com/maRce10/dynaSpec")
+    (synopsis "Dynamic Spectrogram Visualizations")
+    (description
+     "This package provides a set of tools to generate dynamic spectrogram
+visualizations in video format.")
+    (license license:gpl2+)))
+
 (define-public r-dynarer
   (package
     (name "r-dynarer")
@@ -5073,26 +5104,20 @@ indication and drug use summarised.")
 (define-public r-drugsim2dr
   (package
     (name "r-drugsim2dr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugSim2DR" version))
        (sha256
-        (base32 "1sphg3imdyr71amwqzmzzp6h1ai2m6rm87l08mv70i6jlznwf9kr"))))
+        (base32 "0wcar23hlv8h6a5dkfwl358j7m62h4jmyhp0bcfg2yah3awsgssm"))))
     (properties `((upstream-name . "DrugSim2DR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-sp
-                             r-rvest
-                             r-reshape2
-                             r-pheatmap
-                             r-igraph
-                             r-fastmatch
-                             r-chemminer))
+    (propagated-inputs (list r-tidyr r-reshape2 r-pheatmap r-igraph
+                             r-fastmatch))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DrugSim2DR")
     (synopsis "Predict Drug Functional Similarity to Drug Repurposing")
@@ -11256,35 +11281,6 @@ CRAN packages is from the RStudio CRAN mirror', see
 <https://cranlogs.r-pkg.org:443>.  Bioconductor package download stats is at
 <https://bioconductor.org/packages/stats/>.")
     (license license:artistic2.0)))
-
-(define-public r-dlssm
-  (package
-    (name "r-dlssm")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DLSSM" version))
-       (sha256
-        (base32 "16vfl6njyvia7020c0cr9vi7j86z9r3l8ry8gppd5ji4icd3x639"))))
-    (properties `((upstream-name . "DLSSM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DLSSM")
-    (synopsis "Dynamic Logistic State Space Prediction Model")
-    (description
-     "This package implements the dynamic logistic state space model for binary
-outcome data proposed by Jiang et al. (2021) <doi:10.1111/biom.13593>.  It
-provides a computationally efficient way to update the prediction whenever new
-data becomes available.  It allows for both time-varying and time-invariant
-coefficients, and use cubic smoothing splines to model varying coefficients.
-The smoothing parameters are objectively chosen by maximum likelihood.  The
-model is updated using batch data accumulated at pre-specified time intervals.")
-    (license license:gpl3)))
 
 (define-public r-dlsem
   (package
@@ -20319,6 +20315,35 @@ whose design is understood scientifically and end up with a treatment rule that
 is trustworthy statistically, along with an estimation of rule benefit in an
 independent sample.")
     (license license:gpl2+)))
+
+(define-public r-devrate
+  (package
+    (name "r-devrate")
+    (version "0.2.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "devRate" version))
+       (sha256
+        (base32 "06vllqbbm6i3r1qz9afxnz7j2s1w5cgpzwd29bd5glbfn96aqmpr"))))
+    (properties `((upstream-name . "devRate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/frareb/devRate/")
+    (synopsis
+     "Quantify the Relationship Between Development Rate and Temperature in Ectotherms")
+    (description
+     "This package provides a set of functions to quantify the relationship between
+development rate and temperature and to build phenological models.  The package
+comprises a set of models and estimated parameters borrowed from a literature
+review in ectotherms.  The methods and literature review are described in
+Rebaudo et al. (2018) <doi:10.1111/2041-210X.12935>, Rebaudo and Rabhi (2018)
+<doi:10.1111/eea.12693>, and Regnier et al. (2021) <doi:10.1093/ee/nvab115>.  An
+example can be found in Rebaudo et al. (2017) <doi:10.1007/s13355-017-0480-5>.")
+    (license license:gpl2)))
 
 (define-public r-devore7
   (package

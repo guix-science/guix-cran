@@ -17312,6 +17312,34 @@ either by user-specified colors or colored by the strength of the coefficient of
 that text derived from a regression model.")
     (license license:lgpl2.1)))
 
+(define-public r-modeltuning
+  (package
+    (name "r-modeltuning")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "modeltuning" version))
+       (sha256
+        (base32 "16rsdx57rr5yjm29vwrq3kxg3x17dkjwiky83xs2kdnrlw2rgkyn"))))
+    (properties `((upstream-name . "modeltuning")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-r6 r-progressr r-future-apply))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.dmolitor.com/modeltuning/")
+    (synopsis "Model Selection and Tuning Utilities")
+    (description
+     "This package provides a lightweight framework for model selection and
+hyperparameter tuning in R. The package offers intuitive tools for grid search,
+cross-validation, and combined grid search with cross-validation that work
+seamlessly with virtually any modeling package.  Designed for flexibility and
+ease of use, it standardizes tuning workflows while remaining fully compatible
+with a wide range of model interfaces and estimation functions.")
+    (license license:expat)))
+
 (define-public r-modeltime-resample
   (package
     (name "r-modeltime-resample")
@@ -28672,20 +28700,24 @@ in Ecology and Evolution, 15, 301â307 <doi:10.1111/2041-210X.14269>.")
 (define-public r-mikropml
   (package
     (name "r-mikropml")
-    (version "1.6.2")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mikropml" version))
        (sha256
-        (base32 "177h5qlrxw287qc86qwzqfhac6ph32gd5ih68gvx9h0pzryh8mrr"))))
+        (base32 "1wxn4fb8i9hcwzwybwa30r28i03i0fl00rxzx7yrhdcgd62q9snn"))))
     (properties `((upstream-name . "mikropml")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xgboost
+                             r-treesummarizedexperiment
                              r-tidyselect
+                             r-summarizedexperiment
+                             r-singlecellexperiment
+                             r-s4vectors
                              r-rpart
                              r-rlang
                              r-randomforest

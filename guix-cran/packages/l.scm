@@ -14257,13 +14257,13 @@ colour displays.")
 (define-public r-lefko3
   (package
     (name "r-lefko3")
-    (version "6.5.1")
+    (version "6.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lefko3" version))
        (sha256
-        (base32 "0llgs9g7g5jf4yar125ibwjl55vwgn1iqcx7iclvaxp50kpasl7p"))))
+        (base32 "1z0w7yjw280wi4b6qm6iqcj1g01xcgz1phqif9p9mmisr0q7w8ik"))))
     (properties `((upstream-name . "lefko3")))
     (build-system r-build-system)
     (arguments

@@ -7247,13 +7247,13 @@ applications.")
 (define-public r-propertee
   (package
     (name "r-propertee")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "propertee" version))
        (sha256
-        (base32 "17r5jgh9ljwj9658fx1z3m6qvx8hvky81myjb7ni0nin9bznhc93"))))
+        (base32 "15japhmv6v5qcfi8iwnhpxqkcd952knjgi8wby72bamjlrcf4b1i"))))
     (properties `((upstream-name . "propertee")))
     (build-system r-build-system)
     (arguments
@@ -9747,13 +9747,13 @@ visualizations are also provided.")
 (define-public r-priorsense
   (package
     (name "r-priorsense")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorsense" version))
        (sha256
-        (base32 "0pjkry6fc9z72k8l1m7kwch212jk95w8pjm69hyxs0d6skb3wv5j"))))
+        (base32 "0rih35068kdaj68b4pg0xrl6r6gr9jiabh57kqbaja5id586rpi4"))))
     (properties `((upstream-name . "priorsense")))
     (build-system r-build-system)
     (arguments
@@ -10605,13 +10605,13 @@ Westendorp 1976, isbn:9789283100386).")
 (define-public r-pricer
   (package
     (name "r-pricer")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priceR" version))
        (sha256
-        (base32 "08s3sx3cmvvr7ibrybbw35pkvizhc8yqdikwhv9c0ljmv5q3qww9"))))
+        (base32 "1x7f1jy8vjn87zdp47vpav09z6z12cdh1qv6xv9rkggx1f7iqbpg"))))
     (properties `((upstream-name . "priceR")))
     (build-system r-build-system)
     (arguments
@@ -10634,7 +10634,7 @@ and exchange rate data from World Bank API, data cleaning/parsing, and
 standardisation.  Inflation adjustment calculations as found in Principles of
 Macroeconomics by Gregory Mankiw et al (2014).  Current and historical end of
 day exchange rates for 171 currencies from the European Central Bank Statistical
-Data Warehouse (2020) <https://sdw.ecb.europa.eu/@code{curConverter.do>}.")
+Data Warehouse (2020).")
     (license license:expat)))
 
 (define-public r-pricelevels
@@ -24793,6 +24793,48 @@ series of Intersection-Union Wald tests.  The package can handle large and
 unbalanced data and plot results.")
     (license license:expat)))
 
+(define-public r-pleioh2g
+  (package
+    (name "r-pleioh2g")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pleioh2g" version))
+       (sha256
+        (base32 "15f0zkbcxxh3za0pxwa5s7vnk89r6bc5ywv49y30gfkf6n0nc95x"))))
+    (properties `((upstream-name . "pleioh2g")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vroom
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-mvtnorm
+                             r-glue
+                             r-gdata
+                             r-fs
+                             r-dplyr
+                             r-data-table
+                             r-cli
+                             r-checkmate
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pleioh2g")
+    (synopsis
+     "Estimation of Pleiotropic Heritability from Genome-Wide Association Studies (GWAS) Summary Statistics")
+    (description
+     "This package provides tools to compute unbiased pleiotropic heritability
+estimates of complex diseases from genome-wide association studies (GWAS)
+summary statistics.  We estimate pleiotropic heritability from GWAS summary
+statistics by estimating the proportion of variance explained from an estimated
+genetic correlation matrix (Bulik-Sullivan et al.  2015 <doi:10.1038/ng.3406>)
+and employing a Monte-Carlo bias correction procedure to account for sampling
+noise in genetic correlation estimates.")
+    (license license:gpl3)))
+
 (define-public r-pleio
   (package
     (name "r-pleio")
@@ -32507,13 +32549,13 @@ Econometrics with R, ISBN:978-1-118-94918-4.")
 (define-public r-pgkdesphere
   (package
     (name "r-pgkdesphere")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pgKDEsphere" version))
        (sha256
-        (base32 "01ck72mjzpkihkifsg2ca3xxivq7xq47483pl7dwy8xfjm2s0csd"))))
+        (base32 "1y476pz1ma1i1wr47sphkda7zm7hgllrn0liz7x9invkpdfmsby1"))))
     (properties `((upstream-name . "pgKDEsphere")))
     (build-system r-build-system)
     (arguments
@@ -32533,11 +32575,11 @@ Econometrics with R, ISBN:978-1-118-94918-4.")
      "Parametrically Guided Kernel Density Estimator for Spherical Data")
     (description
      "Nonparametric density estimation for (hyper)spherical data by means of a
-parametrically guided kernel estimator (adaptation of the method of Hjort and
-Glad (1995) <doi:10.1214/aos/1176324627> to the spherical setting).  The package
-also allows the data-driven selection of the smoothing parameter and the
-representation of the estimated density for circular and spherical data.
-Estimators of the density without guide can also be obtained.")
+parametrically guided kernel estimator (Alonso-Pena et al. (2024)
+<doi:10.1111/sjos.12737>.  The package also allows the data-driven selection of
+the smoothing parameter and the representation of the estimated density for
+circular and spherical data.  Estimators of the density without guide can also
+be obtained.")
     (license license:gpl2+)))
 
 (define-public r-pgirmess
@@ -35863,13 +35905,13 @@ from wild populations, and for visualizing pedigrees.")
 (define-public r-pedtools
   (package
     (name "r-pedtools")
-    (version "2.8.2")
+    (version "2.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedtools" version))
        (sha256
-        (base32 "1dax7wkrym4fkfmil2553g1zfqjjwswid4j49nffl0d9fg5wdlij"))))
+        (base32 "18xw6cijg8cjwb7iwimchsy9cr0vn181klm1dh466whd0ysnqh0y"))))
     (properties `((upstream-name . "pedtools")))
     (build-system r-build-system)
     (arguments
@@ -40613,13 +40655,13 @@ endpoints require the use of an API key which can be obtained at
 (define-public r-pathling
   (package
     (name "r-pathling")
-    (version "8.1.0")
+    (version "9.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathling" version))
        (sha256
-        (base32 "1r9s3aw327nmhck8h7i2x6ccjfvk7mn2g17q14ws6vha01k468v0"))))
+        (base32 "1dxmmazbsibji5dikfzz4zx0rfrxckn2dsgawicbiqrih31lq0k4"))))
     (properties `((upstream-name . "pathling")))
     (build-system r-build-system)
     (arguments

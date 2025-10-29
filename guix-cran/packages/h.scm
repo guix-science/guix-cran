@@ -4115,6 +4115,42 @@ confidence bands.  Methods used in the package refer to Bagkavos, Isakson,
 Mammen, Nielsen and Proust-Lima (2025) <doi:10.1093/biomet/asaf008>.")
     (license license:gpl2+)))
 
+(define-public r-hpzoneapi
+  (package
+    (name "r-hpzoneapi")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HPZoneAPI" version))
+       (sha256
+        (base32 "16d52gj4q8fd0lbkf69lqszni27pkyc0nb8vs6p72rjf79gl7a48"))))
+    (properties `((upstream-name . "HPZoneAPI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-safer
+                             r-rstudioapi
+                             r-readxl
+                             r-magrittr
+                             r-lubridate
+                             r-keyring
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr))
+    (home-page "https://github.com/ggdatascience/HPZoneAPI")
+    (synopsis "'HPZone' API Interface")
+    (description
+     "Package that simplifies the use of the HPZone API. Most of the annoying and
+labor-intensive parts of the interface are handled by wrapper functions.  Note
+that the API and its details are not publicly available.  Information can be
+found at
+<https://www.ggdghorkennisnet.nl/groep/726-platform-infectieziekte-epidemiologen/documenten/map/9609>
+for those with access.")
+    (license license:expat)))
+
 (define-public r-hplb
   (package
     (name "r-hplb")
@@ -10230,6 +10266,36 @@ based on original observations given in Wang and Akritas (2010a)
 Akritas (2010b) <doi:10.1016/j.jmva.2010.03.012>.")
     (license license:gpl2)))
 
+(define-public r-hetcorfs
+  (package
+    (name "r-hetcorfs")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hetcorFS" version))
+       (sha256
+        (base32 "1kld8awvck7f91gdrvyz6xqf0a86cfb1183xll278yx70cl7g6kk"))))
+    (properties `((upstream-name . "hetcorFS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-psych r-polycor r-dplyr r-cluster))
+    (home-page "https://cran.r-project.org/package=hetcorFS")
+    (synopsis
+     "Unsupervised Feature Selection using the Heterogeneous Correlation Matrix")
+    (description
+     "Unsupervised multivariate filter feature selection using the UFS-@code{rHCM} or
+UFS-@code{cHCM} algorithms based on the heterogeneous correlation matrix (HCM).
+The HCM consists of Pearson's correlations between numerical features,
+polyserial correlations between numerical and ordinal features, and polychoric
+correlations between ordinal features.  Tortora C., Madhvani S., Punzo A.
+(2025). \"Designing unsupervised mixed-type feature selection techniques using
+the heterogeneous correlation matrix.\" International Statistical Review.
+Forthcoming.")
+    (license license:gpl2)))
+
 (define-public r-hessrna
   (package
     (name "r-hessrna")
@@ -12041,13 +12107,13 @@ on many jumps in nonparametric panel regression models\". @code{arXiv} preprint
 (define-public r-hdtg
   (package
     (name "r-hdtg")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdtg" version))
        (sha256
-        (base32 "0kb5i2vw1g3ms12fq1jk35yba19sign86qph67rba00ym9393cd5"))))
+        (base32 "1h5h0wpy599mbdwc7s76hzx4gpblj10xa0vz3m6bxfs47kipmnb4"))))
     (properties `((upstream-name . "hdtg")))
     (build-system r-build-system)
     (arguments
@@ -15661,18 +15727,19 @@ patterns.")
 (define-public r-ham
   (package
     (name "r-ham")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ham" version))
        (sha256
-        (base32 "0v2m0h7d56b69a6a71afzrx6argxwh1pp3pmdiid5hai8k6ip616"))))
+        (base32 "1vfkv6xqa8jrdnv2a84yw6jbf1jd3k6fyxvgv61bn15r0qfwqghc"))))
     (properties `((upstream-name . "ham")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/szuniga07/ham")
     (synopsis "Healthcare Analysis Methods")
     (description
@@ -15687,8 +15754,10 @@ variables.  Also performs Cronbach's alpha for various scale items (e.g., survey
 questions).  See Github URL for examples in the README file.  For more details
 on the statistical methods, see Allen & Yen (1979, ISBN:0-8185-0283-5), Angrist
 & Pischke (2009, ISBN:9780691120355), Harrell (2016, ISBN:978-3-319-19424-0),
-Kline (1999, ISBN:9780415211581), and Linden (2015)
-<doi:10.1177/1536867X1501500208>.")
+Kline (1999, ISBN:9780415211581), Linden (2015)
+<doi:10.1177/1536867X1501500208>, Merlo (2006) <doi:10.1136/jech.2004.029454>
+Muthen & Satorra (1995) <doi:10.2307/271070>, and Rabe-Hesketh & Skrondal (2008,
+ISBN:978-1-59718-040-5).")
     (license license:expat)))
 
 (define-public r-halk

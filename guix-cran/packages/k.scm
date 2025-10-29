@@ -574,6 +574,32 @@ paper of Liu et al. (2007), <doi:10.1111/j.1541-0420.2007.00799.x>.")
 and Levy (2016) <@code{arXiv:1701.07266>}.")
     (license license:gpl2+)))
 
+(define-public r-ksm
+  (package
+    (name "r-ksm")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ksm" version))
+       (sha256
+        (base32 "12qw0cf65k6dy0y4pidxl87wr3vnjkxpkhzj85ry2r11s1phn6k8"))))
+    (properties `((upstream-name . "ksm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=ksm")
+    (synopsis
+     "Kernel Density Estimation for Random Symmetric Positive Definite Matrices")
+    (description
+     "Kernel smoothing for Wishart random matrices described in Daayeb, Khardani and
+Ouimet (2025) <doi:10.48550/@code{arXiv.2506.08816>}, Gaussian and log-Gaussian
+models using least square or likelihood cross validation criteria for optimal
+bandwidth selection.")
+    (license license:expat)))
+
 (define-public r-ksic
   (package
     (name "r-ksic")

@@ -9475,13 +9475,13 @@ API reference <https://developers.arcgis.com/rest/places/>.")
 (define-public r-arcgislayers
   (package
     (name "r-arcgislayers")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgislayers" version))
        (sha256
-        (base32 "11jrf4ih3qp6z0j2q5qpqp15hwnhz9ggwgy7y6bb55mq0nzbxxxi"))))
+        (base32 "1nbkc0cmjjc7kza2pxw64wbymgzf0mqakzmwqnjnsbkcsapx95vi"))))
     (properties `((upstream-name . "arcgislayers")))
     (build-system r-build-system)
     (arguments
@@ -21540,6 +21540,32 @@ decay function to a stress-relaxation / creep experiment, obtain adhesion
 energies.  These operations can be done either over a single F-d curve or over a
 set of F-d curves in batch mode.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-afmpar
+  (package
+    (name "r-afmpar")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "afmpar" version))
+       (sha256
+        (base32 "0v6z8g8h12jihy6ix9zjvlza49l9xn82nr5g54drklnfp12yfj4n"))))
+    (properties `((upstream-name . "afmpar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/philaris/afmpar")
+    (synopsis "Check Validity of Greek AFM and PA Numbers")
+    (description
+     "With the functions in this package you can check the validity of the Greek Tax
+Identification Number (AFM) and the Greek Personal Number (PA)
+<https://pa.gov.gr>.  The PA is a new universal ID for Greek citizens across all
+public services and it is to replace older numbers issued by various Greek state
+agencies.  Its format is a 12-character ID consisting of three alphanumeric
+characters followed by the nine numerical digits of the AFM.")
+    (license license:expat)))
 
 (define-public r-afheritability
   (package

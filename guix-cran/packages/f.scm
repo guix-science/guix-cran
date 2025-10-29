@@ -7564,13 +7564,13 @@ speciation, preservation and sampling.")
 (define-public r-fossilsim
   (package
     (name "r-fossilsim")
-    (version "2.4.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FossilSim" version))
        (sha256
-        (base32 "0k5rs7p85pcwzjv9gkgrg1dp24ri1shcyr9p1r0xd7axvzpmpj4w"))))
+        (base32 "10bi2s4p31ifbfjfk2knrkss1jfgc7958bl3fzx2pk4w5wxwl39p"))))
     (properties `((upstream-name . "FossilSim")))
     (build-system r-build-system)
     (arguments
@@ -19722,13 +19722,13 @@ data.")
 (define-public r-featureextraction
   (package
     (name "r-featureextraction")
-    (version "3.11.0")
+    (version "3.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FeatureExtraction" version))
        (sha256
-        (base32 "0im4gh1h1qnjhpa8g4qpvcyw3rk7sqg69b71ahhb4w1ylhcxz6sp"))))
+        (base32 "1fz2js54dd0wg0cmcyj4kq6g00qyr3k5d5zbd3nd45hmrlgl5q8c"))))
     (properties `((upstream-name . "FeatureExtraction")))
     (build-system r-build-system)
     (arguments

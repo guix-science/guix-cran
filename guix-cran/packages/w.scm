@@ -8206,13 +8206,13 @@ Centre for Demography and Human Capital Data Explorer
 (define-public r-wbwdi
   (package
     (name "r-wbwdi")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wbwdi" version))
        (sha256
-        (base32 "1yi27n2r8wdfscyndpr3d3wgwzbjv3nhmiy9rps6g0l02a2h7dwf"))))
+        (base32 "1vh4aj3x028kw9vz5vq8z1hgqifrjvnp8dprdhqkj4micmy871f4"))))
     (properties `((upstream-name . "wbwdi")))
     (build-system r-build-system)
     (arguments

@@ -22671,6 +22671,31 @@ analytically.  The method has been described in Hoffmann TJ, Marini NJ, and
 Witte JS (2010) <doi:10.1371/journal.pone.0013584>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-thetasvm
+  (package
+    (name "r-thetasvm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "THETASVM" version))
+       (sha256
+        (base32 "0w7ldngvpk6bx7ajyyhzw9j0vn1f8s9dv41bxqmx0mlpjlh3xp4v"))))
+    (properties `((upstream-name . "THETASVM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tssvm r-tseries r-forecast))
+    (home-page "https://cran.r-project.org/package=THETASVM")
+    (synopsis "Time Series Forecasting using THETA-SVM Hybrid Model")
+    (description
+     "Testing, Implementation, and Forecasting of the THETA-SVM hybrid model.  The
+THETA-SVM hybrid model combines the distinct strengths of the THETA model and
+the Support Vector Machine (SVM) model for time series forecasting.For method
+details see Bhattacharyya et al. (2022) <doi:10.1007/s11071-021-07099-3>.")
+    (license license:gpl3)))
+
 (define-public r-thestats
   (package
     (name "r-thestats")

@@ -1668,6 +1668,41 @@ are available to assess the accuracy of oneâs method.  Please see Steorts
 and similarity calculations.")
     (license license:gpl2)))
 
+(define-public r-istay
+  (package
+    (name "r-istay")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iSTAY" version))
+       (sha256
+        (base32 "02l3df041zrwpmcldmpcw5qhaiskby7yjbzl0si5m7vagnj60z7v"))))
+    (properties `((upstream-name . "iSTAY")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-lmertest
+                             r-lme4
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=iSTAY")
+    (synopsis "Information-Based Stability and Synchrony Measures")
+    (description
+     "This package provides functions to to compute a continuum of information-based
+measures for quantifying the temporal stability of populations, communities, and
+ecosystems, as well as their associated synchrony, based on species (or species
+assemblage) biomass or other key variables.  When biodiversity data are
+available, the package also enables the assessment of the corresponding
+diversityâstability relationships.  All measures are applicable in both
+temporal and spatial contexts.  The theoretical and methodological background is
+detailed in Chao et al. (2025) <doi:10.1101/2025.08.20.671203>.")
+    (license license:gpl3+)))
+
 (define-public r-istats
   (package
     (name "r-istats")
@@ -6800,13 +6835,13 @@ Schubert Kabban (2014) <doi:10.32614/RJ-2014-009>.")
 (define-public r-inverseregex
   (package
     (name "r-inverseregex")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inverseRegex" version))
        (sha256
-        (base32 "1ca6adv602mh6fgkjy4qvmradki3wp44iak27i1k4cp3fi9cm986"))))
+        (base32 "18445vq0ywjsrpiv59hsnyvdr3mmxl231r9p7nb78m3fwi4npm3q"))))
     (properties `((upstream-name . "inverseRegex")))
     (build-system r-build-system)
     (arguments
@@ -19452,13 +19487,13 @@ of model fits and imputation of censored data.")
 (define-public r-icellr
   (package
     (name "r-icellr")
-    (version "1.6.7")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iCellR" version))
        (sha256
-        (base32 "043ic1ijp9qycap1bh4s07ql1irzpxzyyk68qryjvqsgf8m33rl0"))))
+        (base32 "1nvbjws3gv178x0jj8lzv9yv2kqkr53vk71vm19hwprvrwp0s8hf"))))
     (properties `((upstream-name . "iCellR")))
     (build-system r-build-system)
     (arguments
@@ -21723,13 +21758,13 @@ tabular datasets.")
 (define-public r-i14y
   (package
     (name "r-i14y")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "I14Y" version))
        (sha256
-        (base32 "1v61d9si8w52znahwabhvqjqb8sqndic8s3q0y715v6i4cjn1fi2"))))
+        (base32 "0mgnshi9bfq6kys675dc16ywlqq7r6jcl1kcxgzgg0w520vmayh8"))))
     (properties `((upstream-name . "I14Y")))
     (build-system r-build-system)
     (arguments

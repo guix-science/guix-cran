@@ -4294,6 +4294,49 @@ arrays (stars) objects.  Use c-squares codes to quickly join or query spatial
 data.")
     (license license:gpl3+)))
 
+(define-public r-cspstandsegmentation
+  (package
+    (name "r-cspstandsegmentation")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CspStandSegmentation" version))
+       (sha256
+        (base32 "08kipa19dya4ynll3hgqbrd6axrbmjql01k4b97gdy2r7c2lsm5n"))))
+    (properties `((upstream-name . "CspStandSegmentation")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-rgl
+                             r-rcsf
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-magrittr
+                             r-lidr
+                             r-igraph
+                             r-foreach
+                             r-doparallel
+                             r-dbscan
+                             r-data-table
+                             r-conicfit
+                             r-bh))
+    (home-page "https://github.com/JulFrey/CspStandSegmentation")
+    (synopsis
+     "Comparative Shortest Path Forest Stand Segmentation from LiDAR Data")
+    (description
+     "Functionality for segmenting individual trees from a forest stand scanned with a
+close-range (e.g., terrestrial or mobile) laser scanner.  The complete workflow
+from a raw point cloud to a complete tabular forest inventory is provided.  The
+package contains several algorithms for detecting tree bases and a graph-based
+algorithm to attach all remaining points to these tree bases.  It builds heavily
+on the @code{lidR} package.  A description of the segmentation algorithm can be
+found in Larysch et al. (2025) <doi:10.1007/s10342-025-01796-z>.")
+    (license license:gpl3)))
+
 (define-public r-csppdata
   (package
     (name "r-csppdata")
@@ -25568,19 +25611,25 @@ energy-based method was introduced by Kotani et al. (2006)
 (define-public r-coglasso
   (package
     (name "r-coglasso")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coglasso" version))
        (sha256
-        (base32 "0z4qdncmznprv16973jlj29vxxlkaqy6ari65fswn6ics2sz3xrr"))))
+        (base32 "1x3ak65w0rvsw1m8r55b0g780lys2c5465j1fzfmd06399wjy129"))))
     (properties `((upstream-name . "coglasso")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
+    (propagated-inputs (list r-withr
+                             r-rlang
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-lifecycle
+                             r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/DrQuestion/coglasso")
     (synopsis
@@ -25588,8 +25637,8 @@ energy-based method was introduced by Kotani et al. (2006)
     (description
      "Reconstruct networks from multi-omics data sets with the collaborative graphical
 lasso (coglasso) algorithm described in Albanese, A., Kohlen, W., and Behrouzi,
-P. (2024) <@code{arXiv:2403.18602>}.  Build multiple networks using the
-@code{coglasso()} function, select the best one with @code{stars_coglasso()}.")
+P. (2024) <doi:10.48550/@code{arXiv.2403.18602>}.  Use the main wrapper function
+@code{`bs()}` to build and select a multi-omics network.")
     (license license:gpl2+)))
 
 (define-public r-cogirt
@@ -27941,19 +27990,19 @@ selection that are custom-made for the problem of INUS-discovery.")
 (define-public r-cmvnorm
   (package
     (name "r-cmvnorm")
-    (version "1.0-7")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmvnorm" version))
        (sha256
-        (base32 "0zi4adh3gd8nbcnsn9fqiiqi5pc2jx782vw394gi988vyngqr7cq"))))
+        (base32 "02wj6vfrqvcjj56g54crjhzxgiy20fh1n9za49xprfqcp7pkhirw"))))
     (properties `((upstream-name . "cmvnorm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-emulator r-elliptic))
+    (propagated-inputs (list r-quadform r-emulator r-elliptic))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/cmvnorm")
     (synopsis "The Complex Multivariate Gaussian Distribution")
@@ -51212,13 +51261,13 @@ the Kenya Health Information System <https://hiskenya.org> in a consistent way."
 (define-public r-cancerradarr
   (package
     (name "r-cancerradarr")
-    (version "1.3.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cancerradarr" version))
        (sha256
-        (base32 "17d07ldvd7jnvxcyc70jj88wj922zg677kggwvrd9yncbyrng03c"))))
+        (base32 "13byqbhgcc6mfccqss3vm2hdn95nykz8wf57nvsj4904l036kxnv"))))
     (properties `((upstream-name . "cancerradarr")))
     (build-system r-build-system)
     (arguments
@@ -51232,6 +51281,7 @@ the Kenya Health Information System <https://hiskenya.org> in a consistent way."
                              r-plyr
                              r-openxlsx
                              r-magrittr
+                             r-gtools
                              r-epitools
                              r-dplyr))
     (native-inputs (list r-quarto))
