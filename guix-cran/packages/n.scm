@@ -7416,13 +7416,13 @@ evidence flow decomposition.")
 (define-public r-nmadta
   (package
     (name "r-nmadta")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMADTA" version))
        (sha256
-        (base32 "1r3vgcwcvk00cd0q3n1rs1kjwgmkx42sr3c7s6b2v9mjp9s0m6rz"))))
+        (base32 "1sq05bswmhmzqjg0g2v6j1nf55c0ib413lz4vc3zk638m361pfi4"))))
     (properties `((upstream-name . "NMADTA")))
     (build-system r-build-system)
     (arguments
@@ -7440,14 +7440,13 @@ evidence flow decomposition.")
     (home-page "https://cran.r-project.org/package=NMADTA")
     (synopsis "Network Meta-Analysis of Multiple Diagnostic Tests")
     (description
-     "This package implements HSROC (hierarchical summary receiver operating
-characteristic) model developed by Ma, Lian, Chu, Ibrahim, and Chen (2018)
-<doi:10.1093/biostatistics/kxx025> and hierarchical model developed by Lian,
-Hodges, and Chu (2019) <doi:10.1080/01621459.2018.1476239> for performing
-meta-analysis for 1-5 diagnostic tests to simultaneously compare multiple tests
-within a missing data framework.  This package evaluates the accuracy of
-multiple diagnostic tests and also gives graphical representation of the
-results.")
+     "This package provides statistical methods for network meta-analysis of 1â5
+diagnostic tests to simultaneously compare multiple tests within a missing data
+framework, including: - Bayesian hierarchical model for network meta-analysis of
+multiple diagnostic tests (Ma, Lian, Chu, Ibrahim, and Chen (2018)
+<doi:10.1093/biostatistics/kxx025>) - Bayesian Hierarchical Summary Receiver
+Operating Characteristic Model for Network Meta-Analysis of Diagnostic Tests
+(Lian, Hodges, and Chu (2019) <doi:10.1080/01621459.2018.1476239>).")
     (license license:gpl2+)))
 
 (define-public r-nma

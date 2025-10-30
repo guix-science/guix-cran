@@ -7672,6 +7672,40 @@ data and parse.  Kass-Hout TA, Xu Z, Mohebbi M et al. (2016)
 <doi:10.1093/jamia/ocv153>.")
     (license license:gpl3+)))
 
+(define-public r-openesm
+  (package
+    (name "r-openesm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openesm" version))
+       (sha256
+        (base32 "1lvhbjg5qwkij99967zxzlmlk21nq6s0scghv5wdplg25544vjs0"))))
+    (properties `((upstream-name . "openesm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zen4r
+                             r-tibble
+                             r-readr
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-fs
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/openesm-project/openesm-r")
+    (synopsis "Access the Open Experience Sampling Method Database")
+    (description
+     "This package provides programmatic access to the Open Experience Sampling Method
+('@code{openESM}') database (<https://openesmdata.org>), a collection of
+harmonized experience sampling datasets.  The package enables researchers to
+discover, download, and work with the datasets while ensuring proper citation
+and license compliance.")
+    (license license:expat)))
+
 (define-public r-openeo
   (package
     (name "r-openeo")
@@ -10777,28 +10811,27 @@ Y to predict Y.")
 (define-public r-omicflow
   (package
     (name "r-omicflow")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmicFlow" version))
        (sha256
-        (base32 "19wykx96b609ia0b82fhmd7xilfrgvvfbp5hgifwaj9psw46r82a"))))
+        (base32 "0qwv94pdaylv9lr90rpsvk5gmk5hz3mirjjlk2sxhkaw92g52qdd"))))
     (properties `((upstream-name . "OmicFlow")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-yyjsonr
-                             r-viridis
                              r-vegan
-                             r-slam
                              r-rstatix
                              r-rhdf5
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
                              r-rcolorbrewer
-                             r-rbiom
                              r-r6
-                             r-purrr
                              r-patchwork
                              r-matrix
                              r-magrittr

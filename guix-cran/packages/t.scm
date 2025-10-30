@@ -28984,13 +28984,13 @@ quantiles from the accumulated distributions.")
 (define-public r-tdiagree
   (package
     (name "r-tdiagree")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDIagree" version))
        (sha256
-        (base32 "1makm2cqsn5488zik8xy6n0yx0kskfbfdyw559nd3b1hm76q2czf"))))
+        (base32 "05ix6n523w52dfk1n399xf04svgdrlr8vjyz7jnbl58fanvsh9z2"))))
     (properties `((upstream-name . "TDIagree")))
     (build-system r-build-system)
     (arguments
@@ -29001,6 +29001,7 @@ quantiles from the accumulated distributions.")
                              r-multcomp
                              r-katex
                              r-gt
+                             r-furniture
                              r-boot))
     (home-page "https://cran.r-project.org/package=TDIagree")
     (synopsis "Assessment of Agreement using the Total Deviation Index")

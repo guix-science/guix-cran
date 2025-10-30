@@ -4739,13 +4739,13 @@ Selection Index Method can be found in Maniya K. and Bhatt M. G.(2010)
 (define-public r-psidread
   (package
     (name "r-psidread")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psidread" version))
        (sha256
-        (base32 "1l5l8z6r81xrcwqv2by2i9shgqiirpww9c98mq9sidmha5p8nh7v"))))
+        (base32 "1s3cpcpq7mywk6r91jiplcw2c7w432kk4pwvpnri1rh6p4b2gq29"))))
     (properties `((upstream-name . "psidread")))
     (build-system r-build-system)
     (arguments
@@ -7004,13 +7004,13 @@ and will be added in future updates.")
 (define-public r-proreg
   (package
     (name "r-proreg")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PROreg" version))
        (sha256
-        (base32 "01ccfxprl62vrz9nnpkmwx5ffw4lb6c9yd577kwvkd5vwcsh2p9y"))))
+        (base32 "1z29108xnrsjcphpbd8h7z8kvfm4y8m8d4j8c1vlgdhbwj2nwqgq"))))
     (properties `((upstream-name . "PROreg")))
     (build-system r-build-system)
     (arguments
@@ -7754,6 +7754,49 @@ empirical crowd-sourcing studies via API access to <https://www.prolific.co>.")
      "This package provides functions for calculating and analyzing the proliferative
 index (PI) from an RNA-seq dataset.  As described in Ramaker & Lasseigne, et al.
 @code{bioRxiv}, 2016 <doi:10.1101/063057>.")
+    (license license:expat)))
+
+(define-public r-projoint
+  (package
+    (name "r-projoint")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "projoint" version))
+       (sha256
+        (base32 "12q89171lfjdglrnw1xm79fizjn8z54zlrfdsfq4si7qqmfkvi6f"))))
+    (properties `((upstream-name . "projoint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-mass
+                             r-ggthemes
+                             r-ggplot2
+                             r-forcats
+                             r-estimatr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://yhoriuchi.github.io/projoint/")
+    (synopsis
+     "Conjoint Analysis with Reliability Correction and Visualization")
+    (description
+     "This package provides tools for analyzing data generated from conjoint survey
+experiments, a method widely used in the social sciences for studying
+multidimensional preferences.  The package implements estimation of marginal
+means (MMs) and average marginal component effects (AMCEs), with corrections for
+measurement error.  Methods include profile-level and choice-level estimators,
+bias correction using intra-respondent reliability (IRR), and visualization
+utilities.  For details on the methodology, see Clayton, Horiuchi, Kaufman,
+King, and Komisarchik (2025) <https://gking.harvard.edu/@code{conjointE>}.")
     (license license:expat)))
 
 (define-public r-projmgr
@@ -12821,13 +12864,13 @@ log-sum for accuracy.")
 (define-public r-preciseplacement
   (package
     (name "r-preciseplacement")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "precisePlacement" version))
        (sha256
-        (base32 "1w48k4kv3xm8br7dgbpx2rcdxjh0g0aw8xa1snqy0ig8a992804b"))))
+        (base32 "1rmvmzkqnbfdfm12nm4zrj963afrlpv4skg1hffj67j1vwa8ia01"))))
     (properties `((upstream-name . "precisePlacement")))
     (build-system r-build-system)
     (arguments
@@ -15550,13 +15593,13 @@ bioequivalence studies in Two-Stage Designs (TSD) via simulations.")
 (define-public r-power-transform
   (package
     (name "r-power-transform")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "power.transform" version))
        (sha256
-        (base32 "10gils58mpfw8z46bfjga0dc3a1l1g4jc2kvgcsidhc9wvkb8d2r"))))
+        (base32 "15a0xpq9hrimpyzd71pl9ixbgvg5nj5v4j63zp3hw4hp12vijh75"))))
     (properties `((upstream-name . "power.transform")))
     (build-system r-build-system)
     (arguments
@@ -16582,13 +16625,13 @@ deprivation\", Social Indicators Research <DOI:10.1007/s11205-016-1501-4>.")
 (define-public r-poseticdataanalysis
   (package
     (name "r-poseticdataanalysis")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poseticDataAnalysis" version))
        (sha256
-        (base32 "0na353jppnhbmkx4wfmp0nv3hw1q4yigpg5g723hymyyc90dg8lv"))))
+        (base32 "1hfa8z00wqncj49av0jx70jib9hrcmk7waplviiq3gwn10i517nk"))))
     (properties `((upstream-name . "poseticDataAnalysis")))
     (build-system r-build-system)
     (arguments
@@ -29815,13 +29858,13 @@ used for the final data analysis.")
 (define-public r-photon
   (package
     (name "r-photon")
-    (version "0.3.5")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photon" version))
        (sha256
-        (base32 "097nanvyqrw6k3588f44cyfqi59p9w83ypx1ky61nx3d2l2q55m6"))))
+        (base32 "1fgq96bws239frdz22z61y89n6xwnqk6d56x3kbf5zs7d6rks16r"))))
     (properties `((upstream-name . "photon")))
     (build-system r-build-system)
     (arguments
@@ -40368,13 +40411,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "0n828sryim8cpgq2abbny9gippcsm291bdlf5xdyrb1mm5ga4ig9"))))
+        (base32 "0gpgm143v2s60vkd30n2yqyycbd4hrslaf2j4nncdmpbp51a5vxl"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (arguments
@@ -43015,13 +43058,13 @@ not split into subsets.")
 (define-public r-parallellogger
   (package
     (name "r-parallellogger")
-    (version "3.5.0")
+    (version "3.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ParallelLogger" version))
        (sha256
-        (base32 "13x0nvbghbiiaifxj777fx10w1jcw16fkbg3j62xgivfv885qxr0"))))
+        (base32 "0v54c80784hlp9c1rl7b3sxrhzndapsq7ljdz8hxlp4cav5vk5ps"))))
     (properties `((upstream-name . "ParallelLogger")))
     (build-system r-build-system)
     (arguments

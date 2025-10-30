@@ -10590,13 +10590,13 @@ Diego.; Luo & Xu (2022) <doi:10.48550/@code{arXiv.2206.02296>}; Rava (2021)
 (define-public r-cowsay
   (package
     (name "r-cowsay")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cowsay" version))
        (sha256
-        (base32 "1z4qrzzcjix5yk95wp8dj4wg8sg306bf42603qxl0xd9m57qjaal"))))
+        (base32 "1cjp5hf10m5kjn75zdax3v4f0qjzs9az3gbrnsvvqlx2hlhbyccn"))))
     (properties `((upstream-name . "cowsay")))
     (build-system r-build-system)
     (arguments
@@ -21981,13 +21981,13 @@ pages, including providing new figure components.")
 (define-public r-comparegroups
   (package
     (name "r-comparegroups")
-    (version "4.10.0")
+    (version "4.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "compareGroups" version))
        (sha256
-        (base32 "104p0bxji3rvdd2i4d9r905i9cp9xqabyn1f3567avnmkyh573mv"))))
+        (base32 "0mcri02lwwv1wgh5vjl2gn64qsh5c4d8gkm074al1x2c89sbbxy8"))))
     (properties `((upstream-name . "compareGroups")))
     (build-system r-build-system)
     (arguments
@@ -31660,13 +31660,13 @@ surrogate residual, which extends the results of Liu and Zhang (2017) <doi:
 (define-public r-clootl
   (package
     (name "r-clootl")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clootl" version))
        (sha256
-        (base32 "0qxi7m1acqxvz4xpnasqg7yjq5y2m05yl9skcqp64ln1lg9jbbq6"))))
+        (base32 "1vwmzcxv3v4ahkam8zfaahzih9pw7psblzxx58clw9alys5gi5zm"))))
     (properties `((upstream-name . "clootl")))
     (build-system r-build-system)
     (arguments
@@ -33107,13 +33107,13 @@ Guralnick <doi:10.17161/bi.v14i0.9786> Biodiversity Informatics.")
 (define-public r-climate
   (package
     (name "r-climate")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climate" version))
        (sha256
-        (base32 "0hkw8npc5msc8dwxjlva9p8832ff0f4jl6f9376503khq56wz7jr"))))
+        (base32 "0b538sdicvx6nrb584c53nhipfmd3rrgmab19s852r2ndfz5m5dp"))))
     (properties `((upstream-name . "climate")))
     (build-system r-build-system)
     (arguments
@@ -33963,13 +33963,13 @@ anything if needed.")
 (define-public r-cleanepi
   (package
     (name "r-cleanepi")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cleanepi" version))
        (sha256
-        (base32 "0hsl86za1xiaiphhrbdjpna0fm05820az5r54rscksyf86lp3gsm"))))
+        (base32 "1jdf3pkl1m2l8h7373r2d7smzrihzgdqgym8k0s34d5wnxpyxygg"))))
     (properties `((upstream-name . "cleanepi")))
     (build-system r-build-system)
     (arguments
@@ -38447,13 +38447,13 @@ in the included vignette.  Not for clinical use.")
 (define-public r-chisquare
   (package
     (name "r-chisquare")
-    (version "1.1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chisquare" version))
        (sha256
-        (base32 "00ykim1p71lw5wby59nmsd7xxnw3cav3lmn522c4qmsc14nzdly3"))))
+        (base32 "144k6dfqi70skvx2p3hy5y11cxk3a433ycm03kgd5ix8qxfgvnzr"))))
     (properties `((upstream-name . "chisquare")))
     (build-system r-build-system)
     (arguments
@@ -49583,13 +49583,13 @@ and Faes (2020) <doi:10.1002/sim.8697> and Gramatica, Congdon and Liverani
 (define-public r-carm
   (package
     (name "r-carm")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CARM" version))
        (sha256
-        (base32 "068rpz7bjc767yw4vcrf63ckyvdk2f1kskmfcc7955qf9ki5c49c"))))
+        (base32 "0cwxvp5gmnc9azq3clw3csz7ivc4fvkywq94ibbjwfmg7ifa666l"))))
     (properties `((upstream-name . "CARM")))
     (build-system r-build-system)
     (arguments
@@ -49604,7 +49604,7 @@ and Faes (2020) <doi:10.1002/sim.8697> and Gramatica, Congdon and Liverani
 most important concern.  CARM package provides functions to balance the
 covariates and generate allocation sequence by covariate-adjusted Adaptive
 Randomization via Mahalanobis-distance (ARM) for RCT. About what ARM is and how
-it works please see Y. Qin, Y. Li, W. Ma, H. Yang, and F. Hu (2022). \"Adaptive
+it works please see Y. Qin, Y. Li, W. Ma, H. Yang, and F. Hu (2024). \"Adaptive
 randomization via Mahalanobis distance\" Statistica Sinica.
 <doi:10.5705/ss.202020.0440>.  In addition, the package is also suitable for the
 randomization process of multi-arm trials.  For details, please see Yang H, Qin
@@ -50289,13 +50289,13 @@ applications and community-driven extensions.")
 (define-public r-carbonpredict
   (package
     (name "r-carbonpredict")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "carbonpredict" version))
        (sha256
-        (base32 "1m6i83322m6kxbvh5kmyh4l893p16a14phdc9bv2p9jnvbl4b3kk"))))
+        (base32 "1iyrda8hj7kvr9yc5c11n0vpzpdvjisqc9q891rrzkqb79qhm9v6"))))
     (properties `((upstream-name . "carbonpredict")))
     (build-system r-build-system)
     (arguments
@@ -50313,16 +50313,19 @@ applications and community-driven extensions.")
     (description
      "Predict Scope 1, 2 and 3 carbon emissions for UK Small and Medium-sized
 Enterprises (SMEs), using Standard Industrial Classification (SIC) codes and
-annual turnover data.  The carbonpredict package provides single and batch
-prediction, plotting, and workflow tools for carbon accounting and reporting.
-The package utilises pre-trained models, leveraging rich classified transaction
-data to accurately predict Scope 1, 2 and 3 carbon emissions for UK SMEs as well
-as identifying emissions hotspots.  The methodology used to produce the
-estimates in this package is fully detailed in the following peer-reviewed
-publication in the Journal of Industrial Ecology: Phillpotts, A., Owen.  A.,
-Norman, J., Trendl, A., Gathergood, J., Jobst, Norbert., Leake, D. (2025)
-<doi:10.1111/jiec.70106> \"Bridging the SME Reporting Gap: A New Model for
-Predicting Scope 1 and 2 Emissions\".")
+annual turnover data, as well as Scope 1 carbon emissions for UK farms.  The
+carbonpredict package provides single and batch prediction, plotting, and
+workflow tools for carbon accounting and reporting.  The package utilises
+pre-trained models, leveraging rich classified transaction data to accurately
+predict Scope 1, 2 and 3 carbon emissions for UK SMEs as well as identifying
+emissions hotspots.  It also provides Scope 1 carbon emissions predictions for
+UK farms of types: Cereals ex.  rice, Dairy, Mixed farming, Sheep and goats,
+Cattle & buffaloes, Poultry, Animal production and Support for crop production.
+The methodology used to produce the estimates in this package is fully detailed
+in the following peer-reviewed publication in the Journal of Industrial Ecology:
+Phillpotts, A., Owen.  A., Norman, J., Trendl, A., Gathergood, J., Jobst,
+Norbert., Leake, D. (2025) <doi:10.1111/jiec.70106> \"Bridging the SME Reporting
+Gap: A New Model for Predicting Scope 1 and 2 Emissions\".")
     (license license:expat)))
 
 (define-public r-carbondate

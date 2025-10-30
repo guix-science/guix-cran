@@ -844,13 +844,13 @@ linkage.  Methods are described in Ornstein (2025) <doi:10.1017/pan.2025.10016>.
 (define-public r-fuzzyimputationtest
   (package
     (name "r-fuzzyimputationtest")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyImputationTest" version))
        (sha256
-        (base32 "1n1x8k1shf09jdzyirdzr8dr07lx81hg2a3vm6x8w2k276fr00qp"))))
+        (base32 "1kbfv42yvmrn3ygpf7arq7z2na5prfqz52awql744q4pps79rj8k"))))
     (properties `((upstream-name . "FuzzyImputationTest")))
     (build-system r-build-system)
     (arguments
@@ -8039,13 +8039,13 @@ plugin: <https://github.com/qlands/formshare_sql_plugin> .")
 (define-public r-formods
   (package
     (name "r-formods")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formods" version))
        (sha256
-        (base32 "04gpkzygz9p29xjzfiqlky6rbg22xfw4qcdrrsiq1mzv5c1s732r"))))
+        (base32 "02ygm9cfinsf9xza6q9s1ppgzfdzr55xlq67pnssma6zc0rp2rha"))))
     (properties `((upstream-name . "formods")))
     (build-system r-build-system)
     (arguments
@@ -8804,13 +8804,13 @@ compatible with several existing packages that implement random forests in R.")
 (define-public r-forestelementsr
   (package
     (name "r-forestelementsr")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ForestElementsR" version))
        (sha256
-        (base32 "0fva80sh5ar0xpc94bbw7vn60zbxbxn3dbhdns2y0qg7kqhz5mkz"))))
+        (base32 "17niqsn3gml0k4yfnx1f7wgnsw5gcwzzxdxnfyvw5b6w3ddp2zb0"))))
     (properties `((upstream-name . "ForestElementsR")))
     (build-system r-build-system)
     (arguments
@@ -23282,29 +23282,34 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
 (define-public r-fastml
   (package
     (name "r-fastml")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastml" version))
        (sha256
-        (base32 "1cgmi5ggkf0y2ik5spb106g98y9gyw85pk6c44rp8qcbbxhxdhz5"))))
+        (base32 "19mkqj69mjlyvp6cq6qfysah2nx1d8c78l1w33dz2wqkdgvvp588"))))
     (properties `((upstream-name . "fastml")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-yardstick
+                             r-xgboost
                              r-workflows
                              r-viridislite
                              r-vim
                              r-upsetr
                              r-tune
+                             r-tidyselect
                              r-tidyr
                              r-tibble
+                             r-survrm2
+                             r-survival
                              r-stringr
                              r-skimr
                              r-scales
+                             r-rstpm2
                              r-rsample
                              r-rmarkdown
                              r-rlang
@@ -23316,22 +23321,23 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
                              r-probably
                              r-plsmod
                              r-plotly
-                             r-patchwork
                              r-parsnip
                              r-naniar
                              r-moments
                              r-missforest
                              r-mice
                              r-magrittr
+                             r-lime
                              r-knitr
                              r-kableextra
                              r-janitor
+                             r-iml
                              r-htmlwidgets
                              r-gridextra
                              r-ggpubr
                              r-ggplot2
-                             r-ggally
                              r-future
+                             r-flexsurv
                              r-finetune
                              r-dt
                              r-dplyr
@@ -23340,10 +23346,11 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
                              r-dials
                              r-dbscan
                              r-dalex
+                             r-ceterisparibus
                              r-broom
                              r-bonsai
                              r-baguette))
-    (home-page "https://github.com/selcukorkmaz/fastml")
+    (home-page "https://selcukorkmaz.github.io/fastml-tutorial/")
     (synopsis "Fast Machine Learning Model Training and Evaluation")
     (description
      "Streamlines the training, evaluation, and comparison of multiple machine
@@ -26666,6 +26673,35 @@ sciences, with beginner-friendly R syntax and outputs that can be dropped into
 journal reports.  Includes helpers to export tab-separated results and compact
 tables of descriptive statistics (to APA-style reports).")
     (license license:expat)))
+
+(define-public r-factorcopulamodel
+  (package
+    (name "r-factorcopulamodel")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FactorCopulaModel" version))
+       (sha256
+        (base32 "0d7dn3q7iv3f18mdxsmxmz5b3qxf4hbpvfxkl7abf3jigvr4q38i"))))
+    (properties `((upstream-name . "FactorCopulaModel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vinecopula r-igraph r-cubature))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=FactorCopulaModel")
+    (synopsis "Factor Copula Models")
+    (description
+     "Inference methods for factor copula models for continuous data in Krupskii and
+Joe (2013) <doi:10.1016/j.jmva.2013.05.001>, Krupskii and Joe (2015)
+<doi:10.1016/j.jmva.2014.11.002>, Fan and Joe (2024)
+<doi:10.1016/j.jmva.2023.105263>, one factor truncated vine models in Joe (2018)
+<doi:10.1002/cjs.11481>, and Gaussian oblique factor models.  Functions for
+computing tail-weighted dependence measures in Lee, Joe and Krupskii (2018)
+<doi:10.1080/10485252.2017.1407414> and estimating tail dependence parameter.")
+    (license license:gpl3)))
 
 (define-public r-factorcopula
   (package

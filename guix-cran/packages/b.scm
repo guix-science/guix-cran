@@ -280,13 +280,13 @@ repository <https://forgemia.inra.fr/umr-gdec/bwgs> and modified as a R package.
 (define-public r-bwgr
   (package
     (name "r-bwgr")
-    (version "2.2.13")
+    (version "2.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bWGR" version))
        (sha256
-        (base32 "0i2rkfzjsp98h70iww7ipnyvzpvmnlby62hc0zr9s7bs48ml3l0p"))))
+        (base32 "1kjmzr3xd6ql7xsdky7c2avyzrpxgcw9zmji8k58czi82awn26dm"))))
     (properties `((upstream-name . "bWGR")))
     (build-system r-build-system)
     (arguments
@@ -15621,13 +15621,13 @@ documentation is available in
 (define-public r-biodiversityr
   (package
     (name "r-biodiversityr")
-    (version "2.17-3")
+    (version "2.17-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiodiversityR" version))
        (sha256
-        (base32 "1gcbbqz6khrmzc8w1kg8jd8m5qzvbfgc02ag0b1rqc0i4sbp5fng"))))
+        (base32 "1n5bl1sma4wkg6ar66dw9p00xlrbkk22lvnb71304jbrfgmyifrb"))))
     (properties `((upstream-name . "BiodiversityR")))
     (build-system r-build-system)
     (arguments
@@ -20605,13 +20605,13 @@ with leverage (one-component, two-component, skewed versions).")
 (define-public r-betaselectr
   (package
     (name "r-betaselectr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaselectr" version))
        (sha256
-        (base32 "1ikfckia0hdmdcrxvpdv4vmh2xb689pfbbk277ifw0wccx62fqhq"))))
+        (base32 "03pw8ggyhdjjqa4wz88hrc15f5xl00bhhd65hbl44bdrbzkrmw9l"))))
     (properties `((upstream-name . "betaselectr")))
     (build-system r-build-system)
     (arguments
@@ -26214,6 +26214,47 @@ Duan et al. (2006) <doi:10.1002/env.752> and Ibrahim et al. (2015)
 <doi:10.1002/sim.6728>.")
     (license license:gpl3+)))
 
+(define-public r-bayespower
+  (package
+    (name "r-bayespower")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesPower" version))
+       (sha256
+        (base32 "1a1pklvbm6pi29kfa7hj3i6hk68zknr27j8yz3m7cwcqb4dizigr"))))
+    (properties `((upstream-name . "BayesPower")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinywidgets
+                             r-shiny
+                             r-rootsolve
+                             r-rmarkdown
+                             r-rlang
+                             r-rcpp
+                             r-patchwork
+                             r-hypergeo
+                             r-gsl
+                             r-glue
+                             r-ggplot2
+                             r-extdist
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=BayesPower")
+    (synopsis
+     "Sample Size and Power Calculation for Bayesian Testing with Bayes Factor")
+    (description
+     "The goal of @code{BayesPower} is to provide tools for Bayesian sample size
+determination and power analysis across a range of common hypothesis testing
+scenarios using Bayes factors.  The main function,
+@code{BayesPower_BayesFactor()}, launches an interactive shiny application for
+performing these analyses.  The application also provides command-line code for
+reproducibility.  Details of the methods are described in the tutorial by Wong,
+Pawel, and Tendeiro (2025) <doi:10.31234/osf.io/pgdac_v1>.")
+    (license license:gpl3+)))
+
 (define-public r-bayespostest
   (package
     (name "r-bayespostest")
@@ -27688,13 +27729,13 @@ and Westerhausen, Laterality: Asymmetries of Body, Brain and Cognition, 2020,
 (define-public r-bayesianlasso
   (package
     (name "r-bayesianlasso")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianLasso" version))
        (sha256
-        (base32 "05qixcihnplzbfkns22vhcs820hg7iddxhlc7vbgglpv7aijk81z"))))
+        (base32 "1bhswmas289rqzcdy17siil0zn1f6vs94mysagnlbswpd9ddc5vc"))))
     (properties `((upstream-name . "BayesianLasso")))
     (build-system r-build-system)
     (arguments

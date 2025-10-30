@@ -6244,6 +6244,38 @@ survival data, using the method proposed by Uno et al. (2011)
 prediction models is also implemented.")
     (license license:gpl2)))
 
+(define-public r-survc
+  (package
+    (name "r-survc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survC" version))
+       (sha256
+        (base32 "0mlcac12fq33aj8rg0sh05kbwsqrmhl313m311jyxs13pygszn0w"))))
+    (properties `((upstream-name . "survC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-timeroc r-survival r-rvg r-officer))
+    (home-page "https://newjoseph.github.io/survC/")
+    (synopsis "Survival Model Validation Utilities")
+    (description
+     "This package provides helper functions to compute linear predictors,
+time-dependent ROC curves, and Harrell's concordance index for Cox proportional
+hazards models as described in Therneau (2024)
+<https://CRAN.R-project.org/package=survival>, Therneau and Grambsch (2000,
+ISBN:0-387-98784-3), Hung and Chiang (2010) <doi:10.1002/cjs.10046>, Uno et al.
+(2007) <doi:10.1198/016214507000000149>, Blanche, Dartigues, and Jacqmin-Gadda
+(2013) <doi:10.1002/sim.5958>, Blanche, Latouche, and Viallon (2013)
+<doi:10.1007/978-1-4614-8981-8_11>, Harrell et al. (1982)
+<doi:10.1001/jama.1982.03320430047030>, Peto and Peto (1972)
+<doi:10.2307/2344317>, Schemper (1992) <doi:10.2307/2349009>, and Uno et al.
+(2011) <doi:10.1002/sim.4154>.")
+    (license license:expat)))
+
 (define-public r-survbootoutliers
   (package
     (name "r-survbootoutliers")
@@ -20711,19 +20743,19 @@ minimizing requirements on the runtime environment.")
 (define-public r-srcpkgs
   (package
     (name "r-srcpkgs")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "srcpkgs" version))
        (sha256
-        (base32 "1j7yzm6hl98jy9jx203zkr65d2zivx3k6zhnk3fnpvvpki1ma61s"))))
+        (base32 "142rjn60c15apdf316gv9dy8var7359zlic7vs22rn4f13k8xwy4"))))
     (properties `((upstream-name . "srcpkgs")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pkgload r-devtools r-cli))
+    (propagated-inputs (list r-testthat r-pkgload r-devtools r-clitable r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kforner/srcpkgs")
     (synopsis "R Source Packages Manager")
@@ -27247,13 +27279,13 @@ Covariance Matrix,\" Biometrika.  98(4).  807--820.")
 (define-public r-spcosa
   (package
     (name "r-spcosa")
-    (version "0.4-5")
+    (version "0.4-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spcosa" version))
        (sha256
-        (base32 "1lqqfldlk8jsrk8ab00b05jbb702ykgm1hzw0zl47imlwpdn56az"))))
+        (base32 "046ygz9m3krbjb826gmsww4br4s1j32y7cf1wap8v1i23spkxjy4"))))
     (properties `((upstream-name . "spcosa")))
     (build-system r-build-system)
     (arguments
@@ -37083,13 +37115,13 @@ semi-parametric approach.")
 (define-public r-smoothemplik
   (package
     (name "r-smoothemplik")
-    (version "0.0.16")
+    (version "0.0.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smoothemplik" version))
        (sha256
-        (base32 "0vmhizmih3g8c56bly15sav8f305wjhsy2ll24pnp176prn2y6q0"))))
+        (base32 "15r41i7axpsa92xqwi4cmmbhkgz3dh8p7d1qqzv06x6nwz7hligx"))))
     (properties `((upstream-name . "smoothemplik")))
     (build-system r-build-system)
     (arguments
@@ -57740,13 +57772,13 @@ ratio test (Wald, A. 1945 <http://www.jstor.org/stable/2235829>).")
 (define-public r-sequential
   (package
     (name "r-sequential")
-    (version "4.5")
+    (version "4.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Sequential" version))
        (sha256
-        (base32 "0r4a2dp54d1bndfrqmhbca08r26v9clrsaq5yq49fpf5k017ikf7"))))
+        (base32 "0riks6qhxqbw5pndi1jxcqw1c87jyg5v2xmj5dc61jgrrfvaksl8"))))
     (properties `((upstream-name . "Sequential")))
     (build-system r-build-system)
     (arguments
@@ -64838,6 +64870,49 @@ adding, removing and renaming nodes) and convert nested hierarchies between
 different formats.  These tree like structures can be used to define for example
 complex hierarchical tables used for statistical disclosure control.")
     (license license:gpl3)))
+
+(define-public r-sdbuildr
+  (package
+    (name "r-sdbuildr")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sdbuildR" version))
+       (sha256
+        (base32 "1jbv5942b82kksvd5m2ymvcpsfm5ahpd03myjrbms8i45lhhfw9b"))))
+    (properties `((upstream-name . "sdbuildR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-plotly
+                             r-magrittr
+                             r-juliaconnector
+                             r-jsonlite
+                             r-igraph
+                             r-dplyr
+                             r-diagrammer
+                             r-desolve
+                             r-data-table))
+    (home-page "https://kcevers.github.io/sdbuildR/")
+    (synopsis "Easily Build, Simulate, and Visualise Stock-and-Flow Models")
+    (description
+     "Stock-and-flow models are a computational method from the field of system
+dynamics.  They represent how systems change over time and are mathematically
+equivalent to ordinary differential equations. @code{sdbuildR} (system dynamics
+builder) provides an intuitive interface for constructing stock-and-flow models
+without requiring extensive domain knowledge.  Models can quickly be simulated
+and revised, supporting iterative development. @code{sdbuildR} simulates models
+in R and Julia', where Julia offers unit support and large-scale ensemble
+simulations.  Additionally, @code{sdbuildR} can import models created in Insight
+Maker (<https://insightmaker.com/>).")
+    (license license:gpl3+)))
 
 (define-public r-sdaresources
   (package
@@ -72832,6 +72907,32 @@ distributions, allowing users to quickly create data frames for demonstrations,
 troubleshooting, or teaching purposes.  Data is available in multiple
 sizesâsmall, medium, and large.  For more information, refer to the package
 documentation.")
+    (license license:expat)))
+
+(define-public r-samplex
+  (package
+    (name "r-samplex")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "samplex" version))
+       (sha256
+        (base32 "0lsd6gg54lykd205brzwk6mmil02l7s3xyqg5jmmxwa4722kn4wd"))))
+    (properties `((upstream-name . "samplex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=samplex")
+    (synopsis "Shiny Tool for Sample Size Calculation")
+    (description
+     "An interactive shiny application to assist in determining sample sizes for
+common survey designs such as simple random sampling', stratified sampling', and
+cluster sampling'.  It includes formulas, helper calculators, and illustrative
+examples.")
     (license license:expat)))
 
 (define-public r-samplevadir

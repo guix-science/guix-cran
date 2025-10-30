@@ -15172,13 +15172,13 @@ facilitate geographical data visualization in China.")
 (define-public r-leaflet-minicharts
   (package
     (name "r-leaflet-minicharts")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leaflet.minicharts" version))
        (sha256
-        (base32 "0pmgr9c3z5zdm13kb17ldjdl3i792mv20gbxzn1asfyf7csp7jxi"))))
+        (base32 "0d9z5pxn026da9jl5g4q5wv07cnkivr5dl8s4wcq2yq7gkvk0djn"))))
     (properties `((upstream-name . "leaflet.minicharts")))
     (build-system r-build-system)
     (arguments

@@ -1247,13 +1247,13 @@ in a separate package RWekajars'.  For more information on Weka see
 (define-public r-rweaveextra
   (package
     (name "r-rweaveextra")
-    (version "1.2-1")
+    (version "1.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RweaveExtra" version))
        (sha256
-        (base32 "0cb3kcjjda6wd8bfsvl5i8391r1k4438a7ddc0pb72l0kkg1ylgp"))))
+        (base32 "1fgmph0wqf9l6ji9p5r60wmskjdn65dmn04w2m5bn2ypcvfxizp4"))))
     (properties `((upstream-name . "RweaveExtra")))
     (build-system r-build-system)
     (arguments
@@ -5224,13 +5224,13 @@ tagging messages with a priority level and application type, as well as masking
 (define-public r-rsynthbio
   (package
     (name "r-rsynthbio")
-    (version "3.0.0")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsynthbio" version))
        (sha256
-        (base32 "1y7ny570ykxxnxvhbymh7744qnv7xkadgyxv1pm0151kv6n4s5yi"))))
+        (base32 "0vfq3q85lsbsyq0bjaclf78nqjaas5cwk12nwjaaz9ylwx628mwa"))))
     (properties `((upstream-name . "rsynthbio")))
     (build-system r-build-system)
     (arguments
@@ -12310,13 +12310,13 @@ of this kind of statistics can be found at Nikita Puchkin, Vladimir Ulyanov
 (define-public r-rpdbapi
   (package
     (name "r-rpdbapi")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rPDBapi" version))
        (sha256
-        (base32 "06l24wff8ym3ksr6j01bph7lrnar7cwwlm0jp1kfshjdbmxqbb0n"))))
+        (base32 "1h86dlsmsqwcipkf16rw6l4cfg621idxky4rl77lqmhc5ijjk2dx"))))
     (properties `((upstream-name . "rPDBapi")))
     (build-system r-build-system)
     (arguments
@@ -40158,13 +40158,13 @@ interoperability with external sources (Harris et al (2009)
 (define-public r-redcapapi
   (package
     (name "r-redcapapi")
-    (version "2.11.3")
+    (version "2.11.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redcapAPI" version))
        (sha256
-        (base32 "1fww73n48g3xdzwsfjgbxpkdn7sy67xj5d55my3x22hd4ggz2bdf"))))
+        (base32 "1rf9a9wkx1qa2c4fgxw88nxnzkix891sfrrp8vb1pm0javrfk4kr"))))
     (properties `((upstream-name . "redcapAPI")))
     (build-system r-build-system)
     (arguments
@@ -42580,13 +42580,13 @@ file format and structure.")
 (define-public r-readepi
   (package
     (name "r-readepi")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readepi" version))
        (sha256
-        (base32 "16slrdn5zifzgrmzai15y8kbpx71vmvr4d4mfrg580v95q183bvx"))))
+        (base32 "09b9kcf2ywnnj019zr2s7s9202axlaqn5jqdd8pqh6gv6hw0igmc"))))
     (properties `((upstream-name . "readepi")))
     (build-system r-build-system)
     (arguments
@@ -44645,6 +44645,38 @@ code.  When the code is run, the data is automatically loaded from the cached
 version if the original data file is unavailable.  Works best for small datasets
 (a few hundred observations).")
     (license license:gpl3)))
+
+(define-public r-rddtools
+  (package
+    (name "r-rddtools")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rddtools" version))
+       (sha256
+        (base32 "10hgkljba3n46i2kq795ghpm8jmngigapglg2c0bvlpyfd1azzxv"))))
+    (properties `((upstream-name . "rddtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich
+                             r-rdrobust
+                             r-np
+                             r-locpol
+                             r-lmtest
+                             r-kernsmooth
+                             r-ggplot2
+                             r-formula
+                             r-aer))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bquast/rddtools")
+    (synopsis "Toolbox for Regression Discontinuity Design ('RDD')")
+    (description
+     "Set of functions for Regression Discontinuity Design ('RDD'), for data
+visualisation, estimation and testing.")
+    (license license:gpl3+)))
 
 (define-public r-rddi
   (package

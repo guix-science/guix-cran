@@ -916,6 +916,36 @@ to facilitate and streamline this process and provide the user with a
 comprehensive report.")
     (license license:gpl3)))
 
+(define-public r-gwasinlps
+  (package
+    (name "r-gwasinlps")
+    (version "2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GWASinlps" version))
+       (sha256
+        (base32 "13vqc17a3kywhg0z4ywjxy3iwsm15xis54ypv2nkxqlmchwpj6r8"))))
+    (properties `((upstream-name . "GWASinlps")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-mombf
+                             r-fastglm))
+    (home-page "https://nilotpalsanyal.github.io/GWASinlps/")
+    (synopsis
+     "Non-Local Prior Based Iterative Variable Selection Tool for Genome-Wide Association Studies")
+    (description
+     "This package performs variable selection with data from Genome-wide association
+studies (GWAS), or other high-dimensional data with continuous, binary or
+survival outcomes, combining in an iterative framework the computational
+efficiency of the structured screen-and-select variable selection strategy based
+on some association learning and the parsimonious uncertainty quantification
+provided by the use of non-local priors (see Sanyal et al., 2019
+<DOI:10.1093/bioinformatics/bty472>).")
+    (license license:gpl2+)))
+
 (define-public r-gwasforest
   (package
     (name "r-gwasforest")
@@ -25847,13 +25877,13 @@ format.  Massimo Aria, Corrado Cuccurullo. (2017)
 (define-public r-gerda
   (package
     (name "r-gerda")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gerda" version))
        (sha256
-        (base32 "08d7lx9yszbrvzxjrfzq1hzm0rf8ni7k3dyj3j4hv21c4jd6lh5g"))))
+        (base32 "0danifkbl083392k6x2x3dlckp2z8f0vkbwk7y4j207pyi4v2k94"))))
     (properties `((upstream-name . "gerda")))
     (build-system r-build-system)
     (arguments
@@ -33891,31 +33921,6 @@ Description of the method is available from: Han and @code{DeOliveira} (2018)
     (synopsis "Google Citation Parser")
     (description
      "Scrapes Google Citation pages and creates data frames of citations over time.")
-    (license license:gpl3)))
-
-(define-public r-gchartsmap
-  (package
-    (name "r-gchartsmap")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gchartsmap" version))
-       (sha256
-        (base32 "1m7x32sd8zp34dx8ypmkyfvp5cc466zlhzsl1rvj7wg2fzj5f235"))))
-    (properties `((upstream-name . "gchartsmap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tigris r-sf r-jsonlite r-httr))
-    (home-page "https://github.com/odeleongt/gchartsmap")
-    (synopsis "Access 'Google Charts' Map Data")
-    (description
-     "Connects to the Google Charts geographic data resources described in
-<https://developers.google.com/chart/interactive/docs/gallery/geochart>,
-allowing the user to download contents to use as a reference for related
-services like Google Trends'.")
     (license license:gpl3)))
 
 (define-public r-gcestim

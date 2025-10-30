@@ -20520,20 +20520,19 @@ explore and analyze data in the field of education.")
 (define-public r-educationdata
   (package
     (name "r-educationdata")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "educationdata" version))
        (sha256
-        (base32 "1z86v9d3qdjzk3kvxid5k0gnj3sbdr4gd4z00f55ddknfgyfarqi"))))
+        (base32 "0b5qnfy0bisl6h76g5qpdsxr8ig5f22qlc9mq07x6xzh5lhvmp4k"))))
     (properties `((upstream-name . "educationdata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-readr r-jsonlite r-httr r-glue))
-    (native-inputs (list r-knitr))
     (home-page "https://urbaninstitute.github.io/education-data-package-r/")
     (synopsis
      "Retrieve Records from the Urban Institute's Education Data Portal API")
@@ -21696,6 +21695,42 @@ Collection and Processing\" course.")
 Electronic Data Capture (EDC) software @code{TrialMaster}'.")
     (license license:gpl3)))
 
+(define-public r-edar
+  (package
+    (name "r-edar")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "edar" version))
+       (sha256
+        (base32 "1br9rldq6dlvi6csj7zzvxm98nssq6fnybnsc8hz7ff2i81gcb4a"))))
+    (properties `((upstream-name . "edar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-rstudioapi
+                             r-rlang
+                             r-patchwork
+                             r-magrittr
+                             r-knitr
+                             r-kableextra
+                             r-janitor
+                             r-flextable
+                             r-dplyr))
+    (home-page "https://soutomas.github.io/edar/")
+    (synopsis "Convenient Functions for Exploratory Data Analysis")
+    (description
+     "This package provides a collection of convenient functions to facilitate common
+tasks in exploratory data analysis.  Some common tasks include generating
+summary tables of variables, displaying tables as a flextable or a kable and
+showing distributions of variables using ggplot2'.  Labels stating the source
+file with run time can be easily generated for annotation in tables and plots.")
+    (license license:expat)))
+
 (define-public r-eda4treer
   (package
     (name "r-eda4treer")
@@ -22603,13 +22638,13 @@ Engineers).")
 (define-public r-ecoregime
   (package
     (name "r-ecoregime")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecoregime" version))
        (sha256
-        (base32 "0hpwlqhapc4cs3h66bfcgkzzbifwlb157xcpmyny3kmgd643zy1c"))))
+        (base32 "0qcpdrngxmg3ayjm4dindffjc6wzzyz57xfk2dhj8lgra4awpda2"))))
     (properties `((upstream-name . "ecoregime")))
     (build-system r-build-system)
     (arguments

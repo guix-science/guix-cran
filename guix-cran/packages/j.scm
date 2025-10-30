@@ -4005,13 +4005,13 @@ series scores).  The latest version of the cruncher can be downloaded here:
 (define-public r-jcvrisk
   (package
     (name "r-jcvrisk")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Jcvrisk" version))
        (sha256
-        (base32 "07qjcv7rmdhzvq48n9df50s12hk364nhx6j1nqydbvvqirr6lqhw"))))
+        (base32 "07a8vlw47pknlnbw888xzpcw16g0fd8vyl2p22r3js3dash947hf"))))
     (properties `((upstream-name . "Jcvrisk")))
     (build-system r-build-system)
     (arguments
@@ -4020,8 +4020,8 @@ series scores).  The latest version of the cruncher can be downloaded here:
     (home-page "https://cran.r-project.org/package=Jcvrisk")
     (synopsis "Risk Calculator for Cardiovascular Disease in Japan")
     (description
-     "This package provides a calculation tool to obtain the 10-year risk of
-cardiovascular disease from various risk models (Hisayama, Suita, EPOCH Japan).")
+     "This package provides a calculation tool to obtain the 5-year or 10-year risk of
+cardiovascular disease from various risk models.")
     (license license:expat)))
 
 (define-public r-jcrimpactfactor

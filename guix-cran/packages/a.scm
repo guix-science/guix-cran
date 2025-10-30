@@ -14167,13 +14167,13 @@ evaluation of the outputs.")
 (define-public r-andromeda
   (package
     (name "r-andromeda")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Andromeda" version))
        (sha256
-        (base32 "001glbcqr442ijk9dyzymnyd0lzards2b8yqkriml8ad56my1gfd"))))
+        (base32 "1a9njg97r0hj9wqw0fbn9qzzc36x6sd2p37nckjj22qk3mgk7klk"))))
     (properties `((upstream-name . "Andromeda")))
     (build-system r-build-system)
     (arguments
@@ -14183,6 +14183,7 @@ evaluation of the outputs.")
                              r-tidyselect
                              r-rlang
                              r-pillar
+                             r-memuse
                              r-duckdb
                              r-dplyr
                              r-dbplyr

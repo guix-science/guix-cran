@@ -18495,13 +18495,13 @@ methods implemented in this package are described in: Chase, J.M., et al. (2018)
 (define-public r-mobps
   (package
     (name "r-mobps")
-    (version "1.6.64")
+    (version "1.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MoBPS" version))
        (sha256
-        (base32 "12czwx362pn0crj047rqb9ambl1fw73k474i7vcxhz53kbw21wj0"))))
+        (base32 "0iqm64zg0fhswb6830a3hfcal097pm3xpbvan0vi4f9f4bccxx3g"))))
     (properties `((upstream-name . "MoBPS")))
     (build-system r-build-system)
     (arguments
@@ -18511,10 +18511,8 @@ methods implemented in this package are described in: Chase, J.M., et al. (2018)
     (synopsis "Modular Breeding Program Simulator")
     (description
      "Framework for the simulation framework for the simulation of complex breeding
-programs and compare their economic and genetic impact.  The package is also
-used as the background simulator for our a web-based interface
-<http:www.mobps.de>.  Associated publication: Pook et al. (2020)
-<doi:10.1534/g3.120.401193>.")
+programs and compare their economic and genetic impact.  Associated publication:
+Pook et al. (2020) <doi:10.1534/g3.120.401193>.")
     (license license:gpl3+)))
 
 (define-public r-mobilityindexr
@@ -22479,13 +22477,13 @@ Krajnc, and Skudnik (2023), Ecological Informatics
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "3.4.0")
+    (version "3.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "0rkmlkhr7zgwy7szdda943g2jzc10ybs6dq5nkjbv9ywl07pscy1"))))
+        (base32 "0svgsqw027hx4r7a9g3qqjlymcvhjkl374040q21gc6x5w1zvkbm"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (arguments
@@ -26315,13 +26313,13 @@ algorithm Strobl, C., Boulesteix, A. L., Zeileis, A., & Hothorn, T. (2007)
 (define-public r-missalpha
   (package
     (name "r-missalpha")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missalpha" version))
        (sha256
-        (base32 "163906h1wyrxfar6qfx6izc1c85pkbb0zwg1rxbhlr2jaasqnqp2"))))
+        (base32 "09z0ki970hl7cq7bpmbshbaaz4yraf0dabyhxva5rqvjyf55mxw5"))))
     (properties `((upstream-name . "missalpha")))
     (build-system r-build-system)
     (arguments
@@ -27437,6 +27435,48 @@ offers fast computations for large data sets analyses for various irregular data
 structures.")
     (license license:gpl3)))
 
+(define-public r-minorparties
+  (package
+    (name "r-minorparties")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "minorparties" version))
+       (sha256
+        (base32 "09gwrdyrrlwqyx63ks5qb48yfsjn1v51nbpvk8ch54p7di1pi6wf"))))
+    (properties `((upstream-name . "minorparties")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringi
+                             r-spacyr
+                             r-rlang
+                             r-reticulate
+                             r-quanteda-textmodels
+                             r-quanteda
+                             r-purrr
+                             r-dplyr))
+    (home-page "https://gerckentheodore.github.io/minorparties/")
+    (synopsis "Quantitatively Analyze Minor Political Parties")
+    (description
+     "This package provides tools for calculating I-Scores, a simple way to measure
+how successful minor political parties are at influencing the major parties in
+their environment.  I-Scores are designed to be a more comprehensive measurement
+of minor party success than vote share and legislative seats won, the current
+standard measurements, which do not reflect the strategies that most minor
+parties employ.  The procedure leverages the Manifesto Project's NLP model to
+identify the issue areas that sentences discuss, see Burst et al. (2024)
+<doi:10.25522/manifesto.manifestoberta.56topics.context.2024.1.1>, and the
+Wordfish algorithm to estimate the relative positions that platforms take on
+those issue areas, see Slapin and Proksch (2008)
+<doi:10.1111/j.1540-5907.2008.00338.x>.")
+    (license license:gpl3+)))
+
 (define-public r-minmse
   (package
     (name "r-minmse")
@@ -27959,19 +27999,19 @@ only includes regularized (quasi-)newton optimization (Kanzow and Steck et al.
 (define-public r-mini007
   (package
     (name "r-mini007")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mini007" version))
        (sha256
-        (base32 "03c3w688mzr9286kd0l06cs2csly70kg90v55j5n2pd7z718d8vc"))))
+        (base32 "0lzg6pxj1k63jgnhip5f09gj0yl28fddbbw3wdgg523g2jwa7zw0"))))
     (properties `((upstream-name . "mini007")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-uuid r-r6 r-cli r-checkmate))
+    (propagated-inputs (list r-uuid r-r6 r-diagrammer r-cli r-checkmate))
     (home-page "https://cran.r-project.org/package=mini007")
     (synopsis
      "Lightweight Framework for Orchestrating Multi-Agent Large Language Models")
@@ -41763,13 +41803,13 @@ relevant plots are constructed by ggplot2'.")
 (define-public r-mcptools
   (package
     (name "r-mcptools")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcptools" version))
        (sha256
-        (base32 "187bshljjzvss0z08bd1vyf65cwj1jc0pibp6ysis9qzff6zsqqm"))))
+        (base32 "1lqmwp07113cbdxhs01p4rv13ydxsdd3r40gx2gm41iq60gx9i4f"))))
     (properties `((upstream-name . "mcptools")))
     (build-system r-build-system)
     (arguments
@@ -41780,6 +41820,8 @@ relevant plots are constructed by ggplot2'.")
                              r-processx
                              r-nanonext
                              r-jsonlite
+                             r-httr2
+                             r-httpuv
                              r-ellmer
                              r-cli))
     (native-inputs (list r-knitr))
@@ -49258,22 +49300,24 @@ re-labeling categorical variables.")
 (define-public r-mapperalgo
   (package
     (name "r-mapperalgo")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MapperAlgo" version))
        (sha256
-        (base32 "1jk345b71hlh2q7y1igwrbjf7yapy52kyv0qa6gvzql1sgcig2ad"))))
+        (base32 "0aj1dixz4ra71q02dj4kr4yzks6a178k9cl4ws4xg8r2vsl60vp4"))))
     (properties `((upstream-name . "MapperAlgo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-webshot2
+                             r-viridislite
                              r-tidygraph
                              r-rlang
                              r-networkd3
+                             r-jsonlite
                              r-igraph
                              r-htmlwidgets
                              r-ggraph
