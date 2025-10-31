@@ -8635,6 +8635,55 @@ sample.  For more details see RaphaÃ«l Jauslin and Yves TillÃ© (2019)
 <doi:10.1007/s13253-020-00407-1>.")
     (license license:gpl2+)))
 
+(define-public r-waves
+  (package
+    (name "r-waves")
+    (version "0.2.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "waves" version))
+       (sha256
+        (base32 "09nz6bvq22rc6i1kghiz0dz5ag2rzj0f8q6vwg653ssmx3mamqma"))))
+    (properties `((upstream-name . "waves")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-spectacles
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-randomforest
+                             r-prospectr
+                             r-pls
+                             r-magrittr
+                             r-lifecycle
+                             r-ggplot2
+                             r-dplyr
+                             r-caret))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://GoreLab.github.io/waves/")
+    (synopsis "Vis-NIR Spectral Analysis Wrapper")
+    (description
+     "Originally designed application in the context of resource-limited plant
+research and breeding programs, waves provides an open-source solution to
+spectral data processing and model development by bringing useful packages
+together into a streamlined pipeline.  This package is wrapper for functions
+related to the analysis of point visible and near-infrared reflectance
+measurements.  It includes visualization, filtering, aggregation, preprocessing,
+cross-validation set formation, model training, and prediction functions to
+enable open-source association of spectral and reference data.  This package is
+documented in a peer-reviewed manuscript in the Plant Phenome Journal
+<doi:10.1002/ppj2.20012>.  Specialized cross-validation schemes are described in
+detail in JarquÃ­n et al. (2017) <doi:10.3835/plantgenome2016.12.0130>.  Example
+data is from Ikeogu et al. (2017) <doi:10.1371/journal.pone.0188918>.")
+    (license license:expat)))
+
 (define-public r-waverr
   (package
     (name "r-waverr")
@@ -10581,6 +10630,37 @@ has been evaluated to ensure colors are distinguishable by colorblind people.")
 analysis of while-alive loss (or event) rate for possibly recurrent nonfatal
 event in the presence of death.")
     (license license:gpl2+)))
+
+(define-public r-w4mrutils
+  (package
+    (name "r-w4mrutils")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "W4MRUtils" version))
+       (sha256
+        (base32 "1xrqs2c78k8havx9v52iqrgspqq2h7q844xqrq9l6gr8581x4jbl"))))
+    (properties `((upstream-name . "W4MRUtils")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=W4MRUtils")
+    (synopsis "Useful Functions for Harmonized W4M Tool Development")
+    (description
+     "This package provides a set of utility function to prevent the spread of utility
+scripts in W4M (Workflow4Metabolomics) tools, and centralize them in a single
+package.  To note, some are meant to be replaced by the use of dedicated
+packages in the future, like the @code{parse_args()} function: it is here only
+to prepare the ground for more global changes in W4M scripts and tools.  This
+package is used by part of the W4M Galaxy modules, some of them being available
+on the community-maintained @code{GitHub} repository for Metabolomics Galaxy
+tools <https://github.com/workflow4metabolomics/tools-metabolomics>.  See
+Delporte et al (2025) <doi:10.1002/cpz1.70095> for more details.")
+    (license license:agpl3+)))
 
 (define-public r-w3cmarkupvalidator
   (package

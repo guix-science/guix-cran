@@ -14274,6 +14274,37 @@ roots, extrema and inflections of a curve .  Christopoulos, DT (2019)
 Christopoulos, DT (2014) <doi:10.48550/@code{arXiv.1206.5478>} .")
     (license license:gpl2)))
 
+(define-public r-rootscanr
+  (package
+    (name "r-rootscanr")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RootscanR" version))
+       (sha256
+        (base32 "11vxxvyy1gs9yflczn1wj2v752a2ak2sga214llfiz7icxdhxi5f"))))
+    (properties `((upstream-name . "RootscanR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-png r-abind))
+    (home-page "https://cran.r-project.org/package=RootscanR")
+    (synopsis "Stitching and Analyzing Root Scans")
+    (description
+     "Minirhizotrons are widely used to observe and explore roots and their growth.
+This package provides the means to stitch images and divide them into depth
+layers.  Please note that this R package was developed alongside the following
+manuscript: Stitching root scans and extracting depth layer information -- a
+workflow and practical examples, S. Kersting, L. KnÃ¼ver, and M. Fischer.  The
+manuscript is currently in preparation and should be citet as soon as it is
+available.  This project was supported by the project @code{ArtIGROW}, which is
+a part of the WIR!-Alliance @code{ArtIFARM} â Artificial Intelligence in
+Farming funded by the German Federal Ministry of Research, Technology and Space
+(No.  03WIR4805).")
+    (license license:gpl3+)))
+
 (define-public r-roots
   (package
     (name "r-roots")

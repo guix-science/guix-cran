@@ -1051,13 +1051,13 @@ Kopka et al. (2023) <doi:10.1177/20552076231194929>.")
 (define-public r-symphony
   (package
     (name "r-symphony")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "symphony" version))
        (sha256
-        (base32 "0bgdhah202sh5mjbzqzk14vkl6xwdxxhri0ik03xh654b4s8hscc"))))
+        (base32 "1kbiy5gpg6s5whkgnwa1bchnf96i89cc3lh1ycpkqbwg8b5xkqh9"))))
     (properties `((upstream-name . "symphony")))
     (build-system r-build-system)
     (arguments
@@ -2721,6 +2721,39 @@ considering the sampling design when defining training and test sets using
 replicate weights.  Methods implemented in this package are described in: A.
 Iparragirre, T. Lumley, I. Barrio, I. Arostegui (2024) <doi:10.1002/sta4.578>.")
     (license license:gpl3+)))
+
+(define-public r-svytest
+  (package
+    (name "r-svytest")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "svytest" version))
+       (sha256
+        (base32 "1gwhmb1qai865xkvk0hx4qkx81y4k2yg3zcacxh0pfhq7kz1mfyx"))))
+    (properties `((upstream-name . "svytest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survey r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=svytest")
+    (synopsis "Survey Weight Diagnostic Tests")
+    (description
+     "This package provides diagnostic tests for assessing the informativeness of
+survey weights in regression models.  Implements difference-in-coefficients
+tests (Hausman 1978 <doi:10.2307/1913827>; Pfeffermann 1993
+<doi:10.2307/1403631>), weight-association tests (@code{DuMouchel} and Duncan
+1983 <doi:10.2307/2288185>; Pfeffermann and Sverchkov 1999
+<https://www.jstor.org/stable/25051118>; Pfeffermann and Sverchkov 2003
+<ISBN:9780470845672>; Wu and Fuller 2005
+<https://www.jstor.org/stable/27590461>), estimating equations tests
+(Pfeffermann and Sverchkov 2003 <ISBN:9780470845672>), and non-parametric
+permutation tests.  Includes simulation utilities replicating Wang et al. (2023
+<doi:10.1111/insr.12509>) and extensions.")
+    (license license:expat)))
 
 (define-public r-svyroc
   (package
@@ -6055,13 +6088,13 @@ Development Team (2021) <https://mc-stan.org>; Theil (1972, ISBN:0-444-10378-3).
 (define-public r-survdnn
   (package
     (name "r-survdnn")
-    (version "0.6.0")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survdnn" version))
        (sha256
-        (base32 "0xqdf3i95lbzxmrjjvwzdsrc6zw9zy6625yvfias4ca91mdqrj7f"))))
+        (base32 "1pa99s8zzc7bm8pvzqk23rkbs7rmdign3rvpxw0v4jivclxvvy0j"))))
     (properties `((upstream-name . "survdnn")))
     (build-system r-build-system)
     (arguments
@@ -34791,6 +34824,45 @@ for user-specified locations in the US, returning them in tidyverse- and
 sf-compatible data frames.")
     (license license:expat)))
 
+(define-public r-socialsim
+  (package
+    (name "r-socialsim")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "socialSim" version))
+       (sha256
+        (base32 "0sd3mvmxc6dbxjbj14spxclbhwhsy2kg7rnfbwp1b05zvrwz7ffc"))))
+    (properties `((upstream-name . "socialSim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-future-apply r-future))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RoriWijnhorst/socialSim")
+    (synopsis "Simulate and Analyse Social Interaction Data")
+    (description
+     "This package provides tools to simulate and analyse datasets of social
+interactions between individuals using hierarchical Bayesian models implemented
+in Stan.  The package interacts with Stan via cmdstanr (available from
+<https://mc-stan.org/r-packages/>) or rstan', depending on user setup.  Users
+can generate realistic interaction data where individual phenotypes influence
+and respond to those of their partners, with control over sampling design
+parameters such as the number of individuals, partners, and repeated dyads.  The
+simulation framework allows flexible control over variation and correlation in
+mean trait values, social responsiveness, and social impact, making it suitable
+for research on interacting phenotypes and on direct and indirect genetic
+effects ('DGEs and IGEs').  The package also includes functions to fit and
+compare alternative models of social effects, including impactâresponsiveness,
+varianceâpartitioning, and trait-based models, and to summarise model
+performance in terms of bias and dispersion.  For more details on the study of
+social interactions and impact-responsiveness, see Moore et al. (1997)
+<doi:10.1111/j.1558-5646.1997.tb01458.x> and de Groot et al. (2022)
+<doi:10.1016/j.neubiorev.2022.104996>.")
+    (license license:expat)))
+
 (define-public r-socialrisk
   (package
     (name "r-socialrisk")
@@ -39416,13 +39488,13 @@ profiles.")
 (define-public r-slope
   (package
     (name "r-slope")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLOPE" version))
        (sha256
-        (base32 "03slji3p1hvncsawl1cf1la8b8q9fcpir4mqh962yhyglz3wrqv2"))))
+        (base32 "12cvbfn50mlbk829x4aj87ydi30z22kqn9dl5ijjdzzj0xppazfg"))))
     (properties `((upstream-name . "SLOPE")))
     (build-system r-build-system)
     (arguments

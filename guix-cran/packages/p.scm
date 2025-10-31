@@ -2662,13 +2662,13 @@ is for educational purposes only.")
 (define-public r-pubchemr
   (package
     (name "r-pubchemr")
-    (version "2.1.5")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PubChemR" version))
        (sha256
-        (base32 "0vkj9qdv19kxp83php8q3pgc2cp4dlm8mfpkj770b5zpx8qsddwl"))))
+        (base32 "0d84w2ms3dndv3r59hg01mzlah5ksl2n53q5zp5kzwd6g7npnjgm"))))
     (properties `((upstream-name . "PubChemR")))
     (build-system r-build-system)
     (arguments
@@ -2686,8 +2686,7 @@ is for educational purposes only.")
                              r-magick
                              r-httr
                              r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/selcukorkmaz/PubChemR")
+    (home-page "https://selcukorkmaz.github.io/pubchemr-tutorial/")
     (synopsis
      "Interface to the 'PubChem' Database for Chemical Data Retrieval")
     (description
@@ -19631,13 +19630,13 @@ the base temperature for growing degree days (Yang et al. (1995)
 (define-public r-polle
   (package
     (name "r-polle")
-    (version "1.5")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polle" version))
        (sha256
-        (base32 "1adzq67nqgdfi0n1fjag19pl529qwj0w70wrs182m4zp5a5k2zvl"))))
+        (base32 "0rcsyj0v7dva2diqbymjdymazl1p9l6f6yvbfi87im8an7573pqr"))))
     (properties `((upstream-name . "polle")))
     (build-system r-build-system)
     (arguments
@@ -19656,11 +19655,11 @@ the base temperature for growing degree days (Yang et al. (1995)
     (home-page "https://cran.r-project.org/package=polle")
     (synopsis "Policy Learning")
     (description
-     "Package for evaluating user-specified finite stage policies and learning optimal
-treatment policies via doubly robust loss functions.  Policy learning methods
-include doubly robust learning of the blip/conditional average treatment effect
-and sequential policy tree learning.  The package also include methods for
-optimal subgroup analysis.  See Nordland and Holst (2022)
+     "Package for learning and evaluating (subgroup) policies via doubly robust loss
+functions.  Policy learning methods include doubly robust blip/conditional
+average treatment effect learning and sequential policy tree learning.  Methods
+for (subgroup) policy evaluation include doubly robust cross-fitting and online
+estimation/sequential validation.  See Nordland and Holst (2022)
 <doi:10.48550/@code{arXiv.2212.02335>} for documentation and references.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 

@@ -801,13 +801,13 @@ lineup, and examine the distributions of metrics.")
 (define-public r-nuggets
   (package
     (name "r-nuggets")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nuggets" version))
        (sha256
-        (base32 "0y4imq1aas416zvdf4h0qbhk3rf588bpg60p6y5ksasv4ryln4qf"))))
+        (base32 "1yhg9i1yh8k891nzzs5g30a5qpil08871w76a0d0c73q4jfj1s2y"))))
     (properties `((upstream-name . "nuggets")))
     (build-system r-build-system)
     (arguments
@@ -3814,13 +3814,13 @@ names in the environment.")
 (define-public r-novelqualcodes
   (package
     (name "r-novelqualcodes")
-    (version "0.13.1")
+    (version "0.13.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "novelqualcodes" version))
        (sha256
-        (base32 "0126nkn68hgw258zqpp0abcq1a3s0v2x0b3nc9brrzvfl2ynpnpm"))))
+        (base32 "1bfsjja7c9hs5jb0zm0jyxcdqlzzkgqws2vl35dfbicn1m9i46a8"))))
     (properties `((upstream-name . "novelqualcodes")))
     (build-system r-build-system)
     (arguments
@@ -3840,7 +3840,8 @@ insight into the richness of qualitative information.  This package provides
 tools to visualise when refinements occur and how that affects the trends of
 novel and duplicate codes.  These visualisations, when used progressively as new
 interviews are finished, can help the researcher to decide on a stopping point
-for their interviews.")
+for their interviews.  For context, see Wong et al., (2023)
+<doi:10.1177/16094069231220773>.")
     (license license:expat)))
 
 (define-public r-novelforestsg

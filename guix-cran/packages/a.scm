@@ -8111,13 +8111,13 @@ for system behavior analysis.")
 (define-public r-argofloats
   (package
     (name "r-argofloats")
-    (version "1.0.7")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "argoFloats" version))
        (sha256
-        (base32 "10pqxd8yflfhsf03235xgvy9w64ybsmfm61cl428zkh43z7lyjf8"))))
+        (base32 "0pfspb03hzm3pi55wdj1cl5r1k51zazdzdvsqid0c5q6y0d2zp3a"))))
     (properties `((upstream-name . "argoFloats")))
     (build-system r-build-system)
     (arguments
@@ -16174,13 +16174,13 @@ Department of Energy Alternate Fuel database as a data set.")
 (define-public r-alternativeroc
   (package
     (name "r-alternativeroc")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alternativeROC" version))
        (sha256
-        (base32 "04ghg12nhx662yk37in4k4yxld6mx65xrm8yh2whjqsvbdsj8n7b"))))
+        (base32 "1xn4lvxs2sd2vyj1b557c7akdr477z9337aybvl4kxk3jxb2j5al"))))
     (properties `((upstream-name . "alternativeROC")))
     (build-system r-build-system)
     (arguments
@@ -16225,19 +16225,24 @@ tested condition.")
 (define-public r-altdoc
   (package
     (name "r-altdoc")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "altdoc" version))
        (sha256
-        (base32 "152lrwc5d82fd1pc5qwk428rdc6lpjnmy4655016pvp5z5jrp42c"))))
+        (base32 "1bsrhz1bsjy5s0mza2mg3s4f99xr5dfm9w34x35ycfhy7ahpvq3b"))))
     (properties `((upstream-name . "altdoc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-quarto r-fs r-evaluate r-desc r-cli))
+    (propagated-inputs (list r-rmarkdown
+                             r-quarto
+                             r-fs
+                             r-evaluate
+                             r-desc
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://altdoc.etiennebacher.com")
     (synopsis

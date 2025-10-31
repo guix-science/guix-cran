@@ -11637,6 +11637,35 @@ large high performance computing environments.  This package allows R users to
 use dlib through Rcpp'.")
     (license (license:fsdg-compatible "BSL-1.0"))))
 
+(define-public r-dlfm
+  (package
+    (name "r-dlfm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DLFM" version))
+       (sha256
+        (base32 "0wq2s2xwkadk6d0am8lx0ck694kiyf3qkzkj6fdn4v226mmdq6ri"))))
+    (properties `((upstream-name . "DLFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-relliptical
+                             r-matrixcalc
+                             r-mass
+                             r-lfm
+                             r-laplacesdemon
+                             r-farmtest))
+    (home-page "https://cran.r-project.org/package=DLFM")
+    (synopsis "Distributed Laplace Factor Model")
+    (description
+     "Distributed estimation method is based on a Laplace factor model to solve the
+estimates of load and specific variance.  The philosophy of the package is
+described in Guangbao Guo. (2022). <doi:10.1007/s00180-022-01270-z>.")
+    (license license:expat)))
+
 (define-public r-dlegfm
   (package
     (name "r-dlegfm")
@@ -13926,36 +13955,6 @@ to the transition, the motion between values can appear smoother and more
 natural.  This package includes functions for applying such non-linear easings
 to colors and numeric values, and is useful where smooth animated movement and
 transitions are desired.")
-    (license license:expat)))
-
-(define-public r-dispersionindicators
-  (package
-    (name "r-dispersionindicators")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dispersionIndicators" version))
-       (sha256
-        (base32 "0rrzmw8pfhwx37r77z3v28rbwzvfa3nydz93gpm5hylvn4ajp4zf"))))
-    (properties `((upstream-name . "dispersionIndicators")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2 r-corpcor))
-    (home-page "https://cran.r-project.org/package=dispersionIndicators")
-    (synopsis
-     "Indicators for the Analysis of Dispersion of Datasets with Batched and Ordered Samples")
-    (description
-     "This package provides methods for analyzing the dispersion of tabular datasets
-with batched and ordered samples.  Based on convex hull or integrated covariance
-Mahalanobis, several indicators are implemented for inter and intra batch
-dispersion analysis.  It is designed to facilitate robust statistical assessment
-of data variability, supporting applications in exploratory data analysis and
-quality control, for such datasets as the one found in metabololomics studies.
-For more details see Salanon (2024) <doi:10.1016/j.chemolab.2024.105148> and
-Salanon (2025) <doi:10.1101/2025.08.01.668073>.")
     (license license:expat)))
 
 (define-public r-disperse
@@ -24997,49 +24996,41 @@ the service (see <https://www.deepl.com/pro#developer>).")
 (define-public r-deeplearningcausal
   (package
     (name "r-deeplearningcausal")
-    (version "0.0.106")
+    (version "0.0.107")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DeepLearningCausal" version))
        (sha256
-        (base32 "1sks5w0lbyh3mfjhii5k00hfpg78h8cr6l3jarv4gj7d0k6f6p2w"))))
+        (base32 "1rjv8kgrysm16jsx3aj8176npkmz3jw4pck3m3ldbs5pwdbfrz87"))))
     (properties `((upstream-name . "DeepLearningCausal")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-weights
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-superlearner
                              r-rocr
-                             r-randomforest
+                             r-reticulate
                              r-neuralnet
                              r-magrittr
+                             r-keras3
                              r-hmisc
-                             r-glmnet
                              r-ggplot2
-                             r-gbm
-                             r-gam
-                             r-e1071
-                             r-dplyr
-                             r-class
                              r-caret))
     (home-page "https://github.com/hknd23/DeepLearningCausal")
     (synopsis "Causal Inference with Super Learner and Deep Neural Networks")
     (description
-     "This package provides functions to estimate Conditional Average Treatment
-Effects (CATE) and Population Average Treatment Effects on the Treated (PATT)
-from experimental or observational data using the Super Learner (SL) ensemble
-method and Deep neural networks.  The package first provides functions to
-implement meta-learners such as the Single-learner (S-learner) and Two-learner
-(T-learner) described in KC<nzel et al. (2019) <doi:10.1073/pnas.1804597116> for
-estimating the CATE. The S- and T-learner are each estimated using the SL
-ensemble method and deep neural networks.  It then provides functions to
-implement the Ottoboni and Poulos (2020) <doi:10.1515/jci-2018-0035> PATT-C
-estimator to obtain the PATT from experimental data with noncompliance by using
-the SL ensemble method and deep neural networks.")
+     "This package provides functions for deep learning estimation of Conditional
+Average Treatment Effects (CATEs) from meta-learner models and Population
+Average Treatment Effects on the Treated (PATT) in settings with treatment
+noncompliance using reticulate, @code{TensorFlow} and Keras3.  Functions in the
+package also implements the conformal prediction framework that enables
+computation and illustration of conformal prediction (CP) intervals for
+estimated individual treatment effects (ITEs) from meta-learner models.
+Additional functions in the package permit users to estimate the meta-learner
+CATEs and the PATT in settings with treatment noncompliance using weighted
+ensemble learning via the super learner approach and R neural networks.")
     (license license:gpl3)))
 
 (define-public r-deepgp
@@ -31059,19 +31050,24 @@ and to manipulate them after that.")
 (define-public r-datametprocess
   (package
     (name "r-datametprocess")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataMetProcess" version))
        (sha256
-        (base32 "0qmxvag2i5wyqmzsrk6k8zs4ykyj80n3d13444fb5xdd0nisixsl"))))
+        (base32 "043qr1b800kr0v3p1xav9i0jqvx612r3v53qsd80q1jadyarfx00"))))
     (properties `((upstream-name . "DataMetProcess")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-shiny r-rlang r-lubridate r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-shiny
+                             r-rlang
+                             r-lubridate
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wagnnerms97/DataMetProcess")
     (synopsis "Meteorological Data Processing")
@@ -33162,13 +33158,13 @@ formulations in knowledge space theory.  See package?DAKS for an overview.")
 (define-public r-daisieprep
   (package
     (name "r-daisieprep")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DAISIEprep" version))
        (sha256
-        (base32 "0blm4nprjms5ylmxcl90qim9qv27l59bgl5fz6wy1j7pn6zgkgxs"))))
+        (base32 "1xs9dif4sz6yd3c2brq4siqddfwmijl8p83yq812dngk8yn54m2y"))))
     (properties `((upstream-name . "DAISIEprep")))
     (build-system r-build-system)
     (arguments
@@ -33821,13 +33817,13 @@ tables.")
 (define-public r-dabestr
   (package
     (name "r-dabestr")
-    (version "2025.3.14")
+    (version "2025.3.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dabestr" version))
        (sha256
-        (base32 "1hb1rdp5k9mj77p5yavvbv0nc70f4sz6hphikd6ibksjdaa7500j"))))
+        (base32 "07p2c0gzgq1ircimay7h8rd2a1i2422aj16a7x4s1x0sqsm2whd8"))))
     (properties `((upstream-name . "dabestr")))
     (build-system r-build-system)
     (arguments

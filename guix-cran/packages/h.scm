@@ -11734,13 +11734,13 @@ analysis in urban studies, geography, and related fields.")
 (define-public r-healthmotionr
   (package
     (name "r-healthmotionr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthmotionR" version))
        (sha256
-        (base32 "1c80lwrb6z4mh8hv9s10xiznw1z5cs14msqmkyilkrj675yq06rm"))))
+        (base32 "0n1sfg37dlcn4kz0n54ks8viafck7c1zb80abg8haggaxilxclj5"))))
     (properties `((upstream-name . "healthmotionR")))
     (build-system r-build-system)
     (arguments

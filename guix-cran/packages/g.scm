@@ -5018,13 +5018,13 @@ subject-specific random effects.")
 (define-public r-groupedhyperframe
   (package
     (name "r-groupedhyperframe")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupedHyperframe" version))
        (sha256
-        (base32 "16cgix27dx5pmr772klgvyww9af01274fkgqsddq7rmfp15j4ivf"))))
+        (base32 "0k8j5q6izf4l6bnb7i3lpg040v5pj0sjl81z18xrb64dy10c9cnw"))))
     (properties `((upstream-name . "groupedHyperframe")))
     (build-system r-build-system)
     (arguments
@@ -5038,6 +5038,7 @@ subject-specific random effects.")
                              r-pracma
                              r-patchwork
                              r-matrixstats
+                             r-knitr
                              r-ggplot2
                              r-get
                              r-geomtextpath
@@ -6328,6 +6329,54 @@ model.")
     (description
      "Computes Gregory weights for a given number nodes and function order.  Anthony
 Ralston and Philip Rabinowitz (2001) <ISBN:9780486414546>.")
+    (license license:gpl3)))
+
+(define-public r-greensd
+  (package
+    (name "r-greensd")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "greenSD" version))
+       (sha256
+        (base32 "1wips7kalgqbv7542lgaqjh68jfbkv6svbp1n6pij6gafpabck32"))))
+    (properties `((upstream-name . "greenSD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-terra
+                             r-stringr
+                             r-sf
+                             r-rstac
+                             r-rlang
+                             r-purrr
+                             r-nominatimlite
+                             r-maptiles
+                             r-magick
+                             r-landscapemetrics
+                             r-future
+                             r-furrr
+                             r-dsmsearch
+                             r-dplyr
+                             r-cli
+                             r-aws-s3))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/billbillbilly/greenSD")
+    (synopsis "Access and Analyze Global GreenSpace Spatial Data")
+    (description
+     "Access and analyze multi-band greenspace seasonality data cubes (available for
+1,028 major global cities), global Normalized Difference Vegetation Index / land
+cover data from the European Space Agency @code{WorldCover} 10m Dataset, and
+Sentinel-2-l2a images.  Users can download data using bounding boxes, city
+names, and filter by year or seasonal time window.  The package also supports
+calculating human exposure to greenspace using a population-weighted greenspace
+exposure model introduced by Chen et al. (2022) <doi:10.1038/s41467-022-32258-4>
+based on Global Human Settlement Layer population data, and calculating a set of
+greenspace morphology metrics at patch and landscape levels.")
     (license license:gpl3)))
 
 (define-public r-greenr
@@ -13488,6 +13537,32 @@ described multiple test procedures.")
     (description
      "Unsupervised Clustering and Meta-analysis using Gaussian Mixture Copula Models.")
     (license license:gpl2+)))
+
+(define-public r-gmc
+  (package
+    (name "r-gmc")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GMC" version))
+       (sha256
+        (base32 "0nc5kjqx9as0s2c7ajnd64987sqxqvia8dy26x5invk4mm8ad70s"))))
+    (properties `((upstream-name . "GMC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ks))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GMC")
+    (synopsis "Generalized Measure of Correlation (GMC)")
+    (description
+     "This package provides tools to compute the Generalized Measure of Correlation
+(GMC), a dependence measure accounting for nonlinearity and asymmetry in the
+relationship between variables.  Based on the method proposed by Zheng, Shi, and
+Zhang (2012).")
+    (license license:gpl3+)))
 
 (define-public r-gmapsdistance
   (package
@@ -33921,6 +33996,31 @@ Description of the method is available from: Han and @code{DeOliveira} (2018)
     (synopsis "Google Citation Parser")
     (description
      "Scrapes Google Citation pages and creates data frames of citations over time.")
+    (license license:gpl3)))
+
+(define-public r-gchartsmap
+  (package
+    (name "r-gchartsmap")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gchartsmap" version))
+       (sha256
+        (base32 "1m7x32sd8zp34dx8ypmkyfvp5cc466zlhzsl1rvj7wg2fzj5f235"))))
+    (properties `((upstream-name . "gchartsmap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tigris r-sf r-jsonlite r-httr))
+    (home-page "https://github.com/odeleongt/gchartsmap")
+    (synopsis "Access 'Google Charts' Map Data")
+    (description
+     "Connects to the Google Charts geographic data resources described in
+<https://developers.google.com/chart/interactive/docs/gallery/geochart>,
+allowing the user to download contents to use as a reference for related
+services like Google Trends'.")
     (license license:gpl3)))
 
 (define-public r-gcestim

@@ -21120,13 +21120,13 @@ results are obtained by merging the significant probes detected.")
 (define-public r-fcps
   (package
     (name "r-fcps")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FCPS" version))
        (sha256
-        (base32 "15xsqwnn5liqjbwg8qpj7prqdiykfxczdw9fyllya7x801ky1rfi"))))
+        (base32 "0djc88kyc4x2cfg2ypla1raayncgpil9gw1ik3m0qj657wdv4ldw"))))
     (properties `((upstream-name . "FCPS")))
     (build-system r-build-system)
     (arguments

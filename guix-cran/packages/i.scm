@@ -10294,6 +10294,32 @@ hierarchical agglomerative clustering approach proposed by Gan et.  al. (2015)
 <doi:10.1016/j.intfin.2016.04.001> .")
     (license license:gpl3)))
 
+(define-public r-infotest
+  (package
+    (name "r-infotest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "infotest" version))
+       (sha256
+        (base32 "001lr6vjvhkkqng62gl54cyfzbvjpdd3wjrfsnm8178mx7wd2bja"))))
+    (properties `((upstream-name . "infotest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/guliyevh/infotest")
+    (synopsis "Information Matrix Test for Regression Models")
+    (description
+     "This package implements the Information Matrix test for regression models
+following Cameron, A. C., & Trivedi, P. K. (1990)
+<https://cameron.econ.ucdavis.edu/research/imtest_impliedalternatives_ucdwp372.pdf>
+Decomposes the test into components for heteroscedasticity, skewness, and
+kurtosis to diagnose specific forms of misspecification.  Provides both overall
+and component-wise statistics for model assessment.")
+    (license license:gpl3+)))
+
 (define-public r-infoset
   (package
     (name "r-infoset")
@@ -14255,13 +14281,13 @@ algorithm of Huang et al. (1992) <doi:10.1139/x92-172> and Zeide et al. (1993)
 (define-public r-imfapi
   (package
     (name "r-imfapi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imfapi" version))
        (sha256
-        (base32 "1d5hwpa1235qqm1bp5fwzsw35ia5wwc64b4kn58wckj6c4adfgrd"))))
+        (base32 "096b64bhv958r16ma0qq707qsk5fvnhqg3v1kjx5b6vr0qh26vli"))))
     (properties `((upstream-name . "imfapi")))
     (build-system r-build-system)
     (arguments

@@ -17153,6 +17153,47 @@ serve many functions typically associated with A Digital Object Identifier
 identifiers permit the same content to be registered in many locations.")
     (license license:expat)))
 
+(define-public r-contentanalysis
+  (package
+    (name "r-contentanalysis")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "contentanalysis" version))
+       (sha256
+        (base32 "13vg0g1amkac49mdfx59gr143ip46dcmzxbw89sc8xn4mfa0j1qw"))))
+    (properties `((upstream-name . "contentanalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visnetwork
+                             r-tidytext
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-pdftools
+                             r-openalexr
+                             r-magrittr
+                             r-jsonlite
+                             r-igraph
+                             r-httr2
+                             r-dplyr
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/massimoaria/contentanalysis")
+    (synopsis "Scientific Content and Citation Analysis from PDF Documents")
+    (description
+     "This package provides comprehensive tools for extracting and analyzing
+scientific content from PDF documents, including citation extraction, reference
+matching, text analysis, and bibliometric indicators.  Supports multi-column PDF
+layouts, @code{CrossRef} API
+<https://www.crossref.org/documentation/retrieve-metadata/rest-api/>
+integration, and advanced citation parsing.")
+    (license license:gpl3+)))
+
 (define-public r-contdid
   (package
     (name "r-contdid")
@@ -18295,13 +18336,13 @@ correctly, OAuth token caching, and refresh behaviour.")
 (define-public r-connectapi
   (package
     (name "r-connectapi")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "connectapi" version))
        (sha256
-        (base32 "1600gxivq5qmlf8bbyw29vr996w5m77rh5l2f33sm35c5dhl2pc5"))))
+        (base32 "18bjx7228psdqhb2q8h6kk7lanq13cqj3d19akvgav5x5yxs9kfi"))))
     (properties `((upstream-name . "connectapi")))
     (build-system r-build-system)
     (arguments
@@ -23614,13 +23655,13 @@ custom colour palettes.")
 (define-public r-colossus
   (package
     (name "r-colossus")
-    (version "1.3.0")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Colossus" version))
        (sha256
-        (base32 "09h1j6mnz0pn35ffprs73cs35lqfscz4jn4japad327pzkscl23m"))))
+        (base32 "1nnl44pp62z3b4d2sz1yv139c19x1c2zxridh2l3i9r2z915gys0"))))
     (properties `((upstream-name . "Colossus")))
     (build-system r-build-system)
     (arguments
@@ -23647,12 +23688,9 @@ custom colour palettes.")
 models can be the sum or product of terms.  Each term is the product of
 exponential/linear functions of covariates.  Additionally sub-terms can be
 defined as a sum of exponential, linear threshold, and step functions.  Cox
-Proportional hazards <https://en.wikipedia.org/wiki/Proportional_hazards_model>,
-Poisson <https://en.wikipedia.org/wiki/Poisson_regression>, and Fine-Gray
-competing risks
-<https://www.publichealth.columbia.edu/research/population-health-methods/competing-risk-analysis>
-regression are supported.  This work was sponsored by NASA Grants 80NSSC19M0161
-and 80NSSC23M0129 through a subcontract from the National Council on Radiation
+Proportional hazards, Poisson, and Fine-Gray competing risks regression are
+supported.  This work was sponsored by NASA Grants 80NSSC19M0161 and
+80NSSC23M0129 through a subcontract from the National Council on Radiation
 Protection and Measurements (NCRP).  The computing for this project was
 performed on the Beocat Research Cluster at Kansas State University, which is
 funded in part by NSF grants CNS-1006860, EPS-1006860, EPS-0919443, ACI-1440548,
@@ -32334,13 +32372,13 @@ number needed to treat, number needed to diagnose, and predictive summary index.
 (define-public r-clinpubr
   (package
     (name "r-clinpubr")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinpubr" version))
        (sha256
-        (base32 "1ylcp784hr4c9m0fbrqgc6ccvfhjsxswd47jfszj3nz5psqqzi1x"))))
+        (base32 "0dx6zx4qgv3ijg6dgmbaahzbkg9a836qv983hq404n1yqlbkiyx6"))))
     (properties `((upstream-name . "clinpubr")))
     (build-system r-build-system)
     (arguments
@@ -48037,19 +48075,26 @@ balancing are also available (Magis and Barrada (2017)
 (define-public r-catpredi
   (package
     (name "r-catpredi")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CatPredi" version))
        (sha256
-        (base32 "0wj37pav20s273ha8pwmzypcdl8frakrxn5k149lg6vkgl6qmj8x"))))
+        (base32 "0plgr8yv0c6q2j4rscnqf5kz01622gm3zw1nsx9w2l9bdna4q9p3"))))
     (properties `((upstream-name . "CatPredi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-rms r-rgenoud r-mgcv))
+    (propagated-inputs (list r-survival
+                             r-rms
+                             r-rgenoud
+                             r-mgcv
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel
+                             r-cpe))
     (home-page "https://cran.r-project.org/package=CatPredi")
     (synopsis
      "Optimal Categorisation of Continuous Variables in Prediction Models")

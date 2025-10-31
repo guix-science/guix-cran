@@ -20255,13 +20255,13 @@ minimal code.")
 (define-public r-tidyheatmap
   (package
     (name "r-tidyheatmap")
-    (version "1.12.3")
+    (version "1.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyHeatmap" version))
        (sha256
-        (base32 "0x8by5vnh2wvdjvyypwnim5yfh37bpp8bjn4mn9ida41vn59x6lc"))))
+        (base32 "115ybawgmdrqi9d4z6jmlvln7njjcsa21crj93cg286hck9zyx5m"))))
     (properties `((upstream-name . "tidyHeatmap")))
     (build-system r-build-system)
     (arguments
@@ -31172,32 +31172,34 @@ implementation and the implementation available from IHME.")
 (define-public r-targeted
   (package
     (name "r-targeted")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "targeted" version))
        (sha256
-        (base32 "176h4zswxf33394ngf4kczcan4acs91jnpk5pyz5fw49l5yhkqlg"))))
+        (base32 "16mdk9g20drxyn67ypy7zp105jw7qlr0c6j06hkyf6apz2jbv0xs"))))
     (properties `((upstream-name . "targeted")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival
+                             r-rlang
                              r-rcpparmadillo
                              r-rcpp
                              r-r6
+                             r-quadprog
                              r-progressr
                              r-optimx
                              r-mets
                              r-lava
                              r-future-apply
-                             r-futile-logger
-                             r-digest
-                             r-data-table))
+                             r-data-table
+                             r-cli
+                             r-abind))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=targeted")
+    (home-page "https://kkholst.github.io/targeted/")
     (synopsis "Targeted Inference")
     (description
      "Various methods for targeted and semiparametric inference including augmented

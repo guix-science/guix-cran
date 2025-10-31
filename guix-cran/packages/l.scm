@@ -379,13 +379,13 @@ script output, switching logs, and logging to files or connections.")
 (define-public r-luz
   (package
     (name "r-luz")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "luz" version))
        (sha256
-        (base32 "0agpcs4m3yil19bzanj08qqnsirnld4pdkqwzfyynalsi7hgvmzl"))))
+        (base32 "1sjz49msxjs6xfs354w0v53mwybpmkaalny93kp4i9g929kwky5j"))))
     (properties `((upstream-name . "luz")))
     (build-system r-build-system)
     (arguments
@@ -12644,13 +12644,13 @@ classification, and visualization.")
 (define-public r-lgpr
   (package
     (name "r-lgpr")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lgpr" version))
        (sha256
-        (base32 "1xhkkykig3d2adh7nhvsjg75fxk8h9jdqdsadc9fwbdda354xvg7"))))
+        (base32 "165xjnh6nkjfsmjfzfd6ja3xjmd94s8ccap9d8wyazinvahxnn0z"))))
     (properties `((upstream-name . "lgpr")))
     (build-system r-build-system)
     (arguments
@@ -18725,6 +18725,37 @@ presentation, or used in a Shiny app.")
 time series from given drift and diffusion coefficients.")
     (license license:gpl2+)))
 
+(define-public r-lang
+  (package
+    (name "r-lang")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lang" version))
+       (sha256
+        (base32 "0n8y1dci18jv0j19lg7ssm33s0fd4k8766d0bavm3cr8jgjsjmzz"))))
+    (properties `((upstream-name . "lang")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-rstudioapi
+                             r-rlang
+                             r-mall
+                             r-glue
+                             r-fs
+                             r-cli
+                             r-callr))
+    (home-page "https://mlverse.github.io/lang/")
+    (synopsis "Translates R Help Documentation using Large Language Models")
+    (description
+     "Translates R help documentation on the fly by using a Large Language model of
+your choice.  If you are using RStudio or Positron the translated help will
+appear in the help pane.")
+    (license license:expat)))
+
 (define-public r-landsepi
   (package
     (name "r-landsepi")
@@ -19412,13 +19443,13 @@ length, surface area, and volume.")
 (define-public r-lakemetabolizer
   (package
     (name "r-lakemetabolizer")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LakeMetabolizer" version))
        (sha256
-        (base32 "09j4k5r441jpbxv9x6j9j5mlcl7yh2ydhfy55wx614wdlv862jn9"))))
+        (base32 "1wf6q4l3f54dxygipb00pzwif03v1y9402zf7mnp9r8gqdvp30z8"))))
     (properties `((upstream-name . "LakeMetabolizer")))
     (build-system r-build-system)
     (arguments

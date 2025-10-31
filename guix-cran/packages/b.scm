@@ -6393,13 +6393,13 @@ regression with high-dimensional data.")
 (define-public r-bpgmm
   (package
     (name "r-bpgmm")
-    (version "1.0.9")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bpgmm" version))
        (sha256
-        (base32 "0wrdh4c8yws7z5zd1yl23wbja88x57x651kqbnqj70k9a1195rwc"))))
+        (base32 "178smwddybybdcpa0ph5dsah57ggr3l99pvmah9v51ksfzs8wms9"))))
     (properties `((upstream-name . "bpgmm")))
     (build-system r-build-system)
     (arguments
@@ -17120,6 +17120,37 @@ al. (2009) <https://pmc.ncbi.nlm.nih.gov/articles/PMC2730180/>,
 <doi:10.4137/CIN.S2846>.")
     (license license:asl2.0)))
 
+(define-public r-bimets
+  (package
+    (name "r-bimets")
+    (version "4.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bimets" version))
+       (sha256
+        (base32 "01p8y0ickr2lx6vbmzjar21jqnvanc3m8ljfi7amz1bpbyavxxqy"))))
+    (properties `((upstream-name . "bimets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-xts))
+    (home-page "https://github.com/andrea-luciani/bimets")
+    (synopsis "Time Series and Econometric Modeling")
+    (description
+     "Time series analysis, (dis)aggregation and manipulation, e.g. time series
+extension, merge, projection, lag, lead, delta, moving and cumulative average
+and product, selection by index, date and year-period, conversion to daily,
+monthly, quarterly, (semi)annually.  Simultaneous equation models definition,
+estimation, simulation and forecasting with coefficient restrictions, error
+autocorrelation, exogenization, add-factors, impact and interim multipliers
+analysis, conditional equation evaluation, rational expectations, endogenous
+targeting and model renormalization, structural stability, stochastic simulation
+and forecast, optimal control, by A. Luciani (2022)
+<doi:10.13140/RG.2.2.31160.83202>.")
+    (license license:gpl3)))
+
 (define-public r-billboard
   (package
     (name "r-billboard")
@@ -24044,27 +24075,24 @@ exposures and outcomes.  For more details, see Talbot et al. (2015)
 (define-public r-bcea
   (package
     (name "r-bcea")
-    (version "2.4.81")
+    (version "2.4.82")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BCEA" version))
        (sha256
-        (base32 "18247xd1xs6agh3il26rjgi1x7iflhc40lah2fzf9sbcn5r97q8y"))))
+        (base32 "1n32xlyy82qnbkm2zrxba4wiipkgkvcq89s71nbnp5qihls7pxny"))))
     (properties `((upstream-name . "BCEA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-voi
+                             r-tidyr
                              r-scales
-                             r-rstan
-                             r-rlang
-                             r-reshape2
                              r-rdpack
                              r-purrr
                              r-plotly
-                             r-mcmcvis
                              r-matrix
                              r-mass
                              r-gridextra
@@ -25615,6 +25643,44 @@ automatic tuning inspired by Pitt et al. (2012)
 <doi:10.1016/j.jeconom.2012.06.004> and J. Dahlin and T. B. SchÃ¶n (2019)
 <doi:10.18637/jss.v088.c02>.")
     (license license:expat)))
+
+(define-public r-bayessim
+  (package
+    (name "r-bayessim")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesSIM" version))
+       (sha256
+        (base32 "1bzypgi3l7rw72g1hrb20mxp887wf42lj0xi7wwbgfy6nlchvnk6"))))
+    (properties `((upstream-name . "BayesSIM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-patchwork
+                             r-nimble
+                             r-mvtnorm
+                             r-mass
+                             r-magrittr
+                             r-ggplot2
+                             r-coda))
+    (home-page "https://cran.r-project.org/package=BayesSIM")
+    (synopsis
+     "Integrated Interface of Bayesian Single Index Models using 'nimble'")
+    (description
+     "This package provides tools for fitting Bayesian single index models with
+flexible choices of priors for both the index and the link function.  The
+package implements model estimation and posterior inference using efficient MCMC
+algorithms built on the nimble framework, allowing users to specify, extend, and
+simulate models in a unified and reproducible manner.  The following methods are
+implemented in the package: Antoniadis et al. (2004)
+<https://www.jstor.org/stable/24307224>, Wang (2009)
+<doi:10.1016/j.csda.2008.12.010>, Choi et al. (2011) <c>, Dhara et al. (2019)
+<doi:10.1214/19-BA1170>, @code{McGee} et al. (2023) <doi:10.1111/biom.13569>.")
+    (license license:gpl2+)))
 
 (define-public r-bayessenmc
   (package
@@ -30287,13 +30353,13 @@ early-phase oncology trials.  For more details see Zhou et al. (2023)
 (define-public r-basketballanalyzer
   (package
     (name "r-basketballanalyzer")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BasketballAnalyzeR" version))
        (sha256
-        (base32 "0ralfc9i32f7jwarfg20gvrx0qfisk5dpay74djazm354vqhdphj"))))
+        (base32 "0ywhmxfy30b4pqnpj9zw6ph4mgkz5cpwiifg6kbmpj91pyxym8ch"))))
     (properties `((upstream-name . "BasketballAnalyzeR")))
     (build-system r-build-system)
     (arguments
@@ -30325,8 +30391,7 @@ early-phase oncology trials.  For more details see Zhou et al. (2023)
     (description
      "This package contains data and code to accompany the book P. Zuccolotto and M.
 Manisera (2020) Basketball Data Science.  Applications with R. CRC Press.  ISBN
-9781138600799.  For more details, see the page
-bdsports.unibs.it/basketballanalyzer/.")
+9781138600799.")
     (license license:gpl2+)))
 
 (define-public r-basket
