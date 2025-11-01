@@ -19032,19 +19032,20 @@ Season (WRTDS).")
 (define-public r-egor
   (package
     (name "r-egor")
-    (version "1.24.2")
+    (version "1.25.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "egor" version))
        (sha256
-        (base32 "1dsgkqib20abi4qr9kinsjf3fxad6ybvc22nxs28c10rqwivzzjc"))))
+        (base32 "0awmvhhry1iz07dimzp09spjszvg16715hpz0plghyd9vazhwklb"))))
     (properties `((upstream-name . "egor")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tidygraph
                              r-tibble
                              r-srvyr
@@ -20352,13 +20353,13 @@ Frequentist and Bayesian multilevel models.")
 (define-public r-eeea
   (package
     (name "r-eeea")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EEEA" version))
        (sha256
-        (base32 "1wxvzz2lj3js7nr6wxfnilng4ybalidzjrwqziyckzyhp4s30qk7"))))
+        (base32 "0f8z848dp0hjmncq41qilykkigpk8z4idcah71jb5kxhh5qsbkph"))))
     (properties `((upstream-name . "EEEA")))
     (build-system r-build-system)
     (arguments

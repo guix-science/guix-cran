@@ -18842,13 +18842,13 @@ plot, as well as a summary of the matching procedure.")
 (define-public r-bibliorefer
   (package
     (name "r-bibliorefer")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliorefer" version))
        (sha256
-        (base32 "1iq71gn6695dw4gqzy4jcdrf2s1k7z079wgswv9d1qwh261s2vxv"))))
+        (base32 "0l48m5wjk8xavjlbgk8pcb52laj16yl23907mb72z9vgb3aa7dz1"))))
     (properties `((upstream-name . "bibliorefer")))
     (build-system r-build-system)
     (arguments
@@ -28907,13 +28907,13 @@ WI or WP as the underlying CVI.")
 (define-public r-bayescureratemodel
   (package
     (name "r-bayescureratemodel")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesCureRateModel" version))
        (sha256
-        (base32 "000w6421kc3d6cldhd35s0791qzj38np8vl6z8czwdvif623sph3"))))
+        (base32 "007h0z5vm57min9b205rhwhrbfqk28jqkzw7dd3k2q4vv86sqw84"))))
     (properties `((upstream-name . "bayesCureRateModel")))
     (build-system r-build-system)
     (arguments

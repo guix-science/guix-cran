@@ -20101,13 +20101,13 @@ better than classical supervised classifiers.")
 (define-public r-ssbtools
   (package
     (name "r-ssbtools")
-    (version "1.8.2")
+    (version "1.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSBtools" version))
        (sha256
-        (base32 "1libmpmpw14v8yx0bwfcv3xc8n34ih87dvshld5yv8cxjq59qzvi"))))
+        (base32 "002n9v21lilafi7bcb7v8x918qhd6w3x6d1ac5r573iwy2fl0v6i"))))
     (properties `((upstream-name . "SSBtools")))
     (build-system r-build-system)
     (arguments
@@ -59949,6 +59949,31 @@ techniques are used to relax parametric restrictions of the functional form
 representing technology and in the second step variance parameters are obtained
 by pseudolikelihood estimators or by method of moments.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-semsensitivity
+  (package
+    (name "r-semsensitivity")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SEMsensitivity" version))
+       (sha256
+        (base32 "06dsy8z2pr96rqicns88hziscvzzb1dzs1dlaihg4mgc92fn4mwn"))))
+    (properties `((upstream-name . "SEMsensitivity")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-semfindr r-r-utils r-lavaan r-dplyr))
+    (home-page "https://cran.r-project.org/package=SEMsensitivity")
+    (synopsis "SEM Sensitivity Analysis")
+    (description
+     "This package performs sensitivity analysis for Structural Equation Modeling
+(SEM).  It determines which sample points need to be removed for the sign of a
+specific path in the SEM model to change, thus assessing the robustness of the
+model.  Methodological manuscript in preparation.")
+    (license license:expat)))
 
 (define-public r-semsens
   (package

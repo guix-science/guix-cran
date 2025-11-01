@@ -18139,13 +18139,13 @@ Zhang, Sha Cao (2020) <@code{arXiv:2005.11599>}.")
 (define-public r-robmixglm
   (package
     (name "r-robmixglm")
-    (version "1.2-4")
+    (version "1.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robmixglm" version))
        (sha256
-        (base32 "10l0w7a2p5lids1idw8z6qc6rqahbbidgkqk3fb0b0yakcppvycn"))))
+        (base32 "02ycphdb5nd5mlv7383wwi6hn7yxvs2d2ma1lmf8dlbswvj95v0q"))))
     (properties `((upstream-name . "robmixglm")))
     (build-system r-build-system)
     (arguments
@@ -36888,13 +36888,13 @@ and applied statistical modeling.")
 (define-public r-reliaplotr
   (package
     (name "r-reliaplotr")
-    (version "0.4")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReliaPlotR" version))
        (sha256
-        (base32 "0ka38nqpdajw6cbhdpzilk5knjgv3a8bv9c9dn9gjcmfm4dl97kj"))))
+        (base32 "05fvgsbpcfs1aala43gz2s9i3vn018wm71ys4c12pksl0wpjcvwp"))))
     (properties `((upstream-name . "ReliaPlotR")))
     (build-system r-build-system)
     (arguments
@@ -36905,7 +36905,7 @@ and applied statistical modeling.")
     (synopsis "Interactive Reliability Probability Plots")
     (description
      "Build interactive Reliability Probability Plots with plotly by Carson Sievert
-(2020) <https://plotly-r.com>, an interactive web-based graphing library.")
+(2020) <https://plotly.com/r/>, an interactive web-based graphing library.")
     (license (license:fsdg-compatible "Apache License"))))
 
 (define-public r-reliagrowr

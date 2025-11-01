@@ -9067,13 +9067,13 @@ References: Hoffmann and Onnela (2025) <doi:10.18637/jss.v112.i02>.")
 (define-public r-gptcm
   (package
     (name "r-gptcm")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPTCM" version))
        (sha256
-        (base32 "06m8yzq7cd803v90imhnlmi7s36h8vxgj8227i6zx4xwcwzjfm2l"))))
+        (base32 "0mmj1x8ylqgw8zgda8zwq0znm4h1k8y095h9nay7ihxsrkvnaiys"))))
     (properties `((upstream-name . "GPTCM")))
     (build-system r-build-system)
     (arguments
@@ -13541,13 +13541,13 @@ described multiple test procedures.")
 (define-public r-gmc
   (package
     (name "r-gmc")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GMC" version))
        (sha256
-        (base32 "0nc5kjqx9as0s2c7ajnd64987sqxqvia8dy26x5invk4mm8ad70s"))))
+        (base32 "08wvw328g0p94qrllwjflz8z48b6cckyq31zgipsqlk9jz7d07m9"))))
     (properties `((upstream-name . "GMC")))
     (build-system r-build-system)
     (arguments
@@ -13561,7 +13561,7 @@ described multiple test procedures.")
      "This package provides tools to compute the Generalized Measure of Correlation
 (GMC), a dependence measure accounting for nonlinearity and asymmetry in the
 relationship between variables.  Based on the method proposed by Zheng, Shi, and
-Zhang (2012).")
+Zhang (2012) <doi:10.1080/01621459.2012.710509>.")
     (license license:gpl3+)))
 
 (define-public r-gmapsdistance
@@ -22976,13 +22976,13 @@ projections of a latin hypercube design.")
 (define-public r-ggdnavis
   (package
     (name "r-ggdnavis")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggDNAvis" version))
        (sha256
-        (base32 "1wm2719wxvv2nv6w1fk80y3i4pc5i96s8kzpzz74iqjsslh1c718"))))
+        (base32 "1qpy0ampyiswdq5if9sw5fhpbljpw1z3hn0f7b573bn0nvbqc9fi"))))
     (properties `((upstream-name . "ggDNAvis")))
     (build-system r-build-system)
     (arguments

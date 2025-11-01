@@ -20806,13 +20806,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.7-0")
+    (version "1.7-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "1finhplimkxwyda05yznfz6146rq4wd1crgvm0kkdkkhkgszwwvd"))))
+        (base32 "1wkv2hmk38r6m2pf826l896b88nmqr62kyyab6kvni74727yhx84"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (arguments
@@ -21170,13 +21170,13 @@ composed to form preprocessing pipelines.")
 (define-public r-mlr3torch
   (package
     (name "r-mlr3torch")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3torch" version))
        (sha256
-        (base32 "1bsbg74f36ffbis3lqdl04gv7zpk3isp6ybdwf0n00mmilbfgyh8"))))
+        (base32 "1jyjz7ra2snirc91dyn0168j5s8pbang93lpbd01h8k74lcnd4sd"))))
     (properties `((upstream-name . "mlr3torch")))
     (build-system r-build-system)
     (arguments
@@ -23606,6 +23606,38 @@ Statistical and epidemiological risk measures such as relative risk, odds ratio,
 number needed to treat (Porta (2014),
 <doi:10.1093%2Facref%2F9780199976720.001.0001>).")
     (license license:lgpl3)))
+
+(define-public r-mkbo
+  (package
+    (name "r-mkbo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mKBO" version))
+       (sha256
+        (base32 "1mm393q04x26kf10x7774p25jqzh1d8hdy8wd2rik996z4vdg4bj"))))
+    (properties `((upstream-name . "mKBO")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-dplyr
+                             r-broom))
+    (home-page "https://cran.r-project.org/package=mKBO")
+    (synopsis "Multi-Group Kitagawa-Blinder-Oaxaca Decomposition")
+    (description
+     "This package provides multigroup Kitagawa-Blinder-Oaxaca ('@code{mKBO}')
+decompositions, that allow for more than two groups.  Each group is compared to
+the sample average.  For more details see Thaning and Nieuwenhuis (2025)
+<doi:10.31235/osf.io/6twvj_v1>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-mjmbamlss
   (package
@@ -30343,13 +30375,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.15.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "05z9f6fd0lqh00vwzxy68nd8ah6yn8mnfrckzbv4rlhscw758zj2"))))
+        (base32 "0rd90y4khh0w55c8b81sd9667lf2jv9qpa4nwwz8nd9q5wcy5kmz"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (arguments
@@ -52616,13 +52648,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "0.6.3")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "1f9r9i2pkg9akqsg7a57277gjxrparkfbrkn0lrjdbc5abasgsc8"))))
+        (base32 "1dnx7iwb88zlgs9z2i3gj8r30n4z9vz3pkd20d5wh88iclzrsfbf"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (arguments

@@ -2891,19 +2891,19 @@ stops, routes, disruptions, departures, and more.")
 (define-public r-ptvalue
   (package
     (name "r-ptvalue")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ptvalue" version))
        (sha256
-        (base32 "172r8c39grll6602x3j621gmhp06kw09xz1pw96ffh2gh9mqm5w7"))))
+        (base32 "1lz0qz49si4ivd18iqx32qaf4wkxyv434vwzjw8jjjnvhx0klczr"))))
     (properties `((upstream-name . "ptvalue")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs r-rlang r-cli))
+    (propagated-inputs (list r-vctrs r-rlang))
     (home-page "https://github.com/agkamel/ptvalue")
     (synopsis "Working with Precision Teaching Values")
     (description
@@ -8479,6 +8479,37 @@ assumptions regarding returns to scale are available.  All DEA linear programs
 are implemented using lp_solve'.")
     (license license:gpl3)))
 
+(define-public r-producer
+  (package
+    (name "r-producer")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ProduceR" version))
+       (sha256
+        (base32 "1vq24mdx3m9s23zqx8fn5palx0siziqqa8i9m6y9mrz677j626fb"))))
+    (properties `((upstream-name . "ProduceR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-dplyr))
+    (home-page "https://cran.r-project.org/package=ProduceR")
+    (synopsis
+     "Concise and Efficient Tools for Everyday Statistical Production")
+    (description
+     "This package provides a set of concise and efficient tools for statistical
+production.  Can also be used for data management.  In statistical production,
+you deal with complex data and need to control your process at each step of your
+work.  Concise functions are very helpful, because you do not hesitate to use
+them.  The following functions are included in the package.  dup checks
+duplicates.  miss checks missing values.  tac computes contingency table of all
+columns.  toc compares two tables, spotting significant deviations.  chi2_find
+compares columns within a data.frame, spotting related categories of (a more
+complex function).")
+    (license license:expat)))
+
 (define-public r-prodigenr
   (package
     (name "r-prodigenr")
@@ -12172,13 +12203,13 @@ estimate which reliability estimate is the most accurate for your model.")
 (define-public r-predpsych
   (package
     (name "r-predpsych")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PredPsych" version))
        (sha256
-        (base32 "00h4p1szqzh4a2kjvlriyinh330cfwxsrvs6fi089mr207q890vj"))))
+        (base32 "027m476a77dajckl5n5ikj5d1chd584gv3wmmad49k4sfl9yz0az"))))
     (properties `((upstream-name . "PredPsych")))
     (build-system r-build-system)
     (arguments
@@ -19945,13 +19976,13 @@ decision tree that is globally (or close to) optimal.")
 (define-public r-policyportfolios
   (package
     (name "r-policyportfolios")
-    (version "0.3")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PolicyPortfolios" version))
        (sha256
-        (base32 "1syycldfzwymymhai0ifli93iv3p8p6xbyk25mvln6zgb43iind1"))))
+        (base32 "16925shi33kn8zlwc6pjcxdbfbrs0hm33fhpsnhi5phz7q4vkkzd"))))
     (properties `((upstream-name . "PolicyPortfolios")))
     (build-system r-build-system)
     (arguments
@@ -25269,6 +25300,36 @@ submitted for publication.  For additional references: Dunnett, C. W. (1955)
 microtiter plates.  Easily read in plate-shaped data and convert it to tidy
 format, combine plate-shaped data with tidy data, and view tidy data in plate
 shape.")
+    (license license:gpl3)))
+
+(define-public r-plasso
+  (package
+    (name "r-plasso")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plasso" version))
+       (sha256
+        (base32 "1pz8n9lcrlqr3bc0dh805l0ikxkak94q0fjh10zpxhkzffingp82"))))
+    (properties `((upstream-name . "plasso")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-iterators r-glmnet r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MCKnaus/plasso")
+    (synopsis "Cross-Validated Post-Lasso")
+    (description
+     "This package provides tools for cross-validated Lasso and Post-Lasso estimation.
+ Built on top of the glmnet package by Friedman, Hastie and Tibshirani (2010)
+<doi:10.18637/jss.v033.i01>, the main function @code{plasso()} extends the
+standard glmnet output with coefficient paths for Post-Lasso models, while
+@code{cv.plasso()} performs cross-validation for both Lasso and Post-Lasso
+models and different ways to select the penalty parameter lambda as discussed in
+Knaus (2021) <doi:10.1111/rssa.12623>.")
     (license license:gpl3)))
 
 (define-public r-plasmidprofiler
@@ -35245,6 +35306,36 @@ B-Spline.  More methods under other semiparametric models such as cure model or
 additive model will be included in future versions.  For more details see Lu,
 M., Liu, Y., Li, C. and Sun, J. (2019) <@code{arXiv:1912.11703>}.")
     (license license:gpl2+)))
+
+(define-public r-penguinr
+  (package
+    (name "r-penguinr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PenguinR" version))
+       (sha256
+        (base32 "07v0c6j9fqsc3f2kf8gv6ym88hlh8f83s8wl5d7p7cbqybvh5m47"))))
+    (properties `((upstream-name . "PenguinR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jpablovargas340/PenguinR")
+    (synopsis
+     "Comprehensive Collection of Penguin Datasets for Statistical Analysis and Experimental Design")
+    (description
+     "Offers a comprehensive collection of penguin-related datasets suitable for
+descriptive statistics, hypothesis testing, and experimental design.  Derived
+from open ecological and biological sources such as Palmer Station studies, the
+package integrates datasets covering adult morphology, clutch size, blood
+isotope composition, and heart rate.  It is designed for researchers, students,
+and educators to explore statistical methods including ANOVA, regression,
+multivariate analysis, and design of experiments in an accessible and
+reproducible context.")
+    (license license:gpl3)))
 
 (define-public r-penfa
   (package

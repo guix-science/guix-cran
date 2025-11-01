@@ -6592,20 +6592,21 @@ with the book.")
 (define-public r-asbio
   (package
     (name "r-asbio")
-    (version "1.11")
+    (version "1.12-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asbio" version))
        (sha256
-        (base32 "0s34clzpxdqhp6hn2hyxpzd1p9jxqjrzjm2f34vvvzpylnh8lz14"))))
+        (base32 "18fk2rgqzd2mssl03n0zhmcm9hi68fs9zqaq9ybj4s7qhzhlwdfa"))))
     (properties `((upstream-name . "asbio")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (propagated-inputs (list r-scatterplot3d
+    (propagated-inputs (list r-tkrplot
+                             r-scatterplot3d
                              r-plotrix
                              r-pixmap
                              r-mvtnorm
@@ -7789,13 +7790,13 @@ model for time series forecasting.For method details see Zhang, GP (2003)
 (define-public r-arima2
   (package
     (name "r-arima2")
-    (version "3.4.0")
+    (version "3.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arima2" version))
        (sha256
-        (base32 "0r5c1sixlvmbj6h7qgyf64zbg6x65lrlc2djlmnj1kk26xbj71qm"))))
+        (base32 "0hmy9c6ba1v7l0zdpfrl3cryns3wdqfi4vg3bnhicwkihl278fkv"))))
     (properties `((upstream-name . "arima2")))
     (build-system r-build-system)
     (arguments
@@ -7814,8 +7815,7 @@ or equal to that of the likelihood obtained by fitting the same model using the
 optimization of model likelihoods, which is a necessary condition for performing
 likelihood ratio tests.  This package relies heavily on the source code of the
 @code{arima()} function of the stats package.  For more information, please see
-Jesse Wheeler and Edward L. Ionides (2023)
-<doi:10.48550/@code{arXiv.2310.01198>}.")
+Jesse Wheeler and Edward L. Ionides (2025) <doi:10.1371/journal.pcbi.1012032>.")
     (license license:gpl3+)))
 
 (define-public r-arigamyannsvr
@@ -12420,13 +12420,13 @@ simulate the effects of mergers under different competitive regimes.")
 (define-public r-anticlust
   (package
     (name "r-anticlust")
-    (version "0.8.10-1")
+    (version "0.8.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anticlust" version))
        (sha256
-        (base32 "015bslxal6n4v72qy9hgrx29sld4fhb32v7wp5agm1mafvkrf2ng"))))
+        (base32 "0rnv95lk0mj3zrs70rq23qqyg60fy4rd978lbpbzandbby5bnc1c"))))
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
     (arguments
@@ -12446,10 +12446,12 @@ accomplished by maximizing instead of minimizing a clustering objective
 function, such as the intra-cluster variance (used in k-means clustering) or the
 sum of pairwise distances within clusters.  The main function
 @code{anticlustering()} gives access to optimal and heuristic anticlustering
-methods described in Papenberg and Klau (2021; <doi:10.1037/met0000301>), Brusco
-et al. (2020; <doi:10.1111/bmsp.12186>), Papenberg (2024;
-<doi:10.1111/bmsp.12315>), and Papenberg et al. (2025;
-<doi:10.1101/2025.03.03.641320>).  The optimal algorithms require that an
+methods described in Papenberg and Klau Klau (2021; <doi:10.1037/met0000301>),
+Brusco et al. (2020; <doi:10.1111/bmsp.12186>), Papenberg (2024;
+<doi:10.1111/bmsp.12315>), Papenberg, Wang, et al. (2025;
+<doi:10.1016/j.crmeth.2025.101137>), Papenberg, Breuer, et al. (2025;
+<doi:10.1017/psy.2025.10052>), and Yang et al. (2022;
+<doi:10.1016/j.ejor.2022.02.003>).  The optimal algorithms require that an
 integer linear programming solver is installed.  This package will install
 @code{lpSolve} (<https://cran.r-project.org/package=@code{lpSolve>}) as a
 default solver, but it is also possible to use the package Rglpk
@@ -14823,6 +14825,32 @@ methods to calculate home ranges, track statistics (e.g. step lengths, speed, or
 turning angles), prepare data for fitting habitat selection analyses, and
 simulation of space-use from fitted step-selection functions.")
     (license license:gpl3)))
+
+(define-public r-amssim
+  (package
+    (name "r-amssim")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "amsSim" version))
+       (sha256
+        (base32 "0li0yxya871x2w685ys2apv9xyjmyyva8c64p12z3b4qbwj0qq1d"))))
+    (properties `((upstream-name . "amsSim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/RiccardoGozzo/amsSim")
+    (synopsis
+     "Adaptive Multilevel Splitting for Option Simulation and Pricing")
+    (description
+     "Simulation and pricing routines for rare-event options using Adaptive Multilevel
+Splitting and standard Monte Carlo under Black-Scholes and Heston models.  Core
+routines are implemented in C++ via Rcpp and @code{RcppArmadillo} with
+lightweight R wrappers.")
+    (license license:expat)))
 
 (define-public r-amscorer
   (package

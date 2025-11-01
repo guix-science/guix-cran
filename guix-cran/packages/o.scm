@@ -6779,13 +6779,13 @@ manipulation.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.20")
+    (version "1.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "1i2g9fnnql00hbjqvbi8x5lp23nabsxl9823dh8i9l0d3djy7z9s"))))
+        (base32 "1ryckjvcxvjqd1z4lzlryaji4pxpzwlf1y2r911fsr02h8z5zlpm"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (arguments
@@ -10406,26 +10406,25 @@ as observation period and drug era, among others.")
 (define-public r-omock
   (package
     (name "r-omock")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omock" version))
        (sha256
-        (base32 "1gbx91k4j01pv75f1lm9673m40w45ar7083rd5a11dxnrm68bgrp"))))
+        (base32 "1pmwq9pa19pqlbmswj2i99y6mwhaw7d3wqdx6g88hjp66nm8icp1"))))
     (properties `((upstream-name . "omock")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-snakecase
-                             r-rlang
+    (propagated-inputs (list r-rlang
                              r-readr
                              r-purrr
                              r-omopgenerics
-                             r-lubridate
                              r-lifecycle
                              r-dplyr
+                             r-clock
                              r-cli
                              r-arrow))
     (native-inputs (list r-knitr))
@@ -12341,13 +12340,13 @@ serve as supplements to the classical CART of Breiman (1984)
 (define-public r-odr
   (package
     (name "r-odr")
-    (version "1.6.3")
+    (version "1.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odr" version))
        (sha256
-        (base32 "0g0gnbim1c15ii4j9si246xqd4jyvwc8rghnipnxyd0qy5mw0zcf"))))
+        (base32 "1074ag1ypisa5zwqa5saj6129sq59lxfdp0d6zszrh5gjzcv99wm"))))
     (properties `((upstream-name . "odr")))
     (build-system r-build-system)
     (arguments

@@ -25377,13 +25377,13 @@ profiles.")
 (define-public r-cohortconstructor
   (package
     (name "r-cohortconstructor")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortConstructor" version))
        (sha256
-        (base32 "1b4g8axjfq2ybjm31nblp5q1jbc3hshf2lnrb7ygkjqv0xgvi68i"))))
+        (base32 "1lrrgm44dnp3q175rrjjhpb82w7w7f9cgibj6c4dzsvkngq79lk4"))))
     (properties `((upstream-name . "CohortConstructor")))
     (build-system r-build-system)
     (arguments
@@ -25394,14 +25394,10 @@ profiles.")
                              r-purrr
                              r-patientprofiles
                              r-omopgenerics
-                             r-magrittr
                              r-glue
                              r-dplyr
-                             r-dbplyr
                              r-clock
-                             r-cli
-                             r-checkmate
-                             r-cdmconnector))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://ohdsi.github.io/CohortConstructor/")
     (synopsis "Build and Manipulate Study Cohorts Using a Common Data Model")

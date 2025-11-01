@@ -2243,13 +2243,13 @@ players.")
 (define-public r-tugboat
   (package
     (name "r-tugboat")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tugboat" version))
        (sha256
-        (base32 "0fd3wcjizmazmmzbdz8jskv5rrsdd2l91jx0yi32j4cdmwq75ksh"))))
+        (base32 "1a4w7f37p6wz1plv50ks5ivww2b9wlz6q92wh90bj2aw2zp02lji"))))
     (properties `((upstream-name . "tugboat")))
     (build-system r-build-system)
     (arguments
@@ -2260,7 +2260,8 @@ players.")
     (synopsis "Build a Docker Image from a Directory or Project")
     (description
      "Simple utilities to generate a Dockerfile from a directory or project, build the
-corresponding Docker image, and push the image to @code{DockerHub}.")
+corresponding Docker image, push the image to @code{DockerHub}, and publicly
+share the project via Binder.")
     (license license:gpl3+)))
 
 (define-public r-tufterhandout
@@ -17951,13 +17952,13 @@ be inserted into the output stream.")
 (define-public r-tikatuwq
   (package
     (name "r-tikatuwq")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tikatuwq" version))
        (sha256
-        (base32 "1wj8nj9wfkvv1g1jllfyb8sw8yw9a4v1v2x220q1x1k9qh3qrrly"))))
+        (base32 "1m0hcjylgijayhzxxgfbpl9j1ijlrbp234mzfws0awadbq5bw2hj"))))
     (properties `((upstream-name . "tikatuwq")))
     (build-system r-build-system)
     (arguments
@@ -32731,13 +32732,13 @@ Groeve et al. (2025) <doi:10.3897/arphapreprints.e151900>.")
 (define-public r-tabr
   (package
     (name "r-tabr")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabr" version))
        (sha256
-        (base32 "1mp2j3f373hhqfk9mjp63qlkdcgmaq5iszk5bzzgyy8gn05y9722"))))
+        (base32 "1jfhq5npxgxyhgwqsv1j5263my0hvarhcms8766vqyj5inkx7lrm"))))
     (properties `((upstream-name . "tabr")))
     (build-system r-build-system)
     (arguments
@@ -33024,6 +33025,49 @@ options available in the package.")
      "Computes and displays complex tables of summary statistics.  Output may be in
 @code{LaTeX}, HTML, plain text, or an R matrix for further processing.")
     (license license:gpl2)))
+
+(define-public r-tabler
+  (package
+    (name "r-tabler")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tabler" version))
+       (sha256
+        (base32 "1ls2mr9cbaszv90fyf1pmlk23m89qv94zlwkng76iwr7d9mjcd09"))))
+    (properties `((upstream-name . "tabler")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-htmltools))
+    (native-inputs (list esbuild))
+    (home-page "https://github.com/pachadotdev/tabler")
+    (synopsis "Create Dashboards with 'Tabler' and 'Shiny'")
+    (description
+     "This package provides functions to build interactive dashboards combining the
+Tabler UI Kit with Shiny', making it easy to create professional-looking web
+applications.  Tabler is fully responsive and compatible with all modern
+browsers.  Offers customizable layouts and components built with HTML5 and
+CSS3'.  The underlying Tabler (<https://github.com/tabler/tabler>) and Tabler
+Icons (<https://github.com/tabler/tabler-icons>) were pre-built from source to
+eliminate the need for Node.js and NPM on package installation.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-tablemonster
   (package

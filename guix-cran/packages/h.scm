@@ -7409,6 +7409,33 @@ algorithm.  Asymptotic standard errors are derived from the observed information
 matrix.")
     (license license:gpl3+)))
 
+(define-public r-hirisplexr
+  (package
+    (name "r-hirisplexr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hirisplexr" version))
+       (sha256
+        (base32 "1zwl9di65m6i7kjqb8sa7cvr2phpfsfm4lrsnjyn27py4jg6793k"))))
+    (properties `((upstream-name . "hirisplexr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table r-bedmatrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/adhikari-statgen-lab/hirisplexr")
+    (synopsis "From 'PLINK' to 'HIrisPlex'")
+    (description
+     "Read PLINK 1.9 binary datasets (BED/BIM/FAM) and generate the CSV files required
+by the Erasmus MC H@code{IrisPlex} / H@code{IrisPlex-S} webtool
+<https://hirisplex.erasmusmc.nl/>.  It maps PLINK alleles to the webtool's
+required @code{rsID_Allele} columns (0/1/2/NA).  No external tools (e.g., PLINK
+CLI') are required.")
+    (license license:expat)))
+
 (define-public r-hirestec
   (package
     (name "r-hirestec")

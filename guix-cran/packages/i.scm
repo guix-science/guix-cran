@@ -4143,23 +4143,19 @@ variable-length sequence of output seeds from an ironseed.")
 (define-public r-iron
   (package
     (name "r-iron")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IRon" version))
        (sha256
-        (base32 "1yl9i6gxzwy5f4qva3a14flzlk1xk7v2m02n0mg8ddchc5n6j3bc"))))
+        (base32 "13kvmykal8f71h5qis2lfwzn0fjppvs4pk9fhbh92b791cz1hny7"))))
     (properties `((upstream-name . "IRon")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scam
-                             r-robustbase
-                             r-rcpp
-                             r-gridextra
-                             r-ggpubr
+    (propagated-inputs (list r-robustbase r-rcpp r-gridextra r-ggpubr
                              r-ggplot2))
     (home-page "https://github.com/nunompmoniz/IRon")
     (synopsis "Solving Imbalanced Regression Tasks")
@@ -11125,13 +11121,13 @@ et al. (2020) <doi:10.1111/1440-1703.12102> for statistical background.")
 (define-public r-inext-3d
   (package
     (name "r-inext-3d")
-    (version "1.0.11")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNEXT.3D" version))
        (sha256
-        (base32 "0fiqc14f15mj3gh9gc1m6d7f6i8zw99272xiqy4ir46qjfpq3ypv"))))
+        (base32 "0a0xmkgjxlc1628h4ssk0h5znjbz1hlv494n4pap4s2zdvw6zylr"))))
     (properties `((upstream-name . "iNEXT.3D")))
     (build-system r-build-system)
     (arguments

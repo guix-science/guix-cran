@@ -776,13 +776,13 @@ and derivatives.")
 (define-public r-dynconfir
   (package
     (name "r-dynconfir")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynConfiR" version))
        (sha256
-        (base32 "1rz8jma7f9fqn1srwvnav1bj5spppca4ayi51gq4y38bljk443h0"))))
+        (base32 "16zgbglq9b01ig07b18x0y9gs3qwwkgkhxss4xm9paakkxcn0n2j"))))
     (properties `((upstream-name . "dynConfiR")))
     (build-system r-build-system)
     (arguments
@@ -13955,6 +13955,36 @@ to the transition, the motion between values can appear smoother and more
 natural.  This package includes functions for applying such non-linear easings
 to colors and numeric values, and is useful where smooth animated movement and
 transitions are desired.")
+    (license license:expat)))
+
+(define-public r-dispersionindicators
+  (package
+    (name "r-dispersionindicators")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dispersionIndicators" version))
+       (sha256
+        (base32 "0rfphrf9i36hk148hqcif0vfypg27ppnxraagwsgzin8f3ixqss2"))))
+    (properties `((upstream-name . "dispersionIndicators")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-corpcor))
+    (home-page "https://cran.r-project.org/package=dispersionIndicators")
+    (synopsis
+     "Indicators for the Analysis of Dispersion of Datasets with Batched and Ordered Samples")
+    (description
+     "This package provides methods for analyzing the dispersion of tabular datasets
+with batched and ordered samples.  Based on convex hull or integrated covariance
+Mahalanobis, several indicators are implemented for inter and intra batch
+dispersion analysis.  It is designed to facilitate robust statistical assessment
+of data variability, supporting applications in exploratory data analysis and
+quality control, for such datasets as the one found in metabololomics studies.
+For more details see Salanon (2024) <doi:10.1016/j.chemolab.2024.105148> and
+Salanon (2025) <doi:10.1101/2025.08.01.668073>.")
     (license license:expat)))
 
 (define-public r-disperse
@@ -29756,13 +29786,13 @@ to illustrate paired data sets (such as before-after, male-female).")
 (define-public r-datavisualizations
   (package
     (name "r-datavisualizations")
-    (version "1.3.5")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataVisualizations" version))
        (sha256
-        (base32 "1m002j6dc2kj3w8afvxh23zjigp9832vhr32ihmhfznl5b5myn22"))))
+        (base32 "1fskvls5wicsp3wdrabvdp03cbyflrzi2kx70khxswv82wajia8c"))))
     (properties `((upstream-name . "DataVisualizations")))
     (build-system r-build-system)
     (arguments
